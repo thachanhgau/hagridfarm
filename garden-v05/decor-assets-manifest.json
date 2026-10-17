@@ -1,0 +1,485 @@
+{
+  "version": 2,
+  "status": "local generated masters with deterministic 4-frame native exports and 2-angle decor variants",
+  "generator": "builtin image_gen",
+  "reference": "garden-v03/environment/layers/hut.png and garden-v03/environment/garden-native.png viewed before generation",
+  "palette": [
+    "#231F2E",
+    "#4A3042",
+    "#735044",
+    "#A57554",
+    "#41465C",
+    "#687486",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A",
+    "#874056",
+    "#C75B4B",
+    "#ED8A45",
+    "#FFC36B",
+    "#3E3B70",
+    "#6961A6",
+    "#70A8B6",
+    "#B7DEE0"
+  ],
+  "pixelArt": {
+    "dimetricRatio": "2:1",
+    "outline": "1px native",
+    "sampling": "nearest-neighbour",
+    "alpha": "0-or-255",
+    "alphaThreshold": 192
+  },
+  "promptsFile": "decor-assets/prompts.json",
+  "contactSheet": {
+    "file": "decor-assets/qa/decor-contact-sheet-2x4.png",
+    "columns": 3,
+    "rows": 3,
+    "scale": 4,
+    "cellWidth": 640,
+    "cellHeight": 640
+  },
+  "items": [
+    {
+      "id": "decor_pumpkin_lantern",
+      "kind": "decor",
+      "storeItem": true,
+      "rotatable": true,
+      "file": "decor-assets/native/decor_pumpkin_lantern.png",
+      "frames": [
+        "decor-assets/native/decor_pumpkin_lantern_f0.png",
+        "decor-assets/native/decor_pumpkin_lantern_f1.png",
+        "decor-assets/native/decor_pumpkin_lantern_f2.png",
+        "decor-assets/native/decor_pumpkin_lantern_f3.png"
+      ],
+      "durations": [
+        460,
+        220,
+        420,
+        220
+      ],
+      "rightFile": "decor-assets/native/decor_pumpkin_lantern_right.png",
+      "rightFrames": [
+        "decor-assets/native/decor_pumpkin_lantern_right_f0.png",
+        "decor-assets/native/decor_pumpkin_lantern_right_f1.png",
+        "decor-assets/native/decor_pumpkin_lantern_right_f2.png",
+        "decor-assets/native/decor_pumpkin_lantern_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 12,
+        "y": 4,
+        "w": 39,
+        "h": 76
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "master": "decor-assets/masters/decor_pumpkin_lantern.png",
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "bounds": {
+        "x": 13,
+        "y": 4,
+        "w": 39,
+        "h": 76
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "sourceSha256": "d098e59b19e9e2061974c248a76017964ec53b5f91ee10ba3ae8fc8c1170357b",
+      "nativeSha256": "b0328f8f7e34c5aae1f564f93f06fd57ca022a99885ad66a868e69fa6fe0f9f3",
+      "generationPromptId": "decor_pumpkin_lantern"
+    },
+    {
+      "id": "decor_broom_rack",
+      "kind": "decor",
+      "storeItem": true,
+      "rotatable": true,
+      "file": "decor-assets/native/decor_broom_rack.png",
+      "frames": [
+        "decor-assets/native/decor_broom_rack_f0.png",
+        "decor-assets/native/decor_broom_rack_f1.png",
+        "decor-assets/native/decor_broom_rack_f2.png",
+        "decor-assets/native/decor_broom_rack_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/decor_broom_rack_right.png",
+      "rightFrames": [
+        "decor-assets/native/decor_broom_rack_right_f0.png",
+        "decor-assets/native/decor_broom_rack_right_f1.png",
+        "decor-assets/native/decor_broom_rack_right_f2.png",
+        "decor-assets/native/decor_broom_rack_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 4,
+        "y": 12,
+        "w": 119,
+        "h": 92
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "master": "decor-assets/masters/decor_broom_rack.png",
+      "width": 128,
+      "height": 128,
+      "pivotX": 64,
+      "pivotY": 104,
+      "bounds": {
+        "x": 5,
+        "y": 12,
+        "w": 119,
+        "h": 92
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "sourceSha256": "78d97ac2e11a92df54e599028d856167921e3f2ca047fd8c6d58384f0c922d3c",
+      "nativeSha256": "1168e13c58a7217cb1bbd56c29516810995250c0564ba4b1e71a83da05711479",
+      "generationPromptId": "decor_broom_rack"
+    },
+    {
+      "id": "decor_cauldron",
+      "kind": "decor",
+      "storeItem": true,
+      "rotatable": true,
+      "file": "decor-assets/native/decor_cauldron.png",
+      "frames": [
+        "decor-assets/native/decor_cauldron_f0.png",
+        "decor-assets/native/decor_cauldron_f1.png",
+        "decor-assets/native/decor_cauldron_f2.png",
+        "decor-assets/native/decor_cauldron_f3.png"
+      ],
+      "durations": [
+        420,
+        240,
+        420,
+        240
+      ],
+      "rightFile": "decor-assets/native/decor_cauldron_right.png",
+      "rightFrames": [
+        "decor-assets/native/decor_cauldron_right_f0.png",
+        "decor-assets/native/decor_cauldron_right_f1.png",
+        "decor-assets/native/decor_cauldron_right_f2.png",
+        "decor-assets/native/decor_cauldron_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 4,
+        "y": 4,
+        "w": 55,
+        "h": 76
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "master": "decor-assets/masters/decor_cauldron.png",
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "bounds": {
+        "x": 5,
+        "y": 4,
+        "w": 55,
+        "h": 76
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "sourceSha256": "b8e96e0635f982281b70b08292e226d5274ce20f459c3e4421e9b3de7b08a230",
+      "nativeSha256": "2f36b5f84fe36ffe5d87110a822e78b5856bae165b1e88305642d15801cc3935",
+      "generationPromptId": "decor_cauldron"
+    },
+    {
+      "id": "decor_mandrake_planter",
+      "kind": "decor",
+      "storeItem": true,
+      "rotatable": true,
+      "file": "decor-assets/native/decor_mandrake_planter.png",
+      "frames": [
+        "decor-assets/native/decor_mandrake_planter_f0.png",
+        "decor-assets/native/decor_mandrake_planter_f1.png",
+        "decor-assets/native/decor_mandrake_planter_f2.png",
+        "decor-assets/native/decor_mandrake_planter_f3.png"
+      ],
+      "durations": [
+        480,
+        220,
+        440,
+        220
+      ],
+      "rightFile": "decor-assets/native/decor_mandrake_planter_right.png",
+      "rightFrames": [
+        "decor-assets/native/decor_mandrake_planter_right_f0.png",
+        "decor-assets/native/decor_mandrake_planter_right_f1.png",
+        "decor-assets/native/decor_mandrake_planter_right_f2.png",
+        "decor-assets/native/decor_mandrake_planter_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 5,
+        "y": 4,
+        "w": 54,
+        "h": 76
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "master": "decor-assets/masters/decor_mandrake_planter.png",
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "bounds": {
+        "x": 5,
+        "y": 4,
+        "w": 54,
+        "h": 76
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "sourceSha256": "c48fc95f5b8cd2b8373c7455bfe27d7cf6d58fb71361a1bec8176005df72eb0b",
+      "nativeSha256": "752587ed26c007c359640d8ccb8e532d8ddbb20d98a9c1a80879eefb1f101f23",
+      "generationPromptId": "decor_mandrake_planter"
+    },
+    {
+      "id": "decor_floating_candles",
+      "kind": "decor",
+      "storeItem": true,
+      "rotatable": true,
+      "file": "decor-assets/native/decor_floating_candles.png",
+      "frames": [
+        "decor-assets/native/decor_floating_candles_f0.png",
+        "decor-assets/native/decor_floating_candles_f1.png",
+        "decor-assets/native/decor_floating_candles_f2.png",
+        "decor-assets/native/decor_floating_candles_f3.png"
+      ],
+      "durations": [
+        400,
+        220,
+        400,
+        220
+      ],
+      "rightFile": "decor-assets/native/decor_floating_candles_right.png",
+      "rightFrames": [
+        "decor-assets/native/decor_floating_candles_right_f0.png",
+        "decor-assets/native/decor_floating_candles_right_f1.png",
+        "decor-assets/native/decor_floating_candles_right_f2.png",
+        "decor-assets/native/decor_floating_candles_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 24,
+        "y": 5,
+        "w": 31,
+        "h": 83
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "master": "decor-assets/masters/decor_floating_candles.png",
+      "width": 80,
+      "height": 104,
+      "pivotX": 40,
+      "pivotY": 88,
+      "bounds": {
+        "x": 25,
+        "y": 5,
+        "w": 31,
+        "h": 83
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "sourceSha256": "47de359906d49080f36d87ea48a70fc2b290b51c8468f9733259316385dc7c97",
+      "nativeSha256": "d299f5e8e74a96f07b7e67153d25d13e0c1080c35083129f5f36614415a5e97a",
+      "generationPromptId": "decor_floating_candles"
+    },
+    {
+      "id": "decor_vine_arch",
+      "kind": "decor",
+      "storeItem": true,
+      "rotatable": true,
+      "file": "decor-assets/native/decor_vine_arch.png",
+      "frames": [
+        "decor-assets/native/decor_vine_arch_f0.png",
+        "decor-assets/native/decor_vine_arch_f1.png",
+        "decor-assets/native/decor_vine_arch_f2.png",
+        "decor-assets/native/decor_vine_arch_f3.png"
+      ],
+      "durations": [
+        560,
+        280,
+        520,
+        280
+      ],
+      "rightFile": "decor-assets/native/decor_vine_arch_right.png",
+      "rightFrames": [
+        "decor-assets/native/decor_vine_arch_right_f0.png",
+        "decor-assets/native/decor_vine_arch_right_f1.png",
+        "decor-assets/native/decor_vine_arch_right_f2.png",
+        "decor-assets/native/decor_vine_arch_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 28,
+        "y": 5,
+        "w": 72,
+        "h": 99
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "master": "decor-assets/masters/decor_vine_arch.png",
+      "width": 128,
+      "height": 128,
+      "pivotX": 64,
+      "pivotY": 104,
+      "bounds": {
+        "x": 28,
+        "y": 5,
+        "w": 72,
+        "h": 99
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "sourceSha256": "74a5d217c97f1c0eeacc4c6d64d69d7df22089e8e4fb5f003b10426d415dc9db",
+      "nativeSha256": "8e412bfb2a9e03d29e86e0b66a3b0ab6689373b660a81554a1315c34d71dd7c3",
+      "generationPromptId": "decor_vine_arch"
+    },
+    {
+      "id": "gardener_friend",
+      "kind": "character",
+      "storeItem": false,
+      "rotatable": false,
+      "file": "decor-assets/native/gardener_friend.png",
+      "frames": [
+        "decor-assets/native/gardener_friend_f0.png",
+        "decor-assets/native/gardener_friend_f1.png",
+        "decor-assets/native/gardener_friend_f2.png",
+        "decor-assets/native/gardener_friend_f3.png"
+      ],
+      "durations": [
+        640,
+        320,
+        220,
+        360
+      ],
+      "master": "decor-assets/masters/gardener_friend.png",
+      "width": 72,
+      "height": 108,
+      "pivotX": 36,
+      "pivotY": 96,
+      "bounds": {
+        "x": 11,
+        "y": 5,
+        "w": 51,
+        "h": 91
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "sourceSha256": "f76921fd46d2dd815508c673e64286c99f664938d7473a9840bebc921b02276e",
+      "nativeSha256": "69bb16b74c9bdb9545f6c4454af7eb8a5c18f136707e1aa861e8c22d025da164",
+      "generationPromptId": "gardener_friend"
+    },
+    {
+      "id": "owl_post",
+      "kind": "scenery",
+      "storeItem": false,
+      "rotatable": false,
+      "file": "decor-assets/native/owl_post.png",
+      "frames": [
+        "decor-assets/native/owl_post_f0.png",
+        "decor-assets/native/owl_post_f1.png",
+        "decor-assets/native/owl_post_f2.png",
+        "decor-assets/native/owl_post_f3.png"
+      ],
+      "durations": [
+        580,
+        280,
+        200,
+        320
+      ],
+      "master": "decor-assets/masters/owl_post.png",
+      "width": 72,
+      "height": 96,
+      "pivotX": 36,
+      "pivotY": 88,
+      "bounds": {
+        "x": 14,
+        "y": 5,
+        "w": 44,
+        "h": 83
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "sourceSha256": "69b650045bb952b0f0d9203a953fa8ffe4d6a4075a8236208f4a150bf6f33ba8",
+      "nativeSha256": "76b629b1d18cc56aceecd9fa1e89df675ed03edd71a731aa7244727a5b4bd3de",
+      "generationPromptId": "owl_post"
+    },
+    {
+      "id": "herbology_greenhouse",
+      "kind": "scenery",
+      "storeItem": false,
+      "rotatable": false,
+      "file": "decor-assets/native/herbology_greenhouse.png",
+      "frames": [
+        "decor-assets/native/herbology_greenhouse_f0.png",
+        "decor-assets/native/herbology_greenhouse_f1.png",
+        "decor-assets/native/herbology_greenhouse_f2.png",
+        "decor-assets/native/herbology_greenhouse_f3.png"
+      ],
+      "durations": [
+        680,
+        340,
+        640,
+        340
+      ],
+      "master": "decor-assets/masters/herbology_greenhouse.png",
+      "width": 156,
+      "height": 152,
+      "pivotX": 78,
+      "pivotY": 118,
+      "bounds": {
+        "x": 10,
+        "y": 4,
+        "w": 136,
+        "h": 138
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "sourceSha256": "86339a599766213be55daed0bf7e1e6a96b6e1f71a5a8470c5d6e29e35927031",
+      "nativeSha256": "a8c2c9d301d4d6d26e65928c865b396f449adb8c35928a69e4f8a588d4a3fac8",
+      "generationPromptId": "herbology_greenhouse"
+    }
+  ]
+}

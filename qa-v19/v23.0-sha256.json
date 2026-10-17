@@ -1,0 +1,28 @@
+{
+  "version": "23.0",
+  "generatedAt": "2026-10-14T16:19:00.957Z",
+  "files": {
+    "garden-v05/garden-events.mjs": "dcbf6398d30d746d3bf8befa84c28183bb2753a05aab8c07a3bb24ba491cfcf5",
+    "garden-v05/garden-quests.mjs": "2e71c6ee7317391c668d82dd67480dc3d6ed53bd4f1b9ad89af596b5a8c1c91a",
+    "garden-v05/garden-atmosphere.mjs": "cb3db63224ee33d7f17cabfd6e1fea3832228091dcffeae55fb8e8dce787af34",
+    "garden-v05/garden-tour.mjs": "2077b25b79612ee8feec5415977db8fbca0ab6a0c3800602954e7d12f0a5d234",
+    "garden-v05/garden-achievements.mjs": "dbba56fb8d06fdef0b7b6dcc563a94b1306cd6e08f11460ac53c9549610596d7",
+    "garden-v05/garden-postcard.mjs": "f7f2fdd3dd8f8cb6f6ddf8e3ebee27a066142dbc98b6e0d98e92a5a09609deed",
+    "garden-v05/garden-audio.mjs": "0b5c83794155f85d48da417ecb12528d276752f4f62a4398809a0e3890d2f2c5",
+    "garden-v05/hpvn-bridge.mjs": "077f8637ac8f2e5c7d251b4f45a57a8605acb14baebc89c041b3f22c687b5efb",
+    "garden-v05/scene-renderer.mjs": "571d1724a407997205727be1094f41a9f01a762c7800a49fc02e2a027767d8bf",
+    "garden-v05/progression-panels.mjs": "401646027b09b677224b011306ac96f5fd87a4bf377e754381a0abff3b04ee0c",
+    "garden-v05/wizard-ui.mjs": "b31801f7c33906d743439884299daf16169de48294d22cd07d21513acd6dd418",
+    "garden-v05/wizard-ui.css": "6203edfe64a9dc890d18e25024b9e33ab380e11b43b150ab1602b0e016f1b5f8",
+    "garden-v05/mobile-game.mjs": "afe1d3e9f0631bc4ceb46d83d6650f3c69e11dd1f76498c78c488356cb59dffa",
+    "garden-v05/index.html": "f2fe8637de01a34da213c4dd0379be6d4f7b43612d8ca7f00fbf169bbf865989",
+    "garden-v05/v20-features.test.mjs": "76124a281841befe42eaa54b1f8ea19908c2897896ca29d0666602e55f6c8c89",
+    "garden-v05/v21-features.test.mjs": "0595a2a033696f3f78795a69a867d2bd61ccd226923a602010ab52f140ccad13",
+    "garden-v05/v22-features.test.mjs": "aa93b91c5a8e5315c3a7c5b3830af66299eec20459a1bd506bfac4d83e8d886e",
+    "garden-v05/v23-features.test.mjs": "f9235c9da4282efef208a8dfc0a93c021d8dea9aa6bab45997d5b11b834ca9ce",
+    "qa-v19/ui-fixture.html": "c911414051f8de905c4a4d49384dea67029aafeba91839e2adcde703c32f5f57",
+    "qa-v19/mobile-fixture.mjs": "6a0bdfc23cd18ae586c64dcbcf21368f5dde7404f80805dd8f8402656c2d9ea9",
+    "qa-v19/embed-preview.html": "f08828f2978a5d69b1083c9caab448283004946526ef40fd612c3dd7a1c8fae1",
+    "qa-v19/HANDOFF-V23.0.md": "aaacd54e1b87e9bb5fc56888e83e7b54579f8587dbdd45d2aa12084a6f53737b"
+  }
+}

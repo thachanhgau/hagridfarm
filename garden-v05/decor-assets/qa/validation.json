@@ -1,0 +1,374 @@
+{
+  "version": 2,
+  "palette": [
+    "#231F2E",
+    "#4A3042",
+    "#735044",
+    "#A57554",
+    "#41465C",
+    "#687486",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A",
+    "#874056",
+    "#C75B4B",
+    "#ED8A45",
+    "#FFC36B",
+    "#3E3B70",
+    "#6961A6",
+    "#70A8B6",
+    "#B7DEE0"
+  ],
+  "alphaThreshold": 192,
+  "checks": [
+    {
+      "id": "decor_pumpkin_lantern",
+      "source": {
+        "file": "decor-assets/masters/decor_pumpkin_lantern.png",
+        "sha256": "d098e59b19e9e2061974c248a76017964ec53b5f91ee10ba3ae8fc8c1170357b",
+        "threshold": 192,
+        "bounds": {
+          "x": 232,
+          "y": 282,
+          "w": 568,
+          "h": 1069,
+          "count": 379954
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/decor_pumpkin_lantern.png",
+        "frames": 4,
+        "rightFrames": 4,
+        "width": 64,
+        "height": 96,
+        "pivotX": 32,
+        "pivotY": 80,
+        "drawWidth": 40,
+        "drawHeight": 76,
+        "scale": 0.07109448082319925,
+        "bounds": {
+          "x": 13,
+          "y": 4,
+          "w": 39,
+          "h": 76
+        },
+        "opaquePixelCount": 1916,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "b0328f8f7e34c5aae1f564f93f06fd57ca022a99885ad66a868e69fa6fe0f9f3"
+      }
+    },
+    {
+      "id": "decor_broom_rack",
+      "source": {
+        "file": "decor-assets/masters/decor_broom_rack.png",
+        "sha256": "78d97ac2e11a92df54e599028d856167921e3f2ca047fd8c6d58384f0c922d3c",
+        "threshold": 192,
+        "bounds": {
+          "x": 44,
+          "y": 162,
+          "w": 1241,
+          "h": 951,
+          "count": 496206
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/decor_broom_rack.png",
+        "frames": 4,
+        "rightFrames": 4,
+        "width": 128,
+        "height": 128,
+        "pivotX": 64,
+        "pivotY": 104,
+        "drawWidth": 120,
+        "drawHeight": 92,
+        "scale": 0.09669621273166801,
+        "bounds": {
+          "x": 5,
+          "y": 12,
+          "w": 119,
+          "h": 92
+        },
+        "opaquePixelCount": 4606,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "1168e13c58a7217cb1bbd56c29516810995250c0564ba4b1e71a83da05711479"
+      }
+    },
+    {
+      "id": "decor_cauldron",
+      "source": {
+        "file": "decor-assets/masters/decor_cauldron.png",
+        "sha256": "b8e96e0635f982281b70b08292e226d5274ce20f459c3e4421e9b3de7b08a230",
+        "threshold": 192,
+        "bounds": {
+          "x": 147,
+          "y": 108,
+          "w": 842,
+          "h": 1166,
+          "count": 545880
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/decor_cauldron.png",
+        "frames": 4,
+        "rightFrames": 4,
+        "width": 64,
+        "height": 96,
+        "pivotX": 32,
+        "pivotY": 80,
+        "drawWidth": 55,
+        "drawHeight": 76,
+        "scale": 0.06518010291595197,
+        "bounds": {
+          "x": 5,
+          "y": 4,
+          "w": 55,
+          "h": 76
+        },
+        "opaquePixelCount": 2315,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "2f36b5f84fe36ffe5d87110a822e78b5856bae165b1e88305642d15801cc3935"
+      }
+    },
+    {
+      "id": "decor_mandrake_planter",
+      "source": {
+        "file": "decor-assets/masters/decor_mandrake_planter.png",
+        "sha256": "c48fc95f5b8cd2b8373c7455bfe27d7cf6d58fb71361a1bec8176005df72eb0b",
+        "threshold": 192,
+        "bounds": {
+          "x": 113,
+          "y": 56,
+          "w": 918,
+          "h": 1297,
+          "count": 664701
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/decor_mandrake_planter.png",
+        "frames": 4,
+        "rightFrames": 4,
+        "width": 64,
+        "height": 96,
+        "pivotX": 32,
+        "pivotY": 80,
+        "drawWidth": 54,
+        "drawHeight": 76,
+        "scale": 0.058596761757902856,
+        "bounds": {
+          "x": 5,
+          "y": 4,
+          "w": 54,
+          "h": 76
+        },
+        "opaquePixelCount": 2281,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "752587ed26c007c359640d8ccb8e532d8ddbb20d98a9c1a80879eefb1f101f23"
+      }
+    },
+    {
+      "id": "decor_floating_candles",
+      "source": {
+        "file": "decor-assets/masters/decor_floating_candles.png",
+        "sha256": "47de359906d49080f36d87ea48a70fc2b290b51c8468f9733259316385dc7c97",
+        "threshold": 192,
+        "bounds": {
+          "x": 317,
+          "y": 120,
+          "w": 464,
+          "h": 1204,
+          "count": 237353
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/decor_floating_candles.png",
+        "frames": 4,
+        "rightFrames": 4,
+        "width": 80,
+        "height": 104,
+        "pivotX": 40,
+        "pivotY": 88,
+        "drawWidth": 32,
+        "drawHeight": 84,
+        "scale": 0.06976744186046512,
+        "bounds": {
+          "x": 25,
+          "y": 5,
+          "w": 31,
+          "h": 83
+        },
+        "opaquePixelCount": 1135,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "d299f5e8e74a96f07b7e67153d25d13e0c1080c35083129f5f36614415a5e97a"
+      }
+    },
+    {
+      "id": "decor_vine_arch",
+      "source": {
+        "file": "decor-assets/masters/decor_vine_arch.png",
+        "sha256": "74a5d217c97f1c0eeacc4c6d64d69d7df22089e8e4fb5f003b10426d415dc9db",
+        "threshold": 192,
+        "bounds": {
+          "x": 216,
+          "y": 20,
+          "w": 863,
+          "h": 1205,
+          "count": 445776
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/decor_vine_arch.png",
+        "frames": 4,
+        "rightFrames": 4,
+        "width": 128,
+        "height": 128,
+        "pivotX": 64,
+        "pivotY": 104,
+        "drawWidth": 72,
+        "drawHeight": 100,
+        "scale": 0.08298755186721991,
+        "bounds": {
+          "x": 28,
+          "y": 5,
+          "w": 72,
+          "h": 99
+        },
+        "opaquePixelCount": 3051,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "8e412bfb2a9e03d29e86e0b66a3b0ab6689373b660a81554a1315c34d71dd7c3"
+      }
+    },
+    {
+      "id": "gardener_friend",
+      "source": {
+        "file": "decor-assets/masters/gardener_friend.png",
+        "sha256": "f76921fd46d2dd815508c673e64286c99f664938d7473a9840bebc921b02276e",
+        "threshold": 192,
+        "bounds": {
+          "x": 126,
+          "y": 68,
+          "w": 633,
+          "h": 1143,
+          "count": 500971
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/gardener_friend.png",
+        "frames": 4,
+        "rightFrames": 0,
+        "width": 72,
+        "height": 108,
+        "pivotX": 36,
+        "pivotY": 96,
+        "drawWidth": 51,
+        "drawHeight": 92,
+        "scale": 0.0804899387576553,
+        "bounds": {
+          "x": 11,
+          "y": 5,
+          "w": 51,
+          "h": 91
+        },
+        "opaquePixelCount": 3237,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "69bb16b74c9bdb9545f6c4454af7eb8a5c18f136707e1aa861e8c22d025da164"
+      }
+    },
+    {
+      "id": "owl_post",
+      "source": {
+        "file": "decor-assets/masters/owl_post.png",
+        "sha256": "69b650045bb952b0f0d9203a953fa8ffe4d6a4075a8236208f4a150bf6f33ba8",
+        "threshold": 192,
+        "bounds": {
+          "x": 172,
+          "y": 102,
+          "w": 570,
+          "h": 1093,
+          "count": 318676
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/owl_post.png",
+        "frames": 4,
+        "rightFrames": 0,
+        "width": 72,
+        "height": 96,
+        "pivotX": 36,
+        "pivotY": 88,
+        "drawWidth": 44,
+        "drawHeight": 84,
+        "scale": 0.0768526989935956,
+        "bounds": {
+          "x": 14,
+          "y": 5,
+          "w": 44,
+          "h": 83
+        },
+        "opaquePixelCount": 1888,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "76b629b1d18cc56aceecd9fa1e89df675ed03edd71a731aa7244727a5b4bd3de"
+      }
+    },
+    {
+      "id": "herbology_greenhouse",
+      "source": {
+        "file": "decor-assets/masters/herbology_greenhouse.png",
+        "sha256": "86339a599766213be55daed0bf7e1e6a96b6e1f71a5a8470c5d6e29e35927031",
+        "threshold": 192,
+        "bounds": {
+          "x": 30,
+          "y": 30,
+          "w": 964,
+          "h": 979,
+          "count": 656127
+        }
+      },
+      "native": {
+        "file": "decor-assets/native/herbology_greenhouse.png",
+        "frames": 4,
+        "rightFrames": 0,
+        "width": 156,
+        "height": 152,
+        "pivotX": 78,
+        "pivotY": 118,
+        "drawWidth": 136,
+        "drawHeight": 138,
+        "scale": 0.14096016343207354,
+        "bounds": {
+          "x": 10,
+          "y": 4,
+          "w": 136,
+          "h": 138
+        },
+        "opaquePixelCount": 13043,
+        "partialAlpha": 0,
+        "outsidePalette": 0,
+        "edgeContact": false,
+        "sha256": "a8c2c9d301d4d6d26e65928c865b396f449adb8c35928a69e4f8a588d4a3fac8"
+      }
+    }
+  ]
+}

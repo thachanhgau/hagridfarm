@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>HPVN · Phòng Sinh Hoạt Chung — Khu Vườn Hagrid (V24.9 Embed Preview)</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0c1713;
+      --panel: #152820;
+      --gold: #e2c478;
+      --gold-soft: rgba(226, 196, 120, 0.35);
+      --text: #f3e8ce;
+      --muted: #a7beb0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1b3529 0%, #0b1511 100%);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    header.host-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 16px;
+      padding: 10px 18px;
+      background: rgba(16, 32, 25, 0.94);
+      border-bottom: 1px solid var(--gold-soft);
+    }
+    .host-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .host-brand strong {
+      font-size: 15px;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+    }
+    .host-brand span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .host-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    button {
+      background: linear-gradient(145deg, #244333, #172d22);
+      color: var(--text);
+      border: 1px solid var(--gold-soft);
+      border-radius: 8px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover {
+      border-color: var(--gold);
+      background: #2c523e;
+    }
+    .embed-workspace {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 12px;
+      padding: 12px;
+      min-height: calc(100vh - 58px);
+    }
+    @media (max-width: 960px) {
+      .embed-workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+    .iframe-frame {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid var(--gold-soft);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+      background: #142620;
+      min-height: 560px;
+      position: relative;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      border: 0;
+      display: block;
+    }
+    aside.floo-dock {
+      background: var(--panel);
+      border: 1px solid var(--gold-soft);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    aside.floo-dock h2 {
+      margin: 0;
+      font-size: 14px;
+      color: var(--gold);
+    }
+    aside.floo-dock small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .floo-feed {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+      max-height: 480px;
+      padding-right: 4px;
+    }
+    .floo-msg {
+      padding: 9px 11px;
+      border-radius: 10px;
+      background: rgba(11, 23, 18, 0.78);
+      border: 1px solid rgba(226, 196, 120, 0.25);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .floo-msg b {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 3px;
+      font-size: 11px;
+    }
+
+    /* Compact host controls: the garden keeps the screen. */
+    header.host-bar{position:relative;z-index:5;flex-wrap:nowrap;gap:12px;padding:8px 16px;min-height:68px;background:linear-gradient(120deg,#10241d,#192e24);box-shadow:0 3px 16px #0006}
+    .host-brand{gap:9px;min-width:0}.host-brand strong{font:600 16px Georgia,serif;white-space:nowrap}.host-crest{display:grid;place-items:center;width:40px;height:44px;color:#ead39c;border:1px solid #9e905c;clip-path:polygon(0 0,100% 0,100% 76%,50% 100%,0 76%);background:#263b2b;font:26px Georgia,serif}
+    #bridgeStatus{width:7px;height:7px;border-radius:50%;background:#ba9a57;flex:none;font-size:0}#bridgeStatus.ready{background:#b4d587;box-shadow:0 0 8px #b4d58760}
+    .host-controls{gap:6px;flex-wrap:nowrap}.host-tab{width:74px;min-height:50px;padding:4px;display:grid;place-items:center;gap:3px;border:1px solid transparent;border-radius:5px;background:transparent;font-size:10px;color:#d5d8bb}.host-tab svg{width:24px;height:24px;stroke:#d9c68d;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}.host-tab:hover,.host-tab[aria-expanded=true]{background:#344a34;border-color:#af9a63;color:#fff0ca}
+    .host-picker{position:absolute;top:calc(100% + 7px);right:12px;width:min(420px,calc(100vw - 24px));padding:12px;background:#10261ff5;border:1px solid #a38d58;border-radius:8px;box-shadow:0 16px 48px #0009,inset 0 0 0 3px #263c2c;backdrop-filter:blur(12px)}
+    [hidden]{display:none!important}.picker-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.picker-heading strong{font:600 18px Georgia,serif;color:#ead39c}.picker-close{width:44px;height:44px;padding:0;font-size:25px;border:0;background:transparent}.picker-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.picker-grid.weather{grid-template-columns:repeat(4,minmax(0,1fr))}.scene-choice{position:relative;min-width:0;height:100px;overflow:hidden;padding:0;border-radius:5px;border-color:#6c7853;background:#263d2c}.scene-choice img{width:100%;height:100%;object-fit:cover;image-rendering:pixelated;transition:transform .2s}.scene-choice span{position:absolute;inset:auto 0 0;padding:21px 3px 8px;background:linear-gradient(transparent,#071c15);font-size:12px;color:#fff1d5;text-shadow:0 1px 2px #000}.scene-choice:hover img{transform:scale(1.06)}.scene-choice:focus-visible,.host-tab:focus-visible,.picker-close:focus-visible{outline:2px solid #ffe1a0;outline-offset:3px}
+    .time-choices{display:flex;gap:8px;margin-top:10px}.time-choices button{flex:1;min-height:44px;font-size:12px}.home-choice{width:100%;min-height:44px;margin-top:10px}.embed-workspace{min-height:calc(100vh - 68px)}
+    @media(max-width:600px){header.host-bar{padding:6px 10px;gap:6px;min-height:64px}.host-brand strong{display:none}.host-crest{width:32px;height:38px;font-size:23px}.host-brand{gap:5px}.host-controls{margin-left:auto;gap:3px}.host-tab{width:74px;min-height:50px}.embed-workspace{padding:6px;gap:8px;min-height:calc(100vh - 64px)}.iframe-frame{border-radius:8px}.scene-choice{height:94px}}
+    @media(prefers-reduced-motion:reduce){.scene-choice img{transition:none}}
+  </style>
+</head>
+<body>
+<header class="host-bar"><div class="host-brand"><span class="host-crest" aria-hidden="true">H</span><strong>Khu Vườn Hagrid</strong><span id="bridgeStatus" role="status" aria-label="Đang kết nối" title="Đang kết nối"></span></div><nav class="host-controls" aria-label="Điều khiển khu vườn"><button class="host-tab" data-picker="events" aria-controls="events" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v13H4zM3 5h18v4H3zM12 5v16M12 5C5 5 5 0 9 2l3 3Zm0 0c7 0 7-5 3-3l-3 3Z"/></svg><span>Lễ hội</span></button><button class="host-tab" data-picker="scenery" aria-controls="scenery" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0"/></svg><span>Khung cảnh</span></button><button class="host-tab" data-picker="visits" aria-controls="visits" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm4 5-2 6-6 2 2-6 6-2Z"/></svg><span>Thăm vườn</span></button></nav><section class="host-picker" id="events" aria-label="Lễ hội" hidden><div class="picker-heading"><strong>Lễ hội</strong><button class="picker-close" aria-label="Đóng lựa chọn">×</button></div><div class="picker-grid"><button class="scene-choice" id="btnEventHalloween"><img src="../garden-v05/v24-art/event-halloween.webp" alt=""><span>Bí ngô</span></button><button class="scene-choice" id="btnEventYule"><img src="../garden-v05/v24-art/event-yule.webp" alt=""><span>Giáng sinh</span></button><button class="scene-choice" id="btnEventHerb"><img src="../garden-v05/v24-art/event-herbology.webp" alt=""><span>Thảo dược</span></button></div></section><section class="host-picker" id="scenery" aria-label="Khung cảnh" hidden><div class="picker-heading"><strong>Khung cảnh</strong><button class="picker-close" aria-label="Đóng lựa chọn">×</button></div><div class="picker-grid weather"><button class="scene-choice" id="btnClear"><img src="../garden-v05/v24-art/weather-clear.webp" alt=""><span>Nắng</span></button><button class="scene-choice" id="btnRain"><img src="../garden-v05/v24-art/weather-rain.webp" alt=""><span>Mưa</span></button><button class="scene-choice" id="btnAutumn"><img src="../garden-v05/v24-art/weather-autumn.webp" alt=""><span>Lá thu</span></button><button class="scene-choice" id="btnSnow"><img src="../garden-v05/v24-art/weather-snow.webp" alt=""><span>Tuyết</span></button></div><div class="time-choices" aria-label="Ánh sáng"><button id="btnDay">☀ Ngày</button><button id="btnDusk">◒ Chiều</button><button id="btnNight">☾ Đêm</button></div></section><section class="host-picker" id="visits" aria-label="Thăm vườn" hidden><div class="picker-heading"><strong>Thăm vườn</strong><button class="picker-close" aria-label="Đóng lựa chọn">×</button></div><div class="picker-grid"><button class="scene-choice" id="btnTourSprout"><img src="../garden-v05/v24-art/event-herbology.webp" alt=""><span>Sprout</span></button><button class="scene-choice" id="btnTourNewt"><img src="../garden-v05/v24-art/weather-rain.webp" alt=""><span>Newt</span></button><button class="scene-choice" id="btnTourCharlie"><img src="../garden-v05/v24-art/event-halloween.webp" alt=""><span>Charlie</span></button></div><button class="home-choice" id="btnHome">⌂ Về vườn</button></section></header>
+  <main class="embed-workspace">
+    <div class="iframe-frame">
+      <iframe id="gardenIframe" src="./ui-fixture.html?wallet=emulator&qa=1&level=100&view=overview&sceneControls=host&v=24.9.2" title="Khu Vườn Hagrid V24.9"></iframe>
+    </div>
+    <aside class="floo-dock">
+      <div>
+        <h2>🔥 Mạng Floo · Phòng Sinh Hoạt Chung</h2>
+        <small>Nhận trực tiếp thông điệp khoe vườn (`hpvn:garden:share-floo`) & đồng bộ Lễ hội / Thời tiết / Tham quan từ iframe Khu Vườn Hagrid.</small>
+      </div>
+      <div id="flooFeed" class="floo-feed">
+        <div class="floo-msg">
+          <b>Hệ thống Mạng Floo</b>
+          Bấm nút <b>✨ Khoe vườn lên Mạng Floo</b> (trong Menu hoặc Bưu thiếp) hoặc dùng thanh điều khiển phía trên để gửi lệnh qua `createHpvnHostBridge`.
+        </div>
+      </div>
+    </aside>
+  </main>
+  <script type="module">
+    import { createHpvnHostBridge } from '../garden-v05/hpvn-bridge.mjs?v=24.9';
+
+    const iframe = document.getElementById('gardenIframe');
+    const statusEl = document.getElementById('bridgeStatus');
+    const feedEl = document.getElementById('flooFeed');
+
+    function appendFlooCard(sender, text) {
+      const div = document.createElement('div');
+      div.className = 'floo-msg';
+      const b = document.createElement('b');
+      b.textContent = sender;
+      const span = document.createElement('div');
+      span.textContent = text;
+      div.append(b, span);
+      feedEl.prepend(div);
+    }
+
+    const hostBridge = createHpvnHostBridge({
+      iframe,
+      onReady(payload) {
+        statusEl.classList.add('ready');
+        statusEl.title = `Đã kết nối · Cấp ${payload?.level || 100}`;
+        statusEl.setAttribute('aria-label',statusEl.title);
+        appendFlooCard('Tín hiệu khởi tạo (hpvn:garden:ready)', `Khu vườn cấp ${payload?.level || 100} đã sẵn sàng (${payload?.keeperTitle || 'Người giữ vườn'}).`);
+      },
+      onShareFloo(payload) {
+        appendFlooCard(`Khoe vườn lên Mạng Floo · ${payload?.keeperTitle || ''}`, payload?.text || '');
+      },
+      onSnapshot(payload) {
+        appendFlooCard('Snapshot trạng thái', JSON.stringify(payload));
+      },
+    });
+
+    document.getElementById('btnEventHalloween').onclick = () => hostBridge.setEvent('event_halloween');
+    document.getElementById('btnEventYule').onclick = () => hostBridge.setEvent('event_yule');
+    document.getElementById('btnEventHerb').onclick = () => hostBridge.setEvent('event_herbology_fair');
+    document.getElementById('btnDay').onclick = () => hostBridge.setAtmosphere('day');
+    document.getElementById('btnDusk').onclick = () => hostBridge.setAtmosphere('dusk');
+    document.getElementById('btnNight').onclick = () => hostBridge.setAtmosphere('night');
+    document.getElementById('btnClear').onclick = () => hostBridge.setWeather('clear');
+    document.getElementById('btnRain').onclick = () => hostBridge.setWeather('rain');
+    document.getElementById('btnAutumn').onclick = () => hostBridge.setWeather('autumn');
+    document.getElementById('btnSnow').onclick = () => hostBridge.setWeather('snow');
+    document.getElementById('btnTourSprout').onclick = () => hostBridge.tourGarden('tour_sprout');
+    document.getElementById('btnTourNewt').onclick = () => hostBridge.tourGarden('tour_newt');
+    document.getElementById('btnTourCharlie').onclick = () => hostBridge.tourGarden('tour_charlie');
+    document.getElementById('btnHome').onclick = () => hostBridge.tourGarden(null);
+
+    let activeTab=null;
+    function closePicker(restoreFocus=false){
+      document.querySelectorAll('.host-picker').forEach(p=>p.hidden=true);
+      document.querySelectorAll('.host-tab').forEach(b=>b.setAttribute('aria-expanded','false'));
+      if(restoreFocus)activeTab?.focus();
+      activeTab=null;
+    }
+    document.querySelectorAll('.host-tab').forEach(b=>b.addEventListener('click',()=>{
+      const wasOpen=b.getAttribute('aria-expanded')==='true';closePicker();
+      if(!wasOpen){activeTab=b;b.setAttribute('aria-expanded','true');const panel=document.getElementById(b.dataset.picker);panel.hidden=false;panel.querySelector('.scene-choice').focus();}
+    }));
+    document.querySelectorAll('.host-picker button').forEach(b=>b.addEventListener('click',()=>closePicker(true)));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closePicker(true);});
+    document.addEventListener('pointerdown',e=>{if(!e.target.closest('.host-bar'))closePicker();});
+    window.addEventListener('blur',()=>closePicker());
+  </script>
+</body>
+</html>

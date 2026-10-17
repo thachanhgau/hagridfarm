@@ -1,0 +1,281 @@
+.v24-events-panel,
+.v24-profile-view,
+.v24-settings-view,
+.v24-qa-tools,
+.v24-affinity-section,
+.v24-guestbook-section,
+.v24-scenery {
+  display: grid;
+  gap: 14px;
+}
+
+.v24-event-selection {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.v24-event-choice {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  text-align: left;
+}
+
+.v24-event-choice-art,
+.v24-event-hero-art,
+.v24-event-art-placeholder {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: #192d29;
+}
+
+.v24-event-art-placeholder {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #20342d, #755a35 55%, #182b31);
+}
+
+.v24-event-choice-label {
+  padding: 0 10px 10px;
+  font-weight: 700;
+}
+
+.v24-event-hero {
+  overflow: hidden;
+  gap: 10px;
+}
+
+.v24-event-hero-art {
+  max-height: 240px;
+  object-position: center;
+}
+
+.v24-event-hero-title {
+  margin: 0;
+  padding: 0 14px 14px;
+  font-size: clamp(18px, 4vw, 25px);
+}
+
+.v24-event-progress {
+  display: grid;
+  gap: 10px;
+}
+
+.v24-event-progress-bar {
+  margin: 0;
+}
+
+.v24-event-milestones {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.v24-event-milestone {
+  min-width: 0;
+  padding: 10px;
+  gap: 8px;
+}
+
+.v24-event-milestone-head,
+.v24-affinity-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.v24-event-milestone .tour-card-title {
+  display: block;
+  min-height: 2.4em;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.v24-event-reward,
+.v24-affinity-reward {
+  display: block;
+  color: #f5d69a;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.v24-menu-primary,
+.v24-menu-secondary,
+.v24-settings-preferences {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.v24-menu-primary button,
+.v24-menu-secondary button {
+  min-height: 46px;
+}
+
+.v24-setting-field {
+  display: grid;
+  gap: 5px;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.v24-setting-field select {
+  width: 100%;
+}
+
+.v24-settings-view > .panel-toolbar,
+.v24-profile-view > .panel-toolbar,
+.v24-qa-tools > .panel-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.v24-settings-view > .panel-toolbar button,
+.v24-profile-view > .panel-toolbar button,
+.v24-qa-tools > .panel-toolbar button {
+  flex: 1 1 120px;
+}
+
+.v24-weather-grid,
+.v24-time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.v24-time-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.v24-art-choice {
+  position: relative;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  gap: 5px;
+}
+
+.v24-art-choice img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.v24-art-choice span {
+  padding: 0 8px 8px;
+}
+
+.v24-art-choice i {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  min-width: 22px;
+  min-height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #173d2e;
+  color: #ffe8ac;
+  font-style: normal;
+}
+
+.v24-owl-row {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 8px 10px;
+}
+
+.v24-owl-row-art {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #18352d;
+}
+
+.v24-owl-row-copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.v24-owl-row-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.v24-owl-row-progress,
+.v24-owl-row-reward {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.v24-owl-row-reward {
+  color: #f5d69a;
+  font-weight: 700;
+}
+
+.v24-owl-row-action {
+  min-height: 34px;
+  padding: 6px 9px;
+}
+
+@media (max-width: 680px) {
+  .v24-event-milestones {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v24-menu-primary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .v24-weather-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .v24-owl-row {
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+  }
+
+  .v24-owl-row-action {
+    grid-column: 2 / -1;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 420px) {
+  .v24-event-selection {
+    grid-template-columns: repeat(4, minmax(72px, 1fr));
+    gap: 7px;
+  }
+
+  .v24-event-milestones,
+  .v24-time-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v24-owl-row {
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+
+  .v24-owl-row-progress,
+  .v24-owl-row-reward,
+  .v24-owl-row-action {
+    grid-column: 2;
+  }
+}

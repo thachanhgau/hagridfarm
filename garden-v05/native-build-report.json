@@ -1,0 +1,98 @@
+[
+  {
+    "id": "pumpkin",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "strawberry",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "daisy",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "dittany",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "puffapod",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "mandrake",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "puffskein",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "bowtruckle",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "niffler",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "hippogriff",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "dragon",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  },
+  {
+    "id": "three-headed-dog",
+    "frames": 12,
+    "partialAlpha": 0,
+    "outsidePalette": 0,
+    "clipped": 0,
+    "edgeContact": 0
+  }
+]

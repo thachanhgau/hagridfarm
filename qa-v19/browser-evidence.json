@@ -1,0 +1,176 @@
+{
+  "version": 19,
+  "verifiedAt": "2026-10-14T05:08:48.105Z",
+  "tests": {
+    "passed": 85,
+    "failed": 0
+  },
+  "viewports": [
+    {
+      "width": 320,
+      "height": 720,
+      "level": 100,
+      "out": "qa-320x720.png",
+      "size": [
+        320,
+        720
+      ],
+      "stageName": "Đại khu vườn Hagrid",
+      "noPageOverflow": true,
+      "dockInside": true,
+      "wholeActiveGardenFits": true,
+      "fitScale": 0.136406,
+      "zoomOutFlooredAtOverview": true,
+      "backdropReady": true,
+      "backdropRepeat": "no-repeat, repeat",
+      "backdropLayers": 2,
+      "worldRect": {
+        "left": -4,
+        "top": 240,
+        "width": 349,
+        "height": 196
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "level": 100,
+      "out": "qa-390x844.png",
+      "size": [
+        390,
+        844
+      ],
+      "stageName": "Đại khu vườn Hagrid",
+      "noPageOverflow": true,
+      "dockInside": true,
+      "wholeActiveGardenFits": true,
+      "fitScale": 0.168664,
+      "zoomOutFlooredAtOverview": true,
+      "backdropReady": true,
+      "backdropRepeat": "no-repeat, repeat",
+      "backdropLayers": 2,
+      "worldRect": {
+        "left": -7,
+        "top": 280,
+        "width": 432,
+        "height": 243
+      }
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "level": 100,
+      "out": "qa-667x375.png",
+      "size": [
+        667,
+        375
+      ],
+      "stageName": "Đại khu vườn Hagrid",
+      "noPageOverflow": true,
+      "dockInside": true,
+      "wholeActiveGardenFits": true,
+      "fitScale": 0.141445,
+      "zoomOutFlooredAtOverview": true,
+      "backdropReady": true,
+      "backdropRepeat": "no-repeat, repeat",
+      "backdropLayers": 2,
+      "worldRect": {
+        "left": 164,
+        "top": 117,
+        "width": 362,
+        "height": 204
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "level": 100,
+      "out": "qa-1280x720.png",
+      "size": [
+        1280,
+        720
+      ],
+      "stageName": "Đại khu vườn Hagrid",
+      "noPageOverflow": true,
+      "dockInside": true,
+      "wholeActiveGardenFits": true,
+      "fitScale": 0.323194,
+      "zoomOutFlooredAtOverview": true,
+      "backdropReady": true,
+      "backdropRepeat": "no-repeat, repeat",
+      "backdropLayers": 2,
+      "worldRect": {
+        "left": 252,
+        "top": 121,
+        "width": 827,
+        "height": 465
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "level": 1,
+      "out": "qa-lvl1-390x844.png",
+      "size": [
+        390,
+        844
+      ],
+      "stageName": "Sân nhỏ bên lều",
+      "noPageOverflow": true,
+      "dockInside": true,
+      "wholeActiveGardenFits": true,
+      "fitScale": 0.283721,
+      "zoomOutFlooredAtOverview": true,
+      "backdropReady": true,
+      "backdropRepeat": "no-repeat, repeat",
+      "backdropLayers": 2,
+      "worldRect": {
+        "left": -157,
+        "top": 272,
+        "width": 726,
+        "height": 409
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "level": 1,
+      "out": "qa-lvl1-1280x720.png",
+      "size": [
+        1280,
+        720
+      ],
+      "stageName": "Sân nhỏ bên lều",
+      "noPageOverflow": true,
+      "dockInside": true,
+      "wholeActiveGardenFits": true,
+      "fitScale": 0.524044,
+      "zoomOutFlooredAtOverview": true,
+      "backdropReady": true,
+      "backdropRepeat": "no-repeat, repeat",
+      "backdropLayers": 2,
+      "worldRect": {
+        "left": -10,
+        "top": 115,
+        "width": 1342,
+        "height": 755
+      }
+    }
+  ],
+  "browserChecks": [
+    "default whole-garden frame at levels 1 and 100 across 320x720, 390x844, 667x375, 1280x720",
+    "zoom-out at floor leaves transform unchanged; zoom-in and Home preserved from V18",
+    "non-repeating western exit trail continuation + repeating road-free forest wallpaper (backdropLayers: 2, backgroundRepeat: no-repeat, repeat)",
+    "synchronous WebP data-URL fallback eliminates blank green flash before Blob upgrade",
+    "curved dirt exit trail from active gate with canopy clearance and outer-shoulder signpost",
+    "smooth tapered background hills and active stageBoundary forest ground/tree tint on stages 1-5"
+  ],
+  "directConsoleErrors": [],
+  "failedRequests": [],
+  "dataTarget": "Synthetic read-only UI fixture; no account operations, resets or storage writes",
+  "limits": [
+    "No physical-device performance proof",
+    "Main account recovery remains BLOCKED",
+    "No production integration/deployment"
+  ]
+}

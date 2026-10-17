@@ -1,0 +1,28 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "transparent_background": true,
+  "notes": "Exact built-in tool prompts. Runtime alpha/palette/pivot independently audited. Prompt compliance is not assumed: Bowtruckle source frame 11 still changes arm and remains excluded from its action clip.",
+  "assets": [
+    {
+      "output": "masters/bowtruckle-v03.png",
+      "input": "masters/bowtruckle.png",
+      "prompt": "Use case: precise-object-edit. Edit this Bowtruckle sprite sheet, preserving its existing cute wooden creature identity, 4 columns by 3 rows, exact ordering of 12 poses: top 4 growth stages, middle 4 idle, bottom 4 waving. Retouch only readability and leaf details: stout continuous branch limbs/trunk at least 3 logical pixels at a 64x64 adult scale, two broad crisp leaves with simple contiguous color clusters and 1 clear vein, two visible dark eyes. No stray isolated leaf/fur pixels, no wispy antialiasing. Adult size stable across rows2/3, feet at same baseline within each cell. In bottom row all waving uses creature's left arm (viewer right); keep same stance. No added characters/props. Every sprite entirely separate with generous transparent gaps, no shadow haze, truly transparent background. Strict hard edged pixel art, warm olive/wood palette, no labels/grids/text. Preserve all12 sprites; not a redesign."
+    },
+    {
+      "output": "masters/puffskein-v03.png",
+      "input": "masters/puffskein-alpha-v02.png",
+      "prompt": "Use case precise-object-edit. Retouch this exact12 frame Puffskein sheet, same 4cols3rows same poses/identity/sizes/growth, round golden furball two tiny feet black eyes pink mouth. Simplify fur into larger crisp connected pixel tufts, no scattered thin spikes or noisy interior freckles; intended adult26x26 pixel sprite. 3 warmgold values+darkplum outline. Remove ALL brown background/halo to genuine transparent alpha outside every silhouette, no shadows. Row1 fourgrowthsizes, row2 stableadult idle blink, row3 squeeze hop return, same facial features. Keep feet baseline except airborne pose row3col3. Separate full sprites with padding. Strict hard pixel edges no glow/no gradient/no text."
+    },
+    {
+      "output": "masters/mandrake-v03.png",
+      "input": "masters/mandrake-seed-fix.png",
+      "prompt": "Use case precise-object-edit. Retouch ONLY leaf pixel details in this Mandrake12sprite sheet. Preserve 4columns3rows, each pose/growth/body/face/roots exact unchanged. Simplify leaves into crisp coherent connected pixel clusters of olivegreen with darkgreen edges and single clear vein, broad stems, no speckles or broken leaf outlines. Intended adult sprite54x66px, details must survive downsample. Fourgrowthstages including seed first, fouridle, fouraction. Every frame isolated with padding same feet baseline as original. Genuine transparent background, no shadows/glow/text. Keep existing cute identity and warm palette."
+    },
+    {
+      "output": "environment/props-v03.png",
+      "input": "environment/garden-background.png",
+      "prompt": "Use case: background-extraction. Extract and retouch the props of this exact garden concept into a transparent game prop atlas. Preserve its warm cute pixelart style and objects, same olivegreen and plumshadow colors. 3 columns x2 rows evenly spaced isolated props, no overlap, no background scenery. Top left: one broadleaf tree from scene with simplified crisp leaf clusters and trunk; top middle: one pointed evergreen from scene; top right: the scene's small rock lined lily pond in exact isometric2:1 footprint. Bottom left: one wood fence segment receding up-right with stone endpost; bottom middle: one wood fence segment receding up-left with stone endpost; bottom right: the front wooden doublegate with two stoneposts and lanterns. All objects fully visible generous padding, genuinely transparent outside, no text/grid. Flat ground plane, no terrain chunks beneath tree/fences. Clean connected pixel clusters for eventual small sprites, no atmospheric gradients. This is extraction of existing scene identity, no new structures or characters."
+    }
+  ]
+}

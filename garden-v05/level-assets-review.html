@@ -1,0 +1,235 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Garden level asset review</title>
+<style>
+  :root { color-scheme: light dark; font: 14px/1.4 system-ui, sans-serif; }
+  body { margin: 24px; background: #f3eee5; color: #231f2e; }
+  h1, h2, h3 { margin: 0 0 8px; } h2 { border-bottom: 2px solid #a57554; padding-bottom: 4px; }
+  h3 small, h2 small { font-weight: normal; opacity: .72; }
+  section { margin: 28px 0; } article { margin: 18px 0; padding: 12px; background: #fffaf0; border: 1px solid #d6d8bf; border-radius: 8px; }
+  .frames { display: grid; grid-template-columns: repeat(4, max-content); gap: 12px; align-items: start; }
+  figure { margin: 0; min-width: 84px; } .swatch { display: grid; min-width: 84px; min-height: 84px; place-items: center; padding: 8px; border-radius: 6px; }
+  .swatch.light { background: #fff; } .swatch.dark { background: #231f2e; }
+  img { display: block; image-rendering: pixelated; image-rendering: crisp-edges; } figcaption { margin-top: 3px; font-size: 11px; opacity: .75; }
+  .warning { padding: 10px 14px; border-left: 4px solid #c75b4b; background: #ffe2d9; }
+  @media (max-width: 900px) { .frames { grid-template-columns: repeat(2, max-content); } }
+</style>
+<h1>Garden level asset review</h1>
+<p>Status: <strong>complete: 8/8 source atlas groups</strong> · 24 items · 96 frames · 1× source pixels</p>
+<div class="warning"><strong>Extraction warnings</strong><ul><li>oats stage 1 reaches its detected cell edge; the atlas cut may cross its silhouette.</li><li>oats stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.</li><li>oats stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.</li><li>carrot stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.</li><li>mooncalf stage 0 reaches its detected cell edge; the atlas cut may cross its silhouette.</li><li>kneazle stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.</li></ul></div>
+<section><h2>masters-levels/crops-a.png <small>crop · 3 species</small></h2><article><h3>Yến mạch <small>oats · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/oats/frame-01.png" width="64" height="96" alt="oats stage 1 on light background"></div><figcaption>stage 1 · 14×11</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/oats/frame-01.png" width="64" height="96" alt="oats stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/oats/frame-02.png" width="64" height="96" alt="oats stage 2 on light background"></div><figcaption>stage 2 · 23×26</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/oats/frame-02.png" width="64" height="96" alt="oats stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/oats/frame-03.png" width="64" height="96" alt="oats stage 3 on light background"></div><figcaption>stage 3 · 43×57</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/oats/frame-03.png" width="64" height="96" alt="oats stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/oats/frame-04.png" width="64" height="96" alt="oats stage 4 on light background"></div><figcaption>stage 4 · 48×66</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/oats/frame-04.png" width="64" height="96" alt="oats stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Cà rốt <small>carrot · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/carrot/frame-01.png" width="64" height="96" alt="carrot stage 1 on light background"></div><figcaption>stage 1 · 11×9</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/carrot/frame-01.png" width="64" height="96" alt="carrot stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/carrot/frame-02.png" width="64" height="96" alt="carrot stage 2 on light background"></div><figcaption>stage 2 · 32×23</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/carrot/frame-02.png" width="64" height="96" alt="carrot stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/carrot/frame-03.png" width="64" height="96" alt="carrot stage 3 on light background"></div><figcaption>stage 3 · 49×47</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/carrot/frame-03.png" width="64" height="96" alt="carrot stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/carrot/frame-04.png" width="64" height="96" alt="carrot stage 4 on light background"></div><figcaption>stage 4 · 54×64</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/carrot/frame-04.png" width="64" height="96" alt="carrot stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Xà lách <small>lettuce · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/lettuce/frame-01.png" width="64" height="96" alt="lettuce stage 1 on light background"></div><figcaption>stage 1 · 10×13</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/lettuce/frame-01.png" width="64" height="96" alt="lettuce stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/lettuce/frame-02.png" width="64" height="96" alt="lettuce stage 2 on light background"></div><figcaption>stage 2 · 30×19</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/lettuce/frame-02.png" width="64" height="96" alt="lettuce stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/lettuce/frame-03.png" width="64" height="96" alt="lettuce stage 3 on light background"></div><figcaption>stage 3 · 49×36</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/lettuce/frame-03.png" width="64" height="96" alt="lettuce stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/lettuce/frame-04.png" width="64" height="96" alt="lettuce stage 4 on light background"></div><figcaption>stage 4 · 54×43</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/lettuce/frame-04.png" width="64" height="96" alt="lettuce stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article></section>
+<section><h2>masters-levels/crops-b.png <small>crop · 3 species</small></h2><article><h3>Cỏ ba lá <small>clover · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/clover/frame-01.png" width="64" height="96" alt="clover stage 1 on light background"></div><figcaption>stage 1 · 9×9</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/clover/frame-01.png" width="64" height="96" alt="clover stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/clover/frame-02.png" width="64" height="96" alt="clover stage 2 on light background"></div><figcaption>stage 2 · 20×18</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/clover/frame-02.png" width="64" height="96" alt="clover stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/clover/frame-03.png" width="64" height="96" alt="clover stage 3 on light background"></div><figcaption>stage 3 · 45×37</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/clover/frame-03.png" width="64" height="96" alt="clover stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/clover/frame-04.png" width="64" height="96" alt="clover stage 4 on light background"></div><figcaption>stage 4 · 54×52</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/clover/frame-04.png" width="64" height="96" alt="clover stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Củ cải đỏ <small>beet · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/beet/frame-01.png" width="64" height="96" alt="beet stage 1 on light background"></div><figcaption>stage 1 · 9×9</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/beet/frame-01.png" width="64" height="96" alt="beet stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/beet/frame-02.png" width="64" height="96" alt="beet stage 2 on light background"></div><figcaption>stage 2 · 33×22</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/beet/frame-02.png" width="64" height="96" alt="beet stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/beet/frame-03.png" width="64" height="96" alt="beet stage 3 on light background"></div><figcaption>stage 3 · 43×42</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/beet/frame-03.png" width="64" height="96" alt="beet stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/beet/frame-04.png" width="64" height="96" alt="beet stage 4 on light background"></div><figcaption>stage 4 · 54×55</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/beet/frame-04.png" width="64" height="96" alt="beet stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Ngô vàng <small>maize · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/maize/frame-01.png" width="64" height="96" alt="maize stage 1 on light background"></div><figcaption>stage 1 · 11×11</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/maize/frame-01.png" width="64" height="96" alt="maize stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/maize/frame-02.png" width="64" height="96" alt="maize stage 2 on light background"></div><figcaption>stage 2 · 38×30</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/maize/frame-02.png" width="64" height="96" alt="maize stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/maize/frame-03.png" width="64" height="96" alt="maize stage 3 on light background"></div><figcaption>stage 3 · 48×59</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/maize/frame-03.png" width="64" height="96" alt="maize stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/maize/frame-04.png" width="64" height="96" alt="maize stage 4 on light background"></div><figcaption>stage 4 · 46×66</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/maize/frame-04.png" width="64" height="96" alt="maize stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article></section>
+<section><h2>masters-levels/crops-c.png <small>crop · 3 species</small></h2><article><h3>Lanh <small>flax · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/flax/frame-01.png" width="64" height="96" alt="flax stage 1 on light background"></div><figcaption>stage 1 · 12×11</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/flax/frame-01.png" width="64" height="96" alt="flax stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/flax/frame-02.png" width="64" height="96" alt="flax stage 2 on light background"></div><figcaption>stage 2 · 21×19</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/flax/frame-02.png" width="64" height="96" alt="flax stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/flax/frame-03.png" width="64" height="96" alt="flax stage 3 on light background"></div><figcaption>stage 3 · 28×52</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/flax/frame-03.png" width="64" height="96" alt="flax stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/flax/frame-04.png" width="64" height="96" alt="flax stage 4 on light background"></div><figcaption>stage 4 · 48×66</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/flax/frame-04.png" width="64" height="96" alt="flax stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Hướng dương <small>sunflower · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/sunflower/frame-01.png" width="64" height="96" alt="sunflower stage 1 on light background"></div><figcaption>stage 1 · 15×15</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/sunflower/frame-01.png" width="64" height="96" alt="sunflower stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/sunflower/frame-02.png" width="64" height="96" alt="sunflower stage 2 on light background"></div><figcaption>stage 2 · 38×27</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/sunflower/frame-02.png" width="64" height="96" alt="sunflower stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/sunflower/frame-03.png" width="64" height="96" alt="sunflower stage 3 on light background"></div><figcaption>stage 3 · 42×58</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/sunflower/frame-03.png" width="64" height="96" alt="sunflower stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/sunflower/frame-04.png" width="64" height="96" alt="sunflower stage 4 on light background"></div><figcaption>stage 4 · 50×66</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/sunflower/frame-04.png" width="64" height="96" alt="sunflower stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Bạc hà <small>mint · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/mint/frame-01.png" width="64" height="96" alt="mint stage 1 on light background"></div><figcaption>stage 1 · 9×9</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mint/frame-01.png" width="64" height="96" alt="mint stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mint/frame-02.png" width="64" height="96" alt="mint stage 2 on light background"></div><figcaption>stage 2 · 27×23</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mint/frame-02.png" width="64" height="96" alt="mint stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mint/frame-03.png" width="64" height="96" alt="mint stage 3 on light background"></div><figcaption>stage 3 · 41×47</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mint/frame-03.png" width="64" height="96" alt="mint stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mint/frame-04.png" width="64" height="96" alt="mint stage 4 on light background"></div><figcaption>stage 4 · 54×55</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mint/frame-04.png" width="64" height="96" alt="mint stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article></section>
+<section><h2>masters-levels/crops-d.png <small>crop · 3 species</small></h2><article><h3>Việt quất <small>blueberry · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/blueberry/frame-01.png" width="64" height="96" alt="blueberry stage 1 on light background"></div><figcaption>stage 1 · 9×9</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/blueberry/frame-01.png" width="64" height="96" alt="blueberry stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/blueberry/frame-02.png" width="64" height="96" alt="blueberry stage 2 on light background"></div><figcaption>stage 2 · 21×17</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/blueberry/frame-02.png" width="64" height="96" alt="blueberry stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/blueberry/frame-03.png" width="64" height="96" alt="blueberry stage 3 on light background"></div><figcaption>stage 3 · 44×37</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/blueberry/frame-03.png" width="64" height="96" alt="blueberry stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/blueberry/frame-04.png" width="64" height="96" alt="blueberry stage 4 on light background"></div><figcaption>stage 4 · 54×49</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/blueberry/frame-04.png" width="64" height="96" alt="blueberry stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Ớt lửa <small>firepepper · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/firepepper/frame-01.png" width="64" height="96" alt="firepepper stage 1 on light background"></div><figcaption>stage 1 · 12×11</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/firepepper/frame-01.png" width="64" height="96" alt="firepepper stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/firepepper/frame-02.png" width="64" height="96" alt="firepepper stage 2 on light background"></div><figcaption>stage 2 · 32×23</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/firepepper/frame-02.png" width="64" height="96" alt="firepepper stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/firepepper/frame-03.png" width="64" height="96" alt="firepepper stage 3 on light background"></div><figcaption>stage 3 · 48×52</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/firepepper/frame-03.png" width="64" height="96" alt="firepepper stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/firepepper/frame-04.png" width="64" height="96" alt="firepepper stage 4 on light background"></div><figcaption>stage 4 · 54×55</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/firepepper/frame-04.png" width="64" height="96" alt="firepepper stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Tảo bạc <small>silverkelp · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/silverkelp/frame-01.png" width="64" height="96" alt="silverkelp stage 1 on light background"></div><figcaption>stage 1 · 11×11</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/silverkelp/frame-01.png" width="64" height="96" alt="silverkelp stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/silverkelp/frame-02.png" width="64" height="96" alt="silverkelp stage 2 on light background"></div><figcaption>stage 2 · 38×35</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/silverkelp/frame-02.png" width="64" height="96" alt="silverkelp stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/silverkelp/frame-03.png" width="64" height="96" alt="silverkelp stage 3 on light background"></div><figcaption>stage 3 · 40×55</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/silverkelp/frame-03.png" width="64" height="96" alt="silverkelp stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/silverkelp/frame-04.png" width="64" height="96" alt="silverkelp stage 4 on light background"></div><figcaption>stage 4 · 53×66</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/silverkelp/frame-04.png" width="64" height="96" alt="silverkelp stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article></section>
+<section><h2>masters-levels/crops-e.png <small>crop · 3 species</small></h2><article><h3>Cỏ trăng <small>moonherb · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/moonherb/frame-01.png" width="64" height="96" alt="moonherb stage 1 on light background"></div><figcaption>stage 1 · 14×12</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/moonherb/frame-01.png" width="64" height="96" alt="moonherb stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/moonherb/frame-02.png" width="64" height="96" alt="moonherb stage 2 on light background"></div><figcaption>stage 2 · 28×27</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/moonherb/frame-02.png" width="64" height="96" alt="moonherb stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/moonherb/frame-03.png" width="64" height="96" alt="moonherb stage 3 on light background"></div><figcaption>stage 3 · 43×47</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/moonherb/frame-03.png" width="64" height="96" alt="moonherb stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/moonherb/frame-04.png" width="64" height="96" alt="moonherb stage 4 on light background"></div><figcaption>stage 4 · 54×61</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/moonherb/frame-04.png" width="64" height="96" alt="moonherb stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Nữ lang <small>valerian · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/valerian/frame-01.png" width="64" height="96" alt="valerian stage 1 on light background"></div><figcaption>stage 1 · 13×12</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/valerian/frame-01.png" width="64" height="96" alt="valerian stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/valerian/frame-02.png" width="64" height="96" alt="valerian stage 2 on light background"></div><figcaption>stage 2 · 31×24</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/valerian/frame-02.png" width="64" height="96" alt="valerian stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/valerian/frame-03.png" width="64" height="96" alt="valerian stage 3 on light background"></div><figcaption>stage 3 · 54×53</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/valerian/frame-03.png" width="64" height="96" alt="valerian stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/valerian/frame-04.png" width="64" height="96" alt="valerian stage 4 on light background"></div><figcaption>stage 4 · 54×57</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/valerian/frame-04.png" width="64" height="96" alt="valerian stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Đậu sao <small>starbean · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/starbean/frame-01.png" width="64" height="96" alt="starbean stage 1 on light background"></div><figcaption>stage 1 · 17×13</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/starbean/frame-01.png" width="64" height="96" alt="starbean stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/starbean/frame-02.png" width="64" height="96" alt="starbean stage 2 on light background"></div><figcaption>stage 2 · 30×22</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/starbean/frame-02.png" width="64" height="96" alt="starbean stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/starbean/frame-03.png" width="64" height="96" alt="starbean stage 3 on light background"></div><figcaption>stage 3 · 39×52</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/starbean/frame-03.png" width="64" height="96" alt="starbean stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/starbean/frame-04.png" width="64" height="96" alt="starbean stage 4 on light background"></div><figcaption>stage 4 · 54×60</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/starbean/frame-04.png" width="64" height="96" alt="starbean stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article></section>
+<section><h2>masters-levels/crops-f.png <small>crop · 3 species</small></h2><article><h3>Dưa hổ phách <small>ambermelon · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/ambermelon/frame-01.png" width="64" height="96" alt="ambermelon stage 1 on light background"></div><figcaption>stage 1 · 12×9</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/ambermelon/frame-01.png" width="64" height="96" alt="ambermelon stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/ambermelon/frame-02.png" width="64" height="96" alt="ambermelon stage 2 on light background"></div><figcaption>stage 2 · 23×17</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/ambermelon/frame-02.png" width="64" height="96" alt="ambermelon stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/ambermelon/frame-03.png" width="64" height="96" alt="ambermelon stage 3 on light background"></div><figcaption>stage 3 · 43×30</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/ambermelon/frame-03.png" width="64" height="96" alt="ambermelon stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/ambermelon/frame-04.png" width="64" height="96" alt="ambermelon stage 4 on light background"></div><figcaption>stage 4 · 54×41</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/ambermelon/frame-04.png" width="64" height="96" alt="ambermelon stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Nấm sương <small>mistmushroom · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/mistmushroom/frame-01.png" width="64" height="96" alt="mistmushroom stage 1 on light background"></div><figcaption>stage 1 · 12×11</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mistmushroom/frame-01.png" width="64" height="96" alt="mistmushroom stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mistmushroom/frame-02.png" width="64" height="96" alt="mistmushroom stage 2 on light background"></div><figcaption>stage 2 · 23×20</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mistmushroom/frame-02.png" width="64" height="96" alt="mistmushroom stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mistmushroom/frame-03.png" width="64" height="96" alt="mistmushroom stage 3 on light background"></div><figcaption>stage 3 · 37×36</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mistmushroom/frame-03.png" width="64" height="96" alt="mistmushroom stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mistmushroom/frame-04.png" width="64" height="96" alt="mistmushroom stage 4 on light background"></div><figcaption>stage 4 · 54×49</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mistmushroom/frame-04.png" width="64" height="96" alt="mistmushroom stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Hoa nhật quang <small>sunpetal · crop</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/sunpetal/frame-01.png" width="64" height="96" alt="sunpetal stage 1 on light background"></div><figcaption>stage 1 · 12×10</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/sunpetal/frame-01.png" width="64" height="96" alt="sunpetal stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/sunpetal/frame-02.png" width="64" height="96" alt="sunpetal stage 2 on light background"></div><figcaption>stage 2 · 29×18</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/sunpetal/frame-02.png" width="64" height="96" alt="sunpetal stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/sunpetal/frame-03.png" width="64" height="96" alt="sunpetal stage 3 on light background"></div><figcaption>stage 3 · 42×36</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/sunpetal/frame-03.png" width="64" height="96" alt="sunpetal stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/sunpetal/frame-04.png" width="64" height="96" alt="sunpetal stage 4 on light background"></div><figcaption>stage 4 · 54×49</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/sunpetal/frame-04.png" width="64" height="96" alt="sunpetal stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article></section>
+<section><h2>masters-levels/creatures-a.png <small>creature · 3 species</small></h2><article><h3>Mooncalf <small>mooncalf · creature</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/mooncalf/frame-01.png" width="96" height="128" alt="mooncalf stage 1 on light background"></div><figcaption>stage 1 · 36×35</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mooncalf/frame-01.png" width="96" height="128" alt="mooncalf stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mooncalf/frame-02.png" width="96" height="128" alt="mooncalf stage 2 on light background"></div><figcaption>stage 2 · 47×52</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mooncalf/frame-02.png" width="96" height="128" alt="mooncalf stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mooncalf/frame-03.png" width="96" height="128" alt="mooncalf stage 3 on light background"></div><figcaption>stage 3 · 58×72</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mooncalf/frame-03.png" width="96" height="128" alt="mooncalf stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/mooncalf/frame-04.png" width="96" height="128" alt="mooncalf stage 4 on light background"></div><figcaption>stage 4 · 65×88</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/mooncalf/frame-04.png" width="96" height="128" alt="mooncalf stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Kneazle <small>kneazle · creature</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/kneazle/frame-01.png" width="96" height="96" alt="kneazle stage 1 on light background"></div><figcaption>stage 1 · 35×33</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/kneazle/frame-01.png" width="96" height="96" alt="kneazle stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/kneazle/frame-02.png" width="96" height="96" alt="kneazle stage 2 on light background"></div><figcaption>stage 2 · 47×43</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/kneazle/frame-02.png" width="96" height="96" alt="kneazle stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/kneazle/frame-03.png" width="96" height="96" alt="kneazle stage 3 on light background"></div><figcaption>stage 3 · 54×55</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/kneazle/frame-03.png" width="96" height="96" alt="kneazle stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/kneazle/frame-04.png" width="96" height="96" alt="kneazle stage 4 on light background"></div><figcaption>stage 4 · 63×65</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/kneazle/frame-04.png" width="96" height="96" alt="kneazle stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Diricawl <small>diricawl · creature</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/diricawl/frame-01.png" width="96" height="96" alt="diricawl stage 1 on light background"></div><figcaption>stage 1 · 30×29</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/diricawl/frame-01.png" width="96" height="96" alt="diricawl stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/diricawl/frame-02.png" width="96" height="96" alt="diricawl stage 2 on light background"></div><figcaption>stage 2 · 38×41</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/diricawl/frame-02.png" width="96" height="96" alt="diricawl stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/diricawl/frame-03.png" width="96" height="96" alt="diricawl stage 3 on light background"></div><figcaption>stage 3 · 48×50</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/diricawl/frame-03.png" width="96" height="96" alt="diricawl stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/diricawl/frame-04.png" width="96" height="96" alt="diricawl stage 4 on light background"></div><figcaption>stage 4 · 51×58</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/diricawl/frame-04.png" width="96" height="96" alt="diricawl stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article></section>
+<section><h2>masters-levels/creatures-b.png <small>creature · 3 species</small></h2><article><h3>Fwooper <small>fwooper · creature</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/fwooper/frame-01.png" width="96" height="96" alt="fwooper stage 1 on light background"></div><figcaption>stage 1 · 28×26</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/fwooper/frame-01.png" width="96" height="96" alt="fwooper stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/fwooper/frame-02.png" width="96" height="96" alt="fwooper stage 2 on light background"></div><figcaption>stage 2 · 40×39</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/fwooper/frame-02.png" width="96" height="96" alt="fwooper stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/fwooper/frame-03.png" width="96" height="96" alt="fwooper stage 3 on light background"></div><figcaption>stage 3 · 45×51</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/fwooper/frame-03.png" width="96" height="96" alt="fwooper stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/fwooper/frame-04.png" width="96" height="96" alt="fwooper stage 4 on light background"></div><figcaption>stage 4 · 58×60</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/fwooper/frame-04.png" width="96" height="96" alt="fwooper stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Thestral <small>thestral · creature</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/thestral/frame-01.png" width="160" height="160" alt="thestral stage 1 on light background"></div><figcaption>stage 1 · 48×55</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/thestral/frame-01.png" width="160" height="160" alt="thestral stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/thestral/frame-02.png" width="160" height="160" alt="thestral stage 2 on light background"></div><figcaption>stage 2 · 65×78</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/thestral/frame-02.png" width="160" height="160" alt="thestral stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/thestral/frame-03.png" width="160" height="160" alt="thestral stage 3 on light background"></div><figcaption>stage 3 · 85×94</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/thestral/frame-03.png" width="160" height="160" alt="thestral stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/thestral/frame-04.png" width="160" height="160" alt="thestral stage 4 on light background"></div><figcaption>stage 4 · 101×105</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/thestral/frame-04.png" width="160" height="160" alt="thestral stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article>
+<article><h3>Kỳ lân <small>unicorn · creature</small></h3><div class="frames">
+        <figure><div class="swatch light"><img src="native-levels/unicorn/frame-01.png" width="160" height="160" alt="unicorn stage 1 on light background"></div><figcaption>stage 1 · 58×52</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/unicorn/frame-01.png" width="160" height="160" alt="unicorn stage 1 on dark background"></div><figcaption>stage 1 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/unicorn/frame-02.png" width="160" height="160" alt="unicorn stage 2 on light background"></div><figcaption>stage 2 · 77×74</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/unicorn/frame-02.png" width="160" height="160" alt="unicorn stage 2 on dark background"></div><figcaption>stage 2 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/unicorn/frame-03.png" width="160" height="160" alt="unicorn stage 3 on light background"></div><figcaption>stage 3 · 94×89</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/unicorn/frame-03.png" width="160" height="160" alt="unicorn stage 3 on dark background"></div><figcaption>stage 3 · dark</figcaption></figure>
+        <figure><div class="swatch light"><img src="native-levels/unicorn/frame-04.png" width="160" height="160" alt="unicorn stage 4 on light background"></div><figcaption>stage 4 · 109×105</figcaption></figure>
+        <figure><div class="swatch dark"><img src="native-levels/unicorn/frame-04.png" width="160" height="160" alt="unicorn stage 4 on dark background"></div><figcaption>stage 4 · dark</figcaption></figure></div></article></section>

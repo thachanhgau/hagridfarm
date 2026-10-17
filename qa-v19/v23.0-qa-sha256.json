@@ -1,0 +1,32 @@
+{
+  "version": "23.0-QA",
+  "generatedAt": "2026-10-17T04:26:52.953470+00:00",
+  "files": {
+    "garden-v05/garden-achievements.mjs": "d5ebee571d0be09132242dbcecf5d1e32c6d933a6c2e19785e082e2235748065",
+    "garden-v05/garden-atmosphere.mjs": "cb3db63224ee33d7f17cabfd6e1fea3832228091dcffeae55fb8e8dce787af34",
+    "garden-v05/garden-audio.mjs": "0b5c83794155f85d48da417ecb12528d276752f4f62a4398809a0e3890d2f2c5",
+    "garden-v05/garden-events.mjs": "eed845e6fb39c55310dd27362c9596d3a5e42c5789186ae3d8644ba586cd1dd9",
+    "garden-v05/garden-postcard.mjs": "f7f2fdd3dd8f8cb6f6ddf8e3ebee27a066142dbc98b6e0d98e92a5a09609deed",
+    "garden-v05/garden-quests.mjs": "7d589872a069b6d0e7fd8bf3d821a589d71ba1cb967ee89a4c910b4f21644ff6",
+    "garden-v05/garden-storage.mjs": "1389e812eb92c58909caa326d3cb93ee626fd61cb439257f8055233e49a5c4e0",
+    "garden-v05/garden-tour.mjs": "e8cec5da56230bed780da0e262228da2ce6568736d3f0910550927d9a063a251",
+    "garden-v05/hpvn-bridge.mjs": "fbb2952050b1f83602924fe76308fcf3f753559ca0cfb2421bead19bb1281d14",
+    "garden-v05/index.html": "f2fe8637de01a34da213c4dd0379be6d4f7b43612d8ca7f00fbf169bbf865989",
+    "garden-v05/mobile-game.mjs": "7f3de24f8cab3045678c296ed462ba6dd2b367abfad8dd795a43fab367588832",
+    "garden-v05/progression-panels.mjs": "a04a982980ab8ea32ec52ca86e5ea9f985ddbfb260f9934b66891722cfda2fcc",
+    "garden-v05/scene-renderer.mjs": "571d1724a407997205727be1094f41a9f01a762c7800a49fc02e2a027767d8bf",
+    "garden-v05/v20-features.test.mjs": "76124a281841befe42eaa54b1f8ea19908c2897896ca29d0666602e55f6c8c89",
+    "garden-v05/v21-features.test.mjs": "1e6cbfefba228011bc1f4886baae75b5a6644ca09a672092f2fe440cd556f7d8",
+    "garden-v05/v22-features.test.mjs": "aa93b91c5a8e5315c3a7c5b3830af66299eec20459a1bd506bfac4d83e8d886e",
+    "garden-v05/v23-features.test.mjs": "f5fbc8b2aa5926dbac890eedab35d28e4beb901f54415308fdaee34a52a27538",
+    "garden-v05/v23-qa.test.mjs": "e3dbff02edba82f898a8723d6b55154fdda7602094714537b1851cbabb3f3736",
+    "garden-v05/wizard-ui.css": "a252840e8fe3ee9daf9c15986be18138b43b103b4ca0cb5e847333aa957532c1",
+    "garden-v05/wizard-ui.mjs": "6a1f859e8e60ac0e46dafc73aba7d2ffb49ba2aaff07bd34ef76e8f6fe637c9a",
+    "qa-v19/HANDOFF-V23.0-QA.md": "ee7dd7ad2e83b00b18077957e6e3fb313fb6013a375768fe81a5d4150d50feae",
+    "qa-v19/HANDOFF-V23.0.md": "aaacd54e1b87e9bb5fc56888e83e7b54579f8587dbdd45d2aa12084a6f53737b",
+    "qa-v19/embed-preview.html": "f08828f2978a5d69b1083c9caab448283004946526ef40fd612c3dd7a1c8fae1",
+    "qa-v19/fixture-wallet.mjs": "c322c32e02362de18be1b645623991b167302ee3cfd2a4050b3afea3bcfd171b",
+    "qa-v19/mobile-fixture.mjs": "8fb07b98f0101969eef9f5f1835ff10c497d37c32cfddcae605ba1df93f7f369",
+    "qa-v19/ui-fixture.html": "c911414051f8de905c4a4d49384dea67029aafeba91839e2adcde703c32f5f57"
+  }
+}

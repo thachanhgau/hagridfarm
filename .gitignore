@@ -1,0 +1,19 @@
+# Keep the active prototype; historical siblings and ZIP exports stay local.
+/*
+!/.gitignore
+!/README.md
+!/garden-v05/
+!/qa-v19/
+/qa-v19/*
+!/qa-v19/*.mjs
+!/qa-v19/*.html
+!/qa-v19/*.md
+!/qa-v19/*.json
+!/qa-v19/v245-controls.png
+!/qa-v19/v245-settings.png
+!/qa-v19/v245-tests.log
+.DS_Store
+node_modules/
+__pycache__/
+.env
+.env.*

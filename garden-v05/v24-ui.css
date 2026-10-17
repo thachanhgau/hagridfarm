@@ -1,0 +1,69 @@
+/* V24: the garden keeps the space; secondary features live in panels. */
+.hud .hud-keeper-title,.hud .next-unlock,.garden-title{display:none}
+.hud-extras{gap:6px}.hud-extras .icon-button{width:auto;min-width:88px;padding:8px 12px;font:700 12px system-ui}
+#eventButton:before,#sceneryButton:before{content:'';display:block;flex:none;width:25px;height:25px;border-radius:6px;background:center/cover url('v24-art/event-halloween.webp')}
+#eventButton[data-event="event_yule"]:before{background-image:url('v24-art/event-yule.webp')}
+#eventButton[data-event="event_herbology_fair"]:before{background-image:url('v24-art/event-herbology.webp')}
+#eventButton[data-event="none"]:before{background-image:url('v24-art/weather-clear.webp')}
+#sceneryButton:before{background-image:url('v24-art/weather-clear.webp')}
+#sceneryButton[data-weather="rain"]:before{background-image:url('v24-art/weather-rain.webp')}
+#sceneryButton[data-weather="autumn"]:before{background-image:url('v24-art/weather-autumn.webp')}
+#sceneryButton[data-weather="snow"]:before{background-image:url('v24-art/weather-snow.webp')}
+#eventButton,#sceneryButton{display:flex;align-items:center;justify-content:center;gap:6px}
+.v24-scenery h3{margin:18px 0 10px}.v24-weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.v24-time-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.v24-art-choice{padding:0!important;overflow:hidden;border-radius:14px!important;position:relative;min-width:0;background:#18382b!important;border:1px solid #76845a!important;color:#fff4d2!important;box-shadow:0 4px 14px #0002;text-align:left;transition:border-color .2s}
+.v24-art-choice img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;image-rendering:auto}.v24-art-choice span{display:block;padding:9px 12px;font-weight:700;font-size:13px}.v24-art-choice i{position:absolute;top:8px;right:8px;border-radius:50%;background:#17362de6;color:#f5d69a;width:24px;height:24px;font:700 16px system-ui;text-align:center;line-height:24px}.v24-art-choice i:empty{display:none}
+.v24-art-choice[aria-pressed="true"]{border:2px solid #f5d69a!important;box-shadow:0 0 0 2px #f5d69a22}.v24-time-dusk img{filter:sepia(.45) saturate(1.25) brightness(.83);}.v24-time-night img{filter:brightness(.48) saturate(.7) hue-rotate(18deg)}
+.v24-art-choice:focus-visible,button:focus-visible{outline:3px solid #b7dee0;outline-offset:3px}
+.popover h2{font-size:21px}.popover button,.owl-letter button{min-height:44px}.popover-heading{z-index:3}.tour-banner-copy small{display:none}.tour-banner{max-width:540px}
+@media(max-width:1100px){
+ .hud .hud-extras{top:52px;left:78px;right:50px;gap:6px}
+ .hud .hud-extras button{flex:1;min-width:0;width:auto;height:44px;padding:4px!important;font-size:10px;gap:4px}
+ #eventButton:before,#sceneryButton:before{width:22px;height:26px}
+ .hud .plot-picker{top:52px;height:44px;min-height:44px;width:72px;min-width:0;padding:5px;justify-content:center;font-size:10px}
+ .plot-picker small{display:none}
+ .owl-mail{top:62px;right:10px;height:44px;min-height:44px;width:44px;min-width:44px;padding:3px;justify-content:center}
+ .owl-mail>span:last-of-type{display:none}.owl-mail .owl-mail-icon{width:27px;height:32px}
+ .camera-tools{top:116px;right:10px}.toast,.tour-banner{top:116px}.level-copy strong{font:600 11px system-ui}
+ .hud .wallet-button{width:72px;min-width:72px}.hud .level-card{padding-right:5px}.hud .avatar-button{display:none}
+ .popover{width:calc(100% - 20px);max-height:calc(100dvh - 24px);padding:12px;border-radius:18px}.popover-heading{top:-12px}
+}
+@media(max-width:360px){#sceneryButton,#eventButton{font-size:9px!important;gap:2px}#eventButton:before,#sceneryButton:before{width:18px;height:23px}.v24-art-choice span{padding:8px;font-size:12px}}
+@media(max-height:450px) and (orientation:landscape){.popover{max-height:calc(100dvh - 16px)}.v24-weather-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.v24-art-choice img{aspect-ratio:16/8}.hud .hud-extras{left:90px;right:70px;max-width:300px}.camera-tools{top:61px}.tour-banner{top:110px;max-height:calc(100dvh - 170px)}}
+@media(prefers-reduced-motion:reduce){.v24-art-choice{transition:none}}
+.v24-menu-primary button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:94px!important;border-radius:14px;background:linear-gradient(140deg,#344d3d,#1b382e);border-color:#9b9a6555;font-weight:700}.v24-nav-icon{width:28px;height:28px;color:#f5d69a;display:block}
+
+.v24-event-choice-label{padding:0 6px 7px;font-size:11px;line-height:1.25}.v24-event-milestone button{padding:6px 3px;font-size:11px}.v24-event-milestone-head{flex-wrap:wrap}.v24-event-milestone .journey-stage-badge{font-size:10px;padding:3px}.v24-event-hero{padding:0!important}.v24-event-hero-art{max-height:min(24vh,240px);aspect-ratio:16/9}.v24-event-choice-art{max-height:min(10vh,80px)}.v24-event-hero-title{padding:0 12px 12px!important}.owl-letter{max-height:calc(100dvh - 24px);overflow-y:auto}.owl-letter>h2{margin-top:0}.owl-quests-head>.letter-kicker{display:none}
+@media(max-width:680px){.v24-owl-row{grid-template-columns:28px minmax(0,1fr) auto;gap:6px;padding:9px 7px}.v24-owl-row-copy{grid-column:2;grid-row:1}.v24-owl-row-reward{grid-column:2;grid-row:2;white-space:normal;font-size:10px}.v24-owl-row-action{grid-column:3;grid-row:1/3;align-self:center;max-width:80px;font-size:10px;white-space:normal;min-height:44px}.v24-owl-row-art{grid-row:1/3}.v24-owl-row-title{white-space:normal;font-size:12px}.v24-owl-row-progress{font-size:10px}.owl-letter{padding:18px 12px}.v24-event-milestone{padding:7px}}
+
+.v24-event-choice{border-radius:12px!important;white-space:normal!important;min-width:0!important;padding:0!important;display:flex!important;flex-direction:column;align-items:stretch!important;gap:6px!important}.v24-event-choice-art{aspect-ratio:16/10;object-fit:cover}.v24-event-choice-label{text-align:center;min-height:2.4em;line-height:1.2}.v24-event-milestone>button{width:100%}.emulator-badge{display:none}
+
+.owl-quests-list{max-height:none;overflow:visible}.owl-letter .v24-owl-row-reward{color:#31553b}.owl-letter .owl-quest-btn{color:#fff1ce;min-height:44px!important;line-height:1.2}.owl-letter .owl-quest-btn:disabled{color:#493524;background:#dbc99f;opacity:1}.v24-owl-chest-copy{display:grid;gap:5px}.v24-owl-chest-copy small{font-size:11px;line-height:1.4}.owl-letter #letterAction{margin-top:12px}.owl-letter{width:min(460px,calc(100% - 28px))}
+
+.v24-detail{font-size:12px;line-height:1.45}.v24-detail summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:6px;color:#d4c49c}.v24-detail summary:before{content:'+'}.v24-detail[open]>summary:before{content:'−'}.v24-detail p{margin:0 0 10px}@media(max-width:420px){.v24-event-selection{grid-template-columns:repeat(4,minmax(0,1fr))}.v24-event-choice-label{font-size:10px;padding:0 3px 7px}}
+
+.almanac-chain-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}.almanac-chain-card{min-width:0}.almanac-chain-head{flex-wrap:wrap}
+
+.store-overlay .wallet-status.store-vault-banner{display:flex;flex-wrap:wrap;gap:10px;padding:12px!important}.store-vault-left{min-width:0;flex:1 1 180px}.store-vault-right{flex:0 0 auto}.store-wallet-sub{overflow-wrap:anywhere}.store-popover .store-heading-copy>small{display:none}@media(max-width:420px){.store-vault-right{width:100%;text-align:left;padding:7px 10px}.store-vault-right small,.store-vault-right strong{display:inline;margin-right:8px}.store-vault-right .store-galleons-total{font-size:17px}.store-overlay .popover{padding:12px}}
+
+/* The embed host provides the scene picker; remove duplicate HUD shortcuts. */
+.hud-extras[hidden]{display:none!important}
+
+/* V24.8.5: one HUD row, including plot selection and owl mail. */
+.hud .owl-mail{position:relative;inset:auto;flex:none;width:44px;min-width:44px;height:44px;min-height:44px;padding:3px;justify-content:center}
+.hud .owl-mail>span:last-of-type{display:none}.hud .owl-mail .owl-mail-icon{width:27px;height:32px}
+@media(max-width:1100px){
+ .hud{left:max(8px,env(safe-area-inset-left));right:max(8px,env(safe-area-inset-right));gap:4px}
+ .hud .hud-actions{display:contents}
+ .hud .level-card{flex:1 1 0;min-width:44px;height:44px;padding:3px}
+ .hud .plot-picker{position:static;inset:auto;flex:none;width:52px;min-width:52px;height:44px;min-height:44px;display:flex;flex-direction:column;gap:0;padding:3px;font-size:9px;line-height:15px}
+ .hud .plot-picker>b{font-size:12px}.hud .plot-picker>span,.hud .plot-picker>small{display:none}
+ .hud .wallet-button{flex:none;width:56px;min-width:56px;max-width:56px;height:44px;min-height:44px;flex-direction:column;gap:0;padding:3px}
+ .hud .wallet-button #walletValue{font-size:10px;max-width:50px}.hud #inventoryButton,.hud #menuButton{flex:none;width:44px;min-width:44px;height:44px;min-height:44px}
+ .hud .hud-extras{left:0;right:0;top:52px}
+ .host-scene-controls .camera-tools{top:64px}.host-scene-controls .toast{top:64px;left:8px;transform:none;max-width:calc(100% - 68px)}
+ .host-scene-controls .tour-banner{top:64px;max-width:calc(100% - 68px);max-height:calc(100dvh - 180px)}
+}
+@media(max-width:600px){.hud .level-copy{display:none}.hud .level-card{justify-content:center}.hud .level-medal{width:36px;min-width:36px;height:36px}.hud{gap:3px}}
+
+@media(max-width:340px){.hud{gap:2px}.hud .plot-picker{width:48px;min-width:48px}.hud .wallet-button{width:44px;min-width:44px;max-width:44px}.hud .wallet-button #walletValue{font-size:9px;max-width:40px}}

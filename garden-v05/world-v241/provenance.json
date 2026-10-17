@@ -1,0 +1,108 @@
+{
+  "generator": "built-in image_gen",
+  "mode": "generate",
+  "transparent_background": true,
+  "reference_images": [
+    "/Users/thachanh/.codex/visualizations/2026/10/13/01a1336a-1a81-7fd1-838a-938d62b6dd7d/garden-v05/v24-art/event-yule.webp",
+    "/Users/thachanh/.codex/visualizations/2026/10/13/01a1336a-1a81-7fd1-838a-938d62b6dd7d/garden-v05/v24-art/event-halloween.webp",
+    "/Users/thachanh/.codex/visualizations/2026/10/13/01a1336a-1a81-7fd1-838a-938d62b6dd7d/garden-v05/v24-art/event-herbology.webp"
+  ],
+  "style_spec": {
+    "projection": "2:1 dimetric isometric",
+    "palette": ["#24483f", "#71934b", "#f5d69a", "#735044"],
+    "background": "actual alpha transparency",
+    "constraints": [
+      "single isolated game object",
+      "crisp detailed pixel art",
+      "ground contact at bottom center",
+      "no detached sprawling shadow",
+      "no text, logo, characters, UI, tile floor, base platform, crops, beds, or buildings"
+    ]
+  },
+  "runtime_export": {
+    "crop": "alpha bounding box using alpha >= 128; master alpha values retained inside the crop",
+    "resize": "nearest-neighbor only, aspect preserved",
+    "format": "RGBA native PNG",
+    "master_retained": true
+  },
+  "assets": [
+    {
+      "name": "hero-yule",
+      "primary_request": "one decorated evergreen Christmas tree with warm golden lights, restrained red and muted-gold baubles, and wrapped gifts clustered at its base",
+      "prompt": "Create one single decorated evergreen Christmas tree prop, shown in a clean 2:1 dimetric isometric view. The tree is medium-height and full, with layered deep-green branches, warm golden fairy lights, restrained red and muted-gold baubles, and several wrapped gifts clustered tightly at its base. Isolated on a genuinely transparent background with no scene, ground plane, tile, or base platform. Crisp hand-crafted pixel art with sharp pixel edges and a limited muted Hagrid garden palette inspired by #24483f #71934b #f5d69a #735044. Centered full silhouette, bottom contact centered, no text, logo, characters, UI, crops, beds, buildings, background scene, snow mound, or detached shadow.",
+      "generation_output": "/Users/thachanh/.codex/generated_images/01a14845-dcfc-7941-be76-32a131483b32/exec-8567b66c-7674-4c42-b9e8-59d2c86c131b.png",
+      "master_file": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v241/art/hero-yule-master.png",
+      "runtime_file": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v241/art/hero-yule.png",
+      "master_dimensions": [1774, 887],
+      "master_alpha": {
+        "nonzero": 307844,
+        "partial": 307741,
+        "min_nonzero": 1,
+        "max": 255,
+        "bbox_nonzero": [33, 0, 1740, 875],
+        "crop_bbox_alpha_gte_128": [599, 9, 1179, 872]
+      },
+      "runtime_dimensions": [141, 210],
+      "runtime_alpha": {
+        "nonzero": 18143,
+        "partial": 18141,
+        "min_nonzero": 1,
+        "max": 255,
+        "bbox_nonzero": [0, 0, 141, 210]
+      },
+      "pivot": {"x": 70, "y": 209}
+    },
+    {
+      "name": "hero-halloween",
+      "primary_request": "exactly three carved glowing pumpkins, a crooked twig arch, a small black cauldron, and violet potion",
+      "prompt": "Generate a single compact Halloween prop made of exactly three and only three pumpkin bodies: one large carved glowing jack-o-lantern centered, one smaller carved pumpkin touching it on the left, and one smaller carved pumpkin touching it on the right. Behind this trio is one crooked twig arch. Beside the trio is one small black cauldron holding a luminous violet potion. The three pumpkins must be fully visible and countable; do not hide any pumpkin behind another. Isolated on a genuinely transparent background with no scene, ground plane, tile, or base platform. Crisp hand-crafted pixel art with sharp pixel edges and a limited muted Hagrid garden palette inspired by #24483f #71934b #f5d69a #735044. No text, logo, characters, UI, cast shadow, detached shadow, crops, beds, buildings, gravestones, candles, broomsticks, or background scene.",
+      "generation_output": "/Users/thachanh/.codex/generated_images/01a14845-dcfc-7941-be76-32a131483b32/exec-d18ad3d4-8973-44ae-989e-4c32db4b0ceb.png",
+      "master_file": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v241/art/hero-halloween-master.png",
+      "runtime_file": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v241/art/hero-halloween.png",
+      "master_dimensions": [1774, 887],
+      "master_alpha": {
+        "nonzero": 469767,
+        "partial": 469687,
+        "min_nonzero": 1,
+        "max": 255,
+        "bbox_nonzero": [0, 21, 1744, 887],
+        "crop_bbox_alpha_gte_128": [369, 95, 1475, 800]
+      },
+      "runtime_dimensions": [180, 114],
+      "runtime_alpha": {
+        "nonzero": 12287,
+        "partial": 12282,
+        "min_nonzero": 1,
+        "max": 255,
+        "bbox_nonzero": [0, 0, 180, 114]
+      },
+      "pivot": {"x": 89.5, "y": 113}
+    },
+    {
+      "name": "hero-herbology",
+      "primary_request": "one small rustic market stand with cream-green striped canopy, flower pots, herbs, and bunting",
+      "prompt": "Create one single small rustic herb market stand prop with a simple wooden counter, a cream-and-muted-green striped canopy, a short string of tiny bunting under the canopy, and neatly grouped flower pots and leafy herbs displayed on the counter and one small lower shelf. It must read as one compact stand object. Isolated on a genuinely transparent background with no scene, ground plane, tile, or base platform. Crisp hand-crafted pixel art with sharp pixel edges and a limited muted Hagrid garden palette inspired by #24483f #71934b #f5d69a #735044. Centered complete silhouette in a 2:1 dimetric isometric view with bottom contact centered. No text, logo, characters, UI, cast shadow, detached shadow, crops, beds, greenhouse, house, fence, signs, lettering, or background scene.",
+      "generation_output": "/Users/thachanh/.codex/generated_images/01a14845-dcfc-7941-be76-32a131483b32/exec-ee1a46cf-c7b5-434a-9866-cfa470bd45f5.png",
+      "master_file": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v241/art/hero-herbology-master.png",
+      "runtime_file": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v241/art/hero-herbology.png",
+      "master_dimensions": [1536, 1024],
+      "master_alpha": {
+        "nonzero": 498490,
+        "partial": 498490,
+        "min_nonzero": 1,
+        "max": 254,
+        "bbox_nonzero": [0, 0, 1518, 1024],
+        "crop_bbox_alpha_gte_128": [400, 67, 1177, 973]
+      },
+      "runtime_dimensions": [132, 155],
+      "runtime_alpha": {
+        "nonzero": 14433,
+        "partial": 14433,
+        "min_nonzero": 1,
+        "max": 253,
+        "bbox_nonzero": [0, 0, 132, 155]
+      },
+      "pivot": {"x": 65.5, "y": 154}
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "21.0",
+  "generatedAt": "2026-10-14T13:19:20.217Z",
+  "files": {
+    "garden-v05/scene-renderer.mjs": "87c094d3d449c021308b789ca4deaa94fead0caacc2d4da67da96b4932c23a8c",
+    "garden-v05/garden-postcard.mjs": "726d291b5dac6d0d8822cf82d0468207f2014a8832e773de54087ff7c3799352",
+    "garden-v05/garden-quests.mjs": "e5771a47ddcc0b312fb3c3dc498542f222dc17dc40572f94b536a79744333bf1",
+    "garden-v05/wizard-ui.mjs": "37a889f493b530ccfd528ba57f5d56bb5afaab7bf930fc9cf794528238daa3cb",
+    "garden-v05/progression-panels.mjs": "ff510581e6cc07875184be9717b58a49cd525755982f2f3782af8ab81b3c132a",
+    "garden-v05/mobile-game.mjs": "74ad1ad462c6aa6f9c82947b54698f443b8d77989ecdd7fbf7a25a03fe8e312d",
+    "garden-v05/wizard-ui.css": "c9e17242e38b26648c2439c41b074c4a2b448d8700e9027ed1f89c28ae31ef91",
+    "garden-v05/index.html": "2879dcfe9905af4571bd2c39afcbafbf9e4722645eb63cfa7795f8b28ddc2106",
+    "garden-v05/v21-features.test.mjs": "0595a2a033696f3f78795a69a867d2bd61ccd226923a602010ab52f140ccad13",
+    "qa-v19/mobile-fixture.mjs": "ba81fe2dea91446467388ca420258a31bd7cb4c5f3eddc8c02f7aeb07f732f61",
+    "qa-v19/fixture-wallet.mjs": "e3e30fb3b01c44d7c803765174b93cfd6a087efffd1c8c42938384788c363f2e",
+    "qa-v19/ui-fixture.html": "9211fde03443d38321b36e92a26d3b6e15c640006e635575bd17d5893f37a709",
+    "qa-v19/HANDOFF-V21.0.md": "8dfdd88a3204e70f44280fef2945b74abb01e2d89ff46fdf3031674319a3f582"
+  }
+}

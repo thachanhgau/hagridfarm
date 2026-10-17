@@ -1,0 +1,385 @@
+{
+  "status": "PASS",
+  "scope": "VM data contract only; no browser claim",
+  "careManifestItems": 6,
+  "items": [
+    {
+      "id": "mooncalf",
+      "levelFrames": 8,
+      "motionFrames": 8,
+      "growthFrames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "kneazle",
+      "levelFrames": 8,
+      "motionFrames": 8,
+      "growthFrames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "diricawl",
+      "levelFrames": 8,
+      "motionFrames": 8,
+      "growthFrames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "fwooper",
+      "levelFrames": 8,
+      "motionFrames": 8,
+      "growthFrames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "thestral",
+      "levelFrames": 8,
+      "motionFrames": 8,
+      "growthFrames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "id": "unicorn",
+      "levelFrames": 8,
+      "motionFrames": 8,
+      "growthFrames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false,
+          "framesMatch": true,
+          "durationsFinite": true
+        }
+      },
+      "pass": true
+    }
+  ]
+}

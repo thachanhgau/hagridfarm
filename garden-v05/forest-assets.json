@@ -1,0 +1,92 @@
+{
+  "version": 6,
+  "source": "masters-forest/forest-atlas-v06.png",
+  "sourceSha256": "ba2cdb12c85132594739ee0b07e882cecbb36f9927e6d85d494038e9544122e8",
+  "method": "Built-in ImageGen; technical panel extraction, alpha threshold 192, nearest-neighbor native export, existing 24-color palette",
+  "assets": [
+    {
+      "id": "oak",
+      "rect": [
+        0,
+        0,
+        850,
+        575
+      ],
+      "width": 190,
+      "height": 176,
+      "file": "environment/forest-v06/oak.png",
+      "pivotX": 95,
+      "pivotY": 174,
+      "sourceRect": [
+        0,
+        0,
+        850,
+        575
+      ],
+      "sha256": "972b4729789c398c99db359b045f51185a5703d8f752ac96436c38355401e042"
+    },
+    {
+      "id": "pine",
+      "rect": [
+        850,
+        0,
+        686,
+        595
+      ],
+      "width": 104,
+      "height": 196,
+      "file": "environment/forest-v06/pine.png",
+      "pivotX": 52,
+      "pivotY": 194,
+      "sourceRect": [
+        850,
+        0,
+        686,
+        595
+      ],
+      "sha256": "53c0080501269074a31d7cc220fa5b0015ad2c8ba51ed2d23d1a42e8076a88a1"
+    },
+    {
+      "id": "grove",
+      "rect": [
+        0,
+        575,
+        850,
+        449
+      ],
+      "width": 190,
+      "height": 136,
+      "file": "environment/forest-v06/grove.png",
+      "pivotX": 95,
+      "pivotY": 134,
+      "sourceRect": [
+        0,
+        575,
+        850,
+        449
+      ],
+      "sha256": "67fee48c44ba552599a5e1039d8832c92cf36f601322d9e3dc0eeca571ff661f"
+    },
+    {
+      "id": "log",
+      "rect": [
+        850,
+        595,
+        686,
+        429
+      ],
+      "width": 144,
+      "height": 88,
+      "file": "environment/forest-v06/log.png",
+      "pivotX": 72,
+      "pivotY": 86,
+      "sourceRect": [
+        850,
+        595,
+        686,
+        429
+      ],
+      "sha256": "d85b758801b3d6da145d8093016a448218b78decf3eaec2972764bf2f3a480f2"
+    }
+  ]
+}

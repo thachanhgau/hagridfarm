@@ -1,0 +1,7 @@
+{
+  "generator": "built-in image_gen",
+  "source": "/Users/thachanh/.codex/generated_images/01a1480f-4d73-7520-ad5b-221575ca7c7b/exec-bfed6262-3a0c-4523-ad29-046522b57869.png",
+  "reference": "../environment/layers/hut.png",
+  "prompt": "Single compact rustic cottage garden corner: low stack of chopped firewood, weathered barrel, terracotta pot of cream daisies. Match hut pixel-art and dimetric projection, muted forest/brown/cream, transparent, no text or ground slab.",
+  "runtime": "Original alpha PNG preserved unchanged; nearest-neighbor Canvas draw at 150x75 with ground pivot (75,67)."
+}

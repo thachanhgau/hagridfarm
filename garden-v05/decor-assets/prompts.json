@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "tool": "builtin image_gen",
+  "transparentBackground": true,
+  "styleReference": "garden-v03/environment/layers/hut.png and garden-v03/environment/garden-native.png viewed before generation",
+  "sharedConstraints": [
+    "cute chunky hard-edged pixel art",
+    "no blur, gradient, anti-aliasing, text, logos, people unless the gardener character is requested",
+    "exact 24-color palette",
+    "transparent RGBA"
+  ],
+  "items": [
+    {
+      "id": "decor_pumpkin_lantern",
+      "prompt": "Single carved pumpkin lantern on a small rustic post, warm candle inside, cozy 2D dimetric pixel-art garden decoration, transparent background."
+    },
+    {
+      "id": "decor_broom_rack",
+      "prompt": "Exactly three flying brooms on a rustic timber rack, chunky readable 2D dimetric pixel art, transparent background."
+    },
+    {
+      "id": "decor_cauldron",
+      "prompt": "Round black iron cauldron with violet potion and small blocky pixel vapour, cozy 2D dimetric pixel art, transparent background."
+    },
+    {
+      "id": "decor_mandrake_planter",
+      "prompt": "Terracotta planter with a cute root-face mandrake, leafy head, and red earmuffs hanging on the rim, 2D dimetric pixel art, transparent background."
+    },
+    {
+      "id": "decor_floating_candles",
+      "prompt": "Exactly three floating candles with tiny flames above a small brass stand, cozy 2D dimetric pixel art, transparent background."
+    },
+    {
+      "id": "decor_vine_arch",
+      "prompt": "Rustic wooden garden arch wrapped in vines with a few small glowing blooms, 2D dimetric pixel art, transparent background."
+    },
+    {
+      "id": "gardener_friend",
+      "prompt": "Canonical half-giant Hogwarts gamekeeper with wild bushy dark-brown beard and mane, long moleskin overcoat over dark waistcoat and brass-buckled belt, holding a glowing brass lantern and folded pink umbrella, 2D dimetric pixel-art character sprite, transparent background."
+    },
+    {
+      "id": "owl_post",
+      "prompt": "Cute snowy messenger owl perched on a rustic carved wooden T-perch post with a hanging parchment letter sealed with red wax, 2D dimetric pixel-art garden prop, transparent background."
+    },
+    {
+      "id": "herbology_greenhouse",
+      "prompt": "Cozy wizarding Herbology greenhouse in 2:1 dimetric isometric projection with warm timber framing, stone brick base, teal glass panes, and potted magical herbs inside, transparent background."
+    }
+  ]
+}

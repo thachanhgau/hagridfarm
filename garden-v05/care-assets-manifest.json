@@ -1,0 +1,1876 @@
+{
+  "version": 1,
+  "status": "complete: 6/6 care-animation species",
+  "generatedBy": "build-care-assets.mjs",
+  "loadAfter": "level-assets.js",
+  "palette": [
+    "#231F2E",
+    "#4A3042",
+    "#735044",
+    "#A57554",
+    "#41465C",
+    "#687486",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A",
+    "#874056",
+    "#C75B4B",
+    "#ED8A45",
+    "#FFC36B",
+    "#3E3B70",
+    "#6961A6",
+    "#70A8B6",
+    "#B7DEE0"
+  ],
+  "alphaThreshold": 192,
+  "nearestResize": true,
+  "binaryAlpha": true,
+  "animationContract": {
+    "oldGrowthFramesPreserved": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "careFramesAppended": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "clips": {
+      "idle": {
+        "frames": [
+          4,
+          5,
+          4
+        ],
+        "durations": [
+          760,
+          180,
+          760
+        ],
+        "loop": true
+      },
+      "eat": {
+        "frames": [
+          6,
+          6,
+          4,
+          6
+        ],
+        "durations": [
+          300,
+          420,
+          340,
+          820
+        ],
+        "loop": false
+      },
+      "care": {
+        "frames": [
+          7,
+          4,
+          7,
+          4
+        ],
+        "durations": [
+          260,
+          620,
+          260,
+          820
+        ],
+        "loop": false
+      }
+    },
+    "durationsFiniteMs": true,
+    "baselineAnchor": "alpha-bounds bottom to native adult pivotY",
+    "horizontalAnchor": "alpha-bounds center to native adult pivotX"
+  },
+  "sourceAtlases": [
+    {
+      "file": "masters-care/creatures-a-care.png",
+      "sourcePath": "/Users/thachanh/.codex/generated_images/01a1336a-1a81-7fd1-838a-938d62b6dd7d/exec-4e585585-28e0-4782-81e9-8eb10dfbf683.png",
+      "sourceSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "rows": 3,
+      "columns": 4,
+      "cellDimensions": {
+        "width": 362,
+        "rowCuts": [
+          0,
+          393,
+          714,
+          1086
+        ]
+      },
+      "species": [
+        "mooncalf",
+        "kneazle",
+        "diricawl"
+      ]
+    },
+    {
+      "file": "masters-care/creatures-b-care.png",
+      "sourcePath": "/Users/thachanh/.codex/generated_images/01a1336a-1a81-7fd1-838a-938d62b6dd7d/exec-84f3f575-5997-449c-87a2-ea69767fb716.png",
+      "sourceSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "rows": 3,
+      "columns": 4,
+      "cellDimensions": {
+        "width": 362,
+        "rowCuts": [
+          0,
+          337,
+          697,
+          1086
+        ]
+      },
+      "species": [
+        "fwooper",
+        "thestral",
+        "unicorn"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "mooncalf",
+      "label": "Mooncalf",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "baseFrame": "native-levels/mooncalf/frame-04.png",
+      "baseFrameSha256": "52e817659c5832cc5f435f2ce764406c838a0c3a5876fbedd799369397e34e7d",
+      "baseBounds": {
+        "x": 15,
+        "y": 24,
+        "w": 65,
+        "h": 88,
+        "count": 2739,
+        "edge": false
+      },
+      "atlas": {
+        "file": "masters-care/creatures-a-care.png",
+        "sourcePath": "/Users/thachanh/.codex/generated_images/01a1336a-1a81-7fd1-838a-938d62b6dd7d/exec-4e585585-28e0-4782-81e9-8eb10dfbf683.png",
+        "sourceSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+        "sourceDimensions": {
+          "width": 1448,
+          "height": 1086
+        },
+        "rows": 3,
+        "columns": 4,
+        "cellDimensions": {
+          "width": 362,
+          "rowCuts": [
+            0,
+            393,
+            714,
+            1086
+          ]
+        },
+        "species": [
+          "mooncalf",
+          "kneazle",
+          "diricawl"
+        ],
+        "row": 0,
+        "rowSpecies": "mooncalf"
+      },
+      "neutralScale": 0.2953020134228188,
+      "canvas": {
+        "width": 96,
+        "height": 128,
+        "pivotX": 48,
+        "pivotY": 112,
+        "padding": 0,
+        "baseWidth": 96,
+        "baseHeight": 128,
+        "basePivotX": 48,
+        "basePivotY": 112
+      },
+      "frames": [
+        {
+          "file": "native-care/mooncalf/frame-01.png",
+          "width": 96,
+          "height": 128,
+          "pivotX": 48,
+          "pivotY": 112,
+          "careFrame": 0,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 362,
+            "h": 393
+          },
+          "sourceBounds": {
+            "x": 88,
+            "y": 72,
+            "w": 225,
+            "h": 298,
+            "count": 33587,
+            "edge": false
+          },
+          "bounds": {
+            "x": 15,
+            "y": 24,
+            "w": 66,
+            "h": 88,
+            "count": 2922,
+            "edge": false
+          },
+          "scale": 0.2953020134228188,
+          "baseline": {
+            "sourceBottom": 370,
+            "outputBottom": 112,
+            "pivotY": 112,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/mooncalf/frame-02.png",
+          "width": 96,
+          "height": 128,
+          "pivotX": 48,
+          "pivotY": 112,
+          "careFrame": 1,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 0,
+            "w": 362,
+            "h": 393
+          },
+          "sourceBounds": {
+            "x": 80,
+            "y": 73,
+            "w": 233,
+            "h": 297,
+            "count": 33952,
+            "edge": false
+          },
+          "bounds": {
+            "x": 14,
+            "y": 24,
+            "w": 69,
+            "h": 88,
+            "count": 2966,
+            "edge": false
+          },
+          "scale": 0.2953020134228188,
+          "baseline": {
+            "sourceBottom": 370,
+            "outputBottom": 112,
+            "pivotY": 112,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/mooncalf/frame-03.png",
+          "width": 96,
+          "height": 128,
+          "pivotX": 48,
+          "pivotY": 112,
+          "careFrame": 2,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 0,
+            "w": 362,
+            "h": 393
+          },
+          "sourceBounds": {
+            "x": 51,
+            "y": 207,
+            "w": 267,
+            "h": 163,
+            "count": 29885,
+            "edge": false
+          },
+          "bounds": {
+            "x": 9,
+            "y": 64,
+            "w": 79,
+            "h": 48,
+            "count": 2599,
+            "edge": false
+          },
+          "scale": 0.2953020134228188,
+          "baseline": {
+            "sourceBottom": 370,
+            "outputBottom": 112,
+            "pivotY": 112,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/mooncalf/frame-04.png",
+          "width": 96,
+          "height": 128,
+          "pivotX": 48,
+          "pivotY": 112,
+          "careFrame": 3,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 0,
+            "w": 362,
+            "h": 393
+          },
+          "sourceBounds": {
+            "x": 92,
+            "y": 70,
+            "w": 213,
+            "h": 300,
+            "count": 33152,
+            "edge": false
+          },
+          "bounds": {
+            "x": 17,
+            "y": 23,
+            "w": 63,
+            "h": 89,
+            "count": 2914,
+            "edge": false
+          },
+          "scale": 0.2953020134228188,
+          "baseline": {
+            "sourceBottom": 370,
+            "outputBottom": 112,
+            "pivotY": 112,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "growthPreserved": {
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "durations": [
+          900,
+          900,
+          900,
+          900
+        ],
+        "loop": false
+      },
+      "warnings": []
+    },
+    {
+      "id": "kneazle",
+      "label": "Kneazle",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "baseFrame": "native-levels/kneazle/frame-04.png",
+      "baseFrameSha256": "795e84a212a4f41be38495ebdb190960783376d1520539703d87df40c5a795a8",
+      "baseBounds": {
+        "x": 17,
+        "y": 15,
+        "w": 63,
+        "h": 65,
+        "count": 2034,
+        "edge": false
+      },
+      "atlas": {
+        "file": "masters-care/creatures-a-care.png",
+        "sourcePath": "/Users/thachanh/.codex/generated_images/01a1336a-1a81-7fd1-838a-938d62b6dd7d/exec-4e585585-28e0-4782-81e9-8eb10dfbf683.png",
+        "sourceSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+        "sourceDimensions": {
+          "width": 1448,
+          "height": 1086
+        },
+        "rows": 3,
+        "columns": 4,
+        "cellDimensions": {
+          "width": 362,
+          "rowCuts": [
+            0,
+            393,
+            714,
+            1086
+          ]
+        },
+        "species": [
+          "mooncalf",
+          "kneazle",
+          "diricawl"
+        ],
+        "row": 1,
+        "rowSpecies": "kneazle"
+      },
+      "neutralScale": 0.24904214559386972,
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80,
+        "padding": 0,
+        "baseWidth": 96,
+        "baseHeight": 96,
+        "basePivotX": 48,
+        "basePivotY": 80
+      },
+      "frames": [
+        {
+          "file": "native-care/kneazle/frame-01.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 0,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 393,
+            "w": 362,
+            "h": 321
+          },
+          "sourceBounds": {
+            "x": 70,
+            "y": 27,
+            "w": 273,
+            "h": 261,
+            "count": 37659,
+            "edge": false
+          },
+          "bounds": {
+            "x": 14,
+            "y": 16,
+            "w": 68,
+            "h": 64,
+            "count": 2341,
+            "edge": false
+          },
+          "scale": 0.24904214559386972,
+          "baseline": {
+            "sourceBottom": 288,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/kneazle/frame-02.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 1,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 393,
+            "w": 362,
+            "h": 321
+          },
+          "sourceBounds": {
+            "x": 76,
+            "y": 28,
+            "w": 263,
+            "h": 260,
+            "count": 37033,
+            "edge": false
+          },
+          "bounds": {
+            "x": 16,
+            "y": 15,
+            "w": 65,
+            "h": 65,
+            "count": 2317,
+            "edge": false
+          },
+          "scale": 0.24904214559386972,
+          "baseline": {
+            "sourceBottom": 288,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/kneazle/frame-03.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 2,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 393,
+            "w": 362,
+            "h": 321
+          },
+          "sourceBounds": {
+            "x": 56,
+            "y": 74,
+            "w": 264,
+            "h": 219,
+            "count": 29168,
+            "edge": false
+          },
+          "bounds": {
+            "x": 15,
+            "y": 25,
+            "w": 66,
+            "h": 55,
+            "count": 1817,
+            "edge": false
+          },
+          "scale": 0.24904214559386972,
+          "baseline": {
+            "sourceBottom": 293,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/kneazle/frame-04.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 3,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 393,
+            "w": 362,
+            "h": 321
+          },
+          "sourceBounds": {
+            "x": 56,
+            "y": 23,
+            "w": 262,
+            "h": 265,
+            "count": 36692,
+            "edge": false
+          },
+          "bounds": {
+            "x": 16,
+            "y": 14,
+            "w": 65,
+            "h": 66,
+            "count": 2288,
+            "edge": false
+          },
+          "scale": 0.24904214559386972,
+          "baseline": {
+            "sourceBottom": 288,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "growthPreserved": {
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "durations": [
+          900,
+          900,
+          900,
+          900
+        ],
+        "loop": false
+      },
+      "warnings": []
+    },
+    {
+      "id": "diricawl",
+      "label": "Diricawl",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "baseFrame": "native-levels/diricawl/frame-04.png",
+      "baseFrameSha256": "a00de86a3f20b097b6f65a3ea84a7333e6862abe37a16ec2679972a13b62907b",
+      "baseBounds": {
+        "x": 23,
+        "y": 22,
+        "w": 51,
+        "h": 58,
+        "count": 1586,
+        "edge": false
+      },
+      "atlas": {
+        "file": "masters-care/creatures-a-care.png",
+        "sourcePath": "/Users/thachanh/.codex/generated_images/01a1336a-1a81-7fd1-838a-938d62b6dd7d/exec-4e585585-28e0-4782-81e9-8eb10dfbf683.png",
+        "sourceSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+        "sourceDimensions": {
+          "width": 1448,
+          "height": 1086
+        },
+        "rows": 3,
+        "columns": 4,
+        "cellDimensions": {
+          "width": 362,
+          "rowCuts": [
+            0,
+            393,
+            714,
+            1086
+          ]
+        },
+        "species": [
+          "mooncalf",
+          "kneazle",
+          "diricawl"
+        ],
+        "row": 2,
+        "rowSpecies": "diricawl"
+      },
+      "neutralScale": 0.2248062015503876,
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80,
+        "padding": 0,
+        "baseWidth": 96,
+        "baseHeight": 96,
+        "basePivotX": 48,
+        "basePivotY": 80
+      },
+      "frames": [
+        {
+          "file": "native-care/diricawl/frame-01.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 0,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 714,
+            "w": 362,
+            "h": 372
+          },
+          "sourceBounds": {
+            "x": 85,
+            "y": 30,
+            "w": 230,
+            "h": 258,
+            "count": 33079,
+            "edge": false
+          },
+          "bounds": {
+            "x": 22,
+            "y": 22,
+            "w": 52,
+            "h": 58,
+            "count": 1669,
+            "edge": false
+          },
+          "scale": 0.2248062015503876,
+          "baseline": {
+            "sourceBottom": 288,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/diricawl/frame-02.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 1,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 714,
+            "w": 362,
+            "h": 372
+          },
+          "sourceBounds": {
+            "x": 92,
+            "y": 29,
+            "w": 227,
+            "h": 259,
+            "count": 32949,
+            "edge": false
+          },
+          "bounds": {
+            "x": 23,
+            "y": 22,
+            "w": 51,
+            "h": 58,
+            "count": 1672,
+            "edge": false
+          },
+          "scale": 0.2248062015503876,
+          "baseline": {
+            "sourceBottom": 288,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/diricawl/frame-03.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 2,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 714,
+            "w": 362,
+            "h": 372
+          },
+          "sourceBounds": {
+            "x": 65,
+            "y": 101,
+            "w": 242,
+            "h": 187,
+            "count": 29603,
+            "edge": false
+          },
+          "bounds": {
+            "x": 21,
+            "y": 38,
+            "w": 54,
+            "h": 42,
+            "count": 1491,
+            "edge": false
+          },
+          "scale": 0.2248062015503876,
+          "baseline": {
+            "sourceBottom": 288,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/diricawl/frame-04.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 3,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 714,
+            "w": 362,
+            "h": 372
+          },
+          "sourceBounds": {
+            "x": 90,
+            "y": 28,
+            "w": 219,
+            "h": 260,
+            "count": 32904,
+            "edge": false
+          },
+          "bounds": {
+            "x": 24,
+            "y": 22,
+            "w": 49,
+            "h": 58,
+            "count": 1671,
+            "edge": false
+          },
+          "scale": 0.2248062015503876,
+          "baseline": {
+            "sourceBottom": 288,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "growthPreserved": {
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "durations": [
+          900,
+          900,
+          900,
+          900
+        ],
+        "loop": false
+      },
+      "warnings": []
+    },
+    {
+      "id": "fwooper",
+      "label": "Fwooper",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "baseFrame": "native-levels/fwooper/frame-04.png",
+      "baseFrameSha256": "4e652065f70a1a8c562985e9df83570a7c424f2dc7b456ea8c3d7d11eec4e59f",
+      "baseBounds": {
+        "x": 19,
+        "y": 20,
+        "w": 58,
+        "h": 60,
+        "count": 1771,
+        "edge": false
+      },
+      "atlas": {
+        "file": "masters-care/creatures-b-care.png",
+        "sourcePath": "/Users/thachanh/.codex/generated_images/01a1336a-1a81-7fd1-838a-938d62b6dd7d/exec-84f3f575-5997-449c-87a2-ea69767fb716.png",
+        "sourceSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+        "sourceDimensions": {
+          "width": 1448,
+          "height": 1086
+        },
+        "rows": 3,
+        "columns": 4,
+        "cellDimensions": {
+          "width": 362,
+          "rowCuts": [
+            0,
+            337,
+            697,
+            1086
+          ]
+        },
+        "species": [
+          "fwooper",
+          "thestral",
+          "unicorn"
+        ],
+        "row": 0,
+        "rowSpecies": "fwooper"
+      },
+      "neutralScale": 0.25,
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80,
+        "padding": 0,
+        "baseWidth": 96,
+        "baseHeight": 96,
+        "basePivotX": 48,
+        "basePivotY": 80
+      },
+      "frames": [
+        {
+          "file": "native-care/fwooper/frame-01.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 0,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 362,
+            "h": 337
+          },
+          "sourceBounds": {
+            "x": 83,
+            "y": 66,
+            "w": 238,
+            "h": 240,
+            "count": 31324,
+            "edge": false
+          },
+          "bounds": {
+            "x": 18,
+            "y": 20,
+            "w": 60,
+            "h": 60,
+            "count": 1951,
+            "edge": false
+          },
+          "scale": 0.25,
+          "baseline": {
+            "sourceBottom": 306,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/fwooper/frame-02.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 1,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 0,
+            "w": 362,
+            "h": 337
+          },
+          "sourceBounds": {
+            "x": 86,
+            "y": 70,
+            "w": 231,
+            "h": 235,
+            "count": 30310,
+            "edge": false
+          },
+          "bounds": {
+            "x": 19,
+            "y": 21,
+            "w": 58,
+            "h": 59,
+            "count": 1892,
+            "edge": false
+          },
+          "scale": 0.25,
+          "baseline": {
+            "sourceBottom": 305,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/fwooper/frame-03.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 2,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 0,
+            "w": 362,
+            "h": 337
+          },
+          "sourceBounds": {
+            "x": 47,
+            "y": 157,
+            "w": 263,
+            "h": 150,
+            "count": 25477,
+            "edge": false
+          },
+          "bounds": {
+            "x": 15,
+            "y": 42,
+            "w": 66,
+            "h": 38,
+            "count": 1591,
+            "edge": false
+          },
+          "scale": 0.25,
+          "baseline": {
+            "sourceBottom": 307,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/fwooper/frame-04.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "careFrame": 3,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 0,
+            "w": 362,
+            "h": 337
+          },
+          "sourceBounds": {
+            "x": 84,
+            "y": 66,
+            "w": 222,
+            "h": 240,
+            "count": 31126,
+            "edge": false
+          },
+          "bounds": {
+            "x": 20,
+            "y": 20,
+            "w": 56,
+            "h": 60,
+            "count": 1950,
+            "edge": false
+          },
+          "scale": 0.25,
+          "baseline": {
+            "sourceBottom": 306,
+            "outputBottom": 80,
+            "pivotY": 80,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "growthPreserved": {
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "durations": [
+          900,
+          900,
+          900,
+          900
+        ],
+        "loop": false
+      },
+      "warnings": []
+    },
+    {
+      "id": "thestral",
+      "label": "Thestral",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "baseFrame": "native-levels/thestral/frame-04.png",
+      "baseFrameSha256": "6c93bbb59f1bcd1deaab63c395f67637374f40f982f837b0b5004f54db0adce1",
+      "baseBounds": {
+        "x": 30,
+        "y": 39,
+        "w": 101,
+        "h": 105,
+        "count": 5273,
+        "edge": false
+      },
+      "atlas": {
+        "file": "masters-care/creatures-b-care.png",
+        "sourcePath": "/Users/thachanh/.codex/generated_images/01a1336a-1a81-7fd1-838a-938d62b6dd7d/exec-84f3f575-5997-449c-87a2-ea69767fb716.png",
+        "sourceSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+        "sourceDimensions": {
+          "width": 1448,
+          "height": 1086
+        },
+        "rows": 3,
+        "columns": 4,
+        "cellDimensions": {
+          "width": 362,
+          "rowCuts": [
+            0,
+            337,
+            697,
+            1086
+          ]
+        },
+        "species": [
+          "fwooper",
+          "thestral",
+          "unicorn"
+        ],
+        "row": 1,
+        "rowSpecies": "thestral"
+      },
+      "neutralScale": 0.35353535353535354,
+      "canvas": {
+        "width": 160,
+        "height": 160,
+        "pivotX": 80,
+        "pivotY": 144,
+        "padding": 0,
+        "baseWidth": 160,
+        "baseHeight": 160,
+        "basePivotX": 80,
+        "basePivotY": 144
+      },
+      "frames": [
+        {
+          "file": "native-care/thestral/frame-01.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "careFrame": 0,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 337,
+            "w": 362,
+            "h": 360
+          },
+          "sourceBounds": {
+            "x": 80,
+            "y": 36,
+            "w": 279,
+            "h": 297,
+            "count": 45568,
+            "edge": false
+          },
+          "bounds": {
+            "x": 31,
+            "y": 39,
+            "w": 99,
+            "h": 105,
+            "count": 5708,
+            "edge": false
+          },
+          "scale": 0.35353535353535354,
+          "baseline": {
+            "sourceBottom": 333,
+            "outputBottom": 144,
+            "pivotY": 144,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/thestral/frame-02.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "careFrame": 1,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 337,
+            "w": 362,
+            "h": 360
+          },
+          "sourceBounds": {
+            "x": 80,
+            "y": 50,
+            "w": 275,
+            "h": 283,
+            "count": 44832,
+            "edge": false
+          },
+          "bounds": {
+            "x": 32,
+            "y": 44,
+            "w": 97,
+            "h": 100,
+            "count": 5603,
+            "edge": false
+          },
+          "scale": 0.35353535353535354,
+          "baseline": {
+            "sourceBottom": 333,
+            "outputBottom": 144,
+            "pivotY": 144,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/thestral/frame-03.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "careFrame": 2,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 337,
+            "w": 362,
+            "h": 360
+          },
+          "sourceBounds": {
+            "x": 45,
+            "y": 76,
+            "w": 291,
+            "h": 257,
+            "count": 44732,
+            "edge": false
+          },
+          "bounds": {
+            "x": 29,
+            "y": 53,
+            "w": 103,
+            "h": 91,
+            "count": 5606,
+            "edge": false
+          },
+          "scale": 0.35353535353535354,
+          "baseline": {
+            "sourceBottom": 333,
+            "outputBottom": 144,
+            "pivotY": 144,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/thestral/frame-04.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "careFrame": 3,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 337,
+            "w": 362,
+            "h": 360
+          },
+          "sourceBounds": {
+            "x": 53,
+            "y": 30,
+            "w": 281,
+            "h": 302,
+            "count": 44554,
+            "edge": false
+          },
+          "bounds": {
+            "x": 31,
+            "y": 37,
+            "w": 99,
+            "h": 107,
+            "count": 5559,
+            "edge": false
+          },
+          "scale": 0.35353535353535354,
+          "baseline": {
+            "sourceBottom": 332,
+            "outputBottom": 144,
+            "pivotY": 144,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "growthPreserved": {
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "durations": [
+          900,
+          900,
+          900,
+          900
+        ],
+        "loop": false
+      },
+      "warnings": []
+    },
+    {
+      "id": "unicorn",
+      "label": "Kỳ lân",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "baseFrame": "native-levels/unicorn/frame-04.png",
+      "baseFrameSha256": "840b9b1c8d9e00fe298be3c6497882e62977cfcb164af9a9de1fb6f8a33d28ce",
+      "baseBounds": {
+        "x": 25,
+        "y": 39,
+        "w": 109,
+        "h": 105,
+        "count": 5341,
+        "edge": false
+      },
+      "atlas": {
+        "file": "masters-care/creatures-b-care.png",
+        "sourcePath": "/Users/thachanh/.codex/generated_images/01a1336a-1a81-7fd1-838a-938d62b6dd7d/exec-84f3f575-5997-449c-87a2-ea69767fb716.png",
+        "sourceSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+        "sourceDimensions": {
+          "width": 1448,
+          "height": 1086
+        },
+        "rows": 3,
+        "columns": 4,
+        "cellDimensions": {
+          "width": 362,
+          "rowCuts": [
+            0,
+            337,
+            697,
+            1086
+          ]
+        },
+        "species": [
+          "fwooper",
+          "thestral",
+          "unicorn"
+        ],
+        "row": 2,
+        "rowSpecies": "unicorn"
+      },
+      "neutralScale": 0.36585365853658536,
+      "canvas": {
+        "width": 160,
+        "height": 160,
+        "pivotX": 80,
+        "pivotY": 144,
+        "padding": 0,
+        "baseWidth": 160,
+        "baseHeight": 160,
+        "basePivotX": 80,
+        "basePivotY": 144
+      },
+      "frames": [
+        {
+          "file": "native-care/unicorn/frame-01.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "careFrame": 0,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 697,
+            "w": 362,
+            "h": 389
+          },
+          "sourceBounds": {
+            "x": 57,
+            "y": 33,
+            "w": 300,
+            "h": 287,
+            "count": 43544,
+            "edge": false
+          },
+          "bounds": {
+            "x": 25,
+            "y": 39,
+            "w": 110,
+            "h": 105,
+            "count": 5838,
+            "edge": false
+          },
+          "scale": 0.36585365853658536,
+          "baseline": {
+            "sourceBottom": 320,
+            "outputBottom": 144,
+            "pivotY": 144,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/unicorn/frame-02.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "careFrame": 1,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 697,
+            "w": 362,
+            "h": 389
+          },
+          "sourceBounds": {
+            "x": 52,
+            "y": 32,
+            "w": 306,
+            "h": 288,
+            "count": 43317,
+            "edge": false
+          },
+          "bounds": {
+            "x": 24,
+            "y": 39,
+            "w": 112,
+            "h": 105,
+            "count": 5788,
+            "edge": false
+          },
+          "scale": 0.36585365853658536,
+          "baseline": {
+            "sourceBottom": 320,
+            "outputBottom": 144,
+            "pivotY": 144,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/unicorn/frame-03.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "careFrame": 2,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 697,
+            "w": 362,
+            "h": 389
+          },
+          "sourceBounds": {
+            "x": 32,
+            "y": 121,
+            "w": 322,
+            "h": 198,
+            "count": 41039,
+            "edge": false
+          },
+          "bounds": {
+            "x": 21,
+            "y": 72,
+            "w": 118,
+            "h": 72,
+            "count": 5493,
+            "edge": false
+          },
+          "scale": 0.36585365853658536,
+          "baseline": {
+            "sourceBottom": 319,
+            "outputBottom": 144,
+            "pivotY": 144,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        },
+        {
+          "file": "native-care/unicorn/frame-04.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "careFrame": 3,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 697,
+            "w": 362,
+            "h": 389
+          },
+          "sourceBounds": {
+            "x": 60,
+            "y": 28,
+            "w": 280,
+            "h": 292,
+            "count": 41913,
+            "edge": false
+          },
+          "bounds": {
+            "x": 29,
+            "y": 37,
+            "w": 102,
+            "h": 107,
+            "count": 5600,
+            "edge": false
+          },
+          "scale": 0.36585365853658536,
+          "baseline": {
+            "sourceBottom": 320,
+            "outputBottom": 144,
+            "pivotY": 144,
+            "anchor": "source alpha-bounds bottom to native pivotY"
+          },
+          "horizontalAnchor": "source alpha-bounds center to native pivotX",
+          "clippedPixels": 0,
+          "edgeContact": false
+        }
+      ],
+      "clips": {
+        "idle": {
+          "frames": [
+            4,
+            5,
+            4
+          ],
+          "durations": [
+            760,
+            180,
+            760
+          ],
+          "loop": true
+        },
+        "eat": {
+          "frames": [
+            6,
+            6,
+            4,
+            6
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            7,
+            4,
+            7,
+            4
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "growthPreserved": {
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "durations": [
+          900,
+          900,
+          900,
+          900
+        ],
+        "loop": false
+      },
+      "warnings": []
+    }
+  ],
+  "itemCount": 6,
+  "frameCount": 24,
+  "generatedAt": "2026-10-13T09:04:05.323Z"
+}

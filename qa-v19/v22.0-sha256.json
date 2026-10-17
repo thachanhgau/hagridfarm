@@ -1,0 +1,25 @@
+{
+  "version": "22.0",
+  "generatedAt": "2026-10-14T14:50:42.770Z",
+  "files": {
+    "garden-v05/garden-atmosphere.mjs": "3c3ea206f79ddbf53ad65f89cdae080150b5057f13dc89f27bc4d671eaf1acd0",
+    "garden-v05/garden-tour.mjs": "2077b25b79612ee8feec5415977db8fbca0ab6a0c3800602954e7d12f0a5d234",
+    "garden-v05/garden-achievements.mjs": "dbba56fb8d06fdef0b7b6dcc563a94b1306cd6e08f11460ac53c9549610596d7",
+    "garden-v05/garden-postcard.mjs": "581dc6c6508e30206ca63e50010b0881b9bf11fd8b41b7a9ed83ac0a0ee93971",
+    "garden-v05/garden-quests.mjs": "e5771a47ddcc0b312fb3c3dc498542f222dc17dc40572f94b536a79744333bf1",
+    "garden-v05/garden-audio.mjs": "0b5c83794155f85d48da417ecb12528d276752f4f62a4398809a0e3890d2f2c5",
+    "garden-v05/hpvn-bridge.mjs": "a8a7b333e47d201002f5f9e1217dc169d5734f6448d38529a23fdddfde11e597",
+    "garden-v05/scene-renderer.mjs": "1dd66cce861b9a24354c015bd8d95f588e6d35be3cc774947be704041afa637d",
+    "garden-v05/progression-panels.mjs": "7141513b8bf7ff4211737a6bbffd76b562c76921db4d8d610d10370ff973032e",
+    "garden-v05/mobile-game.mjs": "fe34956753dede44470815f0f009916dc8298fb5a4ee37f9643822522f00b243",
+    "garden-v05/wizard-ui.css": "996254dd76b15cc47e132362913f74d0b9a52bb87bb4b2f645b9162f33cf0cfe",
+    "garden-v05/index.html": "d21ebd8b249e816c910d5ff4601712bf593d2b08c80c6d8f3de55baac9694e80",
+    "garden-v05/v20-features.test.mjs": "76124a281841befe42eaa54b1f8ea19908c2897896ca29d0666602e55f6c8c89",
+    "garden-v05/v21-features.test.mjs": "0595a2a033696f3f78795a69a867d2bd61ccd226923a602010ab52f140ccad13",
+    "garden-v05/v22-features.test.mjs": "aa93b91c5a8e5315c3a7c5b3830af66299eec20459a1bd506bfac4d83e8d886e",
+    "qa-v19/ui-fixture.html": "bc7c379be1781e243f6ef6560be99d8361c134016a1494924e83dd0ad663c758",
+    "qa-v19/mobile-fixture.mjs": "a3e5da2c1f0f7076c2019fb17bbdc2bc72ae09564219fb2e6cdbf2ffb56ba328",
+    "qa-v19/embed-preview.html": "3a4e64ad7adc6f77decc943e54d14f4dea030b4dddd1e0e2972392b5b841b4e4",
+    "qa-v19/HANDOFF-V22.0.md": "1746c96f99fc0c8b85bbf4970b4420e57cbc4e635bad3b7d72da63d53db4460a"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "collection": "Hagrid Garden V24",
+  "created_at": "2026-10-17",
+  "tool": "built-in image_gen",
+  "style_reference": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/motion-qa/scene-motion-final.png",
+  "style_reference_role": "viewed loosely for dense isometric pixel garden composition and palette; never used as an edit target",
+  "output_policy": {
+    "webp_width": 640,
+    "webp_format": "webp",
+    "max_webp_bytes": 200000,
+    "master_format": "png",
+    "master_directory": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters"
+  },
+  "assets": [
+    {
+      "id": "event-halloween",
+      "mode": "generate",
+      "source_png": "/Users/thachanh/.codex/generated_images/01a14826-d092-7df1-98cb-4f7b03ad6044/exec-d649bbd9-8061-4955-b94d-8dfd221fc682.png",
+      "master_png": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters/event-halloween.png",
+      "webp": "event-halloween.webp",
+      "prompt": "Wide landscape pixel-art miniature isometric 2:1 woodland garden during Halloween at Hagrid's grounds: rustic timber-and-stone hut with slate roof, dense evergreen forest, planted vegetable and herb beds, wooden fence and winding path, carved pumpkin lanterns, subtle violet magical wisps, and Hagrid's large black cauldron. Dusky blue-green twilight, warm pumpkin light, restrained violet, palette #24483f #71934b #f5d69a #735044. No text, lettering, logos, UI, speech bubbles, watermark, collage or frame; one coherent crisp pixel-art scene.",
+      "bytes": 82608,
+      "sha256": "93e244741518fccd7399fc428a66341beebf649bf34ef6e7ca736a074285bdd3"
+    },
+    {
+      "id": "event-yule",
+      "mode": "generate",
+      "source_png": "/Users/thachanh/.codex/generated_images/01a14826-d092-7df1-98cb-4f7b03ad6044/exec-a9b5398a-2044-484d-a374-bf039f421ee2.png",
+      "master_png": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters/event-yule.png",
+      "webp": "event-yule.webp",
+      "prompt": "Wide landscape pixel-art miniature isometric 2:1 woodland garden at Christmas Yule: rustic timber-and-stone hut with slate roof, dense evergreen forest, tidy planted beds, fence and path, fresh snow, one decorated evergreen with warm fairy lights, wrapped presents, lanterns and glowing windows. Deep blue winter twilight, cozy golden lights, palette #24483f #71934b #f5d69a #735044 with restrained red and gold. No text, lettering, logos, UI, speech bubbles, watermark, collage or frame; one coherent crisp pixel-art scene.",
+      "bytes": 100308,
+      "sha256": "5f2c7d0ecb6050b38bb443d975dc91bbdc0b9095b5ce3b715a9f8c9d2afb77cf"
+    },
+    {
+      "id": "event-herbology",
+      "mode": "generate",
+      "source_png": "/Users/thachanh/.codex/generated_images/01a14826-d092-7df1-98cb-4f7b03ad6044/exec-33fa5dda-9884-47d5-a336-ff0e6bed41dd.png",
+      "master_png": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters/event-herbology.png",
+      "webp": "event-herbology.webp",
+      "prompt": "Wide landscape pixel-art miniature isometric 2:1 woodland garden during a Herbology lesson: rustic Hagrid hut, dense evergreen forest, tidy beds, Professor Sprout's glass greenhouse stalls and potting benches, lush magical herbs, small cute mandrake plants in pots, watering cans, seed trays and bright butterflies. Fresh morning light, soft plant sparkles, palette #24483f #71934b #f5d69a #735044 with yellow, blue and violet accents. No text or writing on markers, no logos, UI, watermark, collage or frame; one coherent crisp pixel-art scene.",
+      "bytes": 110534,
+      "sha256": "8f715c06a743b157df8a294bd3db83425738ac7e38526a112e12c3c7fe3409f2"
+    },
+    {
+      "id": "weather-clear",
+      "mode": "generate",
+      "source_png": "/Users/thachanh/.codex/generated_images/01a14826-d092-7df1-98cb-4f7b03ad6044/exec-738d6bcc-c8cf-4991-8f71-0411d686f553.png",
+      "master_png": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters/weather-clear.png",
+      "webp": "weather-clear.webp",
+      "prompt": "Canonical wide clear-weather garden view: Hagrid timber-and-stone hut upper center, small greenhouse upper right, dense evergreen forest, wooden perimeter fence, winding path and a dozen rectangular planted beds on a readable isometric grid, with shed, barrels, flower borders and tools. Bright clear morning with distinct sunbeams and soft shadows, palette #24483f #71934b #f5d69a #735044. No event decorations, people, text, logos, UI, watermark, collage or frame; preserve this landmark arrangement for weather variants.",
+      "bytes": 108450,
+      "sha256": "851f005b4b259f07afbfcf1606ab6de1c01d64904de006dec146d06000cc4e9f"
+    },
+    {
+      "id": "weather-rain",
+      "mode": "edit",
+      "reference": "artmasters/weather-clear.png",
+      "source_png": "/Users/thachanh/.codex/generated_images/01a14826-d092-7df1-98cb-4f7b03ad6044/exec-6f81f769-e8fb-4e6a-8f8a-2c7498eaeafe.png",
+      "master_png": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters/weather-rain.png",
+      "webp": "weather-rain.webp",
+      "prompt": "Edit only the canonical garden's weather: steady fine rain, wet reflective slate and timber, dark damp soil, puddles on gravel paths, dripping eaves and soft mist between trees. Preserve exact camera, isometric composition, hut, greenhouse, fence, path, bed positions, crop silhouettes and scale. Cool overcast light with cozy windows. No layout changes, text, logos, UI, watermark, collage or frame; avoid snow, autumn leaves, pumpkins and sunshine.",
+      "bytes": 87566,
+      "sha256": "47b65f47a3c06b87b36a594633a21e2f6f12c410d430fcb2dab8290282a2cff7"
+    },
+    {
+      "id": "weather-autumn",
+      "mode": "edit",
+      "reference": "artmasters/weather-clear.png",
+      "source_png": "/Users/thachanh/.codex/generated_images/01a14826-d092-7df1-98cb-4f7b03ad6044/exec-eae79244-5f3c-4c05-99e8-75bf7de723a9.png",
+      "master_png": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters/weather-autumn.png",
+      "webp": "weather-autumn.webp",
+      "prompt": "Edit only the canonical garden's season and atmosphere: golden, amber, russet and muted red canopy, a light scatter of fallen leaves, warm late-afternoon sun and long soft shadows. Preserve exact camera, isometric composition, hut, greenhouse, fence, path, bed positions, crop silhouettes and scale. No layout changes, text, logos, UI, watermark, collage or frame; avoid rain, fog, snow, pumpkins and decorations.",
+      "bytes": 115796,
+      "sha256": "9f592ba1d6149e72a40cfa1c367dffc9fdb25f0e8ed5b07eaf109006ffe93d06"
+    },
+    {
+      "id": "weather-snow",
+      "mode": "edit",
+      "reference": "artmasters/weather-clear.png",
+      "source_png": "/Users/thachanh/.codex/generated_images/01a14826-d092-7df1-98cb-4f7b03ad6044/exec-85ebf40e-1e8a-4927-951f-63a4efa12619.png",
+      "master_png": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters/weather-snow.png",
+      "webp": "weather-snow.webp",
+      "prompt": "Edit only the canonical garden's weather: thick soft snow caps on roof, greenhouse, fences, trees and beds, snowy paths with a few footprints, cool blue air, warm glowing hut windows and lanterns. Preserve exact camera, isometric composition, hut, greenhouse, fence, path, bed positions, crop silhouettes and scale. No layout changes, text, logos, UI, watermark, collage or frame; avoid rain, autumn leaves, pumpkins and holiday decorations.",
+      "bytes": 112356,
+      "sha256": "c775cb68559658478b2ce16bd451ffc8f589677bdd370e1ce8684334d02d1393"
+    }
+  ],
+  "master_directory": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters"
+}

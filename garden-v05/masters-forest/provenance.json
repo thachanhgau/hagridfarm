@@ -1,0 +1,9 @@
+{
+  "tool": "built-in image_gen",
+  "generatedFile": "exec-c755c098-43ac-4d16-8a7e-50138a836707.png",
+  "prompt": "Use case: stylized-concept. Production asset sheet for an isometric pixel-art enchanted forest surrounding a cozy wizard-school garden. Exactly FOUR isolated scenery props in a spacious 2x2 grid, on genuine transparent background: upper left a huge ancient gnarled oak with twisted brown trunk and dark moss-green canopy; upper right a tall narrow dense blue-green conifer; lower left a cluster of three slender crooked woodland trees with emerald leaves; lower right an old moss-covered fallen log with ferns and a few tiny cream mushrooms. No characters. Each prop completely separated, wide transparent gutters, no overlap, no shadows, no ground tiles. Elevated 2:1 isometric viewpoint. Crisp pixel art, deliberately large square pixel clusters like 16-bit fantasy game scenery, restricted desaturated palette of teal pine shadows, moss green midtones, olive highlights, brown bark and warm cream accents. Canopies deep and mysterious, woodland cozy rather than horror. Each tree trunk ends with visible small roots; entire silhouette fits with clear margin; each panel centered. No text, no labels, no frame, no castle, no UI, no gradients or smooth painterly texture.",
+  "transparent_background": true,
+  "source": "forest-atlas-v06.png",
+  "exports": "../forest-assets.json",
+  "hagridStatus": "not generated: image tool output moderation block; no retries or substitute character added"
+}

@@ -1,0 +1,76 @@
+/* V24.8 — illustrated field kit, inset brass medallions and an item-led action card. */
+#playDock{--dock-gold:#d5bc7b;display:flex;flex-direction:column;gap:12px;width:min(620px,calc(100% - 24px));max-width:620px;left:50%;bottom:max(12px,env(safe-area-inset-bottom));border:0;border-radius:0;clip-path:none;background:none;box-shadow:none;pointer-events:none}
+#playDock:before{display:none}#playDock>*{pointer-events:auto}#playDock [hidden]{display:none!important}
+#playDock .dock,#playDock .crop-context{position:relative;isolation:isolate;inset:auto;transform:none;width:auto;margin:0;padding:10px;min-height:0;border:1px solid #b6a271;border-radius:3px;background:#10261ef7;box-shadow:0 0 0 2px #091b16b3,0 8px 24px #03120ea6,inset 0 0 0 3px #d6bd7c17;overflow:visible}
+#playDock .dock:before,#playDock .crop-context:before{content:'';position:absolute;inset:3px 3px auto;height:87px;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#10271cf0,#163326bd 45%,#13271e66),var(--dock-scene,url('./v24-art/weather-clear.webp')) center 55%/cover;image-rendering:pixelated;opacity:.85}
+#playDock .dock:after,#playDock .crop-context:after{content:'';position:absolute;top:-3px;left:calc(50% - 3px);width:6px;height:6px;background:#e0c789;transform:rotate(45deg);box-shadow:0 0 0 2px #243a2c;pointer-events:none}
+#playDock #plantDock,#playDock #creatureDock{display:grid;grid-template-columns:72px minmax(0,1fr) 44px 94px;align-items:center;gap:9px 8px}
+#playDock .dock-portrait{grid-column:1;grid-row:1;display:grid;place-items:center;position:relative;width:72px;height:72px;isolation:isolate;pointer-events:none;background:radial-gradient(ellipse at 50% 65%,#b2ba6559,transparent 68%),linear-gradient(135deg,#213d2c,#0a211a);border:1px solid #ceb679;box-shadow:inset 0 0 0 3px #172e21,inset 0 0 0 4px #8e925b66,0 3px 0 #071b14;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px)}
+#playDock .dock-portrait:after{content:'✦';position:absolute;bottom:1px;right:4px;color:#f9db90;font-size:13px;text-shadow:0 1px #10271a}
+#playDock .dock-portrait>.sprite-icon{position:relative;z-index:1;animation:dock-breathe 4s steps(8,end) infinite;image-rendering:pixelated}
+#playDock .work-dock .dock-portrait[data-kind=sprite]>.sprite-icon{transform:scale(1.5);animation:none}
+#playDock .dock-portrait>.tray-glyph{font-size:40px;color:#f2d28f}
+#playDock .seed-caption{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;padding:0 2px;margin:0;min-width:0;line-height:1.2}
+#playDock .seed-caption strong{display:block;max-width:100%;white-space:normal;overflow-wrap:anywhere;font:600 18px/1.1 Georgia,serif;color:#f8e7bd;text-shadow:0 2px 2px #071a12}
+#playDock .seed-caption>span{display:block;max-width:100%;white-space:normal;font:11px/1.3 system-ui;color:#c4d0b2}
+#playDock .seed-side{grid-column:1/-1;grid-row:2;min-width:0;width:100%;padding-top:7px;border-top:1px solid #a99b5a55;overflow:hidden}
+#playDock .item-tray{display:flex;align-items:center;gap:8px;width:100%;padding:3px 2px 5px;scroll-padding:3px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#a49a6555 transparent}
+#playDock .item-tray::-webkit-scrollbar{display:block;height:2px}#playDock .item-tray::-webkit-scrollbar-thumb{background:#a49a6577;border-radius:0}
+#playDock .item-tray button{flex:0 0 50px;width:50px;min-width:50px;height:50px;min-height:50px;padding:2px;border:1px solid #627e5c66;border-radius:2px;background:radial-gradient(ellipse at bottom,#7a915b33,transparent 75%),#0b211b;box-shadow:inset 0 2px #030f0b88,inset 0 -2px #6d805233;transition:background .16s,border-color .16s}
+#playDock .item-tray button[aria-pressed=true]{border:1px solid #e5c47c;background:radial-gradient(ellipse at bottom,#d6bc6e66,transparent 85%),#39492d;box-shadow:inset 0 0 0 1px #d1b77944,0 0 8px #d6bc6e18}
+#playDock .item-tray button[aria-pressed=true]:after{top:auto;bottom:1px;left:calc(50% - 5px);width:10px;height:2px;right:auto;background:#ffe6a6}
+#playDock .item-tray .sprite-icon{transform:none}#playDock .item-tray .tray-label{display:none}
+#playDock #buildTray .tray-label{display:block;left:auto;right:2px;bottom:2px;min-width:15px;padding:1px 2px;font:700 10px/12px system-ui;color:#efdbab;border:1px solid #a3976855;background:#142c22}
+#playDock .plant-actions{display:contents}
+#playDock #seedOptionsButton,#playDock #creatureOptionsButton{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:center;width:44px;height:46px;min-height:46px;padding:0;border:1px solid #c1b17966;border-radius:2px;background:#1a34289c;box-shadow:inset 0 1px #d4c48b22;font-size:18px;color:#e4d4a5}
+#playDock #seedOptionsButton{flex-direction:column;font-size:13px}#playDock #seedOptionsButton>span[aria-hidden]{display:none}
+#playDock #plantButton,#playDock .creature-actions{grid-column:4;grid-row:1;margin:0;padding:0;min-width:0}
+#playDock .primary,#playDock #plantButton,#playDock #creatureDock .primary,#playDock .work-controls .primary{position:relative;width:100%;height:50px;min-height:50px;min-width:0;padding:5px 9px;border:1px solid #ffe4a4;border-radius:3px;background:linear-gradient(165deg,#f1dfab 0%,#d4b675 52%,#b48f4c 53%,#d0b071 100%);box-shadow:0 0 0 2px #493e29,inset 0 2px #fff1bf,inset 0 -3px #846332,0 4px 8px #05150f70;color:#302d1e;font:800 13px/1.1 system-ui;letter-spacing:0;text-shadow:0 1px #ffe9b46b}
+#playDock .primary:after{content:'';position:absolute;left:5px;right:5px;top:4px;bottom:5px;border:1px solid #fff0bd77;pointer-events:none}
+#playDock .primary:hover:not(:disabled){filter:brightness(1.08)}#playDock .primary:active:not(:disabled){filter:brightness(.94)}
+#playDock .primary:disabled{opacity:.48;filter:saturate(.45);box-shadow:inset 0 1px #dcc79355}
+#playDock .work-detail{grid-column:1/-1;grid-row:3;padding:0 2px;margin:0;font:10px/1.4 system-ui;color:#bdcbb1}
+#playDock .work-detail:empty{display:none}
+#playDock .work-detail-text{display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px}
+#playDock .dock-cost{display:inline-flex;align-items:center;gap:4px;font:11px/1.2 system-ui;white-space:nowrap;color:#d9dfc5}#playDock .dock-cost.is-output{color:#eed59d}#playDock .dock-cost.is-short{color:#ffb58e}#playDock .dock-cost-reason{font:11px/1.3 system-ui;color:#e4cca0}#playDock .dock-cost .visual-slot{flex:none}
+#playDock .work-claim{margin:4px 0 0;min-height:44px;border:1px solid #e3c783;border-radius:2px;background:#3c5737;color:#ffe4a7}
+/* Work recipes keep their extra batch control, without squeezing the item name. */
+#playDock .work-dock{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center;gap:7px 12px}
+#playDock .work-dock:before{height:102px}
+#playDock .work-dock .dock-portrait{grid-column:1;grid-row:1/3;align-self:center}
+#playDock .work-dock .seed-caption{grid-column:2;grid-row:1;flex-direction:row;align-items:baseline;justify-content:space-between;gap:8px}
+#playDock .work-dock .seed-caption strong{font-size:16px}#playDock .work-dock .seed-caption>span{flex:none;max-width:45%;text-align:right}
+#playDock .work-controls{grid-column:2;grid-row:2;display:flex;align-items:center;gap:7px;min-width:0}
+#playDock .work-controls .primary{width:auto;flex:1;min-width:82px;height:46px;min-height:46px}
+#playDock .work-controls select,#playDock .work-controls button:not(.primary){width:44px;min-width:44px;height:46px;min-height:46px;border:1px solid #c1b17966;border-radius:2px;background:#1a34289c;color:#e4d4a5;padding:3px;box-shadow:none}
+#playDock .work-dock .seed-side{grid-row:3}#playDock .work-dock .work-detail{grid-row:4}
+/* Occupied crops have a portrait and one direct action, without the inventory strip. */
+#playDock .crop-context{display:grid;grid-template-columns:64px minmax(0,1fr) 94px 44px;align-items:center;gap:8px}
+#playDock #contextIcon{display:grid;place-items:center;width:64px;height:64px;border:1px solid #c9b276;border-radius:2px;background:radial-gradient(ellipse at bottom,#b5b76b55,transparent),#132d20;box-shadow:inset 0 0 0 3px #152d22;overflow:hidden}
+#playDock #contextIcon .sprite-icon{transform:scale(1.08)}#playDock .context-copy small{display:none}#playDock .context-copy strong{font:600 18px/1.1 Georgia,serif;color:#f8e7bd}#playDock .context-copy>span{font:11px/1.2 system-ui;color:#c4d0b2;margin-top:6px}
+#playDock #contextOptions{width:44px;min-width:44px;height:46px;min-height:46px;padding:0;border:1px solid #c1b17966;border-radius:2px;background:#1a34289c;color:#e4d4a5;box-shadow:none}
+/* Brass tool belt: the active medallion rises above a recessed wooden rail. */
+#playDock .dock-rail{position:relative;align-self:center;width:min(100%,420px);border:1px solid #ad955d;border-radius:3px;background:repeating-linear-gradient(0deg,#d4b77705 0 1px,transparent 1px 5px),linear-gradient(#2b392c,#14241d);box-shadow:0 0 0 2px #0b1c15bf,inset 0 3px #d6be7a22,inset 0 -4px #061910,0 8px 24px #06130c66}
+#playDock .dock-rail:before,#playDock .dock-rail:after{content:'';position:absolute;top:8px;bottom:8px;width:3px;border-top:3px solid #d1b578;border-bottom:3px solid #d1b578;pointer-events:none}#playDock .dock-rail:before{left:4px}#playDock .dock-rail:after{right:4px}
+#playDock .tools{height:70px;padding:5px 50px 5px 7px;gap:4px;border:0;overflow:visible}
+#playDock .tool{position:relative;isolation:isolate;flex:1;min-width:44px;height:58px;min-height:58px;padding:0;border:0;border-radius:0;background:none;box-shadow:none;overflow:visible;gap:0;color:#e8cf94}
+#playDock .tool:before{content:'';position:absolute;top:7px;left:calc(50% - 18px);width:36px;height:36px;border:1px solid #99885888;background:linear-gradient(135deg,#334434,#0b2119);box-shadow:inset 0 0 0 3px #15291e,inset 0 0 0 4px #9f8d5d33;transform:rotate(45deg);z-index:-1;transition:background .16s,border-color .16s}
+#playDock .tool .tool-glyph{height:32px;width:32px;position:relative;transform:translateY(-3px);color:#ddca9a}#playDock .tool .wizard-icon{width:27px;height:27px}
+#playDock #craftTool .tool-glyph{color:#d0bbed}#playDock #buildTool .tool-glyph{color:#e5bf81}
+#playDock .tool[aria-pressed=true]{border:0;background:none;box-shadow:none;color:#ffe4a4}
+#playDock .tool[aria-pressed=true]:before{top:3px;background:linear-gradient(135deg,#a89053,#3c5231 58%,#172e20);border-color:#f6d891;box-shadow:inset 0 0 0 3px #3c4c2c,inset 0 0 0 4px #d7be7b88,0 0 13px #d6b87533}
+#playDock .tool[aria-pressed=true] .tool-glyph{transform:translateY(-7px);color:#ffe9b0}#playDock .tool[aria-pressed=true]:after{display:none}
+#playDock .tool>span:not(.tool-glyph){position:absolute;bottom:0;font:600 10px/11px system-ui;color:#f5dda5;letter-spacing:.01em;opacity:0;text-shadow:0 1px 2px #071b12}
+#playDock .tool[aria-pressed=true]>span:not(.tool-glyph),#playDock .tool:focus-visible>span:not(.tool-glyph),#playDock .tool:hover>span:not(.tool-glyph){opacity:1}
+#playDock .tool:hover:not(:disabled):before,#playDock .tool:focus-visible:before{border-color:#fff0b9;background:#56663c}
+#playDock .tool:disabled{opacity:.38}#playDock .tool b{position:absolute;top:0;right:0;min-width:16px;height:16px;padding:0 3px;font:800 9px/14px system-ui;color:#2a3324;background:#e3c382;border:1px solid #fae8af;border-radius:2px;box-shadow:0 1px 3px #071a12}
+#playDock .dock-toggle{top:13px;right:4px;bottom:auto;min-width:44px;width:44px;height:44px;min-height:44px;padding:0;border:0;border-left:1px solid #b4a16c55;border-radius:0;background:transparent;box-shadow:none;color:#cdbb87;font-size:21px}
+#playDock button:focus-visible,#playDock select:focus-visible{outline:2px solid #b8e4d0;outline-offset:2px}
+.dock-collapsed #playDock{max-width:420px}.dock-collapsed #playDock>section{display:none!important}
+#playDock #plantDock.single-choice .seed-side{display:none}
+@keyframes dock-breathe{0%,100%{translate:0 0}50%{translate:0 -2px}}
+@media(max-width:440px){#playDock{width:calc(100% - 16px);gap:10px;bottom:max(10px,env(safe-area-inset-bottom))}#playDock .dock,#playDock .crop-context{padding:8px}#playDock #plantDock,#playDock #creatureDock{grid-template-columns:58px minmax(0,1fr) 44px 80px;gap:8px 6px}#playDock .dock-portrait{width:58px;height:64px}#playDock .dock-portrait>.sprite-icon{scale:.88}#playDock .seed-caption strong{font-size:15px}#playDock .seed-caption>span{font-size:10px}#playDock .primary,#playDock #plantButton,#playDock #creatureDock .primary{font-size:12px;padding:4px}#playDock .tools{padding-left:4px;padding-right:48px;gap:1px}#playDock .tool:before{width:32px;height:32px;left:calc(50% - 16px)}#playDock .tool b{right:-1px}#playDock .tool .tool-glyph{width:29px;height:29px}#playDock .work-dock{grid-template-columns:58px minmax(0,1fr);gap:7px 10px}#playDock .work-dock .seed-caption strong{font-size:15px}#playDock .work-dock .seed-caption>span{font-size:10px}#playDock .work-controls{gap:6px}#playDock .crop-context{grid-template-columns:54px minmax(0,1fr) 82px 44px;gap:6px}#playDock #contextIcon{width:54px;height:58px}#playDock .context-copy strong{font-size:16px}#playDock .context-copy>span{font-size:10px}}
+@media(max-height:450px) and (orientation:landscape){#playDock{width:min(620px,calc(100% - 124px));bottom:6px;gap:7px}#playDock .tools{height:60px;padding-top:1px;padding-bottom:1px}#playDock .tool{height:56px;min-height:56px}#playDock .dock-toggle{top:7px}#playDock .dock,#playDock .crop-context{padding:6px 8px}#playDock .dock-portrait{height:58px;width:64px}#playDock .dock-portrait>.sprite-icon{scale:.85}#playDock .seed-side{padding-top:3px}#playDock .item-tray{padding-bottom:3px}#playDock .item-tray button{width:44px;min-width:44px;flex-basis:44px;height:44px;min-height:44px}#playDock .work-detail{font-size:10px}}
+@media(prefers-reduced-motion:reduce){#playDock .dock-portrait>.sprite-icon{animation:none}#playDock .tool:before,#playDock .item-tray button{transition:none}}
+
+#playDock .dock-portrait>.visual-slot,#playDock #buildTray .visual-slot{background:none;border:0;box-shadow:none;border-radius:0}#playDock .dock-portrait .visual-corner-tag,#playDock #buildTray .visual-corner-tag{display:none}

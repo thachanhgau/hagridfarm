@@ -1,0 +1,118 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "groups": [
+    {
+      "file": "crops-a",
+      "ids": [
+        "oats",
+        "carrot",
+        "lettuce"
+      ],
+      "rows": [
+        "OATS with golden drooping oat seed panicles",
+        "CARROT with orange carrot root at ground and feathery leafy top",
+        "LETTUCE with compact light-green leafy head"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: OATS with golden drooping oat seed panicles. Row 2 subject: CARROT with orange carrot root at ground and feathery leafy top. Row 3 subject: LETTUCE with compact light-green leafy head. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
+    },
+    {
+      "file": "crops-b",
+      "ids": [
+        "clover",
+        "beet",
+        "maize"
+      ],
+      "rows": [
+        "CLOVER with many three-lobed green leaves and little white flowers",
+        "BEETROOT with round dark-red beet root and green purple-veined leaves",
+        "GOLDEN MAIZE with green stalk and golden corn cobs"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: CLOVER with many three-lobed green leaves and little white flowers. Row 2 subject: BEETROOT with round dark-red beet root and green purple-veined leaves. Row 3 subject: GOLDEN MAIZE with green stalk and golden corn cobs. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
+    },
+    {
+      "file": "crops-c",
+      "ids": [
+        "flax",
+        "sunflower",
+        "mint"
+      ],
+      "rows": [
+        "FLAX plant with slender upright stems and small blue flowers",
+        "SUNFLOWER with big yellow petal sunflower head and broad green leaves",
+        "MINT with pairs of fresh serrated green leaves, compact herb bush"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: FLAX plant with slender upright stems and small blue flowers. Row 2 subject: SUNFLOWER with big yellow petal sunflower head and broad green leaves. Row 3 subject: MINT with pairs of fresh serrated green leaves, compact herb bush. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
+    },
+    {
+      "file": "crops-d",
+      "ids": [
+        "blueberry",
+        "firepepper",
+        "silverkelp"
+      ],
+      "rows": [
+        "BLUEBERRY low bush covered in deep-blue berries",
+        "FIRE PEPPER magical plant with red-orange peppers, no actual flames",
+        "SILVER KELP, silver-blue fronds growing in a small low square water tray, no other scenery"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: BLUEBERRY low bush covered in deep-blue berries. Row 2 subject: FIRE PEPPER magical plant with red-orange peppers, no actual flames. Row 3 subject: SILVER KELP, silver-blue fronds growing in a small low square water tray, no other scenery. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
+    },
+    {
+      "file": "crops-e",
+      "ids": [
+        "moonherb",
+        "valerian",
+        "starbean"
+      ],
+      "rows": [
+        "MOON HERB imaginary silvery-green herb with pale crescent-shaped leaves and tiny white flowers",
+        "VALERIAN with clustered small pale pink-white flowers and green leaves",
+        "STAR BEAN imaginary compact bean vine with gold star-shaped bean pods and green leaves, no support trellis"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: MOON HERB imaginary silvery-green herb with pale crescent-shaped leaves and tiny white flowers. Row 2 subject: VALERIAN with clustered small pale pink-white flowers and green leaves. Row 3 subject: STAR BEAN imaginary compact bean vine with gold star-shaped bean pods and green leaves, no support trellis. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
+    },
+    {
+      "file": "crops-f",
+      "ids": [
+        "ambermelon",
+        "mistmushroom",
+        "sunpetal"
+      ],
+      "rows": [
+        "AMBER MELON low green vine with amber-gold melons on the ground",
+        "MIST MUSHROOM cluster of lilac and slate-blue mushrooms with pale speckles, no fog effect",
+        "SUN PETAL imaginary low flower with gold-orange petals and bright yellow center, dark green leaves, no magical glow"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: AMBER MELON low green vine with amber-gold melons on the ground. Row 2 subject: MIST MUSHROOM cluster of lilac and slate-blue mushrooms with pale speckles, no fog effect. Row 3 subject: SUN PETAL imaginary low flower with gold-orange petals and bright yellow center, dark green leaves, no magical glow. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
+    },
+    {
+      "file": "creatures-a",
+      "ids": [
+        "mooncalf",
+        "kneazle",
+        "diricawl"
+      ],
+      "rows": [
+        "MOONCALF, adorable pale gray little creature with long neck, large round blue eyes, tiny bovine muzzle and four splayed rounded feet",
+        "KNEAZLE, small cute orange-brown magical cat with large pointy ears, dark spots and lion-like tufted tail, four paws",
+        "DIRICAWL, cute plump flightless dodo-like bird with short greenish-blue plumage, pale beak, tiny wings and two feet"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: MOONCALF, adorable pale gray little creature with long neck, large round blue eyes, tiny bovine muzzle and four splayed rounded feet. Row 2 subject: KNEAZLE, small cute orange-brown magical cat with large pointy ears, dark spots and lion-like tufted tail, four paws. Row 3 subject: DIRICAWL, cute plump flightless dodo-like bird with short greenish-blue plumage, pale beak, tiny wings and two feet. For every row, column1 tiny newborn, column2 juvenile, column3 adolescent, column4 full adult of the SAME creature with matching colors/anatomy. Adult 2–3 times newborn height. All face diagonally toward viewer-left, all limbs/wings in same calm standing/resting pose. Grounded feet. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 80x85 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
+    },
+    {
+      "file": "creatures-b",
+      "ids": [
+        "fwooper",
+        "thestral",
+        "unicorn"
+      ],
+      "rows": [
+        "FWOOPER, cute bright pink-orange-yellow magical songbird with large eyes, short beak, folded little wings, two feet and colorful tail",
+        "THESTRAL, gentle stylized black winged horse with slender bony build, leathery folded bat wings and four legs, cute large eyes, no gore",
+        "UNICORN, small graceful ivory horse with one golden spiral horn, pale flowing mane and four legs, cute proportions"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: FWOOPER, cute bright pink-orange-yellow magical songbird with large eyes, short beak, folded little wings, two feet and colorful tail. Row 2 subject: THESTRAL, gentle stylized black winged horse with slender bony build, leathery folded bat wings and four legs, cute large eyes, no gore. Row 3 subject: UNICORN, small graceful ivory horse with one golden spiral horn, pale flowing mane and four legs, cute proportions. For every row, column1 tiny newborn, column2 juvenile, column3 adolescent, column4 full adult of the SAME creature with matching colors/anatomy. Adult 2–3 times newborn height. All face diagonally toward viewer-left, all limbs/wings in same calm standing/resting pose. Grounded feet. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 80x85 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
+    }
+  ]
+}

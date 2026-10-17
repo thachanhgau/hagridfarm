@@ -1,0 +1,68 @@
+/* V24.6: image-led menus and compact visual controls. */
+.play-dock .tools{height:68px;padding:6px 54px 6px 8px;gap:5px;align-items:stretch}
+.play-dock .tool{flex:1;min-width:44px;height:54px;min-height:54px;position:relative;display:flex;flex-direction:column;gap:3px;justify-content:center;padding:3px 4px;border:1px solid #81916b55;background:#152c24;box-shadow:inset 0 2px #aec49b12,inset 0 -3px #081b1566;color:#e1e6cb;font:700 11px/13px system-ui;letter-spacing:0;border-radius:3px;transition:background .14s,border-color .14s}
+.play-dock .tool-glyph{display:grid;place-items:center;width:30px;height:28px;line-height:1;color:#e3c68a}
+.play-dock .tool .wizard-icon{width:27px;height:27px;stroke-width:2}
+.play-dock #craftTool .tool-glyph{color:#c5b7ed}.play-dock #buildTool .tool-glyph{color:#e9b981}
+.play-dock .tool[aria-pressed=true]{background:linear-gradient(#e9d59e,#bfa56c);border-color:#ffedbc;color:#263a2c;box-shadow:inset 0 2px #fff3cb,inset 0 -3px #907444}
+.play-dock .tool[aria-pressed=true] .tool-glyph{color:#354c39}
+.play-dock .tool[aria-pressed=true]:after{content:'';position:absolute;bottom:2px;width:14px;height:2px;background:#40553d}
+.play-dock .tool:disabled{opacity:.46;filter:saturate(.35)}
+.play-dock .tool b{position:absolute;top:1px;right:2px;min-width:17px;height:17px;padding:0 3px;line-height:17px;border:1px solid #f3df9d;background:#eed18f;color:#423521;border-radius:3px;font:800 10px/15px system-ui;box-shadow:0 1px 2px #091810}
+.play-dock .dock-toggle{top:12px;right:4px;width:44px;min-width:44px;height:44px;min-height:44px;border-left:1px solid #9e9d6d55;border-radius:0;color:#ecdbaf;background:#ffffff05}
+.play-dock .seed-tray button[aria-pressed=true]{background:#52603a;border:2px solid #f3d991;box-shadow:inset 0 -3px #1f3428}
+.play-dock .selection-control{min-height:44px;color:#e4d8b6}.play-dock .primary{min-height:48px}
+.camera-tools .camera-settings{margin-top:7px;border-color:#b7a778;background:#263d30;display:grid;place-items:center}
+.camera-tools .camera-settings svg{width:23px;height:23px}.camera-tools button{min-width:44px;min-height:44px}
+/* One active caption, stable targets: no layout jump when switching tools. */
+.play-dock .tool>span:not(.tool-glyph){position:absolute;bottom:4px;font-size:10px;line-height:12px;opacity:0}
+.play-dock .tool[aria-pressed=true]>span:not(.tool-glyph),.play-dock .tool:focus-visible>span:not(.tool-glyph),.play-dock .tool:hover>span:not(.tool-glyph){opacity:1}
+.play-dock .tool[aria-pressed=true] .tool-glyph{transform:translateY(-6px)}
+.play-dock .tool-glyph{width:34px;height:32px}.play-dock .tool .wizard-icon{width:30px;height:30px}
+.selection-hint:empty{display:none}
+/* The backdrop is the garden itself; medallions carry the six destinations. */
+.popover[data-view=menu],.popover[data-view=settings]{max-width:540px;border:1px solid #b7a271;border-radius:5px;background:linear-gradient(140deg,#223d35,#0e241f 70%);box-shadow:0 18px 60px #0009,inset 0 0 0 4px #d8bd7612}
+.popover[data-view=menu] .popover-heading,.popover[data-view=settings] .popover-heading{background:transparent;border-bottom:1px solid #b7a27144}
+.popover[data-view=menu] h2,.popover[data-view=settings] h2{font-size:19px;letter-spacing:.03em;color:#f4e4bb}
+.garden-menu{position:relative;display:grid;grid-template-columns:minmax(80px,1fr) minmax(80px,1.2fr) minmax(80px,1fr);grid-template-rows:repeat(3,108px);gap:8px 0;isolation:isolate;padding:12px 0}
+.garden-menu:before{content:'';position:absolute;inset:7% 16%;border:1px solid #c3aa6955;border-radius:50%;z-index:-1}
+.garden-menu-art{grid-column:2;grid-row:1/4;position:relative;align-self:center;height:260px;border:1px solid #bda77088;transform:rotate(-3deg);box-shadow:0 8px 22px #0008;padding:5px;background:#142c25}
+.garden-menu-art img{height:100%;width:100%;object-fit:cover;image-rendering:pixelated;filter:brightness(.84);display:block}
+.garden-menu-art:after{content:'';position:absolute;inset:6px;border:1px solid #ead7a64d;background:linear-gradient(transparent 60%,#132b22a6)}
+.garden-menu-seal{position:absolute;z-index:1;bottom:20px;left:calc(50% - 19px);display:grid;place-items:center;width:38px;height:38px;border:1px solid #d4bd7f;background:#183a31;color:#f9e0a2;transform:rotate(3deg);font-size:26px}
+.garden-menu .garden-menu-node{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:0;min-height:96px;padding:4px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#e8dcb8;font:600 12px/1.2 system-ui;white-space:nowrap}
+.garden-menu-node:nth-of-type(odd){grid-column:1}.garden-menu-node:nth-of-type(even){grid-column:3}
+.garden-menu-node[data-menu=tour],.garden-menu-node[data-menu=postcard]{grid-row:1}
+.garden-menu-node[data-menu=almanac],.garden-menu-node[data-menu=guestbook]{grid-row:2}
+.garden-menu-node[data-menu=events],.garden-menu-node[data-menu=settings]{grid-row:3}
+.garden-menu-medal{display:grid;place-items:center;width:54px;height:54px;border:1px solid #bca269;background:linear-gradient(135deg,#375346,#122b23);box-shadow:inset 0 0 0 4px #11271f,inset 0 0 0 5px #a48b5355,0 5px 12px #0006;transform:rotate(45deg);transition:background .15s,border-color .15s}
+.garden-menu-medal svg{width:30px;height:30px;transform:rotate(-45deg);color:#e8d092}
+.garden-menu-node:hover .garden-menu-medal,.garden-menu-node:focus-visible .garden-menu-medal{background:#526a48;border-color:#fff0b9;box-shadow:inset 0 0 0 4px #233c2a,inset 0 0 0 5px #d4bf89,0 0 18px #d3bb6944}
+.garden-menu-node:focus-visible{outline:2px solid #b7e3e0;outline-offset:-2px}
+/* Settings: one scene preview + four switches. Rare actions live under Khác. */
+.garden-settings{display:grid;gap:14px}
+.garden-settings .settings-scene{display:block;position:relative;width:100%;height:142px;padding:0;overflow:hidden;border:1px solid #a98f5d;border-radius:3px;background:#1f382b;color:#fff1ca;text-align:left}
+.settings-scene img{display:block;width:100%;height:100%;object-fit:cover;image-rendering:pixelated}
+.settings-scene:after{content:'›';position:absolute;right:16px;bottom:12px;font-size:28px;color:#fff1ca;z-index:1}
+.settings-scene strong{position:absolute;left:0;right:0;bottom:0;padding:26px 15px 16px;font:600 14px/1.2 system-ui;background:linear-gradient(transparent,#0d251ee6)}
+.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+.garden-settings .setting-card{display:grid;grid-template-columns:28px 1fr 28px;align-items:center;gap:8px;min-width:0;min-height:66px;padding:8px 0;text-align:left;border:0;border-bottom:1px solid #b6ad7c30;border-radius:0;background:transparent;box-shadow:none;color:#bdc8b6;white-space:normal}
+.setting-icon{display:grid;place-items:center}.setting-icon svg{width:26px;height:26px}
+.setting-copy strong{font:500 12px/1.2 system-ui;color:#e6e2cf}
+.setting-card[aria-checked=true] .setting-icon{color:#f2d18e}
+.setting-switch{position:relative;width:28px;height:16px;background:#0c201a;border:1px solid #7d9074;border-radius:2px}
+.setting-switch:after{content:'';position:absolute;left:2px;top:2px;width:10px;height:10px;background:#8b9e83;transition:transform .16s}
+.setting-card[aria-checked=true] .setting-switch{background:#73864f;border-color:#dbce91}.setting-card[aria-checked=true] .setting-switch:after{transform:translateX(12px);background:#fff1ba}
+.setting-card:disabled{opacity:.55;cursor:default}
+.settings-more summary,.v24-qa-tools>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:8px;color:#c0c6b4;font:500 12px system-ui;list-style:none}
+.settings-more summary:before,.v24-qa-tools>summary:before{content:'+';font-size:20px;color:#e2c890}.settings-more[open] summary:before,.v24-qa-tools[open]>summary:before{content:'−'}
+.settings-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.settings-actions button{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;min-height:48px;padding:8px;font-size:12px;border-radius:3px;background:#152f25;border-color:#82926c66;color:#dce5ce;white-space:normal}.settings-actions svg{height:20px;width:20px}
+.settings-status{margin:10px 0 0;color:#bfceb5;font:11px/1.4 system-ui;overflow-wrap:anywhere}.settings-status[role=alert]{padding:10px;border:1px solid #d6a475;color:#ffe0ba}
+.garden-settings button:focus-visible,.settings-more summary:focus-visible,.v24-qa-tools summary:focus-visible{outline:2px solid #b7e3e0;outline-offset:3px}
+.motion-paused *, .motion-paused *:before,.motion-paused *:after{animation:none!important;transition:none!important}
+@media(max-width:480px){.play-dock{width:calc(100% - 12px)}.play-dock .tools{gap:3px;padding-left:5px;padding-right:49px}.play-dock .tool{padding:3px 1px}.play-dock .dock-toggle{right:2px}.settings-grid{gap:0 12px}.garden-settings .setting-card{grid-template-columns:24px 1fr 28px;gap:6px}.setting-copy strong{font-size:12px}.setting-icon svg{width:22px;height:22px}.garden-menu{grid-template-rows:repeat(3,100px)}.garden-menu-art{height:240px}}
+@media(max-height:450px) and (orientation:landscape){.play-dock .tools{height:52px;padding-top:3px;padding-bottom:3px}.play-dock .tool{height:44px;min-height:44px}.play-dock .dock-toggle{top:4px}.camera-tools{gap:2px}.camera-tools .camera-settings{margin-top:2px}.garden-menu{grid-template-rows:repeat(3,88px)}.garden-menu-art{height:210px}.garden-settings .settings-scene{height:90px}}
+@media(prefers-reduced-motion:reduce){.setting-switch:after,.garden-menu-medal,.play-dock .tool{transition:none}}
+
+.settings-a11y-note{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
