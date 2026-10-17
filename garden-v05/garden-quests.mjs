@@ -1,82 +1,86 @@
 import {getGardenStorage} from './garden-storage.mjs';
 export const OWL_QUEST_STORAGE_KEY = 'hpvn-garden-v21-owl-quests';
 
-export const DAILY_OWL_QUEST_TEMPLATES = [
-  {
-    id: 'quest_hagrid_harvest',
-    sender: 'Bác Hagrid',
-    senderRole: 'Người giữ chìa khóa & khu vườn',
-    title: 'Gieo hạt hoặc thu hoạch 3 luống thảo mộc',
-    description: 'Hãy ra các thửa đất quanh lều, gieo một hàng hạt giống mới hoặc gặt cây chín mang về kho.',
-    target: 1,
-    triggers: ['plant', 'replant', 'harvest', 'care'],
-    reward: {kind: 'kit', amount: 2, itemId: 'kit', label: '+2 Bộ vật liệu xây dựng'},
-    route: 'plant',
-    routeLabel: 'Ra thửa đất',
-  },
-  {
-    id: 'quest_sprout_craft',
-    sender: 'Giáo sư Pomona Sprout',
-    senderRole: 'Nhà kính Thảo dược học',
-    title: 'Chế biến khẩu phần hoặc thu thập nông sản',
-    description: 'Ghé chiếc vạc chế biến khẩu phần cho sinh vật hoặc chăm sóc các luống cây thảo dược.',
-    target: 1,
-    triggers: ['craft', 'claimCraft', 'harvest', 'care'],
-    reward: {kind: 'water', amount: 15, itemId: 'pumpkin', bonusQty: 3, label: '+15 Nước suối & +3 Bí ngô'},
-    route: 'craft',
-    routeLabel: 'Mở vạc chế biến',
-  },
-  {
-    id: 'quest_hemxeo_creature',
-    sender: 'Tiệm Phép Thuật Hẻm Xéo',
-    senderRole: 'Hội Bảo trợ Sinh vật & Cảnh quan',
-    title: 'Thăm sinh vật hoặc xoay góc trang trí',
-    description: 'Cho sinh vật ăn, vuốt ve người bạn trong chuồng hoặc xoay thử góc nhìn ↖/↗ của một vật phẩm.',
-    target: 1,
-    triggers: ['feed', 'claimAnimals', 'adopt', 'pet', 'rotate'],
-    reward: {kind: 'boost', amount: 1, itemId: 'kit', bonusQty: 1, label: '+1 Phân bón & +1 Bộ vật liệu'},
-    route: 'creature',
-    routeLabel: 'Thăm chuồng nuôi',
-  },
-];
+// Owl quests, V24.9.8 (docs/economy-audit.md): three per day, picked by level and
+// by what the player has unlocked, counting only real farm work (cells planted,
+// crops harvested, batches crafted, meals fed). Free taps (weather, rotating,
+// postcards, tours, petting) no longer complete anything.
+export const OWL_QUEST_VERSION = 25;
+export const DAILY_QUEST_COUNT = 3;
 
-export const BONUS_DAILY_TASK_TEMPLATES = [
-  {
-    id: 'quest_neighbor_tour',
-    sender: 'Newt Scamander & Charlie Weasley',
-    senderRole: 'Hội Giao Lưu Khu Vườn Mẫu',
-    title: 'Ghé thăm hoặc chăm giúp Khu Vườn Mẫu',
-    description: 'Mở bảng Tham quan Vườn Mẫu, dạo bước học hỏi bố cục hoặc bấm Chăm giúp để nhận quà lưu niệm.',
-    target: 1,
-    triggers: ['helpTour', 'startTour', 'shareFloo', 'postcard'],
-    reward: {kind: 'water', amount: 12, itemId: 'insects', bonusQty: 3, label: '+12 Nước suối & +3 Côn trùng'},
-    route: 'tour',
-    routeLabel: 'Tham quan Vườn Mẫu',
-  },
-  {
-    id: 'quest_festival_spirit',
-    sender: 'Ban Lễ Hội Hogwarts',
-    senderRole: 'Ủy ban Sự kiện Bốn Mùa',
-    title: 'Hưởng ứng Lễ hội hoặc Gắn kết Sinh vật (×2)',
-    description: 'Đổi chủ đề Lễ hội / Thời tiết, vuốt ve gắn kết sinh vật trên sân hoặc thu hoạch mùa vụ.',
-    target: 2,
-    triggers: ['pet', 'feed', 'harvest', 'plant', 'eventChange', 'weatherChange'],
-    reward: {kind: 'kit', amount: 2, itemId: 'moonherb', bonusQty: 2, label: '+2 Bộ vật liệu & +2 Cỏ trăng'},
-    route: 'events',
-    routeLabel: 'Mở bảng Lễ hội',
-  },
-];
+const bandTarget = (level) => (level < 6 ? 6 : level < 20 ? 9 : 12);
 
-export const DAILY_GRAND_CHEST_TARGET = 3;
+// Each entry builds one quest for a given context {level, hasCreature, feedItem}.
+// `reward.itemId` without `bonusQty` only picks the icon; it grants nothing.
+export const OWL_QUEST_POOL = Object.freeze([
+  {id: 'q_plant', always: true, route: 'plant', triggers: ['plant', 'replant'],
+    build: ({level}) => {const n = bandTarget(level); return {title: `Gieo ${n} ô`, target: n, reward: {kind: 'water', amount: n, itemId: 'pumpkin'}};}},
+  {id: 'q_harvest', always: true, route: 'plant', triggers: ['harvest'],
+    build: ({level}) => {const n = bandTarget(level); return {title: `Gặt ${n} cây`, target: n, reward: level < 6 ? {kind: 'water', amount: 6, itemId: 'pumpkin'} : {kind: 'kit', amount: 2, itemId: 'kit'}};}},
+  {id: 'q_harvest_runs', route: 'plant', triggers: ['harvestRun'],
+    build: () => ({title: 'Gặt 2 lần', target: 2, reward: {kind: 'water', amount: 6, itemId: 'pumpkin'}})},
+  {id: 'q_craft', minLevel: 6, route: 'craft', triggers: ['craft'],
+    build: () => ({title: 'Chế biến 2 mẻ', target: 2, reward: {kind: 'kit', amount: 2, itemId: 'kit', waterBonus: 4}})},
+  {id: 'q_feed', needsCreature: true, route: 'creature', triggers: ['feed'],
+    build: ({feedItem}) => ({title: 'Cho ăn 2 bữa', target: 2, reward: {kind: 'water', amount: 4, itemId: feedItem || 'puff_feed', bonusQty: 1}})},
+  {id: 'q_claim', needsCreature: true, route: 'creature', triggers: ['claimAnimals'],
+    build: () => ({title: 'Thu sản phẩm', target: 1, reward: {kind: 'kit', amount: 2, itemId: 'kit'}})},
+]);
+
+// Kept for older imports: the always-on pair is today's fixed core.
+export const DAILY_OWL_QUEST_TEMPLATES = OWL_QUEST_POOL.filter((q) => q.always);
+export const BONUS_DAILY_TASK_TEMPLATES = [];
+
+export const DAILY_GRAND_CHEST_TARGET = DAILY_QUEST_COUNT;
 export const DAILY_GRAND_CHEST_REWARD = Object.freeze({
   kind: 'boost',
-  amount: 2,
-  waterBonus: 25,
+  amount: 1,
+  waterBonus: 12,
   itemId: 'kit',
-  bonusQty: 3,
-  eventPoints: 50,
-  label: '🎁 Rương Cú Vàng: +25 Nước, +3 Bộ vật liệu, +2 Phân bón & +50 Điểm Lễ Hội',
+  eventPoints: 20,
+  label: 'Rương Cú Vàng: +1 Phân bón, +12 Nước, +20 điểm lễ hội',
 });
+
+// What today's quests may ask for; the game sets it from the live garden.
+let questContext = {level: 1, hasCreature: false, feedItem: null};
+export function setOwlQuestContext({level = 1, hasCreature = false, feedItem = null} = {}) {
+  questContext = {level: Math.max(1, Number(level) || 1), hasCreature: Boolean(hasCreature), feedItem: feedItem || null};
+  return questContext;
+}
+
+function dayHash(text) {
+  let h = 2166136261;
+  for (const ch of String(text)) h = Math.imul(h ^ ch.codePointAt(0), 16777619);
+  return h >>> 0;
+}
+
+function rewardLabel(r) {
+  const names = {water: 'Nước', kit: 'Bộ vật liệu', boost: 'Phân bón'};
+  return [r.amount ? `+${r.amount} ${names[r.kind] || r.kind}` : '', r.bonusQty ? `+${r.bonusQty} khẩu phần` : '', r.waterBonus ? `+${r.waterBonus} Nước` : ''].filter(Boolean).join(', ');
+}
+
+/** Pure: today's three quests for a context; the same day and context always give the same set. */
+export function pickDailyQuests(dayKey, context = questContext) {
+  const eligible = OWL_QUEST_POOL.filter((q) => (q.minLevel ?? 1) <= context.level && (!q.needsCreature || context.hasCreature));
+  const core = eligible.filter((q) => q.always);
+  const extra = eligible.filter((q) => !q.always);
+  const picked = [...core];
+  if (extra.length) picked.push(extra[dayHash(dayKey) % extra.length]);
+  return picked.slice(0, DAILY_QUEST_COUNT).map((q) => {
+    const built = q.build(context);
+    return {
+      id: q.id,
+      sender: 'Bác Hagrid',
+      title: built.title,
+      target: built.target,
+      triggers: [...q.triggers],
+      reward: {...built.reward, label: rewardLabel(built.reward)},
+      route: q.route,
+      progress: 0,
+      claimed: false,
+    };
+  });
+}
 
 export function dayKeyFor(nowMs = Date.now()) {
   const d = new Date(Number.isFinite(nowMs) ? nowMs : Date.now());
@@ -86,31 +90,15 @@ export function dayKeyFor(nowMs = Date.now()) {
   return `${y}-${m}-${day}`;
 }
 
-function mapTemplateToQuest(tpl) {
+export function createDefaultOwlQuests(dayKey = dayKeyFor(), streakDays = 1, context = questContext) {
   return {
-    id: tpl.id,
-    sender: tpl.sender,
-    senderRole: tpl.senderRole,
-    title: tpl.title,
-    description: tpl.description,
-    target: tpl.target,
-    triggers: [...tpl.triggers],
-    reward: {...tpl.reward},
-    route: tpl.route,
-    routeLabel: tpl.routeLabel,
-    progress: 0,
-    claimed: false,
-  };
-}
-
-export function createDefaultOwlQuests(dayKey = dayKeyFor(), streakDays = 1) {
-  return {
-    version: 23,
+    version: OWL_QUEST_VERSION,
     dayKey,
     streakDays: Math.max(1, Number(streakDays) || 1),
     grandChestClaimed: false,
-    quests: DAILY_OWL_QUEST_TEMPLATES.map(mapTemplateToQuest),
-    bonusQuests: BONUS_DAILY_TASK_TEMPLATES.map(mapTemplateToQuest),
+    level: context.level,
+    quests: pickDailyQuests(dayKey, context),
+    bonusQuests: [],
   };
 }
 
@@ -125,39 +113,31 @@ export function loadOwlQuests(storage = getGardenStorage(), nowMs = Date.now()) 
     const raw = storage.getItem(OWL_QUEST_STORAGE_KEY);
     if (!raw) return fallback;
     const parsed = JSON.parse(raw);
-    if (!parsed || typeof parsed !== 'object' || !Array.isArray(parsed.quests)) {
-      return fallback;
-    }
+    if (!parsed || typeof parsed !== 'object' || !Array.isArray(parsed.quests)) return fallback;
     const prevStreak = Math.max(1, Number(parsed.streakDays) || 1);
     if (parsed.dayKey !== today) {
       const nextStreak = parsed.dayKey === yesterday ? prevStreak + 1 : 1;
       return createDefaultOwlQuests(today, nextStreak);
     }
-    const byId = new Map(parsed.quests.map((q) => [q.id, q]));
-    const bonusById = new Map(Array.isArray(parsed.bonusQuests) ? parsed.bonusQuests.map((q) => [q.id, q]) : []);
+    // Same day, older format: start today's new set but keep the streak and chest flag,
+    // so updating mid-day can never re-open a chest already opened.
+    if (parsed.version !== OWL_QUEST_VERSION) {
+      return {...createDefaultOwlQuests(today, prevStreak), grandChestClaimed: Boolean(parsed.grandChestClaimed)};
+    }
+    // Same day: the set, targets and rewards stay as they were picked this morning.
     return {
-      version: 23,
+      version: OWL_QUEST_VERSION,
       dayKey: today,
       streakDays: prevStreak,
       grandChestClaimed: Boolean(parsed.grandChestClaimed),
-      quests: fallback.quests.map((tpl) => {
-        const saved = byId.get(tpl.id);
-        if (!saved) return tpl;
-        return {
-          ...tpl,
-          progress: Math.min(tpl.target, Math.max(0, Number(saved.progress) || 0)),
-          claimed: Boolean(saved.claimed),
-        };
-      }),
-      bonusQuests: fallback.bonusQuests.map((tpl) => {
-        const saved = bonusById.get(tpl.id);
-        if (!saved) return tpl;
-        return {
-          ...tpl,
-          progress: Math.min(tpl.target, Math.max(0, Number(saved.progress) || 0)),
-          claimed: Boolean(saved.claimed),
-        };
-      }),
+      level: Number(parsed.level) || 1,
+      quests: parsed.quests.filter((q) => q && typeof q.id === 'string' && Array.isArray(q.triggers)).map((q) => ({
+        ...q,
+        target: Math.max(1, Number(q.target) || 1),
+        progress: Math.min(Math.max(1, Number(q.target) || 1), Math.max(0, Number(q.progress) || 0)),
+        claimed: Boolean(q.claimed),
+      })),
+      bonusQuests: [],
     };
   } catch {
     return fallback;

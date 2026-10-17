@@ -1,4 +1,4 @@
-import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.26';
+import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.27';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -10,7 +10,7 @@ import {
  dailyCompletionSummary,
  hasClaimableOwlQuest,
  DAILY_GRAND_CHEST_REWARD,
-} from './garden-quests.mjs?v=24.9.26';
+} from './garden-quests.mjs?v=24.9.27';
 
 // Presentation only: every crop mutation still uses the existing engine/command.
 export function cropContext(state, selection, E, now) {
@@ -46,7 +46,7 @@ const OWL_REWARD_NAMES=Object.freeze({water:'Nước',kit:'Vật liệu',boost:'
 function compactOwlReward(reward={}){
  const parts=[];
  if(Number(reward.amount)>0)parts.push(`+${reward.amount} ${OWL_REWARD_NAMES[reward.kind]||reward.kind||'quà'}`);
- if(Number(reward.bonusQty)>0)parts.push(`+${reward.bonusQty} ${OWL_REWARD_NAMES[reward.itemId]||reward.itemId||'vật phẩm'}`);
+ if(Number(reward.bonusQty)>0)parts.push(`+${reward.bonusQty} ${OWL_REWARD_NAMES[reward.itemId]||(/_feed$/.test(reward.itemId||'')?'Khẩu phần':reward.itemId)||'vật phẩm'}`);
  if(Number(reward.waterBonus)>0)parts.push(`+${reward.waterBonus} Nước`);
  if(Number(reward.eventPoints)>0)parts.push(`+${reward.eventPoints} Điểm`);
  return parts.join(' · ')||'Quà';

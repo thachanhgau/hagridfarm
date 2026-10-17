@@ -1,30 +1,30 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.26';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.27';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.26';
-import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.26';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.26';
-import {showStore} from './garden-store-ui.mjs?v=24.9.26';
-import {setupProfile} from './profile-ui.mjs?v=24.9.26';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.27';
+import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.27';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.27';
+import {showStore} from './garden-store-ui.mjs?v=24.9.27';
+import {setupProfile} from './profile-ui.mjs?v=24.9.27';
 import * as E from './progression-engine.mjs';
-import {createGarden,iso,plotCorners,plotCellPosition} from './scene-renderer.mjs?v=24.9.26';
-import {setupCamera} from './camera.mjs?v=24.9.26';
-import {createPanels} from './progression-panels.mjs?v=24.9.26';
-import {$,el,icon,button,num,duration,hours,plantingAction} from './ui-utils.mjs?v=24.9.26';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.26';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.26';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.26';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.26';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,tutorialEligible,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.26';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge} from './hpvn-bridge.mjs?v=24.9.26';
-import {showPostcardModal} from './garden-postcard.mjs?v=24.9.26';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.26';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward} from './garden-achievements.mjs?v=24.9.26';
-import {eventConfig,nextEventMode,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.26';
-import {loadOwlQuests,saveOwlQuests,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest} from './garden-quests.mjs?v=24.9.26';
+import {createGarden,iso,plotCorners,plotCellPosition} from './scene-renderer.mjs?v=24.9.27';
+import {setupCamera} from './camera.mjs?v=24.9.27';
+import {createPanels} from './progression-panels.mjs?v=24.9.27';
+import {$,el,icon,button,num,duration,hours,plantingAction} from './ui-utils.mjs?v=24.9.27';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.27';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.27';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.27';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.27';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,tutorialEligible,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.27';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge} from './hpvn-bridge.mjs?v=24.9.27';
+import {showPostcardModal} from './garden-postcard.mjs?v=24.9.27';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.27';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward} from './garden-achievements.mjs?v=24.9.27';
+import {eventConfig,nextEventMode,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.27';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest} from './garden-quests.mjs?v=24.9.27';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.26':'./garden-emulator-client.mjs?v=24.9.26');
+const {createEmulatorClient}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.27':'./garden-emulator-client.mjs?v=24.9.27');
 const WALLET_TEXT=fixtureWallet
  ?{title:'Dữ liệu mẫu trong bộ nhớ · không lưu',badge:'V24 · Xem thử, không lưu',ready:'V24 · Chạm để khám phá.'}
  :{title:'Đã lưu trên emulator · Galleons mô phỏng',badge:'EMULATOR · Ví Gringotts thử nghiệm',ready:'Đã nối ví Gringotts thử nghiệm. Mua hạt và nước để gieo.'};
@@ -77,6 +77,9 @@ function loadSession(){saveAvailable=true;saveProblem='';try{const raw=gardenSto
 const persistentLocks=Boolean(navigator.locks?.request);
 function checkSaveSupport(){if(!persistentLocks){saveAvailable=false;saveProblem='Trình duyệt chưa hỗ trợ khóa bản lưu. Phiên này chỉ lưu tạm; hãy xuất bản lưu trước khi đóng.';}}
 if(connected){state=E.newGame(Date.now());session='emulator';}else{loadSession();checkSaveSupport();}
+// Owl quests are picked from what this garden can do today.
+function syncQuestContext(){setOwlQuestContext({level:state.level,hasCreature:state.creatures.length>0,feedItem:CREATURE[state.creatures[0]?.species]?.feed});}
+syncQuestContext();
 // Anonymous playtest log: only with ?playtest=1 on a local garden, and always visible to the player.
 const playtest=createPlaytestLog({enabled:query.get('playtest')==='1'&&!connected,context:{...deviceContext(),newGarden:tutorialEligible(state),session}});
 if(playtest.enabled){document.body.append(el('div',{class:'playtest-badge',role:'status',text:'● Đang ghi thử nghiệm ẩn danh'}));document.addEventListener('visibilitychange',()=>playtest.track(document.hidden?'hidden':'visible'));addEventListener('pagehide',()=>playtest.track('session_end'));}
@@ -266,7 +269,17 @@ function showRewards(before,after,events=[]){
  const xp=after.xp-before.xp;if(xp>0)juice.chip({amount:xp,label:'XP',from:source,target:$('levelButton'),delay:200,size});
 }
 const COMBO_SHOW_MS=600;
-function playCommandSound(command,beforeState=state){const act=command?.action;if(act)playtest.track('action',{action:act});if(act==='plant'||act==='replant')comboPlay('plant');else if(act==='harvest')comboPlay('harvest');else if(act==='feed'||act==='claimAnimals')comboPlay('care');else if(act==='moveBuilding'||act==='placeDecoration')audio.play('rotate');else audio.play('care');if(act){recordFestivalAction(act);if(act==='adopt'||act==='feed'||act==='claimAnimals')recordCreatureAffinity(command.species||species,act,gardenStorage,beforeState);wizard?.recordQuestAction?.(act);syncHudV20Buttons();}}
+function playCommandSound(command,beforeState=state){const act=command?.action;if(act)playtest.track('action',{action:act});if(act==='plant'||act==='replant')comboPlay('plant');else if(act==='harvest')comboPlay('harvest');else if(act==='feed'||act==='claimAnimals')comboPlay('care');else if(act==='moveBuilding'||act==='placeDecoration')audio.play('rotate');else audio.play('care');if(act){recordFestivalAction(act);if(act==='adopt'||act==='feed'||act==='claimAnimals')recordCreatureAffinity(command.species||species,act,gardenStorage,beforeState);for(const [type,amount] of questAmounts(act,command,beforeState))wizard?.recordQuestAction?.(type,amount);syncHudV20Buttons();}}
+// Quests count real work: cells planted, crops harvested (plus one harvest run), batches crafted.
+function questAmounts(act,command,before){
+ const after=connected?wallet?.snapshot?.garden?.progression||state:state,out=[];let planted=0,harvested=0;
+ for(let p=0;p<Math.max(before?.plots?.length||0,after?.plots?.length||0);p+=1){const a=before?.plots?.[p]?.slots||[],b=after?.plots?.[p]?.slots||[];for(let i=0;i<9;i+=1){if(b[i]&&(!a[i]||a[i].id!==b[i].id))planted+=1;if(a[i]&&(!b[i]||b[i].id!==a[i].id))harvested+=1;}}
+ if(planted)out.push(['plant',planted]);
+ if(harvested)out.push(['harvest',harvested],['harvestRun',1]);
+ if(act==='craft')out.push(['craft',Math.max(1,Number(command?.batches)||1)]);
+ if(act==='feed'||act==='claimAnimals'||act==='adopt')out.push([act,1]);
+ return out;
+}
 async function run(action,text='Đã hoàn tất.',command=null){
  if(connected){if(!walletReady||busy)return;if(!command){message('Thao tác này chỉ dành cho phiên thử trên thiết bị.');return;}busy=true;try{const before=state;await wallet.act(command);playCommandSound(command,before);acceptWallet(before,text);}catch(e){message(e.message);if(e.definitive){try{await wallet.read();acceptWallet(state,'Đã cập nhật vườn từ máy chủ.');}catch{}}}finally{busy=false;workTrays?.refresh(mode);wizard?.refresh?.();}return;}
  if(busy)return;busy=true;
@@ -334,6 +347,7 @@ function feedTutorialGuest(){if(tutorial!=='feed'||guestFed)return;guestFed=true
 function finishTutorial(skipped=false){if(!skipped)playtest.track('tutorial_step',{step:'done'});clearTimeout(tutorialTimer);document.body.classList.remove('tutorial-compact');tutorial=null;guestFed=false;saveTutorial(gardenStorage,'done');tutorialSkip.hidden=true;pulse(null);draw();}
 function tutorialRenderOptions(){if(!tutorial)return {};return {speechScale:1.6,muteHagridSpeech:true,tutorialFocus:tutorial==='plant'?{plot:TUTORIAL_PLOT,mode:'plant'}:tutorial==='harvest'?{plot:TUTORIAL_PLOT,mode:'harvest'}:null,guestActor:tutorial==='feed'||tutorial==='owl'?{...TUTORIAL_GUEST,hungry:tutorial==='feed'&&!guestFed}:null};}
 function refresh(){
+ syncQuestContext();
  if(tutorial)queueMicrotask(checkTutorial);
  selectedPlot=Math.min(selectedPlot,state.plots.length-1);const now=logical(),slots=state.plots[selectedPlot].slots,c=CROP[seed],cr=CREATURE[species],n=slots.filter(Boolean).length,types=new Set(slots.filter(Boolean).map(e=>e.species)),info=E.levelInfo(state),animal=owned(species);
  $('shopButton').disabled=connected&&!walletReady;

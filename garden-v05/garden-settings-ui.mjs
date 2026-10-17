@@ -1,5 +1,5 @@
-import {el,button} from './ui-utils.mjs?v=24.9.26';
-import {V24_ART} from './v24-visuals.mjs?v=24.9.26';
+import {el,button} from './ui-utils.mjs?v=24.9.27';
+import {V24_ART} from './v24-visuals.mjs?v=24.9.27';
 
 const SVG_ATTR='fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="miter"';
 const svg=body=>`<svg viewBox="0 0 24 24" ${SVG_ATTR} aria-hidden="true">${body}</svg>`;

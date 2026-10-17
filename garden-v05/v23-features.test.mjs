@@ -23,16 +23,7 @@ import {
   claimAffinityGift,
   buildGuestbookEntries,
 } from './garden-events.mjs';
-import {
-  loadOwlQuests,
-  saveOwlQuests,
-  allDailyTasks,
-  dailyCompletionSummary,
-  recordOwlQuestAction,
-  syncQuestsWithGardenState,
-  claimDailyGrandChest,
-  DAILY_GRAND_CHEST_REWARD,
-} from './garden-quests.mjs';
+import {loadOwlQuests, saveOwlQuests, allDailyTasks, dailyCompletionSummary, recordOwlQuestAction, syncQuestsWithGardenState, claimDailyGrandChest, DAILY_GRAND_CHEST_REWARD, setOwlQuestContext} from './garden-quests.mjs';
 import {hagridSpeechFor, atmosphereConfig, weatherConfig} from './garden-atmosphere.mjs';
 import {extractPostcardMeta} from './garden-postcard.mjs';
 import {
@@ -126,46 +117,38 @@ test('V23.0 Festival particles & Hagrid festival speech work deterministically',
   assert.ok(line.includes('Bí ngô'));
 });
 
-test('V23.0 Daily Tasks include 5 tasks, consecutive streak counter, and Grand Owl Chest', () => {
+test('V23.0 Daily Tasks (V24.9.8 rules): three tasks, streak counter, and Grand Owl Chest at 3/3', () => {
   const storage = createMemoryStorage();
   const day1 = new Date('2026-10-14T09:00:00Z').getTime();
+  setOwlQuestContext({level: 6, hasCreature: false});
   let qState = loadOwlQuests(storage, day1);
   assert.equal(qState.quests.length, 3);
-  assert.equal(qState.bonusQuests.length, 2);
-  assert.equal(allDailyTasks(qState).length, 5);
+  assert.equal(qState.bonusQuests.length, 0);
+  assert.equal(allDailyTasks(qState).length, 3);
   assert.equal(qState.streakDays, 1);
   saveOwlQuests(qState, storage);
 
-  // Cannot claim Grand Chest before 3 tasks are completed
   const earlyChest = claimDailyGrandChest({storage, nowMs: day1});
   assert.equal(earlyChest.ok, false);
-  assert.equal(earlyChest.claimed, false);
 
-  // Complete 3 tasks (plant -> quest_hagrid_harvest, craft -> quest_sprout_craft, helpTour -> quest_neighbor_tour)
-  recordOwlQuestAction('plant', 1, storage, day1);
-  recordOwlQuestAction('craft', 1, storage, day1);
-  recordOwlQuestAction('helpTour', 1, storage, day1);
+  // Real work only: 9 cells planted, 9 crops harvested in two runs, two batches crafted.
+  recordOwlQuestAction('plant', 9, storage, day1);
+  recordOwlQuestAction('harvest', 6, storage, day1); recordOwlQuestAction('harvestRun', 1, storage, day1);
+  recordOwlQuestAction('harvest', 3, storage, day1); recordOwlQuestAction('harvestRun', 1, storage, day1);
+  recordOwlQuestAction('craft', 2, storage, day1);
   qState = loadOwlQuests(storage, day1);
 
   const summary = dailyCompletionSummary(qState);
   assert.equal(summary.completedCount, 3);
-  assert.equal(summary.totalCount, 5);
+  assert.equal(summary.totalCount, 3);
   assert.equal(summary.grandReady, true);
 
   let chestReward = null;
-  const chestRes = claimDailyGrandChest({
-    storage,
-    nowMs: day1,
-    onGrantReward: (r) => {
-      chestReward = r;
-    },
-  });
+  const chestRes = claimDailyGrandChest({storage, nowMs: day1, onGrantReward: (r) => { chestReward = r; }});
   assert.equal(chestRes.ok, true);
-  assert.equal(chestRes.claimed, true);
   assert.equal(chestReward.label, DAILY_GRAND_CHEST_REWARD.label);
-  assert.equal(chestReward.eventPoints, 50);
+  assert.equal(chestReward.eventPoints, 20);
 
-  // Next consecutive day increments streakDays to 2
   const day2 = new Date('2026-10-15T09:00:00Z').getTime();
   const nextDayState = loadOwlQuests(storage, day2);
   assert.equal(nextDayState.streakDays, 2);

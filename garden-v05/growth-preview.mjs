@@ -1,5 +1,5 @@
-import {GARDEN_STAGES,stageWorldBounds} from './garden-growth.mjs?v=24.9.26';
-import {createGarden} from './scene-renderer.mjs?v=24.9.26';
+import {GARDEN_STAGES,stageWorldBounds} from './garden-growth.mjs?v=24.9.27';
+import {createGarden} from './scene-renderer.mjs?v=24.9.27';
 import * as E from './progression-engine.mjs';
 const $=id=>document.getElementById(id),canvas=$('stageCanvas'),viewport=$('stageViewport'),scene=window.FARM_SCENE;
 let renderer,state,index=0;

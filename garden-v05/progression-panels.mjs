@@ -1,13 +1,13 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.26';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.26';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.26";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.26";
-import {$,el,button,icon,num,duration,hours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.26";
-import {renderAlmanacSection} from "./garden-postcard.mjs?v=24.9.26";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.26";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.26";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.26";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.26";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.27';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.27';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.27";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.27";
+import {$,el,button,icon,num,duration,hours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.27";
+import {renderAlmanacSection} from "./garden-postcard.mjs?v=24.9.27";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.27";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.27";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.27";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.27";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;

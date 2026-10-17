@@ -8,15 +8,7 @@ import {
   renderPostcardCanvas,
   buildAlmanacChains,
 } from './garden-postcard.mjs';
-import {
-  DAILY_OWL_QUEST_TEMPLATES,
-  dayKeyFor,
-  loadOwlQuests,
-  recordOwlQuestAction,
-  syncQuestsWithGardenState,
-  claimOwlQuest,
-  hasClaimableOwlQuest,
-} from './garden-quests.mjs';
+import {dayKeyFor, loadOwlQuests, recordOwlQuestAction, syncQuestsWithGardenState, claimOwlQuest, hasClaimableOwlQuest, setOwlQuestContext, pickDailyQuests, OWL_QUEST_POOL} from './garden-quests.mjs';
 
 globalThis.FARM_SCENE = structuredClone(scene);
 globalThis.FARM_MOTION = motion;
@@ -159,39 +151,50 @@ test('V21 Direction 2: renderPostcardCanvas composites 960x620 Hogwarts postcard
   }
 });
 
-test('V21 Direction 3: Daily Owl Quests track actions, sync with garden state, and claim supply rewards once per day', () => {
+test('V21 Direction 3 (V24.9.8 rules): owl quests count real work and pay out once per day', () => {
   const store = new Map();
   const mockStorage = {
     getItem: (k) => (store.has(k) ? store.get(k) : null),
     setItem: (k, v) => store.set(k, String(v)),
   };
   const now = 1_700_000_000_000;
-  assert.equal(DAILY_OWL_QUEST_TEMPLATES.length, 3);
-
+  setOwlQuestContext({level: 1});
   const initial = loadOwlQuests(mockStorage, now);
   assert.equal(initial.dayKey, dayKeyFor(now));
   assert.equal(initial.quests.length, 3);
   assert.equal(hasClaimableOwlQuest(initial), false);
 
-  const afterPlant = recordOwlQuestAction('plant', 1, mockStorage, now);
-  assert.equal(afterPlant.newlyCompleted.length, 1);
-  assert.equal(afterPlant.newlyCompleted[0].id, 'quest_hagrid_harvest');
+  // Free taps no longer count; one row of three is not yet the six cells asked for.
+  for (const free of ['weatherChange', 'eventChange', 'rotate', 'postcard', 'startTour', 'pet']) recordOwlQuestAction(free, 1, mockStorage, now);
+  assert.equal(recordOwlQuestAction('plant', 3, mockStorage, now).newlyCompleted.length, 0);
+  const afterPlant = recordOwlQuestAction('plant', 3, mockStorage, now);
+  assert.deepEqual(afterPlant.newlyCompleted.map((q) => q.id), ['q_plant']);
   assert.equal(hasClaimableOwlQuest(afterPlant.state), true);
 
   const granted = [];
-  const claimRes = claimOwlQuest('quest_hagrid_harvest', {
-    storage: mockStorage,
-    nowMs: now,
-    onGrantReward: (reward, quest) => granted.push({reward, questId: quest.id}),
-  });
+  const claimRes = claimOwlQuest('q_plant', {storage: mockStorage, nowMs: now, onGrantReward: (reward, quest) => granted.push({reward, questId: quest.id})});
   assert.equal(claimRes.ok, true);
-  assert.equal(granted.length, 1);
-  assert.equal(granted[0].reward.kind, 'kit');
-
-  const duplicate = claimOwlQuest('quest_hagrid_harvest', {storage: mockStorage, nowMs: now});
-  assert.equal(duplicate.ok, false);
-  assert.equal(duplicate.reason, 'ALREADY_CLAIMED');
+  assert.equal(granted[0].reward.kind, 'water');
+  assert.equal(granted[0].reward.amount, 6); // refunds the water the six cells used
+  assert.equal(claimOwlQuest('q_plant', {storage: mockStorage, nowMs: now}).reason, 'ALREADY_CLAIMED');
 
   const synced = syncQuestsWithGardenState(loadOwlQuests(mockStorage, now), E.testProfile(50, now));
   assert.equal(synced.quests.filter((q) => q.progress >= q.target).length, 1);
+});
+
+test('V24.9.8: daily quests follow level and unlocks, and stay fixed for the day', () => {
+  const day = '2026-10-18';
+  const ids = (ctx) => pickDailyQuests(day, ctx).map((q) => q.id);
+  assert.deepEqual(ids({level: 1, hasCreature: false}).slice(0, 2), ['q_plant', 'q_harvest']);
+  assert.ok(ids({level: 1, hasCreature: false}).every((id) => !['q_craft', 'q_feed', 'q_claim'].includes(id)));
+  for (let d = 1; d <= 28; d += 1) {
+    const third = pickDailyQuests(`2026-10-${String(d).padStart(2, '0')}`, {level: 3, hasCreature: false})[2].id;
+    assert.equal(third, 'q_harvest_runs');
+  }
+  const lv30 = pickDailyQuests(day, {level: 30, hasCreature: true, feedItem: 'bow_feed'});
+  assert.equal(lv30[0].target, 12);
+  assert.equal(lv30[1].reward.kind, 'kit');
+  assert.deepEqual(pickDailyQuests(day, {level: 30, hasCreature: true}), pickDailyQuests(day, {level: 30, hasCreature: true}));
+  const feed = OWL_QUEST_POOL.find((q) => q.id === 'q_feed').build({feedItem: 'bow_feed'});
+  assert.equal(feed.reward.itemId, 'bow_feed');
 });
