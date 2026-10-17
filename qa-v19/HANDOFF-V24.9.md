@@ -32,3 +32,10 @@
 - `progression-engine.test.mjs` so balance với `outputs/hagrid-levels-20261013/balance-data.json` sau khi áp cùng bảng đổi tên; file gốc đã duyệt không bị sửa, số liệu vẫn phải khớp tuyệt đối.
 - `garden-v05/palette.mjs`: 24 màu sprite + 8 màu cảnh. Toàn bộ mã màu trong 17 module vẽ bằng code đưa về màu gần nhất (OKLab). Tuyết của chuồng và cỏ tuyết chỉnh tay. `palette.test.mjs` khoá: không module runtime nào được dùng hex ngoài bảng. CSS chưa chuyển.
 - Cache: mọi import runtime `?v=24.9.5`. 144/144 test. QA ảnh trước/sau ở trời quang, mưa, tuyết, thu-đêm, panel Kho; fixture, chơi local (save còn 3 cây), bản nhúng: không lỗi console, 0 asset thiếu.
+
+## V24.9.3 — Phase 1: juice cho gieo, gặt, cho ăn
+- Canvas (`scene-animation.mjs` `eventHop`, `harvestPop`; dùng trong `scene-renderer.mjs`): cây mới gieo nhú lên theo đường cong pixel nguyên 3→1→−2→−3→−1→0; sinh vật nảy khi ăn/được thu sản phẩm; cây vừa gặt để lại "bóng" quả chín bay lên 18 px và mờ dần. Không scale sprite (đúng art bible luật 1).
+- DOM (`garden-juice.mjs`, CSS `.juice-chip` trong `v24-ui.css`): chip `+N <icon>` bay từ luống/chuồng vào nút Kho; `+N XP` bay vào huy hiệu cấp; nút đích nảy nhẹ khi chip tới. Chỉ hiện cho thao tác thật (không hiện khi tải game hoặc đồng bộ ví ban đầu).
+- Âm thanh (`garden-audio.mjs` `comboStep`, `play(kind,{pitch})`): lặp cùng thao tác gieo/gặt/cho ăn trong 2,5 giây thì cao lên một cung mỗi lần, tối đa 4 bậc; chip combo viền vàng đậm và lớn hơn một chút. Không đổi phần thưởng.
+- Giảm chuyển động (`body.motion-paused`, gồm cả cài đặt hệ thống): canvas không nảy/không bóng; chip đứng cạnh nút đích, chỉ mờ vào/ra; nút không nảy.
+- Kiểm chứng: 147/147 test (thêm `juice.test.mjs`). Browser phiên thử cấp 10/30: gieo (+3 XP), gặt ×3 (+3 bí ngô bay vào Kho, kho 7.000→7.006), đón Puffskein (+3 khẩu phần), cho ăn (sự kiện eat, +18 XP); giảm chuyển động chỉ có keyframe opacity. Bản nhúng và vườn thường không lỗi, không chip khi tải. Âm thanh combo kiểm bằng test, chưa nghe thử trên thiết bị.

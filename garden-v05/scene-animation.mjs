@@ -351,4 +351,28 @@ export function createAnimationRuntime() {
   };
 }
 
+// Juice offsets are whole pixels sampled from short curves, never scaling, so
+// sprites keep their pixel grid (docs/art-bible.md rule 1). Progress 0 is also
+// what reduced motion reports, so every curve returns 0 there.
+const HOP_CURVES = Object.freeze({
+  plant: Object.freeze([3, 1, -2, -3, -1, 0]),
+  eat: Object.freeze([0, -2, -4, -3, -1, 0]),
+  claim: Object.freeze([0, -3, -5, -2, 0, 0]),
+});
+
+export function eventHop(event) {
+  const curve = HOP_CURVES[event?.kind];
+  const progress = finite(event?.progress);
+  if (!curve || progress <= 0 || progress >= 1) return 0;
+  return curve[Math.min(curve.length - 1, Math.floor(progress * curve.length))];
+}
+
+/** A harvested crop's last frame rises and fades out; null means draw nothing. */
+export function harvestPop(event) {
+  const progress = finite(event?.progress);
+  if (event?.kind !== 'harvest' || progress <= 0 || progress >= 1) return null;
+  const ease = 1 - (1 - progress) ** 3;
+  return {dy: -Math.round(ease * 18), alpha: Math.round((1 - progress) * 10) / 10};
+}
+
 export {EVENT_DURATIONS};

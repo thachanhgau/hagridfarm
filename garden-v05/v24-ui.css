@@ -67,3 +67,11 @@
 @media(max-width:600px){.hud .level-copy{display:none}.hud .level-card{justify-content:center}.hud .level-medal{width:36px;min-width:36px;height:36px}.hud{gap:3px}}
 
 @media(max-width:340px){.hud{gap:2px}.hud .plot-picker{width:48px;min-width:48px}.hud .wallet-button{width:44px;min-width:44px;max-width:44px}.hud .wallet-button #walletValue{font-size:9px;max-width:40px}}
+
+/* V24.9.3 juice: reward chips fly from the action to Kho / level (garden-juice.mjs). */
+#juiceLayer{position:fixed;inset:0;pointer-events:none;z-index:45;overflow:hidden}
+.juice-chip{position:fixed;display:flex;align-items:center;gap:3px;padding:2px 7px 2px 6px;border:2px solid #F5D69A;border-radius:6px;background:#231F2E;color:#F5D69A;font:800 14px/1.1 ui-rounded,system-ui,sans-serif;white-space:nowrap;box-shadow:0 2px 0 #142620;will-change:transform,opacity}
+.juice-chip b{font-weight:900;text-shadow:1px 1px 0 #4A3042}
+.juice-chip .visual-slot{flex:none;image-rendering:pixelated}
+.juice-chip-label{font-size:11px;color:#B0BD67}
+.juice-chip.is-combo{border-color:#FFC36B;color:#FFC36B}

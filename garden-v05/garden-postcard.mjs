@@ -1,4 +1,4 @@
-import {el, button, num, hours, visualItemIcon} from './ui-utils.mjs?v=24.9.5';
+import {el, button, num, hours, visualItemIcon} from './ui-utils.mjs?v=24.9.6';
 
 /**
  * V21.0 Direction 2:

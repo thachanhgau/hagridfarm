@@ -37,6 +37,17 @@ export const SOUND_PATTERNS = Object.freeze({
   ],
 });
 
+// Repeating the same farm action within the window climbs a whole tone per step,
+// up to a fifth-plus; any pause or a different action starts over.
+export const COMBO_WINDOW_MS = 2500;
+export const COMBO_MAX_STEP = 4;
+export function comboStep(previous, kind, now) {
+  const step = previous && previous.kind === kind && now - previous.at <= COMBO_WINDOW_MS
+    ? Math.min(COMBO_MAX_STEP, previous.step + 1)
+    : 0;
+  return {kind, at: now, step, pitch: 2 ** ((step * 2) / 12)};
+}
+
 export function soundPatternFor(kind) {
   return SOUND_PATTERNS[kind] || SOUND_PATTERNS.rotate;
 }
@@ -74,7 +85,7 @@ export function createGardenAudio({
     }
   }
 
-  function play(kind = 'rotate') {
+  function play(kind = 'rotate', {pitch = 1} = {}) {
     if (!enabled) return false;
     const notes = soundPatternFor(kind);
     const ctx = ensureContext();
@@ -88,7 +99,7 @@ export function createGardenAudio({
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = note.type || 'sine';
-        osc.frequency.setValueAtTime(note.freq, startBase + (note.delay || 0));
+        osc.frequency.setValueAtTime(note.freq * pitch, startBase + (note.delay || 0));
         const peak = note.gain || 0.08;
         const startAt = startBase + (note.delay || 0);
         const endAt = startAt + (note.duration || 0.08);

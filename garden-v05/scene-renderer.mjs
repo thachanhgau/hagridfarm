@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.5';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.5';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.5';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.5';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.5';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.5';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.5';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.5';
-import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.5';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.5';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.5';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.5';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.5';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.5';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.5';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.6';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.6';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.6';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.6';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.6';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.6';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.6';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.6';
+import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.6';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.6';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.6';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.6';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.6';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.6';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.6';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -21,15 +21,17 @@ import {
   creatureMotion,
   cropBreeze,
   decorFrameAt,
+  eventHop,
+  harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.5';
+} from './scene-animation.mjs?v=24.9.6';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.5';
+} from './forest-surround.mjs?v=24.9.6';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -1379,6 +1381,8 @@ export async function createGarden(canvas, options = {}) {
       xy: iso(col, row),
       facing,
       animation: event,
+      // Sprout pop on planting, a happy hop when a creature eats or is collected from.
+      hop: event && ((item.kind === 'crop' && event.kind === 'plant') || (item.kind === 'creature' && (event.kind === 'eat' || event.kind === 'claim'))) ? eventHop(event) : 0,
       breeze: item.kind === 'crop' && (!progress.mature || new Set(item.clips?.idle?.frames).size <= 1) ? cropBreeze(entry?.species, clock, {reducedMotion: clock === 0, seed: seedKey}) : null,
       motion: item.kind === 'creature' && !action && (!progress.mature || new Set(item.clips?.idle?.frames).size <= 1) ? creatureMotion(entry?.species, clock, {reducedMotion: clock === 0, index: target.creatureIndex ?? 0, mature: progress.mature, facing}) : null,
       ...target,
@@ -1658,7 +1662,7 @@ export async function createGarden(canvas, options = {}) {
       return;
     }
     if (object.kind === 'asset') {
-      drawAsset(object.asset, object.xy[0], object.xy[1], object.stage > 0 ? object.breeze : null, object.motion, object.facing === 'right');
+      drawAsset(object.asset, object.xy[0], object.xy[1] + (object.hop || 0), object.stage > 0 ? object.breeze : null, object.motion, object.facing === 'right');
       if (object.type === 'prop' && object.id === 'hut') {drawHutMotion(context, object.xy[0], object.xy[1], clock);drawRoofWeather(context,object,activeWeather,clock);}
       if (object.item?.kind === 'crop') drawCropBreeze(context, object);
       if (object.item?.kind === 'creature' && object.motion?.sparkle) {
@@ -1710,7 +1714,17 @@ export async function createGarden(canvas, options = {}) {
         else if ((event.kind === 'care' || event.kind === 'water') && !authoredEffectEventIds.has(event.id)) {
           drawCareEffect(context, x, y, event.progress, event.kind);
         }
-        else if (event.kind === 'plant' || event.kind === 'harvest') drawPixelSparkle(context, x, y - 8, event.kind === 'plant' ? '#b0bd67' : '#f5d69a', 1);
+        else if (event.kind === 'plant' || event.kind === 'harvest') {
+          const pop = harvestPop(event);
+          const ripe = pop && event.species ? frameAt(items.get(event.species), 3, true) : null;
+          if (ripe) {
+            context.save();
+            context.globalAlpha = pop.alpha;
+            drawAsset(ripe, x, y + pop.dy);
+            context.restore();
+          }
+          drawPixelSparkle(context, x, y - 8 + (pop?.dy || 0), event.kind === 'plant' ? '#b0bd67' : '#f5d69a', 1);
+        }
       }
     }
   }
