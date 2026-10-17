@@ -79,8 +79,17 @@
 /* V24.9.4 tutorial: the next button glows; a small skip chip; no guide pages. */
 .tutorial-pulse{position:relative;box-shadow:0 0 0 3px #FFC36B,0 0 14px 4px rgba(255,195,107,.55)!important;animation:tutorial-pulse 1.1s ease-in-out infinite}
 @keyframes tutorial-pulse{50%{box-shadow:0 0 0 3px #FFC36B,0 0 22px 8px rgba(255,195,107,.25)}}
-.tutorial-skip{position:relative;z-index:44;white-space:nowrap;align-self:flex-end;width:max-content;min-width:44px;min-height:44px;padding:0 2px;letter-spacing:-.2px;border:1px solid #B49A66;border-radius:16px;background:rgba(35,31,46,.82);color:#D6D8BF;font:700 10px system-ui,sans-serif}
+.tutorial-skip{position:absolute;right:0;top:calc(100% + 6px);z-index:44;white-space:nowrap;width:max-content;min-width:44px;min-height:44px;padding:0 2px;letter-spacing:-.2px;border:1px solid #B49A66;border-radius:16px;background:rgba(35,31,46,.82);color:#D6D8BF;font:700 10px system-ui,sans-serif}
 .tutorial-skip[hidden]{display:none}
 
 /* V24.9.6 playtest: always-visible notice while the anonymous log is on (?playtest=1). */
 .playtest-badge{position:fixed;left:8px;bottom:calc(env(safe-area-inset-bottom,0px) + 4px);z-index:46;padding:2px 8px;border-radius:10px;background:rgba(35,31,46,.78);color:#E07A9E;font:700 10px system-ui,sans-serif;pointer-events:none}
+
+.tutorial-compact #seedTray,.tutorial-compact .tools{display:none!important}
+.camera-tools .tutorial-skip{width:max-content!important;max-width:none!important;padding:0 6px}
+.tutorial-compact .camera-tools .tutorial-skip{top:auto;bottom:0;right:calc(100% + 6px)}
+
+/* Tutorial: Hagrid's line as a screen-space bubble that follows his head (fixed, readable size). */
+.tutorial-bubble{position:fixed;left:0;top:0;z-index:43;max-width:min(260px,calc(100vw - 16px));padding:6px 10px;border:2px solid #F5D69A;border-radius:6px;background:rgba(20,38,32,.95);color:#E8F0ED;font:700 13px/1.3 system-ui,sans-serif;box-shadow:0 2px 0 #142620;pointer-events:none}
+.tutorial-bubble::after{content:"";position:absolute;left:var(--tail,14px);bottom:-8px;border:6px solid transparent;border-top:8px solid #F5D69A;border-bottom:0}
+.tutorial-bubble[hidden]{display:none}

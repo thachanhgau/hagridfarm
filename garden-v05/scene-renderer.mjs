@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.18';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.18';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.18';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.18';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.18';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.18';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.18';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.18';
-import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.18';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.18';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.18';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.18';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.18';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.18';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.18';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.26';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.26';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.26';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.26';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.26';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.26';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.26';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.26';
+import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.26';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.26';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.26';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.26';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.26';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.26';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.26';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -25,13 +25,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.18';
+} from './scene-animation.mjs?v=24.9.26';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.18';
+} from './forest-surround.mjs?v=24.9.26';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -1364,6 +1364,7 @@ export async function createGarden(canvas, options = {}) {
 
   let activeAnimations = [];
   let guestActor = null; // tutorial visitor; never part of state.creatures
+  let speechScale = 1; // tutorial text stays readable when zoomed out
   let authoredEffectEventIds = new Set();
 
   function actorObject(entry, col, row, logicalNow, clock, target = {}) {
@@ -1670,7 +1671,7 @@ export async function createGarden(canvas, options = {}) {
         drawAsset(activeAsset, object.xy[0], object.xy[1]);
         if (greeting) label(context, '♥', object.xy[0], object.xy[1] - 85, '#f5d69a', 'bold 16px sans-serif');
         if (object.id === 'gardener' && object.speechText) {
-          drawHagridSpeechBubble(context, object.xy[0], object.xy[1], object.speechText, {emphasized: greeting});
+          drawHagridSpeechBubble(context, object.xy[0], object.xy[1], object.speechText, {emphasized: greeting, scale: object.speechScale || 1, align: object.speechScale ? 'right' : 'center'});
         }
       } else {
         object.draw(context);
@@ -1697,7 +1698,7 @@ export async function createGarden(canvas, options = {}) {
         drawPixelSparkle(context, object.xy[0] + (object.motion.swayX || 0) * 8, object.xy[1] - 42 + (object.motion.bobY || 0), '#f5d69a', 1);
       }
       drawActorOverlay(object, logicalNow);
-      if (object.guest && object.hungry) drawHagridSpeechBubble(context, object.xy[0], object.xy[1] + 70, 'Đói…');
+      if (object.guest && object.hungry) drawHagridSpeechBubble(context, object.xy[0], object.xy[1] + 70, 'Đói…', {scale: speechScale});
       return;
     }
     if (object.kind === 'pen-front') {
@@ -1784,6 +1785,8 @@ export async function createGarden(canvas, options = {}) {
     const qaActor = options.qaActor ?? null;
     const hagridLine = options.hagridLine || null;
     const tutorialFocus = options.tutorialFocus || null;
+    speechScale = Math.max(1, finite(options.speechScale, 1));
+    if (canvas.dataset) canvas.dataset.speechScale = String(speechScale);
     guestActor = options.guestActor || null;
     const atmosphereMode = options.atmosphereMode || 'day';
     const weatherMode = options.weatherMode || 'clear';
@@ -1859,12 +1862,14 @@ export async function createGarden(canvas, options = {}) {
       else if (!cr?.meal) hungryCreatureCount += 1;
     }
     const greetingActive = reactionUntil > performance.now();
-    const showPeriodicSpeech = Boolean(hagridLine) || greetingActive || options.showHagridSpeech === true || (clock > 0 && Math.floor(clock / 4800) % 3 === 0);
+    // muteHagridSpeech: the tutorial shows Hagrid's line as a screen-space bubble instead.
+    const showPeriodicSpeech = !options.muteHagridSpeech && (Boolean(hagridLine) || greetingActive || options.showHagridSpeech === true || (clock > 0 && Math.floor(clock / 4800) % 3 === 0));
     const wizList = propsVisible
       ? wizardObjects(iso, clock, {reactionUntil}).map((w) => (
         w.id === 'gardener' && showPeriodicSpeech
           ? {
             ...w,
+            speechScale: hagridLine ? speechScale : 1,
             speechText: hagridLine || hagridSpeechFor(state, {
               matureCropCount,
               readyMealCount,
@@ -2016,6 +2021,13 @@ export async function createGarden(canvas, options = {}) {
       if (world.x >= left - 5 && world.x <= left + b.w + 5 && world.y >= top - 5 && world.y <= top + b.h + 5) {
         return {kind: 'decoration', itemId: actor.id, slot: actor.slot, facing: actor.facing};
       }
+    }
+    // The tutorial guest is tiny on phones: accept taps within ~44 CSS px of it.
+    const cssScale=rect&&canvas.width?rect.width/canvas.width:1;
+    for(const actor of interactiveActors){
+      if(!actor.guest)continue;
+      const r=Math.max(30,26/cssScale);
+      if(Math.abs(world.x-actor.xy[0])<=r&&world.y>=actor.xy[1]-r*1.6&&world.y<=actor.xy[1]+r*.5)return {kind:'creature',species:actor.species,guest:true};
     }
     for(const actor of [...interactiveActors].reverse()){
       const {xy,asset}=actor;

@@ -1,4 +1,4 @@
-import {wizardTargets} from "./wizard-scenery.mjs?v=24.9.18";
+import {wizardTargets} from "./wizard-scenery.mjs?v=24.9.26";
 export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onPick,getSelectedPlot,notify}) {
  const camera={x:0,y:0,scale:1},pointers=new Map();let gesture=null,previousSize=null,frameFirstPlot=false,frameOverview=false;
  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
@@ -58,18 +58,31 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
   const right=Math.max(hx-asset.pivotX+asset.width,...points.map(q=>q[0]));
   const top=Math.min(hy-asset.pivotY,...points.map(q=>q[1]));
   const bottom=Math.max(hy-asset.pivotY+asset.height,...points.map(q=>q[1]+24));
+  const {safeTop,safeBottom,safeLeft,safeRight}=safeArea({toolsInLandscape:false});
+  camera.scale=Math.min(maxScale,(safeRight-safeLeft)/(right-left),(safeBottom-safeTop)/(bottom-top));
+  camera.x=(safeLeft+safeRight)/2-(left+right)/2*camera.scale;
+  camera.y=(safeTop+safeBottom)/2-(top+bottom)/2*camera.scale;
+  frameFirstPlot=true;apply();
+ }
+ // The part of the viewport not covered by the HUD, the dock/hint and the camera tool column.
+ function safeArea({toolsInLandscape=true}={}){
   const vr=viewport.getBoundingClientRect(),portrait=vr.height>vr.width;
   const visibleRect=selector=>{const e=document.querySelector(selector);return e&&!e.hidden&&e.getClientRects().length?e.getBoundingClientRect():null;};
   const hudBottom=Math.max(0,...[...document.querySelectorAll(".hud button")].map(e=>e.getBoundingClientRect().bottom-vr.top));
   const safeTop=Math.max(hudBottom+12,portrait?145:112);
   const dock=visibleRect("#playDock"),hint=visibleRect("#selectionHint");
   const safeBottom=Math.min(vr.height-12,...[dock,hint].filter(r=>r&&r.top>vr.top+safeTop).map(r=>r.top-vr.top-12));
-  const side=portrait?visibleRect(".camera-tools"):null;
+  const side=portrait||toolsInLandscape?visibleRect(".camera-tools"):null;
   const safeLeft=12,safeRight=side?Math.min(vr.width-12,side.left-vr.left-12):vr.width-12;
-  camera.scale=Math.min(maxScale,(safeRight-safeLeft)/(right-left),(safeBottom-safeTop)/(bottom-top));
+  return {safeTop,safeBottom:Math.max(safeTop+40,safeBottom),safeLeft,safeRight:Math.max(safeLeft+40,safeRight)};
+ }
+ /** Fit a world-space box inside the uncovered part of the screen (tutorial framing). */
+ function frameWorld({left,right,top,bottom},maxScale=1.5){
+  const {safeTop,safeBottom,safeLeft,safeRight}=safeArea();
+  camera.scale=clamp(Math.min(maxScale,(safeRight-safeLeft)/(right-left),(safeBottom-safeTop)/(bottom-top)),fitScale,2.4);
   camera.x=(safeLeft+safeRight)/2-(left+right)/2*camera.scale;
   camera.y=(safeTop+safeBottom)/2-(top+bottom)/2*camera.scale;
-  frameFirstPlot=true;apply();
+  frameFirstPlot=false;frameOverview=false;apply();
  }
  function focusCreature(index){if(frameOverview){overview();return;}const p=map.creatureSpots[index];if(p){const [x,y]=iso(...p);centerAt(x,y-45,viewport.clientHeight<450?1.1:1.35);}}
  function overview(){
@@ -103,5 +116,5 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
   const step=t=>{if(pointers.size)return;const k=Math.min(1,(t-t0)/ms),e=k<.5?2*k*k:1-(-2*k+2)**2/2;camera.x=from.x+(to.x-from.x)*e;camera.y=from.y+(to.y-from.y)*e;camera.scale=from.scale+(to.scale-from.scale)*e;apply();if(k<1)requestAnimationFrame(step);};
   camera.x=from.x;camera.y=from.y;camera.scale=from.scale;apply();requestAnimationFrame(step);
  }
- return {focusPlot,focusCreature,overview,centerAt,zoom,fullscreen,glide};
+ return {focusPlot,focusCreature,overview,centerAt,zoom,fullscreen,glide,frameWorld};
 }

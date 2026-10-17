@@ -1,4 +1,4 @@
-import { stableHash } from './scene-animation.mjs?v=24.9.18';
+import { stableHash } from './scene-animation.mjs?v=24.9.26';
 
 export const ATMOSPHERE_MODES = Object.freeze([
   Object.freeze({
@@ -358,19 +358,23 @@ export function hagridSpeechFor(state = {}, { matureCropCount = 0, readyMealCoun
   return lv >= 100 ? `Đại khu vườn cấp 100 thật rực rỡ!` : `Vườn cấp ${lv} đang lớn rất êm đềm.`;
 }
 
-export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false } = {}) {
+// `scale` enlarges the bubble in world space so its text stays readable when the
+// camera is zoomed out (the tutorial passes it); the bubble's bottom edge stays put.
+export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false, scale = 1, align = 'center' } = {}) {
   if (!ctx || !text) return;
   const copy = String(text).slice(0, 68);
   ctx.save?.();
-  ctx.font = emphasized ? 'bold 12px sans-serif' : 'bold 11px sans-serif';
+  const k = Math.max(1, Number(scale) || 1);
+  ctx.font = `bold ${Math.round((emphasized ? 12 : 11) * k)}px sans-serif`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   const measured = typeof ctx.measureText === 'function' ? (ctx.measureText(copy)?.width || copy.length * 6.5) : copy.length * 6.5;
-  const padX = 12;
-  const boxW = Math.max(96, Math.ceil(measured + padX * 2));
-  const boxH = 24;
-  const bx = Math.round(x - boxW / 2);
-  const by = Math.round(y - 118);
+  const padX = Math.round(12 * k);
+  const boxW = Math.max(Math.round(96 * k), Math.ceil(measured + padX * 2));
+  const boxH = Math.round(24 * k);
+  // 'right' grows the bubble from Hagrid's head towards the garden, away from the forest edge.
+  const bx = Math.round(align === 'right' ? x - 24 * k : x - boxW / 2);
+  const by = Math.round(y - 94 - boxH);
 
   ctx.fillStyle = emphasized ? 'rgba(19, 39, 32, 0.95)' : 'rgba(20, 38, 34, 0.88)';
   ctx.fillRect?.(bx, by, boxW, boxH);
@@ -380,7 +384,7 @@ export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false } =
 
   // Small pixel pointer tail towards Hagrid's hat/head
   ctx.fillStyle = '#f5d69a';
-  ctx.fillRect?.(Math.round(x - 2), by + boxH, 4, 4);
+  ctx.fillRect?.(Math.round(x - 2 * k), by + boxH, Math.round(4 * k), Math.round(4 * k));
 
   ctx.fillStyle = emphasized ? '#e8f0ed' : '#d6d8bf';
   ctx.fillText?.(copy, Math.round(x), Math.round(by + boxH / 2));

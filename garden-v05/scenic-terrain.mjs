@@ -1,4 +1,4 @@
-import {FARM_BOUNDARY} from './garden-landscape.mjs?v=24.9.18';
+import {FARM_BOUNDARY} from './garden-landscape.mjs?v=24.9.26';
 
 export const GREENHOUSE_FOOTPRINT = Object.freeze({
   col: 2, row: -1, left: -78, top: -119, right: 80, bottom: 33,

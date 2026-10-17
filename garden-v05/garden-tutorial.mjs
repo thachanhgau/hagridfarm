@@ -9,7 +9,7 @@ export const TUTORIAL_PLOT = 0;
 // Each line stays within eight words.
 export const TUTORIAL_LINES = Object.freeze({
   intro: 'Chào con! Vườn này của con đấy.',
-  plant: 'Chạm luống sáng, gieo bí ngô nào!',
+  plant: 'Bấm nút sáng, gieo bí ngô nào!',
   grow: 'Nước phép đây, lớn nhanh nào!',
   harvest: 'Chín rồi! Gặt về kho thôi.',
   feed: 'Puffskein của bác đói, cho ăn nhé!',

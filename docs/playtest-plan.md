@@ -4,6 +4,17 @@
 > Mục tiêu: biết người mới có **tự** qua được ba phút đầu và **muốn chơi tiếp** không, dựa trên quan sát thật thay vì phỏng đoán.
 > Đi kèm: [`playtest-observation.csv`](playtest-observation.csv) (bảng quan sát), bộ ghi sự kiện ẩn danh trong game (mục 6), `garden-v05/playtest-summary.mjs` (gộp kết quả).
 
+## 0. Quyết định 17/10/2026: hoãn playtest với người thật
+
+Chủ dự án: *"khoan dùng người playtest được ko"* → *"em tự làm luôn đi"*. Playtest 5 người dời tới **trước khi mở beta (Phase 6)**. Mọi công cụ dưới đây giữ nguyên để dùng lúc đó.
+
+**Cổng tạm để sang Phase 3** (thay cho cổng ở mục 1 trong lúc hoãn):
+1. Test tự động `qa-v19/ftue-smoke.mjs` (WebKit, engine của Safari) chạy trọn ba phút đầu, không lỗi, trên các cỡ: iPhone SE 320, iPhone 13 390, iPad mini 768, iPhone ngang, desktop 1280.
+2. Duyệt từng bước theo tiêu chí usability (`docs/ftue-review.md`) không còn vấn đề mức **kẹt**.
+3. Chủ dự án tự chơi một lượt trên iPhone thật (cửa sổ riêng tư, `?playtest=1`) và không gặp lỗi.
+
+**Rủi ro đã chấp nhận:** chưa có tín hiệu "vui / muốn quay lại" từ người mới; nếu playtest trước beta không đạt, một phần việc ở Phase 3–5 có thể phải làm lại.
+
 ## 1. Cổng duyệt (đã chốt trong plan)
 
 **Đạt** khi **≥ 4/5** người: (a) tự hoàn thành ba phút đầu, không bấm Bỏ qua và người điều phối không phải gợi ý; và (b) trả lời "có" hoặc "chắc có" ở câu hỏi 3 (mục 5).
