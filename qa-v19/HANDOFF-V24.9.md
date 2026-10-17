@@ -86,3 +86,13 @@
 - `docs/galleons-income.sh`: script chỉ đọc (BigQuery mirror, không quét Firestore), in tổng theo loại giao dịch và phân vị thu nhập/ngày (p50/p75/p90), không in tên hay uid; bỏ tài khoản từng `bank_withdrawal` (admin/HPH).
 - `sim-progression.mjs` thêm `seedPriceCap`. Trần 3 G/hạt: tổng tới cấp 100 156.500 → 116.200 G, tháng 6 1.081 → 732 G/ngày; trần 2 G: 90.100 G, 557 G/ngày; tháng 1 gần như không đổi.
 - `docs/progression-sim.md` mục "Phương án A": quy tắc chọn theo I = p50/ngày (≥ 650 → giữ; 330–650 → trần 3 G + quà gieo thành hạt; 130–330 → trần 2 G + quà hạt; < 130 → thêm bán nông sản có trần ~40 G/ngày, server-only). Chưa đổi giá nào.
+
+## Phase 3 mục 5 — Gộp bảng: "Hồ sơ người giữ vườn" (nhánh `phase3-profile-panel`, 18/10/2026)
+- Thành tựu, Sổ tay, Lưu bút, Bưu thiếp là 4 tab của một bảng `profile` (`progression-panels.mjs`): đầu bảng có tên, cấp/XP, nút Sửa hồ sơ · Lộ trình · Gắn kết; tab là `role=tablist`, mũi tên ←/→/Home/End chuyển tab, tab nhớ lựa chọn trong phiên. Tên cũ (`show('achievements'|'almanac'|'guestbook'|'postcard')`, hook QA `openAlmanac/openAchievements/openPostcard`, `?view=`) vẫn mở đúng tab.
+- Bỏ lối vào riêng: menu còn 4 mục (Thăm vườn · Hồ sơ · Lễ hội · Cài đặt); bỏ nút Bưu thiếp trong Thành tựu và Sổ tay, nút Lưu bút trong Sổ tay, nút Thành tựu/Lưu bút trong Hồ sơ cũ. Nút ảnh đại diện mở bảng Hồ sơ (cả khi nối ví); Sửa hồ sơ xong thì quay lại bảng.
+- Bưu thiếp không còn là hộp thoại riêng: `showPostcardModal` → `renderPostcardSection` (Lưu ảnh, Khoe vườn). Ảnh dựng một lần mỗi lần mở tab (âm cú và điểm lễ hội như trước), không dựng lại theo mỗi giây làm mới. Ảnh co theo chiều cao màn hình để vừa khung; chữ trái trên bưu thiếp không còn đè dòng "HPVN · DIỄN ĐÀN…" (dùng `maxWidth` của `fillText`).
+- Thuật ngữ Lý Lan trong Lưu bút (đối chiếu `resource/FullHP`): "người giữ khóa và gác sân ở Hogwarts", "Giáo sư Sprout", "Quái vật kỳ thú và nơi tìm ra chúng".
+- Thư cú gọn hơn (`docs/ftue-review.md` mục 10): tiêu đề "Thư cú", chỉ còn "Chuỗi N ngày", rương, 3 dòng nhiệm vụ; bỏ nút Lễ hội và nút "Về vườn".
+- Cuộn: bảng Hồ sơ dùng thanh cuộn vàng mảnh `#B49A66` 4 px trên máy có chuột; ẩn hẳn trên điện thoại (`hover:none` hoặc ≤ 480 px).
+- Kiểm chứng: 162/162 test; FTUE WebKit 5/5; ảnh 4 tab + menu + thư cú ở 320×568, 390×664, 750×342, 1280×720: không tràn ngang, không cắt chữ, tab ≥ 44 px, không lỗi console. Chưa đổi chuỗi `?v=24.9.x`.
+- Còn lại: core-design muốn menu chính "Vườn · Kho · Thư cú · Hồ sơ" với Cài đặt nằm trong Hồ sơ; đợt này chưa đụng. `?view=` chỉ chạy khi nối ví (như trước).

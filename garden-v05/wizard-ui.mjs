@@ -88,8 +88,7 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
   const chestReward=compactOwlReward(DAILY_GRAND_CHEST_REWARD);
   sec.append(
    el('div',{class:'owl-quests-head'},[
-    el('small',{class:'letter-kicker',text:'THƯ CÚ'}),
-    el('strong',{text:`${summary.completedCount}/${summary.totalCount} nhiệm vụ · Chuỗi ${summary.streakDays}`}),
+    el('strong',{text:`Chuỗi ${summary.streakDays} ngày`}),
    ]),
    el('div',{class:'owl-grand-chest-bar'},[
     el('div',{class:'v24-owl-chest-copy'},[
@@ -112,7 +111,6 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
      },
      {class:summary.grandReady?'primary owl-quest-btn':'owl-quest-btn',disabled:!summary.grandReady||summary.grandClaimed,'data-letter-grand-chest':'true'}
     ),
-    button('Lễ hội',()=>{letter.close();panels.show('events');},{class:'owl-quest-btn','data-letter-open-events':'true'}),
    ])
   );
   const list=el('div',{class:'owl-quests-list'});
@@ -148,7 +146,9 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
  function openLetter(kind='owl'){
   panels.close();$('seedOptions').close();
   const isGreenhouse=kind==='greenhouse',isGardener=kind==='gardener';
-  $('letterTitle').textContent=isGreenhouse?'Nhà kính':isGardener?'Lời nhắn':'Cú';
+  $('letterTitle').textContent=isGreenhouse?'Nhà kính':isGardener?'Lời nhắn':'Thư cú';
+  // The daily letter closes with ×; only the short notes keep a route button.
+  $('letterAction').hidden=!isGreenhouse&&!isGardener;
   if(isGreenhouse){
    $('letterBody').replaceChildren(el('p',{text:'Chọn hạt giống, rồi mang hạt ra luống trống để gieo.'}));
    $('letterAction').textContent='Hạt giống';

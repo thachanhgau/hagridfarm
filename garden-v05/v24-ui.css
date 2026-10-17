@@ -93,3 +93,15 @@
 .tutorial-bubble{position:fixed;left:0;top:0;z-index:43;max-width:min(260px,calc(100vw - 16px));padding:6px 10px;border:2px solid #F5D69A;border-radius:6px;background:rgba(20,38,32,.95);color:#E8F0ED;font:700 13px/1.3 system-ui,sans-serif;box-shadow:0 2px 0 #142620;pointer-events:none}
 .tutorial-bubble::after{content:"";position:absolute;left:var(--tail,14px);bottom:-8px;border:6px solid transparent;border-top:8px solid #F5D69A;border-bottom:0}
 .tutorial-bubble[hidden]{display:none}
+/* Phase 3: Hồ sơ người giữ vườn, one panel with four tabs (Thành tựu, Sổ tay, Lưu bút, Bưu thiếp). */
+.v24-profile-view{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:2px 0 10px}
+.v24-profile-id{display:grid;gap:2px;min-width:0;flex:1 1 140px}.v24-profile-id strong{font-size:16px;color:#F5D69A;overflow-wrap:anywhere}.v24-profile-id small{font-size:12px;color:#D6D8BF}
+.v24-profile-view .panel-toolbar{margin:0;flex:1 1 260px;flex-wrap:nowrap}.v24-profile-view .panel-toolbar button{flex:1 1 0;min-width:0;padding:4px 6px}
+.profile-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;padding:2px;margin:0 0 12px;border:1px solid #B49A66;border-radius:3px;background:#142620}
+.profile-tabs [role=tab]{min-height:44px;min-width:0;padding:4px 2px;border:0;border-radius:2px;background:transparent;box-shadow:none;color:#D6D8BF;font:700 12px/1.2 ui-monospace,Menlo,Consolas,monospace;letter-spacing:-.2px;white-space:normal}
+.profile-tabs [role=tab][aria-selected=true]{background:#3F6A45;color:#F5D69A;box-shadow:inset 0 0 0 1px #E7AE73}
+.profile-tabs [role=tab]:focus-visible{outline:2px solid #B7DEE0;outline-offset:-2px}
+.postcard-section .postcard-canvas-wrap{padding:6px;margin:0 0 8px;border-radius:3px}.postcard-section .postcard-preview-canvas{border-radius:2px;width:auto;max-width:100%;max-height:max(150px,calc(100dvh - 350px))}.postcard-section .postcard-actions{justify-content:flex-start;padding-top:0}
+.popover[data-view=profile]{scrollbar-width:thin;scrollbar-color:#B49A66 transparent}
+.popover[data-view=profile]::-webkit-scrollbar{width:4px}.popover[data-view=profile]::-webkit-scrollbar-thumb{background:#B49A66;border-radius:0}.popover[data-view=profile]::-webkit-scrollbar-track{background:transparent}
+@media(hover:none),(max-width:480px){.popover[data-view=profile]{scrollbar-width:none}.popover[data-view=profile]::-webkit-scrollbar{display:none}}

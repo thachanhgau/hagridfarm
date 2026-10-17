@@ -36,7 +36,7 @@ Mức: **kẹt** (có thể không đi tiếp được) · **chậm** (đi tiế
 | 7 | gặt (và **mọi người chơi**) | Nút Gặt/Gieo mờ tới 1 giây sau mỗi thao tác (làm mới khi `busy` còn bật) | chậm | **Đã sửa**: làm mới thẻ cây ngay khi thao tác xong |
 | 8 | mọi bước | Nút "Bỏ qua" bị cắt chữ hoặc đè lên dock ở vài cỡ màn | nhẹ | **Đã sửa**: canh dưới (màn ngang: bên trái) cột nút, nở theo chữ |
 | 9 | thư cú | Mở thư thấy ngay 3/5 nhiệm vụ xong, có nhiệm vụ tên "Chế biến" nhưng được tính bằng việc gặt | chậm (nhầm) | **Còn**: thuộc thiết kế nhiệm vụ, để Phase 3 (kinh tế & tiến trình) |
-| 10 | thư cú | Thư cú nhiều chữ so với phần còn lại của hướng dẫn | nhẹ | **Còn**: Phase 3 gộp/rút gọn bảng |
+| 10 | thư cú | Thư cú nhiều chữ so với phần còn lại của hướng dẫn | nhẹ | **Đã sửa** (18/10/2026): tiêu đề "Thư cú", bỏ dòng "THƯ CÚ" và số nhiệm vụ trùng với nút rương, bỏ nút Lễ hội và nút "Về vườn" (đóng bằng ×) |
 | 11 | cho ăn | Bóng "Đói…" chạm vào cột đậu của cú | nhẹ | **Còn** |
 | 12 | mọi bước | Âm thanh và combo chưa nghe trên máy thật (WebKit chạy không tiếng) | — | **Chưa kiểm**: cần bước 3 của cổng tạm |
 

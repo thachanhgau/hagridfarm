@@ -140,12 +140,17 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
   ctx.fillText('H', sealX, sealY + 1);
 
   // Text details
+  // Left lines stop before the right stamp; fillText's maxWidth narrows long names instead of overlapping.
+  const stamp = ['HPVN · DIỄN ĐÀN HARRY POTTER VIỆT NAM', `Tổng tích lũy: ${num(meta.xp)} XP`, 'Bưu thiếp kỷ niệm Rừng Cấm'];
+  ctx.font = 'bold 12px monospace';
+  const stampWidth = Math.max(...stamp.map((text) => ctx.measureText(text).width));
+  const lineWidth = Math.max(120, width - 44 - stampWidth - 16 - 108);
   ctx.textAlign = 'left';
   ctx.textBaseline = 'alphabetic';
   ctx.fillStyle = '#f5d69a';
   ctx.font = 'bold 17px Georgia, serif';
   const titleSuffix = meta.keeperTitle ? ` · [${meta.keeperTitle}]` : '';
-  ctx.fillText(`KHU VƯỜN HAGRID · ${meta.playerName.toUpperCase()}${titleSuffix}`, 108, plaqueY + 28);
+  ctx.fillText(`KHU VƯỜN HAGRID · ${meta.playerName.toUpperCase()}${titleSuffix}`, 108, plaqueY + 28, lineWidth);
 
   ctx.fillStyle = '#d6d8bf';
   ctx.font = 'bold 13px sans-serif';
@@ -155,6 +160,7 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
     `Cấp ${meta.level}/100 · Chương ${meta.stageId}/6: ${meta.stageName} · ${meta.atmosphereIcon} ${meta.atmosphereLabel}${weatherSuffix}${eventSuffix}`,
     108,
     plaqueY + 50,
+    lineWidth,
   );
 
   ctx.fillStyle = '#b7dee0';
@@ -164,22 +170,24 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
     `🌱 ${meta.plots}/12 Thửa đất   🐾 ${meta.creatures}/12 Sinh vật   🏆 ${meta.keepsakeTotal} Kỷ vật   ✨ ${meta.decorTotal} Trang trí${affSuffix}`,
     108,
     plaqueY + 69,
+    lineWidth,
   );
 
   // Right stamp badge
   ctx.textAlign = 'right';
   ctx.fillStyle = '#ffc36b';
   ctx.font = 'bold 12px monospace';
-  ctx.fillText('HPVN · DIỄN ĐÀN HARRY POTTER VIỆT NAM', width - 44, plaqueY + 30);
+  ctx.fillText(stamp[0], width - 44, plaqueY + 30);
   ctx.fillStyle = '#a6b1ae';
   ctx.font = '11px monospace';
-  ctx.fillText(`Tổng tích lũy: ${num(meta.xp)} XP`, width - 44, plaqueY + 50);
-  ctx.fillText('Bưu thiếp kỷ niệm Rừng Cấm', width - 44, plaqueY + 68);
+  ctx.fillText(stamp[1], width - 44, plaqueY + 50);
+  ctx.fillText(stamp[2], width - 44, plaqueY + 68);
 
   return out;
 }
 
-export function showPostcardModal({
+// The Bưu thiếp tab of the Hồ sơ panel: a snapshot of the garden to save or show off.
+export function renderPostcardSection({
   canvas,
   state,
   stage,
@@ -192,24 +200,11 @@ export function showPostcardModal({
   onShareFloo,
   notify,
 }) {
-  for (const old of document.querySelectorAll('dialog.postcard-modal')) {
-    try { old.close(); } catch {}
-    old.remove();
-  }
-
   const meta = extractPostcardMeta({state, stage, atmosphere, weather, event, totalAffinity, playerName, keeperTitle});
   const postcardCanvas = renderPostcardCanvas(canvas, {state, stage, atmosphere, weather, event, totalAffinity, playerName, keeperTitle}, document);
   postcardCanvas.className = 'postcard-preview-canvas';
-
-  const dialog = el('dialog', {
-    class: 'store-overlay postcard-modal',
-    'aria-label': 'Bưu thiếp Kỷ niệm Khu Vườn Hagrid',
-  });
-
-  const close = () => {
-    try { dialog.close(); } catch {}
-    dialog.remove();
-  };
+  postcardCanvas.setAttribute('role', 'img');
+  postcardCanvas.setAttribute('aria-label', `Bưu thiếp khu vườn, cấp ${meta.level}`);
 
   const downloadPng = () => {
     try {
@@ -225,40 +220,18 @@ export function showPostcardModal({
     }
   };
 
-  const head = el('header', {class: 'store-header'}, [
-    el('div', {}, [
-      el('small', {class: 'store-eyebrow', text: 'HPVN · KHU VƯỜN HAGRID'}),
-      el('h2', {text: `Bưu thiếp · Cấp ${meta.level}`}),
-      el('p', {
-        class: 'store-subcopy',
-        text: 'Lưu một góc vườn.',
+  return el('section', {class: 'postcard-section', 'aria-label': `Bưu thiếp · Cấp ${meta.level}`}, [
+    el('div', {class: 'postcard-canvas-wrap'}, [postcardCanvas]),
+    el('div', {class: 'actions postcard-actions'}, [
+      button('Lưu ảnh', downloadPng, {
+        class: 'primary',
+        'data-download-postcard': 'true',
       }),
+      ...(onShareFloo
+        ? [button('Khoe vườn', () => onShareFloo(), {'data-postcard-floo': 'true'})]
+        : []),
     ]),
-    button('×', close, {class: 'store-close', 'aria-label': 'Đóng bưu thiếp'}),
   ]);
-
-  const previewWrap = el('div', {class: 'postcard-canvas-wrap'}, [postcardCanvas]);
-
-  const footer = el('div', {class: 'actions postcard-actions'}, [
-    button('Lưu ảnh', downloadPng, {
-      class: 'primary',
-      'data-download-postcard': 'true',
-    }),
-    ...(onShareFloo
-      ? [button('Khoe vườn', () => onShareFloo(), {'data-postcard-floo': 'true'})]
-      : []),
-    button('Đóng', close),
-  ]);
-
-  dialog.append(head, previewWrap, footer);
-  dialog.addEventListener('click', (event) => {
-    if (event.target === dialog) close();
-  });
-
-  document.body.append(dialog);
-  if (typeof dialog.showModal === 'function') dialog.showModal();
-  else dialog.setAttribute('open', '');
-  return dialog;
 }
 
 export function buildAlmanacChains(DB, state = {}) {
@@ -344,7 +317,7 @@ export function buildAlmanacChains(DB, state = {}) {
   return {creatureChains, cropUsages};
 }
 
-export function renderAlmanacSection({DB, items, state, onSelectCrop, onSelectCreature, onOpenCraft, onOpenPostcard}) {
+export function renderAlmanacSection({DB, items, state, onSelectCrop, onSelectCreature, onOpenCraft}) {
   const {creatureChains, cropUsages} = buildAlmanacChains(DB, state);
   const wrap = el('div', {class: 'almanac-view'});
 
@@ -362,16 +335,6 @@ export function renderAlmanacSection({DB, items, state, onSelectCrop, onSelectCr
         }),
       ]),
     ]),
-    ...(onOpenPostcard
-      ? [
-        el('div', {class: 'actions'}, [
-          button('Bưu thiếp', onOpenPostcard, {
-            class: 'primary',
-            'data-open-postcard': 'true',
-          }),
-        ]),
-      ]
-      : []),
   ]);
   wrap.append(hero);
 

@@ -579,14 +579,14 @@ export function buildGuestbookEntries({gameState = {}, eventMode = 'event_hallow
     {
       id: 'note_hagrid',
       author: 'Rubeus Hagrid',
-      role: 'Người giữ chìa khóa & khu vườn Hogwarts',
+      role: 'Người giữ khóa và gác sân ở Hogwarts',
       avatar: '🧔',
       stamp: evt.shortLabel,
       message: evt.hagridLine,
     },
     {
       id: 'note_sprout',
-      author: 'Giáo sư Pomona Sprout',
+      author: 'Giáo sư Sprout',
       role: 'Chủ nhiệm Nhà Hufflepuff · Thảo dược học',
       avatar: '🌿',
       stamp: `Vườn Cấp ${lv}`,
@@ -598,7 +598,7 @@ export function buildGuestbookEntries({gameState = {}, eventMode = 'event_hallow
     {
       id: 'note_newt',
       author: 'Newt Scamander',
-      role: 'Tác giả Sinh Vật Huyền Bí & Nơi Tìm Ra Chúng',
+      role: 'Tác giả Quái vật kỳ thú và nơi tìm ra chúng',
       avatar: '🦄',
       stamp: `Gắn kết ♥ ${totalAffinity}`,
       message:
