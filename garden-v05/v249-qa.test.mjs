@@ -31,6 +31,16 @@ test('free actions earn festival points only a few times per day', () => {
   assert.equal(recordFestivalAction('harvest', null, s, day).addedPoints, 15);
 });
 
+test('the crop-care tap and moving buildings are capped; owl quest claims are not', () => {
+  const s = memory();
+  const care = Array.from({length: 5}, () => recordFestivalAction('care', null, s, day).addedPoints);
+  assert.deepEqual(care, [6, 6, 6, 0, 0]);
+  const moves = Array.from({length: 3}, () => recordFestivalAction('moveBuilding', null, s, day).addedPoints);
+  assert.deepEqual(moves, [5, 0, 0]);
+  const claims = Array.from({length: 4}, () => recordFestivalAction('questClaim', null, s, day).addedPoints);
+  assert.deepEqual(claims, [15, 15, 15, 15]);
+});
+
 test('petting adds affinity three times per creature per day', () => {
   const s = memory(), game = {creatures: [{species: 'puffskein', mealsCompleted: 0}]};
   const gains = Array.from({length: 5}, () => recordCreatureAffinity('puffskein', 'pet', s, game, day).gain);

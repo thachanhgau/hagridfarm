@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {simulate, questWater, WATER_PRICE} from './sim-progression.mjs';
+import {simulate, questWater, WATER_PRICE, freeFestivalPoints, timeToMilestones, FESTIVAL_MILESTONES} from './sim-progression.mjs';
 
 test('the bot levels up, opens the first pen at level 10 and pays for every planted cell', () => {
   const run = simulate({days: 8});
@@ -16,4 +16,28 @@ test('the simulation is deterministic and quest water follows the V24.9.8 table'
   assert.deepEqual(simulate({days: 3}).daily, simulate({days: 3}).daily);
   assert.equal(questWater(1), 6 + 6 + 5 + 12);
   assert.equal(questWater(30), 12 + 5 + 12);
+});
+
+test('festival points add up per UI command, owl quest claim and chest', () => {
+  const run = simulate({days: 3});
+  for (const {festival: f} of run.daily) {
+    assert.equal(f.sessions.length, 3);
+    assert.equal(f.farm, f.sessions.reduce((a, b) => a + b, 0));
+    assert.equal(f.quests, f.questsDone * 15);
+    assert.equal(f.chest, f.questsDone === 3 ? 20 : 0);
+    assert.equal(f.total, f.farm + f.quests + f.chest);
+  }
+  // A new garden plants nine rows (10 points each) in its first session.
+  assert.equal(run.daily[0].festival.sessions[0], 90);
+  assert.equal(simulate({days: 1, free: true}).daily[0].festival.free, freeFestivalPoints(false));
+  assert.equal(freeFestivalPoints(false), 3 * 8 + 12 + 15 + 10 + 3 * 6 + 5 + 3 * 25);
+  assert.deepEqual(FESTIVAL_MILESTONES, [30, 75, 150]);
+});
+
+test('time to milestones walks sessions and honours a daily farm cap', () => {
+  const day = {festival: {sessions: [50, 50], free: 0, quests: 15, chest: 0}};
+  const daily = [day, day, day];
+  assert.deepEqual(timeToMilestones(daily, 0, [30, 100, 200]), [{day: 1, session: 1}, {day: 1, session: 2}, {day: 2, session: 2}]);
+  // Capped at 60 a day the second session adds only 10 + 15.
+  assert.deepEqual(timeToMilestones(daily, 0, [60, 100, 300], {farmCap: 60}), [{day: 1, session: 2}, {day: 2, session: 1}, null]);
 });
