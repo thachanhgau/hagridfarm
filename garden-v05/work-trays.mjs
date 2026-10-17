@@ -1,4 +1,4 @@
-import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.15';
+import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.18';
 import { DB } from './balance-data.mjs';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;

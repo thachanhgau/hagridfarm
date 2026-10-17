@@ -1,5 +1,5 @@
-import {el,button} from './ui-utils.mjs?v=24.9.15';
-import {V24_ART} from './v24-visuals.mjs?v=24.9.15';
+import {el,button} from './ui-utils.mjs?v=24.9.18';
+import {V24_ART} from './v24-visuals.mjs?v=24.9.18';
 
 const SVG_ATTR='fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="miter"';
 const svg=body=>`<svg viewBox="0 0 24 24" ${SVG_ATTR} aria-hidden="true">${body}</svg>`;
@@ -38,7 +38,7 @@ function sessionStatus(ctx){
 }
 
 export function renderGardenSettings(ctx={},options={}){
- const {onScenery,exportSave}=options,root=el('section',{class:'garden-settings'});
+ const {onScenery,exportSave,exportPlaytest}=options,root=el('section',{class:'garden-settings'});
  const repaint=(focusKey='')=>{
   const state=settingState(ctx);
   const motionNoteId='garden-settings-motion-note';
@@ -89,7 +89,7 @@ export function renderGardenSettings(ctx={},options={}){
   const more=el('details',{class:'settings-more'},[
    el('summary',{text:'Khác'}),
    el('div',{class:'settings-more-content'},[
-    el('div',{class:'settings-actions'},[fullscreen,save]),
+    el('div',{class:'settings-actions'},[fullscreen,save,...(exportPlaytest?[button('Xuất nhật ký thử',()=>{try{exportPlaytest();}catch(error){ctx.notify?.(error?.message||'Không thể xuất nhật ký.');}},{class:'settings-action','data-setting-action':'playtest','aria-label':'Xuất nhật ký thử nghiệm ẩn danh'})]:[])]),
     ...(saveProblem?[]:[status]),
    ]),
   ]);

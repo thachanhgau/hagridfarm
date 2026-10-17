@@ -5,8 +5,8 @@ Independent local Git repository created with owner approval on 2026-10-17. This
 - Source and pixel-art assets: `garden-v05/`
 - Read-only fixture and embed host: `qa-v19/`
 - Latest handoff: `qa-v19/HANDOFF-V24.9.md`
-- SHA-256 manifest: `qa-v19/v24.9.5-sha256.json`
-- Thiết kế (bản nháp): `docs/core-design.md`, `docs/art-bible.md`
+- SHA-256 manifest: `qa-v19/v24.9.6-sha256.json`
+- Thiết kế (đã duyệt): `docs/core-design.md`, `docs/art-bible.md` · Playtest (nháp): `docs/playtest-plan.md`
 
 ## Preview
 
@@ -20,6 +20,6 @@ The fixture uses in-memory sample data and does not write an account. Source emu
 
 ## Verification
 
-Run `node --test *.test.mjs` inside `garden-v05/` (143 tests passed at initial commit; 156 at V24.9.5). Latest UI evidence covers desktop 1024px, mobile 375px, embedded host and standalone fixture; physical iOS and production acceptance are not claimed.
+Run `node --test *.test.mjs` inside `garden-v05/` (143 tests passed at initial commit; 159 at V24.9.6). Latest UI evidence covers desktop 1024px, mobile 375px, embedded host and standalone fixture; physical iOS and production acceptance are not claimed.
 
 Only the active prototype, its assets and selected QA evidence are tracked. Historical sibling versions, ZIP exports and recovery copies stay local and ignored. No remote or publication is configured by this initialization. Future push, integration or deployment needs explicit authorization.

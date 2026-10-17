@@ -1,16 +1,16 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.15';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.15';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.15";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.15";
-import {$,el,button,icon,num,duration,hours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.15";
-import {renderAlmanacSection} from "./garden-postcard.mjs?v=24.9.15";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.15";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.15";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.15";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.15";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.18';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.18';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.18";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.18";
+import {$,el,button,icon,num,duration,hours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.18";
+import {renderAlmanacSection} from "./garden-postcard.mjs?v=24.9.18";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.18";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.18";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.18";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.18";
 
 export function createPanels(ctx){
- const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,tickTimers}=ctx,{DB}=E;
+ const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
  let active=null,previousFocus=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false;
  const names={roadmap:"Lộ trình",profile:"Hồ sơ",almanac:"Sổ tay",achievements:"Thành tựu",tour:"Thăm vườn",events:"Lễ hội",guestbook:"Lưu bút",affinity:"Gắn kết",scenery:"Khung cảnh",settings:"Cài đặt",plots:"Thửa đất",crops:"Hạt giống",creatures:"Sinh vật",craft:"Chế biến",build:"Xây dựng",inventory:"Kho",layout:"Bố trí",collection:"Trang trí",menu:"Khu vườn"};
@@ -609,7 +609,7 @@ export function createPanels(ctx){
 
   settings(){
    const session=getSession();
-   body.append(renderGardenSettings(ctx,{onScenery:()=>show("scenery"),exportSave}));
+   body.append(renderGardenSettings(ctx,{onScenery:()=>show("scenery"),exportSave,exportPlaytest}));
    if(session.qa&&!session.connected){
     const select=el("select",{"aria-label":"Cấp thử nghiệm"});
     for(const n of[1,10,12,18,22,24,30,48,50,66,72,90,94,100])select.append(el("option",{value:n,text:"Cấp "+n}));

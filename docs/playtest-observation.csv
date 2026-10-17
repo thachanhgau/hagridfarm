@@ -1,0 +1,9 @@
+Người chơi,Ngày (DD/MM/YYYY),Phút:giây,Bước,Người chơi làm gì,Lời nói (trích nguyên văn),Cảm xúc (+ / 0 / −),Mức (thích / chậm / nhầm / kẹt / gợi ý / bỏ),Ghi chú
+nguoi-1,,00:00,intro,Mở game,,,,"Bước: intro · plant · grow · harvest · feed · owl · sau-HD"
+nguoi-1,,,plant,"Có thấy luống sáng / mũi tên? Mất bao lâu để bấm Gieo?",,,,
+nguoi-1,,,grow,"Có để ý lời Hagrid ""Nước phép""? Cây lớn có làm họ ngạc nhiên?",,,,
+nguoi-1,,,harvest,"Bấm Gặt ngay hay chạm vào cây? Có nhìn theo chip bay vào Kho?",,,,
+nguoi-1,,,feed,"Có hiểu phải chạm Puffskein? Tìm thấy nó sau bao lâu?",,,,
+nguoi-1,,,owl,"Đọc thư cú hay đóng ngay? Nhận quà nào?",,,,
+nguoi-1,,,sau-HD,"Tự chọn làm gì tiếp? Có quay lại luống để gieo tiếp?",,,,
+nguoi-1,,,phỏng vấn,"Câu 1–5: ghi nguyên văn",,,,
