@@ -1,4 +1,4 @@
-import { stableHash } from './scene-animation.mjs?v=24.9';
+import { stableHash } from './scene-animation.mjs?v=24.9.5';
 
 export const ATMOSPHERE_MODES = Object.freeze([
   Object.freeze({
@@ -197,7 +197,7 @@ export function computeWeatherParticles(
   const spanY = Math.max(180, (bounds?.bottom ?? 1380) - top);
   const particles = [];
   const autumnPalette = ['#ed8a45', '#ffc36b', '#c75b4b', '#b0bd67'];
-  const snowPalette = ['#ffffff', '#d6d8bf', '#b7dee0'];
+  const snowPalette = ['#e8f0ed', '#d6d8bf', '#b7dee0'];
 
   for (let i = 0; i < count; i += 1) {
     const h = stableHash(`weather:${cfg.id}:${i}`);
@@ -335,7 +335,7 @@ export function hagridSpeechFor(state = {}, { matureCropCount = 0, readyMealCoun
     if (matureCropCount > 0) return `Chào con! Có ${matureCropCount} cây chín vàng đang chờ thu hoạch kìa!`;
     if (readyMealCount > 0) return `Mấy đứa nhỏ ăn xong rồi, ghé chuồng nhận thành quả nhé!`;
     if (eventMode === 'event_halloween') return `Đêm hội Bí ngô Rừng Cấm rực rỡ quá! Nhớ thu hoạch bí ngô nhé!`;
-    if (eventMode === 'event_yule') return `Dạ vũ Giáng sinh ấm áp bên lều gỗ! Vào uống tách trà nóng nhé!`;
+    if (eventMode === 'event_yule') return `Dạ vũ Noel ấm áp bên lều gỗ! Vào uống tách trà nóng nhé!`;
     if (eventMode === 'event_herbology_fair') return `Hội chợ Thảo dược đang mở hội! Giáo sư Sprout khen vườn con lắm!`;
     if (weatherMode === 'rain') return `Mưa phùn Thảo dược mát lành thật, cây cối thích lắm đấy!`;
     if (weatherMode === 'snow') return `Tuyết Giáng sinh rơi rồi! Ghé lều uống tách trà nóng nhé!`;
@@ -347,7 +347,7 @@ export function hagridSpeechFor(state = {}, { matureCropCount = 0, readyMealCoun
   if (readyMealCount > 0) return `${readyMealCount} sinh vật đã ăn xong bữa!`;
   if (hungryCreatureCount > 0) return `Chuồng nuôi có bạn nhỏ đang chờ bữa ăn.`;
   if (eventMode === 'event_halloween') return `Đèn lồng Bí ngô Samhain đang tỏa sáng khắp vườn!`;
-  if (eventMode === 'event_yule') return `Ánh sao Dạ vũ Giáng sinh lấp lánh bên mái lều.`;
+  if (eventMode === 'event_yule') return `Ánh sao Dạ vũ Noel lấp lánh bên mái lều.`;
   if (eventMode === 'event_herbology_fair') return `Bào tử Hội chợ Thảo dược bay nhẹ quanh nhà kính.`;
   if (weatherMode === 'rain') return `Mưa xuân lất phất · đất đai tươi tốt.`;
   if (weatherMode === 'snow') return `Tuyết trắng phủ nhẹ bên hiên lều.`;
@@ -382,7 +382,7 @@ export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false } =
   ctx.fillStyle = '#f5d69a';
   ctx.fillRect?.(Math.round(x - 2), by + boxH, 4, 4);
 
-  ctx.fillStyle = emphasized ? '#fff3cf' : '#e8dec5';
+  ctx.fillStyle = emphasized ? '#e8f0ed' : '#d6d8bf';
   ctx.fillText?.(copy, Math.round(x), Math.round(by + boxH / 2));
   ctx.restore?.();
 }

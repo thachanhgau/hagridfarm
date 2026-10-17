@@ -1,6 +1,6 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button} from './ui-utils.mjs?v=24.9';
-import {atmosphereConfig, weatherConfig} from './garden-atmosphere.mjs?v=24.9';
+import {el, button} from './ui-utils.mjs?v=24.9.5';
+import {atmosphereConfig, weatherConfig} from './garden-atmosphere.mjs?v=24.9.5';
 
 export const TOUR_STORAGE_KEY = 'hpvn-garden-v22-tour';
 
@@ -21,7 +21,7 @@ export const HONOR_GARDENS = Object.freeze([
     title: 'Vườn Thảo Dược Nhà Kính Số 3',
     subtitle: 'Cấp 45 · Chương 3/6 · 6 Thửa thảo dược quý & Bowtruckle',
     description:
-      'Khu vườn mẫu mực của Chủ nhiệm Nhà Hufflepuff với các luống Mandrake, Bạch tiên, Puffapod, Cỏ trăng và Lanh xếp đối xứng dưới lá thu vàng Rừng Cấm.',
+      'Khu vườn mẫu mực của Chủ nhiệm Nhà Hufflepuff với các luống Nhân sâm, Bạch tiên, Puffapod, Cỏ trăng và Lanh xếp đối xứng dưới lá thu vàng Rừng Cấm.',
     level: 45,
     atmosphereMode: 'day',
     weatherMode: 'autumn',
@@ -70,7 +70,7 @@ export const HONOR_GARDENS = Object.freeze([
       amount: 8,
       itemId: 'mandrake',
       bonusQty: 2,
-      label: '+8 Nước tưới & +2 Mandrake',
+      label: '+8 Nước tưới & +2 Nhân sâm',
     }),
   }),
   Object.freeze({
@@ -81,7 +81,7 @@ export const HONOR_GARDENS = Object.freeze([
     title: 'Khu Bảo Tồn Sinh Vật Kỳ Thú',
     subtitle: 'Cấp 78 · Chương 5/6 · 9 Thửa đất & 8 Sinh vật huyền bí',
     description:
-      'Không gian mở rộng tới rừng rậm với Bằng Mã, Thestral, Fwooper, Diricawl, Kneazle và Mooncalf được chăm sóc chu đáo dưới làn mưa phùn thảo dược.',
+      'Không gian mở rộng tới rừng rậm với Bằng-Mã, Vong mã, Fwooper, Diricawl, Kneazle và Mooncalf được chăm sóc chu đáo dưới làn mưa phùn thảo dược.',
     level: 78,
     atmosphereMode: 'dusk',
     weatherMode: 'rain',
@@ -150,7 +150,7 @@ export const HONOR_GARDENS = Object.freeze([
     title: 'Đại Khu Bảo Tồn Rồng & Bờ Hồ Đen',
     subtitle: 'Cấp 100 · Chương 6/6 · Trọn 12 Thửa, 12 Sinh vật & 12 Đài Kỷ Vật',
     description:
-      'Đỉnh cao Đại khu vườn cấp 100 dưới đêm tuyết rơi Hogwarts: Rồng, Chó ba đầu, Kỳ lân, Bằng Mã và toàn bộ 12 đài kỷ vật tỏa sáng dọc lối đi phía Nam.',
+      'Đỉnh cao Đại khu vườn cấp 100 dưới đêm tuyết rơi Hogwarts: Rồng, Chó ba đầu, Kỳ lân, Bằng-Mã và toàn bộ 12 đài kỷ vật tỏa sáng dọc lối đi phía Nam.',
     level: 100,
     atmosphereMode: 'night',
     weatherMode: 'snow',

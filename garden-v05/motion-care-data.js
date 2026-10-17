@@ -1299,7 +1299,7 @@
     },
     {
       "id": "thestral",
-      "label": "Thestral",
+      "label": "Vong mã",
       "kind": "creature",
       "growth": [
         "Con mới nở",

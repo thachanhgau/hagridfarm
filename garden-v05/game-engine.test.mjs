@@ -60,7 +60,7 @@ test('exports creature rarity display and late-progression gates', () => {
       'three-headed-dog': [5_400_000, 'legendary', true, null],
     },
   );
-  assert.equal(CREATURE.hippogriff.label, 'Bằng Mã');
+  assert.equal(CREATURE.hippogriff.label, 'Bằng-Mã');
   for (const item of Object.values(CREATURE)) assert.match(item.rarityLabel, /\S/);
 });
 

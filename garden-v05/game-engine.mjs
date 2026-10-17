@@ -78,7 +78,7 @@ const cropRecords = {
   },
   mandrake: {
     id: 'mandrake',
-    label: 'Mandrake',
+    label: 'Nhân sâm',
     rarity: 'epic',
     rarityLabel: RARITY_LABEL.epic,
     growMs: RARITY_GROW_MS.epic,
@@ -118,7 +118,7 @@ const creatureRecords = {
   },
   hippogriff: {
     id: 'hippogriff',
-    label: 'Bằng Mã',
+    label: 'Bằng-Mã',
     rarity: 'epic',
     rarityLabel: RARITY_LABEL.epic,
     growMs: 40 * 60 * 1000,

@@ -1,4 +1,4 @@
-import {stageContains} from './garden-growth.mjs?v=24.9';
+import {stageContains} from './garden-growth.mjs?v=24.9.5';
 function insidePolygon(x,y,points){
  let inside=false;
  for(let i=0,j=points.length-1;i<points.length;j=i++){
@@ -91,25 +91,25 @@ function pixelLine(c,a,b,color,width=2){
 }
 export function drawSeasonalFence(c,piece,weather,event,clock){
  const {a,b}=piece;
- if(weather==='snow')for(const h of [35,26,14])pixelLine(c,[a[0]-3,a[1]-h],[b[0]-3,b[1]-h],'#dcebed',3);
+ if(weather==='snow')for(const h of [35,26,14])pixelLine(c,[a[0]-3,a[1]-h],[b[0]-3,b[1]-h],'#e8f0ed',3);
  if(event==='none')return;
- const phase=worldPhase(clock),colors=event==='event_halloween'?['#ffb14e','#b99bdd']:event==='event_yule'?['#ffda82','#df7968','#b8ce86']:['#e6c582','#96ba70','#d592b1'];
- pixelLine(c,[a[0],a[1]-31],[b[0],b[1]-31],'#405537',2);
+ const phase=worldPhase(clock),colors=event==='event_halloween'?['#ffc36b','#a6b1ae']:event==='event_yule'?['#f5d69a','#c97952','#b0bd67']:['#ffc36b','#b0bd67','#e07a9e'];
+ pixelLine(c,[a[0],a[1]-31],[b[0],b[1]-31],'#5d6046',2);
  for(let j=1;j<=3;j++){
   const t=j/4,x=Math.round(a[0]+(b[0]-a[0])*t),y=Math.round(a[1]+(b[1]-a[1])*t-28+Math.sin(t*Math.PI)*5);
   c.fillStyle=colors[j%colors.length];
   if(event==='event_herbology_fair'){for(let k=0;k<5;k++)c.fillRect(x-4+k+Math.round(k/4*[0,1,0,-1][phase]),y+k,9-k*2,2);}
-  else{c.fillRect(x-2,y,5,6);c.fillStyle=(phase+j)%3===0?'#fff8da':'#e9c073';c.fillRect(x,y+1,2,2);}
+  else{c.fillRect(x-2,y,5,6);c.fillStyle=(phase+j)%3===0?'#e8f0ed':'#ffc36b';c.fillRect(x,y+1,2,2);}
  }
 }
 export function drawRoofWeather(c,object,weather,clock){
  const a=object.asset;if(!a)return;const [x,y]=object.xy,left=x-a.pivotX,top=y-a.pivotY;
  const eaves=[[8,91],[18,99],[112,104],[140,91],[155,84]];
  if(weather==='rain'){
-  const phase=worldPhase(clock,960);c.fillStyle='#a1c8d3';
+  const phase=worldPhase(clock,960);c.fillStyle='#b7dee0';
   for(const [dx,dy] of eaves)c.fillRect(Math.round(left+dx),Math.round(top+dy+2+phase*3),1,4);
  }else if(weather==='snow'){
-  c.fillStyle='#dcebef';for(const [dx,dy] of eaves){c.fillRect(Math.round(left+dx),Math.round(top+dy),2,3+dx%3);}
+  c.fillStyle='#e8f0ed';for(const [dx,dy] of eaves){c.fillRect(Math.round(left+dx),Math.round(top+dy),2,3+dx%3);}
  }
 }
 export function drawHeroMotion(c,object,event,clock){
@@ -117,6 +117,6 @@ export function drawHeroMotion(c,object,event,clock){
  const p=worldPhase(clock),[x,y]=object.xy,a=object.asset;
  // Sparkles/lights move; the base sprite and its feet never bob or shear.
  const points=event==='event_yule'?[[0,-a.height*.8],[-a.width*.2,-a.height*.48],[a.width*.2,-a.height*.35]]:event==='event_halloween'?[[-a.width*.2,-a.height*.3],[a.width*.23,-a.height*.35]]:[];
- c.fillStyle=event==='event_halloween'?'#d0a1ef':'#fff0b6';
+ c.fillStyle=event==='event_halloween'?'#b378ff':'#f5d69a';
  for(let i=0;i<points.length;i++){const [dx,dy]=points[i],size=(p+i)%3===0?3:1;c.fillRect(Math.round(x+dx),Math.round(y+dy),size,size);}
 }

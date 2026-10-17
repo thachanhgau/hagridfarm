@@ -2417,7 +2417,7 @@
     },
     {
       "id": "mandrake",
-      "label": "Mandrake",
+      "label": "Nhân sâm",
       "kind": "crop",
       "growth": [
         "Gieo hạt",
@@ -4324,7 +4324,7 @@
     },
     {
       "id": "hippogriff",
-      "label": "Bằng Mã",
+      "label": "Bằng-Mã",
       "kind": "creature",
       "growth": [
         "Con mới nở",

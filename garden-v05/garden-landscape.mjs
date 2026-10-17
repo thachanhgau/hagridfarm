@@ -28,8 +28,8 @@ export function drawGardenPaths(ctx,map){
     const steps=Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/3);
     for(let j=0;j<=steps;j++){
       const t=j/steps,x=a[0]+(b[0]-a[0])*t,y=a[1]+(b[1]-a[1])*t;
-      pathStamp(ctx,x,y,17,'#4b4930');pathStamp(ctx,x,y,13+(j%5===0?1:0),'#8b7750');
-      if(j%3===0){ctx.fillStyle=j%2?'#b19b6b':'#6b6241';ctx.fillRect(Math.round(x+(j%7)-3),Math.round(y),3,2);}
+      pathStamp(ctx,x,y,17,'#4a3c2c');pathStamp(ctx,x,y,13+(j%5===0?1:0),'#777044');
+      if(j%3===0){ctx.fillStyle=j%2?'#b49a66':'#5d6046';ctx.fillRect(Math.round(x+(j%7)-3),Math.round(y),3,2);}
     }
   }
 }
@@ -58,20 +58,20 @@ export function createBoundaryFence(map,boundary=FARM_BOUNDARY){
 }
 export function drawBoundaryFence(ctx,piece){
   const {a,b}=piece;
-  pixelLine(ctx,[a[0],a[1]+2],[b[0],b[1]+2],'#294334',7);
+  pixelLine(ctx,[a[0],a[1]+2],[b[0],b[1]+2],'#24483f',7);
   for(const h of [12,25]){
-    pixelLine(ctx,[a[0],a[1]-h],[b[0],b[1]-h],'#443a2e',6);
-    pixelLine(ctx,[a[0],a[1]-h-1],[b[0],b[1]-h-1],'#957b50',3);
+    pixelLine(ctx,[a[0],a[1]-h],[b[0],b[1]-h],'#4a3c2c',6);
+    pixelLine(ctx,[a[0],a[1]-h-1],[b[0],b[1]-h-1],'#a57554',3);
     pixelLine(ctx,[a[0],a[1]-h-2],[b[0],b[1]-h-2],'#b49a66',1);
   }
-  if(piece.gate){pixelLine(ctx,[a[0],a[1]-25],[b[0],b[1]-12],'#b49a66',3);pixelLine(ctx,[a[0],a[1]-12],[b[0],b[1]-25],'#957b50',3);}
+  if(piece.gate){pixelLine(ctx,[a[0],a[1]-25],[b[0],b[1]-12],'#b49a66',3);pixelLine(ctx,[a[0],a[1]-12],[b[0],b[1]-25],'#a57554',3);}
   for(const [x,y] of [a,b]){
-    ctx.fillStyle='#453a2d';ctx.fillRect(Math.round(x-4),Math.round(y-34),8,35);
-    ctx.fillStyle='#927749';ctx.fillRect(Math.round(x-2),Math.round(y-32),4,31);
-    ctx.fillStyle='#c0a575';ctx.fillRect(Math.round(x-4),Math.round(y-35),8,3);
-    ctx.fillStyle='#5d6250';ctx.fillRect(Math.round(x-5),Math.round(y-2),10,4);
+    ctx.fillStyle='#4a3c2c';ctx.fillRect(Math.round(x-4),Math.round(y-34),8,35);
+    ctx.fillStyle='#a57554';ctx.fillRect(Math.round(x-2),Math.round(y-32),4,31);
+    ctx.fillStyle='#b49a66';ctx.fillRect(Math.round(x-4),Math.round(y-35),8,3);
+    ctx.fillStyle='#5d6046';ctx.fillRect(Math.round(x-5),Math.round(y-2),10,4);
   }
-  if(piece.lantern){const [x,y]=a;ctx.fillStyle='#443a2e';ctx.fillRect(Math.round(x-5),Math.round(y-49),10,13);ctx.fillStyle='#d1a961';ctx.fillRect(Math.round(x-2),Math.round(y-46),4,7);}
+  if(piece.lantern){const [x,y]=a;ctx.fillStyle='#4a3c2c';ctx.fillRect(Math.round(x-5),Math.round(y-49),10,13);ctx.fillStyle='#e7ae73';ctx.fillRect(Math.round(x-2),Math.round(y-46),4,7);}
 }
 export function drawMeadowDetails(ctx,map,reserved=[],drawCluster=null){
   if(!ctx||!map)return {clumps:0,flowers:0,bushes:0};
@@ -98,10 +98,10 @@ export function drawMeadowDetails(ctx,map,reserved=[],drawCluster=null){
   };
   const tuft=(x,y,variant)=>{
     const px=Math.round(x),py=Math.round(y);
-    ctx.fillStyle='#24483a';ctx.fillRect(px-6,py-2,13,3);
-    ctx.fillStyle=variant%2?'#3f6a45':'#4f6e40';
+    ctx.fillStyle='#24483f';ctx.fillRect(px-6,py-2,13,3);
+    ctx.fillStyle=variant%2?'#3f6a45':'#3f6a45';
     ctx.fillRect(px-4,py-6,3,5);ctx.fillRect(px+2,py-8,2,7);
-    if(variant%3===0){ctx.fillStyle='#77904f';ctx.fillRect(px-1,py-6,2,2);}
+    if(variant%3===0){ctx.fillStyle='#71934b';ctx.fillRect(px-1,py-6,2,2);}
   };
   const flower=(x,y,variant)=>{
     const px=Math.round(x),py=Math.round(y);
@@ -110,7 +110,7 @@ export function drawMeadowDetails(ctx,map,reserved=[],drawCluster=null){
   };
   const bush=(x,y,variant)=>{
     const px=Math.round(x),py=Math.round(y);
-    ctx.fillStyle=variant%2?'#3f6a45':'#4f6e40';
+    ctx.fillStyle=variant%2?'#3f6a45':'#3f6a45';
     ctx.fillRect(px-9,py-5,18,5);ctx.fillRect(px-6,py-9,9,5);ctx.fillRect(px+1,py-11,6,5);
     ctx.fillStyle='#71934b';ctx.fillRect(px-5,py-8,4,3);ctx.fillRect(px+2,py-10,3,3);
   };

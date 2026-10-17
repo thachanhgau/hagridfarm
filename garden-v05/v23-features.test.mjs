@@ -249,7 +249,7 @@ test('V23.0 Visitor Guestbook, Postcard & HPVN Bridge support eventMode and tota
     keeperTitle: '👑 Đại Phù Thủy Khu Vườn',
     totalAffinity: 30,
   });
-  assert.equal(meta.eventLabel, '🎄 Dạ vũ Giáng sinh');
+  assert.equal(meta.eventLabel, '🎄 Dạ vũ Noel');
   assert.equal(meta.totalAffinity, 30);
 
   // Host <-> Iframe bridge supports setEvent

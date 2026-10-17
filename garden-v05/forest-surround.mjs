@@ -18,11 +18,11 @@ export const FOREST_ASSET_FILES = Object.freeze(FOREST_ASSETS.map((asset) => ass
 
 const ASSET_BY_ID = new Map(FOREST_ASSETS.map((asset) => [asset.id, asset]));
 const FLOOR_COLORS = Object.freeze([
-  '#10251f',
-  '#142d24',
-  '#173328',
-  '#1b392b',
-  '#203f2d',
+  '#142620',
+  '#142620',
+  '#142620',
+  '#24483f',
+  '#24483f',
 ]);
 
 function finite(value, fallback) {

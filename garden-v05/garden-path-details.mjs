@@ -1,14 +1,14 @@
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.5';
 
 // Neutral ground colours: the terrain cache is weatherized after this layer.
 const COLORS = Object.freeze({
-  edge: '#4b4930',
-  earth: '#896544',
-  earthLight: '#a87d4d',
-  stone: '#b19b6b',
-  stoneDark: '#6b5b43',
+  edge: '#4a3c2c',
+  earth: '#777044',
+  earthLight: '#a57554',
+  stone: '#b49a66',
+  stoneDark: '#5d6046',
   moss: '#3f6a45',
-  mossLight: '#77904f',
+  mossLight: '#71934b',
 });
 const MAX_RADIUS = 17;
 const DEFAULT_TILE_WIDTH = 64;

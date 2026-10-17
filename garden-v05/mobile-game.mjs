@@ -1,27 +1,27 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.5';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9';
-import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9';
-import {showStore} from './garden-store-ui.mjs?v=24.9';
-import {setupProfile} from './profile-ui.mjs?v=24.9';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.5';
+import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.5';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.5';
+import {showStore} from './garden-store-ui.mjs?v=24.9.5';
+import {setupProfile} from './profile-ui.mjs?v=24.9.5';
 import * as E from './progression-engine.mjs';
-import {createGarden,iso,plotCorners} from './scene-renderer.mjs?v=24.9';
-import {setupCamera} from './camera.mjs?v=24.9';
-import {createPanels} from './progression-panels.mjs?v=24.9';
-import {$,el,icon,button,num,duration,hours,plantingAction} from './ui-utils.mjs?v=24.9';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9';
-import {createGardenAudio} from './garden-audio.mjs?v=24.9';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge} from './hpvn-bridge.mjs?v=24.9';
-import {showPostcardModal} from './garden-postcard.mjs?v=24.9';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward} from './garden-achievements.mjs?v=24.9';
-import {eventConfig,nextEventMode,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9';
-import {loadOwlQuests,saveOwlQuests,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest} from './garden-quests.mjs?v=24.9';
+import {createGarden,iso,plotCorners} from './scene-renderer.mjs?v=24.9.5';
+import {setupCamera} from './camera.mjs?v=24.9.5';
+import {createPanels} from './progression-panels.mjs?v=24.9.5';
+import {$,el,icon,button,num,duration,hours,plantingAction} from './ui-utils.mjs?v=24.9.5';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.5';
+import {createGardenAudio} from './garden-audio.mjs?v=24.9.5';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge} from './hpvn-bridge.mjs?v=24.9.5';
+import {showPostcardModal} from './garden-postcard.mjs?v=24.9.5';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.5';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward} from './garden-achievements.mjs?v=24.9.5';
+import {eventConfig,nextEventMode,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.5';
+import {loadOwlQuests,saveOwlQuests,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest} from './garden-quests.mjs?v=24.9.5';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9':'./garden-emulator-client.mjs?v=24.9');
+const {createEmulatorClient}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.5':'./garden-emulator-client.mjs?v=24.9.5');
 const WALLET_TEXT=fixtureWallet
  ?{title:'Dữ liệu mẫu trong bộ nhớ · không lưu',badge:'V24 · Xem thử, không lưu',ready:'V24 · Chạm để khám phá.'}
  :{title:'Đã lưu trên emulator · Galleons mô phỏng',badge:'EMULATOR · Ví Gringotts thử nghiệm',ready:'Đã nối ví Gringotts thử nghiệm. Mua hạt và nước để gieo.'};

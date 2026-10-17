@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9';
-import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.5';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.5';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.5';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.5';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.5';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.5';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.5';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.5';
+import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.5';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.5';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.5';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.5';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.5';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.5';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.5';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -23,13 +23,13 @@ import {
   decorFrameAt,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9';
+} from './scene-animation.mjs?v=24.9.5';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9';
+} from './forest-surround.mjs?v=24.9.5';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -527,14 +527,14 @@ function penCorners(pen) {
 
 function drawPenGround(context, pen, scaffold = false) {
   const corners = penCorners(pen);
-  polygon(context, corners, scaffold ? 'rgba(159,124,75,.08)' : 'rgba(92,69,49,.22)', scaffold ? '#b18b5c' : '#5e744e', 2, scaffold);
+  polygon(context, corners, scaffold ? 'rgba(159,124,75,.08)' : 'rgba(92,69,49,.22)', scaffold ? '#b49a66' : '#777044', 2, scaffold);
   const [north, east, south, west] = corners;
-  line(context, north, east, scaffold ? '#b18b5c' : '#89623d', 3, scaffold);
-  line(context, north, west, scaffold ? '#b18b5c' : '#89623d', 3, scaffold);
+  line(context, north, east, scaffold ? '#b49a66' : '#777044', 3, scaffold);
+  line(context, north, west, scaffold ? '#b49a66' : '#777044', 3, scaffold);
   if (!scaffold) {
     for (const point of [north, east, west]) {
       context.beginPath();
-      context.fillStyle = '#c49a62';
+      context.fillStyle = '#b49a66';
       context.arc(point[0], point[1], 4, 0, Math.PI * 2);
       context.fill();
     }
@@ -543,12 +543,12 @@ function drawPenGround(context, pen, scaffold = false) {
 
 function drawPenFront(context, pen, scaffold = false) {
   const [, east, south, west] = penCorners(pen);
-  line(context, east, south, scaffold ? '#b18b5c' : '#8e6540', scaffold ? 3 : 4, scaffold);
-  line(context, west, south, scaffold ? '#b18b5c' : '#8e6540', scaffold ? 3 : 4, scaffold);
+  line(context, east, south, scaffold ? '#b49a66' : '#777044', scaffold ? 3 : 4, scaffold);
+  line(context, west, south, scaffold ? '#b49a66' : '#777044', scaffold ? 3 : 4, scaffold);
   if (!scaffold) {
     for (const point of [east, south, west]) {
       context.beginPath();
-      context.fillStyle = '#c49a62';
+      context.fillStyle = '#b49a66';
       context.arc(point[0], point[1], 4, 0, Math.PI * 2);
       context.fill();
     }
@@ -689,7 +689,7 @@ function drawCareEffect(context, x, y, progress, kind = 'care') {
     drawPixelDrop(context, x - 9, y - 23 - Math.max(0, lift - 2), '#b7dee0');
   } else {
     drawPixelHeart(context, x + 13, y - 38 - lift, '#ed8a45');
-    drawPixelHeart(context, x - 14, y - 28 - Math.max(0, lift - 2), '#ff72c6');
+    drawPixelHeart(context, x - 14, y - 28 - Math.max(0, lift - 2), '#e07a9e');
     drawPixelSparkle(context, x - 6, y - 42 - Math.max(0, lift - 3), '#f5d69a', 1);
   }
 }
@@ -1131,7 +1131,7 @@ export async function createGarden(canvas, options = {}) {
   function publishBackdrop(){
     const surface=canvas.parentElement;if(!surface?.style)return;
     const revision=++backdropRevision;
-    surface.style.backgroundColor=activeWeather==='snow'?'#a9c3ca':activeWeather==='autumn'?'#684b2c':'#162d24';
+    surface.style.backgroundColor=activeWeather==='snow'?'#a6b1ae':activeWeather==='autumn'?'#735044':'#142620';
     surface.style.backgroundRepeat='no-repeat, no-repeat, no-repeat, repeat';
     const size='calc(2560px * var(--forest-scale,1)) calc(1440px * var(--forest-scale,1))';
     surface.style.backgroundSize='100% 100%,100% 100%,'+size+','+size;
@@ -1173,7 +1173,7 @@ export async function createGarden(canvas, options = {}) {
     const [x, y] = iso(col, row);
     const image = imageFor(tile.file);
     if (image) target.drawImage(image, Math.round(x-tileWidth()*scale/2),Math.round(y-tileHeight()*scale/2),Math.round(tileWidth()*scale),Math.round(tileHeight()*scale));
-    else drawDiamond(target,x,y,'#24483f','#b18b5c',map,scale);
+    else drawDiamond(target,x,y,'#24483f','#b49a66',map,scale);
   }
 
   function drawAssetTo(target, asset, x, y, breeze = null, actorMotion = null, flipX = false) {
@@ -1208,11 +1208,11 @@ export async function createGarden(canvas, options = {}) {
     }
     // Explicit development diagnostic. It is never reached in a normal load.
     target.save?.();
-    target.strokeStyle = '#ff72c6';
+    target.strokeStyle = '#e07a9e';
     target.setLineDash?.([4, 3]);
     target.strokeRect(x - 24, y - 48, 48, 48);
     target.setLineDash?.([]);
-    target.fillStyle = '#ff72c6';
+    target.fillStyle = '#e07a9e';
     target.font = 'bold 9px monospace';
     target.textAlign = 'center';
     target.fillText('ASSET?', x, y - 26);
@@ -1273,7 +1273,7 @@ export async function createGarden(canvas, options = {}) {
     if (withForest) {
       drawScenicTerrain(cachedContext, {...map, farmBoundary: stageBoundary(stage)}, {grassImage: imageFor(grassTile.file),backdrop:scenicBackdrop});
     } else {
-      cachedContext.fillStyle = '#182d2b';
+      cachedContext.fillStyle = '#142620';
       cachedContext.fillRect(0, 0, map.width, map.height);
     }
     clipToStage(cachedContext, stage, map, () => {
@@ -1494,7 +1494,7 @@ export async function createGarden(canvas, options = {}) {
       const construction = constructionProgress(constructionJob, logicalNow);
       if (!plotIsVisible(state, index, logicalNow)) continue;
       if (construction && !construction.ready) {
-        plotFrame(plot, '#b18b5c', 'rgba(177,139,92,.06)');
+        plotFrame(plot, '#b49a66', 'rgba(177,139,92,.06)');
         const [cx, cy] = iso(...resolvedPlotPosition(plot));
         drawProgress(context, cx, cy - 30, construction.progress);
         label(context, `${Math.round(construction.progress * 100)}%`, cx, cy - 46, '#f5d69a', 'bold 10px sans-serif');
@@ -1558,7 +1558,7 @@ export async function createGarden(canvas, options = {}) {
       } else if (isBuilt || queued) {
         label(context, `CHUỒNG ${index + 1}`, x, y, '#f5d69a', 'bold 10px sans-serif');
       } else {
-        label(context, `Lv ${pen.requiredLevel}`, x, y, '#9baaa3', 'bold 10px sans-serif');
+        label(context, `Lv ${pen.requiredLevel}`, x, y, '#a6b1ae', 'bold 10px sans-serif');
       }
     }
   }
@@ -1673,11 +1673,11 @@ export async function createGarden(canvas, options = {}) {
     }
     if (object.kind === 'missing-actor') {
       context.save();
-      context.strokeStyle = '#ff72c6';
+      context.strokeStyle = '#e07a9e';
       context.setLineDash?.([5, 4]);
       context.strokeRect(object.xy[0] - 28, object.xy[1] - 48, 56, 48);
       context.setLineDash?.([]);
-      context.fillStyle = '#ff72c6';
+      context.fillStyle = '#e07a9e';
       context.font = 'bold 9px monospace';
       context.textAlign = 'center';
       context.fillText('MOTION?', object.xy[0], object.xy[1] - 26);
@@ -1788,7 +1788,7 @@ export async function createGarden(canvas, options = {}) {
 
     context.imageSmoothingEnabled = false;
     context.clearRect(0, 0, map.width, map.height);
-    context.fillStyle = '#182d2b';
+    context.fillStyle = '#142620';
     context.fillRect(0, 0, map.width, map.height);
     context.drawImage(terrainCache(grid, propsVisible), 0, 0);
     drawPlotSoil(state, logicalNow, grid);
@@ -1925,7 +1925,7 @@ export async function createGarden(canvas, options = {}) {
       const [x, y] = iso(...resolvedPlotPosition(plot, 'label'));
       const built = plotIsBuilt(state, index, logicalNow);
       const queued = Boolean(plotConstruction(state, index));
-      label(context, built || queued ? `THỬA ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`, x, y, built || queued ? (index === selectedPlot ? '#f5d69a' : '#d6d8bf') : '#9baaa3', 'bold 11px sans-serif');
+      label(context, built || queued ? `THỬA ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`, x, y, built || queued ? (index === selectedPlot ? '#f5d69a' : '#d6d8bf') : '#a6b1ae', 'bold 11px sans-serif');
     }
     drawPenLabels(state, logicalNow);
   }

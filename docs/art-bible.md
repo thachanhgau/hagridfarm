@@ -1,13 +1,13 @@
 # Khu Vườn Hagrid — Art bible
 
-> **Trạng thái:** BẢN NHÁP, chờ chủ dự án duyệt · 17/10/2026 · Claude Code (Anthropic)
+> **Trạng thái:** ĐÃ DUYỆT 17/10/2026 (chủ dự án: "đồng ý và làm tiếp"), các đề xuất [CẦN QUYẾT] được chấp nhận như ghi · 17/10/2026 · Claude Code (Anthropic)
 > Áp dụng cho mọi asset mới, dù do người vẽ, Codex, Claude hay công cụ tạo ảnh làm ra. Mục **[CẦN QUYẾT]** là đề xuất.
 > Số liệu "hiện trạng" đo từ `motion-data.js`, `level-assets.js`, `motion-care-data.js` và mã nguồn ngày 17/10/2026.
 
 ## 1. Năm luật cứng
 
 1. **1 pixel nguồn = 1 pixel trong game ở zoom 1.** Không scale lẻ. Zoom camera chỉ dùng hệ số nguyên khi có thể, luôn `imageSmoothingEnabled = false` và `image-rendering: pixelated`.
-2. **Chỉ dùng 24 màu chuẩn** (mục 3). Thời tiết, đêm và lễ hội đổi **ánh sáng** (lớp phủ, tint), không thêm màu mới vào sprite.
+2. **Chỉ dùng 32 màu chuẩn** (mục 3): 24 màu sprite + 8 màu cảnh. Thời tiết, đêm và lễ hội đổi **ánh sáng** (lớp phủ, tint), không thêm màu mới vào sprite.
 3. **Nguồn sáng trên–trái.** Mặt hướng trái/trên sáng hơn, bóng đổ xuống phải–dưới. (Đã đối chiếu với lều Hagrid và Bằng Mã.)
 4. **Viền tối chọn lọc:** viền ngoài dùng `#231F2E` hoặc màu tối nhất trong ramp của vật; không viền đen thuần, không viền trắng.
 5. **Ảnh minh hoạ không vào cảnh chơi.** Tranh khổ lớn (bìa, màn chọn lễ hội/thời tiết) đặt trong UI. Mọi thứ đứng trong vườn phải là sprite theo luật 1–4.
@@ -19,9 +19,9 @@
 - Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
 - Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
 
-## 3. Bảng màu chuẩn: 24 màu, 6 dải
+## 3. Bảng màu chuẩn: 32 màu (24 sprite + 8 cảnh)
 
-Ảnh: [`palette.svg`](palette.svg). Đây là bảng sprite **đang dùng sẵn** (khai báo trong cả ba manifest asset), không phải bảng mới.
+Ảnh: [`palette.svg`](palette.svg). Nguồn duy nhất trong code: `garden-v05/palette.mjs`. 24 màu sprite là bảng **đang dùng sẵn** trong cả ba manifest asset.
 
 | Dải | Tối → sáng | Dùng cho |
 |---|---|---|
@@ -32,11 +32,14 @@
 | Lửa · bí ngô | `#874056` `#C75B4B` `#ED8A45` `#FFC36B` | Bí ngô, lửa, đèn, quả chín |
 | Phép · đêm · nước | `#3E3B70` `#6961A6` `#70A8B6` `#B7DEE0` | Phép thuật, đêm, nước, băng |
 
-Quy tắc dùng:
-- Một vật dùng tối đa **2–3 dải**; đổ bóng bằng màu tối hơn **trong cùng dải**, không trộn xám.
-- Muốn thêm màu thứ 25 thì phải sửa tài liệu này trước **[CẦN QUYẾT nếu cần]**.
+**8 màu cảnh** (thêm ngày 17/10/2026, V24.9.2) cho những gì sprite chưa cần: `#142620` rừng đêm sâu · `#4A3C2C` nâu đất trung tính · `#5D6046` `#777044` ô liu · `#B49A66` đá lối đi, rơm · `#E8F0ED` tuyết, điểm sáng trắng · `#B378FF` phép tím sáng · `#E07A9E` hồng (tim, hoa). Chọn bằng cách phân cụm 309 màu lệch cũ; với bảng 24 màu, đá lối đi bị đẩy thành cam và đom đóm tím thành xám.
 
-**Hiện trạng cần sửa:** phần trang trí vẽ bằng code (`fillRect`) đang dùng khoảng **300 mã màu nằm ngoài bảng**. Nặng nhất: `ui-utils.mjs` (67), `garden-cottage-details.mjs` (45), `garden-pen-details.mjs` (41), `wizard-scenery.mjs` (26), `garden-creature-habitats.mjs` (25). Đây là nguyên nhân chính khiến cảnh trông như ghép từ nhiều game. Việc sửa: tạo một module `palette.mjs` duy nhất, mọi đoạn vẽ bằng code chỉ lấy màu từ đó.
+Quy tắc dùng:
+- Sprite chỉ dùng 24 màu sprite; 8 màu cảnh dành cho địa hình, thời tiết, hiệu ứng.
+- Một vật dùng tối đa **2–3 dải**; đổ bóng bằng màu tối hơn **trong cùng dải**, không trộn xám.
+- Muốn thêm màu thứ 33 thì phải sửa tài liệu này và `palette.mjs` trước.
+
+**Đã sửa (V24.9.2):** khoảng 300 mã màu lệch trong 17 file vẽ bằng code đã được đưa về màu gần nhất trong bảng 32 (đo OKLab; trung vị lệch 0.039, tối đa 0.119). Riêng tuyết của chuồng và cỏ tuyết quanh chuồng được chỉnh tay để không thành màu nước. `palette.test.mjs` sẽ báo lỗi nếu module nào dùng mã màu ngoài bảng. CSS của giao diện **chưa** chuyển, làm ở bước UI.
 
 ## 4. Kích thước theo tầng
 
@@ -97,7 +100,7 @@ Quy tắc:
 
 ## 9. Việc kiểm toán cho Phase 1
 
-1. Tạo `palette.mjs` và chuyển các file vẽ bằng code (mục 3) sang dùng nó; kiểm tra bằng script đếm màu ngoài bảng phải về 0.
+1. ~~Tạo `palette.mjs`, đưa màu vẽ bằng code về bảng~~ (xong V24.9.2). Còn lại: CSS giao diện.
 2. Bổ sung idle và hành động cho các cây và sinh vật của 3 phút đầu (mục 5).
 3. So tầng kích thước trong cảnh thật, sửa loài nào lệch quá ±20%.
 4. Thay emoji ở 6 nút chính bằng icon pixel.

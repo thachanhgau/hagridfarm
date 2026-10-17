@@ -1,6 +1,6 @@
 # Khu Vườn Hagrid — Thiết kế cốt lõi
 
-> **Trạng thái:** BẢN NHÁP, chờ chủ dự án duyệt · 17/10/2026 · Claude Code (Anthropic)
+> **Trạng thái:** ĐÃ DUYỆT 17/10/2026 (chủ dự án: "đồng ý và làm tiếp"), các đề xuất [CẦN QUYẾT] được chấp nhận như ghi · 17/10/2026 · Claude Code (Anthropic)
 > Mọi mục ghi **[CẦN QUYẾT]** là đề xuất, chưa phải quyết định. Sau khi duyệt, tài liệu này là la bàn cho mọi việc ở Phase 1 trở đi.
 
 ## 1. Game là gì
@@ -91,7 +91,7 @@ Toàn bộ chỉ dùng mũi tên, phát sáng và lời thoại ngắn (≤ 8 t�
 - Không bao giờ cắt mất **giá, thời gian chờ, điều kiện, hậu quả** của một thao tác.
 - Thuật ngữ Harry Potter theo bản dịch **Lý Lan**. Đối chiếu ngày 17/10/2026 với `resource/FullHP` (số lần xuất hiện trong bản tiếng Việt):
 
-  | Trong game hiện tại | Theo Lý Lan | Bằng chứng |
+  | Tên cũ trong game | Theo Lý Lan | Bằng chứng |
   |---|---|---|
   | Bằng Mã | **Bằng-Mã** | HP3, "con Bằng-Mã" |
   | Thestral | **vong mã** | HP5 và HP7, 72 lần |
@@ -101,7 +101,7 @@ Toàn bộ chỉ dùng mũi tên, phát sáng và lời thoại ngắn (≤ 8 t�
   | Bạch tiên (dittany) | chưa tìm thấy, cần tra tiếp | — |
   | Puffskein, Niffler, Kneazle, Mooncalf, Fwooper, Diricawl, Puffapod | không có trong 7 tập, giữ tên gốc | — |
 
-  Việc sửa các nhãn này làm ở đầu Phase 1, cùng lúc cập nhật test.
+  Đã sửa các nhãn này trong game ngày 17/10/2026 (V24.9.2).
 - Một màn hình không cuộn khi đọc vẫn rõ; danh sách dài thì cuộn, không thu chữ quá nhỏ.
 
 ## 8. Tiêu chí thành công
@@ -114,9 +114,9 @@ Toàn bộ chỉ dùng mũi tên, phát sáng và lời thoại ngắn (≤ 8 t�
 
 ## 9. Chủ dự án cần quyết
 
-- [ ] Khán giả chính (mục 1)
-- [ ] Bảng Giữ / Gộp / Đóng băng (mục 4)
-- [ ] Rút nhiệm vụ cú xuống 3/ngày
-- [ ] Thời tiết và ngày/đêm tự động theo giờ thật
-- [ ] Còn 4 loại tài nguyên (mục 5)
-- [ ] Galleons trong game có nối với ví diễn đàn không (có thể để tới Phase 4)
+- [x] Khán giả chính (mục 1)
+- [x] Bảng Giữ / Gộp / Đóng băng (mục 4)
+- [x] Rút nhiệm vụ cú xuống 3/ngày
+- [x] Thời tiết và ngày/đêm tự động theo giờ thật
+- [x] Còn 4 loại tài nguyên (mục 5)
+- [x] Galleons trong game có nối với ví diễn đàn không (có thể để tới Phase 4)

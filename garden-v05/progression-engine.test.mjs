@@ -34,7 +34,12 @@ import {
 const NOW = 1_800_000_000_000;
 const HOUR = 60 * 60 * 1000;
 const day = (hours) => hours * HOUR;
-const APPROVED = JSON.parse(readFileSync(new URL('../outputs/hagrid-levels-20261013/balance-data.json', import.meta.url), 'utf8'));
+// The approved source predates the Lý Lan name pass (V24.9.2); numbers must match exactly,
+// names are compared after the same renames the game applied.
+const LY_LAN_NAMES = [['Bằng Mã', 'Bằng-Mã'], ['Thestral', 'Vong mã'], ['Mandrake', 'Nhân sâm']];
+const APPROVED = JSON.parse(
+  LY_LAN_NAMES.reduce((text, [from, to]) => text.replaceAll(from, to), readFileSync(new URL('../outputs/hagrid-levels-20261013/balance-data.json', import.meta.url), 'utf8')),
+);
 
 function selectFields(rows, fields) {
   return rows.map((row) => Object.fromEntries(fields.map((field) => [field, row[field]])));
@@ -57,7 +62,7 @@ test('approved balance exposes all crops, creatures, levels, recipes, and Vietna
   assert.equal(DB.levels.length, 100);
   assert.equal(CROP.daisy.label, 'Cúc trắng');
   assert.equal(CROP.dittany.label, 'Bạch tiên');
-  assert.equal(CREATURE.hippogriff.label, 'Bằng Mã');
+  assert.equal(CREATURE.hippogriff.label, 'Bằng-Mã');
   assert.equal(CROP.pumpkin.rarity, 'common');
   assert.equal(CROP.pumpkin.rarityLabel, 'Thường');
   assert.equal(CREATURE.dragon.rarity, 'legendary');

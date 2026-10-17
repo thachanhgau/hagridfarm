@@ -1,6 +1,6 @@
 // Authored native pixel props: no assets, hitboxes, timers or gameplay state.
 // Each sprite stays inside a 38 x 30 ground pocket between the two actors.
-const palette={d:'#403d34',w:'#80563e',h:'#b18a58',s:'#697775',l:'#a6b7a2',g:'#4f7951',v:'#83a863',a:'#dbbe75',b:'#6ba4b1',p:'#a5799c',r:'#b16843',c:'#dddad0'};
+const palette={d:'#4a3c2c',w:'#735044',h:'#b49a66',s:'#687486',l:'#a6b1ae',g:'#3f6a45',v:'#71934b',a:'#e7ae73',b:'#70a8b6',p:'#a57554',r:'#a57554',c:'#d6d8bf'};
 const art={
  puffskein:[
  '      hhhhh      ',
@@ -151,9 +151,9 @@ export function habitatPhase(species,clock=0,reducedMotion=false){
 }
 function pixel(c,x,y,w,h,color){c.fillStyle=color;c.fillRect(Math.round(x),Math.round(y),w,h);}
 function colors(weather){
- if(weather==='snow')return {...palette,g:'#83a098',v:'#b7c9ba',h:'#c9c7b0',s:'#8eaaa9',l:'#d5e2dc'};
- if(weather==='rain')return {...palette,w:'#625140',h:'#918268',g:'#43664d',v:'#6f9274',s:'#526e6c'};
- if(weather==='autumn')return {...palette,g:'#817146',v:'#b29a56',h:'#c49b64'};
+ if(weather==='snow')return {...palette,g:'#a6b1ae',v:'#d6d8bf',h:'#d6d8bf',s:'#a6b1ae',l:'#d6d8bf'};
+ if(weather==='rain')return {...palette,w:'#735044',h:'#a57554',g:'#3f6a45',v:'#71934b',s:'#687486'};
+ if(weather==='autumn')return {...palette,g:'#777044',v:'#b49a66',h:'#b49a66'};
  return palette;
 }
 // Returns positions rather than inferring species from the pen number: adoption

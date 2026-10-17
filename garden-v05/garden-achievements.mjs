@@ -1,5 +1,5 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button} from './ui-utils.mjs?v=24.9';
+import {el, button} from './ui-utils.mjs?v=24.9.5';
 
 export const ACHIEVEMENTS_STORAGE_KEY = 'hpvn-garden-v22-achievements';
 
@@ -36,8 +36,8 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Nghệ Nhân Thảo Dược',
     badge: '🌿 Nghệ Nhân Thảo Dược',
     category: 'Cây trồng',
-    description: 'Đạt Cấp 24 (mở khóa Mandrake) hoặc mở rộng từ 5 thửa đất trở lên.',
-    reward: Object.freeze({kind: 'water', amount: 12, itemId: 'mandrake', bonusQty: 2, label: '+12 Nước tưới & +2 Mandrake'}),
+    description: 'Đạt Cấp 24 (mở khóa Nhân sâm) hoặc mở rộng từ 5 thửa đất trở lên.',
+    reward: Object.freeze({kind: 'water', amount: 12, itemId: 'mandrake', bonusQty: 2, label: '+12 Nước tưới & +2 Nhân sâm'}),
     check(state) {
       const level = Number(state?.level) || 1;
       const plots = Array.isArray(state?.plots) ? state.plots.length : 3;
@@ -108,16 +108,16 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
   Object.freeze({
     id: 'ach_hippogriff_rider',
     icon: '🦅',
-    title: 'Kỵ Sĩ Bằng Mã',
-    badge: '🦅 Kỵ Sĩ Bằng Mã',
+    title: 'Kỵ Sĩ Bằng-Mã',
+    badge: '🦅 Kỵ Sĩ Bằng-Mã',
     category: 'Sinh vật',
-    description: 'Đạt Cấp 66 hoặc đón Bằng Mã kiêu hãnh về chăm sóc trong khu vườn.',
+    description: 'Đạt Cấp 66 hoặc đón Bằng-Mã kiêu hãnh về chăm sóc trong khu vườn.',
     reward: Object.freeze({kind: 'water', amount: 15, itemId: 'fish', bonusQty: 4, label: '+15 Nước tưới & +4 Cá nhỏ'}),
     check(state) {
       const level = Number(state?.level) || 1;
       const hasHippo = Array.isArray(state?.creatures) && state.creatures.some((c) => c.species === 'hippogriff');
       const unlocked = level >= 66 || hasHippo;
-      return {unlocked, current: Math.min(66, level), target: 66, progressText: hasHippo ? 'Đã đón Bằng Mã' : `Cấp ${level}/66`};
+      return {unlocked, current: Math.min(66, level), target: 66, progressText: hasHippo ? 'Đã đón Bằng-Mã' : `Cấp ${level}/66`};
     },
   }),
   Object.freeze({

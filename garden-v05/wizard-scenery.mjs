@@ -7,31 +7,31 @@
  */
 
 const COLORS = Object.freeze({
-  outline: '#352c33',
-  deepest: '#243b36',
-  shadow: '#1e302b',
-  hair: '#4a302b',
+  outline: '#4a3042',
+  deepest: '#24483f',
+  shadow: '#142620',
+  hair: '#4a3c2c',
   hairLight: '#735044',
   hairGold: '#a57554',
-  coat: '#8b5c49',
-  coatLight: '#b27655',
-  coatDark: '#65453d',
-  skin: '#e2a078',
-  skinLight: '#f0bd91',
-  boot: '#49362f',
-  bootLight: '#795044',
-  pink: '#c75b7a',
-  pinkLight: '#ee8aa2',
-  pinkPale: '#f5c0c2',
+  coat: '#8b4a3f',
+  coatLight: '#a57554',
+  coatDark: '#735044',
+  skin: '#e7ae73',
+  skinLight: '#e7ae73',
+  boot: '#4a3c2c',
+  bootLight: '#735044',
+  pink: '#c75b4b',
+  pinkLight: '#e07a9e',
+  pinkPale: '#d6d8bf',
   glass: '#70a8b6',
   glassLight: '#b7dee0',
-  glassDark: '#3f6e72',
+  glassDark: '#687486',
   wood: '#735044',
-  woodLight: '#b18b5c',
+  woodLight: '#b49a66',
   leaf: '#71934b',
   leafLight: '#b0bd67',
   paper: '#f5d69a',
-  paperShadow: '#c49a62',
+  paperShadow: '#b49a66',
   seal: '#c75b4b',
   owl: '#d6d8bf',
   owlShadow: '#a6b1ae',
@@ -324,30 +324,30 @@ function drawGreenhouse(ctx, x, y) {
   const frontRidge=[-24,-78], backRidge=[32,-106];
   shadow(ctx,x,y+7,122);
   face([A,B,C,D],COLORS.wood);
-  face([A,B,b,a],'#87bac0');
-  face([B,C,c,b],'#58909c');
+  face([A,B,b,a],'#a6b1ae');
+  face([B,C,c,b],'#687486');
   // Visible pot benches and foliage behind the glazing.
   line([-49,-15],[0,10],COLORS.wood,4);
   line([16,11],[56,-9],COLORS.wood,4);
   for(const [u,v] of [[-43,-20],[-30,-13],[-16,-6],[25,2],[44,-7]]) {
-    rect(ctx,x+u-3,y+v,7,7,'#aa7557');
+    rect(ctx,x+u-3,y+v,7,7,'#a57554');
     rect(ctx,x+u-1,y+v-11,2,12,COLORS.leaf);
     rect(ctx,x+u-6,y+v-10,6,4,COLORS.leafLight);
     rect(ctx,x+u+1,y+v-14,5,5,COLORS.leaf);
   }
   face([a,frontRidge,b],'#b7dee0');
   // Broad glass roof: pale panes, thin framing and reflected sky streaks.
-  face([a,d,backRidge,frontRidge],'#c2e4df');
-  face([frontRidge,backRidge,c,b],'#86c5cf');
-  line([-14,-77],[34,-101],'#e0f4e9',3);
-  line([-3,-67],[45,-91],'#c5e8e7',2);
+  face([a,d,backRidge,frontRidge],'#b7dee0');
+  face([frontRidge,backRidge,c,b],'#a6b1ae');
+  line([-14,-77],[34,-101],'#e8f0ed',3);
+  line([-3,-67],[45,-91],'#b7dee0',2);
   for(const t of [0,.33,.66,1]) {
     const shift=([u,v])=>[u+56*t,v-28*t];
     line(shift(a),shift(frontRidge));
     line(shift(frontRidge),shift(b));
   }
   line(a,d);line(frontRidge,backRidge,COLORS.woodLight,3);line(b,c);
-  line([-8,-51],[48,-79],'#d9e9d7',2);
+  line([-8,-51],[48,-79],'#e8f0ed',2);
   for(const [lo,hi] of [[A,a],[B,b],[C,c]]) line(lo,hi,COLORS.woodLight,3);
   line(A,B,COLORS.woodLight,3);line(B,C,COLORS.woodLight,3);
   line(a,b);line(b,c);
@@ -358,8 +358,8 @@ function drawGreenhouse(ctx, x, y) {
   line([-56,-33],[8,-1]);line([8,-1],[64,-29]);
   // Glass door lies on the front wall, so its sill shares the same 2:1 slope.
   face([[-23,8],[-6,17],[-6,-22],[-23,-31]],COLORS.wood);
-  face([[-20,7],[-9,13],[-9,-20],[-20,-26]],'#add8d9');
-  line([-18,-22],[-18,3],'#e0f4e9',2);
+  face([[-20,7],[-9,13],[-9,-20],[-20,-26]],'#b7dee0');
+  line([-18,-22],[-18,3],'#e8f0ed',2);
   rect(ctx,x-12,y-4,3,3,COLORS.paper);
   face([[-25,9],[-5,19],[2,15],[-18,5]],COLORS.paperShadow);
 }

@@ -1,4 +1,4 @@
-import {el, button, num, hours, visualItemIcon} from './ui-utils.mjs?v=24.9';
+import {el, button, num, hours, visualItemIcon} from './ui-utils.mjs?v=24.9.5';
 
 /**
  * V21.0 Direction 2:
@@ -83,7 +83,7 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
   const viewW = width - 56;
   const viewH = 476;
 
-  ctx.fillStyle = '#182d2b';
+  ctx.fillStyle = '#142620';
   ctx.fillRect(viewX, viewY, viewW, viewH);
 
   if (sourceCanvas && typeof ctx.drawImage === 'function') {
@@ -113,7 +113,7 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
   // Bottom plaque
   const plaqueY = 514;
   const plaqueH = 78;
-  ctx.fillStyle = '#1e352d';
+  ctx.fillStyle = '#142620';
   ctx.fillRect(28, plaqueY, width - 56, plaqueH);
   ctx.strokeStyle = '#a57554';
   ctx.lineWidth = 2;
@@ -122,7 +122,7 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
   // Crimson & gold Hogwarts/Hagrid Wax Seal
   const sealX = 68;
   const sealY = plaqueY + 39;
-  ctx.fillStyle = '#9e3832';
+  ctx.fillStyle = '#8b4a3f';
   if (ctx.beginPath && ctx.arc) {
     ctx.beginPath();
     ctx.arc(sealX, sealY, 24, 0, Math.PI * 2);
@@ -147,7 +147,7 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
   const titleSuffix = meta.keeperTitle ? ` · [${meta.keeperTitle}]` : '';
   ctx.fillText(`KHU VƯỜN HAGRID · ${meta.playerName.toUpperCase()}${titleSuffix}`, 108, plaqueY + 28);
 
-  ctx.fillStyle = '#e8dfc8';
+  ctx.fillStyle = '#d6d8bf';
   ctx.font = 'bold 13px sans-serif';
   const weatherSuffix = meta.weatherLabel ? ` · ${meta.weatherIcon} ${meta.weatherLabel}` : '';
   const eventSuffix = meta.eventLabel ? ` · ${meta.eventLabel}` : '';

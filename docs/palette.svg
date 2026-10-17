@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="628" viewBox="0 0 560 628" font-family="ui-monospace,Menlo,monospace">
-<rect width="560" height="628" fill="#172c29"/>
-<text x="16" y="26" fill="#F5D69A" font-size="15" font-weight="700">Khu Vườn Hagrid · bảng màu chuẩn 24 màu</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="824" viewBox="0 0 560 824" font-family="ui-monospace,Menlo,monospace">
+<rect width="560" height="824" fill="#172c29"/>
+<text x="16" y="26" fill="#F5D69A" font-size="15" font-weight="700">Khu Vườn Hagrid · bảng màu chuẩn 32 màu</text>
 <text x="16" y="56" fill="#D6D8BF" font-size="12">Gỗ · da · bóng tối</text>
 <rect x="16" y="62" width="64" height="34" fill="#231F2E" stroke="#000" stroke-opacity=".3"/>
 <text x="16" y="109" fill="#A6B1AE" font-size="11">#231F2E</text>
@@ -55,4 +55,22 @@
 <text x="284" y="599" fill="#A6B1AE" font-size="11">#70A8B6</text>
 <rect x="418" y="552" width="64" height="34" fill="#B7DEE0" stroke="#000" stroke-opacity=".3"/>
 <text x="418" y="599" fill="#A6B1AE" font-size="11">#B7DEE0</text>
+<text x="16" y="644" fill="#D6D8BF" font-size="12">Cảnh: rừng · đất · ô liu ×2</text>
+<rect x="16" y="650" width="64" height="34" fill="#142620" stroke="#000" stroke-opacity=".3"/>
+<text x="16" y="697" fill="#A6B1AE" font-size="11">#142620</text>
+<rect x="150" y="650" width="64" height="34" fill="#4A3C2C" stroke="#000" stroke-opacity=".3"/>
+<text x="150" y="697" fill="#A6B1AE" font-size="11">#4A3C2C</text>
+<rect x="284" y="650" width="64" height="34" fill="#5D6046" stroke="#000" stroke-opacity=".3"/>
+<text x="284" y="697" fill="#A6B1AE" font-size="11">#5D6046</text>
+<rect x="418" y="650" width="64" height="34" fill="#777044" stroke="#000" stroke-opacity=".3"/>
+<text x="418" y="697" fill="#A6B1AE" font-size="11">#777044</text>
+<text x="16" y="742" fill="#D6D8BF" font-size="12">Cảnh: đá/rơm · tuyết · phép · hồng</text>
+<rect x="16" y="748" width="64" height="34" fill="#B49A66" stroke="#000" stroke-opacity=".3"/>
+<text x="16" y="795" fill="#A6B1AE" font-size="11">#B49A66</text>
+<rect x="150" y="748" width="64" height="34" fill="#E8F0ED" stroke="#000" stroke-opacity=".3"/>
+<text x="150" y="795" fill="#A6B1AE" font-size="11">#E8F0ED</text>
+<rect x="284" y="748" width="64" height="34" fill="#B378FF" stroke="#000" stroke-opacity=".3"/>
+<text x="284" y="795" fill="#A6B1AE" font-size="11">#B378FF</text>
+<rect x="418" y="748" width="64" height="34" fill="#E07A9E" stroke="#000" stroke-opacity=".3"/>
+<text x="418" y="795" fill="#A6B1AE" font-size="11">#E07A9E</text>
 </svg>

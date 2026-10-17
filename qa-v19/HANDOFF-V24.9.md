@@ -25,3 +25,10 @@
 - Entry cache `mobile-game.mjs?v=24.9.3`; iframe nhúng `&v=24.9.3`.
 - Kiểm chứng: 143/143 test; fixture level 100, chơi local `qa=1` (save giữ 3 cây), local không `qa` (không có hook), bản nhúng (ready, ví mẫu): không lỗi console, 0 asset thiếu.
 - Đối chiếu Lý Lan (chưa sửa nhãn trong game): Thestral → vong mã, Mandrake → Nhân sâm, Bằng Mã → Bằng-Mã, Dạ vũ Giáng sinh → Dạ vũ Noel. Xem core-design mục 7.
+
+## V24.9.2 — Phase 1 mở đầu: tên Lý Lan + bảng màu 32
+- Chủ dự án duyệt core-design và art-bible ("đồng ý và làm tiếp"); trạng thái ghi trong đầu hai tài liệu.
+- Tên hiển thị: Bằng Mã → Bằng-Mã, Thestral → Vong mã, Mandrake → Nhân sâm, Dạ vũ Giáng sinh → Dạ vũ Noel (balance-data, engine, sự kiện, cửa hàng, thành tựu, tour, manifest asset). "Giáng sinh" cho lễ Christmas giữ nguyên (đúng Lý Lan). Id nội bộ (`thestral`, `mandrake`…) không đổi, save cũ không ảnh hưởng.
+- `progression-engine.test.mjs` so balance với `outputs/hagrid-levels-20261013/balance-data.json` sau khi áp cùng bảng đổi tên; file gốc đã duyệt không bị sửa, số liệu vẫn phải khớp tuyệt đối.
+- `garden-v05/palette.mjs`: 24 màu sprite + 8 màu cảnh. Toàn bộ mã màu trong 17 module vẽ bằng code đưa về màu gần nhất (OKLab). Tuyết của chuồng và cỏ tuyết chỉnh tay. `palette.test.mjs` khoá: không module runtime nào được dùng hex ngoài bảng. CSS chưa chuyển.
+- Cache: mọi import runtime `?v=24.9.5`. 144/144 test. QA ảnh trước/sau ở trời quang, mưa, tuyết, thu-đêm, panel Kho; fixture, chơi local (save còn 3 cây), bản nhúng: không lỗi console, 0 asset thiếu.

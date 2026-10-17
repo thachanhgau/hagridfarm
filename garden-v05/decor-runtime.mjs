@@ -17,7 +17,7 @@ export const DECOR_LABELS = Object.freeze({
   decor_pumpkin_lantern: 'Đèn bí ngô',
   decor_broom_rack: 'Giá chổi',
   decor_cauldron: 'Vạc đồng',
-  decor_mandrake_planter: 'Chậu Mandrake',
+  decor_mandrake_planter: 'Chậu Nhân sâm',
   decor_floating_candles: 'Nến lơ lửng',
   decor_vine_arch: 'Vòm dây leo',
   gardener_friend: 'Bác Hagrid',

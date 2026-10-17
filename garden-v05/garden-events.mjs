@@ -1,7 +1,7 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9';
-import {stableHash} from './scene-animation.mjs?v=24.9';
-import {dayKeyFor} from './garden-quests.mjs?v=24.9';
+import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.5';
+import {stableHash} from './scene-animation.mjs?v=24.9.5';
+import {dayKeyFor} from './garden-quests.mjs?v=24.9.5';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -17,7 +17,7 @@ export const HOGWARTS_EVENTS = Object.freeze([
     recommendedAtmosphere: 'night',
     recommendedWeather: 'autumn',
     particleCount: 22,
-    particleColors: Object.freeze(['#ff9e44', '#b378ff', '#ffc36b']),
+    particleColors: Object.freeze(['#e7ae73', '#b378ff', '#ffc36b']),
     tint: 'rgba(66, 28, 12, 0.10)',
     bannerColor: '#ed8a45',
     description:
@@ -34,7 +34,7 @@ export const HOGWARTS_EVENTS = Object.freeze([
         id: 'hal_m2',
         points: 75,
         title: 'Lồng Đèn Phù Thủy Rừng Cấm',
-        reward: Object.freeze({kind: 'kit', amount: 2, itemId: 'mandrake', bonusQty: 3, label: '+2 Bộ vật liệu & +3 Mandrake'}),
+        reward: Object.freeze({kind: 'kit', amount: 2, itemId: 'mandrake', bonusQty: 3, label: '+2 Bộ vật liệu & +3 Nhân sâm'}),
       }),
       Object.freeze({
         id: 'hal_m3',
@@ -47,14 +47,14 @@ export const HOGWARTS_EVENTS = Object.freeze([
   Object.freeze({
     id: 'event_yule',
     art: './v24-art/event-yule.webp',
-    label: 'Dạ Vũ Giáng Sinh Hogwarts',
-    shortLabel: '🎄 Dạ vũ Giáng sinh',
+    label: 'Dạ Vũ Noel Hogwarts',
+    shortLabel: '🎄 Dạ vũ Noel',
     icon: '🎄',
     badge: 'LỄ HỘI MÙA ĐÔNG · YULE BALL',
     recommendedAtmosphere: 'night',
     recommendedWeather: 'snow',
     particleCount: 26,
-    particleColors: Object.freeze(['#fff2b2', '#b7dee0', '#ffffff']),
+    particleColors: Object.freeze(['#f5d69a', '#b7dee0', '#e8f0ed']),
     tint: 'rgba(18, 44, 62, 0.10)',
     bannerColor: '#70a8b6',
     description:
@@ -91,7 +91,7 @@ export const HOGWARTS_EVENTS = Object.freeze([
     recommendedAtmosphere: 'day',
     recommendedWeather: 'clear',
     particleCount: 20,
-    particleColors: Object.freeze(['#a8e6cf', '#f5d69a', '#b0bd67']),
+    particleColors: Object.freeze(['#b7dee0', '#f5d69a', '#b0bd67']),
     tint: 'rgba(36, 74, 48, 0.08)',
     bannerColor: '#71934b',
     description:
@@ -130,7 +130,7 @@ export const HOGWARTS_EVENTS = Object.freeze([
     particleCount: 0,
     particleColors: Object.freeze([]),
     tint: null,
-    bannerColor: '#b5925b',
+    bannerColor: '#b49a66',
     description: 'Khung cảnh Rừng Cấm thanh bình nguyên bản, không bật hiệu ứng hạt Lễ hội.',
     hagridLine: 'Một ngày yên bình bên bìa Rừng Cấm.',
     milestones: Object.freeze([]),
@@ -592,7 +592,7 @@ export function buildGuestbookEntries({gameState = {}, eventMode = 'event_hallow
       stamp: `Vườn Cấp ${lv}`,
       message:
         lv >= 45
-          ? `Các luống Mandrake và thảo dược quý của con lên đều tăm tắp! Nhà kính Số 3 luôn rộng cửa đón con ghé thăm.`
+          ? `Các luống Nhân sâm và thảo dược quý của con lên đều tăm tắp! Nhà kính Số 3 luôn rộng cửa đón con ghé thăm.`
           : `Nhớ tưới nước đều đặn và xoay vòng các giống cây trên thửa đất nhé, thảo mộc Rừng Cấm rất nhạy cảm với thời tiết đấy!`,
     },
     {
@@ -615,7 +615,7 @@ export function buildGuestbookEntries({gameState = {}, eventMode = 'event_hallow
       avatar: '🐉',
       stamp: helpedCount > 0 ? `Đã giao lưu ${helpedCount} vườn` : 'Bậc thầy Sinh vật',
       message:
-        'Cảm ơn bồ đã ghé thăm và phụ chăm sóc khu bảo tồn! Đám Rồng và Bằng Mã gửi tặng bồ vài túi hạt giống Ớt lửa đấy!',
+        'Cảm ơn bồ đã ghé thăm và phụ chăm sóc khu bảo tồn! Đám Rồng và Bằng-Mã gửi tặng bồ vài túi hạt giống Ớt lửa đấy!',
     });
   }
   return notes;

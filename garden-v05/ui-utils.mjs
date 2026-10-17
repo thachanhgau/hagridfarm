@@ -35,87 +35,87 @@ export const FEED_CREATURE_MAP = Object.freeze({
 const SVG_ART = Object.freeze({
  water: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
   <defs>
-   <linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7dd3fc"/><stop offset="100%" stop-color="#0284c7"/></linearGradient>
-   <linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5d69a"/><stop offset="100%" stop-color="#9c7c43"/></linearGradient>
+   <linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b7dee0"/><stop offset="100%" stop-color="#687486"/></linearGradient>
+   <linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5d69a"/><stop offset="100%" stop-color="#a57554"/></linearGradient>
   </defs>
-  <circle cx="24" cy="24" r="20" fill="#0d2629" stroke="#5698a8" stroke-width="1.5"/>
-  <path d="M15 22h14l2 13H13z" fill="url(#br)" stroke="#ffefc2" stroke-width="1.2"/>
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#70a8b6" stroke-width="1.5"/>
+  <path d="M15 22h14l2 13H13z" fill="url(#br)" stroke="#e8f0ed" stroke-width="1.2"/>
   <path d="M17 22v-5c0-3 10-3 10 0v5" fill="none" stroke="#f5d69a" stroke-width="2.2"/>
-  <path d="M29 25l8-6 2 2-9 8" fill="url(#br)" stroke="#ffefc2" stroke-width="1"/>
+  <path d="M29 25l8-6 2 2-9 8" fill="url(#br)" stroke="#e8f0ed" stroke-width="1"/>
   <path d="M39 16c2 3 3 5 0 7-3-2-2-4 0-7z" fill="url(#wg)"/>
   <circle cx="21" cy="29" r="3.2" fill="url(#wg)"/>
  </svg>`,
  boost: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
   <defs>
-   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b7dee0"/><stop offset="100%" stop-color="#71934b"/></linearGradient>
   </defs>
-  <circle cx="24" cy="24" r="20" fill="#112820" stroke="#68b684" stroke-width="1.5"/>
-  <rect x="20" y="9" width="8" height="4" rx="1" fill="#d9a05b" stroke="#f5d69a" stroke-width="1"/>
-  <path d="M19 13h10v4l6 9v9a4 4 0 0 1-4 4H17a4 4 0 0 1-4-4v-9l6-9z" fill="#173d2e" stroke="#f5d69a" stroke-width="1.5"/>
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
+  <rect x="20" y="9" width="8" height="4" rx="1" fill="#e7ae73" stroke="#f5d69a" stroke-width="1"/>
+  <path d="M19 13h10v4l6 9v9a4 4 0 0 1-4 4H17a4 4 0 0 1-4-4v-9l6-9z" fill="#24483f" stroke="#f5d69a" stroke-width="1.5"/>
   <path d="M15 26h18v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 15 34z" fill="url(#bg)"/>
-  <path d="M24 19l2 4 4 .6-3 3 .7 4.2-3.7-2-3.7 2 .7-4.2-3-3 4-.6z" fill="#fef08a"/>
+  <path d="M24 19l2 4 4 .6-3 3 .7 4.2-3.7-2-3.7 2 .7-4.2-3-3 4-.6z" fill="#f5d69a"/>
  </svg>`,
  kit: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#231f18" stroke="#c8a862" stroke-width="1.5"/>
-  <rect x="11" y="18" width="26" height="18" rx="2" fill="#855832" stroke="#f5d69a" stroke-width="1.4"/>
-  <line x1="11" y1="24" x2="37" y2="24" stroke="#472d18" stroke-width="2"/>
-  <line x1="11" y1="30" x2="37" y2="30" stroke="#472d18" stroke-width="2"/>
-  <path d="M15 18l4-7h10l4 7" fill="#94a3b8" stroke="#e2e8f0" stroke-width="1.2"/>
-  <rect x="21" y="21" width="6" height="6" rx="1" fill="#f5d69a" stroke="#472d18" stroke-width="1"/>
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b49a66" stroke-width="1.5"/>
+  <rect x="11" y="18" width="26" height="18" rx="2" fill="#8b4a3f" stroke="#f5d69a" stroke-width="1.4"/>
+  <line x1="11" y1="24" x2="37" y2="24" stroke="#4a3c2c" stroke-width="2"/>
+  <line x1="11" y1="30" x2="37" y2="30" stroke="#4a3c2c" stroke-width="2"/>
+  <path d="M15 18l4-7h10l4 7" fill="#70a8b6" stroke="#e8f0ed" stroke-width="1.2"/>
+  <rect x="21" y="21" width="6" height="6" rx="1" fill="#f5d69a" stroke="#4a3c2c" stroke-width="1"/>
  </svg>`,
  insects: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#162920" stroke="#a3be68" stroke-width="1.5"/>
-  <rect x="17" y="10" width="14" height="4" rx="1.5" fill="#b48a4e" stroke="#f5d69a" stroke-width="1"/>
-  <rect x="14" y="14" width="20" height="23" rx="4" fill="#1e3a2f" stroke="#99d5c9" stroke-width="1.4"/>
-  <circle cx="21" cy="23" r="3" fill="#fde047"/>
-  <ellipse cx="19" cy="21" rx="2.5" ry="1.2" fill="#e0f2fe"/>
-  <circle cx="28" cy="29" r="2.5" fill="#facc15"/>
-  <path d="M16 34c4-4 12-4 16 0" stroke="#4ade80" stroke-width="2" fill="none"/>
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
+  <rect x="17" y="10" width="14" height="4" rx="1.5" fill="#b49a66" stroke="#f5d69a" stroke-width="1"/>
+  <rect x="14" y="14" width="20" height="23" rx="4" fill="#24483f" stroke="#b7dee0" stroke-width="1.4"/>
+  <circle cx="21" cy="23" r="3" fill="#ffc36b"/>
+  <ellipse cx="19" cy="21" rx="2.5" ry="1.2" fill="#e8f0ed"/>
+  <circle cx="28" cy="29" r="2.5" fill="#ffc36b"/>
+  <path d="M16 34c4-4 12-4 16 0" stroke="#b0bd67" stroke-width="2" fill="none"/>
  </svg>`,
  fish: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#0f2533" stroke="#60a5fa" stroke-width="1.5"/>
-  <path d="M13 20h22l-2.5 16h-17z" fill="#334155" stroke="#cbd5e1" stroke-width="1.4"/>
-  <ellipse cx="24" cy="20" rx="11" ry="3.5" fill="#38bdf8" stroke="#bae6fd" stroke-width="1.2"/>
-  <path d="M18 28c4-4 9-4 13 0-4 4-9 4-13 0z" fill="#e2e8f0"/>
-  <polygon points="31,28 35,25 35,31" fill="#94a3b8"/>
-  <circle cx="21" cy="27.5" r="1" fill="#0f172a"/>
+  <circle cx="24" cy="24" r="20" fill="#231f2e" stroke="#70a8b6" stroke-width="1.5"/>
+  <path d="M13 20h22l-2.5 16h-17z" fill="#41465c" stroke="#b7dee0" stroke-width="1.4"/>
+  <ellipse cx="24" cy="20" rx="11" ry="3.5" fill="#70a8b6" stroke="#b7dee0" stroke-width="1.2"/>
+  <path d="M18 28c4-4 9-4 13 0-4 4-9 4-13 0z" fill="#e8f0ed"/>
+  <polygon points="31,28 35,25 35,31" fill="#70a8b6"/>
+  <circle cx="21" cy="27.5" r="1" fill="#231f2e"/>
  </svg>`,
  medal: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#1e2f23" stroke="#e2c478" stroke-width="1.6"/>
-  <polygon points="24,10 28,19 38,20 30.5,26.8 32.5,36.5 24,31.5 15.5,36.5 17.5,26.8 10,20 20,19" fill="#f5d69a" stroke="#9c7c43" stroke-width="1.2"/>
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#ffc36b" stroke-width="1.6"/>
+  <polygon points="24,10 28,19 38,20 30.5,26.8 32.5,36.5 24,31.5 15.5,36.5 17.5,26.8 10,20 20,19" fill="#f5d69a" stroke="#a57554" stroke-width="1.2"/>
  </svg>`,
 });
 
 export const EARNED_DECOR_SHAPES = Object.freeze({
- "decoration-3": { glyph: "🪨", bg: "#1a2e2c", accent: "#a6b1ae", sub: "#687486", motif: "stones" },
- "decoration-7": { glyph: "🎃", bg: "#2b1f18", accent: "#ed8a45", sub: "#ffc36b", motif: "lantern" },
- "decoration-11": { glyph: "🪹", bg: "#282218", accent: "#f5d69a", sub: "#a57554", motif: "nest" },
- "decoration-15": { glyph: "🪵", bg: "#261d17", accent: "#c97952", sub: "#735044", motif: "fence" },
- "decoration-19": { glyph: "🌿", bg: "#172d22", accent: "#b0bd67", sub: "#71934b", motif: "arch" },
- "decoration-23": { glyph: "🌉", bg: "#271f18", accent: "#e7ae73", sub: "#a57554", motif: "bridge" },
- "decoration-27": { glyph: "🪙", bg: "#231d29", accent: "#ffc36b", sub: "#735044", motif: "pedestal" },
- "decoration-30": { glyph: "🌼", bg: "#192d24", accent: "#f5d69a", sub: "#71934b", motif: "stones" },
- "decoration-31": { glyph: "🌙", bg: "#172334", accent: "#f5d69a", sub: "#687486", motif: "moon" },
- "decoration-35": { glyph: "🏮", bg: "#1d2636", accent: "#f5d69a", sub: "#a57554", motif: "lantern" },
- "decoration-39": { glyph: "🛖", bg: "#292017", accent: "#e7ae73", sub: "#a57554", motif: "gazebo" },
- "decoration-43": { glyph: "🐾", bg: "#291e18", accent: "#ed8a45", sub: "#c97952", motif: "perch" },
- "decoration-46": { glyph: "🛋", bg: "#182830", accent: "#b7dee0", sub: "#70a8b6", motif: "nest" },
- "decoration-47": { glyph: "🪷", bg: "#142b2d", accent: "#70a8b6", sub: "#71934b", motif: "pond" },
- "decoration-51": { glyph: "⛲", bg: "#162a30", accent: "#b7dee0", sub: "#a6b1ae", motif: "pond" },
- "decoration-55": { glyph: "🎏", bg: "#241e26", accent: "#c75b4b", sub: "#ffc36b", motif: "fence" },
- "decoration-59": { glyph: "🪶", bg: "#261d22", accent: "#ffc36b", sub: "#c75b4b", motif: "perch" },
- "decoration-63": { glyph: "🦅", bg: "#1c2430", accent: "#b7dee0", sub: "#687486", motif: "bridge" },
- "decoration-67": { glyph: "🪾", bg: "#281e17", accent: "#ed8a45", sub: "#c97952", motif: "perch" },
- "decoration-71": { glyph: "🕯", bg: "#162830", accent: "#b7dee0", sub: "#687486", motif: "lantern" },
- "decoration-75": { glyph: "🌈", bg: "#1a2332", accent: "#f5d69a", sub: "#687486", motif: "arch" },
- "decoration-80": { glyph: "✨", bg: "#1e2630", accent: "#d6d8bf", sub: "#687486", motif: "stones" },
- "decoration-81": { glyph: "🦄", bg: "#192d25", accent: "#f5d69a", sub: "#71934b", motif: "arch" },
- "decoration-83": { glyph: "🏛", bg: "#1e2730", accent: "#d6d8bf", sub: "#a6b1ae", motif: "gazebo" },
- "decoration-87": { glyph: "🚧", bg: "#251d16", accent: "#a57554", sub: "#735044", motif: "fence" },
- "decoration-91": { glyph: "⛩", bg: "#291d18", accent: "#c97952", sub: "#735044", motif: "arch" },
- "decoration-95": { glyph: "🐉", bg: "#192b22", accent: "#b0bd67", sub: "#f5d69a", motif: "pedestal" },
- "decoration-98": { glyph: "🔭", bg: "#261b20", accent: "#ffc36b", sub: "#c75b4b", motif: "gazebo" },
- "decoration-99": { glyph: "🗺", bg: "#1f2826", accent: "#b0bd67", sub: "#d6d8bf", motif: "pedestal" },
+ "decoration-3": { glyph: "🪨", bg: "#142620", accent: "#a6b1ae", sub: "#687486", motif: "stones" },
+ "decoration-7": { glyph: "🎃", bg: "#142620", accent: "#ed8a45", sub: "#ffc36b", motif: "lantern" },
+ "decoration-11": { glyph: "🪹", bg: "#142620", accent: "#f5d69a", sub: "#a57554", motif: "nest" },
+ "decoration-15": { glyph: "🪵", bg: "#142620", accent: "#c97952", sub: "#735044", motif: "fence" },
+ "decoration-19": { glyph: "🌿", bg: "#142620", accent: "#b0bd67", sub: "#71934b", motif: "arch" },
+ "decoration-23": { glyph: "🌉", bg: "#142620", accent: "#e7ae73", sub: "#a57554", motif: "bridge" },
+ "decoration-27": { glyph: "🪙", bg: "#231f2e", accent: "#ffc36b", sub: "#735044", motif: "pedestal" },
+ "decoration-30": { glyph: "🌼", bg: "#142620", accent: "#f5d69a", sub: "#71934b", motif: "stones" },
+ "decoration-31": { glyph: "🌙", bg: "#231f2e", accent: "#f5d69a", sub: "#687486", motif: "moon" },
+ "decoration-35": { glyph: "🏮", bg: "#231f2e", accent: "#f5d69a", sub: "#a57554", motif: "lantern" },
+ "decoration-39": { glyph: "🛖", bg: "#142620", accent: "#e7ae73", sub: "#a57554", motif: "gazebo" },
+ "decoration-43": { glyph: "🐾", bg: "#142620", accent: "#ed8a45", sub: "#c97952", motif: "perch" },
+ "decoration-46": { glyph: "🛋", bg: "#142620", accent: "#b7dee0", sub: "#70a8b6", motif: "nest" },
+ "decoration-47": { glyph: "🪷", bg: "#142620", accent: "#70a8b6", sub: "#71934b", motif: "pond" },
+ "decoration-51": { glyph: "⛲", bg: "#142620", accent: "#b7dee0", sub: "#a6b1ae", motif: "pond" },
+ "decoration-55": { glyph: "🎏", bg: "#231f2e", accent: "#c75b4b", sub: "#ffc36b", motif: "fence" },
+ "decoration-59": { glyph: "🪶", bg: "#231f2e", accent: "#ffc36b", sub: "#c75b4b", motif: "perch" },
+ "decoration-63": { glyph: "🦅", bg: "#231f2e", accent: "#b7dee0", sub: "#687486", motif: "bridge" },
+ "decoration-67": { glyph: "🪾", bg: "#142620", accent: "#ed8a45", sub: "#c97952", motif: "perch" },
+ "decoration-71": { glyph: "🕯", bg: "#142620", accent: "#b7dee0", sub: "#687486", motif: "lantern" },
+ "decoration-75": { glyph: "🌈", bg: "#231f2e", accent: "#f5d69a", sub: "#687486", motif: "arch" },
+ "decoration-80": { glyph: "✨", bg: "#231f2e", accent: "#d6d8bf", sub: "#687486", motif: "stones" },
+ "decoration-81": { glyph: "🦄", bg: "#142620", accent: "#f5d69a", sub: "#71934b", motif: "arch" },
+ "decoration-83": { glyph: "🏛", bg: "#231f2e", accent: "#d6d8bf", sub: "#a6b1ae", motif: "gazebo" },
+ "decoration-87": { glyph: "🚧", bg: "#142620", accent: "#a57554", sub: "#735044", motif: "fence" },
+ "decoration-91": { glyph: "⛩", bg: "#231f2e", accent: "#c97952", sub: "#735044", motif: "arch" },
+ "decoration-95": { glyph: "🐉", bg: "#142620", accent: "#b0bd67", sub: "#f5d69a", motif: "pedestal" },
+ "decoration-98": { glyph: "🔭", bg: "#231f2e", accent: "#ffc36b", sub: "#c75b4b", motif: "gazebo" },
+ "decoration-99": { glyph: "🗺", bg: "#142620", accent: "#b0bd67", sub: "#d6d8bf", motif: "pedestal" },
 });
 
 export function earnedDecorMotifSvg(spec, isRight = false) {
@@ -123,7 +123,7 @@ export function earnedDecorMotifSvg(spec, isRight = false) {
  const flipAttr = isRight ? `transform="translate(48,0) scale(-1,1)"` : "";
  let inner = "";
  if (motif === "lantern" || motif === "moon") {
-  inner = `<rect x="22" y="12" width="4" height="24" fill="${sub}"/><circle cx="24" cy="18" r="7" fill="${accent}" stroke="#231f2e" stroke-width="1.5"/><circle cx="26" cy="16" r="2.5" fill="#fff8dc"/>`;
+  inner = `<rect x="22" y="12" width="4" height="24" fill="${sub}"/><circle cx="24" cy="18" r="7" fill="${accent}" stroke="#231f2e" stroke-width="1.5"/><circle cx="26" cy="16" r="2.5" fill="#e8f0ed"/>`;
  } else if (motif === "arch") {
   inner = `<path d="M13 35V20a11 11 0 0 1 22 0v15" fill="none" stroke="${sub}" stroke-width="4"/><circle cx="24" cy="12" r="3.5" fill="${accent}"/><circle cx="15" cy="22" r="2.5" fill="${accent}"/>`;
  } else if (motif === "bridge") {
@@ -147,7 +147,7 @@ export function earnedDecorMotifSvg(spec, isRight = false) {
 }
 
 export function earnedDecorIcon(decorId, { size = 48, facing = "default" } = {}) {
- const spec = EARNED_DECOR_SHAPES[decorId] || { glyph: "✦", bg: "#1e2f23", accent: "#f5d69a", sub: "#a57554", motif: "pedestal" };
+ const spec = EARNED_DECOR_SHAPES[decorId] || { glyph: "✦", bg: "#142620", accent: "#f5d69a", sub: "#a57554", motif: "pedestal" };
  const isRight = facing === "right";
  return el("span", {
   class: `visual-svg-art is-earned-decor${isRight ? " is-facing-right" : ""}`,

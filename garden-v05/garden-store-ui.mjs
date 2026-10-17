@@ -1,12 +1,12 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9";
-import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9";
-import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.5";
+import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.5";
+import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.5";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
  decor_broom_rack: "Một góc gọn gàng cho những chuyến bay (hỗ trợ 2 góc đặt).",
  decor_cauldron: "Vạc thuốc tím sôi lục bục trong góc vườn (hỗ trợ 2 góc đặt).",
- decor_mandrake_planter: "Một Mandrake nhỏ nhúc nhích trong chậu đất (hỗ trợ 2 góc đặt).",
+ decor_mandrake_planter: "Một Nhân sâm nhỏ nhúc nhích trong chậu đất (hỗ trợ 2 góc đặt).",
  decor_floating_candles: "Những ngọn nến bay lung linh trên đế đồng (hỗ trợ 2 góc đặt).",
  decor_vine_arch: "Dây leo và hoa đung đưa ôm lấy cổng vòm (hỗ trợ 2 góc đặt).",
 });

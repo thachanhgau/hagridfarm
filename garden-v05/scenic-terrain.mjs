@@ -1,4 +1,4 @@
-import {FARM_BOUNDARY} from './garden-landscape.mjs?v=24.9';
+import {FARM_BOUNDARY} from './garden-landscape.mjs?v=24.9.5';
 
 export const GREENHOUSE_FOOTPRINT = Object.freeze({
   col: 2, row: -1, left: -78, top: -119, right: 80, bottom: 33,
@@ -6,19 +6,19 @@ export const GREENHOUSE_FOOTPRINT = Object.freeze({
 
 export const SCENIC_TERRAIN_PALETTE = Object.freeze({
   grass: '#71934b',
-  patchDark: '#5f7e48',
-  patchMid: '#6b8949',
-  patchLight: '#7b9952',
-  forestFloor: '#294332',
-  hillNorth: '#3e5d3b',
-  hillWest: '#385538',
-  hillEast: '#3b5939',
-  hillSouth: '#344f36',
-  hillLow: '#2b4633',
-  hillTop: '#5e7745',
-  hillLip: '#788e50',
-  rock: '#675f48',
-  rockLight: '#887650',
+  patchDark: '#777044',
+  patchMid: '#71934b',
+  patchLight: '#71934b',
+  forestFloor: '#24483f',
+  hillNorth: '#3f6a45',
+  hillWest: '#24483f',
+  hillEast: '#3f6a45',
+  hillSouth: '#24483f',
+  hillLow: '#24483f',
+  hillTop: '#777044',
+  hillLip: '#71934b',
+  rock: '#5d6046',
+  rockLight: '#777044',
 });
 
 // Broad world-space ridges keep the surround wooded and continuous instead
@@ -216,7 +216,7 @@ export function drawScenicGround(ctx,width,height,{grassImage=null}={}) {
   ctx.globalAlpha=.62;ctx.fillStyle=SCENIC_TERRAIN_PALETTE.forestFloor;ctx.fillRect(0,0,width,height);
   const random=randomSource(0x464f5253);
   for(let i=0;i<48;i++){
-    const patch=makePatch(random,width,height,i),color=i%2?'#1d3528':'#2f4b37';
+    const patch=makePatch(random,width,height,i),color=i%2?'#142620':'#24483f';
     for(const dx of [-width,0,width])for(const dy of [-height,0,height])
       fillPolygon(ctx,patch.points.map(([px,py])=>[px+dx,py+dy]),color,.22);
   }
@@ -227,7 +227,7 @@ export function drawScenicBackdrop(ctx,width,height,{grassImage=null}={}) {
   drawScenicGround(ctx,width,height,{grassImage});
   ctx.save();
   scenicHillGeometry({width,height}).forEach((hill,index)=>paintHill(ctx,hill,index,grassImage));
-  ctx.globalAlpha=.31;ctx.fillStyle='#0e2926';ctx.fillRect(0,0,width,height);
+  ctx.globalAlpha=.31;ctx.fillStyle='#142620';ctx.fillRect(0,0,width,height);
   ctx.restore();
 }
 

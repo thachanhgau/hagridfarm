@@ -9,9 +9,9 @@ const DEFAULT_MAP_ROWS = 26;
  */
 export const NATURAL_MEADOW_PALETTE = Object.freeze({
   base: '#71934b',
-  patchDark: '#5f7e48',
-  patchMid: '#6b8949',
-  patchLight: '#7b9952',
+  patchDark: '#777044',
+  patchMid: '#71934b',
+  patchLight: '#71934b',
   tuft: '#3f6a45',
   tuftLight: '#b0bd67',
   flower: '#d6d8bf',

@@ -5158,7 +5158,7 @@
         },
         {
           "id": "thestral",
-          "label": "Thestral",
+          "label": "Vong mã",
           "kind": "creature",
           "balance": {
             "level": 74,
@@ -10356,7 +10356,7 @@
     },
     {
       "id": "thestral",
-      "label": "Thestral",
+      "label": "Vong mã",
       "kind": "creature",
       "balance": {
         "level": 74,

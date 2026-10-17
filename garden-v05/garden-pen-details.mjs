@@ -1,9 +1,9 @@
 // Low, native pixel-art habitat details. Paint the whole layer below actors.
 const styles={
- clear:{ground:'#647044',shade:'#454d32',grass:'#82915a',wood:'#8b5c49',cap:'#b19b6b',dark:'#493b31',stone:'#847a61',water:'#497b80',hay:'#c5a768',moss:'#527448'},
- rain:{ground:'#465b45',shade:'#33463b',grass:'#657c60',wood:'#655747',cap:'#9a9c80',dark:'#303c37',stone:'#657b78',water:'#78a2aa',hay:'#9b905e',moss:'#42684d'},
- autumn:{ground:'#777044',shade:'#534c32',grass:'#94804b',wood:'#986244',cap:'#c29a61',dark:'#503b30',stone:'#8a7655',water:'#577b79',hay:'#d3ae65',moss:'#7c7041'},
- snow:{ground:'#c5d4ce',shade:'#8cabae',grass:'#e1e8df',wood:'#766f65',cap:'#dce9e5',dark:'#485553',stone:'#899c9f',water:'#a4cad7',hay:'#b8aa7d',moss:'#8eaaa0'},
+ clear:{ground:'#777044',shade:'#4a3c2c',grass:'#71934b',wood:'#8b4a3f',cap:'#b49a66',dark:'#4a3c2c',stone:'#777044',water:'#687486',hay:'#b49a66',moss:'#3f6a45'},
+ rain:{ground:'#5d6046',shade:'#24483f',grass:'#777044',wood:'#735044',cap:'#b49a66',dark:'#24483f',stone:'#687486',water:'#70a8b6',hay:'#b49a66',moss:'#3f6a45'},
+ autumn:{ground:'#777044',shade:'#4a3c2c',grass:'#a57554',wood:'#a57554',cap:'#b49a66',dark:'#4a3c2c',stone:'#777044',water:'#687486',hay:'#e7ae73',moss:'#777044'},
+ snow:{ground:'#e8f0ed',shade:'#a6b1ae',grass:'#d6d8bf',wood:'#777044',cap:'#e8f0ed',dark:'#5d6046',stone:'#687486',water:'#b7dee0',hay:'#b49a66',moss:'#a6b1ae'},
 };
 function rect(c,x,y,w,h,color){c.fillStyle=color;c.fillRect(Math.round(x),Math.round(y),Math.max(1,Math.round(w)),Math.max(1,Math.round(h)));}
 function mix(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];}
@@ -42,7 +42,7 @@ export function drawPenHabitat(c,{corners,pen,iso,weatherMode='clear',personaliz
  const {water,straw,gate}=penDetailAnchors(pen,iso);
  // Low trough and bedding in the empty middle, between the two animal anchors.
  if(!personalized){
- rect(c,water[0]-11,water[1]-3,22,7,p.dark);rect(c,water[0]-9,water[1]-5,18,7,p.stone);rect(c,water[0]-7,water[1]-4,14,4,p.water);rect(c,water[0]-5,water[1]-4,6,1,'#cadcce');
+ rect(c,water[0]-11,water[1]-3,22,7,p.dark);rect(c,water[0]-9,water[1]-5,18,7,p.stone);rect(c,water[0]-7,water[1]-4,14,4,p.water);rect(c,water[0]-5,water[1]-4,6,1,'#d6d8bf');
  for(let i=0;i<18;i++){const dx=(i*13)%31-15,dy=(i*7)%11-5;rect(c,straw[0]+dx,straw[1]+dy,4+i%4,1,i%4?p.hay:p.wood);}
  }
  for(const off of [-6,4]){rect(c,gate[0]+off,gate[1]+off*.5,7,3,p.stone);rect(c,gate[0]+off,gate[1]+off*.5,6,1,p.cap);}
