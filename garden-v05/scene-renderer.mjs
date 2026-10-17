@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.6';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.6';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.6';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.6';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.6';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.6';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.6';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.6';
-import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.6';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.6';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.6';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.6';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.6';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.6';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.6';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.14';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.14';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.14';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.14';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.14';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.14';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.14';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.14';
+import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.14';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.14';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.14';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.14';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.14';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.14';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.14';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -25,13 +25,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.6';
+} from './scene-animation.mjs?v=24.9.14';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.6';
+} from './forest-surround.mjs?v=24.9.14';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -637,6 +637,33 @@ function drawPixelHeart(context, x, y, color = '#ed8a45') {
   for (const [dx, dy, width] of [[-4, 0, 3], [1, 0, 3], [-6, 3, 12], [-3, 6, 6]]) {
     context.fillRect(originX + dx, originY + dy, width, 3);
   }
+}
+
+// Tutorial pointer: a pulsing gold outline plus a pixel arrow bobbing over the plot.
+// Reduced motion (clock 0) keeps both still and fully visible.
+function drawTutorialFocus(context, corners, clock = 0) {
+  const pulse = clock > 0 ? 0.55 + 0.45 * Math.abs(Math.sin(clock / 260)) : 0.9;
+  context.save?.();
+  context.globalAlpha = pulse;
+  context.strokeStyle = '#ffc36b';
+  context.lineWidth = 3;
+  context.beginPath?.();
+  corners.forEach(([x, y], index) => (index ? context.lineTo?.(x, y) : context.moveTo?.(x, y)));
+  context.closePath?.();
+  context.stroke?.();
+  context.globalAlpha = 1;
+  const top = corners.reduce((a, b) => (b[1] < a[1] ? b : a));
+  const bob = clock > 0 ? [0, -2, -4, -2][Math.floor(clock / 140) % 4] : 0;
+  const ax = Math.round(top[0]), ay = Math.round(top[1] - 30 + bob);
+  context.fillStyle = '#231f2e';
+  context.fillRect?.(ax - 9, ay - 3, 18, 10);
+  context.fillRect?.(ax - 5, ay + 7, 10, 4);
+  context.fillRect?.(ax - 2, ay + 11, 4, 3);
+  context.fillStyle = '#ffc36b';
+  context.fillRect?.(ax - 7, ay - 1, 14, 6);
+  context.fillRect?.(ax - 4, ay + 5, 8, 4);
+  context.fillRect?.(ax - 1, ay + 9, 2, 3);
+  context.restore?.();
 }
 
 function drawPixelSparkle(context, x, y, color = '#f5d69a', scale = 1) {
@@ -1336,6 +1363,7 @@ export async function createGarden(canvas, options = {}) {
   }
 
   let activeAnimations = [];
+  let guestActor = null; // tutorial visitor; never part of state.creatures
   let authoredEffectEventIds = new Set();
 
   function actorObject(entry, col, row, logicalNow, clock, target = {}) {
@@ -1669,6 +1697,7 @@ export async function createGarden(canvas, options = {}) {
         drawPixelSparkle(context, object.xy[0] + (object.motion.swayX || 0) * 8, object.xy[1] - 42 + (object.motion.bobY || 0), '#f5d69a', 1);
       }
       drawActorOverlay(object, logicalNow);
+      if (object.guest && object.hungry) drawHagridSpeechBubble(context, object.xy[0], object.xy[1] + 70, 'Đói…');
       return;
     }
     if (object.kind === 'pen-front') {
@@ -1690,6 +1719,8 @@ export async function createGarden(canvas, options = {}) {
   }
 
   function animationAnchors(event, state) {
+    if (guestActor && event.species === guestActor.species && event.plot === undefined
+      && !asArray(state?.creatures).some((entry) => entry?.species === event.species)) return [iso(guestActor.col, guestActor.row)];
     if (event.species && event.creatureIndex !== undefined) {
       const spot = map.creatureSpots[event.creatureIndex];
       return Array.isArray(spot) ? [iso(spot[0], spot[1])] : [];
@@ -1751,6 +1782,9 @@ export async function createGarden(canvas, options = {}) {
     const propsVisible = options.propsVisible !== false;
     const grid = options.grid === true;
     const qaActor = options.qaActor ?? null;
+    const hagridLine = options.hagridLine || null;
+    const tutorialFocus = options.tutorialFocus || null;
+    guestActor = options.guestActor || null;
     const atmosphereMode = options.atmosphereMode || 'day';
     const weatherMode = options.weatherMode || 'clear';
     const eventMode = options.eventMode || 'none';
@@ -1825,13 +1859,13 @@ export async function createGarden(canvas, options = {}) {
       else if (!cr?.meal) hungryCreatureCount += 1;
     }
     const greetingActive = reactionUntil > performance.now();
-    const showPeriodicSpeech = greetingActive || options.showHagridSpeech === true || (clock > 0 && Math.floor(clock / 4800) % 3 === 0);
+    const showPeriodicSpeech = Boolean(hagridLine) || greetingActive || options.showHagridSpeech === true || (clock > 0 && Math.floor(clock / 4800) % 3 === 0);
     const wizList = propsVisible
       ? wizardObjects(iso, clock, {reactionUntil}).map((w) => (
         w.id === 'gardener' && showPeriodicSpeech
           ? {
             ...w,
-            speechText: hagridSpeechFor(state, {
+            speechText: hagridLine || hagridSpeechFor(state, {
               matureCropCount,
               readyMealCount,
               hungryCreatureCount,
@@ -1877,7 +1911,12 @@ export async function createGarden(canvas, options = {}) {
         const entry = entryList[slot];
         if (!entry) continue;
         const [col,row] = plotCellPosition(map.plots[plotIndex],slot);
-        objects.push(actorObject(entry, col, row, logicalNow, clock, {plot: plotIndex, cell: slot}));
+        const crop = actorObject(entry, col, row, logicalNow, clock, {plot: plotIndex, cell: slot});
+        // Tutorial: ripe crops in the focused plot shake to say "tap me".
+        if (tutorialFocus?.mode === 'harvest' && tutorialFocus.plot === plotIndex && crop.progress?.mature && clock > 0 && !crop.hop) {
+          crop.hop = [0, -1, -2, -1][Math.floor(clock / 110) % 4];
+        }
+        objects.push(crop);
       }
     }
 
@@ -1889,6 +1928,14 @@ export async function createGarden(canvas, options = {}) {
       const actor = actorObject(entry, spot[0], spot[1], logicalNow, clock, {creatureIndex: index, facing});
       actor.affinityLevel = Number(creatureAffinities[entry.species]) || 1;
       objects.push(actor);
+    }
+
+    if (guestActor && itemFor(guestActor.species)) {
+      const config = CREATURE[guestActor.species];
+      const guest = actorObject({type: 'creature', species: guestActor.species, mealsCompleted: config?.mealsToAdult ?? 6, meal: null},
+        guestActor.col, guestActor.row, logicalNow, clock, {guest: true});
+      guest.hungry = guestActor.hungry === true;
+      objects.push(guest);
     }
 
     if (qaActor) {
@@ -1910,10 +1957,11 @@ export async function createGarden(canvas, options = {}) {
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');
-    interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,affinityLevel:o.affinityLevel}));
+    interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
     lastOrder = objects.map((object) => ({id: object.id ?? object.species, y: object.xy?.[1] ?? 0, type: object.type}));
     for (const object of objects) drawObject(object, logicalNow, clock);
     drawAnimationEffects(state, activeAnimations);
+    if (tutorialFocus && map.plots[tutorialFocus.plot]) drawTutorialFocus(context, plotCorners(map.plots[tutorialFocus.plot], map), clock);
     const sBounds = stageWorldBounds(map, currentStage);
     if(propsVisible)drawV24Scenery(context,{clock,weatherMode,atmosphereMode,eventMode,objects,stageBounds:sBounds});
     if (atmosphereMode !== 'day' || (weatherMode && weatherMode !== 'clear')) {
@@ -1962,7 +2010,7 @@ export async function createGarden(canvas, options = {}) {
       const {xy,asset}=actor;
       const bounds=asset.bounds??{x:0,y:0,w:asset.width,h:asset.height};
       const left=actor.facing==='right'?xy[0]+asset.pivotX-bounds.x-bounds.w:xy[0]-asset.pivotX+bounds.x,top=xy[1]-asset.pivotY+bounds.y;
-      if(world.x>=left-5&&world.x<=left+bounds.w+5&&world.y>=top-5&&world.y<=top+bounds.h+5)return {kind:'creature',species:actor.species};
+      if(world.x>=left-5&&world.x<=left+bounds.w+5&&world.y>=top-5&&world.y<=top+bounds.h+5)return {kind:'creature',species:actor.species,...(actor.guest?{guest:true}:{})};
     }
     if(sceneryVisible)for(const target of wizardTargets(iso).sort((a,b)=>b.xy[1]-a.xy[1])){
       const b=target.hitbox;if(world.x>=b.left&&world.x<=b.right&&world.y>=b.top&&world.y<=b.bottom)return {kind:'wizard',id:target.id};

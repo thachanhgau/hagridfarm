@@ -39,3 +39,12 @@
 - Âm thanh (`garden-audio.mjs` `comboStep`, `play(kind,{pitch})`): lặp cùng thao tác gieo/gặt/cho ăn trong 2,5 giây thì cao lên một cung mỗi lần, tối đa 4 bậc; chip combo viền vàng đậm và lớn hơn một chút. Không đổi phần thưởng.
 - Giảm chuyển động (`body.motion-paused`, gồm cả cài đặt hệ thống): canvas không nảy/không bóng; chip đứng cạnh nút đích, chỉ mờ vào/ra; nút không nảy.
 - Kiểm chứng: 147/147 test (thêm `juice.test.mjs`). Browser phiên thử cấp 10/30: gieo (+3 XP), gặt ×3 (+3 bí ngô bay vào Kho, kho 7.000→7.006), đón Puffskein (+3 khẩu phần), cho ăn (sự kiện eat, +18 XP); giảm chuyển động chỉ có keyframe opacity. Bản nhúng và vườn thường không lỗi, không chip khi tải. Âm thanh combo kiểm bằng test, chưa nghe thử trên thiết bị.
+
+## V24.9.4 — Phase 1: ba phút đầu với Hagrid (core-design mục 6)
+- `garden-tutorial.mjs` (thuần): 6 bước intro → plant → grow → harvest → feed → owl → done; tiến theo dữ kiện thật của luống 1 (đã gieo / đã chín / đã gặt), nên làm khác thứ tự vẫn không kẹt. Mỗi lời Hagrid ≤ 8 từ. Bước lưu trong bản lưu theo phiên (`hagrid-tutorial-v1`); chỉ chạy cho vườn mới tinh ở phiên chơi thường, local. Người chơi cũ, phiên thử, fixture/ví đều bỏ qua. QA: `?qa=1&tutorial=1` chạy lại nếu vườn còn trống.
+- Không có trang hướng dẫn chữ: máy quay lướt (`camera.glide`) tới khung ôm Hagrid + luống 1; luống có viền vàng nhấp nháy + mũi tên pixel; nút cần bấm phát sáng (`.tutorial-pulse`, chọn nút đang hiển thị: Gieo hoặc Gặt của thẻ ngữ cảnh); cây chín rung; nút nhỏ "Bỏ qua" ở cột máy quay.
+- "Nước phép": dùng `E.advanceTime` đúng bằng thời gian cây còn thiếu, một lần duy nhất.
+- Puffskein mở ở cấp 10 nên bước cho ăn dùng Puffskein **của Hagrid ghé chơi** (`guestActor` trong renderer, bong bóng "Đói…", chạm để cho ăn): không vào `state.creatures`, không đổi balance đã duyệt.
+- Kết thúc mở Thư cú và đánh dấu `done`. Lên cấp 2 sau lần gặt đầu (+33 XP) hiện màn lên cấp sẵn có.
+- Giảm chuyển động: máy quay nhảy thẳng tới khung, viền/mũi tên đứng yên, nút chỉ sáng tĩnh (đã kiểm bằng code; chưa chụp ảnh riêng chế độ này).
+- Kiểm chứng: 152/152 test (thêm `tutorial.test.mjs`). Browser 518 px: chạy trọn 6 bước trên vườn mới, tải lại giữa chừng vẫn tiếp đúng bước; phát hiện và sửa khung máy quay cắt mất Hagrid, nút Gặt thật là `#contextAction`, nút Bỏ qua đè thông báo/xuống dòng, khách đứng sát mép. Vườn cũ và bản nhúng không bị ảnh hưởng, không lỗi console.

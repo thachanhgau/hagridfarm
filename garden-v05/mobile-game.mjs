@@ -1,28 +1,29 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.6';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.14';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.6';
-import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.6';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.6';
-import {showStore} from './garden-store-ui.mjs?v=24.9.6';
-import {setupProfile} from './profile-ui.mjs?v=24.9.6';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.14';
+import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.14';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.14';
+import {showStore} from './garden-store-ui.mjs?v=24.9.14';
+import {setupProfile} from './profile-ui.mjs?v=24.9.14';
 import * as E from './progression-engine.mjs';
-import {createGarden,iso,plotCorners,plotCellPosition} from './scene-renderer.mjs?v=24.9.6';
-import {setupCamera} from './camera.mjs?v=24.9.6';
-import {createPanels} from './progression-panels.mjs?v=24.9.6';
-import {$,el,icon,button,num,duration,hours,plantingAction} from './ui-utils.mjs?v=24.9.6';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.6';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.6';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.6';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge} from './hpvn-bridge.mjs?v=24.9.6';
-import {showPostcardModal} from './garden-postcard.mjs?v=24.9.6';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.6';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward} from './garden-achievements.mjs?v=24.9.6';
-import {eventConfig,nextEventMode,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.6';
-import {loadOwlQuests,saveOwlQuests,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest} from './garden-quests.mjs?v=24.9.6';
+import {createGarden,iso,plotCorners,plotCellPosition} from './scene-renderer.mjs?v=24.9.14';
+import {setupCamera} from './camera.mjs?v=24.9.14';
+import {createPanels} from './progression-panels.mjs?v=24.9.14';
+import {$,el,icon,button,num,duration,hours,plantingAction} from './ui-utils.mjs?v=24.9.14';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.14';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.14';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.14';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,tutorialEligible,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.14';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge} from './hpvn-bridge.mjs?v=24.9.14';
+import {showPostcardModal} from './garden-postcard.mjs?v=24.9.14';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.14';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward} from './garden-achievements.mjs?v=24.9.14';
+import {eventConfig,nextEventMode,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.14';
+import {loadOwlQuests,saveOwlQuests,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest} from './garden-quests.mjs?v=24.9.14';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.6':'./garden-emulator-client.mjs?v=24.9.6');
+const {createEmulatorClient}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.14':'./garden-emulator-client.mjs?v=24.9.14');
 const WALLET_TEXT=fixtureWallet
  ?{title:'Dữ liệu mẫu trong bộ nhớ · không lưu',badge:'V24 · Xem thử, không lưu',ready:'V24 · Chạm để khám phá.'}
  :{title:'Đã lưu trên emulator · Galleons mô phỏng',badge:'EMULATOR · Ví Gringotts thử nghiệm',ready:'Đã nối ví Gringotts thử nghiệm. Mua hạt và nước để gieo.'};
@@ -287,7 +288,42 @@ makeTray($('seedTray'),DB.crops,selectCrop);makeTray($('creatureTray'),DB.animal
 
 function makeLines(){$('lineButtons').replaceChildren();for(let i=0;i<(direction==='diagonal'?2:3);i++)$('lineButtons').append(button(direction==='diagonal'?(i?'↙':'↘'):String(i+1),()=>{line=i;refresh();},{'aria-label':(direction==='diagonal'?'Đường chéo ':'Hàng ')+(i+1)}));}
 for(const b of $('directionButtons').children)b.onclick=()=>{direction=b.dataset.direction;line=Math.min(line,direction==='diagonal'?1:2);makeLines();refresh();};makeLines();
+// First three minutes (garden-tutorial.mjs). Only a fresh local garden in the
+// normal session plays it; progress is saved per step and never repeats.
+let tutorial=null,guestFed=false,tutorialTimer=0;
+const tutorialSkip=button('Bỏ qua',()=>finishTutorial(),{class:'tutorial-skip',hidden:true,'aria-label':'Bỏ qua hướng dẫn'});
+(document.querySelector('.camera-tools')||$('gameShell'))?.append(tutorialSkip);
+function setupTutorial(){
+ if(connected||session!=='play')return false;
+ let step=qa&&query.get('tutorial')==='1'&&tutorialEligible(state)?'intro':loadTutorial(gardenStorage);
+ if(!step)step=tutorialEligible(state)?'intro':'done';
+ if(step==='done'){saveTutorial(gardenStorage,'done');return false;}
+ enterTutorial(step);return true;
+}
+function tutorialFacts(){const slots=state.plots[TUTORIAL_PLOT]?.slots||[],now=logical(),planted=slots.some(Boolean);return {planted,mature:slots.some(e=>e&&E.growth(e,now).mature),harvested:!planted&&(state.inventory?.pumpkin||0)>0};}
+// Glow the first of the given buttons that is actually on screen (the crop card swaps Gieo for Gặt).
+function pulse(...ids){document.querySelectorAll('.tutorial-pulse').forEach(n=>n.classList.remove('tutorial-pulse'));const n=ids.map(id=>$(id)).find(b=>b&&b.getClientRects().length&&!b.closest('[hidden]'));n?.classList.add('tutorial-pulse');}
+function enterTutorial(step){
+ clearTimeout(tutorialTimer);tutorial=saveTutorial(gardenStorage,step);tutorialSkip.hidden=false;pulse(null);
+ if(step==='intro'){camera?.overview();camera?.glide?.(frameHagridAndPlot,1600);renderer?.greet?.();tutorialTimer=setTimeout(()=>enterTutorial('plant'),2600);}
+ else if(step==='plant'){selectedPlot=TUTORIAL_PLOT;seed='pumpkin';line=0;setMode('plant');requestAnimationFrame(()=>pulse('plantButton','contextAction'));}
+ else if(step==='grow'){tutorialTimer=setTimeout(rushTutorialCrops,900);}
+ else if(step==='harvest'){selectedPlot=TUTORIAL_PLOT;line=0;setMode('plant');requestAnimationFrame(()=>pulse('contextAction','plantButton'));}
+ else if(step==='feed'){guestFed=false;camera?.glide?.(()=>{const [x,y]=iso(TUTORIAL_GUEST.col,TUTORIAL_GUEST.row);frameHagridWith([[x-40,y-60],[x+40,y+20]]);},1100);}
+ else if(step==='owl'){tutorialTimer=setTimeout(()=>{wizard?.openLetter?.('owl');finishTutorial();},1500);}
+ draw();
+}
+// Keep Hagrid, his speech bubble and the first plot in view on any screen size.
+function frameHagridAndPlot(){const scene=renderer?.map||map;frameHagridWith(plotCorners(scene.plots[TUTORIAL_PLOT],scene));}
+function frameHagridWith(pts){const [hx,hy]=iso(-2,8),xs=[hx-125,hx+125,...pts.map(q=>q[0])],ys=[hy-150,...pts.map(q=>q[1]),hy+12];const l=Math.min(...xs),r=Math.max(...xs),t=Math.min(...ys),b=Math.max(...ys)+20,vp=$('cameraViewport'),w=vp.clientWidth,h=vp.clientHeight;camera.centerAt((l+r)/2,(t+b)/2,Math.min(1.5,(w-24)/(r-l),h*.5/(b-t)));}
+function checkTutorial(){if(!tutorial)return;const next=advanceTutorial(tutorial,tutorialFacts());if(next!==tutorial)enterTutorial(next);}
+// Hagrid's one-time "nước phép": the engine's own time skip, exactly as long as the crops still need.
+function rushTutorialCrops(){if(tutorial!=='grow')return;const now=logical(),slots=state.plots[TUTORIAL_PLOT].slots.filter(Boolean),left=Math.max(0,...slots.map(e=>e.plantedAt+e.growMs-now));const cells=state.plots[TUTORIAL_PLOT].slots.map((e,i)=>e?i:-1).filter(i=>i>=0);renderer?.animate?.('water',{plot:TUTORIAL_PLOT,cells});audio.play('care');if(left>0)run(s=>E.advanceTime(s,Math.ceil(left)),'Nước phép!');else checkTutorial();}
+function feedTutorialGuest(){if(tutorial!=='feed'||guestFed)return;guestFed=true;comboPlay('care');renderer?.animate?.('eat',{species:TUTORIAL_GUEST.species});tutorialTimer=setTimeout(()=>enterTutorial('owl'),1900);draw();}
+function finishTutorial(){clearTimeout(tutorialTimer);tutorial=null;guestFed=false;saveTutorial(gardenStorage,'done');tutorialSkip.hidden=true;pulse(null);draw();}
+function tutorialRenderOptions(){if(!tutorial)return {};return {hagridLine:TUTORIAL_LINES[tutorial]||null,tutorialFocus:tutorial==='plant'?{plot:TUTORIAL_PLOT,mode:'plant'}:tutorial==='harvest'?{plot:TUTORIAL_PLOT,mode:'harvest'}:null,guestActor:tutorial==='feed'||tutorial==='owl'?{...TUTORIAL_GUEST,hungry:tutorial==='feed'&&!guestFed}:null};}
 function refresh(){
+ if(tutorial)queueMicrotask(checkTutorial);
  selectedPlot=Math.min(selectedPlot,state.plots.length-1);const now=logical(),slots=state.plots[selectedPlot].slots,c=CROP[seed],cr=CREATURE[species],n=slots.filter(Boolean).length,types=new Set(slots.filter(Boolean).map(e=>e.species)),info=E.levelInfo(state),animal=owned(species);
  $('shopButton').disabled=connected&&!walletReady;
  $('levelValue').textContent=state.level;$('xpText').textContent=state.level===100?'Đã đạt cấp 100':num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('xpFill').style.width=(state.level===100?100:Math.min(100,info.xpInLevel/info.xpToNext*100))+'%';
@@ -337,8 +373,8 @@ function refresh(){
  workTrays?.refresh(mode);wizard?.refresh();dockControls?.refresh();tickTimers();draw();
 }
 function tickTimers(){const now=logical();document.querySelectorAll('[data-until]').forEach(e=>{const remaining=Number(e.dataset.until)-now;e.textContent=remaining<=0?'Sẵn sàng nhận':(e.dataset.prefix||'')+duration(remaining);e.classList.toggle('ready-text',remaining<=0);});document.querySelectorAll('[data-ready-button]').forEach(e=>e.disabled=Number(e.dataset.readyButton)>now);}
-function draw(clock=performance.now()){const renderState=activeTourSnapshot?activeTourSnapshot.state:state;const renderAtmo=activeTourSnapshot?activeTourSnapshot.atmosphereMode:atmosphereMode;const renderWeather=activeTourSnapshot?activeTourSnapshot.weatherMode:weatherMode;const renderEarnedRot=activeTourSnapshot?activeTourSnapshot.decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations};renderer?.render(renderState,{selectedPlot,line:activeTourSnapshot?[]:mode==='plant'?chosen():[],now:Date.now(),clock:(!motionEnabled||motionMedia.matches)?0:clock,animationClock:clock,propsVisible,grid,decorations:currentDecorations(),decorationRotations:renderEarnedRot,creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities(),previewDecoration,previewLayout,atmosphereMode:renderAtmo,weatherMode:renderWeather,eventMode});const stage=renderer?.growthStage?.();if(stage&&(!connected||walletReady)&&stage.id!==lastGardenStage){const previous=lastGardenStage;lastGardenStage=stage.id;$('gardenStageName').textContent=stage.name;$('plotsButton').title='Giai đoạn '+stage.id+'/6 · '+stage.name;if(!activeTourSnapshot&&previous&&stage.id>previous){camera?.overview();message('Khu vườn đã mở rộng · '+stage.name+'.');}}}
-camera=setupCamera({viewport:$('cameraViewport'),canvas:$('world'),map,iso,plotCorners,getRenderer:()=>renderer,getSelectedPlot:()=>selectedPlot,notify:message,onPick:cell=>{if(activeTourSnapshot){if(cell.kind==='creature'){audio.play('care');renderer?.animate('care',{species:cell.species});message(`🐾 Đang ghé thăm ${CREATURE[cell.species]?.label||cell.species} tại vườn của ${activeTourSnapshot.tour.ownerName}.`);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) của ${activeTourSnapshot.tour.ownerName}.`);return;}message(`🧭 Đang tham quan ${activeTourSnapshot.tour.title} · Nhấn "Chăm giúp" trên thanh điều hướng để nhận quà!`);return;}if(cell.kind==='decoration'){const item=decorAssets.get(cell.itemId)||wallet?.snapshot?.catalog.find(i=>i.id===cell.itemId);if(item)openDecoration(item);return;}if(cell.kind==='earned-decoration'){rotateEarnedDecoration(cell.itemId);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) · Minh chứng vinh danh người giữ vườn.`);return;}if(cell.kind==='wizard'){audio.play('owl');wizard?.visit(cell.id);return;}if(cell.kind==='creature'){selectCreature(cell.species);handlePetCreature(cell.species);return;}selectedPlot=cell.plot;setMode('plant');if(direction==='horizontal')line=Math.floor(cell.index/3);else if(direction==='vertical')line=cell.index%3;else if([0,8].includes(cell.index))line=0;else if([2,6].includes(cell.index))line=1;else if(cell.index!==4)message('Ô này không nằm trên đường chéo.');refresh();}});
+function draw(clock=performance.now()){const renderState=activeTourSnapshot?activeTourSnapshot.state:state;const renderAtmo=activeTourSnapshot?activeTourSnapshot.atmosphereMode:atmosphereMode;const renderWeather=activeTourSnapshot?activeTourSnapshot.weatherMode:weatherMode;const renderEarnedRot=activeTourSnapshot?activeTourSnapshot.decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations};renderer?.render(renderState,{selectedPlot,line:activeTourSnapshot?[]:mode==='plant'?chosen():[],now:Date.now(),clock:(!motionEnabled||motionMedia.matches)?0:clock,animationClock:clock,propsVisible,grid,decorations:currentDecorations(),decorationRotations:renderEarnedRot,creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities(),previewDecoration,previewLayout,atmosphereMode:renderAtmo,weatherMode:renderWeather,eventMode,...(activeTourSnapshot?{}:tutorialRenderOptions())});const stage=renderer?.growthStage?.();if(stage&&(!connected||walletReady)&&stage.id!==lastGardenStage){const previous=lastGardenStage;lastGardenStage=stage.id;$('gardenStageName').textContent=stage.name;$('plotsButton').title='Giai đoạn '+stage.id+'/6 · '+stage.name;if(!activeTourSnapshot&&previous&&stage.id>previous){camera?.overview();message('Khu vườn đã mở rộng · '+stage.name+'.');}}}
+camera=setupCamera({viewport:$('cameraViewport'),canvas:$('world'),map,iso,plotCorners,getRenderer:()=>renderer,getSelectedPlot:()=>selectedPlot,notify:message,onPick:cell=>{if(activeTourSnapshot){if(cell.kind==='creature'){audio.play('care');renderer?.animate('care',{species:cell.species});message(`🐾 Đang ghé thăm ${CREATURE[cell.species]?.label||cell.species} tại vườn của ${activeTourSnapshot.tour.ownerName}.`);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) của ${activeTourSnapshot.tour.ownerName}.`);return;}message(`🧭 Đang tham quan ${activeTourSnapshot.tour.title} · Nhấn "Chăm giúp" trên thanh điều hướng để nhận quà!`);return;}if(cell.kind==='decoration'){const item=decorAssets.get(cell.itemId)||wallet?.snapshot?.catalog.find(i=>i.id===cell.itemId);if(item)openDecoration(item);return;}if(cell.kind==='earned-decoration'){rotateEarnedDecoration(cell.itemId);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) · Minh chứng vinh danh người giữ vườn.`);return;}if(cell.kind==='wizard'){audio.play('owl');wizard?.visit(cell.id);return;}if(cell.kind==='creature'&&cell.guest){feedTutorialGuest();return;}if(cell.kind==='creature'){selectCreature(cell.species);handlePetCreature(cell.species);return;}selectedPlot=cell.plot;setMode('plant');if(direction==='horizontal')line=Math.floor(cell.index/3);else if(direction==='vertical')line=cell.index%3;else if([0,8].includes(cell.index))line=0;else if([2,6].includes(cell.index))line=1;else if(cell.index!==4)message('Ô này không nằm trên đường chéo.');refresh();}});
 function openVisualLayout(){
  panels?.close();
  showVisualLayoutModal({
@@ -397,7 +433,7 @@ function applyInitialView(){
  else if(view==='owl')wizard.openLetter('owl');
  else if(view==='decor'&&loaded&&walletReady){const item=decorAssets.get('decor_broom_rack')||decorAssets.values().next().value;if(item)openDecoration(item);}
 }
-fetch('./decor-assets-manifest.json?v=24.0').then(r=>{if(!r.ok)throw Error('Thiếu bộ tranh trang trí.');return r.json();}).then(manifest=>{const itemsV=manifest.items.map(a=>({...a,file:addV(a.file),frames:Array.isArray(a.frames)?a.frames.map(addV):undefined,rightFile:addV(a.rightFile),rightFrames:Array.isArray(a.rightFrames)?a.rightFrames.map(addV):undefined}));decorAssets.clear();for(const a of itemsV)decorAssets.set(a.id,a);return createGarden($('world'),{decorAssets:itemsV});}).then(r=>{renderer=r;loaded=true;refresh();camera.overview();panels?.refresh();hpvnBridge.notifyReady({level:state.level,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge});if((query.get('view')==='decor'||query.get('view')==='layout'||query.get('view')==='postcard'||query.get('view')==='events'||query.get('tour'))&&walletReady)applyInitialView();message(saveProblem||(session==='lab'?'Phiên thử cấp '+state.level:'Chạm cây để chăm.'));let last=0;function frame(t){if(t-last>=100&&!document.hidden){lastClock=t;draw(t);last=t;}requestAnimationFrame(frame);}requestAnimationFrame(frame);setInterval(()=>{if(!document.hidden)refresh();},1000);}).catch(e=>{message('Không mở được cảnh vườn: '+e.message);console.error(e);});
+fetch('./decor-assets-manifest.json?v=24.0').then(r=>{if(!r.ok)throw Error('Thiếu bộ tranh trang trí.');return r.json();}).then(manifest=>{const itemsV=manifest.items.map(a=>({...a,file:addV(a.file),frames:Array.isArray(a.frames)?a.frames.map(addV):undefined,rightFile:addV(a.rightFile),rightFrames:Array.isArray(a.rightFrames)?a.rightFrames.map(addV):undefined}));decorAssets.clear();for(const a of itemsV)decorAssets.set(a.id,a);return createGarden($('world'),{decorAssets:itemsV});}).then(r=>{renderer=r;loaded=true;refresh();camera.overview();panels?.refresh();hpvnBridge.notifyReady({level:state.level,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge});if((query.get('view')==='decor'||query.get('view')==='layout'||query.get('view')==='postcard'||query.get('view')==='events'||query.get('tour'))&&walletReady)applyInitialView();if(!setupTutorial())message(saveProblem||(session==='lab'?'Phiên thử cấp '+state.level:'Chạm cây để chăm.'));let last=0;function frame(t){if(t-last>=100&&!document.hidden){lastClock=t;draw(t);last=t;}requestAnimationFrame(frame);}requestAnimationFrame(frame);setInterval(()=>{if(!document.hidden)refresh();},1000);}).catch(e=>{message('Không mở được cảnh vườn: '+e.message);console.error(e);});
 
 let celebrationFocus=null;
 function celebrate(from,to){

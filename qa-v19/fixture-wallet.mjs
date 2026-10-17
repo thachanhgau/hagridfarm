@@ -1,5 +1,5 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog} from "../garden-v05/garden-store-catalog.mjs?v=24.9.6";
+import {unlockedCatalog} from "../garden-v05/garden-store-catalog.mjs?v=24.9.14";
 
 export function createEmulatorClient(){
  const query=new URLSearchParams(location.search),level=Number(query.get("level")||100),scenario=query.get("scenario")||"empty",simulate=query.get("simulate")==="1",past=scenario.endsWith("ready"),now=Date.now(),origin=past?now-26*3600000:now;

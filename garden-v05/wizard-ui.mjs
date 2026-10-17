@@ -1,4 +1,4 @@
-import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.6';
+import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.14';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -10,7 +10,7 @@ import {
  dailyCompletionSummary,
  hasClaimableOwlQuest,
  DAILY_GRAND_CHEST_REWARD,
-} from './garden-quests.mjs?v=24.9.6';
+} from './garden-quests.mjs?v=24.9.14';
 
 // Presentation only: every crop mutation still uses the existing engine/command.
 export function cropContext(state, selection, E, now) {

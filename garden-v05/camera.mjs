@@ -1,4 +1,4 @@
-import {wizardTargets} from "./wizard-scenery.mjs?v=24.9.6";
+import {wizardTargets} from "./wizard-scenery.mjs?v=24.9.14";
 export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onPick,getSelectedPlot,notify}) {
  const camera={x:0,y:0,scale:1},pointers=new Map();let gesture=null,previousSize=null,frameFirstPlot=false,frameOverview=false;
  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
@@ -94,5 +94,14 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
  document.addEventListener("fullscreenchange",()=>{document.getElementById("fullscreenButton").setAttribute("aria-label",document.fullscreenElement?"Thoát toàn màn hình":"Bật toàn màn hình");apply();});
  new ResizeObserver(()=>{const next=[viewport.clientWidth,viewport.clientHeight];if(previousSize){if(frameOverview)overview();else if(frameFirstPlot)focusPlot(0);else{overviewFrame();camera.x+=(next[0]-previousSize[0])*.46;camera.y+=(next[1]-previousSize[1])*.43;apply();}}previousSize=next;}).observe(viewport);
  const dock=document.getElementById("playDock");if(dock)new ResizeObserver(()=>{if(frameOverview)overview();}).observe(dock);
- return {focusPlot,focusCreature,overview,centerAt,zoom,fullscreen};
+ // Run a framing move (focusPlot, overview…) as an eased glide instead of a jump.
+ // Reduced motion, or any user drag meanwhile, just lands on the final frame.
+ function glide(move,ms=1500){
+  const from={x:camera.x,y:camera.y,scale:camera.scale};move();const to={x:camera.x,y:camera.y,scale:camera.scale};
+  if(ms<=0||document.body.classList.contains("motion-paused")||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const t0=performance.now();
+  const step=t=>{if(pointers.size)return;const k=Math.min(1,(t-t0)/ms),e=k<.5?2*k*k:1-(-2*k+2)**2/2;camera.x=from.x+(to.x-from.x)*e;camera.y=from.y+(to.y-from.y)*e;camera.scale=from.scale+(to.scale-from.scale)*e;apply();if(k<1)requestAnimationFrame(step);};
+  camera.x=from.x;camera.y=from.y;camera.scale=from.scale;apply();requestAnimationFrame(step);
+ }
+ return {focusPlot,focusCreature,overview,centerAt,zoom,fullscreen,glide};
 }
