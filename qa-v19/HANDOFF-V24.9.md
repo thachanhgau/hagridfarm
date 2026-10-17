@@ -48,3 +48,10 @@
 - Kết thúc mở Thư cú và đánh dấu `done`. Lên cấp 2 sau lần gặt đầu (+33 XP) hiện màn lên cấp sẵn có.
 - Giảm chuyển động: máy quay nhảy thẳng tới khung, viền/mũi tên đứng yên, nút chỉ sáng tĩnh (đã kiểm bằng code; chưa chụp ảnh riêng chế độ này).
 - Kiểm chứng: 152/152 test (thêm `tutorial.test.mjs`). Browser 518 px: chạy trọn 6 bước trên vườn mới, tải lại giữa chừng vẫn tiếp đúng bước; phát hiện và sửa khung máy quay cắt mất Hagrid, nút Gặt thật là `#contextAction`, nút Bỏ qua đè thông báo/xuống dòng, khách đứng sát mép. Vườn cũ và bản nhúng không bị ảnh hưởng, không lỗi console.
+
+## V24.9.5 — Phase 1: idle + hành động cho vòng chơi đầu (art-bible mục 5)
+- Ba phút đầu (bí ngô, Puffskein) đã đủ 12 frame từ trước. Vòng 5 phút cấp 1–12 thiếu: yến mạch (cấp 6), cà rốt (8), xà lách (12) chỉ có 4 frame lớn lên.
+- `build-idle-assets.mjs` (dùng `sharp` có sẵn như các script build khác): 7 frame mới mỗi loại `native-levels/<id>/frame-05..11.png` = frame trưởng thành dịch nguyên dải hàng pixel. Ngọn lay ±1/±2 px, rướn 1 px; gốc cố định 25% (cà rốt 42%). Sinh `idle-assets-manifest.json` (pose, nguồn, sha256) và `motion-idle-data.js` (vá `FARM_MOTION` khi tải, sau `motion-care-data.js`, chỉ áp một lần). Clip idle 8 bước, 2,2 giây, lặp; clip hành động 6 bước, 0,94 giây.
+- Renderer: cây chín ở luống đang chọn phát clip hành động định kỳ (3,4 giây; trong bước gặt của hướng dẫn là 1,5 giây). Cây không có clip vẫn dùng kiểu rung pixel cũ trong hướng dẫn. Giảm chuyển động: cây đứng yên ở frame trưởng thành.
+- Sửa lỗi tiềm ẩn có từ trước: nhánh `qaActor` trong renderer gọi biến `allowMissing` không tồn tại (chưa trang nào dùng nhánh này).
+- Kiểm chứng: 156/156 test (thêm `idle-assets.test.mjs`: gốc không dịch, không thêm màu so với frame gốc, đúng kích thước/pivot, clip đúng art-bible, vá runtime chỉ áp một lần). `motion-review.html`: idle yến mạch chạy qua 5 frame khác nhau. Phiên thử cấp 12: gieo đủ ba loại, tua 6 giờ, hiển thị bình thường, không lỗi console. Chuyển động lệch 1–2 px, chưa quay video để so trên điện thoại thật.

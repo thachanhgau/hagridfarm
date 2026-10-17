@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.14';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.14';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.14';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.14';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.14';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.14';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.14';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.14';
-import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.14';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.14';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.14';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.14';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.14';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.14';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.14';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.15';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.15';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.15';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.15';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.15';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.15';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.15';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.15';
+import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.15';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.15';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.15';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.15';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.15';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.15';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.15';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -25,13 +25,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.14';
+} from './scene-animation.mjs?v=24.9.15';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.14';
+} from './forest-surround.mjs?v=24.9.15';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -1912,9 +1912,20 @@ export async function createGarden(canvas, options = {}) {
         if (!entry) continue;
         const [col,row] = plotCellPosition(map.plots[plotIndex],slot);
         const crop = actorObject(entry, col, row, logicalNow, clock, {plot: plotIndex, cell: slot});
-        // Tutorial: ripe crops in the focused plot shake to say "tap me".
-        if (tutorialFocus?.mode === 'harvest' && tutorialFocus.plot === plotIndex && crop.progress?.mature && clock > 0 && !crop.hop) {
-          crop.hop = [0, -1, -2, -1][Math.floor(clock / 110) % 4];
+        // Ripe crops in the selected (or tutorial) plot give a short authored tug now and
+        // then, saying "ready"; the tutorial repeats it faster. Crops without an action
+        // clip fall back to a whole-pixel wiggle in the tutorial only.
+        const tutorialPlot = tutorialFocus?.mode === 'harvest' && tutorialFocus.plot === plotIndex;
+        if (crop.kind === 'asset' && crop.progress?.mature && clock > 0 && !crop.animation && (tutorialPlot || plotIndex === selectedPlot)) {
+          const clip = crop.item?.clips?.action;
+          if (clip && new Set(clip.frames).size > 1) {
+            const period = tutorialPlot ? 1500 : 3400;
+            const shot = animationFrameAt(crop.item, 'action', (clock + stableHash(entry.id ?? slot) % period) % period, {loop: false});
+            const tug = shot && !shot.done ? frameAt(crop.item, shot.frame, allowMissingAssets) : null;
+            if (tug) crop.asset = tug;
+          } else if (tutorialPlot && !crop.hop) {
+            crop.hop = [0, -1, -2, -1][Math.floor(clock / 110) % 4];
+          }
         }
         objects.push(crop);
       }
@@ -1946,7 +1957,7 @@ export async function createGarden(canvas, options = {}) {
           : qaActor.position === 'front' ? [21, 14.5]
             : [20, 11];
       if (item) {
-        const asset = frameAt(item, qaActor.frame ?? 4, allowMissing);
+        const asset = frameAt(item, qaActor.frame ?? 4, allowMissingAssets);
         if (asset) objects.push({kind: 'asset', type: 'qa', id: qaActor.species, species: qaActor.species, asset, xy: iso(col, row)});
       }
     }

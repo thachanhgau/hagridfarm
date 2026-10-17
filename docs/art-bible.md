@@ -74,6 +74,8 @@ Quy tắc:
 - 6 cây đầu (bí ngô, cúc trắng, dâu tây, bạch tiên, puffapod, mandrake) có 12 frame; **18 cây sau chỉ có 4 frame lớn lên, chưa có idle/hành động riêng**.
 - 6 sinh vật đầu có 12 frame; 6 loài sau có 8 frame cộng bộ ăn/chăm sóc riêng.
 - Ưu tiên cho Phase 1: bổ sung idle và hành động cho cây và sinh vật **xuất hiện trong 3 phút đầu và vòng 5 phút**, không làm cả 36 loài một lúc.
+- **Đã làm (V24.9.5):** ba phút đầu chỉ dùng bí ngô và Puffskein, vốn đã đủ 12 frame. Vòng 5 phút ở cấp 1–12 thêm yến mạch, cà rốt, xà lách: `build-idle-assets.mjs` dựng 7 frame mới cho mỗi loại từ chính frame trưởng thành, bằng cách dịch nguyên dải hàng pixel (ngọn lay tối đa 2 px, rướn 1 px). Phần gốc đứng yên: 25% chiều cao, cà rốt 42% để củ không lệch. Không resample, không thêm màu; `idle-assets.test.mjs` kiểm tra. Đây là cách tạm hợp lệ khi chưa có hoạ sĩ; frame vẽ tay vẫn đẹp hơn và có thể thay sau, cùng chỉ số frame.
+- Cây chín ở luống đang chọn phát clip hành động "giật" khoảng 3,4 giây một lần (1,5 giây trong bước gặt của hướng dẫn). Áp dụng cho cả 6 cây gốc, trước đây có clip nhưng chưa phát.
 
 ## 6. Giao diện (UI)
 
@@ -101,6 +103,6 @@ Quy tắc:
 ## 9. Việc kiểm toán cho Phase 1
 
 1. ~~Tạo `palette.mjs`, đưa màu vẽ bằng code về bảng~~ (xong V24.9.2). Còn lại: CSS giao diện.
-2. Bổ sung idle và hành động cho các cây và sinh vật của 3 phút đầu (mục 5).
+2. ~~Bổ sung idle và hành động cho cây và sinh vật của 3 phút đầu và vòng 5 phút~~ (xong V24.9.5). Còn 15 cây từ cấp 28 trở lên: thêm id vào `IDLE_TARGETS` rồi chạy lại script.
 3. So tầng kích thước trong cảnh thật, sửa loài nào lệch quá ±20%.
 4. Thay emoji ở 6 nút chính bằng icon pixel.

@@ -1,6 +1,6 @@
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.14';
-import {el,button} from './ui-utils.mjs?v=24.9.14';
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor,normalizeDecorFacing} from './decor-runtime.mjs?v=24.9.14';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.15';
+import {el,button} from './ui-utils.mjs?v=24.9.15';
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor,normalizeDecorFacing} from './decor-runtime.mjs?v=24.9.15';
 
 export function showDecorationPlacement({item,getStage,getDecorations,onPlace,preview,camera,iso,onClose}){
  for(const old of document.querySelectorAll('dialog.decor-placement')){try{old.close();}catch{}old.remove();}
