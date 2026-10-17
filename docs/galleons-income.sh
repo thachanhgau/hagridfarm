@@ -15,21 +15,24 @@ WHERE DATE(created_vn) >= DATE_SUB(CURRENT_DATE('Asia/Ho_Chi_Minh'), INTERVAL ${
 GROUP BY reason_code, type ORDER BY total DESC"
 
 echo "== 2. Thu nhập mỗi ngày của một thành viên (không tính vòng quay, vay, cược) =="
-# earned: minted to the member by the forum (games, 7-day check-in, manual and bank rewards).
+# earned: minted to the member by the forum (games, 7-day check-in, manual rewards).
+# organic: games + check-in only (manual_reward is staff-awarded and skewed).
+# bank_reward is a debit on two bank accounts, not member income.
 # Accounts that ever made a bank_withdrawal (admins/HPH) are left out.
 Q "
-WITH rows AS (
+WITH r AS (
   SELECT account_uid, DATE(created_vn) AS d, reason_code, ABS(amount) AS a
   FROM \`hpvnn-archive.galleons.ledger\`
   WHERE DATE(created_vn) >= DATE_SUB(CURRENT_DATE('Asia/Ho_Chi_Minh'), INTERVAL ${DAYS} DAY)
-), staff AS (SELECT DISTINCT account_uid FROM rows WHERE reason_code = 'bank_withdrawal'),
+), staff AS (SELECT DISTINCT account_uid FROM r WHERE reason_code = 'bank_withdrawal'),
 member AS (
   SELECT account_uid,
     COUNT(DISTINCT d) AS active_days,
-    SUM(IF(reason_code IN ('game_reward','checkin_7_day','manual_reward','bank_reward'), a, 0)) AS earned,
+    SUM(IF(reason_code IN ('game_reward','checkin_7_day','manual_reward'), a, 0)) AS earned,
+    SUM(IF(reason_code IN ('game_reward','checkin_7_day'), a, 0)) AS organic,
     SUM(IF(reason_code = 'wheel_prize', a, 0)) - SUM(IF(reason_code = 'wheel_spin', a, 0)) AS wheel_net,
     SUM(IF(reason_code = 'store_purchase', a, 0)) AS store_spent
-  FROM rows WHERE account_uid NOT IN (SELECT account_uid FROM staff) GROUP BY account_uid
+  FROM r WHERE account_uid NOT IN (SELECT account_uid FROM staff) GROUP BY account_uid
 )
 SELECT
   COUNT(*) AS members,
@@ -40,6 +43,10 @@ SELECT
   APPROX_QUANTILES(earned / ${DAYS}, 100)[OFFSET(75)] AS p75_per_day,
   APPROX_QUANTILES(earned / ${DAYS}, 100)[OFFSET(90)] AS p90_per_day,
   APPROX_QUANTILES(SAFE_DIVIDE(earned, active_days), 100)[OFFSET(50)] AS p50_per_active_day,
+  APPROX_QUANTILES(organic / ${DAYS}, 100)[OFFSET(25)] AS organic_p25_per_day,
+  APPROX_QUANTILES(organic / ${DAYS}, 100)[OFFSET(50)] AS organic_p50_per_day,
+  APPROX_QUANTILES(organic / ${DAYS}, 100)[OFFSET(75)] AS organic_p75_per_day,
+  APPROX_QUANTILES(earned / ${DAYS}, 100)[OFFSET(25)] AS p25_per_day,
   ROUND(AVG(wheel_net) / ${DAYS}, 1) AS avg_wheel_net_per_day,
   ROUND(AVG(store_spent) / ${DAYS}, 1) AS avg_store_spent_per_day
 FROM member"

@@ -86,7 +86,7 @@ Thêm (3 lượt/ngày): tuần đầu tốn khoảng **122 G/ngày** (851 G c�
 
 ## Phương án A: khung quyết định (chủ dự án giao chọn, 18/10/2026)
 
-Chủ dự án: *"em tự tra … rồi chọn phương án A"*. Lệnh đọc BigQuery production đã bị chế độ auto chặn, nên **chưa có số thu nhập thật**. Quy tắc dưới đây chốt trước; có số là áp ngay, không cần bàn lại.
+Chủ dự án: *"em tự tra … rồi chọn phương án A"*. Quy tắc dưới đây được chốt **trước khi có số**, để số liệu không làm lệch lựa chọn. Kết quả nằm ở mục *Kết quả* bên dưới.
 
 **Số cần lấy:** `bash docs/galleons-income.sh` (chỉ đọc BigQuery, chỉ ra số tổng hợp). Dùng **I = `p50_per_day`**, tức thu nhập mỗi ngày của thành viên ở giữa (không tính vòng quay, vay, cược; bỏ tài khoản admin/HPH).
 
@@ -106,4 +106,31 @@ Chủ dự án: *"em tự tra … rồi chọn phương án A"*. Lệnh đọc B
 
 Mọi thay đổi giá đều phải sửa ở **cả** `garden-store-catalog.mjs` của prototype **và** `functions/games/garden-wallet-catalog.js` của backend; mô phỏng chạy lại bằng tham số `seedPriceCap`.
 
-**Bệ hạ cần cung cấp:** thu nhập Galleons trung bình mỗi ngày của một thành viên tích cực, và của một thành viên bình thường (lấy từ dữ liệu ví hoặc báo cáo Gringotts).
+### Kết quả (18/10/2026): chọn **A1, giữ giá**
+
+Nguồn: BigQuery `hpvnn-archive.galleons.ledger`, chỉ đọc, chỉ lấy số tổng hợp (chủ dự án cho phép ngày 18/10/2026). Đã loại 3 tài khoản từng rút ngân hàng (admin/HPH). Lệnh chạy: `docs/galleons-income.sh` và các truy vấn ghi dưới đây.
+
+**Giới hạn của dữ liệu**
+- Sổ cái mới có từ **02/10/2026**, nên mới có **17 ngày**. Số 30 ngày trong script đang chia cho 30, tức thấp hơn thực tế.
+- Chỉ có **52 thành viên** có giao dịch, trung bình hoạt động 8,3/17 ngày.
+- Ngày 16–17/10 có một đợt thưởng tay đột biến, **≈ 12 triệu G trong 2 ngày** (các ngày khác 7.000–620.000 G). Vì vậy số đại diện là khoảng **02–15/10 (14 ngày)**, không tính đợt này.
+
+| G/ngày/thành viên (lịch, 02–15/10) | p25 | p50 | p75 | p90 |
+|---|---|---|---|---|
+| Thu nhập (trò chơi + điểm danh + thưởng tay) | 36 | **772** | 9.007 | 14.149 |
+| Chỉ trò chơi + điểm danh | — | 61 | 689 | — |
+
+Thêm vài số:
+- Tính cả 16–17/10: p50 ≈ 3.580 G/ngày.
+- Thưởng tay là nguồn chính: 51/52 thành viên có nhận, trung vị 7 lần, tổng 60.702 G trong 17 ngày.
+- Vòng quay đang **trả ra ròng** cho thành viên: khoảng +990 G/ngày/thành viên theo cách chia 30 ngày.
+- Cửa hàng diễn đàn thu khoảng 7.560 G/ngày/thành viên theo cách chia 30 ngày.
+
+**Áp quy tắc:** I = p50 = 772 G/ngày ≥ 650, nên chọn **A1**. Giá hạt và nước giữ nguyên, không đổi quà nhiệm vụ.
+- Có 31/51 thành viên kiếm được ≥ 221 G/ngày (chi phí tháng 1 của người hoàn hảo).
+- Có 28/51 thành viên kiếm được ≥ 678 G/ngày (chi phí tháng 3).
+
+**Rủi ro còn lại [CẦN QUYẾT]**
+1. **Một phần tư thành viên kiếm ≤ 36 G/ngày**, dưới cả chi phí tuần 1 (≈ 122 G/ngày người hoàn hảo, ≈ 73 G/ngày người thật). Nhóm này sẽ bị chặn sớm. Có thể làm một "lưới đỡ" nhỏ theo A3 (bán nông sản, trần thấp), nhưng phải rà đường lách giới hạn trước. Chưa làm.
+2. **Thu nhập dựa vào thưởng tay của ban quản trị.** Nếu thưởng tay giảm, chỉ còn trò chơi + điểm danh (p50 61 G/ngày), lúc đó quy tắc sẽ ra A2 + A4, thậm chí A3.
+3. **Chạy lại khi sổ cái đủ 60 ngày** (khoảng 01/12/2026) bằng `bash docs/galleons-income.sh 60`. Nếu p50 tụt dưới 650 thì áp lại quy tắc trên.

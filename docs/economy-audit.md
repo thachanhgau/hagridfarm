@@ -61,7 +61,7 @@ So với trước: nước miễn phí giảm từ 52 xuống khoảng 24–30 m
 ## 4. Việc tiếp theo của Phase 3 [CẦN QUYẾT]
 
 1. ~~**Mô phỏng nhịp cấp**~~: xong, xem `progression-sim.md`.
-2. **Nguồn Galleons trong game** (mục 1, phát hiện 2): có hay không, và nếu có thì trần mỗi ngày bao nhiêu.
+2. ~~**Giá hạt / nguồn Galleons**~~: chọn **A1, giữ giá** (thu nhập p50 772 G/ngày), xem `progression-sim.md` mục *Kết quả*. Còn mở: lưới đỡ cho 25% thành viên kiếm ≤ 36 G/ngày **[CẦN QUYẾT]**.
 3. **Gộp tài nguyên** về 4 loại (core-design mục 5): một đợt riêng, phải sửa cả backend và có migration bản lưu.
 4. **Nhịp lễ hội**: chạy theo lịch thật, độ dài mỗi lễ, điểm cần cho 3 mốc so với lượng điểm kiếm được mỗi ngày.
 5. **Gộp bảng**: Hồ sơ người giữ vườn (Thành tựu, Sổ tay, Lưu bút, Bưu thiếp).
