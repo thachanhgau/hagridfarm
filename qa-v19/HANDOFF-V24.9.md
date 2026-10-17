@@ -80,3 +80,9 @@
 - `garden-v05/sim-progression.mjs`: bot chơi engine thật 2/3/4 lượt mỗi ngày (nhận, xây, đón, chế biến, cho ăn, gieo theo nhu cầu công thức rồi theo XP), tính Galleons theo luật ví (1 hạt + 1 nước mỗi ô) và trừ nước từ nhiệm vụ cú. `node sim-progression.mjs 240` in báo cáo markdown (~5 giây). Test: `sim-progression.test.mjs` (tăng cấp, mở chuồng 1 ở cấp ≥ 10, chi phí ≥ tiền nước, chạy lại cho cùng kết quả).
 - Kết quả (`docs/progression-sim.md`), người chơi hoàn hảo 3 lượt/ngày: cấp 10 ngày 4, 30 ngày 21, 50 ngày 53, 100 ngày 204 (~6,7 tháng, mục tiêu 4–6). Galleons ≈ 122/ngày tuần đầu, ≈ 220 tháng 1, ≈ 1.080 tháng 6; tổng ≈ 156.500 G tới cấp 100; hạt chiếm 59 → 86% chi phí. Bộ vật liệu không phải nút thắt. Cây 6 giờ có XP/giờ cao nhất nên chơi dày không có lợi.
 - Đề xuất A–D chờ duyệt; cần chủ dự án cho số thu nhập Galleons thật mỗi ngày của thành viên (không có trong code, do admin cấu hình trên dữ liệu live). Chưa đổi con số balance nào.
+
+## V24.9.10 — Phương án A: khung quyết định, chờ số thu nhập thật
+- Chủ dự án giao tự tra thu nhập Galleons trên production (chỉ đọc) rồi chọn A. Lệnh `bq query` lên `hpvnn-archive.galleons.ledger` **bị chế độ auto chặn**; không tìm đường vòng.
+- `docs/galleons-income.sh`: script chỉ đọc (BigQuery mirror, không quét Firestore), in tổng theo loại giao dịch và phân vị thu nhập/ngày (p50/p75/p90), không in tên hay uid; bỏ tài khoản từng `bank_withdrawal` (admin/HPH).
+- `sim-progression.mjs` thêm `seedPriceCap`. Trần 3 G/hạt: tổng tới cấp 100 156.500 → 116.200 G, tháng 6 1.081 → 732 G/ngày; trần 2 G: 90.100 G, 557 G/ngày; tháng 1 gần như không đổi.
+- `docs/progression-sim.md` mục "Phương án A": quy tắc chọn theo I = p50/ngày (≥ 650 → giữ; 330–650 → trần 3 G + quà gieo thành hạt; 130–330 → trần 2 G + quà hạt; < 130 → thêm bán nông sản có trần ~40 G/ngày, server-only). Chưa đổi giá nào.

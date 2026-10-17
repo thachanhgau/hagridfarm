@@ -84,4 +84,26 @@ Thêm (3 lượt/ngày): tuần đầu tốn khoảng **122 G/ngày** (851 G c�
 | C | Chơi dày không có lợi | (1) Giữ; (2) thêm "thưởng gặt tươi" khi gặt trong vòng 1 giờ sau khi chín; (3) thêm cây 2–3 giờ ở mỗi tầng cấp với XP/giờ ngang cây 6 giờ | (3) nếu muốn người chơi quay lại ban ngày; nếu không thì (1) |
 | D | Bộ vật liệu dư thừa | (1) Giữ; (2) tăng chi phí; (3) gộp vào chi phí xây (core-design mục 5) | (3) khi làm đợt gộp tài nguyên |
 
+## Phương án A: khung quyết định (chủ dự án giao chọn, 18/10/2026)
+
+Chủ dự án: *"em tự tra … rồi chọn phương án A"*. Lệnh đọc BigQuery production đã bị chế độ auto chặn, nên **chưa có số thu nhập thật**. Quy tắc dưới đây chốt trước; có số là áp ngay, không cần bàn lại.
+
+**Số cần lấy:** `bash docs/galleons-income.sh` (chỉ đọc BigQuery, chỉ ra số tổng hợp). Dùng **I = `p50_per_day`**, tức thu nhập mỗi ngày của thành viên ở giữa (không tính vòng quay, vay, cược; bỏ tài khoản admin/HPH).
+
+**Chi phí tham chiếu cho người chơi thật** (giả định chơi bằng 60% người chơi hoàn hảo; con số giả định, sẽ chỉnh khi có playtest):
+
+| | Giá hiện tại | Trần 3 G/hạt | Trần 2 G/hạt |
+|---|---|---|---|
+| Người hoàn hảo, tháng 1 / 3 / 6 (G/ngày) | 221 / 678 / 1.081 | 221 / 552 / 732 | 213 / 420 / 557 |
+| Người thật ≈ 60%, tháng 1 / 6 (G/ngày) | ≈ 130 / 650 | ≈ 130 / 440 | ≈ 130 / 335 |
+| Tổng tới cấp 100 (người hoàn hảo) | ≈ 156.500 | ≈ 116.200 | ≈ 90.100 |
+
+**Quy tắc chọn:**
+1. **I ≥ 650 G/ngày** → **A1**: giữ giá. Khu vườn là chỗ tiêu Galleons lành mạnh của diễn đàn.
+2. **330 ≤ I < 650** → **A2 với trần 3 G/hạt**, cộng **A4**: quà nhiệm vụ "Gieo N ô" đổi từ N nước sang N hạt của loại cây đang gieo nhiều nhất.
+3. **130 ≤ I < 330** → **A2 với trần 2 G/hạt**, cộng **A4**.
+4. **I < 130** → như mục 3, **cộng A3**: cho bán nông sản lấy Galleons, có trần mỗi ngày bằng khoảng 30% chi phí tháng 1 (≈ 40 G/ngày), chỉ tính trên server. Trước khi làm A3, phải rà các đường lách giới hạn (nhiều tài khoản, nhiều tab).
+
+Mọi thay đổi giá đều phải sửa ở **cả** `garden-store-catalog.mjs` của prototype **và** `functions/games/garden-wallet-catalog.js` của backend; mô phỏng chạy lại bằng tham số `seedPriceCap`.
+
 **Bệ hạ cần cung cấp:** thu nhập Galleons trung bình mỗi ngày của một thành viên tích cực, và của một thành viên bình thường (lấy từ dữ liệu ví hoặc báo cáo Gringotts).

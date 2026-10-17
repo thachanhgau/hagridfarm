@@ -100,7 +100,7 @@ function bestCrop(level, gapMs) {
 }
 
 /** Play one session at wall time `now`; returns the new state and what it cost. */
-export function playSession(state, now, gapMs) {
+export function playSession(state, now, gapMs, {seedPriceCap = Infinity} = {}) {
   let s = state;
   const cost = {cells: 0, seeds: 0, water: 0};
   s = tryAct(s, (x) => E.claimBuildings(x, now));
@@ -129,7 +129,7 @@ export function playSession(state, now, gapMs) {
       s = tryAct(s, (x) => E.plant(x, p, cells, species, now));
       if (s !== before) {
         cost.cells += 3;
-        cost.seeds += 3 * (seedPrice[species] ?? 0);
+        cost.seeds += 3 * Math.min(seedPriceCap, seedPrice[species] ?? 0);
         cost.water += 3 * WATER_PRICE;
       }
     }
@@ -143,7 +143,7 @@ export function questWater(level) {
   return n + (level < 6 ? 6 : 0) + 5 + 12;
 }
 
-export function simulate({days = 180, hours = [8, 13, 21]} = {}) {
+export function simulate({days = 180, hours = [8, 13, 21], seedPriceCap = Infinity} = {}) {
   let state = E.newGame(START);
   const daily = [];
   const reached = {};
@@ -153,7 +153,7 @@ export function simulate({days = 180, hours = [8, 13, 21]} = {}) {
     for (let i = 0; i < hours.length; i += 1) {
       const now = START + day * 24 * HOUR + hours[i] * HOUR;
       const nextHour = i + 1 < hours.length ? hours[i + 1] : hours[0] + 24;
-      const {state: next, cost} = playSession(state, now, (nextHour - hours[i]) * HOUR);
+      const {state: next, cost} = playSession(state, now, (nextHour - hours[i]) * HOUR, {seedPriceCap});
       state = next;
       for (const k of Object.keys(spend)) spend[k] += cost[k];
     }
