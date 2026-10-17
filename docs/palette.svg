@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="628" viewBox="0 0 560 628" font-family="ui-monospace,Menlo,monospace">
+<rect width="560" height="628" fill="#172c29"/>
+<text x="16" y="26" fill="#F5D69A" font-size="15" font-weight="700">Khu Vườn Hagrid · bảng màu chuẩn 24 màu</text>
+<text x="16" y="56" fill="#D6D8BF" font-size="12">Gỗ · da · bóng tối</text>
+<rect x="16" y="62" width="64" height="34" fill="#231F2E" stroke="#000" stroke-opacity=".3"/>
+<text x="16" y="109" fill="#A6B1AE" font-size="11">#231F2E</text>
+<rect x="150" y="62" width="64" height="34" fill="#4A3042" stroke="#000" stroke-opacity=".3"/>
+<text x="150" y="109" fill="#A6B1AE" font-size="11">#4A3042</text>
+<rect x="284" y="62" width="64" height="34" fill="#735044" stroke="#000" stroke-opacity=".3"/>
+<text x="284" y="109" fill="#A6B1AE" font-size="11">#735044</text>
+<rect x="418" y="62" width="64" height="34" fill="#A57554" stroke="#000" stroke-opacity=".3"/>
+<text x="418" y="109" fill="#A6B1AE" font-size="11">#A57554</text>
+<text x="16" y="154" fill="#D6D8BF" font-size="12">Đá · kim loại · kem</text>
+<rect x="16" y="160" width="64" height="34" fill="#41465C" stroke="#000" stroke-opacity=".3"/>
+<text x="16" y="207" fill="#A6B1AE" font-size="11">#41465C</text>
+<rect x="150" y="160" width="64" height="34" fill="#687486" stroke="#000" stroke-opacity=".3"/>
+<text x="150" y="207" fill="#A6B1AE" font-size="11">#687486</text>
+<rect x="284" y="160" width="64" height="34" fill="#A6B1AE" stroke="#000" stroke-opacity=".3"/>
+<text x="284" y="207" fill="#A6B1AE" font-size="11">#A6B1AE</text>
+<rect x="418" y="160" width="64" height="34" fill="#D6D8BF" stroke="#000" stroke-opacity=".3"/>
+<text x="418" y="207" fill="#A6B1AE" font-size="11">#D6D8BF</text>
+<text x="16" y="252" fill="#D6D8BF" font-size="12">Cỏ · lá</text>
+<rect x="16" y="258" width="64" height="34" fill="#24483F" stroke="#000" stroke-opacity=".3"/>
+<text x="16" y="305" fill="#A6B1AE" font-size="11">#24483F</text>
+<rect x="150" y="258" width="64" height="34" fill="#3F6A45" stroke="#000" stroke-opacity=".3"/>
+<text x="150" y="305" fill="#A6B1AE" font-size="11">#3F6A45</text>
+<rect x="284" y="258" width="64" height="34" fill="#71934B" stroke="#000" stroke-opacity=".3"/>
+<text x="284" y="305" fill="#A6B1AE" font-size="11">#71934B</text>
+<rect x="418" y="258" width="64" height="34" fill="#B0BD67" stroke="#000" stroke-opacity=".3"/>
+<text x="418" y="305" fill="#A6B1AE" font-size="11">#B0BD67</text>
+<text x="16" y="350" fill="#D6D8BF" font-size="12">Đất · ánh ấm</text>
+<rect x="16" y="356" width="64" height="34" fill="#8B4A3F" stroke="#000" stroke-opacity=".3"/>
+<text x="16" y="403" fill="#A6B1AE" font-size="11">#8B4A3F</text>
+<rect x="150" y="356" width="64" height="34" fill="#C97952" stroke="#000" stroke-opacity=".3"/>
+<text x="150" y="403" fill="#A6B1AE" font-size="11">#C97952</text>
+<rect x="284" y="356" width="64" height="34" fill="#E7AE73" stroke="#000" stroke-opacity=".3"/>
+<text x="284" y="403" fill="#A6B1AE" font-size="11">#E7AE73</text>
+<rect x="418" y="356" width="64" height="34" fill="#F5D69A" stroke="#000" stroke-opacity=".3"/>
+<text x="418" y="403" fill="#A6B1AE" font-size="11">#F5D69A</text>
+<text x="16" y="448" fill="#D6D8BF" font-size="12">Lửa · bí ngô</text>
+<rect x="16" y="454" width="64" height="34" fill="#874056" stroke="#000" stroke-opacity=".3"/>
+<text x="16" y="501" fill="#A6B1AE" font-size="11">#874056</text>
+<rect x="150" y="454" width="64" height="34" fill="#C75B4B" stroke="#000" stroke-opacity=".3"/>
+<text x="150" y="501" fill="#A6B1AE" font-size="11">#C75B4B</text>
+<rect x="284" y="454" width="64" height="34" fill="#ED8A45" stroke="#000" stroke-opacity=".3"/>
+<text x="284" y="501" fill="#A6B1AE" font-size="11">#ED8A45</text>
+<rect x="418" y="454" width="64" height="34" fill="#FFC36B" stroke="#000" stroke-opacity=".3"/>
+<text x="418" y="501" fill="#A6B1AE" font-size="11">#FFC36B</text>
+<text x="16" y="546" fill="#D6D8BF" font-size="12">Phép · đêm · nước</text>
+<rect x="16" y="552" width="64" height="34" fill="#3E3B70" stroke="#000" stroke-opacity=".3"/>
+<text x="16" y="599" fill="#A6B1AE" font-size="11">#3E3B70</text>
+<rect x="150" y="552" width="64" height="34" fill="#6961A6" stroke="#000" stroke-opacity=".3"/>
+<text x="150" y="599" fill="#A6B1AE" font-size="11">#6961A6</text>
+<rect x="284" y="552" width="64" height="34" fill="#70A8B6" stroke="#000" stroke-opacity=".3"/>
+<text x="284" y="599" fill="#A6B1AE" font-size="11">#70A8B6</text>
+<rect x="418" y="552" width="64" height="34" fill="#B7DEE0" stroke="#000" stroke-opacity=".3"/>
+<text x="418" y="599" fill="#A6B1AE" font-size="11">#B7DEE0</text>
+</svg>

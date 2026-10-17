@@ -5,7 +5,8 @@ Independent local Git repository created with owner approval on 2026-10-17. This
 - Source and pixel-art assets: `garden-v05/`
 - Read-only fixture and embed host: `qa-v19/`
 - Latest handoff: `qa-v19/HANDOFF-V24.9.md`
-- SHA-256 manifest: `qa-v19/v24.9-sha256.json`
+- SHA-256 manifest: `qa-v19/v24.9.1-sha256.json`
+- Thiết kế (bản nháp): `docs/core-design.md`, `docs/art-bible.md`
 
 ## Preview
 

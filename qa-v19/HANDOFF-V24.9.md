@@ -18,3 +18,10 @@
 - Browser: fixture level 100 và bản nhúng không lỗi console, 0 asset thiếu, 0 module trùng, 0 file version 24.8. Vuốt ve lần 4–5 trả gain 0; đổi lễ hội 6 lần chỉ 3 lần đầu có điểm, Thảo dược hiện 10 điểm của riêng nó. Bằng Mã đứng trong chuồng. Save local v23 cũ tải được, cây đã gieo vẫn còn.
 - Ngoài ý định: 6 file *.test.mjs chỉ đổi đường dẫn import sang `?v=24.9` (cùng bản module với code); không đổi logic test. scene-layout.test.mjs đổi giá trị kỳ vọng sang toạ độ mới.
 - Chưa test trên iPhone/Safari thật. Ngày tính theo giờ máy, nên chỉnh đồng hồ máy vẫn lách được trần ngày (giới hạn của prototype chạy phía client).
+
+## V24.9.1 — Phase 0: tài liệu nền + một entry duy nhất
+- `docs/core-design.md`, `docs/art-bible.md`, `docs/palette.svg`: BẢN NHÁP chờ chủ dự án duyệt (các mục [CẦN QUYẾT]).
+- `qa-v19/mobile-fixture.mjs` đã xoá. `garden-v05/mobile-game.mjs` là entry duy nhất: `ui-fixture.html` đặt `<html data-wallet="fixture">` để nạp ví mẫu `qa-v19/fixture-wallet.mjs`; trang khác nạp `garden-emulator-client.mjs`. QA hook `window.__HAGRID_GARDEN_QA__` chỉ có khi `qa=1` (nay có cả ở bản chơi local).
+- Entry cache `mobile-game.mjs?v=24.9.3`; iframe nhúng `&v=24.9.3`.
+- Kiểm chứng: 143/143 test; fixture level 100, chơi local `qa=1` (save giữ 3 cây), local không `qa` (không có hook), bản nhúng (ready, ví mẫu): không lỗi console, 0 asset thiếu.
+- Đối chiếu Lý Lan (chưa sửa nhãn trong game): Thestral → vong mã, Mandrake → Nhân sâm, Bằng Mã → Bằng-Mã, Dạ vũ Giáng sinh → Dạ vũ Noel. Xem core-design mục 7.

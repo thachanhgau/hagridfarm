@@ -3,7 +3,6 @@ import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
 import {setupWorkTrays} from './work-trays.mjs?v=24.9';
 import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9';
 import {setupWizardUI} from './wizard-ui.mjs?v=24.9';
-import {createEmulatorClient} from './garden-emulator-client.mjs?v=24.9';
 import {showStore} from './garden-store-ui.mjs?v=24.9';
 import {setupProfile} from './profile-ui.mjs?v=24.9';
 import * as E from './progression-engine.mjs';
@@ -19,6 +18,13 @@ import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden}
 import {evaluateAchievements,selectKeeperTitle,claimAchievementReward} from './garden-achievements.mjs?v=24.9';
 import {eventConfig,nextEventMode,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9';
 import {loadOwlQuests,saveOwlQuests,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest} from './garden-quests.mjs?v=24.9';
+// One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
+// in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
+const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
+const {createEmulatorClient}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9':'./garden-emulator-client.mjs?v=24.9');
+const WALLET_TEXT=fixtureWallet
+ ?{title:'Dữ liệu mẫu trong bộ nhớ · không lưu',badge:'V24 · Xem thử, không lưu',ready:'V24 · Chạm để khám phá.'}
+ :{title:'Đã lưu trên emulator · Galleons mô phỏng',badge:'EMULATOR · Ví Gringotts thử nghiệm',ready:'Đã nối ví Gringotts thử nghiệm. Mua hạt và nước để gieo.'};
 const {DB,CROP,CREATURE}=E,map=window.FARM_SCENE,items=new Map(window.FARM_MOTION.items.map(i=>[i.id,i]));
 const layoutSlots={plots:[...map.plots],pens:[...map.pens]};
 const connected=new URLSearchParams(location.search).get('wallet')==='emulator',wallet=connected?createEmulatorClient({decorQA:new URLSearchParams(location.search).get('qa')==='1'&&new URLSearchParams(location.search).get('decorQA')==='1'}):null;let walletReady=false;
@@ -269,7 +275,7 @@ function refresh(){
  selectedPlot=Math.min(selectedPlot,state.plots.length-1);const now=logical(),slots=state.plots[selectedPlot].slots,c=CROP[seed],cr=CREATURE[species],n=slots.filter(Boolean).length,types=new Set(slots.filter(Boolean).map(e=>e.species)),info=E.levelInfo(state),animal=owned(species);
  $('shopButton').disabled=connected&&!walletReady;
  $('levelValue').textContent=state.level;$('xpText').textContent=state.level===100?'Đã đạt cấp 100':num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('xpFill').style.width=(state.level===100?100:Math.min(100,info.xpInLevel/info.xpToNext*100))+'%';
- $('levelButton').dataset.level=state.level;$('levelButton').dataset.xp=state.xp;$('levelButton').title=connected?(walletReady?'Đã lưu trên emulator · Galleons mô phỏng':'Đang nối emulator'):(session==='lab'?'Phiên thử · ':'')+(saveAvailable?'Đã lưu trên thiết bị':'Chưa lưu được');
+ $('levelButton').dataset.level=state.level;$('levelButton').dataset.xp=state.xp;$('levelButton').title=connected?(walletReady?WALLET_TEXT.title:'Đang nối emulator'):(session==='lab'?'Phiên thử · ':'')+(saveAvailable?'Đã lưu trên thiết bị':'Chưa lưu được');
  $('nextUnlock').textContent=state.level===100?'Người giữ Đại khu vườn':'Cấp '+(state.level+1)+' · '+DB.levels[state.level].unlock;
  $('plotLabel').textContent=(selectedPlot+1)+' / '+state.plots.length;$('plotCount').textContent=n+'/9';
  for(const b of $('seedTray').children){const locked=CROP[b.dataset.id].level>state.level;b.hidden=locked;b.classList.toggle('locked',locked);b.querySelector('.lock').hidden=!locked;b.setAttribute('aria-pressed',b.dataset.id===seed);const count=wallet?.snapshot?.garden.supplies.seeds[b.dataset.id]||0;b.querySelector('.seed-count').textContent=count;b.setAttribute('aria-label',CROP[b.dataset.id].label+(connected?' · '+count+' hạt':''));}
@@ -356,7 +362,26 @@ dockControls=setupGardenControls({items,onSettings:()=>panels.show('settings'),g
 dockControls.refresh();
 refresh();camera.overview();touchGardenDay();
 const addV=f=>(!f?f:f.includes('?')?f:`${f}?v=24.0`);
-fetch('./decor-assets-manifest.json?v=24.0').then(r=>{if(!r.ok)throw Error('Thiếu bộ tranh trang trí.');return r.json();}).then(manifest=>{const itemsV=manifest.items.map(a=>({...a,file:addV(a.file),frames:Array.isArray(a.frames)?a.frames.map(addV):undefined,rightFile:addV(a.rightFile),rightFrames:Array.isArray(a.rightFrames)?a.rightFrames.map(addV):undefined}));decorAssets.clear();for(const a of itemsV)decorAssets.set(a.id,a);return createGarden($('world'),{decorAssets:itemsV});}).then(r=>{renderer=r;loaded=true;refresh();camera.overview();panels?.refresh();hpvnBridge.notifyReady({level:state.level,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge});message(saveProblem||(session==='lab'?'Phiên thử cấp '+state.level:'Chạm cây để chăm.'));let last=0;function frame(t){if(t-last>=100&&!document.hidden){draw(t);last=t;}requestAnimationFrame(frame);}requestAnimationFrame(frame);setInterval(()=>{if(!document.hidden)refresh();},1000);}).catch(e=>{message('Không mở được cảnh vườn: '+e.message);console.error(e);});
+let lastClock=0;
+function applyInitialView(){
+ const tourParam=query.get('tour');
+ if(tourParam)startTour(tourParam);
+ const view=query.get('view');if(!view)return;
+ const l=$('owlLetter');if(l?.open)l.close();
+ if(view==='inventory')panels.show('inventory');
+ else if(view==='store')openStore();
+ else if(view==='roadmap')panels.show('roadmap');
+ else if(view==='collection')panels.show('collection');
+ else if(view==='almanac')panels.show('almanac');
+ else if(view==='achievements')panels.show('achievements');
+ else if(view==='tour')panels.show('tour');
+ else if(view==='events')panels.show('events');
+ else if(view==='layout')openVisualLayout();
+ else if(view==='postcard'&&loaded)openPostcard();
+ else if(view==='owl')wizard.openLetter('owl');
+ else if(view==='decor'&&loaded&&walletReady){const item=decorAssets.get('decor_broom_rack')||decorAssets.values().next().value;if(item)openDecoration(item);}
+}
+fetch('./decor-assets-manifest.json?v=24.0').then(r=>{if(!r.ok)throw Error('Thiếu bộ tranh trang trí.');return r.json();}).then(manifest=>{const itemsV=manifest.items.map(a=>({...a,file:addV(a.file),frames:Array.isArray(a.frames)?a.frames.map(addV):undefined,rightFile:addV(a.rightFile),rightFrames:Array.isArray(a.rightFrames)?a.rightFrames.map(addV):undefined}));decorAssets.clear();for(const a of itemsV)decorAssets.set(a.id,a);return createGarden($('world'),{decorAssets:itemsV});}).then(r=>{renderer=r;loaded=true;refresh();camera.overview();panels?.refresh();hpvnBridge.notifyReady({level:state.level,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge});if((query.get('view')==='decor'||query.get('view')==='layout'||query.get('view')==='postcard'||query.get('view')==='events'||query.get('tour'))&&walletReady)applyInitialView();message(saveProblem||(session==='lab'?'Phiên thử cấp '+state.level:'Chạm cây để chăm.'));let last=0;function frame(t){if(t-last>=100&&!document.hidden){lastClock=t;draw(t);last=t;}requestAnimationFrame(frame);}requestAnimationFrame(frame);setInterval(()=>{if(!document.hidden)refresh();},1000);}).catch(e=>{message('Không mở được cảnh vườn: '+e.message);console.error(e);});
 
 let celebrationFocus=null;
 function celebrate(from,to){
@@ -384,16 +409,49 @@ const profileUI=setupProfile(message);$('avatarButton').onclick=()=>{panels.clos
 function openStore(initialFilter='all'){panels.close();showStore({state,items,wallet,connected,initialFilter,decorAssets,onDecorate:openDecoration,onPurchase:async(id,count)=>{if(busy)throw Error('Đang xử lý thao tác khác.');busy=true;try{const before=state;await wallet.buy(id,count);audio.play('buy');acceptWallet(before,'Đã mua vật tư.');}finally{busy=false;}}});}
 function openDecoration(item){if(!connected||!walletReady)return;const fullItem={...(decorAssets.get(item.id)||{}),...item};showDecorationPlacement({item:fullItem,getStage:()=>renderer?.growthStage?.(),getDecorations:currentDecorations,preview:value=>{previewDecoration=value;draw();},camera,iso,onPlace:async(itemId,slot,facing='default')=>{if(busy)throw Error('Đang xử lý thao tác khác.');busy=true;try{const before=state;localDecorRotations[itemId]=facing;persistPrefs();audio.play('rotate');recordFestivalAction('rotate');wizard?.recordQuestAction?.('rotate');await wallet.act({action:'placeDecoration',itemId,slot,facing});const angleLabel=facing==='right'?'Góc nhìn qua phải ↗':'Góc hiện tại ↖';acceptWallet(before,slot===null?'Đã cất đồ trang trí.':`Đã đặt đồ trang trí (${angleLabel}).`);}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'');}catch{}}throw e;}finally{busy=false;}},onClose:()=>draw()});}
 $('shopButton').onclick=()=>openStore();
+if(qa)window.__HAGRID_GARDEN_QA__={
+ getWorldSnapshot:()=>({order:renderer?.order(),loaded:renderer?.loaded,missing:renderer?.missing,stage:renderer?.growthStage(),animations:renderer?.animations()}),
+ getSnapshot:()=>({clock:lastClock,loaded,walletReady,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,activeTourId:activeTourSnapshot?.tour?.id||null,soundEnabled:audio.enabled,supplies:currentSupplies(),storageKey:gardenStorage.storageKey,state:{...state,decorations:currentDecorations(),decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations},creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities()}}),
+ openDecorPlacement:id=>{const item=decorAssets.get(id);if(item)openDecoration(item);},
+ openVisualLayout,
+ openPostcard,
+ openAlmanac:()=>panels.show('almanac'),
+ openAchievements:()=>panels.show('achievements'),
+ openTour:()=>panels.show('tour'),
+ openEvents:()=>panels.show('events'),
+ openOwlMail:()=>wizard.openLetter('owl'),
+ openPanel:name=>panels.show(name),
+ openStore,
+ startTour,
+ stopTour,
+ helpTour,
+ selectTitle:handleSelectTitle,
+ claimAchievement:handleClaimAchievement,
+ selectEvent,
+ cycleEvent,
+ applyEventTheme,
+ claimEventMilestone:handleClaimEventMilestone,
+ claimDailyQuest:handleClaimDailyQuest,
+ claimGrandChest:handleClaimGrandChest,
+ petCreature:handlePetCreature,
+ claimAffinityGift:handleClaimAffinityGift,
+ rotateEarnedDecoration,
+ rotateCreatureFacing,
+ cycleAtmosphere,
+ cycleWeather,
+ toggleAudio,
+ shareToFloo,
+};
 
 $('cropCareButton').onclick=()=>{$('seedOptions').close();audio.play('care');recordFestivalAction('care');wizard?.recordQuestAction?.('care');syncHudV20Buttons();renderer?.animate('care',{plot:selectedPlot,cells:chosen().filter(i=>state.plots[selectedPlot].slots[i])});message('Đã chăm cây · tương tác thư giãn, không cộng XP hoặc rút ngắn thời gian.');};
 $('petButton').onclick=()=>{$('creatureOptions').close();handlePetCreature(species);};
 
-function acceptWallet(before,text,showLevelChange=true){state=wallet.snapshot.garden.progression;walletReady=true;renderer?.react?.(before,state);refresh();panels?.refresh();if(showLevelChange&&state.level>before.level)celebrate(before.level,state.level);$('walletValue').textContent=num(wallet.snapshot.wallet.spendable)+' G';const p=wallet.snapshot.profile;$('playerName').textContent=p.username||'Thành viên thử nghiệm';$('avatarButton').title='Hồ sơ thành viên trên emulator';if(p.avatarUrl){$('avatarGlyph').replaceChildren(el('img',{src:p.avatarUrl,alt:'Avatar '+(p.username||'thành viên'),style:'width:28px;height:28px;border-radius:50%;object-fit:cover'}));}$('levelButton').title='Đã lưu trên emulator · Galleons mô phỏng';if(text)message(text);}
+function acceptWallet(before,text,showLevelChange=true){state=wallet.snapshot.garden.progression;walletReady=true;renderer?.react?.(before,state);refresh();panels?.refresh();if(showLevelChange&&state.level>before.level)celebrate(before.level,state.level);$('walletValue').textContent=num(wallet.snapshot.wallet.spendable)+' G';const p=wallet.snapshot.profile;$('playerName').textContent=p.username||'Thành viên thử nghiệm';$('avatarButton').title='Hồ sơ thành viên trên emulator';if(p.avatarUrl){$('avatarGlyph').replaceChildren(el('img',{src:p.avatarUrl,alt:'Avatar '+(p.username||'thành viên'),style:'width:28px;height:28px;border-radius:50%;object-fit:cover'}));}$('levelButton').title=WALLET_TEXT.title;if(text)message(text);}
 if(connected){
  $('avatarButton').onclick=()=>message('Hồ sơ thành viên và ví được đọc từ emulator HPVN.');
- const badge=el('div',{class:'emulator-badge',text:'EMULATOR · Ví Gringotts thử nghiệm'});$('gameShell').append(badge);
+ const badge=el('div',{class:'emulator-badge',text:WALLET_TEXT.badge});$('gameShell').append(badge);
  const boost=button('Bón phân',()=>{$('seedOptions').close();return run(null,'Đã bón phân cho hàng đang chọn.',{action:'boost',plotIndex:selectedPlot,cells:chosen()});},{id:'boostButton',hidden:state.level<6,disabled:true});$('cropCareButton').after(boost);
- wallet.read().then(()=>acceptWallet(state,'Đã nối ví Gringotts thử nghiệm. Mua hạt và nước để gieo.',false)).catch(e=>{message(e.message);badge.textContent='Emulator chưa kết nối · nhấn để thử lại';badge.role='button';badge.tabIndex=0;const retry=()=>wallet.read().then(()=>{acceptWallet(state,'Đã nối ví thử nghiệm.',false);badge.textContent='EMULATOR · Ví Gringotts thử nghiệm';}).catch(e=>message(e.message));badge.onclick=retry;badge.onkeydown=e=>{if(e.key==='Enter')retry();};});
+ wallet.read().then(()=>{acceptWallet(state,WALLET_TEXT.ready,false);applyInitialView();}).catch(e=>{message(e.message);badge.textContent='Emulator chưa kết nối · nhấn để thử lại';badge.role='button';badge.tabIndex=0;const retry=()=>wallet.read().then(()=>{acceptWallet(state,'Đã nối ví thử nghiệm.',false);badge.textContent=WALLET_TEXT.badge;}).catch(e=>message(e.message));badge.onclick=retry;badge.onkeydown=e=>{if(e.key==='Enter')retry();};});
 }
 
 // Collapse on entry to short landscape, including phone rotation. The tray remains reopenable.

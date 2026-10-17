@@ -4,6 +4,7 @@
 !/README.md
 !/garden-v05/
 !/qa-v19/
+!/docs/
 /qa-v19/*
 !/qa-v19/*.mjs
 !/qa-v19/*.html
