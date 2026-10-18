@@ -19,9 +19,12 @@ import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge} from './hpvn-bridge.mj
 import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.28';
 import {evaluateAchievements,selectKeeperTitle,claimAchievementReward} from './garden-achievements.mjs?v=24.9.28';
 import {eventConfig,nextEventMode,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.28';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.28';
+import {nextGoal} from './next-goal.mjs?v=24.9.28';
 import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest} from './garden-quests.mjs?v=24.9.28';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
+document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
 const {createEmulatorClient}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.28':'./garden-emulator-client.mjs?v=24.9.28');
 const WALLET_TEXT=fixtureWallet
@@ -235,17 +238,14 @@ const keeperTitleBtn=button('',()=>panels?.show('achievements'),{id:'keeperTitle
 $('levelButton')?.after(keeperTitleBtn);
 function syncKeeperTitleBadge(){const t=currentKeeperTitle();keeperTitleBtn.textContent=t.badge;keeperTitleBtn.dataset.titleId=t.id;}
 syncKeeperTitleBadge();
-const eventBtn=button('Lễ hội',()=>panels?.show('events'),{id:'eventButton',class:'icon-button hud-event-btn','aria-label':'Lễ hội'});
-const sceneryBtn=button('Khung cảnh',()=>panels?.show('scenery'),{id:'sceneryButton',class:'icon-button hud-scenery-btn','aria-label':'Khung cảnh'});
-const hudExtras=el('div',{class:'hud-extras','aria-label':'Khung cảnh & lễ hội'},[eventBtn,sceneryBtn]);
+const eventBtn=$('eventButton'),sceneryBtn=$('sceneryButton');eventBtn.onclick=()=>panels?.show('events');sceneryBtn.onclick=()=>panels?.show('scenery');
 // Only the explicit embedded host owns these shortcuts; standalone keeps them.
-hudExtras.hidden=window.self!==window.top&&query.get('sceneControls')==='host';
-document.body.classList.toggle('host-scene-controls',hudExtras.hidden);
-$('inventoryButton')?.before(hudExtras);
+eventBtn.hidden=sceneryBtn.hidden=window.self!==window.top&&query.get('sceneControls')==='host';
+document.body.classList.toggle('host-scene-controls',eventBtn.hidden);
 function syncHudV20Buttons(){
  const hasClaim=hasClaimableEventMilestone();
  eventBtn.classList.toggle('has-claimable',hasClaim);
- eventBtn.title=hasClaim?'Lễ hội · Có quà':'Lễ hội';
+ eventBtn.title=hasClaim?'Lễ hội · Có quà':'Lễ hội';$('hudToggle').classList.toggle('has-news',hasClaim);
  eventBtn.dataset.event=eventMode;
  sceneryBtn.dataset.weather=weatherMode;
  sceneryBtn.title=weatherConfig(weatherMode).shortLabel+' · '+atmosphereConfig(atmosphereMode).shortLabel;
@@ -300,10 +300,10 @@ function setMode(next){
  mode=next;
  for(const [id,value] of Object.entries({plantDock:'plant',creatureDock:'creature',craftDock:'craft',buildDock:'build'}))$(id).hidden=next!==value;
  for(const [id,value] of Object.entries({sowTool:'plant',creatureTool:'creature',craftTool:'craft',buildTool:'build'}))$(id).setAttribute('aria-pressed',next===value);
- document.body.classList.remove('dock-collapsed');$('dockToggle').setAttribute('aria-expanded','true');$('dockToggle').setAttribute('aria-label','Thu gọn khay thao tác');$('dockToggle').textContent='⌄';refresh();
+ document.body.classList.remove('dock-collapsed');$('dockToggle').setAttribute('aria-expanded','true');$('dockToggle').setAttribute('aria-label','Thu gọn khay thao tác');refresh();
  const trayId={plant:'seedTray',creature:'creatureTray',craft:'craftTray',build:'buildTray'}[next];$(trayId)?.querySelector('[aria-pressed=true]')?.scrollIntoView({block:'nearest',inline:'nearest'});
 }
-function makeTray(container,collection,select){for(const c of collection){const b=button('',()=>select(c.id),{'data-id':c.id,'aria-label':c.label});b.title=c.label;b.append(icon(items,c.id,3,40),el('span',{class:'lock',text:'Cấp '+c.level}),el('span',{class:'owned',text:'✓',hidden:true}));if(container.id==='seedTray')b.append(el('span',{class:'seed-count',hidden:!connected,'aria-hidden':'true'}));container.append(b);}}
+function makeTray(container,collection,select){for(const c of collection){const b=button('',()=>select(c.id),{'data-id':c.id,'aria-label':c.label});b.title=c.label;b.append(icon(items,c.id,3,40),el('span',{class:'lock',text:'Cấp '+c.level}),el('span',{class:'owned',text:'✓',hidden:true}));if(container.id==='seedTray')b.append(el('span',{class:'seed-count',hidden:!connected,'aria-hidden':'true'}),el('span',{class:'chip-time','aria-hidden':'true'},[pixelIcon('clock',1),shortHours(c.hours)]));container.append(b);}}
 makeTray($('seedTray'),DB.crops,selectCrop);makeTray($('creatureTray'),DB.animals,selectCreature);
 
 function makeLines(){$('lineButtons').replaceChildren();for(let i=0;i<(direction==='diagonal'?2:3);i++)$('lineButtons').append(button(direction==='diagonal'?(i?'↙':'↘'):String(i+1),()=>{line=i;refresh();},{'aria-label':(direction==='diagonal'?'Đường chéo ':'Hàng ')+(i+1)}));}
@@ -352,23 +352,25 @@ function refresh(){
  if(tutorial)queueMicrotask(checkTutorial);
  selectedPlot=Math.min(selectedPlot,state.plots.length-1);const now=logical(),slots=state.plots[selectedPlot].slots,c=CROP[seed],cr=CREATURE[species],n=slots.filter(Boolean).length,types=new Set(slots.filter(Boolean).map(e=>e.species)),info=E.levelInfo(state),animal=owned(species);
  $('shopButton').disabled=connected&&!walletReady;
- $('levelValue').textContent=state.level;$('xpText').textContent=state.level===100?'Đã đạt cấp 100':num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('xpFill').style.width=(state.level===100?100:Math.min(100,info.xpInLevel/info.xpToNext*100))+'%';
+ $('levelValue').textContent=state.level;$('xpText').textContent=state.level===100?'Đã đạt cấp 100':num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('levelButton').style.setProperty('--xp',(state.level===100?100:Math.min(100,info.xpInLevel/info.xpToNext*100)).toFixed(1));$('levelButton').setAttribute('aria-label','Hồ sơ · Cấp '+state.level+' · '+$('xpText').textContent);
+ syncSupplies();syncGoal();
  $('levelButton').dataset.level=state.level;$('levelButton').dataset.xp=state.xp;$('levelButton').title=connected?(walletReady?WALLET_TEXT.title:'Đang nối emulator'):(session==='lab'?'Phiên thử · ':'')+(saveAvailable?'Đã lưu trên thiết bị':'Chưa lưu được');
- $('nextUnlock').textContent=state.level===100?'Người giữ Đại khu vườn':'Cấp '+(state.level+1)+' · '+DB.levels[state.level].unlock;
- $('plotLabel').textContent=(selectedPlot+1)+' / '+state.plots.length;$('plotCount').textContent=n+'/9';
+ $('plotLabel').textContent=(selectedPlot+1)+'/'+state.plots.length;$('plotCount').textContent=n+'/9';$('plotsButton').setAttribute('aria-label','Thửa '+(selectedPlot+1)+' / '+state.plots.length+' · '+n+'/9 ô');
  for(const b of $('seedTray').children){const locked=CROP[b.dataset.id].level>state.level;b.hidden=locked;b.classList.toggle('locked',locked);b.querySelector('.lock').hidden=!locked;b.setAttribute('aria-pressed',b.dataset.id===seed);const count=wallet?.snapshot?.garden.supplies.seeds[b.dataset.id]||0;b.querySelector('.seed-count').textContent=count;b.setAttribute('aria-label',CROP[b.dataset.id].label+(connected?' · '+count+' hạt':''));}
  for(const b of $('creatureTray').children){const locked=CREATURE[b.dataset.id].level>state.level;b.hidden=locked;b.classList.toggle('locked',locked);b.querySelector('.lock').hidden=!locked;b.querySelector('.owned').hidden=!owned(b.dataset.id);b.setAttribute('aria-pressed',b.dataset.id===species);}
  [...$('directionButtons').children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.direction===direction));[...$('lineButtons').children].forEach((b,i)=>b.setAttribute('aria-pressed',i===line));
- $('directionSummary').textContent=({horizontal:'↔',vertical:'↕',diagonal:'⤡'})[direction]+' '+(line+1);
- $('seedOptionsButton').title=({horizontal:'Ngang',vertical:'Dọc',diagonal:'Chéo'})[direction]+' · Hàng '+(line+1);
+ const lineUrl=lineIconUrl(chosen());if($('directionSummary').getAttribute('src')!==lineUrl){$('directionSummary').src=lineUrl;$('contextLine').src=lineUrl;}
+ $('seedOptionsButton').title=({horizontal:'Ngang',vertical:'Dọc',diagonal:'Chéo'})[direction]+' · Hàng '+(line+1);$('seedOptionsButton').setAttribute('aria-label','Tùy chọn gieo · '+$('seedOptionsButton').title);
  $('plantDock').classList.toggle('single-choice',DB.crops.filter(crop=>crop.level<=state.level).length===1);
- $('seedName').textContent=c.label;$('seedTime').textContent=c.level>state.level?'Mở cấp '+c.level:hours(c.hours)+' · '+c.totalXP+' XP/ô';
- if(connected)$('seedTime').textContent='Hạt '+(wallet.snapshot?.garden.supplies.seeds[seed]||0)+' · Nước '+(wallet.snapshot?.garden.supplies.water||0);
+ $('seedName').textContent=c.label;
+ if(connected)stats($('seedTime'),[['seed',wallet.snapshot?.garden.supplies.seeds[seed]||0,'Hạt '+c.label],['water',wallet.snapshot?.garden.supplies.water||0,'Nước']]);
+ else if(c.level>state.level)$('seedTime').textContent='Mở cấp '+c.level;
+ else stats($('seedTime'),[['clock',shortHours(c.hours),'Chín sau '+hours(c.hours)],['xp',c.totalXP,c.totalXP+' XP mỗi ô']]);
  const occupied=chosen().some(i=>slots[i]),cooling=chosen().some(i=>state.plots[selectedPlot].cooldowns[i]>now);
  const typeCap=types.size>=3&&!types.has(seed),seedsLeft=wallet?.snapshot?.garden.supplies.seeds[seed]||0,waterLeft=wallet?.snapshot?.garden.supplies.water||0;
  const plantAction=plantingAction({loaded,connected,walletReady,unlocked:c.level<=state.level,occupied,cooling,typeCap,seedsLeft,waterLeft});
  $('plantButton').dataset.restock=plantAction.restock;$('plantButton').disabled=plantAction.disabled;
- $('plantButton').textContent=plantAction.text;$('plantButton').title=plantAction.title;
+ setAction($('plantButton'),{icon:plantAction.restock||'sow',label:plantAction.disabled?plantAction.text:plantAction.restock?'Mua':'Gieo',count:plantAction.disabled||plantAction.restock?'':'×3',text:plantAction.title});
  $('cropCareButton').disabled=!loaded||!chosen().some(i=>slots[i]);
  $('replantButton').disabled=!loaded||!state.plots[selectedPlot].patterns.length;
  const allReady=state.plots.reduce((sum,p)=>sum+p.slots.filter(e=>e&&E.growth(e,now).mature).length,0);$('readyCount').textContent=allReady;$('readyCount').hidden=!allReady;$('harvestTool').disabled=!loaded||!allReady;
@@ -378,25 +380,50 @@ function refresh(){
  $('selectionDetail').textContent=$('selectionHint').textContent;
  $('selectionHint').textContent=mode==='plant'&&cooling?'Đất đang hồi phục':'';
  const crFacing=currentCreatureFacings()[species]==='right'?'↗ Nhìn phải':'↖ Góc chuẩn';
- $('creatureName').textContent=cr.label;$('creatureTime').textContent=cr.level>state.level?'Mở cấp '+cr.level:'◷ '+hours(cr.hours)+' · '+cr.mealPortions+' phần';
+ $('creatureName').textContent=cr.label;if(cr.level>state.level)$('creatureTime').textContent='Mở cấp '+cr.level;else stats($('creatureTime'),[['clock',shortHours(cr.hours),'Mỗi bữa '+hours(cr.hours)],['feed',cr.mealPortions,cr.mealPortions+' phần ăn mỗi bữa']]);
  $('housing').textContent=state.creatures.length+'/'+E.housingCapacity(state)+' chỗ · '+(state.inventory[cr.feed]||0)+' phần '+cr.label;
  $('petButton').hidden=!animal;
  if($('rotateCreatureButton'))$('rotateCreatureButton').hidden=!animal;
  $('adoptButton').hidden=!!animal;$('feedButton').hidden=!animal||Boolean(animal.meal);$('claimAnimalButton').hidden=!animal?.meal;
  $('adoptButton').disabled=!loaded||cr.level>state.level||state.creatures.length>=E.housingCapacity(state)||(species!=='puffskein'&&state.inventory[cr.feed]<cr.mealPortions*3);
- $('adoptButton').textContent=cr.level>state.level?'Cấp '+cr.level:'Đón về';
+ setAction($('adoptButton'),{icon:'pen',label:cr.level>state.level?'Cấp '+cr.level:'Đón về',text:cr.level>state.level?'Mở ở cấp '+cr.level:'Đón '+cr.label+' về vườn'});setAction($('feedButton'),{icon:'feed',label:'Cho ăn',count:'×'+cr.mealPortions,text:'Cho '+cr.label+' ăn '+cr.mealPortions+' phần'});setAction($('claimAnimalButton'),{icon:'chest',label:'Nhận',text:'Nhận quà của '+cr.label});
  $('feedButton').disabled=!animal||!!animal.meal||state.inventory[cr.feed]<cr.mealPortions;
  $('claimAnimalButton').disabled=!animal?.meal||animal.meal.readyAt>now;
  if(animal){const adult=animal.mealsCompleted>=cr.mealsToAdult;$('creatureStatus').textContent=(adult?'Trưởng thành':animal.mealsCompleted+'/'+cr.mealsToAdult+' bữa')+' · '+(animal.meal?(animal.meal.readyAt<=now?'Có quà':'◷ '+duration(animal.meal.readyAt-now)):'Đói');}
  else $('creatureStatus').textContent=cr.level>state.level?'Cần cấp '+cr.level+' để nhận nuôi':species==='puffskein'?'Miễn phí · tặng 3 phần ăn':'Chuẩn bị '+cr.mealPortions*3+' phần ăn để đón về';
  $('creatureTool').hidden=state.level<DB.animals[0].level;
- const inventoryCount=Object.values(state.inventory).reduce((a,b)=>a+b,0);$('harvestCount').textContent=num(inventoryCount);$('harvestCount').hidden=inventoryCount===0;
+ const inventoryCount=Object.values(state.inventory).reduce((a,b)=>a+b,0);$('harvestCount').textContent=inventoryCount>=1000?Math.floor(inventoryCount/1000)+'k':num(inventoryCount);$('inventoryButton').setAttribute('aria-label','Mở kho · '+num(inventoryCount)+' vật phẩm');$('harvestCount').hidden=inventoryCount===0;
  const readyBuilds=state.construction.filter(j=>j.readyAt<=now).length;$('buildReady').hidden=!readyBuilds;$('buildReady').textContent=readyBuilds;
  if(connected&&$('boostButton')){$('boostButton').hidden=state.level<6;$('boostButton').disabled=!walletReady||busy||(wallet.snapshot?.garden.supplies.boost||0)<1||chosen().some(i=>!slots[i]||E.growth(slots[i],now).mature||(wallet.snapshot?.garden.boostedCropIds||[]).includes(slots[i].id));}
  syncKeeperTitleBadge();
  syncHudV20Buttons();
  $('world').dataset.summary=JSON.stringify({level:state.level,xp:state.xp,plots:state.plots.length,creatures:state.creatures.length,readyCrops:allReady,beds:E.housingCapacity(state),session,revision:state.revision,atmosphere:atmosphereMode,weather:weatherMode,event:eventMode,keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,tourId:activeTourSnapshot?.tour?.id||null});
  workTrays?.refresh(mode);wizard?.refresh();dockControls?.refresh();tickTimers();draw();
+}
+// Small icon + number facts (growth time, XP, portions); the sentence stays in title/aria.
+function stats(node,list){node.replaceChildren(...list.map(([name,value,label])=>el('span',{class:'stat',title:label,'aria-label':label},[pixelIcon(name,1),String(value)])));}
+function shortHours(h){return h===0?'0':h>=24?(h/24)+'n':h+'g';}
+function syncSupplies(){const sup=currentSupplies(),seeds=Object.values(sup.seeds||{}).reduce((a,b)=>a+(Number(b)||0),0);$('waterValue').textContent=num(sup.water||0);$('seedValue').textContent=num(seeds);$('suppliesButton').setAttribute('aria-label',(connected&&!$('galleonCounter').hidden?$('walletValue').textContent+' Galleons · ':'')+num(sup.water||0)+' nước · '+num(seeds)+' hạt · mở cửa hàng');}
+// Always-visible next goal (next-goal.mjs): [what is missing] → [what it opens].
+let goal=null,goalKey='';
+function goalIcon(id,scale=2){return id==='xp'||id==='kit'?pixelIcon(id,scale):items.has(id)?icon(items,id,3,16*scale):pixelIcon(DB.crops.some(c=>c.id===id)?'seed':'feed',scale);}
+function syncGoal(){
+ goal=activeTourSnapshot?null:nextGoal(E,state);const chip=$('nextGoal');chip.hidden=!goal;if(!goal)return;
+ const key=JSON.stringify(goal);if(key===goalKey)return;goalKey=key;
+ const t=goal.target,targetIcon=t.kind==='pen'?pixelIcon('pen'):t.kind==='plot'?pixelIcon('plot'):t.kind==='level'?pixelIcon('xp'):icon(items,t.id,3,32);
+ const needText=goal.need?num(goal.need.n)+' '+(goal.need.id==='xp'?'XP':labels[goal.need.id]||goal.need.id):'Sẵn sàng';
+ chip.replaceChildren(...(goal.need?[goalIcon(goal.need.id),el('b',{class:'goal-count',text:num(goal.need.n)})]:[]),pixelIcon('arrow',1),targetIcon,el('span',{class:'goal-label',text:goal.label}));
+ chip.classList.toggle('goal-ready',!goal.need);chip.setAttribute('aria-label','Mục tiêu gần: '+goal.label+' · cần '+needText);chip.title=goal.label+' · cần '+needText;
+}
+// A tap goes to the place that moves the goal: the plot, the cauldron, the build tray or the pen.
+function followGoal(){
+ if(!goal)return;playtest.track('goal',{route:goal.route});const id=goal.need?.id;
+ if(goal.route==='craft'){setMode('craft');return;}
+ if(goal.route==='build'){setMode('build');return;}
+ if(goal.route==='creature'){selectCreature(goal.target.id);return;}
+ if(id&&CROP[id]&&CROP[id].level<=state.level)seed=id;
+ const ready=state.plots.findIndex(p=>p.slots.some(e=>e&&E.growth(e,logical()).mature)),free=state.plots.findIndex(p=>p.slots.some(e=>!e));
+ focusPlot(ready>=0?ready:free>=0?free:selectedPlot);
 }
 function tickTimers(){const now=logical();document.querySelectorAll('[data-until]').forEach(e=>{const remaining=Number(e.dataset.until)-now;e.textContent=remaining<=0?'Sẵn sàng nhận':(e.dataset.prefix||'')+duration(remaining);e.classList.toggle('ready-text',remaining<=0);});document.querySelectorAll('[data-ready-button]').forEach(e=>e.disabled=Number(e.dataset.readyButton)>now);}
 function draw(clock=performance.now()){const renderState=activeTourSnapshot?activeTourSnapshot.state:state;const renderAtmo=activeTourSnapshot?activeTourSnapshot.atmosphereMode:atmosphereMode;const renderWeather=activeTourSnapshot?activeTourSnapshot.weatherMode:weatherMode;const renderEarnedRot=activeTourSnapshot?activeTourSnapshot.decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations};renderer?.render(renderState,{selectedPlot,line:activeTourSnapshot?[]:mode==='plant'?chosen():[],now:Date.now(),clock:(!motionEnabled||motionMedia.matches)?0:clock,animationClock:clock,propsVisible,grid,decorations:currentDecorations(),decorationRotations:renderEarnedRot,creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities(),previewDecoration,previewLayout,atmosphereMode:renderAtmo,weatherMode:renderWeather,eventMode,...(activeTourSnapshot?{}:tutorialRenderOptions())});placeTutorialBubble();const stage=renderer?.growthStage?.();if(stage&&(!connected||walletReady)&&stage.id!==lastGardenStage){const previous=lastGardenStage;lastGardenStage=stage.id;$('gardenStageName').textContent=stage.name;$('plotsButton').title='Giai đoạn '+stage.id+'/6 · '+stage.name;if(!activeTourSnapshot&&previous&&stage.id>previous){camera?.overview();message('Khu vườn đã mở rộng · '+stage.name+'.');}}}
@@ -482,13 +509,13 @@ $('creatureOptions').addEventListener('click',event=>{if(event.target===$('creat
 $('seedOptionsButton').onclick=()=>$('seedOptions').showModal();
 $('closeSeedOptions').onclick=()=>$('seedOptions').close();
 $('seedOptions').addEventListener('click',event=>{if(event.target===$('seedOptions')){const r=$('seedOptions').getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)$('seedOptions').close();}});
-$('dockToggle').onclick=()=>{const collapsed=document.body.classList.toggle('dock-collapsed');$('dockToggle').setAttribute('aria-expanded',String(!collapsed));$('dockToggle').setAttribute('aria-label',collapsed?'Mở khay thao tác':'Thu gọn khay thao tác');$('dockToggle').textContent=collapsed?'⌃':'⌄';};
+$('dockToggle').onclick=()=>{const collapsed=document.body.classList.toggle('dock-collapsed');$('dockToggle').setAttribute('aria-expanded',String(!collapsed));$('dockToggle').setAttribute('aria-label',collapsed?'Mở khay thao tác':'Thu gọn khay thao tác');};
 
 const profileUI=setupProfile(message,()=>{$('levelButton').focus();panels.show('profile');});$('avatarButton').onclick=()=>panels.show('profile');
 
 function openStore(initialFilter='all'){panels.close();showStore({state,items,wallet,connected,initialFilter,decorAssets,onDecorate:openDecoration,onPurchase:async(id,count)=>{if(busy)throw Error('Đang xử lý thao tác khác.');busy=true;try{const before=state;await wallet.buy(id,count);audio.play('buy');acceptWallet(before,'Đã mua vật tư.');}finally{busy=false;}}});}
 function openDecoration(item){if(!connected||!walletReady)return;const fullItem={...(decorAssets.get(item.id)||{}),...item};showDecorationPlacement({item:fullItem,getStage:()=>renderer?.growthStage?.(),getDecorations:currentDecorations,preview:value=>{previewDecoration=value;draw();},camera,iso,onPlace:async(itemId,slot,facing='default')=>{if(busy)throw Error('Đang xử lý thao tác khác.');busy=true;try{const before=state;localDecorRotations[itemId]=facing;persistPrefs();audio.play('rotate');recordFestivalAction('rotate');wizard?.recordQuestAction?.('rotate');await wallet.act({action:'placeDecoration',itemId,slot,facing});const angleLabel=facing==='right'?'Góc nhìn qua phải ↗':'Góc hiện tại ↖';acceptWallet(before,slot===null?'Đã cất đồ trang trí.':`Đã đặt đồ trang trí (${angleLabel}).`);}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'');}catch{}}throw e;}finally{busy=false;}},onClose:()=>draw()});}
-$('shopButton').onclick=()=>openStore();
+$('shopButton').onclick=()=>openStore();$('suppliesButton').onclick=()=>openStore();$('nextGoal').onclick=followGoal;
 if(qa)window.__HAGRID_GARDEN_QA__={
  getWorldSnapshot:()=>({order:renderer?.order(),loaded:renderer?.loaded,missing:renderer?.missing,stage:renderer?.growthStage(),animations:renderer?.animations()}),
  getSnapshot:()=>({clock:lastClock,loaded,walletReady,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,activeTourId:activeTourSnapshot?.tour?.id||null,soundEnabled:audio.enabled,supplies:currentSupplies(),storageKey:gardenStorage.storageKey,state:{...state,decorations:currentDecorations(),decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations},creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities()}}),
@@ -526,13 +553,21 @@ if(qa)window.__HAGRID_GARDEN_QA__={
 $('cropCareButton').onclick=()=>{$('seedOptions').close();audio.play('care');recordFestivalAction('care');wizard?.recordQuestAction?.('care');syncHudV20Buttons();renderer?.animate('care',{plot:selectedPlot,cells:chosen().filter(i=>state.plots[selectedPlot].slots[i])});message('Đã chăm cây · tương tác thư giãn, không cộng XP hoặc rút ngắn thời gian.');};
 $('petButton').onclick=()=>{$('creatureOptions').close();handlePetCreature(species);};
 
-function acceptWallet(before,text,showLevelChange=true){state=wallet.snapshot.garden.progression;walletReady=true;const juiceEvents=renderer?.react?.(before,state)||[];refresh();if(showLevelChange)showRewards(before,state,juiceEvents);panels?.refresh();if(showLevelChange&&state.level>before.level)celebrate(before.level,state.level);$('walletValue').textContent=num(wallet.snapshot.wallet.spendable)+' G';const p=wallet.snapshot.profile;$('playerName').textContent=p.username||'Thành viên thử nghiệm';$('avatarButton').title='Hồ sơ thành viên trên emulator';if(p.avatarUrl){$('avatarGlyph').replaceChildren(el('img',{src:p.avatarUrl,alt:'Avatar '+(p.username||'thành viên'),style:'width:28px;height:28px;border-radius:50%;object-fit:cover'}));}$('levelButton').title=WALLET_TEXT.title;if(text)message(text);}
+function acceptWallet(before,text,showLevelChange=true){state=wallet.snapshot.garden.progression;walletReady=true;const juiceEvents=renderer?.react?.(before,state)||[];refresh();if(showLevelChange)showRewards(before,state,juiceEvents);panels?.refresh();if(showLevelChange&&state.level>before.level)celebrate(before.level,state.level);$('walletValue').textContent=num(wallet.snapshot.wallet.spendable);$('galleonCounter').hidden=false;syncSupplies();const p=wallet.snapshot.profile;$('playerName').textContent=p.username||'Thành viên thử nghiệm';$('avatarButton').title='Hồ sơ thành viên trên emulator';if(p.avatarUrl){$('avatarGlyph').replaceChildren(el('img',{src:p.avatarUrl,alt:'Avatar '+(p.username||'thành viên'),style:'width:28px;height:28px;border-radius:50%;object-fit:cover'}));}$('levelButton').title=WALLET_TEXT.title;if(text)message(text);}
 if(connected){
  const badge=el('div',{class:'emulator-badge',text:WALLET_TEXT.badge});$('gameShell').append(badge);
  const boost=button('Bón phân',()=>{$('seedOptions').close();return run(null,'Đã bón phân cho hàng đang chọn.',{action:'boost',plotIndex:selectedPlot,cells:chosen()});},{id:'boostButton',hidden:state.level<6,disabled:true});$('cropCareButton').after(boost);
  wallet.read().then(()=>{acceptWallet(state,WALLET_TEXT.ready,false);applyInitialView();}).catch(e=>{message(e.message);badge.textContent='Emulator chưa kết nối · nhấn để thử lại';badge.role='button';badge.tabIndex=0;const retry=()=>wallet.read().then(()=>{acceptWallet(state,'Đã nối ví thử nghiệm.',false);badge.textContent=WALLET_TEXT.badge;}).catch(e=>message(e.message));badge.onclick=retry;badge.onkeydown=e=>{if(e.key==='Enter')retry();};});
 }
 
+// Compact HUD: Cửa hàng, Lễ hội, Cảnh and the camera column fold into one button.
+// Phones start folded and fold again after 12 s without a tap on those icons.
+const hudPhone=matchMedia('(max-width:599px),(max-height:450px) and (orientation:landscape)');let hudFoldTimer=0;
+function setHudCompact(on){document.body.classList.toggle('hud-compact',on);const t=$('hudToggle');t.setAttribute('aria-expanded',String(!on));t.setAttribute('aria-label',on?'Mở thêm biểu tượng':'Thu gọn biểu tượng');t.title=on?'Mở thêm':'Thu gọn';armHudFold();}
+function armHudFold(){clearTimeout(hudFoldTimer);if(hudPhone.matches&&!document.body.classList.contains('hud-compact'))hudFoldTimer=setTimeout(()=>setHudCompact(true),12000);}
+$('hudToggle').onclick=()=>{playtest.track('hud_toggle');setHudCompact(!document.body.classList.contains('hud-compact'));};
+for(const n of document.querySelectorAll('.hud-actions,.camera-tools'))n.addEventListener('pointerdown',armHudFold);
+hudPhone.addEventListener('change',()=>setHudCompact(hudPhone.matches));setHudCompact(hudPhone.matches);
 // Collapse on entry to short landscape, including phone rotation. The tray remains reopenable.
 const shortLandscape=matchMedia('(max-height:450px) and (orientation:landscape)');
 function fitLandscape(){if(shortLandscape.matches&&!document.body.classList.contains('dock-collapsed'))$('dockToggle').onclick();}

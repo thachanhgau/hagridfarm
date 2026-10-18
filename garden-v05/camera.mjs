@@ -11,7 +11,7 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
   const docks=visible("#playDock, #selectionHint").filter(r=>r.top-vr.top>top);
   const bottom=Math.max(top+60,Math.min(vr.height-8,...docks.map(r=>r.top-vr.top)));
   const left=0,right=vr.width;
-  const fullDesktop=vr.width>=900&&visible(".owl-mail").length>0;
+  const fullDesktop=vr.width>=900&&visible("#owlMailButton").length>0;
   const bounds=fullDesktop?{left:b.left+20,right:b.right-20,top:b.top+18,bottom:b.bottom-28}:{left:b.left,right:b.right,top:b.top,bottom:b.bottom};
   const rawFit=Math.min(1.5,(right-left)/(bounds.right-bounds.left),(bottom-top)/(bounds.bottom-bounds.top));
   fitScale=fullDesktop?Math.min(1.5,Math.max(rawFit,vr.width/map.width)):rawFit;

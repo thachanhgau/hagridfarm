@@ -229,3 +229,13 @@ test('Scene renderer V20 integration: renders night/dusk atmosphere, 2-angle cre
   assert.ok(calls.some(([name]) => name === 'fillText'));
 });
 
+
+test('Hagrid speech text sits inside its box when the bubble grows right from his head', async () => {
+  const {drawHagridSpeechBubble} = await import('./garden-atmosphere.mjs');
+  const calls = {};
+  const ctx = {measureText: (str) => ({width: String(str).length * 7}), fillRect: (...a) => { calls.fillRect ??= a; }, strokeRect() {}, fillText: (...a) => { calls.fillText = a; }, save() {}, restore() {}};
+  drawHagridSpeechBubble(ctx, 100, 600, 'Đèn lồng Bí ngô Samhain đang tỏa sáng khắp vườn!', {align: 'right'});
+  const [bx, , bw] = calls.fillRect;
+  assert.equal(bx, 76); // starts 24 px left of Hagrid, never centred on the forest edge
+  assert.equal(calls.fillText[1], Math.round(bx + bw / 2));
+});

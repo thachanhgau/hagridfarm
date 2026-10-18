@@ -1,3 +1,4 @@
+import { setAction } from './pixel-icons.mjs?v=24.9.28';
 import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.28';
 import { DB } from './balance-data.mjs';
 
@@ -351,7 +352,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       dom.captionMeta.textContent = 'Chưa có công thức';
       dom.detailText.textContent = 'Chưa có công thức đã mở.';
       dom.action.disabled = true;
-      dom.action.textContent = 'Chưa mở';
+      setAction(dom.action, { icon: 'craft', label: 'Chưa mở' });
       return;
     }
 
@@ -378,8 +379,8 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     else if (choice.missing) actionText = 'Thiếu đồ';
     else if (!choice.canCraft) actionText = 'Chưa mở';
     dom.action.disabled = !ready || !choice.canCraft;
-    dom.action.textContent = actionText;
-    dom.action.title = summary;
+    const go = actionText.startsWith('Làm');
+    setAction(dom.action, { icon: 'craft', label: go ? 'Làm' : actionText, count: go ? `×${choice.batches}` : '', text: `${actionText} · ${summary}` });
   }
 
   function renderBuild(state) {
@@ -396,7 +397,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       dom.captionMeta.textContent = 'Chưa có công trình';
       dom.detailText.textContent = 'Chưa có công trình đã mở.';
       dom.action.disabled = true;
-      dom.action.textContent = 'Chưa mở';
+      setAction(dom.action, { icon: 'build', label: 'Chưa mở' });
       return;
     }
 
@@ -424,8 +425,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     else if (!choice.previousBuilt) actionText = 'Chưa đủ';
     else if (!choice.canBuild) actionText = 'Chưa mở';
     dom.action.disabled = !ready || !choice.canBuild;
-    dom.action.textContent = actionText;
-    dom.action.title = summary;
+    setAction(dom.action, { icon: 'build', label: actionText, text: `${actionText} · ${summary}` });
   }
 
   function refresh(mode) {
