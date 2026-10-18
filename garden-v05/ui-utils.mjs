@@ -345,19 +345,16 @@ export function plantingAction({loaded,connected,walletReady,unlocked,occupied,c
 
 /**
  * A server refusal as one icon and a few words (connected play). `item` is a crop or ration id
- * shown with its sprite, `px` a pixel icon. missing-crops: `details.missing[{resource,required,have}]`,
- * else the engine's "not enough <id>"; insufficient-galleons: `details.shortBy`, else `required`
- * minus `details.spendable` (or the wallet's `spendable` passed in).
+ * shown with its sprite, `px` a pixel icon. missing-crops lists every short crop in
+ * `details.missing[{resource,required,have}]`; insufficient-galleons carries `shortBy`.
  */
-export function serverRefusal(error,{labels={},spendable=0,modelText=null}={}){
+export function serverRefusal(error,{labels={},modelText=null}={}){
  const d=error?.details||{},reason=error?.reason||d.reason||'',label=id=>labels[id]||id;
  const missing=Array.isArray(d.missing)?d.missing.filter(m=>m?.resource):[];
- const crop=missing[0]?.resource||(d.resource&&!String(d.resource).includes('.')?d.resource:/(?:not enough|need \w+) ([a-z0-9_]+)/.exec(String(d.detail||''))?.[1]);
- const cropText=missing.length?'Thiếu '+missing.map(m=>num(Math.max(0,m.required-(m.have||0)))+' '+label(m.resource)).join(' · '):'Thiếu '+label(crop);
- const short=Number.isFinite(Number(d.shortBy))?Math.max(0,Number(d.shortBy)):Math.max(0,(Number(d.required)||0)-(Number(d.spendable??spendable)||0));
+ const short=Math.max(0,Number(d.shortBy)||0);
  const seed=/^seeds\.(.+)$/.exec(String(d.resource||''))?.[1];
  const view={
-  'missing-crops':crop?{item:crop,text:cropText}:{px:'harvest',text:'Thiếu nông sản'},
+  'missing-crops':missing.length?{item:missing[0].resource,text:'Thiếu '+missing.map(m=>num(m.required-m.have)+' '+label(m.resource)).join(' · ')}:{px:'harvest',text:'Thiếu nông sản'},
   'insufficient-galleons':{px:'coin',text:short?'Thiếu '+num(short)+' G':'Thiếu Galleons'},
   'insufficient-balance':{px:'coin',text:short?'Thiếu '+num(short)+' G':'Thiếu Galleons'},
   'wallet-frozen':{px:'coin',text:'Ví Gringotts đang khóa'},

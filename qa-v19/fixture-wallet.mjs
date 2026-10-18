@@ -1,10 +1,10 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.33";
-import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.33";
-import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.33";
-import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.33";
+import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.34";
+import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.34";
+import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.34";
+import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.34";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs";
-import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.33";
+import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.34";
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
 // garden-daily-core.js, garden-festival-core.js, garden-keeper-core.js): same commands, error reasons and response shapes.
@@ -57,9 +57,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  const garden={
   progression:state,
   supplies:{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?36:0])),water:213,boost:2},
-  // `facing` is stored per item (proposed server shape); a same-slot placement with a new facing turns it.
   decorations:{owned:full?storeDecors:["decor_pumpkin_lantern"],placements:full?[...storeDecors,null,null,null,null,null,null].slice(0,6):["decor_pumpkin_lantern",null,null,null,null,null],
-   facing:full?{decor_pumpkin_lantern:"default",decor_broom_rack:"right",decor_cauldron:"default",decor_mandrake_planter:"right",decor_floating_candles:"default",decor_vine_arch:"right"}:{decor_pumpkin_lantern:"default"}},
+   rotations:full?{decor_pumpkin_lantern:"default",decor_broom_rack:"right",decor_cauldron:"default",decor_mandrake_planter:"right",decor_floating_candles:"default",decor_vine_arch:"right"}:{decor_pumpkin_lantern:"default"}},
   boostedCropIds:[],
   festival:{joinDay:dayKey(),pointsBySeason:{},claimedMilestones:[]},
   bonding:{bySpecies:{},claimedGifts:[]},
@@ -200,17 +199,20 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   for(const s of entries){s.plantedAt-=Math.floor((E.CROP[s.species]?.growMs||s.growMs)*0.1);next.boostedCropIds.push(s.id);}
   next.supplies.boost-=1;next.progression.revision+=1;
  }
+ // garden-action-core applyDecorationPlacement: `facing` is stored in decorations.rotations; the same slot
+ // with a new facing is a turn (counted as rotate), the same slot and facing is action-noop.
  function place(c,next){
   const dec=next.decorations,from=dec.placements.indexOf(c.itemId);
+  if(c.facing!==undefined&&c.facing!=="default"&&c.facing!=="right")fail("invalid-action-input","facing không hợp lệ.");
   if(!dec.owned.includes(c.itemId))fail("decoration-not-owned","Đồ trang trí chưa được sở hữu.");
-  const turn=(c.facing==="right"||c.facing==="default")&&(dec.facing[c.itemId]||"default")!==c.facing;
+  const turned=c.facing!==undefined&&c.facing!==(dec.rotations[c.itemId]||"default");
+  if(c.facing!==undefined)dec.rotations[c.itemId]=c.facing;
   if(c.slot===null){if(from<0)fail("action-noop","Đồ trang trí đã được cất.");dec.placements[from]=null;}
-  else if(from===c.slot){if(!turn)fail("action-noop","Đồ trang trí đã ở vị trí này.");}
+  else if(from===c.slot){if(!turned)fail("action-noop","Đồ trang trí đã ở vị trí và hướng này.");}
   else{
    if(dec.placements[c.slot]!==null)fail("slot-occupied","Vị trí đồ trang trí đã có món khác.");
    dec.placements[c.slot]=c.itemId;if(from>=0)dec.placements[from]=null;
   }
-  if(turn)dec.facing[c.itemId]=c.facing;
   next.progression.revision+=1;
  }
  function claim(c,next,d,extra){

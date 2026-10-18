@@ -165,8 +165,9 @@ test('local play (no wallet) still counts and claims on the device store', () =>
 
 test('server refusals read as one icon and a few words', () => {
   const labels = {pumpkin: 'Bí ngô', oats: 'Yến mạch'};
-  assert.deepEqual(serverRefusal({reason: 'missing-crops', details: {detail: 'not enough oats'}}, {labels}), {reason: 'missing-crops', item: 'oats', text: 'Thiếu Yến mạch'});
-  assert.deepEqual(serverRefusal({reason: 'insufficient-galleons', details: {required: 750}}, {spendable: 600}), {reason: 'insufficient-galleons', px: 'coin', text: 'Thiếu 150 G'});
+  assert.deepEqual(serverRefusal({reason: 'missing-crops', details: {missing: [{resource: 'oats', required: 9, have: 4}]}}, {labels}), {reason: 'missing-crops', item: 'oats', text: 'Thiếu 5 Yến mạch'});
+  assert.deepEqual(serverRefusal({reason: 'missing-crops', details: {detail: 'not enough oats'}}, {labels}), {reason: 'missing-crops', px: 'harvest', text: 'Thiếu nông sản'}, 'no regex on the engine text');
+  assert.deepEqual(serverRefusal({reason: 'insufficient-galleons', details: {required: 750, spendable: 600, shortBy: 150}}), {reason: 'insufficient-galleons', px: 'coin', text: 'Thiếu 150 G'});
   assert.equal(serverRefusal({reason: 'missing-supply', details: {resource: 'seeds.pumpkin'}}, {labels}).text, 'Thiếu hạt Bí ngô');
   assert.equal(serverRefusal({reason: 'wallet-frozen'}).px, 'coin');
   assert.equal(serverRefusal({reason: 'already-claimed'}).text, 'Đã nhận rồi');
@@ -248,7 +249,7 @@ test('server bonding/achievement switch: cards come from the response, local cou
   assert.equal(claimAchievementReward('ach_sprout_apprentice', {state, storage: local}).ok, true);
 });
 
-test('structured refusals: every missing crop with its shortfall, shortBy for Galleons; old shapes still read', () => {
+test('structured refusals (server ad615d0d1): every missing crop with its shortfall, shortBy for Galleons', () => {
   const short = createFixtureServer({simulate: true, scenario: 'missing'});
   let error;
   try {act(short, {action: 'build', expansionId: 'plot_12'}, 'b1');} catch (e) {error = e;}
@@ -258,15 +259,15 @@ test('structured refusals: every missing crop with its shortfall, shortBy for Ga
   const poor = createFixtureServer({simulate: true, galleons: 100});
   try {act(poor, {action: 'build', expansionId: 'plot_12'}, 'b2');} catch (e) {error = e;}
   assert.deepEqual([error.details.required, error.details.spendable, error.details.shortBy], [750, 100, 650]);
-  assert.equal(serverRefusal(error, {spendable: 9999}).text, 'Thiếu 650 G', 'shortBy wins over a stale wallet');
+  assert.equal(serverRefusal(error).text, 'Thiếu 650 G');
   assert.equal(serverRefusal({reason: 'bond-incomplete'}).px, 'heart');
   assert.equal(serverRefusal({reason: 'achievement-locked'}).text, 'Thành tựu chưa mở');
 });
 
-test('a decoration turned in place stores its facing and counts as one rotate', () => {
+test('a decoration turned in place stores its facing in decorations.rotations and counts as one rotate', () => {
   const server = createFixtureServer();
   const turned = act(server, {action: 'placeDecoration', itemId: 'decor_pumpkin_lantern', slot: 0, facing: 'right'}, 'r1');
-  assert.equal(turned.garden.decorations.facing.decor_pumpkin_lantern, 'right');
+  assert.equal(turned.garden.decorations.rotations.decor_pumpkin_lantern, 'right');
   assert.equal(turned.receipt.freeAction.kind, 'rotate');
   assert.throws(() => act(server, {action: 'placeDecoration', itemId: 'decor_pumpkin_lantern', slot: 0, facing: 'right'}, 'r2'), e => e.reason === 'action-noop');
 });

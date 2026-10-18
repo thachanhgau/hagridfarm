@@ -1,5 +1,5 @@
 // Connected mode on the in-memory fixture wallet (server rules), iPhone 390x664, in WebKit:
-// owl quests + chest, a claim, the festival panel with free-tap caps, a bond gift, a pet, an achievement,
+// owl quests + chest, a claim, the festival panel with free-tap caps, a bond gift, a pet, a decoration turned in place, an achievement,
 // and builds the server refuses.
 // Usage: node qa-v19/server-daily-shots.mjs <baseUrl> <outDir>
 import fs from 'node:fs/promises';
@@ -66,6 +66,12 @@ const toast = (page) => page.evaluate(() => ({text: document.querySelector('#toa
   await page.click('[data-affinity-pet="puffskein"]');
   await page.waitForTimeout(600);
   await shot(page, '9-bond-pet', errors, async () => { const t = await toast(page); console.log('  toast:', JSON.stringify(t)); return /Cấp 4/.test(t.text); });
+  // Turn the placed lantern in place: placeDecoration on its own slot with a new facing, stored by the server.
+  await page.evaluate(() => window.__HAGRID_GARDEN_QA__.openPanel('collection'));
+  await page.waitForTimeout(400);
+  await page.getByRole('button', {name: 'Xoay sang ↗ Góc phải'}).first().click();
+  await page.waitForTimeout(600);
+  await shot(page, '11-decor-turned-in-place', errors, async () => { const s = await page.evaluate(() => window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations); console.log('  decorations:', JSON.stringify({placements: s.placements, rotations: s.rotations})); return s.placements[0] === 'decor_pumpkin_lantern' && s.rotations.decor_pumpkin_lantern === 'right'; });
   await page.evaluate(() => window.__HAGRID_GARDEN_QA__.openAchievements());
   await page.waitForTimeout(400);
   await page.click('[data-claim-achievement="ach_sprout_apprentice"]');
