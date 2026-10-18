@@ -1,5 +1,6 @@
 import {getGardenStorage} from './garden-storage.mjs';
 import {el, button} from './ui-utils.mjs?v=24.9.35';
+import {pixelIcon, rewardChips, lockBadge, iconButton} from './pixel-icons.mjs?v=24.9.35';
 
 export const ACHIEVEMENTS_STORAGE_KEY = 'hpvn-garden-v22-achievements';
 
@@ -300,9 +301,13 @@ export function claimAchievementReward(achId, {
   return {ok: true, reward: target.reward, achievement: target, summary: updated};
 }
 
+// Tile icon per category: the pixel set, not system emoji.
+const CATEGORY_ICONS = Object.freeze({'Khởi đầu': 'seed', 'Sinh vật': 'heart', 'Cây trồng': 'sow', 'Chế biến': 'craft', 'Công trình': 'build', 'Cảnh quan': 'scenery', 'Bộ sưu tập': 'chest', 'Huyền thoại': 'festival', 'Cộng đồng': 'owl', 'Đỉnh cao': 'trophy'});
+
 export function renderAchievementsSection({
   state = {},
   extra = {},
+  items = null,
   storage = getGardenStorage(),
   onSelectTitle,
   onClaimReward,
@@ -310,67 +315,40 @@ export function renderAchievementsSection({
   const summary = evaluateAchievements(state, extra, storage);
   const root = el('div', {class: 'achievements-panel-root'});
 
-  const hero = el('section', {class: 'journey-hero-card achievements-hero-card'}, [
-    el('div', {class: 'journey-hero-main'}, [
-      el('div', {class: 'journey-medal-seal'}, [
-        el('small', {text: 'DANH HIỆU'}),
-        el('b', {text: `${summary.unlockedCount}/${summary.totalCount}`}),
-      ]),
-      el('div', {class: 'journey-hero-copy'}, [
-        el('small', {class: 'journey-kicker', text: 'THÀNH TỰU'}),
-        el('h3', {text: summary.activeTitle.badge}),
-        el('p', {
-          text: 'Chọn danh hiệu để đeo.',
-        }),
-      ]),
+  root.append(el('section', {class: 'gp-hero achievements-hero-card'}, [
+    el('div', {class: 'gp-medal'}, [pixelIcon('trophy', 2), el('b', {text: `${summary.unlockedCount}/${summary.totalCount}`})]),
+    el('div', {class: 'gp-hero-copy'}, [
+      el('small', {text: 'Đang đeo'}),
+      el('strong', {text: summary.activeTitle.title || summary.activeTitle.badge}),
     ]),
-  ]);
-  root.append(hero);
+  ]));
 
-  const grid = el('div', {class: 'cards achievements-grid'});
+  const grid = el('div', {class: 'cards achievements-grid gp-tiles'});
   for (const ach of summary.items) {
     const isEquipped = summary.activeTitle.id === ach.id;
-    const card = el('article', {
-      class: `card achievement-card${ach.unlocked ? ' is-unlocked' : ' locked'}${isEquipped ? ' is-equipped' : ''}`,
-      'data-achievement-id': ach.id,
-    }, [
-      el('div', {class: 'tour-card-top'}, [
-        el('span', {class: 'journey-stage-badge', text: ach.category}),
-        el('span', {
-          class: `almanac-status-pill ${ach.unlocked ? 'is-ready' : 'is-locked'}`,
-          text: isEquipped ? '✦ Đang đeo' : ach.unlocked ? '✓ Đã mở khóa' : '🔒 Chưa mở',
-        }),
-      ]),
-      el('strong', {class: 'tour-card-title', text: `${ach.icon} ${ach.title}`}),
-      el('small', {class: 'tour-card-keeper', text: ach.progressText}),
-      el('details', {}, [el('summary', {text:'Điều kiện'}), el('p', {text:ach.description})]),
-      el('div', {class: 'tour-reward-pill'}, [
-        el('span', {text: ach.reward.label}),
-        el('b', {text: ach.claimed ? '✓ Đã nhận' : ach.unlocked ? '✦ Sẵn sàng' : 'Chờ mở khóa'}),
-      ]),
-    ]);
-
-    const btnRow = el('div', {class: 'actions'});
-    btnRow.append(
-      button(
-        isEquipped ? 'Đang đeo' : ach.unlocked ? 'Đeo' : 'Chưa mở khóa',
-        () => onSelectTitle?.(ach.id),
-        {
-          class: isEquipped ? '' : 'primary',
-          disabled: !ach.unlocked || isEquipped,
-          'data-equip-title': ach.id,
-        },
-      ),
-    );
+    const pct = ach.target ? Math.min(100, Math.round((ach.current / ach.target) * 100)) : ach.unlocked ? 100 : 0;
+    const actions = el('div', {class: 'gp-tile-actions'});
     if (ach.unlocked && !ach.claimed) {
-      btnRow.append(
-        button('Nhận', () => onClaimReward?.(ach.id), {
-          'data-claim-achievement': ach.id,
-        }),
-      );
+      actions.append(iconButton('chest', `Nhận quà ${ach.title}`, () => onClaimReward?.(ach.id), {text: 'Nhận', class: 'primary', 'data-claim-achievement': ach.id}));
     }
-    card.append(btnRow);
-    grid.append(card);
+    if (isEquipped) actions.append(el('span', {class: 'gp-state is-on', text: 'Đang đeo'}));
+    else if (ach.unlocked) actions.append(iconButton('profile', `Đeo danh hiệu ${ach.title}`, () => onSelectTitle?.(ach.id), {text: 'Đeo', 'data-equip-title': ach.id}));
+    else if (ach.claimed) actions.append(el('span', {class: 'gp-state', text: 'Đã nhận'}));
+    grid.append(el('article', {
+      class: `card achievement-card gp-tile${ach.unlocked ? ' is-unlocked' : ' locked is-locked'}${isEquipped ? ' is-equipped' : ''}${ach.unlocked && !ach.claimed ? ' is-ready' : ''}`,
+      'data-achievement-id': ach.id,
+      title: ach.description,
+    }, [
+      el('div', {class: 'gp-tile-art'}, [
+        pixelIcon(CATEGORY_ICONS[ach.category] || 'trophy', 3),
+        ach.unlocked ? (ach.claimed ? el('span', {class: 'gp-corner is-done'}, [pixelIcon('check', 1)]) : null) : lockBadge(),
+      ]),
+      el('strong', {class: 'gp-tile-name', text: ach.title}),
+      el('div', {class: 'gp-meter', role: 'progressbar', 'aria-label': ach.progressText, 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': String(pct)}, [el('span', {style: `width:${pct}%`})]),
+      el('small', {class: 'gp-tile-cond', text: ach.description}),
+      rewardChips(items, ach.reward),
+      actions,
+    ]));
   }
   root.append(grid);
   return root;

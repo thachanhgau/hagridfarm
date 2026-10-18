@@ -291,21 +291,23 @@ export function drawAtmosphereOverlay(ctx, width, height, { mode = 'day', weathe
     const lights = collectLightSources(objects);
     lightCount = lights.length;
     const pulse = clock > 0 ? 0.94 + 0.06 * Math.sin(clock / 520) : 1;
+    // Pixel glows: stepped 2:1 iso diamonds on a 2 px grid (fillRect only), ~40% of the
+    // light's nominal radius so the sprites underneath stay readable.
     for (const light of lights) {
-      const r = Math.round(light.radius * cfg.glowIntensity * pulse);
+      const r = light.radius * cfg.glowIntensity * pulse * 0.4;
       const [cr, cg, cb] = light.color;
-      for (const [scale, alpha] of [[1.0, 0.11], [0.64, 0.18], [0.34, 0.26]]) {
-        const ringR = Math.max(6, Math.round(r * scale));
-        const a = Number((alpha * cfg.glowIntensity).toFixed(3));
-        ctx.beginPath?.();
-        if (typeof ctx.ellipse === 'function') {
-          ctx.ellipse(Math.round(light.x), Math.round(light.y), ringR, Math.round(ringR * 0.72), 0, 0, Math.PI * 2);
-        } else {
-          ctx.arc?.(Math.round(light.x), Math.round(light.y), ringR, 0, Math.PI * 2);
+      const cx = Math.round(light.x / 2) * 2;
+      const cy = Math.round(light.y / 2) * 2;
+      for (const [scale, alpha] of [[1.0, 0.08], [0.64, 0.12], [0.34, 0.16]]) {
+        const rx = Math.max(8, Math.round(r * scale / 4) * 4);
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},${Number((alpha * cfg.glowIntensity).toFixed(3))})`;
+        for (let dy = 2 - rx / 2; dy < rx / 2 - 2; dy += 2) {
+          const half = rx - 2 * (dy < 0 ? -dy : dy + 2); // 2:1 iso edge, symmetric about cy
+          ctx.fillRect?.(cx - half, cy + dy, half * 2, 2);
         }
-        ctx.fillStyle = `rgba(${cr},${cg},${cb},${a})`;
-        ctx.fill?.();
       }
+      ctx.fillStyle = `rgba(${cr},${cg},${cb},${Number((0.22 * cfg.glowIntensity).toFixed(3))})`;
+      ctx.fillRect?.(cx - 2, cy - 2, 4, 4);
     }
 
     const fireflies = computeFireflies(clock, stageBounds || { left: 180, top: 140, right: width - 180, bottom: height - 140 }, cfg.fireflyCount);
@@ -392,4 +394,50 @@ export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false, sc
   // Centre the text in the box, not on Hagrid: a 'right' bubble starts at his head.
   ctx.fillText?.(copy, Math.round(bx + boxW / 2), Math.round(by + boxH / 2));
   ctx.restore?.();
+}
+
+// Small opaque pixel bubble for a creature: its tail tip sits 2*k px above `top`
+// (the sprite's top edge) at `x`. `avoid` is a box ({left,top,right,bottom}) or a
+// sprite ({xy, asset}) the bubble must not cover, e.g. the owl perch; it slides sideways off it.
+export function drawCreatureBubble(ctx, x, top, text, { scale = 1, avoid = null } = {}) {
+  if (!ctx || !text) return null;
+  const copy = String(text).slice(0, 16);
+  const k = Math.max(1, Math.round(Number(scale) || 1));
+  ctx.save?.();
+  ctx.font = `bold ${8 * k}px sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  const measured = ctx.measureText?.(copy)?.width || copy.length * 5 * k;
+  const w = Math.ceil(measured / k / 2) * 2 * k + 6 * k;
+  const h = 12 * k;
+  const tipY = Math.round(top) - 2 * k;
+  const by = tipY - 2 * k - h;
+  const cx = Math.round(x);
+  let bx = cx - Math.round(w / 2 / k) * k;
+  const b = avoid?.asset?.bounds;
+  if (b && avoid.xy) {
+    const left = avoid.xy[0] - (avoid.asset.pivotX || 0) + b.x;
+    const boxTop = avoid.xy[1] - (avoid.asset.pivotY || 0) + b.y;
+    avoid = { left, top: boxTop, right: left + b.w, bottom: boxTop + b.h };
+  } else if (avoid?.asset) avoid = null;
+  if (avoid && bx < avoid.right && bx + w > avoid.left && by < avoid.bottom && tipY > avoid.top) {
+    bx = cx >= (avoid.left + avoid.right) / 2 ? Math.ceil(avoid.right) + 2 * k : Math.floor(avoid.left) - 2 * k - w;
+  }
+  // Tail stays inside the box, as close to the creature as the box allows.
+  const tx = Math.min(bx + w - 4 * k, Math.max(bx + 4 * k, cx));
+  const ink = '#231F2E';
+  const paper = '#F5D69A';
+  ctx.fillStyle = ink; // stepped-corner outline, k px thick
+  ctx.fillRect?.(bx + k, by, w - 2 * k, h);
+  ctx.fillRect?.(bx, by + k, w, h - 2 * k);
+  ctx.fillRect?.(tx - 2 * k, by + h, 4 * k, k);
+  ctx.fillRect?.(tx - k, by + h + k, 2 * k, k);
+  ctx.fillStyle = paper;
+  ctx.fillRect?.(bx + 2 * k, by + k, w - 4 * k, h - 2 * k);
+  ctx.fillRect?.(bx + k, by + 2 * k, w - 2 * k, h - 4 * k);
+  ctx.fillRect?.(tx - k, by + h - k, 2 * k, 2 * k);
+  ctx.fillStyle = ink;
+  ctx.fillText?.(copy, bx + w / 2, by + Math.round(h / 2));
+  ctx.restore?.();
+  return { left: bx, top: by, right: bx + w, bottom: tipY };
 }

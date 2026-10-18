@@ -1,4 +1,5 @@
 import {el, button, num, hours, visualItemIcon} from './ui-utils.mjs?v=24.9.35';
+import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=24.9.35';
 
 /**
  * V21.0 Direction 2:
@@ -314,111 +315,59 @@ export function buildAlmanacChains(DB, state = {}) {
 export function renderAlmanacSection({DB, items, state, onSelectCrop, onSelectCreature, onOpenCraft}) {
   const {creatureChains, cropUsages} = buildAlmanacChains(DB, state);
   const wrap = el('div', {class: 'almanac-view'});
+  const arrow = () => el('span', {class: 'gp-chain-arrow', 'aria-hidden': 'true'}, [pixelIcon('arrow', 1)]);
+  const stock = (id, n, have, label) => el('span', {class: `gp-chain-item${have >= n ? ' has-stock' : ''}`, title: `${label}: kho ${num(have)}/${num(n)}`}, [visualItemIcon(items, id, {size: 28}), el('b', {text: `${num(have)}/${num(n)}`})]);
 
-  const hero = el('section', {class: 'journey-hero-card almanac-hero'}, [
-    el('div', {class: 'journey-hero-main'}, [
-      el('div', {class: 'journey-medal-seal'}, [
-        el('small', {text: 'SỔ TAY'}),
-        el('b', {text: '12'}),
-      ]),
-      el('div', {class: 'journey-hero-copy'}, [
-        el('small', {class: 'journey-kicker', text: 'CÂY → THỨC ĂN → SINH VẬT'}),
-        el('h3', {text: 'Sổ tay'}),
-        el('p', {
-          text: 'Chọn một loài để xem cách nuôi.',
-        }),
-      ]),
-    ]),
-  ]);
-  wrap.append(hero);
+  wrap.append(el('section', {class: 'gp-hero almanac-hero'}, [
+    el('div', {class: 'gp-medal'}, [pixelIcon('book', 2), el('b', {text: String(creatureChains.length)})]),
+    el('div', {class: 'gp-hero-chain', role: 'img', 'aria-label': 'Cây, thành thức ăn, nuôi sinh vật'}, [pixelIcon('sow', 2), arrow(), pixelIcon('craft', 2), arrow(), pixelIcon('pen', 2)]),
+  ]));
 
-  wrap.append(
-    el('h3', {text: 'Sinh vật'}),
-  );
-
-  const chainGrid = el('div', {class: 'almanac-chain-grid'});
+  wrap.append(el('h3', {class: 'gp-section-title', text: 'Sinh vật'}));
+  const chainGrid = el('div', {class: 'almanac-chain-grid gp-tiles is-wide'});
   for (const chain of creatureChains) {
-    const statusBadge = chain.adopted
-      ? '✓ Đang nuôi'
-      : chain.unlocked
-        ? '✦ Đã mở khóa'
-        : `🔒 Mở cấp ${chain.level}`;
-    const card = el('article', {
-      class: `almanac-chain-card${chain.unlocked ? '' : ' is-locked'}`,
+    const actions = el('div', {class: 'gp-tile-actions'});
+    if (chain.unlocked) {
+      if (chain.ingredients[0]?.kind === 'crop' && onSelectCrop) actions.append(iconButton('sow', `Gieo ${chain.ingredients[0].label}`, () => onSelectCrop(chain.ingredients[0].id)));
+      if (onOpenCraft) actions.append(iconButton('craft', `Chế biến ${chain.feedLabel}`, () => onOpenCraft(chain.feedId)));
+      if (onSelectCreature) actions.append(iconButton('pen', `Thăm ${chain.creatureLabel}`, () => onSelectCreature(chain.creatureId), {text: 'Thăm', class: 'primary'}));
+    }
+    chainGrid.append(el('article', {
+      class: `almanac-chain-card gp-tile${chain.unlocked ? '' : ' is-locked'}`,
       'data-almanac-creature': chain.creatureId,
+      title: `${chain.mealPortions} khẩu phần/bữa · ${chain.mealsToAdult} bữa trưởng thành · +${num(chain.cycleXP)} XP`,
     }, [
-      el('div', {class: 'almanac-chain-head'}, [
-        visualItemIcon(items, chain.creatureId, {size: 48}),
-        el('div', {class: 'almanac-chain-title'}, [
-          el('div', {class: 'almanac-tags'}, [
-            el('span', {class: 'badge', text: `Cấp ${chain.level} · ${chain.rarity}`}),
-            el('small', {text: statusBadge}),
-          ]),
-          el('strong', {text: chain.creatureLabel}),
-          el('small', {
-            text: `${chain.mealPortions} khẩu phần/bữa · ${chain.mealsToAdult} bữa trưởng thành · +${num(chain.cycleXP)} XP`,
-          }),
-        ]),
+      el('div', {class: 'gp-tile-art'}, [
+        visualItemIcon(items, chain.creatureId, {size: 56}),
+        chain.unlocked ? (chain.adopted ? el('span', {class: 'gp-corner is-done', title: 'Đang nuôi'}, [pixelIcon('heart', 1)]) : null) : lockBadge(chain.level),
       ]),
-      el('div', {class: 'almanac-flow-steps'}, [
-        el('div', {class: 'almanac-step'}, [
-          el('small', {text: 'Nguyên liệu'}),
-          el('div', {class: 'almanac-ing-list'}, chain.ingredients.map((ing) => (
-            el('span', {
-              class: `almanac-ing-pill${ing.inStock >= ing.qty ? ' has-stock' : ''}`,
-              text: `${ing.label} ×${ing.qty} (Kho: ${num(ing.inStock)})`,
-            })
-          ))),
+      el('div', {class: 'gp-tile-body'}, [
+        el('strong', {class: 'gp-tile-name', text: chain.creatureLabel}),
+        el('small', {class: 'gp-tile-sub', text: `${chain.rarity} · +${num(chain.cycleXP)} XP`}),
+        el('div', {class: 'gp-chain', role: 'group', 'aria-label': 'Chuỗi nuôi'}, [
+          ...chain.ingredients.map((ing) => stock(ing.id, ing.qty, ing.inStock, ing.label)),
+          arrow(),
+          stock(chain.feedId, chain.mealPortions, chain.feedInStock, chain.feedLabel),
+          arrow(),
+          el('span', {class: 'gp-chain-item', title: `${chain.produceLabel}: ${num(chain.produceInStock)}/5 · ${chain.keepsakeCount} kỷ vật`}, [visualItemIcon(items, chain.produceId, {size: 28, kind: 'produce'}), el('b', {text: `${num(chain.produceInStock)}/5`})]),
         ]),
-        el('div', {class: 'almanac-step'}, [
-          el('small', {text: 'Thức ăn'}),
-          el('strong', {text: `${chain.feedLabel} (Kho: ${num(chain.feedInStock)})`}),
-        ]),
-        el('div', {class: 'almanac-step'}, [
-          el('small', {text: 'Sản vật'}),
-          el('strong', {
-            text: `${chain.produceLabel} (Kho: ${num(chain.produceInStock)}/5) → 🏆 Đài kỷ vật ×${chain.keepsakeCount}`,
-          }),
-        ]),
+        actions,
       ]),
-      el('div', {class: 'actions'}, [
-        ...(chain.ingredients[0]?.kind === 'crop' && onSelectCrop
-          ? [button(`🌱 Gieo ${chain.ingredients[0].label}`, () => onSelectCrop(chain.ingredients[0].id))]
-          : []),
-        ...(onOpenCraft
-          ? [button('⚗ Chế biến', () => onOpenCraft(chain.feedId))]
-          : []),
-        ...(onSelectCreature
-          ? [button(`🐾 Thăm ${chain.creatureLabel}`, () => onSelectCreature(chain.creatureId), {class: 'primary'})]
-          : []),
-      ]),
-    ]);
-    chainGrid.append(card);
+    ]));
   }
   wrap.append(chainGrid);
 
-  wrap.append(
-    el('h3', {text: 'Cây trồng'}),
-  );
-  const cropGrid = el('div', {class: 'cards'});
+  wrap.append(el('h3', {class: 'gp-section-title', text: 'Cây trồng'}));
+  const cropGrid = el('div', {class: 'cards gp-tiles'});
   for (const crop of cropUsages) {
-    const usesText = crop.feedsCreatures.length
-      ? crop.feedsCreatures.map((u) => `${u.creatureLabel} (×${u.qtyPerBatch})`).join(' · ')
-      : 'Dùng cho công thức nâng cao';
-    const cCard = el('article', {class: `card${crop.unlocked ? '' : ' locked'}`}, [
-      el('div', {class: 'card-head'}, [
-        visualItemIcon(items, crop.id, {size: 46}),
-        el('div', {class: 'card-head-copy'}, [
-          el('strong', {text: `${crop.label} (Cấp ${crop.level})`}),
-          el('small', {text: `${hours(crop.hours)} · +${crop.totalXP} XP/ô · Kho: ${num(crop.inStock)}`}),
-        ]),
-      ]),
-      el('p', {text: `Dùng cho: ${usesText}`}),
-      ...(crop.unlocked && onSelectCrop
-        ? [button(`Chọn gieo ${crop.label}`, () => onSelectCrop(crop.id), {class: 'primary'})]
-        : []),
-    ]);
-    cropGrid.append(cCard);
+    const uses = crop.feedsCreatures.map((u) => `${u.creatureLabel} ×${u.qtyPerBatch}`).join(' · ');
+    cropGrid.append(el('article', {class: `card gp-tile${crop.unlocked ? '' : ' locked is-locked'}`, title: uses ? `Dùng cho: ${uses}` : 'Dùng cho công thức nâng cao'}, [
+      el('div', {class: 'gp-tile-art'}, [visualItemIcon(items, crop.id, {size: 56}), crop.unlocked ? null : lockBadge(crop.level)]),
+      el('strong', {class: 'gp-tile-name', text: crop.label}),
+      el('small', {class: 'gp-tile-sub', text: `${hours(crop.hours)} · +${crop.totalXP} XP · kho ${num(crop.inStock)}`}),
+      crop.feedsCreatures.length ? el('div', {class: 'gp-chain is-mini', 'aria-hidden': 'true'}, crop.feedsCreatures.slice(0, 4).map((u) => visualItemIcon(items, u.creatureId, {size: 24}))) : null,
+      crop.unlocked && onSelectCrop ? el('div', {class: 'gp-tile-actions'}, [iconButton('sow', `Chọn gieo ${crop.label}`, () => onSelectCrop(crop.id), {text: 'Gieo', class: 'primary'})]) : null,
+    ]));
   }
   wrap.append(cropGrid);
 

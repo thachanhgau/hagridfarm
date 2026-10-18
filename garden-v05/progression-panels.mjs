@@ -8,7 +8,7 @@ import {renderTourSection} from "./garden-tour.mjs?v=24.9.35";
 import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.35";
 import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.35";
 import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.35";
-import {costChips,pixelIcon} from "./pixel-icons.mjs?v=24.9.35";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.35";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -24,7 +24,7 @@ export function createPanels(ctx){
  function card(title,subtitle,id,opts={}){const c=el("article",{class:"card"}),h=el("div",{class:"card-head"});if(id)h.append(visualItemIcon(items,id,{size:52,...opts}));h.append(el("div",{class:"card-head-copy"},[el("strong",{text:title}),el("small",{text:subtitle})]));c.append(h);return c;}
  function readyButton(text,at,fn){return button(text,fn,{"data-ready-button":at,disabled:at>now(),class:"primary"});}
  // Thành tựu, Sổ tay, Lưu bút and Bưu thiếp are tabs of one Hồ sơ panel; their old names still open their tab.
- const PROFILE_TABS=[["achievements","Thành tựu"],["almanac","Sổ tay"],["guestbook","Lưu bút"],["postcard","Bưu thiếp"]];
+ const PROFILE_TABS=[["achievements","Thành tựu"],["almanac","Sổ tay"],["guestbook","Lưu bút"],["postcard","Bưu thiếp"]],TAB_ICONS={achievements:"trophy",almanac:"book",guestbook:"quill",postcard:"scenery"};
  function show(name){
   if(PROFILE_TABS.some(([id])=>id===name)){if(profileTab!==name)postcardNode=null;profileTab=name;name="profile";}
   for(const d of document.querySelectorAll("dialog.decor-placement,dialog.store-overlay")){try{d.close();}catch{}d.remove();}
@@ -41,30 +41,15 @@ export function createPanels(ctx){
  function spatialStagesVisual(s){
   const current=ctx.getGardenStage?.()??gardenStage(s);
   const section=el("section",{class:"journey-stages-section"});
-  section.append(
-   el("div",{class:"journey-section-head"},[
-    el("div",{},[
-     el("small",{class:"journey-kicker",text:"BẢN ĐỒ MỞ RỘNG 6 CHƯƠNG"}),
-     el("h3",{text:current.name}),
-    ]),
-    el("span",{class:"journey-stage-pill",text:`Cấp ${s.level}/100`}),
-   ]),
-   detail("Lên cấp để mở rộng vườn. Cây và sinh vật được giữ nguyên.")
-  );
   const stageGrid=el("div",{class:"journey-stages-grid"});
   for(const stage of GARDEN_STAGES){
    const unlocked=s.level>=stage.level;
    const isCurrent=stage.id===current.id;
-   const stCard=el("article",{class:`journey-stage-card${isCurrent?" is-current":unlocked?" is-unlocked":" is-locked"}`},[
-    stageVisualIcon(stage.id,items,46),
-    el("div",{class:"journey-stage-copy"},[
-     el("div",{class:"journey-stage-top"},[
-      el("span",{class:"journey-stage-badge",text:`Chương ${stage.id} · Cấp ${stage.level}`}),
-      el("span",{class:"journey-stage-state",text:isCurrent?"✦ Đang ở đây":unlocked?"✓ Đã mở":"🔒 Chưa mở"}),
-     ]),
-     el("strong",{text:stage.name}),
-     detail(stage.description),
-    ]),
+   const stCard=el("article",{class:`journey-stage-card gp-tile${isCurrent?" is-current":unlocked?" is-unlocked":" is-locked"}`,title:stage.description},[
+    el("div",{class:"gp-tile-art"},[stageVisualIcon(stage.id,items,48),unlocked?null:lockBadge(stage.level)]),
+    el("small",{class:"journey-stage-badge",text:`Chương ${stage.id}`}),
+    el("strong",{class:"gp-tile-name",text:stage.name}),
+    isCurrent?el("span",{class:"gp-state is-on",text:"Đang ở đây"}):null,
    ]);
    stageGrid.append(stCard);
   }
@@ -81,10 +66,7 @@ export function createPanels(ctx){
 
    const hero=el("section",{class:"journey-hero-card"},[
     el("div",{class:"journey-hero-main"},[
-     el("div",{class:"journey-medal-seal"},[
-      el("small",{text:"CẤP ĐỘ"}),
-      el("b",{text:String(s.level)}),
-     ]),
+     el("span",{class:"gp-level-badge is-big","aria-label":"Cấp "+s.level},[el("b",{text:String(s.level)})]),
      el("div",{class:"journey-hero-copy"},[
       el("small",{class:"journey-kicker",text:`CHƯƠNG ${current.id}/6`}),
       el("h3",{text:s.level>=100?"Đại khu vườn":current.name}),
@@ -93,12 +75,9 @@ export function createPanels(ctx){
      ]),
     ]),
     el("div",{class:"journey-hero-stats"},[
-     el("div",{class:"journey-stat-pill"},[el("b",{text:`${s.plots.length}/12`}),el("small",{text:"Thửa đất"})]),
-     el("div",{class:"journey-stat-pill"},[el("b",{text:`${unlockedCrops}/24`}),el("small",{text:"Giống cây"})]),
-     el("div",{class:"journey-stat-pill"},[el("b",{text:`${unlockedAnimals}/12`}),el("small",{text:"Sinh vật"})]),
-     el("div",{class:"journey-stat-pill"},[el("b",{text:`${s.level}/100`}),el("small",{text:"Mốc cấp"})]),
+     ...[["plot",`${s.plots.length}/12`,"Thửa đất"],["seed",`${unlockedCrops}/24`,"Giống cây"],["pen",`${unlockedAnimals}/12`,"Sinh vật"]].map(([px,n,t])=>el("div",{class:"journey-stat-pill",title:t,"aria-label":t+" "+n},[pixelIcon(px,1),el("b",{text:n})])),
+     iconButton("chest","Bộ sưu tập",()=>show("collection")),
     ]),
-    el("div",{class:"actions"},[button("Bộ sưu tập",()=>show("collection"))]),
    ]);
    body.append(hero,spatialStagesVisual(s));
 
@@ -107,11 +86,11 @@ export function createPanels(ctx){
    for(let start=1;start<=100;start+=20){
     const end=start+19;
     const hasCurrent=s.level>=start&&s.level<=end;
-    rangeBar.append(button(`Cấp ${start}–${end}${hasCurrent?" ✦":""}`,()=>{roadStart=start;refresh();},{"aria-pressed":String(roadStart===start),class:"journey-tab-btn"}));
+    rangeBar.append(button(`${start}–${end}`,()=>{roadStart=start;refresh();},{"aria-pressed":String(roadStart===start),"aria-label":`Cấp ${start}–${end}`,class:"journey-tab-btn"+(hasCurrent?" has-current":"")}));
    }
    const catBar=el("div",{class:"journey-cat-tabs",role:"group","aria-label":"Lọc loại mở khóa"});
-   for(const [id,name] of [["all","Tất cả"],["cat-crop","🌱 Cây trồng"],["cat-creature","🐾 Sinh vật"],["cat-build","🏡 Công trình"],["cat-craft","⚗ Chế biến"],["cat-decor","✨ Cảnh quan"]]){
-    catBar.append(button(name,()=>{roadFilter=id;refresh();},{"aria-pressed":String(roadFilter===id),class:"journey-cat-btn"}));
+   for(const [id,name,px] of [["all","Tất cả","more"],["cat-crop","Cây trồng","sow"],["cat-creature","Sinh vật","pen"],["cat-build","Công trình","build"],["cat-craft","Chế biến","craft"],["cat-decor","Cảnh quan","scenery"]]){
+    const b=button("",()=>{roadFilter=id;refresh();},{"aria-pressed":String(roadFilter===id),"aria-label":name,title:name,class:"journey-cat-btn gp-tab"});b.append(pixelIcon(px,2),el("span",{text:name}));catBar.append(b);
    }
    filterWrap.append(rangeBar,catBar);
    body.append(filterWrap);
@@ -126,12 +105,12 @@ export function createPanels(ctx){
     const li=el("li",{class:`journey-card ${stateClass} ${infoVis.categoryClass}`},[
      el("div",{class:"journey-card-art"},[
       infoVis.visual,
-      el("span",{class:"badge journey-level-badge",text:isDone?`✓ ${l.level}`:isCurrent?`✦ ${l.level}`:`Cấp ${l.level}`}),
+      isDone||isCurrent?el("span",{class:"badge journey-level-badge",text:String(l.level)}):lockBadge(l.level),
      ]),
      el("div",{class:"journey-card-body"},[
       el("div",{class:"journey-card-tags"},[
        el("span",{class:`journey-cat-pill ${infoVis.categoryClass}`,text:infoVis.category}),
-       el("small",{class:"journey-xp-tag",text:`${num(l.totalXP)} XP tổng`}),
+       el("small",{class:"journey-xp-tag",text:`${num(l.totalXP)} XP`}),
       ]),
       el("strong",{class:"journey-unlock-title",text:l.unlock}),
       el("small",{class:"journey-unlock-meta",text:infoVis.meta}),
@@ -403,66 +382,69 @@ export function createPanels(ctx){
   },
 
   collection(){
-   const s=getState(),session=getSession();
-   body.append(paragraph("Kỷ vật và vật phẩm trang trí không cho XP. Mọi vật phẩm trang trí đều hỗ trợ xoay 2 góc (↖ Góc hiện tại & ↗ Góc nhìn qua phải) để bày biện theo ý thích."));
+   const s=getState(),session=getSession(),wallet=ctx.getGalleons?.()??Infinity;
+   const tile=(name,id,opts,...rest)=>el("article",{class:"card gp-tile","data-item-id":id},[el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,...opts})]),el("strong",{class:"gp-tile-name",text:name}),...rest]);
+   const turnText=facing=>facing==="right"?"Đang nhìn phải ↗":"Đang nhìn trái ↖";
 
    const storeDecors=[...(ctx.decorAssets?.values?.()??[])].filter(a=>a.rotatable||a.id?.startsWith("decor_"));
    if(storeDecors.length){
-    body.append(el("h3",{text:"Vật phẩm trang trí Tiệm (Đặt & Xoay 2 góc)"}));
-    const sg=grid();
+    body.append(el("h3",{class:"gp-section-title",text:"Đồ trang trí"}));
+    const sg=el("div",{class:"cards gp-tiles"});
     const decorState=ctx.getDecorations?.()??session?.decorations??{};
     for(const item of storeDecors){
      const owned=Boolean(decorState?.owned?.includes(item.id));
      const slotIdx=owned?(decorState.placements?.indexOf(item.id)??-1):-1;
      const slotLabel=slotIdx>=0?DECOR_SLOTS.find(sl=>sl.id===slotIdx)?.label:null;
      const facing=decorFacingFor(decorState,item.id);
-     const angleText=facing==="right"?"Góc nhìn qua phải ↗":"Góc hiện tại ↖";
-     const sub=owned?(slotLabel?`Đang đặt: ${slotLabel} · ${angleText}`:`Đã sở hữu · Đang cất (${angleText})`):"Mở tại Tiệm của người giữ vườn";
-     const k=card(decorLabelFor(item),sub,item.id,{kind:"decoration",decorAssets:ctx.decorAssets,badge:"2 góc",facing});
+     const name=decorLabelFor(item);
+     const k=tile(name,item.id,{kind:"decoration",decorAssets:ctx.decorAssets,badge:"2 góc",facing},owned?el("small",{class:"gp-tile-sub",text:slotLabel||"Đang cất"}):null);
+     if(!owned)k.classList.add("is-shop");
+     const row=el("div",{class:"gp-tile-actions"});
      if(owned&&ctx.openDecorate){
-      k.append(actions(
-       button("Đặt & Xoay góc",()=>{close();ctx.openDecorate(item);},{class:"primary"}),
-       button(facing==="right"?"Đổi về ↖ Góc hiện tại":"Xoay sang ↗ Góc phải",async()=>{
+      row.append(
+       iconButton("scenery","Đặt "+name,()=>{close();ctx.openDecorate(item);},{text:"Đặt",class:"primary"}),
+       iconButton("arrow",(facing==="right"?"Xoay "+name+" về trái ↖":"Xoay "+name+" sang phải ↗")+" · "+turnText(facing),async()=>{
         const nextFacing=facing==="right"?"default":"right";
-        const targetSlot=slotIdx>=0?slotIdx:0;
-        await ctx.quickRotateDecor?.(item.id,targetSlot,nextFacing);
+        await ctx.quickRotateDecor?.(item.id,slotIdx>=0?slotIdx:0,nextFacing);
         refresh();
-       })
-      ));
+       },{class:facing==="right"?"is-flipped":""}),
+      );
      }else if(ctx.openStore){
-      k.append(button("Mở Tiệm trang trí",()=>{close();ctx.openStore("decoration");}));
+      row.append(iconButton("shop","Mua "+name+" ở Tiệm trang trí",()=>{close();ctx.openStore("decoration");},{text:"Tiệm"}));
      }
+     k.append(row);
      sg.append(k);
     }
     body.append(sg);
    }
 
-   const g=grid();
-   body.append(el("h3",{text:"Kỷ vật sinh vật"}));
+   const g=el("div",{class:"cards gp-tiles"});
    for(const a of DB.animals.filter(a=>a.level<=s.level)){
-    const q=s.inventory["produce_"+a.id]||0,k=card(a.label,(s.keepsakes[a.id]||0)+" kỷ vật · "+q+" "+a.produce,"produce_"+a.id,{kind:"produce"});
-    k.append(button("Đổi kỷ vật "+a.label,()=>run(x=>E.exchangeKeepsake(x,a.id),"Đã đổi kỷ vật "+a.label+".",{action:"exchangeKeepsake",species:a.id}),{disabled:q<5}));
+    const q=s.inventory["produce_"+a.id]||0,kept=s.keepsakes[a.id]||0;
+    const k=tile(a.label,"produce_"+a.id,{kind:"produce"},
+     el("div",{class:"gp-meter",role:"progressbar","aria-label":`${a.produce} ${q}/5`,"aria-valuemin":"0","aria-valuemax":"5","aria-valuenow":String(Math.min(q,5))},[el("span",{style:`width:${Math.min(100,q*20)}%`})]),
+     el("small",{class:"gp-tile-sub",text:`${num(q)}/5 · ${kept} kỷ vật`}),
+     el("div",{class:"gp-tile-actions"},[iconButton("trophy","Đổi kỷ vật "+a.label,()=>run(x=>E.exchangeKeepsake(x,a.id),"Đã đổi kỷ vật "+a.label+".",{action:"exchangeKeepsake",species:a.id}),{text:"Đổi",class:q>=5?"primary":"",disabled:q<5})]));
     g.append(k);
    }
-   body.append(g,el("h3",{text:"Mẫu trang trí lối đi (Xoay 2 góc)"}));
-   const dec=grid();
+   if(g.childElementCount)body.append(el("h3",{class:"gp-section-title",text:"Kỷ vật sinh vật"}),g);
+   const dec=el("div",{class:"cards gp-tiles"});
    const earnedRot=ctx.getEarnedDecorRotations?.()??s.decorationRotations??{};
    for(const d of DB.decorations.filter(d=>d.level<=s.level)){
     const owned=s.decorations.includes(d.id);
     const facing=earnedRot[d.id]==="right"?"right":"default";
-    const angleTag=facing==="right"?"Góc nhìn qua phải ↗":"Góc hiện tại ↖";
-    const k=card(d.label,"Cấp "+d.level+(d.free?" · Miễn phí":"")+(owned?` · ${angleTag}`:""),d.id,{kind:"decoration",facing,badge:"2 góc"});
-    if(!owned&&!d.free)k.append(priceRow(s,d,ctx.getGalleons?.()??Infinity));
-    const btnRow=[
-     button(owned?"✓ Đã có":"Nhận "+d.label,()=>run(x=>E.buyDecoration(x,d.level),"Đã thêm "+d.label+" vào vườn.",{action:"buyDecoration",level:d.level}),{disabled:owned||s.level<d.level||!canPay(s,d,ctx.getGalleons?.()??Infinity)}),
-    ];
+    const k=tile(d.label,d.id,{kind:"decoration",facing,badge:"2 góc"});
+    if(!owned&&!d.free)k.append(priceRow(s,d,wallet));
+    const row=el("div",{class:"gp-tile-actions"});
+    if(owned)row.append(el("span",{class:"gp-state is-on",text:"Đã có"}));
+    else row.append(iconButton("plus","Nhận "+d.label,()=>run(x=>E.buyDecoration(x,d.level),"Đã thêm "+d.label+" vào vườn.",{action:"buyDecoration",level:d.level}),{text:"Nhận",class:"primary",disabled:s.level<d.level||!canPay(s,d,wallet)}));
     if(owned&&ctx.rotateEarnedDecoration){
-     btnRow.push(button(`↻ Xoay (${facing==="right"?"↗ Phải":"↖ Hiện tại"})`,()=>{ctx.rotateEarnedDecoration(d.id);refresh();},{"data-rotate-earned-decor":d.id}));
+     row.append(iconButton("arrow",`Xoay ${d.label} · ${turnText(facing)}`,()=>{ctx.rotateEarnedDecoration(d.id);refresh();},{"data-rotate-earned-decor":d.id,class:facing==="right"?"is-flipped":""}));
     }
-    k.append(actions(...btnRow));
+    k.append(row);
     dec.append(k);
    }
-   body.append(dec);
+   if(dec.childElementCount)body.append(el("h3",{class:"gp-section-title",text:"Trang trí lối đi"}),dec);
   },
 
   layout(){
@@ -530,13 +512,13 @@ export function createPanels(ctx){
    const s=getState();
    body.append(el("section",{class:"v24-profile-view"},[
     el("div",{class:"v24-profile-id"},[
-     el("strong",{text:$("playerName")?.textContent||"Người làm vườn"}),
-     el("small",{text:`Cấp ${s.level}/100 · ${num(s.xp)} XP`}),
+     el("span",{class:"gp-level-badge","aria-label":"Cấp "+s.level},[el("b",{text:String(s.level)})]),
+     el("div",{},[el("strong",{text:$("playerName")?.textContent||"Người làm vườn"}),el("small",{text:`${num(s.xp)} XP`})]),
     ]),
     toolbar(
-     ...(ctx.openProfile?[button("Sửa hồ sơ",()=>{close();ctx.openProfile();})]:[]),
-     button("Lộ trình",()=>show("roadmap")),
-     button("Gắn kết",()=>show("affinity")),
+     ...(ctx.openProfile?[iconButton("profile","Sửa hồ sơ",()=>{close();ctx.openProfile();})]:[]),
+     iconButton("map","Lộ trình",()=>show("roadmap")),
+     iconButton("heart","Gắn kết",()=>show("affinity")),
     ),
     el("div",{class:"profile-keepsakes"},[
      ...(ctx.openHagridLetter?[keepsake("letter","Thư bác Hagrid","Đọc lại thư của bác Hagrid",()=>{close();ctx.openHagridLetter();})]:[]),
@@ -545,7 +527,7 @@ export function createPanels(ctx){
    ]));
    const pick=id=>{if(id===profileTab)return;show(id);$("profileTab-"+id)?.focus();};
    const tabs=el("div",{class:"profile-tabs",role:"tablist","aria-label":"Hồ sơ người giữ vườn"});
-   for(const [id,text] of PROFILE_TABS)tabs.append(button(text,()=>pick(id),{role:"tab",id:"profileTab-"+id,"aria-selected":String(id===profileTab),"aria-controls":"profileTabPanel",tabindex:id===profileTab?"0":"-1"}));
+   for(const [id,text] of PROFILE_TABS){const t=button("",()=>pick(id),{role:"tab",id:"profileTab-"+id,"aria-selected":String(id===profileTab),"aria-controls":"profileTabPanel",tabindex:id===profileTab?"0":"-1",class:"gp-tab"});t.append(pixelIcon(TAB_ICONS[id],2),el("span",{text}));tabs.append(t);}
    tabs.addEventListener("keydown",e=>{const i=PROFILE_TABS.findIndex(([id])=>id===profileTab),n=PROFILE_TABS.length,j={ArrowRight:i+1,ArrowLeft:i-1+n,Home:0,End:n-1}[e.key];if(j===undefined)return;e.preventDefault();pick(PROFILE_TABS[j%n][0]);});
    const pane=el("div",{class:"profile-tab-panel",id:"profileTabPanel",role:"tabpanel","aria-labelledby":"profileTab-"+profileTab});
    pane.append(profileViews[profileTab]());
@@ -598,6 +580,7 @@ export function createPanels(ctx){
  const profileViews={
   achievements:()=>renderAchievementsSection({
    state:getState(),
+   items,
    extra:ctx.getAchievementExtra?.()??{},
    onSelectTitle:achId=>{ctx.onSelectTitle?.(achId);refresh();},
    onClaimReward:achId=>{ctx.onClaimAchievement?.(achId);refresh();},

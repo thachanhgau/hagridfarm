@@ -205,52 +205,12 @@
   font-style: normal;
 }
 
-.v24-owl-row {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr) auto auto;
-  align-items: center;
-  gap: 9px;
-  min-height: 48px;
-  padding: 8px 10px;
-}
 
-.v24-owl-row-art {
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #18352d;
-}
 
-.v24-owl-row-copy {
-  min-width: 0;
-  display: grid;
-  gap: 3px;
-}
 
-.v24-owl-row-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 
-.v24-owl-row-progress,
-.v24-owl-row-reward {
-  white-space: nowrap;
-  font-size: 12px;
-}
 
-.v24-owl-row-reward {
-  color: #f5d69a;
-  font-weight: 700;
-}
 
-.v24-owl-row-action {
-  min-height: 34px;
-  padding: 6px 9px;
-}
 
 @media (max-width: 680px) {
   .v24-event-milestones {
@@ -265,14 +225,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .v24-owl-row {
-    grid-template-columns: 30px minmax(0, 1fr) auto;
-  }
 
-  .v24-owl-row-action {
-    grid-column: 2 / -1;
-    justify-self: start;
-  }
 }
 
 @media (max-width: 420px) {
@@ -286,15 +239,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .v24-owl-row {
-    grid-template-columns: 30px minmax(0, 1fr);
-  }
 
-  .v24-owl-row-progress,
-  .v24-owl-row-reward,
-  .v24-owl-row-action {
-    grid-column: 2;
-  }
 }
 /* 18/10/2026: build and decoration prices as crop icons + have/need and a Galleons coin. */
 #panel .cost-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:6px 0}

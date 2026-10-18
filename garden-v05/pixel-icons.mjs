@@ -451,6 +451,169 @@ export const ICONS = Object.freeze({
   '................',
   '................',
  ],
+ // Panels (game-panels.css): padlock for locked tiles, trophy, stepper, tick, close, tabs.
+ lock: [
+  '................',
+  '.....kkkkkk.....',
+  '....kglllllk....',
+  '...kgk....klk...',
+  '...klk....klk...',
+  '...klk....klk...',
+  '..kkkkkkkkkkkk..',
+  '..kuuuuuuuuuuk..',
+  '..kuYYYYYYYYOk..',
+  '..kuYYYkkYYYOk..',
+  '..kuYYYkkYYYOk..',
+  '..kuYYYYkYYYOk..',
+  '..kuYYYYYYYYOk..',
+  '..kOOOOOOOOOOk..',
+  '..kkkkkkkkkkkk..',
+  '................',
+ ],
+ trophy: [
+  '................',
+  '..kkkkkkkkkkkk..',
+  '.kkuYYYYYYYYOkk.',
+  'kYkuYYYYYYYYOkYk',
+  'kYkuYYYYYYYYOkYk',
+  '.kkuYYYYYYYYOkk.',
+  '...kuYYYYYYOk...',
+  '....kuYYYYOk....',
+  '.....kYYYOk.....',
+  '......kYOk......',
+  '......kYOk......',
+  '.....kkYOkk.....',
+  '....kbbbbbbk....',
+  '....kwwwwwwk....',
+  '....kbbbbbbk....',
+  '....kkkkkkkk....',
+ ],
+ plus: [
+  '................',
+  '................',
+  '......kkkk......',
+  '......kuuk......',
+  '......kuuk......',
+  '......kuuk......',
+  '..kkkkkuukkkkk..',
+  '..kuuuuuuuuuuk..',
+  '..kuuuuuuuuuuk..',
+  '..kkkkkuukkkkk..',
+  '......kuuk......',
+  '......kuuk......',
+  '......kuuk......',
+  '......kkkk......',
+  '................',
+  '................',
+ ],
+ minus: [
+  '................',
+  '................',
+  '................',
+  '................',
+  '................',
+  '................',
+  '..kkkkkkkkkkkk..',
+  '..kuuuuuuuuuuk..',
+  '..kuuuuuuuuuuk..',
+  '..kkkkkkkkkkkk..',
+  '................',
+  '................',
+  '................',
+  '................',
+  '................',
+  '................',
+ ],
+ check: [
+  '................',
+  '................',
+  '................',
+  '............kk..',
+  '...........kyk..',
+  '..........kynk..',
+  '..kk.....kynk...',
+  '.kyyk...kynk....',
+  '.knyyk.kynk.....',
+  '..knyykynk......',
+  '...knyynk.......',
+  '....knnk........',
+  '.....kk.........',
+  '................',
+  '................',
+  '................',
+ ],
+ close: [
+  '................',
+  '................',
+  '..kk........kk..',
+  '.kuuk......kuuk.',
+  '.kuuuk....kuuuk.',
+  '..kuuuk..kuuuk..',
+  '...kuuukkuuuk...',
+  '....kuuuuuuk....',
+  '....kuuuuuuk....',
+  '...kuuukkuuuk...',
+  '..kuuuk..kuuuk..',
+  '.kuuuk....kuuuk.',
+  '.kuuk......kuuk.',
+  '..kk........kk..',
+  '................',
+  '................',
+ ],
+ book: [
+  '................',
+  '..kkkkkkkkkkk...',
+  '..kbrrrrrrrrrk..',
+  '..kbroooooorrk..',
+  '..kbrouuuuorrk..',
+  '..kbroooooorrk..',
+  '..kbrrrrrrrrrk..',
+  '..kbrrrrrrrrrk..',
+  '..kbrrrrrrrrrk..',
+  '..kbrrrrrrrrrk..',
+  '..kbrrrrrrrrrk..',
+  '..kbkkkkkkkkkkk.',
+  '..kbWWWWWWWWWk..',
+  '..kkkkkkkkkkkk..',
+  '................',
+  '................',
+ ],
+ quill: [
+  '................',
+  '............kk..',
+  '..........kkWk..',
+  '.........kWWck..',
+  '........kWWck...',
+  '.......kWWck....',
+  '......kWWck.....',
+  '.....kWWck......',
+  '....kWcck.......',
+  '....kcck........',
+  '...kbk..........',
+  '..kbk...........',
+  '.kbk....kkkkk...',
+  '.kk....kisssik..',
+  '.......kiiiiik..',
+  '........kkkkk...',
+ ],
+ map: [
+  '................',
+  '.kkkkkkkkkkkkkk.',
+  '.kuuuutuuuutuuk.',
+  '.kuRuutuuuutuuk.',
+  '.kuuRutuuuutuuk.',
+  '.kuuutRuuuutuuk.',
+  '.kuuutuRuuutuuk.',
+  '.kuuutuuRRutuuk.',
+  '.kuuutuuuuRtuuk.',
+  '.kuuutuuuuutRRk.',
+  '.kuuutuuuuutuRk.',
+  '.kuuutuuuRRRuuk.',
+  '.kuuutuuuRuRuuk.',
+  '.kuuutuuuRRRuuk.',
+  '.kkkkkkkkkkkkkk.',
+  '................',
+ ],
  heart: [
   '................',
   '................',
@@ -654,4 +817,30 @@ export function costChips(items, costs, galleons = 0, galleonShort = false) {
   [visualItemIcon(items, id, {size: 22}), el('span', {text: `${num(have)}/${num(need)}`})]));
  if (galleons) chips.push(el('span', {class: 'dock-cost is-galleons' + (galleonShort ? ' is-short' : ''), 'aria-hidden': 'true'}, [pixelIcon('coin', 1), el('span', {text: num(galleons)})]));
  return chips;
+}
+
+/** A reward as icon + number chips ([water] +8 [pumpkin] +3); the full sentence stays the accessible name. */
+export function rewardChips(items, reward = {}) {
+ const chips = [], add = (node, n) => chips.push(el('span', {class: 'reward-chip'}, [node, el('b', {text: '+' + num(n)})]));
+ if (reward.kind === 'water' && reward.amount) add(pixelIcon('water', 1), reward.amount);
+ if (reward.kind === 'boost' && reward.amount) add(pixelIcon('boost', 1), reward.amount);
+ if (reward.waterBonus) add(pixelIcon('water', 1), reward.waterBonus);
+ if (reward.itemId && reward.bonusQty) add(visualItemIcon(items, reward.itemId, {size: 20}), reward.bonusQty);
+ if (reward.eventPoints) add(pixelIcon('festival', 1), reward.eventPoints);
+ if (!chips.length && reward.label) chips.push(el('span', {class: 'reward-chip', text: reward.label}));
+ return el('span', {class: 'reward-chips', role: 'img', 'aria-label': reward.label || '', title: reward.label || ''}, chips);
+}
+
+/** Corner badge of a locked tile: a padlock, plus the level that opens it when there is one. */
+export function lockBadge(level = 0) {
+ const text = level ? 'Mở ở cấp ' + level : 'Chưa mở';
+ return el('span', {class: 'lock-badge', role: 'img', 'aria-label': text, title: text}, [pixelIcon('lock', 1), level ? el('b', {text: String(level)}) : null]);
+}
+
+/** Square 44 px icon button; `label` is the accessible name and tooltip, `text` an optional visible word. */
+export function iconButton(icon, label, fn, {text = '', ...attrs} = {}) {
+ const b = el('button', {type: 'button', onclick: fn, 'aria-label': label, title: label, ...attrs, class: 'icon-btn' + (text ? ' has-text' : '') + (attrs.class ? ' ' + attrs.class : '')});
+ b.append(pixelIcon(icon, 2));
+ if (text) b.append(el('span', {text}));
+ return b;
 }
