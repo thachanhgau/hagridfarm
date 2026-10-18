@@ -83,7 +83,7 @@
 .tutorial-skip[hidden]{display:none}
 
 /* V24.9.6 playtest: always-visible notice while the anonymous log is on (?playtest=1). */
-.playtest-badge{position:fixed;left:8px;bottom:calc(env(safe-area-inset-bottom,0px) + 4px);z-index:46;padding:2px 8px;border-radius:10px;background:rgba(35,31,46,.78);color:#E07A9E;font:700 10px system-ui,sans-serif;pointer-events:none}
+.playtest-badge{position:fixed;left:max(8px,env(safe-area-inset-left));top:calc(max(8px,env(safe-area-inset-top)) + 100px);z-index:46;padding:2px 8px;border-radius:10px;background:rgba(35,31,46,.78);color:#E07A9E;font:700 10px system-ui,sans-serif;pointer-events:none}
 
 .tutorial-compact #seedTray,.tutorial-compact .tools{display:none!important}
 .camera-tools .tutorial-skip{width:max-content!important;max-width:none!important;padding:0 6px}

@@ -136,3 +136,9 @@
 - Kiểm chứng sau khi gộp: 176/176 test node; FTUE WebKit 5/5; `qa-v19/hud-shots.mjs` 10/10 khung (5 cỡ màn × gập/mở) không chồng lấn, không tràn.
 - Còn nhỏ: chơi trên máy thì bộ đếm nước/hạt hiện 0 dù gieo miễn phí (dễ hiểu nhầm là hết); nhãn "Đang ghi thử nghiệm ẩn danh" (`?playtest=1`) đè mép dock trên điện thoại; vòng XP ở cấp 1 chưa thấy rõ khi XP = 0.
 - Chưa tạo manifest sha256.
+
+## Sửa 3 lỗi nhỏ của HUD icon — `?v=24.9.30` (18/10/2026)
+- Chơi trên máy (không nối ví): bộ đếm nước/hạt hiện «∞» (cỡ chữ lớn hơn, lớp `.res-free`), nhãn đọc màn hình «Nước và hạt miễn phí»; có ví thì vẫn hiện số thật (`syncSupplies` trong `mobile-game.mjs`).
+- Nhãn «Đang ghi thử nghiệm ẩn danh» (`?playtest=1`) chuyển lên góc trái, ngay dưới ô mục tiêu kế tiếp (`v24-ui.css`, màn rộng chỉnh trong `icon-hud.css`); không còn đè dock.
+- Vòng XP của huy hiệu cấp có track tối viền đồng, nên thấy rõ cả khi XP = 0 (`icon-hud.css`).
+- Kiểm chứng: 176/176 test node; FTUE WebKit 5/5; `qa-v19/hud-shots.mjs` 10/10 khung, đã xem tận mắt 390×664, 750×342 và 1280×720 với `?playtest=1`, và bản có ví (`?wallet=emulator`) vẫn hiện số.
