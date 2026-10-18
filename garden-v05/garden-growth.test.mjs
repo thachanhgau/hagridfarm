@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import scene from './scene-data.json' with {type:'json'};
 import {newGame,testProfile} from './progression-engine.mjs';
 import {createBoundaryFence} from './garden-landscape.mjs';
-import {GARDEN_STAGES,gardenStage,stageContains,stageBoundary,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.31';
+import {GARDEN_STAGES,gardenStage,stageContains,stageBoundary,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.32';
 const area=stage=>{const p=stageBoundary(stage);return Math.abs(p.reduce((sum,a,i)=>{const b=p[(i+1)%p.length];return sum+a[0]*b[1]-b[0]*a[1]},0))/2;};
 test('six monotone spatial chapters grow from a quarter-sized starter yard',()=>{
  assert.deepEqual(GARDEN_STAGES.map(s=>s.level),[1,10,24,48,72,100]);

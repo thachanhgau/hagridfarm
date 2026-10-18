@@ -104,7 +104,24 @@ export function createDefaultOwlQuests(dayKey = dayKeyFor(), streakDays = 1, con
   };
 }
 
+// Connected play: the server owns today's quests, chest and streak. `useServerDaily(response.daily)`
+// after every wallet response; loads then read it and local counting/claiming stands down.
+let serverDaily = null;
+export function useServerDaily(daily = null) {
+  serverDaily = daily && Array.isArray(daily.quests) ? {
+    version: OWL_QUEST_VERSION,
+    dayKey: daily.dayKey,
+    streakDays: Math.max(1, Number(daily.streakDays) || 1),
+    grandChestClaimed: Boolean(daily.chest?.claimed),
+    quests: daily.quests.map((q) => ({...q})),
+    bonusQuests: [],
+    server: true,
+  } : null;
+  return serverDaily;
+}
+
 export function loadOwlQuests(storage = getGardenStorage(), nowMs = Date.now()) {
+  if (serverDaily) return structuredClone(serverDaily);
   const today = dayKeyFor(nowMs);
   const previousDay = new Date(Number.isFinite(nowMs) ? nowMs : Date.now());
   previousDay.setDate(previousDay.getDate() - 1);
@@ -147,6 +164,7 @@ export function loadOwlQuests(storage = getGardenStorage(), nowMs = Date.now()) 
 }
 
 export function saveOwlQuests(questState, storage = getGardenStorage()) {
+  if (serverDaily) return questState;
   if (!storage || typeof storage.setItem !== 'function' || !questState) return questState;
   try {
     storage.setItem(OWL_QUEST_STORAGE_KEY, JSON.stringify(questState));
@@ -218,6 +236,7 @@ export function syncQuestsWithGardenState(questState, gameState = null, extraOrN
 }
 
 export function recordOwlQuestAction(actionType, amount = 1, storage = getGardenStorage(), nowMs = Date.now()) {
+  if (serverDaily) return {state: loadOwlQuests(), newlyCompleted: []};
   const current = loadOwlQuests(storage, nowMs);
   const inc = Math.max(1, Number(amount) || 1);
   const newlyCompleted = [];
@@ -236,6 +255,7 @@ export function recordOwlQuestAction(actionType, amount = 1, storage = getGarden
 }
 
 export function claimOwlQuest(questId, {storage = getGardenStorage(), nowMs = Date.now(), onGrantReward = null} = {}) {
+  if (serverDaily) return {ok: false, reason: 'SERVER_OWNED'};
   const current = loadOwlQuests(storage, nowMs);
   const quest = allDailyTasks(current).find((q) => q.id === questId);
   if (!quest) return {ok: false, reason: 'NOT_FOUND', state: current};
@@ -251,6 +271,7 @@ export function claimOwlQuest(questId, {storage = getGardenStorage(), nowMs = Da
 }
 
 export function claimDailyGrandChest({storage = getGardenStorage(), nowMs = Date.now(), onGrantReward = null} = {}) {
+  if (serverDaily) return {ok: false, reason: 'SERVER_OWNED'};
   const current = loadOwlQuests(storage, nowMs);
   const summary = dailyCompletionSummary(current);
   if (current.grandChestClaimed) {

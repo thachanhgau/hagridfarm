@@ -1,7 +1,8 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.31';
-import {stableHash} from './scene-animation.mjs?v=24.9.31';
-import {dayKeyFor} from './garden-quests.mjs?v=24.9.31';
+import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.32';
+import {stableHash} from './scene-animation.mjs?v=24.9.32';
+import {dayKeyFor} from './garden-quests.mjs?v=24.9.32';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.32';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -279,6 +280,24 @@ function withPointViews(state) {
   return state;
 }
 
+// Connected play: the server owns festival points, daily caps and claimed milestones.
+// `useServerFestival(response)` after every wallet response; only the scene theme stays local.
+let serverFestival = null;
+export function useServerFestival(response = null) {
+  const record = response?.garden?.festival, today = response?.festival?.today, day = response?.daily?.dayKey;
+  serverFestival = record && today && isDayKey(day) ? {
+    joinDay: record.joinDay,
+    pointsBySeason: {...record.pointsBySeason},
+    claimedMilestones: [...record.claimedMilestones],
+    day,
+    farmToday: count(today.farm),
+    freeToday: count(today.free),
+    freeCounts: Object.fromEntries(Object.entries(response.daily.freeActions || {}).map(([kind, v]) => [kind, count(v?.used)])),
+    freeCaps: Object.fromEntries(Object.entries(response.daily.freeActions || {}).map(([kind, v]) => [kind, count(v?.cap)])),
+  } : null;
+  return serverFestival;
+}
+
 export function loadEventState(storage = getGardenStorage(), nowMs = Date.now()) {
   let parsed = null;
   try {
@@ -286,6 +305,10 @@ export function loadEventState(storage = getGardenStorage(), nowMs = Date.now())
     parsed = raw ? JSON.parse(raw) : null;
   } catch {
     parsed = null;
+  }
+  if (serverFestival) {
+    const local = normalizeEventState(parsed, serverFestival.day);
+    return withPointViews({...local, ...structuredClone(serverFestival), legacyClaimable: [], server: true});
   }
   return withPointViews(normalizeEventState(parsed, vnDayKey(nowMs)));
 }
@@ -323,6 +346,7 @@ export function applyFestivalAction(state, actionType, customPoints = null) {
 }
 
 export function recordFestivalAction(actionType, customPoints = null, storage = getGardenStorage(), nowMs = Date.now()) {
+  if (serverFestival) return {state: loadEventState(storage, nowMs), addedPoints: 0, server: true};
   const result = applyFestivalAction(loadEventState(storage, nowMs), actionType, customPoints);
   if (result.offSeason) return {state: result.state, addedPoints: 0, offSeason: true};
   const saved = saveEventState(result.state, storage, nowMs);
@@ -370,6 +394,7 @@ export function pendingFestivalRewards(state) {
 }
 
 export function claimEventMilestone(milestoneKey, {storage = getGardenStorage(), onGrantReward = null, nowMs = Date.now()} = {}) {
+  if (serverFestival) return {ok: false, reason: 'SERVER_OWNED'};
   const state = loadEventState(storage, nowMs);
   const check = milestoneClaimCheck(state, milestoneKey);
   if (!check.ok) return {...check, state};
@@ -863,6 +888,7 @@ export function renderGuestbookSection({
   return root;
 }
 
+const FREE_TAP_ICONS = Object.freeze({care: ['care', 'Chăm cây'], pet: ['heart', 'Vuốt ve'], rotate: ['scenery', 'Xoay, đổi cảnh'], postcard: ['profile', 'Bưu thiếp'], shareFloo: ['owl', 'Khoe Floo'], startTour: ['home', 'Tham quan'], moveBuilding: ['plot', 'Chuyển thửa']});
 const shortDate = (key) => `${key.slice(8, 10)}/${key.slice(5, 7)}`;
 const THEME_LABELS = Object.freeze({event_halloween: 'Hội Ma', event_yule: 'Dạ vũ Noel', event_herbology_fair: 'Thảo dược', event_quidditch_cup: 'Quidditch', none: 'Ngày thường'});
 
@@ -953,6 +979,14 @@ export function renderEventsAndTasksSection({
         : 'Lễ hội chưa mở nên chưa tính điểm. Cảnh lễ hội bên dưới vẫn bật được để trang trí.',
     }),
   ]);
+  // Server play: today's free taps as icons with used/cap; a full one dims.
+  if (evtState.server && evtState.freeCaps) {
+    milestoneSec.append(el('div', {class: 'v24-free-caps', role: 'group', 'aria-label': 'Thao tác miễn phí hôm nay'},
+      Object.entries(FREE_TAP_ICONS).filter(([kind]) => evtState.freeCaps[kind]).map(([kind, [px, label]]) => {
+        const used = evtState.freeCounts[kind] || 0, cap = evtState.freeCaps[kind];
+        return el('span', {class: `v24-free-cap${used >= cap ? ' is-full' : ''}`, 'data-free-kind': kind, title: `${label} ${used}/${cap}`, 'aria-label': `${label} ${used}/${cap}`}, [pixelIcon(px, 1), el('b', {text: `${used}/${cap}`})]);
+      })));
+  }
   const mGrid = el('div', {class: 'cards event-milestones-grid v24-event-milestones'});
   for (const ms of cfg.milestones) {
     const key = `${ms.id}@${season.year}`;

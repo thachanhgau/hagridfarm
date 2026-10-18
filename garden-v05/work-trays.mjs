@@ -1,5 +1,5 @@
-import { setAction, costChips } from './pixel-icons.mjs?v=24.9.31';
-import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.31';
+import { setAction, costChips } from './pixel-icons.mjs?v=24.9.32';
+import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.32';
 import { DB } from './balance-data.mjs';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
@@ -417,7 +417,8 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     else if (choice.queued && choice.ready) detailReason = 'Đã xong · chờ nhận';
     else if (choice.queued || choice.sameKindBusy) detailReason = 'Đang làm';
     else if (!choice.previousBuilt) detailReason = `Chưa xong công trình trước${previous}`;
-    else if (choice.missing) detailReason = choice.galleonShort ? 'Thiếu Galleons' : 'Thiếu nông sản';
+    // Same order as the server: crops are checked before Galleons.
+    else if (choice.missing) detailReason = choice.costs.some(c => c.have < c.need) ? 'Thiếu nông sản' : 'Thiếu Galleons';
     const price = [...choice.costs.map(c => `${readLabel(labels, c.id)} ${num(c.have)}/${num(c.need)}`), ...(choice.galleonNeed ? [`${num(choice.galleonNeed)} Galleons`] : [])].join(', ');
     const summary = `${title} · ${price} · ${detailReason}`;
     showCosts(dom,choice.costs,null,choice.canBuild?'':detailReason,summary,choice.galleonNeed,choice.galleonShort);

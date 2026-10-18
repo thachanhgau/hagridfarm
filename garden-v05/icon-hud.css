@@ -125,3 +125,10 @@
 .hud-compact #gameShell #hudToggle.has-news .hud-dot{display:block}
 @media (min-width:600px){#gameShell #hudToggle{order:-1}}
 #gameShell #hudToggle .hud-label{visibility:hidden}
+
+/* Server play: today's free taps (Lễ hội panel) and server refusals in the toast, icon first. */
+.v24-free-caps{display:flex;flex-wrap:wrap;gap:6px}
+.v24-free-cap{display:inline-flex;align-items:center;gap:3px;padding:2px 6px 2px 3px;border:1px solid #9b9862;border-radius:3px;background:#142620D9;color:#F5D69A;font:800 11px/16px ui-monospace,Menlo,Consolas,monospace}
+.v24-free-cap.is-full{opacity:.5}
+.toast .toast-icon{display:inline-block;vertical-align:-4px;margin-right:6px;width:20px;height:20px;image-rendering:pixelated}
+.toast[data-reason]{background:#F0D1A6;border:1px solid #734f36}

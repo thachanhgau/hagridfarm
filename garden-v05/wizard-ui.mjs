@@ -1,5 +1,5 @@
-import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.31';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=24.9.31';
+import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.32';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=24.9.32';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -11,7 +11,7 @@ import {
  dailyCompletionSummary,
  hasClaimableOwlQuest,
  DAILY_GRAND_CHEST_REWARD,
-} from './garden-quests.mjs?v=24.9.31';
+} from './garden-quests.mjs?v=24.9.32';
 
 // Presentation only: every crop mutation still uses the existing engine/command.
 export function cropContext(state, selection, E, now) {
@@ -42,7 +42,7 @@ function compactOwlReward(reward={}){
  return parts.join(' · ')||'Quà';
 }
 
-export function setupWizardUI({E,items,getState,getSelection,getRenderer,getReady,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward,onClaimDailyQuest,onClaimGrandChest}) {
+export function setupWizardUI({E,items,getState,getSelection,getRenderer,getReady,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward,onClaimDailyQuest,onClaimGrandChest,onCare}) {
  let lastIcon='',letterRoute=null,letterOpenedOnce=false;
  const letter=$('owlLetter');
 
@@ -160,7 +160,7 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
   const state=getState(),selection=getSelection(),context=cropContext(state,selection,E,E.nowFor(state,Date.now()));
   if(!getReady())return;
   if(context.ready.length){const cells=[...context.ready],plotIndex=selection.selectedPlot;return run(s=>E.harvest(s,plotIndex,cells,Date.now()),'Đã gặt cây chín trên hàng.',{action:'harvest',plotIndex,cells});}
-  recordOwlQuestAction('care',1);syncMailBadge();
+  recordOwlQuestAction('care',1);onCare?.();syncMailBadge();
   getRenderer()?.animate('care',{plot:selection.selectedPlot,cells:context.occupied});message('Lá rung khẽ dưới bàn tay chăm sóc · thời gian lớn giữ nguyên.');
  };
  function refresh(){

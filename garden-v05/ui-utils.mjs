@@ -342,3 +342,34 @@ export function plantingAction({loaded,connected,walletReady,unlocked,occupied,c
  const restock=connected&&!reason?(seedsLeft<3?"seed":waterLeft<3?"water":""):"";
  return {disabled:Boolean(reason),restock,text:reason||(restock==="water"?"Mua nước":restock==="seed"?"Mua hạt":"Gieo ×3"),title:restock==="water"?"Cần 3 phần nước để gieo hàng này":restock==="seed"?"Cần 3 hạt để gieo hàng này":reason||"Gieo một hàng 3 ô"};
 }
+
+/**
+ * A server refusal as one icon and a few words (connected play). `item` is a crop or ration id
+ * shown with its sprite, `px` a pixel icon. Server details: missing-crops carries the engine's
+ * "not enough <id>", insufficient-galleons carries `required`; `spendable` gives the shortfall.
+ */
+export function serverRefusal(error,{labels={},spendable=0,modelText=null}={}){
+ const d=error?.details||{},reason=error?.reason||d.reason||'',label=id=>labels[id]||id;
+ const crop=d.resource&&!String(d.resource).includes('.')?d.resource:/(?:not enough|need \w+) ([a-z0-9_]+)/.exec(String(d.detail||''))?.[1];
+ const short=Math.max(0,(Number(d.required)||0)-(Number(spendable)||0));
+ const seed=/^seeds\.(.+)$/.exec(String(d.resource||''))?.[1];
+ const view={
+  'missing-crops':crop?{item:crop,text:'Thiếu '+label(crop)}:{px:'harvest',text:'Thiếu nông sản'},
+  'insufficient-galleons':{px:'coin',text:short?'Thiếu '+num(short)+' G':'Thiếu Galleons'},
+  'insufficient-balance':{px:'coin',text:short?'Thiếu '+num(short)+' G':'Thiếu Galleons'},
+  'wallet-frozen':{px:'coin',text:'Ví Gringotts đang khóa'},
+  'missing-supply':seed?{item:seed,text:'Thiếu hạt '+label(seed)}:d.resource==='boost'?{px:'boost',text:'Hết nước phép'}:{px:'water',text:'Thiếu nước'},
+  'already-claimed':{px:'chest',text:'Đã nhận rồi'},
+  'quest-incomplete':{px:'owl',text:'Nhiệm vụ chưa xong'},
+  'quest-not-found':{px:'owl',text:'Nhiệm vụ đã đổi ngày'},
+  'festival-incomplete':{px:'festival',text:'Chưa đủ điểm lễ hội'},
+  'festival-not-found':{px:'festival',text:'Không có mốc này'},
+  'revision-conflict':{px:'home',text:'Vườn vừa đổi · đã tải lại'},
+  'decoration-not-owned':{px:'shop',text:'Chưa có món này'},
+  'slot-occupied':{px:'plot',text:'Chỗ này đã có đồ'},
+  'no-creature':{px:'heart',text:'Chưa có sinh vật'},
+  'daily-cap':{px:'shop',text:'Hết lượt mua hôm nay'},
+  'model-rejected':{px:'build',text:modelText?.(d.modelCode)||error?.message||'Chưa làm được'},
+ }[reason];
+ return {reason,...(view||{px:'more',text:error?.message||'Máy chủ từ chối thao tác.'})};
+}
