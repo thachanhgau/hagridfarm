@@ -8,7 +8,7 @@ import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitT
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.34';
 import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.34';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.34';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble} from './garden-atmosphere.mjs?v=24.9.34';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.34';
 import {drawEventOverlay} from './garden-events.mjs?v=24.9.34';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.34';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.34';
@@ -1698,7 +1698,7 @@ export async function createGarden(canvas, options = {}) {
         drawPixelSparkle(context, object.xy[0] + (object.motion.swayX || 0) * 8, object.xy[1] - 42 + (object.motion.bobY || 0), '#f5d69a', 1);
       }
       drawActorOverlay(object, logicalNow);
-      if (object.guest && object.hungry) drawHagridSpeechBubble(context, object.xy[0], object.xy[1] + 70, 'Đói…', {scale: speechScale});
+      if (object.guest && object.hungry) drawCreatureBubble(context, object.xy[0], object.xy[1] + (object.hop || 0) - finite(object.asset?.pivotY, 0) + finite((object.asset?.bounds ?? {}).y, 0), 'Đói…', {scale: speechScale, avoid: sceneryVisible ? {xy: wizardTargets(iso).find((t) => t.id === 'owl')?.xy, asset: decorAssets.get('owl_post')} : null});
       return;
     }
     if (object.kind === 'pen-front') {

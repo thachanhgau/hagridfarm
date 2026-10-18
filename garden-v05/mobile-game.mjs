@@ -9,7 +9,7 @@ import * as E from './progression-engine.mjs';
 import {createGarden,iso,plotCorners,plotCellPosition} from './scene-renderer.mjs?v=24.9.34';
 import {setupCamera} from './camera.mjs?v=24.9.34';
 import {createPanels} from './progression-panels.mjs?v=24.9.34';
-import {$,el,icon,button,num,duration,hours,plantingAction,serverRefusal} from './ui-utils.mjs?v=24.9.34';
+import {$,el,icon,button,num,duration,hours,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.34';
 import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.34';
 import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.34';
 import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.34';
@@ -525,8 +525,9 @@ function celebrate(from,to){
  playtest.track('level_up',{level:to});
  audio.play('levelUp');
  const list=$('unlockList');list.replaceChildren();
- for(const row of DB.levels.slice(from,to))list.append(el('li',{},[el('b',{text:'Cấp '+row.level}),el('span',{text:row.unlock})]));
- $('celebrationTitle').textContent='Lên cấp '+to+'!';celebrationFocus=document.activeElement;$('levelCelebration').hidden=false;$('closeCelebration').focus();
+ // What opened, as icon tiles (game-panels.css); the burst replays on every level-up and stays still with reduced motion.
+ for(const row of DB.levels.slice(from,to))list.append(el('li',{title:'Cấp '+row.level+': '+row.unlock},[levelUnlockVisual(row,DB,items,48).visual,el('span',{text:row.unlock.split(/[;·]/)[0]})]));
+ const card=$('levelCelebration');$('celebrationLevel').textContent=to;$('celebrationTitle').textContent='Lên cấp '+to+'!';celebrationFocus=document.activeElement;card.classList.remove('is-bursting');card.hidden=false;void card.offsetWidth;card.classList.add('is-bursting');$('closeCelebration').focus();
 }
 function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.focus();}
 $('closeCelebration').onclick=closeCelebration;

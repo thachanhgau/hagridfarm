@@ -325,19 +325,6 @@
 .inv-card-action:hover{background:#2d5441!important}
 
 /* 3. Store (Tiệm của người giữ vườn) */
-.store-Vault-banner,.store-vault-banner{
- display:flex;
- align-items:center;
- justify-content:space-between;
- flex-wrap:wrap;
- gap:12px;
- padding:14px 16px!important;
- border-radius:12px!important;
- background:linear-gradient(135deg,#243f30 0%,#162b21 60%,#2c2617 100%)!important;
- border:1px solid #d4af3788!important;
- box-shadow:inset 0 1px 0 #fff5cc33,0 6px 18px #05110c80;
- margin-bottom:12px;
-}
 .store-vault-left{display:flex;flex-direction:column;gap:8px;min-width:220px;flex:1}
 .store-vault-title-row{display:flex;align-items:center;gap:10px}
 .store-coin-emblem{
@@ -381,98 +368,12 @@
  border:1px solid #e2c47855;
 }
 .store-vault-right small{display:block;font:700 9px/1 ui-monospace,Menlo,monospace;color:#b8c7b0;letter-spacing:.6px}
-.store-galleons-total{font:800 20px/1.25 Georgia,serif;color:#ffe49e!important}
+
 .store-tabs{
  display:flex;
  flex-wrap:wrap;
  gap:6px;
  margin-bottom:10px;
-}
-.store-tab-btn{
- border-radius:999px!important;
- padding:6px 12px!important;
- font-size:12px!important;
-}
-.store-tab-btn[aria-pressed="true"]{
- background:linear-gradient(135deg,#e2c478,#b89742)!important;
- color:#102118!important;
- border-color:#fff0bc!important;
- font-weight:700;
-}
-.store-cards-grid{
- grid-template-columns:repeat(auto-fill,minmax(255px,1fr))!important;
- gap:12px!important;
- overflow-x:hidden!important;
- overflow-y:auto!important;
-}
-.store-overlay .store-card,.store-card{
- display:flex;
- flex-direction:column;
- gap:8px;
- padding:13px!important;
- border-radius:12px!important;
- background:linear-gradient(160deg,#1b352a 0%,#12241c 100%)!important;
- border:1px solid #c9ab6755!important;
- box-shadow:inset 0 1px 0 #fff3c417,0 6px 14px #040e0a73;
- min-width:0;
-}
-.store-overlay .store-card-head,.store-card-head{
- display:flex!important;
- flex-direction:row!important;
- align-items:center!important;
- text-align:left!important;
- gap:11px!important;
- min-height:60px!important;
- margin:0!important;
-}
-.store-card-title-wrap{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
-.store-card-badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:1px}
-.store-kind-pill,.store-level-pill{
- font:700 9px/1.2 ui-monospace,Menlo,monospace;
- padding:2px 6px;
- border-radius:999px;
- background:#10221a;
- border:1px solid #c9ab674d;
- color:#e2c478;
-}
-.store-stock-note{color:#9fd4b2!important;font-size:11px!important;font-weight:600}
-.store-desc{margin:0!important;font-size:12px!important;color:#ced9c2!important;line-height:1.38}
-.store-meta-row{
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:6px;
- padding-top:6px;
- border-top:1px solid #8f9d772e;
- margin-top:auto;
-}
-.store-action-row{
- display:flex;
- align-items:center;
- gap:6px;
- width:100%;
- min-width:0;
-}
-.store-overlay .store-card .store-qty-select,.store-qty-select{
- flex:0 0 104px!important;
- width:104px!important;
- min-height:38px!important;
- height:38px!important;
- padding:4px 6px!important;
- font-size:11px!important;
- background:#12261e!important;
- color:#f4e2bc!important;
- border:1px solid #c9ab6766!important;
-}
-.store-overlay .store-card .store-buy-btn,.store-overlay .store-card .store-owned-action,.store-buy-btn,.store-owned-action{
- flex:1 1 auto!important;
- width:auto!important;
- min-width:0!important;
- min-height:38px!important;
- height:38px!important;
- margin-top:0!important;
- font-size:12px!important;
- padding:4px 10px!important;
 }
 
 /* 4. Hành trình 100 cấp (Visual Journey) */
@@ -603,17 +504,6 @@
  border:1px solid #c9ab6738;
 }
 .journey-range-tabs,.journey-cat-tabs{display:flex;flex-wrap:wrap;gap:6px}
-.journey-tab-btn,.journey-cat-btn{
- border-radius:999px!important;
- padding:5px 11px!important;
- font-size:11px!important;
-}
-.journey-tab-btn[aria-pressed="true"],.journey-cat-btn[aria-pressed="true"]{
- background:linear-gradient(135deg,#e2c478,#b89742)!important;
- color:#102118!important;
- border-color:#fff0bc!important;
- font-weight:700;
-}
 
 .journey-milestone-grid{
  list-style:none;
@@ -689,7 +579,7 @@
  .inv-summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
  .journey-hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
  .inv-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
- .journey-milestone-grid,.store-cards-grid{grid-template-columns:1fr!important}
+ .journey-milestone-grid{grid-template-columns:1fr!important}
 }
 
 /* === V19.5: 2-ANGLE DECORATION ROTATION & PLACEMENT UI === */

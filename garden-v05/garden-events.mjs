@@ -2,7 +2,7 @@ import {getGardenStorage} from './garden-storage.mjs';
 import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.34';
 import {stableHash} from './scene-animation.mjs?v=24.9.34';
 import {dayKeyFor} from './garden-quests.mjs?v=24.9.34';
-import {pixelIcon} from './pixel-icons.mjs?v=24.9.34';
+import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.34';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -76,7 +76,7 @@ export const HOGWARTS_EVENTS = Object.freeze([
   }),
   Object.freeze({
     id: 'event_quidditch_cup',
-    art: null,
+    art: './v24-art/event-quidditch.webp',
     label: 'Cúp Quidditch & Tiệc Cuối Năm Học',
     shortLabel: '🏆 Cúp Quidditch',
     icon: '🏆',
@@ -886,7 +886,6 @@ export function renderGuestbookSection({
   const root = el('section', {class: 'v24-guestbook-section event-guestbook-section', 'data-guestbook-view': 'true'}, [
     el('div', {class: 'journey-section-head'}, [
       el('div', {}, [
-        el('small', {class: 'journey-kicker', text: 'LƯU BÚT'}),
         el('h3', {text: 'Lời nhắn từ bạn bè'}),
       ]),
     ]),
@@ -894,12 +893,12 @@ export function renderGuestbookSection({
   const grid = el('div', {class: 'cards guestbook-grid'});
   for (const note of guestbook) {
     grid.append(el('article', {class: 'card guestbook-card', 'data-guestbook-id': note.id}, [
-      el('div', {class: 'tour-card-top'}, [
-        el('span', {class: 'journey-stage-badge', text: `${note.avatar} ${note.author}`}),
-        el('span', {class: 'almanac-status-pill is-ready', text: note.stamp}),
+      el('div', {class: 'gp-letter-head'}, [
+        el('span', {class: 'gp-seal', 'aria-hidden': 'true'}, [pixelIcon(GUEST_ICONS[note.id] || 'owl', 2)]),
+        el('strong', {text: note.author, title: note.role}),
+        el('span', {class: 'gp-stamp', text: stripEmoji(note.stamp)}),
       ]),
-      el('small', {class: 'tour-card-keeper', text: note.role}),
-      el('p', {text: `"${note.message}"`}),
+      el('p', {class: 'gp-letter-text', text: note.message}),
     ]));
   }
   root.append(grid);
@@ -910,23 +909,27 @@ const FREE_TAP_ICONS = Object.freeze({care: ['care', 'Chăm cây'], pet: ['heart
 const shortDate = (key) => `${key.slice(8, 10)}/${key.slice(5, 7)}`;
 const THEME_LABELS = Object.freeze({event_halloween: 'Hội Ma', event_yule: 'Dạ vũ Noel', event_herbology_fair: 'Thảo dược', event_quidditch_cup: 'Quidditch', none: 'Ngày thường'});
 
+const GUEST_ICONS = Object.freeze({note_hagrid: 'home', note_sprout: 'sow', note_newt: 'heart', note_charlie: 'festival'});
+const stripEmoji = (text = '') => String(text).replace(/^[^\p{L}\p{N}]+/u, '').trim();
+
+// One stop on the festival reward track: the reward icon is the button, points and chips below.
 function milestoneCard({items, ms, key, claimed, ready, label, onClaim, title = null, note = null}) {
-  return el('article', {
-    class: `card event-milestone-card v24-event-milestone${claimed ? ' is-claimed' : ready ? ' is-ready' : ''}`,
-    'data-milestone-id': key,
-  }, [
-    el('div', {class: 'v24-event-milestone-head'}, [
-      visualItemIcon(items, ms.reward.itemId || ms.reward.kind, {size: 34, kind: ms.reward.kind || ''}),
-      el('span', {class: 'journey-stage-badge', text: ms.legacy ? 'Quà cũ' : `${ms.points} điểm`}),
-    ]),
-    title ? el('strong', {class: 'tour-card-title', text: title}) : null,
-    note ? el('small', {class: 'tour-card-keeper', text: note}) : null,
-    el('small', {class: 'v24-event-reward', text: ms.reward.label}),
-    button(label, () => onClaim?.(key), {
-      class: ready && !claimed ? 'primary' : '',
+  const state = claimed ? ' is-claimed' : ready ? ' is-ready' : ' is-locked';
+  return el('div', {class: `event-milestone-card v24-event-milestone gp-track-stop${state}`, 'data-milestone-id': key}, [
+    el('button', {
+      type: 'button',
+      class: `gp-track-node${ready && !claimed ? ' primary' : ''}`,
       disabled: !ready || claimed,
       'data-claim-milestone': key,
-    }),
+      'aria-label': `${label} · ${title ? title + ' · ' : ''}${ms.legacy ? 'Quà cũ' : ms.points + ' điểm'} · ${ms.reward.label}`,
+      title: [title, note, ms.reward.label].filter(Boolean).join(' · '),
+      onclick: () => onClaim?.(key),
+    }, [
+      visualItemIcon(items, ms.reward.itemId || ms.reward.kind, {size: 40, kind: ms.reward.kind || ''}),
+      claimed ? el('span', {class: 'gp-corner is-done'}, [pixelIcon('check', 1)]) : ready ? null : el('span', {class: 'lock-badge'}, [pixelIcon('lock', 1)]),
+    ]),
+    el('b', {class: 'gp-track-points', text: ms.legacy ? 'Quà cũ' : String(ms.points)}),
+    rewardChips(items, ms.reward),
   ]);
 }
 
@@ -986,16 +989,13 @@ export function renderEventsAndTasksSection({
   const pct = Math.min(100, Math.round((points / maxPoints) * 100));
   const milestoneSec = el('section', {class: 'event-milestones-section v24-event-progress'}, [
     el('div', {class: 'journey-section-head'}, [
-      el('div', {}, [el('h3', {text: `${points} / ${maxPoints} điểm`})]),
-      el('span', {class: 'journey-stage-pill', text: `${pct}%`}),
+      el('div', {}, [el('h3', {class: 'gp-points', text: `${points} / ${maxPoints}`})]),
+      status.active ? el('span', {class: 'journey-stage-pill', text: `${pct}%`}) : el('span', {class: 'gp-state', title: 'Lễ hội chưa mở nên chưa tính điểm'}, [pixelIcon('lock', 1), el('span', {text: 'Chưa mở'})]),
     ]),
-    el('div', {class: 'progress v24-event-progress-bar'}, [el('span', {style: `width:${pct}%`})]),
-    el('p', {
-      class: 'journey-subcopy v24-event-caps',
-      text: status.active
-        ? `Hôm nay: việc vườn ${evtState.farmToday}/${FESTIVAL_FARM_POINTS_PER_DAY} · việc khác ${evtState.freeToday}/${FESTIVAL_FREE_POINTS_PER_DAY} điểm. Quà nhiệm vụ cú luôn được tính.`
-        : 'Lễ hội chưa mở nên chưa tính điểm. Cảnh lễ hội bên dưới vẫn bật được để trang trí.',
-    }),
+    status.active ? el('div', {class: 'v24-event-caps gp-chips', title: 'Điểm hôm nay · quà nhiệm vụ cú luôn được tính'}, [
+      el('span', {class: 'reward-chip', 'aria-label': `Việc vườn ${evtState.farmToday}/${FESTIVAL_FARM_POINTS_PER_DAY} điểm`}, [pixelIcon('sow', 1), el('b', {text: `${evtState.farmToday}/${FESTIVAL_FARM_POINTS_PER_DAY}`})]),
+      el('span', {class: 'reward-chip', 'aria-label': `Việc khác ${evtState.freeToday}/${FESTIVAL_FREE_POINTS_PER_DAY} điểm`}, [pixelIcon('heart', 1), el('b', {text: `${evtState.freeToday}/${FESTIVAL_FREE_POINTS_PER_DAY}`})]),
+    ]) : null,
   ]);
   // Server play: today's free taps as icons with used/cap; a full one dims.
   if (evtState.server && evtState.freeCaps) {
@@ -1005,7 +1005,10 @@ export function renderEventsAndTasksSection({
         return el('span', {class: `v24-free-cap${used >= cap ? ' is-full' : ''}`, 'data-free-kind': kind, title: `${label} ${used}/${cap}`, 'aria-label': `${label} ${used}/${cap}`}, [pixelIcon(px, 1), el('b', {text: `${used}/${cap}`})]);
       })));
   }
-  const mGrid = el('div', {class: 'cards event-milestones-grid v24-event-milestones'});
+  // The bar runs from the first stop to the last; stops sit evenly, so fill each gap by its own points.
+  const [p1, p2, p3] = cfg.milestones.map((m) => m.points);
+  const fill = points <= p1 ? 0 : points <= p2 ? ((points - p1) / (p2 - p1)) * 50 : Math.min(100, 50 + ((points - p2) / (p3 - p2)) * 50);
+  const mGrid = el('div', {class: 'event-milestones-grid v24-event-milestones gp-track', style: `--fill:${Math.round(fill)}`});
   for (const ms of cfg.milestones) {
     const key = `${ms.id}@${season.year}`;
     const claimed = evtState.claimedMilestones.includes(key);
@@ -1021,7 +1024,7 @@ export function renderEventsAndTasksSection({
 
   const pending = pendingFestivalRewards(evtState);
   if (pending.length) {
-    const grid = el('div', {class: 'cards event-milestones-grid v24-event-milestones'});
+    const grid = el('div', {class: 'event-milestones-grid v24-event-milestones gp-track is-pending'});
     for (const ms of pending) {
       grid.append(milestoneCard({items, ms, key: ms.key, claimed: false, ready: true, label: 'Nhận', onClaim: onClaimEventMilestone, title: ms.title, note: ms.eventLabel}));
     }
@@ -1056,8 +1059,7 @@ export function renderEventsAndTasksSection({
   root.append(el('section', {class: 'v24-event-themes'}, [
     el('div', {class: 'journey-section-head'}, [
       el('div', {}, [
-        el('h3', {text: 'Cảnh lễ hội'}),
-        el('p', {class: 'journey-subcopy', text: 'Chỉ đổi cảnh trong vườn, không đổi lễ hội đang tính điểm.'}),
+        el('h3', {text: 'Cảnh lễ hội', title: 'Chỉ đổi cảnh trong vườn, không đổi lễ hội đang tính điểm.'}),
       ]),
     ]),
     selection,

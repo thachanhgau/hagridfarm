@@ -1,6 +1,7 @@
 import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.34";
 import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.34";
 import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.34";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.34";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -18,6 +19,8 @@ const KIND_LABELS = Object.freeze({
  boost: "Nước phép",
  decoration: "Trang trí · 2 góc xoay",
 });
+const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", decoration: "scenery"});
+const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("coin", 1), el("b", {text: num(n)}), extra ? el("small", {text: extra}) : null]);
 
 export function showStore({state,items,wallet,connected,onPurchase,onDecorate,decorAssets=new Map(),onClose,initialFilter="all"}){
  document.querySelector(".store-overlay")?.remove();
@@ -28,20 +31,19 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
  const close=()=>{if(purchasing)return;overlay.remove();onClose?.();$("shopButton")?.focus();};
  heading.append(
   el("div",{class:"store-heading-copy"},[
-   el("small",{text:"VẬT TƯ & ĐỒ TRANG TRÍ · HẺM XÉO HAGRID"}),
    el("h2",{id:"storeTitle",text:"Cửa hàng"}),
   ]),
-  button("×",close,{"aria-label":"Đóng cửa hàng"})
+  iconButton("close","Đóng cửa hàng",close,{class:"gp-close"})
  );
  shade.onclick=close;
 
  const categories=[
   ["all","Tất cả"],
-  ["seed","🌱 Hạt giống"],
-  ["water","💧 Nước tưới"],
-  ["food","♨ Thức ăn"],
-  ["boost","✨ Nước phép"],
-  ["decoration","🏮 Trang trí"],
+  ["seed","Hạt giống"],
+  ["water","Nước tưới"],
+  ["food","Thức ăn"],
+  ["boost","Nước phép"],
+  ["decoration","Trang trí"],
  ];
 
  const catalog=()=>{
@@ -54,18 +56,18 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   if(item.kind==="seed"){
    const cId=item.cropId||item.id.replace(/^seed_/,"");
    const count=sup?.seeds?.[cId]??0;
-   return `Trong kho: ${num(count)} hạt`;
+   return `Kho ${num(count)}`;
   }
-  if(item.kind==="water")return `Trong kho: ${num(sup?.water??0)} phần`;
-  if(item.kind==="boost")return `Đang có: ${num(sup?.boost??0)} phần`;
+  if(item.kind==="water")return `Kho ${num(sup?.water??0)}`;
+  if(item.kind==="boost")return `Kho ${num(sup?.boost??0)}`;
   if(item.kind==="food"){
    const invId=item.inventoryId||item.id;
    const count=snap?.garden?.progression?.inventory?.[invId]??state?.inventory?.[invId]??0;
-   return `Trong kho: ${num(count)} phần`;
+   return `Kho ${num(count)}`;
   }
   if(item.kind==="decoration"){
    const owned=Boolean(snap?.garden?.decorations?.owned?.includes(item.id));
-   return owned?"Đã sở hữu · Có 2 góc xoay":"Món sưu tầm · Mua 1 lần · 2 góc xoay";
+   return owned?"Đã có":"Mua 1 lần";
   }
   return "";
  }
@@ -78,33 +80,27 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   const bankBal=Number(snap?.wallet?.bankBalance??0);
   const sup=snap?.garden?.supplies;
 
-  status.replaceChildren(
-   el("div",{class:"store-vault-left"},[
-    el("div",{class:"store-vault-title-row"},[
-     el("span",{class:"store-coin-emblem",text:"◉"}),
-     el("div",{},[
-      el("span",{class:"store-wallet-label",text:snap?(wallet?.isPreview?"VÍ XEM THỬ":"VÍ GRINGOTTS"):"XEM TRƯỚC"}),
-      el("p",{class:"store-wallet-sub",text:snap?`Ví ${num(walletBal)} G · Ngân hàng ${num(bankBal)} G`:"Giá và hạn mức theo cấp độ hiện tại. Kết nối ví Gringotts để giao dịch."}),
-     ]),
-    ]),
-    sup?el("div",{class:"store-supply-pills"},[
-     el("span",{class:"store-supply-pill",text:`💧 Nước: ${num(sup.water||0)}`}),
-     el("span",{class:"store-supply-pill",text:`✨ Nước phép: ${num(sup.boost||0)}`}),
-     el("span",{class:"store-supply-pill",text:`🌱 Giống đã mở: ${allItems.filter(i=>i.kind==="seed").length}/24`}),
-    ]):null,
+  status.replaceChildren(...[
+   el("div",{class:"gp-wallet",title:snap?`Ví ${num(walletBal)} G · Ngân hàng ${num(bankBal)} G`:"Giá theo cấp hiện tại. Nối ví Gringotts để mua."},[
+    pixelIcon("coin",2),
+    snap?el("strong",{class:"store-galleons-total",text:num(spendable)}):el("span",{class:"lock-badge is-wide"},[pixelIcon("lock",1),el("b",{text:"Nối ví"})]),
+    el("small",{text:snap?(wallet?.isPreview?"Ví xem thử":"Galleons"):"Xem trước"}),
    ]),
-   el("div",{class:"store-vault-right"},[
-    el("small",{text:"KHẢ DỤNG"}),
-    el("strong",{class:"store-galleons-total",text:snap?`${num(spendable)} Galleons`:"Xem trước"}),
-   ])
-  );
+   sup?el("div",{class:"store-supply-pills gp-chips"},[
+    el("span",{class:"reward-chip",title:"Nước"},[pixelIcon("water",1),el("b",{text:num(sup.water||0)})]),
+    el("span",{class:"reward-chip",title:"Nước phép"},[pixelIcon("boost",1),el("b",{text:num(sup.boost||0)})]),
+    el("span",{class:"reward-chip",title:"Giống đã mở"},[pixelIcon("seed",1),el("b",{text:`${allItems.filter(i=>i.kind==="seed").length}/24`})]),
+   ]):null,
+  ].filter(Boolean));
 
   cards.replaceChildren();
   tabs.replaceChildren();
   for(const[id,name]of categories){
    const count=id==="all"?allItems.length:allItems.filter(i=>i.kind===id).length;
    if(id!=="all"&&count===0)continue;
-   tabs.append(button(`${name} (${count})`,()=>{filter=id;render();tabs.querySelector("[aria-pressed=\"true\"]")?.focus();},{"data-kind":id,"aria-pressed":String(id===filter),class:"store-tab-btn"}));
+   const tab=button("",()=>{filter=id;render();tabs.querySelector("[aria-pressed=\"true\"]")?.focus();},{"data-kind":id,"aria-pressed":String(id===filter),"aria-label":`${name} (${count})`,title:name,class:"store-tab-btn gp-tab"});
+   tab.append(pixelIcon(KIND_ICONS[id],2),el("span",{text:name}),el("b",{class:"gp-tab-count",text:String(count)}));
+   tabs.append(tab);
   }
 
   for(const item of allItems.filter(i=>filter==="all"||i.kind===filter)){
@@ -115,74 +111,59 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
    const facing=owned?decorFacingFor(decorState,item.id):"default";
    const location=slot>=0?DECOR_SLOTS.find(s=>s.id===slot)?.label:null;
 
-   const card=el("article",{class:`card store-card kind-${item.kind}${isDecor?" decor-card":""}`,"data-store-item":item.id});
+   const card=el("article",{class:`card store-card gp-tile kind-${item.kind}${isDecor?" decor-card":""}`,"data-store-item":item.id});
    const packBadge=isDecor?"2 góc":`×${item.quantity}`;
    const artVisual=visualItemIcon(items,item.icon||item.id,{size:56,kind:item.kind,decorAssets,badge:packBadge});
 
-   const head=el("div",{class:"card-head store-card-head"},[
-    artVisual,
-    el("div",{class:"store-card-title-wrap"},[
-     el("div",{class:"store-card-badges"},[
-      el("span",{class:`store-kind-pill kind-${item.kind}`,text:KIND_LABELS[item.kind]||item.kind}),
-      el("span",{class:"store-level-pill",text:`Cấp ${item.level}`}),
-     ]),
-     el("strong",{text:item.label}),
-     el("small",{class:"store-stock-note",text:ownedStockText(item,snap)}),
-    ]),
-   ]);
-
+   const head=el("div",{class:"gp-tile-art"},[artVisual]);
    const remaining=item.dailyRemaining??item.dailyLimit;
-   const qty=el("select",{"aria-label":"Số gói "+item.label,disabled:purchasing||!snap||remaining===0,class:"store-qty-select"});
    const max=Math.max(1,Math.min(remaining||1,24));
-   for(let n=1;n<=max;n++)qty.append(el("option",{value:n,text:n+" gói ("+(n*item.quantity)+" phần)"}));
-   qty.value=String(Math.min(max,quantities.get(item.id)||1));
+   let count=Math.min(max,quantities.get(item.id)||1);
+   const totalCost=()=>item.price*count;
+   const canBuy=()=>snap&&!purchasing&&remaining!==0&&spendable>=totalCost();
+   const buyLabel=()=>owned?"Đặt "+item.label:`Mua ${count} gói ${item.label} · ${num(totalCost())} Galleons`;
 
-   const totalCost=()=>item.price*Number(qty.value||1);
-
-   const buy=button(
-    owned?"Đặt / Xoay góc":snap?(remaining===0?"Hết hạn mức ngày":`Mua · ${num(totalCost())} G`):"Cần kết nối ví",
-    async()=>{
+   const buy=button("",async()=>{
      if(purchasing)return;
      if(owned){close();onDecorate?.(item);return;}
      purchasing=true;notice.textContent="Đang xác nhận giao dịch…";
-     const count=Number(qty.value);render();
+     const n=count;render();
      try{
-      await onPurchase(item.id,count);
-      notice.textContent=isDecor?"Đã sở hữu "+item.label+". Nhấn Đặt / Xoay góc để trang trí vườn.":"Đã mua "+count+" gói "+item.label+". Vật tư đã vào kho.";
+      await onPurchase(item.id,n);
+      notice.textContent=isDecor?"Đã có "+item.label+". Bấm Đặt để trang trí vườn.":"Đã mua "+n+" gói "+item.label+".";
      }catch(e){
       notice.textContent=e.message;
      }finally{
       purchasing=false;render();
      }
-    },
-    {
-     disabled:!snap||purchasing||(!owned&&(remaining===0||spendable<totalCost())),
-     class:owned?"primary store-owned-action":"primary store-buy-btn",
-    }
-   );
-
-   qty.onchange=()=>{
-    quantities.set(item.id,Number(qty.value));
-    buy.textContent=`Mua · ${num(totalCost())} G`;
-    buy.disabled=purchasing||!snap||remaining===0||spendable<totalCost();
+    },{class:owned?"primary store-owned-action":"primary store-buy-btn"});
+   const paintBuy=()=>{
+    buy.replaceChildren(...(owned?[pixelIcon("scenery",2),el("span",{text:"Đặt"})]:[pixelIcon("coin",1),el("span",{text:num(totalCost())})]));
+    buy.setAttribute("aria-label",buyLabel());buy.title=buyLabel();
+    buy.disabled=owned?false:!canBuy();
    };
 
-   const descText=isDecor?(DECOR_COPY[item.id]||item.description):item.description;
+   const qtyValue=el("output",{class:"gp-qty-value","aria-live":"polite"});
+   const paintQty=()=>{qtyValue.replaceChildren(el("b",{text:String(count)}),el("small",{text:`×${item.quantity}`}));qtyValue.title=`${count} gói · ${count*item.quantity} phần`;minus.disabled=!snap||purchasing||count<=1;plus.disabled=!snap||purchasing||count>=max;};
+   const step=d=>{count=Math.min(max,Math.max(1,count+d));quantities.set(item.id,count);paintQty();paintBuy();};
+   const minus=iconButton("minus","Bớt 1 gói "+item.label,()=>step(-1),{class:"gp-step"});
+   const plus=iconButton("plus","Thêm 1 gói "+item.label,()=>step(1),{class:"gp-step"});
+   paintQty();paintBuy();
+
    const angleTag=facing==="right"?"Góc nhìn qua phải ↗":"Góc hiện tại ↖";
-   const quotaText=isDecor
-    ?(owned?(location?`✓ Đã đặt · ${location} (${angleTag})`:"✓ Đã sở hữu · đang cất"):"Mua 1 lần · xoay 2 góc & đặt tự do")
-    :(snap?`Hạn mức hôm nay: còn ${remaining}/${item.dailyLimit} gói`:`Giới hạn: ${item.dailyLimit} gói / ngày`);
-   const priceText=isDecor
-    ?(owned?"Xoay & di chuyển miễn phí":`${num(item.price)} Galleons`)
-    :`${num(item.price)} Galleons / gói (${item.quantity} phần)`;
-
-   const metaRow=el("div",{class:"store-meta-row"},[
-    el("span",{class:owned?"meta decor-owned":"meta",text:quotaText}),
-    el("span",{class:"store-price",text:priceText}),
-   ]);
-
-   const actionRow=el("div",{class:"store-action-row"},isDecor?[buy]:[qty,buy]);
-   card.append(head,el("p",{class:"store-desc",text:descText}),metaRow,actionRow);
+   const quota=isDecor?(owned?(location?`${location} · ${angleTag}`:"Đang cất"):""):(snap?`Còn ${remaining}/${item.dailyLimit} hôm nay`:`${item.dailyLimit} gói/ngày`);
+   const descText=isDecor?(DECOR_COPY[item.id]||item.description):item.description;
+   card.title=descText;
+   const price=isDecor?(owned?el("span",{class:"gp-state is-on",text:"Đã có"}):coinChip(item.price)):coinChip(item.price,"/gói");
+   let action;
+   if(!snap)action=el("span",{class:"lock-badge is-wide",role:"img","aria-label":"Cần nối ví Gringotts để mua",title:"Cần nối ví Gringotts để mua"},[pixelIcon("lock",1),el("b",{text:"Nối ví"})]);
+   else if(!owned&&remaining===0)action=el("span",{class:"gp-state",text:"Hết hôm nay"});
+   else action=buy;
+   card.append(head,
+    el("strong",{class:"gp-tile-name",text:item.label}),
+    el("small",{class:"gp-tile-sub store-stock-note",text:ownedStockText(item,snap)}),
+    el("div",{class:"store-meta-row"},[price,el("small",{class:owned?"meta decor-owned":"meta",text:quota})]),
+    el("div",{class:"store-action-row gp-tile-actions"},isDecor||!snap?[action]:[el("div",{class:"gp-stepper",role:"group","aria-label":"Số gói "+item.label},[minus,qtyValue,plus]),action]));
    cards.append(card);
   }
   if(!cards.childElementCount){
@@ -198,7 +179,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
  overlay.addEventListener("keydown",e=>{
   if(e.key==="Escape"){e.preventDefault();e.stopPropagation();close();}
   if(e.key==="Tab"){
-   const f=[...box.querySelectorAll("button:not(:disabled),select:not(:disabled)")],first=f[0],last=f.at(-1);
+   const f=[...box.querySelectorAll("button:not(:disabled)")],first=f[0],last=f.at(-1);
    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
   }

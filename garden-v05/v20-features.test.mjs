@@ -239,3 +239,33 @@ test('Hagrid speech text sits inside its box when the bubble grows right from hi
   assert.equal(bx, 76); // starts 24 px left of Hagrid, never centred on the forest edge
   assert.equal(calls.fillText[1], Math.round(bx + bw / 2));
 });
+
+test('Night lights are crisp 2 px pixel diamonds, never ellipses or arcs', async () => {
+  const {drawAtmosphereOverlay} = await import('./garden-atmosphere.mjs');
+  const rects = [];
+  const used = new Set();
+  const ctx = new Proxy({}, {
+    get: (_t, prop) => (...args) => { used.add(prop); if (prop === 'fillRect') rects.push(args); },
+    set: () => true,
+  });
+  drawAtmosphereOverlay(ctx, 800, 600, {mode: 'night', clock: 0, objects: [{kind: 'wizard-scenery', id: 'owl', xy: [301, 401]}]});
+  assert.ok(!used.has('ellipse') && !used.has('arc') && !used.has('createRadialGradient'));
+  const glow = rects.slice(1).filter(([x, y]) => Math.abs(x - 307) < 40 && Math.abs(y - 353) < 30);
+  assert.ok(glow.length > 6);
+  for (const r of glow) assert.ok(r.every((v) => Number.isInteger(v) && v % 2 === 0), `off-grid ${r}`);
+  assert.ok(Math.max(...glow.map((r) => r[2])) <= 52 * 0.4 * 2 + 4); // ~40% of the old halo
+});
+
+test('Creature bubble sits above the sprite top and slides clear of the owl', async () => {
+  const {drawCreatureBubble} = await import('./garden-atmosphere.mjs');
+  const ctx = {measureText: (s) => ({width: s.length * 6}), save() {}, restore() {}, fillRect() {}, fillText() {}};
+  const free = drawCreatureBubble(ctx, 500, 300, 'Đói…', {scale: 1.6});
+  assert.equal(free.bottom, 296); // tail tip 2*k px above the sprite top, k = 2
+  assert.ok(free.left < 500 && free.right > 500);
+  const owl = {left: 440, top: 260, right: 510, bottom: 330};
+  const moved = drawCreatureBubble(ctx, 500, 300, 'Đói…', {scale: 1.6, avoid: owl});
+  assert.ok(moved.left >= owl.right);
+  assert.ok([moved.left, moved.top, moved.right, moved.bottom].every(Number.isInteger));
+  const owlPost = {xy: [460, 320], asset: {pivotX: 36, pivotY: 88, bounds: {x: 14, y: 5, w: 44, h: 83}}};
+  assert.ok(drawCreatureBubble(ctx, 500, 300, 'Đói…', {scale: 1.6, avoid: owlPost}).left >= 482); // owl sprite right edge
+});

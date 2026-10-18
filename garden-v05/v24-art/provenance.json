@@ -84,6 +84,15 @@
       "prompt": "Edit only the canonical garden's weather: thick soft snow caps on roof, greenhouse, fences, trees and beds, snowy paths with a few footprints, cool blue air, warm glowing hut windows and lanterns. Preserve exact camera, isometric composition, hut, greenhouse, fence, path, bed positions, crop silhouettes and scale. No layout changes, text, logos, UI, watermark, collage or frame; avoid rain, autumn leaves, pumpkins and holiday decorations.",
       "bytes": 112356,
       "sha256": "c775cb68559658478b2ce16bd451ffc8f589677bdd370e1ce8684334d02d1393"
+    },
+    {
+      "id": "event-quidditch",
+      "mode": "procedural",
+      "source_script": "../build-quidditch-art.mjs",
+      "webp": "event-quidditch.webp",
+      "prompt": "Not AI-generated: drawn pixel by pixel in code by build-quidditch-art.mjs at 320x180 and upscaled 2x nearest-neighbour, palette.mjs colours only, light from top-left, #231F2E outlines. Bright summer day at the Hogwarts Quidditch pitch: mowed striped pitch with chalk lines and sandy track, three golden goal hoops at the far end, four wooden spectator towers draped in Gryffindor, Ravenclaw, Hufflepuff and Slytherin colours joined by pennant bunting, three broom riders and the Golden Snitch, striped feast marquees, Hogwarts on the far hill, and a fenced corner of Hagrid's garden with sunflowers, pumpkins and cabbages. No text.",
+      "bytes": 10310,
+      "sha256": "ed8aa7acc2ac142b0c30a37db3002b25b6c437b17e5d6af45a3fc2bba6c0c0ff"
     }
   ],
   "master_directory": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v24/art/artmasters"
