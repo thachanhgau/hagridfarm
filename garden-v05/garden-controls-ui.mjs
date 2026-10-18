@@ -1,5 +1,5 @@
-import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.27';
-import {navIcon,V24_ART} from './v24-visuals.mjs?v=24.9.27';
+import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.28';
+import {navIcon,V24_ART} from './v24-visuals.mjs?v=24.9.28';
 
 export function setupGardenControls({items,onSettings,getWeather}){
  const labels={sowTool:'Gieo hạt',harvestTool:'Gặt tất cả cây chín',creatureTool:'Nuôi sinh vật',craftTool:'Chế biến',buildTool:'Xây dựng'};

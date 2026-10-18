@@ -96,3 +96,9 @@
 - Cuộn: bảng Hồ sơ dùng thanh cuộn vàng mảnh `#B49A66` 4 px trên máy có chuột; ẩn hẳn trên điện thoại (`hover:none` hoặc ≤ 480 px).
 - Kiểm chứng: 162/162 test; FTUE WebKit 5/5; ảnh 4 tab + menu + thư cú ở 320×568, 390×664, 750×342, 1280×720: không tràn ngang, không cắt chữ, tab ≥ 44 px, không lỗi console. Chưa đổi chuỗi `?v=24.9.x`.
 - Còn lại: core-design muốn menu chính "Vườn · Kho · Thư cú · Hồ sơ" với Cài đặt nằm trong Hồ sơ; đợt này chưa đụng. `?view=` chỉ chạy khi nối ví (như trước).
+
+## Gộp Phase 3 vào main — `?v=24.9.28` (18/10/2026)
+- Đã gộp `phase3-festival-pacing` (báo cáo `docs/festival-pacing.md`; nút Chăm cây và lệnh Chuyển thửa/chuồng không còn cho điểm lễ hội vô hạn) và `phase3-profile-panel` (mục trên).
+- Giá hạt: phương án A1, giữ nguyên (`docs/progression-sim.md`, mục *Kết quả*).
+- Kiểm chứng sau khi gộp: 165/165 test node; FTUE WebKit 5/5; bảng Hồ sơ mở đúng cả 4 tab qua hook QA, không lỗi console.
+- Chưa tạo manifest sha256 cho bản này.
