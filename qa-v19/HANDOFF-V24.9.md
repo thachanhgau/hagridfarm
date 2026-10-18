@@ -130,3 +130,9 @@
   - Lần đầu mở game, cảnh mặc định vẫn là Lễ Hội Ma vì `loadVisualPrefs` mặc định `event_halloween`; việc này chỉ đổi hình, không đổi điểm.
   - `economy-audit.md` dòng 19 vẫn ghi mốc 30 / 75 / 150 và rương +50.
   - Khi gộp nhánh cần tăng `?v=` cho `garden-events.mjs`, `garden-atmosphere.mjs`, `v24-panels.css`.
+
+## Gộp HUD icon + lễ hội lịch thật vào main — `?v=24.9.29` (18/10/2026)
+- Đã gộp `ui-icon-hud` và `festival-calendar`; chỉ xung đột ở file này, giữ cả hai mục.
+- Kiểm chứng sau khi gộp: 176/176 test node; FTUE WebKit 5/5; `qa-v19/hud-shots.mjs` 10/10 khung (5 cỡ màn × gập/mở) không chồng lấn, không tràn.
+- Còn nhỏ: chơi trên máy thì bộ đếm nước/hạt hiện 0 dù gieo miễn phí (dễ hiểu nhầm là hết); nhãn "Đang ghi thử nghiệm ẩn danh" (`?playtest=1`) đè mép dock trên điện thoại; vòng XP ở cấp 1 chưa thấy rõ khi XP = 0.
+- Chưa tạo manifest sha256.
