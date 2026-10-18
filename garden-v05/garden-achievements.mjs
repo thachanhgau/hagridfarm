@@ -1,5 +1,5 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button} from './ui-utils.mjs?v=24.9.32';
+import {el, button} from './ui-utils.mjs?v=24.9.33';
 
 export const ACHIEVEMENTS_STORAGE_KEY = 'hpvn-garden-v22-achievements';
 
@@ -217,11 +217,19 @@ export function saveAchievementPrefs(prefs = {}, storage = getGardenStorage()) {
   return normalized;
 }
 
+// Connected play: the server judges and grants achievements; `useServerAchievements(response.achievements)`
+// after every wallet response. The worn title stays a device preference.
+let serverAchievements = null;
+export function useServerAchievements(view = null) {
+  serverAchievements = view && Array.isArray(view.items) ? new Map(view.items.map((i) => [i.id, i])) : null;
+  return serverAchievements;
+}
+
 export function evaluateAchievements(state = {}, extra = {}, storage = getGardenStorage()) {
   const prefs = loadAchievementPrefs(storage);
   const items = KEEPER_ACHIEVEMENTS.map((ach) => {
-    const status = ach.check(state, extra);
-    const claimed = prefs.claimedIds.includes(ach.id);
+    const status = serverAchievements?.get(ach.id) || ach.check(state, extra);
+    const claimed = serverAchievements ? Boolean(serverAchievements.get(ach.id)?.claimed) : prefs.claimedIds.includes(ach.id);
     const selected = prefs.selectedTitleId === ach.id;
     return {
       ...ach,
@@ -271,6 +279,7 @@ export function claimAchievementReward(achId, {
   storage = getGardenStorage(),
   onReward,
 } = {}) {
+  if (serverAchievements) return {ok: false, reason: 'SERVER_OWNED'};
   const summary = evaluateAchievements(state, extra, storage);
   const target = summary.items.find((i) => i.id === achId);
   if (!target || !target.unlocked) {

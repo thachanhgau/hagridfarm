@@ -1,16 +1,18 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.32";
-import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.32";
-import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.32";
-import {vnDayKey,festivalStatus,festivalMilestone,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.32";
+import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.33";
+import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.33";
+import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.33";
+import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.33";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs";
+import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.33";
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
-// garden-daily-core.js, garden-festival-core.js): same commands, error reasons and response shapes.
+// garden-daily-core.js, garden-festival-core.js, garden-keeper-core.js): same commands, error reasons and response shapes.
 // Day keys are Asia/Ho_Chi_Minh; a requestId replays its first receipt; builds check crops, then Galleons.
 const FREE_CAPS=Object.freeze({rotate:3,pet:3,postcard:1,shareFloo:1,startTour:1,care:3,moveBuilding:1});
 const FREE_TAPS=new Set(["care","pet","rotate","postcard","shareFloo","startTour"]);
-const DAILY=new Set(["claimQuest","claimChest","claimFestival","freeAction"]);
+const DAILY=new Set(["claimQuest","claimChest","claimFestival","freeAction","claimBondGift","claimAchievement"]);
+const BOND_POINTS=Object.freeze({adopt:15,feed:20,claimAnimals:25,pet:12}),BOND_PETS_PER_DAY=3;
 const CHEST_REWARD=Object.freeze({kind:"boost",amount:1,waterBonus:12,itemId:"boost",eventPoints:20,label:"Rương Cú Vàng: +1 Nước phép, +12 Nước, +20 điểm lễ hội"});
 const clone=v=>structuredClone(v);
 const fail=(reason,message,details={})=>{const e=Error(message);e.definitive=true;e.reason=reason;e.details={reason,...details};throw e;};
@@ -55,10 +57,13 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  const garden={
   progression:state,
   supplies:{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?36:0])),water:213,boost:2},
+  // `facing` is stored per item (proposed server shape); a same-slot placement with a new facing turns it.
   decorations:{owned:full?storeDecors:["decor_pumpkin_lantern"],placements:full?[...storeDecors,null,null,null,null,null,null].slice(0,6):["decor_pumpkin_lantern",null,null,null,null,null],
-   rotations:full?{decor_pumpkin_lantern:"default",decor_broom_rack:"right",decor_cauldron:"default",decor_mandrake_planter:"right",decor_floating_candles:"default",decor_vine_arch:"right"}:{decor_pumpkin_lantern:"default"}},
+   facing:full?{decor_pumpkin_lantern:"default",decor_broom_rack:"right",decor_cauldron:"default",decor_mandrake_planter:"right",decor_floating_candles:"default",decor_vine_arch:"right"}:{decor_pumpkin_lantern:"default"}},
   boostedCropIds:[],
   festival:{joinDay:dayKey(),pointsBySeason:{},claimedMilestones:[]},
+  bonding:{bySpecies:{},claimedGifts:[]},
+  achievements:{claimedIds:[]},
  };
  const wallet={spendable,balance:spendable-bankBalance,bankBalance};
  const dailies=new Map(),ops=new Map(),ledger=[];
@@ -90,6 +95,38 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const points=garden.festival.pointsBySeason[`${event.id}@${year}`]||0;
   return event.milestones.map(m=>{const key=`${m.id}@${year}`,claimed=garden.festival.claimedMilestones.includes(key);return {key,title:m.title,points:m.points,reward:clone(m.reward),claimed,claimable:!claimed&&points>=m.points};});
  }
+ // Bonding (garden-keeper-core): a creature with no entry starts from 15 × its completed meals.
+ const creatureOf=(p,sp)=>p.creatures.find(c=>c.species===sp)||null;
+ const savedOrBaseline=(g,sp,cr)=>g.bonding.bySpecies[sp]||{xp:(cr?.mealsCompleted||0)*15,pets:0,petDay:"",petsToday:0};
+ function addBond(g,before,sp,action,day){
+  const prev=savedOrBaseline(g,sp,creatureOf(before,sp)),beforeLevel=affinityLevelForXp(prev.xp).level,isPet=action==="pet";
+  const petsToday=prev.petDay===day?prev.petsToday:0,capped=isPet&&petsToday>=BOND_PETS_PER_DAY,gain=capped?0:BOND_POINTS[action];
+  const entry={xp:prev.xp+gain,pets:prev.pets+(isPet&&!capped?1:0),petDay:isPet?day:prev.petDay,petsToday:isPet?petsToday+(capped?0:1):(prev.petDay===day?petsToday:0)};
+  if(!capped)g.bonding.bySpecies[sp]=entry;
+  const info=affinityLevelForXp(entry.xp);
+  return {species:sp,action,gain,capped,petsLeftToday:Math.max(0,BOND_PETS_PER_DAY-entry.petsToday),level:info.level,leveledUp:info.level>beforeLevel};
+ }
+ function bondTriggers(action,before,after){
+  const was=sp=>creatureOf(before,sp);
+  if(action==="adopt")return after.creatures.filter(c=>!was(c.species)).map(c=>c.species);
+  if(action==="feed")return after.creatures.filter(c=>c.meal&&!was(c.species)?.meal).map(c=>c.species);
+  if(action==="claimAnimals")return after.creatures.filter(c=>{const p=was(c.species);return p&&(c.mealsCompleted>p.mealsCompleted||c.cyclesClaimed>p.cyclesClaimed);}).map(c=>c.species);
+  return [];
+ }
+ function bondingView(day){
+  const creatures=garden.progression.creatures.map(cr=>{
+   const entry=savedOrBaseline(garden,cr.species,cr),info=affinityLevelForXp(entry.xp);
+   const gifts=CREATURE_AFFINITY_LEVELS.filter(l=>l.reward).map(l=>{const giftId=`${cr.species}:lv${l.level}`,claimed=garden.bonding.claimedGifts.includes(giftId);return {giftId,level:l.level,title:l.title,reward:clone(l.reward),claimed,claimable:!claimed&&info.level>=l.level};});
+   return {species:cr.species,...info,pets:entry.pets,petsLeftToday:Math.max(0,BOND_PETS_PER_DAY-(entry.petDay===day?entry.petsToday:0)),gifts};
+  });
+  return {points:{...BOND_POINTS},petsPerDay:BOND_PETS_PER_DAY,creatures,totalLevels:creatures.reduce((n,c)=>n+c.level,0),claimableCount:creatures.reduce((n,c)=>n+c.gifts.filter(g=>g.claimable).length,0)};
+ }
+ // Achievements: judged from the garden; honour-garden help is always 0 (tours are frozen).
+ const achStatus=(g,a)=>a.check(g.progression,{decorations:g.decorations,helpedGardensCount:0});
+ function achievementsView(){
+  const items=KEEPER_ACHIEVEMENTS.map(({check,...a})=>{const st=achStatus(garden,{check});return {...clone(a),...st,unlocked:Boolean(st.unlocked),claimed:garden.achievements.claimedIds.includes(a.id)};});
+  return {items,unlockedCount:items.filter(i=>i.unlocked).length,totalCount:items.length,claimableCount:items.filter(i=>i.unlocked&&!i.claimed).length};
+ }
  function response(receipt=null){
   const d=daily(),status=festivalStatus(d.dayKey,garden.festival.joinDay);
   const view=s=>({id:s.id,label:s.event.label,shortLabel:s.event.shortLabel,icon:s.event.icon,year:s.year,seasonKey:s.seasonKey,start:s.start,end:s.end});
@@ -107,13 +144,14 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    daily:{dayKey:d.dayKey,streakDays:d.streakDays,quests:d.quests,chest:{claimed:d.chestClaimed,ready:!d.chestClaimed&&done>=3,reward:CHEST_REWARD},
     freeActions:Object.fromEntries(Object.entries(FREE_CAPS).map(([kind,cap])=>[kind,{used:d.free[kind]||0,cap}]))},
    festival:{active,next:{...view(status.next),daysUntil:status.next.daysUntil},today:{farm:d.farm,farmCap:FESTIVAL_FARM_POINTS_PER_DAY,free:d.freeToday,freeCap:FESTIVAL_FREE_POINTS_PER_DAY},pending},
+   bonding:bondingView(d.dayKey),achievements:achievementsView(),
    serverNow:now(),profile:{username:"Xem thử · không lưu"},
    ...(receipt?{receipt}:{}),
   });
  }
  // Crops are paid by the engine first (missing-crops); Galleons only after, bank first, one debit per requestId.
  function charge(cost,requestId){
-  if(wallet.spendable<cost)fail("insufficient-galleons","Chưa đủ Galleons cho công trình này.",{required:cost});
+  if(wallet.spendable<cost)fail("insufficient-galleons","Chưa đủ Galleons cho công trình này.",{required:cost,spendable:wallet.spendable,shortBy:cost-wallet.spendable});
   const fromBank=Math.min(wallet.bankBalance,cost);wallet.bankBalance-=fromBank;wallet.balance-=cost-fromBank;wallet.spendable-=cost;
   ledger.push({requestId,type:"debit",amount:cost,reasonCode:"garden_build"});
  }
@@ -136,7 +174,11 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
     case "buyDecoration":return E.buyDecoration(p,c.level);
    }
   }catch(e){
-   if(e?.code==="MISSING_RESOURCE"&&(c.action==="build"||c.action==="buyDecoration"))fail("missing-crops","Chưa đủ nông sản cho công trình này.",{modelCode:e.code,detail:e.message});
+   if(e?.code==="MISSING_RESOURCE"&&(c.action==="build"||c.action==="buyDecoration")){
+    const entry=c.action==="build"?E.DB.expansions.find(x=>x.id===c.expansionId):E.DB.decorations.find(x=>x.level===c.level);
+    const missing=Object.entries(entry?.cropCost||{}).map(([resource,required])=>({resource,required,have:p.inventory[resource]||0})).filter(m=>m.have<m.required);
+    fail("missing-crops","Chưa đủ nông sản cho công trình này.",{modelCode:e.code,detail:e.message,missing});
+   }
    fail("model-rejected",e?.message||"Mô hình từ chối lệnh khu vườn.",{modelCode:e?.code||null});
   }
   fail("unknown-action","Lệnh khu vườn không được hỗ trợ.",{action:c.action});
@@ -161,12 +203,14 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  function place(c,next){
   const dec=next.decorations,from=dec.placements.indexOf(c.itemId);
   if(!dec.owned.includes(c.itemId))fail("decoration-not-owned","Đồ trang trí chưa được sở hữu.");
+  const turn=(c.facing==="right"||c.facing==="default")&&(dec.facing[c.itemId]||"default")!==c.facing;
   if(c.slot===null){if(from<0)fail("action-noop","Đồ trang trí đã được cất.");dec.placements[from]=null;}
+  else if(from===c.slot){if(!turn)fail("action-noop","Đồ trang trí đã ở vị trí này.");}
   else{
-   if(from===c.slot)fail("action-noop","Đồ trang trí đã ở vị trí này.");
    if(dec.placements[c.slot]!==null)fail("slot-occupied","Vị trí đồ trang trí đã có món khác.");
    dec.placements[c.slot]=c.itemId;if(from>=0)dec.placements[from]=null;
   }
+  if(turn)dec.facing[c.itemId]=c.facing;
   next.progression.revision+=1;
  }
  function claim(c,next,d,extra){
@@ -181,6 +225,19 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(d.chestClaimed)fail("already-claimed","Rương Cú Vàng hôm nay đã mở.");
    if(d.quests.filter(q=>q.progress>=q.target).length<3)fail("quest-incomplete","Cần hoàn thành cả 3 nhiệm vụ cú.");
    d.chestClaimed=true;reward=CHEST_REWARD;extra.chest=true;
+  }else if(c.action==="claimBondGift"){
+   const match=/^([a-z-]{1,32}):lv([2-5])$/.exec(String(c.giftId??"")),cr=match?creatureOf(next.progression,match[1]):null;
+   if(!cr)fail("bond-not-found","Không có quà gắn kết này.");
+   if(next.bonding.claimedGifts.includes(c.giftId))fail("already-claimed","Quà gắn kết này đã nhận.");
+   const entry=savedOrBaseline(next,match[1],cr),lv=CREATURE_AFFINITY_LEVELS[Number(match[2])-1];
+   if(entry.xp<lv.minXp)fail("bond-incomplete","Sinh vật chưa đủ điểm gắn kết cho quà này.");
+   next.bonding.claimedGifts.push(c.giftId);next.bonding.bySpecies[match[1]]={...entry};reward=lv.reward;extra.giftId=c.giftId;
+  }else if(c.action==="claimAchievement"){
+   const a=KEEPER_ACHIEVEMENTS.find(x=>x.id===c.achievementId);
+   if(!a)fail("achievement-not-found","Không có thành tựu này.");
+   if(next.achievements.claimedIds.includes(a.id))fail("already-claimed","Thành tựu này đã nhận thưởng.");
+   if(!achStatus(next,a).unlocked)fail("achievement-locked","Thành tựu này chưa mở khóa.");
+   next.achievements.claimedIds.push(a.id);reward=a.reward;extra.achievementId=a.id;
   }else{
    const m=String(c.milestoneKey).includes("@")?festivalMilestone(c.milestoneKey):null;
    if(!m)fail("festival-not-found","Không có mốc lễ hội này.");
@@ -201,14 +258,16 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   if(c.action!=="freeAction"&&c.expectedRevision!==before.revision)fail("revision-conflict","Khu vườn đã thay đổi; hãy tải lại trước khi thao tác.",{expectedRevision:c.expectedRevision,actualRevision:before.revision});
   // Work on copies; nothing is kept unless every check passed (like the server transaction).
   const d=clone(daily()),next=clone(garden),extra={};
-  if(c.action==="claimQuest"||c.action==="claimChest"||c.action==="claimFestival"){
+  if(["claimQuest","claimChest","claimFestival","claimBondGift","claimAchievement"].includes(c.action)){
    claim(c,next,d,extra);
-   if(c.action!=="claimFestival")extra.festivalPoints=addPoints(d,next.festival,c.action==="claimQuest"?"questClaim":"dailyChest",{amount:c.action==="claimChest"?CHEST_REWARD.eventPoints:null});
+   if(c.action==="claimQuest"||c.action==="claimChest")extra.festivalPoints=addPoints(d,next.festival,c.action==="claimQuest"?"questClaim":"dailyChest",{amount:c.action==="claimChest"?CHEST_REWARD.eventPoints:null});
   }else if(c.action==="freeAction"){
    if(!FREE_TAPS.has(c.kind))fail("invalid-action-input","Thao tác miễn phí không hợp lệ.",{kind:c.kind});
-   if(c.kind==="pet"&&!before.creatures.length)fail("no-creature","Chưa có sinh vật để vuốt ve.");
+   if(c.kind==="pet"&&(!before.creatures.length||(c.species&&!creatureOf(before,c.species))))fail("no-creature","Chưa có sinh vật để vuốt ve.");
    extra.freeAction=countFree(d,c.kind);
    extra.festivalPoints=addPoints(d,next.festival,c.kind,{counted:extra.freeAction.counted});
+   // Bonding has its own cap (3 pets per creature a day), apart from the free-tap cap.
+   if(c.kind==="pet"&&c.species)extra.bonding=[addBond(next,before,c.species,"pet",d.dayKey)];
   }else if(c.action==="boost")boost(c,next);
   else if(c.action==="placeDecoration")place(c,next);
   else{
@@ -216,6 +275,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(next.progression.revision!==before.revision+1)fail("action-noop","Lệnh khu vườn không tạo thay đổi mới.");
    if(c.action==="plant"||c.action==="replant")plantSupplies(before,next.progression,next.supplies);
    for(const [type,amount] of questAmounts(c.action,before,next.progression,c))for(const q of d.quests)if(!q.claimed&&q.triggers.includes(type))q.progress=Math.min(q.target,q.progress+amount);
+   const bonded=bondTriggers(c.action,before,next.progression);
+   if(bonded.length)extra.bonding=bonded.map(sp=>addBond(next,before,sp,c.action,d.dayKey));
   }
   if(!DAILY.has(c.action)){
    // Moving a plot/pen and placing a decoration are free taps (placing counts as rotate); the rest is farm work.

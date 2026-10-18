@@ -1,8 +1,8 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.32';
-import {stableHash} from './scene-animation.mjs?v=24.9.32';
-import {dayKeyFor} from './garden-quests.mjs?v=24.9.32';
-import {pixelIcon} from './pixel-icons.mjs?v=24.9.32';
+import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.33';
+import {stableHash} from './scene-animation.mjs?v=24.9.33';
+import {dayKeyFor} from './garden-quests.mjs?v=24.9.33';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.33';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -552,7 +552,17 @@ export function affinityLevelForXp(xp = 0) {
   };
 }
 
+// Connected play: the server owns bonding. `useServerBonding(response)` after every wallet
+// response; the cards then show `response.bonding` and local counting/claiming stands down.
+let serverBonding = null;
+export function useServerBonding(response = null) {
+  const view = response?.bonding, saved = response?.garden?.bonding;
+  serverBonding = view && Array.isArray(view.creatures) ? {view: structuredClone(view), saved: structuredClone(saved || {bySpecies: {}, claimedGifts: []})} : null;
+  return serverBonding;
+}
+
 export function loadAffinityState(storage = getGardenStorage()) {
+  if (serverBonding) return {version: 23, bySpecies: structuredClone(serverBonding.saved.bySpecies || {}), claimedGifts: [...(serverBonding.saved.claimedGifts || [])]};
   const defaults = {
     version: 23,
     bySpecies: {},
@@ -600,7 +610,7 @@ export function saveAffinityState(state, storage = getGardenStorage()) {
 export const AFFINITY_PETS_PER_DAY = 3;
 
 export function recordCreatureAffinity(speciesId, actionType = 'pet', storage = getGardenStorage(), gameState = {}, nowMs = Date.now()) {
-  if (!speciesId) return null;
+  if (!speciesId || serverBonding) return null;
   const state = loadAffinityState(storage);
   const creature = gameState.creatures?.find(cr => cr.species === speciesId);
   const prev = state.bySpecies[speciesId] || {xp: (creature?.mealsCompleted || 0) * 15, pets: 0, petDay: '', petsToday: 0};
@@ -634,7 +644,14 @@ export function recordCreatureAffinity(speciesId, actionType = 'pet', storage = 
 export function evaluateCreatureAffinity(gameState = {}, storage = getGardenStorage()) {
   const affState = loadAffinityState(storage);
   const creatures = Array.isArray(gameState?.creatures) ? gameState.creatures : [];
+  const fromServer = new Map((serverBonding?.view.creatures || []).map((c) => [c.species, c]));
   const entries = creatures.map((cr) => {
+    // Server card for the player's own creatures; a visited garden's other species fall back to the baseline below.
+    const card = fromServer.get(cr.species);
+    if (card) {
+      const {gifts = [], ...info} = card;
+      return {...info, claimableGifts: gifts.filter((g) => g.claimable).map(({giftId, level, title, reward}) => ({giftId, level, title, reward}))};
+    }
     const saved = affState.bySpecies[cr.species];
     // Give adult creatures a baseline affinity if not yet interacted
     const baseXp = saved ? saved.xp : (cr.mealsCompleted || 0) * 15;
@@ -666,6 +683,7 @@ export function evaluateCreatureAffinity(gameState = {}, storage = getGardenStor
 }
 
 export function claimAffinityGift(giftId, {gameState = {}, storage = getGardenStorage(), onGrantReward = null} = {}) {
+  if (serverBonding) return {ok: false, reason: 'SERVER_OWNED'};
   const affState = loadAffinityState(storage);
   if (affState.claimedGifts.includes(giftId)) {
     return {ok: false, reason: 'ALREADY_CLAIMED'};

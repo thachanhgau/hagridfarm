@@ -16,7 +16,8 @@ export function createGardenClient(transport){
   read:()=>queue(()=>call('getHagridGarden',{})),
   act:command=>queue(()=>mutate('performHagridGardenAction',{...command,expectedRevision:revision()})),
   // Free taps (care, pet, rotate, postcard, shareFloo, startTour): one requestId per tap; they never wait on a lost write.
-  free:kind=>queue(()=>call('performHagridGardenAction',{action:'freeAction',kind,expectedRevision:revision(),requestId:crypto.randomUUID()})),
+  // `extra` is {species} for a pet, so the server also counts bonding.
+  free:(kind,extra={})=>queue(()=>call('performHagridGardenAction',{...extra,action:'freeAction',kind,expectedRevision:revision(),requestId:crypto.randomUUID()})),
   buy:(itemId,packages)=>queue(()=>{const item=snapshot.catalog.find(i=>i.id===itemId);if(!item)throw Error('Vật tư chưa mở.');return mutate('buyHagridGardenSupplies',{itemId,quantity:packages,catalogVersion:snapshot.catalogVersion,expectedTotal:item.price*packages});}),
  };
 }

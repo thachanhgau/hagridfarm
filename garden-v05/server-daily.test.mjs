@@ -173,3 +173,100 @@ test('server refusals read as one icon and a few words', () => {
   assert.equal(serverRefusal({reason: 'model-rejected', details: {modelCode: 'STATION_BUSY'}}, {modelText: code => ({STATION_BUSY: 'Đang bận'})[code]}).text, 'Đang bận');
   assert.equal(serverRefusal({reason: 'something-new', message: 'Lỗi lạ'}).text, 'Lỗi lạ');
 });
+
+// Bonding and achievements (server commit 763528ded, garden-keeper-core.js).
+import {useServerBonding, evaluateCreatureAffinity, recordCreatureAffinity, claimAffinityGift} from './garden-events.mjs';
+import {useServerAchievements, evaluateAchievements, claimAchievementReward} from './garden-achievements.mjs';
+
+const act = (server, command, requestId) => server.handle('performHagridGardenAction', {...command, expectedRevision: server.handle('getHagridGarden', {}).garden.progression.revision, requestId});
+
+test('bond gifts and achievements are claimed once by server command; replays pay nothing', () => {
+  const server = createFixtureServer();
+  const start = server.handle('getHagridGarden', {});
+  assert.deepEqual(start.bonding.creatures.find(c => c.species === 'puffskein').gifts.filter(g => g.claimable).map(g => g.giftId), ['puffskein:lv2', 'puffskein:lv3']);
+  const command = {action: 'claimBondGift', giftId: 'puffskein:lv2', expectedRevision: start.garden.progression.revision, requestId: 'g1'};
+  const gift = server.handle('performHagridGardenAction', command);
+  const replay = server.handle('performHagridGardenAction', command);
+  assert.equal(gift.receipt.giftId, 'puffskein:lv2');
+  assert.equal(gift.garden.supplies.water, start.garden.supplies.water + 8);
+  assert.equal(gift.garden.progression.inventory.pumpkin, start.garden.progression.inventory.pumpkin + 2);
+  assert.equal(replay.garden.supplies.water, gift.garden.supplies.water);
+  assert.ok(gift.garden.bonding.claimedGifts.includes('puffskein:lv2'));
+  assert.equal(gift.bonding.creatures.find(c => c.species === 'puffskein').gifts[0].claimed, true);
+  assert.throws(() => act(server, {action: 'claimBondGift', giftId: 'puffskein:lv2'}, 'g2'), e => e.reason === 'already-claimed');
+  assert.throws(() => act(server, {action: 'claimBondGift', giftId: 'puffskein:lv4'}, 'g3'), e => e.reason === 'bond-incomplete');
+  assert.throws(() => act(server, {action: 'claimBondGift', giftId: 'dragon:lv2'}, 'g4'), e => e.reason === 'bond-not-found');
+
+  const ach = act(server, {action: 'claimAchievement', achievementId: 'ach_sprout_apprentice'}, 'a1');
+  assert.equal(ach.receipt.achievementId, 'ach_sprout_apprentice');
+  assert.equal(ach.achievements.items[0].claimed, true);
+  assert.equal(ach.achievements.claimableCount, start.achievements.claimableCount - 1);
+  assert.throws(() => act(server, {action: 'claimAchievement', achievementId: 'ach_sprout_apprentice'}, 'a2'), e => e.reason === 'already-claimed');
+  assert.throws(() => act(server, {action: 'claimAchievement', achievementId: 'ach_nope'}, 'a3'), e => e.reason === 'achievement-not-found');
+  const young = createFixtureServer({level: 5});
+  assert.throws(() => act(young, {action: 'claimAchievement', achievementId: 'ach_grand_keeper'}, 'a4'), e => e.reason === 'achievement-locked');
+});
+
+test('bonding counts pets per creature per day apart from the free-tap cap, and real feeds', () => {
+  const server = createFixtureServer({simulate: true});
+  const pet = (species, id) => server.handle('performHagridGardenAction', {action: 'freeAction', kind: 'pet', species, expectedRevision: 0, requestId: id}).receipt;
+  const gains = [1, 2, 3, 4].map(i => pet('kneazle', 'k' + i).bonding[0]);
+  assert.deepEqual(gains.map(b => b.gain), [12, 12, 12, 0]);
+  assert.equal(gains[3].capped, true);
+  const other = pet('niffler', 'n1');
+  assert.equal(other.freeAction.counted, false, 'free-tap cap of 3 is spent');
+  assert.equal(other.bonding[0].gain, 12, 'bonding still counts for another creature');
+  assert.throws(() => pet('dragon', 'd1'), e => e.reason === 'no-creature');
+  const fed = act(server, {action: 'feed', species: 'puffskein'}, 'f1');
+  assert.deepEqual(fed.receipt.bonding.map(b => [b.species, b.gain]), [['puffskein', 20]]);
+  assert.equal(fed.garden.bonding.bySpecies.puffskein.xp, 90 + 20);
+});
+
+test('server bonding/achievement switch: cards come from the response, local counting and claiming stand down', () => {
+  const storage = memory();
+  const server = createFixtureServer();
+  const snap = act(server, {action: 'claimAchievement', achievementId: 'ach_sprout_apprentice'}, 'a1');
+  try {
+    useServerBonding(snap);
+    useServerAchievements(snap.achievements);
+    const bond = evaluateCreatureAffinity(snap.garden.progression, storage);
+    assert.equal(bond.claimableCount, snap.bonding.claimableCount);
+    assert.equal(bond.entries.find(e => e.species === 'niffler').level, 5);
+    assert.equal(recordCreatureAffinity('niffler', 'pet', storage, snap.garden.progression), null);
+    assert.equal(claimAffinityGift('niffler:lv2', {gameState: snap.garden.progression, storage}).reason, 'SERVER_OWNED');
+    const ach = evaluateAchievements(snap.garden.progression, {}, storage);
+    assert.equal(ach.items[0].claimed, true);
+    assert.equal(ach.unlockedCount, snap.achievements.unlockedCount);
+    assert.equal(claimAchievementReward('ach_creature_friend', {state: snap.garden.progression, storage}).reason, 'SERVER_OWNED');
+  } finally {
+    useServerBonding(null);
+    useServerAchievements(null);
+  }
+  const local = createGardenStorage({scope: 'local-bond', persistent: false});
+  const state = snap.garden.progression;
+  assert.equal(recordCreatureAffinity('niffler', 'pet', local, state).gain, 12);
+  assert.equal(claimAchievementReward('ach_sprout_apprentice', {state, storage: local}).ok, true);
+});
+
+test('structured refusals: every missing crop with its shortfall, shortBy for Galleons; old shapes still read', () => {
+  const short = createFixtureServer({simulate: true, scenario: 'missing'});
+  let error;
+  try {act(short, {action: 'build', expansionId: 'plot_12'}, 'b1');} catch (e) {error = e;}
+  assert.deepEqual(error.details.missing, [{resource: 'sunpetal', required: 27, have: 0}, {resource: 'ambermelon', required: 27, have: 0}]);
+  const labels = {sunpetal: 'Hoa nhật quang', ambermelon: 'Dưa hổ phách'};
+  assert.deepEqual(serverRefusal(error, {labels}), {reason: 'missing-crops', item: 'sunpetal', text: 'Thiếu 27 Hoa nhật quang · 27 Dưa hổ phách'});
+  const poor = createFixtureServer({simulate: true, galleons: 100});
+  try {act(poor, {action: 'build', expansionId: 'plot_12'}, 'b2');} catch (e) {error = e;}
+  assert.deepEqual([error.details.required, error.details.spendable, error.details.shortBy], [750, 100, 650]);
+  assert.equal(serverRefusal(error, {spendable: 9999}).text, 'Thiếu 650 G', 'shortBy wins over a stale wallet');
+  assert.equal(serverRefusal({reason: 'bond-incomplete'}).px, 'heart');
+  assert.equal(serverRefusal({reason: 'achievement-locked'}).text, 'Thành tựu chưa mở');
+});
+
+test('a decoration turned in place stores its facing and counts as one rotate', () => {
+  const server = createFixtureServer();
+  const turned = act(server, {action: 'placeDecoration', itemId: 'decor_pumpkin_lantern', slot: 0, facing: 'right'}, 'r1');
+  assert.equal(turned.garden.decorations.facing.decor_pumpkin_lantern, 'right');
+  assert.equal(turned.receipt.freeAction.kind, 'rotate');
+  assert.throws(() => act(server, {action: 'placeDecoration', itemId: 'decor_pumpkin_lantern', slot: 0, facing: 'right'}, 'r2'), e => e.reason === 'action-noop');
+});

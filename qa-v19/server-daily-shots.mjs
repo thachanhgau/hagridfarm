@@ -1,5 +1,6 @@
 // Connected mode on the in-memory fixture wallet (server rules), iPhone 390x664, in WebKit:
-// owl quests + chest, a claim, the festival panel with free-tap caps, and builds the server refuses.
+// owl quests + chest, a claim, the festival panel with free-tap caps, a bond gift, a pet, an achievement,
+// and builds the server refuses.
 // Usage: node qa-v19/server-daily-shots.mjs <baseUrl> <outDir>
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -52,6 +53,24 @@ const toast = (page) => page.evaluate(() => ({text: document.querySelector('#toa
   await page.click('[data-claim-milestone="hal_m1@2026"]');
   await page.waitForTimeout(500);
   await shot(page, '5-festival-milestone-claimed', errors, () => page.evaluate(() => document.querySelector('[data-claim-milestone="hal_m1@2026"]').disabled));
+  await page.context().close();
+}
+{
+  // Bonding and achievements: claims go to the server (claimBondGift, claimAchievement); cards re-render from the response.
+  const {page, errors} = await open('simulate=1');
+  await page.evaluate(() => window.__HAGRID_GARDEN_QA__.openPanel('affinity'));
+  await page.waitForTimeout(400);
+  await page.click('[data-claim-affinity-gift="puffskein:lv2"]');
+  await page.waitForTimeout(600);
+  await shot(page, '8-bond-gift-claimed', errors, async () => { const t = await toast(page); console.log('  toast:', JSON.stringify(t)); return /Cấp 2/.test(t.text) && await page.evaluate(() => Boolean(document.querySelector('[data-claim-affinity-gift="puffskein:lv3"]'))); });
+  await page.click('[data-affinity-pet="puffskein"]');
+  await page.waitForTimeout(600);
+  await shot(page, '9-bond-pet', errors, async () => { const t = await toast(page); console.log('  toast:', JSON.stringify(t)); return /Cấp 4/.test(t.text); });
+  await page.evaluate(() => window.__HAGRID_GARDEN_QA__.openAchievements());
+  await page.waitForTimeout(400);
+  await page.click('[data-claim-achievement="ach_sprout_apprentice"]');
+  await page.waitForTimeout(600);
+  await shot(page, '10-achievement-claimed', errors, async () => { const t = await toast(page); console.log('  toast:', JSON.stringify(t)); return /Tập Sự Thảo Dược/.test(t.text) && await page.evaluate(() => !document.querySelector('[data-claim-achievement="ach_sprout_apprentice"]')); });
   await page.context().close();
 }
 for (const [name, query, reason] of [['6-build-missing-crops', 'scenario=missing&simulate=1&galleons=0', 'missing-crops'], ['7-build-missing-galleons', 'simulate=1&galleons=100', 'insufficient-galleons']]) {
