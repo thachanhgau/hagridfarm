@@ -1,7 +1,7 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.36";
-import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.36";
-import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.36";
-import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.36";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.37";
+import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.37";
+import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.37";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.37";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
