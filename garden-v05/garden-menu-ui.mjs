@@ -1,5 +1,5 @@
-import {el,button} from './ui-utils.mjs?v=24.9.39';
-import {V24_ART,navIcon} from './v24-visuals.mjs?v=24.9.39';
+import {el,button} from './ui-utils.mjs?v=24.9.40';
+import {V24_ART,navIcon} from './v24-visuals.mjs?v=24.9.40';
 
 // Four destinations; the garden illustration stays decorative so every target is explicit.
 export function renderGardenMenu(ctx,actions){
@@ -11,7 +11,7 @@ export function renderGardenMenu(ctx,actions){
  ]);
  root.append(art);
  for(const [id,label,glyph] of [
-  ['tour','Thăm vườn','tour'],['profile','Hồ sơ','profile'],
+  ['guide','Sổ tay','guide'],['tour','Thăm vườn','tour'],['profile','Hồ sơ','profile'],
   ['events','Lễ hội','events'],['settings','Cài đặt','settings'],
  ]){
   const medal=el('span',{class:'garden-menu-medal','aria-hidden':'true'});

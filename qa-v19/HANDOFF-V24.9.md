@@ -225,3 +225,11 @@ Yêu cầu: "anh muốn new user mới vào game sẽ có hướng dẫn chơi v
 - `qa-v19/fixture-wallet.mjs` làm y hệt server (gieo nhanh, `care`, `care-limit`, quà cấp).
 - Kiểm chứng: 205/205 test node (sửa `server-daily.test.mjs` lượt chạm dùng `pet`, thêm test ví mẫu gieo → chăm → gặt); HPVNN `prototype-parity.test.mjs` 7/7; emulator thật: gieo 12 phút, chăm còn 0 phút (1/3), gặt lên cấp 2 Nước phép 1.
 - Chưa chạy lại ảnh chụp WebKit (FTUE/hud/panel) với bản này.
+
+## «Sổ tay bác Hagrid»: hướng dẫn trọn cấp 1–20 — `?v=24.9.40` (19/10/2026)
+- Bệ hạ: người mới cần hướng dẫn đủ thao tác tới cấp 20. Sau 3 phút hướng dẫn đầu, `garden-guide.mjs` cho 23 bài (Chăm cây, thư cú, Rương Cú Vàng, Cửa hàng, gieo xen, trang trí, lộ trình, xây dựng, Nước phép, gieo lại theo mẫu, Bàn thức ăn, mở chuồng, đón/cho ăn/thu/vuốt ve Puffskein, thửa 4, khẩu phần, Bạch tiên, Hộp côn trùng, Bowtruckle, cấp 20). Mỗi bài mở đúng cấp, chỉ hiện khi làm được, làm nút cần bấm sáng lên, tự xong khi người chơi làm thật; «Đã hiểu» luôn cho qua. Qua cấp 20 sổ tay nghỉ.
+- Thẻ nằm ngay trên khay thao tác (ngang: bên phải). Menu → «Sổ tay» xem mọi bài và tiến độ.
+- Có ví: bài đã xong lưu trên server (`garden.tutorial.guide`, lệnh `guideDone`, không đổi revision, không thưởng). Không ví: bộ nhớ máy.
+- **Sửa lỗi**: nút «Chăm» lớn trong khung thửa (`contextAction`) trước đây vẫn chỉ là hiệu ứng («thời gian lớn giữ nguyên») và gửi `freeAction care` mà server đã từ chối. Nay cả hai nút Chăm dùng chung `careCells` → lệnh `care` thật.
+- Server mới: bữa ăn sinh vật, chế biến có hẹn giờ và xây dựng bắt đầu dưới cấp 20 cũng nhân hệ số thời gian (`speedNewTimers`); ví mẫu làm y hệt.
+- Kiểm chứng: 209/209 test node (`guide.test.mjs` mới); FTUE WebKit 6/6; chụp thử thẻ Sổ tay iPhone dọc/ngang/desktop: bài Chăm hiện sau khi gieo, nút Chăm sáng, bấm xong sang bài kế, không lỗi trang.

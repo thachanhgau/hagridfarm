@@ -1,11 +1,11 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.39";
-import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.39";
-import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.39";
-import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.39";
+import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.40";
+import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.40";
+import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.40";
+import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.40";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs";
-import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.39";
-import {growthScale} from "../garden-v05/ui-utils.mjs?v=24.9.39";
+import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
+import {growthScale} from "../garden-v05/ui-utils.mjs?v=24.9.40";
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
 // garden-daily-core.js, garden-festival-core.js, garden-keeper-core.js): same commands, error reasons and response shapes.
@@ -69,7 +69,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   festival:{joinDay:dayKey(),pointsBySeason:{},claimedMilestones:[]},
   bonding:{bySpecies:{},claimedGifts:[]},
   achievements:{claimedIds:[]},
-  tutorial:{grownAt:null},
+  tutorial:{grownAt:null,guide:[]},
  };
  const wallet={spendable,balance:spendable-bankBalance,bankBalance};
  const dailies=new Map(),ops=new Map(),ledger=[];
@@ -284,9 +284,9 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const {requestId,...payload}=c,hash=stable(payload),seen=ops.get(requestId);
   if(seen){if(seen.hash!==hash)fail("request-id-conflict","Mã thao tác đã được dùng cho dữ liệu khác.");return response(seen.receipt);}
   // The read-only preview still claims, taps and arranges; farm work needs ?simulate=1.
-  if(!simulate&&!DAILY.has(c.action)&&c.action!=="placeDecoration"&&c.action!=="moveBuilding")fail("preview-read-only","Bản xem UI chỉ đọc · không ghi tài khoản.");
+  if(!simulate&&!DAILY.has(c.action)&&!["placeDecoration","moveBuilding","guideDone"].includes(c.action))fail("preview-read-only","Bản xem UI chỉ đọc · không ghi tài khoản.");
   const before=garden.progression;
-  if(c.action!=="freeAction"&&c.expectedRevision!==before.revision)fail("revision-conflict","Khu vườn đã thay đổi; hãy tải lại trước khi thao tác.",{expectedRevision:c.expectedRevision,actualRevision:before.revision});
+  if(c.action!=="freeAction"&&c.action!=="guideDone"&&c.expectedRevision!==before.revision)fail("revision-conflict","Khu vườn đã thay đổi; hãy tải lại trước khi thao tác.",{expectedRevision:c.expectedRevision,actualRevision:before.revision});
   // Work on copies; nothing is kept unless every check passed (like the server transaction).
   const d=clone(daily()),next=clone(garden),extra={};
   if(["claimQuest","claimChest","claimFestival","claimBondGift","claimAchievement"].includes(c.action)){
@@ -301,6 +301,13 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(c.kind==="pet"&&c.species)extra.bonding=[addBond(next,before,c.species,"pet",d.dayKey)];
   }else if(c.action==="boost")boost(c,next);
   else if(c.action==="tutorialGrow")tutorialGrow(c,next);
+  // Server applyGuideDone: a finished «Sổ tay» lesson, no revision, reward or points.
+  else if(c.action==="guideDone"){
+   if(typeof c.lessonId!=="string"||!/^[a-z0-9-]{1,32}$/.test(c.lessonId))fail("invalid-action-input","lessonId không hợp lệ.");
+   next.tutorial.guide??=[];
+   if(next.tutorial.guide.includes(c.lessonId))fail("action-noop","Bài hướng dẫn này đã xong.");
+   next.tutorial.guide.push(c.lessonId);
+  }
   else if(c.action==="care"){if((d.free.care||0)>=FREE_CAPS.care)fail("care-limit",`Hôm nay đã chăm đủ ${FREE_CAPS.care} lượt; mai bác Hagrid lại nhờ nhé.`);care(c,next);}
   else if(c.action==="placeDecoration")place(c,next);
   else{
@@ -312,6 +319,15 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
     const scale=growthScale(before.level);
     next.progression.plots.forEach((plot,p)=>plot.slots.forEach((s,i)=>{if(s?.type==="crop"&&!before.plots[p]?.slots[i])s.plantedAt-=Math.round(s.growMs*(1-scale));}));
    }
+   // Server speedNewTimers: meals, timed crafts and buildings started below level 20 finish sooner.
+   const sc=growthScale(before.level);
+   if(sc<1){
+    const shift=t=>{const cut=Math.round((t.readyAt-t.startedAt)*(1-sc));t.startedAt-=cut;t.readyAt-=cut;};
+    const meals=new Set(before.creatures.map(x=>x.meal?.id).filter(Boolean)),jobs=new Set(before.jobs.map(j=>j.id)),builds=new Set(before.construction.map(j=>j.id));
+    for(const x of next.progression.creatures)if(x.meal&&!meals.has(x.meal.id))shift(x.meal);
+    for(const j of next.progression.jobs)if(!jobs.has(j.id))shift(j);
+    for(const j of next.progression.construction)if(!builds.has(j.id))shift(j);
+   }
    // Server gift: +1 nước phép per level reached up to 19.
    next.supplies.boost+=Math.max(0,Math.min(next.progression.level,19)-before.level);
    for(const [type,amount] of questAmounts(c.action,before,next.progression,c))for(const q of d.quests)if(!q.claimed&&q.triggers.includes(type))q.progress=Math.min(q.target,q.progress+amount);
@@ -322,7 +338,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Moving a plot/pen and placing a decoration are free taps (placing counts as rotate); the rest is farm work.
    const free={moveBuilding:"moveBuilding",placeDecoration:"rotate",care:"care"}[c.action];
    if(free){extra.freeAction=countFree(d,free);extra.festivalPoints=addPoints(d,next.festival,free,{counted:extra.freeAction.counted});}
-   else if(c.action!=="tutorialGrow")extra.festivalPoints=addPoints(d,next.festival,c.action);
+   else if(c.action!=="tutorialGrow"&&c.action!=="guideDone")extra.festivalPoints=addPoints(d,next.festival,c.action);
   }
   // Galleons last, so a short wallet leaves garden, daily record and wallet untouched.
   const cost=c.action==="build"?E.DB.expansions.find(e=>e.id===c.expansionId)?.galleons||0:c.action==="buyDecoration"?E.DB.decorations.find(e=>e.level===c.level)?.galleons||0:0;

@@ -1,20 +1,20 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.39';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.39';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.39";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.39";
-import {$,el,button,icon,num,duration,hours,growthScale,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.39";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.39";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.39";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.39";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.39";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.39";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.39";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.40';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.40';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.40";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.40";
+import {$,el,button,icon,num,duration,hours,growthScale,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.40";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.40";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.40";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.40";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.40";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.40";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.40";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
  let active=null,previousFocus=null,profileTab="achievements",postcardNode=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false;
- const names={roadmap:"Lộ trình",profile:"Hồ sơ người giữ vườn",tour:"Thăm vườn",events:"Lễ hội",affinity:"Gắn kết",scenery:"Khung cảnh",settings:"Cài đặt",plots:"Thửa đất",crops:"Hạt giống",creatures:"Sinh vật",craft:"Chế biến",build:"Xây dựng",inventory:"Kho",layout:"Bố trí",collection:"Trang trí",menu:"Khu vườn"};
+ const names={roadmap:"Lộ trình",profile:"Hồ sơ người giữ vườn",tour:"Thăm vườn",events:"Lễ hội",affinity:"Gắn kết",scenery:"Khung cảnh",settings:"Cài đặt",plots:"Thửa đất",crops:"Hạt giống",creatures:"Sinh vật",craft:"Chế biến",build:"Xây dựng",inventory:"Kho",layout:"Bố trí",collection:"Trang trí",menu:"Khu vườn",guide:"Sổ tay bác Hagrid"};
  const label=id=>labels[id]||id,now=()=>E.nowFor(getState(),Date.now()),paragraph=(text,cls="")=>el("p",{text,class:cls}),actions=(...children)=>el("div",{class:"actions"},children),toolbar=(...children)=>el("div",{class:"panel-toolbar"},children),keepsake=(px,text,label,fn)=>{const b=button("",fn,{"aria-label":label,title:label});b.append(pixelIcon(px,2),el("span",{text}));return b;},grid=()=>el("div",{class:"cards"});
  const detail=text=>el("details",{class:"v24-detail"},[el("summary",{text:"Chi tiết"}),paragraph(text)]);
  const navButton=(name,text,fn,attrs={})=>{const b=button(text,fn,attrs);b.prepend(navIcon(name));return b;};
@@ -570,9 +570,23 @@ export function createPanels(ctx){
    }
   },
 
+  // «Sổ tay bác Hagrid» (garden-guide.mjs): every lesson to level 20, done ones ticked.
+  guide(){
+   const g=ctx.getGuide?.();if(!g)return;
+   body.append(paragraph("Bác Hagrid chỉ từng việc khi nó mở. Bấm «Đã hiểu» trên thẻ để qua bài."));
+   const list=el("ol",{class:"guide-list"});
+   for(const lesson of g.lessons){
+    const done=g.done.has(lesson.id),locked=lesson.level>g.level,state=done?"done":locked?"locked":lesson.id===g.current?"current":"open";
+    list.append(el("li",{class:"guide-item is-"+state},[
+     el("span",{class:"guide-mark","aria-hidden":"true",text:done?"✓":locked?"🔒":"•"}),
+     el("div",{},[el("strong",{text:"Cấp "+lesson.level+" · "+lesson.title}),el("small",{text:locked?"Mở ở cấp "+lesson.level:lesson.line})]),
+    ]));
+   }
+   body.append(list);
+  },
   menu(){
    body.append(renderGardenMenu(ctx,{
-    tour:()=>show("tour"),profile:()=>show("profile"),
+    guide:()=>show("guide"),tour:()=>show("tour"),profile:()=>show("profile"),
     events:()=>show("events"),settings:()=>show("settings"),
    }));
   }

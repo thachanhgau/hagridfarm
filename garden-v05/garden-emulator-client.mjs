@@ -21,6 +21,8 @@ export function createGardenClient(transport){
   // Free taps (care, pet, rotate, postcard, shareFloo, startTour): one requestId per tap; they never wait on a lost write.
   // `extra` is {species} for a pet, so the server also counts bonding.
   free:(kind,extra={})=>queue(()=>call('performHagridGardenAction',{...extra,action:'freeAction',kind,expectedRevision:revision(),requestId:requestId()})),
+  // «Sổ tay» lesson finished (server guideDone): no revision, so like a free tap it never waits on a lost write.
+  guide:lessonId=>queue(()=>call('performHagridGardenAction',{action:'guideDone',lessonId,expectedRevision:revision(),requestId:requestId()})),
   buy:(itemId,packages)=>queue(()=>{const item=snapshot.catalog.find(i=>i.id===itemId);if(!item)throw Error('Vật tư chưa mở.');return mutate('buyHagridGardenSupplies',{itemId,quantity:packages,catalogVersion:snapshot.catalogVersion,expectedTotal:item.price*packages});}),
  };
 }

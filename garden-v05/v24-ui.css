@@ -105,3 +105,18 @@
 .popover[data-view=profile]{scrollbar-width:thin;scrollbar-color:#B49A66 transparent}
 .popover[data-view=profile]::-webkit-scrollbar{width:4px}.popover[data-view=profile]::-webkit-scrollbar-thumb{background:#B49A66;border-radius:0}.popover[data-view=profile]::-webkit-scrollbar-track{background:transparent}
 @media(hover:none),(max-width:480px){.popover[data-view=profile]{scrollbar-width:none}.popover[data-view=profile]::-webkit-scrollbar{display:none}}
+/* «Sổ tay bác Hagrid» (garden-guide.mjs): one lesson card under the HUD; the button to press pulses. */
+.guide-card{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);z-index:42;width:min(320px,calc(100vw - 32px));padding:8px 10px;border:2px solid #F5D69A;border-radius:8px;background:rgba(20,38,32,.95);color:#E8F0ED;font:13px/1.35 system-ui,sans-serif;box-shadow:0 2px 0 #142620}
+.guide-card[hidden]{display:none}
+.guide-card .guide-title{display:block;color:#F5D69A;font-size:12px}
+.guide-card .guide-line{margin:3px 0 6px}
+.guide-card .guide-actions{display:flex;justify-content:flex-end;gap:6px}
+.guide-card button{min-height:32px;padding:4px 10px;border-radius:6px;font:700 12px system-ui,sans-serif}
+.guide-list{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}
+.guide-item{display:flex;gap:8px;align-items:flex-start;padding:6px 8px;border-radius:6px;background:rgba(255,255,255,.04)}
+.guide-item small{display:block;opacity:.85}
+.guide-item.is-done{opacity:.6}
+.guide-item.is-locked{opacity:.45}
+.guide-item.is-current{outline:2px solid #F5D69A}
+.guide-mark{width:18px;flex:none;text-align:center;color:#F5D69A}
+@media (max-height:450px) and (orientation:landscape){.guide-card{left:auto;right:calc(env(safe-area-inset-right,0px) + 16px);transform:none;width:min(300px,calc(100vw - 32px));padding:6px 8px}.guide-card .guide-line{margin:2px 0 4px}}
