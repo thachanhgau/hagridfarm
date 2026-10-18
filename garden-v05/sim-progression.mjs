@@ -5,7 +5,7 @@
 // node sim-progression.mjs festival → festival pacing tables (docs/festival-pacing.md).
 import * as E from './progression-engine.mjs';
 import {STORE_CATALOG} from './garden-store-catalog.mjs';
-import {FESTIVAL_ACTION_POINTS, FREE_FESTIVAL_ACTIONS_PER_DAY, HOGWARTS_EVENTS} from './garden-events.mjs';
+import {FESTIVAL_ACTION_POINTS, FREE_FESTIVAL_ACTIONS_PER_DAY, HOGWARTS_EVENTS, FESTIVAL_DAYS, FESTIVAL_FARM_POINTS_PER_DAY, FESTIVAL_FREE_POINTS_PER_DAY} from './garden-events.mjs';
 import {pickDailyQuests, dayKeyFor, DAILY_GRAND_CHEST_REWARD} from './garden-quests.mjs';
 import {HONOR_GARDENS} from './garden-tour.mjs';
 
@@ -176,7 +176,7 @@ export function questWater(level) {
 const QUEST_CLAIM_POINTS = 15; // mobile-game.mjs handleClaimDailyQuest
 export const FESTIVAL_MILESTONES = HOGWARTS_EVENTS.find((e) => e.milestones.length).milestones.map((m) => m.points);
 
-/** Most festival points the capped free taps and the once-a-day honour-garden visits can add in one day. */
+/** Festival points every capped free tap and honour-garden visit would add in one day before the 20-point daily cap. */
 export function freeFestivalPoints(hasCreature) {
   const capped = Object.entries(FREE_FESTIVAL_ACTIONS_PER_DAY)
     .filter(([id]) => id !== 'pet' || hasCreature)
@@ -188,7 +188,7 @@ const farmPoints = (log) => log.reduce((sum, c) => sum + c.taps * (FESTIVAL_ACTI
 
 /**
  * One day's festival points from its logged commands, today's owl quests and the chest.
- * `free`: false, true (every capped free tap and honour-garden visit) or a points ceiling for them.
+ * `free`: true when the player also does free taps, which count up to the daily free cap.
  */
 export function festivalDay(log, {dayKey, level, hasCreature, free = false}) {
   const farm = farmPoints(log);
@@ -203,7 +203,7 @@ export function festivalDay(log, {dayKey, level, hasCreature, free = false}) {
   const quests = pickDailyQuests(dayKey, {level, hasCreature, feedItem: null});
   const done = quests.filter((q) => q.triggers.reduce((n, t) => n + (amount[t] || 0), 0) >= q.target).length;
   const chest = done >= quests.length ? DAILY_GRAND_CHEST_REWARD.eventPoints : 0;
-  const extra = free === true ? freeFestivalPoints(hasCreature) : Math.min(Number(free) || 0, freeFestivalPoints(hasCreature));
+  const extra = free ? Math.min(freeFestivalPoints(hasCreature), FESTIVAL_FREE_POINTS_PER_DAY) : 0;
   return {farm, quests: done * QUEST_CLAIM_POINTS, questsDone: done, chest, free: extra, total: farm + done * QUEST_CLAIM_POINTS + chest + extra};
 }
 
@@ -237,10 +237,10 @@ export function simulate({days = 180, hours = [8, 13, 21], seedPriceCap = Infini
 /**
  * When a player who joins a festival on day index `start` reaches each milestone.
  * Free taps count in the first session, quest and chest points in the last one.
- * `farmCap` is a proposed daily ceiling on farm-command points; the game has none.
+ * Farm-command points stop at `farmCap` a day, as in the game; the festival lasts `maxDays`.
  * Returns {day, session} per threshold (day 1 = the first festival day) or null.
  */
-export function timeToMilestones(daily, start, thresholds = FESTIVAL_MILESTONES, {farmCap = Infinity, maxDays = Infinity} = {}) {
+export function timeToMilestones(daily, start, thresholds = FESTIVAL_MILESTONES, {farmCap = FESTIVAL_FARM_POINTS_PER_DAY, maxDays = FESTIVAL_DAYS} = {}) {
   const out = thresholds.map(() => null);
   let points = 0;
   for (let d = start; d < daily.length && d - start < maxDays; d += 1) {
@@ -284,20 +284,17 @@ function report(days) {
   return out.join('\n');
 }
 
-// docs/festival-pacing.md: starting values to test, not settled ones.
-export const FESTIVAL_PROPOSAL = Object.freeze({milestones: [100, 450, 1000], farmCap: 60, free: 20, days: 14});
-
-/** Festival pacing tables for docs/festival-pacing.md. */
+/** Festival pacing tables for docs/festival-pacing.md, with the values the game uses. */
 function festivalReport() {
-  const P = FESTIVAL_PROPOSAL;
+  const M = FESTIVAL_MILESTONES;
   const cadences = [['3 lượt/ngày', [8, 13, 21]], ['2 lượt/ngày', [8, 20]], ['1 lượt/ngày', [20]]];
   const levels = [1, 10, 30, 60];
   const when = (x) => (x ? `ngày ${x.day} · lượt ${x.session}` : '—');
-  const runs = cadences.map(([name, hours]) => [name, simulate({days: 140, hours}), simulate({days: 140, hours, free: P.free})]);
+  const runs = cadences.map(([name, hours]) => [name, simulate({days: 140, hours}), simulate({days: 140, hours, free: true})]);
   const startOf = (run, L) => (L === 1 ? 0 : run.reached[L]);
-  const out = ['# Nhịp lễ hội — engine thật, bot gieo mọi hàng trống mỗi lượt\n'];
-  out.push('## Điểm mỗi ngày (trung bình 14 ngày kể từ khi đạt cấp)\n');
-  out.push('| Nhịp | Cấp | Việc vườn | Nhiệm vụ cú | Rương | Tổng (không thao tác miễn phí) | Thao tác miễn phí tối đa |');
+  const out = [`# Nhịp lễ hội — engine thật, mốc ${M.join(' / ')}, việc vườn tối đa ${FESTIVAL_FARM_POINTS_PER_DAY}/ngày, việc khác tối đa ${FESTIVAL_FREE_POINTS_PER_DAY}/ngày, lễ hội ${FESTIVAL_DAYS} ngày\n`];
+  out.push('## Điểm mỗi ngày trước trần (trung bình 14 ngày kể từ khi đạt cấp)\n');
+  out.push('| Nhịp | Cấp | Việc vườn | Nhiệm vụ cú | Rương | Tổng (không thao tác miễn phí) | Thao tác miễn phí trước trần |');
   out.push('|---|---|---|---|---|---|---|');
   for (const [name, run] of runs) {
     for (const L of levels) {
@@ -306,26 +303,25 @@ function festivalReport() {
       out.push(`| ${name} | ${L} | ${avg('farm')} | ${avg('quests')} | ${avg('chest')} | ${avg('total')} | ${freeFestivalPoints(slice[0].creatures > 0)} |`);
     }
   }
-  const table = (title, thresholds, opts, pick) => {
+  const table = (title, pick) => {
     out.push(`\n## ${title}\n`);
-    out.push('| Nhịp | Cấp | ' + thresholds.map((t) => `Mốc ${t}`).join(' | ') + ' |');
-    out.push('|---|---|' + thresholds.map(() => '---').join('|') + '|');
+    out.push('| Nhịp | Cấp | ' + M.map((t) => `Mốc ${t}`).join(' | ') + ' |');
+    out.push('|---|---|' + M.map(() => '---').join('|') + '|');
     for (const r of runs) for (const L of levels) {
       const run = pick(r);
-      out.push(`| ${r[0]} | ${L} | ` + timeToMilestones(run.daily, startOf(run, L), thresholds, opts).map(when).join(' | ') + ' |');
+      out.push(`| ${r[0]} | ${L} | ` + timeToMilestones(run.daily, startOf(run, L)).map(when).join(' | ') + ' |');
     }
   };
-  table('Hiện tại: mốc 30 / 75 / 150, không tính thao tác miễn phí, không tính 35 điểm tặng sẵn', FESTIVAL_MILESTONES, {}, (r) => r[1]);
-  table(`Đề xuất: mốc ${P.milestones.join(' / ')}, việc vườn tối đa ${P.farmCap}/ngày, không thao tác miễn phí`, P.milestones, {farmCap: P.farmCap, maxDays: P.days}, (r) => r[1]);
-  table(`Đề xuất, có thao tác miễn phí (trần chung ${P.free}/ngày)`, P.milestones, {farmCap: P.farmCap, maxDays: P.days}, (r) => r[2]);
-  out.push(`\n## Đề xuất: người vào muộn (cấp 1, không thao tác miễn phí) — mốc cao nhất đạt được khi còn N ngày\n`);
+  table('Thời gian tới mốc, không thao tác miễn phí', (r) => r[1]);
+  table(`Thời gian tới mốc, có thao tác miễn phí (tối đa ${FESTIVAL_FREE_POINTS_PER_DAY}/ngày)`, (r) => r[2]);
+  out.push(`\n## Người vào muộn theo lịch chung (cấp 1, không thao tác miễn phí): mốc cao nhất khi còn N ngày\n`);
   const left = [14, 10, 7, 5, 3];
   out.push('| Nhịp | ' + left.map((n) => `còn ${n} ngày`).join(' | ') + ' |');
   out.push('|---|' + left.map(() => '---').join('|') + '|');
   for (const [name, run] of runs) {
     out.push(`| ${name} | ` + left.map((n) => {
-      const hit = timeToMilestones(run.daily, 0, P.milestones, {farmCap: P.farmCap, maxDays: n}).filter(Boolean).length;
-      return hit ? `mốc ${P.milestones[hit - 1]}` : 'chưa mốc nào';
+      const hit = timeToMilestones(run.daily, 0, M, {maxDays: n}).filter(Boolean).length;
+      return hit ? `mốc ${M[hit - 1]}` : 'chưa mốc nào';
     }).join(' | ') + ' |');
   }
   return out.join('\n');

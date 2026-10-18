@@ -29,15 +29,16 @@ test('festival points add up per UI command, owl quest claim and chest', () => {
   }
   // A new garden plants nine rows (10 points each) in its first session.
   assert.equal(run.daily[0].festival.sessions[0], 90);
-  assert.equal(simulate({days: 1, free: true}).daily[0].festival.free, freeFestivalPoints(false));
+  // Free taps would give 159 points; the game counts 20 a day.
   assert.equal(freeFestivalPoints(false), 3 * 8 + 12 + 15 + 10 + 3 * 6 + 5 + 3 * 25);
-  assert.deepEqual(FESTIVAL_MILESTONES, [30, 75, 150]);
+  assert.equal(simulate({days: 1, free: true}).daily[0].festival.free, 20);
+  assert.deepEqual(FESTIVAL_MILESTONES, [100, 450, 1000]);
 });
 
 test('time to milestones walks sessions and honours a daily farm cap', () => {
   const day = {festival: {sessions: [50, 50], free: 0, quests: 15, chest: 0}};
   const daily = [day, day, day];
-  assert.deepEqual(timeToMilestones(daily, 0, [30, 100, 200]), [{day: 1, session: 1}, {day: 1, session: 2}, {day: 2, session: 2}]);
-  // Capped at 60 a day the second session adds only 10 + 15.
-  assert.deepEqual(timeToMilestones(daily, 0, [60, 100, 300], {farmCap: 60}), [{day: 1, session: 2}, {day: 2, session: 1}, null]);
+  assert.deepEqual(timeToMilestones(daily, 0, [30, 100, 200], {farmCap: Infinity}), [{day: 1, session: 1}, {day: 1, session: 2}, {day: 2, session: 2}]);
+  // Capped at 60 a day (the game's default) the second session adds only 10 + 15.
+  assert.deepEqual(timeToMilestones(daily, 0, [60, 100, 300], {maxDays: 3}), [{day: 1, session: 2}, {day: 2, session: 1}, null]);
 });

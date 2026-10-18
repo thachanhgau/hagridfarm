@@ -46,24 +46,29 @@ function createMemoryStorage() {
 }
 
 test('V23.0 Hogwarts Seasonal Festivals cycle, persist, and grant 3-tier milestone rewards', () => {
-  assert.equal(HOGWARTS_EVENTS.length, 4);
+  assert.equal(HOGWARTS_EVENTS.length, 5);
   assert.equal(normalizeEventMode('event_yule'), 'event_yule');
   assert.equal(normalizeEventMode('invalid'), 'event_halloween');
 
   assert.equal(nextEventMode('event_halloween'), 'event_yule');
   assert.equal(nextEventMode('event_yule'), 'event_herbology_fair');
-  assert.equal(nextEventMode('event_herbology_fair'), 'none');
+  assert.equal(nextEventMode('event_herbology_fair'), 'event_quidditch_cup');
+  assert.equal(nextEventMode('event_quidditch_cup'), 'none');
   assert.equal(nextEventMode('none'), 'event_halloween');
 
+  // A new save on the first Lễ Hội Ma day: theme follows the calendar, no gift points.
+  const firstDay = Date.parse('2026-10-24T09:00:00+07:00');
   const storage = createMemoryStorage();
-  const initial = loadEventState(storage);
+  const initial = loadEventState(storage, firstDay);
   assert.equal(initial.activeEventId, 'event_halloween');
-  assert.equal(initial.points, 35);
-  assert.equal(hasClaimableEventMilestone(storage), true); // 35 >= 30 for hal_m1
+  assert.equal(initial.points, 0);
+  assert.equal(hasClaimableEventMilestone(storage, firstDay), false);
 
+  recordFestivalAction('dailyChest', 100, storage, firstDay);
   let granted = null;
-  const claim1 = claimEventMilestone('hal_m1', {
+  const claim1 = claimEventMilestone('hal_m1@2026', {
     storage,
+    nowMs: firstDay,
     onGrantReward: (reward) => {
       granted = reward;
     },
@@ -73,20 +78,19 @@ test('V23.0 Hogwarts Seasonal Festivals cycle, persist, and grant 3-tier milesto
   assert.equal(granted.bonusQty, 4);
 
   // Duplicate claim blocked
-  const dup = claimEventMilestone('hal_m1', {storage});
+  const dup = claimEventMilestone('hal_m1@2026', {storage, nowMs: firstDay});
   assert.equal(dup.ok, false);
   assert.equal(dup.reason, 'ALREADY_CLAIMED');
 
-  // Insufficient points for tier 2 (75 pts)
-  const early = claimEventMilestone('hal_m2', {storage});
+  // Insufficient points for tier 2 (450 pts)
+  const early = claimEventMilestone('hal_m2@2026', {storage, nowMs: firstDay});
   assert.equal(early.ok, false);
   assert.equal(early.reason, 'INSUFFICIENT_POINTS');
 
-  // Record festival actions to reach tier 2
-  recordFestivalAction('dailyChest', 50, storage);
-  const updated = loadEventState(storage);
-  assert.equal(updated.points, 85);
-  const claim2 = claimEventMilestone('hal_m2', {storage});
+  recordFestivalAction('dailyChest', 350, storage, firstDay);
+  const updated = loadEventState(storage, firstDay);
+  assert.equal(updated.points, 450);
+  const claim2 = claimEventMilestone('hal_m2@2026', {storage, nowMs: firstDay});
   assert.equal(claim2.ok, true);
 });
 

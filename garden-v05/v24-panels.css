@@ -11,7 +11,7 @@
 
 .v24-event-selection {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
   overflow-x: auto;
 }
@@ -60,6 +60,23 @@
   margin: 0;
   padding: 0 14px 14px;
   font-size: clamp(18px, 4vw, 25px);
+}
+
+.v24-event-hero-copy {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 0 14px 14px;
+}
+
+.v24-event-hero-copy .v24-event-hero-title {
+  padding: 0 !important;
+}
+
+.v24-event-hero-when {
+  margin: 0;
+  color: #f5d69a;
+  font-weight: 700;
 }
 
 .v24-event-progress {
@@ -259,9 +276,9 @@
 }
 
 @media (max-width: 420px) {
-  .v24-event-selection {
-    grid-template-columns: repeat(4, minmax(72px, 1fr));
-    gap: 7px;
+  .v24-events-panel .v24-event-selection {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
   }
 
   .v24-event-milestones,
