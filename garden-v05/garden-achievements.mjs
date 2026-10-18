@@ -297,7 +297,6 @@ export function renderAchievementsSection({
   storage = getGardenStorage(),
   onSelectTitle,
   onClaimReward,
-  onOpenPostcard,
 } = {}) {
   const summary = evaluateAchievements(state, extra, storage);
   const root = el('div', {class: 'achievements-panel-root'});
@@ -316,16 +315,6 @@ export function renderAchievementsSection({
         }),
       ]),
     ]),
-    ...(typeof onOpenPostcard === 'function'
-      ? [
-          el('div', {class: 'actions'}, [
-            button('Bưu thiếp', () => onOpenPostcard(), {
-              class: 'primary',
-              'data-open-postcard': 'true',
-            }),
-          ]),
-        ]
-      : []),
   ]);
   root.append(hero);
 

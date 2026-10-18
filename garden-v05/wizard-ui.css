@@ -832,9 +832,6 @@
  color:#f5e6c3;
  border:1px solid #c9ab6755;
 }
-.postcard-modal{
- max-width:780px!important;
-}
 .postcard-canvas-wrap{
  display:flex;
  justify-content:center;

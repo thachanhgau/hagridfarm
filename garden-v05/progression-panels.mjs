@@ -3,7 +3,7 @@ import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.27';
 import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.27";
 import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.27";
 import {$,el,button,icon,num,duration,hours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.27";
-import {renderAlmanacSection} from "./garden-postcard.mjs?v=24.9.27";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.27";
 import {renderTourSection} from "./garden-tour.mjs?v=24.9.27";
 import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.27";
 import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.27";
@@ -12,21 +12,24 @@ import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.27";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
- let active=null,previousFocus=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false;
- const names={roadmap:"Lộ trình",profile:"Hồ sơ",almanac:"Sổ tay",achievements:"Thành tựu",tour:"Thăm vườn",events:"Lễ hội",guestbook:"Lưu bút",affinity:"Gắn kết",scenery:"Khung cảnh",settings:"Cài đặt",plots:"Thửa đất",crops:"Hạt giống",creatures:"Sinh vật",craft:"Chế biến",build:"Xây dựng",inventory:"Kho",layout:"Bố trí",collection:"Trang trí",menu:"Khu vườn"};
+ let active=null,previousFocus=null,profileTab="achievements",postcardNode=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false;
+ const names={roadmap:"Lộ trình",profile:"Hồ sơ người giữ vườn",tour:"Thăm vườn",events:"Lễ hội",affinity:"Gắn kết",scenery:"Khung cảnh",settings:"Cài đặt",plots:"Thửa đất",crops:"Hạt giống",creatures:"Sinh vật",craft:"Chế biến",build:"Xây dựng",inventory:"Kho",layout:"Bố trí",collection:"Trang trí",menu:"Khu vườn"};
  const label=id=>labels[id]||id,now=()=>E.nowFor(getState(),Date.now()),paragraph=(text,cls="")=>el("p",{text,class:cls}),actions=(...children)=>el("div",{class:"actions"},children),toolbar=(...children)=>el("div",{class:"panel-toolbar"},children),grid=()=>el("div",{class:"cards"});
  const detail=text=>el("details",{class:"v24-detail"},[el("summary",{text:"Chi tiết"}),paragraph(text)]);
  const navButton=(name,text,fn,attrs={})=>{const b=button(text,fn,attrs);b.prepend(navIcon(name));return b;};
  function card(title,subtitle,id,opts={}){const c=el("article",{class:"card"}),h=el("div",{class:"card-head"});if(id)h.append(visualItemIcon(items,id,{size:52,...opts}));h.append(el("div",{class:"card-head-copy"},[el("strong",{text:title}),el("small",{text:subtitle})]));c.append(h);return c;}
  function readyButton(text,at,fn){return button(text,fn,{"data-ready-button":at,disabled:at>now(),class:"primary"});}
+ // Thành tựu, Sổ tay, Lưu bút and Bưu thiếp are tabs of one Hồ sơ panel; their old names still open their tab.
+ const PROFILE_TABS=[["achievements","Thành tựu"],["almanac","Sổ tay"],["guestbook","Lưu bút"],["postcard","Bưu thiếp"]];
  function show(name){
+  if(PROFILE_TABS.some(([id])=>id===name)){if(profileTab!==name)postcardNode=null;profileTab=name;name="profile";}
   for(const d of document.querySelectorAll("dialog.decor-placement,dialog.store-overlay")){try{d.close();}catch{}d.remove();}
   if(!active)previousFocus=document.activeElement;
   active=name;panel.dataset.view=name;confirmUproot=false;
   if(name==="roadmap"){const lv=getState().level||1;roadStart=Math.floor((lv-1)/20)*20+1;}
   panel.hidden=false;shade.hidden=false;$("panelTitle").textContent=names[name];render();panel.scrollTop=0;$("closePanel").focus();
  }
- function close(){panel.hidden=true;shade.hidden=true;active=null;previousFocus?.focus();}
+ function close(){postcardNode=null;panel.hidden=true;shade.hidden=true;active=null;previousFocus?.focus();}
  function refresh(){if(!active)return;const scroll=panel.scrollTop;render();panel.scrollTop=scroll;}
  function render(){body.replaceChildren();views[active]?.();tickTimers();}
  $("closePanel").onclick=close;shade.onclick=close;document.addEventListener("keydown",e=>{if(!active)return;if(e.key==="Escape"){e.preventDefault();close();}else if(e.key==="Tab"){const focus=[...panel.querySelectorAll("button:not(:disabled),select,input,a[href],summary")].filter(e=>!e.hidden&&e.getClientRects().length&&![...panel.querySelectorAll("details:not([open])")].some(d=>d.contains(e)&&e!==d.querySelector("summary")));if(!focus.length)return;const first=focus[0],last=focus.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
@@ -500,33 +503,6 @@ export function createPanels(ctx){
    body.append(g);
   },
 
-  almanac(){
-   const s=getState();
-   const almanac=renderAlmanacSection({
-     DB,
-     items,
-     state:s,
-     onSelectCrop:id=>{selectCrop(id);close();},
-     onSelectCreature:id=>{selectCreature(id);close();},
-     onOpenCraft:feedId=>{recipeFilter=feedId;show("craft");},
-     onOpenPostcard:ctx.openPostcard?()=>{close();ctx.openPostcard();}:null,
-    });
-   body.append(almanac,toolbar(button("Lưu bút",()=>show("guestbook"),{"data-open-guestbook":"true"})));
-  },
-
-  achievements(){
-   const s=getState();
-   body.append(
-    renderAchievementsSection({
-     state:s,
-     extra:ctx.getAchievementExtra?.()??{},
-     onSelectTitle:achId=>{ctx.onSelectTitle?.(achId);refresh();},
-     onClaimReward:achId=>{ctx.onClaimAchievement?.(achId);refresh();},
-     onOpenPostcard:ctx.openPostcard?()=>{close();ctx.openPostcard();}:null,
-    })
-   );
-  },
-
   tour(){
    body.append(
     renderTourSection({
@@ -567,21 +543,25 @@ export function createPanels(ctx){
   },
 
   profile(){
-   const s=getState(),session=getSession();
-   body.append(
-    el("section",{class:"v24-profile-view"},[
-     el("small",{class:"journey-kicker",text:"HỒ SƠ"}),
-     el("h3",{text:$("playerName")?.textContent||"Người làm vườn"}),
-     paragraph(`Cấp ${s.level}/100 · ${num(s.xp)} XP`),
-     toolbar(
-      ...(ctx.openProfile?[button("Chỉnh sửa",()=>{close();ctx.openProfile();})]:[]),
-      button("Lộ trình",()=>show("roadmap")),
-      button("Thành tựu",()=>show("achievements")),
-      button("Gắn kết",()=>show("affinity")),
-      button("Lưu bút",()=>show("guestbook")),
-     ),
+   const s=getState();
+   body.append(el("section",{class:"v24-profile-view"},[
+    el("div",{class:"v24-profile-id"},[
+     el("strong",{text:$("playerName")?.textContent||"Người làm vườn"}),
+     el("small",{text:`Cấp ${s.level}/100 · ${num(s.xp)} XP`}),
     ]),
-   );
+    toolbar(
+     ...(ctx.openProfile?[button("Sửa hồ sơ",()=>{close();ctx.openProfile();})]:[]),
+     button("Lộ trình",()=>show("roadmap")),
+     button("Gắn kết",()=>show("affinity")),
+    ),
+   ]));
+   const pick=id=>{if(id===profileTab)return;show(id);$("profileTab-"+id)?.focus();};
+   const tabs=el("div",{class:"profile-tabs",role:"tablist","aria-label":"Hồ sơ người giữ vườn"});
+   for(const [id,text] of PROFILE_TABS)tabs.append(button(text,()=>pick(id),{role:"tab",id:"profileTab-"+id,"aria-selected":String(id===profileTab),"aria-controls":"profileTabPanel",tabindex:id===profileTab?"0":"-1"}));
+   tabs.addEventListener("keydown",e=>{const i=PROFILE_TABS.findIndex(([id])=>id===profileTab),n=PROFILE_TABS.length,j={ArrowRight:i+1,ArrowLeft:i-1+n,Home:0,End:n-1}[e.key];if(j===undefined)return;e.preventDefault();pick(PROFILE_TABS[j%n][0]);});
+   const pane=el("div",{class:"profile-tab-panel",id:"profileTabPanel",role:"tabpanel","aria-labelledby":"profileTab-"+profileTab});
+   pane.append(profileViews[profileTab]());
+   body.append(tabs,pane);
   },
 
   affinity(){
@@ -596,11 +576,6 @@ export function createPanels(ctx){
     onPetCreature:species=>{ctx.onPetCreature?.(species);refresh();},
     onClaimAffinityGift:giftId=>{ctx.onClaimAffinityGift?.(giftId);refresh();},
    }));
-  },
-
-  guestbook(){
-   const eventCfg=ctx.getEvent?.()??{id:"event_halloween"};
-   body.append(renderGuestbookSection({state:getState(),eventMode:eventCfg.id,extra:ctx.getAchievementExtra?.()??{}}));
   },
 
   scenery(){
@@ -627,11 +602,29 @@ export function createPanels(ctx){
 
   menu(){
    body.append(renderGardenMenu(ctx,{
-    tour:()=>show("tour"),postcard:()=>{close();ctx.openPostcard?.();},
-    almanac:()=>show("almanac"),guestbook:()=>show("guestbook"),
+    tour:()=>show("tour"),profile:()=>show("profile"),
     events:()=>show("events"),settings:()=>show("settings"),
    }));
   }
+ };
+ const profileViews={
+  achievements:()=>renderAchievementsSection({
+   state:getState(),
+   extra:ctx.getAchievementExtra?.()??{},
+   onSelectTitle:achId=>{ctx.onSelectTitle?.(achId);refresh();},
+   onClaimReward:achId=>{ctx.onClaimAchievement?.(achId);refresh();},
+  }),
+  almanac:()=>renderAlmanacSection({
+   DB,
+   items,
+   state:getState(),
+   onSelectCrop:id=>{selectCrop(id);close();},
+   onSelectCreature:id=>{selectCreature(id);close();},
+   onOpenCraft:feedId=>{recipeFilter=feedId;show("craft");},
+  }),
+  guestbook:()=>renderGuestbookSection({state:getState(),eventMode:(ctx.getEvent?.()??{id:"event_halloween"}).id,extra:ctx.getAchievementExtra?.()??{}}),
+  // Built once per visit to the tab: opening it snapshots the garden, so a refresh must not redo it.
+  postcard:()=>{if(!postcardNode){const opts=ctx.getPostcard?.();if(!opts)return paragraph("Vườn đang tải, thử lại sau giây lát.","empty");postcardNode=renderPostcardSection(opts);}return postcardNode;},
  };
  return {show,refresh,close};
 }
