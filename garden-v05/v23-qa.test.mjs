@@ -18,6 +18,7 @@ import {
   EVENT_STORAGE_KEY,
   claimAffinityGift,
   claimEventMilestone,
+  recordFestivalAction,
   evaluateCreatureAffinity,
   loadEventState,
   recordCreatureAffinity,
@@ -228,9 +229,11 @@ test('quest, event, chest, and affinity callbacks wait for a successful save', (
   assert.equal(chestCallback, 0);
 
   const eventSeed = makeStorage();
-  saveEventState(loadEventState(eventSeed), eventSeed);
+  const festivalDay = Date.parse('2026-10-28T09:00:00+07:00');
+  recordFestivalAction('dailyChest', 100, eventSeed, festivalDay);
   let eventCallback = 0;
-  const failedEvent = claimEventMilestone('hal_m1', {
+  const failedEvent = claimEventMilestone('hal_m1@2026', {
+    nowMs: festivalDay,
     storage: throwingWrites(eventSeed),
     onGrantReward: () => { eventCallback += 1; },
   });

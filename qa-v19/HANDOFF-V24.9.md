@@ -102,3 +102,19 @@
 - Giá hạt: phương án A1, giữ nguyên (`docs/progression-sim.md`, mục *Kết quả*).
 - Kiểm chứng sau khi gộp: 165/165 test node; FTUE WebKit 5/5; bảng Hồ sơ mở đúng cả 4 tab qua hook QA, không lỗi console.
 - Chưa tạo manifest sha256 cho bản này.
+
+## Phase 3 mục 4 — Lễ hội theo lịch thật (nhánh `festival-calendar`, 18/10/2026)
+- `garden-events.mjs`: lễ hội chạy theo lịch thật, giờ Việt Nam (UTC+7 cố định), mỗi lần một lễ hội, mỗi lễ 14 ngày: Thảo dược 20/03–02/04, **Cúp Quidditch & Tiệc Cuối Năm Học 20/06–03/07 (mới)**, Lễ Hội Ma 24/10–06/11, Dạ vũ Noel 18/12–31/12. Mốc 100 / 450 / 1000; việc vườn tối đa 60 điểm/ngày, thao tác miễn phí tối đa 20 điểm/ngày (trần riêng từng loại vẫn giữ); quà nhiệm vụ cú và rương không bị trần. Bộ đếm đặt lại lúc 00:00 giờ VN. Ngoài mùa, mọi thao tác cho 0 điểm.
+- Luật là hàm thuần để server dùng lại ở Phase 4: `vnDayKey`, `festivalStatus(dayKey, joinDay)`, `festivalActionKind`, `normalizeEventState`, `applyFestivalAction`, `milestoneClaimCheck`, `pendingFestivalRewards`.
+- Bản lưu V25 (`hpvn-garden-v23-events`): điểm theo mùa (`event_halloween@2026`), mốc nhận theo `hal_m1@2026`, nên năm sau nhận lại được. Có thêm `joinDay` và bộ đếm ngày. Khi chuyển từ V23/V24: mốc đã nhận vẫn tính là đã nhận; mốc đã đủ điểm theo luật cũ nhưng chưa nhận chuyển sang `legacyClaimable` với phần thưởng cũ; điểm cũ không chuyển sang lịch mới. Bỏ 35 điểm tặng sẵn.
+- Người mới vào giữa lễ hội có 14 ngày từ `joinDay` cho riêng lễ hội đó.
+- Phần thưởng mốc mới, mỗi lễ hội tổng cộng 80 nước, 3 phân bón, 3 bộ vật liệu, 4 nông sản cấp thấp, tức khoảng 3 ngày quà nhiệm vụ cú. Lý do ở `docs/festival-pacing.md` mục 8.5.
+- Tên theo Lý Lan (mục 8.6): Halloween thành «Lễ Hội Ma» (bỏ «Samhain», cả trong câu thoại của bác Hagrid ở `garden-atmosphere.mjs`); «Dạ vũ Noel» đúng sách nên giữ; «nhà kính số ba».
+- Bảng Lễ hội: thẻ đầu hiện lễ hội đang diễn ra kèm ngày và số ngày còn lại, hoặc lễ hội tiếp theo kèm đếm ngược; dòng «Hôm nay: việc vườn x/60 · việc khác y/20»; 3 mốc; mục «Quà lễ hội chưa nhận» (quà cũ và mốc của lễ hội đã kết thúc); cuối bảng là «Cảnh lễ hội» (5 lựa chọn, chỉ để trang trí). CSS mới nằm trong `v24-panels.css`; không sửa `v24-ui.css` và `mobile-game.mjs`.
+- `sim-progression.mjs festival` đọc mốc, trần và độ dài từ `garden-events.mjs`; kết quả ở `docs/festival-pacing.md` mục 10.
+- Kiểm chứng: 172/172 test node (7 test mới trong `festival-calendar.test.mjs`: nửa đêm VN, ngày mở/đóng, ngoài mùa, quy tắc người mới, trần, mốc theo mùa, chuyển bản lưu); FTUE WebKit 5/5 trên cổng 62798. Ảnh bảng Lễ hội trong mùa và ngoài mùa ở 390×664 và 1280×720 (nằm cục bộ trong `qa-v19/festival-calendar-shots/`, không commit): không tràn ngang, không lỗi console.
+- Còn lại:
+  - Lễ hội Cúp Quidditch chưa có tranh (panel dùng ô màu) và chưa có vật trang trí chính trong vườn.
+  - Lần đầu mở game, cảnh mặc định vẫn là Lễ Hội Ma vì `loadVisualPrefs` mặc định `event_halloween`; việc này chỉ đổi hình, không đổi điểm.
+  - `economy-audit.md` dòng 19 vẫn ghi mốc 30 / 75 / 150 và rương +50.
+  - Khi gộp nhánh cần tăng `?v=` cho `garden-events.mjs`, `garden-atmosphere.mjs`, `v24-panels.css`.

@@ -6,14 +6,24 @@ import {dayKeyFor} from './garden-quests.mjs?v=24.9.28';
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
 
+// Milestone rewards add up to about three days of owl-quest rewards per festival
+// (docs/festival-pacing.md, section 8.5). Bonus crops unlock at level 1–4.
+const milestones = (prefix, crop, cropLabel, [t1, t2, t3]) => Object.freeze([
+  Object.freeze({id: `${prefix}_m1`, points: 100, title: t1, reward: Object.freeze({kind: 'water', amount: 20, itemId: crop, bonusQty: 4, label: `+20 Nước tưới & +4 ${cropLabel}`})}),
+  Object.freeze({id: `${prefix}_m2`, points: 450, title: t2, reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 25, label: '+1 Phân bón & +25 Nước'})}),
+  Object.freeze({id: `${prefix}_m3`, points: 1000, title: t3, reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 35, itemId: 'kit', bonusQty: 3, label: '+2 Phân bón, +35 Nước & +3 Bộ vật liệu'})}),
+]);
+
+// `season`: MM-DD start and end, inclusive, in Vietnam time. One festival at a time.
 export const HOGWARTS_EVENTS = Object.freeze([
   Object.freeze({
     id: 'event_halloween',
     art: './v24-art/event-halloween.webp',
-    label: 'Đêm Hội Bí Ngô Rừng Cấm',
-    shortLabel: '🎃 Lễ hội Bí ngô',
+    label: 'Lễ Hội Ma ở Rừng Cấm',
+    shortLabel: '🎃 Lễ Hội Ma',
     icon: '🎃',
-    badge: 'LỄ HỘI MÙA THU · SAMHAIN HARVEST',
+    badge: 'MÙA THU · LỄ HỘI MA',
+    season: Object.freeze({start: '10-24', end: '11-06'}),
     recommendedAtmosphere: 'night',
     recommendedWeather: 'autumn',
     particleCount: 22,
@@ -21,28 +31,9 @@ export const HOGWARTS_EVENTS = Object.freeze([
     tint: 'rgba(66, 28, 12, 0.10)',
     bannerColor: '#ed8a45',
     description:
-      'Đèn lồng bí ngô và đom đóm tím phép thuật bay lượn quanh lều bác Hagrid. Thu hoạch nông sản, chế biến khẩu phần và chăm sóc sinh vật để tích Điểm Lễ Hội Samhain!',
-    hagridLine: 'Đêm hội Bí ngô Rừng Cấm rực rỡ quá! Nhớ thu hoạch bí ngô và thắp đèn lồng nhé!',
-    milestones: Object.freeze([
-      Object.freeze({
-        id: 'hal_m1',
-        points: 30,
-        title: 'Giỏ Quà Đêm Samhain',
-        reward: Object.freeze({kind: 'water', amount: 15, itemId: 'pumpkin', bonusQty: 4, label: '+15 Nước tưới & +4 Bí ngô'}),
-      }),
-      Object.freeze({
-        id: 'hal_m2',
-        points: 75,
-        title: 'Lồng Đèn Phù Thủy Rừng Cấm',
-        reward: Object.freeze({kind: 'kit', amount: 2, itemId: 'mandrake', bonusQty: 3, label: '+2 Bộ vật liệu & +3 Nhân sâm'}),
-      }),
-      Object.freeze({
-        id: 'hal_m3',
-        points: 150,
-        title: 'Đại Tiệc Bí Ngô Hogwarts',
-        reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 20, itemId: 'kit', bonusQty: 3, label: '+2 Phân bón, +20 Nước & +3 Bộ vật liệu'}),
-      }),
-    ]),
+      'Đèn lồng bí ngô và đom đóm tím phép thuật bay lượn quanh lều bác Hagrid. Thu hoạch nông sản, chế biến khẩu phần và chăm sóc sinh vật để tích điểm lễ hội!',
+    hagridLine: 'Lễ Hội Ma ở Rừng Cấm rực rỡ quá! Nhớ thu hoạch bí ngô và thắp đèn lồng nhé!',
+    milestones: milestones('hal', 'pumpkin', 'Bí ngô', ['Giỏ Quà Đêm Hội Ma', 'Lồng Đèn Phù Thủy Rừng Cấm', 'Đại Tiệc Bí Ngô Hogwarts']),
   }),
   Object.freeze({
     id: 'event_yule',
@@ -50,7 +41,8 @@ export const HOGWARTS_EVENTS = Object.freeze([
     label: 'Dạ Vũ Noel Hogwarts',
     shortLabel: '🎄 Dạ vũ Noel',
     icon: '🎄',
-    badge: 'LỄ HỘI MÙA ĐÔNG · YULE BALL',
+    badge: 'MÙA ĐÔNG · DẠ VŨ NOEL',
+    season: Object.freeze({start: '12-18', end: '12-31'}),
     recommendedAtmosphere: 'night',
     recommendedWeather: 'snow',
     particleCount: 26,
@@ -60,26 +52,7 @@ export const HOGWARTS_EVENTS = Object.freeze([
     description:
       'Ánh sao bạc và pha lê băng tuyết tỏa sáng dọc hàng rào gỗ. Cùng bác Hagrid chuẩn bị bữa ăn ấm áp cho các sinh vật huyền bí trong mùa lễ Giáng sinh!',
     hagridLine: 'Giáng sinh ấm áp bên lều gỗ! Tuyết phủ trắng lối đi và trà nóng đã sẵn sàng!',
-    milestones: Object.freeze([
-      Object.freeze({
-        id: 'yule_m1',
-        points: 30,
-        title: 'Tất Quà Bên Lò Sưởi',
-        reward: Object.freeze({kind: 'water', amount: 15, itemId: 'blueberry', bonusQty: 4, label: '+15 Nước tưới & +4 Việt quất'}),
-      }),
-      Object.freeze({
-        id: 'yule_m2',
-        points: 75,
-        title: 'Hộp Nhạc Tuyết Bạc',
-        reward: Object.freeze({kind: 'kit', amount: 2, itemId: 'moonherb', bonusQty: 3, label: '+2 Bộ vật liệu & +3 Cỏ trăng'}),
-      }),
-      Object.freeze({
-        id: 'yule_m3',
-        points: 150,
-        title: 'Ngôi Sao Đại Sảnh Đường',
-        reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 20, itemId: 'starbean', bonusQty: 4, label: '+2 Phân bón, +20 Nước & +4 Đậu sao'}),
-      }),
-    ]),
+    milestones: milestones('yule', 'strawberry', 'Dâu tây', ['Tất Quà Bên Lò Sưởi', 'Hộp Nhạc Tuyết Bạc', 'Ngôi Sao Đại Sảnh Đường']),
   }),
   Object.freeze({
     id: 'event_herbology_fair',
@@ -87,7 +60,8 @@ export const HOGWARTS_EVENTS = Object.freeze([
     label: 'Hội Chợ Thảo Dược & Sinh Vật',
     shortLabel: '🌿 Hội chợ Thảo dược',
     icon: '🌿',
-    badge: 'NGÀY HỘI NHÀ KÍNH · HERBOLOGY FAIR',
+    badge: 'MÙA XUÂN · NHÀ KÍNH SỐ BA',
+    season: Object.freeze({start: '03-20', end: '04-02'}),
     recommendedAtmosphere: 'day',
     recommendedWeather: 'clear',
     particleCount: 20,
@@ -95,28 +69,28 @@ export const HOGWARTS_EVENTS = Object.freeze([
     tint: 'rgba(36, 74, 48, 0.08)',
     bannerColor: '#71934b',
     description:
-      'Bào tử thảo dược phát quang bay lượn quanh Nhà kính Số 3. Giáo sư Sprout và Newt Scamander mở hội giao lưu hạt giống và kỷ vật sinh vật quý!',
+      'Bào tử thảo dược phát quang bay lượn quanh nhà kính số ba. Giáo sư Sprout và Newt Scamander mở hội giao lưu hạt giống và kỷ vật sinh vật quý!',
     hagridLine: 'Hội chợ Thảo dược đang mở hội! Giáo sư Sprout và Newt khen khu vườn của con lắm!',
-    milestones: Object.freeze([
-      Object.freeze({
-        id: 'herb_m1',
-        points: 30,
-        title: 'Túi Hạt Giống Nhà Kính Số 3',
-        reward: Object.freeze({kind: 'water', amount: 15, itemId: 'clover', bonusQty: 4, label: '+15 Nước tưới & +4 Cỏ ba lá'}),
-      }),
-      Object.freeze({
-        id: 'herb_m2',
-        points: 75,
-        title: 'Cẩm Nang Chăm Thú Của Newt',
-        reward: Object.freeze({kind: 'kit', amount: 2, itemId: 'insects', bonusQty: 4, label: '+2 Bộ vật liệu & +4 Côn trùng'}),
-      }),
-      Object.freeze({
-        id: 'herb_m3',
-        points: 150,
-        title: 'Cúp Vàng Hội Chợ Thảo Dược',
-        reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 20, itemId: 'sunpetal', bonusQty: 3, label: '+2 Phân bón, +20 Nước & +3 Hoa nhật quang'}),
-      }),
-    ]),
+    milestones: milestones('herb', 'daisy', 'Cúc trắng', ['Túi Hạt Giống Nhà Kính Số Ba', 'Cẩm Nang Chăm Thú Của Newt', 'Cúp Vàng Hội Chợ Thảo Dược']),
+  }),
+  Object.freeze({
+    id: 'event_quidditch_cup',
+    art: null,
+    label: 'Cúp Quidditch & Tiệc Cuối Năm Học',
+    shortLabel: '🏆 Cúp Quidditch',
+    icon: '🏆',
+    badge: 'MÙA HÈ · CÚP NHÀ & CÚP QUIDDITCH',
+    season: Object.freeze({start: '06-20', end: '07-03'}),
+    recommendedAtmosphere: 'day',
+    recommendedWeather: 'clear',
+    particleCount: 18,
+    particleColors: Object.freeze(['#f5d69a', '#c75b4b', '#71934b']),
+    tint: 'rgba(80, 52, 12, 0.06)',
+    bannerColor: '#ffc36b',
+    description:
+      'Cờ bốn nhà bay phấp phới quanh lều bác Hagrid. Năm học sắp hết: chăm vườn thật đều để góp nông sản cho bữa tiệc cuối năm học và mùa Cúp Quidditch!',
+    hagridLine: 'Sắp tới tiệc cuối năm học rồi! Bác để dành bí ngô ngon nhất cho Đại Sảnh Đường đấy!',
+    milestones: milestones('cup', 'pumpkin', 'Bí ngô', ['Lá Cờ Bốn Nhà', 'Chổi Bay Của Đội Nhà', 'Cúp Nhà Trong Đại Sảnh Đường']),
   }),
   Object.freeze({
     id: 'none',
@@ -138,6 +112,7 @@ export const HOGWARTS_EVENTS = Object.freeze([
 ]);
 
 const EVENT_MAP = new Map(HOGWARTS_EVENTS.map((e) => [e.id, e]));
+const SEASONAL_EVENTS = HOGWARTS_EVENTS.filter((e) => e.season);
 
 export function normalizeEventMode(value) {
   const key = String(value ?? '').trim().toLowerCase();
@@ -168,7 +143,7 @@ export const FESTIVAL_ACTION_POINTS = Object.freeze({
   rotate: 8,
   helpTour: 25,
   startTour: 10,
-  dailyChest: 50,
+  dailyChest: 20,
   postcard: 12,
   shareFloo: 15,
   questClaim: 15,
@@ -176,122 +151,244 @@ export const FESTIVAL_ACTION_POINTS = Object.freeze({
 });
 
 // Free actions (switching themes, rotating, sharing, petting, the crop-care tap,
-// moving a plot or pen) only earn festival points a few times per local day;
-// real farm work is uncapped because seeds, water and timers already bound it.
+// moving a plot or pen) only earn festival points a few times per day, and all
+// free actions together (with honour-garden visits) at most 20 points a day.
 export const FREE_FESTIVAL_ACTIONS_PER_DAY = Object.freeze({rotate: 3, pet: 3, postcard: 1, shareFloo: 1, startTour: 1, care: 3, moveBuilding: 1});
 
-function normalizePointsByEvent(raw, activeEventId, legacyPoints) {
-  const pointsByEvent = {};
-  if (raw && typeof raw === 'object') {
-    for (const [id, value] of Object.entries(raw)) pointsByEvent[normalizeEventMode(id)] = Math.max(0, Number(value) || 0);
-  } else {
-    // Pre-V24.9 saves kept one shared pool; it belongs to the event that was active.
-    pointsByEvent[activeEventId] = Math.max(0, Number(legacyPoints) || 0);
+// The rules below are pure functions of a Vietnam day key, so a server can reuse
+// them (Phase 4). Asia/Ho_Chi_Minh is UTC+7 all year with no daylight saving.
+const VN_OFFSET_MS = 7 * 3600000;
+const DAY_MS = 86400000;
+export const FESTIVAL_DAYS = 14;
+export const FESTIVAL_FARM_POINTS_PER_DAY = 60;
+export const FESTIVAL_FREE_POINTS_PER_DAY = 20;
+const QUEST_ACTIONS = new Set(['questClaim', 'dailyChest']);
+const EVENT_STATE_VERSION = 25;
+
+export function vnDayKey(nowMs = Date.now()) {
+  return new Date((Number.isFinite(nowMs) ? nowMs : Date.now()) + VN_OFFSET_MS).toISOString().slice(0, 10);
+}
+
+const dayNumber = (key) => Date.parse(`${key}T00:00:00Z`) / DAY_MS;
+const dayKeyOf = (n) => new Date(n * DAY_MS).toISOString().slice(0, 10);
+const isDayKey = (v) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v);
+
+/** 'farm' (capped 60/day), 'free' (capped 20/day) or 'quest' (owl quests and chest, already 1/day each). */
+export function festivalActionKind(actionType) {
+  if (QUEST_ACTIONS.has(actionType)) return 'quest';
+  return actionType in FREE_FESTIVAL_ACTIONS_PER_DAY || actionType === 'helpTour' ? 'free' : 'farm';
+}
+
+/**
+ * The festival running on `dayKey` (Vietnam date) and the next one to open.
+ * A save whose `joinDay` falls after a festival's first day gets 14 days from
+ * that day for that festival, so new players can still finish their first one.
+ */
+export function festivalStatus(dayKey, joinDay = '') {
+  const today = dayNumber(dayKey);
+  const year = Number(dayKey.slice(0, 4));
+  const join = isDayKey(joinDay) ? dayNumber(joinDay) : NaN;
+  const windows = [];
+  for (const y of [year - 1, year, year + 1]) {
+    for (const event of SEASONAL_EVENTS) {
+      const start = dayNumber(`${y}-${event.season.start}`);
+      const end = dayNumber(`${y}-${event.season.end}`);
+      const lateJoin = join > start && join <= end;
+      windows.push({event, year: y, start, end: lateJoin ? Math.max(end, join + FESTIVAL_DAYS - 1) : end});
+    }
   }
-  return pointsByEvent;
+  windows.sort((a, b) => a.start - b.start);
+  const view = (w) => ({id: w.event.id, event: w.event, year: w.year, seasonKey: `${w.event.id}@${w.year}`, start: dayKeyOf(w.start), end: dayKeyOf(w.end)});
+  const current = windows.find((w) => w.start <= today && today <= w.end);
+  const next = windows.find((w) => w.start > today);
+  return {
+    dayKey,
+    active: current ? {...view(current), daysLeft: current.end - today + 1} : null,
+    next: {...view(next), daysUntil: next.start - today},
+  };
+}
+
+// Pre-V25 milestones: no season, thresholds 30 / 75 / 150. Rewards a save had
+// already earned under those rules stay claimable after the migration.
+const legacyReward = (amount, kind, itemId, bonusQty, label, waterBonus) => Object.freeze({kind, amount, ...(waterBonus ? {waterBonus} : {}), itemId, bonusQty, label});
+export const LEGACY_MILESTONES = Object.freeze({
+  hal_m1: {eventId: 'event_halloween', points: 30, title: 'Giỏ Quà Đêm Hội Ma', reward: legacyReward(15, 'water', 'pumpkin', 4, '+15 Nước tưới & +4 Bí ngô')},
+  hal_m2: {eventId: 'event_halloween', points: 75, title: 'Lồng Đèn Phù Thủy Rừng Cấm', reward: legacyReward(2, 'kit', 'mandrake', 3, '+2 Bộ vật liệu & +3 Nhân sâm')},
+  hal_m3: {eventId: 'event_halloween', points: 150, title: 'Đại Tiệc Bí Ngô Hogwarts', reward: legacyReward(2, 'boost', 'kit', 3, '+2 Phân bón, +20 Nước & +3 Bộ vật liệu', 20)},
+  yule_m1: {eventId: 'event_yule', points: 30, title: 'Tất Quà Bên Lò Sưởi', reward: legacyReward(15, 'water', 'blueberry', 4, '+15 Nước tưới & +4 Việt quất')},
+  yule_m2: {eventId: 'event_yule', points: 75, title: 'Hộp Nhạc Tuyết Bạc', reward: legacyReward(2, 'kit', 'moonherb', 3, '+2 Bộ vật liệu & +3 Cỏ trăng')},
+  yule_m3: {eventId: 'event_yule', points: 150, title: 'Ngôi Sao Đại Sảnh Đường', reward: legacyReward(2, 'boost', 'starbean', 4, '+2 Phân bón, +20 Nước & +4 Đậu sao', 20)},
+  herb_m1: {eventId: 'event_herbology_fair', points: 30, title: 'Túi Hạt Giống Nhà Kính Số Ba', reward: legacyReward(15, 'water', 'clover', 4, '+15 Nước tưới & +4 Cỏ ba lá')},
+  herb_m2: {eventId: 'event_herbology_fair', points: 75, title: 'Cẩm Nang Chăm Thú Của Newt', reward: legacyReward(2, 'kit', 'insects', 4, '+2 Bộ vật liệu & +4 Côn trùng')},
+  herb_m3: {eventId: 'event_herbology_fair', points: 150, title: 'Cúp Vàng Hội Chợ Thảo Dược', reward: legacyReward(2, 'boost', 'sunpetal', 3, '+2 Phân bón, +20 Nước & +3 Hoa nhật quang', 20)},
+});
+
+const count = (v) => Math.max(0, Number(v) || 0);
+const strings = (list) => (Array.isArray(list) ? [...new Set(list.filter((id) => typeof id === 'string'))] : []);
+
+function legacyPoints(src) {
+  const activeEventId = normalizeEventMode(src.activeEventId);
+  if (!src.pointsByEvent || typeof src.pointsByEvent !== 'object') return {[activeEventId]: count(src.points)};
+  const out = {};
+  for (const [id, value] of Object.entries(src.pointsByEvent)) out[normalizeEventMode(id)] = count(value);
+  return out;
+}
+
+/** Any stored shape (V23, V24, V25 or nothing) → a V25 state for `today` (Vietnam day key). */
+export function normalizeEventState(raw, today) {
+  const src = raw && typeof raw === 'object' ? raw : null;
+  const current = src?.version === EVENT_STATE_VERSION;
+  const claimedMilestones = strings(src?.claimedMilestones);
+  let legacyClaimable = [];
+  if (src && !current) {
+    // Old points do not carry into the calendar; milestones they had reached stay claimable.
+    const points = legacyPoints(src);
+    legacyClaimable = Object.entries(LEGACY_MILESTONES)
+      .filter(([id, m]) => (points[m.eventId] || 0) >= m.points && !claimedMilestones.includes(id))
+      .map(([id]) => id);
+  } else if (current) {
+    legacyClaimable = strings(src.legacyClaimable).filter((id) => id in LEGACY_MILESTONES && !claimedMilestones.includes(id));
+  }
+  const pointsBySeason = {};
+  if (current && src.pointsBySeason && typeof src.pointsBySeason === 'object') {
+    for (const [key, value] of Object.entries(src.pointsBySeason)) {
+      if (/^[a-z_]+@\d{4}$/.test(key)) pointsBySeason[key] = count(value);
+    }
+  }
+  const sameDay = current && src.day === today;
+  return {
+    version: EVENT_STATE_VERSION,
+    // The garden theme; it no longer decides which festival earns points.
+    activeEventId: src ? normalizeEventMode(src.activeEventId) : festivalStatus(today, today).active?.id ?? 'none',
+    joinDay: isDayKey(src?.joinDay) ? src.joinDay : today,
+    pointsBySeason,
+    claimedMilestones,
+    legacyClaimable,
+    day: today,
+    farmToday: sameDay ? count(src.farmToday) : 0,
+    freeToday: sameDay ? count(src.freeToday) : 0,
+    freeCounts: sameDay && src.freeCounts && typeof src.freeCounts === 'object' ? {...src.freeCounts} : {},
+  };
 }
 
 function withPointViews(state) {
-  state.points = state.pointsByEvent[state.activeEventId] || 0;
-  state.totalPoints = Object.values(state.pointsByEvent).reduce((sum, value) => sum + value, 0);
+  const active = festivalStatus(state.day, state.joinDay).active;
+  state.seasonKey = active?.seasonKey ?? null;
+  state.points = active ? state.pointsBySeason[active.seasonKey] || 0 : 0;
+  state.totalPoints = Object.values(state.pointsBySeason).reduce((sum, value) => sum + value, 0);
   return state;
 }
 
-export function loadEventState(storage = getGardenStorage()) {
-  const defaults = () => withPointViews({
-    version: 24,
-    activeEventId: 'event_halloween',
-    pointsByEvent: {event_halloween: 35},
-    claimedMilestones: [],
-    freeDay: '',
-    freeCounts: {},
-  });
-  if (!storage || typeof storage.getItem !== 'function') return defaults();
+export function loadEventState(storage = getGardenStorage(), nowMs = Date.now()) {
+  let parsed = null;
   try {
-    const raw = storage.getItem(EVENT_STORAGE_KEY);
-    if (!raw) return defaults();
-    const parsed = JSON.parse(raw);
-    if (!parsed || typeof parsed !== 'object') return defaults();
-    const activeEventId = normalizeEventMode(parsed.activeEventId);
-    return withPointViews({
-      version: 24,
-      activeEventId,
-      pointsByEvent: normalizePointsByEvent(parsed.pointsByEvent, activeEventId, parsed.points),
-      claimedMilestones: Array.isArray(parsed.claimedMilestones)
-        ? parsed.claimedMilestones.filter((id) => typeof id === 'string')
-        : [],
-      freeDay: typeof parsed.freeDay === 'string' ? parsed.freeDay : '',
-      freeCounts: parsed.freeCounts && typeof parsed.freeCounts === 'object' ? {...parsed.freeCounts} : {},
-    });
+    const raw = storage?.getItem?.(EVENT_STORAGE_KEY);
+    parsed = raw ? JSON.parse(raw) : null;
   } catch {
-    return defaults();
+    parsed = null;
   }
+  return withPointViews(normalizeEventState(parsed, vnDayKey(nowMs)));
 }
 
-export function saveEventState(state, storage = getGardenStorage()) {
+export function saveEventState(state, storage = getGardenStorage(), nowMs = Date.now()) {
   if (!state || typeof state !== 'object') return state;
-  const activeEventId = normalizeEventMode(state.activeEventId);
-  // pointsByEvent is the source of truth; `points` is only the active-event view.
-  const normalized = {
-    version: 24,
-    activeEventId,
-    pointsByEvent: normalizePointsByEvent(state.pointsByEvent, activeEventId, state.points),
-    claimedMilestones: Array.isArray(state.claimedMilestones)
-      ? [...new Set(state.claimedMilestones.filter((id) => typeof id === 'string'))]
-      : [],
-    freeDay: typeof state.freeDay === 'string' ? state.freeDay : '',
-    freeCounts: state.freeCounts && typeof state.freeCounts === 'object' ? {...state.freeCounts} : {},
-  };
-  if (!storage || typeof storage.setItem !== 'function') return withPointViews(normalized);
+  const {seasonKey, points, totalPoints, ...stored} = normalizeEventState({...state, version: EVENT_STATE_VERSION}, vnDayKey(nowMs));
+  void seasonKey; void points; void totalPoints;
+  if (typeof storage?.setItem !== 'function') return withPointViews(stored);
   try {
-    storage.setItem(EVENT_STORAGE_KEY, JSON.stringify(normalized));
+    storage.setItem(EVENT_STORAGE_KEY, JSON.stringify(stored));
   } catch { return null; }
-  return withPointViews(normalized);
+  return withPointViews(stored);
+}
+
+/** Pure: adds one action's capped points to the running festival. `state` must be normalized for its day. */
+export function applyFestivalAction(state, actionType, customPoints = null) {
+  const active = festivalStatus(state.day, state.joinDay).active;
+  if (!active) return {state, addedPoints: 0, offSeason: true};
+  let delta = customPoints != null ? count(customPoints) : (FESTIVAL_ACTION_POINTS[actionType] ?? 5);
+  const kind = festivalActionKind(actionType);
+  if (kind === 'free') {
+    const limit = FREE_FESTIVAL_ACTIONS_PER_DAY[actionType];
+    const used = count(state.freeCounts[actionType]);
+    if (limit != null && used >= limit) delta = 0;
+    else if (limit != null) state.freeCounts[actionType] = used + 1;
+    delta = Math.min(delta, FESTIVAL_FREE_POINTS_PER_DAY - state.freeToday);
+    state.freeToday += delta;
+  } else if (kind === 'farm') {
+    delta = Math.min(delta, FESTIVAL_FARM_POINTS_PER_DAY - state.farmToday);
+    state.farmToday += delta;
+  }
+  state.pointsBySeason[active.seasonKey] = (state.pointsBySeason[active.seasonKey] || 0) + delta;
+  return {state: withPointViews(state), addedPoints: delta};
 }
 
 export function recordFestivalAction(actionType, customPoints = null, storage = getGardenStorage(), nowMs = Date.now()) {
-  const state = loadEventState(storage);
-  let delta = customPoints != null
-    ? Math.max(0, Number(customPoints) || 0)
-    : (FESTIVAL_ACTION_POINTS[actionType] || 5);
-  const freeLimit = FREE_FESTIVAL_ACTIONS_PER_DAY[actionType];
-  if (freeLimit != null) {
-    const today = dayKeyFor(nowMs);
-    if (state.freeDay !== today) {
-      state.freeDay = today;
-      state.freeCounts = {};
+  const result = applyFestivalAction(loadEventState(storage, nowMs), actionType, customPoints);
+  if (result.offSeason) return {state: result.state, addedPoints: 0, offSeason: true};
+  const saved = saveEventState(result.state, storage, nowMs);
+  return {state: saved || result.state, addedPoints: result.addedPoints};
+}
+
+/** A claim key is `hal_m1@2026` for a festival season, or a bare legacy id such as `hal_m1`. */
+export function festivalMilestone(key) {
+  const [id, year, extra] = String(key ?? '').split('@');
+  if (extra !== undefined) return null;
+  if (year === undefined) {
+    const legacy = LEGACY_MILESTONES[id];
+    return legacy ? {...legacy, id, key: id, legacy: true, eventLabel: eventConfig(legacy.eventId).label} : null;
+  }
+  if (!/^\d{4}$/.test(year)) return null;
+  for (const e of SEASONAL_EVENTS) {
+    const m = e.milestones.find((x) => x.id === id);
+    if (m) return {...m, key, eventId: e.id, eventLabel: e.label, seasonKey: `${e.id}@${year}`};
+  }
+  return null;
+}
+
+/** Pure: can `state` claim milestone `key`? */
+export function milestoneClaimCheck(state, key) {
+  const target = festivalMilestone(key);
+  if (!target) return {ok: false, reason: 'NOT_FOUND'};
+  if (state.claimedMilestones.includes(target.key)) return {ok: false, reason: 'ALREADY_CLAIMED'};
+  if (target.legacy) return state.legacyClaimable.includes(target.key) ? {ok: true, milestone: target} : {ok: false, reason: 'INSUFFICIENT_POINTS'};
+  if ((state.pointsBySeason[target.seasonKey] || 0) < target.points) return {ok: false, reason: 'INSUFFICIENT_POINTS'};
+  return {ok: true, milestone: target};
+}
+
+/** Reached but unclaimed milestones outside the running festival: old-save rewards and ended seasons. */
+export function pendingFestivalRewards(state) {
+  const out = state.legacyClaimable.map(festivalMilestone).filter(Boolean);
+  for (const [seasonKey, points] of Object.entries(state.pointsBySeason)) {
+    if (seasonKey === state.seasonKey) continue;
+    const [eventId, year] = seasonKey.split('@');
+    for (const m of EVENT_MAP.get(eventId)?.milestones ?? []) {
+      const key = `${m.id}@${year}`;
+      if (points >= m.points && !state.claimedMilestones.includes(key)) out.push(festivalMilestone(key));
     }
-    const used = Number(state.freeCounts[actionType]) || 0;
-    if (used >= freeLimit) delta = 0;
-    else state.freeCounts[actionType] = used + 1;
   }
-  state.pointsByEvent[state.activeEventId] = (state.pointsByEvent[state.activeEventId] || 0) + delta;
-  const saved = saveEventState(state, storage);
-  return {state: saved || withPointViews(state), addedPoints: delta};
+  return out;
 }
 
-export function claimEventMilestone(milestoneId, {storage = getGardenStorage(), onGrantReward = null} = {}) {
-  const state = loadEventState(storage);
-  const allMilestones = HOGWARTS_EVENTS.flatMap((e) => e.milestones.map((m) => ({...m, eventId: e.id, eventLabel: e.label})));
-  const target = allMilestones.find((m) => m.id === milestoneId);
-  if (!target) return {ok: false, reason: 'NOT_FOUND', state};
-  if (state.claimedMilestones.includes(target.id)) return {ok: false, reason: 'ALREADY_CLAIMED', state};
-  // Each festival spends only its own points, so switching themes cannot reuse one pool.
-  if ((state.pointsByEvent[target.eventId] || 0) < target.points) return {ok: false, reason: 'INSUFFICIENT_POINTS', state};
-
-  state.claimedMilestones.push(target.id);
-  if (!saveEventState(state, storage)) return {ok: false, reason: 'SAVE_FAILED'};
-  if (typeof onGrantReward === 'function') {
-    onGrantReward(target.reward, target);
-  }
-  return {ok: true, milestone: target, reward: target.reward, state};
+export function claimEventMilestone(milestoneKey, {storage = getGardenStorage(), onGrantReward = null, nowMs = Date.now()} = {}) {
+  const state = loadEventState(storage, nowMs);
+  const check = milestoneClaimCheck(state, milestoneKey);
+  if (!check.ok) return {...check, state};
+  const target = check.milestone;
+  state.claimedMilestones.push(target.key);
+  state.legacyClaimable = state.legacyClaimable.filter((id) => id !== target.key);
+  const saved = saveEventState(state, storage, nowMs);
+  if (!saved) return {ok: false, reason: 'SAVE_FAILED'};
+  if (typeof onGrantReward === 'function') onGrantReward(target.reward, target);
+  return {ok: true, milestone: target, reward: target.reward, state: saved};
 }
 
-export function hasClaimableEventMilestone(storage = getGardenStorage()) {
-  const state = loadEventState(storage);
-  return HOGWARTS_EVENTS.some((e) => e.milestones.some(
-    (m) => (state.pointsByEvent[e.id] || 0) >= m.points && !state.claimedMilestones.includes(m.id),
-  ));
+export function hasClaimableEventMilestone(storage = getGardenStorage(), nowMs = Date.now()) {
+  const state = loadEventState(storage, nowMs);
+  const active = festivalStatus(state.day, state.joinDay).active;
+  const now = active
+    ? active.event.milestones.some((m) => milestoneClaimCheck(state, `${m.id}@${active.year}`).ok)
+    : false;
+  return now || pendingFestivalRewards(state).length > 0;
 }
 
 export function computeEventParticles(
@@ -766,6 +863,29 @@ export function renderGuestbookSection({
   return root;
 }
 
+const shortDate = (key) => `${key.slice(8, 10)}/${key.slice(5, 7)}`;
+const THEME_LABELS = Object.freeze({event_halloween: 'Hội Ma', event_yule: 'Dạ vũ Noel', event_herbology_fair: 'Thảo dược', event_quidditch_cup: 'Quidditch', none: 'Ngày thường'});
+
+function milestoneCard({items, ms, key, claimed, ready, label, onClaim, title = null, note = null}) {
+  return el('article', {
+    class: `card event-milestone-card v24-event-milestone${claimed ? ' is-claimed' : ready ? ' is-ready' : ''}`,
+    'data-milestone-id': key,
+  }, [
+    el('div', {class: 'v24-event-milestone-head'}, [
+      visualItemIcon(items, ms.reward.itemId || ms.reward.kind, {size: 34, kind: ms.reward.kind || ''}),
+      el('span', {class: 'journey-stage-badge', text: ms.legacy ? 'Quà cũ' : `${ms.points} điểm`}),
+    ]),
+    title ? el('strong', {class: 'tour-card-title', text: title}) : null,
+    note ? el('small', {class: 'tour-card-keeper', text: note}) : null,
+    el('small', {class: 'v24-event-reward', text: ms.reward.label}),
+    button(label, () => onClaim?.(key), {
+      class: ready && !claimed ? 'primary' : '',
+      disabled: !ready || claimed,
+      'data-claim-milestone': key,
+    }),
+  ]);
+}
+
 export function renderEventsAndTasksSection({
   E,
   items = null,
@@ -793,90 +913,102 @@ export function renderEventsAndTasksSection({
   void onRouteQuest;
   void onPetCreature;
   void onClaimAffinityGift;
-  void nowMs;
-  const evtState = loadEventState(storage);
-  const activeCfg = eventConfig(eventMode || evtState.activeEventId);
+  const evtState = loadEventState(storage, nowMs);
+  const status = festivalStatus(evtState.day, evtState.joinDay);
+  const season = status.active ?? status.next;
+  const cfg = season.event;
   const root = el('div', {class: 'v24-events-panel events-panel-root', 'data-events-view': 'true'});
-  const selection = el('section', {
+
+  root.append(el('section', {
+    class: 'journey-hero-card event-hero-card v24-event-hero',
+    'data-active-event': status.active?.id ?? 'none',
+    'data-festival-state': status.active ? 'in-season' : 'off-season',
+  }, [
+    eventArt(cfg, 'v24-event-hero-art'),
+    el('div', {class: 'v24-event-hero-copy'}, [
+      el('small', {class: 'journey-kicker', text: status.active ? 'ĐANG DIỄN RA' : 'LỄ HỘI TIẾP THEO'}),
+      el('h3', {class: 'v24-event-hero-title', text: cfg.label}),
+      el('p', {
+        class: 'v24-event-hero-when',
+        text: status.active
+          ? `${shortDate(season.start)} – ${shortDate(season.end)} · còn ${status.active.daysLeft} ngày`
+          : `Mở ngày ${shortDate(season.start)} · còn ${status.next.daysUntil} ngày`,
+      }),
+    ]),
+  ]));
+
+  const maxPoints = cfg.milestones.at(-1).points;
+  const points = status.active ? evtState.points : 0;
+  const pct = Math.min(100, Math.round((points / maxPoints) * 100));
+  const milestoneSec = el('section', {class: 'event-milestones-section v24-event-progress'}, [
+    el('div', {class: 'journey-section-head'}, [
+      el('div', {}, [el('h3', {text: `${points} / ${maxPoints} điểm`})]),
+      el('span', {class: 'journey-stage-pill', text: `${pct}%`}),
+    ]),
+    el('div', {class: 'progress v24-event-progress-bar'}, [el('span', {style: `width:${pct}%`})]),
+    el('p', {
+      class: 'journey-subcopy v24-event-caps',
+      text: status.active
+        ? `Hôm nay: việc vườn ${evtState.farmToday}/${FESTIVAL_FARM_POINTS_PER_DAY} · việc khác ${evtState.freeToday}/${FESTIVAL_FREE_POINTS_PER_DAY} điểm. Quà nhiệm vụ cú luôn được tính.`
+        : 'Lễ hội chưa mở nên chưa tính điểm. Cảnh lễ hội bên dưới vẫn bật được để trang trí.',
+    }),
+  ]);
+  const mGrid = el('div', {class: 'cards event-milestones-grid v24-event-milestones'});
+  for (const ms of cfg.milestones) {
+    const key = `${ms.id}@${season.year}`;
+    const claimed = evtState.claimedMilestones.includes(key);
+    const ready = Boolean(status.active) && points >= ms.points;
+    mGrid.append(milestoneCard({
+      items, ms, key, claimed, ready,
+      label: claimed ? 'Đã nhận' : ready ? 'Nhận' : status.active ? 'Chưa đủ' : 'Chưa mở',
+      onClaim: onClaimEventMilestone,
+    }));
+  }
+  milestoneSec.append(mGrid);
+  root.append(milestoneSec);
+
+  const pending = pendingFestivalRewards(evtState);
+  if (pending.length) {
+    const grid = el('div', {class: 'cards event-milestones-grid v24-event-milestones'});
+    for (const ms of pending) {
+      grid.append(milestoneCard({items, ms, key: ms.key, claimed: false, ready: true, label: 'Nhận', onClaim: onClaimEventMilestone, title: ms.title, note: ms.eventLabel}));
+    }
+    root.append(el('section', {class: 'event-milestones-section v24-event-pending', 'data-festival-pending': String(pending.length)}, [
+      el('div', {class: 'journey-section-head'}, [el('div', {}, [el('h3', {text: 'Quà lễ hội chưa nhận'})])]),
+      grid,
+    ]));
+  }
+
+  const activeTheme = eventConfig(eventMode || evtState.activeEventId);
+  const selection = el('div', {
     class: 'v24-event-selection event-theme-switcher',
     role: 'group',
-    'aria-label': 'Chọn sự kiện',
+    'aria-label': 'Chọn cảnh lễ hội',
   });
   for (const ev of HOGWARTS_EVENTS) {
-    const label = ({event_halloween:'Bí ngô',event_yule:'Giáng sinh',event_herbology_fair:'Thảo dược',none:'Ngày thường'})[ev.id];
+    const label = THEME_LABELS[ev.id];
     const apply = () => {
       if (typeof onApplyEventTheme === 'function') onApplyEventTheme(ev);
       else onSelectEvent?.(ev.id);
     };
     const choice = button('', apply, {
-      class: `v24-event-choice journey-tab-btn${ev.id === activeCfg.id ? ' primary' : ''}`,
+      class: `v24-event-choice journey-tab-btn${ev.id === activeTheme.id ? ' primary' : ''}`,
       'aria-label': label,
-      'aria-pressed': String(ev.id === activeCfg.id),
+      'aria-pressed': String(ev.id === activeTheme.id),
       'data-select-event': ev.id,
       'data-apply-event-theme': ev.id,
     });
     choice.append(eventArt(ev, 'v24-event-choice-art'), el('span', {class: 'v24-event-choice-label', text: label}));
     selection.append(choice);
   }
-  root.append(selection);
-
-  const eventTitle = activeCfg.id === 'none'
-    ? 'Ngày thường'
-    : activeCfg.shortLabel.replace(/^[^\s]+\s/, '');
-  root.append(el('section', {
-    class: 'journey-hero-card event-hero-card v24-event-hero',
-    'data-active-event': activeCfg.id,
-  }, [
-    eventArt(activeCfg, 'v24-event-hero-art'),
-    el('h3', {class: 'v24-event-hero-title', text: eventTitle}),
-  ]));
-
-  const milestonesToShow = activeCfg.milestones.slice(0, 3);
-  if (milestonesToShow.length) {
-    const maxPoints = milestonesToShow.at(-1)?.points || 150;
-    const pct = Math.min(100, Math.round((evtState.points / maxPoints) * 100));
-    const milestoneSec = el('section', {class: 'event-milestones-section v24-event-progress'}, [
-      el('div', {class: 'journey-section-head'}, [
-        el('div', {}, [
-          
-          el('h3', {text: `${evtState.points} / ${maxPoints} điểm`}),
-        ]),
-        el('span', {class: 'journey-stage-pill', text: `${pct}%`}),
+  root.append(el('section', {class: 'v24-event-themes'}, [
+    el('div', {class: 'journey-section-head'}, [
+      el('div', {}, [
+        el('h3', {text: 'Cảnh lễ hội'}),
+        el('p', {class: 'journey-subcopy', text: 'Chỉ đổi cảnh trong vườn, không đổi lễ hội đang tính điểm.'}),
       ]),
-      el('div', {class: 'progress v24-event-progress-bar'}, [el('span', {style: `width:${pct}%`})]),
-    ]);
-    const mGrid = el('div', {class: 'cards event-milestones-grid v24-event-milestones'});
-    for (const ms of milestonesToShow) {
-      const unlocked = evtState.points >= ms.points;
-      const claimed = evtState.claimedMilestones.includes(ms.id);
-      const progressPct = Math.min(100, Math.round((evtState.points / ms.points) * 100));
-      mGrid.append(el('article', {
-        class: `card event-milestone-card v24-event-milestone${claimed ? ' is-claimed' : unlocked ? ' is-ready' : ''}`,
-        'data-milestone-id': ms.id,
-      }, [
-        el('div', {class: 'v24-event-milestone-head'}, [
-          visualItemIcon(items, ms.reward.itemId || ms.reward.kind, {
-            size: 34,
-            kind: ms.reward.kind || '',
-          }),
-          el('span', {class: 'journey-stage-badge', text: `${ms.points} điểm`}),
-        ]),
-        
-        el('div', {class: 'progress'}, [el('span', {style: `width:${progressPct}%`})]),
-        el('small', {class: 'v24-event-reward', text: ms.reward.label}),
-        button(
-          claimed ? 'Đã nhận' : unlocked ? 'Nhận' : 'Chưa đủ',
-          () => onClaimEventMilestone?.(ms.id),
-          {
-            class: unlocked && !claimed ? 'primary' : '',
-            disabled: !unlocked || claimed,
-            'data-claim-milestone': ms.id,
-          },
-        ),
-      ]));
-    }
-    milestoneSec.append(mGrid);
-    root.append(milestoneSec);
-  }
+    ]),
+    selection,
+  ]));
   return root;
 }
