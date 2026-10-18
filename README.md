@@ -1,4 +1,13 @@
-# Khu Vườn Hagrid — standalone prototype
+# Hagrid Farm (Khu Vườn Hagrid) — standalone prototype
+
+**Project name for every agent: Hagrid Farm.** Open it at `~/Downloads/hagrid-farm` (a link to this folder, `~/.codex/visualizations/2026/10/13/01a1336a-1a81-7fd1-838a-938d62b6dd7d`; the real path stays so worktrees and sessions keep working).
+
+| Part | Where |
+| --- | --- |
+| Game client (this repo, branch `main`) | `garden-v05/`, QA in `qa-v19/` |
+| Side branches (git worktrees next to this folder) | `../hagrid-game-panels` (`ui-game-panels`), `../hagrid-icon-hud`, `../hagrid-festival`, `../hagrid-festival-cal`, `../hagrid-profile` — list with `git worktree list` |
+| Server (Functions, Galleons wallet) | HPVNN repo, branch `claude/hagrid-garden-phase4-8688d1`, `functions/games/garden-*`, doc `docs/garden/phase4-reconcile.md` |
+
 
 Independent local Git repository created with owner approval on 2026-10-17. This repository is separate from HPVNN and its worktrees. Baseline: V24.9 (preview cache 24.9.2).
 
