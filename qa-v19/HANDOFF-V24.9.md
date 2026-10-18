@@ -216,3 +216,12 @@ Yêu cầu: "anh muốn new user mới vào game sẽ có hướng dẫn chơi v
 - **Sandbox origin "null"**: `index.html` có shim: `localStorage` thành bộ nhớ tạm, `navigator.locks` tắt (cả hai ném SecurityError trong sandbox). `scene-renderer.mjs` tải ảnh với `crossOrigin='anonymous'` để canvas không bị "taint" (trước đó `toBlob` ném lỗi, mất nền rừng). HPVN trả CORS cho `/game/**`.
 - `qa-v19/server-daily-shots.mjs`: nút xoay đổi tên từ «Xoay sang ↗ Góc phải» thành «Xoay … sang phải ↗» (game panels `72e2079`), sửa locator.
 - Kiểm chứng: 204/204 test node; FTUE WebKit 6/6; `hud-shots` 10/10; `panel-shots` hết ok; `server-daily-shots` 11/11; game trong iframe sandbox giống HPVN, nối emulator `demo-hpvnn-garden` qua postMessage: đọc vườn cấp 36, 5.000 G, không lỗi console. Bộ file chạy thật (ghi từ mọi kịch bản QA): 64 file gốc + `native`, `native-levels`, `native-care`, `decor-assets`, `environment`, `v24-art`, `world-v241`, `world-v242`; không tải `masters*`.
+
+## Người mới lớn nhanh, «Chăm cây» có tác dụng — `?v=24.9.39` (18/10/2026)
+- Quyết định bệ hạ: dưới cấp 20 mọi thứ phải nhanh; nút Chăm trước đây không làm gì nên gây hiểu lầm. Server HPVNN (`claude/hagrid-garden-phase4-8688d1`, `garden-action-core.js`, tài liệu `docs/garden/phase4-reconcile.md` §6d) quyết định; prototype làm theo.
+- **Gieo dưới cấp 20 lớn nhanh** theo cấp lúc gieo: 1–4 ×0,1 · 5–9 ×0,2 · 10–14 ×0,3 · 15–19 ×0,5 · 20+ ×1 (`ui-utils.mjs` `growthScale`; Bí ngô cấp 1 = 12 phút). Danh mục cây (nối ví) hiện thời gian đã nhân hệ số.
+- **Chăm cây** (`mobile-game.mjs`): gửi lệnh `care {plotIndex, cells}`; mỗi cây đang lớn chín sớm 15 phút (không quá chín), 3 lượt/ngày, hết lượt → `care-limit`. Nút khóa khi hàng không có cây đang lớn hoặc hết lượt. Không gửi `freeAction care` nữa (server từ chối). Không nối ví: chỉ hiệu ứng.
+- **Quà cấp**: mỗi cấp đạt tới 2…19 được +1 Nước phép; thẻ lên cấp hiện «+N Nước phép». Nút Nước phép không còn ẩn dưới cấp 6.
+- `qa-v19/fixture-wallet.mjs` làm y hệt server (gieo nhanh, `care`, `care-limit`, quà cấp).
+- Kiểm chứng: 205/205 test node (sửa `server-daily.test.mjs` lượt chạm dùng `pet`, thêm test ví mẫu gieo → chăm → gặt); HPVNN `prototype-parity.test.mjs` 7/7; emulator thật: gieo 12 phút, chăm còn 0 phút (1/3), gặt lên cấp 2 Nước phép 1.
+- Chưa chạy lại ảnh chụp WebKit (FTUE/hud/panel) với bản này.

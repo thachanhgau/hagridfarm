@@ -1,10 +1,11 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.38";
-import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.38";
-import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.38";
-import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.38";
+import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.39";
+import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.39";
+import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.39";
+import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.39";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs";
-import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.38";
+import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.39";
+import {growthScale} from "../garden-v05/ui-utils.mjs?v=24.9.39";
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
 // garden-daily-core.js, garden-festival-core.js, garden-keeper-core.js): same commands, error reasons and response shapes.
@@ -12,7 +13,8 @@ import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.
 // scenario=new is a brand-new account (revision 0, starter supplies, tutorial not used): see HANDOFF-V24.9.md.
 export const STARTER_SUPPLIES=Object.freeze({seeds:Object.freeze({pumpkin:3}),water:3,boost:0});
 const FREE_CAPS=Object.freeze({rotate:3,pet:3,postcard:1,shareFloo:1,startTour:1,care:3,moveBuilding:1});
-const FREE_TAPS=new Set(["care","pet","rotate","postcard","shareFloo","startTour"]);
+// «care» is its own action now (server garden-action-core applyCare), not a bare tap.
+const FREE_TAPS=new Set(["pet","rotate","postcard","shareFloo","startTour"]);
 const DAILY=new Set(["claimQuest","claimChest","claimFestival","freeAction","claimBondGift","claimAchievement"]);
 const BOND_POINTS=Object.freeze({adopt:15,feed:20,claimAnimals:25,pet:12}),BOND_PETS_PER_DAY=3;
 const CHEST_REWARD=Object.freeze({kind:"boost",amount:1,waterBonus:12,itemId:"boost",eventPoints:20,label:"Rương Cú Vàng: +1 Nước phép, +12 Nước, +20 điểm lễ hội"});
@@ -204,6 +206,15 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   for(const s of entries){s.plantedAt-=Math.floor((E.CROP[s.species]?.growMs||s.growMs)*0.1);next.boostedCropIds.push(s.id);}
   next.supplies.boost-=1;next.progression.revision+=1;
  }
+ // Server applyCare: each growing crop in the cells ripens 15 minutes sooner, never past ripe.
+ function care(c,next){
+  const plot=next.progression.plots[c.plotIndex],at=E.nowFor(next.progression,now());
+  if(!plot)fail("invalid-action-input","Thửa đất không tồn tại.");
+  const growing=(c.cells||[]).filter(i=>plot.slots[i]?.type==="crop"&&!E.growth(plot.slots[i],at).mature);
+  if(!growing.length)fail("invalid-care-target","Hàng đang chọn không có cây đang lớn để chăm.");
+  for(const i of growing)plot.slots[i].plantedAt=Math.max(plot.slots[i].plantedAt-15*60000,at-plot.slots[i].growMs);
+  next.progression.revision+=1;
+ }
  // Hagrid's tutorial "nước phép": once per account, level 1, first plot only; the named growing
  // crops become ripe at server time. No supply, festival point or quest progress.
  function tutorialGrow(c,next){
@@ -290,18 +301,26 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(c.kind==="pet"&&c.species)extra.bonding=[addBond(next,before,c.species,"pet",d.dayKey)];
   }else if(c.action==="boost")boost(c,next);
   else if(c.action==="tutorialGrow")tutorialGrow(c,next);
+  else if(c.action==="care"){if((d.free.care||0)>=FREE_CAPS.care)fail("care-limit",`Hôm nay đã chăm đủ ${FREE_CAPS.care} lượt; mai bác Hagrid lại nhờ nhé.`);care(c,next);}
   else if(c.action==="placeDecoration")place(c,next);
   else{
    next.progression=model(c,before,Date.now());
    if(next.progression.revision!==before.revision+1)fail("action-noop","Lệnh khu vườn không tạo thay đổi mới.");
-   if(c.action==="plant"||c.action==="replant")plantSupplies(before,next.progression,next.supplies);
+   if(c.action==="plant"||c.action==="replant"){
+    plantSupplies(before,next.progression,next.supplies);
+    // Server growthScale: crops planted below level 20 grow faster.
+    const scale=growthScale(before.level);
+    next.progression.plots.forEach((plot,p)=>plot.slots.forEach((s,i)=>{if(s?.type==="crop"&&!before.plots[p]?.slots[i])s.plantedAt-=Math.round(s.growMs*(1-scale));}));
+   }
+   // Server gift: +1 nước phép per level reached up to 19.
+   next.supplies.boost+=Math.max(0,Math.min(next.progression.level,19)-before.level);
    for(const [type,amount] of questAmounts(c.action,before,next.progression,c))for(const q of d.quests)if(!q.claimed&&q.triggers.includes(type))q.progress=Math.min(q.target,q.progress+amount);
    const bonded=bondTriggers(c.action,before,next.progression);
    if(bonded.length)extra.bonding=bonded.map(sp=>addBond(next,before,sp,c.action,d.dayKey));
   }
   if(!DAILY.has(c.action)){
    // Moving a plot/pen and placing a decoration are free taps (placing counts as rotate); the rest is farm work.
-   const free={moveBuilding:"moveBuilding",placeDecoration:"rotate"}[c.action];
+   const free={moveBuilding:"moveBuilding",placeDecoration:"rotate",care:"care"}[c.action];
    if(free){extra.freeAction=countFree(d,free);extra.festivalPoints=addPoints(d,next.festival,free,{counted:extra.freeAction.counted});}
    else if(c.action!=="tutorialGrow")extra.festivalPoints=addPoints(d,next.festival,c.action);
   }

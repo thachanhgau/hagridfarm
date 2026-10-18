@@ -106,10 +106,12 @@ test('free taps stop counting at their cap, festival free points stop at 20, pla
   const {server} = fixture();
   let snap = server.handle('getHagridGarden', {});
   const tap = (kind, id) => server.handle('performHagridGardenAction', {action: 'freeAction', kind, expectedRevision: 0, requestId: id}).receipt;
-  assert.deepEqual([1, 2, 3, 4].map(i => tap('care', 'c' + i).freeAction.counted), [true, true, true, false]);
-  for (const [i, kind] of ['pet', 'pet', 'pet', 'postcard', 'shareFloo'].entries()) tap(kind, 'f' + i);
+  assert.deepEqual([1, 2, 3, 4].map(i => tap('pet', 'c' + i).freeAction.counted), [true, true, true, false]);
+  for (const [i, kind] of ['postcard', 'shareFloo'].entries()) tap(kind, 'f' + i);
   snap = server.handle('getHagridGarden', {});
-  assert.equal(snap.daily.freeActions.care.used, 3);
+  assert.equal(snap.daily.freeActions.pet.used, 3);
+  // «Chăm cây» is its own `care` action (it ripens crops); a bare care tap is refused.
+  assert.throws(() => tap('care', 'c-bare'), e => e.reason === 'invalid-action-input');
   assert.equal(snap.festival.today.free, 20);
   assert.throws(() => tap('moveBuilding', 'm1'), e => e.reason === 'invalid-action-input');
   const rev = snap.garden.progression.revision;
@@ -270,4 +272,21 @@ test('a decoration turned in place stores its facing in decorations.rotations an
   assert.equal(turned.garden.decorations.rotations.decor_pumpkin_lantern, 'right');
   assert.equal(turned.receipt.freeAction.kind, 'rotate');
   assert.throws(() => act(server, {action: 'placeDecoration', itemId: 'decor_pumpkin_lantern', slot: 0, facing: 'right'}, 'r2'), e => e.reason === 'action-noop');
+});
+
+test('fixture mirrors the server: fast growth below level 20, care ripens 15 minutes sooner 3 times a day, level gift', () => {
+  // The fixture plants on the real clock, so timings are checked to the second.
+  const server = createFixtureServer({simulate: true, level: 1, scenario: 'empty'});
+  let rev = server.handle('getHagridGarden', {}).garden.progression.revision;
+  const act = (fields, id) => { const r = server.handle('performHagridGardenAction', {expectedRevision: rev, requestId: id, ...fields}); rev = r.garden.progression.revision; return r; };
+  const planted = act({action: 'plant', plotIndex: 0, cells: [0, 1, 2], species: 'pumpkin'}, 'p1');
+  const slot = planted.garden.progression.plots[0].slots[0];
+  assert.ok(Math.abs(slot.plantedAt - (Date.now() - Math.round(slot.growMs * 0.9))) < 1000);
+  const cared = act({action: 'care', plotIndex: 0, cells: [0, 1, 2]}, 'c1');
+  assert.ok(Math.abs(cared.garden.progression.plots[0].slots[0].plantedAt - (Date.now() - slot.growMs)) < 1000);
+  assert.throws(() => act({action: 'care', plotIndex: 0, cells: [0, 1, 2]}, 'c2'), e => e.reason === 'invalid-care-target');
+  const boost = cared.garden.supplies.boost;
+  const harvested = act({action: 'harvest', plotIndex: 0, cells: [0, 1, 2]}, 'h1');
+  assert.equal(harvested.garden.progression.level, 2);
+  assert.equal(harvested.garden.supplies.boost, boost + 1);
 });

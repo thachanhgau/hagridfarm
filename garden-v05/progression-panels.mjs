@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.38';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.38';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.38";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.38";
-import {$,el,button,icon,num,duration,hours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.38";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.38";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.38";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.38";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.38";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.38";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.38";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.39';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.39';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.39";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.39";
+import {$,el,button,icon,num,duration,hours,growthScale,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.39";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.39";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.39";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.39";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.39";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.39";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.39";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -125,7 +125,7 @@ export function createPanels(ctx){
    const s=getState(),g=grid();
    body.append(paragraph("3 ô/hàng · tối đa 3 loại/thửa"+(getSession().connected?" · 1 hạt + 1 nước/ô":" · gieo miễn phí")));
    for(const c of DB.crops.filter(c=>c.level<=s.level)){
-    const locked=c.level>s.level,k=card(c.label,"Cấp "+c.level+" · "+c.rarity+" · "+hours(c.hours),c.id);
+    const locked=c.level>s.level,k=card(c.label,"Cấp "+c.level+" · "+c.rarity+" · "+(getSession().connected?duration(c.hours*growthScale(s.level)*3600000):hours(c.hours)),c.id);
     k.classList.toggle("locked",locked);
     k.append(detail(c.use),paragraph("Gieo "+c.plantXP+" + gặt "+c.harvestXP+" XP/ô · Kho "+(s.inventory[c.id]||0)),button(locked?"Mở ở cấp "+c.level:"Chọn",()=>{selectCrop(c.id);close();},{disabled:locked,class:"primary"}));
     g.append(k);
