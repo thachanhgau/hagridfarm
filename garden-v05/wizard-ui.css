@@ -8,12 +8,12 @@
 .play-dock{max-width:720px;background:linear-gradient(#314536f7,#1d3028fa);border-color:#a38b5b}.play-dock .tools{height:48px;gap:3px;padding:3px 46px 3px 8px}.play-dock .tool{height:40px;min-height:40px;flex:1;padding:3px 7px;font-family:system-ui,sans-serif;font-size:11px;letter-spacing:0}.play-dock .tool-glyph{display:grid;place-items:center}.play-dock .tool-glyph .wizard-icon{width:22px;height:22px}.play-dock .dock-toggle{top:3px}.play-dock .dock{padding:6px 12px 9px;gap:12px;grid-template-columns:minmax(0,1fr) 138px}.play-dock .dock-caption{height:25px;min-height:25px;margin-bottom:2px}.play-dock .seed-tray button{width:56px;min-width:56px;flex-basis:56px;height:56px;min-height:56px;padding:0}.play-dock .seed-tray .sprite-icon{transform:scale(.88)}.play-dock .seed-tray{gap:6px}.play-dock .item-copy strong{font-family:system-ui,sans-serif;font-size:13px}.play-dock .primary{font-family:system-ui,sans-serif;font-size:13px;min-height:44px;height:44px}.play-dock .selection-control{height:36px;min-height:36px}.play-dock .plant-actions{gap:5px;padding-bottom:3px}
 .crop-context{display:flex;align-items:center;gap:12px;padding:10px 12px 12px;min-height:84px}.context-copy{flex:1;min-width:0}.context-copy small{display:block;font-size:9px;letter-spacing:1px;color:#b6c3a5;margin-bottom:4px}.context-copy strong{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f5e2bd}.context-copy>span{font-size:11px;display:block;margin-top:4px;color:#b8c9b1}.crop-context .primary{min-width:110px}#contextIcon{width:52px;height:52px;display:grid;place-items:center;background:#132d23;border:1px solid #9b93674d}#contextOptions{width:44px;height:44px;padding:0;font-size:24px;border-radius:2px;background:#233c2e;box-shadow:none}.dock-collapsed .crop-context{display:none}
 .toast{z-index:6;top:130px;max-width:min(420px,calc(100% - 120px));font-weight:500;border-radius:3px;background:#f0e3be;line-height:1.5}.emulator-badge{top:auto!important;bottom:2px;left:12px;font-size:7px;padding:0 4px;pointer-events:auto;z-index:5}
-.owl-letter{position:fixed;width:min(410px,calc(100% - 28px));max-height:calc(100dvh - 32px);overflow:auto;border:3px solid #9a7e50;outline:1px solid #e0ca92;outline-offset:-8px;border-radius:3px;padding:28px 30px 24px;background:repeating-linear-gradient(0deg,#0000 0 3px,#bca36b08 3px 4px),#f0e3be;color:#493524;box-shadow:0 20px 80px #07171099}.owl-letter::backdrop{background:#0b221c99;backdrop-filter:blur(3px)}.letter-close{position:absolute;right:10px;top:10px;width:44px;height:44px;padding:0;font-size:26px;border:0;background:none;color:#745736;box-shadow:none}.letter-seal{background:#98483b;border:3px solid #b76d51;box-shadow:inset 0 0 0 2px #76372e;width:48px;height:48px;display:grid;place-items:center;font:25px Georgia,serif;color:#ead2a0;margin-bottom:19px;clip-path:polygon(20% 0,80% 0,100% 20%,100% 80%,80% 100%,20% 100%,0 80%,0 20%)}.letter-kicker{font-size:9px;letter-spacing:2px;font-weight:800;color:#806a43}.owl-letter h2{font:25px/1.2 Georgia,serif;margin:10px 0 22px;color:#483325}.owl-letter p{font-size:14px;line-height:1.7}.owl-letter .letter-signature{font:italic 24px Georgia,serif;margin:22px 0}.letter-signature small{font:10px system-ui,sans-serif;color:#826942}.owl-letter .primary{display:block;width:100%;white-space:normal;border-radius:2px;background:#304b36;color:#f7e6b8;border:1px solid #62774b;box-shadow:0 3px #1b3224;font-size:13px}.popover,.action-sheet{border-radius:3px;border-color:#ac925e}.popover h2,.sheet-heading h2{font-family:system-ui,sans-serif;font-size:20px}
+.owl-letter{position:fixed;width:min(410px,calc(100% - 28px));max-height:calc(100dvh - 32px);overflow:auto;border:3px solid #9a7e50;outline:1px solid #e0ca92;outline-offset:-8px;border-radius:3px;padding:28px 30px 24px;background:repeating-linear-gradient(0deg,#0000 0 3px,#bca36b08 3px 4px),#f0e3be;color:#493524;box-shadow:0 20px 80px #07171099}.owl-letter::backdrop{background:#0b221c99;backdrop-filter:blur(3px)}.owl-letter h2{font:25px/1.2 Georgia,serif;margin:10px 0 22px;color:#483325}.owl-letter p{font-size:14px;line-height:1.7}.owl-letter .primary{display:block;width:100%;white-space:normal;border-radius:2px;background:#304b36;color:#f7e6b8;border:1px solid #62774b;box-shadow:0 3px #1b3224;font-size:13px}.popover,.action-sheet{border-radius:3px;border-color:#ac925e}.popover h2,.sheet-heading h2{font-family:system-ui,sans-serif;font-size:20px}
 @media(orientation:portrait){
  .hud{top:max(8px,env(safe-area-inset-top));left:10px;right:10px;gap:4px;align-items:center;flex-wrap:nowrap}.hud .avatar-button{display:none}.hud .level-card{flex:1;max-width:none;height:44px!important;padding:3px 6px 3px 3px}.hud .level-copy{min-width:0}.hud .level-copy strong{font:11px system-ui,sans-serif!important;max-width:105px}.hud .wallet-button{position:static!important;height:44px!important;min-width:91px;display:flex;flex-direction:row;padding:4px 6px;gap:4px}.hud .wallet-button #walletValue{font-size:10px;white-space:nowrap}.hud .wallet-button .wizard-icon{width:17px;height:17px}.hud-actions{margin-left:0;gap:4px}.hud #inventoryButton,.hud #menuButton{position:static;min-width:36px;width:36px;height:44px;min-height:44px}.hud #fullscreenButton{display:none}.hud #inventoryButton .wizard-icon{width:21px;height:21px}.hud .plot-picker{position:absolute;top:51px;left:0;height:36px;min-height:36px;font-size:10px;padding:4px 7px}.garden-title{top:105px;left:14px}.garden-title span{font-size:8px;letter-spacing:1.6px}.garden-title small{font-size:13px;margin-top:4px}.owl-mail{top:60px;right:10px;height:36px;min-height:36px;padding:3px 8px;font-size:10px;gap:5px}.owl-mail-icon .wizard-icon{width:23px;height:23px}.camera-tools{top:143px;right:10px;left:auto}.camera-tools button{width:44px;min-width:44px;height:44px;min-height:44px;font-size:19px}
  .play-dock{width:calc(100% - 16px);bottom:max(10px,env(safe-area-inset-bottom))}.play-dock .tools{height:48px;padding:3px 43px 3px 5px;gap:0}.play-dock .tool{font-size:9px;flex-direction:column;gap:0;min-width:42px;padding:1px 3px}.play-dock .tool-glyph .wizard-icon{width:20px;height:20px}.play-dock .dock{grid-template-columns:minmax(0,1fr) 96px;gap:7px;padding:5px 9px 8px}.play-dock .dock-caption{height:28px;min-height:28px}.play-dock .seed-tray button{width:54px;min-width:54px;flex-basis:54px;height:54px;min-height:54px}.play-dock .item-copy strong{font-size:12px}.play-dock .primary{font-size:12px}.crop-context{gap:8px;padding:8px;min-height:88px}#contextIcon{display:none}.context-copy small{font-size:8px;letter-spacing:.4px}.context-copy strong{font-size:13px}.context-copy>span{font-size:10px}.crop-context .primary{min-width:85px;padding:5px 7px}#contextOptions{width:36px;min-width:36px}.toast{top:143px;left:14px;right:52px;max-width:none;transform:none;font-size:11px}.play-dock .creature-dock{grid-template-columns:minmax(0,1fr) 125px}.play-dock .care-buttons button{min-height:38px;font-size:10px}.play-dock .care-buttons .primary{height:40px;min-height:40px}
 }
-@media(max-height:450px) and (orientation:landscape){.garden-title{top:65px;left:12px}.garden-title small{font-size:12px}.owl-mail{top:65px;right:12px}.camera-tools{top:118px;right:12px}.play-dock{width:calc(100% - 128px);left:50%;bottom:8px}.play-dock .tools{height:42px}.play-dock .tool{min-height:36px;height:36px;font-size:10px}.play-dock .dock{padding:4px 10px;grid-template-columns:minmax(0,1fr) 120px}.crop-context{min-height:72px;padding:7px 10px}.toast{top:64px}.play-dock .dock-toggle{top:0}.hud .level-copy strong{max-width:100px}.owl-letter{max-height:calc(100dvh - 20px);padding:20px 26px}.letter-seal{display:none}.owl-letter h2{margin:8px 0 12px}.owl-letter .letter-signature{margin:10px 0}}
+@media(max-height:450px) and (orientation:landscape){.garden-title{top:65px;left:12px}.garden-title small{font-size:12px}.owl-mail{top:65px;right:12px}.camera-tools{top:118px;right:12px}.play-dock{width:calc(100% - 128px);left:50%;bottom:8px}.play-dock .tools{height:42px}.play-dock .tool{min-height:36px;height:36px;font-size:10px}.play-dock .dock{padding:4px 10px;grid-template-columns:minmax(0,1fr) 120px}.crop-context{min-height:72px;padding:7px 10px}.toast{top:64px}.play-dock .dock-toggle{top:0}.hud .level-copy strong{max-width:100px}.owl-letter{max-height:calc(100dvh - 20px);padding:20px 26px}.owl-letter h2{margin:8px 0 12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 /* Reset legacy portrait grid and absolutely-positioned action buttons. */
 .hud{display:flex}.hud-actions{display:flex}.hud #inventoryButton,.hud #menuButton{position:relative;inset:auto}.hud .wallet-button{flex-direction:row}.hud .level-card{flex:0 1 210px}.hud .avatar-button{flex:none}
@@ -824,99 +824,6 @@
  color:#f5d69a;
 }
 
-.owl-quests-section{
- margin-top:12px;
- padding-top:10px;
- border-top:1px dashed #8a6c4288;
- display:flex;
- flex-direction:column;
- gap:8px;
-}
-.owl-quests-head{
- display:flex;
- flex-direction:column;
- gap:2px;
-}
-.owl-quests-head strong{
- font-size:13px;
- color:#4a3020;
-}
-.owl-quests-list{
- display:flex;
- flex-direction:column;
- gap:8px;
- max-height:240px;
- overflow-y:auto;
-}
-.owl-quest-card{
- padding:9px 11px;
- border-radius:10px;
- background:rgba(255,248,231,.72);
- border:1px solid #b5925b88;
- display:flex;
- flex-direction:column;
- gap:4px;
-}
-.owl-quest-card.is-ready{
- border-color:#b87d1e;
- background:rgba(255,243,207,.92);
-}
-.owl-quest-card.is-claimed{
- opacity:.75;
-}
-.owl-quest-top{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:6px;
- flex-wrap:wrap;
- font-size:11px;
-}
-.owl-quest-sender{
- font-weight:700;
- color:#5c3818;
-}
-.owl-quest-reward{
- font-weight:700;
- color:#1e5638;
- background:rgba(176,189,103,.28);
- padding:1px 7px;
- border-radius:999px;
-}
-.owl-quest-title{
- font-size:12.5px;
- color:#2f1d12;
-}
-.owl-quest-desc{
- font-size:11.5px!important;
- margin:0!important;
- color:#523a28!important;
- line-height:1.35!important;
-}
-.owl-quest-foot{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:8px;
- margin-top:2px;
-}
-.owl-quest-progress{
- font-size:11px;
- font-weight:700;
- color:#6a4b2c;
-}
-.owl-quest-done-pill{
- font-size:11px;
- font-weight:700;
- color:#1f5e3b;
-}
-.owl-quest-btn{
- min-height:30px!important;
- padding:4px 10px!important;
- font-size:11.5px!important;
- border-radius:8px!important;
-}
-
 /* V22.0: Tour Banner, Honor Gardens, Achievements & Keeper Title */
 .hud-keeper-title{
  display:inline-flex;
@@ -1039,17 +946,6 @@
  background:#ffc36b;
  box-shadow:0 0 6px #ff9e44;
  border:1.5px solid #183024;
-}
-.owl-grand-chest-bar{
- display:flex;
- flex-wrap:wrap;
- align-items:center;
- justify-content:space-between;
- gap:6px;
- padding:7px 9px;
- border-radius:10px;
- background:rgba(255,243,207,.86);
- border:1px solid #b87d1e88;
 }
 .events-panel-root{
  display:flex;

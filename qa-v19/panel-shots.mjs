@@ -1,13 +1,13 @@
 // Every panel, the level-up card and the night scene, in WebKit, for before/after review.
-// Usage: node qa-v19/panel-shots.mjs <baseUrl> <outDir> — prints panels that overflow sideways,
-// show a native <select>, or use buttons smaller than 44 px.
+// Usage: node qa-v19/panel-shots.mjs <baseUrl> <outDir> [owl] — prints panels that overflow sideways,
+// show a native <select>, or use buttons smaller than 44 px. `owl` shoots only Thư cú (local + fixture wallet).
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 
 const require = createRequire(import.meta.url);
 const {webkit} = require(process.env.PLAYWRIGHT_MODULE || '/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
-const [base = 'http://127.0.0.1:62801', out = 'panel-shots'] = process.argv.slice(2);
+const [base = 'http://127.0.0.1:62801', out = 'panel-shots', only = ''] = process.argv.slice(2);
 const phone = (width, height) => ({viewport: {width, height}, deviceScaleFactor: 2, isMobile: true, hasTouch: true});
 const SCREENS = [
   ['390x664', phone(390, 664)],
@@ -25,7 +25,7 @@ const PANELS = [
   ['8-le-hoi', (qa) => qa.openEvents()],
 ];
 const AUDIT = () => {
-  const box = document.querySelector('.store-overlay .popover') || document.getElementById('panel');
+  const box = document.querySelector('#owlLetter[open]') || document.querySelector('.store-overlay .popover') || document.getElementById('panel');
   const issues = [];
   if (box.scrollWidth > box.clientWidth + 1) issues.push('sideways overflow');
   if (box.querySelector('select')) issues.push('native select');
@@ -48,6 +48,28 @@ for (const [label, device] of SCREENS) {
   await page.waitForSelector('.tutorial-skip:not([hidden])', {timeout: 8000}).then(() => page.click('.tutorial-skip')).catch(() => {});
   await page.waitForTimeout(1800);
   if (await page.isVisible('#owlLetter[open]')) await page.click('#closeLetter').catch(() => {});
+  // Thư cú: local (fresh quests), then the fixture wallet with every quest done, one claimed.
+  await page.evaluate(() => window.__HAGRID_GARDEN_QA__.openOwlMail());
+  await page.waitForTimeout(600);
+  await page.screenshot({path: path.join(out, `${label}-10-thu-cu.png`)});
+  console.log(`${label}-10-thu-cu: ${(await page.evaluate(AUDIT)).join('; ') || 'ok'}`);
+  await page.evaluate(() => document.getElementById('owlLetter').close());
+  {
+    const w = await (await browser.newContext({...device})).newPage();
+    w.on('pageerror', (e) => errors.push(String(e.message || e)));
+    await w.goto(`${base}/qa-v19/ui-fixture.html?wallet=emulator&qa=1&level=100&quests=done&shots=${Date.now()}`);
+    await w.waitForFunction(() => window.__HAGRID_GARDEN_QA__?.getSnapshot().walletReady, null, {timeout: 15000});
+    await w.waitForTimeout(800);
+    if (await w.isVisible('#owlLetter[open]')) await w.click('#closeLetter').catch(() => {});
+    await w.evaluate(() => window.__HAGRID_GARDEN_QA__.openOwlMail());
+    await w.waitForTimeout(500);
+    await w.click('[data-claim-owl-quest]');
+    await w.waitForTimeout(700);
+    await w.screenshot({path: path.join(out, `${label}-11-thu-cu-vi.png`)});
+    console.log(`${label}-11-thu-cu-vi: ${(await w.evaluate(AUDIT)).join('; ') || 'ok'}`);
+    await w.context().close();
+  }
+  if (only === 'owl') { await browser.close(); continue; }
   for (const [name, open] of PANELS) {
     if (label === '320x568' && !['1-ho-so', '6-cua-hang'].includes(name)) continue;
     await page.evaluate(`(${open})(window.__HAGRID_GARDEN_QA__)`);

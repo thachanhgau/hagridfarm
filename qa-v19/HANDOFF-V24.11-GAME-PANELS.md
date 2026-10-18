@@ -20,3 +20,12 @@ Agent: Claude Code (Anthropic). Chỉ đổi giao diện: không đổi luật c
 - Gộp vào `main` khi bệ hạ duyệt (fast-forward được nếu `main` không đổi thêm), rồi nâng `?v=`.
 - Bảng «Sắp xếp» (`layout()`) vẫn dùng `<select>` chọn nền; không nằm trong 9 ảnh của bệ hạ.
 - Chưa chụp lại ở chế độ có ví (`server-daily-shots.mjs`).
+
+## Thư cú (nhánh `ui-owl-mail`, từ `ui-game-panels`, 18/10/2026)
+- Hộp thư `#owlLetter` dùng chung khung gỗ, bảng tên, nút đóng pixel: `#owlLetter` được thêm vào nhóm `P` của `game-panels.css`; khối riêng ở cuối tệp.
+- **Rương Cú Vàng** thành dải hero: icon rương to, «Chuỗi N ngày», thanh n/3, chip +1 Nước phép · +12 Nước · +20 điểm lễ hội (chip lễ hội mới trong `rewardChips` khi phần thưởng có `eventPoints`). Chưa đủ: rương mờ + ổ khóa, nút khóa mờ; đủ: nút vàng «Mở»; đã mở: dấu tích.
+- **Mỗi thư** là ô icon (3 cột ở mọi cỡ màn): icon việc cần làm (gieo, gặt, chế biến, cho ăn, thu), tên ngắn, thanh tiến độ, số, chip thưởng; xong thì nút vàng «Nhận», chưa xong thì nút mũi tên dẫn tới nơi làm (tên đầy đủ trong aria-label), đã nhận thì mờ + dấu tích.
+- Giữ nguyên các lệnh server (`claimQuest`, `claimChest` qua `onClaimDailyQuest`/`onClaimGrandChest`) và các thuộc tính `data-claim-owl-quest`, `data-letter-grand-chest`, `data-route-daily-quest`, lớp `owl-quest-card is-claimed`.
+- Xóa CSS chết của thư giấy da cũ (`owl-quest-*`, `v24-owl-row*`, `owl-grand-chest-bar`, `letter-seal/close/kicker/signature`). `qa-v19/ui-fixture.html` chép lại từ `index.html` (bản cũ thiếu `game-panels.css`).
+- Kiểm chứng (cổng 62803): unit 204/204; FTUE 6/6; `hud-shots` 10/10; `panel-shots.mjs` (thêm ca Thư cú, đối số thứ ba `owl` để chỉ chụp Thư cú) đủ 26 ảnh, không tràn ngang, không `<select>`, nút ≥ 44 px; `server-daily-shots` phần thư cú + rương đạt. Ảnh: `outputs/owl-mail-shots/{before,after,server-daily}`.
+- Còn lại: `server-daily-shots` dừng ở bước xoay đồ trang trí (tìm nút «Xoay sang ↗ Góc phải») — lỗi có sẵn trên `ui-game-panels`, không do nhánh này.

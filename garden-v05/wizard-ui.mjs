@@ -1,5 +1,5 @@
-import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.35';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=24.9.35';
+import {$,el,icon,duration} from './ui-utils.mjs?v=24.9.35';
+import {pixelIcon,setAction,rewardChips,iconButton,lockBadge} from './pixel-icons.mjs?v=24.9.35';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -24,14 +24,9 @@ export function cropContext(state, selection, E, now) {
 }
 
 
-const COMPACT_OWL_TITLES=Object.freeze({
- quest_hagrid_harvest:'Gieo hoặc gặt',
- quest_sprout_craft:'Chế biến',
- quest_hemxeo_creature:'Chăm sinh vật',
- quest_neighbor_tour:'Thăm vườn',
- quest_festival_spirit:'Hưởng ứng lễ hội',
-});
-const COMPACT_OWL_ROUTES=Object.freeze({plant:'Ra thửa',craft:'Mở vạc',creature:'Thăm chuồng',tour:'Tham quan',events:'Mở lễ hội'});
+// Thư cú tiles: what the quest asks for as the big icon; the route button names where to go.
+const OWL_QUEST_ICONS=Object.freeze({q_plant:'sow',q_harvest:'harvest',q_harvest_runs:'harvest',q_craft:'craft',q_feed:'feed',q_claim:'chest'});
+const OWL_ROUTE_LABELS=Object.freeze({plant:'Ra thửa',craft:'Mở vạc',creature:'Thăm chuồng',tour:'Tham quan',events:'Mở lễ hội'});
 const OWL_REWARD_NAMES=Object.freeze({water:'Nước',boost:'Nước phép',pumpkin:'Bí ngô',oats:'Yến mạch',insects:'Côn trùng',moonherb:'Cỏ trăng'});
 function compactOwlReward(reward={}){
  const parts=[];
@@ -67,63 +62,61 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
   else{setMode('plant');camera.focusPlot();}
  }
 
+ const meter=(done,target,label)=>el('div',{class:'gp-meter',role:'progressbar','aria-label':label,'aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(Math.min(done,target))},[el('span',{style:`width:${Math.min(100,Math.round(done/target*100))}%`})]);
+
+ // The daily letter as game tiles: Rương Cú Vàng on top (locked until every quest is done), then one tile per quest.
  function renderOwlQuestsSection(){
   const qState=currentQuestState();
   const summary=dailyCompletionSummary(qState);
+  const {completedCount:n,targetForGrand:goal,grandReady,grandClaimed}=summary;
   const sec=el('section',{class:'owl-quests-section','aria-label':'Thư Cú Hằng Ngày'});
-  const chestReward=compactOwlReward(DAILY_GRAND_CHEST_REWARD);
-  sec.append(
-   el('div',{class:'owl-quests-head'},[
-    el('strong',{text:`Chuỗi ${summary.streakDays} ngày`}),
+  const chestLabel=`Rương Cú Vàng · ${compactOwlReward(DAILY_GRAND_CHEST_REWARD)}`;
+  const chestBtn=grandReady
+   ? iconButton('chest',`Mở ${chestLabel}`,null,{text:'Mở',class:'primary'})
+   : iconButton(grandClaimed?'check':'lock',grandClaimed?'Đã mở rương hôm nay':`Xong ${goal} thư để mở rương`,null,{disabled:true});
+  chestBtn.dataset.letterGrandChest='true';
+  chestBtn.onclick=async ()=>{
+   const res=await onClaimGrandChest();
+   if(res.ok){
+    message(`Đã mở Rương Cú Vàng: ${compactOwlReward(res.reward)}.`);
+    syncMailBadge();
+    openLetter('owl');
+   }
+  };
+  sec.append(el('div',{class:`gp-hero owl-chest${grandReady?' is-ready':grandClaimed?' is-claimed':' is-locked'}`},[
+   el('div',{class:'gp-tile-art'},[pixelIcon('chest',3),grandClaimed?el('span',{class:'gp-corner is-done'},[pixelIcon('check',1)]):grandReady?null:lockBadge()]),
+   el('div',{class:'gp-hero-copy'},[
+    el('small',{text:`Chuỗi ${summary.streakDays} ngày`}),
+    el('strong',{text:'Rương Cú Vàng'}),
+    el('div',{class:'owl-chest-meter'},[meter(n,goal,`${n}/${goal} thư`),el('b',{text:`${n}/${goal}`})]),
+    rewardChips(items,{...DAILY_GRAND_CHEST_REWARD,label:chestLabel}),
    ]),
-   el('div',{class:'owl-grand-chest-bar'},[
-    el('div',{class:'v24-owl-chest-copy'},[
-     el('strong',{text:'Rương Cú Vàng'}),
-     el('small',{text:chestReward}),
-    ]),
-    button(
-     summary.grandClaimed
-      ? 'Đã mở'
-      : summary.grandReady
-       ? 'Mở rương'
-       : `${summary.completedCount}/${summary.targetForGrand}`,
-     async ()=>{
-      const res=await onClaimGrandChest();
-      if(res.ok){
-       message(`Đã mở Rương Cú Vàng: ${compactOwlReward(res.reward)}.`);
-       syncMailBadge();
-       openLetter('owl');
-      }
-     },
-     {class:summary.grandReady?'primary owl-quest-btn':'owl-quest-btn',disabled:!summary.grandReady||summary.grandClaimed,'data-letter-grand-chest':'true'}
-    ),
-   ])
-  );
-  const list=el('div',{class:'owl-quests-list'});
+   chestBtn,
+  ]));
+  const list=el('div',{class:'owl-quests-list gp-tiles'});
   for(const q of allDailyTasks(qState)){
    const done=q.progress>=q.target;
-   const rewardText=compactOwlReward(q.reward),title=COMPACT_OWL_TITLES[q.id]||q.title,routeLabel=COMPACT_OWL_ROUTES[q.route]||q.routeLabel;
-   const card=el('article',{class:`owl-quest-card v24-owl-row${q.claimed?' is-claimed':done?' is-ready':''}`,'data-quest-id':q.id,'aria-label':`${title} · ${q.progress}/${q.target} · ${rewardText}`},[
-    el('span',{class:'v24-owl-row-art','aria-hidden':'true'},[visualItemIcon(items,q.reward.itemId,{size:30})]),
-    el('div',{class:'v24-owl-row-copy'},[
-     el('strong',{class:'owl-quest-title v24-owl-row-title',text:title}),
-     el('span',{class:'v24-owl-row-progress',text:q.claimed?'Đã nhận':`${q.progress}/${q.target}`}),
-    ]),
-    el('span',{class:'v24-owl-row-reward',text:rewardText}),
-    q.claimed
-     ? el('span',{class:'owl-quest-done-pill v24-owl-row-action',text:'Xong'})
-     : done
-      ? button('Nhận',async ()=>{
-         const res=await onClaimDailyQuest(q.id);
-         if(res.ok){
-          message(`Đã nhận quà: ${compactOwlReward(res.reward)}.`);
-          syncMailBadge();
-          openLetter('owl');
-         }
-        },{class:'primary owl-quest-btn v24-owl-row-action','data-claim-owl-quest':q.id})
-      : button(routeLabel,()=>routeQuest(q.route),{class:'owl-quest-btn v24-owl-row-action','data-route-daily-quest':q.route}),
-   ]);
-   list.append(card);
+   const rewardText=compactOwlReward(q.reward),routeLabel=OWL_ROUTE_LABELS[q.route]||q.routeLabel||'Đi tới';
+   const action=q.claimed
+    ? null
+    : done
+     ? iconButton('chest',`Nhận quà ${q.title}: ${rewardText}`,async ()=>{
+        const res=await onClaimDailyQuest(q.id);
+        if(res.ok){
+         message(`Đã nhận quà: ${compactOwlReward(res.reward)}.`);
+         syncMailBadge();
+         openLetter('owl');
+        }
+       },{text:'Nhận',class:'primary','data-claim-owl-quest':q.id})
+     : iconButton('arrow',routeLabel,()=>routeQuest(q.route),{'data-route-daily-quest':q.route});
+   list.append(el('article',{class:`owl-quest-card gp-tile${q.claimed?' is-claimed':done?' is-ready':''}`,'data-quest-id':q.id,'aria-label':`${q.title} · ${q.claimed?'Đã nhận':`${q.progress}/${q.target}`} · ${rewardText}`},[
+    el('div',{class:'gp-tile-art','aria-hidden':'true'},[pixelIcon(OWL_QUEST_ICONS[q.id]||'owl',3),q.claimed?el('span',{class:'gp-corner is-done'},[pixelIcon('check',1)]):null]),
+    el('strong',{class:'gp-tile-name owl-quest-title',text:q.title}),
+    meter(q.progress,q.target,`${q.progress}/${q.target}`),
+    el('b',{class:'owl-quest-count',text:`${Math.min(q.progress,q.target)}/${q.target}`}),
+    rewardChips(items,{...q.reward,label:rewardText}),
+    el('div',{class:'gp-tile-actions'},action?[action]:[]),
+   ]));
   }
   sec.append(list);
   return sec;

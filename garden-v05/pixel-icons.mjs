@@ -826,6 +826,7 @@ export function rewardChips(items, reward = {}) {
  if (reward.kind === 'boost' && reward.amount) add(pixelIcon('boost', 1), reward.amount);
  if (reward.waterBonus) add(pixelIcon('water', 1), reward.waterBonus);
  if (reward.itemId && reward.bonusQty) add(visualItemIcon(items, reward.itemId, {size: 20}), reward.bonusQty);
+ if (reward.eventPoints) add(pixelIcon('festival', 1), reward.eventPoints);
  if (!chips.length && reward.label) chips.push(el('span', {class: 'reward-chip', text: reward.label}));
  return el('span', {class: 'reward-chips', role: 'img', 'aria-label': reward.label || '', title: reward.label || ''}, chips);
 }
