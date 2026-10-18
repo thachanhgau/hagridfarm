@@ -42,6 +42,16 @@
           "value": "ok"
         },
         {
+          "label": "panel open: line and skip chip step aside",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel closed: line back",
+          "ok": true,
+          "value": "ok"
+        },
+        {
           "label": "harvest: glowing button",
           "ok": true,
           "value": "ok"
@@ -109,6 +119,16 @@
         },
         {
           "label": "plant: skip chip",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel open: line and skip chip step aside",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel closed: line back",
           "ok": true,
           "value": "ok"
         },
@@ -184,6 +204,16 @@
           "value": "ok"
         },
         {
+          "label": "panel open: line and skip chip step aside",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel closed: line back",
+          "ok": true,
+          "value": "ok"
+        },
+        {
           "label": "harvest: glowing button",
           "ok": true,
           "value": "ok"
@@ -255,6 +285,16 @@
           "value": "ok"
         },
         {
+          "label": "panel open: line and skip chip step aside",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel closed: line back",
+          "ok": true,
+          "value": "ok"
+        },
+        {
           "label": "harvest: glowing button",
           "ok": true,
           "value": "ok"
@@ -322,6 +362,16 @@
         },
         {
           "label": "plant: skip chip",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel open: line and skip chip step aside",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel closed: line back",
           "ok": true,
           "value": "ok"
         },
@@ -413,6 +463,16 @@
         },
         {
           "label": "plant: skip chip",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel open: line and skip chip step aside",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "panel closed: line back",
           "ok": true,
           "value": "ok"
         },

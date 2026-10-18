@@ -166,3 +166,5 @@
 .profile-keepsakes{display:grid;grid-template-columns:1fr 1fr;gap:6px;flex:1 1 100%}
 .profile-keepsakes button{display:flex;align-items:center;gap:6px;min-width:0;min-height:44px;padding:4px 8px 4px 4px;text-align:left;font:700 12px/1.2 system-ui,sans-serif;white-space:normal}
 .profile-keepsakes .px-icon{width:32px;height:32px}
+/* A panel or dialog open mid-tutorial: the skip chip steps aside with Hagrid's line (mobile-game.mjs tutorialCovered). */
+.tutorial-covered .tutorial-skip{visibility:hidden}

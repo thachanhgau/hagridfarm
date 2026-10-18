@@ -139,6 +139,16 @@ async function run(name, device, {connected = false} = {}) {
     check('plant: plot 1 visible', await page.evaluate(() => __smoke.open(__smoke.toScreen(__smoke.iso(3, 4)))));
     check('plant: glowing button', await page.evaluate(() => __smoke.rectInView(document.querySelector('.tutorial-pulse'))));
     check('plant: skip chip', await page.evaluate(() => __smoke.rectInView(document.querySelector('.tutorial-skip'))));
+    // A panel opened mid-tutorial (Hồ sơ) hides Hagrid's line and the skip chip; closing it brings them back.
+    await page.click('#levelButton');
+    await page.waitForTimeout(250);
+    check('panel open: line and skip chip step aside', await page.evaluate(() => {
+      const bubble = document.querySelector('.tutorial-bubble'), skip = document.querySelector('.tutorial-skip');
+      return bubble.hidden && getComputedStyle(skip).visibility === 'hidden' ? 'ok' : `bubble ${bubble.hidden ? 'hidden' : 'shown'}, skip ${getComputedStyle(skip).visibility}`;
+    }));
+    await page.click('#closePanel');
+    await page.waitForTimeout(250);
+    check('panel closed: line back', await page.evaluate(() => __smoke.line()));
     await page.click('.tutorial-pulse');
     await waitStep(page, 'harvest');
     await page.waitForTimeout(300);
