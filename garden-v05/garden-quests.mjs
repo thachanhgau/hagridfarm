@@ -1,11 +1,12 @@
 import {getGardenStorage} from './garden-storage.mjs';
+import {CROP} from './balance-data.mjs';
 export const OWL_QUEST_STORAGE_KEY = 'hpvn-garden-v21-owl-quests';
 
 // Owl quests, V24.9.8 (docs/economy-audit.md): three per day, picked by level and
 // by what the player has unlocked, counting only real farm work (cells planted,
 // crops harvested, batches crafted, meals fed). Free taps (weather, rotating,
 // postcards, tours, petting) no longer complete anything.
-export const OWL_QUEST_VERSION = 25;
+export const OWL_QUEST_VERSION = 26;
 export const DAILY_QUEST_COUNT = 3;
 
 const bandTarget = (level) => (level < 6 ? 6 : level < 20 ? 9 : 12);
@@ -16,15 +17,16 @@ export const OWL_QUEST_POOL = Object.freeze([
   {id: 'q_plant', always: true, route: 'plant', triggers: ['plant', 'replant'],
     build: ({level}) => {const n = bandTarget(level); return {title: `Gieo ${n} ô`, target: n, reward: {kind: 'water', amount: n, itemId: 'pumpkin'}};}},
   {id: 'q_harvest', always: true, route: 'plant', triggers: ['harvest'],
-    build: ({level}) => {const n = bandTarget(level); return {title: `Gặt ${n} cây`, target: n, reward: level < 6 ? {kind: 'water', amount: 6, itemId: 'pumpkin'} : {kind: 'kit', amount: 2, itemId: 'kit'}};}},
+    build: ({level}) => {const n = bandTarget(level); return {title: `Gặt ${n} cây`, target: n, reward: {kind: 'water', amount: level < 6 ? 6 : 8, itemId: 'pumpkin'}};}},
   {id: 'q_harvest_runs', route: 'plant', triggers: ['harvestRun'],
-    build: () => ({title: 'Gặt 2 lần', target: 2, reward: {kind: 'water', amount: 6, itemId: 'pumpkin'}})},
+    // One run below level 6, so a one-visit day can still finish all three (docs/festival-pacing.md).
+    build: ({level}) => {const n = level < 6 ? 1 : 2; return {title: `Gặt ${n} lần`, target: n, reward: {kind: 'water', amount: 6, itemId: 'pumpkin'}};}},
   {id: 'q_craft', minLevel: 6, route: 'craft', triggers: ['craft'],
-    build: () => ({title: 'Chế biến 2 mẻ', target: 2, reward: {kind: 'kit', amount: 2, itemId: 'kit', waterBonus: 4}})},
+    build: () => ({title: 'Chế biến 2 mẻ', target: 2, reward: {kind: 'water', amount: 4, itemId: 'oats', bonusQty: 4}})},
   {id: 'q_feed', needsCreature: true, route: 'creature', triggers: ['feed'],
     build: ({feedItem}) => ({title: 'Cho ăn 2 bữa', target: 2, reward: {kind: 'water', amount: 4, itemId: feedItem || 'puff_feed', bonusQty: 1}})},
   {id: 'q_claim', needsCreature: true, route: 'creature', triggers: ['claimAnimals'],
-    build: () => ({title: 'Thu sản phẩm', target: 1, reward: {kind: 'kit', amount: 2, itemId: 'kit'}})},
+    build: () => ({title: 'Thu sản phẩm', target: 1, reward: {kind: 'water', amount: 8, itemId: 'pumpkin'}})},
 ]);
 
 // Kept for older imports: the always-on pair is today's fixed core.
@@ -36,9 +38,9 @@ export const DAILY_GRAND_CHEST_REWARD = Object.freeze({
   kind: 'boost',
   amount: 1,
   waterBonus: 12,
-  itemId: 'kit',
+  itemId: 'boost',
   eventPoints: 20,
-  label: 'Rương Cú Vàng: +1 Phân bón, +12 Nước, +20 điểm lễ hội',
+  label: 'Rương Cú Vàng: +1 Nước phép, +12 Nước, +20 điểm lễ hội',
 });
 
 // What today's quests may ask for; the game sets it from the live garden.
@@ -55,8 +57,8 @@ function dayHash(text) {
 }
 
 function rewardLabel(r) {
-  const names = {water: 'Nước', kit: 'Bộ vật liệu', boost: 'Phân bón'};
-  return [r.amount ? `+${r.amount} ${names[r.kind] || r.kind}` : '', r.bonusQty ? `+${r.bonusQty} khẩu phần` : '', r.waterBonus ? `+${r.waterBonus} Nước` : ''].filter(Boolean).join(', ');
+  const names = {water: 'Nước', boost: 'Nước phép'};
+  return [r.amount ? `+${r.amount} ${names[r.kind] || r.kind}` : '', r.bonusQty ? `+${r.bonusQty} ${CROP[r.itemId]?.label || 'khẩu phần'}` : '', r.waterBonus ? `+${r.waterBonus} Nước` : ''].filter(Boolean).join(', ');
 }
 
 /** Pure: today's three quests for a context; the same day and context always give the same set. */
@@ -177,6 +179,35 @@ export function dailyCompletionSummary(questState) {
     grandClaimed: Boolean(questState?.grandChestClaimed),
     streakDays: Math.max(1, Number(questState?.streakDays) || 1),
   };
+}
+
+/**
+ * Quest counts for one successful command: [trigger, amount] pairs.
+ * Cells planted and harvested come from the plot diff; only `harvest` counts as a
+ * harvest (uproot also empties cells but grows nothing). Meals count each creature
+ * whose meal started, so feeding three creatures at once is three meals.
+ */
+export function questAmounts(act, before, after, command = null) {
+  const out = [];
+  let planted = 0, harvested = 0;
+  const plots = Math.max(before?.plots?.length || 0, after?.plots?.length || 0);
+  for (let p = 0; p < plots; p += 1) {
+    const a = before?.plots?.[p]?.slots || [], b = after?.plots?.[p]?.slots || [];
+    for (let i = 0; i < 9; i += 1) {
+      if (b[i] && (!a[i] || a[i].id !== b[i].id)) planted += 1;
+      if (a[i] && (!b[i] || b[i].id !== a[i].id)) harvested += 1;
+    }
+  }
+  if (planted) out.push(['plant', planted]);
+  if (act === 'harvest' && harvested) out.push(['harvest', harvested], ['harvestRun', 1]);
+  if (act === 'craft') out.push(['craft', Math.max(1, Number(command?.batches) || 1)]);
+  if (act === 'feed') {
+    const was = new Map((before?.creatures || []).map((c) => [c.species, c.meal?.id]));
+    const meals = (after?.creatures || []).filter((c) => c.meal && c.meal.id !== was.get(c.species)).length;
+    if (meals) out.push(['feed', meals]);
+  }
+  if (act === 'claimAnimals' || act === 'adopt') out.push([act, 1]);
+  return out;
 }
 
 export function syncQuestsWithGardenState(questState, gameState = null, extraOrNow = {}, maybeExtra = null) {

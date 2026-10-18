@@ -36,7 +36,9 @@ export function nextGoal(E, state) {
  const exp = nextExpansion(DB, state);
  if (exp) {
   const label = exp.kind === 'pen' ? 'Mở chuồng' : 'Mở thửa';
-  const need = exp.kitCost ? firstMissing(DB, state, 'kit', exp.kitCost) : null;
+  // The first crop of its cost still short (Galleons are the wallet's, not the garden's).
+  const short = Object.entries(exp.cropCost).find(([id, n]) => (state.inventory[id] || 0) < n);
+  const need = short ? {id: short[0], n: short[1] - (state.inventory[short[0]] || 0), route: 'plant'} : null;
   return {need, target: {kind: exp.kind, id: exp.id}, label, route: need ? need.route : 'build'};
  }
  const animal = nextAdoption(DB, state, E.housingCapacity(state));

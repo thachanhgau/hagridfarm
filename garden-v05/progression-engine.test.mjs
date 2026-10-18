@@ -58,7 +58,7 @@ function emptyCreatureProfile(level = 10) {
 test('approved balance exposes all crops, creatures, levels, recipes, and Vietnamese labels', () => {
   assert.equal(DB.crops.length, 24);
   assert.equal(DB.animals.length, 12);
-  assert.equal(DB.recipes.length, 29);
+  assert.equal(DB.recipes.length, 27); // the two kit recipes were removed on 18/10/2026
   assert.equal(DB.levels.length, 100);
   assert.equal(CROP.daisy.label, 'Cúc trắng');
   assert.equal(CROP.dittany.label, 'Bạch tiên');
@@ -72,8 +72,9 @@ test('approved balance exposes all crops, creatures, levels, recipes, and Vietna
   assert.equal(CREATURE.dragon.lateProgression, true);
   assert.equal(CREATURE.puffskein.level, 10);
   assert.equal(DB.decorations.length, 29);
-  assert.equal(DB.decorations[0].cost, 0);
-  assert.equal(DB.decorations.at(-1).cost, 3);
+  assert.deepEqual([DB.decorations[0].cropCost, DB.decorations[0].galleons], [{}, 0]);
+  assert.deepEqual([DB.decorations.at(-1).cropCost, DB.decorations.at(-1).galleons], [{sunpetal: 6}, 160]);
+  assert.equal(DB.recipes.some((r) => r.output === 'kit'), false);
 });
 
 test('line helper returns exactly the eight legal three-cell lines', () => {
@@ -381,8 +382,12 @@ test('keepsakes and decorations consume only their stated resources and never XP
   for (const level of [3, 7, 11, 15, 19, 23]) decor = buyDecoration(decor, level);
   assert.equal(decor.decorations.length, 6);
   assert.equal(decor.xp, decorXp);
-  assert.equal(decor.inventory.kit, 997);
+  assert.equal(decor.inventory.puffapod, 994); // decoration-23 costs 6 Puffapod (+ Galleons via the wallet)
   codeOf(() => buyDecoration(decor, 23), 'ALREADY_OWNED');
+  codeOf(() => buyDecoration(decor, 27), 'LOCKED_DECORATION');
+  decor = testProfile(27, NOW);
+  decor.inventory.mandrake = 5;
+  codeOf(() => buyDecoration(decor, 27), 'MISSING_RESOURCE');
 });
 
 test('restoreChecked preserves logical ages and fails closed on malformed IDs, stock, and timestamps', () => {
@@ -493,7 +498,6 @@ test('every approved expansion builds sequentially from a normal level-100 progr
   state.built = ['plot_1', 'plot_2', 'plot_3'];
   state.plots = state.plots.slice(0, 3);
   state.construction = [];
-  state.inventory.kit = 1000;
 
   for (const expansion of DB.expansions) {
     state = build(state, expansion.id, NOW);
@@ -514,16 +518,42 @@ test('every approved expansion builds sequentially from a normal level-100 progr
 });
 
 test('engine core remains in parity with the approved 1-100 balance source', () => {
+  // 18/10/2026 (docs/economy-audit.md §5) overrides only these: kit recipes removed, expansion
+  // kitCost replaced by cropCost + galleons, and the texts that named kits (3 crop uses, 3 level unlocks).
+  const KIT_TEXT = {crops: ['pumpkin', 'oats', 'flax'], levels: [5, 6, 45]};
+  const patch = (rows, key, ids, field) => rows.map((row) => (ids.includes(row[key]) ? {...row, [field]: (field === 'use' ? DB.crops : DB.levels).find((d) => d[key] === row[key])[field]} : row));
   const cropFields = ['id', 'label', 'level', 'hours', 'rarity', 'art', 'use', 'yieldPerCell', 'plantXP', 'harvestXP', 'totalXP'];
   const animalFields = ['id', 'label', 'level', 'rarity', 'hours', 'mealsToAdult', 'mealPortions', 'feed', 'feedXP', 'adultClaimXP', 'cycleXP', 'stageMeals', 'stageXP', 'minAdultDays', 'produce', 'producePerCycle', 'art'];
-  const expansionFields = ['id', 'level', 'kitCost', 'hours', 'capacityAfter'];
-  assert.deepEqual(selectFields(DB.crops, cropFields), selectFields(APPROVED.crops, cropFields));
+  const expansionFields = ['id', 'level', 'hours', 'capacityAfter'];
+  assert.deepEqual(selectFields(DB.crops, cropFields), selectFields(patch(APPROVED.crops, 'id', KIT_TEXT.crops, 'use'), cropFields));
   assert.deepEqual(selectFields(DB.animals, animalFields), selectFields(APPROVED.animals, animalFields));
-  assert.deepEqual(DB.recipes, APPROVED.recipes);
+  assert.deepEqual(DB.recipes, APPROVED.recipes.filter((r) => r.output !== 'kit'));
   assert.deepEqual(selectFields(DB.expansions, expansionFields), selectFields(APPROVED.expansions, expansionFields));
   assert.deepEqual(
     selectFields(DB.levels, ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
-    selectFields(APPROVED.levels, ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
+    selectFields(patch(APPROVED.levels, 'level', KIT_TEXT.levels, 'unlock'), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
   );
   assert.equal(DB.levels.at(-1).totalXP, 4_450_020);
+});
+
+test('expansions and decorations cost unlocked crops plus Galleons; the first four expansions are crop-only', () => {
+  for (const e of DB.expansions) {
+    assert.equal('kitCost' in e, false, e.id);
+    assert.ok(Number.isSafeInteger(e.galleons) && e.galleons >= 0, e.id);
+    for (const [id, n] of Object.entries(e.cropCost)) assert.ok(CROP[id].level <= e.level && n > 0 && n % 3 === 0, `${e.id} ${id}`);
+  }
+  assert.deepEqual(DB.expansions.filter((e) => e.level <= 24).map((e) => e.galleons), [0, 0, 0, 0]);
+  assert.ok(DB.expansions.every((e) => e.galleons < 772), 'no single expansion costs more than a p50 day of income');
+  for (const d of DB.decorations) for (const id of Object.keys(d.cropCost)) assert.ok(CROP[id].level <= d.level, d.id);
+  let state = testProfile(12, NOW);
+  state.built = state.built.filter((id) => id !== 'plot_4');
+  state.plots = state.plots.slice(0, 3);
+  state.inventory.pumpkin = 9;
+  state.inventory.oats = 8;
+  codeOf(() => build(state, 'plot_4', NOW), 'MISSING_RESOURCE');
+  state.inventory.oats = 9;
+  state = build(state, 'plot_4', NOW);
+  assert.equal(state.inventory.pumpkin, 0);
+  assert.equal(state.inventory.oats, 0);
+  assert.deepEqual(Object.keys(state.construction[0]).sort(), ['id', 'kind', 'readyAt', 'startedAt']);
 });

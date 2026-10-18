@@ -464,11 +464,9 @@ function normalizeConstruction(raw, built, level) {
     const readyAt = assertFiniteTime(job.readyAt, 'construction.readyAt');
     if (readyAt < startedAt || readyAt - startedAt !== entry.hours * 60 * 60 * 1000) reject('INVALID_STATE', 'construction timing does not match balance data');
     if (job.kind !== entry.kind) reject('INVALID_STATE', 'construction kind does not match balance data');
-    const kitCost = job.kitCost;
-    if (kitCost !== entry.kitCost) reject('INVALID_STATE', 'construction kitCost does not match balance data');
     seen.add(id);
     kinds.add(entry.kind);
-    return { id, kind: entry.kind, kitCost, startedAt, readyAt };
+    return { id, kind: entry.kind, startedAt, readyAt };
   });
 }
 
@@ -607,6 +605,12 @@ function addInventory(state, id, amount) {
   assertNonNegativeInteger(amount, 'inventory amount');
   if (state.inventory[id] > MAX_SAFE - amount) reject('INVENTORY_OVERFLOW', `inventory.${id} exceeds safe integer range`);
   state.inventory[id] += amount;
+}
+
+/** Check every crop of a build/decoration cost on `base`, then take them from `next`. */
+function payCrops(base, next, cost) {
+  for (const [id, count] of Object.entries(cost)) if (base.inventory[id] < count) reject('MISSING_RESOURCE', `not enough ${id}`);
+  for (const [id, count] of Object.entries(cost)) consumeInventory(next, id, count);
 }
 
 function consumeInventory(state, id, amount) {
@@ -936,15 +940,14 @@ export function build(state, expansionId, wallNow) {
   if (base.construction.some((job) => job.kind === entry.kind)) reject('STATION_BUSY', `only one ${entry.kind} construction may run at once`);
   const previous = previousExpansion(entry);
   if (previous && !base.built.includes(previous.id)) reject('PREREQUISITE', `${expansionId} requires ${previous.id}`);
-  if (base.inventory.kit < entry.kitCost) reject('MISSING_RESOURCE', 'not enough kit materials');
   const next = cloneState(base);
-  consumeInventory(next, 'kit', entry.kitCost);
+  payCrops(base, next, entry.cropCost);
   if (entry.hours === 0) {
     next.built.push(expansionId);
     return finish(next, 'build', logicalNow, { expansionId, immediate: true });
   }
   next.construction.push({
-    id: expansionId, kind: entry.kind, kitCost: entry.kitCost,
+    id: expansionId, kind: entry.kind,
     startedAt: logicalNow, readyAt: logicalNow + entry.hours * 60 * 60 * 1000,
   });
   return finish(next, 'build', logicalNow, { expansionId, immediate: false });
@@ -997,7 +1000,7 @@ export function exchangeKeepsake(state, species) {
   return finish(next, 'exchangeKeepsake', stateLogicalMarker(base), { species });
 }
 
-/** Buy one explicitly listed decoration unlock; first five are free, later ones cost three kits. */
+/** Buy one explicitly listed decoration unlock; first five are free, later ones cost crops (Galleons go through the wallet). */
 export function buyDecoration(state, level) {
   const base = normalizeState(state);
   assertSafeInteger(level, 'decoration level');
@@ -1005,9 +1008,8 @@ export function buyDecoration(state, level) {
   if (!decoration) reject('NOT_DECORATION', `level ${level} does not name a decoration unlock`);
   if (base.level < level) reject('LOCKED_DECORATION', `decoration level ${level} is not unlocked`);
   if (base.decorations.includes(decoration.id)) reject('ALREADY_OWNED', `decoration ${decoration.id} is already owned`);
-  if (base.inventory.kit < decoration.cost) reject('MISSING_RESOURCE', 'not enough kit materials');
   const next = cloneState(base);
-  consumeInventory(next, 'kit', decoration.cost);
+  payCrops(base, next, decoration.cropCost);
   next.decorations.push(decoration.id);
   return finish(next, 'buyDecoration', stateLogicalMarker(base), { level, id: decoration.id });
 }
@@ -1061,9 +1063,6 @@ export function testProfile(level, now) {
       ...outputLevels,
     ].filter((unlock) => Number.isSafeInteger(unlock));
     state.inventory[id] = unlockLevels.some((unlock) => unlock <= level) ? 1000 : 0;
-  }
-  for (const entry of state.built) {
-    if (EXPANSION[entry]) state.inventory.kit = Math.max(state.inventory.kit, 1000);
   }
   state.developerProfile = true;
   state.snapshotDeveloperFlag = true;

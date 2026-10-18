@@ -1,7 +1,7 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.30';
-import {stableHash} from './scene-animation.mjs?v=24.9.30';
-import {dayKeyFor} from './garden-quests.mjs?v=24.9.30';
+import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.31';
+import {stableHash} from './scene-animation.mjs?v=24.9.31';
+import {dayKeyFor} from './garden-quests.mjs?v=24.9.31';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -10,8 +10,8 @@ export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
 // (docs/festival-pacing.md, section 8.5). Bonus crops unlock at level 1–4.
 const milestones = (prefix, crop, cropLabel, [t1, t2, t3]) => Object.freeze([
   Object.freeze({id: `${prefix}_m1`, points: 100, title: t1, reward: Object.freeze({kind: 'water', amount: 20, itemId: crop, bonusQty: 4, label: `+20 Nước tưới & +4 ${cropLabel}`})}),
-  Object.freeze({id: `${prefix}_m2`, points: 450, title: t2, reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 25, label: '+1 Phân bón & +25 Nước'})}),
-  Object.freeze({id: `${prefix}_m3`, points: 1000, title: t3, reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 35, itemId: 'kit', bonusQty: 3, label: '+2 Phân bón, +35 Nước & +3 Bộ vật liệu'})}),
+  Object.freeze({id: `${prefix}_m2`, points: 450, title: t2, reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 25, label: '+1 Nước phép & +25 Nước'})}),
+  Object.freeze({id: `${prefix}_m3`, points: 1000, title: t3, reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 47, label: '+2 Nước phép & +47 Nước'})}),
 ]);
 
 // `season`: MM-DD start and end, inclusive, in Vietnam time. One festival at a time.
@@ -213,14 +213,14 @@ export function festivalStatus(dayKey, joinDay = '') {
 const legacyReward = (amount, kind, itemId, bonusQty, label, waterBonus) => Object.freeze({kind, amount, ...(waterBonus ? {waterBonus} : {}), itemId, bonusQty, label});
 export const LEGACY_MILESTONES = Object.freeze({
   hal_m1: {eventId: 'event_halloween', points: 30, title: 'Giỏ Quà Đêm Hội Ma', reward: legacyReward(15, 'water', 'pumpkin', 4, '+15 Nước tưới & +4 Bí ngô')},
-  hal_m2: {eventId: 'event_halloween', points: 75, title: 'Lồng Đèn Phù Thủy Rừng Cấm', reward: legacyReward(2, 'kit', 'mandrake', 3, '+2 Bộ vật liệu & +3 Nhân sâm')},
-  hal_m3: {eventId: 'event_halloween', points: 150, title: 'Đại Tiệc Bí Ngô Hogwarts', reward: legacyReward(2, 'boost', 'kit', 3, '+2 Phân bón, +20 Nước & +3 Bộ vật liệu', 20)},
+  hal_m2: {eventId: 'event_halloween', points: 75, title: 'Lồng Đèn Phù Thủy Rừng Cấm', reward: legacyReward(8, 'water', 'mandrake', 3, '+8 Nước & +3 Nhân sâm')},
+  hal_m3: {eventId: 'event_halloween', points: 150, title: 'Đại Tiệc Bí Ngô Hogwarts', reward: legacyReward(2, 'boost', 'pumpkin', 0, '+2 Nước phép & +32 Nước', 32)},
   yule_m1: {eventId: 'event_yule', points: 30, title: 'Tất Quà Bên Lò Sưởi', reward: legacyReward(15, 'water', 'blueberry', 4, '+15 Nước tưới & +4 Việt quất')},
-  yule_m2: {eventId: 'event_yule', points: 75, title: 'Hộp Nhạc Tuyết Bạc', reward: legacyReward(2, 'kit', 'moonherb', 3, '+2 Bộ vật liệu & +3 Cỏ trăng')},
-  yule_m3: {eventId: 'event_yule', points: 150, title: 'Ngôi Sao Đại Sảnh Đường', reward: legacyReward(2, 'boost', 'starbean', 4, '+2 Phân bón, +20 Nước & +4 Đậu sao', 20)},
+  yule_m2: {eventId: 'event_yule', points: 75, title: 'Hộp Nhạc Tuyết Bạc', reward: legacyReward(8, 'water', 'moonherb', 3, '+8 Nước & +3 Cỏ trăng')},
+  yule_m3: {eventId: 'event_yule', points: 150, title: 'Ngôi Sao Đại Sảnh Đường', reward: legacyReward(2, 'boost', 'starbean', 4, '+2 Nước phép, +20 Nước & +4 Đậu sao', 20)},
   herb_m1: {eventId: 'event_herbology_fair', points: 30, title: 'Túi Hạt Giống Nhà Kính Số Ba', reward: legacyReward(15, 'water', 'clover', 4, '+15 Nước tưới & +4 Cỏ ba lá')},
-  herb_m2: {eventId: 'event_herbology_fair', points: 75, title: 'Cẩm Nang Chăm Thú Của Newt', reward: legacyReward(2, 'kit', 'insects', 4, '+2 Bộ vật liệu & +4 Côn trùng')},
-  herb_m3: {eventId: 'event_herbology_fair', points: 150, title: 'Cúp Vàng Hội Chợ Thảo Dược', reward: legacyReward(2, 'boost', 'sunpetal', 3, '+2 Phân bón, +20 Nước & +3 Hoa nhật quang', 20)},
+  herb_m2: {eventId: 'event_herbology_fair', points: 75, title: 'Cẩm Nang Chăm Thú Của Newt', reward: legacyReward(8, 'water', 'insects', 4, '+8 Nước & +4 Côn trùng')},
+  herb_m3: {eventId: 'event_herbology_fair', points: 150, title: 'Cúp Vàng Hội Chợ Thảo Dược', reward: legacyReward(2, 'boost', 'sunpetal', 3, '+2 Nước phép, +20 Nước & +3 Hoa nhật quang', 20)},
 });
 
 const count = (v) => Math.max(0, Number(v) || 0);
@@ -486,7 +486,7 @@ export const CREATURE_AFFINITY_LEVELS = Object.freeze([
     title: 'Thân thiết',
     badge: '♥ Cấp 3',
     hearts: '♥♥',
-    reward: Object.freeze({kind: 'water', amount: 12, itemId: 'kit', bonusQty: 1, label: '+12 Nước & +1 Bộ vật liệu'}),
+    reward: Object.freeze({kind: 'water', amount: 16, label: '+16 Nước'}),
   }),
   Object.freeze({
     level: 4,
@@ -494,7 +494,7 @@ export const CREATURE_AFFINITY_LEVELS = Object.freeze([
     title: 'Tri kỷ Rừng Cấm',
     badge: '💖 Cấp 4',
     hearts: '♥♥♥',
-    reward: Object.freeze({kind: 'boost', amount: 1, itemId: 'kit', bonusQty: 2, label: '+1 Phân bón & +2 Bộ vật liệu'}),
+    reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 8, label: '+1 Nước phép & +8 Nước'}),
   }),
   Object.freeze({
     level: 5,
@@ -502,7 +502,7 @@ export const CREATURE_AFFINITY_LEVELS = Object.freeze([
     title: 'Bạn Tâm Giao Huyền Thoại',
     badge: '👑 Cấp 5',
     hearts: '♥♥♥♥♥',
-    reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 15, itemId: 'kit', bonusQty: 3, label: '+2 Phân bón, +15 Nước & +3 Bộ vật liệu'}),
+    reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 27, label: '+2 Nước phép & +27 Nước'}),
   }),
 ]);
 

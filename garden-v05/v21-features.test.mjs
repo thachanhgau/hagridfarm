@@ -193,7 +193,7 @@ test('V24.9.8: daily quests follow level and unlocks, and stay fixed for the day
   }
   const lv30 = pickDailyQuests(day, {level: 30, hasCreature: true, feedItem: 'bow_feed'});
   assert.equal(lv30[0].target, 12);
-  assert.equal(lv30[1].reward.kind, 'kit');
+  assert.deepEqual([lv30[1].reward.kind, lv30[1].reward.amount], ['water', 8]);
   assert.deepEqual(pickDailyQuests(day, {level: 30, hasCreature: true}), pickDailyQuests(day, {level: 30, hasCreature: true}));
   const feed = OWL_QUEST_POOL.find((q) => q.id === 'q_feed').build({feedItem: 'bow_feed'});
   assert.equal(feed.reward.itemId, 'bow_feed');

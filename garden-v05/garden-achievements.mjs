@@ -1,5 +1,5 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button} from './ui-utils.mjs?v=24.9.30';
+import {el, button} from './ui-utils.mjs?v=24.9.31';
 
 export const ACHIEVEMENTS_STORAGE_KEY = 'hpvn-garden-v22-achievements';
 
@@ -52,7 +52,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     badge: '⚗ Bậc Thầy Chế Biến',
     category: 'Chế biến',
     description: 'Đạt Cấp 35 hoặc tích trữ ít nhất 20 đơn vị vật tư & khẩu phần trong kho.',
-    reward: Object.freeze({kind: 'kit', amount: 2, itemId: 'insects', bonusQty: 4, label: '+2 Bộ vật liệu & +4 Côn trùng'}),
+    reward: Object.freeze({kind: 'water', amount: 8, itemId: 'insects', bonusQty: 4, label: '+8 Nước & +4 Côn trùng'}),
     check(state) {
       const level = Number(state?.level) || 1;
       const invTotal = state?.inventory && typeof state.inventory === 'object'
@@ -69,7 +69,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     badge: '🏡 Kiến Trúc Sư Rừng Cấm',
     category: 'Công trình',
     description: 'Mở rộng khu vườn đạt từ 7 thửa đất trở lên (Chương 4: Bìa rừng mở lối).',
-    reward: Object.freeze({kind: 'kit', amount: 3, itemId: 'kit', bonusQty: 3, label: '+3 Bộ vật liệu xây dựng'}),
+    reward: Object.freeze({kind: 'water', amount: 12, itemId: 'pumpkin', label: '+12 Nước'}),
     check(state) {
       const plots = Array.isArray(state?.plots) ? state.plots.length : 3;
       return {unlocked: plots >= 7, current: Math.min(7, plots), target: 7, progressText: `${plots}/7 thửa đất`};
@@ -97,7 +97,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     badge: '🏆 Người Giữ Kỷ Vật',
     category: 'Bộ sưu tập',
     description: 'Sưu tầm và trưng bày ít nhất 3 Kỷ vật sinh vật trên bệ đá lối đi phía Nam.',
-    reward: Object.freeze({kind: 'kit', amount: 2, itemId: 'moonherb', bonusQty: 2, label: '+2 Bộ vật liệu & +2 Cỏ trăng'}),
+    reward: Object.freeze({kind: 'water', amount: 8, itemId: 'moonherb', bonusQty: 2, label: '+8 Nước & +2 Cỏ trăng'}),
     check(state) {
       const keepsakes = state?.keepsakes && typeof state.keepsakes === 'object'
         ? Object.values(state.keepsakes).reduce((a, b) => a + (Number(b) || 0), 0)
@@ -142,7 +142,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     badge: '🐉 Bậc Thầy Luyện Rồng',
     category: 'Huyền thoại',
     description: 'Đạt Cấp 94 hoặc chăm sóc Rồng và Chó ba đầu trong khu bảo tồn.',
-    reward: Object.freeze({kind: 'kit', amount: 3, itemId: 'firepepper', bonusQty: 3, label: '+3 Bộ vật liệu & +3 Ớt lửa'}),
+    reward: Object.freeze({kind: 'water', amount: 12, itemId: 'firepepper', bonusQty: 3, label: '+12 Nước & +3 Ớt lửa'}),
     check(state) {
       const level = Number(state?.level) || 1;
       const hasDragon = Array.isArray(state?.creatures) && state.creatures.some((c) => c.species === 'dragon');
@@ -177,7 +177,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     badge: '👑 Đại Quản Gia Rừng Cấm',
     category: 'Đỉnh cao',
     description: 'Chinh phục mốc Cấp 100 · Mở khóa toàn vẹn 6 chương Đại khu vườn Hagrid.',
-    reward: Object.freeze({kind: 'kit', amount: 5, itemId: 'sunpetal', bonusQty: 3, label: '+5 Bộ vật liệu & +3 Hoa nhật quang'}),
+    reward: Object.freeze({kind: 'water', amount: 20, itemId: 'sunpetal', bonusQty: 3, label: '+20 Nước & +3 Hoa nhật quang'}),
     check(state) {
       const level = Number(state?.level) || 1;
       return {unlocked: level >= 100, current: Math.min(100, level), target: 100, progressText: `Cấp ${level}/100`};

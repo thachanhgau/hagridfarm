@@ -98,33 +98,21 @@ test('garden storage scopes persistent reloads and keeps preview saves in memory
   assert.equal(backend.raw(preview.storageKey), null);
 });
 
-test('kit rewards include their bonus item without double-counting a kit bonus', () => {
-  const inventory = {kit: 10, mandrake: 4};
+test('rewards add water, nước phép and their bonus item; a kit reward is refused', () => {
+  const inventory = {mandrake: 4};
   const supplies = {water: 5, boost: 1};
-
-  applyGardenReward(inventory, supplies, {
-    kind: 'kit',
-    amount: 2,
-    itemId: 'mandrake',
-    bonusQty: 3,
-  });
-  assert.equal(inventory.kit, 12);
-  assert.equal(inventory.mandrake, 7);
-
-  applyGardenReward(inventory, supplies, {
-    kind: 'kit',
-    amount: 2,
-    itemId: 'kit',
-    bonusQty: 3,
-  });
-  assert.equal(inventory.kit, 14);
+  applyGardenReward(inventory, supplies, {kind: 'water', amount: 8, itemId: 'mandrake', bonusQty: 3});
+  assert.deepEqual([supplies.water, inventory.mandrake], [13, 7]);
+  applyGardenReward(inventory, supplies, {kind: 'boost', amount: 2, waterBonus: 27});
+  assert.deepEqual(supplies, {water: 40, boost: 3});
+  assert.throws(() => applyGardenReward(inventory, supplies, {kind: 'kit', amount: 2}), /kit/);
 });
 
 test('daily sync does not convert lifetime garden state into today progress', () => {
   const questState = createDefaultOwlQuests(DAY_1_KEY);
   const lifetimeState = {
     xp: 999999,
-    inventory: {pumpkin: 1000, kit: 1000},
+    inventory: {pumpkin: 1000},
     creatures: [{species: 'puffskein', mealsCompleted: 99}],
     decorations: [{id: 'pumpkin_lantern'}],
   };

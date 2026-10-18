@@ -1,6 +1,6 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button} from './ui-utils.mjs?v=24.9.30';
-import {atmosphereConfig, weatherConfig} from './garden-atmosphere.mjs?v=24.9.30';
+import {el, button} from './ui-utils.mjs?v=24.9.31';
+import {atmosphereConfig, weatherConfig} from './garden-atmosphere.mjs?v=24.9.31';
 
 export const TOUR_STORAGE_KEY = 'hpvn-garden-v22-tour';
 
@@ -213,11 +213,11 @@ export const HONOR_GARDENS = Object.freeze([
       decor_mandrake_planter: 'right',
     }),
     reward: Object.freeze({
-      kind: 'kit',
-      amount: 2,
+      kind: 'water',
+      amount: 8,
       itemId: 'firepepper',
       bonusQty: 2,
-      label: '+2 Bộ vật liệu & +2 Ớt lửa',
+      label: '+8 Nước & +2 Ớt lửa',
     }),
   }),
 ]);

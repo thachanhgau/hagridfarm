@@ -47,21 +47,13 @@ const SVG_ART = Object.freeze({
  </svg>`,
  boost: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
   <defs>
-   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b7dee0"/><stop offset="100%" stop-color="#71934b"/></linearGradient>
+   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b7dee0"/><stop offset="100%" stop-color="#6961a6"/></linearGradient>
   </defs>
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b378ff" stroke-width="1.5"/>
   <rect x="20" y="9" width="8" height="4" rx="1" fill="#e7ae73" stroke="#f5d69a" stroke-width="1"/>
   <path d="M19 13h10v4l6 9v9a4 4 0 0 1-4 4H17a4 4 0 0 1-4-4v-9l6-9z" fill="#24483f" stroke="#f5d69a" stroke-width="1.5"/>
   <path d="M15 26h18v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 15 34z" fill="url(#bg)"/>
   <path d="M24 19l2 4 4 .6-3 3 .7 4.2-3.7-2-3.7 2 .7-4.2-3-3 4-.6z" fill="#f5d69a"/>
- </svg>`,
- kit: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b49a66" stroke-width="1.5"/>
-  <rect x="11" y="18" width="26" height="18" rx="2" fill="#8b4a3f" stroke="#f5d69a" stroke-width="1.4"/>
-  <line x1="11" y1="24" x2="37" y2="24" stroke="#4a3c2c" stroke-width="2"/>
-  <line x1="11" y1="30" x2="37" y2="30" stroke="#4a3c2c" stroke-width="2"/>
-  <path d="M15 18l4-7h10l4 7" fill="#70a8b6" stroke="#e8f0ed" stroke-width="1.2"/>
-  <rect x="21" y="21" width="6" height="6" rx="1" fill="#f5d69a" stroke="#4a3c2c" stroke-width="1"/>
  </svg>`,
  insects: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
   <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
@@ -195,9 +187,6 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  } else if (rawId === "boost" || rawId === "gentle_growth" || kind === "boost") {
   slot.classList.add("is-supply");
   slot.append(svgArt("boost", Math.round(size * 0.92)));
- } else if (rawId === "kit" || rawId === "kits" || rawId === "kits_flax") {
-  slot.classList.add("is-crafted");
-  slot.append(svgArt("kit", Math.round(size * 0.92)));
  } else if (rawId === "insects" || rawId.startsWith("insects_")) {
   slot.classList.add("is-crafted");
   slot.append(svgArt("insects", Math.round(size * 0.92)));
@@ -305,11 +294,11 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
    visual: visualItemIcon(items, expansion.id, { size }),
    category: expansion.kind === "plot" ? "Mở rộng thửa trồng" : "Mở rộng chuồng nuôi",
    categoryClass: "cat-build",
-   meta: expansion.kind === "plot" ? `Thêm 9 ô đất trồng · ${expansion.kitCost} bộ vật liệu` : `Nâng sức chứa lên ${expansion.capacityAfter} chỗ · ${expansion.kitCost} bộ vật liệu`,
+   meta: expansion.kind === "plot" ? "Thêm 9 ô đất trồng" : `Nâng sức chứa lên ${expansion.capacityAfter} chỗ`,
   };
  }
  if (recipe) {
-  const outId = recipe.output === "kit" ? "kit" : recipe.output;
+  const outId = recipe.output;
   return {
    visual: visualItemIcon(items, outId, { size, kind: outId.endsWith("_feed") ? "food" : "" }),
    category: "Chế biến & Trạm nghề",
@@ -322,7 +311,7 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
    visual: visualItemIcon(items, earnedDecor.id, { size, kind: "decoration", badge: "2 góc" }),
    category: "Cảnh quan & Trang trí",
    categoryClass: "cat-decor",
-   meta: `${earnedDecor.cost ? `${earnedDecor.cost} bộ vật liệu` : "Nhận miễn phí"} · Hỗ trợ xoay 2 góc`,
+   meta: `${earnedDecor.free ? "Nhận miễn phí" : "Đổi bằng nông sản"} · Hỗ trợ xoay 2 góc`,
   };
  }
 

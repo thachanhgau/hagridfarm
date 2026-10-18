@@ -1,13 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.30';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.30';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.30";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.30";
-import {$,el,button,icon,num,duration,hours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.30";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.30";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.30";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.30";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.30";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.30";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.31';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.31';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.31";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.31";
+import {$,el,button,icon,num,duration,hours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.31";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.31";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.31";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.31";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.31";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.31";
+import {costChips} from "./pixel-icons.mjs?v=24.9.31";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -17,6 +18,9 @@ export function createPanels(ctx){
  const label=id=>labels[id]||id,now=()=>E.nowFor(getState(),Date.now()),paragraph=(text,cls="")=>el("p",{text,class:cls}),actions=(...children)=>el("div",{class:"actions"},children),toolbar=(...children)=>el("div",{class:"panel-toolbar"},children),grid=()=>el("div",{class:"cards"});
  const detail=text=>el("details",{class:"v24-detail"},[el("summary",{text:"Chi tiết"}),paragraph(text)]);
  const navButton=(name,text,fn,attrs={})=>{const b=button(text,fn,attrs);b.prepend(navIcon(name));return b;};
+ // Crop icons + have/need and a coin with the Galleons price; the sentence goes to aria-label.
+ function priceRow(s,entry,wallet){const costs=Object.entries(entry.cropCost).map(([id,need])=>({id,need,have:s.inventory[id]||0}));const text=[...costs.map(c=>label(c.id)+" "+num(c.have)+"/"+num(c.need)),...(entry.galleons?[num(entry.galleons)+" Galleons"]:[])].join(", ")||"Miễn phí";return el("div",{class:"cost-row",role:"group","aria-label":"Giá: "+text,title:text},costChips(items,costs,entry.galleons,wallet<entry.galleons));}
+ const canPay=(s,entry,wallet)=>wallet>=entry.galleons&&Object.entries(entry.cropCost).every(([id,n])=>(s.inventory[id]||0)>=n);
  function card(title,subtitle,id,opts={}){const c=el("article",{class:"card"}),h=el("div",{class:"card-head"});if(id)h.append(visualItemIcon(items,id,{size:52,...opts}));h.append(el("div",{class:"card-head-copy"},[el("strong",{text:title}),el("small",{text:subtitle})]));c.append(h);return c;}
  function readyButton(text,at,fn){return button(text,fn,{"data-ready-button":at,disabled:at>now(),class:"primary"});}
  // Thành tựu, Sổ tay, Lưu bút and Bưu thiếp are tabs of one Hồ sơ panel; their old names still open their tab.
@@ -196,7 +200,7 @@ export function createPanels(ctx){
 
   craft(){
    const s=getState(),select=el("select",{"aria-label":"Lọc công thức",onchange:e=>{recipeFilter=e.target.value;refresh();}});
-   for(const[id,name]of [["all","Tất cả công thức"],["open","Đã mở"],["feed","Khẩu phần"],["kit","Vật liệu"],["insects","Côn trùng"],["fish","Cá nhỏ"],...DB.animals.filter(a=>a.level<=s.level).map(a=>[a.feed,a.label])])select.append(el("option",{value:id,text:name}));
+   for(const[id,name]of [["all","Tất cả công thức"],["open","Đã mở"],["feed","Khẩu phần"],["insects","Côn trùng"],["fish","Cá nhỏ"],...DB.animals.filter(a=>a.level<=s.level).map(a=>[a.feed,a.label])])select.append(el("option",{value:id,text:name}));
    select.value=recipeFilter;
    const qty=el("select",{"aria-label":"Số mẻ tức thì",onchange:e=>{batches=Number(e.target.value);refresh();}});
    for(const n of[1,3,10])qty.append(el("option",{value:n,text:n+" mẻ tức thì"}));
@@ -223,16 +227,17 @@ export function createPanels(ctx){
   },
 
   build(){
-   const s=getState(),g=grid();
+   const s=getState(),g=grid(),wallet=ctx.getGalleons?.()??Infinity;
    body.append(el("details",{class:"v24-detail"},[el("summary",{text:"Mở rộng vườn"}),spatialStagesVisual(s)]));
-   body.append(paragraph(s.plots.length+"/12 thửa · "+E.housingCapacity(s)+"/12 chỗ nuôi · "+num(s.inventory.kit||0)+" bộ vật liệu."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Làm vật liệu",()=>{recipeFilter="kit";show("craft");}),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
+   body.append(paragraph(s.plots.length+"/12 thửa · "+E.housingCapacity(s)+"/12 chỗ nuôi."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
    for(const e of DB.expansions.filter(e=>e.level<=s.level)){
-    const number=Number(e.id.split("_")[1]),title=(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=number===1||s.built.includes(e.kind+"_"+(number-1)),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+e.kitCost+" bộ vật liệu · "+hours(e.hours),e.id);
+    const number=Number(e.id.split("_")[1]),title=(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=number===1||s.built.includes(e.kind+"_"+(number-1)),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+hours(e.hours),e.id),short=!canPay(s,e,wallet);
     k.classList.toggle("locked",locked);
+    if(!done&&!job)k.append(priceRow(s,e,wallet));
     k.append(paragraph(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi"));
     if(done)k.append(paragraph("✓ Đã xây","ready-text"));
     else if(job)k.append(timer(job.readyAt),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})));
-    else k.append(paragraph(locked?"Chờ cấp "+e.level:!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||s.inventory.kit<e.kitCost,class:"primary"}));
+    else k.append(paragraph(locked?"Chờ cấp "+e.level:!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));
     g.append(k);
    }
    body.append(g);
@@ -250,40 +255,24 @@ export function createPanels(ctx){
    ];
 
    const totalSeeds=seedEntries.reduce((acc,[,n])=>acc+Number(n||0),0);
-   const totalCrops=cropEntries.reduce((acc,[,n])=>acc+Number(n||0),0);
-   const totalCrafted=craftedEntries.reduce((acc,[,n])=>acc+Number(n||0),0);
 
+   // Kho is one of the four resources: seeds, crops, rations and creature products. Nước sits beside it.
+   const connected=getSession().connected;
    const summary=el("section",{class:"inv-summary-strip"},[
     el("div",{class:"inv-stat-card"},[
      visualItemIcon(items,"water",{size:44,kind:"water"}),
      el("div",{class:"inv-stat-copy"},[
-      el("small",{text:"NƯỚC TƯỚI"}),
-      el("strong",{text:supplies?`${num(supplies.water)} phần`:"Miễn phí"}),
-      el("span",{text:getSession().connected?"Dùng 1 phần / ô gieo":"Gieo miễn phí"}),
-     ]),
-    ]),
-    el("div",{class:"inv-stat-card"},[
-     visualItemIcon(items,"boost",{size:44,kind:"boost"}),
-     el("div",{class:"inv-stat-copy"},[
-      el("small",{text:"PHÂN BÓN"}),
-      el("strong",{text:`${num(supplies?.boost||0)} gói`}),
-      el("span",{text:getSession().connected?"Giảm 10% thời gian lớn":"Quà đã lưu trên thiết bị"}),
-     ]),
-    ]),
-    el("div",{class:"inv-stat-card"},[
-     visualItemIcon(items,"kit",{size:44}),
-     el("div",{class:"inv-stat-copy"},[
-      el("small",{text:"VẬT LIỆU"}),
-      el("strong",{text:`${num(s.inventory.kit||0)} bộ`}),
-      el("span",{text:"Mở thửa & chuồng nuôi"}),
+      el("small",{text:"NƯỚC"}),
+      el("strong",{text:connected?`${num(supplies?.water||0)} phần`:"Miễn phí"}),
+      el("span",{text:connected?`✦ ${num(supplies?.boost||0)} nước phép`:"Gieo miễn phí",title:"Nước phép: giảm 10% thời gian lớn của một hàng"}),
      ]),
     ]),
     el("div",{class:"inv-stat-card"},[
      visualItemIcon(items,"pumpkin",{size:44,kind:"seed"}),
      el("div",{class:"inv-stat-copy"},[
-      el("small",{text:"TỔNG DỰ TRỮ KHO"}),
-      el("strong",{text:`${num(totalSeeds+totalCrops+totalCrafted)} món`}),
-      el("span",{text:`${seedEntries.length} loại hạt · ${cropEntries.length} nông sản`}),
+      el("small",{text:"KHO"}),
+      el("strong",{text:`${num(totalSeeds+Object.values(s.inventory||{}).reduce((a,n)=>a+Number(n||0),0))} món`}),
+      el("span",{text:`🌱 ${seedEntries.length} · 🌾 ${cropEntries.length} · ⚗ ${craftedEntries.length}`,title:`${seedEntries.length} loại hạt, ${cropEntries.length} loại nông sản, ${craftedEntries.length} loại khẩu phần`}),
      ]),
     ]),
    ]);
@@ -295,7 +284,7 @@ export function createPanels(ctx){
     ["all",`Tất cả (${seedEntries.length+cropEntries.length+craftedEntries.length+produceEntries.length})`],
     ["seeds",`🌱 Hạt giống (${seedEntries.length})`],
     ["crops",`🌾 Nông sản (${cropEntries.length})`],
-    ["crafted",`⚗ Thức ăn & Vật liệu (${craftedEntries.length})`],
+    ["crafted",`⚗ Khẩu phần (${craftedEntries.length})`],
     ["produce",`✦ Sản vật & Kỷ vật (${produceEntries.length})`],
    ];
    for(const [id,text] of tabDefs){
@@ -343,12 +332,6 @@ export function createPanels(ctx){
 
    const seedCards=[];
    if(supplies){
-    if(supplies.water>0){
-     seedCards.push(makeInvCard({id:"water",visualId:"water",kind:"water",title:"Nước tưới suối rừng",subtitle:"Vật tư chăm vườn",qty:supplies.water,actionText:ctx.openStore?"Mua thêm":"",onAction:ctx.openStore?()=>{close();ctx.openStore("water");}:null}));
-    }
-    if((supplies.boost||0)>0){
-     seedCards.push(makeInvCard({id:"boost",visualId:"boost",kind:"boost",title:"Phân bón tăng trưởng",subtitle:"Vật tư chăm vườn",qty:supplies.boost}));
-    }
     for(const [id,n] of seedEntries){
      const crop=DB.crops.find(c=>c.id===id);
      seedCards.push(makeInvCard({
@@ -380,7 +363,7 @@ export function createPanels(ctx){
    const craftedCards=craftedEntries.map(([id,q])=>{
     const creatureId=FEED_CREATURE_MAP[id];
     const creature=creatureId?DB.animals.find(a=>a.id===creatureId):null;
-    const sub=id==="kit"?"Vật liệu xây dựng":id==="insects"||id==="fish"?"Nguyên liệu đạm":creature?`Khẩu phần · ${creature.label}`:"Chế phẩm";
+    const sub=id==="insects"||id==="fish"?"Nguyên liệu đạm":creature?`Khẩu phần · ${creature.label}`:"Chế phẩm";
     return makeInvCard({
      id,
      visualId:id,
@@ -409,9 +392,9 @@ export function createPanels(ctx){
     });
    });
 
-   if(invFilter==="all"||invFilter==="seeds")appendSection("Túi hạt giống & Vật tư chăm vườn","VẬT TƯ GIEO TRỒNG",seedCards);
+   if(invFilter==="all"||invFilter==="seeds")appendSection("Túi hạt giống","VẬT TƯ GIEO TRỒNG",seedCards);
    if(invFilter==="all"||invFilter==="crops")appendSection("Nông sản đã thu hoạch","THÀNH QUẢ MÙA VỤ",cropCards);
-   if(invFilter==="all"||invFilter==="crafted")appendSection("Khẩu phần & Nguyên liệu chế biến","BÀN THỨC ĂN & XƯỞNG NGHỀ",craftedCards);
+   if(invFilter==="all"||invFilter==="crafted")appendSection("Khẩu phần & Nguyên liệu chế biến","BÀN THỨC ĂN",craftedCards);
    if(invFilter==="all"||invFilter==="produce")appendSection("Sản vật sinh vật & Kỷ vật","BỘ SƯU TẬP QUÝ HIẾM",produceCards);
 
    if(!seedCards.length&&!cropCards.length&&!craftedCards.length&&!produceCards.length){
@@ -468,9 +451,10 @@ export function createPanels(ctx){
     const owned=s.decorations.includes(d.id);
     const facing=earnedRot[d.id]==="right"?"right":"default";
     const angleTag=facing==="right"?"Góc nhìn qua phải ↗":"Góc hiện tại ↖";
-    const k=card(d.label,"Cấp "+d.level+" · "+(d.cost?d.cost+" bộ vật liệu":"Miễn phí")+(owned?` · ${angleTag}`:""),d.id,{kind:"decoration",facing,badge:"2 góc"});
+    const k=card(d.label,"Cấp "+d.level+(d.free?" · Miễn phí":"")+(owned?` · ${angleTag}`:""),d.id,{kind:"decoration",facing,badge:"2 góc"});
+    if(!owned&&!d.free)k.append(priceRow(s,d,ctx.getGalleons?.()??Infinity));
     const btnRow=[
-     button(owned?"✓ Đã có":"Nhận "+d.label,()=>run(x=>E.buyDecoration(x,d.level),"Đã thêm "+d.label+" vào vườn.",{action:"buyDecoration",level:d.level}),{disabled:owned||s.level<d.level||s.inventory.kit<d.cost}),
+     button(owned?"✓ Đã có":"Nhận "+d.label,()=>run(x=>E.buyDecoration(x,d.level),"Đã thêm "+d.label+" vào vườn.",{action:"buyDecoration",level:d.level}),{disabled:owned||s.level<d.level||!canPay(s,d,ctx.getGalleons?.()??Infinity)}),
     ];
     if(owned&&ctx.rotateEarnedDecoration){
      btnRow.push(button(`↻ Xoay (${facing==="right"?"↗ Phải":"↖ Hiện tại"})`,()=>{ctx.rotateEarnedDecoration(d.id);refresh();},{"data-rotate-earned-decor":d.id}));

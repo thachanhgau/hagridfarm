@@ -1,4 +1,4 @@
-import {el, button, num, hours, visualItemIcon} from './ui-utils.mjs?v=24.9.30';
+import {el, button, num, hours, visualItemIcon} from './ui-utils.mjs?v=24.9.31';
 
 /**
  * V21.0 Direction 2:
@@ -290,12 +290,6 @@ export function buildAlmanacChains(DB, state = {}) {
         feedsCreatures.push({
           creatureId: targetAnimal.id,
           creatureLabel: targetAnimal.label,
-          qtyPerBatch: r.inputs[crop.id],
-        });
-      } else if (r.output === 'kit') {
-        feedsCreatures.push({
-          creatureId: 'kit',
-          creatureLabel: 'Bộ vật liệu xây dựng',
           qtyPerBatch: r.inputs[crop.id],
         });
       }

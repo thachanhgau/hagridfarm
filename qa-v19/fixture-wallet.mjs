@@ -1,5 +1,5 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog} from "../garden-v05/garden-store-catalog.mjs?v=24.9.30";
+import {unlockedCatalog} from "../garden-v05/garden-store-catalog.mjs?v=24.9.31";
 
 export function createEmulatorClient(){
  const query=new URLSearchParams(location.search),level=Number(query.get("level")||100),scenario=query.get("scenario")||"empty",simulate=query.get("simulate")==="1",past=scenario.endsWith("ready"),now=Date.now(),origin=past?now-26*3600000:now;
@@ -115,6 +115,8 @@ export function createEmulatorClient(){
   },
  };
  const blocked=async()=>{throw Error("Bản xem UI chỉ đọc · không ghi tài khoản.");};
+ // Like the server: crops come out of the garden, Galleons out of the wallet, in one step.
+ const pay=(entry,fn)=>{const cost=entry?.galleons||0;if(snapshot.wallet.spendable<cost)throw Error("Chưa đủ Galleons trong ví thử nghiệm.");const next=fn();snapshot.wallet.spendable-=cost;snapshot.wallet.balance=Math.max(0,snapshot.wallet.balance-cost);return next;};
  const act=async command=>{
   if(!simulate&&command.action!=="placeDecoration"&&command.action!=="moveBuilding")return blocked();
   const current=snapshot.garden.progression,time=Date.now();let next=current;
@@ -124,7 +126,8 @@ export function createEmulatorClient(){
    case "claimAnimals":next=E.claimAnimals(current,command.species??null,time);break;
    case "craft":next=E.craft(current,command.recipeId,command.batches,time);break;
    case "claimCraft":next=E.claimCraft(current,time);break;
-   case "build":next=E.build(current,command.expansionId,time);break;
+   case "build":next=pay(E.DB.expansions.find(e=>e.id===command.expansionId),()=>E.build(current,command.expansionId,time));break;
+   case "buyDecoration":next=pay(E.DB.decorations.find(d=>d.level===command.level),()=>E.buyDecoration(current,command.level));break;
    case "claimBuildings":next=E.claimBuildings(current,time);break;
    case "moveBuilding":next=E.moveBuilding(current,command.kind,command.index,command.targetSlot);break;
    case "placeDecoration":{

@@ -12,10 +12,10 @@ test('the bot levels up, opens the first pen at level 10 and pays for every plan
   for (const d of run.daily) assert.ok(d.galleons >= d.cells * WATER_PRICE);
 });
 
-test('the simulation is deterministic and quest water follows the V24.9.8 table', () => {
+test('the simulation is deterministic and quest water follows the 18/10/2026 table', () => {
   assert.deepEqual(simulate({days: 3}).daily, simulate({days: 3}).daily);
   assert.equal(questWater(1), 6 + 6 + 5 + 12);
-  assert.equal(questWater(30), 12 + 5 + 12);
+  assert.equal(questWater(30), 12 + 8 + 5 + 12);
 });
 
 test('festival points add up per UI command, owl quest claim and chest', () => {

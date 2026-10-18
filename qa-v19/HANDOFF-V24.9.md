@@ -142,3 +142,19 @@
 - Nhãn «Đang ghi thử nghiệm ẩn danh» (`?playtest=1`) chuyển lên góc trái, ngay dưới ô mục tiêu kế tiếp (`v24-ui.css`, màn rộng chỉnh trong `icon-hud.css`); không còn đè dock.
 - Vòng XP của huy hiệu cấp có track tối viền đồng, nên thấy rõ cả khi XP = 0 (`icon-hud.css`).
 - Kiểm chứng: 176/176 test node; FTUE WebKit 5/5; `qa-v19/hud-shots.mjs` 10/10 khung, đã xem tận mắt 390×664, 750×342 và 1280×720 với `?playtest=1`, và bản có ví (`?wallet=emulator`) vẫn hiện số.
+
+## Gộp tài nguyên về 4 loại, bỏ bộ vật liệu, sửa nhiệm vụ cú — `?v=24.9.31` (18/10/2026)
+Theo quyết định của chủ dự án ngày 18/10/2026. Chi tiết và bảng giá: `docs/economy-audit.md` mục 5; mô phỏng mới: `docs/progression-sim.md`.
+- **Nhiệm vụ cú** (`garden-quests.mjs`, `OWL_QUEST_VERSION 26`): luật đếm chuyển thành hàm thuần `questAmounts(act, before, after, command)`, dùng chung cho `mobile-game.mjs` và `sim-progression.mjs`. Cho ăn đếm số bữa (3 sinh vật = 3); nhổ cây không còn tính là gặt; "Gặt N lần" = 1 dưới cấp 6. Chuỗi ngày giữ nguyên.
+- **4 tài nguyên**: Galleons · Kho (hạt, nông sản, khẩu phần, sản vật) · Nước (nước + **nước phép**, đổi tên từ phân bón 1:1, ID vẫn `boost`) · XP. HUD bỏ ô hạt; thêm lọ nước phép (chỉ khi nối ví, từ cấp 6); số trên nút Kho gồm cả hạt khi nối ví. Bảng Kho: thẻ Nước và thẻ Kho, các nhóm hạt / nông sản / khẩu phần / sản vật.
+- **Bỏ bộ vật liệu**: bỏ công thức `kits`, `kits_flax`, mục `kit` trong kho, `kitCost`; icon kit bị xóa. `balance-data` lên `schemaVersion 2` / `balance-2026-10-18`; bản lưu cũ trên máy tự thành vườn mới.
+- **Chi phí mới** = `cropCost` + `galleons` cho 15 thửa/chuồng và 24 trang trí trả phí. 4 công trình đầu (tới cấp 24) chỉ tốn nông sản; Galleons từ 100 G (thửa 6) tới 750 G (thửa 12), tổng 4.050 G. Engine chỉ trừ nông sản; ví trừ Galleons trong cùng thao tác (`qa-v19/fixture-wallet.mjs` làm mẫu cho `build` và `buyDecoration`). Chơi trên máy không bị chặn bởi Galleons.
+- **Giao diện chi phí**: `costChips` trong `pixel-icons.mjs` (icon nông sản có/cần + đồng xu Galleons), dùng ở khay Xây, bảng Xây và thẻ trang trí; CSS `.cost-row` trong `v24-panels.css`. «Mục tiêu gần» chỉ nông sản đầu tiên còn thiếu.
+- **Quà thay bộ vật liệu** (1 bộ ≈ 4 nước): nhiệm vụ, rương, thành tựu, lễ hội (cả mốc cũ), gắn kết, thăm vườn. `applyGardenReward` từ chối mọi loại quà khác `water` / `boost`.
+- **Mô phỏng**: mọi thửa/chuồng mở cùng ngày hoặc sớm hơn 1–2 ngày; cấp 100 ngày 203 (trước 204). Báo cáo có thêm cột Galleons xây và bảng Galleons so với thu nhập p50/p25.
+- Kiểm chứng: 182/182 test node (mới: `resource-merge.test.mjs` 5 test; sửa test engine, khay, mục tiêu, quà); FTUE WebKit 5/5 trên cổng 62795; `qa-v19/hud-shots.mjs` 10/10. Đã xem tận mắt ở 390×664: HUD lúc mới vào, khay Xây và bảng Xây (vườn cấp 36 thiếu Puffapod, thấy 10/18 màu cam, xu 100, "Thiếu nông sản"), bảng Kho trên máy và với ví mẫu (2.500 G · 213 nước · 2 nước phép). Không lỗi console.
+- Còn lại:
+  - Server (HPVNN) chưa port: chế độ `?wallet=emulator` với emulator thật sẽ lệch (server còn bộ vật liệu) tới khi phiên Phase 4 port mục 5.6.
+  - `progression-engine.mjs`, `balance-data.mjs` và `garden-storage.mjs` được import không có `?v=` (như trước), nên trình duyệt có thể giữ engine cũ trong cache; bản này đổi cả ba, nên khi thử nên tải lại cứng.
+  - `balance-data.json` (bản đề xuất gốc, dùng cho build tranh) vẫn còn bộ vật liệu; test đối chiếu ghi rõ các điểm 18/10/2026 thay thế.
+  - Chưa tạo manifest sha256.

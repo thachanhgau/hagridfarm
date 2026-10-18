@@ -1,5 +1,5 @@
-import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.30';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=24.9.30';
+import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.31';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=24.9.31';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -11,7 +11,7 @@ import {
  dailyCompletionSummary,
  hasClaimableOwlQuest,
  DAILY_GRAND_CHEST_REWARD,
-} from './garden-quests.mjs?v=24.9.30';
+} from './garden-quests.mjs?v=24.9.31';
 
 // Presentation only: every crop mutation still uses the existing engine/command.
 export function cropContext(state, selection, E, now) {
@@ -32,7 +32,7 @@ const COMPACT_OWL_TITLES=Object.freeze({
  quest_festival_spirit:'Hưởng ứng lễ hội',
 });
 const COMPACT_OWL_ROUTES=Object.freeze({plant:'Ra thửa',craft:'Mở vạc',creature:'Thăm chuồng',tour:'Tham quan',events:'Mở lễ hội'});
-const OWL_REWARD_NAMES=Object.freeze({water:'Nước',kit:'Vật liệu',boost:'Phân bón',pumpkin:'Bí ngô',insects:'Côn trùng',moonherb:'Cỏ trăng'});
+const OWL_REWARD_NAMES=Object.freeze({water:'Nước',boost:'Nước phép',pumpkin:'Bí ngô',oats:'Yến mạch',insects:'Côn trùng',moonherb:'Cỏ trăng'});
 function compactOwlReward(reward={}){
  const parts=[];
  if(Number(reward.amount)>0)parts.push(`+${reward.amount} ${OWL_REWARD_NAMES[reward.kind]||reward.kind||'quà'}`);

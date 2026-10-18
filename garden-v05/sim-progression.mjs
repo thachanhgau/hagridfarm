@@ -6,7 +6,7 @@
 import * as E from './progression-engine.mjs';
 import {STORE_CATALOG} from './garden-store-catalog.mjs';
 import {FESTIVAL_ACTION_POINTS, FREE_FESTIVAL_ACTIONS_PER_DAY, HOGWARTS_EVENTS, FESTIVAL_DAYS, FESTIVAL_FARM_POINTS_PER_DAY, FESTIVAL_FREE_POINTS_PER_DAY} from './garden-events.mjs';
-import {pickDailyQuests, dayKeyFor, DAILY_GRAND_CHEST_REWARD} from './garden-quests.mjs';
+import {pickDailyQuests, dayKeyFor, DAILY_GRAND_CHEST_REWARD, questAmounts} from './garden-quests.mjs';
 import {HONOR_GARDENS} from './garden-tour.mjs';
 
 const {DB, CROP, CREATURE} = E;
@@ -20,22 +20,15 @@ export const WATER_PRICE = waterEntry.price / waterEntry.quantity;
 
 const tryAct = (state, fn) => { try { const next = fn(state); return next ?? state; } catch { return state; } };
 
-/** One UI command's festival and quest counts, mirroring mobile-game.mjs playCommandSound/questAmounts. */
+/** One UI command's festival and quest counts, from the same questAmounts the game uses. */
 function commandLog(action, before, after, batches = 0) {
-  let planted = 0, harvested = 0;
-  for (let p = 0; p < after.plots.length; p += 1) {
-    const a = before.plots[p]?.slots || [], b = after.plots[p].slots;
-    for (let i = 0; i < 9; i += 1) {
-      if (b[i] && (!a[i] || a[i].id !== b[i].id)) planted += 1;
-      if (a[i] && (!b[i] || b[i].id !== a[i].id)) harvested += 1;
-    }
-  }
+  const amounts = Object.fromEntries(questAmounts(action, before, after, {batches}));
   // The UI feeds and claims one species per tap; the bot's null call covers all of them.
   const was = Object.fromEntries(before.creatures.map((c) => [c.species, c]));
-  const taps = action === 'feed' ? after.creatures.filter((c) => c.meal && !was[c.species]?.meal).length
+  const taps = action === 'feed' ? amounts.feed || 0
     : action === 'claimAnimals' ? after.creatures.filter((c) => c.cyclesClaimed > (was[c.species]?.cyclesClaimed ?? 0)).length
       : 1;
-  return {action, taps, planted, harvested, batches};
+  return {action, taps, planted: amounts.plant || 0, harvested: amounts.harvest || 0, batches: amounts.craft || 0, meals: amounts.feed || 0};
 }
 
 /** tryAct that also logs the command when it changed the state. */
@@ -55,7 +48,7 @@ function cropDemand(state) {
   const recipesFor = (output) => unlocked(DB.recipes, state.level).filter((r) => r.output === output && r.hours === 0);
   const want = {};
   const next = nextExpansion(state);
-  if (next) want.kit = Math.max(0, next.kitCost - state.inventory.kit);
+  if (next) for (const [id, n] of Object.entries(next.cropCost)) add(id, n - state.inventory[id]);
   for (const c of state.creatures) {
     const cfg = CREATURE[c.species];
     want[cfg.feed] = (want[cfg.feed] || 0) + Math.max(0, cfg.mealPortions * 3 - state.inventory[cfg.feed]);
@@ -93,10 +86,8 @@ function nextAdoption(state) {
 }
 
 function craftEverything(state, now, log = []) {
-  // Kits for the next expansion, then feed for meals and the next adoption; one pass each.
+  // Feed for meals and the next adoption; one pass each. Expansion crops are kept back.
   const targets = [];
-  const next = nextExpansion(state);
-  if (next && state.inventory.kit < next.kitCost) targets.push(['kit', next.kitCost - state.inventory.kit]);
   for (const c of state.creatures) {
     const cfg = CREATURE[c.species];
     targets.push([cfg.feed, cfg.mealPortions * 3 - state.inventory[cfg.feed]]);
@@ -113,7 +104,8 @@ function craftEverything(state, now, log = []) {
           if (sub) s = logged(log, 'craft', s, (x) => E.craft(x, sub.id, 1, now), 1);
         }
       }
-      const fit = Math.min(...Object.entries(recipe.inputs).map(([id, n]) => Math.floor(s.inventory[id] / n)));
+      const keep = nextExpansion(s)?.cropCost || {};
+      const fit = Math.min(...Object.entries(recipe.inputs).map(([id, n]) => Math.floor(Math.max(0, s.inventory[id] - (keep[id] || 0)) / n)));
       const batches = Math.min(fit, Math.ceil(missing / recipe.count), recipe.hours > 0 ? 1 : 100);
       if (batches > 0) { s = logged(log, 'craft', s, (x) => E.craft(x, recipe.id, batches, now), batches); break; }
     }
@@ -131,15 +123,16 @@ function bestCrop(level, gapMs) {
 /** Play one session at wall time `now`; returns the new state, what it cost and the UI commands it took. */
 export function playSession(state, now, gapMs, {seedPriceCap = Infinity} = {}) {
   let s = state;
-  const cost = {cells: 0, seeds: 0, water: 0};
+  const cost = {cells: 0, seeds: 0, water: 0, build: 0};
   const log = [];
   s = logged(log, 'claimBuildings', s, (x) => E.claimBuildings(x, now));
   s = logged(log, 'claimCraft', s, (x) => E.claimCraft(x, now));
   s = logged(log, 'claimAnimals', s, (x) => E.claimAnimals(x, null, now));
   s = logged(log, 'harvest', s, (x) => E.harvest(x, null, null, now));
   for (let n = 0; n < 2; n += 1) {
-    const next = nextExpansion(s);
+    const next = nextExpansion(s), before = s;
     if (next) s = logged(log, 'build', s, (x) => E.build(x, next.id, now));
+    if (s !== before) cost.build += next.galleons;
   }
   const adoptable = nextAdoption(s);
   if (adoptable) s = logged(log, 'adopt', s, (x) => E.adopt(x, adoptable, now));
@@ -167,10 +160,10 @@ export function playSession(state, now, gapMs, {seedPriceCap = Infinity} = {}) {
   return {state: s, cost, log};
 }
 
-/** Owl quest water the bot earns each day (V24.9.8 rules, assuming all three are done). */
+/** Owl quest water the bot earns each day (18/10/2026 rules, assuming all three are done; the third quest averages ~5). */
 export function questWater(level) {
   const n = level < 6 ? 6 : level < 20 ? 9 : 12;
-  return n + (level < 6 ? 6 : 0) + 5 + 12;
+  return n + (level < 6 ? 6 : 8) + 5 + 12;
 }
 
 const QUEST_CLAIM_POINTS = 15; // mobile-game.mjs handleClaimDailyQuest
@@ -195,9 +188,9 @@ export function festivalDay(log, {dayKey, level, hasCreature, free = false}) {
   const amount = {
     plant: log.reduce((n, c) => n + c.planted, 0),
     harvest: log.reduce((n, c) => n + c.harvested, 0),
-    harvestRun: log.filter((c) => c.action === 'harvest' && c.harvested).length,
+    harvestRun: log.filter((c) => c.harvested).length,
     craft: log.reduce((n, c) => n + c.batches, 0),
-    feed: log.filter((c) => c.action === 'feed').reduce((n, c) => n + c.taps, 0),
+    feed: log.reduce((n, c) => n + c.meals, 0),
     claimAnimals: log.filter((c) => c.action === 'claimAnimals').reduce((n, c) => n + c.taps, 0),
   };
   const quests = pickDailyQuests(dayKey, {level, hasCreature, feedItem: null});
@@ -213,7 +206,7 @@ export function simulate({days = 180, hours = [8, 13, 21], seedPriceCap = Infini
   const reached = {};
   const opened = {};
   for (let day = 0; day < days; day += 1) {
-    const spend = {cells: 0, seeds: 0, water: 0};
+    const spend = {cells: 0, seeds: 0, water: 0, build: 0};
     const dayStart = {dayKey: dayKeyFor(START + day * 24 * HOUR + 12 * HOUR), level: state.level, hasCreature: state.creatures.length > 0, free};
     const log = [];
     const sessions = [];
@@ -228,7 +221,7 @@ export function simulate({days = 180, hours = [8, 13, 21], seedPriceCap = Infini
     }
     for (let l = 1; l <= state.level; l += 1) if (reached[l] === undefined) reached[l] = day + 1;
     for (const id of state.built) if (opened[id] === undefined) opened[id] = {day: day + 1, level: state.level};
-    const galleons = spend.seeds + spend.water;
+    const galleons = spend.seeds + spend.water + spend.build;
     daily.push({day: day + 1, level: state.level, xp: state.xp, creatures: state.creatures.length, plots: state.plots.length, ...spend, galleons, net: Math.max(0, galleons - questWater(state.level) * WATER_PRICE), festival: {...festivalDay(log, dayStart), sessions}});
   }
   return {daily, reached, opened, final: state};
@@ -274,13 +267,22 @@ function report(days) {
   out.push('|---|---|---|---|');
   for (const e of DB.expansions) out.push(`| ${e.id} | ${e.level} | ${main.opened[e.id]?.day ?? '—'} | ${main.opened[e.id]?.level ?? '—'} |`);
   out.push('\n## Chi phí mỗi ngày (3 lượt/ngày, trung bình theo tháng)\n');
-  out.push('| Tháng | Cấp cuối tháng | Ô gieo/ngày | Galleons/ngày | Sau nước từ nhiệm vụ cú |');
-  out.push('|---|---|---|---|---|');
+  out.push('| Tháng | Cấp cuối tháng | Ô gieo/ngày | Galleons/ngày | trong đó xây | Sau nước từ nhiệm vụ cú |');
+  out.push('|---|---|---|---|---|---|');
   for (let m = 0; m * 30 < main.daily.length; m += 1) {
     const slice = main.daily.slice(m * 30, m * 30 + 30);
     const avg = (k) => slice.reduce((a, d) => a + d[k], 0) / slice.length;
-    out.push(`| ${m + 1} | ${slice.at(-1).level} | ${Math.round(avg('cells'))} | ${avg('galleons').toFixed(1)} | ${avg('net').toFixed(1)} |`);
+    out.push(`| ${m + 1} | ${slice.at(-1).level} | ${Math.round(avg('cells'))} | ${avg('galleons').toFixed(1)} | ${avg('build').toFixed(1)} | ${avg('net').toFixed(1)} |`);
   }
+  out.push('\n## Galleons cho mở rộng so với thu nhập (p50 772 G/ngày, p25 36 G/ngày)\n');
+  out.push('| Công trình | Nông sản | Galleons | Ngày thu nhập p50 | Ngày thu nhập p25 |');
+  out.push('|---|---|---|---|---|');
+  for (const e of DB.expansions) {
+    const crops = Object.entries(e.cropCost).map(([id, n]) => `${n} ${CROP[id].label}`).join(' + ');
+    out.push(`| ${e.id} | ${crops} | ${e.galleons} | ${(e.galleons / 772).toFixed(2)} | ${(e.galleons / 36).toFixed(1)} |`);
+  }
+  const total = DB.expansions.reduce((a, e) => a + e.galleons, 0);
+  out.push(`\nTổng Galleons mở rộng: ${total} G (${(total / main.daily.length).toFixed(1)} G/ngày trên ${main.daily.length} ngày). Galleons cho trang trí cấp: ${DB.decorations.reduce((a, d) => a + d.galleons, 0)} G, không bắt buộc.`);
   return out.join('\n');
 }
 

@@ -1,6 +1,6 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.30";
-import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.30";
-import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.30";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.31";
+import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.31";
+import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.31";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -15,7 +15,7 @@ const KIND_LABELS = Object.freeze({
  seed: "Gói hạt giống",
  water: "Nước suối rừng",
  food: "Khẩu phần sinh vật",
- boost: "Phân bón thảo dược",
+ boost: "Nước phép",
  decoration: "Trang trí · 2 góc xoay",
 });
 
@@ -40,7 +40,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   ["seed","🌱 Hạt giống"],
   ["water","💧 Nước tưới"],
   ["food","♨ Thức ăn"],
-  ["boost","✨ Tăng trưởng"],
+  ["boost","✨ Nước phép"],
   ["decoration","🏮 Trang trí"],
  ];
 
@@ -57,7 +57,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
    return `Trong kho: ${num(count)} hạt`;
   }
   if(item.kind==="water")return `Trong kho: ${num(sup?.water??0)} phần`;
-  if(item.kind==="boost")return `Trong kho: ${num(sup?.boost??0)} gói`;
+  if(item.kind==="boost")return `Đang có: ${num(sup?.boost??0)} phần`;
   if(item.kind==="food"){
    const invId=item.inventoryId||item.id;
    const count=snap?.garden?.progression?.inventory?.[invId]??state?.inventory?.[invId]??0;
@@ -89,7 +89,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
     ]),
     sup?el("div",{class:"store-supply-pills"},[
      el("span",{class:"store-supply-pill",text:`💧 Nước: ${num(sup.water||0)}`}),
-     el("span",{class:"store-supply-pill",text:`✨ Phân bón: ${num(sup.boost||0)}`}),
+     el("span",{class:"store-supply-pill",text:`✨ Nước phép: ${num(sup.boost||0)}`}),
      el("span",{class:"store-supply-pill",text:`🌱 Giống đã mở: ${allItems.filter(i=>i.kind==="seed").length}/24`}),
     ]):null,
    ]),

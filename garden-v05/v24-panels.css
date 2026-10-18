@@ -296,3 +296,7 @@
     grid-column: 2;
   }
 }
+/* 18/10/2026: build and decoration prices as crop icons + have/need and a Galleons coin. */
+#panel .cost-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:6px 0}
+#panel .cost-row .dock-cost{display:inline-flex;align-items:center;gap:4px;font:700 13px/1.2 system-ui,sans-serif;color:#d9dfc5;white-space:nowrap}
+#panel .cost-row .dock-cost.is-short{color:#ffb58e}

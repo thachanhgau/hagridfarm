@@ -1,7 +1,7 @@
 // HUD and action icons: 16×16 pixel grids in the approved palette (docs/art-bible.md),
 // drawn as crisp SVG <img> at integer scales only (1× = 16 px, 2× = 32 px).
 // Crops and creatures keep their own game sprites (ui-utils icon()).
-import {el} from './ui-utils.mjs?v=24.9.30';
+import {el, num, visualItemIcon} from './ui-utils.mjs?v=24.9.31';
 
 const INK = Object.freeze({
  k: '#231F2E', p: '#4A3042', b: '#735044', w: '#A57554',
@@ -101,6 +101,7 @@ export const ICONS = Object.freeze({
   '....kkkkkkkk....',
   '................',
  ],
+ // Nước phép: the old fertiliser flask, filled with violet water.
  boost: [
   '................',
   '......kkkk......',
@@ -118,25 +119,7 @@ export const ICONS = Object.freeze({
   '.....kkkkkk.....',
   '................',
   '................',
- ],
- kit: [
-  '................',
-  '................',
-  '..kkkkkkkkkkkk..',
-  '..kuttttttttok..',
-  '..ktbbbbbbbbok..',
-  '..ktbwwwwwtbok..',
-  '..ktbwwwwtwbok..',
-  '..ktbwwwtwwbok..',
-  '..ktbwwtwwwbok..',
-  '..ktbwtwwwwbok..',
-  '..ktbtwwwwwbok..',
-  '..ktbbbbbbbbok..',
-  '..kooooooooook..',
-  '..kkkkkkkkkkkk..',
-  '................',
-  '................',
- ],
+ ].map((row) => row.replace(/[mnyY]/g, (ch) => ({m: 'i', n: 'v', y: 'q', Y: 'W'})[ch])),
  xp: [
   '................',
   '.......kk.......',
@@ -597,4 +580,15 @@ export function setAction(buttonEl, {icon, label = '', count = '', text = label,
  }
  buttonEl.setAttribute('aria-label', text);
  buttonEl.title = text;
+}
+
+/**
+ * Cost chips for crafting, building and decorations: each item as icon + have/need,
+ * then Galleons as a coin + price (`galleonShort` marks a wallet that cannot pay).
+ */
+export function costChips(items, costs, galleons = 0, galleonShort = false) {
+ const chips = costs.map(({id, have, need}) => el('span', {class: 'dock-cost' + (have < need ? ' is-short' : ''), 'aria-hidden': 'true'},
+  [visualItemIcon(items, id, {size: 22}), el('span', {text: `${num(have)}/${num(need)}`})]));
+ if (galleons) chips.push(el('span', {class: 'dock-cost is-galleons' + (galleonShort ? ' is-short' : ''), 'aria-hidden': 'true'}, [pixelIcon('coin', 1), el('span', {text: num(galleons)})]));
+ return chips;
 }

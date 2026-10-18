@@ -1,5 +1,5 @@
-import { setAction } from './pixel-icons.mjs?v=24.9.30';
-import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.30';
+import { setAction, costChips } from './pixel-icons.mjs?v=24.9.31';
+import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.31';
 import { DB } from './balance-data.mjs';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
@@ -63,11 +63,17 @@ export function previousExpansion(expansions = [], expansion) {
   return index > 0 ? sameKind[index - 1] : null;
 }
 
+/** Crops of a build or decoration cost as { id, need, have } records. */
+export function cropCosts(cropCost, state) {
+  return asEntries(cropCost).map(([id, need]) => ({ id, need, have: inventoryValue(state, id) }));
+}
+
 /**
  * Derive the construction button state without normalizing or mutating save
  * data. A ready queued job remains a claim operation; it is never auto-claimed.
+ * `galleons` is the wallet's spendable balance; local play passes Infinity.
  */
-export function buildChoice(expansion, state = {}, now = Date.now(), expansions = []) {
+export function buildChoice(expansion, state = {}, now = Date.now(), expansions = [], galleons = Infinity) {
   if (!expansion) {
     return {
       expansionId: null,
@@ -78,8 +84,9 @@ export function buildChoice(expansion, state = {}, now = Date.now(), expansions 
       previous: null,
       previousBuilt: false,
       sameKindBusy: false,
-      kitHave: 0,
-      kitNeed: 0,
+      costs: [],
+      galleonNeed: 0,
+      galleonShort: false,
       missing: false,
       canBuild: false,
     };
@@ -90,13 +97,14 @@ export function buildChoice(expansion, state = {}, now = Date.now(), expansions 
   const previous = previousExpansion(expansions, expansion);
   const previousBuilt = !previous || builtIds.includes(previous.id);
   const sameKindBusy = jobs.some(job => job.kind === expansion.kind);
-  const kitNeed = Number(expansion.kitCost ?? 0);
-  const kitHave = inventoryValue(state, 'kit');
+  const costs = cropCosts(expansion.cropCost, state);
+  const galleonNeed = Number(expansion.galleons ?? 0);
+  const galleonShort = galleons < galleonNeed;
   const unlocked = Number(state.level ?? 0) >= Number(expansion.level ?? 0);
   const built = builtIds.includes(expansion.id);
   const queued = Boolean(queuedJob);
   const ready = queued && Number(queuedJob.readyAt) <= Number(now);
-  const missing = kitHave < kitNeed;
+  const missing = galleonShort || costs.some(item => item.have < item.need);
   const canBuild = unlocked && !built && !queued && !sameKindBusy && previousBuilt && !missing;
   return {
     expansionId: expansion.id,
@@ -107,8 +115,9 @@ export function buildChoice(expansion, state = {}, now = Date.now(), expansions 
     previous,
     previousBuilt,
     sameKindBusy,
-    kitHave,
-    kitNeed,
+    costs,
+    galleonNeed,
+    galleonShort,
     missing,
     canBuild,
   };
@@ -130,8 +139,8 @@ function craftAction(recipe, state, batches) {
 }
 
 /** Derive a command for the exact selected expansion; return null when stale. */
-function buildAction(expansion, state, now, expansions) {
-  const choice = buildChoice(expansion, state, now, expansions);
+function buildAction(expansion, state, now, expansions, galleons) {
+  const choice = buildChoice(expansion, state, now, expansions, galleons);
   return choice.canBuild ? { choice, command: buildCommand(expansion.id) } : null;
 }
 
@@ -140,7 +149,7 @@ function readLabel(labels, id) {
 }
 
 function chipLabel(label) {
-  return label.replace(/^(Khẩu phần |Bộ vật liệu |Nuôi )/, '');
+  return label.replace(/^(Khẩu phần |Nuôi )/, '');
 }
 
 function recipeIconId(recipe, E, items) {
@@ -198,7 +207,7 @@ function syncClaim(dom, mode, visible, getReady) {
  * sections. Tray buttons are reconciled in place, so a refresh timer never
  * replaces the focused button or scroll container.
  */
-export function setupWorkTrays({ E, items, labels, getState, getReady, run, showPanel }) {
+export function setupWorkTrays({ E, items, labels, getState, getReady, run, showPanel, getGalleons = () => Infinity }) {
   const local = {
     craft: { selectedId: null, batches: 1, dom: null, buttons: new Map() },
     build: { selectedId: null, dom: null, buttons: new Map() },
@@ -319,16 +328,12 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     }
   }
 
-  function showCosts(dom, costs, output, reason, summary) {
+  function showCosts(dom, costs, output, reason, summary, galleons = 0, galleonShort = false) {
     // Only presentation changes; quantities and blockers come from the same derived choice.
     dom.detailText.title = summary;
     dom.detailText.setAttribute('role', 'group');
     dom.detailText.setAttribute('aria-label', summary);
-    const chips = costs.map(({id,have,need}) => {
-      const chip = el('span', {class: 'dock-cost' + (have < need ? ' is-short' : ''), 'aria-hidden':'true', title: `${readLabel(labels,id)} ${num(have)}/${num(need)}`});
-      chip.append(visualItemIcon(items,id,{size:22}),el('span',{text:`${num(have)}/${num(need)}`}));
-      return chip;
-    });
+    const chips = costChips(items, costs, galleons, galleonShort);
     if(output){
       const chip=el('span',{class:'dock-cost is-output','aria-hidden':'true',title:`+${num(output.count)} ${readLabel(labels,output.id)}`});
       chip.append(el('span',{text:'→'}),visualItemIcon(items,output.id,{size:22}),el('span',{text:`+${num(output.count)}`}));
@@ -401,7 +406,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       return;
     }
 
-    const choice = buildChoice(expansion, state, now, db.expansions);
+    const choice = buildChoice(expansion, state, now, db.expansions, getGalleons());
     const title = expansionTitle(expansion);
     dom.captionTitle.textContent = title;
     dom.captionMeta.textContent = `${hours(expansion.hours)} · ${expansionShortEffect(expansion)}`;
@@ -412,9 +417,10 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     else if (choice.queued && choice.ready) detailReason = 'Đã xong · chờ nhận';
     else if (choice.queued || choice.sameKindBusy) detailReason = 'Đang làm';
     else if (!choice.previousBuilt) detailReason = `Chưa xong công trình trước${previous}`;
-    else if (choice.missing) detailReason = 'Thiếu vật liệu';
-    const summary = `${title} · Bộ vật liệu ${num(choice.kitHave)}/${num(choice.kitNeed)} · ${detailReason}`;
-    showCosts(dom,[{id:'kit',have:choice.kitHave,need:choice.kitNeed}],null,choice.canBuild?'':detailReason,summary);
+    else if (choice.missing) detailReason = choice.galleonShort ? 'Thiếu Galleons' : 'Thiếu nông sản';
+    const price = [...choice.costs.map(c => `${readLabel(labels, c.id)} ${num(c.have)}/${num(c.need)}`), ...(choice.galleonNeed ? [`${num(choice.galleonNeed)} Galleons`] : [])].join(', ');
+    const summary = `${title} · ${price} · ${detailReason}`;
+    showCosts(dom,choice.costs,null,choice.canBuild?'':detailReason,summary,choice.galleonNeed,choice.galleonShort);
 
     const ready = getReady();
     let actionText = 'Xây';
@@ -457,7 +463,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     const selectedId = local.build.selectedId;
     const state = currentState();
     const expansion = db.expansions.find(item => item.id === selectedId);
-    const derived = buildAction(expansion, state, stateNow(E, state), db.expansions);
+    const derived = buildAction(expansion, state, stateNow(E, state), db.expansions, getGalleons());
     if (!derived) {
       refresh('build');
       return;

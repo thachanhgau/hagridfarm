@@ -49,9 +49,10 @@ export function applyGardenReward(inventory, supplies, reward) {
     if (!Number.isSafeInteger(amount) || amount < 0 || !(id in target)) throw Error(`Phần thưởng không hợp lệ: ${id}`);
     target[id] += amount;
   };
-  if (reward.kind === 'water' || reward.kind === 'boost') add(supplies, reward.kind, reward.amount);
-  if (reward.kind === 'kit') add(inventory, 'kit', reward.amount);
+  // Rewards are water or nước phép (`boost`) plus optional crops/rations; kits no longer exist.
+  if (reward.kind !== 'water' && reward.kind !== 'boost') throw Error(`Phần thưởng không hợp lệ: ${reward.kind}`);
+  add(supplies, reward.kind, reward.amount);
   if (reward.waterBonus) add(supplies, 'water', reward.waterBonus);
-  if (reward.itemId && reward.bonusQty && !(reward.kind === 'kit' && reward.itemId === 'kit')) add(inventory, reward.itemId, reward.bonusQty);
+  if (reward.itemId && reward.bonusQty) add(inventory, reward.itemId, reward.bonusQty);
   return {inventory, supplies};
 }

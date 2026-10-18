@@ -458,12 +458,12 @@ export const STORE_CATALOG=Object.freeze([
   {
     "id": "gentle_growth",
     "kind": "boost",
-    "label": "Phân bón tăng trưởng",
+    "label": "Nước phép",
     "level": 6,
     "price": 60,
     "quantity": 1,
     "dailyLimit": 2,
-    "description": "Giảm 10% thời gian gốc của một hàng đang lớn, tối đa một lần mỗi cây; không nhận XP khi dùng."
+    "description": "Tưới một hàng đang lớn: giảm 10% thời gian gốc, tối đa một lần mỗi cây; không nhận XP khi dùng."
   },
   {
     "id": "decor_pumpkin_lantern",

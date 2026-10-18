@@ -148,7 +148,7 @@ test('build choices mirror built, queued, ready, predecessor, and material guard
     level: 30,
     built: ['plot_4'],
     construction: [],
-    inventory: { kit: expansion.kitCost },
+    inventory: { ...expansion.cropCost },
   };
   const before = snapshot(base);
 
@@ -182,10 +182,19 @@ test('build choices mirror built, queued, ready, predecessor, and material guard
 
   const noMaterials = buildChoice(expansion, {
     ...base,
-    inventory: { kit: expansion.kitCost - 1 },
+    inventory: { ...expansion.cropCost, dittany: expansion.cropCost.dittany - 1 },
   }, NOW, E.DB.expansions);
   assert.equal(noMaterials.missing, true);
   assert.equal(noMaterials.canBuild, false);
+  assert.deepEqual(noMaterials.costs.find(c => c.id === 'dittany'), { id: 'dittany', need: 12, have: 11 });
+
+  // plot_6 also costs Galleons: a short wallet blocks it, local play (Infinity) never does.
+  const paid = E.DB.expansions.find(item => item.id === 'plot_6');
+  const paidState = { level: 36, built: ['plot_4', 'plot_5'], construction: [], inventory: { ...paid.cropCost } };
+  assert.equal(buildChoice(paid, paidState, NOW, E.DB.expansions).canBuild, true);
+  const poor = buildChoice(paid, paidState, NOW, E.DB.expansions, paid.galleons - 1);
+  assert.deepEqual([poor.galleonNeed, poor.galleonShort, poor.missing, poor.canBuild], [100, true, true, false]);
+  assert.equal(buildChoice(paid, paidState, NOW, E.DB.expansions, paid.galleons).canBuild, true);
 
   const locked = buildChoice(expansion, { ...base, level: expansion.level - 1 }, NOW, E.DB.expansions);
   assert.equal(locked.unlocked, false);
@@ -220,7 +229,7 @@ test('choice guards keep a stale selected item from becoming another action', ()
     level: 30,
     built: [],
     construction: [{ id: 'plot_4', kind: 'plot', readyAt: NOW + 1000 }],
-    inventory: { kit: target.kitCost },
+    inventory: { ...target.cropCost },
   };
   const blocked = buildChoice(target, queuedPredecessor, NOW, E.DB.expansions);
   assert.equal(blocked.canBuild, false);
@@ -229,32 +238,33 @@ test('choice guards keep a stale selected item from becoming another action', ()
     level: 30,
     built: ['plot_4'],
     construction: [],
-    inventory: { kit: target.kitCost },
+    inventory: { ...target.cropCost },
   }, NOW, E.DB.expansions);
   assert.equal(available.canBuild, true);
 });
 
 test('derived commands execute through the immutable progression engine', () => {
   const craftState = E.testProfile(17, NOW);
-  const recipe = E.DB.recipes.find(item => item.id === 'kits');
+  const recipe = E.DB.recipes.find(item => item.id === 'puff_feed');
   const craftChoiceResult = craftChoice(recipe, craftState, 3);
   assert.equal(craftChoiceResult.canCraft, true);
   const craft = craftCommand(recipe.id, craftChoiceResult.batches);
   const crafted = E.craft(craftState, craft.recipeId, craft.batches, NOW);
-  assert.equal(crafted.inventory.kit, craftState.inventory.kit + recipe.count * 3);
-  assert.equal(craftState.inventory.kit, 1000);
+  assert.equal(crafted.inventory.puff_feed, craftState.inventory.puff_feed + recipe.count * 3);
+  assert.equal(craftState.inventory.puff_feed, 1000);
 
   const expansion = E.DB.expansions.find(item => item.id === 'plot_4');
   const buildState = E.testProfile(12, NOW);
   buildState.built = buildState.built.filter(id => id !== expansion.id);
   buildState.plots = buildState.plots.slice(0, 3);
-  buildState.inventory.kit = expansion.kitCost;
+  Object.assign(buildState.inventory, expansion.cropCost);
   const buildChoiceResult = buildChoice(expansion, buildState, NOW, E.DB.expansions);
   assert.equal(buildChoiceResult.canBuild, true);
   const build = buildCommand(expansion.id);
   const building = E.build(buildState, build.expansionId, NOW);
   assert.equal(building.construction[0].id, expansion.id);
-  assert.equal(buildState.inventory.kit, expansion.kitCost);
+  assert.equal(buildState.inventory.pumpkin, expansion.cropCost.pumpkin);
+  assert.equal(building.inventory.pumpkin, 0);
 });
 
 test('work action waits for getReady and then dispatches the selected engine action', () => {
@@ -290,7 +300,7 @@ test('work action waits for getReady and then dispatches the selected engine act
     assert.equal(calls.length, 1);
     const after = calls[0].action(state);
     assert.equal(calls[0].command.action, 'craft');
-    assert.equal(after.inventory.kit, state.inventory.kit + 3);
+    assert.equal(after.inventory.puff_feed, state.inventory.puff_feed + 6);
 
     state.level = 1;
     action.click();
