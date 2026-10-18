@@ -1,5 +1,6 @@
 import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.28';
-import {navIcon,V24_ART} from './v24-visuals.mjs?v=24.9.28';
+import {V24_ART} from './v24-visuals.mjs?v=24.9.28';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.28';
 
 export function setupGardenControls({items,onSettings,getWeather}){
  const labels={sowTool:'Gieo hạt',harvestTool:'Gặt tất cả cây chín',creatureTool:'Nuôi sinh vật',craftTool:'Chế biến',buildTool:'Xây dựng'};
@@ -7,11 +8,11 @@ export function setupGardenControls({items,onSettings,getWeather}){
   const control=$(id);control.title=label;control.setAttribute('aria-label',label);
   control.querySelector('.tool-glyph')?.setAttribute('aria-hidden','true');
  }
- for(const [id,species,stage] of [['sowTool','pumpkin',1],['creatureTool','puffskein',3]]){
+ for(const [id,species,stage] of [['creatureTool','puffskein',3]]){
   $(id).querySelector('.tool-glyph').replaceChildren(icon(items,species,stage,28));
  }
  const settings=button('',onSettings,{id:'settingsButton','aria-label':'Cài đặt',title:'Cài đặt',class:'camera-settings'});
- settings.append(navIcon('settings'));
+ settings.append(pixelIcon('settings'));
  document.querySelector('.camera-tools').append(settings);
 
  const portraits=['plant','creature','craft','build'].map(kind=>{

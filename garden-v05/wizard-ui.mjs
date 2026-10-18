@@ -1,4 +1,5 @@
 import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.28';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=24.9.28';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -22,17 +23,6 @@ export function cropContext(state, selection, E, now) {
  return {occupied,ready,first,remaining:remaining.length?Math.min(...remaining):0};
 }
 
-const paths={
- seed:'M6 19V9h12v10H6z M8 9V5h8v4 M9 14h6 M12 11v6',
- sickle:'M5 20l7-9 M11 4c11-4 13 7 5 10l-4-3c6-1 6-6-1-7',
- creature:'M5 10l1-6 5 4h3l4-4 1 6v7l-5 4h-4l-5-4z M9 13h1 M15 13h1 M11 17h3',
- cauldron:'M5 10h14l-2 9H7z M8 19l-1 2 M16 19l1 2 M8 7V4 M12 7V2 M16 7V4 M3 10h18',
- hut:'M3 11l9-8 9 8 M5 10v11h14V10 M10 21v-7h4v7',
- owl:'M5 7V3l5 3h4l5-3v12l-4 6H9l-4-6z M7 10h3v3H7z M14 10h3v3h-3z M11 15h2l-1 2z',
- bag:'M5 8h14v13H5z M9 8V4h6v4 M5 13h14 M10 12v3h4v-3',
- coin:'M8 3h8l5 5v8l-5 5H8l-5-5V8z M15 8h-5v8h5v-4h-3'
-};
-function glyph(name){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.setAttribute('class','wizard-icon');const path=document.createElementNS(svg.namespaceURI,'path');path.setAttribute('d',paths[name]);path.setAttribute('fill','none');path.setAttribute('stroke','currentColor');path.setAttribute('stroke-width','1.7');path.setAttribute('stroke-linejoin','miter');svg.append(path);return svg;}
 
 const COMPACT_OWL_TITLES=Object.freeze({
  quest_hagrid_harvest:'Gieo hoặc gặt',
@@ -54,10 +44,6 @@ function compactOwlReward(reward={}){
 
 export function setupWizardUI({E,items,getState,getSelection,getRenderer,getReady,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward,onClaimDailyQuest,onClaimGrandChest}) {
  let lastIcon='',letterRoute=null,letterOpenedOnce=false;
- for(const [id,name] of Object.entries({sowTool:'seed',harvestTool:'sickle',creatureTool:'creature',craftTool:'cauldron',buildTool:'hut'}))$(id).querySelector('.tool-glyph').replaceChildren(glyph(name));
- $('owlMailButton').querySelector('.owl-mail-icon').append(glyph('owl'));
- $('inventoryButton').querySelector('span').replaceChildren(glyph('bag'));
- $('shopButton').querySelector('span').replaceChildren(glyph('coin'));
  const letter=$('owlLetter');
 
  function currentQuestState(){
@@ -188,8 +174,9 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
   const species=[...new Set(context.occupied.map(i=>state.plots[selection.selectedPlot].slots[i].species))];
   $('contextEyebrow').textContent='THỬA '+(selection.selectedPlot+1);
   $('contextTitle').textContent=species.map(id=>E.CROP[id].label).join(' · ');
-  $('contextDetail').textContent=context.ready.length?context.ready.length+' cây chín': 'Đang lớn · còn '+duration(context.remaining);
-  $('contextAction').textContent=context.ready.length?'Gặt ×'+context.ready.length:'Chăm cây';
+  const detail=context.ready.length?context.ready.length+' cây chín':'Đang lớn · còn '+duration(context.remaining);
+  $('contextDetail').replaceChildren(el('span',{class:'stat',title:detail,'aria-label':detail},[pixelIcon(context.ready.length?'harvest':'clock',1),context.ready.length?String(context.ready.length):duration(context.remaining)]));
+  setAction($('contextAction'),context.ready.length?{icon:'harvest',label:'Gặt',count:'×'+context.ready.length,text:'Gặt ×'+context.ready.length+' cây chín'}:{icon:'care',label:'Chăm',text:'Chăm cây'});
   $('contextAction').disabled=!getReady();
   if(lastIcon!==context.first.species){lastIcon=context.first.species;$('contextIcon').replaceChildren(icon(items,lastIcon,3,52));}
  }

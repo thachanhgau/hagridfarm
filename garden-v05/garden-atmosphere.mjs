@@ -387,6 +387,7 @@ export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false, sc
   ctx.fillRect?.(Math.round(x - 2 * k), by + boxH, Math.round(4 * k), Math.round(4 * k));
 
   ctx.fillStyle = emphasized ? '#e8f0ed' : '#d6d8bf';
-  ctx.fillText?.(copy, Math.round(x), Math.round(by + boxH / 2));
+  // Centre the text in the box, not on Hagrid: a 'right' bubble starts at his head.
+  ctx.fillText?.(copy, Math.round(bx + boxW / 2), Math.round(by + boxH / 2));
   ctx.restore?.();
 }

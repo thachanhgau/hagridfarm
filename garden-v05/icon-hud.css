@@ -1,0 +1,125 @@
+/* V24.10 icon-first HUD: pixel icons (pixel-icons.mjs) lead, words are short labels or tooltips.
+   Loaded last; the #gameShell prefix outranks the older layers without !important. Colours: palette.mjs. */
+.px-icon{display:block;flex:none;image-rendering:pixelated;pointer-events:none;-webkit-user-drag:none}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* ---- Top bar: badge + supplies on the left, round buttons on the right, next goal below. ---- */
+#gameShell .hud{display:block;position:absolute;top:max(8px,env(safe-area-inset-top));left:max(8px,env(safe-area-inset-left));right:max(8px,env(safe-area-inset-right));height:44px;padding:0;gap:0;pointer-events:none;z-index:4}
+#gameShell .hud>*{pointer-events:auto}
+#gameShell .hud button{min-width:0;min-height:0;margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:#F5D69A;font:700 11px/1.1 system-ui,sans-serif;clip-path:none;filter:none}
+#gameShell .hud button:focus-visible,#gameShell .camera-tools button:focus-visible{outline:2px solid #B7DEE0;outline-offset:2px}
+#gameShell .hud .hud-btn.hud-avatar,#gameShell .hud .hud-fullscreen{display:none}
+
+/* Round frame shared by HUD and camera buttons: the 32 px icon sits in a 44 px brass ring. */
+#gameShell .hud-btn>.px-icon,#gameShell .camera-tools button:not(.tutorial-skip)>.px-icon{box-sizing:content-box;padding:4px;border:2px solid #B49A66;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3F6A45,#24483F 62%,#142620);box-shadow:inset 0 -3px #142620,inset 0 2px #71934B,0 2px 0 #142620,0 3px 8px #142620AA;transition:transform .12s,border-color .12s}
+#gameShell .hud-btn:hover>.px-icon,#gameShell .camera-tools button:not(.tutorial-skip):hover>.px-icon{border-color:#F5D69A}
+#gameShell .hud-btn:active>.px-icon,#gameShell .camera-tools button:not(.tutorial-skip):active>.px-icon{transform:translateY(1px)}
+#gameShell .hud .hud-btn{position:relative;display:flex;flex-direction:column;align-items:center;width:44px;height:44px}
+#gameShell .hud-label{display:none}
+#gameShell #eventButton:before,#gameShell #sceneryButton:before{content:none}
+
+/* Badges: a red dot for news, a gold count for numbers. */
+#gameShell .hud-dot{display:none;position:absolute;top:0;right:0;width:10px;height:10px;background:#C75B4B;border:2px solid #F5D69A;box-shadow:0 1px 0 #231F2E}
+#gameShell #eventButton.has-claimable .hud-dot,#gameShell #owlMailButton:not(.mail-read) .hud-dot{display:block}
+#gameShell .hud-count{position:absolute;right:-4px;bottom:-2px;min-width:18px;height:16px;padding:0 3px;border:1px solid #231F2E;background:#F5D69A;color:#231F2E;font:800 10px/14px system-ui,sans-serif;text-align:center;box-shadow:0 1px 0 #231F2E}
+#gameShell .hud-count[hidden]{display:none}
+
+/* Level badge = Hồ sơ: the ring fills with XP. */
+#gameShell .hud .hud-level{position:absolute;left:0;top:0;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:conic-gradient(#FFC36B calc(var(--xp,0) * 1%),#3F6A45 0);box-shadow:0 0 0 2px #231F2E,0 3px 8px #142620AA}
+#gameShell .level-ring{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3F6A45,#24483F 70%);border:2px solid #B49A66}
+#gameShell .level-ring b{color:#FFC36B;font:900 15px/1 ui-monospace,Menlo,Consolas,monospace;text-shadow:0 2px #231F2E}
+
+/* Supplies: icon + number, one pill; tapping opens the store. */
+#gameShell .hud .hud-res{position:absolute;left:52px;top:0;height:44px;max-width:calc(100% - 52px - 304px);display:flex;align-items:center;gap:8px;padding:0 10px 0 6px;border:2px solid #B49A66;border-radius:22px;background:#142620E6;box-shadow:inset 0 2px #3F6A45,0 3px 8px #142620AA;overflow:hidden}
+#gameShell .res{display:inline-flex;align-items:center;gap:3px;color:#F5D69A;font:800 13px/1 ui-monospace,Menlo,Consolas,monospace;white-space:nowrap}
+#gameShell .res[hidden]{display:none}
+
+/* Next goal: [missing ×n] → [what it opens] (+ label on wide screens). */
+#gameShell .hud .next-goal{position:absolute;left:0;top:52px;height:44px;max-width:calc(100% - 64px);display:flex;align-items:center;gap:4px;padding:2px 10px 2px 4px;border:2px solid #B49A66;border-radius:22px;background:#142620E6;box-shadow:inset 0 2px #3F6A45,0 3px 8px #142620AA}
+#gameShell .hud .next-goal[hidden]{display:none}
+#gameShell .next-goal>.px-icon,#gameShell .next-goal>.sprite-icon{margin:0}
+#gameShell .goal-count{position:relative;margin:0 2px 0 -12px;align-self:flex-end;min-width:18px;height:16px;padding:0 3px;border:1px solid #231F2E;background:#F5D69A;color:#231F2E;font:800 10px/14px system-ui,sans-serif;text-align:center}
+#gameShell .goal-label{min-width:0;padding-left:2px;color:#F5D69A;font:700 12px/1.15 system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gameShell .next-goal.goal-ready{border-color:#FFC36B;box-shadow:inset 0 2px #71934B,0 0 10px #FFC36B66}
+
+#gameShell .hud .hud-actions{position:absolute;right:0;top:0;display:flex;flex-wrap:nowrap;justify-content:flex-end;gap:4px;margin:0;pointer-events:none}
+#gameShell .hud .hud-actions>*{pointer-events:auto}
+
+/* ---- Camera column: Thửa, thu/phóng, toàn vườn, cài đặt. ---- */
+#gameShell .camera-tools{position:absolute;left:auto;right:max(8px,env(safe-area-inset-right));top:calc(max(8px,env(safe-area-inset-top)) + 54px);display:flex;flex-direction:column;align-items:flex-end;gap:4px;z-index:3}
+#gameShell .camera-tools button:not(.tutorial-skip){position:relative;display:grid;place-items:center;width:44px;min-width:44px;height:44px;min-height:44px;margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+#gameShell .camera-tools .camera-settings{margin-top:0}
+#gameShell #plotsButton .hud-count{right:-4px;bottom:-2px}
+
+/* Phones: Kho · Thư cú · Menu on top; Cửa hàng · Lễ hội · Cảnh · gập on the second row; goal chip left. */
+@media (max-width:599px){
+ #gameShell .hud .hud-actions{display:block;width:188px;height:96px}
+ #gameShell .hud .hud-actions>.hud-btn{position:absolute;top:0}
+ #gameShell #menuButton{right:0}#gameShell #owlMailButton{right:48px}#gameShell #inventoryButton{right:96px}
+ #gameShell .hud #hudToggle,#gameShell .hud #sceneryButton,#gameShell .hud #eventButton,#gameShell .hud #shopButton{top:52px}
+ #gameShell #hudToggle{right:0}#gameShell #sceneryButton{right:48px}#gameShell #eventButton{right:96px}#gameShell #shopButton{right:144px}
+ #gameShell .hud .hud-res{max-width:calc(100% - 52px - 148px)}
+ #gameShell .hud .next-goal{max-width:calc(100% - 196px)}
+ .hud-compact #gameShell .hud .next-goal{max-width:calc(100% - 56px)}
+ #gameShell .goal-label{display:none}
+ #gameShell .camera-tools{top:calc(max(8px,env(safe-area-inset-top)) + 104px)}
+}
+@media (max-width:359px){#gameShell .hud .hud-res{gap:5px;padding:0 7px 0 4px}#gameShell .res{font-size:12px}}
+
+/* Wide screens: short labels under the round buttons. */
+@media (min-width:900px) and (min-height:500px){
+ #gameShell .hud{height:60px}
+ #gameShell .hud .hud-btn{width:52px;height:60px}
+ #gameShell .hud-label{display:block;margin-top:2px;color:#F5D69A;font:700 10px/12px system-ui,sans-serif;text-shadow:0 1px 2px #142620,0 0 3px #142620;white-space:nowrap}
+ #gameShell .hud-dot{right:4px}#gameShell .hud-count{right:2px;bottom:14px}
+ #gameShell .hud .next-goal{top:58px}
+ #gameShell .camera-tools{top:calc(max(8px,env(safe-area-inset-top)) + 70px)}
+}
+@media (max-height:450px) and (orientation:landscape){
+ #gameShell .camera-tools{gap:2px;top:calc(max(6px,env(safe-area-inset-top)) + 50px)}
+ #gameShell .hud .next-goal{top:50px}
+}
+
+/* ---- Dock: every tool readable, only truly unavailable ones dim. ---- */
+#playDock .tool>span:not(.tool-glyph),.play-dock .tool>span:not(.tool-glyph){opacity:1;color:#D6D8BF}
+#playDock .tool[aria-pressed=true]>span:not(.tool-glyph){color:#FFC36B}
+#playDock .tool .tool-glyph{display:grid;place-items:center}
+#playDock .tool:not([aria-pressed=true]) .tool-glyph{transform:translateY(-3px)}
+#playDock .tool:disabled{opacity:1;filter:none}
+#playDock .tool:disabled .tool-glyph,#playDock .tool:disabled:before{filter:grayscale(1) brightness(.7);opacity:.55}
+#playDock .tool:disabled>span:not(.tool-glyph){color:#687486}
+#playDock .dock-toggle{display:grid;place-items:center}
+#playDock .dock-toggle[aria-expanded=false] .px-icon{transform:scaleY(-1)}
+
+/* Primary actions: icon + verb, with the count as a badge (Gieo ×3). */
+#playDock .primary{display:flex;align-items:center;justify-content:center;gap:4px;overflow:visible}
+#playDock #plantButton{overflow:visible}
+#playDock .primary>.px-icon,#playDock .primary>.sprite-icon{margin:-4px 0}
+#playDock .action-label{min-width:0;font:800 12px/1.1 system-ui,sans-serif;white-space:normal;text-align:left}
+#playDock .action-count{position:absolute;top:-9px;right:-6px;z-index:1;min-width:24px;height:20px;padding:0 4px;border:2px solid #231F2E;background:#C75B4B;color:#E8F0ED;font:900 12px/16px ui-monospace,Menlo,Consolas,monospace;text-align:center;box-shadow:0 2px 0 #231F2E}
+#playDock .primary:disabled .action-count{display:none}
+#playDock #creatureDock .creature-actions .primary{gap:3px}
+
+/* Facts as icon + number: growth time, XP, portions. */
+#playDock .stat{display:inline-flex;align-items:center;gap:3px;margin-right:8px;color:#D6D8BF;font:700 12px/16px ui-monospace,Menlo,Consolas,monospace;white-space:nowrap}
+#playDock #seedTime,#playDock #creatureTime,#playDock #contextDetail{display:flex;flex-wrap:wrap;align-items:center}
+#playDock #seedOptionsButton,#playDock #creatureOptionsButton,#playDock #contextOptions{display:grid;place-items:center}
+
+/* Seed chips: the crop sprite with its growth time in the corner. */
+#playDock .item-tray button{position:relative}
+#playDock .chip-time{position:absolute;right:1px;bottom:1px;padding-right:2px;display:flex;align-items:center;justify-content:center;gap:0;height:16px;background:#142620D9;color:#F5D69A;font:800 9px/16px ui-monospace,Menlo,Consolas,monospace;pointer-events:none}
+#playDock .item-tray .chip-time .px-icon{width:16px;height:16px;max-width:none;margin:0 -1px;position:static}
+#playDock .item-tray .seed-count:not([hidden])~.chip-time{display:none}
+
+@media (prefers-reduced-motion:reduce){#gameShell .hud-btn>.px-icon,#gameShell .camera-tools button>.px-icon{transition:none}}
+/* Short landscape tutorial: the skip chip sits beside the top of the camera column, clear of the open tray. */
+.tutorial-compact #gameShell .camera-tools .tutorial-skip{top:0;bottom:auto}
+
+/* Compact mode (#hudToggle): rarely used icons fold away, Kho · Thư cú · Menu stay. */
+.hud-compact #gameShell #shopButton,.hud-compact #gameShell #eventButton,.hud-compact #gameShell #sceneryButton,.hud-compact #gameShell .camera-tools button:not(.tutorial-skip){display:none}
+#gameShell #hudToggle[aria-expanded=true] [data-icon=more],#gameShell #hudToggle[aria-expanded=false] [data-icon=chevron]{display:none}
+#gameShell #hudToggle [data-icon=chevron]{transform:scaleY(-1)}
+#gameShell #hudToggle[aria-expanded=false]>.px-icon{border-color:#FFC36B}
+.hud-compact #gameShell #hudToggle.has-news .hud-dot{display:block}
+@media (min-width:600px){#gameShell #hudToggle{order:-1}}
+#gameShell #hudToggle .hud-label{visibility:hidden}
