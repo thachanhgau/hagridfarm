@@ -1,14 +1,16 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.34";
-import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.34";
-import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.34";
-import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.34";
+import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.35";
+import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.35";
+import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.35";
+import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.35";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs";
-import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.34";
+import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.35";
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
 // garden-daily-core.js, garden-festival-core.js, garden-keeper-core.js): same commands, error reasons and response shapes.
 // Day keys are Asia/Ho_Chi_Minh; a requestId replays its first receipt; builds check crops, then Galleons.
+// scenario=new is a brand-new account (revision 0, starter supplies, tutorial not used): see HANDOFF-V24.9.md.
+export const STARTER_SUPPLIES=Object.freeze({seeds:Object.freeze({pumpkin:3}),water:3,boost:0});
 const FREE_CAPS=Object.freeze({rotate:3,pet:3,postcard:1,shareFloo:1,startTour:1,care:3,moveBuilding:1});
 const FREE_TAPS=new Set(["care","pet","rotate","postcard","shareFloo","startTour"]);
 const DAILY=new Set(["claimQuest","claimChest","claimFestival","freeAction","claimBondGift","claimAchievement"]);
@@ -22,7 +24,8 @@ const stable=v=>JSON.stringify(v,Object.keys(v).sort());
 export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,now=()=>Date.now()}={}){
  const dayOffset=day?Date.parse(day+"T12:00:00+07:00")-now():0,dayKey=()=>vnDayKey(now()+dayOffset);
  const past=scenario.endsWith("ready"),origin=past?now()-26*3600000:now();
- let state=E.testProfile(level,origin);
+ const fresh=scenario==="new";
+ let state=fresh?E.newGame(origin):E.testProfile(level,origin);
  if(["owned","feeding","animal-ready"].includes(scenario)){
   state=E.adopt(state,"puffskein",origin);
   if(scenario!=="owned")state=E.feed(state,"puffskein",origin);
@@ -51,18 +54,20 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   state.creatureFacings={puffskein:"default",bowtruckle:"right",niffler:"default",kneazle:"right",hippogriff:"default",unicorn:"right"};
   if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{})};
  }
- const catalog=unlockedCatalog(level).map(item=>({...item,dailyRemaining:item.dailyLimit}));
+ const catalog=unlockedCatalog(state.level).map(item=>({...item,dailyRemaining:item.dailyLimit}));
  const storeDecors=catalog.filter(i=>i.kind==="decoration").map(i=>i.id),full=scenario==="empty"&&level>=30;
  const spendable=galleons??2500,bankBalance=Math.min(1000,spendable);
  const garden={
   progression:state,
-  supplies:{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?36:0])),water:213,boost:2},
-  decorations:{owned:full?storeDecors:["decor_pumpkin_lantern"],placements:full?[...storeDecors,null,null,null,null,null,null].slice(0,6):["decor_pumpkin_lantern",null,null,null,null,null],
+  supplies:fresh?{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,STARTER_SUPPLIES.seeds[c.id]||0])),water:STARTER_SUPPLIES.water,boost:STARTER_SUPPLIES.boost}
+   :{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?36:0])),water:213,boost:2},
+  decorations:fresh?{owned:[],placements:[null,null,null,null,null,null],rotations:{}}:{owned:full?storeDecors:["decor_pumpkin_lantern"],placements:full?[...storeDecors,null,null,null,null,null,null].slice(0,6):["decor_pumpkin_lantern",null,null,null,null,null],
    rotations:full?{decor_pumpkin_lantern:"default",decor_broom_rack:"right",decor_cauldron:"default",decor_mandrake_planter:"right",decor_floating_candles:"default",decor_vine_arch:"right"}:{decor_pumpkin_lantern:"default"}},
   boostedCropIds:[],
   festival:{joinDay:dayKey(),pointsBySeason:{},claimedMilestones:[]},
   bonding:{bySpecies:{},claimedGifts:[]},
   achievements:{claimedIds:[]},
+  tutorial:{grownAt:null},
  };
  const wallet={spendable,balance:spendable-bankBalance,bankBalance};
  const dailies=new Map(),ops=new Map(),ledger=[];
@@ -199,6 +204,19 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   for(const s of entries){s.plantedAt-=Math.floor((E.CROP[s.species]?.growMs||s.growMs)*0.1);next.boostedCropIds.push(s.id);}
   next.supplies.boost-=1;next.progression.revision+=1;
  }
+ // Hagrid's tutorial "nước phép": once per account, level 1, first plot only; the named growing
+ // crops become ripe at server time. No supply, festival point or quest progress.
+ function tutorialGrow(c,next){
+  if(next.tutorial.grownAt!==null)fail("already-claimed","Nước phép hướng dẫn đã dùng rồi.");
+  if(next.progression.level!==1)fail("tutorial-closed","Nước phép hướng dẫn chỉ dành cho vườn mới.");
+  const cells=Array.isArray(c.cells)?c.cells:[];
+  if(c.plotIndex!==0||!cells.length||cells.length>9||new Set(cells).size!==cells.length||cells.some(i=>!Number.isInteger(i)||i<0||i>8))fail("invalid-action-input","Nước phép hướng dẫn chỉ tưới thửa đầu tiên.");
+  const at=E.nowFor(next.progression,now()),slots=next.progression.plots[0].slots;
+  if(cells.some(i=>slots[i]?.type!=="crop"))fail("invalid-boost-target","Mỗi ô phải có cây đang lớn.");
+  if(cells.some(i=>E.growth(slots[i],at).mature))fail("mature-crop","Cây đã chín thì không cần nước phép.");
+  for(const i of cells)slots[i].plantedAt=at-(E.CROP[slots[i].species]?.growMs||slots[i].growMs);
+  next.tutorial.grownAt=now();next.progression.revision+=1;
+ }
  // garden-action-core applyDecorationPlacement: `facing` is stored in decorations.rotations; the same slot
  // with a new facing is a turn (counted as rotate), the same slot and facing is action-noop.
  function place(c,next){
@@ -271,6 +289,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Bonding has its own cap (3 pets per creature a day), apart from the free-tap cap.
    if(c.kind==="pet"&&c.species)extra.bonding=[addBond(next,before,c.species,"pet",d.dayKey)];
   }else if(c.action==="boost")boost(c,next);
+  else if(c.action==="tutorialGrow")tutorialGrow(c,next);
   else if(c.action==="placeDecoration")place(c,next);
   else{
    next.progression=model(c,before,Date.now());
@@ -284,7 +303,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Moving a plot/pen and placing a decoration are free taps (placing counts as rotate); the rest is farm work.
    const free={moveBuilding:"moveBuilding",placeDecoration:"rotate"}[c.action];
    if(free){extra.freeAction=countFree(d,free);extra.festivalPoints=addPoints(d,next.festival,free,{counted:extra.freeAction.counted});}
-   else extra.festivalPoints=addPoints(d,next.festival,c.action);
+   else if(c.action!=="tutorialGrow")extra.festivalPoints=addPoints(d,next.festival,c.action);
   }
   // Galleons last, so a short wallet leaves garden, daily record and wallet untouched.
   const cost=c.action==="build"?E.DB.expansions.find(e=>e.id===c.expansionId)?.galleons||0:c.action==="buyDecoration"?E.DB.decorations.find(e=>e.level===c.level)?.galleons||0:0;

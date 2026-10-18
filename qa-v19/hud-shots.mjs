@@ -1,4 +1,4 @@
-// Main screen after skipping the tutorial, on five screens, in WebKit.
+// Main screen after Hagrid's letter and skipping the tutorial, on five screens, in WebKit.
 // Usage: node qa-v19/hud-shots.mjs <baseUrl> <outDir> — also prints overlap/off-screen problems.
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -43,6 +43,14 @@ for (const [label, device] of SCREENS) {
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e.message || e)));
   await page.goto(`${base}/garden-v05/index.html?playtest=1&shots=${Date.now()}`);
+  // Hagrid's welcome letter first: shot sealed and open (not audited), then Bắt đầu and skip the tutorial.
+  await page.waitForSelector('.hagrid-envelope', {timeout: 8000}).then(async () => {
+    await page.screenshot({path: path.join(out, `${label}-thu-niem.png`)});
+    await page.click('.hagrid-envelope');
+    await page.waitForTimeout(450);
+    await page.screenshot({path: path.join(out, `${label}-thu.png`)});
+    await page.click('.hagrid-letter-start');
+  }).catch((e) => errors.push('letter: ' + e.message.split('\n')[0]));
   await page.waitForSelector('.tutorial-skip:not([hidden])', {timeout: 8000}).then(() => page.click('.tutorial-skip')).catch(() => {});
   await page.waitForTimeout(2200);
   if (await page.isVisible('#owlLetter[open]')) await page.click('#closeLetter').catch(() => {});

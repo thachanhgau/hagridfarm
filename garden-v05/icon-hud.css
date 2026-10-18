@@ -132,3 +132,37 @@
 .v24-free-cap.is-full{opacity:.5}
 .toast .toast-icon{display:inline-block;vertical-align:-4px;margin-right:6px;width:20px;height:20px;image-rendering:pixelated}
 .toast[data-reason]{background:#F0D1A6;border:1px solid #734f36}
+
+/* Hagrid's welcome letter (hagrid-letter-ui.mjs): a sealed pixel envelope, then parchment.
+   Fits 320×568 and 750×342 without scrolling; if a tiny screen still overflows, a thin gold bar (none on phones). */
+.hagrid-letter{width:min(400px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 16px);margin:auto;padding:0;border:0;background:none;color:#493524;overflow:visible}
+.hagrid-letter::backdrop{background:#0b221cB3;backdrop-filter:blur(3px)}
+.hagrid-letter[data-stage=open]{width:min(420px,calc(100vw - 24px))}
+.hagrid-envelope{display:grid;justify-items:center;gap:10px;width:100%;min-height:44px;margin:0;padding:12px 0;border:0;background:none;box-shadow:none;cursor:pointer}
+.hagrid-envelope>img{width:128px;height:88px;image-rendering:pixelated;filter:drop-shadow(0 6px 0 #142620AA);animation:hagrid-bob 1.6s steps(4) infinite alternate}
+.hagrid-envelope:focus-visible{outline:none}.hagrid-envelope:focus-visible .hagrid-envelope-hint{outline:2px solid #B7DEE0;outline-offset:2px}
+.hagrid-envelope-hint{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px 0 8px;border:2px solid #B49A66;border-radius:16px;background:#142620E6;color:#F5D69A;font:800 13px/1 system-ui,sans-serif}
+.hagrid-envelope[hidden],.hagrid-parchment[hidden]{display:none}
+.hagrid-parchment{max-height:calc(100dvh - 16px);overflow:auto;overscroll-behavior:contain;padding:14px 16px 12px;border:3px solid #735044;background:repeating-linear-gradient(0deg,#0000 0 3px,#A5755412 3px 4px),#F5E4B8;box-shadow:inset 0 0 0 2px #E7AE73,inset 0 0 0 4px #F5E4B8,inset 0 0 0 5px #A5755466;clip-path:polygon(0 6px,6px 6px,6px 0,calc(100% - 6px) 0,calc(100% - 6px) 6px,100% 6px,100% calc(100% - 6px),calc(100% - 6px) calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,6px calc(100% - 6px),0 calc(100% - 6px));animation:hagrid-unfold .32s steps(4) both;scrollbar-width:thin;scrollbar-color:#B49A66 transparent}
+.hagrid-parchment::-webkit-scrollbar{width:4px}.hagrid-parchment::-webkit-scrollbar-thumb{background:#B49A66;border-radius:0}.hagrid-parchment::-webkit-scrollbar-track{background:transparent}
+.hagrid-parchment p{margin:0 0 7px;font:14px/1.45 Georgia,'Times New Roman',serif}
+.hagrid-parchment .hagrid-letter-greeting{font-size:16px;font-weight:700;color:#4A3042}
+.hagrid-parchment .hagrid-letter-ps{font-size:13px;font-style:italic;color:#735044}
+.hagrid-letter-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:4px}
+.hagrid-letter-signature{font:italic 700 24px/1 Georgia,serif;color:#4A3042;transform:rotate(-4deg)}
+.hagrid-letter .hagrid-letter-start{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 1 auto;min-width:148px;min-height:48px;margin:0;padding:0 18px;border:2px solid #231F2E;border-radius:2px;background:#3F6A45;color:#F5D69A;box-shadow:inset 0 2px #71934B,inset 0 -3px #24483F,0 3px #231F2E;font:800 16px/1 system-ui,sans-serif}
+.hagrid-letter .hagrid-letter-start .px-icon{width:24px;height:24px}
+.hagrid-letter .hagrid-letter-start:active{transform:translateY(2px);box-shadow:inset 0 2px #71934B,inset 0 -3px #24483F,0 1px #231F2E}
+.hagrid-letter .hagrid-letter-start:focus-visible{outline:2px solid #B7DEE0;outline-offset:2px}
+@keyframes hagrid-bob{to{transform:translateY(-6px)}}
+@keyframes hagrid-unfold{from{opacity:0;transform:translateY(18px) scaleY(.7)}to{opacity:1;transform:none}}
+@media (max-height:450px) and (orientation:landscape){.hagrid-letter[data-stage=open]{width:min(680px,calc(100vw - 24px))}.hagrid-parchment{padding:10px 14px 8px}.hagrid-parchment p{margin-bottom:4px;font-size:13px;line-height:1.38}.hagrid-parchment .hagrid-letter-greeting{font-size:15px}.hagrid-letter-signature{font-size:21px}.hagrid-letter .hagrid-letter-start{min-height:44px}}
+@media (max-width:360px){.hagrid-parchment{padding:12px 13px 10px}.hagrid-parchment p{font-size:13.5px;line-height:1.4}}
+@media (hover:none),(max-width:480px){.hagrid-parchment{scrollbar-width:none}.hagrid-parchment::-webkit-scrollbar{display:none}}
+@media (prefers-reduced-motion:reduce){.hagrid-letter *{animation:none!important}}
+.motion-paused .hagrid-letter *{animation:none!important}
+
+/* Hồ sơ keepsakes: re-read Hagrid's letter, replay the guidance (no rewards). */
+.profile-keepsakes{display:grid;grid-template-columns:1fr 1fr;gap:6px;flex:1 1 100%}
+.profile-keepsakes button{display:flex;align-items:center;gap:6px;min-width:0;min-height:44px;padding:4px 8px 4px 4px;text-align:left;font:700 12px/1.2 system-ui,sans-serif;white-space:normal}
+.profile-keepsakes .px-icon{width:32px;height:32px}

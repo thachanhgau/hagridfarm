@@ -4,12 +4,23 @@
   "results": [
     {
       "screen": "iphone-se-320",
+      "connected": false,
       "viewport": {
         "width": 320,
         "height": 568
       },
       "ok": true,
       "checks": [
+        {
+          "label": "letter: sealed envelope",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "letter: reads without scrolling",
+          "ok": true,
+          "value": "ok"
+        },
         {
           "label": "plant: Hagrid line visible",
           "ok": true,
@@ -64,12 +75,23 @@
     },
     {
       "screen": "iphone-13-390",
+      "connected": false,
       "viewport": {
         "width": 390,
         "height": 664
       },
       "ok": true,
       "checks": [
+        {
+          "label": "letter: sealed envelope",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "letter: reads without scrolling",
+          "ok": true,
+          "value": "ok"
+        },
         {
           "label": "plant: Hagrid line visible",
           "ok": true,
@@ -124,12 +146,23 @@
     },
     {
       "screen": "iphone-13-landscape",
+      "connected": false,
       "viewport": {
         "width": 750,
         "height": 342
       },
       "ok": true,
       "checks": [
+        {
+          "label": "letter: sealed envelope",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "letter: reads without scrolling",
+          "ok": true,
+          "value": "ok"
+        },
         {
           "label": "plant: Hagrid line visible",
           "ok": true,
@@ -184,12 +217,23 @@
     },
     {
       "screen": "ipad-mini-768",
+      "connected": false,
       "viewport": {
         "width": 768,
         "height": 1024
       },
       "ok": true,
       "checks": [
+        {
+          "label": "letter: sealed envelope",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "letter: reads without scrolling",
+          "ok": true,
+          "value": "ok"
+        },
         {
           "label": "plant: Hagrid line visible",
           "ok": true,
@@ -244,12 +288,23 @@
     },
     {
       "screen": "desktop-1280",
+      "connected": false,
       "viewport": {
         "width": 1280,
         "height": 720
       },
       "ok": true,
       "checks": [
+        {
+          "label": "letter: sealed envelope",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "letter: reads without scrolling",
+          "ok": true,
+          "value": "ok"
+        },
         {
           "label": "plant: Hagrid line visible",
           "ok": true,
@@ -297,6 +352,117 @@
         },
         {
           "label": "owl: letter opened",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "replay: entry in Hồ sơ",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "replay-letter: sealed envelope",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "replay-letter: reads without scrolling",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "replay (skipped): nothing granted",
+          "ok": true,
+          "value": "ok"
+        }
+      ]
+    },
+    {
+      "screen": "connected-iphone-13-390",
+      "connected": true,
+      "viewport": {
+        "width": 390,
+        "height": 664
+      },
+      "ok": true,
+      "checks": [
+        {
+          "label": "letter: sealed envelope",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "letter: reads without scrolling",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "plant: Hagrid line visible",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "plant: plot 1 visible",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "plant: glowing button",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "plant: skip chip",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "harvest: glowing button",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "harvest: button enabled within 300 ms",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "level-up: close button",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "feed: Hagrid line visible",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "feed: Puffskein visible and tappable",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "owl: letter opened",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "replay: entry in Hồ sơ",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "replay-letter: sealed envelope",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "replay-letter: reads without scrolling",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "replay (full): nothing granted",
           "ok": true,
           "value": "ok"
         }
