@@ -1,10 +1,10 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.37";
-import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.37";
-import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.37";
-import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.37";
+import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.38";
+import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.38";
+import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.38";
+import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.38";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs";
-import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.37";
+import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.38";
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
 // garden-daily-core.js, garden-festival-core.js, garden-keeper-core.js): same commands, error reasons and response shapes.

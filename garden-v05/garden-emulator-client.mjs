@@ -29,3 +29,17 @@ export function createEmulatorClient({decorQA=false}={}){
  if(!['127.0.0.1','localhost'].includes(location.hostname))throw Error('Ví thử nghiệm chỉ mở trên máy local.');
  return createGardenClient(async(name,data)=>{let response;const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),18000);try{response=await fetch(BASE+name,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+fixtureToken(uid)},body:JSON.stringify({data}),signal:abort.signal});}catch{throw Error('Chưa nhận được phản hồi. Thử lại đúng thao tác để kiểm tra giao dịch; mã mua được giữ nguyên.');}finally{clearTimeout(timer);}const body=await response.json();if(body.error){const e=Error(body.error.message||'Máy chủ từ chối thao tác.');e.definitive=true;e.reason=body.error.details?.reason;e.details=body.error.details||{};throw e;}return body.result;});
 }
+// Inside HPVN (/phongsinhoatchung/khu-vuon-hagrid) the game runs in an opaque sandbox; the shell
+// puts a per-session ticket in the hash and makes each call with the member's own sign-in.
+export function hpvnTicket(){return new URLSearchParams(location.hash.slice(1)).get('hpvn-ticket');}
+export function createHpvnClient(nonce){
+ let seq=0;const waiting=new Map();
+ addEventListener('message',event=>{const m=event.data;if(event.source!==parent||m?.channel!=='hpvn-game'||m.nonce!==nonce||!waiting.has(m.id))return;const done=waiting.get(m.id);waiting.delete(m.id);done(m);});
+ return createGardenClient((name,data)=>new Promise((resolve,reject)=>{
+  const id='garden-'+(++seq);
+  // A lost answer keeps the requestId (definitive stays false), so the retry cannot pay twice.
+  const timer=setTimeout(()=>{waiting.delete(id);reject(Error('Chưa nhận được phản hồi. Thử lại đúng thao tác để kiểm tra giao dịch; mã mua được giữ nguyên.'));},20000);
+  waiting.set(id,m=>{clearTimeout(timer);if('result' in m)return resolve(m.result);const e=Error(m.error||'Máy chủ từ chối thao tác.');e.definitive=m.definitive===true;e.reason=m.reason;e.details=m.details||{};reject(e);});
+  parent.postMessage({channel:'hpvn-game',nonce,id,action:'garden',name,data},'*');
+ }));
+}

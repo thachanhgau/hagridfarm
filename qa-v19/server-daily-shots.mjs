@@ -69,7 +69,7 @@ const toast = (page) => page.evaluate(() => ({text: document.querySelector('#toa
   // Turn the placed lantern in place: placeDecoration on its own slot with a new facing, stored by the server.
   await page.evaluate(() => window.__HAGRID_GARDEN_QA__.openPanel('collection'));
   await page.waitForTimeout(400);
-  await page.getByRole('button', {name: 'Xoay sang ↗ Góc phải'}).first().click();
+  await page.getByRole('button', {name: /sang phải ↗/}).first().click();
   await page.waitForTimeout(600);
   await shot(page, '11-decor-turned-in-place', errors, async () => { const s = await page.evaluate(() => window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations); console.log('  decorations:', JSON.stringify({placements: s.placements, rotations: s.rotations})); return s.placements[0] === 'decor_pumpkin_lantern' && s.rotations.decor_pumpkin_lantern === 'right'; });
   await page.evaluate(() => window.__HAGRID_GARDEN_QA__.openAchievements());

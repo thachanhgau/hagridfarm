@@ -21,7 +21,7 @@ import {
   createHpvnBridge,
   auditIos16SourceCompatibility,
 } from './hpvn-bridge.mjs';
-import {EARNED_DECOR_SHAPES, earnedDecorMotifSvg} from './ui-utils.mjs?v=24.9.37';
+import {EARNED_DECOR_SHAPES, earnedDecorMotifSvg} from './ui-utils.mjs?v=24.9.38';
 import {creatureMotion} from './scene-animation.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
