@@ -176,7 +176,7 @@ async function handleClaimEventMilestone(mId){
  return res;
 }
 async function handleClaimDailyQuest(qId){
- const res=await receiveReward(()=>{const result=claimOwlQuest(qId,{onGrantReward:grantOwlReward});if(result.ok)recordFestivalAction('care',15);return result;});
+ const res=await receiveReward(()=>{const result=claimOwlQuest(qId,{onGrantReward:grantOwlReward});if(result.ok)recordFestivalAction('questClaim');return result;});
  if(res.ok){syncHudV20Buttons();wizard?.refresh?.();message(`🦉 Đã nhận thưởng nhiệm vụ [${res.quest.title}]: ${res.reward.label}!`);}
  return res;
 }

@@ -171,12 +171,14 @@ export const FESTIVAL_ACTION_POINTS = Object.freeze({
   dailyChest: 50,
   postcard: 12,
   shareFloo: 15,
+  questClaim: 15,
+  moveBuilding: 5,
 });
 
-// Free actions (switching themes, rotating, sharing, petting) only earn
-// festival points a few times per local day; real farm work is uncapped
-// because seeds, water and timers already bound it.
-export const FREE_FESTIVAL_ACTIONS_PER_DAY = Object.freeze({rotate: 3, pet: 3, postcard: 1, shareFloo: 1, startTour: 1});
+// Free actions (switching themes, rotating, sharing, petting, the crop-care tap,
+// moving a plot or pen) only earn festival points a few times per local day;
+// real farm work is uncapped because seeds, water and timers already bound it.
+export const FREE_FESTIVAL_ACTIONS_PER_DAY = Object.freeze({rotate: 3, pet: 3, postcard: 1, shareFloo: 1, startTour: 1, care: 3, moveBuilding: 1});
 
 function normalizePointsByEvent(raw, activeEventId, legacyPoints) {
   const pointsByEvent = {};
