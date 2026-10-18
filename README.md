@@ -4,6 +4,7 @@
 
 | Part | Where |
 | --- | --- |
+| GitHub | https://github.com/thachanhgau/hagridfarm (`origin`, branch `main`; first push 18/10/2026) |
 | Game client (this repo, branch `main`) | `garden-v05/`, QA in `qa-v19/` |
 | Side branches (git worktrees next to this folder) | `../hagrid-game-panels` (`ui-game-panels`), `../hagrid-icon-hud`, `../hagrid-festival`, `../hagrid-festival-cal`, `../hagrid-profile` — list with `git worktree list` |
 | Server (Functions, Galleons wallet) | HPVNN repo, branch `claude/hagrid-garden-phase4-8688d1`, `functions/games/garden-*`, doc `docs/garden/phase4-reconcile.md` |
@@ -31,4 +32,4 @@ The fixture uses in-memory sample data and does not write an account. Source emu
 
 Run `node --test *.test.mjs` inside `garden-v05/` (143 tests passed at initial commit; 162 at V24.9.9). Latest UI evidence covers desktop 1024px, mobile 375px, embedded host and standalone fixture; physical iOS and production acceptance are not claimed.
 
-Only the active prototype, its assets and selected QA evidence are tracked. Historical sibling versions, ZIP exports and recovery copies stay local and ignored. No remote or publication is configured by this initialization. Future push, integration or deployment needs explicit authorization.
+Only the active prototype, its assets and selected QA evidence are tracked. Historical sibling versions, ZIP exports and recovery copies stay local and ignored. Remote `origin` = https://github.com/thachanhgau/hagridfarm (added 18/10/2026 at the owner's request). Push and deployment still need the owner's explicit OK each time.
