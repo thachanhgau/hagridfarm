@@ -1,5 +1,5 @@
 {
-  "url": "http://127.0.0.1:62801/garden-v05/index.html?playtest=1&smoke=…",
+  "url": "http://127.0.0.1:62805/garden-v05/index.html?playtest=1&smoke=…",
   "date": "2026-10-18",
   "results": [
     {
@@ -483,6 +483,11 @@
         },
         {
           "label": "harvest: button enabled within 300 ms",
+          "ok": true,
+          "value": "ok"
+        },
+        {
+          "label": "level-up: close button",
           "ok": true,
           "value": "ok"
         },

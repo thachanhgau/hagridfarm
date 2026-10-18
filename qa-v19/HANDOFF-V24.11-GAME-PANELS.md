@@ -1,6 +1,6 @@
 # V24.11 — Các bảng ra chất game (nhánh `ui-game-panels`, 18/10/2026)
 
-Agent: Claude Code (Anthropic). Chỉ đổi giao diện: không đổi luật chơi, không đổi dạng lệnh gửi server, không đụng hướng dẫn chơi hay thư bác Hagrid. Đã gộp `main` 7eec45b vào nhánh (thư bác Hagrid, câu hướng dẫn tránh bảng); `?v=24.9.35` theo `main`, nhánh không tự nâng thêm. Chưa push, chưa gộp vào `main`.
+Agent: Claude Code (Anthropic). Chỉ đổi giao diện: không đổi luật chơi, không đổi dạng lệnh gửi server, không đụng hướng dẫn chơi hay thư bác Hagrid. Đã gộp `main` 7eec45b vào nhánh (thư bác Hagrid, câu hướng dẫn tránh bảng); `?v=24.9.36` theo `main`, nhánh không tự nâng thêm. Chưa push, chưa gộp vào `main`.
 
 ## Đã làm
 - **Khung bảng** (`game-panels.css`, nạp sau cùng): khung gỗ pixel 9 mảnh, bảng tên tiêu đề, nút đóng pixel, tab icon to, một font tiêu đề/số (`--gp-display`) và một font nội dung (`--gp-body`), không còn chữ monospace cho nhãn tiếng Việt. Thanh cuộn mảnh màu vàng.
