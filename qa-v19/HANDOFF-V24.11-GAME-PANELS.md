@@ -1,6 +1,6 @@
 # V24.11 — Các bảng ra chất game (nhánh `ui-game-panels`, 18/10/2026)
 
-Agent: Claude Code (Anthropic). Chỉ đổi giao diện: không đổi luật chơi, không đổi dạng lệnh gửi server, không đụng hướng dẫn chơi hay thư bác Hagrid. Chưa nâng `?v=` (phiên chính nâng khi gộp vào `main`), chưa push.
+Agent: Claude Code (Anthropic). Chỉ đổi giao diện: không đổi luật chơi, không đổi dạng lệnh gửi server, không đụng hướng dẫn chơi hay thư bác Hagrid. Đã gộp `main` 7eec45b vào nhánh (thư bác Hagrid, câu hướng dẫn tránh bảng); `?v=24.9.35` theo `main`, nhánh không tự nâng thêm. Chưa push, chưa gộp vào `main`.
 
 ## Đã làm
 - **Khung bảng** (`game-panels.css`, nạp sau cùng): khung gỗ pixel 9 mảnh, bảng tên tiêu đề, nút đóng pixel, tab icon to, một font tiêu đề/số (`--gp-display`) và một font nội dung (`--gp-body`), không còn chữ monospace cho nhãn tiếng Việt. Thanh cuộn mảnh màu vàng.
@@ -13,10 +13,10 @@ Agent: Claude Code (Anthropic). Chỉ đổi giao diện: không đổi luật c
 - «Dạ vũ Noel» giữ nguyên: HP4 bản Lý Lan dùng cả «Dạ vũ Noel» (2 lần) lẫn «Dạ vũ Giáng sinh» (tên chương), bảng thuật ngữ đã kiểm ghi «Dạ vũ Noel».
 
 ## Kiểm chứng (cổng 62801)
-- `cd garden-v05 && node --test *.test.mjs`: 198/198.
-- FTUE WebKit 5/5; `hud-shots.mjs` 10/10; `panel-shots.mjs` 17 ảnh (390×664, 1280×720, 320×568 cho Cửa hàng và Hồ sơ): không tràn ngang, không `<select>`, nút ≥ 44 px. Ảnh trước/sau: `outputs/game-panels-shots/{before,wip}`, HUD: `outputs/game-panels-shots/hud`.
+- Sau khi gộp `main`: `cd garden-v05 && node --test *.test.mjs` 204/204.
+- FTUE WebKit 6/6; `hud-shots.mjs` 10/10; `panel-shots.mjs` (mở thư bác Hagrid trước khi chụp màn Lên cấp/đêm) 17 ảnh (390×664, 1280×720, 320×568 cho Cửa hàng và Hồ sơ): không tràn ngang, không `<select>`, nút ≥ 44 px. Ảnh trước/sau: `outputs/game-panels-shots/{before,after}`, HUD: `outputs/game-panels-shots/hud`.
 
 ## Còn lại
-- Nhánh dựa trên `0fa97f7`; câu hướng dẫn còn đè màn Lên cấp trong ảnh vì bản sửa `7eec45b` chỉ có trên `main`. Gộp `main` vào đây (hoặc ngược lại) trước khi duyệt.
+- Gộp vào `main` khi bệ hạ duyệt (fast-forward được nếu `main` không đổi thêm), rồi nâng `?v=`.
 - Bảng «Sắp xếp» (`layout()`) vẫn dùng `<select>` chọn nền; không nằm trong 9 ảnh của bệ hạ.
 - Chưa chụp lại ở chế độ có ví (`server-daily-shots.mjs`).

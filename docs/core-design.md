@@ -75,6 +75,7 @@ Quy tắc cứng: **mọi phần thưởng từ hành động miễn phí có tr
 
 ## 6. Ba phút đầu (kịch bản)
 
+0. **Thư bác Hagrid** (chỉ vườn mới): phong bì pixel có dấu sáp → chạm để mở → giấy da ~80 chữ theo giọng Lý Lan (bác/con, «… thân mến!», ký «Hagrid») → nút **Bắt đầu** mở bước 1. Đọc lại được trong Hồ sơ (Thư bác Hagrid).
 1. Mở game: máy quay lướt từ Rừng Cấm vào lều Hagrid (2 giây), Hagrid vẫy tay.
 2. Một luống phát sáng nhấp nháy → người chơi chạm → khay hạt bật lên, bí ngô được chọn sẵn → chạm **Gieo**.
 3. Hagrid đưa nước phép: cây lớn nhanh trước mắt (lần duy nhất).
@@ -83,6 +84,12 @@ Quy tắc cứng: **mọi phần thưởng từ hành động miễn phí có tr
 6. Thư cú rơi xuống: nhiệm vụ đầu tiên. Từ đây người chơi tự chơi.
 
 Toàn bộ chỉ dùng mũi tên, phát sáng và lời thoại ngắn (≤ 8 từ mỗi câu). Không có trang hướng dẫn nào.
+
+Ai được xem (18/10/2026): chơi trên thiết bị — vườn chưa đụng tới (cấp 1, 0 XP, chưa gieo, chưa nuôi); nối ví — thêm điều kiện máy chủ chưa ghi lần nào (`revision 0`). Vườn đã có không bao giờ thấy lại.
+
+Nối ví: máy chủ giữ đồng hồ, nên bước 3 gửi lệnh `tutorialGrow` (một lần mỗi tài khoản, cấp 1, thửa đầu, idempotent theo requestId) thay cho tua giờ trên máy; vườn mới được tặng 3 hạt bí ngô + 3 nước để gieo bước 2. Quy tắc máy chủ: qa-v19/HANDOFF-V24.9.md.
+
+Xem lại (Hồ sơ → Xem lại hướng dẫn): thư rồi các câu thoại tự chạy mỗi 3,2 giây; không gửi lệnh, không tua giờ, không lưu bước, không nhận thưởng. Nút «Bỏ qua» vẫn dừng được.
 
 ## 7. Nguyên tắc giao diện và chữ
 

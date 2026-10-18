@@ -1,7 +1,7 @@
 // HUD and action icons: 16×16 pixel grids in the approved palette (docs/art-bible.md),
 // drawn as crisp SVG <img> at integer scales only (1× = 16 px, 2× = 32 px).
 // Crops and creatures keep their own game sprites (ui-utils icon()).
-import {el, num, visualItemIcon} from './ui-utils.mjs?v=24.9.34';
+import {el, num, visualItemIcon} from './ui-utils.mjs?v=24.9.35';
 
 const INK = Object.freeze({
  k: '#231F2E', p: '#4A3042', b: '#735044', w: '#A57554',
@@ -668,6 +668,69 @@ export const ICONS = Object.freeze({
   '................',
   '................',
  ],
+ // Hagrid's welcome letter (Hồ sơ): a parchment note with his wax seal.
+ letter: [
+  '................',
+  '..kkkkkkkkkkk...',
+  '..kuuuuuuuuuk...',
+  '..kuwwwwwwuuk...',
+  '..kuuuuuuuuuk...',
+  '..kuwwwwwwwuk...',
+  '..kuuuuuuuuuk...',
+  '..kuwwwwwuuuk...',
+  '..kuuuuuuuuuk...',
+  '..kuwwwwuPPPk...',
+  '..kuuuuuPRRRPk..',
+  '..kuuuuuPRKRPk..',
+  '..kkkkkkPRRRPk..',
+  '........kPPPk...',
+  '.........kkk....',
+  '................',
+ ],
+ // Xem lại hướng dẫn: a turning arrow.
+ replay: [
+  '................',
+  '.......k........',
+  '....kkkkYk......',
+  '...kYYYYYYk.....',
+  '..kYkkkkYk......',
+  '..kYk...k.......',
+  '..kYk.......kk..',
+  '..kYk......kYk..',
+  '..kYk......kYk..',
+  '..kYk......kYk..',
+  '...kYk....kYk...',
+  '....kYkkkkYk....',
+  '.....kYYYYk.....',
+  '......kkkk......',
+  '................',
+  '................',
+ ],
+ // The sealed envelope Hagrid's welcome letter arrives in (32×22, shown at 3–4×).
+ envelope: [
+  '................................',
+  '................................',
+  '.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+  '.koouuuuuuuuuuuuuuuuuuuuuuuuook.',
+  '.kttouuuuuuuuuuuuuuuuuuuuuuottk.',
+  '.ktttoouuuuuuuuuuuuuuuuuuootttk.',
+  '.ktttttouuuuuuuuuuuuuuuuotttttk.',
+  '.kttttttouuuuuuuuuuuuuuottttttk.',
+  '.ktttttttoouuuuuuuuuuootttttttk.',
+  '.ktttttttttouuPPPPuuotttttttttk.',
+  '.kttttttttttoPRRRRPottttttttttk.',
+  '.kttttttttttPRKKRRRPttttttttttk.',
+  '.kttttttttttPRKRRRRPttttttttttk.',
+  '.kttttttttttPRRRRPRPttttttttttk.',
+  '.kttttttttttPRRRPPRPttttttttttk.',
+  '.ktttttttttwwPRRRRPwwtttttttttk.',
+  '.ktttttttwwtttPPPPtttwwtttttttk.',
+  '.ktttttwwttttttttttttttwwtttttk.',
+  '.ktttwwttttttttttttttttttwwtttk.',
+  '.ktwwttttttttttttttttttttttwwtk.',
+  '.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.',
+  '................................',
+ ],
  arrow: [
   '................',
   '................',
@@ -688,7 +751,7 @@ export const ICONS = Object.freeze({
  ],
 });
 
-/** Rows → SVG with one rect per horizontal run of a colour. */
+/** Rows → SVG with one rect per horizontal run of a colour (16×16, or any size such as the envelope). */
 export function iconSvg(rows) {
  let rects = '';
  rows.forEach((row, y) => {
@@ -700,7 +763,7 @@ export function iconSvg(rows) {
    x = end;
   }
  });
- return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">${rects}</svg>`;
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${rows[0].length} ${rows.length}" shape-rendering="crispEdges">${rects}</svg>`;
 }
 
 const urls = new Map();

@@ -64,6 +64,8 @@ for (const [label, device] of SCREENS) {
     night.on('pageerror', (e) => errors.push(String(e.message || e)));
     await night.goto(`${base}/garden-v05/index.html?atmo=night&shots=${Date.now()}`);
     try {
+      // Hagrid's welcome letter comes first for a new garden: open it, then Bắt đầu.
+      await night.waitForSelector('.hagrid-envelope', {timeout: 8000}).then(async () => { await night.click('.hagrid-envelope'); await night.waitForTimeout(450); await night.click('.hagrid-letter-start'); }).catch(() => {});
       await night.waitForSelector('.tutorial-pulse', {timeout: 10000});
       await night.waitForTimeout(1800);
       await night.click('.tutorial-pulse');

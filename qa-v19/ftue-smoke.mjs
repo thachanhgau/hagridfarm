@@ -1,6 +1,9 @@
 // Plays the first three minutes on a brand-new garden in WebKit (Safari's
-// engine) on several screens and checks every pointer the player needs can be
-// seen and tapped. Usage (server on 62795): node qa-v19/ftue-smoke.mjs [baseUrl]
+// engine) on several screens: Hagrid's letter (tap the envelope, read without
+// scrolling, Bắt đầu), then every pointer the player needs must be seen and
+// tapped. One more run plays it connected (fixture server, brand-new account),
+// and replays from Hồ sơ must change nothing. Usage (server on 62795):
+// node qa-v19/ftue-smoke.mjs [baseUrl]
 // Writes qa-v19/ftue-smoke/report.json and one screenshot per step and device.
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -13,6 +16,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const out = path.join(here, 'ftue-smoke');
 const base = process.argv[2] || 'http://127.0.0.1:62795';
 const url = `${base}/garden-v05/index.html?playtest=1&smoke=${Date.now()}`;
+const connectedUrl = `${base}/qa-v19/ui-fixture.html?wallet=emulator&scenario=new&simulate=1&smoke=${Date.now()}`;
 
 const SCREENS = [
   ['iphone-se-320', devices['iPhone SE']],
@@ -25,8 +29,22 @@ const SCREENS = [
 // In-page helpers: tutorial step, world→screen, and "can the player see and tap this point".
 const PAGE_HELPERS = () => {
   window.__smoke = {
-    step() {
-      try { return JSON.parse(JSON.parse(localStorage.getItem('hagrid-garden-v05-play-v23-save'))['hagrid-tutorial-v1']).step; } catch { return null; }
+    step() { return document.body.dataset.tutorial || null; },
+    // What a replay must leave alone: XP, server actions and the local save's revision and clock.
+    ledger() {
+      let save = null;
+      try { const g = JSON.parse(JSON.parse(localStorage.getItem('hagrid-garden-v05-play-v23-save'))['hagrid-garden-v05-play']); save = [g.revision, g.offsetMs, g.xp]; } catch {}
+      return JSON.stringify({xp: document.getElementById('xpText')?.textContent, actions: document.querySelector('.emulator-badge')?.dataset.actions || null, save});
+    },
+    letter() { // Parchment fits without scrolling, text ≥ 13 px, Bắt đầu ≥ 44 px and on screen.
+      const box = document.querySelector('.hagrid-parchment');
+      if (!box || box.hidden) return 'missing';
+      if (box.scrollHeight > box.clientHeight + 1) return `scrolls ${box.scrollHeight - box.clientHeight}px`;
+      const small = [...box.querySelectorAll('p')].map((p) => parseFloat(getComputedStyle(p).fontSize)).filter((px) => px < 13);
+      if (small.length) return `text ${small[0]}px`;
+      const b = box.querySelector('.hagrid-letter-start').getBoundingClientRect();
+      if (b.width < 44 || b.height < 44) return `button ${Math.round(b.width)}×${Math.round(b.height)}`;
+      return this.rectInView(box.querySelector('.hagrid-letter-start'));
     },
     toScreen([x, y]) {
       const c = document.getElementById('world'), r = c.getBoundingClientRect();
@@ -69,7 +87,37 @@ async function waitStep(page, step, ms = 8000) {
   await page.waitForFunction((s) => window.__smoke?.step() === s, step, {timeout: ms});
 }
 
-async function run(name, device) {
+async function readLetter(page, check, shot, label = 'letter') {
+  await page.waitForSelector('.hagrid-envelope', {timeout: 8000});
+  check(`${label}: sealed envelope`, await page.evaluate(() => __smoke.rectInView(document.querySelector('.hagrid-envelope'))));
+  await shot(`${label}-sealed`);
+  await page.click('.hagrid-envelope');
+  await page.waitForTimeout(450); // unfold
+  check(`${label}: reads without scrolling`, await page.evaluate(() => __smoke.letter()));
+  await shot(label);
+  await page.click('.hagrid-letter-start');
+}
+
+async function replay(page, check, shot, {skip}) {
+  const before = await page.evaluate(() => __smoke.ledger());
+  await page.click('#levelButton');
+  await page.waitForSelector('.profile-keepsakes button[aria-label^="Xem lại"]', {timeout: 4000});
+  check('replay: entry in Hồ sơ', await page.evaluate(() => __smoke.rectInView(document.querySelector('.profile-keepsakes button[aria-label^="Xem lại"]'))));
+  await page.click('.profile-keepsakes button[aria-label^="Xem lại"]');
+  await readLetter(page, check, shot, 'replay-letter');
+  if (skip) {
+    await waitStep(page, 'plant');
+    await page.click('.tutorial-skip');
+  } else {
+    await waitStep(page, 'feed', 15000);
+    await shot('replay-feed');
+  }
+  await waitStep(page, 'done', 12000);
+  await page.waitForTimeout(300);
+  check(`replay (${skip ? 'skipped' : 'full'}): nothing granted`, (await page.evaluate(() => __smoke.ledger())) === before ? 'ok' : `${before} → ${await page.evaluate(() => __smoke.ledger())}`);
+}
+
+async function run(name, device, {connected = false} = {}) {
   const browser = await webkit.launch(process.env.WEBKIT_PATH ? {executablePath: process.env.WEBKIT_PATH} : {});
   const context = await browser.newContext({...device});
   const page = await context.newPage();
@@ -80,8 +128,10 @@ async function run(name, device) {
   const check = (label, value) => checks.push({label, ok: value === 'ok', value});
   const shot = (step) => page.screenshot({path: path.join(out, `${name}-${step}.png`)});
   try {
-    await page.goto(url);
+    await page.goto(connected ? connectedUrl : url);
     await page.evaluate(PAGE_HELPERS);
+    await waitStep(page, 'letter', 15000);
+    await readLetter(page, check, shot);
     await waitStep(page, 'plant');
     await page.waitForTimeout(1800); // camera glide
     await shot('plant');
@@ -89,6 +139,16 @@ async function run(name, device) {
     check('plant: plot 1 visible', await page.evaluate(() => __smoke.open(__smoke.toScreen(__smoke.iso(3, 4)))));
     check('plant: glowing button', await page.evaluate(() => __smoke.rectInView(document.querySelector('.tutorial-pulse'))));
     check('plant: skip chip', await page.evaluate(() => __smoke.rectInView(document.querySelector('.tutorial-skip'))));
+    // A panel opened mid-tutorial (Hồ sơ) hides Hagrid's line and the skip chip; closing it brings them back.
+    await page.click('#levelButton');
+    await page.waitForTimeout(250);
+    check('panel open: line and skip chip step aside', await page.evaluate(() => {
+      const bubble = document.querySelector('.tutorial-bubble'), skip = document.querySelector('.tutorial-skip');
+      return bubble.hidden && getComputedStyle(skip).visibility === 'hidden' ? 'ok' : `bubble ${bubble.hidden ? 'hidden' : 'shown'}, skip ${getComputedStyle(skip).visibility}`;
+    }));
+    await page.click('#closePanel');
+    await page.waitForTimeout(250);
+    check('panel closed: line back', await page.evaluate(() => __smoke.line()));
     await page.click('.tutorial-pulse');
     await waitStep(page, 'harvest');
     await page.waitForTimeout(300);
@@ -112,18 +172,22 @@ async function run(name, device) {
     await page.waitForTimeout(400);
     check('owl: letter opened', await page.evaluate(() => (document.getElementById('owlLetter')?.open ? 'ok' : 'closed')));
     await shot('done');
+    await page.evaluate(() => document.getElementById('owlLetter')?.close());
+    if (connected) await replay(page, check, shot, {skip: false});
+    else if (name === 'desktop-1280') await replay(page, check, shot, {skip: true});
   } catch (error) {
     checks.push({label: `stopped at ${await page.evaluate(() => window.__smoke?.step()).catch(() => '?')}`, ok: false, value: String(error.message).split('\n')[0]});
     await shot('failed').catch(() => {});
   }
   if (errors.length) checks.push({label: 'console/page errors', ok: false, value: errors.slice(0, 3).join(' | ')});
   await browser.close();
-  return {screen: name, viewport: device.viewport, ok: checks.every((c) => c.ok), checks};
+  return {screen: name, connected, viewport: device.viewport, ok: checks.every((c) => c.ok), checks};
 }
 
 await fs.mkdir(out, {recursive: true});
 const results = [];
 for (const [name, device] of SCREENS) results.push(await run(name, device));
+results.push(await run('connected-iphone-13-390', devices['iPhone 13'], {connected: true}));
 await fs.writeFile(path.join(out, 'report.json'), JSON.stringify({url: url.replace(/smoke=\d+/, 'smoke=…'), date: new Date().toISOString().slice(0, 10), results}, null, 2) + '\n');
 for (const r of results) {
   console.log(`${r.ok ? 'PASS' : 'FAIL'} ${r.screen} ${r.viewport.width}x${r.viewport.height}`);
