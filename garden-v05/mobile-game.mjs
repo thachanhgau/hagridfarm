@@ -16,9 +16,9 @@ import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.47';
 import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.47';
 import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.47';
 import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.47';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge} from './hpvn-bridge.mjs?v=24.9.47';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.47';
 import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.47';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements} from './garden-achievements.mjs?v=24.9.47';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.47';
 import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.47';
 import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.47';
 import {nextGoal} from './next-goal.mjs?v=24.9.47';
@@ -52,6 +52,13 @@ let session=query.get('lab')==='1'?'lab':'play',key=prefix+'-'+session,state,sav
 let gardenStorage;
 function selectStorage(){gardenStorage=configureGardenStorage({scope:key,persistent:!connected,legacyKeys:[key,...(!qa&&session==='play'?['hpvn-garden-v23-events','hpvn-garden-v23-affinity','hpvn-garden-v21-owl-quests','hpvn-garden-v22-tour','hpvn-garden-v22-achievements','hpvn-garden-v20-visual-prefs','hpvn-garden-v18-decor-layout']:[])]});}
 selectStorage();
+// In HPVN the sandbox has no storage and the server keeps no device choices, so the worn title and
+// the scene/sound settings lived in memory and a reload lost them: the shell keeps them per member.
+if(hpvnNonce&&wallet?.host){
+ const DEVICE_PREFS=[ACHIEVEMENTS_STORAGE_KEY,VISUAL_PREFS_STORAGE_KEY],saved=await wallet.host('prefs')||{},set=gardenStorage.setItem;
+ for(const k of DEVICE_PREFS)if(typeof saved[k]==='string')set(k,saved[k]);
+ gardenStorage.setItem=(k,v)=>{set(k,v);if(DEVICE_PREFS.includes(k))wallet.host('prefs',{values:{[k]:String(v)}});};
+}
 // Galleons the wallet can spend; local play has no wallet, so builds are never blocked by Galleons there.
 function getGalleons(){return connected?(walletReady?Number(wallet.snapshot?.wallet?.spendable)||0:0):Infinity;}
 function currentSupplies(){return wallet?.snapshot?.garden?.supplies||JSON.parse(gardenStorage.getItem('supplies')||'{"water":0,"boost":0,"seeds":{}}');}
