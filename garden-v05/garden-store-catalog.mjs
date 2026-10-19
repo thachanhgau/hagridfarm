@@ -10,7 +10,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 1,
     "price": 2,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -22,7 +22,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 2,
     "price": 2,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -34,7 +34,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 4,
     "price": 2,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -46,7 +46,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 6,
     "price": 2,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -58,7 +58,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 8,
     "price": 2,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -70,7 +70,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 12,
     "price": 3,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -82,7 +82,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 16,
     "price": 4,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -94,7 +94,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 20,
     "price": 4,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -106,7 +106,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 24,
     "price": 5,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -118,7 +118,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 28,
     "price": 6,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -130,7 +130,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 32,
     "price": 7,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -142,7 +142,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 36,
     "price": 8,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -154,7 +154,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 40,
     "price": 8,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -166,7 +166,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 44,
     "price": 9,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -178,7 +178,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 48,
     "price": 10,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -190,7 +190,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 52,
     "price": 11,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -202,7 +202,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 56,
     "price": 12,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -214,7 +214,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 60,
     "price": 12,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -226,7 +226,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 64,
     "price": 13,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -238,7 +238,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 68,
     "price": 14,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -250,7 +250,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 72,
     "price": 15,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -262,7 +262,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 78,
     "price": 16,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -274,7 +274,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 84,
     "price": 17,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -286,7 +286,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 92,
     "price": 19,
     "quantity": 3,
-    "dailyLimit": 12,
+    "dailyLimit": 1000,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {

@@ -1,12 +1,12 @@
 // «Nhiệm vụ bác Hagrid» (owner decision 19/10/2026): the server's mission chain
 // (snapshot.missions, action claimMission). One mission at a time; from level 20
 // a chapter of three steps. Only with a wallet: the server checks every step.
-import {$,el} from './ui-utils.mjs?v=24.9.43';
-import {pixelIcon,iconButton} from './pixel-icons.mjs?v=24.9.43';
+import {$,el} from './ui-utils.mjs?v=24.9.44';
+import {pixelIcon,iconButton} from './pixel-icons.mjs?v=24.9.44';
 
 const meter=(done,target)=>el('div',{class:'gp-meter',role:'progressbar','aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(done)},[el('span',{style:`width:${Math.min(100,Math.round(done/target*100))}%`})]);
 
-export function createMissions({getSnapshot,claim,notify}){
+export function createMissions({getSnapshot,claim,claimBacklog,notify}){
  const button=$('missionButton');
  const body=el('div',{class:'mission-body'});
  const dialog=el('dialog',{id:'missionLetter',class:'owl-letter mission-letter','aria-labelledby':'missionTitle'},[
@@ -46,5 +46,20 @@ export function createMissions({getSnapshot,claim,notify}){
   if(dialog.open)render();
  }
  button.onclick=()=>{render();dialog.showModal();};
- return {sync};
+ // Owner 19/10/2026: a garden that joined the chain above level 1 gets every passed mission's gift once, by owl.
+ // `reopen` null only asks whether there is one (mail badge).
+ function letterGift(reopen){
+  const b=getSnapshot()?.missions?.backlog;
+  if(!b||!reopen)return Boolean(b);
+  return el('div',{class:'gp-hero owl-chest is-ready mission-backlog'},[
+   el('div',{class:'gp-tile-art'},[pixelIcon('chest',3)]),
+   el('div',{class:'gp-hero-copy'},[
+    el('small',{text:`Quà của ${b.count} nhiệm vụ con đã vượt qua`}),
+    el('strong',{text:'Quà bù của bác Hagrid'}),
+    el('small',{class:'mission-reward',text:b.reward.label}),
+   ]),
+   iconButton('chest',`Nhận quà bù: ${b.reward.label}`,async()=>{const res=await claimBacklog();if(res?.ok){notify(`🦉 Đã nhận quà bù nhiệm vụ: ${res.reward.label}!`);reopen();}},{text:'Nhận',class:'primary','data-claim-backlog':'true'}),
+  ]);
+ }
+ return {sync,letterGift};
 }

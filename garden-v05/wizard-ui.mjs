@@ -1,5 +1,5 @@
-import {$,el,duration} from './ui-utils.mjs?v=24.9.43';
-import {pixelIcon,setAction,rewardChips,iconButton,lockBadge} from './pixel-icons.mjs?v=24.9.43';
+import {$,el,duration} from './ui-utils.mjs?v=24.9.44';
+import {pixelIcon,setAction,rewardChips,iconButton,lockBadge} from './pixel-icons.mjs?v=24.9.44';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -11,7 +11,7 @@ import {
  dailyCompletionSummary,
  hasClaimableOwlQuest,
  DAILY_GRAND_CHEST_REWARD,
-} from './garden-quests.mjs?v=24.9.43';
+} from './garden-quests.mjs?v=24.9.44';
 
 // Presentation only: every crop mutation still uses the existing engine/command.
 export function cropContext(state, selection, E, now) {
@@ -37,7 +37,7 @@ function compactOwlReward(reward={}){
  return parts.join(' · ')||'Quà';
 }
 
-export function setupWizardUI({E,items,getState,getSelection,getRenderer,getReady,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward,onClaimDailyQuest,onClaimGrandChest,onCare}) {
+export function setupWizardUI({E,items,getState,getSelection,getRenderer,getReady,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward,onClaimDailyQuest,onClaimGrandChest,onCare,getLetterGift}) {
  let letterRoute=null,letterOpenedOnce=false;
  const letter=$('owlLetter');
 
@@ -50,7 +50,7 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
  function syncMailBadge(){
   const q=currentQuestState();
   const claimable=hasClaimableOwlQuest(q);
-  $('owlMailButton').classList.toggle('mail-read',letterOpenedOnce&&!claimable);
+  $('owlMailButton').classList.toggle('mail-read',letterOpenedOnce&&!claimable&&!getLetterGift?.(null));
  }
 
  function routeQuest(route){
@@ -137,7 +137,8 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
    $('letterAction').textContent='Về vườn';
    letterRoute=()=>{setMode('plant');camera.focusPlot();};
   }else{
-   $('letterBody').replaceChildren(renderOwlQuestsSection());
+   // A one-time gift (mission back-pay) sits above the daily quests until it is taken.
+   $('letterBody').replaceChildren(...[getLetterGift?.(()=>openLetter('owl')),renderOwlQuestsSection()].filter(Boolean));
    $('letterAction').textContent='Về vườn';
    letterRoute=()=>{};
   }
