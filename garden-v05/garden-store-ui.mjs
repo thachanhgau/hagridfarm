@@ -1,5 +1,5 @@
 import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.49";
-import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.49";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.49";
 import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.49";
 import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.49";
 
@@ -120,11 +120,12 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
 
    const head=el("div",{class:"gp-tile-art"},[artVisual]);
    const remaining=item.dailyRemaining??item.dailyLimit;
-   const max=Math.max(1,Math.min(remaining||1,24));
+   const tiered=Boolean(item.overflowMultiplier);
+   const max=tiered?24:Math.max(1,Math.min(remaining||1,24));
    let count=Math.min(max,quantities.get(item.id)||1);
-   const totalCost=()=>item.price*count;
+   const totalCost=()=>packTotal(item,count);
    const unit=item.kind==="boost"||item.kind==="spring"?"chai":"gói";
-   const canBuy=()=>snap&&!purchasing&&remaining!==0&&spendable>=totalCost();
+   const canBuy=()=>snap&&!purchasing&&(tiered||remaining!==0)&&spendable>=totalCost();
    const buyLabel=()=>owned?"Đặt "+item.label:`Mua ${count} ${unit} ${item.label} · ${num(totalCost())} Galleons`;
 
    const buy=button("",async()=>{
@@ -155,13 +156,13 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
    paintQty();paintBuy();
 
    const angleTag=facing==="right"?"Góc nhìn qua phải ↗":"Góc hiện tại ↖";
-   const quota=isDecor?(owned?(location?`${location} · ${angleTag}`:"Đang cất"):""):(snap?`Còn ${remaining}/${item.dailyLimit} hôm nay`:`${item.dailyLimit} ${unit}/ngày`);
+   const quota=isDecor?(owned?(location?`${location} · ${angleTag}`:"Đang cất"):""):tiered?(snap&&remaining===0?`Quá ${num(item.dailyLimit)} ${unit} · giá ×${item.overflowMultiplier}`:`Còn ${num(snap?remaining:item.dailyLimit)}/${num(item.dailyLimit)} giá thường`):(snap?`Còn ${remaining}/${item.dailyLimit} hôm nay`:`${item.dailyLimit} ${unit}/ngày`);
    const descText=isDecor?(DECOR_COPY[item.id]||item.description):item.description;
    card.title=descText;
    const price=isDecor?(owned?null:coinChip(item.price)):coinChip(item.price,"/"+unit);
    let action;
    if(!snap)action=el("span",{class:"lock-badge is-wide",role:"img","aria-label":"Cần nối ví Gringotts để mua",title:"Cần nối ví Gringotts để mua"},[pixelIcon("lock",1),el("b",{text:"Nối ví"})]);
-   else if(!owned&&remaining===0)action=el("span",{class:"gp-state",text:"Hết hôm nay"});
+   else if(!owned&&!tiered&&remaining===0)action=el("span",{class:"gp-state",text:"Hết hôm nay"});
    else action=buy;
    card.append(head,
     el("strong",{class:"gp-tile-name",text:item.label}),

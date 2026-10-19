@@ -5,7 +5,7 @@ import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24
 import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.40";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs";
 import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
-import {growthScale} from "../garden-v05/ui-utils.mjs?v=24.9.40";
+import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=24.9.40";
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
 // garden-daily-core.js, garden-festival-core.js, garden-keeper-core.js): same commands, error reasons and response shapes.
@@ -353,11 +353,11 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   if(seen)return response(seen.receipt);
   const entry=catalog.find(i=>i.id===c.itemId);
   if(!entry)fail("unknown-item","Không tìm thấy mặt hàng.");
-  const qty=Math.max(1,Number(c.quantity)||1),cost=entry.price*qty;
+  const qty=Math.max(1,Number(c.quantity)||1),cost=packTotal(entry,qty);
   if(c.expectedTotal!==cost)fail("price-changed","Giá đã thay đổi.");
   if(wallet.spendable<cost)fail("insufficient-balance","Chưa đủ Galleons trong ví thử nghiệm.",{required:cost});
-  if((entry.dailyRemaining??entry.dailyLimit)<qty)fail("daily-cap","Đã hết hạn mức mua trong ngày.");
-  wallet.spendable-=cost;wallet.balance=Math.max(0,wallet.balance-cost);entry.dailyRemaining=(entry.dailyRemaining??entry.dailyLimit)-qty;
+  if(!entry.overflowMultiplier&&(entry.dailyRemaining??entry.dailyLimit)<qty)fail("daily-cap","Đã hết hạn mức mua trong ngày.");
+  wallet.spendable-=cost;wallet.balance=Math.max(0,wallet.balance-cost);entry.dailyRemaining=Math.max(0,(entry.dailyRemaining??entry.dailyLimit)-qty);
   const s=garden.supplies,inv=garden.progression.inventory;
   if(entry.kind==="seed"){const id=entry.cropId||entry.id.replace(/^seed_/,"");s.seeds[id]=(s.seeds[id]||0)+entry.quantity*qty;}
   else if(entry.kind==="water")s.water+=entry.quantity*qty;

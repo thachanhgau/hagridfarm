@@ -1,3 +1,4 @@
+import {packTotal} from './ui-utils.mjs?v=24.9.49';
 const PROJECT='demo-hpvnn-garden', UID='garden-demo-member';
 const BASE='http://127.0.0.1:5001/'+PROJECT+'/asia-southeast1/';
 // This token is an emulator fixture. It is neither an HPVN login nor a production credential.
@@ -25,7 +26,7 @@ export function createGardenClient(transport){
   guide:lessonId=>queue(()=>call('performHagridGardenAction',{action:'guideDone',lessonId,expectedRevision:revision(),requestId:requestId()})),
   // «Thăm vườn» (visitHagridGarden): its own answer, never the player's snapshot.
   visit:data=>queue(()=>transport('visitHagridGarden',data)),
-  buy:(itemId,packages)=>queue(()=>{const item=snapshot.catalog.find(i=>i.id===itemId);if(!item)throw Error('Vật tư chưa mở.');return mutate('buyHagridGardenSupplies',{itemId,quantity:packages,catalogVersion:snapshot.catalogVersion,expectedTotal:item.price*packages});}),
+  buy:(itemId,packages)=>queue(()=>{const item=snapshot.catalog.find(i=>i.id===itemId);if(!item)throw Error('Vật tư chưa mở.');return mutate('buyHagridGardenSupplies',{itemId,quantity:packages,catalogVersion:snapshot.catalogVersion,expectedTotal:packTotal(item,packages)});}),
  };
 }
 export function createEmulatorClient({decorQA=false}={}){

@@ -4,6 +4,9 @@ export const num=n=>{const v=Number(n);return Number.isFinite(v)?v.toLocaleStrin
 export function duration(ms){const seconds=Math.max(0,Math.ceil(ms/1000));if(!seconds)return"Sẵn sàng";const h=Math.floor(seconds/3600),m=Math.floor(seconds%3600/60);return h>=24?`${Math.floor(h/24)}n ${h%24}g`:h?`${h}g ${String(m).padStart(2,"0")}p`:`${m}p ${String(seconds%60).padStart(2,"0")}s`;}
 // Server rule (functions/games/garden-action-core growthScale): crops planted below level 20 grow faster.
 export function growthScale(level){return level<5?.1:level<10?.2:level<15?.3:level<20?.5:1;}
+// Galleons for `count` packs: packs left at the base price today (dailyRemaining) cost `price`,
+// the rest price × overflowMultiplier (water and seeds past 1000 a day; server: garden-wallet-core purchaseTotal).
+export function packTotal(item,count){const base=Math.max(0,Math.min(count,item.dailyRemaining??item.dailyLimit??Infinity));return base*item.price+(count-base)*item.price*(item.overflowMultiplier||1);}
 export function hours(h){return h===0?"Tức thì":h>=24?`${h/24} ngày`:`${h} giờ`;}
 export function icon(items,id,stage=3,size=52){
  const item=items?.get?.(id);

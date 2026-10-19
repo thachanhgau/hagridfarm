@@ -11,6 +11,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 2,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -23,6 +24,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 2,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -35,6 +37,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 2,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -47,6 +50,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 2,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -59,6 +63,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 2,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -71,6 +76,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 3,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -83,6 +89,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 4,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -95,6 +102,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 4,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -107,6 +115,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 5,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -119,6 +128,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -131,6 +141,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 7,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -143,6 +154,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 8,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -155,6 +167,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 8,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -167,6 +180,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 9,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -179,6 +193,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 10,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -191,6 +206,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 11,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -203,6 +219,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 12,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -215,6 +232,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 12,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -227,6 +245,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 13,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -239,6 +258,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 14,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -251,6 +271,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 15,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -263,6 +284,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 16,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -275,6 +297,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 17,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -287,6 +310,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 19,
     "quantity": 3,
     "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
@@ -296,7 +320,8 @@ export const STORE_CATALOG=Object.freeze([
     "level": 1,
     "price": 5,
     "quantity": 9,
-    "dailyLimit": 24,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
     "description": "9 phần nước · mỗi ô dùng 1 phần khi gieo."
   },
   {
