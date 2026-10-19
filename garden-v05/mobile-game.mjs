@@ -33,6 +33,10 @@ const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
 const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.47':'./garden-emulator-client.mjs?v=24.9.47');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
+// The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
+// insets as well: a home-screen web app counted the status bar twice and the HUD sat a row low. The
+// Floo dock sets the bottom inset back when the frame reaches the home bar.
+if(hpvnNonce)for(const side of ['top','left','right','bottom'])document.documentElement.style.setProperty('--host-inset-'+side,'0px');
 const TEST_WALLET={connecting:'Đang nối emulator',avatar:'Hồ sơ thành viên trên emulator',retry:'Emulator chưa kết nối · nhấn để thử lại',reconnected:'Đã nối ví thử nghiệm.'};
 const WALLET_TEXT=fixtureWallet
  ?{...TEST_WALLET,title:'Dữ liệu mẫu trong bộ nhớ · không lưu',badge:'V24 · Xem thử, không lưu',ready:'V24 · Chạm để khám phá.'}

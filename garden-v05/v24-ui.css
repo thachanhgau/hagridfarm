@@ -53,7 +53,7 @@
 .hud .owl-mail{position:relative;inset:auto;flex:none;width:44px;min-width:44px;height:44px;min-height:44px;padding:3px;justify-content:center}
 .hud .owl-mail>span:last-of-type{display:none}.hud .owl-mail .owl-mail-icon{width:27px;height:32px}
 @media(max-width:1100px){
- .hud{left:max(8px,env(safe-area-inset-left));right:max(8px,env(safe-area-inset-right));gap:4px}
+ .hud{left:max(8px,var(--host-inset-left,env(safe-area-inset-left)));right:max(8px,var(--host-inset-right,env(safe-area-inset-right)));gap:4px}
  .hud .hud-actions{display:contents}
  .hud .level-card{flex:1 1 0;min-width:44px;height:44px;padding:3px}
  .hud .plot-picker{position:static;inset:auto;flex:none;width:52px;min-width:52px;height:44px;min-height:44px;display:flex;flex-direction:column;gap:0;padding:3px;font-size:9px;line-height:15px}
@@ -83,7 +83,7 @@
 .tutorial-skip[hidden]{display:none}
 
 /* V24.9.6 playtest: always-visible notice while the anonymous log is on (?playtest=1). */
-.playtest-badge{position:fixed;left:max(8px,env(safe-area-inset-left));top:calc(max(8px,env(safe-area-inset-top)) + 100px);z-index:46;padding:2px 8px;border-radius:10px;background:rgba(35,31,46,.78);color:#E07A9E;font:700 10px system-ui,sans-serif;pointer-events:none}
+.playtest-badge{position:fixed;left:max(8px,var(--host-inset-left,env(safe-area-inset-left)));top:calc(max(8px,var(--host-inset-top,env(safe-area-inset-top))) + 100px);z-index:46;padding:2px 8px;border-radius:10px;background:rgba(35,31,46,.78);color:#E07A9E;font:700 10px system-ui,sans-serif;pointer-events:none}
 
 .tutorial-compact #seedTray,.tutorial-compact .tools{display:none!important}
 .camera-tools .tutorial-skip{width:max-content!important;max-width:none!important;padding:0 6px}
