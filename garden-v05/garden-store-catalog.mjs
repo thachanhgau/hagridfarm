@@ -462,7 +462,7 @@ export const STORE_CATALOG=Object.freeze([
     "level": 6,
     "price": 60,
     "quantity": 1,
-    "dailyLimit": 2,
+    "dailyLimit": 10,
     "description": "Tưới một hàng đang lớn: giảm 10% thời gian gốc, tối đa một lần mỗi cây; không nhận XP khi dùng."
   },
   {
