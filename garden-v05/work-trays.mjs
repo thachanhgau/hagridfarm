@@ -1,5 +1,5 @@
-import { setAction, costChips } from './pixel-icons.mjs?v=24.9.48';
-import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.48';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.49';
+import { $, button, el, duration, hours, num, visualItemIcon } from './ui-utils.mjs?v=24.9.49';
 import { DB } from './balance-data.mjs';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
@@ -149,23 +149,16 @@ function readLabel(labels, id) {
 }
 
 function chipLabel(label) {
-  return label.replace(/^(Khẩu phần |Nuôi )/, '');
+  return String(label).replace(/^(Khẩu phần |Nuôi )/, '');
 }
 
-function recipeIconId(recipe, E, items) {
-  for (const [id] of Object.entries(recipe.inputs)) if (items.has(id)) return id;
-  const creature = Object.values(E.CREATURE).find(item => item.feed === recipe.output && items.has(item.id));
-  if (creature) return creature.id;
-  return items.has(recipe.output) ? recipe.output : null;
-}
-
-function makeRecipeIcon(recipe, E, items) {
-  const id = recipeIconId(recipe, E, items);
-  return id ? icon(items, id, 3, 40) : el('span', { class: 'tray-glyph', 'aria-hidden': true, text: '⚗' });
+// The tile shows what the recipe makes (a feed shows the creature that eats it); inputs often repeat.
+function makeRecipeIcon(recipe, items) {
+  return visualItemIcon(items, recipe.output, { size: 40 });
 }
 
 function makeExpansionIcon(expansion, items) {
-  return visualItemIcon(items, expansion.id, {size:40});
+  return visualItemIcon(items, expansion.id, { size: 40 });
 }
 
 function expansionTitle(expansion) {
@@ -178,7 +171,7 @@ function expansionEffect(expansion) {
 }
 
 function expansionShortEffect(expansion) {
-  return expansion.kind === 'plot' ? '+9 ô' : `${expansion.capacityAfter} chỗ nuôi`;
+  return expansion.kind === 'plot' ? '+9 ô trồng' : `${expansion.capacityAfter} chỗ nuôi`;
 }
 
 function stateNow(E, state) {
@@ -186,31 +179,22 @@ function stateNow(E, state) {
 }
 
 function readyJobs(jobs, now) {
-  return jobs.filter(job => Number(job.readyAt) <= Number(now));
+  return (jobs ?? []).filter(job => Number(job.readyAt) <= Number(now));
 }
 
-function syncClaim(dom, mode, visible, getReady) {
-  if (visible) {
-    if (!dom.claim.parentNode) dom.detail.append(dom.claim);
-    dom.claim.disabled = !getReady();
-    dom.claim.title = mode === 'craft'
-      ? 'Nhận tất cả mẻ đã sẵn sàng; không tự nhận.'
-      : 'Nhận tất cả công trình đã sẵn sàng; không tự nhận.';
-    dom.claim.setAttribute('aria-label', dom.claim.title);
-  } else if (dom.claim.parentNode) {
-    dom.claim.remove();
-  }
-}
+// Steps of the instant-batch stepper (server cap: DB.limits.maxCraftBatches).
+const BATCH_STEPS = Object.freeze([1, 3, 5, 10, 25, 50, 100].filter(n => n <= MAX_CRAFT_BATCHES));
 
 /**
- * Mount the two horizontal work trays into the empty craftDock/buildDock
- * sections. Tray buttons are reconciled in place, so a refresh timer never
+ * Mount the two work docks (Chế biến, Xây) into the empty craftDock/buildDock sections:
+ * a running-job strip with countdown and «Nhận», the selected item with its cost, and a
+ * tray of named tiles. Tray buttons are reconciled in place, so the refresh timer never
  * replaces the focused button or scroll container.
  */
 export function setupWorkTrays({ E, items, labels, getState, getReady, run, showPanel, getGalleons = () => Infinity }) {
   const local = {
-    craft: { selectedId: null, batches: 1, dom: null, buttons: new Map() },
-    build: { selectedId: null, dom: null, buttons: new Map() },
+    craft: { selectedId: null, batches: 1, dom: null, buttons: new Map(), badges: new Map() },
+    build: { selectedId: null, dom: null, buttons: new Map(), badges: new Map() },
   };
 
   const db = E.DB;
@@ -221,6 +205,12 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     if (model.dom) return model.dom;
     const dock = $(`${mode}Dock`);
     if (!dock) return null;
+
+    const jobs = el('div', { class: 'work-jobs', role: 'status' });
+    jobs.hidden = true;
+    const jobList = el('div', { class: 'work-job-list' });
+    const claim = button('Nhận', () => dispatchClaim(mode), { id: `${mode}Claim`, class: 'work-claim' });
+    jobs.append(jobList, claim);
 
     const caption = el('div', { class: 'seed-caption' });
     const captionTitle = el('strong', { class: 'seed-title' });
@@ -236,43 +226,38 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     const seedSide = el('div', { class: 'seed-side' }, tray);
 
     const controls = el('div', { class: 'work-controls' });
-    let batches = null;
+    let stepper = null, batchValue = null;
     if (mode === 'craft') {
-      batches = el('select', { id: 'craftBatches', 'aria-label': 'Số mẻ tức thì' });
-      for (const value of [1, 3, 10]) batches.append(el('option', { value, text: String(value) }));
-      batches.addEventListener('change', event => {
-        const value = Number(event.target.value);
-        local.craft.batches = safeInteger(value) && value >= 1 ? value : 1;
+      const step = delta => {
+        const at = Math.max(0, BATCH_STEPS.indexOf(local.craft.batches));
+        local.craft.batches = BATCH_STEPS[Math.min(BATCH_STEPS.length - 1, Math.max(0, at + delta))];
         refresh('craft');
-      });
+      };
+      const less = button('−', () => step(-1), { id: 'craftLess', 'aria-label': 'Bớt số mẻ' });
+      const more = button('+', () => step(1), { id: 'craftMore', 'aria-label': 'Thêm số mẻ' });
+      batchValue = el('output', { id: 'craftBatches', class: 'work-batch', 'aria-live': 'polite' });
+      stepper = el('div', { class: 'work-stepper', role: 'group', 'aria-label': 'Số mẻ' }, [less, batchValue, more]);
+      stepper.less = less;
+      stepper.more = more;
+      controls.append(stepper);
     }
-    const details = button('⋯', () => showPanel(mode), {
-      id: `${mode}Details`,
-      title: mode === 'craft' ? 'Mở danh sách chế biến đầy đủ' : 'Mở danh sách xây dựng đầy đủ',
-      'aria-label': mode === 'craft' ? 'Mở chi tiết chế biến' : 'Mở chi tiết xây dựng',
-    });
     const action = button(mode === 'craft' ? 'Làm' : 'Xây', () => {
       if (mode === 'craft') dispatchCraft();
       else dispatchBuild();
-    }, {
-      id: `${mode}Action`,
-      class: 'primary',
+    }, { id: `${mode}Action`, class: 'primary' });
+    const details = button('⋯', () => showPanel(mode), {
+      id: `${mode}Details`,
+      title: mode === 'craft' ? 'Danh sách chế biến đầy đủ' : 'Danh sách xây dựng đầy đủ',
+      'aria-label': mode === 'craft' ? 'Mở danh sách chế biến' : 'Mở danh sách xây dựng',
     });
-    if (batches) controls.append(batches);
-    controls.append(details, action);
+    controls.append(action, details);
 
     const detail = el('div', { class: 'work-detail' });
     const detailText = el('span', { class: 'work-detail-text' });
     detail.append(detailText);
-    const claim = button(mode === 'craft' ? 'Nhận mẻ xong' : 'Nhận CT xong', () => {
-      dispatchClaim(mode);
-    }, {
-      id: `${mode}Claim`,
-      class: 'work-claim ready-only',
-    });
 
-    dock.replaceChildren(caption, seedSide, controls, detail);
-    model.dom = { dock, caption, captionTitle, captionMeta, seedSide, tray, controls, batches, details, action, detail, detailText, claim };
+    dock.replaceChildren(jobs, caption, controls, detail, seedSide);
+    model.dom = { dock, jobs, jobList, claim, caption, captionTitle, captionMeta, seedSide, tray, controls, stepper, batchValue, details, action, detail, detailText };
     return model.dom;
   }
 
@@ -280,11 +265,23 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     return db.recipes.filter(recipe => recipe.level <= state.level);
   }
 
+  // Not built yet: everything open now, then the next two that open at a later level.
   function expansionsFor(state) {
-    return db.expansions.filter(expansion => expansion.level <= state.level);
+    const built = Array.isArray(state.built) ? state.built : [];
+    const open = db.expansions.filter(item => !built.includes(item.id));
+    const now = open.filter(item => item.level <= state.level);
+    return [...now, ...open.filter(item => item.level > state.level).slice(0, 2)];
   }
 
-  function reconcileTray(mode, state, entries) {
+  function tileBadge(mode, entry, state, now) {
+    if (mode === 'craft') return entry.hours > 0 ? { text: hours(entry.hours).replace(' giờ', 'g'), kind: 'time' } : null;
+    if (entry.level > state.level) return { text: `Cấp ${entry.level}`, kind: 'lock' };
+    const job = (state.construction ?? []).find(item => item.id === entry.id);
+    if (job) return Number(job.readyAt) <= Number(now) ? { text: 'Xong', kind: 'ready' } : { text: 'Đang xây', kind: 'busy' };
+    return null;
+  }
+
+  function reconcileTray(mode, state, entries, now) {
     const model = local[mode];
     const dom = model.dom;
     const ids = new Set(entries.map(entry => entry.id));
@@ -292,6 +289,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       if (!ids.has(id)) {
         trayButton.remove();
         model.buttons.delete(id);
+        model.badges.delete(id);
       }
     }
     for (const entry of entries) {
@@ -307,15 +305,20 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
         'aria-pressed': false,
         title,
       });
-      trayButton.append(mode === 'craft' ? makeRecipeIcon(entry, E, items) : makeExpansionIcon(entry, items));
-      if (mode === 'build') trayButton.append(el('span', { class: 'tray-label', text: title.match(/\d+/)?.[0] || title }));
-      else trayButton.append(el('span', { class: 'tray-label', text: chipLabel(entry.label) }));
+      const badge = el('span', { class: 'tray-badge' });
+      badge.hidden = true;
+      trayButton.append(
+        mode === 'craft' ? makeRecipeIcon(entry, items) : makeExpansionIcon(entry, items),
+        el('span', { class: 'tray-label', text: mode === 'craft' ? chipLabel(entry.label) : title }),
+        badge,
+      );
       model.buttons.set(entry.id, trayButton);
+      model.badges.set(entry.id, badge);
       dom.tray.append(trayButton);
     }
     if (!ids.has(model.selectedId)) {
       const first = mode === 'build'
-        ? entries.find(entry => !state.built.includes(entry.id))
+        ? entries.find(entry => entry.level <= state.level && !(state.construction ?? []).some(job => job.id === entry.id))
         : entries[0];
       model.selectedId = (first ?? entries[0])?.id ?? null;
     }
@@ -324,40 +327,80 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       const selected = entry.id === model.selectedId;
       trayButton.classList.toggle('selected', selected);
       trayButton.setAttribute('aria-pressed', String(selected));
-      trayButton.title = mode === 'craft' ? String(entry.label ?? entry.id) : expansionTitle(entry);
+      const info = tileBadge(mode, entry, state, now);
+      const badge = model.badges.get(entry.id);
+      badge.hidden = !info;
+      badge.textContent = info?.text ?? '';
+      badge.className = `tray-badge${info ? ` is-${info.kind}` : ''}`;
+      trayButton.classList.toggle('is-locked', mode === 'build' && entry.level > state.level);
     }
   }
 
+  // Cost chips: what one action takes (big) and what the barn holds (small), red when short.
   function showCosts(dom, costs, output, reason, summary, galleons = 0, galleonShort = false) {
-    // Only presentation changes; quantities and blockers come from the same derived choice.
     dom.detailText.title = summary;
     dom.detailText.setAttribute('role', 'group');
     dom.detailText.setAttribute('aria-label', summary);
-    const chips = costChips(items, costs, galleons, galleonShort);
-    if(output){
-      const chip=el('span',{class:'dock-cost is-output','aria-hidden':'true',title:`+${num(output.count)} ${readLabel(labels,output.id)}`});
-      chip.append(el('span',{text:'→'}),visualItemIcon(items,output.id,{size:22}),el('span',{text:`+${num(output.count)}`}));
+    const chips = costs.map(({ id, have, need }) => el('span', {
+      class: 'dock-cost' + (have < need ? ' is-short' : ''),
+      'aria-hidden': 'true',
+      title: `${readLabel(labels, id)}: cần ${num(need)}, có ${num(have)}`,
+    }, [visualItemIcon(items, id, { size: 22 }), el('b', { text: `×${num(need)}` }), el('small', { text: have < need ? `thiếu ${num(need - have)}` : `có ${num(have)}` })]));
+    if (galleons) chips.push(el('span', { class: 'dock-cost is-galleons' + (galleonShort ? ' is-short' : ''), 'aria-hidden': 'true' }, [pixelIcon('coin', 1), el('b', { text: num(galleons) })]));
+    if (output) {
+      const chip = el('span', { class: 'dock-cost is-output', 'aria-hidden': 'true', title: `+${num(output.count)} ${readLabel(labels, output.id)}` });
+      chip.append(el('span', { class: 'dock-cost-arrow', text: '→' }), visualItemIcon(items, output.id, { size: 22 }), el('b', { text: `+${num(output.count)}` }));
       chips.push(chip);
     }
-    if(reason)chips.push(el('span',{class:'dock-cost-reason',text:reason,'aria-hidden':'true'}));
+    if (reason) chips.push(el('span', { class: 'dock-cost-reason', text: reason, 'aria-hidden': 'true' }));
     dom.detailText.replaceChildren(...chips);
+  }
+
+  // Running jobs: icon, name, progress bar and a ticking countdown; «Nhận» once one is done.
+  function renderJobs(mode, state, now) {
+    const dom = local[mode].dom;
+    const jobs = (mode === 'craft' ? state.jobs : state.construction) ?? [];
+    dom.jobs.hidden = jobs.length === 0;
+    const rows = jobs.map(job => {
+      const recipe = mode === 'craft' ? db.recipes.find(item => item.id === job.recipeId) : null;
+      const expansion = mode === 'build' ? db.expansions.find(item => item.id === job.id) : null;
+      const name = recipe ? recipe.label : expansion ? expansionTitle(expansion) : String(job.id ?? '');
+      const start = Number(job.startedAt), end = Number(job.readyAt);
+      const done = end <= now;
+      const share = done ? 100 : end > start ? Math.max(2, Math.min(99, Math.round((now - start) / (end - start) * 100))) : 0;
+      const bar = el('span', { class: 'work-job-bar', 'aria-hidden': 'true' }, el('i', { style: `width:${share}%` }));
+      const time = el('span', { class: 'work-job-time' + (done ? ' ready-text' : ''), 'data-until': end, 'data-prefix': 'còn ', text: done ? 'Xong' : `còn ${duration(end - now)}` });
+      return el('div', { class: 'work-job' + (done ? ' is-ready' : '') }, [
+        visualItemIcon(items, recipe ? recipe.output : job.id, { size: 26 }),
+        el('span', { class: 'work-job-name', text: name }),
+        bar,
+        time,
+      ]);
+    });
+    dom.jobList.replaceChildren(...rows);
+    const readyCount = readyJobs(jobs, now).length;
+    dom.claim.hidden = readyCount === 0;
+    dom.claim.disabled = !getReady() || readyCount === 0;
+    dom.claim.textContent = readyCount > 1 ? `Nhận ×${readyCount}` : 'Nhận';
+    dom.claim.title = mode === 'craft' ? 'Nhận các mẻ đã xong' : 'Mở các công trình đã xong';
   }
 
   function renderCraft(state) {
     const model = local.craft;
     const dom = ensure('craft');
     if (!dom) return;
-    const recipes = recipesFor(state);
-    reconcileTray('craft', state, recipes);
-    const recipe = recipes.find(item => item.id === model.selectedId) ?? null;
     const now = stateNow(E, state);
-    syncClaim(dom, 'craft', readyJobs(state.jobs, now).length > 0, getReady);
+    const recipes = recipesFor(state);
+    reconcileTray('craft', state, recipes, now);
+    renderJobs('craft', state, now);
+    const recipe = recipes.find(item => item.id === model.selectedId) ?? null;
     if (!recipe) {
-      dom.captionTitle.textContent = 'Chọn công thức';
-      dom.captionMeta.textContent = 'Chưa có công thức';
-      dom.detailText.textContent = 'Chưa có công thức đã mở.';
+      dom.captionTitle.textContent = 'Chưa có công thức';
+      dom.captionMeta.textContent = 'Mở ở cấp ' + (db.recipes[0]?.level ?? '');
+      dom.detailText.replaceChildren();
       dom.action.disabled = true;
       setAction(dom.action, { icon: 'craft', label: 'Chưa mở' });
+      if (dom.stepper) dom.stepper.hidden = true;
       return;
     }
 
@@ -365,74 +408,77 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     const choice = craftChoice(recipe, state, model.batches);
     const outputCount = Number(recipe.count) * choice.batches;
     dom.captionTitle.textContent = recipe.label;
-    dom.captionMeta.textContent = hours(recipe.hours);
-    dom.batches.value = String(model.batches);
-    dom.batches.disabled = recipe.hours > 0;
+    dom.captionMeta.textContent = `${recipe.hours > 0 ? '⏱ ' + hours(recipe.hours) : 'Tức thì'} · ${recipe.station}`;
+    dom.stepper.hidden = recipe.hours > 0;
+    dom.batchValue.textContent = `×${model.batches}`;
+    dom.stepper.less.disabled = model.batches <= BATCH_STEPS[0];
+    dom.stepper.more.disabled = model.batches >= BATCH_STEPS[BATCH_STEPS.length - 1];
 
     const inputText = Object.entries(choice.needs)
       .map(([id, need]) => `${readLabel(labels, id)} ${num(inventoryValue(state, id))}/${num(need)}`)
       .join(' · ');
-    const detailReason = choice.busy ? 'Đang làm' : choice.missing ? 'Thiếu nguyên liệu' : !choice.canCraft ? 'Chưa đủ điều kiện' : 'Sẵn sàng';
-    const summary = `${inputText} · +${num(outputCount)} ${readLabel(labels, recipe.output)} · ${detailReason}`;
-    showCosts(dom,Object.entries(choice.needs).map(([id,need])=>({id,need,have:inventoryValue(state,id)})),
-      {id:recipe.output,count:outputCount},detailReason==='Sẵn sàng'?'':detailReason,summary);
+    const detailReason = choice.busy ? `${recipe.station} đang bận` : choice.missing ? 'Thiếu nguyên liệu' : !choice.canCraft ? 'Chưa đủ điều kiện' : '';
+    const summary = `${inputText} · +${num(outputCount)} ${readLabel(labels, recipe.output)}${detailReason ? ' · ' + detailReason : ''}`;
+    showCosts(dom, Object.entries(choice.needs).map(([id, need]) => ({ id, need, have: inventoryValue(state, id) })),
+      { id: recipe.output, count: outputCount }, detailReason, summary);
 
     const ready = getReady();
-    let actionText = `Làm ×${choice.batches}`;
-    if (!ready) actionText = 'Đợi chút';
-    else if (choice.busy) actionText = 'Đang làm';
-    else if (choice.missing) actionText = 'Thiếu đồ';
-    else if (!choice.canCraft) actionText = 'Chưa mở';
+    let label = 'Làm';
+    if (!ready) label = 'Đợi chút';
+    else if (choice.busy) label = 'Đang làm';
+    else if (choice.missing) label = 'Thiếu đồ';
+    else if (!choice.canCraft) label = 'Chưa mở';
+    const go = label === 'Làm';
     dom.action.disabled = !ready || !choice.canCraft;
-    const go = actionText.startsWith('Làm');
-    setAction(dom.action, { icon: 'craft', label: go ? 'Làm' : actionText, count: go ? `×${choice.batches}` : '', text: `${actionText} · ${summary}` });
+    setAction(dom.action, { icon: 'craft', label, count: go ? `×${choice.batches}` : '', text: `${label} · ${summary}` });
   }
 
   function renderBuild(state) {
     const model = local.build;
     const dom = ensure('build');
     if (!dom) return;
-    const expansions = expansionsFor(state);
-    reconcileTray('build', state, expansions);
-    const expansion = expansions.find(item => item.id === model.selectedId) ?? null;
     const now = stateNow(E, state);
-    syncClaim(dom, 'build', readyJobs(state.construction, now).length > 0, getReady);
+    const expansions = expansionsFor(state);
+    reconcileTray('build', state, expansions, now);
+    renderJobs('build', state, now);
+    dom.seedSide.hidden = expansions.length === 0;
+    const expansion = expansions.find(item => item.id === model.selectedId) ?? null;
     if (!expansion) {
-      dom.captionTitle.textContent = 'Chọn công trình';
-      dom.captionMeta.textContent = 'Chưa có công trình';
-      dom.detailText.textContent = 'Chưa có công trình đã mở.';
+      dom.captionTitle.textContent = 'Đã xây hết';
+      dom.captionMeta.textContent = 'Vườn đã đủ mọi thửa và chuồng';
+      dom.detailText.replaceChildren();
       dom.action.disabled = true;
-      setAction(dom.action, { icon: 'build', label: 'Chưa mở' });
+      setAction(dom.action, { icon: 'build', label: 'Xong hết' });
       return;
     }
 
     const choice = buildChoice(expansion, state, now, db.expansions, getGalleons());
     const title = expansionTitle(expansion);
     dom.captionTitle.textContent = title;
-    dom.captionMeta.textContent = `${hours(expansion.hours)} · ${expansionShortEffect(expansion)}`;
+    dom.captionMeta.textContent = `${expansion.hours > 0 ? '⏱ ' + hours(expansion.hours) : 'Tức thì'} · ${expansionShortEffect(expansion)}`;
 
-    const previous = choice.previous ? ` · cần ${expansionTitle(choice.previous)}` : '';
-    let detailReason = expansionEffect(expansion);
-    if (choice.built) detailReason = 'Đã xây';
-    else if (choice.queued && choice.ready) detailReason = 'Đã xong · chờ nhận';
-    else if (choice.queued || choice.sameKindBusy) detailReason = 'Đang làm';
-    else if (!choice.previousBuilt) detailReason = `Chưa xong công trình trước${previous}`;
+    let reason = '';
+    if (!choice.unlocked) reason = `Mở ở cấp ${expansion.level}`;
+    else if (choice.queued && choice.ready) reason = 'Đã xong · bấm Nhận';
+    else if (choice.queued) reason = 'Đang xây';
+    else if (choice.sameKindBusy) reason = `Đang xây ${expansion.kind === 'plot' ? 'thửa' : 'chuồng'} khác`;
+    else if (!choice.previousBuilt) reason = `Cần xây ${expansionTitle(choice.previous)} trước`;
     // Same order as the server: crops are checked before Galleons.
-    else if (choice.missing) detailReason = choice.costs.some(c => c.have < c.need) ? 'Thiếu nông sản' : 'Thiếu Galleons';
+    else if (choice.missing) reason = choice.costs.some(c => c.have < c.need) ? 'Thiếu nông sản' : 'Thiếu Galleons';
     const price = [...choice.costs.map(c => `${readLabel(labels, c.id)} ${num(c.have)}/${num(c.need)}`), ...(choice.galleonNeed ? [`${num(choice.galleonNeed)} Galleons`] : [])].join(', ');
-    const summary = `${title} · ${price} · ${detailReason}`;
-    showCosts(dom,choice.costs,null,choice.canBuild?'':detailReason,summary,choice.galleonNeed,choice.galleonShort);
+    const summary = `${title} · ${expansionEffect(expansion)} · ${price}${reason ? ' · ' + reason : ''}`;
+    showCosts(dom, choice.costs, null, reason, summary, choice.galleonNeed, choice.galleonShort);
 
     const ready = getReady();
-    let actionText = 'Xây';
-    if (!ready) actionText = 'Đợi chút';
-    else if (choice.built) actionText = 'Đã xây';
-    else if (choice.queued || choice.sameKindBusy) actionText = 'Đang làm';
-    else if (choice.missing) actionText = 'Thiếu đồ';
-    else if (!choice.previousBuilt) actionText = 'Chưa đủ';
-    else if (!choice.canBuild) actionText = 'Chưa mở';
+    let label = 'Xây';
+    if (!ready) label = 'Đợi chút';
+    else if (!choice.unlocked) label = `Cấp ${expansion.level}`;
+    else if (choice.queued || choice.sameKindBusy) label = 'Đang xây';
+    else if (choice.missing) label = 'Thiếu đồ';
+    else if (!choice.previousBuilt) label = 'Chưa đủ';
+    else if (!choice.canBuild) label = 'Chưa mở';
     dom.action.disabled = !ready || !choice.canBuild;
-    setAction(dom.action, { icon: 'build', label: actionText, text: `${actionText} · ${summary}` });
+    setAction(dom.action, { icon: 'build', label, text: `${label} · ${summary}` });
   }
 
   function refresh(mode) {
@@ -456,7 +502,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       return;
     }
     const { choice, command } = derived;
-    run(next => E.craft(next, selectedId, choice.batches, Date.now()), recipe.hours > 0 ? 'Đã bắt đầu mẻ.' : 'Đã chế biến thành phẩm.', command);
+    run(next => E.craft(next, selectedId, choice.batches, Date.now()), recipe.hours > 0 ? `Đã bắt đầu ${recipe.label} · xong sau ${hours(recipe.hours)}.` : `Đã làm +${num(recipe.count * choice.batches)} ${readLabel(labels, recipe.output)}.`, command);
   }
 
   function dispatchBuild() {
@@ -469,7 +515,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       refresh('build');
       return;
     }
-    run(next => E.build(next, selectedId, Date.now()), `Đã khởi công ${expansionTitle(expansion)}.`, derived.command);
+    run(next => E.build(next, selectedId, Date.now()), expansion.hours > 0 ? `Đã khởi công ${expansionTitle(expansion)} · xong sau ${hours(expansion.hours)}.` : `Đã xây ${expansionTitle(expansion)}.`, derived.command);
   }
 
   function dispatchClaim(mode) {

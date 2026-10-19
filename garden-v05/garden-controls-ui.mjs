@@ -1,6 +1,6 @@
-import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.48';
-import {V24_ART} from './v24-visuals.mjs?v=24.9.48';
-import {pixelIcon} from './pixel-icons.mjs?v=24.9.48';
+import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.49';
+import {V24_ART} from './v24-visuals.mjs?v=24.9.49';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.49';
 
 export function setupGardenControls({items,onSettings,getWeather}){
  const labels={sowTool:'Gieo hạt',harvestTool:'Gặt tất cả cây chín',creatureTool:'Nuôi sinh vật',craftTool:'Chế biến',buildTool:'Xây dựng'};
@@ -42,7 +42,7 @@ export function setupGardenControls({items,onSettings,getWeather}){
     entry.portrait.hidden=!entry.portrait.childNodes.length;
     continue;
    }
-   const source=selected?.querySelector('.sprite-icon, .tray-glyph');
+   const source=selected?.querySelector('.visual-slot, .sprite-icon, .tray-glyph');
    const isLargeSprite=entry.kind==='plant'||entry.kind==='creature';
    const preview=isLargeSprite?icon(items,id,3,64):entry.kind==='build'?visualItemIcon(items,id,{size:56}):source?.cloneNode(true);
    if(!preview){

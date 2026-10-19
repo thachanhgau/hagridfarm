@@ -1,5 +1,5 @@
-import {wizardTargets} from "./wizard-scenery.mjs?v=24.9.48";
-export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onPick,getSelectedPlot,notify}) {
+import {wizardTargets} from "./wizard-scenery.mjs?v=24.9.49";
+export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onPick,onTap,getSelectedPlot,notify}) {
  const camera={x:0,y:0,scale:1},pointers=new Map();let gesture=null,previousSize=null,frameFirstPlot=false,frameOverview=false;
  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
  let fitScale=.05;
@@ -97,7 +97,7 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
  function start(){const ps=[...pointers.values()];if(ps.length>=2){const[a,b]=ps;gesture={kind:"pinch",distance:Math.hypot(a.x-b.x,a.y-b.y),mid:{x:(a.x+b.x)/2,y:(a.y+b.y)/2},...camera,moved:true};}else if(ps.length)gesture={kind:"pan",start:{...ps[0]},...camera,moved:false};else gesture=null;}
  viewport.onpointerdown=e=>{if(e.button!==0)return;frameFirstPlot=false;if(camera.scale>fitScale+1e-4)frameOverview=false;viewport.setPointerCapture(e.pointerId);pointers.set(e.pointerId,local(e));start();viewport.classList.add("dragging");};
  viewport.onpointermove=e=>{if(!pointers.has(e.pointerId)||!gesture)return;const p=local(e);pointers.set(e.pointerId,p);const ps=[...pointers.values()];if(ps.length>=2&&gesture.kind==="pinch"){frameOverview=false;const[a,b]=ps,mid={x:(a.x+b.x)/2,y:(a.y+b.y)/2},scale=clamp(gesture.scale*Math.hypot(a.x-b.x,a.y-b.y)/Math.max(1,gesture.distance),fitScale,2.4),r=scale/gesture.scale;camera.scale=scale;camera.x=mid.x-(gesture.mid.x-gesture.x)*r;camera.y=mid.y-(gesture.mid.y-gesture.y)*r;if(camera.scale<=fitScale+1e-4)frameOverview=true;}else if(gesture.kind==="pan"){const dx=p.x-gesture.start.x,dy=p.y-gesture.start.y;gesture.moved ||=Math.hypot(dx,dy)>6;if(camera.scale>fitScale+1e-4){camera.x=gesture.x+dx;camera.y=gesture.y+dy;}}apply();};
- function end(e){if(!pointers.has(e.pointerId))return;const tap=e.type==="pointerup"&&gesture?.kind==="pan"&&!gesture.moved&&pointers.size===1;if(tap){const hit=getRenderer()?.pick(e.clientX,e.clientY);if(hit)onPick(hit);}pointers.delete(e.pointerId);const wasPinch=gesture?.kind==="pinch";start();if(wasPinch&&gesture)gesture.moved=true;if(!pointers.size)viewport.classList.remove("dragging");}
+ function end(e){if(!pointers.has(e.pointerId))return;const tap=e.type==="pointerup"&&gesture?.kind==="pan"&&!gesture.moved&&pointers.size===1;if(tap&&!onTap?.(e.clientX,e.clientY)){const hit=getRenderer()?.pick(e.clientX,e.clientY);if(hit)onPick(hit);}pointers.delete(e.pointerId);const wasPinch=gesture?.kind==="pinch";start();if(wasPinch&&gesture)gesture.moved=true;if(!pointers.size)viewport.classList.remove("dragging");}
  viewport.onpointerup=end;viewport.onpointercancel=end;viewport.onlostpointercapture=e=>{if(!pointers.delete(e.pointerId))return;start();if(gesture)gesture.moved=true;else viewport.classList.remove("dragging");};
  viewport.addEventListener("wheel",e=>{e.preventDefault();const p=local(e);zoom(e.deltaY<0?1.1:1/1.1,p.x,p.y);},{passive:false});
  viewport.onkeydown=e=>{const moves={ArrowLeft:[35,0],ArrowRight:[-35,0],ArrowUp:[0,35],ArrowDown:[0,-35]};if(moves[e.key]){e.preventDefault();if(camera.scale>fitScale+1e-4){frameFirstPlot=false;frameOverview=false;camera.x+=moves[e.key][0];camera.y+=moves[e.key][1];apply();}}if(["+","=","-"].includes(e.key)){e.preventDefault();zoom(e.key==="-"?.8:1.25);}};
@@ -116,5 +116,5 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
   const step=t=>{if(pointers.size)return;const k=Math.min(1,(t-t0)/ms),e=k<.5?2*k*k:1-(-2*k+2)**2/2;camera.x=from.x+(to.x-from.x)*e;camera.y=from.y+(to.y-from.y)*e;camera.scale=from.scale+(to.scale-from.scale)*e;apply();if(k<1)requestAnimationFrame(step);};
   camera.x=from.x;camera.y=from.y;camera.scale=from.scale;apply();requestAnimationFrame(step);
  }
- return {focusPlot,focusCreature,overview,centerAt,zoom,fullscreen,glide,frameWorld};
+ return {focusPlot,focusCreature,overview,centerAt,zoom,fullscreen,glide,frameWorld,scale:()=>camera.scale};
 }

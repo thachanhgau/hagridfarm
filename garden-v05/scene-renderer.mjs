@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.48';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.48';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.48';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.48';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.48';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.48';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.48';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.48';
-import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.48';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.48';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.48';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.48';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.48';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.48';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.48';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.49';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.49';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.49';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.49';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.49';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.49';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.49';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.49';
+import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.49';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.49';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.49';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.49';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.49';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.49';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.49';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -25,13 +25,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.48';
+} from './scene-animation.mjs?v=24.9.49';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.48';
+} from './forest-surround.mjs?v=24.9.49';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -557,13 +557,20 @@ function drawPenFront(context, pen, scaffold = false) {
   }
 }
 
-function label(context, text, x, y, color = '#d6d8bf', font = 'bold 13px sans-serif') {
+// 2g05 · 12p · 45s: the plot label's countdown, short enough for the map.
+function shortTime(ms) {
+  const seconds = Math.max(0, Math.ceil(ms / 1000));
+  if (seconds >= 3600) { const h = Math.floor(seconds / 3600), m = Math.floor(seconds % 3600 / 60); return h >= 24 ? `${Math.floor(h / 24)}n${h % 24}g` : `${h}g${String(m).padStart(2, '0')}`; }
+  return seconds >= 60 ? `${Math.ceil(seconds / 60)}p` : `${seconds}s`;
+}
+
+function label(context, text, x, y, color = '#d6d8bf', font = 'bold 13px sans-serif', background = 'rgba(24,45,43,.82)') {
   context.font = font;
   context.textAlign = 'center';
   context.textBaseline = 'middle';
-  const width = context.measureText(text).width + 10;
-  context.fillStyle = 'rgba(24,45,43,.82)';
-  context.fillRect(Math.round(x - width / 2), Math.round(y - 9), Math.ceil(width), 18);
+  const width = context.measureText(text).width + 10, height = (Number(font.match(/(\d+)px/)?.[1]) || 13) + 6;
+  context.fillStyle = background;
+  context.fillRect(Math.round(x - width / 2), Math.round(y - height / 2), Math.ceil(width), height);
   context.fillStyle = color;
   context.fillText(text, Math.round(x), Math.round(y));
 }
@@ -1367,6 +1374,7 @@ export async function createGarden(canvas, options = {}) {
   let activeAnimations = [];
   let guestActor = null; // tutorial visitor; never part of state.creatures
   let speechScale = 1; // tutorial text stays readable when zoomed out
+  let labelScale = 1; // plot labels keep ~12 screen px when the camera zooms out
   let authoredEffectEventIds = new Set();
 
   function actorObject(entry, col, row, logicalNow, clock, target = {}) {
@@ -1788,6 +1796,7 @@ export async function createGarden(canvas, options = {}) {
     const hagridLine = options.hagridLine || null;
     const tutorialFocus = options.tutorialFocus || null;
     speechScale = Math.max(1, finite(options.speechScale, 1));
+    labelScale = Math.min(2.6, Math.max(1, finite(options.labelScale, 1)));
     if (canvas.dataset) canvas.dataset.speechScale = String(speechScale);
     guestActor = options.guestActor || null;
     const atmosphereMode = options.atmosphereMode || 'day';
@@ -1849,6 +1858,13 @@ export async function createGarden(canvas, options = {}) {
     drawSelection(state, selectedPlot, lineCells);
     drawPlotFrames(state, logicalNow, selectedPlot);
     if (options.previewLayout) drawLayoutSwapPreview(options.previewLayout);
+    // While a decoration is being placed: every free spot is a numbered mark the player can tap.
+    for (const spot of asArray(options.previewDecoration?.slots)) {
+      if (spot.state === 'taken') continue;
+      const [x, y] = iso(spot.col, spot.row);
+      const chosen = spot.state === 'selected';
+      drawDiamond(context, x, y, chosen ? 'rgba(245,214,154,.38)' : 'rgba(183,222,224,.22)', chosen ? '#f5d69a' : '#b7dee0', map, 1.6);
+    }
 
     sceneryVisible=propsVisible;
     let matureCropCount = 0;
@@ -2005,9 +2021,25 @@ export async function createGarden(canvas, options = {}) {
       const [x, y] = iso(...resolvedPlotPosition(plot, 'label'));
       const built = plotIsBuilt(state, index, logicalNow);
       const queued = Boolean(plotConstruction(state, index));
-      label(context, built || queued ? `THỬA ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`, x, y, built || queued ? (index === selectedPlot ? '#f5d69a' : '#d6d8bf') : '#a6b1ae', 'bold 11px sans-serif');
+      if (!built) {
+        label(context, queued ? `THỬA ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`, x, y, queued ? '#d6d8bf' : '#a6b1ae', 'bold 11px sans-serif');
+        continue;
+      }
+      // Each built plot says how it is doing: ripe count, or the time until its first crop ripens.
+      const slots = (state.plots?.[index]?.slots ?? []).filter(Boolean);
+      const ripe = slots.filter(entry => growthFor(entry, logicalNow).mature).length;
+      const left = slots.length && !ripe ? Math.min(...slots.map(entry => entry.plantedAt + (entry.growMs ?? growthFor(entry, logicalNow).growMs) - logicalNow)) : 0;
+      const tag = ripe ? ` · CHÍN ${ripe}` : slots.length ? ` · ${shortTime(left)}` : '';
+      label(context, `THỬA ${index + 1}${tag}`, x, y, ripe ? '#231f2e' : index === selectedPlot ? '#f5d69a' : '#e8f0ed', `bold ${Math.round(12 * labelScale)}px sans-serif`, ripe ? 'rgba(244,206,98,.94)' : 'rgba(18,38,33,.88)');
     }
     drawPenLabels(state, logicalNow);
+    // Spot numbers sit above everything so the item being placed never hides them.
+    for (const spot of asArray(options.previewDecoration?.slots)) {
+      if (spot.state === 'taken') continue;
+      const [x, y] = iso(spot.col, spot.row);
+      const chosen = spot.state === 'selected';
+      label(context, `◆ ${spot.id + 1}`, x, y + 16 * labelScale, chosen ? '#231f2e' : '#e8f0ed', `bold ${Math.round(12 * labelScale)}px sans-serif`, chosen ? 'rgba(244,206,98,.94)' : 'rgba(18,38,33,.88)');
+    }
   }
 
   function pick(clientX, clientY) {

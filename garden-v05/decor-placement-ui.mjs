@@ -1,199 +1,117 @@
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.48';
-import {el,button} from './ui-utils.mjs?v=24.9.48';
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor,normalizeDecorFacing} from './decor-runtime.mjs?v=24.9.48';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.49';
+import {el,button} from './ui-utils.mjs?v=24.9.49';
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor,normalizeDecorFacing} from './decor-runtime.mjs?v=24.9.49';
 
-export function showDecorationPlacement({item,getStage,getDecorations,onPlace,preview,camera,iso,onClose}){
- for(const old of document.querySelectorAll('dialog.decor-placement')){try{old.close();}catch{}old.remove();}
+/**
+ * Đặt trang trí: a small bar over the dock, the garden stays in view. ◀ ▶ step through the free
+ * spots (the camera follows), a tap on the garden picks the nearest free spot, ↻ turns the item,
+ * «Đặt» saves. Free spots show as numbered marks on the map (`slots` in the preview).
+ */
+export function showDecorationPlacement({item,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld}){
+ for(const old of document.querySelectorAll('.decor-placement,.decor-bar')){try{old.close?.();}catch{}old.remove();}
  const itemLabel=decorLabelFor(item);
  const initialDecor=getDecorations()??{};
  const currentSlot=initialDecor.placements?.indexOf(item.id)??-1;
- const initialFacing=decorFacingFor(initialDecor,item.id);
- let selected=currentSlot>=0?currentSlot:null;
- let selectedFacing=initialFacing;
+ let selectedFacing=decorFacingFor(initialDecor,item.id);
  let pending=false;
 
- const dialog=el('dialog',{class:'decor-placement','aria-labelledby':'decorPlaceTitle'});
- const heading=el('div',{class:'sheet-heading'});
- const angleSection=el('div',{class:'decor-angle-section','aria-label':'Chọn góc xoay vật phẩm'});
- const grid=el('div',{class:'decor-slot-grid'});
- const notice=el('p',{class:'meta',role:'status'});
- const apply=button('Chọn một vị trí',commit,{class:'primary',disabled:true});
-
- function close(){
-  if(pending)return;
-  preview(null);
-  dialog.close();
-  dialog.remove();
-  onClose?.();
+ function spots(){
+  const decor=getDecorations()??{},stage=getStage?.();
+  return DECOR_SLOTS.map(slot=>{
+   const occupant=decor.placements?.[slot.id];
+   const locked=!!stage&&!stageContains(stage,slot.col,slot.row);
+   const taken=!!occupant&&occupant!==item.id;
+   return {slot,mine:occupant===item.id,taken,locked,usable:!taken&&!locked,required:GARDEN_STAGES.find(s=>stageContains(s,slot.col,slot.row))?.level};
+  });
  }
+ let selected=currentSlot>=0?currentSlot:spots().find(s=>s.usable)?.slot.id??null;
 
- heading.append(
-  el('h2',{id:'decorPlaceTitle',text:'Đặt & Xoay · '+itemLabel}),
-  button('×',close,{'aria-label':'Đóng bảng trang trí'})
+ const bar=el('div',{class:'decor-bar',role:'dialog','aria-labelledby':'decorPlaceTitle'});
+ const thumb=el('img',{class:'decor-bar-thumb',alt:''});
+ const title=el('strong',{id:'decorPlaceTitle',text:itemLabel});
+ const where=el('span',{class:'decor-bar-where'});
+ const prev=button('◀',()=>step(-1),{'aria-label':'Vị trí trước'});
+ const next=button('▶',()=>step(1),{'aria-label':'Vị trí sau'});
+ const turn=button('↻ Xoay',()=>{selectedFacing=selectedFacing==='right'?'default':'right';sync(false);},{class:'decor-bar-turn','aria-label':'Xoay vật phẩm'});
+ const apply=button('Đặt',commit,{class:'primary decor-bar-apply'});
+ const stash=button('Cất vào kho',()=>save(null),{class:'decor-bar-stash'});
+ const hint=el('p',{class:'decor-bar-hint',role:'status'});
+ bar.append(
+  el('div',{class:'decor-bar-head'},[thumb,el('div',{class:'decor-bar-text'},[title,where]),button('×',close,{class:'decor-bar-close','aria-label':'Đóng'})]),
+  el('div',{class:'decor-bar-row'},[prev,next,turn,apply]),
+  el('div',{class:'decor-bar-foot'},[hint,stash]),
  );
 
- function syncPreview(centerCamera=false){
-  if(selected===null){
-   preview(null);
-   return;
-  }
-  const slot=DECOR_SLOTS[selected];
-  if(slot&&centerCamera&&camera&&iso){
-   const xy=iso(slot.col,slot.row);
-   camera.centerAt(xy[0],xy[1]-50,1.5);
-  }
-  preview({itemId:item.id,slot:selected,facing:selectedFacing});
+ function step(delta){
+  const usable=spots().filter(s=>s.usable).map(s=>s.slot.id);
+  if(!usable.length)return;
+  const at=usable.indexOf(selected);
+  selected=usable[(at<0?0:at+delta+usable.length)%usable.length];
+  sync(true);
  }
 
- function setFacing(nextFacing){
-  selectedFacing=normalizeDecorFacing(nextFacing);
-  if(selected===null){
-   const decor=getDecorations()??{};
-   const stage=getStage?.();
-   const freeSlot=DECOR_SLOTS.find(s=>{
-    const occ=decor.placements?.[s.id];
-    const locked=!!stage&&!stageContains(stage,s.col,s.row);
-    return (!occ||occ===item.id)&&!locked;
-   });
-   if(freeSlot)selected=freeSlot.id;
-  }
-  syncPreview(false);
-  render();
+ function sync(centerCamera){
+  const list=spots();
+  if(selected!==null&&centerCamera&&camera&&iso){const slot=DECOR_SLOTS[selected];const xy=iso(slot.col,slot.row);camera.centerAt(xy[0],xy[1]-50,Math.max(1.2,camera.scale?.()||1.2));}
+  preview({itemId:selected===null?null:item.id,slot:selected,facing:selectedFacing,
+   slots:list.filter(s=>!s.locked).map(s=>({id:s.slot.id,col:s.slot.col,row:s.slot.row,state:s.slot.id===selected?'selected':s.usable?'free':'taken'}))});
+  render(list);
  }
 
- function render(){
+ function render(list=spots()){
   const decor=getDecorations()??{};
   const placed=decor.placements?.indexOf(item.id)??-1;
   const savedFacing=decorFacingFor(decor,item.id);
-
-  angleSection.replaceChildren();
-  const previewCard=el('div',{class:'decor-angle-preview'});
-  const imgSrc=selectedFacing==='right'?(item.rightFile||item.file):item.file;
-  if(imgSrc){
-   const img=el('img',{
-    class:'decor-angle-thumb'+((selectedFacing==='right'&&!item.rightFile)?' is-flipped':''),
-    src:imgSrc,
-    alt:`${itemLabel} (${selectedFacing==='right'?'Góc nhìn qua phải':'Góc hiện tại'})`,
-   });
-   previewCard.append(img);
-  }
-  const angleControls=el('div',{class:'decor-angle-controls'});
-  angleControls.append(
-   el('span',{class:'decor-angle-label',text:'Góc đặt vật phẩm (2 góc nhìn):'}),
-   el('div',{class:'decor-angle-buttons'},[
-    button('↖ Góc hiện tại',()=>setFacing('default'),{
-     class:'decor-angle-btn'+(selectedFacing==='default'?' is-active':''),
-     'data-decor-angle':'default',
-     'aria-pressed':selectedFacing==='default',
-     disabled:pending,
-    }),
-    button('↗ Góc nhìn qua phải',()=>setFacing('right'),{
-     class:'decor-angle-btn'+(selectedFacing==='right'?' is-active':''),
-     'data-decor-angle':'right',
-     'aria-pressed':selectedFacing==='right',
-     disabled:pending,
-    }),
-    button('↻ Đổi góc',()=>setFacing(selectedFacing==='default'?'right':'default'),{
-     class:'decor-angle-rotate',
-     'data-decor-flip':'1',
-     title:'Xoay nhanh giữa 2 góc nhìn',
-     disabled:pending,
-    }),
-   ])
-  );
-  angleSection.append(previewCard,angleControls);
-
-  grid.replaceChildren();
-  for(const slot of DECOR_SLOTS){
-   const occupant=decor.placements?.[slot.id];
-   const blocked=!!occupant&&occupant!==item.id;
-   const stage=getStage?.();
-   const locked=!!stage&&!stageContains(stage,slot.col,slot.row);
-   const required=GARDEN_STAGES.find(s=>stageContains(s,slot.col,slot.row))?.level;
-   const b=button('',()=>{
-    selected=slot.id;
-    syncPreview(true);
-    render();
-   },{
-    'aria-pressed':selected===slot.id,
-    disabled:pending||blocked||locked,
-    'aria-label':slot.label+(locked?' · mở khu ở cấp '+required:blocked?' · đã có đồ':''),
-   });
-   const statusText=locked
-    ?'Mở khu · cấp '+required
-    :blocked
-     ?'Đã có đồ'
-     :occupant===item.id
-      ?`Đang đặt (${savedFacing==='right'?'Góc phải ↗':'Góc hiện tại ↖'})`
-      :'Còn trống';
-   b.append(
-    el('b',{text:String(slot.id+1)}),
-    el('span',{text:slot.label}),
-    el('small',{text:statusText})
-   );
-   grid.append(b);
-  }
-
+  const right=selectedFacing==='right';
+  thumb.src=right?(item.rightFile||item.file):item.file;
+  thumb.classList.toggle('is-flipped',right&&!item.rightFile);
+  const spot=selected===null?null:list[selected];
+  const usableIds=list.filter(s=>s.usable).map(s=>s.slot.id),free=usableIds.length;
+  where.textContent=spot?`Vị trí ${selected+1} · ${spot.slot.label}${spot.mine?' · đang đặt ở đây':''}`:free?'Chọn một vị trí':'Chưa còn chỗ trống';
   const unchanged=selected===placed&&selectedFacing===savedFacing;
-  const angleTag=selectedFacing==='right'?'Góc phải ↗':'Góc hiện tại ↖';
+  prev.disabled=next.disabled=pending||!free||free===1&&usableIds[0]===selected;
+  turn.disabled=pending;
   apply.disabled=pending||selected===null||unchanged;
-  apply.textContent=pending
-   ?'Đang lưu…'
-   :selected===null
-    ?'Chọn một vị trí'
-    :unchanged
-     ?`Đang ở vị trí ${selected+1} (${angleTag})`
-     :selected===placed
-      ?`Lưu góc xoay (${angleTag})`
-      :`Đặt tại vị trí ${selected+1} (${angleTag})`;
-  stash.hidden=placed<0;
-  stash.disabled=pending;
+  apply.textContent=pending?'Đang lưu…':unchanged?'Đang ở đây':selected===placed?'Lưu góc':'Đặt';
+  stash.hidden=placed<0;stash.disabled=pending;
+  if(!hint.dataset.error)hint.textContent=free?`Chạm dấu ◆ trên vườn hoặc ◀ ▶ để chọn chỗ · ${free} chỗ đặt được`:'Cất bớt đồ khác vào kho để có chỗ.';
  }
 
- async function commit(){
-  if(pending||selected===null)return;
-  pending=true;
-  render();
-  try{
-   await onPlace(item.id,selected,selectedFacing);
-   pending=false;
-   close();
-  }catch(e){
-   notice.textContent=e.message;
-   pending=false;
-   render();
-  }
+ // A tap on the garden picks the nearest free spot; any tap is kept so plots stay untouched.
+ function onTap(clientX,clientY){
+  const point=toWorld?.(clientX,clientY);
+  if(!point||!iso)return true;
+  let best=null;
+  for(const s of spots()){if(!s.usable)continue;const [x,y]=iso(s.slot.col,s.slot.row);const d=Math.hypot(x-point.x,y-point.y);if(!best||d<best.d)best={d,id:s.slot.id};}
+  if(best&&best.d<180){selected=best.id;sync(false);}
+  return true;
  }
 
- const stash=button('Cất vào kho trang trí',async()=>{
+ async function save(slot){
   if(pending)return;
-  pending=true;
-  render();
-  try{
-   await onPlace(item.id,null,selectedFacing);
-   pending=false;
-   close();
-  }catch(e){
-   notice.textContent=e.message;
-   pending=false;
-   render();
-  }
- },{class:'stash-decor'});
+  pending=true;delete hint.dataset.error;render();
+  try{await onPlace(item.id,slot,selectedFacing);pending=false;close();}
+  catch(e){pending=false;hint.dataset.error='1';hint.textContent=e.message;render();}
+ }
+ function commit(){if(selected!==null)save(selected);}
 
- dialog.append(
-  heading,
-  el('p',{text:'Chọn góc xoay (Góc hiện tại hoặc Góc nhìn qua phải) và vị trí trong vườn để xem trước.'}),
-  angleSection,
-  grid,
-  notice,
-  apply,
-  stash
- );
- document.getElementById('gameShell').append(dialog);
- dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
- if(selected!==null)syncPreview(false);
- render();
- dialog.showModal();
+ function onKey(e){if(e.key==='Escape')close();}
+ function close(){
+  if(pending)return;
+  preview(null);
+  setTapHandler?.(null);
+  document.removeEventListener('keydown',onKey);
+  bar.remove();
+  document.body.classList.remove('placing-decor');
+  onClose?.();
+ }
+
+ document.getElementById('gameShell').append(bar);
+ document.body.classList.add('placing-decor');
+ document.addEventListener('keydown',onKey);
+ setTapHandler?.(onTap);
+ sync(selected!==null);
+ apply.focus?.({preventScroll:true});
 }
 
 export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,iso,previewLayout,onMoveBuilding,onClose}){
