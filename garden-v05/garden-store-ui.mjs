@@ -37,6 +37,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
  );
  shade.onclick=close;
 
+ // Nước suối thần shares the Nước phép tab.
+ const tabOf=i=>i.kind==="spring"?"boost":i.kind;
  const categories=[
   ["all","Tất cả"],
   ["seed","Hạt giống"],
@@ -97,14 +99,14 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   cards.replaceChildren();
   tabs.replaceChildren();
   for(const[id,name]of categories){
-   const count=id==="all"?allItems.length:allItems.filter(i=>i.kind===id).length;
+   const count=id==="all"?allItems.length:allItems.filter(i=>tabOf(i)===id).length;
    if(id!=="all"&&count===0)continue;
    const tab=button("",()=>{filter=id;render();tabs.querySelector("[aria-pressed=\"true\"]")?.focus();},{"data-kind":id,"aria-pressed":String(id===filter),"aria-label":`${name} (${count})`,title:name,class:"store-tab-btn gp-tab"});
    tab.append(pixelIcon(KIND_ICONS[id],2),el("span",{text:name}),el("b",{class:"gp-tab-count",text:String(count)}));
    tabs.append(tab);
   }
 
-  for(const item of allItems.filter(i=>filter==="all"||i.kind===filter)){
+  for(const item of allItems.filter(i=>filter==="all"||tabOf(i)===filter)){
    const isDecor=item.kind==="decoration";
    const decorState=snap?.garden?.decorations;
    const owned=isDecor&&Boolean(decorState?.owned?.includes(item.id));

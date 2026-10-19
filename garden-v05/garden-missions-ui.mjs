@@ -10,7 +10,7 @@ export function createMissions({getSnapshot,claim,notify}){
  const button=$('missionButton');
  const body=el('div',{class:'mission-body'});
  const dialog=el('dialog',{id:'missionLetter',class:'owl-letter mission-letter','aria-labelledby':'missionTitle'},[
-  el('div',{class:'popover-heading'},[el('h2',{id:'missionTitle',text:'Nhiệm vụ bác Hagrid'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
+  el('div',{class:'popover-heading'},[el('h2',{id:'missionTitle',text:'Nhiệm vụ'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
   body,
  ]);
  ($('gameShell')||document.body).append(dialog);
