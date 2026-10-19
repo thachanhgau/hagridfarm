@@ -1,5 +1,5 @@
-import { setAction, costChips } from './pixel-icons.mjs?v=24.9.40';
-import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.40';
+import { setAction, costChips } from './pixel-icons.mjs?v=24.9.41';
+import { $, button, el, hours, icon, num, visualItemIcon } from './ui-utils.mjs?v=24.9.41';
 import { DB } from './balance-data.mjs';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
