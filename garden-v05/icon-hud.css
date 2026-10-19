@@ -54,14 +54,15 @@
 
 /* Phones: Kho · Thư cú · Menu on top; Cửa hàng · Lễ hội · Cảnh · gập on the second row; goal chip left. */
 @media (max-width:599px){
- #gameShell .hud .hud-actions{display:block;width:188px;height:96px}
+ #gameShell .hud .hud-actions{display:block;width:236px;height:96px}
  #gameShell .hud .hud-actions>.hud-btn{position:absolute;top:0}
  #gameShell #menuButton{right:0}#gameShell #owlMailButton{right:48px}#gameShell #inventoryButton{right:96px}
- #gameShell .hud #hudToggle,#gameShell .hud #sceneryButton,#gameShell .hud #eventButton,#gameShell .hud #shopButton{top:52px}
- #gameShell #hudToggle{right:0}#gameShell #sceneryButton{right:48px}#gameShell #eventButton{right:96px}#gameShell #shopButton{right:144px}
+ /* Row 2: Nhiệm vụ sits next to the toggle and stays when the row folds. */
+ #gameShell .hud #hudToggle,#gameShell .hud #missionButton,#gameShell .hud #sceneryButton,#gameShell .hud #eventButton,#gameShell .hud #shopButton{top:52px}
+ #gameShell #hudToggle{right:0}#gameShell #missionButton{right:48px}#gameShell #sceneryButton{right:96px}#gameShell #eventButton{right:144px}#gameShell #shopButton{right:192px}
  #gameShell .hud .hud-res{max-width:calc(100% - 52px - 148px)}
- #gameShell .hud .next-goal{max-width:calc(100% - 196px)}
- .hud-compact #gameShell .hud .next-goal{max-width:calc(100% - 56px)}
+ #gameShell .hud .next-goal{max-width:calc(100% - 244px)}
+ .hud-compact #gameShell .hud .next-goal{max-width:calc(100% - 104px)}
  #gameShell .goal-label{display:none}
  #gameShell .camera-tools{top:calc(max(8px,env(safe-area-inset-top)) + 104px)}
 }
