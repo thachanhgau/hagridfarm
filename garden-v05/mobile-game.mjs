@@ -277,6 +277,8 @@ $('gameShell')?.append(tourBanner);
 // The tour banner and the toast share one spot; while visiting the toast drops below the banner.
 function placeToast(){const b=$('tourBanner'),r=b&&!b.hidden?b.getBoundingClientRect():null;$('toast').style.top=r&&r.height?Math.round(r.bottom+8)+'px':'';}
 function syncTourBanner(){
+ // While touring the dock would act on the player's own garden, so it steps aside.
+ document.body.classList.toggle('touring',Boolean(activeTourSnapshot));
  queueMicrotask(placeToast);
  if(!activeTourSnapshot){tourBanner.hidden=true;return;}
  if(activeTourSnapshot.tour.member){const t=activeTourSnapshot.tour,v=activeTourSnapshot.visit,left=activeTourSnapshot.helpsLeft??0;tourBanner.hidden=false;
