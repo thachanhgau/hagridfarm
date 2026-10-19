@@ -169,3 +169,5 @@
 .profile-keepsakes .px-icon{width:32px;height:32px}
 /* A panel or dialog open mid-tutorial: the skip chip steps aside with Hagrid's line (mobile-game.mjs tutorialCovered). */
 .tutorial-covered .tutorial-skip{visibility:hidden}
+/* Short phones: the camera column would run into the dock; pinch zooms, so the two zoom buttons go. */
+@media (max-height:640px) and (orientation:portrait){#gameShell .camera-tools #zoomIn,#gameShell .camera-tools #zoomOut{display:none}}
