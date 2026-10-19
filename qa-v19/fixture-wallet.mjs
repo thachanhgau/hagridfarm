@@ -61,8 +61,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  const spendable=galleons??2500,bankBalance=Math.min(1000,spendable);
  const garden={
   progression:state,
-  supplies:fresh?{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,STARTER_SUPPLIES.seeds[c.id]||0])),water:STARTER_SUPPLIES.water,boost:STARTER_SUPPLIES.boost}
-   :{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?36:0])),water:213,boost:2},
+  supplies:fresh?{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,STARTER_SUPPLIES.seeds[c.id]||0])),water:STARTER_SUPPLIES.water,boost:STARTER_SUPPLIES.boost,spring:0}
+   :{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?36:0])),water:213,boost:2,spring:0},
   decorations:fresh?{owned:[],placements:[null,null,null,null,null,null],rotations:{}}:{owned:full?storeDecors:["decor_pumpkin_lantern"],placements:full?[...storeDecors,null,null,null,null,null,null].slice(0,6):["decor_pumpkin_lantern",null,null,null,null,null],
    rotations:full?{decor_pumpkin_lantern:"default",decor_broom_rack:"right",decor_cauldron:"default",decor_mandrake_planter:"right",decor_floating_candles:"default",decor_vine_arch:"right"}:{decor_pumpkin_lantern:"default"}},
   boostedCropIds:[],
@@ -362,6 +362,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   if(entry.kind==="seed"){const id=entry.cropId||entry.id.replace(/^seed_/,"");s.seeds[id]=(s.seeds[id]||0)+entry.quantity*qty;}
   else if(entry.kind==="water")s.water+=entry.quantity*qty;
   else if(entry.kind==="boost")s.boost+=entry.quantity*qty;
+  else if(entry.kind==="spring")s.spring=(s.spring||0)+entry.quantity*qty;
   else if(entry.kind==="food"){const id=entry.inventoryId||entry.id;inv[id]=(inv[id]||0)+entry.quantity*qty;}
   else if(entry.kind==="decoration"&&!garden.decorations.owned.includes(entry.id))garden.decorations.owned.push(entry.id);
   const receipt={itemId:entry.id,quantity:qty,total:cost,requestId:c.requestId};

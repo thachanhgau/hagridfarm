@@ -1,4 +1,4 @@
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.42';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.43';
 
 // Neutral ground colours: the terrain cache is weatherized after this layer.
 const COLORS = Object.freeze({

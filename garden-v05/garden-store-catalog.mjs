@@ -466,6 +466,16 @@ export const STORE_CATALOG=Object.freeze([
     "description": "Tưới một hàng đang lớn: giảm 10% thời gian gốc, tối đa một lần mỗi cây; không nhận XP khi dùng."
   },
   {
+    "id": "spring_water",
+    "kind": "spring",
+    "label": "Nước suối thần",
+    "level": 30,
+    "price": 500,
+    "quantity": 1,
+    "dailyLimit": 10,
+    "description": "Tưới một thửa: mọi cây chín ngay và được gặt luôn."
+  },
+  {
     "id": "decor_pumpkin_lantern",
     "kind": "decoration",
     "decorationId": "decor_pumpkin_lantern",

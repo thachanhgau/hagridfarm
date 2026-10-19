@@ -186,6 +186,9 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  } else if (rawId === "water" || kind === "water") {
   slot.classList.add("is-supply");
   slot.append(svgArt("water", Math.round(size * 0.92)));
+ } else if (rawId === "spring_water" || kind === "spring") {
+  slot.classList.add("is-supply", "is-spring");
+  slot.append(svgArt("boost", Math.round(size * 0.92)));
  } else if (rawId === "boost" || rawId === "gentle_growth" || kind === "boost") {
   slot.classList.add("is-supply");
   slot.append(svgArt("boost", Math.round(size * 0.92)));

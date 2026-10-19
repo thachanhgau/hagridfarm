@@ -1,7 +1,7 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.42";
-import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.42";
-import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.42";
-import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.42";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.43";
+import {$,el,button,num,visualItemIcon} from "./ui-utils.mjs?v=24.9.43";
+import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.43";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.43";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -60,6 +60,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   }
   if(item.kind==="water")return `Kho ${num(sup?.water??0)}`;
   if(item.kind==="boost")return `Kho ${num(sup?.boost??0)}`;
+  if(item.kind==="spring")return `Kho ${num(sup?.spring??0)}`;
   if(item.kind==="food"){
    const invId=item.inventoryId||item.id;
    const count=snap?.garden?.progression?.inventory?.[invId]??state?.inventory?.[invId]??0;

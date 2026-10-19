@@ -20,7 +20,7 @@
 
 /* Badges: a red dot for news, a gold count for numbers. */
 #gameShell .hud-dot{display:none;position:absolute;top:0;right:0;width:10px;height:10px;background:#C75B4B;border:2px solid #F5D69A;box-shadow:0 1px 0 #231F2E}
-#gameShell #eventButton.has-claimable .hud-dot,#gameShell #owlMailButton:not(.mail-read) .hud-dot{display:block}
+#gameShell #eventButton.has-claimable .hud-dot,#gameShell #missionButton.has-claimable .hud-dot,#gameShell #owlMailButton:not(.mail-read) .hud-dot{display:block}
 #gameShell .hud-count{position:absolute;right:-4px;bottom:-2px;min-width:18px;height:16px;padding:0 3px;border:1px solid #231F2E;background:#F5D69A;color:#231F2E;font:800 10px/14px system-ui,sans-serif;text-align:center;box-shadow:0 1px 0 #231F2E}
 #gameShell .hud-count[hidden]{display:none}
 
