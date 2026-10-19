@@ -463,7 +463,7 @@ function refresh(){
  const inventoryCount=khoCount();$('harvestCount').textContent=inventoryCount>=1000?Math.floor(inventoryCount/1000)+'k':num(inventoryCount);$('inventoryButton').setAttribute('aria-label','Mở kho · '+num(inventoryCount)+' vật phẩm');$('harvestCount').hidden=inventoryCount===0;
  const readyBuilds=state.construction.filter(j=>j.readyAt<=now).length;$('buildReady').hidden=!readyBuilds;$('buildReady').textContent=readyBuilds;
  if(connected&&$('boostButton')){$('boostButton').disabled=!walletReady||busy||(wallet.snapshot?.garden.supplies.boost||0)<1||chosen().some(i=>!slots[i]||E.growth(slots[i],now).mature||(wallet.snapshot?.garden.boostedCropIds||[]).includes(slots[i].id));}
- if(connected&&$('springButton')){const n=wallet.snapshot?.garden.supplies.spring||0;$('springButton').textContent='Nước suối thần ×'+n;$('springButton').hidden=n<1&&state.level<30;$('springButton').disabled=!walletReady||busy||n<1||!slots.some(Boolean);}
+ if(connected&&$('springButton')){const n=wallet.snapshot?.garden.supplies.spring||0;$('springButton').textContent='Suối thần ×'+n;$('springButton').title='Nước suối thần: cả thửa chín và gặt luôn';$('springButton').hidden=n<1&&state.level<30;$('springButton').disabled=!walletReady||busy||n<1||!slots.some(Boolean);}
  syncKeeperTitleBadge();
  syncHudV20Buttons();
  $('world').dataset.summary=JSON.stringify({level:state.level,xp:state.xp,plots:state.plots.length,creatures:state.creatures.length,readyCrops:allReady,beds:E.housingCapacity(state),session,revision:state.revision,atmosphere:atmosphereMode,weather:weatherMode,event:eventMode,keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,tourId:activeTourSnapshot?.tour?.id||null});
@@ -642,7 +642,7 @@ if(connected){
  const badge=el('div',{class:'emulator-badge',text:WALLET_TEXT.badge});$('gameShell').append(badge);
  const boost=button('Nước phép',()=>{$('seedOptions').close();return run(null,'Đã tưới nước phép cho hàng đang chọn.',{action:'boost',plotIndex:selectedPlot,cells:chosen()});},{id:'boostButton',disabled:true});$('cropCareButton').after(boost);
  // Nước suối thần: the whole selected plot ripens and is harvested in one go (server action `spring`).
- const spring=button('Nước suối thần',()=>{$('seedOptions').close();return run(null,'Nước suối thần: cả thửa chín và đã gặt.',{action:'spring',plotIndex:selectedPlot});},{id:'springButton',disabled:true});boost.after(spring);
+ const spring=button('Suối thần',()=>{$('seedOptions').close();return run(null,'Nước suối thần: cả thửa chín và đã gặt.',{action:'spring',plotIndex:selectedPlot});},{id:'springButton',disabled:true});boost.after(spring);
  wallet.read().then(()=>{acceptWallet(state,WALLET_TEXT.ready,false);applyInitialView();}).catch(e=>{message(e.message);badge.textContent=WALLET_TEXT.retry;badge.role='button';badge.tabIndex=0;const retry=()=>wallet.read().then(()=>{acceptWallet(state,WALLET_TEXT.reconnected,false);badge.textContent=WALLET_TEXT.badge;}).catch(e=>message(e.message));badge.onclick=retry;badge.onkeydown=e=>{if(e.key==='Enter')retry();};});
 }
 

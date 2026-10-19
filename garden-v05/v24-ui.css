@@ -121,7 +121,7 @@
 .guide-mark{width:18px;flex:none;text-align:center;color:#F5D69A}
 @media (max-height:450px) and (orientation:landscape){.guide-card{left:auto;right:calc(env(safe-area-inset-right,0px) + 16px);transform:none;width:min(300px,calc(100vw - 32px));padding:6px 8px}.guide-card .guide-line{margin:2px 0 4px}}
 /* Nhiệm vụ bác Hagrid (garden-missions-ui.mjs) and Nước suối thần */
-.mission-letter .mission-step{display:grid;grid-template-columns:1fr 64px auto;gap:6px;align-items:center;font-size:12px;margin:3px 0}
-.mission-letter .mission-step.is-done span{color:#9FD39A}
-.mission-letter .mission-reward{margin:4px 0 0;font-size:12px;color:#F5D69A}
+#gameShell #missionLetter .gp-hero-copy small.mission-step.is-done{color:#9FD39A}
+#gameShell #missionLetter .gp-hero-copy small.mission-reward{color:#FFC36B}
+#gameShell #missionLetter .mission-body>p{margin:6px 0;color:#E8F0ED;font-size:13px}
 .is-spring svg{filter:hue-rotate(170deg) saturate(1.5) brightness(1.1)}

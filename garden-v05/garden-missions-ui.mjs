@@ -9,11 +9,11 @@ const meter=(done,target)=>el('div',{class:'gp-meter',role:'progressbar','aria-v
 export function createMissions({getSnapshot,claim,notify}){
  const button=$('missionButton');
  const body=el('div',{class:'mission-body'});
- const dialog=el('dialog',{class:'owl-letter mission-letter','aria-labelledby':'missionTitle'},[
+ const dialog=el('dialog',{id:'missionLetter',class:'owl-letter mission-letter','aria-labelledby':'missionTitle'},[
   el('div',{class:'popover-heading'},[el('h2',{id:'missionTitle',text:'Nhiệm vụ bác Hagrid'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
   body,
  ]);
- document.body.append(dialog);
+ ($('gameShell')||document.body).append(dialog);
  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
 
  function render(){
@@ -24,13 +24,13 @@ export function createMissions({getSnapshot,claim,notify}){
    ? iconButton('chest',`Nhận quà: ${m.reward.label}`,async()=>{const res=await claim(m.id);if(res?.ok){notify(`🎁 Xong nhiệm vụ «${m.title}»: ${res.reward.label}!`);render();}},{text:'Nhận',class:'primary','data-claim-mission':m.id})
    : iconButton('lock',m.open?'Chưa xong':`Mở ở cấp ${m.level}`,null,{disabled:true});
   body.replaceChildren(
-   el('div',{class:`gp-hero${m.claimable?' is-ready':m.open?'':' is-locked'}`},[
+   el('div',{class:`gp-hero owl-chest${m.claimable?' is-ready':m.open?'':' is-locked'}`},[
     el('div',{class:'gp-tile-art'},[pixelIcon(m.chapter?'book':'quill',3)]),
     el('div',{class:'gp-hero-copy'},[
      el('small',{text:`${m.chapter?'Chương':'Nhiệm vụ'} · Cấp ${m.level} · ${view.claimedCount}/${view.totalCount}`}),
      el('strong',{text:m.title}),
-     ...m.steps.map(s=>el('div',{class:'mission-step'+(s.done?' is-done':'')},[el('span',{text:(s.done?'✓ ':'')+s.label}),meter(s.current,s.target),el('b',{text:`${s.current}/${s.target}`})])),
-     el('p',{class:'mission-reward',text:'Quà: '+m.reward.label}),
+     ...m.steps.flatMap(s=>[m.chapter?el('small',{class:'mission-step'+(s.done?' is-done':''),text:(s.done?'✓ ':'')+s.label}):null,el('div',{class:'owl-chest-meter'},[meter(s.current,s.target),el('b',{text:`${s.current}/${s.target}`})])]),
+     el('small',{class:'mission-reward',text:'Quà: '+m.reward.label}),
     ]),
     action,
    ]),
