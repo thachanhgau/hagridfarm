@@ -39,11 +39,18 @@ export function hpvnTicket(){return new URLSearchParams(location.hash.slice(1)).
 export function createHpvnClient(nonce){
  let seq=0;const waiting=new Map();
  addEventListener('message',event=>{const m=event.data;if(event.source!==parent||m?.channel!=='hpvn-game'||m.nonce!==nonce||!waiting.has(m.id))return;const done=waiting.get(m.id);waiting.delete(m.id);done(m);});
- return createGardenClient((name,data)=>new Promise((resolve,reject)=>{
+ const client=createGardenClient((name,data)=>new Promise((resolve,reject)=>{
   const id='garden-'+(++seq);
   // A lost answer keeps the requestId (definitive stays false), so the retry cannot pay twice.
   const timer=setTimeout(()=>{waiting.delete(id);reject(Error('Chưa nhận được phản hồi. Thử lại đúng thao tác để kiểm tra giao dịch; mã mua được giữ nguyên.'));},20000);
   waiting.set(id,m=>{clearTimeout(timer);if('result' in m)return resolve(m.result);const e=Error(m.error||'Máy chủ từ chối thao tác.');e.definitive=m.definitive===true;e.reason=m.reason;e.details=m.details||{};reject(e);});
   parent.postMessage({channel:'hpvn-game',nonce,id,action:'garden',name,data},'*');
  }));
+ // Shell requests that are not garden calls (Floo dock): the answer's result, or null if none comes.
+ client.host=(action,extra={})=>new Promise(resolve=>{
+  const id='host-'+(++seq),timer=setTimeout(()=>{waiting.delete(id);resolve(null);},5000);
+  waiting.set(id,m=>{clearTimeout(timer);resolve(m.result??null);});
+  parent.postMessage({...extra,channel:'hpvn-game',nonce,id,action},'*');
+ });
+ return client;
 }
