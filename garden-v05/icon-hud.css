@@ -66,7 +66,7 @@
  #gameShell .goal-label{display:none}
  #gameShell .camera-tools{top:calc(max(8px,env(safe-area-inset-top)) + 104px)}
 }
-@media (max-width:359px){#gameShell .hud .hud-res{gap:5px;padding:0 7px 0 4px}#gameShell .res{font-size:12px}#gameShell .hud .next-goal{gap:2px;padding-right:6px}}
+@media (max-width:359px){#gameShell .hud .hud-res{gap:5px;padding:0 7px 0 4px}#gameShell .res{font-size:12px}#gameShell .hud .next-goal{gap:2px;padding-right:6px}#gameShell .next-goal>[data-icon=arrow]{display:none}#gameShell .next-goal>.px-icon,#gameShell .next-goal>.sprite-icon{zoom:.8}body:not(.hud-compact) #gameShell .next-goal>[data-icon=arrow]+*{display:none}}
 
 /* Wide screens: short labels under the round buttons. */
 @media (min-width:900px) and (min-height:500px){

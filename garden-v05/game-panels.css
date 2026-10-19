@@ -247,6 +247,11 @@
  #gameShell #panel .journey-stages-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
  #gameShell #panel .journey-stages-grid .gp-tile-art{width:56px;height:56px}
  #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tab{flex-basis:56px;min-width:56px}
+ /* Six shop tabs share the row: labels wrap to two lines instead of a sideways strip. */
+ #gameShell :is(#panel,.store-popover) .store-tabs{gap:4px}
+ #gameShell :is(#panel,.store-popover) .store-tabs .gp-tab{padding-top:12px}
+ #gameShell .store-tabs .gp-tab-count{top:1px;right:1px;min-width:14px;height:13px;font-size:9px;line-height:13px}
+ #gameShell :is(#panel,.store-popover) .store-tabs .gp-tab{flex:1 1 0;min-width:0;padding:4px 2px 6px;white-space:normal;text-align:center;font-size:10px}
  #gameShell .store-popover .gp-stepper .gp-step{width:34px;min-width:34px}
  #gameShell .store-popover .gp-qty-value{min-width:30px}
 }
@@ -254,6 +259,10 @@
  #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile{padding:10px 5px 8px}
  #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile-name{font-size:13px}
  #gameShell #panel .journey-stages-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ /* The shop stepper (44 + qty + 44) fits a 320 px card. */
+ #gameShell :is(#panel,.store-popover) .store-cards-grid .gp-tile{padding-inline:3px}
+ #gameShell .store-popover .gp-qty-value{min-width:26px}
+ #gameShell .store-popover .gp-qty-value b{font-size:15px}
 }
 
 /* Next-goal chip: anchored at the left edge and clipped inside its own pill, never pushed off-screen. */
