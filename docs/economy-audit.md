@@ -134,7 +134,7 @@ Nguyên tắc:
 | pen_1 | 10 | 6 Bí ngô + 6 Cà rốt | 0 | 0 giờ |
 | plot_4 | 12 | 9 Bí ngô + 9 Yến mạch | 0 | 1 giờ |
 | pen_2 | 22 | 12 Cà rốt + 12 Xà lách | 0 | 2 giờ |
-| plot_5 | 24 | 12 Yến mạch + 12 Bạch tiên | 0 | 2 giờ |
+| plot_5 | 24 | 12 Yến mạch + 12 Bạch tiễn | 0 | 2 giờ |
 | plot_6 | 36 | 18 Puffapod + 18 Cỏ ba lá | 100 | 4 giờ |
 | pen_3 | 38 | 18 Củ cải đỏ + 18 Cà rốt | 100 | 4 giờ |
 | plot_7 | 48 | 24 Ngô vàng + 24 Lanh | 200 | 6 giờ |
@@ -155,9 +155,9 @@ Trang trí theo cấp: 5 món đầu vẫn miễn phí. Các món sau cần 6 n�
 | decoration-7 · Mẫu vườn Bí ngô và Cúc | 7 | — | 0 |
 | decoration-11 · Mẫu ổ len Puffskein | 11 | — | 0 |
 | decoration-15 · Hàng rào gỗ thấp | 15 | — | 0 |
-| decoration-19 · Giàn cành cho Bowtruckle | 19 | — | 0 |
+| decoration-19 · Giàn cành cho Que Xạo | 19 | — | 0 |
 | decoration-23 · Cầu gỗ nhỏ | 23 | 6 Puffapod | 0 |
-| decoration-27 · Tủ trưng bày đồ Niffler nhặt | 27 | 6 Nhân sâm | 0 |
+| decoration-27 · Tủ trưng bày đồ Đào mỏ nhặt | 27 | 6 Nhân sâm | 0 |
 | decoration-30 · Đường viền hoa dại | 30 | 6 Cỏ ba lá | 40 |
 | decoration-31 · Mẫu sân tròn dưới trăng | 31 | 6 Cỏ ba lá | 40 |
 | decoration-35 · Đèn vườn hình trăng | 35 | 6 Củ cải đỏ | 40 |

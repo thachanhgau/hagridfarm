@@ -48,7 +48,7 @@ Quy tắc dùng:
 | Tầng | Chiều cao hiện có | Loài | Chiếm chỗ |
 |---|---|---|---|
 | Cây trồng | 27–66 px, rộng ≤ 54 px | 24 loại | 1 ô |
-| Sinh vật nhỏ | 20–39 px | Puffskein, Niffler, Bowtruckle | 1 ô |
+| Sinh vật nhỏ | 20–39 px | Puffskein, Đào mỏ, Que Xạo | 1 ô |
 | Sinh vật vừa | 58–88 px | Kneazle, Mooncalf, Fwooper, Diricawl | 1–2 ô |
 | Sinh vật lớn | 95–130 px | Bằng-Mã, kỳ lân, vong mã, chó ba đầu, rồng | 2–3 ô |
 | Công trình | ~150–210 px | Lều, nhà kính, cụm lễ hội | Theo bố cục |

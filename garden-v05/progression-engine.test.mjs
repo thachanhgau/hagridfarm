@@ -36,7 +36,7 @@ const HOUR = 60 * 60 * 1000;
 const day = (hours) => hours * HOUR;
 // The approved source predates the Lý Lan name pass (V24.9.2); numbers must match exactly,
 // names are compared after the same renames the game applied.
-const LY_LAN_NAMES = [['Bằng Mã', 'Bằng-Mã'], ['Thestral', 'Vong mã'], ['Mandrake', 'Nhân sâm']];
+const LY_LAN_NAMES = [['Bằng Mã', 'Bằng-Mã'], ['Thestral', 'Vong mã'], ['Mandrake', 'Nhân sâm'], ['Bạch tiên', 'Bạch tiễn'], ['Bowtruckle', 'Que Xạo'], ['Niffler', 'Đào mỏ']];
 const APPROVED = JSON.parse(
   LY_LAN_NAMES.reduce((text, [from, to]) => text.replaceAll(from, to), readFileSync(new URL('../outputs/hagrid-levels-20261013/balance-data.json', import.meta.url), 'utf8')),
 );
@@ -61,7 +61,7 @@ test('approved balance exposes all crops, creatures, levels, recipes, and Vietna
   assert.equal(DB.recipes.length, 27); // the two kit recipes were removed on 18/10/2026
   assert.equal(DB.levels.length, 100);
   assert.equal(CROP.daisy.label, 'Cúc trắng');
-  assert.equal(CROP.dittany.label, 'Bạch tiên');
+  assert.equal(CROP.dittany.label, 'Bạch tiễn');
   assert.equal(CREATURE.hippogriff.label, 'Bằng-Mã');
   assert.equal(CROP.pumpkin.rarity, 'common');
   assert.equal(CROP.pumpkin.rarityLabel, 'Thường');

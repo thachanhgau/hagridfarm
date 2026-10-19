@@ -1463,7 +1463,7 @@
     },
     {
       "id": "dittany",
-      "label": "Bạch tiên",
+      "label": "Bạch tiễn",
       "kind": "crop",
       "growth": [
         "Gieo hạt",
@@ -3371,7 +3371,7 @@
     },
     {
       "id": "bowtruckle",
-      "label": "Bowtruckle",
+      "label": "Que Xạo",
       "kind": "creature",
       "growth": [
         "Sơ sinh",
@@ -3847,7 +3847,7 @@
     },
     {
       "id": "niffler",
-      "label": "Niffler",
+      "label": "Đào mỏ",
       "kind": "creature",
       "growth": [
         "Con non",

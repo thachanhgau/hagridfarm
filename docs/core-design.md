@@ -105,8 +105,8 @@ Xem lại (Hồ sơ → Xem lại hướng dẫn): thư rồi các câu thoại 
   | Mandrake | **Nhân sâm** | HP2, 12 lần |
   | Dạ vũ Giáng sinh | **Dạ vũ Noel** | HP4, 2 lần (1 lần "Dạ vũ Giáng sinh") |
   | Kỳ lân, Chó ba đầu, Rừng Cấm | giữ (viết thường "kỳ lân", "chó ba đầu" trong câu) | HP1–7 |
-  | Bạch tiên (dittany) | chưa tìm thấy, cần tra tiếp | — |
-  | Puffskein, Niffler, Kneazle, Mooncalf, Fwooper, Diricawl, Puffapod | không có trong 7 tập, giữ tên gốc | — |
+  | Bạch tiễn (dittany) | chưa tìm thấy, cần tra tiếp | — |
+  | Puffskein, Đào mỏ, Kneazle, Mooncalf, Fwooper, Diricawl, Puffapod | không có trong 7 tập, giữ tên gốc | — |
 
   Đã sửa các nhãn này trong game ngày 17/10/2026 (V24.9.2).
 - Một màn hình không cuộn khi đọc vẫn rõ; danh sách dài thì cuộn, không thu chữ quá nhỏ.

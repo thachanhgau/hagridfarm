@@ -745,7 +745,7 @@ export function buildGuestbookEntries({gameState = {}, eventMode = 'event_hallow
       stamp: `Gắn kết ♥ ${totalAffinity}`,
       message:
         totalAffinity >= 8
-          ? `Thật kỳ diệu! Các sinh vật trong vườn quấn quýt với con chẳng kém gì đám Puffskein và Niffler trong chiếc vali của tôi.`
+          ? `Thật kỳ diệu! Các sinh vật trong vườn quấn quýt với con chẳng kém gì đám Puffskein và Đào mỏ trong chiếc vali của tôi.`
           : `Mỗi khi rảnh rỗi, hãy chạm nhẹ vào sinh vật trên sân để vuốt ve chúng nhé — sự gắn kết sẽ mang lại nhiều điều bất ngờ!`,
     },
   ];

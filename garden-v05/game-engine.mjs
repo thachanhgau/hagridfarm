@@ -64,7 +64,7 @@ const cropRecords = {
   },
   dittany: {
     id: 'dittany',
-    label: 'Bạch tiên',
+    label: 'Bạch tiễn',
     rarity: 'rare',
     rarityLabel: RARITY_LABEL.rare,
     growMs: RARITY_GROW_MS.rare,
@@ -98,7 +98,7 @@ const creatureRecords = {
   },
   bowtruckle: {
     id: 'bowtruckle',
-    label: 'Bowtruckle',
+    label: 'Que Xạo',
     rarity: 'uncommon',
     rarityLabel: RARITY_LABEL.uncommon,
     growMs: 10 * 60 * 1000,
@@ -108,7 +108,7 @@ const creatureRecords = {
   },
   niffler: {
     id: 'niffler',
-    label: 'Niffler',
+    label: 'Đào mỏ',
     rarity: 'rare',
     rarityLabel: RARITY_LABEL.rare,
     growMs: 20 * 60 * 1000,

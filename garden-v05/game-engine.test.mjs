@@ -41,7 +41,7 @@ test('exports six crop configs with Vietnamese labels and rarity durations', () 
     },
   );
   assert.equal(CROP.daisy.label, 'Cúc trắng');
-  assert.equal(CROP.dittany.label, 'Bạch tiên');
+  assert.equal(CROP.dittany.label, 'Bạch tiễn');
   for (const item of Object.values(CROP)) {
     assert.match(item.label, /\S/);
     assert.match(item.rarityLabel, /\S/);

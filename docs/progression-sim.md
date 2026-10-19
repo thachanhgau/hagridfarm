@@ -72,7 +72,7 @@ Galleons tính theo luật ví: mỗi ô gieo tốn 1 hạt (giá cửa hàng / 
 | pen_1 | 6 Bí ngô + 6 Cà rốt | 0 | 0.00 | 0.0 |
 | plot_4 | 9 Bí ngô + 9 Yến mạch | 0 | 0.00 | 0.0 |
 | pen_2 | 12 Cà rốt + 12 Xà lách | 0 | 0.00 | 0.0 |
-| plot_5 | 12 Yến mạch + 12 Bạch tiên | 0 | 0.00 | 0.0 |
+| plot_5 | 12 Yến mạch + 12 Bạch tiễn | 0 | 0.00 | 0.0 |
 | plot_6 | 18 Puffapod + 18 Cỏ ba lá | 100 | 0.13 | 2.8 |
 | pen_3 | 18 Củ cải đỏ + 18 Cà rốt | 100 | 0.13 | 2.8 |
 | plot_7 | 24 Ngô vàng + 24 Lanh | 200 | 0.26 | 5.6 |

@@ -19,9 +19,9 @@ export const HONOR_GARDENS = Object.freeze([
     keeperTitle: '🌿 Nghệ Nhân Thảo Dược',
     badge: 'NHÀ KÍNH SỐ 3 · HUFFLEPUFF',
     title: 'Vườn Thảo Dược Nhà Kính Số 3',
-    subtitle: 'Cấp 45 · Chương 3/6 · 6 Thửa thảo dược quý & Bowtruckle',
+    subtitle: 'Cấp 45 · Chương 3/6 · 6 Thửa thảo dược quý & Que Xạo',
     description:
-      'Khu vườn mẫu mực của Chủ nhiệm Nhà Hufflepuff với các luống Nhân sâm, Bạch tiên, Puffapod, Cỏ trăng và Lanh xếp đối xứng dưới lá thu vàng Rừng Cấm.',
+      'Khu vườn mẫu mực của Chủ nhiệm Nhà Hufflepuff với các luống Nhân sâm, Bạch tiễn, Puffapod, Cỏ trăng và Lanh xếp đối xứng dưới lá thu vàng Rừng Cấm.',
     level: 45,
     atmosphereMode: 'day',
     weatherMode: 'autumn',
