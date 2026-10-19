@@ -426,7 +426,7 @@ function refresh(){
  for(const b of $('seedTray').children){const locked=CROP[b.dataset.id].level>state.level;b.hidden=locked;b.classList.toggle('locked',locked);b.querySelector('.lock').hidden=!locked;b.setAttribute('aria-pressed',b.dataset.id===seed);const count=wallet?.snapshot?.garden.supplies.seeds[b.dataset.id]||0;b.querySelector('.seed-count').textContent=count;b.setAttribute('aria-label',CROP[b.dataset.id].label+(connected?' · '+count+' hạt':''));}
  for(const b of $('creatureTray').children){const locked=CREATURE[b.dataset.id].level>state.level;b.hidden=locked;b.classList.toggle('locked',locked);b.querySelector('.lock').hidden=!locked;b.querySelector('.owned').hidden=!owned(b.dataset.id);b.setAttribute('aria-pressed',b.dataset.id===species);}
  [...$('directionButtons').children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.direction===direction));[...$('lineButtons').children].forEach((b,i)=>b.setAttribute('aria-pressed',i===line));
- const lineUrl=lineIconUrl(chosen());if($('directionSummary').getAttribute('src')!==lineUrl){$('directionSummary').src=lineUrl;$('contextLine').src=lineUrl;}
+ const lineUrl=lineIconUrl(chosen());if($('directionSummary').getAttribute('src')!==lineUrl){$('directionSummary').src=lineUrl;}
  $('seedOptionsButton').title=({horizontal:'Ngang',vertical:'Dọc',diagonal:'Chéo'})[direction]+' · Hàng '+(line+1);$('seedOptionsButton').setAttribute('aria-label','Tùy chọn gieo · '+$('seedOptionsButton').title);
  $('plantDock').classList.toggle('single-choice',DB.crops.filter(crop=>crop.level<=state.level).length===1);
  $('seedName').textContent=c.label;

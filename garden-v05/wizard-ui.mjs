@@ -1,4 +1,4 @@
-import {$,el,icon,duration} from './ui-utils.mjs?v=24.9.40';
+import {$,el,duration} from './ui-utils.mjs?v=24.9.40';
 import {pixelIcon,setAction,rewardChips,iconButton,lockBadge} from './pixel-icons.mjs?v=24.9.40';
 import {
  loadOwlQuests,
@@ -38,7 +38,7 @@ function compactOwlReward(reward={}){
 }
 
 export function setupWizardUI({E,items,getState,getSelection,getRenderer,getReady,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward,onClaimDailyQuest,onClaimGrandChest,onCare}) {
- let lastIcon='',letterRoute=null,letterOpenedOnce=false;
+ let letterRoute=null,letterOpenedOnce=false;
  const letter=$('owlLetter');
 
  function currentQuestState(){
@@ -148,7 +148,6 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
  $('owlMailButton').onclick=()=>openLetter();$('closeLetter').onclick=()=>letter.close();
  $('letterAction').onclick=()=>{letter.close();letterRoute?.();};
  letter.addEventListener('click',e=>{if(e.target!==letter)return;const r=letter.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)letter.close();});
- $('contextOptions').onclick=()=>$('seedOptions').showModal();
  $('contextAction').onclick=()=>{
   const state=getState(),selection=getSelection(),context=cropContext(state,selection,E,E.nowFor(state,Date.now()));
   if(!getReady())return;
@@ -160,18 +159,16 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
   syncMailBadge();
   const state=getState(),selection=getSelection(),now=E.nowFor(state,Date.now()),context=cropContext(state,selection,E,now);
   const showing=selection.mode==='plant'&&context.occupied.length>0;
-  $('cropContext').hidden=!showing;
-  if(selection.mode==='plant')$('plantDock').hidden=showing;
-  document.body.classList.toggle('context-active',showing);
-  if(!showing)return;
+  // One plant dock: a planted row swaps only the caption and the main button, so the seed tray never jumps.
+  $('plantButton').hidden=showing;$('contextAction').hidden=!showing;
+  if(!showing){delete $('plantDock').dataset.crop;return;}
   const species=[...new Set(context.occupied.map(i=>state.plots[selection.selectedPlot].slots[i].species))];
-  $('contextEyebrow').textContent='THỬA '+(selection.selectedPlot+1);
-  $('contextTitle').textContent=species.map(id=>E.CROP[id].label).join(' · ');
+  $('plantDock').dataset.crop=context.first.species;
+  $('seedName').textContent=species.map(id=>E.CROP[id].label).join(' · ');
   const detail=context.ready.length?context.ready.length+' cây chín':'Đang lớn · còn '+duration(context.remaining);
-  $('contextDetail').replaceChildren(el('span',{class:'stat',title:detail,'aria-label':detail},[pixelIcon(context.ready.length?'harvest':'clock',1),context.ready.length?String(context.ready.length):duration(context.remaining)]));
+  $('seedTime').replaceChildren(el('span',{class:'stat',title:detail,'aria-label':detail},[pixelIcon(context.ready.length?'harvest':'clock',1),context.ready.length?String(context.ready.length):duration(context.remaining)]));
   setAction($('contextAction'),context.ready.length?{icon:'harvest',label:'Gặt',count:'×'+context.ready.length,text:'Gặt ×'+context.ready.length+' cây chín'}:{icon:'care',label:'Chăm',text:'Chăm cây'});
   $('contextAction').disabled=!getReady();
-  if(lastIcon!==context.first.species){lastIcon=context.first.species;$('contextIcon').replaceChildren(icon(items,lastIcon,3,52));}
  }
  return {
   refresh,

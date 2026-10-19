@@ -29,8 +29,9 @@ export function setupGardenControls({items,onSettings,getWeather}){
   if(weather!==lastWeather){$('playDock').style.setProperty('--dock-scene',`url("${V24_ART[weather]||V24_ART.clear}")`);lastWeather=weather;}
   for(const entry of portraits){
    const selected=entry.dock.querySelector('.item-tray [aria-pressed="true"]');
-   const id=selected?.getAttribute('data-id')||null;
-   if(!selected||!id){
+   // A planted row shows its crop in the same dock (wizard-ui sets data-crop).
+   const id=entry.dock.dataset.crop||selected?.getAttribute('data-id')||null;
+   if(!id){
     if(entry.lastId!==null||entry.portrait.childNodes.length)entry.portrait.replaceChildren();
     entry.lastId=null;
     entry.portrait.hidden=true;
@@ -41,7 +42,7 @@ export function setupGardenControls({items,onSettings,getWeather}){
     entry.portrait.hidden=!entry.portrait.childNodes.length;
     continue;
    }
-   const source=selected.querySelector('.sprite-icon, .tray-glyph');
+   const source=selected?.querySelector('.sprite-icon, .tray-glyph');
    const isLargeSprite=entry.kind==='plant'||entry.kind==='creature';
    const preview=isLargeSprite?icon(items,id,3,64):entry.kind==='build'?visualItemIcon(items,id,{size:56}):source?.cloneNode(true);
    if(!preview){

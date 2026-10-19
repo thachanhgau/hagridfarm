@@ -24,7 +24,7 @@
 #playDock .plant-actions{display:contents}
 #playDock #seedOptionsButton,#playDock #creatureOptionsButton{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:center;width:44px;height:46px;min-height:46px;padding:0;border:1px solid #c1b17966;border-radius:2px;background:#1a34289c;box-shadow:inset 0 1px #d4c48b22;font-size:18px;color:#e4d4a5}
 #playDock #seedOptionsButton{flex-direction:column;font-size:13px}#playDock #seedOptionsButton>span[aria-hidden]{display:none}
-#playDock #plantButton,#playDock .creature-actions{grid-column:4;grid-row:1;margin:0;padding:0;min-width:0}
+#playDock #plantButton,#playDock #contextAction,#playDock .creature-actions{grid-column:4;grid-row:1;margin:0;padding:0;min-width:0}
 #playDock .primary,#playDock #plantButton,#playDock #creatureDock .primary,#playDock .work-controls .primary{position:relative;width:100%;height:50px;min-height:50px;min-width:0;padding:5px 9px;border:1px solid #ffe4a4;border-radius:3px;background:linear-gradient(165deg,#f1dfab 0%,#d4b675 52%,#b48f4c 53%,#d0b071 100%);box-shadow:0 0 0 2px #493e29,inset 0 2px #fff1bf,inset 0 -3px #846332,0 4px 8px #05150f70;color:#302d1e;font:800 13px/1.1 system-ui;letter-spacing:0;text-shadow:0 1px #ffe9b46b}
 #playDock .primary:after{content:'';position:absolute;left:5px;right:5px;top:4px;bottom:5px;border:1px solid #fff0bd77;pointer-events:none}
 #playDock .primary:hover:not(:disabled){filter:brightness(1.08)}#playDock .primary:active:not(:disabled){filter:brightness(.94)}
