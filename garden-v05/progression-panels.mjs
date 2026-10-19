@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.41';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.41';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.41";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.41";
-import {$,el,button,icon,num,duration,hours,growthScale,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.41";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.41";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.41";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.41";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.41";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.41";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.41";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.42';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.42';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.42";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.42";
+import {$,el,button,icon,num,duration,hours,growthScale,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.42";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.42";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.42";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.42";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.42";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.42";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.42";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -209,7 +209,8 @@ export function createPanels(ctx){
    const s=getState(),g=grid(),wallet=ctx.getGalleons?.()??Infinity;
    body.append(el("details",{class:"v24-detail"},[el("summary",{text:"Mở rộng vườn"}),spatialStagesVisual(s)]));
    body.append(paragraph(s.plots.length+"/12 thửa · "+E.housingCapacity(s)+"/12 chỗ nuôi."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
-   for(const e of DB.expansions.filter(e=>e.level<=s.level)){
+   // the next locked build of each kind shows as "Chờ cấp N" so an empty panel never reads as broken
+   for(const e of DB.expansions.filter(e=>e.level<=s.level||e===DB.expansions.find(x=>x.kind===e.kind&&x.level>s.level))){
     const number=Number(e.id.split("_")[1]),title=(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=number===1||s.built.includes(e.kind+"_"+(number-1)),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+hours(e.hours),e.id),short=!canPay(s,e,wallet);
     k.classList.toggle("locked",locked);
     if(!done&&!job)k.append(priceRow(s,e,wallet));

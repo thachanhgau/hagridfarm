@@ -1,4 +1,4 @@
-import {wizardTargets} from "./wizard-scenery.mjs?v=24.9.41";
+import {wizardTargets} from "./wizard-scenery.mjs?v=24.9.42";
 export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onPick,getSelectedPlot,notify}) {
  const camera={x:0,y:0,scale:1},pointers=new Map();let gesture=null,previousSize=null,frameFirstPlot=false,frameOverview=false;
  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));

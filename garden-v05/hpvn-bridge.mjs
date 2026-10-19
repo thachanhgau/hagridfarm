@@ -1,15 +1,15 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import { normalizeDecorFacing } from './decor-runtime.mjs?v=24.9.41';
+import { normalizeDecorFacing } from './decor-runtime.mjs?v=24.9.42';
 import {
   normalizeAtmosphereMode,
   atmosphereConfig,
   normalizeWeatherMode,
   weatherConfig,
-} from './garden-atmosphere.mjs?v=24.9.41';
+} from './garden-atmosphere.mjs?v=24.9.42';
 import {
   normalizeEventMode,
   eventConfig,
-} from './garden-events.mjs?v=24.9.41';
+} from './garden-events.mjs?v=24.9.42';
 
 export const VISUAL_PREFS_STORAGE_KEY = 'hpvn-garden-v20-visual-prefs';
 export const LEGACY_DECOR_STORAGE_KEY = 'hpvn-garden-v18-decor-layout';

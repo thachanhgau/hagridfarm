@@ -1,4 +1,4 @@
-import {el,button} from './ui-utils.mjs?v=24.9.41';
+import {el,button} from './ui-utils.mjs?v=24.9.42';
 export const V24_ART = Object.freeze({
  event_halloween:'./v24-art/event-halloween.webp',event_yule:'./v24-art/event-yule.webp',event_herbology_fair:'./v24-art/event-herbology.webp',
  clear:'./v24-art/weather-clear.webp',rain:'./v24-art/weather-rain.webp',autumn:'./v24-art/weather-autumn.webp',snow:'./v24-art/weather-snow.webp',
