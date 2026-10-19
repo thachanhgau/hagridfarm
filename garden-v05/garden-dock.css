@@ -22,8 +22,10 @@
 #playDock .item-tray .sprite-icon{transform:none}#playDock .item-tray .tray-label{display:none}
 #playDock #buildTray .tray-label{display:block;left:auto;right:2px;bottom:2px;min-width:15px;padding:1px 2px;font:700 10px/12px system-ui;color:#efdbab;border:1px solid #a3976855;background:#142c22}
 #playDock .plant-actions{display:contents}
-#playDock #seedOptionsButton,#playDock #creatureOptionsButton{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:center;width:44px;height:46px;min-height:46px;padding:0;border:1px solid #c1b17966;border-radius:2px;background:#1a34289c;box-shadow:inset 0 1px #d4c48b22;font-size:18px;color:#e4d4a5}
-#playDock #seedOptionsButton{flex-direction:column;font-size:13px}#playDock #seedOptionsButton>span[aria-hidden]{display:none}
+#playDock #seedOptionsButton,#playDock #creatureOptionsButton,#playDock #dockBoost{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:center;width:44px;height:46px;min-height:46px;padding:0;border:1px solid #c1b17966;border-radius:2px;background:#1a34289c;box-shadow:inset 0 1px #d4c48b22;font-size:18px;color:#e4d4a5}
+#playDock #seedOptionsButton{flex-direction:column;font-size:13px}
+/* Nước phép rides the crop card while the selected row grows (it used to hide in the options sheet). */
+#playDock #dockBoost{grid-column:2;justify-self:end}#playDock #plantDock:has(#dockBoost:not([hidden])) .seed-caption{padding-right:50px}#playDock #seedOptionsButton>span[aria-hidden]{display:none}
 #playDock #plantButton,#playDock #contextAction,#playDock .creature-actions{grid-column:4;grid-row:1;margin:0;padding:0;min-width:0}
 #playDock .primary,#playDock #plantButton,#playDock #creatureDock .primary,#playDock .work-controls .primary{position:relative;width:100%;height:50px;min-height:50px;min-width:0;padding:5px 9px;border:1px solid #ffe4a4;border-radius:3px;background:linear-gradient(165deg,#f1dfab 0%,#d4b675 52%,#b48f4c 53%,#d0b071 100%);box-shadow:0 0 0 2px #493e29,inset 0 2px #fff1bf,inset 0 -3px #846332,0 4px 8px #05150f70;color:#302d1e;font:800 13px/1.1 system-ui;letter-spacing:0;text-shadow:0 1px #ffe9b46b}
 #playDock .primary:after{content:'';position:absolute;left:5px;right:5px;top:4px;bottom:5px;border:1px solid #fff0bd77;pointer-events:none}
@@ -75,4 +77,4 @@
 
 #playDock .dock-portrait>.visual-slot,#playDock #buildTray .visual-slot{background:none;border:0;box-shadow:none;border-radius:0}#playDock .dock-portrait .visual-corner-tag,#playDock #buildTray .visual-corner-tag{display:none}
 /* 320 px with Nuôi and the HPVN Floo button: six tools share the rail beside the toggle (58 px tall targets). */
-@media(max-width:359px){#playDock .tool{min-width:40px}}
+@media(max-width:359px){#playDock #dockBoost{grid-column:1;justify-self:end;align-self:end;position:relative;z-index:2;width:36px;min-width:36px;height:36px;min-height:36px;background:#1a3428f0;margin:0 -4px -4px 0}#playDock #plantDock:has(#dockBoost:not([hidden])) .seed-caption{padding-right:2px}#playDock .tool{min-width:40px}}
