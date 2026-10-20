@@ -287,3 +287,13 @@ test('renderer hides future plot and pen labels and expands without losing initi
  const [x,y]=iso(garden.map.plots[0].col+1,garden.map.plots[0].row+1,garden.map);
  assert.deepEqual(garden.pick(x,y),{plot:0,index:4});
 });
+
+test('a decoration being placed outside the fence never opens later garden stages',async()=>{
+ const cauldron={id:'decor_cauldron',file:'decor-assets/x.png',width:40,height:40,pivotX:20,pivotY:36};
+ const garden=await createGarden(fakeCanvas(),{allowMissingAssets:true,decorAssets:[cauldron]}),state=newGame(1700000000000);
+ garden.render(state,{now:1700000000000,clock:0,propsVisible:false,previewDecoration:{itemId:'decor_cauldron',at:[12,26],facing:'default'}});
+ assert.equal(garden.growthStage().id,1);
+ // A saved free spot past the fence does not open it either.
+ garden.render(state,{now:1700000000000,clock:0,propsVisible:false,decorations:{owned:['decor_cauldron'],placements:['decor_cauldron'],positions:{decor_cauldron:[12,26]}}});
+ assert.equal(garden.growthStage().id,1);
+});

@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.56';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.56';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.56';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.56';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.56';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.56';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.56';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.56';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.56';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.56';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.56';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.56';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.56';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.56';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.56';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.57';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.57';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.57';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.57';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.57';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.57';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.57';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.57';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.57';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.57';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.57';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.57';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.57';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.57';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.57';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -25,13 +25,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.56';
+} from './scene-animation.mjs?v=24.9.57';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.56';
+} from './forest-surround.mjs?v=24.9.57';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -1829,7 +1829,10 @@ export async function createGarden(canvas, options = {}) {
     const storeDecorationObjects = decorObjects(options.decorations, decorAssets, iso, options.previewDecoration);
     const earnedDecorationObjects = decorationObjects(state, options);
     const occupiedPoints = [];
+    // Only a legacy socket may widen the garden: a free spot is checked against the opened ground, and the
+    // piece being placed must never open land the level has not reached (owner 20/10/2026).
     for (const object of storeDecorationObjects) {
+      if (object.preview || options.decorations?.positions?.[object.id]) continue;
       occupiedPoints.push([object.col - 1, object.row - 0.5], [object.col + 1, object.row + 0.5]);
     }
     for (const object of earnedDecorationObjects) {

@@ -1,6 +1,6 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-import {SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.56";
-import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.56";
+import {SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.57";
+import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.57";
 export const CATALOG_VERSION="garden-2026-10-20-special-v1";
 export const STORE_CATALOG=Object.freeze([
   {
