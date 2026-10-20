@@ -83,12 +83,20 @@ export function createMissions({getSnapshot,claim,claimBacklog,claimEvent,notify
   const evReady=Boolean(ev&&(ev.tasks.some(t=>t.claimable)||ev.finale.ready));
   button.hidden=!getSnapshot();
   button.classList.toggle('has-claimable',Boolean(m?.claimable)||evReady);
-  // Once per session: tell the player the 20/10 event is on while it is not finished (after the connect toast).
-  if(ev&&!ev.finale.claimed&&eventToldAt!==ev.id){eventToldAt=ev.id;setTimeout(()=>notify('💐 Mừng ngày Phụ nữ Việt Nam 20/10: mở Nhiệm vụ để nhận Nước phép và quà bí mật của HPH!'),3000);}
+  // Once per session the 20/10 letter opens by itself for every player while the event is unfinished,
+  // as soon as no other dialog is open and the first-day tutorial is over (checked every 3 s).
+  if(ev&&!ev.finale.claimed&&eventToldAt!==ev.id){eventToldAt=ev.id;showEventSoon();}
   button.title=m?.claimable?'Nhiệm vụ · Có quà':'Nhiệm vụ';
   if(dialog.open)render();
  }
  button.onclick=()=>{render();dialog.showModal();};
+ function showEventSoon(){
+  setTimeout(()=>{
+   const tutorial=document.body.dataset.tutorial;
+   if(document.querySelector('dialog[open]')||(tutorial&&tutorial!=='done'))return showEventSoon();
+   if(getSnapshot()?.dayEvent&&!dialog.open){render();dialog.showModal();}
+  },3000);
+ }
  // Owner 19/10/2026: a garden that joined the chain above level 1 gets every passed mission's gift once, by owl.
  // `reopen` null only asks whether there is one (mail badge).
  function letterGift(reopen){
