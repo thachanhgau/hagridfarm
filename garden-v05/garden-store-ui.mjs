@@ -1,8 +1,8 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.59";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.59";
-import {STORE_CATALOG,storeLock} from "./garden-store-catalog.mjs?v=24.9.59";
-import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.59";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.59";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.60";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.60";
+import {STORE_CATALOG,storeLock} from "./garden-store-catalog.mjs?v=24.9.60";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.60";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.60";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -20,7 +20,7 @@ const KIND_LABELS = Object.freeze({
  boost: "Nước phép",
  decoration: "Trang trí · 2 góc xoay",
 });
-const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", decoration: "scenery", special: "trophy"});
+const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", decoration: "scenery", special: "trophy", festival: "festival"});
 const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("coin", 1), el("b", {text: num(n)}), extra ? el("small", {text: extra}) : null]);
 
 export function showStore({state,items,wallet,connected,onPurchase,onDecorate,decorAssets=new Map(),onClose,initialFilter="all"}){
@@ -39,7 +39,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
  shade.onclick=close;
 
  // Nước suối thần shares the Nước phép tab; «Sản phẩm đặc biệt» are decorations with their own tab.
- const tabOf=i=>i.collection===SPECIAL_COLLECTION?"special":i.kind==="spring"?"boost":i.kind;
+ // Festival pieces (`season`) have their own shop tab, «Lễ hội».
+ const tabOf=i=>i.season?"festival":i.collection===SPECIAL_COLLECTION?"special":i.kind==="spring"?"boost":i.kind;
  const categories=[
   ["all","Tất cả"],
   ["seed","Hạt giống"],
@@ -48,6 +49,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   ["boost","Nước phép"],
   ["decoration","Trang trí"],
   ["special","Sản phẩm đặc biệt"],
+  ["festival","Lễ hội"],
  ];
 
  const catalog=()=>{
