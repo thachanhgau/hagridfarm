@@ -292,3 +292,15 @@
 #gameShell :is(#owlLetter,#missionLetter) .owl-quest-card .gp-tile-actions>button{width:100%;padding:0 4px}
 @media (max-width:480px){#gameShell :is(#owlLetter,#missionLetter) .owl-chest.is-ready{flex-wrap:wrap}#gameShell :is(#owlLetter,#missionLetter) .owl-chest.is-ready>button{flex:1 0 100%}}
 @media (max-width:359px){#gameShell :is(#owlLetter,#missionLetter) .owl-quest-card .icon-btn.has-text .px-icon{width:20px;height:20px}#gameShell :is(#owlLetter,#missionLetter) .owl-chest .gp-tile-art{width:52px;height:52px}#gameShell :is(#owlLetter,#missionLetter) .owl-chest .gp-tile-art>.px-icon{width:32px;height:32px}#gameShell :is(#owlLetter,#missionLetter) .owl-quests-list{gap:5px}#gameShell :is(#owlLetter,#missionLetter) .owl-quest-card{padding:8px 3px 6px}}
+/* «20/10» day event in the mission letter (owner 20/10/2026) */
+#gameShell #missionLetter .day-event{margin:0 0 14px;padding-bottom:12px;border-bottom:2px dashed #E07A9E}
+#gameShell #missionLetter .day-event-title{color:#F5B8CC;margin:0 0 8px}
+#gameShell #missionLetter .day-event-task{display:flex;align-items:center;gap:8px;min-height:44px;padding:4px 0}
+#gameShell #missionLetter .day-event-task .gp-hero-copy{flex:1;min-width:0}
+#gameShell #missionLetter .day-event-task.is-done small{color:#B0BD67}
+#gameShell #missionLetter .day-event-task.is-locked{opacity:.6}
+#gameShell #missionLetter .day-event-gift{margin-top:8px}
+#gameShell #missionLetter .day-event-gift.is-open{align-items:flex-start;border-color:#E07A9E}
+#gameShell #missionLetter .day-event-bouquet{flex:none;font-size:52px;line-height:1}
+#gameShell #missionLetter .day-event-wish{margin:6px 0;font-style:italic;color:#FFF4E0}
+#gameShell #missionLetter .day-event-sign{display:block;text-align:right;color:#F5B8CC}

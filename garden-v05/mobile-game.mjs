@@ -1,36 +1,36 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.49';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.50';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.49';
-import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.49';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.49';
-import {showStore} from './garden-store-ui.mjs?v=24.9.49';
-import {setupProfile} from './profile-ui.mjs?v=24.9.49';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.50';
+import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.50';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.50';
+import {showStore} from './garden-store-ui.mjs?v=24.9.50';
+import {setupProfile} from './profile-ui.mjs?v=24.9.50';
 import * as E from './progression-engine.mjs';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.49';
-import {setupCamera} from './camera.mjs?v=24.9.49';
-import {createPanels} from './progression-panels.mjs?v=24.9.49';
-import {$,el,icon,button,num,duration,hours,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.49';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.49';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.49';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.49';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.49';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.49';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.49';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.49';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.49';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.49';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.49';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.49';
-import {nextGoal} from './next-goal.mjs?v=24.9.49';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.49';
-import {createMissions} from './garden-missions-ui.mjs?v=24.9.49';
-import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.49';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.49';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.50';
+import {setupCamera} from './camera.mjs?v=24.9.50';
+import {createPanels} from './progression-panels.mjs?v=24.9.50';
+import {$,el,icon,button,num,duration,hours,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.50';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.50';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.50';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.50';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.50';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.50';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.50';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.50';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.50';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.50';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.50';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.50';
+import {nextGoal} from './next-goal.mjs?v=24.9.50';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.50';
+import {createMissions} from './garden-missions-ui.mjs?v=24.9.50';
+import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.50';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.50';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.49':'./garden-emulator-client.mjs?v=24.9.49');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.50':'./garden-emulator-client.mjs?v=24.9.50');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -554,7 +554,7 @@ function openVisualLayout(){
  });
 }
 panels=createPanels({getGuide:guideState,E,items,labels,layoutSlots,decorAssets,getDecorations:currentDecorations,openDecorate:openDecoration,quickRotateDecor:async(itemId,slot,facing)=>{localDecorRotations[itemId]=facing;persistPrefs();audio.play('rotate');recordFestivalAction('rotate');wizard?.recordQuestAction?.('rotate');if(wallet){try{const before=state;await wallet.act({action:'placeDecoration',itemId,slot,facing});acceptWallet(before,'',false);}catch(e){showRefusal(e);return;}}syncHudV20Buttons();draw();message(`Đã xoay sang ${facing==='right'?'Góc nhìn qua phải ↗':'Góc hiện tại ↖'}.`);},getEarnedDecorRotations:()=>({...state?.decorationRotations,...earnedDecorRotations}),rotateEarnedDecoration,getCreatureFacings:currentCreatureFacings,rotateCreatureFacing,getAffinityMap:()=>currentAffinitySummary().bySpeciesMap,openVisualLayout,getPostcard:postcardOptions,getAtmosphere:()=>atmosphereConfig(atmosphereMode),cycleAtmosphere,onSetAtmosphere:setAtmosphere,getWeather:()=>weatherConfig(weatherMode),cycleWeather,onSetWeather:setWeather,getEvent:()=>eventConfig(eventMode),onApplyEventTheme:applyEventTheme,onClaimEventMilestone:handleClaimEventMilestone,onClaimDailyQuest:handleClaimDailyQuest,onClaimGrandChest:handleClaimGrandChest,onPetCreature:handlePetCreature,onClaimAffinityGift:handleClaimAffinityGift,getActiveTourId:()=>activeTourSnapshot?.tour?.id||null,startTour,stopTour,helpTour,memberVisits:connected?close=>renderMemberVisits({level:state.level,load:()=>wallet.visit({}),onVisit:uid=>{close();startVisit(uid);}}):null,getAchievementExtra,onSelectTitle:handleSelectTitle,onClaimAchievement:handleClaimAchievement,getSoundEnabled:()=>audio.enabled,toggleAudio,shareToFloo,getState:()=>state,getGardenStage:()=>renderer?.growthStage?.(),run,notify:message,selectCrop,selectCreature,focusPlot,camera,getSelection:()=>({selectedPlot,cells:chosen(),seed,species}),getSession:()=>({session,qa,saveAvailable,saveProblem,connected,isPreview:!!wallet?.isPreview}),getSupplies:currentSupplies,getGalleons,openStore:f=>openStore(f),openProfile:connected?null:()=>{panels.close();profileUI.show();},openHagridLetter:()=>openHagridLetter('keepsake'),replayTutorial,switchSession,exportSave,getViewPreferences:()=>({motionEnabled,systemReducedMotion:motionMedia.matches,propsVisible,grid}),toggleMotion:()=>{if(motionMedia.matches)return false;motionEnabled=!motionEnabled;persistPrefs();syncMotionPreference();draw();return motionEnabled;},toggleProps:()=>{propsVisible=!propsVisible;persistPrefs();draw();return propsVisible;},toggleGrid:()=>{grid=!grid;persistPrefs();draw();return grid;},tickTimers,exportPlaytest:playtest.enabled?exportPlaytest:null});
-const missions=createMissions({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),claim:missionId=>serverClaim({action:'claimMission',missionId}),claimBacklog:()=>serverClaim({action:'claimMissionBacklog'}),notify:message});
+const missions=createMissions({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),claim:missionId=>serverClaim({action:'claimMission',missionId}),claimBacklog:()=>serverClaim({action:'claimMissionBacklog'}),claimEvent:taskId=>serverClaim({action:'claimDayEvent',taskId}),notify:message});
 {const showPanel=panels.show;panels.show=(name,...rest)=>{playtest.track('panel',{name:String(name)});guideEvent('panel:'+name);return showPanel(name,...rest);};}
 // In HPVN on a phone Floo rides the dock (like 7 Potters): the shell's floating bubble covered the
 // dock's right end. The shell answers with the home-bar inset the sandbox cannot read; the dock pads by it.

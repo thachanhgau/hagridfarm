@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {festivalObjects,clearOfBuildings,seasonPixel,worldPhase,weatherizeCanvas,roofSnowCoverage} from './garden-seasonal-world.mjs?v=24.9.49';
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.49';
+import {festivalObjects,clearOfBuildings,seasonPixel,worldPhase,weatherizeCanvas,roofSnowCoverage} from './garden-seasonal-world.mjs?v=24.9.50';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.50';
 const map=JSON.parse(readFileSync(new URL('./scene-data.json',import.meta.url)));
 const decorAssets=new Map(['decor_pumpkin_lantern','decor_cauldron','decor_floating_candles','decor_mandrake_planter','decor_vine_arch'].map(id=>[id,{id,file:id+'.png'}]));
 test('festival props stay in unlocked ground, outside buildings and preserve world state',()=>{

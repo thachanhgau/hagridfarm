@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail} from './forest-composition.mjs';
 import {createBoundaryFence} from './garden-landscape.mjs';
-import {GARDEN_STAGES,stageBoundary,stageContains} from './garden-growth.mjs?v=24.9.49';
+import {GARDEN_STAGES,stageBoundary,stageContains} from './garden-growth.mjs?v=24.9.50';
 const map={width:2560,height:1440,origin:{x:1120,y:300},tileWidth:64,tileHeight:32};
 const sizes={oak:{width:190,height:176},pine:{width:104,height:196},grove:{width:190,height:136},log:{width:144,height:88}};
 test('groves are stable with varied sizes, silhouettes and scattered anchors',()=>{

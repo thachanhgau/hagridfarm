@@ -1,6 +1,6 @@
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.49';
-import {el,button} from './ui-utils.mjs?v=24.9.49';
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor,normalizeDecorFacing} from './decor-runtime.mjs?v=24.9.49';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.50';
+import {el,button} from './ui-utils.mjs?v=24.9.50';
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor,normalizeDecorFacing} from './decor-runtime.mjs?v=24.9.50';
 
 /**
  * Đặt trang trí: a small bar over the dock, the garden stays in view. ◀ ▶ step through the free
