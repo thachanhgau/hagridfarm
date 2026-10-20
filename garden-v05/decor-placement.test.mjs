@@ -6,7 +6,7 @@ import motion from './motion-data.json' with {type: 'json'};
 import {GARDEN_STAGES} from './garden-growth.mjs';
 globalThis.FARM_SCENE = structuredClone(scene);
 globalThis.FARM_MOTION = motion;
-const {decorSpotProblem, decorSpotGrid} = await import('./decor-placement-ui.mjs');
+const {decorSpotProblem, decorSpotGrid, decorOnGround, groundRect} = await import('./decor-placement-ui.mjs');
 
 const {iso} = await import('./scene-renderer.mjs');
 const {decorFootprintRect} = await import('./decor-runtime.mjs');
@@ -26,7 +26,10 @@ test('free placement: open ground is free; plots, pens, buildings, locked land a
   assert.equal(at(6, 7.5), '');
   assert.equal(at(-3, 2), '');
   assert.match(at(3, 4), /thửa/);
-  assert.match(at(29, 1), /chuồng/);
+  // Unbuilt plot and pen bases are free ground (owner 20/10/2026); built or queued ones are not.
+  assert.equal(at(29, 1), '');
+  assert.match(at(29, 1, {state: {decorations: [], built: ['pen_1']}}), /chuồng/);
+  assert.match(at(29, 1, {state: {decorations: [], construction: [{id: 'pen_1'}]}}), /chuồng/);
   assert.match(at(0, 4), /cảnh vật/);
   assert.match(at(3, 0), /công trình/);
   assert.match(at(12.5, 8.5), /Chồng/);
@@ -81,4 +84,16 @@ test('placement grid: green where the item fits, grey where it cannot, only on o
   assert.ok(ok > 0 && ok < grid.length);
   // A small piece may stand at the edge of a plot without counting as hiding it: about twice the ground of the old 12 px rule stays green.
   assert.ok(ok / grid.length > 0.35, `${ok}/${grid.length}`);
+});
+
+test('a plot or pen is not built over a placed decoration', () => {
+  const pen = scene.pens.find(p => p.id === 'pen_1');
+  const on = {owned: ['decor_cauldron'], placements: ['decor_cauldron'], positions: {decor_cauldron: [pen.col + 1, pen.row + 1]}};
+  assert.equal(decorOnGround(groundRect('pen', pen, scene), on), 'decor_cauldron');
+  assert.equal(decorOnGround(groundRect('pen', pen, scene), {...on, positions: {decor_cauldron: [6, 7.5]}}), null);
+});
+
+test('2×1 and 3×1 pieces may stand on a path; 2×2 and up may not', () => {
+  assert.equal(at(7, 8.5, {itemId: 'decor_broom_rack'}), '');
+  assert.match(at(7, 8.5, {itemId: 'sp_aragog_hollow'}), /lối đi/);
 });

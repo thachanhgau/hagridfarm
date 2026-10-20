@@ -1,10 +1,10 @@
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.57';
-import {el,button} from './ui-utils.mjs?v=24.9.57';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.57';
-import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.57';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.57';
-import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.57';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.57';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.58';
+import {el,button} from './ui-utils.mjs?v=24.9.58';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.58';
+import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.58';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.58';
+import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.58';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.58';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 const OBJECT_REACH=Object.freeze({hut:2.5,pond:2.5,oak:1,pine:1});
@@ -34,25 +34,42 @@ function segmentRectDistance([a,b],[c,d],r){
  return best;
 }
 
+/** Ground a plot or pen base covers, in tiles. */
+export function groundRect(kind,g,map){
+ if(kind==='plot'){const b=plotPhysicalBounds(g,map);return {c0:b.col,c1:b.col+b.width,r0:b.row,r1:b.row+b.height};}
+ return {c0:g.col-0.5,c1:g.col-0.5+g.width,r0:g.row-0.5,r1:g.row-0.5+g.height};
+}
+
+/** The placed store decoration standing on this ground, or null: a plot or pen may not be built over it. */
+export function decorOnGround(rect,decorations){
+ for(const raw of decorations?.placements??[]){
+  const id=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw,at=id&&decorSpot(decorations,id);
+  if(at&&rectsOverlap(rect,decorFootprintRect(at[0],at[1],decorFootprint(id),decorFacingFor(decorations,id))))return id;
+ }
+ return null;
+}
+
 /**
  * Why a decoration cannot stand with its front tile at (col, row), or '' when it can. Its whole footprint
  * (decorFootprintRect, turned with the facing) must lie on opened ground — 2×2 and larger 0.9 tile off
- * the fence — and clear plot and pen bases (built or not, so a later build never lands on it), earned
+ * the fence — and clear built or queued plot and pen bases, earned
  * decorations, the keepsake aisle, scene objects, buildings and every other placed decoration's
  * footprint (the server checks that last rule too). Pieces larger than one tile also keep off the garden
  * paths, and with `asset` + `iso` the sprite may not stand in front of a plot or pen and hide it.
  */
 export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',asset=null,iso=null,assetOf=null}){
- // Art bible §2: the fence clearance is for 2×2 and up; any piece past one tile keeps off the paths.
- const big=decorFootprint(itemId).every(n=>n>1),long=decorFootprint(itemId).some(n=>n>1);
+ // Art bible §2: 2×2 and up keep off the fence; owner 20/10/2026: they alone keep off the paths, 2×1 and 3×1 may stand on them.
+ const big=decorFootprint(itemId).every(n=>n>1);
  const rect=decorFootprintRect(col,row,decorFootprint(itemId),facing);
  const inset=0.05,margin=big?FENCE_CLEARANCE:0;
  if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
   if(!stageContains(stage,c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở.';
  }
  const hits=(c,r,w,h)=>rectsOverlap(rect,{c0:c,c1:c+w,r0:r,r1:r+h});
- const plotRects=(map?.plots??[]).map(plot=>{const b=plotPhysicalBounds(plot,map);return {c0:b.col,c1:b.col+b.width,r0:b.row,r1:b.row+b.height};});
- const penRects=(map?.pens??[]).map(pen=>({c0:pen.col-0.5,c1:pen.col-0.5+pen.width,r0:pen.row-0.5,r1:pen.row-0.5+pen.height}));
+ // Owner 20/10/2026: unbuilt bases are free ground; building there asks to move the piece first (decorOnGround).
+ const queued=new Set((state?.construction??[]).map(j=>j.id)),built=new Set(state?.built??[]);
+ const plotRects=(map?.plots??[]).filter((_,i)=>i<(state?.plots?.length??3)||queued.has('plot_'+(i+1))).map(plot=>groundRect('plot',plot,map));
+ const penRects=(map?.pens??[]).filter(pen=>built.has(pen.id)||queued.has(pen.id)).map(pen=>groundRect('pen',pen,map));
  if(plotRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền thửa đất.';
  if(penRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền chuồng.';
  for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&hits(d.col-0.25,d.row-0.25,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
@@ -60,7 +77,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const near=(c,r,reach)=>Math.hypot(Math.max(rect.c0-c,0,c-rect.c1),Math.max(rect.r0-r,0,r-rect.r1))<reach-0.5;
  for(const o of map?.objects??[])if(near(o.col,o.row,OBJECT_REACH[o.id]??1))return 'Chỗ này vướng cảnh vật.';
  for(const w of Object.values(WIZARD_LAYOUT))if(near(w.col,w.row,1.5))return 'Chỗ này vướng công trình.';
- if(long)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
+ if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){
   const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw;
   if(!other||other===itemId)continue;

@@ -1,37 +1,37 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.57';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.58';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.57';
-import {decorSpotProblem,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.57';
-import {decorSpot} from './decor-runtime.mjs?v=24.9.57';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.57';
-import {showStore} from './garden-store-ui.mjs?v=24.9.57';
-import {setupProfile} from './profile-ui.mjs?v=24.9.57';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.58';
+import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.58';
+import {decorLabelFor,decorSpot} from './decor-runtime.mjs?v=24.9.58';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.58';
+import {showStore} from './garden-store-ui.mjs?v=24.9.58';
+import {setupProfile} from './profile-ui.mjs?v=24.9.58';
 import * as E from './progression-engine.mjs';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.57';
-import {setupCamera} from './camera.mjs?v=24.9.57';
-import {createPanels} from './progression-panels.mjs?v=24.9.57';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.57';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.57';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.57';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.57';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.57';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.57';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.57';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.57';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.57';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.57';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.57';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.57';
-import {nextGoal} from './next-goal.mjs?v=24.9.57';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.57';
-import {createMissions} from './garden-missions-ui.mjs?v=24.9.57';
-import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.57';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.57';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.58';
+import {setupCamera} from './camera.mjs?v=24.9.58';
+import {createPanels} from './progression-panels.mjs?v=24.9.58';
+import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.58';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.58';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.58';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.58';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.58';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.58';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.58';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.58';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.58';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.58';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.58';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.58';
+import {nextGoal} from './next-goal.mjs?v=24.9.58';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.58';
+import {createMissions} from './garden-missions-ui.mjs?v=24.9.58';
+import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.58';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.58';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.57':'./garden-emulator-client.mjs?v=24.9.57');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.58':'./garden-emulator-client.mjs?v=24.9.58');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -357,6 +357,10 @@ function playCommandSound(command,beforeState=state){const act=command?.action;i
 // Quests count real work (garden-quests.mjs questAmounts): cells, harvests, batches, meals.
 function questAmounts(act,command,before){return questAmountsFor(act,before,connected?wallet?.snapshot?.garden?.progression||state:state,command);}
 async function run(action,text='Đã hoàn tất.',command=null){
+ // A plot or pen is never built or moved onto a store decoration; the player moves the piece first.
+ const ground=command?.action==='build'?(/^plot_(\d+)$/.test(command.expansionId)?['plot',map.plots[command.expansionId.slice(5)-1]]:['pen',map.pens.find(p=>p.id===command.expansionId)]):command?.action==='moveBuilding'?[command.kind,layoutSlots[command.kind==='plot'?'plots':'pens'][command.targetSlot]]:null;
+ const onGround=ground?.[1]&&decorOnGround(groundRect(ground[0],ground[1],map),currentDecorations());
+ if(onGround){message(`Dời ${decorLabelFor(decorAssets.get(onGround)||onGround)} ra khỏi nền này trước khi ${command.action==='build'?'xây':'chuyển công trình tới'}.`);return;}
  if(connected){if(!walletReady||busy)return;if(!command){message('Thao tác này chỉ dành cho phiên thử trên thiết bị.');return;}busy=true;try{const before=state;await wallet.act(command);playCommandSound(command,before);acceptWallet(before,tutorial?'':text);}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'',false);}catch{}}showRefusal(e);}finally{busy=false;workTrays?.refresh(mode);wizard?.refresh?.();}return;}
  if(busy)return;busy=true;
  const actionKey=key;
