@@ -1,0 +1,549 @@
+{
+  "collection": "Sản phẩm đặc biệt — Dấu ấn Harry Potter",
+  "version": 1,
+  "style": "Use case: stylized-concept. Asset type: production game decoration sprite master for Hagrid Farm. Crisp chunky handcrafted pixel art, cosy wizarding garden premium canon-linked collectible, 2:1 dimetric/isometric projection on a 64x32 logical tile. Top-left illumination; selective dark-purple outlines, no pure black/white; clear big pixel clusters, no small noisy texture, no antialiasing, no gradients, no blur. Palette ONLY #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Use 2-3 of those color ramps per object. Native look must match the rustic pumpkin, broom-rack, mandrake and wooden hut sprites in the conversation reference. Actual objects must follow the Harry Potter BOOK descriptions specified below; this is a decorative miniature/display adaptation, no new powers or functions. TRANSPARENT RGBA background, no scenery, no platform or tile base unless part of the actual subject, no text, no labels, no border, no watermark. Keep every part including glow as hard-edged pixels. Output ONE wide horizontal sprite master containing exactly TWO separated views of the SAME item: LEFT half default isometric view, RIGHT half the alternate isometric view rotated 90 degrees, NOT a mirror. Both views same size, same baseline near bottom, each fully contained in its own half with generous transparent margins, no overlap. Ground footprints consistent between views. Top-left light stays top-left in BOTH views. This is one asset turnaround sheet, not two different designs.\nSTRICT TRANSPARENCY: Outside the solid object and its specifically requested effects EVERY pixel must be fully transparent. NO black/colored background, no soft aura, no vignette, no atmospheric backdrop, no cast shadow. Internal lights use flat hard-edged color clusters only.",
+  "items": [
+    {
+      "id": "sp_hagrid_umbrella",
+      "label": "Góc ô hồng của Hagrid",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "Rubeus Hagrid's iconic battered closed pink umbrella with curved wooden handle, leaning beside his oversized rustic brass lantern and a pair of enormous brown gamekeeper boots on a low rough timber display stand. The umbrella is faded muted rose-purple, NOT open; no character, no wand visible. Recognizable Hagrid memorabilia, book-faithful objects; display arrangement is a game adaptation.",
+      "w": 128,
+      "h": 144,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 1,
+      "chapter": 4,
+      "term": "umbrella",
+      "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_norbert_egg",
+      "label": "Trứng rồng Norbert bên lò sưởi",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "Hagrid's dragon egg hatching in a rustic stone hearth: ONE large black dragon egg with a long hairline amber crack nestled among glowing coals in a small weathered stone fireplace with a copper kettle hanging beside it. No dragon, no baby, no figure. Strong black egg silhouette against orange coals; standalone little fireplace diorama.",
+      "w": 144,
+      "h": 160,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 1,
+      "chapter": 14,
+      "term": "egg",
+      "lore": "Trứng rồng được ấp trong lò sưởi nhà Hagrid.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Các vết nứt được nhấn bằng ánh lửa; không biểu thị quyền năng mới."
+    },
+    {
+      "id": "sp_sirius_motorbike",
+      "label": "Xe máy bay của Sirius",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "Sirius Black's huge enchanted vintage flying motorbike used by Hagrid: oversized dark iron motorbike with chunky spoked wheels, broad brown leather saddle, large round brass headlamp, silver engine, high handlebars. Parked firmly on kickstand, no rider, no sidecar, no wings, no smoke, no wheel rotation. Recognizable magical motorbike collectible on tiny discreet wheel supports.",
+      "w": 160,
+      "h": 128,
+      "foot": [
+        3,
+        1
+      ],
+      "motion": "glow",
+      "book": 1,
+      "chapter": 1,
+      "term": "motorcycle",
+      "lore": "Chiếc xe máy của Sirius được Hagrid dùng đưa Harry tới đường Privet.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_whomping_anglia",
+      "label": "Liễu Roi và chiếc Ford Anglia",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "Miniature diorama of the Whomping Willow and crashed turquoise Ford Anglia from Harry Potter and the Chamber of Secrets: thick twisted brown willow trunk, a few angry sparse leafy branches, small turquoise vintage car wedged in a fork above exposed roots, one bent car door and clear round headlights. No people, no buildings, no road, no platform. Entire tree and car visible.",
+      "w": 208,
+      "h": 224,
+      "foot": [
+        3,
+        2
+      ],
+      "motion": "sway",
+      "book": 2,
+      "chapter": 5,
+      "term": "willow",
+      "lore": "Harry và Ron đâm xe vào cây Liễu Roi.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_buckbeak_pumpkins",
+      "label": "Bằng-Mã bên vườn bí ngô",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "A collectible miniature diorama of Buckbeak the hippogriff waiting beside Hagrid's pumpkin patch: proud grey eagle head and feathered chest, front talons, grey horse hindquarters, folded wings, beside exactly two large orange pumpkins and a mossy stone. No human, no executioner, no axe, no cage. Recognizably a HIPPOGRIFF, not a griffin or unicorn; ornamental scene, not a pet.",
+      "w": 176,
+      "h": 160,
+      "foot": [
+        2,
+        2
+      ],
+      "motion": "sway",
+      "book": 3,
+      "chapter": 21,
+      "term": "Buckbeak",
+      "lore": "Bằng-Mã được giải cứu ở khu vực nhà Hagrid trong đêm dùng Xoay Thời Gian.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_aragog_hollow",
+      "label": "Hang tơ Aragog",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "A miniature Forbidden Forest hollow belonging to Aragog: arch of gnarled tree roots, thick ivory webs stretched across the upper hollow, one large old brown hairy spider with eight legs and many small cloudy pale eyes inside, exactly two small spiders on roots. Spooky but storybook, not photorealistic. No people, no severed parts, no ground tile.",
+      "w": 176,
+      "h": 176,
+      "foot": [
+        2,
+        2
+      ],
+      "motion": "sway",
+      "book": 2,
+      "chapter": 15,
+      "term": "Aragog",
+      "lore": "Aragog và bầy nhện trong Rừng Cấm.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_mirror_erised",
+      "label": "Tấm gương Ảo Ảnh",
+      "group": "Bảo vật Hogwarts",
+      "subject": "The Mirror of Erised from the first Harry Potter book: tall magnificent ornate gold mirror with an arched top, elaborate scrollwork, two clawed feet, tarnished magical blue-grey glass with a barely visible soft abstract silhouette inside. Gold sculptural frame is the unmistakable focus. No readable inscription, no letters, no human standing outside, no surrounding room.",
+      "w": 144,
+      "h": 208,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 1,
+      "chapter": 12,
+      "term": "Erised",
+      "lore": "Tấm gương cho người xem thấy điều họ khao khát nhất.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_sorting_hat",
+      "label": "Nón Phân Loại trên ghế",
+      "group": "Bảo vật Hogwarts",
+      "subject": "The battered Hogwarts Sorting Hat seated on a simple four-legged wooden stool, exactly as presented to first years: tall patched brown pointed hat with deep face-like folds forming eyes and a mouth, crooked tip, frayed wide brim. No house logos, no banners, no people, no text. The hat must look ancient and expressive, not a generic new witch hat.",
+      "w": 104,
+      "h": 144,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "book": 1,
+      "chapter": 7,
+      "term": "hat",
+      "lore": "Nón Phân Loại được đặt trên ghế trong lễ phân loại.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_goblet_fire",
+      "label": "Chiếc Cốc Lửa",
+      "group": "Bảo vật Hogwarts",
+      "subject": "The Goblet of Fire as described in the book: a large rough-hewn WOODEN goblet standing on a low carved stone pedestal, jagged tall blue-violet magical flame rising from the open bowl, one small blank singed parchment slip floating just above the flame. It is wooden, NOT a gold trophy. No inscriptions or text, no surrounding Age Line or people.",
+      "w": 112,
+      "h": 176,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 4,
+      "chapter": 16,
+      "term": "goblet",
+      "lore": "Chiếc cốc bằng gỗ chọn các quán quân Tam Pháp Thuật.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_pensieve",
+      "label": "Cái Tưởng Ký",
+      "group": "Bảo vật Hogwarts",
+      "subject": "Dumbledore's Pensieve: a shallow grey stone basin carved with small non-letter rune marks around its rim, filled with luminous swirling silvery-blue memory liquid, standing on a short weathered ornate stone column. Two thin silver memory wisps rise above the surface. No faces, no scene inside, no readable text, no desk or room.",
+      "w": 128,
+      "h": 128,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 4,
+      "chapter": 30,
+      "term": "Pensieve",
+      "lore": "Chậu đá chứa và xem ký ức trong văn phòng Dumbledore.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_fawkes_perch",
+      "label": "Cầu đậu phượng hoàng Fawkes",
+      "group": "Bảo vật Hogwarts",
+      "subject": "Fawkes with scarlet/crimson-red and gold plumage, long golden tail, golden beak and talons on brass perch.",
+      "w": 128,
+      "h": 192,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 2,
+      "chapter": 12,
+      "term": "Fawkes",
+      "lore": "Phượng hoàng Fawkes trong văn phòng Dumbledore.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "revision": 2
+    },
+    {
+      "id": "sp_wizard_chess_knight",
+      "label": "Quân mã cờ phù thủy",
+      "group": "Bảo vật Hogwarts",
+      "subject": "A large dark stone enchanted chess KNIGHT from the giant chess challenge guarding the Philosopher's Stone: armored horse head and neck rising from a worn square plinth, chunky medieval carved details, a faint purple glint in one eye. NO rider, no Ron figure, no chessboard, no other pieces. Strong readable stone chess silhouette.",
+      "w": 128,
+      "h": 176,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 1,
+      "chapter": 16,
+      "term": "chess",
+      "lore": "Bàn cờ phù thủy khổng lồ trong thử thách bảo vệ Hòn Đá Phù Thủy.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_riddle_diary",
+      "label": "Nhật ký Riddle và nanh Tử Xà",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "Tom Riddle's small black leather diary impaled by one long curved ivory basilisk fang, lying open at an angle on a low dark timber display lectern. A small black ink stain below the fang, silver worn corners, blank yellowed pages with NO writing. Recognizable destroyed diary Horcrux; no blood, no other weapons.",
+      "w": 112,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 2,
+      "chapter": 17,
+      "term": "diary",
+      "lore": "Harry dùng nanh Tử Xà phá hủy quyển nhật ký.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_slytherin_locket",
+      "label": "Mề đay Slytherin",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "Salazar Slytherin's heavy oval GOLD locket displayed on a small dark-green velvet stand with its fine gold chain draped around the base. Green gemstones form a serpent-like S ornament on the front, stylized as a winding green snake rather than readable typography. Antique gold, one mysterious violet glint, no other jewelry.",
+      "w": 88,
+      "h": 112,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 7,
+      "chapter": 19,
+      "term": "locket",
+      "lore": "Chiếc mề đay Trường Sinh Linh Giá được phá hủy bằng thanh gươm.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_gaunt_ring",
+      "label": "Nhẫn gia tộc Gaunt",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "The old Gaunt family ring: heavy tarnished gold ring with a large cracked black stone, displayed upright in a tiny weathered open wooden jewelry box lined dark purple. Stone bears a tiny angular triangle-circle-line geometric symbol, no lettering. One ring only, chunky readable dark artifact, no hand.",
+      "w": 88,
+      "h": 96,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 6,
+      "chapter": 10,
+      "term": "ring",
+      "lore": "Chiếc nhẫn gia tộc Gaunt, về sau được nhận diện là Trường Sinh Linh Giá.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_hufflepuff_cup",
+      "label": "Chiếc cúp Hufflepuff",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "Helga Hufflepuff's small ancient golden cup, exactly two finely wrought handles, a simple engraved BADGER pictogram on its rounded belly, on a low black stone display block. Gold and amber highlights, book-proportioned compact cup, not the blue Triwizard Cup, no readable lettering.",
+      "w": 96,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 7,
+      "chapter": 26,
+      "term": "cup",
+      "lore": "Chiếc cúp được lấy khỏi hầm Lestrange ở Gringotts.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_ravenclaw_diadem",
+      "label": "Vương miện Ravenclaw",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "Rowena Ravenclaw's delicate silver diadem displayed on a low midnight-purple velvet cushion on a small carved stand. A silver EAGLE-shaped central motif and one deep blue gemstone, slender curved wings, no lettering or inscription. Ancient slightly tarnished magical heirloom, NOT a gold royal crown.",
+      "w": 112,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 7,
+      "chapter": 31,
+      "term": "diadem",
+      "lore": "Vương miện thất lạc của Ravenclaw trong Phòng Theo Yêu Cầu.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Hoa văn/khung trang sức là diễn giải tạo hình, không phải chi tiết mô tả nguyên văn trong chương được dẫn."
+    },
+    {
+      "id": "sp_vanishing_cabinet",
+      "label": "Tủ Biến Mất",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The sinister Vanishing Cabinet associated with Borgin and Burkes: tall narrow blackened dark-brown wooden cabinet, gothic pointed top, heavily carved doors, one door slightly ajar showing pitch dark interior and a tiny pale bird feather at the threshold. Carved serpent and vine ornaments, copper hinges, no humanoid or portal effects.",
+      "w": 144,
+      "h": 208,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 6,
+      "chapter": 27,
+      "term": "cabinet",
+      "lore": "Chiếc tủ Draco sửa để nối Hogwarts với Borgin và Burkes.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_hand_glory",
+      "label": "Bàn Tay Vẻ Vang",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The Hand of Glory sold in Borgin and Burkes: a withered ochre-brown preserved hand standing upright on a small dark antique display base, curled fingers gripping one burning candle between the thumb and forefinger. No arm, no blood, no gore, no flesh detail; clearly a spooky stylized magical artifact, warm isolated candle flame.",
+      "w": 80,
+      "h": 136,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 2,
+      "chapter": 4,
+      "term": "Hand of Glory",
+      "lore": "Cổ vật trong cửa tiệm Borgin và Burkes.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Truyện xác nhận bàn tay khô dùng để cắm nến; bệ và thế ngón tay là diễn họa."
+    },
+    {
+      "id": "sp_cursed_opal_necklace",
+      "label": "Dây chuyền opal bị nguyền",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The cursed opal necklace from Borgin and Burkes displayed behind a small clear protective glass bell on a dark velvet jewelry bust. A long strand of pale iridescent opal stones with a larger central stone, fine silver chain, faint violet reflections. No hands, no text warning sign, no lettering.",
+      "w": 96,
+      "h": 136,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 6,
+      "chapter": 12,
+      "term": "necklace",
+      "lore": "Dây chuyền khiến Katie Bell bị nguyền.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_chamber_serpent_door",
+      "label": "Cánh cửa Phòng Chứa Bí Mật",
+      "group": "Hắc thuật và bí mật",
+      "subject": "Solid stone wall with exactly two entwined serpents and emerald eyes; two wall halves with central seam. Freestanding stone monument adaptation.",
+      "w": 192,
+      "h": 208,
+      "foot": [
+        3,
+        1
+      ],
+      "motion": "glow",
+      "book": 2,
+      "chapter": 16,
+      "term": "door",
+      "lore": "Vách đá có hai con rắn quấn nhau, mắt bằng ngọc lục bảo, mở bằng Xà Ngữ.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "revision": 2
+    },
+    {
+      "id": "sp_department_veil",
+      "label": "Vòm màn che ở Bộ Pháp Thuật",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The ancient stone archway and fluttering black veil in the Department of Mysteries: a weathered rough grey stone arch, no door, thin ragged dark-purple translucent curtain hanging inside it with a slight billow, on two low concentric stone steps. No ghosts, no skulls, no people. Solemn magical mystery, freestanding miniature.",
+      "w": 176,
+      "h": 208,
+      "foot": [
+        2,
+        2
+      ],
+      "motion": "sway",
+      "book": 5,
+      "chapter": 34,
+      "term": "veil",
+      "lore": "Vòm đá có màn che trong Sở Bảo Mật.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_monster_book",
+      "label": "Sách Quái Vật về Quái Vật",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The Monster Book of Monsters: one thick shaggy brown furry schoolbook on a low rough wooden reading stand, four small amber eyes on top, ivory fangs along the page edges, short tongue barely visible, a leather belt loosely buckled around the book. No title lettering, no extra books, cute but untamed.",
+      "w": 112,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "book": 3,
+      "chapter": 1,
+      "term": "Monster Book",
+      "lore": "Cuốn sách Hagrid gửi tặng Harry và dùng cho môn Chăm Sóc Sinh Vật Huyền Bí.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_deathday_cake",
+      "label": "Bánh ngày giỗ Nick Suýt Mất Đầu",
+      "group": "Halloween Hogwarts",
+      "subject": "A miniature decoration inspired by Nearly Headless Nick's 500th Deathday party: a large grey tombstone-shaped CAKE on an old silver platter atop a small dark wooden buffet table, exactly five tall black candles with small blue-violet flames, a few crumbs. Cake has NO writing or numbers, no rotting food, no corpse, no ghost figure.",
+      "w": 128,
+      "h": 144,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 2,
+      "chapter": 8,
+      "term": "cake",
+      "lore": "Bánh hình bia mộ trong bữa tiệc ngày giỗ lần thứ 500 của Nick.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_marauders_map",
+      "label": "Bản đồ của Đạo tặc",
+      "group": "Hành trình phép thuật",
+      "subject": "The Marauder's Map spread open and partly folded on a small dark wooden map display table: aged parchment with tiny dark line floorplans of Hogwarts, staircase-like paths and a few tiny ink FOOTPRINT pairs; no words, no names, no readable labels. Copper corner clips and a quill. Map remains clearly the centerpiece.",
+      "w": 128,
+      "h": 112,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 3,
+      "chapter": 10,
+      "term": "map",
+      "lore": "Fred và George trao cho Harry bản đồ các lối đi bí mật Hogwarts.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Dấu chân và nét bản đồ là ký hiệu minh họa trong sprite."
+    },
+    {
+      "id": "sp_time_turner",
+      "label": "Cái Xoay Thời Gian",
+      "group": "Hành trình phép thuật",
+      "subject": "Hermione's golden Time-Turner: a miniature hourglass enclosed within TWO nested circular gold rings, suspended on a fine gold chain from a small dark wooden stand. Sand visible in hourglass, delicate but chunky readable pixel geometry, no clock face, no numerals, no other jewelry.",
+      "w": 88,
+      "h": 128,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 3,
+      "chapter": 21,
+      "term": "Time-Turner",
+      "lore": "Dụng cụ Hermione dùng cùng Harry để quay lại thời gian.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Hoa văn/khung trang sức là diễn giải tạo hình, không phải chi tiết mô tả nguyên văn trong chương được dẫn."
+    },
+    {
+      "id": "sp_deluminator",
+      "label": "Cái Tắt-Sáng",
+      "group": "Hành trình phép thuật",
+      "subject": "Dumbledore's Deluminator, a small old silver cigarette-lighter-shaped magical device with a hinged lid, open on a compact weathered timber pedestal, one little floating blue-white light hovering just above it. Fine engraved non-letter scrolls, no fire flame, no cigarette, no smoke, no letters.",
+      "w": 80,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 7,
+      "chapter": 7,
+      "term": "Deluminator",
+      "lore": "Dumbledore để lại dụng cụ thu ánh sáng cho Ron.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_snitch_resurrection_stone",
+      "label": "Snitch giữ Hòn Đá Phục Sinh",
+      "group": "Hành trình phép thuật",
+      "subject": "The golden Snitch containing the Resurrection Stone: a small round gold ball with two delicate long silver wings, split slightly open to reveal a small cracked black stone within, resting on a simple low dark timber display mount. No text or inscription, no other balls, no human hands. Wings intact and symmetric.",
+      "w": 128,
+      "h": 104,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "book": 7,
+      "chapter": 34,
+      "term": "Snitch",
+      "lore": "Harry mở quả Snitch trước khi đi vào Rừng Cấm.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_sword_gryffindor",
+      "label": "Thanh gươm Gryffindor",
+      "group": "Hành trình phép thuật",
+      "subject": "The Sword of Godric Gryffindor displayed upright in a low weathered carved stone sword stand: long gleaming silver double-edged blade, silver crossguard and pommel inset with large dark ruby gemstones, elegant goblin-made craftsmanship. No readable inscription, no person, no shield, no blood. Entire sword fully visible.",
+      "w": 104,
+      "h": 176,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "book": 2,
+      "chapter": 17,
+      "term": "sword",
+      "lore": "Thanh gươm xuất hiện từ Nón Phân Loại trong trận đối đầu Tử Xà.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    },
+    {
+      "id": "sp_knight_bus",
+      "label": "Xe Đò Hiệp Sĩ",
+      "group": "Hành trình phép thuật",
+      "subject": "The Knight Bus from Harry Potter: a compact collectible miniature PURPLE TRIPLE-DECKER bus, exactly THREE stacked levels of windows, narrow tall vintage body, black wheels, round amber headlights, side passenger door. No writing, no license plate text, no scenery, no people. Very clearly three levels, not two.",
+      "w": 160,
+      "h": 176,
+      "foot": [
+        3,
+        1
+      ],
+      "motion": "glow",
+      "book": 3,
+      "chapter": 3,
+      "term": "Knight Bus",
+      "lore": "Chiếc xe buýt ba tầng đón Harry sau khi rời nhà Dursley.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+    }
+  ]
+}

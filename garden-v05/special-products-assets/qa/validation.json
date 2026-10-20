@@ -1,0 +1,7018 @@
+{
+  "schema": "hagrid-farm.decor-assets.qa.v1",
+  "status": "complete",
+  "assertions": {
+    "expectedItemCount": 30,
+    "packagedItemCount": 30,
+    "allExpectedMastersPresent": true,
+    "twoViewsPerMaster": true,
+    "fourFramesPerAngle": true,
+    "spriteSheetPerItem": true,
+    "nearestThumbnails2x3x": true,
+    "motionFallbackDocumented": true,
+    "staticFramesTruthful": true,
+    "glowLocalized": true,
+    "paletteOnly": true,
+    "perItemPaletteOnly": true,
+    "itemPaletteConfigured": true,
+    "binaryAlpha": true,
+    "noEdgeClipping": true,
+    "groundedBottomQuarterUnchanged": true
+  },
+  "items": [
+    {
+      "id": "sp_hagrid_umbrella",
+      "dimensions": {
+        "width": 128,
+        "height": 144
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 3,
+              "w": 122,
+              "h": 137,
+              "count": 9300
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 122,
+                "h": 137,
+                "count": 9300
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 122,
+                "h": 137,
+                "count": 9300
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 122,
+                "h": 137,
+                "count": 9300
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 122,
+                "h": 137,
+                "count": 9300
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 25,
+                "y": 89,
+                "w": 10,
+                "h": 9
+              },
+              "pixelCount": 47,
+              "mappableCount": 47,
+              "maxPixels": 1116,
+              "rootBand": 108
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 6,
+              "w": 122,
+              "h": 134,
+              "count": 7252
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 6,
+                "w": 122,
+                "h": 134,
+                "count": 7252
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 6,
+                "w": 122,
+                "h": 134,
+                "count": 7252
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 6,
+                "w": 122,
+                "h": 134,
+                "count": 7252
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 6,
+                "w": 122,
+                "h": 134,
+                "count": 7252
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 51,
+                "y": 74,
+                "w": 7,
+                "h": 7
+              },
+              "pixelCount": 32,
+              "mappableCount": 32,
+              "maxPixels": 870,
+              "rootBand": 108
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_hagrid_umbrella.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_hagrid_umbrella.png",
+            "alternate": "thumbnails/2x/sp_hagrid_umbrella_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_hagrid_umbrella.png",
+            "alternate": "thumbnails/3x/sp_hagrid_umbrella_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_norbert_egg",
+      "dimensions": {
+        "width": 144,
+        "height": 160
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 22,
+              "w": 138,
+              "h": 134,
+              "count": 14301
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 22,
+                "w": 138,
+                "h": 134,
+                "count": 14301
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 22,
+                "w": 138,
+                "h": 134,
+                "count": 14301
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 22,
+                "w": 138,
+                "h": 134,
+                "count": 14301
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 22,
+                "w": 138,
+                "h": 134,
+                "count": 14301
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 50,
+                "y": 108,
+                "w": 6,
+                "h": 7
+              },
+              "pixelCount": 22,
+              "mappableCount": 22,
+              "maxPixels": 1716,
+              "rootBand": 120
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 19,
+              "w": 138,
+              "h": 137,
+              "count": 11799
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 19,
+                "w": 138,
+                "h": 137,
+                "count": 11799
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 19,
+                "w": 138,
+                "h": 137,
+                "count": 11799
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 19,
+                "w": 138,
+                "h": 137,
+                "count": 11799
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 19,
+                "w": 138,
+                "h": 137,
+                "count": 11799
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 45,
+                "y": 70,
+                "w": 6,
+                "h": 5
+              },
+              "pixelCount": 15,
+              "mappableCount": 15,
+              "maxPixels": 1415,
+              "rootBand": 120
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_norbert_egg.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_norbert_egg.png",
+            "alternate": "thumbnails/2x/sp_norbert_egg_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_norbert_egg.png",
+            "alternate": "thumbnails/3x/sp_norbert_egg_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_sirius_motorbike",
+      "dimensions": {
+        "width": 160,
+        "height": 128
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 3,
+              "w": 154,
+              "h": 121,
+              "count": 10813
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 154,
+                "h": 121,
+                "count": 10813
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 154,
+                "h": 121,
+                "count": 10813
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 154,
+                "h": 121,
+                "count": 10813
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 154,
+                "h": 121,
+                "count": 10813
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 34,
+                "y": 43,
+                "w": 8,
+                "h": 7
+              },
+              "pixelCount": 25,
+              "mappableCount": 25,
+              "maxPixels": 1297,
+              "rootBand": 96
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 4,
+              "y": 2,
+              "w": 153,
+              "h": 122,
+              "count": 8897
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 153,
+                "h": 122,
+                "count": 8897
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 153,
+                "h": 122,
+                "count": 8897
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 153,
+                "h": 122,
+                "count": 8897
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 153,
+                "h": 122,
+                "count": 8897
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 37,
+                "y": 21,
+                "w": 3,
+                "h": 5
+              },
+              "pixelCount": 9,
+              "mappableCount": 9,
+              "maxPixels": 1067,
+              "rootBand": 96
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "warm"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_sirius_motorbike.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_sirius_motorbike.png",
+            "alternate": "thumbnails/2x/sp_sirius_motorbike_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_sirius_motorbike.png",
+            "alternate": "thumbnails/3x/sp_sirius_motorbike_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_whomping_anglia",
+      "dimensions": {
+        "width": 208,
+        "height": 224
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 6,
+              "w": 202,
+              "h": 214,
+              "count": 22221
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 6,
+                "w": 202,
+                "h": 214,
+                "count": 22221
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 6,
+                "w": 202,
+                "h": 214,
+                "count": 22221
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 6,
+                "w": 202,
+                "h": 214,
+                "count": 22221
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 6,
+                "w": 202,
+                "h": 214,
+                "count": 22221
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 2,
+              "w": 202,
+              "h": 218,
+              "count": 17501
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 202,
+                "h": 218,
+                "count": 17501
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 202,
+                "h": 218,
+                "count": 17501
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 202,
+                "h": 218,
+                "count": 17501
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 202,
+                "h": 218,
+                "count": 17501
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "green",
+          "magic"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "sway",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_whomping_anglia.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_whomping_anglia.png",
+            "alternate": "thumbnails/2x/sp_whomping_anglia_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_whomping_anglia.png",
+            "alternate": "thumbnails/3x/sp_whomping_anglia_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_buckbeak_pumpkins",
+      "dimensions": {
+        "width": 176,
+        "height": 160
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 14,
+              "w": 170,
+              "h": 142,
+              "count": 13433
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 14,
+                "w": 170,
+                "h": 142,
+                "count": 13433
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 14,
+                "w": 170,
+                "h": 142,
+                "count": 13433
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 14,
+                "w": 170,
+                "h": 142,
+                "count": 13433
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 14,
+                "w": 170,
+                "h": 142,
+                "count": 13433
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 10,
+              "w": 170,
+              "h": 146,
+              "count": 12424
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 170,
+                "h": 146,
+                "count": 12424
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 170,
+                "h": 146,
+                "count": 12424
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 170,
+                "h": 146,
+                "count": 12424
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 170,
+                "h": 146,
+                "count": 12424
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "wood",
+          "fire"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "sway",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_buckbeak_pumpkins.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_buckbeak_pumpkins.png",
+            "alternate": "thumbnails/2x/sp_buckbeak_pumpkins_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_buckbeak_pumpkins.png",
+            "alternate": "thumbnails/3x/sp_buckbeak_pumpkins_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_aragog_hollow",
+      "dimensions": {
+        "width": 176,
+        "height": 176
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 13,
+              "w": 170,
+              "h": 159,
+              "count": 17980
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 13,
+                "w": 170,
+                "h": 159,
+                "count": 17980
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 13,
+                "w": 170,
+                "h": 159,
+                "count": 17980
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 13,
+                "w": 170,
+                "h": 159,
+                "count": 17980
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 13,
+                "w": 170,
+                "h": 159,
+                "count": 17980
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 8,
+              "w": 170,
+              "h": 164,
+              "count": 16507
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 8,
+                "w": 170,
+                "h": 164,
+                "count": 16507
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 8,
+                "w": 170,
+                "h": 164,
+                "count": 16507
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 8,
+                "w": 170,
+                "h": 164,
+                "count": 16507
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 8,
+                "w": 170,
+                "h": 164,
+                "count": 16507
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "green"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "sway",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_aragog_hollow.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_aragog_hollow.png",
+            "alternate": "thumbnails/2x/sp_aragog_hollow_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_aragog_hollow.png",
+            "alternate": "thumbnails/3x/sp_aragog_hollow_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_mirror_erised",
+      "dimensions": {
+        "width": 144,
+        "height": 208
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 20,
+              "y": 2,
+              "w": 105,
+              "h": 202,
+              "count": 12423
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 20,
+                "y": 2,
+                "w": 105,
+                "h": 202,
+                "count": 12423
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 20,
+                "y": 2,
+                "w": 105,
+                "h": 202,
+                "count": 12423
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 20,
+                "y": 2,
+                "w": 105,
+                "h": 202,
+                "count": 12423
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 20,
+                "y": 2,
+                "w": 105,
+                "h": 202,
+                "count": 12423
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 104,
+                "y": 88,
+                "w": 1,
+                "h": 39
+              },
+              "pixelCount": 39,
+              "mappableCount": 39,
+              "maxPixels": 1490,
+              "rootBand": 156
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 30,
+              "y": 2,
+              "w": 84,
+              "h": 202,
+              "count": 9285
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 30,
+                "y": 2,
+                "w": 84,
+                "h": 202,
+                "count": 9285
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 30,
+                "y": 2,
+                "w": 84,
+                "h": 202,
+                "count": 9285
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 30,
+                "y": 2,
+                "w": 84,
+                "h": 202,
+                "count": 9285
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 30,
+                "y": 2,
+                "w": 84,
+                "h": 202,
+                "count": 9285
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 82,
+                "y": 72,
+                "w": 8,
+                "h": 4
+              },
+              "pixelCount": 11,
+              "mappableCount": 11,
+              "maxPixels": 1114,
+              "rootBand": 156
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_mirror_erised.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_mirror_erised.png",
+            "alternate": "thumbnails/2x/sp_mirror_erised_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_mirror_erised.png",
+            "alternate": "thumbnails/3x/sp_mirror_erised_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_sorting_hat",
+      "dimensions": {
+        "width": 104,
+        "height": 144
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 7,
+              "w": 98,
+              "h": 133,
+              "count": 5939
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 7,
+                "w": 98,
+                "h": 133,
+                "count": 5939
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 7,
+                "w": 98,
+                "h": 133,
+                "count": 5939
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 7,
+                "w": 98,
+                "h": 133,
+                "count": 5939
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 7,
+                "w": 98,
+                "h": 133,
+                "count": 5939
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "blink",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 21,
+              "w": 98,
+              "h": 119,
+              "count": 4968
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 21,
+                "w": 98,
+                "h": 119,
+                "count": 4968
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 21,
+                "w": 98,
+                "h": 119,
+                "count": 4968
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 21,
+                "w": 98,
+                "h": 119,
+                "count": 4968
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 21,
+                "w": 98,
+                "h": 119,
+                "count": 4968
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "blink",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "blink",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_sorting_hat.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_sorting_hat.png",
+            "alternate": "thumbnails/2x/sp_sorting_hat_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_sorting_hat.png",
+            "alternate": "thumbnails/3x/sp_sorting_hat_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_goblet_fire",
+      "dimensions": {
+        "width": 112,
+        "height": 176
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 19,
+              "y": 2,
+              "w": 74,
+              "h": 170,
+              "count": 7420
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 19,
+                "y": 2,
+                "w": 74,
+                "h": 170,
+                "count": 7420
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 2,
+                "w": 74,
+                "h": 170,
+                "count": 7420
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 2,
+                "w": 74,
+                "h": 170,
+                "count": 7420
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 2,
+                "w": 74,
+                "h": 170,
+                "count": 7420
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 31,
+                "y": 35,
+                "w": 2,
+                "h": 3
+              },
+              "pixelCount": 5,
+              "mappableCount": 5,
+              "maxPixels": 890,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 22,
+              "y": 2,
+              "w": 68,
+              "h": 170,
+              "count": 6889
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 22,
+                "y": 2,
+                "w": 68,
+                "h": 170,
+                "count": 6889
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 22,
+                "y": 2,
+                "w": 68,
+                "h": 170,
+                "count": 6889
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 22,
+                "y": 2,
+                "w": 68,
+                "h": 170,
+                "count": 6889
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 22,
+                "y": 2,
+                "w": 68,
+                "h": 170,
+                "count": 6889
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 40,
+                "y": 35,
+                "w": 2,
+                "h": 3
+              },
+              "pixelCount": 4,
+              "mappableCount": 4,
+              "maxPixels": 826,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "magic",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_goblet_fire.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_goblet_fire.png",
+            "alternate": "thumbnails/2x/sp_goblet_fire_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_goblet_fire.png",
+            "alternate": "thumbnails/3x/sp_goblet_fire_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_pensieve",
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 10,
+              "y": 2,
+              "w": 108,
+              "h": 122,
+              "count": 7524
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 10,
+                "y": 2,
+                "w": 108,
+                "h": 122,
+                "count": 7524
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 10,
+                "y": 2,
+                "w": 108,
+                "h": 122,
+                "count": 7524
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 10,
+                "y": 2,
+                "w": 108,
+                "h": 122,
+                "count": 7524
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 10,
+                "y": 2,
+                "w": 108,
+                "h": 122,
+                "count": 7524
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 58,
+                "y": 2,
+                "w": 9,
+                "h": 10
+              },
+              "pixelCount": 40,
+              "mappableCount": 40,
+              "maxPixels": 902,
+              "rootBand": 96
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 17,
+              "y": 2,
+              "w": 95,
+              "h": 122,
+              "count": 6578
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 17,
+                "y": 2,
+                "w": 95,
+                "h": 122,
+                "count": 6578
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 17,
+                "y": 2,
+                "w": 95,
+                "h": 122,
+                "count": 6578
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 17,
+                "y": 2,
+                "w": 95,
+                "h": 122,
+                "count": 6578
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 17,
+                "y": 2,
+                "w": 95,
+                "h": 122,
+                "count": 6578
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 43,
+                "y": 22,
+                "w": 47,
+                "h": 35
+              },
+              "pixelCount": 670,
+              "mappableCount": 670,
+              "maxPixels": 789,
+              "rootBand": 96
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_pensieve.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_pensieve.png",
+            "alternate": "thumbnails/2x/sp_pensieve_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_pensieve.png",
+            "alternate": "thumbnails/3x/sp_pensieve_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_fawkes_perch",
+      "dimensions": {
+        "width": 128,
+        "height": 192
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 18,
+              "y": 2,
+              "w": 93,
+              "h": 186,
+              "count": 8449
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 18,
+                "y": 2,
+                "w": 93,
+                "h": 186,
+                "count": 8449
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 2,
+                "w": 93,
+                "h": 186,
+                "count": 8449
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 2,
+                "w": 93,
+                "h": 186,
+                "count": 8449
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 2,
+                "w": 93,
+                "h": 186,
+                "count": 8449
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 79,
+                "y": 111,
+                "w": 11,
+                "h": 30
+              },
+              "pixelCount": 139,
+              "mappableCount": 139,
+              "maxPixels": 1013,
+              "rootBand": 144
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 19,
+              "y": 2,
+              "w": 90,
+              "h": 186,
+              "count": 8485
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 19,
+                "y": 2,
+                "w": 90,
+                "h": 186,
+                "count": 8485
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 2,
+                "w": 90,
+                "h": 186,
+                "count": 8485
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 2,
+                "w": 90,
+                "h": 186,
+                "count": 8485
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 2,
+                "w": 90,
+                "h": 186,
+                "count": 8485
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 47,
+                "y": 115,
+                "w": 7,
+                "h": 29
+              },
+              "pixelCount": 127,
+              "mappableCount": 127,
+              "maxPixels": 1018,
+              "rootBand": 144
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "fire",
+          "warm",
+          "wood"
+        ],
+        "colors": [
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_fawkes_perch.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_fawkes_perch.png",
+            "alternate": "thumbnails/2x/sp_fawkes_perch_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_fawkes_perch.png",
+            "alternate": "thumbnails/3x/sp_fawkes_perch_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_wizard_chess_knight",
+      "dimensions": {
+        "width": 128,
+        "height": 176
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 11,
+              "y": 2,
+              "w": 106,
+              "h": 170,
+              "count": 11387
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 11,
+                "y": 2,
+                "w": 106,
+                "h": 170,
+                "count": 11387
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 11,
+                "y": 2,
+                "w": 106,
+                "h": 170,
+                "count": 11387
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 11,
+                "y": 2,
+                "w": 106,
+                "h": 170,
+                "count": 11387
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 11,
+                "y": 2,
+                "w": 106,
+                "h": 170,
+                "count": 11387
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 59,
+                "y": 33,
+                "w": 2,
+                "h": 3
+              },
+              "pixelCount": 4,
+              "mappableCount": 4,
+              "maxPixels": 1366,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 10,
+              "y": 2,
+              "w": 109,
+              "h": 170,
+              "count": 11222
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 10,
+                "y": 2,
+                "w": 109,
+                "h": 170,
+                "count": 11222
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 10,
+                "y": 2,
+                "w": 109,
+                "h": 170,
+                "count": 11222
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 10,
+                "y": 2,
+                "w": 109,
+                "h": 170,
+                "count": 11222
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 10,
+                "y": 2,
+                "w": 109,
+                "h": 170,
+                "count": 11222
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 83,
+                "y": 36,
+                "w": 1,
+                "h": 1
+              },
+              "pixelCount": 1,
+              "mappableCount": 1,
+              "maxPixels": 1346,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_wizard_chess_knight.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_wizard_chess_knight.png",
+            "alternate": "thumbnails/2x/sp_wizard_chess_knight_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_wizard_chess_knight.png",
+            "alternate": "thumbnails/3x/sp_wizard_chess_knight_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_riddle_diary",
+      "dimensions": {
+        "width": 112,
+        "height": 104
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 5,
+              "y": 2,
+              "w": 102,
+              "h": 98,
+              "count": 5922
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 102,
+                "h": 98,
+                "count": 5922
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 102,
+                "h": 98,
+                "count": 5922
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 102,
+                "h": 98,
+                "count": 5922
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 102,
+                "h": 98,
+                "count": 5922
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 78,
+                "y": 39,
+                "w": 13,
+                "h": 15
+              },
+              "pixelCount": 63,
+              "mappableCount": 63,
+              "maxPixels": 710,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 13,
+              "y": 2,
+              "w": 87,
+              "h": 98,
+              "count": 4785
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 87,
+                "h": 98,
+                "count": 4785
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 87,
+                "h": 98,
+                "count": 4785
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 87,
+                "h": 98,
+                "count": 4785
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 87,
+                "h": 98,
+                "count": 4785
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 62,
+                "y": 38,
+                "w": 24,
+                "h": 8
+              },
+              "pixelCount": 60,
+              "mappableCount": 60,
+              "maxPixels": 574,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "warm"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_riddle_diary.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_riddle_diary.png",
+            "alternate": "thumbnails/2x/sp_riddle_diary_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_riddle_diary.png",
+            "alternate": "thumbnails/3x/sp_riddle_diary_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_slytherin_locket",
+      "dimensions": {
+        "width": 88,
+        "height": 112
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 12,
+              "w": 82,
+              "h": 96,
+              "count": 4604
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 12,
+                "w": 82,
+                "h": 96,
+                "count": 4604
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 12,
+                "w": 82,
+                "h": 96,
+                "count": 4604
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 12,
+                "w": 82,
+                "h": 96,
+                "count": 4604
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 12,
+                "w": 82,
+                "h": 96,
+                "count": 4604
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 32,
+                "y": 25,
+                "w": 11,
+                "h": 8
+              },
+              "pixelCount": 33,
+              "mappableCount": 33,
+              "maxPixels": 552,
+              "rootBand": 84
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 6,
+              "y": 2,
+              "w": 77,
+              "h": 106,
+              "count": 5295
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 77,
+                "h": 106,
+                "count": 5295
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 77,
+                "h": 106,
+                "count": 5295
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 77,
+                "h": 106,
+                "count": 5295
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 77,
+                "h": 106,
+                "count": 5295
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 39,
+                "y": 16,
+                "w": 5,
+                "h": 13
+              },
+              "pixelCount": 23,
+              "mappableCount": 23,
+              "maxPixels": 635,
+              "rootBand": 84
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "green",
+          "warm",
+          "wood"
+        ],
+        "colors": [
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_slytherin_locket.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_slytherin_locket.png",
+            "alternate": "thumbnails/2x/sp_slytherin_locket_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_slytherin_locket.png",
+            "alternate": "thumbnails/3x/sp_slytherin_locket_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_gaunt_ring",
+      "dimensions": {
+        "width": 88,
+        "height": 96
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 2,
+              "w": 82,
+              "h": 90,
+              "count": 4950
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 82,
+                "h": 90,
+                "count": 4950
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 82,
+                "h": 90,
+                "count": 4950
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 82,
+                "h": 90,
+                "count": 4950
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 82,
+                "h": 90,
+                "count": 4950
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 48,
+                "y": 39,
+                "w": 1,
+                "h": 6
+              },
+              "pixelCount": 6,
+              "mappableCount": 6,
+              "maxPixels": 594,
+              "rootBand": 72
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 4,
+              "y": 2,
+              "w": 81,
+              "h": 90,
+              "count": 4563
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 81,
+                "h": 90,
+                "count": 4563
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 81,
+                "h": 90,
+                "count": 4563
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 81,
+                "h": 90,
+                "count": 4563
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 81,
+                "h": 90,
+                "count": 4563
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 35,
+                "y": 28,
+                "w": 3,
+                "h": 3
+              },
+              "pixelCount": 5,
+              "mappableCount": 5,
+              "maxPixels": 547,
+              "rootBand": 72
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_gaunt_ring.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_gaunt_ring.png",
+            "alternate": "thumbnails/2x/sp_gaunt_ring_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_gaunt_ring.png",
+            "alternate": "thumbnails/3x/sp_gaunt_ring_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_hufflepuff_cup",
+      "dimensions": {
+        "width": 96,
+        "height": 104
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 4,
+              "y": 2,
+              "w": 89,
+              "h": 98,
+              "count": 5946
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 89,
+                "h": 98,
+                "count": 5946
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 89,
+                "h": 98,
+                "count": 5946
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 89,
+                "h": 98,
+                "count": 5946
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 4,
+                "y": 2,
+                "w": 89,
+                "h": 98,
+                "count": 5946
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 27,
+                "y": 14,
+                "w": 38,
+                "h": 5
+              },
+              "pixelCount": 67,
+              "mappableCount": 67,
+              "maxPixels": 713,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 11,
+              "y": 2,
+              "w": 75,
+              "h": 98,
+              "count": 5077
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 11,
+                "y": 2,
+                "w": 75,
+                "h": 98,
+                "count": 5077
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 11,
+                "y": 2,
+                "w": 75,
+                "h": 98,
+                "count": 5077
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 11,
+                "y": 2,
+                "w": 75,
+                "h": 98,
+                "count": 5077
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 11,
+                "y": 2,
+                "w": 75,
+                "h": 98,
+                "count": 5077
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 40,
+                "y": 32,
+                "w": 7,
+                "h": 16
+              },
+              "pixelCount": 70,
+              "mappableCount": 70,
+              "maxPixels": 609,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "warm",
+          "wood",
+          "stone"
+        ],
+        "colors": [
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_hufflepuff_cup.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_hufflepuff_cup.png",
+            "alternate": "thumbnails/2x/sp_hufflepuff_cup_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_hufflepuff_cup.png",
+            "alternate": "thumbnails/3x/sp_hufflepuff_cup_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_ravenclaw_diadem",
+      "dimensions": {
+        "width": 112,
+        "height": 104
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 20,
+              "w": 106,
+              "h": 80,
+              "count": 5713
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 20,
+                "w": 106,
+                "h": 80,
+                "count": 5713
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 20,
+                "w": 106,
+                "h": 80,
+                "count": 5713
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 20,
+                "w": 106,
+                "h": 80,
+                "count": 5713
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 20,
+                "w": 106,
+                "h": 80,
+                "count": 5713
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 47,
+                "y": 35,
+                "w": 5,
+                "h": 6
+              },
+              "pixelCount": 14,
+              "mappableCount": 14,
+              "maxPixels": 685,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 18,
+              "w": 106,
+              "h": 82,
+              "count": 4620
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 18,
+                "w": 106,
+                "h": 82,
+                "count": 4620
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 18,
+                "w": 106,
+                "h": 82,
+                "count": 4620
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 18,
+                "w": 106,
+                "h": 82,
+                "count": 4620
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 18,
+                "w": 106,
+                "h": 82,
+                "count": 4620
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 54,
+                "y": 64,
+                "w": 4,
+                "h": 8
+              },
+              "pixelCount": 13,
+              "mappableCount": 13,
+              "maxPixels": 554,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_ravenclaw_diadem.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_ravenclaw_diadem.png",
+            "alternate": "thumbnails/2x/sp_ravenclaw_diadem_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_ravenclaw_diadem.png",
+            "alternate": "thumbnails/3x/sp_ravenclaw_diadem_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_vanishing_cabinet",
+      "dimensions": {
+        "width": 144,
+        "height": 208
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 18,
+              "y": 2,
+              "w": 108,
+              "h": 202,
+              "count": 16728
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 18,
+                "y": 2,
+                "w": 108,
+                "h": 202,
+                "count": 16728
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 2,
+                "w": 108,
+                "h": 202,
+                "count": 16728
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 2,
+                "w": 108,
+                "h": 202,
+                "count": 16728
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 2,
+                "w": 108,
+                "h": 202,
+                "count": 16728
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "static",
+            "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 27,
+              "y": 2,
+              "w": 91,
+              "h": 202,
+              "count": 14087
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 27,
+                "y": 2,
+                "w": 91,
+                "h": 202,
+                "count": 14087
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 27,
+                "y": 2,
+                "w": 91,
+                "h": 202,
+                "count": 14087
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 27,
+                "y": 2,
+                "w": 91,
+                "h": 202,
+                "count": 14087
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 27,
+                "y": 2,
+                "w": 91,
+                "h": 202,
+                "count": 14087
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "static",
+            "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "green"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_vanishing_cabinet.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_vanishing_cabinet.png",
+            "alternate": "thumbnails/2x/sp_vanishing_cabinet_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_vanishing_cabinet.png",
+            "alternate": "thumbnails/3x/sp_vanishing_cabinet_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_hand_glory",
+      "dimensions": {
+        "width": 80,
+        "height": 136
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 15,
+              "y": 2,
+              "w": 51,
+              "h": 130,
+              "count": 3487
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 15,
+                "y": 2,
+                "w": 51,
+                "h": 130,
+                "count": 3487
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 15,
+                "y": 2,
+                "w": 51,
+                "h": 130,
+                "count": 3487
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 15,
+                "y": 2,
+                "w": 51,
+                "h": 130,
+                "count": 3487
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 15,
+                "y": 2,
+                "w": 51,
+                "h": 130,
+                "count": 3487
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 33,
+                "y": 5,
+                "w": 15,
+                "h": 20
+              },
+              "pixelCount": 175,
+              "mappableCount": 175,
+              "maxPixels": 418,
+              "rootBand": 102
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 14,
+              "y": 2,
+              "w": 52,
+              "h": 130,
+              "count": 3425
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 14,
+                "y": 2,
+                "w": 52,
+                "h": 130,
+                "count": 3425
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 2,
+                "w": 52,
+                "h": 130,
+                "count": 3425
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 2,
+                "w": 52,
+                "h": 130,
+                "count": 3425
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 2,
+                "w": 52,
+                "h": 130,
+                "count": 3425
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 27,
+                "y": 7,
+                "w": 15,
+                "h": 19
+              },
+              "pixelCount": 159,
+              "mappableCount": 159,
+              "maxPixels": 411,
+              "rootBand": 102
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_hand_glory.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_hand_glory.png",
+            "alternate": "thumbnails/2x/sp_hand_glory_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_hand_glory.png",
+            "alternate": "thumbnails/3x/sp_hand_glory_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_cursed_opal_necklace",
+      "dimensions": {
+        "width": 96,
+        "height": 136
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 5,
+              "w": 90,
+              "h": 127,
+              "count": 7338
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 5,
+                "w": 90,
+                "h": 127,
+                "count": 7338
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 5,
+                "w": 90,
+                "h": 127,
+                "count": 7338
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 5,
+                "w": 90,
+                "h": 127,
+                "count": 7338
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 5,
+                "w": 90,
+                "h": 127,
+                "count": 7338
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 70,
+                "y": 41,
+                "w": 4,
+                "h": 9
+              },
+              "pixelCount": 21,
+              "mappableCount": 21,
+              "maxPixels": 880,
+              "rootBand": 102
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 6,
+              "y": 2,
+              "w": 85,
+              "h": 130,
+              "count": 6860
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 85,
+                "h": 130,
+                "count": 6860
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 85,
+                "h": 130,
+                "count": 6860
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 85,
+                "h": 130,
+                "count": 6860
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 85,
+                "h": 130,
+                "count": 6860
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 34,
+                "y": 32,
+                "w": 19,
+                "h": 18
+              },
+              "pixelCount": 168,
+              "mappableCount": 168,
+              "maxPixels": 823,
+              "rootBand": 102
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_cursed_opal_necklace.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_cursed_opal_necklace.png",
+            "alternate": "thumbnails/2x/sp_cursed_opal_necklace_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_cursed_opal_necklace.png",
+            "alternate": "thumbnails/3x/sp_cursed_opal_necklace_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_chamber_serpent_door",
+      "dimensions": {
+        "width": 192,
+        "height": 208
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 38,
+              "w": 186,
+              "h": 166,
+              "count": 25617
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 38,
+                "w": 186,
+                "h": 166,
+                "count": 25617
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 38,
+                "w": 186,
+                "h": 166,
+                "count": 25617
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 38,
+                "w": 186,
+                "h": 166,
+                "count": 25617
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 38,
+                "w": 186,
+                "h": 166,
+                "count": 25617
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "static",
+            "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 4,
+              "w": 186,
+              "h": 200,
+              "count": 21984
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 186,
+                "h": 200,
+                "count": 21984
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 186,
+                "h": 200,
+                "count": 21984
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 186,
+                "h": 200,
+                "count": 21984
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 186,
+                "h": 200,
+                "count": 21984
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "static",
+            "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "green",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_chamber_serpent_door.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_chamber_serpent_door.png",
+            "alternate": "thumbnails/2x/sp_chamber_serpent_door_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_chamber_serpent_door.png",
+            "alternate": "thumbnails/3x/sp_chamber_serpent_door_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_department_veil",
+      "dimensions": {
+        "width": 176,
+        "height": 208
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 14,
+              "y": 2,
+              "w": 148,
+              "h": 202,
+              "count": 21257
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 14,
+                "y": 2,
+                "w": 148,
+                "h": 202,
+                "count": 21257
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 2,
+                "w": 148,
+                "h": 202,
+                "count": 21257
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 2,
+                "w": 148,
+                "h": 202,
+                "count": 21257
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 2,
+                "w": 148,
+                "h": 202,
+                "count": 21257
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 32,
+              "y": 2,
+              "w": 112,
+              "h": 202,
+              "count": 15779
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 32,
+                "y": 2,
+                "w": 112,
+                "h": 202,
+                "count": 15779
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 32,
+                "y": 2,
+                "w": 112,
+                "h": 202,
+                "count": 15779
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 32,
+                "y": 2,
+                "w": 112,
+                "h": 202,
+                "count": 15779
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 32,
+                "y": 2,
+                "w": 112,
+                "h": 202,
+                "count": 15779
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "sway",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_department_veil.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_department_veil.png",
+            "alternate": "thumbnails/2x/sp_department_veil_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_department_veil.png",
+            "alternate": "thumbnails/3x/sp_department_veil_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_monster_book",
+      "dimensions": {
+        "width": 112,
+        "height": 104
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 2,
+              "w": 106,
+              "h": 98,
+              "count": 6775
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 106,
+                "h": 98,
+                "count": 6775
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 106,
+                "h": 98,
+                "count": 6775
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 106,
+                "h": 98,
+                "count": 6775
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 106,
+                "h": 98,
+                "count": 6775
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "blink",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 6,
+              "y": 2,
+              "w": 101,
+              "h": 98,
+              "count": 6372
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 101,
+                "h": 98,
+                "count": 6372
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 101,
+                "h": 98,
+                "count": 6372
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 101,
+                "h": 98,
+                "count": 6372
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 101,
+                "h": 98,
+                "count": 6372
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "blink",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "blink",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_monster_book.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_monster_book.png",
+            "alternate": "thumbnails/2x/sp_monster_book_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_monster_book.png",
+            "alternate": "thumbnails/3x/sp_monster_book_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_deathday_cake",
+      "dimensions": {
+        "width": 128,
+        "height": 144
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 6,
+              "y": 2,
+              "w": 116,
+              "h": 138,
+              "count": 9102
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 116,
+                "h": 138,
+                "count": 9102
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 116,
+                "h": 138,
+                "count": 9102
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 116,
+                "h": 138,
+                "count": 9102
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 6,
+                "y": 2,
+                "w": 116,
+                "h": 138,
+                "count": 9102
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 50,
+                "y": 4,
+                "w": 7,
+                "h": 13
+              },
+              "pixelCount": 63,
+              "mappableCount": 63,
+              "maxPixels": 1092,
+              "rootBand": 108
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 7,
+              "w": 122,
+              "h": 133,
+              "count": 6936
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 7,
+                "w": 122,
+                "h": 133,
+                "count": 6936
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 7,
+                "w": 122,
+                "h": 133,
+                "count": 6936
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 7,
+                "w": 122,
+                "h": 133,
+                "count": 6936
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 7,
+                "w": 122,
+                "h": 133,
+                "count": 6936
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 105,
+                "y": 21,
+                "w": 8,
+                "h": 12
+              },
+              "pixelCount": 66,
+              "mappableCount": 66,
+              "maxPixels": 832,
+              "rootBand": 108
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_deathday_cake.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_deathday_cake.png",
+            "alternate": "thumbnails/2x/sp_deathday_cake_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_deathday_cake.png",
+            "alternate": "thumbnails/3x/sp_deathday_cake_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_marauders_map",
+      "dimensions": {
+        "width": 128,
+        "height": 112
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 12,
+              "w": 122,
+              "h": 96,
+              "count": 6897
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 12,
+                "w": 122,
+                "h": 96,
+                "count": 6897
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 12,
+                "w": 122,
+                "h": 96,
+                "count": 6897
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 12,
+                "w": 122,
+                "h": 96,
+                "count": 6897
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 12,
+                "w": 122,
+                "h": 96,
+                "count": 6897
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 51,
+                "y": 36,
+                "w": 38,
+                "h": 30
+              },
+              "pixelCount": 440,
+              "mappableCount": 440,
+              "maxPixels": 827,
+              "rootBand": 84
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 18,
+              "y": 19,
+              "w": 107,
+              "h": 89,
+              "count": 5103
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 18,
+                "y": 19,
+                "w": 107,
+                "h": 89,
+                "count": 5103
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 19,
+                "w": 107,
+                "h": 89,
+                "count": 5103
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 19,
+                "w": 107,
+                "h": 89,
+                "count": 5103
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 19,
+                "w": 107,
+                "h": 89,
+                "count": 5103
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 60,
+                "y": 48,
+                "w": 32,
+                "h": 21
+              },
+              "pixelCount": 107,
+              "mappableCount": 107,
+              "maxPixels": 612,
+              "rootBand": 84
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_marauders_map.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_marauders_map.png",
+            "alternate": "thumbnails/2x/sp_marauders_map_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_marauders_map.png",
+            "alternate": "thumbnails/3x/sp_marauders_map_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_time_turner",
+      "dimensions": {
+        "width": 88,
+        "height": 128
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 10,
+              "w": 82,
+              "h": 114,
+              "count": 4974
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 82,
+                "h": 114,
+                "count": 4974
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 82,
+                "h": 114,
+                "count": 4974
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 82,
+                "h": 114,
+                "count": 4974
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 82,
+                "h": 114,
+                "count": 4974
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 41,
+                "y": 74,
+                "w": 3,
+                "h": 3
+              },
+              "pixelCount": 7,
+              "mappableCount": 7,
+              "maxPixels": 596,
+              "rootBand": 96
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 10,
+              "w": 82,
+              "h": 114,
+              "count": 3476
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 82,
+                "h": 114,
+                "count": 3476
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 82,
+                "h": 114,
+                "count": 3476
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 82,
+                "h": 114,
+                "count": 3476
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 10,
+                "w": 82,
+                "h": 114,
+                "count": 3476
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 51,
+                "y": 64,
+                "w": 1,
+                "h": 7
+              },
+              "pixelCount": 7,
+              "mappableCount": 7,
+              "maxPixels": 417,
+              "rootBand": 96
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "warm",
+          "stone",
+          "wood"
+        ],
+        "colors": [
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_time_turner.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_time_turner.png",
+            "alternate": "thumbnails/2x/sp_time_turner_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_time_turner.png",
+            "alternate": "thumbnails/3x/sp_time_turner_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_deluminator",
+      "dimensions": {
+        "width": 80,
+        "height": 104
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 8,
+              "y": 2,
+              "w": 65,
+              "h": 98,
+              "count": 3605
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 8,
+                "y": 2,
+                "w": 65,
+                "h": 98,
+                "count": 3605
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 2,
+                "w": 65,
+                "h": 98,
+                "count": 3605
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 2,
+                "w": 65,
+                "h": 98,
+                "count": 3605
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 2,
+                "w": 65,
+                "h": 98,
+                "count": 3605
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 37,
+                "y": 4,
+                "w": 11,
+                "h": 15
+              },
+              "pixelCount": 66,
+              "mappableCount": 66,
+              "maxPixels": 432,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 12,
+              "y": 2,
+              "w": 56,
+              "h": 98,
+              "count": 3346
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 12,
+                "y": 2,
+                "w": 56,
+                "h": 98,
+                "count": 3346
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 12,
+                "y": 2,
+                "w": 56,
+                "h": 98,
+                "count": 3346
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 12,
+                "y": 2,
+                "w": 56,
+                "h": 98,
+                "count": 3346
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 12,
+                "y": 2,
+                "w": 56,
+                "h": 98,
+                "count": 3346
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 32,
+                "y": 2,
+                "w": 10,
+                "h": 15
+              },
+              "pixelCount": 78,
+              "mappableCount": 78,
+              "maxPixels": 401,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_deluminator.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_deluminator.png",
+            "alternate": "thumbnails/2x/sp_deluminator_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_deluminator.png",
+            "alternate": "thumbnails/3x/sp_deluminator_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_snitch_resurrection_stone",
+      "dimensions": {
+        "width": 128,
+        "height": 104
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 19,
+              "w": 122,
+              "h": 81,
+              "count": 3744
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 19,
+                "w": 122,
+                "h": 81,
+                "count": 3744
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 19,
+                "w": 122,
+                "h": 81,
+                "count": 3744
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 19,
+                "w": 122,
+                "h": 81,
+                "count": 3744
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 19,
+                "w": 122,
+                "h": 81,
+                "count": 3744
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 50,
+                "y": 44,
+                "w": 9,
+                "h": 11
+              },
+              "pixelCount": 42,
+              "mappableCount": 42,
+              "maxPixels": 449,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 4,
+              "w": 122,
+              "h": 96,
+              "count": 3308
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 122,
+                "h": 96,
+                "count": 3308
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 122,
+                "h": 96,
+                "count": 3308
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 122,
+                "h": 96,
+                "count": 3308
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 122,
+                "h": 96,
+                "count": 3308
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 56,
+                "y": 52,
+                "w": 5,
+                "h": 5
+              },
+              "pixelCount": 18,
+              "mappableCount": 18,
+              "maxPixels": 396,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "warm",
+          "stone",
+          "wood"
+        ],
+        "colors": [
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_snitch_resurrection_stone.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_snitch_resurrection_stone.png",
+            "alternate": "thumbnails/2x/sp_snitch_resurrection_stone_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_snitch_resurrection_stone.png",
+            "alternate": "thumbnails/3x/sp_snitch_resurrection_stone_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_sword_gryffindor",
+      "dimensions": {
+        "width": 104,
+        "height": 176
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 9,
+              "y": 2,
+              "w": 86,
+              "h": 170,
+              "count": 6178
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 9,
+                "y": 2,
+                "w": 86,
+                "h": 170,
+                "count": 6178
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 9,
+                "y": 2,
+                "w": 86,
+                "h": 170,
+                "count": 6178
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 9,
+                "y": 2,
+                "w": 86,
+                "h": 170,
+                "count": 6178
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 9,
+                "y": 2,
+                "w": 86,
+                "h": 170,
+                "count": 6178
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 48,
+                "y": 7,
+                "w": 2,
+                "h": 4
+              },
+              "pixelCount": 5,
+              "mappableCount": 5,
+              "maxPixels": 741,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 13,
+              "y": 2,
+              "w": 79,
+              "h": 170,
+              "count": 5774
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 79,
+                "h": 170,
+                "count": 5774
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 79,
+                "h": 170,
+                "count": 5774
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 79,
+                "h": 170,
+                "count": 5774
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 79,
+                "h": 170,
+                "count": 5774
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 48,
+                "y": 5,
+                "w": 1,
+                "h": 2
+              },
+              "pixelCount": 2,
+              "mappableCount": 2,
+              "maxPixels": 692,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "fire",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_sword_gryffindor.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_sword_gryffindor.png",
+            "alternate": "thumbnails/2x/sp_sword_gryffindor_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_sword_gryffindor.png",
+            "alternate": "thumbnails/3x/sp_sword_gryffindor_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "sp_knight_bus",
+      "dimensions": {
+        "width": 160,
+        "height": 176
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 7,
+              "y": 2,
+              "w": 147,
+              "h": 170,
+              "count": 19995
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 7,
+                "y": 2,
+                "w": 147,
+                "h": 170,
+                "count": 19995
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 7,
+                "y": 2,
+                "w": 147,
+                "h": 170,
+                "count": 19995
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 7,
+                "y": 2,
+                "w": 147,
+                "h": 170,
+                "count": 19995
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 7,
+                "y": 2,
+                "w": 147,
+                "h": 170,
+                "count": 19995
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 48,
+                "y": 3,
+                "w": 92,
+                "h": 26
+              },
+              "pixelCount": 887,
+              "mappableCount": 887,
+              "maxPixels": 2399,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 5,
+              "y": 2,
+              "w": 150,
+              "h": 170,
+              "count": 19301
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 150,
+                "h": 170,
+                "count": 19301
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 150,
+                "h": 170,
+                "count": 19301
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 150,
+                "h": 170,
+                "count": 19301
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 150,
+                "h": 170,
+                "count": 19301
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 45,
+                "y": 8,
+                "w": 62,
+                "h": 24
+              },
+              "pixelCount": 665,
+              "mappableCount": 665,
+              "maxPixels": 2316,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "magic",
+          "stone",
+          "warm"
+        ],
+        "colors": [
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/sp_knight_bus.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/sp_knight_bus.png",
+            "alternate": "thumbnails/2x/sp_knight_bus_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/sp_knight_bus.png",
+            "alternate": "thumbnails/3x/sp_knight_bus_right.png"
+          }
+        }
+      }
+    }
+  ]
+}

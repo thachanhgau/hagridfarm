@@ -1,0 +1,4043 @@
+{
+  "schema": "hagrid-farm.decor-assets.v1",
+  "collection": "Sản phẩm đặc biệt — Dấu ấn Harry Potter",
+  "version": 1,
+  "status": "complete",
+  "expectedItemCount": 30,
+  "packagedItemCount": 30,
+  "missing": [],
+  "palette": [
+    "#231F2E",
+    "#4A3042",
+    "#735044",
+    "#A57554",
+    "#41465C",
+    "#687486",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A",
+    "#874056",
+    "#C75B4B",
+    "#ED8A45",
+    "#FFC36B",
+    "#3E3B70",
+    "#6961A6",
+    "#70A8B6",
+    "#B7DEE0"
+  ],
+  "itemPaletteSource": "item-palettes.json",
+  "alphaThreshold": 192,
+  "nativeCanvas": "per-item dimensions from specs.json; RGBA, binary alpha",
+  "views": {
+    "default": "left half from master",
+    "alternate": "right half from master; never mirrored"
+  },
+  "items": [
+    {
+      "id": "sp_hagrid_umbrella",
+      "label": "Góc ô hồng của Hagrid",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "Rubeus Hagrid's iconic battered closed pink umbrella with curved wooden handle, leaning beside his oversized rustic brass lantern and a pair of enormous brown gamekeeper boots on a low rough timber display stand. The umbrella is faded muted rose-purple, NOT open; no character, no wand visible. Recognizable Hagrid memorabilia, book-faithful objects; display arrangement is a game adaptation.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 25,
+              "y": 89,
+              "w": 10,
+              "h": 9
+            },
+            "pixelCount": 47,
+            "mappableCount": 47,
+            "maxPixels": 1116,
+            "rootBand": 108
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 51,
+              "y": 74,
+              "w": 7,
+              "h": 7
+            },
+            "pixelCount": 32,
+            "mappableCount": 32,
+            "maxPixels": 870,
+            "rootBand": 108
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": {
+        "book": 1,
+        "chapter": 4,
+        "term": "umbrella",
+        "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 128,
+      "height": 144,
+      "pivot": {
+        "x": 64,
+        "y": 140
+      },
+      "defaultFile": "native/sp_hagrid_umbrella.png",
+      "rightFile": "native/sp_hagrid_umbrella_right.png",
+      "defaultFrames": [
+        "native/sp_hagrid_umbrella_f0.png",
+        "native/sp_hagrid_umbrella_f1.png",
+        "native/sp_hagrid_umbrella_f2.png",
+        "native/sp_hagrid_umbrella_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_hagrid_umbrella_right_f0.png",
+        "native/sp_hagrid_umbrella_right_f1.png",
+        "native/sp_hagrid_umbrella_right_f2.png",
+        "native/sp_hagrid_umbrella_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_hagrid_umbrella.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_hagrid_umbrella.png",
+          "alternate": "thumbnails/2x/sp_hagrid_umbrella_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_hagrid_umbrella.png",
+          "alternate": "thumbnails/3x/sp_hagrid_umbrella_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_hagrid_umbrella.png",
+      "sourceSha256": "d6a25f1525dede3a895f45b0f139b83a22eb7d2cca5b81a9b50ba2d420611025",
+      "pngSha256": {
+        "native/sp_hagrid_umbrella.png": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
+        "native/sp_hagrid_umbrella_right.png": "c09de13a9ea54390e56414eb44e51c40194afee17ae47a5257e9eb4c2f8d318b",
+        "native/sp_hagrid_umbrella_f0.png": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
+        "native/sp_hagrid_umbrella_f1.png": "16bfb0c33f583fb36bcd3a38fcd3e988dd69345dfc65ca313bbcb6e08675ecc0",
+        "native/sp_hagrid_umbrella_f2.png": "deb427bc7cab6685f12324b7371d1d1941c34d795b2aaf3f15b4e01d6f5e494f",
+        "native/sp_hagrid_umbrella_f3.png": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
+        "native/sp_hagrid_umbrella_right_f0.png": "c09de13a9ea54390e56414eb44e51c40194afee17ae47a5257e9eb4c2f8d318b",
+        "native/sp_hagrid_umbrella_right_f1.png": "4e02d6775da9c19c962c98b072dcbd16efe766789f0defe03883fb2f6c3f00ac",
+        "native/sp_hagrid_umbrella_right_f2.png": "60b23b9b7afe0cb3e0bd1094b3b415acfd2469199434ab22f2294a4b6d52473e",
+        "native/sp_hagrid_umbrella_right_f3.png": "c09de13a9ea54390e56414eb44e51c40194afee17ae47a5257e9eb4c2f8d318b",
+        "spritesheets/sp_hagrid_umbrella.png": "cadefb560314bf70d320226c80f9b3386bfde114e38c680cc5da43a2163226d0",
+        "thumbnails/2x/sp_hagrid_umbrella.png": "8d9ac40bd3672e5f0cebcae4bab757f85de3943c2fd8d138748526e7decd165a",
+        "thumbnails/2x/sp_hagrid_umbrella_right.png": "81028f9d058d994108c5bcd4aa1ecf6d3e35f0eba77a700b31822934b38d778e",
+        "thumbnails/3x/sp_hagrid_umbrella.png": "42a3f1fe6fa7305e3f043d9fc5fdbf0b651d149d14de9b929afa7f408419de51",
+        "thumbnails/3x/sp_hagrid_umbrella_right.png": "3f29cf8573743deb9596e22a0ef2a13de1f3a452001ab0ad1b593a61898b51ad"
+      }
+    },
+    {
+      "id": "sp_norbert_egg",
+      "label": "Trứng rồng Norbert bên lò sưởi",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "Hagrid's dragon egg hatching in a rustic stone hearth: ONE large black dragon egg with a long hairline amber crack nestled among glowing coals in a small weathered stone fireplace with a copper kettle hanging beside it. No dragon, no baby, no figure. Strong black egg silhouette against orange coals; standalone little fireplace diorama.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Các vết nứt được nhấn bằng ánh lửa; không biểu thị quyền năng mới.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 50,
+              "y": 108,
+              "w": 6,
+              "h": 7
+            },
+            "pixelCount": 22,
+            "mappableCount": 22,
+            "maxPixels": 1716,
+            "rootBand": 120
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 45,
+              "y": 70,
+              "w": 6,
+              "h": 5
+            },
+            "pixelCount": 15,
+            "mappableCount": 15,
+            "maxPixels": 1415,
+            "rootBand": 120
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": {
+        "book": 1,
+        "chapter": 14,
+        "term": "egg",
+        "lore": "Trứng rồng được ấp trong lò sưởi nhà Hagrid."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 144,
+      "height": 160,
+      "pivot": {
+        "x": 72,
+        "y": 156
+      },
+      "defaultFile": "native/sp_norbert_egg.png",
+      "rightFile": "native/sp_norbert_egg_right.png",
+      "defaultFrames": [
+        "native/sp_norbert_egg_f0.png",
+        "native/sp_norbert_egg_f1.png",
+        "native/sp_norbert_egg_f2.png",
+        "native/sp_norbert_egg_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_norbert_egg_right_f0.png",
+        "native/sp_norbert_egg_right_f1.png",
+        "native/sp_norbert_egg_right_f2.png",
+        "native/sp_norbert_egg_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_norbert_egg.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_norbert_egg.png",
+          "alternate": "thumbnails/2x/sp_norbert_egg_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_norbert_egg.png",
+          "alternate": "thumbnails/3x/sp_norbert_egg_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_norbert_egg.png",
+      "sourceSha256": "a24ee180f510176b6ad035fe99e880c1a2459dea20818964e1bb42b9913ce501",
+      "pngSha256": {
+        "native/sp_norbert_egg.png": "22a6b63b353eb4a1f635f5c1661ed093afa33e719eb202ef59d5c263c3b9ed28",
+        "native/sp_norbert_egg_right.png": "8725bbc367f3e5d8c6d5ac9e2e1a71f2c044b7941a5a3200c4318f844d5a0247",
+        "native/sp_norbert_egg_f0.png": "22a6b63b353eb4a1f635f5c1661ed093afa33e719eb202ef59d5c263c3b9ed28",
+        "native/sp_norbert_egg_f1.png": "9cc2ffcc6c6de980cb4dff4458fd3a916be008ac7f4ac33a63d83da4ba60b424",
+        "native/sp_norbert_egg_f2.png": "f5f4d68bfef9b51e931b8d1e4e9921e37f5d25832380a6a1c599dc32ecc9d816",
+        "native/sp_norbert_egg_f3.png": "22a6b63b353eb4a1f635f5c1661ed093afa33e719eb202ef59d5c263c3b9ed28",
+        "native/sp_norbert_egg_right_f0.png": "8725bbc367f3e5d8c6d5ac9e2e1a71f2c044b7941a5a3200c4318f844d5a0247",
+        "native/sp_norbert_egg_right_f1.png": "43d032294b8e8b7118f810f6f062fe79cfd03c8e291034f0ff5da1c0e64318bb",
+        "native/sp_norbert_egg_right_f2.png": "ce327166b815e0c6f07bb51ef0049804e23cbf3ef8ae8bbccaf0c1014cb1a935",
+        "native/sp_norbert_egg_right_f3.png": "8725bbc367f3e5d8c6d5ac9e2e1a71f2c044b7941a5a3200c4318f844d5a0247",
+        "spritesheets/sp_norbert_egg.png": "6f46b1f58ea5ca782456b29b05213b092cee6b7b5a79eaad694aab98a00ada2e",
+        "thumbnails/2x/sp_norbert_egg.png": "e58d6f131508bfafee824cd1ec5925ca09073c651c58cd4b44b83f32e9cce6f7",
+        "thumbnails/2x/sp_norbert_egg_right.png": "c84a3418395e8235cf906de221e7e8d4c6504c91af1e7f1792f5798a19965830",
+        "thumbnails/3x/sp_norbert_egg.png": "00dcfb8bdd86025872bf039b22dc5bc5526d8b604f8a3d695fdf40d8b9200b2c",
+        "thumbnails/3x/sp_norbert_egg_right.png": "c73f98787a0a8e9f8f607942aebb62b6e0c898b6a677be9fad262f673cb93225"
+      }
+    },
+    {
+      "id": "sp_sirius_motorbike",
+      "label": "Xe máy bay của Sirius",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "Sirius Black's huge enchanted vintage flying motorbike used by Hagrid: oversized dark iron motorbike with chunky spoked wheels, broad brown leather saddle, large round brass headlamp, silver engine, high handlebars. Parked firmly on kickstand, no rider, no sidecar, no wings, no smoke, no wheel rotation. Recognizable magical motorbike collectible on tiny discreet wheel supports.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 34,
+              "y": 43,
+              "w": 8,
+              "h": 7
+            },
+            "pixelCount": 25,
+            "mappableCount": 25,
+            "maxPixels": 1297,
+            "rootBand": 96
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 37,
+              "y": 21,
+              "w": 3,
+              "h": 5
+            },
+            "pixelCount": 9,
+            "mappableCount": 9,
+            "maxPixels": 1067,
+            "rootBand": 96
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "warm"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "bookReference": {
+        "book": 1,
+        "chapter": 1,
+        "term": "motorcycle",
+        "lore": "Chiếc xe máy của Sirius được Hagrid dùng đưa Harry tới đường Privet."
+      },
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "width": 160,
+      "height": 128,
+      "pivot": {
+        "x": 80,
+        "y": 124
+      },
+      "defaultFile": "native/sp_sirius_motorbike.png",
+      "rightFile": "native/sp_sirius_motorbike_right.png",
+      "defaultFrames": [
+        "native/sp_sirius_motorbike_f0.png",
+        "native/sp_sirius_motorbike_f1.png",
+        "native/sp_sirius_motorbike_f2.png",
+        "native/sp_sirius_motorbike_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_sirius_motorbike_right_f0.png",
+        "native/sp_sirius_motorbike_right_f1.png",
+        "native/sp_sirius_motorbike_right_f2.png",
+        "native/sp_sirius_motorbike_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_sirius_motorbike.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_sirius_motorbike.png",
+          "alternate": "thumbnails/2x/sp_sirius_motorbike_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_sirius_motorbike.png",
+          "alternate": "thumbnails/3x/sp_sirius_motorbike_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_sirius_motorbike.png",
+      "sourceSha256": "f2bfb1d6c0a7fc012d71fdf66600c0faa83a1b58c660220da031941591926b0c",
+      "pngSha256": {
+        "native/sp_sirius_motorbike.png": "740df4964bedcf80ccd1c82434745185375dc6ff34bc7d21e2646578b2dc3ff2",
+        "native/sp_sirius_motorbike_right.png": "23d5115596eb23b34cbcd959804bfe19d012c359c07a1939eefd2c17678d0acf",
+        "native/sp_sirius_motorbike_f0.png": "740df4964bedcf80ccd1c82434745185375dc6ff34bc7d21e2646578b2dc3ff2",
+        "native/sp_sirius_motorbike_f1.png": "a1c5a0e34bc7d945915a6f9fef6c9995b4586095e0fb09855de9ce046e44905f",
+        "native/sp_sirius_motorbike_f2.png": "a1c5a0e34bc7d945915a6f9fef6c9995b4586095e0fb09855de9ce046e44905f",
+        "native/sp_sirius_motorbike_f3.png": "740df4964bedcf80ccd1c82434745185375dc6ff34bc7d21e2646578b2dc3ff2",
+        "native/sp_sirius_motorbike_right_f0.png": "23d5115596eb23b34cbcd959804bfe19d012c359c07a1939eefd2c17678d0acf",
+        "native/sp_sirius_motorbike_right_f1.png": "cafc04aa392871050b7ef5811e882ce987395c91115ddf36e048f0950e8c0004",
+        "native/sp_sirius_motorbike_right_f2.png": "cafc04aa392871050b7ef5811e882ce987395c91115ddf36e048f0950e8c0004",
+        "native/sp_sirius_motorbike_right_f3.png": "23d5115596eb23b34cbcd959804bfe19d012c359c07a1939eefd2c17678d0acf",
+        "spritesheets/sp_sirius_motorbike.png": "75eac150919a7037a3c583a88c14c3be028b5d0a60e67db3404108f483856111",
+        "thumbnails/2x/sp_sirius_motorbike.png": "39753e6211f4b86db69821aef8e7e46b96878118b1381ee9a47e1bb84ff3e43b",
+        "thumbnails/2x/sp_sirius_motorbike_right.png": "a04033f617f408869741b1afa9488eaa443706b7e347bcec01c007c39c37e004",
+        "thumbnails/3x/sp_sirius_motorbike.png": "2368ae9e74c0c52ce92cbf6e1d570c022ce24042596d62773da72b97e0d249d8",
+        "thumbnails/3x/sp_sirius_motorbike_right.png": "d61aaa1465ecbe2a1f9826c78174b1341580ad9e7160830075f2f88fb313231e"
+      }
+    },
+    {
+      "id": "sp_whomping_anglia",
+      "label": "Liễu Roi và chiếc Ford Anglia",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "Miniature diorama of the Whomping Willow and crashed turquoise Ford Anglia from Harry Potter and the Chamber of Secrets: thick twisted brown willow trunk, a few angry sparse leafy branches, small turquoise vintage car wedged in a fork above exposed roots, one bent car door and clear round headlights. No people, no buildings, no road, no platform. Entire tree and car visible.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "sway",
+      "motionRequested": "sway",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "green",
+          "magic"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "bookReference": {
+        "book": 2,
+        "chapter": 5,
+        "term": "willow",
+        "lore": "Harry và Ron đâm xe vào cây Liễu Roi."
+      },
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "width": 208,
+      "height": 224,
+      "pivot": {
+        "x": 104,
+        "y": 220
+      },
+      "defaultFile": "native/sp_whomping_anglia.png",
+      "rightFile": "native/sp_whomping_anglia_right.png",
+      "defaultFrames": [
+        "native/sp_whomping_anglia_f0.png",
+        "native/sp_whomping_anglia_f1.png",
+        "native/sp_whomping_anglia_f2.png",
+        "native/sp_whomping_anglia_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_whomping_anglia_right_f0.png",
+        "native/sp_whomping_anglia_right_f1.png",
+        "native/sp_whomping_anglia_right_f2.png",
+        "native/sp_whomping_anglia_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_whomping_anglia.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_whomping_anglia.png",
+          "alternate": "thumbnails/2x/sp_whomping_anglia_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_whomping_anglia.png",
+          "alternate": "thumbnails/3x/sp_whomping_anglia_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/sp_whomping_anglia.png",
+      "sourceSha256": "3fbccba0443f14043c7e037e77c695587d123b30049c5d694b7631e79d5f1f0f",
+      "pngSha256": {
+        "native/sp_whomping_anglia.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
+        "native/sp_whomping_anglia_right.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
+        "native/sp_whomping_anglia_f0.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
+        "native/sp_whomping_anglia_f1.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
+        "native/sp_whomping_anglia_f2.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
+        "native/sp_whomping_anglia_f3.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
+        "native/sp_whomping_anglia_right_f0.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
+        "native/sp_whomping_anglia_right_f1.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
+        "native/sp_whomping_anglia_right_f2.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
+        "native/sp_whomping_anglia_right_f3.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
+        "spritesheets/sp_whomping_anglia.png": "65f604e22b0f4544a4aeb715ed0adba6c527f6f57ab3e08303f7ab11253e9af4",
+        "thumbnails/2x/sp_whomping_anglia.png": "87d97a885151d9c2ffae2a57eb23bfece39d14063e713c1a211c2d374693e43f",
+        "thumbnails/2x/sp_whomping_anglia_right.png": "008fb3b9312a68030b583de1308fbdea6f8b4d1a3633a0d8f0c2b86fa64bb4ea",
+        "thumbnails/3x/sp_whomping_anglia.png": "c98fccbe5873529a62b5132ac46734ff6b1fe9de8431be4a3f03e1eda903199b",
+        "thumbnails/3x/sp_whomping_anglia_right.png": "347025786aaef06227574ad2884f6ec159b948c7dc1440569f51a3b9899db372"
+      }
+    },
+    {
+      "id": "sp_buckbeak_pumpkins",
+      "label": "Bằng-Mã bên vườn bí ngô",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "A collectible miniature diorama of Buckbeak the hippogriff waiting beside Hagrid's pumpkin patch: proud grey eagle head and feathered chest, front talons, grey horse hindquarters, folded wings, beside exactly two large orange pumpkins and a mossy stone. No human, no executioner, no axe, no cage. Recognizably a HIPPOGRIFF, not a griffin or unicorn; ornamental scene, not a pet.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "sway",
+      "motionRequested": "sway",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "wood",
+          "fire"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": {
+        "book": 3,
+        "chapter": 21,
+        "term": "Buckbeak",
+        "lore": "Bằng-Mã được giải cứu ở khu vực nhà Hagrid trong đêm dùng Xoay Thời Gian."
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "width": 176,
+      "height": 160,
+      "pivot": {
+        "x": 88,
+        "y": 156
+      },
+      "defaultFile": "native/sp_buckbeak_pumpkins.png",
+      "rightFile": "native/sp_buckbeak_pumpkins_right.png",
+      "defaultFrames": [
+        "native/sp_buckbeak_pumpkins_f0.png",
+        "native/sp_buckbeak_pumpkins_f1.png",
+        "native/sp_buckbeak_pumpkins_f2.png",
+        "native/sp_buckbeak_pumpkins_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_buckbeak_pumpkins_right_f0.png",
+        "native/sp_buckbeak_pumpkins_right_f1.png",
+        "native/sp_buckbeak_pumpkins_right_f2.png",
+        "native/sp_buckbeak_pumpkins_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_buckbeak_pumpkins.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_buckbeak_pumpkins.png",
+          "alternate": "thumbnails/2x/sp_buckbeak_pumpkins_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_buckbeak_pumpkins.png",
+          "alternate": "thumbnails/3x/sp_buckbeak_pumpkins_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/sp_buckbeak_pumpkins.png",
+      "sourceSha256": "2f2450ba43a1e423aa3af5ba8ce76207f2a21606d71e75506553347fe95f1168",
+      "pngSha256": {
+        "native/sp_buckbeak_pumpkins.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
+        "native/sp_buckbeak_pumpkins_right.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
+        "native/sp_buckbeak_pumpkins_f0.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
+        "native/sp_buckbeak_pumpkins_f1.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
+        "native/sp_buckbeak_pumpkins_f2.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
+        "native/sp_buckbeak_pumpkins_f3.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
+        "native/sp_buckbeak_pumpkins_right_f0.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
+        "native/sp_buckbeak_pumpkins_right_f1.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
+        "native/sp_buckbeak_pumpkins_right_f2.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
+        "native/sp_buckbeak_pumpkins_right_f3.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
+        "spritesheets/sp_buckbeak_pumpkins.png": "08c49158bf7f3ccb664fdba93d935e1adf8214fd8068c762cbc3acfca6c93389",
+        "thumbnails/2x/sp_buckbeak_pumpkins.png": "3fcda51b2030b7457d3246f19a14eff0391d33b99657f302e21427b457cbf6a6",
+        "thumbnails/2x/sp_buckbeak_pumpkins_right.png": "0c8ccdd58de716d1721208a16a9e1148bb76bd6c7e31088d45eb0d363b4122d2",
+        "thumbnails/3x/sp_buckbeak_pumpkins.png": "5fd8fce1e61a0f08065d3ca081a6df09f22baf35f80886a860c3227af250ab2a",
+        "thumbnails/3x/sp_buckbeak_pumpkins_right.png": "b6c176fef3cbf76b2bf69f1f3b2a7d5793aec01a8f0eb22d1e19ca41e9471c6c"
+      }
+    },
+    {
+      "id": "sp_aragog_hollow",
+      "label": "Hang tơ Aragog",
+      "group": "Hagrid và Rừng Cấm",
+      "subject": "A miniature Forbidden Forest hollow belonging to Aragog: arch of gnarled tree roots, thick ivory webs stretched across the upper hollow, one large old brown hairy spider with eight legs and many small cloudy pale eyes inside, exactly two small spiders on roots. Spooky but storybook, not photorealistic. No people, no severed parts, no ground tile.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "sway",
+      "motionRequested": "sway",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "green"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "bookReference": {
+        "book": 2,
+        "chapter": 15,
+        "term": "Aragog",
+        "lore": "Aragog và bầy nhện trong Rừng Cấm."
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "width": 176,
+      "height": 176,
+      "pivot": {
+        "x": 88,
+        "y": 172
+      },
+      "defaultFile": "native/sp_aragog_hollow.png",
+      "rightFile": "native/sp_aragog_hollow_right.png",
+      "defaultFrames": [
+        "native/sp_aragog_hollow_f0.png",
+        "native/sp_aragog_hollow_f1.png",
+        "native/sp_aragog_hollow_f2.png",
+        "native/sp_aragog_hollow_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_aragog_hollow_right_f0.png",
+        "native/sp_aragog_hollow_right_f1.png",
+        "native/sp_aragog_hollow_right_f2.png",
+        "native/sp_aragog_hollow_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_aragog_hollow.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_aragog_hollow.png",
+          "alternate": "thumbnails/2x/sp_aragog_hollow_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_aragog_hollow.png",
+          "alternate": "thumbnails/3x/sp_aragog_hollow_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/sp_aragog_hollow.png",
+      "sourceSha256": "3655b7bab0d1e19916d6ca71e1e35938f2d114e511f019cd392d4afb6e30ea39",
+      "pngSha256": {
+        "native/sp_aragog_hollow.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
+        "native/sp_aragog_hollow_right.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
+        "native/sp_aragog_hollow_f0.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
+        "native/sp_aragog_hollow_f1.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
+        "native/sp_aragog_hollow_f2.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
+        "native/sp_aragog_hollow_f3.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
+        "native/sp_aragog_hollow_right_f0.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
+        "native/sp_aragog_hollow_right_f1.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
+        "native/sp_aragog_hollow_right_f2.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
+        "native/sp_aragog_hollow_right_f3.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
+        "spritesheets/sp_aragog_hollow.png": "1686a0563ffbb62e2598a1c3e24ca7c30cd297df94c67c3e7ce311cee8e89cd1",
+        "thumbnails/2x/sp_aragog_hollow.png": "6b9fd403e9e8359a0479465126d03df7b65f98e549786e7eca7cdf18fa552af8",
+        "thumbnails/2x/sp_aragog_hollow_right.png": "34b923ea295aaa0a81afe47e983d6547328c5cf75c6eb012d7b313eeb416da0b",
+        "thumbnails/3x/sp_aragog_hollow.png": "d05831d6f056932663abd49f334daf5ea554e6d3e22204700052d66b8e2885c2",
+        "thumbnails/3x/sp_aragog_hollow_right.png": "73f236d426e34ed5cc24bdd412482889309b0716471d76f2d85ce96ceeccf310"
+      }
+    },
+    {
+      "id": "sp_mirror_erised",
+      "label": "Tấm gương Ảo Ảnh",
+      "group": "Bảo vật Hogwarts",
+      "subject": "The Mirror of Erised from the first Harry Potter book: tall magnificent ornate gold mirror with an arched top, elaborate scrollwork, two clawed feet, tarnished magical blue-grey glass with a barely visible soft abstract silhouette inside. Gold sculptural frame is the unmistakable focus. No readable inscription, no letters, no human standing outside, no surrounding room.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 104,
+              "y": 88,
+              "w": 1,
+              "h": 39
+            },
+            "pixelCount": 39,
+            "mappableCount": 39,
+            "maxPixels": 1490,
+            "rootBand": 156
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 82,
+              "y": 72,
+              "w": 8,
+              "h": 4
+            },
+            "pixelCount": 11,
+            "mappableCount": 11,
+            "maxPixels": 1114,
+            "rootBand": 156
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": {
+        "book": 1,
+        "chapter": 12,
+        "term": "Erised",
+        "lore": "Tấm gương cho người xem thấy điều họ khao khát nhất."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 144,
+      "height": 208,
+      "pivot": {
+        "x": 72,
+        "y": 204
+      },
+      "defaultFile": "native/sp_mirror_erised.png",
+      "rightFile": "native/sp_mirror_erised_right.png",
+      "defaultFrames": [
+        "native/sp_mirror_erised_f0.png",
+        "native/sp_mirror_erised_f1.png",
+        "native/sp_mirror_erised_f2.png",
+        "native/sp_mirror_erised_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_mirror_erised_right_f0.png",
+        "native/sp_mirror_erised_right_f1.png",
+        "native/sp_mirror_erised_right_f2.png",
+        "native/sp_mirror_erised_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_mirror_erised.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_mirror_erised.png",
+          "alternate": "thumbnails/2x/sp_mirror_erised_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_mirror_erised.png",
+          "alternate": "thumbnails/3x/sp_mirror_erised_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_mirror_erised.png",
+      "sourceSha256": "e21b7471594cf35926cf8e74b5c1447af68ea0f0383e7b932f3be46c9de9e993",
+      "pngSha256": {
+        "native/sp_mirror_erised.png": "f8d92db8b0b1e2d011152a665d78b18b3a4b458534749541bce92a9f6f81b103",
+        "native/sp_mirror_erised_right.png": "83055eab586df7e95a4370f2003e4ff65af84516635e4cf23e006959afedeb5b",
+        "native/sp_mirror_erised_f0.png": "f8d92db8b0b1e2d011152a665d78b18b3a4b458534749541bce92a9f6f81b103",
+        "native/sp_mirror_erised_f1.png": "935744b3ab42ef1bc4d050037cd2b221035aeb75c01065cc836eae5ddd50ff10",
+        "native/sp_mirror_erised_f2.png": "935744b3ab42ef1bc4d050037cd2b221035aeb75c01065cc836eae5ddd50ff10",
+        "native/sp_mirror_erised_f3.png": "f8d92db8b0b1e2d011152a665d78b18b3a4b458534749541bce92a9f6f81b103",
+        "native/sp_mirror_erised_right_f0.png": "83055eab586df7e95a4370f2003e4ff65af84516635e4cf23e006959afedeb5b",
+        "native/sp_mirror_erised_right_f1.png": "c80cc21d390624b5bc545f03d990197bf4aea489341d87f5c91893ab008348f2",
+        "native/sp_mirror_erised_right_f2.png": "c80cc21d390624b5bc545f03d990197bf4aea489341d87f5c91893ab008348f2",
+        "native/sp_mirror_erised_right_f3.png": "83055eab586df7e95a4370f2003e4ff65af84516635e4cf23e006959afedeb5b",
+        "spritesheets/sp_mirror_erised.png": "6f9af7713246bc40d9443dca69bc4f67c8d159c5d93caf4d5e493e0c802391c0",
+        "thumbnails/2x/sp_mirror_erised.png": "a3b9b7f595d2f614cb93e0784691c7f8ed6a5635ee329f96d34bbccca512d1ba",
+        "thumbnails/2x/sp_mirror_erised_right.png": "62064bb99e29040ad00ac3adff5614a37a7b709ae0aeacf098ec67853e82742f",
+        "thumbnails/3x/sp_mirror_erised.png": "f90100efb712e812ecfbe6d86b78943cc3d844b551da8dc07eea511a25a86ede",
+        "thumbnails/3x/sp_mirror_erised_right.png": "6fe49fbf352c1a19fa9f4a9d2df90138209115a8aa68ad9d0ff32ccf82528717"
+      }
+    },
+    {
+      "id": "sp_sorting_hat",
+      "label": "Nón Phân Loại trên ghế",
+      "group": "Bảo vật Hogwarts",
+      "subject": "The battered Hogwarts Sorting Hat seated on a simple four-legged wooden stool, exactly as presented to first years: tall patched brown pointed hat with deep face-like folds forming eyes and a mouth, crooked tip, frayed wide brim. No house logos, no banners, no people, no text. The hat must look ancient and expressive, not a generic new witch hat.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "blink",
+      "motionRequested": "blink",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested blink; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": {
+        "book": 1,
+        "chapter": 7,
+        "term": "hat",
+        "lore": "Nón Phân Loại được đặt trên ghế trong lễ phân loại."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 104,
+      "height": 144,
+      "pivot": {
+        "x": 52,
+        "y": 140
+      },
+      "defaultFile": "native/sp_sorting_hat.png",
+      "rightFile": "native/sp_sorting_hat_right.png",
+      "defaultFrames": [
+        "native/sp_sorting_hat_f0.png",
+        "native/sp_sorting_hat_f1.png",
+        "native/sp_sorting_hat_f2.png",
+        "native/sp_sorting_hat_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_sorting_hat_right_f0.png",
+        "native/sp_sorting_hat_right_f1.png",
+        "native/sp_sorting_hat_right_f2.png",
+        "native/sp_sorting_hat_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_sorting_hat.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_sorting_hat.png",
+          "alternate": "thumbnails/2x/sp_sorting_hat_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_sorting_hat.png",
+          "alternate": "thumbnails/3x/sp_sorting_hat_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/sp_sorting_hat.png",
+      "sourceSha256": "e45f0e0c9d5a187ca251526317790fe17dd88d429db6b5809aa0dd3d0fe6bcb6",
+      "pngSha256": {
+        "native/sp_sorting_hat.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
+        "native/sp_sorting_hat_right.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
+        "native/sp_sorting_hat_f0.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
+        "native/sp_sorting_hat_f1.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
+        "native/sp_sorting_hat_f2.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
+        "native/sp_sorting_hat_f3.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
+        "native/sp_sorting_hat_right_f0.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
+        "native/sp_sorting_hat_right_f1.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
+        "native/sp_sorting_hat_right_f2.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
+        "native/sp_sorting_hat_right_f3.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
+        "spritesheets/sp_sorting_hat.png": "86263661f68181436e7d07f382b7013cf5dd34dd6dd423b487ce40672ede9407",
+        "thumbnails/2x/sp_sorting_hat.png": "6230031b0dfee648b5516a67f6957397af5244d0bad3e779851042b63ee13e6f",
+        "thumbnails/2x/sp_sorting_hat_right.png": "6efdf52f73250922b4e4e12585eace154f22531345a19cf29491861dbc61a99c",
+        "thumbnails/3x/sp_sorting_hat.png": "30d6500ef8a3ae96956f0d156e009f90d6e22fdb24df3ec5c868d0105fbf25e2",
+        "thumbnails/3x/sp_sorting_hat_right.png": "66d6a94c2f43d38015c9ac585e5c0e8d9f83c508e44709242347ad519b53a362"
+      }
+    },
+    {
+      "id": "sp_goblet_fire",
+      "label": "Chiếc Cốc Lửa",
+      "group": "Bảo vật Hogwarts",
+      "subject": "The Goblet of Fire as described in the book: a large rough-hewn WOODEN goblet standing on a low carved stone pedestal, jagged tall blue-violet magical flame rising from the open bowl, one small blank singed parchment slip floating just above the flame. It is wooden, NOT a gold trophy. No inscriptions or text, no surrounding Age Line or people.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 31,
+              "y": 35,
+              "w": 2,
+              "h": 3
+            },
+            "pixelCount": 5,
+            "mappableCount": 5,
+            "maxPixels": 890,
+            "rootBand": 132
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 40,
+              "y": 35,
+              "w": 2,
+              "h": 3
+            },
+            "pixelCount": 4,
+            "mappableCount": 4,
+            "maxPixels": 826,
+            "rootBand": 132
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "magic",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": {
+        "book": 4,
+        "chapter": 16,
+        "term": "goblet",
+        "lore": "Chiếc cốc bằng gỗ chọn các quán quân Tam Pháp Thuật."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 112,
+      "height": 176,
+      "pivot": {
+        "x": 56,
+        "y": 172
+      },
+      "defaultFile": "native/sp_goblet_fire.png",
+      "rightFile": "native/sp_goblet_fire_right.png",
+      "defaultFrames": [
+        "native/sp_goblet_fire_f0.png",
+        "native/sp_goblet_fire_f1.png",
+        "native/sp_goblet_fire_f2.png",
+        "native/sp_goblet_fire_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_goblet_fire_right_f0.png",
+        "native/sp_goblet_fire_right_f1.png",
+        "native/sp_goblet_fire_right_f2.png",
+        "native/sp_goblet_fire_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_goblet_fire.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_goblet_fire.png",
+          "alternate": "thumbnails/2x/sp_goblet_fire_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_goblet_fire.png",
+          "alternate": "thumbnails/3x/sp_goblet_fire_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_goblet_fire.png",
+      "sourceSha256": "29a1a6aa608486a6998fb70df196503e0007b214fcd172793df1051faeaa3d8a",
+      "pngSha256": {
+        "native/sp_goblet_fire.png": "2d8bec2517e6ce91f3d6f0075429834e9be89a91f7f8156986a19c97bb4c4fa1",
+        "native/sp_goblet_fire_right.png": "845ff2d9d60eaf2221b871c243de62b7258a8eecc8f1f0c52b3242caedecc295",
+        "native/sp_goblet_fire_f0.png": "2d8bec2517e6ce91f3d6f0075429834e9be89a91f7f8156986a19c97bb4c4fa1",
+        "native/sp_goblet_fire_f1.png": "c639e5d242479f3ee111676cf307ff27eb513b2909433a5c6186ac7029733ad2",
+        "native/sp_goblet_fire_f2.png": "1db6b5f91d35ceaa1f790c16536ea08b5b847fecb7ffff1f33c0502efff702e6",
+        "native/sp_goblet_fire_f3.png": "2d8bec2517e6ce91f3d6f0075429834e9be89a91f7f8156986a19c97bb4c4fa1",
+        "native/sp_goblet_fire_right_f0.png": "845ff2d9d60eaf2221b871c243de62b7258a8eecc8f1f0c52b3242caedecc295",
+        "native/sp_goblet_fire_right_f1.png": "6be4cfbbe56e81f2d766c71d6927f21e6db04662765706fa4f94c8178a6a4716",
+        "native/sp_goblet_fire_right_f2.png": "e52ad177819419e1749589d9056a939bdd305e9bf1a5417b968f9c20a3ac6eb6",
+        "native/sp_goblet_fire_right_f3.png": "845ff2d9d60eaf2221b871c243de62b7258a8eecc8f1f0c52b3242caedecc295",
+        "spritesheets/sp_goblet_fire.png": "d0606ed89cf8613589a5b647197b2e7e414d06e0c4b85ffb140870ec9b971c22",
+        "thumbnails/2x/sp_goblet_fire.png": "4b72ac3036a00fd1befd971f779d9952b57c96c6712ba36bdeadeedf0f9d837f",
+        "thumbnails/2x/sp_goblet_fire_right.png": "84c8dbda5a33bacb344ed7f89052401df8bab465415171c31323300051d4300e",
+        "thumbnails/3x/sp_goblet_fire.png": "f274da75d0132626521735f186a888e08132c02c37a831e4b2bf716a823a6888",
+        "thumbnails/3x/sp_goblet_fire_right.png": "417b78926ce27d4aa34047e85d9b35db7d0b636590023040cd0242ad8520df59"
+      }
+    },
+    {
+      "id": "sp_pensieve",
+      "label": "Cái Tưởng Ký",
+      "group": "Bảo vật Hogwarts",
+      "subject": "Dumbledore's Pensieve: a shallow grey stone basin carved with small non-letter rune marks around its rim, filled with luminous swirling silvery-blue memory liquid, standing on a short weathered ornate stone column. Two thin silver memory wisps rise above the surface. No faces, no scene inside, no readable text, no desk or room.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 58,
+              "y": 2,
+              "w": 9,
+              "h": 10
+            },
+            "pixelCount": 40,
+            "mappableCount": 40,
+            "maxPixels": 902,
+            "rootBand": 96
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 43,
+              "y": 22,
+              "w": 47,
+              "h": 35
+            },
+            "pixelCount": 670,
+            "mappableCount": 670,
+            "maxPixels": 789,
+            "rootBand": 96
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 4,
+        "chapter": 30,
+        "term": "Pensieve",
+        "lore": "Chậu đá chứa và xem ký ức trong văn phòng Dumbledore."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 128,
+      "height": 128,
+      "pivot": {
+        "x": 64,
+        "y": 124
+      },
+      "defaultFile": "native/sp_pensieve.png",
+      "rightFile": "native/sp_pensieve_right.png",
+      "defaultFrames": [
+        "native/sp_pensieve_f0.png",
+        "native/sp_pensieve_f1.png",
+        "native/sp_pensieve_f2.png",
+        "native/sp_pensieve_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_pensieve_right_f0.png",
+        "native/sp_pensieve_right_f1.png",
+        "native/sp_pensieve_right_f2.png",
+        "native/sp_pensieve_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_pensieve.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_pensieve.png",
+          "alternate": "thumbnails/2x/sp_pensieve_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_pensieve.png",
+          "alternate": "thumbnails/3x/sp_pensieve_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_pensieve.png",
+      "sourceSha256": "9c4096504578a8841ead4f53cf946386dc873bd5b53a2e50f8d64f83fd8e18e7",
+      "pngSha256": {
+        "native/sp_pensieve.png": "ea223db1fd85f067405d9462832279771abd031c7e872030fd5e9079181fc933",
+        "native/sp_pensieve_right.png": "a7de0f0108f4ac1ea2820a17bbf952a1961eb4455de5043a82bcc5319b98897b",
+        "native/sp_pensieve_f0.png": "ea223db1fd85f067405d9462832279771abd031c7e872030fd5e9079181fc933",
+        "native/sp_pensieve_f1.png": "23e573a381094633e028cc9f6f12521e983475f85b8d1ca6a88f977d0f978b36",
+        "native/sp_pensieve_f2.png": "56dd98656f104d15fb794fe7deeb8a1a94f26d25cb8590a130dd95e63573900f",
+        "native/sp_pensieve_f3.png": "ea223db1fd85f067405d9462832279771abd031c7e872030fd5e9079181fc933",
+        "native/sp_pensieve_right_f0.png": "a7de0f0108f4ac1ea2820a17bbf952a1961eb4455de5043a82bcc5319b98897b",
+        "native/sp_pensieve_right_f1.png": "18061144f332f4ebb89e5fd7eba1262b021025f25e933c0d2c3298860a717b0d",
+        "native/sp_pensieve_right_f2.png": "70af43f2e6c99fcd6389698332407b9f3055e10a63237e80630e14d88763bd3e",
+        "native/sp_pensieve_right_f3.png": "a7de0f0108f4ac1ea2820a17bbf952a1961eb4455de5043a82bcc5319b98897b",
+        "spritesheets/sp_pensieve.png": "8dc94eaac7a4b303006dcf88adc505dec86c14cbadf8976ba668c854f59fbe09",
+        "thumbnails/2x/sp_pensieve.png": "9a651ecccb987c08ba279e5657ce356d7b429c1761cdc09f95f9cc93cf9b7a8f",
+        "thumbnails/2x/sp_pensieve_right.png": "070fb24d03cdbb8e7b6e43d511cad653dcb9a4d8970c794e0cf7f00ed2be5797",
+        "thumbnails/3x/sp_pensieve.png": "559af318a05e3dfa0d29bd3af774b21675ffe38482a9610d6a748908ba080743",
+        "thumbnails/3x/sp_pensieve_right.png": "de4d923d03863c756e8968716f590ab0f1aff58c1fb5a8c26cf56bfc756930b0"
+      }
+    },
+    {
+      "id": "sp_fawkes_perch",
+      "label": "Cầu đậu phượng hoàng Fawkes",
+      "group": "Bảo vật Hogwarts",
+      "subject": "Fawkes with scarlet/crimson-red and gold plumage, long golden tail, golden beak and talons on brass perch.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 79,
+              "y": 111,
+              "w": 11,
+              "h": 30
+            },
+            "pixelCount": 139,
+            "mappableCount": 139,
+            "maxPixels": 1013,
+            "rootBand": 144
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 47,
+              "y": 115,
+              "w": 7,
+              "h": 29
+            },
+            "pixelCount": 127,
+            "mappableCount": 127,
+            "maxPixels": 1018,
+            "rootBand": 144
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "fire",
+          "warm",
+          "wood"
+        ],
+        "colors": [
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 2,
+        "chapter": 12,
+        "term": "Fawkes",
+        "lore": "Phượng hoàng Fawkes trong văn phòng Dumbledore."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 128,
+      "height": 192,
+      "pivot": {
+        "x": 64,
+        "y": 188
+      },
+      "defaultFile": "native/sp_fawkes_perch.png",
+      "rightFile": "native/sp_fawkes_perch_right.png",
+      "defaultFrames": [
+        "native/sp_fawkes_perch_f0.png",
+        "native/sp_fawkes_perch_f1.png",
+        "native/sp_fawkes_perch_f2.png",
+        "native/sp_fawkes_perch_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_fawkes_perch_right_f0.png",
+        "native/sp_fawkes_perch_right_f1.png",
+        "native/sp_fawkes_perch_right_f2.png",
+        "native/sp_fawkes_perch_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_fawkes_perch.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_fawkes_perch.png",
+          "alternate": "thumbnails/2x/sp_fawkes_perch_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_fawkes_perch.png",
+          "alternate": "thumbnails/3x/sp_fawkes_perch_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_fawkes_perch.png",
+      "sourceSha256": "9cf29a64cd9da9085d762d0a1c7f14a757ac035e27457e3b99b6a5c2a146c01e",
+      "pngSha256": {
+        "native/sp_fawkes_perch.png": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
+        "native/sp_fawkes_perch_right.png": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
+        "native/sp_fawkes_perch_f0.png": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
+        "native/sp_fawkes_perch_f1.png": "a30642c049613f1bc1cc834f7bb6f80d3fb12367a2d185c4fbc79209435a2ba7",
+        "native/sp_fawkes_perch_f2.png": "5a92527044448b4a8b9d9e41cde8ad19a1cacacb2afbf9435334379cd639395a",
+        "native/sp_fawkes_perch_f3.png": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
+        "native/sp_fawkes_perch_right_f0.png": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
+        "native/sp_fawkes_perch_right_f1.png": "4bb88edab14d6bdddedf1d8087b9ba68ad14f8a5dcd476d1b62492376e376b64",
+        "native/sp_fawkes_perch_right_f2.png": "ee423539e9b547d0db48877482efb73a6463856f513a3fb917d7d3b19b157b88",
+        "native/sp_fawkes_perch_right_f3.png": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
+        "spritesheets/sp_fawkes_perch.png": "983473d141c906079ec3244abfade7265c545d0f9636b5756a1700a27a633b7a",
+        "thumbnails/2x/sp_fawkes_perch.png": "4c04ee7055c010bdfae4fbf834420e5a375e022d22144ecaf0c3fa1d90bdc0f1",
+        "thumbnails/2x/sp_fawkes_perch_right.png": "7626e7ec3c9fff971382e657102d70ec5c8a749067874282d69bb24fd679e3b3",
+        "thumbnails/3x/sp_fawkes_perch.png": "83004e0ebc39f949e2b125b1622dc3fa331e3659d3f33e6342f0c7f60fde111c",
+        "thumbnails/3x/sp_fawkes_perch_right.png": "4dc363978af0ddb160eec77d65aa66ce89be9330da50c159fc70e0eabbcb3b33"
+      }
+    },
+    {
+      "id": "sp_wizard_chess_knight",
+      "label": "Quân mã cờ phù thủy",
+      "group": "Bảo vật Hogwarts",
+      "subject": "A large dark stone enchanted chess KNIGHT from the giant chess challenge guarding the Philosopher's Stone: armored horse head and neck rising from a worn square plinth, chunky medieval carved details, a faint purple glint in one eye. NO rider, no Ron figure, no chessboard, no other pieces. Strong readable stone chess silhouette.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 59,
+              "y": 33,
+              "w": 2,
+              "h": 3
+            },
+            "pixelCount": 4,
+            "mappableCount": 4,
+            "maxPixels": 1366,
+            "rootBand": 132
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 83,
+              "y": 36,
+              "w": 1,
+              "h": 1
+            },
+            "pixelCount": 1,
+            "mappableCount": 1,
+            "maxPixels": 1346,
+            "rootBand": 132
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 1,
+        "chapter": 16,
+        "term": "chess",
+        "lore": "Bàn cờ phù thủy khổng lồ trong thử thách bảo vệ Hòn Đá Phù Thủy."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 128,
+      "height": 176,
+      "pivot": {
+        "x": 64,
+        "y": 172
+      },
+      "defaultFile": "native/sp_wizard_chess_knight.png",
+      "rightFile": "native/sp_wizard_chess_knight_right.png",
+      "defaultFrames": [
+        "native/sp_wizard_chess_knight_f0.png",
+        "native/sp_wizard_chess_knight_f1.png",
+        "native/sp_wizard_chess_knight_f2.png",
+        "native/sp_wizard_chess_knight_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_wizard_chess_knight_right_f0.png",
+        "native/sp_wizard_chess_knight_right_f1.png",
+        "native/sp_wizard_chess_knight_right_f2.png",
+        "native/sp_wizard_chess_knight_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_wizard_chess_knight.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_wizard_chess_knight.png",
+          "alternate": "thumbnails/2x/sp_wizard_chess_knight_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_wizard_chess_knight.png",
+          "alternate": "thumbnails/3x/sp_wizard_chess_knight_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_wizard_chess_knight.png",
+      "sourceSha256": "8108e7ce777021bc23eaf76662a1fe24e196c292cb4e3c9fa56d5ee115bfbd4a",
+      "pngSha256": {
+        "native/sp_wizard_chess_knight.png": "f1907efd60668895fa55100fd2b29926a9a86e60db0ce8ef95e3d7e8b0a23b60",
+        "native/sp_wizard_chess_knight_right.png": "4b7735b6465520883747512c3909eca2430c807c64d8c9cbdba79754b6ec7dc3",
+        "native/sp_wizard_chess_knight_f0.png": "f1907efd60668895fa55100fd2b29926a9a86e60db0ce8ef95e3d7e8b0a23b60",
+        "native/sp_wizard_chess_knight_f1.png": "4e92fb3680e151444e65b1e52de44ddd32152fe16f5f2a455b14d36dbc42e086",
+        "native/sp_wizard_chess_knight_f2.png": "da17527944303b9cd5d2fed09c075cba3b017eab5a222090ddf9ecca055f0031",
+        "native/sp_wizard_chess_knight_f3.png": "f1907efd60668895fa55100fd2b29926a9a86e60db0ce8ef95e3d7e8b0a23b60",
+        "native/sp_wizard_chess_knight_right_f0.png": "4b7735b6465520883747512c3909eca2430c807c64d8c9cbdba79754b6ec7dc3",
+        "native/sp_wizard_chess_knight_right_f1.png": "46dd7ad32b685861f4e6e7853dce45b510e1387e3dca1e1954de3148d163ab2a",
+        "native/sp_wizard_chess_knight_right_f2.png": "c365a340f11ba0d4415699de1bd09ae2ab0fda1263875930415db068682e5da5",
+        "native/sp_wizard_chess_knight_right_f3.png": "4b7735b6465520883747512c3909eca2430c807c64d8c9cbdba79754b6ec7dc3",
+        "spritesheets/sp_wizard_chess_knight.png": "2c0494f08563a8fdb4f2df74ab2aca26bc6d6962fefd15072cd53b8a055dbae7",
+        "thumbnails/2x/sp_wizard_chess_knight.png": "9011cc04756f6f10dbb635d04e53e44d34ab144290341d272fd11fcc42d3950f",
+        "thumbnails/2x/sp_wizard_chess_knight_right.png": "322dc8a598f1bdb672915dcac8bd3598cd462ba52ed44779f1d8569890cb0123",
+        "thumbnails/3x/sp_wizard_chess_knight.png": "25e6028dd09720061a9271d988db8320ddd42cb88a1a4e65eb75ec6a86ae783b",
+        "thumbnails/3x/sp_wizard_chess_knight_right.png": "0c3e341e1f63b7a2136d62fafb92d11a6ef2e195b451d3d355ffb9ff1221fae3"
+      }
+    },
+    {
+      "id": "sp_riddle_diary",
+      "label": "Nhật ký Riddle và nanh Tử Xà",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "Tom Riddle's small black leather diary impaled by one long curved ivory basilisk fang, lying open at an angle on a low dark timber display lectern. A small black ink stain below the fang, silver worn corners, blank yellowed pages with NO writing. Recognizable destroyed diary Horcrux; no blood, no other weapons.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 78,
+              "y": 39,
+              "w": 13,
+              "h": 15
+            },
+            "pixelCount": 63,
+            "mappableCount": 63,
+            "maxPixels": 710,
+            "rootBand": 78
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 62,
+              "y": 38,
+              "w": 24,
+              "h": 8
+            },
+            "pixelCount": 60,
+            "mappableCount": 60,
+            "maxPixels": 574,
+            "rootBand": 78
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "warm"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "bookReference": {
+        "book": 2,
+        "chapter": 17,
+        "term": "diary",
+        "lore": "Harry dùng nanh Tử Xà phá hủy quyển nhật ký."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 112,
+      "height": 104,
+      "pivot": {
+        "x": 56,
+        "y": 100
+      },
+      "defaultFile": "native/sp_riddle_diary.png",
+      "rightFile": "native/sp_riddle_diary_right.png",
+      "defaultFrames": [
+        "native/sp_riddle_diary_f0.png",
+        "native/sp_riddle_diary_f1.png",
+        "native/sp_riddle_diary_f2.png",
+        "native/sp_riddle_diary_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_riddle_diary_right_f0.png",
+        "native/sp_riddle_diary_right_f1.png",
+        "native/sp_riddle_diary_right_f2.png",
+        "native/sp_riddle_diary_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_riddle_diary.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_riddle_diary.png",
+          "alternate": "thumbnails/2x/sp_riddle_diary_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_riddle_diary.png",
+          "alternate": "thumbnails/3x/sp_riddle_diary_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_riddle_diary.png",
+      "sourceSha256": "9abb95c5e441e398ac51bf8ad3bd148f885e4846e011b23e3bf39d4864210cad",
+      "pngSha256": {
+        "native/sp_riddle_diary.png": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
+        "native/sp_riddle_diary_right.png": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
+        "native/sp_riddle_diary_f0.png": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
+        "native/sp_riddle_diary_f1.png": "5bacfc352d0b8bb0ef2d0cf1e7268e045c2278c140e160278f9d9ddab11016e7",
+        "native/sp_riddle_diary_f2.png": "5bacfc352d0b8bb0ef2d0cf1e7268e045c2278c140e160278f9d9ddab11016e7",
+        "native/sp_riddle_diary_f3.png": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
+        "native/sp_riddle_diary_right_f0.png": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
+        "native/sp_riddle_diary_right_f1.png": "763a6c1a7e39ec8053d5dd61d919cb587c28a52a3629ba1ab9abf7061688cc62",
+        "native/sp_riddle_diary_right_f2.png": "763a6c1a7e39ec8053d5dd61d919cb587c28a52a3629ba1ab9abf7061688cc62",
+        "native/sp_riddle_diary_right_f3.png": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
+        "spritesheets/sp_riddle_diary.png": "4b6112341e2fecb89bcb482b07bf1bcc89bb38316241e49e3eee796de6d77e68",
+        "thumbnails/2x/sp_riddle_diary.png": "8bd49270f7de2ed386e9fb1e80a55a0aff091692942915b738bdbdd9ec4b2b78",
+        "thumbnails/2x/sp_riddle_diary_right.png": "eec5df516d9ae73a5133f8055f4ed2fa052d3ad4b9493375d79a76d300079437",
+        "thumbnails/3x/sp_riddle_diary.png": "8d1051c9638737ae68ff268babe78cfdd6ddf2e3dc6ac69574105f7a638d5e03",
+        "thumbnails/3x/sp_riddle_diary_right.png": "fdc8451ace2fbe055e67976f2230bee3d5aecad73437eda8dfe5f07250680f74"
+      }
+    },
+    {
+      "id": "sp_slytherin_locket",
+      "label": "Mề đay Slytherin",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "Salazar Slytherin's heavy oval GOLD locket displayed on a small dark-green velvet stand with its fine gold chain draped around the base. Green gemstones form a serpent-like S ornament on the front, stylized as a winding green snake rather than readable typography. Antique gold, one mysterious violet glint, no other jewelry.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 32,
+              "y": 25,
+              "w": 11,
+              "h": 8
+            },
+            "pixelCount": 33,
+            "mappableCount": 33,
+            "maxPixels": 552,
+            "rootBand": 84
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 39,
+              "y": 16,
+              "w": 5,
+              "h": 13
+            },
+            "pixelCount": 23,
+            "mappableCount": 23,
+            "maxPixels": 635,
+            "rootBand": 84
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "green",
+          "warm",
+          "wood"
+        ],
+        "colors": [
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 7,
+        "chapter": 19,
+        "term": "locket",
+        "lore": "Chiếc mề đay Trường Sinh Linh Giá được phá hủy bằng thanh gươm."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 44,
+        "y": 108
+      },
+      "defaultFile": "native/sp_slytherin_locket.png",
+      "rightFile": "native/sp_slytherin_locket_right.png",
+      "defaultFrames": [
+        "native/sp_slytherin_locket_f0.png",
+        "native/sp_slytherin_locket_f1.png",
+        "native/sp_slytherin_locket_f2.png",
+        "native/sp_slytherin_locket_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_slytherin_locket_right_f0.png",
+        "native/sp_slytherin_locket_right_f1.png",
+        "native/sp_slytherin_locket_right_f2.png",
+        "native/sp_slytherin_locket_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_slytherin_locket.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_slytherin_locket.png",
+          "alternate": "thumbnails/2x/sp_slytherin_locket_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_slytherin_locket.png",
+          "alternate": "thumbnails/3x/sp_slytherin_locket_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_slytherin_locket.png",
+      "sourceSha256": "9dd2d90df61425cbda34e42f1b98a0d1ed8b990b291dc350f200b258932904d9",
+      "pngSha256": {
+        "native/sp_slytherin_locket.png": "83343d0b3a07a27b7a82061252bebe4232600a7ff2cb115617b3fbee9021c703",
+        "native/sp_slytherin_locket_right.png": "d6dca02e7f77e0a4a22c948ae6b31d96e50457db2c648208d1fc17d3ef28903c",
+        "native/sp_slytherin_locket_f0.png": "83343d0b3a07a27b7a82061252bebe4232600a7ff2cb115617b3fbee9021c703",
+        "native/sp_slytherin_locket_f1.png": "9ac8e0d3c4fba69f5e693e744717724bf397cfc018acdbe7bd99257a057aca65",
+        "native/sp_slytherin_locket_f2.png": "9ac8e0d3c4fba69f5e693e744717724bf397cfc018acdbe7bd99257a057aca65",
+        "native/sp_slytherin_locket_f3.png": "83343d0b3a07a27b7a82061252bebe4232600a7ff2cb115617b3fbee9021c703",
+        "native/sp_slytherin_locket_right_f0.png": "d6dca02e7f77e0a4a22c948ae6b31d96e50457db2c648208d1fc17d3ef28903c",
+        "native/sp_slytherin_locket_right_f1.png": "795cb59b55c7382638b78aaaa3a102b8532c09734b7c4a9fd518f83665e32149",
+        "native/sp_slytherin_locket_right_f2.png": "795cb59b55c7382638b78aaaa3a102b8532c09734b7c4a9fd518f83665e32149",
+        "native/sp_slytherin_locket_right_f3.png": "d6dca02e7f77e0a4a22c948ae6b31d96e50457db2c648208d1fc17d3ef28903c",
+        "spritesheets/sp_slytherin_locket.png": "9d9a050358255f5c2f396e4e8d606a315177f9ebeac2f2fb9357782facbdafe2",
+        "thumbnails/2x/sp_slytherin_locket.png": "56cbd16a4e4e67f9815a9b1aab8de11720f681da9696839d383beedfe1afda8a",
+        "thumbnails/2x/sp_slytherin_locket_right.png": "5e242cf77af00359a60f2074e9f6b03957d1f632e9d3d0c2447261f21c1a2766",
+        "thumbnails/3x/sp_slytherin_locket.png": "7c1f6f6b275fb2212f6b65c202a3dfef6105ee2bb47c11a05168d9982abb90b8",
+        "thumbnails/3x/sp_slytherin_locket_right.png": "366360b006c73e6cbd4b8b22e361c7a292c59413a6fa5bb7ce801a63f7e4a6c1"
+      }
+    },
+    {
+      "id": "sp_gaunt_ring",
+      "label": "Nhẫn gia tộc Gaunt",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "The old Gaunt family ring: heavy tarnished gold ring with a large cracked black stone, displayed upright in a tiny weathered open wooden jewelry box lined dark purple. Stone bears a tiny angular triangle-circle-line geometric symbol, no lettering. One ring only, chunky readable dark artifact, no hand.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 48,
+              "y": 39,
+              "w": 1,
+              "h": 6
+            },
+            "pixelCount": 6,
+            "mappableCount": 6,
+            "maxPixels": 594,
+            "rootBand": 72
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 35,
+              "y": 28,
+              "w": 3,
+              "h": 3
+            },
+            "pixelCount": 5,
+            "mappableCount": 5,
+            "maxPixels": 547,
+            "rootBand": 72
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": {
+        "book": 6,
+        "chapter": 10,
+        "term": "ring",
+        "lore": "Chiếc nhẫn gia tộc Gaunt, về sau được nhận diện là Trường Sinh Linh Giá."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 88,
+      "height": 96,
+      "pivot": {
+        "x": 44,
+        "y": 92
+      },
+      "defaultFile": "native/sp_gaunt_ring.png",
+      "rightFile": "native/sp_gaunt_ring_right.png",
+      "defaultFrames": [
+        "native/sp_gaunt_ring_f0.png",
+        "native/sp_gaunt_ring_f1.png",
+        "native/sp_gaunt_ring_f2.png",
+        "native/sp_gaunt_ring_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_gaunt_ring_right_f0.png",
+        "native/sp_gaunt_ring_right_f1.png",
+        "native/sp_gaunt_ring_right_f2.png",
+        "native/sp_gaunt_ring_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_gaunt_ring.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_gaunt_ring.png",
+          "alternate": "thumbnails/2x/sp_gaunt_ring_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_gaunt_ring.png",
+          "alternate": "thumbnails/3x/sp_gaunt_ring_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_gaunt_ring.png",
+      "sourceSha256": "c7566f484aa7086747fe78235f580420c959697dd7c5373adfde3998d2fa00bd",
+      "pngSha256": {
+        "native/sp_gaunt_ring.png": "851e133b19c663d152484713c969d801fe3f2081917c390543302d018a1eadf8",
+        "native/sp_gaunt_ring_right.png": "92366b78d319f71cebfa69839c29c1e8c1b6e50f00b241063a211cf27de40b26",
+        "native/sp_gaunt_ring_f0.png": "851e133b19c663d152484713c969d801fe3f2081917c390543302d018a1eadf8",
+        "native/sp_gaunt_ring_f1.png": "a2fedfdba22513feeecfae0f058eb188052668d5835aee1766030a48075c9813",
+        "native/sp_gaunt_ring_f2.png": "a2fedfdba22513feeecfae0f058eb188052668d5835aee1766030a48075c9813",
+        "native/sp_gaunt_ring_f3.png": "851e133b19c663d152484713c969d801fe3f2081917c390543302d018a1eadf8",
+        "native/sp_gaunt_ring_right_f0.png": "92366b78d319f71cebfa69839c29c1e8c1b6e50f00b241063a211cf27de40b26",
+        "native/sp_gaunt_ring_right_f1.png": "2958137c1b95f7178dd13377970a12d97005b76091b16ea1b5843ea9a71ee7b6",
+        "native/sp_gaunt_ring_right_f2.png": "2958137c1b95f7178dd13377970a12d97005b76091b16ea1b5843ea9a71ee7b6",
+        "native/sp_gaunt_ring_right_f3.png": "92366b78d319f71cebfa69839c29c1e8c1b6e50f00b241063a211cf27de40b26",
+        "spritesheets/sp_gaunt_ring.png": "0d3a88bffd1c399bfbdd24fe312c925c03d2dd63801060ac3a71d051213f8b45",
+        "thumbnails/2x/sp_gaunt_ring.png": "dc80dd8b1cdcefac882a5582f8a56fd03c05023b81b223198f3461109c533d20",
+        "thumbnails/2x/sp_gaunt_ring_right.png": "afb8058d717e337b3343aa0b42ff79fe4b2eb312cd809b06be42f941711f6f44",
+        "thumbnails/3x/sp_gaunt_ring.png": "fcdfcc96a39afcef726fa1994fb71d93178885a56f07a896f3323908f101dc49",
+        "thumbnails/3x/sp_gaunt_ring_right.png": "ce551b67ba3f18520777904b9f296a75f47b2ffbe2878a61e376dc835384e617"
+      }
+    },
+    {
+      "id": "sp_hufflepuff_cup",
+      "label": "Chiếc cúp Hufflepuff",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "Helga Hufflepuff's small ancient golden cup, exactly two finely wrought handles, a simple engraved BADGER pictogram on its rounded belly, on a low black stone display block. Gold and amber highlights, book-proportioned compact cup, not the blue Triwizard Cup, no readable lettering.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 27,
+              "y": 14,
+              "w": 38,
+              "h": 5
+            },
+            "pixelCount": 67,
+            "mappableCount": 67,
+            "maxPixels": 713,
+            "rootBand": 78
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 40,
+              "y": 32,
+              "w": 7,
+              "h": 16
+            },
+            "pixelCount": 70,
+            "mappableCount": 70,
+            "maxPixels": 609,
+            "rootBand": 78
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "warm",
+          "wood",
+          "stone"
+        ],
+        "colors": [
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": {
+        "book": 7,
+        "chapter": 26,
+        "term": "cup",
+        "lore": "Chiếc cúp được lấy khỏi hầm Lestrange ở Gringotts."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 96,
+      "height": 104,
+      "pivot": {
+        "x": 48,
+        "y": 100
+      },
+      "defaultFile": "native/sp_hufflepuff_cup.png",
+      "rightFile": "native/sp_hufflepuff_cup_right.png",
+      "defaultFrames": [
+        "native/sp_hufflepuff_cup_f0.png",
+        "native/sp_hufflepuff_cup_f1.png",
+        "native/sp_hufflepuff_cup_f2.png",
+        "native/sp_hufflepuff_cup_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_hufflepuff_cup_right_f0.png",
+        "native/sp_hufflepuff_cup_right_f1.png",
+        "native/sp_hufflepuff_cup_right_f2.png",
+        "native/sp_hufflepuff_cup_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_hufflepuff_cup.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_hufflepuff_cup.png",
+          "alternate": "thumbnails/2x/sp_hufflepuff_cup_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_hufflepuff_cup.png",
+          "alternate": "thumbnails/3x/sp_hufflepuff_cup_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_hufflepuff_cup.png",
+      "sourceSha256": "b0d0587bba86f272c9b4d848da68c4af210a4db6f16f1188ce421f8f8e9a568e",
+      "pngSha256": {
+        "native/sp_hufflepuff_cup.png": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
+        "native/sp_hufflepuff_cup_right.png": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
+        "native/sp_hufflepuff_cup_f0.png": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
+        "native/sp_hufflepuff_cup_f1.png": "c20c8b8d27e6615250f615a298f25171e7392da74747e5941f6df263428c63a3",
+        "native/sp_hufflepuff_cup_f2.png": "c20c8b8d27e6615250f615a298f25171e7392da74747e5941f6df263428c63a3",
+        "native/sp_hufflepuff_cup_f3.png": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
+        "native/sp_hufflepuff_cup_right_f0.png": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
+        "native/sp_hufflepuff_cup_right_f1.png": "e781585ccb86ccb1cd8b71861fad79887e25105a6bfbcc8af679aa7d234836b9",
+        "native/sp_hufflepuff_cup_right_f2.png": "e781585ccb86ccb1cd8b71861fad79887e25105a6bfbcc8af679aa7d234836b9",
+        "native/sp_hufflepuff_cup_right_f3.png": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
+        "spritesheets/sp_hufflepuff_cup.png": "e45c843041ffa35afc522fc3c0fe94f834a73a327d44bada819ffd161f3fb1b2",
+        "thumbnails/2x/sp_hufflepuff_cup.png": "46ed8e0bef8233ef818ae40a015c0a1a86ae903f064f238a4a12e95cb83419b1",
+        "thumbnails/2x/sp_hufflepuff_cup_right.png": "602f15d9a38018bb7489db5b8dc08c70c448970d1472e90a0623b1064ffdc92a",
+        "thumbnails/3x/sp_hufflepuff_cup.png": "82c27f579875d707f66d4b35ec9bdc8ad91aaeae3ce3c0aa3330117873afe495",
+        "thumbnails/3x/sp_hufflepuff_cup_right.png": "fa67faa6796854af190affd0419c8dfc1d1a244be28696cac085f7327270ddee"
+      }
+    },
+    {
+      "id": "sp_ravenclaw_diadem",
+      "label": "Vương miện Ravenclaw",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "subject": "Rowena Ravenclaw's delicate silver diadem displayed on a low midnight-purple velvet cushion on a small carved stand. A silver EAGLE-shaped central motif and one deep blue gemstone, slender curved wings, no lettering or inscription. Ancient slightly tarnished magical heirloom, NOT a gold royal crown.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Hoa văn/khung trang sức là diễn giải tạo hình, không phải chi tiết mô tả nguyên văn trong chương được dẫn.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 47,
+              "y": 35,
+              "w": 5,
+              "h": 6
+            },
+            "pixelCount": 14,
+            "mappableCount": 14,
+            "maxPixels": 685,
+            "rootBand": 78
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 54,
+              "y": 64,
+              "w": 4,
+              "h": 8
+            },
+            "pixelCount": 13,
+            "mappableCount": 13,
+            "maxPixels": 554,
+            "rootBand": 78
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 7,
+        "chapter": 31,
+        "term": "diadem",
+        "lore": "Vương miện thất lạc của Ravenclaw trong Phòng Theo Yêu Cầu."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 112,
+      "height": 104,
+      "pivot": {
+        "x": 56,
+        "y": 100
+      },
+      "defaultFile": "native/sp_ravenclaw_diadem.png",
+      "rightFile": "native/sp_ravenclaw_diadem_right.png",
+      "defaultFrames": [
+        "native/sp_ravenclaw_diadem_f0.png",
+        "native/sp_ravenclaw_diadem_f1.png",
+        "native/sp_ravenclaw_diadem_f2.png",
+        "native/sp_ravenclaw_diadem_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_ravenclaw_diadem_right_f0.png",
+        "native/sp_ravenclaw_diadem_right_f1.png",
+        "native/sp_ravenclaw_diadem_right_f2.png",
+        "native/sp_ravenclaw_diadem_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_ravenclaw_diadem.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_ravenclaw_diadem.png",
+          "alternate": "thumbnails/2x/sp_ravenclaw_diadem_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_ravenclaw_diadem.png",
+          "alternate": "thumbnails/3x/sp_ravenclaw_diadem_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_ravenclaw_diadem.png",
+      "sourceSha256": "f88e131872f2e6cb466041b115a35c5d1d88c9d73b31f2d4ac02f9f6ef29467f",
+      "pngSha256": {
+        "native/sp_ravenclaw_diadem.png": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
+        "native/sp_ravenclaw_diadem_right.png": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
+        "native/sp_ravenclaw_diadem_f0.png": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
+        "native/sp_ravenclaw_diadem_f1.png": "989474bc51eda104d0e72ff9b6ce750f2f491ecd1a2da2eea5f76e980b33912e",
+        "native/sp_ravenclaw_diadem_f2.png": "79aa36d60b3fcad54aa4c133250fb04cf043e91cbbd86e969b27f5477bc45d02",
+        "native/sp_ravenclaw_diadem_f3.png": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
+        "native/sp_ravenclaw_diadem_right_f0.png": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
+        "native/sp_ravenclaw_diadem_right_f1.png": "9fd98364839377a527482b1a8844c188aa238aac705af3019f71e8eaca7c1a9b",
+        "native/sp_ravenclaw_diadem_right_f2.png": "1d81b62477c6fd6dd52c54f6f4abb8941bb0462804c6b85f433b459ce71461a9",
+        "native/sp_ravenclaw_diadem_right_f3.png": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
+        "spritesheets/sp_ravenclaw_diadem.png": "6bc0de7fb0fbc6969e14a02c5302f087d24cd39bcfdf2e9d87a7015470572b2c",
+        "thumbnails/2x/sp_ravenclaw_diadem.png": "f1a63d01cf1798e60010fb150595cdfe8bd51fd3bf017d4700774888ace0ca0e",
+        "thumbnails/2x/sp_ravenclaw_diadem_right.png": "ea77896e495ffe79878f2aa274313ea38d9ff0d26591aa86296bbb4966324a71",
+        "thumbnails/3x/sp_ravenclaw_diadem.png": "e1327f3ed30e3baeb15c168ed4e2888ee67b603cd2290056db4453ec1a3b6825",
+        "thumbnails/3x/sp_ravenclaw_diadem_right.png": "1c153f415a147d1c28b75965462fbcfeb3e5c2157bc4eca200f491cf3d55a362"
+      }
+    },
+    {
+      "id": "sp_vanishing_cabinet",
+      "label": "Tủ Biến Mất",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The sinister Vanishing Cabinet associated with Borgin and Burkes: tall narrow blackened dark-brown wooden cabinet, gothic pointed top, heavily carved doors, one door slightly ajar showing pitch dark interior and a tiny pale bird feather at the threshold. Carved serpent and vine ornaments, copper hinges, no humanoid or portal effects.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "static",
+          "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "static",
+          "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested glow; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "green"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "bookReference": {
+        "book": 6,
+        "chapter": 27,
+        "term": "cabinet",
+        "lore": "Chiếc tủ Draco sửa để nối Hogwarts với Borgin và Burkes."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 144,
+      "height": 208,
+      "pivot": {
+        "x": 72,
+        "y": 204
+      },
+      "defaultFile": "native/sp_vanishing_cabinet.png",
+      "rightFile": "native/sp_vanishing_cabinet_right.png",
+      "defaultFrames": [
+        "native/sp_vanishing_cabinet_f0.png",
+        "native/sp_vanishing_cabinet_f1.png",
+        "native/sp_vanishing_cabinet_f2.png",
+        "native/sp_vanishing_cabinet_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_vanishing_cabinet_right_f0.png",
+        "native/sp_vanishing_cabinet_right_f1.png",
+        "native/sp_vanishing_cabinet_right_f2.png",
+        "native/sp_vanishing_cabinet_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_vanishing_cabinet.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_vanishing_cabinet.png",
+          "alternate": "thumbnails/2x/sp_vanishing_cabinet_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_vanishing_cabinet.png",
+          "alternate": "thumbnails/3x/sp_vanishing_cabinet_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/sp_vanishing_cabinet.png",
+      "sourceSha256": "363f1c3de0a1d01ac2f5bfdd24fcfd5aa652c29e3cbd7ff05872ed6e6d6cdde1",
+      "pngSha256": {
+        "native/sp_vanishing_cabinet.png": "fb89dcc1a76e315d0e77e15a318bb817245531eb74df9e1edf47aa109d64733f",
+        "native/sp_vanishing_cabinet_right.png": "21ec6473c9c9a99074b3379aa585935fd6ffbd8d198182a9d483a3d0894b0583",
+        "native/sp_vanishing_cabinet_f0.png": "fb89dcc1a76e315d0e77e15a318bb817245531eb74df9e1edf47aa109d64733f",
+        "native/sp_vanishing_cabinet_f1.png": "fb89dcc1a76e315d0e77e15a318bb817245531eb74df9e1edf47aa109d64733f",
+        "native/sp_vanishing_cabinet_f2.png": "fb89dcc1a76e315d0e77e15a318bb817245531eb74df9e1edf47aa109d64733f",
+        "native/sp_vanishing_cabinet_f3.png": "fb89dcc1a76e315d0e77e15a318bb817245531eb74df9e1edf47aa109d64733f",
+        "native/sp_vanishing_cabinet_right_f0.png": "21ec6473c9c9a99074b3379aa585935fd6ffbd8d198182a9d483a3d0894b0583",
+        "native/sp_vanishing_cabinet_right_f1.png": "21ec6473c9c9a99074b3379aa585935fd6ffbd8d198182a9d483a3d0894b0583",
+        "native/sp_vanishing_cabinet_right_f2.png": "21ec6473c9c9a99074b3379aa585935fd6ffbd8d198182a9d483a3d0894b0583",
+        "native/sp_vanishing_cabinet_right_f3.png": "21ec6473c9c9a99074b3379aa585935fd6ffbd8d198182a9d483a3d0894b0583",
+        "spritesheets/sp_vanishing_cabinet.png": "4d0586b440767a381ffd01305fbec95becd1162e514acb0617bf6b3ff4bbbb42",
+        "thumbnails/2x/sp_vanishing_cabinet.png": "2f6a33ab42dd44fb3c380ca70b64ec9276d698a6fb22f4c51755fd51970a5310",
+        "thumbnails/2x/sp_vanishing_cabinet_right.png": "c9064bf4d1eb24029156319e6d371f5eea3a026859355773a84eadffe577645b",
+        "thumbnails/3x/sp_vanishing_cabinet.png": "40d61eb4d2f75316c4937e12458178cfbee1544538ac1e8369fd4906940b5c3a",
+        "thumbnails/3x/sp_vanishing_cabinet_right.png": "4e4195bf21b58e17d967aaa5812684412a68bc28d46b591780b733bd39d651b9"
+      }
+    },
+    {
+      "id": "sp_hand_glory",
+      "label": "Bàn Tay Vẻ Vang",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The Hand of Glory sold in Borgin and Burkes: a withered ochre-brown preserved hand standing upright on a small dark antique display base, curled fingers gripping one burning candle between the thumb and forefinger. No arm, no blood, no gore, no flesh detail; clearly a spooky stylized magical artifact, warm isolated candle flame.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Truyện xác nhận bàn tay khô dùng để cắm nến; bệ và thế ngón tay là diễn họa.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 33,
+              "y": 5,
+              "w": 15,
+              "h": 20
+            },
+            "pixelCount": 175,
+            "mappableCount": 175,
+            "maxPixels": 418,
+            "rootBand": 102
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 27,
+              "y": 7,
+              "w": 15,
+              "h": 19
+            },
+            "pixelCount": 159,
+            "mappableCount": 159,
+            "maxPixels": 411,
+            "rootBand": 102
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": {
+        "book": 2,
+        "chapter": 4,
+        "term": "Hand of Glory",
+        "lore": "Cổ vật trong cửa tiệm Borgin và Burkes."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 80,
+      "height": 136,
+      "pivot": {
+        "x": 40,
+        "y": 132
+      },
+      "defaultFile": "native/sp_hand_glory.png",
+      "rightFile": "native/sp_hand_glory_right.png",
+      "defaultFrames": [
+        "native/sp_hand_glory_f0.png",
+        "native/sp_hand_glory_f1.png",
+        "native/sp_hand_glory_f2.png",
+        "native/sp_hand_glory_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_hand_glory_right_f0.png",
+        "native/sp_hand_glory_right_f1.png",
+        "native/sp_hand_glory_right_f2.png",
+        "native/sp_hand_glory_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_hand_glory.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_hand_glory.png",
+          "alternate": "thumbnails/2x/sp_hand_glory_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_hand_glory.png",
+          "alternate": "thumbnails/3x/sp_hand_glory_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_hand_glory.png",
+      "sourceSha256": "cbdf214328475d49feada2a6e7253df27920a1cb21a5423268e275053e4c824c",
+      "pngSha256": {
+        "native/sp_hand_glory.png": "7ea638a76b9dea2c73b1c5710ecc23d0837d992b90a8bf237b25a21ffb7bd0f7",
+        "native/sp_hand_glory_right.png": "436161b304f403497629210d525d7b92e1375421ced59a6e7917542ff4b2c1ef",
+        "native/sp_hand_glory_f0.png": "7ea638a76b9dea2c73b1c5710ecc23d0837d992b90a8bf237b25a21ffb7bd0f7",
+        "native/sp_hand_glory_f1.png": "ac1a99a07b54093dfd2efe279f1c6e4c7dba24685871a938c93a1df3b3639037",
+        "native/sp_hand_glory_f2.png": "76924e6a2f64fa14dc281df90aecb08ef1a0e2a03e3fbd4966428c5621aced6e",
+        "native/sp_hand_glory_f3.png": "7ea638a76b9dea2c73b1c5710ecc23d0837d992b90a8bf237b25a21ffb7bd0f7",
+        "native/sp_hand_glory_right_f0.png": "436161b304f403497629210d525d7b92e1375421ced59a6e7917542ff4b2c1ef",
+        "native/sp_hand_glory_right_f1.png": "ff46f5066efbaa3992dd2528cb697843dc4e41ef1c60f804088fb0d6b5700ae0",
+        "native/sp_hand_glory_right_f2.png": "74b9a5062709a13bab9764d847d96497327e105c31474947bae797290f7c3c31",
+        "native/sp_hand_glory_right_f3.png": "436161b304f403497629210d525d7b92e1375421ced59a6e7917542ff4b2c1ef",
+        "spritesheets/sp_hand_glory.png": "a5e3a465625d74444df0d17af635e758aba2e6025afb8c3218c1b3e310ecc724",
+        "thumbnails/2x/sp_hand_glory.png": "18e431d2fc346c660ed5fa9cc77e6428d5f24095d95f2313d784ab90f8715395",
+        "thumbnails/2x/sp_hand_glory_right.png": "9fa5244d27aa9e0ed651e8cfd3a0abeca7910c73aae138d3de29e45a4e13697e",
+        "thumbnails/3x/sp_hand_glory.png": "e290d05f4ddd3636e2ce8eecc11054b0edf46c3fb615699b27807a7c03cbcc61",
+        "thumbnails/3x/sp_hand_glory_right.png": "f57550c4f4ded1e132c2802d15de9b033283e0edb6cc9ed30ba50684b4b4637f"
+      }
+    },
+    {
+      "id": "sp_cursed_opal_necklace",
+      "label": "Dây chuyền opal bị nguyền",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The cursed opal necklace from Borgin and Burkes displayed behind a small clear protective glass bell on a dark velvet jewelry bust. A long strand of pale iridescent opal stones with a larger central stone, fine silver chain, faint violet reflections. No hands, no text warning sign, no lettering.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 70,
+              "y": 41,
+              "w": 4,
+              "h": 9
+            },
+            "pixelCount": 21,
+            "mappableCount": 21,
+            "maxPixels": 880,
+            "rootBand": 102
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 34,
+              "y": 32,
+              "w": 19,
+              "h": 18
+            },
+            "pixelCount": 168,
+            "mappableCount": 168,
+            "maxPixels": 823,
+            "rootBand": 102
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 6,
+        "chapter": 12,
+        "term": "necklace",
+        "lore": "Dây chuyền khiến Katie Bell bị nguyền."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 96,
+      "height": 136,
+      "pivot": {
+        "x": 48,
+        "y": 132
+      },
+      "defaultFile": "native/sp_cursed_opal_necklace.png",
+      "rightFile": "native/sp_cursed_opal_necklace_right.png",
+      "defaultFrames": [
+        "native/sp_cursed_opal_necklace_f0.png",
+        "native/sp_cursed_opal_necklace_f1.png",
+        "native/sp_cursed_opal_necklace_f2.png",
+        "native/sp_cursed_opal_necklace_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_cursed_opal_necklace_right_f0.png",
+        "native/sp_cursed_opal_necklace_right_f1.png",
+        "native/sp_cursed_opal_necklace_right_f2.png",
+        "native/sp_cursed_opal_necklace_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_cursed_opal_necklace.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_cursed_opal_necklace.png",
+          "alternate": "thumbnails/2x/sp_cursed_opal_necklace_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_cursed_opal_necklace.png",
+          "alternate": "thumbnails/3x/sp_cursed_opal_necklace_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_cursed_opal_necklace.png",
+      "sourceSha256": "48394d76da63d538835dc8e2d9002333ecfacabcf85620e913df0e8ccabb650b",
+      "pngSha256": {
+        "native/sp_cursed_opal_necklace.png": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
+        "native/sp_cursed_opal_necklace_right.png": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
+        "native/sp_cursed_opal_necklace_f0.png": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
+        "native/sp_cursed_opal_necklace_f1.png": "2665c3223e706c5cb49f4f908469b1b5854216cbcf63bd71ae42a45e3c64a544",
+        "native/sp_cursed_opal_necklace_f2.png": "2665c3223e706c5cb49f4f908469b1b5854216cbcf63bd71ae42a45e3c64a544",
+        "native/sp_cursed_opal_necklace_f3.png": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
+        "native/sp_cursed_opal_necklace_right_f0.png": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
+        "native/sp_cursed_opal_necklace_right_f1.png": "e024854c55b788b970fc7100981cfcdfa5f06604b2ebdd06ea4a48cf1d6dca81",
+        "native/sp_cursed_opal_necklace_right_f2.png": "e024854c55b788b970fc7100981cfcdfa5f06604b2ebdd06ea4a48cf1d6dca81",
+        "native/sp_cursed_opal_necklace_right_f3.png": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
+        "spritesheets/sp_cursed_opal_necklace.png": "7dfa5ea9ff63208fbc4b13a638ca3fc859864203246daf2d77722536188ba058",
+        "thumbnails/2x/sp_cursed_opal_necklace.png": "303806e45a31d6d364f9445f61e395b83b011145b4db19447ebed51a8f74c7b6",
+        "thumbnails/2x/sp_cursed_opal_necklace_right.png": "7ffca69c9a6e312e9cdf3a695631f47a6674ed823e743fb6dd0812edae5b5216",
+        "thumbnails/3x/sp_cursed_opal_necklace.png": "26f0c3fae6c17e5a804e246592de857ae3b56ea438841195f71ce776140d7254",
+        "thumbnails/3x/sp_cursed_opal_necklace_right.png": "7a90ee8835bceb1a449afebf5d88232fcc2ae4e1dd1baf192e1267edb0b6ebd3"
+      }
+    },
+    {
+      "id": "sp_chamber_serpent_door",
+      "label": "Cánh cửa Phòng Chứa Bí Mật",
+      "group": "Hắc thuật và bí mật",
+      "subject": "Solid stone wall with exactly two entwined serpents and emerald eyes; two wall halves with central seam. Freestanding stone monument adaptation.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "static",
+          "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "static",
+          "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested glow; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "green",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 2,
+        "chapter": 16,
+        "term": "door",
+        "lore": "Vách đá có hai con rắn quấn nhau, mắt bằng ngọc lục bảo, mở bằng Xà Ngữ."
+      },
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "width": 192,
+      "height": 208,
+      "pivot": {
+        "x": 96,
+        "y": 204
+      },
+      "defaultFile": "native/sp_chamber_serpent_door.png",
+      "rightFile": "native/sp_chamber_serpent_door_right.png",
+      "defaultFrames": [
+        "native/sp_chamber_serpent_door_f0.png",
+        "native/sp_chamber_serpent_door_f1.png",
+        "native/sp_chamber_serpent_door_f2.png",
+        "native/sp_chamber_serpent_door_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_chamber_serpent_door_right_f0.png",
+        "native/sp_chamber_serpent_door_right_f1.png",
+        "native/sp_chamber_serpent_door_right_f2.png",
+        "native/sp_chamber_serpent_door_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_chamber_serpent_door.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_chamber_serpent_door.png",
+          "alternate": "thumbnails/2x/sp_chamber_serpent_door_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_chamber_serpent_door.png",
+          "alternate": "thumbnails/3x/sp_chamber_serpent_door_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/sp_chamber_serpent_door.png",
+      "sourceSha256": "f2813b368b3115b7f8b5904d6851a03335fd51101e62023619ed087ab6e37cec",
+      "pngSha256": {
+        "native/sp_chamber_serpent_door.png": "57c323fbad2ccd9ae91eeae8c1a01be74cd3cd5bc907f65bb56b8d918266d75b",
+        "native/sp_chamber_serpent_door_right.png": "12686f5339a260b3eac82b4b53b8edf54ac341fae2f009d4d43f70d18a759c5a",
+        "native/sp_chamber_serpent_door_f0.png": "57c323fbad2ccd9ae91eeae8c1a01be74cd3cd5bc907f65bb56b8d918266d75b",
+        "native/sp_chamber_serpent_door_f1.png": "57c323fbad2ccd9ae91eeae8c1a01be74cd3cd5bc907f65bb56b8d918266d75b",
+        "native/sp_chamber_serpent_door_f2.png": "57c323fbad2ccd9ae91eeae8c1a01be74cd3cd5bc907f65bb56b8d918266d75b",
+        "native/sp_chamber_serpent_door_f3.png": "57c323fbad2ccd9ae91eeae8c1a01be74cd3cd5bc907f65bb56b8d918266d75b",
+        "native/sp_chamber_serpent_door_right_f0.png": "12686f5339a260b3eac82b4b53b8edf54ac341fae2f009d4d43f70d18a759c5a",
+        "native/sp_chamber_serpent_door_right_f1.png": "12686f5339a260b3eac82b4b53b8edf54ac341fae2f009d4d43f70d18a759c5a",
+        "native/sp_chamber_serpent_door_right_f2.png": "12686f5339a260b3eac82b4b53b8edf54ac341fae2f009d4d43f70d18a759c5a",
+        "native/sp_chamber_serpent_door_right_f3.png": "12686f5339a260b3eac82b4b53b8edf54ac341fae2f009d4d43f70d18a759c5a",
+        "spritesheets/sp_chamber_serpent_door.png": "5790b47aff9a4f43af99edf7bb89abaad5ecfbfc9875e9ce979d0d081ec2a092",
+        "thumbnails/2x/sp_chamber_serpent_door.png": "9b577bb8ac67408e47e726374600378ea7f59757060e3a3b044fd5a4b43a604d",
+        "thumbnails/2x/sp_chamber_serpent_door_right.png": "28a5b723cdb214abb2dd413ddffe6a95c2970e2047e520d41798e7ee749e5c45",
+        "thumbnails/3x/sp_chamber_serpent_door.png": "bf3b3fda208a1d7a153474bd45020b22525a77b8cc504a6daeed244a745bd53f",
+        "thumbnails/3x/sp_chamber_serpent_door_right.png": "38fed66d5aa945217e6c6dea87e6dd598ff17136ba8551da8bf8dab371aeb05b"
+      }
+    },
+    {
+      "id": "sp_department_veil",
+      "label": "Vòm màn che ở Bộ Pháp Thuật",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The ancient stone archway and fluttering black veil in the Department of Mysteries: a weathered rough grey stone arch, no door, thin ragged dark-purple translucent curtain hanging inside it with a slight billow, on two low concentric stone steps. No ghosts, no skulls, no people. Solemn magical mystery, freestanding miniature.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "sway",
+      "motionRequested": "sway",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 5,
+        "chapter": 34,
+        "term": "veil",
+        "lore": "Vòm đá có màn che trong Sở Bảo Mật."
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "width": 176,
+      "height": 208,
+      "pivot": {
+        "x": 88,
+        "y": 204
+      },
+      "defaultFile": "native/sp_department_veil.png",
+      "rightFile": "native/sp_department_veil_right.png",
+      "defaultFrames": [
+        "native/sp_department_veil_f0.png",
+        "native/sp_department_veil_f1.png",
+        "native/sp_department_veil_f2.png",
+        "native/sp_department_veil_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_department_veil_right_f0.png",
+        "native/sp_department_veil_right_f1.png",
+        "native/sp_department_veil_right_f2.png",
+        "native/sp_department_veil_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_department_veil.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_department_veil.png",
+          "alternate": "thumbnails/2x/sp_department_veil_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_department_veil.png",
+          "alternate": "thumbnails/3x/sp_department_veil_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/sp_department_veil.png",
+      "sourceSha256": "3db044d33d8049033c49e1c0c8f106d1b2d8933f8e3c479f73a064cc540942d0",
+      "pngSha256": {
+        "native/sp_department_veil.png": "c08f3dedfe0ad39a420ae564abb46318a3b56dcc2c3fdaa36b25b06a6a7fffc1",
+        "native/sp_department_veil_right.png": "abec8996db15bd15aeb40fb7c6433b85ac26e5c82337b62d5b4f01a8f6a09c57",
+        "native/sp_department_veil_f0.png": "c08f3dedfe0ad39a420ae564abb46318a3b56dcc2c3fdaa36b25b06a6a7fffc1",
+        "native/sp_department_veil_f1.png": "c08f3dedfe0ad39a420ae564abb46318a3b56dcc2c3fdaa36b25b06a6a7fffc1",
+        "native/sp_department_veil_f2.png": "c08f3dedfe0ad39a420ae564abb46318a3b56dcc2c3fdaa36b25b06a6a7fffc1",
+        "native/sp_department_veil_f3.png": "c08f3dedfe0ad39a420ae564abb46318a3b56dcc2c3fdaa36b25b06a6a7fffc1",
+        "native/sp_department_veil_right_f0.png": "abec8996db15bd15aeb40fb7c6433b85ac26e5c82337b62d5b4f01a8f6a09c57",
+        "native/sp_department_veil_right_f1.png": "abec8996db15bd15aeb40fb7c6433b85ac26e5c82337b62d5b4f01a8f6a09c57",
+        "native/sp_department_veil_right_f2.png": "abec8996db15bd15aeb40fb7c6433b85ac26e5c82337b62d5b4f01a8f6a09c57",
+        "native/sp_department_veil_right_f3.png": "abec8996db15bd15aeb40fb7c6433b85ac26e5c82337b62d5b4f01a8f6a09c57",
+        "spritesheets/sp_department_veil.png": "d9536cc781d3de0a95f20e67423246c31acac9c652367d53eb26860fb6a79499",
+        "thumbnails/2x/sp_department_veil.png": "28c6254342077e40f0a31f7915128421b0d61348e57a52114d06e60bb8d7d975",
+        "thumbnails/2x/sp_department_veil_right.png": "39eea339f45f7c50e92990f90471e94bd14182b68464df4bbb8e9564dd22ddea",
+        "thumbnails/3x/sp_department_veil.png": "98ab84cbb34bf8e1c5e96e00c4a981894cbd90db6257a2f7518c37949b481e37",
+        "thumbnails/3x/sp_department_veil_right.png": "b840045391b6f0da5b2dccbdb86e30d9261b4901bca5478503afd5f8bfa8c4bd"
+      }
+    },
+    {
+      "id": "sp_monster_book",
+      "label": "Sách Quái Vật về Quái Vật",
+      "group": "Hắc thuật và bí mật",
+      "subject": "The Monster Book of Monsters: one thick shaggy brown furry schoolbook on a low rough wooden reading stand, four small amber eyes on top, ivory fangs along the page edges, short tongue barely visible, a leather belt loosely buckled around the book. No title lettering, no extra books, cute but untamed.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "blink",
+      "motionRequested": "blink",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested blink; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": {
+        "book": 3,
+        "chapter": 1,
+        "term": "Monster Book",
+        "lore": "Cuốn sách Hagrid gửi tặng Harry và dùng cho môn Chăm Sóc Sinh Vật Huyền Bí."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 112,
+      "height": 104,
+      "pivot": {
+        "x": 56,
+        "y": 100
+      },
+      "defaultFile": "native/sp_monster_book.png",
+      "rightFile": "native/sp_monster_book_right.png",
+      "defaultFrames": [
+        "native/sp_monster_book_f0.png",
+        "native/sp_monster_book_f1.png",
+        "native/sp_monster_book_f2.png",
+        "native/sp_monster_book_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_monster_book_right_f0.png",
+        "native/sp_monster_book_right_f1.png",
+        "native/sp_monster_book_right_f2.png",
+        "native/sp_monster_book_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_monster_book.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_monster_book.png",
+          "alternate": "thumbnails/2x/sp_monster_book_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_monster_book.png",
+          "alternate": "thumbnails/3x/sp_monster_book_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/sp_monster_book.png",
+      "sourceSha256": "bb376efb69566238485a2eee7cc90de2d5e8a0104cb6f32511f7fedffc72ec8f",
+      "pngSha256": {
+        "native/sp_monster_book.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
+        "native/sp_monster_book_right.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
+        "native/sp_monster_book_f0.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
+        "native/sp_monster_book_f1.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
+        "native/sp_monster_book_f2.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
+        "native/sp_monster_book_f3.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
+        "native/sp_monster_book_right_f0.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
+        "native/sp_monster_book_right_f1.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
+        "native/sp_monster_book_right_f2.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
+        "native/sp_monster_book_right_f3.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
+        "spritesheets/sp_monster_book.png": "2f1184cb8cf3184ca755e407badcbecd2349226fba6245ff7cb92b10f162be74",
+        "thumbnails/2x/sp_monster_book.png": "02b272a62ca0c227cc123f1d7d35b0f8b7dc2a40491142025e577bd87fddffa8",
+        "thumbnails/2x/sp_monster_book_right.png": "865ab3d4a1d597ba1661a48952f9f1263adb88f2e156b3d983ca3bab91fbfa68",
+        "thumbnails/3x/sp_monster_book.png": "59f87224a7580c48cae5db13a0850aa87de33ff224d31efae7d96c49fe97421f",
+        "thumbnails/3x/sp_monster_book_right.png": "bb905d9a6081aa915a1033f67ace1f7ea22dc2eaa3f92835476a49efb01f086e"
+      }
+    },
+    {
+      "id": "sp_deathday_cake",
+      "label": "Bánh ngày giỗ Nick Suýt Mất Đầu",
+      "group": "Halloween Hogwarts",
+      "subject": "A miniature decoration inspired by Nearly Headless Nick's 500th Deathday party: a large grey tombstone-shaped CAKE on an old silver platter atop a small dark wooden buffet table, exactly five tall black candles with small blue-violet flames, a few crumbs. Cake has NO writing or numbers, no rotting food, no corpse, no ghost figure.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 50,
+              "y": 4,
+              "w": 7,
+              "h": 13
+            },
+            "pixelCount": 63,
+            "mappableCount": 63,
+            "maxPixels": 1092,
+            "rootBand": 108
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 105,
+              "y": 21,
+              "w": 8,
+              "h": 12
+            },
+            "pixelCount": 66,
+            "mappableCount": 66,
+            "maxPixels": 832,
+            "rootBand": 108
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 2,
+        "chapter": 8,
+        "term": "cake",
+        "lore": "Bánh hình bia mộ trong bữa tiệc ngày giỗ lần thứ 500 của Nick."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 128,
+      "height": 144,
+      "pivot": {
+        "x": 64,
+        "y": 140
+      },
+      "defaultFile": "native/sp_deathday_cake.png",
+      "rightFile": "native/sp_deathday_cake_right.png",
+      "defaultFrames": [
+        "native/sp_deathday_cake_f0.png",
+        "native/sp_deathday_cake_f1.png",
+        "native/sp_deathday_cake_f2.png",
+        "native/sp_deathday_cake_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_deathday_cake_right_f0.png",
+        "native/sp_deathday_cake_right_f1.png",
+        "native/sp_deathday_cake_right_f2.png",
+        "native/sp_deathday_cake_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_deathday_cake.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_deathday_cake.png",
+          "alternate": "thumbnails/2x/sp_deathday_cake_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_deathday_cake.png",
+          "alternate": "thumbnails/3x/sp_deathday_cake_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_deathday_cake.png",
+      "sourceSha256": "3d1afda739281443d8cb85cd2779d2c23b8cd2f6a7f9b8a6fdba1c68679d7225",
+      "pngSha256": {
+        "native/sp_deathday_cake.png": "38f2b14e032fe5a942622a176a00c71a7fecbf027ca16f29f0f8c1f3b5e3f7c6",
+        "native/sp_deathday_cake_right.png": "62f2b58bb898db041790c3289f99526306212e13c06ea2518135ca09abdf1624",
+        "native/sp_deathday_cake_f0.png": "38f2b14e032fe5a942622a176a00c71a7fecbf027ca16f29f0f8c1f3b5e3f7c6",
+        "native/sp_deathday_cake_f1.png": "d1ba549056f0f668f9cf1409d85f9df777ccb759f52aafc4fdb825d6b5514586",
+        "native/sp_deathday_cake_f2.png": "bd90fb34177ace43bfe4d41eaae690a8721121d072456e3be8d4f172a8be821b",
+        "native/sp_deathday_cake_f3.png": "38f2b14e032fe5a942622a176a00c71a7fecbf027ca16f29f0f8c1f3b5e3f7c6",
+        "native/sp_deathday_cake_right_f0.png": "62f2b58bb898db041790c3289f99526306212e13c06ea2518135ca09abdf1624",
+        "native/sp_deathday_cake_right_f1.png": "1a7913c15913fc9ae7475b468b9850a7b684013d16bd89e1eb225d74a3bcaee3",
+        "native/sp_deathday_cake_right_f2.png": "fb1aee0fcdd91f69e93c277a857ed9ed509857c466920ff7760fed278cc101fd",
+        "native/sp_deathday_cake_right_f3.png": "62f2b58bb898db041790c3289f99526306212e13c06ea2518135ca09abdf1624",
+        "spritesheets/sp_deathday_cake.png": "24596f644640a348fc08aaf681c44cf3d30d0e4457d51736d9f1e464747d31c3",
+        "thumbnails/2x/sp_deathday_cake.png": "3d69664cee2719b2bbd62a7723afa84694f00c45a733730872d5a176b97636ff",
+        "thumbnails/2x/sp_deathday_cake_right.png": "f4a20a19afee4ac40859511b0b38515beb993dc45e967311db6f627a0f719fe3",
+        "thumbnails/3x/sp_deathday_cake.png": "adeeef8e5151b8b96d33cc99f0ba45e55057ad39c2cda7127fc04a403181b83f",
+        "thumbnails/3x/sp_deathday_cake_right.png": "40334d12c41768c720d2bc49f0f5178a565dba1635204993aa8e87ffada30e90"
+      }
+    },
+    {
+      "id": "sp_marauders_map",
+      "label": "Bản đồ của Đạo tặc",
+      "group": "Hành trình phép thuật",
+      "subject": "The Marauder's Map spread open and partly folded on a small dark wooden map display table: aged parchment with tiny dark line floorplans of Hogwarts, staircase-like paths and a few tiny ink FOOTPRINT pairs; no words, no names, no readable labels. Copper corner clips and a quill. Map remains clearly the centerpiece.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Dấu chân và nét bản đồ là ký hiệu minh họa trong sprite.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 51,
+              "y": 36,
+              "w": 38,
+              "h": 30
+            },
+            "pixelCount": 440,
+            "mappableCount": 440,
+            "maxPixels": 827,
+            "rootBand": 84
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 60,
+              "y": 48,
+              "w": 32,
+              "h": 21
+            },
+            "pixelCount": 107,
+            "mappableCount": 107,
+            "maxPixels": 612,
+            "rootBand": 84
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": {
+        "book": 3,
+        "chapter": 10,
+        "term": "map",
+        "lore": "Fred và George trao cho Harry bản đồ các lối đi bí mật Hogwarts."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 128,
+      "height": 112,
+      "pivot": {
+        "x": 64,
+        "y": 108
+      },
+      "defaultFile": "native/sp_marauders_map.png",
+      "rightFile": "native/sp_marauders_map_right.png",
+      "defaultFrames": [
+        "native/sp_marauders_map_f0.png",
+        "native/sp_marauders_map_f1.png",
+        "native/sp_marauders_map_f2.png",
+        "native/sp_marauders_map_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_marauders_map_right_f0.png",
+        "native/sp_marauders_map_right_f1.png",
+        "native/sp_marauders_map_right_f2.png",
+        "native/sp_marauders_map_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_marauders_map.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_marauders_map.png",
+          "alternate": "thumbnails/2x/sp_marauders_map_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_marauders_map.png",
+          "alternate": "thumbnails/3x/sp_marauders_map_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_marauders_map.png",
+      "sourceSha256": "e46ab4c709e65caae73be9b3ac1c8144004169947e944dc6061631cdd7570a9a",
+      "pngSha256": {
+        "native/sp_marauders_map.png": "0196a1973c15516e33617a14877688ef2f01f1e226293b87e8d1768111559c1e",
+        "native/sp_marauders_map_right.png": "520d9b1f549a6ca7ff27b67d6e1cd6ce057a9c10eff294d43e704cd5291f16d6",
+        "native/sp_marauders_map_f0.png": "0196a1973c15516e33617a14877688ef2f01f1e226293b87e8d1768111559c1e",
+        "native/sp_marauders_map_f1.png": "123e1c6698bd508c1f3649ce270f444ae43c8295ea386f24b9622aa3bd25d040",
+        "native/sp_marauders_map_f2.png": "123e1c6698bd508c1f3649ce270f444ae43c8295ea386f24b9622aa3bd25d040",
+        "native/sp_marauders_map_f3.png": "0196a1973c15516e33617a14877688ef2f01f1e226293b87e8d1768111559c1e",
+        "native/sp_marauders_map_right_f0.png": "520d9b1f549a6ca7ff27b67d6e1cd6ce057a9c10eff294d43e704cd5291f16d6",
+        "native/sp_marauders_map_right_f1.png": "66f4f49552c3064119af885efa62d0a2837db271b832536154a32f5962294cc6",
+        "native/sp_marauders_map_right_f2.png": "66f4f49552c3064119af885efa62d0a2837db271b832536154a32f5962294cc6",
+        "native/sp_marauders_map_right_f3.png": "520d9b1f549a6ca7ff27b67d6e1cd6ce057a9c10eff294d43e704cd5291f16d6",
+        "spritesheets/sp_marauders_map.png": "2ac1eb852cb9fedd8d80e7209d96aa39f745e27c238e6d6b4dee92c81339937e",
+        "thumbnails/2x/sp_marauders_map.png": "f1e0a0988fd206ded235fd190d4968c195db23f6d83480320e0552c3446f7b3d",
+        "thumbnails/2x/sp_marauders_map_right.png": "8798002e9fea0556bb2f705384d07d2a178df4ffdce2e9aec02a498dc5e95ff5",
+        "thumbnails/3x/sp_marauders_map.png": "a32cf19f518ed5749f0aa71e71b6f5d0b6a11af1ee2d01e0a2d6e0c2e7457780",
+        "thumbnails/3x/sp_marauders_map_right.png": "9654b4acb78078edc57efe01b64dee9b4ca7679c046dcac5563a2c9122171783"
+      }
+    },
+    {
+      "id": "sp_time_turner",
+      "label": "Cái Xoay Thời Gian",
+      "group": "Hành trình phép thuật",
+      "subject": "Hermione's golden Time-Turner: a miniature hourglass enclosed within TWO nested circular gold rings, suspended on a fine gold chain from a small dark wooden stand. Sand visible in hourglass, delicate but chunky readable pixel geometry, no clock face, no numerals, no other jewelry.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Hoa văn/khung trang sức là diễn giải tạo hình, không phải chi tiết mô tả nguyên văn trong chương được dẫn.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 41,
+              "y": 74,
+              "w": 3,
+              "h": 3
+            },
+            "pixelCount": 7,
+            "mappableCount": 7,
+            "maxPixels": 596,
+            "rootBand": 96
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 51,
+              "y": 64,
+              "w": 1,
+              "h": 7
+            },
+            "pixelCount": 7,
+            "mappableCount": 7,
+            "maxPixels": 417,
+            "rootBand": 96
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "warm",
+          "stone",
+          "wood"
+        ],
+        "colors": [
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 3,
+        "chapter": 21,
+        "term": "Time-Turner",
+        "lore": "Dụng cụ Hermione dùng cùng Harry để quay lại thời gian."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 88,
+      "height": 128,
+      "pivot": {
+        "x": 44,
+        "y": 124
+      },
+      "defaultFile": "native/sp_time_turner.png",
+      "rightFile": "native/sp_time_turner_right.png",
+      "defaultFrames": [
+        "native/sp_time_turner_f0.png",
+        "native/sp_time_turner_f1.png",
+        "native/sp_time_turner_f2.png",
+        "native/sp_time_turner_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_time_turner_right_f0.png",
+        "native/sp_time_turner_right_f1.png",
+        "native/sp_time_turner_right_f2.png",
+        "native/sp_time_turner_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_time_turner.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_time_turner.png",
+          "alternate": "thumbnails/2x/sp_time_turner_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_time_turner.png",
+          "alternate": "thumbnails/3x/sp_time_turner_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_time_turner.png",
+      "sourceSha256": "7687e0bcf50a282ff0ea4f14ebcc18322c0439148c8ba8c6097184527484f501",
+      "pngSha256": {
+        "native/sp_time_turner.png": "a7511ec46c82e98af700337d23a21223989ec70573692ad5f93014af66baed02",
+        "native/sp_time_turner_right.png": "a57c293b38cd17edeb9243aeafd38cd97718e3c545de042976937da668a91778",
+        "native/sp_time_turner_f0.png": "a7511ec46c82e98af700337d23a21223989ec70573692ad5f93014af66baed02",
+        "native/sp_time_turner_f1.png": "ba1864c369cc0d8b471770e37484da7a9ae06fef005cf96cc2c6256d8767bcdf",
+        "native/sp_time_turner_f2.png": "ba1864c369cc0d8b471770e37484da7a9ae06fef005cf96cc2c6256d8767bcdf",
+        "native/sp_time_turner_f3.png": "a7511ec46c82e98af700337d23a21223989ec70573692ad5f93014af66baed02",
+        "native/sp_time_turner_right_f0.png": "a57c293b38cd17edeb9243aeafd38cd97718e3c545de042976937da668a91778",
+        "native/sp_time_turner_right_f1.png": "03611f8b5af509cd2b39131c9bdfbe496862cd2ee7604feab00c2c4535078d7c",
+        "native/sp_time_turner_right_f2.png": "03611f8b5af509cd2b39131c9bdfbe496862cd2ee7604feab00c2c4535078d7c",
+        "native/sp_time_turner_right_f3.png": "a57c293b38cd17edeb9243aeafd38cd97718e3c545de042976937da668a91778",
+        "spritesheets/sp_time_turner.png": "43eafae227e4eb2bc8b21c10712ac6da83992fc976ed8a8302877bc61bb65df0",
+        "thumbnails/2x/sp_time_turner.png": "d844f4dd41c5816a36a53197a75869a92ba7d008a38a71f4a36805968c27d81f",
+        "thumbnails/2x/sp_time_turner_right.png": "81ab7bcc0f7154bede99d7b040a0dab4261bfbe19e05ff61b42a51e1d7a223f7",
+        "thumbnails/3x/sp_time_turner.png": "c630bc62ee8836cefc74b8939ff67c705892ef3f41644fd81fce5c3113bb58c8",
+        "thumbnails/3x/sp_time_turner_right.png": "bc0bbe212519f027172fc8547f4818c169b0a612e841b3c39caf9c3c8957abdc"
+      }
+    },
+    {
+      "id": "sp_deluminator",
+      "label": "Cái Tắt-Sáng",
+      "group": "Hành trình phép thuật",
+      "subject": "Dumbledore's Deluminator, a small old silver cigarette-lighter-shaped magical device with a hinged lid, open on a compact weathered timber pedestal, one little floating blue-white light hovering just above it. Fine engraved non-letter scrolls, no fire flame, no cigarette, no smoke, no letters.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 37,
+              "y": 4,
+              "w": 11,
+              "h": 15
+            },
+            "pixelCount": 66,
+            "mappableCount": 66,
+            "maxPixels": 432,
+            "rootBand": 78
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 32,
+              "y": 2,
+              "w": 10,
+              "h": 15
+            },
+            "pixelCount": 78,
+            "mappableCount": 78,
+            "maxPixels": 401,
+            "rootBand": 78
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 7,
+        "chapter": 7,
+        "term": "Deluminator",
+        "lore": "Dumbledore để lại dụng cụ thu ánh sáng cho Ron."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 80,
+      "height": 104,
+      "pivot": {
+        "x": 40,
+        "y": 100
+      },
+      "defaultFile": "native/sp_deluminator.png",
+      "rightFile": "native/sp_deluminator_right.png",
+      "defaultFrames": [
+        "native/sp_deluminator_f0.png",
+        "native/sp_deluminator_f1.png",
+        "native/sp_deluminator_f2.png",
+        "native/sp_deluminator_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_deluminator_right_f0.png",
+        "native/sp_deluminator_right_f1.png",
+        "native/sp_deluminator_right_f2.png",
+        "native/sp_deluminator_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_deluminator.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_deluminator.png",
+          "alternate": "thumbnails/2x/sp_deluminator_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_deluminator.png",
+          "alternate": "thumbnails/3x/sp_deluminator_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_deluminator.png",
+      "sourceSha256": "ccc91665f4d3fb286d64f0ecab259784e7dea0b1946c83fbd4b1911db3489761",
+      "pngSha256": {
+        "native/sp_deluminator.png": "ec8445d7aecbd75e59cf1b1cffeed9e6981bf5adc04c9904bf3907855c2a6d21",
+        "native/sp_deluminator_right.png": "75ec3bc62bedd6adad7f9a7f6c53066c89f0b01b7bd01664699e3e611aa722d3",
+        "native/sp_deluminator_f0.png": "ec8445d7aecbd75e59cf1b1cffeed9e6981bf5adc04c9904bf3907855c2a6d21",
+        "native/sp_deluminator_f1.png": "bdf0c7877dfe87b4e5826c97e0c4021ee9be82a4c07b4abc362f3034f90f766c",
+        "native/sp_deluminator_f2.png": "75ceb4be11f1d4d0dfad833addac89e989e2c01d7054c760fd862f6a8734abfb",
+        "native/sp_deluminator_f3.png": "ec8445d7aecbd75e59cf1b1cffeed9e6981bf5adc04c9904bf3907855c2a6d21",
+        "native/sp_deluminator_right_f0.png": "75ec3bc62bedd6adad7f9a7f6c53066c89f0b01b7bd01664699e3e611aa722d3",
+        "native/sp_deluminator_right_f1.png": "b25f125768ec0e539dadd1bfbf389a41df7f984537815afe78cf15f0ab1063f4",
+        "native/sp_deluminator_right_f2.png": "3434f535da6949312ed4a65ba316f37b5367eb9a3ff4be8e9fbc449d9ad52fea",
+        "native/sp_deluminator_right_f3.png": "75ec3bc62bedd6adad7f9a7f6c53066c89f0b01b7bd01664699e3e611aa722d3",
+        "spritesheets/sp_deluminator.png": "3ea0bc583049052ff90e1a4c4e3ab96c9ff387c1082083f0ae91300c15f672a1",
+        "thumbnails/2x/sp_deluminator.png": "0941e84f65fe1cbd20c30eba3c7e6ba4a299225b7466e3e77c57d6bc26c3ec0d",
+        "thumbnails/2x/sp_deluminator_right.png": "0840b3a98e5d72d48da11e4154e5eaf40b58c5eaece9136be302e0591689816d",
+        "thumbnails/3x/sp_deluminator.png": "b4607cd1e5815b2b874056230256544c39f7538098b904a3e7fed8088275cb27",
+        "thumbnails/3x/sp_deluminator_right.png": "7785c8538bca1c59819f415d933af7c75b822b9018da52f0301c13e4b1205871"
+      }
+    },
+    {
+      "id": "sp_snitch_resurrection_stone",
+      "label": "Snitch giữ Hòn Đá Phục Sinh",
+      "group": "Hành trình phép thuật",
+      "subject": "The golden Snitch containing the Resurrection Stone: a small round gold ball with two delicate long silver wings, split slightly open to reveal a small cracked black stone within, resting on a simple low dark timber display mount. No text or inscription, no other balls, no human hands. Wings intact and symmetric.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 50,
+              "y": 44,
+              "w": 9,
+              "h": 11
+            },
+            "pixelCount": 42,
+            "mappableCount": 42,
+            "maxPixels": 449,
+            "rootBand": 78
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 56,
+              "y": 52,
+              "w": 5,
+              "h": 5
+            },
+            "pixelCount": 18,
+            "mappableCount": 18,
+            "maxPixels": 396,
+            "rootBand": 78
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "warm",
+          "stone",
+          "wood"
+        ],
+        "colors": [
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 7,
+        "chapter": 34,
+        "term": "Snitch",
+        "lore": "Harry mở quả Snitch trước khi đi vào Rừng Cấm."
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 128,
+      "height": 104,
+      "pivot": {
+        "x": 64,
+        "y": 100
+      },
+      "defaultFile": "native/sp_snitch_resurrection_stone.png",
+      "rightFile": "native/sp_snitch_resurrection_stone_right.png",
+      "defaultFrames": [
+        "native/sp_snitch_resurrection_stone_f0.png",
+        "native/sp_snitch_resurrection_stone_f1.png",
+        "native/sp_snitch_resurrection_stone_f2.png",
+        "native/sp_snitch_resurrection_stone_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_snitch_resurrection_stone_right_f0.png",
+        "native/sp_snitch_resurrection_stone_right_f1.png",
+        "native/sp_snitch_resurrection_stone_right_f2.png",
+        "native/sp_snitch_resurrection_stone_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_snitch_resurrection_stone.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_snitch_resurrection_stone.png",
+          "alternate": "thumbnails/2x/sp_snitch_resurrection_stone_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_snitch_resurrection_stone.png",
+          "alternate": "thumbnails/3x/sp_snitch_resurrection_stone_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_snitch_resurrection_stone.png",
+      "sourceSha256": "dc48cb6876f0b79e8fde2f7fc7ac5d41598c87ee3f0e525f6e46a96e63573bd4",
+      "pngSha256": {
+        "native/sp_snitch_resurrection_stone.png": "443b9da40b823f2917fbc0de86cc9e3fc110bea8cc017210f00084037317c442",
+        "native/sp_snitch_resurrection_stone_right.png": "beab7ffc474fdb847d1fece42518ef079e7267dad8264cbadacc9766ee010ae0",
+        "native/sp_snitch_resurrection_stone_f0.png": "443b9da40b823f2917fbc0de86cc9e3fc110bea8cc017210f00084037317c442",
+        "native/sp_snitch_resurrection_stone_f1.png": "ce11cb5941a61df0c9c036e9528008b1b9440b6550c76e47745700e0962cd518",
+        "native/sp_snitch_resurrection_stone_f2.png": "ce11cb5941a61df0c9c036e9528008b1b9440b6550c76e47745700e0962cd518",
+        "native/sp_snitch_resurrection_stone_f3.png": "443b9da40b823f2917fbc0de86cc9e3fc110bea8cc017210f00084037317c442",
+        "native/sp_snitch_resurrection_stone_right_f0.png": "beab7ffc474fdb847d1fece42518ef079e7267dad8264cbadacc9766ee010ae0",
+        "native/sp_snitch_resurrection_stone_right_f1.png": "37837674a1dd60692c1739d2e81c564b662f6cbeae418f526d91e3cae511884e",
+        "native/sp_snitch_resurrection_stone_right_f2.png": "37837674a1dd60692c1739d2e81c564b662f6cbeae418f526d91e3cae511884e",
+        "native/sp_snitch_resurrection_stone_right_f3.png": "beab7ffc474fdb847d1fece42518ef079e7267dad8264cbadacc9766ee010ae0",
+        "spritesheets/sp_snitch_resurrection_stone.png": "5f6ff416a4114bf16d47362263dbe13a2269f25b48fc307f381b9282f6f10157",
+        "thumbnails/2x/sp_snitch_resurrection_stone.png": "0b66b42a07456f3d10add47cf889eb9e675ef925c82d970554135ec868ec1fec",
+        "thumbnails/2x/sp_snitch_resurrection_stone_right.png": "aac445222196bd3fb4cad3916eb53a142b392cccb71a12facc3fe9af393f482a",
+        "thumbnails/3x/sp_snitch_resurrection_stone.png": "111ac8961aca02a55e9c6a5154ad003471548bc96b3249ae35e4c3d066db7837",
+        "thumbnails/3x/sp_snitch_resurrection_stone_right.png": "23e22cbde44bd58dd3fda8cb5f17b197b48be79ac52a79d33b8b736c2069a044"
+      }
+    },
+    {
+      "id": "sp_sword_gryffindor",
+      "label": "Thanh gươm Gryffindor",
+      "group": "Hành trình phép thuật",
+      "subject": "The Sword of Godric Gryffindor displayed upright in a low weathered carved stone sword stand: long gleaming silver double-edged blade, silver crossguard and pommel inset with large dark ruby gemstones, elegant goblin-made craftsmanship. No readable inscription, no person, no shield, no blood. Entire sword fully visible.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 48,
+              "y": 7,
+              "w": 2,
+              "h": 4
+            },
+            "pixelCount": 5,
+            "mappableCount": 5,
+            "maxPixels": 741,
+            "rootBand": 132
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 48,
+              "y": 5,
+              "w": 1,
+              "h": 2
+            },
+            "pixelCount": 2,
+            "mappableCount": 2,
+            "maxPixels": 692,
+            "rootBand": 132
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "fire",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": {
+        "book": 2,
+        "chapter": 17,
+        "term": "sword",
+        "lore": "Thanh gươm xuất hiện từ Nón Phân Loại trong trận đối đầu Tử Xà."
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 104,
+      "height": 176,
+      "pivot": {
+        "x": 52,
+        "y": 172
+      },
+      "defaultFile": "native/sp_sword_gryffindor.png",
+      "rightFile": "native/sp_sword_gryffindor_right.png",
+      "defaultFrames": [
+        "native/sp_sword_gryffindor_f0.png",
+        "native/sp_sword_gryffindor_f1.png",
+        "native/sp_sword_gryffindor_f2.png",
+        "native/sp_sword_gryffindor_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_sword_gryffindor_right_f0.png",
+        "native/sp_sword_gryffindor_right_f1.png",
+        "native/sp_sword_gryffindor_right_f2.png",
+        "native/sp_sword_gryffindor_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_sword_gryffindor.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_sword_gryffindor.png",
+          "alternate": "thumbnails/2x/sp_sword_gryffindor_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_sword_gryffindor.png",
+          "alternate": "thumbnails/3x/sp_sword_gryffindor_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_sword_gryffindor.png",
+      "sourceSha256": "7235e3fb76a5552e1877a8da9bd27e238f3ebd256fb75ea8ece076ee7b282d8d",
+      "pngSha256": {
+        "native/sp_sword_gryffindor.png": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
+        "native/sp_sword_gryffindor_right.png": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
+        "native/sp_sword_gryffindor_f0.png": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
+        "native/sp_sword_gryffindor_f1.png": "af544d07028dcd65ee0498ffe5e202383dbcc25b51b37919ed7c66f94539475e",
+        "native/sp_sword_gryffindor_f2.png": "c0c6175dbb6ebe2cc49692c5c6cafc98c63fa8bc0b597b28ada5bf83a8db3a21",
+        "native/sp_sword_gryffindor_f3.png": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
+        "native/sp_sword_gryffindor_right_f0.png": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
+        "native/sp_sword_gryffindor_right_f1.png": "02dbdbc447ca6adba4219ef90dd226f4fd639bebe823a3727183ec67e394e185",
+        "native/sp_sword_gryffindor_right_f2.png": "3bb490be3870f05bcc68b9bd4932adc99a5021f3b9755d8eae48852af0e6e5c0",
+        "native/sp_sword_gryffindor_right_f3.png": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
+        "spritesheets/sp_sword_gryffindor.png": "277899f0d0e7d1ce092d714bf9788b3c94a308c5d671e754f56ab90ec084cb4e",
+        "thumbnails/2x/sp_sword_gryffindor.png": "ed85043f331d1ea79489b1dac5cd7eab9d60b2dbe11bd47e3b768205bc3262a7",
+        "thumbnails/2x/sp_sword_gryffindor_right.png": "573cb916f2fe706fd7dc7b665f70f899b22a70f9d745b33249f20190a0f0571e",
+        "thumbnails/3x/sp_sword_gryffindor.png": "ed8350395d5363c7ad56d6794080f7ae698870e1812aa592986489d5e1ffe641",
+        "thumbnails/3x/sp_sword_gryffindor_right.png": "3617234d809d20a49a566be8a45c7e375f90b091ce29319b0a3ac0cc43aae39b"
+      }
+    },
+    {
+      "id": "sp_knight_bus",
+      "label": "Xe Đò Hiệp Sĩ",
+      "group": "Hành trình phép thuật",
+      "subject": "The Knight Bus from Harry Potter: a compact collectible miniature PURPLE TRIPLE-DECKER bus, exactly THREE stacked levels of windows, narrow tall vintage body, black wheels, round amber headlights, side passenger door. No writing, no license plate text, no scenery, no people. Very clearly three levels, not two.",
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 48,
+              "y": 3,
+              "w": 92,
+              "h": 26
+            },
+            "pixelCount": 887,
+            "mappableCount": 887,
+            "maxPixels": 2399,
+            "rootBand": 132
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 45,
+              "y": 8,
+              "w": 62,
+              "h": 24
+            },
+            "pixelCount": 665,
+            "mappableCount": 665,
+            "maxPixels": 2316,
+            "rootBand": 132
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "magic",
+          "stone",
+          "warm"
+        ],
+        "colors": [
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "bookReference": {
+        "book": 3,
+        "chapter": 3,
+        "term": "Knight Bus",
+        "lore": "Chiếc xe buýt ba tầng đón Harry sau khi rời nhà Dursley."
+      },
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "width": 160,
+      "height": 176,
+      "pivot": {
+        "x": 80,
+        "y": 172
+      },
+      "defaultFile": "native/sp_knight_bus.png",
+      "rightFile": "native/sp_knight_bus_right.png",
+      "defaultFrames": [
+        "native/sp_knight_bus_f0.png",
+        "native/sp_knight_bus_f1.png",
+        "native/sp_knight_bus_f2.png",
+        "native/sp_knight_bus_f3.png"
+      ],
+      "rightFrames": [
+        "native/sp_knight_bus_right_f0.png",
+        "native/sp_knight_bus_right_f1.png",
+        "native/sp_knight_bus_right_f2.png",
+        "native/sp_knight_bus_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/sp_knight_bus.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/sp_knight_bus.png",
+          "alternate": "thumbnails/2x/sp_knight_bus_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/sp_knight_bus.png",
+          "alternate": "thumbnails/3x/sp_knight_bus_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/sp_knight_bus.png",
+      "sourceSha256": "a0e874cfb6f629240845ce5942049055ebdc9a13a51edf7f30d31eb6c743ab70",
+      "pngSha256": {
+        "native/sp_knight_bus.png": "48e65c7ba8119860ade102c7155df49086b0b09ee541c52440ef34bcaef348e3",
+        "native/sp_knight_bus_right.png": "7dcf9e6d864bab77f81f8ba35fd662e89be2402c4ce2f29f9532551c6fb28c11",
+        "native/sp_knight_bus_f0.png": "48e65c7ba8119860ade102c7155df49086b0b09ee541c52440ef34bcaef348e3",
+        "native/sp_knight_bus_f1.png": "bdd8eba9c285d872e317553f68ab3b6b9102442765edce88caab31a80f178a4c",
+        "native/sp_knight_bus_f2.png": "762a07dc4192307518b85b6c34ae8637032aef7a287ac7339faa74c025d258a9",
+        "native/sp_knight_bus_f3.png": "48e65c7ba8119860ade102c7155df49086b0b09ee541c52440ef34bcaef348e3",
+        "native/sp_knight_bus_right_f0.png": "7dcf9e6d864bab77f81f8ba35fd662e89be2402c4ce2f29f9532551c6fb28c11",
+        "native/sp_knight_bus_right_f1.png": "87c7a1098709562b6f47e8d34aba48554529f3bda669f932da2a81d33bd3d17d",
+        "native/sp_knight_bus_right_f2.png": "f7adea677aab9f4c8395bb8d1c77725c8d1c767f0e30b6f334db031297e74688",
+        "native/sp_knight_bus_right_f3.png": "7dcf9e6d864bab77f81f8ba35fd662e89be2402c4ce2f29f9532551c6fb28c11",
+        "spritesheets/sp_knight_bus.png": "fd22aa98b329caca63de1e9d4fa08e2ee21f4ee9f647a5f4f0eeb15872b8a953",
+        "thumbnails/2x/sp_knight_bus.png": "db8813604e3ad73f4f8c8a12d08a4826477b5467f5441aee2353fae0936f12ef",
+        "thumbnails/2x/sp_knight_bus_right.png": "88be3e992de3743845c4904f9cdab0821375864f8dfd226ef5bc03092dd4409e",
+        "thumbnails/3x/sp_knight_bus.png": "345628dc7403e8fbf14dc3dd10d387c6c8f6e13e7b927177755548bef6d54cf9",
+        "thumbnails/3x/sp_knight_bus_right.png": "48da2c4a33732fa75410acf426c5c2e0c68bb36e3a3dd6c77c0101a508acb4b0"
+      }
+    }
+  ],
+  "qa": {
+    "validation": "qa/validation.json",
+    "contactSheet": "qa/contact-sheet.png"
+  },
+  "preview": "preview.html"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "items": 30,
+  "views": 60,
+  "nativePNGs": 300,
+  "hashedOutputFiles": 450,
+  "sourceHashes": 30,
+  "animated": 22,
+  "static": 8,
+  "browserPreview": "file protocol blocked; no browser/mobile/runtime proof",
+  "gameIntegration": "not performed"
+}

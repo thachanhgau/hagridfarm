@@ -1,0 +1,100 @@
+{
+  "audit": "hagrid-special-products-v1",
+  "date": "2026-10-20",
+  "scope": "Book-lore and Vietnamese terminology audit of the 30 supplied premium product prompts.",
+  "sources": [
+    "HPVNN/resource/FullHP/HP1_EN.txt",
+    "HPVNN/resource/FullHP/HP1_VN.txt",
+    "HPVNN/resource/FullHP/HP2_EN.txt",
+    "HPVNN/resource/FullHP/HP2_VN.txt",
+    "HPVNN/resource/FullHP/HP3_EN.txt",
+    "HPVNN/resource/FullHP/HP3_VN.txt",
+    "HPVNN/resource/FullHP/HP4_VN.txt",
+    "HPVNN/resource/FullHP/HP6_EN.txt",
+    "HPVNN/resource/FullHP/HP6_VN.txt",
+    "HPVNN/resource/FullHP/HP7_EN.txt",
+    "HPVNN/resource/FullHP/HP7_VN.txt"
+  ],
+  "findings": [
+    {
+      "id": "sp_chamber_serpent_door",
+      "severity": "high",
+      "issue": "Chapter 16 and the two-serpent motif are correct, but the book describes a solid stone wall with two entwined serpents and emerald eyes. A circular door with one central snake head changes the defining book silhouette.",
+      "recommendation": "Keep the two entwined serpents and emerald eyes. A freestanding garden-monument presentation is fine as display art, but do not make a central head the primary motif.",
+      "refs": [
+        "HP2_EN:5314",
+        "HP2_EN:5780-5788",
+        "HP2_VN:8192",
+        "HP2_VN:8898-8908"
+      ]
+    },
+    {
+      "id": "sp_hand_glory",
+      "severity": "medium",
+      "issue": "The book says to insert a candle into the withered hand; it does not establish a normal thumb-and-forefinger candle grip.",
+      "recommendation": "Render one candle inserted into the upright hand/palm. Keep the preserved-hand stylization and isolated flame.",
+      "refs": [
+        "HP2_EN:827",
+        "HP2_EN:1009-1011",
+        "HP2_VN:1206",
+        "HP2_VN:1484"
+      ]
+    },
+    {
+      "id": "sp_fawkes_perch",
+      "severity": "medium",
+      "issue": "The book's anchor colors are red/scarlet and gold. The prompt's orange body drifts from that description.",
+      "recommendation": "Use scarlet/crimson red and gold plumage, with the book-supported golden tail, talons, and beak.",
+      "refs": [
+        "HP2_EN:3835",
+        "HP2_EN:3875",
+        "HP2_EN:5964-5966",
+        "HP2_EN:6132",
+        "HP2_VN:5954",
+        "HP2_VN:6016",
+        "HP2_VN:9165-9167"
+      ]
+    },
+    {
+      "id": "sp_norbert_egg",
+      "severity": "low",
+      "issue": "The egg color is correct: the book calls it huge and black. The amber hairline crack is a visual embellishment; the hatching scene only establishes deep cracks.",
+      "recommendation": "Keep the single large black egg. If a stricter book cue is wanted, use deep cracks visible in firelight rather than an amber glowing hairline.",
+      "refs": [
+        "HP1_EN:4434",
+        "HP1_EN:4524",
+        "HP1_EN:4562",
+        "HP1_VN:5770",
+        "HP1_VN:5914",
+        "HP1_VN:5972"
+      ]
+    },
+    {
+      "id": "vn-canonical-names",
+      "severity": "medium",
+      "issue": "Several Vietnamese labels use descriptive variants instead of the local book forms.",
+      "recommendation": "Prefer Pensieve = 'Cái Tưởng Ký'/'cái chậu Tưởng Ký'; Erised = 'Tấm gương Ảo Ảnh' (already correct); Vanishing Cabinet = 'Tủ Biến Mất' (already correct); Deluminator = 'Cái Tắt-Sáng'; Time-Turner = 'Cái Xoay Thời Gian'; Marauder's Map = 'Bản đồ của Đạo tặc'. The tiny hourglass on a fine gold chain is the definite book anchor for the Time-Turner; nested rings can remain an art rendering.",
+      "refs": [
+        "HP4_VN:15552",
+        "HP4_VN:15972",
+        "HP4_VN:15980",
+        "HP1_VN:4903",
+        "HP6_VN:9653",
+        "HP6_VN:10830-10838",
+        "HP7_VN:2280-2282",
+        "HP3_VN:5290",
+        "HP3_VN:5544-5546",
+        "HP3_VN:11222",
+        "HP3_EN:7584-7588"
+      ]
+    }
+  ],
+  "verified_notes": [
+    "Ravenclaw diadem chapter 31 is correct for the specified Room of Requirement object scene and destruction: chapter 29 is the clue/statue appearance; chapter 31 contains the hidden-object hunt, ancient discolored tiara, and destruction (HP7_EN:10466, HP7_EN:10788, HP7_EN:11192, HP7_EN:11516-11732; HP7_VN:10464, HP7_VN:10790, HP7_VN:11198, HP7_VN:11612-11740).",
+    "The Gaunt ring prompt is lore-linked: book 6 identifies the Peverell coat of arms on the cracked black stone, and book 7 explains the triangle-circle-line Deathly Hallows symbol and its Peverell connection (HP6_EN:1123,3779; HP7_EN:7405-7409,7473-7483,7795-7799).",
+    "The Sorting Hat's four-legged stool, patched/frayed/dirty hat, and mouth-like brim rip are book-supported. Brown color, face folds, and crooked tip are reasonable art direction rather than contradictions (HP1_EN:2171,2231-2233).",
+    "The Mirror of Erised's chapter, Vietnamese name, ceiling-high ornate gold frame, and two clawed feet are supported. Arched top, blue-grey glass, stands, and no-readable-text treatment are display choices (HP1_EN:3768,4008; HP1_VN:4903).",
+    "Vanishing Cabinet chapter 27 and the Vietnamese name Tủ Biến Mất are supported by the Draco repair and paired-cabinet explanation (HP6_VN:9653,10830-10838).",
+    "Sirius's motorcycle is correctly a huge motorcycle in book 1 chapter 1. The chapter-1 prompt's no-sidecar choice is scene-specific; the same bike has a black sidecar in book 7 chapter 4 (HP1_EN:179-181; HP7_EN:617,785-797)."
+  ]
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "sp_hagrid_umbrella",
+    "book": 1,
+    "chapter": 4,
+    "heading": "=== CHAPTER 4: The Keeper Of The Keys ===",
+    "term": "umbrella",
+    "found": true
+  },
+  {
+    "id": "sp_norbert_egg",
+    "book": 1,
+    "chapter": 14,
+    "heading": "=== CHAPTER 14: Norbert the Norwegian Ridgeback ===",
+    "term": "egg",
+    "found": true
+  },
+  {
+    "id": "sp_sirius_motorbike",
+    "book": 1,
+    "chapter": 1,
+    "heading": "=== CHAPTER 1: The Boy Who Lived ===",
+    "term": "motorcycle",
+    "found": true
+  },
+  {
+    "id": "sp_whomping_anglia",
+    "book": 2,
+    "chapter": 5,
+    "heading": "=== CHAPTER 5: The Whomping Willow ===",
+    "term": "willow",
+    "found": true
+  },
+  {
+    "id": "sp_buckbeak_pumpkins",
+    "book": 3,
+    "chapter": 21,
+    "heading": "=== CHAPTER 21: Hermione’s Secret ===",
+    "term": "Buckbeak",
+    "found": true
+  },
+  {
+    "id": "sp_aragog_hollow",
+    "book": 2,
+    "chapter": 15,
+    "heading": "=== CHAPTER 15: Aragog ===",
+    "term": "Aragog",
+    "found": true
+  },
+  {
+    "id": "sp_mirror_erised",
+    "book": 1,
+    "chapter": 12,
+    "heading": "=== CHAPTER 12: The Mirror Of Erised ===",
+    "term": "Erised",
+    "found": true
+  },
+  {
+    "id": "sp_sorting_hat",
+    "book": 1,
+    "chapter": 7,
+    "heading": "=== CHAPTER 7: The Sorting Hat ===",
+    "term": "hat",
+    "found": true
+  },
+  {
+    "id": "sp_goblet_fire",
+    "book": 4,
+    "chapter": 16,
+    "heading": "=== CHAPTER 16: The Goblet of Fire ===",
+    "term": "goblet",
+    "found": true
+  },
+  {
+    "id": "sp_pensieve",
+    "book": 4,
+    "chapter": 30,
+    "heading": "=== CHAPTER 30: The Pensieve ===",
+    "term": "Pensieve",
+    "found": true
+  },
+  {
+    "id": "sp_fawkes_perch",
+    "book": 2,
+    "chapter": 12,
+    "heading": "=== CHAPTER 12: The Polyjuice Potion ===",
+    "term": "Fawkes",
+    "found": true
+  },
+  {
+    "id": "sp_wizard_chess_knight",
+    "book": 1,
+    "chapter": 16,
+    "heading": "=== CHAPTER 16: Through the Trapdoor ===",
+    "term": "chess",
+    "found": true
+  },
+  {
+    "id": "sp_riddle_diary",
+    "book": 2,
+    "chapter": 17,
+    "heading": "=== CHAPTER 17: The Heir of Slytherin ===",
+    "term": "diary",
+    "found": true
+  },
+  {
+    "id": "sp_slytherin_locket",
+    "book": 7,
+    "chapter": 19,
+    "heading": "=== CHAPTER 19: The Silver Doe ===",
+    "term": "locket",
+    "found": true
+  },
+  {
+    "id": "sp_gaunt_ring",
+    "book": 6,
+    "chapter": 10,
+    "heading": "=== CHAPTER 10: The House of Gaunt ===",
+    "term": "ring",
+    "found": true
+  },
+  {
+    "id": "sp_hufflepuff_cup",
+    "book": 7,
+    "chapter": 26,
+    "heading": "=== CHAPTER 26: Gringotts ===",
+    "term": "cup",
+    "found": true
+  },
+  {
+    "id": "sp_ravenclaw_diadem",
+    "book": 7,
+    "chapter": 31,
+    "heading": "=== CHAPTER 31: The Battle Of Hogwarts ===",
+    "term": "diadem",
+    "found": true
+  },
+  {
+    "id": "sp_vanishing_cabinet",
+    "book": 6,
+    "chapter": 27,
+    "heading": "=== CHAPTER 27: The Lightning-Struck Tower ===",
+    "term": "cabinet",
+    "found": true
+  },
+  {
+    "id": "sp_hand_glory",
+    "book": 2,
+    "chapter": 4,
+    "heading": "=== CHAPTER 4: At Flourish and Blotts ===",
+    "term": "Hand of Glory",
+    "found": true
+  },
+  {
+    "id": "sp_cursed_opal_necklace",
+    "book": 6,
+    "chapter": 12,
+    "heading": "=== CHAPTER 12: Silver and Opals ===",
+    "term": "necklace",
+    "found": true
+  },
+  {
+    "id": "sp_chamber_serpent_door",
+    "book": 2,
+    "chapter": 16,
+    "heading": "=== CHAPTER 16: The Chamber of Secrets ===",
+    "term": "door",
+    "found": true
+  },
+  {
+    "id": "sp_department_veil",
+    "book": 5,
+    "chapter": 34,
+    "heading": "=== CHAPTER 34: The Department of Mysteries ===",
+    "term": "veil",
+    "found": true
+  },
+  {
+    "id": "sp_monster_book",
+    "book": 3,
+    "chapter": 1,
+    "heading": "=== CHAPTER 1: Owl Post ===",
+    "term": "Monster Book",
+    "found": true
+  },
+  {
+    "id": "sp_deathday_cake",
+    "book": 2,
+    "chapter": 8,
+    "heading": "=== CHAPTER 8: The Deathday Party ===",
+    "term": "cake",
+    "found": true
+  },
+  {
+    "id": "sp_marauders_map",
+    "book": 3,
+    "chapter": 10,
+    "heading": "=== CHAPTER 10: The Marauder’s Map ===",
+    "term": "map",
+    "found": true
+  },
+  {
+    "id": "sp_time_turner",
+    "book": 3,
+    "chapter": 21,
+    "heading": "=== CHAPTER 21: Hermione’s Secret ===",
+    "term": "Time-Turner",
+    "found": true
+  },
+  {
+    "id": "sp_deluminator",
+    "book": 7,
+    "chapter": 7,
+    "heading": "=== CHAPTER 7: The Will of Albus Dumbledore ===",
+    "term": "Deluminator",
+    "found": true
+  },
+  {
+    "id": "sp_snitch_resurrection_stone",
+    "book": 7,
+    "chapter": 34,
+    "heading": "=== CHAPTER 34: The Forest Again ===",
+    "term": "Snitch",
+    "found": true
+  },
+  {
+    "id": "sp_sword_gryffindor",
+    "book": 2,
+    "chapter": 17,
+    "heading": "=== CHAPTER 17: The Heir of Slytherin ===",
+    "term": "sword",
+    "found": true
+  },
+  {
+    "id": "sp_knight_bus",
+    "book": 3,
+    "chapter": 3,
+    "heading": "=== CHAPTER 3: The Knight Bus ===",
+    "term": "Knight Bus",
+    "found": true
+  }
+]
