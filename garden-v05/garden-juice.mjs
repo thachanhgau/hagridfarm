@@ -1,7 +1,7 @@
 // Reward feedback that lives above the canvas: "+N" chips fly from the plot or
 // creature into the Kho/level buttons, which then bump. Reduced motion keeps
 // the same chips but only fades them in place beside the target.
-import {el, visualItemIcon} from './ui-utils.mjs?v=24.9.55';
+import {el, visualItemIcon} from './ui-utils.mjs?v=24.9.56';
 
 /** Positive inventory changes between two progression snapshots, largest first. */
 export function rewardDeltas(before = {}, after = {}) {

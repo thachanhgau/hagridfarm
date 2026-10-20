@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {plantingAction} from './ui-utils.mjs?v=24.9.55';
+import {plantingAction} from './ui-utils.mjs?v=24.9.56';
 const ready={loaded:true,connected:true,walletReady:true,unlocked:true,occupied:false,cooling:false,typeCap:false,seedsLeft:27,waterLeft:9};
 test('plant button explains missing water and seeds without permitting a plant request',()=>{
  const water=plantingAction({...ready,waterLeft:0});

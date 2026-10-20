@@ -6,7 +6,7 @@ import motion from './motion-data.json' with {type: 'json'};
 import {GARDEN_STAGES} from './garden-growth.mjs';
 globalThis.FARM_SCENE = structuredClone(scene);
 globalThis.FARM_MOTION = motion;
-const {decorSpotProblem} = await import('./decor-placement-ui.mjs');
+const {decorSpotProblem, decorSpotGrid} = await import('./decor-placement-ui.mjs');
 
 const {iso} = await import('./scene-renderer.mjs');
 const {decorFootprintRect} = await import('./decor-runtime.mjs');
@@ -71,4 +71,14 @@ test('every special product fits somewhere in the full garden, in both views', (
   for (const item of manifest.items.filter(item => item.collection === 'special')) {
     for (const facing of ['default', 'right']) assert.ok(free(item.id, facing), `${item.id} ${facing}`);
   }
+});
+
+test('placement grid: green where the item fits, grey where it cannot, only on opened ground', () => {
+  const stage = GARDEN_STAGES[0];
+  const grid = decorSpotGrid(stage, ([c, r]) => decorSpotProblem(c, r, {map: scene, stage, state: {decorations: []}, decorations: {}, itemId: 'decor_cauldron', asset: assetOf('decor_cauldron'), iso}));
+  const ok = grid.filter(g => g.ok).length;
+  assert.ok(grid.every(g => g.at[0] <= stage.right && g.at[1] <= stage.bottom));
+  assert.ok(ok > 0 && ok < grid.length);
+  // A small piece may stand at the edge of a plot without counting as hiding it: about twice the ground of the old 12 px rule stays green.
+  assert.ok(ok / grid.length > 0.35, `${ok}/${grid.length}`);
 });

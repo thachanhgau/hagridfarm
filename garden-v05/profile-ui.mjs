@@ -1,4 +1,4 @@
-import {$,el,button} from './ui-utils.mjs?v=24.9.55';
+import {$,el,button} from './ui-utils.mjs?v=24.9.56';
 const avatars=['✿','☘','☾','✦','♧','♜'];
 export function setupProfile(notify,onClose){
  const key='hagrid-garden-v05'+(new URLSearchParams(location.search).get('qa')==='1'?'-qa':'')+'-profile';let profile={name:'Người làm vườn',avatar:'✿'};
