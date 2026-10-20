@@ -2,36 +2,10 @@
   "schema": "hagrid-farm.decor-assets.v1",
   "collection": "Halloween — Đêm hội bên chòi Hagrid",
   "version": 1,
-  "status": "partial",
+  "status": "complete",
   "expectedItemCount": 30,
-  "packagedItemCount": 5,
-  "missing": [
-    "hw_dead_bat_tree",
-    "hw_bat_lantern",
-    "hw_skull_lantern",
-    "hw_haunted_house_lantern",
-    "hw_ghost_orb",
-    "hw_spider_light_garland",
-    "hw_soul_bottle",
-    "hw_candy_cauldron",
-    "hw_halloween_potion_table",
-    "hw_monster_bookcase",
-    "hw_blinking_chest",
-    "hw_witch_hat_rack",
-    "hw_caramel_apple_cart",
-    "hw_grinning_stump",
-    "hw_skull_mushrooms",
-    "hw_eyeball_flowers",
-    "hw_owl_tree_hollow",
-    "hw_dewy_cobweb_frame",
-    "hw_pumpkin_spider_nest",
-    "hw_root_halloween_gate",
-    "hw_crooked_witch_hut",
-    "hw_mini_pumpkin_house",
-    "hw_ghost_well",
-    "hw_violet_mist_pond",
-    "hw_lantern_ancient_tree"
-  ],
+  "packagedItemCount": 30,
+  "missing": [],
   "palette": [
     "#231F2E",
     "#4A3042",
@@ -58,12 +32,12 @@
     "#70A8B6",
     "#B7DEE0"
   ],
-  "itemPaletteSource": null,
+  "itemPaletteSource": "item-palettes.json",
   "alphaThreshold": 192,
   "nativeCanvas": "per-item dimensions from specs.json; RGBA, binary alpha",
   "views": {
-    "default": "left half from master",
-    "alternate": "right half from master; never mirrored"
+    "default": "left view split at transparent central gap",
+    "alternate": "right view split at transparent central gap; never mirrored"
   },
   "items": [
     {
@@ -87,11 +61,11 @@
               "x": 31,
               "y": 24,
               "w": 26,
-              "h": 23
+              "h": 22
             },
-            "pixelCount": 253,
-            "mappableCount": 253,
-            "maxPixels": 657,
+            "pixelCount": 285,
+            "mappableCount": 285,
+            "maxPixels": 645,
             "rootBand": 84
           }
         },
@@ -101,14 +75,14 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 38,
-              "y": 22,
-              "w": 15,
+              "x": 27,
+              "y": 20,
+              "w": 16,
               "h": 18
             },
-            "pixelCount": 116,
-            "mappableCount": 116,
-            "maxPixels": 551,
+            "pixelCount": 151,
+            "mappableCount": 151,
+            "maxPixels": 571,
             "rootBand": 84
           }
         }
@@ -117,32 +91,24 @@
       "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
       "animationScope": "idle-only",
       "palette": {
-        "ramps": [],
+        "ramps": [
+          "wood",
+          "fire",
+          "green"
+        ],
         "colors": [
           "#231F2E",
           "#4A3042",
           "#735044",
           "#A57554",
-          "#41465C",
-          "#687486",
-          "#A6B1AE",
-          "#D6D8BF",
-          "#24483F",
-          "#3F6A45",
-          "#71934B",
-          "#B0BD67",
-          "#8B4A3F",
-          "#C97952",
-          "#E7AE73",
-          "#F5D69A",
           "#874056",
           "#C75B4B",
           "#ED8A45",
           "#FFC36B",
-          "#3E3B70",
-          "#6961A6",
-          "#70A8B6",
-          "#B7DEE0"
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
         ]
       },
       "bookReference": null,
@@ -190,21 +156,21 @@
       "source": "masters/hw_pumpkin_stack.png",
       "sourceSha256": "34da125518b3c43a2cad49074bf1b84bd6819adb9d75aa59a9e7db85cd600c8b",
       "pngSha256": {
-        "native/hw_pumpkin_stack.png": "45062cd5662ad5c05af02702d7fb15e14307ae20c4a2cbbabf6325e536ee1373",
-        "native/hw_pumpkin_stack_right.png": "ded23cf47d39e582103aa6dae3b773f41cc65d5dfac74bfb099ae3e6b52769a6",
-        "native/hw_pumpkin_stack_f0.png": "45062cd5662ad5c05af02702d7fb15e14307ae20c4a2cbbabf6325e536ee1373",
-        "native/hw_pumpkin_stack_f1.png": "a3e7b1452d52b60d7b59a037f7e62400030831a88adac0bd67a7303c61ec98c0",
-        "native/hw_pumpkin_stack_f2.png": "b669c0274b93bcc5889528595adce1853db386f6b0fc2d42e38a679cd950d3ce",
-        "native/hw_pumpkin_stack_f3.png": "45062cd5662ad5c05af02702d7fb15e14307ae20c4a2cbbabf6325e536ee1373",
-        "native/hw_pumpkin_stack_right_f0.png": "ded23cf47d39e582103aa6dae3b773f41cc65d5dfac74bfb099ae3e6b52769a6",
-        "native/hw_pumpkin_stack_right_f1.png": "c9ed717489a2f37df8a1a2b9ca49d26f83d198e997f8df7936f468f5f5c843a3",
-        "native/hw_pumpkin_stack_right_f2.png": "59a2e97d8c2ea934c1497bbec6ff2de0b74b917a2464bdf4f4084f7fd2bacdb6",
-        "native/hw_pumpkin_stack_right_f3.png": "ded23cf47d39e582103aa6dae3b773f41cc65d5dfac74bfb099ae3e6b52769a6",
-        "spritesheets/hw_pumpkin_stack.png": "28a72644c5a460eef001a85c3e45499af9656af2771dedf0114c4573020b9564",
-        "thumbnails/2x/hw_pumpkin_stack.png": "83c9c18e121a5c17b3b69e07b0a29fd856ea941d14e7065b170b71f9270ea628",
-        "thumbnails/2x/hw_pumpkin_stack_right.png": "7898c7bb23d29122fa5277d4cac166a55a410440765712e01e5aaa8c7b9b509e",
-        "thumbnails/3x/hw_pumpkin_stack.png": "1524b42cad9f94bf0e31e319c7da7ce7fe359000446aa5bffeb89863f639667b",
-        "thumbnails/3x/hw_pumpkin_stack_right.png": "4f59347086983f3d03ce857bd363f6c42ff5f7498f568bc422667159be3b36b3"
+        "native/hw_pumpkin_stack.png": "686632b71220c1e41c44bf09173bb6ef67727f7e7d8d778cc031dea8409eb613",
+        "native/hw_pumpkin_stack_right.png": "2041cd48424ec8b40e002450d44ca201ccfda38036bf243aa246ed0c073fefcb",
+        "native/hw_pumpkin_stack_f0.png": "686632b71220c1e41c44bf09173bb6ef67727f7e7d8d778cc031dea8409eb613",
+        "native/hw_pumpkin_stack_f1.png": "cfe230583b79b2e5a6503b428418b4b664910eeb3cc4991a99f3c366acbe8ded",
+        "native/hw_pumpkin_stack_f2.png": "ea64916382bf967c7c35f9a77f841678021e4099b4bc2d37f1059006f3ad5641",
+        "native/hw_pumpkin_stack_f3.png": "686632b71220c1e41c44bf09173bb6ef67727f7e7d8d778cc031dea8409eb613",
+        "native/hw_pumpkin_stack_right_f0.png": "2041cd48424ec8b40e002450d44ca201ccfda38036bf243aa246ed0c073fefcb",
+        "native/hw_pumpkin_stack_right_f1.png": "cbc609f351d35ddcb5452eb22a32f59e41b1b26bcfcc34b5e8878802dc0c8584",
+        "native/hw_pumpkin_stack_right_f2.png": "354ed2bc54089ccfad402e0ce0700613a185ac421b61c73362052b0f7b458989",
+        "native/hw_pumpkin_stack_right_f3.png": "2041cd48424ec8b40e002450d44ca201ccfda38036bf243aa246ed0c073fefcb",
+        "spritesheets/hw_pumpkin_stack.png": "021aea74f6cb65a5c7e7e3ced3166ef5750a98f8818e6500c312a9654057199e",
+        "thumbnails/2x/hw_pumpkin_stack.png": "1bba8deb8db571c7807fa69edf0327565b8d23ff2f1db1c591537b22a033cc08",
+        "thumbnails/2x/hw_pumpkin_stack_right.png": "6bc298b87f21e1535275af1066d210a61d851d87ea1e96e1250ec115ace39a85",
+        "thumbnails/3x/hw_pumpkin_stack.png": "945615ed99f78450376e28699e2b7c39c2a436e0b820fad21f46a53609c72eb7",
+        "thumbnails/3x/hw_pumpkin_stack_right.png": "19b81d95bf6e1ef3b961e3810ce953760e8bae4d144936f1434870c871c23957"
       }
     },
     {
@@ -225,13 +191,13 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 54,
-              "y": 43,
-              "w": 12,
-              "h": 8
+              "x": 48,
+              "y": 3,
+              "w": 14,
+              "h": 13
             },
-            "pixelCount": 59,
-            "mappableCount": 59,
+            "pixelCount": 106,
+            "mappableCount": 106,
             "maxPixels": 641,
             "rootBand": 78
           }
@@ -242,13 +208,13 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 43,
-              "y": 45,
-              "w": 9,
-              "h": 8
+              "x": 30,
+              "y": 12,
+              "w": 13,
+              "h": 12
             },
-            "pixelCount": 45,
-            "mappableCount": 45,
+            "pixelCount": 80,
+            "mappableCount": 80,
             "maxPixels": 577,
             "rootBand": 78
           }
@@ -258,24 +224,16 @@
       "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
       "animationScope": "idle-only",
       "palette": {
-        "ramps": [],
+        "ramps": [
+          "wood",
+          "fire",
+          "magic"
+        ],
         "colors": [
           "#231F2E",
           "#4A3042",
           "#735044",
           "#A57554",
-          "#41465C",
-          "#687486",
-          "#A6B1AE",
-          "#D6D8BF",
-          "#24483F",
-          "#3F6A45",
-          "#71934B",
-          "#B0BD67",
-          "#8B4A3F",
-          "#C97952",
-          "#E7AE73",
-          "#F5D69A",
           "#874056",
           "#C75B4B",
           "#ED8A45",
@@ -331,21 +289,21 @@
       "source": "masters/hw_monster_candy_barrel.png",
       "sourceSha256": "9b836fff2e2f79b13eadf01df185ee086139518743eeb05f64201a27430f8112",
       "pngSha256": {
-        "native/hw_monster_candy_barrel.png": "36f931467e973a88b605cef38daaabc59cddc7aeb52bf00b5c8dc1bf76f1b27f",
-        "native/hw_monster_candy_barrel_right.png": "a28b6015caef7e855574daf34541271350091de8aa91b9613415ee6c19f76f45",
-        "native/hw_monster_candy_barrel_f0.png": "36f931467e973a88b605cef38daaabc59cddc7aeb52bf00b5c8dc1bf76f1b27f",
-        "native/hw_monster_candy_barrel_f1.png": "c4253f281afbcc3c1fdc34c7982b2703e65c0d757ec2d8176154442e8171bbb7",
-        "native/hw_monster_candy_barrel_f2.png": "840299ba2a1868aacf93f91bdd664e449096b8b0320758a0af080ef8c3c906b8",
-        "native/hw_monster_candy_barrel_f3.png": "36f931467e973a88b605cef38daaabc59cddc7aeb52bf00b5c8dc1bf76f1b27f",
-        "native/hw_monster_candy_barrel_right_f0.png": "a28b6015caef7e855574daf34541271350091de8aa91b9613415ee6c19f76f45",
-        "native/hw_monster_candy_barrel_right_f1.png": "8ada411d0033ae4e44c3457c0264c21d911473e4854743e5bd77f9302bcdc39f",
-        "native/hw_monster_candy_barrel_right_f2.png": "5c75b3db3d201d677e46e9f2259237dd5500510a570faffbc0ea074aa2de2fc1",
-        "native/hw_monster_candy_barrel_right_f3.png": "a28b6015caef7e855574daf34541271350091de8aa91b9613415ee6c19f76f45",
-        "spritesheets/hw_monster_candy_barrel.png": "b2be704c09eaf12c17c2b5ae2e10e65c8a3084885c1be15c1c8e6d7badef1ddc",
-        "thumbnails/2x/hw_monster_candy_barrel.png": "b12df0aa9a030c7fe216102f86e020b75c015e3414e004a091e2b131d027385f",
-        "thumbnails/2x/hw_monster_candy_barrel_right.png": "7b0a0d0c57dfba4a9dc6f76e589d64e087a179c31a07c78c2b109065857a59ec",
-        "thumbnails/3x/hw_monster_candy_barrel.png": "5071d40ca9a7a8f717e2b8eb512100f4f7b3582df628e4c9be1a43767697be29",
-        "thumbnails/3x/hw_monster_candy_barrel_right.png": "3db0e2a2a641ad5e9ba84e99561c432bffedaa0c06a0c1fd6ff5848542d3319b"
+        "native/hw_monster_candy_barrel.png": "9c2161ddb7afaabea2da549c6666b846e37c6fefceea29c3af5f13344c0853d3",
+        "native/hw_monster_candy_barrel_right.png": "4dc167e4a5f5f0c1c08da2ba0aae80253356ef973ef4a44d0910ae8eef73cc48",
+        "native/hw_monster_candy_barrel_f0.png": "9c2161ddb7afaabea2da549c6666b846e37c6fefceea29c3af5f13344c0853d3",
+        "native/hw_monster_candy_barrel_f1.png": "3987fc03807c272225e92a3d8b060395b376c6d569d772a9133e71e45b949c00",
+        "native/hw_monster_candy_barrel_f2.png": "fecf93288846a9c346559016170e54bb11a2561b7025fa2e3b6859ab43bce3ed",
+        "native/hw_monster_candy_barrel_f3.png": "9c2161ddb7afaabea2da549c6666b846e37c6fefceea29c3af5f13344c0853d3",
+        "native/hw_monster_candy_barrel_right_f0.png": "4dc167e4a5f5f0c1c08da2ba0aae80253356ef973ef4a44d0910ae8eef73cc48",
+        "native/hw_monster_candy_barrel_right_f1.png": "02fd0286d72aedf5edd861cf498255a682563d3d1042a0fef25e6a2e37ab8e68",
+        "native/hw_monster_candy_barrel_right_f2.png": "d06ad7a26f809e8e722b4b5985fa80d0391a5b1225dfb010f8b37e8607128928",
+        "native/hw_monster_candy_barrel_right_f3.png": "4dc167e4a5f5f0c1c08da2ba0aae80253356ef973ef4a44d0910ae8eef73cc48",
+        "spritesheets/hw_monster_candy_barrel.png": "c08298cdce3bba7d2f305f95cb55ef5c11a792a65e3285844f7fba80795b69e2",
+        "thumbnails/2x/hw_monster_candy_barrel.png": "909cc12a9f5e660c26ef87d83eb17a54780338a56575cbc432d34c84580d9a77",
+        "thumbnails/2x/hw_monster_candy_barrel_right.png": "ff2493532026cc52a6c964bebd6a3a48e6dd2094d618e1dc4a75a9fc9b3ccb7b",
+        "thumbnails/3x/hw_monster_candy_barrel.png": "ba5f4619756ad6087bd6ebf6beae2aa019bb523e8da5c14235efab8ac290b048",
+        "thumbnails/3x/hw_monster_candy_barrel_right.png": "9b18a5756dfbe24df1617136b8f5c594edf5028e5b75817e9fc4f4cefa1d8c63"
       }
     },
     {
@@ -377,24 +335,16 @@
       "motionNote": "Requested blink; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
       "animationScope": "idle-only",
       "palette": {
-        "ramps": [],
+        "ramps": [
+          "wood",
+          "fire",
+          "magic"
+        ],
         "colors": [
           "#231F2E",
           "#4A3042",
           "#735044",
           "#A57554",
-          "#41465C",
-          "#687486",
-          "#A6B1AE",
-          "#D6D8BF",
-          "#24483F",
-          "#3F6A45",
-          "#71934B",
-          "#B0BD67",
-          "#8B4A3F",
-          "#C97952",
-          "#E7AE73",
-          "#F5D69A",
           "#874056",
           "#C75B4B",
           "#ED8A45",
@@ -450,21 +400,21 @@
       "source": "masters/hw_wooden_black_cat.png",
       "sourceSha256": "42ce40a27d4f783efe746d2eae8835a119f4e22d8576fb17c2f55830aea69df7",
       "pngSha256": {
-        "native/hw_wooden_black_cat.png": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba",
-        "native/hw_wooden_black_cat_right.png": "d812d1f677d3260ed0ebd7a17867199cab1ead7b3c85c5bfdb5563ad29594a88",
-        "native/hw_wooden_black_cat_f0.png": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba",
-        "native/hw_wooden_black_cat_f1.png": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba",
-        "native/hw_wooden_black_cat_f2.png": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba",
-        "native/hw_wooden_black_cat_f3.png": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba",
-        "native/hw_wooden_black_cat_right_f0.png": "d812d1f677d3260ed0ebd7a17867199cab1ead7b3c85c5bfdb5563ad29594a88",
-        "native/hw_wooden_black_cat_right_f1.png": "d812d1f677d3260ed0ebd7a17867199cab1ead7b3c85c5bfdb5563ad29594a88",
-        "native/hw_wooden_black_cat_right_f2.png": "d812d1f677d3260ed0ebd7a17867199cab1ead7b3c85c5bfdb5563ad29594a88",
-        "native/hw_wooden_black_cat_right_f3.png": "d812d1f677d3260ed0ebd7a17867199cab1ead7b3c85c5bfdb5563ad29594a88",
-        "spritesheets/hw_wooden_black_cat.png": "733712f0b51ce394ef332170eccdade8e43f12f86a8bae3eadec13ac9a5ddf18",
-        "thumbnails/2x/hw_wooden_black_cat.png": "cb1a8129209aac97d8de1eb1886ef4272f12f02077a3ed18cf2d51714fc1fb22",
-        "thumbnails/2x/hw_wooden_black_cat_right.png": "7c8e435ea140140ddace00dfa37d54b5fa9b7f70e302e0ebade9969304a706cb",
-        "thumbnails/3x/hw_wooden_black_cat.png": "52aa02ab9dc9ba81198b9b60ad2cbdc5f2bfd34236e068edf549c8603dc230f5",
-        "thumbnails/3x/hw_wooden_black_cat_right.png": "e2d9d260d95c18fdbc73d5b7aee7d4614b192fe954f3cfa97263b62ab2abb5af"
+        "native/hw_wooden_black_cat.png": "090c80063cc080fcbbe642cf95f4a942cc1ea9db8b4fd6a04d5cdad3e930b377",
+        "native/hw_wooden_black_cat_right.png": "e350111efce8e5a5bcdda24797b604200a4064687f65f5af300d3fb9d7cb211a",
+        "native/hw_wooden_black_cat_f0.png": "090c80063cc080fcbbe642cf95f4a942cc1ea9db8b4fd6a04d5cdad3e930b377",
+        "native/hw_wooden_black_cat_f1.png": "090c80063cc080fcbbe642cf95f4a942cc1ea9db8b4fd6a04d5cdad3e930b377",
+        "native/hw_wooden_black_cat_f2.png": "090c80063cc080fcbbe642cf95f4a942cc1ea9db8b4fd6a04d5cdad3e930b377",
+        "native/hw_wooden_black_cat_f3.png": "090c80063cc080fcbbe642cf95f4a942cc1ea9db8b4fd6a04d5cdad3e930b377",
+        "native/hw_wooden_black_cat_right_f0.png": "e350111efce8e5a5bcdda24797b604200a4064687f65f5af300d3fb9d7cb211a",
+        "native/hw_wooden_black_cat_right_f1.png": "e350111efce8e5a5bcdda24797b604200a4064687f65f5af300d3fb9d7cb211a",
+        "native/hw_wooden_black_cat_right_f2.png": "e350111efce8e5a5bcdda24797b604200a4064687f65f5af300d3fb9d7cb211a",
+        "native/hw_wooden_black_cat_right_f3.png": "e350111efce8e5a5bcdda24797b604200a4064687f65f5af300d3fb9d7cb211a",
+        "spritesheets/hw_wooden_black_cat.png": "b1565a0adfa653cac09db17fafcf4cbc50e65a2a084453b2e57cd30ca3d40954",
+        "thumbnails/2x/hw_wooden_black_cat.png": "4a1a92ca395e7ae249bf9db2b305d8df080eb8c9036d9ba0cab456068ed6b082",
+        "thumbnails/2x/hw_wooden_black_cat_right.png": "a4188b28463d5717dca7c4c2c4a5e4c9badf23d06e8333540aa8c340e16185d5",
+        "thumbnails/3x/hw_wooden_black_cat.png": "71dbc65b7253555a46eba9d35fffddaee4a96a94fd2e2924e4ac8bee5ae1f1d0",
+        "thumbnails/3x/hw_wooden_black_cat_right.png": "77f23583088da3641eb30ba5aff566074d7c61b9f5ee231aac6f683fe48b27b3"
       }
     },
     {
@@ -487,11 +437,11 @@
             "bbox": {
               "x": 16,
               "y": 50,
-              "w": 23,
+              "w": 25,
               "h": 13
             },
-            "pixelCount": 80,
-            "mappableCount": 80,
+            "pixelCount": 88,
+            "mappableCount": 88,
             "maxPixels": 643,
             "rootBand": 96
           }
@@ -504,11 +454,11 @@
             "bbox": {
               "x": 55,
               "y": 68,
-              "w": 9,
+              "w": 10,
               "h": 12
             },
-            "pixelCount": 32,
-            "mappableCount": 32,
+            "pixelCount": 36,
+            "mappableCount": 36,
             "maxPixels": 511,
             "rootBand": 96
           }
@@ -518,32 +468,24 @@
       "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
       "animationScope": "idle-only",
       "palette": {
-        "ramps": [],
+        "ramps": [
+          "wood",
+          "fire",
+          "green"
+        ],
         "colors": [
           "#231F2E",
           "#4A3042",
           "#735044",
           "#A57554",
-          "#41465C",
-          "#687486",
-          "#A6B1AE",
-          "#D6D8BF",
-          "#24483F",
-          "#3F6A45",
-          "#71934B",
-          "#B0BD67",
-          "#8B4A3F",
-          "#C97952",
-          "#E7AE73",
-          "#F5D69A",
           "#874056",
           "#C75B4B",
           "#ED8A45",
           "#FFC36B",
-          "#3E3B70",
-          "#6961A6",
-          "#70A8B6",
-          "#B7DEE0"
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
         ]
       },
       "bookReference": null,
@@ -591,21 +533,21 @@
       "source": "masters/hw_halloween_sign.png",
       "sourceSha256": "9697f963f9376b3e569c942370ef4528ab5192f7be71ee9c3eb139ed06b81d62",
       "pngSha256": {
-        "native/hw_halloween_sign.png": "1a6fc11404e9acc11225a0f672a6292cbd00095cb170399193690ca3ffdcdd5d",
-        "native/hw_halloween_sign_right.png": "73ce85295b7180ecd155bfd4a6a8a1d036df031e0af2f4fdc54c94db17afd6c8",
-        "native/hw_halloween_sign_f0.png": "1a6fc11404e9acc11225a0f672a6292cbd00095cb170399193690ca3ffdcdd5d",
-        "native/hw_halloween_sign_f1.png": "94b2ff99c43605c6613e406791f77ed1dc4135a91ad9834223db0f0d9c811ec9",
-        "native/hw_halloween_sign_f2.png": "f9f3c8b2184e37db76833033e6ee57a03caa248c1a1943a4185aa58d403d9543",
-        "native/hw_halloween_sign_f3.png": "1a6fc11404e9acc11225a0f672a6292cbd00095cb170399193690ca3ffdcdd5d",
-        "native/hw_halloween_sign_right_f0.png": "73ce85295b7180ecd155bfd4a6a8a1d036df031e0af2f4fdc54c94db17afd6c8",
-        "native/hw_halloween_sign_right_f1.png": "0b893442e8b6c1ae36aa252715ef771073c6052c6e9e940a2f67cbe87a3e4b86",
-        "native/hw_halloween_sign_right_f2.png": "487626944e6123b2725b5873f6d976bcab2c5dbbcae427c0be39c606d55569a1",
-        "native/hw_halloween_sign_right_f3.png": "73ce85295b7180ecd155bfd4a6a8a1d036df031e0af2f4fdc54c94db17afd6c8",
-        "spritesheets/hw_halloween_sign.png": "56c428a262a571d054426c414d64e937ac19d6db72bffd88677989486e2f5ad5",
-        "thumbnails/2x/hw_halloween_sign.png": "70967e09eddd375646234222a57b5a1d7d338f6442e72f9aebb6e191b3e04f33",
-        "thumbnails/2x/hw_halloween_sign_right.png": "b8dce221e4898ddeecf55cbf8a32f680b63a7cd1fbf89ae4d92b0eae40bf3938",
-        "thumbnails/3x/hw_halloween_sign.png": "fad4841bee0280d5eda12c74835b752d6c833fcea8acc4aaebd2ed7860f7f392",
-        "thumbnails/3x/hw_halloween_sign_right.png": "c1b40ef0d70b3d6058dc3080438689158951c300202010a634ad68aad0eee4e0"
+        "native/hw_halloween_sign.png": "97de3993353fc9cb40ea503151be07fcebb2ba738b2972a6b4c3d7629734f0c9",
+        "native/hw_halloween_sign_right.png": "42eb3c3194c56b122ccdc1c212308ed756661041a223698c1d73aa03da3029dc",
+        "native/hw_halloween_sign_f0.png": "97de3993353fc9cb40ea503151be07fcebb2ba738b2972a6b4c3d7629734f0c9",
+        "native/hw_halloween_sign_f1.png": "243df314462b663f55041ce8aad7b4415c8b2c2bf04dfd86d1ecdc97e957953c",
+        "native/hw_halloween_sign_f2.png": "84b86438f615d96b9e1c51244166400719b390627cb8bd0ea2457f7e4286594b",
+        "native/hw_halloween_sign_f3.png": "97de3993353fc9cb40ea503151be07fcebb2ba738b2972a6b4c3d7629734f0c9",
+        "native/hw_halloween_sign_right_f0.png": "42eb3c3194c56b122ccdc1c212308ed756661041a223698c1d73aa03da3029dc",
+        "native/hw_halloween_sign_right_f1.png": "42eb3c3194c56b122ccdc1c212308ed756661041a223698c1d73aa03da3029dc",
+        "native/hw_halloween_sign_right_f2.png": "7d981798d4f5eec42e7e0f231b3f2471b75dd65bb17087b403eee5a98721d01e",
+        "native/hw_halloween_sign_right_f3.png": "42eb3c3194c56b122ccdc1c212308ed756661041a223698c1d73aa03da3029dc",
+        "spritesheets/hw_halloween_sign.png": "81356deb5463569f93a24aac47c2798691c82dac51f251ea6e352087a52a69c9",
+        "thumbnails/2x/hw_halloween_sign.png": "68db5273347dd201b722e98de9ec07e4aec80d2db7e4269f4e65f1b2776c39ff",
+        "thumbnails/2x/hw_halloween_sign_right.png": "68fc9b20c85be3ce7aff28953cb43c102fe5ab1a227730159d1a9ea93bc936ba",
+        "thumbnails/3x/hw_halloween_sign.png": "216559c55d6560e7302df5fa76f902c361dd263d9aacf98aea16535d393a8b13",
+        "thumbnails/3x/hw_halloween_sign_right.png": "2c4af1dceba4d574dbc53748d77bc0c9e04cd7922304ce74fc68d47b317f58c2"
       }
     },
     {
@@ -637,7 +579,11 @@
       "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
       "animationScope": "idle-only",
       "palette": {
-        "ramps": [],
+        "ramps": [
+          "wood",
+          "stone",
+          "fire"
+        ],
         "colors": [
           "#231F2E",
           "#4A3042",
@@ -647,22 +593,10 @@
           "#687486",
           "#A6B1AE",
           "#D6D8BF",
-          "#24483F",
-          "#3F6A45",
-          "#71934B",
-          "#B0BD67",
-          "#8B4A3F",
-          "#C97952",
-          "#E7AE73",
-          "#F5D69A",
           "#874056",
           "#C75B4B",
           "#ED8A45",
-          "#FFC36B",
-          "#3E3B70",
-          "#6961A6",
-          "#70A8B6",
-          "#B7DEE0"
+          "#FFC36B"
         ]
       },
       "bookReference": null,
@@ -710,21 +644,3148 @@
       "source": "masters/hw_cloth_ghost_lantern.png",
       "sourceSha256": "8f49e8bd04a2b41b80f4f5293da0b63010845b3acf1567629670876a730a6501",
       "pngSha256": {
-        "native/hw_cloth_ghost_lantern.png": "0d317d0074858b0c80ea808623d75f4f7a037694aac9810aa045a618ad30ed30",
-        "native/hw_cloth_ghost_lantern_right.png": "95839424d430455c6a7c520a2c6ea09222a3927f8f395097812e178e3bfae2e2",
-        "native/hw_cloth_ghost_lantern_f0.png": "0d317d0074858b0c80ea808623d75f4f7a037694aac9810aa045a618ad30ed30",
-        "native/hw_cloth_ghost_lantern_f1.png": "0d317d0074858b0c80ea808623d75f4f7a037694aac9810aa045a618ad30ed30",
-        "native/hw_cloth_ghost_lantern_f2.png": "0d317d0074858b0c80ea808623d75f4f7a037694aac9810aa045a618ad30ed30",
-        "native/hw_cloth_ghost_lantern_f3.png": "0d317d0074858b0c80ea808623d75f4f7a037694aac9810aa045a618ad30ed30",
-        "native/hw_cloth_ghost_lantern_right_f0.png": "95839424d430455c6a7c520a2c6ea09222a3927f8f395097812e178e3bfae2e2",
-        "native/hw_cloth_ghost_lantern_right_f1.png": "95839424d430455c6a7c520a2c6ea09222a3927f8f395097812e178e3bfae2e2",
-        "native/hw_cloth_ghost_lantern_right_f2.png": "95839424d430455c6a7c520a2c6ea09222a3927f8f395097812e178e3bfae2e2",
-        "native/hw_cloth_ghost_lantern_right_f3.png": "95839424d430455c6a7c520a2c6ea09222a3927f8f395097812e178e3bfae2e2",
-        "spritesheets/hw_cloth_ghost_lantern.png": "976a70b6a675fa8ecbac7a3a3cbfed07c031787ba7f622bb8c914779e7a3f31d",
-        "thumbnails/2x/hw_cloth_ghost_lantern.png": "09d05b1b8586071018a0afa4448d7fde045fecee6c128cfcc74ea379e57429ba",
-        "thumbnails/2x/hw_cloth_ghost_lantern_right.png": "c7f1b4d108b672d8e4bfaf2720babd8c2019fa7343d7ccdcda9b64b01c093ab0",
-        "thumbnails/3x/hw_cloth_ghost_lantern.png": "97dbb134d953b3b8fd55c30e7290e208602bf924083662ffcbcf84fcee37308f",
-        "thumbnails/3x/hw_cloth_ghost_lantern_right.png": "9fe518bfec8aabb0f9a988a7d91b8c94633038a5e7a6dc43619d7382ba101816"
+        "native/hw_cloth_ghost_lantern.png": "6f08e7e14c83070367252de5deb5919938c045908f72a2ad8b5d1efc11dfd526",
+        "native/hw_cloth_ghost_lantern_right.png": "b26cfd913c5962649b2833dea387e8f3fbf950574bfab123fd54038913245298",
+        "native/hw_cloth_ghost_lantern_f0.png": "6f08e7e14c83070367252de5deb5919938c045908f72a2ad8b5d1efc11dfd526",
+        "native/hw_cloth_ghost_lantern_f1.png": "6f08e7e14c83070367252de5deb5919938c045908f72a2ad8b5d1efc11dfd526",
+        "native/hw_cloth_ghost_lantern_f2.png": "6f08e7e14c83070367252de5deb5919938c045908f72a2ad8b5d1efc11dfd526",
+        "native/hw_cloth_ghost_lantern_f3.png": "6f08e7e14c83070367252de5deb5919938c045908f72a2ad8b5d1efc11dfd526",
+        "native/hw_cloth_ghost_lantern_right_f0.png": "b26cfd913c5962649b2833dea387e8f3fbf950574bfab123fd54038913245298",
+        "native/hw_cloth_ghost_lantern_right_f1.png": "b26cfd913c5962649b2833dea387e8f3fbf950574bfab123fd54038913245298",
+        "native/hw_cloth_ghost_lantern_right_f2.png": "b26cfd913c5962649b2833dea387e8f3fbf950574bfab123fd54038913245298",
+        "native/hw_cloth_ghost_lantern_right_f3.png": "b26cfd913c5962649b2833dea387e8f3fbf950574bfab123fd54038913245298",
+        "spritesheets/hw_cloth_ghost_lantern.png": "2b62533410adb852c256034fbcdaf2815a19619d6474b29755f78b8743193ed2",
+        "thumbnails/2x/hw_cloth_ghost_lantern.png": "c9a033eb25b007eadd70b94ad2edc642d89a7862808dfbbbb6373c7f0f4b0e16",
+        "thumbnails/2x/hw_cloth_ghost_lantern_right.png": "5e80adc6971feb4f3b5cf24d7583e654c8ce60e3da93f943e17778082974a762",
+        "thumbnails/3x/hw_cloth_ghost_lantern.png": "c0830897434a64d94ac356caaaaf47a61a8828a4e941b35ea058aa10535b0435",
+        "thumbnails/3x/hw_cloth_ghost_lantern_right.png": "f919a65b608614274b2ba7ea2d54a31621d0d1e646b58266bf652c14a35b6cbe"
+      }
+    },
+    {
+      "id": "hw_dead_bat_tree",
+      "label": "Cây khô treo dơi",
+      "group": "Cốt lõi",
+      "subject": "A small twisted leafless brown tree with exactly three little purple bats hanging upside down from branches, a single pumpkin nestled among roots, tiny cobweb between two branches. Stable visible roots, readable sparse silhouette.",
+      "motion": "sway",
+      "motionRequested": "sway",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "magic",
+          "green"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 128,
+      "height": 144,
+      "pivot": {
+        "x": 64,
+        "y": 140
+      },
+      "defaultFile": "native/hw_dead_bat_tree.png",
+      "rightFile": "native/hw_dead_bat_tree_right.png",
+      "defaultFrames": [
+        "native/hw_dead_bat_tree_f0.png",
+        "native/hw_dead_bat_tree_f1.png",
+        "native/hw_dead_bat_tree_f2.png",
+        "native/hw_dead_bat_tree_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_dead_bat_tree_right_f0.png",
+        "native/hw_dead_bat_tree_right_f1.png",
+        "native/hw_dead_bat_tree_right_f2.png",
+        "native/hw_dead_bat_tree_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_dead_bat_tree.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_dead_bat_tree.png",
+          "alternate": "thumbnails/2x/hw_dead_bat_tree_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_dead_bat_tree.png",
+          "alternate": "thumbnails/3x/hw_dead_bat_tree_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_dead_bat_tree.png",
+      "sourceSha256": "7bbfbacf9414508b4f5786abe436bfa4e2612f41bfa011b0378193205261e6f1",
+      "pngSha256": {
+        "native/hw_dead_bat_tree.png": "5cf079d9b371b08e404449c797bb8800f2977bcec8f039dbff5f10abe6f02015",
+        "native/hw_dead_bat_tree_right.png": "ee449e7a3c5f74aad80020df48993777180169e007356dcfa775c5c207ce3fd0",
+        "native/hw_dead_bat_tree_f0.png": "5cf079d9b371b08e404449c797bb8800f2977bcec8f039dbff5f10abe6f02015",
+        "native/hw_dead_bat_tree_f1.png": "5cf079d9b371b08e404449c797bb8800f2977bcec8f039dbff5f10abe6f02015",
+        "native/hw_dead_bat_tree_f2.png": "5cf079d9b371b08e404449c797bb8800f2977bcec8f039dbff5f10abe6f02015",
+        "native/hw_dead_bat_tree_f3.png": "5cf079d9b371b08e404449c797bb8800f2977bcec8f039dbff5f10abe6f02015",
+        "native/hw_dead_bat_tree_right_f0.png": "ee449e7a3c5f74aad80020df48993777180169e007356dcfa775c5c207ce3fd0",
+        "native/hw_dead_bat_tree_right_f1.png": "ee449e7a3c5f74aad80020df48993777180169e007356dcfa775c5c207ce3fd0",
+        "native/hw_dead_bat_tree_right_f2.png": "ee449e7a3c5f74aad80020df48993777180169e007356dcfa775c5c207ce3fd0",
+        "native/hw_dead_bat_tree_right_f3.png": "ee449e7a3c5f74aad80020df48993777180169e007356dcfa775c5c207ce3fd0",
+        "spritesheets/hw_dead_bat_tree.png": "06d09e39af66038ec6e52d2c0eb6910dddd97a6945c5fa06d243dc21bf627988",
+        "thumbnails/2x/hw_dead_bat_tree.png": "a87291f592d65ba5ec69159cc1b7269d2018cae3d18665a88421b260610822b1",
+        "thumbnails/2x/hw_dead_bat_tree_right.png": "edfb87865b05d2d4da02934a0493976a88bd6960cb87ab6f99cf095c1de91b2c",
+        "thumbnails/3x/hw_dead_bat_tree.png": "71b9cc3ef503bdadda74039dbffd2e5cb96c8632d11b8752050e0734e162c691",
+        "thumbnails/3x/hw_dead_bat_tree_right.png": "e1bc0c66db7c37932eee416a2ed9efb7e729c6a093166540c026e0971cd81e4c"
+      }
+    },
+    {
+      "id": "hw_bat_lantern",
+      "label": "Đèn lồng dơi",
+      "group": "Ánh sáng",
+      "subject": "A hanging bat-shaped iron lantern on a short freestanding crooked timber post. Wide bat wings form the lantern frame around a warm amber glass belly, curled feet of post on ground. Charming handcrafted rustic Halloween object.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 57,
+              "y": 63,
+              "w": 6,
+              "h": 7
+            },
+            "pixelCount": 24,
+            "mappableCount": 24,
+            "maxPixels": 435,
+            "rootBand": 90
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 27,
+              "y": 72,
+              "w": 7,
+              "h": 7
+            },
+            "pixelCount": 33,
+            "mappableCount": 33,
+            "maxPixels": 396,
+            "rootBand": 90
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 88,
+      "height": 120,
+      "pivot": {
+        "x": 44,
+        "y": 116
+      },
+      "defaultFile": "native/hw_bat_lantern.png",
+      "rightFile": "native/hw_bat_lantern_right.png",
+      "defaultFrames": [
+        "native/hw_bat_lantern_f0.png",
+        "native/hw_bat_lantern_f1.png",
+        "native/hw_bat_lantern_f2.png",
+        "native/hw_bat_lantern_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_bat_lantern_right_f0.png",
+        "native/hw_bat_lantern_right_f1.png",
+        "native/hw_bat_lantern_right_f2.png",
+        "native/hw_bat_lantern_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_bat_lantern.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_bat_lantern.png",
+          "alternate": "thumbnails/2x/hw_bat_lantern_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_bat_lantern.png",
+          "alternate": "thumbnails/3x/hw_bat_lantern_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_bat_lantern.png",
+      "sourceSha256": "9b9dcbb50f987320732aacd0d1ad405ce6a9c023c47f1a5dea1d35f355107d07",
+      "pngSha256": {
+        "native/hw_bat_lantern.png": "fdb560656c24b969be3f7f007d40c1907223f320e058c8248940756741fd317f",
+        "native/hw_bat_lantern_right.png": "3f7ec3be09115d4a7957c666ca2dc8ef8875bbc0782e68532262654e92d3c575",
+        "native/hw_bat_lantern_f0.png": "fdb560656c24b969be3f7f007d40c1907223f320e058c8248940756741fd317f",
+        "native/hw_bat_lantern_f1.png": "d5d961b33647de8197796f537f9efccbccf069166a5f36d3619723ca0f317d41",
+        "native/hw_bat_lantern_f2.png": "4bf75bd3073d8eb8aaac64c573e72fc3291445e5e4f72ebbca5c2e19ac0bef91",
+        "native/hw_bat_lantern_f3.png": "fdb560656c24b969be3f7f007d40c1907223f320e058c8248940756741fd317f",
+        "native/hw_bat_lantern_right_f0.png": "3f7ec3be09115d4a7957c666ca2dc8ef8875bbc0782e68532262654e92d3c575",
+        "native/hw_bat_lantern_right_f1.png": "0f2e0b723bee6fb368d60910ec1453c8270480ca956c52bc6d499130fb3d8a6c",
+        "native/hw_bat_lantern_right_f2.png": "d81c5f58ad5b2fb085d48e309bec729dfa571337cb64d0e7484056d6f8f01318",
+        "native/hw_bat_lantern_right_f3.png": "3f7ec3be09115d4a7957c666ca2dc8ef8875bbc0782e68532262654e92d3c575",
+        "spritesheets/hw_bat_lantern.png": "183d1d17ffc09d4016083eb86a5e345adab9e1b22b670faf3a5a9328e937a3ed",
+        "thumbnails/2x/hw_bat_lantern.png": "64e6fd61aa91a616769328007de4d24c83731dbd05360d1a68c95f813436cf96",
+        "thumbnails/2x/hw_bat_lantern_right.png": "5c865a5ddf6c8fcb76b9fe23b28b8c55f42ff6d99bbd6c081636d4877371f8b2",
+        "thumbnails/3x/hw_bat_lantern.png": "30d8b461f3d21d9d48e68801429acfe185ef2279b1fe9fc472c9a070c8be69c0",
+        "thumbnails/3x/hw_bat_lantern_right.png": "fa4d5eb5e85df82f15f534a6241cebe01265923d82181fcbdb755bfac6a0cff4"
+      }
+    },
+    {
+      "id": "hw_skull_lantern",
+      "label": "Đèn đầu lâu",
+      "group": "Ánh sáng",
+      "subject": "A cute carved ivory skull lantern on a dark copper three-legged stand, big rounded eye sockets lit with warm violet candlelight, small ornamental teeth, not realistic or gruesome. Handcrafted cosy Halloween prop.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 19,
+              "y": 48,
+              "w": 5,
+              "h": 4
+            },
+            "pixelCount": 13,
+            "mappableCount": 13,
+            "maxPixels": 416,
+            "rootBand": 78
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 52,
+              "y": 46,
+              "w": 5,
+              "h": 7
+            },
+            "pixelCount": 14,
+            "mappableCount": 14,
+            "maxPixels": 426,
+            "rootBand": 78
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "wood"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 80,
+      "height": 104,
+      "pivot": {
+        "x": 40,
+        "y": 100
+      },
+      "defaultFile": "native/hw_skull_lantern.png",
+      "rightFile": "native/hw_skull_lantern_right.png",
+      "defaultFrames": [
+        "native/hw_skull_lantern_f0.png",
+        "native/hw_skull_lantern_f1.png",
+        "native/hw_skull_lantern_f2.png",
+        "native/hw_skull_lantern_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_skull_lantern_right_f0.png",
+        "native/hw_skull_lantern_right_f1.png",
+        "native/hw_skull_lantern_right_f2.png",
+        "native/hw_skull_lantern_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_skull_lantern.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_skull_lantern.png",
+          "alternate": "thumbnails/2x/hw_skull_lantern_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_skull_lantern.png",
+          "alternate": "thumbnails/3x/hw_skull_lantern_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_skull_lantern.png",
+      "sourceSha256": "5083c174674621cecee5fa61c646e99ef15c560c2e1003e459ccdec36ec6769d",
+      "pngSha256": {
+        "native/hw_skull_lantern.png": "011f100f884358a2549f9b9d10525ee16e6946bbb2c1aededc41f3b25f0a7159",
+        "native/hw_skull_lantern_right.png": "3c6ce50611e9536c00b9ad9198ccb93558c3652260c62a17e40b040f370df0ff",
+        "native/hw_skull_lantern_f0.png": "011f100f884358a2549f9b9d10525ee16e6946bbb2c1aededc41f3b25f0a7159",
+        "native/hw_skull_lantern_f1.png": "dbd9c74df1ed630af5c372aada35a1357bdb4324071d316572d9db1eb503ce5a",
+        "native/hw_skull_lantern_f2.png": "0c8ceaa07f96ed5b4fd05395da913c3f37f4f1de40825acaca44af281ca88457",
+        "native/hw_skull_lantern_f3.png": "011f100f884358a2549f9b9d10525ee16e6946bbb2c1aededc41f3b25f0a7159",
+        "native/hw_skull_lantern_right_f0.png": "3c6ce50611e9536c00b9ad9198ccb93558c3652260c62a17e40b040f370df0ff",
+        "native/hw_skull_lantern_right_f1.png": "101c26f9804a23a967cd7a0842c8bd4f91a9b8bcb1cc83df9e9e9cf22a99f718",
+        "native/hw_skull_lantern_right_f2.png": "dfd73f8e5d729c6ec3dc0e35b28ebf9dbb3718fdb8a2c68a99f38ff5721be8ce",
+        "native/hw_skull_lantern_right_f3.png": "3c6ce50611e9536c00b9ad9198ccb93558c3652260c62a17e40b040f370df0ff",
+        "spritesheets/hw_skull_lantern.png": "dbefa33bc4cdf2a6f216ec3ff88d871fa9bc6f29210609dcd600a1a10b28bdd6",
+        "thumbnails/2x/hw_skull_lantern.png": "3e6f4eb3906b9eb7e3431e8a51f640507b2bc03042c7e1f82f101124908074c9",
+        "thumbnails/2x/hw_skull_lantern_right.png": "05039c1007d3f06a1edce454f700b60659a30070c02e94d2086819b966313b55",
+        "thumbnails/3x/hw_skull_lantern.png": "cf45705f8cfe859389e6360afd8aa9297808dc2ca53e02a09189db7da83cdbdb",
+        "thumbnails/3x/hw_skull_lantern_right.png": "f6c58a31749f423eca5e958683c77866062825a5d29c936012fa3e6b9c600d48"
+      }
+    },
+    {
+      "id": "hw_haunted_house_lantern",
+      "label": "Đèn lồng hình nhà ma",
+      "group": "Ánh sáng",
+      "subject": "A tiny haunted-house-shaped lantern on a low stone plinth: crooked slate roof, a little chimney, warm orange glowing windows and small open arched doorway. This is a miniature decorative lantern, not a full-size building; no ghosts outside.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 35,
+              "y": 66,
+              "w": 6,
+              "h": 9
+            },
+            "pixelCount": 29,
+            "mappableCount": 29,
+            "maxPixels": 735,
+            "rootBand": 90
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 58,
+              "y": 64,
+              "w": 6,
+              "h": 11
+            },
+            "pixelCount": 27,
+            "mappableCount": 27,
+            "maxPixels": 671,
+            "rootBand": 90
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 96,
+      "height": 120,
+      "pivot": {
+        "x": 48,
+        "y": 116
+      },
+      "defaultFile": "native/hw_haunted_house_lantern.png",
+      "rightFile": "native/hw_haunted_house_lantern_right.png",
+      "defaultFrames": [
+        "native/hw_haunted_house_lantern_f0.png",
+        "native/hw_haunted_house_lantern_f1.png",
+        "native/hw_haunted_house_lantern_f2.png",
+        "native/hw_haunted_house_lantern_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_haunted_house_lantern_right_f0.png",
+        "native/hw_haunted_house_lantern_right_f1.png",
+        "native/hw_haunted_house_lantern_right_f2.png",
+        "native/hw_haunted_house_lantern_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_haunted_house_lantern.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_haunted_house_lantern.png",
+          "alternate": "thumbnails/2x/hw_haunted_house_lantern_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_haunted_house_lantern.png",
+          "alternate": "thumbnails/3x/hw_haunted_house_lantern_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_haunted_house_lantern.png",
+      "sourceSha256": "a62d1ba1a4071a37ce714610ed0bb96e3097c2c1dbf730d184ba340ca9ca4c99",
+      "pngSha256": {
+        "native/hw_haunted_house_lantern.png": "3dd7d6836fd72ac40b439dd91fbfc43cf7fb0a8d499cc0325d17adc9ae923de3",
+        "native/hw_haunted_house_lantern_right.png": "35ef06a6d44f23742fb70f93c52b5871562c2762730a4379203bed224a243e81",
+        "native/hw_haunted_house_lantern_f0.png": "3dd7d6836fd72ac40b439dd91fbfc43cf7fb0a8d499cc0325d17adc9ae923de3",
+        "native/hw_haunted_house_lantern_f1.png": "218d47520e6a091abd50f3212b88880c9e9bce3d8823f74b6f00bc22abeb7e5f",
+        "native/hw_haunted_house_lantern_f2.png": "f4f74ea1164738ba190cda99b3b8173116be3e105e98e81f77343a84fa52608e",
+        "native/hw_haunted_house_lantern_f3.png": "3dd7d6836fd72ac40b439dd91fbfc43cf7fb0a8d499cc0325d17adc9ae923de3",
+        "native/hw_haunted_house_lantern_right_f0.png": "35ef06a6d44f23742fb70f93c52b5871562c2762730a4379203bed224a243e81",
+        "native/hw_haunted_house_lantern_right_f1.png": "7269ae5d6c765232ad9e7ababceb5d4bea0d38c496cb4d0c35cb41cb79f76d6f",
+        "native/hw_haunted_house_lantern_right_f2.png": "4277ae11011d812c7d20a68bef2a3e82ee5fc2cf7cfd2c09602b90f5dac22a05",
+        "native/hw_haunted_house_lantern_right_f3.png": "35ef06a6d44f23742fb70f93c52b5871562c2762730a4379203bed224a243e81",
+        "spritesheets/hw_haunted_house_lantern.png": "cb7bad428360f299cb9331bbafb68c378eddc4626116c991268e5bd8109ff4f7",
+        "thumbnails/2x/hw_haunted_house_lantern.png": "3661d3545054695914d5e47fdca1260fc928b54f382ce22ef328fc346694e01c",
+        "thumbnails/2x/hw_haunted_house_lantern_right.png": "66d8bb9469567bfa6db2c8cb1832ce36bfc5eb428cead66328408a2acba57fff",
+        "thumbnails/3x/hw_haunted_house_lantern.png": "cae70995b5e88fa0659e93b4625cabce385cada181fdfce0c7e3d429836744f9",
+        "thumbnails/3x/hw_haunted_house_lantern_right.png": "2f0ea3ef9e169a61f5f804b461d81b2d252862d79908375c35eedcc942a0bf68"
+      }
+    },
+    {
+      "id": "hw_ghost_orb",
+      "label": "Quả cầu ma nhỏ",
+      "group": "Ánh sáng",
+      "subject": "A round teal glass orb held by a rustic brass three-pronged pedestal, containing one tiny smiling ivory ghost with purple eyes. Crisp pixel highlights on glass, miniature magical Halloween garden lamp, stable pedestal feet.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 11,
+              "y": 8,
+              "w": 29,
+              "h": 28
+            },
+            "pixelCount": 201,
+            "mappableCount": 201,
+            "maxPixels": 558,
+            "rootBand": 78
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 10,
+              "y": 4,
+              "w": 31,
+              "h": 40
+            },
+            "pixelCount": 322,
+            "mappableCount": 322,
+            "maxPixels": 556,
+            "rootBand": 78
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "magic",
+          "stone",
+          "warm"
+        ],
+        "colors": [
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 80,
+      "height": 104,
+      "pivot": {
+        "x": 40,
+        "y": 100
+      },
+      "defaultFile": "native/hw_ghost_orb.png",
+      "rightFile": "native/hw_ghost_orb_right.png",
+      "defaultFrames": [
+        "native/hw_ghost_orb_f0.png",
+        "native/hw_ghost_orb_f1.png",
+        "native/hw_ghost_orb_f2.png",
+        "native/hw_ghost_orb_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_ghost_orb_right_f0.png",
+        "native/hw_ghost_orb_right_f1.png",
+        "native/hw_ghost_orb_right_f2.png",
+        "native/hw_ghost_orb_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_ghost_orb.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_ghost_orb.png",
+          "alternate": "thumbnails/2x/hw_ghost_orb_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_ghost_orb.png",
+          "alternate": "thumbnails/3x/hw_ghost_orb_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_ghost_orb.png",
+      "sourceSha256": "5137e9789455ad631cd11f9d7a531f34b39179bd3e7e444c7a6b09dc8694addc",
+      "pngSha256": {
+        "native/hw_ghost_orb.png": "748d6fa8e7a6955a9805e6913a9a248dd913854bae35940a3c20ea6d038a1db2",
+        "native/hw_ghost_orb_right.png": "dcd24207cf9b57583cd592297ae9e10ec02aef937a4f73ec91264cee3ca1539e",
+        "native/hw_ghost_orb_f0.png": "748d6fa8e7a6955a9805e6913a9a248dd913854bae35940a3c20ea6d038a1db2",
+        "native/hw_ghost_orb_f1.png": "b1ffd3387717c25b85369653335fdd2880c74ac95afad56487767dd68908fbdc",
+        "native/hw_ghost_orb_f2.png": "83301e8e68bf0ccf4ae6b3c018e24a0cd826cb5cb0b6dbc2386b2116bf493d5f",
+        "native/hw_ghost_orb_f3.png": "748d6fa8e7a6955a9805e6913a9a248dd913854bae35940a3c20ea6d038a1db2",
+        "native/hw_ghost_orb_right_f0.png": "dcd24207cf9b57583cd592297ae9e10ec02aef937a4f73ec91264cee3ca1539e",
+        "native/hw_ghost_orb_right_f1.png": "a3aae59be4f6e8d22647944937803a55db3d955ad2796e0a197e87a5423b936b",
+        "native/hw_ghost_orb_right_f2.png": "576d3116d452186e8d41f4f6064730b3be293674eae5086c7a9b97427a8fff24",
+        "native/hw_ghost_orb_right_f3.png": "dcd24207cf9b57583cd592297ae9e10ec02aef937a4f73ec91264cee3ca1539e",
+        "spritesheets/hw_ghost_orb.png": "916a9d2ff694b7f712c51e11947fa63e3f508d2cf5333b100271e1e2e6255b89",
+        "thumbnails/2x/hw_ghost_orb.png": "8869676834d6ecd13619f2648526828ebecd3b91bd46e7324f39a04842c14629",
+        "thumbnails/2x/hw_ghost_orb_right.png": "a0f39597a70d3a6d0bf607e2b1496f6fed570f0d73fdf775ef5e3c6cfe7f36f7",
+        "thumbnails/3x/hw_ghost_orb.png": "b475554d3e84fd45861bb43cb7cb1e147dff222085820391145dde2d2c5f1ef2",
+        "thumbnails/3x/hw_ghost_orb_right.png": "306924e247a7106c5560369117a1f8d88702a4602ddb4b414f72254a7f69af91"
+      }
+    },
+    {
+      "id": "hw_spider_light_garland",
+      "label": "Giàn đèn nhện",
+      "group": "Ánh sáng",
+      "subject": "Two short weathered timber posts connected by a drooping cord holding exactly five tiny spider-shaped lanterns, alternating muted orange and violet. Spider legs make distinct simple pixel silhouettes. Posts stand on two little stone feet.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 52,
+              "y": 66,
+              "w": 7,
+              "h": 7
+            },
+            "pixelCount": 35,
+            "mappableCount": 35,
+            "maxPixels": 485,
+            "rootBand": 84
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 83,
+              "y": 46,
+              "w": 7,
+              "h": 7
+            },
+            "pixelCount": 35,
+            "mappableCount": 35,
+            "maxPixels": 461,
+            "rootBand": 84
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "magic"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 144,
+      "height": 112,
+      "pivot": {
+        "x": 72,
+        "y": 108
+      },
+      "defaultFile": "native/hw_spider_light_garland.png",
+      "rightFile": "native/hw_spider_light_garland_right.png",
+      "defaultFrames": [
+        "native/hw_spider_light_garland_f0.png",
+        "native/hw_spider_light_garland_f1.png",
+        "native/hw_spider_light_garland_f2.png",
+        "native/hw_spider_light_garland_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_spider_light_garland_right_f0.png",
+        "native/hw_spider_light_garland_right_f1.png",
+        "native/hw_spider_light_garland_right_f2.png",
+        "native/hw_spider_light_garland_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_spider_light_garland.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_spider_light_garland.png",
+          "alternate": "thumbnails/2x/hw_spider_light_garland_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_spider_light_garland.png",
+          "alternate": "thumbnails/3x/hw_spider_light_garland_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_spider_light_garland.png",
+      "sourceSha256": "be7c9434e58820a93bfbc55b5e886000b41c33ad4e459ce0c5500301a18dca9e",
+      "pngSha256": {
+        "native/hw_spider_light_garland.png": "aa4787645ed95008305ea1da73ccfa0e638d9d53d7d407b99585b1eb32722b21",
+        "native/hw_spider_light_garland_right.png": "20eaeb007957c47e45f6fbff8ce9e1f7ea121b41ba8788a167a2cb12a08b6809",
+        "native/hw_spider_light_garland_f0.png": "aa4787645ed95008305ea1da73ccfa0e638d9d53d7d407b99585b1eb32722b21",
+        "native/hw_spider_light_garland_f1.png": "ef1590c3389f5d827f515fb3770a0cdf86e30d41221bf5eb1f71876dcc07f695",
+        "native/hw_spider_light_garland_f2.png": "580f0531ae2020e6614f25dccc58405078e6d8922bd7a8078f4ab682c6183f00",
+        "native/hw_spider_light_garland_f3.png": "aa4787645ed95008305ea1da73ccfa0e638d9d53d7d407b99585b1eb32722b21",
+        "native/hw_spider_light_garland_right_f0.png": "20eaeb007957c47e45f6fbff8ce9e1f7ea121b41ba8788a167a2cb12a08b6809",
+        "native/hw_spider_light_garland_right_f1.png": "9d0e17df324a8c52478dd9995d676e3d546783d09993e78830ad6733d28338f8",
+        "native/hw_spider_light_garland_right_f2.png": "38f3ef4675db76ceda2b3a53b346c8d90de9e3678d8c4d46548023737b7ada06",
+        "native/hw_spider_light_garland_right_f3.png": "20eaeb007957c47e45f6fbff8ce9e1f7ea121b41ba8788a167a2cb12a08b6809",
+        "spritesheets/hw_spider_light_garland.png": "c16369759cf030ce5fa6f2acefc09c766d548ff57f2dd0a77e3d922d168d16ac",
+        "thumbnails/2x/hw_spider_light_garland.png": "fc7de081ec00ce832c45e973d28edf165fe837938601b19cd6c8f8fe00988093",
+        "thumbnails/2x/hw_spider_light_garland_right.png": "25ccf524faaa972359e742447075c0262d86febeff889cd27ae146e1860ae52b",
+        "thumbnails/3x/hw_spider_light_garland.png": "f78f9fb3553c7732ea2fd977b3d42e098d5bc3a23a14d659260ad345ff68b3ae",
+        "thumbnails/3x/hw_spider_light_garland_right.png": "2138f471f5bb77de5d971b69bc3f5c13ebedb843d91b587824b69011d5d26725"
+      }
+    },
+    {
+      "id": "hw_soul_bottle",
+      "label": "Bình linh hồn phát sáng",
+      "group": "Ánh sáng",
+      "subject": "A tall stoppered blue-green glass apothecary bottle with copper wire cage and a small carrying loop, resting in a low rustic wooden cradle. Inside float two tiny ivory spirit faces and hard-edged violet wisps. No label or writing.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 30,
+              "y": 63,
+              "w": 6,
+              "h": 12
+            },
+            "pixelCount": 31,
+            "mappableCount": 31,
+            "maxPixels": 466,
+            "rootBand": 84
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 35,
+              "y": 66,
+              "w": 9,
+              "h": 18
+            },
+            "pixelCount": 44,
+            "mappableCount": 44,
+            "maxPixels": 455,
+            "rootBand": 84
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "magic",
+          "stone",
+          "wood"
+        ],
+        "colors": [
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 80,
+      "height": 112,
+      "pivot": {
+        "x": 40,
+        "y": 108
+      },
+      "defaultFile": "native/hw_soul_bottle.png",
+      "rightFile": "native/hw_soul_bottle_right.png",
+      "defaultFrames": [
+        "native/hw_soul_bottle_f0.png",
+        "native/hw_soul_bottle_f1.png",
+        "native/hw_soul_bottle_f2.png",
+        "native/hw_soul_bottle_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_soul_bottle_right_f0.png",
+        "native/hw_soul_bottle_right_f1.png",
+        "native/hw_soul_bottle_right_f2.png",
+        "native/hw_soul_bottle_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_soul_bottle.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_soul_bottle.png",
+          "alternate": "thumbnails/2x/hw_soul_bottle_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_soul_bottle.png",
+          "alternate": "thumbnails/3x/hw_soul_bottle_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_soul_bottle.png",
+      "sourceSha256": "f3653c75beb730b8b1db651ac3cba0758e32c218ae3c4dfe699ceb94955a35fc",
+      "pngSha256": {
+        "native/hw_soul_bottle.png": "b994b7897ccc8dedb9f4013e2070c8aae0f7b3704d86e609ccef14bbc9df3615",
+        "native/hw_soul_bottle_right.png": "c16e3bbeeba5cdf5416af85a4d60ff66321048327e8dbd48885ae7ef06a3345e",
+        "native/hw_soul_bottle_f0.png": "b994b7897ccc8dedb9f4013e2070c8aae0f7b3704d86e609ccef14bbc9df3615",
+        "native/hw_soul_bottle_f1.png": "1585bcb51d93bb1c21ac4fd2f3dcb4f66679acbf85232b227e5e4327b746ccb0",
+        "native/hw_soul_bottle_f2.png": "9452d1fec1a8f2e29a31790bfe12a15f6566a60d218285cebb9dcea5753ded72",
+        "native/hw_soul_bottle_f3.png": "b994b7897ccc8dedb9f4013e2070c8aae0f7b3704d86e609ccef14bbc9df3615",
+        "native/hw_soul_bottle_right_f0.png": "c16e3bbeeba5cdf5416af85a4d60ff66321048327e8dbd48885ae7ef06a3345e",
+        "native/hw_soul_bottle_right_f1.png": "6a5226b3c191eece2ab9076cf4cd545b38bca03ef3baa0a0ebc1530d4ce621d8",
+        "native/hw_soul_bottle_right_f2.png": "fab7d9fe0e6c1ee4ceb6bc494c5c1d1b5c65667b1b9687f679aa2e55c0c4fd61",
+        "native/hw_soul_bottle_right_f3.png": "c16e3bbeeba5cdf5416af85a4d60ff66321048327e8dbd48885ae7ef06a3345e",
+        "spritesheets/hw_soul_bottle.png": "ec33dac05410d1fabeef1766695609288f7669643a4fee3a6e8ea469872ef4f7",
+        "thumbnails/2x/hw_soul_bottle.png": "111fdea70a5c52d83b5ac6174b0a4761df5e9c42ecf0063168eab1f41a4b63e7",
+        "thumbnails/2x/hw_soul_bottle_right.png": "2702dea2359039efdabf4ccfea15c1595a13a01df57fb505b7a0ab6c09c597ad",
+        "thumbnails/3x/hw_soul_bottle.png": "5ee8ad99d3582c36d9e18a55b3421275d9f80dd8bbbbc15f1ab27108211b19b2",
+        "thumbnails/3x/hw_soul_bottle_right.png": "8a01adbd4ad7d50963d3bb79c8e9398b4c95649a7ba55aa8648af1e59df78902"
+      }
+    },
+    {
+      "id": "hw_candy_cauldron",
+      "label": "Vạc kẹo sôi",
+      "group": "Góc phù thủy",
+      "subject": "A round three-legged dark iron Halloween cauldron overflowing with wrapped orange and purple candy, with a few chunky candy-shaped bubbles hovering just above the rim. Tiny carved pumpkin emblem on front, no fire underneath, stable feet.",
+      "motion": "bubbles",
+      "motionRequested": "bubbles",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "bubbles",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "bubbles",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested bubbles; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "fire",
+          "magic"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 96,
+      "height": 112,
+      "pivot": {
+        "x": 48,
+        "y": 108
+      },
+      "defaultFile": "native/hw_candy_cauldron.png",
+      "rightFile": "native/hw_candy_cauldron_right.png",
+      "defaultFrames": [
+        "native/hw_candy_cauldron_f0.png",
+        "native/hw_candy_cauldron_f1.png",
+        "native/hw_candy_cauldron_f2.png",
+        "native/hw_candy_cauldron_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_candy_cauldron_right_f0.png",
+        "native/hw_candy_cauldron_right_f1.png",
+        "native/hw_candy_cauldron_right_f2.png",
+        "native/hw_candy_cauldron_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_candy_cauldron.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_candy_cauldron.png",
+          "alternate": "thumbnails/2x/hw_candy_cauldron_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_candy_cauldron.png",
+          "alternate": "thumbnails/3x/hw_candy_cauldron_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_candy_cauldron.png",
+      "sourceSha256": "02b0d1431ba458eeaaf542b9c3a40477647090b70dd11b0cca0d3e8825860212",
+      "pngSha256": {
+        "native/hw_candy_cauldron.png": "894391319a66de7de21a892d8dae28e04bf85af0e8c0f899c53d2f1b0f3fa52d",
+        "native/hw_candy_cauldron_right.png": "c4ee0f937a7b5a8a6e96386d52ba967c8e6c3f0c6d3e41d5d31e101bea3ae3c9",
+        "native/hw_candy_cauldron_f0.png": "894391319a66de7de21a892d8dae28e04bf85af0e8c0f899c53d2f1b0f3fa52d",
+        "native/hw_candy_cauldron_f1.png": "894391319a66de7de21a892d8dae28e04bf85af0e8c0f899c53d2f1b0f3fa52d",
+        "native/hw_candy_cauldron_f2.png": "894391319a66de7de21a892d8dae28e04bf85af0e8c0f899c53d2f1b0f3fa52d",
+        "native/hw_candy_cauldron_f3.png": "894391319a66de7de21a892d8dae28e04bf85af0e8c0f899c53d2f1b0f3fa52d",
+        "native/hw_candy_cauldron_right_f0.png": "c4ee0f937a7b5a8a6e96386d52ba967c8e6c3f0c6d3e41d5d31e101bea3ae3c9",
+        "native/hw_candy_cauldron_right_f1.png": "c4ee0f937a7b5a8a6e96386d52ba967c8e6c3f0c6d3e41d5d31e101bea3ae3c9",
+        "native/hw_candy_cauldron_right_f2.png": "c4ee0f937a7b5a8a6e96386d52ba967c8e6c3f0c6d3e41d5d31e101bea3ae3c9",
+        "native/hw_candy_cauldron_right_f3.png": "c4ee0f937a7b5a8a6e96386d52ba967c8e6c3f0c6d3e41d5d31e101bea3ae3c9",
+        "spritesheets/hw_candy_cauldron.png": "2122a7494a27586ff7460042d8a27658a43417ea3e3a8fec9fdb0f3e0462c5d8",
+        "thumbnails/2x/hw_candy_cauldron.png": "86bac14badb3f17cb415b1a5bf5c9553c1b10be849dbc6175817a348abba5447",
+        "thumbnails/2x/hw_candy_cauldron_right.png": "3b939a0f0ed7baeeceb0bb06b4f9b5e1c7efebc559b4000816a4c256c78fe8cd",
+        "thumbnails/3x/hw_candy_cauldron.png": "5b1fac15907d00aea91065648e0397b2b155c34dbf389d3f4fdc3d65d41ba0d9",
+        "thumbnails/3x/hw_candy_cauldron_right.png": "06b74e63491de5a1c36aec863140d7e527c2c861712171511d19e0296c642a3a"
+      }
+    },
+    {
+      "id": "hw_halloween_potion_table",
+      "label": "Bàn pha độc dược Halloween",
+      "group": "Góc phù thủy",
+      "subject": "A rustic compact outdoor witch's potion worktable: thick plank tabletop, four sturdy legs, exactly three squat glass bottles of orange violet and teal liquid, a mortar and pestle, a small open grimoire with blank pictograms and a tiny pumpkin. Everything fits on table, no text.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 40,
+              "y": 41,
+              "w": 30,
+              "h": 19
+            },
+            "pixelCount": 268,
+            "mappableCount": 268,
+            "maxPixels": 1034,
+            "rootBand": 90
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 48,
+              "y": 41,
+              "w": 33,
+              "h": 19
+            },
+            "pixelCount": 271,
+            "mappableCount": 271,
+            "maxPixels": 1045,
+            "rootBand": 90
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "magic",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 144,
+      "height": 120,
+      "pivot": {
+        "x": 72,
+        "y": 116
+      },
+      "defaultFile": "native/hw_halloween_potion_table.png",
+      "rightFile": "native/hw_halloween_potion_table_right.png",
+      "defaultFrames": [
+        "native/hw_halloween_potion_table_f0.png",
+        "native/hw_halloween_potion_table_f1.png",
+        "native/hw_halloween_potion_table_f2.png",
+        "native/hw_halloween_potion_table_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_halloween_potion_table_right_f0.png",
+        "native/hw_halloween_potion_table_right_f1.png",
+        "native/hw_halloween_potion_table_right_f2.png",
+        "native/hw_halloween_potion_table_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_halloween_potion_table.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_halloween_potion_table.png",
+          "alternate": "thumbnails/2x/hw_halloween_potion_table_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_halloween_potion_table.png",
+          "alternate": "thumbnails/3x/hw_halloween_potion_table_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_halloween_potion_table.png",
+      "sourceSha256": "fd4e88b726f193896de49e7f6a7cc4cdfa42dfacb47f5c2518f3bddfd025324c",
+      "pngSha256": {
+        "native/hw_halloween_potion_table.png": "516308ab5d8dda8697fcb6bc45d594e4419d68ef35c8f7ad328b09b870a353e2",
+        "native/hw_halloween_potion_table_right.png": "d9759cb5cd00890fd427bca967031a422085504f62594c8fe716add18ee8060d",
+        "native/hw_halloween_potion_table_f0.png": "516308ab5d8dda8697fcb6bc45d594e4419d68ef35c8f7ad328b09b870a353e2",
+        "native/hw_halloween_potion_table_f1.png": "67e3abc01da1d8f017e01865f4bde53dbaeba39ccffbc0bec3833743a5d83a38",
+        "native/hw_halloween_potion_table_f2.png": "2e33fca8130008d068df683c629beb1de2baa36696597ea9b674085fbd7ade95",
+        "native/hw_halloween_potion_table_f3.png": "516308ab5d8dda8697fcb6bc45d594e4419d68ef35c8f7ad328b09b870a353e2",
+        "native/hw_halloween_potion_table_right_f0.png": "d9759cb5cd00890fd427bca967031a422085504f62594c8fe716add18ee8060d",
+        "native/hw_halloween_potion_table_right_f1.png": "d72969b31c05dd1eba89821020a70dc15d8cc430bdd004a995e2119e1a7422db",
+        "native/hw_halloween_potion_table_right_f2.png": "48a07ecb39ce21ffb30a585ba1294e004335be1c1820398368e9c95dc5036487",
+        "native/hw_halloween_potion_table_right_f3.png": "d9759cb5cd00890fd427bca967031a422085504f62594c8fe716add18ee8060d",
+        "spritesheets/hw_halloween_potion_table.png": "40e08cbcfedfb72acf212a8f93a36f17f1df63caab8b1d0519e46ddcab138214",
+        "thumbnails/2x/hw_halloween_potion_table.png": "61b84210ca505e7a907f6c484c113a230a93a788cb4c70c713621e7df9a9cf9a",
+        "thumbnails/2x/hw_halloween_potion_table_right.png": "06f07ffde15cb4ab70f382f31e2fd6c95231db3c40a52e5c824615f5bfae59d6",
+        "thumbnails/3x/hw_halloween_potion_table.png": "1b908d7572254723032e4f875e4b82800dd3a63a37942b63fd9db7fc969a528d",
+        "thumbnails/3x/hw_halloween_potion_table_right.png": "19a56897d0d8bf5dfb1fd53cb2127261c7687d6a03d72d24f0c08b23762cd07b"
+      }
+    },
+    {
+      "id": "hw_monster_bookcase",
+      "label": "Tủ sách há miệng",
+      "group": "Góc phù thủy",
+      "subject": "A short crooked timber bookcase containing exactly four chunky spellbooks, the central purple book has two eye clasps and a slightly open toothy mouth along its page edge. Two shelves, warm brown wood, small cobweb at upper corner. No writing.",
+      "motion": "blink",
+      "motionRequested": "blink",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested blink; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 112,
+      "height": 144,
+      "pivot": {
+        "x": 56,
+        "y": 140
+      },
+      "defaultFile": "native/hw_monster_bookcase.png",
+      "rightFile": "native/hw_monster_bookcase_right.png",
+      "defaultFrames": [
+        "native/hw_monster_bookcase_f0.png",
+        "native/hw_monster_bookcase_f1.png",
+        "native/hw_monster_bookcase_f2.png",
+        "native/hw_monster_bookcase_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_monster_bookcase_right_f0.png",
+        "native/hw_monster_bookcase_right_f1.png",
+        "native/hw_monster_bookcase_right_f2.png",
+        "native/hw_monster_bookcase_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_monster_bookcase.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_monster_bookcase.png",
+          "alternate": "thumbnails/2x/hw_monster_bookcase_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_monster_bookcase.png",
+          "alternate": "thumbnails/3x/hw_monster_bookcase_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_monster_bookcase.png",
+      "sourceSha256": "497338d45529d95f24186d8a8a92d67e631e20fb9f637d062ff297e550b9ed26",
+      "pngSha256": {
+        "native/hw_monster_bookcase.png": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77",
+        "native/hw_monster_bookcase_right.png": "957dc49deb9989a78a1afcce429d7740908373f8e38f2c1d3ea56366b490236d",
+        "native/hw_monster_bookcase_f0.png": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77",
+        "native/hw_monster_bookcase_f1.png": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77",
+        "native/hw_monster_bookcase_f2.png": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77",
+        "native/hw_monster_bookcase_f3.png": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77",
+        "native/hw_monster_bookcase_right_f0.png": "957dc49deb9989a78a1afcce429d7740908373f8e38f2c1d3ea56366b490236d",
+        "native/hw_monster_bookcase_right_f1.png": "957dc49deb9989a78a1afcce429d7740908373f8e38f2c1d3ea56366b490236d",
+        "native/hw_monster_bookcase_right_f2.png": "957dc49deb9989a78a1afcce429d7740908373f8e38f2c1d3ea56366b490236d",
+        "native/hw_monster_bookcase_right_f3.png": "957dc49deb9989a78a1afcce429d7740908373f8e38f2c1d3ea56366b490236d",
+        "spritesheets/hw_monster_bookcase.png": "509eadd6041adfc3d915d7287bad7d58c82d72a03ee0bbb3401693cd7a74d4ca",
+        "thumbnails/2x/hw_monster_bookcase.png": "747ee6c1bccc2998f14ff4b2c72c55b14c11caa4de70fa772eec088ec99dd6bf",
+        "thumbnails/2x/hw_monster_bookcase_right.png": "c8aa74db57742480d32af1bb231d592168bb3e241094ce9021b6e0a15bdeb1e9",
+        "thumbnails/3x/hw_monster_bookcase.png": "0a63870625ca518e176ee7d89d3877bb3d53a1060df52635908376a379aaef8e",
+        "thumbnails/3x/hw_monster_bookcase_right.png": "0a1726d8aadf9d1c54f79a0714f29b285803697eacb0e440c11347835d26dc5e"
+      }
+    },
+    {
+      "id": "hw_blinking_chest",
+      "label": "Rương nháy mắt",
+      "group": "Góc phù thủy",
+      "subject": "A small rounded-lid dark wooden Halloween treasure chest with weathered copper bands, lid cracked open enough for exactly two big amber eyes to peek from the darkness. No treasure spilling out, four stable little feet, cute mischievous personality.",
+      "motion": "blink",
+      "motionRequested": "blink",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested blink; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 112,
+      "height": 96,
+      "pivot": {
+        "x": 56,
+        "y": 92
+      },
+      "defaultFile": "native/hw_blinking_chest.png",
+      "rightFile": "native/hw_blinking_chest_right.png",
+      "defaultFrames": [
+        "native/hw_blinking_chest_f0.png",
+        "native/hw_blinking_chest_f1.png",
+        "native/hw_blinking_chest_f2.png",
+        "native/hw_blinking_chest_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_blinking_chest_right_f0.png",
+        "native/hw_blinking_chest_right_f1.png",
+        "native/hw_blinking_chest_right_f2.png",
+        "native/hw_blinking_chest_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_blinking_chest.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_blinking_chest.png",
+          "alternate": "thumbnails/2x/hw_blinking_chest_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_blinking_chest.png",
+          "alternate": "thumbnails/3x/hw_blinking_chest_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_blinking_chest.png",
+      "sourceSha256": "71a4ffb2804bd79116e87e45e2140e0f0d3212a365722560fbff3288ebd5a15d",
+      "pngSha256": {
+        "native/hw_blinking_chest.png": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad",
+        "native/hw_blinking_chest_right.png": "cac529468531c20b4c45a89d6f6792e2dff0462fd61a28233f48bad4d92686cc",
+        "native/hw_blinking_chest_f0.png": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad",
+        "native/hw_blinking_chest_f1.png": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad",
+        "native/hw_blinking_chest_f2.png": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad",
+        "native/hw_blinking_chest_f3.png": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad",
+        "native/hw_blinking_chest_right_f0.png": "cac529468531c20b4c45a89d6f6792e2dff0462fd61a28233f48bad4d92686cc",
+        "native/hw_blinking_chest_right_f1.png": "cac529468531c20b4c45a89d6f6792e2dff0462fd61a28233f48bad4d92686cc",
+        "native/hw_blinking_chest_right_f2.png": "cac529468531c20b4c45a89d6f6792e2dff0462fd61a28233f48bad4d92686cc",
+        "native/hw_blinking_chest_right_f3.png": "cac529468531c20b4c45a89d6f6792e2dff0462fd61a28233f48bad4d92686cc",
+        "spritesheets/hw_blinking_chest.png": "bfeb5b7224808c5ae290d7cc9ccdd70836a437cd539ef01df876e141bd28dd58",
+        "thumbnails/2x/hw_blinking_chest.png": "ff07a1a9d49c684f6ae6cd85a25b438a2b4bcecc4a1923928a9c1227fa685cec",
+        "thumbnails/2x/hw_blinking_chest_right.png": "d6e36d9957584d2c51d58f4db1e79356c5ffe465a4cc3422e9cb158077d7f000",
+        "thumbnails/3x/hw_blinking_chest.png": "9446bbedec7fb84220cb86b54ba0f77ab17d7b7d298ab44a1e09505106f8dfb2",
+        "thumbnails/3x/hw_blinking_chest_right.png": "5f78c990b928ef8452af3c72ebfeba78db626093be1fec50d12f5f010d4b3e98"
+      }
+    },
+    {
+      "id": "hw_witch_hat_rack",
+      "label": "Giá treo mũ phù thủy",
+      "group": "Góc phù thủy",
+      "subject": "A freestanding twisted timber coat rack holding exactly three crooked witch hats: muted violet, moss green, pumpkin orange. Each hat has a copper buckle. Three stable wooden legs, no coats, no brooms, no people.",
+      "motion": "sway",
+      "motionRequested": "sway",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "magic",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 104,
+      "height": 144,
+      "pivot": {
+        "x": 52,
+        "y": 140
+      },
+      "defaultFile": "native/hw_witch_hat_rack.png",
+      "rightFile": "native/hw_witch_hat_rack_right.png",
+      "defaultFrames": [
+        "native/hw_witch_hat_rack_f0.png",
+        "native/hw_witch_hat_rack_f1.png",
+        "native/hw_witch_hat_rack_f2.png",
+        "native/hw_witch_hat_rack_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_witch_hat_rack_right_f0.png",
+        "native/hw_witch_hat_rack_right_f1.png",
+        "native/hw_witch_hat_rack_right_f2.png",
+        "native/hw_witch_hat_rack_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_witch_hat_rack.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_witch_hat_rack.png",
+          "alternate": "thumbnails/2x/hw_witch_hat_rack_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_witch_hat_rack.png",
+          "alternate": "thumbnails/3x/hw_witch_hat_rack_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_witch_hat_rack.png",
+      "sourceSha256": "b1577bd40aa41ea84bd05c5467bb5d1ff676efc13cd97aec5b2e77021bfeeccc",
+      "pngSha256": {
+        "native/hw_witch_hat_rack.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
+        "native/hw_witch_hat_rack_right.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
+        "native/hw_witch_hat_rack_f0.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
+        "native/hw_witch_hat_rack_f1.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
+        "native/hw_witch_hat_rack_f2.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
+        "native/hw_witch_hat_rack_f3.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
+        "native/hw_witch_hat_rack_right_f0.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
+        "native/hw_witch_hat_rack_right_f1.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
+        "native/hw_witch_hat_rack_right_f2.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
+        "native/hw_witch_hat_rack_right_f3.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
+        "spritesheets/hw_witch_hat_rack.png": "077ed21c14d8452157fa17a62fb8d718320b8aa212a067ddf08e4fb39ae10a51",
+        "thumbnails/2x/hw_witch_hat_rack.png": "b3e36ba18cfc7aeeedf926de3c554e866b8ea289a5f2bffb788db9ea079cdfd6",
+        "thumbnails/2x/hw_witch_hat_rack_right.png": "bc82f2a6a14a577df6de2b9ebebb0025d5b440eeca2f3c25d32d1a217b81c30f",
+        "thumbnails/3x/hw_witch_hat_rack.png": "0d4f19ffdb21a7febd54e89b90b124d5e803661426704e6a98e2d21fbe2406c4",
+        "thumbnails/3x/hw_witch_hat_rack_right.png": "8ae341716af7eddb804b2717c168a2ea4bcdb9d1221129dcb0348298a7582269"
+      }
+    },
+    {
+      "id": "hw_caramel_apple_cart",
+      "label": "Xe đẩy táo bọc kẹo",
+      "group": "Góc phù thủy",
+      "subject": "A small two-wheeled rustic market cart with two handles, tray displaying exactly five glossy pixel caramel apples on sticks, orange and purple striped small cloth awning and a carved bat ornament. No sign text, no vendors.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 72,
+              "y": 32,
+              "w": 23,
+              "h": 14
+            },
+            "pixelCount": 124,
+            "mappableCount": 124,
+            "maxPixels": 1173,
+            "rootBand": 108
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 77,
+              "y": 22,
+              "w": 24,
+              "h": 16
+            },
+            "pixelCount": 145,
+            "mappableCount": 145,
+            "maxPixels": 1111,
+            "rootBand": 108
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "magic"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 144,
+      "height": 144,
+      "pivot": {
+        "x": 72,
+        "y": 140
+      },
+      "defaultFile": "native/hw_caramel_apple_cart.png",
+      "rightFile": "native/hw_caramel_apple_cart_right.png",
+      "defaultFrames": [
+        "native/hw_caramel_apple_cart_f0.png",
+        "native/hw_caramel_apple_cart_f1.png",
+        "native/hw_caramel_apple_cart_f2.png",
+        "native/hw_caramel_apple_cart_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_caramel_apple_cart_right_f0.png",
+        "native/hw_caramel_apple_cart_right_f1.png",
+        "native/hw_caramel_apple_cart_right_f2.png",
+        "native/hw_caramel_apple_cart_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_caramel_apple_cart.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_caramel_apple_cart.png",
+          "alternate": "thumbnails/2x/hw_caramel_apple_cart_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_caramel_apple_cart.png",
+          "alternate": "thumbnails/3x/hw_caramel_apple_cart_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_caramel_apple_cart.png",
+      "sourceSha256": "73c0bd9f28d7ace5460f2c0d95ecfd21ccccbb2ba3c03c189e5acf9bcbc3cbd5",
+      "pngSha256": {
+        "native/hw_caramel_apple_cart.png": "4ad941c4ac498a6e4a5ea16ea6791cc5100dd00d9237903720d4d210b34eb8c8",
+        "native/hw_caramel_apple_cart_right.png": "04c6b5b87c9c74833f3cf4ca96e09ebe6215705b127ec7ebe7e747ba5d2e3295",
+        "native/hw_caramel_apple_cart_f0.png": "4ad941c4ac498a6e4a5ea16ea6791cc5100dd00d9237903720d4d210b34eb8c8",
+        "native/hw_caramel_apple_cart_f1.png": "91a33e61889caa29529f3c97b245626ccf92dacecc263ad9c790b97456d14060",
+        "native/hw_caramel_apple_cart_f2.png": "15e1e80e1f5f4354a0a30577091bb7a6934b051e64e3d4ee54ae9a90aef36364",
+        "native/hw_caramel_apple_cart_f3.png": "4ad941c4ac498a6e4a5ea16ea6791cc5100dd00d9237903720d4d210b34eb8c8",
+        "native/hw_caramel_apple_cart_right_f0.png": "04c6b5b87c9c74833f3cf4ca96e09ebe6215705b127ec7ebe7e747ba5d2e3295",
+        "native/hw_caramel_apple_cart_right_f1.png": "e03a2d0d6639b503bf780aeeb1155c231bf28e3cfb6bc8aea67060604c283b3d",
+        "native/hw_caramel_apple_cart_right_f2.png": "2170130a476f360bf676245b10ce7d831b3b90ec22801b3b44f143b1dce94923",
+        "native/hw_caramel_apple_cart_right_f3.png": "04c6b5b87c9c74833f3cf4ca96e09ebe6215705b127ec7ebe7e747ba5d2e3295",
+        "spritesheets/hw_caramel_apple_cart.png": "3bff4fbd7f55b57a2c5a73e295e9ce754f6d589631e32d1373c592dc820321ae",
+        "thumbnails/2x/hw_caramel_apple_cart.png": "cf7d129b3aaf2038f203dea8a85378feb55fac417b05424391820bb11d9f87ed",
+        "thumbnails/2x/hw_caramel_apple_cart_right.png": "71670517f2aae929bd6e04109293039a1ca14a6f7b837664415300e3cd25aa37",
+        "thumbnails/3x/hw_caramel_apple_cart.png": "4e5ba96fc556270b8b2dba8ca61972b4bf95a49fc74a4f756e0df68a97d1d95d",
+        "thumbnails/3x/hw_caramel_apple_cart_right.png": "ab700d35d5f4467c0fdd6f4ad2f74690dd4923993e1207e9c5020ca184194f4d"
+      }
+    },
+    {
+      "id": "hw_grinning_stump",
+      "label": "Gốc cây mặt quỷ",
+      "group": "Rừng tinh nghịch",
+      "subject": "An old squat mossy tree stump with a carved mischievous smiling face, amber glowing eyes, crooked roots and one tiny violet mushroom at its foot. Hollow top with a few fallen autumn leaves, warm brown wood. Friendly rather than frightening.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 39,
+              "y": 38,
+              "w": 31,
+              "h": 8
+            },
+            "pixelCount": 88,
+            "mappableCount": 88,
+            "maxPixels": 721,
+            "rootBand": 78
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 42,
+              "y": 21,
+              "w": 12,
+              "h": 10
+            },
+            "pixelCount": 63,
+            "mappableCount": 63,
+            "maxPixels": 693,
+            "rootBand": 78
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "green"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 112,
+      "height": 104,
+      "pivot": {
+        "x": 56,
+        "y": 100
+      },
+      "defaultFile": "native/hw_grinning_stump.png",
+      "rightFile": "native/hw_grinning_stump_right.png",
+      "defaultFrames": [
+        "native/hw_grinning_stump_f0.png",
+        "native/hw_grinning_stump_f1.png",
+        "native/hw_grinning_stump_f2.png",
+        "native/hw_grinning_stump_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_grinning_stump_right_f0.png",
+        "native/hw_grinning_stump_right_f1.png",
+        "native/hw_grinning_stump_right_f2.png",
+        "native/hw_grinning_stump_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_grinning_stump.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_grinning_stump.png",
+          "alternate": "thumbnails/2x/hw_grinning_stump_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_grinning_stump.png",
+          "alternate": "thumbnails/3x/hw_grinning_stump_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_grinning_stump.png",
+      "sourceSha256": "37a4409b928bd225afcfe809f9a8cbc5f926ddbacf72ccc02e9b8e080bec6db3",
+      "pngSha256": {
+        "native/hw_grinning_stump.png": "62d961f4de5c11be3e168191cfd52ba9dc0328891b17eef45ccb989435b81a29",
+        "native/hw_grinning_stump_right.png": "b02e003730918e6e0ba42b5ba9b760573148a796d490aca73b51144d2ddde7f2",
+        "native/hw_grinning_stump_f0.png": "62d961f4de5c11be3e168191cfd52ba9dc0328891b17eef45ccb989435b81a29",
+        "native/hw_grinning_stump_f1.png": "43113fb937b436feb06bf0b28f0b9805eec00e42508cbd4c4d706f8f42d18409",
+        "native/hw_grinning_stump_f2.png": "dfb8f23de1c996c420c5e63af2b497af54f37b8fdec30c7371ed211049d40616",
+        "native/hw_grinning_stump_f3.png": "62d961f4de5c11be3e168191cfd52ba9dc0328891b17eef45ccb989435b81a29",
+        "native/hw_grinning_stump_right_f0.png": "b02e003730918e6e0ba42b5ba9b760573148a796d490aca73b51144d2ddde7f2",
+        "native/hw_grinning_stump_right_f1.png": "2b4a079fa88e4c2f29d2b48a41531ad0ebc6e16b8c0b657128aee50efefb209b",
+        "native/hw_grinning_stump_right_f2.png": "b02e003730918e6e0ba42b5ba9b760573148a796d490aca73b51144d2ddde7f2",
+        "native/hw_grinning_stump_right_f3.png": "b02e003730918e6e0ba42b5ba9b760573148a796d490aca73b51144d2ddde7f2",
+        "spritesheets/hw_grinning_stump.png": "aaac19fc8e3de8162ee4ca55b06aab778c018fce0f317bd2a791ae9dd55d89bf",
+        "thumbnails/2x/hw_grinning_stump.png": "43f86401a7b99a15a13701b53a489819c9349bc6d638b847486a072c712a4652",
+        "thumbnails/2x/hw_grinning_stump_right.png": "db6826643a77ac23565baa5e829614b79353512e7bca56d58cfd564a919ccf52",
+        "thumbnails/3x/hw_grinning_stump.png": "61b2a077ad3efcc8262107599a293fd0579f55d2435e98a7b08ee0816cbc0136",
+        "thumbnails/3x/hw_grinning_stump_right.png": "afa413de58b837d6cb7043e5683b45d310e2f1a4615750ade6d1aa75b32c8b90"
+      }
+    },
+    {
+      "id": "hw_skull_mushrooms",
+      "label": "Cụm nấm hình đầu lâu",
+      "group": "Rừng tinh nghịch",
+      "subject": "A tight cluster of exactly three whimsical ivory-capped mushrooms shaped like cute tiny skulls with purple eye holes, on short mossy stems with green fern leaves. No ground tile, only connected roots and a few moss pixels.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 40,
+              "y": 17,
+              "w": 7,
+              "h": 6
+            },
+            "pixelCount": 21,
+            "mappableCount": 21,
+            "maxPixels": 435,
+            "rootBand": 66
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 24,
+              "y": 28,
+              "w": 8,
+              "h": 8
+            },
+            "pixelCount": 26,
+            "mappableCount": 26,
+            "maxPixels": 434,
+            "rootBand": 66
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "green"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 96,
+      "height": 88,
+      "pivot": {
+        "x": 48,
+        "y": 84
+      },
+      "defaultFile": "native/hw_skull_mushrooms.png",
+      "rightFile": "native/hw_skull_mushrooms_right.png",
+      "defaultFrames": [
+        "native/hw_skull_mushrooms_f0.png",
+        "native/hw_skull_mushrooms_f1.png",
+        "native/hw_skull_mushrooms_f2.png",
+        "native/hw_skull_mushrooms_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_skull_mushrooms_right_f0.png",
+        "native/hw_skull_mushrooms_right_f1.png",
+        "native/hw_skull_mushrooms_right_f2.png",
+        "native/hw_skull_mushrooms_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_skull_mushrooms.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_skull_mushrooms.png",
+          "alternate": "thumbnails/2x/hw_skull_mushrooms_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_skull_mushrooms.png",
+          "alternate": "thumbnails/3x/hw_skull_mushrooms_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_skull_mushrooms.png",
+      "sourceSha256": "4124dfe0d8f4132dee79fb6d9029932d497abbdbbb76293039c6a8b02603a38b",
+      "pngSha256": {
+        "native/hw_skull_mushrooms.png": "d9216b0c16581bd52c38099937b6a6670ff9a0fb564be6dad04a53539aff9c25",
+        "native/hw_skull_mushrooms_right.png": "f114febdd4bc3b053505da827a8978c595917a459d1fd1c849e22fb64c54573a",
+        "native/hw_skull_mushrooms_f0.png": "d9216b0c16581bd52c38099937b6a6670ff9a0fb564be6dad04a53539aff9c25",
+        "native/hw_skull_mushrooms_f1.png": "43c9b8c8a3ebfa5adff70edfd1795725dd41369206cf4ec1e4b1d8904d14740a",
+        "native/hw_skull_mushrooms_f2.png": "c8c3793d42fb089fec0fb00b4a15000e52a2beb05e595a047de578155f2f4a74",
+        "native/hw_skull_mushrooms_f3.png": "d9216b0c16581bd52c38099937b6a6670ff9a0fb564be6dad04a53539aff9c25",
+        "native/hw_skull_mushrooms_right_f0.png": "f114febdd4bc3b053505da827a8978c595917a459d1fd1c849e22fb64c54573a",
+        "native/hw_skull_mushrooms_right_f1.png": "21e1cd7a2dd02affe1555d6aa59dbce6f4f5eead4f87c9eca60846cee14850ca",
+        "native/hw_skull_mushrooms_right_f2.png": "986101357849086a3010f0dc37781b237639a2123e98e8499a61f2877dd93b4c",
+        "native/hw_skull_mushrooms_right_f3.png": "f114febdd4bc3b053505da827a8978c595917a459d1fd1c849e22fb64c54573a",
+        "spritesheets/hw_skull_mushrooms.png": "8c05e1fbaca934dfde1911d489c133e17b9fb799ed4d94e7a9e4db63ca55e2b1",
+        "thumbnails/2x/hw_skull_mushrooms.png": "1fc6ba30f8a968dc883e4b1a32e58809c26357a1726da0379ae05fce627133d2",
+        "thumbnails/2x/hw_skull_mushrooms_right.png": "887337fccac8d7be593b4cdf9fe045bd74a0da9f876fdd903e365cccfc307adf",
+        "thumbnails/3x/hw_skull_mushrooms.png": "078ba974385a77ae29f911e21d0ee9837dc9c2f4aad7183441efdf2fa2a58fed",
+        "thumbnails/3x/hw_skull_mushrooms_right.png": "6589911cdb73749924cd43e0a5cc8e0ed9a708852a70a2cfb902e76a41c33728"
+      }
+    },
+    {
+      "id": "hw_eyeball_flowers",
+      "label": "Bụi hoa mắt tròn",
+      "group": "Rừng tinh nghịch",
+      "subject": "A compact magical Halloween flowering shrub with exactly five violet and orange flowers whose round pale centers look like playful eyeballs. Deep moss-green leaves, simple chunky branches, exposed little root clump, no pot.",
+      "motion": "blink",
+      "motionRequested": "blink",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested blink; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "green",
+          "fire",
+          "magic"
+        ],
+        "colors": [
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "defaultFile": "native/hw_eyeball_flowers.png",
+      "rightFile": "native/hw_eyeball_flowers_right.png",
+      "defaultFrames": [
+        "native/hw_eyeball_flowers_f0.png",
+        "native/hw_eyeball_flowers_f1.png",
+        "native/hw_eyeball_flowers_f2.png",
+        "native/hw_eyeball_flowers_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_eyeball_flowers_right_f0.png",
+        "native/hw_eyeball_flowers_right_f1.png",
+        "native/hw_eyeball_flowers_right_f2.png",
+        "native/hw_eyeball_flowers_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_eyeball_flowers.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_eyeball_flowers.png",
+          "alternate": "thumbnails/2x/hw_eyeball_flowers_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_eyeball_flowers.png",
+          "alternate": "thumbnails/3x/hw_eyeball_flowers_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_eyeball_flowers.png",
+      "sourceSha256": "2e982399c9edf6f52890853b87883a429eed108a18bc6e0b0e105e11ecc8dbcc",
+      "pngSha256": {
+        "native/hw_eyeball_flowers.png": "107f23a175fdea6b4c2ce6f498afe0f676d3e6536e9b8d55791310673f3fb5cc",
+        "native/hw_eyeball_flowers_right.png": "bf5ac63c83792f0c8e390f7c84ef02f19958d5289e5c82b9949432d6df25c315",
+        "native/hw_eyeball_flowers_f0.png": "107f23a175fdea6b4c2ce6f498afe0f676d3e6536e9b8d55791310673f3fb5cc",
+        "native/hw_eyeball_flowers_f1.png": "107f23a175fdea6b4c2ce6f498afe0f676d3e6536e9b8d55791310673f3fb5cc",
+        "native/hw_eyeball_flowers_f2.png": "107f23a175fdea6b4c2ce6f498afe0f676d3e6536e9b8d55791310673f3fb5cc",
+        "native/hw_eyeball_flowers_f3.png": "107f23a175fdea6b4c2ce6f498afe0f676d3e6536e9b8d55791310673f3fb5cc",
+        "native/hw_eyeball_flowers_right_f0.png": "bf5ac63c83792f0c8e390f7c84ef02f19958d5289e5c82b9949432d6df25c315",
+        "native/hw_eyeball_flowers_right_f1.png": "bf5ac63c83792f0c8e390f7c84ef02f19958d5289e5c82b9949432d6df25c315",
+        "native/hw_eyeball_flowers_right_f2.png": "bf5ac63c83792f0c8e390f7c84ef02f19958d5289e5c82b9949432d6df25c315",
+        "native/hw_eyeball_flowers_right_f3.png": "bf5ac63c83792f0c8e390f7c84ef02f19958d5289e5c82b9949432d6df25c315",
+        "spritesheets/hw_eyeball_flowers.png": "e8c960a4f54590ee5c49128cd75853a0202188e3f2498841211f34a8ff967a72",
+        "thumbnails/2x/hw_eyeball_flowers.png": "07ba8662aaeb466f050eebda2d26d356eebf05c31b45e17793062e531cd0ab72",
+        "thumbnails/2x/hw_eyeball_flowers_right.png": "3977d87e916101c361a075e36ae0e816c2030c37b4ded5388416b39d848ee126",
+        "thumbnails/3x/hw_eyeball_flowers.png": "f8ab9430a73e4fd4e684ad0afbd3ab292230bb2f6835794acf9df52a26e032bc",
+        "thumbnails/3x/hw_eyeball_flowers_right.png": "975f92057707b1362353a3655f70ace71208f5bf36e2dc48a399aaf5e17606f1"
+      }
+    },
+    {
+      "id": "hw_owl_tree_hollow",
+      "label": "Hốc cây có cú đêm",
+      "group": "Rừng tinh nghịch",
+      "subject": "A short upright hollow tree log with a small sleepy brown owl nestled in its round cavity, large amber owl eyes, moss roof and a few ivy leaves; twisted roots provide a stable base. This is one garden ornament scene, no flying owl.",
+      "motion": "blink",
+      "motionRequested": "blink",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested blink; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "green",
+          "warm"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 96,
+      "height": 136,
+      "pivot": {
+        "x": 48,
+        "y": 132
+      },
+      "defaultFile": "native/hw_owl_tree_hollow.png",
+      "rightFile": "native/hw_owl_tree_hollow_right.png",
+      "defaultFrames": [
+        "native/hw_owl_tree_hollow_f0.png",
+        "native/hw_owl_tree_hollow_f1.png",
+        "native/hw_owl_tree_hollow_f2.png",
+        "native/hw_owl_tree_hollow_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_owl_tree_hollow_right_f0.png",
+        "native/hw_owl_tree_hollow_right_f1.png",
+        "native/hw_owl_tree_hollow_right_f2.png",
+        "native/hw_owl_tree_hollow_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_owl_tree_hollow.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_owl_tree_hollow.png",
+          "alternate": "thumbnails/2x/hw_owl_tree_hollow_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_owl_tree_hollow.png",
+          "alternate": "thumbnails/3x/hw_owl_tree_hollow_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_owl_tree_hollow.png",
+      "sourceSha256": "259ab0937ff4303fb0b9a6b976a554c4537fa41b9cdaaeb1d9c2ba14a37f0c7b",
+      "pngSha256": {
+        "native/hw_owl_tree_hollow.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
+        "native/hw_owl_tree_hollow_right.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
+        "native/hw_owl_tree_hollow_f0.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
+        "native/hw_owl_tree_hollow_f1.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
+        "native/hw_owl_tree_hollow_f2.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
+        "native/hw_owl_tree_hollow_f3.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
+        "native/hw_owl_tree_hollow_right_f0.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
+        "native/hw_owl_tree_hollow_right_f1.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
+        "native/hw_owl_tree_hollow_right_f2.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
+        "native/hw_owl_tree_hollow_right_f3.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
+        "spritesheets/hw_owl_tree_hollow.png": "32b72c9a40cd136cbc1bd720ad627a6285a1e4bafc0be84b0b7cf54743faad90",
+        "thumbnails/2x/hw_owl_tree_hollow.png": "fef7d00ee862d1cfc397af48231bb6dd6955b9b26f93a25519f30af3ba2c9a07",
+        "thumbnails/2x/hw_owl_tree_hollow_right.png": "6ed0942f8a47ff4f07a32acac0105bf7b43690e659072ea74f80e26f4a857fb6",
+        "thumbnails/3x/hw_owl_tree_hollow.png": "152c6816c7fe199839ae590d041cca940bf05684dfa5546d3529531d245a34d9",
+        "thumbnails/3x/hw_owl_tree_hollow_right.png": "beba18c8d152ece1f332e992189d1581c3b7325f0683c81d089b5c606d1177c9"
+      }
+    },
+    {
+      "id": "hw_dewy_cobweb_frame",
+      "label": "Giàn mạng nhện đọng sương",
+      "group": "Rừng tinh nghịch",
+      "subject": "An irregular rustic frame made of two forked branches and a crooked top beam, holding one large elegant spiderweb with pale blue dew beads and one tiny violet spider at the upper corner. Simple readable radial web, two root feet.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 82,
+              "y": 48,
+              "w": 5,
+              "h": 4
+            },
+            "pixelCount": 12,
+            "mappableCount": 12,
+            "maxPixels": 753,
+            "rootBand": 102
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 63,
+              "y": 44,
+              "w": 5,
+              "h": 4
+            },
+            "pixelCount": 9,
+            "mappableCount": 9,
+            "maxPixels": 664,
+            "rootBand": 102
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "magic",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "width": 128,
+      "height": 136,
+      "pivot": {
+        "x": 64,
+        "y": 132
+      },
+      "defaultFile": "native/hw_dewy_cobweb_frame.png",
+      "rightFile": "native/hw_dewy_cobweb_frame_right.png",
+      "defaultFrames": [
+        "native/hw_dewy_cobweb_frame_f0.png",
+        "native/hw_dewy_cobweb_frame_f1.png",
+        "native/hw_dewy_cobweb_frame_f2.png",
+        "native/hw_dewy_cobweb_frame_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_dewy_cobweb_frame_right_f0.png",
+        "native/hw_dewy_cobweb_frame_right_f1.png",
+        "native/hw_dewy_cobweb_frame_right_f2.png",
+        "native/hw_dewy_cobweb_frame_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_dewy_cobweb_frame.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_dewy_cobweb_frame.png",
+          "alternate": "thumbnails/2x/hw_dewy_cobweb_frame_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_dewy_cobweb_frame.png",
+          "alternate": "thumbnails/3x/hw_dewy_cobweb_frame_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_dewy_cobweb_frame.png",
+      "sourceSha256": "91bfdbfba6fe17640379c3e47549237a8b0f2f61bebb8765e8d65c09b2d12306",
+      "pngSha256": {
+        "native/hw_dewy_cobweb_frame.png": "449f9e332e94f704f770c3908c28daa2667d67fee51124131b7c36d90a77cdaa",
+        "native/hw_dewy_cobweb_frame_right.png": "b9b156f0e28ac77bb4851f1ae78ca2e34e93f7573259ea9f7c532d273374868b",
+        "native/hw_dewy_cobweb_frame_f0.png": "449f9e332e94f704f770c3908c28daa2667d67fee51124131b7c36d90a77cdaa",
+        "native/hw_dewy_cobweb_frame_f1.png": "f290bc921c34ca5535461e167c1f5caef8f885c79b5fc99a470e2afc38159cfd",
+        "native/hw_dewy_cobweb_frame_f2.png": "454c56a00c7f2428f1b693ecff72071eb5fe2e5948e3b507cc5c3c9a682eff56",
+        "native/hw_dewy_cobweb_frame_f3.png": "449f9e332e94f704f770c3908c28daa2667d67fee51124131b7c36d90a77cdaa",
+        "native/hw_dewy_cobweb_frame_right_f0.png": "b9b156f0e28ac77bb4851f1ae78ca2e34e93f7573259ea9f7c532d273374868b",
+        "native/hw_dewy_cobweb_frame_right_f1.png": "d770aa56b75ac901b556e81f882a16d25f2a5aadad58167fd13849c05eb2051a",
+        "native/hw_dewy_cobweb_frame_right_f2.png": "58078ff68016cbfc74adf1dd1b875f274ddc28a0e6b4c509f17e0ee7842c03fb",
+        "native/hw_dewy_cobweb_frame_right_f3.png": "b9b156f0e28ac77bb4851f1ae78ca2e34e93f7573259ea9f7c532d273374868b",
+        "spritesheets/hw_dewy_cobweb_frame.png": "021d9fe0489b25defa48568ae17cff1d88c97c619cc128fc45ad52a03a7c0636",
+        "thumbnails/2x/hw_dewy_cobweb_frame.png": "682a72ad8a33efff4ccccd0b318958414e31cda2c33bfa9076da221d88ad0acd",
+        "thumbnails/2x/hw_dewy_cobweb_frame_right.png": "664301e34d54a3deaa29d11ff0277948997c1ee479c07adf1eeff9ce8f0cc5eb",
+        "thumbnails/3x/hw_dewy_cobweb_frame.png": "845afc114eb0754d9e20ff4b2f02ba224a915a0ae621543529dc827f22a9242d",
+        "thumbnails/3x/hw_dewy_cobweb_frame_right.png": "39d05e4b2603a33d856e12a5ebc17c3c7bb21074b3b38060eb4fd45179eb62ec"
+      }
+    },
+    {
+      "id": "hw_pumpkin_spider_nest",
+      "label": "Tổ nhện trong bí ngô",
+      "group": "Rừng tinh nghịch",
+      "subject": "A hollow orange pumpkin lying on its side, cut opening filled with a small ivory web, one friendly dark-violet spider peeking out, two tiny spiderlings on the stem. A few green leaves and curly vine, no extra pumpkins.",
+      "motion": "sway",
+      "motionRequested": "sway",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "magic"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "width": 104,
+      "height": 96,
+      "pivot": {
+        "x": 52,
+        "y": 92
+      },
+      "defaultFile": "native/hw_pumpkin_spider_nest.png",
+      "rightFile": "native/hw_pumpkin_spider_nest_right.png",
+      "defaultFrames": [
+        "native/hw_pumpkin_spider_nest_f0.png",
+        "native/hw_pumpkin_spider_nest_f1.png",
+        "native/hw_pumpkin_spider_nest_f2.png",
+        "native/hw_pumpkin_spider_nest_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_pumpkin_spider_nest_right_f0.png",
+        "native/hw_pumpkin_spider_nest_right_f1.png",
+        "native/hw_pumpkin_spider_nest_right_f2.png",
+        "native/hw_pumpkin_spider_nest_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_pumpkin_spider_nest.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_pumpkin_spider_nest.png",
+          "alternate": "thumbnails/2x/hw_pumpkin_spider_nest_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_pumpkin_spider_nest.png",
+          "alternate": "thumbnails/3x/hw_pumpkin_spider_nest_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_pumpkin_spider_nest.png",
+      "sourceSha256": "550e1a36e5fae314f8d9184e915215905b9e04930782e1992ef8de6510a0af7b",
+      "pngSha256": {
+        "native/hw_pumpkin_spider_nest.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
+        "native/hw_pumpkin_spider_nest_right.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
+        "native/hw_pumpkin_spider_nest_f0.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
+        "native/hw_pumpkin_spider_nest_f1.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
+        "native/hw_pumpkin_spider_nest_f2.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
+        "native/hw_pumpkin_spider_nest_f3.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
+        "native/hw_pumpkin_spider_nest_right_f0.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
+        "native/hw_pumpkin_spider_nest_right_f1.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
+        "native/hw_pumpkin_spider_nest_right_f2.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
+        "native/hw_pumpkin_spider_nest_right_f3.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
+        "spritesheets/hw_pumpkin_spider_nest.png": "e504404a7f50e522deebbaff96446b297670f7b5a4d058618a4bc1b826d102f7",
+        "thumbnails/2x/hw_pumpkin_spider_nest.png": "8b948caa9a71f6fb4bb007f1db97f588dfe518acd77dd3166004ae97d783965a",
+        "thumbnails/2x/hw_pumpkin_spider_nest_right.png": "b01ebeca809a0b7de37fac8dc32d0d26cd907420aa1a729a3618a7a3f0a3ceb7",
+        "thumbnails/3x/hw_pumpkin_spider_nest.png": "0d2264a14a80e81b382925d3ad32b70bce2644c74d1d7cdbfa26ac014be80b14",
+        "thumbnails/3x/hw_pumpkin_spider_nest_right.png": "bd87a00f7690a302f81d215489075f3e771a7748afba38282d4d5b2191046510"
+      }
+    },
+    {
+      "id": "hw_root_halloween_gate",
+      "label": "Cổng Halloween bằng rễ cây",
+      "group": "Tiểu cảnh",
+      "subject": "A freestanding large garden gateway formed by two twisted old tree roots meeting in an arch, two carved pumpkin lanterns integrated into the posts, small bat finial and sparse cobwebs. Open walk-through center, no door, no fence extensions, roots stable on ground.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 24,
+              "y": 116,
+              "w": 11,
+              "h": 10
+            },
+            "pixelCount": 68,
+            "mappableCount": 68,
+            "maxPixels": 1758,
+            "rootBand": 156
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 32,
+              "y": 103,
+              "w": 16,
+              "h": 8
+            },
+            "pixelCount": 65,
+            "mappableCount": 65,
+            "maxPixels": 1901,
+            "rootBand": 156
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "green"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "width": 192,
+      "height": 208,
+      "pivot": {
+        "x": 96,
+        "y": 204
+      },
+      "defaultFile": "native/hw_root_halloween_gate.png",
+      "rightFile": "native/hw_root_halloween_gate_right.png",
+      "defaultFrames": [
+        "native/hw_root_halloween_gate_f0.png",
+        "native/hw_root_halloween_gate_f1.png",
+        "native/hw_root_halloween_gate_f2.png",
+        "native/hw_root_halloween_gate_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_root_halloween_gate_right_f0.png",
+        "native/hw_root_halloween_gate_right_f1.png",
+        "native/hw_root_halloween_gate_right_f2.png",
+        "native/hw_root_halloween_gate_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_root_halloween_gate.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_root_halloween_gate.png",
+          "alternate": "thumbnails/2x/hw_root_halloween_gate_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_root_halloween_gate.png",
+          "alternate": "thumbnails/3x/hw_root_halloween_gate_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_root_halloween_gate.png",
+      "sourceSha256": "72ab8e57cd936b7c50f0750572a7fbb2b40f210fa31b676eed83df5a22fb4d7e",
+      "pngSha256": {
+        "native/hw_root_halloween_gate.png": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba",
+        "native/hw_root_halloween_gate_right.png": "6b5d1d89ad3bd4dda6738477707c22616521b6350d6c8625d18be934d0690da2",
+        "native/hw_root_halloween_gate_f0.png": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba",
+        "native/hw_root_halloween_gate_f1.png": "c6b9c9230c4d6a437a15060726673eaa45bc0e647f080e9e03667acf4eb9f9ee",
+        "native/hw_root_halloween_gate_f2.png": "335dc0c26252ea4ccddd41380702b20b57965800cb2170ee5b3b95892d72236a",
+        "native/hw_root_halloween_gate_f3.png": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba",
+        "native/hw_root_halloween_gate_right_f0.png": "6b5d1d89ad3bd4dda6738477707c22616521b6350d6c8625d18be934d0690da2",
+        "native/hw_root_halloween_gate_right_f1.png": "cdb2626cf6dc0a130c0544ec816d6f3afb29e36c0e43d8d09532185ff7688994",
+        "native/hw_root_halloween_gate_right_f2.png": "b024cfb3851755f5798d739033534f6b5756cdcb11e471eb951fdb31b534db07",
+        "native/hw_root_halloween_gate_right_f3.png": "6b5d1d89ad3bd4dda6738477707c22616521b6350d6c8625d18be934d0690da2",
+        "spritesheets/hw_root_halloween_gate.png": "0e3ecfefb5f5fd422f40b84ffc6b39fe423b545b3a302aa6127d7b9f2aa8798f",
+        "thumbnails/2x/hw_root_halloween_gate.png": "74f997343f13a51cd315d8cc0912a3650aa3efd7aa1fedbbb164ca0214b99c96",
+        "thumbnails/2x/hw_root_halloween_gate_right.png": "bec3debda6bdd9c7f32113b63b9079cc0e7790f7de9ca0554adfbe056d099062",
+        "thumbnails/3x/hw_root_halloween_gate.png": "b997ee788c66d1f1594d8bcec8ef3f8e7e2831a1ac7c3f0953f1f35a585becd1",
+        "thumbnails/3x/hw_root_halloween_gate_right.png": "f2a63e6f4b03aa0bd46ad1be118d1c49ea05f41b9f5910f4eebae20c624de951"
+      }
+    },
+    {
+      "id": "hw_crooked_witch_hut",
+      "label": "Lều phù thủy mái vẹo",
+      "group": "Tiểu cảnh",
+      "subject": "A small cosy one-room witch's hut decoration, weathered timber walls, dramatically crooked violet slate roof with curled chimney, amber arched window, little plank door, pumpkin by doorstep and sparse ivy. No landscape or ground tile, fully visible foundation.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 63,
+              "y": 109,
+              "w": 15,
+              "h": 8
+            },
+            "pixelCount": 58,
+            "mappableCount": 58,
+            "maxPixels": 2442,
+            "rootBand": 156
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 48,
+              "y": 101,
+              "w": 14,
+              "h": 8
+            },
+            "pixelCount": 64,
+            "mappableCount": 64,
+            "maxPixels": 2546,
+            "rootBand": 156
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "magic",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "width": 192,
+      "height": 208,
+      "pivot": {
+        "x": 96,
+        "y": 204
+      },
+      "defaultFile": "native/hw_crooked_witch_hut.png",
+      "rightFile": "native/hw_crooked_witch_hut_right.png",
+      "defaultFrames": [
+        "native/hw_crooked_witch_hut_f0.png",
+        "native/hw_crooked_witch_hut_f1.png",
+        "native/hw_crooked_witch_hut_f2.png",
+        "native/hw_crooked_witch_hut_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_crooked_witch_hut_right_f0.png",
+        "native/hw_crooked_witch_hut_right_f1.png",
+        "native/hw_crooked_witch_hut_right_f2.png",
+        "native/hw_crooked_witch_hut_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_crooked_witch_hut.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_crooked_witch_hut.png",
+          "alternate": "thumbnails/2x/hw_crooked_witch_hut_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_crooked_witch_hut.png",
+          "alternate": "thumbnails/3x/hw_crooked_witch_hut_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_crooked_witch_hut.png",
+      "sourceSha256": "9fb3512919c1d50012f331247769f4f22cfda1046bcf408da848c141007eec56",
+      "pngSha256": {
+        "native/hw_crooked_witch_hut.png": "8cc9ae66eaedc8a93f504d9e6aafc3e3a7875245a8df540fd4d0dc2b9b840b1c",
+        "native/hw_crooked_witch_hut_right.png": "d555dd8ccab3967942156bba42eed5ceb82f70c47f888249c6b029b1be13aca3",
+        "native/hw_crooked_witch_hut_f0.png": "8cc9ae66eaedc8a93f504d9e6aafc3e3a7875245a8df540fd4d0dc2b9b840b1c",
+        "native/hw_crooked_witch_hut_f1.png": "f9a1e193e6f2cd4f3c740e45c1422c0b1994f727a05eb52083c194c3861bdfa1",
+        "native/hw_crooked_witch_hut_f2.png": "461d26110687252db26e0644f97b6ce6dc7bb53c85a7d3ae515998e347e05fdc",
+        "native/hw_crooked_witch_hut_f3.png": "8cc9ae66eaedc8a93f504d9e6aafc3e3a7875245a8df540fd4d0dc2b9b840b1c",
+        "native/hw_crooked_witch_hut_right_f0.png": "d555dd8ccab3967942156bba42eed5ceb82f70c47f888249c6b029b1be13aca3",
+        "native/hw_crooked_witch_hut_right_f1.png": "528ac00e990e5542b8b6c792d18095e54637f3b39d0020a0bb5e1e8416c9aca6",
+        "native/hw_crooked_witch_hut_right_f2.png": "82d5a89f2598a7d9fcb9c068f1acea4af8caa6689a41c2eee37eeceecdee8c84",
+        "native/hw_crooked_witch_hut_right_f3.png": "d555dd8ccab3967942156bba42eed5ceb82f70c47f888249c6b029b1be13aca3",
+        "spritesheets/hw_crooked_witch_hut.png": "cf3afce710ae57f4bd6390c6937119584befeb0949d66cf48ea7e282ecab6c0d",
+        "thumbnails/2x/hw_crooked_witch_hut.png": "25de729acad85b2f467a51b3978cb666266b65a81c9c49e01be4d8646eb2d3a9",
+        "thumbnails/2x/hw_crooked_witch_hut_right.png": "2999276c82551d49cacae68137bae5d5cf04d358175b076ea51f1c000821e882",
+        "thumbnails/3x/hw_crooked_witch_hut.png": "6d478943fdb0119560174e6682c455dfd2349abc505a33bb320b03faf19f8896",
+        "thumbnails/3x/hw_crooked_witch_hut_right.png": "29a51f2b22054ae152cd43a2ac88c046101450882fabecdbb8b2f192a2b69b94"
+      }
+    },
+    {
+      "id": "hw_mini_pumpkin_house",
+      "label": "Nhà bí ngô thu nhỏ",
+      "group": "Tiểu cảnh",
+      "subject": "A miniature cosy house built inside one giant orange pumpkin: round wooden door, two tiny amber windows, curled green stem chimney, two small stone steps, a violet leaf awning, small green vine around base. No landscape or tile platform.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 50,
+              "y": 52,
+              "w": 50,
+              "h": 44
+            },
+            "pixelCount": 1054,
+            "mappableCount": 1054,
+            "maxPixels": 2417,
+            "rootBand": 132
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 21,
+              "y": 55,
+              "w": 44,
+              "h": 50
+            },
+            "pixelCount": 715,
+            "mappableCount": 715,
+            "maxPixels": 2354,
+            "rootBand": 132
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "green"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "width": 176,
+      "height": 176,
+      "pivot": {
+        "x": 88,
+        "y": 172
+      },
+      "defaultFile": "native/hw_mini_pumpkin_house.png",
+      "rightFile": "native/hw_mini_pumpkin_house_right.png",
+      "defaultFrames": [
+        "native/hw_mini_pumpkin_house_f0.png",
+        "native/hw_mini_pumpkin_house_f1.png",
+        "native/hw_mini_pumpkin_house_f2.png",
+        "native/hw_mini_pumpkin_house_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_mini_pumpkin_house_right_f0.png",
+        "native/hw_mini_pumpkin_house_right_f1.png",
+        "native/hw_mini_pumpkin_house_right_f2.png",
+        "native/hw_mini_pumpkin_house_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_mini_pumpkin_house.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_mini_pumpkin_house.png",
+          "alternate": "thumbnails/2x/hw_mini_pumpkin_house_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_mini_pumpkin_house.png",
+          "alternate": "thumbnails/3x/hw_mini_pumpkin_house_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_mini_pumpkin_house.png",
+      "sourceSha256": "e3530604734a6c638b9777f01687eed7d3c8cf75c69536d18b278f20e1f67672",
+      "pngSha256": {
+        "native/hw_mini_pumpkin_house.png": "b014fbff87fc33fc1cdb4ec4ae3903cffc1335e4118d422f406da20fd481e129",
+        "native/hw_mini_pumpkin_house_right.png": "dda209388d01ecf3651132bacc0eb5d6ed5a9676de86e44ddf384dbd9efcf498",
+        "native/hw_mini_pumpkin_house_f0.png": "b014fbff87fc33fc1cdb4ec4ae3903cffc1335e4118d422f406da20fd481e129",
+        "native/hw_mini_pumpkin_house_f1.png": "c369f4444603b4990b2959ea78ddfaa2bd65fddd50cefd317a4f7aca8e023d41",
+        "native/hw_mini_pumpkin_house_f2.png": "8309718d8cd5ca9c2b92d8d5d3159ea4ff57096cc7bc980a496d8a65f656391a",
+        "native/hw_mini_pumpkin_house_f3.png": "b014fbff87fc33fc1cdb4ec4ae3903cffc1335e4118d422f406da20fd481e129",
+        "native/hw_mini_pumpkin_house_right_f0.png": "dda209388d01ecf3651132bacc0eb5d6ed5a9676de86e44ddf384dbd9efcf498",
+        "native/hw_mini_pumpkin_house_right_f1.png": "a8274d87695ab9905888fccdc170cbeebd96081b20db1cd6cb82d5001254d061",
+        "native/hw_mini_pumpkin_house_right_f2.png": "a0698449a233ae32630ed09e0b05c7ce3bf9c6cd73e2363e0053dfa2657ae308",
+        "native/hw_mini_pumpkin_house_right_f3.png": "dda209388d01ecf3651132bacc0eb5d6ed5a9676de86e44ddf384dbd9efcf498",
+        "spritesheets/hw_mini_pumpkin_house.png": "274774ab580f9028f3818c5938fee855d0ebeff056fe9c5465fc7fe30b461573",
+        "thumbnails/2x/hw_mini_pumpkin_house.png": "da4e781e25f190700f83370b71eb6227f3df73ebdce9883f5a1e011238f3b79d",
+        "thumbnails/2x/hw_mini_pumpkin_house_right.png": "78b1c196cdf9ec861905ffecb398b0ddff7c31a0523a4d7ae627f76e9096bd9c",
+        "thumbnails/3x/hw_mini_pumpkin_house.png": "0e931548ed22fbd808daee801536668fd50052d1f97dbd07bf6f7a2d6dcf2ae0",
+        "thumbnails/3x/hw_mini_pumpkin_house_right.png": "3f9197b28a5da5fa971771c961a3857d8491d0fcf5813acb2d396faa22ea8def"
+      }
+    },
+    {
+      "id": "hw_ghost_well",
+      "label": "Giếng có ma ló đầu",
+      "group": "Tiểu cảnh",
+      "subject": "A little old circular grey stone well with timber uprights and crooked orange shingle roof, wooden crank and rope bucket. One friendly ivory ghost peeks just above the well rim with two purple oval eyes. Moss on stone and a pumpkin-shaped finial, no ground tile.",
+      "motion": "sway",
+      "motionRequested": "sway",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "sway",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested sway; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "stone",
+          "magic"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "width": 176,
+      "height": 192,
+      "pivot": {
+        "x": 88,
+        "y": 188
+      },
+      "defaultFile": "native/hw_ghost_well.png",
+      "rightFile": "native/hw_ghost_well_right.png",
+      "defaultFrames": [
+        "native/hw_ghost_well_f0.png",
+        "native/hw_ghost_well_f1.png",
+        "native/hw_ghost_well_f2.png",
+        "native/hw_ghost_well_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_ghost_well_right_f0.png",
+        "native/hw_ghost_well_right_f1.png",
+        "native/hw_ghost_well_right_f2.png",
+        "native/hw_ghost_well_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_ghost_well.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_ghost_well.png",
+          "alternate": "thumbnails/2x/hw_ghost_well_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_ghost_well.png",
+          "alternate": "thumbnails/3x/hw_ghost_well_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/hw_ghost_well.png",
+      "sourceSha256": "d5721292a272b96a8ddea870241d14b321a1f6e429eeb9192ac73af3b6e895f9",
+      "pngSha256": {
+        "native/hw_ghost_well.png": "b56698fa4747221b6f2b2945c8c691d3c5c17ee785fa6827e5d5993fcaef5c6e",
+        "native/hw_ghost_well_right.png": "60d9d9b313d714d277472ebdb6153540087be0472248d9d185084c14f3ed6d17",
+        "native/hw_ghost_well_f0.png": "b56698fa4747221b6f2b2945c8c691d3c5c17ee785fa6827e5d5993fcaef5c6e",
+        "native/hw_ghost_well_f1.png": "b56698fa4747221b6f2b2945c8c691d3c5c17ee785fa6827e5d5993fcaef5c6e",
+        "native/hw_ghost_well_f2.png": "b56698fa4747221b6f2b2945c8c691d3c5c17ee785fa6827e5d5993fcaef5c6e",
+        "native/hw_ghost_well_f3.png": "b56698fa4747221b6f2b2945c8c691d3c5c17ee785fa6827e5d5993fcaef5c6e",
+        "native/hw_ghost_well_right_f0.png": "60d9d9b313d714d277472ebdb6153540087be0472248d9d185084c14f3ed6d17",
+        "native/hw_ghost_well_right_f1.png": "60d9d9b313d714d277472ebdb6153540087be0472248d9d185084c14f3ed6d17",
+        "native/hw_ghost_well_right_f2.png": "60d9d9b313d714d277472ebdb6153540087be0472248d9d185084c14f3ed6d17",
+        "native/hw_ghost_well_right_f3.png": "60d9d9b313d714d277472ebdb6153540087be0472248d9d185084c14f3ed6d17",
+        "spritesheets/hw_ghost_well.png": "e55461f2b08a9459c57f3e0195b66c9af37e19e995c0c991c04bc0b05c2b725b",
+        "thumbnails/2x/hw_ghost_well.png": "0150eb8c3306fe3f09aa9c1d21037f473341e53211e2534786b1c78799a87f30",
+        "thumbnails/2x/hw_ghost_well_right.png": "82775cf5729d75d3b9e7a49b2e7cb4e6f2c2da7ea196d87e94d1a0d420e53dfd",
+        "thumbnails/3x/hw_ghost_well.png": "42cf0167d6e30c7bd88c7edf00170000a1fcf89875098f6d0e6c0840bb2593ec",
+        "thumbnails/3x/hw_ghost_well_right.png": "6a7f5c2ef2ccbf874f1a8d40ecafa9349443a9665719a6bc0c4c85679c07db79"
+      }
+    },
+    {
+      "id": "hw_violet_mist_pond",
+      "label": "Ao sương tím",
+      "group": "Tiểu cảnh",
+      "subject": "A compact oval ornamental garden pond bounded by chunky weathered grey stones, dark teal water with a few lily pads, one pale skull-shaped rock, a small crooked reed, and low hard-edged pixel wisps of violet mist over water. Isometric 2:1 oval footprint, no surrounding terrain tile.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 87,
+              "y": 56,
+              "w": 34,
+              "h": 43
+            },
+            "pixelCount": 398,
+            "mappableCount": 398,
+            "maxPixels": 1642,
+            "rootBand": 108
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 83,
+              "y": 47,
+              "w": 25,
+              "h": 28
+            },
+            "pixelCount": 295,
+            "mappableCount": 295,
+            "maxPixels": 1879,
+            "rootBand": 108
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "magic",
+          "green"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "width": 192,
+      "height": 144,
+      "pivot": {
+        "x": 96,
+        "y": 140
+      },
+      "defaultFile": "native/hw_violet_mist_pond.png",
+      "rightFile": "native/hw_violet_mist_pond_right.png",
+      "defaultFrames": [
+        "native/hw_violet_mist_pond_f0.png",
+        "native/hw_violet_mist_pond_f1.png",
+        "native/hw_violet_mist_pond_f2.png",
+        "native/hw_violet_mist_pond_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_violet_mist_pond_right_f0.png",
+        "native/hw_violet_mist_pond_right_f1.png",
+        "native/hw_violet_mist_pond_right_f2.png",
+        "native/hw_violet_mist_pond_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_violet_mist_pond.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_violet_mist_pond.png",
+          "alternate": "thumbnails/2x/hw_violet_mist_pond_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_violet_mist_pond.png",
+          "alternate": "thumbnails/3x/hw_violet_mist_pond_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_violet_mist_pond.png",
+      "sourceSha256": "fef8d91cc59206e93c2387af7f1dd0eae3d7e36f6f721abd4c5115fc43b6d706",
+      "pngSha256": {
+        "native/hw_violet_mist_pond.png": "8f2ffb5b2da2698948017a85ce96a4f5a7024939ed22597f794428f861b99005",
+        "native/hw_violet_mist_pond_right.png": "d8b8e9f340e8f93772a1f5f3f33cf025b0109b220b4406148494d48e5653c420",
+        "native/hw_violet_mist_pond_f0.png": "8f2ffb5b2da2698948017a85ce96a4f5a7024939ed22597f794428f861b99005",
+        "native/hw_violet_mist_pond_f1.png": "9347c58220f93dff62d22a04a4a8735f288c49605a07397632dc1e7fddf04663",
+        "native/hw_violet_mist_pond_f2.png": "01e7a3b2e08a9c8a8ef74ab3739cd004908f780c270ccb63ad2ac52addcddcff",
+        "native/hw_violet_mist_pond_f3.png": "8f2ffb5b2da2698948017a85ce96a4f5a7024939ed22597f794428f861b99005",
+        "native/hw_violet_mist_pond_right_f0.png": "d8b8e9f340e8f93772a1f5f3f33cf025b0109b220b4406148494d48e5653c420",
+        "native/hw_violet_mist_pond_right_f1.png": "ac625cd5dbcf54f3204f4b56b773ccd6af695f3c7245dbe9aa76e6d4e1717e91",
+        "native/hw_violet_mist_pond_right_f2.png": "151b6918f72762dabc0be2840324f48f8e3336417a5fd63b2fed530145276588",
+        "native/hw_violet_mist_pond_right_f3.png": "d8b8e9f340e8f93772a1f5f3f33cf025b0109b220b4406148494d48e5653c420",
+        "spritesheets/hw_violet_mist_pond.png": "72b8614d26f6bb2ee630fa53d354b95bb725512bb134431181d29f566a2af19d",
+        "thumbnails/2x/hw_violet_mist_pond.png": "0ab1e1ad5dc1abd78e7933900bcb10e1c58139981c9978fac43656fba3073a50",
+        "thumbnails/2x/hw_violet_mist_pond_right.png": "81c753e2d2bb27560c51788e61d655394e8d6845bb9e5cecffcf12958a159e03",
+        "thumbnails/3x/hw_violet_mist_pond.png": "b765c096a89f6f4248bcb3c814dab017510639cad53b4874fcf06ce1a75d9d1f",
+        "thumbnails/3x/hw_violet_mist_pond_right.png": "c09dbca63341c75b3da6b62f60b98e5941ad47d37ca29abca858ba72460d5cb2"
+      }
+    },
+    {
+      "id": "hw_lantern_ancient_tree",
+      "label": "Cây cổ thụ treo đèn",
+      "group": "Tiểu cảnh",
+      "subject": "A compact venerable gnarled tree with a stout warm brown trunk, broad sparse canopy of moss green and autumn orange leaves, exactly four small pumpkin lanterns hanging at varied heights, exposed curling roots and one tiny mushroom. Entire canopy and roots visible, no landscape.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 160,
+              "y": 144,
+              "w": 10,
+              "h": 10
+            },
+            "pixelCount": 57,
+            "mappableCount": 57,
+            "maxPixels": 2892,
+            "rootBand": 168
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 162,
+              "y": 126,
+              "w": 15,
+              "h": 7
+            },
+            "pixelCount": 54,
+            "mappableCount": 54,
+            "maxPixels": 2818,
+            "rootBand": 168
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "wood",
+          "green",
+          "fire"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "width": 208,
+      "height": 224,
+      "pivot": {
+        "x": 104,
+        "y": 220
+      },
+      "defaultFile": "native/hw_lantern_ancient_tree.png",
+      "rightFile": "native/hw_lantern_ancient_tree_right.png",
+      "defaultFrames": [
+        "native/hw_lantern_ancient_tree_f0.png",
+        "native/hw_lantern_ancient_tree_f1.png",
+        "native/hw_lantern_ancient_tree_f2.png",
+        "native/hw_lantern_ancient_tree_f3.png"
+      ],
+      "rightFrames": [
+        "native/hw_lantern_ancient_tree_right_f0.png",
+        "native/hw_lantern_ancient_tree_right_f1.png",
+        "native/hw_lantern_ancient_tree_right_f2.png",
+        "native/hw_lantern_ancient_tree_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/hw_lantern_ancient_tree.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/hw_lantern_ancient_tree.png",
+          "alternate": "thumbnails/2x/hw_lantern_ancient_tree_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/hw_lantern_ancient_tree.png",
+          "alternate": "thumbnails/3x/hw_lantern_ancient_tree_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/hw_lantern_ancient_tree.png",
+      "sourceSha256": "608b08478e0a4b003906be5d39eed7704d5f46a70c567e85f79dfb905a022f9a",
+      "pngSha256": {
+        "native/hw_lantern_ancient_tree.png": "07a3c94d2bb0c5eb857ee20ad53d4cbb46a1bf6512e901c83d053e83bdc36d93",
+        "native/hw_lantern_ancient_tree_right.png": "848eaa05cac159cf599c3c795b08a52ad9c0f1a068e2683e09934966da310030",
+        "native/hw_lantern_ancient_tree_f0.png": "07a3c94d2bb0c5eb857ee20ad53d4cbb46a1bf6512e901c83d053e83bdc36d93",
+        "native/hw_lantern_ancient_tree_f1.png": "984bcf99cc74b9a128dc18a8fe50cc4bb726454a1cfb54705092e818652e5190",
+        "native/hw_lantern_ancient_tree_f2.png": "9ca13179939d419d9f66251af759409301eb7c7f99537f0d74bcd50e81a5c465",
+        "native/hw_lantern_ancient_tree_f3.png": "07a3c94d2bb0c5eb857ee20ad53d4cbb46a1bf6512e901c83d053e83bdc36d93",
+        "native/hw_lantern_ancient_tree_right_f0.png": "848eaa05cac159cf599c3c795b08a52ad9c0f1a068e2683e09934966da310030",
+        "native/hw_lantern_ancient_tree_right_f1.png": "199b82085579840b0b3d4073d82a99231330d0a0777ac6e0758cff9653a8a4cc",
+        "native/hw_lantern_ancient_tree_right_f2.png": "d40ab1350e986f5b5d97722ddf9dc1a98847f6fb7b863b141cd2dcb71185ac7b",
+        "native/hw_lantern_ancient_tree_right_f3.png": "848eaa05cac159cf599c3c795b08a52ad9c0f1a068e2683e09934966da310030",
+        "spritesheets/hw_lantern_ancient_tree.png": "1ff023df9e24978dd05c754db8855779a83a97d9c74d8a99353b2872d4aac176",
+        "thumbnails/2x/hw_lantern_ancient_tree.png": "ed463b5b4f127182652e93033714785b77989fc521f8dcbfc4ae7e44e7f27eb9",
+        "thumbnails/2x/hw_lantern_ancient_tree_right.png": "2ad8fede6478a5da132713b20007a4076f1c2569b76d7c91041b702bb33ff5ec",
+        "thumbnails/3x/hw_lantern_ancient_tree.png": "078b259e4f88cbad232cf3ef1b66544415ee300923ad935536a911720089a60d",
+        "thumbnails/3x/hw_lantern_ancient_tree_right.png": "a58b9b47a4f0da07547669d5453ab4a02aeaaae1f4531606c32158bd7da7677e"
       }
     }
   ],

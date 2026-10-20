@@ -9,7 +9,7 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let sharp;
 try {
-  sharp = require('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+  sharp = require(process.env.SHARP_MODULE || 'sharp');
 } catch {
   sharp = require('sharp');
 }
@@ -78,6 +78,38 @@ function crop(data, width, height, x0, cropWidth) {
     data.copy(result, to, from, from + cropWidth * 4);
   }
   return { data: result, width: cropWidth, height };
+}
+
+// Generated views may be unequally centered. Split inside the transparent gap
+// so neither view loses pixels or inherits a fragment from its neighbor.
+function splitMasterViews(master, itemId) {
+  const columns = new Uint32Array(master.width);
+  for (let y = 0; y < master.height; y += 1) {
+    for (let x = 0; x < master.width; x += 1) {
+      if (master.data[(y * master.width + x) * 4 + 3] >= ALPHA_THRESHOLD) columns[x] += 1;
+    }
+  }
+  const gaps = [];
+  const lo = Math.floor(master.width * 0.35);
+  const hi = Math.ceil(master.width * 0.65);
+  for (let x = lo; x < hi; x += 1) {
+    if (columns[x]) continue;
+    const start = x;
+    while (x + 1 < hi && !columns[x + 1]) x += 1;
+    gaps.push({ start, end: x });
+  }
+  const center = master.width / 2;
+  const distance = (gap) => Math.max(gap.start - center, center - gap.end, 0);
+  gaps.sort((a, b) => distance(a) - distance(b) || (b.end - b.start) - (a.end - a.start));
+  if (!gaps.length) throw new Error(`${itemId}: no transparent central gap separates the two master views`);
+  const gap = gaps[0];
+  const splitX = Math.floor((gap.start + gap.end + 1) / 2);
+  return {
+    left: crop(master.data, master.width, master.height, 0, splitX),
+    right: crop(master.data, master.width, master.height, splitX, master.width - splitX),
+    splitX,
+    gap,
+  };
 }
 
 function sampleOpaquePixel(view, x, y) {
@@ -494,7 +526,9 @@ function previewHtml(records, status, missing, collection) {
     foot: record.foot,
     width: record.width,
     height: record.height,
+    subject: record.subject,
     bookReference: record.bookReference,
+    designAdaptation: record.designAdaptation,
     defaultFile: record.defaultFile,
     rightFile: record.rightFile,
     defaultFrames: record.defaultFrames,
@@ -503,6 +537,7 @@ function previewHtml(records, status, missing, collection) {
   const missingText = missing.length ? `<p class="missing">Missing masters: ${missing.join(', ')}</p>` : '';
   return `<!doctype html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hagrid Farm decoration asset preview</title>
 <style>
   :root { color-scheme: dark; font: 14px/1.4 system-ui, sans-serif; background: #231F2E; color: #D6D8BF; }
@@ -528,7 +563,7 @@ function previewHtml(records, status, missing, collection) {
   body[data-weather="snow"] .stage::after { background: #D6D8BF; opacity: .2; }
   figure { position: relative; z-index: 2; flex: 0 0 var(--native-w); width: var(--native-w); margin: 0; text-align: center; }
   figcaption { width: var(--native-w); color: #A6B1AE; font-size: 11px; overflow-wrap: anywhere; }
-  img { display: block; width: var(--native-w); height: var(--native-h); max-width: none; object-fit: none; image-rendering: pixelated; }
+  img { display: block; width: var(--native-w); height: var(--native-h); max-width: none; object-fit: fill; image-rendering: pixelated; }
   body.zoom-2x .stage figure { flex-basis: var(--zoom-w); width: var(--zoom-w); }
   body.zoom-2x .stage figcaption { width: var(--zoom-w); }
   body.zoom-2x .stage img { width: var(--zoom-w); height: var(--zoom-h); }
@@ -559,7 +594,8 @@ for (const item of items) {
   const ref = item.bookReference;
   card.querySelector('.lore').textContent = ref
     ? 'Quyển ' + ref.book + ' · Chương ' + ref.chapter + ' · ' + (ref.term || '') + ' · ' + (ref.lore || '')
-    : 'No book reference in spec';
+    : 'Collection group: ' + item.group + (item.subject ? ' · ' + item.subject : '');
+  if (item.designAdaptation) card.querySelector('.lore').textContent += ' · ' + item.designAdaptation;
   const stage = card.querySelector('.stage');
   stage.style.setProperty('--native-w', item.width + 'px');
   stage.style.setProperty('--native-h', item.height + 'px');
@@ -654,9 +690,9 @@ async function main() {
     const itemPaletteSet = new Set(itemPalette.colors.map((value) => colorKey(...rgb(value))));
     const master = await readMaster(file);
     if (master.width < 2) throw new Error(`${rel(file)}: master must contain two horizontal views`);
-    const leftWidth = Math.floor(master.width / 2);
-    const leftSource = crop(master.data, master.width, master.height, 0, leftWidth);
-    const rightSource = crop(master.data, master.width, master.height, master.width - leftWidth, leftWidth);
+    const split = splitMasterViews(master, item.id);
+    const leftSource = split.left;
+    const rightSource = split.right;
     const sourceLeftBounds = boundsOf(leftSource.data, leftSource.width, leftSource.height);
     const sourceRightBounds = boundsOf(rightSource.data, rightSource.width, rightSource.height);
     if (!sourceLeftBounds || !sourceRightBounds) throw new Error(`${item.id}: both master halves must contain opaque pixels`);
@@ -742,6 +778,7 @@ async function main() {
       label: item.label,
       group: item.group,
       subject: item.subject,
+      designAdaptation: item.designAdaptation,
       motion: item.motion,
       motionRequested: item.motion || 'static',
       motionRendered: renderedMotions,
@@ -781,8 +818,11 @@ async function main() {
       sourceCanvas: {
         width: master.width,
         height: master.height,
-        halfWidth: leftWidth,
-        discardedCenterColumns: master.width - leftWidth * 2,
+        splitX: split.splitX,
+        transparentGap: split.gap,
+        defaultWidth: leftSource.width,
+        alternateWidth: rightSource.width,
+        discardedCenterColumns: 0,
       },
       sourceViews: { default: sourceLeftBounds, alternate: sourceRightBounds },
       palette: { ramps: itemPalette.ramps, colors: itemPalette.colors },
@@ -819,7 +859,7 @@ async function main() {
     itemPaletteSource: paletteDocument ? 'item-palettes.json' : null,
     alphaThreshold: ALPHA_THRESHOLD,
     nativeCanvas: 'per-item dimensions from specs.json; RGBA, binary alpha',
-    views: { default: 'left half from master', alternate: 'right half from master; never mirrored' },
+    views: { default: 'left view split at transparent central gap', alternate: 'right view split at transparent central gap; never mirrored' },
     items: records.map(({ defaultView, rightView, frameBuffers, ...record }) => record),
     qa: { validation: 'qa/validation.json', contactSheet },
     preview: 'preview.html',
@@ -830,8 +870,9 @@ async function main() {
     tool: 'build-assets.mjs',
     specs: { file: 'specs.json', sha256: specsSha256 },
     itemPalettes: itemPaletteSha256 ? { file: 'item-palettes.json', sha256: itemPaletteSha256 } : null,
-    sourceContract: 'Masters are preserved under masters/; each contains a real left default and right alternate view.',
+    sourceContract: 'Masters are preserved under masters/; each contains a real left default and right alternate view, separated at a verified transparent gap.',
     processing: {
+      sourceSplit: 'nearest transparent central gap at alpha threshold; retains both complete views without seam fragments',
       paletteNearest: 'weighted RGB distance (2,3,1), quantized to each item palette subset from item-palettes.json; global 24-color validation remains enforced',
       alphaThreshold: ALPHA_THRESHOLD,
       sampling: 'hard nearest pixel grid with opaque-neighborhood fallback; no smooth resize',
@@ -848,6 +889,7 @@ async function main() {
       packagedItemCount: records.length,
       allExpectedMastersPresent: missing.length === 0,
       twoViewsPerMaster: true,
+      masterViewsSeparatedByTransparentGap: true,
       fourFramesPerAngle: true,
       spriteSheetPerItem: true,
       nearestThumbnails2x3x: true,
@@ -876,4 +918,3 @@ main().catch((error) => {
   console.error(error instanceof Error ? error.message : error);
   process.exitCode = 1;
 });
-

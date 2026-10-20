@@ -1,0 +1,78 @@
+{
+  "schema": "hagrid-farm.decor-assets.final-integrity.v1",
+  "status": "pass",
+  "checkedAt": "2026-10-20T11:46:55.432Z",
+  "counts": {
+    "items": 30,
+    "views": 60,
+    "masters": 30,
+    "native": 300,
+    "spritesheets": 30,
+    "thumbnails2x": 60,
+    "thumbnails3x": 60
+  },
+  "hashChecks": {
+    "masterHashesMatched": 30,
+    "outputHashesMatched": 450
+  },
+  "originalMasters": [
+    {
+      "id": "hw_pumpkin_stack",
+      "sha256": "34da125518b3c43a2cad49074bf1b84bd6819adb9d75aa59a9e7db85cd600c8b",
+      "unchanged": true
+    },
+    {
+      "id": "hw_monster_candy_barrel",
+      "sha256": "9b836fff2e2f79b13eadf01df185ee086139518743eeb05f64201a27430f8112",
+      "unchanged": true
+    },
+    {
+      "id": "hw_wooden_black_cat",
+      "sha256": "42ce40a27d4f783efe746d2eae8835a119f4e22d8576fb17c2f55830aea69df7",
+      "unchanged": true
+    },
+    {
+      "id": "hw_halloween_sign",
+      "sha256": "9697f963f9376b3e569c942370ef4528ab5192f7be71ee9c3eb139ed06b81d62",
+      "unchanged": true
+    },
+    {
+      "id": "hw_cloth_ghost_lantern",
+      "sha256": "8f49e8bd04a2b41b80f4f5293da0b63010845b3acf1567629670876a730a6501",
+      "unchanged": true
+    }
+  ],
+  "motion": {
+    "localizedGlow": 19,
+    "static": 11
+  },
+  "exportAssertions": {
+    "expectedItemCount": 30,
+    "packagedItemCount": 30,
+    "allExpectedMastersPresent": true,
+    "twoViewsPerMaster": true,
+    "masterViewsSeparatedByTransparentGap": true,
+    "fourFramesPerAngle": true,
+    "spriteSheetPerItem": true,
+    "nearestThumbnails2x3x": true,
+    "motionFallbackDocumented": true,
+    "staticFramesTruthful": true,
+    "glowLocalized": true,
+    "paletteOnly": true,
+    "perItemPaletteOnly": true,
+    "itemPaletteConfigured": true,
+    "binaryAlpha": true,
+    "noEdgeClipping": true,
+    "groundedBottomQuarterUnchanged": true
+  },
+  "visualReview": {
+    "overview": true,
+    "twoViewContactSheet": true,
+    "sourceSplitRepair": "Transparent central gap split preserves both views and eliminates neighboring-view seam fragments."
+  },
+  "limits": [
+    "Artwork and export QA only; not imported into runtime in this change.",
+    "No in-game, physical-phone, connected-wallet or production proof.",
+    "Blink, sway, bubbles and interactions remain static fallback without authored motion masks."
+  ]
+}
