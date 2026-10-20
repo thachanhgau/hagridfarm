@@ -1,7 +1,7 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
 import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.61";
 import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.61";
-export const CATALOG_VERSION="garden-2026-10-20-special-v1";
+export const CATALOG_VERSION="garden-2026-10-20-halloween-v1";
 export const STORE_CATALOG=Object.freeze([
   {
     "id": "seed_pumpkin",
