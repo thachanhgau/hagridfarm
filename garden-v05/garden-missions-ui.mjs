@@ -83,8 +83,8 @@ export function createMissions({getSnapshot,claim,claimBacklog,claimEvent,notify
   const evReady=Boolean(ev&&(ev.tasks.some(t=>t.claimable)||ev.finale.ready));
   button.hidden=!getSnapshot();
   button.classList.toggle('has-claimable',Boolean(m?.claimable)||evReady);
-  // Once per session: tell the player the 20/10 event is on while it is not finished.
-  if(ev&&!ev.finale.claimed&&eventToldAt!==ev.id){eventToldAt=ev.id;notify('💐 Mừng ngày Phụ nữ Việt Nam 20/10: mở Nhiệm vụ để nhận Nước phép và quà bí mật của HPH!');}
+  // Once per session: tell the player the 20/10 event is on while it is not finished (after the connect toast).
+  if(ev&&!ev.finale.claimed&&eventToldAt!==ev.id){eventToldAt=ev.id;setTimeout(()=>notify('💐 Mừng ngày Phụ nữ Việt Nam 20/10: mở Nhiệm vụ để nhận Nước phép và quà bí mật của HPH!'),3000);}
   button.title=m?.claimable?'Nhiệm vụ · Có quà':'Nhiệm vụ';
   if(dialog.open)render();
  }
