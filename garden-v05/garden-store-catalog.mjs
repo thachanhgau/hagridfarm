@@ -1,6 +1,6 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-import {SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.60";
-import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.60";
+import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.61";
+import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.61";
 export const CATALOG_VERSION="garden-2026-10-20-special-v1";
 export const STORE_CATALOG=Object.freeze([
   {
@@ -576,7 +576,7 @@ export const STORE_CATALOG=Object.freeze([
     "dailyLimit": 1,
     "description": "Đồ trang trí vườn · sở hữu một lần · không tăng XP."
   }
-].map(Object.freeze).concat(SPECIAL_PRODUCTS));
+].map(Object.freeze).concat(SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS));
 // A seasonal item (`season`: festival id) is on sale only while that festival runs, at any level (server garden-wallet-catalog inSeason).
 export const inSeason=(item,dayKey=vnDayKey())=>!item.season||festivalStatus(dayKey).active?.id===item.season;
 // The first day (YYYY-MM-DD) a seasonal item goes on sale again.

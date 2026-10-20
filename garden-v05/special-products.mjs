@@ -60,6 +60,23 @@ export const SPECIAL_PRODUCTS = Object.freeze(ROWS.map(([id, label, level, price
   description: `${lore} (${BOOK_TITLES[book]} · chương ${chapter}) · Sản phẩm đặc biệt, chỉ để trang trí.${season ? ` Chỉ bán trong ${SEASON_LABELS[season]}.` : ''}`,
 })));
 
+// «Cửa hàng lễ hội»: festival decorations (art: halloween-assets/manifest.json), sold only in their festival, at any
+// level. Owner 20/10/2026 («nhập vô đi») on the proposed prices. Decoration only. Server copy: garden-wallet-catalog.js.
+export const FESTIVAL_COLLECTION = 'festival';
+// [id, label, price, footprint, short description, festival]
+const FESTIVAL_ROWS = [
+  ['hw_halloween_sign', 'Biển gỗ Halloween', 1800, [1, 1], 'Tấm biển gỗ treo đèn bí ngô, chỉ lối vào đêm hội.', 'event_halloween'],
+  ['hw_wooden_black_cat', 'Tượng mèo đen bằng gỗ', 2000, [1, 1], 'Chú mèo đen tạc gỗ, thỉnh thoảng chớp mắt.', 'event_halloween'],
+  ['hw_cloth_ghost_lantern', 'Đèn ma vải', 2200, [1, 1], 'Con ma vải treo trên cần gỗ, đung đưa trong gió.', 'event_halloween'],
+  ['hw_pumpkin_stack', 'Chồng bí ngô khắc mặt', 2400, [1, 1], 'Ba quả bí ngô khắc mặt chồng lên nhau, quả trên đội mũ phù thủy.', 'event_halloween'],
+  ['hw_monster_candy_barrel', 'Thùng kẹo quái vật', 2400, [1, 1], 'Thùng gỗ đầy kẹo, nắp há miệng như quái vật.', 'event_halloween'],
+];
+export const FESTIVAL_PRODUCTS = Object.freeze(FESTIVAL_ROWS.map(([id, label, price, footprint, lore, season]) => Object.freeze({
+  id, kind: 'decoration', collection: FESTIVAL_COLLECTION, decorationId: id, icon: id, label, level: 1, price, quantity: 1, dailyLimit: 1,
+  footprint: Object.freeze(footprint), lore, season,
+  description: `${lore} · Đồ lễ hội, chỉ để trang trí. Chỉ bán trong ${SEASON_LABELS[season]}.`,
+})));
+
 /** Footprint in tiles for a facing: the right view turns it a quarter, so columns and rows swap. */
 export function footprintFor(item, facing = 'default') {
   const [cols, rows] = item?.footprint ?? item?.footprintTiles ?? [1, 1];

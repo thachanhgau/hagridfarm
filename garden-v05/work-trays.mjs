@@ -1,5 +1,5 @@
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.60';
-import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.60';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.61';
+import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.61';
 import { DB } from './balance-data.mjs';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;

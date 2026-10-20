@@ -76,3 +76,20 @@ test('store lock: below level shows the level, off-season shows the opening day,
   assert.equal(storeLock(cake, 1, '2026-10-25'), '');
   assert.equal(storeLock(cake, 100, '2026-11-20'), 'Mở bán 24/10');
 });
+
+test('Halloween festival pieces: five sprites in both views, sold only in Lễ Hội Ma at any level', async () => {
+  const {FESTIVAL_PRODUCTS} = await import('./special-products.mjs');
+  const pack = JSON.parse(fs.readFileSync(new URL('./halloween-assets/manifest.json', import.meta.url)));
+  const sprites = runtime.items.filter(item => item.collection === 'festival');
+  assert.deepEqual(FESTIVAL_PRODUCTS.map(i => i.id).sort(), pack.items.map(i => i.id).sort());
+  assert.deepEqual(sprites.map(i => i.id).sort(), pack.items.map(i => i.id).sort());
+  for (const item of FESTIVAL_PRODUCTS) {
+    const sprite = sprites.find(x => x.id === item.id);
+    assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), item);
+    assert.deepEqual([item.season, item.level, item.kind, item.quantity], ['event_halloween', 1, 'decoration', 1]);
+    assert.notEqual(sprite.rightFile, sprite.file);
+    for (const file of [sprite.file, sprite.rightFile, ...sprite.frames, ...sprite.rightFrames]) assert.ok(fs.existsSync(new URL(`./${file}`, import.meta.url)), file);
+    assert.equal(unlockedCatalog(1, '2026-10-23').some(x => x.id === item.id), false);
+    assert.equal(unlockedCatalog(1, '2026-10-31').some(x => x.id === item.id), true);
+  }
+});

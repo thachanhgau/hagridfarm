@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.60';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.60';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.60";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.60";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.60";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.60";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.60";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.60";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.60";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.60";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.60";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.61';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.61';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.61";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.61";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.61";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.61";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.61";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.61";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.61";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.61";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.61";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -390,8 +390,10 @@ export function createPanels(ctx){
    const decorState=ctx.getDecorations?.()??session?.decorations??{};
    const allDecors=[...(ctx.decorAssets?.values?.()??[])].filter(a=>a.rotatable||a.id?.startsWith("decor_"));
    // «Sản phẩm đặc biệt» show once owned; the rest stay in their store tab.
-   const special=allDecors.filter(a=>a.collection==="special");
-   const sections=[["Đồ trang trí",allDecors.filter(a=>a.collection!=="special"),"decoration"],["Sản phẩm đặc biệt",special.filter(a=>decorState?.owned?.includes(a.id)),"special"]];
+   // Festival pieces, like special products, show here once owned.
+   const rare=a=>a.collection==="special"||a.collection==="festival";
+   const special=allDecors.filter(rare);
+   const sections=[["Đồ trang trí",allDecors.filter(a=>!rare(a)),"decoration"],["Sản phẩm đặc biệt & lễ hội",special.filter(a=>decorState?.owned?.includes(a.id)),"special"]];
    for(const [sectionTitle,storeDecors,storeTab] of sections){
     if(!storeDecors.length&&storeTab!=="special")continue;
     body.append(el("h3",{class:"gp-section-title",text:sectionTitle}));

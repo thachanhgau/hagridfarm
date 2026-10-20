@@ -1,0 +1,397 @@
+{
+  "collection": "Halloween — Đêm hội bên chòi Hagrid",
+  "version": 1,
+  "style": "Use case: stylized-concept. Asset type: production game decoration sprite master for Hagrid Farm. Crisp chunky handcrafted pixel art, cosy spooky wizarding garden, 2:1 dimetric/isometric projection on a 64x32 logical tile. Top-left illumination; selective dark-purple outlines, no pure black/white; clear big pixel clusters, no small noisy texture, no antialiasing, no gradients, no blur. Palette ONLY #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Use 2-3 of those color ramps per object. Native look must match the rustic pumpkin, broom-rack, mandrake and wooden hut sprites in the conversation reference. TRANSPARENT RGBA background, no scenery, no platform or tile base unless part of the actual subject, no text, no labels, no border, no watermark. Keep every part including glow as hard-edged pixels. Output ONE wide horizontal sprite master containing exactly TWO separated views of the SAME item: LEFT half default isometric view, RIGHT half the alternate isometric view rotated 90 degrees, NOT a mirror. Both views same size, same baseline near bottom, each fully contained in its own half with generous transparent margins, no overlap. Ground footprints consistent between views. Top-left light stays top-left in BOTH views. This is one asset turnaround sheet, not two different designs.",
+  "items": [
+    {
+      "id": "hw_pumpkin_stack",
+      "label": "Chồng bí ngô khắc mặt",
+      "group": "Cốt lõi",
+      "subject": "A compact stack of exactly three different carved jack-o-lantern pumpkins, one wearing a tiny crooked witch hat; varied cheerful spooky faces and candlelit amber interiors. Green stems, a few autumn leaves at the feet. A sturdy pyramid silhouette, no pedestal.",
+      "w": 96,
+      "h": 112,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_monster_candy_barrel",
+      "label": "Thùng kẹo quái vật",
+      "group": "Cốt lõi",
+      "subject": "A squat weathered wooden candy barrel made to resemble a friendly monster, lid tilted open like a mouth with two ivory tooth decorations, overflowing wrapped orange and purple sweets, two big playful eyes on the rim. No arms, no legs.",
+      "w": 96,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_wooden_black_cat",
+      "label": "Tượng mèo đen bằng gỗ",
+      "group": "Cốt lõi",
+      "subject": "A carved dark-purple wooden Halloween cat statue seated with an elegantly curled tail, pointed ears, one tiny orange neck bow, amber eyes. Clearly a rustic wood carving with a stable little wooden foot, not a living cat, cute and cosy.",
+      "w": 72,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "blink"
+    },
+    {
+      "id": "hw_halloween_sign",
+      "label": "Biển gỗ Halloween",
+      "group": "Cốt lõi",
+      "subject": "A crooked rustic wooden garden signpost with a pumpkin-shaped sign and a bat-shaped arrow, decorated with autumn leaves and a small cobweb. The sign contains ONLY carved pumpkin and bat pictograms, absolutely NO writing, lettering or numbers.",
+      "w": 96,
+      "h": 128,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_cloth_ghost_lantern",
+      "label": "Đèn ma vải",
+      "group": "Cốt lõi",
+      "subject": "A friendly ivory cloth ghost lantern with two oval purple eyes and a tiny surprised mouth, hanging from a curved dark wooden shepherd-hook post. Tattered cloth hem, tiny amber light shining inside, post firmly rooted in a little stone foot.",
+      "w": 80,
+      "h": 128,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "sway"
+    },
+    {
+      "id": "hw_dead_bat_tree",
+      "label": "Cây khô treo dơi",
+      "group": "Cốt lõi",
+      "subject": "A small twisted leafless brown tree with exactly three little purple bats hanging upside down from branches, a single pumpkin nestled among roots, tiny cobweb between two branches. Stable visible roots, readable sparse silhouette.",
+      "w": 128,
+      "h": 144,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "sway"
+    },
+    {
+      "id": "hw_bat_lantern",
+      "label": "Đèn lồng dơi",
+      "group": "Ánh sáng",
+      "subject": "A hanging bat-shaped iron lantern on a short freestanding crooked timber post. Wide bat wings form the lantern frame around a warm amber glass belly, curled feet of post on ground. Charming handcrafted rustic Halloween object.",
+      "w": 88,
+      "h": 120,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_skull_lantern",
+      "label": "Đèn đầu lâu",
+      "group": "Ánh sáng",
+      "subject": "A cute carved ivory skull lantern on a dark copper three-legged stand, big rounded eye sockets lit with warm violet candlelight, small ornamental teeth, not realistic or gruesome. Handcrafted cosy Halloween prop.",
+      "w": 80,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_haunted_house_lantern",
+      "label": "Đèn lồng hình nhà ma",
+      "group": "Ánh sáng",
+      "subject": "A tiny haunted-house-shaped lantern on a low stone plinth: crooked slate roof, a little chimney, warm orange glowing windows and small open arched doorway. This is a miniature decorative lantern, not a full-size building; no ghosts outside.",
+      "w": 96,
+      "h": 120,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_ghost_orb",
+      "label": "Quả cầu ma nhỏ",
+      "group": "Ánh sáng",
+      "subject": "A round teal glass orb held by a rustic brass three-pronged pedestal, containing one tiny smiling ivory ghost with purple eyes. Crisp pixel highlights on glass, miniature magical Halloween garden lamp, stable pedestal feet.",
+      "w": 80,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_spider_light_garland",
+      "label": "Giàn đèn nhện",
+      "group": "Ánh sáng",
+      "subject": "Two short weathered timber posts connected by a drooping cord holding exactly five tiny spider-shaped lanterns, alternating muted orange and violet. Spider legs make distinct simple pixel silhouettes. Posts stand on two little stone feet.",
+      "w": 144,
+      "h": 112,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_soul_bottle",
+      "label": "Bình linh hồn phát sáng",
+      "group": "Ánh sáng",
+      "subject": "A tall stoppered blue-green glass apothecary bottle with copper wire cage and a small carrying loop, resting in a low rustic wooden cradle. Inside float two tiny ivory spirit faces and hard-edged violet wisps. No label or writing.",
+      "w": 80,
+      "h": 112,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_candy_cauldron",
+      "label": "Vạc kẹo sôi",
+      "group": "Góc phù thủy",
+      "subject": "A round three-legged dark iron Halloween cauldron overflowing with wrapped orange and purple candy, with a few chunky candy-shaped bubbles hovering just above the rim. Tiny carved pumpkin emblem on front, no fire underneath, stable feet.",
+      "w": 96,
+      "h": 112,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "bubbles"
+    },
+    {
+      "id": "hw_halloween_potion_table",
+      "label": "Bàn pha độc dược Halloween",
+      "group": "Góc phù thủy",
+      "subject": "A rustic compact outdoor witch's potion worktable: thick plank tabletop, four sturdy legs, exactly three squat glass bottles of orange violet and teal liquid, a mortar and pestle, a small open grimoire with blank pictograms and a tiny pumpkin. Everything fits on table, no text.",
+      "w": 144,
+      "h": 120,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_monster_bookcase",
+      "label": "Tủ sách há miệng",
+      "group": "Góc phù thủy",
+      "subject": "A short crooked timber bookcase containing exactly four chunky spellbooks, the central purple book has two eye clasps and a slightly open toothy mouth along its page edge. Two shelves, warm brown wood, small cobweb at upper corner. No writing.",
+      "w": 112,
+      "h": 144,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "blink"
+    },
+    {
+      "id": "hw_blinking_chest",
+      "label": "Rương nháy mắt",
+      "group": "Góc phù thủy",
+      "subject": "A small rounded-lid dark wooden Halloween treasure chest with weathered copper bands, lid cracked open enough for exactly two big amber eyes to peek from the darkness. No treasure spilling out, four stable little feet, cute mischievous personality.",
+      "w": 112,
+      "h": 96,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "blink"
+    },
+    {
+      "id": "hw_witch_hat_rack",
+      "label": "Giá treo mũ phù thủy",
+      "group": "Góc phù thủy",
+      "subject": "A freestanding twisted timber coat rack holding exactly three crooked witch hats: muted violet, moss green, pumpkin orange. Each hat has a copper buckle. Three stable wooden legs, no coats, no brooms, no people.",
+      "w": 104,
+      "h": 144,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "sway"
+    },
+    {
+      "id": "hw_caramel_apple_cart",
+      "label": "Xe đẩy táo bọc kẹo",
+      "group": "Góc phù thủy",
+      "subject": "A small two-wheeled rustic market cart with two handles, tray displaying exactly five glossy pixel caramel apples on sticks, orange and purple striped small cloth awning and a carved bat ornament. No sign text, no vendors.",
+      "w": 144,
+      "h": 144,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_grinning_stump",
+      "label": "Gốc cây mặt quỷ",
+      "group": "Rừng tinh nghịch",
+      "subject": "An old squat mossy tree stump with a carved mischievous smiling face, amber glowing eyes, crooked roots and one tiny violet mushroom at its foot. Hollow top with a few fallen autumn leaves, warm brown wood. Friendly rather than frightening.",
+      "w": 112,
+      "h": 104,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_skull_mushrooms",
+      "label": "Cụm nấm hình đầu lâu",
+      "group": "Rừng tinh nghịch",
+      "subject": "A tight cluster of exactly three whimsical ivory-capped mushrooms shaped like cute tiny skulls with purple eye holes, on short mossy stems with green fern leaves. No ground tile, only connected roots and a few moss pixels.",
+      "w": 96,
+      "h": 88,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_eyeball_flowers",
+      "label": "Bụi hoa mắt tròn",
+      "group": "Rừng tinh nghịch",
+      "subject": "A compact magical Halloween flowering shrub with exactly five violet and orange flowers whose round pale centers look like playful eyeballs. Deep moss-green leaves, simple chunky branches, exposed little root clump, no pot.",
+      "w": 104,
+      "h": 104,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "blink"
+    },
+    {
+      "id": "hw_owl_tree_hollow",
+      "label": "Hốc cây có cú đêm",
+      "group": "Rừng tinh nghịch",
+      "subject": "A short upright hollow tree log with a small sleepy brown owl nestled in its round cavity, large amber owl eyes, moss roof and a few ivy leaves; twisted roots provide a stable base. This is one garden ornament scene, no flying owl.",
+      "w": 96,
+      "h": 136,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "blink"
+    },
+    {
+      "id": "hw_dewy_cobweb_frame",
+      "label": "Giàn mạng nhện đọng sương",
+      "group": "Rừng tinh nghịch",
+      "subject": "An irregular rustic frame made of two forked branches and a crooked top beam, holding one large elegant spiderweb with pale blue dew beads and one tiny violet spider at the upper corner. Simple readable radial web, two root feet.",
+      "w": 128,
+      "h": 136,
+      "foot": [
+        2,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_pumpkin_spider_nest",
+      "label": "Tổ nhện trong bí ngô",
+      "group": "Rừng tinh nghịch",
+      "subject": "A hollow orange pumpkin lying on its side, cut opening filled with a small ivory web, one friendly dark-violet spider peeking out, two tiny spiderlings on the stem. A few green leaves and curly vine, no extra pumpkins.",
+      "w": 104,
+      "h": 96,
+      "foot": [
+        1,
+        1
+      ],
+      "motion": "sway"
+    },
+    {
+      "id": "hw_root_halloween_gate",
+      "label": "Cổng Halloween bằng rễ cây",
+      "group": "Tiểu cảnh",
+      "subject": "A freestanding large garden gateway formed by two twisted old tree roots meeting in an arch, two carved pumpkin lanterns integrated into the posts, small bat finial and sparse cobwebs. Open walk-through center, no door, no fence extensions, roots stable on ground.",
+      "w": 192,
+      "h": 208,
+      "foot": [
+        3,
+        1
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_crooked_witch_hut",
+      "label": "Lều phù thủy mái vẹo",
+      "group": "Tiểu cảnh",
+      "subject": "A small cosy one-room witch's hut decoration, weathered timber walls, dramatically crooked violet slate roof with curled chimney, amber arched window, little plank door, pumpkin by doorstep and sparse ivy. No landscape or ground tile, fully visible foundation.",
+      "w": 192,
+      "h": 208,
+      "foot": [
+        2,
+        2
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_mini_pumpkin_house",
+      "label": "Nhà bí ngô thu nhỏ",
+      "group": "Tiểu cảnh",
+      "subject": "A miniature cosy house built inside one giant orange pumpkin: round wooden door, two tiny amber windows, curled green stem chimney, two small stone steps, a violet leaf awning, small green vine around base. No landscape or tile platform.",
+      "w": 176,
+      "h": 176,
+      "foot": [
+        2,
+        2
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_ghost_well",
+      "label": "Giếng có ma ló đầu",
+      "group": "Tiểu cảnh",
+      "subject": "A little old circular grey stone well with timber uprights and crooked orange shingle roof, wooden crank and rope bucket. One friendly ivory ghost peeks just above the well rim with two purple oval eyes. Moss on stone and a pumpkin-shaped finial, no ground tile.",
+      "w": 176,
+      "h": 192,
+      "foot": [
+        2,
+        2
+      ],
+      "motion": "sway"
+    },
+    {
+      "id": "hw_violet_mist_pond",
+      "label": "Ao sương tím",
+      "group": "Tiểu cảnh",
+      "subject": "A compact oval ornamental garden pond bounded by chunky weathered grey stones, dark teal water with a few lily pads, one pale skull-shaped rock, a small crooked reed, and low hard-edged pixel wisps of violet mist over water. Isometric 2:1 oval footprint, no surrounding terrain tile.",
+      "w": 192,
+      "h": 144,
+      "foot": [
+        3,
+        2
+      ],
+      "motion": "glow"
+    },
+    {
+      "id": "hw_lantern_ancient_tree",
+      "label": "Cây cổ thụ treo đèn",
+      "group": "Tiểu cảnh",
+      "subject": "A compact venerable gnarled tree with a stout warm brown trunk, broad sparse canopy of moss green and autumn orange leaves, exactly four small pumpkin lanterns hanging at varied heights, exposed curling roots and one tiny mushroom. Entire canopy and roots visible, no landscape.",
+      "w": 208,
+      "h": 224,
+      "foot": [
+        3,
+        2
+      ],
+      "motion": "glow"
+    }
+  ]
+}

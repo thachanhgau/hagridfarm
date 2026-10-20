@@ -3,14 +3,16 @@
 // draws into ../decor-assets/native/ and writes their entries into ../decor-assets-manifest.json in the
 // existing runtime schema (file/frames/durations/rightFile/rightFrames/pivotX/pivotY, bounds measured from
 // the PNG alpha). Masters, thumbnails, sheets, QA, prompts and logs stay here and never ship.
-//   node garden-v05/special-products-assets/import-runtime.mjs
+//   node garden-v05/special-products-assets/import-runtime.mjs [packDir collection]
+// The festival pack uses the same route: `… import-runtime.mjs garden-v05/halloween-assets festival`.
 import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
 import {fileURLToPath} from 'node:url';
 
-const here = path.dirname(fileURLToPath(import.meta.url));
-const game = path.resolve(here, '..');
+const game = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const here = process.argv[2] ? path.resolve(process.argv[2]) : path.join(game, 'special-products-assets');
+const collection = process.argv[3] || 'special';
 const source = JSON.parse(fs.readFileSync(path.join(here, 'manifest.json'), 'utf8'));
 const runtimePath = path.join(game, 'decor-assets-manifest.json');
 const runtime = JSON.parse(fs.readFileSync(runtimePath, 'utf8'));
@@ -60,7 +62,7 @@ const entries = source.items.map(item => {
   return {
     id: item.id,
     kind: 'decor',
-    collection: 'special',
+    collection,
     storeItem: true,
     rotatable: true,
     label: item.label,
@@ -80,11 +82,10 @@ const entries = source.items.map(item => {
     footprintTiles: [...item.footprintTiles],
     motion: item.motion,
     framesIdentical: item.framesIdentical,
-    bookReference: {book: item.bookReference.book, chapter: item.bookReference.chapter},
-    lore: item.bookReference.lore,
+    ...(item.bookReference ? {bookReference: {book: item.bookReference.book, chapter: item.bookReference.chapter}, lore: item.bookReference.lore} : {}),
     nativeSha256: item.pngSha256[item.defaultFile],
   };
 });
-runtime.items = [...runtime.items.filter(item => item.collection !== 'special'), ...entries];
+runtime.items = [...runtime.items.filter(item => item.collection !== collection), ...entries];
 fs.writeFileSync(runtimePath, `${JSON.stringify(runtime, null, 2)}\n`);
-console.log(`special products: ${entries.length} items, ${entries.length * 10} PNGs → decor-assets/native`);
+console.log(`${collection}: ${entries.length} items, ${entries.length * 10} PNGs → decor-assets/native`);

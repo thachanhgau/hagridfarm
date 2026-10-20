@@ -1,0 +1,1215 @@
+{
+  "schema": "hagrid-farm.decor-assets.qa.v1",
+  "status": "partial",
+  "assertions": {
+    "expectedItemCount": 30,
+    "packagedItemCount": 5,
+    "allExpectedMastersPresent": false,
+    "twoViewsPerMaster": true,
+    "fourFramesPerAngle": true,
+    "spriteSheetPerItem": true,
+    "nearestThumbnails2x3x": true,
+    "motionFallbackDocumented": true,
+    "staticFramesTruthful": true,
+    "glowLocalized": true,
+    "paletteOnly": true,
+    "perItemPaletteOnly": true,
+    "itemPaletteConfigured": false,
+    "binaryAlpha": true,
+    "noEdgeClipping": true,
+    "groundedBottomQuarterUnchanged": true
+  },
+  "items": [
+    {
+      "id": "hw_pumpkin_stack",
+      "dimensions": {
+        "width": 96,
+        "height": 112
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 2,
+              "w": 90,
+              "h": 106,
+              "count": 5476
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 90,
+                "h": 106,
+                "count": 5476
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 90,
+                "h": 106,
+                "count": 5476
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 90,
+                "h": 106,
+                "count": 5476
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 90,
+                "h": 106,
+                "count": 5476
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 31,
+                "y": 24,
+                "w": 26,
+                "h": 23
+              },
+              "pixelCount": 253,
+              "mappableCount": 253,
+              "maxPixels": 657,
+              "rootBand": 84
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 4,
+              "w": 90,
+              "h": 104,
+              "count": 4594
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 90,
+                "h": 104,
+                "count": 4594
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 90,
+                "h": 104,
+                "count": 4594
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 90,
+                "h": 104,
+                "count": 4594
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 4,
+                "w": 90,
+                "h": 104,
+                "count": 4594
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 38,
+                "y": 22,
+                "w": 15,
+                "h": 18
+              },
+              "pixelCount": 116,
+              "mappableCount": 116,
+              "maxPixels": 551,
+              "rootBand": 84
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/hw_pumpkin_stack.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/hw_pumpkin_stack.png",
+            "alternate": "thumbnails/2x/hw_pumpkin_stack_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/hw_pumpkin_stack.png",
+            "alternate": "thumbnails/3x/hw_pumpkin_stack_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "hw_monster_candy_barrel",
+      "dimensions": {
+        "width": 96,
+        "height": 104
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 13,
+              "y": 2,
+              "w": 70,
+              "h": 98,
+              "count": 5347
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 70,
+                "h": 98,
+                "count": 5347
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 70,
+                "h": 98,
+                "count": 5347
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 70,
+                "h": 98,
+                "count": 5347
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 13,
+                "y": 2,
+                "w": 70,
+                "h": 98,
+                "count": 5347
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 54,
+                "y": 43,
+                "w": 12,
+                "h": 8
+              },
+              "pixelCount": 59,
+              "mappableCount": 59,
+              "maxPixels": 641,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 16,
+              "y": 2,
+              "w": 65,
+              "h": 98,
+              "count": 4815
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 16,
+                "y": 2,
+                "w": 65,
+                "h": 98,
+                "count": 4815
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 16,
+                "y": 2,
+                "w": 65,
+                "h": 98,
+                "count": 4815
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 16,
+                "y": 2,
+                "w": 65,
+                "h": 98,
+                "count": 4815
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 16,
+                "y": 2,
+                "w": 65,
+                "h": 98,
+                "count": 4815
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 43,
+                "y": 45,
+                "w": 9,
+                "h": 8
+              },
+              "pixelCount": 45,
+              "mappableCount": 45,
+              "maxPixels": 577,
+              "rootBand": 78
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/hw_monster_candy_barrel.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/hw_monster_candy_barrel.png",
+            "alternate": "thumbnails/2x/hw_monster_candy_barrel_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/hw_monster_candy_barrel.png",
+            "alternate": "thumbnails/3x/hw_monster_candy_barrel_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "hw_wooden_black_cat",
+      "dimensions": {
+        "width": 72,
+        "height": 104
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 2,
+              "w": 66,
+              "h": 98,
+              "count": 3849
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 66,
+                "h": 98,
+                "count": 3849
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 66,
+                "h": 98,
+                "count": 3849
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 66,
+                "h": 98,
+                "count": 3849
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 2,
+                "w": 66,
+                "h": 98,
+                "count": 3849
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "blink",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 5,
+              "y": 2,
+              "w": 62,
+              "h": 98,
+              "count": 3653
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 62,
+                "h": 98,
+                "count": 3653
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 62,
+                "h": 98,
+                "count": 3653
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 62,
+                "h": 98,
+                "count": 3653
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 5,
+                "y": 2,
+                "w": 62,
+                "h": 98,
+                "count": 3653
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "blink",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "blink",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/hw_wooden_black_cat.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/hw_wooden_black_cat.png",
+            "alternate": "thumbnails/2x/hw_wooden_black_cat_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/hw_wooden_black_cat.png",
+            "alternate": "thumbnails/3x/hw_wooden_black_cat_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "hw_halloween_sign",
+      "dimensions": {
+        "width": 96,
+        "height": 128
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 8,
+              "y": 2,
+              "w": 81,
+              "h": 122,
+              "count": 5361
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 8,
+                "y": 2,
+                "w": 81,
+                "h": 122,
+                "count": 5361
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 2,
+                "w": 81,
+                "h": 122,
+                "count": 5361
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 2,
+                "w": 81,
+                "h": 122,
+                "count": 5361
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 2,
+                "w": 81,
+                "h": 122,
+                "count": 5361
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 16,
+                "y": 50,
+                "w": 23,
+                "h": 13
+              },
+              "pixelCount": 80,
+              "mappableCount": 80,
+              "maxPixels": 643,
+              "rootBand": 96
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 20,
+              "y": 2,
+              "w": 57,
+              "h": 122,
+              "count": 4259
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 20,
+                "y": 2,
+                "w": 57,
+                "h": 122,
+                "count": 4259
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 20,
+                "y": 2,
+                "w": 57,
+                "h": 122,
+                "count": 4259
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 20,
+                "y": 2,
+                "w": 57,
+                "h": 122,
+                "count": 4259
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 20,
+                "y": 2,
+                "w": 57,
+                "h": 122,
+                "count": 4259
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 55,
+                "y": 68,
+                "w": 9,
+                "h": 12
+              },
+              "pixelCount": 32,
+              "mappableCount": 32,
+              "maxPixels": 511,
+              "rootBand": 96
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/hw_halloween_sign.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/hw_halloween_sign.png",
+            "alternate": "thumbnails/2x/hw_halloween_sign_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/hw_halloween_sign.png",
+            "alternate": "thumbnails/3x/hw_halloween_sign_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "hw_cloth_ghost_lantern",
+      "dimensions": {
+        "width": 80,
+        "height": 128
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 5,
+              "w": 74,
+              "h": 119,
+              "count": 4258
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 5,
+                "w": 74,
+                "h": 119,
+                "count": 4258
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 5,
+                "w": 74,
+                "h": 119,
+                "count": 4258
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 5,
+                "w": 74,
+                "h": 119,
+                "count": 4258
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 5,
+                "w": 74,
+                "h": 119,
+                "count": 4258
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 3,
+              "y": 3,
+              "w": 74,
+              "h": 121,
+              "count": 4188
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 74,
+                "h": 121,
+                "count": 4188
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 74,
+                "h": 121,
+                "count": 4188
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 74,
+                "h": 121,
+                "count": 4188
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 3,
+                "y": 3,
+                "w": 74,
+                "h": 121,
+                "count": 4188
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "sway",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "sway",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/hw_cloth_ghost_lantern.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/hw_cloth_ghost_lantern.png",
+            "alternate": "thumbnails/2x/hw_cloth_ghost_lantern_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/hw_cloth_ghost_lantern.png",
+            "alternate": "thumbnails/3x/hw_cloth_ghost_lantern_right.png"
+          }
+        }
+      }
+    }
+  ]
+}

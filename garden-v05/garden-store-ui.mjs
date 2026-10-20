@@ -1,8 +1,8 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.60";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.60";
-import {STORE_CATALOG,storeLock} from "./garden-store-catalog.mjs?v=24.9.60";
-import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.60";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.60";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.61";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.61";
+import {STORE_CATALOG,storeLock} from "./garden-store-catalog.mjs?v=24.9.61";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.61";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.61";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -181,7 +181,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
    else action=buy;
    card.append(head,...(angleBtn?[angleBtn]:[]),
     el("strong",{class:"gp-tile-name",text:item.label}),
-    el("small",{class:"gp-tile-sub store-stock-note",text:special&&!owned?(item.season?`Chỉ bán trong ${SEASON_LABELS[item.season]||"mùa lễ hội"}`:`${BOOK_TITLES[item.book]||""} · ch. ${item.chapter}`):ownedStockText(item,snap)}),
+    el("small",{class:"gp-tile-sub store-stock-note",text:(special||item.season)&&!owned?(item.season?`Chỉ bán trong ${SEASON_LABELS[item.season]||"mùa lễ hội"}`:`${BOOK_TITLES[item.book]||""} · ch. ${item.chapter}`):ownedStockText(item,snap)}),
     el("div",{class:"store-meta-row"},[price,el("small",{class:owned?"meta decor-owned":"meta",text:quota})]),
     el("div",{class:"store-action-row gp-tile-actions"},isDecor||!snap||item.locked?[action]:[el("div",{class:"gp-stepper",role:"group","aria-label":"Số "+unit+" "+item.label},[minus,qtyValue,plus]),action]));
    cards.append(card);
