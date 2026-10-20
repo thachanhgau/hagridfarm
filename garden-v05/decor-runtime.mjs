@@ -45,30 +45,42 @@ export function decorFacingFor(decorations, itemId, rawPlacement = null) {
   return normalizeDecorFacing(mapFacing);
 }
 
+const placedId = raw => (typeof raw === 'object' && raw !== null ? (raw.itemId ?? raw.id) : raw);
+
+/** Where a placed item stands: its own `positions` spot (free placement), else its legacy socket. */
+export function decorSpot(decorations, itemId) {
+  const at = decorations?.positions?.[itemId];
+  if (Array.isArray(at) && at.length === 2) return [at[0], at[1]];
+  const index = (decorations?.placements ?? []).findIndex(raw => placedId(raw) === itemId);
+  return index >= 0 && DECOR_SLOTS[index] ? [DECOR_SLOTS[index].col, DECOR_SLOTS[index].row] : null;
+}
+
 export function decorObjects(decorations, assets, iso, preview = null) {
   const owned = new Set(decorations?.owned ?? []);
   const placements = decorations?.placements ?? [];
   const objects = [];
-  for (const slot of DECOR_SLOTS) {
-    const raw = placements[slot.id];
-    const id = typeof raw === 'object' && raw !== null ? (raw.itemId ?? raw.id) : raw;
+  placements.forEach((raw, index) => {
+    const id = placedId(raw);
     const asset = assets.get(id);
-    if (!id || !asset || !owned.has(id) || preview?.itemId === id) continue;
+    const spot = id ? decorSpot(decorations, id) : null;
+    if (!id || !asset || !spot || !owned.has(id) || preview?.itemId === id) return;
     const facing = decorFacingFor(decorations, id, raw);
     objects.push({
       kind: 'store-decor',
       type: 'store-decor',
       id,
       asset,
-      slot: slot.id,
+      slot: index,
+      col: spot[0],
+      row: spot[1],
       facing,
-      xy: iso(slot.col, slot.row),
+      xy: iso(spot[0], spot[1]),
     });
-  }
-  if (preview) {
-    const slot = DECOR_SLOTS[preview.slot];
+  });
+  if (preview?.at) {
+    const [col, row] = preview.at;
     const asset = assets.get(preview.itemId);
-    if (slot && asset) {
+    if (asset) {
       const facing = preview.facing !== undefined || preview.angle !== undefined
         ? normalizeDecorFacing(preview.facing ?? preview.angle)
         : decorFacingFor(decorations, preview.itemId);
@@ -77,10 +89,11 @@ export function decorObjects(decorations, assets, iso, preview = null) {
         type: 'store-decor',
         id: preview.itemId,
         asset,
-        slot: slot.id,
+        col,
+        row,
         facing,
         preview: true,
-        xy: iso(slot.col, slot.row),
+        xy: iso(col, row),
       });
     }
   }

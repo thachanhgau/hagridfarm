@@ -246,7 +246,16 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   if(!dec.owned.includes(c.itemId))fail("decoration-not-owned","Đồ trang trí chưa được sở hữu.");
   const turned=c.facing!==undefined&&c.facing!==(dec.rotations[c.itemId]||"default");
   if(c.facing!==undefined)dec.rotations[c.itemId]=c.facing;
-  if(c.slot===null){if(from<0)fail("action-noop","Đồ trang trí đã được cất.");dec.placements[from]=null;}
+  // Server garden-action-core: `at` stands it on free ground, kept a tile apart from the other decorations.
+  if(c.at){
+   const spot=id=>dec.positions?.[id]||[[3,7.15],[9.5,7.15],[16,7.15],[22.5,7.15],[3,13.5],[9.5,13.5]][dec.placements.indexOf(id)];
+   if(from>=0&&spot(c.itemId)[0]===c.at[0]&&spot(c.itemId)[1]===c.at[1]&&!turned)fail("action-noop","Đồ trang trí đã ở vị trí và hướng này.");
+   if(dec.placements.some(o=>o&&o!==c.itemId&&Math.hypot(spot(o)[0]-c.at[0],spot(o)[1]-c.at[1])<1))fail("slot-occupied","Chỗ này sát món trang trí khác quá.");
+   const i=from>=0?from:dec.placements.indexOf(null);
+   if(i<0)fail("slot-occupied","Vườn đã bày đủ đồ trang trí; cất bớt một món trước.");
+   dec.placements[i]=c.itemId;dec.positions={...dec.positions,[c.itemId]:[...c.at]};
+  }
+  else if(c.slot===null){if(from<0)fail("action-noop","Đồ trang trí đã được cất.");dec.placements[from]=null;if(dec.positions)delete dec.positions[c.itemId];}
   else if(from===c.slot){if(!turned)fail("action-noop","Đồ trang trí đã ở vị trí và hướng này.");}
   else{
    if(dec.placements[c.slot]!==null)fail("slot-occupied","Vị trí đồ trang trí đã có món khác.");

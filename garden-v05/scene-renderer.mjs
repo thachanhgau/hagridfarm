@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.53';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.53';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.53';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.53';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.53';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.53';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.53';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.53';
-import {DECOR_SLOTS,decorObjects} from './decor-runtime.mjs?v=24.9.53';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.53';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.53';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.53';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.53';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.53';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.53';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.54';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.54';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.54';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.54';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.54';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.54';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.54';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.54';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.54';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.54';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.54';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.54';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.54';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.54';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.54';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -25,13 +25,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.53';
+} from './scene-animation.mjs?v=24.9.54';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.53';
+} from './forest-surround.mjs?v=24.9.54';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -1268,13 +1268,30 @@ export async function createGarden(canvas, options = {}) {
     return true;
   }
 
-  function drawForestLayer(target,trail,stage) {
+  // A tree standing in front of the stage fence must hide the rails, not sit under them: it leaves
+  // the terrain cache (drawn before the fence) for the depth-sorted world pass.
+  // Such a tree is left out where its canopy would reach over a plot: crops stay in view.
+  const plotBoxes=(map.plots??[]).map(plot=>{const pts=plotCorners(plot);return {plot,left:Math.min(...pts.map(p=>p[0])),right:Math.max(...pts.map(p=>p[0])),top:Math.min(...pts.map(p=>p[1])),bottom:Math.max(...pts.map(p=>p[1]))};});
+  function inFrontOfFence(rect,fence){
+    return fence.some(p=>p.xy[0]>=rect.left&&p.xy[0]<=rect.right&&p.xy[1]>=rect.top&&p.xy[1]<rect.bottom);
+  }
+  // Only plots on opened land count; unopened bases keep their groves.
+  const overPlot=(rect,stage)=>plotBoxes.some(b=>stageContains(stage,b.plot.col+1,b.plot.row+1)&&rect.left<b.right&&rect.right>b.left&&rect.top<b.bottom&&rect.bottom>b.top);
+  function drawForestLayer(target,trail,stage,fence,front) {
     const westEdgeTrail=westClearTrail.map(([x,y])=>[x-map.width,y]);
-    for(const tree of wallpaper)if(outsideActiveStage(tree.rect,stage)&&!overlapsTrail(tree.rect,trail)&&!overlapsTrail(tree.rect,westEdgeTrail))drawCanopy(target,tree);
+    for(const tree of wallpaper)if(outsideActiveStage(tree.rect,stage)&&!overlapsTrail(tree.rect,trail)&&!overlapsTrail(tree.rect,westEdgeTrail)){
+      if(inFrontOfFence(tree.rect,fence)){if(!overPlot(tree.rect,stage))front.push({kind:'front-tree',xy:[(tree.rect.left+tree.rect.right)/2,tree.rect.bottom],tree});}
+      else drawCanopy(target,tree);
+    }
     for (const placement of forestDrawOrder) {
       if(overlapsTrail(placement.rect,trail))continue;
       const asset = forestAssets.get(placement.assetId);
       if (!asset) continue;
+      if(inFrontOfFence(placement.rect,fence)&&forestImages.get(placement.assetId)){
+        const scale=placement.scale??1,w=Math.round(asset.width*scale),h=Math.round(asset.height*scale);
+        if(!overPlot(placement.rect,stage))front.push({kind:'front-tree',xy:[placement.x,placement.y],alpha:finite(placement.opacity,1),tree:{img:forestImages.get(placement.assetId),rect:{left:Math.round(placement.rect.left),top:Math.round(placement.rect.top)},w,h,flip:false}});
+        continue;
+      }
       target.save?.();
       target.globalAlpha = finite(placement.opacity, 1);
       const scale=placement.scale??1,image=forestImages.get(placement.assetId);
@@ -1283,7 +1300,7 @@ export async function createGarden(canvas, options = {}) {
     }
   }
 
-  function drawFutureGrovesLayer(target, stage,trail) {
+  function drawFutureGrovesLayer(target, stage,trail,fence,front) {
     const placements=futureGroves(map, stage).map((placement,index)=>{
       const h=((index+1)*2654435761)>>>0,u=(h&1023)/1023,v=((h>>>10)&1023)/1023;
       const dc=(u-.5)*1.1,dr=(v-.5)*1.1;
@@ -1299,7 +1316,8 @@ export async function createGarden(canvas, options = {}) {
       const rect={left:Math.round(placement.x-w/2),top:Math.round(placement.y-h),right:Math.round(placement.x+w/2),bottom:Math.round(placement.y)};
       if(overlapsTrail(rect,trail))continue;
       const img=forestImages.get(placement.assetId);
-      if(img)drawCanopy(target,{img,rect,w,h,flip:placement.flip});
+      if(img&&inFrontOfFence(rect,fence)){if(!overPlot(rect,stage))front.push({kind:'front-tree',xy:[placement.x,placement.y],tree:{img,rect,w,h,flip:placement.flip}});}
+      else if(img)drawCanopy(target,{img,rect,w,h,flip:placement.flip});
       else drawAssetTo(target, asset, placement.x, placement.y);
     }
   }
@@ -1333,11 +1351,12 @@ export async function createGarden(canvas, options = {}) {
     if (withForest) {
       // Existing perimeter placements and the stage's unopened grove both
       // live on the forest floor, outside the clipped active meadow.
-      const gate=createBoundaryFence(map,stageBoundary(stage)).find(piece=>piece.gate);
+      const fence=createBoundaryFence(map,stageBoundary(stage)),gate=fence.find(piece=>piece.gate);
       const trail=forestExitTrail(map,gate?.cellA[1]??stage.bottom);
       drawExitTrail(cachedContext,[...trail,[-32,seamY]],{sign:true});
-      drawForestLayer(cachedContext,trail,stage);
-      drawFutureGrovesLayer(cachedContext, stage,trail);
+      cachedCanvas.frontTrees=[];
+      drawForestLayer(cachedContext,trail,stage,fence,cachedCanvas.frontTrees);
+      drawFutureGrovesLayer(cachedContext, stage,trail,fence,cachedCanvas.frontTrees);
     }
     return cachedCanvas;
   }
@@ -1688,6 +1707,7 @@ export async function createGarden(canvas, options = {}) {
       }
       return;
     }
+    if (object.kind === 'front-tree') { context.save(); context.globalAlpha = object.alpha ?? 1; drawCanopy(context, object.tree); context.restore(); return; }
     if (object.kind === 'boundary-fence') { context.drawImage(object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock); return; }
     if (object.kind === 'decoration') {
       drawDecoration(context, object, clock);
@@ -1810,9 +1830,7 @@ export async function createGarden(canvas, options = {}) {
     const earnedDecorationObjects = decorationObjects(state, options);
     const occupiedPoints = [];
     for (const object of storeDecorationObjects) {
-      const slot = DECOR_SLOTS[object.slot];
-      if (!slot) continue;
-      occupiedPoints.push([slot.col - 1, slot.row - 0.5], [slot.col + 1, slot.row + 0.5]);
+      occupiedPoints.push([object.col - 1, object.row - 0.5], [object.col + 1, object.row + 0.5]);
     }
     for (const object of earnedDecorationObjects) {
       occupiedPoints.push(
@@ -1852,18 +1870,18 @@ export async function createGarden(canvas, options = {}) {
     context.clearRect(0, 0, map.width, map.height);
     context.fillStyle = '#142620';
     context.fillRect(0, 0, map.width, map.height);
-    context.drawImage(terrainCache(grid, propsVisible), 0, 0);
+    const terrain = terrainCache(grid, propsVisible);
+    context.drawImage(terrain, 0, 0);
     drawPlotSoil(state, logicalNow, grid);
     drawV24Ground(context,{weatherMode,clock,iso,stage:currentStage,map});
     drawSelection(state, selectedPlot, lineCells);
     drawPlotFrames(state, logicalNow, selectedPlot);
     if (options.previewLayout) drawLayoutSwapPreview(options.previewLayout);
-    // While a decoration is being placed: every free spot is a numbered mark the player can tap.
-    for (const spot of asArray(options.previewDecoration?.slots)) {
-      if (spot.state === 'taken') continue;
-      const [x, y] = iso(spot.col, spot.row);
-      const chosen = spot.state === 'selected';
-      drawDiamond(context, x, y, chosen ? 'rgba(245,214,154,.38)' : 'rgba(183,222,224,.22)', chosen ? '#f5d69a' : '#b7dee0', map, 1.6);
+    // While a decoration is being placed: its ground mark, gold where it fits, red where it cannot stand.
+    if (options.previewDecoration?.at) {
+      const [x, y] = iso(...options.previewDecoration.at);
+      const fits = !options.previewDecoration.blocked;
+      drawDiamond(context, x, y, fits ? 'rgba(245,214,154,.38)' : 'rgba(199,91,75,.34)', fits ? '#f5d69a' : '#c75b4b', map, 1.6);
     }
 
     sceneryVisible=propsVisible;
@@ -1901,7 +1919,7 @@ export async function createGarden(canvas, options = {}) {
           : w
       ))
       : [];
-    const objects = [...boundaryFence, ...wizList, ...storeDecorationObjects];
+    const objects = [...boundaryFence, ...(terrain.frontTrees ?? []), ...wizList, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {
         if (prop.id !== 'hut' && !stageContains(currentStage, Number(prop.col), Number(prop.row))) continue;
@@ -2033,13 +2051,7 @@ export async function createGarden(canvas, options = {}) {
       label(context, `THỬA ${index + 1}${tag}`, x, y, ripe ? '#231f2e' : index === selectedPlot ? '#f5d69a' : '#e8f0ed', `bold ${Math.round(12 * labelScale)}px sans-serif`, ripe ? 'rgba(244,206,98,.94)' : 'rgba(18,38,33,.88)');
     }
     drawPenLabels(state, logicalNow);
-    // Spot numbers sit above everything so the item being placed never hides them.
-    for (const spot of asArray(options.previewDecoration?.slots)) {
-      if (spot.state === 'taken') continue;
-      const [x, y] = iso(spot.col, spot.row);
-      const chosen = spot.state === 'selected';
-      label(context, `◆ ${spot.id + 1}`, x, y + 16 * labelScale, chosen ? '#231f2e' : '#e8f0ed', `bold ${Math.round(12 * labelScale)}px sans-serif`, chosen ? 'rgba(244,206,98,.94)' : 'rgba(18,38,33,.88)');
-    }
+
   }
 
   function pick(clientX, clientY) {

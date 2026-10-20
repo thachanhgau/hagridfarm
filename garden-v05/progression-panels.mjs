@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.53';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.53';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.53";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.53";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.53";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.53";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.53";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.53";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.53";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.53";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.53";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.54';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.54';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.54";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.54";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.54";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.54";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.54";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.54";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.54";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.54";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.54";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -395,7 +395,7 @@ export function createPanels(ctx){
     for(const item of storeDecors){
      const owned=Boolean(decorState?.owned?.includes(item.id));
      const slotIdx=owned?(decorState.placements?.indexOf(item.id)??-1):-1;
-     const slotLabel=slotIdx>=0?DECOR_SLOTS.find(sl=>sl.id===slotIdx)?.label:null;
+     const slotLabel=slotIdx>=0?(decorState.positions?.[item.id]?"Đang bày trong vườn":DECOR_SLOTS.find(sl=>sl.id===slotIdx)?.label):null;
      const facing=decorFacingFor(decorState,item.id);
      const name=decorLabelFor(item);
      const k=tile(name,item.id,{kind:"decoration",decorAssets:ctx.decorAssets,badge:"2 góc",facing},owned?el("small",{class:"gp-tile-sub",text:slotLabel||"Đang cất"}):null);
@@ -406,7 +406,7 @@ export function createPanels(ctx){
        iconButton("scenery","Đặt "+name,()=>{close();ctx.openDecorate(item);},{text:"Đặt",class:"primary"}),
        iconButton("arrow",(facing==="right"?"Xoay "+name+" về trái ↖":"Xoay "+name+" sang phải ↗")+" · "+turnText(facing),async()=>{
         const nextFacing=facing==="right"?"default":"right";
-        await ctx.quickRotateDecor?.(item.id,slotIdx>=0?slotIdx:0,nextFacing);
+        await ctx.quickRotateDecor?.(item.id,nextFacing);
         refresh();
        },{class:facing==="right"?"is-flipped":""}),
       );

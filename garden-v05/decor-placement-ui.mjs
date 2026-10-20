@@ -1,99 +1,118 @@
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.53';
-import {el,button} from './ui-utils.mjs?v=24.9.53';
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor,normalizeDecorFacing} from './decor-runtime.mjs?v=24.9.53';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.54';
+import {el,button} from './ui-utils.mjs?v=24.9.54';
+import {decorFacingFor,decorLabelFor,decorSpot} from './decor-runtime.mjs?v=24.9.54';
+import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.54';
+import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=24.9.54';
+
+// Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
+const OBJECT_REACH=Object.freeze({hut:2.5,pond:2.5,oak:1,pine:1});
+const snap=v=>Math.round(v*2)/2;
 
 /**
- * Đặt trang trí: a small bar over the dock, the garden stays in view. ◀ ▶ step through the free
- * spots (the camera follows), a tap on the garden picks the nearest free spot, ↻ turns the item,
- * «Đặt» saves. Free spots show as numbered marks on the map (`slots` in the preview).
+ * Why a decoration cannot stand at (col, row), or '' when it can: outside the opened garden, on a plot
+ * or pen base (built or not, so a later build never lands on it), on an earned decoration, the keepsake
+ * aisle, a scene object or building, or closer than one tile to another placed decoration (the server
+ * checks that last rule too).
  */
-export function showDecorationPlacement({item,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld}){
+export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId}){
+ if(stage&&!stageContains(stage,col,row))return 'Khu đất này chưa mở.';
+ const inRect=(c,r,w,h)=>col>=c-0.25&&col<=c+w-0.25&&row>=r-0.25&&row<=r+h-0.25;
+ for(const plot of map?.plots??[]){const b=plotPhysicalBounds(plot,map);if(inRect(b.col,b.row,b.width,b.height))return 'Chỗ này là nền thửa đất.';}
+ for(const pen of map?.pens??[])if(inRect(pen.col-0.5,pen.row-0.5,pen.width,pen.height))return 'Chỗ này là nền chuồng.';
+ for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&inRect(d.col,d.row,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
+ if(Object.keys(state?.keepsakes??{}).length&&row>=24.25)return 'Lối này dành cho đài kỷ vật.';
+ for(const o of map?.objects??[])if(Math.hypot(o.col-col,o.row-row)<(OBJECT_REACH[o.id]??1))return 'Chỗ này vướng cảnh vật.';
+ for(const w of Object.values(WIZARD_LAYOUT))if(Math.hypot(w.col-col,w.row-row)<1.5)return 'Chỗ này vướng công trình.';
+ for(const raw of decorations?.placements??[]){
+  const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw;
+  if(!other||other===itemId)continue;
+  const at=decorSpot(decorations,other);
+  if(at&&Math.hypot(at[0]-col,at[1]-row)<1)return 'Sát món trang trí khác quá.';
+ }
+ return '';
+}
+
+/**
+ * Đặt trang trí: a small bar over the dock, the garden stays in view. A tap anywhere on free ground
+ * moves the item there (gold mark; red with the reason where it cannot stand), ↻ turns it — saved at
+ * once when it already stands there — and «Đặt» saves a new spot.
+ */
+export function showDecorationPlacement({item,map,getState,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld}){
  for(const old of document.querySelectorAll('.decor-placement,.decor-bar')){try{old.close?.();}catch{}old.remove();}
  const itemLabel=decorLabelFor(item);
- const initialDecor=getDecorations()??{};
- const currentSlot=initialDecor.placements?.indexOf(item.id)??-1;
- let selectedFacing=decorFacingFor(initialDecor,item.id);
+ let selectedFacing=decorFacingFor(getDecorations()??{},item.id);
+ let at=decorSpot(getDecorations()??{},item.id);
  let pending=false;
-
- function spots(){
-  const decor=getDecorations()??{},stage=getStage?.();
-  return DECOR_SLOTS.map(slot=>{
-   const occupant=decor.placements?.[slot.id];
-   const locked=!!stage&&!stageContains(stage,slot.col,slot.row);
-   const taken=!!occupant&&occupant!==item.id;
-   return {slot,mine:occupant===item.id,taken,locked,usable:!taken&&!locked,required:GARDEN_STAGES.find(s=>stageContains(s,slot.col,slot.row))?.level};
-  });
+ const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id}):'';
+ // A new item starts on the first free spot near the middle of the opened garden.
+ if(!at){
+  const stage=getStage?.(),right=Math.min(stage?.right??20,30),bottom=Math.min(stage?.bottom??9,24);
+  outer:for(let row=bottom/2;row<=bottom;row+=0.5)for(let col=0;col<=right;col+=0.5)if(!problemAt([col,row])){at=[col,row];break outer;}
  }
- let selected=currentSlot>=0?currentSlot:spots().find(s=>s.usable)?.slot.id??null;
 
  const bar=el('div',{class:'decor-bar',role:'dialog','aria-labelledby':'decorPlaceTitle'});
  const thumb=el('img',{class:'decor-bar-thumb',alt:''});
  const title=el('strong',{id:'decorPlaceTitle',text:itemLabel});
  const where=el('span',{class:'decor-bar-where'});
- const prev=button('◀',()=>step(-1),{'aria-label':'Vị trí trước'});
- const next=button('▶',()=>step(1),{'aria-label':'Vị trí sau'});
- const turn=button('↻ Xoay',()=>{selectedFacing=selectedFacing==='right'?'default':'right';sync(false);},{class:'decor-bar-turn','aria-label':'Xoay vật phẩm'});
+ const turn=button('↻ Xoay',rotate,{class:'decor-bar-turn','aria-label':'Xoay vật phẩm'});
  const apply=button('Đặt',commit,{class:'primary decor-bar-apply'});
  const stash=button('Cất vào kho',()=>save(null),{class:'decor-bar-stash'});
  const hint=el('p',{class:'decor-bar-hint',role:'status'});
  bar.append(
   el('div',{class:'decor-bar-head'},[thumb,el('div',{class:'decor-bar-text'},[title,where]),button('×',close,{class:'decor-bar-close','aria-label':'Đóng'})]),
-  el('div',{class:'decor-bar-row'},[prev,next,turn,apply]),
+  el('div',{class:'decor-bar-row'},[turn,apply]),
   el('div',{class:'decor-bar-foot'},[hint,stash]),
  );
 
- function step(delta){
-  const usable=spots().filter(s=>s.usable).map(s=>s.slot.id);
-  if(!usable.length)return;
-  const at=usable.indexOf(selected);
-  selected=usable[(at<0?0:at+delta+usable.length)%usable.length];
-  sync(true);
- }
+ const savedSpot=()=>decorSpot(getDecorations()??{},item.id);
+ const sameSpot=(a,b)=>!!a&&!!b&&a[0]===b[0]&&a[1]===b[1];
 
  function sync(centerCamera){
-  const list=spots();
-  if(selected!==null&&centerCamera&&camera&&iso){const slot=DECOR_SLOTS[selected];const xy=iso(slot.col,slot.row);camera.centerAt(xy[0],xy[1]-50,Math.max(1.2,camera.scale?.()||1.2));}
-  preview({itemId:selected===null?null:item.id,slot:selected,facing:selectedFacing,
-   slots:list.filter(s=>!s.locked).map(s=>({id:s.slot.id,col:s.slot.col,row:s.slot.row,state:s.slot.id===selected?'selected':s.usable?'free':'taken'}))});
-  render(list);
+  if(at&&centerCamera&&camera&&iso){const xy=iso(at[0],at[1]);camera.centerAt(xy[0],xy[1]-50,Math.max(1.2,camera.scale?.()||1.2));}
+  const problem=problemAt(at);
+  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem});
+  render(problem);
  }
 
- function render(list=spots()){
-  const decor=getDecorations()??{};
-  const placed=decor.placements?.indexOf(item.id)??-1;
-  const savedFacing=decorFacingFor(decor,item.id);
+ function render(problem=problemAt(at)){
+  const saved=savedSpot(),savedFacing=decorFacingFor(getDecorations()??{},item.id);
   const right=selectedFacing==='right';
   thumb.src=right?(item.rightFile||item.file):item.file;
   thumb.classList.toggle('is-flipped',right&&!item.rightFile);
-  const spot=selected===null?null:list[selected];
-  const usableIds=list.filter(s=>s.usable).map(s=>s.slot.id),free=usableIds.length;
-  where.textContent=spot?`Vị trí ${selected+1} · ${spot.slot.label}${spot.mine?' · đang đặt ở đây':''}`:free?'Chọn một vị trí':'Chưa còn chỗ trống';
-  const unchanged=selected===placed&&selectedFacing===savedFacing;
-  prev.disabled=next.disabled=pending||!free||free===1&&usableIds[0]===selected;
+  const here=sameSpot(at,saved);
+  where.textContent=!at?'Chạm chỗ trống trên vườn':here?'Đang đặt ở đây':problem||'Chỗ mới · nhấn «Đặt»';
   turn.disabled=pending;
-  apply.disabled=pending||selected===null||unchanged;
-  apply.textContent=pending?'Đang lưu…':unchanged?'Đang ở đây':selected===placed?'Lưu góc':'Đặt';
-  stash.hidden=placed<0;stash.disabled=pending;
-  if(!hint.dataset.error)hint.textContent=free?`Chạm dấu ◆ trên vườn hoặc ◀ ▶ để chọn chỗ · ${free} chỗ đặt được`:'Cất bớt đồ khác vào kho để có chỗ.';
+  apply.disabled=pending||!at||!!problem||here&&selectedFacing===savedFacing;
+  apply.textContent=pending?'Đang lưu…':here&&selectedFacing===savedFacing?'Đang ở đây':'Đặt';
+  stash.hidden=!saved;stash.disabled=pending;
+  if(!hint.dataset.error)hint.textContent='Chạm chỗ trống bất kỳ trên vườn để dời tới · ↻ để xoay';
  }
 
- // A tap on the garden picks the nearest free spot; any tap is kept so plots stay untouched.
+ // Standing where it is saved, a turn is saved at once; elsewhere it turns the preview until «Đặt».
+ function rotate(){
+  selectedFacing=selectedFacing==='right'?'default':'right';
+  if(sameSpot(at,savedSpot()))save(at,true);else sync(false);
+ }
+
+ // Any tap is kept so plots stay untouched while placing.
  function onTap(clientX,clientY){
   const point=toWorld?.(clientX,clientY);
-  if(!point||!iso)return true;
+  const cell=point?worldToCell(point.x,point.y,map):null;
+  if(!point||!cell||!iso)return true;
+  // worldToCell rounds to whole tiles; refine to the nearest half-tile around it.
   let best=null;
-  for(const s of spots()){if(!s.usable)continue;const [x,y]=iso(s.slot.col,s.slot.row);const d=Math.hypot(x-point.x,y-point.y);if(!best||d<best.d)best={d,id:s.slot.id};}
-  if(best&&best.d<180){selected=best.id;sync(false);}
+  for(const dc of [-0.5,0,0.5])for(const dr of [-0.5,0,0.5]){const c=cell.col+dc,r=cell.row+dr,[x,y]=iso(c,r),d=Math.hypot(x-point.x,y-point.y);if(!best||d<best.d)best={d,spot:[snap(c),snap(r)]};}
+  at=best.spot;delete hint.dataset.error;sync(false);
   return true;
  }
 
- async function save(slot){
+ async function save(spot,stay=false){
   if(pending)return;
   pending=true;delete hint.dataset.error;render();
-  try{await onPlace(item.id,slot,selectedFacing);pending=false;close();}
+  try{await onPlace(item.id,spot,selectedFacing);pending=false;if(stay)sync(false);else close();}
   catch(e){pending=false;hint.dataset.error='1';hint.textContent=e.message;render();}
  }
- function commit(){if(selected!==null)save(selected);}
+ function commit(){if(at&&!problemAt(at))save(at);}
 
  function onKey(e){if(e.key==='Escape')close();}
  function close(){
@@ -110,7 +129,7 @@ export function showDecorationPlacement({item,getStage,getDecorations,onPlace,pr
  document.body.classList.add('placing-decor');
  document.addEventListener('keydown',onKey);
  setTapHandler?.(onTap);
- sync(selected!==null);
+ sync(!!at);
  apply.focus?.({preventScroll:true});
 }
 

@@ -1,7 +1,7 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.53";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.53";
-import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.53";
-import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.53";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.54";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.54";
+import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.54";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.54";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -112,7 +112,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
    const owned=isDecor&&Boolean(decorState?.owned?.includes(item.id));
    const slot=owned?(decorState.placements?.indexOf(item.id)??-1):-1;
    const facing=owned?decorFacingFor(decorState,item.id):"default";
-   const location=slot>=0?DECOR_SLOTS.find(s=>s.id===slot)?.label:null;
+   const location=slot>=0?(decorState.positions?.[item.id]?"Đang bày trong vườn":DECOR_SLOTS.find(s=>s.id===slot)?.label):null;
 
    const card=el("article",{class:`card store-card gp-tile kind-${item.kind}${isDecor?" decor-card":""}`,"data-store-item":item.id});
    const packBadge=isDecor?"2 góc":`×${item.quantity}`;
