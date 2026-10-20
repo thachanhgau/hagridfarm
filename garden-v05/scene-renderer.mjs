@@ -1,18 +1,18 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.54';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.54';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.54';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.54';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.54';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.54';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.54';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.54';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.54';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.54';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.54';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.54';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.54';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.54';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.54';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.55';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.55';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.55';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.55';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.55';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.55';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.55';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.55';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.55';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.55';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.55';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.55';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.55';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.55';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.55';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
 import {
   animationFrameAt,
@@ -25,13 +25,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.54';
+} from './scene-animation.mjs?v=24.9.55';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.54';
+} from './forest-surround.mjs?v=24.9.55';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -1878,10 +1878,20 @@ export async function createGarden(canvas, options = {}) {
     drawPlotFrames(state, logicalNow, selectedPlot);
     if (options.previewLayout) drawLayoutSwapPreview(options.previewLayout);
     // While a decoration is being placed: its ground mark, gold where it fits, red where it cannot stand.
-    if (options.previewDecoration?.at) {
-      const [x, y] = iso(...options.previewDecoration.at);
+    // The mark covers the item's whole footprint (decorFootprintRect), so large pieces show their real ground.
+    if (options.previewDecoration?.rect) {
+      const {c0, c1, r0, r1} = options.previewDecoration.rect;
       const fits = !options.previewDecoration.blocked;
-      drawDiamond(context, x, y, fits ? 'rgba(245,214,154,.38)' : 'rgba(199,91,75,.34)', fits ? '#f5d69a' : '#c75b4b', map, 1.6);
+      context.save();
+      context.beginPath();
+      [[c0, r0], [c1, r0], [c1, r1], [c0, r1]].forEach(([c, r], i) => { const [x, y] = iso(c, r); if (i) context.lineTo(x, y); else context.moveTo(x, y); });
+      context.closePath();
+      context.fillStyle = fits ? 'rgba(245,214,154,.38)' : 'rgba(199,91,75,.34)';
+      context.strokeStyle = fits ? '#f5d69a' : '#c75b4b';
+      context.lineWidth = 2;
+      context.fill();
+      context.stroke();
+      context.restore();
     }
 
     sceneryVisible=propsVisible;

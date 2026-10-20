@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.54';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.54';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.54";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.54";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.54";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.54";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.54";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.54";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.54";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.54";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.54";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.55';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.55';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.55";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.55";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.55";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.55";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.55";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.55";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.55";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.55";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.55";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -387,11 +387,19 @@ export function createPanels(ctx){
    const tile=(name,id,opts,...rest)=>el("article",{class:"card gp-tile","data-item-id":id},[el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,...opts})]),el("strong",{class:"gp-tile-name",text:name}),...rest]);
    const turnText=facing=>facing==="right"?"Đang nhìn phải ↗":"Đang nhìn trái ↖";
 
-   const storeDecors=[...(ctx.decorAssets?.values?.()??[])].filter(a=>a.rotatable||a.id?.startsWith("decor_"));
-   if(storeDecors.length){
-    body.append(el("h3",{class:"gp-section-title",text:"Đồ trang trí"}));
+   const decorState=ctx.getDecorations?.()??session?.decorations??{};
+   const allDecors=[...(ctx.decorAssets?.values?.()??[])].filter(a=>a.rotatable||a.id?.startsWith("decor_"));
+   // «Sản phẩm đặc biệt» show once owned; the rest stay in their store tab.
+   const special=allDecors.filter(a=>a.collection==="special");
+   const sections=[["Đồ trang trí",allDecors.filter(a=>a.collection!=="special"),"decoration"],["Sản phẩm đặc biệt",special.filter(a=>decorState?.owned?.includes(a.id)),"special"]];
+   for(const [sectionTitle,storeDecors,storeTab] of sections){
+    if(!storeDecors.length&&storeTab!=="special")continue;
+    body.append(el("h3",{class:"gp-section-title",text:sectionTitle}));
+    if(!storeDecors.length){
+     body.append(el("p",{class:"meta",text:`Chưa có món nào trong ${special.length} món · xem ở Cửa hàng.`}),...(ctx.openStore?[iconButton("shop","Xem Sản phẩm đặc biệt ở Cửa hàng",()=>{close();ctx.openStore("special");},{text:"Cửa hàng"})]:[]));
+     continue;
+    }
     const sg=el("div",{class:"cards gp-tiles"});
-    const decorState=ctx.getDecorations?.()??session?.decorations??{};
     for(const item of storeDecors){
      const owned=Boolean(decorState?.owned?.includes(item.id));
      const slotIdx=owned?(decorState.placements?.indexOf(item.id)??-1):-1;
@@ -411,7 +419,7 @@ export function createPanels(ctx){
        },{class:facing==="right"?"is-flipped":""}),
       );
      }else if(ctx.openStore){
-      row.append(iconButton("shop","Mua "+name+" ở Tiệm trang trí",()=>{close();ctx.openStore("decoration");},{text:"Tiệm"}));
+      row.append(iconButton("shop","Mua "+name+" ở Tiệm trang trí",()=>{close();ctx.openStore(storeTab);},{text:"Tiệm"}));
      }
      k.append(row);
      sg.append(k);

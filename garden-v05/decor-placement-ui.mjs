@@ -1,33 +1,97 @@
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.54';
-import {el,button} from './ui-utils.mjs?v=24.9.54';
-import {decorFacingFor,decorLabelFor,decorSpot} from './decor-runtime.mjs?v=24.9.54';
-import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.54';
-import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=24.9.54';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.55';
+import {el,button} from './ui-utils.mjs?v=24.9.55';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.55';
+import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.55';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.55';
+import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.55';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.55';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 const OBJECT_REACH=Object.freeze({hut:2.5,pond:2.5,oak:1,pine:1});
 const snap=v=>Math.round(v*2)/2;
+const FOOTPRINTS=new Map(STORE_CATALOG.filter(i=>i.kind==='decoration').map(i=>[i.id,i.footprint??[1,1]]));
+export const decorFootprint=id=>FOOTPRINTS.get(id)??[1,1];
+// Art bible §2: a large piece keeps 0.9 tile off the fence so its body never sits on the rails.
+const FENCE_CLEARANCE=0.9;
+const PATH_CLEARANCE=0.35;
+// A sprite may overlap a plot or pen in front of which it stands by this many screen pixels at most.
+const COVER_SLACK=12;
+// Share of a sprite that may sit behind another sprite (building, tree, decoration) before it counts as hidden.
+const HIDDEN_SHARE=0.4;
+const SCENE_NAMES=Object.freeze({hut:'lều Hagrid',oak:'cây sồi',pine:'cây thông',pond:'ao',gardener:'bác Hagrid',greenhouse:'nhà kính',owl:'bưu cục Cú'});
+
+function spriteRect(asset,facing,x,y){
+ const b=facing==='right'&&asset.rightBounds?asset.rightBounds:asset.bounds??{x:0,y:0,w:asset.width,h:asset.height};
+ const left=x-asset.pivotX+b.x,top=y-asset.pivotY+b.y;
+ return {left,top,right:left+b.w,bottom:top+b.h,depth:y};
+}
+const area=r=>Math.max(0,r.right-r.left)*Math.max(0,r.bottom-r.top);
+const overlapArea=(a,b)=>Math.max(0,Math.min(a.right,b.right)-Math.max(a.left,b.left))*Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top));
+
+function segmentRectDistance([a,b],[c,d],r){
+ let best=Infinity;
+ for(let i=0;i<=24;i++){const t=i/24,x=a+(c-a)*t,y=b+(d-b)*t;best=Math.min(best,Math.hypot(Math.max(r.c0-x,0,x-r.c1),Math.max(r.r0-y,0,y-r.r1)));}
+ return best;
+}
 
 /**
- * Why a decoration cannot stand at (col, row), or '' when it can: outside the opened garden, on a plot
- * or pen base (built or not, so a later build never lands on it), on an earned decoration, the keepsake
- * aisle, a scene object or building, or closer than one tile to another placed decoration (the server
- * checks that last rule too).
+ * Why a decoration cannot stand with its front tile at (col, row), or '' when it can. Its whole footprint
+ * (decorFootprintRect, turned with the facing) must lie on opened ground — large pieces 0.9 tile off the
+ * fence — and clear plot and pen bases (built or not, so a later build never lands on it), earned
+ * decorations, the keepsake aisle, scene objects, buildings and every other placed decoration's
+ * footprint (the server checks that last rule too). Pieces larger than one tile also keep off the garden
+ * paths, and with `asset` + `iso` the sprite may not stand in front of a plot or pen and hide it.
  */
-export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId}){
- if(stage&&!stageContains(stage,col,row))return 'Khu đất này chưa mở.';
- const inRect=(c,r,w,h)=>col>=c-0.25&&col<=c+w-0.25&&row>=r-0.25&&row<=r+h-0.25;
- for(const plot of map?.plots??[]){const b=plotPhysicalBounds(plot,map);if(inRect(b.col,b.row,b.width,b.height))return 'Chỗ này là nền thửa đất.';}
- for(const pen of map?.pens??[])if(inRect(pen.col-0.5,pen.row-0.5,pen.width,pen.height))return 'Chỗ này là nền chuồng.';
- for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&inRect(d.col,d.row,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
- if(Object.keys(state?.keepsakes??{}).length&&row>=24.25)return 'Lối này dành cho đài kỷ vật.';
- for(const o of map?.objects??[])if(Math.hypot(o.col-col,o.row-row)<(OBJECT_REACH[o.id]??1))return 'Chỗ này vướng cảnh vật.';
- for(const w of Object.values(WIZARD_LAYOUT))if(Math.hypot(w.col-col,w.row-row)<1.5)return 'Chỗ này vướng công trình.';
+export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',asset=null,iso=null,assetOf=null}){
+ const big=decorFootprint(itemId).some(n=>n>1);
+ const rect=decorFootprintRect(col,row,decorFootprint(itemId),facing);
+ const inset=0.05,margin=big?FENCE_CLEARANCE:0;
+ if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
+  if(!stageContains(stage,c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở.';
+ }
+ const hits=(c,r,w,h)=>rectsOverlap(rect,{c0:c,c1:c+w,r0:r,r1:r+h});
+ const plotRects=(map?.plots??[]).map(plot=>{const b=plotPhysicalBounds(plot,map);return {c0:b.col,c1:b.col+b.width,r0:b.row,r1:b.row+b.height};});
+ const penRects=(map?.pens??[]).map(pen=>({c0:pen.col-0.5,c1:pen.col-0.5+pen.width,r0:pen.row-0.5,r1:pen.row-0.5+pen.height}));
+ if(plotRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền thửa đất.';
+ if(penRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền chuồng.';
+ for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&hits(d.col-0.25,d.row-0.25,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
+ if(Object.keys(state?.keepsakes??{}).length&&rect.r1>24.25)return 'Lối này dành cho đài kỷ vật.';
+ const near=(c,r,reach)=>Math.hypot(Math.max(rect.c0-c,0,c-rect.c1),Math.max(rect.r0-r,0,r-rect.r1))<reach-0.5;
+ for(const o of map?.objects??[])if(near(o.col,o.row,OBJECT_REACH[o.id]??1))return 'Chỗ này vướng cảnh vật.';
+ for(const w of Object.values(WIZARD_LAYOUT))if(near(w.col,w.row,1.5))return 'Chỗ này vướng công trình.';
+ if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){
   const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw;
   if(!other||other===itemId)continue;
   const at=decorSpot(decorations,other);
-  if(at&&Math.hypot(at[0]-col,at[1]-row)<1)return 'Sát món trang trí khác quá.';
+  if(at&&rectsOverlap(rect,decorFootprintRect(at[0],at[1],decorFootprint(other),decorFacingFor(decorations,other))))return 'Chồng lên món trang trí khác.';
+ }
+ // Occlusion: the sprite drawn in front of a plot or pen must not hide it.
+ if(asset&&iso){
+  const b=facing==='right'&&asset.rightBounds?asset.rightBounds:asset.bounds??{x:0,y:0,w:asset.width,h:asset.height};
+  const [x,y]=iso(col,row),left=x-asset.pivotX+b.x,top=y-asset.pivotY+b.y,right=left+b.w,bottom=top+b.h;
+  for(const g of [...plotRects,...penRects]){
+   const pts=[[g.c0,g.r0],[g.c1,g.r0],[g.c1,g.r1],[g.c0,g.r1]].map(([c,r])=>iso(c,r));
+   const gl=Math.min(...pts.map(p=>p[0])),gr=Math.max(...pts.map(p=>p[0])),gt=Math.min(...pts.map(p=>p[1])),gb=Math.max(...pts.map(p=>p[1]));
+   const ox=Math.min(right,gr)-Math.max(left,gl),oy=Math.min(bottom,gb)-Math.max(top,gt);
+   // Only ground behind the foot is hidden; a plot in front of the item draws over it instead.
+   if(ox>COVER_SLACK&&oy>COVER_SLACK&&gt<y)return 'Món này sẽ che mất thửa đất hoặc chuồng phía sau.';
+  }
+  // Sprites drawn in depth order: whichever of two stands behind must stay mostly in view.
+  const mine=spriteRect(asset,facing,x,y);
+  const others=[];
+  for(const o of map?.objects??[]){const prop=map.props?.find(p=>p.id===o.id);if(prop){const [ox2,oy2]=iso(o.col,o.row);others.push([SCENE_NAMES[o.id]||'cảnh vật',spriteRect(prop,'default',ox2,oy2)]);}}
+  for(const w of wizardTargets(iso))others.push([SCENE_NAMES[w.id]||'công trình',{...w.bounds,depth:w.xy[1]}]);
+  for(const raw of decorations?.placements??[]){
+   const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw,otherAsset=other&&other!==itemId&&assetOf?.(other),spot=otherAsset&&decorSpot(decorations,other);
+   if(spot){const [ox2,oy2]=iso(spot[0],spot[1]);others.push([decorLabelFor(otherAsset),spriteRect(otherAsset,decorFacingFor(decorations,other),ox2,oy2)]);}
+  }
+  for(const [name,rect] of others){
+   const shared=overlapArea(mine,rect);
+   if(!shared)continue;
+   if(mine.depth<=rect.depth&&shared>HIDDEN_SHARE*area(mine))return `Chỗ này bị ${name} che mất.`;
+   if(mine.depth>rect.depth&&shared>HIDDEN_SHARE*area(rect))return `Món này sẽ che mất ${name}.`;
+  }
  }
  return '';
 }
@@ -37,13 +101,13 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId}){
  * moves the item there (gold mark; red with the reason where it cannot stand), ↻ turns it — saved at
  * once when it already stands there — and «Đặt» saves a new spot.
  */
-export function showDecorationPlacement({item,map,getState,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld}){
+export function showDecorationPlacement({item,map,assetOf,getState,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld}){
  for(const old of document.querySelectorAll('.decor-placement,.decor-bar')){try{old.close?.();}catch{}old.remove();}
  const itemLabel=decorLabelFor(item);
  let selectedFacing=decorFacingFor(getDecorations()??{},item.id);
  let at=decorSpot(getDecorations()??{},item.id);
  let pending=false;
- const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id}):'';
+ const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,asset:item,iso,assetOf}):'';
  // A new item starts on the first free spot near the middle of the opened garden.
  if(!at){
   const stage=getStage?.(),right=Math.min(stage?.right??20,30),bottom=Math.min(stage?.bottom??9,24);
@@ -70,7 +134,7 @@ export function showDecorationPlacement({item,map,getState,getStage,getDecoratio
  function sync(centerCamera){
   if(at&&centerCamera&&camera&&iso){const xy=iso(at[0],at[1]);camera.centerAt(xy[0],xy[1]-50,Math.max(1.2,camera.scale?.()||1.2));}
   const problem=problemAt(at);
-  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem});
+  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,rect:at?decorFootprintRect(at[0],at[1],decorFootprint(item.id),selectedFacing):null});
   render(problem);
  }
 
@@ -91,7 +155,8 @@ export function showDecorationPlacement({item,map,getState,getStage,getDecoratio
  // Standing where it is saved, a turn is saved at once; elsewhere it turns the preview until «Đặt».
  function rotate(){
   selectedFacing=selectedFacing==='right'?'default':'right';
-  if(sameSpot(at,savedSpot()))save(at,true);else sync(false);
+  // A large piece turned in place may no longer fit; then it waits for a new spot like any move.
+  if(sameSpot(at,savedSpot())&&!problemAt(at))save(at,true);else sync(false);
  }
 
  // Any tap is kept so plots stay untouched while placing.

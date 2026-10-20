@@ -45,6 +45,20 @@ export function decorFacingFor(decorations, itemId, rawPlacement = null) {
   return normalizeDecorFacing(mapFacing);
 }
 
+/**
+ * Ground a decoration covers, in tiles. The sprite's foot (pivot) stands at (col, row); the footprint's
+ * front corner lies half a tile in front of it, like a 1×1 piece on its tile, and the footprint is centred
+ * under the pivot on screen. `footprintTiles` [long, short] runs its long side along the rows in the
+ * default (left) view — the way the art is drawn — and along the columns in the right view.
+ */
+export function decorFootprintRect(col, row, footprint = [1, 1], facing = 'default') {
+  const [cols, rows] = facing === 'right' ? [footprint[0], footprint[1]] : [footprint[1], footprint[0]];
+  const shift = (cols - rows) / 4, c1 = col + 0.5 + shift, r1 = row + 0.5 - shift;
+  return {c0: c1 - cols, c1, r0: r1 - rows, r1};
+}
+
+export const rectsOverlap = (a, b) => a.c0 < b.c1 && b.c0 < a.c1 && a.r0 < b.r1 && b.r0 < a.r1;
+
 const placedId = raw => (typeof raw === 'object' && raw !== null ? (raw.itemId ?? raw.id) : raw);
 
 /** Where a placed item stands: its own `positions` spot (free placement), else its legacy socket. */

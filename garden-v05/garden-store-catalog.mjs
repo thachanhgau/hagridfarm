@@ -1,5 +1,6 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-export const CATALOG_VERSION="garden-preview-2026-10-13-decor-v1";
+import {SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.55";
+export const CATALOG_VERSION="garden-2026-10-20-special-v1";
 export const STORE_CATALOG=Object.freeze([
   {
     "id": "seed_pumpkin",
@@ -515,6 +516,7 @@ export const STORE_CATALOG=Object.freeze([
   {
     "id": "decor_broom_rack",
     "kind": "decoration",
+    "footprint": [2, 1],
     "decorationId": "decor_broom_rack",
     "icon": "decor_broom_rack",
     "label": "Giá chổi",
@@ -563,6 +565,7 @@ export const STORE_CATALOG=Object.freeze([
   {
     "id": "decor_vine_arch",
     "kind": "decoration",
+    "footprint": [2, 1],
     "decorationId": "decor_vine_arch",
     "icon": "decor_vine_arch",
     "label": "Vòm dây leo",
@@ -572,5 +575,5 @@ export const STORE_CATALOG=Object.freeze([
     "dailyLimit": 1,
     "description": "Đồ trang trí vườn · sở hữu một lần · không tăng XP."
   }
-].map(Object.freeze));
+].map(Object.freeze).concat(SPECIAL_PRODUCTS));
 export const unlockedCatalog=level=>STORE_CATALOG.filter(item=>item.level<=level);

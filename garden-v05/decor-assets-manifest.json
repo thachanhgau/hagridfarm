@@ -480,6 +480,1836 @@
       "sourceSha256": "86339a599766213be55daed0bf7e1e6a96b6e1f71a5a8470c5d6e29e35927031",
       "nativeSha256": "a8c2c9d301d4d6d26e65928c865b396f449adb8c35928a69e4f8a588d4a3fac8",
       "generationPromptId": "herbology_greenhouse"
+    },
+    {
+      "id": "sp_hagrid_umbrella",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Góc ô hồng của Hagrid",
+      "group": "Hagrid và Rừng Cấm",
+      "file": "decor-assets/native/sp_hagrid_umbrella.png",
+      "frames": [
+        "decor-assets/native/sp_hagrid_umbrella_f0.png",
+        "decor-assets/native/sp_hagrid_umbrella_f1.png",
+        "decor-assets/native/sp_hagrid_umbrella_f2.png",
+        "decor-assets/native/sp_hagrid_umbrella_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_hagrid_umbrella_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_hagrid_umbrella_right_f0.png",
+        "decor-assets/native/sp_hagrid_umbrella_right_f1.png",
+        "decor-assets/native/sp_hagrid_umbrella_right_f2.png",
+        "decor-assets/native/sp_hagrid_umbrella_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 6,
+        "w": 122,
+        "h": 134
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 144,
+      "pivotX": 64,
+      "pivotY": 140,
+      "bounds": {
+        "x": 3,
+        "y": 3,
+        "w": 122,
+        "h": 137
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 1,
+        "chapter": 4
+      },
+      "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
+      "nativeSha256": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8"
+    },
+    {
+      "id": "sp_norbert_egg",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Trứng rồng Norbert bên lò sưởi",
+      "group": "Hagrid và Rừng Cấm",
+      "file": "decor-assets/native/sp_norbert_egg.png",
+      "frames": [
+        "decor-assets/native/sp_norbert_egg_f0.png",
+        "decor-assets/native/sp_norbert_egg_f1.png",
+        "decor-assets/native/sp_norbert_egg_f2.png",
+        "decor-assets/native/sp_norbert_egg_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_norbert_egg_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_norbert_egg_right_f0.png",
+        "decor-assets/native/sp_norbert_egg_right_f1.png",
+        "decor-assets/native/sp_norbert_egg_right_f2.png",
+        "decor-assets/native/sp_norbert_egg_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 19,
+        "w": 138,
+        "h": 137
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 144,
+      "height": 160,
+      "pivotX": 72,
+      "pivotY": 156,
+      "bounds": {
+        "x": 3,
+        "y": 22,
+        "w": 138,
+        "h": 134
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 1,
+        "chapter": 14
+      },
+      "lore": "Trứng rồng được ấp trong lò sưởi nhà Hagrid.",
+      "nativeSha256": "22a6b63b353eb4a1f635f5c1661ed093afa33e719eb202ef59d5c263c3b9ed28"
+    },
+    {
+      "id": "sp_sirius_motorbike",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Xe máy bay của Sirius",
+      "group": "Hagrid và Rừng Cấm",
+      "file": "decor-assets/native/sp_sirius_motorbike.png",
+      "frames": [
+        "decor-assets/native/sp_sirius_motorbike_f0.png",
+        "decor-assets/native/sp_sirius_motorbike_f1.png",
+        "decor-assets/native/sp_sirius_motorbike_f2.png",
+        "decor-assets/native/sp_sirius_motorbike_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_sirius_motorbike_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_sirius_motorbike_right_f0.png",
+        "decor-assets/native/sp_sirius_motorbike_right_f1.png",
+        "decor-assets/native/sp_sirius_motorbike_right_f2.png",
+        "decor-assets/native/sp_sirius_motorbike_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 4,
+        "y": 2,
+        "w": 153,
+        "h": 122
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 160,
+      "height": 128,
+      "pivotX": 80,
+      "pivotY": 124,
+      "bounds": {
+        "x": 3,
+        "y": 3,
+        "w": 154,
+        "h": 121
+      },
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 1,
+        "chapter": 1
+      },
+      "lore": "Chiếc xe máy của Sirius được Hagrid dùng đưa Harry tới đường Privet.",
+      "nativeSha256": "740df4964bedcf80ccd1c82434745185375dc6ff34bc7d21e2646578b2dc3ff2"
+    },
+    {
+      "id": "sp_whomping_anglia",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Liễu Roi và chiếc Ford Anglia",
+      "group": "Hagrid và Rừng Cấm",
+      "file": "decor-assets/native/sp_whomping_anglia.png",
+      "frames": [
+        "decor-assets/native/sp_whomping_anglia_f0.png",
+        "decor-assets/native/sp_whomping_anglia_f1.png",
+        "decor-assets/native/sp_whomping_anglia_f2.png",
+        "decor-assets/native/sp_whomping_anglia_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_whomping_anglia_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_whomping_anglia_right_f0.png",
+        "decor-assets/native/sp_whomping_anglia_right_f1.png",
+        "decor-assets/native/sp_whomping_anglia_right_f2.png",
+        "decor-assets/native/sp_whomping_anglia_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 2,
+        "w": 202,
+        "h": 218
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 208,
+      "height": 224,
+      "pivotX": 104,
+      "pivotY": 220,
+      "bounds": {
+        "x": 3,
+        "y": 6,
+        "w": 202,
+        "h": 214
+      },
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 2,
+        "chapter": 5
+      },
+      "lore": "Harry và Ron đâm xe vào cây Liễu Roi.",
+      "nativeSha256": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737"
+    },
+    {
+      "id": "sp_buckbeak_pumpkins",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Bằng-Mã bên vườn bí ngô",
+      "group": "Hagrid và Rừng Cấm",
+      "file": "decor-assets/native/sp_buckbeak_pumpkins.png",
+      "frames": [
+        "decor-assets/native/sp_buckbeak_pumpkins_f0.png",
+        "decor-assets/native/sp_buckbeak_pumpkins_f1.png",
+        "decor-assets/native/sp_buckbeak_pumpkins_f2.png",
+        "decor-assets/native/sp_buckbeak_pumpkins_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_buckbeak_pumpkins_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_buckbeak_pumpkins_right_f0.png",
+        "decor-assets/native/sp_buckbeak_pumpkins_right_f1.png",
+        "decor-assets/native/sp_buckbeak_pumpkins_right_f2.png",
+        "decor-assets/native/sp_buckbeak_pumpkins_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 10,
+        "w": 170,
+        "h": 146
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 176,
+      "height": 160,
+      "pivotX": 88,
+      "pivotY": 156,
+      "bounds": {
+        "x": 3,
+        "y": 14,
+        "w": 170,
+        "h": 142
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 3,
+        "chapter": 21
+      },
+      "lore": "Bằng-Mã được giải cứu ở khu vực nhà Hagrid trong đêm dùng Xoay Thời Gian.",
+      "nativeSha256": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b"
+    },
+    {
+      "id": "sp_aragog_hollow",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Hang tơ Aragog",
+      "group": "Hagrid và Rừng Cấm",
+      "file": "decor-assets/native/sp_aragog_hollow.png",
+      "frames": [
+        "decor-assets/native/sp_aragog_hollow_f0.png",
+        "decor-assets/native/sp_aragog_hollow_f1.png",
+        "decor-assets/native/sp_aragog_hollow_f2.png",
+        "decor-assets/native/sp_aragog_hollow_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_aragog_hollow_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_aragog_hollow_right_f0.png",
+        "decor-assets/native/sp_aragog_hollow_right_f1.png",
+        "decor-assets/native/sp_aragog_hollow_right_f2.png",
+        "decor-assets/native/sp_aragog_hollow_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 8,
+        "w": 170,
+        "h": 164
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 176,
+      "height": 176,
+      "pivotX": 88,
+      "pivotY": 172,
+      "bounds": {
+        "x": 3,
+        "y": 13,
+        "w": 170,
+        "h": 159
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 2,
+        "chapter": 15
+      },
+      "lore": "Aragog và bầy nhện trong Rừng Cấm.",
+      "nativeSha256": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502"
+    },
+    {
+      "id": "sp_mirror_erised",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Tấm gương Ảo Ảnh",
+      "group": "Bảo vật Hogwarts",
+      "file": "decor-assets/native/sp_mirror_erised.png",
+      "frames": [
+        "decor-assets/native/sp_mirror_erised_f0.png",
+        "decor-assets/native/sp_mirror_erised_f1.png",
+        "decor-assets/native/sp_mirror_erised_f2.png",
+        "decor-assets/native/sp_mirror_erised_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_mirror_erised_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_mirror_erised_right_f0.png",
+        "decor-assets/native/sp_mirror_erised_right_f1.png",
+        "decor-assets/native/sp_mirror_erised_right_f2.png",
+        "decor-assets/native/sp_mirror_erised_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 30,
+        "y": 2,
+        "w": 84,
+        "h": 202
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 144,
+      "height": 208,
+      "pivotX": 72,
+      "pivotY": 204,
+      "bounds": {
+        "x": 20,
+        "y": 2,
+        "w": 105,
+        "h": 202
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 1,
+        "chapter": 12
+      },
+      "lore": "Tấm gương cho người xem thấy điều họ khao khát nhất.",
+      "nativeSha256": "f8d92db8b0b1e2d011152a665d78b18b3a4b458534749541bce92a9f6f81b103"
+    },
+    {
+      "id": "sp_sorting_hat",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Nón Phân Loại trên ghế",
+      "group": "Bảo vật Hogwarts",
+      "file": "decor-assets/native/sp_sorting_hat.png",
+      "frames": [
+        "decor-assets/native/sp_sorting_hat_f0.png",
+        "decor-assets/native/sp_sorting_hat_f1.png",
+        "decor-assets/native/sp_sorting_hat_f2.png",
+        "decor-assets/native/sp_sorting_hat_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_sorting_hat_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_sorting_hat_right_f0.png",
+        "decor-assets/native/sp_sorting_hat_right_f1.png",
+        "decor-assets/native/sp_sorting_hat_right_f2.png",
+        "decor-assets/native/sp_sorting_hat_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 21,
+        "w": 98,
+        "h": 119
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 104,
+      "height": 144,
+      "pivotX": 52,
+      "pivotY": 140,
+      "bounds": {
+        "x": 3,
+        "y": 7,
+        "w": 98,
+        "h": 133
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 1,
+        "chapter": 7
+      },
+      "lore": "Nón Phân Loại được đặt trên ghế trong lễ phân loại.",
+      "nativeSha256": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac"
+    },
+    {
+      "id": "sp_goblet_fire",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Chiếc Cốc Lửa",
+      "group": "Bảo vật Hogwarts",
+      "file": "decor-assets/native/sp_goblet_fire.png",
+      "frames": [
+        "decor-assets/native/sp_goblet_fire_f0.png",
+        "decor-assets/native/sp_goblet_fire_f1.png",
+        "decor-assets/native/sp_goblet_fire_f2.png",
+        "decor-assets/native/sp_goblet_fire_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_goblet_fire_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_goblet_fire_right_f0.png",
+        "decor-assets/native/sp_goblet_fire_right_f1.png",
+        "decor-assets/native/sp_goblet_fire_right_f2.png",
+        "decor-assets/native/sp_goblet_fire_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 22,
+        "y": 2,
+        "w": 68,
+        "h": 170
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 112,
+      "height": 176,
+      "pivotX": 56,
+      "pivotY": 172,
+      "bounds": {
+        "x": 19,
+        "y": 2,
+        "w": 74,
+        "h": 170
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 4,
+        "chapter": 16
+      },
+      "lore": "Chiếc cốc bằng gỗ chọn các quán quân Tam Pháp Thuật.",
+      "nativeSha256": "2d8bec2517e6ce91f3d6f0075429834e9be89a91f7f8156986a19c97bb4c4fa1"
+    },
+    {
+      "id": "sp_pensieve",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cái Tưởng Ký",
+      "group": "Bảo vật Hogwarts",
+      "file": "decor-assets/native/sp_pensieve.png",
+      "frames": [
+        "decor-assets/native/sp_pensieve_f0.png",
+        "decor-assets/native/sp_pensieve_f1.png",
+        "decor-assets/native/sp_pensieve_f2.png",
+        "decor-assets/native/sp_pensieve_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_pensieve_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_pensieve_right_f0.png",
+        "decor-assets/native/sp_pensieve_right_f1.png",
+        "decor-assets/native/sp_pensieve_right_f2.png",
+        "decor-assets/native/sp_pensieve_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 17,
+        "y": 2,
+        "w": 95,
+        "h": 122
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 128,
+      "pivotX": 64,
+      "pivotY": 124,
+      "bounds": {
+        "x": 10,
+        "y": 2,
+        "w": 108,
+        "h": 122
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 4,
+        "chapter": 30
+      },
+      "lore": "Chậu đá chứa và xem ký ức trong văn phòng Dumbledore.",
+      "nativeSha256": "ea223db1fd85f067405d9462832279771abd031c7e872030fd5e9079181fc933"
+    },
+    {
+      "id": "sp_fawkes_perch",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cầu đậu phượng hoàng Fawkes",
+      "group": "Bảo vật Hogwarts",
+      "file": "decor-assets/native/sp_fawkes_perch.png",
+      "frames": [
+        "decor-assets/native/sp_fawkes_perch_f0.png",
+        "decor-assets/native/sp_fawkes_perch_f1.png",
+        "decor-assets/native/sp_fawkes_perch_f2.png",
+        "decor-assets/native/sp_fawkes_perch_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_fawkes_perch_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_fawkes_perch_right_f0.png",
+        "decor-assets/native/sp_fawkes_perch_right_f1.png",
+        "decor-assets/native/sp_fawkes_perch_right_f2.png",
+        "decor-assets/native/sp_fawkes_perch_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 19,
+        "y": 2,
+        "w": 90,
+        "h": 186
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 192,
+      "pivotX": 64,
+      "pivotY": 188,
+      "bounds": {
+        "x": 18,
+        "y": 2,
+        "w": 93,
+        "h": 186
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 2,
+        "chapter": 12
+      },
+      "lore": "Phượng hoàng Fawkes trong văn phòng Dumbledore.",
+      "nativeSha256": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658"
+    },
+    {
+      "id": "sp_wizard_chess_knight",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Quân mã cờ phù thủy",
+      "group": "Bảo vật Hogwarts",
+      "file": "decor-assets/native/sp_wizard_chess_knight.png",
+      "frames": [
+        "decor-assets/native/sp_wizard_chess_knight_f0.png",
+        "decor-assets/native/sp_wizard_chess_knight_f1.png",
+        "decor-assets/native/sp_wizard_chess_knight_f2.png",
+        "decor-assets/native/sp_wizard_chess_knight_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_wizard_chess_knight_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_wizard_chess_knight_right_f0.png",
+        "decor-assets/native/sp_wizard_chess_knight_right_f1.png",
+        "decor-assets/native/sp_wizard_chess_knight_right_f2.png",
+        "decor-assets/native/sp_wizard_chess_knight_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 10,
+        "y": 2,
+        "w": 109,
+        "h": 170
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 176,
+      "pivotX": 64,
+      "pivotY": 172,
+      "bounds": {
+        "x": 11,
+        "y": 2,
+        "w": 106,
+        "h": 170
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 1,
+        "chapter": 16
+      },
+      "lore": "Bàn cờ phù thủy khổng lồ trong thử thách bảo vệ Hòn Đá Phù Thủy.",
+      "nativeSha256": "f1907efd60668895fa55100fd2b29926a9a86e60db0ce8ef95e3d7e8b0a23b60"
+    },
+    {
+      "id": "sp_riddle_diary",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Nhật ký Riddle và nanh Tử Xà",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "file": "decor-assets/native/sp_riddle_diary.png",
+      "frames": [
+        "decor-assets/native/sp_riddle_diary_f0.png",
+        "decor-assets/native/sp_riddle_diary_f1.png",
+        "decor-assets/native/sp_riddle_diary_f2.png",
+        "decor-assets/native/sp_riddle_diary_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_riddle_diary_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_riddle_diary_right_f0.png",
+        "decor-assets/native/sp_riddle_diary_right_f1.png",
+        "decor-assets/native/sp_riddle_diary_right_f2.png",
+        "decor-assets/native/sp_riddle_diary_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 13,
+        "y": 2,
+        "w": 87,
+        "h": 98
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 112,
+      "height": 104,
+      "pivotX": 56,
+      "pivotY": 100,
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 102,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 2,
+        "chapter": 17
+      },
+      "lore": "Harry dùng nanh Tử Xà phá hủy quyển nhật ký.",
+      "nativeSha256": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389"
+    },
+    {
+      "id": "sp_slytherin_locket",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Mề đay Slytherin",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "file": "decor-assets/native/sp_slytherin_locket.png",
+      "frames": [
+        "decor-assets/native/sp_slytherin_locket_f0.png",
+        "decor-assets/native/sp_slytherin_locket_f1.png",
+        "decor-assets/native/sp_slytherin_locket_f2.png",
+        "decor-assets/native/sp_slytherin_locket_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_slytherin_locket_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_slytherin_locket_right_f0.png",
+        "decor-assets/native/sp_slytherin_locket_right_f1.png",
+        "decor-assets/native/sp_slytherin_locket_right_f2.png",
+        "decor-assets/native/sp_slytherin_locket_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 6,
+        "y": 2,
+        "w": 77,
+        "h": 106
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 88,
+      "height": 112,
+      "pivotX": 44,
+      "pivotY": 108,
+      "bounds": {
+        "x": 3,
+        "y": 12,
+        "w": 82,
+        "h": 96
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 7,
+        "chapter": 19
+      },
+      "lore": "Chiếc mề đay Trường Sinh Linh Giá được phá hủy bằng thanh gươm.",
+      "nativeSha256": "83343d0b3a07a27b7a82061252bebe4232600a7ff2cb115617b3fbee9021c703"
+    },
+    {
+      "id": "sp_gaunt_ring",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Nhẫn gia tộc Gaunt",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "file": "decor-assets/native/sp_gaunt_ring.png",
+      "frames": [
+        "decor-assets/native/sp_gaunt_ring_f0.png",
+        "decor-assets/native/sp_gaunt_ring_f1.png",
+        "decor-assets/native/sp_gaunt_ring_f2.png",
+        "decor-assets/native/sp_gaunt_ring_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_gaunt_ring_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_gaunt_ring_right_f0.png",
+        "decor-assets/native/sp_gaunt_ring_right_f1.png",
+        "decor-assets/native/sp_gaunt_ring_right_f2.png",
+        "decor-assets/native/sp_gaunt_ring_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 4,
+        "y": 2,
+        "w": 81,
+        "h": 90
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 88,
+      "height": 96,
+      "pivotX": 44,
+      "pivotY": 92,
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 82,
+        "h": 90
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 6,
+        "chapter": 10
+      },
+      "lore": "Chiếc nhẫn gia tộc Gaunt, về sau được nhận diện là Trường Sinh Linh Giá.",
+      "nativeSha256": "851e133b19c663d152484713c969d801fe3f2081917c390543302d018a1eadf8"
+    },
+    {
+      "id": "sp_hufflepuff_cup",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Chiếc cúp Hufflepuff",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "file": "decor-assets/native/sp_hufflepuff_cup.png",
+      "frames": [
+        "decor-assets/native/sp_hufflepuff_cup_f0.png",
+        "decor-assets/native/sp_hufflepuff_cup_f1.png",
+        "decor-assets/native/sp_hufflepuff_cup_f2.png",
+        "decor-assets/native/sp_hufflepuff_cup_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_hufflepuff_cup_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_hufflepuff_cup_right_f0.png",
+        "decor-assets/native/sp_hufflepuff_cup_right_f1.png",
+        "decor-assets/native/sp_hufflepuff_cup_right_f2.png",
+        "decor-assets/native/sp_hufflepuff_cup_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 11,
+        "y": 2,
+        "w": 75,
+        "h": 98
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 104,
+      "pivotX": 48,
+      "pivotY": 100,
+      "bounds": {
+        "x": 4,
+        "y": 2,
+        "w": 89,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 7,
+        "chapter": 26
+      },
+      "lore": "Chiếc cúp được lấy khỏi hầm Lestrange ở Gringotts.",
+      "nativeSha256": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244"
+    },
+    {
+      "id": "sp_ravenclaw_diadem",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Vương miện Ravenclaw",
+      "group": "Dấu tích Trường Sinh Linh Giá",
+      "file": "decor-assets/native/sp_ravenclaw_diadem.png",
+      "frames": [
+        "decor-assets/native/sp_ravenclaw_diadem_f0.png",
+        "decor-assets/native/sp_ravenclaw_diadem_f1.png",
+        "decor-assets/native/sp_ravenclaw_diadem_f2.png",
+        "decor-assets/native/sp_ravenclaw_diadem_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_ravenclaw_diadem_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_ravenclaw_diadem_right_f0.png",
+        "decor-assets/native/sp_ravenclaw_diadem_right_f1.png",
+        "decor-assets/native/sp_ravenclaw_diadem_right_f2.png",
+        "decor-assets/native/sp_ravenclaw_diadem_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 18,
+        "w": 106,
+        "h": 82
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 112,
+      "height": 104,
+      "pivotX": 56,
+      "pivotY": 100,
+      "bounds": {
+        "x": 3,
+        "y": 20,
+        "w": 106,
+        "h": 80
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 7,
+        "chapter": 31
+      },
+      "lore": "Vương miện thất lạc của Ravenclaw trong Phòng Theo Yêu Cầu.",
+      "nativeSha256": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db"
+    },
+    {
+      "id": "sp_vanishing_cabinet",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Tủ Biến Mất",
+      "group": "Hắc thuật và bí mật",
+      "file": "decor-assets/native/sp_vanishing_cabinet.png",
+      "frames": [
+        "decor-assets/native/sp_vanishing_cabinet_f0.png",
+        "decor-assets/native/sp_vanishing_cabinet_f1.png",
+        "decor-assets/native/sp_vanishing_cabinet_f2.png",
+        "decor-assets/native/sp_vanishing_cabinet_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_vanishing_cabinet_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_vanishing_cabinet_right_f0.png",
+        "decor-assets/native/sp_vanishing_cabinet_right_f1.png",
+        "decor-assets/native/sp_vanishing_cabinet_right_f2.png",
+        "decor-assets/native/sp_vanishing_cabinet_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 27,
+        "y": 2,
+        "w": 91,
+        "h": 202
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 144,
+      "height": 208,
+      "pivotX": 72,
+      "pivotY": 204,
+      "bounds": {
+        "x": 18,
+        "y": 2,
+        "w": 108,
+        "h": 202
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 6,
+        "chapter": 27
+      },
+      "lore": "Chiếc tủ Draco sửa để nối Hogwarts với Borgin và Burkes.",
+      "nativeSha256": "fb89dcc1a76e315d0e77e15a318bb817245531eb74df9e1edf47aa109d64733f"
+    },
+    {
+      "id": "sp_hand_glory",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Bàn Tay Vẻ Vang",
+      "group": "Hắc thuật và bí mật",
+      "file": "decor-assets/native/sp_hand_glory.png",
+      "frames": [
+        "decor-assets/native/sp_hand_glory_f0.png",
+        "decor-assets/native/sp_hand_glory_f1.png",
+        "decor-assets/native/sp_hand_glory_f2.png",
+        "decor-assets/native/sp_hand_glory_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_hand_glory_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_hand_glory_right_f0.png",
+        "decor-assets/native/sp_hand_glory_right_f1.png",
+        "decor-assets/native/sp_hand_glory_right_f2.png",
+        "decor-assets/native/sp_hand_glory_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 14,
+        "y": 2,
+        "w": 52,
+        "h": 130
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 80,
+      "height": 136,
+      "pivotX": 40,
+      "pivotY": 132,
+      "bounds": {
+        "x": 15,
+        "y": 2,
+        "w": 51,
+        "h": 130
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 2,
+        "chapter": 4
+      },
+      "lore": "Cổ vật trong cửa tiệm Borgin và Burkes.",
+      "nativeSha256": "7ea638a76b9dea2c73b1c5710ecc23d0837d992b90a8bf237b25a21ffb7bd0f7"
+    },
+    {
+      "id": "sp_cursed_opal_necklace",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Dây chuyền opal bị nguyền",
+      "group": "Hắc thuật và bí mật",
+      "file": "decor-assets/native/sp_cursed_opal_necklace.png",
+      "frames": [
+        "decor-assets/native/sp_cursed_opal_necklace_f0.png",
+        "decor-assets/native/sp_cursed_opal_necklace_f1.png",
+        "decor-assets/native/sp_cursed_opal_necklace_f2.png",
+        "decor-assets/native/sp_cursed_opal_necklace_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_cursed_opal_necklace_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_cursed_opal_necklace_right_f0.png",
+        "decor-assets/native/sp_cursed_opal_necklace_right_f1.png",
+        "decor-assets/native/sp_cursed_opal_necklace_right_f2.png",
+        "decor-assets/native/sp_cursed_opal_necklace_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 6,
+        "y": 2,
+        "w": 85,
+        "h": 130
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 136,
+      "pivotX": 48,
+      "pivotY": 132,
+      "bounds": {
+        "x": 3,
+        "y": 5,
+        "w": 90,
+        "h": 127
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 6,
+        "chapter": 12
+      },
+      "lore": "Dây chuyền khiến Katie Bell bị nguyền.",
+      "nativeSha256": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4"
+    },
+    {
+      "id": "sp_chamber_serpent_door",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cánh cửa Phòng Chứa Bí Mật",
+      "group": "Hắc thuật và bí mật",
+      "file": "decor-assets/native/sp_chamber_serpent_door.png",
+      "frames": [
+        "decor-assets/native/sp_chamber_serpent_door_f0.png",
+        "decor-assets/native/sp_chamber_serpent_door_f1.png",
+        "decor-assets/native/sp_chamber_serpent_door_f2.png",
+        "decor-assets/native/sp_chamber_serpent_door_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_chamber_serpent_door_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_chamber_serpent_door_right_f0.png",
+        "decor-assets/native/sp_chamber_serpent_door_right_f1.png",
+        "decor-assets/native/sp_chamber_serpent_door_right_f2.png",
+        "decor-assets/native/sp_chamber_serpent_door_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 4,
+        "w": 186,
+        "h": 200
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 192,
+      "height": 208,
+      "pivotX": 96,
+      "pivotY": 204,
+      "bounds": {
+        "x": 3,
+        "y": 38,
+        "w": 186,
+        "h": 166
+      },
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 2,
+        "chapter": 16
+      },
+      "lore": "Vách đá có hai con rắn quấn nhau, mắt bằng ngọc lục bảo, mở bằng Xà Ngữ.",
+      "nativeSha256": "57c323fbad2ccd9ae91eeae8c1a01be74cd3cd5bc907f65bb56b8d918266d75b"
+    },
+    {
+      "id": "sp_department_veil",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Vòm màn che ở Bộ Pháp Thuật",
+      "group": "Hắc thuật và bí mật",
+      "file": "decor-assets/native/sp_department_veil.png",
+      "frames": [
+        "decor-assets/native/sp_department_veil_f0.png",
+        "decor-assets/native/sp_department_veil_f1.png",
+        "decor-assets/native/sp_department_veil_f2.png",
+        "decor-assets/native/sp_department_veil_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_department_veil_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_department_veil_right_f0.png",
+        "decor-assets/native/sp_department_veil_right_f1.png",
+        "decor-assets/native/sp_department_veil_right_f2.png",
+        "decor-assets/native/sp_department_veil_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 32,
+        "y": 2,
+        "w": 112,
+        "h": 202
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 176,
+      "height": 208,
+      "pivotX": 88,
+      "pivotY": 204,
+      "bounds": {
+        "x": 14,
+        "y": 2,
+        "w": 148,
+        "h": 202
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 5,
+        "chapter": 34
+      },
+      "lore": "Vòm đá có màn che trong Sở Bảo Mật.",
+      "nativeSha256": "c08f3dedfe0ad39a420ae564abb46318a3b56dcc2c3fdaa36b25b06a6a7fffc1"
+    },
+    {
+      "id": "sp_monster_book",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Sách Quái Vật về Quái Vật",
+      "group": "Hắc thuật và bí mật",
+      "file": "decor-assets/native/sp_monster_book.png",
+      "frames": [
+        "decor-assets/native/sp_monster_book_f0.png",
+        "decor-assets/native/sp_monster_book_f1.png",
+        "decor-assets/native/sp_monster_book_f2.png",
+        "decor-assets/native/sp_monster_book_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_monster_book_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_monster_book_right_f0.png",
+        "decor-assets/native/sp_monster_book_right_f1.png",
+        "decor-assets/native/sp_monster_book_right_f2.png",
+        "decor-assets/native/sp_monster_book_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 6,
+        "y": 2,
+        "w": 101,
+        "h": 98
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 112,
+      "height": 104,
+      "pivotX": 56,
+      "pivotY": 100,
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 106,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 3,
+        "chapter": 1
+      },
+      "lore": "Cuốn sách Hagrid gửi tặng Harry và dùng cho môn Chăm Sóc Sinh Vật Huyền Bí.",
+      "nativeSha256": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778"
+    },
+    {
+      "id": "sp_deathday_cake",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Bánh ngày giỗ Nick Suýt Mất Đầu",
+      "group": "Halloween Hogwarts",
+      "file": "decor-assets/native/sp_deathday_cake.png",
+      "frames": [
+        "decor-assets/native/sp_deathday_cake_f0.png",
+        "decor-assets/native/sp_deathday_cake_f1.png",
+        "decor-assets/native/sp_deathday_cake_f2.png",
+        "decor-assets/native/sp_deathday_cake_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_deathday_cake_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_deathday_cake_right_f0.png",
+        "decor-assets/native/sp_deathday_cake_right_f1.png",
+        "decor-assets/native/sp_deathday_cake_right_f2.png",
+        "decor-assets/native/sp_deathday_cake_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 7,
+        "w": 122,
+        "h": 133
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 144,
+      "pivotX": 64,
+      "pivotY": 140,
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 116,
+        "h": 138
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 2,
+        "chapter": 8
+      },
+      "lore": "Bánh hình bia mộ trong bữa tiệc ngày giỗ lần thứ 500 của Nick.",
+      "nativeSha256": "38f2b14e032fe5a942622a176a00c71a7fecbf027ca16f29f0f8c1f3b5e3f7c6"
+    },
+    {
+      "id": "sp_marauders_map",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Bản đồ của Đạo tặc",
+      "group": "Hành trình phép thuật",
+      "file": "decor-assets/native/sp_marauders_map.png",
+      "frames": [
+        "decor-assets/native/sp_marauders_map_f0.png",
+        "decor-assets/native/sp_marauders_map_f1.png",
+        "decor-assets/native/sp_marauders_map_f2.png",
+        "decor-assets/native/sp_marauders_map_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_marauders_map_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_marauders_map_right_f0.png",
+        "decor-assets/native/sp_marauders_map_right_f1.png",
+        "decor-assets/native/sp_marauders_map_right_f2.png",
+        "decor-assets/native/sp_marauders_map_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 18,
+        "y": 19,
+        "w": 107,
+        "h": 89
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 112,
+      "pivotX": 64,
+      "pivotY": 108,
+      "bounds": {
+        "x": 3,
+        "y": 12,
+        "w": 122,
+        "h": 96
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 3,
+        "chapter": 10
+      },
+      "lore": "Fred và George trao cho Harry bản đồ các lối đi bí mật Hogwarts.",
+      "nativeSha256": "0196a1973c15516e33617a14877688ef2f01f1e226293b87e8d1768111559c1e"
+    },
+    {
+      "id": "sp_time_turner",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cái Xoay Thời Gian",
+      "group": "Hành trình phép thuật",
+      "file": "decor-assets/native/sp_time_turner.png",
+      "frames": [
+        "decor-assets/native/sp_time_turner_f0.png",
+        "decor-assets/native/sp_time_turner_f1.png",
+        "decor-assets/native/sp_time_turner_f2.png",
+        "decor-assets/native/sp_time_turner_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_time_turner_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_time_turner_right_f0.png",
+        "decor-assets/native/sp_time_turner_right_f1.png",
+        "decor-assets/native/sp_time_turner_right_f2.png",
+        "decor-assets/native/sp_time_turner_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 10,
+        "w": 82,
+        "h": 114
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 88,
+      "height": 128,
+      "pivotX": 44,
+      "pivotY": 124,
+      "bounds": {
+        "x": 3,
+        "y": 10,
+        "w": 82,
+        "h": 114
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 3,
+        "chapter": 21
+      },
+      "lore": "Dụng cụ Hermione dùng cùng Harry để quay lại thời gian.",
+      "nativeSha256": "a7511ec46c82e98af700337d23a21223989ec70573692ad5f93014af66baed02"
+    },
+    {
+      "id": "sp_deluminator",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cái Tắt-Sáng",
+      "group": "Hành trình phép thuật",
+      "file": "decor-assets/native/sp_deluminator.png",
+      "frames": [
+        "decor-assets/native/sp_deluminator_f0.png",
+        "decor-assets/native/sp_deluminator_f1.png",
+        "decor-assets/native/sp_deluminator_f2.png",
+        "decor-assets/native/sp_deluminator_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_deluminator_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_deluminator_right_f0.png",
+        "decor-assets/native/sp_deluminator_right_f1.png",
+        "decor-assets/native/sp_deluminator_right_f2.png",
+        "decor-assets/native/sp_deluminator_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 12,
+        "y": 2,
+        "w": 56,
+        "h": 98
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 80,
+      "height": 104,
+      "pivotX": 40,
+      "pivotY": 100,
+      "bounds": {
+        "x": 8,
+        "y": 2,
+        "w": 65,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 7,
+        "chapter": 7
+      },
+      "lore": "Dumbledore để lại dụng cụ thu ánh sáng cho Ron.",
+      "nativeSha256": "ec8445d7aecbd75e59cf1b1cffeed9e6981bf5adc04c9904bf3907855c2a6d21"
+    },
+    {
+      "id": "sp_snitch_resurrection_stone",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Snitch giữ Hòn Đá Phục Sinh",
+      "group": "Hành trình phép thuật",
+      "file": "decor-assets/native/sp_snitch_resurrection_stone.png",
+      "frames": [
+        "decor-assets/native/sp_snitch_resurrection_stone_f0.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_f1.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_f2.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_snitch_resurrection_stone_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_snitch_resurrection_stone_right_f0.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_right_f1.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_right_f2.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 4,
+        "w": 122,
+        "h": 96
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 104,
+      "pivotX": 64,
+      "pivotY": 100,
+      "bounds": {
+        "x": 3,
+        "y": 19,
+        "w": 122,
+        "h": 81
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 7,
+        "chapter": 34
+      },
+      "lore": "Harry mở quả Snitch trước khi đi vào Rừng Cấm.",
+      "nativeSha256": "443b9da40b823f2917fbc0de86cc9e3fc110bea8cc017210f00084037317c442"
+    },
+    {
+      "id": "sp_sword_gryffindor",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Thanh gươm Gryffindor",
+      "group": "Hành trình phép thuật",
+      "file": "decor-assets/native/sp_sword_gryffindor.png",
+      "frames": [
+        "decor-assets/native/sp_sword_gryffindor_f0.png",
+        "decor-assets/native/sp_sword_gryffindor_f1.png",
+        "decor-assets/native/sp_sword_gryffindor_f2.png",
+        "decor-assets/native/sp_sword_gryffindor_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_sword_gryffindor_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_sword_gryffindor_right_f0.png",
+        "decor-assets/native/sp_sword_gryffindor_right_f1.png",
+        "decor-assets/native/sp_sword_gryffindor_right_f2.png",
+        "decor-assets/native/sp_sword_gryffindor_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 13,
+        "y": 2,
+        "w": 79,
+        "h": 170
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 104,
+      "height": 176,
+      "pivotX": 52,
+      "pivotY": 172,
+      "bounds": {
+        "x": 9,
+        "y": 2,
+        "w": 86,
+        "h": 170
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 2,
+        "chapter": 17
+      },
+      "lore": "Thanh gươm xuất hiện từ Nón Phân Loại trong trận đối đầu Tử Xà.",
+      "nativeSha256": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce"
+    },
+    {
+      "id": "sp_knight_bus",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Xe Đò Hiệp Sĩ",
+      "group": "Hành trình phép thuật",
+      "file": "decor-assets/native/sp_knight_bus.png",
+      "frames": [
+        "decor-assets/native/sp_knight_bus_f0.png",
+        "decor-assets/native/sp_knight_bus_f1.png",
+        "decor-assets/native/sp_knight_bus_f2.png",
+        "decor-assets/native/sp_knight_bus_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_knight_bus_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_knight_bus_right_f0.png",
+        "decor-assets/native/sp_knight_bus_right_f1.png",
+        "decor-assets/native/sp_knight_bus_right_f2.png",
+        "decor-assets/native/sp_knight_bus_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 5,
+        "y": 2,
+        "w": 150,
+        "h": 170
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 160,
+      "height": 176,
+      "pivotX": 80,
+      "pivotY": 172,
+      "bounds": {
+        "x": 7,
+        "y": 2,
+        "w": 147,
+        "h": 170
+      },
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 3,
+        "chapter": 3
+      },
+      "lore": "Chiếc xe buýt ba tầng đón Harry sau khi rời nhà Dursley.",
+      "nativeSha256": "48e65c7ba8119860ade102c7155df49086b0b09ee541c52440ef34bcaef348e3"
     }
   ]
 }

@@ -1,6 +1,6 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button} from './ui-utils.mjs?v=24.9.54';
-import {atmosphereConfig, weatherConfig} from './garden-atmosphere.mjs?v=24.9.54';
+import {el, button} from './ui-utils.mjs?v=24.9.55';
+import {atmosphereConfig, weatherConfig} from './garden-atmosphere.mjs?v=24.9.55';
 
 export const TOUR_STORAGE_KEY = 'hpvn-garden-v22-tour';
 

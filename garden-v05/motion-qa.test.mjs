@@ -23,8 +23,8 @@ test('care and eating reach every authored frame before their event ends',()=>{
 test('reduced-motion action feedback is still removed by the real timeline',()=>{
  const runtime=createAnimationRuntime();runtime.setClock(1000);runtime.animate('care',{species:'mooncalf'});assert.equal(runtime.active(1500,{reducedMotion:true})[0].elapsed,0);assert.equal(runtime.active(4000,{reducedMotion:true}).length,0);assert.equal(runtime.events().length,0);
 });
-test('all six two-angle decorations use the same animation phase and dimensions',()=>{
+test('all two-angle decorations (6 store, 30 special) use the same animation phase and dimensions',()=>{
  const data=JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json',import.meta.url)));let count=0;
  for(const asset of data.items.filter(a=>a.rightFrames)){count++;assert.equal(asset.frames.length,asset.rightFrames.length);for(let t=1;t<5000;t+=71){const left=decorFrameAt(asset,t,{seed:asset.id}),right=decorFrameAt(asset,t,{seed:asset.id,facing:'right'});assert.equal(left.index,right.index);assert.equal(right.file,asset.rightFrames[left.index]);}}
- assert.equal(count,6);
+ assert.equal(count,36);
 });

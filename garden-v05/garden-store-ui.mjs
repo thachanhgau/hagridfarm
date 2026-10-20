@@ -1,7 +1,8 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.54";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.54";
-import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.54";
-import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.54";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.55";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.55";
+import {unlockedCatalog} from "./garden-store-catalog.mjs?v=24.9.55";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.55";
+import {SPECIAL_COLLECTION,BOOK_TITLES} from "./special-products.mjs?v=24.9.55";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -19,12 +20,12 @@ const KIND_LABELS = Object.freeze({
  boost: "Nước phép",
  decoration: "Trang trí · 2 góc xoay",
 });
-const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", decoration: "scenery"});
+const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", decoration: "scenery", special: "trophy"});
 const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("coin", 1), el("b", {text: num(n)}), extra ? el("small", {text: extra}) : null]);
 
 export function showStore({state,items,wallet,connected,onPurchase,onDecorate,decorAssets=new Map(),onClose,initialFilter="all"}){
  document.querySelector(".store-overlay")?.remove();
- let filter=initialFilter,purchasing=false;const quantities=new Map();
+ let filter=initialFilter,purchasing=false;const quantities=new Map(),previewFacing=new Map();
  const overlay=el("div",{class:"store-overlay"}),shade=el("div",{class:"popover-shade"});
  const box=el("section",{class:"popover store-popover",role:"dialog","aria-modal":"true","aria-labelledby":"storeTitle"});
  const heading=el("div",{class:"popover-heading"}),status=el("div",{class:"wallet-status store-vault-banner"}),tabs=el("div",{class:"panel-toolbar store-tabs",role:"group","aria-label":"Nhóm vật tư"}),notice=el("p",{class:"meta store-notice",role:"status","aria-live":"polite"}),cards=el("div",{class:"cards store-cards-grid"});
@@ -37,8 +38,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
  );
  shade.onclick=close;
 
- // Nước suối thần shares the Nước phép tab.
- const tabOf=i=>i.kind==="spring"?"boost":i.kind;
+ // Nước suối thần shares the Nước phép tab; «Sản phẩm đặc biệt» are decorations with their own tab.
+ const tabOf=i=>i.collection===SPECIAL_COLLECTION?"special":i.kind==="spring"?"boost":i.kind;
  const categories=[
   ["all","Tất cả"],
   ["seed","Hạt giống"],
@@ -46,6 +47,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   ["food","Thức ăn"],
   ["boost","Nước phép"],
   ["decoration","Trang trí"],
+  ["special","Sản phẩm đặc biệt"],
  ];
 
  const catalog=()=>{
@@ -116,16 +118,21 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
 
    const card=el("article",{class:`card store-card gp-tile kind-${item.kind}${isDecor?" decor-card":""}`,"data-store-item":item.id});
    const packBadge=isDecor?"2 góc":`×${item.quantity}`;
-   const artVisual=visualItemIcon(items,item.icon||item.id,{size:56,kind:item.kind,decorAssets,badge:packBadge});
+   // Decorations preview either angle in the card (both are drawn views, never a mirror).
+   const shownFacing=previewFacing.get(item.id)||facing;
+   const artVisual=visualItemIcon(items,item.icon||item.id,{size:56,kind:item.kind,decorAssets,badge:packBadge,facing:shownFacing});
 
    const head=el("div",{class:"gp-tile-art"},[artVisual]);
+   const angleBtn=isDecor?iconButton("replay",`Xem góc ${shownFacing==="right"?"trái ↖":"phải ↗"} của ${item.label}`,()=>{previewFacing.set(item.id,shownFacing==="right"?"default":"right");render();},{class:"gp-step store-angle-btn","data-store-angle":item.id}):null;
+   // The HPVN server lists «Sản phẩm đặc biệt» before the owner approves their prices, without selling them.
+   const pendingPrice=item.forSale===false;
    const remaining=item.dailyRemaining??item.dailyLimit;
    const tiered=Boolean(item.overflowMultiplier);
    const max=tiered?24:Math.max(1,Math.min(remaining||1,24));
    let count=Math.min(max,quantities.get(item.id)||1);
    const totalCost=()=>packTotal(item,count);
    const unit=item.kind==="boost"||item.kind==="spring"?"chai":"gói";
-   const canBuy=()=>snap&&!purchasing&&(tiered||remaining!==0)&&spendable>=totalCost();
+   const canBuy=()=>snap&&!pendingPrice&&!purchasing&&(tiered||remaining!==0)&&spendable>=totalCost();
    const buyLabel=()=>owned?"Đặt "+item.label:`Mua ${count} ${unit} ${item.label} · ${num(totalCost())} Galleons`;
 
    const buy=button("",async()=>{
@@ -158,15 +165,17 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
    const angleTag=facing==="right"?"Góc nhìn qua phải ↗":"Góc hiện tại ↖";
    const quota=isDecor?(owned?(location?`${location} · ${angleTag}`:"Đang cất"):""):tiered?(snap&&remaining===0?`Quá ${num(item.dailyLimit)} ${unit} · giá ×${item.overflowMultiplier}`:`Còn ${num(snap?remaining:item.dailyLimit)}/${num(item.dailyLimit)} giá thường`):(snap?`Còn ${remaining}/${item.dailyLimit} hôm nay`:`${item.dailyLimit} ${unit}/ngày`);
    const descText=isDecor?(DECOR_COPY[item.id]||item.description):item.description;
+   const special=item.collection===SPECIAL_COLLECTION;
    card.title=descText;
-   const price=isDecor?(owned?null:coinChip(item.price)):coinChip(item.price,"/"+unit);
+   const price=isDecor?(owned?null:coinChip(item.price,pendingPrice?"đề xuất":"")):coinChip(item.price,"/"+unit);
    let action;
    if(!snap)action=el("span",{class:"lock-badge is-wide",role:"img","aria-label":"Cần nối ví Gringotts để mua",title:"Cần nối ví Gringotts để mua"},[pixelIcon("lock",1),el("b",{text:"Nối ví"})]);
+   else if(!owned&&pendingPrice)action=el("span",{class:"lock-badge is-wide",role:"img","aria-label":"Giá đang chờ duyệt, chưa bán",title:"Giá đang chờ duyệt, chưa bán"},[pixelIcon("lock",1),el("b",{text:"Chờ duyệt giá"})]);
    else if(!owned&&!tiered&&remaining===0)action=el("span",{class:"gp-state",text:"Hết hôm nay"});
    else action=buy;
-   card.append(head,
+   card.append(head,...(angleBtn?[angleBtn]:[]),
     el("strong",{class:"gp-tile-name",text:item.label}),
-    el("small",{class:"gp-tile-sub store-stock-note",text:ownedStockText(item,snap)}),
+    el("small",{class:"gp-tile-sub store-stock-note",text:special&&!owned?`${BOOK_TITLES[item.book]||""} · ch. ${item.chapter}`:ownedStockText(item,snap)}),
     el("div",{class:"store-meta-row"},[price,el("small",{class:owned?"meta decor-owned":"meta",text:quota})]),
     el("div",{class:"store-action-row gp-tile-actions"},isDecor||!snap?[action]:[el("div",{class:"gp-stepper",role:"group","aria-label":"Số "+unit+" "+item.label},[minus,qtyValue,plus]),action]));
    cards.append(card);

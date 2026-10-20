@@ -1,5 +1,6 @@
 import * as E from "../garden-v05/progression-engine.mjs";
-import {unlockedCatalog,CATALOG_VERSION} from "../garden-v05/garden-store-catalog.mjs?v=24.9.40";
+import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=24.9.40";
+import {decorFootprintRect,rectsOverlap} from "../garden-v05/decor-runtime.mjs?v=24.9.40";
 import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.40";
 import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.40";
 import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.40";
@@ -246,12 +247,16 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   if(!dec.owned.includes(c.itemId))fail("decoration-not-owned","Đồ trang trí chưa được sở hữu.");
   const turned=c.facing!==undefined&&c.facing!==(dec.rotations[c.itemId]||"default");
   if(c.facing!==undefined)dec.rotations[c.itemId]=c.facing;
-  // Server garden-action-core: `at` stands it on free ground, kept a tile apart from the other decorations.
+  // Server garden-action-core: `at` stands it on free ground; footprints (turned with the facing) never overlap,
+  // and the placed list grows past the six legacy sockets up to every decoration in the catalog.
   if(c.at){
+   const footprint=id=>STORE_CATALOG.find(i=>i.id===id)?.footprint??[1,1],facingOf=id=>(id===c.itemId&&c.facing)||dec.rotations[id]||"default";
    const spot=id=>dec.positions?.[id]||[[3,7.15],[9.5,7.15],[16,7.15],[22.5,7.15],[3,13.5],[9.5,13.5]][dec.placements.indexOf(id)];
    if(from>=0&&spot(c.itemId)[0]===c.at[0]&&spot(c.itemId)[1]===c.at[1]&&!turned)fail("action-noop","Đồ trang trí đã ở vị trí và hướng này.");
-   if(dec.placements.some(o=>o&&o!==c.itemId&&Math.hypot(spot(o)[0]-c.at[0],spot(o)[1]-c.at[1])<1))fail("slot-occupied","Chỗ này sát món trang trí khác quá.");
-   const i=from>=0?from:dec.placements.indexOf(null);
+   const mine=decorFootprintRect(c.at[0],c.at[1],footprint(c.itemId),facingOf(c.itemId));
+   if(dec.placements.some(o=>o&&o!==c.itemId&&rectsOverlap(mine,decorFootprintRect(...spot(o),footprint(o),facingOf(o)))))fail("slot-occupied","Chồng lên món trang trí khác.");
+   let i=from>=0?from:dec.placements.indexOf(null);
+   if(i<0&&dec.placements.length<STORE_CATALOG.filter(x=>x.kind==="decoration").length){dec.placements.push(null);i=dec.placements.length-1;}
    if(i<0)fail("slot-occupied","Vườn đã bày đủ đồ trang trí; cất bớt một món trước.");
    dec.placements[i]=c.itemId;dec.positions={...dec.positions,[c.itemId]:[...c.at]};
   }

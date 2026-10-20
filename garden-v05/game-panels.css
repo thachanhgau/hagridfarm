@@ -89,6 +89,7 @@
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile.is-ready,#gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile.is-current{box-shadow:inset 0 0 0 2px #FFC36B,inset 0 5px #FFC36B}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile.is-equipped{box-shadow:inset 0 0 0 2px #B49A66,inset 0 5px #B49A66}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile-art{position:relative;display:grid;place-items:center;width:68px;height:68px;flex:none;background:#24483F;border:2px solid #231F2E;box-shadow:inset 0 2px #3F6A45,inset 0 -3px #142620}
+#gameShell .store-popover .store-card.decor-card{position:relative}#gameShell .store-popover .store-card>.store-angle-btn{position:absolute;top:6px;right:6px;width:36px;height:36px;min-width:36px;min-height:36px;padding:0}#gameShell .store-popover .store-card>.store-angle-btn .px-icon{width:18px;height:18px}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile-art .visual-slot{background:none;border:0;box-shadow:none}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile-name{display:block;max-width:100%;color:#F5D69A;font:900 14px/1.15 var(--gp-display);overflow-wrap:anywhere}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter) .gp-tile-sub{color:#A6B1AE;font:700 11.5px/1.25 var(--gp-body)}
