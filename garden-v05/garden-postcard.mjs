@@ -1,5 +1,5 @@
-import {el, button, num, hours, visualItemIcon} from './ui-utils.mjs?v=24.9.51';
-import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=24.9.51';
+import {el, button, num, hours, realHours, visualItemIcon} from './ui-utils.mjs?v=24.9.52';
+import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=24.9.52';
 
 /**
  * V21.0 Direction 2:
@@ -256,7 +256,7 @@ export function buildAlmanacChains(DB, state = {}) {
           qty,
           kind: crop ? 'crop' : 'station',
           level: crop ? crop.level : subRecipe ? subRecipe.level : 1,
-          hours: crop ? crop.hours : subRecipe ? subRecipe.hours : 0,
+          hours: realHours(crop || subRecipe, level),
           inStock: Number(inventory[inputId] || 0),
         });
       }
@@ -299,7 +299,7 @@ export function buildAlmanacChains(DB, state = {}) {
       id: crop.id,
       label: crop.label,
       level: crop.level,
-      hours: crop.hours,
+      hours: realHours(crop, level),
       plantXP: crop.plantXP,
       harvestXP: crop.harvestXP,
       totalXP: crop.totalXP,

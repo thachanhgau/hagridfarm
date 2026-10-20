@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.51';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.51';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.51";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.51";
-import {$,el,button,icon,num,duration,hours,growthScale,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.51";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.51";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.51";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.51";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.51";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.51";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.51";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.52';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.52';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.52";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.52";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.52";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.52";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.52";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.52";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.52";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.52";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.52";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -125,7 +125,7 @@ export function createPanels(ctx){
    const s=getState(),g=grid();
    body.append(paragraph("3 ô/hàng · tối đa 3 loại/thửa"+(getSession().connected?" · 1 hạt + 1 nước/ô":" · gieo miễn phí")));
    for(const c of DB.crops.filter(c=>c.level<=s.level)){
-    const locked=c.level>s.level,k=card(c.label,"Cấp "+c.level+" · "+c.rarity+" · "+(getSession().connected?duration(c.hours*growthScale(s.level)*3600000):hours(c.hours)),c.id);
+    const locked=c.level>s.level,k=card(c.label,"Cấp "+c.level+" · "+c.rarity+" · "+hours(realHours(c,s.level)),c.id);
     k.classList.toggle("locked",locked);
     k.append(detail(c.use),paragraph("Gieo "+c.plantXP+" + gặt "+c.harvestXP+" XP/ô · Kho "+(s.inventory[c.id]||0)),button(locked?"Mở ở cấp "+c.level:"Chọn",()=>{selectCrop(c.id);close();},{disabled:locked,class:"primary"}));
     g.append(k);
@@ -196,7 +196,7 @@ export function createPanels(ctx){
    }
    const g=grid();
    for(const r of DB.recipes.filter(r=>r.level<=s.level).filter(r=>recipeFilter==="all"||recipeFilter==="open"&&r.level<=s.level||recipeFilter==="feed"&&DB.animals.some(a=>a.feed===r.output)||r.output===recipeFilter)){
-    const n=r.hours?1:batches,locked=r.level>s.level,missing=Object.entries(r.inputs).some(([id,q])=>s.inventory[id]<q*n),busy=r.hours&&s.jobs.some(j=>j.station===r.station),k=card(r.label,"Cấp "+r.level+" · "+hours(r.hours)+" · "+r.station,r.output);
+    const n=r.hours?1:batches,locked=r.level>s.level,missing=Object.entries(r.inputs).some(([id,q])=>s.inventory[id]<q*n),busy=r.hours&&s.jobs.some(j=>j.station===r.station),k=card(r.label,"Cấp "+r.level+" · "+hours(realHours(r,s.level))+" · "+r.station,r.output);
     k.classList.toggle("locked",locked);
     for(const[id,q]of Object.entries(r.inputs))k.append(paragraph(label(id)+": "+num(s.inventory[id]||0)+" / "+num(q*n),s.inventory[id]<q*n?"missing":"meta"));
     k.append(paragraph("Nhận "+(r.count*n)+" "+label(r.output)),button(locked?"Cấp "+r.level:busy?"Đang làm":"Làm",()=>run(x=>E.craft(x,r.id,n,Date.now()),r.hours?"Đã bắt đầu mẻ.":"Đã chế biến thành phẩm.",{action:"craft",recipeId:r.id,batches:n}),{disabled:locked||missing||busy,class:"primary"}));
@@ -211,7 +211,7 @@ export function createPanels(ctx){
    body.append(paragraph(s.plots.length+"/12 thửa · "+E.housingCapacity(s)+"/12 chỗ nuôi."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
    // the next locked build of each kind shows as "Chờ cấp N" so an empty panel never reads as broken
    for(const e of DB.expansions.filter(e=>e.level<=s.level||e===DB.expansions.find(x=>x.kind===e.kind&&x.level>s.level))){
-    const number=Number(e.id.split("_")[1]),title=(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=number===1||s.built.includes(e.kind+"_"+(number-1)),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+hours(e.hours),e.id),short=!canPay(s,e,wallet);
+    const number=Number(e.id.split("_")[1]),title=(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=number===1||s.built.includes(e.kind+"_"+(number-1)),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
     k.classList.toggle("locked",locked);
     if(!done&&!job)k.append(priceRow(s,e,wallet));
     k.append(paragraph(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi"));
@@ -333,7 +333,7 @@ export function createPanels(ctx){
      id,
      visualId:id,
      title:label(id),
-     subtitle:crop?`Nông sản · ${hours(crop.hours)}`:"Nông sản thu hoạch",
+     subtitle:crop?`Nông sản · ${hours(realHours(crop,getState().level))}`:"Nông sản thu hoạch",
      qty:q,
      actionText:"Gieo thêm",
      onAction:()=>{selectCrop(id);close();},

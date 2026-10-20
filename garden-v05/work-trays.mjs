@@ -1,5 +1,5 @@
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.51';
-import { $, button, el, duration, hours, num, visualItemIcon } from './ui-utils.mjs?v=24.9.51';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.52';
+import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.52';
 import { DB } from './balance-data.mjs';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
@@ -274,7 +274,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
   }
 
   function tileBadge(mode, entry, state, now) {
-    if (mode === 'craft') return entry.hours > 0 ? { text: hours(entry.hours).replace(' giờ', 'g'), kind: 'time' } : null;
+    if (mode === 'craft') return entry.hours > 0 ? { text: hours(realHours(entry, state.level)).replace(' giờ', 'g').replace(' phút', 'p'), kind: 'time' } : null;
     if (entry.level > state.level) return { text: `Cấp ${entry.level}`, kind: 'lock' };
     const job = (state.construction ?? []).find(item => item.id === entry.id);
     if (job) return Number(job.readyAt) <= Number(now) ? { text: 'Xong', kind: 'ready' } : { text: 'Đang xây', kind: 'busy' };
@@ -408,7 +408,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     const choice = craftChoice(recipe, state, model.batches);
     const outputCount = Number(recipe.count) * choice.batches;
     dom.captionTitle.textContent = recipe.label;
-    dom.captionMeta.textContent = `${recipe.hours > 0 ? '⏱ ' + hours(recipe.hours) : 'Tức thì'} · ${recipe.station}`;
+    dom.captionMeta.textContent = `${recipe.hours > 0 ? '⏱ ' + hours(realHours(recipe, state.level)) : 'Tức thì'} · ${recipe.station}`;
     dom.stepper.hidden = recipe.hours > 0;
     dom.batchValue.textContent = `×${model.batches}`;
     dom.stepper.less.disabled = model.batches <= BATCH_STEPS[0];
@@ -455,7 +455,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     const choice = buildChoice(expansion, state, now, db.expansions, getGalleons());
     const title = expansionTitle(expansion);
     dom.captionTitle.textContent = title;
-    dom.captionMeta.textContent = `${expansion.hours > 0 ? '⏱ ' + hours(expansion.hours) : 'Tức thì'} · ${expansionShortEffect(expansion)}`;
+    dom.captionMeta.textContent = `${expansion.hours > 0 ? '⏱ ' + hours(realHours(expansion, state.level)) : 'Tức thì'} · ${expansionShortEffect(expansion)}`;
 
     let reason = '';
     if (!choice.unlocked) reason = `Mở ở cấp ${expansion.level}`;
@@ -502,7 +502,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       return;
     }
     const { choice, command } = derived;
-    run(next => E.craft(next, selectedId, choice.batches, Date.now()), recipe.hours > 0 ? `Đã bắt đầu ${recipe.label} · xong sau ${hours(recipe.hours)}.` : `Đã làm +${num(recipe.count * choice.batches)} ${readLabel(labels, recipe.output)}.`, command);
+    run(next => E.craft(next, selectedId, choice.batches, Date.now()), recipe.hours > 0 ? `Đã bắt đầu ${recipe.label} · xong sau ${hours(realHours(recipe, state.level))}.` : `Đã làm +${num(recipe.count * choice.batches)} ${readLabel(labels, recipe.output)}.`, command);
   }
 
   function dispatchBuild() {
@@ -515,7 +515,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       refresh('build');
       return;
     }
-    run(next => E.build(next, selectedId, Date.now()), expansion.hours > 0 ? `Đã khởi công ${expansionTitle(expansion)} · xong sau ${hours(expansion.hours)}.` : `Đã xây ${expansionTitle(expansion)}.`, derived.command);
+    run(next => E.build(next, selectedId, Date.now()), expansion.hours > 0 ? `Đã khởi công ${expansionTitle(expansion)} · xong sau ${hours(realHours(expansion, state.level))}.` : `Đã xây ${expansionTitle(expansion)}.`, derived.command);
   }
 
   function dispatchClaim(mode) {
