@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {createFixtureServer} from '../qa-v19/fixture-wallet.mjs';
 import {createGardenClient} from './garden-emulator-client.mjs';
 import {serverRefusal} from './ui-utils.mjs';
-import {useServerDaily, loadOwlQuests, recordOwlQuestAction, claimOwlQuest, OWL_QUEST_STORAGE_KEY} from './garden-quests.mjs';
+import {useServerDaily, loadOwlQuests, recordOwlQuestAction, claimOwlQuest, dailyCompletionSummary, hasClaimableOwlQuest, OWL_QUEST_STORAGE_KEY} from './garden-quests.mjs';
 import {useServerFestival, loadEventState, recordFestivalAction, claimEventMilestone, EVENT_STORAGE_KEY} from './garden-events.mjs';
 import {createGardenStorage} from './garden-storage.mjs';
 
@@ -289,4 +289,21 @@ test('fixture mirrors the server: fast growth below level 20, care ripens 15 min
   const harvested = act({action: 'harvest', plotIndex: 0, cells: [0, 1, 2]}, 'h1');
   assert.equal(harvested.garden.progression.level, 2);
   assert.equal(harvested.garden.supplies.boost, boost + 1);
+});
+
+test('«Việc thêm»: bonus quests feed Rương Bác Hagrid, never the owl chest count', async () => {
+  const {client} = fixture();
+  const first = await client.read();
+  assert.deepEqual(first.daily.bonusQuests.map(q => q.id).at(-1), 'q_share');
+  assert.equal(first.daily.bonusChest.ready, false);
+  assert.equal(await reasonOf(client.act({action: 'claimChest', chest: 'bonus'})), 'quest-incomplete');
+  const shared = await client.free('postcard');
+  const share = shared.daily.bonusQuests.find(q => q.id === 'q_share');
+  assert.equal(share.progress, 1);
+  const local = useServerDaily(shared.daily);
+  assert.equal(local.bonusQuests.length, shared.daily.bonusQuests.length);
+  // A done bonus quest does not count toward the three owl quests.
+  assert.equal(dailyCompletionSummary(local).completedCount, shared.daily.quests.filter(q => q.progress >= q.target).length);
+  assert.equal(hasClaimableOwlQuest(local), true);
+  useServerDaily(null);
 });

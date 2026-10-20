@@ -1,5 +1,5 @@
-import {$,el,duration} from './ui-utils.mjs?v=24.9.52';
-import {pixelIcon,setAction,rewardChips,iconButton,lockBadge} from './pixel-icons.mjs?v=24.9.52';
+import {$,el,duration} from './ui-utils.mjs?v=24.9.53';
+import {pixelIcon,setAction,rewardChips,iconButton,lockBadge} from './pixel-icons.mjs?v=24.9.53';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -7,11 +7,10 @@ import {
  recordOwlQuestAction,
  claimOwlQuest,
  claimDailyGrandChest,
- allDailyTasks,
  dailyCompletionSummary,
  hasClaimableOwlQuest,
  DAILY_GRAND_CHEST_REWARD,
-} from './garden-quests.mjs?v=24.9.52';
+} from './garden-quests.mjs?v=24.9.53';
 
 // Presentation only: every crop mutation still uses the existing engine/command.
 export function cropContext(state, selection, E, now) {
@@ -25,8 +24,8 @@ export function cropContext(state, selection, E, now) {
 
 
 // Thư cú tiles: what the quest asks for as the big icon; the route button names where to go.
-const OWL_QUEST_ICONS=Object.freeze({q_plant:'sow',q_harvest:'harvest',q_harvest_runs:'harvest',q_craft:'craft',q_feed:'feed',q_claim:'chest'});
-const OWL_ROUTE_LABELS=Object.freeze({plant:'Ra thửa',craft:'Mở vạc',creature:'Thăm chuồng',tour:'Tham quan',events:'Mở lễ hội'});
+const OWL_QUEST_ICONS=Object.freeze({q_plant:'sow',q_harvest:'harvest',q_harvest_runs:'harvest',q_craft:'craft',q_feed:'feed',q_claim:'chest',q_pet:'heart',q_help:'care',q_share:'envelope'});
+const OWL_ROUTE_LABELS=Object.freeze({plant:'Ra thửa',craft:'Mở vạc',creature:'Thăm chuồng',tour:'Tham quan',events:'Mở lễ hội',visit:'Thăm vườn',postcard:'Bưu thiếp'});
 const OWL_REWARD_NAMES=Object.freeze({water:'Nước',boost:'Nước phép',pumpkin:'Bí ngô',oats:'Yến mạch',insects:'Côn trùng',moonherb:'Cỏ trăng'});
 function compactOwlReward(reward={}){
  const parts=[];
@@ -37,7 +36,7 @@ function compactOwlReward(reward={}){
  return parts.join(' · ')||'Quà';
 }
 
-export function setupWizardUI({E,items,getState,getSelection,getRenderer,getReady,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward,onClaimDailyQuest,onClaimGrandChest,onCare,getLetterGift}) {
+export function setupWizardUI({E,items,getState,getSelection,getRenderer,getReady,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward,onClaimDailyQuest,onClaimGrandChest,onClaimBonusChest,onCare,getLetterGift}) {
  let letterRoute=null,letterOpenedOnce=false;
  const letter=$('owlLetter');
 
@@ -57,7 +56,8 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
   letter.close();
   if(route==='craft')panels.show('craft');
   else if(route==='creature')panels.show('creatures');
-  else if(route==='tour')panels.show('tour');
+  else if(route==='tour'||route==='visit')panels.show('tour');
+  else if(route==='postcard')panels.show('postcard');
   else if(route==='events')panels.show('events');
   else{setMode('plant');camera.focusPlot();}
  }
@@ -93,8 +93,41 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
    ]),
    chestBtn,
   ]));
+  sec.append(questTiles(qState.quests||[]));
+  // «Việc thêm»: a second chest once the owl quests and every bonus quest are done.
+  const bonus=qState.bonusQuests||[],bonusChest=qState.bonusChest;
+  if(bonus.length&&bonusChest){
+   const all=[...(qState.quests||[]),...bonus],done=all.filter(q=>q.progress>=q.target).length;
+   const bonusLabel=`Rương Bác Hagrid · ${compactOwlReward(bonusChest.reward)}`;
+   const bonusBtn=bonusChest.ready
+    ? iconButton('chest',`Mở ${bonusLabel}`,null,{text:'Mở',class:'primary'})
+    : iconButton(bonusChest.claimed?'check':'lock',bonusChest.claimed?'Đã mở rương hôm nay':`Xong ${all.length} việc để mở rương`,null,{disabled:true});
+   bonusBtn.dataset.letterBonusChest='true';
+   bonusBtn.onclick=async ()=>{
+    const res=await onClaimBonusChest();
+    if(res.ok){
+     message(`Đã mở Rương Bác Hagrid: ${compactOwlReward(res.reward)}.`);
+     syncMailBadge();
+     openLetter('owl');
+    }
+   };
+   sec.append(el('div',{class:`gp-hero owl-chest${bonusChest.ready?' is-ready':bonusChest.claimed?' is-claimed':' is-locked'}`},[
+    el('div',{class:'gp-tile-art'},[pixelIcon('chest',3),bonusChest.claimed?el('span',{class:'gp-corner is-done'},[pixelIcon('check',1)]):bonusChest.ready?null:lockBadge()]),
+    el('div',{class:'gp-hero-copy'},[
+     el('small',{text:'Việc thêm'}),
+     el('strong',{text:'Rương Bác Hagrid'}),
+     el('div',{class:'owl-chest-meter'},[meter(done,all.length,`${done}/${all.length} việc`),el('b',{text:`${done}/${all.length}`})]),
+     rewardChips(items,{...bonusChest.reward,label:bonusLabel}),
+    ]),
+    bonusBtn,
+   ]),questTiles(bonus));
+  }
+  return sec;
+ }
+
+ function questTiles(quests){
   const list=el('div',{class:'owl-quests-list gp-tiles'});
-  for(const q of allDailyTasks(qState)){
+  for(const q of quests){
    const done=q.progress>=q.target;
    const rewardText=compactOwlReward(q.reward),routeLabel=OWL_ROUTE_LABELS[q.route]||q.routeLabel||'Đi tới';
    const action=q.claimed
@@ -118,8 +151,7 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
     el('div',{class:'gp-tile-actions'},action?[action]:[]),
    ]));
   }
-  sec.append(list);
-  return sec;
+  return list;
  }
 
  function openLetter(kind='owl'){

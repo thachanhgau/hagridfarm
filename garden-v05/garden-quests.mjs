@@ -114,7 +114,9 @@ export function useServerDaily(daily = null) {
     streakDays: Math.max(1, Number(daily.streakDays) || 1),
     grandChestClaimed: Boolean(daily.chest?.claimed),
     quests: daily.quests.map((q) => ({...q})),
-    bonusQuests: [],
+    // «Việc thêm» and Rương Bác Hagrid exist only in connected play.
+    bonusQuests: Array.isArray(daily.bonusQuests) ? daily.bonusQuests.map((q) => ({...q})) : [],
+    bonusChest: daily.bonusChest ? {...daily.bonusChest} : null,
     server: true,
   } : null;
   return serverDaily;
@@ -184,7 +186,8 @@ export function allDailyTasks(questState) {
 
 export function dailyCompletionSummary(questState) {
   const list = allDailyTasks(questState);
-  const completedCount = list.filter((q) => q.progress >= q.target).length;
+  // Rương Cú Vàng counts the owl quests only; bonus quests feed Rương Bác Hagrid.
+  const completedCount = (Array.isArray(questState?.quests) ? questState.quests : []).filter((q) => q.progress >= q.target).length;
   const claimedCount = list.filter((q) => q.claimed).length;
   const totalCount = list.length;
   const grandReady = completedCount >= DAILY_GRAND_CHEST_TARGET && !questState?.grandChestClaimed;
@@ -298,7 +301,7 @@ export function hasClaimableOwlQuest(questState) {
   if (!questState || !Array.isArray(questState.quests)) return false;
   const anyTaskReady = allDailyTasks(questState).some((q) => !q.claimed && q.progress >= q.target);
   const summary = dailyCompletionSummary(questState);
-  return anyTaskReady || summary.grandReady;
+  return anyTaskReady || summary.grandReady || Boolean(questState.bonusChest?.ready);
 }
 
 export const hasClaimableQuest = hasClaimableOwlQuest;

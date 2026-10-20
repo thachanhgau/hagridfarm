@@ -1,15 +1,15 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import { normalizeDecorFacing } from './decor-runtime.mjs?v=24.9.52';
+import { normalizeDecorFacing } from './decor-runtime.mjs?v=24.9.53';
 import {
   normalizeAtmosphereMode,
   atmosphereConfig,
   normalizeWeatherMode,
   weatherConfig,
-} from './garden-atmosphere.mjs?v=24.9.52';
+} from './garden-atmosphere.mjs?v=24.9.53';
 import {
   normalizeEventMode,
   eventConfig,
-} from './garden-events.mjs?v=24.9.52';
+} from './garden-events.mjs?v=24.9.53';
 
 export const VISUAL_PREFS_STORAGE_KEY = 'hpvn-garden-v20-visual-prefs';
 export const LEGACY_DECOR_STORAGE_KEY = 'hpvn-garden-v18-decor-layout';
@@ -229,6 +229,11 @@ export function createHpvnBridge({
       eventMode: normalizeEventMode(resolvedEvent?.id || context.eventMode),
       keeperTitle: resolvedTitle,
     });
+    // In HPVN the shell puts the line into Floo's composer (the member still presses send).
+    if (typeof context.sendToFloo === 'function' && await context.sendToFloo(text) === true) {
+      if (typeof notify === 'function') notify('✨ Lời khoe vườn đã nằm sẵn trong Mạng Floo · xem lại rồi bấm gửi nhé.');
+      return { ok: true, text, copied: false, floo: true, envelope };
+    }
     let copied = false;
     try {
       if (nav?.clipboard?.writeText) {

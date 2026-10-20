@@ -18,6 +18,14 @@ const FREE_TAPS=new Set(["pet","rotate","postcard","shareFloo","startTour"]);
 const DAILY=new Set(["claimQuest","claimChest","claimFestival","freeAction","claimBondGift","claimAchievement"]);
 const BOND_POINTS=Object.freeze({adopt:15,feed:20,claimAnimals:25,pet:12}),BOND_PETS_PER_DAY=3;
 const CHEST_REWARD=Object.freeze({kind:"boost",amount:1,waterBonus:12,itemId:"boost",eventPoints:20,label:"Rương Cú Vàng: +1 Nước phép, +12 Nước, +20 điểm lễ hội"});
+// Server BONUS_QUEST_POOL / BONUS_CHEST_REWARD (garden-daily-core.js): «Việc thêm» and Rương Bác Hagrid.
+const BONUS_CHEST_REWARD=Object.freeze({kind:"boost",amount:1,waterBonus:24,itemId:"boost",eventPoints:30,label:"Rương Bác Hagrid: +1 Nước phép, +24 Nước, +30 điểm lễ hội"});
+const bonusQuest=(id,title,target,triggers,route,amount)=>({id,sender:"Bác Hagrid",title,target,triggers,reward:{kind:"water",amount,itemId:"pumpkin",label:`+${amount} Nước`},route,progress:0,claimed:false});
+const bonusQuests=({level,hasCreature})=>[
+ hasCreature&&bonusQuest("q_pet","Vuốt ve sinh vật 3 lần",3,["pet"],"creature",4),
+ level>=10&&bonusQuest("q_help","Chăm giúp 1 vườn bạn",1,["help"],"visit",6),
+ bonusQuest("q_share","Khoe vườn",1,["postcard","shareFloo"],"postcard",4),
+].filter(Boolean);
 const clone=v=>structuredClone(v);
 const fail=(reason,message,details={})=>{const e=Error(message);e.definitive=true;e.reason=reason;e.details={reason,...details};throw e;};
 const stable=v=>JSON.stringify(v,Object.keys(v).sort());
@@ -82,8 +90,9 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    const yesterday=dailies.get(vnDayKey(Date.parse(key+"T12:00:00+07:00")-86400000));
    const p=garden.progression,context={level:p.level,hasCreature:p.creatures.length>0,feedItem:E.CREATURE[p.creatures[0]?.species]?.feed||null};
    const list=pickDailyQuests(key,context);
-   if(quests==="done")for(const q of list)q.progress=q.target;
-   dailies.set(key,{dayKey:key,streakDays:yesterday?yesterday.streakDays+1:1,quests:list,chestClaimed:false,free:{},farm:0,freeToday:0});
+   const bonus=bonusQuests(context);
+   if(quests==="done")for(const q of [...list,...bonus])q.progress=q.target;
+   dailies.set(key,{dayKey:key,streakDays:yesterday?yesterday.streakDays+1:1,quests:list,chestClaimed:false,bonusQuests:bonus,bonusChestClaimed:false,free:{},farm:0,freeToday:0});
   }
   return dailies.get(key);
  }
@@ -143,11 +152,12 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    const [id,year]=seasonKey.split("@"),event=HOGWARTS_EVENTS.find(e=>e.id===id);
    if(event?.milestones)pending.push(...milestoneViews(event,year).filter(m=>m.claimable).map(m=>({...m,festivalLabel:event.label})));
   }
-  const done=d.quests.filter(q=>q.progress>=q.target).length;
+  const done=d.quests.filter(q=>q.progress>=q.target).length,allDone=[...d.quests,...d.bonusQuests].every(q=>q.progress>=q.target);
   return clone({
    uid:"garden-fixture-member",
    garden,wallet,catalog,catalogVersion:CATALOG_VERSION,dayKey:d.dayKey,
    daily:{dayKey:d.dayKey,streakDays:d.streakDays,quests:d.quests,chest:{claimed:d.chestClaimed,ready:!d.chestClaimed&&done>=3,reward:CHEST_REWARD},
+    bonusQuests:d.bonusQuests,bonusChest:{claimed:d.bonusChestClaimed,ready:!d.bonusChestClaimed&&allDone,reward:BONUS_CHEST_REWARD},
     freeActions:Object.fromEntries(Object.entries(FREE_CAPS).map(([kind,cap])=>[kind,{used:d.free[kind]||0,cap}]))},
    festival:{active,next:{...view(status.next),daysUntil:status.next.daysUntil},today:{farm:d.farm,farmCap:FESTIVAL_FARM_POINTS_PER_DAY,free:d.freeToday,freeCap:FESTIVAL_FREE_POINTS_PER_DAY},pending},
    bonding:bondingView(d.dayKey),achievements:achievementsView(),
@@ -247,11 +257,15 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  function claim(c,next,d,extra){
   let reward;
   if(c.action==="claimQuest"){
-   const q=d.quests.find(x=>x.id===c.questId);
+   const q=[...d.quests,...d.bonusQuests].find(x=>x.id===c.questId);
    if(!q)fail("quest-not-found","Không có nhiệm vụ này hôm nay.");
    if(q.claimed)fail("already-claimed","Nhiệm vụ này đã nhận thưởng.");
    if(q.progress<q.target)fail("quest-incomplete","Nhiệm vụ chưa hoàn thành.");
    q.claimed=true;reward=q.reward;extra.questId=q.id;
+  }else if(c.action==="claimChest"&&c.chest==="bonus"){
+   if(d.bonusChestClaimed)fail("already-claimed","Rương Bác Hagrid hôm nay đã mở.");
+   if(![...d.quests,...d.bonusQuests].every(q=>q.progress>=q.target))fail("quest-incomplete","Cần hoàn thành cả nhiệm vụ cú lẫn việc thêm.");
+   d.bonusChestClaimed=true;reward=BONUS_CHEST_REWARD;extra.chest="bonus";
   }else if(c.action==="claimChest"){
    if(d.chestClaimed)fail("already-claimed","Rương Cú Vàng hôm nay đã mở.");
    if(d.quests.filter(q=>q.progress>=q.target).length<3)fail("quest-incomplete","Cần hoàn thành cả 3 nhiệm vụ cú.");
@@ -291,11 +305,12 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const d=clone(daily()),next=clone(garden),extra={};
   if(["claimQuest","claimChest","claimFestival","claimBondGift","claimAchievement"].includes(c.action)){
    claim(c,next,d,extra);
-   if(c.action==="claimQuest"||c.action==="claimChest")extra.festivalPoints=addPoints(d,next.festival,c.action==="claimQuest"?"questClaim":"dailyChest",{amount:c.action==="claimChest"?CHEST_REWARD.eventPoints:null});
+   if(c.action==="claimQuest"||c.action==="claimChest")extra.festivalPoints=addPoints(d,next.festival,c.action==="claimQuest"?"questClaim":"dailyChest",{amount:c.action==="claimChest"?extra.reward.eventPoints:null});
   }else if(c.action==="freeAction"){
    if(!FREE_TAPS.has(c.kind))fail("invalid-action-input","Thao tác miễn phí không hợp lệ.",{kind:c.kind});
    if(c.kind==="pet"&&(!before.creatures.length||(c.species&&!creatureOf(before,c.species))))fail("no-creature","Chưa có sinh vật để vuốt ve.");
    extra.freeAction=countFree(d,c.kind);
+   if(extra.freeAction.counted)for(const q of d.bonusQuests)if(!q.claimed&&q.triggers.includes(c.kind))q.progress=Math.min(q.target,q.progress+1);
    extra.festivalPoints=addPoints(d,next.festival,c.kind,{counted:extra.freeAction.counted});
    // Bonding has its own cap (3 pets per creature a day), apart from the free-tap cap.
    if(c.kind==="pet"&&c.species)extra.bonding=[addBond(next,before,c.species,"pet",d.dayKey)];

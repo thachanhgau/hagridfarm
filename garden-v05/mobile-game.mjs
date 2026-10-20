@@ -1,36 +1,36 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.52';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.53';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.52';
-import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.52';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.52';
-import {showStore} from './garden-store-ui.mjs?v=24.9.52';
-import {setupProfile} from './profile-ui.mjs?v=24.9.52';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.53';
+import {showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.53';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.53';
+import {showStore} from './garden-store-ui.mjs?v=24.9.53';
+import {setupProfile} from './profile-ui.mjs?v=24.9.53';
 import * as E from './progression-engine.mjs';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.52';
-import {setupCamera} from './camera.mjs?v=24.9.52';
-import {createPanels} from './progression-panels.mjs?v=24.9.52';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.52';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.52';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.52';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.52';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.52';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.52';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.52';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.52';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.52';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.52';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.52';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.52';
-import {nextGoal} from './next-goal.mjs?v=24.9.52';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.52';
-import {createMissions} from './garden-missions-ui.mjs?v=24.9.52';
-import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.52';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.52';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.53';
+import {setupCamera} from './camera.mjs?v=24.9.53';
+import {createPanels} from './progression-panels.mjs?v=24.9.53';
+import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.53';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.53';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.53';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.53';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.53';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.53';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.53';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.53';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.53';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.53';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.53';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.53';
+import {nextGoal} from './next-goal.mjs?v=24.9.53';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.53';
+import {createMissions} from './garden-missions-ui.mjs?v=24.9.53';
+import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.53';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.53';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.52':'./garden-emulator-client.mjs?v=24.9.52');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.53':'./garden-emulator-client.mjs?v=24.9.53');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -150,7 +150,7 @@ const logical=()=>E.nowFor(state,Date.now()),chosen=()=>E.lineCells(direction,li
 const labels=Object.fromEntries(DB.crops.map(c=>[c.id,c.label]));Object.assign(labels,{insects:'Côn trùng',fish:'Cá nhỏ'});DB.animals.forEach(a=>{labels[a.feed]='Khẩu phần '+a.label;labels['produce_'+a.id]=a.produce;});
 function message(text,refusal=null){playtest.track('toast',{text:String(text||'')});const t=$('toast');t.replaceChildren(...(refusal?[refusalIcon(refusal)]:[]),String(text??''));if(refusal)t.dataset.reason=refusal.reason;else delete t.dataset.reason;t.classList.add('visible');placeToast();clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),5000);}
 const hpvnBridge=createHpvnBridge({getState:()=>state,getStage:()=>renderer?.growthStage?.(),getAtmosphere:()=>atmosphereConfig(atmosphereMode),getWeather:()=>weatherConfig(weatherMode),getEvent:()=>eventConfig(eventMode),getKeeperTitle:()=>currentKeeperTitle().badge,onSetAtmosphere:m=>{atmosphereMode=atmosphereConfig(m).id;persistPrefs();syncHudV20Buttons();draw();},onSetWeather:m=>{weatherMode=weatherConfig(m).id;persistPrefs();syncHudV20Buttons();draw();},onSetEvent:m=>{setEventScene(m);},onStartTour:id=>startTour(id),onStopTour:()=>stopTour(),notify:message});
-function shareToFloo(){audio.play('owl');recordFestivalAction('shareFloo');freeTap('shareFloo');recordOwlQuestAction('shareFloo',1);syncHudV20Buttons();return hpvnBridge.shareGardenToFloo({state,stage:renderer?.growthStage?.(),atmosphere:atmosphereConfig(atmosphereMode),weather:weatherConfig(weatherMode),event:eventConfig(eventMode),keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels});}
+function shareToFloo(){audio.play('owl');recordFestivalAction('shareFloo');freeTap('shareFloo');recordOwlQuestAction('shareFloo',1);syncHudV20Buttons();return hpvnBridge.shareGardenToFloo({state,stage:renderer?.growthStage?.(),atmosphere:atmosphereConfig(atmosphereMode),weather:weatherConfig(weatherMode),event:eventConfig(eventMode),keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,sendToFloo:hpvnNonce?text=>wallet.host('floo-share',{text}):null});}
 function openPostcard(){return panels?.show('postcard');}
 // Called when the Bưu thiếp tab of Hồ sơ opens; null until the scene is drawn.
 function postcardOptions(){if(!loaded)return null;audio.play('owl');recordFestivalAction('postcard');freeTap('postcard');recordOwlQuestAction('postcard',1);syncHudV20Buttons();draw();return {canvas:$('world'),state:{...(activeTourSnapshot?.state||state),decorations:currentDecorations()||state.decorations},stage:renderer?.growthStage?.(),atmosphere:atmosphereConfig(activeTourSnapshot?.atmosphereMode||atmosphereMode),weather:weatherConfig(activeTourSnapshot?.weatherMode||weatherMode),event:eventConfig(eventMode),playerName:activeTourSnapshot?activeTourSnapshot.tour.ownerName:($('playerName')?.textContent||'Người làm vườn'),keeperTitle:activeTourSnapshot?activeTourSnapshot.tour.keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,onShareFloo:shareToFloo,notify:message};}
@@ -243,9 +243,14 @@ async function handleClaimEventMilestone(mId){
  return res;
 }
 async function handleClaimDailyQuest(qId){
- if(SERVER_OWNS.daily){const quest=loadOwlQuests().quests.find(q=>q.id===qId);const res=await serverClaim({action:'claimQuest',questId:qId});if(res.ok){syncHudV20Buttons();wizard?.refresh?.();message(`🦉 Đã nhận thưởng nhiệm vụ [${quest?.title||qId}]: ${res.reward.label}!`);}return {...res,quest};}
+ if(SERVER_OWNS.daily){const quest=allDailyTasks(loadOwlQuests()).find(q=>q.id===qId);const res=await serverClaim({action:'claimQuest',questId:qId});if(res.ok){syncHudV20Buttons();wizard?.refresh?.();message(`🦉 Đã nhận thưởng nhiệm vụ [${quest?.title||qId}]: ${res.reward.label}!`);}return {...res,quest};}
  const res=await receiveReward(()=>{const result=claimOwlQuest(qId,{onGrantReward:grantOwlReward});if(result.ok)recordFestivalAction('questClaim');return result;});
  if(res.ok){syncHudV20Buttons();wizard?.refresh?.();message(`🦉 Đã nhận thưởng nhiệm vụ [${res.quest.title}]: ${res.reward.label}!`);}
+ return res;
+}
+async function handleClaimBonusChest(){
+ const res=await serverClaim({action:'claimChest',chest:'bonus'});
+ if(res.ok){syncHudV20Buttons();wizard?.refresh?.();message(`🎁 Đã mở Rương Bác Hagrid: ${res.reward.label}!`);}
  return res;
 }
 async function handleClaimGrandChest(){
@@ -610,7 +615,7 @@ for(const tray of document.querySelectorAll('.item-tray'))tray.addEventListener(
  const tray=event.currentTarget;if(event.ctrlKey||event.shiftKey||Math.abs(event.deltaX)>=Math.abs(event.deltaY)||tray.scrollWidth<=tray.clientWidth)return;
  event.preventDefault();tray.scrollLeft+=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?tray.clientWidth:1);
 },{passive:false});
-wizard=setupWizardUI({E,items,getState:()=>state,getSelection:()=>({selectedPlot,cells:chosen(),seed,species,mode}),getRenderer:()=>renderer,getReady:()=>loaded&&(!connected||walletReady)&&!busy,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward:grantOwlReward,onClaimDailyQuest:handleClaimDailyQuest,onClaimGrandChest:handleClaimGrandChest,getLetterGift:reopen=>missions.letterGift(reopen),onCare:careCells});
+wizard=setupWizardUI({E,items,getState:()=>state,getSelection:()=>({selectedPlot,cells:chosen(),seed,species,mode}),getRenderer:()=>renderer,getReady:()=>loaded&&(!connected||walletReady)&&!busy,run,message,panels,camera,setMode,focusPlot,onGrantOwlReward:grantOwlReward,onClaimDailyQuest:handleClaimDailyQuest,onClaimGrandChest:handleClaimGrandChest,onClaimBonusChest:handleClaimBonusChest,getLetterGift:reopen=>missions.letterGift(reopen),onCare:careCells});
 dockControls=setupGardenControls({items,onSettings:()=>panels.show('settings'),getWeather:()=>activeTourSnapshot?.weatherMode||weatherMode});
 dockControls.refresh();
 refresh();camera.overview();touchGardenDay();
