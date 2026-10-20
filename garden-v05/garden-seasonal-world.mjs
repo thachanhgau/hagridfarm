@@ -1,4 +1,4 @@
-import {stageContains} from './garden-growth.mjs?v=24.9.58';
+import {stageContains} from './garden-growth.mjs?v=24.9.59';
 function insidePolygon(x,y,points){
  let inside=false;
  for(let i=0,j=points.length-1;i<points.length;j=i++){

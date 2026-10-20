@@ -66,3 +66,13 @@ test('Halloween pieces sell only during the Halloween festival, to every level, 
   // A level-1 member out of season sees none of the level-25+ special products either.
   assert.equal(unlockedCatalog(1, '2026-10-20').filter(item => item.collection === 'special').length, 0);
 });
+
+test('store lock: below level shows the level, off-season shows the opening day, in season sells at any level', async () => {
+  const {STORE_CATALOG, storeLock} = await import('./garden-store-catalog.mjs');
+  const arch = STORE_CATALOG.find(i => i.id === 'decor_vine_arch'), cake = STORE_CATALOG.find(i => i.season);
+  assert.equal(storeLock(arch, 1, '2026-10-20'), 'Cấp 24');
+  assert.equal(storeLock(arch, 24, '2026-10-20'), '');
+  assert.equal(storeLock(cake, 1, '2026-10-20'), 'Mở bán 24/10');
+  assert.equal(storeLock(cake, 1, '2026-10-25'), '');
+  assert.equal(storeLock(cake, 100, '2026-11-20'), 'Mở bán 24/10');
+});

@@ -1,6 +1,6 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-import {SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.58";
-import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.58";
+import {SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.59";
+import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.59";
 export const CATALOG_VERSION="garden-2026-10-20-special-v1";
 export const STORE_CATALOG=Object.freeze([
   {
@@ -579,4 +579,11 @@ export const STORE_CATALOG=Object.freeze([
 ].map(Object.freeze).concat(SPECIAL_PRODUCTS));
 // A seasonal item (`season`: festival id) is on sale only while that festival runs, at any level (server garden-wallet-catalog inSeason).
 export const inSeason=(item,dayKey=vnDayKey())=>!item.season||festivalStatus(dayKey).active?.id===item.season;
+// The first day (YYYY-MM-DD) a seasonal item goes on sale again.
+export const seasonOpens=(item,dayKey=vnDayKey())=>{let d=dayKey;for(let i=0;i<6;i++){const n=festivalStatus(d).next;if(n.id===item.season)return n.start;d=n.start;}return null;};
+// Why an item cannot be bought yet ('' when it can): out of season (seasonal items ignore the level), else below its level.
+export const storeLock=(item,level,dayKey=vnDayKey())=>{
+ if(item.season){if(inSeason(item,dayKey))return '';const d=seasonOpens(item,dayKey);return d?`Mở bán ${d.slice(8)}/${d.slice(5,7)}`:'Ngoài mùa lễ hội';}
+ return item.level>level?`Cấp ${item.level}`:'';
+};
 export const unlockedCatalog=(level,dayKey=vnDayKey())=>STORE_CATALOG.filter(item=>item.level<=level&&inSeason(item,dayKey));
