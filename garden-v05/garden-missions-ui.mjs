@@ -23,7 +23,7 @@ function eventSection(ev,claimEvent,notify,rerender){
     el('div',{class:'gp-tile-art'},[pixelIcon('chest',3)]),
     el('div',{class:'gp-hero-copy'},[el('strong',{text:'Quà bí mật của HPH'}),el('small',{text:gift.ready?'Mở quà nào!':'Làm xong 5 nhiệm vụ để mở'})]),
     gift.ready
-     ? iconButton('chest','Mở quà bí mật',async()=>{const res=await claimEvent('finale');if(res?.ok){notify(`💐 ${res.reward.bouquet} và ${res.reward.label} từ HPH!`);rerender();}},{text:'Mở',class:'primary','data-claim-day-event':'finale'})
+     ? iconButton('chest','Mở quà bí mật',async()=>{const res=await claimEvent('finale');if(res?.ok){notify(`💐 ${res.reward.bouquet} và ${res.reward.label} từ HPH!`);rerender();document.querySelector('#missionLetter .day-event-gift')?.scrollIntoView({block:'start',behavior:'smooth'});}},{text:'Mở',class:'primary','data-claim-day-event':'finale'})
      : iconButton('lock','Chưa mở',null,{disabled:true}),
    ]);
  return el('section',{class:'day-event'},[
