@@ -33,6 +33,10 @@ function firstMissing(DB, state, item, qty) {
  */
 export function nextGoal(E, state) {
  const {DB} = E;
+ // Past 90% of a level the ring looks full (the last few % are hundreds of XP at higher levels):
+ // the level goes first so the chip says how much XP is left (owner report 20/10/2026).
+ const row = DB.levels[state.level - 1];
+ if (state.level < 100 && state.xp - row.totalXP >= row.xpToNext * 0.9) return levelGoal(E, state);
  const exp = nextExpansion(DB, state);
  if (exp) {
   const label = exp.kind === 'pen' ? 'Mở chuồng' : 'Mở thửa';
@@ -48,7 +52,11 @@ export function nextGoal(E, state) {
   return {need, target: {kind: 'creature', id: animal.id}, label: 'Đón ' + animal.label, route: need ? need.route : 'creature'};
  }
  if (state.level >= 100) return null;
- const info = E.levelInfo(state), next = state.level + 1;
+ return levelGoal(E, state);
+}
+
+function levelGoal(E, state) {
+ const {DB} = E, info = E.levelInfo(state), next = state.level + 1;
  const unlock = DB.crops.find((c) => c.level === next) || DB.animals.find((a) => a.level === next);
  const text = String(DB.levels[state.level]?.unlock || '').split(';')[0].trim();
  return {

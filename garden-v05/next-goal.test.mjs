@@ -33,3 +33,16 @@ test('a free bed points at the next creature to adopt', () => {
   assert.equal(goal.need, null);
   assert.equal(goal.route, 'creature');
 });
+
+test('past 90% of a level the chip shows the XP still needed, even with a building waiting', () => {
+  const state = E.testProfile(12, NOW);
+  state.built = state.built.filter((id) => id !== 'plot_4');
+  state.plots = state.plots.slice(0, 3);
+  const row = E.DB.levels[11];
+  state.xp = row.totalXP + 10;
+  assert.equal(nextGoal(E, state).target.id, 'plot_4');
+  state.xp = row.totalXP + Math.ceil(row.xpToNext * 0.95);
+  const goal = nextGoal(E, state);
+  assert.deepEqual(goal.need, {id: 'xp', n: row.xpToNext - Math.ceil(row.xpToNext * 0.95), route: 'plant'});
+  assert.ok(goal.label.startsWith('Cấp 13'));
+});

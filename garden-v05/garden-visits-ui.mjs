@@ -1,7 +1,7 @@
 // «Thăm vườn» of real members (owner decision 19/10/2026, server callable visitHagridGarden):
 // from level 10 the Thăm vườn panel lists recent member gardens; «Ghé thăm» draws one in the
 // tour mode (read only) and «Chăm giúp» takes 15 minutes off its growing crops, 3 gardens a day.
-import {el, button} from './ui-utils.mjs?v=24.9.50';
+import {el, button} from './ui-utils.mjs?v=24.9.51';
 
 /** A member's garden in the shape the tour mode draws (garden-tour.mjs buildHonorGardenSnapshot). */
 export function buildVisitSnapshot(visit, weatherMode = 'clear') {
