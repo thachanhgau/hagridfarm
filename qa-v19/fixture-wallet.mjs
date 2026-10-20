@@ -65,7 +65,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   state.creatureFacings={puffskein:"default",bowtruckle:"right",niffler:"default",kneazle:"right",hippogriff:"default",unicorn:"right"};
   if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{})};
  }
- const catalog=unlockedCatalog(state.level).map(item=>({...item,dailyRemaining:item.dailyLimit}));
+ const catalog=unlockedCatalog(state.level,dayKey()).map(item=>({...item,dailyRemaining:item.dailyLimit}));
  const storeDecors=catalog.filter(i=>i.kind==="decoration").map(i=>i.id),full=scenario==="empty"&&level>=30;
  const spendable=galleons??2500,bankBalance=Math.min(1000,spendable);
  const garden={

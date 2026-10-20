@@ -16,13 +16,15 @@ export const BOOK_TITLES = Object.freeze({
   7: 'Bảo Bối Tử Thần',
 });
 
-// [id, label, level, price, footprint [cols, rows] in the default view, book, chapter, short lore]
+// [id, label, level, price, footprint [long, short] in tiles, book, chapter, short lore, festival it is sold in]
+// Owner 20/10/2026: Halloween pieces sell only during the Halloween festival (event_halloween, 24/10–06/11),
+// to every member whatever their level, at a higher price; owned ones stay after the season.
 const ROWS = [
   ['sp_sorting_hat', 'Nón Phân Loại trên ghế', 25, 1400, [1, 1], 1, 7, 'Nón Phân Loại đặt trên ghế trong lễ phân loại.'],
   ['sp_monster_book', 'Sách Quái Vật về Quái Vật', 25, 1400, [1, 1], 3, 1, 'Cuốn sách Hagrid gửi tặng Harry cho môn Chăm Sóc Sinh Vật Huyền Bí.'],
   ['sp_hagrid_umbrella', 'Góc ô hồng của Hagrid', 25, 2200, [2, 1], 1, 4, 'Chiếc ô hồng của Hagrid.'],
   ['sp_deluminator', 'Cái Tắt-Sáng', 28, 1500, [1, 1], 7, 7, 'Dumbledore để lại dụng cụ thu ánh sáng cho Ron.'],
-  ['sp_deathday_cake', 'Bánh ngày giỗ Nick Suýt Mất Đầu', 30, 2400, [2, 1], 2, 8, 'Bánh hình bia mộ trong tiệc ngày giỗ thứ 500 của Nick.'],
+  ['sp_deathday_cake', 'Bánh ngày giỗ Nick Suýt Mất Đầu', 1, 4000, [2, 1], 2, 8, 'Bánh hình bia mộ trong tiệc ngày giỗ thứ 500 của Nick.', 'event_halloween'],
   ['sp_time_turner', 'Cái Xoay Thời Gian', 32, 1800, [1, 1], 3, 21, 'Dụng cụ Hermione dùng cùng Harry để quay lại thời gian.'],
   ['sp_hand_glory', 'Bàn Tay Vẻ Vang', 34, 1600, [1, 1], 2, 4, 'Cổ vật trong tiệm Borgin và Burkes.'],
   ['sp_marauders_map', 'Bản đồ của Đạo tặc', 35, 2700, [2, 1], 3, 10, 'Fred và George trao cho Harry bản đồ các lối đi bí mật.'],
@@ -50,10 +52,12 @@ const ROWS = [
   ['sp_whomping_anglia', 'Liễu Roi và chiếc Ford Anglia', 90, 9000, [3, 2], 2, 5, 'Harry và Ron đâm xe vào cây Liễu Roi.'],
 ];
 
-export const SPECIAL_PRODUCTS = Object.freeze(ROWS.map(([id, label, level, price, footprint, book, chapter, lore]) => Object.freeze({
+export const SEASON_LABELS = Object.freeze({event_halloween: 'Lễ Hội Ma'});
+
+export const SPECIAL_PRODUCTS = Object.freeze(ROWS.map(([id, label, level, price, footprint, book, chapter, lore, season]) => Object.freeze({
   id, kind: 'decoration', collection: SPECIAL_COLLECTION, decorationId: id, icon: id, label, level, price, quantity: 1, dailyLimit: 1,
-  footprint: Object.freeze(footprint), book, chapter, lore,
-  description: `${lore} (${BOOK_TITLES[book]} · chương ${chapter}) · Sản phẩm đặc biệt, chỉ để trang trí.`,
+  footprint: Object.freeze(footprint), book, chapter, lore, ...(season ? {season} : {}),
+  description: `${lore} (${BOOK_TITLES[book]} · chương ${chapter}) · Sản phẩm đặc biệt, chỉ để trang trí.${season ? ` Chỉ bán trong ${SEASON_LABELS[season]}.` : ''}`,
 })));
 
 /** Footprint in tiles for a facing: the right view turns it a quarter, so columns and rows swap. */

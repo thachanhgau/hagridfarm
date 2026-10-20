@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {SPECIAL_PRODUCTS, SPECIAL_PRICES_APPROVED} from './special-products.mjs';
-import {STORE_CATALOG} from './garden-store-catalog.mjs';
+import {STORE_CATALOG, unlockedCatalog} from './garden-store-catalog.mjs';
 
 const runtime = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json', import.meta.url)));
 const source = JSON.parse(fs.readFileSync(new URL('./special-products-assets/manifest.json', import.meta.url)));
@@ -43,11 +43,26 @@ test('special products are decorations only, one each, in their own store group,
     assert.equal(item.kind, 'decoration');
     assert.equal(item.collection, 'special');
     assert.deepEqual([item.quantity, item.dailyLimit], [1, 1]);
-    assert.ok(item.price >= 900 && item.level >= 25, item.id);
+    // Seasonal pieces sell at any level, the rest from level 25.
+    assert.ok(item.price >= 900 && (item.season ? item.level === 1 : item.level >= 25), item.id);
     assert.match(item.description, /chỉ để trang trí/);
     for (const key of ['xp', 'reward', 'yield', 'galleonsBonus']) assert.equal(item[key], undefined);
   }
   // The six older store decorations are unchanged and still sold below every special product.
   const older = STORE_CATALOG.filter(item => item.kind === 'decoration' && !item.collection);
   assert.deepEqual(older.map(item => [item.id, item.price]), [['decor_pumpkin_lantern', 80], ['decor_broom_rack', 120], ['decor_cauldron', 180], ['decor_mandrake_planter', 240], ['decor_floating_candles', 360], ['decor_vine_arch', 600]]);
+});
+
+test('Halloween pieces sell only during the Halloween festival, to every level, priced above the regular ones', () => {
+  const cake = SPECIAL_PRODUCTS.find(item => item.id === 'sp_deathday_cake');
+  assert.deepEqual([cake.season, cake.level, cake.price], ['event_halloween', 1, 4000]);
+  const has = day => unlockedCatalog(1, day).some(item => item.id === 'sp_deathday_cake');
+  assert.equal(has('2026-10-23'), false);
+  assert.equal(has('2026-10-24'), true);
+  assert.equal(has('2026-10-31'), true);
+  assert.equal(has('2026-11-06'), true);
+  assert.equal(has('2026-11-07'), false);
+  assert.match(cake.description, /Chỉ bán trong Lễ Hội Ma/);
+  // A level-1 member out of season sees none of the level-25+ special products either.
+  assert.equal(unlockedCatalog(1, '2026-10-20').filter(item => item.collection === 'special').length, 0);
 });
