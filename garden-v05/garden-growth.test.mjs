@@ -5,8 +5,8 @@ import {newGame,testProfile} from './progression-engine.mjs';
 import {createBoundaryFence} from './garden-landscape.mjs';
 import {GARDEN_STAGES,gardenStage,stageContains,stageBoundary,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.64';
 const area=stage=>{const p=stageBoundary(stage);return Math.abs(p.reduce((sum,a,i)=>{const b=p[(i+1)%p.length];return sum+a[0]*b[1]-b[0]*a[1]},0))/2;};
-test('six monotone spatial chapters grow from a quarter-sized starter yard',()=>{
- assert.deepEqual(GARDEN_STAGES.map(s=>s.level),[1,10,24,48,72,100]);
+test('seven monotone spatial chapters grow from a quarter-sized starter yard',()=>{
+ assert.deepEqual(GARDEN_STAGES.map(s=>s.level),[1,10,24,48,72,100,110]);
  assert.ok(area(GARDEN_STAGES[0])<area(GARDEN_STAGES.at(-1))*.3);
  for(let i=1;i<GARDEN_STAGES.length;i++){
   assert.ok(area(GARDEN_STAGES[i])>area(GARDEN_STAGES[i-1]));
@@ -45,8 +45,9 @@ test('future forest retreats deterministically without covering the active yard'
 
 test('final chapter opens the last plot, and keepsakes stay inside stepped frontiers',()=>{
  const last=scene.plots.at(-1);
- assert.equal(stageContains(GARDEN_STAGES[4],last.col+1,last.row+1),false);
- assert.equal(stageContains(GARDEN_STAGES[5],last.col+1,last.row+1),true);
+ assert.equal(stageContains(GARDEN_STAGES[5],last.col+1,last.row+1),false);
+ assert.equal(stageContains(GARDEN_STAGES[6],last.col+1,last.row+1),true);
+ assert.equal(stageContains(GARDEN_STAGES[5],scene.plots[11].col+1,scene.plots[11].row+1),true);
  for(const stage of GARDEN_STAGES.slice(1))for(let i=0;i<12;i++){const col=2.5+i*2;assert.ok(stageContains(stage,col,keepsakeAnchorRow(stage,col)));}
  assert.equal(keepsakeAnchorRow(GARDEN_STAGES.at(-1),2.5),26);
 });

@@ -7,8 +7,8 @@ const sandbox={window:{}};vm.createContext(sandbox);
 for(const file of ['motion-data.js','level-assets.js','motion-care-data.js'])vm.runInContext(fs.readFileSync(new URL(file,import.meta.url),'utf8'),sandbox);
 const items=sandbox.window.FARM_MOTION.items;
 
-test('all 36 runtime species reference complete PNG frames and valid timed clips',()=>{
- assert.equal(items.length,36);
+test('all 44 runtime species reference complete PNG frames and valid timed clips',()=>{
+ assert.equal(items.length,44); // +8 bậc Tận Sức crops (level-500 roadmap P3)
  for(const item of items){
   for(const f of item.frames){const bytes=fs.readFileSync(new URL(f.file,import.meta.url));assert.equal(bytes.subarray(1,4).toString(),'PNG',f.file);assert.equal(bytes.readUInt32BE(16),f.width,f.file);assert.equal(bytes.readUInt32BE(20),f.height,f.file);assert.ok(f.pivotX>=0&&f.pivotX<=f.width&&f.pivotY>=0&&f.pivotY<=f.height);}
   for(const [name,clip] of Object.entries(item.clips)){assert.equal(clip.frames.length,clip.durations.length,item.id+name);for(const frame of clip.frames)assert.ok(item.frames[frame],item.id+name);assert.ok(clip.durations.every(d=>d>0&&Number.isFinite(d)));}

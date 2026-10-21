@@ -15,11 +15,11 @@ test('fence encloses every fixed build footprint, decoration, keepsake and hut',
 });
 test('expanded scenic meadow cannot select or build a crop cell even with all slots unlocked',()=>{
   let rejected=0;
-  for(let c=-7;c<36;c++)for(let r=-3;r<31;r++)if(!insideFarm(c,r)){
-    assert.equal(pickFromWorld(...iso(c,r,scene),12,scene),null);rejected++;
+  for(let c=-7;c<36;c++)for(let r=-3;r<37;r++)if(!insideFarm(c,r)){
+    assert.equal(pickFromWorld(...iso(c,r,scene),scene.plots.length,scene),null);rejected++;
   }
   assert.ok(rejected>300);
-  for(const plot of scene.plots)for(let j=0;j<9;j++)assert.deepEqual(pickFromWorld(...iso(...plotCellPosition(plot,j,scene),scene),12,scene),{plot:plot.id,index:j});
+  for(const plot of scene.plots)for(let j=0;j<9;j++)assert.deepEqual(pickFromWorld(...iso(...plotCellPosition(plot,j,scene),scene),scene.plots.length,scene),{plot:plot.id,index:j});
   const invalid={...scene,plots:[{id:0,col:-6,row:0,width:3,height:3}]};
   assert.equal(pickFromWorld(...iso(-6,0,scene),1,invalid),null);
 });

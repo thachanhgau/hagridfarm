@@ -475,7 +475,7 @@ export function createPanels(ctx){
    body.append(detail("Đổi nền cùng loại miễn phí. Cây, bữa ăn và tiến độ đi cùng công trình; không nhận XP."),toolbar(...barBtns));
    const g=grid();
    for(const kind of ["plot","pen"]){
-    const total=kind==="plot"?12:6,count=kind==="plot"?s.plots.length:E.housingCapacity(s)/2,positions=s.layout?.[kind==="plot"?"plots":"pens"]||Array.from({length:total},(_,i)=>i);
+    const total=kind==="plot"?(s.level>=E.TAN_SUC_LEVEL?18:12):6,count=kind==="plot"?s.plots.length:E.housingCapacity(s)/2,positions=s.layout?.[kind==="plot"?"plots":"pens"]||Array.from({length:total},(_,i)=>i);
     for(let i=0;i<count;i++){
      const name=(kind==="plot"?"Thửa ":"Chuồng ")+(i+1),k=card(name,"Đang ở nền "+(positions[i]+1),kind+"_"+(i+1)),sel=el("select",{"aria-label":"Vị trí "+name,class:"quantity",style:"width:auto"});
      for(let j=0;j<total;j++){

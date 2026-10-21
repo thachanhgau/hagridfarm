@@ -1,10 +1,10 @@
 // Presentation boundary is separate from scenic grass and fixed gameplay slots.
-export const FARM_BOUNDARY = Object.freeze([[-5,-1],[33,-1],[33,28],[-1,28],[-1,9],[-5,9]]);
+export const FARM_BOUNDARY = Object.freeze([[-5,-1],[33,-1],[33,33.5],[-1,33.5],[-1,9],[-5,9]]);
 export function insideFarm(col,row) {
-  return Number.isFinite(col) && Number.isFinite(row) && col >= -5 && col <= 33 && row >= -1 && row <= 28 && (col >= -1 || row <= 9);
+  return Number.isFinite(col) && Number.isFinite(row) && col >= -5 && col <= 33 && row >= -1 && row <= 33.5 && (col >= -1 || row <= 9);
 }
 export const GARDEN_PATHS = Object.freeze([
-  [[-.5,4.5],[-.5,7.5],[26,7.5],[26,22.5],[16,22.5],[16,28]],
+  [[-.5,4.5],[-.5,7.5],[26,7.5],[26,22.5],[16,22.5],[16,33.5]],
   [[-.5,7.5],[-.5,22.5],[16,22.5]],
   [[-.5,13.75],[26,13.75]],
   ...[3,9.5,16,22.5].flatMap(col=>[

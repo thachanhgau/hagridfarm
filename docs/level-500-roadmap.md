@@ -134,6 +134,17 @@ Các tên dự phòng đã kiểm: cây mũ thầy tu / bả chó sói / cây ph
 
 Cây 3h được tính bằng 45% XP của cây 8h cùng tầng. Mô phỏng đang dùng cây 3h ở mức 120/148/178/210 XP. Bot 2 lượt/ngày gần như chỉ trồng cây 8h nên nhịp không đổi; người cày sẽ nhanh hơn một chút, cần chạy lại khi làm P3.
 
+**Chạy lại với P3 (21/10/2026, cây và thửa thật trong game, `run500.mjs` không thêm cây giả nữa):**
+
+| Kiểu chơi | Cấp 100 | Cấp 200 | Cấp 300 | Cấp 500 | G/ngày tháng 4 | Tổng G tới cấp 500 | Thửa 13 / 18 mở |
+|---|---|---|---|---|---|---|---|
+| 2 lượt (08:00, 21:00) | 51 | 94 | 131 | **202** | 822 | 138.043 | ngày 57 / 143 |
+| Cày 20 lượt (07–23h) | 27 | 55 | 81 | **135** | 2.031 | 232.518 | ngày 32 / 91 |
+| Cày 30 lượt (07–23h) | 27 | 56 | 82 | 136 | 2.028 | 233.453 | ngày 32 / 91 |
+
+- Người 2 lượt/ngày không đổi (203 → 202).
+- Người cày nhanh hơn khoảng 12% (154 → 135) vì cây 3h mới là lựa chọn nhiều XP/giờ nhất, nhưng tiêu gần gấp đôi Galleons cho hạt: khoảng 2.000 G/ngày, cao hơn thu nhập trung vị 772 G/ngày. Hết Galleons thì họ chậm lại, nên không cần chặn thêm. Bot không bị giới hạn Galleons, nên con số 135 là mức nhanh nhất có thể.
+
 ## 6. Sinh vật và chế biến
 
 Mỗi bữa ăn 6h → 3h; **số bữa để trưởng thành giảm một nửa** (mốc giai đoạn cũng chia đôi, XP mỗi mốc giữ nguyên). Mẻ chế biến có hẹn giờ (côn trùng, cá) 6h → 3h.
@@ -153,16 +164,16 @@ Chỉ rút bữa ăn còn 3h thì người 2 lượt/ngày không thấy khác g
 - Thửa 4–12 và chuồng 1–6 giữ chi phí cũ (mở sớm hơn nhiều vì lên cấp nhanh hơn: thửa 12 ở ngày 63 thay vì 230, với 2 lượt/ngày).
 - Thêm 6 thửa cho cấp 101+, dồn vào đầu dải:
 
-| Thửa | Cấp | Nông sản (nháp) | Galleons | Mở vào (2 lượt / cày 30 lượt) |
+| Thửa | Cấp | Nông sản (P3, 21/10/2026) | Galleons | Mở vào, mô phỏng P3 (2 lượt / cày 20 lượt) |
 |---|---|---|---|---|
-| 13 | 110 | 30 Hoa nhật quang + 48 Đậu sao | 800 | ngày 68 / 26 |
-| 14 | 130 | 36 + 54 | 1.000 | 78 / 32 |
-| 15 | 160 | 42 + 60 | 1.200 | 90 / 40 |
-| 16 | 200 | 48 + 66 | 1.400 | 107 / 51 |
-| 17 | 260 | 54 + 72 | 1.600 | 129 / 66 |
-| 18 | 330 | 60 + 78 | 1.800 | 155 / 84 |
+| 13 | 110 | 30 Hoa nhật quang + 48 Rong nước xiết | 800 | ngày 57 / 32 |
+| 14 | 130 | 36 Củ u + 54 Rong nước xiết | 1.000 | 67 / 37 |
+| 15 | 160 | 42 Củ u + 60 Cỏ chút chít | 1.200 | 79 / 46 |
+| 16 | 200 | 48 Sung-quéo + 66 Cỏ chút chít | 1.400 | 96 / 57 |
+| 17 | 260 | 54 Sung-quéo + 72 Cỏ mang cá | 1.600 | 117 / 72 |
+| 18 | 330 | 60 Mimbulus mimbletonia + 78 Cỏ mang cá | 1.800 | 143 / 91 |
 
-Khi làm P3, nông sản xây sẽ đổi sang các cây mới của cấp 101+.
+Mỗi thửa xây 24 giờ. Trên bản đồ, sáu thửa nằm một hàng ở bìa nam (hàng 28,5), hai bên lối chính, trong giai đoạn vườn thứ 7 «Cánh đồng Tận Sức» (mở ở cấp 110). Ao, lối đi và sân kỷ vật giữ nguyên.
 
 ## 8. Galleons cho vòng chơi chính
 
@@ -312,7 +323,7 @@ Thưởng sau cấp 100 **không tăng sản lượng hay XP mãi mãi**: chỉ 
 | **P0** | Chủ dự án duyệt tài liệu này và mục 14 | — | Có quyết định |
 | **P1 – Cân bằng 1–100** | Thời gian và XP cây; sinh vật và chế biến; giá hạt tối đa 2 G; Chăm cây, Vuốt ve, Nước phép mới; bước chuyển cây và sinh vật đang lớn | Prototype `balance-data`, `garden-store-catalog`, `progression-engine`; HPVNN `garden-model/garden-balance.mjs`, `garden-action-core.js`, `garden-wallet-catalog.js` | Test prototype và functions pass; parity; mô phỏng khớp mục 3; xem trên 3026 (375px và desktop) |
 | **P2 – Cấp 101–500** | Đường XP mới; mở trần 500 ở validator và ví; ẩn trên 100; màn mở khóa; ★ và khung Floo | Như P1, thêm HUD, Hồ sơ, Floo | Test; xem trên 3026 |
-| **P3 – Nội dung sau 100** | 8 cây mới (tên Lý Lan, hình), thửa 13–18, bộ sản phẩm đặc biệt mới | Prototype và server, hình pixel | Mô phỏng lại với cây 3h ở mức 45% |
+| **P3 – Nội dung sau 100** | 8 cây mới (tên Lý Lan, hình), thửa 13–18, bộ sản phẩm đặc biệt mới | Prototype và server, hình pixel | Mô phỏng lại với cây 3h ở mức 45% (**đã làm 21/10/2026**, mục 5; hình cây đang là hình tạm, prompt cho Codex ở `garden-v05/level-asset-sources.json` nhóm crops-g/h/i; khung Floo và bộ sản phẩm đặc biệt mới chưa làm) |
 | **P4 – Cửa hàng cao cấp** | Đổi giới hạn mua sang giới hạn dùng và trần tồn kho; 7 vật phẩm mục 10.2; đọc đợt sale Hẻm Xéo; gói ×5/×10/×30 | `garden-wallet-core.js`, `garden-wallet-catalog.js`, `garden-action-core.js`, cửa hàng prototype | Test tài chính (ma trận Galleons) pass; rà đủ đường lách mục 10.4 |
 | **P5 – Giữ chân** | Thông thạo cây, Đơn hàng bác Hagrid, Cúp Nhà theo mùa | Prototype và server | Đo D1/D7/D30 sau beta |
 

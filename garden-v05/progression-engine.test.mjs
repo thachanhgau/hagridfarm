@@ -80,7 +80,7 @@ function emptyCreatureProfile(level = 10) {
 }
 
 test('approved balance exposes all crops, creatures, levels, recipes, and Vietnamese labels', () => {
-  assert.equal(DB.crops.length, 24);
+  assert.equal(DB.crops.length, 32); // level-500 roadmap P3: eight bậc Tận Sức crops
   assert.equal(DB.animals.length, 12);
   assert.equal(DB.recipes.length, 27); // the two kit recipes were removed on 18/10/2026
   assert.equal(DB.levels.length, 500);
@@ -319,7 +319,7 @@ test('building is explicit, sequential, timed, and materializes capacity only on
 });
 
 test('layout defaults to identity for new and legacy saves, then rejects malformed permutations', () => {
-  const identityPlots = Array.from({ length: 12 }, (_, index) => index);
+  const identityPlots = Array.from({ length: 18 }, (_, index) => index);
   const identityPens = Array.from({ length: 6 }, (_, index) => index);
   const fresh = newGame(NOW);
   assert.deepEqual(fresh.layout, { plots: identityPlots, pens: identityPens });
@@ -328,6 +328,16 @@ test('layout defaults to identity for new and legacy saves, then rejects malform
   delete legacy.layout;
   const restoredLegacy = restoreChecked(legacy, NOW);
   assert.deepEqual(restoredLegacy.layout, { plots: identityPlots, pens: identityPens });
+  // A save from before thửa 13–18 keeps its 12 sockets; the six new ones follow in order.
+  const twelve = structuredClone(fresh);
+  twelve.layout.plots = [1, 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  for (const id of ['fluxweed', 'devilssnare']) delete twelve.inventory[id];
+  const restoredTwelve = restoreChecked(twelve, NOW);
+  assert.deepEqual(restoredTwelve.layout.plots, [1, 0, ...identityPlots.slice(2)]);
+  assert.equal(restoredTwelve.inventory.devilssnare, 0);
+  const noPumpkin = structuredClone(fresh);
+  delete noPumpkin.inventory.pumpkin;
+  codeOf(() => restoreChecked(noPumpkin, NOW), 'INVALID_STATE');
 
   const duplicate = structuredClone(fresh);
   duplicate.layout.plots[1] = 0;
@@ -354,7 +364,7 @@ test('moveBuilding swaps built logical buildings with built or unbuilt slots wit
   const before = structuredClone(state);
 
   const moved = moveBuilding(state, 'plot', 0, 11);
-  assert.deepEqual(moved.layout.plots, [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0]);
+  assert.deepEqual(moved.layout.plots, [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 12, 13, 14, 15, 16, 17]);
   assert.deepEqual(moved.layout.pens, before.layout.pens);
   assert.deepEqual(state, before);
   for (const key of ['schemaVersion', 'balanceVersion', 'createdAt', 'xp', 'level', 'offsetMs', 'plots', 'creatures', 'inventory', 'jobs', 'construction', 'built', 'keepsakes', 'decorations', 'developerProfile', 'snapshotDeveloperFlag']) {
@@ -385,11 +395,11 @@ test('moveBuilding swaps built logical buildings with built or unbuilt slots wit
   assert.deepEqual(restored.built, movedPen.built);
 
   const allSlots = (length) => Array.from({ length }, (_, index) => index);
-  assert.deepEqual([...restored.layout.plots].sort((a, b) => a - b), allSlots(12));
+  assert.deepEqual([...restored.layout.plots].sort((a, b) => a - b), allSlots(18));
   assert.deepEqual([...restored.layout.pens].sort((a, b) => a - b), allSlots(6));
   codeOf(() => moveBuilding(restored, 'plot', 11, 0), 'NOT_BUILT');
   codeOf(() => moveBuilding(restored, 'garden', 0, 0), 'INVALID_KIND');
-  codeOf(() => moveBuilding(restored, 'plot', 0, 12), 'INVALID_INDEX');
+  codeOf(() => moveBuilding(restored, 'plot', 0, 18), 'INVALID_INDEX');
 });
 
 test('keepsakes and decorations consume only their stated resources and never XP', () => {
@@ -464,7 +474,7 @@ test('level-500 P2: levels 100–500 follow the roadmap curve and the simulator 
 });
 
 test('every approved crop completes all lifecycle boundaries and harvests', () => {
-  let state = testProfile(100, NOW);
+  let state = testProfile(500, NOW);
   const line = lineCells('horizontal', 0);
   let expectedXp = state.xp;
 
@@ -535,8 +545,8 @@ test('every approved creature reaches all juvenile milestones and claims repeate
   assert.equal(state.creatures.every((entry) => growth(entry, nowFor(state, NOW)).mature), true);
 });
 
-test('every approved expansion builds sequentially from a normal level-100 progression state', () => {
-  let state = testProfile(100, NOW);
+test('every approved expansion builds sequentially from a normal level-500 progression state', () => {
+  let state = testProfile(500, NOW);
   const startXp = state.xp;
   state.built = ['plot_1', 'plot_2', 'plot_3'];
   state.plots = state.plots.slice(0, 3);
@@ -554,7 +564,7 @@ test('every approved expansion builds sequentially from a normal level-100 progr
   }
 
   assert.equal(state.built.length, 3 + DB.expansions.length);
-  assert.equal(state.plots.length, 12);
+  assert.equal(state.plots.length, 18);
   assert.equal(housingCapacity(state), 12);
   assert.equal(state.construction.length, 0);
   assert.equal(state.xp, startXp);
@@ -568,10 +578,11 @@ test('engine core remains in parity with the approved 1-100 balance source and t
   const cropFields = ['id', 'label', 'level', 'hours', 'rarity', 'art', 'use', 'yieldPerCell', 'plantXP', 'harvestXP', 'totalXP'];
   const animalFields = ['id', 'label', 'level', 'rarity', 'hours', 'mealsToAdult', 'mealPortions', 'feed', 'feedXP', 'adultClaimXP', 'cycleXP', 'stageMeals', 'stageXP', 'minAdultDays', 'produce', 'producePerCycle', 'art'];
   const expansionFields = ['id', 'level', 'hours', 'capacityAfter'];
-  assert.deepEqual(selectFields(DB.crops, cropFields), selectFields(patch(APPROVED.crops, 'id', KIT_TEXT.crops, 'use'), cropFields));
+  const classic = (rows) => rows.filter((row) => row.level <= 100); // level-500 roadmap P3 adds crops and plots above 100
+  assert.deepEqual(selectFields(classic(DB.crops), cropFields), selectFields(patch(APPROVED.crops, 'id', KIT_TEXT.crops, 'use'), cropFields));
   assert.deepEqual(selectFields(DB.animals, animalFields), selectFields(APPROVED.animals, animalFields));
   assert.deepEqual(DB.recipes, APPROVED.recipes.filter((r) => r.output !== 'kit'));
-  assert.deepEqual(selectFields(DB.expansions, expansionFields), selectFields(APPROVED.expansions, expansionFields));
+  assert.deepEqual(selectFields(classic(DB.expansions), expansionFields), selectFields(APPROVED.expansions, expansionFields));
   assert.deepEqual(
     selectFields(DB.levels.slice(0, 99), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
     selectFields(patch(APPROVED.levels, 'level', KIT_TEXT.levels, 'unlock').slice(0, 99), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
@@ -588,7 +599,10 @@ test('expansions and decorations cost unlocked crops plus Galleons; the first fo
     for (const [id, n] of Object.entries(e.cropCost)) assert.ok(CROP[id].level <= e.level && n > 0 && n % 3 === 0, `${e.id} ${id}`);
   }
   assert.deepEqual(DB.expansions.filter((e) => e.level <= 24).map((e) => e.galleons), [0, 0, 0, 0]);
-  assert.ok(DB.expansions.every((e) => e.galleons < 772), 'no single expansion costs more than a p50 day of income');
+  assert.ok(DB.expansions.filter((e) => e.level <= 100).every((e) => e.galleons < 772), 'no single expansion up to level 100 costs more than a p50 day of income');
+  // Level-500 roadmap §7: thửa 13–18 at 800–1.800 G, paid in bậc Tận Sức crops.
+  assert.deepEqual(DB.expansions.filter((e) => e.level > 100).map((e) => [e.id, e.level, e.galleons]),
+    [['plot_13', 110, 800], ['plot_14', 130, 1000], ['plot_15', 160, 1200], ['plot_16', 200, 1400], ['plot_17', 260, 1600], ['plot_18', 330, 1800]]);
   for (const d of DB.decorations) for (const id of Object.keys(d.cropCost)) assert.ok(CROP[id].level <= d.level, d.id);
   let state = testProfile(12, NOW);
   state.built = state.built.filter((id) => id !== 'plot_4');

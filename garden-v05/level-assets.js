@@ -2,11 +2,11 @@
 (() => {
   const manifest = {
   "version": 1,
-  "status": "complete: 8/8 source atlas groups",
+  "status": "complete: 11/11 source atlas groups",
   "complete": true,
   "missingGroups": [],
   "sourceConfig": "level-asset-sources.json",
-  "balanceData": "balance-data.json",
+  "balanceData": "balance-data.mjs",
   "palette": [
     "#231F2E",
     "#4A3042",
@@ -4155,6 +4155,1868 @@
               },
               "scale": 0.1641337386018237,
               "adultScale": 0.1641337386018237,
+              "clippedPixels": 0
+            }
+          ],
+          "clips": {
+            "growth": {
+              "frames": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "durations": [
+                900,
+                900,
+                900,
+                900
+              ],
+              "loop": false
+            },
+            "idle": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            },
+            "action": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            }
+          },
+          "notes": [
+            "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+            "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "masters-levels/crops-g.png",
+      "ids": [
+        "fluxweed",
+        "bubotuber",
+        "knotgrass"
+      ],
+      "kind": "crop",
+      "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "rows": 3,
+        "columns": 4,
+        "threshold": 192,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "rowProjection": {
+          "length": 1086,
+          "nonzero": 875,
+          "maximum": 642
+        },
+        "columnProjection": {
+          "length": 1448,
+          "nonzero": 849,
+          "maximum": 837
+        },
+        "warnings": []
+      },
+      "items": [
+        {
+          "id": "fluxweed",
+          "label": "Rong nước xiết",
+          "kind": "crop",
+          "balance": {
+            "level": 105,
+            "rarity": "Huyền thoại",
+            "sourceRecord": "crops"
+          },
+          "growth": [
+            "Gieo hạt",
+            "Nảy mầm",
+            "Đang lớn",
+            "Trưởng thành"
+          ],
+          "source": "masters-levels/crops-g.png",
+          "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+          "sourceDimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "extraction": {
+            "group": "crops-g",
+            "row": 0,
+            "rows": 3,
+            "columns": 4,
+            "rowCuts": [
+              0,
+              362,
+              724,
+              1086
+            ],
+            "columnCuts": [
+              0,
+              362,
+              724,
+              1086,
+              1448
+            ],
+            "alphaThreshold": 192,
+            "warnings": []
+          },
+          "frames": [
+            {
+              "file": "native-levels/fluxweed/frame-01.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 0,
+              "sourceRect": {
+                "x": 0,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 154,
+                  "y": 244,
+                  "w": 54,
+                  "h": 50,
+                  "count": 2119,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 26,
+                "y": 70,
+                "w": 11,
+                "h": 10,
+                "count": 88,
+                "edge": false
+              },
+              "scale": 0.20532319391634982,
+              "adultScale": 0.20532319391634982,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/fluxweed/frame-02.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 1,
+              "sourceRect": {
+                "x": 362,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 85,
+                  "y": 142,
+                  "w": 188,
+                  "h": 168,
+                  "count": 16944,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 13,
+                "y": 46,
+                "w": 39,
+                "h": 34,
+                "count": 718,
+                "edge": false
+              },
+              "scale": 0.20532319391634982,
+              "adultScale": 0.20532319391634982,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/fluxweed/frame-03.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 2,
+              "sourceRect": {
+                "x": 724,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 74,
+                  "y": 52,
+                  "w": 196,
+                  "h": 260,
+                  "count": 26437,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 12,
+                "y": 27,
+                "w": 40,
+                "h": 53,
+                "count": 1122,
+                "edge": false
+              },
+              "scale": 0.20532319391634982,
+              "adultScale": 0.20532319391634982,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/fluxweed/frame-04.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 3,
+              "sourceRect": {
+                "x": 1086,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 44,
+                  "y": 1,
+                  "w": 263,
+                  "h": 314,
+                  "count": 47332,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 5,
+                "y": 16,
+                "w": 54,
+                "h": 64,
+                "count": 1999,
+                "edge": false
+              },
+              "scale": 0.20532319391634982,
+              "adultScale": 0.20532319391634982,
+              "clippedPixels": 0
+            }
+          ],
+          "clips": {
+            "growth": {
+              "frames": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "durations": [
+                900,
+                900,
+                900,
+                900
+              ],
+              "loop": false
+            },
+            "idle": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            },
+            "action": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            }
+          },
+          "notes": [
+            "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+            "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+          ]
+        },
+        {
+          "id": "bubotuber",
+          "label": "Củ u",
+          "kind": "crop",
+          "balance": {
+            "level": 130,
+            "rarity": "Huyền thoại",
+            "sourceRecord": "crops"
+          },
+          "growth": [
+            "Gieo hạt",
+            "Nảy mầm",
+            "Đang lớn",
+            "Trưởng thành"
+          ],
+          "source": "masters-levels/crops-g.png",
+          "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+          "sourceDimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "extraction": {
+            "group": "crops-g",
+            "row": 1,
+            "rows": 3,
+            "columns": 4,
+            "rowCuts": [
+              0,
+              362,
+              724,
+              1086
+            ],
+            "columnCuts": [
+              0,
+              362,
+              724,
+              1086,
+              1448
+            ],
+            "alphaThreshold": 192,
+            "warnings": []
+          },
+          "frames": [
+            {
+              "file": "native-levels/bubotuber/frame-01.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 0,
+              "sourceRect": {
+                "x": 0,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 145,
+                  "y": 246,
+                  "w": 66,
+                  "h": 61,
+                  "count": 2930,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 26,
+                "y": 69,
+                "w": 12,
+                "h": 11,
+                "count": 94,
+                "edge": false
+              },
+              "scale": 0.17763157894736842,
+              "adultScale": 0.17763157894736842,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/bubotuber/frame-02.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 1,
+              "sourceRect": {
+                "x": 362,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 89,
+                  "y": 201,
+                  "w": 128,
+                  "h": 111,
+                  "count": 7953,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 21,
+                "y": 60,
+                "w": 23,
+                "h": 20,
+                "count": 255,
+                "edge": false
+              },
+              "scale": 0.17763157894736842,
+              "adultScale": 0.17763157894736842,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/bubotuber/frame-03.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 2,
+              "sourceRect": {
+                "x": 724,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 25,
+                  "y": 108,
+                  "w": 206,
+                  "h": 205,
+                  "count": 28374,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 14,
+                "y": 44,
+                "w": 37,
+                "h": 36,
+                "count": 896,
+                "edge": false
+              },
+              "scale": 0.17763157894736842,
+              "adultScale": 0.17763157894736842,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/bubotuber/frame-04.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 3,
+              "sourceRect": {
+                "x": 1086,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 1,
+                  "y": 44,
+                  "w": 304,
+                  "h": 275,
+                  "count": 59491,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 5,
+                "y": 31,
+                "w": 54,
+                "h": 49,
+                "count": 1887,
+                "edge": false
+              },
+              "scale": 0.17763157894736842,
+              "adultScale": 0.17763157894736842,
+              "clippedPixels": 0
+            }
+          ],
+          "clips": {
+            "growth": {
+              "frames": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "durations": [
+                900,
+                900,
+                900,
+                900
+              ],
+              "loop": false
+            },
+            "idle": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            },
+            "action": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            }
+          },
+          "notes": [
+            "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+            "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+          ]
+        },
+        {
+          "id": "knotgrass",
+          "label": "Cỏ chút chít",
+          "kind": "crop",
+          "balance": {
+            "level": 160,
+            "rarity": "Huyền thoại",
+            "sourceRecord": "crops"
+          },
+          "growth": [
+            "Gieo hạt",
+            "Nảy mầm",
+            "Đang lớn",
+            "Trưởng thành"
+          ],
+          "source": "masters-levels/crops-g.png",
+          "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+          "sourceDimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "extraction": {
+            "group": "crops-g",
+            "row": 2,
+            "rows": 3,
+            "columns": 4,
+            "rowCuts": [
+              0,
+              362,
+              724,
+              1086
+            ],
+            "columnCuts": [
+              0,
+              362,
+              724,
+              1086,
+              1448
+            ],
+            "alphaThreshold": 192,
+            "warnings": []
+          },
+          "frames": [
+            {
+              "file": "native-levels/knotgrass/frame-01.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 0,
+              "sourceRect": {
+                "x": 0,
+                "y": 724,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 159,
+                  "y": 253,
+                  "w": 49,
+                  "h": 51,
+                  "count": 1854,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 28,
+                "y": 71,
+                "w": 9,
+                "h": 9,
+                "count": 59,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/knotgrass/frame-02.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 1,
+              "sourceRect": {
+                "x": 362,
+                "y": 724,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 117,
+                  "y": 209,
+                  "w": 111,
+                  "h": 99,
+                  "count": 5419,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 22,
+                "y": 62,
+                "w": 20,
+                "h": 18,
+                "count": 177,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/knotgrass/frame-03.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 2,
+              "sourceRect": {
+                "x": 724,
+                "y": 724,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 53,
+                  "y": 104,
+                  "w": 244,
+                  "h": 204,
+                  "count": 22598,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 10,
+                "y": 43,
+                "w": 45,
+                "h": 37,
+                "count": 753,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/knotgrass/frame-04.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 3,
+              "sourceRect": {
+                "x": 1086,
+                "y": 724,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 28,
+                  "y": 37,
+                  "w": 296,
+                  "h": 286,
+                  "count": 49869,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 5,
+                "y": 28,
+                "w": 54,
+                "h": 52,
+                "count": 1657,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            }
+          ],
+          "clips": {
+            "growth": {
+              "frames": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "durations": [
+                900,
+                900,
+                900,
+                900
+              ],
+              "loop": false
+            },
+            "idle": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            },
+            "action": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            }
+          },
+          "notes": [
+            "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+            "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "masters-levels/crops-h.png",
+      "ids": [
+        "shrivelfig",
+        "gillyweed",
+        "mimbulus"
+      ],
+      "kind": "crop",
+      "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "rows": 3,
+        "columns": 4,
+        "threshold": 192,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "rowProjection": {
+          "length": 1086,
+          "nonzero": 935,
+          "maximum": 642
+        },
+        "columnProjection": {
+          "length": 1448,
+          "nonzero": 821,
+          "maximum": 886
+        },
+        "warnings": []
+      },
+      "items": [
+        {
+          "id": "shrivelfig",
+          "label": "Sung-quéo",
+          "kind": "crop",
+          "balance": {
+            "level": 200,
+            "rarity": "Huyền thoại",
+            "sourceRecord": "crops"
+          },
+          "growth": [
+            "Gieo hạt",
+            "Nảy mầm",
+            "Đang lớn",
+            "Trưởng thành"
+          ],
+          "source": "masters-levels/crops-h.png",
+          "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+          "sourceDimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "extraction": {
+            "group": "crops-h",
+            "row": 0,
+            "rows": 3,
+            "columns": 4,
+            "rowCuts": [
+              0,
+              362,
+              724,
+              1086
+            ],
+            "columnCuts": [
+              0,
+              362,
+              724,
+              1086,
+              1448
+            ],
+            "alphaThreshold": 192,
+            "warnings": []
+          },
+          "frames": [
+            {
+              "file": "native-levels/shrivelfig/frame-01.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 0,
+              "sourceRect": {
+                "x": 0,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 154,
+                  "y": 288,
+                  "w": 54,
+                  "h": 51,
+                  "count": 2007,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 27,
+                "y": 71,
+                "w": 9,
+                "h": 9,
+                "count": 60,
+                "edge": false
+              },
+              "scale": 0.1758957654723127,
+              "adultScale": 0.1758957654723127,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/shrivelfig/frame-02.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 1,
+              "sourceRect": {
+                "x": 362,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 124,
+                  "y": 243,
+                  "w": 121,
+                  "h": 96,
+                  "count": 5814,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 21,
+                "y": 63,
+                "w": 21,
+                "h": 17,
+                "count": 182,
+                "edge": false
+              },
+              "scale": 0.1758957654723127,
+              "adultScale": 0.1758957654723127,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/shrivelfig/frame-03.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 2,
+              "sourceRect": {
+                "x": 724,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 47,
+                  "y": 134,
+                  "w": 248,
+                  "h": 213,
+                  "count": 30914,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 10,
+                "y": 43,
+                "w": 44,
+                "h": 37,
+                "count": 960,
+                "edge": false
+              },
+              "scale": 0.1758957654723127,
+              "adultScale": 0.1758957654723127,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/shrivelfig/frame-04.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 3,
+              "sourceRect": {
+                "x": 1086,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 21,
+                  "y": 62,
+                  "w": 307,
+                  "h": 281,
+                  "count": 57623,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 5,
+                "y": 31,
+                "w": 54,
+                "h": 49,
+                "count": 1780,
+                "edge": false
+              },
+              "scale": 0.1758957654723127,
+              "adultScale": 0.1758957654723127,
+              "clippedPixels": 0
+            }
+          ],
+          "clips": {
+            "growth": {
+              "frames": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "durations": [
+                900,
+                900,
+                900,
+                900
+              ],
+              "loop": false
+            },
+            "idle": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            },
+            "action": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            }
+          },
+          "notes": [
+            "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+            "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+          ]
+        },
+        {
+          "id": "gillyweed",
+          "label": "Cỏ mang cá",
+          "kind": "crop",
+          "balance": {
+            "level": 250,
+            "rarity": "Huyền thoại",
+            "sourceRecord": "crops"
+          },
+          "growth": [
+            "Gieo hạt",
+            "Nảy mầm",
+            "Đang lớn",
+            "Trưởng thành"
+          ],
+          "source": "masters-levels/crops-h.png",
+          "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+          "sourceDimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "extraction": {
+            "group": "crops-h",
+            "row": 1,
+            "rows": 3,
+            "columns": 4,
+            "rowCuts": [
+              0,
+              362,
+              724,
+              1086
+            ],
+            "columnCuts": [
+              0,
+              362,
+              724,
+              1086,
+              1448
+            ],
+            "alphaThreshold": 192,
+            "warnings": []
+          },
+          "frames": [
+            {
+              "file": "native-levels/gillyweed/frame-01.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 0,
+              "sourceRect": {
+                "x": 0,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 154,
+                  "y": 244,
+                  "w": 54,
+                  "h": 50,
+                  "count": 2119,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 26,
+                "y": 70,
+                "w": 11,
+                "h": 10,
+                "count": 88,
+                "edge": false
+              },
+              "scale": 0.20532319391634982,
+              "adultScale": 0.20532319391634982,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/gillyweed/frame-02.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 1,
+              "sourceRect": {
+                "x": 362,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 85,
+                  "y": 142,
+                  "w": 188,
+                  "h": 168,
+                  "count": 16944,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 13,
+                "y": 46,
+                "w": 39,
+                "h": 34,
+                "count": 718,
+                "edge": false
+              },
+              "scale": 0.20532319391634982,
+              "adultScale": 0.20532319391634982,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/gillyweed/frame-03.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 2,
+              "sourceRect": {
+                "x": 724,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 74,
+                  "y": 52,
+                  "w": 196,
+                  "h": 260,
+                  "count": 26437,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 12,
+                "y": 27,
+                "w": 40,
+                "h": 53,
+                "count": 1122,
+                "edge": false
+              },
+              "scale": 0.20532319391634982,
+              "adultScale": 0.20532319391634982,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/gillyweed/frame-04.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 3,
+              "sourceRect": {
+                "x": 1086,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 44,
+                  "y": 1,
+                  "w": 263,
+                  "h": 314,
+                  "count": 47332,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 5,
+                "y": 16,
+                "w": 54,
+                "h": 64,
+                "count": 1999,
+                "edge": false
+              },
+              "scale": 0.20532319391634982,
+              "adultScale": 0.20532319391634982,
+              "clippedPixels": 0
+            }
+          ],
+          "clips": {
+            "growth": {
+              "frames": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "durations": [
+                900,
+                900,
+                900,
+                900
+              ],
+              "loop": false
+            },
+            "idle": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            },
+            "action": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            }
+          },
+          "notes": [
+            "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+            "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+          ]
+        },
+        {
+          "id": "mimbulus",
+          "label": "Mimbulus mimbletonia",
+          "kind": "crop",
+          "balance": {
+            "level": 310,
+            "rarity": "Huyền thoại",
+            "sourceRecord": "crops"
+          },
+          "growth": [
+            "Gieo hạt",
+            "Nảy mầm",
+            "Đang lớn",
+            "Trưởng thành"
+          ],
+          "source": "masters-levels/crops-h.png",
+          "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+          "sourceDimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "extraction": {
+            "group": "crops-h",
+            "row": 2,
+            "rows": 3,
+            "columns": 4,
+            "rowCuts": [
+              0,
+              362,
+              724,
+              1086
+            ],
+            "columnCuts": [
+              0,
+              362,
+              724,
+              1086,
+              1448
+            ],
+            "alphaThreshold": 192,
+            "warnings": []
+          },
+          "frames": [
+            {
+              "file": "native-levels/mimbulus/frame-01.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 0,
+              "sourceRect": {
+                "x": 0,
+                "y": 724,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 137,
+                  "y": 289,
+                  "w": 78,
+                  "h": 68,
+                  "count": 3689,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 25,
+                "y": 68,
+                "w": 14,
+                "h": 12,
+                "count": 120,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/mimbulus/frame-02.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 1,
+              "sourceRect": {
+                "x": 362,
+                "y": 724,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 94,
+                  "y": 201,
+                  "w": 156,
+                  "h": 147,
+                  "count": 10760,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 18,
+                "y": 53,
+                "w": 28,
+                "h": 27,
+                "count": 356,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/mimbulus/frame-03.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 2,
+              "sourceRect": {
+                "x": 724,
+                "y": 724,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 52,
+                  "y": 88,
+                  "w": 239,
+                  "h": 260,
+                  "count": 28077,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 10,
+                "y": 33,
+                "w": 43,
+                "h": 47,
+                "count": 925,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/mimbulus/frame-04.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 3,
+              "sourceRect": {
+                "x": 1086,
+                "y": 724,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 27,
+                  "y": 21,
+                  "w": 296,
+                  "h": 335,
+                  "count": 51320,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 5,
+                "y": 19,
+                "w": 54,
+                "h": 61,
+                "count": 1705,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            }
+          ],
+          "clips": {
+            "growth": {
+              "frames": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "durations": [
+                900,
+                900,
+                900,
+                900
+              ],
+              "loop": false
+            },
+            "idle": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            },
+            "action": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            }
+          },
+          "notes": [
+            "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+            "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "masters-levels/crops-i.png",
+      "ids": [
+        "flitterbloom",
+        "devilssnare"
+      ],
+      "kind": "crop",
+      "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "rows": 3,
+        "columns": 4,
+        "threshold": 192,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "rowProjection": {
+          "length": 1086,
+          "nonzero": 649,
+          "maximum": 582
+        },
+        "columnProjection": {
+          "length": 1448,
+          "nonzero": 858,
+          "maximum": 641
+        },
+        "warnings": []
+      },
+      "items": [
+        {
+          "id": "flitterbloom",
+          "label": "Bông-đòng-đưa",
+          "kind": "crop",
+          "balance": {
+            "level": 380,
+            "rarity": "Huyền thoại",
+            "sourceRecord": "crops"
+          },
+          "growth": [
+            "Gieo hạt",
+            "Nảy mầm",
+            "Đang lớn",
+            "Trưởng thành"
+          ],
+          "source": "masters-levels/crops-i.png",
+          "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+          "sourceDimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "extraction": {
+            "group": "crops-i",
+            "row": 0,
+            "rows": 3,
+            "columns": 4,
+            "rowCuts": [
+              0,
+              362,
+              724,
+              1086
+            ],
+            "columnCuts": [
+              0,
+              362,
+              724,
+              1086,
+              1448
+            ],
+            "alphaThreshold": 192,
+            "warnings": []
+          },
+          "frames": [
+            {
+              "file": "native-levels/flitterbloom/frame-01.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 0,
+              "sourceRect": {
+                "x": 0,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 149,
+                  "y": 264,
+                  "w": 73,
+                  "h": 77,
+                  "count": 3891,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 25,
+                "y": 65,
+                "w": 15,
+                "h": 15,
+                "count": 157,
+                "edge": false
+              },
+              "scale": 0.20121951219512196,
+              "adultScale": 0.20121951219512196,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/flitterbloom/frame-02.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 1,
+              "sourceRect": {
+                "x": 362,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 88,
+                  "y": 211,
+                  "w": 187,
+                  "h": 133,
+                  "count": 10083,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 13,
+                "y": 53,
+                "w": 38,
+                "h": 27,
+                "count": 409,
+                "edge": false
+              },
+              "scale": 0.20121951219512196,
+              "adultScale": 0.20121951219512196,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/flitterbloom/frame-03.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 2,
+              "sourceRect": {
+                "x": 724,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 64,
+                  "y": 57,
+                  "w": 209,
+                  "h": 286,
+                  "count": 26544,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 11,
+                "y": 22,
+                "w": 42,
+                "h": 58,
+                "count": 1069,
+                "edge": false
+              },
+              "scale": 0.20121951219512196,
+              "adultScale": 0.20121951219512196,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/flitterbloom/frame-04.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 3,
+              "sourceRect": {
+                "x": 1086,
+                "y": 0,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 42,
+                  "y": 16,
+                  "w": 249,
+                  "h": 328,
+                  "count": 45031,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 7,
+                "y": 14,
+                "w": 50,
+                "h": 66,
+                "count": 1818,
+                "edge": false
+              },
+              "scale": 0.20121951219512196,
+              "adultScale": 0.20121951219512196,
+              "clippedPixels": 0
+            }
+          ],
+          "clips": {
+            "growth": {
+              "frames": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "durations": [
+                900,
+                900,
+                900,
+                900
+              ],
+              "loop": false
+            },
+            "idle": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            },
+            "action": {
+              "frames": [
+                3
+              ],
+              "durations": [
+                1200
+              ],
+              "loop": true
+            }
+          },
+          "notes": [
+            "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+            "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+          ]
+        },
+        {
+          "id": "devilssnare",
+          "label": "Bẫy Quỷ",
+          "kind": "crop",
+          "balance": {
+            "level": 450,
+            "rarity": "Huyền thoại",
+            "sourceRecord": "crops"
+          },
+          "growth": [
+            "Gieo hạt",
+            "Nảy mầm",
+            "Đang lớn",
+            "Trưởng thành"
+          ],
+          "source": "masters-levels/crops-i.png",
+          "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+          "sourceDimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "extraction": {
+            "group": "crops-i",
+            "row": 1,
+            "rows": 3,
+            "columns": 4,
+            "rowCuts": [
+              0,
+              362,
+              724,
+              1086
+            ],
+            "columnCuts": [
+              0,
+              362,
+              724,
+              1086,
+              1448
+            ],
+            "alphaThreshold": 192,
+            "warnings": []
+          },
+          "frames": [
+            {
+              "file": "native-levels/devilssnare/frame-01.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 0,
+              "sourceRect": {
+                "x": 0,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 142,
+                  "y": 272,
+                  "w": 73,
+                  "h": 68,
+                  "count": 3658,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 25,
+                "y": 68,
+                "w": 13,
+                "h": 12,
+                "count": 117,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/devilssnare/frame-02.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 1,
+              "sourceRect": {
+                "x": 362,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 97,
+                  "y": 207,
+                  "w": 168,
+                  "h": 133,
+                  "count": 10739,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 17,
+                "y": 56,
+                "w": 31,
+                "h": 24,
+                "count": 359,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/devilssnare/frame-03.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 2,
+              "sourceRect": {
+                "x": 724,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 15,
+                  "y": 40,
+                  "w": 295,
+                  "h": 300,
+                  "count": 38413,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 5,
+                "y": 25,
+                "w": 54,
+                "h": 55,
+                "count": 1281,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
+              "clippedPixels": 0
+            },
+            {
+              "file": "native-levels/devilssnare/frame-04.png",
+              "width": 64,
+              "height": 96,
+              "pivotX": 32,
+              "pivotY": 80,
+              "sourceFrame": 3,
+              "sourceRect": {
+                "x": 1086,
+                "y": 362,
+                "w": 362,
+                "h": 362,
+                "bounds": {
+                  "x": 27,
+                  "y": 19,
+                  "w": 296,
+                  "h": 321,
+                  "count": 54820,
+                  "edge": false
+                }
+              },
+              "bounds": {
+                "x": 5,
+                "y": 21,
+                "w": 54,
+                "h": 59,
+                "count": 1829,
+                "edge": false
+              },
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
               "clippedPixels": 0
             }
           ],
@@ -9487,6 +11349,1734 @@
       ]
     },
     {
+      "id": "fluxweed",
+      "label": "Rong nước xiết",
+      "kind": "crop",
+      "balance": {
+        "level": 105,
+        "rarity": "Huyền thoại",
+        "sourceRecord": "crops"
+      },
+      "growth": [
+        "Gieo hạt",
+        "Nảy mầm",
+        "Đang lớn",
+        "Trưởng thành"
+      ],
+      "source": "masters-levels/crops-g.png",
+      "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "group": "crops-g",
+        "row": 0,
+        "rows": 3,
+        "columns": 4,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "alphaThreshold": 192,
+        "warnings": []
+      },
+      "frames": [
+        {
+          "file": "native-levels/fluxweed/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 154,
+              "y": 244,
+              "w": 54,
+              "h": 50,
+              "count": 2119,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 26,
+            "y": 70,
+            "w": 11,
+            "h": 10,
+            "count": 88,
+            "edge": false
+          },
+          "scale": 0.20532319391634982,
+          "adultScale": 0.20532319391634982,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/fluxweed/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 85,
+              "y": 142,
+              "w": 188,
+              "h": 168,
+              "count": 16944,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 13,
+            "y": 46,
+            "w": 39,
+            "h": 34,
+            "count": 718,
+            "edge": false
+          },
+          "scale": 0.20532319391634982,
+          "adultScale": 0.20532319391634982,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/fluxweed/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 74,
+              "y": 52,
+              "w": 196,
+              "h": 260,
+              "count": 26437,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 12,
+            "y": 27,
+            "w": 40,
+            "h": 53,
+            "count": 1122,
+            "edge": false
+          },
+          "scale": 0.20532319391634982,
+          "adultScale": 0.20532319391634982,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/fluxweed/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 44,
+              "y": 1,
+              "w": 263,
+              "h": 314,
+              "count": 47332,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 5,
+            "y": 16,
+            "w": 54,
+            "h": 64,
+            "count": 1999,
+            "edge": false
+          },
+          "scale": 0.20532319391634982,
+          "adultScale": 0.20532319391634982,
+          "clippedPixels": 0
+        }
+      ],
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        }
+      },
+      "notes": [
+        "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+        "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+      ]
+    },
+    {
+      "id": "bubotuber",
+      "label": "Củ u",
+      "kind": "crop",
+      "balance": {
+        "level": 130,
+        "rarity": "Huyền thoại",
+        "sourceRecord": "crops"
+      },
+      "growth": [
+        "Gieo hạt",
+        "Nảy mầm",
+        "Đang lớn",
+        "Trưởng thành"
+      ],
+      "source": "masters-levels/crops-g.png",
+      "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "group": "crops-g",
+        "row": 1,
+        "rows": 3,
+        "columns": 4,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "alphaThreshold": 192,
+        "warnings": []
+      },
+      "frames": [
+        {
+          "file": "native-levels/bubotuber/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 145,
+              "y": 246,
+              "w": 66,
+              "h": 61,
+              "count": 2930,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 26,
+            "y": 69,
+            "w": 12,
+            "h": 11,
+            "count": 94,
+            "edge": false
+          },
+          "scale": 0.17763157894736842,
+          "adultScale": 0.17763157894736842,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/bubotuber/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 89,
+              "y": 201,
+              "w": 128,
+              "h": 111,
+              "count": 7953,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 21,
+            "y": 60,
+            "w": 23,
+            "h": 20,
+            "count": 255,
+            "edge": false
+          },
+          "scale": 0.17763157894736842,
+          "adultScale": 0.17763157894736842,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/bubotuber/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 25,
+              "y": 108,
+              "w": 206,
+              "h": 205,
+              "count": 28374,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 14,
+            "y": 44,
+            "w": 37,
+            "h": 36,
+            "count": 896,
+            "edge": false
+          },
+          "scale": 0.17763157894736842,
+          "adultScale": 0.17763157894736842,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/bubotuber/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 1,
+              "y": 44,
+              "w": 304,
+              "h": 275,
+              "count": 59491,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 5,
+            "y": 31,
+            "w": 54,
+            "h": 49,
+            "count": 1887,
+            "edge": false
+          },
+          "scale": 0.17763157894736842,
+          "adultScale": 0.17763157894736842,
+          "clippedPixels": 0
+        }
+      ],
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        }
+      },
+      "notes": [
+        "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+        "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+      ]
+    },
+    {
+      "id": "knotgrass",
+      "label": "Cỏ chút chít",
+      "kind": "crop",
+      "balance": {
+        "level": 160,
+        "rarity": "Huyền thoại",
+        "sourceRecord": "crops"
+      },
+      "growth": [
+        "Gieo hạt",
+        "Nảy mầm",
+        "Đang lớn",
+        "Trưởng thành"
+      ],
+      "source": "masters-levels/crops-g.png",
+      "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "group": "crops-g",
+        "row": 2,
+        "rows": 3,
+        "columns": 4,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "alphaThreshold": 192,
+        "warnings": []
+      },
+      "frames": [
+        {
+          "file": "native-levels/knotgrass/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 724,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 159,
+              "y": 253,
+              "w": 49,
+              "h": 51,
+              "count": 1854,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 28,
+            "y": 71,
+            "w": 9,
+            "h": 9,
+            "count": 59,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/knotgrass/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 724,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 117,
+              "y": 209,
+              "w": 111,
+              "h": 99,
+              "count": 5419,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 22,
+            "y": 62,
+            "w": 20,
+            "h": 18,
+            "count": 177,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/knotgrass/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 724,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 53,
+              "y": 104,
+              "w": 244,
+              "h": 204,
+              "count": 22598,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 10,
+            "y": 43,
+            "w": 45,
+            "h": 37,
+            "count": 753,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/knotgrass/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 724,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 28,
+              "y": 37,
+              "w": 296,
+              "h": 286,
+              "count": 49869,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 5,
+            "y": 28,
+            "w": 54,
+            "h": 52,
+            "count": 1657,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        }
+      ],
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        }
+      },
+      "notes": [
+        "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+        "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+      ]
+    },
+    {
+      "id": "shrivelfig",
+      "label": "Sung-quéo",
+      "kind": "crop",
+      "balance": {
+        "level": 200,
+        "rarity": "Huyền thoại",
+        "sourceRecord": "crops"
+      },
+      "growth": [
+        "Gieo hạt",
+        "Nảy mầm",
+        "Đang lớn",
+        "Trưởng thành"
+      ],
+      "source": "masters-levels/crops-h.png",
+      "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "group": "crops-h",
+        "row": 0,
+        "rows": 3,
+        "columns": 4,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "alphaThreshold": 192,
+        "warnings": []
+      },
+      "frames": [
+        {
+          "file": "native-levels/shrivelfig/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 154,
+              "y": 288,
+              "w": 54,
+              "h": 51,
+              "count": 2007,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 27,
+            "y": 71,
+            "w": 9,
+            "h": 9,
+            "count": 60,
+            "edge": false
+          },
+          "scale": 0.1758957654723127,
+          "adultScale": 0.1758957654723127,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/shrivelfig/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 124,
+              "y": 243,
+              "w": 121,
+              "h": 96,
+              "count": 5814,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 21,
+            "y": 63,
+            "w": 21,
+            "h": 17,
+            "count": 182,
+            "edge": false
+          },
+          "scale": 0.1758957654723127,
+          "adultScale": 0.1758957654723127,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/shrivelfig/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 47,
+              "y": 134,
+              "w": 248,
+              "h": 213,
+              "count": 30914,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 10,
+            "y": 43,
+            "w": 44,
+            "h": 37,
+            "count": 960,
+            "edge": false
+          },
+          "scale": 0.1758957654723127,
+          "adultScale": 0.1758957654723127,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/shrivelfig/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 21,
+              "y": 62,
+              "w": 307,
+              "h": 281,
+              "count": 57623,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 5,
+            "y": 31,
+            "w": 54,
+            "h": 49,
+            "count": 1780,
+            "edge": false
+          },
+          "scale": 0.1758957654723127,
+          "adultScale": 0.1758957654723127,
+          "clippedPixels": 0
+        }
+      ],
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        }
+      },
+      "notes": [
+        "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+        "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+      ]
+    },
+    {
+      "id": "gillyweed",
+      "label": "Cỏ mang cá",
+      "kind": "crop",
+      "balance": {
+        "level": 250,
+        "rarity": "Huyền thoại",
+        "sourceRecord": "crops"
+      },
+      "growth": [
+        "Gieo hạt",
+        "Nảy mầm",
+        "Đang lớn",
+        "Trưởng thành"
+      ],
+      "source": "masters-levels/crops-h.png",
+      "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "group": "crops-h",
+        "row": 1,
+        "rows": 3,
+        "columns": 4,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "alphaThreshold": 192,
+        "warnings": []
+      },
+      "frames": [
+        {
+          "file": "native-levels/gillyweed/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 154,
+              "y": 244,
+              "w": 54,
+              "h": 50,
+              "count": 2119,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 26,
+            "y": 70,
+            "w": 11,
+            "h": 10,
+            "count": 88,
+            "edge": false
+          },
+          "scale": 0.20532319391634982,
+          "adultScale": 0.20532319391634982,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/gillyweed/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 85,
+              "y": 142,
+              "w": 188,
+              "h": 168,
+              "count": 16944,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 13,
+            "y": 46,
+            "w": 39,
+            "h": 34,
+            "count": 718,
+            "edge": false
+          },
+          "scale": 0.20532319391634982,
+          "adultScale": 0.20532319391634982,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/gillyweed/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 74,
+              "y": 52,
+              "w": 196,
+              "h": 260,
+              "count": 26437,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 12,
+            "y": 27,
+            "w": 40,
+            "h": 53,
+            "count": 1122,
+            "edge": false
+          },
+          "scale": 0.20532319391634982,
+          "adultScale": 0.20532319391634982,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/gillyweed/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 44,
+              "y": 1,
+              "w": 263,
+              "h": 314,
+              "count": 47332,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 5,
+            "y": 16,
+            "w": 54,
+            "h": 64,
+            "count": 1999,
+            "edge": false
+          },
+          "scale": 0.20532319391634982,
+          "adultScale": 0.20532319391634982,
+          "clippedPixels": 0
+        }
+      ],
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        }
+      },
+      "notes": [
+        "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+        "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+      ]
+    },
+    {
+      "id": "mimbulus",
+      "label": "Mimbulus mimbletonia",
+      "kind": "crop",
+      "balance": {
+        "level": 310,
+        "rarity": "Huyền thoại",
+        "sourceRecord": "crops"
+      },
+      "growth": [
+        "Gieo hạt",
+        "Nảy mầm",
+        "Đang lớn",
+        "Trưởng thành"
+      ],
+      "source": "masters-levels/crops-h.png",
+      "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "group": "crops-h",
+        "row": 2,
+        "rows": 3,
+        "columns": 4,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "alphaThreshold": 192,
+        "warnings": []
+      },
+      "frames": [
+        {
+          "file": "native-levels/mimbulus/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 724,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 137,
+              "y": 289,
+              "w": 78,
+              "h": 68,
+              "count": 3689,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 25,
+            "y": 68,
+            "w": 14,
+            "h": 12,
+            "count": 120,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/mimbulus/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 724,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 94,
+              "y": 201,
+              "w": 156,
+              "h": 147,
+              "count": 10760,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 18,
+            "y": 53,
+            "w": 28,
+            "h": 27,
+            "count": 356,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/mimbulus/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 724,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 52,
+              "y": 88,
+              "w": 239,
+              "h": 260,
+              "count": 28077,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 10,
+            "y": 33,
+            "w": 43,
+            "h": 47,
+            "count": 925,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/mimbulus/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 724,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 27,
+              "y": 21,
+              "w": 296,
+              "h": 335,
+              "count": 51320,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 5,
+            "y": 19,
+            "w": 54,
+            "h": 61,
+            "count": 1705,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        }
+      ],
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        }
+      },
+      "notes": [
+        "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+        "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+      ]
+    },
+    {
+      "id": "flitterbloom",
+      "label": "Bông-đòng-đưa",
+      "kind": "crop",
+      "balance": {
+        "level": 380,
+        "rarity": "Huyền thoại",
+        "sourceRecord": "crops"
+      },
+      "growth": [
+        "Gieo hạt",
+        "Nảy mầm",
+        "Đang lớn",
+        "Trưởng thành"
+      ],
+      "source": "masters-levels/crops-i.png",
+      "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "group": "crops-i",
+        "row": 0,
+        "rows": 3,
+        "columns": 4,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "alphaThreshold": 192,
+        "warnings": []
+      },
+      "frames": [
+        {
+          "file": "native-levels/flitterbloom/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 149,
+              "y": 264,
+              "w": 73,
+              "h": 77,
+              "count": 3891,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 25,
+            "y": 65,
+            "w": 15,
+            "h": 15,
+            "count": 157,
+            "edge": false
+          },
+          "scale": 0.20121951219512196,
+          "adultScale": 0.20121951219512196,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/flitterbloom/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 88,
+              "y": 211,
+              "w": 187,
+              "h": 133,
+              "count": 10083,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 13,
+            "y": 53,
+            "w": 38,
+            "h": 27,
+            "count": 409,
+            "edge": false
+          },
+          "scale": 0.20121951219512196,
+          "adultScale": 0.20121951219512196,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/flitterbloom/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 64,
+              "y": 57,
+              "w": 209,
+              "h": 286,
+              "count": 26544,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 11,
+            "y": 22,
+            "w": 42,
+            "h": 58,
+            "count": 1069,
+            "edge": false
+          },
+          "scale": 0.20121951219512196,
+          "adultScale": 0.20121951219512196,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/flitterbloom/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 0,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 42,
+              "y": 16,
+              "w": 249,
+              "h": 328,
+              "count": 45031,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 7,
+            "y": 14,
+            "w": 50,
+            "h": 66,
+            "count": 1818,
+            "edge": false
+          },
+          "scale": 0.20121951219512196,
+          "adultScale": 0.20121951219512196,
+          "clippedPixels": 0
+        }
+      ],
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        }
+      },
+      "notes": [
+        "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+        "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+      ]
+    },
+    {
+      "id": "devilssnare",
+      "label": "Bẫy Quỷ",
+      "kind": "crop",
+      "balance": {
+        "level": 450,
+        "rarity": "Huyền thoại",
+        "sourceRecord": "crops"
+      },
+      "growth": [
+        "Gieo hạt",
+        "Nảy mầm",
+        "Đang lớn",
+        "Trưởng thành"
+      ],
+      "source": "masters-levels/crops-i.png",
+      "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+      "sourceDimensions": {
+        "width": 1448,
+        "height": 1086
+      },
+      "extraction": {
+        "group": "crops-i",
+        "row": 1,
+        "rows": 3,
+        "columns": 4,
+        "rowCuts": [
+          0,
+          362,
+          724,
+          1086
+        ],
+        "columnCuts": [
+          0,
+          362,
+          724,
+          1086,
+          1448
+        ],
+        "alphaThreshold": 192,
+        "warnings": []
+      },
+      "frames": [
+        {
+          "file": "native-levels/devilssnare/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 0,
+          "sourceRect": {
+            "x": 0,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 142,
+              "y": 272,
+              "w": 73,
+              "h": 68,
+              "count": 3658,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 25,
+            "y": 68,
+            "w": 13,
+            "h": 12,
+            "count": 117,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/devilssnare/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 1,
+          "sourceRect": {
+            "x": 362,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 97,
+              "y": 207,
+              "w": 168,
+              "h": 133,
+              "count": 10739,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 17,
+            "y": 56,
+            "w": 31,
+            "h": 24,
+            "count": 359,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/devilssnare/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 2,
+          "sourceRect": {
+            "x": 724,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 15,
+              "y": 40,
+              "w": 295,
+              "h": 300,
+              "count": 38413,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 5,
+            "y": 25,
+            "w": 54,
+            "h": 55,
+            "count": 1281,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        },
+        {
+          "file": "native-levels/devilssnare/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "sourceFrame": 3,
+          "sourceRect": {
+            "x": 1086,
+            "y": 362,
+            "w": 362,
+            "h": 362,
+            "bounds": {
+              "x": 27,
+              "y": 19,
+              "w": 296,
+              "h": 321,
+              "count": 54820,
+              "edge": false
+            }
+          },
+          "bounds": {
+            "x": 5,
+            "y": 21,
+            "w": 54,
+            "h": 59,
+            "count": 1829,
+            "edge": false
+          },
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
+          "clippedPixels": 0
+        }
+      ],
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            3
+          ],
+          "durations": [
+            1200
+          ],
+          "loop": true
+        }
+      },
+      "notes": [
+        "Bản xuất mới 1×: nearest resize, alpha 0/255, bảng màu 24 màu dùng chung.",
+        "Idle/action dùng frame trưởng thành tĩnh; không giả chuyển động chưa được minh hoạ."
+      ]
+    },
+    {
       "id": "mooncalf",
       "label": "Mooncalf",
       "kind": "creature",
@@ -10787,8 +14377,8 @@
       ]
     }
   ],
-  "itemCount": 24,
-  "frameCount": 96,
+  "itemCount": 32,
+  "frameCount": 128,
   "warnings": [
     {
       "group": "crops-a",
@@ -10833,7 +14423,7 @@
       "stage": 3
     }
   ],
-  "generatedAt": "2026-10-13T08:12:36.299Z"
+  "generatedAt": "2026-10-21T13:51:19.478Z"
 };
   const items = manifest.items || [];
   window.FARM_LEVEL_ASSETS = manifest;

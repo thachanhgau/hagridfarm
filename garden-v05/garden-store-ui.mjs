@@ -1,6 +1,6 @@
 import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.64";
 import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.64";
-import {STORE_CATALOG,storeLock} from "./garden-store-catalog.mjs?v=24.9.64";
+import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=24.9.64";
 import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.64";
 import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.64";
 
@@ -57,7 +57,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   // Every item shows; one the wallet does not sell yet (level, festival) is a locked card with the reason.
   const sold=new Map(((connected&&Array.isArray(remote)&&remote.length>0)?remote:STORE_CATALOG.filter(i=>!storeLock(i,state.level))).map(i=>[i.id,i]));
   const owned=new Set(wallet?.snapshot?.garden?.decorations?.owned??[]);
-  return [...STORE_CATALOG.map(i=>sold.get(i.id)||(owned.has(i.id)?i:{...i,locked:storeLock(i,state.level)||"Chưa mở bán"})),...[...sold.values()].filter(i=>!STORE_CATALOG.some(c=>c.id===i.id))];
+  return [...STORE_CATALOG.filter(i=>storeVisible(i,state.level)).map(i=>sold.get(i.id)||(owned.has(i.id)?i:{...i,locked:storeLock(i,state.level)||"Chưa mở bán"})),...[...sold.values()].filter(i=>!STORE_CATALOG.some(c=>c.id===i.id))];
  };
 
  function ownedStockText(item,snap){

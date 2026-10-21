@@ -10,16 +10,7 @@
  const displayEntry = (entry) => Object.freeze({
 --- a/progression-engine.mjs
 +++ b/progression-engine.mjs
-@@ -33,7 +33,7 @@
- const MAX_EVENTS = 64;
- const PLOT_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'plot'));
- const PEN_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'pen'));
--const LAYOUT_COUNTS = Object.freeze({ plots: 12, pens: 6 });
-+const LAYOUT_COUNTS = Object.freeze({ plots: 18, pens: 6 });
- const DECORATIONS = Object.freeze(Object.fromEntries(DB.decorations.map((entry) => [entry.id, entry])));
- const CROP_IDS = Object.freeze(Object.keys(CROP));
- const CREATURE_IDS = Object.freeze(Object.keys(CREATURE));
-@@ -251,6 +251,20 @@
+@@ -259,6 +259,20 @@
  function addXp(state, amount, logicalNow, source) {
    assertNonNegativeInteger(amount, 'XP');
    if (amount === 0) return;
@@ -40,24 +31,6 @@
    if (state.xp > MAX_SAFE - amount) reject('XP_OVERFLOW', 'XP exceeds safe integer range');
    state.xp += amount;
    syncLevel(state);
-@@ -543,7 +557,7 @@
-   const createdAt = assertFiniteTime(raw.createdAt, 'createdAt');
-   const xp = assertNonNegativeInteger(raw.xp, 'xp');
-   const level = assertSafeInteger(raw.level, 'level');
--  if (level < 1 || level > 100 || level !== levelForXp(xp)) reject('INVALID_STATE', 'level does not match XP');
-+  if (level < 1 || level > 500 || level !== levelForXp(xp)) reject('INVALID_STATE', 'level does not match XP');
-   const offsetMs = assertDuration(raw.offsetMs, 'offsetMs');
-   const revision = assertNonNegativeInteger(raw.revision, 'revision');
-   const layout = normalizeLayout(raw.layout);
-@@ -1087,7 +1101,7 @@
- export function testProfile(level, now) {
-   const timestamp = assertFiniteTime(now, 'now');
-   assertSafeInteger(level, 'level');
--  if (level < 1 || level > 100) reject('INVALID_LEVEL', 'testProfile level must be between 1 and 100');
-+  if (level < 1 || level > 500) reject('INVALID_LEVEL', 'testProfile level must be between 1 and 100');
-   const state = makeInitialState(timestamp);
-   state.xp = DB.levels[level - 1].totalXP;
-   state.level = level;
 --- a/sim-progression.mjs
 +++ b/sim-progression.mjs
 @@ -115,6 +115,8 @@

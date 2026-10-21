@@ -45,7 +45,7 @@ export const ISO_TILE = Object.freeze({width: DEFAULT_TILE_WIDTH, height: DEFAUL
 export const FARM_LAYOUT = Object.freeze({
   plotWidth: 3,
   plotHeight: 3,
-  plotCount: 12,
+  plotCount: 18,
   penCount: 6,
   creatureSpotCount: 12,
 });

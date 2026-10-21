@@ -6,6 +6,7 @@ export const GARDEN_STAGES=Object.freeze([
  {id:4,level:48,name:'Trang trại bìa rừng',right:33,bottom:21,description:'Đường vườn đi sâu hơn, dành chỗ cho các thửa và chuồng tiếp theo.'},
  {id:5,level:72,name:'Miền sinh vật kỳ thú',right:33,bottom:25,description:'Mở gần trọn khu đất, đón các sinh vật lớn và những mùa vụ cuối.'},
  {id:6,level:100,name:'Đại khu vườn Hagrid',right:33,bottom:28,description:'Mở cánh đất cuối cho thửa thứ mười hai và hoàn thiện sân kỷ vật.'},
+ {id:7,level:110,name:'Cánh đồng Tận Sức',right:33,bottom:33.5,description:'Bậc Tận Sức: rào lùi về phía nam, thêm một hàng sáu thửa (13 đến 18).'},
 ].map(Object.freeze));
 export function stageContains(stage,col,row){
  const inside=Number.isFinite(col)&&Number.isFinite(row)&&col>=-5&&col<=stage.right&&row>=-1&&row<=stage.bottom&&(col>=-1||row<=9);
@@ -38,7 +39,7 @@ export function stageWorldBounds(scene,stage){
 }
 export function futureGroves(scene,stage){
  const trees=[];
- for(let r=0;r<27;r+=2.5)for(let c=0;c<33;c+=2.5){
+ for(let r=0;r<34;r+=2.5)for(let c=0;c<33;c+=2.5){
   const col=c+Math.sin(c*3+r)*.3,row=r+Math.cos(r*2+c)*.3;
   // Clear margin prevents the forest fringe from sitting on active plots.
   if([[-2,-2],[-2,2],[2,-2],[2,2],[0,0]].some(([x,y])=>stageContains(stage,col+x,row+y)))continue;

@@ -38,7 +38,10 @@ const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MAX_EVENTS = 64;
 const PLOT_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'plot'));
 const PEN_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'pen'));
-const LAYOUT_COUNTS = Object.freeze({ plots: 12, pens: 6 });
+const LAYOUT_COUNTS = Object.freeze({ plots: 18, pens: 6 });
+// Level-500 roadmap P3: saves from before thửa 13–18 hold 12 plot sockets and none of the bậc Tận Sức crops.
+const LEGACY_PLOT_SOCKETS = 12;
+const LATE_CROP_IDS = new Set(DB.crops.filter((crop) => crop.level > TAN_SUC_LEVEL).map((crop) => crop.id));
 const DECORATIONS = Object.freeze(Object.fromEntries(DB.decorations.map((entry) => [entry.id, entry])));
 const CROP_IDS = Object.freeze(Object.keys(CROP));
 const CREATURE_IDS = Object.freeze(Object.keys(CREATURE));
@@ -324,8 +327,11 @@ function normalizeLayout(raw) {
     return { plots: identityPermutation(LAYOUT_COUNTS.plots), pens: identityPermutation(LAYOUT_COUNTS.pens) };
   }
   if (!isPlainObject(raw)) reject('INVALID_STATE', 'layout must be an object');
+  const plots = Array.isArray(raw.plots) && raw.plots.length === LEGACY_PLOT_SOCKETS
+    ? [...raw.plots, ...identityPermutation(LAYOUT_COUNTS.plots).slice(LEGACY_PLOT_SOCKETS)]
+    : raw.plots;
   return {
-    plots: normalizePermutation(raw.plots, LAYOUT_COUNTS.plots, 'plots'),
+    plots: normalizePermutation(plots, LAYOUT_COUNTS.plots, 'plots'),
     pens: normalizePermutation(raw.pens, LAYOUT_COUNTS.pens, 'pens'),
   };
 }
@@ -337,8 +343,8 @@ function normalizeInventory(raw) {
   }
   const result = emptyInventory();
   for (const id of INVENTORY_IDS) {
-    if (!Object.prototype.hasOwnProperty.call(raw, id)) reject('INVALID_STATE', `inventory.${id} is missing`);
-    const count = raw[id];
+    if (!Object.prototype.hasOwnProperty.call(raw, id) && !LATE_CROP_IDS.has(id)) reject('INVALID_STATE', `inventory.${id} is missing`);
+    const count = raw[id] ?? 0;
     assertNonNegativeInteger(count, `inventory.${id}`);
     result[id] = count;
   }
@@ -1096,7 +1102,9 @@ export function testProfile(level, now) {
   const state = makeInitialState(timestamp);
   state.xp = DB.levels[level - 1].totalXP;
   state.level = level;
-  const eligibleExpansions = DB.expansions.filter((entry) => unlockedAtLevel(entry, level) && entry.id !== 'plot_12');
+  // The newest unlocked plot stays unbuilt so the profile can try building it (plot_12 at level 100).
+  const lastPlot = PLOT_EXPANSIONS.filter((entry) => unlockedAtLevel(entry, level) && entry.level >= 100).at(-1)?.id;
+  const eligibleExpansions = DB.expansions.filter((entry) => unlockedAtLevel(entry, level) && entry.id !== lastPlot);
   for (const entry of eligibleExpansions) state.built.push(entry.id);
   state.plots = Array.from({ length: builtPlotCount(state.built) }, makePlot);
   for (const id of INVENTORY_IDS) {

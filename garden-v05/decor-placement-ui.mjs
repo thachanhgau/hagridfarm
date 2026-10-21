@@ -285,7 +285,8 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
   const s=getState();
   const stage=getStage?.();
   const key=kind==='plot'?'plots':'pens';
-  const total=kind==='plot'?12:6;
+  // Thửa 13–18 (bậc Tận Sức) show only from level 100, like every level above 100.
+  const plotTotal=(s?.level||1)>=(E?.TAN_SUC_LEVEL??100)?18:12,total=kind==='plot'?plotTotal:6;
   const builtCount=kind==='plot'?(s?.plots?.length||3):Math.floor((E?.housingCapacity?.(s)||0)/2);
   if(selectedBuilding>=Math.max(1,builtCount))selectedBuilding=0;
   const positions=s?.layout?.[key]||Array.from({length:total},(_,i)=>i);
@@ -293,7 +294,7 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
   if(selectedSlot===null)selectedSlot=currentSlot;
 
   kindBar.replaceChildren(
-   button(`▦ Thửa trồng (${s?.plots?.length||3}/12)`,()=>{kind='plot';selectedBuilding=0;selectedSlot=null;render();syncPreview(true);},{
+   button(`▦ Thửa trồng (${s?.plots?.length||3}/${plotTotal})`,()=>{kind='plot';selectedBuilding=0;selectedSlot=null;render();syncPreview(true);},{
     class:'decor-angle-btn'+(kind==='plot'?' is-active':''),
     'aria-pressed':String(kind==='plot'),
     disabled:pending,

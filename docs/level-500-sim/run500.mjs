@@ -16,6 +16,8 @@ globalThis.__TWEAK = (raw) => {
   if (P.meal) for (const a of raw.animals) { a.hours = P.meal; a.growMs = P.meal * 3600000; if (P.halve) { a.mealsToAdult = Math.ceil(a.mealsToAdult / 2); a.stageMeals = a.stageMeals.map((m) => Math.ceil(m / 2)); a.minAdultDays /= 2; } }
   if (P.job) for (const r of raw.recipes) if (r.hours > 0) r.hours = P.job;
   }
+  // P3 (21/10/2026): the game ships the 500-level curve, the eight bậc Tận Sức crops and thửa 13–18; simulate them as they are.
+  if (raw.crops.some((c) => c.id === 'fluxweed')) return;
   const fac = P.k ? (l) => l <= 20 ? 1 : 1 - (1 - P.k) * ((l - 20) / 80) ** (P.p ?? 0.6) : (l) => f.find(([max]) => l <= max)?.[1] ?? 1;
   if (P.t99) {
     // ponytail: one clean curve — old 1–20, geometric 21–99 up to t99, then linear +b per level to 500

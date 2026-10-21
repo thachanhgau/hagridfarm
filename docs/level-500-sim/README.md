@@ -16,4 +16,5 @@ Tham số: `t99`/`b` đường XP; `cap` trần giá hạt; `xpm` hệ số XP t
 `xpcap` trần XP mềm; `felix` [từ giờ, đến giờ, thưởng] thuốc nhân XP; `rain` giờ dùng cả vườn chín ngay.
 `sim-hooks.patch` thêm các móc chỉ dành cho mô phỏng (trần cấp 500, 18 thửa, globalThis.__*), không đưa vào game.
 Từ P1 (`balance-2026-10-21`, 21/10/2026) game đã có giờ cây, XP cây, bữa ăn và mẻ chế biến mới: `run500.mjs` chỉ áp các tham số đó lên dữ liệu cũ, nên lệnh trên vẫn dùng được. Kết quả trên dữ liệu P1: 2 lượt/ngày cấp 100 ngày 51, cấp 500 ngày 203 (khớp mục 3).
+Từ P3 (21/10/2026) game đã có 8 cây bậc Tận Sức và thửa 13–18 thật: `run500.mjs` bỏ qua phần thêm cây và thửa nháp. `sim-hooks.patch` chỉ còn các móc mô phỏng (`__TWEAK`, `__FELIX`, `__XPCAP`, `__GRIND`). Kết quả: 2 lượt/ngày cấp 500 ngày 202; cày 20 lượt ngày 135 (roadmap mục 5).
 `levels-500.csv`: XP mỗi cấp cũ và mới (cấp 1–20 giữ nguyên; 21–99 tăng hình học tới 40.000; 100–499 = 40.000 + 110 × (L − 99)).

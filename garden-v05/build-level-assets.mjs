@@ -10,7 +10,6 @@ const require = createRequire(import.meta.url);
 const sharp = require(process.env.SHARP_MODULE || '/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 const root = path.dirname(fileURLToPath(import.meta.url));
 const sourceConfigPath = path.join(root, 'level-asset-sources.json');
-const balancePath = path.join(root, 'balance-data.json');
 
 const PALETTE_HEX = [
   '231F2E', '4A3042', '735044', 'A57554', '41465C', '687486',
@@ -44,6 +43,14 @@ const TARGETS = {
   ambermelon: [64, 96, 32, 80, 54, 66],
   mistmushroom: [64, 96, 32, 80, 54, 66],
   sunpetal: [64, 96, 32, 80, 54, 66],
+  fluxweed: [64, 96, 32, 80, 54, 66],
+  bubotuber: [64, 96, 32, 80, 54, 66],
+  knotgrass: [64, 96, 32, 80, 54, 66],
+  shrivelfig: [64, 96, 32, 80, 54, 66],
+  gillyweed: [64, 96, 32, 80, 54, 66],
+  mimbulus: [64, 96, 32, 80, 54, 66],
+  flitterbloom: [64, 96, 32, 80, 54, 66],
+  devilssnare: [64, 96, 32, 80, 54, 66],
   mooncalf: [96, 128, 48, 112, 68, 88],
   kneazle: [96, 96, 48, 80, 64, 65],
   diricawl: [96, 96, 48, 80, 58, 58],
@@ -266,7 +273,7 @@ function rasterizeFrame(cell, target, adultScale, paletteCache, warnings, itemId
 function findCatalogRecord(balance, id, kind) {
   const collection = kind === 'crop' ? balance.crops : balance.animals;
   const record = collection.find((entry) => entry.id === id);
-  if (!record) throw new Error(`Missing ${kind} ${id} in balance-data.json`);
+  if (!record) throw new Error(`Missing ${kind} ${id} in balance-data.mjs`);
   return record;
 }
 
@@ -479,7 +486,7 @@ async function auditManifest(manifest) {
     generatedAt: new Date().toISOString(),
     status: manifest.status,
     complete: manifest.complete,
-    expected: {groups: 8, items: 24, frames: 96},
+    expected: {groups: 11, items: 32, frames: 128},
     actual: {groups: manifest.groups.length, items: manifest.items.length, frames: frames.length},
     palette: PALETTE_HEX.map((hex) => `#${hex}`),
     alphaThreshold: ALPHA_THRESHOLD,
@@ -496,7 +503,8 @@ async function main() {
     return;
   }
   const config = JSON.parse(await fs.readFile(sourceConfigPath, 'utf8'));
-  const balance = JSON.parse(await fs.readFile(balancePath, 'utf8'));
+  // balance-data.json stopped at the 18/10 workbook; the live table (bậc Tận Sức crops included) is balance-data.mjs.
+  const {DB: balance} = await import('./balance-data.mjs');
   const missing = [];
   const available = [];
   for (const group of config.groups) {
@@ -519,11 +527,11 @@ async function main() {
   const items = groups.flatMap((group) => group.items);
   const manifest = {
     version: 1,
-    status: missing.length ? `partial: ${available.length}/8 source atlas groups` : 'complete: 8/8 source atlas groups',
+    status: missing.length ? `partial: ${available.length}/${config.groups.length} source atlas groups` : `complete: ${config.groups.length}/${config.groups.length} source atlas groups`,
     complete: missing.length === 0,
     missingGroups: missing,
     sourceConfig: 'level-asset-sources.json',
-    balanceData: 'balance-data.json',
+    balanceData: 'balance-data.mjs',
     palette: PALETTE_HEX.map((hex) => `#${hex}`),
     alphaThreshold: ALPHA_THRESHOLD,
     nearestResize: true,

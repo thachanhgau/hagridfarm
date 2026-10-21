@@ -87,6 +87,69 @@
       "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: AMBER MELON low green vine with amber-gold melons on the ground. Row 2 subject: MIST MUSHROOM cluster of lilac and slate-blue mushrooms with pale speckles, no fog effect. Row 3 subject: SUN PETAL imaginary low flower with gold-orange petals and bright yellow center, dark green leaves, no magical glow. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality."
     },
     {
+      "file": "crops-g",
+      "ids": [
+        "fluxweed",
+        "bubotuber",
+        "knotgrass"
+      ],
+      "rows": [
+        "FLUXWEED (Lý Lan «rong nước xiết»), a slender river water-weed with long wavy ribbon fronds in blue-green and a few pale silvery buds picked at full moon",
+        "BUBOTUBER (Lý Lan «củ u»), thick glossy black slug-like stalks standing upright from the ground, covered in large shiny yellowish swellings full of pus",
+        "KNOTGRASS (Lý Lan «cỏ chút chít»), a low sprawling tuft of wiry jointed grass stems with knotted nodes and tiny pink-white flowers"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: FLUXWEED (Lý Lan «rong nước xiết»), a slender river water-weed with long wavy ribbon fronds in blue-green and a few pale silvery buds picked at full moon. Row 2 subject: BUBOTUBER (Lý Lan «củ u»), thick glossy black slug-like stalks standing upright from the ground, covered in large shiny yellowish swellings full of pus. Row 3 subject: KNOTGRASS (Lý Lan «cỏ chút chít»), a low sprawling tuft of wiry jointed grass stems with knotted nodes and tiny pink-white flowers. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality.",
+      "placeholder": {
+        "status": "PLACEHOLDER: chờ Codex tạo hình từ prompt",
+        "rowsFrom": [
+          "crops-d row 3, hue +60°",
+          "crops-f row 2, hue +200°",
+          "crops-b row 1, hue +300°"
+        ]
+      }
+    },
+    {
+      "file": "crops-h",
+      "ids": [
+        "shrivelfig",
+        "gillyweed",
+        "mimbulus"
+      ],
+      "rows": [
+        "SHRIVELFIG (Lý Lan «trái Sung-quéo»), a small gnarled fig bush whose ripe figs are wrinkled, shrivelled and purple-brown",
+        "GILLYWEED (Lý Lan «cỏ mang cá»), a tangled clump of slimy grey-green tendrils like rat tails, glistening wet",
+        "MIMBULUS MIMBLETONIA, a small round grey cactus-like plant covered with soft boils instead of spines, sitting low on the ground"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: SHRIVELFIG (Lý Lan «trái Sung-quéo»), a small gnarled fig bush whose ripe figs are wrinkled, shrivelled and purple-brown. Row 2 subject: GILLYWEED (Lý Lan «cỏ mang cá»), a tangled clump of slimy grey-green tendrils like rat tails, glistening wet. Row 3 subject: MIMBULUS MIMBLETONIA, a small round grey cactus-like plant covered with soft boils instead of spines, sitting low on the ground. For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality.",
+      "placeholder": {
+        "status": "PLACEHOLDER: chờ Codex tạo hình từ prompt",
+        "rowsFrom": [
+          "crops-d row 1, hue +300°",
+          "crops-d row 3, hue +180°",
+          "crops-e row 1, hue +90°"
+        ]
+      }
+    },
+    {
+      "file": "crops-i",
+      "ids": [
+        "flitterbloom",
+        "devilssnare"
+      ],
+      "rows": [
+        "FLITTERBLOOM (Lý Lan «bông-đòng-đưa»), slender fluttering vines like a gentle Devil's Snare with drooping pink-violet blossoms that sway",
+        "DEVIL'S SNARE (Lý Lan «Bẫy Quỷ»), a dark writhing mass of long snaking tendrils and coiling creeper vines rising from the ground"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: pixel-art game sprite atlas for a cozy isometric fantasy farming game. Create ONE transparent atlas with exactly 3 rows and 4 columns, twelve isolated sprites. Each row shows four growth stages of ONE subject, left to right. Row 1 subject: FLITTERBLOOM (Lý Lan «bông-đòng-đưa»), slender fluttering vines like a gentle Devil's Snare with drooping pink-violet blossoms that sway. Row 2 subject: DEVIL'S SNARE (Lý Lan «Bẫy Quỷ»), a dark writhing mass of long snaking tendrils and coiling creeper vines rising from the ground. Row 3: leave completely empty and transparent (no sprite). For every row, column1 a single little seed on the ground (mushroom spore if appropriate), column2 a tiny seedling, column3 a recognizable immature plant without ripe produce, column4 the fully grown harvest-ready plant. All plants rooted at bottom center; no big soil base. Strict organized rectangular grid: all four cells equal width; all three rows equal height; center each subject horizontally and align its ground baseline at 84 percent down within its own cell. Keep entire sprite including leaves/tails/horns/wings inside cell with at least15 percent blank margin every side; NO touching or overlap across cells. No labels, no letters, no dividers, no UI. Genuine transparent alpha everywhere outside silhouettes, no shadows or glow. Crisp hard-edged pixel art with clean connected color clusters, readable at 50x65 logical pixels for adult. Limited warm earthy palette: dark plum outline, muted olive greens, warm tan/gold highlights plus restrained species-specific colors. Three-quarter isometric view consistent across all cells, no perspective background, no smooth painted gradients, no blur. Cozy handheld farming game sprite quality.",
+      "placeholder": {
+        "status": "PLACEHOLDER: chờ Codex tạo hình từ prompt",
+        "rowsFrom": [
+          "crops-c row 2, hue +270°",
+          "crops-e row 2, hue +150°"
+        ]
+      }
+    },
+    {
       "file": "creatures-a",
       "ids": [
         "mooncalf",

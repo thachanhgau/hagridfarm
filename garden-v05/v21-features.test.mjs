@@ -100,7 +100,7 @@ test('V21 Direction 1b: createGarden makes keepsake pedestals pickable on the so
   assert.equal(kpOrder.length, 2);
 });
 
-test('V21 Direction 2: renderPostcardCanvas composites 960x620 Hogwarts postcard and buildAlmanacChains links all 12 creatures and 24 crops', () => {
+test('V21 Direction 2: renderPostcardCanvas composites 960x620 Hogwarts postcard and buildAlmanacChains links all 12 creatures and 32 crops', () => {
   const state = E.testProfile(60, 1_700_000_000_000);
   state.keepsakes = {puffskein: 2, niffler: 1};
   state.decorations = ['decoration-3', 'decoration-7'];
@@ -144,7 +144,7 @@ test('V21 Direction 2: renderPostcardCanvas composites 960x620 Hogwarts postcard
 
   const almanac = buildAlmanacChains(E.DB, state);
   assert.equal(almanac.creatureChains.length, 12);
-  assert.equal(almanac.cropUsages.length, 24);
+  assert.equal(almanac.cropUsages.length, 32);
   for (const chain of almanac.creatureChains) {
     assert.ok(chain.ingredients.length >= 1, `Creature ${chain.creatureId} should list feed ingredients`);
     assert.ok(chain.produceLabel.length > 0);

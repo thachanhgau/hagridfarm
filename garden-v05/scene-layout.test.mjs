@@ -32,8 +32,8 @@ const overlap = (left, right) => (
 
 const penCells = scene.pens.map((pen) => ({col: pen.col, row: pen.row, width: pen.width, height: pen.height}));
 
-test('all twelve plots are fixed 3x3 cells without overlap', () => {
-  assert.equal(scene.plots.length, 12);
+test('all eighteen plots are fixed 3x3 cells without overlap', () => {
+  assert.equal(scene.plots.length, 18); // thửa 13–18: level-500 roadmap P3
   for (const plot of scene.plots) {
     assert.equal(plot.width, 3);
     assert.equal(plot.height, 3);
@@ -47,7 +47,7 @@ test('all twelve plots are fixed 3x3 cells without overlap', () => {
   const cells = scene.plots.flatMap((plot) => Array.from({length: 9}, (_, index) => (
     `${plot.col + index % 3},${plot.row + Math.floor(index / 3)}`
   )));
-  assert.equal(new Set(cells).size, 108);
+  assert.equal(new Set(cells).size, 162);
 });
 
 test('twelve creature spots stay inside the map and outside every plot', () => {
@@ -81,7 +81,7 @@ test('canonical plot aliases cannot cross-match adjacent construction ids', () =
 
 test('layout projection keeps logical ids while moving coordinates to authored slots', () => {
   const moved = {
-    plots: [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0],
+    plots: [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 12, 13, 14, 15, 16, 17],
     pens: [5, 1, 2, 3, 4, 0],
   };
   const projected = mapLayoutToScene(scene, moved);
@@ -164,7 +164,7 @@ test('renderer remaps built and unbuilt slots, then restores identity without dr
     decorations: [],
     keepsakes: {},
     layout: {
-      plots: [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0],
+      plots: [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 12, 13, 14, 15, 16, 17],
       pens: [5, 1, 2, 3, 4, 0],
     },
   };
@@ -250,7 +250,7 @@ test('enlarged cells still select the correct slot at their centers and near eve
     const [col,row]=plotCellPosition(plot,slot,scene),scale=scene.plotCellScale;
     for(const [dc,dr] of [[0,0],[.4,.4],[-.4,.4],[.4,-.4],[-.4,-.4]]){
       const point=iso(col+dc*scale,row+dr*scale,scene);
-      assert.deepEqual(pickFromWorld(...point,12,scene),{plot:plot.id,index:slot});
+      assert.deepEqual(pickFromWorld(...point,scene.plots.length,scene),{plot:plot.id,index:slot});
     }
   }
   const width=plotPhysicalBounds(scene.plots[0],scene).width;

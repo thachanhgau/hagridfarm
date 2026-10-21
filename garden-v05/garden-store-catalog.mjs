@@ -1,7 +1,8 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
 import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.64";
 import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.64";
-export const CATALOG_VERSION="garden-2026-10-21-level500-p1";
+import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.64";
+export const CATALOG_VERSION="garden-2026-10-21-level500-p3";
 export const STORE_CATALOG=Object.freeze([
   {
     "id": "seed_pumpkin",
@@ -316,6 +317,110 @@ export const STORE_CATALOG=Object.freeze([
     "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
   },
   {
+    "id": "seed_fluxweed",
+    "kind": "seed",
+    "icon": "fluxweed",
+    "cropId": "fluxweed",
+    "label": "Hạt Rong nước xiết",
+    "level": 105,
+    "price": 6,
+    "quantity": 3,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
+    "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
+  },
+  {
+    "id": "seed_bubotuber",
+    "kind": "seed",
+    "icon": "bubotuber",
+    "cropId": "bubotuber",
+    "label": "Hạt Củ u",
+    "level": 130,
+    "price": 6,
+    "quantity": 3,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
+    "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
+  },
+  {
+    "id": "seed_knotgrass",
+    "kind": "seed",
+    "icon": "knotgrass",
+    "cropId": "knotgrass",
+    "label": "Hạt Cỏ chút chít",
+    "level": 160,
+    "price": 6,
+    "quantity": 3,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
+    "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
+  },
+  {
+    "id": "seed_shrivelfig",
+    "kind": "seed",
+    "icon": "shrivelfig",
+    "cropId": "shrivelfig",
+    "label": "Hạt Sung-quéo",
+    "level": 200,
+    "price": 6,
+    "quantity": 3,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
+    "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
+  },
+  {
+    "id": "seed_gillyweed",
+    "kind": "seed",
+    "icon": "gillyweed",
+    "cropId": "gillyweed",
+    "label": "Hạt Cỏ mang cá",
+    "level": 250,
+    "price": 6,
+    "quantity": 3,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
+    "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
+  },
+  {
+    "id": "seed_mimbulus",
+    "kind": "seed",
+    "icon": "mimbulus",
+    "cropId": "mimbulus",
+    "label": "Hạt Mimbulus mimbletonia",
+    "level": 310,
+    "price": 6,
+    "quantity": 3,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
+    "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
+  },
+  {
+    "id": "seed_flitterbloom",
+    "kind": "seed",
+    "icon": "flitterbloom",
+    "cropId": "flitterbloom",
+    "label": "Hạt Bông-đòng-đưa",
+    "level": 380,
+    "price": 6,
+    "quantity": 3,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
+    "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
+  },
+  {
+    "id": "seed_devilssnare",
+    "kind": "seed",
+    "icon": "devilssnare",
+    "cropId": "devilssnare",
+    "label": "Hạt Bẫy Quỷ",
+    "level": 450,
+    "price": 6,
+    "quantity": 3,
+    "dailyLimit": 1000,
+    "overflowMultiplier": 5,
+    "description": "Gói 3 hạt · gieo một hàng. Cần thêm 3 phần nước."
+  },
+  {
     "id": "water",
     "kind": "water",
     "label": "Nước tưới",
@@ -584,6 +689,9 @@ export const seasonOpens=(item,dayKey=vnDayKey())=>{let d=dayKey;for(let i=0;i<6
 // Why an item cannot be bought yet ('' when it can): out of season (seasonal items ignore the level), else below its level.
 export const storeLock=(item,level,dayKey=vnDayKey())=>{
  if(item.season){if(inSeason(item,dayKey))return '';const d=seasonOpens(item,dayKey);return d?`Mở bán ${d.slice(8)}/${d.slice(5,7)}`:'Ngoài mùa lễ hội';}
- return item.level>level?`Cấp ${item.level}`:'';
+ if(item.level<=level)return '';
+ return item.level>TAN_SUC_LEVEL?`Cấp ${TAN_SUC_LEVEL} ★${item.level-TAN_SUC_LEVEL}`:`Cấp ${item.level}`;
 };
+// Level-500 roadmap §12: below level 100 nothing from bậc Tận Sức shows, not even as a locked card.
+export const storeVisible=(item,level)=>item.level<=TAN_SUC_LEVEL||level>=TAN_SUC_LEVEL;
 export const unlockedCatalog=(level,dayKey=vnDayKey())=>STORE_CATALOG.filter(item=>item.level<=level&&inSeason(item,dayKey));

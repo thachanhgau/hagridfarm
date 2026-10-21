@@ -282,6 +282,138 @@
           19.275
         ]
       }
+    },
+    {
+      "id": 12,
+      "col": 10,
+      "row": 28.5,
+      "width": 3,
+      "height": 3,
+      "requiredLevel": 110,
+      "positions": {
+        "center": [
+          11,
+          29.5
+        ],
+        "camera": [
+          11,
+          29.5
+        ],
+        "label": [
+          11.4,
+          31.775
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "col": 18.5,
+      "row": 28.5,
+      "width": 3,
+      "height": 3,
+      "requiredLevel": 130,
+      "positions": {
+        "center": [
+          19.5,
+          29.5
+        ],
+        "camera": [
+          19.5,
+          29.5
+        ],
+        "label": [
+          19.9,
+          31.775
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "col": 5,
+      "row": 28.5,
+      "width": 3,
+      "height": 3,
+      "requiredLevel": 160,
+      "positions": {
+        "center": [
+          6,
+          29.5
+        ],
+        "camera": [
+          6,
+          29.5
+        ],
+        "label": [
+          6.4,
+          31.775
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "col": 23.5,
+      "row": 28.5,
+      "width": 3,
+      "height": 3,
+      "requiredLevel": 200,
+      "positions": {
+        "center": [
+          24.5,
+          29.5
+        ],
+        "camera": [
+          24.5,
+          29.5
+        ],
+        "label": [
+          24.9,
+          31.775
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "col": 0,
+      "row": 28.5,
+      "width": 3,
+      "height": 3,
+      "requiredLevel": 260,
+      "positions": {
+        "center": [
+          1,
+          29.5
+        ],
+        "camera": [
+          1,
+          29.5
+        ],
+        "label": [
+          1.4,
+          31.775
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "col": 28.5,
+      "row": 28.5,
+      "width": 3,
+      "height": 3,
+      "requiredLevel": 330,
+      "positions": {
+        "center": [
+          29.5,
+          29.5
+        ],
+        "camera": [
+          29.5,
+          29.5
+        ],
+        "label": [
+          29.9,
+          31.775
+        ]
+      }
     }
   ],
   "pens": [
@@ -616,7 +748,7 @@
       "col": -3,
       "row": -3,
       "width": 39,
-      "height": 34
+      "height": 40
     },
     {
       "id": "hut-meadow",
