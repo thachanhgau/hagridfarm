@@ -1,5 +1,5 @@
 import {el, button, num, hours, realHours, visualItemIcon} from './ui-utils.mjs?v=24.9.63';
-import {levelLabel} from './progression-engine.mjs';
+import {levelLabel} from './progression-engine.mjs?v=24.9.63';
 import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=24.9.63';
 
 /**

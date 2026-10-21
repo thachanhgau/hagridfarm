@@ -1,4 +1,4 @@
-import {getGardenStorage} from './garden-storage.mjs';
+import {getGardenStorage} from './garden-storage.mjs?v=24.9.63';
 import {el, button} from './ui-utils.mjs?v=24.9.63';
 import {pixelIcon, rewardChips, lockBadge, iconButton} from './pixel-icons.mjs?v=24.9.63';
 

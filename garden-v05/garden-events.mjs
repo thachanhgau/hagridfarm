@@ -1,4 +1,4 @@
-import {getGardenStorage} from './garden-storage.mjs';
+import {getGardenStorage} from './garden-storage.mjs?v=24.9.63';
 import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.63';
 import {stableHash} from './scene-animation.mjs?v=24.9.63';
 import {dayKeyFor} from './garden-quests.mjs?v=24.9.63';

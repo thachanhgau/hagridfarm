@@ -1,12 +1,12 @@
 import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.63';
-import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
+import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.63';
 import {setupWorkTrays} from './work-trays.mjs?v=24.9.63';
 import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.63';
 import {decorLabelFor,decorSpot} from './decor-runtime.mjs?v=24.9.63';
 import {setupWizardUI} from './wizard-ui.mjs?v=24.9.63';
 import {showStore} from './garden-store-ui.mjs?v=24.9.63';
 import {setupProfile} from './profile-ui.mjs?v=24.9.63';
-import * as E from './progression-engine.mjs';
+import * as E from './progression-engine.mjs?v=24.9.63';
 import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.63';
 import {setupCamera} from './camera.mjs?v=24.9.63';
 import {createPanels} from './progression-panels.mjs?v=24.9.63';

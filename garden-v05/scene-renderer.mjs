@@ -13,7 +13,7 @@ import {drawEventOverlay} from './garden-events.mjs?v=24.9.63';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.63';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.63';
 import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.63';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.63';
 import {
   animationFrameAt,
   idleFrameAt,

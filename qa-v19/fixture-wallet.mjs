@@ -1,10 +1,10 @@
-import * as E from "../garden-v05/progression-engine.mjs";
+import * as E from "../garden-v05/progression-engine.mjs?v=24.9.63";
 import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=24.9.40";
 import {decorFootprintRect,rectsOverlap} from "../garden-v05/decor-runtime.mjs?v=24.9.40";
 import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.40";
 import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.40";
 import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.40";
-import {applyGardenReward} from "../garden-v05/garden-storage.mjs";
+import {applyGardenReward} from "../garden-v05/garden-storage.mjs?v=24.9.63";
 import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
 import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=24.9.40";
 
