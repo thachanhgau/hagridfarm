@@ -13,9 +13,14 @@
  * award XP.
  */
 
-import { DB, CROP, CREATURE, RECIPE, EXPANSION } from './balance-data.mjs';
+import { DB, CROP, CREATURE, RECIPE, EXPANSION, MAX_LEVEL, TAN_SUC_LEVEL } from './balance-data.mjs';
 
-export { DB, CROP, CREATURE };
+export { DB, CROP, CREATURE, MAX_LEVEL, TAN_SUC_LEVEL };
+
+/** «Cấp 37/100» below the bậc Tận Sức, «Cấp 100 ★k» above it (roadmap §12). */
+export function levelLabel(level) {
+  return level > TAN_SUC_LEVEL ? `Cấp ${TAN_SUC_LEVEL} ★${level - TAN_SUC_LEVEL}` : `Cấp ${level}/${TAN_SUC_LEVEL}`;
+}
 
 const MAX_TIME_MS = 8_640_000_000_000_000;
 const MAX_SAFE = Number.MAX_SAFE_INTEGER;
@@ -543,7 +548,7 @@ function normalizeState(raw) {
   const createdAt = assertFiniteTime(raw.createdAt, 'createdAt');
   const xp = assertNonNegativeInteger(raw.xp, 'xp');
   const level = assertSafeInteger(raw.level, 'level');
-  if (level < 1 || level > 100 || level !== levelForXp(xp)) reject('INVALID_STATE', 'level does not match XP');
+  if (level < 1 || level > MAX_LEVEL || level !== levelForXp(xp)) reject('INVALID_STATE', 'level does not match XP');
   const offsetMs = assertDuration(raw.offsetMs, 'offsetMs');
   const revision = assertNonNegativeInteger(raw.revision, 'revision');
   const layout = normalizeLayout(raw.layout);
@@ -1087,7 +1092,7 @@ function unlockedAtLevel(entry, level) {
 export function testProfile(level, now) {
   const timestamp = assertFiniteTime(now, 'now');
   assertSafeInteger(level, 'level');
-  if (level < 1 || level > 100) reject('INVALID_LEVEL', 'testProfile level must be between 1 and 100');
+  if (level < 1 || level > MAX_LEVEL) reject('INVALID_LEVEL', `testProfile level must be between 1 and ${MAX_LEVEL}`);
   const state = makeInitialState(timestamp);
   state.xp = DB.levels[level - 1].totalXP;
   state.level = level;

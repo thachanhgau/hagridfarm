@@ -1,5 +1,6 @@
-import {el, button, num, hours, realHours, visualItemIcon} from './ui-utils.mjs?v=24.9.62';
-import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=24.9.62';
+import {el, button, num, hours, realHours, visualItemIcon} from './ui-utils.mjs?v=24.9.63';
+import {levelLabel} from './progression-engine.mjs';
+import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=24.9.63';
 
 /**
  * V21.0 Direction 2:
@@ -158,7 +159,7 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
   const weatherSuffix = meta.weatherLabel ? ` · ${meta.weatherIcon} ${meta.weatherLabel}` : '';
   const eventSuffix = meta.eventLabel ? ` · ${meta.eventLabel}` : '';
   ctx.fillText(
-    `Cấp ${meta.level}/100 · Chương ${meta.stageId}/6: ${meta.stageName} · ${meta.atmosphereIcon} ${meta.atmosphereLabel}${weatherSuffix}${eventSuffix}`,
+    `${levelLabel(meta.level)} · Chương ${meta.stageId}/6: ${meta.stageName} · ${meta.atmosphereIcon} ${meta.atmosphereLabel}${weatherSuffix}${eventSuffix}`,
     108,
     plaqueY + 50,
     lineWidth,

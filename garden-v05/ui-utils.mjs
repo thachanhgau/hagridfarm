@@ -283,6 +283,14 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
  const expansion = DB.expansions.find(e => e.level === lv);
  const recipe = DB.recipes.find(r => r.level === lv);
  const earnedDecor = DB.decorations?.find(d => d.level === lv);
+ if (/^Bậc Tận Sức/.test(levelRow?.unlock || "")) {
+  return {
+   visual: el("div", { class: "visual-slot is-tan-suc", style: `width:${size}px;height:${size}px` }, [el("b", { text: "★" })]),
+   category: "Bậc Tận Sức",
+   categoryClass: "cat-tan-suc",
+   meta: levelRow.xpToNext ? `${num(levelRow.xpToNext)} XP tới bậc sau` : "Bậc cao nhất",
+  };
+ }
 
  if (animal) {
   const badge = expansion ? (expansion.kind === "pen" ? "+Chuồng" : "+Thửa") : "";

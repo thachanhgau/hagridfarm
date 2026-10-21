@@ -1,5 +1,5 @@
-import {$,el,duration} from './ui-utils.mjs?v=24.9.62';
-import {pixelIcon,setAction,rewardChips,iconButton,lockBadge} from './pixel-icons.mjs?v=24.9.62';
+import {$,el,duration} from './ui-utils.mjs?v=24.9.63';
+import {pixelIcon,setAction,rewardChips,iconButton,lockBadge} from './pixel-icons.mjs?v=24.9.63';
 import {
  loadOwlQuests,
  saveOwlQuests,
@@ -10,7 +10,7 @@ import {
  dailyCompletionSummary,
  hasClaimableOwlQuest,
  DAILY_GRAND_CHEST_REWARD,
-} from './garden-quests.mjs?v=24.9.62';
+} from './garden-quests.mjs?v=24.9.63';
 
 // Presentation only: every crop mutation still uses the existing engine/command.
 export function cropContext(state, selection, E, now) {
@@ -156,11 +156,20 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
 
  function openLetter(kind='owl'){
   panels.close();$('seedOptions').close();
-  const isGreenhouse=kind==='greenhouse',isGardener=kind==='gardener';
-  $('letterTitle').textContent=isGreenhouse?'Nhà kính':isGardener?'Lời nhắn':'Thư cú';
+  const isGreenhouse=kind==='greenhouse',isGardener=kind==='gardener',isTanSuc=kind==='tanSuc';
+  $('letterTitle').textContent=isGreenhouse?'Nhà kính':isGardener?'Lời nhắn':isTanSuc?'Thư bác Hagrid':'Thư cú';
   // The daily letter closes with ×; only the short notes keep a route button.
-  $('letterAction').hidden=!isGreenhouse&&!isGardener;
-  if(isGreenhouse){
+  $('letterAction').hidden=!isGreenhouse&&!isGardener&&!isTanSuc;
+  if(isTanSuc){
+   // Sent once, when the garden reaches level 100 (roadmap §12).
+   $('letterBody').replaceChildren(...[
+    'Con giỏi quá! Cấp 100 rồi, mảnh vườn nhỏ giờ thành Đại khu vườn thật rồi đó.',
+    'Bác ghi tên con vào bậc Tận Sức: còn bốn trăm bậc nữa, mỗi bậc thêm một ngôi sao ★. Tới cấp 500, bác có huy hiệu riêng cho con.',
+    'Cứ gieo, gặt, nuôi như thường nghen. Không cần vội đâu. — Hagrid',
+   ].map(text=>el('p',{text})));
+   $('letterAction').textContent='Xem bậc Tận Sức';
+   letterRoute=()=>panels.show('roadmap');
+  }else if(isGreenhouse){
    $('letterBody').replaceChildren(el('p',{text:'Chọn hạt giống, rồi mang hạt ra luống trống để gieo.'}));
    $('letterAction').textContent='Hạt giống';
    letterRoute=()=>panels.show('crops');

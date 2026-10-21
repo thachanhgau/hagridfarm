@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.62';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.62';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.62";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.62";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.62";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.62";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.62";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.62";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.62";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.62";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.62";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.63';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.63';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.63";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.63";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.63";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.63";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.63";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.63";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.63";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.63";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.63";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -69,15 +69,15 @@ export function createPanels(ctx){
    const s=getState(),info=E.levelInfo(s),current=ctx.getGardenStage?.()??gardenStage(s);
    const unlockedCrops=DB.crops.filter(c=>c.level<=s.level).length;
    const unlockedAnimals=DB.animals.filter(a=>a.level<=s.level).length;
-   const pct=s.level>=100?100:Math.min(100,Math.round((info.xpInLevel/Math.max(1,info.xpToNext))*100));
+   const pct=s.level>=E.MAX_LEVEL?100:Math.min(100,Math.round((info.xpInLevel/Math.max(1,info.xpToNext))*100));
 
    const hero=el("section",{class:"journey-hero-card"},[
     el("div",{class:"journey-hero-main"},[
-     el("span",{class:"gp-level-badge is-big","aria-label":"Cấp "+s.level},[el("b",{text:String(s.level)})]),
+     el("span",{class:"gp-level-badge is-big","aria-label":E.levelLabel(s.level)},[el("b",{text:s.level>E.TAN_SUC_LEVEL?"★"+(s.level-E.TAN_SUC_LEVEL):String(s.level)})]),
      el("div",{class:"journey-hero-copy"},[
       el("small",{class:"journey-kicker",text:`CHƯƠNG ${current.id}/6`}),
       el("h3",{text:s.level>=100?"Đại khu vườn":current.name}),
-      el("p",{text:s.level>=100?`${num(s.xp)} XP · Hoàn tất`:`${num(info.xpInLevel)} / ${num(info.xpToNext)} XP`}),
+      el("p",{text:s.level>=E.MAX_LEVEL?`${num(s.xp)} XP · Hoàn tất`:`${num(info.xpInLevel)} / ${num(info.xpToNext)} XP`}),
       el("div",{class:"journey-xp-bar"},[el("span",{style:`width:${pct}%`})]),
      ]),
     ]),
@@ -90,10 +90,12 @@ export function createPanels(ctx){
 
    const filterWrap=el("div",{class:"journey-controls-bar"});
    const rangeBar=el("div",{class:"journey-range-tabs",role:"group","aria-label":"Chặng cấp độ"});
-   for(let start=1;start<=100;start+=20){
-    const end=start+19;
+   // Levels above 100 stay hidden until the garden reaches 100; then one tab holds the current twenty of bậc Tận Sức.
+   const T=E.TAN_SUC_LEVEL,visibleMax=s.level>=T?E.MAX_LEVEL:T,tanSucStart=Math.floor((Math.max(s.level,T+1)-1)/20)*20+1;
+   for(const start of [1,21,41,61,81,...(s.level>=T?[tanSucStart]:[])]){
+    const end=Math.min(start+19,visibleMax),tan=start>T;
     const hasCurrent=s.level>=start&&s.level<=end;
-    rangeBar.append(button(`${start}–${end}`,()=>{roadStart=start;refresh();},{"aria-pressed":String(roadStart===start),"aria-label":`Cấp ${start}–${end}`,class:"journey-tab-btn"+(hasCurrent?" has-current":"")}));
+    rangeBar.append(button(tan?`★${start-T}–${end-T}`:`${start}–${end}`,()=>{roadStart=start;refresh();},{"aria-pressed":String(roadStart===start||tan&&roadStart>T),"aria-label":tan?`Bậc Tận Sức ★${start-T}–${end-T}`:`Cấp ${start}–${end}`,class:"journey-tab-btn"+(hasCurrent?" has-current":"")}));
    }
    const catBar=el("div",{class:"journey-cat-tabs",role:"group","aria-label":"Lọc loại mở khóa"});
    for(const [id,name,px] of [["all","Tất cả","more"],["cat-crop","Cây trồng","sow"],["cat-creature","Sinh vật","pen"],["cat-build","Công trình","build"],["cat-craft","Chế biến","craft"],["cat-decor","Cảnh quan","scenery"]]){
@@ -102,7 +104,8 @@ export function createPanels(ctx){
    filterWrap.append(rangeBar,catBar);
    body.append(filterWrap);
 
-   const slice=roadFilter==="all"?DB.levels.slice(roadStart-1,roadStart+19):DB.levels;
+   if(roadStart>T)roadStart=tanSucStart;
+   const slice=roadFilter==="all"?DB.levels.slice(roadStart-1,Math.min(roadStart+19,visibleMax)):DB.levels.slice(0,visibleMax);
    const list=el("ol",{class:"roadmap journey-milestone-grid"});
    for(const l of slice){
     const infoVis=levelUnlockVisual(l,DB,items,48);
@@ -112,7 +115,7 @@ export function createPanels(ctx){
     const li=el("li",{class:`journey-card ${stateClass} ${infoVis.categoryClass}`},[
      el("div",{class:"journey-card-art"},[
       infoVis.visual,
-      isDone||isCurrent?el("span",{class:"badge journey-level-badge",text:String(l.level)}):lockBadge(l.level),
+      isDone||isCurrent?el("span",{class:"badge journey-level-badge",text:l.level>T?"★"+(l.level-T):String(l.level)}):lockBadge(l.level>T?"★"+(l.level-T):l.level),
      ]),
      el("div",{class:"journey-card-body"},[
       el("div",{class:"journey-card-tags"},[
@@ -532,7 +535,7 @@ export function createPanels(ctx){
    const s=getState();
    body.append(el("section",{class:"v24-profile-view"},[
     el("div",{class:"v24-profile-id"},[
-     el("span",{class:"gp-level-badge","aria-label":"Cấp "+s.level},[el("b",{text:String(s.level)})]),
+     el("span",{class:"gp-level-badge","aria-label":E.levelLabel(s.level)},[el("b",{text:s.level>E.TAN_SUC_LEVEL?"★"+(s.level-E.TAN_SUC_LEVEL):String(s.level)})]),
      el("div",{},[el("strong",{text:$("playerName")?.textContent||"Người làm vườn"}),el("small",{text:`${num(s.xp)} XP`})]),
     ]),
     toolbar(

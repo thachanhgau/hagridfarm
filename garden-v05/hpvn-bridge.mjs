@@ -1,15 +1,16 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import { normalizeDecorFacing } from './decor-runtime.mjs?v=24.9.62';
+import {levelLabel} from './progression-engine.mjs';
+import { normalizeDecorFacing } from './decor-runtime.mjs?v=24.9.63';
 import {
   normalizeAtmosphereMode,
   atmosphereConfig,
   normalizeWeatherMode,
   weatherConfig,
-} from './garden-atmosphere.mjs?v=24.9.62';
+} from './garden-atmosphere.mjs?v=24.9.63';
 import {
   normalizeEventMode,
   eventConfig,
-} from './garden-events.mjs?v=24.9.62';
+} from './garden-events.mjs?v=24.9.63';
 
 export const VISUAL_PREFS_STORAGE_KEY = 'hpvn-garden-v20-visual-prefs';
 export const LEGACY_DECOR_STORAGE_KEY = 'hpvn-garden-v18-decor-layout';
@@ -123,7 +124,7 @@ export function formatFlooShareMessage({
   const eventPart = eCfg && eCfg.id !== 'none' ? ` · ${eCfg.shortLabel}` : '';
   const titlePart = keeperTitle ? ` · Danh hiệu [${keeperTitle}]` : '';
   const affinityPart = Number(totalAffinity) > 0 ? ` · ♥ Gắn kết ${totalAffinity}` : '';
-  return `🌿 [Khu Vườn Hagrid · Cấp ${level}/100${titlePart}] ${resolvedStageName} (${atmo.shortLabel || atmo.label}${weatherPart}${eventPart}) — ${plots}/12 thửa đất, ${creatures}/12 sinh vật huyền bí, ${placedStoreCount + earnedCount} vật phẩm trang trí & ${keepsakeTotal} kỷ vật${affinityPart}!`;
+  return `🌿 [Khu Vườn Hagrid · ${levelLabel(level)}${titlePart}] ${resolvedStageName} (${atmo.shortLabel || atmo.label}${weatherPart}${eventPart}) — ${plots}/12 thửa đất, ${creatures}/12 sinh vật huyền bí, ${placedStoreCount + earnedCount} vật phẩm trang trí & ${keepsakeTotal} kỷ vật${affinityPart}!`;
 }
 
 export function createHpvnBridge({

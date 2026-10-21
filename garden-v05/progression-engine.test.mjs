@@ -29,6 +29,8 @@ import {
   advanceTime,
   restoreChecked,
   testProfile,
+  levelLabel,
+  MAX_LEVEL,
 } from './progression-engine.mjs';
 
 const NOW = 1_800_000_000_000;
@@ -81,7 +83,7 @@ test('approved balance exposes all crops, creatures, levels, recipes, and Vietna
   assert.equal(DB.crops.length, 24);
   assert.equal(DB.animals.length, 12);
   assert.equal(DB.recipes.length, 27); // the two kit recipes were removed on 18/10/2026
-  assert.equal(DB.levels.length, 100);
+  assert.equal(DB.levels.length, 500);
   assert.equal(CROP.daisy.label, 'Cúc trắng');
   assert.equal(CROP.dittany.label, 'Bạch tiễn');
   assert.equal(CREATURE.hippogriff.label, 'Bằng-Mã');
@@ -442,6 +444,25 @@ test('testProfile covers every approved level and seeds only actual built capaci
   assert.equal(housingCapacity(end), 12);
 });
 
+test('level-500 P2: levels 100–500 follow the roadmap curve and the simulator table', () => {
+  // docs/level-500-roadmap.md §4: xpToNext(L) = 40.000 + 110 × (L − 99) for 100–499; 500 is the cap.
+  const csv = readFileSync(new URL('../docs/level-500-sim/levels-500.csv', import.meta.url), 'utf8').trim().split('\n').slice(1)
+    .map((line) => line.split(',')).map(([level, , xpToNext, totalXP]) => [Number(level), Number(xpToNext), Number(totalXP)]);
+  assert.deepEqual(DB.levels.map((row) => [row.level, row.xpToNext, row.totalXP]), csv);
+  assert.equal(MAX_LEVEL, 500);
+  assert.equal(DB.levels[99].unlock.endsWith('mở bậc Tận Sức (cấp 101–500)'), true);
+  assert.equal(DB.levels[100].unlock, 'Bậc Tận Sức ★1');
+  assert.equal(DB.levels[499].unlock, 'Bậc Tận Sức ★400; huy hiệu Cấp 500');
+  assert.deepEqual([levelLabel(37), levelLabel(100), levelLabel(101), levelLabel(500)], ['Cấp 37/100', 'Cấp 100/100', 'Cấp 100 ★1', 'Cấp 100 ★400']);
+  // XP past level 100 now counts: a level-100 garden with 40.110 more XP is level 101; 500 is the ceiling.
+  const top = testProfile(500, NOW);
+  assert.equal(levelInfo(top).xpToNext, 0);
+  const s100 = testProfile(100, NOW);
+  assert.equal(restoreChecked(JSON.stringify({...s100, xp: s100.xp + 40_110, level: 101}), NOW).level, 101);
+  codeOf(() => restoreChecked(JSON.stringify({...s100, level: 101}), NOW), 'INVALID_STATE');
+  codeOf(() => testProfile(501, NOW), 'INVALID_LEVEL');
+});
+
 test('every approved crop completes all lifecycle boundaries and harvests', () => {
   let state = testProfile(100, NOW);
   const line = lineCells('horizontal', 0);
@@ -552,10 +573,10 @@ test('engine core remains in parity with the approved 1-100 balance source and t
   assert.deepEqual(DB.recipes, APPROVED.recipes.filter((r) => r.output !== 'kit'));
   assert.deepEqual(selectFields(DB.expansions, expansionFields), selectFields(APPROVED.expansions, expansionFields));
   assert.deepEqual(
-    selectFields(DB.levels, ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
-    selectFields(patch(APPROVED.levels, 'level', KIT_TEXT.levels, 'unlock'), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
+    selectFields(DB.levels.slice(0, 99), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
+    selectFields(patch(APPROVED.levels, 'level', KIT_TEXT.levels, 'unlock').slice(0, 99), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
   );
-  assert.equal(DB.levels.at(-1).totalXP, 1_427_360);
+  assert.equal(DB.levels[99].totalXP, 1_427_360);
   assert.deepEqual([DB.levels[29].xpToNext, DB.levels[29].totalXP, DB.levels[98].xpToNext], [6913, 103_332, 40_000]);
   assert.equal(DB.balanceVersion, 'balance-2026-10-21');
 });

@@ -1,8 +1,8 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.62';
-import {stableHash} from './scene-animation.mjs?v=24.9.62';
-import {dayKeyFor} from './garden-quests.mjs?v=24.9.62';
-import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.62';
+import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.63';
+import {stableHash} from './scene-animation.mjs?v=24.9.63';
+import {dayKeyFor} from './garden-quests.mjs?v=24.9.63';
+import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.63';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -731,7 +731,7 @@ export function buildGuestbookEntries({gameState = {}, eventMode = 'event_hallow
       author: 'Giáo sư Sprout',
       role: 'Chủ nhiệm Nhà Hufflepuff · Thảo dược học',
       avatar: '🌿',
-      stamp: `Vườn Cấp ${lv}`,
+      stamp: lv > 100 ? `Vườn Cấp 100 ★${lv - 100}` : `Vườn Cấp ${lv}`,
       message:
         lv >= 45
           ? `Các luống Nhân sâm và thảo dược quý của con lên đều tăm tắp! Nhà kính Số 3 luôn rộng cửa đón con ghé thăm.`

@@ -36,7 +36,7 @@ export function nextGoal(E, state) {
  // Past 90% of a level the ring looks full (the last few % are hundreds of XP at higher levels):
  // the level goes first so the chip says how much XP is left (owner report 20/10/2026).
  const row = DB.levels[state.level - 1];
- if (state.level < 100 && state.xp - row.totalXP >= row.xpToNext * 0.9) return levelGoal(E, state);
+ if (state.level < E.MAX_LEVEL && state.xp - row.totalXP >= row.xpToNext * 0.9) return levelGoal(E, state);
  const exp = nextExpansion(DB, state);
  if (exp) {
   const label = exp.kind === 'pen' ? 'Mở chuồng' : 'Mở thửa';
@@ -51,7 +51,7 @@ export function nextGoal(E, state) {
   const need = portions ? firstMissing(DB, state, animal.feed, portions) : null;
   return {need, target: {kind: 'creature', id: animal.id}, label: 'Đón ' + animal.label, route: need ? need.route : 'creature'};
  }
- if (state.level >= 100) return null;
+ if (state.level >= E.MAX_LEVEL) return null;
  return levelGoal(E, state);
 }
 
@@ -62,7 +62,7 @@ function levelGoal(E, state) {
  return {
   need: {id: 'xp', n: Math.max(0, info.xpToNext - info.xpInLevel), route: 'plant'},
   target: {kind: unlock ? (DB.crops.includes(unlock) ? 'crop' : 'creature') : 'level', id: unlock?.id || 'level', level: next},
-  label: 'Cấp ' + next + (text ? ' · ' + text : ''),
+  label: next > E.TAN_SUC_LEVEL ? text : 'Cấp ' + next + (text ? ' · ' + text : ''),
   route: 'plant',
  };
 }

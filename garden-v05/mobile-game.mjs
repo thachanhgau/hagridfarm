@@ -1,37 +1,37 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.62';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.63';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.62';
-import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.62';
-import {decorLabelFor,decorSpot} from './decor-runtime.mjs?v=24.9.62';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.62';
-import {showStore} from './garden-store-ui.mjs?v=24.9.62';
-import {setupProfile} from './profile-ui.mjs?v=24.9.62';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.63';
+import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.63';
+import {decorLabelFor,decorSpot} from './decor-runtime.mjs?v=24.9.63';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.63';
+import {showStore} from './garden-store-ui.mjs?v=24.9.63';
+import {setupProfile} from './profile-ui.mjs?v=24.9.63';
 import * as E from './progression-engine.mjs';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.62';
-import {setupCamera} from './camera.mjs?v=24.9.62';
-import {createPanels} from './progression-panels.mjs?v=24.9.62';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.62';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.62';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.62';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.62';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.62';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.62';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.62';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.62';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.62';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.62';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.62';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.62';
-import {nextGoal} from './next-goal.mjs?v=24.9.62';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.62';
-import {createMissions} from './garden-missions-ui.mjs?v=24.9.62';
-import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.62';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.62';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.63';
+import {setupCamera} from './camera.mjs?v=24.9.63';
+import {createPanels} from './progression-panels.mjs?v=24.9.63';
+import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.63';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.63';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.63';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.63';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.63';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.63';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.63';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.63';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.63';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.63';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.63';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.63';
+import {nextGoal} from './next-goal.mjs?v=24.9.63';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.63';
+import {createMissions} from './garden-missions-ui.mjs?v=24.9.63';
+import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.63';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.63';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.62':'./garden-emulator-client.mjs?v=24.9.62');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.63':'./garden-emulator-client.mjs?v=24.9.63');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -464,7 +464,7 @@ function refresh(){
  queueMicrotask(syncGuide);
  selectedPlot=Math.min(selectedPlot,state.plots.length-1);const now=logical(),slots=state.plots[selectedPlot].slots,c=CROP[seed],cr=CREATURE[species],n=slots.filter(Boolean).length,types=new Set(slots.filter(Boolean).map(e=>e.species)),info=E.levelInfo(state),animal=owned(species);
  $('shopButton').disabled=connected&&!walletReady;
- $('levelValue').textContent=state.level;$('xpText').textContent=state.level===100?'Đã đạt cấp 100':num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('levelButton').style.setProperty('--xp',(state.level===100?100:Math.min(100,info.xpInLevel/info.xpToNext*100)).toFixed(1));$('levelButton').setAttribute('aria-label','Hồ sơ · Cấp '+state.level+' · '+$('xpText').textContent);
+ const tanSuc=state.level>E.TAN_SUC_LEVEL,top=state.level===E.MAX_LEVEL;$('levelValue').textContent=tanSuc?'★'+(state.level-E.TAN_SUC_LEVEL):state.level;$('levelValue').classList.toggle('is-tan-suc',tanSuc);$('xpText').textContent=top?'Đã đạt cấp '+E.MAX_LEVEL:num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('levelButton').style.setProperty('--xp',(top?100:Math.min(100,info.xpInLevel/info.xpToNext*100)).toFixed(1));$('levelButton').setAttribute('aria-label','Hồ sơ · '+E.levelLabel(state.level)+' · '+$('xpText').textContent);
  syncSupplies();syncGoal();
  $('levelButton').dataset.level=state.level;$('levelButton').dataset.xp=state.xp;$('levelButton').title=connected?(walletReady?WALLET_TEXT.title:WALLET_TEXT.connecting):(session==='lab'?'Phiên thử · ':'')+(saveAvailable?'Đã lưu trên thiết bị':'Chưa lưu được');
  $('plotLabel').textContent=(selectedPlot+1)+'/'+state.plots.length;$('plotCount').textContent=n+'/9';$('plotsButton').setAttribute('aria-label','Thửa '+(selectedPlot+1)+' / '+state.plots.length+' · '+n+'/9 ô');
@@ -648,8 +648,9 @@ function applyInitialView(){
 // HPVN's game frame forbids fetch (CSP connect-src in an opaque sandbox); its copy ships the manifest as a script.
 (window.FARM_DECOR_MANIFEST?Promise.resolve(window.FARM_DECOR_MANIFEST):fetch('./decor-assets-manifest.json?v=24.0').then(r=>{if(!r.ok)throw Error('Thiếu bộ tranh trang trí.');return r.json();})).then(manifest=>{const itemsV=manifest.items.map(a=>({...a,file:addV(a.file),frames:Array.isArray(a.frames)?a.frames.map(addV):undefined,rightFile:addV(a.rightFile),rightFrames:Array.isArray(a.rightFrames)?a.rightFrames.map(addV):undefined}));decorAssets.clear();for(const a of itemsV)decorAssets.set(a.id,a);return createGarden($('world'),{decorAssets:itemsV});}).then(r=>{renderer=r;loaded=true;refresh();camera.overview();panels?.refresh();hpvnBridge.notifyReady({level:state.level,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge});if((query.get('view')==='decor'||query.get('view')==='layout'||query.get('view')==='postcard'||query.get('view')==='events'||query.get('tour'))&&walletReady)applyInitialView();if(!setupTutorial())message(saveProblem||(session==='lab'?'Phiên thử cấp '+state.level:'Chạm cây để chăm.'));let last=0;function frame(t){if(t-last>=100&&!document.hidden){lastClock=t;draw(t);last=t;}requestAnimationFrame(frame);}requestAnimationFrame(frame);setInterval(()=>{if(!document.hidden)refresh();},1000);}).catch(e=>{message('Không mở được cảnh vườn: '+e.message);console.error(e);});
 
-let celebrationFocus=null;
+let celebrationFocus=null,tanSucLetterDue=false;
 function celebrate(from,to){
+ if(from<E.TAN_SUC_LEVEL&&to>=E.TAN_SUC_LEVEL)tanSucLetterDue=true;
  playtest.track('level_up',{level:to});
  audio.play('levelUp');
  const list=$('unlockList');list.replaceChildren();
@@ -657,9 +658,9 @@ function celebrate(from,to){
  // Server gift (garden-action-core): +1 nước phép per level reached up to 19.
  const gift=connected?Math.max(0,Math.min(to,19)-from):0;if(gift)list.append(el('li',{title:'Quà bác Hagrid'},[pixelIcon('boost',2),el('span',{text:'+'+gift+' Nước phép'})]));
  for(const row of DB.levels.slice(from,to))list.append(el('li',{title:'Cấp '+row.level+': '+row.unlock},[levelUnlockVisual(row,DB,items,48).visual,el('span',{text:row.unlock.split(/[;·]/)[0]})]));
- const card=$('levelCelebration');$('celebrationLevel').textContent=to;$('celebrationTitle').textContent='Lên cấp '+to+'!';celebrationFocus=document.activeElement;card.classList.remove('is-bursting');card.hidden=false;void card.offsetWidth;card.classList.add('is-bursting');$('closeCelebration').focus();
+ const card=$('levelCelebration');$('celebrationLevel').textContent=to>E.TAN_SUC_LEVEL?'★'+(to-E.TAN_SUC_LEVEL):to;$('celebrationTitle').textContent=to>E.TAN_SUC_LEVEL?'Bậc Tận Sức ★'+(to-E.TAN_SUC_LEVEL)+'!':'Lên cấp '+to+'!';celebrationFocus=document.activeElement;card.classList.remove('is-bursting');card.hidden=false;void card.offsetWidth;card.classList.add('is-bursting');$('closeCelebration').focus();
 }
-function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.focus();}
+function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.focus();if(tanSucLetterDue){tanSucLetterDue=false;wizard.openLetter('tanSuc');}}
 $('closeCelebration').onclick=closeCelebration;
 $('levelCelebration').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closeCelebration();}if(e.key==='Tab'){e.preventDefault();$('closeCelebration').focus();}});
 const rotateCreatureBtn=button('Xoay',()=>{$('creatureOptions').close();rotateCreatureFacing(species);},{id:'rotateCreatureButton','aria-label':'Đổi hướng nhìn của sinh vật'});

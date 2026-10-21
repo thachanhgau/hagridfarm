@@ -1,6 +1,6 @@
 import {getGardenStorage} from './garden-storage.mjs';
-import {el, button} from './ui-utils.mjs?v=24.9.62';
-import {pixelIcon, rewardChips, lockBadge, iconButton} from './pixel-icons.mjs?v=24.9.62';
+import {el, button} from './ui-utils.mjs?v=24.9.63';
+import {pixelIcon, rewardChips, lockBadge, iconButton} from './pixel-icons.mjs?v=24.9.63';
 
 export const ACHIEVEMENTS_STORAGE_KEY = 'hpvn-garden-v22-achievements';
 
@@ -181,7 +181,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     reward: Object.freeze({kind: 'water', amount: 20, itemId: 'sunpetal', bonusQty: 3, label: '+20 Nước & +3 Hoa nhật quang'}),
     check(state) {
       const level = Number(state?.level) || 1;
-      return {unlocked: level >= 100, current: Math.min(100, level), target: 100, progressText: `Cấp ${level}/100`};
+      return {unlocked: level >= 100, current: Math.min(100, level), target: 100, progressText: `Cấp ${Math.min(100, level)}/100`};
     },
   }),
 ]);
