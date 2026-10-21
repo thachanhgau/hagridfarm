@@ -450,7 +450,7 @@ test('level-500 P2: levels 100–500 follow the roadmap curve and the simulator 
     .map((line) => line.split(',')).map(([level, , xpToNext, totalXP]) => [Number(level), Number(xpToNext), Number(totalXP)]);
   assert.deepEqual(DB.levels.map((row) => [row.level, row.xpToNext, row.totalXP]), csv);
   assert.equal(MAX_LEVEL, 500);
-  assert.equal(DB.levels[99].unlock.endsWith('mở bậc Tận Sức (cấp 101–500)'), true);
+  assert.equal(DB.levels[99].unlock.includes('Tận Sức'), false); // nothing above 100 shows before 100 (§12)
   assert.equal(DB.levels[100].unlock, 'Bậc Tận Sức ★1');
   assert.equal(DB.levels[499].unlock, 'Bậc Tận Sức ★400; huy hiệu Cấp 500');
   assert.deepEqual([levelLabel(37), levelLabel(100), levelLabel(101), levelLabel(500)], ['Cấp 37/100', 'Cấp 100/100', 'Cấp 100 ★1', 'Cấp 100 ★400']);

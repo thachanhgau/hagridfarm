@@ -72,6 +72,7 @@
 #gameShell .gp-level-badge{display:grid;place-items:center;flex:none;width:44px;height:44px;background:#FFC36B;box-shadow:inset 0 3px #F5D69A,inset 0 -4px #ED8A45;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);position:relative}
 #gameShell .gp-level-badge b{color:#231F2E;font:900 18px/1 var(--gp-display)}
 #gameShell .gp-level-badge.is-big{width:60px;height:60px}#gameShell .gp-level-badge.is-big b{font-size:24px}
+#gameShell .gp-level-badge.is-tan-suc b{font-size:11px}#gameShell .gp-level-badge.is-big.is-tan-suc b{font-size:14px}
 
 /* ---- Hồ sơ head ---- */
 #gameShell #panel .v24-profile-view{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 12px}
