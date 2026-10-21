@@ -186,7 +186,7 @@ const act = (server, command, requestId) => server.handle('performHagridGardenAc
 test('bond gifts and achievements are claimed once by server command; replays pay nothing', () => {
   const server = createFixtureServer();
   const start = server.handle('getHagridGarden', {});
-  assert.deepEqual(start.bonding.creatures.find(c => c.species === 'puffskein').gifts.filter(g => g.claimable).map(g => g.giftId), ['puffskein:lv2', 'puffskein:lv3']);
+  assert.deepEqual(start.bonding.creatures.find(c => c.species === 'puffskein').gifts.filter(g => g.claimable).map(g => g.giftId), ['puffskein:lv2']);
   const command = {action: 'claimBondGift', giftId: 'puffskein:lv2', expectedRevision: start.garden.progression.revision, requestId: 'g1'};
   const gift = server.handle('performHagridGardenAction', command);
   const replay = server.handle('performHagridGardenAction', command);
@@ -222,7 +222,8 @@ test('bonding counts pets per creature per day apart from the free-tap cap, and 
   assert.throws(() => pet('dragon', 'd1'), e => e.reason === 'no-creature');
   const fed = act(server, {action: 'feed', species: 'puffskein'}, 'f1');
   assert.deepEqual(fed.receipt.bonding.map(b => [b.species, b.gain]), [['puffskein', 20]]);
-  assert.equal(fed.garden.bonding.bySpecies.puffskein.xp, 90 + 20);
+  // 15 per meal before bonding was recorded: an adult puffskein has 3 meals since balance-2026-10-21.
+  assert.equal(fed.garden.bonding.bySpecies.puffskein.xp, 45 + 20);
 });
 
 test('server bonding/achievement switch: cards come from the response, local counting and claiming stand down', () => {
@@ -234,7 +235,7 @@ test('server bonding/achievement switch: cards come from the response, local cou
     useServerAchievements(snap.achievements);
     const bond = evaluateCreatureAffinity(snap.garden.progression, storage);
     assert.equal(bond.claimableCount, snap.bonding.claimableCount);
-    assert.equal(bond.entries.find(e => e.species === 'niffler').level, 5);
+    assert.equal(bond.entries.find(e => e.species === 'niffler').level, 3);
     assert.equal(recordCreatureAffinity('niffler', 'pet', storage, snap.garden.progression), null);
     assert.equal(claimAffinityGift('niffler:lv2', {gameState: snap.garden.progression, storage}).reason, 'SERVER_OWNED');
     const ach = evaluateAchievements(snap.garden.progression, {}, storage);

@@ -294,12 +294,13 @@ Mua không cho XP. Giá, mở khóa, tiến độ, thời gian, vật tư, hạn
 requestId được máy chủ kiểm tra trong giao dịch nguyên tử.
 
 Giá thử nghiệm:
-- Hạt: gói 3 hạt, max(2, ceil(cấp/5)) G, 12 gói/ngày/loại.
+- Hạt: gói 3 hạt, max(2, ceil(cấp/5)) G, tối đa 6 G (2 G/hạt, lộ trình cấp 500 §8), 12 gói/ngày/loại.
 - Nước: 9 phần/gói, 5 G, 24 gói/ngày.
 - Thức ăn: đủ một bữa/gói, max(10, ceil(cấp×1.5)) G,
   2 gói/ngày/loài. Vẫn chế biến được từ sản vật.
 - Phân bón: mở cấp 6, 60 G, 2 gói/ngày. Mỗi gói bón một hàng/cột/chéo
-  ba cây đang lớn; rút 10% thời gian gốc, chỉ một lần mỗi cây.
+  ba cây đang lớn; rút 25% thời gian gốc, chỉ một lần mỗi cây. Từ 21/10/2026 (Nước phép)
+  dùng được cả cho một bữa sinh vật hoặc một mẻ chế biến đang chạy.
 Hạn mức theo ngày Việt Nam, đặt lại lúc 00:00. Giới hạn nằm trên máy chủ;
 UI chỉ hiển thị vật tư đã mở và số gói còn mua được.
 Đây là giá/cap local để duyệt, chưa chứng minh cân bằng nhiều tháng.

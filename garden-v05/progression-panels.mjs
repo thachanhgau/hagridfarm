@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.61';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.61';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.61";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.61";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.61";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.61";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.61";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.61";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.61";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.61";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.61";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.62';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.62';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.62";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.62";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.62";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.62";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.62";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.62";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.62";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.62";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.62";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -23,6 +23,13 @@ export function createPanels(ctx){
  const canPay=(s,entry,wallet)=>wallet>=entry.galleons&&Object.entries(entry.cropCost).every(([id,n])=>(s.inventory[id]||0)>=n);
  function card(title,subtitle,id,opts={}){const c=el("article",{class:"card"}),h=el("div",{class:"card-head"});if(id)h.append(visualItemIcon(items,id,{size:52,...opts}));h.append(el("div",{class:"card-head-copy"},[el("strong",{text:title}),el("small",{text:subtitle})]));c.append(h);return c;}
  function readyButton(text,at,fn){return button(text,fn,{"data-ready-button":at,disabled:at>now(),class:"primary"});}
+ // Level-500 roadmap §9, with a wallet: a running craft takes a nước phép (a quarter off), a building a Nước suối thần (done now).
+ function speedButton(kind,command,readyAt){
+  const n=ctx.getSupplies?.()?.[kind]||0;
+  if(!getSession().connected||readyAt<=now()||(kind==="spring"&&getState().level<30&&n<1))return [];
+  const [label,done]=kind==="boost"?["Nước phép","Đã tưới nước phép: nhanh hơn 1/4."]:["Suối thần","Nước suối thần: công trình xây xong ngay."];
+  return [button(label+" ×"+n,()=>run(null,done,command),{disabled:n<1,"data-speed-button":kind})];
+ }
  // Thành tựu, Sổ tay, Lưu bút and Bưu thiếp are tabs of one Hồ sơ panel; their old names still open their tab.
  const PROFILE_TABS=[["achievements","Thành tựu"],["almanac","Sổ tay"],["guestbook","Lưu bút"],["postcard","Bưu thiếp"]],TAB_ICONS={achievements:"trophy",almanac:"book",guestbook:"quill",postcard:"scenery"};
  function show(name){
@@ -184,12 +191,12 @@ export function createPanels(ctx){
    const qty=el("select",{"aria-label":"Số mẻ tức thì",onchange:e=>{batches=Number(e.target.value);refresh();}});
    for(const n of[1,3,10])qty.append(el("option",{value:n,text:n+" mẻ tức thì"}));
    qty.value=batches;
-   body.append(detail("Chế biến và xây dựng không cho XP. Côn trùng / cá: 1 mẻ mỗi 6 giờ; nhận xong mới làm tiếp."),toolbar(select,qty,button("Nhận tất cả",()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"}))));
+   body.append(detail("Chế biến và xây dựng không cho XP. Côn trùng / cá: 1 mẻ mỗi 3 giờ; nhận xong mới làm tiếp."),toolbar(select,qty,button("Nhận tất cả",()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"}))));
    if(s.jobs.length){
     const jobs=grid();
     for(const j of s.jobs){
      const r=DB.recipes.find(r=>r.id===j.recipeId),k=card(r.label,j.count+" "+label(j.output),j.output);
-     k.append(timer(j.readyAt),readyButton("Nhận",j.readyAt,()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"})));
+     k.append(timer(j.readyAt),readyButton("Nhận",j.readyAt,()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"})),...speedButton("boost",{action:"boost",jobId:j.id},j.readyAt));
      jobs.append(k);
     }
     body.append(jobs);
@@ -216,7 +223,7 @@ export function createPanels(ctx){
     if(!done&&!job)k.append(priceRow(s,e,wallet));
     k.append(paragraph(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi"));
     if(done)k.append(paragraph("✓ Đã xây","ready-text"));
-    else if(job)k.append(timer(job.readyAt),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})));
+    else if(job)k.append(timer(job.readyAt),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})),...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));
     else k.append(paragraph(locked?"Chờ cấp "+e.level:!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));
     g.append(k);
    }
@@ -244,7 +251,7 @@ export function createPanels(ctx){
      el("div",{class:"inv-stat-copy"},[
       el("small",{text:"NƯỚC"}),
       el("strong",{text:connected?`${num(supplies?.water||0)} phần`:"Miễn phí"}),
-      el("span",{text:connected?`✦ ${num(supplies?.boost||0)} nước phép`:"Gieo miễn phí",title:"Nước phép: giảm 10% thời gian lớn của một hàng"}),
+      el("span",{text:connected?`✦ ${num(supplies?.boost||0)} nước phép`:"Gieo miễn phí",title:"Nước phép: giảm 1/4 thời gian của một hàng cây, một bữa ăn hoặc một mẻ chế biến"}),
      ]),
     ]),
     el("div",{class:"inv-stat-card"},[

@@ -495,8 +495,49 @@ function normalizeJobs(raw, level) {
   });
 }
 
+// Balance 2026-10-21 (Hagrid Farm docs/level-500-roadmap.md §12): a save from the previous balance moves over once,
+// before the strict checks. Growing crops, meals and timed crafts keep their start and finish on the new, shorter
+// timers; a creature past the new meal count is adult at once, with the XP of every stage it newly passed; the level
+// follows the new XP curve. Anything malformed is left as it is for the checks to reject.
+const PREVIOUS_BALANCE = 'balance-2026-10-18';
+const PREVIOUS_STAGE_MEALS = Object.freeze({
+  puffskein: [2, 4, 6], bowtruckle: [3, 6, 9], niffler: [3, 8, 12], mooncalf: [3, 8, 12], kneazle: [3, 8, 12], diricawl: [3, 8, 12],
+  fwooper: [8, 20, 30], hippogriff: [8, 20, 30], thestral: [8, 20, 30], unicorn: [8, 20, 30], 'three-headed-dog': [9, 24, 36], dragon: [9, 24, 36],
+});
+const known = (map, id) => typeof id === 'string' && Object.prototype.hasOwnProperty.call(map, id);
+
+function migrateBalance(raw) {
+  if (raw.balanceVersion !== PREVIOUS_BALANCE) return raw;
+  const next = cloneValue(raw);
+  next.balanceVersion = DB.balanceVersion;
+  for (const plot of Array.isArray(next.plots) ? next.plots : []) {
+    for (const entry of Array.isArray(plot?.slots) ? plot.slots : []) {
+      if (entry?.type === 'crop' && known(CROP, entry.species)) entry.growMs = CROP[entry.species].growMs;
+    }
+  }
+  for (const creature of Array.isArray(next.creatures) ? next.creatures : []) {
+    if (!known(CREATURE, creature?.species)) continue;
+    const config = CREATURE[creature.species];
+    if (isPlainObject(creature.meal) && Number.isFinite(creature.meal.startedAt)) creature.meal.readyAt = creature.meal.startedAt + config.growMs;
+    const eaten = creature.mealsCompleted;
+    if (!Number.isSafeInteger(eaten) || eaten < 0 || !Number.isSafeInteger(next.xp)) continue;
+    creature.mealsCompleted = Math.min(eaten, config.mealsToAdult);
+    config.stageMeals.forEach((meals, stage) => {
+      if (meals <= creature.mealsCompleted && PREVIOUS_STAGE_MEALS[creature.species][stage] > eaten) next.xp += config.stageXP[stage];
+    });
+  }
+  for (const job of Array.isArray(next.jobs) ? next.jobs : []) {
+    if (known(RECIPE, job?.recipeId) && RECIPE[job.recipeId].hours > 0 && Number.isFinite(job.startedAt)) {
+      job.readyAt = job.startedAt + RECIPE[job.recipeId].hours * 60 * 60 * 1000;
+    }
+  }
+  if (Number.isSafeInteger(next.xp) && next.xp >= 0) next.level = levelForXp(next.xp);
+  return next;
+}
+
 function normalizeState(raw) {
   if (!isPlainObject(raw)) reject('INVALID_STATE', 'state must be an object');
+  raw = migrateBalance(raw);
   if (raw.schemaVersion !== DB.schemaVersion) reject('INVALID_STATE', 'unsupported schemaVersion');
   if (raw.balanceVersion !== DB.balanceVersion) reject('INVALID_STATE', 'unsupported balanceVersion');
   const createdAt = assertFiniteTime(raw.createdAt, 'createdAt');

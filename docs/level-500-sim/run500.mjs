@@ -10,9 +10,12 @@ const A = P.a ?? 40000, B = P.b ?? 150;                      // 101–500: xpToN
 export const NEW_CROPS = [105, 130, 160, 200, 250, 310, 380, 450].map((level, i) => ({level, hours: i % 2 ? 8 : 3, i}));
 export const NEW_PLOTS = P.plots ?? [110, 130, 160, 200, 260, 330];
 globalThis.__TWEAK = (raw) => {
+  // P1 (balance-2026-10-21) already ships the crop, creature and craft changes; apply them only to the old data.
+  if (raw.balanceVersion === 'balance-2026-10-18') {
   for (const c of raw.crops) { c.hours = cropMap[c.hours] ?? c.hours; c.growMs = c.hours * 3600000; if (P.xpm && c.level <= 100) { const k = P.xpm[c.hours] ?? 1; c.totalXP = Math.round(c.totalXP * k); c.plantXP = Math.round(c.totalXP * 0.1); c.harvestXP = c.totalXP - c.plantXP; } }
   if (P.meal) for (const a of raw.animals) { a.hours = P.meal; a.growMs = P.meal * 3600000; if (P.halve) { a.mealsToAdult = Math.ceil(a.mealsToAdult / 2); a.stageMeals = a.stageMeals.map((m) => Math.ceil(m / 2)); a.minAdultDays /= 2; } }
   if (P.job) for (const r of raw.recipes) if (r.hours > 0) r.hours = P.job;
+  }
   const fac = P.k ? (l) => l <= 20 ? 1 : 1 - (1 - P.k) * ((l - 20) / 80) ** (P.p ?? 0.6) : (l) => f.find(([max]) => l <= max)?.[1] ?? 1;
   if (P.t99) {
     // ponytail: one clean curve — old 1–20, geometric 21–99 up to t99, then linear +b per level to 500

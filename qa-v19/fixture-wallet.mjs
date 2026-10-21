@@ -14,6 +14,9 @@ import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=24.9.40";
 // scenario=new is a brand-new account (revision 0, starter supplies, tutorial not used): see HANDOFF-V24.9.md.
 export const STARTER_SUPPLIES=Object.freeze({seeds:Object.freeze({pumpkin:3}),water:3,boost:0});
 const FREE_CAPS=Object.freeze({rotate:3,pet:3,postcard:1,shareFloo:1,startTour:1,care:3,moveBuilding:1});
+// Level-500 roadmap §9: Chăm cây, Vuốt ve and Nước phép each take a quarter off; both ends of a timer move together.
+const SPEED_SHARE=0.25,LINES=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+const shift=(t,cut)=>{t.startedAt-=cut;t.readyAt-=cut;};
 // «care» is its own action now (server garden-action-core applyCare), not a bare tap.
 const FREE_TAPS=new Set(["pet","rotate","postcard","shareFloo","startTour"]);
 const DAILY=new Set(["claimQuest","claimChest","claimFestival","freeAction","claimBondGift","claimAchievement"]);
@@ -207,23 +210,34 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   for(const [id,n] of Object.entries(seeds))if((supplies.seeds[id]||0)<n)fail("missing-supply","Không đủ hạt giống cho số ô gieo mới.",{resource:`seeds.${id}`,required:n});
   supplies.water-=cells;for(const [id,n] of Object.entries(seeds))supplies.seeds[id]-=n;
  }
+ // Server applyBoost (level-500 roadmap §9): a quarter off a row of crops, the meal of `species` or the timed craft `jobId`, once each.
  function boost(c,next){
+  if(c.species!==undefined||c.jobId!==undefined){
+   const find=p=>c.species!==undefined?p.creatures.find(x=>x.species===c.species)?.meal:p.jobs.find(j=>j.id===c.jobId);
+   const timer=find(next.progression),at=E.nowFor(next.progression,now());
+   if(!timer)fail("invalid-boost-target",c.species!==undefined?"Sinh vật này không có bữa đang ăn.":"Không có mẻ chế biến này.");
+   if(timer.readyAt<=at)fail("timer-ready","Đã xong rồi, không cần nước phép.");
+   if(next.boostedCropIds.includes(timer.id))fail("already-boosted","Bữa ăn hoặc mẻ này đã được tưới nước phép.");
+   if(next.supplies.boost<1)fail("missing-supply","Không còn nước phép.",{resource:"boost",required:1});
+   shift(timer,Math.floor((timer.readyAt-timer.startedAt)*SPEED_SHARE));next.boostedCropIds.push(timer.id);
+   next.supplies.boost-=1;next.progression.revision+=1;return;
+  }
   const plot=next.progression.plots[c.plotIndex],at=E.nowFor(next.progression,now());
   const entries=(c.cells||[]).map(i=>plot?.slots[i]);
   if(entries.length!==3||entries.some(s=>s?.type!=="crop"))fail("invalid-boost-target","Mỗi ô trong hàng phải có cây đang lớn.");
   if(entries.some(s=>next.boostedCropIds.includes(s.id)))fail("already-boosted","Một cây trong hàng đã được tưới nước phép.");
   if(entries.some(s=>E.growth(s,at).mature))fail("mature-crop","Cây đã chín thì không cần nước phép.");
   if(next.supplies.boost<1)fail("missing-supply","Không còn nước phép.",{resource:"boost",required:1});
-  for(const s of entries){s.plantedAt-=Math.floor((E.CROP[s.species]?.growMs||s.growMs)*0.1);next.boostedCropIds.push(s.id);}
+  for(const s of entries){s.plantedAt-=Math.floor((E.CROP[s.species]?.growMs||s.growMs)*SPEED_SHARE);next.boostedCropIds.push(s.id);}
   next.supplies.boost-=1;next.progression.revision+=1;
  }
- // Server applyCare: each growing crop in the cells ripens 15 minutes sooner, never past ripe.
+ // Server applyCare: each growing crop in the row ripens a quarter of its grow time sooner, never past ripe.
  function care(c,next){
   const plot=next.progression.plots[c.plotIndex],at=E.nowFor(next.progression,now());
   if(!plot)fail("invalid-action-input","Thửa đất không tồn tại.");
   const growing=(c.cells||[]).filter(i=>plot.slots[i]?.type==="crop"&&!E.growth(plot.slots[i],at).mature);
   if(!growing.length)fail("invalid-care-target","Hàng đang chọn không có cây đang lớn để chăm.");
-  for(const i of growing)plot.slots[i].plantedAt=Math.max(plot.slots[i].plantedAt-15*60000,at-plot.slots[i].growMs);
+  for(const i of growing)plot.slots[i].plantedAt=Math.max(plot.slots[i].plantedAt-Math.floor(plot.slots[i].growMs*SPEED_SHARE),at-plot.slots[i].growMs);
   next.progression.revision+=1;
  }
  // Hagrid's tutorial "nước phép": once per account, level 1, first plot only; the named growing
@@ -328,6 +342,9 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    extra.festivalPoints=addPoints(d,next.festival,c.kind,{counted:extra.freeAction.counted});
    // Bonding has its own cap (3 pets per creature a day), apart from the free-tap cap.
    if(c.kind==="pet"&&c.species)extra.bonding=[addBond(next,before,c.species,"pet",d.dayKey)];
+   // Server petMeal: a counted pet takes a quarter off the meal that creature is eating.
+   const meal=c.kind==="pet"&&c.species&&extra.freeAction.counted?next.progression.creatures.find(x=>x.species===c.species)?.meal:null;
+   if(meal&&meal.readyAt>now()){shift(meal,Math.floor((meal.readyAt-meal.startedAt)*SPEED_SHARE));next.progression.revision+=1;extra.mealSped=c.species;}
   }else if(c.action==="boost")boost(c,next);
   else if(c.action==="tutorialGrow")tutorialGrow(c,next);
   // Server applyGuideDone: a finished «Sổ tay» lesson, no revision, reward or points.
@@ -337,7 +354,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(next.tutorial.guide.includes(c.lessonId))fail("action-noop","Bài hướng dẫn này đã xong.");
    next.tutorial.guide.push(c.lessonId);
   }
-  else if(c.action==="care"){if((d.free.care||0)>=FREE_CAPS.care)fail("care-limit",`Hôm nay đã chăm đủ ${FREE_CAPS.care} lượt; mai bác Hagrid lại nhờ nhé.`);care(c,next);}
+  else if(c.action==="care"){if(!LINES.some(r=>c.cells?.length===3&&r.every(i=>c.cells.includes(i))))fail("invalid-action-input","Chăm cây cho một hàng, cột hoặc đường chéo đủ ba ô.");if((d.free.care||0)>=FREE_CAPS.care)fail("care-limit",`Hôm nay đã chăm đủ ${FREE_CAPS.care} lượt; mai bác Hagrid lại nhờ nhé.`);care(c,next);}
   else if(c.action==="placeDecoration")place(c,next);
   else{
    next.progression=model(c,before,Date.now());

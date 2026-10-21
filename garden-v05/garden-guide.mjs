@@ -8,7 +8,7 @@
 const L = (id, level, title, line, targets, done, when = null) => Object.freeze({id, level, title, line, targets: Object.freeze(targets), done, when});
 
 export const GUIDE = Object.freeze([
-  L('care', 1, 'Chăm cây', 'Cây đang lớn thì bấm Chăm: chín sớm 15 phút, mỗi ngày 3 lượt.',
+  L('care', 1, 'Chăm cây', 'Hàng cây đang lớn thì bấm Chăm: chín sớm 1/4 thời gian, mỗi ngày 3 lượt.',
     ['#contextAction', '#cropCareButton', '#seedOptionsButton'], f => f.ev.has('care'), f => f.growing),
   L('owl-claim', 1, 'Thư cú', 'Làm xong việc cú giao thì mở thư cú nhận quà nhé!',
     ['#owlMailButton'], f => f.ev.has('claimQuest'), f => f.questReady),
@@ -38,7 +38,7 @@ export const GUIDE = Object.freeze([
     ['#feedButton', '#creatureTool'], f => f.fed, f => f.creatures > 0),
   L('claim-animal', 10, 'Thu sản phẩm', 'Ăn xong rồi! Bấm Nhận để thu sản phẩm.',
     ['#claimAnimalButton', '#creatureTool'], f => f.ev.has('claimAnimals'), f => f.mealReady),
-  L('pet', 10, 'Vuốt ve', 'Vuốt ve mỗi ngày cho sinh vật thân với con hơn.',
+  L('pet', 10, 'Vuốt ve', 'Vuốt ve mỗi ngày cho sinh vật thân với con hơn; con đang ăn thì bữa xong sớm hơn.',
     ['#petButton', '#creatureOptionsButton', '#creatureTool'], f => f.ev.has('pet'), f => f.creatures > 0),
   L('plot4', 12, 'Thửa thứ tư', 'Đủ bí ngô với yến mạch là mở được thửa thứ tư!',
     ['#buildTool'], f => f.built('plot_4') || f.building('plot_4')),

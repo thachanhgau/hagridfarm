@@ -1,6 +1,6 @@
 # Khu Vườn Hagrid — Lộ trình cấp 500, tốc độ và cửa hàng cao cấp
 
-> 21/10/2026 · Claude Code (Anthropic) · **ĐÃ DUYỆT 21/10/2026, CHƯA TRIỂN KHAI** (bắt đầu từ P1, mục 13). Mọi số liệu đến từ mô phỏng trên engine thật
+> 21/10/2026 · Claude Code (Anthropic) · **ĐÃ DUYỆT 21/10/2026.** P1 đã làm (nhánh `level-500-p1`, HPVNN `codex/hagrid-level-p1`), chưa deploy; P2–P5 chưa làm (mục 13). Mọi số liệu đến từ mô phỏng trên engine thật
 > (`docs/level-500-sim/`), không phải dữ liệu người chơi. Mục 14 là các điểm còn chờ chủ dự án quyết.
 
 ## 0. Chủ dự án đã chốt (21/10/2026)

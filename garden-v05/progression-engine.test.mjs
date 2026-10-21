@@ -37,9 +37,31 @@ const day = (hours) => hours * HOUR;
 // The approved source predates the Lý Lan name pass (V24.9.2); numbers must match exactly,
 // names are compared after the same renames the game applied.
 const LY_LAN_NAMES = [['Bằng Mã', 'Bằng-Mã'], ['Thestral', 'Vong mã'], ['Mandrake', 'Nhân sâm'], ['Bạch tiên', 'Bạch tiễn'], ['Bowtruckle', 'Que Xạo'], ['Niffler', 'Đào mỏ']];
-const APPROVED = JSON.parse(
+const APPROVED = levelP1(JSON.parse(
   LY_LAN_NAMES.reduce((text, [from, to]) => text.replaceAll(from, to), readFileSync(new URL('../outputs/hagrid-levels-20261013/balance-data.json', import.meta.url), 'utf8')),
-);
+));
+
+// Level-500 roadmap P1 (docs/level-500-roadmap.md §4–6, owner 21/10/2026) on top of the approved source:
+// crop times 2/4/6/14/20h → 1/2/3/6/8h with ×1,5/1,4/1,4/1,2/1 XP; 3h meals, half the meals and stage marks;
+// timed crafts 3h; levels 21–99 geometric from 5.360 up to 40.000 XP.
+function levelP1(source) {
+  const HOURS = {2: 1, 4: 2, 6: 3, 14: 6, 20: 8}, XPM = {1: 1.5, 2: 1.4, 3: 1.4, 6: 1.2, 8: 1};
+  const crops = source.crops.map((c) => {
+    const hours = HOURS[c.hours], totalXP = Math.round(c.totalXP * XPM[hours]), plantXP = Math.round(totalXP * 0.1);
+    return {...c, hours, totalXP, plantXP, harvestXP: totalXP - plantXP};
+  });
+  const animals = source.animals.map((a) => ({...a, hours: 3, mealsToAdult: Math.ceil(a.mealsToAdult / 2), stageMeals: a.stageMeals.map((m) => Math.ceil(m / 2)), minAdultDays: a.minAdultDays / 2}));
+  const recipes = source.recipes.map((r) => (r.hours > 0 ? {...r, hours: 3} : r));
+  const v20 = source.levels[19].xpToNext;
+  let total = 0;
+  const levels = source.levels.map((l) => {
+    const xpToNext = l.level > 20 && l.level < 100 ? Math.round(v20 * (40000 / v20) ** ((l.level - 20) / 79)) : l.xpToNext;
+    const row = {...l, xpToNext, totalXP: total};
+    total += xpToNext;
+    return row;
+  });
+  return {...source, crops, animals, recipes, levels};
+}
 
 function selectFields(rows, fields) {
   return rows.map((row) => Object.fromEntries(fields.map((field) => [field, row[field]])));
@@ -67,7 +89,7 @@ test('approved balance exposes all crops, creatures, levels, recipes, and Vietna
   assert.equal(CROP.pumpkin.rarityLabel, 'Thường');
   assert.equal(CREATURE.dragon.rarity, 'legendary');
   assert.equal(CREATURE.dragon.rarityLabel, 'Huyền thoại');
-  assert.equal(CROP.pumpkin.growMs, 2 * HOUR);
+  assert.equal(CROP.pumpkin.growMs, HOUR); // level-500 roadmap §5: 2h → 1h
   assert.equal(CREATURE.dragon.level, 94);
   assert.equal(CREATURE.dragon.lateProgression, true);
   assert.equal(CREATURE.puffskein.level, 10);
@@ -231,18 +253,18 @@ test('juvenile milestones and adult cycles grant XP exactly once at claim bounda
   assert.equal(state.xp, startXp);
   state = feed(state, 'puffskein', NOW);
   assert.equal(state.xp, startXp + CREATURE.puffskein.feedXP);
-  for (let meal = 1; meal <= 6; meal += 1) {
-    state = advanceTime(state, 6 * HOUR);
-    state = claimAnimals(state, 'puffskein', NOW);
-    if (meal < 6) state = feed(state, 'puffskein', NOW);
-  }
   const config = CREATURE.puffskein;
+  for (let meal = 1; meal <= config.mealsToAdult; meal += 1) {
+    state = advanceTime(state, config.growMs);
+    state = claimAnimals(state, 'puffskein', NOW);
+    if (meal < config.mealsToAdult) state = feed(state, 'puffskein', NOW);
+  }
   assert.equal(state.creatures[0].mealsCompleted, config.mealsToAdult);
   assert.equal(growth(state.creatures[0], nowFor(state, NOW)).stage, 3);
   assert.equal(state.xp - startXp, config.feedXP * config.mealsToAdult + config.stageXP.reduce((sum, value) => sum + value, 0));
   codeOf(() => claimAnimals(state, 'puffskein', NOW), 'NOT_READY');
   state = feed(state, 'puffskein', NOW);
-  state = advanceTime(state, 6 * HOUR);
+  state = advanceTime(state, config.growMs);
   state = claimAnimals(state, 'puffskein', NOW);
   assert.equal(state.inventory.produce_puffskein, 1);
   assert.equal(state.xp - startXp, config.feedXP * (config.mealsToAdult + 1) + config.stageXP.reduce((sum, value) => sum + value, 0) + config.adultClaimXP);
@@ -267,7 +289,7 @@ test('crafting uses one timed job per station and claims only after ready', () =
   codeOf(() => restoreChecked(malformedJob, NOW), 'INVALID_STATE');
   codeOf(() => craft(state, 'insects_alt', 1, NOW), 'STATION_BUSY');
   codeOf(() => claimCraft(state, NOW), 'NOT_READY');
-  state = advanceTime(state, 6 * HOUR);
+  state = advanceTime(state, 3 * HOUR);
   state = claimCraft(state, NOW);
   assert.equal(state.inventory.insects, 12);
   state = craft(state, 'bow_feed', 1, NOW);
@@ -393,7 +415,7 @@ test('keepsakes and decorations consume only their stated resources and never XP
 test('restoreChecked preserves logical ages and fails closed on malformed IDs, stock, and timestamps', () => {
   let state = newGame(NOW);
   state = plant(state, 0, lineCells('horizontal', 0), 'pumpkin', NOW);
-  state = advanceTime(state, HOUR);
+  state = advanceTime(state, HOUR / 2);
   const restored = restoreChecked(JSON.stringify(state), NOW);
   assert.deepEqual(restored.plots[0].slots[0], state.plots[0].slots[0]);
   assert.equal(growth(restored.plots[0].slots[0], nowFor(restored, NOW)).normalized, 0.5);
@@ -517,7 +539,7 @@ test('every approved expansion builds sequentially from a normal level-100 progr
   assert.equal(state.xp, startXp);
 });
 
-test('engine core remains in parity with the approved 1-100 balance source', () => {
+test('engine core remains in parity with the approved 1-100 balance source and the level-500 P1 rules', () => {
   // 18/10/2026 (docs/economy-audit.md §5) overrides only these: kit recipes removed, expansion
   // kitCost replaced by cropCost + galleons, and the texts that named kits (3 crop uses, 3 level unlocks).
   const KIT_TEXT = {crops: ['pumpkin', 'oats', 'flax'], levels: [5, 6, 45]};
@@ -533,7 +555,9 @@ test('engine core remains in parity with the approved 1-100 balance source', () 
     selectFields(DB.levels, ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
     selectFields(patch(APPROVED.levels, 'level', KIT_TEXT.levels, 'unlock'), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
   );
-  assert.equal(DB.levels.at(-1).totalXP, 4_450_020);
+  assert.equal(DB.levels.at(-1).totalXP, 1_427_360);
+  assert.deepEqual([DB.levels[29].xpToNext, DB.levels[29].totalXP, DB.levels[98].xpToNext], [6913, 103_332, 40_000]);
+  assert.equal(DB.balanceVersion, 'balance-2026-10-21');
 });
 
 test('expansions and decorations cost unlocked crops plus Galleons; the first four expansions are crop-only', () => {
@@ -556,4 +580,36 @@ test('expansions and decorations cost unlocked crops plus Galleons; the first fo
   assert.equal(state.inventory.pumpkin, 0);
   assert.equal(state.inventory.oats, 0);
   assert.deepEqual(Object.keys(state.construction[0]).sort(), ['id', 'kind', 'readyAt', 'startedAt']);
+});
+
+test('a balance-2026-10-18 save moves over once: new timers, adult past the new meal count with the stage XP passed, level from the new curve', () => {
+  let state = emptyCreatureProfile(30);
+  state = plant(state, 0, lineCells('horizontal', 0), 'oats', NOW);
+  const timed = DB.recipes.find((recipe) => recipe.hours > 0 && recipe.level <= 30);
+  state = craft(state, timed.id, 1, NOW);
+  const meal = (id, n) => ({ id: `meal-${id}-${n}-0`, startedAt: NOW, readyAt: NOW + 6 * HOUR, portions: 1, xpGranted: true });
+  state.creatures.push(
+    { id: 'creature-puffskein', type: 'creature', species: 'puffskein', level: 10, adoptedAt: NOW, mealsCompleted: 5, meal: meal('creature-puffskein', 5), cyclesClaimed: 0, preview: false },
+    { id: 'creature-bowtruckle', type: 'creature', species: 'bowtruckle', level: 18, adoptedAt: NOW, mealsCompleted: 4, meal: null, cyclesClaimed: 0, preview: false },
+  );
+  // The same garden as it was saved under the previous balance: 6h oats, 6h meal and craft, the old XP curve.
+  const old = structuredClone(state);
+  old.balanceVersion = 'balance-2026-10-18';
+  for (const cell of [0, 1, 2]) old.plots[0].slots[cell].growMs = 6 * HOUR;
+  old.jobs[0].readyAt = old.jobs[0].startedAt + 6 * HOUR;
+  old.xp = 119_770; // level 30 on the old curve
+  old.level = 30;
+  const moved = restoreChecked(JSON.stringify(old), NOW);
+  assert.equal(moved.balanceVersion, DB.balanceVersion);
+  assert.deepEqual(moved.plots[0].slots.slice(0, 3).map((e) => e.growMs), Array(3).fill(CROP.oats.growMs));
+  assert.equal(moved.jobs[0].readyAt, moved.jobs[0].startedAt + 3 * HOUR);
+  const [puff, bow] = moved.creatures;
+  assert.deepEqual([puff.mealsCompleted, puff.meal.readyAt, bow.mealsCompleted], [3, NOW + 3 * HOUR, 4]);
+  // Puffskein: old stages 2/4/6 at 5 meals → new 1/2/3, so stage 3 is newly passed. Que Xạo: 3/6/9 at 4 → 2/3/5, stage 2.
+  assert.equal(moved.xp, 119_770 + CREATURE.puffskein.stageXP[2] + CREATURE.bowtruckle.stageXP[1]);
+  assert.equal(moved.level, DB.levels.filter((row) => row.totalXP <= moved.xp).at(-1).level);
+  assert.ok(moved.level > 30);
+  // Once only: the moved save restores unchanged; an unknown balance is still refused.
+  assert.deepEqual(restoreChecked(moved, NOW), moved);
+  codeOf(() => restoreChecked({ ...old, balanceVersion: 'balance-2026-01-01' }, NOW), 'INVALID_STATE');
 });

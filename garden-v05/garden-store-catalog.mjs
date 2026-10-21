@@ -1,7 +1,7 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.61";
-import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.61";
-export const CATALOG_VERSION="garden-2026-10-20-halloween-v1";
+import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.62";
+import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.62";
+export const CATALOG_VERSION="garden-2026-10-21-level500-p1";
 export const STORE_CATALOG=Object.freeze([
   {
     "id": "seed_pumpkin",
@@ -140,7 +140,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "beet",
     "label": "Hạt Củ cải đỏ",
     "level": 32,
-    "price": 7,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -153,7 +153,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "maize",
     "label": "Hạt Ngô vàng",
     "level": 36,
-    "price": 8,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -166,7 +166,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "moonherb",
     "label": "Hạt Cỏ trăng",
     "level": 40,
-    "price": 8,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -179,7 +179,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "flax",
     "label": "Hạt Lanh",
     "level": 44,
-    "price": 9,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -192,7 +192,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "sunflower",
     "label": "Hạt Hướng dương",
     "level": 48,
-    "price": 10,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -205,7 +205,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "valerian",
     "label": "Hạt Nữ lang",
     "level": 52,
-    "price": 11,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -218,7 +218,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "mint",
     "label": "Hạt Bạc hà",
     "level": 56,
-    "price": 12,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -231,7 +231,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "blueberry",
     "label": "Hạt Việt quất",
     "level": 60,
-    "price": 12,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -244,7 +244,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "firepepper",
     "label": "Hạt Ớt lửa",
     "level": 64,
-    "price": 13,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -257,7 +257,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "silverkelp",
     "label": "Hạt Tảo bạc",
     "level": 68,
-    "price": 14,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -270,7 +270,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "starbean",
     "label": "Hạt Đậu sao",
     "level": 72,
-    "price": 15,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -283,7 +283,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "ambermelon",
     "label": "Hạt Dưa hổ phách",
     "level": 78,
-    "price": 16,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -296,7 +296,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "mistmushroom",
     "label": "Hạt Nấm sương",
     "level": 84,
-    "price": 17,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -309,7 +309,7 @@ export const STORE_CATALOG=Object.freeze([
     "cropId": "sunpetal",
     "label": "Hạt Hoa nhật quang",
     "level": 92,
-    "price": 19,
+    "price": 6,
     "quantity": 3,
     "dailyLimit": 1000,
     "overflowMultiplier": 5,
@@ -490,7 +490,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 60,
     "quantity": 1,
     "dailyLimit": 10,
-    "description": "Tưới một hàng đang lớn: giảm 10% thời gian gốc, tối đa một lần mỗi cây; không nhận XP khi dùng."
+    "description": "Một hàng cây, một bữa sinh vật hoặc một mẻ chế biến đang chạy: giảm 25% thời gian gốc, mỗi thứ một lần; không nhận XP khi dùng."
   },
   {
     "id": "spring_water",
@@ -500,7 +500,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 500,
     "quantity": 1,
     "dailyLimit": 10,
-    "description": "Tưới một thửa: mọi cây chín ngay và được gặt luôn."
+    "description": "Tưới một thửa: mọi cây chín ngay và được gặt luôn. Hoặc xây xong ngay một công trình. Dùng tối đa 10 chai mỗi ngày."
   },
   {
     "id": "decor_pumpkin_lantern",
