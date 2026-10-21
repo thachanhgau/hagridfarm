@@ -361,7 +361,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(next.progression.revision!==before.revision+1)fail("action-noop","Lệnh khu vườn không tạo thay đổi mới.");
    if(c.action==="plant"||c.action==="replant"){
     plantSupplies(before,next.progression,next.supplies);
-    // Server growthScale: crops planted below level 20 grow faster.
+    // Server growthScale: faster below level 15, half time from 15 on.
     const scale=growthScale(before.level);
     next.progression.plots.forEach((plot,p)=>plot.slots.forEach((s,i)=>{if(s?.type==="crop"&&!before.plots[p]?.slots[i])s.plantedAt-=Math.round(s.growMs*(1-scale));}));
    }

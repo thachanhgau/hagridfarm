@@ -327,6 +327,7 @@ Phát hành theo `/hpvnn-deploy`, Functions trước, client sau, và chỉ khi 
 | 3 | Phúc Lạc Dược (trước gọi tạm «Bùa may mắn») | **Giữ, giữ tên Phúc Lạc Dược**, với trần ở mục 10.5 |
 | 4 | Giới hạn và trục lợi | **Có giới hạn, rào hết đường trục lợi**: mục 10.5 |
 | 5 | Giá sản phẩm đặc biệt | **Sàn 500 G mỗi món.** Bảng hiện tại 1.400–9.000 G đã đạt; server nên từ chối món đặc biệt dưới 500 G |
+| 6 | Tăng tốc người mới hết ở cấp 20 (thành viên tara thấy cây «đổi giờ» khi lên cấp 20) | **Giữ ×0,5 mãi từ cấp 15** (cây, bữa ăn, chế biến, xây). Mô phỏng: người 2 lượt/ngày không đổi (cấp 500 ngày 202); người cày 20 lượt nhanh gấp đôi (ngày 135 → 68) và tiêu khoảng 4.000 G/ngày cho hạt. Chủ dự án chọn ngày 21/10/2026 sau khi xem số này |
 
 Việc còn mở: chủ dự án duyệt giá từng món (`special-products-pricing.md`, `SPECIAL_PRICES_APPROVED = false`).
 

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {plantingAction} from './ui-utils.mjs?v=24.9.63';
+import {plantingAction} from './ui-utils.mjs?v=24.9.64';
 const ready={loaded:true,connected:true,walletReady:true,unlocked:true,occupied:false,cooling:false,typeCap:false,seedsLeft:27,waterLeft:9};
 test('plant button explains missing water and seeds without permitting a plant request',()=>{
  const water=plantingAction({...ready,waterLeft:0});
@@ -16,16 +16,16 @@ test('a full row, cooldown or disconnected wallet stays blocked before restock',
  }
 });
 
-test('times shown are the real ones: scaled below level 20 when the server owns the garden', async () => {
+test('times shown are the real ones: scaled when the server owns the garden, half time from level 15 on', async () => {
  const {hours, realHours, setServerGrowth} = await import('./ui-utils.mjs');
  const pumpkin = {hours: 2, level: 1}, mandrake = {hours: 14, level: 24};
  assert.equal(hours(realHours(pumpkin, 3)), '2 giờ'); // local prototype engine: unscaled
  setServerGrowth(true);
  assert.equal(hours(realHours(pumpkin, 3)), '12 phút');
  assert.equal(hours(realHours({hours: 6, level: 6}, 12)), '1 giờ 48 phút');
- assert.equal(hours(realHours(pumpkin, 20)), '2 giờ');
- assert.equal(hours(realHours(mandrake, 10)), '14 giờ'); // opens at 24: no newbie speed-up then
- assert.equal(hours(realHours({hours: 24}, 30)), '1 ngày');
+ assert.equal(hours(realHours(pumpkin, 20)), '1 giờ');
+ assert.equal(hours(realHours(mandrake, 10)), '7 giờ'); // opens at 24: the half time of level 24 on
+ assert.equal(hours(realHours({hours: 24}, 30)), '12 giờ');
  assert.equal(hours(0), 'Tức thì');
  setServerGrowth(false);
 });

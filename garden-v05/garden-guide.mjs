@@ -52,7 +52,7 @@ export const GUIDE = Object.freeze([
     ['#craftTool'], f => f.has('insects') || f.ev.has('craft:insects')),
   L('bowtruckle', 18, 'Đón Que Xạo', 'Que Xạo tới rồi! Nhớ làm sẵn khẩu phần cành lá.',
     ['#adoptButton', '#creatureTool'], f => f.hasCreature('bowtruckle')),
-  L('level20', 20, 'Cấp 20', 'Từ giờ cây lớn theo giờ thường; nhớ dùng Nước phép và Chăm cây.',
+  L('level20', 20, 'Cấp 20', 'Cây, bữa ăn và chế biến vẫn nhanh gấp đôi, mãi mãi; Nước phép và Chăm cây còn rút thêm.',
     [], () => false),
 ]);
 

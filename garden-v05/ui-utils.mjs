@@ -2,8 +2,9 @@ export const $=id=>document.getElementById(id);
 export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else e.setAttribute(k,String(v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}
 export const num=n=>{const v=Number(n);return Number.isFinite(v)?v.toLocaleString("vi-VN"):"0";};
 export function duration(ms){const seconds=Math.max(0,Math.ceil(ms/1000));if(!seconds)return"Sẵn sàng";const h=Math.floor(seconds/3600),m=Math.floor(seconds%3600/60);return h>=24?`${Math.floor(h/24)}n ${h%24}g`:h?`${h}g ${String(m).padStart(2,"0")}p`:`${m}p ${String(seconds%60).padStart(2,"0")}s`;}
-// Server rule (functions/games/garden-action-core growthScale): crops planted below level 20 grow faster.
-export function growthScale(level){return level<5?.1:level<10?.2:level<15?.3:level<20?.5:1;}
+// Server rule (functions/games/garden-action-core growthScale): faster below level 15, then half time for good
+// (owner 21/10/2026; it used to end at level 20).
+export function growthScale(level){return level<5?.1:level<10?.2:level<15?.3:.5;}
 // Real time of a crop, meal, recipe or build when the server owns the garden (scaled by the level at start;
 // something not open yet starts at its own level at the earliest). The local prototype engine does not scale.
 let serverGrowth=false;
