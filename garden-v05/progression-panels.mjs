@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.65';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.65';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.65";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.65";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.65";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.65";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.65";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.65";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.65";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.65";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.65";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.66';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.66';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.66";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.66";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.66";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.66";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.66";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.66";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.66";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.66";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.66";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
@@ -198,7 +198,7 @@ export function createPanels(ctx){
    if(s.jobs.length){
     const jobs=grid();
     for(const j of s.jobs){
-     const r=DB.recipes.find(r=>r.id===j.recipeId),k=card(r.label,j.count+" "+label(j.output),j.output);
+     const r=DB.recipes.find(r=>r.id===j.recipeId),k=card(r.label,j.count+" "+label(j.output),`recipe_${r.id}`);
      k.append(timer(j.readyAt),readyButton("Nhận",j.readyAt,()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"})),...speedButton("boost",{action:"boost",jobId:j.id},j.readyAt));
      jobs.append(k);
     }
@@ -206,7 +206,7 @@ export function createPanels(ctx){
    }
    const g=grid();
    for(const r of DB.recipes.filter(r=>r.level<=s.level).filter(r=>recipeFilter==="all"||recipeFilter==="open"&&r.level<=s.level||recipeFilter==="feed"&&DB.animals.some(a=>a.feed===r.output)||r.output===recipeFilter)){
-    const n=r.hours?1:batches,locked=r.level>s.level,missing=Object.entries(r.inputs).some(([id,q])=>s.inventory[id]<q*n),busy=r.hours&&s.jobs.some(j=>j.station===r.station),k=card(r.label,"Cấp "+r.level+" · "+hours(realHours(r,s.level))+" · "+r.station,r.output);
+    const n=r.hours?1:batches,locked=r.level>s.level,missing=Object.entries(r.inputs).some(([id,q])=>s.inventory[id]<q*n),busy=r.hours&&s.jobs.some(j=>j.station===r.station),k=card(r.label,"Cấp "+r.level+" · "+hours(realHours(r,s.level))+" · "+r.station,`recipe_${r.id}`);
     k.classList.toggle("locked",locked);
     for(const[id,q]of Object.entries(r.inputs))k.append(paragraph(label(id)+": "+num(s.inventory[id]||0)+" / "+num(q*n),s.inventory[id]<q*n?"missing":"meta"));
     k.append(paragraph("Nhận "+(r.count*n)+" "+label(r.output)),button(locked?"Cấp "+r.level:busy?"Đang làm":"Làm",()=>run(x=>E.craft(x,r.id,n,Date.now()),r.hours?"Đã bắt đầu mẻ.":"Đã chế biến thành phẩm.",{action:"craft",recipeId:r.id,batches:n}),{disabled:locked||missing||busy,class:"primary"}));

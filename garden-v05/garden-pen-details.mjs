@@ -15,6 +15,17 @@ function diamond(c,points,color){
   if(xs.length>=2)rect(c,Math.min(...xs),y,Math.max(...xs)-Math.min(...xs),1,color);
  }
 }
+function cappedPost(c,[x,y],p,height=12){
+ rect(c,x-3,y-height+1,6,height,p.dark);rect(c,x-2,y-height,3,height-1,p.wood);
+ rect(c,x-3,y-height-1,6,2,p.cap);rect(c,x-1,y-height+1,1,height-4,p.cap);
+}
+function woodPegs(c,a,b,p){
+ const length=Math.hypot(b[0]-a[0],b[1]-a[1]);
+ for(let t=18;t<length;t+=20){
+  const joint=mix(a,b,t/length);
+  rect(c,joint[0]-1,joint[1]+1,2,3,p.dark);rect(c,joint[0],joint[1]-2,2,1,p.cap);
+ }
+}
 export function penDetailAnchors(pen,iso){
  return {water:iso(pen.col+pen.width*.55,pen.row+pen.height*.22),straw:iso(pen.col+pen.width*.52,pen.row+pen.height*.77),gate:iso(pen.col,pen.row+pen.height*.5)};
 }
@@ -32,20 +43,21 @@ export function drawPenHabitat(c,{corners,pen,iso,weatherMode='clear',personaliz
   for(const [from,to] of segments){
    const x=mix(a,b,from),y=mix(a,b,to);
    line(c,[x[0],x[1]+3],[y[0],y[1]+3],p.dark,5);
-   line(c,x,y,i%2?p.stone:p.wood,4);line(c,[x[0],x[1]-1],[y[0],y[1]-1],p.cap,1);
-   const length=Math.hypot(y[0]-x[0],y[1]-x[1]);
-   for(let t=18;t<length;t+=20){const joint=mix(x,y,t/length);rect(c,joint[0],joint[1],2,3,p.dark);}
+   line(c,x,y,i%2?p.stone:p.wood,4);
+   line(c,[x[0],x[1]-1],[y[0],y[1]-1],p.cap,1);
+   woodPegs(c,x,y,p);
   }
  }
  // Rear posts are a mere 12px high, and remain underneath all actor sprites.
- for(const at of [n,e,w]){rect(c,at[0]-3,at[1]-11,6,12,p.dark);rect(c,at[0]-2,at[1]-10,3,10,p.wood);rect(c,at[0]-3,at[1]-12,6,2,p.cap);}
+ for(const at of [n,e,w])cappedPost(c,at,p,12);
  const {water,straw,gate}=penDetailAnchors(pen,iso);
  // Low trough and bedding in the empty middle, between the two animal anchors.
  if(!personalized){
  rect(c,water[0]-11,water[1]-3,22,7,p.dark);rect(c,water[0]-9,water[1]-5,18,7,p.stone);rect(c,water[0]-7,water[1]-4,14,4,p.water);rect(c,water[0]-5,water[1]-4,6,1,'#d6d8bf');
  for(let i=0;i<18;i++){const dx=(i*13)%31-15,dy=(i*7)%11-5;rect(c,straw[0]+dx,straw[1]+dy,4+i%4,1,i%4?p.hay:p.wood);}
  }
- for(const off of [-6,4]){rect(c,gate[0]+off,gate[1]+off*.5,7,3,p.stone);rect(c,gate[0]+off,gate[1]+off*.5,6,1,p.cap);}
+ // Three low stepping stones make the west entry read as a path without a tall gate.
+ for(const off of [-7,1,8]){rect(c,gate[0]+off,gate[1]+off*.35,7,3,p.stone);rect(c,gate[0]+off+1,gate[1]+off*.35,5,1,p.cap);}
  for(const t of [.24,.76]){const a=mix(n,e,t);rect(c,a[0]+3,a[1]-2,5,2,p.moss);rect(c,a[0]+5,a[1]-4,2,3,p.grass);}
  c.restore();return {gate,water,straw};
 }

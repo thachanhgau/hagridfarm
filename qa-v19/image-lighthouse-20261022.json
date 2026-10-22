@@ -1,0 +1,79 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "formFactor": "mobile default simulated throttling",
+  "scope": "local in-memory fixture, 12 adults, level500",
+  "runs": {
+    "before": {
+      "values": {
+        "performance": [
+          51,
+          46,
+          48
+        ],
+        "fcpMs": [
+          8633,
+          8103,
+          8103
+        ],
+        "lcpMs": [
+          14268,
+          11628,
+          11553
+        ],
+        "tbtMs": [
+          272,
+          454,
+          374
+        ],
+        "bytes": [
+          5434020,
+          5434020,
+          5434020
+        ]
+      },
+      "median": {
+        "performance": 48,
+        "fcpMs": 8103,
+        "lcpMs": 11628,
+        "tbtMs": 374,
+        "bytes": 5434020
+      }
+    },
+    "after": {
+      "values": {
+        "performance": [
+          51,
+          51,
+          52
+        ],
+        "fcpMs": [
+          8179,
+          8104,
+          8178
+        ],
+        "lcpMs": [
+          11779,
+          11404,
+          12692
+        ],
+        "tbtMs": [
+          290,
+          303,
+          268
+        ],
+        "bytes": [
+          5719975,
+          5719975,
+          5719975
+        ]
+      },
+      "median": {
+        "performance": 51,
+        "fcpMs": 8178,
+        "lcpMs": 11779,
+        "tbtMs": 290,
+        "bytes": 5719975
+      }
+    }
+  }
+}

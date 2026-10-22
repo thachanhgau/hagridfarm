@@ -21,7 +21,7 @@ import {
   createHpvnBridge,
   auditIos16SourceCompatibility,
 } from './hpvn-bridge.mjs';
-import {EARNED_DECOR_SHAPES, earnedDecorMotifSvg} from './ui-utils.mjs?v=24.9.65';
+import {ITEM_ART} from './item-art.mjs';
 import {creatureMotion} from './scene-animation.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -29,16 +29,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 test('Direction 1: all 29 earned decorations have unique visual shapes and moveBuilding swaps plots/pens cleanly', () => {
   assert.equal(E.DB.decorations.length, 29);
   for (const dec of E.DB.decorations) {
-    const shape = EARNED_DECOR_SHAPES[dec.id];
-    assert.ok(shape, `Missing EARNED_DECOR_SHAPES entry for ${dec.id}`);
-    assert.equal(typeof shape.bg, 'string');
-    assert.equal(typeof shape.accent, 'string');
-    assert.equal(typeof shape.motif, 'string');
-    const svgLeft = earnedDecorMotifSvg(shape, false);
-    const svgRight = earnedDecorMotifSvg(shape, true);
-    assert.match(svgLeft, /^<svg /);
-    assert.match(svgRight, /scale\(-1,1\)/);
+    const art = ITEM_ART[dec.id];
+    assert.ok(art, `Missing artwork for ${dec.id}`);
+    assert.match(art.file, /^native-items\/decoration-\d+\.png$/);
+    assert.ok(fs.existsSync(new URL(art.file, import.meta.url)));
   }
+  assert.equal(new Set(E.DB.decorations.map(dec => ITEM_ART[dec.id].file)).size, 29);
 
   let state = E.testProfile(50, 1_700_000_000_000);
   const beforePlot0 = state.layout.plots[0];

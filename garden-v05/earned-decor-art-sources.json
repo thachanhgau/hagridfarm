@@ -1,0 +1,499 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "groups": [
+    {
+      "name": "decoration-3",
+      "columns": 2,
+      "rows": 1,
+      "label": "Pebble garden-bed border",
+      "items": [
+        [
+          "decoration-3",
+          "A short shallow crescent row of five irregular rounded gray river pebbles, each with chunky light facets, little olive moss and two tiny grass tufts, no flowers. Small low border, not a pedestal."
+        ],
+        [
+          "decoration-3_right",
+          "A short shallow crescent row of five irregular rounded gray river pebbles, each with chunky light facets, little olive moss and two tiny grass tufts, no flowers. Small low border, not a pedestal. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Pebble garden-bed border. A short shallow crescent row of five irregular rounded gray river pebbles, each with chunky light facets, little olive moss and two tiny grass tufts, no flowers. Small low border, not a pedestal."
+    },
+    {
+      "name": "decoration-7",
+      "columns": 2,
+      "rows": 1,
+      "label": "Pumpkin and daisy garden model",
+      "items": [
+        [
+          "decoration-7",
+          "A tiny coherent ornamental garden arrangement: two ribbed orange pumpkins among lush green leaves and THREE ivory daisies at different heights, short rough timber edging, no rectangular ground slab."
+        ],
+        [
+          "decoration-7_right",
+          "A tiny coherent ornamental garden arrangement: two ribbed orange pumpkins among lush green leaves and THREE ivory daisies at different heights, short rough timber edging, no rectangular ground slab. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Pumpkin and daisy garden model. A tiny coherent ornamental garden arrangement: two ribbed orange pumpkins among lush green leaves and THREE ivory daisies at different heights, short rough timber edging, no rectangular ground slab."
+    },
+    {
+      "name": "decoration-11",
+      "columns": 2,
+      "rows": 1,
+      "label": "Puffskein wool nest",
+      "items": [
+        [
+          "decoration-11",
+          "A cozy oval woven wicker nest lined with soft golden wool and three fluffy yarn pom-poms with visible curled strands; no faces or living animals."
+        ],
+        [
+          "decoration-11_right",
+          "A cozy oval woven wicker nest lined with soft golden wool and three fluffy yarn pom-poms with visible curled strands; no faces or living animals. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Puffskein wool nest. A cozy oval woven wicker nest lined with soft golden wool and three fluffy yarn pom-poms with visible curled strands; no faces or living animals."
+    },
+    {
+      "name": "decoration-15",
+      "columns": 2,
+      "rows": 1,
+      "label": "Low wooden fence",
+      "items": [
+        [
+          "decoration-15",
+          "A low rustic oak fence section with THREE stout square posts, two uneven horizontal rails, visible endgrain, wooden pegs and moss near the feet; simple warm wood, no colorful paint."
+        ],
+        [
+          "decoration-15_right",
+          "A low rustic oak fence section with THREE stout square posts, two uneven horizontal rails, visible endgrain, wooden pegs and moss near the feet; simple warm wood, no colorful paint. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Low wooden fence. A low rustic oak fence section with THREE stout square posts, two uneven horizontal rails, visible endgrain, wooden pegs and moss near the feet; simple warm wood, no colorful paint."
+    },
+    {
+      "name": "decoration-19",
+      "columns": 2,
+      "rows": 1,
+      "label": "Bowtruckle branch trellis",
+      "items": [
+        [
+          "decoration-19",
+          "A freestanding rustic support made of forked twigs and rough branch crossbars, small fresh olive leaves and a leafy climbing branch curling up one side, clearly open lattice."
+        ],
+        [
+          "decoration-19_right",
+          "A freestanding rustic support made of forked twigs and rough branch crossbars, small fresh olive leaves and a leafy climbing branch curling up one side, clearly open lattice. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Bowtruckle branch trellis. A freestanding rustic support made of forked twigs and rough branch crossbars, small fresh olive leaves and a leafy climbing branch curling up one side, clearly open lattice."
+    },
+    {
+      "name": "decoration-23",
+      "columns": 2,
+      "rows": 1,
+      "label": "Small wooden bridge",
+      "items": [
+        [
+          "decoration-23",
+          "A tiny arched footbridge of five warm oak planks, curved low handrails on both sides, visible beams and pegs; show complete bridge deck and both bankward feet, no water base."
+        ],
+        [
+          "decoration-23_right",
+          "A tiny arched footbridge of five warm oak planks, curved low handrails on both sides, visible beams and pegs; show complete bridge deck and both bankward feet, no water base. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Small wooden bridge. A tiny arched footbridge of five warm oak planks, curved low handrails on both sides, visible beams and pegs; show complete bridge deck and both bankward feet, no water base."
+    },
+    {
+      "name": "decoration-27",
+      "columns": 2,
+      "rows": 1,
+      "label": "Niffler found-treasure display cabinet",
+      "items": [
+        [
+          "decoration-27",
+          "A squat dark polished wooden glass-front curiosity cabinet with two little shelves holding gold buttons, a brass thimble and shiny trinkets, small glass reflections, carved feet; NOT a safe or vending machine."
+        ],
+        [
+          "decoration-27_right",
+          "A squat dark polished wooden glass-front curiosity cabinet with two little shelves holding gold buttons, a brass thimble and shiny trinkets, small glass reflections, carved feet; NOT a safe or vending machine. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Niffler found-treasure display cabinet. A squat dark polished wooden glass-front curiosity cabinet with two little shelves holding gold buttons, a brass thimble and shiny trinkets, small glass reflections, carved feet; NOT a safe or vending machine."
+    },
+    {
+      "name": "decoration-30",
+      "columns": 2,
+      "rows": 1,
+      "label": "Wildflower border",
+      "items": [
+        [
+          "decoration-30",
+          "A low winding cluster of ivory daisies, tiny lavender and coral wildflowers with varied leafy stems, a few small warm pebbles along the front, natural irregular silhouette."
+        ],
+        [
+          "decoration-30_right",
+          "A low winding cluster of ivory daisies, tiny lavender and coral wildflowers with varied leafy stems, a few small warm pebbles along the front, natural irregular silhouette. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Wildflower border. A low winding cluster of ivory daisies, tiny lavender and coral wildflowers with varied leafy stems, a few small warm pebbles along the front, natural irregular silhouette."
+    },
+    {
+      "name": "decoration-31",
+      "columns": 2,
+      "rows": 1,
+      "label": "Moon courtyard garden model",
+      "items": [
+        [
+          "decoration-31",
+          "A small circular arrangement of individually faceted blue-gray paving stones forming a ring around one pale crescent-moon inlay; show a real miniature courtyard perspective, low profile, no standing moon lamp."
+        ],
+        [
+          "decoration-31_right",
+          "A small circular arrangement of individually faceted blue-gray paving stones forming a ring around one pale crescent-moon inlay; show a real miniature courtyard perspective, low profile, no standing moon lamp. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Moon courtyard garden model. A small circular arrangement of individually faceted blue-gray paving stones forming a ring around one pale crescent-moon inlay; show a real miniature courtyard perspective, low profile, no standing moon lamp."
+    },
+    {
+      "name": "decoration-35",
+      "columns": 2,
+      "rows": 1,
+      "label": "Crescent moon garden lantern",
+      "items": [
+        [
+          "decoration-35",
+          "A warm wooden crooked lamp post with hanging crescent-shaped brass lantern, pale golden lit crescent behind glass, tiny bracket and finial; bright center formed of solid pixels, no outer glow."
+        ],
+        [
+          "decoration-35_right",
+          "A warm wooden crooked lamp post with hanging crescent-shaped brass lantern, pale golden lit crescent behind glass, tiny bracket and finial; bright center formed of solid pixels, no outer glow. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Crescent moon garden lantern. A warm wooden crooked lamp post with hanging crescent-shaped brass lantern, pale golden lit crescent behind glass, tiny bracket and finial; bright center formed of solid pixels, no outer glow."
+    },
+    {
+      "name": "decoration-39",
+      "columns": 2,
+      "rows": 1,
+      "label": "Straw-roof garden shed model",
+      "items": [
+        [
+          "decoration-39",
+          "A small charming wooden tool shed with thick layered golden straw roof, tiny dark doorway, side window, shovel resting at one wall and visible wood planks; compact miniature full building."
+        ],
+        [
+          "decoration-39_right",
+          "A small charming wooden tool shed with thick layered golden straw roof, tiny dark doorway, side window, shovel resting at one wall and visible wood planks; compact miniature full building. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Straw-roof garden shed model. A small charming wooden tool shed with thick layered golden straw roof, tiny dark doorway, side window, shovel resting at one wall and visible wood planks; compact miniature full building."
+    },
+    {
+      "name": "decoration-43",
+      "columns": 2,
+      "rows": 1,
+      "label": "Kneazle scratching post and bed",
+      "items": [
+        [
+          "decoration-43",
+          "A short thick sisal-rope scratching post on a wooden foot, small round platform, a cozy orange-brown woven cat bed beside it with patterned cushion, tiny hanging yarn toy; no cat."
+        ],
+        [
+          "decoration-43_right",
+          "A short thick sisal-rope scratching post on a wooden foot, small round platform, a cozy orange-brown woven cat bed beside it with patterned cushion, tiny hanging yarn toy; no cat. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Kneazle scratching post and bed. A short thick sisal-rope scratching post on a wooden foot, small round platform, a cozy orange-brown woven cat bed beside it with patterned cushion, tiny hanging yarn toy; no cat."
+    },
+    {
+      "name": "decoration-46",
+      "columns": 2,
+      "rows": 1,
+      "label": "Linen cushions garden model",
+      "items": [
+        [
+          "decoration-46",
+          "A pile of THREE plump linen cushions in muted teal, ivory and blue-gray, visible pixel woven seams, knotted corners and simple stitched leaf motif, resting naturally, no box or frame."
+        ],
+        [
+          "decoration-46_right",
+          "A pile of THREE plump linen cushions in muted teal, ivory and blue-gray, visible pixel woven seams, knotted corners and simple stitched leaf motif, resting naturally, no box or frame. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Linen cushions garden model. A pile of THREE plump linen cushions in muted teal, ivory and blue-gray, visible pixel woven seams, knotted corners and simple stitched leaf motif, resting naturally, no box or frame."
+    },
+    {
+      "name": "decoration-47",
+      "columns": 2,
+      "rows": 1,
+      "label": "Pond-side vine trellis",
+      "items": [
+        [
+          "decoration-47",
+          "A delicate twig trellis over a small stone-edged oval ornamental pond with blue water, two lily leaves and trailing green vines on the side, compact entire arrangement."
+        ],
+        [
+          "decoration-47_right",
+          "A delicate twig trellis over a small stone-edged oval ornamental pond with blue water, two lily leaves and trailing green vines on the side, compact entire arrangement. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Pond-side vine trellis. A delicate twig trellis over a small stone-edged oval ornamental pond with blue water, two lily leaves and trailing green vines on the side, compact entire arrangement."
+    },
+    {
+      "name": "decoration-51",
+      "columns": 2,
+      "rows": 1,
+      "label": "Bird bath",
+      "items": [
+        [
+          "decoration-51",
+          "An ornate pale blue-gray stone birdbath with broad shallow scalloped bowl on a carved squat pedestal, clear blue water and a few pixel ripple highlights; no birds or animals."
+        ],
+        [
+          "decoration-51_right",
+          "An ornate pale blue-gray stone birdbath with broad shallow scalloped bowl on a carved squat pedestal, clear blue water and a few pixel ripple highlights; no birds or animals. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Bird bath. An ornate pale blue-gray stone birdbath with broad shallow scalloped bowl on a carved squat pedestal, clear blue water and a few pixel ripple highlights; no birds or animals."
+    },
+    {
+      "name": "decoration-55",
+      "columns": 2,
+      "rows": 1,
+      "label": "Four-color fence",
+      "items": [
+        [
+          "decoration-55",
+          "A cheerful wooden fence section with four individual painted posts in muted coral, gold, olive and slate-blue, two wooden rails, visible worn paint and woodgrain; not the same silhouette as plain fence."
+        ],
+        [
+          "decoration-55_right",
+          "A cheerful wooden fence section with four individual painted posts in muted coral, gold, olive and slate-blue, two wooden rails, visible worn paint and woodgrain; not the same silhouette as plain fence. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Four-color fence. A cheerful wooden fence section with four individual painted posts in muted coral, gold, olive and slate-blue, two wooden rails, visible worn paint and woodgrain; not the same silhouette as plain fence."
+    },
+    {
+      "name": "decoration-59",
+      "columns": 2,
+      "rows": 1,
+      "label": "Four-color feather perch",
+      "items": [
+        [
+          "decoration-59",
+          "A low sturdy branching bird perch on two rustic wooden legs, tiny suspended ring and four bright decorative feathers tied along the beam in orange gold violet and blue; no live bird."
+        ],
+        [
+          "decoration-59_right",
+          "A low sturdy branching bird perch on two rustic wooden legs, tiny suspended ring and four bright decorative feathers tied along the beam in orange gold violet and blue; no live bird. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Four-color feather perch. A low sturdy branching bird perch on two rustic wooden legs, tiny suspended ring and four bright decorative feathers tied along the beam in orange gold violet and blue; no live bird."
+    },
+    {
+      "name": "decoration-63",
+      "columns": 2,
+      "rows": 1,
+      "label": "Hippogriff stone courtyard model",
+      "items": [
+        [
+          "decoration-63",
+          "A miniature broad diamond-shaped blue-gray stone platform with chunky paving blocks, raised corner stones and one carved feather inlay, a shallow water cup at the rear, low heavy silhouette."
+        ],
+        [
+          "decoration-63_right",
+          "A miniature broad diamond-shaped blue-gray stone platform with chunky paving blocks, raised corner stones and one carved feather inlay, a shallow water cup at the rear, low heavy silhouette. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Hippogriff stone courtyard model. A miniature broad diamond-shaped blue-gray stone platform with chunky paving blocks, raised corner stones and one carved feather inlay, a shallow water cup at the rear, low heavy silhouette."
+    },
+    {
+      "name": "decoration-67",
+      "columns": 2,
+      "rows": 1,
+      "label": "Large-wing resting perch",
+      "items": [
+        [
+          "decoration-67",
+          "A tall robust A-frame wooden perch with two outward forked high supports, wide curved padded crossbeam for large wings and a strapped leather saddle-shaped pad, visible rope lashings, no animals."
+        ],
+        [
+          "decoration-67_right",
+          "A tall robust A-frame wooden perch with two outward forked high supports, wide curved padded crossbeam for large wings and a strapped leather saddle-shaped pad, visible rope lashings, no animals. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Large-wing resting perch. A tall robust A-frame wooden perch with two outward forked high supports, wide curved padded crossbeam for large wings and a strapped leather saddle-shaped pad, visible rope lashings, no animals."
+    },
+    {
+      "name": "decoration-71",
+      "columns": 2,
+      "rows": 1,
+      "label": "Mist garden lantern",
+      "items": [
+        [
+          "decoration-71",
+          "A short wrought dark-metal garden lamp with rounded frosted pale-blue glass orb, stone base and little cap, pale mist INSIDE the glass only, strong broad silhouette distinct from crescent lamp, no glow outside."
+        ],
+        [
+          "decoration-71_right",
+          "A short wrought dark-metal garden lamp with rounded frosted pale-blue glass orb, stone base and little cap, pale mist INSIDE the glass only, strong broad silhouette distinct from crescent lamp, no glow outside. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Mist garden lantern. A short wrought dark-metal garden lamp with rounded frosted pale-blue glass orb, stone base and little cap, pale mist INSIDE the glass only, strong broad silhouette distinct from crescent lamp, no glow outside."
+    },
+    {
+      "name": "decoration-75",
+      "columns": 2,
+      "rows": 1,
+      "label": "Moonlit stone bridge",
+      "items": [
+        [
+          "decoration-75",
+          "A small beautifully arched blue-gray stone footbridge with thick carved blockwork, open arch under deck and low stone parapets with subtle moon motifs; no water or background."
+        ],
+        [
+          "decoration-75_right",
+          "A small beautifully arched blue-gray stone footbridge with thick carved blockwork, open arch under deck and low stone parapets with subtle moon motifs; no water or background. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Moonlit stone bridge. A small beautifully arched blue-gray stone footbridge with thick carved blockwork, open arch under deck and low stone parapets with subtle moon motifs; no water or background."
+    },
+    {
+      "name": "decoration-80",
+      "columns": 2,
+      "rows": 1,
+      "label": "Silver flower border",
+      "items": [
+        [
+          "decoration-80",
+          "A shallow arc of silver-ivory bell flowers on curved slender blue-gray stems, muted gray-green foliage and pale angular little stones, clearly different from ordinary wildflowers."
+        ],
+        [
+          "decoration-80_right",
+          "A shallow arc of silver-ivory bell flowers on curved slender blue-gray stems, muted gray-green foliage and pale angular little stones, clearly different from ordinary wildflowers. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Silver flower border. A shallow arc of silver-ivory bell flowers on curved slender blue-gray stems, muted gray-green foliage and pale angular little stones, clearly different from ordinary wildflowers."
+    },
+    {
+      "name": "decoration-81",
+      "columns": 2,
+      "rows": 1,
+      "label": "Unicorn leafy arbor",
+      "items": [
+        [
+          "decoration-81",
+          "An elegant freestanding rounded arbor woven from pale birch branches, lush olive foliage, small ivory blossoms and one subtle gold horn-shaped finial at the top; no animals."
+        ],
+        [
+          "decoration-81_right",
+          "An elegant freestanding rounded arbor woven from pale birch branches, lush olive foliage, small ivory blossoms and one subtle gold horn-shaped finial at the top; no animals. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Unicorn leafy arbor. An elegant freestanding rounded arbor woven from pale birch branches, lush olive foliage, small ivory blossoms and one subtle gold horn-shaped finial at the top; no animals."
+    },
+    {
+      "name": "decoration-83",
+      "columns": 2,
+      "rows": 1,
+      "label": "Silver-mane resting gazebo model",
+      "items": [
+        [
+          "decoration-83",
+          "A miniature open hexagonal wooden gazebo with a silver-gray layered shingle roof, four slim ivory pillars, small bench and flowing pale fabric tied at two posts, cozy full structure."
+        ],
+        [
+          "decoration-83_right",
+          "A miniature open hexagonal wooden gazebo with a silver-gray layered shingle roof, four slim ivory pillars, small bench and flowing pale fabric tied at two posts, cozy full structure. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Silver-mane resting gazebo model. A miniature open hexagonal wooden gazebo with a silver-gray layered shingle roof, four slim ivory pillars, small bench and flowing pale fabric tied at two posts, cozy full structure."
+    },
+    {
+      "name": "decoration-87",
+      "columns": 2,
+      "rows": 1,
+      "label": "Large-creature paddock fence",
+      "items": [
+        [
+          "decoration-87",
+          "A heavy tall rustic paddock fence section with thick dark oak posts capped with metal, THREE broad crossrails and diagonal brace, visible large pegs; weighty and distinct from low fence."
+        ],
+        [
+          "decoration-87_right",
+          "A heavy tall rustic paddock fence section with thick dark oak posts capped with metal, THREE broad crossrails and diagonal brace, visible large pegs; weighty and distinct from low fence. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Large-creature paddock fence. A heavy tall rustic paddock fence section with thick dark oak posts capped with metal, THREE broad crossrails and diagonal brace, visible large pegs; weighty and distinct from low fence."
+    },
+    {
+      "name": "decoration-91",
+      "columns": 2,
+      "rows": 1,
+      "label": "Triple-arch garden gate",
+      "items": [
+        [
+          "decoration-91",
+          "A compact freestanding garden gate with THREE contiguous rounded arches, larger center arch and two smaller side arches, carved warm stone pillars and trailing tiny ivy at the feet."
+        ],
+        [
+          "decoration-91_right",
+          "A compact freestanding garden gate with THREE contiguous rounded arches, larger center arch and two smaller side arches, carved warm stone pillars and trailing tiny ivy at the feet. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Triple-arch garden gate. A compact freestanding garden gate with THREE contiguous rounded arches, larger center arch and two smaller side arches, carved warm stone pillars and trailing tiny ivy at the feet."
+    },
+    {
+      "name": "decoration-95",
+      "columns": 2,
+      "rows": 1,
+      "label": "Dragon scale display pedestal",
+      "items": [
+        [
+          "decoration-95",
+          "A carved dark stone pedestal with a small glass display cradle supporting THREE overlapping emerald and bronze dragon scales, visible angular scale texture, gold rim trim; no dragon."
+        ],
+        [
+          "decoration-95_right",
+          "A carved dark stone pedestal with a small glass display cradle supporting THREE overlapping emerald and bronze dragon scales, visible angular scale texture, gold rim trim; no dragon. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Dragon scale display pedestal. A carved dark stone pedestal with a small glass display cradle supporting THREE overlapping emerald and bronze dragon scales, visible angular scale texture, gold rim trim; no dragon."
+    },
+    {
+      "name": "decoration-98",
+      "columns": 2,
+      "rows": 1,
+      "label": "Dragon observation stand",
+      "items": [
+        [
+          "decoration-98",
+          "A small elevated wooden observation stand with a brass angled telescope, tiny viewing stool, curved handrail and stout timber supports, complete compact platform, no dragon."
+        ],
+        [
+          "decoration-98_right",
+          "A small elevated wooden observation stand with a brass angled telescope, tiny viewing stool, curved handrail and stout timber supports, complete compact platform, no dragon. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Dragon observation stand. A small elevated wooden observation stand with a brass angled telescope, tiny viewing stool, curved handrail and stout timber supports, complete compact platform, no dragon."
+    },
+    {
+      "name": "decoration-99",
+      "columns": 2,
+      "rows": 1,
+      "label": "Grand garden layout model",
+      "items": [
+        [
+          "decoration-99",
+          "A miniature landscape planning table on four carved wooden feet, holding a detailed tiny garden model with rows of green beds, a miniature thatched hut, small pond and path; no flat abstract grid or text."
+        ],
+        [
+          "decoration-99_right",
+          "A miniature landscape planning table on four carved wooden feet, holding a detailed tiny garden model with rows of green beds, a miniature thatched hut, small pond and path; no flat abstract grid or text. Opposite facing."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Production asset for Hagrid Farm, a cozy magical farming game. Create ONE transparent sprite sheet containing exactly TWO views of the SAME single object, default facing viewer-left on the LEFT half, and a genuinely redrawn opposite three-quarter view facing viewer-right on the RIGHT half. Each view fully isolated, same size, same object identity, same fixed upper-left lighting (do not just mirror highlights). Composition: one row of two equal cells, a very wide completely transparent central gap of at least 15% canvas width, at least 12% transparent OUTER margin on all sides; no touching or cropping. Genuine transparent alpha outside silhouettes, no background, no backdrop, no cast shadow, no ground rectangle, no words, no UI, no labels. Style: polished handcrafted pixel art with solid readable colored clusters, three-quarter 2:1 dimetric view, dark plum selective outline, visible material texture, highlight planes and shadow planes. Quality like detailed handheld farming sprites, NOT flat front-facing primitive shapes, NOT thin wireframe, NOT smooth illustration, NOT low-detail placeholder. Designed to remain clear at 84x80 logical pixels per view. Limit to warm muted 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Only the named object and its described parts, no other unrelated props. Object: Grand garden layout model. A miniature landscape planning table on four carved wooden feet, holding a detailed tiny garden model with rows of green beds, a miniature thatched hut, small pond and path; no flat abstract grid or text."
+    }
+  ]
+}

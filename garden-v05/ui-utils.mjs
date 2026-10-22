@@ -1,3 +1,5 @@
+import { ITEM_ART } from "./item-art.mjs?v=24.9.66";
+
 export const $=id=>document.getElementById(id);
 export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else e.setAttribute(k,String(v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}
 export const num=n=>{const v=Number(n);return Number.isFinite(v)?v.toLocaleString("vi-VN"):"0";};
@@ -66,6 +68,13 @@ const SVG_ART = Object.freeze({
   <path d="M15 26h18v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 15 34z" fill="url(#bg)"/>
   <path d="M24 19l2 4 4 .6-3 3 .7 4.2-3.7-2-3.7 2 .7-4.2-3-3 4-.6z" fill="#f5d69a"/>
  </svg>`,
+ spring_water: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#70a8b6" stroke-width="1.5"/>
+  <path d="M11 29h26v7H11z" fill="#735044" stroke="#4a3042" stroke-width="1.5"/>
+  <path d="M14 29c2-7 6-11 10-11s8 4 10 11" fill="#70a8b6" stroke="#b7dee0" stroke-width="1.5"/>
+  <path d="M24 8c-3 4-3 6 0 8 3-2 3-4 0-8zM13 15c-2 3-2 5 0 6 2-1 2-3 0-6zM35 13c-2 3-2 5 0 6 2-1 2-3 0-6z" fill="#b7dee0" stroke="#70a8b6" stroke-width="1"/>
+  <path d="M17 33h14" stroke="#f5d69a" stroke-width="2"/>
+ </svg>`,
  insects: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
   <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
   <rect x="17" y="10" width="14" height="4" rx="1.5" fill="#b49a66" stroke="#f5d69a" stroke-width="1"/>
@@ -89,76 +98,121 @@ const SVG_ART = Object.freeze({
  </svg>`,
 });
 
-export const EARNED_DECOR_SHAPES = Object.freeze({
- "decoration-3": { glyph: "🪨", bg: "#142620", accent: "#a6b1ae", sub: "#687486", motif: "stones" },
- "decoration-7": { glyph: "🎃", bg: "#142620", accent: "#ed8a45", sub: "#ffc36b", motif: "lantern" },
- "decoration-11": { glyph: "🪹", bg: "#142620", accent: "#f5d69a", sub: "#a57554", motif: "nest" },
- "decoration-15": { glyph: "🪵", bg: "#142620", accent: "#c97952", sub: "#735044", motif: "fence" },
- "decoration-19": { glyph: "🌿", bg: "#142620", accent: "#b0bd67", sub: "#71934b", motif: "arch" },
- "decoration-23": { glyph: "🌉", bg: "#142620", accent: "#e7ae73", sub: "#a57554", motif: "bridge" },
- "decoration-27": { glyph: "🪙", bg: "#231f2e", accent: "#ffc36b", sub: "#735044", motif: "pedestal" },
- "decoration-30": { glyph: "🌼", bg: "#142620", accent: "#f5d69a", sub: "#71934b", motif: "stones" },
- "decoration-31": { glyph: "🌙", bg: "#231f2e", accent: "#f5d69a", sub: "#687486", motif: "moon" },
- "decoration-35": { glyph: "🏮", bg: "#231f2e", accent: "#f5d69a", sub: "#a57554", motif: "lantern" },
- "decoration-39": { glyph: "🛖", bg: "#142620", accent: "#e7ae73", sub: "#a57554", motif: "gazebo" },
- "decoration-43": { glyph: "🐾", bg: "#142620", accent: "#ed8a45", sub: "#c97952", motif: "perch" },
- "decoration-46": { glyph: "🛋", bg: "#142620", accent: "#b7dee0", sub: "#70a8b6", motif: "nest" },
- "decoration-47": { glyph: "🪷", bg: "#142620", accent: "#70a8b6", sub: "#71934b", motif: "pond" },
- "decoration-51": { glyph: "⛲", bg: "#142620", accent: "#b7dee0", sub: "#a6b1ae", motif: "pond" },
- "decoration-55": { glyph: "🎏", bg: "#231f2e", accent: "#c75b4b", sub: "#ffc36b", motif: "fence" },
- "decoration-59": { glyph: "🪶", bg: "#231f2e", accent: "#ffc36b", sub: "#c75b4b", motif: "perch" },
- "decoration-63": { glyph: "🦅", bg: "#231f2e", accent: "#b7dee0", sub: "#687486", motif: "bridge" },
- "decoration-67": { glyph: "🪾", bg: "#142620", accent: "#ed8a45", sub: "#c97952", motif: "perch" },
- "decoration-71": { glyph: "🕯", bg: "#142620", accent: "#b7dee0", sub: "#687486", motif: "lantern" },
- "decoration-75": { glyph: "🌈", bg: "#231f2e", accent: "#f5d69a", sub: "#687486", motif: "arch" },
- "decoration-80": { glyph: "✨", bg: "#231f2e", accent: "#d6d8bf", sub: "#687486", motif: "stones" },
- "decoration-81": { glyph: "🦄", bg: "#142620", accent: "#f5d69a", sub: "#71934b", motif: "arch" },
- "decoration-83": { glyph: "🏛", bg: "#231f2e", accent: "#d6d8bf", sub: "#a6b1ae", motif: "gazebo" },
- "decoration-87": { glyph: "🚧", bg: "#142620", accent: "#a57554", sub: "#735044", motif: "fence" },
- "decoration-91": { glyph: "⛩", bg: "#231f2e", accent: "#c97952", sub: "#735044", motif: "arch" },
- "decoration-95": { glyph: "🐉", bg: "#142620", accent: "#b0bd67", sub: "#f5d69a", motif: "pedestal" },
- "decoration-98": { glyph: "🔭", bg: "#231f2e", accent: "#ffc36b", sub: "#c75b4b", motif: "gazebo" },
- "decoration-99": { glyph: "🗺", bg: "#142620", accent: "#b0bd67", sub: "#d6d8bf", motif: "pedestal" },
-});
+const KEEPSAKE_BADGE_SVG = `<svg viewBox="0 0 32 32" width="100%" height="100%" aria-hidden="true">
+ <path d="M9 5h14l-2 8c-.5 2-2 3-5 3s-4.5-1-5-3z" fill="#f5d69a" stroke="#4a3042" stroke-width="1.5"/>
+ <path d="M16 16v6M11 22h10M8 26h16v3H8z" fill="#a57554" stroke="#4a3042" stroke-width="1.5"/>
+ <path d="M9 7H5c0 5 2 7 6 7M23 7h4c0 5-2 7-6 7" fill="none" stroke="#f5d69a" stroke-width="1.5"/>
+</svg>`;
 
-export function earnedDecorMotifSvg(spec, isRight = false) {
- const { bg, accent, sub, motif } = spec;
- const flipAttr = isRight ? `transform="translate(48,0) scale(-1,1)"` : "";
- let inner = "";
- if (motif === "lantern" || motif === "moon") {
-  inner = `<rect x="22" y="12" width="4" height="24" fill="${sub}"/><circle cx="24" cy="18" r="7" fill="${accent}" stroke="#231f2e" stroke-width="1.5"/><circle cx="26" cy="16" r="2.5" fill="#e8f0ed"/>`;
- } else if (motif === "arch") {
-  inner = `<path d="M13 35V20a11 11 0 0 1 22 0v15" fill="none" stroke="${sub}" stroke-width="4"/><circle cx="24" cy="12" r="3.5" fill="${accent}"/><circle cx="15" cy="22" r="2.5" fill="${accent}"/>`;
- } else if (motif === "bridge") {
-  inner = `<path d="M10 30 Q24 18 38 30" fill="none" stroke="${accent}" stroke-width="4"/><rect x="12" y="28" width="24" height="4" fill="${sub}"/>`;
- } else if (motif === "fence") {
-  inner = `<rect x="11" y="21" width="26" height="3" fill="${sub}"/><rect x="13" y="15" width="4" height="19" fill="${accent}"/><rect x="22" y="15" width="4" height="19" fill="${accent}"/><rect x="31" y="15" width="4" height="19" fill="${accent}"/>`;
- } else if (motif === "gazebo") {
-  inner = `<polygon points="10,22 24,11 38,22" fill="${accent}" stroke="${sub}" stroke-width="1.5"/><rect x="15" y="22" width="18" height="13" fill="${sub}"/><rect x="21" y="25" width="6" height="10" fill="#231f2e"/>`;
- } else if (motif === "pond") {
-  inner = `<ellipse cx="24" cy="28" rx="13" ry="6" fill="${accent}" stroke="${sub}" stroke-width="1.5"/><circle cx="20" cy="26" r="2.5" fill="#f5d69a"/>`;
- } else if (motif === "perch") {
-  inner = `<rect x="12" y="17" width="24" height="4" fill="${sub}"/><rect x="16" y="17" width="3" height="17" fill="${sub}"/><rect x="29" y="17" width="3" height="17" fill="${sub}"/><circle cx="24" cy="14" r="4" fill="${accent}"/>`;
- } else if (motif === "nest") {
-  inner = `<ellipse cx="24" cy="29" rx="13" ry="6" fill="${sub}"/><circle cx="20" cy="25" r="4.5" fill="${accent}"/><circle cx="28" cy="26" r="4" fill="#d6d8bf"/>`;
- } else if (motif === "pedestal") {
-  inner = `<rect x="16" y="24" width="16" height="11" fill="${sub}"/><polygon points="24,11 31,19 24,25 17,19" fill="${accent}"/>`;
- } else {
-  inner = `<ellipse cx="16" cy="28" rx="5" ry="4" fill="${sub}"/><ellipse cx="24" cy="26" rx="6" ry="5" fill="${accent}"/><ellipse cx="32" cy="29" rx="5" ry="4" fill="${sub}"/>`;
+function artBounds(spec) {
+ const bounds = spec?.bounds || {};
+ const width = Math.max(1, Number(spec?.width) || 48);
+ const height = Math.max(1, Number(spec?.height) || 48);
+ return {
+  width,
+  height,
+  x: Number.isFinite(Number(bounds.x)) ? Number(bounds.x) : 0,
+  y: Number.isFinite(Number(bounds.y)) ? Number(bounds.y) : 0,
+  w: Math.max(1, Number(bounds.w) || width),
+  h: Math.max(1, Number(bounds.h) || height),
+ };
+}
+
+/** Resolve the one canonical UI-art key for an item identity. */
+export function itemArtKey(id, { kind = "" } = {}) {
+ const rawId = String(id || "");
+ if (rawId.startsWith("recipe_") && ITEM_ART[rawId]) return rawId;
+ if (rawId.startsWith("produce_") && ITEM_ART[rawId]) return rawId;
+ if (rawId.startsWith("keepsake_")) {
+  const produceKey = `produce_${rawId.slice("keepsake_".length)}`;
+  if (ITEM_ART[produceKey]) return produceKey;
  }
- return `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="${bg}" stroke="${accent}" stroke-width="1.5"/><g ${flipAttr}>${inner}</g></svg>`;
+ if (rawId.startsWith("decoration-") && ITEM_ART[rawId]) return rawId;
+ const recipeKey = `recipe_${rawId}`;
+ if (ITEM_ART[recipeKey]) return recipeKey;
+ if (kind === "produce" || kind === "keepsake") {
+  const produceKey = `produce_${rawId.replace(/^(produce_|keepsake_)/, "")}`;
+  if (ITEM_ART[produceKey]) return produceKey;
+ }
+ return null;
+}
+
+function itemArtVisual(key, size, { facing = "default", keepsake = false } = {}) {
+ const base = ITEM_ART[key];
+ const spec = facing === "right" && base?.rightFile ? {...base, file: base.rightFile, bounds: base.rightBounds} : base;
+ if (!spec?.file) return null;
+ const box = artBounds(spec);
+ const scale = Math.min(size / box.w, size / box.h);
+ const isRight = facing === "right";
+ const mirror = isRight && !base.rightFile;
+ const visual = el("span", {
+  class: `item-art-visual${keepsake ? " is-keepsake-art" : ""}${isRight ? " is-facing-right" : ""}`,
+  "data-art-key": key,
+  "data-pivot-x": String(Number(spec.pivotX) || 0),
+  "data-pivot-y": String(Number(spec.pivotY) || 0),
+  style: `width:${size}px;height:${size}px;display:inline-flex;position:relative;align-items:center;justify-content:center;overflow:hidden;image-rendering:pixelated`,
+ });
+ const image = el("img", { src: spec.file, alt: "", class: `item-art-img${isRight ? " is-flipped" : ""}` });
+ image.style.cssText = `position:absolute;width:${box.width * scale}px;height:${box.height * scale}px;left:${(size - box.w * scale) / 2 - box.x * scale}px;top:${(size - box.h * scale) / 2 - box.y * scale}px;max-width:none;image-rendering:pixelated;pointer-events:none;transform:${mirror ? "scaleX(-1)" : "none"};transform-origin:center`;
+ visual.append(image);
+ if (keepsake) {
+  visual.setAttribute("data-presentation", "trophy-pedestal");
+  visual.append(el("span", {
+   class: "keepsake-pedestal-badge",
+   "aria-label": "Kỷ vật",
+   style: `position:absolute;right:0;bottom:0;width:${Math.max(14, Math.round(size * .32))}px;height:${Math.max(14, Math.round(size * .32))}px;display:block;pointer-events:none`,
+   html: KEEPSAKE_BADGE_SVG,
+  }));
+ }
+ return visual;
+}
+
+const BLUEPRINT_COLORS = Object.freeze(["#b0bd67", "#70a8b6", "#ed8a45", "#d6d8bf", "#ffc36b", "#b7dee0"]);
+
+/** Highlight the numbered expansion in the plot/pen progression, independent of moved buildings. */
+export function expansionBlueprintSvg(id) {
+ const match = /^(plot|pen)_(\d+)$/.exec(String(id || ""));
+ if (!match) return "";
+ const [, kind, rawNumber] = match;
+ const number = Number(rawNumber);
+ const accent = BLUEPRINT_COLORS[(number - 1) % BLUEPRINT_COLORS.length];
+ const dark = "#142620";
+ const outline = "#4a3042";
+ if (kind === "plot") {
+  const focus = number - 1;
+  const cells = Array.from({ length: 18 }, (_, index) => {
+   const x = 7 + (index % 6) * 6;
+   const y = 11 + Math.floor(index / 6) * 8;
+   const fill = index === focus ? accent : (index % 2 ? "#3f6a45" : "#735044");
+   return `<rect x="${x}" y="${y}" width="5" height="6" fill="${fill}" stroke="${outline}" stroke-width="1"/>`;
+  }).join("");
+  return `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="${dark}" stroke="${accent}" stroke-width="1.5"/><path d="M7 37h34" stroke="#a57554" stroke-width="3"/>${cells}<text x="24" y="43" text-anchor="middle" font-size="6" font-family="monospace" font-weight="700" fill="#f5d69a">THỬA ${number}</text></svg>`;
+ }
+ const fence = Array.from({ length: 6 }, (_, index) => {
+  const x = 11 + (index % 3) * 9, y = 15 + Math.floor(index / 3) * 11;
+  return `<rect x="${x}" y="${y}" width="8" height="9" fill="${index === number - 1 ? accent : "#735044"}" stroke="${outline}" stroke-width="1"/>`;
+ }).join("");
+ return `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="${dark}" stroke="${accent}" stroke-width="1.5"/><path d="M8 15h32M11 12l13-6 13 6" fill="none" stroke="#d6d8bf" stroke-width="2"/>${fence}<path d="M8 36h32" stroke="#70a8b6" stroke-width="2"/><text x="24" y="43" text-anchor="middle" font-size="6" font-family="monospace" font-weight="700" fill="#f5d69a">CHUỒNG ${number}</text></svg>`;
+}
+
+function expansionBlueprintIcon(id, size) {
+ const svg = expansionBlueprintSvg(id);
+ if (!svg) return null;
+ return el("span", {
+  class: "expansion-blueprint-art",
+  "data-expansion-id": id,
+  style: `width:${size}px;height:${size}px;display:inline-flex;align-items:center;justify-content:center;image-rendering:pixelated`,
+  html: svg,
+ });
 }
 
 export function earnedDecorIcon(decorId, { size = 48, facing = "default" } = {}) {
- const spec = EARNED_DECOR_SHAPES[decorId] || { glyph: "✦", bg: "#142620", accent: "#f5d69a", sub: "#a57554", motif: "pedestal" };
- const isRight = facing === "right";
- return el("span", {
-  class: `visual-svg-art is-earned-decor${isRight ? " is-facing-right" : ""}`,
-  "data-decor-id": decorId,
-  "data-facing": isRight ? "right" : "default",
-  style: `width:${size}px;height:${size}px;display:inline-flex;align-items:center;justify-content:center`,
-  html: earnedDecorMotifSvg(spec, isRight),
- });
+ const visual = itemArtVisual(decorId, size, { facing });
+ if (!visual) throw new Error(`Missing earned decoration artwork: ${decorId}`);
+ visual.classList.add("is-earned-decor-art");
+ visual.setAttribute("data-decor-id", decorId);
+ visual.setAttribute("data-facing", facing === "right" ? "right" : "default");
+ return visual;
 }
 
 export function svgArt(kind, size = 48) {
@@ -175,8 +229,10 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  const isSeed = kind === "seed" || rawId.startsWith("seed_");
  const cropId = rawId.replace(/^seed_/, "");
  const feedCreature = FEED_CREATURE_MAP[rawId];
- const isProduce = rawId.startsWith("produce_") || kind === "produce" || kind === "keepsake";
- const produceCreature = rawId.replace(/^(produce_|keepsake_)/, "");
+ const isKeepsake = rawId.startsWith("keepsake_") || kind === "keepsake";
+ const isProduce = rawId.startsWith("produce_") || isKeepsake || kind === "produce";
+ const hasFoodIdentity = Boolean(feedCreature) || kind === "food";
+ const artKey = itemArtKey(rawId, { kind });
  const isRight = facing === "right";
 
  const slot = el("div", {
@@ -192,12 +248,21 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
    icon(items, cropId, 3, Math.round(size * 0.68)),
   ]);
   slot.append(packet);
+ } else if (artKey) {
+  slot.classList.add("is-item-art");
+  if (hasFoodIdentity) slot.classList.add("is-feed");
+  if (isProduce) slot.classList.add("is-produce");
+  slot.classList.add(isKeepsake ? "is-keepsake" : artKey.startsWith("decoration-") ? "is-earned-decor-slot" : "is-recipe-art");
+  const art = artKey.startsWith("decoration-")
+   ? earnedDecorIcon(artKey, { size: Math.round(size * 0.92), facing })
+   : itemArtVisual(artKey, Math.round(size * 0.88), { facing, keepsake: isKeepsake });
+  if (art) slot.append(art);
  } else if (rawId === "water" || kind === "water") {
   slot.classList.add("is-supply");
   slot.append(svgArt("water", Math.round(size * 0.92)));
  } else if (rawId === "spring_water" || kind === "spring") {
   slot.classList.add("is-supply", "is-spring");
-  slot.append(svgArt("boost", Math.round(size * 0.92)));
+  slot.append(svgArt("spring_water", Math.round(size * 0.92)));
  } else if (rawId === "boost" || rawId === "gentle_growth" || kind === "boost") {
   slot.classList.add("is-supply");
   slot.append(svgArt("boost", Math.round(size * 0.92)));
@@ -207,9 +272,6 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  } else if (rawId === "fish" || rawId.startsWith("fish_")) {
   slot.classList.add("is-crafted");
   slot.append(svgArt("fish", Math.round(size * 0.92)));
- } else if (rawId.startsWith("decoration-")) {
-  slot.classList.add("is-decor", "is-earned-decor-slot");
-  slot.append(earnedDecorIcon(rawId, { size: Math.round(size * 0.92), facing }));
  } else if (rawId.startsWith("decor_") || kind === "decoration") {
   slot.classList.add("is-decor");
   const asset = decorAssets?.get?.(rawId);
@@ -217,30 +279,23 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
    ? (asset?.rightFile || asset?.file || `decor-assets/native/${rawId}_right.png`)
    : (asset?.file || `decor-assets/native/${rawId}.png`);
   slot.append(el("img", { src, alt: "", class: `visual-decor-img${isRight && !asset?.rightFile ? " is-flipped" : ""}` }));
- } else if (feedCreature && items?.has?.(feedCreature)) {
-  slot.classList.add("is-feed");
-  slot.append(
-   icon(items, feedCreature, 3, Math.round(size * 0.78)),
-   el("span", { class: "visual-corner-tag is-ration", text: "♨", title: "Khẩu phần sinh vật" })
-  );
- } else if (isProduce && items?.has?.(produceCreature)) {
-  slot.classList.add("is-produce");
-  slot.append(
-   icon(items, produceCreature, 3, Math.round(size * 0.78)),
-   el("span", { class: "visual-corner-tag is-keepsake", text: "✦", title: "Sản vật / Kỷ vật" })
-  );
+ } else if (rawId.startsWith("decoration-")) {
+  slot.classList.add("is-decor", "is-earned-decor-slot");
+  slot.append(earnedDecorIcon(rawId, { size: Math.round(size * 0.92), facing }));
+ } else if (hasFoodIdentity || isProduce) {
+  // Food and produce must never silently fall back to the owning creature sprite.
+  slot.classList.add(isProduce ? "is-produce" : "is-feed", "is-art-missing");
+  slot.append(svgArt("medal", Math.round(size * 0.9)));
+ } else if (rawId.startsWith("pen_") && ITEM_ART[rawId]) {
+  slot.classList.add("is-expansion", "is-pen-art");
+  slot.setAttribute("data-expansion-id", rawId);
+  slot.append(itemArtVisual(rawId, Math.round(size * 0.9)));
  } else if (rawId.startsWith("plot_")) {
   slot.classList.add("is-expansion");
-  slot.append(
-   el("img", { src: "environment/layers/tile-soil.png", alt: "", class: "visual-prop-img" }),
-   el("span", { class: "visual-corner-tag is-build", text: "▦" })
-  );
+  slot.append(expansionBlueprintIcon(rawId, Math.round(size * 0.9)));
  } else if (rawId.startsWith("pen_")) {
   slot.classList.add("is-expansion");
-  slot.append(
-   el("img", { src: "environment/layers/fenceNE.png", alt: "", class: "visual-prop-img" }),
-   el("span", { class: "visual-corner-tag is-build", text: "⌂" })
-  );
+  slot.append(expansionBlueprintIcon(rawId, Math.round(size * 0.9)));
  } else if (items?.has?.(rawId)) {
   slot.classList.add("is-sprite");
   const sp = icon(items, rawId, 3, Math.round(size * 0.84));
@@ -320,9 +375,8 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
   };
  }
  if (recipe) {
-  const outId = recipe.output;
   return {
-   visual: visualItemIcon(items, outId, { size, kind: outId.endsWith("_feed") ? "food" : "" }),
+   visual: visualItemIcon(items, `recipe_${recipe.id}`, { size }),
    category: "Chế biến & Trạm nghề",
    categoryClass: "cat-craft",
    meta: `${recipe.station} · Nhận ${recipe.count} thành phẩm (${hours(realHours(recipe, lv))})`,
@@ -338,6 +392,22 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
  }
 
  const text = String(levelRow?.unlock || "").toLowerCase();
+ if (lv === 5 && text.includes("xem trước công trình")) {
+  return {
+   visual: visualItemIcon(items, "pen_1", { size }),
+   category: "Mở rộng thửa & Chuồng",
+   categoryClass: "cat-build",
+   meta: "Xem trước Chuồng 1 và Thửa 4 bằng sơ đồ footprint",
+  };
+ }
+ if (lv === 45 && text.includes("lanh")) {
+  return {
+   visual: visualItemIcon(items, "flax", { size }),
+   category: "Giống cây mới",
+   categoryClass: "cat-crop",
+   meta: "Lanh dùng cho thửa và trang trí",
+  };
+ }
  let decorSrc = "decor-assets/native/decor_pumpkin_lantern.png";
  if (text.includes("cầu") || text.includes("ao") || text.includes("bồn")) decorSrc = "environment/layers/pond.png";
  else if (text.includes("cổng") || text.includes("vòm") || text.includes("dây leo") || text.includes("hoa")) decorSrc = "decor-assets/native/decor_vine_arch.png";

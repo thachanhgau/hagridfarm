@@ -1,0 +1,194 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "groups": [
+    {
+      "name": "recipes-a",
+      "columns": 3,
+      "rows": 3,
+      "items": [
+        [
+          "recipe_puff_feed",
+          "A rustic square wooden bowl filled with diced orange pumpkin and golden oats"
+        ],
+        [
+          "recipe_puff_fruit",
+          "An open crescent wicker fruit basket with red strawberries and orange carrot slices"
+        ],
+        [
+          "recipe_puff_cake",
+          "A round orange pumpkin tart with a golden oat lattice crust, small green stem garnish"
+        ],
+        [
+          "recipe_insects",
+          "A tall clear glass bug jar with cloth lid, tiny golden insects and green lettuce bedding"
+        ],
+        [
+          "recipe_bow_feed",
+          "A folded leaf cone containing pale grubs and tiny white daisy flowers, tied with a twig"
+        ],
+        [
+          "recipe_insects_alt",
+          "A hollow small orange pumpkin insect nursery with visible grubs and two white daisies"
+        ],
+        [
+          "recipe_niffler_feed",
+          "A shallow oval copper dish with carrot chunks and small insects, little spoon"
+        ],
+        [
+          "recipe_puff_clover",
+          "Three triangular green clover oat scones stacked with clover leaf garnish"
+        ],
+        [
+          "recipe_moon_feed",
+          "A tied upright meadow bundle of three-leaf clover and dark red beet roots"
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset: one production sprite atlas for Hagrid Farm inventory, approved cozy handheld farming pixel style. Exactly 3 rows and 3 columns, 9 isolated DISTINCT objects, read left to right then top to bottom. Each cell contains ONLY the described object. Genuine transparent alpha background. Equal size cells. Every object is centered in its own cell with at least 22 percent completely transparent margin on all FOUR sides, never touching cell borders. No objects outside grid. No labels, no letters, no text, no decorative frames, no shadows on ground. True chunky pixel-art clusters, upper-left lighting, selective dark plum outlines, cute 2:1 dimetric view, readable at 44x44 logical pixels. Different silhouettes, containers and ingredients must clearly distinguish every item; no repeated generic dish. Restrained warm earthy 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Avoid blur, smooth gradients, detailed painted textures. Objects in grid order:\n1.1: A rustic square wooden bowl filled with diced orange pumpkin and golden oats\n1.2: An open crescent wicker fruit basket with red strawberries and orange carrot slices\n1.3: A round orange pumpkin tart with a golden oat lattice crust, small green stem garnish\n2.1: A tall clear glass bug jar with cloth lid, tiny golden insects and green lettuce bedding\n2.2: A folded leaf cone containing pale grubs and tiny white daisy flowers, tied with a twig\n2.3: A hollow small orange pumpkin insect nursery with visible grubs and two white daisies\n3.1: A shallow oval copper dish with carrot chunks and small insects, little spoon\n3.2: Three triangular green clover oat scones stacked with clover leaf garnish\n3.3: A tied upright meadow bundle of three-leaf clover and dark red beet roots"
+    },
+    {
+      "name": "recipes-b",
+      "columns": 3,
+      "rows": 3,
+      "items": [
+        [
+          "recipe_insects_maize",
+          "A low rectangular wicker insect tray, yellow corn kernels and leafy lettuce, golden bugs"
+        ],
+        [
+          "recipe_kneazle_feed",
+          "A small round dark ceramic bowl of crunchy yellow maize nuggets and roasted insects"
+        ],
+        [
+          "recipe_diri_feed",
+          "A tan drawstring seed sack open at the top, black sunflower seeds and yellow corn kernels spilling out"
+        ],
+        [
+          "recipe_fwoo_feed",
+          "A shallow green leaf dish with sunflower seeds and a sprig of small white valerian flowers"
+        ],
+        [
+          "recipe_moon_mint",
+          "Two square mint-green clover biscuits, crossed fresh serrated mint leaves on top"
+        ],
+        [
+          "recipe_fish",
+          "A round metal pail with TWO tiny silver blue fish above water, yellow corn kernels alongside"
+        ],
+        [
+          "recipe_fish_cake",
+          "Three golden fish-shaped oat cakes arranged on a small wooden board"
+        ],
+        [
+          "recipe_hippo_feed",
+          "An oblong reed tray with ONE silver fish on an orange carrot and carrot slices"
+        ],
+        [
+          "recipe_fish_kelp",
+          "A squat transparent blue-green fish bowl with one silver fish and curled SILVER seaweed"
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset: one production sprite atlas for Hagrid Farm inventory, approved cozy handheld farming pixel style. Exactly 3 rows and 3 columns, 9 isolated DISTINCT objects, read left to right then top to bottom. Each cell contains ONLY the described object. Genuine transparent alpha background. Equal size cells. Every object is centered in its own cell with at least 22 percent completely transparent margin on all FOUR sides, never touching cell borders. No objects outside grid. No labels, no letters, no text, no decorative frames, no shadows on ground. True chunky pixel-art clusters, upper-left lighting, selective dark plum outlines, cute 2:1 dimetric view, readable at 44x44 logical pixels. Different silhouettes, containers and ingredients must clearly distinguish every item; no repeated generic dish. Restrained warm earthy 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Avoid blur, smooth gradients, detailed painted textures. Objects in grid order:\n1.1: A low rectangular wicker insect tray, yellow corn kernels and leafy lettuce, golden bugs\n1.2: A small round dark ceramic bowl of crunchy yellow maize nuggets and roasted insects\n1.3: A tan drawstring seed sack open at the top, black sunflower seeds and yellow corn kernels spilling out\n2.1: A shallow green leaf dish with sunflower seeds and a sprig of small white valerian flowers\n2.2: Two square mint-green clover biscuits, crossed fresh serrated mint leaves on top\n2.3: A round metal pail with TWO tiny silver blue fish above water, yellow corn kernels alongside\n3.1: Three golden fish-shaped oat cakes arranged on a small wooden board\n3.2: An oblong reed tray with ONE silver fish on an orange carrot and carrot slices\n3.3: A squat transparent blue-green fish bowl with one silver fish and curled SILVER seaweed"
+    },
+    {
+      "name": "recipes-c",
+      "columns": 3,
+      "rows": 3,
+      "items": [
+        [
+          "recipe_thestral_feed",
+          "A dark oval stone platter holding silver fish pieces and pale star-shaped beans"
+        ],
+        [
+          "recipe_unicorn_feed",
+          "A crescent-shaped ivory dish containing tied pale blue moon grass and green mint leaves"
+        ],
+        [
+          "recipe_puff_berry",
+          "Two round golden oat muffins filled with dark blue blueberries, one cut open"
+        ],
+        [
+          "recipe_moon_melon",
+          "Half of an amber golden melon with visible seeds, resting on three clover leaves"
+        ],
+        [
+          "recipe_dog_prep",
+          "A deep square earthenware crock of golden roasted insects and pale gray mist mushroom caps"
+        ],
+        [
+          "recipe_dog_beet",
+          "A broad silver tin tray with two small fish and beetroot slices of dark burgundy red"
+        ],
+        [
+          "recipe_dog_feed",
+          "A three-section brown feeding bowl with silver fish chunks and gray mushrooms in distinct compartments"
+        ],
+        [
+          "recipe_dragon_feed",
+          "A heavy black iron pan with two whole fish and curved orange-red fire peppers"
+        ],
+        [
+          "recipe_dragon_sun",
+          "A low copper cauldron of fish and red peppers, bright yellow sunpetal flowers clearly decorating rim"
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset: one production sprite atlas for Hagrid Farm inventory, approved cozy handheld farming pixel style. Exactly 3 rows and 3 columns, 9 isolated DISTINCT objects, read left to right then top to bottom. Each cell contains ONLY the described object. Genuine transparent alpha background. Equal size cells. Every object is centered in its own cell with at least 22 percent completely transparent margin on all FOUR sides, never touching cell borders. No objects outside grid. No labels, no letters, no text, no decorative frames, no shadows on ground. True chunky pixel-art clusters, upper-left lighting, selective dark plum outlines, cute 2:1 dimetric view, readable at 44x44 logical pixels. Different silhouettes, containers and ingredients must clearly distinguish every item; no repeated generic dish. Restrained warm earthy 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Avoid blur, smooth gradients, detailed painted textures. Objects in grid order:\n1.1: A dark oval stone platter holding silver fish pieces and pale star-shaped beans\n1.2: A crescent-shaped ivory dish containing tied pale blue moon grass and green mint leaves\n1.3: Two round golden oat muffins filled with dark blue blueberries, one cut open\n2.1: Half of an amber golden melon with visible seeds, resting on three clover leaves\n2.2: A deep square earthenware crock of golden roasted insects and pale gray mist mushroom caps\n2.3: A broad silver tin tray with two small fish and beetroot slices of dark burgundy red\n3.1: A three-section brown feeding bowl with silver fish chunks and gray mushrooms in distinct compartments\n3.2: A heavy black iron pan with two whole fish and curved orange-red fire peppers\n3.3: A low copper cauldron of fish and red peppers, bright yellow sunpetal flowers clearly decorating rim"
+    },
+    {
+      "name": "produce",
+      "columns": 4,
+      "rows": 3,
+      "items": [
+        [
+          "produce_puffskein",
+          "A soft golden cream wool ball with a loose curled yarn strand"
+        ],
+        [
+          "produce_bowtruckle",
+          "A tied bundle of three shed brown bark fragments with pale inner wood and tiny green leaf"
+        ],
+        [
+          "produce_niffler",
+          "Three shiny mismatched collected brass buttons, with visible two or four button holes"
+        ],
+        [
+          "produce_mooncalf",
+          "A folded kraft paper fertilizer bag with moon-shaped pale blue seal, small pile of earthy granules"
+        ],
+        [
+          "produce_kneazle",
+          "A fluffy orange-brown tuft of spotted cat fur tied with dark thread"
+        ],
+        [
+          "produce_diricawl",
+          "Three short rounded teal-blue dodo feathers fanned at the quills"
+        ],
+        [
+          "produce_fwooper",
+          "A fan of four distinctly coloured magical bird feathers, coral orange gold and violet"
+        ],
+        [
+          "produce_hippogriff",
+          "A single LARGE long curved slate-gray and ivory eagle flight feather"
+        ],
+        [
+          "produce_thestral",
+          "A tied flowing bundle of dark plum charcoal horse mane hairs, slender wisps"
+        ],
+        [
+          "produce_unicorn",
+          "A neatly looped shining ivory-silver unicorn mane strand, tied with a tiny gold cord"
+        ],
+        [
+          "produce_three-headed-dog",
+          "Three compact fur tufts of tan brown and charcoal tied together with ribbon"
+        ],
+        [
+          "produce_dragon",
+          "Three overlapping shield-shaped deep-green and bronze shed dragon scales"
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset: one production sprite atlas for Hagrid Farm inventory, approved cozy handheld farming pixel style. Exactly 3 rows and 4 columns, 12 isolated DISTINCT objects, read left to right then top to bottom. Each cell contains ONLY the described object. Genuine transparent alpha background. Equal size cells. Every object is centered in its own cell with at least 22 percent completely transparent margin on all FOUR sides, never touching cell borders. No objects outside grid. No labels, no letters, no text, no decorative frames, no shadows on ground. True chunky pixel-art clusters, upper-left lighting, selective dark plum outlines, cute 2:1 dimetric view, readable at 44x44 logical pixels. Different silhouettes, containers and ingredients must clearly distinguish every item; no repeated generic dish. Restrained warm earthy 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Avoid blur, smooth gradients, detailed painted textures. Objects in grid order:\n1.1: A soft golden cream wool ball with a loose curled yarn strand\n1.2: A tied bundle of three shed brown bark fragments with pale inner wood and tiny green leaf\n1.3: Three shiny mismatched collected brass buttons, with visible two or four button holes\n1.4: A folded kraft paper fertilizer bag with moon-shaped pale blue seal, small pile of earthy granules\n2.1: A fluffy orange-brown tuft of spotted cat fur tied with dark thread\n2.2: Three short rounded teal-blue dodo feathers fanned at the quills\n2.3: A fan of four distinctly coloured magical bird feathers, coral orange gold and violet\n2.4: A single LARGE long curved slate-gray and ivory eagle flight feather\n3.1: A tied flowing bundle of dark plum charcoal horse mane hairs, slender wisps\n3.2: A neatly looped shining ivory-silver unicorn mane strand, tied with a tiny gold cord\n3.3: Three compact fur tufts of tan brown and charcoal tied together with ribbon\n3.4: Three overlapping shield-shaped deep-green and bronze shed dragon scales"
+    }
+  ]
+}

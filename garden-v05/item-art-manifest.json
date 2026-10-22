@@ -1,0 +1,2501 @@
+{
+  "version": 1,
+  "palette": [
+    "#231F2E",
+    "#4A3042",
+    "#735044",
+    "#A57554",
+    "#41465C",
+    "#687486",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A",
+    "#874056",
+    "#C75B4B",
+    "#ED8A45",
+    "#FFC36B",
+    "#3E3B70",
+    "#6961A6",
+    "#70A8B6",
+    "#B7DEE0"
+  ],
+  "alphaThreshold": 192,
+  "items": {
+    "recipe_puff_feed": {
+      "file": "native-items/recipe_puff_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 15,
+        "w": 52,
+        "h": 41
+      },
+      "sha256": "dd5ec091c4d645dd9538769ca77d0bb127a26d60de72ea66a0bf791114892c37",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 418,
+        "height": 418
+      }
+    },
+    "recipe_puff_fruit": {
+      "file": "native-items/recipe_puff_fruit.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 8,
+        "w": 52,
+        "h": 48
+      },
+      "sha256": "00b8393cd1f6e8e9f73ffa8b3e38db2c6770b9bde681971bf5954bb413ac4554",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 418,
+        "top": 0,
+        "width": 418,
+        "height": 418
+      }
+    },
+    "recipe_puff_cake": {
+      "file": "native-items/recipe_puff_cake.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 14,
+        "w": 52,
+        "h": 42
+      },
+      "sha256": "6ca5cf8ef857cf075318ff754a9628e8ca08a41c9f9ced653c89fb483368a75a",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 836,
+        "top": 0,
+        "width": 418,
+        "height": 418
+      }
+    },
+    "recipe_insects": {
+      "file": "native-items/recipe_insects.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 13,
+        "y": 8,
+        "w": 37,
+        "h": 48
+      },
+      "sha256": "0547e421b0b1d98fb0062c41806efce7b23ac18e1c656304d9e272b995d3e271",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 0,
+        "top": 418,
+        "width": 418,
+        "height": 408
+      }
+    },
+    "recipe_bow_feed": {
+      "file": "native-items/recipe_bow_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 11,
+        "y": 8,
+        "w": 42,
+        "h": 48
+      },
+      "sha256": "621a0cba505aea971e03bdb7392d8625573ca3b9daed34557ecbd21386b6ef97",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 418,
+        "top": 418,
+        "width": 418,
+        "height": 408
+      }
+    },
+    "recipe_insects_alt": {
+      "file": "native-items/recipe_insects_alt.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 9,
+        "y": 8,
+        "w": 45,
+        "h": 48
+      },
+      "sha256": "dfea75a80b59ab5b97b3bde3eb8b514a4adc8e924526d8f0d66ea13782b21818",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 836,
+        "top": 418,
+        "width": 418,
+        "height": 408
+      }
+    },
+    "recipe_niffler_feed": {
+      "file": "native-items/recipe_niffler_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 17,
+        "w": 52,
+        "h": 39
+      },
+      "sha256": "98b72960d05a46d2951b9c437509143ba527793d833c3f395538d1c9e58a9f45",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 0,
+        "top": 826,
+        "width": 430,
+        "height": 428
+      }
+    },
+    "recipe_puff_clover": {
+      "file": "native-items/recipe_puff_clover.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 7,
+        "y": 8,
+        "w": 49,
+        "h": 48
+      },
+      "sha256": "0511ef0ed337d0f6f38d8ab6c1d47f129a2c69beaf283f81f52ec65565fb071e",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 430,
+        "top": 826,
+        "width": 406,
+        "height": 428
+      }
+    },
+    "recipe_moon_feed": {
+      "file": "native-items/recipe_moon_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 14,
+        "y": 8,
+        "w": 36,
+        "h": 48
+      },
+      "sha256": "0118395c995da363b012d88174349127fd7de18b2e19408c821c55c8d0dd84d0",
+      "source": "masters-items/recipes-a.png",
+      "sourceSha256": "3335ae4998d569a863e7efc407b56f381c254711f48987fd1147e27cdf5aac42",
+      "sourceRect": {
+        "left": 836,
+        "top": 826,
+        "width": 418,
+        "height": 428
+      }
+    },
+    "recipe_insects_maize": {
+      "file": "native-items/recipe_insects_maize.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 17,
+        "w": 52,
+        "h": 39
+      },
+      "sha256": "6f9e6816c9d1d51e9487e2e4bb25478558aaa6a3204f754b16f4335310daf0bc",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 460,
+        "height": 412
+      }
+    },
+    "recipe_kneazle_feed": {
+      "file": "native-items/recipe_kneazle_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 11,
+        "w": 52,
+        "h": 45
+      },
+      "sha256": "24e29430c5bee109a3172b71f4a83f8b609793c62668463926fcba88e9c2b228",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 460,
+        "top": 0,
+        "width": 388,
+        "height": 412
+      }
+    },
+    "recipe_diri_feed": {
+      "file": "native-items/recipe_diri_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "w": 47,
+        "h": 48
+      },
+      "sha256": "9b20f33c7eeac653a367f7f6f8c0c9a6ca1b31ae4e892fb0d0e78f603ef36853",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 848,
+        "top": 0,
+        "width": 424,
+        "height": 412
+      }
+    },
+    "recipe_fwoo_feed": {
+      "file": "native-items/recipe_fwoo_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 22,
+        "w": 52,
+        "h": 34
+      },
+      "sha256": "be7d2ef0da42bcaf649d8311bf75830fcc5b088c85b7a386ea10d8c902383727",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 0,
+        "top": 412,
+        "width": 440,
+        "height": 413
+      }
+    },
+    "recipe_moon_mint": {
+      "file": "native-items/recipe_moon_mint.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 13,
+        "w": 52,
+        "h": 43
+      },
+      "sha256": "01ba9c457cc3fc94bd3918c0cbf018e3eabd80f8187c92d64f17c51dff30e3bb",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 440,
+        "top": 412,
+        "width": 408,
+        "height": 413
+      }
+    },
+    "recipe_fish": {
+      "file": "native-items/recipe_fish.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 9,
+        "y": 8,
+        "w": 46,
+        "h": 48
+      },
+      "sha256": "a28c7f97b6987a886fc24a8b92f89887f5a2af426c19f03e5e687d1cfdfeeb36",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 848,
+        "top": 412,
+        "width": 424,
+        "height": 413
+      }
+    },
+    "recipe_fish_cake": {
+      "file": "native-items/recipe_fish_cake.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 12,
+        "w": 52,
+        "h": 44
+      },
+      "sha256": "f5ef36a558354d92984caa55955b42d9330ce73053ab6003e91d6fa09888280a",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 0,
+        "top": 825,
+        "width": 424,
+        "height": 412
+      }
+    },
+    "recipe_hippo_feed": {
+      "file": "native-items/recipe_hippo_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 14,
+        "w": 52,
+        "h": 42
+      },
+      "sha256": "b2aee939609c614a4e6a065cd8120e04349ecc15d8ae64cf7e2ba1c669184fd4",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 424,
+        "top": 825,
+        "width": 424,
+        "height": 412
+      }
+    },
+    "recipe_fish_kelp": {
+      "file": "native-items/recipe_fish_kelp.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "w": 47,
+        "h": 48
+      },
+      "sha256": "db71fafd8e4217b6ecfbb8b0d020383ca5deb43d606acec4ca999070ba64338c",
+      "source": "masters-items/recipes-b.png",
+      "sourceSha256": "0022ae00de7fc7eaec484b1eefb29414783c236fb34ceb6ba211035342dde421",
+      "sourceRect": {
+        "left": 848,
+        "top": 825,
+        "width": 424,
+        "height": 412
+      }
+    },
+    "recipe_thestral_feed": {
+      "file": "native-items/recipe_thestral_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 28,
+        "w": 52,
+        "h": 28
+      },
+      "sha256": "2bcd23fcb91137172dd77ea514cf6eef2e10f406669e6b335ff85216e579678e",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 512,
+        "height": 341
+      }
+    },
+    "recipe_unicorn_feed": {
+      "file": "native-items/recipe_unicorn_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 16,
+        "w": 52,
+        "h": 40
+      },
+      "sha256": "24301a3f01e2c03fea205f9834776572997e53db8640c85520c7ecd1010f9e91",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 512,
+        "top": 0,
+        "width": 512,
+        "height": 341
+      }
+    },
+    "recipe_puff_berry": {
+      "file": "native-items/recipe_puff_berry.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 22,
+        "w": 52,
+        "h": 34
+      },
+      "sha256": "11f1e2608f0809bc4d4d83c2358e4be73ea6c2fcadb81e71a6ac891cdfa8710d",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 1024,
+        "top": 0,
+        "width": 512,
+        "height": 341
+      }
+    },
+    "recipe_moon_melon": {
+      "file": "native-items/recipe_moon_melon.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 16,
+        "w": 52,
+        "h": 40
+      },
+      "sha256": "e75e89f63b3fec687accc1230fe8818e2961fd6e77abcac4972392071f22a395",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 0,
+        "top": 341,
+        "width": 512,
+        "height": 324
+      }
+    },
+    "recipe_dog_prep": {
+      "file": "native-items/recipe_dog_prep.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 16,
+        "w": 52,
+        "h": 40
+      },
+      "sha256": "bc59754703e48c1e46da646950634602bcf85c643c7c76af85b1859a01f3b677",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 512,
+        "top": 341,
+        "width": 512,
+        "height": 324
+      }
+    },
+    "recipe_dog_beet": {
+      "file": "native-items/recipe_dog_beet.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 25,
+        "w": 52,
+        "h": 31
+      },
+      "sha256": "4584a11a748c43f1272be4e6d7b7e0015c81769d03e1fdc5ebd3b73e53fc872d",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 1024,
+        "top": 341,
+        "width": 512,
+        "height": 324
+      }
+    },
+    "recipe_dog_feed": {
+      "file": "native-items/recipe_dog_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 26,
+        "w": 52,
+        "h": 30
+      },
+      "sha256": "f21481a0111e2d245b2a720dde2f4073443eabfe3e4390215bdfc9c0ab847c4f",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 0,
+        "top": 665,
+        "width": 512,
+        "height": 359
+      }
+    },
+    "recipe_dragon_feed": {
+      "file": "native-items/recipe_dragon_feed.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 21,
+        "w": 52,
+        "h": 35
+      },
+      "sha256": "6a9fa1cd929add5286081eb78108ed32db197bd67c2239ae61dc7027f352aeb1",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 512,
+        "top": 665,
+        "width": 512,
+        "height": 359
+      }
+    },
+    "recipe_dragon_sun": {
+      "file": "native-items/recipe_dragon_sun.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 19,
+        "w": 52,
+        "h": 37
+      },
+      "sha256": "730633c9f82800f756fe9a194780591384e7eed6aa3104bcfb4439b76c84a9c6",
+      "source": "masters-items/recipes-c.png",
+      "sourceSha256": "0554a38c4efb66b6a314bf3d0914ee57ae7338a31be706561214326187426447",
+      "sourceRect": {
+        "left": 1024,
+        "top": 665,
+        "width": 512,
+        "height": 359
+      }
+    },
+    "produce_puffskein": {
+      "file": "native-items/produce_puffskein.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 8,
+        "w": 52,
+        "h": 48
+      },
+      "sha256": "b5a6189708f3c14ff3937ed946b560d5ca21b0ca959413638824ec3f1755cfbc",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_bowtruckle": {
+      "file": "native-items/produce_bowtruckle.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 8,
+        "w": 52,
+        "h": 48
+      },
+      "sha256": "4b0a29292940864af217adb7123ee24916a771c6789afc82cf94b90aa3bb3a4a",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_niffler": {
+      "file": "native-items/produce_niffler.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 9,
+        "w": 52,
+        "h": 47
+      },
+      "sha256": "acc3604b86a7001532661675809280a2fd94897d4464d462b243c2ab744435c8",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_mooncalf": {
+      "file": "native-items/produce_mooncalf.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 9,
+        "y": 8,
+        "w": 46,
+        "h": 48
+      },
+      "sha256": "15ceddc21dbb62610211e02831fb744a09dfe9d2dc0f9f01520b401ff3fd446b",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 1086,
+        "top": 0,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_kneazle": {
+      "file": "native-items/produce_kneazle.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "w": 47,
+        "h": 48
+      },
+      "sha256": "2ef54fab5b4f296a4003592d27c1f2b07703092f58649c355b81e354fcc6bd12",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 0,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_diricawl": {
+      "file": "native-items/produce_diricawl.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 9,
+        "w": 52,
+        "h": 47
+      },
+      "sha256": "3e5a56a7e9dc29a10cfb55c2bb54de4715d48c3959b8f629d77d2e169015aa15",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 362,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_fwooper": {
+      "file": "native-items/produce_fwooper.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "w": 48,
+        "h": 48
+      },
+      "sha256": "14dedf181db525a19119e72fd6761e486d836f4dbcf9eff3d4100c67d2f9280c",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 724,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_hippogriff": {
+      "file": "native-items/produce_hippogriff.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 10,
+        "y": 8,
+        "w": 44,
+        "h": 48
+      },
+      "sha256": "0f49618f688bcb6b5e6450673472404479f1c88babb577d8bf7dc950d38f5620",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 1086,
+        "top": 362,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_thestral": {
+      "file": "native-items/produce_thestral.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "w": 48,
+        "h": 47
+      },
+      "sha256": "bc8bc90421853eee2447490b21b2e46da9c0574cc1d99c4c2016f4d340bdba8d",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 0,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_unicorn": {
+      "file": "native-items/produce_unicorn.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 9,
+        "y": 8,
+        "w": 46,
+        "h": 48
+      },
+      "sha256": "7ccd3df7862017c39553a7b18864347601af5450d0276862cba6e4861d49f638",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 362,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_three-headed-dog": {
+      "file": "native-items/produce_three-headed-dog.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "w": 47,
+        "h": 48
+      },
+      "sha256": "ed3c6dae8121dc5ea29c8ba1b0af9212a6fc8865e2bc49906e66038442a14621",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 724,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "produce_dragon": {
+      "file": "native-items/produce_dragon.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 7,
+        "y": 8,
+        "w": 49,
+        "h": 48
+      },
+      "sha256": "76852d96b75277a2327e9ee719848ee6e79a4a2f04dafa0a3063737d9b81740c",
+      "source": "masters-items/produce.png",
+      "sourceSha256": "0626f7b1924e4616806bfb87fc958364f16bd0e7a49f5189be10c3b124d6d1f6",
+      "sourceRect": {
+        "left": 1086,
+        "top": 724,
+        "width": 362,
+        "height": 362
+      }
+    },
+    "decoration-3": {
+      "file": "native-items/decoration-3.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 65,
+        "w": 84,
+        "h": 31
+      },
+      "sha256": "6037254b91251be16bf0e29437c21bd05a84980fc5fc82a1bc5bfc3ea1e9a969",
+      "source": "masters-items/decoration-3.png",
+      "sourceSha256": "5f4b97f0412e37c1f70ee03cd5e6981b98be10bce2cbb35881302e3143fbe8ae",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-3_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 64,
+        "w": 84,
+        "h": 32
+      }
+    },
+    "decoration-3_right": {
+      "file": "native-items/decoration-3_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 64,
+        "w": 84,
+        "h": 32
+      },
+      "sha256": "4a2a06dc19a10de09e9bb8fc172715a5e83d708131ab381dcf3cf13c848f2516",
+      "source": "masters-items/decoration-3.png",
+      "sourceSha256": "5f4b97f0412e37c1f70ee03cd5e6981b98be10bce2cbb35881302e3143fbe8ae",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-7": {
+      "file": "native-items/decoration-7.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 24,
+        "w": 84,
+        "h": 72
+      },
+      "sha256": "eec14c3f6539d87d67b3690b093e317834346af539850fccec68e73f4b5572b0",
+      "source": "masters-items/decoration-7.png",
+      "sourceSha256": "cb144baa53628be7fe8ec2973cfc8e0e24303b6fe10849c151aed217bf413a8c",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 985,
+        "height": 798
+      },
+      "rightFile": "native-items/decoration-7_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 18,
+        "w": 84,
+        "h": 78
+      }
+    },
+    "decoration-7_right": {
+      "file": "native-items/decoration-7_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 18,
+        "w": 84,
+        "h": 78
+      },
+      "sha256": "33a11abedc569d980c6e452f29ccd10a301531b137e563ee3665052d53bae765",
+      "source": "masters-items/decoration-7.png",
+      "sourceSha256": "cb144baa53628be7fe8ec2973cfc8e0e24303b6fe10849c151aed217bf413a8c",
+      "sourceRect": {
+        "left": 985,
+        "top": 0,
+        "width": 986,
+        "height": 798
+      }
+    },
+    "decoration-11": {
+      "file": "native-items/decoration-11.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 31,
+        "w": 84,
+        "h": 65
+      },
+      "sha256": "fe996e9b5a363d479aec361afce542f32ba94be31d068e51da412838b790302d",
+      "source": "masters-items/decoration-11.png",
+      "sourceSha256": "97dccdfe0b143df3666e1da6e4c8fe5e6ba678cc3271196697cc9115489f3326",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 959,
+        "height": 820
+      },
+      "rightFile": "native-items/decoration-11_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 31,
+        "w": 84,
+        "h": 65
+      }
+    },
+    "decoration-11_right": {
+      "file": "native-items/decoration-11_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 31,
+        "w": 84,
+        "h": 65
+      },
+      "sha256": "a94845707ff73428e966f11f008a582bee49c8f2180e1062cfd18cd6ea127a58",
+      "source": "masters-items/decoration-11.png",
+      "sourceSha256": "97dccdfe0b143df3666e1da6e4c8fe5e6ba678cc3271196697cc9115489f3326",
+      "sourceRect": {
+        "left": 959,
+        "top": 0,
+        "width": 959,
+        "height": 820
+      }
+    },
+    "decoration-15": {
+      "file": "native-items/decoration-15.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 44,
+        "w": 84,
+        "h": 52
+      },
+      "sha256": "1355a1306ca4117de4c916bfe1a820bf15adb3548ba4db2b8f24859e1b46ab42",
+      "source": "masters-items/decoration-15.png",
+      "sourceSha256": "4c5cd019f203a2443ce1d598a8f0987dd1b5508b0ad56bc9b469e449b0a8fc96",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1046,
+        "height": 752
+      },
+      "rightFile": "native-items/decoration-15_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 33,
+        "w": 84,
+        "h": 63
+      }
+    },
+    "decoration-15_right": {
+      "file": "native-items/decoration-15_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 33,
+        "w": 84,
+        "h": 63
+      },
+      "sha256": "df980d018ec1d7762f119bdc1e68a6bf08c2f9753654fcb9902a93a691bea116",
+      "source": "masters-items/decoration-15.png",
+      "sourceSha256": "4c5cd019f203a2443ce1d598a8f0987dd1b5508b0ad56bc9b469e449b0a8fc96",
+      "sourceRect": {
+        "left": 1046,
+        "top": 0,
+        "width": 1046,
+        "height": 752
+      }
+    },
+    "decoration-19": {
+      "file": "native-items/decoration-19.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 20,
+        "y": 16,
+        "w": 56,
+        "h": 80
+      },
+      "sha256": "f3e131268bf4de8d2a652c63e09cacdfd68be728f6aa03cfcdf1cf6d9d2fb702",
+      "source": "masters-items/decoration-19.png",
+      "sourceSha256": "c2f9b5695df741e3e62e2bfaf238ccb408477f60372150020ac79ea83e51bef3",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-19_right.png",
+      "rightBounds": {
+        "x": 21,
+        "y": 16,
+        "w": 54,
+        "h": 80
+      }
+    },
+    "decoration-19_right": {
+      "file": "native-items/decoration-19_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 21,
+        "y": 16,
+        "w": 54,
+        "h": 80
+      },
+      "sha256": "681c399f9ff73224d59fe486d7f4d43cf147f31053c2d3606c10fad9ee45217d",
+      "source": "masters-items/decoration-19.png",
+      "sourceSha256": "c2f9b5695df741e3e62e2bfaf238ccb408477f60372150020ac79ea83e51bef3",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-23": {
+      "file": "native-items/decoration-23.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 34,
+        "w": 84,
+        "h": 62
+      },
+      "sha256": "fd89cb9b21710652f6c978342a6b035934b6fad1dfee6dc015d48e3236839c70",
+      "source": "masters-items/decoration-23.png",
+      "sourceSha256": "b92802ceb329d940e0bf3d77590921bc2091456ee86472f44a90b5340e8caf6a",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-23_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 34,
+        "w": 84,
+        "h": 62
+      }
+    },
+    "decoration-23_right": {
+      "file": "native-items/decoration-23_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 34,
+        "w": 84,
+        "h": 62
+      },
+      "sha256": "e46509ac520596f51d38543505840f9777bfdd3f55b7b61faf14250ecdba137f",
+      "source": "masters-items/decoration-23.png",
+      "sourceSha256": "b92802ceb329d940e0bf3d77590921bc2091456ee86472f44a90b5340e8caf6a",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-27": {
+      "file": "native-items/decoration-27.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 14,
+        "y": 16,
+        "w": 67,
+        "h": 80
+      },
+      "sha256": "8a3fd72e651c1023384a467e9c874258db92a62ae7f3348b503a9300a58fe528",
+      "source": "masters-items/decoration-27.png",
+      "sourceSha256": "5b609b30ab9c4fd8ab1bfea01f7da21989081d8e4193025fe5a7dac0a926efe5",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 904,
+        "height": 870
+      },
+      "rightFile": "native-items/decoration-27_right.png",
+      "rightBounds": {
+        "x": 14,
+        "y": 16,
+        "w": 67,
+        "h": 80
+      }
+    },
+    "decoration-27_right": {
+      "file": "native-items/decoration-27_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 14,
+        "y": 16,
+        "w": 67,
+        "h": 80
+      },
+      "sha256": "05c0bcaec9f8cd53ac4a8ab160ef84615691ef7668b651cfacff11e3298fb02a",
+      "source": "masters-items/decoration-27.png",
+      "sourceSha256": "5b609b30ab9c4fd8ab1bfea01f7da21989081d8e4193025fe5a7dac0a926efe5",
+      "sourceRect": {
+        "left": 904,
+        "top": 0,
+        "width": 904,
+        "height": 870
+      }
+    },
+    "decoration-30": {
+      "file": "native-items/decoration-30.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 47,
+        "w": 84,
+        "h": 49
+      },
+      "sha256": "d6e82f57b4e577878fa7216d2c5b0b6411a008ed1581f2c0ce1b0705d9589aff",
+      "source": "masters-items/decoration-30.png",
+      "sourceSha256": "ac205d084152e7ae1a13cadc192e07be282bcdc25cc96d12f206238cee62fe6d",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-30_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 45,
+        "w": 84,
+        "h": 51
+      }
+    },
+    "decoration-30_right": {
+      "file": "native-items/decoration-30_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 45,
+        "w": 84,
+        "h": 51
+      },
+      "sha256": "c30371c48478c8dc00b92b07ab6517f5ab7036d7e3ee0b7e9860471af21d3066",
+      "source": "masters-items/decoration-30.png",
+      "sourceSha256": "ac205d084152e7ae1a13cadc192e07be282bcdc25cc96d12f206238cee62fe6d",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-31": {
+      "file": "native-items/decoration-31.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 36,
+        "w": 84,
+        "h": 60
+      },
+      "sha256": "e8630f2e6875cbe6a7b0c0a3fd7576f8fcdc66ce13ce230660ee7293770b0a7f",
+      "source": "masters-items/decoration-31.png",
+      "sourceSha256": "fc299677869c14b9f8f9b4b4876b10a3a4a2d888d5f789677df23cc3aadd676a",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-31_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 37,
+        "w": 84,
+        "h": 59
+      }
+    },
+    "decoration-31_right": {
+      "file": "native-items/decoration-31_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 37,
+        "w": 84,
+        "h": 59
+      },
+      "sha256": "171d0dea414fba8f6db2ca9255523cbf9bc0e427443ccaa1c4ec657ef6413acb",
+      "source": "masters-items/decoration-31.png",
+      "sourceSha256": "fc299677869c14b9f8f9b4b4876b10a3a4a2d888d5f789677df23cc3aadd676a",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-35": {
+      "file": "native-items/decoration-35.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 21,
+        "y": 16,
+        "w": 53,
+        "h": 80
+      },
+      "sha256": "3f8518f12df9c416fcd98e9b6404a062e466fe2f6d540bae44f6b8e3bff949ef",
+      "source": "masters-items/decoration-35.png",
+      "sourceSha256": "d128371326b33000649b20648598d40871bebff233db5ad8d01478eb6caa4ebe",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-35_right.png",
+      "rightBounds": {
+        "x": 23,
+        "y": 16,
+        "w": 49,
+        "h": 80
+      }
+    },
+    "decoration-35_right": {
+      "file": "native-items/decoration-35_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 23,
+        "y": 16,
+        "w": 49,
+        "h": 80
+      },
+      "sha256": "60f7f60b3ab309186e8ed509f3d7a0982ceabb1ceac51094b148c48e26ef226f",
+      "source": "masters-items/decoration-35.png",
+      "sourceSha256": "d128371326b33000649b20648598d40871bebff233db5ad8d01478eb6caa4ebe",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-39": {
+      "file": "native-items/decoration-39.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 22,
+        "w": 84,
+        "h": 74
+      },
+      "sha256": "4c21c48b4d464b135c99ad679f43446fc693b759a3e6f74b4d772265848ea90e",
+      "source": "masters-items/decoration-39.png",
+      "sourceSha256": "081667eda714da78e23a824d4b14b973705d2b9287a6b1de933732b50b819824",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-39_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 22,
+        "w": 84,
+        "h": 74
+      }
+    },
+    "decoration-39_right": {
+      "file": "native-items/decoration-39_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 22,
+        "w": 84,
+        "h": 74
+      },
+      "sha256": "e4c19362159548ba3fcd1c51554ce35a8fdb2fae6078ed02fcfca9f8683a73f6",
+      "source": "masters-items/decoration-39.png",
+      "sourceSha256": "081667eda714da78e23a824d4b14b973705d2b9287a6b1de933732b50b819824",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-43": {
+      "file": "native-items/decoration-43.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 16,
+        "w": 83,
+        "h": 80
+      },
+      "sha256": "da66b1327c71aba7ef4cbe02e79b0dc76a3c4f38a5d9fbb57290fcd626cbf009",
+      "source": "masters-items/decoration-43.png",
+      "sourceSha256": "e4a2fc047ace9f3ee1cb5ad31f2ca945e32a62037f9b5ab3b9dab945c01ce57b",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 908,
+        "height": 866
+      },
+      "rightFile": "native-items/decoration-43_right.png",
+      "rightBounds": {
+        "x": 7,
+        "y": 16,
+        "w": 82,
+        "h": 80
+      }
+    },
+    "decoration-43_right": {
+      "file": "native-items/decoration-43_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 7,
+        "y": 16,
+        "w": 82,
+        "h": 80
+      },
+      "sha256": "ca5f1cd0eb1c5fc6f04ca0c2c4c46a378cf1512803409ab9329a58e65624683a",
+      "source": "masters-items/decoration-43.png",
+      "sourceSha256": "e4a2fc047ace9f3ee1cb5ad31f2ca945e32a62037f9b5ab3b9dab945c01ce57b",
+      "sourceRect": {
+        "left": 908,
+        "top": 0,
+        "width": 908,
+        "height": 866
+      }
+    },
+    "decoration-46": {
+      "file": "native-items/decoration-46.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 27,
+        "w": 84,
+        "h": 69
+      },
+      "sha256": "566140fc1ffc51265dcd50fc287030d10a2b7be8282b97a8028dcb4a5cdeaf0e",
+      "source": "masters-items/decoration-46.png",
+      "sourceSha256": "e4d370e8ac4d97efbc51b97590c4caed575b54713fd5efabc48397381d60bd66",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 971,
+        "height": 809
+      },
+      "rightFile": "native-items/decoration-46_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 25,
+        "w": 84,
+        "h": 71
+      }
+    },
+    "decoration-46_right": {
+      "file": "native-items/decoration-46_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 25,
+        "w": 84,
+        "h": 71
+      },
+      "sha256": "15eea45578babfcdf88e1f9f65057fb156f4c451f51b09664684d6ac1c4917a1",
+      "source": "masters-items/decoration-46.png",
+      "sourceSha256": "e4d370e8ac4d97efbc51b97590c4caed575b54713fd5efabc48397381d60bd66",
+      "sourceRect": {
+        "left": 971,
+        "top": 0,
+        "width": 971,
+        "height": 809
+      }
+    },
+    "decoration-47": {
+      "file": "native-items/decoration-47.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 19,
+        "w": 84,
+        "h": 77
+      },
+      "sha256": "9bb5283eb79429f4256f7d48def85739fb450199bf8fecd8a5ef1f120abbab3c",
+      "source": "masters-items/decoration-47.png",
+      "sourceSha256": "e55cd6819a86e41f47290c10396487d5301459689cb46879714ce4cdd6413367",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-47_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 27,
+        "w": 84,
+        "h": 69
+      }
+    },
+    "decoration-47_right": {
+      "file": "native-items/decoration-47_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 27,
+        "w": 84,
+        "h": 69
+      },
+      "sha256": "b24e88a48c7d346202f90810166324b78cde87625e8dc8c285d9cf050d2b0b99",
+      "source": "masters-items/decoration-47.png",
+      "sourceSha256": "e55cd6819a86e41f47290c10396487d5301459689cb46879714ce4cdd6413367",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-51": {
+      "file": "native-items/decoration-51.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 20,
+        "w": 84,
+        "h": 76
+      },
+      "sha256": "dd7e1a4c620f26db0c66e395feb8361ea5f0ff8e630fd08ca3a75e2f71a24f39",
+      "source": "masters-items/decoration-51.png",
+      "sourceSha256": "529765d096d7a104e09077f0f7f9cdaccc0e74ce7baa47937cda654239d74f5c",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1028,
+        "height": 765
+      },
+      "rightFile": "native-items/decoration-51_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 18,
+        "w": 84,
+        "h": 78
+      }
+    },
+    "decoration-51_right": {
+      "file": "native-items/decoration-51_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 18,
+        "w": 84,
+        "h": 78
+      },
+      "sha256": "1226f5c7ba56cd1b6d6894e2e3ef442e71731e6ef7e164a27af86a117304545c",
+      "source": "masters-items/decoration-51.png",
+      "sourceSha256": "529765d096d7a104e09077f0f7f9cdaccc0e74ce7baa47937cda654239d74f5c",
+      "sourceRect": {
+        "left": 1028,
+        "top": 0,
+        "width": 1028,
+        "height": 765
+      }
+    },
+    "decoration-55": {
+      "file": "native-items/decoration-55.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 27,
+        "w": 84,
+        "h": 69
+      },
+      "sha256": "e70044eb725fcb8c0419e73b841c626458dbb07f464f3859af1337aed8ca6dce",
+      "source": "masters-items/decoration-55.png",
+      "sourceSha256": "b139273aee206c03e935315de024f3927c5fd1b0339b705800c15cfb82ccef95",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1036,
+        "height": 758
+      },
+      "rightFile": "native-items/decoration-55_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 28,
+        "w": 84,
+        "h": 68
+      }
+    },
+    "decoration-55_right": {
+      "file": "native-items/decoration-55_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 28,
+        "w": 84,
+        "h": 68
+      },
+      "sha256": "459c780a7b55f056d2dd42757a9cde2486b4a2a2aaca82c2843bd59046edda3d",
+      "source": "masters-items/decoration-55.png",
+      "sourceSha256": "b139273aee206c03e935315de024f3927c5fd1b0339b705800c15cfb82ccef95",
+      "sourceRect": {
+        "left": 1036,
+        "top": 0,
+        "width": 1037,
+        "height": 758
+      }
+    },
+    "decoration-59": {
+      "file": "native-items/decoration-59.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 25,
+        "w": 84,
+        "h": 71
+      },
+      "sha256": "d8da6e7ed0471bc643ca278f5eb54d6a2453777439ea6a2da04c022393a3180a",
+      "source": "masters-items/decoration-59.png",
+      "sourceSha256": "95bf2dd5b3c7bd3fbe399779835ff64b9e286ee368b7f4431dffa861d536881f",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 979,
+        "height": 803
+      },
+      "rightFile": "native-items/decoration-59_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 25,
+        "w": 84,
+        "h": 71
+      }
+    },
+    "decoration-59_right": {
+      "file": "native-items/decoration-59_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 25,
+        "w": 84,
+        "h": 71
+      },
+      "sha256": "4a5eb41d301dd2dbe1ab92c5914c6d31f238d1353ddf05aef7fb41a979e925c1",
+      "source": "masters-items/decoration-59.png",
+      "sourceSha256": "95bf2dd5b3c7bd3fbe399779835ff64b9e286ee368b7f4431dffa861d536881f",
+      "sourceRect": {
+        "left": 979,
+        "top": 0,
+        "width": 979,
+        "height": 803
+      }
+    },
+    "decoration-63": {
+      "file": "native-items/decoration-63.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 36,
+        "w": 84,
+        "h": 60
+      },
+      "sha256": "0b5384f91b274dce2e1ddad8bec9f96b2a2d046aa38b1557f1044c6e63a74a45",
+      "source": "masters-items/decoration-63.png",
+      "sourceSha256": "76e9b647cc05d8a9cbd04f2394c0b58330dc9d7480f65f54b8fd83176ea45390",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-63_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 38,
+        "w": 84,
+        "h": 58
+      }
+    },
+    "decoration-63_right": {
+      "file": "native-items/decoration-63_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 38,
+        "w": 84,
+        "h": 58
+      },
+      "sha256": "c88d99ffe84c783d98f6d8249bbec4a2275c77cddc73b5d4e7c5c07b857d032a",
+      "source": "masters-items/decoration-63.png",
+      "sourceSha256": "76e9b647cc05d8a9cbd04f2394c0b58330dc9d7480f65f54b8fd83176ea45390",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-67": {
+      "file": "native-items/decoration-67.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 16,
+        "w": 83,
+        "h": 80
+      },
+      "sha256": "92c0d85c9582457e438878b39169243e84ebe232c756ed68872a0c1f66dfb357",
+      "source": "masters-items/decoration-67.png",
+      "sourceSha256": "6f33504bf383aadabe1c55a268f0b0ec182982b98a94fad2ab8fdfee298f8d0f",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-67_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 16,
+        "w": 83,
+        "h": 80
+      }
+    },
+    "decoration-67_right": {
+      "file": "native-items/decoration-67_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 16,
+        "w": 83,
+        "h": 80
+      },
+      "sha256": "d617f9aba26d62c03c2d894b2b610e83462de0c786acf90067d2705dfa93b648",
+      "source": "masters-items/decoration-67.png",
+      "sourceSha256": "6f33504bf383aadabe1c55a268f0b0ec182982b98a94fad2ab8fdfee298f8d0f",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-71": {
+      "file": "native-items/decoration-71.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 20,
+        "y": 16,
+        "w": 56,
+        "h": 80
+      },
+      "sha256": "d13be8de78fce653ff8758e4aebade84ecc54ec6fe5a51324ed24f17a8de6771",
+      "source": "masters-items/decoration-71.png",
+      "sourceSha256": "72ce0a28fd5087588e3144025bbff16ff865dbf4ef23e1ed5ba3212859c9d705",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-71_right.png",
+      "rightBounds": {
+        "x": 20,
+        "y": 16,
+        "w": 55,
+        "h": 80
+      }
+    },
+    "decoration-71_right": {
+      "file": "native-items/decoration-71_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 20,
+        "y": 16,
+        "w": 55,
+        "h": 80
+      },
+      "sha256": "f67fe278f1b315f6cccecffd4518cef2a31f2d6c347cffd2d25382ed1becfd57",
+      "source": "masters-items/decoration-71.png",
+      "sourceSha256": "72ce0a28fd5087588e3144025bbff16ff865dbf4ef23e1ed5ba3212859c9d705",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-75": {
+      "file": "native-items/decoration-75.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 38,
+        "w": 84,
+        "h": 58
+      },
+      "sha256": "640de42d1c8aea15416aa28613b32e385e68191ecaa575a4bb4de040b82dd37c",
+      "source": "masters-items/decoration-75.png",
+      "sourceSha256": "2b785d2162eaa42a7dd711697e4dd423849f293d08bd3ee548bf4ae288152c55",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-75_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 38,
+        "w": 84,
+        "h": 58
+      }
+    },
+    "decoration-75_right": {
+      "file": "native-items/decoration-75_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 38,
+        "w": 84,
+        "h": 58
+      },
+      "sha256": "ac2faf2b8f8650317945d9cd911fb0b3fbcf9dd5ae0e5e40c639f7e889b5e419",
+      "source": "masters-items/decoration-75.png",
+      "sourceSha256": "2b785d2162eaa42a7dd711697e4dd423849f293d08bd3ee548bf4ae288152c55",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-80": {
+      "file": "native-items/decoration-80.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 35,
+        "w": 84,
+        "h": 61
+      },
+      "sha256": "74fc294bf7c34a4b9e1b8a56e91caa5aec23b55b5a3449ef1c7d8ab5c825da66",
+      "source": "masters-items/decoration-80.png",
+      "sourceSha256": "cef9ea8ff7bcf001298250466424c616dd4a6a8ff9303108568d59610c4a9cb1",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-80_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 37,
+        "w": 84,
+        "h": 59
+      }
+    },
+    "decoration-80_right": {
+      "file": "native-items/decoration-80_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 37,
+        "w": 84,
+        "h": 59
+      },
+      "sha256": "390d0ca85d822ecb4a18a10424e1b260c83221ca0b3aa9fab9813c1aab366a6b",
+      "source": "masters-items/decoration-80.png",
+      "sourceSha256": "cef9ea8ff7bcf001298250466424c616dd4a6a8ff9303108568d59610c4a9cb1",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-81": {
+      "file": "native-items/decoration-81.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 13,
+        "y": 16,
+        "w": 69,
+        "h": 80
+      },
+      "sha256": "a723c9b2b788f40195284f05df4e361775438ac0d92df7b4e6501c5382c93802",
+      "source": "masters-items/decoration-81.png",
+      "sourceSha256": "a42b077d94e7ec969ddcaa24106863dc0f1d195d6c7eb1139f9b7c41db15482e",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1028,
+        "height": 765
+      },
+      "rightFile": "native-items/decoration-81_right.png",
+      "rightBounds": {
+        "x": 14,
+        "y": 16,
+        "w": 67,
+        "h": 80
+      }
+    },
+    "decoration-81_right": {
+      "file": "native-items/decoration-81_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 14,
+        "y": 16,
+        "w": 67,
+        "h": 80
+      },
+      "sha256": "ece7bdbf0dbc2f7d4ec3041ce79e27f37f767f80d44d5bd6c04efbae4e0fa7e8",
+      "source": "masters-items/decoration-81.png",
+      "sourceSha256": "a42b077d94e7ec969ddcaa24106863dc0f1d195d6c7eb1139f9b7c41db15482e",
+      "sourceRect": {
+        "left": 1028,
+        "top": 0,
+        "width": 1028,
+        "height": 765
+      }
+    },
+    "decoration-83": {
+      "file": "native-items/decoration-83.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 15,
+        "y": 16,
+        "w": 66,
+        "h": 80
+      },
+      "sha256": "d60f8953f4124bd32fd5207280e3eee66a344535a746adf9b0a9025c6dccec9b",
+      "source": "masters-items/decoration-83.png",
+      "sourceSha256": "e5f34d8feee2876962d90ef4928bcf75f891bdeb42894f61a3146234cdf8f582",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1002,
+        "height": 784
+      },
+      "rightFile": "native-items/decoration-83_right.png",
+      "rightBounds": {
+        "x": 15,
+        "y": 16,
+        "w": 65,
+        "h": 80
+      }
+    },
+    "decoration-83_right": {
+      "file": "native-items/decoration-83_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 15,
+        "y": 16,
+        "w": 65,
+        "h": 80
+      },
+      "sha256": "de8b9087715a9b4ee6ed602eca85a8b7e68f12bf5c00680bfaecbed942b49149",
+      "source": "masters-items/decoration-83.png",
+      "sourceSha256": "e5f34d8feee2876962d90ef4928bcf75f891bdeb42894f61a3146234cdf8f582",
+      "sourceRect": {
+        "left": 1002,
+        "top": 0,
+        "width": 1003,
+        "height": 784
+      }
+    },
+    "decoration-87": {
+      "file": "native-items/decoration-87.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 8,
+        "y": 16,
+        "w": 79,
+        "h": 80
+      },
+      "sha256": "912525b9ac038fb35c8c385e06122f69d8909a3eea08bf5d86745397f0d1a5e2",
+      "source": "masters-items/decoration-87.png",
+      "sourceSha256": "4b223fc9d5eae81ba03021d402a9c9e2d16be2b2fd142bb33fa28dc46ed4ca7d",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-87_right.png",
+      "rightBounds": {
+        "x": 8,
+        "y": 16,
+        "w": 79,
+        "h": 80
+      }
+    },
+    "decoration-87_right": {
+      "file": "native-items/decoration-87_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 8,
+        "y": 16,
+        "w": 79,
+        "h": 80
+      },
+      "sha256": "f940132c160479ce00f39a282efd9214e8ac779f28315aa8ab5f9f40dc4d2d06",
+      "source": "masters-items/decoration-87.png",
+      "sourceSha256": "4b223fc9d5eae81ba03021d402a9c9e2d16be2b2fd142bb33fa28dc46ed4ca7d",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-91": {
+      "file": "native-items/decoration-91.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 32,
+        "w": 84,
+        "h": 64
+      },
+      "sha256": "2eb2ec4815e0671f5953494cb379d498105a8aa19c74bdb7be81130cc193c4c8",
+      "source": "masters-items/decoration-91.png",
+      "sourceSha256": "d24d6dd6c352e86db0d595a9749921b0cee7c688ca435b3c89dc023e30ce8330",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1039,
+        "height": 756
+      },
+      "rightFile": "native-items/decoration-91_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 24,
+        "w": 84,
+        "h": 72
+      }
+    },
+    "decoration-91_right": {
+      "file": "native-items/decoration-91_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 24,
+        "w": 84,
+        "h": 72
+      },
+      "sha256": "f47eaf7a12870a5fe8b5ca39249393600ecb814aad14384a54a33af9aab99ade",
+      "source": "masters-items/decoration-91.png",
+      "sourceSha256": "d24d6dd6c352e86db0d595a9749921b0cee7c688ca435b3c89dc023e30ce8330",
+      "sourceRect": {
+        "left": 1039,
+        "top": 0,
+        "width": 1040,
+        "height": 756
+      }
+    },
+    "decoration-95": {
+      "file": "native-items/decoration-95.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 13,
+        "y": 16,
+        "w": 69,
+        "h": 80
+      },
+      "sha256": "c5b8d19e334df715d08cf1fb358a2cde467d013025c37afdda03a4bb164f3bcf",
+      "source": "masters-items/decoration-95.png",
+      "sourceSha256": "ec4da61e74a42f312296d734b1c78dbedcb9cc80941ef9187d89f84a10c5ddbe",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-95_right.png",
+      "rightBounds": {
+        "x": 13,
+        "y": 16,
+        "w": 69,
+        "h": 80
+      }
+    },
+    "decoration-95_right": {
+      "file": "native-items/decoration-95_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 13,
+        "y": 16,
+        "w": 69,
+        "h": 80
+      },
+      "sha256": "f438265ead0b73a8f88d402d28688a592c9643bcb4e71088b41af1e767ab09ff",
+      "source": "masters-items/decoration-95.png",
+      "sourceSha256": "ec4da61e74a42f312296d734b1c78dbedcb9cc80941ef9187d89f84a10c5ddbe",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-98": {
+      "file": "native-items/decoration-98.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "w": 64,
+        "h": 80
+      },
+      "sha256": "1a0e006bc55781eae2a003b78ffdb41a41815bad5becc35493546da9bb5674dc",
+      "source": "masters-items/decoration-98.png",
+      "sourceSha256": "3932d290cbec4f334855390e1946f52525c3b3b0a5bed1a2f47b22642b5330ad",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-98_right.png",
+      "rightBounds": {
+        "x": 18,
+        "y": 16,
+        "w": 60,
+        "h": 80
+      }
+    },
+    "decoration-98_right": {
+      "file": "native-items/decoration-98_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 18,
+        "y": 16,
+        "w": 60,
+        "h": 80
+      },
+      "sha256": "e2a9e96abb6e27da1dbc52a6d0cc200e90ccd8ecf0749f4cf4ecb999333eae5d",
+      "source": "masters-items/decoration-98.png",
+      "sourceSha256": "3932d290cbec4f334855390e1946f52525c3b3b0a5bed1a2f47b22642b5330ad",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "decoration-99": {
+      "file": "native-items/decoration-99.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 26,
+        "w": 84,
+        "h": 70
+      },
+      "sha256": "088951f67de1c2667e4259323b4c7c6cbc5c49b209a5d77942406f0d62f6129a",
+      "source": "masters-items/decoration-99.png",
+      "sourceSha256": "30adf9ee7532b658830fe572f2ab9d4b465099dc51234c7386a27b876d0ceafb",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 991,
+        "height": 793
+      },
+      "rightFile": "native-items/decoration-99_right.png",
+      "rightBounds": {
+        "x": 6,
+        "y": 26,
+        "w": 84,
+        "h": 70
+      }
+    },
+    "decoration-99_right": {
+      "file": "native-items/decoration-99_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 26,
+        "w": 84,
+        "h": 70
+      },
+      "sha256": "5516b051b8d89a8e44b282e0c8b40882d5266f77b55f6b75802d3ba16a7d38f7",
+      "source": "masters-items/decoration-99.png",
+      "sourceSha256": "30adf9ee7532b658830fe572f2ab9d4b465099dc51234c7386a27b876d0ceafb",
+      "sourceRect": {
+        "left": 991,
+        "top": 0,
+        "width": 992,
+        "height": 793
+      }
+    },
+    "pen_1": {
+      "file": "native-items/pen_1.png",
+      "width": 128,
+      "height": 112,
+      "pivotX": 64,
+      "pivotY": 96,
+      "bounds": {
+        "x": 8,
+        "y": 19,
+        "w": 112,
+        "h": 77
+      },
+      "sha256": "d47e449cea2ef05b786439db010536d49bc416bb0325607e5220158e4d63b1b2",
+      "source": "masters-items/pen_1.png",
+      "sourceSha256": "c248e39cc9d4af5acfcb0e31a7eb01ed19a4900140b2e428902a9f949f8108bb",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    "pen_2": {
+      "file": "native-items/pen_2.png",
+      "width": 128,
+      "height": 112,
+      "pivotX": 64,
+      "pivotY": 96,
+      "bounds": {
+        "x": 8,
+        "y": 22,
+        "w": 112,
+        "h": 74
+      },
+      "sha256": "6157dc6cc0fb6287759d97d4cc450b0afd0a6a75093a7b4d33d8861dc3fc04bf",
+      "source": "masters-items/pen_2.png",
+      "sourceSha256": "bc7a1c8a143ff09c5336e800461039c7e0bb464fd2d704e670c93f2469a63407",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    "pen_3": {
+      "file": "native-items/pen_3.png",
+      "width": 128,
+      "height": 112,
+      "pivotX": 64,
+      "pivotY": 96,
+      "bounds": {
+        "x": 11,
+        "y": 8,
+        "w": 106,
+        "h": 88
+      },
+      "sha256": "a2b35ec6c5c65ad4bcc3b79b33655c44eedd56cf8f4eeafa739d159eb40985af",
+      "source": "masters-items/pen_3.png",
+      "sourceSha256": "f0dfd1c4a1d014a71c69a342a66877be18961a2e4ff55f4769975877a409a75d",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    "pen_4": {
+      "file": "native-items/pen_4.png",
+      "width": 160,
+      "height": 144,
+      "pivotX": 80,
+      "pivotY": 128,
+      "bounds": {
+        "x": 8,
+        "y": 16,
+        "w": 144,
+        "h": 112
+      },
+      "sha256": "57d4fac16651ca97addfcc224817416b77adb03011bbbf072dbaf67d7e6e2c50",
+      "source": "masters-items/pen_4.png",
+      "sourceSha256": "2db9a3752f7c2725a0232fbf976b69796dc4a7f0b405b418b0d44cbfeed3d5e7",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    "pen_5": {
+      "file": "native-items/pen_5.png",
+      "width": 160,
+      "height": 144,
+      "pivotX": 80,
+      "pivotY": 128,
+      "bounds": {
+        "x": 14,
+        "y": 16,
+        "w": 132,
+        "h": 112
+      },
+      "sha256": "6e610cb4087f08fe9dbae762f74a558b7696a1add48a9ba3393e4bea3425f5e3",
+      "source": "masters-items/pen_5.png",
+      "sourceSha256": "288d345bb59e2658a43556bbd16a9d39163815f72ea1274d96098e1e262c14e5",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    "pen_6": {
+      "file": "native-items/pen_6.png",
+      "width": 160,
+      "height": 144,
+      "pivotX": 80,
+      "pivotY": 128,
+      "bounds": {
+        "x": 8,
+        "y": 24,
+        "w": 144,
+        "h": 104
+      },
+      "sha256": "fdbac6ed3a700568e7756e8e2c6a667e00985838387c43da59a64cf7e0a0f6c1",
+      "source": "masters-items/pen_6.png",
+      "sourceSha256": "4b9c592db83ebf8a04bd3143002d5e897c75c707c6c6e1488e256c1f9ae23a73",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      }
+    }
+  }
+}

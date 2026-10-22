@@ -81,8 +81,12 @@ test('Halloween festival pieces: five sprites in both views, sold only in Lễ H
   const {FESTIVAL_PRODUCTS} = await import('./special-products.mjs');
   const pack = JSON.parse(fs.readFileSync(new URL('./halloween-assets/manifest.json', import.meta.url)));
   const sprites = runtime.items.filter(item => item.collection === 'festival');
-  assert.deepEqual(FESTIVAL_PRODUCTS.map(i => i.id).sort(), pack.items.map(i => i.id).sort());
-  assert.deepEqual(sprites.map(i => i.id).sort(), pack.items.map(i => i.id).sort());
+  // The source pack has 30 finished artworks; only five have an approved store entry.
+  // Source-only artwork is not authority to introduce the other 25 priced items.
+  const active = FESTIVAL_PRODUCTS.map(i => i.id).sort();
+  assert.equal(active.length, 5);
+  assert.ok(active.every(id => pack.items.some(item => item.id === id)));
+  assert.deepEqual(sprites.map(i => i.id).sort(), active);
   for (const item of FESTIVAL_PRODUCTS) {
     const sprite = sprites.find(x => x.id === item.id);
     assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), item);

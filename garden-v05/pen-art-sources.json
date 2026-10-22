@@ -1,0 +1,78 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "groups": [
+    {
+      "name": "pen_1",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "pen_1",
+          "A cozy little woodland feeding shelter: a low rounded golden straw awning on thick warm oak posts, woven wool-lined wicker resting bed inside, tiny ivy sprig, one low wooden feed trough. Open wide on the front and side."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one polished pixel-art shelter prop for a cozy magical farm animal pen, same detailed handheld farming-game sprite quality as wood cabins and inventory items. A cozy little woodland feeding shelter: a low rounded golden straw awning on thick warm oak posts, woven wool-lined wicker resting bed inside, tiny ivy sprig, one low wooden feed trough. Open wide on the front and side. Entire structure visible, facing diagonally viewer-left in 2:1 dimetric perspective, fixed light from upper-left. Compact broad proportions, clear readable planes and lovingly crafted wood/stone/straw texture in chunky connected pixels. Intended native opaque bounds at most84x68 pixels; a small prop, no full enclosure, no enormous barn. Dark plum selective outline, muted earthy palette with warm highlights. Use only #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Genuinely transparent background around and through open doorways, no backdrop, no shadow outside silhouette, no ground tile, no animals, no text, no letters, no UI. One single object centered with generous20percent transparent margin on every side. No smooth painted gradients or blur, no flat primitive placeholder."
+    },
+    {
+      "name": "pen_2",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "pen_2",
+          "A charming low mossy stone burrow shelter, a small arched open doorway with a warm wooden lintel and tiny pale crescent carving, green turf cap and bundled hay bed peeking out, a little darkwood supply box at one side."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one polished pixel-art shelter prop for a cozy magical farm animal pen, same detailed handheld farming-game sprite quality as wood cabins and inventory items. A charming low mossy stone burrow shelter, a small arched open doorway with a warm wooden lintel and tiny pale crescent carving, green turf cap and bundled hay bed peeking out, a little darkwood supply box at one side. Entire structure visible, facing diagonally viewer-left in 2:1 dimetric perspective, fixed light from upper-left. Compact broad proportions, clear readable planes and lovingly crafted wood/stone/straw texture in chunky connected pixels. Intended native opaque bounds at most84x68 pixels; a small prop, no full enclosure, no enormous barn. Dark plum selective outline, muted earthy palette with warm highlights. Use only #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Genuinely transparent background around and through open doorways, no backdrop, no shadow outside silhouette, no ground tile, no animals, no text, no letters, no UI. One single object centered with generous20percent transparent margin on every side. No smooth painted gradients or blur, no flat primitive placeholder."
+    },
+    {
+      "name": "pen_3",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "pen_3",
+          "A compact rustic animal loft shelter with a teal-blue shingle roof, warm wooden lower nook with a plump linen cat cushion, a short side bird perch and small hanging seed bell, open front, cheerful cozy carpentry."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one polished pixel-art shelter prop for a cozy magical farm animal pen, same detailed handheld farming-game sprite quality as wood cabins and inventory items. A compact rustic animal loft shelter with a teal-blue shingle roof, warm wooden lower nook with a plump linen cat cushion, a short side bird perch and small hanging seed bell, open front, cheerful cozy carpentry. Entire structure visible, facing diagonally viewer-left in 2:1 dimetric perspective, fixed light from upper-left. Compact broad proportions, clear readable planes and lovingly crafted wood/stone/straw texture in chunky connected pixels. Intended native opaque bounds at most84x68 pixels; a small prop, no full enclosure, no enormous barn. Dark plum selective outline, muted earthy palette with warm highlights. Use only #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Genuinely transparent background around and through open doorways, no backdrop, no shadow outside silhouette, no ground tile, no animals, no text, no letters, no UI. One single object centered with generous20percent transparent margin on every side. No smooth painted gradients or blur, no flat primitive placeholder."
+    },
+    {
+      "name": "pen_4",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "pen_4",
+          "An airy open-sided winged-creature resting canopy: broad layered golden straw roof on two curved timber supports with rope lashings, a sturdy wide padded crossbeam below, tiny basket and feather ornament at one corner. Large open front."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one polished pixel-art shelter prop for a cozy magical farm animal pen, same detailed handheld farming-game sprite quality as wood cabins and inventory items. An airy open-sided winged-creature resting canopy: broad layered golden straw roof on two curved timber supports with rope lashings, a sturdy wide padded crossbeam below, tiny basket and feather ornament at one corner. Large open front. Entire structure visible, facing diagonally viewer-left in 2:1 dimetric perspective, fixed light from upper-left. Compact broad proportions, clear readable planes and lovingly crafted wood/stone/straw texture in chunky connected pixels. Intended native opaque bounds at most84x68 pixels; a small prop, no full enclosure, no enormous barn. Dark plum selective outline, muted earthy palette with warm highlights. Use only #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Genuinely transparent background around and through open doorways, no backdrop, no shadow outside silhouette, no ground tile, no animals, no text, no letters, no UI. One single object centered with generous20percent transparent margin on every side. No smooth painted gradients or blur, no flat primitive placeholder."
+    },
+    {
+      "name": "pen_5",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "pen_5",
+          "An elegant low moonlit stable canopy: pale birch pillars, blue-gray slate gabled roof with a little brass crescent finial, open arched front, pale hay bedding and a small silver water basin, subtle ivory blossom vines at side."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one polished pixel-art shelter prop for a cozy magical farm animal pen, same detailed handheld farming-game sprite quality as wood cabins and inventory items. An elegant low moonlit stable canopy: pale birch pillars, blue-gray slate gabled roof with a little brass crescent finial, open arched front, pale hay bedding and a small silver water basin, subtle ivory blossom vines at side. Entire structure visible, facing diagonally viewer-left in 2:1 dimetric perspective, fixed light from upper-left. Compact broad proportions, clear readable planes and lovingly crafted wood/stone/straw texture in chunky connected pixels. Intended native opaque bounds at most84x68 pixels; a small prop, no full enclosure, no enormous barn. Dark plum selective outline, muted earthy palette with warm highlights. Use only #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Genuinely transparent background around and through open doorways, no backdrop, no shadow outside silhouette, no ground tile, no animals, no text, no letters, no UI. One single object centered with generous20percent transparent margin on every side. No smooth painted gradients or blur, no flat primitive placeholder."
+    },
+    {
+      "name": "pen_6",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "pen_6",
+          "A sturdy fantasy creature shelter: dark volcanic stone sidewalls and chunky oak frame with bronze rivets, warm terracotta roof tiles, wide open front, carved scale-pattern lintel and a low stone feed basin. Cozy and safe, no fire, no creature."
+        ]
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one polished pixel-art shelter prop for a cozy magical farm animal pen, same detailed handheld farming-game sprite quality as wood cabins and inventory items. A sturdy fantasy creature shelter: dark volcanic stone sidewalls and chunky oak frame with bronze rivets, warm terracotta roof tiles, wide open front, carved scale-pattern lintel and a low stone feed basin. Cozy and safe, no fire, no creature. Entire structure visible, facing diagonally viewer-left in 2:1 dimetric perspective, fixed light from upper-left. Compact broad proportions, clear readable planes and lovingly crafted wood/stone/straw texture in chunky connected pixels. Intended native opaque bounds at most84x68 pixels; a small prop, no full enclosure, no enormous barn. Dark plum selective outline, muted earthy palette with warm highlights. Use only #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Genuinely transparent background around and through open doorways, no backdrop, no shadow outside silhouette, no ground tile, no animals, no text, no letters, no UI. One single object centered with generous20percent transparent margin on every side. No smooth painted gradients or blur, no flat primitive placeholder."
+    }
+  ]
+}

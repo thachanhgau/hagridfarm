@@ -17,6 +17,7 @@ Independent local Git repository created with owner approval on 2026-10-17. This
 - Latest handoff: `qa-v19/HANDOFF-V24.9.md`
 - SHA-256 manifest: `qa-v19/v24.9.10-sha256.json`
 - Thiết kế (đã duyệt): `docs/core-design.md`, `docs/art-bible.md` · Playtest (nháp): `docs/playtest-plan.md`
+- Bộ ảnh V24.9.66: `docs/artwork-refresh-20261022.md`; xem `qa-v19/art-gallery.html` (98 mẫu/khung), hoặc fixture `level=500&scenario=habitats` để xem đủ 12 thú trong 6 chuồng.
 
 ## Preview
 

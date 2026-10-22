@@ -1,6 +1,6 @@
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.65';
-import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.65';
-import { DB } from './balance-data.mjs?v=24.9.65';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.66';
+import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.66';
+import { DB } from './balance-data.mjs?v=24.9.66';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);
@@ -152,9 +152,9 @@ function chipLabel(label) {
   return String(label).replace(/^(Khẩu phần |Nuôi )/, '');
 }
 
-// The tile shows what the recipe makes (a feed shows the creature that eats it); inputs often repeat.
+// Recipe tiles show the exact recipe identity; output chips below keep the canonical product art.
 function makeRecipeIcon(recipe, items) {
-  return visualItemIcon(items, recipe.output, { size: 40 });
+  return visualItemIcon(items, `recipe_${recipe.id}`, { size: 40 });
 }
 
 function makeExpansionIcon(expansion, items) {
@@ -371,7 +371,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       const bar = el('span', { class: 'work-job-bar', 'aria-hidden': 'true' }, el('i', { style: `width:${share}%` }));
       const time = el('span', { class: 'work-job-time' + (done ? ' ready-text' : ''), 'data-until': end, 'data-prefix': 'còn ', text: done ? 'Xong' : `còn ${duration(end - now)}` });
       return el('div', { class: 'work-job' + (done ? ' is-ready' : '') }, [
-        visualItemIcon(items, recipe ? recipe.output : job.id, { size: 26 }),
+        visualItemIcon(items, recipe ? `recipe_${recipe.id}` : job.id, { size: 26 }),
         el('span', { class: 'work-job-name', text: name }),
         bar,
         time,

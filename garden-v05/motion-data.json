@@ -5264,9 +5264,11 @@
         "Trưởng thành"
       ],
       "actionLabel": "Ba đầu thức ngủ",
-      "source": "masters/three-headed-dog-spacing-v02.png",
+      "source": "masters/three-headed-dog-white-v01.png",
       "originalSource": "masters/three-headed-dog.png",
-      "sourceSha256": "1767edc8cdc5f383927c59e3ef0972d76aeafd57f450498e9aa50b3d3a811cca",
+      "sourceSha256": "b6965593cff10eebaab6d6f7e644320f8171f7d96249b8b4f0dfe49cef98ab1f",
+      "sourceRows": 4,
+      "sourceColumns": 4,
       "footprintTiles": [
         2,
         2
@@ -5285,25 +5287,25 @@
           "pivotY": 48,
           "sourceFrame": 0,
           "sourceRect": {
-            "x": 74,
-            "y": 210,
-            "w": 212,
-            "h": 139,
-            "pivotX": 110,
-            "pivotY": 139,
+            "x": 105,
+            "y": 135,
+            "w": 185,
+            "h": 140,
+            "pivotX": 81,
+            "pivotY": 140,
             "sourceCell": [
               0,
               0,
-              346,
-              376
+              378,
+              298
             ]
           },
           "bounds": {
-            "x": 5,
-            "y": 14,
-            "w": 52,
-            "h": 34,
-            "count": 1295,
+            "x": 10,
+            "y": 10,
+            "w": 50,
+            "h": 38,
+            "count": 1195,
             "edge": false
           }
         },
@@ -5315,25 +5317,25 @@
           "pivotY": 100,
           "sourceFrame": 1,
           "sourceRect": {
-            "x": 406,
-            "y": 154,
-            "w": 249,
-            "h": 194,
-            "pivotX": 147,
-            "pivotY": 194,
+            "x": 467,
+            "y": 90,
+            "w": 208,
+            "h": 185,
+            "pivotX": 95,
+            "pivotY": 185,
             "sourceCell": [
-              346,
+              378,
               0,
-              688,
-              376
+              749,
+              298
             ]
           },
           "bounds": {
-            "x": 10,
-            "y": 28,
-            "w": 92,
-            "h": 72,
-            "count": 4446,
+            "x": 24,
+            "y": 22,
+            "w": 88,
+            "h": 78,
+            "count": 4149,
             "edge": false
           }
         },
@@ -5345,25 +5347,25 @@
           "pivotY": 100,
           "sourceFrame": 2,
           "sourceRect": {
-            "x": 722,
-            "y": 93,
-            "w": 305,
-            "h": 258,
-            "pivotX": 175,
-            "pivotY": 258,
+            "x": 824,
+            "y": 65,
+            "w": 258,
+            "h": 210,
+            "pivotX": 108,
+            "pivotY": 210,
             "sourceCell": [
-              688,
+              749,
               0,
-              1053,
-              376
+              1124,
+              298
             ]
           },
           "bounds": {
-            "x": 4,
-            "y": 12,
-            "w": 105,
-            "h": 88,
-            "count": 6048,
+            "x": 21,
+            "y": 16,
+            "w": 103,
+            "h": 84,
+            "count": 4953,
             "edge": false
           }
         },
@@ -5375,25 +5377,25 @@
           "pivotY": 128,
           "sourceFrame": 3,
           "sourceRect": {
-            "x": 1080,
-            "y": 54,
-            "w": 336,
-            "h": 295,
-            "pivotX": 206,
-            "pivotY": 295,
+            "x": 1167,
+            "y": 26,
+            "w": 302,
+            "h": 249,
+            "pivotX": 133,
+            "pivotY": 249,
             "sourceCell": [
-              1053,
+              1124,
               0,
-              1448,
-              376
+              1500,
+              298
             ]
           },
           "bounds": {
-            "x": 6,
-            "y": 21,
-            "w": 121,
-            "h": 107,
-            "count": 8647,
+            "x": 30,
+            "y": 33,
+            "w": 115,
+            "h": 95,
+            "count": 5974,
             "edge": false
           }
         },
@@ -5405,25 +5407,25 @@
           "pivotY": 128,
           "sourceFrame": 4,
           "sourceRect": {
-            "x": 33,
-            "y": 401,
-            "w": 326,
-            "h": 289,
-            "pivotX": 202,
-            "pivotY": 289,
+            "x": 66,
+            "y": 323,
+            "w": 284,
+            "h": 223,
+            "pivotX": 124,
+            "pivotY": 223,
             "sourceCell": [
               0,
-              376,
-              374,
-              710
+              298,
+              392,
+              562
             ]
           },
           "bounds": {
-            "x": 5,
-            "y": 21,
+            "x": 27,
+            "y": 33,
             "w": 120,
-            "h": 107,
-            "count": 8601,
+            "h": 95,
+            "count": 6387,
             "edge": false
           }
         },
@@ -5435,25 +5437,25 @@
           "pivotY": 128,
           "sourceFrame": 5,
           "sourceRect": {
-            "x": 389,
-            "y": 401,
-            "w": 325,
-            "h": 289,
-            "pivotX": 202,
-            "pivotY": 289,
+            "x": 435,
+            "y": 323,
+            "w": 287,
+            "h": 223,
+            "pivotX": 126,
+            "pivotY": 223,
             "sourceCell": [
-              374,
-              376,
-              730,
-              710
+              392,
+              298,
+              760,
+              562
             ]
           },
           "bounds": {
-            "x": 5,
-            "y": 21,
-            "w": 120,
-            "h": 107,
-            "count": 8563,
+            "x": 27,
+            "y": 33,
+            "w": 122,
+            "h": 95,
+            "count": 6490,
             "edge": false
           }
         },
@@ -5465,25 +5467,25 @@
           "pivotY": 128,
           "sourceFrame": 6,
           "sourceRect": {
-            "x": 746,
-            "y": 401,
-            "w": 325,
-            "h": 289,
-            "pivotX": 202,
-            "pivotY": 289,
+            "x": 798,
+            "y": 323,
+            "w": 295,
+            "h": 224,
+            "pivotX": 128,
+            "pivotY": 224,
             "sourceCell": [
-              730,
-              376,
-              1088,
-              710
+              760,
+              298,
+              1136,
+              562
             ]
           },
           "bounds": {
-            "x": 5,
-            "y": 21,
-            "w": 120,
-            "h": 107,
-            "count": 8622,
+            "x": 26,
+            "y": 33,
+            "w": 125,
+            "h": 95,
+            "count": 6671,
             "edge": false
           }
         },
@@ -5495,25 +5497,25 @@
           "pivotY": 128,
           "sourceFrame": 7,
           "sourceRect": {
-            "x": 1107,
-            "y": 401,
-            "w": 325,
-            "h": 289,
-            "pivotX": 200,
-            "pivotY": 289,
+            "x": 1181,
+            "y": 323,
+            "w": 287,
+            "h": 223,
+            "pivotX": 124,
+            "pivotY": 223,
             "sourceCell": [
-              1088,
-              376,
-              1448,
-              710
+              1136,
+              298,
+              1500,
+              562
             ]
           },
           "bounds": {
-            "x": 6,
-            "y": 21,
-            "w": 120,
-            "h": 107,
-            "count": 8642,
+            "x": 27,
+            "y": 33,
+            "w": 122,
+            "h": 95,
+            "count": 6679,
             "edge": false
           }
         },
@@ -5525,25 +5527,25 @@
           "pivotY": 128,
           "sourceFrame": 8,
           "sourceRect": {
-            "x": 33,
-            "y": 732,
-            "w": 326,
-            "h": 290,
-            "pivotX": 204,
-            "pivotY": 290,
+            "x": 67,
+            "y": 580,
+            "w": 286,
+            "h": 187,
+            "pivotX": 118,
+            "pivotY": 187,
             "sourceCell": [
               0,
-              710,
-              374,
-              1086
+              562,
+              391,
+              782
             ]
           },
           "bounds": {
-            "x": 5,
-            "y": 21,
-            "w": 120,
-            "h": 107,
-            "count": 8589,
+            "x": 30,
+            "y": 49,
+            "w": 121,
+            "h": 79,
+            "count": 6021,
             "edge": false
           }
         },
@@ -5555,25 +5557,25 @@
           "pivotY": 128,
           "sourceFrame": 9,
           "sourceRect": {
-            "x": 391,
-            "y": 732,
-            "w": 323,
-            "h": 290,
-            "pivotX": 202,
-            "pivotY": 290,
+            "x": 430,
+            "y": 595,
+            "w": 289,
+            "h": 172,
+            "pivotX": 122,
+            "pivotY": 172,
             "sourceCell": [
-              374,
-              710,
-              728,
-              1086
+              391,
+              562,
+              760,
+              782
             ]
           },
           "bounds": {
-            "x": 5,
-            "y": 21,
-            "w": 119,
-            "h": 107,
-            "count": 8568,
+            "x": 28,
+            "y": 55,
+            "w": 122,
+            "h": 73,
+            "count": 6199,
             "edge": false
           }
         },
@@ -5585,25 +5587,25 @@
           "pivotY": 128,
           "sourceFrame": 10,
           "sourceRect": {
-            "x": 743,
-            "y": 732,
-            "w": 328,
-            "h": 290,
-            "pivotX": 206,
-            "pivotY": 290,
+            "x": 802,
+            "y": 580,
+            "w": 292,
+            "h": 188,
+            "pivotX": 123.5,
+            "pivotY": 188,
             "sourceCell": [
-              728,
-              710,
-              1086,
-              1086
+              760,
+              562,
+              1140,
+              782
             ]
           },
           "bounds": {
-            "x": 4,
-            "y": 21,
-            "w": 121,
-            "h": 107,
-            "count": 8643,
+            "x": 28,
+            "y": 48,
+            "w": 124,
+            "h": 80,
+            "count": 6082,
             "edge": false
           }
         },
@@ -5615,25 +5617,145 @@
           "pivotY": 128,
           "sourceFrame": 11,
           "sourceRect": {
-            "x": 1101,
-            "y": 732,
-            "w": 329,
-            "h": 290,
-            "pivotX": 205,
-            "pivotY": 290,
+            "x": 1187,
+            "y": 579,
+            "w": 281,
+            "h": 189,
+            "pivotX": 122,
+            "pivotY": 189,
             "sourceCell": [
-              1086,
-              710,
-              1448,
-              1086
+              1140,
+              562,
+              1500,
+              782
             ]
           },
           "bounds": {
-            "x": 4,
-            "y": 21,
-            "w": 121,
-            "h": 107,
-            "count": 8691,
+            "x": 28,
+            "y": 48,
+            "w": 119,
+            "h": 80,
+            "count": 5876,
+            "edge": false
+          }
+        },
+        {
+          "file": "native/three-headed-dog/frame-13.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 128,
+          "sourceFrame": 12,
+          "sourceRect": {
+            "x": 65,
+            "y": 800,
+            "w": 280,
+            "h": 215,
+            "pivotX": 122,
+            "pivotY": 215,
+            "sourceCell": [
+              0,
+              782,
+              390,
+              1049
+            ]
+          },
+          "bounds": {
+            "x": 28,
+            "y": 37,
+            "w": 118,
+            "h": 91,
+            "count": 6587,
+            "edge": false
+          }
+        },
+        {
+          "file": "native/three-headed-dog/frame-14.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 128,
+          "sourceFrame": 13,
+          "sourceRect": {
+            "x": 437,
+            "y": 799,
+            "w": 289,
+            "h": 216,
+            "pivotX": 129,
+            "pivotY": 216,
+            "sourceCell": [
+              390,
+              782,
+              769,
+              1049
+            ]
+          },
+          "bounds": {
+            "x": 25,
+            "y": 36,
+            "w": 122,
+            "h": 92,
+            "count": 6675,
+            "edge": false
+          }
+        },
+        {
+          "file": "native/three-headed-dog/frame-15.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 128,
+          "sourceFrame": 14,
+          "sourceRect": {
+            "x": 813,
+            "y": 797,
+            "w": 282,
+            "h": 218,
+            "pivotX": 123,
+            "pivotY": 218,
+            "sourceCell": [
+              769,
+              782,
+              1133,
+              1049
+            ]
+          },
+          "bounds": {
+            "x": 28,
+            "y": 36,
+            "w": 120,
+            "h": 92,
+            "count": 6660,
+            "edge": false
+          }
+        },
+        {
+          "file": "native/three-headed-dog/frame-16.png",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 128,
+          "sourceFrame": 15,
+          "sourceRect": {
+            "x": 1172,
+            "y": 801,
+            "w": 294,
+            "h": 214,
+            "pivotX": 126,
+            "pivotY": 214,
+            "sourceCell": [
+              1133,
+              782,
+              1500,
+              1049
+            ]
+          },
+          "bounds": {
+            "x": 27,
+            "y": 37,
+            "w": 125,
+            "h": 91,
+            "count": 6667,
             "edge": false
           }
         }
@@ -5711,6 +5833,62 @@
               9,
               10,
               11
+            ]
+          }
+        },
+        "eat": {
+          "frames": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false,
+          "sheet": {
+            "file": "native/three-headed-dog/eat.png",
+            "frameWidth": 160,
+            "frameHeight": 160,
+            "columns": 4,
+            "rows": 1,
+            "sourceFrames": [
+              8,
+              9,
+              10,
+              11
+            ]
+          }
+        },
+        "care": {
+          "frames": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false,
+          "sheet": {
+            "file": "native/three-headed-dog/care.png",
+            "frameWidth": 160,
+            "frameHeight": 160,
+            "columns": 4,
+            "rows": 1,
+            "sourceFrames": [
+              12,
+              13,
+              14,
+              15
             ]
           }
         }

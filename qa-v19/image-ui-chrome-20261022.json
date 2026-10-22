@@ -1,0 +1,116 @@
+{
+  "browser": "Chrome",
+  "gallery": {
+    "cards": 98,
+    "whiteDogFrames": 16,
+    "authoredPairs": 29
+  },
+  "viewports": [
+    {
+      "width": 375,
+      "height": 812,
+      "ready": true
+    },
+    {
+      "width": 812,
+      "height": 375,
+      "ready": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "ready": true
+    }
+  ],
+  "creatures": [
+    "puffskein",
+    "bowtruckle",
+    "niffler",
+    "mooncalf",
+    "kneazle",
+    "diricawl",
+    "fwooper",
+    "hippogriff",
+    "thestral",
+    "unicorn",
+    "three-headed-dog",
+    "dragon"
+  ],
+  "scenes": [
+    "clear/day",
+    "clear/dusk",
+    "clear/night",
+    "rain/day",
+    "rain/dusk",
+    "rain/night",
+    "snow/day",
+    "snow/dusk",
+    "snow/night",
+    "autumn/day",
+    "autumn/dusk",
+    "autumn/night"
+  ],
+  "penCacheDraws": [
+    {
+      "id": "pen_1",
+      "x": 120,
+      "y": -19,
+      "w": 128,
+      "h": 112,
+      "cw": 296,
+      "ch": 179
+    },
+    {
+      "id": "pen_2",
+      "x": 120,
+      "y": -22,
+      "w": 128,
+      "h": 112,
+      "cw": 296,
+      "ch": 176
+    },
+    {
+      "id": "pen_3",
+      "x": 120,
+      "y": -8,
+      "w": 128,
+      "h": 112,
+      "cw": 296,
+      "ch": 190
+    },
+    {
+      "id": "pen_4",
+      "x": 104,
+      "y": -16,
+      "w": 160,
+      "h": 144,
+      "cw": 296,
+      "ch": 214
+    },
+    {
+      "id": "pen_5",
+      "x": 104,
+      "y": -16,
+      "w": 160,
+      "h": 144,
+      "cw": 296,
+      "ch": 214
+    },
+    {
+      "id": "pen_6",
+      "x": 104,
+      "y": -24,
+      "w": 160,
+      "h": 144,
+      "cw": 296,
+      "ch": 206
+    }
+  ],
+  "shopFoods": 12,
+  "recipeIcons": 29,
+  "whiteDogAnimations": {
+    "eat": 4,
+    "care": 4
+  },
+  "errors": []
+}

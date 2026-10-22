@@ -1,8 +1,8 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.65";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.65";
-import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=24.9.65";
-import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.65";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.65";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.66";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.66";
+import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=24.9.66";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.66";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.66";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -125,7 +125,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
    const packBadge=isDecor?"2 góc":`×${item.quantity}`;
    // Decorations preview either angle in the card (both are drawn views, never a mirror).
    const shownFacing=previewFacing.get(item.id)||facing;
-   const artVisual=visualItemIcon(items,item.icon||item.id,{size:56,kind:item.kind,decorAssets,badge:packBadge,facing:shownFacing});
+   const artId=item.kind==="food"?item.id:item.icon||item.id;
+   const artVisual=visualItemIcon(items,artId,{size:56,kind:item.kind,decorAssets,badge:packBadge,facing:shownFacing});
 
    const head=el("div",{class:"gp-tile-art"},[artVisual]);
    const angleBtn=isDecor?iconButton("replay",`Xem góc ${shownFacing==="right"?"trái ↖":"phải ↗"} của ${item.label}`,()=>{previewFacing.set(item.id,shownFacing==="right"?"default":"right");render();},{class:"gp-step store-angle-btn","data-store-angle":item.id}):null;

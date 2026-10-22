@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-22",
+  "selected": [
+    {
+      "id": "pen_1",
+      "path": "/Users/thachanh/.codex/generated_images/01a163f4-5281-7712-8aeb-2e9773f5ed9b/exec-e3a05241-34cf-492a-8d69-1cdc162380b5.png"
+    },
+    {
+      "id": "pen_2",
+      "path": "/Users/thachanh/.codex/generated_images/01a163f4-5281-7712-8aeb-2e9773f5ed9b/exec-07b5cb71-0b8d-4997-9fa1-948df279d238.png"
+    },
+    {
+      "id": "pen_3",
+      "path": "/Users/thachanh/.codex/generated_images/01a163f4-5281-7712-8aeb-2e9773f5ed9b/exec-16c5d6b8-8014-4214-8fb8-2e6b2c43b552.png"
+    },
+    {
+      "id": "pen_4",
+      "path": "/Users/thachanh/.codex/generated_images/01a163f4-5281-7712-8aeb-2e9773f5ed9b/exec-f84d3910-c410-4798-b63d-3ab9bd2d9f7a.png"
+    },
+    {
+      "id": "pen_5",
+      "path": "/Users/thachanh/.codex/generated_images/01a163f4-5281-7712-8aeb-2e9773f5ed9b/exec-45652576-fbbf-4ba7-8559-036ed6fcd182.png"
+    },
+    {
+      "id": "pen_6",
+      "path": "/Users/thachanh/.codex/generated_images/01a163f4-5281-7712-8aeb-2e9773f5ed9b/exec-13d9eee7-484a-4ebd-bd57-051f1fefd313.png"
+    }
+  ]
+}

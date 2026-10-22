@@ -1,0 +1,64 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "reference": {
+    "path": "/var/folders/_3/h3d32d5x4cb6nndbfylf8vpm0000gn/T/codex-clipboard-98ed1e19-5975-4ef0-bd5d-ff212ce583f8.png",
+    "role": "User-supplied white shepherd dog character reference",
+    "sha256": "6a79e6e9dce243fc1c73e8404875d29a6c94c944b1986a262c61bab766bfc390"
+  },
+  "master": "masters/three-headed-dog-white-v01.png",
+  "rows": 4,
+  "columns": 4,
+  "frames": {
+    "growth": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "idle": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "eat": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "care": [
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "prompt": "Use case: stylized-concept. Create a production concept sprite atlas for Hagrid Farm's THREE-HEADED DOG redesigned from the attached reference photo. The photo is the CHARACTER REFERENCE only: the distinctive fluffy WHITE shepherd dog, upright pointed triangular ears with pale pink inner ears, long refined muzzle, brownish-pink nose, friendly relaxed eyes and a pale beige collar. Turn this dog into a gentle magical creature with EXACTLY THREE distinct heads and three necks joining ONE shared sturdy dog body, four legs and ONE fluffy tail. All THREE heads must clearly look like this same white dog, each with two upright ears. No brown bulldog, no lion mane, no human, no leash. Preserve the photo dog's calm sweet demeanor.\nLayout: exactly FOUR columns \u00d7 FOUR rows, sixteen separate sprites evenly spaced in a perfectly aligned atlas on genuine TRANSPARENT background. Generous clear transparent gutters, at least 15 percent padding inside every cell; no body/ears/tail touching cell boundaries; no labels, no numbers, no grid lines. Consistent 2:1 dimetric 3/4 view, face diagonally viewer-left, upper-left lighting, fixed camera and feet baseline within each row.\nROW 1 left-to-right: four growth ages of the same THREE-headed white dog: very small seated fluffy triple-headed puppy; growing triple-headed puppy; lanky juvenile with three heads; full-sized mature dog in calm standing pose. THREE heads even at baby age.\nROW 2: FOUR mature IDLE frames, same exact adult proportions and foot placement, gentle breathing and a small blink changing one or two faces, slight fluffy tail movement. Keep each head distinct and visible, no large pose jumps.\nROW 3: FOUR mature EATING gesture frames: notice food; gently lower the three muzzles; chew contentedly; lift muzzles and lick lips. No food bowl, no props; paws remain planted and body size constant.\nROW 4: FOUR mature PETTING response frames: calm attentive; three heads soften with happy eyes; slight pleased chin lift with tiny tail wag; settle back. No person or hand, no hearts or particle effects. Paws remain planted.\nArt style: lovingly detailed chunky native-pixel game sprite, consistent clustered pixels and crisp dark-plum selective outline, no smooth paint, no anti-aliasing or blur, no scene/background/shadow outside animal silhouette. Native target mature opaque bounds128\u00d7112 pixels. Fluffy WHITE coat modeled with ivory highlights and restrained cool gray shadows, pale pink ears and nose from warm muted ramps. Approved palette only: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Even in down-looking eating frames there are exactly three recognizable heads. Single coherent animal in each cell, never three separate dogs.",
+  "repairPrompt": "Repair only the atlas spacing and clipping in this THREE-HEADED WHITE SHEPHERD dog sprite sheet. Retain the same exact three-headed character, 16 poses, four columns and four rows, white fluffy fur, pointed pink ears, long muzzles, brown-pink noses, gentle expressions, crisp pixel game art, transparent background and fixed dimetric view. Every sprite MUST be completely visible, including all six ear tips, all four paws and full tail. The top-right adult's ear tips and right tail and bottom-row paws were cut off: redraw them intact. Reduce every sprite's scale within its OWN cell by25percent to leave at least35 transparent pixels between the entire sprite and ALL FOUR cell boundaries, including the OUTER canvas edges. Four equal-width columns and four equal-height rows with centered whole sprites and generous transparent separation, do not crop any animal. Exactly three distinct heads on a single body in all16cells, preserve original pose order and growth ages. No text, no lines, no backdrop, no ground shadow. Give ample clear outer margin on every side. Keep background genuinely transparent.",
+  "selectedOutput": "/Users/thachanh/.codex/generated_images/01a163f4-5281-7712-8aeb-2e9773f5ed9b/exec-9c1016b3-b934-4d7a-a29c-a269c5b87ab4.png",
+  "masterSha256": "b6965593cff10eebaab6d6f7e644320f8171f7d96249b8b4f0dfe49cef98ab1f",
+  "nativeOutputs": {
+    "native/three-headed-dog/action.png": "e549fa814deda9a35726f934e0fd7ee4630b83e6c3715cc91c5f6699fc2a2aaf",
+    "native/three-headed-dog/care.png": "a06ce15617bd27b2fc429a8d6da4fbf419886a2bda153c236962f3a6a022c70d",
+    "native/three-headed-dog/eat.png": "e549fa814deda9a35726f934e0fd7ee4630b83e6c3715cc91c5f6699fc2a2aaf",
+    "native/three-headed-dog/frame-01.png": "e2fa11f7b1bb3b836121755550649790ccb4bdf730050dabdd69f52bad7a8929",
+    "native/three-headed-dog/frame-02.png": "f33632065057b23601bb79d55bc2f3b8eccfc6f61b8e0af1fb1f9cca9fb70f83",
+    "native/three-headed-dog/frame-03.png": "a66e6dbec19025c0824a1cdf3148f0c7e132e25e5f2ec6360a83a03dc57b6737",
+    "native/three-headed-dog/frame-04.png": "0514e1105a00631c7c2192682df49007e64606979b5f146b113c177d5921a985",
+    "native/three-headed-dog/frame-05.png": "14639a77fabe8cbb41f490de87de42c858cbc108b6081f3089f42f2a262d05b7",
+    "native/three-headed-dog/frame-06.png": "a4ed3ad577bae3e7c304c2002bc2ee0be93b632cd2ceb349a13402b418fd2df8",
+    "native/three-headed-dog/frame-07.png": "f04f493cdd04c29893890aff4c0ef862bc9af9d76d374c0d88bee198e2602ba8",
+    "native/three-headed-dog/frame-08.png": "120333b461e8b5d9b59ae13e13eeb0c1eb0beb768dbcb2a18f726623804fb90c",
+    "native/three-headed-dog/frame-09.png": "c3461a7b0ba631c52383a3d12dfc0ba2eb4815cd13b6098a1d4b6d9653159253",
+    "native/three-headed-dog/frame-10.png": "26eed088cd8134763b3f73fb83705969e8bbf033e839cdc527753856d285e7ac",
+    "native/three-headed-dog/frame-11.png": "619995268e5b345d33c0cdaf422d51cf2174f2e1fa3ff77b1a4265e18a68ba66",
+    "native/three-headed-dog/frame-12.png": "e811a58d6c979e36c9c8742ae27988f254b916896ccaeaccde2f23b70f75845d",
+    "native/three-headed-dog/frame-13.png": "21d280e6e515686aff722d6f0f806bc5cf0e86bde622ee5ebae579db9332a9fb",
+    "native/three-headed-dog/frame-14.png": "dbbdc0e9425a8d2a2206b70cdb38f4e968bd97cdc8ad8fedd27d10b0e245c36b",
+    "native/three-headed-dog/frame-15.png": "c8ad6f91ab9c5667615a3ccbd3ab8671b991b6db73e94e15e3e399a0251d1273",
+    "native/three-headed-dog/frame-16.png": "585c7c2073edc8bff738530059add397c65bc40e6686c78857d5511114bb1c0b",
+    "native/three-headed-dog/idle.png": "557f50f2f458e4492e9a337698e6858170e7f1bfd597c3b212b79322542c1dd4"
+  }
+}

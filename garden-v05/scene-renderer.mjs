@@ -1,19 +1,21 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.65';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.65';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.65';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.65';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.65';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.65';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.65';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.65';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.65';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.65';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.65';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.65';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.65';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.65';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.65';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.65';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.66';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.66';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.66';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.66';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.66';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.66';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.66';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.66';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.66';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.66';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.66';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.66';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.66';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.66';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.66';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.66';
+import {penArt,penFiles,penShelterFrame,drawPenShelter} from './pen-art.mjs?v=24.9.66';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.66';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -25,13 +27,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.65';
+} from './scene-animation.mjs?v=24.9.66';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.65';
+} from './forest-surround.mjs?v=24.9.66';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -360,8 +362,8 @@ function penAliases(pen) {
 
 // All decoration unlocks have a deterministic logical footprint in the
 // walkable aisles. They deliberately stay outside every plot and pen cell so
-// the procedural marks never hide crop soil or creature spots. The shapes are
-// small pixel-like primitives; no new raster stand-ins are needed.
+// artwork never hides crop soil or creature spots. Shape names remain only for
+// layout data compatibility; the authored raster views live in ITEM_ART.
 export const DECORATION_LAYOUT = Object.freeze({
   'decoration-3': {col: -0.5, row: 3, width: 2, height: 1, shape: 'stone-border'},
   'decoration-7': {col: 5.75, row: 3, width: 2, height: 1, shape: 'pumpkin-garden'},
@@ -399,12 +401,6 @@ const DECORATION_LABELS = Object.freeze(Object.fromEntries(DB.decorations.map((e
 for (const id of DECORATION_IDS) {
   if (!DECORATION_LAYOUT[id]) throw new Error(`Thiếu layout trang trí ${id}.`);
 }
-
-const KEEPSAKE_COLORS = Object.freeze({
-  puffskein: '#f5d69a', bowtruckle: '#71934b', niffler: '#c97952', mooncalf: '#b7dee0',
-  kneazle: '#ed8a45', diricawl: '#70a8b6', fwooper: '#ed8a45', hippogriff: '#6961a6',
-  thestral: '#687486', unicorn: '#d6d8bf', 'three-headed-dog': '#c75b4b', dragon: '#b0bd67',
-});
 
 const KEEPSAKE_LAYOUT = Object.freeze(Object.keys(CREATURE).map((species, index) => ({
   species,
@@ -740,179 +736,22 @@ function groundShadow(context, x, y, width = 22) {
   ellipse(context, x, y - 2, width, 5, 'rgba(24,45,43,.36)');
 }
 
-function stoneRow(context, x, y, colors = ['#a6b1ae', '#687486', '#d6d8bf']) {
-  for (let index = -1; index <= 1; index += 1) {
-    ellipse(context, x + index * 10, y - 4 - (Math.abs(index) === 1 ? 1 : 0), 6, 4, colors[(index + 1) % colors.length], '#41465c');
-  }
-}
 
-function drawFenceShape(context, x, y, colors, height = 18) {
-  groundShadow(context, x, y, 23);
-  line(context, [x - 22, y - height + 3], [x + 22, y - height + 3], '#735044', 3);
-  line(context, [x - 22, y - 8], [x + 22, y - 8], '#a57554', 2);
-  for (let index = -1; index <= 1; index += 1) {
-    const postX = x + index * 20;
-    rectangle(context, postX - 3, y - height, 6, height, colors[(index + 1) % colors.length], '#4a3042', 1);
-    ellipse(context, postX, y - height, 4, 3, colors[(index + 1) % colors.length], '#4a3042');
-  }
-}
-
-function drawPerchShape(context, x, y, width = 34, height = 18, color = '#a57554') {
-  groundShadow(context, x, y, width / 2);
-  line(context, [x - width / 2, y - height], [x + width / 2, y - height], color, 4);
-  line(context, [x - width / 2 + 5, y - height], [x - width / 2 + 5, y - 4], '#735044', 3);
-  line(context, [x + width / 2 - 5, y - height], [x + width / 2 - 5, y - 4], '#735044', 3);
-  ellipse(context, x, y - height - 2, 8, 3, '#c75b4b', '#4a3042');
-}
-
-function drawArchShape(context, x, y, color = '#735044', accent = '#b0bd67', wide = 34) {
-  groundShadow(context, x, y, wide / 2);
-  line(context, [x - wide / 2, y], [x - wide / 2, y - 25], color, 5);
-  line(context, [x + wide / 2, y], [x + wide / 2, y - 25], color, 5);
-  context.beginPath();
-  context.moveTo(x - wide / 2, y - 25);
-  context.quadraticCurveTo(x, y - 45, x + wide / 2, y - 25);
-  context.lineWidth = 5;
-  context.strokeStyle = color;
-  context.stroke();
-  ellipse(context, x, y - 31, 4, 3, accent, '#4a3042');
-}
-
-export function drawDecorationShape(context, shape, x, y, phase = 0) {
-  const sway = phase === 1 ? -1 : phase === 3 ? 1 : 0;
-  const pulse = phase === 1 || phase === 2 ? 1 : 0;
-  switch (shape) {
-    case 'stone-border':
-      groundShadow(context, x, y, 28); stoneRow(context, x, y);
-      rectangle(context, x - 18, y - 9, 6, 3, '#b0bd67');
-      rectangle(context, x + 10, y - 8, 5, 3, '#71934b');
-      break;
-    case 'pumpkin-garden':
-      groundShadow(context, x, y, 28);
-      ellipse(context, x - 10, y - 6, 8, 6, '#ed8a45', '#4a3042');
-      rectangle(context, x - 11, y - 13, 2, 3, '#3f6a45');
-      ellipse(context, x + 1, y - 5, 8, 6, '#ffc36b', '#4a3042');
-      rectangle(context, x, y - 12, 2, 3, '#3f6a45');
-      for (const flowerX of [x + 12, x + 20]) {
-        line(context, [flowerX, y - 2], [flowerX + sway, y - 12], '#3f6a45', 2);
-        ellipse(context, flowerX + sway, y - 14, 4, 3, '#d6d8bf', '#4a3042');
-      }
-      break;
-    case 'puffskein-nest':
-      groundShadow(context, x, y, 26);
-      ellipse(context, x, y - 6, 21, 8, '#a57554', '#4a3042');
-      for (const [dx, dy, color] of [[-10, -11, '#f5d69a'], [0, -15 - pulse, '#d6d8bf'], [10, -11, '#a6b1ae']]) {
-        ellipse(context, x + dx, y + dy, 7, 6, color, '#687486');
-        rectangle(context, x + dx - 2, y + dy - 1, 2, 2, '#231f2e');
-      }
-      break;
-    case 'low-fence': drawFenceShape(context, x, y, ['#a57554', '#c97952', '#a57554'], 16); break;
-    case 'branch-trellis':
-      groundShadow(context, x, y, 23); line(context, [x - 17, y], [x - 17, y - 27], '#735044', 3); line(context, [x + 17, y], [x + 17, y - 27], '#735044', 3); line(context, [x - 17, y - 24], [x + 17, y - 24], '#a57554', 3); line(context, [x - 12, y - 5], [x + 13, y - 21], '#71934b', 2); ellipse(context, x - 5, y - 14 + sway, 5, 3, '#b0bd67', '#24483f'); ellipse(context, x + 8, y - 20 - sway, 5, 3, '#71934b', '#24483f');
-      break;
-    case 'wood-bridge':
-      polygon(context, [[x - 25, y - 3], [x, y - 13], [x + 25, y - 3], [x, y + 5]], '#a57554', '#4a3042', 2); for (let index = -2; index <= 2; index += 1) line(context, [x + index * 9 - 11, y - 7], [x + index * 9 + 11, y], '#e7ae73', 2); break;
-    case 'niffler-cabinet':
-      groundShadow(context, x, y, 19); rectangle(context, x - 16, y - 29, 32, 28, '#735044', '#4a3042', 2); rectangle(context, x - 13, y - 25, 26, 6, '#a57554', '#4a3042'); rectangle(context, x - 11, y - 16, 22, 11, '#41465c', '#d6d8bf'); ellipse(context, x + sway, y - 10, 3 + pulse, 3, '#ffc36b', '#4a3042');
-      break;
-    case 'wildflower-border':
-      groundShadow(context, x, y, 27); for (let index = -2; index <= 2; index += 1) { const flowerX = x + index * 10; const fx = flowerX + (index % 2 === 0 ? sway : -sway); line(context, [flowerX, y], [fx, y - 12 - (index % 2) * 3], '#3f6a45', 2); ellipse(context, fx, y - 15 - (index % 2) * 3, 4, 3, index % 2 ? '#f5d69a' : '#d6d8bf', '#4a3042'); }
-      break;
-    case 'moon-court':
-      groundShadow(context, x, y, 27); for (let index = 0; index < 6; index += 1) { const angle = (Math.PI * 2 * index) / 6; ellipse(context, x + Math.cos(angle) * 17, y - 3 + Math.sin(angle) * 5, 5, 3, '#687486', '#41465c'); } ellipse(context, x, y - 11 - pulse, 8, 8, '#f5d69a', '#735044'); ellipse(context, x + 3, y - 14 - pulse, 7, 7, '#24483f');
-      break;
-    case 'moon-lantern':
-      groundShadow(context, x, y, 12); line(context, [x, y], [x, y - 27], '#735044', 3);
-      if (pulse) ellipse(context, x, y - 31, 13, 11, 'rgba(245,214,154,0.22)');
-      ellipse(context, x + sway, y - 31, 9, 8, '#f5d69a', '#4a3042', 2); ellipse(context, x + 3 + sway, y - 34, 8, 7, '#24483f'); ellipse(context, x, y - 43, 5, 3, '#a57554', '#4a3042');
-      break;
-    case 'straw-shed':
-      groundShadow(context, x, y, 24); rectangle(context, x - 18, y - 26, 36, 25, '#a57554', '#4a3042', 2); polygon(context, [[x - 23, y - 25], [x, y - 42], [x + 23, y - 25]], '#e7ae73', '#735044', 3); rectangle(context, x - 5, y - 16, 10, 15, '#4a3042'); line(context, [x - 19, y - 30], [x + 19, y - 30], '#ffc36b', 2);
-      break;
-    case 'kneazle-post':
-      groundShadow(context, x, y, 22); rectangle(context, x - 3, y - 31, 6, 30, '#c97952', '#4a3042'); ellipse(context, x, y - 33, 7, 4, '#a57554', '#4a3042'); ellipse(context, x + 10, y - 6, 13, 5, '#a57554', '#4a3042'); ellipse(context, x + 10 + sway, y - 10, 6, 4, '#ed8a45', '#4a3042');
-      break;
-    case 'linen-pillows':
-      groundShadow(context, x, y, 24); rectangle(context, x - 20, y - 9, 16, 9, '#70a8b6', '#41465c', 2); rectangle(context, x - 2, y - 12, 18, 12, '#d6d8bf', '#687486', 2); rectangle(context, x + 8, y - 7, 14, 7, '#b7dee0', '#41465c', 2);
-      break;
-    case 'pond-vines':
-      groundShadow(context, x, y, 24); ellipse(context, x, y - 5, 22, 8, '#70a8b6', '#41465c', 2);
-      ellipse(context, x + sway * 2, y - 5, 10 + pulse * 3, 3, '#b7dee0');
-      line(context, [x - 17, y - 3], [x - 17, y - 29], '#735044', 3); line(context, [x + 17, y - 3], [x + 17, y - 29], '#735044', 3); line(context, [x - 17, y - 24], [x + 17, y - 24], '#a57554', 2); for (const [dx, dy] of [[-10, -12], [5, -17], [12, -8]]) ellipse(context, x + dx, y + dy + sway, 5, 3, '#71934b', '#24483f');
-      break;
-    case 'bird-bath':
-      groundShadow(context, x, y, 16); rectangle(context, x - 3, y - 20, 6, 18, '#a6b1ae', '#41465c'); ellipse(context, x, y - 22, 15, 5, '#70a8b6', '#41465c', 2); ellipse(context, x + sway, y - 22, 7 + pulse * 2, 2, '#b7dee0'); ellipse(context, x, y - 25, 4, 2, '#d6d8bf');
-      break;
-    case 'four-color-fence': drawFenceShape(context, x, y, ['#c75b4b', '#71934b', '#70a8b6', '#ffc36b'], 20); break;
-    case 'feather-perch':
-      drawPerchShape(context, x, y, 37, 18, '#a57554'); for (const [dx, color] of [[-12, '#c75b4b'], [0, '#ffc36b'], [12, '#70a8b6']]) { line(context, [x + dx, y - 18], [x + dx - 3 + sway, y - 31], color, 2); ellipse(context, x + dx - 4 + sway, y - 32, 4, 2, color, '#4a3042'); }
-      break;
-    case 'hippogriff-court':
-      groundShadow(context, x, y, 28); polygon(context, [[x - 25, y - 3], [x, y - 13], [x + 25, y - 3], [x, y + 6]], '#687486', '#41465c', 2); line(context, [x - 15, y - 2], [x - 4, y - 8], '#d6d8bf', 2); line(context, [x + 15, y - 2], [x + 4, y - 8], '#d6d8bf', 2); ellipse(context, x, y - 10, 5 + pulse, 4, '#b7dee0', '#41465c');
-      break;
-    case 'large-perch': drawPerchShape(context, x, y, 43, 28, '#c97952'); line(context, [x - 18, y - 23], [x - 25 - sway, y - 36], '#ed8a45', 3); line(context, [x + 18, y - 23], [x + 25 + sway, y - 36], '#ed8a45', 3); break;
-    case 'mist-lantern':
-      groundShadow(context, x, y, 14); line(context, [x, y], [x, y - 28], '#687486', 3);
-      if (pulse) ellipse(context, x, y - 32, 14, 11, 'rgba(183,222,224,0.25)');
-      ellipse(context, x, y - 32, 10, 8, '#b7dee0', '#41465c', 2); for (const [dx, dy] of [[-13, -30], [13, -30], [-8, -44], [9, -42]]) ellipse(context, x + dx + sway, y + dy - pulse, 5, 3, 'rgba(183,222,224,.65)');
-      break;
-    case 'moon-bridge':
-      drawArchShape(context, x, y, '#687486', '#f5d69a', 40); line(context, [x - 18, y - 4], [x + 18, y - 4], '#a6b1ae', 2); break;
-    case 'silver-border':
-      groundShadow(context, x, y, 27); for (let index = -2; index <= 2; index += 1) { const flowerX = x + index * 10; line(context, [flowerX, y], [flowerX + sway, y - 14], '#687486', 2); ellipse(context, flowerX + sway, y - 16, 5, 3, '#d6d8bf', '#a6b1ae'); }
-      break;
-    case 'unicorn-arbor': drawArchShape(context, x, y, '#71934b', '#f5d69a', 38); for (const dx of [-12, 12]) ellipse(context, x + dx, y - 28 + sway, 5, 3, '#b0bd67', '#24483f'); break;
-    case 'silver-mane-gazebo':
-      groundShadow(context, x, y, 25); for (const dx of [-16, 16]) line(context, [x + dx, y], [x + dx, y - 28], '#a6b1ae', 4); polygon(context, [[x - 24, y - 28], [x, y - 45], [x + 24, y - 28]], '#d6d8bf', '#687486', 3); line(context, [x - 12, y - 36], [x + 12, y - 36], '#b7dee0', 2);
-      break;
-    case 'large-fence': drawFenceShape(context, x, y, ['#735044', '#a57554', '#735044'], 28); break;
-    case 'triple-gate':
-      groundShadow(context, x, y, 28); for (const dx of [-16, 0, 16]) { line(context, [x + dx - 7, y], [x + dx - 7, y - 23], '#735044', 4); line(context, [x + dx + 7, y], [x + dx + 7, y - 23], '#735044', 4); context.beginPath(); context.moveTo(x + dx - 7, y - 23); context.quadraticCurveTo(x + dx, y - 36, x + dx + 7, y - 23); context.lineWidth = 3; context.strokeStyle = '#c97952'; context.stroke(); }
-      break;
-    case 'dragon-scale-pedestal':
-      groundShadow(context, x, y, 16); polygon(context, [[x - 13, y - 3], [x + 13, y - 3], [x + 8, y - 22], [x - 8, y - 22]], '#735044', '#4a3042', 2); polygon(context, [[x, y - 39 - pulse], [x + 10, y - 28 - pulse], [x, y - 20 - pulse], [x - 10, y - 28 - pulse]], '#b0bd67', '#24483f', 2); line(context, [x - 5, y - 29 - pulse], [x + 5, y - 29 - pulse], '#f5d69a', 2);
-      break;
-    case 'dragon-observatory':
-      groundShadow(context, x, y, 20); rectangle(context, x - 10, y - 33, 20, 32, '#735044', '#4a3042', 2); polygon(context, [[x - 16, y - 34], [x, y - 47], [x + 16, y - 34]], '#c75b4b', '#4a3042', 2); line(context, [x, y - 39], [x + 19, y - 51 - sway], '#ffc36b', 4); ellipse(context, x + 21, y - 52 - sway, 4 + pulse, 3 + pulse, '#b0bd67', '#24483f');
-      break;
-    case 'garden-plan':
-      groundShadow(context, x, y, 18); rectangle(context, x - 17, y - 27, 34, 25, '#d6d8bf', '#4a3042', 2); for (let col = -1; col <= 1; col += 1) for (let row = -1; row <= 1; row += 1) { rectangle(context, x + col * 8 - 3, y - 17 + row * 6, 6, 4, row === 0 ? '#b0bd67' : '#70a8b6', '#687486'); }
-      break;
-    default:
-      throw new Error(`Không có hình trang trí ${shape}.`);
-  }
-}
-
-export function drawDecoration(context, object, clock = 0) {
+export function drawDecoration(context, object, _clock = 0, options = {}) {
   const spec = DECORATION_LAYOUT[object.id];
   if (!spec) throw new Error(`Không có hình trang trí ${String(object.id)}.`);
+  const asset = options.asset ?? object.asset ?? earnedDecorArt(object.id, object.facing);
+  if (!asset) throw new Error(`Không có asset trang trí ${String(object.id)}.`);
+  const image = options.image ?? object.image ?? null;
   const x = object.xy[0];
   const y = object.xy[1];
-  const isRight = object.facing === 'right';
-  const phase = clock > 0 ? Math.floor((clock + (stableHash(object.id) % 1200)) / 420) % 4 : 0;
-  const bob = clock > 0 && (spec.shape.includes('lantern') || spec.shape.includes('pedestal') || spec.shape.includes('nest'))
-    ? (phase === 1 ? -1 : phase === 3 ? 1 : 0)
-    : 0;
-  if (isRight && context.save && context.translate && context.scale) {
-    context.save();
-    context.translate(Math.round(x * 2), 0);
-    context.scale(-1, 1);
-    drawDecorationShape(context, spec.shape, x, y + bob, phase);
-    context.restore();
-  } else {
-    drawDecorationShape(context, spec.shape, x, y + bob, phase);
-  }
-  if (clock > 0 && (spec.shape.includes('lantern') || spec.shape.includes('moon') || spec.shape.includes('pedestal') || spec.shape.includes('arbor') || spec.shape.includes('observatory'))) {
-    if (phase === 1 || phase === 2) {
-      drawPixelSparkle(context, x + (isRight ? -8 : 8), y - 28 + bob, '#f5d69a', 1);
-    }
-  }
+  if (!image) return false;
+  return drawEarnedDecorSprite(context, image, asset, x, y);
 }
 
 export function drawKeepsake(context, object, clock = 0, options = {}) {
   const x = Math.round(object.xy[0]);
   const y = Math.round(object.xy[1]);
-  const color = KEEPSAKE_COLORS[object.species] ?? '#d6d8bf';
   const initials = object.species === 'three-headed-dog' ? '3D' : String(object.species || 'KP').slice(0, 2).toUpperCase();
   const phase = clock > 0 ? Math.floor((clock + (stableHash(object.species) % 1100)) / 450) % 4 : 0;
   const bob = phase === 1 ? -1 : phase === 3 ? 1 : 0;
@@ -923,27 +762,26 @@ export function drawKeepsake(context, object, clock = 0, options = {}) {
   rectangle(context, x - 11, y - 11, 22, 6, '#687486', '#231f2e', 1);
   rectangle(context, x - 9, y - 14, 18, 4, '#a6b1ae', '#41465c', 1);
   rectangle(context, x - 8, y - 16, 16, 2, '#f5d69a', '#735044', 1);
-  // Species emblem gem on the pedestal front
-  rectangle(context, x - 3, y - 9, 6, 4, color, '#231f2e', 1);
+  // Keep the species label readable beneath the distinct produce silhouette.
+  context.fillStyle = '#231f2e';
+  context.font = 'bold 7px monospace';
+  context.textAlign = 'center';
+  context.textBaseline = 'middle';
+  context.fillText(initials, x, y - 8);
 
-  const spriteImage = options.spriteImage ?? null;
-  const spriteFrame = options.spriteFrame ?? null;
-  if (spriteImage && typeof context.drawImage === 'function') {
-    // Golden trophy aura behind the miniature creature statue
+  const produceImage = options.produceImage ?? null;
+  const produceAsset = options.produceAsset ?? null;
+  if (produceImage && typeof context.drawImage === 'function') {
+    // Golden trophy aura behind the miniature produce icon.
     ellipse(context, x, y - 24 + bob, 11, 9, 'rgba(245,214,154,0.22)', '#f5d69a', 1);
-    const fw = finite(spriteFrame?.width || spriteImage.naturalWidth || spriteImage.width, 64);
-    const fh = finite(spriteFrame?.height || spriteImage.naturalHeight || spriteImage.height, 64);
-    const scale = Math.min(28 / Math.max(1, fw), 28 / Math.max(1, fh));
-    const dw = Math.max(14, Math.round(fw * scale));
-    const dh = Math.max(14, Math.round(fh * scale));
-    context.drawImage(spriteImage, Math.round(x - dw / 2), Math.round(y - 15 - dh + bob), dw, dh);
-  } else {
-    ellipse(context, x, y - 22 + bob, 8, 8, color, '#231f2e', 2);
-    context.fillStyle = '#231f2e';
-    context.font = 'bold 7px monospace';
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
-    context.fillText(initials, x, y - 22 + bob);
+    const sourceWidth = finite(produceAsset?.width || produceImage.naturalWidth || produceImage.width, 64);
+    const sourceHeight = finite(produceAsset?.height || produceImage.naturalHeight || produceImage.height, 64);
+    const scale = Math.min(32 / Math.max(1, sourceWidth), 32 / Math.max(1, sourceHeight));
+    const drawWidth = Math.max(1, Math.round(sourceWidth * scale));
+    const drawHeight = Math.max(1, Math.round(sourceHeight * scale));
+    const pivotX = Math.round(finite(produceAsset?.pivotX, sourceWidth / 2) * scale);
+    const pivotY = Math.round(finite(produceAsset?.pivotY, sourceHeight) * scale);
+    context.drawImage(produceImage, Math.round(x - pivotX), Math.round(y - 15 - pivotY + bob), drawWidth, drawHeight);
   }
 
   if (clock > 0 && (phase === 1 || phase === 2)) {
@@ -978,6 +816,9 @@ export async function createGarden(canvas, options = {}) {
   const decorAssets = new Map((options.decorAssets ?? []).map(a=>[a.id,a]));
   const assetFiles = [...new Set([
     ...collectFiles(),
+    ...earnedDecorFiles(),
+    ...produceFiles(),
+    ...penFiles(),
     ...FESTIVAL_FILES,
     'world-v242/cottage-corner.png',
     ...[...decorAssets.values()].flatMap((a) => [
@@ -1521,13 +1362,24 @@ export async function createGarden(canvas, options = {}) {
 
   function drawBuiltPen(pen,state,clock){
     const residents=habitatResidents(pen,asArray(state.creatures),map.creatureSpots,iso);
-    const corners=penCorners(pen),key=activeWeather+':'+JSON.stringify([corners,residents]);
+    const shelterArt=penArt(pen.id);
+    const shelter=penShelterFrame(pen,iso,shelterArt);
+    const corners=penCorners(pen),key=activeWeather+':'+JSON.stringify([corners,residents,shelter?.alphaBounds]);
     let cached=penHabitatLayers.get(pen.id);
     if(cached?.key!==key){
-      const left=Math.floor(Math.min(...corners.map(p=>p[0])))-20,top=Math.floor(Math.min(...corners.map(p=>p[1])))-20;
-      const width=Math.ceil(Math.max(...corners.map(p=>p[0])))-left+20,height=Math.ceil(Math.max(...corners.map(p=>p[1])))-top+20;
+      const baseLeft=Math.floor(Math.min(...corners.map(p=>p[0])))-20;
+      const baseTop=Math.floor(Math.min(...corners.map(p=>p[1])))-20;
+      const baseRight=Math.ceil(Math.max(...corners.map(p=>p[0])))+20;
+      const baseBottom=Math.ceil(Math.max(...corners.map(p=>p[1])))+20;
+      const left=Math.floor(Math.min(baseLeft,shelter?.alphaBounds.left ?? baseLeft));
+      const top=Math.floor(Math.min(baseTop,shelter?.alphaBounds.top ?? baseTop));
+      const right=Math.ceil(Math.max(baseRight,shelter?.alphaBounds.right ?? baseRight));
+      const bottom=Math.ceil(Math.max(baseBottom,shelter?.alphaBounds.bottom ?? baseBottom));
+      const width=right-left,height=bottom-top;
       const layer=makeCanvas(canvas,width,height),brush=layer.getContext('2d');brush.translate(-left,-top);
       drawPenHabitat(brush,{corners,pen,iso,weatherMode:activeWeather,personalized:residents.length>0});
+      const shelterImage=shelterArt?.file ? seasonalImage(shelterArt.file,'ground') : null;
+      if(shelterImage&&shelter)drawPenShelter(brush,shelterImage,shelter);
       drawHabitatProps(brush,residents,{weatherMode:activeWeather});
       cached={key,layer,left,top};penHabitatLayers.set(pen.id,cached);
     }
@@ -1710,14 +1562,15 @@ export async function createGarden(canvas, options = {}) {
     if (object.kind === 'front-tree') { context.save(); context.globalAlpha = object.alpha ?? 1; drawCanopy(context, object.tree); context.restore(); return; }
     if (object.kind === 'boundary-fence') { context.drawImage(object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock); return; }
     if (object.kind === 'decoration') {
-      drawDecoration(context, object, clock);
+      const asset = earnedDecorArt(object.id, object.facing);
+      const image = asset?.file ? imageFor(asset.file) : null;
+      drawDecoration(context, object, clock, {asset, image});
       return;
     }
     if (object.kind === 'keepsake') {
-      const kItem = items.get(object.species);
-      const kFrame = kItem?.frames?.[3] ?? kItem?.frames?.[0] ?? null;
-      const kImg = kFrame?.file ? imageFor(kFrame.file) : null;
-      drawKeepsake(context, object, clock, {spriteImage: kImg, spriteFrame: kFrame});
+      const produceAsset = produceArt(object.species);
+      const produceImage = produceAsset?.file ? imageFor(produceAsset.file) : null;
+      drawKeepsake(context, object, clock, {produceImage, produceAsset});
       return;
     }
     if (object.kind === 'asset') {
@@ -2124,7 +1977,13 @@ export async function createGarden(canvas, options = {}) {
     }
     for (const decor of [...interactiveEarnedDecor].reverse()) {
       const [dx, dy] = decor.xy;
-      if (world.x >= dx - 24 && world.x <= dx + 24 && world.y >= dy - 38 && world.y <= dy + 6) {
+      const asset = earnedDecorArt(decor.id, decor.facing);
+      const bounds = asset?.bounds ?? {x: 0, y: 0, w: asset?.width ?? 96, h: asset?.height ?? 112};
+      const pivotX = Number.isFinite(Number(asset?.pivotX)) ? Number(asset.pivotX) : 48;
+      const pivotY = Number.isFinite(Number(asset?.pivotY)) ? Number(asset.pivotY) : 96;
+      const left = dx - pivotX + bounds.x;
+      const top = dy - pivotY + bounds.y;
+      if (world.x >= left - 5 && world.x <= left + bounds.w + 5 && world.y >= top - 5 && world.y <= top + bounds.h + 5) {
         return {kind: 'earned-decoration', itemId: decor.id, label: decor.label, facing: decor.facing};
       }
     }

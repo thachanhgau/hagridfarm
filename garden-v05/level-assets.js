@@ -4208,7 +4208,7 @@
         "knotgrass"
       ],
       "kind": "crop",
-      "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+      "sourceSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -4219,26 +4219,26 @@
         "threshold": 192,
         "rowCuts": [
           0,
-          362,
-          724,
+          410,
+          733,
           1086
         ],
         "columnCuts": [
           0,
           362,
           724,
-          1086,
+          1065,
           1448
         ],
         "rowProjection": {
           "length": 1086,
-          "nonzero": 875,
-          "maximum": 642
+          "nonzero": 871,
+          "maximum": 670
         },
         "columnProjection": {
           "length": 1448,
-          "nonzero": 849,
-          "maximum": 837
+          "nonzero": 919,
+          "maximum": 803
         },
         "warnings": []
       },
@@ -4259,7 +4259,7 @@
             "Trưởng thành"
           ],
           "source": "masters-levels/crops-g.png",
-          "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+          "sourceSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
           "sourceDimensions": {
             "width": 1448,
             "height": 1086
@@ -4271,19 +4271,21 @@
             "columns": 4,
             "rowCuts": [
               0,
-              362,
-              724,
+              410,
+              733,
               1086
             ],
             "columnCuts": [
               0,
               362,
               724,
-              1086,
+              1065,
               1448
             ],
             "alphaThreshold": 192,
-            "warnings": []
+            "warnings": [
+              "fluxweed stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+            ]
           },
           "frames": [
             {
@@ -4297,26 +4299,26 @@
                 "x": 0,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 410,
                 "bounds": {
-                  "x": 154,
-                  "y": 244,
-                  "w": 54,
-                  "h": 50,
-                  "count": 2119,
+                  "x": 137,
+                  "y": 340,
+                  "w": 68,
+                  "h": 60,
+                  "count": 3009,
                   "edge": false
                 }
               },
               "bounds": {
                 "x": 26,
                 "y": 70,
-                "w": 11,
+                "w": 12,
                 "h": 10,
-                "count": 88,
+                "count": 90,
                 "edge": false
               },
-              "scale": 0.20532319391634982,
-              "adultScale": 0.20532319391634982,
+              "scale": 0.17363344051446947,
+              "adultScale": 0.17363344051446947,
               "clippedPixels": 0
             },
             {
@@ -4330,26 +4332,26 @@
                 "x": 362,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 410,
                 "bounds": {
-                  "x": 85,
-                  "y": 142,
-                  "w": 188,
-                  "h": 168,
-                  "count": 16944,
+                  "x": 90,
+                  "y": 231,
+                  "w": 162,
+                  "h": 172,
+                  "count": 13162,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 13,
-                "y": 46,
-                "w": 39,
-                "h": 34,
-                "count": 718,
+                "x": 18,
+                "y": 50,
+                "w": 28,
+                "h": 30,
+                "count": 398,
                 "edge": false
               },
-              "scale": 0.20532319391634982,
-              "adultScale": 0.20532319391634982,
+              "scale": 0.17363344051446947,
+              "adultScale": 0.17363344051446947,
               "clippedPixels": 0
             },
             {
@@ -4362,27 +4364,27 @@
               "sourceRect": {
                 "x": 724,
                 "y": 0,
-                "w": 362,
-                "h": 362,
+                "w": 341,
+                "h": 410,
                 "bounds": {
-                  "x": 74,
-                  "y": 52,
-                  "w": 196,
-                  "h": 260,
-                  "count": 26437,
+                  "x": 15,
+                  "y": 127,
+                  "w": 251,
+                  "h": 278,
+                  "count": 33285,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 12,
-                "y": 27,
-                "w": 40,
-                "h": 53,
-                "count": 1122,
+                "x": 10,
+                "y": 32,
+                "w": 44,
+                "h": 48,
+                "count": 1006,
                 "edge": false
               },
-              "scale": 0.20532319391634982,
-              "adultScale": 0.20532319391634982,
+              "scale": 0.17363344051446947,
+              "adultScale": 0.17363344051446947,
               "clippedPixels": 0
             },
             {
@@ -4393,29 +4395,29 @@
               "pivotY": 80,
               "sourceFrame": 3,
               "sourceRect": {
-                "x": 1086,
+                "x": 1065,
                 "y": 0,
-                "w": 362,
-                "h": 362,
+                "w": 383,
+                "h": 410,
                 "bounds": {
-                  "x": 44,
-                  "y": 1,
-                  "w": 263,
-                  "h": 314,
-                  "count": 47332,
-                  "edge": false
+                  "x": 17,
+                  "y": 80,
+                  "w": 311,
+                  "h": 330,
+                  "count": 58601,
+                  "edge": true
                 }
               },
               "bounds": {
                 "x": 5,
-                "y": 16,
+                "y": 23,
                 "w": 54,
-                "h": 64,
-                "count": 1999,
+                "h": 57,
+                "count": 1770,
                 "edge": false
               },
-              "scale": 0.20532319391634982,
-              "adultScale": 0.20532319391634982,
+              "scale": 0.17363344051446947,
+              "adultScale": 0.17363344051446947,
               "clippedPixels": 0
             }
           ],
@@ -4475,7 +4477,7 @@
             "Trưởng thành"
           ],
           "source": "masters-levels/crops-g.png",
-          "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+          "sourceSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
           "sourceDimensions": {
             "width": 1448,
             "height": 1086
@@ -4487,19 +4489,22 @@
             "columns": 4,
             "rowCuts": [
               0,
-              362,
-              724,
+              410,
+              733,
               1086
             ],
             "columnCuts": [
               0,
               362,
               724,
-              1086,
+              1065,
               1448
             ],
             "alphaThreshold": 192,
-            "warnings": []
+            "warnings": [
+              "bubotuber stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+              "bubotuber stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+            ]
           },
           "frames": [
             {
@@ -4511,28 +4516,28 @@
               "sourceFrame": 0,
               "sourceRect": {
                 "x": 0,
-                "y": 362,
+                "y": 410,
                 "w": 362,
-                "h": 362,
+                "h": 323,
                 "bounds": {
-                  "x": 145,
-                  "y": 246,
-                  "w": 66,
-                  "h": 61,
-                  "count": 2930,
+                  "x": 137,
+                  "y": 257,
+                  "w": 84,
+                  "h": 63,
+                  "count": 3908,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 26,
+                "x": 24,
                 "y": 69,
-                "w": 12,
+                "w": 15,
                 "h": 11,
-                "count": 94,
+                "count": 128,
                 "edge": false
               },
-              "scale": 0.17763157894736842,
-              "adultScale": 0.17763157894736842,
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
               "clippedPixels": 0
             },
             {
@@ -4544,28 +4549,28 @@
               "sourceFrame": 1,
               "sourceRect": {
                 "x": 362,
-                "y": 362,
+                "y": 410,
                 "w": 362,
-                "h": 362,
+                "h": 323,
                 "bounds": {
-                  "x": 89,
-                  "y": 201,
-                  "w": 128,
-                  "h": 111,
-                  "count": 7953,
+                  "x": 116,
+                  "y": 149,
+                  "w": 126,
+                  "h": 166,
+                  "count": 12608,
                   "edge": false
                 }
               },
               "bounds": {
                 "x": 21,
-                "y": 60,
+                "y": 50,
                 "w": 23,
-                "h": 20,
-                "count": 255,
+                "h": 30,
+                "count": 419,
                 "edge": false
               },
-              "scale": 0.17763157894736842,
-              "adultScale": 0.17763157894736842,
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
               "clippedPixels": 0
             },
             {
@@ -4577,28 +4582,28 @@
               "sourceFrame": 2,
               "sourceRect": {
                 "x": 724,
-                "y": 362,
-                "w": 362,
-                "h": 362,
+                "y": 410,
+                "w": 341,
+                "h": 323,
                 "bounds": {
-                  "x": 25,
-                  "y": 108,
-                  "w": 206,
-                  "h": 205,
-                  "count": 28374,
-                  "edge": false
+                  "x": 38,
+                  "y": 70,
+                  "w": 222,
+                  "h": 253,
+                  "count": 32470,
+                  "edge": true
                 }
               },
               "bounds": {
-                "x": 14,
-                "y": 44,
-                "w": 37,
-                "h": 36,
-                "count": 896,
+                "x": 12,
+                "y": 34,
+                "w": 41,
+                "h": 46,
+                "count": 1081,
                 "edge": false
               },
-              "scale": 0.17763157894736842,
-              "adultScale": 0.17763157894736842,
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
               "clippedPixels": 0
             },
             {
@@ -4609,29 +4614,29 @@
               "pivotY": 80,
               "sourceFrame": 3,
               "sourceRect": {
-                "x": 1086,
-                "y": 362,
-                "w": 362,
-                "h": 362,
+                "x": 1065,
+                "y": 410,
+                "w": 383,
+                "h": 323,
                 "bounds": {
-                  "x": 1,
-                  "y": 44,
-                  "w": 304,
-                  "h": 275,
-                  "count": 59491,
-                  "edge": false
+                  "x": 45,
+                  "y": 25,
+                  "w": 296,
+                  "h": 298,
+                  "count": 53088,
+                  "edge": true
                 }
               },
               "bounds": {
                 "x": 5,
-                "y": 31,
+                "y": 26,
                 "w": 54,
-                "h": 49,
-                "count": 1887,
+                "h": 54,
+                "count": 1763,
                 "edge": false
               },
-              "scale": 0.17763157894736842,
-              "adultScale": 0.17763157894736842,
+              "scale": 0.18243243243243243,
+              "adultScale": 0.18243243243243243,
               "clippedPixels": 0
             }
           ],
@@ -4691,7 +4696,7 @@
             "Trưởng thành"
           ],
           "source": "masters-levels/crops-g.png",
-          "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+          "sourceSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
           "sourceDimensions": {
             "width": 1448,
             "height": 1086
@@ -4703,15 +4708,15 @@
             "columns": 4,
             "rowCuts": [
               0,
-              362,
-              724,
+              410,
+              733,
               1086
             ],
             "columnCuts": [
               0,
               362,
               724,
-              1086,
+              1065,
               1448
             ],
             "alphaThreshold": 192,
@@ -4727,28 +4732,28 @@
               "sourceFrame": 0,
               "sourceRect": {
                 "x": 0,
-                "y": 724,
+                "y": 733,
                 "w": 362,
-                "h": 362,
+                "h": 353,
                 "bounds": {
-                  "x": 159,
-                  "y": 253,
-                  "w": 49,
-                  "h": 51,
-                  "count": 1854,
+                  "x": 150,
+                  "y": 217,
+                  "w": 57,
+                  "h": 54,
+                  "count": 2252,
                   "edge": false
                 }
               },
               "bounds": {
                 "x": 28,
-                "y": 71,
-                "w": 9,
-                "h": 9,
-                "count": 59,
+                "y": 72,
+                "w": 8,
+                "h": 8,
+                "count": 52,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.15168539325842698,
+              "adultScale": 0.15168539325842698,
               "clippedPixels": 0
             },
             {
@@ -4760,28 +4765,28 @@
               "sourceFrame": 1,
               "sourceRect": {
                 "x": 362,
-                "y": 724,
+                "y": 733,
                 "w": 362,
-                "h": 362,
+                "h": 353,
                 "bounds": {
-                  "x": 117,
-                  "y": 209,
-                  "w": 111,
-                  "h": 99,
-                  "count": 5419,
+                  "x": 68,
+                  "y": 134,
+                  "w": 197,
+                  "h": 140,
+                  "count": 9199,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 22,
-                "y": 62,
-                "w": 20,
-                "h": 18,
-                "count": 177,
+                "x": 17,
+                "y": 59,
+                "w": 30,
+                "h": 21,
+                "count": 208,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.15168539325842698,
+              "adultScale": 0.15168539325842698,
               "clippedPixels": 0
             },
             {
@@ -4793,28 +4798,28 @@
               "sourceFrame": 2,
               "sourceRect": {
                 "x": 724,
-                "y": 724,
-                "w": 362,
-                "h": 362,
+                "y": 733,
+                "w": 341,
+                "h": 353,
                 "bounds": {
-                  "x": 53,
-                  "y": 104,
-                  "w": 244,
-                  "h": 204,
-                  "count": 22598,
+                  "x": 18,
+                  "y": 81,
+                  "w": 279,
+                  "h": 194,
+                  "count": 25706,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 10,
-                "y": 43,
-                "w": 45,
-                "h": 37,
-                "count": 753,
+                "x": 11,
+                "y": 51,
+                "w": 42,
+                "h": 29,
+                "count": 587,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.15168539325842698,
+              "adultScale": 0.15168539325842698,
               "clippedPixels": 0
             },
             {
@@ -4825,29 +4830,29 @@
               "pivotY": 80,
               "sourceFrame": 3,
               "sourceRect": {
-                "x": 1086,
-                "y": 724,
-                "w": 362,
-                "h": 362,
+                "x": 1065,
+                "y": 733,
+                "w": 383,
+                "h": 353,
                 "bounds": {
-                  "x": 28,
-                  "y": 37,
-                  "w": 296,
-                  "h": 286,
-                  "count": 49869,
+                  "x": 1,
+                  "y": 35,
+                  "w": 356,
+                  "h": 243,
+                  "count": 48547,
                   "edge": false
                 }
               },
               "bounds": {
                 "x": 5,
-                "y": 28,
+                "y": 43,
                 "w": 54,
-                "h": 52,
-                "count": 1657,
+                "h": 37,
+                "count": 1121,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.15168539325842698,
+              "adultScale": 0.15168539325842698,
               "clippedPixels": 0
             }
           ],
@@ -4901,7 +4906,7 @@
         "mimbulus"
       ],
       "kind": "crop",
-      "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+      "sourceSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -4912,7 +4917,7 @@
         "threshold": 192,
         "rowCuts": [
           0,
-          362,
+          389,
           724,
           1086
         ],
@@ -4925,13 +4930,13 @@
         ],
         "rowProjection": {
           "length": 1086,
-          "nonzero": 935,
-          "maximum": 642
+          "nonzero": 881,
+          "maximum": 725
         },
         "columnProjection": {
           "length": 1448,
-          "nonzero": 821,
-          "maximum": 886
+          "nonzero": 898,
+          "maximum": 760
         },
         "warnings": []
       },
@@ -4952,7 +4957,7 @@
             "Trưởng thành"
           ],
           "source": "masters-levels/crops-h.png",
-          "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+          "sourceSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
           "sourceDimensions": {
             "width": 1448,
             "height": 1086
@@ -4964,7 +4969,7 @@
             "columns": 4,
             "rowCuts": [
               0,
-              362,
+              389,
               724,
               1086
             ],
@@ -4976,7 +4981,10 @@
               1448
             ],
             "alphaThreshold": 192,
-            "warnings": []
+            "warnings": [
+              "shrivelfig stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+              "shrivelfig stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+            ]
           },
           "frames": [
             {
@@ -4990,22 +4998,22 @@
                 "x": 0,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 389,
                 "bounds": {
-                  "x": 154,
-                  "y": 288,
-                  "w": 54,
-                  "h": 51,
-                  "count": 2007,
+                  "x": 143,
+                  "y": 300,
+                  "w": 79,
+                  "h": 81,
+                  "count": 4498,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 27,
-                "y": 71,
-                "w": 9,
-                "h": 9,
-                "count": 60,
+                "x": 25,
+                "y": 66,
+                "w": 14,
+                "h": 14,
+                "count": 140,
                 "edge": false
               },
               "scale": 0.1758957654723127,
@@ -5023,22 +5031,22 @@
                 "x": 362,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 389,
                 "bounds": {
-                  "x": 124,
-                  "y": 243,
-                  "w": 121,
-                  "h": 96,
-                  "count": 5814,
+                  "x": 58,
+                  "y": 231,
+                  "w": 201,
+                  "h": 153,
+                  "count": 15444,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 21,
-                "y": 63,
-                "w": 21,
-                "h": 17,
-                "count": 182,
+                "x": 14,
+                "y": 53,
+                "w": 35,
+                "h": 27,
+                "count": 474,
                 "edge": false
               },
               "scale": 0.1758957654723127,
@@ -5056,22 +5064,22 @@
                 "x": 724,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 389,
                 "bounds": {
-                  "x": 47,
-                  "y": 134,
-                  "w": 248,
-                  "h": 213,
-                  "count": 30914,
-                  "edge": false
+                  "x": 15,
+                  "y": 152,
+                  "w": 279,
+                  "h": 237,
+                  "count": 33974,
+                  "edge": true
                 }
               },
               "bounds": {
-                "x": 10,
-                "y": 43,
-                "w": 44,
-                "h": 37,
-                "count": 960,
+                "x": 7,
+                "y": 38,
+                "w": 49,
+                "h": 42,
+                "count": 1046,
                 "edge": false
               },
               "scale": 0.1758957654723127,
@@ -5089,22 +5097,22 @@
                 "x": 1086,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 389,
                 "bounds": {
-                  "x": 21,
-                  "y": 62,
+                  "x": 3,
+                  "y": 80,
                   "w": 307,
-                  "h": 281,
-                  "count": 57623,
-                  "edge": false
+                  "h": 309,
+                  "count": 61293,
+                  "edge": true
                 }
               },
               "bounds": {
                 "x": 5,
-                "y": 31,
+                "y": 26,
                 "w": 54,
-                "h": 49,
-                "count": 1780,
+                "h": 54,
+                "count": 1892,
                 "edge": false
               },
               "scale": 0.1758957654723127,
@@ -5168,7 +5176,7 @@
             "Trưởng thành"
           ],
           "source": "masters-levels/crops-h.png",
-          "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+          "sourceSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
           "sourceDimensions": {
             "width": 1448,
             "height": 1086
@@ -5180,7 +5188,7 @@
             "columns": 4,
             "rowCuts": [
               0,
-              362,
+              389,
               724,
               1086
             ],
@@ -5204,28 +5212,28 @@
               "sourceFrame": 0,
               "sourceRect": {
                 "x": 0,
-                "y": 362,
+                "y": 389,
                 "w": 362,
-                "h": 362,
+                "h": 335,
                 "bounds": {
-                  "x": 154,
-                  "y": 244,
-                  "w": 54,
-                  "h": 50,
-                  "count": 2119,
+                  "x": 142,
+                  "y": 258,
+                  "w": 81,
+                  "h": 70,
+                  "count": 4260,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 26,
-                "y": 70,
-                "w": 11,
-                "h": 10,
-                "count": 88,
+                "x": 25,
+                "y": 69,
+                "w": 13,
+                "h": 11,
+                "count": 115,
                 "edge": false
               },
-              "scale": 0.20532319391634982,
-              "adultScale": 0.20532319391634982,
+              "scale": 0.16265060240963855,
+              "adultScale": 0.16265060240963855,
               "clippedPixels": 0
             },
             {
@@ -5237,28 +5245,28 @@
               "sourceFrame": 1,
               "sourceRect": {
                 "x": 362,
-                "y": 362,
+                "y": 389,
                 "w": 362,
-                "h": 362,
+                "h": 335,
                 "bounds": {
-                  "x": 85,
-                  "y": 142,
-                  "w": 188,
-                  "h": 168,
-                  "count": 16944,
+                  "x": 57,
+                  "y": 123,
+                  "w": 196,
+                  "h": 205,
+                  "count": 17406,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 13,
-                "y": 46,
-                "w": 39,
-                "h": 34,
-                "count": 718,
+                "x": 16,
+                "y": 47,
+                "w": 32,
+                "h": 33,
+                "count": 457,
                 "edge": false
               },
-              "scale": 0.20532319391634982,
-              "adultScale": 0.20532319391634982,
+              "scale": 0.16265060240963855,
+              "adultScale": 0.16265060240963855,
               "clippedPixels": 0
             },
             {
@@ -5270,28 +5278,28 @@
               "sourceFrame": 2,
               "sourceRect": {
                 "x": 724,
-                "y": 362,
+                "y": 389,
                 "w": 362,
-                "h": 362,
+                "h": 335,
                 "bounds": {
-                  "x": 74,
-                  "y": 52,
-                  "w": 196,
-                  "h": 260,
-                  "count": 26437,
+                  "x": 17,
+                  "y": 76,
+                  "w": 270,
+                  "h": 257,
+                  "count": 40615,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 12,
-                "y": 27,
-                "w": 40,
-                "h": 53,
-                "count": 1122,
+                "x": 10,
+                "y": 38,
+                "w": 44,
+                "h": 42,
+                "count": 1078,
                 "edge": false
               },
-              "scale": 0.20532319391634982,
-              "adultScale": 0.20532319391634982,
+              "scale": 0.16265060240963855,
+              "adultScale": 0.16265060240963855,
               "clippedPixels": 0
             },
             {
@@ -5303,28 +5311,28 @@
               "sourceFrame": 3,
               "sourceRect": {
                 "x": 1086,
-                "y": 362,
+                "y": 389,
                 "w": 362,
-                "h": 362,
+                "h": 335,
                 "bounds": {
-                  "x": 44,
-                  "y": 1,
-                  "w": 263,
-                  "h": 314,
-                  "count": 47332,
+                  "x": 2,
+                  "y": 41,
+                  "w": 332,
+                  "h": 292,
+                  "count": 66652,
                   "edge": false
                 }
               },
               "bounds": {
                 "x": 5,
-                "y": 16,
+                "y": 33,
                 "w": 54,
-                "h": 64,
-                "count": 1999,
+                "h": 47,
+                "count": 1764,
                 "edge": false
               },
-              "scale": 0.20532319391634982,
-              "adultScale": 0.20532319391634982,
+              "scale": 0.16265060240963855,
+              "adultScale": 0.16265060240963855,
               "clippedPixels": 0
             }
           ],
@@ -5384,7 +5392,7 @@
             "Trưởng thành"
           ],
           "source": "masters-levels/crops-h.png",
-          "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+          "sourceSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
           "sourceDimensions": {
             "width": 1448,
             "height": 1086
@@ -5396,7 +5404,7 @@
             "columns": 4,
             "rowCuts": [
               0,
-              362,
+              389,
               724,
               1086
             ],
@@ -5424,24 +5432,24 @@
                 "w": 362,
                 "h": 362,
                 "bounds": {
-                  "x": 137,
-                  "y": 289,
-                  "w": 78,
-                  "h": 68,
-                  "count": 3689,
+                  "x": 141,
+                  "y": 211,
+                  "w": 85,
+                  "h": 77,
+                  "count": 5140,
                   "edge": false
                 }
               },
               "bounds": {
                 "x": 25,
-                "y": 68,
+                "y": 67,
                 "w": 14,
-                "h": 12,
-                "count": 120,
+                "h": 13,
+                "count": 143,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.16875,
+              "adultScale": 0.16875,
               "clippedPixels": 0
             },
             {
@@ -5457,24 +5465,24 @@
                 "w": 362,
                 "h": 362,
                 "bounds": {
-                  "x": 94,
-                  "y": 201,
-                  "w": 156,
-                  "h": 147,
-                  "count": 10760,
+                  "x": 80,
+                  "y": 143,
+                  "w": 161,
+                  "h": 159,
+                  "count": 16476,
                   "edge": false
                 }
               },
               "bounds": {
                 "x": 18,
                 "y": 53,
-                "w": 28,
+                "w": 27,
                 "h": 27,
-                "count": 356,
+                "count": 464,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.16875,
+              "adultScale": 0.16875,
               "clippedPixels": 0
             },
             {
@@ -5490,24 +5498,24 @@
                 "w": 362,
                 "h": 362,
                 "bounds": {
-                  "x": 52,
-                  "y": 88,
-                  "w": 239,
-                  "h": 260,
-                  "count": 28077,
+                  "x": 27,
+                  "y": 90,
+                  "w": 250,
+                  "h": 214,
+                  "count": 37765,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 10,
-                "y": 33,
-                "w": 43,
-                "h": 47,
-                "count": 925,
+                "x": 11,
+                "y": 44,
+                "w": 42,
+                "h": 36,
+                "count": 1071,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.16875,
+              "adultScale": 0.16875,
               "clippedPixels": 0
             },
             {
@@ -5523,24 +5531,24 @@
                 "w": 362,
                 "h": 362,
                 "bounds": {
-                  "x": 27,
-                  "y": 21,
-                  "w": 296,
-                  "h": 335,
-                  "count": 51320,
+                  "x": 12,
+                  "y": 27,
+                  "w": 320,
+                  "h": 280,
+                  "count": 61097,
                   "edge": false
                 }
               },
               "bounds": {
                 "x": 5,
-                "y": 19,
+                "y": 33,
                 "w": 54,
-                "h": 61,
-                "count": 1705,
+                "h": 47,
+                "count": 1735,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.16875,
+              "adultScale": 0.16875,
               "clippedPixels": 0
             }
           ],
@@ -5593,7 +5601,7 @@
         "devilssnare"
       ],
       "kind": "crop",
-      "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+      "sourceSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -5604,8 +5612,8 @@
         "threshold": 192,
         "rowCuts": [
           0,
-          362,
-          724,
+          411,
+          795,
           1086
         ],
         "columnCuts": [
@@ -5617,13 +5625,13 @@
         ],
         "rowProjection": {
           "length": 1086,
-          "nonzero": 649,
-          "maximum": 582
+          "nonzero": 694,
+          "maximum": 758
         },
         "columnProjection": {
           "length": 1448,
-          "nonzero": 858,
-          "maximum": 641
+          "nonzero": 902,
+          "maximum": 648
         },
         "warnings": []
       },
@@ -5644,7 +5652,7 @@
             "Trưởng thành"
           ],
           "source": "masters-levels/crops-i.png",
-          "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+          "sourceSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
           "sourceDimensions": {
             "width": 1448,
             "height": 1086
@@ -5656,8 +5664,8 @@
             "columns": 4,
             "rowCuts": [
               0,
-              362,
-              724,
+              411,
+              795,
               1086
             ],
             "columnCuts": [
@@ -5668,7 +5676,9 @@
               1448
             ],
             "alphaThreshold": 192,
-            "warnings": []
+            "warnings": [
+              "flitterbloom stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+            ]
           },
           "frames": [
             {
@@ -5682,26 +5692,26 @@
                 "x": 0,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 411,
                 "bounds": {
-                  "x": 149,
-                  "y": 264,
-                  "w": 73,
-                  "h": 77,
-                  "count": 3891,
+                  "x": 116,
+                  "y": 295,
+                  "w": 122,
+                  "h": 108,
+                  "count": 7366,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 25,
-                "y": 65,
-                "w": 15,
-                "h": 15,
-                "count": 157,
+                "x": 21,
+                "y": 60,
+                "w": 23,
+                "h": 20,
+                "count": 260,
                 "edge": false
               },
-              "scale": 0.20121951219512196,
-              "adultScale": 0.20121951219512196,
+              "scale": 0.1875,
+              "adultScale": 0.1875,
               "clippedPixels": 0
             },
             {
@@ -5715,26 +5725,26 @@
                 "x": 362,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 411,
                 "bounds": {
-                  "x": 88,
-                  "y": 211,
-                  "w": 187,
-                  "h": 133,
-                  "count": 10083,
+                  "x": 107,
+                  "y": 229,
+                  "w": 156,
+                  "h": 176,
+                  "count": 11003,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 13,
-                "y": 53,
-                "w": 38,
-                "h": 27,
-                "count": 409,
+                "x": 18,
+                "y": 47,
+                "w": 28,
+                "h": 33,
+                "count": 383,
                 "edge": false
               },
-              "scale": 0.20121951219512196,
-              "adultScale": 0.20121951219512196,
+              "scale": 0.1875,
+              "adultScale": 0.1875,
               "clippedPixels": 0
             },
             {
@@ -5748,26 +5758,26 @@
                 "x": 724,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 411,
                 "bounds": {
-                  "x": 64,
-                  "y": 57,
+                  "x": 40,
+                  "y": 153,
                   "w": 209,
-                  "h": 286,
-                  "count": 26544,
+                  "h": 257,
+                  "count": 25669,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 11,
-                "y": 22,
-                "w": 42,
-                "h": 58,
-                "count": 1069,
+                "x": 12,
+                "y": 32,
+                "w": 39,
+                "h": 48,
+                "count": 903,
                 "edge": false
               },
-              "scale": 0.20121951219512196,
-              "adultScale": 0.20121951219512196,
+              "scale": 0.1875,
+              "adultScale": 0.1875,
               "clippedPixels": 0
             },
             {
@@ -5781,26 +5791,26 @@
                 "x": 1086,
                 "y": 0,
                 "w": 362,
-                "h": 362,
+                "h": 411,
                 "bounds": {
-                  "x": 42,
-                  "y": 16,
-                  "w": 249,
-                  "h": 328,
-                  "count": 45031,
-                  "edge": false
+                  "x": 33,
+                  "y": 59,
+                  "w": 286,
+                  "h": 352,
+                  "count": 54800,
+                  "edge": true
                 }
               },
               "bounds": {
-                "x": 7,
+                "x": 5,
                 "y": 14,
-                "w": 50,
+                "w": 54,
                 "h": 66,
-                "count": 1818,
+                "count": 1930,
                 "edge": false
               },
-              "scale": 0.20121951219512196,
-              "adultScale": 0.20121951219512196,
+              "scale": 0.1875,
+              "adultScale": 0.1875,
               "clippedPixels": 0
             }
           ],
@@ -5860,7 +5870,7 @@
             "Trưởng thành"
           ],
           "source": "masters-levels/crops-i.png",
-          "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+          "sourceSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
           "sourceDimensions": {
             "width": 1448,
             "height": 1086
@@ -5872,8 +5882,8 @@
             "columns": 4,
             "rowCuts": [
               0,
-              362,
-              724,
+              411,
+              795,
               1086
             ],
             "columnCuts": [
@@ -5884,7 +5894,9 @@
               1448
             ],
             "alphaThreshold": 192,
-            "warnings": []
+            "warnings": [
+              "devilssnare stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+            ]
           },
           "frames": [
             {
@@ -5896,28 +5908,28 @@
               "sourceFrame": 0,
               "sourceRect": {
                 "x": 0,
-                "y": 362,
+                "y": 411,
                 "w": 362,
-                "h": 362,
+                "h": 384,
                 "bounds": {
-                  "x": 142,
-                  "y": 272,
-                  "w": 73,
-                  "h": 68,
-                  "count": 3658,
+                  "x": 96,
+                  "y": 236,
+                  "w": 149,
+                  "h": 130,
+                  "count": 11123,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 25,
-                "y": 68,
-                "w": 13,
-                "h": 12,
-                "count": 117,
+                "x": 19,
+                "y": 57,
+                "w": 26,
+                "h": 23,
+                "count": 342,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.17475728155339806,
+              "adultScale": 0.17475728155339806,
               "clippedPixels": 0
             },
             {
@@ -5929,28 +5941,28 @@
               "sourceFrame": 1,
               "sourceRect": {
                 "x": 362,
-                "y": 362,
+                "y": 411,
                 "w": 362,
-                "h": 362,
+                "h": 384,
                 "bounds": {
-                  "x": 97,
-                  "y": 207,
-                  "w": 168,
-                  "h": 133,
-                  "count": 10739,
+                  "x": 91,
+                  "y": 168,
+                  "w": 183,
+                  "h": 213,
+                  "count": 17062,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 17,
-                "y": 56,
-                "w": 31,
-                "h": 24,
-                "count": 359,
+                "x": 16,
+                "y": 43,
+                "w": 32,
+                "h": 37,
+                "count": 516,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.17475728155339806,
+              "adultScale": 0.17475728155339806,
               "clippedPixels": 0
             },
             {
@@ -5962,28 +5974,28 @@
               "sourceFrame": 2,
               "sourceRect": {
                 "x": 724,
-                "y": 362,
+                "y": 411,
                 "w": 362,
-                "h": 362,
+                "h": 384,
                 "bounds": {
-                  "x": 15,
-                  "y": 40,
-                  "w": 295,
-                  "h": 300,
-                  "count": 38413,
+                  "x": 27,
+                  "y": 73,
+                  "w": 261,
+                  "h": 310,
+                  "count": 43810,
                   "edge": false
                 }
               },
               "bounds": {
-                "x": 5,
-                "y": 25,
-                "w": 54,
-                "h": 55,
-                "count": 1281,
+                "x": 9,
+                "y": 26,
+                "w": 46,
+                "h": 54,
+                "count": 1348,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.17475728155339806,
+              "adultScale": 0.17475728155339806,
               "clippedPixels": 0
             },
             {
@@ -5995,28 +6007,28 @@
               "sourceFrame": 3,
               "sourceRect": {
                 "x": 1086,
-                "y": 362,
+                "y": 411,
                 "w": 362,
-                "h": 362,
+                "h": 384,
                 "bounds": {
-                  "x": 27,
-                  "y": 19,
-                  "w": 296,
-                  "h": 321,
-                  "count": 54820,
-                  "edge": false
+                  "x": 22,
+                  "y": 42,
+                  "w": 309,
+                  "h": 342,
+                  "count": 66903,
+                  "edge": true
                 }
               },
               "bounds": {
                 "x": 5,
-                "y": 21,
+                "y": 20,
                 "w": 54,
-                "h": 59,
-                "count": 1829,
+                "h": 60,
+                "count": 2041,
                 "edge": false
               },
-              "scale": 0.18243243243243243,
-              "adultScale": 0.18243243243243243,
+              "scale": 0.17475728155339806,
+              "adultScale": 0.17475728155339806,
               "clippedPixels": 0
             }
           ],
@@ -11364,7 +11376,7 @@
         "Trưởng thành"
       ],
       "source": "masters-levels/crops-g.png",
-      "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+      "sourceSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -11376,19 +11388,21 @@
         "columns": 4,
         "rowCuts": [
           0,
-          362,
-          724,
+          410,
+          733,
           1086
         ],
         "columnCuts": [
           0,
           362,
           724,
-          1086,
+          1065,
           1448
         ],
         "alphaThreshold": 192,
-        "warnings": []
+        "warnings": [
+          "fluxweed stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+        ]
       },
       "frames": [
         {
@@ -11402,26 +11416,26 @@
             "x": 0,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 410,
             "bounds": {
-              "x": 154,
-              "y": 244,
-              "w": 54,
-              "h": 50,
-              "count": 2119,
+              "x": 137,
+              "y": 340,
+              "w": 68,
+              "h": 60,
+              "count": 3009,
               "edge": false
             }
           },
           "bounds": {
             "x": 26,
             "y": 70,
-            "w": 11,
+            "w": 12,
             "h": 10,
-            "count": 88,
+            "count": 90,
             "edge": false
           },
-          "scale": 0.20532319391634982,
-          "adultScale": 0.20532319391634982,
+          "scale": 0.17363344051446947,
+          "adultScale": 0.17363344051446947,
           "clippedPixels": 0
         },
         {
@@ -11435,26 +11449,26 @@
             "x": 362,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 410,
             "bounds": {
-              "x": 85,
-              "y": 142,
-              "w": 188,
-              "h": 168,
-              "count": 16944,
+              "x": 90,
+              "y": 231,
+              "w": 162,
+              "h": 172,
+              "count": 13162,
               "edge": false
             }
           },
           "bounds": {
-            "x": 13,
-            "y": 46,
-            "w": 39,
-            "h": 34,
-            "count": 718,
+            "x": 18,
+            "y": 50,
+            "w": 28,
+            "h": 30,
+            "count": 398,
             "edge": false
           },
-          "scale": 0.20532319391634982,
-          "adultScale": 0.20532319391634982,
+          "scale": 0.17363344051446947,
+          "adultScale": 0.17363344051446947,
           "clippedPixels": 0
         },
         {
@@ -11467,27 +11481,27 @@
           "sourceRect": {
             "x": 724,
             "y": 0,
-            "w": 362,
-            "h": 362,
+            "w": 341,
+            "h": 410,
             "bounds": {
-              "x": 74,
-              "y": 52,
-              "w": 196,
-              "h": 260,
-              "count": 26437,
+              "x": 15,
+              "y": 127,
+              "w": 251,
+              "h": 278,
+              "count": 33285,
               "edge": false
             }
           },
           "bounds": {
-            "x": 12,
-            "y": 27,
-            "w": 40,
-            "h": 53,
-            "count": 1122,
+            "x": 10,
+            "y": 32,
+            "w": 44,
+            "h": 48,
+            "count": 1006,
             "edge": false
           },
-          "scale": 0.20532319391634982,
-          "adultScale": 0.20532319391634982,
+          "scale": 0.17363344051446947,
+          "adultScale": 0.17363344051446947,
           "clippedPixels": 0
         },
         {
@@ -11498,29 +11512,29 @@
           "pivotY": 80,
           "sourceFrame": 3,
           "sourceRect": {
-            "x": 1086,
+            "x": 1065,
             "y": 0,
-            "w": 362,
-            "h": 362,
+            "w": 383,
+            "h": 410,
             "bounds": {
-              "x": 44,
-              "y": 1,
-              "w": 263,
-              "h": 314,
-              "count": 47332,
-              "edge": false
+              "x": 17,
+              "y": 80,
+              "w": 311,
+              "h": 330,
+              "count": 58601,
+              "edge": true
             }
           },
           "bounds": {
             "x": 5,
-            "y": 16,
+            "y": 23,
             "w": 54,
-            "h": 64,
-            "count": 1999,
+            "h": 57,
+            "count": 1770,
             "edge": false
           },
-          "scale": 0.20532319391634982,
-          "adultScale": 0.20532319391634982,
+          "scale": 0.17363344051446947,
+          "adultScale": 0.17363344051446947,
           "clippedPixels": 0
         }
       ],
@@ -11580,7 +11594,7 @@
         "Trưởng thành"
       ],
       "source": "masters-levels/crops-g.png",
-      "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+      "sourceSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -11592,19 +11606,22 @@
         "columns": 4,
         "rowCuts": [
           0,
-          362,
-          724,
+          410,
+          733,
           1086
         ],
         "columnCuts": [
           0,
           362,
           724,
-          1086,
+          1065,
           1448
         ],
         "alphaThreshold": 192,
-        "warnings": []
+        "warnings": [
+          "bubotuber stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+          "bubotuber stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+        ]
       },
       "frames": [
         {
@@ -11616,28 +11633,28 @@
           "sourceFrame": 0,
           "sourceRect": {
             "x": 0,
-            "y": 362,
+            "y": 410,
             "w": 362,
-            "h": 362,
+            "h": 323,
             "bounds": {
-              "x": 145,
-              "y": 246,
-              "w": 66,
-              "h": 61,
-              "count": 2930,
+              "x": 137,
+              "y": 257,
+              "w": 84,
+              "h": 63,
+              "count": 3908,
               "edge": false
             }
           },
           "bounds": {
-            "x": 26,
+            "x": 24,
             "y": 69,
-            "w": 12,
+            "w": 15,
             "h": 11,
-            "count": 94,
+            "count": 128,
             "edge": false
           },
-          "scale": 0.17763157894736842,
-          "adultScale": 0.17763157894736842,
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
           "clippedPixels": 0
         },
         {
@@ -11649,28 +11666,28 @@
           "sourceFrame": 1,
           "sourceRect": {
             "x": 362,
-            "y": 362,
+            "y": 410,
             "w": 362,
-            "h": 362,
+            "h": 323,
             "bounds": {
-              "x": 89,
-              "y": 201,
-              "w": 128,
-              "h": 111,
-              "count": 7953,
+              "x": 116,
+              "y": 149,
+              "w": 126,
+              "h": 166,
+              "count": 12608,
               "edge": false
             }
           },
           "bounds": {
             "x": 21,
-            "y": 60,
+            "y": 50,
             "w": 23,
-            "h": 20,
-            "count": 255,
+            "h": 30,
+            "count": 419,
             "edge": false
           },
-          "scale": 0.17763157894736842,
-          "adultScale": 0.17763157894736842,
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
           "clippedPixels": 0
         },
         {
@@ -11682,28 +11699,28 @@
           "sourceFrame": 2,
           "sourceRect": {
             "x": 724,
-            "y": 362,
-            "w": 362,
-            "h": 362,
+            "y": 410,
+            "w": 341,
+            "h": 323,
             "bounds": {
-              "x": 25,
-              "y": 108,
-              "w": 206,
-              "h": 205,
-              "count": 28374,
-              "edge": false
+              "x": 38,
+              "y": 70,
+              "w": 222,
+              "h": 253,
+              "count": 32470,
+              "edge": true
             }
           },
           "bounds": {
-            "x": 14,
-            "y": 44,
-            "w": 37,
-            "h": 36,
-            "count": 896,
+            "x": 12,
+            "y": 34,
+            "w": 41,
+            "h": 46,
+            "count": 1081,
             "edge": false
           },
-          "scale": 0.17763157894736842,
-          "adultScale": 0.17763157894736842,
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
           "clippedPixels": 0
         },
         {
@@ -11714,29 +11731,29 @@
           "pivotY": 80,
           "sourceFrame": 3,
           "sourceRect": {
-            "x": 1086,
-            "y": 362,
-            "w": 362,
-            "h": 362,
+            "x": 1065,
+            "y": 410,
+            "w": 383,
+            "h": 323,
             "bounds": {
-              "x": 1,
-              "y": 44,
-              "w": 304,
-              "h": 275,
-              "count": 59491,
-              "edge": false
+              "x": 45,
+              "y": 25,
+              "w": 296,
+              "h": 298,
+              "count": 53088,
+              "edge": true
             }
           },
           "bounds": {
             "x": 5,
-            "y": 31,
+            "y": 26,
             "w": 54,
-            "h": 49,
-            "count": 1887,
+            "h": 54,
+            "count": 1763,
             "edge": false
           },
-          "scale": 0.17763157894736842,
-          "adultScale": 0.17763157894736842,
+          "scale": 0.18243243243243243,
+          "adultScale": 0.18243243243243243,
           "clippedPixels": 0
         }
       ],
@@ -11796,7 +11813,7 @@
         "Trưởng thành"
       ],
       "source": "masters-levels/crops-g.png",
-      "sourceSha256": "3b6e9ed00ad82557b321843e8ce35fef943b86b8e229fb6e7f1ce8db6dfed457",
+      "sourceSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -11808,15 +11825,15 @@
         "columns": 4,
         "rowCuts": [
           0,
-          362,
-          724,
+          410,
+          733,
           1086
         ],
         "columnCuts": [
           0,
           362,
           724,
-          1086,
+          1065,
           1448
         ],
         "alphaThreshold": 192,
@@ -11832,28 +11849,28 @@
           "sourceFrame": 0,
           "sourceRect": {
             "x": 0,
-            "y": 724,
+            "y": 733,
             "w": 362,
-            "h": 362,
+            "h": 353,
             "bounds": {
-              "x": 159,
-              "y": 253,
-              "w": 49,
-              "h": 51,
-              "count": 1854,
+              "x": 150,
+              "y": 217,
+              "w": 57,
+              "h": 54,
+              "count": 2252,
               "edge": false
             }
           },
           "bounds": {
             "x": 28,
-            "y": 71,
-            "w": 9,
-            "h": 9,
-            "count": 59,
+            "y": 72,
+            "w": 8,
+            "h": 8,
+            "count": 52,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.15168539325842698,
+          "adultScale": 0.15168539325842698,
           "clippedPixels": 0
         },
         {
@@ -11865,28 +11882,28 @@
           "sourceFrame": 1,
           "sourceRect": {
             "x": 362,
-            "y": 724,
+            "y": 733,
             "w": 362,
-            "h": 362,
+            "h": 353,
             "bounds": {
-              "x": 117,
-              "y": 209,
-              "w": 111,
-              "h": 99,
-              "count": 5419,
+              "x": 68,
+              "y": 134,
+              "w": 197,
+              "h": 140,
+              "count": 9199,
               "edge": false
             }
           },
           "bounds": {
-            "x": 22,
-            "y": 62,
-            "w": 20,
-            "h": 18,
-            "count": 177,
+            "x": 17,
+            "y": 59,
+            "w": 30,
+            "h": 21,
+            "count": 208,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.15168539325842698,
+          "adultScale": 0.15168539325842698,
           "clippedPixels": 0
         },
         {
@@ -11898,28 +11915,28 @@
           "sourceFrame": 2,
           "sourceRect": {
             "x": 724,
-            "y": 724,
-            "w": 362,
-            "h": 362,
+            "y": 733,
+            "w": 341,
+            "h": 353,
             "bounds": {
-              "x": 53,
-              "y": 104,
-              "w": 244,
-              "h": 204,
-              "count": 22598,
+              "x": 18,
+              "y": 81,
+              "w": 279,
+              "h": 194,
+              "count": 25706,
               "edge": false
             }
           },
           "bounds": {
-            "x": 10,
-            "y": 43,
-            "w": 45,
-            "h": 37,
-            "count": 753,
+            "x": 11,
+            "y": 51,
+            "w": 42,
+            "h": 29,
+            "count": 587,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.15168539325842698,
+          "adultScale": 0.15168539325842698,
           "clippedPixels": 0
         },
         {
@@ -11930,29 +11947,29 @@
           "pivotY": 80,
           "sourceFrame": 3,
           "sourceRect": {
-            "x": 1086,
-            "y": 724,
-            "w": 362,
-            "h": 362,
+            "x": 1065,
+            "y": 733,
+            "w": 383,
+            "h": 353,
             "bounds": {
-              "x": 28,
-              "y": 37,
-              "w": 296,
-              "h": 286,
-              "count": 49869,
+              "x": 1,
+              "y": 35,
+              "w": 356,
+              "h": 243,
+              "count": 48547,
               "edge": false
             }
           },
           "bounds": {
             "x": 5,
-            "y": 28,
+            "y": 43,
             "w": 54,
-            "h": 52,
-            "count": 1657,
+            "h": 37,
+            "count": 1121,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.15168539325842698,
+          "adultScale": 0.15168539325842698,
           "clippedPixels": 0
         }
       ],
@@ -12012,7 +12029,7 @@
         "Trưởng thành"
       ],
       "source": "masters-levels/crops-h.png",
-      "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+      "sourceSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -12024,7 +12041,7 @@
         "columns": 4,
         "rowCuts": [
           0,
-          362,
+          389,
           724,
           1086
         ],
@@ -12036,7 +12053,10 @@
           1448
         ],
         "alphaThreshold": 192,
-        "warnings": []
+        "warnings": [
+          "shrivelfig stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+          "shrivelfig stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+        ]
       },
       "frames": [
         {
@@ -12050,22 +12070,22 @@
             "x": 0,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 389,
             "bounds": {
-              "x": 154,
-              "y": 288,
-              "w": 54,
-              "h": 51,
-              "count": 2007,
+              "x": 143,
+              "y": 300,
+              "w": 79,
+              "h": 81,
+              "count": 4498,
               "edge": false
             }
           },
           "bounds": {
-            "x": 27,
-            "y": 71,
-            "w": 9,
-            "h": 9,
-            "count": 60,
+            "x": 25,
+            "y": 66,
+            "w": 14,
+            "h": 14,
+            "count": 140,
             "edge": false
           },
           "scale": 0.1758957654723127,
@@ -12083,22 +12103,22 @@
             "x": 362,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 389,
             "bounds": {
-              "x": 124,
-              "y": 243,
-              "w": 121,
-              "h": 96,
-              "count": 5814,
+              "x": 58,
+              "y": 231,
+              "w": 201,
+              "h": 153,
+              "count": 15444,
               "edge": false
             }
           },
           "bounds": {
-            "x": 21,
-            "y": 63,
-            "w": 21,
-            "h": 17,
-            "count": 182,
+            "x": 14,
+            "y": 53,
+            "w": 35,
+            "h": 27,
+            "count": 474,
             "edge": false
           },
           "scale": 0.1758957654723127,
@@ -12116,22 +12136,22 @@
             "x": 724,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 389,
             "bounds": {
-              "x": 47,
-              "y": 134,
-              "w": 248,
-              "h": 213,
-              "count": 30914,
-              "edge": false
+              "x": 15,
+              "y": 152,
+              "w": 279,
+              "h": 237,
+              "count": 33974,
+              "edge": true
             }
           },
           "bounds": {
-            "x": 10,
-            "y": 43,
-            "w": 44,
-            "h": 37,
-            "count": 960,
+            "x": 7,
+            "y": 38,
+            "w": 49,
+            "h": 42,
+            "count": 1046,
             "edge": false
           },
           "scale": 0.1758957654723127,
@@ -12149,22 +12169,22 @@
             "x": 1086,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 389,
             "bounds": {
-              "x": 21,
-              "y": 62,
+              "x": 3,
+              "y": 80,
               "w": 307,
-              "h": 281,
-              "count": 57623,
-              "edge": false
+              "h": 309,
+              "count": 61293,
+              "edge": true
             }
           },
           "bounds": {
             "x": 5,
-            "y": 31,
+            "y": 26,
             "w": 54,
-            "h": 49,
-            "count": 1780,
+            "h": 54,
+            "count": 1892,
             "edge": false
           },
           "scale": 0.1758957654723127,
@@ -12228,7 +12248,7 @@
         "Trưởng thành"
       ],
       "source": "masters-levels/crops-h.png",
-      "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+      "sourceSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -12240,7 +12260,7 @@
         "columns": 4,
         "rowCuts": [
           0,
-          362,
+          389,
           724,
           1086
         ],
@@ -12264,28 +12284,28 @@
           "sourceFrame": 0,
           "sourceRect": {
             "x": 0,
-            "y": 362,
+            "y": 389,
             "w": 362,
-            "h": 362,
+            "h": 335,
             "bounds": {
-              "x": 154,
-              "y": 244,
-              "w": 54,
-              "h": 50,
-              "count": 2119,
+              "x": 142,
+              "y": 258,
+              "w": 81,
+              "h": 70,
+              "count": 4260,
               "edge": false
             }
           },
           "bounds": {
-            "x": 26,
-            "y": 70,
-            "w": 11,
-            "h": 10,
-            "count": 88,
+            "x": 25,
+            "y": 69,
+            "w": 13,
+            "h": 11,
+            "count": 115,
             "edge": false
           },
-          "scale": 0.20532319391634982,
-          "adultScale": 0.20532319391634982,
+          "scale": 0.16265060240963855,
+          "adultScale": 0.16265060240963855,
           "clippedPixels": 0
         },
         {
@@ -12297,28 +12317,28 @@
           "sourceFrame": 1,
           "sourceRect": {
             "x": 362,
-            "y": 362,
+            "y": 389,
             "w": 362,
-            "h": 362,
+            "h": 335,
             "bounds": {
-              "x": 85,
-              "y": 142,
-              "w": 188,
-              "h": 168,
-              "count": 16944,
+              "x": 57,
+              "y": 123,
+              "w": 196,
+              "h": 205,
+              "count": 17406,
               "edge": false
             }
           },
           "bounds": {
-            "x": 13,
-            "y": 46,
-            "w": 39,
-            "h": 34,
-            "count": 718,
+            "x": 16,
+            "y": 47,
+            "w": 32,
+            "h": 33,
+            "count": 457,
             "edge": false
           },
-          "scale": 0.20532319391634982,
-          "adultScale": 0.20532319391634982,
+          "scale": 0.16265060240963855,
+          "adultScale": 0.16265060240963855,
           "clippedPixels": 0
         },
         {
@@ -12330,28 +12350,28 @@
           "sourceFrame": 2,
           "sourceRect": {
             "x": 724,
-            "y": 362,
+            "y": 389,
             "w": 362,
-            "h": 362,
+            "h": 335,
             "bounds": {
-              "x": 74,
-              "y": 52,
-              "w": 196,
-              "h": 260,
-              "count": 26437,
+              "x": 17,
+              "y": 76,
+              "w": 270,
+              "h": 257,
+              "count": 40615,
               "edge": false
             }
           },
           "bounds": {
-            "x": 12,
-            "y": 27,
-            "w": 40,
-            "h": 53,
-            "count": 1122,
+            "x": 10,
+            "y": 38,
+            "w": 44,
+            "h": 42,
+            "count": 1078,
             "edge": false
           },
-          "scale": 0.20532319391634982,
-          "adultScale": 0.20532319391634982,
+          "scale": 0.16265060240963855,
+          "adultScale": 0.16265060240963855,
           "clippedPixels": 0
         },
         {
@@ -12363,28 +12383,28 @@
           "sourceFrame": 3,
           "sourceRect": {
             "x": 1086,
-            "y": 362,
+            "y": 389,
             "w": 362,
-            "h": 362,
+            "h": 335,
             "bounds": {
-              "x": 44,
-              "y": 1,
-              "w": 263,
-              "h": 314,
-              "count": 47332,
+              "x": 2,
+              "y": 41,
+              "w": 332,
+              "h": 292,
+              "count": 66652,
               "edge": false
             }
           },
           "bounds": {
             "x": 5,
-            "y": 16,
+            "y": 33,
             "w": 54,
-            "h": 64,
-            "count": 1999,
+            "h": 47,
+            "count": 1764,
             "edge": false
           },
-          "scale": 0.20532319391634982,
-          "adultScale": 0.20532319391634982,
+          "scale": 0.16265060240963855,
+          "adultScale": 0.16265060240963855,
           "clippedPixels": 0
         }
       ],
@@ -12444,7 +12464,7 @@
         "Trưởng thành"
       ],
       "source": "masters-levels/crops-h.png",
-      "sourceSha256": "2ed355fa3d8208baf907eba3b27a5d56d30416a30134437b45f0c0cae4959e55",
+      "sourceSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -12456,7 +12476,7 @@
         "columns": 4,
         "rowCuts": [
           0,
-          362,
+          389,
           724,
           1086
         ],
@@ -12484,24 +12504,24 @@
             "w": 362,
             "h": 362,
             "bounds": {
-              "x": 137,
-              "y": 289,
-              "w": 78,
-              "h": 68,
-              "count": 3689,
+              "x": 141,
+              "y": 211,
+              "w": 85,
+              "h": 77,
+              "count": 5140,
               "edge": false
             }
           },
           "bounds": {
             "x": 25,
-            "y": 68,
+            "y": 67,
             "w": 14,
-            "h": 12,
-            "count": 120,
+            "h": 13,
+            "count": 143,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.16875,
+          "adultScale": 0.16875,
           "clippedPixels": 0
         },
         {
@@ -12517,24 +12537,24 @@
             "w": 362,
             "h": 362,
             "bounds": {
-              "x": 94,
-              "y": 201,
-              "w": 156,
-              "h": 147,
-              "count": 10760,
+              "x": 80,
+              "y": 143,
+              "w": 161,
+              "h": 159,
+              "count": 16476,
               "edge": false
             }
           },
           "bounds": {
             "x": 18,
             "y": 53,
-            "w": 28,
+            "w": 27,
             "h": 27,
-            "count": 356,
+            "count": 464,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.16875,
+          "adultScale": 0.16875,
           "clippedPixels": 0
         },
         {
@@ -12550,24 +12570,24 @@
             "w": 362,
             "h": 362,
             "bounds": {
-              "x": 52,
-              "y": 88,
-              "w": 239,
-              "h": 260,
-              "count": 28077,
+              "x": 27,
+              "y": 90,
+              "w": 250,
+              "h": 214,
+              "count": 37765,
               "edge": false
             }
           },
           "bounds": {
-            "x": 10,
-            "y": 33,
-            "w": 43,
-            "h": 47,
-            "count": 925,
+            "x": 11,
+            "y": 44,
+            "w": 42,
+            "h": 36,
+            "count": 1071,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.16875,
+          "adultScale": 0.16875,
           "clippedPixels": 0
         },
         {
@@ -12583,24 +12603,24 @@
             "w": 362,
             "h": 362,
             "bounds": {
-              "x": 27,
-              "y": 21,
-              "w": 296,
-              "h": 335,
-              "count": 51320,
+              "x": 12,
+              "y": 27,
+              "w": 320,
+              "h": 280,
+              "count": 61097,
               "edge": false
             }
           },
           "bounds": {
             "x": 5,
-            "y": 19,
+            "y": 33,
             "w": 54,
-            "h": 61,
-            "count": 1705,
+            "h": 47,
+            "count": 1735,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.16875,
+          "adultScale": 0.16875,
           "clippedPixels": 0
         }
       ],
@@ -12660,7 +12680,7 @@
         "Trưởng thành"
       ],
       "source": "masters-levels/crops-i.png",
-      "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+      "sourceSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -12672,8 +12692,8 @@
         "columns": 4,
         "rowCuts": [
           0,
-          362,
-          724,
+          411,
+          795,
           1086
         ],
         "columnCuts": [
@@ -12684,7 +12704,9 @@
           1448
         ],
         "alphaThreshold": 192,
-        "warnings": []
+        "warnings": [
+          "flitterbloom stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+        ]
       },
       "frames": [
         {
@@ -12698,26 +12720,26 @@
             "x": 0,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 411,
             "bounds": {
-              "x": 149,
-              "y": 264,
-              "w": 73,
-              "h": 77,
-              "count": 3891,
+              "x": 116,
+              "y": 295,
+              "w": 122,
+              "h": 108,
+              "count": 7366,
               "edge": false
             }
           },
           "bounds": {
-            "x": 25,
-            "y": 65,
-            "w": 15,
-            "h": 15,
-            "count": 157,
+            "x": 21,
+            "y": 60,
+            "w": 23,
+            "h": 20,
+            "count": 260,
             "edge": false
           },
-          "scale": 0.20121951219512196,
-          "adultScale": 0.20121951219512196,
+          "scale": 0.1875,
+          "adultScale": 0.1875,
           "clippedPixels": 0
         },
         {
@@ -12731,26 +12753,26 @@
             "x": 362,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 411,
             "bounds": {
-              "x": 88,
-              "y": 211,
-              "w": 187,
-              "h": 133,
-              "count": 10083,
+              "x": 107,
+              "y": 229,
+              "w": 156,
+              "h": 176,
+              "count": 11003,
               "edge": false
             }
           },
           "bounds": {
-            "x": 13,
-            "y": 53,
-            "w": 38,
-            "h": 27,
-            "count": 409,
+            "x": 18,
+            "y": 47,
+            "w": 28,
+            "h": 33,
+            "count": 383,
             "edge": false
           },
-          "scale": 0.20121951219512196,
-          "adultScale": 0.20121951219512196,
+          "scale": 0.1875,
+          "adultScale": 0.1875,
           "clippedPixels": 0
         },
         {
@@ -12764,26 +12786,26 @@
             "x": 724,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 411,
             "bounds": {
-              "x": 64,
-              "y": 57,
+              "x": 40,
+              "y": 153,
               "w": 209,
-              "h": 286,
-              "count": 26544,
+              "h": 257,
+              "count": 25669,
               "edge": false
             }
           },
           "bounds": {
-            "x": 11,
-            "y": 22,
-            "w": 42,
-            "h": 58,
-            "count": 1069,
+            "x": 12,
+            "y": 32,
+            "w": 39,
+            "h": 48,
+            "count": 903,
             "edge": false
           },
-          "scale": 0.20121951219512196,
-          "adultScale": 0.20121951219512196,
+          "scale": 0.1875,
+          "adultScale": 0.1875,
           "clippedPixels": 0
         },
         {
@@ -12797,26 +12819,26 @@
             "x": 1086,
             "y": 0,
             "w": 362,
-            "h": 362,
+            "h": 411,
             "bounds": {
-              "x": 42,
-              "y": 16,
-              "w": 249,
-              "h": 328,
-              "count": 45031,
-              "edge": false
+              "x": 33,
+              "y": 59,
+              "w": 286,
+              "h": 352,
+              "count": 54800,
+              "edge": true
             }
           },
           "bounds": {
-            "x": 7,
+            "x": 5,
             "y": 14,
-            "w": 50,
+            "w": 54,
             "h": 66,
-            "count": 1818,
+            "count": 1930,
             "edge": false
           },
-          "scale": 0.20121951219512196,
-          "adultScale": 0.20121951219512196,
+          "scale": 0.1875,
+          "adultScale": 0.1875,
           "clippedPixels": 0
         }
       ],
@@ -12876,7 +12898,7 @@
         "Trưởng thành"
       ],
       "source": "masters-levels/crops-i.png",
-      "sourceSha256": "e2ae3e5562c6d9de255c53c89a7f15a84bb7aa749a33c620782b63b6967358e4",
+      "sourceSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
       "sourceDimensions": {
         "width": 1448,
         "height": 1086
@@ -12888,8 +12910,8 @@
         "columns": 4,
         "rowCuts": [
           0,
-          362,
-          724,
+          411,
+          795,
           1086
         ],
         "columnCuts": [
@@ -12900,7 +12922,9 @@
           1448
         ],
         "alphaThreshold": 192,
-        "warnings": []
+        "warnings": [
+          "devilssnare stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+        ]
       },
       "frames": [
         {
@@ -12912,28 +12936,28 @@
           "sourceFrame": 0,
           "sourceRect": {
             "x": 0,
-            "y": 362,
+            "y": 411,
             "w": 362,
-            "h": 362,
+            "h": 384,
             "bounds": {
-              "x": 142,
-              "y": 272,
-              "w": 73,
-              "h": 68,
-              "count": 3658,
+              "x": 96,
+              "y": 236,
+              "w": 149,
+              "h": 130,
+              "count": 11123,
               "edge": false
             }
           },
           "bounds": {
-            "x": 25,
-            "y": 68,
-            "w": 13,
-            "h": 12,
-            "count": 117,
+            "x": 19,
+            "y": 57,
+            "w": 26,
+            "h": 23,
+            "count": 342,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.17475728155339806,
+          "adultScale": 0.17475728155339806,
           "clippedPixels": 0
         },
         {
@@ -12945,28 +12969,28 @@
           "sourceFrame": 1,
           "sourceRect": {
             "x": 362,
-            "y": 362,
+            "y": 411,
             "w": 362,
-            "h": 362,
+            "h": 384,
             "bounds": {
-              "x": 97,
-              "y": 207,
-              "w": 168,
-              "h": 133,
-              "count": 10739,
+              "x": 91,
+              "y": 168,
+              "w": 183,
+              "h": 213,
+              "count": 17062,
               "edge": false
             }
           },
           "bounds": {
-            "x": 17,
-            "y": 56,
-            "w": 31,
-            "h": 24,
-            "count": 359,
+            "x": 16,
+            "y": 43,
+            "w": 32,
+            "h": 37,
+            "count": 516,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.17475728155339806,
+          "adultScale": 0.17475728155339806,
           "clippedPixels": 0
         },
         {
@@ -12978,28 +13002,28 @@
           "sourceFrame": 2,
           "sourceRect": {
             "x": 724,
-            "y": 362,
+            "y": 411,
             "w": 362,
-            "h": 362,
+            "h": 384,
             "bounds": {
-              "x": 15,
-              "y": 40,
-              "w": 295,
-              "h": 300,
-              "count": 38413,
+              "x": 27,
+              "y": 73,
+              "w": 261,
+              "h": 310,
+              "count": 43810,
               "edge": false
             }
           },
           "bounds": {
-            "x": 5,
-            "y": 25,
-            "w": 54,
-            "h": 55,
-            "count": 1281,
+            "x": 9,
+            "y": 26,
+            "w": 46,
+            "h": 54,
+            "count": 1348,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.17475728155339806,
+          "adultScale": 0.17475728155339806,
           "clippedPixels": 0
         },
         {
@@ -13011,28 +13035,28 @@
           "sourceFrame": 3,
           "sourceRect": {
             "x": 1086,
-            "y": 362,
+            "y": 411,
             "w": 362,
-            "h": 362,
+            "h": 384,
             "bounds": {
-              "x": 27,
-              "y": 19,
-              "w": 296,
-              "h": 321,
-              "count": 54820,
-              "edge": false
+              "x": 22,
+              "y": 42,
+              "w": 309,
+              "h": 342,
+              "count": 66903,
+              "edge": true
             }
           },
           "bounds": {
             "x": 5,
-            "y": 21,
+            "y": 20,
             "w": 54,
-            "h": 59,
-            "count": 1829,
+            "h": 60,
+            "count": 2041,
             "edge": false
           },
-          "scale": 0.18243243243243243,
-          "adultScale": 0.18243243243243243,
+          "scale": 0.17475728155339806,
+          "adultScale": 0.17475728155339806,
           "clippedPixels": 0
         }
       ],
@@ -14409,6 +14433,55 @@
       "stage": 3
     },
     {
+      "group": "crops-g",
+      "type": "source-edge-contact",
+      "message": "fluxweed stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+      "item": "fluxweed",
+      "stage": 3
+    },
+    {
+      "group": "crops-g",
+      "type": "source-edge-contact",
+      "message": "bubotuber stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+      "item": "bubotuber",
+      "stage": 2
+    },
+    {
+      "group": "crops-g",
+      "type": "source-edge-contact",
+      "message": "bubotuber stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+      "item": "bubotuber",
+      "stage": 3
+    },
+    {
+      "group": "crops-h",
+      "type": "source-edge-contact",
+      "message": "shrivelfig stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+      "item": "shrivelfig",
+      "stage": 2
+    },
+    {
+      "group": "crops-h",
+      "type": "source-edge-contact",
+      "message": "shrivelfig stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+      "item": "shrivelfig",
+      "stage": 3
+    },
+    {
+      "group": "crops-i",
+      "type": "source-edge-contact",
+      "message": "flitterbloom stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+      "item": "flitterbloom",
+      "stage": 3
+    },
+    {
+      "group": "crops-i",
+      "type": "source-edge-contact",
+      "message": "devilssnare stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
+      "item": "devilssnare",
+      "stage": 3
+    },
+    {
       "group": "creatures-a",
       "type": "source-edge-contact",
       "message": "mooncalf stage 0 reaches its detected cell edge; the atlas cut may cross its silhouette.",
@@ -14423,7 +14496,7 @@
       "stage": 3
     }
   ],
-  "generatedAt": "2026-10-21T13:51:19.478Z"
+  "generatedAt": "2026-10-22T14:34:13.283Z"
 };
   const items = manifest.items || [];
   window.FARM_LEVEL_ASSETS = manifest;

@@ -90,6 +90,8 @@ Quy tắc:
 - Muốn đưa một vật từ ảnh AI vào cảnh chơi, phải: vẽ lại hoặc thu về **đúng lưới pixel thật** (không chỉ resize), lượng tử về 24 màu, kiểm tra viền theo luật 4.
 - Không vẽ chữ vào ảnh. Ghi prompt, nguồn và hash vào `provenance.json` như các bộ hiện có.
 
+**Bộ ảnh V24.9.66:** `item-art-manifest.json` và `three-headed-dog-art-generation.json` giữ prompt, nguồn và hash riêng của bộ mới. `build-item-art.mjs` tách atlas tại khe alpha trống, lấy mẫu trên lưới native, lượng tử 24 màu và xuất alpha 0/255; không sửa master. UI và cảnh chơi cùng tra một ID trong `item-art.mjs`, hai góc trang trí có file và bounds riêng. So khác biệt theo danh tính vật phẩm: nhiều góc/frame của cùng món là hợp lệ; hai món khác nhau dùng cùng hình phải được kiểm tra lại. Chạy `verify-image-assets.mjs` và `qa-v19/image-ui-qa.mjs` sau khi nhập bộ ảnh. Kiểm tra cảnh thật vẫn bắt buộc: lớp cache đã dịch tọa độ thì không dịch lần thứ hai khi vẽ sprite vào lớp đó.
+
 ## 8. Checklist nhận một asset mới
 
 - [ ] Kích thước đúng tầng (mục 4), pivot ở chân
