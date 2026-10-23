@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { DB } from './balance-data.mjs?v=24.9.65';
-import { ITEM_ART } from './item-art.mjs?v=24.9.70';
+import { ITEM_ART } from './item-art.mjs?v=24.9.71';
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }
@@ -52,7 +52,7 @@ const {
  itemArtKey,
  levelUnlockVisual,
  visualItemIcon,
-} = await import('./ui-utils.mjs?v=24.9.70');
+} = await import('./ui-utils.mjs?v=24.9.71');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];

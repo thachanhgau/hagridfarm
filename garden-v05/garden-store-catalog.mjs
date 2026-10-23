@@ -1,8 +1,9 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.70";
-import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.70";
-import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.70";
-export const CATALOG_VERSION="garden-2026-10-21-level500-p3";
+import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.71";
+import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.71";
+import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.71";
+import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=24.9.71";
+export const CATALOG_VERSION="garden-2026-10-23-level500-p4";
 export const STORE_CATALOG=Object.freeze([
   {
     "id": "seed_pumpkin",
@@ -600,11 +601,15 @@ export const STORE_CATALOG=Object.freeze([
   {
     "id": "spring_water",
     "kind": "spring",
+    "supply": "spring",
     "label": "Nước suối thần",
     "level": 30,
     "price": 500,
     "quantity": 1,
-    "dailyLimit": 10,
+    "dailyLimit": 1000,
+    "stockCap": 60,
+    "usesPerDay": 10,
+    "bundles": true,
     "description": "Tưới một thửa: mọi cây chín ngay và được gặt luôn. Hoặc xây xong ngay một công trình. Dùng tối đa 10 chai mỗi ngày."
   },
   {
@@ -681,7 +686,7 @@ export const STORE_CATALOG=Object.freeze([
     "dailyLimit": 1,
     "description": "Đồ trang trí vườn · sở hữu một lần · không tăng XP."
   }
-].map(Object.freeze).concat(SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS));
+].map(Object.freeze).concat(PREMIUM_PRODUCTS,SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS));
 // A seasonal item (`season`: festival id) is on sale only while that festival runs, at any level (server garden-wallet-catalog inSeason).
 export const inSeason=(item,dayKey=vnDayKey())=>!item.season||festivalStatus(dayKey).active?.id===item.season;
 // The first day (YYYY-MM-DD) a seasonal item goes on sale again.

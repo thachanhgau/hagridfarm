@@ -1,5 +1,7 @@
-import { ITEM_ART } from "./item-art.mjs?v=24.9.70";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.70';
+import { ITEM_ART } from "./item-art.mjs?v=24.9.71";
+import {saleTotal} from "./premium-products.mjs?v=24.9.71";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.71';
+const PREMIUM_ART = new Set(["spring_rain", "felix_felicis", "prime_meal", "pen_feast", "skele_gro", "warm_nest"]);
 
 export const $=id=>document.getElementById(id);
 export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else e.setAttribute(k,String(tag==='img'&&k==='src'?runtimeImageUrl(v):v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}
@@ -15,7 +17,7 @@ export function setServerGrowth(on){serverGrowth=Boolean(on);}
 export function realHours(entry,level){return (entry?.hours||0)*(serverGrowth?growthScale(Math.max(Number(level)||1,entry?.level||1)):1);}
 // Galleons for `count` packs: packs left at the base price today (dailyRemaining) cost `price`,
 // the rest price × overflowMultiplier (water and seeds past 1000 a day; server: garden-wallet-core purchaseTotal).
-export function packTotal(item,count){const base=Math.max(0,Math.min(count,item.dailyRemaining??item.dailyLimit??Infinity));return base*item.price+(count-base)*item.price*(item.overflowMultiplier||1);}
+export function packTotal(item,count){if(item.bundles||item.sale)return saleTotal(item,count);const base=Math.max(0,Math.min(count,item.dailyRemaining??item.dailyLimit??Infinity));return base*item.price+(count-base)*item.price*(item.overflowMultiplier||1);}
 export function hours(h){const m=Math.round(h*60),H=Math.floor(m/60),r=m%60;return !m?"Tức thì":m<60?`${m} phút`:!r&&H>=24&&H%24===0?`${H/24} ngày`:`${H} giờ${r?` ${r} phút`:""}`;}
 export function icon(items,id,stage=3,size=52){
  const item=items?.get?.(id);
@@ -75,6 +77,54 @@ const SVG_ART = Object.freeze({
   <path d="M14 29c2-7 6-11 10-11s8 4 10 11" fill="#70a8b6" stroke="#b7dee0" stroke-width="1.5"/>
   <path d="M24 8c-3 4-3 6 0 8 3-2 3-4 0-8zM13 15c-2 3-2 5 0 6 2-1 2-3 0-6zM35 13c-2 3-2 5 0 6 2-1 2-3 0-6z" fill="#b7dee0" stroke="#70a8b6" stroke-width="1"/>
   <path d="M17 33h14" stroke="#f5d69a" stroke-width="2"/>
+ </svg>`,
+ // Level-500 P4 premium items (roadmap §10.2), same 48-unit badge and palette as Nước phép / Nước suối thần.
+ spring_rain: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#70a8b6" stroke-width="1.5"/>
+  <path d="M10 37h28v3H10z" fill="#735044"/>
+  <path d="M12 37c1-3 3-4 4-4M20 37c1-3 3-4 4-4M28 37c1-3 3-4 4-4" stroke="#b0bd67" stroke-width="2" fill="none"/>
+  <path d="M14 22a6 6 0 0 1 6-7 8 8 0 0 1 14 2 5 5 0 0 1 1 10H16a5 5 0 0 1-2-5z" fill="#b7dee0" stroke="#e8f0ed" stroke-width="1.2"/>
+  <path d="M17 29l-2 4M24 29l-2 4M31 29l-2 4" stroke="#70a8b6" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M33 12l1 2 2 .4-1.5 1.5.4 2-1.9-1-1.9 1 .4-2-1.5-1.5 2-.4z" fill="#f5d69a"/>
+ </svg>`,
+ felix_felicis: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#ffc36b" stroke-width="1.6"/>
+  <rect x="21" y="8" width="6" height="5" rx="1" fill="#a57554" stroke="#4a3042" stroke-width="1"/>
+  <path d="M21 13h6v6c5 2 8 6 8 10a11 11 0 0 1-22 0c0-4 3-8 8-10z" fill="#24483f" stroke="#f5d69a" stroke-width="1.5"/>
+  <path d="M15.5 28h17a8.5 8.5 0 0 1-17 0z" fill="#ffc36b"/>
+  <path d="M19 31c2 1 6 1 8-1" stroke="#f5d69a" stroke-width="1.4" fill="none"/>
+  <path d="M36 12l1.2 2.6 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4zM11 15l.8 1.6 1.7.3-1.2 1.2.3 1.7-1.6-.8-1.6.8.3-1.7-1.2-1.2 1.7-.3z" fill="#f5d69a"/>
+ </svg>`,
+ prime_meal: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
+  <path d="M10 26h28c0 7-6 12-14 12S10 33 10 26z" fill="#a57554" stroke="#4a3042" stroke-width="1.5"/>
+  <path d="M12 26c1-5 6-8 12-8s11 3 12 8z" fill="#b0bd67" stroke="#e8f0ed" stroke-width="1"/>
+  <circle cx="19" cy="22" r="2" fill="#e7ae73"/><circle cx="27" cy="21" r="2.2" fill="#ffc36b"/><circle cx="31" cy="24" r="1.6" fill="#e7ae73"/>
+  <path d="M24 6l2 4.2 4.6.6-3.3 3.2.8 4.6-4.1-2.2-4.1 2.2.8-4.6-3.3-3.2 4.6-.6z" fill="#f5d69a" stroke="#a57554" stroke-width=".8"/>
+ </svg>`,
+ pen_feast: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#ffc36b" stroke-width="1.6"/>
+  <path d="M8 27h32v4H8z" fill="#735044" stroke="#4a3042" stroke-width="1.2"/>
+  <path d="M11 31v6M37 31v6" stroke="#4a3042" stroke-width="2.5"/>
+  <path d="M10 27c0-4 3-6 6-6s6 2 6 6zM18 27c0-5 3-7 6-7s6 2 6 7zM26 27c0-4 3-6 6-6s6 2 6 6z" fill="#b0bd67" stroke="#e8f0ed" stroke-width="1"/>
+  <circle cx="16" cy="23" r="1.6" fill="#ffc36b"/><circle cx="24" cy="22" r="1.8" fill="#e7ae73"/><circle cx="32" cy="23" r="1.6" fill="#ffc36b"/>
+  <path d="M16 9l1.5 3 3.3.5-2.4 2.3.6 3.3-3-1.6-3 1.6.6-3.3-2.4-2.3 3.3-.5zM32 9l1.5 3 3.3.5-2.4 2.3.6 3.3-3-1.6-3 1.6.6-3.3-2.4-2.3 3.3-.5z" fill="#f5d69a"/>
+ </svg>`,
+ skele_gro: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b7dee0" stroke-width="1.5"/>
+  <rect x="20" y="8" width="8" height="4" rx="1" fill="#a57554" stroke="#4a3042" stroke-width="1"/>
+  <path d="M19 12h10v5l4 4v14a4 4 0 0 1-4 4H19a4 4 0 0 1-4-4V21l4-4z" fill="#24483f" stroke="#e8f0ed" stroke-width="1.5"/>
+  <path d="M17 26h14v9a2 2 0 0 1-2 2H19a2 2 0 0 1-2-2z" fill="#b0bd67"/>
+  <path d="M19.5 29.5a1.8 1.8 0 1 1 2.5-2.5l4-0a1.8 1.8 0 1 1 2.5 2.5 1.8 1.8 0 1 1-2.5 2.5h-4a1.8 1.8 0 1 1-2.5-2.5z" fill="#e8f0ed" stroke="#4a3042" stroke-width=".8"/>
+ </svg>`,
+ warm_nest: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
+  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#e7ae73" stroke-width="1.6"/>
+  <ellipse cx="24" cy="26" rx="14" ry="6" fill="#ffc36b" opacity=".35"/>
+  <path d="M9 27c2 8 9 11 15 11s13-3 15-11z" fill="#b49a66" stroke="#735044" stroke-width="1.5"/>
+  <path d="M11 30c5 2 10 2 13 0M24 31c4 2 9 2 13-1M14 34c4 1 8 1 11-1" stroke="#735044" stroke-width="1.2" fill="none"/>
+  <ellipse cx="20" cy="24" rx="4" ry="5" fill="#e8f0ed" stroke="#a6b1ae" stroke-width="1"/>
+  <ellipse cx="28" cy="25" rx="3.5" ry="4.5" fill="#f5d69a" stroke="#a57554" stroke-width="1"/>
+  <path d="M24 9c-2 3-2 5 0 6 2-1 2-3 0-6z" fill="#ffc36b"/>
  </svg>`,
  insects: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
   <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
@@ -264,6 +314,9 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  } else if (rawId === "spring_water" || kind === "spring") {
   slot.classList.add("is-supply", "is-spring");
   slot.append(svgArt("spring_water", Math.round(size * 0.92)));
+ } else if (kind === "premium" || kind === "nest" || PREMIUM_ART.has(rawId)) {
+  slot.classList.add("is-supply", "is-premium");
+  slot.append(svgArt(rawId.startsWith("warm_nest") ? "warm_nest" : rawId, Math.round(size * 0.92)));
  } else if (rawId === "boost" || rawId === "gentle_growth" || kind === "boost") {
   slot.classList.add("is-supply");
   slot.append(svgArt("boost", Math.round(size * 0.92)));

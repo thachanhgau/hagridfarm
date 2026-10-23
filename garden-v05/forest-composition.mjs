@@ -1,4 +1,4 @@
-import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=24.9.70';
+import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=24.9.71';
 export {FARM_SIGN_ART};
 // Scenic-only composition: deterministic groves and a walkable-looking exit.
 // Never changes authored slots, collision data, or game state.

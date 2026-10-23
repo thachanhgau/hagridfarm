@@ -7,6 +7,7 @@ import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affin
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs?v=24.9.63";
 import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
 import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=24.9.40";
+const PREMIUM_CAPS=Object.freeze({rain:1,felix:1,primeMeal:30,feast:3,skeleGro:3});
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
 // garden-daily-core.js, garden-festival-core.js, garden-keeper-core.js): same commands, error reasons and response shapes.
@@ -74,7 +75,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  const garden={
   progression:state,
   supplies:fresh?{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,STARTER_SUPPLIES.seeds[c.id]||0])),water:STARTER_SUPPLIES.water,boost:STARTER_SUPPLIES.boost,spring:0}
-   :{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?36:0])),water:213,boost:2,spring:0},
+   :{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?36:0])),water:213,boost:2,spring:0,rain:2,felix:2,primeMeal:5,feast:2,skeleGro:3},
   decorations:fresh?{owned:[],placements:[null,null,null,null,null,null],rotations:{}}:{owned:full?storeDecors:["decor_pumpkin_lantern"],placements:full?[...storeDecors,null,null,null,null,null,null].slice(0,6):["decor_pumpkin_lantern",null,null,null,null,null],
    rotations:full?{decor_pumpkin_lantern:"default",decor_broom_rack:"right",decor_cauldron:"default",decor_mandrake_planter:"right",decor_floating_candles:"default",decor_vine_arch:"right"}:{decor_pumpkin_lantern:"default"}},
   boostedCropIds:[],
@@ -82,6 +83,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   bonding:{bySpecies:{},claimedGifts:[]},
   achievements:{claimedIds:[]},
   tutorial:{grownAt:null,guide:[]},
+  premium:{felix:null,nests:[]},
  };
  const wallet={spendable,balance:spendable-bankBalance,bankBalance};
  const dailies=new Map(),ops=new Map(),ledger=[];
@@ -162,7 +164,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    garden,wallet,catalog,catalogVersion:CATALOG_VERSION,dayKey:d.dayKey,
    daily:{dayKey:d.dayKey,streakDays:d.streakDays,quests:d.quests,chest:{claimed:d.chestClaimed,ready:!d.chestClaimed&&done>=3,reward:CHEST_REWARD},
     bonusQuests:d.bonusQuests,bonusChest:{claimed:d.bonusChestClaimed,ready:!d.bonusChestClaimed&&allDone,reward:BONUS_CHEST_REWARD},
-    freeActions:Object.fromEntries(Object.entries(FREE_CAPS).map(([kind,cap])=>[kind,{used:d.free[kind]||0,cap}]))},
+    freeActions:Object.fromEntries(Object.entries(FREE_CAPS).map(([kind,cap])=>[kind,{used:d.free[kind]||0,cap}])),
+    premiumUses:Object.fromEntries(Object.entries(PREMIUM_CAPS).map(([k,cap])=>[k,{used:k==='skeleGro'?{...(d.premium?.skeleGro||{})}:d.premium?.[k]||0,cap:k==='rain'&&garden.progression.level>100?2:cap}]))},
    festival:{active,next:{...view(status.next),daysUntil:status.next.daysUntil},today:{farm:d.farm,farmCap:FESTIVAL_FARM_POINTS_PER_DAY,free:d.freeToday,freeCap:FESTIVAL_FREE_POINTS_PER_DAY},pending},
    bonding:bondingView(d.dayKey),achievements:achievementsView(),
    serverNow:now(),profile:{username:"Xem thử · không lưu"},
@@ -321,6 +324,22 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   applyGardenReward(next.progression.inventory,next.supplies,reward);
   next.progression.revision+=1;extra.reward=clone(reward);
  }
+ // Server garden-premium-use (QA approximation: rain, Phúc Lạc Dược, meals; Thuốc Mọc Xương without stage XP).
+ function usePremium(c,next,d){
+  const entry=STORE_CATALOG.find(i=>i.id===c.itemId&&i.kind==="premium");if(!entry)fail("invalid-action-input","Vật phẩm này không dùng được.");
+  const k=entry.supply,s=next.supplies,p=next.progression,t=now();d.premium??={rain:0,felix:0,primeMeal:0,feast:0,skeleGro:{}};
+  if(!(s[k]>0))fail("missing-supply",`Không còn ${entry.label}.`);
+  const cap=k==="rain"&&p.level>100?2:PREMIUM_CAPS[k],used=k==="skeleGro"?d.premium.skeleGro[c.species]||0:d.premium[k];
+  if(used>=cap)fail("premium-limit",`Hôm nay đã dùng đủ ${cap} ${entry.label}; mai dùng tiếp nhé.`);
+  const finish=m=>m&&m.readyAt>t?(shift(m,m.readyAt-t),true):false;
+  if(k==="rain"){let q=p,n=0;p.plots.forEach((plot,i)=>{const cells=plot.slots.map((x,j)=>x?.type==="crop"?j:-1).filter(j=>j>=0);if(!cells.length)return;q=clone(q);for(const j of cells)q.plots[i].slots[j].plantedAt=Math.min(q.plots[i].slots[j].plantedAt,t-q.plots[i].slots[j].growMs);q=E.harvest(q,i,cells,Date.now());n++;});if(!n)fail("invalid-boost-target","Vườn chưa có cây nào.");next.progression=q;}
+  else if(k==="felix"){if(next.premium.felix?.until>Date.now())fail("felix-active","Phúc Lạc Dược đang có hiệu lực.");next.premium.felix={until:Date.now()+7200000,bonusLeft:Math.floor((E.DB.levels[p.level-1]?.xpToNext||0)/2)};}
+  else if(k==="primeMeal"){if(!finish(p.creatures.find(x=>x.species===c.species)?.meal))fail("invalid-boost-target","Sinh vật này không có bữa đang ăn.");}
+  else if(k==="feast"){if(!p.creatures.map(x=>finish(x.meal)).some(Boolean))fail("invalid-boost-target","Không có sinh vật nào đang ăn.");}
+  else{const x=p.creatures.find(y=>y.species===c.species),cfg=E.CREATURE[c.species];if(!x||x.mealsCompleted>=cfg.mealsToAdult)fail("invalid-boost-target","Sinh vật này đã trưởng thành.");x.mealsCompleted=Math.min(cfg.mealsToAdult,x.mealsCompleted+3);}
+  s[k]-=1;next.progression.revision=garden.progression.revision+1;
+  if(k==="skeleGro")d.premium.skeleGro[c.species]=used+1;else d.premium[k]=used+1;
+ }
  function act(c){
   if(typeof c.requestId!=="string"||!c.requestId||c.requestId.length>128)fail("invalid-request-id","Mã thao tác không hợp lệ.");
   const {requestId,...payload}=c,hash=stable(payload),seen=ops.get(requestId);
@@ -346,6 +365,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    const meal=c.kind==="pet"&&c.species&&extra.freeAction.counted?next.progression.creatures.find(x=>x.species===c.species)?.meal:null;
    if(meal&&meal.readyAt>now()){shift(meal,Math.floor((meal.readyAt-meal.startedAt)*SPEED_SHARE));next.progression.revision+=1;extra.mealSped=c.species;}
   }else if(c.action==="boost")boost(c,next);
+  else if(c.action==="usePremium")usePremium(c,next,d);
   else if(c.action==="tutorialGrow")tutorialGrow(c,next);
   // Server applyGuideDone: a finished «Sổ tay» lesson, no revision, reward or points.
   else if(c.action==="guideDone"){
@@ -408,7 +428,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   if(entry.kind==="seed"){const id=entry.cropId||entry.id.replace(/^seed_/,"");s.seeds[id]=(s.seeds[id]||0)+entry.quantity*qty;}
   else if(entry.kind==="water")s.water+=entry.quantity*qty;
   else if(entry.kind==="boost")s.boost+=entry.quantity*qty;
-  else if(entry.kind==="spring")s.spring=(s.spring||0)+entry.quantity*qty;
+  else if(entry.supply){if((s[entry.supply]||0)+qty>entry.stockCap)fail("stock-cap",`Kho chỉ chứa tối đa ${entry.stockCap} ${entry.label}.`);s[entry.supply]=(s[entry.supply]||0)+entry.quantity*qty;}
+  else if(entry.kind==="nest"){garden.premium.nests.push(entry.pen);entry.owned=true;}
   else if(entry.kind==="food"){const id=entry.inventoryId||entry.id;inv[id]=(inv[id]||0)+entry.quantity*qty;}
   else if(entry.kind==="decoration"&&!garden.decorations.owned.includes(entry.id))garden.decorations.owned.push(entry.id);
   const receipt={itemId:entry.id,quantity:qty,total:cost,requestId:c.requestId};
