@@ -1,0 +1,71 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "All requests intercepted at 127.0.0.1:3026; in-memory level500 fixture; no production traffic",
+  "beforeSource": "3c1c41560f424ec5de47395cce409890f01af094",
+  "afterSource": "V24.9.75 Halloween import, connected sale gated",
+  "formFactor": "mobile simulated throttling",
+  "runs": {
+    "before": [
+      {
+        "performance": 52,
+        "fcpMs": 9045,
+        "lcpMs": 12810,
+        "tbtMs": 253.5,
+        "bytes": 4901744
+      },
+      {
+        "performance": 52,
+        "fcpMs": 9195,
+        "lcpMs": 13275,
+        "tbtMs": 243,
+        "bytes": 4901744
+      },
+      {
+        "performance": 52,
+        "fcpMs": 9045,
+        "lcpMs": 12885,
+        "tbtMs": 255,
+        "bytes": 4901744
+      }
+    ],
+    "after": [
+      {
+        "performance": 51,
+        "fcpMs": 9090,
+        "lcpMs": 12990,
+        "tbtMs": 257,
+        "bytes": 5258637
+      },
+      {
+        "performance": 52,
+        "fcpMs": 9270,
+        "lcpMs": 14715,
+        "tbtMs": 248,
+        "bytes": 5258637
+      },
+      {
+        "performance": 52,
+        "fcpMs": 9090,
+        "lcpMs": 12840,
+        "tbtMs": 251.5,
+        "bytes": 5258637
+      }
+    ]
+  },
+  "medians": {
+    "before": {
+      "performance": 52,
+      "fcpMs": 9045,
+      "lcpMs": 12885,
+      "tbtMs": 253.5,
+      "bytes": 4901744
+    },
+    "after": {
+      "performance": 52,
+      "fcpMs": 9090,
+      "lcpMs": 12990,
+      "tbtMs": 251.5,
+      "bytes": 5258637
+    }
+  }
+}

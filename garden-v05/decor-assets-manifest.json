@@ -482,286 +482,6 @@
       "generationPromptId": "herbology_greenhouse"
     },
     {
-      "id": "hw_pumpkin_stack",
-      "kind": "decor",
-      "collection": "festival",
-      "storeItem": true,
-      "rotatable": true,
-      "label": "Chồng bí ngô khắc mặt",
-      "group": "Cốt lõi",
-      "file": "decor-assets/native/hw_pumpkin_stack.png",
-      "frames": [
-        "decor-assets/native/hw_pumpkin_stack_f0.png",
-        "decor-assets/native/hw_pumpkin_stack_f1.png",
-        "decor-assets/native/hw_pumpkin_stack_f2.png",
-        "decor-assets/native/hw_pumpkin_stack_f3.png"
-      ],
-      "durations": [
-        520,
-        260,
-        480,
-        260
-      ],
-      "rightFile": "decor-assets/native/hw_pumpkin_stack_right.png",
-      "rightFrames": [
-        "decor-assets/native/hw_pumpkin_stack_right_f0.png",
-        "decor-assets/native/hw_pumpkin_stack_right_f1.png",
-        "decor-assets/native/hw_pumpkin_stack_right_f2.png",
-        "decor-assets/native/hw_pumpkin_stack_right_f3.png"
-      ],
-      "rightBounds": {
-        "x": 3,
-        "y": 4,
-        "w": 90,
-        "h": 104
-      },
-      "angles": [
-        "default",
-        "right"
-      ],
-      "width": 96,
-      "height": 112,
-      "pivotX": 48,
-      "pivotY": 108,
-      "bounds": {
-        "x": 3,
-        "y": 2,
-        "w": 90,
-        "h": 106
-      },
-      "footprintTiles": [
-        1,
-        1
-      ],
-      "motion": "glow",
-      "framesIdentical": false,
-      "nativeSha256": "45062cd5662ad5c05af02702d7fb15e14307ae20c4a2cbbabf6325e536ee1373"
-    },
-    {
-      "id": "hw_monster_candy_barrel",
-      "kind": "decor",
-      "collection": "festival",
-      "storeItem": true,
-      "rotatable": true,
-      "label": "Thùng kẹo quái vật",
-      "group": "Cốt lõi",
-      "file": "decor-assets/native/hw_monster_candy_barrel.png",
-      "frames": [
-        "decor-assets/native/hw_monster_candy_barrel_f0.png",
-        "decor-assets/native/hw_monster_candy_barrel_f1.png",
-        "decor-assets/native/hw_monster_candy_barrel_f2.png",
-        "decor-assets/native/hw_monster_candy_barrel_f3.png"
-      ],
-      "durations": [
-        520,
-        260,
-        480,
-        260
-      ],
-      "rightFile": "decor-assets/native/hw_monster_candy_barrel_right.png",
-      "rightFrames": [
-        "decor-assets/native/hw_monster_candy_barrel_right_f0.png",
-        "decor-assets/native/hw_monster_candy_barrel_right_f1.png",
-        "decor-assets/native/hw_monster_candy_barrel_right_f2.png",
-        "decor-assets/native/hw_monster_candy_barrel_right_f3.png"
-      ],
-      "rightBounds": {
-        "x": 16,
-        "y": 2,
-        "w": 65,
-        "h": 98
-      },
-      "angles": [
-        "default",
-        "right"
-      ],
-      "width": 96,
-      "height": 104,
-      "pivotX": 48,
-      "pivotY": 100,
-      "bounds": {
-        "x": 13,
-        "y": 2,
-        "w": 70,
-        "h": 98
-      },
-      "footprintTiles": [
-        1,
-        1
-      ],
-      "motion": "glow",
-      "framesIdentical": false,
-      "nativeSha256": "36f931467e973a88b605cef38daaabc59cddc7aeb52bf00b5c8dc1bf76f1b27f"
-    },
-    {
-      "id": "hw_wooden_black_cat",
-      "kind": "decor",
-      "collection": "festival",
-      "storeItem": true,
-      "rotatable": true,
-      "label": "Tượng mèo đen bằng gỗ",
-      "group": "Cốt lõi",
-      "file": "decor-assets/native/hw_wooden_black_cat.png",
-      "frames": [
-        "decor-assets/native/hw_wooden_black_cat_f0.png",
-        "decor-assets/native/hw_wooden_black_cat_f1.png",
-        "decor-assets/native/hw_wooden_black_cat_f2.png",
-        "decor-assets/native/hw_wooden_black_cat_f3.png"
-      ],
-      "durations": [
-        600,
-        300,
-        600,
-        300
-      ],
-      "rightFile": "decor-assets/native/hw_wooden_black_cat_right.png",
-      "rightFrames": [
-        "decor-assets/native/hw_wooden_black_cat_right_f0.png",
-        "decor-assets/native/hw_wooden_black_cat_right_f1.png",
-        "decor-assets/native/hw_wooden_black_cat_right_f2.png",
-        "decor-assets/native/hw_wooden_black_cat_right_f3.png"
-      ],
-      "rightBounds": {
-        "x": 5,
-        "y": 2,
-        "w": 62,
-        "h": 98
-      },
-      "angles": [
-        "default",
-        "right"
-      ],
-      "width": 72,
-      "height": 104,
-      "pivotX": 36,
-      "pivotY": 100,
-      "bounds": {
-        "x": 3,
-        "y": 2,
-        "w": 66,
-        "h": 98
-      },
-      "footprintTiles": [
-        1,
-        1
-      ],
-      "motion": "blink",
-      "framesIdentical": true,
-      "nativeSha256": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba"
-    },
-    {
-      "id": "hw_halloween_sign",
-      "kind": "decor",
-      "collection": "festival",
-      "storeItem": true,
-      "rotatable": true,
-      "label": "Biển gỗ Halloween",
-      "group": "Cốt lõi",
-      "file": "decor-assets/native/hw_halloween_sign.png",
-      "frames": [
-        "decor-assets/native/hw_halloween_sign_f0.png",
-        "decor-assets/native/hw_halloween_sign_f1.png",
-        "decor-assets/native/hw_halloween_sign_f2.png",
-        "decor-assets/native/hw_halloween_sign_f3.png"
-      ],
-      "durations": [
-        520,
-        260,
-        480,
-        260
-      ],
-      "rightFile": "decor-assets/native/hw_halloween_sign_right.png",
-      "rightFrames": [
-        "decor-assets/native/hw_halloween_sign_right_f0.png",
-        "decor-assets/native/hw_halloween_sign_right_f1.png",
-        "decor-assets/native/hw_halloween_sign_right_f2.png",
-        "decor-assets/native/hw_halloween_sign_right_f3.png"
-      ],
-      "rightBounds": {
-        "x": 20,
-        "y": 2,
-        "w": 57,
-        "h": 122
-      },
-      "angles": [
-        "default",
-        "right"
-      ],
-      "width": 96,
-      "height": 128,
-      "pivotX": 48,
-      "pivotY": 124,
-      "bounds": {
-        "x": 8,
-        "y": 2,
-        "w": 81,
-        "h": 122
-      },
-      "footprintTiles": [
-        1,
-        1
-      ],
-      "motion": "glow",
-      "framesIdentical": false,
-      "nativeSha256": "1a6fc11404e9acc11225a0f672a6292cbd00095cb170399193690ca3ffdcdd5d"
-    },
-    {
-      "id": "hw_cloth_ghost_lantern",
-      "kind": "decor",
-      "collection": "festival",
-      "storeItem": true,
-      "rotatable": true,
-      "label": "Đèn ma vải",
-      "group": "Cốt lõi",
-      "file": "decor-assets/native/hw_cloth_ghost_lantern.png",
-      "frames": [
-        "decor-assets/native/hw_cloth_ghost_lantern_f0.png",
-        "decor-assets/native/hw_cloth_ghost_lantern_f1.png",
-        "decor-assets/native/hw_cloth_ghost_lantern_f2.png",
-        "decor-assets/native/hw_cloth_ghost_lantern_f3.png"
-      ],
-      "durations": [
-        600,
-        300,
-        600,
-        300
-      ],
-      "rightFile": "decor-assets/native/hw_cloth_ghost_lantern_right.png",
-      "rightFrames": [
-        "decor-assets/native/hw_cloth_ghost_lantern_right_f0.png",
-        "decor-assets/native/hw_cloth_ghost_lantern_right_f1.png",
-        "decor-assets/native/hw_cloth_ghost_lantern_right_f2.png",
-        "decor-assets/native/hw_cloth_ghost_lantern_right_f3.png"
-      ],
-      "rightBounds": {
-        "x": 3,
-        "y": 3,
-        "w": 74,
-        "h": 121
-      },
-      "angles": [
-        "default",
-        "right"
-      ],
-      "width": 80,
-      "height": 128,
-      "pivotX": 40,
-      "pivotY": 124,
-      "bounds": {
-        "x": 3,
-        "y": 5,
-        "w": 74,
-        "h": 119
-      },
-      "footprintTiles": [
-        1,
-        1
-      ],
-      "motion": "sway",
-      "framesIdentical": true,
-      "nativeSha256": "0d317d0074858b0c80ea808623d75f4f7a037694aac9810aa045a618ad30ed30"
-    },
-    {
       "id": "sp_hagrid_umbrella",
       "kind": "decor",
       "collection": "special",
@@ -2590,6 +2310,2986 @@
       },
       "lore": "Chiếc xe buýt ba tầng đón Harry sau khi rời nhà Dursley.",
       "nativeSha256": "48e65c7ba8119860ade102c7155df49086b0b09ee541c52440ef34bcaef348e3"
+    },
+    {
+      "id": "hw_pumpkin_stack",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Chồng bí ngô khắc mặt",
+      "group": "Cốt lõi",
+      "file": "decor-assets/native/hw_pumpkin_stack.png",
+      "frames": [
+        "decor-assets/native/hw_pumpkin_stack_f0.png",
+        "decor-assets/native/hw_pumpkin_stack_f1.png",
+        "decor-assets/native/hw_pumpkin_stack_f2.png",
+        "decor-assets/native/hw_pumpkin_stack_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/hw_pumpkin_stack_right.png",
+      "rightFrames": [
+        "decor-assets/native/hw_pumpkin_stack_right_f0.png",
+        "decor-assets/native/hw_pumpkin_stack_right_f1.png",
+        "decor-assets/native/hw_pumpkin_stack_right_f2.png",
+        "decor-assets/native/hw_pumpkin_stack_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 4,
+        "w": 90,
+        "h": 104
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 108,
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 90,
+        "h": 106
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "45062cd5662ad5c05af02702d7fb15e14307ae20c4a2cbbabf6325e536ee1373"
+    },
+    {
+      "id": "hw_monster_candy_barrel",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Thùng kẹo quái vật",
+      "group": "Cốt lõi",
+      "file": "decor-assets/native/hw_monster_candy_barrel.png",
+      "frames": [
+        "decor-assets/native/hw_monster_candy_barrel_f0.png",
+        "decor-assets/native/hw_monster_candy_barrel_f1.png",
+        "decor-assets/native/hw_monster_candy_barrel_f2.png",
+        "decor-assets/native/hw_monster_candy_barrel_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/hw_monster_candy_barrel_right.png",
+      "rightFrames": [
+        "decor-assets/native/hw_monster_candy_barrel_right_f0.png",
+        "decor-assets/native/hw_monster_candy_barrel_right_f1.png",
+        "decor-assets/native/hw_monster_candy_barrel_right_f2.png",
+        "decor-assets/native/hw_monster_candy_barrel_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 16,
+        "y": 2,
+        "w": 65,
+        "h": 98
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 104,
+      "pivotX": 48,
+      "pivotY": 100,
+      "bounds": {
+        "x": 13,
+        "y": 2,
+        "w": 70,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "36f931467e973a88b605cef38daaabc59cddc7aeb52bf00b5c8dc1bf76f1b27f"
+    },
+    {
+      "id": "hw_wooden_black_cat",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Tượng mèo đen bằng gỗ",
+      "group": "Cốt lõi",
+      "file": "decor-assets/native/hw_wooden_black_cat.png",
+      "frames": [
+        "decor-assets/native/hw_wooden_black_cat_f0.png",
+        "decor-assets/native/hw_wooden_black_cat_f1.png",
+        "decor-assets/native/hw_wooden_black_cat_f2.png",
+        "decor-assets/native/hw_wooden_black_cat_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/hw_wooden_black_cat_right.png",
+      "rightFrames": [
+        "decor-assets/native/hw_wooden_black_cat_right_f0.png",
+        "decor-assets/native/hw_wooden_black_cat_right_f1.png",
+        "decor-assets/native/hw_wooden_black_cat_right_f2.png",
+        "decor-assets/native/hw_wooden_black_cat_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 5,
+        "y": 2,
+        "w": 62,
+        "h": 98
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 72,
+      "height": 104,
+      "pivotX": 36,
+      "pivotY": 100,
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 66,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "nativeSha256": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba"
+    },
+    {
+      "id": "hw_halloween_sign",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Biển gỗ Halloween",
+      "group": "Cốt lõi",
+      "file": "decor-assets/native/hw_halloween_sign.png",
+      "frames": [
+        "decor-assets/native/hw_halloween_sign_f0.png",
+        "decor-assets/native/hw_halloween_sign_f1.png",
+        "decor-assets/native/hw_halloween_sign_f2.png",
+        "decor-assets/native/hw_halloween_sign_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/hw_halloween_sign_right.png",
+      "rightFrames": [
+        "decor-assets/native/hw_halloween_sign_right_f0.png",
+        "decor-assets/native/hw_halloween_sign_right_f1.png",
+        "decor-assets/native/hw_halloween_sign_right_f2.png",
+        "decor-assets/native/hw_halloween_sign_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 20,
+        "y": 2,
+        "w": 57,
+        "h": 122
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 128,
+      "pivotX": 48,
+      "pivotY": 124,
+      "bounds": {
+        "x": 8,
+        "y": 2,
+        "w": 81,
+        "h": 122
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "1a6fc11404e9acc11225a0f672a6292cbd00095cb170399193690ca3ffdcdd5d"
+    },
+    {
+      "id": "hw_cloth_ghost_lantern",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Đèn ma vải",
+      "group": "Cốt lõi",
+      "file": "decor-assets/native/hw_cloth_ghost_lantern.png",
+      "frames": [
+        "decor-assets/native/hw_cloth_ghost_lantern_f0.png",
+        "decor-assets/native/hw_cloth_ghost_lantern_f1.png",
+        "decor-assets/native/hw_cloth_ghost_lantern_f2.png",
+        "decor-assets/native/hw_cloth_ghost_lantern_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/hw_cloth_ghost_lantern_right.png",
+      "rightFrames": [
+        "decor-assets/native/hw_cloth_ghost_lantern_right_f0.png",
+        "decor-assets/native/hw_cloth_ghost_lantern_right_f1.png",
+        "decor-assets/native/hw_cloth_ghost_lantern_right_f2.png",
+        "decor-assets/native/hw_cloth_ghost_lantern_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 3,
+        "y": 3,
+        "w": 74,
+        "h": 121
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 80,
+      "height": 128,
+      "pivotX": 40,
+      "pivotY": 124,
+      "bounds": {
+        "x": 3,
+        "y": 5,
+        "w": 74,
+        "h": 119
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "nativeSha256": "0d317d0074858b0c80ea808623d75f4f7a037694aac9810aa045a618ad30ed30"
+    },
+    {
+      "id": "hw_dead_bat_tree",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cây khô treo dơi",
+      "group": "Cốt lõi",
+      "file": "decor-assets/native/hw_dead_bat_tree.png",
+      "rightFile": "decor-assets/native/hw_dead_bat_tree_right.png",
+      "frames": [
+        "decor-assets/native/hw_dead_bat_tree_atlas.png",
+        "decor-assets/native/hw_dead_bat_tree_atlas.png",
+        "decor-assets/native/hw_dead_bat_tree_atlas.png",
+        "decor-assets/native/hw_dead_bat_tree_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_dead_bat_tree_atlas.png",
+        "decor-assets/native/hw_dead_bat_tree_atlas.png",
+        "decor-assets/native/hw_dead_bat_tree_atlas.png",
+        "decor-assets/native/hw_dead_bat_tree_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 128,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 256,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 384,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 144,
+      "pivotX": 64,
+      "pivotY": 140,
+      "bounds": {
+        "x": 8,
+        "y": 2,
+        "w": 113,
+        "h": 138
+      },
+      "rightBounds": {
+        "x": 16,
+        "y": 2,
+        "w": 96,
+        "h": 138
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "nativeSha256": "5cf079d9b371b08e404449c797bb8800f2977bcec8f039dbff5f10abe6f02015"
+    },
+    {
+      "id": "hw_bat_lantern",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Đèn lồng dơi",
+      "group": "Ánh sáng",
+      "file": "decor-assets/native/hw_bat_lantern.png",
+      "rightFile": "decor-assets/native/hw_bat_lantern_right.png",
+      "frames": [
+        "decor-assets/native/hw_bat_lantern_atlas.png",
+        "decor-assets/native/hw_bat_lantern_atlas.png",
+        "decor-assets/native/hw_bat_lantern_atlas.png",
+        "decor-assets/native/hw_bat_lantern_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_bat_lantern_atlas.png",
+        "decor-assets/native/hw_bat_lantern_atlas.png",
+        "decor-assets/native/hw_bat_lantern_atlas.png",
+        "decor-assets/native/hw_bat_lantern_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 88,
+          "h": 120
+        },
+        {
+          "x": 88,
+          "y": 0,
+          "w": 88,
+          "h": 120
+        },
+        {
+          "x": 176,
+          "y": 0,
+          "w": 88,
+          "h": 120
+        },
+        {
+          "x": 264,
+          "y": 0,
+          "w": 88,
+          "h": 120
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 120,
+          "w": 88,
+          "h": 120
+        },
+        {
+          "x": 88,
+          "y": 120,
+          "w": 88,
+          "h": 120
+        },
+        {
+          "x": 176,
+          "y": 120,
+          "w": 88,
+          "h": 120
+        },
+        {
+          "x": 264,
+          "y": 120,
+          "w": 88,
+          "h": 120
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 88,
+      "height": 120,
+      "pivotX": 44,
+      "pivotY": 116,
+      "bounds": {
+        "x": 4,
+        "y": 2,
+        "w": 81,
+        "h": 114
+      },
+      "rightBounds": {
+        "x": 8,
+        "y": 2,
+        "w": 73,
+        "h": 114
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "fdb560656c24b969be3f7f007d40c1907223f320e058c8248940756741fd317f"
+    },
+    {
+      "id": "hw_skull_lantern",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Đèn đầu lâu",
+      "group": "Ánh sáng",
+      "file": "decor-assets/native/hw_skull_lantern.png",
+      "rightFile": "decor-assets/native/hw_skull_lantern_right.png",
+      "frames": [
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 80,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 160,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 240,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 80,
+      "height": 104,
+      "pivotX": 40,
+      "pivotY": 100,
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 68,
+        "h": 98
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 2,
+        "w": 70,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "011f100f884358a2549f9b9d10525ee16e6946bbb2c1aededc41f3b25f0a7159"
+    },
+    {
+      "id": "hw_haunted_house_lantern",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Đèn lồng hình nhà ma",
+      "group": "Ánh sáng",
+      "file": "decor-assets/native/hw_haunted_house_lantern.png",
+      "rightFile": "decor-assets/native/hw_haunted_house_lantern_right.png",
+      "frames": [
+        "decor-assets/native/hw_haunted_house_lantern_atlas.png",
+        "decor-assets/native/hw_haunted_house_lantern_atlas.png",
+        "decor-assets/native/hw_haunted_house_lantern_atlas.png",
+        "decor-assets/native/hw_haunted_house_lantern_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_haunted_house_lantern_atlas.png",
+        "decor-assets/native/hw_haunted_house_lantern_atlas.png",
+        "decor-assets/native/hw_haunted_house_lantern_atlas.png",
+        "decor-assets/native/hw_haunted_house_lantern_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 120
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 120
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 120
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 120
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 120,
+          "w": 96,
+          "h": 120
+        },
+        {
+          "x": 96,
+          "y": 120,
+          "w": 96,
+          "h": 120
+        },
+        {
+          "x": 192,
+          "y": 120,
+          "w": 96,
+          "h": 120
+        },
+        {
+          "x": 288,
+          "y": 120,
+          "w": 96,
+          "h": 120
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 120,
+      "pivotX": 48,
+      "pivotY": 116,
+      "bounds": {
+        "x": 7,
+        "y": 2,
+        "w": 83,
+        "h": 114
+      },
+      "rightBounds": {
+        "x": 9,
+        "y": 2,
+        "w": 78,
+        "h": 114
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "3dd7d6836fd72ac40b439dd91fbfc43cf7fb0a8d499cc0325d17adc9ae923de3"
+    },
+    {
+      "id": "hw_ghost_orb",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Quả cầu ma nhỏ",
+      "group": "Ánh sáng",
+      "file": "decor-assets/native/hw_ghost_orb.png",
+      "rightFile": "decor-assets/native/hw_ghost_orb_right.png",
+      "frames": [
+        "decor-assets/native/hw_ghost_orb_atlas.png",
+        "decor-assets/native/hw_ghost_orb_atlas.png",
+        "decor-assets/native/hw_ghost_orb_atlas.png",
+        "decor-assets/native/hw_ghost_orb_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_ghost_orb_atlas.png",
+        "decor-assets/native/hw_ghost_orb_atlas.png",
+        "decor-assets/native/hw_ghost_orb_atlas.png",
+        "decor-assets/native/hw_ghost_orb_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 80,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 160,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 240,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 80,
+      "height": 104,
+      "pivotX": 40,
+      "pivotY": 100,
+      "bounds": {
+        "x": 3,
+        "y": 6,
+        "w": 74,
+        "h": 94
+      },
+      "rightBounds": {
+        "x": 6,
+        "y": 2,
+        "w": 69,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "748d6fa8e7a6955a9805e6913a9a248dd913854bae35940a3c20ea6d038a1db2"
+    },
+    {
+      "id": "hw_spider_light_garland",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Giàn đèn nhện",
+      "group": "Ánh sáng",
+      "file": "decor-assets/native/hw_spider_light_garland.png",
+      "rightFile": "decor-assets/native/hw_spider_light_garland_right.png",
+      "frames": [
+        "decor-assets/native/hw_spider_light_garland_atlas.png",
+        "decor-assets/native/hw_spider_light_garland_atlas.png",
+        "decor-assets/native/hw_spider_light_garland_atlas.png",
+        "decor-assets/native/hw_spider_light_garland_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_spider_light_garland_atlas.png",
+        "decor-assets/native/hw_spider_light_garland_atlas.png",
+        "decor-assets/native/hw_spider_light_garland_atlas.png",
+        "decor-assets/native/hw_spider_light_garland_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 112
+        },
+        {
+          "x": 144,
+          "y": 0,
+          "w": 144,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 144,
+          "h": 112
+        },
+        {
+          "x": 432,
+          "y": 0,
+          "w": 144,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 144,
+          "h": 112
+        },
+        {
+          "x": 144,
+          "y": 112,
+          "w": 144,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 112,
+          "w": 144,
+          "h": 112
+        },
+        {
+          "x": 432,
+          "y": 112,
+          "w": 144,
+          "h": 112
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 144,
+      "height": 112,
+      "pivotX": 72,
+      "pivotY": 108,
+      "bounds": {
+        "x": 3,
+        "y": 17,
+        "w": 138,
+        "h": 91
+      },
+      "rightBounds": {
+        "x": 15,
+        "y": 2,
+        "w": 114,
+        "h": 106
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "aa4787645ed95008305ea1da73ccfa0e638d9d53d7d407b99585b1eb32722b21"
+    },
+    {
+      "id": "hw_soul_bottle",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Bình linh hồn phát sáng",
+      "group": "Ánh sáng",
+      "file": "decor-assets/native/hw_soul_bottle.png",
+      "rightFile": "decor-assets/native/hw_soul_bottle_right.png",
+      "frames": [
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "w": 80,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 80,
+          "y": 112,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 160,
+          "y": 112,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 240,
+          "y": 112,
+          "w": 80,
+          "h": 112
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 80,
+      "height": 112,
+      "pivotX": 40,
+      "pivotY": 108,
+      "bounds": {
+        "x": 10,
+        "y": 2,
+        "w": 61,
+        "h": 106
+      },
+      "rightBounds": {
+        "x": 12,
+        "y": 2,
+        "w": 57,
+        "h": 106
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "b994b7897ccc8dedb9f4013e2070c8aae0f7b3704d86e609ccef14bbc9df3615"
+    },
+    {
+      "id": "hw_candy_cauldron",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Vạc kẹo sôi",
+      "group": "Góc phù thủy",
+      "file": "decor-assets/native/hw_candy_cauldron.png",
+      "rightFile": "decor-assets/native/hw_candy_cauldron_right.png",
+      "frames": [
+        "decor-assets/native/hw_candy_cauldron_atlas.png",
+        "decor-assets/native/hw_candy_cauldron_atlas.png",
+        "decor-assets/native/hw_candy_cauldron_atlas.png",
+        "decor-assets/native/hw_candy_cauldron_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_candy_cauldron_atlas.png",
+        "decor-assets/native/hw_candy_cauldron_atlas.png",
+        "decor-assets/native/hw_candy_cauldron_atlas.png",
+        "decor-assets/native/hw_candy_cauldron_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 108,
+      "bounds": {
+        "x": 7,
+        "y": 2,
+        "w": 82,
+        "h": 106
+      },
+      "rightBounds": {
+        "x": 8,
+        "y": 2,
+        "w": 80,
+        "h": 106
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "bubbles",
+      "framesIdentical": true,
+      "nativeSha256": "894391319a66de7de21a892d8dae28e04bf85af0e8c0f899c53d2f1b0f3fa52d"
+    },
+    {
+      "id": "hw_halloween_potion_table",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Bàn pha độc dược Halloween",
+      "group": "Góc phù thủy",
+      "file": "decor-assets/native/hw_halloween_potion_table.png",
+      "rightFile": "decor-assets/native/hw_halloween_potion_table_right.png",
+      "frames": [
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 120
+        },
+        {
+          "x": 144,
+          "y": 0,
+          "w": 144,
+          "h": 120
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 144,
+          "h": 120
+        },
+        {
+          "x": 432,
+          "y": 0,
+          "w": 144,
+          "h": 120
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 120,
+          "w": 144,
+          "h": 120
+        },
+        {
+          "x": 144,
+          "y": 120,
+          "w": 144,
+          "h": 120
+        },
+        {
+          "x": 288,
+          "y": 120,
+          "w": 144,
+          "h": 120
+        },
+        {
+          "x": 432,
+          "y": 120,
+          "w": 144,
+          "h": 120
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 144,
+      "height": 120,
+      "pivotX": 72,
+      "pivotY": 116,
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 134,
+        "h": 114
+      },
+      "rightBounds": {
+        "x": 8,
+        "y": 2,
+        "w": 128,
+        "h": 114
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "516308ab5d8dda8697fcb6bc45d594e4419d68ef35c8f7ad328b09b870a353e2"
+    },
+    {
+      "id": "hw_monster_bookcase",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Tủ sách há miệng",
+      "group": "Góc phù thủy",
+      "file": "decor-assets/native/hw_monster_bookcase.png",
+      "rightFile": "decor-assets/native/hw_monster_bookcase_right.png",
+      "frames": [
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 112,
+          "h": 144
+        },
+        {
+          "x": 112,
+          "y": 0,
+          "w": 112,
+          "h": 144
+        },
+        {
+          "x": 224,
+          "y": 0,
+          "w": 112,
+          "h": 144
+        },
+        {
+          "x": 336,
+          "y": 0,
+          "w": 112,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 112,
+          "h": 144
+        },
+        {
+          "x": 112,
+          "y": 144,
+          "w": 112,
+          "h": 144
+        },
+        {
+          "x": 224,
+          "y": 144,
+          "w": 112,
+          "h": 144
+        },
+        {
+          "x": 336,
+          "y": 144,
+          "w": 112,
+          "h": 144
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 112,
+      "height": 144,
+      "pivotX": 56,
+      "pivotY": 140,
+      "bounds": {
+        "x": 9,
+        "y": 2,
+        "w": 95,
+        "h": 138
+      },
+      "rightBounds": {
+        "x": 6,
+        "y": 2,
+        "w": 100,
+        "h": 138
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "nativeSha256": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77"
+    },
+    {
+      "id": "hw_blinking_chest",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Rương nháy mắt",
+      "group": "Góc phù thủy",
+      "file": "decor-assets/native/hw_blinking_chest.png",
+      "rightFile": "decor-assets/native/hw_blinking_chest_right.png",
+      "frames": [
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 112,
+          "h": 96
+        },
+        {
+          "x": 112,
+          "y": 0,
+          "w": 112,
+          "h": 96
+        },
+        {
+          "x": 224,
+          "y": 0,
+          "w": 112,
+          "h": 96
+        },
+        {
+          "x": 336,
+          "y": 0,
+          "w": 112,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 112,
+          "h": 96
+        },
+        {
+          "x": 112,
+          "y": 96,
+          "w": 112,
+          "h": 96
+        },
+        {
+          "x": 224,
+          "y": 96,
+          "w": 112,
+          "h": 96
+        },
+        {
+          "x": 336,
+          "y": 96,
+          "w": 112,
+          "h": 96
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 112,
+      "height": 96,
+      "pivotX": 56,
+      "pivotY": 92,
+      "bounds": {
+        "x": 11,
+        "y": 2,
+        "w": 91,
+        "h": 90
+      },
+      "rightBounds": {
+        "x": 12,
+        "y": 2,
+        "w": 88,
+        "h": 90
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "nativeSha256": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad"
+    },
+    {
+      "id": "hw_witch_hat_rack",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Giá treo mũ phù thủy",
+      "group": "Góc phù thủy",
+      "file": "decor-assets/native/hw_witch_hat_rack.png",
+      "rightFile": "decor-assets/native/hw_witch_hat_rack_right.png",
+      "frames": [
+        "decor-assets/native/hw_witch_hat_rack_atlas.png",
+        "decor-assets/native/hw_witch_hat_rack_atlas.png",
+        "decor-assets/native/hw_witch_hat_rack_atlas.png",
+        "decor-assets/native/hw_witch_hat_rack_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_witch_hat_rack_atlas.png",
+        "decor-assets/native/hw_witch_hat_rack_atlas.png",
+        "decor-assets/native/hw_witch_hat_rack_atlas.png",
+        "decor-assets/native/hw_witch_hat_rack_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 104,
+          "h": 144
+        },
+        {
+          "x": 104,
+          "y": 0,
+          "w": 104,
+          "h": 144
+        },
+        {
+          "x": 208,
+          "y": 0,
+          "w": 104,
+          "h": 144
+        },
+        {
+          "x": 312,
+          "y": 0,
+          "w": 104,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 104,
+          "h": 144
+        },
+        {
+          "x": 104,
+          "y": 144,
+          "w": 104,
+          "h": 144
+        },
+        {
+          "x": 208,
+          "y": 144,
+          "w": 104,
+          "h": 144
+        },
+        {
+          "x": 312,
+          "y": 144,
+          "w": 104,
+          "h": 144
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 104,
+      "height": 144,
+      "pivotX": 52,
+      "pivotY": 140,
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 93,
+        "h": 138
+      },
+      "rightBounds": {
+        "x": 7,
+        "y": 2,
+        "w": 91,
+        "h": 138
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "nativeSha256": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7"
+    },
+    {
+      "id": "hw_caramel_apple_cart",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Xe đẩy táo bọc kẹo",
+      "group": "Góc phù thủy",
+      "file": "decor-assets/native/hw_caramel_apple_cart.png",
+      "rightFile": "decor-assets/native/hw_caramel_apple_cart_right.png",
+      "frames": [
+        "decor-assets/native/hw_caramel_apple_cart_atlas.png",
+        "decor-assets/native/hw_caramel_apple_cart_atlas.png",
+        "decor-assets/native/hw_caramel_apple_cart_atlas.png",
+        "decor-assets/native/hw_caramel_apple_cart_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_caramel_apple_cart_atlas.png",
+        "decor-assets/native/hw_caramel_apple_cart_atlas.png",
+        "decor-assets/native/hw_caramel_apple_cart_atlas.png",
+        "decor-assets/native/hw_caramel_apple_cart_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 144,
+          "h": 144
+        },
+        {
+          "x": 144,
+          "y": 0,
+          "w": 144,
+          "h": 144
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 144,
+          "h": 144
+        },
+        {
+          "x": 432,
+          "y": 0,
+          "w": 144,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 144,
+          "h": 144
+        },
+        {
+          "x": 144,
+          "y": 144,
+          "w": 144,
+          "h": 144
+        },
+        {
+          "x": 288,
+          "y": 144,
+          "w": 144,
+          "h": 144
+        },
+        {
+          "x": 432,
+          "y": 144,
+          "w": 144,
+          "h": 144
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 144,
+      "height": 144,
+      "pivotX": 72,
+      "pivotY": 140,
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 132,
+        "h": 138
+      },
+      "rightBounds": {
+        "x": 11,
+        "y": 2,
+        "w": 123,
+        "h": 138
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "4ad941c4ac498a6e4a5ea16ea6791cc5100dd00d9237903720d4d210b34eb8c8"
+    },
+    {
+      "id": "hw_grinning_stump",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Gốc cây mặt quỷ",
+      "group": "Rừng tinh nghịch",
+      "file": "decor-assets/native/hw_grinning_stump.png",
+      "rightFile": "decor-assets/native/hw_grinning_stump_right.png",
+      "frames": [
+        "decor-assets/native/hw_grinning_stump_atlas.png",
+        "decor-assets/native/hw_grinning_stump_atlas.png",
+        "decor-assets/native/hw_grinning_stump_atlas.png",
+        "decor-assets/native/hw_grinning_stump_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_grinning_stump_atlas.png",
+        "decor-assets/native/hw_grinning_stump_atlas.png",
+        "decor-assets/native/hw_grinning_stump_atlas.png",
+        "decor-assets/native/hw_grinning_stump_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 112,
+          "h": 104
+        },
+        {
+          "x": 112,
+          "y": 0,
+          "w": 112,
+          "h": 104
+        },
+        {
+          "x": 224,
+          "y": 0,
+          "w": 112,
+          "h": 104
+        },
+        {
+          "x": 336,
+          "y": 0,
+          "w": 112,
+          "h": 104
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 104,
+          "w": 112,
+          "h": 104
+        },
+        {
+          "x": 112,
+          "y": 104,
+          "w": 112,
+          "h": 104
+        },
+        {
+          "x": 224,
+          "y": 104,
+          "w": 112,
+          "h": 104
+        },
+        {
+          "x": 336,
+          "y": 104,
+          "w": 112,
+          "h": 104
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 112,
+      "height": 104,
+      "pivotX": 56,
+      "pivotY": 100,
+      "bounds": {
+        "x": 3,
+        "y": 13,
+        "w": 106,
+        "h": 87
+      },
+      "rightBounds": {
+        "x": 3,
+        "y": 6,
+        "w": 106,
+        "h": 94
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "62d961f4de5c11be3e168191cfd52ba9dc0328891b17eef45ccb989435b81a29"
+    },
+    {
+      "id": "hw_skull_mushrooms",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cụm nấm hình đầu lâu",
+      "group": "Rừng tinh nghịch",
+      "file": "decor-assets/native/hw_skull_mushrooms.png",
+      "rightFile": "decor-assets/native/hw_skull_mushrooms_right.png",
+      "frames": [
+        "decor-assets/native/hw_skull_mushrooms_atlas.png",
+        "decor-assets/native/hw_skull_mushrooms_atlas.png",
+        "decor-assets/native/hw_skull_mushrooms_atlas.png",
+        "decor-assets/native/hw_skull_mushrooms_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_skull_mushrooms_atlas.png",
+        "decor-assets/native/hw_skull_mushrooms_atlas.png",
+        "decor-assets/native/hw_skull_mushrooms_atlas.png",
+        "decor-assets/native/hw_skull_mushrooms_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 88
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 88
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 88
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 88
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 88,
+          "w": 96,
+          "h": 88
+        },
+        {
+          "x": 96,
+          "y": 88,
+          "w": 96,
+          "h": 88
+        },
+        {
+          "x": 192,
+          "y": 88,
+          "w": 96,
+          "h": 88
+        },
+        {
+          "x": 288,
+          "y": 88,
+          "w": 96,
+          "h": 88
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 88,
+      "pivotX": 48,
+      "pivotY": 84,
+      "bounds": {
+        "x": 12,
+        "y": 2,
+        "w": 73,
+        "h": 82
+      },
+      "rightBounds": {
+        "x": 12,
+        "y": 2,
+        "w": 72,
+        "h": 82
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "d9216b0c16581bd52c38099937b6a6670ff9a0fb564be6dad04a53539aff9c25"
+    },
+    {
+      "id": "hw_eyeball_flowers",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Bụi hoa mắt tròn",
+      "group": "Rừng tinh nghịch",
+      "file": "decor-assets/native/hw_eyeball_flowers.png",
+      "rightFile": "decor-assets/native/hw_eyeball_flowers_right.png",
+      "frames": [
+        "decor-assets/native/hw_eyeball_flowers_atlas.png",
+        "decor-assets/native/hw_eyeball_flowers_atlas.png",
+        "decor-assets/native/hw_eyeball_flowers_atlas.png",
+        "decor-assets/native/hw_eyeball_flowers_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_eyeball_flowers_atlas.png",
+        "decor-assets/native/hw_eyeball_flowers_atlas.png",
+        "decor-assets/native/hw_eyeball_flowers_atlas.png",
+        "decor-assets/native/hw_eyeball_flowers_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 104,
+          "h": 104
+        },
+        {
+          "x": 104,
+          "y": 0,
+          "w": 104,
+          "h": 104
+        },
+        {
+          "x": 208,
+          "y": 0,
+          "w": 104,
+          "h": 104
+        },
+        {
+          "x": 312,
+          "y": 0,
+          "w": 104,
+          "h": 104
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 104,
+          "w": 104,
+          "h": 104
+        },
+        {
+          "x": 104,
+          "y": 104,
+          "w": 104,
+          "h": 104
+        },
+        {
+          "x": 208,
+          "y": 104,
+          "w": 104,
+          "h": 104
+        },
+        {
+          "x": 312,
+          "y": 104,
+          "w": 104,
+          "h": 104
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 104,
+      "height": 104,
+      "pivotX": 52,
+      "pivotY": 100,
+      "bounds": {
+        "x": 3,
+        "y": 4,
+        "w": 98,
+        "h": 96
+      },
+      "rightBounds": {
+        "x": 6,
+        "y": 2,
+        "w": 92,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "nativeSha256": "107f23a175fdea6b4c2ce6f498afe0f676d3e6536e9b8d55791310673f3fb5cc"
+    },
+    {
+      "id": "hw_owl_tree_hollow",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Hốc cây có cú đêm",
+      "group": "Rừng tinh nghịch",
+      "file": "decor-assets/native/hw_owl_tree_hollow.png",
+      "rightFile": "decor-assets/native/hw_owl_tree_hollow_right.png",
+      "frames": [
+        "decor-assets/native/hw_owl_tree_hollow_atlas.png",
+        "decor-assets/native/hw_owl_tree_hollow_atlas.png",
+        "decor-assets/native/hw_owl_tree_hollow_atlas.png",
+        "decor-assets/native/hw_owl_tree_hollow_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_owl_tree_hollow_atlas.png",
+        "decor-assets/native/hw_owl_tree_hollow_atlas.png",
+        "decor-assets/native/hw_owl_tree_hollow_atlas.png",
+        "decor-assets/native/hw_owl_tree_hollow_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 136
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 136,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 96,
+          "y": 136,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 192,
+          "y": 136,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 288,
+          "y": 136,
+          "w": 96,
+          "h": 136
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 136,
+      "pivotX": 48,
+      "pivotY": 132,
+      "bounds": {
+        "x": 3,
+        "y": 20,
+        "w": 90,
+        "h": 112
+      },
+      "rightBounds": {
+        "x": 3,
+        "y": 3,
+        "w": 90,
+        "h": 129
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "nativeSha256": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0"
+    },
+    {
+      "id": "hw_dewy_cobweb_frame",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Giàn mạng nhện đọng sương",
+      "group": "Rừng tinh nghịch",
+      "file": "decor-assets/native/hw_dewy_cobweb_frame.png",
+      "rightFile": "decor-assets/native/hw_dewy_cobweb_frame_right.png",
+      "frames": [
+        "decor-assets/native/hw_dewy_cobweb_frame_atlas.png",
+        "decor-assets/native/hw_dewy_cobweb_frame_atlas.png",
+        "decor-assets/native/hw_dewy_cobweb_frame_atlas.png",
+        "decor-assets/native/hw_dewy_cobweb_frame_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_dewy_cobweb_frame_atlas.png",
+        "decor-assets/native/hw_dewy_cobweb_frame_atlas.png",
+        "decor-assets/native/hw_dewy_cobweb_frame_atlas.png",
+        "decor-assets/native/hw_dewy_cobweb_frame_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 136
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 136
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 136
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 136
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 136,
+          "w": 128,
+          "h": 136
+        },
+        {
+          "x": 128,
+          "y": 136,
+          "w": 128,
+          "h": 136
+        },
+        {
+          "x": 256,
+          "y": 136,
+          "w": 128,
+          "h": 136
+        },
+        {
+          "x": 384,
+          "y": 136,
+          "w": 128,
+          "h": 136
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 136,
+      "pivotX": 64,
+      "pivotY": 132,
+      "bounds": {
+        "x": 7,
+        "y": 2,
+        "w": 114,
+        "h": 130
+      },
+      "rightBounds": {
+        "x": 16,
+        "y": 2,
+        "w": 97,
+        "h": 130
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "449f9e332e94f704f770c3908c28daa2667d67fee51124131b7c36d90a77cdaa"
+    },
+    {
+      "id": "hw_pumpkin_spider_nest",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Tổ nhện trong bí ngô",
+      "group": "Rừng tinh nghịch",
+      "file": "decor-assets/native/hw_pumpkin_spider_nest.png",
+      "rightFile": "decor-assets/native/hw_pumpkin_spider_nest_right.png",
+      "frames": [
+        "decor-assets/native/hw_pumpkin_spider_nest_atlas.png",
+        "decor-assets/native/hw_pumpkin_spider_nest_atlas.png",
+        "decor-assets/native/hw_pumpkin_spider_nest_atlas.png",
+        "decor-assets/native/hw_pumpkin_spider_nest_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_pumpkin_spider_nest_atlas.png",
+        "decor-assets/native/hw_pumpkin_spider_nest_atlas.png",
+        "decor-assets/native/hw_pumpkin_spider_nest_atlas.png",
+        "decor-assets/native/hw_pumpkin_spider_nest_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 104,
+          "h": 96
+        },
+        {
+          "x": 104,
+          "y": 0,
+          "w": 104,
+          "h": 96
+        },
+        {
+          "x": 208,
+          "y": 0,
+          "w": 104,
+          "h": 96
+        },
+        {
+          "x": 312,
+          "y": 0,
+          "w": 104,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 104,
+          "h": 96
+        },
+        {
+          "x": 104,
+          "y": 96,
+          "w": 104,
+          "h": 96
+        },
+        {
+          "x": 208,
+          "y": 96,
+          "w": 104,
+          "h": 96
+        },
+        {
+          "x": 312,
+          "y": 96,
+          "w": 104,
+          "h": 96
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 104,
+      "height": 96,
+      "pivotX": 52,
+      "pivotY": 92,
+      "bounds": {
+        "x": 3,
+        "y": 12,
+        "w": 98,
+        "h": 80
+      },
+      "rightBounds": {
+        "x": 3,
+        "y": 3,
+        "w": 98,
+        "h": 89
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "nativeSha256": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5"
+    },
+    {
+      "id": "hw_root_halloween_gate",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cổng Halloween bằng rễ cây",
+      "group": "Tiểu cảnh",
+      "file": "decor-assets/native/hw_root_halloween_gate.png",
+      "rightFile": "decor-assets/native/hw_root_halloween_gate_right.png",
+      "frames": [
+        "decor-assets/native/hw_root_halloween_gate_atlas.png",
+        "decor-assets/native/hw_root_halloween_gate_atlas.png",
+        "decor-assets/native/hw_root_halloween_gate_atlas.png",
+        "decor-assets/native/hw_root_halloween_gate_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_root_halloween_gate_atlas.png",
+        "decor-assets/native/hw_root_halloween_gate_atlas.png",
+        "decor-assets/native/hw_root_halloween_gate_atlas.png",
+        "decor-assets/native/hw_root_halloween_gate_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 576,
+          "y": 0,
+          "w": 192,
+          "h": 208
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 208,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 192,
+          "y": 208,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 208,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 576,
+          "y": 208,
+          "w": 192,
+          "h": 208
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 192,
+      "height": 208,
+      "pivotX": 96,
+      "pivotY": 204,
+      "bounds": {
+        "x": 3,
+        "y": 30,
+        "w": 186,
+        "h": 174
+      },
+      "rightBounds": {
+        "x": 13,
+        "y": 2,
+        "w": 167,
+        "h": 202
+      },
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba"
+    },
+    {
+      "id": "hw_crooked_witch_hut",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Lều phù thủy mái vẹo",
+      "group": "Tiểu cảnh",
+      "file": "decor-assets/native/hw_crooked_witch_hut.png",
+      "rightFile": "decor-assets/native/hw_crooked_witch_hut_right.png",
+      "frames": [
+        "decor-assets/native/hw_crooked_witch_hut_atlas.png",
+        "decor-assets/native/hw_crooked_witch_hut_atlas.png",
+        "decor-assets/native/hw_crooked_witch_hut_atlas.png",
+        "decor-assets/native/hw_crooked_witch_hut_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_crooked_witch_hut_atlas.png",
+        "decor-assets/native/hw_crooked_witch_hut_atlas.png",
+        "decor-assets/native/hw_crooked_witch_hut_atlas.png",
+        "decor-assets/native/hw_crooked_witch_hut_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 576,
+          "y": 0,
+          "w": 192,
+          "h": 208
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 208,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 192,
+          "y": 208,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 208,
+          "w": 192,
+          "h": 208
+        },
+        {
+          "x": 576,
+          "y": 208,
+          "w": 192,
+          "h": 208
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 192,
+      "height": 208,
+      "pivotX": 96,
+      "pivotY": 204,
+      "bounds": {
+        "x": 13,
+        "y": 2,
+        "w": 167,
+        "h": 202
+      },
+      "rightBounds": {
+        "x": 12,
+        "y": 2,
+        "w": 169,
+        "h": 202
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "8cc9ae66eaedc8a93f504d9e6aafc3e3a7875245a8df540fd4d0dc2b9b840b1c"
+    },
+    {
+      "id": "hw_mini_pumpkin_house",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Nhà bí ngô thu nhỏ",
+      "group": "Tiểu cảnh",
+      "file": "decor-assets/native/hw_mini_pumpkin_house.png",
+      "rightFile": "decor-assets/native/hw_mini_pumpkin_house_right.png",
+      "frames": [
+        "decor-assets/native/hw_mini_pumpkin_house_atlas.png",
+        "decor-assets/native/hw_mini_pumpkin_house_atlas.png",
+        "decor-assets/native/hw_mini_pumpkin_house_atlas.png",
+        "decor-assets/native/hw_mini_pumpkin_house_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_mini_pumpkin_house_atlas.png",
+        "decor-assets/native/hw_mini_pumpkin_house_atlas.png",
+        "decor-assets/native/hw_mini_pumpkin_house_atlas.png",
+        "decor-assets/native/hw_mini_pumpkin_house_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 176
+        },
+        {
+          "x": 176,
+          "y": 0,
+          "w": 176,
+          "h": 176
+        },
+        {
+          "x": 352,
+          "y": 0,
+          "w": 176,
+          "h": 176
+        },
+        {
+          "x": 528,
+          "y": 0,
+          "w": 176,
+          "h": 176
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 176,
+          "w": 176,
+          "h": 176
+        },
+        {
+          "x": 176,
+          "y": 176,
+          "w": 176,
+          "h": 176
+        },
+        {
+          "x": 352,
+          "y": 176,
+          "w": 176,
+          "h": 176
+        },
+        {
+          "x": 528,
+          "y": 176,
+          "w": 176,
+          "h": 176
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 176,
+      "height": 176,
+      "pivotX": 88,
+      "pivotY": 172,
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 167,
+        "h": 170
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 2,
+        "w": 169,
+        "h": 170
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "b014fbff87fc33fc1cdb4ec4ae3903cffc1335e4118d422f406da20fd481e129"
+    },
+    {
+      "id": "hw_ghost_well",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Giếng có ma ló đầu",
+      "group": "Tiểu cảnh",
+      "file": "decor-assets/native/hw_ghost_well.png",
+      "rightFile": "decor-assets/native/hw_ghost_well_right.png",
+      "frames": [
+        "decor-assets/native/hw_ghost_well_atlas.png",
+        "decor-assets/native/hw_ghost_well_atlas.png",
+        "decor-assets/native/hw_ghost_well_atlas.png",
+        "decor-assets/native/hw_ghost_well_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_ghost_well_atlas.png",
+        "decor-assets/native/hw_ghost_well_atlas.png",
+        "decor-assets/native/hw_ghost_well_atlas.png",
+        "decor-assets/native/hw_ghost_well_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 176,
+          "h": 192
+        },
+        {
+          "x": 176,
+          "y": 0,
+          "w": 176,
+          "h": 192
+        },
+        {
+          "x": 352,
+          "y": 0,
+          "w": 176,
+          "h": 192
+        },
+        {
+          "x": 528,
+          "y": 0,
+          "w": 176,
+          "h": 192
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 192,
+          "w": 176,
+          "h": 192
+        },
+        {
+          "x": 176,
+          "y": 192,
+          "w": 176,
+          "h": 192
+        },
+        {
+          "x": 352,
+          "y": 192,
+          "w": 176,
+          "h": 192
+        },
+        {
+          "x": 528,
+          "y": 192,
+          "w": 176,
+          "h": 192
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 176,
+      "height": 192,
+      "pivotX": 88,
+      "pivotY": 188,
+      "bounds": {
+        "x": 21,
+        "y": 2,
+        "w": 134,
+        "h": 186
+      },
+      "rightBounds": {
+        "x": 24,
+        "y": 2,
+        "w": 129,
+        "h": 186
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "nativeSha256": "b56698fa4747221b6f2b2945c8c691d3c5c17ee785fa6827e5d5993fcaef5c6e"
+    },
+    {
+      "id": "hw_violet_mist_pond",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Ao sương tím",
+      "group": "Tiểu cảnh",
+      "file": "decor-assets/native/hw_violet_mist_pond.png",
+      "rightFile": "decor-assets/native/hw_violet_mist_pond_right.png",
+      "frames": [
+        "decor-assets/native/hw_violet_mist_pond_atlas.png",
+        "decor-assets/native/hw_violet_mist_pond_atlas.png",
+        "decor-assets/native/hw_violet_mist_pond_atlas.png",
+        "decor-assets/native/hw_violet_mist_pond_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_violet_mist_pond_atlas.png",
+        "decor-assets/native/hw_violet_mist_pond_atlas.png",
+        "decor-assets/native/hw_violet_mist_pond_atlas.png",
+        "decor-assets/native/hw_violet_mist_pond_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 192,
+          "h": 144
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 192,
+          "h": 144
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 192,
+          "h": 144
+        },
+        {
+          "x": 576,
+          "y": 0,
+          "w": 192,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 192,
+          "h": 144
+        },
+        {
+          "x": 192,
+          "y": 144,
+          "w": 192,
+          "h": 144
+        },
+        {
+          "x": 384,
+          "y": 144,
+          "w": 192,
+          "h": 144
+        },
+        {
+          "x": 576,
+          "y": 144,
+          "w": 192,
+          "h": 144
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 192,
+      "height": 144,
+      "pivotX": 96,
+      "pivotY": 140,
+      "bounds": {
+        "x": 3,
+        "y": 20,
+        "w": 186,
+        "h": 120
+      },
+      "rightBounds": {
+        "x": 9,
+        "y": 2,
+        "w": 174,
+        "h": 138
+      },
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "8f2ffb5b2da2698948017a85ce96a4f5a7024939ed22597f794428f861b99005"
+    },
+    {
+      "id": "hw_lantern_ancient_tree",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cây cổ thụ treo đèn",
+      "group": "Tiểu cảnh",
+      "file": "decor-assets/native/hw_lantern_ancient_tree.png",
+      "rightFile": "decor-assets/native/hw_lantern_ancient_tree_right.png",
+      "frames": [
+        "decor-assets/native/hw_lantern_ancient_tree_atlas.png",
+        "decor-assets/native/hw_lantern_ancient_tree_atlas.png",
+        "decor-assets/native/hw_lantern_ancient_tree_atlas.png",
+        "decor-assets/native/hw_lantern_ancient_tree_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_lantern_ancient_tree_atlas.png",
+        "decor-assets/native/hw_lantern_ancient_tree_atlas.png",
+        "decor-assets/native/hw_lantern_ancient_tree_atlas.png",
+        "decor-assets/native/hw_lantern_ancient_tree_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 208,
+          "h": 224
+        },
+        {
+          "x": 208,
+          "y": 0,
+          "w": 208,
+          "h": 224
+        },
+        {
+          "x": 416,
+          "y": 0,
+          "w": 208,
+          "h": 224
+        },
+        {
+          "x": 624,
+          "y": 0,
+          "w": 208,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 208,
+          "h": 224
+        },
+        {
+          "x": 208,
+          "y": 224,
+          "w": 208,
+          "h": 224
+        },
+        {
+          "x": 416,
+          "y": 224,
+          "w": 208,
+          "h": 224
+        },
+        {
+          "x": 624,
+          "y": 224,
+          "w": 208,
+          "h": 224
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 208,
+      "height": 224,
+      "pivotX": 104,
+      "pivotY": 220,
+      "bounds": {
+        "x": 3,
+        "y": 10,
+        "w": 202,
+        "h": 210
+      },
+      "rightBounds": {
+        "x": 3,
+        "y": 6,
+        "w": 202,
+        "h": 214
+      },
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "07a3c94d2bb0c5eb857ee20ad53d4cbb46a1bf6512e901c83d053e83bdc36d93"
     }
   ]
 }

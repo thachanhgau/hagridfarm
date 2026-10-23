@@ -1,24 +1,24 @@
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.74';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.74';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.74';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.74';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.74';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.74';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.74';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.74';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.74';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.74';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.74';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.74';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.74';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.74';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.74';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.74';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.74';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.74';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.74';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.74';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.74';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.75';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.75';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.75';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.75';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.75';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.75';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.75';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.75';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.75';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.75';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.75';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.75';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.75';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.75';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.75';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.75';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.75';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.75';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.75';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.75';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.75';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -30,12 +30,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.74';
+} from './scene-animation.mjs?v=24.9.75';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.74';
+} from './forest-surround.mjs?v=24.9.75';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -1451,7 +1451,7 @@ export async function createGarden(canvas, options = {}) {
     }
     if(object.kind==='festival'){
       const frame=decorFrameAt(object.asset,clock,{seed:object.id,reducedMotion:clock===0});
-      drawAsset(frame.file?{...object.asset,file:frame.file}:object.asset,object.xy[0],object.xy[1]);
+      drawAsset(frame.file?{...object.asset,file:frame.file,...(frame.atlasRect?{atlasRect:frame.atlasRect}:{})}:object.asset,object.xy[0],object.xy[1]);
       drawHeroMotion(context,object,activeEvent,clock);return;
     }
     if (object.kind === 'store-decor') {
@@ -1463,7 +1463,7 @@ export async function createGarden(canvas, options = {}) {
         reducedMotion: clock === 0,
       });
       const activeAsset = frameInfo.file
-        ? {...object.asset, file: frameInfo.file, bounds: frameInfo.bounds ?? object.asset.bounds}
+        ? {...object.asset, file: frameInfo.file, bounds: frameInfo.bounds ?? object.asset.bounds,...(frameInfo.atlasRect?{atlasRect:frameInfo.atlasRect}:{})}
         : object.asset;
       const needsFallbackFlip = frameInfo.facing === 'right' && !object.asset?.rightFile && !(object.asset?.rightFrames?.length);
       drawAsset(activeAsset, object.xy[0], object.xy[1], null, null, needsFallbackFlip);
@@ -1488,7 +1488,7 @@ export async function createGarden(canvas, options = {}) {
           greet: false,
           reducedMotion: clock === 0,
         });
-        const activeAsset = {...asset,...(frameInfo.file?{file:frameInfo.file}:{}),...(object.id==='greenhouse'?{seasonalKind:'greenhouse-roof'}:{})};
+        const activeAsset = {...asset,...(frameInfo.file?{file:frameInfo.file}:{}),...(frameInfo.atlasRect?{atlasRect:frameInfo.atlasRect}:{}),...(object.id==='greenhouse'?{seasonalKind:'greenhouse-roof'}:{})};
         drawAsset(activeAsset, object.xy[0], object.xy[1]);
         if (greeting) label(context, '♥', object.xy[0], object.xy[1] - 85, '#f5d69a', 'bold 16px sans-serif');
         if (object.id === 'gardener' && object.speechText) {

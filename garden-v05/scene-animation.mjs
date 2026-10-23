@@ -171,8 +171,9 @@ export function decorFrameAt(asset, clock = 0, options = {}) {
     ? asset.rightFrames
     : (Array.isArray(asset.frames) && asset.frames.length ? asset.frames : [baseFile]);
   const reducedMotion = options.reducedMotion === true || finite(clock) === 0;
+  const rects=facing==='right'?asset.rightAtlasRects:asset.atlasRects;
   if (reducedMotion || frames.length <= 1) {
-    return {file: frames[0] ?? baseFile, index: 0, facing, bobY: 0, swayX: 0};
+    return {file: frames[0] ?? baseFile, index: 0, facing, bobY: 0, swayX: 0,...(rects?.[0]?{atlasRect:rects[0]}:{})};
   }
   const durations = frames.map((_, index) => positiveDuration(asset.durations?.[index], 340));
   const totalDuration = durations.reduce((sum, d) => sum + d, 0);
@@ -191,6 +192,7 @@ export function decorFrameAt(asset, clock = 0, options = {}) {
   }
   return {
     file: frames[chosenIndex] ?? baseFile,
+    ...(rects?.[chosenIndex]?{atlasRect:rects[chosenIndex]}:{}),
     index: chosenIndex,
     facing,
     bobY: chosenIndex === 1 || chosenIndex === 3 ? -1 : 0,

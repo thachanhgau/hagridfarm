@@ -1,8 +1,8 @@
 // ACP sale of Khu Vườn Hagrid, inside the game, for KTV Gia Tinh only (owner 23/10/2026; the server checks the
 // account on every call: manageHagridGardenSales). The four scheduled programs run from code; here each can be
 // switched off, and hand sales (at most 40%) added with a start and an end in Vietnam time.
-import {$,el,num,button} from './ui-utils.mjs?v=24.9.74';
-import {iconButton} from './pixel-icons.mjs?v=24.9.74';
+import {$,el,num,button} from './ui-utils.mjs?v=24.9.75';
+import {iconButton} from './pixel-icons.mjs?v=24.9.75';
 
 const SCOPE_LABELS = Object.freeze({all:'Mọi món có sale',crop:'Vật phẩm cây',creature:'Vật phẩm sinh vật, Ổ ấm',festival:'Đồ lễ hội',items:'Chọn món'});
 const WEEKDAYS = ['CN','T2','T3','T4','T5','T6','T7'];

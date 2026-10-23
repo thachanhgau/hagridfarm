@@ -95,9 +95,9 @@
     "keepsakeSpecies": 12
   },
   "remaining": {
-    "halloween": {
+    "halloweenSales": {
       "count": 25,
-      "status": "deferred-at-owner-request"
+      "status": "direct-price-approval-pending"
     }
   },
   "retained": {
@@ -375,5 +375,14 @@
     "evidence": "artwork-completion-20261023.json",
     "nativeFrames": 650,
     "allNonHalloweenBacklogClosed": true
+  },
+  "halloween": {
+    "version": "24.9.75",
+    "artworkComplete": true,
+    "items": 30,
+    "views": 60,
+    "newRuntimeItems": 25,
+    "existingFivePreserved": true,
+    "evidence": "halloween-import-20261023.md"
   }
 }

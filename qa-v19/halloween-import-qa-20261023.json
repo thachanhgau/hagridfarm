@@ -1,0 +1,54 @@
+[
+  {
+    "browser": "Chrome",
+    "packaged": false,
+    "network": "all intercepted; no real services",
+    "cards": 30,
+    "pendingPriceCards": 25,
+    "bought": 30,
+    "idempotentPurchases": 30,
+    "placementAngles": 60,
+    "storedWithoutOwnershipLoss": 30,
+    "missing": [],
+    "balance": 82600,
+    "viewports": [
+      {
+        "width": 375,
+        "height": 812,
+        "all30RightViews": true
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "all30RightViews": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "packaged": false,
+    "network": "all intercepted; no real services",
+    "cards": 30,
+    "pendingPriceCards": 25,
+    "bought": 30,
+    "idempotentPurchases": 30,
+    "placementAngles": 60,
+    "storedWithoutOwnershipLoss": 30,
+    "missing": [],
+    "balance": 82600,
+    "viewports": [
+      {
+        "width": 375,
+        "height": 812,
+        "all30RightViews": true
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "all30RightViews": true
+      }
+    ],
+    "errors": []
+  }
+]

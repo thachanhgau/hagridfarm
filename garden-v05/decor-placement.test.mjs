@@ -70,8 +70,8 @@ test('a tall piece may not stand in front of a plot and hide it', () => {
   assert.equal(at(11, 7, {itemId: 'sp_fawkes_perch'}), '');
 });
 
-test('every special product fits somewhere in the full garden, in both views', () => {
-  for (const item of manifest.items.filter(item => item.collection === 'special')) {
+test('every special and Halloween product fits somewhere in the full garden, in both views', () => {
+  for (const item of manifest.items.filter(item => ['special','festival'].includes(item.collection))) {
     for (const facing of ['default', 'right']) assert.ok(free(item.id, facing), `${item.id} ${facing}`);
   }
 });
@@ -97,3 +97,10 @@ test('2×1 and 3×1 pieces may stand on a path; 2×2 and up may not', () => {
   assert.equal(at(7, 8.5, {itemId: 'decor_broom_rack'}), '');
   assert.match(at(7, 8.5, {itemId: 'sp_aragog_hollow'}), /lối đi/);
 });
+
+ test('zero-count keepsake keys reserve no land; earned keepsakes protect their actual band, not the later field',()=>{
+ const state={plots:[],built:[],decorations:[],keepsakes:{puffskein:0}};
+ assert.equal(at(10,30,{state,decorations:{}}),'');
+ state.keepsakes.puffskein=1;assert.equal(at(10,30,{state,decorations:{}}),'');
+ assert.match(at(10,26,{state,decorations:{}}),/kỷ vật/);
+ });

@@ -1,11 +1,11 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.74';
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.74';
-import {el,button} from './ui-utils.mjs?v=24.9.74';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.74';
-import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.74';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.74';
-import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.74';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.74';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.75';
+import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.75';
+import {el,button} from './ui-utils.mjs?v=24.9.75';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.75';
+import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.75';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.75';
+import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.75';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.75';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 const OBJECT_REACH=Object.freeze({hut:2.5,pond:2.5,oak:1,pine:1});
@@ -74,7 +74,9 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  if(plotRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền thửa đất.';
  if(penRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền chuồng.';
  for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&hits(d.col-0.25,d.row-0.25,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
- if(Object.keys(state?.keepsakes??{}).length&&rect.r1>24.25)return 'Lối này dành cho đài kỷ vật.';
+ // Saves contain all species keys, including zero counts. Only earned statuettes reserve
+ // their real south-aisle band; the level110 field beyond it remains usable.
+ if(Object.values(state?.keepsakes??{}).some(n=>n>0)&&[rect.c0,rect.c1].some(c=>{const y=keepsakeAnchorRow(stage??GARDEN_STAGES.at(-1),c);return rect.r1>y-1.75&&rect.r0<y+.5;}))return 'Lối này dành cho đài kỷ vật.';
  const near=(c,r,reach)=>Math.hypot(Math.max(rect.c0-c,0,c-rect.c1),Math.max(rect.r0-r,0,r-rect.r1))<reach-0.5;
  for(const o of map?.objects??[])if(near(o.col,o.row,OBJECT_REACH[o.id]??1))return 'Chỗ này vướng cảnh vật.';
  for(const w of Object.values(WIZARD_LAYOUT))if(near(w.col,w.row,1.5))return 'Chỗ này vướng công trình.';

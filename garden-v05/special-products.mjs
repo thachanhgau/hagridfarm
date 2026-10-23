@@ -64,16 +64,44 @@ export const SPECIAL_PRODUCTS = Object.freeze(ROWS.map(([id, label, level, price
 // level. Owner 20/10/2026 («nhập vô đi») on the proposed prices. Decoration only. Server copy: garden-wallet-catalog.js.
 export const FESTIVAL_COLLECTION = 'festival';
 // [id, label, price, footprint, short description, festival]
+// The 25 new prices below are proposed; connected sales remain blocked until the owner approves.
+const HALLOWEEN_NEW_PRICES_APPROVED = false;
 const FESTIVAL_ROWS = [
   ['hw_halloween_sign', 'Biển gỗ Halloween', 1800, [1, 1], 'Tấm biển gỗ treo đèn bí ngô, chỉ lối vào đêm hội.', 'event_halloween'],
-  ['hw_wooden_black_cat', 'Tượng mèo đen bằng gỗ', 2000, [1, 1], 'Chú mèo đen tạc gỗ, thỉnh thoảng chớp mắt.', 'event_halloween'],
-  ['hw_cloth_ghost_lantern', 'Đèn ma vải', 2200, [1, 1], 'Con ma vải treo trên cần gỗ, đung đưa trong gió.', 'event_halloween'],
+  ['hw_wooden_black_cat', 'Tượng mèo đen bằng gỗ', 2000, [1, 1], 'Chú mèo đen tạc gỗ với đôi mắt vàng.', 'event_halloween'],
+  ['hw_cloth_ghost_lantern', 'Đèn ma vải', 2200, [1, 1], 'Con ma vải treo trên cần gỗ.', 'event_halloween'],
   ['hw_pumpkin_stack', 'Chồng bí ngô khắc mặt', 2400, [1, 1], 'Ba quả bí ngô khắc mặt chồng lên nhau, quả trên đội mũ phù thủy.', 'event_halloween'],
   ['hw_monster_candy_barrel', 'Thùng kẹo quái vật', 2400, [1, 1], 'Thùng gỗ đầy kẹo, nắp há miệng như quái vật.', 'event_halloween'],
+  ["hw_dead_bat_tree","Cây khô treo dơi",3400,[2,1],"Cây khô với đàn dơi nhỏ giữa những nhánh cong.","event_halloween"],
+  ["hw_bat_lantern","Đèn lồng dơi",2200,[1,1],"Đèn lồng tạo hình dơi, ánh nến ấm trong lồng.","event_halloween"],
+  ["hw_skull_lantern","Đèn đầu lâu",2200,[1,1],"Đèn đầu lâu trên trụ gỗ.","event_halloween"],
+  ["hw_haunted_house_lantern","Đèn lồng hình nhà ma",2600,[1,1],"Ngôi nhà ma thu nhỏ với cửa sổ ánh vàng.","event_halloween"],
+  ["hw_ghost_orb","Quả cầu ma nhỏ",2400,[1,1],"Quả cầu kính với bóng ma nhỏ bên trong.","event_halloween"],
+  ["hw_spider_light_garland","Giàn đèn nhện",3600,[2,1],"Giàn dây treo đèn hình nhện.","event_halloween"],
+  ["hw_soul_bottle","Bình linh hồn phát sáng",2400,[1,1],"Chiếc bình chứa ánh sáng linh hồn.","event_halloween"],
+  ["hw_candy_cauldron","Vạc kẹo sôi",2400,[1,1],"Vạc lớn chứa kẹo cho đêm hội.","event_halloween"],
+  ["hw_halloween_potion_table","Bàn pha độc dược Halloween",3800,[2,1],"Bàn gỗ bày chai độc dược, sách và nến Halloween.","event_halloween"],
+  ["hw_monster_bookcase","Tủ sách há miệng",3600,[2,1],"Tủ sách hình quái vật với miệng răng nhọn.","event_halloween"],
+  ["hw_blinking_chest","Rương nháy mắt",3400,[2,1],"Rương gỗ với đôi mắt quái vật trên nắp.","event_halloween"],
+  ["hw_witch_hat_rack","Giá treo mũ phù thủy",2400,[1,1],"Giá gỗ treo những chiếc mũ phù thủy.","event_halloween"],
+  ["hw_caramel_apple_cart","Xe đẩy táo bọc kẹo",4000,[2,1],"Xe gỗ bày táo bọc kẹo và mái sọc.","event_halloween"],
+  ["hw_grinning_stump","Gốc cây mặt quỷ",3400,[2,1],"Gốc cây có khuôn mặt quỷ và rễ uốn cong.","event_halloween"],
+  ["hw_skull_mushrooms","Cụm nấm hình đầu lâu",2000,[1,1],"Cụm nấm nhợt màu tạo hình đầu lâu.","event_halloween"],
+  ["hw_eyeball_flowers","Bụi hoa mắt tròn",2200,[1,1],"Bụi hoa có những con mắt tròn nhiều màu.","event_halloween"],
+  ["hw_owl_tree_hollow","Hốc cây có cú đêm",2600,[1,1],"Hốc cây nhỏ làm chỗ đậu cho cú đêm.","event_halloween"],
+  ["hw_dewy_cobweb_frame","Giàn mạng nhện đọng sương",3600,[2,1],"Khung gỗ phủ mạng nhện và những giọt sương.","event_halloween"],
+  ["hw_pumpkin_spider_nest","Tổ nhện trong bí ngô",2400,[1,1],"Bí ngô với tổ nhện bên trong.","event_halloween"],
+  ["hw_root_halloween_gate","Cổng Halloween bằng rễ cây",5400,[3,1],"Cổng vòm bằng rễ cây, bí ngô và đèn treo.","event_halloween"],
+  ["hw_crooked_witch_hut","Lều phù thủy mái vẹo",5800,[2,2],"Lều phù thủy nhỏ với mái vẹo và cửa sổ ấm.","event_halloween"],
+  ["hw_mini_pumpkin_house","Nhà bí ngô thu nhỏ",5600,[2,2],"Ngôi nhà bí ngô với cửa ra vào nhỏ.","event_halloween"],
+  ["hw_ghost_well","Giếng có ma ló đầu",5200,[2,2],"Giếng đá có bóng ma nhìn qua miệng giếng.","event_halloween"],
+  ["hw_violet_mist_pond","Ao sương tím",6600,[3,2],"Ao nhỏ với sắc tím và những tảng đá quanh bờ.","event_halloween"],
+  ["hw_lantern_ancient_tree","Cây cổ thụ treo đèn",7200,[3,2],"Cây cổ thụ tán thu với những chiếc đèn treo.","event_halloween"],
 ];
-export const FESTIVAL_PRODUCTS = Object.freeze(FESTIVAL_ROWS.map(([id, label, price, footprint, lore, season]) => Object.freeze({
+export const FESTIVAL_PRODUCTS = Object.freeze(FESTIVAL_ROWS.map(([id, label, price, footprint, lore, season], index) => Object.freeze({
   id, kind: 'decoration', collection: FESTIVAL_COLLECTION, decorationId: id, icon: id, label, level: 1, price, quantity: 1, dailyLimit: 1,
   footprint: Object.freeze(footprint), lore, season,
+  ...(index >= 5 && !HALLOWEEN_NEW_PRICES_APPROVED ? {forSale: false} : {}),
   description: `${lore} · Đồ lễ hội, chỉ để trang trí. Chỉ bán trong ${SEASON_LABELS[season]}.`,
 })));
 

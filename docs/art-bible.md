@@ -100,6 +100,8 @@ Quy tắc:
 
 ## 8. Checklist nhận một asset mới
 
+**V24.9.75 — đồ lễ hội:** sprite lớn phải được kiểm đặt/cất/xoay với save có đủ key kỷ vật bằng0; key tồn tại không có nghĩa đã có tượng. Chỉ bảo vệ dải kỷ vật thực tế, không khóa cả cánh đồng mở về sau. Giữ các frame glow/tĩnh đúng metadata, không quảng cáo chớp mắt/đung đưa khi chưa có pose. Atlas decor phải mang rect đúng góc vào cả picker frame và renderer; xác nhận từng rect RGBA trùng native nguồn.
+
 **V24.9.74 — atlas chuyển động:** lưu prompt và hash trước/sau tạo master; không tin số file hoặc lưới atlas danh nghĩa. Xác nhận đủ silhouette/pose, dùng khe alpha hoặc component để tách đúng hình, không cắt theo ô đều khi nguồn lệch. Duyệt ảnh native 1×, giữ pivot chân và palette24. Atlas runtime phải đối chiếu RGBA từng rect với PNG native; kiểm clip được gọi thực tế khi chăm/thu hoạch, hitbox của góc được vẽ riêng và reduced motion. [Đợt hoàn thiện](artwork-completion-20261023.md) đóng toàn bộ backlog ngoài Halloween theo yêu cầu.
 
 **V24.9.73 — icon nhỏ:** vật tư/cao cấp có vùng mực tối đa 40×40 trong canvas 64×64, vừa ô kho 40px ở 1×. Vẽ mảng màu lớn và biểu tượng rõ, bỏ chi tiết nhỏ hơn pixel đích. UI ưu tiên tỷ lệ nguyên và tọa độ nguyên khi ảnh vừa ô; không nhân grayscale/giảm sáng lên ảnh hàng khóa cấp trong cửa hàng. Duyệt ảnh ở native 1× và đúng kích thước CSS trong shop/kho; xem [đợt chất lượng v2](artwork-quality-v2-20261023.md).

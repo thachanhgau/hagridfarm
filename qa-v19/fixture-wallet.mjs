@@ -36,11 +36,12 @@ const fail=(reason,message,details={})=>{const e=Error(message);e.definitive=tru
 const stable=v=>JSON.stringify(v,Object.keys(v).sort());
 
 /** `day` (YYYY-MM-DD) moves only the Vietnam calendar day, for festival QA; crop timers keep real time. */
-export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,now=()=>Date.now()}={}){
+export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,now=()=>Date.now()}={}){
  const dayOffset=day?Date.parse(day+"T12:00:00+07:00")-now():0,dayKey=()=>vnDayKey(now()+dayOffset);
  const past=scenario.endsWith("ready"),origin=past?now()-26*3600000:now();
  const fresh=scenario==="new";
  let state=fresh?E.newGame(origin):E.testProfile(level,origin);
+ if(scenario==="halloween"){state.decorations=[];state.creatures=[];}
  if(["owned","feeding","animal-ready"].includes(scenario)){
   state=E.adopt(state,"puffskein",origin);
   if(scenario!=="owned")state=E.feed(state,"puffskein",origin);
@@ -69,7 +70,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   state.creatureFacings={puffskein:"default",bowtruckle:"right",niffler:"default",kneazle:"right",hippogriff:"default",unicorn:"right"};
   if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{})};
  }
- const catalog=unlockedCatalog(state.level,dayKey()).map(item=>({...item,dailyRemaining:item.dailyLimit}));
+ const catalog=unlockedCatalog(state.level,dayKey()).map(item=>({...item,dailyRemaining:item.dailyLimit,...(previewHalloween&&item.collection==='festival'?{forSale:undefined}:{})}));
  const storeDecors=catalog.filter(i=>i.kind==="decoration").map(i=>i.id),full=scenario==="empty"&&level>=30;
  const spendable=galleons??2500,bankBalance=Math.min(1000,spendable);
  const garden={
@@ -464,6 +465,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   if(seen)return response(seen.receipt);
   const entry=catalog.find(i=>i.id===c.itemId);
   if(!entry)fail("unknown-item","Không tìm thấy mặt hàng.");
+  if(entry.forSale===false)fail("not-for-sale","Món này đang chờ duyệt giá.");
   const qty=Math.max(1,Number(c.quantity)||1),cost=packTotal(entry,qty);
   if(c.expectedTotal!==cost)fail("price-changed","Giá đã thay đổi.");
   if(wallet.spendable<cost)fail("insufficient-balance","Chưa đủ Galleons trong ví thử nghiệm.",{required:cost});
@@ -497,7 +499,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
 // The page side: the real garden client over the in-memory server above.
 export function createEmulatorClient(){
  const query=new URLSearchParams(globalThis.location?.search||"");
- const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null});
+ const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null,previewHalloween:query.get("halloweenPreview")==="1"});
  let actions=0;
  const client=createGardenClient(async(name,data)=>{
   const result=server.handle(name,data);
