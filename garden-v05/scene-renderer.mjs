@@ -1,21 +1,22 @@
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.66';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.66';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.66';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.66';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.66';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.66';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.66';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.66';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.66';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.66';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.66';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.66';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.66';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.66';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.66';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.66';
-import {penArt,penFiles,penShelterFrame,drawPenShelter} from './pen-art.mjs?v=24.9.66';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.66';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.67';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.67';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.67';
+import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.67';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.67';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.67';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.67';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.67';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.67';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.67';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.67';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.67';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.67';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.67';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.67';
+import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.67';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.67';
+import {penArt,penFiles,penShelterFrame,drawPenShelter} from './pen-art.mjs?v=24.9.67';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.67';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -27,13 +28,13 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.66';
+} from './scene-animation.mjs?v=24.9.67';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
   forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.66';
+} from './forest-surround.mjs?v=24.9.67';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -854,7 +855,7 @@ export async function createGarden(canvas, options = {}) {
       if (allowMissingAssets) resolve();
       else reject(new Error(`Không tải được asset Khu vườn Hagrid: ${file}`));
     };
-    image.src = file;
+    image.src = runtimeImageUrl(file);
   })));
 
   const items = new Map(motion.items.map((item) => [item.id, item]));

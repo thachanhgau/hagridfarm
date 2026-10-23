@@ -1,4 +1,4 @@
-import {ITEM_ART} from './item-art.mjs?v=24.9.66';
+import {ITEM_ART} from './item-art.mjs?v=24.9.67';
 
 const PEN_KEYS = Object.freeze(Object.keys(ITEM_ART).filter((key) => /^pen_[1-6]$/.test(key)));
 

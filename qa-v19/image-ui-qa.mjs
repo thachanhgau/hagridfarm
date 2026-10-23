@@ -9,10 +9,11 @@ const {chromium,webkit}=require(dependencies+'playwright');
 const sharp=require(dependencies+'sharp');
 const base=process.env.HAGRID_QA_URL||'http://127.0.0.1:62795';
 const browser=await (process.env.HAGRID_QA_WEBKIT?webkit.launch():chromium.launch({channel:'chrome',headless:true}));
-const errors=[],report={browser:process.env.HAGRID_QA_WEBKIT?'WebKit':'Chrome',gallery:{},viewports:[],creatures:[],scenes:[]};
+const errors=[],rasterRequests=new Set(),report={browser:process.env.HAGRID_QA_WEBKIT?'WebKit':'Chrome',gallery:{},viewports:[],creatures:[],scenes:[]};
 const context=await browser.newContext({viewport:{width:1280,height:800},reducedMotion:'reduce'});
 context.on('page',page=>{
  page.on('pageerror',error=>errors.push(error.message));
+ page.on('request',request=>{if(request.resourceType()==='image'&&/^https?:/.test(request.url()))rasterRequests.add(request.url());});
  page.on('response',response=>{if(response.status()>=400)errors.push(`${response.status()} ${response.url()}`);});
 });
 // Detect the offscreen-cache regression: a second translation made shelters disappear.
@@ -21,8 +22,8 @@ await context.addInitScript(()=>{
  window.__dogDraws=[];
  const draw=CanvasRenderingContext2D.prototype.drawImage;
  CanvasRenderingContext2D.prototype.drawImage=function(image,...args){
-  const id=image?.src?.match(/native-items\/(pen_[1-6])\.png/)?.[1];
-  const dogFrame=image?.src?.match(/native\/three-headed-dog\/frame-(\d+)\.png/)?.[1];
+  const id=image?.src?.match(/native-items\/(pen_[1-6])\.webp/)?.[1];
+  const dogFrame=image?.src?.match(/native\/three-headed-dog\/frame-(\d+)\.webp/)?.[1];
   if(dogFrame&&!window.__dogDraws.includes(dogFrame))window.__dogDraws.push(dogFrame);
   if(id&&args.length===4){
    const [x,y,w,h]=args,m=this.getTransform();
@@ -81,7 +82,7 @@ try{
  // Keep an actual close view of the two largest residents and their shelter.
  await page.locator('#creatureTray [data-id="dragon"]').click();
  if(await page.locator('#creatureDock').isVisible())await page.locator('#dockToggle').click();
- await capture(page,'pens-with-creatures-20261022.png');
+ await capture(page,'pens-webp-20261023.png');
  for(const viewport of [{width:375,height:812},{width:812,height:375},{width:1280,height:800}]){
   await page.setViewportSize(viewport);await page.goto(fixture());await ready(page);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
@@ -111,7 +112,8 @@ try{
  await page.locator('#creatureOptionsButton').click();await page.locator('#petButton').click();
  await page.waitForFunction(()=>['13','14','15','16'].every(frame=>window.__dogDraws.includes(frame)));
  report.whiteDogAnimations={eat:4,care:4};
+ report.rasterRequests=rasterRequests.size;report.nonWebpRequests=[...rasterRequests].filter(url=>!new URL(url).pathname.endsWith('.webp'));assert.deepEqual(report.nonWebpRequests,[]);
  assert.deepEqual(errors,[]);report.errors=errors;
- await fs.writeFile(new URL(`image-ui-${report.browser.toLowerCase()}-20261022.json`,import.meta.url),JSON.stringify(report,null,2)+'\n');
+ await fs.writeFile(new URL(`image-ui-${report.browser.toLowerCase()}-webp-20261023.json`,import.meta.url),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify(report,null,2));
 }finally{await browser.close();}

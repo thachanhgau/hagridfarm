@@ -18,6 +18,7 @@ Independent local Git repository created with owner approval on 2026-10-17. This
 - SHA-256 manifest: `qa-v19/v24.9.10-sha256.json`
 - Thiết kế (đã duyệt): `docs/core-design.md`, `docs/art-bible.md` · Playtest (nháp): `docs/playtest-plan.md`
 - Bộ ảnh V24.9.66: `docs/artwork-refresh-20261022.md`; xem `qa-v19/art-gallery.html` (98 mẫu/khung), hoặc fixture `level=500&scenario=habitats` để xem đủ 12 thú trong 6 chuồng.
+- WebP V24.9.67: chạy `node garden-v05/build-runtime-webp.mjs` sau mọi lần xuất lại PNG; `--check` phát hiện bản WebP cũ. Bộ chạy chỉ dùng WebP, giữ PNG nguồn. Kết quả và kích thước trong `docs/webp-runtime-20261023.md`.
 
 ## Preview
 

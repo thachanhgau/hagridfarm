@@ -1,10 +1,11 @@
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.66';
-import {el,button} from './ui-utils.mjs?v=24.9.66';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.66';
-import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.66';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.66';
-import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.66';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.66';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.67';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.67';
+import {el,button} from './ui-utils.mjs?v=24.9.67';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.67';
+import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.67';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.67';
+import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.67';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.67';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 const OBJECT_REACH=Object.freeze({hut:2.5,pond:2.5,oak:1,pine:1});
@@ -174,7 +175,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  function render(problem=problemAt(at)){
   const saved=savedSpot(),savedFacing=decorFacingFor(getDecorations()??{},item.id);
   const right=selectedFacing==='right';
-  thumb.src=right?(item.rightFile||item.file):item.file;
+  thumb.src=runtimeImageUrl(right?(item.rightFile||item.file):item.file);
   thumb.classList.toggle('is-flipped',right&&!item.rightFile);
   const here=sameSpot(at,saved);
   where.textContent=!at?'Chạm chỗ trống trên vườn':here?'Đang đặt ở đây':problem||'Chỗ mới · nhấn «Đặt»';

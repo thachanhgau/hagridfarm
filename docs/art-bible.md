@@ -92,6 +92,8 @@ Quy tắc:
 
 **Bộ ảnh V24.9.66:** `item-art-manifest.json` và `three-headed-dog-art-generation.json` giữ prompt, nguồn và hash riêng của bộ mới. `build-item-art.mjs` tách atlas tại khe alpha trống, lấy mẫu trên lưới native, lượng tử 24 màu và xuất alpha 0/255; không sửa master. UI và cảnh chơi cùng tra một ID trong `item-art.mjs`, hai góc trang trí có file và bounds riêng. So khác biệt theo danh tính vật phẩm: nhiều góc/frame của cùng món là hợp lệ; hai món khác nhau dùng cùng hình phải được kiểm tra lại. Chạy `verify-image-assets.mjs` và `qa-v19/image-ui-qa.mjs` sau khi nhập bộ ảnh. Kiểm tra cảnh thật vẫn bắt buộc: lớp cache đã dịch tọa độ thì không dịch lần thứ hai khi vẽ sprite vào lớp đó.
 
+**Định dạng chạy game từ V24.9.67:** sau khi xuất PNG native, chạy `node garden-v05/build-runtime-webp.mjs` rồi `--check`. PNG/master vẫn là nguồn phục hồi; chỉ các WebP trong `runtime-webp-manifest.json` được đóng gói. Encoder dùng lossless + exact, đối chiếu toàn bộ RGBA sau giải mã (kể cả RGB ở pixel trong suốt), không resize. URL tải ảnh qua `runtimeImageUrl`, còn ID/file nguồn trong manifest và cache giữ nguyên; revision hash chống dùng nhầm WebP cũ. 8 ảnh WebP có sẵn được giữ nguyên byte, không mã hóa lại. Không đóng gói ảnh contact sheet, atlas nguồn hay master vào game. QA trình duyệt phải có 0 request PNG/JPEG/GIF cho ảnh nội bộ.
+
 ## 8. Checklist nhận một asset mới
 
 - [ ] Kích thước đúng tầng (mục 4), pivot ở chân

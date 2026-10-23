@@ -1,6 +1,7 @@
-import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.66';
-import {V24_ART} from './v24-visuals.mjs?v=24.9.66';
-import {pixelIcon} from './pixel-icons.mjs?v=24.9.66';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.67';
+import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.67';
+import {V24_ART} from './v24-visuals.mjs?v=24.9.67';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.67';
 
 export function setupGardenControls({items,onSettings,getWeather}){
  const labels={sowTool:'Gieo hạt',harvestTool:'Gặt tất cả cây chín',creatureTool:'Nuôi sinh vật',craftTool:'Chế biến',buildTool:'Xây dựng'};
@@ -26,7 +27,7 @@ export function setupGardenControls({items,onSettings,getWeather}){
  let lastWeather='';
  function refresh(){
   const weather=getWeather?.()||'clear';
-  if(weather!==lastWeather){$('playDock').style.setProperty('--dock-scene',`url("${V24_ART[weather]||V24_ART.clear}")`);lastWeather=weather;}
+  if(weather!==lastWeather){$('playDock').style.setProperty('--dock-scene',`url("${runtimeImageUrl(V24_ART[weather]||V24_ART.clear)}")`);lastWeather=weather;}
   for(const entry of portraits){
    const selected=entry.dock.querySelector('.item-tray [aria-pressed="true"]');
    // A planted row shows its crop in the same dock (wizard-ui sets data-crop).

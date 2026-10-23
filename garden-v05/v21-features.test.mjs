@@ -10,8 +10,8 @@ import {
   buildAlmanacChains,
 } from './garden-postcard.mjs';
 import {dayKeyFor, loadOwlQuests, recordOwlQuestAction, syncQuestsWithGardenState, claimOwlQuest, hasClaimableOwlQuest, setOwlQuestContext, pickDailyQuests, OWL_QUEST_POOL} from './garden-quests.mjs';
-import {ITEM_ART} from './item-art.mjs?v=24.9.66';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.66';
+import {ITEM_ART} from './item-art.mjs?v=24.9.67';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.67';
 
 globalThis.FARM_SCENE = structuredClone(scene);
 globalThis.FARM_MOTION = motion;

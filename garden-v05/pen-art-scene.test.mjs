@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 
 import {DB} from './progression-engine.mjs?v=24.9.65';
-import {ITEM_ART} from './item-art.mjs?v=24.9.66';
-import {drawPenShelter,penArt,penFiles,penShelterFrame} from './pen-art.mjs?v=24.9.66';
+import {ITEM_ART} from './item-art.mjs?v=24.9.67';
+import {drawPenShelter,penArt,penFiles,penShelterFrame} from './pen-art.mjs?v=24.9.67';
 
 const iso=(col,row)=>[1120+(col-row)*32,300+(col+row)*16];
 
