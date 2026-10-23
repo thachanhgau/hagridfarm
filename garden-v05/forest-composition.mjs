@@ -46,11 +46,14 @@ function smoothTrail(controls){
  }
  result.push(controls.at(-1));return result;
 }
+export function exitSignFrame(trail){
+ if(trail.length<=42)return null;
+ const [x,y]=trail[0],left=Math.round(x-210),top=Math.round(y+100);
+ return {left,top,right:left+188,bottom:top+72};
+}
 export function overlapsTrail(rect,trail,margin=22){
- if(trail.length>42){
-  const [sx,sy]=trail[42];
-  if(rect.right>=sx-8&&rect.left<=sx+76&&rect.bottom>=sy-28&&rect.top<=sy+28)return true;
- }
+ const sign=exitSignFrame(trail);
+ if(sign&&rect.right>=sign.left-8&&rect.left<=sign.right+8&&rect.bottom>=sign.top-8&&rect.top<=sign.bottom+8)return true;
  return trail.some(([x,y])=>x>=rect.left-margin&&x<=rect.right+margin&&y>=rect.top-margin&&y<=rect.bottom+margin);
 }
 function stamp(ctx,x,y,r,color){
@@ -67,11 +70,21 @@ export function drawExitTrail(ctx,trail,{sign=false,taperEnd=false}={}){
   if(i%4===0){ctx.fillStyle=i%8?'#b49a66':'#5d6046';ctx.fillRect(Math.round(x+Math.sin(i*3)*12*w),Math.round(y+Math.cos(i)*5*w),4,2);}
  }
  if(sign&&trail.length>42){
-  const [x,y]=trail[42],sx=Math.round(x+14),sy=Math.round(y+22);
-  ctx.fillStyle='#142620';ctx.fillRect(sx+20,sy-26,6,30);
-  ctx.fillStyle='#4a3c2c';ctx.fillRect(sx-2,sy-32,50,20);
-  ctx.fillStyle='#b49a66';ctx.fillRect(sx,sy-30,46,16);
-  ctx.fillStyle='#142620';ctx.font='bold 9px sans-serif';ctx.textAlign='center';ctx.fillText('← Lối ra',sx+23,sy-19);
+  const {left:x,top:y}=exitSignFrame(trail);
+  for(const dx of [24,156]){
+   ctx.fillStyle='#231f2e';ctx.fillRect(x+dx,y+30,8,42);
+   ctx.fillStyle='#735044';ctx.fillRect(x+dx+2,y+32,4,38);
+  }
+  ctx.fillStyle='#231f2e';ctx.fillRect(x-3,y-3,194,56);
+  ctx.fillStyle='#735044';ctx.fillRect(x,y,188,50);
+  ctx.fillStyle='#a57554';ctx.fillRect(x+3,y+3,182,44);
+  ctx.fillStyle='#e7ae73';ctx.fillRect(x+3,y+3,182,2);
+  ctx.fillStyle='#735044';ctx.fillRect(x+5,y+26,178,1);
+  for(const dx of [7,178])for(const dy of [8,40]){ctx.fillStyle='#231f2e';ctx.fillRect(x+dx,y+dy,3,3);ctx.fillStyle='#e7ae73';ctx.fillRect(x+dx,y+dy,1,1);}
+  ctx.fillStyle='#f5d69a';ctx.font='bold 12px "Be Vietnam Pro",sans-serif';ctx.textAlign='center';ctx.textBaseline='alphabetic';
+  ctx.fillText('Trang trại của Hagrid',x+94,y+20);
+  ctx.fillStyle='#d6d8bf';ctx.font='9px "Be Vietnam Pro",sans-serif';
+  ctx.fillText('Người giữ khoá trường Hogwarts',x+94,y+40);
  }
  ctx.restore();
 }

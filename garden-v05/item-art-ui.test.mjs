@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { DB } from './balance-data.mjs?v=24.9.65';
-import { ITEM_ART } from './item-art.mjs?v=24.9.67';
+import { ITEM_ART } from './item-art.mjs?v=24.9.69';
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }
@@ -52,7 +52,7 @@ const {
  itemArtKey,
  levelUnlockVisual,
  visualItemIcon,
-} = await import('./ui-utils.mjs?v=24.9.67');
+} = await import('./ui-utils.mjs?v=24.9.69');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];
@@ -129,7 +129,7 @@ test('spring water, expansions, earned decorations and level fallbacks have dist
  assert.equal(findAttribute(levelUnlockVisual(DB.levels.find(entry => entry.level === 45), DB, items, 44).visual, 'src'), 'flax.png');
 });
 
-test('all six pen expansions use distinct native shelter art while retaining expansion identity', () => {
+test('all six pen expansions use distinct native enclosure art while retaining expansion identity', () => {
  const pens = DB.expansions.filter(expansion => expansion.kind === 'pen');
  assert.equal(pens.length, 6);
  assert.equal(new Set(pens.map(({id}) => ITEM_ART[id]?.file)).size, 6);
@@ -139,7 +139,7 @@ test('all six pen expansions use distinct native shelter art while retaining exp
   assert.equal(art.width, Number(id.slice(-1)) >= 4 ? 160 : 128, `${id} width`);
   assert.equal(art.height, Number(id.slice(-1)) >= 4 ? 144 : 112, `${id} height`);
   const large = Number(id.slice(-1)) >= 4;
-  assert.ok(art.bounds.w <= (large ? 144 : 112) && art.bounds.h <= (large ? 112 : 88), `${id} shelter bounds exceed target`);
+  assert.ok(art.bounds.w <= (large ? 144 : 112) && art.bounds.h <= (large ? 112 : 88), `${id} enclosure bounds exceed target`);
   assert.ok(fs.existsSync(new URL(art.file, import.meta.url)), `${id} file missing`);
   const visual = visualItemIcon(new Map(), id, {size: 44});
   assert.equal(findAttribute(visual, 'data-expansion-id'), id);

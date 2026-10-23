@@ -1,4 +1,4 @@
-import {stageContains} from './garden-growth.mjs?v=24.9.67';
+import {stageContains} from './garden-growth.mjs?v=24.9.69';
 function insidePolygon(x,y,points){
  let inside=false;
  for(let i=0,j=points.length-1;i<points.length;j=i++){
@@ -91,6 +91,10 @@ function pixelLine(c,a,b,color,width=2){
 }
 export function drawSeasonalFence(c,piece,weather,event,clock){
  const {a,b}=piece;
+ if(piece.gate){
+  if(weather==='snow')for(const [x,y] of [a,b]){c.fillStyle='#e8f0ed';c.fillRect(Math.round(x-7),Math.round(y-57),14,3);}
+  return; // A snow cap or garland must never close the open passage.
+ }
  if(weather==='snow')for(const h of [35,26,14])pixelLine(c,[a[0]-3,a[1]-h],[b[0]-3,b[1]-h],'#e8f0ed',3);
  if(event==='none')return;
  const phase=worldPhase(clock),colors=event==='event_halloween'?['#ffc36b','#a6b1ae']:event==='event_yule'?['#f5d69a','#c97952','#b0bd67']:['#ffc36b','#b0bd67','#e07a9e'];

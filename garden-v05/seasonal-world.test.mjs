@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {festivalObjects,clearOfBuildings,seasonPixel,worldPhase,weatherizeCanvas,roofSnowCoverage} from './garden-seasonal-world.mjs?v=24.9.65';
+import {festivalObjects,clearOfBuildings,seasonPixel,worldPhase,weatherizeCanvas,roofSnowCoverage,drawSeasonalFence} from './garden-seasonal-world.mjs?v=24.9.65';
 import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.65';
 const map=JSON.parse(readFileSync(new URL('./scene-data.json',import.meta.url)));
 const decorAssets=new Map(['decor_pumpkin_lantern','decor_cauldron','decor_floating_candles','decor_mandrake_planter','decor_vine_arch'].map(id=>[id,{id,file:id+'.png'}]));
@@ -54,4 +54,12 @@ test('roof snow mask preserves lower walls, doors and greenhouse glass',()=>{
  assert.equal(roofSnowCoverage('greenhouse-roof',96,42,156,152),false);
  assert.deepEqual(seasonPixel(80,135,147,96,42,156,152,'greenhouse-roof','snow'),[80,135,147]);
  assert.equal(roofSnowCoverage('greenhouse-roof',80,23,156,152),true);
+});
+
+test('weather and festival overlays leave the exit passage open',()=>{
+ for(const weather of ['clear','rain','snow','autumn'])for(const event of ['none','event_yule','event_halloween','event_herbology_fair']){
+  const calls=[],ctx={fillRect(x,y,w,h){calls.push([x,y,w,h]);}};
+  drawSeasonalFence(ctx,{gate:true,a:[100,100],b:[180,140]},weather,event,0);
+  assert.ok(calls.every(([x,y,w,h])=>x+w<130||x>150),'center of gate remains clear');
+ }
 });

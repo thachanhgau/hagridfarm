@@ -1,0 +1,70 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "localhost in-memory level500 habitats fixture, mobile simulated throttling",
+  "beforeSource": "V24.9.67 ba3e6f1 WebP",
+  "afterSource": "V24.9.69 fences, exit gate, sign, forest clearance",
+  "before": {
+    "values": [
+      {
+        "performance": 51,
+        "fcpMs": 8104,
+        "lcpMs": 11704,
+        "tbtMs": 276,
+        "bytes": 4481004
+      },
+      {
+        "performance": 52,
+        "fcpMs": 8178,
+        "lcpMs": 12538,
+        "tbtMs": 254,
+        "bytes": 4481004
+      },
+      {
+        "performance": 52,
+        "fcpMs": 8178,
+        "lcpMs": 11778,
+        "tbtMs": 268,
+        "bytes": 4481004
+      }
+    ],
+    "median": {
+      "performance": 52,
+      "fcpMs": 8178,
+      "lcpMs": 11778,
+      "tbtMs": 268,
+      "bytes": 4481004
+    }
+  },
+  "after": {
+    "values": [
+      {
+        "performance": 51,
+        "fcpMs": 8178,
+        "lcpMs": 11778,
+        "tbtMs": 281,
+        "bytes": 4463683
+      },
+      {
+        "performance": 51,
+        "fcpMs": 8104,
+        "lcpMs": 11554,
+        "tbtMs": 278,
+        "bytes": 4463683
+      },
+      {
+        "performance": 51,
+        "fcpMs": 8103,
+        "lcpMs": 11553,
+        "tbtMs": 279,
+        "bytes": 4463683
+      }
+    ],
+    "median": {
+      "performance": 51,
+      "fcpMs": 8104,
+      "lcpMs": 11554,
+      "tbtMs": 279,
+      "bytes": 4463683
+    }
+  }
+}

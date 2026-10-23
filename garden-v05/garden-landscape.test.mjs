@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import scene from './scene-data.json' with {type:'json'};
 import motion from './motion-data.json' with {type:'json'};
-import {FARM_BOUNDARY,GARDEN_PATHS,insideFarm,createBoundaryFence} from './garden-landscape.mjs';
+import {FARM_BOUNDARY,GARDEN_PATHS,insideFarm,createBoundaryFence,drawBoundaryFence} from './garden-landscape.mjs';
 globalThis.FARM_SCENE=structuredClone(scene);globalThis.FARM_MOTION=motion;
 const {iso,pickFromWorld,decorationPlacements,keepsakePlacements,plotPhysicalBounds,plotCellPosition}=await import('./scene-renderer.mjs');
 
@@ -43,4 +43,13 @@ test('footpath stays inside fence and leaves all crop and pen cells clear',()=>{
       }
     }
   }
+});
+
+test('exit gate is centered on the trail and leaves its middle passage clear',()=>{
+ const gate=createBoundaryFence(scene).find(p=>p.gate),calls=[];
+ assert.equal((gate.cellA[0]+gate.cellB[0])/2,16);
+ assert.equal(Math.abs(gate.cellA[0]-gate.cellB[0]),2.5);
+ drawBoundaryFence({fillRect(x,y,w,h){calls.push({x,y,w,h});}},gate);
+ const x=(gate.a[0]+gate.b[0])/2,y=(gate.a[1]+gate.b[1])/2;
+ assert.equal(calls.some(r=>r.x<x+10&&r.x+r.w>x-10&&r.y<y+5&&r.y+r.h>y-24),false,'no closed rail or post across the passage');
 });

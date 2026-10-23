@@ -1,22 +1,22 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.67';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.67';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.67';
-import {drawPenHabitat} from './garden-pen-details.mjs?v=24.9.67';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.67';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.67';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.67';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.67';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.67';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.67';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.67';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.67';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.67';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.67';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.67';
-import {gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.67';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.67';
-import {penArt,penFiles,penShelterFrame,drawPenShelter} from './pen-art.mjs?v=24.9.67';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.67';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.69';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.69';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.69';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.69';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.69';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.69';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.69';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.69';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.69';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.69';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.69';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.69';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.69';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.69';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.69';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.69';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.69';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.69';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.69';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -28,13 +28,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.67';
+} from './scene-animation.mjs?v=24.9.69';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-  forestRectOutsidePlayable,
-} from './forest-surround.mjs?v=24.9.67';
+} from './forest-surround.mjs?v=24.9.69';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -819,7 +818,6 @@ export async function createGarden(canvas, options = {}) {
     ...collectFiles(),
     ...earnedDecorFiles(),
     ...produceFiles(),
-    ...penFiles(),
     ...FESTIVAL_FILES,
     'world-v242/cottage-corner.png',
     ...[...decorAssets.values()].flatMap((a) => [
@@ -891,9 +889,9 @@ export async function createGarden(canvas, options = {}) {
 
   function rebuildBoundaryFence(stage) {
     boundaryFence = createBoundaryFence(map, stageBoundary(stage)).map((piece) => {
-      const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - 6);
-      const top = Math.floor(Math.min(piece.a[1], piece.b[1]) - 51);
-      const layer = makeCanvas(canvas, Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + 14, Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + 58);
+      const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - (piece.gate?10:6));
+      const top = Math.floor(Math.min(piece.a[1], piece.b[1]) - (piece.gate?80:51));
+      const layer = makeCanvas(canvas, Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?36:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
       const brush = layer.getContext('2d');
       brush.imageSmoothingEnabled = false;
       drawBoundaryFence(brush, {
@@ -978,7 +976,8 @@ export async function createGarden(canvas, options = {}) {
   const westBackdrop=makeCanvas(canvas,map.width,map.height),westBack=westBackdrop.getContext('2d');
   back.imageSmoothingEnabled=false;back.drawImage(scenicBackdrop,0,0);
   westBack.imageSmoothingEnabled=false;westBack.drawImage(scenicBackdrop,0,0);
-  const edgeForest=[],backgroundTrail=backdropExitTrail(map),seamY=map.height*.82;
+  const backdropBoundary=stageBoundary(GARDEN_STAGES.at(-1));
+  const backgroundTrail=backdropExitTrail(map),seamY=map.height*.82;
   drawExitTrail(westBack,[[map.width+32,seamY],...backgroundTrail],{taperEnd:true});
   const wallpaper=[];
   for(const tree of canopyClusters(map,forestAssetSizes)){
@@ -991,10 +990,9 @@ export async function createGarden(canvas, options = {}) {
   }
   wallpaper.sort((a,b)=>a.rect.bottom-b.rect.bottom);
   const westClearTrail=[[map.width+32,seamY],...backgroundTrail.slice(0,Math.ceil(backgroundTrail.length*.82))];
-  for(const tree of wallpaper){
+  for(const tree of wallpaper)if(forestRectOutsideBoundary(tree.rect,map,backdropBoundary)){
     drawCanopy(back,tree);
     if(!overlapsTrail(tree.rect,westClearTrail)&&!overlapsTrail({left:tree.rect.left-map.width,top:tree.rect.top,right:tree.rect.right-map.width,bottom:tree.rect.bottom},[[0,seamY],[80,seamY]]))drawCanopy(westBack,tree);
-    if(forestRectOutsidePlayable(tree.rect,forestScene,.12))edgeForest.push(tree);
   }
   function drawCanopy(target,{img,rect,w,h,flip}){
     target.save();target.translate(rect.left+(flip?w:0),rect.top);if(flip)target.scale(-1,1);
@@ -1041,7 +1039,7 @@ export async function createGarden(canvas, options = {}) {
     weatherizeCanvas(forestBackdrop,'ground',weather);
     westBack.clearRect(0,0,map.width,map.height);westBack.drawImage(forestBackdrop,0,0);
     drawExitTrail(westBack,[[map.width+32,seamY],...backgroundTrail],{taperEnd:true});
-    for(const tree of wallpaper){
+    for(const tree of wallpaper)if(forestRectOutsideBoundary(tree.rect,map,backdropBoundary)){
       drawCanopy(back,tree);
       if(!overlapsTrail(tree.rect,westClearTrail)&&!overlapsTrail({left:tree.rect.left-map.width,top:tree.rect.top,right:tree.rect.right-map.width,bottom:tree.rect.bottom},[[0,seamY],[80,seamY]]))drawCanopy(westBack,tree);
     }
@@ -1100,40 +1098,18 @@ export async function createGarden(canvas, options = {}) {
   }
 
   function outsideActiveStage(rect,stage){
-    if(forestRectOutsidePlayable(rect,forestScene,.12))return true;
-    if(stage.id>=6)return false;
-    const ox=sceneOrigin().x,oy=sceneOrigin().y,hw=tileWidth()/2,hh=tileHeight()/2;
-    for(const [px,py] of [[rect.left-24,rect.bottom+14],[rect.right+24,rect.bottom+14],[(rect.left+rect.right)/2,rect.bottom-28],[(rect.left+rect.right)/2,rect.top+24]]){
-      const dx=(px-ox)/hw,dy=(py-oy)/hh,c=(dx+dy)/2,r=(dy-dx)/2;
-      if(stageContains(stage,c,r)||stageContains(stage,c+1.6,r)||stageContains(stage,c-1.6,r)||stageContains(stage,c,r+1.6)||stageContains(stage,c,r-1.6))return false;
-    }
-    return true;
+    return forestRectOutsideBoundary(rect,map,stageBoundary(stage));
   }
 
-  // A tree standing in front of the stage fence must hide the rails, not sit under them: it leaves
-  // the terrain cache (drawn before the fence) for the depth-sorted world pass.
-  // Such a tree is left out where its canopy would reach over a plot: crops stay in view.
-  const plotBoxes=(map.plots??[]).map(plot=>{const pts=plotCorners(plot);return {plot,left:Math.min(...pts.map(p=>p[0])),right:Math.max(...pts.map(p=>p[0])),top:Math.min(...pts.map(p=>p[1])),bottom:Math.max(...pts.map(p=>p[1]))};});
-  function inFrontOfFence(rect,fence){
-    return fence.some(p=>p.xy[0]>=rect.left&&p.xy[0]<=rect.right&&p.xy[1]>=rect.top&&p.xy[1]<rect.bottom);
-  }
-  // Only plots on opened land count; unopened bases keep their groves.
-  const overPlot=(rect,stage)=>plotBoxes.some(b=>stageContains(stage,b.plot.col+1,b.plot.row+1)&&rect.left<b.right&&rect.right>b.left&&rect.top<b.bottom&&rect.bottom>b.top);
-  function drawForestLayer(target,trail,stage,fence,front) {
+  function drawForestLayer(target,trail,stage) {
     const westEdgeTrail=westClearTrail.map(([x,y])=>[x-map.width,y]);
     for(const tree of wallpaper)if(outsideActiveStage(tree.rect,stage)&&!overlapsTrail(tree.rect,trail)&&!overlapsTrail(tree.rect,westEdgeTrail)){
-      if(inFrontOfFence(tree.rect,fence)){if(!overPlot(tree.rect,stage))front.push({kind:'front-tree',xy:[(tree.rect.left+tree.rect.right)/2,tree.rect.bottom],tree});}
-      else drawCanopy(target,tree);
+      drawCanopy(target,tree);
     }
     for (const placement of forestDrawOrder) {
-      if(overlapsTrail(placement.rect,trail))continue;
+      if(!outsideActiveStage(placement.rect,stage)||overlapsTrail(placement.rect,trail))continue;
       const asset = forestAssets.get(placement.assetId);
       if (!asset) continue;
-      if(inFrontOfFence(placement.rect,fence)&&forestImages.get(placement.assetId)){
-        const scale=placement.scale??1,w=Math.round(asset.width*scale),h=Math.round(asset.height*scale);
-        if(!overPlot(placement.rect,stage))front.push({kind:'front-tree',xy:[placement.x,placement.y],alpha:finite(placement.opacity,1),tree:{img:forestImages.get(placement.assetId),rect:{left:Math.round(placement.rect.left),top:Math.round(placement.rect.top)},w,h,flip:false}});
-        continue;
-      }
       target.save?.();
       target.globalAlpha = finite(placement.opacity, 1);
       const scale=placement.scale??1,image=forestImages.get(placement.assetId);
@@ -1142,7 +1118,7 @@ export async function createGarden(canvas, options = {}) {
     }
   }
 
-  function drawFutureGrovesLayer(target, stage,trail,fence,front) {
+  function drawFutureGrovesLayer(target, stage,trail) {
     const placements=futureGroves(map, stage).map((placement,index)=>{
       const h=((index+1)*2654435761)>>>0,u=(h&1023)/1023,v=((h>>>10)&1023)/1023;
       const dc=(u-.5)*1.1,dr=(v-.5)*1.1;
@@ -1156,10 +1132,9 @@ export async function createGarden(canvas, options = {}) {
       if (!asset) continue;
       const w=Math.round(asset.width*placement.scale),h=Math.round(asset.height*placement.scale);
       const rect={left:Math.round(placement.x-w/2),top:Math.round(placement.y-h),right:Math.round(placement.x+w/2),bottom:Math.round(placement.y)};
-      if(overlapsTrail(rect,trail))continue;
+      if(!outsideActiveStage(rect,stage)||overlapsTrail(rect,trail))continue;
       const img=forestImages.get(placement.assetId);
-      if(img&&inFrontOfFence(rect,fence)){if(!overPlot(rect,stage))front.push({kind:'front-tree',xy:[placement.x,placement.y],tree:{img,rect,w,h,flip:placement.flip}});}
-      else if(img)drawCanopy(target,{img,rect,w,h,flip:placement.flip});
+      if(img)drawCanopy(target,{img,rect,w,h,flip:placement.flip});
       else drawAssetTo(target, asset, placement.x, placement.y);
     }
   }
@@ -1196,9 +1171,8 @@ export async function createGarden(canvas, options = {}) {
       const fence=createBoundaryFence(map,stageBoundary(stage)),gate=fence.find(piece=>piece.gate);
       const trail=forestExitTrail(map,gate?.cellA[1]??stage.bottom);
       drawExitTrail(cachedContext,[...trail,[-32,seamY]],{sign:true});
-      cachedCanvas.frontTrees=[];
-      drawForestLayer(cachedContext,trail,stage,fence,cachedCanvas.frontTrees);
-      drawFutureGrovesLayer(cachedContext, stage,trail,fence,cachedCanvas.frontTrees);
+      drawForestLayer(cachedContext,trail,stage);
+      drawFutureGrovesLayer(cachedContext,stage,trail);
     }
     return cachedCanvas;
   }
@@ -1363,24 +1337,16 @@ export async function createGarden(canvas, options = {}) {
 
   function drawBuiltPen(pen,state,clock){
     const residents=habitatResidents(pen,asArray(state.creatures),map.creatureSpots,iso);
-    const shelterArt=penArt(pen.id);
-    const shelter=penShelterFrame(pen,iso,shelterArt);
-    const corners=penCorners(pen),key=activeWeather+':'+JSON.stringify([corners,residents,shelter?.alphaBounds]);
+    const corners=penCorners(pen),key=activeWeather+':'+JSON.stringify([corners,residents]);
     let cached=penHabitatLayers.get(pen.id);
     if(cached?.key!==key){
-      const baseLeft=Math.floor(Math.min(...corners.map(p=>p[0])))-20;
-      const baseTop=Math.floor(Math.min(...corners.map(p=>p[1])))-20;
-      const baseRight=Math.ceil(Math.max(...corners.map(p=>p[0])))+20;
-      const baseBottom=Math.ceil(Math.max(...corners.map(p=>p[1])))+20;
-      const left=Math.floor(Math.min(baseLeft,shelter?.alphaBounds.left ?? baseLeft));
-      const top=Math.floor(Math.min(baseTop,shelter?.alphaBounds.top ?? baseTop));
-      const right=Math.ceil(Math.max(baseRight,shelter?.alphaBounds.right ?? baseRight));
-      const bottom=Math.ceil(Math.max(baseBottom,shelter?.alphaBounds.bottom ?? baseBottom));
-      const width=right-left,height=bottom-top;
-      const layer=makeCanvas(canvas,width,height),brush=layer.getContext('2d');brush.translate(-left,-top);
+      const left=Math.floor(Math.min(...corners.map(p=>p[0])))-20;
+      const top=Math.floor(Math.min(...corners.map(p=>p[1])))-32;
+      const right=Math.ceil(Math.max(...corners.map(p=>p[0])))+20;
+      const bottom=Math.ceil(Math.max(...corners.map(p=>p[1])))+20;
+      const layer=makeCanvas(canvas,right-left,bottom-top),brush=layer.getContext('2d');brush.translate(-left,-top);
       drawPenHabitat(brush,{corners,pen,iso,weatherMode:activeWeather,personalized:residents.length>0});
-      const shelterImage=shelterArt?.file ? seasonalImage(shelterArt.file,'ground') : null;
-      if(shelterImage&&shelter)drawPenShelter(brush,shelterImage,shelter);
+      for(const piece of penFencePieces(pen,iso))drawPenFence(brush,piece,activeWeather);
       drawHabitatProps(brush,residents,{weatherMode:activeWeather});
       cached={key,layer,left,top};penHabitatLayers.set(pen.id,cached);
     }
@@ -1560,7 +1526,6 @@ export async function createGarden(canvas, options = {}) {
       }
       return;
     }
-    if (object.kind === 'front-tree') { context.save(); context.globalAlpha = object.alpha ?? 1; drawCanopy(context, object.tree); context.restore(); return; }
     if (object.kind === 'boundary-fence') { context.drawImage(object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock); return; }
     if (object.kind === 'decoration') {
       const asset = earnedDecorArt(object.id, object.facing);
@@ -1803,9 +1768,11 @@ export async function createGarden(canvas, options = {}) {
           : w
       ))
       : [];
-    const objects = [...boundaryFence, ...(terrain.frontTrees ?? []), ...wizList, ...storeDecorationObjects];
+    const objects = [...boundaryFence, ...wizList, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {
+        // Legacy edge-tree anchors straddled the fence; the bounded forest layers own trees now.
+        if (prop.id === 'oak' || prop.id === 'pine') continue;
         if (prop.id !== 'hut' && !stageContains(currentStage, Number(prop.col), Number(prop.row))) continue;
         const asset = props.get(prop.id);
         if (!asset) throw new Error(`Không có prop asset ${prop.id}.`);
@@ -1822,7 +1789,7 @@ export async function createGarden(canvas, options = {}) {
         drawPenGround(context, pen, true);
         objects.push({kind: 'pen-front', type: 'scaffold', id: `${pen.id}:scaffold`, pen, scaffold: true, xy: iso(pen.col + pen.width, pen.row + pen.height)});
       } else if (isBuilt) {
-        drawBuiltPen(pen,state,clock); // All cosmetic pen details stay below actors and their hitboxes.
+        drawBuiltPen(pen,state,clock);
       }
     }
 

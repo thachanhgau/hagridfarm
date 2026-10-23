@@ -97,10 +97,10 @@ export const ITEM_ART = Object.freeze({
  "decoration-98_right": {"file":"native-items/decoration-98_right.png","width":96,"height":112,"pivotX":48,"pivotY":96,"bounds":{"x":18,"y":16,"w":60,"h":80}},
  "decoration-99": {"file":"native-items/decoration-99.png","rightFile":"native-items/decoration-99_right.png","width":96,"height":112,"pivotX":48,"pivotY":96,"bounds":{"x":6,"y":26,"w":84,"h":70},"rightBounds":{"x":6,"y":26,"w":84,"h":70}},
  "decoration-99_right": {"file":"native-items/decoration-99_right.png","width":96,"height":112,"pivotX":48,"pivotY":96,"bounds":{"x":6,"y":26,"w":84,"h":70}},
- "pen_1": {"file":"native-items/pen_1.png","width":128,"height":112,"pivotX":64,"pivotY":96,"bounds":{"x":8,"y":19,"w":112,"h":77}},
- "pen_2": {"file":"native-items/pen_2.png","width":128,"height":112,"pivotX":64,"pivotY":96,"bounds":{"x":8,"y":22,"w":112,"h":74}},
- "pen_3": {"file":"native-items/pen_3.png","width":128,"height":112,"pivotX":64,"pivotY":96,"bounds":{"x":11,"y":8,"w":106,"h":88}},
- "pen_4": {"file":"native-items/pen_4.png","width":160,"height":144,"pivotX":80,"pivotY":128,"bounds":{"x":8,"y":16,"w":144,"h":112}},
- "pen_5": {"file":"native-items/pen_5.png","width":160,"height":144,"pivotX":80,"pivotY":128,"bounds":{"x":14,"y":16,"w":132,"h":112}},
- "pen_6": {"file":"native-items/pen_6.png","width":160,"height":144,"pivotX":80,"pivotY":128,"bounds":{"x":8,"y":24,"w":144,"h":104}}
+ "pen_1": {"file":"native-items/pen_1.png","width":128,"height":112,"pivotX":64,"pivotY":96,"bounds":{"x":8,"y":26,"w":112,"h":70}},
+ "pen_2": {"file":"native-items/pen_2.png","width":128,"height":112,"pivotX":64,"pivotY":96,"bounds":{"x":8,"y":26,"w":112,"h":70}},
+ "pen_3": {"file":"native-items/pen_3.png","width":128,"height":112,"pivotX":64,"pivotY":96,"bounds":{"x":8,"y":26,"w":112,"h":70}},
+ "pen_4": {"file":"native-items/pen_4.png","width":160,"height":144,"pivotX":80,"pivotY":128,"bounds":{"x":8,"y":37,"w":144,"h":91}},
+ "pen_5": {"file":"native-items/pen_5.png","width":160,"height":144,"pivotX":80,"pivotY":128,"bounds":{"x":8,"y":37,"w":144,"h":91}},
+ "pen_6": {"file":"native-items/pen_6.png","width":160,"height":144,"pivotX":80,"pivotY":128,"bounds":{"x":8,"y":37,"w":144,"h":91}}
 });

@@ -1,5 +1,5 @@
-import { ITEM_ART } from "./item-art.mjs?v=24.9.67";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.67';
+import { ITEM_ART } from "./item-art.mjs?v=24.9.69";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.69';
 
 export const $=id=>document.getElementById(id);
 export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else e.setAttribute(k,String(tag==='img'&&k==='src'?runtimeImageUrl(v):v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}

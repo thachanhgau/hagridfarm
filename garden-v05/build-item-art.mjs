@@ -5,6 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs';
 import {SPRITE_PALETTE} from './palette.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -98,7 +99,6 @@ await fs.mkdir(path.join(root, 'native-items'), {recursive: true});
 const config = JSON.parse(await fs.readFile(path.join(root, 'item-art-sources.json'), 'utf8'));
 const decorations = JSON.parse(await fs.readFile(path.join(root, 'earned-decor-art-sources.json'), 'utf8'));
 config.groups.push(...decorations.groups);
-config.groups.push(...JSON.parse(await fs.readFile(path.join(root, 'pen-art-sources.json'), 'utf8')).groups);
 for (const group of config.groups) {
  const source = `masters-items/${group.name}.png`;
  const bytes = await fs.readFile(path.join(root, source));
@@ -123,6 +123,18 @@ for (const group of decorations.groups) {
  base.rightFile = right.file;
  base.rightBounds = right.bounds;
 }
+// Build compact pen icons from the actual enclosure geometry, never the rejected roofs.
+for(let i=1;i<=6;i++){
+ const pen={id:'pen_'+i,col:0,row:0,width:5,height:3},rects=[];
+ const iso=(col,row)=>[112+(col-row)*24,40+(col+row)*12];
+ const ctx={save(){},restore(){},fillRect(x,y,w,h){rects.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${this.fillStyle}"/>`);}};
+ const corners=[[0,0],[5,0],[5,3],[0,3]].map(([col,row])=>iso(col,row));
+ drawPenHabitat(ctx,{corners,pen,iso});
+ for(const piece of penFencePieces(pen,iso))drawPenFence(ctx,piece);
+ const svg=Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="256" height="160">${rects.join('')}</svg>`);
+ const source='garden-pen-details.mjs';
+ await emit(pen.id,await sharp(svg).ensureAlpha().raw().toBuffer({resolveWithObject:true}),{source,sourceSha256:sha256(await fs.readFile(path.join(root,source))),sourceType:'perimeter-fence'});
+}
 await writeModule();
 await fs.writeFile(path.join(root, 'item-art-manifest.json'), JSON.stringify({version: 1, palette: SPRITE_PALETTE, alphaThreshold: 192, items: records}, null, 2) + '\n');
-console.log(`Exported ${Object.keys(records).length} native views (39 recipe/produce, 29 decorations × 2 views, 6 pen shelters).`);
+console.log(`Exported ${Object.keys(records).length} native views (39 recipe/produce, 29 decorations × 2 views, 6 perimeter fences).`);

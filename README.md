@@ -35,3 +35,5 @@ The fixture uses in-memory sample data and does not write an account. Source emu
 Run `node --test *.test.mjs` inside `garden-v05/` (143 tests passed at initial commit; 162 at V24.9.9). Latest UI evidence covers desktop 1024px, mobile 375px, embedded host and standalone fixture; physical iOS and production acceptance are not claimed.
 
 Only the active prototype, its assets and selected QA evidence are tracked. Historical sibling versions, ZIP exports and recovery copies stay local and ignored. Remote `origin` = https://github.com/thachanhgau/hagridfarm (added 18/10/2026 at the owner's request). Push and deployment still need the owner's explicit OK each time.
+
+V24.9.69 removes the six rejected roofed shelters and uses low perimeter fences with matching shop icons. See [enclosure QA](docs/enclosure-fences-20261023.md). Runtime assets remain WebP; recovery PNGs/masters are retained.

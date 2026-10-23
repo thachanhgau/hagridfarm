@@ -6,6 +6,7 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
+import {runtimeImageUrl} from './runtime-image-url.mjs';
 import {ITEM_ART} from './item-art.mjs';
 import {SPRITE_PALETTE} from './palette.mjs';
 import {FOREST_ASSET_FILES} from './forest-surround.mjs';
@@ -51,6 +52,15 @@ const aliases = [...hashes.values()].filter(group => group.length > 1);
 const crossEntityDuplicates = aliases.filter(group => new Set(group.map(ref => ref.id)).size > 1);
 assert.deepEqual(crossEntityDuplicates, [], 'different items must not share identical image files');
 
+const publishedHashes=new Map();
+for(const [file,id] of paths){
+ const published=runtimeImageUrl(file).split('?')[0],digest=hash(read(published));
+ if(!publishedHashes.has(digest))publishedHashes.set(digest,[]);
+ publishedHashes.get(digest).push({file:published,id});
+}
+const publishedDuplicates=[...publishedHashes.values()].filter(group=>new Set(group.map(ref=>ref.id)).size>1);
+assert.deepEqual(publishedDuplicates,[],'published WebP images of different items must remain distinct');
+
 const palette = new Set(SPRITE_PALETTE.map(hex => parseInt(hex.slice(1), 16)));
 const crops = ['fluxweed', 'bubotuber', 'knotgrass', 'shrivelfig', 'gillyweed', 'mimbulus', 'flitterbloom', 'devilssnare'];
 const newFiles = [...Object.values(ITEM_ART).map(item => item.file), ...crops.flatMap(id => [1, 2, 3, 4].map(stage => `native-levels/${id}/frame-0${stage}.png`)), ...Array.from({length:16},(_,i)=>`native/three-headed-dog/frame-${String(i+1).padStart(2,'0')}.png`)];
@@ -79,5 +89,5 @@ assert.equal(dog.source,dogProvenance.master,'white dog must remain the canonica
 assert.equal(hash(read(dog.source)),dog.sourceSha256,'dog source hash');
 assert.equal(dog.sourceSha256,dogProvenance.masterSha256,'dog generation provenance');
 for(const [file,digest] of Object.entries(dogProvenance.nativeOutputs))assert.equal(hash(read(file)),digest,`${file}: dog output provenance`);
-const result = {runtimeReferences: references.length, runtimeFiles: paths.size, missing: missing.length, duplicateAliasGroups: aliases.length, crossEntityDuplicates: crossEntityDuplicates.length, newNativeFramesVerified: newFiles.length, recipeArt: 27, produceArt: 12, earnedDecorationViews: 58, penShelters: 6, placeholderCropsReplaced: crops.length, whiteDogFrames:16};
+const result = {runtimeReferences: references.length, runtimeFiles: paths.size, missing: missing.length, duplicateAliasGroups: aliases.length, crossEntityDuplicates: crossEntityDuplicates.length, publishedWebpCrossEntityDuplicates: publishedDuplicates.length, newNativeFramesVerified: newFiles.length, recipeArt: 27, produceArt: 12, earnedDecorationViews: 58, penFences: 6, placeholderCropsReplaced: crops.length, whiteDogFrames:16};
 console.log(JSON.stringify(result, null, 2));

@@ -16,7 +16,7 @@ context.on('page',page=>{
  page.on('request',request=>{if(request.resourceType()==='image'&&/^https?:/.test(request.url()))rasterRequests.add(request.url());});
  page.on('response',response=>{if(response.status()>=400)errors.push(`${response.status()} ${response.url()}`);});
 });
-// Detect the offscreen-cache regression: a second translation made shelters disappear.
+// Track creature animation and assert rejected roof sprites never draw in the scene.
 await context.addInitScript(()=>{
  window.__penDraws=[];
  window.__dogDraws=[];
@@ -53,9 +53,9 @@ try{
  assert.equal(snapshot.state.creatures.length,12);
  assert.equal((await page.evaluate(()=>window.__HAGRID_GARDEN_QA__.getWorldSnapshot())).missing.length,0);
  const draws=await page.evaluate(()=>window.__penDraws);
- assert.equal(new Set(draws.map(draw=>draw.id)).size,6);
- assert.ok(draws.every(({x,y,w,h,cw,ch})=>x+w>0&&y+h>0&&x<cw&&y<ch),'shelters must land inside their cache');
- report.penCacheDraws=draws;
+ assert.deepEqual(draws,[],'roofed shelter sprites must not draw in the enclosure');
+ const builtPens=snapshot.state.built.filter(id=>/^pen_[1-6]$/.test(id));assert.equal(builtPens.length,6);
+ report.enclosures={count:builtPens.length,roofSprites:draws.length,fencesBelowActors:true};
  await page.locator('#zoomIn').click();await page.locator('#creatureTool').click();
  const creatures=await page.locator('#creatureTray button').evaluateAll(buttons=>buttons.map(button=>({id:button.dataset.id,label:button.getAttribute('aria-label')})));
  for(const creature of creatures){
@@ -79,10 +79,10 @@ try{
   if(await page.locator('#creatureDock').isHidden())await page.locator('#dockToggle').click();
   report.creatures.push(creature.id);
  }
- // Keep an actual close view of the two largest residents and their shelter.
+ // Keep an actual close view of the two largest residents and their open enclosure.
  await page.locator('#creatureTray [data-id="dragon"]').click();
  if(await page.locator('#creatureDock').isVisible())await page.locator('#dockToggle').click();
- await capture(page,'pens-webp-20261023.png');
+ await capture(page,'pens-fences-20261023.png');
  for(const viewport of [{width:375,height:812},{width:812,height:375},{width:1280,height:800}]){
   await page.setViewportSize(viewport);await page.goto(fixture());await ready(page);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
@@ -114,6 +114,6 @@ try{
  report.whiteDogAnimations={eat:4,care:4};
  report.rasterRequests=rasterRequests.size;report.nonWebpRequests=[...rasterRequests].filter(url=>!new URL(url).pathname.endsWith('.webp'));assert.deepEqual(report.nonWebpRequests,[]);
  assert.deepEqual(errors,[]);report.errors=errors;
- await fs.writeFile(new URL(`image-ui-${report.browser.toLowerCase()}-webp-20261023.json`,import.meta.url),JSON.stringify(report,null,2)+'\n');
+ await fs.writeFile(new URL(`image-ui-${report.browser.toLowerCase()}-fences-20261023.json`,import.meta.url),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify(report,null,2));
 }finally{await browser.close();}

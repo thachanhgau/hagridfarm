@@ -1,56 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
-
-import {DB} from './progression-engine.mjs?v=24.9.65';
-import {ITEM_ART} from './item-art.mjs?v=24.9.67';
-import {drawPenShelter,penArt,penFiles,penShelterFrame} from './pen-art.mjs?v=24.9.67';
-
+import {penFencePieces,drawPenFence} from './garden-pen-details.mjs';
 const iso=(col,row)=>[1120+(col-row)*32,300+(col+row)*16];
-
-test('all six pen art records are unique, present and sized for small or large residents',()=>{
- const pens=DB.expansions.filter(({kind})=>kind==='pen');
- assert.equal(pens.length,6);
- const records=pens.map(({id})=>penArt(id));
- assert.equal(new Set(records.map(record=>record?.file)).size,6);
- assert.equal(new Set(penFiles()).size,6);
- const hashes=[];
- for(const [index,{id}] of pens.entries()){
-  const art=records[index];
-  assert.equal(art,ITEM_ART[id]);
-  assert.ok(art?.file,`missing authored pen art ${id}`);
-  const large=index>=3;
-  assert.deepEqual([art.width,art.height,art.pivotX,art.pivotY],large?[160,144,80,128]:[128,112,64,96],id);
-  assert.ok(art.bounds?.w<=(large?144:112)&&art.bounds?.h<=(large?112:88),`${id} shelter bounds exceed target`);
-  const fileUrl=new URL(art.file,import.meta.url);
-  assert.ok(fs.existsSync(fileUrl),`${id} file missing`);
-  hashes.push(createHash('sha256').update(fs.readFileSync(fileUrl)).digest('hex'));
+const pen={id:'pen_5',col:27,row:0,width:5,height:3};
+test('enclosure closes all four edges with a west gate and low front rails',()=>{
+ const pieces=penFencePieces(pen,iso);
+ assert.deepEqual([...new Set(pieces.map(p=>p.edge))],[0,1,2,3]);
+ assert.equal(pieces.filter(p=>p.gate).length,1);
+ assert.equal(pieces.find(p=>p.gate).edge,3);
+ assert.equal(pieces.filter(p=>p.front).length,8);
+ for(const piece of pieces){
+  const calls=[],ctx={fillRect:(x,y,w,h)=>calls.push({x,y,w,h})};
+  drawPenFence(ctx,piece);
+  assert.ok(calls.length>0);
+  assert.ok(Math.min(...calls.map(c=>c.y))>=Math.min(piece.a[1],piece.b[1])-(piece.front?21:27));
  }
- assert.equal(new Set(hashes).size,6,'pen art files must not be exact byte duplicates');
+ const moved=penFencePieces({...pen,col:10,row:8},iso),delta=iso(10,8).map((v,i)=>v-iso(27,0)[i]);
+ assert.deepEqual(moved.map(p=>[p.a,p.b]),pieces.map(p=>[p.a,p.b].map(a=>a.map((v,i)=>v+delta[i]))));
 });
-
-test('shelter frame stays on the fixed rear anchor and expands cache bounds to alpha',()=>{
- const pen={id:'pen_1',col:27,row:0,width:5,height:3};
- const art={file:'native-items/pen_1.png',width:96,height:96,pivotX:48,pivotY:80,bounds:{x:6,y:20,w:84,h:68}};
- const frame=penShelterFrame(pen,iso,art);
- assert.deepEqual([frame.x,frame.y],iso(29.5,.39).map(Math.round));
- assert.deepEqual(frame.alphaBounds,{left:frame.x-42,top:frame.y-60,right:frame.x+42,bottom:frame.y+8});
- const corners=[[27,0],[32,0],[32,3],[27,3]].map(([col,row])=>iso(col,row));
- const base={left:Math.floor(Math.min(...corners.map(([x])=>x)))-20,top:Math.floor(Math.min(...corners.map(([,y])=>y)))-20,right:Math.ceil(Math.max(...corners.map(([x])=>x)))+20,bottom:Math.ceil(Math.max(...corners.map(([,y])=>y)))+20};
- const cacheArt={...art,bounds:{x:6,y:0,w:84,h:68}};
- const cacheFrame=penShelterFrame(pen,iso,cacheArt);
- const expanded={left:Math.floor(Math.min(base.left,cacheFrame.alphaBounds.left)),top:Math.floor(Math.min(base.top,cacheFrame.alphaBounds.top)),right:Math.ceil(Math.max(base.right,cacheFrame.alphaBounds.right)),bottom:Math.ceil(Math.max(base.bottom,cacheFrame.alphaBounds.bottom))};
- assert.equal(expanded.top,cacheFrame.alphaBounds.top);
- assert.deepEqual({left:expanded.left,top:expanded.top,right:expanded.right,bottom:expanded.bottom},{left:base.left,top:cacheFrame.alphaBounds.top,right:base.right,bottom:base.bottom});
- const calls=[];
- assert.equal(drawPenShelter({drawImage:(...args)=>calls.push(args)},{},frame),true);
- assert.deepEqual(calls,[[{},frame.x-frame.pivotX,frame.y-frame.pivotY,96,96]]);
-});
-
-test('scene preloads pen shelter files before drawing the cached habitat layer',()=>{
- const source=fs.readFileSync(new URL('./scene-renderer.mjs',import.meta.url),'utf8');
- assert.match(source,/\.\.\.penFiles\(\),/);
- assert.match(source,/brush\.translate\(-left,-top\);[\s\S]*drawPenShelter\(brush,shelterImage,shelter\);[\s\S]*drawHabitatProps\(/);
- assert.doesNotMatch(source,/drawPenShelter\(brush,shelterImage,shelter,\s*-left/,'cache coordinates are translated once');
+test('built pens use floor and perimeter fences without loading or drawing roofed shelters',()=>{
+ const renderer=fs.readFileSync(new URL('./scene-renderer.mjs',import.meta.url),'utf8');
+ assert.doesNotMatch(renderer,/penShelter|drawPenShelter|penFiles|penArt\(/);
+ assert.match(renderer,/for\(const piece of penFencePieces\(pen,iso\)\)drawPenFence\(brush,piece,activeWeather\)/);
+ assert.doesNotMatch(renderer,/objects\.push\(\.\.\.penFencePieces/,'no rail may cover a small resident');
 });

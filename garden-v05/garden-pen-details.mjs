@@ -15,15 +15,53 @@ function diamond(c,points,color){
   if(xs.length>=2)rect(c,Math.min(...xs),y,Math.max(...xs)-Math.min(...xs),1,color);
  }
 }
-function cappedPost(c,[x,y],p,height=12){
- rect(c,x-3,y-height+1,6,height,p.dark);rect(c,x-2,y-height,3,height-1,p.wood);
- rect(c,x-3,y-height-1,6,2,p.cap);rect(c,x-1,y-height+1,1,height-4,p.cap);
+// The same native-pixel fence draws the enclosure and its shop thumbnail.
+const fenceStyles=[
+ {wood:'#a57554',light:'#e7ae73',metal:'#735044'},
+ {wood:'#735044',light:'#a57554',metal:'#41465c'},
+ {wood:'#3f6a45',light:'#b0bd67',metal:'#735044'},
+ {wood:'#735044',light:'#a6b1ae',metal:'#687486'},
+ {wood:'#41465c',light:'#a6b1ae',metal:'#687486'},
+ {wood:'#8b4a3f',light:'#e7ae73',metal:'#c97952'},
+];
+export function penFencePieces(pen,iso){
+ const cells=[[pen.col,pen.row],[pen.col+pen.width,pen.row],[pen.col+pen.width,pen.row+pen.height],[pen.col,pen.row+pen.height]];
+ const pieces=[];
+ for(let edge=0;edge<4;edge++){
+  const a=cells[edge],b=cells[(edge+1)%4];
+  const count=Math.ceil(edge%2?pen.height:pen.width);
+  for(let i=0;i<count;i++){
+   const pa=iso(...mix(a,b,i/count)),pb=iso(...mix(a,b,(i+1)/count));
+   pieces.push({kind:'pen-fence',id:pen.id+':fence:'+edge+':'+i,penId:pen.id,edge,a:pa,b:pb,front:edge===1||edge===2,gate:edge===3&&i===Math.floor(count/2),xy:[(pa[0]+pb[0])/2,Math.max(pa[1],pb[1])]});
+  }
+ }
+ return pieces;
 }
-function woodPegs(c,a,b,p){
- const length=Math.hypot(b[0]-a[0],b[1]-a[1]);
- for(let t=18;t<length;t+=20){
-  const joint=mix(a,b,t/length);
-  rect(c,joint[0]-1,joint[1]+1,2,3,p.dark);rect(c,joint[0],joint[1]-2,2,1,p.cap);
+export function drawPenFence(c,piece,weatherMode='clear'){
+ const {a,b,front,gate}=piece,index=Math.max(0,(Number(String(piece.penId).split('_')[1])||1)-1)%6;
+ const style=fenceStyles[index],dark='#231f2e',wood=weatherMode==='rain'?'#735044':style.wood;
+ const cap=weatherMode==='snow'?'#e8f0ed':style.light,height=front?18:24;
+ if(!gate)line(c,[a[0],a[1]+2],[b[0],b[1]+2],'#24483f',5);
+ const end=gate?[a[0]-16,a[1]-5]:b;
+ for(const h of [6,height-6]){
+  line(c,[a[0],a[1]-h],[end[0],end[1]-h],dark,5);
+  line(c,[a[0],a[1]-h],[end[0],end[1]-h],wood,3);
+  line(c,[a[0],a[1]-h-1],[end[0],end[1]-h-1],cap,1);
+ }
+ if(gate){
+  line(c,[a[0],a[1]-height+6],[end[0],end[1]-6],dark,4);
+  line(c,[a[0],a[1]-height+6],[end[0],end[1]-6],style.light,2);
+  const latch=mix(a,end,.78);rect(c,latch[0]-1,latch[1]-height+7,3,3,style.metal);
+ }
+ for(const [x,y] of [a,b]){
+  rect(c,x-4,y-height,8,height+1,dark);
+  rect(c,x-3,y-height+1,5,height-1,wood);
+  rect(c,x-3,y-height+2,1,height-3,style.light);
+  rect(c,x+1,y-height+3,2,height-4,style.metal);
+  rect(c,x-4,y-height-2,8,3,cap);
+  rect(c,x-3,y-height+5,6,2,style.metal);
+  rect(c,x-1,y-height+5,1,1,style.light);
+  rect(c,x-5,y,10,3,'#24483f');
  }
 }
 export function penDetailAnchors(pen,iso){
@@ -38,18 +76,6 @@ export function drawPenHabitat(c,{corners,pen,iso,weatherMode='clear',personaliz
   const xy=iso(pen.col+pen.width*q/14,pen.row+pen.height*r/9),seed=q*17+r*13;
   rect(c,xy[0],xy[1],2+seed%3,1,seed%3?p.grass:p.shade);
  }
- for(const [i,a,b] of [[0,n,e],[1,e,s],[2,s,w],[3,w,n]]){
-  const segments=i===3?[[0,.37],[.63,1]]:[[0,1]]; // Open entrance faces the path.
-  for(const [from,to] of segments){
-   const x=mix(a,b,from),y=mix(a,b,to);
-   line(c,[x[0],x[1]+3],[y[0],y[1]+3],p.dark,5);
-   line(c,x,y,i%2?p.stone:p.wood,4);
-   line(c,[x[0],x[1]-1],[y[0],y[1]-1],p.cap,1);
-   woodPegs(c,x,y,p);
-  }
- }
- // Rear posts are a mere 12px high, and remain underneath all actor sprites.
- for(const at of [n,e,w])cappedPost(c,at,p,12);
  const {water,straw,gate}=penDetailAnchors(pen,iso);
  // Low trough and bedding in the empty middle, between the two animal anchors.
  if(!personalized){

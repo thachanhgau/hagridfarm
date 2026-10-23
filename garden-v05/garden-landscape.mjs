@@ -47,16 +47,45 @@ export function createBoundaryFence(map,boundary=FARM_BOUNDARY){
   });
   const pieces=[];
   perimeter.forEach((a,index)=>{
-    const b=perimeter[(index+1)%perimeter.length],length=Math.abs(b[0]-a[0])+Math.abs(b[1]-a[1]),count=Math.ceil(length/1.8);
-    for(let i=0;i<count;i++){
-      const cellA=[a[0]+(b[0]-a[0])*i/count,a[1]+(b[1]-a[1])*i/count],cellB=[a[0]+(b[0]-a[0])*(i+1)/count,a[1]+(b[1]-a[1])*(i+1)/count];
-      const pa=point(map,...cellA),pb=point(map,...cellB);
-      pieces.push({kind:'boundary-fence',id:`boundary:${index}:${i}`,a:pa,b:pb,cellA,cellB,xy:[(pa[0]+pb[0])/2,Math.max(pa[1],pb[1])],lantern:i%6===0,gate:index===southernEdge&&Math.min(cellA[0],cellB[0])<=16&&16<Math.max(cellA[0],cellB[0])});
+    const b=perimeter[(index+1)%perimeter.length];
+    // Reserve a centered 2.5-tile opening where the path actually crosses this stage.
+    const cuts=index===southernEdge?[0,...[14.75,17.25].map(col=>(col-a[0])/(b[0]-a[0])).sort((x,y)=>x-y),1]:[0,1];
+    let panel=0;
+    for(let part=0;part<cuts.length-1;part++){
+      const from=cuts[part],to=cuts[part+1],gate=index===southernEdge&&part===1;
+      const length=(Math.abs(b[0]-a[0])+Math.abs(b[1]-a[1]))*(to-from),count=gate?1:Math.ceil(length/1.8);
+      for(let i=0;i<count;i++){
+        const t0=from+(to-from)*i/count,t1=from+(to-from)*(i+1)/count;
+        const cellA=[a[0]+(b[0]-a[0])*t0,a[1]+(b[1]-a[1])*t0],cellB=[a[0]+(b[0]-a[0])*t1,a[1]+(b[1]-a[1])*t1];
+        const pa=point(map,...cellA),pb=point(map,...cellB);
+        pieces.push({kind:'boundary-fence',id:`boundary:${index}:${panel++}`,a:pa,b:pb,cellA,cellB,xy:[(pa[0]+pb[0])/2,Math.max(pa[1],pb[1])],lantern:!gate&&i%6===0,gate});
+      }
     }
   });
   return pieces;
 }
+function drawExitGate(ctx,{a,b}){
+  for(const [x,y] of [a,b]){
+    // Two leaves swing away from the middle of the path.
+    const end=[x+14,y+22];
+    for(const h of [10,27]){
+      pixelLine(ctx,[x,y-h],[end[0],end[1]-h],'#231f2e',6);
+      pixelLine(ctx,[x,y-h-1],[end[0],end[1]-h-1],'#a57554',3);
+      pixelLine(ctx,[x,y-h-2],[end[0],end[1]-h-2],'#e7ae73',1);
+    }
+    pixelLine(ctx,[x,y-26],[end[0],end[1]-10],'#735044',3);
+    ctx.fillStyle='#231f2e';ctx.fillRect(Math.round(x-6),Math.round(y-53),12,56);
+    ctx.fillStyle='#735044';ctx.fillRect(Math.round(x-4),Math.round(y-51),8,53);
+    ctx.fillStyle='#a57554';ctx.fillRect(Math.round(x-4),Math.round(y-50),3,50);
+    ctx.fillStyle='#e7ae73';ctx.fillRect(Math.round(x-7),Math.round(y-56),14,4);
+    ctx.fillStyle='#41465c';ctx.fillRect(Math.round(x-5),Math.round(y-39),10,3);ctx.fillRect(Math.round(x-5),Math.round(y-12),10,3);
+    ctx.fillStyle='#231f2e';ctx.fillRect(Math.round(x-5),Math.round(y-74),10,16);
+    ctx.fillStyle='#f5d69a';ctx.fillRect(Math.round(x-2),Math.round(y-71),4,9);
+    ctx.fillStyle='#a57554';ctx.fillRect(Math.round(x-6),Math.round(y-76),12,2);
+  }
+}
 export function drawBoundaryFence(ctx,piece){
+  if(piece.gate){drawExitGate(ctx,piece);return;}
   const {a,b}=piece;
   pixelLine(ctx,[a[0],a[1]+2],[b[0],b[1]+2],'#24483f',7);
   for(const h of [12,25]){
@@ -64,7 +93,6 @@ export function drawBoundaryFence(ctx,piece){
     pixelLine(ctx,[a[0],a[1]-h-1],[b[0],b[1]-h-1],'#a57554',3);
     pixelLine(ctx,[a[0],a[1]-h-2],[b[0],b[1]-h-2],'#b49a66',1);
   }
-  if(piece.gate){pixelLine(ctx,[a[0],a[1]-25],[b[0],b[1]-12],'#b49a66',3);pixelLine(ctx,[a[0],a[1]-12],[b[0],b[1]-25],'#a57554',3);}
   for(const [x,y] of [a,b]){
     ctx.fillStyle='#4a3c2c';ctx.fillRect(Math.round(x-4),Math.round(y-34),8,35);
     ctx.fillStyle='#a57554';ctx.fillRect(Math.round(x-2),Math.round(y-32),4,31);

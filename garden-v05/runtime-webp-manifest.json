@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "ee301f9be424",
+  "revision": "95e2f7d57125",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -4163,60 +4163,60 @@
       "file": "runtime-webp/native-items/pen_1.webp",
       "width": 128,
       "height": 112,
-      "sourceBytes": 3766,
-      "bytes": 2466,
-      "sourceSha256": "d47e449cea2ef05b786439db010536d49bc416bb0325607e5220158e4d63b1b2",
-      "sha256": "4e8a07de5c87af09d0ee6f63eb1fd21c46a7304f0ff67dd12f0ef019ca7c3241"
+      "sourceBytes": 1665,
+      "bytes": 1010,
+      "sourceSha256": "d45e097c6cad2952c9a37239a29e2e471d3224d84a5234fe80e153fb0910fc62",
+      "sha256": "98e3baccb23d7d142bcfb233a6b7bc47ff0bbdfbffdd648e304d50ff638291ff"
     },
     {
       "source": "native-items/pen_2.png",
       "file": "runtime-webp/native-items/pen_2.webp",
       "width": 128,
       "height": 112,
-      "sourceBytes": 3734,
-      "bytes": 2420,
-      "sourceSha256": "6157dc6cc0fb6287759d97d4cc450b0afd0a6a75093a7b4d33d8861dc3fc04bf",
-      "sha256": "296421e35a8e02943245f82bed61fbb5a520e2f1cb8dcfebdb26dff21b87b092"
+      "sourceBytes": 1692,
+      "bytes": 998,
+      "sourceSha256": "4bfdd8b71b324a5ae832b1a5534011d077f27b2db58c4ea3f3f94bd5c7b5580e",
+      "sha256": "24efb4cf96309889becc7db2f6deeeb1571439c085644bbdfa56733f049790fc"
     },
     {
       "source": "native-items/pen_3.png",
       "file": "runtime-webp/native-items/pen_3.webp",
       "width": 128,
       "height": 112,
-      "sourceBytes": 4152,
-      "bytes": 2680,
-      "sourceSha256": "a2b35ec6c5c65ad4bcc3b79b33655c44eedd56cf8f4eeafa739d159eb40985af",
-      "sha256": "78f70a1950b6667b9a64769d2326adc821ec08d2d5019d10c44e1c8446880c1d"
+      "sourceBytes": 1655,
+      "bytes": 1000,
+      "sourceSha256": "e7e30657b42e636eccf31565746a1a598a9bd0b7ee1d296ad430d03af4d853fa",
+      "sha256": "bccbbbfca2ea4944ca4af889a892602160a61a0514e19f9e9d1cadd8c59dd7da"
     },
     {
       "source": "native-items/pen_4.png",
       "file": "runtime-webp/native-items/pen_4.webp",
       "width": 160,
       "height": 144,
-      "sourceBytes": 5626,
-      "bytes": 3728,
-      "sourceSha256": "57d4fac16651ca97addfcc224817416b77adb03011bbbf072dbaf67d7e6e2c50",
-      "sha256": "b2ee14fba9d38ca55d9ca39b6283f23e3f7f2bf5a7848fd91f22f544856e9f5b"
+      "sourceBytes": 2078,
+      "bytes": 1320,
+      "sourceSha256": "08d1cca0b4bf7dfa74287df2937b3e510e46104113f445f3ac6d78d1d932f842",
+      "sha256": "a22a13290c49e2646bd6fe804f0837a80c5c2522a841569ef2d03ceb2feeb2cc"
     },
     {
       "source": "native-items/pen_5.png",
       "file": "runtime-webp/native-items/pen_5.webp",
       "width": 160,
       "height": 144,
-      "sourceBytes": 5956,
-      "bytes": 4044,
-      "sourceSha256": "6e610cb4087f08fe9dbae762f74a558b7696a1add48a9ba3393e4bea3425f5e3",
-      "sha256": "a2abc8420a5405d754cbe4bbff64bc4520d0c574b4977ec6c8bfd509d58ed57d"
+      "sourceBytes": 2085,
+      "bytes": 1356,
+      "sourceSha256": "983f1739dfc4c7dd55da6712d5d602148f68921628de01b2ea94b8a30a53c1f5",
+      "sha256": "e9e0937990f47c9ff4adfa7569dc5efc4647af523145700696c6d4357b8f5f9c"
     },
     {
       "source": "native-items/pen_6.png",
       "file": "runtime-webp/native-items/pen_6.webp",
       "width": 160,
       "height": 144,
-      "sourceBytes": 6111,
-      "bytes": 4208,
-      "sourceSha256": "fdbac6ed3a700568e7756e8e2c6a667e00985838387c43da59a64cf7e0a0f6c1",
-      "sha256": "4925783c27a01d5eb7f48835a441c34d1396419611086276ced13e66411e920f"
+      "sourceBytes": 2086,
+      "bytes": 1356,
+      "sourceSha256": "04c2310bf10ed43e489dfd4a836c6f56ff71cd89cdc25045ff5f649138c34327",
+      "sha256": "bc6c247da6ff9fb3b3b7ba0851e262ce9d4aad0cbb878127fd0186687fd06596"
     },
     {
       "source": "native-items/produce_bowtruckle.png",
@@ -9074,9 +9074,9 @@
   "totals": {
     "converted": 901,
     "existingWebp": 8,
-    "originalBytes": 4218211,
-    "webpBytes": 2977412,
-    "savedBytes": 1240799,
-    "savedPercent": 29.42
+    "originalBytes": 4200127,
+    "webpBytes": 2964906,
+    "savedBytes": 1235221,
+    "savedPercent": 29.41
   }
 }

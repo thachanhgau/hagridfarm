@@ -1,0 +1,55 @@
+{
+  "browser": "Chrome",
+  "stages": [
+    {
+      "level": 1,
+      "stage": 1,
+      "actualTreeDraws": 1461,
+      "crossing": 0,
+      "signLines": 2
+    },
+    {
+      "level": 10,
+      "stage": 2,
+      "actualTreeDraws": 1400,
+      "crossing": 0,
+      "signLines": 2
+    },
+    {
+      "level": 24,
+      "stage": 3,
+      "actualTreeDraws": 1357,
+      "crossing": 0,
+      "signLines": 2
+    },
+    {
+      "level": 48,
+      "stage": 4,
+      "actualTreeDraws": 1350,
+      "crossing": 0,
+      "signLines": 2
+    },
+    {
+      "level": 72,
+      "stage": 5,
+      "actualTreeDraws": 1295,
+      "crossing": 0,
+      "signLines": 2
+    },
+    {
+      "level": 100,
+      "stage": 6,
+      "actualTreeDraws": 1209,
+      "crossing": 0,
+      "signLines": 2
+    },
+    {
+      "level": 110,
+      "stage": 7,
+      "actualTreeDraws": 1151,
+      "crossing": 0,
+      "signLines": 2
+    }
+  ],
+  "errors": []
+}
