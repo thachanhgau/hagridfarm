@@ -25,11 +25,16 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]){
    if(url.protocol==='blob:'||url.protocol==='data:')return route.continue();
    if(url.origin!==origin){report.errors.push('blocked external request '+url.origin);return route.abort();}
    const relative=decodeURIComponent(url.pathname).replace(/^\//,'');
+   if(packaged&&relative==='opaque-fixture.html')return route.fulfill({contentType:'text/html',body:'<!doctype html><iframe sandbox="allow-scripts" style="position:absolute;inset:0;width:100%;height:100%;border:0" src="/garden-v05/index.html?wallet=emulator&qa=1&level=500&scenario=habitats&view=overview&simulate=1"></iframe>'});
    let file=path.resolve(root,relative);
    if(packaged&&relative.startsWith('garden-v05/'))file=path.resolve(packaged,relative.slice('garden-v05/'.length));
    if(!file.startsWith(root+path.sep)&&!(packaged&&file.startsWith(packaged+path.sep)))throw Error('Unsafe fixture path');
    const contentType={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2'}[path.extname(file)]||'application/octet-stream';
-   try{await route.fulfill({body:await fs.readFile(file),contentType,headers:{'Access-Control-Allow-Origin':'*'}});}
+   try{
+    let body=await fs.readFile(file);
+    if(packaged&&relative==='garden-v05/index.html')body=Buffer.from(body.toString().replace('<html ','<html data-wallet="fixture" '));
+    await route.fulfill({body,contentType,headers:{'Access-Control-Allow-Origin':'*'}});
+   }
    catch{report.errors.push('missing '+relative);await route.fulfill({status:404,body:'missing'});}
   });
   const page=await context.newPage();page.on('pageerror',error=>report.errors.push(error.message));
@@ -53,6 +58,17 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]){
    assert.ok(art.every(item=>!item.svg&&!item.missing&&item.src?.includes('runtime-webp/native-items/')));
    report.viewports.push({...viewport,premiumCards:art.length,nativeDesigns:7,missing:0});
    if(viewport.width===1280&&name==='Chrome')await sharp(await page.screenshot()).resize({width:640}).png().toFile(path.join(evidence,'hagrid-premium-shop.png'));
+  }
+  if(packaged){
+   await page.goto(origin+'/opaque-fixture.html');
+   const frame=page.frames().find(frame=>frame.url().includes('/garden-v05/index.html'));
+   await frame.waitForFunction(()=>window.__HAGRID_GARDEN_QA__?.getSnapshot().loaded&&window.__HAGRID_GARDEN_QA__?.getSnapshot().walletReady);
+   assert.equal(await frame.evaluate(()=>self.origin),'null');
+   await frame.locator('#suppliesButton').click();await frame.locator('[data-kind="premium"]').click();
+   await frame.waitForFunction(()=>[...document.images].every(image=>image.complete&&image.naturalWidth>0));
+   assert.equal(await frame.locator('[data-store-item] .gp-tile-art img').count(),12);
+   assert.equal(await frame.locator('[data-store-item] .is-art-missing,[data-store-item] .gp-tile-art svg').count(),0);
+   report.opaqueIframe={origin:'null',sandbox:'allow-scripts',premiumCards:12,missing:0,fixtureOnlyHtmlAdaptation:'data-wallet=fixture'};
   }
   assert.deepEqual(report.errors,[]);reports.push(report);
  }finally{await browser.close();}
