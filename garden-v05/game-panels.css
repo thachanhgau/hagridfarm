@@ -271,6 +271,9 @@
  #gameShell #panel .journey-stages-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
  /* The shop stepper (44 + qty + 44) fits a 320 px card. */
  #gameShell :is(#panel,.store-popover) .store-cards-grid .gp-tile{padding-inline:3px}
+ /* Nine shop tabs do not fit one 320 px row («Trang trí» ran into «Sản phẩm đặc biệt»): two rows of five. */
+ #gameShell :is(#panel,.store-popover) .store-tabs{flex-wrap:wrap;row-gap:8px}
+ #gameShell :is(#panel,.store-popover) .store-tabs .gp-tab{flex:0 0 calc((100% - 16px)/5)}
  #gameShell .store-popover .gp-qty-value{min-width:26px}
  #gameShell .store-popover .gp-qty-value b{font-size:15px}
 }
@@ -359,4 +362,8 @@
 #gameShell #saleAcp .acp-field{display:grid;gap:2px}
 #gameShell #saleAcp .acp-field small{color:#A6B1AE;font:700 10px/1.2 var(--gp-body)}
 #gameShell #saleAcp .acp-field :is(input,select){min-height:32px;border:2px solid #231F2E;background:#24483F;color:#F5D69A;font:600 13px/1.2 var(--gp-body)}
+#gameShell #saleAcp .acp-field:has(.acp-chips){grid-column:1/-1}
+#gameShell #saleAcp .acp-chips{justify-content:flex-start}
+#gameShell #saleAcp .acp-chips button{min-height:36px;padding:4px 8px;font:700 12px/1.2 var(--gp-body)}
+#gameShell #saleAcp .acp-field input:invalid{border-color:#C75B4B}
 #gameShell #saleAcp .acp-actions{display:flex;gap:8px;justify-content:flex-end}
