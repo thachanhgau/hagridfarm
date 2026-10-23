@@ -1,0 +1,19 @@
+{
+  "id": "thestral",
+  "master": "creature-motion-assets/masters/thestral-left-motion-v01.png",
+  "kind": "left-motion",
+  "clipNames": [
+    "action",
+    "eat",
+    "care"
+  ],
+  "rows": 3,
+  "columns": 4,
+  "prompt": "Create ONE authored animation sprite atlas for a charcoal BROWN skeletal Thestral horse, visible rib contours, long neck, thin tail, folded leathery bat wings. The supplied reference contact sheet shows the LARGE ORIGINAL creature in labelled tile thestral, above its tiny statuette. Use ONLY that LARGE ORIGINAL for identity, proportions and exact colors, ignore statuettes/other species. Exact3rows by4columns,12cells. Every cell is one FULL isolated mature creature FACING LEFT (head/snout points screen-left, tail to screen-right); genuine left viewpoint, NOT a mirrored right sprite. Row1: four generic action phases anticipation, excited peak, release, relaxed recovery. Row2: four EATING phases approach a tiny low food dish, lower head, take a bite, raise head/chew. Row3: four CARE phases gently lean toward a small brush cue, enjoy brushing, blink/relax, return to stance. Same body size, camera and grounded foot baseline across all12poses; no walking or camera zoom. The body's posture/limbs/head/wings/ears must articulate in each phase, not rigid shifts. Clean chunky pixel art for a native50–120px game sprite, broad flat connected clusters, limited24sprite colors, 2-3 shades per material, selective dark-purple outline, top-left light. NO fine fur/feather pattern, noisy speckles, dithering, gradients, glow or text. Leave a WIDE TRANSPARENT GUTTER between every cell and at least20%blank margin around each full silhouette, no crossing edges, all tails/wings/horns/brush props fully inside cell. True transparent RGBA background, no ground plate, labels, numbers or cast shadows.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-b2cd1563-8a62-43c7-bf99-19eb4a96e3d6.png",
+  "tool": "builtin image_gen",
+  "referenceFiles": [
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "masterSha256": "3e25213a7a367e5098282fb2a9f4648310267db89771b39457ac28ec788b557b"
+}

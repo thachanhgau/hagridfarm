@@ -8,8 +8,8 @@ import {createRequire} from 'node:module';
 const root=path.dirname(fileURLToPath(import.meta.url)),require=createRequire(import.meta.url);
 const sharp=require(process.env.SHARP_MODULE||'/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 sharp.concurrency(1);
-const folders=['native','native-levels','native-care','native-items','decor-assets','environment','v24-art','world-v241','world-v242'];
-const skip=/(^|\/)(masters\/|prompts\.json$|provenance\.json$)|^decor-assets\/qa\/|^environment\/(garden-background|garden-native|terrain-grass|terrain-soil|hut|props-v03)\.png$/;
+const folders=['native','native-levels','native-care','native-items','native-complete-objects','native-crop-complete','creature-motion-assets/native','decor-assets','environment','v24-art','world-v241','world-v242'];
+const skip=/(^|\/)(masters\/|prompts\.json$|provenance\.json$)|^decor-assets\/qa\/|^native-crop-complete\/[^/]+\/frame-\d+\.png$|^creature-motion-assets\/native\/[^/]+\/(?:left|right)-(?:growth|idle|action|eat|care)-\d+\.png$|^environment\/(garden-background|garden-native|terrain-grass|terrain-soil|hut|props-v03)\.png$/;
 const digest=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const read=relative=>fs.readFile(path.join(root,relative));
 async function list(relative){

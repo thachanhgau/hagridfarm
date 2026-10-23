@@ -1,0 +1,566 @@
+{
+  "date": "2026-10-23",
+  "version": "24.9.74",
+  "beforeSource": "3c73f5f2a18fb0fa8d56bca73054dc03c6204996",
+  "status": "locally-verified-awaiting-import-and-release",
+  "crops": [
+    {
+      "id": "ambermelon",
+      "label": "Dưa hổ phách",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "beet",
+      "label": "Củ cải đỏ",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "blueberry",
+      "label": "Việt quất",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "bubotuber",
+      "label": "Củ u",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "carrot",
+      "label": "Cà rốt",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "clover",
+      "label": "Cỏ ba lá",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "devilssnare",
+      "label": "Bẫy Quỷ",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "firepepper",
+      "label": "Ớt lửa",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "flax",
+      "label": "Lanh",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "flitterbloom",
+      "label": "Bông-đòng-đưa",
+      "idle": 3,
+      "action": 6,
+      "frames": 9
+    },
+    {
+      "id": "fluxweed",
+      "label": "Rong nước xiết",
+      "idle": 3,
+      "action": 6,
+      "frames": 9
+    },
+    {
+      "id": "gillyweed",
+      "label": "Cỏ mang cá",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "knotgrass",
+      "label": "Cỏ chút chít",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "lettuce",
+      "label": "Xà lách",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "maize",
+      "label": "Ngô vàng",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "mimbulus",
+      "label": "Mimbulus mimbletonia",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "mint",
+      "label": "Bạc hà",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "mistmushroom",
+      "label": "Nấm sương",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "moonherb",
+      "label": "Cỏ trăng",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "oats",
+      "label": "Yến mạch",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "shrivelfig",
+      "label": "Sung-quéo",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "silverkelp",
+      "label": "Tảo bạc",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "starbean",
+      "label": "Đậu sao",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "sunflower",
+      "label": "Hướng dương",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "sunpetal",
+      "label": "Hoa nhật quang",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    },
+    {
+      "id": "valerian",
+      "label": "Nữ lang",
+      "idle": 4,
+      "action": 6,
+      "frames": 10
+    }
+  ],
+  "creatures": [
+    {
+      "id": "puffskein",
+      "label": "Puffskein",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 8,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "bowtruckle",
+      "label": "Que Xạo",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 12,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "niffler",
+      "label": "Đào mỏ",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 8,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "hippogriff",
+      "label": "Bằng-Mã",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 8,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "dragon",
+      "label": "Rồng",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 8,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "three-headed-dog",
+      "label": "Chó ba đầu",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 0,
+      "originalDogLeftActionsRetained": true
+    },
+    {
+      "id": "mooncalf",
+      "label": "Mooncalf",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 12,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "kneazle",
+      "label": "Kneazle",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 12,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "diricawl",
+      "label": "Diricawl",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 12,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "fwooper",
+      "label": "Fwooper",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 12,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "thestral",
+      "label": "Vong mã",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 12,
+      "originalDogLeftActionsRetained": false
+    },
+    {
+      "id": "unicorn",
+      "label": "Kỳ lân",
+      "rightGrowth": 4,
+      "rightIdle": 4,
+      "rightAction": 4,
+      "rightEat": 4,
+      "rightCare": 4,
+      "newLeftActionFrames": 12,
+      "originalDogLeftActionsRetained": false
+    }
+  ],
+  "objects": [
+    {
+      "id": "gardener_friend",
+      "kind": "scene",
+      "frames": 4
+    },
+    {
+      "id": "habitat_bowtruckle",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_diricawl",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_dragon",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_fwooper",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_hippogriff",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_kneazle",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_mooncalf",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_niffler",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_puffskein",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_thestral",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_three-headed-dog",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "habitat_unicorn",
+      "kind": "habitat",
+      "frames": 1
+    },
+    {
+      "id": "herbology_greenhouse",
+      "kind": "scene",
+      "frames": 4
+    },
+    {
+      "id": "keepsake_bowtruckle",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_diricawl",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_dragon",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_fwooper",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_hippogriff",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_kneazle",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_mooncalf",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_niffler",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_puffskein",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_thestral",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_three-headed-dog",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "keepsake_unicorn",
+      "kind": "keepsake",
+      "frames": 1
+    },
+    {
+      "id": "owl_post",
+      "kind": "scene",
+      "frames": 4
+    }
+  ],
+  "nativeFrames": 650,
+  "nativeValidation": {
+    "allHashes": true,
+    "palette24": true,
+    "binaryAlpha": true,
+    "transparentCanvasMargin": true
+  },
+  "atlasPacking": {
+    "cropAtlases": 26,
+    "creatureAtlases": 23,
+    "rgbaExact": true
+  },
+  "atlasWarnings": 0,
+  "original128GrowthPngBytesUnchanged": true,
+  "webp": {
+    "images": 1007,
+    "bytes": 3474214,
+    "rgbaExact": true
+  },
+  "tests": {
+    "passed": 275,
+    "failed": 0
+  },
+  "browserEvidence": "../qa-v19/artwork-completion-qa-20261023.json",
+  "performance": {
+    "tool": "Lighthouse13.5.0",
+    "scope": "All requests intercepted at 127.0.0.1:3026; in-memory level500 fixture; no production traffic",
+    "beforeSource": "3c73f5f2a18fb0fa8d56bca73054dc03c6204996",
+    "afterSource": "V24.9.74 completion working tree",
+    "formFactor": "mobile simulated throttling",
+    "runs": {
+      "before": [
+        {
+          "performance": 53,
+          "fcpMs": 8415,
+          "lcpMs": 12015,
+          "tbtMs": 237.5,
+          "bytes": 4438530
+        },
+        {
+          "performance": 52,
+          "fcpMs": 8340,
+          "lcpMs": 12015,
+          "tbtMs": 245.5,
+          "bytes": 4438530
+        },
+        {
+          "performance": 52,
+          "fcpMs": 8490,
+          "lcpMs": 13575,
+          "tbtMs": 249,
+          "bytes": 4438530
+        }
+      ],
+      "after": [
+        {
+          "performance": 52,
+          "fcpMs": 9045,
+          "lcpMs": 12810,
+          "tbtMs": 253.5,
+          "bytes": 4901744
+        },
+        {
+          "performance": 50,
+          "fcpMs": 8190,
+          "lcpMs": 11595,
+          "tbtMs": 303,
+          "bytes": 4901744
+        },
+        {
+          "performance": 52,
+          "fcpMs": 9030,
+          "lcpMs": 12795,
+          "tbtMs": 243.5,
+          "bytes": 4901744
+        }
+      ]
+    },
+    "medians": {
+      "before": {
+        "performance": 52,
+        "fcpMs": 8415,
+        "lcpMs": 12015,
+        "tbtMs": 245.5,
+        "bytes": 4438530
+      },
+      "after": {
+        "performance": 52,
+        "fcpMs": 9030,
+        "lcpMs": 12795,
+        "tbtMs": 253.5,
+        "bytes": 4901744
+      }
+    }
+  },
+  "remaining": [
+    {
+      "group": "Halloween",
+      "status": "deferred-at-owner-request",
+      "unchanged": true
+    }
+  ],
+  "limits": [
+    "Desktop Chrome/WebKit fixtures only; no physical iPhone or authenticated playthrough"
+  ]
+}

@@ -5,12 +5,15 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "4083900d2179",
+  "revision": "c6839febddc1",
   "sourceFolders": [
     "native",
     "native-levels",
     "native-care",
     "native-items",
+    "native-complete-objects",
+    "native-crop-complete",
+    "creature-motion-assets/native",
     "decor-assets",
     "environment",
     "v24-art",
@@ -4729,6 +4732,856 @@
       "sha256": "7c01c8ece61633aa8ebf3b168dc8252ccb87b86739e6c3be3bb68ea3e269e9e5"
     },
     {
+      "source": "native-complete-objects/gardener_friend/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/gardener_friend/frame-01.webp",
+      "width": 80,
+      "height": 112,
+      "sourceBytes": 2010,
+      "bytes": 1214,
+      "sourceSha256": "6dedf8e885c63f5dac87881006a965501540493a0eaa9e623b5bbcfc7c2ee17c",
+      "sha256": "05787f7a042404d891d54b1c338ad8d6a15e93448b9196ddf822d731aa8a5c9d"
+    },
+    {
+      "source": "native-complete-objects/gardener_friend/frame-02.png",
+      "file": "runtime-webp/native-complete-objects/gardener_friend/frame-02.webp",
+      "width": 80,
+      "height": 112,
+      "sourceBytes": 1988,
+      "bytes": 1238,
+      "sourceSha256": "7bf35277ae4327253a1795cba34e0e24222d9522032b8133d3c404feac9258cc",
+      "sha256": "53161054f3cd3d4e7cda8868d2b3f12109dec1f68794d397ee47977380baea80"
+    },
+    {
+      "source": "native-complete-objects/gardener_friend/frame-03.png",
+      "file": "runtime-webp/native-complete-objects/gardener_friend/frame-03.webp",
+      "width": 80,
+      "height": 112,
+      "sourceBytes": 2054,
+      "bytes": 1218,
+      "sourceSha256": "9d3503d8666a8317852a75a1df7aed0896907d781b6e43ddac212f1b09044fd6",
+      "sha256": "597970513ab8785b9c541cd93ee7f5735bc5f79b559266bbfffdb909f5d66083"
+    },
+    {
+      "source": "native-complete-objects/gardener_friend/frame-04.png",
+      "file": "runtime-webp/native-complete-objects/gardener_friend/frame-04.webp",
+      "width": 80,
+      "height": 112,
+      "sourceBytes": 2111,
+      "bytes": 1260,
+      "sourceSha256": "3e08b55f3c2762d289c0f00362e027c68d065afa4453f3b9c83cf61b58ea3b7e",
+      "sha256": "4a4dfff4089a09e08075115064cac30f44da3657b53a6b3dd55611ca762c01b8"
+    },
+    {
+      "source": "native-complete-objects/habitat_bowtruckle/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_bowtruckle/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 581,
+      "bytes": 390,
+      "sourceSha256": "cb30b44f8d4621761a664861cf1d5761abeda2ace1de49d40550d616f12d4f0c",
+      "sha256": "0a7e9cd078e12e0f5c123ea20f32e35d7d610e3a4337b457d067c336577fc8a1"
+    },
+    {
+      "source": "native-complete-objects/habitat_diricawl/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_diricawl/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 464,
+      "bytes": 340,
+      "sourceSha256": "5a393249711eb45d76d396db81904a76148430a98822988caf05be706e378d9c",
+      "sha256": "3db33a9122a3fd585d4b7ded2d2065349f6652bea688d4318389e2e0562ae99a"
+    },
+    {
+      "source": "native-complete-objects/habitat_dragon/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_dragon/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 558,
+      "bytes": 414,
+      "sourceSha256": "df3744d6df5003c912ce8a262424c233b1d8766feb294f726af1934d517a800f",
+      "sha256": "df669a6ed2d019252d02cb7d6e27c91411a0dedc4e97c38b06ce3500e269bf34"
+    },
+    {
+      "source": "native-complete-objects/habitat_fwooper/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_fwooper/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 495,
+      "bytes": 310,
+      "sourceSha256": "5c4f2ef2407d6b84d13ea2ab7d318461deba29069a0f6e95fb7d8bbb830db245",
+      "sha256": "f76e07c5e712489ba7f798c224212c42b2ddcdc3a06522b36577977b5963f9aa"
+    },
+    {
+      "source": "native-complete-objects/habitat_hippogriff/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_hippogriff/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 543,
+      "bytes": 368,
+      "sourceSha256": "4bbfb6e3b2fde9e096fd343e4524f59f0afcffa97990d05ad008719c1ad1c9f7",
+      "sha256": "4ef26339adde0883c359ef901565f153f4d276c0bd84b963e486fcd085dd9f14"
+    },
+    {
+      "source": "native-complete-objects/habitat_kneazle/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_kneazle/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 461,
+      "bytes": 306,
+      "sourceSha256": "a503687e1b60f56d36ff578a452a0ba706bda71a1aa08d4dde127841881ba474",
+      "sha256": "8cefcf276c9fd7c057f8e45524e97115c6a7515f824347166d6453b08e04a25a"
+    },
+    {
+      "source": "native-complete-objects/habitat_mooncalf/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_mooncalf/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 446,
+      "bytes": 312,
+      "sourceSha256": "2f0f99575745f5e542cdcfeaf500d3ae0b6486855398a7951ef93a8318368de7",
+      "sha256": "99561afbb118fe2ea1e66e7d21bb5a0e32fbb6aa79b8499c16d48ed50e6e98db"
+    },
+    {
+      "source": "native-complete-objects/habitat_niffler/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_niffler/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 568,
+      "bytes": 386,
+      "sourceSha256": "f555302a8aa7914ea70e9679f4e97b29d1b9265a857494f44834273fb8e8cca1",
+      "sha256": "750938dec1227bb5215278e57495ba2c977ba2e14d668208635df6fa7dee2fb0"
+    },
+    {
+      "source": "native-complete-objects/habitat_puffskein/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_puffskein/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 593,
+      "bytes": 388,
+      "sourceSha256": "b771cf2a44b71e6d0f25bf7d85cdff26c435442dc1e9077386ea46a3cf83972a",
+      "sha256": "c2c706b7abd464ef19587bd784cf42c2993c38df9ddceedd7d8225478ff95043"
+    },
+    {
+      "source": "native-complete-objects/habitat_thestral/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_thestral/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 529,
+      "bytes": 342,
+      "sourceSha256": "d78d7bcef640f9f9df745d2064f8cb6699c83f7871bdf9b9bcb2b3a128748e65",
+      "sha256": "325b6ec0e8a7d70ab87e32e60314109bda864a62a84c269efed8f2540b59f55d"
+    },
+    {
+      "source": "native-complete-objects/habitat_three-headed-dog/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_three-headed-dog/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 538,
+      "bytes": 374,
+      "sourceSha256": "8c580b6d24342838cfaf6440988a566f8124bea5e662474644252f42af22f1ef",
+      "sha256": "8f293c64565142b5bc1e6a56bf69a9fbdd965e057390a32a12ee74dfb523e587"
+    },
+    {
+      "source": "native-complete-objects/habitat_unicorn/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_unicorn/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 488,
+      "bytes": 346,
+      "sourceSha256": "5d87c1500196e8387cd74935b68f0ca4c35654c80fe35502c700b402c71e7692",
+      "sha256": "9bc08e6e2563d7e01668b7f21ccb9454cc3f7e8632024b0480d9b0f94fff8710"
+    },
+    {
+      "source": "native-complete-objects/herbology_greenhouse/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/herbology_greenhouse/frame-01.webp",
+      "width": 156,
+      "height": 152,
+      "sourceBytes": 6774,
+      "bytes": 4420,
+      "sourceSha256": "42599270411bf9c277795f5fd4f482dbb819dfb1e27dcf616c7517ea8cae2ebf",
+      "sha256": "74f93b707b7baf42054eb7ec5a12536e4b83f0ee45f55f8fdbbec1fff189ed09"
+    },
+    {
+      "source": "native-complete-objects/herbology_greenhouse/frame-02.png",
+      "file": "runtime-webp/native-complete-objects/herbology_greenhouse/frame-02.webp",
+      "width": 156,
+      "height": 152,
+      "sourceBytes": 6754,
+      "bytes": 4474,
+      "sourceSha256": "fe65eb16aed4b26b13b5b78a2d58c713d19d39e6f3067befdf24b395fbe4a400",
+      "sha256": "8b9b513b56abc1e99b0c7f24bd3033235f2bfefd23e4c9cdbd60c4d564f7c6e7"
+    },
+    {
+      "source": "native-complete-objects/herbology_greenhouse/frame-03.png",
+      "file": "runtime-webp/native-complete-objects/herbology_greenhouse/frame-03.webp",
+      "width": 156,
+      "height": 152,
+      "sourceBytes": 6915,
+      "bytes": 4622,
+      "sourceSha256": "faa81342aea53742d65ababfc118bfbd0ebc12c94257ff9c29f38b0c85586412",
+      "sha256": "1bb499271708e386c299fb6dac82d90d974f1c1302875c3ef4eecb3446f8a92e"
+    },
+    {
+      "source": "native-complete-objects/herbology_greenhouse/frame-04.png",
+      "file": "runtime-webp/native-complete-objects/herbology_greenhouse/frame-04.webp",
+      "width": 156,
+      "height": 152,
+      "sourceBytes": 6726,
+      "bytes": 4460,
+      "sourceSha256": "bfc9ea3e4864f45a56f3f32a30619603b961646981a15e2cd4a384410ece0e1e",
+      "sha256": "473d5ea04a97a183f440756f1b3ef5189f510c441ae3de6b4f45fc5043617d4f"
+    },
+    {
+      "source": "native-complete-objects/keepsake_bowtruckle/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_bowtruckle/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 787,
+      "bytes": 482,
+      "sourceSha256": "ac57d844980a2e19097e4bc3078f321055c90af53cf1b8a6e0a524d6b5d85bfd",
+      "sha256": "2fe65ca3066993901c0b1e050493a690e9d9466abe9486fda7210d9c498cbea8"
+    },
+    {
+      "source": "native-complete-objects/keepsake_diricawl/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_diricawl/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 835,
+      "bytes": 538,
+      "sourceSha256": "266b1f3c3b78ffcf3ef486f5e71ff90387df7731dd299cbbd1f47d150380ca2b",
+      "sha256": "a1994541060c82af4951797b5f8c625322ae83accfb111120434f0f7074fab00"
+    },
+    {
+      "source": "native-complete-objects/keepsake_dragon/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_dragon/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 978,
+      "bytes": 618,
+      "sourceSha256": "e855b34a1831d0745aac446abed806cf728bc7476a53522ea37c160384c30ad7",
+      "sha256": "e68af444072cca410446373b838bec42d4b13649ae17bb4bb56091cfc20b168b"
+    },
+    {
+      "source": "native-complete-objects/keepsake_fwooper/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_fwooper/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 898,
+      "bytes": 564,
+      "sourceSha256": "d2be5c08147668c840f657d02e509bc5dac6ee74cea6e32e7ba5cef4908cff43",
+      "sha256": "1ed8f7f315836fb7aff9eb58436e1ab917da7d5f0636306cf5dd58f8cc504504"
+    },
+    {
+      "source": "native-complete-objects/keepsake_hippogriff/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_hippogriff/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1009,
+      "bytes": 636,
+      "sourceSha256": "d200021d4f3dc484ae2be816a728412a54986020852d4b537475948ec0060a9f",
+      "sha256": "0785aed94b2f9ade85626af3e84a8621c73c0b2ea485c61f8c4a694d947ab202"
+    },
+    {
+      "source": "native-complete-objects/keepsake_kneazle/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_kneazle/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 930,
+      "bytes": 570,
+      "sourceSha256": "ea3d5c4a4eef7692f5c34383d6bcb436fd4da5e8b6cebffee7b49b54309e0ed5",
+      "sha256": "ceb9772f4cb6103f6d64663b17cf9f0c70a80dccacb406d272ff58a6b748605e"
+    },
+    {
+      "source": "native-complete-objects/keepsake_mooncalf/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_mooncalf/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 765,
+      "bytes": 434,
+      "sourceSha256": "0fe8016fa8513e1f3d2b6475d129f5e5e907ba03dd8335206e453f944db93900",
+      "sha256": "feaa6f10f67a81a985bc9eb3928dc6e5c973abfa373c78776246b3b0ed025a7a"
+    },
+    {
+      "source": "native-complete-objects/keepsake_niffler/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_niffler/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 840,
+      "bytes": 540,
+      "sourceSha256": "e8233a992eaeef58d8f97fc1d896c5546695ab185d46e338df469fe98e401179",
+      "sha256": "e15f33e709064776b92b7e90b917c720ed2d48d2ce20b26ce68e9369dd085f74"
+    },
+    {
+      "source": "native-complete-objects/keepsake_puffskein/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_puffskein/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 926,
+      "bytes": 594,
+      "sourceSha256": "a6ee5a7b30aa893ee191f993dbc8cda73cab5e804c8fd84387da154ae6ea5912",
+      "sha256": "27110e5432c2f3164de52b867b12047279b72a94225f996426987262ac9b1557"
+    },
+    {
+      "source": "native-complete-objects/keepsake_thestral/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_thestral/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 707,
+      "bytes": 438,
+      "sourceSha256": "c05e5b212179848c713da2940006dbf2f7bdac725943f51cb9f0d31f36e49109",
+      "sha256": "e144a909b0eb6e65e5531d9105ea5c145551dd4f2ec27a585cfaf24c11d8eac5"
+    },
+    {
+      "source": "native-complete-objects/keepsake_three-headed-dog/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_three-headed-dog/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 964,
+      "bytes": 620,
+      "sourceSha256": "c46c1ce5d71d1997873924d25ad3456825e7b7d2702f5ef26d649ac19f48efeb",
+      "sha256": "24c735302bbac871804faa236ba00d9601742b81b34e3c1d16d4ff61448c25ab"
+    },
+    {
+      "source": "native-complete-objects/keepsake_unicorn/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_unicorn/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 823,
+      "bytes": 542,
+      "sourceSha256": "678a438d6a9905a3eb17980ddff39700492274aab0eaebb2e6e66cfe3cf6d473",
+      "sha256": "e520641cc6abfe80ab9d396cb88c01ad383da0c26de77dd8fadbafb8b914b269"
+    },
+    {
+      "source": "native-complete-objects/owl_post/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/owl_post/frame-01.webp",
+      "width": 80,
+      "height": 104,
+      "sourceBytes": 1486,
+      "bytes": 914,
+      "sourceSha256": "c4b5354d66965cdb353d7c697aa23ae2f09f07c03c8c76176da3e0b588c4aa37",
+      "sha256": "dbb4515b81d021b524a3d73a8d55535088dd8ac45fb943e8f5c11bb6e41d62c8"
+    },
+    {
+      "source": "native-complete-objects/owl_post/frame-02.png",
+      "file": "runtime-webp/native-complete-objects/owl_post/frame-02.webp",
+      "width": 80,
+      "height": 104,
+      "sourceBytes": 1459,
+      "bytes": 894,
+      "sourceSha256": "8522785127b25102cb58eee1856786101e31cfcca6fc493c1e8d346b94b11e3d",
+      "sha256": "9ee2470cba272ad862074de0e668344be759d373179a79dea37fc2a38064c48d"
+    },
+    {
+      "source": "native-complete-objects/owl_post/frame-03.png",
+      "file": "runtime-webp/native-complete-objects/owl_post/frame-03.webp",
+      "width": 80,
+      "height": 104,
+      "sourceBytes": 1708,
+      "bytes": 1054,
+      "sourceSha256": "cf03afce6182159dc259e3bdd2b6b57c5f512d4e5d55f0859b6fddd7085db2c8",
+      "sha256": "e1f5a0524790c85198f382a1207d60178abbb540121e3b5cb1f6b70c8515f07a"
+    },
+    {
+      "source": "native-complete-objects/owl_post/frame-04.png",
+      "file": "runtime-webp/native-complete-objects/owl_post/frame-04.webp",
+      "width": 80,
+      "height": 104,
+      "sourceBytes": 1482,
+      "bytes": 896,
+      "sourceSha256": "b5ce97c73353d0ede1359f806e9bf563bfacdbb41a5b02f033a79e771f223477",
+      "sha256": "0f13ded96b9dc0f44fa41c66893e53450ec171e466e558ea904311d2f572cfda"
+    },
+    {
+      "source": "native-crop-complete/ambermelon/atlas.png",
+      "file": "runtime-webp/native-crop-complete/ambermelon/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 6953,
+      "bytes": 4058,
+      "sourceSha256": "99eba972487e6ba5c7bc3c4212cc4cde23c170cc1930a02776d5951be49133ac",
+      "sha256": "f8ec3e3d6338d108a457876c68c5769a7300521f8bcfc9c8f3ad90ca8d15fee4"
+    },
+    {
+      "source": "native-crop-complete/beet/atlas.png",
+      "file": "runtime-webp/native-crop-complete/beet/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 4387,
+      "bytes": 2404,
+      "sourceSha256": "ede6ce5c0fd16c96039fe3732402686d98774b3184cd38933966c557a8be3e08",
+      "sha256": "4c61a6e1515fcb33af5cfd4df47137b950b3677687c9a6ff9007e69e484162eb"
+    },
+    {
+      "source": "native-crop-complete/blueberry/atlas.png",
+      "file": "runtime-webp/native-crop-complete/blueberry/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 7967,
+      "bytes": 4948,
+      "sourceSha256": "bac8ba477a8e09d8cd88117b26ec0a639924081b84960fb01d8ac187c4e80e00",
+      "sha256": "e74eed15128476c167242cbb3fa1d86bd4c2b1b1c09d12d0e005a1e6ec2e6f76"
+    },
+    {
+      "source": "native-crop-complete/bubotuber/atlas.png",
+      "file": "runtime-webp/native-crop-complete/bubotuber/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 8849,
+      "bytes": 5306,
+      "sourceSha256": "00721ef33d834b0bb484739dfdb3a86b6240f5ec2f7a08de8778d016db43fb4f",
+      "sha256": "a8973151960b29384ccd1a79e007ec3b5c9fa5d52ace364333f3d9fcb6c8a474"
+    },
+    {
+      "source": "native-crop-complete/carrot/atlas.png",
+      "file": "runtime-webp/native-crop-complete/carrot/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 6818,
+      "bytes": 3852,
+      "sourceSha256": "b5fa4677e926e7dbb0cbf8bbc48147cdd4a0c6e7f4cb1475f256d75966787e93",
+      "sha256": "93715a610b5cec4b5372dfdfb6e6f1a0da249c55b38fc4807e53d420b921d393"
+    },
+    {
+      "source": "native-crop-complete/clover/atlas.png",
+      "file": "runtime-webp/native-crop-complete/clover/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 9615,
+      "bytes": 5512,
+      "sourceSha256": "88a7d1eae119ba34add7de492a54ebf1f6b91990307ec49bf0c72cff4405b635",
+      "sha256": "bf88612b3fc30ef562e664283db2c01378a8f9b23797b86bf28911a365ca644b"
+    },
+    {
+      "source": "native-crop-complete/devilssnare/atlas.png",
+      "file": "runtime-webp/native-crop-complete/devilssnare/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 9745,
+      "bytes": 5486,
+      "sourceSha256": "e24f6828a46b627f203a71e6babfb79bf4c20115adb4de9be093ec1dc06f1966",
+      "sha256": "9d6fdfc7c47e556cf9a1a1f3578f404f7e76e636ffe6b63f926c3160cd4ffcff"
+    },
+    {
+      "source": "native-crop-complete/firepepper/atlas.png",
+      "file": "runtime-webp/native-crop-complete/firepepper/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 7550,
+      "bytes": 4356,
+      "sourceSha256": "2e959d71b7c09905e9798937945729a2f57c2b79b8958b41c7e37b1fbb15a229",
+      "sha256": "6485f9ac301c8c7cefb7c2d6d2042330b0497deffb4b64ff5daa7f25ea144b3e"
+    },
+    {
+      "source": "native-crop-complete/flax/atlas.png",
+      "file": "runtime-webp/native-crop-complete/flax/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 5551,
+      "bytes": 2906,
+      "sourceSha256": "bf2efd6b2a4899a70b1392e8eeda99f46e57d6e984a268644f58e4940d6e0adb",
+      "sha256": "32bab52946aaaec3cf42b71a65cf07c4c76525b1512a89258410522eb3b5259c"
+    },
+    {
+      "source": "native-crop-complete/flitterbloom/atlas.png",
+      "file": "runtime-webp/native-crop-complete/flitterbloom/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 8585,
+      "bytes": 4816,
+      "sourceSha256": "ba8d1ae0229571e2af2ecabd3166fe382496666fcc7164ffccb9facd1a272bb2",
+      "sha256": "32c3a77455c94534a8ec642051acfdf64acb3888ad74780e50cbd562d7deeeee"
+    },
+    {
+      "source": "native-crop-complete/fluxweed/atlas.png",
+      "file": "runtime-webp/native-crop-complete/fluxweed/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 8932,
+      "bytes": 5088,
+      "sourceSha256": "3f0076c8023316dd936b6d4722f25b388cc962cd0cdeee400ab4c8f8eaab0a1c",
+      "sha256": "f61bcc0eab009c5514d5a1190b16599181389e80a15035b65cda9d5aafcc750d"
+    },
+    {
+      "source": "native-crop-complete/gillyweed/atlas.png",
+      "file": "runtime-webp/native-crop-complete/gillyweed/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 7058,
+      "bytes": 3882,
+      "sourceSha256": "a3bce3b7f51486037bafc6314d88e333e3c2e4185c7d01d4ccea859b98390007",
+      "sha256": "64f2dc3e126e481e2d874548d951f452e2e9eee66887ecf48be44185723d6b44"
+    },
+    {
+      "source": "native-crop-complete/knotgrass/atlas.png",
+      "file": "runtime-webp/native-crop-complete/knotgrass/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 6490,
+      "bytes": 3384,
+      "sourceSha256": "c3c915868ce0ee952b119699e6ad9e1fe3d60f0c04784a44c3bc697b9044b323",
+      "sha256": "c9479b3b513c41cceaffd35dd420f236352a46b074923a23182f1ee802362325"
+    },
+    {
+      "source": "native-crop-complete/lettuce/atlas.png",
+      "file": "runtime-webp/native-crop-complete/lettuce/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 8002,
+      "bytes": 4640,
+      "sourceSha256": "0140a1c413f3ed933348deb8235ee00425571c1af01bc5533fe1ec6e1139e4af",
+      "sha256": "8cce5b93f86cad45d213c17e54115b8897ea45d78e1e63e10f5c9dd35e1f589b"
+    },
+    {
+      "source": "native-crop-complete/maize/atlas.png",
+      "file": "runtime-webp/native-crop-complete/maize/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 10531,
+      "bytes": 6132,
+      "sourceSha256": "c63a0badc08fe752e2a0a864c18a0ecf4dcd936664ceda6de556bf002d677e8d",
+      "sha256": "7e435390dc5f67fe58679d4e515cd88e7e37898ff61cc2e9fde6e397a1f5007d"
+    },
+    {
+      "source": "native-crop-complete/mimbulus/atlas.png",
+      "file": "runtime-webp/native-crop-complete/mimbulus/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 10872,
+      "bytes": 6784,
+      "sourceSha256": "3c6a00a8710f68df03065c8e20f7e521e16a3b01696d46a1c4071dfeff8b5772",
+      "sha256": "9b386bfbc9db2bdbc618126098937fafca9de9b31576b0b937ae2998026577de"
+    },
+    {
+      "source": "native-crop-complete/mint/atlas.png",
+      "file": "runtime-webp/native-crop-complete/mint/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 6963,
+      "bytes": 3898,
+      "sourceSha256": "add662aeb706c73b7da20836aae8509b6f7287c7b784ace4cb5e7ce7cdd20c3c",
+      "sha256": "43db9187925e81c12683e78a6313444e6462c716e2c2611efec6e189e1c5e7b3"
+    },
+    {
+      "source": "native-crop-complete/mistmushroom/atlas.png",
+      "file": "runtime-webp/native-crop-complete/mistmushroom/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 9589,
+      "bytes": 6026,
+      "sourceSha256": "bd03f7391e1f75c7e8874d3b3ee0dba9521e47572655418a81f281b724d6f3ca",
+      "sha256": "51579635abdb853885ceec3b68cba78719136b670f743ab8f604b8b7101e3ff8"
+    },
+    {
+      "source": "native-crop-complete/moonherb/atlas.png",
+      "file": "runtime-webp/native-crop-complete/moonherb/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 10235,
+      "bytes": 6158,
+      "sourceSha256": "672cbf65c7dc0c3c42c7945313b8cc8416f2fb737c1bd041399ccdeaf1fa6e39",
+      "sha256": "60492b49f801eb36b5d0b24cd8a09a496b50cd466b614d3e1d1cfa4101859a85"
+    },
+    {
+      "source": "native-crop-complete/oats/atlas.png",
+      "file": "runtime-webp/native-crop-complete/oats/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 6510,
+      "bytes": 3480,
+      "sourceSha256": "30222e05df24a0cbbc038430655409d7292d20fc07307392cd9dc21f1bb56ff4",
+      "sha256": "94db5b1abaceb928e2ac5c71f97d117a900f5637a58605bb4f38f32c52d26863"
+    },
+    {
+      "source": "native-crop-complete/shrivelfig/atlas.png",
+      "file": "runtime-webp/native-crop-complete/shrivelfig/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 10483,
+      "bytes": 6894,
+      "sourceSha256": "34ccd08b8c10e768fbe5ac151c2d3a8123fe1b39806d60e5267b9372e888b2a5",
+      "sha256": "0a0d234e36e03bde1a826504e06c6fad77963567008be52f4248d7be50aa950c"
+    },
+    {
+      "source": "native-crop-complete/silverkelp/atlas.png",
+      "file": "runtime-webp/native-crop-complete/silverkelp/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 8511,
+      "bytes": 4918,
+      "sourceSha256": "1a4be6db7c4a02b8fb6ebfb122c7d1c81c885f5bc423bda69cef51dd85001b60",
+      "sha256": "6569973b8b60925c895422f958c54a4e8f18d00ab78f8645f16458f8b24fa28f"
+    },
+    {
+      "source": "native-crop-complete/starbean/atlas.png",
+      "file": "runtime-webp/native-crop-complete/starbean/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 9657,
+      "bytes": 5654,
+      "sourceSha256": "cba85afe20c98221e1bc32356c9aa619734c41a32a963b2b5eb7a3f4a5b9228f",
+      "sha256": "61e4c30fdacddf4f36227f5f34861fc83c32aad7b374acbe92c0243cd112bf47"
+    },
+    {
+      "source": "native-crop-complete/sunflower/atlas.png",
+      "file": "runtime-webp/native-crop-complete/sunflower/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 10062,
+      "bytes": 6260,
+      "sourceSha256": "5939157355f175ef6db6f9a9239b33e6cdb573ba04113d43e7fc19d0a84db0c0",
+      "sha256": "d980ad5214748330169f3adef7d3faf837f12bb76b702b5be364dec1959cf0f4"
+    },
+    {
+      "source": "native-crop-complete/sunpetal/atlas.png",
+      "file": "runtime-webp/native-crop-complete/sunpetal/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 8503,
+      "bytes": 5282,
+      "sourceSha256": "4ad0aad418d676698f317ce49c0c231a616645ce43b2e6d0360bf7139e620e02",
+      "sha256": "7b16e8cb2b5e12d327d65d4968a9c2f2e9895cf335233e96e19ef4f435e3bdaf"
+    },
+    {
+      "source": "native-crop-complete/valerian/atlas.png",
+      "file": "runtime-webp/native-crop-complete/valerian/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 6624,
+      "bytes": 3494,
+      "sourceSha256": "bc2d6222b83ea796f341ac664027d6ef0719a46e9a3034dc6ec8d84100a5c538",
+      "sha256": "91cd32d8631d25ad94735f0a3fea4cb20bc0c47885e61a9c23ba83c9e483f36b"
+    },
+    {
+      "source": "creature-motion-assets/native/bowtruckle/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/bowtruckle/left-atlas.webp",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 5252,
+      "bytes": 2886,
+      "sourceSha256": "d941bc2d923f36de47242c98578d02f436be0e28bb37f71235316a7c7b81fff0",
+      "sha256": "987bbc67045450e4d5773e58fdd24e42c49431f5636bdfe5b0f27f0d6246d05c"
+    },
+    {
+      "source": "creature-motion-assets/native/bowtruckle/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/bowtruckle/right-atlas.webp",
+      "width": 256,
+      "height": 320,
+      "sourceBytes": 8714,
+      "bytes": 4696,
+      "sourceSha256": "dd4c9c0dbec6891bb65c51f6823260b0ab5c3bf5da87dfaab4e8a3a1db9a2ffc",
+      "sha256": "6738e99f8c022421cdd91422254f1700412d40b39bf33ea82458e8815b4dfd80"
+    },
+    {
+      "source": "creature-motion-assets/native/diricawl/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/diricawl/left-atlas.webp",
+      "width": 384,
+      "height": 288,
+      "sourceBytes": 10088,
+      "bytes": 5968,
+      "sourceSha256": "3f362c6b07e9f86494e1100a17bb0fe329b04bdacb16096906aed6e39083a194",
+      "sha256": "1fe6ea1b47bfa33fee80604df11cd85d5723760395169e12a35d016273a0ade8"
+    },
+    {
+      "source": "creature-motion-assets/native/diricawl/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/diricawl/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 18385,
+      "bytes": 11208,
+      "sourceSha256": "d4c5d1d1b721f402093a07cb7df51ce27703ca19f9efe12c442fb126ff01375d",
+      "sha256": "51c78c5987854e8830e5b8f7324163f1b9e9fd060462ec64c9b54c6627ac128b"
+    },
+    {
+      "source": "creature-motion-assets/native/dragon/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/dragon/left-atlas.webp",
+      "width": 1024,
+      "height": 512,
+      "sourceBytes": 29077,
+      "bytes": 16412,
+      "sourceSha256": "bb12cf04bff27ff86a2cfb57f7e499faab66bcbf02c6ab9970c2fe0ed4e6e6d4",
+      "sha256": "b65c4dd78653395aba4c41ee5dcd860e0fd645ceab9b60af37af11f131270b18"
+    },
+    {
+      "source": "creature-motion-assets/native/dragon/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/dragon/right-atlas.webp",
+      "width": 1024,
+      "height": 1280,
+      "sourceBytes": 78272,
+      "bytes": 42016,
+      "sourceSha256": "8ad31b2e9ac52eb0a2dff81c83ceab5de497f039a1fa0e3debb917a7547b421a",
+      "sha256": "8fadbdb7d4749dc36f1012557a90ba2d1f995773dec1b215595d279bbbfa851c"
+    },
+    {
+      "source": "creature-motion-assets/native/fwooper/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/fwooper/left-atlas.webp",
+      "width": 384,
+      "height": 288,
+      "sourceBytes": 11736,
+      "bytes": 6862,
+      "sourceSha256": "0163739093a983a569f2c7d8cc6da168b1f1603fc0b011f81f538e688e0482b6",
+      "sha256": "89fce8c8e2c5196c9b32dc92936459161baa6a939bd8823883d9849b171c53f8"
+    },
+    {
+      "source": "creature-motion-assets/native/fwooper/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/fwooper/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 20797,
+      "bytes": 11986,
+      "sourceSha256": "19fbeb33574274f690c4c7ad02deba1611af15a04bbd9b02765dcc71f241c85a",
+      "sha256": "487a3df72bf0f2cc4c09272fab2a975a27ce0a73ff43026ad7952b8139e18ec1"
+    },
+    {
+      "source": "creature-motion-assets/native/hippogriff/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/hippogriff/left-atlas.webp",
+      "width": 768,
+      "height": 384,
+      "sourceBytes": 24981,
+      "bytes": 15344,
+      "sourceSha256": "7a4682df5339d9f5f0768078e0d95f42c0fc492fb246064df337ab5e84ad08e0",
+      "sha256": "5d0b024587cc80ec3ec39ba978131d891105df140781aca7b81aab763891c33f"
+    },
+    {
+      "source": "creature-motion-assets/native/hippogriff/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/hippogriff/right-atlas.webp",
+      "width": 768,
+      "height": 960,
+      "sourceBytes": 66476,
+      "bytes": 38804,
+      "sourceSha256": "707eba4fc2bfcf3645cac728e4e586c302667c3a968655e06a2f3632bd645843",
+      "sha256": "5bdfbc4ed6710ff294f2ffde6a2617299b399833c4b9b72a17dcd60b0cc6d2db"
+    },
+    {
+      "source": "creature-motion-assets/native/kneazle/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/kneazle/left-atlas.webp",
+      "width": 384,
+      "height": 288,
+      "sourceBytes": 16468,
+      "bytes": 10204,
+      "sourceSha256": "f4d6cc599dbc037e18eac1dfef9e59aa37a723309e27c533fa402cac5a247422",
+      "sha256": "6f13b576890a1f0488f9999981f053a329d35aac76273e3532ff4128687debfb"
+    },
+    {
+      "source": "creature-motion-assets/native/kneazle/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/kneazle/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 24632,
+      "bytes": 14850,
+      "sourceSha256": "d485b9436a57ecff8ed6fe9397a89874c4b441093846974894bd1e8364457cde",
+      "sha256": "49ce57fea1cae98e0d0b9cd136aa26fc5ddd1c87bb6114d967b014efbd66d6ad"
+    },
+    {
+      "source": "creature-motion-assets/native/mooncalf/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/mooncalf/left-atlas.webp",
+      "width": 384,
+      "height": 384,
+      "sourceBytes": 15948,
+      "bytes": 9164,
+      "sourceSha256": "0d9b3826c2500c2f7f43d482d4aa48785d15abb1658a4f59b917038e7fc758ca",
+      "sha256": "29a80e0947c56916ea55702267beb1cec494a63fe58a888812a2537cb7460c0c"
+    },
+    {
+      "source": "creature-motion-assets/native/mooncalf/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/mooncalf/right-atlas.webp",
+      "width": 384,
+      "height": 640,
+      "sourceBytes": 26071,
+      "bytes": 15020,
+      "sourceSha256": "fbc23a941b2dd1796be4dc5d21547209ea0e9cdbee386745cec306779d6f8e41",
+      "sha256": "6363180c50c4a08a7452a0837d8aaf47fd13ece4842239d0c708df96cf8d7691"
+    },
+    {
+      "source": "creature-motion-assets/native/niffler/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/niffler/left-atlas.webp",
+      "width": 256,
+      "height": 128,
+      "sourceBytes": 2118,
+      "bytes": 1120,
+      "sourceSha256": "02a68e2131f23091525142a2d4119792183124edb2abee9f58bc63425a88d363",
+      "sha256": "4982c2829009206fcb4b9ba9b32dfdd72f4a019bc4111decab82280117227b5b"
+    },
+    {
+      "source": "creature-motion-assets/native/niffler/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/niffler/right-atlas.webp",
+      "width": 256,
+      "height": 320,
+      "sourceBytes": 5614,
+      "bytes": 2864,
+      "sourceSha256": "61cd63ed7bc0be95b13630b77c71c605e6717df8ed79c23caa977770566eeb44",
+      "sha256": "a78e95b4ffd07dc4d8974127d4e026cc2cfa39138ec90067711cb3dd0f87912e"
+    },
+    {
+      "source": "creature-motion-assets/native/puffskein/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/puffskein/left-atlas.webp",
+      "width": 256,
+      "height": 128,
+      "sourceBytes": 2064,
+      "bytes": 1152,
+      "sourceSha256": "7deabb9e2eca992bad5918c7380a3988ea0c6de60870c579b90b61b8b88d44db",
+      "sha256": "1cb8908c5cadd5430c7d40320679cfe1cd2dd48f7f793a46b4977b51b1e2ad58"
+    },
+    {
+      "source": "creature-motion-assets/native/puffskein/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/puffskein/right-atlas.webp",
+      "width": 256,
+      "height": 320,
+      "sourceBytes": 4518,
+      "bytes": 2404,
+      "sourceSha256": "03d61c135b226df1e0259a179c4b2f149290d1bd30d14e1545af78610705a3ec",
+      "sha256": "57d8654e74353887e41c21cf77da106c068270ae750b67a31f554731356e5701"
+    },
+    {
+      "source": "creature-motion-assets/native/thestral/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/thestral/left-atlas.webp",
+      "width": 640,
+      "height": 480,
+      "sourceBytes": 21979,
+      "bytes": 12766,
+      "sourceSha256": "033923cf0ce827365e473d4324db12397d23ccb014250097ba435b487becd3bd",
+      "sha256": "5685b1b7bd3b1b87b986a105f794b22050b94aae8239b4139ccda7d0c86113cf"
+    },
+    {
+      "source": "creature-motion-assets/native/thestral/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/thestral/right-atlas.webp",
+      "width": 640,
+      "height": 800,
+      "sourceBytes": 33909,
+      "bytes": 17122,
+      "sourceSha256": "43347f06561b32eb3f4e249f79e8ab8d7e926813b94bf0aa9e5eea02e2472293",
+      "sha256": "6659ea5d3b4e04c2deefd4d72642312b08ecd2845e8ee73ad71312af0539ed99"
+    },
+    {
+      "source": "creature-motion-assets/native/three-headed-dog/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/three-headed-dog/right-atlas.webp",
+      "width": 640,
+      "height": 800,
+      "sourceBytes": 58856,
+      "bytes": 33648,
+      "sourceSha256": "72dac0a15c7a70e2151366d51bda121f30a414af4316609f0f657b8bce085f71",
+      "sha256": "700e9c15fffef89fa951d9a9492a22ea10a91d568d7bdc6fb8c8c040797a59a4"
+    },
+    {
+      "source": "creature-motion-assets/native/unicorn/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/unicorn/left-atlas.webp",
+      "width": 640,
+      "height": 480,
+      "sourceBytes": 35575,
+      "bytes": 20782,
+      "sourceSha256": "5b59ebe583a34a757b4c7a9bd16f9d185f38af31c6284026844522b4aa5b1988",
+      "sha256": "a64a7b820265c9379765af2c18f57ec90221305c1a971fc4c45b771b35fa7eab"
+    },
+    {
+      "source": "creature-motion-assets/native/unicorn/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/unicorn/right-atlas.webp",
+      "width": 640,
+      "height": 800,
+      "sourceBytes": 60553,
+      "bytes": 33800,
+      "sourceSha256": "196e1aa6359af08227c14e54b2a4bd1300f8325e012805ec958aa4e49f26c6ba",
+      "sha256": "9001e3826afb5b38684da2d00f9dea35f7c07a2860ef826f6b4a9d0e7e917a11"
+    },
+    {
       "source": "decor-assets/native/decor_broom_rack_f0.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_f0.webp",
       "width": 128,
@@ -9202,11 +10055,11 @@
     }
   ],
   "totals": {
-    "converted": 914,
+    "converted": 999,
     "existingWebp": 8,
-    "originalBytes": 4223921,
-    "webpBytes": 2980002,
-    "savedBytes": 1243919,
-    "savedPercent": 29.45
+    "originalBytes": 5079239,
+    "webpBytes": 3474214,
+    "savedBytes": 1605025,
+    "savedPercent": 31.6
   }
 }

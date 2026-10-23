@@ -1,11 +1,11 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.73';
-import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.73';
-import {el,button} from './ui-utils.mjs?v=24.9.73';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.73';
-import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.73';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.73';
-import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.73';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.73';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.74';
+import {GARDEN_STAGES,stageContains} from './garden-growth.mjs?v=24.9.74';
+import {el,button} from './ui-utils.mjs?v=24.9.74';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.74';
+import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.74';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.74';
+import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.74';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.74';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 const OBJECT_REACH=Object.freeze({hut:2.5,pond:2.5,oak:1,pine:1});

@@ -1,5 +1,7 @@
 # Rà soát artwork Hagrid — 23/10/2026
 
+**Cập nhật V24.9.74:** toàn bộ phần tồn đọng ngoài Halloween đã hoàn thiện và kiểm tra cục bộ. [Danh sách và bằng chứng mới](artwork-completion-20261023.md). Halloween giữ nguyên theo yêu cầu mới nhất. Phần dưới lưu kết quả kiểm kê ban đầu.
+
 Rà theo bản nguồn `8211de5` đang được HPVN nhập vào, gồm cả hình vẽ trong mã và clip chuyển động. Có file WebP, hash khác nhau hoặc clip mang tên `idle` chưa chứng minh artwork đã được vẽ mới. Bản kiểm kê từng ID: [artwork-audit-20261023.json](artwork-audit-20261023.json).
 
 ## Đã cập nhật: artwork vật phẩm còn dùng SVG
@@ -23,7 +25,7 @@ Rà theo bản nguồn `8211de5` đang được HPVN nhập vào, gồm cả hì
 
 Đã tạo master riêng bằng ImageGen tích hợp, giữ nguyên alpha nguồn; xuất về canvas native 64×64, tối đa 24 màu, alpha 0/255, pivot cố định bằng pipeline hiện có. Tất cả ảnh mới có prompt và hash trong `supply-art-sources.json` / `item-art-manifest.json`. Master/PNG ở nguồn; game nhận WebP lossless. Gói có **922 WebP**, gồm 914 ảnh chuyển đổi và tám ảnh có sẵn. Các ảnh native cũ không bị vẽ lại trong đợt này. URL module tăng `24.9.72` để trình duyệt tải đúng mã và manifest mới.
 
-## Artwork chưa hoàn thiện, vẫn còn sau đợt này
+## Tồn đọng tại thời điểm kiểm kê ban đầu
 
 | Mức | Nhóm | Hiện trạng và việc cần làm |
 |---|---|---|

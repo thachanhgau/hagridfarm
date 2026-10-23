@@ -9,6 +9,8 @@ import {fileURLToPath} from 'node:url';
 import {runtimeImageUrl} from './runtime-image-url.mjs';
 import {FARM_SIGN_ART} from './farm-sign-art.mjs';
 import {ITEM_ART} from './item-art.mjs';
+import {COMPLETE_SCENERY,HABITAT_ART,KEEPSAKE_ART} from './complete-object-art.mjs';
+import {creatureViewFrames} from './creature-view.mjs';
 import {SPRITE_PALETTE} from './palette.mjs';
 import {FOREST_ASSET_FILES} from './forest-surround.mjs';
 import {FESTIVAL_FILES} from './garden-seasonal-world.mjs';
@@ -22,11 +24,11 @@ const read = file => fs.readFileSync(path.join(root, file));
 const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const box = {window: {}, console};
 vm.createContext(box);
-for (const file of ['motion-data.js', 'level-assets.js', 'motion-care-data.js', 'motion-idle-data.js', 'scene-data.js']) vm.runInContext(read(file).toString(), box, {filename: file});
+for (const file of ['motion-data.js', 'level-assets.js', 'motion-care-data.js', 'motion-idle-data.js', 'crop-complete-data.js', 'creature-motion-data.js', 'scene-data.js']) vm.runInContext(read(file).toString(), box, {filename: file});
 const references = [];
 const add = (id, file) => {if (file) references.push({id: id.replace(/_right$/, ''), file: String(file).replace(/^\.\//, '').split(/[?#]/)[0]});};
 for (const item of box.window.FARM_MOTION.items) {
- for (const frame of item.frames || []) add(item.id, frame.file || frame);
+ for (const frame of creatureViewFrames(item)) add(item.id, frame.file || frame);
  for (const clip of Object.values(item.clips || {})) add(item.id, clip?.sheet?.file);
 }
 for (const item of [...box.window.FARM_SCENE.tiles, ...box.window.FARM_SCENE.props]) add(item.id, item.file);
@@ -39,6 +41,7 @@ add('cottage-corner', 'world-v242/cottage-corner.png');
 const decor = JSON.parse(read('decor-assets-manifest.json'));
 for (const item of decor.items) for (const file of [item.file, item.rightFile, ...(item.frames || []), ...(item.rightFrames || [])]) add(item.id, file);
 for (const [id, item] of Object.entries(ITEM_ART)) add(id, item.file);
+for(const item of [...COMPLETE_SCENERY,...Object.values(HABITAT_ART),...Object.values(KEEPSAKE_ART)])for(const file of item.frames)add(item.id,file);
 
 const paths = new Map();
 for (const ref of references) paths.set(ref.file, ref.id);

@@ -1,14 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {HABITAT_ART} from './complete-object-art.mjs';
 import {CREATURE} from './progression-engine.mjs';
 import {HABITAT_SPECIES,habitatAnchors,habitatResidents,habitatPhase,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs';
 const iso=(col,row)=>[1120+(col-row)*32,300+(col+row)*16];
 const pen={id:'pen_1',col:27,row:0,width:5,height:3};
 const spots=[[27.35,1.35],[31.35,1.35]],creatures=[{species:'niffler'},{species:'unicorn'}];
-const record=(fn)=>{const calls=[];const ctx={fillRect(...args){assert(args.every(Number.isInteger));calls.push([this.fillStyle,...args]);}};fn(ctx);return calls;};
+const imageFor=file=>({file});
+const record=(fn)=>{const calls=[];const ctx={fillRect(...args){assert(args.every(Number.isInteger));calls.push([this.fillStyle,...args]);},drawImage(image,x,y){assert(Number.isInteger(x)&&Number.isInteger(y));calls.push([image.file,x,y]);}};fn(ctx);return calls;};
 test('every adoptable species has distinct habitat artwork',()=>{
  assert.deepEqual([...HABITAT_SPECIES].sort(),Object.keys(CREATURE).sort());
- const art=HABITAT_SPECIES.map(species=>JSON.stringify(record(c=>drawHabitatProps(c,[{species,xy:[100,100]}]))));
+ const art=HABITAT_SPECIES.map(species=>JSON.stringify(record(c=>drawHabitatProps(c,[{species,xy:[100,100]}],{imageFor}))));
  assert.equal(new Set(art).size,HABITAT_SPECIES.length);
 });
 test('habitats follow actual occupants, adoption order and moved pens without mutating state',()=>{
@@ -26,8 +28,8 @@ test('all weather props and every motion phase stay inside the empty pockets, cl
  for(const anchor of anchors)for(const spot of spots){const [x,y]=iso(...spot);assert(Math.hypot(anchor[0]-x,anchor[1]-y)>60);}
  for(const species of HABITAT_SPECIES)for(const weatherMode of ['clear','rain','autumn','snow'])for(const clock of [0,600,1200,1800]){
   const residents=[{species,xy:[100,100]}];
-  const calls=record(c=>{drawHabitatProps(c,residents,{weatherMode});drawHabitatMotion(c,residents,{clock,weatherMode});});
-  for(const [,x,y,w,h] of calls){assert(x>=81&&x+w<=119,`${species} x`);assert(y>=72&&y+h<=106,`${species} y`);}
+  const calls=record(c=>{drawHabitatProps(c,residents,{weatherMode,imageFor});drawHabitatMotion(c,residents,{clock,weatherMode});});
+  for(const [color,x,y,w,h] of calls){if(color.endsWith?.('.png')){const b=HABITAT_ART[species].bounds;assert(x+b.x>=81&&x+b.x+b.w<=119,`${species} x`);assert(y+b.y>=72&&y+b.y+b.h<=106,`${species} y`);}else{assert(x>=81&&x+w<=119,`${species} x`);assert(y>=72&&y+h<=106,`${species} y`);}}
  }
 });
 test('ambient motion is clock-driven, slow, deterministic and frozen by reduced motion',()=>{

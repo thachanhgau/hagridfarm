@@ -1,0 +1,20 @@
+{
+  "id": "keepsake_fwooper",
+  "kind": "keepsake",
+  "species": "fwooper",
+  "refs": [
+    "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/masters-complete-objects/keepsake_fwooper.png",
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled fwooper. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: bright ORANGE and warm gold plumage, long swept orange tail with dark-brown/copper shadows; do not turn large wing or body regions purple. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-4a0f8103-2eda-469e-aed4-b711db9ce9d8.png",
+  "master": "masters-complete-objects/keepsake_fwooper-v2.png",
+  "masterSha256": "cc61e9229564a0cc958df54350609f32c825f35a0f2aa7a3ce10310220189fda",
+  "tool": "builtin image_gen",
+  "referenceFiles": [
+    "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/masters-complete-objects/keepsake_fwooper.png",
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "previousMaster": "masters-complete-objects/keepsake_fwooper.png",
+  "previousMasterSha256": "9030eeb60cebd8afa0556df32ee3475d0c1083207e4f5dec9c11afd28d07453e"
+}

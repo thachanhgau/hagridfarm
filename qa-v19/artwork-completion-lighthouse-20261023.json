@@ -1,0 +1,71 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "All requests intercepted at 127.0.0.1:3026; in-memory level500 fixture; no production traffic",
+  "beforeSource": "3c73f5f2a18fb0fa8d56bca73054dc03c6204996",
+  "afterSource": "V24.9.74 completion working tree",
+  "formFactor": "mobile simulated throttling",
+  "runs": {
+    "before": [
+      {
+        "performance": 53,
+        "fcpMs": 8415,
+        "lcpMs": 12015,
+        "tbtMs": 237.5,
+        "bytes": 4438530
+      },
+      {
+        "performance": 52,
+        "fcpMs": 8340,
+        "lcpMs": 12015,
+        "tbtMs": 245.5,
+        "bytes": 4438530
+      },
+      {
+        "performance": 52,
+        "fcpMs": 8490,
+        "lcpMs": 13575,
+        "tbtMs": 249,
+        "bytes": 4438530
+      }
+    ],
+    "after": [
+      {
+        "performance": 52,
+        "fcpMs": 9045,
+        "lcpMs": 12810,
+        "tbtMs": 253.5,
+        "bytes": 4901744
+      },
+      {
+        "performance": 50,
+        "fcpMs": 8190,
+        "lcpMs": 11595,
+        "tbtMs": 303,
+        "bytes": 4901744
+      },
+      {
+        "performance": 52,
+        "fcpMs": 9030,
+        "lcpMs": 12795,
+        "tbtMs": 243.5,
+        "bytes": 4901744
+      }
+    ]
+  },
+  "medians": {
+    "before": {
+      "performance": 52,
+      "fcpMs": 8415,
+      "lcpMs": 12015,
+      "tbtMs": 245.5,
+      "bytes": 4438530
+    },
+    "after": {
+      "performance": 52,
+      "fcpMs": 9030,
+      "lcpMs": 12795,
+      "tbtMs": 253.5,
+      "bytes": 4901744
+    }
+  }
+}

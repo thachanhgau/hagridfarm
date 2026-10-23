@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T14:34:13.366Z",
+  "generatedAt": "2026-10-23T06:58:31.314Z",
   "status": "complete: 11/11 source atlas groups",
   "complete": true,
   "expected": {
@@ -40,99 +40,7 @@
     "#B7DEE0"
   ],
   "alphaThreshold": 192,
-  "warnings": [
-    {
-      "group": "crops-a",
-      "type": "source-edge-contact",
-      "message": "oats stage 1 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "oats",
-      "stage": 1
-    },
-    {
-      "group": "crops-a",
-      "type": "source-edge-contact",
-      "message": "oats stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "oats",
-      "stage": 2
-    },
-    {
-      "group": "crops-a",
-      "type": "source-edge-contact",
-      "message": "oats stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "oats",
-      "stage": 3
-    },
-    {
-      "group": "crops-a",
-      "type": "source-edge-contact",
-      "message": "carrot stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "carrot",
-      "stage": 3
-    },
-    {
-      "group": "crops-g",
-      "type": "source-edge-contact",
-      "message": "fluxweed stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "fluxweed",
-      "stage": 3
-    },
-    {
-      "group": "crops-g",
-      "type": "source-edge-contact",
-      "message": "bubotuber stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "bubotuber",
-      "stage": 2
-    },
-    {
-      "group": "crops-g",
-      "type": "source-edge-contact",
-      "message": "bubotuber stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "bubotuber",
-      "stage": 3
-    },
-    {
-      "group": "crops-h",
-      "type": "source-edge-contact",
-      "message": "shrivelfig stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "shrivelfig",
-      "stage": 2
-    },
-    {
-      "group": "crops-h",
-      "type": "source-edge-contact",
-      "message": "shrivelfig stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "shrivelfig",
-      "stage": 3
-    },
-    {
-      "group": "crops-i",
-      "type": "source-edge-contact",
-      "message": "flitterbloom stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "flitterbloom",
-      "stage": 3
-    },
-    {
-      "group": "crops-i",
-      "type": "source-edge-contact",
-      "message": "devilssnare stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "devilssnare",
-      "stage": 3
-    },
-    {
-      "group": "creatures-a",
-      "type": "source-edge-contact",
-      "message": "mooncalf stage 0 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "mooncalf",
-      "stage": 0
-    },
-    {
-      "group": "creatures-a",
-      "type": "source-edge-contact",
-      "message": "kneazle stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette.",
-      "item": "kneazle",
-      "stage": 3
-    }
-  ],
+  "warnings": [],
   "frames": [
     {
       "item": "oats",

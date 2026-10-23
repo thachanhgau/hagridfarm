@@ -1,0 +1,9 @@
+{
+  "id": "habitat_dragon",
+  "kind": "habitat",
+  "species": "dragon",
+  "prompt": "Create ONE game sprite of a low circular dark stone brazier with three broad red-orange glowing coal chunks, small curved rim, no sparks no flame cloud. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-58da2549-f793-45b2-9747-1c4a7a397ec6.png",
+  "master": "masters-complete-objects/habitat_dragon.png",
+  "masterSha256": "14a28ab93fb20241816aa0b737e5f141fd1eefe16ab6e2a82545202b55879a1f"
+}

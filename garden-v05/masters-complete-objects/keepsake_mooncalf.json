@@ -1,0 +1,20 @@
+{
+  "id": "keepsake_mooncalf",
+  "kind": "keepsake",
+  "species": "mooncalf",
+  "refs": [
+    "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/masters-complete-objects/keepsake_mooncalf.png",
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled mooncalf. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: warm TAN long neck and lower legs, pale cream face/chest, grey back with small pale spots, very large eyes and slim long legs. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-fadc6ebc-39d0-406c-b038-014b61be993d.png",
+  "master": "masters-complete-objects/keepsake_mooncalf-v2.png",
+  "masterSha256": "148ca3c6203e0c5e7b6d3b3aa5992c34b69ec8f2b4102fe4e3939ff5657898e7",
+  "tool": "builtin image_gen",
+  "referenceFiles": [
+    "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/masters-complete-objects/keepsake_mooncalf.png",
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "previousMaster": "masters-complete-objects/keepsake_mooncalf.png",
+  "previousMasterSha256": "8a46e0d635373a753e6bb44cb8036bdb8133a3aaac1e0581976bcd112d702964"
+}

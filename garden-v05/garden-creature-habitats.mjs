@@ -1,146 +1,8 @@
-// Authored native pixel props: no assets, hitboxes, timers or gameplay state.
+// Authored habitat sprites; placement and ambient effects remain presentation-only.
+import {HABITAT_ART} from './complete-object-art.mjs?v=24.9.74';
 // Each sprite stays inside a 38 x 30 ground pocket between the two actors.
 const palette={d:'#4a3c2c',w:'#735044',h:'#b49a66',s:'#687486',l:'#a6b1ae',g:'#3f6a45',v:'#71934b',a:'#e7ae73',b:'#70a8b6',p:'#a57554',r:'#a57554',c:'#d6d8bf'};
-const art={
- puffskein:[
- '      hhhhh      ',
- '    hhwwwwwhh    ',
- '   hwwwwwwwwwh   ',
- '  hwwccccccwwwh  ',
- '  hwccppppccwwh  ',
- '  hwcppccppcwwh  ',
- '  hwwccccccwwwh  ',
- '   hwhwhwhwhwh   ',
- '   whwhwhwhwhw   ',
- '    ddddddddd    ',
- ],
- bowtruckle:[
- '    vv   vv      ',
- '     gv vg       ',
- '      ggg        ',
- '    hhhghhhh     ',
- '   hwwhhhwwwh    ',
- '   wwwhwhwwww    ',
- '   wdwwwwdwww    ',
- '   wdwgwwdwwg    ',
- '  ggwwgwwwgggv   ',
- '   dddddddddd    ',
- ],
- niffler:[
- '     wwwww       ',
- '    wdddddw      ',
- '    hwwwwwd      ',
- '   wwddddwwd     ',
- '   wdaaadwwd     ',
- '   whaaaawwdd    ',
- '    whwwwhwd aa  ',
- '    dwwwwdd aah  ',
- '     ddddd   d   ',
- ],
- mooncalf:[
- '     ssllllss    ',
- '   ssllsssslss   ',
- '  slss   csslls  ',
- '  sls   ccsssls  ',
- '   sls   ccssls  ',
- '    slsscsssls   ',
- '     ssslllls    ',
- '   pp  ddddd  pp ',
- '   hc         hc ',
- '    d         d  ',
- ],
- kneazle:[
- '    hhhhh        ',
- '   hwwwwwh       ',
- '   whahaww       ',
- '   whahaww       ',
- '   whahaww       ',
- '   whahaww       ',
- '   whahaww   pp  ',
- '  hwwwwwwwh pccp ',
- '  ddddddddd pcpp ',
- '             dd  ',
- ],
- diricawl:[
- '    ssllllss     ',
- '   slbbbbbblls   ',
- '  slbbllbbbblls  ',
- '  slbbbbbbbbbss  ',
- '   ssbbbbbbsss   ',
- '    sssssssss    ',
- '     ddddddd     ',
- '  gc         cg  ',
- '   ggg     ggg   ',
- ],
- fwooper:[
- '     pp   aa     ',
- '     ap   pa     ',
- '      p   p      ',
- '   hhhhhhhhhhh   ',
- '   wddwwwwwddw   ',
- '   w    w    w   ',
- '   w    w    w   ',
- '  gww  gww  gww  ',
- '   dd   dd   dd  ',
- ],
- hippogriff:[
- '    wwwwww       ',
- '   wrrrrrrw      ',
- '  wrraaaarrw     ',
- '  wrwwwwwwrw     ',
- '   wwhaaaww      ',
- '   w  www w      ',
- '   w  w w w  cc  ',
- '  hw  w w wh cc  ',
- '  dd  d d dd  w  ',
- '              d  ',
- ],
- thestral:[
- '      sssss      ',
- '     ssddsss     ',
- '      sbbbs      ',
- '      sbbbs      ',
- '      sbbbs      ',
- '     ssddsss     ',
- '    sssssssss    ',
- '  ssllssssslss   ',
- '   sssdddddsss   ',
- ],
- unicorn:[
- '    ssllllss     ',
- '   slbbbbbblls   ',
- '  slbbccccbbbss  ',
- '  slbbcpcbbbbss  ',
- '   slbbccbbbss   ',
- '    sssssssss    ',
- '     ddddddd     ',
- '   gc  gg   cg   ',
- '    ggg  gggg    ',
- ],
- 'three-headed-dog':[
- '   cc     cc     ',
- '    cccccc       ',
- '   cc     cc     ',
- '                 ',
- '  ssss ssss ssss ',
- '  lrrs lrrs lrrs ',
- '  lsss lsss lsss ',
- '   dd   dd   dd  ',
- ],
- dragon:[
- '      sssss      ',
- '    ssdddddss    ',
- '   sddrddrddds   ',
- '  sddrrarrdddds  ',
- '  sdrraaaarrdds  ',
- '   sddrrarrdds   ',
- '    sddddddss    ',
- '     sssssss     ',
- '  ss         ss  ',
- '   d         d   ',
- ],
-};
-export const HABITAT_SPECIES=Object.freeze(Object.keys(art));
+export const HABITAT_SPECIES=Object.freeze(Object.keys(HABITAT_ART));
 export function habitatAnchors(pen,iso){
  return [iso(pen.col+pen.width*.39,pen.row+pen.height*.18),iso(pen.col+pen.width*.60,pen.row+pen.height*.74)];
 }
@@ -162,26 +24,21 @@ export function habitatResidents(pen,creatures,spots,iso){
  const anchors=habitatAnchors(pen,iso),residents=[];
  for(let i=0;i<Math.min(creatures.length,spots.length);i++){
   const entry=creatures[i],spot=spots[i];
-  if(!entry||!art[entry.species]||!Array.isArray(spot))continue;
+  if(!entry||!HABITAT_ART[entry.species]||!Array.isArray(spot))continue;
   if(spot[0]<pen.col||spot[0]>=pen.col+pen.width||spot[1]<pen.row||spot[1]>=pen.row+pen.height)continue;
   const slot=spot[0]<pen.col+pen.width/2?0:1;
   residents.push({species:entry.species,xy:anchors[slot],slot});
  }
  return residents;
 }
-export function drawHabitatProps(c,residents,{weatherMode='clear'}={}){
- const p=colors(weatherMode);
+export function drawHabitatProps(c,residents,{weatherMode='clear',imageFor=()=>null}={}){
  for(const {species,xy:[x,y]} of residents){
-  const rows=art[species];if(!rows)continue;
-  pixel(c,x-16,y-1,32,5,p.d);
-  for(let row=0;row<rows.length;row++)for(let col=0;col<rows[row].length;col++){
-   const color=p[rows[row][col]];if(color)pixel(c,x-17+col*2,y-rows.length*2+row*2,2,2,color);
-  }
-  // A little ground growth ties every object into the garden, without walls.
-  pixel(c,x-18,y+2,5,2,p.g);pixel(c,x+12,y+3,4,2,p.g);
-  if(weatherMode==='snow'){pixel(c,x-5,y-rows.length*2,10,2,p.l);pixel(c,x-17,y+2,5,2,p.l);}
+  const asset=HABITAT_ART[species],image=asset&&imageFor(asset.file);if(!image)continue;
+  c.drawImage(image,Math.round(x-asset.pivotX),Math.round(y-asset.pivotY));
+  if(weatherMode==='snow')pixel(c,x-5,y-asset.bounds.h,10,2,palette.c);
  }
 }
+
 function glint(c,x,y,color,phase){
  if(phase!==1&&phase!==2)return;
  pixel(c,x,y,2,2,color);

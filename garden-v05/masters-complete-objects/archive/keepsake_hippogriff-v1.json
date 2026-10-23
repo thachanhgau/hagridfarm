@@ -1,0 +1,10 @@
+{
+  "id": "keepsake_hippogriff",
+  "kind": "keepsake",
+  "species": "hippogriff",
+  "prompt": "Create ONE game sprite, a special garden keepsake statuette of a silver-grey Hippogriff with eagle head/front talons and small folded wings over a horse hind body, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+  "tool": "builtin image_gen",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-32a73088-d49c-4dcc-bd31-bf2f4d043982.png",
+  "master": "masters-complete-objects/keepsake_hippogriff.png",
+  "masterSha256": "9d532858e8d2c15a3fcd112192523ab1e19ac060f89938c209f5349682dc5751"
+}

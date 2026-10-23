@@ -1,0 +1,9 @@
+{
+  "id": "gardener_friend",
+  "prompt": "EDIT this sprite atlas to fix prop consistency across all four poses. Keep exact 2x2 grid and same character identity, proportions, colors and very clean chunky pixel style. In ALL FOUR CELLS put the brass lantern ON THE GROUND immediately next to his screen-RIGHT boot, at exactly the same position relative to his boots; NEVER held in a hand. Strap the folded pink umbrella to his back on his screen-RIGHT side, visible above/beside coat, same position every pose, NEVER held in a hand. Both hands free. Top-left neutral open eyes, top-right blink, bottom-left raising screen-LEFT hand, bottom-right screen-LEFT hand waving. Same coat buttons belt beard hair face and boot placements every pose. No missing lantern or swapped objects, no new accessories, no extra hands. Four isolated full figures in equal square cells, generous transparent gutters at center and margin. True alpha transparent background, no floor shadows, no text. Broad flat clusters and only2-3 shades per material, no texture/dithering or stray pixels.",
+  "kind": "scene",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-0dcd1459-95e3-4db2-bc76-0380aef4fba2.png",
+  "previous": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-093fe352-0999-47f7-bee3-99e57212c047.png",
+  "master": "masters-complete-objects/gardener_friend.png",
+  "masterSha256": "58c44e47e4244cc8f0075738222f106a750534c2c6e7d2cc8125ce0715330361"
+}

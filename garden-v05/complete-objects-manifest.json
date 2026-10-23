@@ -1,0 +1,1673 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "gardener_friend",
+      "kind": "scene",
+      "file": "native-complete-objects/gardener_friend/frame-01.png",
+      "width": 80,
+      "height": 112,
+      "pivotX": 40,
+      "pivotY": 100,
+      "bounds": {
+        "x": 11,
+        "y": 10,
+        "w": 58,
+        "h": 90
+      },
+      "sha256": "6dedf8e885c63f5dac87881006a965501540493a0eaa9e623b5bbcfc7c2ee17c",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 620,
+        "h": 634
+      },
+      "frames": [
+        "native-complete-objects/gardener_friend/frame-01.png",
+        "native-complete-objects/gardener_friend/frame-02.png",
+        "native-complete-objects/gardener_friend/frame-03.png",
+        "native-complete-objects/gardener_friend/frame-04.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/gardener_friend/frame-01.png",
+          "width": 80,
+          "height": 112,
+          "pivotX": 40,
+          "pivotY": 100,
+          "bounds": {
+            "x": 11,
+            "y": 10,
+            "w": 58,
+            "h": 90
+          },
+          "sha256": "6dedf8e885c63f5dac87881006a965501540493a0eaa9e623b5bbcfc7c2ee17c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 620,
+            "h": 634
+          }
+        },
+        {
+          "file": "native-complete-objects/gardener_friend/frame-02.png",
+          "width": 80,
+          "height": 112,
+          "pivotX": 40,
+          "pivotY": 100,
+          "bounds": {
+            "x": 12,
+            "y": 10,
+            "w": 57,
+            "h": 90
+          },
+          "sha256": "7bf35277ae4327253a1795cba34e0e24222d9522032b8133d3c404feac9258cc",
+          "sourceRect": {
+            "x": 620,
+            "y": 0,
+            "w": 620,
+            "h": 634
+          }
+        },
+        {
+          "file": "native-complete-objects/gardener_friend/frame-03.png",
+          "width": 80,
+          "height": 112,
+          "pivotX": 40,
+          "pivotY": 100,
+          "bounds": {
+            "x": 9,
+            "y": 9,
+            "w": 63,
+            "h": 91
+          },
+          "sha256": "9d3503d8666a8317852a75a1df7aed0896907d781b6e43ddac212f1b09044fd6",
+          "sourceRect": {
+            "x": 0,
+            "y": 634,
+            "w": 620,
+            "h": 634
+          }
+        },
+        {
+          "file": "native-complete-objects/gardener_friend/frame-04.png",
+          "width": 80,
+          "height": 112,
+          "pivotX": 40,
+          "pivotY": 100,
+          "bounds": {
+            "x": 9,
+            "y": 6,
+            "w": 63,
+            "h": 94
+          },
+          "sha256": "3e08b55f3c2762d289c0f00362e027c68d065afa4453f3b9c83cf61b58ea3b7e",
+          "sourceRect": {
+            "x": 620,
+            "y": 634,
+            "w": 620,
+            "h": 634
+          }
+        }
+      ],
+      "durations": [
+        900,
+        180,
+        320,
+        380
+      ],
+      "rotatable": false,
+      "storeItem": false,
+      "master": "masters-complete-objects/gardener_friend.png",
+      "masterSha256": "58c44e47e4244cc8f0075738222f106a750534c2c6e7d2cc8125ce0715330361",
+      "prompt": "EDIT this sprite atlas to fix prop consistency across all four poses. Keep exact 2x2 grid and same character identity, proportions, colors and very clean chunky pixel style. In ALL FOUR CELLS put the brass lantern ON THE GROUND immediately next to his screen-RIGHT boot, at exactly the same position relative to his boots; NEVER held in a hand. Strap the folded pink umbrella to his back on his screen-RIGHT side, visible above/beside coat, same position every pose, NEVER held in a hand. Both hands free. Top-left neutral open eyes, top-right blink, bottom-left raising screen-LEFT hand, bottom-right screen-LEFT hand waving. Same coat buttons belt beard hair face and boot placements every pose. No missing lantern or swapped objects, no new accessories, no extra hands. Four isolated full figures in equal square cells, generous transparent gutters at center and margin. True alpha transparent background, no floor shadows, no text. Broad flat clusters and only2-3 shades per material, no texture/dithering or stray pixels.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-0dcd1459-95e3-4db2-bc76-0380aef4fba2.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_bowtruckle",
+      "kind": "habitat",
+      "species": "bowtruckle",
+      "file": "native-complete-objects/habitat_bowtruckle/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 4,
+        "y": 3,
+        "w": 32,
+        "h": 28
+      },
+      "sha256": "cb30b44f8d4621761a664861cf1d5761abeda2ace1de49d40550d616f12d4f0c",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_bowtruckle/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_bowtruckle/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 3,
+            "w": 32,
+            "h": 28
+          },
+          "sha256": "cb30b44f8d4621761a664861cf1d5761abeda2ace1de49d40550d616f12d4f0c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_bowtruckle.png",
+      "masterSha256": "ca50cff2e62cc9b23f098bf086a6cf3f3868ac4e7bc12f330cca76d25ceed2d8",
+      "prompt": "Create ONE game sprite of a hollow old log planter with one leafy sapling and an open feeding pocket, no animal. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-61e9582a-586a-4ddd-bae8-83b5e2f28fca.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_diricawl",
+      "kind": "habitat",
+      "species": "diricawl",
+      "file": "native-complete-objects/habitat_diricawl/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 3,
+        "y": 3,
+        "w": 35,
+        "h": 28
+      },
+      "sha256": "5a393249711eb45d76d396db81904a76148430a98822988caf05be706e378d9c",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_diricawl/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_diricawl/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 3,
+            "y": 3,
+            "w": 35,
+            "h": 28
+          },
+          "sha256": "5a393249711eb45d76d396db81904a76148430a98822988caf05be706e378d9c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_diricawl.png",
+      "masterSha256": "4a0da051fc5d2414d74c6860276e7739034de78fdf8ce51c20d27bd79e4230a0",
+      "prompt": "Create ONE game sprite of one shallow blue-grey round bird bath filled with turquoise water, with two rounded green leaves beside it. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-49d77c91-8a15-45de-9784-7493c6cd1f4b.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_dragon",
+      "kind": "habitat",
+      "species": "dragon",
+      "file": "native-complete-objects/habitat_dragon/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 5,
+        "w": 36,
+        "h": 26
+      },
+      "sha256": "df3744d6df5003c912ce8a262424c233b1d8766feb294f726af1934d517a800f",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_dragon/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_dragon/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 5,
+            "w": 36,
+            "h": 26
+          },
+          "sha256": "df3744d6df5003c912ce8a262424c233b1d8766feb294f726af1934d517a800f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_dragon.png",
+      "masterSha256": "14a28ab93fb20241816aa0b737e5f141fd1eefe16ab6e2a82545202b55879a1f",
+      "prompt": "Create ONE game sprite of a low circular dark stone brazier with three broad red-orange glowing coal chunks, small curved rim, no sparks no flame cloud. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-58da2549-f793-45b2-9747-1c4a7a397ec6.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_fwooper",
+      "kind": "habitat",
+      "species": "fwooper",
+      "file": "native-complete-objects/habitat_fwooper/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 7,
+        "y": 3,
+        "w": 27,
+        "h": 28
+      },
+      "sha256": "5c4f2ef2407d6b84d13ea2ab7d318461deba29069a0f6e95fb7d8bbb830db245",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_fwooper/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_fwooper/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 3,
+            "w": 27,
+            "h": 28
+          },
+          "sha256": "5c4f2ef2407d6b84d13ea2ab7d318461deba29069a0f6e95fb7d8bbb830db245",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_fwooper.png",
+      "masterSha256": "1ee51115cd03a78e5da6d98227d3e66e798166a45442968a09b4462fb8c8b9f2",
+      "prompt": "Create ONE game sprite of a small rustic wooden perch with exactly three short pegs and one broad orange feather tied beneath, no bird. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-e7541651-7446-44bf-b52e-9b057a21de10.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_hippogriff",
+      "kind": "habitat",
+      "species": "hippogriff",
+      "file": "native-complete-objects/habitat_hippogriff/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 6,
+        "w": 36,
+        "h": 25
+      },
+      "sha256": "4bbfb6e3b2fde9e096fd343e4524f59f0afcffa97990d05ad008719c1ad1c9f7",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_hippogriff/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_hippogriff/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 6,
+            "w": 36,
+            "h": 25
+          },
+          "sha256": "4bbfb6e3b2fde9e096fd343e4524f59f0afcffa97990d05ad008719c1ad1c9f7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_hippogriff.png",
+      "masterSha256": "706f993b30d19c7203fc9fc7b1c558d85bb7bbe5e06311bfc397441d687ad4cf",
+      "prompt": "Create ONE game sprite of a low wooden grain trough on four stubby legs, filled with three broad golden grain clusters, one white feather beside it. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-6aaf9c75-00e5-4290-9d3b-9f7139a7ad3d.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_kneazle",
+      "kind": "habitat",
+      "species": "kneazle",
+      "file": "native-complete-objects/habitat_kneazle/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 7,
+        "y": 3,
+        "w": 26,
+        "h": 28
+      },
+      "sha256": "a503687e1b60f56d36ff578a452a0ba706bda71a1aa08d4dde127841881ba474",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_kneazle/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_kneazle/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 3,
+            "w": 26,
+            "h": 28
+          },
+          "sha256": "a503687e1b60f56d36ff578a452a0ba706bda71a1aa08d4dde127841881ba474",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_kneazle.png",
+      "masterSha256": "eefc18b23f23be4a5e73365482c860ffbc638594bc389ec05aede8951a4e75e2",
+      "prompt": "Create ONE game sprite of one short sturdy rope scratching post on a wooden square base with one cream yarn ball alongside. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-8b1a62fc-7767-41c2-8a55-fb8e55db23a2.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_mooncalf",
+      "kind": "habitat",
+      "species": "mooncalf",
+      "file": "native-complete-objects/habitat_mooncalf/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 36,
+        "h": 27
+      },
+      "sha256": "2f0f99575745f5e542cdcfeaf500d3ae0b6486855398a7951ef93a8318368de7",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_mooncalf/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_mooncalf/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 4,
+            "w": 36,
+            "h": 27
+          },
+          "sha256": "2f0f99575745f5e542cdcfeaf500d3ae0b6486855398a7951ef93a8318368de7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_mooncalf.png",
+      "masterSha256": "44a786c6124e64971c3e05024362989930e81207fccb5d02fa44208976ae13f1",
+      "prompt": "Create ONE game sprite of a shallow crescent moon carved grey stone drinking basin with flat pale blue water and two small smooth pebbles. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-3924cfba-f97f-4ad0-8561-67c9a5f88154.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_niffler",
+      "kind": "habitat",
+      "species": "niffler",
+      "file": "native-complete-objects/habitat_niffler/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 36,
+        "h": 28
+      },
+      "sha256": "f555302a8aa7914ea70e9679f4e97b29d1b9265a857494f44834273fb8e8cca1",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_niffler/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_niffler/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 3,
+            "w": 36,
+            "h": 28
+          },
+          "sha256": "f555302a8aa7914ea70e9679f4e97b29d1b9265a857494f44834273fb8e8cca1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_niffler.png",
+      "masterSha256": "f19d294545d094025ff6c23c1bfe523eb14a9618add45f13230d7edf57ec917f",
+      "prompt": "Create ONE game sprite of a squat open wooden treasure chest with exactly three large visible gold coins inside and one coin beside it, no creature. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9ce782d7-ff50-4dd3-a15f-14e945be2ef0.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_puffskein",
+      "kind": "habitat",
+      "species": "puffskein",
+      "file": "native-complete-objects/habitat_puffskein/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 7,
+        "w": 36,
+        "h": 24
+      },
+      "sha256": "b771cf2a44b71e6d0f25bf7d85cdff26c435442dc1e9077386ea46a3cf83972a",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_puffskein/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_puffskein/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 7,
+            "w": 36,
+            "h": 24
+          },
+          "sha256": "b771cf2a44b71e6d0f25bf7d85cdff26c435442dc1e9077386ea46a3cf83972a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_puffskein.png",
+      "masterSha256": "0d0ff36ea9520600a7b16e42525732e5ead0e9fcd036744f41350591a2e259c1",
+      "prompt": "Create ONE game sprite of a round low woven straw basket with a single soft cream cushion and one brown tassel, open and empty, no creature. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-25b227e9-a7f1-4c38-bd21-298f72e849b2.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_thestral",
+      "kind": "habitat",
+      "species": "thestral",
+      "file": "native-complete-objects/habitat_thestral/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 3,
+        "y": 3,
+        "w": 35,
+        "h": 28
+      },
+      "sha256": "d78d7bcef640f9f9df745d2064f8cb6699c83f7871bdf9b9bcb2b3a128748e65",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_thestral/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_thestral/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 3,
+            "y": 3,
+            "w": 35,
+            "h": 28
+          },
+          "sha256": "d78d7bcef640f9f9df745d2064f8cb6699c83f7871bdf9b9bcb2b3a128748e65",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_thestral.png",
+      "masterSha256": "053281aa0e468754c803c2dc4d972140a05fe55a618797c3fa9133534737b676",
+      "prompt": "Create ONE game sprite of a low dark stone water urn with a narrow pale blue water opening and a simple bat-wing engraving, no creature. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-53ea0620-9cbf-4577-b12b-7ba6894fb93f.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_three-headed-dog",
+      "kind": "habitat",
+      "species": "three-headed-dog",
+      "file": "native-complete-objects/habitat_three-headed-dog/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 6,
+        "w": 36,
+        "h": 25
+      },
+      "sha256": "8c580b6d24342838cfaf6440988a566f8124bea5e662474644252f42af22f1ef",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_three-headed-dog/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_three-headed-dog/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 6,
+            "w": 36,
+            "h": 25
+          },
+          "sha256": "8c580b6d24342838cfaf6440988a566f8124bea5e662474644252f42af22f1ef",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_three-headed-dog.png",
+      "masterSha256": "57ba38ebb721440d8a3f3645366d2f18e085ff8ea55cdc391f43949bd85a0bb5",
+      "prompt": "Create ONE game sprite of exactly three red-brown dog bowls in a small triangular arrangement, one large cream bone resting in front. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-a3d9b013-ad39-4fdb-8599-dd87bbab2a78.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_unicorn",
+      "kind": "habitat",
+      "species": "unicorn",
+      "file": "native-complete-objects/habitat_unicorn/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 10,
+        "w": 36,
+        "h": 21
+      },
+      "sha256": "5d87c1500196e8387cd74935b68f0ca4c35654c80fe35502c700b402c71e7692",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1422,
+        "h": 1106
+      },
+      "frames": [
+        "native-complete-objects/habitat_unicorn/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_unicorn/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 10,
+            "w": 36,
+            "h": 21
+          },
+          "sha256": "5d87c1500196e8387cd74935b68f0ca4c35654c80fe35502c700b402c71e7692",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1422,
+            "h": 1106
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_unicorn.png",
+      "masterSha256": "9be762ca85a9d5b347170f196d065db1b8bb9056b3284cb5a85ac305a57cff10",
+      "prompt": "Create ONE game sprite of a low pale silver drinking bowl with turquoise water and two broad white flowers with green leaves beside it. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-34a5c6e9-983e-43dc-a0b5-110143e07e77.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "herbology_greenhouse",
+      "kind": "scene",
+      "file": "native-complete-objects/herbology_greenhouse/frame-01.png",
+      "width": 156,
+      "height": 152,
+      "pivotX": 78,
+      "pivotY": 118,
+      "bounds": {
+        "x": 13,
+        "y": 11,
+        "w": 130,
+        "h": 131
+      },
+      "sha256": "42599270411bf9c277795f5fd4f482dbb819dfb1e27dcf616c7517ea8cae2ebf",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 632,
+        "h": 622
+      },
+      "frames": [
+        "native-complete-objects/herbology_greenhouse/frame-01.png",
+        "native-complete-objects/herbology_greenhouse/frame-02.png",
+        "native-complete-objects/herbology_greenhouse/frame-03.png",
+        "native-complete-objects/herbology_greenhouse/frame-04.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/herbology_greenhouse/frame-01.png",
+          "width": 156,
+          "height": 152,
+          "pivotX": 78,
+          "pivotY": 118,
+          "bounds": {
+            "x": 13,
+            "y": 11,
+            "w": 130,
+            "h": 131
+          },
+          "sha256": "42599270411bf9c277795f5fd4f482dbb819dfb1e27dcf616c7517ea8cae2ebf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 632,
+            "h": 622
+          }
+        },
+        {
+          "file": "native-complete-objects/herbology_greenhouse/frame-02.png",
+          "width": 156,
+          "height": 152,
+          "pivotX": 78,
+          "pivotY": 118,
+          "bounds": {
+            "x": 13,
+            "y": 11,
+            "w": 130,
+            "h": 131
+          },
+          "sha256": "fe65eb16aed4b26b13b5b78a2d58c713d19d39e6f3067befdf24b395fbe4a400",
+          "sourceRect": {
+            "x": 632,
+            "y": 0,
+            "w": 632,
+            "h": 622
+          }
+        },
+        {
+          "file": "native-complete-objects/herbology_greenhouse/frame-03.png",
+          "width": 156,
+          "height": 152,
+          "pivotX": 78,
+          "pivotY": 118,
+          "bounds": {
+            "x": 13,
+            "y": 4,
+            "w": 130,
+            "h": 138
+          },
+          "sha256": "faa81342aea53742d65ababfc118bfbd0ebc12c94257ff9c29f38b0c85586412",
+          "sourceRect": {
+            "x": 0,
+            "y": 622,
+            "w": 632,
+            "h": 622
+          }
+        },
+        {
+          "file": "native-complete-objects/herbology_greenhouse/frame-04.png",
+          "width": 156,
+          "height": 152,
+          "pivotX": 78,
+          "pivotY": 118,
+          "bounds": {
+            "x": 13,
+            "y": 11,
+            "w": 130,
+            "h": 131
+          },
+          "sha256": "bfc9ea3e4864f45a56f3f32a30619603b961646981a15e2cd4a384410ece0e1e",
+          "sourceRect": {
+            "x": 632,
+            "y": 622,
+            "w": 632,
+            "h": 622
+          }
+        }
+      ],
+      "durations": [
+        1200,
+        540,
+        650,
+        540
+      ],
+      "rotatable": false,
+      "storeItem": false,
+      "master": "masters-complete-objects/herbology_greenhouse.png",
+      "masterSha256": "2f87ad04f75a4d944062020865d8dde36ab9e05e9993fdf5f89047a41d9450bc",
+      "prompt": "Create ONE transparent production sprite atlas of the garden's cozy wizarding herbology greenhouse. Supplied image is STYLE/IDENTITY reference: use right greenhouse, ignore character and owl. Four authored frames exact 2 columns by 2 rows square grid. Row-major: neutral wooden greenhouse closed door and roof vent closed; roof vent opens slightly and large herb leaves lean left; roof vent open fully with leaves lifted; vent half closed and leaves settle right. Building footprint, outline and scale stay fixed, plants/vent articulate only. 2:1 dimetric view with front door on left-facing facade, turquoise glass panels, warm brown timber frame, grey stone base, 3-4 broad potted herb silhouettes inside. Final logical sprite approx136x138 pixels, strong readable beam spacing and large flat translucent-looking teal panels WITHOUT actual partial alpha. Clean chunky true pixel art, top-left light, selective dark-purple outlines, no busy panes/reflection scratches/dither/no fine plant speckles/glow/blur/text. All24palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Four full objects equally sized square cells, planted stone base consistent baseline, clear transparent gutters along BOTH center axes, no crop/touching boundary/no ground panel/no shadows. Genuine transparent alpha background.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-e2068e89-cb5a-459a-9668-57d66f0d2a6d.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_bowtruckle",
+      "kind": "keepsake",
+      "species": "bowtruckle",
+      "file": "native-complete-objects/keepsake_bowtruckle/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 16,
+        "y": 6,
+        "w": 25,
+        "h": 44
+      },
+      "sha256": "ac57d844980a2e19097e4bc3078f321055c90af53cf1b8a6e0a524d6b5d85bfd",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_bowtruckle/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_bowtruckle/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 16,
+            "y": 6,
+            "w": 25,
+            "h": 44
+          },
+          "sha256": "ac57d844980a2e19097e4bc3078f321055c90af53cf1b8a6e0a524d6b5d85bfd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_bowtruckle-v2.png",
+      "masterSha256": "7d8d702720ff4e41f259e508a51e76cc652f8421f21845aacecef044fb3908a6",
+      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled bowtruckle. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: thin BROWN BARK twig body and long brown branch arms, tiny root feet, with GREEN leaves only at the head and fingertips. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-081465ef-82b7-4073-859f-b3066667980b.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_diricawl",
+      "kind": "keepsake",
+      "species": "diricawl",
+      "file": "native-complete-objects/keepsake_diricawl/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 15,
+        "y": 6,
+        "w": 26,
+        "h": 44
+      },
+      "sha256": "266b1f3c3b78ffcf3ef486f5e71ff90387df7731dd299cbbd1f47d150380ca2b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_diricawl/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_diricawl/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 15,
+            "y": 6,
+            "w": 26,
+            "h": 44
+          },
+          "sha256": "266b1f3c3b78ffcf3ef486f5e71ff90387df7731dd299cbbd1f47d150380ca2b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_diricawl-v2.png",
+      "masterSha256": "eab49e22448dd5541734ac1c03c5b614fa4c31f17c1bc9a33c869ba14c42c6a6",
+      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled diricawl. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: round OLIVE GREEN body/wing patches, cream/tan breast, slate grey head, orange beak and stubby brown feet; not blue all over. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-b04720cb-2ed8-48c0-82cb-f5bae2443177.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_dragon",
+      "kind": "keepsake",
+      "species": "dragon",
+      "file": "native-complete-objects/keepsake_dragon/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 12,
+        "y": 6,
+        "w": 32,
+        "h": 44
+      },
+      "sha256": "e855b34a1831d0745aac446abed806cf728bc7476a53522ea37c160384c30ad7",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_dragon/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_dragon/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 12,
+            "y": 6,
+            "w": 32,
+            "h": 44
+          },
+          "sha256": "e855b34a1831d0745aac446abed806cf728bc7476a53522ea37c160384c30ad7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_dragon-v2.png",
+      "masterSha256": "cb4f857b6d1af986e860b370168026fa0030a9f4d2276092e114e2998f9beade",
+      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled dragon. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: dark BURGUNDY BROWN dragon scales, ORANGE segmented belly and COPPER orange wings; no purple body or green belly. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9b25ff09-99f5-4f12-b67c-5a59f85eb6da.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_fwooper",
+      "kind": "keepsake",
+      "species": "fwooper",
+      "file": "native-complete-objects/keepsake_fwooper/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 10,
+        "y": 6,
+        "w": 36,
+        "h": 44
+      },
+      "sha256": "d2be5c08147668c840f657d02e509bc5dac6ee74cea6e32e7ba5cef4908cff43",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_fwooper/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_fwooper/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 10,
+            "y": 6,
+            "w": 36,
+            "h": 44
+          },
+          "sha256": "d2be5c08147668c840f657d02e509bc5dac6ee74cea6e32e7ba5cef4908cff43",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_fwooper-v2.png",
+      "masterSha256": "cc61e9229564a0cc958df54350609f32c825f35a0f2aa7a3ce10310220189fda",
+      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled fwooper. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: bright ORANGE and warm gold plumage, long swept orange tail with dark-brown/copper shadows; do not turn large wing or body regions purple. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-4a0f8103-2eda-469e-aed4-b711db9ce9d8.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_hippogriff",
+      "kind": "keepsake",
+      "species": "hippogriff",
+      "file": "native-complete-objects/keepsake_hippogriff/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 11,
+        "y": 6,
+        "w": 34,
+        "h": 44
+      },
+      "sha256": "d200021d4f3dc484ae2be816a728412a54986020852d4b537475948ec0060a9f",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_hippogriff/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_hippogriff/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 11,
+            "y": 6,
+            "w": 34,
+            "h": 44
+          },
+          "sha256": "d200021d4f3dc484ae2be816a728412a54986020852d4b537475948ec0060a9f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_hippogriff-v2.png",
+      "masterSha256": "50a85fe8c321e344b05560334e978c0b86fb1949698ee3adbd13693705cb848b",
+      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled hippogriff. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: creamy pale eagle head and breast, slate blue-grey wings, CHESTNUT BROWN horse hindquarters and brown tail. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-db011dac-1419-4b32-ac88-2597fd054f72.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_kneazle",
+      "kind": "keepsake",
+      "species": "kneazle",
+      "file": "native-complete-objects/keepsake_kneazle/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 14,
+        "y": 6,
+        "w": 29,
+        "h": 44
+      },
+      "sha256": "ea3d5c4a4eef7692f5c34383d6bcb436fd4da5e8b6cebffee7b49b54309e0ed5",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_kneazle/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_kneazle/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 14,
+            "y": 6,
+            "w": 29,
+            "h": 44
+          },
+          "sha256": "ea3d5c4a4eef7692f5c34383d6bcb436fd4da5e8b6cebffee7b49b54309e0ed5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_kneazle.png",
+      "masterSha256": "47139473cdc8b24c3e76a46307858e992cde3cb46d6eee540fb0062932c4deaa",
+      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a tawny Kneazle cat with large pointed ears, whiskers and a curled lion-like tail, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-264b4c0c-d08e-464f-941a-e3ab9093e3ae.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_mooncalf",
+      "kind": "keepsake",
+      "species": "mooncalf",
+      "file": "native-complete-objects/keepsake_mooncalf/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 16,
+        "y": 6,
+        "w": 24,
+        "h": 44
+      },
+      "sha256": "0fe8016fa8513e1f3d2b6475d129f5e5e907ba03dd8335206e453f944db93900",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_mooncalf/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_mooncalf/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 16,
+            "y": 6,
+            "w": 24,
+            "h": 44
+          },
+          "sha256": "0fe8016fa8513e1f3d2b6475d129f5e5e907ba03dd8335206e453f944db93900",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_mooncalf-v2.png",
+      "masterSha256": "148ca3c6203e0c5e7b6d3b3aa5992c34b69ec8f2b4102fe4e3939ff5657898e7",
+      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled mooncalf. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: warm TAN long neck and lower legs, pale cream face/chest, grey back with small pale spots, very large eyes and slim long legs. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-fadc6ebc-39d0-406c-b038-014b61be993d.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_niffler",
+      "kind": "keepsake",
+      "species": "niffler",
+      "file": "native-complete-objects/keepsake_niffler/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 10,
+        "y": 6,
+        "w": 36,
+        "h": 44
+      },
+      "sha256": "e8233a992eaeef58d8f97fc1d896c5546695ab185d46e338df469fe98e401179",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_niffler/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_niffler/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 10,
+            "y": 6,
+            "w": 36,
+            "h": 44
+          },
+          "sha256": "e8233a992eaeef58d8f97fc1d896c5546695ab185d46e338df469fe98e401179",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_niffler.png",
+      "masterSha256": "c200933f2e1a38dd07aea339f2afe0808423d5bad61afb89000768c36a557ee6",
+      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a black Niffler with duck-like beak and small paws clutching one broad gold coin, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-d7d10bb4-3f27-4c28-b690-929981596cf9.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_puffskein",
+      "kind": "keepsake",
+      "species": "puffskein",
+      "file": "native-complete-objects/keepsake_puffskein/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 9,
+        "y": 6,
+        "w": 38,
+        "h": 44
+      },
+      "sha256": "a6ee5a7b30aa893ee191f993dbc8cda73cab5e804c8fd84387da154ae6ea5912",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_puffskein/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_puffskein/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 9,
+            "y": 6,
+            "w": 38,
+            "h": 44
+          },
+          "sha256": "a6ee5a7b30aa893ee191f993dbc8cda73cab5e804c8fd84387da154ae6ea5912",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_puffskein-v2.png",
+      "masterSha256": "c74919713631c43cdb997f8994f55f3a11230d0b472baf0ec0ee08966d16b8d8",
+      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled puffskein. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: orange-gold fluffy round ball, warm peach face, tiny ears and very small dark eyes, rather than a cream owl-like large-eyed face. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9ba77eef-920c-4b34-8705-107a90077831.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_thestral",
+      "kind": "keepsake",
+      "species": "thestral",
+      "file": "native-complete-objects/keepsake_thestral/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 13,
+        "y": 6,
+        "w": 30,
+        "h": 44
+      },
+      "sha256": "c05e5b212179848c713da2940006dbf2f7bdac725943f51cb9f0d31f36e49109",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_thestral/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_thestral/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 13,
+            "y": 6,
+            "w": 30,
+            "h": 44
+          },
+          "sha256": "c05e5b212179848c713da2940006dbf2f7bdac725943f51cb9f0d31f36e49109",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_thestral.png",
+      "masterSha256": "c527ed93c6b0d94e4bb18de1d506cb608a1498351448877e0783ac673c9a4db6",
+      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a slender charcoal Thestral horse with visible rib contours, bat wings folded and a long thin tail, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-801813d6-de85-4e58-b1a9-c8d1a32520ab.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_three-headed-dog",
+      "kind": "keepsake",
+      "species": "three-headed-dog",
+      "file": "native-complete-objects/keepsake_three-headed-dog/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 8,
+        "y": 6,
+        "w": 40,
+        "h": 44
+      },
+      "sha256": "c46c1ce5d71d1997873924d25ad3456825e7b7d2702f5ef26d649ac19f48efeb",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_three-headed-dog/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_three-headed-dog/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 8,
+            "y": 6,
+            "w": 40,
+            "h": 44
+          },
+          "sha256": "c46c1ce5d71d1997873924d25ad3456825e7b7d2702f5ef26d649ac19f48efeb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_three-headed-dog.png",
+      "masterSha256": "b38ba38b56da1890b64bba46844df3f01b473fc5935f8cdcad347e490b3f13dd",
+      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a seated friendly white three-headed dog: exactly three large dog heads sharing one small body, floppy ears and broad noses, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9d537268-858a-485d-996d-6f890c0aaf68.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_unicorn",
+      "kind": "keepsake",
+      "species": "unicorn",
+      "file": "native-complete-objects/keepsake_unicorn/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 13,
+        "y": 6,
+        "w": 31,
+        "h": 44
+      },
+      "sha256": "678a438d6a9905a3eb17980ddff39700492274aab0eaebb2e6e66cfe3cf6d473",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      },
+      "frames": [
+        "native-complete-objects/keepsake_unicorn/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_unicorn/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 13,
+            "y": 6,
+            "w": 31,
+            "h": 44
+          },
+          "sha256": "678a438d6a9905a3eb17980ddff39700492274aab0eaebb2e6e66cfe3cf6d473",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1254,
+            "h": 1254
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_unicorn.png",
+      "masterSha256": "7f263ed488ac67bc02b483542e57ca2023c89a80233a9763e354fd90c02553d5",
+      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a pale cream Unicorn horse with a single long gold horn and flowing light mane, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-d9d8a6c0-83a3-46e2-a0f3-34e67b60f00b.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "owl_post",
+      "kind": "scene",
+      "file": "native-complete-objects/owl_post/frame-01.png",
+      "width": 80,
+      "height": 104,
+      "pivotX": 40,
+      "pivotY": 92,
+      "bounds": {
+        "x": 17,
+        "y": 8,
+        "w": 47,
+        "h": 84
+      },
+      "sha256": "c4b5354d66965cdb353d7c697aa23ae2f09f07c03c8c76176da3e0b588c4aa37",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 613,
+        "h": 642
+      },
+      "frames": [
+        "native-complete-objects/owl_post/frame-01.png",
+        "native-complete-objects/owl_post/frame-02.png",
+        "native-complete-objects/owl_post/frame-03.png",
+        "native-complete-objects/owl_post/frame-04.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/owl_post/frame-01.png",
+          "width": 80,
+          "height": 104,
+          "pivotX": 40,
+          "pivotY": 92,
+          "bounds": {
+            "x": 17,
+            "y": 8,
+            "w": 47,
+            "h": 84
+          },
+          "sha256": "c4b5354d66965cdb353d7c697aa23ae2f09f07c03c8c76176da3e0b588c4aa37",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 613,
+            "h": 642
+          }
+        },
+        {
+          "file": "native-complete-objects/owl_post/frame-02.png",
+          "width": 80,
+          "height": 104,
+          "pivotX": 40,
+          "pivotY": 92,
+          "bounds": {
+            "x": 17,
+            "y": 8,
+            "w": 47,
+            "h": 84
+          },
+          "sha256": "8522785127b25102cb58eee1856786101e31cfcca6fc493c1e8d346b94b11e3d",
+          "sourceRect": {
+            "x": 613,
+            "y": 0,
+            "w": 612,
+            "h": 642
+          }
+        },
+        {
+          "file": "native-complete-objects/owl_post/frame-03.png",
+          "width": 80,
+          "height": 104,
+          "pivotX": 40,
+          "pivotY": 92,
+          "bounds": {
+            "x": 12,
+            "y": 6,
+            "w": 56,
+            "h": 86
+          },
+          "sha256": "cf03afce6182159dc259e3bdd2b6b57c5f512d4e5d55f0859b6fddd7085db2c8",
+          "sourceRect": {
+            "x": 0,
+            "y": 642,
+            "w": 613,
+            "h": 642
+          }
+        },
+        {
+          "file": "native-complete-objects/owl_post/frame-04.png",
+          "width": 80,
+          "height": 104,
+          "pivotX": 40,
+          "pivotY": 92,
+          "bounds": {
+            "x": 17,
+            "y": 6,
+            "w": 47,
+            "h": 86
+          },
+          "sha256": "b5ce97c73353d0ede1359f806e9bf563bfacdbb41a5b02f033a79e771f223477",
+          "sourceRect": {
+            "x": 613,
+            "y": 642,
+            "w": 612,
+            "h": 642
+          }
+        }
+      ],
+      "durations": [
+        760,
+        400,
+        220,
+        460
+      ],
+      "rotatable": false,
+      "storeItem": false,
+      "master": "masters-complete-objects/owl_post.png",
+      "masterSha256": "8746e353914e161bae9756133b35182979377676c220f7ced313b6c9df296302",
+      "prompt": "Create ONE transparent production sprite atlas for the snowy messenger owl on a rustic wooden T perch with one hanging cream envelope and red wax seal. Supplied image is STYLE/IDENTITY reference: use its center owl post, ignore other objects. Four authored poses exact 2 columns by 2 rows grid, row-major: neutral owl looking ahead, head turned gently to left, blink and little wing stretch, head tilted right with wing folded again. Same post/envelope and planted post baseline and camera/scale every square cell. Cute white owl, amber eyes/beak, grey simple wing areas. Clean chunky pixel art, logical sprite 52x80 pixels per cell. Broad flat solid pixel clusters, 2-3 shades per material, NO tiny feather pattern or noisy fur/dithering/gradient/glow. 2:1 dimetric viewpoint, selective dark purple outline, top-left lighting. Palette ONLY #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Generous clear alpha gutters along both center axes, full object isolated in each equally sized square cell, no touching edges/no ground plate/no text. True transparent background.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-e4a0fe5a-7b0b-4247-8480-bfaeb9e825a8.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    }
+  ]
+}

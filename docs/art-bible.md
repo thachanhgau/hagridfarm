@@ -100,6 +100,8 @@ Quy tắc:
 
 ## 8. Checklist nhận một asset mới
 
+**V24.9.74 — atlas chuyển động:** lưu prompt và hash trước/sau tạo master; không tin số file hoặc lưới atlas danh nghĩa. Xác nhận đủ silhouette/pose, dùng khe alpha hoặc component để tách đúng hình, không cắt theo ô đều khi nguồn lệch. Duyệt ảnh native 1×, giữ pivot chân và palette24. Atlas runtime phải đối chiếu RGBA từng rect với PNG native; kiểm clip được gọi thực tế khi chăm/thu hoạch, hitbox của góc được vẽ riêng và reduced motion. [Đợt hoàn thiện](artwork-completion-20261023.md) đóng toàn bộ backlog ngoài Halloween theo yêu cầu.
+
 **V24.9.73 — icon nhỏ:** vật tư/cao cấp có vùng mực tối đa 40×40 trong canvas 64×64, vừa ô kho 40px ở 1×. Vẽ mảng màu lớn và biểu tượng rõ, bỏ chi tiết nhỏ hơn pixel đích. UI ưu tiên tỷ lệ nguyên và tọa độ nguyên khi ảnh vừa ô; không nhân grayscale/giảm sáng lên ảnh hàng khóa cấp trong cửa hàng. Duyệt ảnh ở native 1× và đúng kích thước CSS trong shop/kho; xem [đợt chất lượng v2](artwork-quality-v2-20261023.md).
 
 **Kiểm kê 23/10/2026:** rà cả hình inline SVG/Canvas và số frame khác nhau trong từng clip, không chỉ số file/hash hoặc tên clip. Artwork vật tư/cao cấp, mở thửa và huy hiệu dùng chung `ITEM_ART` qua `ui-utils.mjs`; không thêm SVG tạm khi chưa có ảnh. Bộ 12 master mới nằm trong `supply-art-sources.json`, được pipeline `build-item-art.mjs` xuất cùng palette/pivot/alpha như các món cũ. [Bản kiểm kê](artwork-audit-20261023.md) phân biệt việc đã thay với phần chuyển động/prop chưa được vẽ riêng; `qa-v19/supply-art-qa.mjs` kiểm cả gallery và shop ở bốn kích thước bằng fixture không kết nối dữ liệu thật.

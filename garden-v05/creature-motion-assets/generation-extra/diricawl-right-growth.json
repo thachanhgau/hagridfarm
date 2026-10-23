@@ -1,0 +1,16 @@
+{
+  "id": "diricawl-right-growth",
+  "kind": "creature-growth",
+  "species": "diricawl",
+  "refs": [
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "prompt": "Create ONE transparent growth sprite sheet for a plump olive-green flightless bird with a cream/tan chest, slate-grey head and orange beak, the species diricawl in the supplied labelled reference contact sheet. Supporting reference: use ONLY the LARGE original creature above the small plinth statue in tile diricawl; ignore all other tiles and ALL statuettes. Exactly4 equally sized square cells in ONE horizontal row (4columns1row), with generous blank gutters and15%margin each cell. Four ages row-major: tiny newborn, young juvenile, adolescent, fully grown adult matching the reference identity/color proportions. Every age FACES RIGHT in authored three-quarter dimetric view: head/snout points screen-right, tail trails screen-left; true opposite viewpoint with asymmetric wing/ear layering, do not copy-mirror an existing left image. Each age grounded feet at consistent baseline within its own cell. Coherent biological growth, no eggs for mammals, no hatching shell, no accessories, no action props. Clean chunky pixel art for a cozy garden game, broad flat connected clusters, limited24palette, no fur texture/speckled pixels/gradients/glow. Top-left light, dark purple selective outline. No text or labels or grid lines, no floor tile/shadow, genuine transparent RGBA. Preserve the game's warm muted colors and mature species silhouette.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-7c074320-74e6-4820-a95f-73fa92fb668e.png",
+  "master": "creature-motion-assets/masters/diricawl-right-growth-v01.png",
+  "masterSha256": "0e5c6730a4169704899f74d2ac2e166ad6c0a3408b32737d75cc75c7c222c83e",
+  "tool": "builtin image_gen",
+  "referenceFiles": [
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ]
+}

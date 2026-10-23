@@ -1,0 +1,16 @@
+{
+  "id": "thestral-right-growth",
+  "kind": "creature-growth",
+  "species": "thestral",
+  "refs": [
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "prompt": "Create ONE transparent growth sprite sheet for a dark charcoal-brown slender skeletal horse with bat wings, long neck and thin tail, the species thestral in the supplied labelled reference contact sheet. Supporting reference: use ONLY the LARGE original creature above the small plinth statue in tile thestral; ignore all other tiles and ALL statuettes. Exactly4 equally sized square cells in ONE horizontal row (4columns1row), with generous blank gutters and15%margin each cell. Four ages row-major: tiny newborn, young juvenile, adolescent, fully grown adult matching the reference identity/color proportions. Every age FACES RIGHT in authored three-quarter dimetric view: head/snout points screen-right, tail trails screen-left; true opposite viewpoint with asymmetric wing/ear layering, do not copy-mirror an existing left image. Each age grounded feet at consistent baseline within its own cell. Coherent biological growth, no eggs for mammals, no hatching shell, no accessories, no action props. Clean chunky pixel art for a cozy garden game, broad flat connected clusters, limited24palette, no fur texture/speckled pixels/gradients/glow. Top-left light, dark purple selective outline. No text or labels or grid lines, no floor tile/shadow, genuine transparent RGBA. Preserve the game's warm muted colors and mature species silhouette.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-78bf413b-c3fc-457a-9faa-4de316758bdc.png",
+  "master": "creature-motion-assets/masters/thestral-right-growth-v01.png",
+  "masterSha256": "fbfa9d650036cb0fa00119765c890d686c53616054b10d905e56ef81677b52d9",
+  "tool": "builtin image_gen",
+  "referenceFiles": [
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ]
+}

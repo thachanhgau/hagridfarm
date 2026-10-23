@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "recoveredFrom": "task worker tool-call evidence; exact prompts and selected output hashes",
+  "items": [
+    {
+      "id": "bowtruckle",
+      "master": "creature-motion-assets/masters/bowtruckle-left-motion-v01.png",
+      "masterSha256": "c3833e0b466c2efc3680ca00c5352f713175710a55c25a1c7100f229d29d6c45",
+      "prompt": "Create one transparent 2 by 4 sprite-sheet for a clean hand-authored pixel-art game creature. 8 equal square cells, four columns and two rows, no gutters, no grid lines, no text, no labels, no scenery, no shadows outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Bowtruckle, a very slender twig-like tree guardian with a bark body, long branch arms, tiny feet, and fresh green leaf tufts, preserving the original adult reference identity and proportions. All 8 sprites must face LEFT in a clear three-quarter side view with visible asymmetry: face and eye point to image left, branch arms and rear leaf tufts trail right, never mirror a generated right-facing sprite. Keep feet on one consistent ground line. Row 1 is four distinct left-facing eating phases: approach a tiny leaf morsel, lower head, nibble, lift and chew. Row 2 is four distinct left-facing care phases: lean toward a small brush/hand cue, receive care, blink, relaxed recovery. Keep any leaf morsel or brush tiny and subordinate. This is a new authored left-view asset sheet for technical slicing; prioritize readable silhouette and distinct body poses over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-1b992c3a-501f-4d49-8445-b00b4a2180d3.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/bowtruckle/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_31e6a294719e4fb9850db2f33e1f1502"
+    },
+    {
+      "id": "bowtruckle",
+      "master": "creature-motion-assets/masters/bowtruckle-right-growth-v01.png",
+      "masterSha256": "7e59dbe4e182a7edd1fc58d706a9dfd144597d4514a1f89e15ccff76f1ab870b",
+      "prompt": "Create one transparent 1 by 4 sprite-sheet for a clean hand-authored pixel-art game creature growth sequence. 4 equal square cells in one row, no gutters, no grid lines, no text, no labels, no scenery, no shadow outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Bowtruckle, a slender twig-like tree guardian with a bark body, branch arms, tiny feet, and green leaf tufts, preserving the original adult reference identity. All four sprites face RIGHT in a clear three-quarter side view with visible asymmetry: face and eye point to image right, rear branches and leaves trail left, never mirror a left view. The four cells are growth stages from left to right: tiny sprout baby, small juvenile, young sapling, mature adult. Show honest proportional growth and readable silhouette differences, increasing branch and leaf structure while preserving the species identity, with feet on the same ground line relative to each cell and no props. This is a new authored right-facing growth asset sheet for technical slicing; preserve palette identity and prioritize clean silhouettes over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-26f7d260-2c60-448c-aacc-6830945679dd.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/bowtruckle/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_672844c308224fd299b2dba46b7875c9"
+    },
+    {
+      "id": "dragon",
+      "master": "creature-motion-assets/masters/dragon-left-motion-v01.png",
+      "masterSha256": "71879b7bc729e9ac979845ac0e4125cedb192cdc399b1cb5f397d2394ee77bbf",
+      "prompt": "Create one transparent 2 by 4 sprite-sheet for a clean hand-authored pixel-art game creature. 8 equal square cells, four columns and two rows, no gutters, no grid lines, no text, no labels, no scenery, no shadows outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: a small young dragon with dark burgundy-brown scales, an orange segmented belly, short horns and spines, leathery copper wings, and a curled tail, preserving the original adult reference identity and proportions. All 8 sprites must face LEFT in a clear three-quarter side view with visible asymmetry: snout and eye point to image left, tail curls right, one nearer wing overlaps the farther wing, never mirror a generated right-facing sprite. Keep all four feet on one consistent ground line and keep the dragon compact and grounded. Row 1 is four distinct left-facing eating phases at a tiny trough: approach, lower head, bite, lift and chew. Row 2 is four distinct left-facing care phases with a small brush/hand cue: lean, receive grooming, blink, relaxed recovery. Keep the trough or brush tiny and subordinate. This is a new authored left-view asset sheet for technical slicing; prioritize readable silhouette and distinct body poses over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-8ce6f737-b99f-46d9-a820-f755a942747a.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/dragon/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_b4ad41b3bef04e7683c6fd7b1b962109"
+    },
+    {
+      "id": "dragon",
+      "master": "creature-motion-assets/masters/dragon-right-growth-v01.png",
+      "masterSha256": "9aae07242cb0e171cb4e5308b1b6fca85d9b04edb096e9c3e935944854af025b",
+      "prompt": "Create one transparent 1 by 4 sprite-sheet for a clean hand-authored pixel-art game creature growth sequence. 4 equal square cells in one row, no gutters, no grid lines, no text, no labels, no scenery, no shadow outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: a small young dragon with dark burgundy-brown scales, orange segmented belly, short horns and spines, leathery copper wings, and curled tail, preserving the original adult reference identity. All four sprites face RIGHT in a clear three-quarter side view with visible asymmetry: snout and eye point to image right, tail curls left, one nearer wing overlaps the farther wing, never mirror a left view. The four cells are growth stages from left to right: hatchling, small juvenile, young, mature adult. Show honest proportional growth with increasingly defined horns, belly, wings and tail while preserving the compact grounded dragon identity, with all four feet on the same ground line relative to each cell and no props. This is a new authored right-facing growth asset sheet for technical slicing; preserve palette identity and prioritize clean silhouettes over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-b15d3233-7a99-4f3b-92b7-8bfa09cf3434.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/dragon/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_8c30457c100647e9a1a4a49df5efddc6"
+    },
+    {
+      "id": "hippogriff",
+      "master": "creature-motion-assets/masters/hippogriff-left-motion-v01.png",
+      "masterSha256": "d2e3b273b7b938afa1e7ee80af334abe1be36a25d8c977104ee614783a2126f8",
+      "prompt": "Create one transparent 2 by 4 sprite-sheet for a clean hand-authored pixel-art game creature. 8 equal square cells, four columns and two rows, no gutters, no grid lines, no text, no labels, no scenery, no shadows outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Hippogriff, an eagle-headed front half joined to a powerful horse body, cream breast and face, slate-blue and brown wings, feathered legs, and a long brown tail, preserving the original adult reference identity and proportions. All 8 sprites must face LEFT in a clear three-quarter side view with visible asymmetry: hooked beak and eye point to image left, tail trails right, one nearer wing overlaps the farther wing, never mirror a generated right-facing sprite. Keep all hooves on one consistent ground line and preserve a noble grounded stance. Row 1 is four distinct left-facing eating phases at a tiny trough: approach, lower beak, bite, lift and chew. Row 2 is four distinct left-facing care phases with a small brush/hand cue: lean, receive grooming, blink, relaxed recovery. Keep the trough or brush tiny and subordinate. This is a new authored left-view asset sheet for technical slicing; prioritize readable silhouette and distinct body poses over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-cc62ad69-2334-4579-bb67-3681930cd504.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/hippogriff/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_8c0a359564664d3ab3fd64d15b0b8efc"
+    },
+    {
+      "id": "hippogriff",
+      "master": "creature-motion-assets/masters/hippogriff-right-growth-v01.png",
+      "masterSha256": "6bdbc963b349ed07ce013aa06c62db51e93587a0ac9243a6e79c14da767b4b33",
+      "prompt": "Create one transparent 1 by 4 sprite-sheet for a clean hand-authored pixel-art game creature growth sequence. 4 equal square cells in one row, no gutters, no grid lines, no text, no labels, no scenery, no shadow outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Hippogriff, an eagle-headed front half joined to a horse body with a cream breast, slate-blue and brown wings, feathered legs, and long brown tail, preserving the original adult reference identity. All four sprites face RIGHT in a clear three-quarter side view with visible asymmetry: hooked beak and eye point to image right, tail trails left, near wing overlaps far wing, never mirror a left view. The four cells are growth stages from left to right: tiny chick-foal baby, small juvenile, young, mature adult. Show honest proportional growth from compact baby to noble adult while preserving eagle head, horse body and wing identity, with all hooves on the same ground line relative to each cell and no props. This is a new authored right-facing growth asset sheet for technical slicing; preserve palette identity and prioritize clean silhouettes over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-b44deee6-fdc3-4c35-a9ee-4b93abeb3776.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/hippogriff/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_f2efb6ffc56046baab8fea9da447072a"
+    },
+    {
+      "id": "mooncalf",
+      "master": "creature-motion-assets/masters/mooncalf-right-growth-v01.png",
+      "masterSha256": "2de87f085be6c3f6c3d48cd45de4334044f67788820f8db87047ee8319f25397",
+      "prompt": "Create one transparent 1 by 4 sprite-sheet for a clean hand-authored pixel-art game creature growth sequence. 4 equal square cells in one row, no gutters, no grid lines, no text, no labels, no scenery, no shadow outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Mooncalf, a delicate pale blue-gray long-legged magical calf with huge blue eyes, very large floppy ears, small horns, peach muzzle, spotted body and thin tail, preserving the original adult reference identity. All four sprites face RIGHT in a clear three-quarter side view with visible asymmetry: muzzle and visible eye point to image right, tail trails left, ears and spots differ visibly, never mirror a left view. The four cells are growth stages from left to right: tiny baby, small juvenile, young, mature adult. Show honest proportional growth from a compact baby to a delicate long-legged adult while preserving the huge-eye and ear identity. Keep hooves on the same ground line relative to each cell and include no props. This is a new authored right-facing growth asset sheet for technical slicing; preserve palette identity and prioritize a clean readable silhouette over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-9cf3bc46-d236-405a-9887-33fa75b776cc.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/mooncalf/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_cd95a3b03d1548b080eff2f226487df8"
+    },
+    {
+      "id": "niffler",
+      "master": "creature-motion-assets/masters/niffler-left-motion-v01.png",
+      "masterSha256": "5c1cf2b805489b6f7b9fdb9dbcee0964ff105f860dbcd06b3c09c79748aa8acb",
+      "prompt": "Create one transparent 2 by 4 sprite-sheet for a clean hand-authored pixel-art game creature. 8 equal square cells, four columns and two rows, no gutters, no grid lines, no text, no labels, no scenery, no shadows outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Niffler, a compact charcoal-black and deep-violet fluffy platypus-like creature with a long peach-brown snout, small paws, round body, short tail, and a little treasure pouch, preserving the original adult reference identity and proportions. All 8 sprites must face LEFT in a clear three-quarter side view with visible asymmetry: snout and eye point to image left, tail and pouch trail right, never mirror a generated right-facing sprite. Keep feet on one consistent ground line. Row 1 is four distinct left-facing eating phases: approach a tiny food dish, lower snout, bite, lift and chew. Row 2 is four distinct left-facing care phases: lean toward a small brush/hand cue, receive care, blink, relaxed recovery. Keep any dish or brush tiny and subordinate. This is a new authored left-view asset sheet for technical slicing; prioritize a readable silhouette and distinct body poses over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-7ecff849-5976-4fec-843b-1c1090f415e9.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/niffler/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_2780372924d048f68f993b3c0e1ed030"
+    },
+    {
+      "id": "niffler",
+      "master": "creature-motion-assets/masters/niffler-right-growth-v01.png",
+      "masterSha256": "eb2b1009d0adc90119f53833adfd841503df3304a0612091c0ce3f9f104c917d",
+      "prompt": "Create one transparent 1 by 4 sprite-sheet for a clean hand-authored pixel-art game creature growth sequence. 4 equal square cells in one row, no gutters, no grid lines, no text, no labels, no scenery, no shadow outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Niffler, a compact charcoal-black and deep-violet fluffy platypus-like creature with a long peach-brown snout, small paws, round body, short tail, and little treasure pouch, preserving the original adult reference identity. All four sprites face RIGHT in a clear three-quarter side view with visible asymmetry: snout and eye point to image right, tail and pouch trail left, never mirror a left view. The four cells are growth stages from left to right: tiny baby, small juvenile, young, mature adult. Show honest proportional growth and readable silhouette differences, increasing snout, paws and pouch while preserving identity, with feet on the same ground line relative to each cell and no props. This is a new authored right-facing growth asset sheet for technical slicing; preserve palette identity and prioritize clean silhouettes over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-60c41aa1-d979-479f-83c6-cc7f284708ed.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/niffler/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_547082d97e7942efbecd536e07944e71"
+    },
+    {
+      "id": "puffskein",
+      "master": "creature-motion-assets/masters/puffskein-left-motion-v01.png",
+      "masterSha256": "80a50a0895b44a2c4d336dbd2ce89e670d9b235d55116fae1a2bce14930c3966",
+      "prompt": "Create one transparent 2 by 4 sprite-sheet for a clean hand-authored pixel-art game creature. 8 equal square cells, four columns and two rows, no gutters, no grid lines, no text, no labels, no scenery, no shadows outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Puffskein, a tiny round fluffy orange-gold puffball with a warm peach face and tiny ears, preserving the original adult reference identity and proportions. All 8 sprites must face LEFT in a clear three-quarter side view with visible asymmetry: face and eye point to image left, tail or rear fur trails right, never mirror a generated right-facing sprite. Keep feet on one consistent ground line. Row 1 is four distinct left-facing eating phases: approach a tiny food dish, lower head, bite, lift and chew. Row 2 is four distinct left-facing care phases: lean toward a small brush/hand cue, receive care, blink, relaxed recovery. This is a new authored left-view asset sheet for technical slicing; prioritize readable silhouette and distinct body poses over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-99af3281-4e0b-4410-ae3a-f42e3dc0b4bd.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/puffskein/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_d94ed97574f54d8b93fcd71339dc7ef8"
+    },
+    {
+      "id": "puffskein",
+      "master": "creature-motion-assets/masters/puffskein-right-growth-v01.png",
+      "masterSha256": "0d1cf77751325803e2e0fc3d3958a5054c5c505ea8a5febd7730124bc0dceb0f",
+      "prompt": "Create one transparent 1 by 4 sprite-sheet for a clean hand-authored pixel-art game creature growth sequence. 4 equal square cells in one row, no gutters, no grid lines, no text, no labels, no scenery, no shadow outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: Puffskein, a tiny round fluffy orange-gold puffball with a warm peach face and tiny ears, preserving the original adult reference identity. All four sprites face RIGHT in a clear three-quarter side view with visible asymmetry: face and eye point to image right, rear fur trails left, never mirror a left view. The four cells are growth stages from left to right: tiny baby, small juvenile, young, mature adult. Show honest proportional growth and readable silhouette differences, with feet on the same ground line relative to each cell and no props. This is a new authored right-facing growth asset sheet for technical slicing; preserve palette identity and prioritize clean silhouettes over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-e6ad3f62-c3e4-4dc7-a9fd-b1f219f8a92b.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/puffskein/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_dc25accb072949739a3d1963ab9b1209"
+    },
+    {
+      "id": "three-headed-dog",
+      "master": "creature-motion-assets/masters/three-headed-dog-right-growth-v01.png",
+      "masterSha256": "305a7689213e41fc987c12a6c8da1a1972da7d26decb0c1c32aecfc068af673f",
+      "prompt": "Create one transparent 1 by 4 sprite-sheet for a clean hand-authored pixel-art game creature growth sequence. 4 equal square cells in one row, no gutters, no grid lines, no text, no labels, no scenery, no shadow outside sprites, and each cell contains one fully separated centered sprite. Use a restrained 24-color palette close to the supplied original adult reference, crisp hard pixel clusters, no antialiasing, no smooth gradients, no speckled microtexture. Species: a fluffy white and cream three-headed puppy, three clearly separate small heads with varied ear poses, short legs, and a big curled tail, preserving the original adult reference identity. All four sprites face RIGHT in a clear three-quarter side view: all three muzzles point to image right, the nearer head overlaps the others, ears and tail remain asymmetric, never mirror a left view. The four cells are growth stages from left to right: tiny single-litter puppy with three small faces, small juvenile, young, mature adult. Show honest proportional growth and clearer three-head structure as it grows while preserving the fluffy identity, with all paws on the same ground line relative to each cell and no props. This is a new authored right-facing growth asset sheet for technical slicing; preserve palette identity and prioritize a readable three-head silhouette over decorative detail.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16742-109c-7e23-b0ab-9bd16979319c/exec-336b922b-b017-462b-9f2b-9a64ea6ff784.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native/three-headed-dog/frame-08.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16742-109c-7e23-b0ab-9bd16979319c",
+      "callId": "call_87c48111ca42463f8a5d487adaca0ea3"
+    }
+  ]
+}

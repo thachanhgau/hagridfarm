@@ -1,0 +1,370 @@
+{
+  "version": 1,
+  "recoveredFrom": "task worker tool-call evidence; exact prompts and selected output hashes",
+  "items": [
+    {
+      "id": "ambermelon",
+      "master": "masters-crop-complete/ambermelon-motion-v01.png",
+      "masterSha256": "042e2091931151ff8674766cc3dc422bf3df84c9918f03f33f244dbde68a7941",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature ambermelon crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature ambermelon crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single an ambermelon vine with orange-gold round fruits, broad green leaves, and curling runners, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle leaves and fruit highlights shift in clusters; action gathers the runners, peaks with one fruit and leaf fan lifting, then settles with the fruit grounded. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature ambermelon identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-2226dab8-ec9e-4ab1-a7e9-d4246076dae8.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/ambermelon/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_724b25592c1f4018aafe6f8e93caccd1"
+    },
+    {
+      "id": "beet",
+      "master": "masters-crop-complete/beet-motion-v01.png",
+      "masterSha256": "51dbbabfcf23950ed54182256dd17fbb703b5eafa4cad04f7f147eb26a72ab9e",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature beet crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature beet crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a mature beet with a red-purple round root and a fan of deep green leaves, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle leaves flex and the root's shoulders subtly swell; action compresses the leaves, peaks with the leafy crown thrown sideways and root lifted slightly, then settles to the same ground line. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature beet identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-ccb1feef-e8af-4b7d-9e56-b9a60ff71b09.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/beet/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_de8745ef30e14297b9b12bf2cd87d4fb"
+    },
+    {
+      "id": "blueberry",
+      "master": "masters-crop-complete/blueberry-motion-v01.png",
+      "masterSha256": "ff4499fec8d10a793f6c093538cb41cd31cfe8ed5454c5d98421c1f51702810f",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature blueberry crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature blueberry crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a compact blueberry bush with deep green leaves and many round blue berries, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle berry clusters and leaves shift internally; action winds the branches inward, peaks with berries and leaves separating into a readable bounce, then recovers. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature blueberry identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-b374de45-6694-4ffe-9522-d3d1d5308bdc.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/blueberry/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_827bc2bd46f142758fcc024a8571751f"
+    },
+    {
+      "id": "bubotuber",
+      "master": "masters-crop-complete/bubotuber-motion-v01.png",
+      "masterSha256": "7926791b30271204a6d6c23786f2519e481e16000c79be9632c83f9f48f23608",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature bubotuber crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature bubotuber crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a bubotuber cluster of rounded orange bulbs, small green leaves, and short grounded stems, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle bulbs pulse with small contour changes; action compresses the cluster, peaks with bulbs popping outward and leaves flaring, then returns to the fixed base. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature bubotuber identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-331176a3-1b12-454e-8621-af7843b4e5cb.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/bubotuber/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_08471cf88b424b5eb2fdbfc83058bbb1"
+    },
+    {
+      "id": "carrot",
+      "master": "masters-crop-complete/carrot-motion-v01.png",
+      "masterSha256": "c50f8a8cff6e6362db8ede2d72dc6e9f77e6a322e1e3bafdd66e43e09a913f09",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature carrot crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature carrot crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a mature orange carrot root with a fan of jagged green leaves, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle leaves breathe and the root gives a small leaf-led sway; action shows anticipation as leaves fold, a peak tug with the leafy crown lifting and root exposed, then a grounded recovery. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature carrot identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-abe4dded-26f8-43ee-b056-af126b24aecf.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/carrot/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_08bc5bde6ec542129a8ca6423d22b7ac"
+    },
+    {
+      "id": "clover",
+      "master": "masters-crop-complete/clover-motion-v01.png",
+      "masterSha256": "7c9e9422e6e0634efc32e0b3fd1b00dd8aa81440f9ccd398ef4f0763d54de513",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature clover crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature clover crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a low clover herb with many rounded green leaves and tiny pale flowers, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle leaflets and flower stems breathe; action shows a wind-up with folded leaflets, a readable outward fan at the peak, then a settled recovery. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature clover identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-46a33d6b-63db-48b3-87b5-82d48fb2b6d3.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/clover/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_08bc5bde6ec542129a8ca6423d22b7ac"
+    },
+    {
+      "id": "devilssnare",
+      "master": "masters-crop-complete/devilssnare-motion-v01.png",
+      "masterSha256": "25acde61d4f81dc6ee4d6614fbf6fd8304cd26a65a824a5cb5bf977869bcabad",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature devilssnare crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature devilssnare crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a devilssnare plant with dark emerald curling vines and hooked leaves forming a low tangled crown, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle tendrils curl and uncurl in separate clusters; action coils tightly in anticipation, peaks with several vines lashing outward and changed leaf geometry, then settles without moving the root. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature devilssnare identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-7511a1d5-18a4-4592-b7b6-fcca47119dc6.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/devilssnare/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_cbef3d9987464a258ba7a9826bea7949"
+    },
+    {
+      "id": "firepepper",
+      "master": "masters-crop-complete/firepepper-motion-v01.png",
+      "masterSha256": "261f250e9dc3d017e8fdcb047f664498ff41a61e29967dadd5dfbb36ce1c5c95",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature firepepper crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature firepepper crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a mature firepepper plant with green leaves and several red-orange hanging peppers, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle peppers sway independently under steady leaves; action bunches the peppers in anticipation, peaks with a strong pepper swing and leaf flare, then recovers to the rooted stem. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature firepepper identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-a9c04aca-139c-49a6-8720-5399d73b3e1a.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/firepepper/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_827bc2bd46f142758fcc024a8571751f"
+    },
+    {
+      "id": "flax",
+      "master": "masters-crop-complete/flax-motion-v01.png",
+      "masterSha256": "767c01588f50fc5e3c125540052ac66b9d1b601a31562d50968fed2055c2a0b8",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature flax crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature flax crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a slender flax plant with fine green stems and small blue five-petal flowers, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle stems and blue flowers nod with changed petal shapes; action folds the stems, peaks with a clear blue-flower fan, then rebounds to the fixed base. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature flax identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-7c60f6c4-0b52-4cae-8331-801b79fa4801.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/flax/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_de8745ef30e14297b9b12bf2cd87d4fb"
+    },
+    {
+      "id": "flitterbloom",
+      "master": "masters-crop-complete/flitterbloom-motion-v01.png",
+      "masterSha256": "adafa0c0b4cc1a9e1b3a50531ca19737a572ff4bb41ec67aa98ab75de0a23402",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature flitterbloom crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature flitterbloom crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a flitterbloom vine with hanging pale flowers, curling green stems, and layered leaves, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle hanging flowers bob independently and tendrils tighten; action gathers the vines, peaks with a clear hanging flower swing and leaf fan, then recovers to the rooted base. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature flitterbloom identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-3bb88a94-972b-43e3-8d61-6bffd1b4b8c3.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/flitterbloom/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_cbef3d9987464a258ba7a9826bea7949"
+    },
+    {
+      "id": "fluxweed",
+      "master": "masters-crop-complete/fluxweed-motion-v01.png",
+      "masterSha256": "5e0ba6dcde11e08025d54c4083b980f08722e39f8246bd011a55674a8773411d",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature fluxweed crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature fluxweed crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a fluxweed plant with long twisting blue-green stems and pale magical leaves, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle stems curl in different directions; action coils inward, peaks with a distinct spiral opening and leaf displacement, then recovers to the fixed root. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature fluxweed identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-8d9c18d6-2e8b-49ce-84c4-43bbf802eb2e.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/fluxweed/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_724b25592c1f4018aafe6f8e93caccd1"
+    },
+    {
+      "id": "gillyweed",
+      "master": "masters-crop-complete/gillyweed-motion-v01.png",
+      "masterSha256": "09386226dbc7c071d0deacffecdd96ccfafe6a339c7f638ca46f7c8247037386",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature gillyweed crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature gillyweed crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a gillyweed clump of cool blue-green ruffled aquatic leaves and curling fronds, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle fronds ripple in alternating clusters; action folds low, peaks with an underwater fan and separated leaf ribbons, then returns to the grounded clump. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature gillyweed identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-73e0b6e4-9219-44bd-84f1-c4268fc6af69.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/gillyweed/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_08471cf88b424b5eb2fdbfc83058bbb1"
+    },
+    {
+      "id": "knotgrass",
+      "master": "masters-crop-complete/knotgrass-motion-v01.png",
+      "masterSha256": "697331d5547dee9843cfba006d8937a61b3970a4a2f8d5326d3d61200a203e83",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature knotgrass crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature knotgrass crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a knotgrass patch of tangled bright green curling blades and low leafy knots, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle curls tighten and release in separate strands; action coils into anticipation, peaks with a clear upward tangle and split strands, then settles to the same ground. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature knotgrass identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-7821cc90-c37f-45f2-b2f6-f5d8a9d79e83.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/knotgrass/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_08471cf88b424b5eb2fdbfc83058bbb1"
+    },
+    {
+      "id": "lettuce",
+      "master": "masters-crop-complete/lettuce-motion-v01.png",
+      "masterSha256": "661dfdd598dd96a295876d4e0490cf17fe35431fab402064105f43714cb3d6ef",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature lettuce crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature lettuce crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a compact pale-green lettuce head made of layered ruffled leaves, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle layers softly open and settle; action shows the outer leaves compressing in anticipation, a clear ruffle flare at the peak, then a grounded recovery. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature lettuce identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-480b7413-10d1-4583-8dca-cc466c7db590.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/lettuce/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_08bc5bde6ec542129a8ca6423d22b7ac"
+    },
+    {
+      "id": "maize",
+      "master": "masters-crop-complete/maize-motion-v01.png",
+      "masterSha256": "e9c99048b3fc922bda83846472ff31058a3ca68bdc165d0fa52bb83890bdda18",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature maize crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature maize crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a tall maize stalk with a golden tassel and layered green blade leaves, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle blades breathe around a steady stalk; action winds the leaves inward, peaks with a strong blade sweep and tassel shake, then recovers without sliding the stalk base. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature maize identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-f016303c-e92e-4739-94e9-6512a4642eef.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/maize/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_de8745ef30e14297b9b12bf2cd87d4fb"
+    },
+    {
+      "id": "mimbulus",
+      "master": "masters-crop-complete/mimbulus-motion-v01.png",
+      "masterSha256": "7436587cf3499045f4a6709a96feda7452a60a022bc6a314e88161e009bf73c7",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature mimbulus crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature mimbulus crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a mimbulus plant with a rounded orange bulb, curling green shoots, and small leaves, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle shoots curl and the bulb subtly inflates; action contracts the shoots, peaks with a distinct bulb swell and outward spines, then recovers. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature mimbulus identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-ba5939a2-999a-4251-a0b7-3c98c2dd117c.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/mimbulus/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_08471cf88b424b5eb2fdbfc83058bbb1"
+    },
+    {
+      "id": "mint",
+      "master": "masters-crop-complete/mint-motion-v01.png",
+      "masterSha256": "61939e39bbd779e434ffea837ec09bf5932f3036546717d6bbe23a33f6ed6df9",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature mint crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature mint crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a dense mint bush with layered pointed green leaves and a small herb crown, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle leaf layers ripple in small clusters; action compresses the bush, peaks with an outward leaf fan, then settles with changed inner leaves. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature mint identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-031d84db-fdb7-40b4-8a64-d37a5b586139.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/mint/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_827bc2bd46f142758fcc024a8571751f"
+    },
+    {
+      "id": "mistmushroom",
+      "master": "masters-crop-complete/mistmushroom-motion-v01.png",
+      "masterSha256": "fd95ea139b874b1b9c929110269d9194e50b05867d8270a1dcbb7b3cca8c454b",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature mistmushroom crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature mistmushroom crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a mistmushroom patch with purple and cream mushroom caps and short leafy stems, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle caps pulse and small stems change shape; action crouches in anticipation, peaks with caps opening and a soft mushroom cluster lift, then recovers. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature mistmushroom identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-1ecc7bb2-8f7c-4ce8-af96-c9b5f287afff.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/mistmushroom/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_724b25592c1f4018aafe6f8e93caccd1"
+    },
+    {
+      "id": "moonherb",
+      "master": "masters-crop-complete/moonherb-motion-v01.png",
+      "masterSha256": "d72bbc0a5c679dd2e443ed8aa587dbc52153e5d2a6a4dd40617851d97a8f4308",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature moonherb crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature moonherb crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a moonherb sprig with curling blue-green stems, pale moonlit buds, and a small luminous flower cluster, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle buds pulse through small shape changes; action curls inward in anticipation, opens the flower cluster at the peak, then returns with the stems grounded. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature moonherb identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-cb233c7e-068a-44ba-a118-b3073e85aac8.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/moonherb/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_de8745ef30e14297b9b12bf2cd87d4fb"
+    },
+    {
+      "id": "oats",
+      "master": "masters-crop-complete/oats-motion-v01.png",
+      "masterSha256": "dec5b855a06185793e51b028e3753cf80a56fad919cdcd751608241535538da1",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature oats crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature oats crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels first, then six action panels. Leave the remaining six cells fully transparent. Each panel contains the same single oats plant, centered over the same ground pivot, with broad clean pixel clusters and clear readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated plant on transparent background, no soil tile, no grid lines, no border; every plant's root/base stays on one consistent ground line.\nLighting/mood: calm idle sway, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference, preserve the warm golden oat heads and green stalks.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain/noise.\nMotion plan: idle panels show subtle leaf and oat-head breathing without whole-image translation; action panels show anticipation, peak bend with separated heads, recoil, and recovery with distinct internal leaf/stalk geometry.\nConstraints: preserve mature oats identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, flowers, hands, tools, text, numbers, shadows outside the plant, or moving the entire plant as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-7f263b69-f96d-4de2-95d3-4b3184ac4523.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/oats/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_3c0974e4aa73470881575706b2bd7124"
+    },
+    {
+      "id": "shrivelfig",
+      "master": "masters-crop-complete/shrivelfig-motion-v01.png",
+      "masterSha256": "4e59e59a8e7623f6af8795e5e4f365feec0129c1db1bce56dcf0bac22506afd2",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature shrivelfig crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature shrivelfig crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a shrivelfig vine with purple-green leaves and several hanging orange fig fruits, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle figs and leaves sway independently; action gathers the vine, peaks with one fig swinging out and leaves separating, then recovers without sliding the roots. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature shrivelfig identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-eed06849-5930-4928-bc34-be5c6410cc08.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/shrivelfig/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_08471cf88b424b5eb2fdbfc83058bbb1"
+    },
+    {
+      "id": "silverkelp",
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature silverkelp crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature silverkelp crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a silverkelp aquatic crop with pale blue-silver fronds growing from a small water-root clump, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle fronds curl and uncurl in separate clusters; action folds the fronds inward, peaks with a broad underwater fan, then recovers without moving the base. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature silverkelp identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-5ee6a8af-6c04-4b4a-bb5d-8550b83107f5.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/silverkelp/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_827bc2bd46f142758fcc024a8571751f"
+    },
+    {
+      "id": "starbean",
+      "master": "masters-crop-complete/starbean-motion-v01.png",
+      "masterSha256": "344c0d7ce803247213ad49abd1612fcb6ce2a6a299016695f238e45a70d2a5a9",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature starbean crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature starbean crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a starbean vine with small green leaves, curling stems, and dangling warm orange star-shaped flowers, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle vines curl and star flowers bob independently; action winds the tendrils inward, peaks with a clear hanging flower swing and leaf flare, then returns to the rooted vine. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature starbean identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-3b3afc00-2181-4ea9-b5d2-dbdb4dd1478c.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/starbean/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_724b25592c1f4018aafe6f8e93caccd1"
+    },
+    {
+      "id": "sunflower",
+      "master": "masters-crop-complete/sunflower-motion-v01.png",
+      "masterSha256": "b1fc92771129a63e4ab81b20f1493a01cea1e4500ed69bee61cd8c44f123f929",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature sunflower crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature sunflower crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a mature sunflower with a broad golden disk, dark center, and large green leaves, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle petals and leaves shift in small clusters; action turns the disk through anticipation, opens the petals at peak with a leaf sweep, then settles at the root. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature sunflower identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-77d3d7fa-72f1-41ad-93f6-38cc856c9e26.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/sunflower/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_de8745ef30e14297b9b12bf2cd87d4fb"
+    },
+    {
+      "id": "sunpetal",
+      "master": "masters-crop-complete/sunpetal-motion-v01.png",
+      "masterSha256": "6d7e9047c011717d09b707b115e0635d40b69bc769cfbfa242c12f71d6c49fb4",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature sunpetal crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature sunpetal crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a sunpetal herb with bright orange blossoms, warm petals, and green leafy stems, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle petals open and close in small clusters; action folds the flower heads, peaks with a broad sunlit petal fan and leaf sweep, then settles. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature sunpetal identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-bb09f9c0-ecbf-4397-8443-e8f8fb81c84f.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/sunpetal/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_724b25592c1f4018aafe6f8e93caccd1"
+    },
+    {
+      "id": "valerian",
+      "master": "masters-crop-complete/valerian-motion-v01.png",
+      "masterSha256": "80587f88f5d47dff5409653962af92925f0bb5a2e52394ca64df65f31fb717af",
+      "prompt": "Use case: stylized-concept\nAsset type: native pixel crop motion sprite atlas for a browser farming game\nInput images: Image 1 is the reference for the mature valerian crop identity, silhouette, palette relationships, and grounded root.\nPrimary request: create one transparent 4 by 4 sprite atlas for the mature valerian crop. Put exactly ten separate panels in the first ten cells in reading order: four idle panels in the top row, then six action panels in the second row. Leave the remaining six cells fully transparent. Each panel contains the same single a mature valerian with tall leafy stems and clusters of pale pink-white flowers, centered over the same ground pivot, with broad clean pixel clusters and readable geometry.\nStyle/medium: crisp hand-authored 24-color pixel art, one-pixel hard edges, selective dark outline, light from upper left, shadow lower right, native game sprite.\nComposition/framing: each panel is an isolated crop on a transparent background, no soil tile, no grid lines, no border; every crop root/base stays on one consistent ground line.\nLighting/mood: calm idle motion, then a readable harvest-ready rustle.\nColor palette: use only the 24-color sprite palette visible in the reference and preserve the reference crop's distinctive colors.\nMaterials/textures: broad flat clusters, 2-3 value ramps per material, no grain or noise.\nMotion plan: idle flower clusters breathe and stem tips nod; action gathers the stems, peaks with a flower spray opening sideways, then returns to the fixed base. All ten poses must change internal leaves, stems, petals, fruit or silhouette shape; do not create rigid whole-image translations.\nConstraints: preserve mature valerian identity from the reference; make all ten poses visibly authored with changed internal shapes; preserve transparent alpha; no image text; no labels; no watermark; no duplicated mirrored panels.\nAvoid: photorealism, soft gradients, anti-aliased edges, speckle noise, tiny decorative pixels, extra plants, soil, tools, text, numbers, shadows outside the crop, or moving the entire crop as a rigid block.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16744-dd8d-7090-a6ac-3c4c327151be/exec-d235ca8c-096f-4df3-aa19-a153772d786d.png",
+      "referenceFiles": [
+        "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/native-levels/valerian/frame-04.png"
+      ],
+      "transparentBackground": true,
+      "tool": "builtin image_gen",
+      "worker": "01a16744-dd8d-7090-a6ac-3c4c327151be",
+      "callId": "call_827bc2bd46f142758fcc024a8571751f"
+    }
+  ]
+}

@@ -117,7 +117,7 @@ function zeroRuns(values, start, end) {
 }
 
 /** Find transparent valleys near expected grid boundaries, without fixed cuts. */
-function findCuts(values, count, axis, warnings) {
+export function findCuts(values, count, axis, warnings) {
   const cuts = [0];
   const length = values.length;
   let previous = 0;
@@ -134,9 +134,9 @@ function findCuts(values, count, axis, warnings) {
         const distanceB = Math.abs(((b.start + b.end) / 2) - target);
         return distanceA - distanceB || b.length - a.length;
       })[0];
-      // Keep the boundary inside a transparent run and as near the nominal
-      // position as possible. This retains unequal atlas gutters safely.
-      cut = Math.max(run.start, Math.min(run.end, target));
+      // Split the empty gutter in its middle so BOTH adjacent cells retain
+      // transparent padding. Cutting at its first row caused false edge warnings.
+      cut = Math.round((run.start + run.end) / 2);
     } else {
       cut = start;
       let minimum = values[start];
@@ -550,7 +550,7 @@ async function main() {
   console.log(JSON.stringify({status: manifest.status, groups: groups.map((group) => group.file), items: manifest.itemCount, frames: manifest.frameCount, warnings: warnings.length, auditPass: audit.allFramesPass, missing}, null, 2));
 }
 
-main().catch((error) => {
+if (process.argv[1] === fileURLToPath(import.meta.url)) main().catch((error) => {
   console.error(error.message);
   process.exitCode = 1;
 });

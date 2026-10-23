@@ -95,6 +95,26 @@
     "keepsakeSpecies": 12
   },
   "remaining": {
+    "halloween": {
+      "count": 25,
+      "status": "deferred-at-owner-request"
+    }
+  },
+  "retained": {
+    "intentionalUi": "16px pixel HUD, settings and navigation SVG",
+    "sourceMasters": "Retained in source repo; intentionally excluded from runtime packaging",
+    "specialProducts": 30,
+    "festivalProducts": 5,
+    "decorManifestItems": 44
+  },
+  "runtime": {
+    "webp": 922,
+    "losslessConverted": 914,
+    "existing": 8,
+    "revision": "486ca8e7a439"
+  },
+  "productionVerified": false,
+  "initialRemaining": {
     "crops": [
       {
         "id": "clover",
@@ -350,18 +370,10 @@
       }
     ]
   },
-  "retained": {
-    "intentionalUi": "16px pixel HUD, settings and navigation SVG",
-    "sourceMasters": "Retained in source repo; intentionally excluded from runtime packaging",
-    "specialProducts": 30,
-    "festivalProducts": 5,
-    "decorManifestItems": 44
-  },
-  "runtime": {
-    "webp": 922,
-    "losslessConverted": 914,
-    "existing": 8,
-    "revision": "486ca8e7a439"
-  },
-  "productionVerified": false
+  "completion": {
+    "version": "24.9.74",
+    "evidence": "artwork-completion-20261023.json",
+    "nativeFrames": 650,
+    "allNonHalloweenBacklogClosed": true
+  }
 }

@@ -1,0 +1,20 @@
+{
+  "id": "keepsake_puffskein",
+  "kind": "keepsake",
+  "species": "puffskein",
+  "refs": [
+    "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/masters-complete-objects/keepsake_puffskein.png",
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled puffskein. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: orange-gold fluffy round ball, warm peach face, tiny ears and very small dark eyes, rather than a cream owl-like large-eyed face. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9ba77eef-920c-4b34-8705-107a90077831.png",
+  "master": "masters-complete-objects/keepsake_puffskein-v2.png",
+  "masterSha256": "c74919713631c43cdb997f8994f55f3a11230d0b472baf0ec0ee08966d16b8d8",
+  "tool": "builtin image_gen",
+  "referenceFiles": [
+    "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-artwork-audit-source/garden-v05/masters-complete-objects/keepsake_puffskein.png",
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "previousMaster": "masters-complete-objects/keepsake_puffskein.png",
+  "previousMasterSha256": "7d0c059291d596c2bd5d7a92fcbc6cd7046d212f93297160598bc93c6189c852"
+}

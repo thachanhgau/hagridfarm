@@ -1,0 +1,20 @@
+{
+  "id": "bowtruckle",
+  "kind": "left-motion",
+  "revision": 2,
+  "master": "creature-motion-assets/masters/bowtruckle-left-motion-v02.png",
+  "clipNames": [
+    "action",
+    "eat",
+    "care"
+  ],
+  "rows": 3,
+  "columns": 4,
+  "prompt": "Create ONE transparent sprite atlas of the BOWTRUCKLE twig guardian matching the LARGE ORIGINAL bowtruckle in the labelled supporting contact sheet, ignore its tiny statue and all other species. Thin BROWN bark twig body, long brown branch arms, small root feet, two GREEN leaf tufts on head/fingertips. Exactly3rows4columns,12 full isolated poses FACING LEFT, head/eyes looking screen-left; no mirrored right view. Row1 FOUR distinct generic action phases: prepare branch-arm reach, stretch forward, lift leaves at peak, settle grounded. Row2 FOUR eating phases: approach tiny leaf morsel, lower head, nibble/chew, recover. Row3 FOUR care phases: lean toward small brush, receive care, blink relaxed, return to neutral. Preserve exactly two branch arms and consistent body geometry/proportions/camera scale; planted root feet same baseline each cell. Clean chunky native44x46pixel style, broad flat clusters, no noisy bark grain or dithering or gradients or antialiasing. Same24game palette, dark-purple selective outlines, top-left light. Generous transparent gutters and20%blank margins in every cell; nothing touches or crosses any boundary. No labels, text, shadows, soil tile, extra creatures or big props. Genuine transparent RGBA background.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-a050d5fa-975d-45e4-b0a3-e3561aab77f5.png",
+  "referenceFiles": [
+    "/Users/thachanh/.codex/visualizations/2026/10/23/01a16741-8d8d-7643-8285-9ae6ab1f2c14/keepsake-species-native-check.png"
+  ],
+  "tool": "builtin image_gen",
+  "masterSha256": "175ae36d03520dbbb85fa15cc205df372920c05c176112f7d1a4fdd2c9d0158c"
+}

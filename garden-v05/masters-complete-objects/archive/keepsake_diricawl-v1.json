@@ -1,0 +1,10 @@
+{
+  "id": "keepsake_diricawl",
+  "kind": "keepsake",
+  "species": "diricawl",
+  "prompt": "Create ONE game sprite, a special garden keepsake statuette of a plump blue Diricawl flightless bird with cream belly, small beak and two stubby wings, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+  "tool": "builtin image_gen",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-56cdbd32-a530-41c5-ade6-d28b285f2b82.png",
+  "master": "masters-complete-objects/keepsake_diricawl.png",
+  "masterSha256": "761c18160a15b3fbdd52338aaaff2db2ec66e741fecaaa6fbe214c860636ced4"
+}

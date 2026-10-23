@@ -1,0 +1,368 @@
+[
+  {
+    "browser": "Chrome",
+    "packaged": false,
+    "network": "all intercepted; no service/wallet",
+    "combinations": 24,
+    "checks": [
+      {
+        "facing": "default",
+        "weatherMode": "clear",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "clear",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "clear",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "rain",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "rain",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "rain",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "snow",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "snow",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "snow",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "autumn",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "autumn",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "autumn",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "clear",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "clear",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "clear",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "rain",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "rain",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "rain",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "snow",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "snow",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "snow",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "autumn",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "autumn",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "autumn",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      }
+    ],
+    "atlasDrawCalls": 1186,
+    "integerNativeAtlasDraws": true,
+    "creatureActions": 36,
+    "cropCareAndHarvest": true,
+    "reducedMotionStable": true,
+    "missing": [],
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "packaged": false,
+    "network": "all intercepted; no service/wallet",
+    "combinations": 24,
+    "checks": [
+      {
+        "facing": "default",
+        "weatherMode": "clear",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "clear",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "clear",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "rain",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "rain",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "rain",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "snow",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "snow",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "snow",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "autumn",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "autumn",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "default",
+        "weatherMode": "autumn",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "clear",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "clear",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "clear",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "rain",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "rain",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "rain",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "snow",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "snow",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "snow",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "autumn",
+        "atmosphereMode": "day",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "autumn",
+        "atmosphereMode": "sunset",
+        "creatures": 12,
+        "crops": 32
+      },
+      {
+        "facing": "right",
+        "weatherMode": "autumn",
+        "atmosphereMode": "night",
+        "creatures": 12,
+        "crops": 32
+      }
+    ],
+    "atlasDrawCalls": 1186,
+    "integerNativeAtlasDraws": true,
+    "creatureActions": 36,
+    "cropCareAndHarvest": true,
+    "reducedMotionStable": true,
+    "missing": [],
+    "errors": []
+  }
+]

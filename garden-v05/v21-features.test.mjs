@@ -10,8 +10,9 @@ import {
   buildAlmanacChains,
 } from './garden-postcard.mjs';
 import {dayKeyFor, loadOwlQuests, recordOwlQuestAction, syncQuestsWithGardenState, claimOwlQuest, hasClaimableOwlQuest, setOwlQuestContext, pickDailyQuests, OWL_QUEST_POOL} from './garden-quests.mjs';
-import {ITEM_ART} from './item-art.mjs?v=24.9.73';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.73';
+import {KEEPSAKE_ART} from './complete-object-art.mjs';
+import {ITEM_ART} from './item-art.mjs?v=24.9.74';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.74';
 
 globalThis.FARM_SCENE = structuredClone(scene);
 globalThis.FARM_MOTION = motion;
@@ -41,23 +42,22 @@ function makeMockCtx() {
   return ctx;
 }
 
-test('V21 Direction 1: drawKeepsake renders canonical produce art and every earned decoration draws authored default/right views', async () => {
+test('V21 Direction 1: drawKeepsake renders species statuettes and every earned decoration draws authored default/right views', async () => {
   const ctxWithSprite = makeMockCtx();
   const fakeProduce = {width: 64, height: 64, naturalWidth: 64, naturalHeight: 64};
-  const fakeProduceAsset = {width: 64, height: 64, pivotX: 32, pivotY: 56};
   drawKeepsake(
     ctxWithSprite,
     {species: 'puffskein', count: 3, xy: [500, 400]},
     0,
-    {produceImage: fakeProduce, produceAsset: fakeProduceAsset},
+    {image: fakeProduce, asset: KEEPSAKE_ART.puffskein},
   );
-  assert.ok(ctxWithSprite.calls.some(([fn]) => fn === 'drawImage'), 'drawKeepsake should draw the canonical produce sprite when provided');
-  assert.deepEqual(ctxWithSprite.calls.find(([fn]) => fn === 'drawImage')[1].slice(1), [484, 357, 32, 32]);
+  assert.ok(ctxWithSprite.calls.some(([fn]) => fn === 'drawImage'), 'drawKeepsake should draw the authored statuette when provided');
+  assert.deepEqual(ctxWithSprite.calls.find(([fn]) => fn === 'drawImage')[1].slice(1), [472, 350]);
   assert.ok(ctxWithSprite.calls.some(([fn, args]) => fn === 'fillText' && String(args[0]).includes('×3')), 'drawKeepsake should render count badge ×3');
 
   const ctxFallback = makeMockCtx();
   drawKeepsake(ctxFallback, {species: 'three-headed-dog', count: 1, xy: [520, 400]}, 0);
-  assert.ok(ctxFallback.calls.some(([fn, args]) => fn === 'fillText' && args[0] === '3D'), 'drawKeepsake should preserve the 3D species label');
+  assert.equal(ctxFallback.calls.length,0,'missing image has no procedural produce/pedestal substitute');
 
   const produceIds = E.DB.animals.map(({id}) => `produce_${id}`);
   assert.equal(produceIds.length, 12);

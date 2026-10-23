@@ -1,22 +1,24 @@
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.73';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.73';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.73';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.73';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.73';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.73';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.73';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.73';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.73';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.73';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.73';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.73';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.73';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.73';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.73';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.73';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.73';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.73';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.73';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.74';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.74';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.74';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.74';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.74';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.74';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.74';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.74';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.74';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.74';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.74';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.74';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.74';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.74';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.74';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.74';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.74';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.74';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.74';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.74';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.74';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -28,12 +30,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.73';
+} from './scene-animation.mjs?v=24.9.74';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.73';
+} from './forest-surround.mjs?v=24.9.74';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -283,10 +285,7 @@ function collectFiles() {
   for (const tile of map.tiles ?? []) if (tile?.file) files.push(tile.file);
   for (const prop of map.props ?? []) if (prop?.file) files.push(prop.file);
   for (const item of motion.items ?? []) {
-    for (const frame of item.frames ?? []) if (frameFile(frame)) files.push(frameFile(frame));
-    for (const clip of Object.values(item.clips ?? {})) {
-      if (clip?.sheet?.file) files.push(clip.sheet.file);
-    }
+    for (const frame of creatureViewFrames(item)) if (frameFile(frame)) files.push(frameFile(frame));
   }
   return [...new Set(files)];
 }
@@ -750,46 +749,12 @@ export function drawDecoration(context, object, _clock = 0, options = {}) {
 }
 
 export function drawKeepsake(context, object, clock = 0, options = {}) {
-  const x = Math.round(object.xy[0]);
-  const y = Math.round(object.xy[1]);
-  const initials = object.species === 'three-headed-dog' ? '3D' : String(object.species || 'KP').slice(0, 2).toUpperCase();
-  const phase = clock > 0 ? Math.floor((clock + (stableHash(object.species) % 1100)) / 450) % 4 : 0;
-  const bob = phase === 1 ? -1 : phase === 3 ? 1 : 0;
-
-  // Pixel-art stepped stone & brass shrine pedestal
-  groundShadow(context, x, y, 15);
-  rectangle(context, x - 13, y - 6, 26, 5, '#41465c', '#231f2e', 1);
-  rectangle(context, x - 11, y - 11, 22, 6, '#687486', '#231f2e', 1);
-  rectangle(context, x - 9, y - 14, 18, 4, '#a6b1ae', '#41465c', 1);
-  rectangle(context, x - 8, y - 16, 16, 2, '#f5d69a', '#735044', 1);
-  // Keep the species label readable beneath the distinct produce silhouette.
-  context.fillStyle = '#231f2e';
-  context.font = 'bold 7px monospace';
-  context.textAlign = 'center';
-  context.textBaseline = 'middle';
-  context.fillText(initials, x, y - 8);
-
-  const produceImage = options.produceImage ?? null;
-  const produceAsset = options.produceAsset ?? null;
-  if (produceImage && typeof context.drawImage === 'function') {
-    // Golden trophy aura behind the miniature produce icon.
-    ellipse(context, x, y - 24 + bob, 11, 9, 'rgba(245,214,154,0.22)', '#f5d69a', 1);
-    const sourceWidth = finite(produceAsset?.width || produceImage.naturalWidth || produceImage.width, 64);
-    const sourceHeight = finite(produceAsset?.height || produceImage.naturalHeight || produceImage.height, 64);
-    const scale = Math.min(32 / Math.max(1, sourceWidth), 32 / Math.max(1, sourceHeight));
-    const drawWidth = Math.max(1, Math.round(sourceWidth * scale));
-    const drawHeight = Math.max(1, Math.round(sourceHeight * scale));
-    const pivotX = Math.round(finite(produceAsset?.pivotX, sourceWidth / 2) * scale);
-    const pivotY = Math.round(finite(produceAsset?.pivotY, sourceHeight) * scale);
-    context.drawImage(produceImage, Math.round(x - pivotX), Math.round(y - 15 - pivotY + bob), drawWidth, drawHeight);
-  }
-
-  if (clock > 0 && (phase === 1 || phase === 2)) {
-    drawPixelSparkle(context, x + (phase === 1 ? -10 : 10), y - 28 + bob, '#f5d69a', 1);
-  }
-  if (object.count > 1) {
-    label(context, `×${object.count}`, x + 12, y - 29 + bob, '#f5d69a', 'bold 8px monospace');
-  }
+  const asset=options.asset??KEEPSAKE_ART[object.species],image=options.image;
+  if(!asset||!image)return false;
+  const x=Math.round(object.xy[0]),y=Math.round(object.xy[1]);
+  context.drawImage(image,x-asset.pivotX,y-asset.pivotY);
+  if(object.count>1)label(context,`×${object.count}`,x+16,y-32,'#f5d69a','bold 8px monospace');
+  return true;
 }
 
 function drawHutMotion(context, x, y, clock) {
@@ -813,11 +778,11 @@ export async function createGarden(canvas, options = {}) {
   assertMap();
   if (!canvas || typeof canvas.getContext !== 'function') throw new Error('Cần canvas để vẽ Khu vườn Hagrid.');
   const allowMissingAssets = options.allowMissingAssets === true || root.FARM_DEV_KNOWN_NEW_ASSETS_NOT_READY === true;
-  const decorAssets = new Map((options.decorAssets ?? []).map(a=>[a.id,a]));
+  const decorAssets = new Map([...(options.decorAssets ?? []),...COMPLETE_SCENERY].map(a=>[a.id,a]));
   const assetFiles = [...new Set([
     ...collectFiles(),
+    ...completeObjectFiles(),
     ...earnedDecorFiles(),
-    ...produceFiles(),
     FARM_SIGN_ART.file,
     ...FESTIVAL_FILES,
     'world-v242/cottage-corner.png',
@@ -1066,6 +1031,7 @@ export async function createGarden(canvas, options = {}) {
       const width = image.naturalWidth || image.width || finite(asset.width, 64);
       const offsetX = actorMotion?.swayX || 0;
       const offsetY = actorMotion?.bobY || 0;
+      if(asset.atlasRect){const r=asset.atlasRect;target.drawImage(image,r.x,r.y,r.w,r.h,left+offsetX,top+offsetY,r.w,r.h);return;}
       if (breeze?.intensity) {
         // Move foliage only; the lower stem/root stays on its authored anchor.
         const bounds = asset.bounds ?? {y: 0, h: height};
@@ -1214,7 +1180,8 @@ export async function createGarden(canvas, options = {}) {
   let authoredEffectEventIds = new Set();
 
   function actorObject(entry, col, row, logicalNow, clock, target = {}) {
-    const item = itemFor(entry?.species);
+    const baseItem=itemFor(entry?.species),facing=target.facing==='right'?'right':'default';
+    const item=creatureView(baseItem,facing);
     if (!item || !asArray(item.frames).length) {
       return {kind: 'missing-actor', type: entry?.type ?? item?.kind ?? 'actor', id: entry?.species, xy: iso(col, row), entry};
     }
@@ -1224,12 +1191,14 @@ export async function createGarden(canvas, options = {}) {
       species: entry?.species,
       ...target,
     });
-    const eventClip = event && item.kind === 'creature' && progress.mature
-      ? event.kind === 'eat'
+    const eventClip = event && progress.mature
+      ? item.kind === 'crop'
+        ? ['care','water'].includes(event.kind)&&item.clips?.action?.frames?.length?'action':null
+        : event.kind === 'eat'
         ? item.clips?.eat?.frames?.length ? 'eat' : item.clips?.action?.frames?.length ? 'action' : null
         : event.kind === 'care' || event.kind === 'water'
           ? item.clips?.care?.frames?.length ? 'care' : item.clips?.action?.frames?.length ? 'action' : null
-          : null
+          : event.kind==='claim'&&item.clips?.action?.frames?.length?'action':null
       : null;
     const action = eventClip
       ? animationFrameAt(item, eventClip, event.elapsed, {loop: false, reducedMotion: clock === 0})
@@ -1242,7 +1211,6 @@ export async function createGarden(canvas, options = {}) {
     const index = action ? action.frame : progress.mature ? idleFrameAt(item, clock, seedKey) : stage;
     const asset = frameAt(item, index, allowMissingAssets);
     if (!asset) return {kind: 'missing-actor', type: entry?.type ?? item.kind ?? 'actor', id: entry?.species, xy: iso(col, row), entry};
-    const facing = target.facing === 'right' ? 'right' : 'default';
     return {
       kind: 'asset',
       type: entry?.type ?? item.kind ?? 'actor',
@@ -1255,6 +1223,7 @@ export async function createGarden(canvas, options = {}) {
       asset,
       xy: iso(col, row),
       facing,
+      authoredFacing:item!==baseItem,
       animation: event,
       // Sprout pop on planting, a happy hop when a creature eats or is collected from.
       hop: event && ((item.kind === 'crop' && event.kind === 'plant') || (item.kind === 'creature' && (event.kind === 'eat' || event.kind === 'claim'))) ? eventHop(event) : 0,
@@ -1350,7 +1319,7 @@ export async function createGarden(canvas, options = {}) {
       const layer=makeCanvas(canvas,right-left,bottom-top),brush=layer.getContext('2d');brush.translate(-left,-top);
       drawPenHabitat(brush,{corners,pen:enclosure,iso,weatherMode:activeWeather,personalized:residents.length>0});
       for(const piece of penFencePieces(enclosure,iso,{sharedEast}))drawPenFence(brush,piece,activeWeather);
-      drawHabitatProps(brush,residents,{weatherMode:activeWeather});
+      drawHabitatProps(brush,residents,{weatherMode:activeWeather,imageFor});
       cached={key,layer,left,top};penHabitatLayers.set(pen.id,cached);
     }
     context.drawImage(cached.layer,cached.left,cached.top);
@@ -1512,10 +1481,11 @@ export async function createGarden(canvas, options = {}) {
       const asset = assetId && decorAssets.get(assetId);
       if (asset) {
         const greeting = object.id === 'gardener' && reactionUntil > performance.now();
-        const frameInfo = decorFrameAt(asset, clock, {
+        const activeFrames=object.id==='gardener'?asset.frames.slice(greeting?2:0,greeting?4:2):asset.frames;
+        const frameInfo = decorFrameAt({...asset,frames:activeFrames}, clock, {
           facing: 'default',
           seed: object.id,
-          greet: greeting,
+          greet: false,
           reducedMotion: clock === 0,
         });
         const activeAsset = {...asset,...(frameInfo.file?{file:frameInfo.file}:{}),...(object.id==='greenhouse'?{seasonalKind:'greenhouse-roof'}:{})};
@@ -1537,13 +1507,12 @@ export async function createGarden(canvas, options = {}) {
       return;
     }
     if (object.kind === 'keepsake') {
-      const produceAsset = produceArt(object.species);
-      const produceImage = produceAsset?.file ? imageFor(produceAsset.file) : null;
-      drawKeepsake(context, object, clock, {produceImage, produceAsset});
+      const asset=KEEPSAKE_ART[object.species],image=asset&&imageFor(asset.file);
+      drawKeepsake(context,object,clock,{asset,image});
       return;
     }
     if (object.kind === 'asset') {
-      drawAsset(object.asset, object.xy[0], object.xy[1] + (object.hop || 0), object.stage > 0 ? object.breeze : null, object.motion, object.facing === 'right');
+      drawAsset(object.asset, object.xy[0], object.xy[1] + (object.hop || 0), object.stage > 0 ? object.breeze : null, object.motion, object.facing === 'right'&&!object.authoredFacing);
       if (object.type === 'prop' && object.id === 'hut') {drawHutMotion(context, object.xy[0], object.xy[1], clock);drawRoofWeather(context,object,activeWeather,clock);}
       if (object.item?.kind === 'crop') drawCropBreeze(context, object);
       if (object.item?.kind === 'creature' && object.motion?.sparkle) {
@@ -1600,7 +1569,10 @@ export async function createGarden(canvas, options = {}) {
         }
         else if (event.kind === 'plant' || event.kind === 'harvest') {
           const pop = harvestPop(event);
-          const ripe = pop && event.species ? frameAt(items.get(event.species), 3, true) : null;
+          const item=event.species&&items.get(event.species);
+          const duration=item?.clips?.action?.durations?.reduce((sum,ms)=>sum+ms,0)||0;
+          const action=duration?animationFrameAt(item,'action',event.progress*duration,{loop:false}):null;
+          const ripe = pop && item ? frameAt(item,action?.frame??3,true) : null;
           if (ripe) {
             context.save();
             context.globalAlpha = pop.alpha;
@@ -1863,7 +1835,7 @@ export async function createGarden(canvas, options = {}) {
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');
-    interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
+    interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
     lastOrder = objects.map((object) => ({id: object.id ?? object.species, y: object.xy?.[1] ?? 0, type: object.type}));
     for (const object of objects) drawObject(object, logicalNow, clock);
     drawAnimationEffects(state, activeAnimations);
@@ -1932,7 +1904,7 @@ export async function createGarden(canvas, options = {}) {
     for(const actor of [...interactiveActors].reverse()){
       const {xy,asset}=actor;
       const bounds=asset.bounds??{x:0,y:0,w:asset.width,h:asset.height};
-      const left=actor.facing==='right'?xy[0]+asset.pivotX-bounds.x-bounds.w:xy[0]-asset.pivotX+bounds.x,top=xy[1]-asset.pivotY+bounds.y;
+      const left=actor.facing==='right'&&!actor.authoredFacing?xy[0]+asset.pivotX-bounds.x-bounds.w:xy[0]-asset.pivotX+bounds.x,top=xy[1]-asset.pivotY+bounds.y;
       if(world.x>=left-5&&world.x<=left+bounds.w+5&&world.y>=top-5&&world.y<=top+bounds.h+5)return {kind:'creature',species:actor.species,...(actor.guest?{guest:true}:{})};
     }
     if(sceneryVisible)for(const target of wizardTargets(iso).sort((a,b)=>b.xy[1]-a.xy[1])){
