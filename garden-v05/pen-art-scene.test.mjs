@@ -19,9 +19,18 @@ test('enclosure closes all four edges with a west gate and low front rails',()=>
  const moved=penFencePieces({...pen,col:10,row:8},iso),delta=iso(10,8).map((v,i)=>v-iso(27,0)[i]);
  assert.deepEqual(moved.map(p=>[p.a,p.b]),pieces.map(p=>[p.a,p.b].map(a=>a.map((v,i)=>v+delta[i]))));
 });
+test('shared east edge meets the outer fence without a duplicate rail',()=>{
+ const visual={...pen,width:6},pieces=penFencePieces(visual,iso,{sharedEast:true});
+ assert.deepEqual([...new Set(pieces.map(p=>p.edge))],[0,2,3]);
+ assert.equal(pieces.some(p=>p.edge===1),false);
+ assert.equal(pieces.filter(p=>p.gate).length,1);
+ const eastNorthX=iso(33,0)[0],eastSouthX=iso(33,visual.row+visual.height)[0];
+ assert.equal(pieces.filter(p=>p.edge===0).at(-1).b[0],eastNorthX);
+ assert.equal(pieces.find(p=>p.edge===2).a[0],eastSouthX);
+});
 test('built pens use floor and perimeter fences without loading or drawing roofed shelters',()=>{
  const renderer=fs.readFileSync(new URL('./scene-renderer.mjs',import.meta.url),'utf8');
  assert.doesNotMatch(renderer,/penShelter|drawPenShelter|penFiles|penArt\(/);
- assert.match(renderer,/for\(const piece of penFencePieces\(pen,iso\)\)drawPenFence\(brush,piece,activeWeather\)/);
+ assert.match(renderer,/for\(const piece of penFencePieces\(enclosure,iso,\{sharedEast\}\)\)drawPenFence\(brush,piece,activeWeather\)/);
  assert.doesNotMatch(renderer,/objects\.push\(\.\.\.penFencePieces/,'no rail may cover a small resident');
 });

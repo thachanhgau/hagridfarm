@@ -1,3 +1,5 @@
+import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=24.9.70';
+export {FARM_SIGN_ART};
 // Scenic-only composition: deterministic groves and a walkable-looking exit.
 // Never changes authored slots, collision data, or game state.
 const iso=(map,c,r)=>[map.origin.x+(c-r)*map.tileWidth/2,map.origin.y+(c+r)*map.tileHeight/2];
@@ -48,8 +50,8 @@ function smoothTrail(controls){
 }
 export function exitSignFrame(trail){
  if(trail.length<=42)return null;
- const [x,y]=trail[0],left=Math.round(x-210),top=Math.round(y+100);
- return {left,top,right:left+188,bottom:top+72};
+ const [x,y]=trail[0],left=Math.round(x-320),top=Math.round(y+20);
+ return {left,top,right:left+FARM_SIGN_ART.width,bottom:top+FARM_SIGN_ART.height};
 }
 export function overlapsTrail(rect,trail,margin=22){
  const sign=exitSignFrame(trail);
@@ -60,7 +62,7 @@ function stamp(ctx,x,y,r,color){
  ctx.fillStyle=color;
  for(let dy=-r*.45;dy<=r*.45;dy+=2){const half=Math.sqrt(Math.max(0,1-(dy/(r*.5))**2))*r;ctx.fillRect(Math.round(x-half),Math.round(y+dy),Math.ceil(half*2),2);}
 }
-export function drawExitTrail(ctx,trail,{sign=false,taperEnd=false}={}){
+export function drawExitTrail(ctx,trail,{sign=false,signImage=null,taperEnd=false}={}){
  ctx.save();ctx.globalAlpha=1;
  const weight=i=>taperEnd&&i>trail.length*.6?Math.max(.32,1-(i-trail.length*.6)/(trail.length*.4)*.68):1;
  for(let i=0;i<trail.length;i++){const [x,y]=trail[i];stamp(ctx,x,y,31*weight(i),'#24483f');}
@@ -70,21 +72,19 @@ export function drawExitTrail(ctx,trail,{sign=false,taperEnd=false}={}){
   if(i%4===0){ctx.fillStyle=i%8?'#b49a66':'#5d6046';ctx.fillRect(Math.round(x+Math.sin(i*3)*12*w),Math.round(y+Math.cos(i)*5*w),4,2);}
  }
  if(sign&&trail.length>42){
-  const {left:x,top:y}=exitSignFrame(trail);
-  for(const dx of [24,156]){
-   ctx.fillStyle='#231f2e';ctx.fillRect(x+dx,y+30,8,42);
-   ctx.fillStyle='#735044';ctx.fillRect(x+dx+2,y+32,4,38);
-  }
-  ctx.fillStyle='#231f2e';ctx.fillRect(x-3,y-3,194,56);
-  ctx.fillStyle='#735044';ctx.fillRect(x,y,188,50);
-  ctx.fillStyle='#a57554';ctx.fillRect(x+3,y+3,182,44);
-  ctx.fillStyle='#e7ae73';ctx.fillRect(x+3,y+3,182,2);
-  ctx.fillStyle='#735044';ctx.fillRect(x+5,y+26,178,1);
-  for(const dx of [7,178])for(const dy of [8,40]){ctx.fillStyle='#231f2e';ctx.fillRect(x+dx,y+dy,3,3);ctx.fillStyle='#e7ae73';ctx.fillRect(x+dx,y+dy,1,1);}
-  ctx.fillStyle='#f5d69a';ctx.font='bold 12px "Be Vietnam Pro",sans-serif';ctx.textAlign='center';ctx.textBaseline='alphabetic';
-  ctx.fillText('Trang trại của Hagrid',x+94,y+20);
-  ctx.fillStyle='#d6d8bf';ctx.font='9px "Be Vietnam Pro",sans-serif';
-  ctx.fillText('Người giữ khoá trường Hogwarts',x+94,y+40);
+  if(!signImage)throw Error('Farm sign sprite is required');
+  const {left,top}=exitSignFrame(trail),art=FARM_SIGN_ART;
+  ctx.drawImage(signImage,left,top,art.width,art.height);
+  const t=art.text;
+  ctx.save();ctx.transform(1,t.slope,0,1,left+t.x,top+t.y);
+  ctx.textAlign='center';ctx.textBaseline='alphabetic';
+  ctx.font='bold 12px sans-serif';ctx.fillStyle='#231f2e';
+  ctx.fillText('Trang trại của Hagrid',t.maxWidth/2+1,1,t.maxWidth);
+  ctx.fillStyle='#f5d69a';ctx.fillText('Trang trại của Hagrid',t.maxWidth/2,0,t.maxWidth);
+  ctx.font='8px sans-serif';ctx.fillStyle='#231f2e';
+  ctx.fillText('Người giữ khoá trường Hogwarts',t.maxWidth/2+1,t.lineGap+1,t.maxWidth);
+  ctx.fillStyle='#d6d8bf';ctx.fillText('Người giữ khoá trường Hogwarts',t.maxWidth/2,t.lineGap,t.maxWidth);
+  ctx.restore();
  }
  ctx.restore();
 }

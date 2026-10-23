@@ -2379,7 +2379,7 @@
       },
       "sha256": "d45e097c6cad2952c9a37239a29e2e471d3224d84a5234fe80e153fb0910fc62",
       "source": "garden-pen-details.mjs",
-      "sourceSha256": "254b5ed4c15a247d84245b77c8cf8a404ba5d206d21208303b0227dfb5ff3ded",
+      "sourceSha256": "8e36847c02dc902fd4ab2402026d81cdad115d77dc462b43aae89598d3c5fc0e",
       "sourceType": "perimeter-fence"
     },
     "pen_2": {
@@ -2396,7 +2396,7 @@
       },
       "sha256": "4bfdd8b71b324a5ae832b1a5534011d077f27b2db58c4ea3f3f94bd5c7b5580e",
       "source": "garden-pen-details.mjs",
-      "sourceSha256": "254b5ed4c15a247d84245b77c8cf8a404ba5d206d21208303b0227dfb5ff3ded",
+      "sourceSha256": "8e36847c02dc902fd4ab2402026d81cdad115d77dc462b43aae89598d3c5fc0e",
       "sourceType": "perimeter-fence"
     },
     "pen_3": {
@@ -2413,7 +2413,7 @@
       },
       "sha256": "e7e30657b42e636eccf31565746a1a598a9bd0b7ee1d296ad430d03af4d853fa",
       "source": "garden-pen-details.mjs",
-      "sourceSha256": "254b5ed4c15a247d84245b77c8cf8a404ba5d206d21208303b0227dfb5ff3ded",
+      "sourceSha256": "8e36847c02dc902fd4ab2402026d81cdad115d77dc462b43aae89598d3c5fc0e",
       "sourceType": "perimeter-fence"
     },
     "pen_4": {
@@ -2430,7 +2430,7 @@
       },
       "sha256": "08d1cca0b4bf7dfa74287df2937b3e510e46104113f445f3ac6d78d1d932f842",
       "source": "garden-pen-details.mjs",
-      "sourceSha256": "254b5ed4c15a247d84245b77c8cf8a404ba5d206d21208303b0227dfb5ff3ded",
+      "sourceSha256": "8e36847c02dc902fd4ab2402026d81cdad115d77dc462b43aae89598d3c5fc0e",
       "sourceType": "perimeter-fence"
     },
     "pen_5": {
@@ -2447,7 +2447,7 @@
       },
       "sha256": "983f1739dfc4c7dd55da6712d5d602148f68921628de01b2ea94b8a30a53c1f5",
       "source": "garden-pen-details.mjs",
-      "sourceSha256": "254b5ed4c15a247d84245b77c8cf8a404ba5d206d21208303b0227dfb5ff3ded",
+      "sourceSha256": "8e36847c02dc902fd4ab2402026d81cdad115d77dc462b43aae89598d3c5fc0e",
       "sourceType": "perimeter-fence"
     },
     "pen_6": {
@@ -2464,7 +2464,7 @@
       },
       "sha256": "04c2310bf10ed43e489dfd4a836c6f56ff71cd89cdc25045ff5f649138c34327",
       "source": "garden-pen-details.mjs",
-      "sourceSha256": "254b5ed4c15a247d84245b77c8cf8a404ba5d206d21208303b0227dfb5ff3ded",
+      "sourceSha256": "8e36847c02dc902fd4ab2402026d81cdad115d77dc462b43aae89598d3c5fc0e",
       "sourceType": "perimeter-fence"
     }
   }

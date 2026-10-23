@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "95e2f7d57125",
+  "revision": "4f918a40fa45",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -8929,6 +8929,16 @@
       "sha256": "8e985db60662f308557fa517e20ca23de64687c0a0330dc010a1075c9080895f"
     },
     {
+      "source": "environment/layers/hagrid-farm-sign.png",
+      "file": "runtime-webp/environment/layers/hagrid-farm-sign.webp",
+      "width": 288,
+      "height": 288,
+      "sourceBytes": 14415,
+      "bytes": 9240,
+      "sourceSha256": "dc264b30cdde94b03b820f45d49684f5feca2c9184f1c028e782d079fa64e342",
+      "sha256": "b60e9576ad0ee0cc1e5a57390f973370cc83de6253bc9a66e091e419eea0fe3a"
+    },
+    {
       "source": "environment/layers/hut.png",
       "file": "runtime-webp/environment/layers/hut.webp",
       "width": 164,
@@ -9072,11 +9082,11 @@
     }
   ],
   "totals": {
-    "converted": 901,
+    "converted": 902,
     "existingWebp": 8,
-    "originalBytes": 4200127,
-    "webpBytes": 2964906,
-    "savedBytes": 1235221,
-    "savedPercent": 29.41
+    "originalBytes": 4214542,
+    "webpBytes": 2974146,
+    "savedBytes": 1240396,
+    "savedPercent": 29.43
   }
 }

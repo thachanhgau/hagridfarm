@@ -4,49 +4,49 @@
     {
       "level": 1,
       "stage": 1,
-      "actualTreeDraws": 1461,
+      "actualTreeDraws": 1441,
       "crossing": 0,
       "signLines": 2
     },
     {
       "level": 10,
       "stage": 2,
-      "actualTreeDraws": 1400,
+      "actualTreeDraws": 1376,
       "crossing": 0,
       "signLines": 2
     },
     {
       "level": 24,
       "stage": 3,
-      "actualTreeDraws": 1357,
+      "actualTreeDraws": 1334,
       "crossing": 0,
       "signLines": 2
     },
     {
       "level": 48,
       "stage": 4,
-      "actualTreeDraws": 1350,
+      "actualTreeDraws": 1328,
       "crossing": 0,
       "signLines": 2
     },
     {
       "level": 72,
       "stage": 5,
-      "actualTreeDraws": 1295,
+      "actualTreeDraws": 1267,
       "crossing": 0,
       "signLines": 2
     },
     {
       "level": 100,
       "stage": 6,
-      "actualTreeDraws": 1209,
+      "actualTreeDraws": 1181,
       "crossing": 0,
       "signLines": 2
     },
     {
       "level": 110,
       "stage": 7,
-      "actualTreeDraws": 1151,
+      "actualTreeDraws": 1137,
       "crossing": 0,
       "signLines": 2
     }

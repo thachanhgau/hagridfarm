@@ -36,4 +36,4 @@ Run `node --test *.test.mjs` inside `garden-v05/` (143 tests passed at initial c
 
 Only the active prototype, its assets and selected QA evidence are tracked. Historical sibling versions, ZIP exports and recovery copies stay local and ignored. Remote `origin` = https://github.com/thachanhgau/hagridfarm (added 18/10/2026 at the owner's request). Push and deployment still need the owner's explicit OK each time.
 
-V24.9.69 removes the six rejected roofed shelters and uses low perimeter fences with matching shop icons. See [enclosure QA](docs/enclosure-fences-20261023.md). Runtime assets remain WebP; recovery PNGs/masters are retained.
+V24.9.70 removes the six rejected roofed shelters and uses low perimeter fences with matching shop icons. See [enclosure QA](docs/enclosure-fences-20261023.md). Runtime assets remain WebP; recovery PNGs/masters are retained.

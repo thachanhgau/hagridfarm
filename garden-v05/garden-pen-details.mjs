@@ -24,10 +24,11 @@ const fenceStyles=[
  {wood:'#41465c',light:'#a6b1ae',metal:'#687486'},
  {wood:'#8b4a3f',light:'#e7ae73',metal:'#c97952'},
 ];
-export function penFencePieces(pen,iso){
+export function penFencePieces(pen,iso,{sharedEast=false}={}){
  const cells=[[pen.col,pen.row],[pen.col+pen.width,pen.row],[pen.col+pen.width,pen.row+pen.height],[pen.col,pen.row+pen.height]];
  const pieces=[];
  for(let edge=0;edge<4;edge++){
+  if(sharedEast&&edge===1)continue;
   const a=cells[edge],b=cells[(edge+1)%4];
   const count=Math.ceil(edge%2?pen.height:pen.width);
   for(let i=0;i<count;i++){

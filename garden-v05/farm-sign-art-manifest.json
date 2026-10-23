@@ -1,0 +1,43 @@
+{
+  "source": "masters/hagrid-farm-sign-v01.png",
+  "sourceSha256": "f91137f78aecd7e3c8fc8b6cc1c1278dd005d897d458efcf008833af889a427d",
+  "file": "environment/layers/hagrid-farm-sign.png",
+  "sha256": "dc264b30cdde94b03b820f45d49684f5feca2c9184f1c028e782d079fa64e342",
+  "width": 288,
+  "height": 288,
+  "alphaThreshold": 192,
+  "palette": [
+    "#231F2E",
+    "#4A3042",
+    "#735044",
+    "#A57554",
+    "#41465C",
+    "#687486",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A",
+    "#874056",
+    "#C75B4B",
+    "#ED8A45",
+    "#FFC36B",
+    "#3E3B70",
+    "#6961A6",
+    "#70A8B6",
+    "#B7DEE0"
+  ],
+  "verticalShear": 0.17,
+  "text": {
+    "x": 61,
+    "y": 102,
+    "slope": 0.5,
+    "maxWidth": 164,
+    "lineGap": 14
+  }
+}

@@ -2,7 +2,7 @@
   "tool": "Lighthouse13.5.0",
   "scope": "localhost in-memory level500 habitats fixture, mobile simulated throttling",
   "beforeSource": "V24.9.67 ba3e6f1 WebP",
-  "afterSource": "V24.9.69 fences, exit gate, sign, forest clearance",
+  "afterSource": "V24.9.70 shared fences, generated dimetric sign, exit, forest clearance",
   "before": {
     "values": [
       {
@@ -38,33 +38,33 @@
   "after": {
     "values": [
       {
-        "performance": 51,
+        "performance": 52,
+        "fcpMs": 8179,
+        "lcpMs": 11779,
+        "tbtMs": 271,
+        "bytes": 4473904
+      },
+      {
+        "performance": 52,
         "fcpMs": 8178,
         "lcpMs": 11778,
-        "tbtMs": 281,
-        "bytes": 4463683
+        "tbtMs": 271,
+        "bytes": 4473904
       },
       {
-        "performance": 51,
+        "performance": 52,
         "fcpMs": 8104,
         "lcpMs": 11554,
-        "tbtMs": 278,
-        "bytes": 4463683
-      },
-      {
-        "performance": 51,
-        "fcpMs": 8103,
-        "lcpMs": 11553,
-        "tbtMs": 279,
-        "bytes": 4463683
+        "tbtMs": 272,
+        "bytes": 4473904
       }
     ],
     "median": {
-      "performance": 51,
-      "fcpMs": 8104,
-      "lcpMs": 11554,
-      "tbtMs": 279,
-      "bytes": 4463683
+      "performance": 52,
+      "fcpMs": 8178,
+      "lcpMs": 11778,
+      "tbtMs": 271,
+      "bytes": 4473904
     }
   }
 }

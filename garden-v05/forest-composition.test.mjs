@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail,exitSignFrame} from './forest-composition.mjs';
+import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail,exitSignFrame,FARM_SIGN_ART} from './forest-composition.mjs';
 import {forestRectOutsideBoundary} from './forest-clearance.mjs';
 import {createBoundaryFence} from './garden-landscape.mjs';
 import {GARDEN_STAGES,stageBoundary,stageContains} from './garden-growth.mjs?v=24.9.65';
@@ -36,10 +36,12 @@ test('canopy clearance covers the trail and west continuation joins the canvas e
 });
 
 test('farm sign shows the two owner-specified lines and stays clear of forest trees',()=>{
- const trail=forestExitTrail(map),text=[],ctx={save(){},restore(){},fillRect(){},fillText(value){text.push(value);}};
- drawExitTrail(ctx,trail,{sign:true});
- assert.deepEqual(text,['Trang trại của Hagrid','Người giữ khoá trường Hogwarts']);
+ const trail=forestExitTrail(map),text=[],draws=[],transforms=[],sprite={},ctx={save(){},restore(){},fillRect(){},drawImage(...args){draws.push(args);},transform(...args){transforms.push(args);},fillText(value){text.push(value);}};
+ drawExitTrail(ctx,trail,{sign:true,signImage:sprite});
+ assert.deepEqual([...new Set(text)],['Trang trại của Hagrid','Người giữ khoá trường Hogwarts']);
  const sign=exitSignFrame(trail);
+ assert.deepEqual(draws,[[sprite,sign.left,sign.top,FARM_SIGN_ART.width,FARM_SIGN_ART.height]]);
+ assert.deepEqual(transforms,[[1,.5,0,1,sign.left+FARM_SIGN_ART.text.x,sign.top+FARM_SIGN_ART.text.y]]);
  assert.equal(overlapsTrail(sign,trail),true);
 });
 

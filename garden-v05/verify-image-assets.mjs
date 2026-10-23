@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {runtimeImageUrl} from './runtime-image-url.mjs';
+import {FARM_SIGN_ART} from './farm-sign-art.mjs';
 import {ITEM_ART} from './item-art.mjs';
 import {SPRITE_PALETTE} from './palette.mjs';
 import {FOREST_ASSET_FILES} from './forest-surround.mjs';
@@ -33,6 +34,7 @@ for (const file of FOREST_ASSET_FILES) add(file, file);
 for (const file of FESTIVAL_FILES) add(file, file);
 for (const file of Object.values(V24_ART)) add(file, file);
 for (const event of HOGWARTS_EVENTS) add(event.art, event.art);
+add('farm-sign',FARM_SIGN_ART.file);
 add('cottage-corner', 'world-v242/cottage-corner.png');
 const decor = JSON.parse(read('decor-assets-manifest.json'));
 for (const item of decor.items) for (const file of [item.file, item.rightFile, ...(item.frames || []), ...(item.rightFrames || [])]) add(item.id, file);
@@ -63,7 +65,7 @@ assert.deepEqual(publishedDuplicates,[],'published WebP images of different item
 
 const palette = new Set(SPRITE_PALETTE.map(hex => parseInt(hex.slice(1), 16)));
 const crops = ['fluxweed', 'bubotuber', 'knotgrass', 'shrivelfig', 'gillyweed', 'mimbulus', 'flitterbloom', 'devilssnare'];
-const newFiles = [...Object.values(ITEM_ART).map(item => item.file), ...crops.flatMap(id => [1, 2, 3, 4].map(stage => `native-levels/${id}/frame-0${stage}.png`)), ...Array.from({length:16},(_,i)=>`native/three-headed-dog/frame-${String(i+1).padStart(2,'0')}.png`)];
+const newFiles = [FARM_SIGN_ART.file,...Object.values(ITEM_ART).map(item => item.file), ...crops.flatMap(id => [1, 2, 3, 4].map(stage => `native-levels/${id}/frame-0${stage}.png`)), ...Array.from({length:16},(_,i)=>`native/three-headed-dog/frame-${String(i+1).padStart(2,'0')}.png`)];
 for (const file of newFiles) {
  const {data, info} = await sharp(read(file)).ensureAlpha().raw().toBuffer({resolveWithObject: true});
  let pixels = 0;
@@ -83,6 +85,10 @@ for (const item of Object.values(manifest.items)) {
  assert.equal(hash(read(item.file)), item.sha256, `${item.file}: output provenance`);
  assert.equal(hash(read(item.source)), item.sourceSha256, `${item.file}: master provenance`);
 }
+const signManifest=JSON.parse(read('farm-sign-art-manifest.json'));
+assert.equal(hash(read(signManifest.source)),signManifest.sourceSha256,'sign master provenance');
+assert.equal(hash(read(signManifest.file)),signManifest.sha256,'sign native provenance');
+assert.equal(FARM_SIGN_ART.text.slope,.5,'sign face follows the 2:1 garden grid');
 const dog=box.window.FARM_MOTION.items.find(item=>item.id==='three-headed-dog');
 const dogProvenance=JSON.parse(read('three-headed-dog-art-generation.json'));
 assert.equal(dog.source,dogProvenance.master,'white dog must remain the canonical master');

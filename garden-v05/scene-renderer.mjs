@@ -1,22 +1,22 @@
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.69';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.69';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.69';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.69';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.69';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.69';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.69';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.69';
-import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.69';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.69';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.69';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.69';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.69';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.69';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.69';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.69';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.69';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.69';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.69';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.70';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.70';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.70';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.70';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.70';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.70';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.70';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.70';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.70';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.70';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.70';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.70';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.70';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.70';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.70';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.70';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.70';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.70';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.70';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -28,12 +28,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.69';
+} from './scene-animation.mjs?v=24.9.70';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.69';
+} from './forest-surround.mjs?v=24.9.70';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -818,6 +818,7 @@ export async function createGarden(canvas, options = {}) {
     ...collectFiles(),
     ...earnedDecorFiles(),
     ...produceFiles(),
+    FARM_SIGN_ART.file,
     ...FESTIVAL_FILES,
     'world-v242/cottage-corner.png',
     ...[...decorAssets.values()].flatMap((a) => [
@@ -1170,7 +1171,7 @@ export async function createGarden(canvas, options = {}) {
       // live on the forest floor, outside the clipped active meadow.
       const fence=createBoundaryFence(map,stageBoundary(stage)),gate=fence.find(piece=>piece.gate);
       const trail=forestExitTrail(map,gate?.cellA[1]??stage.bottom);
-      drawExitTrail(cachedContext,[...trail,[-32,seamY]],{sign:true});
+      drawExitTrail(cachedContext,[...trail,[-32,seamY]],{sign:true,signImage:imageFor(FARM_SIGN_ART.file)});
       drawForestLayer(cachedContext,trail,stage);
       drawFutureGrovesLayer(cachedContext,stage,trail);
     }
@@ -1337,7 +1338,9 @@ export async function createGarden(canvas, options = {}) {
 
   function drawBuiltPen(pen,state,clock){
     const residents=habitatResidents(pen,asArray(state.creatures),map.creatureSpots,iso);
-    const corners=penCorners(pen),key=activeWeather+':'+JSON.stringify([corners,residents]);
+    const gap=currentStage.right-(pen.col+pen.width),sharedEast=gap>=0&&gap<=1.1;
+    const enclosure=sharedEast?{...pen,width:pen.width+gap}:pen;
+    const corners=penCorners(enclosure),key=activeWeather+':'+JSON.stringify([corners,residents]);
     let cached=penHabitatLayers.get(pen.id);
     if(cached?.key!==key){
       const left=Math.floor(Math.min(...corners.map(p=>p[0])))-20;
@@ -1345,8 +1348,8 @@ export async function createGarden(canvas, options = {}) {
       const right=Math.ceil(Math.max(...corners.map(p=>p[0])))+20;
       const bottom=Math.ceil(Math.max(...corners.map(p=>p[1])))+20;
       const layer=makeCanvas(canvas,right-left,bottom-top),brush=layer.getContext('2d');brush.translate(-left,-top);
-      drawPenHabitat(brush,{corners,pen,iso,weatherMode:activeWeather,personalized:residents.length>0});
-      for(const piece of penFencePieces(pen,iso))drawPenFence(brush,piece,activeWeather);
+      drawPenHabitat(brush,{corners,pen:enclosure,iso,weatherMode:activeWeather,personalized:residents.length>0});
+      for(const piece of penFencePieces(enclosure,iso,{sharedEast}))drawPenFence(brush,piece,activeWeather);
       drawHabitatProps(brush,residents,{weatherMode:activeWeather});
       cached={key,layer,left,top};penHabitatLayers.set(pen.id,cached);
     }
@@ -1431,8 +1434,8 @@ export async function createGarden(canvas, options = {}) {
       const construction = constructionProgress(constructionJob, logicalNow);
       const queued = Boolean(constructionJob);
       if (!isBuilt && !queued && (Number(state?.level) || 1) < Number(pen.requiredLevel || 1)) continue;
-      // Keep the sign below the occupied ground: tall heads and personal props stay clear.
-      const [x, groundY] = iso(pen.col + pen.width, pen.row + pen.height);
+      // Put labels beyond the outer rail, never across the shared pen/perimeter edge.
+      const [x, groundY] = iso(currentStage.right + .8, pen.row + pen.height - .3);
       const y = groundY + 14;
       if (construction && !construction.ready) {
         label(context, `C${index + 1} ${Math.round(construction.progress * 100)}%`, x, y, '#f5d69a', 'bold 10px sans-serif');

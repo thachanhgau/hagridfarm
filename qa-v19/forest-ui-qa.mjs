@@ -29,7 +29,7 @@ await page.addInitScript(()=>{
   return draw.call(this,image,...args);
  };
  CanvasRenderingContext2D.prototype.fillText=function(value,...args){
-  if(value==='Trang trại của Hagrid'||value==='Người giữ khoá trường Hogwarts')window.__farmSigns.push({value,width:this.measureText(value).width});
+  if(value==='Trang trại của Hagrid'||value==='Người giữ khoá trường Hogwarts')window.__farmSigns.push({value,width:args[2]?Math.min(args[2],this.measureText(value).width):this.measureText(value).width});
   return text.call(this,value,...args);
  };
 });
@@ -48,7 +48,7 @@ try{
   report.stages.push({level,stage:data.stage.id,actualTreeDraws:data.trees.length,crossing:crossing.length,signLines:2});
   if(level===110){
    const png=await page.locator('#world').evaluate(c=>c.toDataURL('image/png').split(',')[1]);
-   await sharp(Buffer.from(png,'base64')).extract({left:250,top:980,width:640,height:360}).png().toFile(new URL('exit-gate-20261023.png',import.meta.url).pathname);
+   await sharp(Buffer.from(png,'base64')).extract({left:160,top:960,width:720,height:480}).png().toFile(new URL('exit-gate-20261023.png',import.meta.url).pathname);
   }
  }
  assert.equal(new Set(report.stages.map(s=>s.stage)).size,7,'cover every land chapter');
