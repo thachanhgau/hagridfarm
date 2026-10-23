@@ -16,6 +16,7 @@ const milestones = (prefix, crop, cropLabel, [t1, t2, t3]) => Object.freeze([
 ]);
 
 // `season`: MM-DD start and end, inclusive, in Vietnam time. One festival at a time.
+// `opensAt` (HH:MM): the first day opens at that hour (owner 23/10/2026: Lễ Hội Ma at 18:00).
 export const HOGWARTS_EVENTS = Object.freeze([
   Object.freeze({
     id: 'event_halloween',
@@ -24,7 +25,7 @@ export const HOGWARTS_EVENTS = Object.freeze([
     shortLabel: '🎃 Lễ Hội Ma',
     icon: '🎃',
     badge: 'MÙA THU · LỄ HỘI MA',
-    season: Object.freeze({start: '10-24', end: '11-06'}),
+    season: Object.freeze({start: '10-23', end: '11-06', opensAt: '18:00'}),
     recommendedAtmosphere: 'night',
     recommendedWeather: 'autumn',
     particleCount: 22,
@@ -185,7 +186,7 @@ export function festivalActionKind(actionType) {
  * A save whose `joinDay` falls after a festival's first day gets 14 days from
  * that day for that festival, so new players can still finish their first one.
  */
-export function festivalStatus(dayKey, joinDay = '') {
+export function festivalStatus(dayKey, joinDay = '', nowMs = Date.now()) {
   const today = dayNumber(dayKey);
   const year = Number(dayKey.slice(0, 4));
   const join = isDayKey(joinDay) ? dayNumber(joinDay) : NaN;
@@ -195,13 +196,15 @@ export function festivalStatus(dayKey, joinDay = '') {
       const start = dayNumber(`${y}-${event.season.start}`);
       const end = dayNumber(`${y}-${event.season.end}`);
       const lateJoin = join > start && join <= end;
-      windows.push({event, year: y, start, end: lateJoin ? Math.max(end, join + FESTIVAL_DAYS - 1) : end});
+      const opensAt = event.season.opensAt ? Date.parse(`${y}-${event.season.start}T${event.season.opensAt}:00+07:00`) : 0;
+      windows.push({event, year: y, start, end: lateJoin ? Math.max(end, join + FESTIVAL_DAYS - 1) : end, opensAt});
     }
   }
   windows.sort((a, b) => a.start - b.start);
   const view = (w) => ({id: w.event.id, event: w.event, year: w.year, seasonKey: `${w.event.id}@${w.year}`, start: dayKeyOf(w.start), end: dayKeyOf(w.end)});
-  const current = windows.find((w) => w.start <= today && today <= w.end);
-  const next = windows.find((w) => w.start > today);
+  const notOpenYet = (w) => w.start === today && nowMs < w.opensAt;
+  const current = windows.find((w) => w.start <= today && today <= w.end && !notOpenYet(w));
+  const next = windows.find((w) => w.start > today || notOpenYet(w));
   return {
     dayKey,
     active: current ? {...view(current), daysLeft: current.end - today + 1} : null,
@@ -272,8 +275,8 @@ export function normalizeEventState(raw, today) {
   };
 }
 
-function withPointViews(state) {
-  const active = festivalStatus(state.day, state.joinDay).active;
+function withPointViews(state, nowMs = Date.now()) {
+  const active = festivalStatus(state.day, state.joinDay, nowMs).active;
   state.seasonKey = active?.seasonKey ?? null;
   state.points = active ? state.pointsBySeason[active.seasonKey] || 0 : 0;
   state.totalPoints = Object.values(state.pointsBySeason).reduce((sum, value) => sum + value, 0);
@@ -308,25 +311,25 @@ export function loadEventState(storage = getGardenStorage(), nowMs = Date.now())
   }
   if (serverFestival) {
     const local = normalizeEventState(parsed, serverFestival.day);
-    return withPointViews({...local, ...structuredClone(serverFestival), legacyClaimable: [], server: true});
+    return withPointViews({...local, ...structuredClone(serverFestival), legacyClaimable: [], server: true}, nowMs);
   }
-  return withPointViews(normalizeEventState(parsed, vnDayKey(nowMs)));
+  return withPointViews(normalizeEventState(parsed, vnDayKey(nowMs)), nowMs);
 }
 
 export function saveEventState(state, storage = getGardenStorage(), nowMs = Date.now()) {
   if (!state || typeof state !== 'object') return state;
   const {seasonKey, points, totalPoints, ...stored} = normalizeEventState({...state, version: EVENT_STATE_VERSION}, vnDayKey(nowMs));
   void seasonKey; void points; void totalPoints;
-  if (typeof storage?.setItem !== 'function') return withPointViews(stored);
+  if (typeof storage?.setItem !== 'function') return withPointViews(stored, nowMs);
   try {
     storage.setItem(EVENT_STORAGE_KEY, JSON.stringify(stored));
   } catch { return null; }
-  return withPointViews(stored);
+  return withPointViews(stored, nowMs);
 }
 
 /** Pure: adds one action's capped points to the running festival. `state` must be normalized for its day. */
-export function applyFestivalAction(state, actionType, customPoints = null) {
-  const active = festivalStatus(state.day, state.joinDay).active;
+export function applyFestivalAction(state, actionType, customPoints = null, nowMs = Date.now()) {
+  const active = festivalStatus(state.day, state.joinDay, nowMs).active;
   if (!active) return {state, addedPoints: 0, offSeason: true};
   let delta = customPoints != null ? count(customPoints) : (FESTIVAL_ACTION_POINTS[actionType] ?? 5);
   const kind = festivalActionKind(actionType);
@@ -342,12 +345,12 @@ export function applyFestivalAction(state, actionType, customPoints = null) {
     state.farmToday += delta;
   }
   state.pointsBySeason[active.seasonKey] = (state.pointsBySeason[active.seasonKey] || 0) + delta;
-  return {state: withPointViews(state), addedPoints: delta};
+  return {state: withPointViews(state, nowMs), addedPoints: delta};
 }
 
 export function recordFestivalAction(actionType, customPoints = null, storage = getGardenStorage(), nowMs = Date.now()) {
   if (serverFestival) return {state: loadEventState(storage, nowMs), addedPoints: 0, server: true};
-  const result = applyFestivalAction(loadEventState(storage, nowMs), actionType, customPoints);
+  const result = applyFestivalAction(loadEventState(storage, nowMs), actionType, customPoints, nowMs);
   if (result.offSeason) return {state: result.state, addedPoints: 0, offSeason: true};
   const saved = saveEventState(result.state, storage, nowMs);
   return {state: saved || result.state, addedPoints: result.addedPoints};
@@ -409,7 +412,7 @@ export function claimEventMilestone(milestoneKey, {storage = getGardenStorage(),
 
 export function hasClaimableEventMilestone(storage = getGardenStorage(), nowMs = Date.now()) {
   const state = loadEventState(storage, nowMs);
-  const active = festivalStatus(state.day, state.joinDay).active;
+  const active = festivalStatus(state.day, state.joinDay, nowMs).active;
   const now = active
     ? active.event.milestones.some((m) => milestoneClaimCheck(state, `${m.id}@${active.year}`).ok)
     : false;
@@ -961,7 +964,7 @@ export function renderEventsAndTasksSection({
   void onPetCreature;
   void onClaimAffinityGift;
   const evtState = loadEventState(storage, nowMs);
-  const status = festivalStatus(evtState.day, evtState.joinDay);
+  const status = festivalStatus(evtState.day, evtState.joinDay, nowMs);
   const season = status.active ?? status.next;
   const cfg = season.event;
   const root = el('div', {class: 'v24-events-panel events-panel-root', 'data-events-view': 'true'});
@@ -979,7 +982,7 @@ export function renderEventsAndTasksSection({
         class: 'v24-event-hero-when',
         text: status.active
           ? `${shortDate(season.start)} – ${shortDate(season.end)} · còn ${status.active.daysLeft} ngày`
-          : `Mở ngày ${shortDate(season.start)} · còn ${status.next.daysUntil} ngày`,
+          : status.next.daysUntil === 0 && cfg.season.opensAt ? `Mở lúc ${cfg.season.opensAt} hôm nay` : `Mở ngày ${shortDate(season.start)} · còn ${status.next.daysUntil} ngày`,
       }),
     ]),
   ]));

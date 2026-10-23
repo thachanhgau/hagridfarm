@@ -19,9 +19,9 @@ const veteran = (extra = {}) => {
 test('the festival day key follows Vietnam midnight, not UTC or the device', () => {
   assert.equal(vnDayKey(Date.parse('2026-10-23T16:59:59Z')), '2026-10-23');
   assert.equal(vnDayKey(Date.parse('2026-10-23T17:00:00Z')), '2026-10-24');
-  // 23:59 on 23/10 in Vietnam earns nothing; one minute later Lễ Hội Ma is open.
-  assert.equal(recordFestivalAction('harvest', null, veteran(), vn('2026-10-23T23:59:00')).addedPoints, 0);
-  assert.equal(recordFestivalAction('harvest', null, veteran(), vn('2026-10-24T00:00:00')).addedPoints, 15);
+  // Owner 23/10/2026: Lễ Hội Ma opens at 18:00 on 23/10 in Vietnam; 17:59 earns nothing.
+  assert.equal(recordFestivalAction('harvest', null, veteran(), vn('2026-10-23T17:59:00')).addedPoints, 0);
+  assert.equal(recordFestivalAction('harvest', null, veteran(), vn('2026-10-23T18:00:00')).addedPoints, 15);
   // Last minute of 06/11 still counts; 00:00 on 07/11 does not.
   assert.equal(recordFestivalAction('harvest', null, veteran(), vn('2026-11-06T23:59:00')).addedPoints, 15);
   assert.equal(recordFestivalAction('harvest', null, veteran(), vn('2026-11-07T00:00:00')).addedPoints, 0);
@@ -30,23 +30,25 @@ test('the festival day key follows Vietnam midnight, not UTC or the device', () 
 test('four 14-day festivals, one at a time, with the next one and a countdown off-season', () => {
   const seasonal = HOGWARTS_EVENTS.filter((e) => e.season);
   assert.deepEqual(seasonal.map((e) => e.id), ['event_halloween', 'event_yule', 'event_herbology_fair', 'event_quidditch_cup']);
-  // Walk two years day by day: each festival runs exactly 14 days and they never overlap.
+  // Walk two years day by day (each day's evening): each festival runs 14 days and they never overlap;
+  // Lễ Hội Ma also takes the evening of 23/10 (opens 18:00), so 15 dates.
   const runs = new Map();
   for (let t = Date.UTC(2026, 0, 1); t < Date.UTC(2028, 0, 1); t += DAY) {
     const key = new Date(t).toISOString().slice(0, 10);
-    const s = festivalStatus(key);
+    const s = festivalStatus(key, '', Date.parse(`${key}T20:00:00+07:00`));
     if (s.active) runs.set(s.active.seasonKey, (runs.get(s.active.seasonKey) || 0) + 1);
     else assert.ok(s.next.daysUntil > 0);
   }
   assert.equal(runs.size, 8);
-  for (const days of runs.values()) assert.equal(days, FESTIVAL_DAYS);
+  for (const [seasonKey, days] of runs) assert.equal(days, FESTIVAL_DAYS + (seasonKey.startsWith('event_halloween') ? 1 : 0), seasonKey);
 
   const off = festivalStatus('2026-10-18');
   assert.equal(off.active, null);
   assert.equal(off.next.id, 'event_halloween');
-  assert.equal(off.next.daysUntil, 6);
-  const first = festivalStatus('2026-10-24');
-  assert.equal(first.active.daysLeft, 14);
+  assert.equal(off.next.daysUntil, 5);
+  assert.equal(festivalStatus('2026-10-23', '', Date.parse('2026-10-23T17:59:00+07:00')).next.daysUntil, 0);
+  const first = festivalStatus('2026-10-23', '', Date.parse('2026-10-23T18:00:00+07:00'));
+  assert.equal(first.active.daysLeft, 15);
   assert.equal(festivalStatus('2026-11-06').active.daysLeft, 1);
   // Across New Year the next festival is next spring's.
   assert.equal(festivalStatus('2027-01-01').next.seasonKey, 'event_herbology_fair@2027');

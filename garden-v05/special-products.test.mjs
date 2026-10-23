@@ -56,9 +56,10 @@ test('special products are decorations only, one each, in their own store group,
 test('Halloween pieces sell only during the Halloween festival, to every level, priced above the regular ones', () => {
   const cake = SPECIAL_PRODUCTS.find(item => item.id === 'sp_deathday_cake');
   assert.deepEqual([cake.season, cake.level, cake.price], ['event_halloween', 1, 4000]);
-  const has = day => unlockedCatalog(1, day).some(item => item.id === 'sp_deathday_cake');
-  assert.equal(has('2026-10-23'), false);
-  assert.equal(has('2026-10-24'), true);
+  const has = (day, time = '12:00') => unlockedCatalog(1, day, Date.parse(`${day}T${time}:00+07:00`)).some(item => item.id === 'sp_deathday_cake');
+  // Owner 23/10/2026: Lễ Hội Ma opens 23/10 at 18:00.
+  assert.equal(has('2026-10-23', '17:59'), false);
+  assert.equal(has('2026-10-23', '18:00'), true);
   assert.equal(has('2026-10-31'), true);
   assert.equal(has('2026-11-06'), true);
   assert.equal(has('2026-11-07'), false);
@@ -72,9 +73,9 @@ test('store lock: below level shows the level, off-season shows the opening day,
   const arch = STORE_CATALOG.find(i => i.id === 'decor_vine_arch'), cake = STORE_CATALOG.find(i => i.season);
   assert.equal(storeLock(arch, 1, '2026-10-20'), 'Cấp 24');
   assert.equal(storeLock(arch, 24, '2026-10-20'), '');
-  assert.equal(storeLock(cake, 1, '2026-10-20'), 'Mở bán 24/10');
+  assert.equal(storeLock(cake, 1, '2026-10-20'), 'Mở bán 23/10');
   assert.equal(storeLock(cake, 1, '2026-10-25'), '');
-  assert.equal(storeLock(cake, 100, '2026-11-20'), 'Mở bán 24/10');
+  assert.equal(storeLock(cake, 100, '2026-11-20'), 'Mở bán 23/10');
 });
 
 test('Halloween festival pieces: five sprites in both views, sold only in Lễ Hội Ma at any level', async () => {
@@ -93,7 +94,7 @@ test('Halloween festival pieces: five sprites in both views, sold only in Lễ H
     assert.deepEqual([item.season, item.level, item.kind, item.quantity], ['event_halloween', 1, 'decoration', 1]);
     assert.notEqual(sprite.rightFile, sprite.file);
     for (const file of [sprite.file, sprite.rightFile, ...sprite.frames, ...sprite.rightFrames]) assert.ok(fs.existsSync(new URL(`./${file}`, import.meta.url)), file);
-    assert.equal(unlockedCatalog(1, '2026-10-23').some(x => x.id === item.id), false);
+    assert.equal(unlockedCatalog(1, '2026-10-23', Date.parse('2026-10-23T12:00:00+07:00')).some(x => x.id === item.id), false);
     assert.equal(unlockedCatalog(1, '2026-10-31').some(x => x.id === item.id), true);
   }
 });

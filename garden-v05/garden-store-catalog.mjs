@@ -688,7 +688,7 @@ export const STORE_CATALOG=Object.freeze([
   }
 ].map(Object.freeze).concat(PREMIUM_PRODUCTS,SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS));
 // A seasonal item (`season`: festival id) is on sale only while that festival runs, at any level (server garden-wallet-catalog inSeason).
-export const inSeason=(item,dayKey=vnDayKey())=>!item.season||festivalStatus(dayKey).active?.id===item.season;
+export const inSeason=(item,dayKey=vnDayKey(),nowMs=Date.now())=>!item.season||festivalStatus(dayKey,'',nowMs).active?.id===item.season;
 // The first day (YYYY-MM-DD) a seasonal item goes on sale again.
 export const seasonOpens=(item,dayKey=vnDayKey())=>{let d=dayKey;for(let i=0;i<6;i++){const n=festivalStatus(d).next;if(n.id===item.season)return n.start;d=n.start;}return null;};
 // Why an item cannot be bought yet ('' when it can): out of season (seasonal items ignore the level), else below its level.
@@ -699,4 +699,4 @@ export const storeLock=(item,level,dayKey=vnDayKey())=>{
 };
 // Level-500 roadmap §12: below level 100 nothing from bậc Tận Sức shows, not even as a locked card.
 export const storeVisible=(item,level)=>item.level<=TAN_SUC_LEVEL||level>=TAN_SUC_LEVEL;
-export const unlockedCatalog=(level,dayKey=vnDayKey())=>STORE_CATALOG.filter(item=>item.level<=level&&inSeason(item,dayKey));
+export const unlockedCatalog=(level,dayKey=vnDayKey(),nowMs=Date.now())=>STORE_CATALOG.filter(item=>item.level<=level&&inSeason(item,dayKey,nowMs));
