@@ -1,0 +1,142 @@
+{
+  "nativeCanvas": 64,
+  "maxInk": 40,
+  "previewScale": 1,
+  "beforeAfter": [
+    {
+      "id": "supply_water",
+      "before": {
+        "x": 10,
+        "y": 8,
+        "w": 44,
+        "h": 48
+      },
+      "after": {
+        "x": 17,
+        "y": 16,
+        "w": 30,
+        "h": 40
+      }
+    },
+    {
+      "id": "supply_boost",
+      "before": {
+        "x": 13,
+        "y": 8,
+        "w": 37,
+        "h": 48
+      },
+      "after": {
+        "x": 15,
+        "y": 16,
+        "w": 33,
+        "h": 40
+      }
+    },
+    {
+      "id": "supply_spring_water",
+      "before": {
+        "x": 18,
+        "y": 8,
+        "w": 27,
+        "h": 48
+      },
+      "after": {
+        "x": 18,
+        "y": 16,
+        "w": 27,
+        "h": 40
+      }
+    },
+    {
+      "id": "premium_spring_rain",
+      "before": {
+        "x": 14,
+        "y": 8,
+        "w": 36,
+        "h": 48
+      },
+      "after": {
+        "x": 16,
+        "y": 16,
+        "w": 31,
+        "h": 40
+      }
+    },
+    {
+      "id": "premium_felix_felicis",
+      "before": {
+        "x": 19,
+        "y": 8,
+        "w": 26,
+        "h": 48
+      },
+      "after": {
+        "x": 14,
+        "y": 16,
+        "w": 35,
+        "h": 40
+      }
+    },
+    {
+      "id": "premium_prime_meal",
+      "before": {
+        "x": 6,
+        "y": 12,
+        "w": 52,
+        "h": 44
+      },
+      "after": {
+        "x": 12,
+        "y": 23,
+        "w": 40,
+        "h": 33
+      }
+    },
+    {
+      "id": "premium_pen_feast",
+      "before": {
+        "x": 6,
+        "y": 29,
+        "w": 52,
+        "h": 27
+      },
+      "after": {
+        "x": 12,
+        "y": 31,
+        "w": 40,
+        "h": 25
+      }
+    },
+    {
+      "id": "premium_skele_gro",
+      "before": {
+        "x": 16,
+        "y": 8,
+        "w": 31,
+        "h": 48
+      },
+      "after": {
+        "x": 18,
+        "y": 16,
+        "w": 27,
+        "h": 40
+      }
+    },
+    {
+      "id": "premium_warm_nest",
+      "before": {
+        "x": 6,
+        "y": 18,
+        "w": 52,
+        "h": 38
+      },
+      "after": {
+        "x": 12,
+        "y": 28,
+        "w": 40,
+        "h": 28
+      }
+    }
+  ]
+}

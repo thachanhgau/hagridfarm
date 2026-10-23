@@ -4,7 +4,7 @@
   "transparent_background": true,
   "groups": [
     {
-      "name": "supply_water",
+      "name": "supply_water-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -14,11 +14,13 @@
         ]
       ],
       "label": "Nước tưới",
-      "prompt": "Create ONE production game inventory sprite for Khu Vườn Hagrid. Handmade premium cozy wizarding farming pixel art, true crisp square pixel clusters, selective deep plum outline #231F2E, 2:1 dimetric perspective, lit from upper left, restrained 24-color palette (wood browns #4A3042 #735044 #A57554, cream #D6D8BF, greens #24483F #3F6A45 #71934B #B0BD67, warm #E7AE73 #F5D69A, fire #C75B4B #ED8A45 #FFC36B, magic #3E3B70 #6961A6 #70A8B6 #B7DEE0). Strong readable silhouette at 64x64, rich careful pixel detailing. Centered single isolated object filling about 75% of image, ample fully transparent margin. NO backdrop, circle, badge, ground plane, frame, text, letters, digits, watermark, antialiasing or blur. Fully transparent background. Subject: A beautifully built small wooden water bucket, blue water visible at the top, curved worn brass handle, copper bands and a little folded sage cloth on the rim. Ordinary garden watering supply, unmistakably fresh clear blue water.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-c844045c-4478-4193-9561-b4aaf49a53ce.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: A stout little oak water bucket: four broad wooden staves, two simple dark metal bands, a thick curved handle, one solid clear turquoise water surface with a single cream highlight. Compact and sturdy. No cloth or intricate grain.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-b94fc0ab-014f-4542-96eb-a583535e0dae.png",
+      "previousMaster": "masters-items/supply_water.png",
+      "qualityRevision": 2
     },
     {
-      "name": "supply_boost",
+      "name": "supply_boost-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -28,11 +30,13 @@
         ]
       ],
       "label": "Nước phép",
-      "prompt": "Create ONE production game inventory sprite for Khu Vườn Hagrid. Handmade premium cozy wizarding farming pixel art, true crisp square pixel clusters, selective deep plum outline #231F2E, 2:1 dimetric perspective, lit from upper left, restrained 24-color palette (wood browns #4A3042 #735044 #A57554, cream #D6D8BF, greens #24483F #3F6A45 #71934B #B0BD67, warm #E7AE73 #F5D69A, fire #C75B4B #ED8A45 #FFC36B, magic #3E3B70 #6961A6 #70A8B6 #B7DEE0). Strong readable silhouette at 64x64, rich careful pixel detailing. Centered single isolated object filling about 75% of image, ample fully transparent margin. NO backdrop, circle, badge, ground plane, frame, text, letters, digits, watermark, antialiasing or blur. Fully transparent background. Subject: Magical growth water: a squat apothecary glass flask with oak cork, luminous teal-green liquid with a delicate tiny bright green sprout floating inside, braided twine around neck. A green wax seal with no text.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-c39e46b3-51b6-4529-9bad-93148efa5418.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: A squat round glass growth potion with a broad cork, filled with solid green liquid. One clear large two-leaf sprout emblem in the liquid, a simple cream highlight strip on left. No twine, wax seal, sparkles or etched glass.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-ae5e89c1-1967-4183-b965-74969240f568.png",
+      "previousMaster": "masters-items/supply_boost.png",
+      "qualityRevision": 2
     },
     {
-      "name": "supply_spring_water",
+      "name": "supply_spring_water-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -42,11 +46,13 @@
         ]
       ],
       "label": "Nước suối thần",
-      "prompt": "Create ONE production game inventory sprite for Khu Vườn Hagrid. Handmade premium cozy wizarding farming pixel art, true crisp square pixel clusters, selective deep plum outline #231F2E, 2:1 dimetric perspective, lit from upper left, restrained 24-color palette (wood browns #4A3042 #735044 #A57554, cream #D6D8BF, greens #24483F #3F6A45 #71934B #B0BD67, warm #E7AE73 #F5D69A, fire #C75B4B #ED8A45 #FFC36B, magic #3E3B70 #6961A6 #70A8B6 #B7DEE0). Strong readable silhouette at 64x64, rich careful pixel detailing. Centered single isolated object filling about 75% of image, ample fully transparent margin. NO backdrop, circle, badge, ground plane, frame, text, letters, digits, watermark, antialiasing or blur. Fully transparent background. Subject: Sacred spring water: ornate clear azure crystal vial in a carved grey stone cradle, a miniature curled water jet suspended above its mouth, silver-blue water and small pale glints. Distinct from bucket and potion flask.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-cf7e0075-ec12-444c-8c3d-612e414dafca.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: A simple elegant blue sacred-spring potion flask: broad round bottom, short neck, cream stopper, saturated turquoise liquid and one large pale-blue teardrop emblem. A tiny grey stone foot. No water jets, floating droplets or ornate cradle; must differ clearly from green growth potion.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-bf2c6d23-9924-44ba-a9f6-b0abcad5aaff.png",
+      "previousMaster": "masters-items/supply_spring_water.png",
+      "qualityRevision": 2
     },
     {
-      "name": "premium_spring_rain",
+      "name": "premium_spring_rain-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -56,11 +62,13 @@
         ]
       ],
       "label": "Mưa suối thần",
-      "prompt": "ONE isolated premium inventory sprite, Khu Vườn Hagrid wizard farming game. Handmade crisp pixel art with intentional square pixel clusters and selective dark plum #231F2E outline, 2:1 dimetric perspective, upper-left lighting. Restrained warm brown/cream/forest-green/gold/teal palette matching classic cozy 24-color farm sprites. Strong readable silhouette, detailed craftsmanship, no smooth vector appearance. Subject should stay legible when quantized to a 64x64 native game sprite. One object centered and fills 75% image, fully transparent background, generous empty alpha margin. NO text, numbers, letters, frame, circular badge, backdrop, floor, watermark, blur or antialiasing. Subject: A floating little slate-blue enchanted raincloud with brilliant turquoise spring-water droplets falling into a small patch of three newly ripened golden sprouts. Magical harvest rain, with two tiny cream sparkles; compact self-contained inventory vignette.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-8a4d46cd-4dde-436d-b065-fd155bfa9bc5.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: A compact rounded magical rain cloud over a tiny raised bed with THREE broad ripe golden leaves: large dark-blue cloud body with one pale-blue upper-left block highlight, THREE thick solid turquoise raindrops, three gold/green crop shapes below. Everything arranged compactly in a nearly square 36x36 logical-pixel silhouette. No swirls, extra stars, thin water streaks or pebble textures.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-295c102d-6d81-44b2-8422-cbb274f1b1cb.png",
+      "previousMaster": "masters-items/premium_spring_rain.png",
+      "qualityRevision": 2
     },
     {
-      "name": "premium_felix_felicis",
+      "name": "premium_felix_felicis-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -70,11 +78,13 @@
         ]
       ],
       "label": "Phúc Lạc Dược",
-      "prompt": "ONE isolated premium inventory sprite, Khu Vườn Hagrid wizard farming game. Handmade crisp pixel art with intentional square pixel clusters and selective dark plum #231F2E outline, 2:1 dimetric perspective, upper-left lighting. Restrained warm brown/cream/forest-green/gold/teal palette matching classic cozy 24-color farm sprites. Strong readable silhouette, detailed craftsmanship, no smooth vector appearance. Subject should stay legible when quantized to a 64x64 native game sprite. One object centered and fills 75% image, fully transparent background, generous empty alpha margin. NO text, numbers, letters, frame, circular badge, backdrop, floor, watermark, blur or antialiasing. Subject: Felix Felicis lucky potion: a tiny elegant pear-shaped amber glass bottle of radiant liquid gold, slender neck with a polished dark wooden stopper, a small golden leaf tied around its neck, warm reflections and one gold drop-like glint, recognizably luxury alchemy.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-944f9b01-bb62-472f-8308-5f666a752cbf.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: A BROAD SHORT squat round bottle of Felix Felicis golden luck potion. The bulb is almost as wide as tall, with a chunky dark cork and short neck. Solid golden liquid, two broad amber/cream shading regions, ONE large simple four-leaf-clover mark. Keep the whole silhouette about32 pixels wide by36 tall. No thin neck, tag, string, dangling leaf, bubbles or sparkles.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-85163e3d-abd8-4c57-8c26-bbd96a24ea39.png",
+      "previousMaster": "masters-items/premium_felix_felicis.png",
+      "qualityRevision": 2
     },
     {
-      "name": "premium_prime_meal",
+      "name": "premium_prime_meal-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -84,11 +94,13 @@
         ]
       ],
       "label": "Bữa ăn thượng hạng",
-      "prompt": "ONE isolated premium inventory sprite, Khu Vườn Hagrid wizard farming game. Handmade crisp pixel art with intentional square pixel clusters and selective dark plum #231F2E outline, 2:1 dimetric perspective, upper-left lighting. Restrained warm brown/cream/forest-green/gold/teal palette matching classic cozy 24-color farm sprites. Strong readable silhouette, detailed craftsmanship, no smooth vector appearance. Subject should stay legible when quantized to a 64x64 native game sprite. One object centered and fills 75% image, fully transparent background, generous empty alpha margin. NO text, numbers, letters, frame, circular badge, backdrop, floor, watermark, blur or antialiasing. Subject: One sumptuous animal meal in a dark green ceramic bowl with brass rim, piled with distinct golden grains, orange pumpkin chunks, a leafy sprig and a small cream pastry. A rolled sage napkin beside the bowl. Inviting plentiful food, not a banquet table.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-c1c9d9ec-f00e-4bb3-a7be-06b01730bc77.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: A simple substantial deep dark-green bowl with a cream rim filled with THREE large orange pumpkin chunks, a small mound of gold grains drawn as one solid gold shape and one broad green leaf. Nearly square compact silhouette34 pixels wide by30 tall, clearly separates bowl from food. No napkin, crumbs, decorative patterns, dozens of kernels or textures.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-a70f36ad-2ef2-4bdd-8e33-205225ef15b3.png",
+      "previousMaster": "masters-items/premium_prime_meal.png",
+      "qualityRevision": 2
     },
     {
-      "name": "premium_pen_feast",
+      "name": "premium_pen_feast-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -98,11 +110,13 @@
         ]
       ],
       "label": "Tiệc chuồng",
-      "prompt": "ONE production inventory sprite, cozy magical farming pixel art. Intentional crisp square pixels with detailed clusters and selective deep plum outline #231F2E, 2:1 dimetric perspective, upper-left light. Limited warm earthy sprite palette of browns, cream, forest greens, burnt orange, gold, pale teal. Distinct silhouette at 64x64 pixels, no smooth vector drawing. Centered isolated object, about 75% frame with ample fully transparent margin. NO labels, letters, numbers, backdrop, frame, circular badge, ground, watermark or blurry gradients. Fully transparent background. Subject: A miniature rustic banquet for magical creatures: a low oak trestle table bearing three DIFFERENT servings, a leafy basket of grains, a copper dish with orange pumpkin chunks and a round green bowl with pale fish. Small folded cream table runner, warm rich food, compact horizontal silhouette.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9dd503dd-19d0-49e1-8c71-f2b610a5f0ac.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: A compact miniature magical creature banquet: a SHORT thick oak table viewed 2:1 dimetric, with just THREE large simple bowls. Orange pumpkin chunks in left bowl, pale-blue fish silhouette in middle bowl and a large green leafy mound in right bowl. Nearly square silhouette38 pixels wide by32 tall. Short broad legs. No table runner, cutlery, decorative basket, woodgrain or scattered food.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-baf785e3-e5cd-4ced-9b9a-6f879d40a3dd.png",
+      "previousMaster": "masters-items/premium_pen_feast.png",
+      "qualityRevision": 2
     },
     {
-      "name": "premium_skele_gro",
+      "name": "premium_skele_gro-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -112,11 +126,13 @@
         ]
       ],
       "label": "Thuốc Mọc Xương",
-      "prompt": "ONE production inventory sprite, cozy magical farming pixel art. Intentional crisp square pixels with detailed clusters and selective deep plum outline #231F2E, 2:1 dimetric perspective, upper-left light. Limited warm earthy sprite palette of browns, cream, forest greens, burnt orange, gold, pale teal. Distinct silhouette at 64x64 pixels, no smooth vector drawing. Centered isolated object, about 75% frame with ample fully transparent margin. NO labels, letters, numbers, backdrop, frame, circular badge, ground, watermark or blurry gradients. Fully transparent background. Subject: Skele-Gro magical bone-growing medicine: an ivory ceramic medicine bottle sculpted as a friendly stylized skeleton torso, rib details and little skull-shaped stopper, green glass inset showing emerald tonic. Ivory and dark sage with brown cork accents; whimsical apothecary, no scary gore, no label.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-a05fbc21-0270-43b2-9084-62721ff93e04.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: An unmistakable Skele-Gro medicine bottle in simple playful pixel form: a BROAD stout green bottle with an ivory skull-shaped cork and ONE large simple ivory bone emblem on the belly. Chunky clean cream skull with two dark square eye holes, not a whole rib cage. Body width30 pixels, total height38 pixels. Just cream, dark plum and two greens, no ribs, extra bones or sparkles.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-27b539af-ad86-417e-a22c-a9d4e59b141c.png",
+      "previousMaster": "masters-items/premium_skele_gro.png",
+      "qualityRevision": 2
     },
     {
-      "name": "premium_warm_nest",
+      "name": "premium_warm_nest-v2",
       "columns": 1,
       "rows": 1,
       "items": [
@@ -126,8 +142,10 @@
         ]
       ],
       "label": "Ổ ấm chuồng 1–6",
-      "prompt": "ONE production inventory sprite, cozy magical farming pixel art. Intentional crisp square pixels with detailed clusters and selective deep plum outline #231F2E, 2:1 dimetric perspective, upper-left light. Limited warm earthy sprite palette of browns, cream, forest greens, burnt orange, gold, pale teal. Distinct silhouette at 64x64 pixels, no smooth vector drawing. Centered isolated object, about 75% frame with ample fully transparent margin. NO labels, letters, numbers, backdrop, frame, circular badge, ground, watermark or blurry gradients. Fully transparent background. Subject: A cozy empty woven willow nest filled with golden straw and a neatly folded terracotta wool blanket, two small teal feathers tucked into the side, a tiny glowing amber warming stone nestling at one corner. Soft sheltered hollow clearly readable, no eggs, animals, or building.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-e5f4f434-c66b-4b85-848c-d1712d63c2dc.png"
+      "prompt": "Production game inventory icon, CLEAN LOW-RES PIXEL ART for cozy wizard farming. Draw as a genuinely tiny 40x40 logical-pixel sprite enlarged with nearest-neighbour: coarse visible square pixels, big uninterrupted color clusters, simple instantly-readable silhouette, just 2 shades per material, maximum 10 colors from #231F2E #735044 #A57554 #D6D8BF #24483F #71934B #B0BD67 #E7AE73 #F5D69A #ED8A45 #FFC36B #70A8B6 #B7DEE0. One-pixel logical dark plum outline. Upper left light. The art must be readable at 40 pixels without zoom. ABSOLUTELY NO dithering, speckles, noise, fine texture, tiny ornaments, embroidery, etched details, tiny highlights, glow clouds, gradient shading, realistic painting or vector smoothing. No text, labels, frame, circular badge or floor. One isolated item centered with transparent margin on every side, TRUE TRANSPARENT BACKGROUND. Use a calm 2:1 dimetric angle. Do not make a high-detail painting that merely looks pixelated. Subject: A simple oval warm animal nest: one thick smooth wicker rim with only FIVE large straw strokes, dark sheltered center, a folded terracotta blanket occupying half the hollow and a single pale-teal feather. Compact rounded silhouette38 pixels wide by30 tall. Broad three-tone brown areas, no realistic weave, thin twigs, embroidery, glowing stone or fuzzy glow.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-22240c74-cd1e-48cc-82ff-2f7f67e4e5fa.png",
+      "previousMaster": "masters-items/premium_warm_nest.png",
+      "qualityRevision": 2
     },
     {
       "name": "expansion_plot",
@@ -171,5 +189,7 @@
       "prompt": "ONE isolated production sprite for Khu Vườn Hagrid, premium cozy wizard farming pixel art. Handmade crisp square pixel clusters, selective deep plum #231F2E outlines, 2:1 isometric view, lit upper-left. Restrained palette warm wood browns #735044 #A57554, cream #D6D8BF, greens #24483F #71934B, golden #F5D69A #FFC36B, orange #C97952 and teal #70A8B6. Strong simple silhouette at native 64x64; fine deliberate pixel details. Centered object fills 75% image, generous transparent margin on all four sides. Fully transparent alpha background. NO text, symbols resembling letters, digits, backdrop, circle frame, badge frame, watermark, blur, soft painted gradients or vector smoothing. Subject: A simple elegant miniature golden two-handled trophy cup on a square walnut plinth, embossed tiny leaf on its broad bowl, brilliant cream upper-left rim and darker amber right side. Broad distinctive silhouette readable even at 16x16 native pixels. No ribbons, engraving, letters or backdrop.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-1bfb48c9-59b7-4692-ab54-c2c7ceac08e8.png"
     }
-  ]
+  ],
+  "qualityRevision": 2,
+  "nativeSupplyMaxInk": 40
 }

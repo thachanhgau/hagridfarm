@@ -10,28 +10,32 @@
         "height": 568,
         "premiumCards": 12,
         "nativeDesigns": 7,
-        "missing": 0
+        "missing": 0,
+        "pixelAligned": true
       },
       {
         "width": 375,
         "height": 812,
         "premiumCards": 12,
         "nativeDesigns": 7,
-        "missing": 0
+        "missing": 0,
+        "pixelAligned": true
       },
       {
         "width": 812,
         "height": 375,
         "premiumCards": 12,
         "nativeDesigns": 7,
-        "missing": 0
+        "missing": 0,
+        "pixelAligned": true
       },
       {
         "width": 1280,
         "height": 800,
         "premiumCards": 12,
         "nativeDesigns": 7,
-        "missing": 0
+        "missing": 0,
+        "pixelAligned": true
       }
     ],
     "galleryCards": 125,
@@ -45,7 +49,13 @@
       "premium_pen_feast",
       "premium_skele_gro",
       "premium_warm_nest"
-    ]
+    ],
+    "level20LockedPremium": {
+      "cards": 9,
+      "artFilter": "none",
+      "purchaseActionsUnavailable": true,
+      "visibleRows": 2
+    }
   },
   {
     "browser": "WebKit",
@@ -58,28 +68,32 @@
         "height": 568,
         "premiumCards": 12,
         "nativeDesigns": 7,
-        "missing": 0
+        "missing": 0,
+        "pixelAligned": true
       },
       {
         "width": 375,
         "height": 812,
         "premiumCards": 12,
         "nativeDesigns": 7,
-        "missing": 0
+        "missing": 0,
+        "pixelAligned": true
       },
       {
         "width": 812,
         "height": 375,
         "premiumCards": 12,
         "nativeDesigns": 7,
-        "missing": 0
+        "missing": 0,
+        "pixelAligned": true
       },
       {
         "width": 1280,
         "height": 800,
         "premiumCards": 12,
         "nativeDesigns": 7,
-        "missing": 0
+        "missing": 0,
+        "pixelAligned": true
       }
     ],
     "galleryCards": 125,
@@ -93,6 +107,12 @@
       "premium_pen_feast",
       "premium_skele_gro",
       "premium_warm_nest"
-    ]
+    ],
+    "level20LockedPremium": {
+      "cards": 9,
+      "artFilter": "none",
+      "purchaseActionsUnavailable": true,
+      "visibleRows": 2
+    }
   }
 ]

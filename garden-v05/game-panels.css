@@ -99,6 +99,7 @@
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile-actions>*{flex:0 0 auto;width:auto;max-width:100%}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin-top:auto;padding-top:2px}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile.is-locked .gp-tile-art>:not(.lock-badge){filter:grayscale(1) brightness(.5)}
+#gameShell .store-popover .store-card.is-locked .gp-tile-art>:not(.lock-badge){filter:none!important}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile.is-locked{background:#142620}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile.is-locked .gp-tile-name{color:#A6B1AE}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile.is-locked .reward-chips{opacity:.7}

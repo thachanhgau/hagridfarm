@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { ITEM_ART } from './item-art.mjs?v=24.9.72';
+import { ITEM_ART } from './item-art.mjs?v=24.9.73';
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }
@@ -46,7 +46,7 @@ globalThis.document = {
  getElementById: () => null,
 };
 
-const { itemArtKey, visualItemIcon } = await import('./ui-utils.mjs?v=24.9.72');
+const { itemArtKey, visualItemIcon } = await import('./ui-utils.mjs?v=24.9.73');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];
@@ -64,6 +64,12 @@ function findClass(node, className) {
   if (found) return found;
  }
  return null;
+}
+
+function inlinePixels(node, property) {
+ const match = new RegExp(`${property}:(-?\\d+(?:\\.\\d+)?)px`).exec(node?.style?.cssText || '');
+ assert.ok(match, `Missing ${property} in image style`);
+ return Number(match[1]);
 }
 
 const CANONICAL_SURFACES = [
@@ -110,6 +116,26 @@ test('native item surfaces keep supply and premium classes without inline SVG', 
  const source = fs.readFileSync(new URL('./ui-utils.mjs', import.meta.url), 'utf8');
  assert.doesNotMatch(source, /<svg/i);
  for (const visual of [...supplies, premium, crafted]) assert.doesNotMatch(visual.innerHTML, /<svg/i);
+});
+
+test('store supply and premium art uses integer native scale and pixel aligned offsets', () => {
+ const storeSurfaces = CANONICAL_SURFACES.filter(([, key]) => /^(supply|premium)_/.test(key));
+ for (const [rawId, key, kind] of storeSurfaces) {
+  const visual = visualItemIcon(new Map(), rawId, { size: 56, kind });
+  const image = findClass(visual, 'item-art-img');
+  assert.ok(image, `${key} image`);
+  const scale = inlinePixels(image, 'width') / Number(ITEM_ART[key].width);
+  assert.ok(Number.isInteger(scale), `${key} scale ${scale} is not integral`);
+  assert.equal(inlinePixels(image, 'left'), Math.round(inlinePixels(image, 'left')), `${key} left`);
+  assert.equal(inlinePixels(image, 'top'), Math.round(inlinePixels(image, 'top')), `${key} top`);
+ }
+
+ const small = visualItemIcon(new Map(), 'water', { size: 21 });
+ const smallImage = findClass(small, 'item-art-img');
+ const smallScale = inlinePixels(smallImage, 'width') / Number(ITEM_ART.supply_water.width);
+ assert.ok(smallScale < 1 && !Number.isInteger(smallScale), `small target should retain a fractional downscale, got ${smallScale}`);
+ assert.equal(inlinePixels(smallImage, 'left'), Math.round(inlinePixels(smallImage, 'left')), 'small target left');
+ assert.equal(inlinePixels(smallImage, 'top'), Math.round(inlinePixels(smallImage, 'top')), 'small target top');
 });
 
 test('unknown premium art remains explicit instead of falling back to a medal', () => {

@@ -1,6 +1,6 @@
-import { ITEM_ART } from "./item-art.mjs?v=24.9.72";
-import {saleTotal} from "./premium-products.mjs?v=24.9.72";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.72';
+import { ITEM_ART } from "./item-art.mjs?v=24.9.73";
+import {saleTotal} from "./premium-products.mjs?v=24.9.73";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.73';
 const SUPPLY_ART_KEYS = Object.freeze({
  water: "supply_water",
  boost: "supply_boost",
@@ -131,7 +131,13 @@ function itemArtVisual(key, size, { facing = "default", keepsake = false } = {})
  const spec = facing === "right" && base?.rightFile ? {...base, file: base.rightFile, bounds: base.rightBounds} : base;
  if (!spec?.file) return null;
  const box = artBounds(spec);
- const scale = Math.min(size / box.w, size / box.h);
+ const fitScale = Math.min(size / box.w, size / box.h);
+ const isPixelNativeSurface = /^(?:supply|premium)_/.test(key);
+ const scale = isPixelNativeSurface && fitScale >= 1 ? Math.floor(fitScale) : fitScale;
+ const centeredLeft = (size - box.w * scale) / 2 - box.x * scale;
+ const centeredTop = (size - box.h * scale) / 2 - box.y * scale;
+ const left = isPixelNativeSurface ? Math.round(centeredLeft) : centeredLeft;
+ const top = isPixelNativeSurface ? Math.round(centeredTop) : centeredTop;
  const isRight = facing === "right";
  const mirror = isRight && !base.rightFile;
  const visual = el("span", {
@@ -142,7 +148,7 @@ function itemArtVisual(key, size, { facing = "default", keepsake = false } = {})
   style: `width:${size}px;height:${size}px;display:inline-flex;position:relative;align-items:center;justify-content:center;overflow:hidden;image-rendering:pixelated`,
  });
  const image = el("img", { src: spec.file, alt: "", class: `item-art-img${isRight ? " is-flipped" : ""}` });
- image.style.cssText = `position:absolute;width:${box.width * scale}px;height:${box.height * scale}px;left:${(size - box.w * scale) / 2 - box.x * scale}px;top:${(size - box.h * scale) / 2 - box.y * scale}px;max-width:none;image-rendering:pixelated;pointer-events:none;transform:${mirror ? "scaleX(-1)" : "none"};transform-origin:center`;
+ image.style.cssText = `position:absolute;width:${box.width * scale}px;height:${box.height * scale}px;left:${left}px;top:${top}px;max-width:none;image-rendering:pixelated;pointer-events:none;transform:${mirror ? "scaleX(-1)" : "none"};transform-origin:center`;
  visual.append(image);
  if (keepsake) {
   visual.setAttribute("data-presentation", "trophy-pedestal");

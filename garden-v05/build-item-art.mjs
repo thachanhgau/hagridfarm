@@ -62,13 +62,15 @@ async function emit(id, raw, source) {
  const {data, info: {width, height}} = raw;
  const b = bounds(data, width, height);
  const decor = id.startsWith('decoration-');
+ const supply = /^(supply_|premium_)/.test(id);
  const pen = /^pen_\d+$/.test(id);
  const largePen = /^pen_[4-6]$/.test(id);
  const frameWidth = pen ? (largePen ? 160 : 128) : decor ? 96 : 64;
  const frameHeight = pen ? (largePen ? 144 : 112) : decor ? 112 : 64;
  const pivotX = frameWidth / 2, pivotY = pen ? frameHeight - 16 : decor ? 96 : 56;
- const maxWidth = pen ? (largePen ? 144 : 112) : decor ? 84 : 52;
- const maxHeight = pen ? (largePen ? 112 : 88) : decor ? 80 : 48;
+ // Supply icons must fit the inventory's 40px slot at native 1x as well as the shop.
+ const maxWidth = supply ? 40 : pen ? (largePen ? 144 : 112) : decor ? 84 : 52;
+ const maxHeight = supply ? 40 : pen ? (largePen ? 112 : 88) : decor ? 80 : 48;
  const scale = Math.min(maxWidth / b.w, maxHeight / b.h, 1);
  const w = Math.max(1, Math.round(b.w * scale)), h = Math.max(1, Math.round(b.h * scale));
  const left = Math.floor((frameWidth - w) / 2), top = pivotY - h;

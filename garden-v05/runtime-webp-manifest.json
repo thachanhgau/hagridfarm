@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "486ca8e7a439",
+  "revision": "4083900d2179",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -4233,60 +4233,60 @@
       "file": "runtime-webp/native-items/premium_felix_felicis.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 974,
-      "bytes": 534,
-      "sourceSha256": "a4daecd6f2b5e934e33a00829077a11774a861466be0b91d3c8c7e6214249b2c",
-      "sha256": "2130f4e9a12e09a1ced70021ca9c802c1165008629158eef8ffff1a42ada626d"
+      "sourceBytes": 673,
+      "bytes": 438,
+      "sourceSha256": "533740f0271ef515c06cf38f4d09e70f3ec1d26f802c5053ca1343533d1c11ee",
+      "sha256": "58a7d6f679ee9947a7fae056b0ca928b095e36160d3fdf95d7c71a96d055b441"
     },
     {
       "source": "native-items/premium_pen_feast.png",
       "file": "runtime-webp/native-items/premium_pen_feast.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 945,
-      "bytes": 558,
-      "sourceSha256": "c1a67bc3062e54e0c1ba181656235a0ef0713fd9f8ae8a3882be1a0eb96810c1",
-      "sha256": "e846b474d1de0b9efabbadf2da47c23b62e3d35a12d7e5e37b3141ebed2911df"
+      "sourceBytes": 708,
+      "bytes": 436,
+      "sourceSha256": "5f4e3dc8c9c914322833b16fb0b10e1d961c2483a89c4d2c718372b5ecf1232e",
+      "sha256": "3665d70c3edfc264da3b5d811ae0281d36a305014912135a4c8cb551e0505b7f"
     },
     {
       "source": "native-items/premium_prime_meal.png",
       "file": "runtime-webp/native-items/premium_prime_meal.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 1472,
-      "bytes": 896,
-      "sourceSha256": "11a70905d0deb18284fa218c49ef844a5da3d83750dca73cdf753198ee6bf0c5",
-      "sha256": "3071eddbc4e80855fd40bed9eb9487fee7140f2779dcc9edc2009acd1873bf93"
+      "sourceBytes": 663,
+      "bytes": 448,
+      "sourceSha256": "93fc73bb77e2a63ff00158fe3a411ef7139474e58228c1f052274087bc5c652d",
+      "sha256": "0e2d8ee4e7074dc8510cfe0d87c433734e16aea5d3f3b1192e3ba5ab06aaebf8"
     },
     {
       "source": "native-items/premium_skele_gro.png",
       "file": "runtime-webp/native-items/premium_skele_gro.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 1089,
-      "bytes": 602,
-      "sourceSha256": "2c82854c71c7ba4f0b6edd3a3758967c485cc2afe04c060c908be653da408919",
-      "sha256": "cba1cf426a93ffd39c31011849dec84156007c951abd796fc3a10ca31fe087d4"
+      "sourceBytes": 553,
+      "bytes": 346,
+      "sourceSha256": "b2dd2aa0278cfecb2c75ca088467a37c64d28d91b4a214d777d6eee4494d1a6a",
+      "sha256": "c513795e2d9f895d5cc9de4ad95adae1cff5948173e240f624662eb8262f791a"
     },
     {
       "source": "native-items/premium_spring_rain.png",
       "file": "runtime-webp/native-items/premium_spring_rain.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 1265,
-      "bytes": 810,
-      "sourceSha256": "3dd11ab33328e3f5e9ae716daf52b29f0c81d8171e4261ee956a7400956f662a",
-      "sha256": "ccdadf4729af47c2a14c88870dda4f4e6721cab29573cc1b1d77f8615b246fd0"
+      "sourceBytes": 737,
+      "bytes": 458,
+      "sourceSha256": "afb4ddb0eee9dd48cdd9f6c8ddc0fabb3a8f4c43a08d06a26805974506e10df5",
+      "sha256": "47e4800a99d05eec2f9aab422e41df37bb725b5b1377fb503fec31089d18f6ab"
     },
     {
       "source": "native-items/premium_warm_nest.png",
       "file": "runtime-webp/native-items/premium_warm_nest.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 1399,
-      "bytes": 852,
-      "sourceSha256": "f1c347ee05a0c1f05df4b5a1de001b06aa43bf12046fccd62c949b6eba580955",
-      "sha256": "2259049234819dd9a1f46ddb5ab9909d66540aac3b3fad68dce7144d88c5165d"
+      "sourceBytes": 744,
+      "bytes": 500,
+      "sourceSha256": "583735bd76acde7bfbeef93a261327e8d84f292420573ac8110d015b0f55a6a0",
+      "sha256": "3a4d2c5e7b772afe10f6ec4b1bb71d06fc381e6adbc1a1232b822682297f9bbf"
     },
     {
       "source": "native-items/produce_bowtruckle.png",
@@ -4703,30 +4703,30 @@
       "file": "runtime-webp/native-items/supply_boost.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 1375,
-      "bytes": 820,
-      "sourceSha256": "b6cdb4389e56f7e17e93e0bd6d73a73a9f9c689a6daad113e07d719c50851c26",
-      "sha256": "7aa171302e4ceff54c94db6809c44e3c0715521bab8e7736316a76e3cc00b1c3"
+      "sourceBytes": 686,
+      "bytes": 418,
+      "sourceSha256": "a42c8678eab9411fc665d3e41f45145ff4f696f9f96f49b21028e257f06a8356",
+      "sha256": "d363e4fc18d5011dbf9287b124c0b717a4ddfa36849bf8745544103fb9d19b0b"
     },
     {
       "source": "native-items/supply_spring_water.png",
       "file": "runtime-webp/native-items/supply_spring_water.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 966,
-      "bytes": 550,
-      "sourceSha256": "eaf229308b1c65efed2bf49ce1d0ef3d3d07771719670d4782c4d326d9df6437",
-      "sha256": "1db7699e82b422d270157c55e70379b8701e81a4487a10893348de961d576e47"
+      "sourceBytes": 603,
+      "bytes": 404,
+      "sourceSha256": "c83008c6d695f103d846a9d10c09352e7da9c406e26b0f9b93ee7ac876687428",
+      "sha256": "3cbc11252e82bbb8aa9dc54867aa47a348860e8a61edf660a710bb3fe401d886"
     },
     {
       "source": "native-items/supply_water.png",
       "file": "runtime-webp/native-items/supply_water.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 1535,
-      "bytes": 936,
-      "sourceSha256": "fdadc940af7c7a588d25a5f34458a84c75790a760b1ad53b081c1a4bbb7bff24",
-      "sha256": "e41d233d36998cded30cf5239713890acf57c3d5a2d80c17ab6fa4d65bc9d1b0"
+      "sourceBytes": 792,
+      "bytes": 450,
+      "sourceSha256": "5989ffd78eb8fe7923f11b1a15197c73acb79dab0751296441a9b652fa931d6b",
+      "sha256": "7c01c8ece61633aa8ebf3b168dc8252ccb87b86739e6c3be3bb68ea3e269e9e5"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_f0.png",
@@ -9204,9 +9204,9 @@
   "totals": {
     "converted": 914,
     "existingWebp": 8,
-    "originalBytes": 4228782,
-    "webpBytes": 2982662,
-    "savedBytes": 1246120,
-    "savedPercent": 29.47
+    "originalBytes": 4223921,
+    "webpBytes": 2980002,
+    "savedBytes": 1243919,
+    "savedPercent": 29.45
   }
 }

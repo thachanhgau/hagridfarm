@@ -19,7 +19,7 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]){
  const browser=await type.launch(name==='Chrome'?{channel:'chrome',headless:true}:{headless:true});
  const report={browser:name,packaged:Boolean(packaged),network:'all requests intercepted; in-memory fixture',errors:[],viewports:[]};
  try{
-  const context=await browser.newContext({viewport:{width:1280,height:800},reducedMotion:'reduce'});
+  const context=await browser.newContext({viewport:{width:1280,height:800},deviceScaleFactor:2,reducedMotion:'reduce'});
   await context.route('**/*',async route=>{
    const url=new URL(route.request().url());
    if(url.protocol==='blob:'||url.protocol==='data:')return route.continue();
@@ -53,11 +53,32 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]){
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
    assert.deepEqual(await page.evaluate(()=>window.__HAGRID_GARDEN_QA__.getWorldSnapshot().missing),[]);
    await page.locator('#suppliesButton').click();await page.locator('[data-kind="premium"]').click();await images();
-   const art=await page.locator('[data-store-item] .gp-tile-art').evaluateAll(tiles=>tiles.map(tile=>({key:tile.querySelector('[data-art-key]')?.dataset.artKey,svg:tile.querySelectorAll('svg').length,missing:tile.querySelectorAll('.is-art-missing').length,src:tile.querySelector('img')?.getAttribute('src')})));
+   const art=await page.locator('[data-store-item] .gp-tile-art').evaluateAll(tiles=>tiles.map(tile=>{
+    const visual=tile.querySelector('.item-art-visual[data-art-key]'),image=tile.querySelector('.item-art-img'),style=image?getComputedStyle(image):null;
+    return {key:visual?.dataset.artKey,svg:tile.querySelectorAll('svg').length,missing:tile.querySelectorAll('.is-art-missing').length,src:image?.getAttribute('src'),scale:image?.naturalWidth?parseFloat(style.width)/image.naturalWidth:NaN,left:image?parseFloat(style.left):NaN,top:image?parseFloat(style.top):NaN};
+   }));
    assert.equal(art.length,12);assert.equal(new Set(art.map(item=>item.key)).size,7);
    assert.ok(art.every(item=>!item.svg&&!item.missing&&item.src?.includes('runtime-webp/native-items/')));
-   report.viewports.push({...viewport,premiumCards:art.length,nativeDesigns:7,missing:0});
-   if(viewport.width===1280&&name==='Chrome')await sharp(await page.screenshot()).resize({width:640}).png().toFile(path.join(evidence,'hagrid-premium-shop.png'));
+   assert.ok(art.every(item=>Number.isInteger(item.scale)&&Number.isInteger(item.left)&&Number.isInteger(item.top)),`non-pixel-aligned store art: ${JSON.stringify(art)}`);
+   report.viewports.push({...viewport,premiumCards:art.length,nativeDesigns:7,missing:0,pixelAligned:true});
+  }
+  await page.setViewportSize({width:1280,height:800});
+  await page.goto(origin+'/qa-v19/ui-fixture.html?wallet=emulator&qa=1&level=20&scenario=habitats&view=overview&simulate=1');
+  await page.waitForFunction(()=>window.__HAGRID_GARDEN_QA__?.getSnapshot().loaded&&window.__HAGRID_GARDEN_QA__?.getSnapshot().walletReady);
+  await page.locator('#suppliesButton').click();await page.locator('[data-kind="premium"]').click();await images();
+  const lockedPremium=await page.locator('.store-card.is-locked').evaluateAll(cards=>cards.map(card=>{
+   const art=card.querySelector('.gp-tile-art>:not(.lock-badge)'),style=art?getComputedStyle(art):null;
+   return {id:card.dataset.storeItem,filter:style?.filter,hasPurchaseAction:Boolean(card.querySelector('.store-action-row .store-buy-btn')),hasLockLabel:Boolean(card.querySelector('.store-action-row .lock-badge'))};
+  }));
+  assert.ok(lockedPremium.length>0,'level 20 should show locked premium cards');
+  assert.ok(lockedPremium.every(item=>item.filter==='none'&&!item.hasPurchaseAction&&item.hasLockLabel),`locked premium state changed: ${JSON.stringify(lockedPremium)}`);
+  const visibleRows=await page.locator('.store-card').evaluateAll(cards=>new Set(cards.map(card=>Math.round(card.getBoundingClientRect().top)).filter(top=>top>=0&&top<innerHeight)).size);
+  report.level20LockedPremium={cards:lockedPremium.length,artFilter:'none',purchaseActionsUnavailable:true,visibleRows};
+  if(name==='Chrome'){
+   // Half the physical DPR2 screenshot is exactly the CSS display size.
+   const crop=await page.locator('.store-popover').screenshot();
+   const metadata=await sharp(crop).metadata();
+   await sharp(crop).resize({width:Math.floor(metadata.width*.5)}).png().toFile(path.join(evidence,'hagrid-premium-shop.png'));
   }
   if(packaged){
    await page.goto(origin+'/opaque-fixture.html');

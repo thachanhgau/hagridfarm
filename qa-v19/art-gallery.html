@@ -1,9 +1,9 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="../garden-v05/"><title>Hagrid Farm · Kiểm tra ảnh</title><link rel="stylesheet" href="wizard-ui.css?v=24.9.72"><style>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="../garden-v05/"><title>Hagrid Farm · Kiểm tra ảnh</title><link rel="stylesheet" href="wizard-ui.css?v=24.9.73"><style>
 body{margin:0;padding:20px;background:#142620;color:#f5d69a;font:14px/1.5 system-ui}header{display:flex;gap:16px;align-items:center;flex-wrap:wrap}h1{font-size:22px;margin:0}h2{font-size:18px;margin:24px 0 12px}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px}.card{margin:0;padding:12px;border:1px solid #735044;background:#231f2e;display:flex;align-items:center;flex-direction:column;gap:8px;min-width:0}.card figcaption{text-align:center;font-size:12px}.visual-slot{position:relative;display:flex;align-items:center;justify-content:center}.visual-slot img{image-rendering:pixelated}button{padding:10px 16px;min-height:44px;color:inherit;background:#24483f;border:1px solid #a57554;border-radius:8px}small{color:#d6d8bf}
 </style></head><body><header><h1>Hagrid Farm · Bộ ảnh mới</h1><button id="facing">Xem góc phải</button><small>Dữ liệu mẫu · không kết nối tài khoản</small></header><main id="gallery"></main>
-<script src="motion-data.js"></script><script src="level-assets.js?v=24.9.72"></script><script type="module">
-import {DB} from './balance-data.mjs?v=24.9.72';
-import {el,visualItemIcon,icon} from './ui-utils.mjs?v=24.9.72';
+<script src="motion-data.js"></script><script src="level-assets.js?v=24.9.73"></script><script type="module">
+import {DB} from './balance-data.mjs?v=24.9.73';
+import {el,visualItemIcon,icon} from './ui-utils.mjs?v=24.9.73';
 const items=new Map(window.FARM_MOTION.items.map(item=>[item.id,item]));let facing='default';
 const nativeRefresh=[['water','Nước tưới'],['boost','Nước phép'],['spring_water','Nước suối thần'],['spring_rain','Mưa suối thần'],['felix_felicis','Phúc Lạc Dược'],['prime_meal','Bữa ăn thượng hạng'],['pen_feast','Tiệc chuồng'],['skele_gro','Thuốc Mọc Xương'],['warm_nest_1','Ổ ấm · mẫu']];
 const plotRows=DB.expansions.filter(x=>x.kind==='plot').map(x=>[x.id,'Thửa '+x.id.slice(5)]);
