@@ -10,7 +10,7 @@ const labelOf = id => CROP[id]?.label || (id.startsWith('produce_') ? CREATURE[i
 const meter = (done,target) => el('div',{class:'gp-meter',role:'progressbar','aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(done)},[el('span',{style:`width:${Math.min(100,Math.round(done/Math.max(1,target)*100))}%`})]);
 const stars = tier => el('span',{class:'work-stars','aria-label':`Bậc ${tier}/3`,text:'★'.repeat(tier)+'☆'.repeat(3-tier)});
 
-export function createHagridWork({getSnapshot,deliver,items,notify}){
+export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
  let tab='orders',lastBoard=null,lastWeek=null;
  const body=el('div',{class:'work-body'}),tabs=el('div',{class:'panel-toolbar work-tabs',role:'group','aria-label':'Việc của bác Hagrid'});
  const dialog=el('dialog',{id:'hagridWork',class:'owl-letter work-letter','aria-labelledby':'workTitle'},[
@@ -37,10 +37,27 @@ export function createHagridWork({getSnapshot,deliver,items,notify}){
   })];
  }
 
+ // Khung Floo earned here (owner 23/10/2026): worn on Mạng Floo through the Hẻm Xéo frame slot.
+ function frames(snap,kind){
+  const view=snap.flooFrames;if(!view)return [];
+  const list=view.frames.filter(f=>f.kind===kind);
+  return [el('p',{class:'sheet-label',text:'Khung Floo'}),el('p',{class:'meta',text:'Đeo khung để hiện quanh tin nhắn trên Mạng Floo. Khung Hẻm Xéo đang hiện sẽ tạm dừng và giữ thời gian còn lại (bật lại trong Hẻm Xéo trong 7 ngày).'}),
+   el('div',{class:'work-frames'},list.map(f=>{
+    const worn=view.worn===f.key;
+    const action=!f.unlocked?el('span',{class:'gp-state',text:`${f.progress}/${f.need}`})
+     :iconButton(worn?'close':'check',worn?`Tháo ${f.label}`:`Đeo ${f.label}`,async()=>{const res=await setFrame(worn?null:f.key);if(res?.ok){notify(worn?'Đã tháo khung Floo.':`Đã đeo ${f.label} trên Mạng Floo.`);render();}},{text:worn?'Tháo':'Đeo',class:worn?'':'primary','data-garden-frame':f.key});
+    return el('div',{class:`work-frame${f.unlocked?'':' is-locked'}${worn?' is-worn':''}`},[
+     el('span',{class:'work-frame-swatch','data-frame':f.key,'aria-hidden':'true'}),
+     el('div',{class:'gp-hero-copy'},[el('strong',{text:f.label}),el('small',{text:f.rule})]),action,
+    ]);
+   }))];
+ }
  function mastery(snap){
   const view=snap.mastery;
   return [
    el('p',{class:'meta',text:`Gặt đủ ${view.tiers.map(num).join(' / ')} ô một loại cây để lên bậc ${view.titles.join(' · ')} (thưởng ${view.rewards.join(' / ')} Nước phép). Đã thạo ${view.mastered}/${view.total} loại.`}),
+   ...frames(snap,'mastery'),
+   el('p',{class:'sheet-label',text:'Từng loại cây'}),
    el('div',{class:'work-mastery-grid'},view.crops.map(row=>{
     const next=view.tiers[row.tier];
     return el('div',{class:`work-mastery-cell tier-${row.tier}`,title:`${labelOf(row.cropId)} · ${num(row.cells)} ô${row.tier?` · ${view.titles[row.tier-1]}`:''}`},[
@@ -66,6 +83,9 @@ export function createHagridWork({getSnapshot,deliver,items,notify}){
    lastBoard?el('ol',{class:'work-cup-board'},lastBoard.map(row=>el('li',{style:`--house:${HOUSE_COLORS[row.house]}`},[el('strong',{text:row.label}),meter(row.points,top),el('b',{text:num(row.points)})])))
     :el('p',{class:'meta',text:'Mở lại vườn để xem bảng điểm các Nhà.'}),
    champion?el('p',{class:'meta work-cup-champion',text:`🏆 Tuần trước: ${champion.label} dẫn đầu với ${num(champion.points)} điểm.`}):null,
+   view.lastResult?el('p',{class:'meta',text:view.lastResult.won?`🎖 Tuần ${view.lastResult.weekKey.slice(8)}/${view.lastResult.weekKey.slice(5,7)} con góp ${num(view.lastResult.points)} điểm cho Nhà vô địch: đã mở khung Cúp Nhà.`:`Tuần ${view.lastResult.weekKey.slice(8)}/${view.lastResult.weekKey.slice(5,7)}: Nhà con hạng ${view.lastResult.rank}, con góp ${num(view.lastResult.points)} điểm.`}):null,
+   el('p',{class:'meta',text:`Thưởng: Nhà đứng đầu tuần mở khung Floo Cúp Nhà vĩnh viễn cho mọi thành viên góp từ ${view.rewardMin} điểm (trao khi mở vườn tuần sau).`}),
+   ...frames(snap,'cup'),
   ].filter(Boolean);
  }
 

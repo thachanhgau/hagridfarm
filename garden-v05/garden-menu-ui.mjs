@@ -12,9 +12,9 @@ export function renderGardenMenu(ctx,actions){
  root.append(art);
  for(const [id,label,glyph] of [
   ['guide','Sổ tay','guide'],['tour','Thăm vườn','tour'],['profile','Hồ sơ','profile'],
-  ['events','Lễ hội','events'],['work','Việc bác Hagrid','work'],['settings','Cài đặt','settings'],
+  ['events','Lễ hội','events'],['work','Việc bác Hagrid','work'],['acp','ACP sale','settings'],['settings','Cài đặt','settings'],
  ]){
-  if(!actions[id])continue; // «Việc bác Hagrid» (level-500 P5) only with a wallet
+  if(!actions[id])continue; // «Việc bác Hagrid» only with a wallet; «ACP sale» only for KTV Gia Tinh
   const medal=el('span',{class:'garden-menu-medal','aria-hidden':'true'});
   medal.append(navIcon(glyph));
   const b=button('',actions[id],{class:'garden-menu-node','data-menu':id,

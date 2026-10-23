@@ -84,7 +84,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   achievements:{claimedIds:[]},
   tutorial:{grownAt:null,guide:[]},
   premium:{felix:null,nests:[]},
-  mastery:fresh?{}:{pumpkin:120,daisy:460,strawberry:1350},cup:{weekKey:'',points:0},
+  mastery:fresh?{}:{pumpkin:120,daisy:460,strawberry:1350,oats:95,carrot:200,lettuce:91},cup:{weekKey:'',points:0},
  };
  const wallet={spendable,balance:spendable-bankBalance,bankBalance};
  const dailies=new Map(),ops=new Map(),ledger=[];
@@ -170,7 +170,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    festival:{active,next:{...view(status.next),daysUntil:status.next.daysUntil},today:{farm:d.farm,farmCap:FESTIVAL_FARM_POINTS_PER_DAY,free:d.freeToday,freeCap:FESTIVAL_FREE_POINTS_PER_DAY},pending},
    bonding:bondingView(d.dayKey),achievements:achievementsView(),
    // Server garden-retention-core views (QA approximation: fixed board, orders drawn per day from the unlocked crops).
-   ...retentionViews(d),
+   ...retentionViews(d),flooFrames:{frames:frameViews(),worn:wornFrame},saleAdmin:true,
    serverNow:now(),profile:{username:"Xem thử · không lưu"},
    ...(receipt?{receipt}:{}),
   });
@@ -335,6 +335,23 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    const xp=Math.floor(Object.entries(items).reduce((t,[id,n])=>t+n*E.CROP[id].harvestXP/(E.CROP[id].yieldPerCell||1),0));return {id:`order-${d.dayKey}-${i+1}`,items,xp,boost:1,cup:10,delivered:false};});
   return d.orders;
  }
+ // Server garden-floo-frame / garden-sale-admin (QA approximation: frames from mastery, cup wins Ravenclaw ×1).
+ let wornFrame=null,salesConfig={revision:0,programs:{'golden-hour':true,'creature-weekend':true,flash:true,'festival-end':true},sales:[]};
+ function frameViews(){
+  const m=garden.mastery||{},have=t=>Object.values(m).filter(n=>n>=TIERS[t-1]).length;
+  return [[1,'Tập sự',1,5],[2,'Thạo nghề',2,10],[3,'Bậc thầy',3,16],[4,'Đại sư',3,E.DB.crops.length]].map(([n,label,t,need])=>({key:`hagrid-mastery-${n}`,label:`Khung ${label} vườn Hagrid`,kind:'mastery',unlocked:have(t)>=need,progress:Math.min(have(t),need),need,rule:`${need} loại cây đạt bậc ${t} (${TIERS[t-1]} ô)`}))
+   .concat(['gryffindor','hufflepuff','ravenclaw','slytherin'].map(h=>({key:`hagrid-cup-${h}`,label:`Khung Cúp Nhà ${h[0].toUpperCase()+h.slice(1)}`,kind:'cup',house:h,unlocked:h==='ravenclaw',progress:h==='ravenclaw'?1:0,need:1,rule:'Nhà thắng Cúp Nhà một tuần, con góp từ 20 điểm'})));
+ }
+ function setFrame(c){const f=frameViews().find(x=>x.key===c.frameKey);if(c.frameKey!==null&&!f?.unlocked)fail('frame-locked','Con chưa đạt khung này.');wornFrame=c.frameKey;return clone({ok:true,worn:wornFrame,frames:frameViews()});}
+ function sales(c){
+  const view=()=>clone({config:salesConfig,percentMax:40,scopes:['all','crop','creature','festival','items'],items:catalog.filter(i=>i.kind==='premium'||i.kind==='spring'||i.kind==='nest').map(i=>({id:i.id,label:i.label,price:i.price})),
+   programs:[['golden-hour','Giờ vàng 20:00–22:00 · −20% vật phẩm cây'],['creature-weekend','Cuối tuần sinh vật · −25% vật phẩm sinh vật và Ổ ấm'],['flash','Flash 30 phút · 1–2 lần/tuần · −30% Mưa suối thần, Tiệc chuồng'],['festival-end','Ba ngày cuối lễ hội · −25% đồ lễ hội']].map(([id,label])=>({id,label,on:salesConfig.programs[id]})),
+   flash:[{startsAt:Date.parse('2026-10-24T19:30:00+07:00'),endsAt:Date.parse('2026-10-24T20:00:00+07:00')}],serverNow:now()});
+  if(c.mode==='get')return view();
+  if(c.expectedRevision!==salesConfig.revision)fail('sales-revision','Cấu hình sale vừa đổi ở nơi khác; hãy tải lại.');
+  if(c.sales.some(x=>!(x.percent>=1&&x.percent<=40)))fail('invalid-sales','Mức giảm 1–40%.');
+  salesConfig={revision:salesConfig.revision+1,programs:{...c.programs},sales:clone(c.sales)};return {ok:true,...view()};
+ }
  function retentionViews(d){
   const p=garden.progression,m=garden.mastery||{},tier=n=>TIERS.filter(t=>n>=t).length,house=p.level>=20?"hufflepuff":null;
   return {
@@ -469,6 +486,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(name==="getHagridGarden")return response();
    if(name==="performHagridGardenAction")return act(clone(data));
    if(name==="buyHagridGardenSupplies")return buy(clone(data));
+   if(name==="setHagridFlooFrame")return setFrame(clone(data));
+   if(name==="manageHagridGardenSales")return sales(clone(data));
    fail("unknown-callable","Không có lệnh này.");
   },
   ledger,

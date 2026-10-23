@@ -610,7 +610,7 @@ export function createPanels(ctx){
   menu(){
    body.append(renderGardenMenu(ctx,{
     guide:()=>show("guide"),tour:()=>show("tour"),profile:()=>show("profile"),
-    events:()=>show("events"),settings:()=>show("settings"),work:ctx.openHagridWork||null,
+    events:()=>show("events"),settings:()=>show("settings"),work:ctx.openHagridWork||null,acp:ctx.canSaleAcp?.()?ctx.openSaleAcp:null,
    }));
   }
  };
