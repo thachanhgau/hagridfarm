@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
 import {DB} from './progression-engine.mjs?v=24.9.65';
-import {ITEM_ART} from './item-art.mjs?v=24.9.71';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.71';
+import {ITEM_ART} from './item-art.mjs?v=24.9.72';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.72';
 
 const decorationIds = DB.decorations.map(({id}) => id);
 const rightRecord = (id) => ITEM_ART[`${id}_right`];

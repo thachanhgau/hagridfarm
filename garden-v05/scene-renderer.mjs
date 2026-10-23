@@ -1,22 +1,22 @@
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.71';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.71';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.71';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.71';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.71';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.71';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.71';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.71';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.71';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.71';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.71';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.71';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.71';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.71';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.71';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.71';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.71';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.71';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.71';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.72';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.72';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.72';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.72';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.72';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.72';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.72';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.72';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.72';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.72';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.72';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.72';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.72';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.72';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.72';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.72';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.72';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite,produceArt,produceFiles} from './earned-decor-sprites.mjs?v=24.9.72';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.72';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -28,12 +28,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.71';
+} from './scene-animation.mjs?v=24.9.72';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.71';
+} from './forest-surround.mjs?v=24.9.72';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;

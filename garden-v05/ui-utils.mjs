@@ -1,7 +1,26 @@
-import { ITEM_ART } from "./item-art.mjs?v=24.9.71";
-import {saleTotal} from "./premium-products.mjs?v=24.9.71";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.71';
-const PREMIUM_ART = new Set(["spring_rain", "felix_felicis", "prime_meal", "pen_feast", "skele_gro", "warm_nest"]);
+import { ITEM_ART } from "./item-art.mjs?v=24.9.72";
+import {saleTotal} from "./premium-products.mjs?v=24.9.72";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.72';
+const SUPPLY_ART_KEYS = Object.freeze({
+ water: "supply_water",
+ boost: "supply_boost",
+ spring_water: "supply_spring_water",
+});
+const PREMIUM_ART_KEYS = Object.freeze({
+ spring_rain: "premium_spring_rain",
+ felix_felicis: "premium_felix_felicis",
+ prime_meal: "premium_prime_meal",
+ pen_feast: "premium_pen_feast",
+ skele_gro: "premium_skele_gro",
+ warm_nest: "premium_warm_nest",
+});
+const CANONICAL_ART_KEYS = Object.freeze({
+ ...Object.fromEntries(Object.values(SUPPLY_ART_KEYS).map(key => [key, key])),
+ ...Object.fromEntries(Object.values(PREMIUM_ART_KEYS).map(key => [key, key])),
+ expansion_plot: "expansion_plot",
+ reward_medal: "reward_medal",
+ reward_trophy: "reward_trophy",
+});
 
 export const $=id=>document.getElementById(id);
 export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else e.setAttribute(k,String(tag==='img'&&k==='src'?runtimeImageUrl(v):v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}
@@ -48,113 +67,6 @@ export const FEED_CREATURE_MAP = Object.freeze({
  dragon_feed: "dragon",
 });
 
-const SVG_ART = Object.freeze({
- water: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <defs>
-   <linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b7dee0"/><stop offset="100%" stop-color="#687486"/></linearGradient>
-   <linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5d69a"/><stop offset="100%" stop-color="#a57554"/></linearGradient>
-  </defs>
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#70a8b6" stroke-width="1.5"/>
-  <path d="M15 22h14l2 13H13z" fill="url(#br)" stroke="#e8f0ed" stroke-width="1.2"/>
-  <path d="M17 22v-5c0-3 10-3 10 0v5" fill="none" stroke="#f5d69a" stroke-width="2.2"/>
-  <path d="M29 25l8-6 2 2-9 8" fill="url(#br)" stroke="#e8f0ed" stroke-width="1"/>
-  <path d="M39 16c2 3 3 5 0 7-3-2-2-4 0-7z" fill="url(#wg)"/>
-  <circle cx="21" cy="29" r="3.2" fill="url(#wg)"/>
- </svg>`,
- boost: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <defs>
-   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b7dee0"/><stop offset="100%" stop-color="#6961a6"/></linearGradient>
-  </defs>
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b378ff" stroke-width="1.5"/>
-  <rect x="20" y="9" width="8" height="4" rx="1" fill="#e7ae73" stroke="#f5d69a" stroke-width="1"/>
-  <path d="M19 13h10v4l6 9v9a4 4 0 0 1-4 4H17a4 4 0 0 1-4-4v-9l6-9z" fill="#24483f" stroke="#f5d69a" stroke-width="1.5"/>
-  <path d="M15 26h18v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 15 34z" fill="url(#bg)"/>
-  <path d="M24 19l2 4 4 .6-3 3 .7 4.2-3.7-2-3.7 2 .7-4.2-3-3 4-.6z" fill="#f5d69a"/>
- </svg>`,
- spring_water: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#70a8b6" stroke-width="1.5"/>
-  <path d="M11 29h26v7H11z" fill="#735044" stroke="#4a3042" stroke-width="1.5"/>
-  <path d="M14 29c2-7 6-11 10-11s8 4 10 11" fill="#70a8b6" stroke="#b7dee0" stroke-width="1.5"/>
-  <path d="M24 8c-3 4-3 6 0 8 3-2 3-4 0-8zM13 15c-2 3-2 5 0 6 2-1 2-3 0-6zM35 13c-2 3-2 5 0 6 2-1 2-3 0-6z" fill="#b7dee0" stroke="#70a8b6" stroke-width="1"/>
-  <path d="M17 33h14" stroke="#f5d69a" stroke-width="2"/>
- </svg>`,
- // Level-500 P4 premium items (roadmap §10.2), same 48-unit badge and palette as Nước phép / Nước suối thần.
- spring_rain: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#70a8b6" stroke-width="1.5"/>
-  <path d="M10 37h28v3H10z" fill="#735044"/>
-  <path d="M12 37c1-3 3-4 4-4M20 37c1-3 3-4 4-4M28 37c1-3 3-4 4-4" stroke="#b0bd67" stroke-width="2" fill="none"/>
-  <path d="M14 22a6 6 0 0 1 6-7 8 8 0 0 1 14 2 5 5 0 0 1 1 10H16a5 5 0 0 1-2-5z" fill="#b7dee0" stroke="#e8f0ed" stroke-width="1.2"/>
-  <path d="M17 29l-2 4M24 29l-2 4M31 29l-2 4" stroke="#70a8b6" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M33 12l1 2 2 .4-1.5 1.5.4 2-1.9-1-1.9 1 .4-2-1.5-1.5 2-.4z" fill="#f5d69a"/>
- </svg>`,
- felix_felicis: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#ffc36b" stroke-width="1.6"/>
-  <rect x="21" y="8" width="6" height="5" rx="1" fill="#a57554" stroke="#4a3042" stroke-width="1"/>
-  <path d="M21 13h6v6c5 2 8 6 8 10a11 11 0 0 1-22 0c0-4 3-8 8-10z" fill="#24483f" stroke="#f5d69a" stroke-width="1.5"/>
-  <path d="M15.5 28h17a8.5 8.5 0 0 1-17 0z" fill="#ffc36b"/>
-  <path d="M19 31c2 1 6 1 8-1" stroke="#f5d69a" stroke-width="1.4" fill="none"/>
-  <path d="M36 12l1.2 2.6 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4zM11 15l.8 1.6 1.7.3-1.2 1.2.3 1.7-1.6-.8-1.6.8.3-1.7-1.2-1.2 1.7-.3z" fill="#f5d69a"/>
- </svg>`,
- prime_meal: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
-  <path d="M10 26h28c0 7-6 12-14 12S10 33 10 26z" fill="#a57554" stroke="#4a3042" stroke-width="1.5"/>
-  <path d="M12 26c1-5 6-8 12-8s11 3 12 8z" fill="#b0bd67" stroke="#e8f0ed" stroke-width="1"/>
-  <circle cx="19" cy="22" r="2" fill="#e7ae73"/><circle cx="27" cy="21" r="2.2" fill="#ffc36b"/><circle cx="31" cy="24" r="1.6" fill="#e7ae73"/>
-  <path d="M24 6l2 4.2 4.6.6-3.3 3.2.8 4.6-4.1-2.2-4.1 2.2.8-4.6-3.3-3.2 4.6-.6z" fill="#f5d69a" stroke="#a57554" stroke-width=".8"/>
- </svg>`,
- pen_feast: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#ffc36b" stroke-width="1.6"/>
-  <path d="M8 27h32v4H8z" fill="#735044" stroke="#4a3042" stroke-width="1.2"/>
-  <path d="M11 31v6M37 31v6" stroke="#4a3042" stroke-width="2.5"/>
-  <path d="M10 27c0-4 3-6 6-6s6 2 6 6zM18 27c0-5 3-7 6-7s6 2 6 7zM26 27c0-4 3-6 6-6s6 2 6 6z" fill="#b0bd67" stroke="#e8f0ed" stroke-width="1"/>
-  <circle cx="16" cy="23" r="1.6" fill="#ffc36b"/><circle cx="24" cy="22" r="1.8" fill="#e7ae73"/><circle cx="32" cy="23" r="1.6" fill="#ffc36b"/>
-  <path d="M16 9l1.5 3 3.3.5-2.4 2.3.6 3.3-3-1.6-3 1.6.6-3.3-2.4-2.3 3.3-.5zM32 9l1.5 3 3.3.5-2.4 2.3.6 3.3-3-1.6-3 1.6.6-3.3-2.4-2.3 3.3-.5z" fill="#f5d69a"/>
- </svg>`,
- skele_gro: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b7dee0" stroke-width="1.5"/>
-  <rect x="20" y="8" width="8" height="4" rx="1" fill="#a57554" stroke="#4a3042" stroke-width="1"/>
-  <path d="M19 12h10v5l4 4v14a4 4 0 0 1-4 4H19a4 4 0 0 1-4-4V21l4-4z" fill="#24483f" stroke="#e8f0ed" stroke-width="1.5"/>
-  <path d="M17 26h14v9a2 2 0 0 1-2 2H19a2 2 0 0 1-2-2z" fill="#b0bd67"/>
-  <path d="M19.5 29.5a1.8 1.8 0 1 1 2.5-2.5l4-0a1.8 1.8 0 1 1 2.5 2.5 1.8 1.8 0 1 1-2.5 2.5h-4a1.8 1.8 0 1 1-2.5-2.5z" fill="#e8f0ed" stroke="#4a3042" stroke-width=".8"/>
- </svg>`,
- warm_nest: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#e7ae73" stroke-width="1.6"/>
-  <ellipse cx="24" cy="26" rx="14" ry="6" fill="#ffc36b" opacity=".35"/>
-  <path d="M9 27c2 8 9 11 15 11s13-3 15-11z" fill="#b49a66" stroke="#735044" stroke-width="1.5"/>
-  <path d="M11 30c5 2 10 2 13 0M24 31c4 2 9 2 13-1M14 34c4 1 8 1 11-1" stroke="#735044" stroke-width="1.2" fill="none"/>
-  <ellipse cx="20" cy="24" rx="4" ry="5" fill="#e8f0ed" stroke="#a6b1ae" stroke-width="1"/>
-  <ellipse cx="28" cy="25" rx="3.5" ry="4.5" fill="#f5d69a" stroke="#a57554" stroke-width="1"/>
-  <path d="M24 9c-2 3-2 5 0 6 2-1 2-3 0-6z" fill="#ffc36b"/>
- </svg>`,
- insects: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#b0bd67" stroke-width="1.5"/>
-  <rect x="17" y="10" width="14" height="4" rx="1.5" fill="#b49a66" stroke="#f5d69a" stroke-width="1"/>
-  <rect x="14" y="14" width="20" height="23" rx="4" fill="#24483f" stroke="#b7dee0" stroke-width="1.4"/>
-  <circle cx="21" cy="23" r="3" fill="#ffc36b"/>
-  <ellipse cx="19" cy="21" rx="2.5" ry="1.2" fill="#e8f0ed"/>
-  <circle cx="28" cy="29" r="2.5" fill="#ffc36b"/>
-  <path d="M16 34c4-4 12-4 16 0" stroke="#b0bd67" stroke-width="2" fill="none"/>
- </svg>`,
- fish: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#231f2e" stroke="#70a8b6" stroke-width="1.5"/>
-  <path d="M13 20h22l-2.5 16h-17z" fill="#41465c" stroke="#b7dee0" stroke-width="1.4"/>
-  <ellipse cx="24" cy="20" rx="11" ry="3.5" fill="#70a8b6" stroke="#b7dee0" stroke-width="1.2"/>
-  <path d="M18 28c4-4 9-4 13 0-4 4-9 4-13 0z" fill="#e8f0ed"/>
-  <polygon points="31,28 35,25 35,31" fill="#70a8b6"/>
-  <circle cx="21" cy="27.5" r="1" fill="#231f2e"/>
- </svg>`,
- medal: `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">
-  <circle cx="24" cy="24" r="20" fill="#142620" stroke="#ffc36b" stroke-width="1.6"/>
-  <polygon points="24,10 28,19 38,20 30.5,26.8 32.5,36.5 24,31.5 15.5,36.5 17.5,26.8 10,20 20,19" fill="#f5d69a" stroke="#a57554" stroke-width="1.2"/>
- </svg>`,
-});
-
-const KEEPSAKE_BADGE_SVG = `<svg viewBox="0 0 32 32" width="100%" height="100%" aria-hidden="true">
- <path d="M9 5h14l-2 8c-.5 2-2 3-5 3s-4.5-1-5-3z" fill="#f5d69a" stroke="#4a3042" stroke-width="1.5"/>
- <path d="M16 16v6M11 22h10M8 26h16v3H8z" fill="#a57554" stroke="#4a3042" stroke-width="1.5"/>
- <path d="M9 7H5c0 5 2 7 6 7M23 7h4c0 5-2 7-6 7" fill="none" stroke="#f5d69a" stroke-width="1.5"/>
-</svg>`;
-
 function artBounds(spec) {
  const bounds = spec?.bounds || {};
  const width = Math.max(1, Number(spec?.width) || 48);
@@ -169,9 +81,35 @@ function artBounds(spec) {
  };
 }
 
+function supplyArtKey(rawId, kind = "") {
+ const id = String(rawId || "");
+ if (id === "spring_water" || id === SUPPLY_ART_KEYS.spring_water) return SUPPLY_ART_KEYS.spring_water;
+ if (id === "water" || id === SUPPLY_ART_KEYS.water) return SUPPLY_ART_KEYS.water;
+ if (id === "boost" || id === "gentle_growth" || id === SUPPLY_ART_KEYS.boost) return SUPPLY_ART_KEYS.boost;
+ if (kind === "spring") return SUPPLY_ART_KEYS.spring_water;
+ if (kind === "water") return SUPPLY_ART_KEYS.water;
+ if (kind === "boost") return SUPPLY_ART_KEYS.boost;
+ return null;
+}
+
+function premiumArtKey(rawId) {
+ const id = String(rawId || "");
+ if (CANONICAL_ART_KEYS[id] && id.startsWith("premium_")) return id;
+ if (PREMIUM_ART_KEYS[id]) return PREMIUM_ART_KEYS[id];
+ if (id === "warm_nest" || /^warm_nest_\d+$/.test(id)) return PREMIUM_ART_KEYS.warm_nest;
+ return null;
+}
+
 /** Resolve the one canonical UI-art key for an item identity. */
 export function itemArtKey(id, { kind = "" } = {}) {
  const rawId = String(id || "");
+ const directKey = CANONICAL_ART_KEYS[rawId];
+ if (directKey) return directKey;
+ const supplyKey = supplyArtKey(rawId, kind);
+ if (supplyKey) return supplyKey;
+ const premiumKey = premiumArtKey(rawId);
+ if (premiumKey) return premiumKey;
+ if (/^plot_\d+$/.test(rawId)) return CANONICAL_ART_KEYS.expansion_plot;
  if (rawId.startsWith("recipe_") && ITEM_ART[rawId]) return rawId;
  if (rawId.startsWith("produce_") && ITEM_ART[rawId]) return rawId;
  if (rawId.startsWith("keepsake_")) {
@@ -208,53 +146,39 @@ function itemArtVisual(key, size, { facing = "default", keepsake = false } = {})
  visual.append(image);
  if (keepsake) {
   visual.setAttribute("data-presentation", "trophy-pedestal");
-  visual.append(el("span", {
+  const badge = el("span", {
    class: "keepsake-pedestal-badge",
+   "data-art-key": CANONICAL_ART_KEYS.reward_trophy,
    "aria-label": "Kỷ vật",
    style: `position:absolute;right:0;bottom:0;width:${Math.max(14, Math.round(size * .32))}px;height:${Math.max(14, Math.round(size * .32))}px;display:block;pointer-events:none`,
-   html: KEEPSAKE_BADGE_SVG,
-  }));
+  });
+  const badgeArt = itemArtVisual(CANONICAL_ART_KEYS.reward_trophy, Math.max(14, Math.round(size * .32)));
+  badge.append(badgeArt || artPlaceholder(Math.max(14, Math.round(size * .32)), "Ảnh cúp kỷ vật đang cập nhật"));
+  visual.append(badge);
  }
  return visual;
 }
 
-const BLUEPRINT_COLORS = Object.freeze(["#b0bd67", "#70a8b6", "#ed8a45", "#d6d8bf", "#ffc36b", "#b7dee0"]);
-
-/** Highlight the numbered expansion in the plot/pen progression, independent of moved buildings. */
-export function expansionBlueprintSvg(id) {
- const match = /^(plot|pen)_(\d+)$/.exec(String(id || ""));
- if (!match) return "";
- const [, kind, rawNumber] = match;
- const number = Number(rawNumber);
- const accent = BLUEPRINT_COLORS[(number - 1) % BLUEPRINT_COLORS.length];
- const dark = "#142620";
- const outline = "#4a3042";
- if (kind === "plot") {
-  const focus = number - 1;
-  const cells = Array.from({ length: 18 }, (_, index) => {
-   const x = 7 + (index % 6) * 6;
-   const y = 11 + Math.floor(index / 6) * 8;
-   const fill = index === focus ? accent : (index % 2 ? "#3f6a45" : "#735044");
-   return `<rect x="${x}" y="${y}" width="5" height="6" fill="${fill}" stroke="${outline}" stroke-width="1"/>`;
-  }).join("");
-  return `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="${dark}" stroke="${accent}" stroke-width="1.5"/><path d="M7 37h34" stroke="#a57554" stroke-width="3"/>${cells}<text x="24" y="43" text-anchor="middle" font-size="6" font-family="monospace" font-weight="700" fill="#f5d69a">THỬA ${number}</text></svg>`;
- }
- const fence = Array.from({ length: 6 }, (_, index) => {
-  const x = 11 + (index % 3) * 9, y = 15 + Math.floor(index / 3) * 11;
-  return `<rect x="${x}" y="${y}" width="8" height="9" fill="${index === number - 1 ? accent : "#735044"}" stroke="${outline}" stroke-width="1"/>`;
- }).join("");
- return `<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="${dark}" stroke="${accent}" stroke-width="1.5"/><path d="M8 15h32M11 12l13-6 13 6" fill="none" stroke="#d6d8bf" stroke-width="2"/>${fence}<path d="M8 36h32" stroke="#70a8b6" stroke-width="2"/><text x="24" y="43" text-anchor="middle" font-size="6" font-family="monospace" font-weight="700" fill="#f5d69a">CHUỒNG ${number}</text></svg>`;
+function artPlaceholder(size, label = "Ảnh đang cập nhật", className = "") {
+ const placeholder = el("span", {
+  class: `item-art-placeholder${className ? ` ${className}` : ""}`,
+  role: "img",
+  "aria-label": label,
+  style: `width:${size}px;height:${size}px;display:inline-flex;align-items:center;justify-content:center`,
+ });
+ placeholder.append(el("span", { class: "sr-only", text: label }), document.createTextNode("◇"));
+ return placeholder;
 }
 
-function expansionBlueprintIcon(id, size) {
- const svg = expansionBlueprintSvg(id);
- if (!svg) return null;
- return el("span", {
-  class: "expansion-blueprint-art",
-  "data-expansion-id": id,
-  style: `width:${size}px;height:${size}px;display:inline-flex;align-items:center;justify-content:center;image-rendering:pixelated`,
-  html: svg,
- });
+function appendNativeArt(slot, key, size, label = "Ảnh đang cập nhật") {
+ if (key) slot.setAttribute("data-art-key", key);
+ const visual = key ? itemArtVisual(key, size) : null;
+ if (visual) slot.append(visual);
+ else {
+  slot.classList.add("is-art-missing");
+  slot.append(artPlaceholder(size, label));
+ }
+ return visual;
 }
 
 export function earnedDecorIcon(decorId, { size = 48, facing = "default" } = {}) {
@@ -266,15 +190,6 @@ export function earnedDecorIcon(decorId, { size = 48, facing = "default" } = {})
  return visual;
 }
 
-export function svgArt(kind, size = 48) {
- const wrap = el("span", {
-  class: `visual-svg-art is-${kind}`,
-  style: `width:${size}px;height:${size}px;display:inline-flex;align-items:center;justify-content:center`,
-  html: SVG_ART[kind] || SVG_ART.medal,
- });
- return wrap;
-}
-
 export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = null, badge = "", facing = "default" } = {}) {
  const rawId = String(id || "");
  const isSeed = kind === "seed" || rawId.startsWith("seed_");
@@ -284,6 +199,14 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  const isProduce = rawId.startsWith("produce_") || isKeepsake || kind === "produce";
  const hasFoodIdentity = Boolean(feedCreature) || kind === "food";
  const artKey = itemArtKey(rawId, { kind });
+ const supplyKey = supplyArtKey(rawId, kind);
+ const premiumKey = premiumArtKey(rawId);
+ const isPremiumSurface = kind === "premium" || kind === "nest" || Boolean(premiumKey) || rawId.startsWith("premium_") || rawId.startsWith("warm_nest_");
+ const isCrafted = rawId === "insects" || rawId.startsWith("insects_") || rawId === "fish" || rawId.startsWith("fish_");
+ const craftedKey = isCrafted ? (artKey || (rawId.startsWith("fish") ? "recipe_fish" : "recipe_insects")) : null;
+ const isPlot = rawId === "expansion_plot" || /^plot_\d+$/.test(rawId);
+ const isPen = /^pen_\d+$/.test(rawId);
+ const isReward = rawId === "reward_medal" || rawId === "reward_trophy";
  const isRight = facing === "right";
 
  const slot = el("div", {
@@ -299,6 +222,36 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
    icon(items, cropId, 3, Math.round(size * 0.68)),
   ]);
   slot.append(packet);
+ } else if (supplyKey) {
+  slot.classList.add("is-supply");
+  if (supplyKey === SUPPLY_ART_KEYS.spring_water) slot.classList.add("is-spring");
+  appendNativeArt(slot, supplyKey, Math.round(size * 0.92), "Ảnh vật tư đang cập nhật");
+ } else if (isPremiumSurface) {
+  slot.classList.add("is-supply", "is-premium");
+  appendNativeArt(slot, premiumKey, Math.round(size * 0.92), "Ảnh sản phẩm cao cấp đang cập nhật");
+ } else if (isCrafted) {
+  slot.classList.add("is-crafted", "is-item-art", "is-recipe-art");
+  appendNativeArt(slot, craftedKey, Math.round(size * 0.92), "Ảnh công thức đang cập nhật");
+ } else if (isPlot) {
+  slot.classList.add("is-expansion", "is-plot-art");
+  const match = /^plot_(\d+)$/.exec(rawId);
+  if (match) {
+   const label = `Thửa ${Number(match[1])}`;
+   slot.setAttribute("data-expansion-id", rawId);
+   slot.setAttribute("aria-label", label);
+   slot.append(el("span", { class: "sr-only", text: label }));
+  }
+  appendNativeArt(slot, CANONICAL_ART_KEYS.expansion_plot, Math.round(size * 0.9), "Ảnh thửa đang cập nhật");
+ } else if (isPen) {
+  slot.classList.add("is-expansion", "is-pen-art");
+  slot.setAttribute("data-expansion-id", rawId);
+  const penLabel = `Chuồng ${rawId.slice("pen_".length)}`;
+  slot.setAttribute("aria-label", penLabel);
+  slot.append(el("span", { class: "sr-only", text: penLabel }));
+  appendNativeArt(slot, ITEM_ART[rawId]?.file ? rawId : null, Math.round(size * 0.9), "Ảnh chuồng đang cập nhật");
+ } else if (isReward) {
+  slot.classList.add("is-reward-art", rawId === "reward_medal" ? "is-medal" : "is-trophy");
+  appendNativeArt(slot, rawId, Math.round(size * 0.9), "Ảnh huy hiệu đang cập nhật");
  } else if (artKey) {
   slot.classList.add("is-item-art");
   if (hasFoodIdentity) slot.classList.add("is-feed");
@@ -308,24 +261,6 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
    ? earnedDecorIcon(artKey, { size: Math.round(size * 0.92), facing })
    : itemArtVisual(artKey, Math.round(size * 0.88), { facing, keepsake: isKeepsake });
   if (art) slot.append(art);
- } else if (rawId === "water" || kind === "water") {
-  slot.classList.add("is-supply");
-  slot.append(svgArt("water", Math.round(size * 0.92)));
- } else if (rawId === "spring_water" || kind === "spring") {
-  slot.classList.add("is-supply", "is-spring");
-  slot.append(svgArt("spring_water", Math.round(size * 0.92)));
- } else if (kind === "premium" || kind === "nest" || PREMIUM_ART.has(rawId)) {
-  slot.classList.add("is-supply", "is-premium");
-  slot.append(svgArt(rawId.startsWith("warm_nest") ? "warm_nest" : rawId, Math.round(size * 0.92)));
- } else if (rawId === "boost" || rawId === "gentle_growth" || kind === "boost") {
-  slot.classList.add("is-supply");
-  slot.append(svgArt("boost", Math.round(size * 0.92)));
- } else if (rawId === "insects" || rawId.startsWith("insects_")) {
-  slot.classList.add("is-crafted");
-  slot.append(svgArt("insects", Math.round(size * 0.92)));
- } else if (rawId === "fish" || rawId.startsWith("fish_")) {
-  slot.classList.add("is-crafted");
-  slot.append(svgArt("fish", Math.round(size * 0.92)));
  } else if (rawId.startsWith("decor_") || kind === "decoration") {
   slot.classList.add("is-decor");
   const asset = decorAssets?.get?.(rawId);
@@ -339,17 +274,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  } else if (hasFoodIdentity || isProduce) {
   // Food and produce must never silently fall back to the owning creature sprite.
   slot.classList.add(isProduce ? "is-produce" : "is-feed", "is-art-missing");
-  slot.append(svgArt("medal", Math.round(size * 0.9)));
- } else if (rawId.startsWith("pen_") && ITEM_ART[rawId]) {
-  slot.classList.add("is-expansion", "is-pen-art");
-  slot.setAttribute("data-expansion-id", rawId);
-  slot.append(itemArtVisual(rawId, Math.round(size * 0.9)));
- } else if (rawId.startsWith("plot_")) {
-  slot.classList.add("is-expansion");
-  slot.append(expansionBlueprintIcon(rawId, Math.round(size * 0.9)));
- } else if (rawId.startsWith("pen_")) {
-  slot.classList.add("is-expansion");
-  slot.append(expansionBlueprintIcon(rawId, Math.round(size * 0.9)));
+  appendNativeArt(slot, CANONICAL_ART_KEYS.reward_medal, Math.round(size * 0.9), "Ảnh huy hiệu đang cập nhật");
  } else if (items?.has?.(rawId)) {
   slot.classList.add("is-sprite");
   const sp = icon(items, rawId, 3, Math.round(size * 0.84));
@@ -357,7 +282,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   slot.append(sp);
  } else {
   slot.classList.add("is-medal");
-  slot.append(svgArt("medal", Math.round(size * 0.9)));
+  appendNativeArt(slot, CANONICAL_ART_KEYS.reward_medal, Math.round(size * 0.9), "Ảnh huy hiệu đang cập nhật");
  }
 
  if (badge) {

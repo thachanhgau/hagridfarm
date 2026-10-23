@@ -1,8 +1,8 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.71";
-import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.71";
-import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.71";
-import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=24.9.71";
+import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.72";
+import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.72";
+import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.72";
+import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=24.9.72";
 export const CATALOG_VERSION="garden-2026-10-23-level500-p4";
 export const STORE_CATALOG=Object.freeze([
   {

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "4f918a40fa45",
+  "revision": "486ca8e7a439",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -4159,6 +4159,16 @@
       "sha256": "fa8e055233faaf478a47290ab8401931bb649e41f32135c485c40b5f2140c5f6"
     },
     {
+      "source": "native-items/expansion_plot.png",
+      "file": "runtime-webp/native-items/expansion_plot.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1254,
+      "bytes": 756,
+      "sourceSha256": "ab993dd0042eeea57a35caf96e3dd1bf4020e92feab0a435de03dff5e9b6f59d",
+      "sha256": "8706184601bd7c0f4dd81b050a618c6eaea8dc73e38e369f3fb5b431f347c873"
+    },
+    {
       "source": "native-items/pen_1.png",
       "file": "runtime-webp/native-items/pen_1.webp",
       "width": 128,
@@ -4217,6 +4227,66 @@
       "bytes": 1356,
       "sourceSha256": "04c2310bf10ed43e489dfd4a836c6f56ff71cd89cdc25045ff5f649138c34327",
       "sha256": "bc6c247da6ff9fb3b3b7ba0851e262ce9d4aad0cbb878127fd0186687fd06596"
+    },
+    {
+      "source": "native-items/premium_felix_felicis.png",
+      "file": "runtime-webp/native-items/premium_felix_felicis.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 974,
+      "bytes": 534,
+      "sourceSha256": "a4daecd6f2b5e934e33a00829077a11774a861466be0b91d3c8c7e6214249b2c",
+      "sha256": "2130f4e9a12e09a1ced70021ca9c802c1165008629158eef8ffff1a42ada626d"
+    },
+    {
+      "source": "native-items/premium_pen_feast.png",
+      "file": "runtime-webp/native-items/premium_pen_feast.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 945,
+      "bytes": 558,
+      "sourceSha256": "c1a67bc3062e54e0c1ba181656235a0ef0713fd9f8ae8a3882be1a0eb96810c1",
+      "sha256": "e846b474d1de0b9efabbadf2da47c23b62e3d35a12d7e5e37b3141ebed2911df"
+    },
+    {
+      "source": "native-items/premium_prime_meal.png",
+      "file": "runtime-webp/native-items/premium_prime_meal.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1472,
+      "bytes": 896,
+      "sourceSha256": "11a70905d0deb18284fa218c49ef844a5da3d83750dca73cdf753198ee6bf0c5",
+      "sha256": "3071eddbc4e80855fd40bed9eb9487fee7140f2779dcc9edc2009acd1873bf93"
+    },
+    {
+      "source": "native-items/premium_skele_gro.png",
+      "file": "runtime-webp/native-items/premium_skele_gro.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1089,
+      "bytes": 602,
+      "sourceSha256": "2c82854c71c7ba4f0b6edd3a3758967c485cc2afe04c060c908be653da408919",
+      "sha256": "cba1cf426a93ffd39c31011849dec84156007c951abd796fc3a10ca31fe087d4"
+    },
+    {
+      "source": "native-items/premium_spring_rain.png",
+      "file": "runtime-webp/native-items/premium_spring_rain.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1265,
+      "bytes": 810,
+      "sourceSha256": "3dd11ab33328e3f5e9ae716daf52b29f0c81d8171e4261ee956a7400956f662a",
+      "sha256": "ccdadf4729af47c2a14c88870dda4f4e6721cab29573cc1b1d77f8615b246fd0"
+    },
+    {
+      "source": "native-items/premium_warm_nest.png",
+      "file": "runtime-webp/native-items/premium_warm_nest.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1399,
+      "bytes": 852,
+      "sourceSha256": "f1c347ee05a0c1f05df4b5a1de001b06aa43bf12046fccd62c949b6eba580955",
+      "sha256": "2259049234819dd9a1f46ddb5ab9909d66540aac3b3fad68dce7144d88c5165d"
     },
     {
       "source": "native-items/produce_bowtruckle.png",
@@ -4607,6 +4677,56 @@
       "bytes": 772,
       "sourceSha256": "24301a3f01e2c03fea205f9834776572997e53db8640c85520c7ecd1010f9e91",
       "sha256": "01a0115afaf2be109ffc441406db5c4618cd7c5ffa7901d299cabcd36ffbf7a0"
+    },
+    {
+      "source": "native-items/reward_medal.png",
+      "file": "runtime-webp/native-items/reward_medal.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 929,
+      "bytes": 542,
+      "sourceSha256": "cf01d56bb9e13c071c01f7083ad573d15ab98147e57d8bba80edb86b17750337",
+      "sha256": "4c9b622bcf9d0f4d7df405cdeeef0d2af37773f425ecd73a831b44f7a854a3e8"
+    },
+    {
+      "source": "native-items/reward_trophy.png",
+      "file": "runtime-webp/native-items/reward_trophy.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1037,
+      "bytes": 660,
+      "sourceSha256": "422efc197823b46e6dcde43d77ff0a6b58e0243d0ef4f738736ccd65ee1bbe01",
+      "sha256": "2cc0c8a61001c537869d5723d7e328af4447e9aa30de4229f5dbc5939ccb02eb"
+    },
+    {
+      "source": "native-items/supply_boost.png",
+      "file": "runtime-webp/native-items/supply_boost.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1375,
+      "bytes": 820,
+      "sourceSha256": "b6cdb4389e56f7e17e93e0bd6d73a73a9f9c689a6daad113e07d719c50851c26",
+      "sha256": "7aa171302e4ceff54c94db6809c44e3c0715521bab8e7736316a76e3cc00b1c3"
+    },
+    {
+      "source": "native-items/supply_spring_water.png",
+      "file": "runtime-webp/native-items/supply_spring_water.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 966,
+      "bytes": 550,
+      "sourceSha256": "eaf229308b1c65efed2bf49ce1d0ef3d3d07771719670d4782c4d326d9df6437",
+      "sha256": "1db7699e82b422d270157c55e70379b8701e81a4487a10893348de961d576e47"
+    },
+    {
+      "source": "native-items/supply_water.png",
+      "file": "runtime-webp/native-items/supply_water.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1535,
+      "bytes": 936,
+      "sourceSha256": "fdadc940af7c7a588d25a5f34458a84c75790a760b1ad53b081c1a4bbb7bff24",
+      "sha256": "e41d233d36998cded30cf5239713890acf57c3d5a2d80c17ab6fa4d65bc9d1b0"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_f0.png",
@@ -9082,11 +9202,11 @@
     }
   ],
   "totals": {
-    "converted": 902,
+    "converted": 914,
     "existingWebp": 8,
-    "originalBytes": 4214542,
-    "webpBytes": 2974146,
-    "savedBytes": 1240396,
-    "savedPercent": 29.43
+    "originalBytes": 4228782,
+    "webpBytes": 2982662,
+    "savedBytes": 1246120,
+    "savedPercent": 29.47
   }
 }

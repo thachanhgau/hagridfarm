@@ -99,6 +99,8 @@ await fs.mkdir(path.join(root, 'native-items'), {recursive: true});
 const config = JSON.parse(await fs.readFile(path.join(root, 'item-art-sources.json'), 'utf8'));
 const decorations = JSON.parse(await fs.readFile(path.join(root, 'earned-decor-art-sources.json'), 'utf8'));
 config.groups.push(...decorations.groups);
+const supplies = JSON.parse(await fs.readFile(path.join(root, 'supply-art-sources.json'), 'utf8'));
+config.groups.push(...supplies.groups);
 for (const group of config.groups) {
  const source = `masters-items/${group.name}.png`;
  const bytes = await fs.readFile(path.join(root, source));
@@ -137,4 +139,4 @@ for(let i=1;i<=6;i++){
 }
 await writeModule();
 await fs.writeFile(path.join(root, 'item-art-manifest.json'), JSON.stringify({version: 1, palette: SPRITE_PALETTE, alphaThreshold: 192, items: records}, null, 2) + '\n');
-console.log(`Exported ${Object.keys(records).length} native views (39 recipe/produce, 29 decorations × 2 views, 6 perimeter fences).`);
+console.log(`Exported ${Object.keys(records).length} native views (recipes, produce, decorations, perimeter fences and ${supplies.groups.length} supply/reward designs).`);

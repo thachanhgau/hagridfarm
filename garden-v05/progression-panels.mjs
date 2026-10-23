@@ -1,14 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.71';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.71';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.71";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.71";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.71";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.71";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.71";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.71";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.71";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.71";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.71";
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.72';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.72';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.72";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.72";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.72";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.72";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.72";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.72";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.72";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.72";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.72";
 
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;

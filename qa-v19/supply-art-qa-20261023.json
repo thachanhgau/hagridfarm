@@ -1,0 +1,98 @@
+[
+  {
+    "browser": "Chrome",
+    "packaged": false,
+    "network": "all requests intercepted; in-memory fixture",
+    "errors": [],
+    "viewports": [
+      {
+        "width": 320,
+        "height": 568,
+        "premiumCards": 12,
+        "nativeDesigns": 7,
+        "missing": 0
+      },
+      {
+        "width": 375,
+        "height": 812,
+        "premiumCards": 12,
+        "nativeDesigns": 7,
+        "missing": 0
+      },
+      {
+        "width": 812,
+        "height": 375,
+        "premiumCards": 12,
+        "nativeDesigns": 7,
+        "missing": 0
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "premiumCards": 12,
+        "nativeDesigns": 7,
+        "missing": 0
+      }
+    ],
+    "galleryCards": 125,
+    "galleryKeys": [
+      "supply_water",
+      "supply_boost",
+      "supply_spring_water",
+      "premium_spring_rain",
+      "premium_felix_felicis",
+      "premium_prime_meal",
+      "premium_pen_feast",
+      "premium_skele_gro",
+      "premium_warm_nest"
+    ]
+  },
+  {
+    "browser": "WebKit",
+    "packaged": false,
+    "network": "all requests intercepted; in-memory fixture",
+    "errors": [],
+    "viewports": [
+      {
+        "width": 320,
+        "height": 568,
+        "premiumCards": 12,
+        "nativeDesigns": 7,
+        "missing": 0
+      },
+      {
+        "width": 375,
+        "height": 812,
+        "premiumCards": 12,
+        "nativeDesigns": 7,
+        "missing": 0
+      },
+      {
+        "width": 812,
+        "height": 375,
+        "premiumCards": 12,
+        "nativeDesigns": 7,
+        "missing": 0
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "premiumCards": 12,
+        "nativeDesigns": 7,
+        "missing": 0
+      }
+    ],
+    "galleryCards": 125,
+    "galleryKeys": [
+      "supply_water",
+      "supply_boost",
+      "supply_spring_water",
+      "premium_spring_rain",
+      "premium_felix_felicis",
+      "premium_prime_meal",
+      "premium_pen_feast",
+      "premium_skele_gro",
+      "premium_warm_nest"
+    ]
+  }
+]

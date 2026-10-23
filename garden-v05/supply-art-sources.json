@@ -1,0 +1,175 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-23",
+  "transparent_background": true,
+  "groups": [
+    {
+      "name": "supply_water",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "supply_water",
+          "A beautifully built small wooden water bucket, blue water visible at the top, curved worn brass handle, copper bands and a little folded sage cloth on the rim. Ordinary garden watering supply, unmistakably fresh clear blue water."
+        ]
+      ],
+      "label": "Nước tưới",
+      "prompt": "Create ONE production game inventory sprite for Khu Vườn Hagrid. Handmade premium cozy wizarding farming pixel art, true crisp square pixel clusters, selective deep plum outline #231F2E, 2:1 dimetric perspective, lit from upper left, restrained 24-color palette (wood browns #4A3042 #735044 #A57554, cream #D6D8BF, greens #24483F #3F6A45 #71934B #B0BD67, warm #E7AE73 #F5D69A, fire #C75B4B #ED8A45 #FFC36B, magic #3E3B70 #6961A6 #70A8B6 #B7DEE0). Strong readable silhouette at 64x64, rich careful pixel detailing. Centered single isolated object filling about 75% of image, ample fully transparent margin. NO backdrop, circle, badge, ground plane, frame, text, letters, digits, watermark, antialiasing or blur. Fully transparent background. Subject: A beautifully built small wooden water bucket, blue water visible at the top, curved worn brass handle, copper bands and a little folded sage cloth on the rim. Ordinary garden watering supply, unmistakably fresh clear blue water.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-c844045c-4478-4193-9561-b4aaf49a53ce.png"
+    },
+    {
+      "name": "supply_boost",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "supply_boost",
+          "Magical growth water: a squat apothecary glass flask with oak cork, luminous teal-green liquid with a delicate tiny bright green sprout floating inside, braided twine around neck. A green wax seal with no text."
+        ]
+      ],
+      "label": "Nước phép",
+      "prompt": "Create ONE production game inventory sprite for Khu Vườn Hagrid. Handmade premium cozy wizarding farming pixel art, true crisp square pixel clusters, selective deep plum outline #231F2E, 2:1 dimetric perspective, lit from upper left, restrained 24-color palette (wood browns #4A3042 #735044 #A57554, cream #D6D8BF, greens #24483F #3F6A45 #71934B #B0BD67, warm #E7AE73 #F5D69A, fire #C75B4B #ED8A45 #FFC36B, magic #3E3B70 #6961A6 #70A8B6 #B7DEE0). Strong readable silhouette at 64x64, rich careful pixel detailing. Centered single isolated object filling about 75% of image, ample fully transparent margin. NO backdrop, circle, badge, ground plane, frame, text, letters, digits, watermark, antialiasing or blur. Fully transparent background. Subject: Magical growth water: a squat apothecary glass flask with oak cork, luminous teal-green liquid with a delicate tiny bright green sprout floating inside, braided twine around neck. A green wax seal with no text.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-c39e46b3-51b6-4529-9bad-93148efa5418.png"
+    },
+    {
+      "name": "supply_spring_water",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "supply_spring_water",
+          "Sacred spring water: ornate clear azure crystal vial in a carved grey stone cradle, a miniature curled water jet suspended above its mouth, silver-blue water and small pale glints. Distinct from bucket and potion flask."
+        ]
+      ],
+      "label": "Nước suối thần",
+      "prompt": "Create ONE production game inventory sprite for Khu Vườn Hagrid. Handmade premium cozy wizarding farming pixel art, true crisp square pixel clusters, selective deep plum outline #231F2E, 2:1 dimetric perspective, lit from upper left, restrained 24-color palette (wood browns #4A3042 #735044 #A57554, cream #D6D8BF, greens #24483F #3F6A45 #71934B #B0BD67, warm #E7AE73 #F5D69A, fire #C75B4B #ED8A45 #FFC36B, magic #3E3B70 #6961A6 #70A8B6 #B7DEE0). Strong readable silhouette at 64x64, rich careful pixel detailing. Centered single isolated object filling about 75% of image, ample fully transparent margin. NO backdrop, circle, badge, ground plane, frame, text, letters, digits, watermark, antialiasing or blur. Fully transparent background. Subject: Sacred spring water: ornate clear azure crystal vial in a carved grey stone cradle, a miniature curled water jet suspended above its mouth, silver-blue water and small pale glints. Distinct from bucket and potion flask.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-cf7e0075-ec12-444c-8c3d-612e414dafca.png"
+    },
+    {
+      "name": "premium_spring_rain",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "premium_spring_rain",
+          "A floating little slate-blue enchanted raincloud with brilliant turquoise spring-water droplets falling into a small patch of three newly ripened golden sprouts. Magical harvest rain, with two tiny cream sparkles; compact self-contained inventory vignette."
+        ]
+      ],
+      "label": "Mưa suối thần",
+      "prompt": "ONE isolated premium inventory sprite, Khu Vườn Hagrid wizard farming game. Handmade crisp pixel art with intentional square pixel clusters and selective dark plum #231F2E outline, 2:1 dimetric perspective, upper-left lighting. Restrained warm brown/cream/forest-green/gold/teal palette matching classic cozy 24-color farm sprites. Strong readable silhouette, detailed craftsmanship, no smooth vector appearance. Subject should stay legible when quantized to a 64x64 native game sprite. One object centered and fills 75% image, fully transparent background, generous empty alpha margin. NO text, numbers, letters, frame, circular badge, backdrop, floor, watermark, blur or antialiasing. Subject: A floating little slate-blue enchanted raincloud with brilliant turquoise spring-water droplets falling into a small patch of three newly ripened golden sprouts. Magical harvest rain, with two tiny cream sparkles; compact self-contained inventory vignette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-8a4d46cd-4dde-436d-b065-fd155bfa9bc5.png"
+    },
+    {
+      "name": "premium_felix_felicis",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "premium_felix_felicis",
+          "Felix Felicis lucky potion: a tiny elegant pear-shaped amber glass bottle of radiant liquid gold, slender neck with a polished dark wooden stopper, a small golden leaf tied around its neck, warm reflections and one gold drop-like glint, recognizably luxury alchemy."
+        ]
+      ],
+      "label": "Phúc Lạc Dược",
+      "prompt": "ONE isolated premium inventory sprite, Khu Vườn Hagrid wizard farming game. Handmade crisp pixel art with intentional square pixel clusters and selective dark plum #231F2E outline, 2:1 dimetric perspective, upper-left lighting. Restrained warm brown/cream/forest-green/gold/teal palette matching classic cozy 24-color farm sprites. Strong readable silhouette, detailed craftsmanship, no smooth vector appearance. Subject should stay legible when quantized to a 64x64 native game sprite. One object centered and fills 75% image, fully transparent background, generous empty alpha margin. NO text, numbers, letters, frame, circular badge, backdrop, floor, watermark, blur or antialiasing. Subject: Felix Felicis lucky potion: a tiny elegant pear-shaped amber glass bottle of radiant liquid gold, slender neck with a polished dark wooden stopper, a small golden leaf tied around its neck, warm reflections and one gold drop-like glint, recognizably luxury alchemy.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-944f9b01-bb62-472f-8308-5f666a752cbf.png"
+    },
+    {
+      "name": "premium_prime_meal",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "premium_prime_meal",
+          "One sumptuous animal meal in a dark green ceramic bowl with brass rim, piled with distinct golden grains, orange pumpkin chunks, a leafy sprig and a small cream pastry. A rolled sage napkin beside the bowl. Inviting plentiful food, not a banquet table."
+        ]
+      ],
+      "label": "Bữa ăn thượng hạng",
+      "prompt": "ONE isolated premium inventory sprite, Khu Vườn Hagrid wizard farming game. Handmade crisp pixel art with intentional square pixel clusters and selective dark plum #231F2E outline, 2:1 dimetric perspective, upper-left lighting. Restrained warm brown/cream/forest-green/gold/teal palette matching classic cozy 24-color farm sprites. Strong readable silhouette, detailed craftsmanship, no smooth vector appearance. Subject should stay legible when quantized to a 64x64 native game sprite. One object centered and fills 75% image, fully transparent background, generous empty alpha margin. NO text, numbers, letters, frame, circular badge, backdrop, floor, watermark, blur or antialiasing. Subject: One sumptuous animal meal in a dark green ceramic bowl with brass rim, piled with distinct golden grains, orange pumpkin chunks, a leafy sprig and a small cream pastry. A rolled sage napkin beside the bowl. Inviting plentiful food, not a banquet table.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-c1c9d9ec-f00e-4bb3-a7be-06b01730bc77.png"
+    },
+    {
+      "name": "premium_pen_feast",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "premium_pen_feast",
+          "A miniature rustic banquet for magical creatures: a low oak trestle table bearing three DIFFERENT servings, a leafy basket of grains, a copper dish with orange pumpkin chunks and a round green bowl with pale fish. Small folded cream table runner, warm rich food, compact horizontal silhouette."
+        ]
+      ],
+      "label": "Tiệc chuồng",
+      "prompt": "ONE production inventory sprite, cozy magical farming pixel art. Intentional crisp square pixels with detailed clusters and selective deep plum outline #231F2E, 2:1 dimetric perspective, upper-left light. Limited warm earthy sprite palette of browns, cream, forest greens, burnt orange, gold, pale teal. Distinct silhouette at 64x64 pixels, no smooth vector drawing. Centered isolated object, about 75% frame with ample fully transparent margin. NO labels, letters, numbers, backdrop, frame, circular badge, ground, watermark or blurry gradients. Fully transparent background. Subject: A miniature rustic banquet for magical creatures: a low oak trestle table bearing three DIFFERENT servings, a leafy basket of grains, a copper dish with orange pumpkin chunks and a round green bowl with pale fish. Small folded cream table runner, warm rich food, compact horizontal silhouette.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9dd503dd-19d0-49e1-8c71-f2b610a5f0ac.png"
+    },
+    {
+      "name": "premium_skele_gro",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "premium_skele_gro",
+          "Skele-Gro magical bone-growing medicine: an ivory ceramic medicine bottle sculpted as a friendly stylized skeleton torso, rib details and little skull-shaped stopper, green glass inset showing emerald tonic. Ivory and dark sage with brown cork accents; whimsical apothecary, no scary gore, no label."
+        ]
+      ],
+      "label": "Thuốc Mọc Xương",
+      "prompt": "ONE production inventory sprite, cozy magical farming pixel art. Intentional crisp square pixels with detailed clusters and selective deep plum outline #231F2E, 2:1 dimetric perspective, upper-left light. Limited warm earthy sprite palette of browns, cream, forest greens, burnt orange, gold, pale teal. Distinct silhouette at 64x64 pixels, no smooth vector drawing. Centered isolated object, about 75% frame with ample fully transparent margin. NO labels, letters, numbers, backdrop, frame, circular badge, ground, watermark or blurry gradients. Fully transparent background. Subject: Skele-Gro magical bone-growing medicine: an ivory ceramic medicine bottle sculpted as a friendly stylized skeleton torso, rib details and little skull-shaped stopper, green glass inset showing emerald tonic. Ivory and dark sage with brown cork accents; whimsical apothecary, no scary gore, no label.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-a05fbc21-0270-43b2-9084-62721ff93e04.png"
+    },
+    {
+      "name": "premium_warm_nest",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "premium_warm_nest",
+          "A cozy empty woven willow nest filled with golden straw and a neatly folded terracotta wool blanket, two small teal feathers tucked into the side, a tiny glowing amber warming stone nestling at one corner. Soft sheltered hollow clearly readable, no eggs, animals, or building."
+        ]
+      ],
+      "label": "Ổ ấm chuồng 1–6",
+      "prompt": "ONE production inventory sprite, cozy magical farming pixel art. Intentional crisp square pixels with detailed clusters and selective deep plum outline #231F2E, 2:1 dimetric perspective, upper-left light. Limited warm earthy sprite palette of browns, cream, forest greens, burnt orange, gold, pale teal. Distinct silhouette at 64x64 pixels, no smooth vector drawing. Centered isolated object, about 75% frame with ample fully transparent margin. NO labels, letters, numbers, backdrop, frame, circular badge, ground, watermark or blurry gradients. Fully transparent background. Subject: A cozy empty woven willow nest filled with golden straw and a neatly folded terracotta wool blanket, two small teal feathers tucked into the side, a tiny glowing amber warming stone nestling at one corner. Soft sheltered hollow clearly readable, no eggs, animals, or building.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-e5f4f434-c66b-4b85-848c-d1712d63c2dc.png"
+    },
+    {
+      "name": "expansion_plot",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "expansion_plot",
+          "A small raised rectangular cultivated garden bed in 2:1 isometric perspective, rich dark brown tilled soil with a 3 by 3 arrangement of little planting furrows and just three tiny young green seedlings. A beautifully weathered low wooden border, one little trowel leaning against the front corner and a blank wooden garden marker at the rear corner. Clear dimensional farmland miniature, no surrounding ground."
+        ]
+      ],
+      "label": "Mở thửa đất",
+      "prompt": "ONE isolated production sprite for Khu Vườn Hagrid, premium cozy wizard farming pixel art. Handmade crisp square pixel clusters, selective deep plum #231F2E outlines, 2:1 isometric view, lit upper-left. Restrained palette warm wood browns #735044 #A57554, cream #D6D8BF, greens #24483F #71934B, golden #F5D69A #FFC36B, orange #C97952 and teal #70A8B6. Strong simple silhouette at native 64x64; fine deliberate pixel details. Centered object fills 75% image, generous transparent margin on all four sides. Fully transparent alpha background. NO text, symbols resembling letters, digits, backdrop, circle frame, badge frame, watermark, blur, soft painted gradients or vector smoothing. Subject: A small raised rectangular cultivated garden bed in 2:1 isometric perspective, rich dark brown tilled soil with a 3 by 3 arrangement of little planting furrows and just three tiny young green seedlings. A beautifully weathered low wooden border, one little trowel leaning against the front corner and a blank wooden garden marker at the rear corner. Clear dimensional farmland miniature, no surrounding ground.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-6df9e20a-2971-4264-989f-3a96cd287056.png"
+    },
+    {
+      "name": "reward_medal",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "reward_medal",
+          "An intricately crafted small golden five-point garden achievement star medal, beveled bronze edges and amber center with a raised leaf emblem, attached at top to a short neatly folded dark sage ribbon. Readable badge of accomplishment, a physical metal object rather than a circular UI icon."
+        ]
+      ],
+      "label": "Huy chương thành tựu",
+      "prompt": "ONE isolated production sprite for Khu Vườn Hagrid, premium cozy wizard farming pixel art. Handmade crisp square pixel clusters, selective deep plum #231F2E outlines, 2:1 isometric view, lit upper-left. Restrained palette warm wood browns #735044 #A57554, cream #D6D8BF, greens #24483F #71934B, golden #F5D69A #FFC36B, orange #C97952 and teal #70A8B6. Strong simple silhouette at native 64x64; fine deliberate pixel details. Centered object fills 75% image, generous transparent margin on all four sides. Fully transparent alpha background. NO text, symbols resembling letters, digits, backdrop, circle frame, badge frame, watermark, blur, soft painted gradients or vector smoothing. Subject: An intricately crafted small golden five-point garden achievement star medal, beveled bronze edges and amber center with a raised leaf emblem, attached at top to a short neatly folded dark sage ribbon. Readable badge of accomplishment, a physical metal object rather than a circular UI icon.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-015b95c9-8028-4c5f-905d-4d470dec9bf5.png"
+    },
+    {
+      "name": "reward_trophy",
+      "columns": 1,
+      "rows": 1,
+      "items": [
+        [
+          "reward_trophy",
+          "A simple elegant miniature golden two-handled trophy cup on a square walnut plinth, embossed tiny leaf on its broad bowl, brilliant cream upper-left rim and darker amber right side. Broad distinctive silhouette readable even at 16x16 native pixels. No ribbons, engraving, letters or backdrop."
+        ]
+      ],
+      "label": "Cúp kỷ vật",
+      "prompt": "ONE isolated production sprite for Khu Vườn Hagrid, premium cozy wizard farming pixel art. Handmade crisp square pixel clusters, selective deep plum #231F2E outlines, 2:1 isometric view, lit upper-left. Restrained palette warm wood browns #735044 #A57554, cream #D6D8BF, greens #24483F #71934B, golden #F5D69A #FFC36B, orange #C97952 and teal #70A8B6. Strong simple silhouette at native 64x64; fine deliberate pixel details. Centered object fills 75% image, generous transparent margin on all four sides. Fully transparent alpha background. NO text, symbols resembling letters, digits, backdrop, circle frame, badge frame, watermark, blur, soft painted gradients or vector smoothing. Subject: A simple elegant miniature golden two-handled trophy cup on a square walnut plinth, embossed tiny leaf on its broad bowl, brilliant cream upper-left rim and darker amber right side. Broad distinctive silhouette readable even at 16x16 native pixels. No ribbons, engraving, letters or backdrop.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-1bfb48c9-59b7-4692-ab54-c2c7ceac08e8.png"
+    }
+  ]
+}

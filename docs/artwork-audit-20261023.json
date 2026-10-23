@@ -1,0 +1,367 @@
+{
+  "date": "2026-10-23",
+  "beforeSource": "8211de59476d94f7c72c1d879cb08f3b83d480ec",
+  "scope": "runtime identity and artwork audit; local SVG-item replacement",
+  "newDesigns": [
+    {
+      "id": "supply_water",
+      "label": "Nước tưới",
+      "native": "native-items/supply_water.png",
+      "runtime": "runtime-webp/native-items/supply_water.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "supply_boost",
+      "label": "Nước phép",
+      "native": "native-items/supply_boost.png",
+      "runtime": "runtime-webp/native-items/supply_boost.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "supply_spring_water",
+      "label": "Nước suối thần",
+      "native": "native-items/supply_spring_water.png",
+      "runtime": "runtime-webp/native-items/supply_spring_water.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "premium_spring_rain",
+      "label": "Mưa suối thần",
+      "native": "native-items/premium_spring_rain.png",
+      "runtime": "runtime-webp/native-items/premium_spring_rain.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "premium_felix_felicis",
+      "label": "Phúc Lạc Dược",
+      "native": "native-items/premium_felix_felicis.png",
+      "runtime": "runtime-webp/native-items/premium_felix_felicis.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "premium_prime_meal",
+      "label": "Bữa ăn thượng hạng",
+      "native": "native-items/premium_prime_meal.png",
+      "runtime": "runtime-webp/native-items/premium_prime_meal.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "premium_pen_feast",
+      "label": "Tiệc chuồng",
+      "native": "native-items/premium_pen_feast.png",
+      "runtime": "runtime-webp/native-items/premium_pen_feast.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "premium_skele_gro",
+      "label": "Thuốc Mọc Xương",
+      "native": "native-items/premium_skele_gro.png",
+      "runtime": "runtime-webp/native-items/premium_skele_gro.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "premium_warm_nest",
+      "label": "Ổ ấm chuồng 1–6",
+      "native": "native-items/premium_warm_nest.png",
+      "runtime": "runtime-webp/native-items/premium_warm_nest.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "expansion_plot",
+      "label": "Mở thửa đất",
+      "native": "native-items/expansion_plot.png",
+      "runtime": "runtime-webp/native-items/expansion_plot.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "reward_medal",
+      "label": "Huy chương thành tựu",
+      "native": "native-items/reward_medal.png",
+      "runtime": "runtime-webp/native-items/reward_medal.webp",
+      "status": "replaced-inline-svg"
+    },
+    {
+      "id": "reward_trophy",
+      "label": "Cúp kỷ vật",
+      "native": "native-items/reward_trophy.png",
+      "runtime": "runtime-webp/native-items/reward_trophy.webp",
+      "status": "replaced-inline-svg"
+    }
+  ],
+  "affected": {
+    "storeProducts": 14,
+    "storeDesigns": 9,
+    "plotExpansionCards": 15,
+    "keepsakeSpecies": 12
+  },
+  "remaining": {
+    "crops": [
+      {
+        "id": "clover",
+        "label": "Cỏ ba lá",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "beet",
+        "label": "Củ cải đỏ",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "maize",
+        "label": "Ngô vàng",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "moonherb",
+        "label": "Cỏ trăng",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "flax",
+        "label": "Lanh",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "sunflower",
+        "label": "Hướng dương",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "valerian",
+        "label": "Nữ lang",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "mint",
+        "label": "Bạc hà",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "blueberry",
+        "label": "Việt quất",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "firepepper",
+        "label": "Ớt lửa",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "silverkelp",
+        "label": "Tảo bạc",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "starbean",
+        "label": "Đậu sao",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "ambermelon",
+        "label": "Dưa hổ phách",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "mistmushroom",
+        "label": "Nấm sương",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "sunpetal",
+        "label": "Hoa nhật quang",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "fluxweed",
+        "label": "Rong nước xiết",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "bubotuber",
+        "label": "Củ u",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "knotgrass",
+        "label": "Cỏ chút chít",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "shrivelfig",
+        "label": "Sung-quéo",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "gillyweed",
+        "label": "Cỏ mang cá",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "mimbulus",
+        "label": "Mimbulus mimbletonia",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "flitterbloom",
+        "label": "Bông-đòng-đưa",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      },
+      {
+        "id": "devilssnare",
+        "label": "Bẫy Quỷ",
+        "distinctIdleFrames": 1,
+        "distinctActionFrames": 1,
+        "status": "needs-authored-idle-action"
+      }
+    ],
+    "animals": [
+      {
+        "id": "puffskein",
+        "label": "Puffskein",
+        "status": "needs-authored-eat-care"
+      },
+      {
+        "id": "bowtruckle",
+        "label": "Que Xạo",
+        "status": "needs-authored-eat-care"
+      },
+      {
+        "id": "niffler",
+        "label": "Đào mỏ",
+        "status": "needs-authored-eat-care"
+      },
+      {
+        "id": "hippogriff",
+        "label": "Bằng-Mã",
+        "status": "needs-authored-eat-care"
+      },
+      {
+        "id": "dragon",
+        "label": "Rồng",
+        "status": "needs-authored-eat-care"
+      }
+    ],
+    "proceduralScene": [
+      "Hagrid / gardener",
+      "Nhà kính / greenhouse",
+      "Cú đưa thư / owl",
+      "Đạo cụ môi trường sống của 12 loài",
+      "Đế kỷ vật của 12 loài",
+      "Rào, máng ăn, lối đi, nền chuồng và viền thửa"
+    ],
+    "creatureRightViews": "12 species mirror left-facing frames; no separately authored right-facing set",
+    "unimportedHalloween": 25,
+    "atlasWarnings": [
+      {
+        "id": "oats",
+        "warning": "oats stage 1 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "oats",
+        "warning": "oats stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "oats",
+        "warning": "oats stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "carrot",
+        "warning": "carrot stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "fluxweed",
+        "warning": "fluxweed stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "bubotuber",
+        "warning": "bubotuber stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "bubotuber",
+        "warning": "bubotuber stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "shrivelfig",
+        "warning": "shrivelfig stage 2 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "shrivelfig",
+        "warning": "shrivelfig stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "flitterbloom",
+        "warning": "flitterbloom stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "devilssnare",
+        "warning": "devilssnare stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "mooncalf",
+        "warning": "mooncalf stage 0 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      },
+      {
+        "id": "kneazle",
+        "warning": "kneazle stage 3 reaches its detected cell edge; the atlas cut may cross its silhouette."
+      }
+    ]
+  },
+  "retained": {
+    "intentionalUi": "16px pixel HUD, settings and navigation SVG",
+    "sourceMasters": "Retained in source repo; intentionally excluded from runtime packaging",
+    "specialProducts": 30,
+    "festivalProducts": 5,
+    "decorManifestItems": 44
+  },
+  "runtime": {
+    "webp": 922,
+    "losslessConverted": 914,
+    "existing": 8,
+    "revision": "486ca8e7a439"
+  },
+  "productionVerified": false
+}

@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=24.9.71';
-import {STORE_CATALOG,CATALOG_VERSION} from './garden-store-catalog.mjs?v=24.9.71';
+import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=24.9.72';
+import {STORE_CATALOG,CATALOG_VERSION} from './garden-store-catalog.mjs?v=24.9.72';
+import {ITEM_ART} from './item-art.mjs?v=24.9.72';
+import {itemArtKey} from './ui-utils.mjs?v=24.9.72';
 
 // Level-500 roadmap P4 (§10): what the store shows must equal what the server charges (garden-premium-core saleTotal).
 test('the premium catalog is in the store mirror with the P4 catalog version', () => {
@@ -27,7 +28,14 @@ test('a sale shows its real end: minutes when close, the clock time otherwise', 
  assert.equal(saleLeft({ endsAt: Date.parse('2026-10-22T22:30:00+07:00') }, now), 'đến 22:30');
 });
 
-test('every premium item has its own badge art (no fallback medal)', () => {
- const source = fs.readFileSync(new URL('./ui-utils.mjs', import.meta.url), 'utf8');
- for (const icon of new Set(PREMIUM_PRODUCTS.map(item => item.icon))) assert.match(source, new RegExp(`\\n ${icon}: \`<svg viewBox="0 0 48 48"`), icon);
+test('every premium item resolves to its canonical native art identity', () => {
+ for (const item of PREMIUM_PRODUCTS) {
+  const key = item.kind === 'nest' ? 'premium_warm_nest' : `premium_${item.id}`;
+  assert.equal(itemArtKey(item.id, {kind: item.kind}), key, item.id);
+  assert.ok(ITEM_ART[key]?.file, `Missing native art for ${key}`);
+ }
+});
+
+test('unknown premium art is explicit and never the generic medal', () => {
+ assert.equal(itemArtKey('premium_future_item', {kind: 'premium'}), null);
 });

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { DB } from './balance-data.mjs?v=24.9.65';
-import { ITEM_ART } from './item-art.mjs?v=24.9.71';
+import { ITEM_ART } from './item-art.mjs?v=24.9.72';
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }
@@ -48,11 +48,10 @@ globalThis.document = {
 
 const {
  earnedDecorIcon,
- expansionBlueprintSvg,
  itemArtKey,
  levelUnlockVisual,
  visualItemIcon,
-} = await import('./ui-utils.mjs?v=24.9.71');
+} = await import('./ui-utils.mjs?v=24.9.72');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];
@@ -61,6 +60,15 @@ function findAttribute(node, name) {
   if (found !== undefined) return found;
  }
  return undefined;
+}
+
+function findClass(node, className) {
+ if (node?.className?.split?.(/\s+/).includes(className)) return node;
+ for (const child of node?.children || []) {
+  const found = findClass(child, className);
+  if (found) return found;
+ }
+ return null;
 }
 
 test('item art covers every recipe, produce and earned decoration identity', () => {
@@ -96,20 +104,23 @@ test('produce and keepsake art never fall back to the creature sprite', () => {
  assert.equal(findAttribute(produce, 'data-art-key'), 'produce_puffskein');
  assert.equal(findAttribute(keepsake, 'data-art-key'), 'produce_puffskein');
  assert.equal(findAttribute(keepsake, 'data-presentation'), 'trophy-pedestal');
+ assert.equal(findAttribute(findClass(keepsake, 'keepsake-pedestal-badge'), 'data-art-key'), 'reward_trophy');
  assert.equal(findAttribute(produce, 'src') === 'creature.png', false);
 });
 
-test('spring water, expansions, earned decorations and level fallbacks have distinct visuals', () => {
+test('supply aliases, expansions, earned decorations and level fallbacks retain identity', () => {
  const items = new Map([['flax', { frames: [{}, {}, {}, { file: 'flax.png', width: 48, height: 48, bounds: { x: 0, y: 0, w: 48, h: 48 } }] }]]);
- assert.notEqual(
-  visualItemIcon(items, 'spring_water', { size: 44 }).innerHTML,
-  visualItemIcon(items, 'gentle_growth', { size: 44 }).innerHTML,
- );
-
- const expansionVisuals = DB.expansions.map(expansion => expansionBlueprintSvg(expansion.id));
- assert.equal(new Set(expansionVisuals).size, DB.expansions.length);
+ assert.equal(itemArtKey('spring_water'), 'supply_spring_water');
+ assert.equal(itemArtKey('gentle_growth'), 'supply_boost');
+ assert.equal(findAttribute(visualItemIcon(items, 'spring_water', { size: 44 }), 'data-art-key'), 'supply_spring_water');
+ assert.equal(findAttribute(visualItemIcon(items, 'gentle_growth', { size: 44 }), 'data-art-key'), 'supply_boost');
  for (const expansion of DB.expansions) {
-  assert.equal(findAttribute(visualItemIcon(items, expansion.id, { size: 44 }), 'data-expansion-id'), expansion.id);
+  const visual = visualItemIcon(items, expansion.id, { size: 44 });
+  assert.equal(findAttribute(visual, 'data-expansion-id'), expansion.id);
+  if (expansion.kind === 'plot') {
+   assert.equal(findAttribute(visual, 'data-art-key'), 'expansion_plot');
+   assert.match(visual.textContent, new RegExp(`Thửa ${expansion.id.slice(5)}`));
+  }
  }
 
  for (const decoration of DB.decorations) {
