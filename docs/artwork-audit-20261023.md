@@ -1,6 +1,6 @@
 # Rà soát artwork Hagrid — 23/10/2026
 
-**Cập nhật V24.9.74:** toàn bộ phần tồn đọng ngoài Halloween đã hoàn thiện và kiểm tra cục bộ. [Danh sách và bằng chứng mới](artwork-completion-20261023.md). Halloween giữ nguyên theo yêu cầu mới nhất. Phần dưới lưu kết quả kiểm kê ban đầu.
+**Cập nhật V24.9.75:** phần artwork chính đã hoàn thiện; bộ Halloween đã tích hợp đủ30 mẫu/60 góc. [Artwork chính](artwork-completion-20261023.md) · [Halloween](halloween-import-20261023.md). 25 món Halloween mới vẫn khóa mua để chờ xác nhận giá trực tiếp do yêu cầu của kiểm duyệt tự động; năm món cũ giữ nguyên giá. Phần dưới lưu kết quả kiểm kê ban đầu.
 
 Rà theo bản nguồn `8211de5` đang được HPVN nhập vào, gồm cả hình vẽ trong mã và clip chuyển động. Có file WebP, hash khác nhau hoặc clip mang tên `idle` chưa chứng minh artwork đã được vẽ mới. Bản kiểm kê từng ID: [artwork-audit-20261023.json](artwork-audit-20261023.json).
 
