@@ -1,6 +1,6 @@
 # Khu Vườn Hagrid — Lộ trình cấp 500, tốc độ và cửa hàng cao cấp
 
-> 21/10/2026 · Claude Code (Anthropic) · **ĐÃ DUYỆT 21/10/2026.** P1 đã phát hành 21/10/2026. P2 đã làm (nhánh `level-500-p2`, HPVNN `codex/hagrid-level-p2`), chưa deploy; khung Floo theo 10 cấp chuyển sang P3 cùng hình pixel. P3–P5 chưa làm (mục 13). Mọi số liệu đến từ mô phỏng trên engine thật
+> 21/10/2026 · Claude Code (Anthropic) · **ĐÃ DUYỆT 21/10/2026.** P1 đã phát hành 21/10/2026. P2 đã làm (nhánh `level-500-p2`, HPVNN `codex/hagrid-level-p2`), chưa deploy; khung Floo theo 10 cấp chuyển sang P3 cùng hình pixel. P3 phát hành 21/10/2026. **P4 và P5 đã làm 23/10/2026** (nhánh `level-500-p4p5` trên artwork V24.9.70, bản 24.9.71; HPVNN `codex/hagrid-level-p4p5`), chưa deploy; xem «Ghi chú P4/P5» ở mục 13. Mọi số liệu đến từ mô phỏng trên engine thật
 > (`docs/level-500-sim/`), không phải dữ liệu người chơi. Mục 14 là các điểm còn chờ chủ dự án quyết.
 
 ## 0. Chủ dự án đã chốt (21/10/2026)
@@ -328,6 +328,11 @@ Thưởng sau cấp 100 **không tăng sản lượng hay XP mãi mãi**: chỉ 
 | **P5 – Giữ chân** | Thông thạo cây, Đơn hàng bác Hagrid, Cúp Nhà theo mùa | Prototype và server | Đo D1/D7/D30 sau beta |
 
 Phát hành theo `/hpvnn-deploy`, Functions trước, client sau, và chỉ khi chủ dự án bảo.
+
+**Ghi chú P4/P5 (23/10/2026, Claude Code):**
+- P4: giới hạn mua của Nước suối thần đổi thành trần kho 60 (vẫn dùng 10/ngày); 5 vật phẩm mới cộng 6 Ổ ấm đúng giá ở mục 10.2. Gói ×5/×10/×30 giảm 10/20/30%, mua số lẻ thì tính theo mốc thấp hơn gần nhất. Sale cộng gói tối đa 50%, sale riêng tối đa 40%. Giá tính trên server lúc giao dịch. Có test cho mỗi rào 3–12.
+- Sale chạy theo lịch trên server: Giờ vàng, Cuối tuần sinh vật, Flash 30 phút (rút từ tuần, 1–2 lần, 18:00–23:00) và 3 ngày cuối lễ hội cho đồ lễ hội. **Khác tài liệu:** chưa đọc đợt sale ACP của Hẻm Xéo (ACP chỉ nhận món của Hẻm Xéo), và **chưa báo Flash lên Floo** (phải sửa backend Floo); cửa hàng có giờ kết thúc thật.
+- P5: Thông thạo cây (mốc 90/450/1.350 ô, thưởng 1/2/3 Nước phép, danh hiệu), Đơn hàng bác Hagrid (từ cấp 15, 3 đơn/ngày, XP bằng XP gặt của hàng giao, +1 Nước phép), Cúp Nhà theo tuần (Nhà trên hồ sơ Floo, từ cấp 20, gặt +1, cú +3, đơn +10, trần 60/ngày; bảng `garden_house_cup/{tuần}`). Chưa có: trao thưởng cuối tuần, khung Floo theo mastery, đo D1/D7/D30.
 
 ## 14. Quyết định ngày 21/10/2026 và việc còn mở
 
