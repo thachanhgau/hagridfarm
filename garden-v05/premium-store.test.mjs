@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=24.9.75';
-import {STORE_CATALOG,CATALOG_VERSION} from './garden-store-catalog.mjs?v=24.9.75';
-import {ITEM_ART} from './item-art.mjs?v=24.9.75';
-import {itemArtKey} from './ui-utils.mjs?v=24.9.75';
+import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=24.9.76';
+import {STORE_CATALOG,CATALOG_VERSION} from './garden-store-catalog.mjs?v=24.9.76';
+import {ITEM_ART} from './item-art.mjs?v=24.9.76';
+import {itemArtKey} from './ui-utils.mjs?v=24.9.76';
 
 // Level-500 roadmap P4 (§10): what the store shows must equal what the server charges (garden-premium-core saleTotal).
 test('the premium catalog is in the store mirror with the P4 catalog version', () => {
- assert.equal(CATALOG_VERSION, 'garden-2026-10-23-halloween30');
+ assert.equal(CATALOG_VERSION, 'garden-2026-10-24-halloween-approved');
  for (const item of PREMIUM_PRODUCTS) assert.ok(STORE_CATALOG.includes(item), item.id);
  const spring = STORE_CATALOG.find(item => item.id === 'spring_water');
  assert.deepEqual([spring.stockCap, spring.usesPerDay, spring.bundles], [60, 10, true]);

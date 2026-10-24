@@ -64,8 +64,8 @@ export const SPECIAL_PRODUCTS = Object.freeze(ROWS.map(([id, label, level, price
 // level. Owner 20/10/2026 («nhập vô đi») on the proposed prices. Decoration only. Server copy: garden-wallet-catalog.js.
 export const FESTIVAL_COLLECTION = 'festival';
 // [id, label, price, footprint, short description, festival]
-// The 25 new prices below are proposed; connected sales remain blocked until the owner approves.
-const HALLOWEEN_NEW_PRICES_APPROVED = false;
+// Owner directly approved the 90,400 G table and opening sales in this chat (24/10/2026).
+const HALLOWEEN_NEW_PRICES_APPROVED = true;
 const FESTIVAL_ROWS = [
   ['hw_halloween_sign', 'Biển gỗ Halloween', 1800, [1, 1], 'Tấm biển gỗ treo đèn bí ngô, chỉ lối vào đêm hội.', 'event_halloween'],
   ['hw_wooden_black_cat', 'Tượng mèo đen bằng gỗ', 2000, [1, 1], 'Chú mèo đen tạc gỗ với đôi mắt vàng.', 'event_halloween'],

@@ -78,14 +78,15 @@ test('store lock: below level shows the level, off-season shows the opening day,
   assert.equal(storeLock(cake, 100, '2026-11-20'), 'Mở bán 23/10');
 });
 
-test('Halloween festival pieces: 30 distinct two-view sprites, existing five prices preserved and 25 pending', async () => {
+test('Halloween festival pieces: 30 distinct two-view sprites, existing five prices preserved and 25 approved', async () => {
   const {FESTIVAL_PRODUCTS} = await import('./special-products.mjs');
   const pack = JSON.parse(fs.readFileSync(new URL('./halloween-assets/manifest.json', import.meta.url)));
   const sprites = runtime.items.filter(item => item.collection === 'festival');
-  // Artwork import is authorized; new prices remain explicitly gated.
+  // Owner directly approved the 90,400 G table and opening sales in this chat.
   const active = FESTIVAL_PRODUCTS.map(i => i.id).sort();
   assert.equal(active.length, 30);
-  assert.equal(FESTIVAL_PRODUCTS.filter(i=>i.forSale===false).length,25);
+  assert.equal(FESTIVAL_PRODUCTS.filter(i=>i.forSale===false).length,0);
+  assert.equal(FESTIVAL_PRODUCTS.slice(5).reduce((total,item)=>total+item.price,0),90400);
   assert.deepEqual(FESTIVAL_PRODUCTS.slice(0,5).map(i=>[i.id,i.price]),[['hw_halloween_sign',1800],['hw_wooden_black_cat',2000],['hw_cloth_ghost_lantern',2200],['hw_pumpkin_stack',2400],['hw_monster_candy_barrel',2400]]);
   assert.ok(active.every(id => pack.items.some(item => item.id === id)));
   assert.deepEqual(sprites.map(i => i.id).sort(), active);

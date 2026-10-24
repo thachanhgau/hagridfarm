@@ -1,6 +1,6 @@
-# Bảng giá Halloween để xác nhận mở bán
+# Bảng giá Halloween đã duyệt mở bán
 
-25 món mới tổng90.400G, giữ giá năm món cũ. Chỉ bán trong Lễ Hội Ma, mọi cấp; đã sở hữu vẫn dùng ngoài mùa. Giá lấy từ nhánh bàn giao ae27ee23a. File này chỉ là bảng xem xét, không bật bán hoặc sửa catalog.
+25 món mới tổng90.400G, giữ giá năm món cũ. Chỉ bán trong Lễ Hội Ma, mọi cấp; đã sở hữu vẫn dùng ngoài mùa. Giá lấy từ nhánh bàn giao ae27ee23a. Chủ dự án đã trả lời trực tiếp “Duyệt bảng giá này và mở bán”; áp dụng cho đúng 25 món dưới đây, không thay đổi giá năm món cũ.
 
 | Món | Ô đất | Giá G |
 |---|---|---:|

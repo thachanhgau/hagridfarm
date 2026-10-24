@@ -1,9 +1,9 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.75";
-import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.75";
-import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.75";
-import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=24.9.75";
-export const CATALOG_VERSION="garden-2026-10-23-halloween30";
+import {FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=24.9.76";
+import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.76";
+import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.76";
+import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=24.9.76";
+export const CATALOG_VERSION="garden-2026-10-24-halloween-approved";
 export const STORE_CATALOG=Object.freeze([
   {
     "id": "seed_pumpkin",
