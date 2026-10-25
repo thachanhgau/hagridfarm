@@ -1,39 +1,39 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.76';
-import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.76';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.76';
-import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.76';
-import {decorLabelFor,decorSpot} from './decor-runtime.mjs?v=24.9.76';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.76';
-import {showStore} from './garden-store-ui.mjs?v=24.9.76';
-import {setupProfile} from './profile-ui.mjs?v=24.9.76';
-import * as E from './progression-engine.mjs?v=24.9.76';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.76';
-import {setupCamera} from './camera.mjs?v=24.9.76';
-import {createPanels} from './progression-panels.mjs?v=24.9.76';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.76';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.76';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.76';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.76';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.76';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.76';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.76';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.76';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.76';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.76';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.76';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.76';
-import {nextGoal} from './next-goal.mjs?v=24.9.76';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.76';
-import {createMissions} from './garden-missions-ui.mjs?v=24.9.76';
-import {createHagridWork} from './garden-work-ui.mjs?v=24.9.76';
-import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.76';
-import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.76';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.76';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.77';
+import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.77';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.77';
+import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.77';
+import {decorLabelFor,decorSpot} from './decor-runtime.mjs?v=24.9.77';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.77';
+import {showStore} from './garden-store-ui.mjs?v=24.9.77';
+import {setupProfile} from './profile-ui.mjs?v=24.9.77';
+import * as E from './progression-engine.mjs?v=24.9.77';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.77';
+import {setupCamera} from './camera.mjs?v=24.9.77';
+import {createPanels} from './progression-panels.mjs?v=24.9.77';
+import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.77';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.77';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.77';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.77';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.77';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.77';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.77';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.77';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.77';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.77';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.77';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.77';
+import {nextGoal} from './next-goal.mjs?v=24.9.77';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.77';
+import {createMissions} from './garden-missions-ui.mjs?v=24.9.77';
+import {createHagridWork} from './garden-work-ui.mjs?v=24.9.77';
+import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.77';
+import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.77';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.77';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.76':'./garden-emulator-client.mjs?v=24.9.76');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.77':'./garden-emulator-client.mjs?v=24.9.77');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -240,9 +240,10 @@ async function handleClaimAchievement(achId){
  return res;
 }
 async function handleClaimEventMilestone(mId){
- if(SERVER_OWNS.daily){const res=await serverClaim({action:'claimFestival',milestoneKey:mId});if(res.ok){syncHudV20Buttons();message(`🎃 Đã nhận mốc lễ hội [${festivalMilestone(mId)?.title||mId}]: ${res.reward.label}!`);}return res;}
- const res=await receiveReward(()=>claimEventMilestone(mId,{onGrantReward:grantOwlReward}));
- if(res.ok){syncHudV20Buttons();message(`🎃 Đã nhận mốc lễ hội [${res.milestone.title}]: ${res.reward.label}!`);}
+ const res=SERVER_OWNS.daily?await serverClaim({action:'claimFestival',milestoneKey:mId}):await receiveReward(()=>claimEventMilestone(mId,{onGrantReward:grantOwlReward}));
+ if(res.ok){syncHudV20Buttons();message(`🎃 Đã nhận mốc lễ hội [${festivalMilestone(mId)?.title||mId}]: ${res.reward.label}!`);
+  // The secret present carries Hagrid's letter: sealed envelope, then the parchment.
+  const letter=res.reward.letter;if(letter){showHagridLetter({greeting:letter.greeting,mode:'gift',letter});}}
  return res;
 }
 async function handleClaimDailyQuest(qId){

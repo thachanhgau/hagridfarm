@@ -1,8 +1,8 @@
-import {getGardenStorage} from './garden-storage.mjs?v=24.9.76';
-import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.76';
-import {stableHash} from './scene-animation.mjs?v=24.9.76';
-import {dayKeyFor} from './garden-quests.mjs?v=24.9.76';
-import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.76';
+import {getGardenStorage} from './garden-storage.mjs?v=24.9.77';
+import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.77';
+import {stableHash} from './scene-animation.mjs?v=24.9.77';
+import {dayKeyFor} from './garden-quests.mjs?v=24.9.77';
+import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.77';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -14,6 +14,21 @@ const milestones = (prefix, crop, cropLabel, [t1, t2, t3]) => Object.freeze([
   Object.freeze({id: `${prefix}_m2`, points: 450, title: t2, reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 25, label: '+1 Nước phép & +25 Nước'})}),
   Object.freeze({id: `${prefix}_m3`, points: 1000, title: t3, reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 47, label: '+2 Nước phép & +47 Nước'})}),
 ]);
+
+// Owner 25/10/2026: Lễ Hội Ma adds a 700-point stop and, once every stop is claimed, a secret
+// present with a letter from Hagrid (server: functions/games/garden-festival-core.js).
+const [halM1, halM2, halM3] = milestones('hal', 'pumpkin', 'Bí ngô', ['Giỏ Quà Đêm Hội Ma', 'Lồng Đèn Phù Thủy Rừng Cấm', 'Đại Tiệc Bí Ngô Hogwarts']);
+const HALLOWEEN_MILESTONES = Object.freeze([halM1, halM2,
+  Object.freeze({id: 'hal_m4', points: 700, title: 'Đêm Rước Đèn Bí Ngô', reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 35, itemId: 'pumpkin', bonusQty: 6, label: '+1 Nước phép, +35 Nước & +6 Bí ngô'})}),
+  halM3]);
+const HALLOWEEN_SECRET = Object.freeze({
+  id: 'hal_secret', title: 'Quà Bí Mật Của Bác Hagrid',
+  reward: Object.freeze({kind: 'boost', amount: 5, waterBonus: 100, itemId: 'pumpkin', bonusQty: 10, label: '+5 Nước phép, +100 Nước & +10 Bí ngô',
+    letter: Object.freeze({greeting: 'Con thân mến,', paragraphs: Object.freeze([
+      'Bác đã thấy con thắp sáng cả Lễ Hội Ma ở Rừng Cấm, từ giỏ quà đầu tiên tới đại tiệc bí ngô. Chẳng mấy ai đi hết chặng đường ấy đâu!',
+      'Bác lén gói cho con ít nước phép, nước giếng và mấy quả bí ngô to nhất vườn bác.',
+    ]), postscript: 'Tái bút: Đừng kể với giáo sư McGonagall nhé.', signature: 'Hagrid'})}),
+});
 
 // `season`: MM-DD start and end, inclusive, in Vietnam time. One festival at a time.
 // `opensAt` (HH:MM): the first day opens at that hour (owner 23/10/2026: Lễ Hội Ma at 18:00).
@@ -35,7 +50,8 @@ export const HOGWARTS_EVENTS = Object.freeze([
     description:
       'Đèn lồng bí ngô và đom đóm tím phép thuật bay lượn quanh lều bác Hagrid. Thu hoạch nông sản, chế biến khẩu phần và chăm sóc sinh vật để tích điểm lễ hội!',
     hagridLine: 'Lễ Hội Ma ở Rừng Cấm rực rỡ quá! Nhớ thu hoạch bí ngô và thắp đèn lồng nhé!',
-    milestones: milestones('hal', 'pumpkin', 'Bí ngô', ['Giỏ Quà Đêm Hội Ma', 'Lồng Đèn Phù Thủy Rừng Cấm', 'Đại Tiệc Bí Ngô Hogwarts']),
+    milestones: HALLOWEEN_MILESTONES,
+    secret: HALLOWEEN_SECRET,
   }),
   Object.freeze({
     id: 'event_yule',
@@ -297,6 +313,8 @@ export function useServerFestival(response = null) {
     freeToday: count(today.free),
     freeCounts: Object.fromEntries(Object.entries(response.daily.freeActions || {}).map(([kind, v]) => [kind, count(v?.used)])),
     freeCaps: Object.fromEntries(Object.entries(response.daily.freeActions || {}).map(([kind, v]) => [kind, count(v?.cap)])),
+    // The leaderboard comes only with a read; an action response keeps the last one.
+    board: response.festival?.active?.board ?? serverFestival?.board ?? null,
   } : null;
   return serverFestival;
 }
@@ -366,10 +384,17 @@ export function festivalMilestone(key) {
   }
   if (!/^\d{4}$/.test(year)) return null;
   for (const e of SEASONAL_EVENTS) {
-    const m = e.milestones.find((x) => x.id === id);
+    const m = e.milestones.find((x) => x.id === id) ?? (e.secret?.id === id ? {...e.secret, secret: true, points: e.milestones.at(-1).points} : null);
     if (m) return {...m, key, eventId: e.id, eventLabel: e.label, seasonKey: `${e.id}@${year}`};
   }
   return null;
+}
+
+/** Every stop of the festival in `seasonKey` claimed: its secret present opens. */
+export function secretOpen(state, seasonKey) {
+  const [eventId, year] = String(seasonKey).split('@');
+  const e = EVENT_MAP.get(eventId);
+  return Boolean(e?.secret) && e.milestones.every((m) => state.claimedMilestones.includes(`${m.id}@${year}`));
 }
 
 /** Pure: can `state` claim milestone `key`? */
@@ -378,7 +403,7 @@ export function milestoneClaimCheck(state, key) {
   if (!target) return {ok: false, reason: 'NOT_FOUND'};
   if (state.claimedMilestones.includes(target.key)) return {ok: false, reason: 'ALREADY_CLAIMED'};
   if (target.legacy) return state.legacyClaimable.includes(target.key) ? {ok: true, milestone: target} : {ok: false, reason: 'INSUFFICIENT_POINTS'};
-  if ((state.pointsBySeason[target.seasonKey] || 0) < target.points) return {ok: false, reason: 'INSUFFICIENT_POINTS'};
+  if (target.secret ? !secretOpen(state, target.seasonKey) : (state.pointsBySeason[target.seasonKey] || 0) < target.points) return {ok: false, reason: 'INSUFFICIENT_POINTS'};
   return {ok: true, milestone: target};
 }
 
@@ -392,6 +417,8 @@ export function pendingFestivalRewards(state) {
       const key = `${m.id}@${year}`;
       if (points >= m.points && !state.claimedMilestones.includes(key)) out.push(festivalMilestone(key));
     }
+    const secretKey = `${EVENT_MAP.get(eventId)?.secret?.id}@${year}`;
+    if (secretOpen(state, seasonKey) && !state.claimedMilestones.includes(secretKey)) out.push(festivalMilestone(secretKey));
   }
   return out;
 }
@@ -414,7 +441,7 @@ export function hasClaimableEventMilestone(storage = getGardenStorage(), nowMs =
   const state = loadEventState(storage, nowMs);
   const active = festivalStatus(state.day, state.joinDay, nowMs).active;
   const now = active
-    ? active.event.milestones.some((m) => milestoneClaimCheck(state, `${m.id}@${active.year}`).ok)
+    ? [...active.event.milestones, ...(active.event.secret ? [active.event.secret] : [])].some((m) => milestoneClaimCheck(state, `${m.id}@${active.year}`).ok)
     : false;
   return now || pendingFestivalRewards(state).length > 0;
 }
@@ -915,6 +942,46 @@ const THEME_LABELS = Object.freeze({event_halloween: 'Hội Ma', event_yule: 'D�
 const GUEST_ICONS = Object.freeze({note_hagrid: 'home', note_sprout: 'sow', note_newt: 'heart', note_charlie: 'festival'});
 const stripEmoji = (text = '') => String(text).replace(/^[^\p{L}\p{N}]+/u, '').trim();
 
+// The secret present: «???» until every stop is claimed, then Hagrid's gift.
+function secretCard({items, cfg, year, state, active, onClaim}) {
+  const key = `${cfg.secret.id}@${year}`;
+  const claimed = state.claimedMilestones.includes(key);
+  const open = claimed || secretOpen(state, `${cfg.id}@${year}`);
+  const ready = open && !claimed && active;
+  const label = claimed ? 'Đã nhận' : ready ? 'Mở quà' : 'Nhận đủ mọi mốc để mở';
+  return el('div', {class: `v24-event-secret${claimed ? ' is-claimed' : ready ? ' is-ready' : ' is-locked'}`, 'data-milestone-id': key, 'data-festival-secret': open ? 'open' : 'hidden'}, [
+    el('button', {
+      type: 'button', class: `gp-track-node${ready ? ' primary' : ''}`, disabled: !ready, 'data-claim-milestone': key,
+      'aria-label': `${label} · ${open ? cfg.secret.title + ' · ' + cfg.secret.reward.label : 'Quà bí mật'}`,
+      onclick: () => onClaim?.(key),
+    }, [
+      open ? visualItemIcon(items, cfg.secret.reward.itemId, {size: 40, kind: cfg.secret.reward.kind}) : pixelIcon('festival', 2),
+      claimed ? el('span', {class: 'gp-corner is-done'}, [pixelIcon('check', 1)]) : ready ? null : el('span', {class: 'lock-badge'}, [pixelIcon('lock', 1)]),
+    ]),
+    el('div', {class: 'v24-event-secret-copy'}, [
+      el('b', {text: open ? cfg.secret.title : 'Quà bí mật ???'}),
+      el('small', {text: open ? cfg.secret.reward.label : label}),
+    ]),
+  ]);
+}
+
+// Leaderboard of the running festival (server play only): top ten and this member's rank.
+function festivalBoardSection(board, cfg) {
+  const rows = board.top.map((r) => el('li', {class: `v24-board-row${r.me ? ' is-me' : ''}`, 'data-board-rank': String(r.rank)}, [
+    el('span', {class: 'v24-board-rank', text: String(r.rank)}),
+    el('span', {class: 'v24-board-name', text: r.name || 'Phù thủy ẩn danh'}),
+    r.done ? el('span', {class: 'v24-board-done', title: 'Đã mở quà bí mật', 'aria-label': 'Đã mở quà bí mật'}, [pixelIcon('check', 1)]) : null,
+    el('b', {class: 'v24-board-points', text: String(r.points)}),
+  ]));
+  const mine = board.me && !board.top.some((r) => r.me)
+    ? el('p', {class: 'v24-board-me', text: `Hạng của con: ${board.me.rank}/${board.players} · ${board.me.points} điểm`}) : null;
+  return el('section', {class: 'event-milestones-section v24-event-board', 'data-festival-board': String(board.players)}, [
+    el('div', {class: 'journey-section-head'}, [el('div', {}, [el('h3', {text: `Bảng xếp hạng ${stripEmoji(cfg.shortLabel)}`})])]),
+    rows.length ? el('ol', {class: 'v24-board-list'}, rows) : el('p', {class: 'v24-board-me', text: 'Chưa có ai ghi điểm. Con mở màn đi!'}),
+    mine,
+  ]);
+}
+
 // One stop on the festival reward track: the reward icon is the button, points and chips below.
 function milestoneCard({items, ms, key, claimed, ready, label, onClaim, title = null, note = null}) {
   const state = claimed ? ' is-claimed' : ready ? ' is-ready' : ' is-locked';
@@ -1009,9 +1076,10 @@ export function renderEventsAndTasksSection({
       })));
   }
   // The bar runs from the first stop to the last; stops sit evenly, so fill each gap by its own points.
-  const [p1, p2, p3] = cfg.milestones.map((m) => m.points);
-  const fill = points <= p1 ? 0 : points <= p2 ? ((points - p1) / (p2 - p1)) * 50 : Math.min(100, 50 + ((points - p2) / (p3 - p2)) * 50);
-  const mGrid = el('div', {class: 'event-milestones-grid v24-event-milestones gp-track', style: `--fill:${Math.round(fill)}`});
+  const stops = cfg.milestones.map((m) => m.points);
+  const next = stops.findIndex((p) => points < p);
+  const fill = next === -1 ? 100 : next === 0 ? 0 : ((next - 1 + (points - stops[next - 1]) / (stops[next] - stops[next - 1])) * 100) / (stops.length - 1);
+  const mGrid = el('div', {class: 'event-milestones-grid v24-event-milestones gp-track', style: `--fill:${Math.round(fill)};--stops:${stops.length}`});
   for (const ms of cfg.milestones) {
     const key = `${ms.id}@${season.year}`;
     const claimed = evtState.claimedMilestones.includes(key);
@@ -1023,7 +1091,9 @@ export function renderEventsAndTasksSection({
     }));
   }
   milestoneSec.append(mGrid);
+  if (cfg.secret) milestoneSec.append(secretCard({items, cfg, year: season.year, state: evtState, active: Boolean(status.active), onClaim: onClaimEventMilestone}));
   root.append(milestoneSec);
+  if (status.active && evtState.board) root.append(festivalBoardSection(evtState.board, cfg));
 
   const pending = pendingFestivalRewards(evtState);
   if (pending.length) {

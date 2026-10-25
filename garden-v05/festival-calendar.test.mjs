@@ -89,7 +89,7 @@ test('farm work counts 60 points a day, free actions 20, owl quests always; caps
 });
 
 test('milestones are 100 / 450 / 1000 and claimed per season, so next year can earn them again', () => {
-  for (const e of HOGWARTS_EVENTS.filter((x) => x.season)) assert.deepEqual(e.milestones.map((m) => m.points), [100, 450, 1000]);
+  for (const e of HOGWARTS_EVENTS.filter((x) => x.season)) assert.deepEqual(e.milestones.map((m) => m.points), e.id === 'event_halloween' ? [100, 450, 700, 1000] : [100, 450, 1000]);
   const s = veteran();
   recordFestivalAction('dailyChest', 100, s, vn('2026-10-25T10:00:00'));
   assert.equal(claimEventMilestone('hal_m1@2026', {storage: s, nowMs: vn('2026-10-25T10:00:00')}).ok, true);
@@ -138,4 +138,19 @@ test('V24 saves migrate: claimed stay claimed, reached-but-unclaimed old rewards
   // Old claims do not block this year's milestones.
   recordFestivalAction('dailyChest', 100, s, now);
   assert.equal(claimEventMilestone('hal_m1@2026', {storage: s, nowMs: now}).ok, true);
+});
+
+test('Lễ Hội Ma secret present opens only after every stop is claimed, carries Hagrid\'s letter, and waits after the season', () => {
+  const now = vn('2026-10-30T10:00:00');
+  const s = veteran({pointsBySeason: {'event_halloween@2026': 1000}});
+  assert.equal(claimEventMilestone('hal_secret@2026', {storage: s, nowMs: now}).reason, 'INSUFFICIENT_POINTS');
+  for (const id of ['hal_m1', 'hal_m2', 'hal_m4']) assert.equal(claimEventMilestone(`${id}@2026`, {storage: s, nowMs: now}).ok, true);
+  assert.equal(claimEventMilestone('hal_secret@2026', {storage: s, nowMs: now}).reason, 'INSUFFICIENT_POINTS');
+  assert.equal(claimEventMilestone('hal_m3@2026', {storage: s, nowMs: now}).ok, true);
+  // Season over before opening it: it shows up in the pending rewards.
+  assert.deepEqual(pendingFestivalRewards(loadEventState(s, vn('2026-11-20T10:00:00'))).map((m) => m.key), ['hal_secret@2026']);
+  const gift = claimEventMilestone('hal_secret@2026', {storage: s, nowMs: now});
+  assert.equal(gift.ok, true);
+  assert.equal(gift.reward.letter.signature, 'Hagrid');
+  assert.equal(claimEventMilestone('hal_secret@2026', {storage: s, nowMs: now}).reason, 'ALREADY_CLAIMED');
 });

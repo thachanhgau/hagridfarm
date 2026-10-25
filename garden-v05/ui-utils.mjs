@@ -1,6 +1,6 @@
-import { ITEM_ART } from "./item-art.mjs?v=24.9.76";
-import {saleTotal} from "./premium-products.mjs?v=24.9.76";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.76';
+import { ITEM_ART } from "./item-art.mjs?v=24.9.77";
+import {saleTotal} from "./premium-products.mjs?v=24.9.77";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.77';
 const SUPPLY_ART_KEYS = Object.freeze({
  water: "supply_water",
  boost: "supply_boost",

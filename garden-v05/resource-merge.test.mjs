@@ -64,6 +64,6 @@ test('kit rewards were replaced at about 4 water per kit', () => {
   assert.deepEqual([craft.amount, craft.itemId, craft.bonusQty], [4, 'oats', 4]);
   const day = Array.from({length: 28}, (_, d) => `2026-10-${String(d + 1).padStart(2, '0')}`).find((k) => pickDailyQuests(k, {level: 20, hasCreature: false})[2].id === 'q_craft');
   assert.equal(pickDailyQuests(day, {level: 20, hasCreature: false})[2].reward.label, '+4 Nước, +4 Yến mạch');
-  const m3 = HOGWARTS_EVENTS.find((e) => e.milestones.length).milestones[2].reward;
+  const m3 = HOGWARTS_EVENTS.find((e) => e.milestones.length).milestones.at(-1).reward;
   assert.deepEqual([m3.kind, m3.amount, m3.waterBonus], ['boost', 2, 47]); // was +35 water +3 kits
 });

@@ -32,7 +32,7 @@ test('festival points add up per UI command, owl quest claim and chest', () => {
   // Free taps would give 159 points; the game counts 20 a day.
   assert.equal(freeFestivalPoints(false), 3 * 8 + 12 + 15 + 10 + 3 * 6 + 5 + 3 * 25);
   assert.equal(simulate({days: 1, free: true}).daily[0].festival.free, 20);
-  assert.deepEqual(FESTIVAL_MILESTONES, [100, 450, 1000]);
+  assert.deepEqual(FESTIVAL_MILESTONES, [100, 450, 700, 1000]); // Lễ Hội Ma: 700 added 25/10/2026
 });
 
 test('time to milestones walks sessions and honours a daily farm cap', () => {

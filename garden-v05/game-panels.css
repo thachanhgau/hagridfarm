@@ -173,10 +173,10 @@
 #gameShell #panel .v24-event-hero-when{margin:0;color:#D6D8BF;font:800 12.5px/1.2 var(--gp-body)}
 #gameShell #panel .gp-points{margin:0;font:900 20px/1 var(--gp-display)}
 #gameShell #panel .v24-event-caps{justify-content:flex-start;margin:0 0 10px}
-#gameShell #panel .gp-track{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:4px 0 0;padding:0}
-#gameShell #panel .gp-track:not(.is-pending):before,#gameShell #panel .gp-track:not(.is-pending):after{content:"";position:absolute;left:calc(100% / 6);top:27px;height:10px;background:#231F2E;border:2px solid #231F2E;box-sizing:border-box}
-#gameShell #panel .gp-track:not(.is-pending):before{right:calc(100% / 6)}
-#gameShell #panel .gp-track:not(.is-pending):after{width:calc((100% - 100% / 3) * var(--fill, 0) / 100);background:#FFC36B;box-shadow:inset 0 2px #F5D69A}
+#gameShell #panel .gp-track{position:relative;display:grid;grid-template-columns:repeat(var(--stops,3),minmax(0,1fr));gap:6px;margin:4px 0 0;padding:0}
+#gameShell #panel .gp-track:not(.is-pending):before,#gameShell #panel .gp-track:not(.is-pending):after{content:"";position:absolute;left:calc(100% / var(--stops,3) / 2);top:27px;height:10px;background:#231F2E;border:2px solid #231F2E;box-sizing:border-box}
+#gameShell #panel .gp-track:not(.is-pending):before{right:calc(100% / var(--stops,3) / 2)}
+#gameShell #panel .gp-track:not(.is-pending):after{width:calc((100% - 100% / var(--stops,3)) * var(--fill, 0) / 100);background:#FFC36B;box-shadow:inset 0 2px #F5D69A}
 #gameShell #panel .gp-track-stop{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:5px;margin:0;padding:0;border:0;background:none;box-shadow:none;text-align:center}
 #gameShell #panel .gp-track-node{position:relative;display:grid;place-items:center;width:64px;height:64px;padding:0}
 #gameShell #panel .gp-track-node:disabled{background:#24483F;box-shadow:inset 0 2px #3F6A45,0 3px #231F2E}
@@ -368,3 +368,14 @@
 #gameShell #saleAcp .acp-chips button{min-height:36px;padding:4px 8px;font:700 12px/1.2 var(--gp-body)}
 #gameShell #saleAcp .acp-field input:invalid{border-color:#C75B4B}
 #gameShell #saleAcp .acp-actions{display:flex;gap:8px;justify-content:flex-end}
+
+/* Lễ Hội Ma secret present and leaderboard (owner 25/10/2026) */
+#gameShell #panel .v24-event-secret{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:8px;border:2px dashed #7A5C9E;background:rgba(35,31,46,.35)}
+#gameShell #panel .v24-event-secret.is-ready{border-style:solid;border-color:#FFC36B}
+#gameShell #panel .v24-event-secret-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+#gameShell #panel .v24-board-list{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:3px}
+#gameShell #panel .v24-board-row{display:grid;grid-template-columns:28px minmax(0,1fr) auto auto;align-items:center;gap:6px;padding:3px 6px;background:rgba(35,31,46,.35)}
+#gameShell #panel .v24-board-row.is-me{outline:2px solid #FFC36B}
+#gameShell #panel .v24-board-rank{font-weight:700;text-align:center}
+#gameShell #panel .v24-board-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#gameShell #panel .v24-board-me{margin:6px 0 0}
