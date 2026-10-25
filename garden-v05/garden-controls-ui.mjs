@@ -1,7 +1,7 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.78';
-import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.78';
-import {V24_ART} from './v24-visuals.mjs?v=24.9.78';
-import {pixelIcon} from './pixel-icons.mjs?v=24.9.78';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.79';
+import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.79';
+import {V24_ART} from './v24-visuals.mjs?v=24.9.79';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.79';
 
 export function setupGardenControls({items,onSettings,getWeather}){
  const labels={sowTool:'Gieo hạt',harvestTool:'Gặt tất cả cây chín',creatureTool:'Nuôi sinh vật',craftTool:'Chế biến',buildTool:'Xây dựng'};

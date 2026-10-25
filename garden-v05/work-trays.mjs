@@ -1,6 +1,6 @@
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.78';
-import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.78';
-import { DB } from './balance-data.mjs?v=24.9.78';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.79';
+import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.79';
+import { DB } from './balance-data.mjs?v=24.9.79';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);
