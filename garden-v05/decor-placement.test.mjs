@@ -66,7 +66,7 @@ test('large pieces: the whole footprint counts, turned with the facing, off path
 test('a tall piece may not stand in front of a plot and hide it', () => {
   const where = {itemId: 'sp_fawkes_perch', asset: assetOf('sp_fawkes_perch'), iso};
   // Just below plot 2's front corner: free ground, but the 188 px perch covers the plot behind it.
-  assert.match(at(11, 7, where), /che mất/);
+  assert.match(at(11, 7, where), /chồng lên thửa/);
   assert.equal(at(11, 7, {itemId: 'sp_fawkes_perch'}), '');
 });
 
@@ -82,8 +82,8 @@ test('placement grid: green where the item fits, grey where it cannot, only on o
   const ok = grid.filter(g => g.ok).length;
   assert.ok(grid.every(g => g.at[0] <= stage.right && g.at[1] <= stage.bottom));
   assert.ok(ok > 0 && ok < grid.length);
-  // A small piece may stand at the edge of a plot without counting as hiding it: about twice the ground of the old 12 px rule stays green.
-  assert.ok(ok / grid.length > 0.35, `${ok}/${grid.length}`);
+  // The starter garden is mostly plots, hut and buildings; about a tenth of its half-tile spots stay green for a 1×1.
+  assert.ok(ok / grid.length > 0.08, `${ok}/${grid.length}`);
 });
 
 test('a plot or pen is not built over a placed decoration', () => {
@@ -104,3 +104,31 @@ test('2×1 and 3×1 pieces may stand on a path; 2×2 and up may not', () => {
  state.keepsakes.puffskein=1;assert.equal(at(10,30,{state,decorations:{}}),'');
  assert.match(at(10,26,{state,decorations:{}}),/kỷ vật/);
  });
+
+// Owner 25/10/2026: pieces stood over plots, pens, the hut and each other. Done when every piece fits many
+// areas of the full garden without sharing more than a sliver of screen with a plot, pen, scenery or piece.
+test('full garden: no piece covers a plot, pen, scenery or another piece, and each still fits many areas', () => {
+  const full = {plots: Array(18).fill({}), built: scene.pens.map(p => p.id), decorations: []};
+  const check = (id, col, row, decorations = {}) => decorSpotProblem(col, row, {map: scene, stage: last, state: full, decorations, itemId: id, asset: assetOf(id), iso, assetOf});
+  // Spots the old 40 % / 25 % rules allowed in a packed garden (QA 25/10/2026).
+  assert.match(check('hw_caramel_apple_cart', 7, 9), /thửa/);
+  assert.match(check('sp_knight_bus', 20.5, 10.5), /thửa/);
+  assert.match(check('sp_vanishing_cabinet', -3.5, 6.5), /lều/);
+  const placed = {owned: ['sp_sorting_hat'], placements: ['sp_sorting_hat'], positions: {sp_sorting_hat: [5, 23]}};
+  assert.equal(check('sp_sorting_hat', 5, 23), '');
+  // Footprints touch but do not overlap; the sprites would.
+  assert.equal(check('sp_goblet_fire', 5, 24), '');
+  assert.match(check('sp_goblet_fire', 5, 24, placed), /Chỗ này chồng lên Nón/);
+  for (const item of manifest.items.filter(item => ['special', 'festival'].includes(item.collection))) {
+    for (const facing of ['default', 'right']) {
+      let spots = 0;
+      const regions = new Set();
+      for (let row = -1; row <= last.bottom; row += 0.5) for (let col = -5; col <= last.right; col += 0.5) {
+        if (decorSpotProblem(col, row, {map: scene, stage: last, state: full, decorations: {}, itemId: item.id, facing, asset: item, iso})) continue;
+        spots++;
+        regions.add(`${Math.floor(col / 8)},${Math.floor(row / 8)}`);
+      }
+      assert.ok(spots >= 60 && regions.size >= 4, `${item.id} ${facing}: ${spots} spots in ${regions.size} areas`);
+    }
+  }
+});

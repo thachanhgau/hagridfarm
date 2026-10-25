@@ -4,7 +4,8 @@ import {el,button} from './ui-utils.mjs?v=24.9.78';
 import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.78';
 import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.78';
 import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.78';
-import {DECORATION_LAYOUT,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.78';
+import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.78';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.78';
 import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.78';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
@@ -14,20 +15,42 @@ const FOOTPRINTS=new Map(STORE_CATALOG.filter(i=>i.kind==='decoration').map(i=>[
 export const decorFootprint=id=>FOOTPRINTS.get(id)??[1,1];
 // Art bible §2: a large piece keeps 0.9 tile off the fence so its body never sits on the rails.
 const FENCE_CLEARANCE=0.9;
+// Owner 25/10/2026: smaller pieces keep 0.4 tile off it so no sprite stands on the rails.
+const SMALL_FENCE_CLEARANCE=0.4;
 const PATH_CLEARANCE=0.35;
-// A sprite in front of a plot or pen may hide up to this share of its screen box (small pieces stand at the edge freely).
-const COVER_SHARE=0.25;
-// Share of a sprite that may sit behind another sprite (building, tree, decoration) before it counts as hidden.
-const HIDDEN_SHARE=0.4;
+// Owner 25/10/2026: a piece may share at most this sliver of a plot, a pen or another sprite on screen, in front or behind.
+const OVERLAP_SHARE=0.1;
+// Screen height above the ground the crops (plots) and the fence with its creatures (pens) reach.
+const PLOT_HEIGHT=48,PEN_HEIGHT=72;
 const SCENE_NAMES=Object.freeze({hut:'lều Hagrid',oak:'cây sồi',pine:'cây thông',pond:'ao',gardener:'bác Hagrid',greenhouse:'nhà kính',owl:'bưu cục Cú'});
 
 function spriteRect(asset,facing,x,y){
  const b=facing==='right'&&asset.rightBounds?asset.rightBounds:asset.bounds??{x:0,y:0,w:asset.width,h:asset.height};
  const left=x-asset.pivotX+b.x,top=y-asset.pivotY+b.y;
- return {left,top,right:left+b.w,bottom:top+b.h,depth:y};
+ return {left,top,right:left+b.w,bottom:top+b.h};
 }
 const area=r=>Math.max(0,r.right-r.left)*Math.max(0,r.bottom-r.top);
 const overlapArea=(a,b)=>Math.max(0,Math.min(a.right,b.right)-Math.max(a.left,b.left))*Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top));
+const polygonArea=p=>Math.abs(p.reduce((s,a,i)=>{const b=p[(i+1)%p.length];return s+a[0]*b[1]-b[0]*a[1];},0))/2;
+/** Area of a convex polygon inside a screen rect (Sutherland–Hodgman clip, then shoelace). */
+function rectPolygonOverlap(r,poly){
+ let p=poly;
+ for(const [axis,limit,keep] of [[0,r.left,1],[0,r.right,-1],[1,r.top,1],[1,r.bottom,-1]]){
+  const out=[];
+  for(let i=0;i<p.length;i++){
+   const a=p[i],b=p[(i+1)%p.length],inA=(a[axis]-limit)*keep>=0,inB=(b[axis]-limit)*keep>=0;
+   if(inA)out.push(a);
+   if(inA!==inB){const t=(limit-a[axis])/(b[axis]-a[axis]);out.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]);}
+  }
+  if(!(p=out).length)return 0;
+ }
+ return polygonArea(p);
+}
+/** A plot or pen base on screen: its ground diamond swept up by what stands on it. */
+function groundSilhouette(g,height,iso){
+ const [top,right,bottom,left]=[[g.c0,g.r0],[g.c1,g.r0],[g.c1,g.r1],[g.c0,g.r1]].map(([c,r])=>iso(c,r));
+ return [[top[0],top[1]-height],[right[0],right[1]-height],right,bottom,left,[left[0],left[1]-height]];
+}
 
 function segmentRectDistance([a,b],[c,d],r){
  let best=Infinity;
@@ -62,9 +85,9 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  // Art bible §2: 2×2 and up keep off the fence; owner 20/10/2026: they alone keep off the paths, 2×1 and 3×1 may stand on them.
  const big=decorFootprint(itemId).every(n=>n>1);
  const rect=decorFootprintRect(col,row,decorFootprint(itemId),facing);
- const inset=0.05,margin=big?FENCE_CLEARANCE:0;
+ const inset=0.05,margin=big?FENCE_CLEARANCE:SMALL_FENCE_CLEARANCE;
  if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
-  if(!stageContains(stage,c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở.';
+  if(!stageContains(stage,c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
  }
  const hits=(c,r,w,h)=>rectsOverlap(rect,{c0:c,c1:c+w,r0:r,r1:r+h});
  // Owner 20/10/2026: unbuilt bases are free ground; building there asks to move the piece first (decorOnGround).
@@ -87,32 +110,27 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
   const at=decorSpot(decorations,other);
   if(at&&rectsOverlap(rect,decorFootprintRect(at[0],at[1],decorFootprint(other),decorFacingFor(decorations,other))))return 'Chồng lên món trang trí khác.';
  }
- // Occlusion: the sprite drawn in front of a plot or pen must not hide it.
+ // Screen overlap, owner 25/10/2026: the sprite may neither hide nor be hidden by a plot, a pen, scenery or another piece.
  if(asset&&iso){
-  const b=facing==='right'&&asset.rightBounds?asset.rightBounds:asset.bounds??{x:0,y:0,w:asset.width,h:asset.height};
-  const [x,y]=iso(col,row),left=x-asset.pivotX+b.x,top=y-asset.pivotY+b.y,right=left+b.w,bottom=top+b.h;
-  for(const g of [...plotRects,...penRects]){
-   const pts=[[g.c0,g.r0],[g.c1,g.r0],[g.c1,g.r1],[g.c0,g.r1]].map(([c,r])=>iso(c,r));
-   const gl=Math.min(...pts.map(p=>p[0])),gr=Math.max(...pts.map(p=>p[0])),gt=Math.min(...pts.map(p=>p[1])),gb=Math.max(...pts.map(p=>p[1]));
-   const ox=Math.min(right,gr)-Math.max(left,gl),oy=Math.min(bottom,gb)-Math.max(top,gt);
-   // Only ground behind the foot is hidden; a plot in front of the item draws over it instead.
-   if(ox>0&&oy>0&&gt<y&&ox*oy>COVER_SHARE*(gr-gl)*(gb-gt))return 'Món này sẽ che mất thửa đất hoặc chuồng phía sau.';
-  }
-  // Sprites drawn in depth order: whichever of two stands behind must stay mostly in view.
-  const mine=spriteRect(asset,facing,x,y);
+  const [x,y]=iso(col,row),mine=spriteRect(asset,facing,x,y),mineArea=area(mine);
+  const grounds=[...plotRects.map(g=>groundSilhouette(g,PLOT_HEIGHT,iso)),...penRects.map(g=>groundSilhouette(g,PEN_HEIGHT,iso))];
+  if(grounds.some(poly=>rectPolygonOverlap(mine,poly)>OVERLAP_SHARE*Math.min(mineArea,polygonArea(poly))))return 'Món này sẽ chồng lên thửa đất hoặc chuồng.';
   const others=[];
-  for(const o of map?.objects??[]){const prop=map.props?.find(p=>p.id===o.id);if(prop){const [ox2,oy2]=iso(o.col,o.row);others.push([SCENE_NAMES[o.id]||'cảnh vật',spriteRect(prop,'default',ox2,oy2)]);}}
-  for(const w of wizardTargets(iso))others.push([SCENE_NAMES[w.id]||'công trình',{...w.bounds,depth:w.xy[1]}]);
+  // Like the renderer: oak and pine anchors are not drawn (the forest layers own the trees).
+  for(const o of map?.objects??[]){const prop=!['oak','pine'].includes(o.id)&&map.props?.find(p=>p.id===o.id);if(prop){const [ox2,oy2]=iso(o.col,o.row);others.push([SCENE_NAMES[o.id]||'cảnh vật',spriteRect(prop,'default',ox2,oy2)]);}}
+  // The cottage corner is drawn 150×75 px at iso(-2, 5.5), see scene-renderer drawObject.
+  {const [cx,cy]=iso(-2,5.5);others.push([SCENE_NAMES.hut,{left:cx-75,top:cy-67,right:cx+75,bottom:cy+8}]);}
+  for(const w of wizardTargets(iso))others.push([SCENE_NAMES[w.id]||'công trình',w.bounds]);
+  const rotations=state?.decorationRotations??{};
+  for(const d of decorationPlacements(map))if(state?.decorations?.includes(d.id)){
+   const art=earnedDecorArt(d.id,rotations[d.id]==='right'?'right':'default');
+   if(art)others.push(['đồ trang trí của vườn',spriteRect({pivotX:48,pivotY:96,...art},'default',d.xy[0],d.xy[1])]);
+  }
   for(const raw of decorations?.placements??[]){
    const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw,otherAsset=other&&other!==itemId&&assetOf?.(other),spot=otherAsset&&decorSpot(decorations,other);
    if(spot){const [ox2,oy2]=iso(spot[0],spot[1]);others.push([decorLabelFor(otherAsset),spriteRect(otherAsset,decorFacingFor(decorations,other),ox2,oy2)]);}
   }
-  for(const [name,rect] of others){
-   const shared=overlapArea(mine,rect);
-   if(!shared)continue;
-   if(mine.depth<=rect.depth&&shared>HIDDEN_SHARE*area(mine))return `Chỗ này bị ${name} che mất.`;
-   if(mine.depth>rect.depth&&shared>HIDDEN_SHARE*area(rect))return `Món này sẽ che mất ${name}.`;
-  }
+  for(const [name,rect] of others)if(overlapArea(mine,rect)>OVERLAP_SHARE*Math.min(mineArea,area(rect)))return `Chỗ này chồng lên ${name}.`;
  }
  return '';
 }
