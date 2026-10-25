@@ -1,8 +1,8 @@
-import {getGardenStorage} from './garden-storage.mjs?v=24.9.77';
-import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.77';
-import {stableHash} from './scene-animation.mjs?v=24.9.77';
-import {dayKeyFor} from './garden-quests.mjs?v=24.9.77';
-import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.77';
+import {getGardenStorage} from './garden-storage.mjs?v=24.9.78';
+import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.78';
+import {stableHash} from './scene-animation.mjs?v=24.9.78';
+import {dayKeyFor} from './garden-quests.mjs?v=24.9.78';
+import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.78';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -23,7 +23,7 @@ const HALLOWEEN_MILESTONES = Object.freeze([halM1, halM2,
   halM3]);
 const HALLOWEEN_SECRET = Object.freeze({
   id: 'hal_secret', title: 'Quà Bí Mật Của Bác Hagrid',
-  reward: Object.freeze({kind: 'boost', amount: 5, waterBonus: 100, itemId: 'pumpkin', bonusQty: 10, label: '+5 Nước phép, +100 Nước & +10 Bí ngô',
+  reward: Object.freeze({kind: 'boost', amount: 50, waterBonus: 100, itemId: 'pumpkin', bonusQty: 10, label: '+50 Nước phép, +100 Nước & +10 Bí ngô',
     letter: Object.freeze({greeting: 'Con thân mến,', paragraphs: Object.freeze([
       'Bác đã thấy con thắp sáng cả Lễ Hội Ma ở Rừng Cấm, từ giỏ quà đầu tiên tới đại tiệc bí ngô. Chẳng mấy ai đi hết chặng đường ấy đâu!',
       'Bác lén gói cho con ít nước phép, nước giếng và mấy quả bí ngô to nhất vườn bác.',
