@@ -1,24 +1,25 @@
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.79';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.79';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.79';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.79';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.79';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.79';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.79';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.79';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.79';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.79';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.79';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.79';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.79';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.79';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.79';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.79';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.79';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.79';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.79';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.79';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.79';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.80';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.80';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.80';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.80';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.80';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.80';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.80';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.80';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.80';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.80';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.80';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.80';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.80';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.80';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.80';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.80';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.80';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.80';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.80';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.80';
+import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.80';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.80';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -30,12 +31,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.79';
+} from './scene-animation.mjs?v=24.9.80';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.79';
+} from './forest-surround.mjs?v=24.9.80';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -401,14 +402,6 @@ for (const id of DECORATION_IDS) {
   if (!DECORATION_LAYOUT[id]) throw new Error(`Thiếu layout trang trí ${id}.`);
 }
 
-const KEEPSAKE_LAYOUT = Object.freeze(Object.keys(CREATURE).map((species, index) => ({
-  species,
-  col: 2 + index * 2,
-  row: 25,
-  width: 1,
-  height: 1,
-})));
-
 /** Pure decoration placement data used by rendering and layout tests. */
 export function decorationPlacements(scene = map) {
   return DECORATION_IDS.map((id) => {
@@ -418,10 +411,10 @@ export function decorationPlacements(scene = map) {
   });
 }
 
-/** Keepsakes are displayed as small labelled tokens along the south aisle. */
+/** Keepsakes are displayed as small labelled tokens in the final south plaza. */
 export function keepsakePlacements(scene = map) {
-  return KEEPSAKE_LAYOUT.map((spec) => {
-    const [x, y] = iso(spec.col + 0.5, spec.row + 1, scene);
+  return KEEPSAKE_DISPLAY_LAYOUT.map((spec) => {
+    const [x, y] = iso(...keepsakeAnchor(spec), scene);
     return {...spec, xy: [x, y]};
   });
 }
@@ -828,7 +821,6 @@ export async function createGarden(canvas, options = {}) {
   const grassTile = tiles.get('grass');
   const soilTile = tiles.get('soil');
   const decorationMap = new Map(decorationPlacements(map).map((placement) => [placement.id, placement]));
-  const keepsakeMap = new Map(keepsakePlacements(map).map((placement) => [placement.species, placement]));
   const terrainCaches = new Map();
   const plotBorderLayers = new Map();
   const penHabitatLayers = new Map();
@@ -1251,13 +1243,15 @@ export async function createGarden(canvas, options = {}) {
     const source = state?.keepsakes;
     if (!source || typeof source !== 'object' || Array.isArray(source)) return [];
     const objects = [];
-    // The authored aisle keepsakes live at row 25.  Before the final chapter,
-    // follow the stepped frontier; retain the authored anchor in the full garden.
-    
-    for (const placement of keepsakeMap.values()) {
+    // The final chapter uses the compact authored plaza. Before that chapter,
+    // keep the old stepped frontier so a keepsake never renders beyond the
+    // member's opened land. This is generated display geometry; saved species
+    // counts and store-decoration positions are untouched.
+    const display = keepsakeDisplayPlacements(stage, keepsakeAnchorRow);
+    for (const placement of display) {
       const count = Number(source[placement.species]);
       if (!Number.isFinite(count) || count <= 0) continue;
-      const xy = iso(placement.col + 0.5, keepsakeAnchorRow(stage,placement.col + 0.5));
+      const xy = iso(...placement.anchor);
       objects.push({kind: 'keepsake', type: 'keepsake', id: `keepsake:${placement.species}`, species: placement.species, count, xy});
     }
     return objects;
@@ -1640,7 +1634,7 @@ export async function createGarden(canvas, options = {}) {
     // the stage calculation without using authored row 25 to force expansion.
     const keepsakeSource = state?.keepsakes;
     if (keepsakeSource && typeof keepsakeSource === 'object' && !Array.isArray(keepsakeSource)) {
-      for (const placement of keepsakeMap.values()) {
+      for (const placement of KEEPSAKE_LEGACY_LAYOUT) {
         const count = Number(keepsakeSource[placement.species]);
         if (Number.isFinite(count) && count > 0) occupiedPoints.push([placement.col + 0.5, 8]);
       }
@@ -1679,9 +1673,15 @@ export async function createGarden(canvas, options = {}) {
     // Every foot spot on opened ground: green where the item may stand, grey where it cannot.
     if (options.previewDecoration?.grid?.length) {
       context.save();
+      // The placement logic keeps the full half-tile grid for snapping, but a
+      // phone only needs the nearest valid suggestions. This avoids painting
+      // hundreds of grey cells over the garden on every camera tap.
+      const previewGrid = Array.isArray(options.previewDecoration.suggestions)
+        ? options.previewDecoration.suggestions
+        : options.previewDecoration.grid;
       for (const ok of [true, false]) {
         context.beginPath();
-        for (const g of options.previewDecoration.grid) {
+        for (const g of previewGrid) {
           if (g.ok !== ok) continue;
           const [c, r] = g.at;
           [[c - 0.22, r - 0.22], [c + 0.22, r - 0.22], [c + 0.22, r + 0.22], [c - 0.22, r + 0.22]].forEach(([x, y], i) => { const p = iso(x, y); if (i) context.lineTo(p[0], p[1]); else context.moveTo(p[0], p[1]); });

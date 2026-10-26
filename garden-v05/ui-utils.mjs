@@ -1,6 +1,8 @@
-import { ITEM_ART } from "./item-art.mjs?v=24.9.79";
-import {saleTotal} from "./premium-products.mjs?v=24.9.79";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.79';
+import { ITEM_ART } from "./item-art.mjs?v=24.9.80";
+import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=24.9.80";
+import { DB } from "./balance-data.mjs?v=24.9.80";
+import {saleTotal} from "./premium-products.mjs?v=24.9.80";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.80';
 const SUPPLY_ART_KEYS = Object.freeze({
  water: "supply_water",
  boost: "supply_boost",
@@ -21,6 +23,27 @@ const CANONICAL_ART_KEYS = Object.freeze({
  reward_medal: "reward_medal",
  reward_trophy: "reward_trophy",
 });
+export { CANONICAL_OUTPUT_IDS };
+
+const CROP_IDS = new Set((DB.crops || []).map(crop => crop.id));
+const DISPLAY_LABELS = Object.freeze(Object.fromEntries([
+ ...DB.crops.map(crop => [crop.id, crop.label]),
+ ...DB.animals.map(animal => [animal.feed, `Khẩu phần ${animal.label}`]),
+ ...DB.animals.map(animal => [`produce_${animal.id}`, animal.produce]),
+ ['insects', 'Côn trùng'],
+ ['fish', 'Cá nhỏ'],
+]));
+
+/** Route inventory/reward crop identities to harvested art without changing live-plant surfaces. */
+export function cropVisualKind(id) {
+ const cropId = String(id || '').replace(/^harvest_/, '');
+ return CROP_IDS.has(cropId) ? 'harvest' : '';
+}
+
+/** Use the approved display name in UI/accessibility text; never expose a raw output id. */
+export function itemDisplayName(id, fallback = 'Thành phẩm') {
+ return DISPLAY_LABELS[String(id || '')] || String(fallback || 'Thành phẩm');
+}
 
 export const $=id=>document.getElementById(id);
 export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else e.setAttribute(k,String(tag==='img'&&k==='src'?runtimeImageUrl(v):v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}
@@ -110,29 +133,40 @@ export function itemArtKey(id, { kind = "" } = {}) {
  const premiumKey = premiumArtKey(rawId);
  if (premiumKey) return premiumKey;
  if (/^plot_\d+$/.test(rawId)) return CANONICAL_ART_KEYS.expansion_plot;
- if (rawId.startsWith("recipe_") && ITEM_ART[rawId]) return rawId;
- if (rawId.startsWith("produce_") && ITEM_ART[rawId]) return rawId;
- if (rawId.startsWith("keepsake_")) {
-  const produceKey = `produce_${rawId.slice("keepsake_".length)}`;
-  if (ITEM_ART[produceKey]) return produceKey;
+ if (kind === "harvest" || rawId.startsWith("harvest_")) {
+  const cropId = rawId.replace(/^harvest_/, "");
+  const harvestKey = `harvest_${cropId}`;
+  if (flowArtSpec(harvestKey)) return harvestKey;
  }
+ if (kind === "keepsake" || rawId.startsWith("keepsake_")) {
+  const statueKey = keepsakeArtKey(rawId);
+  if (statueKey) return statueKey;
+  // A missing statue must stay explicit; never revive the legacy produce/cup
+  // composition for a keepsake slot.
+  return null;
+ }
+ const canonicalOutput = outputArtKey(rawId);
+ if (canonicalOutput) return canonicalOutput;
+ if (flowArtSpec(rawId)) return rawId;
+ if (rawId.startsWith("recipe_") && ITEM_ART[rawId]) return rawId;
+ if (rawId.startsWith("produce_") && (flowArtSpec(rawId) || ITEM_ART[rawId])) return rawId;
  if (rawId.startsWith("decoration-") && ITEM_ART[rawId]) return rawId;
  const recipeKey = `recipe_${rawId}`;
  if (ITEM_ART[recipeKey]) return recipeKey;
- if (kind === "produce" || kind === "keepsake") {
+ if (kind === "produce") {
   const produceKey = `produce_${rawId.replace(/^(produce_|keepsake_)/, "")}`;
-  if (ITEM_ART[produceKey]) return produceKey;
+  if (flowArtSpec(produceKey) || ITEM_ART[produceKey]) return produceKey;
  }
  return null;
 }
 
 function itemArtVisual(key, size, { facing = "default", keepsake = false } = {}) {
- const base = ITEM_ART[key];
+ const base = itemArtSpec(key);
  const spec = facing === "right" && base?.rightFile ? {...base, file: base.rightFile, bounds: base.rightBounds} : base;
  if (!spec?.file) return null;
  const box = artBounds(spec);
  const fitScale = Math.min(size / box.w, size / box.h);
- const isPixelNativeSurface = /^(?:supply|premium)_/.test(key);
+ const isPixelNativeSurface = /^(?:supply|premium|harvest|keepsake)_/.test(key) || Boolean(flowArtSpec(key));
  const scale = isPixelNativeSurface && fitScale >= 1 ? Math.floor(fitScale) : fitScale;
  const centeredLeft = (size - box.w * scale) / 2 - box.x * scale;
  const centeredTop = (size - box.h * scale) / 2 - box.y * scale;
@@ -151,16 +185,7 @@ function itemArtVisual(key, size, { facing = "default", keepsake = false } = {})
  image.style.cssText = `position:absolute;width:${box.width * scale}px;height:${box.height * scale}px;left:${left}px;top:${top}px;max-width:none;image-rendering:pixelated;pointer-events:none;transform:${mirror ? "scaleX(-1)" : "none"};transform-origin:center`;
  visual.append(image);
  if (keepsake) {
-  visual.setAttribute("data-presentation", "trophy-pedestal");
-  const badge = el("span", {
-   class: "keepsake-pedestal-badge",
-   "data-art-key": CANONICAL_ART_KEYS.reward_trophy,
-   "aria-label": "Kỷ vật",
-   style: `position:absolute;right:0;bottom:0;width:${Math.max(14, Math.round(size * .32))}px;height:${Math.max(14, Math.round(size * .32))}px;display:block;pointer-events:none`,
-  });
-  const badgeArt = itemArtVisual(CANONICAL_ART_KEYS.reward_trophy, Math.max(14, Math.round(size * .32)));
-  badge.append(badgeArt || artPlaceholder(Math.max(14, Math.round(size * .32)), "Ảnh cúp kỷ vật đang cập nhật"));
-  visual.append(badge);
+  visual.setAttribute("data-presentation", "keepsake-statue");
  }
  return visual;
 }
@@ -199,16 +224,18 @@ export function earnedDecorIcon(decorId, { size = 48, facing = "default" } = {})
 export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = null, badge = "", facing = "default" } = {}) {
  const rawId = String(id || "");
  const isSeed = kind === "seed" || rawId.startsWith("seed_");
- const cropId = rawId.replace(/^seed_/, "");
+ const cropId = rawId.replace(/^(?:seed_|harvest_)/, "");
+ const isHarvest = kind === "harvest" || rawId.startsWith("harvest_");
  const feedCreature = FEED_CREATURE_MAP[rawId];
  const isKeepsake = rawId.startsWith("keepsake_") || kind === "keepsake";
- const isProduce = rawId.startsWith("produce_") || isKeepsake || kind === "produce";
+ const isProduce = rawId.startsWith("produce_") || kind === "produce";
  const hasFoodIdentity = Boolean(feedCreature) || kind === "food";
  const artKey = itemArtKey(rawId, { kind });
  const supplyKey = supplyArtKey(rawId, kind);
  const premiumKey = premiumArtKey(rawId);
  const isPremiumSurface = kind === "premium" || kind === "nest" || Boolean(premiumKey) || rawId.startsWith("premium_") || rawId.startsWith("warm_nest_");
  const isCrafted = rawId === "insects" || rawId.startsWith("insects_") || rawId === "fish" || rawId.startsWith("fish_");
+ const isCanonicalOutput = CANONICAL_OUTPUT_IDS.includes(rawId) || outputArtKey(rawId) !== null;
  const craftedKey = isCrafted ? (artKey || (rawId.startsWith("fish") ? "recipe_fish" : "recipe_insects")) : null;
  const isPlot = rawId === "expansion_plot" || /^plot_\d+$/.test(rawId);
  const isPen = /^pen_\d+$/.test(rawId);
@@ -236,7 +263,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   slot.classList.add("is-supply", "is-premium");
   appendNativeArt(slot, premiumKey, Math.round(size * 0.92), "Ảnh sản phẩm cao cấp đang cập nhật");
  } else if (isCrafted) {
-  slot.classList.add("is-crafted", "is-item-art", "is-recipe-art");
+  slot.classList.add("is-crafted", "is-item-art", isCanonicalOutput ? "is-output-art" : "is-recipe-art");
   appendNativeArt(slot, craftedKey, Math.round(size * 0.92), "Ảnh công thức đang cập nhật");
  } else if (isPlot) {
   slot.classList.add("is-expansion", "is-plot-art");
@@ -262,11 +289,18 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   slot.classList.add("is-item-art");
   if (hasFoodIdentity) slot.classList.add("is-feed");
   if (isProduce) slot.classList.add("is-produce");
-  slot.classList.add(isKeepsake ? "is-keepsake" : artKey.startsWith("decoration-") ? "is-earned-decor-slot" : "is-recipe-art");
+  if (isHarvest) slot.classList.add("is-harvest-art");
+  if (isCanonicalOutput) slot.classList.add("is-output-art");
+  slot.classList.add(isKeepsake ? "is-keepsake" : artKey.startsWith("decoration-") ? "is-earned-decor-slot" : isCanonicalOutput || isHarvest ? "is-flow-art" : "is-recipe-art");
   const art = artKey.startsWith("decoration-")
    ? earnedDecorIcon(artKey, { size: Math.round(size * 0.92), facing })
    : itemArtVisual(artKey, Math.round(size * 0.88), { facing, keepsake: isKeepsake });
   if (art) slot.append(art);
+ } else if (isHarvest) {
+  // A harvest route must never fall back to the live whole-plant sprite while
+  // its generated flow art is unavailable. Keep the missing state explicit.
+  slot.classList.add('is-flow-art', 'is-harvest-art', 'is-art-missing');
+  appendNativeArt(slot, null, Math.round(size * 0.88), 'Ảnh nông sản đang cập nhật');
  } else if (rawId.startsWith("decor_") || kind === "decoration") {
   slot.classList.add("is-decor");
   const asset = decorAssets?.get?.(rawId);
@@ -281,9 +315,9 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   // Food and produce must never silently fall back to the owning creature sprite.
   slot.classList.add(isProduce ? "is-produce" : "is-feed", "is-art-missing");
   appendNativeArt(slot, CANONICAL_ART_KEYS.reward_medal, Math.round(size * 0.9), "Ảnh huy hiệu đang cập nhật");
- } else if (items?.has?.(rawId)) {
+ } else if (items?.has?.(rawId) || items?.has?.(cropId)) {
   slot.classList.add("is-sprite");
-  const sp = icon(items, rawId, 3, Math.round(size * 0.84));
+  const sp = icon(items, items?.has?.(rawId) ? rawId : cropId, 3, Math.round(size * 0.84));
   if (isRight) sp.style.transform = "scaleX(-1)";
   slot.append(sp);
  } else {
@@ -295,6 +329,15 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   slot.append(el("span", { class: "visual-pill-badge", text: badge }));
  }
  return slot;
+}
+
+export function recipeOutput(items, label, output, count, size = 38) {
+ const name = label(output);
+ return el("div", { class: "recipe-output-chip", "aria-label": `Thành phẩm: ${num(count)} ${name}` }, [
+  el("span", { class: "recipe-output-kicker", text: "Thành phẩm" }),
+  visualItemIcon(items, output, { size, kind: "output" }),
+  el("span", { class: "recipe-output-copy" }, [el("b", { text: `×${num(count)}` }), el("small", { text: name })]),
+ ]);
 }
 
 const STAGE_ART_MAP = Object.freeze({
@@ -315,6 +358,17 @@ export function stageVisualIcon(stageId, items, size = 48) {
   slot.append(el("img", { src: spec.src, alt: "", class: "visual-prop-img" }));
  }
  return slot;
+}
+
+function recipeUnlockVisual(recipe, items, size) {
+ const name = itemDisplayName(recipe.output, recipe.label);
+ const wrap = el("span", { class: "recipe-unlock-art", "aria-label": `Thành phẩm ${name}`, style: `width:${size}px;height:${size}px` });
+ const outputSize = Math.max(16, Math.round(size * 0.5));
+ wrap.append(
+  visualItemIcon(items, `recipe_${recipe.id}`, { size }),
+  el("span", { class: "recipe-unlock-output" }, visualItemIcon(items, recipe.output, { size: outputSize, kind: "output" })),
+ );
+ return wrap;
 }
 
 export function levelUnlockVisual(levelRow, DB, items, size = 48) {
@@ -361,7 +415,7 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
  }
  if (recipe) {
   return {
-   visual: visualItemIcon(items, `recipe_${recipe.id}`, { size }),
+   visual: recipeUnlockVisual(recipe, items, size),
    category: "Chế biến & Trạm nghề",
    categoryClass: "cat-craft",
    meta: `${recipe.station} · Nhận ${recipe.count} thành phẩm (${hours(realHours(recipe, lv))})`,

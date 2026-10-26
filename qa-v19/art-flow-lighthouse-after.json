@@ -1,0 +1,35 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "local intercepted level500 fixture,375px mobile simulated throttling; no server/Firebase/real wallet",
+  "game": "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-art-flow-source-20261026/garden-v05",
+  "runs": [
+    {
+      "performance": 50,
+      "fcpMs": 9330,
+      "lcpMs": 13200,
+      "tbtMs": 285,
+      "bytes": 5468946
+    },
+    {
+      "performance": 50,
+      "fcpMs": 9330,
+      "lcpMs": 13200,
+      "tbtMs": 285,
+      "bytes": 5468946
+    },
+    {
+      "performance": 50,
+      "fcpMs": 9270,
+      "lcpMs": 13200,
+      "tbtMs": 301.5,
+      "bytes": 5468946
+    }
+  ],
+  "median": {
+    "performance": 50,
+    "fcpMs": 9330,
+    "lcpMs": 13200,
+    "tbtMs": 285,
+    "bytes": 5468946
+  }
+}

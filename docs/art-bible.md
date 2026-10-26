@@ -80,7 +80,7 @@ Quy tắc:
 ## 6. Giao diện (UI)
 
 - Khung, nút và chữ dùng màu từ bảng chuẩn: nền dải "Cỏ · lá" tối, viền và chữ nhấn dải "Đất · ánh ấm".
-- Icon vật phẩm dùng **chính sprite trong game** thu nhỏ theo bội số nguyên, không vẽ icon kiểu khác.
+- Icon vật phẩm giữ cùng pixel style và palette của cảnh. Hạt dùng gói có hình cây; nông sản đã gặt dùng icon nguyên liệu riêng; sản vật, thành phẩm và tượng kỷ vật dùng đúng danh tính, không lấy chân dung loài thay nguyên liệu.
 - Giảm emoji hệ thống trong nút chính: emoji hiển thị khác nhau trên iOS và Android, lệch style pixel.
 - Chữ số trong game (`+3`, `2/5`) **[CẦN QUYẾT]**: đề xuất dùng font pixel có hỗ trợ tiếng Việt cho số và nhãn ngắn. Phải kiểm tra đủ dấu tiếng Việt trước khi chọn; nếu không có font đạt thì giữ font hệ thống.
 
@@ -124,3 +124,11 @@ Quy tắc:
 4. Thay emoji ở 6 nút chính bằng icon pixel.
 
 Bảng tên chính dùng master ImageGen `masters/hagrid-farm-sign-v01.png`, xuất bằng `build-sign-art.mjs`; native288×288 và chữ trên mặt bảng cùng trục dốc1/2. Giữ chữ ở lớp runtime để không sai dấu. Khi khu nuôi sát rào ngoài, dùng chung cạnh đông và đặt nhãn ra ngoài rào, không vẽ hai hàng rào chồng nhau.
+
+## V24.9.80 — flow sản phẩm và sân trang trí (26/10/2026)
+
+Bộ mới có32 icon nông sản,hai sản vật sửa nhận diện,41 frame của Bubotuber/Mimbulus/Flitterbloom và48 pose hai hướng cho sáu đồ trang trí. Master/prompt ở flow-art-sources.json,harvest-extra-sources.json,decor-flow-sources.json; build-flow-art.mjs và build-decor-flow.mjs giữ provenance,alpha nhị phân,palette24 và pivot chân. Thumbnail phải là PNG native đứng riêng; atlas chỉ dùng cho clip cùng rect đúng, tránh đưa cả sheet vào thẻ shop. Dùng chung scale lấy mẫu và neo chân theo phần thân/gốc,không neo theo hiệu ứng bay.
+
+27 công thức giữ tranh biến thể nhưng luôn hiển thị một trong14 icon thành phẩm chuẩn. Kho dùng12 tượng đã có thay ảnh sản vật cộng cúp. Trước cấp110 giữ hàng kỷ vật cũ; từ110 dùng sân hai hàng. Bảo vệ chân và silhouette từng tượng cùng lối tiếp cận,không khóa cả chiều ngang vì một tượng. Giữ tọa độ đồ mua đã lưu. Mỗi góc của66 món phải còn điểm đặt; test riêng ba món3×2 cùng lúc và round-trip máy chủ qua hàng28. Xoay trong thanh đặt là preview,chỉ nút Đặt lưu.
+
+Kiểm: node garden-v05/build-flow-art.mjs;node garden-v05/build-decor-flow.mjs;node garden-v05/build-runtime-webp.mjs;node garden-v05/verify-image-assets.mjs;GARDEN_HPVNN_ROOT=<paired HPVNN worktree> node --test garden-v05/*.test.mjs. qa-v19/art-flow-qa.mjs kiểm source/import bằng Chrome/WebKit với toàn bộ request chặn về file cục bộ; không lấy fixture làm bằng chứng production.

@@ -7,6 +7,8 @@ import {STORE_CATALOG, unlockedCatalog} from './garden-store-catalog.mjs';
 const runtime = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json', import.meta.url)));
 const source = JSON.parse(fs.readFileSync(new URL('./special-products-assets/manifest.json', import.meta.url)));
 const special = runtime.items.filter(item => item.collection === 'special');
+const flow = JSON.parse(fs.readFileSync(new URL('./decor-flow-manifest.json', import.meta.url)));
+const flowItem = id => flow.items.find(item => item.id === id);
 
 test('the 30 special products keep their ids, views, pivots, footprints and frame timing from the asset set', () => {
   assert.equal(SPECIAL_PRODUCTS.length, 30);
@@ -16,7 +18,7 @@ test('the 30 special products keep their ids, views, pivots, footprints and fram
     assert.deepEqual([entry.pivotX, entry.pivotY, entry.width, entry.height], [item.pivot.x, item.pivot.y, item.width, item.height], item.id);
     assert.deepEqual(entry.footprintTiles, item.footprintTiles, item.id);
     assert.deepEqual([...sale.footprint], item.footprintTiles, item.id);
-    assert.deepEqual(entry.durations, item.durationsMs, item.id);
+    assert.deepEqual(entry.durations, flowItem(item.id)?.runtime.durations ?? item.durationsMs, item.id);
     assert.equal(entry.frames.length, 4);
     assert.equal(entry.rightFrames.length, 4);
     // The right view is its own drawing, never the left one mirrored.
@@ -25,10 +27,12 @@ test('the 30 special products keep their ids, views, pivots, footprints and fram
   }
 });
 
-test('only runtime PNGs ship: every file the manifest names exists under decor-assets/, nothing from masters or QA', () => {
+test('special runtime art resolves to native images or verified flow atlases, never masters or QA', () => {
   for (const item of special) {
+    const authored=flowItem(item.id);
+    const flowPaths=authored?new Set([authored.thumbnails.file,authored.thumbnails.rightFile,authored.atlas.file]):null;
     for (const file of [item.file, item.rightFile, ...item.frames, ...item.rightFrames]) {
-      assert.match(file, /^decor-assets\/native\/sp_[a-z0-9_]+\.png$/);
+      if(flowPaths)assert.ok(flowPaths.has(file),file);else assert.match(file, /^decor-assets\/native\/sp_[a-z0-9_]+\.png$/);
       assert.ok(fs.existsSync(new URL(`./${file}`, import.meta.url)), file);
     }
   }

@@ -1,0 +1,144 @@
+[
+  {
+    "browser": "Chrome",
+    "game": "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-art-flow-source-20261026/garden-v05",
+    "network": "all intercepted, no service or real wallet",
+    "visuals": 207,
+    "failedImages": 0,
+    "iconOverflow": false,
+    "harvestArt": 32,
+    "canonicalOutputs": 14,
+    "keepsakes": 12,
+    "worldCombinations": 16,
+    "heroTriple": true,
+    "newCropMotionDraws": 272,
+    "nativeAtlasSize": true,
+    "viewportChecks": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "overflow": false,
+        "bar": {
+          "left": 360,
+          "right": 920,
+          "top": 641.703125,
+          "bottom": 790
+        },
+        "hint": "Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu",
+        "previewRotationSaveUnchanged": true,
+        "explicitConfirmSaved": true,
+        "cancelPreservedSave": true
+      },
+      {
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "overflow": false,
+        "bar": {
+          "left": 6,
+          "right": 369,
+          "top": 677.5,
+          "bottom": 806
+        },
+        "hint": "Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu",
+        "previewRotationSaveUnchanged": true,
+        "explicitConfirmSaved": true,
+        "cancelPreservedSave": true
+      },
+      {
+        "viewport": {
+          "width": 812,
+          "height": 375
+        },
+        "overflow": false,
+        "bar": {
+          "left": 126,
+          "right": 686,
+          "top": 216.703125,
+          "bottom": 365
+        },
+        "hint": "Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu",
+        "previewRotationSaveUnchanged": true,
+        "explicitConfirmSaved": true,
+        "cancelPreservedSave": true
+      }
+    ],
+    "requests": 1178,
+    "bytes": 5627652,
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "game": "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-art-flow-source-20261026/garden-v05",
+    "network": "all intercepted, no service or real wallet",
+    "visuals": 207,
+    "failedImages": 0,
+    "iconOverflow": false,
+    "harvestArt": 32,
+    "canonicalOutputs": 14,
+    "keepsakes": 12,
+    "worldCombinations": 16,
+    "heroTriple": true,
+    "newCropMotionDraws": 272,
+    "nativeAtlasSize": true,
+    "viewportChecks": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "overflow": false,
+        "bar": {
+          "left": 360,
+          "right": 920,
+          "top": 641.703125,
+          "bottom": 790
+        },
+        "hint": "Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu",
+        "previewRotationSaveUnchanged": true,
+        "explicitConfirmSaved": true,
+        "cancelPreservedSave": true
+      },
+      {
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "overflow": false,
+        "bar": {
+          "left": 6,
+          "right": 369,
+          "top": 677.5,
+          "bottom": 806
+        },
+        "hint": "Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu",
+        "previewRotationSaveUnchanged": true,
+        "explicitConfirmSaved": true,
+        "cancelPreservedSave": true
+      },
+      {
+        "viewport": {
+          "width": 812,
+          "height": 375
+        },
+        "overflow": false,
+        "bar": {
+          "left": 126,
+          "right": 686,
+          "top": 216.703125,
+          "bottom": 365
+        },
+        "hint": "Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu",
+        "previewRotationSaveUnchanged": true,
+        "explicitConfirmSaved": true,
+        "cancelPreservedSave": true
+      }
+    ],
+    "requests": 1178,
+    "bytes": 5545870,
+    "errors": []
+  }
+]

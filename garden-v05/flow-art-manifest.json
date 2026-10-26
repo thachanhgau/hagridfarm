@@ -1,0 +1,2514 @@
+{
+  "version": 1,
+  "tool": "builtin image_gen",
+  "method": "authored cells; common root pivot; native palette24 and binary alpha; lossless atlas RGBA checks",
+  "items": [
+    {
+      "id": "mimbulus",
+      "kind": "crop",
+      "master": "masters-flow-v1/mimbulus-v1.png",
+      "prompt": "Use case: stylized-concept. Production Hagrid Farm crop sprite atlas, ONE species only: Mimbulus mimbletonia. Reference image is only the existing game's pixel-art style and ground pivot, not a subject to copy. Create a clearly GREY cactus-like squat magical plant with swollen rounded lobes and boils instead of spines; no orange mushroom caps, no flowers. Cozy chunky pixel clusters, selective dark plum contour, upper-left light, 2:1 dimetric angle. Transparent alpha background, no labels/text, no border. Exactly FOUR rows with FOUR equal cells per row: row1 four growth stages seedling/tiny/young/mature; row2 four distinct mature idle poses subtle swelling and slight foliage breathing, fixed root; row3 first four care/action poses prepare/swell/lean/green stinksap release; row4 first TWO cells recovery/settle, last TWO cells fully transparent empty. Fourteen complete separate silhouettes total. Each cell has at least25% transparent space on all sides, roots same baseline in each row; no detached particles crossing gutters. All mature frames same scale and grey identity. Designed to be sampled to64x96 canvas, plant ink <=50x60 pixels. Restricted game palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Crisp pixel art, avoid painted gradients, blur, ground shadow and pots.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-eaf84ec9-97d0-47ab-b692-f6349192e204.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "f50d11b99c80d634d16be1f3a400fd2b9ed2698cf56517948bc3f5facdde0d2c",
+      "frames": [
+        {
+          "file": "native-levels/mimbulus/flow-v1-1.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 27,
+            "y": 69,
+            "w": 10,
+            "h": 11
+          },
+          "sha256": "e5d4452a2f61a0218117afc9fa8528a6503daafb417275e5082ac3a8df3e546a",
+          "sourceRect": {
+            "x": 143,
+            "y": 176,
+            "w": 91,
+            "h": 98
+          }
+        },
+        {
+          "file": "native-levels/mimbulus/flow-v1-2.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 25,
+            "y": 62,
+            "w": 16,
+            "h": 18
+          },
+          "sha256": "07b01473db659003709baa25918e83fae08b4e515edc69b19e7367f2ecb395ec",
+          "sourceRect": {
+            "x": 440,
+            "y": 120,
+            "w": 140,
+            "h": 158
+          }
+        },
+        {
+          "file": "native-levels/mimbulus/flow-v1-3.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 20,
+            "y": 56,
+            "w": 25,
+            "h": 24
+          },
+          "sha256": "c1213a272a02adc9cc5f71f50e05bfa2e93e175cfe4e014e25a22030c23edb81",
+          "sourceRect": {
+            "x": 746,
+            "y": 66,
+            "w": 219,
+            "h": 212
+          }
+        },
+        {
+          "file": "native-levels/mimbulus/flow-v1-4.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 14,
+            "y": 52,
+            "w": 36,
+            "h": 28
+          },
+          "sha256": "b3fd980b9a5356ada72aee34058de4002a9bae871db8cf54674b7c7aa4fd7ff5",
+          "sourceRect": {
+            "x": 1079,
+            "y": 31,
+            "w": 312,
+            "h": 247
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-05.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 16,
+            "y": 54,
+            "w": 33,
+            "h": 26
+          },
+          "sha256": "8a4bfad829030ec093e5e7311eda6744edf8403f141901e8d4168b581eadec35",
+          "sourceRect": {
+            "x": 45,
+            "y": 329,
+            "w": 290,
+            "h": 230
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-06.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 15,
+            "y": 53,
+            "w": 32,
+            "h": 27
+          },
+          "sha256": "4223b6013c4c84e70244059e001998f13255d9cfe0f29233f45fecbccc73e4ab",
+          "sourceRect": {
+            "x": 397,
+            "y": 318,
+            "w": 281,
+            "h": 241
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-07.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 16,
+            "y": 52,
+            "w": 32,
+            "h": 28
+          },
+          "sha256": "1d74253f505fdb1a14c82109fbc61a0cddc6697f4eddd5d522067856fe47de1d",
+          "sourceRect": {
+            "x": 745,
+            "y": 314,
+            "w": 279,
+            "h": 245
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-08.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 15,
+            "y": 53,
+            "w": 35,
+            "h": 27
+          },
+          "sha256": "b0b9e43b9ec5983f646ff930ebb022ae6cabb703665d84f82aad3cb49418d5d3",
+          "sourceRect": {
+            "x": 1104,
+            "y": 318,
+            "w": 310,
+            "h": 236
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-09.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 22,
+            "y": 61,
+            "w": 21,
+            "h": 19
+          },
+          "sha256": "1e9e408b56fd84aad8bfd81f4bf55a6528f1d83dfa933146c0e7fe342d5bae5c",
+          "sourceRect": {
+            "x": 90,
+            "y": 645,
+            "w": 181,
+            "h": 167
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-10.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 18,
+            "y": 54,
+            "w": 30,
+            "h": 26
+          },
+          "sha256": "7e9329590aca1bc13d0c9051ecc8f3ab83c8020f83012632f4e6110ddb46be3b",
+          "sourceRect": {
+            "x": 405,
+            "y": 582,
+            "w": 260,
+            "h": 230
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-11.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 18,
+            "y": 56,
+            "w": 31,
+            "h": 24
+          },
+          "sha256": "01429b405d9e2ef0f2c429c384926936f4894edaacf058ca93ba4908d7097c31",
+          "sourceRect": {
+            "x": 719,
+            "y": 599,
+            "w": 274,
+            "h": 212
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-12.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 20,
+            "y": 56,
+            "w": 41,
+            "h": 24
+          },
+          "sha256": "5ad4985f6e5435fc23cf2a71fe8be4c0e2fe5f1232dba8f27c5d29b599fc9f6d",
+          "sourceRect": {
+            "x": 1056,
+            "y": 597,
+            "w": 361,
+            "h": 214
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-13.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 20,
+            "y": 59,
+            "w": 24,
+            "h": 21
+          },
+          "sha256": "02b605f5df4517d03a4a0b0a126c52e519029506ba6f520d239c0dc9b0a3d0bd",
+          "sourceRect": {
+            "x": 93,
+            "y": 866,
+            "w": 214,
+            "h": 188
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-mimbulus/frame-14.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 16,
+            "y": 55,
+            "w": 31,
+            "h": 25
+          },
+          "sha256": "45ce841bedaa563402e2db1bf620b67838a30b3a9141fc748d0b77479edd342f",
+          "sourceRect": {
+            "x": 407,
+            "y": 836,
+            "w": 271,
+            "h": 218
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/flow-mimbulus/atlas.png",
+        "sha256": "76e5c9502d446ce1a39c772b5dfb5fad54dc1abb07bb60cfad49a45024451f9b",
+        "width": 256,
+        "height": 288,
+        "frames": [
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 16,
+              "y": 54,
+              "w": 33,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 15,
+              "y": 53,
+              "w": 32,
+              "h": 27
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 16,
+              "y": 52,
+              "w": 32,
+              "h": 28
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 15,
+              "y": 53,
+              "w": 35,
+              "h": 27
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 61,
+              "w": 21,
+              "h": 19
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 54,
+              "w": 30,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 56,
+              "w": 31,
+              "h": 24
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 56,
+              "w": 41,
+              "h": 24
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 59,
+              "w": 24,
+              "h": 21
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 192,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-mimbulus/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 16,
+              "y": 55,
+              "w": 31,
+              "h": 25
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 192,
+              "w": 64,
+              "h": 96
+            }
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            7,
+            6,
+            5
+          ],
+          "durations": [
+            500,
+            240,
+            180,
+            440,
+            240,
+            240
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "durations": [
+            160,
+            140,
+            140,
+            140,
+            160,
+            200
+          ],
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "bubotuber",
+      "kind": "crop",
+      "master": "masters-flow-v1/bubotuber-v1.png",
+      "prompt": "Use case: stylized-concept. Production crop animation atlas for ONE Bubotuber plant: upright THICK BLACK SLUG-like stems rooted in soil with large rounded glossy pustules, charcoal purple body and restrained yellow-green swellings. Cute magical herb, absolutely no orange mushrooms, no mushroom caps or petals. Small connected earth/root base. ONE species, exactly four rows of four equal cells. Row1 FOUR growth stages small/young/half-grown/mature. Row2 FOUR mature idle poses with fixed roots. Row3 FOUR action poses prepare/lean/stretch/peak. Row4 first TWO recovery/settle poses, last TWO cells empty transparent.14 complete separate silhouettes, clear transparent gutters and at least20% blank cell margins. No text, labels, borders, ground shadows or pots. Root baseline stable. True chunky pixel-art clusters, upper-left light, selective dark plum outline,2:1 dimetric camera. Each mature pose same size; designed for64x96 canvas and50x60 ink.Restrained Hagrid game palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-c3a691f6-28c3-434f-aaac-5cf48d47f03a.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "518b29f77721d6b698d50425fa5ee1e18c3bb79f57c19d05e131efbc69ac67e0",
+      "frames": [
+        {
+          "file": "native-levels/bubotuber/flow-v1-1.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 25,
+            "y": 67,
+            "w": 14,
+            "h": 13
+          },
+          "sha256": "9f9fdcdf1265e6d343db765f8640c660af5c54dfe469e9abba7e932969ba08b6",
+          "sourceRect": {
+            "x": 156,
+            "y": 167,
+            "w": 104,
+            "h": 95
+          }
+        },
+        {
+          "file": "native-levels/bubotuber/flow-v1-2.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 22,
+            "y": 61,
+            "w": 19,
+            "h": 19
+          },
+          "sha256": "29373362f86d1747f8092bf92e754ecfa2c1500184723366514460a5d3428eef",
+          "sourceRect": {
+            "x": 503,
+            "y": 119,
+            "w": 141,
+            "h": 145
+          }
+        },
+        {
+          "file": "native-levels/bubotuber/flow-v1-3.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 20,
+            "y": 53,
+            "w": 24,
+            "h": 27
+          },
+          "sha256": "f96d3548dc43e2480bd53832c8aef0b1e7f3ab04488b6765c9aa82fe122e0de2",
+          "sourceRect": {
+            "x": 846,
+            "y": 59,
+            "w": 183,
+            "h": 205
+          }
+        },
+        {
+          "file": "native-levels/bubotuber/flow-v1-4.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 17,
+            "y": 47,
+            "w": 29,
+            "h": 33
+          },
+          "sha256": "0d775223c33d961fc30af384a1f20473b68ecd36872f9a59bdc4b2cd508f22dc",
+          "sourceRect": {
+            "x": 1199,
+            "y": 12,
+            "w": 223,
+            "h": 252
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-05.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 17,
+            "y": 50,
+            "w": 29,
+            "h": 30
+          },
+          "sha256": "bcd16e74963c496db44b1b59ebea109e5f66b4ffeeadf05163862429046c1a0b",
+          "sourceRect": {
+            "x": 108,
+            "y": 302,
+            "w": 217,
+            "h": 227
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-06.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 18,
+            "y": 50,
+            "w": 28,
+            "h": 30
+          },
+          "sha256": "0082fdd4504d5495a5097d9b457ba42f8cdcbdb44683e119c5a18b0e45000d1a",
+          "sourceRect": {
+            "x": 481,
+            "y": 302,
+            "w": 210,
+            "h": 228
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-07.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 18,
+            "y": 52,
+            "w": 29,
+            "h": 28
+          },
+          "sha256": "6ae5ae04d2c3a2b312bce3707f4af89ffd6b28eea39a1aaba7b01b2b0e779bf8",
+          "sourceRect": {
+            "x": 831,
+            "y": 324,
+            "w": 217,
+            "h": 209
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-08.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 19,
+            "y": 51,
+            "w": 28,
+            "h": 29
+          },
+          "sha256": "c06c7f351df977878dd43d7df179152f77d5a5fde9fc9dce9f4f4b7429867c16",
+          "sourceRect": {
+            "x": 1216,
+            "y": 306,
+            "w": 210,
+            "h": 223
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-09.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 18,
+            "y": 61,
+            "w": 27,
+            "h": 19
+          },
+          "sha256": "c2884c9325f083238074ac7f014438992015e4d8968700c3073e571719275bf5",
+          "sourceRect": {
+            "x": 114,
+            "y": 630,
+            "w": 202,
+            "h": 144
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-10.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 18,
+            "y": 58,
+            "w": 34,
+            "h": 22
+          },
+          "sha256": "64e5225e609d331c66f9f4b2b9e0849cd48ad5c9904704ba5bf2a1d3561b5c75",
+          "sourceRect": {
+            "x": 457,
+            "y": 606,
+            "w": 259,
+            "h": 168
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-11.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 19,
+            "y": 49,
+            "w": 29,
+            "h": 31
+          },
+          "sha256": "545ecc6805aaaf495bdfcde8640ace5cbbae96e509454cea39a833b530ebf6c1",
+          "sourceRect": {
+            "x": 837,
+            "y": 548,
+            "w": 223,
+            "h": 231
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-12.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 17,
+            "y": 49,
+            "w": 44,
+            "h": 31
+          },
+          "sha256": "165d1cf592413694745e3992eb211013549b4c828b44c6fa4cf7a2f85d641a7e",
+          "sourceRect": {
+            "x": 1191,
+            "y": 540,
+            "w": 331,
+            "h": 236
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-13.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 18,
+            "y": 58,
+            "w": 25,
+            "h": 22
+          },
+          "sha256": "553a71baa30100a6fcb673dd45db2001df25efe5b96aa075cd0184d537312e88",
+          "sourceRect": {
+            "x": 135,
+            "y": 824,
+            "w": 193,
+            "h": 166
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-bubotuber/frame-14.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 18,
+            "y": 54,
+            "w": 28,
+            "h": 26
+          },
+          "sha256": "49a342d51276507b00dfb36b1aa13e4d64a25eba4a4e5fb839f5db351de6c0bd",
+          "sourceRect": {
+            "x": 498,
+            "y": 793,
+            "w": 210,
+            "h": 197
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/flow-bubotuber/atlas.png",
+        "sha256": "41a16c84c9f39316b57676c99d3f00cc0c5d6860dda09c066ba73bd31313cd87",
+        "width": 256,
+        "height": 288,
+        "frames": [
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 50,
+              "w": 29,
+              "h": 30
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 50,
+              "w": 28,
+              "h": 30
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 52,
+              "w": 29,
+              "h": 28
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 51,
+              "w": 28,
+              "h": 29
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 61,
+              "w": 27,
+              "h": 19
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 58,
+              "w": 34,
+              "h": 22
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 49,
+              "w": 29,
+              "h": 31
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 49,
+              "w": 44,
+              "h": 31
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 58,
+              "w": 25,
+              "h": 22
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 192,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-bubotuber/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 54,
+              "w": 28,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 192,
+              "w": 64,
+              "h": 96
+            }
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            7,
+            6,
+            5
+          ],
+          "durations": [
+            500,
+            240,
+            180,
+            440,
+            240,
+            240
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "durations": [
+            160,
+            140,
+            140,
+            140,
+            160,
+            200
+          ],
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "flitterbloom",
+      "kind": "crop",
+      "master": "masters-flow-v1/flitterbloom-v1.png",
+      "prompt": "Use case: stylized-concept. Production crop animation atlas for ONE Flitterbloom, a FRIENDLY magical vine visually related to Devil's Snare: soft green looping stems, broad rounded leaves, loose open curls and tiny pale mint buds; no predatory teeth, no eyes, no bell-shaped flowers. Distinct gentle rounded silhouette, rooted vine cluster. ONE species, exactly four rows of four equal cells. Row1 FOUR growth stages small/young/half-grown/mature. Row2 FOUR mature idle poses with fixed roots. Row3 FOUR action poses prepare/lean/stretch/peak. Row4 first TWO recovery/settle poses, last TWO cells empty transparent.14 complete separate silhouettes, clear transparent gutters and at least20% blank cell margins. No text, labels, borders, ground shadows or pots. Root baseline stable. True chunky pixel-art clusters, upper-left light, selective dark plum outline,2:1 dimetric camera. Each mature pose same size; designed for64x96 canvas and50x60 ink.Restrained Hagrid game palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-92ab9447-8024-48e4-add7-ec0e26479505.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "8dd64981d8ab5bc973885f76aa4985691889b9d56585e5e4404b3ced7a4292a1",
+      "frames": [
+        {
+          "file": "native-levels/flitterbloom/flow-v1-1.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 24,
+            "y": 66,
+            "w": 15,
+            "h": 14
+          },
+          "sha256": "848163d6737b32be0acbb7fd15c4dbd2744938b7f2ffb71d641fe50e3a169620",
+          "sourceRect": {
+            "x": 121,
+            "y": 161,
+            "w": 118,
+            "h": 114
+          }
+        },
+        {
+          "file": "native-levels/flitterbloom/flow-v1-2.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 24,
+            "y": 61,
+            "w": 19,
+            "h": 19
+          },
+          "sha256": "1cddfff0036a2aa2a4bfc9ac2a30723e238cf0cfe75d5b8d27294f50415147fe",
+          "sourceRect": {
+            "x": 455,
+            "y": 122,
+            "w": 155,
+            "h": 155
+          }
+        },
+        {
+          "file": "native-levels/flitterbloom/flow-v1-3.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 19,
+            "y": 55,
+            "w": 27,
+            "h": 25
+          },
+          "sha256": "b79aa23403cb0ec732643825a9704b9fbb026838998696c16af56fef3ee0080f",
+          "sourceRect": {
+            "x": 767,
+            "y": 76,
+            "w": 218,
+            "h": 200
+          }
+        },
+        {
+          "file": "native-levels/flitterbloom/flow-v1-4.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 16,
+            "y": 49,
+            "w": 34,
+            "h": 31
+          },
+          "sha256": "6ef134271590878eacd1c64f7334c20daeeb572ae0b61f85d2b512e6a7629676",
+          "sourceRect": {
+            "x": 1095,
+            "y": 25,
+            "w": 272,
+            "h": 252
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-05.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 15,
+            "y": 51,
+            "w": 35,
+            "h": 29
+          },
+          "sha256": "cbd73cad6783c7b5ebd3dfe2d3a16c23c069f9400ade06c0202a1eba4fcd960a",
+          "sourceRect": {
+            "x": 43,
+            "y": 320,
+            "w": 280,
+            "h": 232
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-06.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 17,
+            "y": 50,
+            "w": 33,
+            "h": 30
+          },
+          "sha256": "776d7e3ee5ec1a2c721e5b7351677c33a042cdccf9b0816fc12fea1a2ad841ec",
+          "sourceRect": {
+            "x": 408,
+            "y": 311,
+            "w": 262,
+            "h": 244
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-07.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 16,
+            "y": 53,
+            "w": 35,
+            "h": 27
+          },
+          "sha256": "d7c7211771148530cd9f52755480cbf16e030cbcc76768bc15c03cdc2490c565",
+          "sourceRect": {
+            "x": 744,
+            "y": 336,
+            "w": 277,
+            "h": 217
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-08.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 21,
+            "y": 61,
+            "w": 26,
+            "h": 19
+          },
+          "sha256": "4f7d8e740d26bca5d5ca1eee3fd1b9049aa927cd3798bad17af54e4d48f09b91",
+          "sourceRect": {
+            "x": 77,
+            "y": 687,
+            "w": 210,
+            "h": 152
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-09.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 22,
+            "y": 59,
+            "w": 39,
+            "h": 21
+          },
+          "sha256": "4faee5421ddd6781414d6022d1b8e2be50b2b57c89b4f91c40d51fe55085639b",
+          "sourceRect": {
+            "x": 382,
+            "y": 671,
+            "w": 309,
+            "h": 168
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-10.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 16,
+            "y": 48,
+            "w": 30,
+            "h": 32
+          },
+          "sha256": "d63271f18a69b6f9ed41e89433ebeadda6f0f1b10a63438dd4fdb1fb98a14b24",
+          "sourceRect": {
+            "x": 746,
+            "y": 582,
+            "w": 237,
+            "h": 259
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-11.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 15,
+            "y": 48,
+            "w": 36,
+            "h": 32
+          },
+          "sha256": "7374ee4aea7be3c82ddbe2416301690032bd420fc08dc5c7ccda91ca17cf726d",
+          "sourceRect": {
+            "x": 1082,
+            "y": 582,
+            "w": 285,
+            "h": 257
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-12.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 17,
+            "y": 55,
+            "w": 30,
+            "h": 25
+          },
+          "sha256": "944bc1675f7913bb31c1fc00b754d0c4b65083cf56335a3c27bdf8d32ec36b78",
+          "sourceRect": {
+            "x": 61,
+            "y": 886,
+            "w": 241,
+            "h": 201
+          }
+        },
+        {
+          "file": "native-crop-complete/flow-flitterbloom/frame-13.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 19,
+            "y": 56,
+            "w": 30,
+            "h": 24
+          },
+          "sha256": "adbc1a3461cd226a8a069f33fb36d5fd4d373c693d69e1816bb9078f575361e6",
+          "sourceRect": {
+            "x": 405,
+            "y": 898,
+            "w": 238,
+            "h": 191
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+        "sha256": "8e4415459d64cf4567da55babe286201ef28932f7021a69ca8d56ff35c639cd8",
+        "width": 256,
+        "height": 288,
+        "frames": [
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 15,
+              "y": 51,
+              "w": 35,
+              "h": 29
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 50,
+              "w": 33,
+              "h": 30
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 16,
+              "y": 53,
+              "w": 35,
+              "h": 27
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 61,
+              "w": 26,
+              "h": 19
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 59,
+              "w": 39,
+              "h": 21
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 16,
+              "y": 48,
+              "w": 30,
+              "h": 32
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 15,
+              "y": 48,
+              "w": 36,
+              "h": 32
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 55,
+              "w": 30,
+              "h": 25
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/flow-flitterbloom/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 56,
+              "w": 30,
+              "h": 24
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 192,
+              "w": 64,
+              "h": 96
+            }
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            5
+          ],
+          "durations": [
+            600,
+            300,
+            520,
+            300
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "durations": [
+            160,
+            140,
+            140,
+            140,
+            160,
+            200
+          ],
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "produce_three-headed-dog",
+      "kind": "produce",
+      "master": "masters-flow-v1/produce_three-headed-dog-v1.png",
+      "prompt": "Use case: stylized-concept. ONE small Hagrid inventory icon: a loose collected tuft of SOFT WHITE FUR from a white three-headed dog, bound with a short plum ribbon, three airy off-white tufts with grey/lavender shadow. No animal face, no head, no brown wool, no multicolour yarn skeins. 2:1 dimetric cozy chunky pixel art, selective dark plum outline, upper-left lighting, legible at40x40 pixels. Isolated complete object centered in a64x64 logical canvas with generous25% alpha margin, truly transparent background; no text, frame, ground shadow. Restrained Hagrid game palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-4a9e784e-e590-4825-93b1-25ff7e8f1aed.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "7cf2f9c52659538f3fdcffab2373b38db1e1eba49473592f2a89a0f24f11dfac",
+      "file": "native-items/produce_three-headed-dog/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 22,
+        "w": 40,
+        "h": 34
+      },
+      "sha256": "2cead1f5f9884e3ba1861df5452de1afbd2a037053e732116423e15802646ab0",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1774,
+        "h": 887
+      }
+    },
+    {
+      "id": "produce_thestral",
+      "kind": "produce",
+      "master": "masters-flow-v1/produce_thestral-v1.png",
+      "prompt": "Use case: stylized-concept. ONE small Hagrid inventory icon: a tidy bundle of LONG LOOSE BLACK-PURPLE THIN MANE HAIRS naturally collected from a Thestral, slender flowing fibres tied in the middle with a small ochre string. Clearly a MATERIAL bundle, no animal head, no horse face, no eye, no wings, no skull, no feather. Cozy chunky pixel clusters, 2:1 dimetric, dark plum contour and upper-left lighting. Designed for64x64 canvas with ink <=40x40; centered isolated complete object,25% true transparent alpha margin. No text, border or ground shadow. Restrained Hagrid game palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-c02b6991-c28a-4fed-ae29-1e2cb348c1c5.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "6227fce3365491804863228b154e771974b82f97e624b13bedd7b152f253f675",
+      "file": "native-items/produce_thestral/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 26,
+        "w": 39,
+        "h": 29
+      },
+      "sha256": "f74b2304f507c1101149b02ca28db952e644b2ac584c8b272dac28b4ab15dc44",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1774,
+        "h": 887
+      }
+    },
+    {
+      "id": "harvest_pumpkin",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_pumpkin-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE harvested orange pumpkin fruit, deep clearly separated ribs, short curved brown stem and ONE small green leaf; no roots, vines, patch or leaves below fruit. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-cfbf97f5-7e05-46ff-bf36-8a1f23d0546a.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "c61b8d13025c63d8e6e1052f89e0343d08d770184ffd17c2cd4944ffd2f79148",
+      "file": "native-items/harvest_pumpkin/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 18,
+        "w": 40,
+        "h": 38
+      },
+      "sha256": "eba01ab33f193b9e5984c2e8e903303cf88a89d524e934c575b7e9cca7241d88",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_oats",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_oats-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE short tied sheaf of ripe golden oat seed heads,3 drooping panicles with visibly large grains and trimmed stalk ends; no soil or rooted growing plant. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-aacc092e-b4c7-4b13-b089-231ba67c7bda.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "c71671dd813386046eb63534a588b9ec2bb2a3c490634d36517371e813862d78",
+      "file": "native-items/harvest_oats/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 16,
+        "w": 40,
+        "h": 40
+      },
+      "sha256": "dfb47fdc1cedb3e1bd8a41e95d6e844a1ab9ee57e3e97103a389a0be84f98299",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_carrot",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_carrot-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE harvested bunch of three orange carrots with small trimmed green tops, tied with a fine ochre cord; no soil or roots beyond the carrot taproots. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-d2ccfaad-bd03-47ae-b1d9-6423ede17998.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "2f1740012c6cd6d3b554e986a8e6b90e45a0c817256f16b99d1db5286ddd7cc7",
+      "file": "native-items/harvest_carrot/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 15,
+        "y": 16,
+        "w": 35,
+        "h": 40
+      },
+      "sha256": "5e1154bd1953065cbe4ca70eab5e6919a9294d59c384995242e262da4b377c26",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_lettuce",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_lettuce-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE fresh cut pale-green lettuce head, round layered broad leaves with a visible clean cut base; no earth or growing plot. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-335138dc-ecb9-42a2-8755-a1d5a2fa33e6.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "f0085cf3ff439c1bc476427e23b20f565f13fe350af4af0807c3cae98f81abb6",
+      "file": "native-items/harvest_lettuce/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 19,
+        "w": 40,
+        "h": 37
+      },
+      "sha256": "3e2ab149de325011045c9e76f77a90c1d5d73575d1f426fe1c0212978a8f6a1d",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_strawberry",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_strawberry-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: THREE picked ripe red strawberries, two in front one behind, large readable seeds and short green calyx; no bush, stem, flowers or basket. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-902bef20-4762-4f22-b7fe-76a8b1e4a8a9.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "0609c14ce639a75bd3e72e4071e80414d98698b71534464f2c0696abb49971b7",
+      "file": "native-items/harvest_strawberry/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 23,
+        "w": 40,
+        "h": 33
+      },
+      "sha256": "3b49f4e73de1caed631559876815570ca301c5076256a10b3a26ab497d130d8b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_daisy",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_daisy-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE small gathered bunch of three white daisies with golden centers, short stems tied together, a few green leaves; harvested herb icon, no roots, vase or flowerpot. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-4ce6c228-b0d6-4be0-8b87-9e2ae548c98a.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "c912876b2408d66e63144b3f26e4c12ba79d04934e1ff7b9b59234e402f50840",
+      "file": "native-items/harvest_daisy/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 14,
+        "y": 16,
+        "w": 37,
+        "h": 40
+      },
+      "sha256": "fd707ff4cd77adf82e6df20eeb710b679a545550def7470110a8cd39f0b9b1d6",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_dittany",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_dittany-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE gathered herb bunch of rounded/oval soft green dittany leaves and TWO tiny pale cream blossoms, bound with ochre string; distinguish from generic white daisies, no roots or pot. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-852e06bb-3ec0-4ea6-9c5b-c76a667f006e.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "e29dc99e7b1a400e6b02acbf30f5043c02d0d5a658af0d05149bfd2ed083fcb2",
+      "file": "native-items/harvest_dittany/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 15,
+        "y": 16,
+        "w": 35,
+        "h": 40
+      },
+      "sha256": "77c6ac301cf95295f039afd06ae9b00cccaefbf5d6cff25aa863edb83a3a75c8",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_puffapod",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_puffapod-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: TWO picked round swollen warm pink-orange magical Puffapod seed pods with a small green calyx, one split to reveal two large shiny brown seeds; no rooted bush or pot. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-0197aa85-0053-4aef-9850-1de005a5ee57.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "2e9b2d0e27d74fe6e40a262d10994dec5e35cc40481c18747f19e2480ec78a86",
+      "file": "native-items/harvest_puffapod/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 21,
+        "w": 40,
+        "h": 35
+      },
+      "sha256": "f57531cf0de2bf45028c7ee0249b93440a83da11a2fd4633def69f4725e0360b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_mandrake",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mandrake-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested mandrake root, recognizable orange-brown root with a small clipped leaf tuft; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-8a858848-7bef-4a81-9f9c-bcf171da29d4.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "6ed9de4b08dfbd8548fc1a0cddd4ae9cb5df50d837adc6a60e2d2f74a437a811",
+      "file": "native-items/harvest_mandrake/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 15,
+        "y": 16,
+        "w": 34,
+        "h": 40
+      },
+      "sha256": "6371ff0c4d11106649684fd4711e3cbe417612108c8300789993cfe28f1c0b11",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1278,
+        "h": 1230
+      }
+    },
+    {
+      "id": "harvest_clover",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_clover-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested loose bunch of three-leaf clover leaves with short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no root, soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-dd0eb05f-46bf-4860-9a23-93f5f3ad6a6c.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "1ba4208e0f1e7695071123e1e153194aac8bf185bd296e5f9278b096c9c35d5f",
+      "file": "native-items/harvest_clover/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "w": 33,
+        "h": 40
+      },
+      "sha256": "8050158c99b7e869475e8502c8d90238506ee4bdbac16668b6c22608f9591a09",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_beet",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_beet-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested red beet root with a small trimmed green tuft and burgundy ridges; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-6edf00c3-ce11-4132-a742-e97349c14ad5.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "678f76458b81cdeec5a7d2057aea74ee5bb0e871b2dbe8046f2f6c1aabe1b098",
+      "file": "native-items/harvest_beet/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 17,
+        "y": 16,
+        "w": 30,
+        "h": 40
+      },
+      "sha256": "a3a9abbc7dc6d5f6afd9208d7ac98249973927d97aea24d72bd3c2eaed379aa0",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1275,
+        "h": 1233
+      }
+    },
+    {
+      "id": "harvest_maize",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_maize-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached golden maize cob with peeled green husk leaves and visible kernels; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no stalk, soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a8bf5ac2-e69d-40da-82c6-5cbc34ed4ec5.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "7b767b0a21ae28ff76339f30f2126205841b00c8d914b649da4413ec9919844c",
+      "file": "native-items/harvest_maize/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 13,
+        "y": 16,
+        "w": 38,
+        "h": 40
+      },
+      "sha256": "5ce3d2ce203bb872bcc733c606f2258cbdcee04efa01a1e8299a6362b25dec9a",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_moonherb",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_moonherb-v1.png",
+      "prompt": "Transparent chunky pixel-art small tied bundle of pale blue-silver moonherb sprigs with subtle crescent markings and no glow; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, pot, scene, shadow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-4dca866b-9b77-45a2-aa8c-1f6efeda4f27.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "c5a19bd458aace121852c1f39c287752b5c247ee8465f7a3368de34ca396590a",
+      "file": "native-items/harvest_moonherb/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 13,
+        "y": 16,
+        "w": 38,
+        "h": 40
+      },
+      "sha256": "dd0546df2413bf34d4bd2c865e21dac575e83527fbfd662e7af62262a32281f4",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1402,
+        "h": 1122
+      }
+    },
+    {
+      "id": "harvest_flax",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_flax-v1.png",
+      "prompt": "Transparent chunky pixel-art compact tied bundle of pale flax stems and blue-gray fibers with tiny seed heads and cut ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-57526a57-c86d-4349-a466-f4b28c31b6bd.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "8e8e1bb35fbdb8d58bc9a3be35e5f502837ff56e81759cac99790089526f2980",
+      "file": "native-items/harvest_flax/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 26,
+        "w": 40,
+        "h": 30
+      },
+      "sha256": "bd18f429901ac9e0f98dc62ba791171af2320346377e97ffa77c2d17595a0db2",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1402,
+        "h": 1122
+      }
+    },
+    {
+      "id": "harvest_sunflower",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_sunflower-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested cluster of sunflower seeds with a few yellow petal remnants, no plate, stalk, or whole flower; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a3203e21-a3b7-478a-bd47-db3de4b4bd9c.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "c4a9d10ee8a0879d8126bb7c5acf79fdaa5dc381966a1aff6aca0cc4e97cf49f",
+      "file": "native-items/harvest_sunflower/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 26,
+        "w": 40,
+        "h": 30
+      },
+      "sha256": "52e1dc47c5ed35b8ef1be3232024c2987f8f5afa439112860adc27292a19286c",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1355,
+        "h": 1161
+      }
+    },
+    {
+      "id": "harvest_valerian",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_valerian-v1.png",
+      "prompt": "Transparent chunky pixel-art compact tied harvested valerian bundle with pale cream-green leafy sprigs and short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a1906016-9bd3-4a9f-a6a8-860f78bba1b4.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "0cd194a7b330ed6f853f2c243e2135ff5d4ef78830f4154674a389ef19a2eead",
+      "file": "native-items/harvest_valerian/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 14,
+        "y": 16,
+        "w": 37,
+        "h": 40
+      },
+      "sha256": "5f04e0ea4fbf8ea2614273af34e17a3d5630edeaa1423b61f25086f0cbc91fbb",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_mint",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mint-v1.png",
+      "prompt": "Transparent chunky pixel-art loose harvested mint bundle with rounded serrated green leaves, short cut stems and cut ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no pot, roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-c738148c-9973-4c8c-ad06-3595dddf4f18.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "15d0bc04d02ad01c0a8b336f38758237877d4c07a7942152b7b4f27d9d4fd2f7",
+      "file": "native-items/harvest_mint/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 19,
+        "w": 40,
+        "h": 37
+      },
+      "sha256": "f5c3a08ef1b3ce0962c34a78090c048408d5a5f5cfa41acc892cea9693007018",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_blueberry",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_blueberry-v1.png",
+      "prompt": "Transparent chunky pixel-art small harvested cluster of three to five plump blue-violet blueberries with tiny clipped stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no bush, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-dc089782-44bc-4a74-b724-1ac49c77bd09.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "84919f25b7cba615d331c7b52f1dfca86ed1d878f2da1ef1b6ae2a17da8e5477",
+      "file": "native-items/harvest_blueberry/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 20,
+        "w": 40,
+        "h": 36
+      },
+      "sha256": "cbeef8714e6378374ed3c08160e9e4c66d7f594382061ead4cc8ca9c1d38a07b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_firepepper",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_firepepper-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested firepepper, a curved red-orange pepper with flame-like hooked tip and tiny clipped cap; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-71b2f067-1a94-4942-bcf0-2d3f406b30ca.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "2c8cc35e10c3f9681b851e8931094b6d0380cbd4834330c02a099f7770b09829",
+      "file": "native-items/harvest_firepepper/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 22,
+        "w": 40,
+        "h": 34
+      },
+      "sha256": "33b3d31f996b87782e8146b61135fe0e31c88acb6fc89b717016d68468b09087",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_silverkelp",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_silverkelp-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested silver-kelp bundle of flat cool silver-blue ribbon fronds tied at clipped ends, stylized dried aquatic material; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no water scene, roots, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-d9199fd5-0ca6-49ea-85fe-892643cff361.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "6562086d7b8f7177b666c570aafc9f564faf256f8408f05ba857e2728ad7af17",
+      "file": "native-items/harvest_silverkelp/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 15,
+        "y": 16,
+        "w": 35,
+        "h": 40
+      },
+      "sha256": "ac8a8113fa69ec24f8243e6e6e05b7d3d80f0618e9005f32030fbe10a33f0a41",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_starbean",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_starbean-v1.png",
+      "prompt": "Transparent chunky pixel-art one harvested star-bean ingredient, a warm-brown bean pod with a crisp five-point star silhouette and small warm seed inside; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-3a157236-f885-4746-b7af-e2ace54844a5.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "0a09a9a9c6318256f2c7fc1f7b98d03418d6697e3056b2bdd20c3d84c04f70b3",
+      "file": "native-items/harvest_starbean/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 17,
+        "w": 40,
+        "h": 39
+      },
+      "sha256": "19318f1d35467656c0de35cbd05c05ff2ac3ab34b3aa47a18cffcc43360496ff",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_ambermelon",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_ambermelon-v1.png",
+      "prompt": "Transparent chunky pixel-art detached faceted ambermelon, one squat angular golden-amber fruit built from clear jewel-like planar facets, unmistakably not a ribbed pumpkin; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no leaves, plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-58b8b1bb-1b8e-46e8-bf02-e61afbd98cf1.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "aa9350f2d39dfdb94096ada45240ced335c89d07187bd5de64032147777b715a",
+      "file": "native-items/harvest_ambermelon/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 22,
+        "w": 40,
+        "h": 34
+      },
+      "sha256": "24c0fbfd474216d120203278cf689f8461a9a8595b9d3171fd2fc6c00a6982e2",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_mistmushroom",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mistmushroom-v1.png",
+      "prompt": "Transparent chunky pixel-art small loose cluster of three detached harvested mist mushrooms with pale violet and blue-gray caps and short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, ground, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-3f79e430-8161-4266-9677-2bc79137f02f.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "77af6e4becbf25e33d5124d935eb970e777ac137ec8176c8f2fb3097256dd259",
+      "file": "native-items/harvest_mistmushroom/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 20,
+        "w": 40,
+        "h": 36
+      },
+      "sha256": "da52f743a57965962136b7dbd838fd132ab7238c6f7dc030f53cc59aba6d8ef6",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_sunpetal",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_sunpetal-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested sunpetal bouquet of warm yellow-orange petals gathered with short clipped stems, a petal material bundle rather than a rooted flower; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-5ec3f025-33f6-47a0-812e-6712f543c4e7.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "938b0a1da13320524b8b122b0ade4a6439ed700504a51456dd0f6266104973df",
+      "file": "native-items/harvest_sunpetal/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 17,
+        "w": 40,
+        "h": 39
+      },
+      "sha256": "ce979bebf26ecc03261a08aebe52ce885750ced5d9f63d934b3b5218a5b12c94",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_fluxweed",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_fluxweed-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested fluxweed bundle of upright magical grass-like teal and olive stems tied at cut ends, distinct from flat silverkelp; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-d9cf5da0-03a9-43ed-b134-44cea6e31b1f.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "c11bedce3bddcbf643674d03537af54312418f7b5f3f5e86edf45f8ac81defda",
+      "file": "native-items/harvest_fluxweed/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 17,
+        "y": 16,
+        "w": 31,
+        "h": 40
+      },
+      "sha256": "b827831ef5795b15df0bf1c2bdbb7af1c18a1e4c47313af41a6cac7d6e90368d",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_bubotuber",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_bubotuber-v1.png",
+      "prompt": "Transparent chunky pixel-art cropped collected dark upright bubotuber specimen: short purple-brown bulbous stem with muted olive raised round bumps and clean cut tip, no potion bottle; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no pot, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-9bf5b1e6-de03-48d4-8b7e-aa415e97787f.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "d2b76c760b56eeb649bd4e732695a08d30d23a90b6afb892a1c64128ddef48aa",
+      "file": "native-items/harvest_bubotuber/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 21,
+        "y": 16,
+        "w": 23,
+        "h": 40
+      },
+      "sha256": "bd500ec67575dee7a97babb1a179d9e36378f0ded6ffb437ecd7d2ad532ab1ea",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_knotgrass",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_knotgrass-v1.png",
+      "prompt": "Transparent chunky pixel-art small harvested knotgrass bundle of wiry green-brown knotted stems and tiny leaves tied at clipped ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-9bbf7c9f-7cfd-4379-aef8-3ab67b8342a3.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "cd23bc42b55082cd971376524f3174321313bee5711623d646d3a27f396de495",
+      "file": "native-items/harvest_knotgrass/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 14,
+        "y": 16,
+        "w": 37,
+        "h": 40
+      },
+      "sha256": "d780b6fe415077662e256366f0d2a22100f2ea693d24ab3324c31e065276cb2f",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_shrivelfig",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_shrivelfig-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested shrivelfig fruit, a small wrinkled dusky purple-brown fig with short clipped stem and angular creases; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no tree, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-f8938200-d6fa-40bf-9ad9-90ab8b1ff735.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "f972a9ae50a7d32e7c5feab9100934c279f54a55aaa9363567b4bc3795410de1",
+      "file": "native-items/harvest_shrivelfig/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 16,
+        "y": 16,
+        "w": 33,
+        "h": 40
+      },
+      "sha256": "d04c4bea291303716a5b5ee0e3d24c04b93275763980458e76fb93d0f3d8a04e",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_gillyweed",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_gillyweed-v1.png",
+      "prompt": "Transparent chunky pixel-art loose harvested gillyweed bundle of thin slimy green seaweed strands with rounded wet tips gathered at clipped ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no water scene, roots, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-4e2043fb-3115-440e-a6dc-5db36407b0d1.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "65469a05e7f380922dd9dcc406cf3f5682806f007862b81c5c5783d96fb15f8f",
+      "file": "native-items/harvest_gillyweed/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 20,
+        "w": 40,
+        "h": 36
+      },
+      "sha256": "a56fbd52d6715a57023dcffd488fa4d3ad2f465e30c374d4c9005cc78160b806",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_mimbulus",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mimbulus-v1.png",
+      "prompt": "Transparent chunky pixel-art cropped collected small gray mimbulus cactus-like specimen: squat cool-gray bulb with pale raised round knobs and tiny clipped leaf nubs, clean cut sample, no green spray, mushroom, pot, or soil; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-55972fa9-b082-48f0-9290-eb158ad1237e.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "fd3905f6e295caaeff0c4c1b629a294996b4ffbe235ee6b0b99fc4f203537c78",
+      "file": "native-items/harvest_mimbulus/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 19,
+        "w": 40,
+        "h": 37
+      },
+      "sha256": "3ce59ae9c2d67c96d92f5f0558e7b6c5b048eb764a3f6b0921c8dab4db777c5e",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_flitterbloom",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_flitterbloom-v1.png",
+      "prompt": "Transparent chunky pixel-art friendly loose rounded harvested flitterbloom vine bundle, soft green curled tendrils gathered into a compact ball with tiny pale buds and clipped ends, distinct from a dark vine coil; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-550a6843-05e0-48f3-a340-b3be021b6d62.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "06f2a35c011e84940cc31b60068c5be656011e29981748a6c2c9a50eb416fba0",
+      "file": "native-items/harvest_flitterbloom/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 19,
+        "w": 40,
+        "h": 37
+      },
+      "sha256": "b743a642400145224491e529dd57f3f7daa728cd5d8e56da0f4a7647ed0e42a5",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    },
+    {
+      "id": "harvest_devilssnare",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_devilssnare-v1.png",
+      "prompt": "Transparent chunky pixel-art dark thick tightly coiled harvested vine bundle, dense deep green and blue-green rope-like loops with a few hooked tips, compact shadowy coil with no flowers or bright friendly buds; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no root, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-2932e2c4-6eb9-42ed-8689-8790575f4f1d.png",
+      "tool": "builtin image_gen",
+      "masterSha256": "e1e9ab6b7a38e727e3bea85bc93279c3f175de55768b62e276977dca62bc0580",
+      "file": "native-items/harvest_devilssnare/frame-01.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 19,
+        "w": 40,
+        "h": 37
+      },
+      "sha256": "ca92b12cda439ef54315e9fd216b3968d5479a0387640198656226fa55c63b07",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1254,
+        "h": 1254
+      }
+    }
+  ]
+}

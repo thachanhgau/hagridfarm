@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "d4e46d955c84",
+  "revision": "8d5d4a121c53",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -1972,6 +1972,46 @@
       "sha256": "e0f732f4fef105cd562cee51bd230bdb2097cd7fc108d426683d57c515fa8b66"
     },
     {
+      "source": "native-levels/bubotuber/flow-v1-1.png",
+      "file": "runtime-webp/native-levels/bubotuber/flow-v1-1.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 305,
+      "bytes": 164,
+      "sourceSha256": "9f9fdcdf1265e6d343db765f8640c660af5c54dfe469e9abba7e932969ba08b6",
+      "sha256": "1356cceb1fb9c0647d21025d02f35916542dc51e249a20e7871767f1d0241fc6"
+    },
+    {
+      "source": "native-levels/bubotuber/flow-v1-2.png",
+      "file": "runtime-webp/native-levels/bubotuber/flow-v1-2.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 418,
+      "bytes": 246,
+      "sourceSha256": "29373362f86d1747f8092bf92e754ecfa2c1500184723366514460a5d3428eef",
+      "sha256": "d6f291486931f6e152a8e3a724206d73e95c1afd85a32aefe1f14bbe1ec51590"
+    },
+    {
+      "source": "native-levels/bubotuber/flow-v1-3.png",
+      "file": "runtime-webp/native-levels/bubotuber/flow-v1-3.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 548,
+      "bytes": 312,
+      "sourceSha256": "f96d3548dc43e2480bd53832c8aef0b1e7f3ab04488b6765c9aa82fe122e0de2",
+      "sha256": "3329370a88935ab2d86c15d20aeed4e3ddd058fd986484fe598db7fd9d0437ff"
+    },
+    {
+      "source": "native-levels/bubotuber/flow-v1-4.png",
+      "file": "runtime-webp/native-levels/bubotuber/flow-v1-4.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 678,
+      "bytes": 394,
+      "sourceSha256": "0d775223c33d961fc30af384a1f20473b68ecd36872f9a59bdc4b2cd508f22dc",
+      "sha256": "4c2d199b4e1623a762d5f12cd4edd1d333bd2165994e18c3d628fac4530872d0"
+    },
+    {
       "source": "native-levels/bubotuber/frame-01.png",
       "file": "runtime-webp/native-levels/bubotuber/frame-01.webp",
       "width": 64,
@@ -2320,6 +2360,46 @@
       "bytes": 792,
       "sourceSha256": "7c6f5774a7c527f3aec7a4cffd23d8b4c9c19e523f6adee0d647552fced09010",
       "sha256": "6ea6ab5f0f92e52050e98889d49ffc31dab6b84aa1df5d73e7634b4f53d24555"
+    },
+    {
+      "source": "native-levels/flitterbloom/flow-v1-1.png",
+      "file": "runtime-webp/native-levels/flitterbloom/flow-v1-1.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 350,
+      "bytes": 214,
+      "sourceSha256": "848163d6737b32be0acbb7fd15c4dbd2744938b7f2ffb71d641fe50e3a169620",
+      "sha256": "b052a0397223de74e8edf9261614033f88c1664b225c6385101dd870933dd80d"
+    },
+    {
+      "source": "native-levels/flitterbloom/flow-v1-2.png",
+      "file": "runtime-webp/native-levels/flitterbloom/flow-v1-2.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 453,
+      "bytes": 252,
+      "sourceSha256": "1cddfff0036a2aa2a4bfc9ac2a30723e238cf0cfe75d5b8d27294f50415147fe",
+      "sha256": "ed3a63e148fb72b0c0fcc8938aa33df4f1c7d5fce23571b54202c46517352473"
+    },
+    {
+      "source": "native-levels/flitterbloom/flow-v1-3.png",
+      "file": "runtime-webp/native-levels/flitterbloom/flow-v1-3.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 645,
+      "bytes": 376,
+      "sourceSha256": "b79aa23403cb0ec732643825a9704b9fbb026838998696c16af56fef3ee0080f",
+      "sha256": "d95b5cca83ef88601c7f91baa8bb102a6e148fa3c94af3d676d5b07d4ed4b699"
+    },
+    {
+      "source": "native-levels/flitterbloom/flow-v1-4.png",
+      "file": "runtime-webp/native-levels/flitterbloom/flow-v1-4.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 822,
+      "bytes": 470,
+      "sourceSha256": "6ef134271590878eacd1c64f7334c20daeeb572ae0b61f85d2b512e6a7629676",
+      "sha256": "c0134124c76d4c2da4d9fa45dfa4d64c9f190e13884e2657cdd0bc68aec84bdc"
     },
     {
       "source": "native-levels/flitterbloom/frame-01.png",
@@ -2710,6 +2790,46 @@
       "bytes": 994,
       "sourceSha256": "7e34074338ef63906f2db66f9fa9de7f5fba2919fcc1360cb2ed5201dafc4336",
       "sha256": "e52c1988a6daed040dcf15f6bfb3d444f60cee976b4dddee628d9637872d5b3f"
+    },
+    {
+      "source": "native-levels/mimbulus/flow-v1-1.png",
+      "file": "runtime-webp/native-levels/mimbulus/flow-v1-1.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 288,
+      "bytes": 172,
+      "sourceSha256": "e5d4452a2f61a0218117afc9fa8528a6503daafb417275e5082ac3a8df3e546a",
+      "sha256": "0b208114c1100d7d77ec40475152f001f365f628ac0b088d625d42007787d6e1"
+    },
+    {
+      "source": "native-levels/mimbulus/flow-v1-2.png",
+      "file": "runtime-webp/native-levels/mimbulus/flow-v1-2.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 415,
+      "bytes": 256,
+      "sourceSha256": "07b01473db659003709baa25918e83fae08b4e515edc69b19e7367f2ecb395ec",
+      "sha256": "9de3b9ba1940783ee99b0166865ceaced7bba74f83397fa6b2493bfa7afbdef5"
+    },
+    {
+      "source": "native-levels/mimbulus/flow-v1-3.png",
+      "file": "runtime-webp/native-levels/mimbulus/flow-v1-3.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 581,
+      "bytes": 338,
+      "sourceSha256": "c1213a272a02adc9cc5f71f50e05bfa2e93e175cfe4e014e25a22030c23edb81",
+      "sha256": "cfd731517fb538d5dc827c31bd4dc06c33a74c8d998f3c7c8e2306e734966bc3"
+    },
+    {
+      "source": "native-levels/mimbulus/flow-v1-4.png",
+      "file": "runtime-webp/native-levels/mimbulus/flow-v1-4.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 736,
+      "bytes": 466,
+      "sourceSha256": "b3fd980b9a5356ada72aee34058de4002a9bae871db8cf54674b7c7aa4fd7ff5",
+      "sha256": "58a4806e56cb777214e8ea8e15db8a88938629ba21598f5f97432c201a55ae4b"
     },
     {
       "source": "native-levels/mimbulus/frame-01.png",
@@ -4172,6 +4292,326 @@
       "sha256": "8706184601bd7c0f4dd81b050a618c6eaea8dc73e38e369f3fb5b431f347c873"
     },
     {
+      "source": "native-items/harvest_ambermelon/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_ambermelon/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 870,
+      "bytes": 542,
+      "sourceSha256": "24c0fbfd474216d120203278cf689f8461a9a8595b9d3171fd2fc6c00a6982e2",
+      "sha256": "9ee1fc68b1fefae6fe0e3e73ff618238414bf66acecebff539cf5490fc7befc0"
+    },
+    {
+      "source": "native-items/harvest_beet/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_beet/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 697,
+      "bytes": 426,
+      "sourceSha256": "a3a9abbc7dc6d5f6afd9208d7ac98249973927d97aea24d72bd3c2eaed379aa0",
+      "sha256": "5e172c8fb1ea1641aa497da264fad554310fba91c16130174de049abd4fef473"
+    },
+    {
+      "source": "native-items/harvest_blueberry/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_blueberry/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 867,
+      "bytes": 540,
+      "sourceSha256": "cbeef8714e6378374ed3c08160e9e4c66d7f594382061ead4cc8ca9c1d38a07b",
+      "sha256": "85a11a9f4516cdc52ccd3f907b90d8156c98151a8e25d4f7792c97e9dbd16337"
+    },
+    {
+      "source": "native-items/harvest_bubotuber/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_bubotuber/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 755,
+      "bytes": 432,
+      "sourceSha256": "bd500ec67575dee7a97babb1a179d9e36378f0ded6ffb437ecd7d2ad532ab1ea",
+      "sha256": "ec67394acd96bad4695233c753fc30428e9d4db0ce520c02beab36d3b470282a"
+    },
+    {
+      "source": "native-items/harvest_carrot/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_carrot/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 871,
+      "bytes": 554,
+      "sourceSha256": "5e1154bd1953065cbe4ca70eab5e6919a9294d59c384995242e262da4b377c26",
+      "sha256": "2517603ec1daeb09d81a5a282385fd945cf507438c72b3c5e3247ca83c6dd417"
+    },
+    {
+      "source": "native-items/harvest_clover/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_clover/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 838,
+      "bytes": 498,
+      "sourceSha256": "8050158c99b7e869475e8502c8d90238506ee4bdbac16668b6c22608f9591a09",
+      "sha256": "118787d3553d20ca0436d4a368815fcdb23641123cf51a2e712f7980679b4b99"
+    },
+    {
+      "source": "native-items/harvest_daisy/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_daisy/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 968,
+      "bytes": 590,
+      "sourceSha256": "fd707ff4cd77adf82e6df20eeb710b679a545550def7470110a8cd39f0b9b1d6",
+      "sha256": "382a39cdef6519a2a882cb1fbf9ad6a517f8d2c1a128e4c5862a1a1cb111c7a7"
+    },
+    {
+      "source": "native-items/harvest_devilssnare/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_devilssnare/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 889,
+      "bytes": 516,
+      "sourceSha256": "ca92b12cda439ef54315e9fd216b3968d5479a0387640198656226fa55c63b07",
+      "sha256": "a12f9b775663dc40063f4104b8e4ca6a425a77bd5ca49578137551fd42784d2e"
+    },
+    {
+      "source": "native-items/harvest_dittany/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_dittany/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 938,
+      "bytes": 550,
+      "sourceSha256": "77c6ac301cf95295f039afd06ae9b00cccaefbf5d6cff25aa863edb83a3a75c8",
+      "sha256": "c762a9413a44771e94ec1d231540d074068d09cc6a2e9b80a6cd38c07b186deb"
+    },
+    {
+      "source": "native-items/harvest_firepepper/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_firepepper/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 670,
+      "bytes": 414,
+      "sourceSha256": "33b3d31f996b87782e8146b61135fe0e31c88acb6fc89b717016d68468b09087",
+      "sha256": "c9901b8fae5911b3c112e5a6c5f9508354e96ee4654868e742d9f2eb3c3abd6e"
+    },
+    {
+      "source": "native-items/harvest_flax/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_flax/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 884,
+      "bytes": 500,
+      "sourceSha256": "bd18f429901ac9e0f98dc62ba791171af2320346377e97ffa77c2d17595a0db2",
+      "sha256": "65377c2df859513f6ff72a9d1b6b29f57970c50040092deb8e5e500e6500521d"
+    },
+    {
+      "source": "native-items/harvest_flitterbloom/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_flitterbloom/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 992,
+      "bytes": 600,
+      "sourceSha256": "b743a642400145224491e529dd57f3f7daa728cd5d8e56da0f4a7647ed0e42a5",
+      "sha256": "c8fc7998b18e9c690b08cbc980680ab94b69ff77651639d86e5699abf5a517e5"
+    },
+    {
+      "source": "native-items/harvest_fluxweed/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_fluxweed/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 895,
+      "bytes": 506,
+      "sourceSha256": "b827831ef5795b15df0bf1c2bdbb7af1c18a1e4c47313af41a6cac7d6e90368d",
+      "sha256": "1ea35469fd400e336daf8139515de48d0712dd17f0d649acbb194074cdb81be0"
+    },
+    {
+      "source": "native-items/harvest_gillyweed/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_gillyweed/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 881,
+      "bytes": 502,
+      "sourceSha256": "a56fbd52d6715a57023dcffd488fa4d3ad2f465e30c374d4c9005cc78160b806",
+      "sha256": "e9371cadfbb4d07347bb1606e932eb226708b86d0f0f9c618e5977ad136a4300"
+    },
+    {
+      "source": "native-items/harvest_knotgrass/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_knotgrass/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 897,
+      "bytes": 488,
+      "sourceSha256": "d780b6fe415077662e256366f0d2a22100f2ea693d24ab3324c31e065276cb2f",
+      "sha256": "00088f0581c424829163ab9e4246e9d5cc4f69d3774fab9e03d7b95cb32960a9"
+    },
+    {
+      "source": "native-items/harvest_lettuce/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_lettuce/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 912,
+      "bytes": 586,
+      "sourceSha256": "3e2ab149de325011045c9e76f77a90c1d5d73575d1f426fe1c0212978a8f6a1d",
+      "sha256": "08c51702610d795e47c43186b1eed077ec39dba4035d32ced381f6d9d72791f2"
+    },
+    {
+      "source": "native-items/harvest_maize/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_maize/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1021,
+      "bytes": 644,
+      "sourceSha256": "5ce3d2ce203bb872bcc733c606f2258cbdcee04efa01a1e8299a6362b25dec9a",
+      "sha256": "c56fb095e8a2af0a7b3698eee36c7e8624abe3408e3301baf3a95f69a4ef6f3d"
+    },
+    {
+      "source": "native-items/harvest_mandrake/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_mandrake/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 840,
+      "bytes": 494,
+      "sourceSha256": "6371ff0c4d11106649684fd4711e3cbe417612108c8300789993cfe28f1c0b11",
+      "sha256": "ee840701bc54a69ec4529fe5a26594b707eabe120655f7dd889f678127ab1fe1"
+    },
+    {
+      "source": "native-items/harvest_mimbulus/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_mimbulus/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 944,
+      "bytes": 602,
+      "sourceSha256": "3ce59ae9c2d67c96d92f5f0558e7b6c5b048eb764a3f6b0921c8dab4db777c5e",
+      "sha256": "ad331789a6967f85b5ee4792ef299105e38005333b193305b923f5aa493230d0"
+    },
+    {
+      "source": "native-items/harvest_mint/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_mint/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 873,
+      "bytes": 532,
+      "sourceSha256": "f5c3a08ef1b3ce0962c34a78090c048408d5a5f5cfa41acc892cea9693007018",
+      "sha256": "9b32c5bcb057339b54e48df6e132599f63935125efa59514910abebeadd44775"
+    },
+    {
+      "source": "native-items/harvest_mistmushroom/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_mistmushroom/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 921,
+      "bytes": 572,
+      "sourceSha256": "da52f743a57965962136b7dbd838fd132ab7238c6f7dc030f53cc59aba6d8ef6",
+      "sha256": "48894eb8a1b636ccf8b7d5a5128429db058ec2af2aefd5d7d244cb5b24b0f2b0"
+    },
+    {
+      "source": "native-items/harvest_moonherb/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_moonherb/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1019,
+      "bytes": 582,
+      "sourceSha256": "dd0546df2413bf34d4bd2c865e21dac575e83527fbfd662e7af62262a32281f4",
+      "sha256": "6ec619700532d9e36f0d19c4a6aa783187f34a895e6787806307e8549bbccb38"
+    },
+    {
+      "source": "native-items/harvest_oats/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_oats/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1047,
+      "bytes": 602,
+      "sourceSha256": "dfb47fdc1cedb3e1bd8a41e95d6e844a1ab9ee57e3e97103a389a0be84f98299",
+      "sha256": "948ce4a44b1987ef43955344a39a95f2811251d4e68ca028864b7a1d62afa8d9"
+    },
+    {
+      "source": "native-items/harvest_puffapod/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_puffapod/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 950,
+      "bytes": 590,
+      "sourceSha256": "f57531cf0de2bf45028c7ee0249b93440a83da11a2fd4633def69f4725e0360b",
+      "sha256": "a359e8641905268f67078aca4425b7a6166e8126b7095b9d5b673ab7087c017e"
+    },
+    {
+      "source": "native-items/harvest_pumpkin/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_pumpkin/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 946,
+      "bytes": 582,
+      "sourceSha256": "eba01ab33f193b9e5984c2e8e903303cf88a89d524e934c575b7e9cca7241d88",
+      "sha256": "41b99ab8ca2e3b38c1426fa200d6d67e30581719af53129438167f49f1953dd1"
+    },
+    {
+      "source": "native-items/harvest_shrivelfig/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_shrivelfig/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 877,
+      "bytes": 494,
+      "sourceSha256": "d04c4bea291303716a5b5ee0e3d24c04b93275763980458e76fb93d0f3d8a04e",
+      "sha256": "76848dedf2f83e19c464d0dbd8180abe38877ec8a8a394147dfea2a47204b415"
+    },
+    {
+      "source": "native-items/harvest_silverkelp/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_silverkelp/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 909,
+      "bytes": 510,
+      "sourceSha256": "ac8a8113fa69ec24f8243e6e6e05b7d3d80f0618e9005f32030fbe10a33f0a41",
+      "sha256": "95159b692267bf3a17b7eec4a2723929c28ad134cfd0888f8d3630d47c151209"
+    },
+    {
+      "source": "native-items/harvest_starbean/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_starbean/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1036,
+      "bytes": 612,
+      "sourceSha256": "19318f1d35467656c0de35cbd05c05ff2ac3ab34b3aa47a18cffcc43360496ff",
+      "sha256": "fe1fe013e5678e3b66e3ec43c66a3cf309dcb32cd8cc321c9bf51c7ac65136a0"
+    },
+    {
+      "source": "native-items/harvest_strawberry/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_strawberry/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 867,
+      "bytes": 532,
+      "sourceSha256": "3b49f4e73de1caed631559876815570ca301c5076256a10b3a26ab497d130d8b",
+      "sha256": "6cb5837c39329c99e2f2e2f0a66616ce33ec813771ab758325c26628a40399b6"
+    },
+    {
+      "source": "native-items/harvest_sunflower/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_sunflower/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 998,
+      "bytes": 574,
+      "sourceSha256": "52e1dc47c5ed35b8ef1be3232024c2987f8f5afa439112860adc27292a19286c",
+      "sha256": "be4d06260666c0c5acb16f38f741f82e7a3776a6d9b43bb1819aa8d7de5fcb95"
+    },
+    {
+      "source": "native-items/harvest_sunpetal/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_sunpetal/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 969,
+      "bytes": 584,
+      "sourceSha256": "ce979bebf26ecc03261a08aebe52ce885750ced5d9f63d934b3b5218a5b12c94",
+      "sha256": "f185aaa15a7330e1afb70f9465fdf5c3c8f8cc40b067f15f67a2e082f508e975"
+    },
+    {
+      "source": "native-items/harvest_valerian/frame-01.png",
+      "file": "runtime-webp/native-items/harvest_valerian/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1039,
+      "bytes": 590,
+      "sourceSha256": "5f04e0ea4fbf8ea2614273af34e17a3d5630edeaa1423b61f25086f0cbc91fbb",
+      "sha256": "3541ec40f1d62a6f795650bd9ce4dbca933f12b0954db06e6dbb7de4c0023458"
+    },
+    {
       "source": "native-items/pen_1.png",
       "file": "runtime-webp/native-items/pen_1.webp",
       "width": 128,
@@ -4382,6 +4822,16 @@
       "sha256": "214fdfcafefdda9e0bb13c98152ec438ef5a5b9a3a1482b049ee7a9ae54f1d65"
     },
     {
+      "source": "native-items/produce_thestral/frame-01.png",
+      "file": "runtime-webp/native-items/produce_thestral/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 579,
+      "bytes": 336,
+      "sourceSha256": "f74b2304f507c1101149b02ca28db952e644b2ac584c8b272dac28b4ab15dc44",
+      "sha256": "2131105562a6f232cc2ac309769c7b7935e70ea4d838292aad3f0765bf5da245"
+    },
+    {
       "source": "native-items/produce_thestral.png",
       "file": "runtime-webp/native-items/produce_thestral.webp",
       "width": 64,
@@ -4390,6 +4840,16 @@
       "bytes": 528,
       "sourceSha256": "bc8bc90421853eee2447490b21b2e46da9c0574cc1d99c4c2016f4d340bdba8d",
       "sha256": "23011ee21196ba060e7388fb279c71f5adaf948697c91a732c401a0373881ac3"
+    },
+    {
+      "source": "native-items/produce_three-headed-dog/frame-01.png",
+      "file": "runtime-webp/native-items/produce_three-headed-dog/frame-01.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 748,
+      "bytes": 456,
+      "sourceSha256": "2cead1f5f9884e3ba1861df5452de1afbd2a037053e732116423e15802646ab0",
+      "sha256": "e4861f1b5799599ed3fc495f898d15b208e1a33b25ec95fd7e4927eb7f3f0abb"
     },
     {
       "source": "native-items/produce_three-headed-dog.png",
@@ -5152,6 +5612,66 @@
       "sha256": "bf88612b3fc30ef562e664283db2c01378a8f9b23797b86bf28911a365ca644b"
     },
     {
+      "source": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+      "file": "runtime-webp/native-crop-complete/decor-flow-hw_blinking_chest/atlas.webp",
+      "width": 448,
+      "height": 192,
+      "sourceBytes": 17420,
+      "bytes": 11472,
+      "sourceSha256": "f4ab7059778b7ea5454ef98393fb356dd37cb8e20d84d2e27e83cfba559055a5",
+      "sha256": "8eda13ec2b0a9754b8ff72e51a981e06df1f074a24bbb5d5d92e690c59fd80ec"
+    },
+    {
+      "source": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+      "file": "runtime-webp/native-crop-complete/decor-flow-hw_candy_cauldron/atlas.webp",
+      "width": 384,
+      "height": 224,
+      "sourceBytes": 12657,
+      "bytes": 8358,
+      "sourceSha256": "71a5bd9a0be82bd24473f4b468a4f60d4ff963c3f9df084188d30b9bfebe648c",
+      "sha256": "a522b2a16df00be504bee1df2b3358252ab62f4c03e7552586b6fc36096f7055"
+    },
+    {
+      "source": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+      "file": "runtime-webp/native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.webp",
+      "width": 416,
+      "height": 208,
+      "sourceBytes": 21285,
+      "bytes": 14126,
+      "sourceSha256": "d3cb42f24175ee552666fbb80b7fb674e95241bd5066ad036f1d7efa6f3002dc",
+      "sha256": "7f9164d38bcdd531029ad463b2d2430382aa86b91cbb78688c7ec6d3222adfc8"
+    },
+    {
+      "source": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+      "file": "runtime-webp/native-crop-complete/decor-flow-hw_monster_bookcase/atlas.webp",
+      "width": 448,
+      "height": 288,
+      "sourceBytes": 20945,
+      "bytes": 13202,
+      "sourceSha256": "816e2583a94379f8d3a52ec0e81f34266302c4f001a62d29eab67ed0d68707db",
+      "sha256": "194bb0ef1331fd34b3aab90c994363f8c094c60becc36063300fcce5c3257b66"
+    },
+    {
+      "source": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+      "file": "runtime-webp/native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.webp",
+      "width": 768,
+      "height": 288,
+      "sourceBytes": 34837,
+      "bytes": 22228,
+      "sourceSha256": "3411c67c87fc21ff11b1ddb01b2c8e10342b767b6b185288c63af77c49b73650",
+      "sha256": "592c85931fd8711f8763a7f8156b30f84cc84b9429a5fbfe53730d9da5860229"
+    },
+    {
+      "source": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+      "file": "runtime-webp/native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.webp",
+      "width": 512,
+      "height": 288,
+      "sourceBytes": 20656,
+      "bytes": 12936,
+      "sourceSha256": "5741a26df1bc15b13b655ec72c1fb23c25c1c4c3b16a26b7eb995d91fc217c84",
+      "sha256": "0b8230b0e0a3da06f13fa65c50c113e5b8de88b4fede8ae8d228b4338cc3f153"
+    },
+    {
       "source": "native-crop-complete/devilssnare/atlas.png",
       "file": "runtime-webp/native-crop-complete/devilssnare/atlas.webp",
       "width": 256,
@@ -5190,6 +5710,36 @@
       "bytes": 4816,
       "sourceSha256": "ba8d1ae0229571e2af2ecabd3166fe382496666fcc7164ffccb9facd1a272bb2",
       "sha256": "32c3a77455c94534a8ec642051acfdf64acb3888ad74780e50cbd562d7deeeee"
+    },
+    {
+      "source": "native-crop-complete/flow-bubotuber/atlas.png",
+      "file": "runtime-webp/native-crop-complete/flow-bubotuber/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 4299,
+      "bytes": 2200,
+      "sourceSha256": "41a16c84c9f39316b57676c99d3f00cc0c5d6860dda09c066ba73bd31313cd87",
+      "sha256": "eb3f45a3ed92ba9119d82b1983faf2e5bb58f0a6d4442d5c49332d2727e91e6c"
+    },
+    {
+      "source": "native-crop-complete/flow-flitterbloom/atlas.png",
+      "file": "runtime-webp/native-crop-complete/flow-flitterbloom/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 4783,
+      "bytes": 2502,
+      "sourceSha256": "8e4415459d64cf4567da55babe286201ef28932f7021a69ca8d56ff35c639cd8",
+      "sha256": "475e38e8e52babac6563b39911a811846462e81e4994e1beb16407ee668f00c5"
+    },
+    {
+      "source": "native-crop-complete/flow-mimbulus/atlas.png",
+      "file": "runtime-webp/native-crop-complete/flow-mimbulus/atlas.webp",
+      "width": 256,
+      "height": 288,
+      "sourceBytes": 4704,
+      "bytes": 2722,
+      "sourceSha256": "76e5c9502d446ce1a39c772b5dfb5fad54dc1abb07bb60cfad49a45024451f9b",
+      "sha256": "54e3b37b9e5d87a7bc670e6cf463a9aeb84269611596209c9793e3ab3d8053ad"
     },
     {
       "source": "native-crop-complete/fluxweed/atlas.png",
@@ -6180,6 +6730,126 @@
       "bytes": 1546,
       "sourceSha256": "8e412bfb2a9e03d29e86e0b66a3b0ab6689373b660a81554a1315c34d71dd7c3",
       "sha256": "724d5f07ab29f342d27d3337fcdcade779d1d9e8fd0a83bb7e91a4324a45f924"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_blinking_chest_right.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_blinking_chest_right.webp",
+      "width": 112,
+      "height": 96,
+      "sourceBytes": 2700,
+      "bytes": 1734,
+      "sourceSha256": "bbbe5b08d7f6a8b9a4aebc16fee2a9a6e4a1e69b0b533bde7fbeaf9a817ba20d",
+      "sha256": "eb91376bb32e1e52b8140a03b055a5cf32f795625a338dcc96cef5bf22f40afc"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_blinking_chest.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_blinking_chest.webp",
+      "width": 112,
+      "height": 96,
+      "sourceBytes": 2683,
+      "bytes": 1736,
+      "sourceSha256": "edf6eb9055c1929e767fa78aa9468d5f5c8fa3544f6044a3899269d263aa2d52",
+      "sha256": "6aa7520cd32c4fe1fc57999beef365f78ee3482c4c19e5adb796d526fc51d038"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_candy_cauldron_right.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_candy_cauldron_right.webp",
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 1829,
+      "bytes": 1146,
+      "sourceSha256": "938e5e0bf711cee67223189dff732e9b89093f5460e793fae9a57e56953d109a",
+      "sha256": "d27c1d2f96cc30c9f487969a86a6b415103dbb790516c5a73993a5ade706d178"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_candy_cauldron.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_candy_cauldron.webp",
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 1853,
+      "bytes": 1148,
+      "sourceSha256": "fd54f0c8b5c7b246c2fa3a47b3164a7dc56514f506bb8dde630cb62e9acfe20a",
+      "sha256": "13716cfce01d8dfabfd8b0087cdab427087024e4ee9d718babb8ffc88c460840"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_eyeball_flowers_right.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_eyeball_flowers_right.webp",
+      "width": 104,
+      "height": 104,
+      "sourceBytes": 3170,
+      "bytes": 2156,
+      "sourceSha256": "eb760d8539044d23cc7c1bbe0ddb312d195b5b602408b72e0ee16f3ce367aaa5",
+      "sha256": "64ec21367e70db7737b0d9297d06d69a84380c53efe865a85766587c0ad84e5b"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_eyeball_flowers.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_eyeball_flowers.webp",
+      "width": 104,
+      "height": 104,
+      "sourceBytes": 3240,
+      "bytes": 2226,
+      "sourceSha256": "8224d3b79c4357097f3cc29cb9492a8007fa573ca74f257c242cdb977e573a34",
+      "sha256": "a61fc9cc6e46a98194b149adc56cb22925273c703b005c20e5429ec374218dc6"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_monster_bookcase_right.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_monster_bookcase_right.webp",
+      "width": 112,
+      "height": 144,
+      "sourceBytes": 3334,
+      "bytes": 2066,
+      "sourceSha256": "191a6eba330992d81fce9a5b7d193688bb5d90aadba549569eb0471ce78ca0c3",
+      "sha256": "16f5a0a3fe44009a706e1e6afe06df48da0dbf946cef255dcb34b145ea3b3c23"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_monster_bookcase.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_monster_bookcase.webp",
+      "width": 112,
+      "height": 144,
+      "sourceBytes": 3474,
+      "bytes": 2122,
+      "sourceSha256": "3673da9d72d6e2f309cd3094e0c3695a084d902776801b9d997fdc792a3bfc1a",
+      "sha256": "1cfb43f186d12fa1b57ea6d50e3a3b04491a2af6fe90411d78da6a3791e8924d"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_violet_mist_pond_right.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_violet_mist_pond_right.webp",
+      "width": 192,
+      "height": 144,
+      "sourceBytes": 5056,
+      "bytes": 3424,
+      "sourceSha256": "1a2de6b2b1b7ce29ec2128887c391734ec89e0f9c901983d90e03e6516f86765",
+      "sha256": "d34e287cb868c5c590d5b2e5e560d469bda5b9dfae29ded657ee3e09a5ed848c"
+    },
+    {
+      "source": "decor-assets/native/flow-hw_violet_mist_pond.png",
+      "file": "runtime-webp/decor-assets/native/flow-hw_violet_mist_pond.webp",
+      "width": 192,
+      "height": 144,
+      "sourceBytes": 5007,
+      "bytes": 3074,
+      "sourceSha256": "fa381491e68178c8701f97f81e6a30209c9764a7bf236b133fddcaca6aab661b",
+      "sha256": "07e335d12ecd590bcb1272812c81e79d3b2a4570bb81810140fab35691890fd9"
+    },
+    {
+      "source": "decor-assets/native/flow-sp_hagrid_umbrella_right.png",
+      "file": "runtime-webp/decor-assets/native/flow-sp_hagrid_umbrella_right.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 3032,
+      "bytes": 1788,
+      "sourceSha256": "7f85081eb5ac18a644e728f14a50b5605606e1d4fe48f391ca501fb8e6923bf7",
+      "sha256": "7a90025e70ec5e978c401e93eab395991927a8c88764b7cf293e96b28253865a"
+    },
+    {
+      "source": "decor-assets/native/flow-sp_hagrid_umbrella.png",
+      "file": "runtime-webp/decor-assets/native/flow-sp_hagrid_umbrella.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 3005,
+      "bytes": 1786,
+      "sourceSha256": "0e4a03f29ab203240d2894e982bef2384e4fadaaf06c690c899275b5f2262d82",
+      "sha256": "08dea3d7581a4618e6a2b9d6d4c84d1c46f2544ea8ee0d4773bb8c9ba41b533e"
     },
     {
       "source": "decor-assets/native/gardener_friend_f0.png",
@@ -10805,11 +11475,11 @@
     }
   ],
   "totals": {
-    "converted": 1074,
+    "converted": 1141,
     "existingWebp": 8,
-    "originalBytes": 5615162,
-    "webpBytes": 3762734,
-    "savedBytes": 1852428,
-    "savedPercent": 32.99
+    "originalBytes": 5831777,
+    "webpBytes": 3898678,
+    "savedBytes": 1933099,
+    "savedPercent": 33.15
   }
 }

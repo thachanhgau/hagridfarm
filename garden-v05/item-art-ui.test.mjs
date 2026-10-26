@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { DB } from './balance-data.mjs?v=24.9.65';
-import { ITEM_ART } from './item-art.mjs?v=24.9.79';
+import { ITEM_ART } from './item-art.mjs?v=24.9.80';
+import { FLOW_ITEM_ART } from './flow-item-art.mjs?v=24.9.80';
+import { KEEPSAKE_ART } from './complete-object-art.mjs?v=24.9.80';
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }
@@ -47,11 +49,15 @@ globalThis.document = {
 };
 
 const {
+ cropVisualKind,
  earnedDecorIcon,
+ itemDisplayName,
  itemArtKey,
  levelUnlockVisual,
  visualItemIcon,
-} = await import('./ui-utils.mjs?v=24.9.79');
+} = await import('./ui-utils.mjs?v=24.9.80');
+const {makeRecipeIcon} = await import('./recipe-art-ui.mjs?v=24.9.80');
+const {costChips, rewardChips} = await import('./pixel-icons.mjs?v=24.9.80');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];
@@ -84,7 +90,7 @@ test('item art covers every recipe, produce and earned decoration identity', () 
  for (const id of ids) assert.ok(Number(ITEM_ART[id].width) > 0 && Number(ITEM_ART[id].height) > 0, id);
 });
 
-test('canonical outputs alias recipe art while recipe cards keep variant art', () => {
+test('canonical outputs use shared flow art while recipe cards keep variant art', () => {
  const items = new Map();
  for (const recipe of DB.recipes) {
   const key = `recipe_${recipe.id}`;
@@ -92,19 +98,65 @@ test('canonical outputs alias recipe art while recipe cards keep variant art', (
   assert.equal(findAttribute(visualItemIcon(items, key, { size: 44 }), 'data-art-key'), key);
  }
  for (const output of new Set(DB.recipes.map(recipe => recipe.output))) {
-  assert.equal(itemArtKey(output), `recipe_${output}`);
-  assert.equal(findAttribute(visualItemIcon(items, output, { size: 44 }), 'data-art-key'), `recipe_${output}`);
+  const key = itemArtKey(output);
+  assert.equal(key, `recipe_${output}`);
+  assert.ok(ITEM_ART[key]?.file, `Missing canonical output art for ${output}`);
+  assert.equal(findAttribute(visualItemIcon(items, output, { size: 44, kind: 'output' }), 'data-art-key'), key);
  }
 });
 
-test('produce and keepsake art never fall back to the creature sprite', () => {
+test('harvest icons use generated flow art without changing seed/live crop sprites', () => {
+ const items = new Map([
+  ['pumpkin', { frames: [{}, {}, {}, { file: 'pumpkin-live.png', width: 48, height: 48, bounds: { x: 0, y: 0, w: 48, h: 48 } }] }],
+  ['puffskein', { frames: [{}, {}, {}, { file: 'creature.png', width: 48, height: 48, bounds: { x: 0, y: 0, w: 48, h: 48 } }] }],
+ ]);
+ const seed = visualItemIcon(items, 'pumpkin', { size: 26, kind: 'seed' });
+ const live = visualItemIcon(items, 'pumpkin', { size: 26 });
+ assert.ok(seed.className.includes('is-seed-packet'));
+ assert.ok(live.className.includes('is-sprite'));
+ assert.equal(findAttribute(seed, 'data-art-key'), undefined);
+ assert.equal(findAttribute(live, 'data-art-key'), undefined);
+ for (const crop of DB.crops) {
+  assert.equal(cropVisualKind(crop.id), 'harvest');
+  const key = itemArtKey(crop.id, { kind: 'harvest' });
+  assert.equal(key, `harvest_${crop.id}`);
+  assert.ok(FLOW_ITEM_ART[key]?.file, key);
+  assert.equal(findAttribute(visualItemIcon(items, crop.id, { size: 26, kind: 'harvest' }), 'data-art-key'), key);
+ }
+ assert.equal(cropVisualKind('puff_feed'), '');
+ const futureCrop = visualItemIcon(new Map([['future_crop', {frames: [{}, {}, {}, {file: 'live.png', width: 48, height: 48, bounds: {x: 0, y: 0, w: 48, h: 48}}]}]]), 'future_crop', {size: 26, kind: 'harvest'});
+ assert.ok(findClass(futureCrop, 'is-art-missing'), 'missing harvest art must not fall back to the live plant sprite');
+ assert.equal(findClass(futureCrop, 'is-sprite'), null);
+});
+
+test('recipe output art uses a display name instead of exposing the output id', () => {
+ const recipe = DB.recipes.find(entry => entry.id === 'puff_feed');
+ const visual = makeRecipeIcon(recipe, new Map(), 40);
+ assert.equal(findAttribute(visual, 'aria-label'), `Thành phẩm ${itemDisplayName(recipe.output, recipe.label)}`);
+ assert.doesNotMatch(findAttribute(visual, 'aria-label'), new RegExp(recipe.output));
+});
+
+test('shared inventory and reward surfaces route crop ids to harvest art', () => {
+ const reward = rewardChips(new Map(), {itemId: 'pumpkin', bonusQty: 2});
+ const costs = costChips(new Map(), [{id: 'pumpkin', have: 1, need: 2}]);
+ assert.equal(findAttribute(reward, 'data-art-key'), 'harvest_pumpkin');
+ assert.equal(findAttribute(costs[0], 'data-art-key'), 'harvest_pumpkin');
+});
+
+test('produce keeps its product art while inventory keepsakes use world statues without a cup badge', () => {
  const items = new Map([['puffskein', { frames: [{}, {}, {}, { file: 'creature.png', width: 48, height: 48, bounds: { x: 0, y: 0, w: 48, h: 48 } }] }]]);
+ for (const animal of DB.animals) {
+  const key = `keepsake_${animal.id}`;
+  assert.ok(KEEPSAKE_ART[animal.id]?.file, key);
+  assert.equal(itemArtKey(key, { kind: 'keepsake' }), key);
+ }
  const produce = visualItemIcon(items, 'produce_puffskein', { size: 44, kind: 'produce' });
  const keepsake = visualItemIcon(items, 'keepsake_puffskein', { size: 44, kind: 'keepsake' });
  assert.equal(findAttribute(produce, 'data-art-key'), 'produce_puffskein');
- assert.equal(findAttribute(keepsake, 'data-art-key'), 'produce_puffskein');
- assert.equal(findAttribute(keepsake, 'data-presentation'), 'trophy-pedestal');
- assert.equal(findAttribute(findClass(keepsake, 'keepsake-pedestal-badge'), 'data-art-key'), 'reward_trophy');
+ assert.equal(findAttribute(keepsake, 'data-art-key'), 'keepsake_puffskein');
+ assert.equal(findAttribute(keepsake, 'data-presentation'), 'keepsake-statue');
+ assert.equal(findClass(keepsake, 'keepsake-pedestal-badge'), null);
+ assert.ok(findAttribute(keepsake, 'src')?.includes(KEEPSAKE_ART.puffskein.file.replace(/\.png$/, '')));
  assert.equal(findAttribute(produce, 'src') === 'creature.png', false);
 });
 

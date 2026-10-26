@@ -1,6 +1,6 @@
-import {el, button, num, hours, realHours, visualItemIcon} from './ui-utils.mjs?v=24.9.79';
-import {levelLabel} from './progression-engine.mjs?v=24.9.79';
-import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=24.9.79';
+import {el, button, num, hours, realHours, cropVisualKind, visualItemIcon} from './ui-utils.mjs?v=24.9.80';
+import {levelLabel} from './progression-engine.mjs?v=24.9.80';
+import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=24.9.80';
 
 /**
  * V21.0 Direction 2:
@@ -317,7 +317,7 @@ export function renderAlmanacSection({DB, items, state, onSelectCrop, onSelectCr
   const {creatureChains, cropUsages} = buildAlmanacChains(DB, state);
   const wrap = el('div', {class: 'almanac-view'});
   const arrow = () => el('span', {class: 'gp-chain-arrow', 'aria-hidden': 'true'}, [pixelIcon('arrow', 1)]);
-  const stock = (id, n, have, label) => el('span', {class: `gp-chain-item${have >= n ? ' has-stock' : ''}`, title: `${label}: kho ${num(have)}/${num(n)}`}, [visualItemIcon(items, id, {size: 28}), el('b', {text: `${num(have)}/${num(n)}`})]);
+  const stock = (id, n, have, label) => el('span', {class: `gp-chain-item${have >= n ? ' has-stock' : ''}`, title: `${label}: kho ${num(have)}/${num(n)}`}, [visualItemIcon(items, id, {size: 28, kind: cropVisualKind(id)}), el('b', {text: `${num(have)}/${num(n)}`})]);
 
   wrap.append(el('section', {class: 'gp-hero almanac-hero'}, [
     el('div', {class: 'gp-medal'}, [pixelIcon('book', 2), el('b', {text: String(creatureChains.length)})]),

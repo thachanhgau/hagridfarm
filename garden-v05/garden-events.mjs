@@ -1,8 +1,8 @@
-import {getGardenStorage} from './garden-storage.mjs?v=24.9.79';
-import {el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.79';
-import {stableHash} from './scene-animation.mjs?v=24.9.79';
-import {dayKeyFor} from './garden-quests.mjs?v=24.9.79';
-import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.79';
+import {getGardenStorage} from './garden-storage.mjs?v=24.9.80';
+import {cropVisualKind, el, button, visualItemIcon} from './ui-utils.mjs?v=24.9.80';
+import {stableHash} from './scene-animation.mjs?v=24.9.80';
+import {dayKeyFor} from './garden-quests.mjs?v=24.9.80';
+import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=24.9.80';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
@@ -955,7 +955,7 @@ function secretCard({items, cfg, year, state, active, onClaim}) {
       'aria-label': `${label} · ${open ? cfg.secret.title + ' · ' + cfg.secret.reward.label : 'Quà bí mật'}`,
       onclick: () => onClaim?.(key),
     }, [
-      open ? visualItemIcon(items, cfg.secret.reward.itemId, {size: 40, kind: cfg.secret.reward.kind}) : pixelIcon('festival', 2),
+      open ? visualItemIcon(items, cfg.secret.reward.itemId, {size: 40, kind: cropVisualKind(cfg.secret.reward.itemId) || cfg.secret.reward.kind}) : pixelIcon('festival', 2),
       claimed ? el('span', {class: 'gp-corner is-done'}, [pixelIcon('check', 1)]) : ready ? null : el('span', {class: 'lock-badge'}, [pixelIcon('lock', 1)]),
     ]),
     el('div', {class: 'v24-event-secret-copy'}, [
@@ -995,7 +995,7 @@ function milestoneCard({items, ms, key, claimed, ready, label, onClaim, title = 
       title: [title, note, ms.reward.label].filter(Boolean).join(' · '),
       onclick: () => onClaim?.(key),
     }, [
-      visualItemIcon(items, ms.reward.itemId || ms.reward.kind, {size: 40, kind: ms.reward.kind || ''}),
+      visualItemIcon(items, ms.reward.itemId || ms.reward.kind, {size: 40, kind: cropVisualKind(ms.reward.itemId) || ms.reward.kind || ''}),
       claimed ? el('span', {class: 'gp-corner is-done'}, [pixelIcon('check', 1)]) : ready ? null : el('span', {class: 'lock-badge'}, [pixelIcon('lock', 1)]),
     ]),
     el('b', {class: 'gp-track-points', text: ms.legacy ? 'Quà cũ' : String(ms.points)}),

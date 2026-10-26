@@ -1,12 +1,13 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.79';
-import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.79';
-import {el,button} from './ui-utils.mjs?v=24.9.79';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.79';
-import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.79';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.79';
-import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.79';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.79';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.79';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.80';
+import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.80';
+import {el,button} from './ui-utils.mjs?v=24.9.80';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.80';
+import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.80';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.80';
+import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.80';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.80';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.80';
+import {keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.80';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 const OBJECT_REACH=Object.freeze({hut:2.5,pond:2.5,oak:1,pine:1});
@@ -97,9 +98,12 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  if(plotRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền thửa đất.';
  if(penRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền chuồng.';
  for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&hits(d.col-0.25,d.row-0.25,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
- // Saves contain all species keys, including zero counts. Only earned statuettes reserve
- // their real south-aisle band; the level110 field beyond it remains usable.
- if(Object.values(state?.keepsakes??{}).some(n=>n>0)&&[rect.c0,rect.c1].some(c=>{const y=keepsakeAnchorRow(stage??GARDEN_STAGES.at(-1),c);return rect.r1>y-1.75&&rect.r0<y+.5;}))return 'Lối này dành cho đài kỷ vật.';
+ // Saves contain all species keys, including zero counts. Reserve only the
+ // occupied statue bases and the narrow museum access route; the rest of the
+ // south field remains usable.
+ const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),iso,keepsakeAnchorRow);
+ if(keepsakes.ground.some(occupied=>rectIntersects(rect,occupied)))return 'Chân đài kỷ vật đang ở đây.';
+ if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
  const near=(c,r,reach)=>Math.hypot(Math.max(rect.c0-c,0,c-rect.c1),Math.max(rect.r0-r,0,r-rect.r1))<reach-0.5;
  for(const o of map?.objects??[])if(near(o.col,o.row,OBJECT_REACH[o.id]??1))return 'Chỗ này vướng cảnh vật.';
  for(const w of Object.values(WIZARD_LAYOUT))if(near(w.col,w.row,1.5))return 'Chỗ này vướng công trình.';
@@ -130,6 +134,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
    const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw,otherAsset=other&&other!==itemId&&assetOf?.(other),spot=otherAsset&&decorSpot(decorations,other);
    if(spot){const [ox2,oy2]=iso(spot[0],spot[1]);others.push([decorLabelFor(otherAsset),spriteRect(otherAsset,decorFacingFor(decorations,other),ox2,oy2)]);}
   }
+  for(const [index,screen] of keepsakes.screen.entries())others.push([`đài kỷ vật ${index+1}`,screen]);
   for(const [name,rect] of others)if(overlapArea(mine,rect)>OVERLAP_SHARE*Math.min(mineArea,area(rect)))return `Chỗ này chồng lên ${name}.`;
  }
  return '';
@@ -152,7 +157,7 @@ const nearestFree=(grid,[col,row],reach)=>{
  * Đặt trang trí: a small bar over the dock, the garden stays in view. The ground shows where the item
  * fits (green) and where it cannot stand (grey). A tap moves it there — onto the nearest green spot when
  * the tap lands just off one (red with the reason otherwise) — ↻ turns it, sliding to the nearest spot
- * the turned piece fits, saved at once when it already stands there — and «Đặt» saves a new spot.
+ * the turned piece fits — and «Đặt» confirms both the position and facing.
  */
 export function showDecorationPlacement({item,map,assetOf,getState,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld}){
  for(const old of document.querySelectorAll('.decor-placement,.decor-bar')){try{old.close?.();}catch{}old.remove();}
@@ -188,7 +193,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  function sync(centerCamera){
   if(at&&centerCamera&&camera&&iso){const xy=iso(at[0],at[1]);camera.centerAt(xy[0],xy[1]-50,Math.max(1.2,camera.scale?.()||1.2));}
   const problem=problemAt(at);
-  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,grid,rect:at?decorFootprintRect(at[0],at[1],decorFootprint(item.id),selectedFacing):null});
+  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,grid,suggestions:placementSuggestions(grid,at,18),rect:at?decorFootprintRect(at[0],at[1],decorFootprint(item.id),selectedFacing):null});
   render(problem);
  }
 
@@ -197,22 +202,23 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   const right=selectedFacing==='right';
   thumb.src=runtimeImageUrl(right?(item.rightFile||item.file):item.file);
   thumb.classList.toggle('is-flipped',right&&!item.rightFile);
-  const here=sameSpot(at,saved);
-  where.textContent=!at?'Chạm chỗ trống trên vườn':here?'Đang đặt ở đây':problem||'Chỗ mới · nhấn «Đặt»';
+  const here=sameSpot(at,saved),sameFacing=selectedFacing===savedFacing;
+  where.textContent=!at?'Chạm chỗ trống trên vườn':here&&sameFacing?'Đang đặt ở đây':here?'Góc mới · nhấn «Đặt»':problem||'Chỗ mới · nhấn «Đặt»';
   turn.disabled=pending;
-  apply.disabled=pending||!at||!!problem||here&&selectedFacing===savedFacing;
-  apply.textContent=pending?'Đang lưu…':here&&selectedFacing===savedFacing?'Đang ở đây':'Đặt';
+  apply.disabled=pending||!at||!!problem||here&&sameFacing;
+  apply.textContent=pending?'Đang lưu…':here&&!sameFacing?'Đặt góc này':here?'Đang ở đây':'Đặt';
   stash.hidden=!saved;stash.disabled=pending;
-  if(!hint.dataset.error)hint.textContent='Ô xanh đặt được, ô xám không · chạm để dời · ↻ để xoay';
+  if(!hint.dataset.error)hint.textContent='Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu';
  }
 
- // Standing where it is saved, a turn is saved at once; elsewhere it turns the preview until «Đặt».
+ // Turning is always a preview action. Even when the item is standing at its
+ // saved spot, the user must confirm the new facing with «Đặt».
  function rotate(){
   selectedFacing=selectedFacing==='right'?'default':'right';
   regrid();
   // A large piece turned in place may no longer fit; it slides to the nearest spot it does, else waits for a tap.
   if(at&&problemAt(at))at=nearestFree(grid,at,2)??at;
-  if(sameSpot(at,savedSpot())&&!problemAt(at))save(at,true);else sync(false);
+  sync(false);
  }
 
  // Any tap is kept so plots stay untouched while placing.
@@ -227,10 +233,10 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   return true;
  }
 
- async function save(spot,stay=false){
+ async function save(spot){
   if(pending)return;
   pending=true;delete hint.dataset.error;render();
-  try{await onPlace(item.id,spot,selectedFacing);pending=false;regrid();if(stay)sync(false);else close();}
+  try{await onPlace(item.id,spot,selectedFacing);pending=false;regrid();close();}
   catch(e){pending=false;hint.dataset.error='1';hint.textContent=e.message;render();}
  }
  function commit(){if(at&&!problemAt(at))save(at);}

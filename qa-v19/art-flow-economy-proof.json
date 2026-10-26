@@ -1,0 +1,16 @@
+{
+  "basis": "b00e36277befb4467406cf779ec84d9017a47394",
+  "economyUnchanged": true,
+  "onlyBalanceCosmetics": [
+    "crop/animal art readiness",
+    "three-headed-dog material display name"
+  ],
+  "catalogAndSceneIdenticalExceptCacheVersion": [
+    "garden-store-catalog.mjs",
+    "special-products.mjs",
+    "premium-products.mjs",
+    "scene-data.json",
+    "garden-growth.mjs"
+  ],
+  "allDecorContractFieldsUnchanged": true
+}

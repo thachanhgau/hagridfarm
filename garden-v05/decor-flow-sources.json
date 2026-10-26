@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "sp_hagrid_umbrella",
+      "subject": "Preserve Hagrid's rustic boot stand, warm small lantern, folded umbrella and little wooden platform from the target. Change the umbrella fabric from orange-brown to unmistakably MUTED ROSE PINK (plum/rose palette), keep boots and wood brown. Four poses only gentle lantern glint and fabric tip movement; platform and feet fixed.",
+      "durations": [
+        1200,
+        400,
+        500,
+        500
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve Hagrid's rustic boot stand, warm small lantern, folded umbrella and little wooden platform from the target. Change the umbrella fabric from orange-brown to unmistakably MUTED ROSE PINK (plum/rose palette), keep boots and wood brown. Four poses only gentle lantern glint and fabric tip movement; platform and feet fixed. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-62b3bf2a-df75-46f3-aeab-8a484bcadcf4.png",
+      "master": "masters-flow-v1/decor-sp_hagrid_umbrella-v1.png",
+      "tool": "builtin image_gen",
+      "framesIdentical": false
+    },
+    {
+      "id": "hw_violet_mist_pond",
+      "subject": "Preserve the oval low stone-rimmed pond and lily pads. Add clearly VIOLET/lavender mist curls rising just above the dark water, not a purple recolour of stones/plants. Four genuinely different flowing mist poses inside the same compact silhouette; stone rim and base stay fixed.",
+      "durations": [
+        700,
+        850,
+        700,
+        850
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the oval low stone-rimmed pond and lily pads. Add clearly VIOLET/lavender mist curls rising just above the dark water, not a purple recolour of stones/plants. Four genuinely different flowing mist poses inside the same compact silhouette; stone rim and base stay fixed. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-374a03a9-2535-4a83-9bbd-4c7b3dd4afd8.png",
+      "master": "masters-flow-v1/decor-hw_violet_mist_pond-v1.png",
+      "tool": "builtin image_gen",
+      "framesIdentical": false
+    },
+    {
+      "id": "hw_blinking_chest",
+      "subject": "Preserve the compact carved brown monster treasure chest and golden hardware. Give TWO big readable eyes on the lid with four clearly different eyelid poses: wide open, half-closed, fully closed, reopening. Actual eye shape changes, not glow or translated duplicate. Chest base and size fixed.",
+      "durations": [
+        2200,
+        130,
+        180,
+        600
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the compact carved brown monster treasure chest and golden hardware. Give TWO big readable eyes on the lid with four clearly different eyelid poses: wide open, half-closed, fully closed, reopening. Actual eye shape changes, not glow or translated duplicate. Chest base and size fixed. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-2e1b23d7-05fc-4cec-8e13-d463e04d5b5f.png",
+      "master": "masters-flow-v1/decor-hw_blinking_chest-v1.png",
+      "tool": "builtin image_gen",
+      "framesIdentical": false
+    },
+    {
+      "id": "hw_monster_bookcase",
+      "subject": "Preserve the tall spooky wooden bookcase with books and monster mouth. Four distinct facial poses: mouth at rest with curious eyes, eyes half blink and lips tighten, eyes closed and mouth opens showing chunky teeth, relaxed recovery. Door/bookcase posts and base fixed; no scene or new furniture.",
+      "durations": [
+        1700,
+        180,
+        380,
+        600
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the tall spooky wooden bookcase with books and monster mouth. Four distinct facial poses: mouth at rest with curious eyes, eyes half blink and lips tighten, eyes closed and mouth opens showing chunky teeth, relaxed recovery. Door/bookcase posts and base fixed; no scene or new furniture. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-4584a530-350e-4006-99c0-e8787d90df21.png",
+      "master": "masters-flow-v1/decor-hw_monster_bookcase-v1.png",
+      "tool": "builtin image_gen",
+      "framesIdentical": false
+    },
+    {
+      "id": "hw_eyeball_flowers",
+      "subject": "Preserve the low green bush of orange/purple eye-shaped flowers. Four distinct poses in which visible flower eyes are open, half closed, closed, reopening; stalks flex slightly while root center remains fixed. Eyes remain part of flowers, not detached creatures. Do not merely shift whole sprite.",
+      "durations": [
+        2300,
+        130,
+        170,
+        500
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the low green bush of orange/purple eye-shaped flowers. Four distinct poses in which visible flower eyes are open, half closed, closed, reopening; stalks flex slightly while root center remains fixed. Eyes remain part of flowers, not detached creatures. Do not merely shift whole sprite. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-1466ac12-3046-4ecc-80b5-5f588b71461e.png",
+      "master": "masters-flow-v1/decor-hw_eyeball_flowers-v1.png",
+      "tool": "builtin image_gen",
+      "framesIdentical": false
+    },
+    {
+      "id": "hw_candy_cauldron",
+      "subject": "Preserve the round dark-purple metal cauldron with orange candy and sweets. Four distinct poses: resting small bubbles, bubbles grow and candies rise slightly, two bubbles pop into tiny pixel sparks contained inside the cell, bubbles settle and candy returns. Cauldron body and feet fixed; actual bubble silhouettes differ, no translation or colour-only glow.",
+      "durations": [
+        700,
+        300,
+        220,
+        800
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the round dark-purple metal cauldron with orange candy and sweets. Four distinct poses: resting small bubbles, bubbles grow and candies rise slightly, two bubbles pop into tiny pixel sparks contained inside the cell, bubbles settle and candy returns. Cauldron body and feet fixed; actual bubble silhouettes differ, no translation or colour-only glow. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-f706dc71-54b3-4744-b0be-bbf6e8934bde.png",
+      "master": "masters-flow-v1/decor-hw_candy_cauldron-v1.png",
+      "tool": "builtin image_gen",
+      "framesIdentical": false
+    }
+  ]
+}

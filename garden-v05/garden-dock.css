@@ -103,6 +103,12 @@
 #playDock .work-dock .dock-cost.is-output{border-color:#c9b06e66}#playDock .dock-cost-arrow{color:#d6c99c}
 #playDock .work-dock .dock-cost-reason{font:700 11px/1.3 system-ui;color:#ffcf8a}
 #playDock .work-dock .item-tray button{position:relative;flex:0 0 64px;width:64px;min-width:64px;height:78px;min-height:78px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:2px;padding:4px 2px 2px}
+#playDock .recipe-choice-art{position:relative;display:block;flex:0 0 40px;width:40px;height:40px}
+#playDock .recipe-choice-art>.visual-slot{position:absolute;inset:0;background:none;border:0;box-shadow:none;border-radius:0}
+#playDock .recipe-choice-output{position:absolute;right:-2px;bottom:-2px;display:block;width:21px;height:21px;border:1px solid #e5c47c;background:#0b211b;box-shadow:0 1px 3px #06130c;z-index:1}
+#playDock .recipe-choice-output>.visual-slot{border:0;border-radius:0;background:none;box-shadow:none}
+#playDock .work-job>.recipe-choice-art{grid-column:1;grid-row:1/3;flex-basis:26px;width:26px;height:26px}
+#playDock .work-job .recipe-choice-output{width:14px;height:14px;right:-2px;bottom:-2px}
 #playDock #craftTray .tray-label,#playDock #buildTray .tray-label{display:-webkit-box;position:static;max-width:100%;min-width:0;padding:0;border:0;background:none;font:600 9.5px/1.15 system-ui;color:#e9dcb4;text-align:center;white-space:normal;overflow:hidden;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 #playDock .tray-badge{position:absolute;top:2px;right:2px;padding:1px 3px;border:1px solid #a3976888;border-radius:2px;background:#142c22;color:#efdbab;font:800 9px/11px system-ui;pointer-events:none}
 #playDock .tray-badge.is-lock{background:#26261f;color:#cfc6a8}#playDock .tray-badge.is-busy{background:#3c4a2a;color:#ffe08a}#playDock .tray-badge.is-ready{background:#d9b65a;color:#24200f;border-color:#fff0bd}
@@ -122,3 +128,14 @@
 .decor-bar-foot{display:flex;align-items:center;gap:8px}.decor-bar-hint{flex:1;margin:0;font-size:11px;color:#bdcbb1}.decor-bar-hint[data-error]{color:#ffb58e}
 .decor-bar .decor-bar-stash{flex:none;min-height:36px;padding:0 10px;font-size:12px;background:none}.decor-bar-stash[hidden]{display:none}
 .placing-decor #playDock,.placing-decor .dock-toggle,.placing-decor .selection-hint,.placing-decor .guide-card{display:none!important}.placing-decor .toast{visibility:hidden}
+@media(max-width:440px){
+ .decor-bar{bottom:max(6px,var(--host-inset-bottom,env(safe-area-inset-bottom)));width:calc(100% - 12px);gap:6px;padding:8px}
+ .decor-bar-thumb{width:44px;height:44px}
+ .decor-bar-text strong{font-size:15px}
+ .decor-bar-where{font-size:11px;line-height:1.2}
+ .decor-bar-row{gap:5px}
+ .decor-bar button{min-height:42px;font-size:13px}
+ .decor-bar-foot{align-items:flex-start}
+ .decor-bar-hint{font-size:10px;line-height:1.25}
+ .decor-bar .decor-bar-stash{min-height:34px;padding:0 8px;font-size:11px}
+}

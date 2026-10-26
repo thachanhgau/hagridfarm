@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "harvest_mandrake",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mandrake-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested mandrake root, recognizable orange-brown root with a small clipped leaf tuft; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-8a858848-7bef-4a81-9f9c-bcf171da29d4.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_clover",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_clover-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested loose bunch of three-leaf clover leaves with short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no root, soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-dd0eb05f-46bf-4860-9a23-93f5f3ad6a6c.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_beet",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_beet-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested red beet root with a small trimmed green tuft and burgundy ridges; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-6edf00c3-ce11-4132-a742-e97349c14ad5.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_maize",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_maize-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached golden maize cob with peeled green husk leaves and visible kernels; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no stalk, soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a8bf5ac2-e69d-40da-82c6-5cbc34ed4ec5.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_moonherb",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_moonherb-v1.png",
+      "prompt": "Transparent chunky pixel-art small tied bundle of pale blue-silver moonherb sprigs with subtle crescent markings and no glow; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, pot, scene, shadow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-4dca866b-9b77-45a2-aa8c-1f6efeda4f27.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_flax",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_flax-v1.png",
+      "prompt": "Transparent chunky pixel-art compact tied bundle of pale flax stems and blue-gray fibers with tiny seed heads and cut ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-57526a57-c86d-4349-a466-f4b28c31b6bd.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_sunflower",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_sunflower-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested cluster of sunflower seeds with a few yellow petal remnants, no plate, stalk, or whole flower; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a3203e21-a3b7-478a-bd47-db3de4b4bd9c.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_valerian",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_valerian-v1.png",
+      "prompt": "Transparent chunky pixel-art compact tied harvested valerian bundle with pale cream-green leafy sprigs and short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a1906016-9bd3-4a9f-a6a8-860f78bba1b4.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_mint",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mint-v1.png",
+      "prompt": "Transparent chunky pixel-art loose harvested mint bundle with rounded serrated green leaves, short cut stems and cut ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no pot, roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-c738148c-9973-4c8c-ad06-3595dddf4f18.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_blueberry",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_blueberry-v1.png",
+      "prompt": "Transparent chunky pixel-art small harvested cluster of three to five plump blue-violet blueberries with tiny clipped stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no bush, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-dc089782-44bc-4a74-b724-1ac49c77bd09.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_firepepper",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_firepepper-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested firepepper, a curved red-orange pepper with flame-like hooked tip and tiny clipped cap; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-71b2f067-1a94-4942-bcf0-2d3f406b30ca.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_silverkelp",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_silverkelp-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested silver-kelp bundle of flat cool silver-blue ribbon fronds tied at clipped ends, stylized dried aquatic material; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no water scene, roots, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-d9199fd5-0ca6-49ea-85fe-892643cff361.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_starbean",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_starbean-v1.png",
+      "prompt": "Transparent chunky pixel-art one harvested star-bean ingredient, a warm-brown bean pod with a crisp five-point star silhouette and small warm seed inside; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-3a157236-f885-4746-b7af-e2ace54844a5.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_ambermelon",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_ambermelon-v1.png",
+      "prompt": "Transparent chunky pixel-art detached faceted ambermelon, one squat angular golden-amber fruit built from clear jewel-like planar facets, unmistakably not a ribbed pumpkin; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no leaves, plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-58b8b1bb-1b8e-46e8-bf02-e61afbd98cf1.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_mistmushroom",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mistmushroom-v1.png",
+      "prompt": "Transparent chunky pixel-art small loose cluster of three detached harvested mist mushrooms with pale violet and blue-gray caps and short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, ground, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-3f79e430-8161-4266-9677-2bc79137f02f.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_sunpetal",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_sunpetal-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested sunpetal bouquet of warm yellow-orange petals gathered with short clipped stems, a petal material bundle rather than a rooted flower; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-5ec3f025-33f6-47a0-812e-6712f543c4e7.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_fluxweed",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_fluxweed-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested fluxweed bundle of upright magical grass-like teal and olive stems tied at cut ends, distinct from flat silverkelp; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-d9cf5da0-03a9-43ed-b134-44cea6e31b1f.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_bubotuber",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_bubotuber-v1.png",
+      "prompt": "Transparent chunky pixel-art cropped collected dark upright bubotuber specimen: short purple-brown bulbous stem with muted olive raised round bumps and clean cut tip, no potion bottle; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no pot, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-9bf5b1e6-de03-48d4-8b7e-aa415e97787f.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_knotgrass",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_knotgrass-v1.png",
+      "prompt": "Transparent chunky pixel-art small harvested knotgrass bundle of wiry green-brown knotted stems and tiny leaves tied at clipped ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-9bbf7c9f-7cfd-4379-aef8-3ab67b8342a3.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_shrivelfig",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_shrivelfig-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested shrivelfig fruit, a small wrinkled dusky purple-brown fig with short clipped stem and angular creases; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no tree, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-f8938200-d6fa-40bf-9ad9-90ab8b1ff735.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_gillyweed",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_gillyweed-v1.png",
+      "prompt": "Transparent chunky pixel-art loose harvested gillyweed bundle of thin slimy green seaweed strands with rounded wet tips gathered at clipped ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no water scene, roots, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-4e2043fb-3115-440e-a6dc-5db36407b0d1.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_mimbulus",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mimbulus-v1.png",
+      "prompt": "Transparent chunky pixel-art cropped collected small gray mimbulus cactus-like specimen: squat cool-gray bulb with pale raised round knobs and tiny clipped leaf nubs, clean cut sample, no green spray, mushroom, pot, or soil; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-55972fa9-b082-48f0-9290-eb158ad1237e.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_flitterbloom",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_flitterbloom-v1.png",
+      "prompt": "Transparent chunky pixel-art friendly loose rounded harvested flitterbloom vine bundle, soft green curled tendrils gathered into a compact ball with tiny pale buds and clipped ends, distinct from a dark vine coil; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-550a6843-05e0-48f3-a340-b3be021b6d62.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_devilssnare",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_devilssnare-v1.png",
+      "prompt": "Transparent chunky pixel-art dark thick tightly coiled harvested vine bundle, dense deep green and blue-green rope-like loops with a few hooked tips, compact shadowy coil with no flowers or bright friendly buds; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no root, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-2932e2c4-6eb9-42ed-8689-8790575f4f1d.png",
+      "tool": "builtin image_gen"
+    }
+  ]
+}

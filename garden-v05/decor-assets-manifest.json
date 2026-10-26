@@ -489,31 +489,31 @@
       "rotatable": true,
       "label": "Góc ô hồng của Hagrid",
       "group": "Hagrid và Rừng Cấm",
-      "file": "decor-assets/native/sp_hagrid_umbrella.png",
+      "file": "decor-assets/native/flow-sp_hagrid_umbrella.png",
       "frames": [
-        "decor-assets/native/sp_hagrid_umbrella_f0.png",
-        "decor-assets/native/sp_hagrid_umbrella_f1.png",
-        "decor-assets/native/sp_hagrid_umbrella_f2.png",
-        "decor-assets/native/sp_hagrid_umbrella_f3.png"
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png"
       ],
       "durations": [
-        520,
-        260,
-        480,
-        260
+        1200,
+        400,
+        500,
+        500
       ],
-      "rightFile": "decor-assets/native/sp_hagrid_umbrella_right.png",
+      "rightFile": "decor-assets/native/flow-sp_hagrid_umbrella_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_hagrid_umbrella_right_f0.png",
-        "decor-assets/native/sp_hagrid_umbrella_right_f1.png",
-        "decor-assets/native/sp_hagrid_umbrella_right_f2.png",
-        "decor-assets/native/sp_hagrid_umbrella_right_f3.png"
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 6,
-        "w": 122,
-        "h": 134
+        "x": 1,
+        "y": 50,
+        "w": 89,
+        "h": 90
       },
       "angles": [
         "default",
@@ -524,10 +524,10 @@
       "pivotX": 64,
       "pivotY": 140,
       "bounds": {
-        "x": 3,
-        "y": 3,
-        "w": 122,
-        "h": 137
+        "x": 41,
+        "y": 49,
+        "w": 86,
+        "h": 91
       },
       "footprintTiles": [
         2,
@@ -540,7 +540,59 @@
         "chapter": 4
       },
       "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
-      "nativeSha256": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8"
+      "nativeSha256": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 128,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 256,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 384,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        }
+      ]
     },
     {
       "id": "sp_norbert_egg",
@@ -3355,19 +3407,19 @@
       "rotatable": true,
       "label": "Vạc kẹo sôi",
       "group": "Góc phù thủy",
-      "file": "decor-assets/native/hw_candy_cauldron.png",
-      "rightFile": "decor-assets/native/hw_candy_cauldron_right.png",
+      "file": "decor-assets/native/flow-hw_candy_cauldron.png",
+      "rightFile": "decor-assets/native/flow-hw_candy_cauldron_right.png",
       "frames": [
-        "decor-assets/native/hw_candy_cauldron_atlas.png",
-        "decor-assets/native/hw_candy_cauldron_atlas.png",
-        "decor-assets/native/hw_candy_cauldron_atlas.png",
-        "decor-assets/native/hw_candy_cauldron_atlas.png"
+        "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+        "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+        "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+        "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png"
       ],
       "rightFrames": [
-        "decor-assets/native/hw_candy_cauldron_atlas.png",
-        "decor-assets/native/hw_candy_cauldron_atlas.png",
-        "decor-assets/native/hw_candy_cauldron_atlas.png",
-        "decor-assets/native/hw_candy_cauldron_atlas.png"
+        "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+        "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+        "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+        "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png"
       ],
       "atlasRects": [
         {
@@ -3422,10 +3474,10 @@
         }
       ],
       "durations": [
-        600,
+        700,
         300,
-        600,
-        300
+        220,
+        800
       ],
       "angles": [
         "default",
@@ -3436,23 +3488,23 @@
       "pivotX": 48,
       "pivotY": 108,
       "bounds": {
-        "x": 7,
-        "y": 2,
-        "w": 82,
-        "h": 106
+        "x": 3,
+        "y": 33,
+        "w": 90,
+        "h": 75
       },
       "rightBounds": {
-        "x": 8,
-        "y": 2,
-        "w": 80,
-        "h": 106
+        "x": 2,
+        "y": 35,
+        "w": 93,
+        "h": 73
       },
       "footprintTiles": [
         1,
         1
       ],
       "motion": "bubbles",
-      "framesIdentical": true,
+      "framesIdentical": false,
       "nativeSha256": "894391319a66de7de21a892d8dae28e04bf85af0e8c0f899c53d2f1b0f3fa52d"
     },
     {
@@ -3571,19 +3623,19 @@
       "rotatable": true,
       "label": "Tủ sách há miệng",
       "group": "Góc phù thủy",
-      "file": "decor-assets/native/hw_monster_bookcase.png",
-      "rightFile": "decor-assets/native/hw_monster_bookcase_right.png",
+      "file": "decor-assets/native/flow-hw_monster_bookcase.png",
+      "rightFile": "decor-assets/native/flow-hw_monster_bookcase_right.png",
       "frames": [
-        "decor-assets/native/hw_monster_bookcase_atlas.png",
-        "decor-assets/native/hw_monster_bookcase_atlas.png",
-        "decor-assets/native/hw_monster_bookcase_atlas.png",
-        "decor-assets/native/hw_monster_bookcase_atlas.png"
+        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png"
       ],
       "rightFrames": [
-        "decor-assets/native/hw_monster_bookcase_atlas.png",
-        "decor-assets/native/hw_monster_bookcase_atlas.png",
-        "decor-assets/native/hw_monster_bookcase_atlas.png",
-        "decor-assets/native/hw_monster_bookcase_atlas.png"
+        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png"
       ],
       "atlasRects": [
         {
@@ -3638,10 +3690,10 @@
         }
       ],
       "durations": [
-        600,
-        300,
-        600,
-        300
+        1700,
+        180,
+        380,
+        600
       ],
       "angles": [
         "default",
@@ -3652,23 +3704,23 @@
       "pivotX": 56,
       "pivotY": 140,
       "bounds": {
-        "x": 9,
-        "y": 2,
-        "w": 95,
-        "h": 138
+        "x": 1,
+        "y": 28,
+        "w": 79,
+        "h": 112
       },
       "rightBounds": {
-        "x": 6,
-        "y": 2,
-        "w": 100,
-        "h": 138
+        "x": 3,
+        "y": 29,
+        "w": 77,
+        "h": 111
       },
       "footprintTiles": [
         2,
         1
       ],
       "motion": "blink",
-      "framesIdentical": true,
+      "framesIdentical": false,
       "nativeSha256": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77"
     },
     {
@@ -3679,19 +3731,19 @@
       "rotatable": true,
       "label": "Rương nháy mắt",
       "group": "Góc phù thủy",
-      "file": "decor-assets/native/hw_blinking_chest.png",
-      "rightFile": "decor-assets/native/hw_blinking_chest_right.png",
+      "file": "decor-assets/native/flow-hw_blinking_chest.png",
+      "rightFile": "decor-assets/native/flow-hw_blinking_chest_right.png",
       "frames": [
-        "decor-assets/native/hw_blinking_chest_atlas.png",
-        "decor-assets/native/hw_blinking_chest_atlas.png",
-        "decor-assets/native/hw_blinking_chest_atlas.png",
-        "decor-assets/native/hw_blinking_chest_atlas.png"
+        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png"
       ],
       "rightFrames": [
-        "decor-assets/native/hw_blinking_chest_atlas.png",
-        "decor-assets/native/hw_blinking_chest_atlas.png",
-        "decor-assets/native/hw_blinking_chest_atlas.png",
-        "decor-assets/native/hw_blinking_chest_atlas.png"
+        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png"
       ],
       "atlasRects": [
         {
@@ -3746,10 +3798,10 @@
         }
       ],
       "durations": [
-        600,
-        300,
-        600,
-        300
+        2200,
+        130,
+        180,
+        600
       ],
       "angles": [
         "default",
@@ -3760,23 +3812,23 @@
       "pivotX": 56,
       "pivotY": 92,
       "bounds": {
-        "x": 11,
-        "y": 2,
-        "w": 91,
-        "h": 90
+        "x": 20,
+        "y": 7,
+        "w": 90,
+        "h": 85
       },
       "rightBounds": {
-        "x": 12,
-        "y": 2,
-        "w": 88,
-        "h": 90
+        "x": 1,
+        "y": 6,
+        "w": 93,
+        "h": 86
       },
       "footprintTiles": [
         2,
         1
       ],
       "motion": "blink",
-      "framesIdentical": true,
+      "framesIdentical": false,
       "nativeSha256": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad"
     },
     {
@@ -4219,19 +4271,19 @@
       "rotatable": true,
       "label": "Bụi hoa mắt tròn",
       "group": "Rừng tinh nghịch",
-      "file": "decor-assets/native/hw_eyeball_flowers.png",
-      "rightFile": "decor-assets/native/hw_eyeball_flowers_right.png",
+      "file": "decor-assets/native/flow-hw_eyeball_flowers.png",
+      "rightFile": "decor-assets/native/flow-hw_eyeball_flowers_right.png",
       "frames": [
-        "decor-assets/native/hw_eyeball_flowers_atlas.png",
-        "decor-assets/native/hw_eyeball_flowers_atlas.png",
-        "decor-assets/native/hw_eyeball_flowers_atlas.png",
-        "decor-assets/native/hw_eyeball_flowers_atlas.png"
+        "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+        "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+        "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+        "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png"
       ],
       "rightFrames": [
-        "decor-assets/native/hw_eyeball_flowers_atlas.png",
-        "decor-assets/native/hw_eyeball_flowers_atlas.png",
-        "decor-assets/native/hw_eyeball_flowers_atlas.png",
-        "decor-assets/native/hw_eyeball_flowers_atlas.png"
+        "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+        "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+        "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+        "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png"
       ],
       "atlasRects": [
         {
@@ -4286,10 +4338,10 @@
         }
       ],
       "durations": [
-        600,
-        300,
-        600,
-        300
+        2300,
+        130,
+        170,
+        500
       ],
       "angles": [
         "default",
@@ -4300,23 +4352,23 @@
       "pivotX": 52,
       "pivotY": 100,
       "bounds": {
-        "x": 3,
-        "y": 4,
-        "w": 98,
-        "h": 96
+        "x": 11,
+        "y": 17,
+        "w": 92,
+        "h": 83
       },
       "rightBounds": {
-        "x": 6,
-        "y": 2,
-        "w": 92,
-        "h": 98
+        "x": 1,
+        "y": 19,
+        "w": 95,
+        "h": 81
       },
       "footprintTiles": [
         1,
         1
       ],
       "motion": "blink",
-      "framesIdentical": true,
+      "framesIdentical": false,
       "nativeSha256": "107f23a175fdea6b4c2ce6f498afe0f676d3e6536e9b8d55791310673f3fb5cc"
     },
     {
@@ -5083,19 +5135,19 @@
       "rotatable": true,
       "label": "Ao sương tím",
       "group": "Tiểu cảnh",
-      "file": "decor-assets/native/hw_violet_mist_pond.png",
-      "rightFile": "decor-assets/native/hw_violet_mist_pond_right.png",
+      "file": "decor-assets/native/flow-hw_violet_mist_pond.png",
+      "rightFile": "decor-assets/native/flow-hw_violet_mist_pond_right.png",
       "frames": [
-        "decor-assets/native/hw_violet_mist_pond_atlas.png",
-        "decor-assets/native/hw_violet_mist_pond_atlas.png",
-        "decor-assets/native/hw_violet_mist_pond_atlas.png",
-        "decor-assets/native/hw_violet_mist_pond_atlas.png"
+        "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+        "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+        "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+        "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png"
       ],
       "rightFrames": [
-        "decor-assets/native/hw_violet_mist_pond_atlas.png",
-        "decor-assets/native/hw_violet_mist_pond_atlas.png",
-        "decor-assets/native/hw_violet_mist_pond_atlas.png",
-        "decor-assets/native/hw_violet_mist_pond_atlas.png"
+        "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+        "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+        "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+        "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png"
       ],
       "atlasRects": [
         {
@@ -5150,10 +5202,10 @@
         }
       ],
       "durations": [
-        520,
-        260,
-        480,
-        260
+        700,
+        850,
+        700,
+        850
       ],
       "angles": [
         "default",
@@ -5164,16 +5216,16 @@
       "pivotX": 96,
       "pivotY": 140,
       "bounds": {
-        "x": 3,
-        "y": 20,
-        "w": 186,
-        "h": 120
+        "x": 1,
+        "y": 26,
+        "w": 165,
+        "h": 114
       },
       "rightBounds": {
-        "x": 9,
-        "y": 2,
-        "w": 174,
-        "h": 138
+        "x": 25,
+        "y": 22,
+        "w": 165,
+        "h": 118
       },
       "footprintTiles": [
         3,

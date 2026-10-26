@@ -1,9 +1,9 @@
 // Level-500 roadmap P5 (§11): «Việc của bác Hagrid» — Đơn hàng (snapshot.orders, action deliverOrder),
 // Thông thạo cây (snapshot.mastery) and Cúp Nhà (snapshot.houseCup). Only with a wallet: the server
 // draws the orders, counts the mastery and the cup; this panel shows them.
-import {$,el,num,visualItemIcon} from './ui-utils.mjs?v=24.9.79';
-import {pixelIcon,iconButton} from './pixel-icons.mjs?v=24.9.79';
-import {CROP,CREATURE} from './balance-data.mjs?v=24.9.79';
+import {$,el,num,cropVisualKind,visualItemIcon} from './ui-utils.mjs?v=24.9.80';
+import {pixelIcon,iconButton} from './pixel-icons.mjs?v=24.9.80';
+import {CROP,CREATURE} from './balance-data.mjs?v=24.9.80';
 
 const HOUSE_COLORS = Object.freeze({gryffindor:'#C75B4B',hufflepuff:'#FFC36B',ravenclaw:'#3E3B70',slytherin:'#3F6A45'}); // palette.mjs only
 const labelOf = id => CROP[id]?.label || (id.startsWith('produce_') ? CREATURE[id.slice(8)]?.produce : null) || id;
@@ -29,7 +29,7 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
     :iconButton(ready?'check':'lock',ready?`Giao đơn: +${num(order.xp)} XP`:'Kho chưa đủ hàng',ready?async()=>{const res=await deliver(order.id);if(res?.ok){notify(`📦 Đã giao đơn cho bác Hagrid: +${num(order.xp)} XP, +${order.boost} Nước phép.`);render();}}:null,{text:ready?'Giao':'Thiếu',class:ready?'primary':'',disabled:!ready,'data-deliver-order':order.id});
    return el('div',{class:`gp-hero work-order${order.delivered?' is-done':ready?' is-ready':''}`},[
     el('div',{class:'work-order-items'},Object.entries(order.items).map(([id,n])=>el('span',{class:'work-order-item',title:labelOf(id)},[
-     visualItemIcon(items,id,{size:36}),el('b',{text:`${num(Math.min(inv[id]||0,n))}/${n}`}),el('small',{text:labelOf(id)}),
+     visualItemIcon(items,id,{size:36,kind:cropVisualKind(id)}),el('b',{text:`${num(Math.min(inv[id]||0,n))}/${n}`}),el('small',{text:labelOf(id)}),
     ]))),
     el('div',{class:'gp-hero-copy'},[el('small',{text:`+${num(order.xp)} XP · +${order.boost} Nước phép${level>=(snap.houseCup?.unlockLevel||20)?` · +${order.cup} điểm Cúp Nhà`:''}`})]),
     action,
@@ -61,7 +61,7 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
    el('div',{class:'work-mastery-grid'},view.crops.map(row=>{
     const next=view.tiers[row.tier];
     return el('div',{class:`work-mastery-cell tier-${row.tier}`,title:`${labelOf(row.cropId)} · ${num(row.cells)} ô${row.tier?` · ${view.titles[row.tier-1]}`:''}`},[
-     visualItemIcon(items,row.cropId,{size:36}),el('small',{text:labelOf(row.cropId)}),stars(row.tier),
+     visualItemIcon(items,row.cropId,{size:36,kind:'harvest'}),el('small',{text:labelOf(row.cropId)}),stars(row.tier),
      next?meter(row.cells,next):el('b',{class:'work-mastered',text:view.titles[2]}),
      el('small',{class:'meta',text:next?`${num(row.cells)}/${num(next)}`:`${num(row.cells)} ô`}),
     ]);

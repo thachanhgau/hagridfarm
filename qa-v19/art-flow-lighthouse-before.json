@@ -1,0 +1,35 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "local intercepted level500 fixture,375px mobile simulated throttling; no server/Firebase/real wallet",
+  "game": "/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-art-flow-20261026/client/public/game/khu-vuon-hagrid",
+  "runs": [
+    {
+      "performance": 52,
+      "fcpMs": 9645,
+      "lcpMs": 13590,
+      "tbtMs": 243.5,
+      "bytes": 5369236
+    },
+    {
+      "performance": 51,
+      "fcpMs": 9710.5,
+      "lcpMs": 13500,
+      "tbtMs": 255,
+      "bytes": 5369236
+    },
+    {
+      "performance": 51,
+      "fcpMs": 9675,
+      "lcpMs": 13590,
+      "tbtMs": 270.5,
+      "bytes": 5369236
+    }
+  ],
+  "median": {
+    "performance": 51,
+    "fcpMs": 9675,
+    "lcpMs": 13590,
+    "tbtMs": 255,
+    "bytes": 5369236
+  }
+}

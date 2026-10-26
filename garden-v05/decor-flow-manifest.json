@@ -1,0 +1,2888 @@
+{
+  "version": 1,
+  "method": "authored 2×4 angle master; common native sampling scale; integer native canvas coordinates; palette24; binary alpha; union bounds; exact atlas RGBA",
+  "sourceFile": "decor-flow-sources.json",
+  "runtimeFile": "decor-assets-manifest.json",
+  "targetIds": [
+    "sp_hagrid_umbrella",
+    "hw_violet_mist_pond",
+    "hw_blinking_chest",
+    "hw_monster_bookcase",
+    "hw_eyeball_flowers",
+    "hw_candy_cauldron"
+  ],
+  "animatedIds": [
+    "hw_blinking_chest",
+    "hw_monster_bookcase",
+    "hw_eyeball_flowers",
+    "hw_candy_cauldron"
+  ],
+  "unchangedEntryHashes": {
+    "decor_pumpkin_lantern": "24d9cd03308f6f20c3e18f73c451db81b859d48d49ec72dbf20d0790b33f98cf",
+    "decor_broom_rack": "5db6269c3a1ef1c5b55a5313dfbeac38e4a2833cb36f77f7272e168f62352898",
+    "decor_cauldron": "d26df0ae81c1f402ff6b0c4098e4e6b1f08dca57da379d1de1cc52905bcb62ef",
+    "decor_mandrake_planter": "1efa5a53772f07d561b8ba044e27aa85c315cdddda7a1ec7a116d259b6113ffa",
+    "decor_floating_candles": "8917709ef0b6dfd926d513f8082ce467fedff5fbad8fccac70a0145fabac2536",
+    "decor_vine_arch": "d65efbe54d3a3a3812c9443ca0c7f4dc381b16535aaf0fe851f6a72a89c47c2c",
+    "gardener_friend": "c7ad623d6117062f75d91cfe5ac433e705dc604643e1224fe16cb737acae625f",
+    "owl_post": "da411c2442d730f2ba5eb66db3d626fff66c15f7dbeada4f45a061fa0d934749",
+    "herbology_greenhouse": "2c7bcfda9f168aa79b8433acafacc917cb1aa549ac7bb99fff6881e292869621",
+    "sp_norbert_egg": "fae85fcbce46c428803a12d1574d263ff42dd228441c2f45a7539659780d7b57",
+    "sp_sirius_motorbike": "f77c8404093219b0450f91ed67ea9f6b943adb6bf061e0d7c8cd6bbd8b1fd7cf",
+    "sp_whomping_anglia": "3de11f9f172c7ba9e61c12085285beb5909a2c13a05c619f1f09683d257c55dd",
+    "sp_buckbeak_pumpkins": "ad01a6eb44248abe7fe517d702d3293c31278c048ebe352170e446036362ecca",
+    "sp_aragog_hollow": "bfb9b013f8271bac24f074f3b829cfb6a15079a6e9ea27ca5bbe1954d71e7ef1",
+    "sp_mirror_erised": "0ac5741b5a3c1b703c039a2a251f335adfa177cd1f704f0f65a5ba6fbea7cdcd",
+    "sp_sorting_hat": "b4d075eec7b0755128c313ccc2495abad9e7c0910904a3eb029b9f3af805ff92",
+    "sp_goblet_fire": "5fd69608bd5ee072a1d8847ef9f2887e6c918ce03697510842f9c73df2f7e53b",
+    "sp_pensieve": "9623e88fd778fd798cf6301934aea1d5203efbefd6b8555ba1717efe100f6f44",
+    "sp_fawkes_perch": "b54931bd2b67be4cdf3aede7c925be5eb204a1eb40c0c772e4bca11e3d8521e6",
+    "sp_wizard_chess_knight": "3846a94bf760c48eb4180ea882203364680a8f4a1d7fe9807d77222c1aae151d",
+    "sp_riddle_diary": "7af271f94a81d9c54c4cfa0ce1a885209702580bb9c4ab1d06302962d9013e5c",
+    "sp_slytherin_locket": "9ab07221452a011d9096c1569a7ae2f0f13768ab8bc92f59e472e206a0a7ece4",
+    "sp_gaunt_ring": "49e486657b72eb3d74d31d1ada4b58bca6291d3ebc2f3b3b304007b3dd270d0d",
+    "sp_hufflepuff_cup": "29765589c016b2b104e404b111a73c95edd138423f45cc27f9b65cc4eb7867f2",
+    "sp_ravenclaw_diadem": "2696b8bf98d715cb54c276ec8c409e7f928111e46e0e32602dd08dabda68c2a8",
+    "sp_vanishing_cabinet": "728a7e88322fa3c64669ceed5c2344a781f5a46c87644f450773235a2e8c9578",
+    "sp_hand_glory": "106da164a62462f4e24641f900d4d6f36c91ca7728c21a7e189a77bf3829ea09",
+    "sp_cursed_opal_necklace": "a4869155dd8bfe06c00ff354aca4d9298a6f962b704f66be27fae34dd2196317",
+    "sp_chamber_serpent_door": "e3807aabf8f979a8a994038c838cf48e00719c51b7e61b57424af788df40ff99",
+    "sp_department_veil": "a3729520086d3803569bcb1305c72bb708d5588e6a56b9e0129b3eb8ed57bcce",
+    "sp_monster_book": "3c012031fb549c41035c8ae61448c7f5b3446bcfddf44c48bc953bac890f63e6",
+    "sp_deathday_cake": "9ed5f72359bfc115face2da588328fa191558aef7f4ddf14826db056fc4c9287",
+    "sp_marauders_map": "0e1e559ed47ab5a88de6f1e00a849c0d0122ec6a96401cef9444626f695a4c24",
+    "sp_time_turner": "360b07a4f59b6759a5d8d133c72f24da77a748b6d6db2b060ac8d42523eed872",
+    "sp_deluminator": "bcb8cf2eb52cfa8e5e38b15734e17588afbf1355cf0bcaa81abf2b4de7bdd4ec",
+    "sp_snitch_resurrection_stone": "f6ec21e92e42220ad8106789809d8d05f88afe21faf1f16b1356a09c046e8f5e",
+    "sp_sword_gryffindor": "10065d4a17f61f4224b66a25dfe6529560cfa317c69fabe9fe89f430548f3d48",
+    "sp_knight_bus": "c01ad6e495ab039929cc321b036e6a14275d6bb5380b2177a648028016f806a5",
+    "hw_pumpkin_stack": "d06fc3593a2915e1fec4f079fe17de0555e2470a7ebdcbb04677fa4c733d635b",
+    "hw_monster_candy_barrel": "b8e418039da669f7a091800ef8dbecfe7e626f727da65ea292cd837bc8e59670",
+    "hw_wooden_black_cat": "e9fa948d26e7849809b7639437fb6b495aa25f631414f7c92fc6307be3f73869",
+    "hw_halloween_sign": "2057e276e36e8125bb003b641cf672b7e808a2ea3eaf329690021d6b0f76c071",
+    "hw_cloth_ghost_lantern": "df8be7e58b43deaf6d086d5ee8c4febe91267ca5d9490867fe98abbb05ed3f9e",
+    "hw_dead_bat_tree": "770806c5d40d76207a61c0d21ac5f865a1897a508c07b03fe9cee096d2c91329",
+    "hw_bat_lantern": "5a1a7f3542f750004b072133d7482e7d1e8113b6d2807e5931078b0ed30620c7",
+    "hw_skull_lantern": "e906eeeb03cfbd06cce3427e82a8c7a6a4489966ccae0d17c1a5188c8067ebab",
+    "hw_haunted_house_lantern": "1efb8e957b712c1774f801b790688c2b582afbc3037024404da7e1a60afd59ff",
+    "hw_ghost_orb": "232be562f64f203ba21bbbacf5fdc58ccc51543c7eebdf3558565c160575f6cc",
+    "hw_spider_light_garland": "d67852d0c80db667d7922b5ebbc6b270ea39d20e97918da54cad4fbf8cc80b71",
+    "hw_soul_bottle": "d4e377aef27372e6f1a2e5ae9267d0076e990526fa0c72f19916dbe3c4272c12",
+    "hw_halloween_potion_table": "b3a2c0c1642b59634d1f13288f6f3c4314026f6e6004ca10a1ef304001c7c0f7",
+    "hw_witch_hat_rack": "48b9deee1d2ab9744cb25e157173a4abf63e8e8e8e4e4331f869e12ef8bf5abb",
+    "hw_caramel_apple_cart": "cf13424e9af04b3ff29b548c8f4df5313fcfe219d59f3a2e9c298c61d7a0fa5f",
+    "hw_grinning_stump": "ced10547c1a9679270bec8d74163673581952119851b808a56744a549d632121",
+    "hw_skull_mushrooms": "162f659233063f0d7ea286fbeda66ca52d77ec14dd541512d7bd5870293b4277",
+    "hw_owl_tree_hollow": "689dc06b25d5410443e39bb0bc35ab343de42fec17b19a571bff0b70c732a652",
+    "hw_dewy_cobweb_frame": "e031119db554fed9d183919fdc534f2a3dfac4a07e698fcdadbbd37ba2d7e5d6",
+    "hw_pumpkin_spider_nest": "200d3a8d2c05cbfec57a56f8355e284f59001d7a61770b70fc4064ac77235a13",
+    "hw_root_halloween_gate": "8cc5392f7fd8d8880aa3ea78305c59bfd702b73903e27605aac32b2acce79762",
+    "hw_crooked_witch_hut": "ff44a422c97e460117366a1c090362c6d59c07120febc245ae48184479cd737b",
+    "hw_mini_pumpkin_house": "e1c0a72687785304469695215ea49a91d35b15ff30c76fbf7124defc8b684f4d",
+    "hw_ghost_well": "36adfc3c4da2a72c319ff0a66772b79d60d1e309d3f30393835a04579b99d73f",
+    "hw_lantern_ancient_tree": "bf1aa4429b89e5d7887c19b85cb5d9a6df32294828822f2f357ef0f5e7822136"
+  },
+  "items": [
+    {
+      "id": "sp_hagrid_umbrella",
+      "master": "masters-flow-v1/decor-sp_hagrid_umbrella-v1.png",
+      "masterSha256": "72dda6da8ce281fabdbe40e8779653368e698d94a448856e2d736596b2a9f26e",
+      "sourceRecord": {
+        "id": "sp_hagrid_umbrella",
+        "subject": "Preserve Hagrid's rustic boot stand, warm small lantern, folded umbrella and little wooden platform from the target. Change the umbrella fabric from orange-brown to unmistakably MUTED ROSE PINK (plum/rose palette), keep boots and wood brown. Four poses only gentle lantern glint and fabric tip movement; platform and feet fixed.",
+        "durations": [
+          1200,
+          400,
+          500,
+          500
+        ],
+        "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve Hagrid's rustic boot stand, warm small lantern, folded umbrella and little wooden platform from the target. Change the umbrella fabric from orange-brown to unmistakably MUTED ROSE PINK (plum/rose palette), keep boots and wood brown. Four poses only gentle lantern glint and fabric tip movement; platform and feet fixed. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+        "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-62b3bf2a-df75-46f3-aeab-8a484bcadcf4.png",
+        "master": "masters-flow-v1/decor-sp_hagrid_umbrella-v1.png",
+        "tool": "builtin image_gen",
+        "framesIdentical": false
+      },
+      "outputFolder": "native-crop-complete",
+      "assetFolder": "native-crop-complete/decor-flow-sp_hagrid_umbrella",
+      "scale": 0.245647969,
+      "target": {
+        "id": "decor-flow-sp_hagrid_umbrella",
+        "width": 128,
+        "height": 144,
+        "pivotX": 64,
+        "pivotY": 140
+      },
+      "frames": [
+        {
+          "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-01.png",
+          "width": 128,
+          "height": 144,
+          "pivotX": 64,
+          "pivotY": 140,
+          "bounds": {
+            "x": 41,
+            "y": 50,
+            "w": 84,
+            "h": 90
+          },
+          "sha256": "0e4a03f29ab203240d2894e982bef2384e4fadaaf06c690c899275b5f2262d82",
+          "sourceRect": {
+            "x": 49,
+            "y": 111,
+            "w": 341,
+            "h": 365
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-02.png",
+          "width": 128,
+          "height": 144,
+          "pivotX": 64,
+          "pivotY": 140,
+          "bounds": {
+            "x": 41,
+            "y": 51,
+            "w": 85,
+            "h": 89
+          },
+          "sha256": "132db89ec11e7d7c8731863d0121c33ce0e88d3b40138e4e31e9ccaed5f17817",
+          "sourceRect": {
+            "x": 424,
+            "y": 111,
+            "w": 345,
+            "h": 364
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-03.png",
+          "width": 128,
+          "height": 144,
+          "pivotX": 64,
+          "pivotY": 140,
+          "bounds": {
+            "x": 41,
+            "y": 49,
+            "w": 86,
+            "h": 91
+          },
+          "sha256": "71a17248a05e479cf4788b349d0b8668ae1a21c3e794a63a6988f764ef2c5dcc",
+          "sourceRect": {
+            "x": 800,
+            "y": 106,
+            "w": 351,
+            "h": 369
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-04.png",
+          "width": 128,
+          "height": 144,
+          "pivotX": 64,
+          "pivotY": 140,
+          "bounds": {
+            "x": 41,
+            "y": 49,
+            "w": 85,
+            "h": 91
+          },
+          "sha256": "78cdf719e2be383e3d7ca5a6b0d4873bf523457b9cabbe3b4d6725323de644a2",
+          "sourceRect": {
+            "x": 1185,
+            "y": 106,
+            "w": 345,
+            "h": 369
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-05.png",
+          "width": 128,
+          "height": 144,
+          "pivotX": 64,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 51,
+            "w": 87,
+            "h": 89
+          },
+          "sha256": "7f85081eb5ac18a644e728f14a50b5605606e1d4fe48f391ca501fb8e6923bf7",
+          "sourceRect": {
+            "x": 24,
+            "y": 563,
+            "w": 355,
+            "h": 363
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-06.png",
+          "width": 128,
+          "height": 144,
+          "pivotX": 64,
+          "pivotY": 140,
+          "bounds": {
+            "x": 3,
+            "y": 51,
+            "w": 87,
+            "h": 89
+          },
+          "sha256": "492eaeca6e7ce250ad8aa2a60c047b8a2298ca401c1feedb29effcc83e97535b",
+          "sourceRect": {
+            "x": 399,
+            "y": 564,
+            "w": 354,
+            "h": 362
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-07.png",
+          "width": 128,
+          "height": 144,
+          "pivotX": 64,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 50,
+            "w": 87,
+            "h": 90
+          },
+          "sha256": "1a60f335c164b3b38caa460458495d7f341b0d1cb1790297165e943b8e5e2cd2",
+          "sourceRect": {
+            "x": 776,
+            "y": 561,
+            "w": 356,
+            "h": 365
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-08.png",
+          "width": 128,
+          "height": 144,
+          "pivotX": 64,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 51,
+            "w": 88,
+            "h": 89
+          },
+          "sha256": "48f8dd5cda9a42f29aab6c71edef328937cd5eeeb859117598655d1414331826",
+          "sourceRect": {
+            "x": 1153,
+            "y": 563,
+            "w": 359,
+            "h": 363
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "sha256": "5741a26df1bc15b13b655ec72c1fb23c25c1c4c3b16a26b7eb995d91fc217c84",
+        "width": 512,
+        "height": 288,
+        "frames": [
+          {
+            "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+            "width": 128,
+            "height": 144,
+            "pivotX": 64,
+            "pivotY": 140,
+            "bounds": {
+              "x": 41,
+              "y": 50,
+              "w": 84,
+              "h": 90
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 128,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+            "width": 128,
+            "height": 144,
+            "pivotX": 64,
+            "pivotY": 140,
+            "bounds": {
+              "x": 41,
+              "y": 51,
+              "w": 85,
+              "h": 89
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 0,
+              "w": 128,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+            "width": 128,
+            "height": 144,
+            "pivotX": 64,
+            "pivotY": 140,
+            "bounds": {
+              "x": 41,
+              "y": 49,
+              "w": 86,
+              "h": 91
+            },
+            "atlasRect": {
+              "x": 256,
+              "y": 0,
+              "w": 128,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+            "width": 128,
+            "height": 144,
+            "pivotX": 64,
+            "pivotY": 140,
+            "bounds": {
+              "x": 41,
+              "y": 49,
+              "w": 85,
+              "h": 91
+            },
+            "atlasRect": {
+              "x": 384,
+              "y": 0,
+              "w": 128,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+            "width": 128,
+            "height": 144,
+            "pivotX": 64,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 51,
+              "w": 87,
+              "h": 89
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 144,
+              "w": 128,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+            "width": 128,
+            "height": 144,
+            "pivotX": 64,
+            "pivotY": 140,
+            "bounds": {
+              "x": 3,
+              "y": 51,
+              "w": 87,
+              "h": 89
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 144,
+              "w": 128,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+            "width": 128,
+            "height": 144,
+            "pivotX": 64,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 50,
+              "w": 87,
+              "h": 90
+            },
+            "atlasRect": {
+              "x": 256,
+              "y": 144,
+              "w": 128,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+            "width": 128,
+            "height": 144,
+            "pivotX": 64,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 51,
+              "w": 88,
+              "h": 89
+            },
+            "atlasRect": {
+              "x": 384,
+              "y": 144,
+              "w": 128,
+              "h": 144
+            }
+          }
+        ]
+      },
+      "thumbnails": {
+        "file": "decor-assets/native/flow-sp_hagrid_umbrella.png",
+        "rightFile": "decor-assets/native/flow-sp_hagrid_umbrella_right.png",
+        "sha256": "0e4a03f29ab203240d2894e982bef2384e4fadaaf06c690c899275b5f2262d82",
+        "rightSha256": "7f85081eb5ac18a644e728f14a50b5605606e1d4fe48f391ca501fb8e6923bf7"
+      },
+      "runtime": {
+        "id": "sp_hagrid_umbrella",
+        "kind": "decor",
+        "collection": "special",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Góc ô hồng của Hagrid",
+        "group": "Hagrid và Rừng Cấm",
+        "file": "decor-assets/native/flow-sp_hagrid_umbrella.png",
+        "frames": [
+          "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+          "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+          "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+          "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png"
+        ],
+        "durations": [
+          1200,
+          400,
+          500,
+          500
+        ],
+        "rightFile": "decor-assets/native/flow-sp_hagrid_umbrella_right.png",
+        "rightFrames": [
+          "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+          "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+          "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+          "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png"
+        ],
+        "rightBounds": {
+          "x": 1,
+          "y": 50,
+          "w": 89,
+          "h": 90
+        },
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 128,
+        "height": 144,
+        "pivotX": 64,
+        "pivotY": 140,
+        "bounds": {
+          "x": 41,
+          "y": 49,
+          "w": 86,
+          "h": 91
+        },
+        "footprintTiles": [
+          2,
+          1
+        ],
+        "motion": "glow",
+        "framesIdentical": false,
+        "bookReference": {
+          "book": 1,
+          "chapter": 4
+        },
+        "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
+        "nativeSha256": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
+        "atlasRects": [
+          {
+            "x": 0,
+            "y": 0,
+            "w": 128,
+            "h": 144
+          },
+          {
+            "x": 128,
+            "y": 0,
+            "w": 128,
+            "h": 144
+          },
+          {
+            "x": 256,
+            "y": 0,
+            "w": 128,
+            "h": 144
+          },
+          {
+            "x": 384,
+            "y": 0,
+            "w": 128,
+            "h": 144
+          }
+        ],
+        "rightAtlasRects": [
+          {
+            "x": 0,
+            "y": 144,
+            "w": 128,
+            "h": 144
+          },
+          {
+            "x": 128,
+            "y": 144,
+            "w": 128,
+            "h": 144
+          },
+          {
+            "x": 256,
+            "y": 144,
+            "w": 128,
+            "h": 144
+          },
+          {
+            "x": 384,
+            "y": 144,
+            "w": 128,
+            "h": 144
+          }
+        ]
+      }
+    },
+    {
+      "id": "hw_violet_mist_pond",
+      "master": "masters-flow-v1/decor-hw_violet_mist_pond-v1.png",
+      "masterSha256": "a68ab679df2a3a3e3fb42269a8ff2c3dc15902378661d9af0b29de04ac21af47",
+      "sourceRecord": {
+        "id": "hw_violet_mist_pond",
+        "subject": "Preserve the oval low stone-rimmed pond and lily pads. Add clearly VIOLET/lavender mist curls rising just above the dark water, not a purple recolour of stones/plants. Four genuinely different flowing mist poses inside the same compact silhouette; stone rim and base stay fixed.",
+        "durations": [
+          700,
+          850,
+          700,
+          850
+        ],
+        "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the oval low stone-rimmed pond and lily pads. Add clearly VIOLET/lavender mist curls rising just above the dark water, not a purple recolour of stones/plants. Four genuinely different flowing mist poses inside the same compact silhouette; stone rim and base stay fixed. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+        "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-374a03a9-2535-4a83-9bbd-4c7b3dd4afd8.png",
+        "master": "masters-flow-v1/decor-hw_violet_mist_pond-v1.png",
+        "tool": "builtin image_gen",
+        "framesIdentical": false
+      },
+      "outputFolder": "native-crop-complete",
+      "assetFolder": "native-crop-complete/decor-flow-hw_violet_mist_pond",
+      "scale": 0.389001037,
+      "target": {
+        "id": "decor-flow-hw_violet_mist_pond",
+        "width": 192,
+        "height": 144,
+        "pivotX": 96,
+        "pivotY": 140
+      },
+      "frames": [
+        {
+          "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/frame-01.png",
+          "width": 192,
+          "height": 144,
+          "pivotX": 96,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 26,
+            "w": 165,
+            "h": 114
+          },
+          "sha256": "fa381491e68178c8701f97f81e6a30209c9764a7bf236b133fddcaca6aab661b",
+          "sourceRect": {
+            "x": 13,
+            "y": 125,
+            "w": 423,
+            "h": 294
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/frame-02.png",
+          "width": 192,
+          "height": 144,
+          "pivotX": 96,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 26,
+            "w": 164,
+            "h": 114
+          },
+          "sha256": "d9e8f79b6fcc3e421d1287424de0ef5f30301fe5d3bc56a44e5d48900a21ce39",
+          "sourceRect": {
+            "x": 456,
+            "y": 125,
+            "w": 422,
+            "h": 293
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/frame-03.png",
+          "width": 192,
+          "height": 144,
+          "pivotX": 96,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 26,
+            "w": 165,
+            "h": 114
+          },
+          "sha256": "752b28a0a72f0e3fb2b34702837e3bfefccdc1cfdaac32443b98900eb12e4798",
+          "sourceRect": {
+            "x": 900,
+            "y": 125,
+            "w": 423,
+            "h": 293
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/frame-04.png",
+          "width": 192,
+          "height": 144,
+          "pivotX": 96,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 26,
+            "w": 164,
+            "h": 114
+          },
+          "sha256": "1d5f86d9298cab1c4383c863874a82b6e880118892e406540072af7606ff225c",
+          "sourceRect": {
+            "x": 1344,
+            "y": 125,
+            "w": 422,
+            "h": 294
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/frame-05.png",
+          "width": 192,
+          "height": 144,
+          "pivotX": 96,
+          "pivotY": 140,
+          "bounds": {
+            "x": 25,
+            "y": 22,
+            "w": 165,
+            "h": 118
+          },
+          "sha256": "1a2de6b2b1b7ce29ec2128887c391734ec89e0f9c901983d90e03e6516f86765",
+          "sourceRect": {
+            "x": 13,
+            "y": 550,
+            "w": 423,
+            "h": 303
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/frame-06.png",
+          "width": 192,
+          "height": 144,
+          "pivotX": 96,
+          "pivotY": 140,
+          "bounds": {
+            "x": 25,
+            "y": 25,
+            "w": 164,
+            "h": 115
+          },
+          "sha256": "830294b8204b1310cef292d10aa38f125cd64a7e14d51fcad2f3c4f9de4fb066",
+          "sourceRect": {
+            "x": 456,
+            "y": 557,
+            "w": 422,
+            "h": 296
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/frame-07.png",
+          "width": 192,
+          "height": 144,
+          "pivotX": 96,
+          "pivotY": 140,
+          "bounds": {
+            "x": 25,
+            "y": 22,
+            "w": 164,
+            "h": 118
+          },
+          "sha256": "9c7ee0abc9664dbde1ee05b0e68f7a11e014ba50a716a8162879e0e486f44ab6",
+          "sourceRect": {
+            "x": 900,
+            "y": 549,
+            "w": 422,
+            "h": 304
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/frame-08.png",
+          "width": 192,
+          "height": 144,
+          "pivotX": 96,
+          "pivotY": 140,
+          "bounds": {
+            "x": 25,
+            "y": 25,
+            "w": 164,
+            "h": 115
+          },
+          "sha256": "c0751b352d7cdab81671b8f439279aabc4a986ecd38706eb5571e6012f0f583c",
+          "sourceRect": {
+            "x": 1344,
+            "y": 557,
+            "w": 421,
+            "h": 296
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+        "sha256": "3411c67c87fc21ff11b1ddb01b2c8e10342b767b6b185288c63af77c49b73650",
+        "width": 768,
+        "height": 288,
+        "frames": [
+          {
+            "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+            "width": 192,
+            "height": 144,
+            "pivotX": 96,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 26,
+              "w": 165,
+              "h": 114
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 192,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+            "width": 192,
+            "height": 144,
+            "pivotX": 96,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 26,
+              "w": 164,
+              "h": 114
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 0,
+              "w": 192,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+            "width": 192,
+            "height": 144,
+            "pivotX": 96,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 26,
+              "w": 165,
+              "h": 114
+            },
+            "atlasRect": {
+              "x": 384,
+              "y": 0,
+              "w": 192,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+            "width": 192,
+            "height": 144,
+            "pivotX": 96,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 26,
+              "w": 164,
+              "h": 114
+            },
+            "atlasRect": {
+              "x": 576,
+              "y": 0,
+              "w": 192,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+            "width": 192,
+            "height": 144,
+            "pivotX": 96,
+            "pivotY": 140,
+            "bounds": {
+              "x": 25,
+              "y": 22,
+              "w": 165,
+              "h": 118
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 144,
+              "w": 192,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+            "width": 192,
+            "height": 144,
+            "pivotX": 96,
+            "pivotY": 140,
+            "bounds": {
+              "x": 25,
+              "y": 25,
+              "w": 164,
+              "h": 115
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 144,
+              "w": 192,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+            "width": 192,
+            "height": 144,
+            "pivotX": 96,
+            "pivotY": 140,
+            "bounds": {
+              "x": 25,
+              "y": 22,
+              "w": 164,
+              "h": 118
+            },
+            "atlasRect": {
+              "x": 384,
+              "y": 144,
+              "w": 192,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+            "width": 192,
+            "height": 144,
+            "pivotX": 96,
+            "pivotY": 140,
+            "bounds": {
+              "x": 25,
+              "y": 25,
+              "w": 164,
+              "h": 115
+            },
+            "atlasRect": {
+              "x": 576,
+              "y": 144,
+              "w": 192,
+              "h": 144
+            }
+          }
+        ]
+      },
+      "thumbnails": {
+        "file": "decor-assets/native/flow-hw_violet_mist_pond.png",
+        "rightFile": "decor-assets/native/flow-hw_violet_mist_pond_right.png",
+        "sha256": "fa381491e68178c8701f97f81e6a30209c9764a7bf236b133fddcaca6aab661b",
+        "rightSha256": "1a2de6b2b1b7ce29ec2128887c391734ec89e0f9c901983d90e03e6516f86765"
+      },
+      "runtime": {
+        "id": "hw_violet_mist_pond",
+        "kind": "decor",
+        "collection": "festival",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Ao sương tím",
+        "group": "Tiểu cảnh",
+        "file": "decor-assets/native/flow-hw_violet_mist_pond.png",
+        "rightFile": "decor-assets/native/flow-hw_violet_mist_pond_right.png",
+        "frames": [
+          "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+          "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+          "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+          "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png"
+        ],
+        "rightFrames": [
+          "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+          "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+          "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
+          "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png"
+        ],
+        "atlasRects": [
+          {
+            "x": 0,
+            "y": 0,
+            "w": 192,
+            "h": 144
+          },
+          {
+            "x": 192,
+            "y": 0,
+            "w": 192,
+            "h": 144
+          },
+          {
+            "x": 384,
+            "y": 0,
+            "w": 192,
+            "h": 144
+          },
+          {
+            "x": 576,
+            "y": 0,
+            "w": 192,
+            "h": 144
+          }
+        ],
+        "rightAtlasRects": [
+          {
+            "x": 0,
+            "y": 144,
+            "w": 192,
+            "h": 144
+          },
+          {
+            "x": 192,
+            "y": 144,
+            "w": 192,
+            "h": 144
+          },
+          {
+            "x": 384,
+            "y": 144,
+            "w": 192,
+            "h": 144
+          },
+          {
+            "x": 576,
+            "y": 144,
+            "w": 192,
+            "h": 144
+          }
+        ],
+        "durations": [
+          700,
+          850,
+          700,
+          850
+        ],
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 192,
+        "height": 144,
+        "pivotX": 96,
+        "pivotY": 140,
+        "bounds": {
+          "x": 1,
+          "y": 26,
+          "w": 165,
+          "h": 114
+        },
+        "rightBounds": {
+          "x": 25,
+          "y": 22,
+          "w": 165,
+          "h": 118
+        },
+        "footprintTiles": [
+          3,
+          2
+        ],
+        "motion": "glow",
+        "framesIdentical": false,
+        "nativeSha256": "8f2ffb5b2da2698948017a85ce96a4f5a7024939ed22597f794428f861b99005"
+      }
+    },
+    {
+      "id": "hw_blinking_chest",
+      "master": "masters-flow-v1/decor-hw_blinking_chest-v1.png",
+      "masterSha256": "ca1c471d8236492aff1caabe6bb5855d898cd0aa4293f5d535accd43bd147e97",
+      "sourceRecord": {
+        "id": "hw_blinking_chest",
+        "subject": "Preserve the compact carved brown monster treasure chest and golden hardware. Give TWO big readable eyes on the lid with four clearly different eyelid poses: wide open, half-closed, fully closed, reopening. Actual eye shape changes, not glow or translated duplicate. Chest base and size fixed.",
+        "durations": [
+          2200,
+          130,
+          180,
+          600
+        ],
+        "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the compact carved brown monster treasure chest and golden hardware. Give TWO big readable eyes on the lid with four clearly different eyelid poses: wide open, half-closed, fully closed, reopening. Actual eye shape changes, not glow or translated duplicate. Chest base and size fixed. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+        "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-2e1b23d7-05fc-4cec-8e13-d463e04d5b5f.png",
+        "master": "masters-flow-v1/decor-hw_blinking_chest-v1.png",
+        "tool": "builtin image_gen",
+        "framesIdentical": false
+      },
+      "outputFolder": "native-crop-complete",
+      "assetFolder": "native-crop-complete/decor-flow-hw_blinking_chest",
+      "scale": 0.241830065,
+      "target": {
+        "id": "decor-flow-hw_blinking_chest",
+        "width": 112,
+        "height": 96,
+        "pivotX": 56,
+        "pivotY": 92
+      },
+      "frames": [
+        {
+          "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-01.png",
+          "width": 112,
+          "height": 96,
+          "pivotX": 56,
+          "pivotY": 92,
+          "bounds": {
+            "x": 21,
+            "y": 7,
+            "w": 89,
+            "h": 85
+          },
+          "sha256": "edf6eb9055c1929e767fa78aa9468d5f5c8fa3544f6044a3899269d263aa2d52",
+          "sourceRect": {
+            "x": 49,
+            "y": 52,
+            "w": 367,
+            "h": 353
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-02.png",
+          "width": 112,
+          "height": 96,
+          "pivotX": 56,
+          "pivotY": 92,
+          "bounds": {
+            "x": 21,
+            "y": 7,
+            "w": 89,
+            "h": 85
+          },
+          "sha256": "120419a06a7a4167f5989e3f80f62a49bc1c2a73a913269d6c0b3c72f210b947",
+          "sourceRect": {
+            "x": 485,
+            "y": 52,
+            "w": 367,
+            "h": 353
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-03.png",
+          "width": 112,
+          "height": 96,
+          "pivotX": 56,
+          "pivotY": 92,
+          "bounds": {
+            "x": 20,
+            "y": 7,
+            "w": 89,
+            "h": 85
+          },
+          "sha256": "ee58aef362c76a21b12baabbb792bd0f371e3ad3ebf24c8d749220bcdecfa3d9",
+          "sourceRect": {
+            "x": 919,
+            "y": 52,
+            "w": 368,
+            "h": 353
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-04.png",
+          "width": 112,
+          "height": 96,
+          "pivotX": 56,
+          "pivotY": 92,
+          "bounds": {
+            "x": 21,
+            "y": 7,
+            "w": 89,
+            "h": 85
+          },
+          "sha256": "d841124f75afc104b40f45379867a736dd64d60c1b5717a69f9c98b7edbd8f51",
+          "sourceRect": {
+            "x": 1354,
+            "y": 52,
+            "w": 367,
+            "h": 353
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-05.png",
+          "width": 112,
+          "height": 96,
+          "pivotX": 56,
+          "pivotY": 92,
+          "bounds": {
+            "x": 1,
+            "y": 6,
+            "w": 92,
+            "h": 86
+          },
+          "sha256": "bbbe5b08d7f6a8b9a4aebc16fee2a9a6e4a1e69b0b533bde7fbeaf9a817ba20d",
+          "sourceRect": {
+            "x": 42,
+            "y": 466,
+            "w": 379,
+            "h": 355
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-06.png",
+          "width": 112,
+          "height": 96,
+          "pivotX": 56,
+          "pivotY": 92,
+          "bounds": {
+            "x": 2,
+            "y": 6,
+            "w": 91,
+            "h": 86
+          },
+          "sha256": "5d4931a52ad402839f3a2b596a274f5ee4badb50fc81cdc7c291439f29e9304f",
+          "sourceRect": {
+            "x": 485,
+            "y": 466,
+            "w": 377,
+            "h": 355
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-07.png",
+          "width": 112,
+          "height": 96,
+          "pivotX": 56,
+          "pivotY": 92,
+          "bounds": {
+            "x": 1,
+            "y": 6,
+            "w": 93,
+            "h": 86
+          },
+          "sha256": "f7977859b384fcda9205576ca23033080b22b76fe983f296a480b282caa69570",
+          "sourceRect": {
+            "x": 923,
+            "y": 466,
+            "w": 384,
+            "h": 356
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-08.png",
+          "width": 112,
+          "height": 96,
+          "pivotX": 56,
+          "pivotY": 92,
+          "bounds": {
+            "x": 2,
+            "y": 6,
+            "w": 91,
+            "h": 86
+          },
+          "sha256": "a3813fcf617dbc332dabc8626e5e1bcd30de39f7e02376058122de793b6f23bb",
+          "sourceRect": {
+            "x": 1364,
+            "y": 466,
+            "w": 376,
+            "h": 356
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+        "sha256": "f4ab7059778b7ea5454ef98393fb356dd37cb8e20d84d2e27e83cfba559055a5",
+        "width": 448,
+        "height": 192,
+        "frames": [
+          {
+            "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+            "width": 112,
+            "height": 96,
+            "pivotX": 56,
+            "pivotY": 92,
+            "bounds": {
+              "x": 21,
+              "y": 7,
+              "w": 89,
+              "h": 85
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 112,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+            "width": 112,
+            "height": 96,
+            "pivotX": 56,
+            "pivotY": 92,
+            "bounds": {
+              "x": 21,
+              "y": 7,
+              "w": 89,
+              "h": 85
+            },
+            "atlasRect": {
+              "x": 112,
+              "y": 0,
+              "w": 112,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+            "width": 112,
+            "height": 96,
+            "pivotX": 56,
+            "pivotY": 92,
+            "bounds": {
+              "x": 20,
+              "y": 7,
+              "w": 89,
+              "h": 85
+            },
+            "atlasRect": {
+              "x": 224,
+              "y": 0,
+              "w": 112,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+            "width": 112,
+            "height": 96,
+            "pivotX": 56,
+            "pivotY": 92,
+            "bounds": {
+              "x": 21,
+              "y": 7,
+              "w": 89,
+              "h": 85
+            },
+            "atlasRect": {
+              "x": 336,
+              "y": 0,
+              "w": 112,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+            "width": 112,
+            "height": 96,
+            "pivotX": 56,
+            "pivotY": 92,
+            "bounds": {
+              "x": 1,
+              "y": 6,
+              "w": 92,
+              "h": 86
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 96,
+              "w": 112,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+            "width": 112,
+            "height": 96,
+            "pivotX": 56,
+            "pivotY": 92,
+            "bounds": {
+              "x": 2,
+              "y": 6,
+              "w": 91,
+              "h": 86
+            },
+            "atlasRect": {
+              "x": 112,
+              "y": 96,
+              "w": 112,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+            "width": 112,
+            "height": 96,
+            "pivotX": 56,
+            "pivotY": 92,
+            "bounds": {
+              "x": 1,
+              "y": 6,
+              "w": 93,
+              "h": 86
+            },
+            "atlasRect": {
+              "x": 224,
+              "y": 96,
+              "w": 112,
+              "h": 96
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+            "width": 112,
+            "height": 96,
+            "pivotX": 56,
+            "pivotY": 92,
+            "bounds": {
+              "x": 2,
+              "y": 6,
+              "w": 91,
+              "h": 86
+            },
+            "atlasRect": {
+              "x": 336,
+              "y": 96,
+              "w": 112,
+              "h": 96
+            }
+          }
+        ]
+      },
+      "thumbnails": {
+        "file": "decor-assets/native/flow-hw_blinking_chest.png",
+        "rightFile": "decor-assets/native/flow-hw_blinking_chest_right.png",
+        "sha256": "edf6eb9055c1929e767fa78aa9468d5f5c8fa3544f6044a3899269d263aa2d52",
+        "rightSha256": "bbbe5b08d7f6a8b9a4aebc16fee2a9a6e4a1e69b0b533bde7fbeaf9a817ba20d"
+      },
+      "runtime": {
+        "id": "hw_blinking_chest",
+        "kind": "decor",
+        "collection": "festival",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Rương nháy mắt",
+        "group": "Góc phù thủy",
+        "file": "decor-assets/native/flow-hw_blinking_chest.png",
+        "rightFile": "decor-assets/native/flow-hw_blinking_chest_right.png",
+        "frames": [
+          "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+          "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+          "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+          "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png"
+        ],
+        "rightFrames": [
+          "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+          "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+          "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
+          "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png"
+        ],
+        "atlasRects": [
+          {
+            "x": 0,
+            "y": 0,
+            "w": 112,
+            "h": 96
+          },
+          {
+            "x": 112,
+            "y": 0,
+            "w": 112,
+            "h": 96
+          },
+          {
+            "x": 224,
+            "y": 0,
+            "w": 112,
+            "h": 96
+          },
+          {
+            "x": 336,
+            "y": 0,
+            "w": 112,
+            "h": 96
+          }
+        ],
+        "rightAtlasRects": [
+          {
+            "x": 0,
+            "y": 96,
+            "w": 112,
+            "h": 96
+          },
+          {
+            "x": 112,
+            "y": 96,
+            "w": 112,
+            "h": 96
+          },
+          {
+            "x": 224,
+            "y": 96,
+            "w": 112,
+            "h": 96
+          },
+          {
+            "x": 336,
+            "y": 96,
+            "w": 112,
+            "h": 96
+          }
+        ],
+        "durations": [
+          2200,
+          130,
+          180,
+          600
+        ],
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 112,
+        "height": 96,
+        "pivotX": 56,
+        "pivotY": 92,
+        "bounds": {
+          "x": 20,
+          "y": 7,
+          "w": 90,
+          "h": 85
+        },
+        "rightBounds": {
+          "x": 1,
+          "y": 6,
+          "w": 93,
+          "h": 86
+        },
+        "footprintTiles": [
+          2,
+          1
+        ],
+        "motion": "blink",
+        "framesIdentical": false,
+        "nativeSha256": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad"
+      }
+    },
+    {
+      "id": "hw_monster_bookcase",
+      "master": "masters-flow-v1/decor-hw_monster_bookcase-v1.png",
+      "masterSha256": "0dd228432ca6479cca7c8174cc42fc857e1aa8adfd26e9ec14c17f70e68648ab",
+      "sourceRecord": {
+        "id": "hw_monster_bookcase",
+        "subject": "Preserve the tall spooky wooden bookcase with books and monster mouth. Four distinct facial poses: mouth at rest with curious eyes, eyes half blink and lips tighten, eyes closed and mouth opens showing chunky teeth, relaxed recovery. Door/bookcase posts and base fixed; no scene or new furniture.",
+        "durations": [
+          1700,
+          180,
+          380,
+          600
+        ],
+        "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the tall spooky wooden bookcase with books and monster mouth. Four distinct facial poses: mouth at rest with curious eyes, eyes half blink and lips tighten, eyes closed and mouth opens showing chunky teeth, relaxed recovery. Door/bookcase posts and base fixed; no scene or new furniture. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+        "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-4584a530-350e-4006-99c0-e8787d90df21.png",
+        "master": "masters-flow-v1/decor-hw_monster_bookcase-v1.png",
+        "tool": "builtin image_gen",
+        "framesIdentical": false
+      },
+      "outputFolder": "native-crop-complete",
+      "assetFolder": "native-crop-complete/decor-flow-hw_monster_bookcase",
+      "scale": 0.262410348,
+      "target": {
+        "id": "decor-flow-hw_monster_bookcase",
+        "width": 112,
+        "height": 144,
+        "pivotX": 56,
+        "pivotY": 140
+      },
+      "frames": [
+        {
+          "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-01.png",
+          "width": 112,
+          "height": 144,
+          "pivotX": 56,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 28,
+            "w": 79,
+            "h": 112
+          },
+          "sha256": "3673da9d72d6e2f309cd3094e0c3695a084d902776801b9d997fdc792a3bfc1a",
+          "sourceRect": {
+            "x": 48,
+            "y": 45,
+            "w": 301,
+            "h": 425
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-02.png",
+          "width": 112,
+          "height": 144,
+          "pivotX": 56,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 28,
+            "w": 79,
+            "h": 112
+          },
+          "sha256": "91c0569ec087b5d74040d32b61b6aa8093c0f6f6f7aee50ee2208721f7255cce",
+          "sourceRect": {
+            "x": 432,
+            "y": 45,
+            "w": 301,
+            "h": 425
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-03.png",
+          "width": 112,
+          "height": 144,
+          "pivotX": 56,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 28,
+            "w": 79,
+            "h": 112
+          },
+          "sha256": "8a14033b5062e41cf4acc285b10bad4baae5b9c2e59b32f241226bfd1921f06a",
+          "sourceRect": {
+            "x": 816,
+            "y": 45,
+            "w": 301,
+            "h": 425
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-04.png",
+          "width": 112,
+          "height": 144,
+          "pivotX": 56,
+          "pivotY": 140,
+          "bounds": {
+            "x": 1,
+            "y": 28,
+            "w": 79,
+            "h": 112
+          },
+          "sha256": "008bcafb808dba61f3e539c4db445fafb68b15d938897e665ea6144954a1d964",
+          "sourceRect": {
+            "x": 1200,
+            "y": 45,
+            "w": 301,
+            "h": 425
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-05.png",
+          "width": 112,
+          "height": 144,
+          "pivotX": 56,
+          "pivotY": 140,
+          "bounds": {
+            "x": 3,
+            "y": 29,
+            "w": 77,
+            "h": 111
+          },
+          "sha256": "191a6eba330992d81fce9a5b7d193688bb5d90aadba549569eb0471ce78ca0c3",
+          "sourceRect": {
+            "x": 53,
+            "y": 542,
+            "w": 292,
+            "h": 422
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-06.png",
+          "width": 112,
+          "height": 144,
+          "pivotX": 56,
+          "pivotY": 140,
+          "bounds": {
+            "x": 3,
+            "y": 29,
+            "w": 76,
+            "h": 111
+          },
+          "sha256": "0a0fdb84a0ee1d61518057752bfc74aa31d82c60e2edde994c270ad7a2ca050e",
+          "sourceRect": {
+            "x": 438,
+            "y": 542,
+            "w": 291,
+            "h": 422
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-07.png",
+          "width": 112,
+          "height": 144,
+          "pivotX": 56,
+          "pivotY": 140,
+          "bounds": {
+            "x": 3,
+            "y": 29,
+            "w": 76,
+            "h": 111
+          },
+          "sha256": "87587b61aa99e644ffb80525c53c84a2470f1f8e1a493ca6a6fc75ca783932f6",
+          "sourceRect": {
+            "x": 822,
+            "y": 542,
+            "w": 291,
+            "h": 422
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-08.png",
+          "width": 112,
+          "height": 144,
+          "pivotX": 56,
+          "pivotY": 140,
+          "bounds": {
+            "x": 3,
+            "y": 29,
+            "w": 76,
+            "h": 111
+          },
+          "sha256": "d5ff73e658616dd94140c74760b653e8d8e4e86036a46190d6c2b6162d88061e",
+          "sourceRect": {
+            "x": 1206,
+            "y": 542,
+            "w": 291,
+            "h": 422
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+        "sha256": "816e2583a94379f8d3a52ec0e81f34266302c4f001a62d29eab67ed0d68707db",
+        "width": 448,
+        "height": 288,
+        "frames": [
+          {
+            "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+            "width": 112,
+            "height": 144,
+            "pivotX": 56,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 28,
+              "w": 79,
+              "h": 112
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 112,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+            "width": 112,
+            "height": 144,
+            "pivotX": 56,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 28,
+              "w": 79,
+              "h": 112
+            },
+            "atlasRect": {
+              "x": 112,
+              "y": 0,
+              "w": 112,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+            "width": 112,
+            "height": 144,
+            "pivotX": 56,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 28,
+              "w": 79,
+              "h": 112
+            },
+            "atlasRect": {
+              "x": 224,
+              "y": 0,
+              "w": 112,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+            "width": 112,
+            "height": 144,
+            "pivotX": 56,
+            "pivotY": 140,
+            "bounds": {
+              "x": 1,
+              "y": 28,
+              "w": 79,
+              "h": 112
+            },
+            "atlasRect": {
+              "x": 336,
+              "y": 0,
+              "w": 112,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+            "width": 112,
+            "height": 144,
+            "pivotX": 56,
+            "pivotY": 140,
+            "bounds": {
+              "x": 3,
+              "y": 29,
+              "w": 77,
+              "h": 111
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 144,
+              "w": 112,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+            "width": 112,
+            "height": 144,
+            "pivotX": 56,
+            "pivotY": 140,
+            "bounds": {
+              "x": 3,
+              "y": 29,
+              "w": 76,
+              "h": 111
+            },
+            "atlasRect": {
+              "x": 112,
+              "y": 144,
+              "w": 112,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+            "width": 112,
+            "height": 144,
+            "pivotX": 56,
+            "pivotY": 140,
+            "bounds": {
+              "x": 3,
+              "y": 29,
+              "w": 76,
+              "h": 111
+            },
+            "atlasRect": {
+              "x": 224,
+              "y": 144,
+              "w": 112,
+              "h": 144
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+            "width": 112,
+            "height": 144,
+            "pivotX": 56,
+            "pivotY": 140,
+            "bounds": {
+              "x": 3,
+              "y": 29,
+              "w": 76,
+              "h": 111
+            },
+            "atlasRect": {
+              "x": 336,
+              "y": 144,
+              "w": 112,
+              "h": 144
+            }
+          }
+        ]
+      },
+      "thumbnails": {
+        "file": "decor-assets/native/flow-hw_monster_bookcase.png",
+        "rightFile": "decor-assets/native/flow-hw_monster_bookcase_right.png",
+        "sha256": "3673da9d72d6e2f309cd3094e0c3695a084d902776801b9d997fdc792a3bfc1a",
+        "rightSha256": "191a6eba330992d81fce9a5b7d193688bb5d90aadba549569eb0471ce78ca0c3"
+      },
+      "runtime": {
+        "id": "hw_monster_bookcase",
+        "kind": "decor",
+        "collection": "festival",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Tủ sách há miệng",
+        "group": "Góc phù thủy",
+        "file": "decor-assets/native/flow-hw_monster_bookcase.png",
+        "rightFile": "decor-assets/native/flow-hw_monster_bookcase_right.png",
+        "frames": [
+          "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+          "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+          "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+          "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png"
+        ],
+        "rightFrames": [
+          "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+          "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+          "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
+          "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png"
+        ],
+        "atlasRects": [
+          {
+            "x": 0,
+            "y": 0,
+            "w": 112,
+            "h": 144
+          },
+          {
+            "x": 112,
+            "y": 0,
+            "w": 112,
+            "h": 144
+          },
+          {
+            "x": 224,
+            "y": 0,
+            "w": 112,
+            "h": 144
+          },
+          {
+            "x": 336,
+            "y": 0,
+            "w": 112,
+            "h": 144
+          }
+        ],
+        "rightAtlasRects": [
+          {
+            "x": 0,
+            "y": 144,
+            "w": 112,
+            "h": 144
+          },
+          {
+            "x": 112,
+            "y": 144,
+            "w": 112,
+            "h": 144
+          },
+          {
+            "x": 224,
+            "y": 144,
+            "w": 112,
+            "h": 144
+          },
+          {
+            "x": 336,
+            "y": 144,
+            "w": 112,
+            "h": 144
+          }
+        ],
+        "durations": [
+          1700,
+          180,
+          380,
+          600
+        ],
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 112,
+        "height": 144,
+        "pivotX": 56,
+        "pivotY": 140,
+        "bounds": {
+          "x": 1,
+          "y": 28,
+          "w": 79,
+          "h": 112
+        },
+        "rightBounds": {
+          "x": 3,
+          "y": 29,
+          "w": 77,
+          "h": 111
+        },
+        "footprintTiles": [
+          2,
+          1
+        ],
+        "motion": "blink",
+        "framesIdentical": false,
+        "nativeSha256": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77"
+      }
+    },
+    {
+      "id": "hw_eyeball_flowers",
+      "master": "masters-flow-v1/decor-hw_eyeball_flowers-v1.png",
+      "masterSha256": "2c166a768e611f570eb11176b15d7d12d15c80e93703696b7bdf4daf49e3609c",
+      "sourceRecord": {
+        "id": "hw_eyeball_flowers",
+        "subject": "Preserve the low green bush of orange/purple eye-shaped flowers. Four distinct poses in which visible flower eyes are open, half closed, closed, reopening; stalks flex slightly while root center remains fixed. Eyes remain part of flowers, not detached creatures. Do not merely shift whole sprite.",
+        "durations": [
+          2300,
+          130,
+          170,
+          500
+        ],
+        "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the low green bush of orange/purple eye-shaped flowers. Four distinct poses in which visible flower eyes are open, half closed, closed, reopening; stalks flex slightly while root center remains fixed. Eyes remain part of flowers, not detached creatures. Do not merely shift whole sprite. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+        "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-1466ac12-3046-4ecc-80b5-5f588b71461e.png",
+        "master": "masters-flow-v1/decor-hw_eyeball_flowers-v1.png",
+        "tool": "builtin image_gen",
+        "framesIdentical": false
+      },
+      "outputFolder": "native-crop-complete",
+      "assetFolder": "native-crop-complete/decor-flow-hw_eyeball_flowers",
+      "scale": 0.231903485,
+      "target": {
+        "id": "decor-flow-hw_eyeball_flowers",
+        "width": 104,
+        "height": 104,
+        "pivotX": 52,
+        "pivotY": 100
+      },
+      "frames": [
+        {
+          "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/frame-01.png",
+          "width": 104,
+          "height": 104,
+          "pivotX": 52,
+          "pivotY": 100,
+          "bounds": {
+            "x": 11,
+            "y": 17,
+            "w": 89,
+            "h": 83
+          },
+          "sha256": "8224d3b79c4357097f3cc29cb9492a8007fa573ca74f257c242cdb977e573a34",
+          "sourceRect": {
+            "x": 40,
+            "y": 61,
+            "w": 383,
+            "h": 358
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/frame-02.png",
+          "width": 104,
+          "height": 104,
+          "pivotX": 52,
+          "pivotY": 100,
+          "bounds": {
+            "x": 17,
+            "y": 21,
+            "w": 86,
+            "h": 79
+          },
+          "sha256": "d0e185abf4bb3f27a6afbda76f99f1fea99317f119f5880d056867d0cfb762f6",
+          "sourceRect": {
+            "x": 490,
+            "y": 79,
+            "w": 373,
+            "h": 340
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/frame-03.png",
+          "width": 104,
+          "height": 104,
+          "pivotX": 52,
+          "pivotY": 100,
+          "bounds": {
+            "x": 18,
+            "y": 21,
+            "w": 83,
+            "h": 79
+          },
+          "sha256": "3dfcb63272cc583f8514eaa596b438be9784c8fa06731645ee92998b58a69b5a",
+          "sourceRect": {
+            "x": 936,
+            "y": 80,
+            "w": 358,
+            "h": 339
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/frame-04.png",
+          "width": 104,
+          "height": 104,
+          "pivotX": 52,
+          "pivotY": 100,
+          "bounds": {
+            "x": 12,
+            "y": 19,
+            "w": 84,
+            "h": 81
+          },
+          "sha256": "28e2e20a79a65a8eac675e39c83a885bfcdc37e3c783aeb5c05968547d869075",
+          "sourceRect": {
+            "x": 1377,
+            "y": 70,
+            "w": 363,
+            "h": 349
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/frame-05.png",
+          "width": 104,
+          "height": 104,
+          "pivotX": 52,
+          "pivotY": 100,
+          "bounds": {
+            "x": 4,
+            "y": 19,
+            "w": 87,
+            "h": 81
+          },
+          "sha256": "eb760d8539044d23cc7c1bbe0ddb312d195b5b602408b72e0ee16f3ce367aaa5",
+          "sourceRect": {
+            "x": 34,
+            "y": 475,
+            "w": 374,
+            "h": 349
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/frame-06.png",
+          "width": 104,
+          "height": 104,
+          "pivotX": 52,
+          "pivotY": 100,
+          "bounds": {
+            "x": 6,
+            "y": 22,
+            "w": 90,
+            "h": 78
+          },
+          "sha256": "7d970a631724c56a273a632547d497646fa25afbb31a60de02967d4a7e3f22e7",
+          "sourceRect": {
+            "x": 463,
+            "y": 492,
+            "w": 388,
+            "h": 336
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/frame-07.png",
+          "width": 104,
+          "height": 104,
+          "pivotX": 52,
+          "pivotY": 100,
+          "bounds": {
+            "x": 1,
+            "y": 22,
+            "w": 86,
+            "h": 78
+          },
+          "sha256": "986649bc207678d1739207021eae2789a59ee9b20f96c1acac769918361ddafe",
+          "sourceRect": {
+            "x": 915,
+            "y": 492,
+            "w": 370,
+            "h": 336
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/frame-08.png",
+          "width": 104,
+          "height": 104,
+          "pivotX": 52,
+          "pivotY": 100,
+          "bounds": {
+            "x": 9,
+            "y": 19,
+            "w": 87,
+            "h": 81
+          },
+          "sha256": "d9caec1a12d9323825181976bc634f3440b3d9dd07b3ea1d3e71071e7129d006",
+          "sourceRect": {
+            "x": 1362,
+            "y": 480,
+            "w": 376,
+            "h": 348
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+        "sha256": "d3cb42f24175ee552666fbb80b7fb674e95241bd5066ad036f1d7efa6f3002dc",
+        "width": 416,
+        "height": 208,
+        "frames": [
+          {
+            "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+            "width": 104,
+            "height": 104,
+            "pivotX": 52,
+            "pivotY": 100,
+            "bounds": {
+              "x": 11,
+              "y": 17,
+              "w": 89,
+              "h": 83
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 104,
+              "h": 104
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+            "width": 104,
+            "height": 104,
+            "pivotX": 52,
+            "pivotY": 100,
+            "bounds": {
+              "x": 17,
+              "y": 21,
+              "w": 86,
+              "h": 79
+            },
+            "atlasRect": {
+              "x": 104,
+              "y": 0,
+              "w": 104,
+              "h": 104
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+            "width": 104,
+            "height": 104,
+            "pivotX": 52,
+            "pivotY": 100,
+            "bounds": {
+              "x": 18,
+              "y": 21,
+              "w": 83,
+              "h": 79
+            },
+            "atlasRect": {
+              "x": 208,
+              "y": 0,
+              "w": 104,
+              "h": 104
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+            "width": 104,
+            "height": 104,
+            "pivotX": 52,
+            "pivotY": 100,
+            "bounds": {
+              "x": 12,
+              "y": 19,
+              "w": 84,
+              "h": 81
+            },
+            "atlasRect": {
+              "x": 312,
+              "y": 0,
+              "w": 104,
+              "h": 104
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+            "width": 104,
+            "height": 104,
+            "pivotX": 52,
+            "pivotY": 100,
+            "bounds": {
+              "x": 4,
+              "y": 19,
+              "w": 87,
+              "h": 81
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 104,
+              "w": 104,
+              "h": 104
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+            "width": 104,
+            "height": 104,
+            "pivotX": 52,
+            "pivotY": 100,
+            "bounds": {
+              "x": 6,
+              "y": 22,
+              "w": 90,
+              "h": 78
+            },
+            "atlasRect": {
+              "x": 104,
+              "y": 104,
+              "w": 104,
+              "h": 104
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+            "width": 104,
+            "height": 104,
+            "pivotX": 52,
+            "pivotY": 100,
+            "bounds": {
+              "x": 1,
+              "y": 22,
+              "w": 86,
+              "h": 78
+            },
+            "atlasRect": {
+              "x": 208,
+              "y": 104,
+              "w": 104,
+              "h": 104
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+            "width": 104,
+            "height": 104,
+            "pivotX": 52,
+            "pivotY": 100,
+            "bounds": {
+              "x": 9,
+              "y": 19,
+              "w": 87,
+              "h": 81
+            },
+            "atlasRect": {
+              "x": 312,
+              "y": 104,
+              "w": 104,
+              "h": 104
+            }
+          }
+        ]
+      },
+      "thumbnails": {
+        "file": "decor-assets/native/flow-hw_eyeball_flowers.png",
+        "rightFile": "decor-assets/native/flow-hw_eyeball_flowers_right.png",
+        "sha256": "8224d3b79c4357097f3cc29cb9492a8007fa573ca74f257c242cdb977e573a34",
+        "rightSha256": "eb760d8539044d23cc7c1bbe0ddb312d195b5b602408b72e0ee16f3ce367aaa5"
+      },
+      "runtime": {
+        "id": "hw_eyeball_flowers",
+        "kind": "decor",
+        "collection": "festival",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Bụi hoa mắt tròn",
+        "group": "Rừng tinh nghịch",
+        "file": "decor-assets/native/flow-hw_eyeball_flowers.png",
+        "rightFile": "decor-assets/native/flow-hw_eyeball_flowers_right.png",
+        "frames": [
+          "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+          "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+          "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+          "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png"
+        ],
+        "rightFrames": [
+          "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+          "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+          "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
+          "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png"
+        ],
+        "atlasRects": [
+          {
+            "x": 0,
+            "y": 0,
+            "w": 104,
+            "h": 104
+          },
+          {
+            "x": 104,
+            "y": 0,
+            "w": 104,
+            "h": 104
+          },
+          {
+            "x": 208,
+            "y": 0,
+            "w": 104,
+            "h": 104
+          },
+          {
+            "x": 312,
+            "y": 0,
+            "w": 104,
+            "h": 104
+          }
+        ],
+        "rightAtlasRects": [
+          {
+            "x": 0,
+            "y": 104,
+            "w": 104,
+            "h": 104
+          },
+          {
+            "x": 104,
+            "y": 104,
+            "w": 104,
+            "h": 104
+          },
+          {
+            "x": 208,
+            "y": 104,
+            "w": 104,
+            "h": 104
+          },
+          {
+            "x": 312,
+            "y": 104,
+            "w": 104,
+            "h": 104
+          }
+        ],
+        "durations": [
+          2300,
+          130,
+          170,
+          500
+        ],
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 104,
+        "height": 104,
+        "pivotX": 52,
+        "pivotY": 100,
+        "bounds": {
+          "x": 11,
+          "y": 17,
+          "w": 92,
+          "h": 83
+        },
+        "rightBounds": {
+          "x": 1,
+          "y": 19,
+          "w": 95,
+          "h": 81
+        },
+        "footprintTiles": [
+          1,
+          1
+        ],
+        "motion": "blink",
+        "framesIdentical": false,
+        "nativeSha256": "107f23a175fdea6b4c2ce6f498afe0f676d3e6536e9b8d55791310673f3fb5cc"
+      }
+    },
+    {
+      "id": "hw_candy_cauldron",
+      "master": "masters-flow-v1/decor-hw_candy_cauldron-v1.png",
+      "masterSha256": "80fc3222426fd66c4af75ab82ed27e1a0c39077af1629d2ced03df427c7e2f69",
+      "sourceRecord": {
+        "id": "hw_candy_cauldron",
+        "subject": "Preserve the round dark-purple metal cauldron with orange candy and sweets. Four distinct poses: resting small bubbles, bubbles grow and candies rise slightly, two bubbles pop into tiny pixel sparks contained inside the cell, bubbles settle and candy returns. Cauldron body and feet fixed; actual bubble silhouettes differ, no translation or colour-only glow.",
+        "durations": [
+          700,
+          300,
+          220,
+          800
+        ],
+        "prompt": "Use case: precise-object-edit. Edit target is the supplied Hagrid sprite; preserve its object identity, cozy pixel density, material palette and exact2:1 dimetric viewpoint. Create ONE two-angle sprite atlas of that same object, EIGHT isolated complete poses total. Exactly2rows×4columns with regular equal cells: row1 four default(left) angle poses in stated order; row2 four independently drawn RIGHT angle poses in same order (not merely mirrored lighting). Each cell25% clear transparent margin all sides, no clipped pixels/overlapping neighbours. Both directions same physical size and bottom-center contact pivot. True crisp chunky pixel clusters, dark-plum selective outline, upper-left illumination, limited palette. No labels/text, border, background, ground shadow, bloom haze or UI. Transparent alpha. Subject/action: Preserve the round dark-purple metal cauldron with orange candy and sweets. Four distinct poses: resting small bubbles, bubbles grow and candies rise slightly, two bubbles pop into tiny pixel sparks contained inside the cell, bubbles settle and candy returns. Cauldron body and feet fixed; actual bubble silhouettes differ, no translation or colour-only glow. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+        "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-f706dc71-54b3-4744-b0be-bbf6e8934bde.png",
+        "master": "masters-flow-v1/decor-hw_candy_cauldron-v1.png",
+        "tool": "builtin image_gen",
+        "framesIdentical": false
+      },
+      "outputFolder": "native-crop-complete",
+      "assetFolder": "native-crop-complete/decor-flow-hw_candy_cauldron",
+      "scale": 0.211665667,
+      "target": {
+        "id": "decor-flow-hw_candy_cauldron",
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 108
+      },
+      "frames": [
+        {
+          "file": "native-crop-complete/decor-flow-hw_candy_cauldron/frame-01.png",
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 108,
+          "bounds": {
+            "x": 3,
+            "y": 38,
+            "w": 61,
+            "h": 70
+          },
+          "sha256": "fd54f0c8b5c7b246c2fa3a47b3164a7dc56514f506bb8dde630cb62e9acfe20a",
+          "sourceRect": {
+            "x": 89,
+            "y": 75,
+            "w": 288,
+            "h": 333
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_candy_cauldron/frame-02.png",
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 108,
+          "bounds": {
+            "x": 32,
+            "y": 33,
+            "w": 61,
+            "h": 75
+          },
+          "sha256": "50f6bc91340328457109b772da162c622faf5def71b6861d152609857ad43d3a",
+          "sourceRect": {
+            "x": 526,
+            "y": 55,
+            "w": 288,
+            "h": 353
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_candy_cauldron/frame-03.png",
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 108,
+          "bounds": {
+            "x": 32,
+            "y": 35,
+            "w": 61,
+            "h": 73
+          },
+          "sha256": "ed9c2d48ffd67212461245831784153bd9605c889a1f7e9ed447e4152971bc66",
+          "sourceRect": {
+            "x": 959,
+            "y": 61,
+            "w": 288,
+            "h": 347
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_candy_cauldron/frame-04.png",
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 108,
+          "bounds": {
+            "x": 3,
+            "y": 43,
+            "w": 62,
+            "h": 65
+          },
+          "sha256": "c7c46b518d62eefed80c62ed973629697b8638f249eace6d38cc8f99f6fd8236",
+          "sourceRect": {
+            "x": 1402,
+            "y": 101,
+            "w": 293,
+            "h": 307
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_candy_cauldron/frame-05.png",
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 108,
+          "bounds": {
+            "x": 31,
+            "y": 40,
+            "w": 63,
+            "h": 68
+          },
+          "sha256": "938e5e0bf711cee67223189dff732e9b89093f5460e793fae9a57e56953d109a",
+          "sourceRect": {
+            "x": 79,
+            "y": 506,
+            "w": 298,
+            "h": 320
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_candy_cauldron/frame-06.png",
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 108,
+          "bounds": {
+            "x": 31,
+            "y": 35,
+            "w": 63,
+            "h": 73
+          },
+          "sha256": "3a8cde3f734105e5e4f8bb7e36ba8d0480ccbf527dafaf573902aa74f0ea1b45",
+          "sourceRect": {
+            "x": 517,
+            "y": 480,
+            "w": 298,
+            "h": 346
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_candy_cauldron/frame-07.png",
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 108,
+          "bounds": {
+            "x": 2,
+            "y": 36,
+            "w": 63,
+            "h": 72
+          },
+          "sha256": "c3da91b502114c61d5230f83a820a275b5630aaf7657c15f69e61cb2e4ae48cd",
+          "sourceRect": {
+            "x": 963,
+            "y": 488,
+            "w": 297,
+            "h": 338
+          }
+        },
+        {
+          "file": "native-crop-complete/decor-flow-hw_candy_cauldron/frame-08.png",
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 108,
+          "bounds": {
+            "x": 32,
+            "y": 43,
+            "w": 63,
+            "h": 65
+          },
+          "sha256": "81c608827bb14fee8ef1861ec1f6bf59de7ee4eaf30e682d9a85e2ecca0a5242",
+          "sourceRect": {
+            "x": 1400,
+            "y": 519,
+            "w": 300,
+            "h": 307
+          }
+        }
+      ],
+      "atlas": {
+        "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+        "sha256": "71a5bd9a0be82bd24473f4b468a4f60d4ff963c3f9df084188d30b9bfebe648c",
+        "width": 384,
+        "height": 224,
+        "frames": [
+          {
+            "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 108,
+            "bounds": {
+              "x": 3,
+              "y": 38,
+              "w": 61,
+              "h": 70
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 112
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 108,
+            "bounds": {
+              "x": 32,
+              "y": 33,
+              "w": 61,
+              "h": 75
+            },
+            "atlasRect": {
+              "x": 96,
+              "y": 0,
+              "w": 96,
+              "h": 112
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 108,
+            "bounds": {
+              "x": 32,
+              "y": 35,
+              "w": 61,
+              "h": 73
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 0,
+              "w": 96,
+              "h": 112
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 108,
+            "bounds": {
+              "x": 3,
+              "y": 43,
+              "w": 62,
+              "h": 65
+            },
+            "atlasRect": {
+              "x": 288,
+              "y": 0,
+              "w": 96,
+              "h": 112
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 108,
+            "bounds": {
+              "x": 31,
+              "y": 40,
+              "w": 63,
+              "h": 68
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 112,
+              "w": 96,
+              "h": 112
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 108,
+            "bounds": {
+              "x": 31,
+              "y": 35,
+              "w": 63,
+              "h": 73
+            },
+            "atlasRect": {
+              "x": 96,
+              "y": 112,
+              "w": 96,
+              "h": 112
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 108,
+            "bounds": {
+              "x": 2,
+              "y": 36,
+              "w": 63,
+              "h": 72
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 112,
+              "w": 96,
+              "h": 112
+            }
+          },
+          {
+            "file": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 108,
+            "bounds": {
+              "x": 32,
+              "y": 43,
+              "w": 63,
+              "h": 65
+            },
+            "atlasRect": {
+              "x": 288,
+              "y": 112,
+              "w": 96,
+              "h": 112
+            }
+          }
+        ]
+      },
+      "thumbnails": {
+        "file": "decor-assets/native/flow-hw_candy_cauldron.png",
+        "rightFile": "decor-assets/native/flow-hw_candy_cauldron_right.png",
+        "sha256": "fd54f0c8b5c7b246c2fa3a47b3164a7dc56514f506bb8dde630cb62e9acfe20a",
+        "rightSha256": "938e5e0bf711cee67223189dff732e9b89093f5460e793fae9a57e56953d109a"
+      },
+      "runtime": {
+        "id": "hw_candy_cauldron",
+        "kind": "decor",
+        "collection": "festival",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Vạc kẹo sôi",
+        "group": "Góc phù thủy",
+        "file": "decor-assets/native/flow-hw_candy_cauldron.png",
+        "rightFile": "decor-assets/native/flow-hw_candy_cauldron_right.png",
+        "frames": [
+          "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+          "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+          "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+          "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png"
+        ],
+        "rightFrames": [
+          "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+          "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+          "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
+          "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png"
+        ],
+        "atlasRects": [
+          {
+            "x": 0,
+            "y": 0,
+            "w": 96,
+            "h": 112
+          },
+          {
+            "x": 96,
+            "y": 0,
+            "w": 96,
+            "h": 112
+          },
+          {
+            "x": 192,
+            "y": 0,
+            "w": 96,
+            "h": 112
+          },
+          {
+            "x": 288,
+            "y": 0,
+            "w": 96,
+            "h": 112
+          }
+        ],
+        "rightAtlasRects": [
+          {
+            "x": 0,
+            "y": 112,
+            "w": 96,
+            "h": 112
+          },
+          {
+            "x": 96,
+            "y": 112,
+            "w": 96,
+            "h": 112
+          },
+          {
+            "x": 192,
+            "y": 112,
+            "w": 96,
+            "h": 112
+          },
+          {
+            "x": 288,
+            "y": 112,
+            "w": 96,
+            "h": 112
+          }
+        ],
+        "durations": [
+          700,
+          300,
+          220,
+          800
+        ],
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 108,
+        "bounds": {
+          "x": 3,
+          "y": 33,
+          "w": 90,
+          "h": 75
+        },
+        "rightBounds": {
+          "x": 2,
+          "y": 35,
+          "w": 93,
+          "h": 73
+        },
+        "footprintTiles": [
+          1,
+          1
+        ],
+        "motion": "bubbles",
+        "framesIdentical": false,
+        "nativeSha256": "894391319a66de7de21a892d8dae28e04bf85af0e8c0f899c53d2f1b0f3fa52d"
+      }
+    }
+  ]
+}

@@ -1,15 +1,14 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.79';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.79';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.79";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.79";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP} from "./ui-utils.mjs?v=24.9.79";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.79";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.79";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.79";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.79";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.79";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.79";
-
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.80';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.80';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.80";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.80";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=24.9.80";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.80";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.80";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.80";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.80";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.80";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.80";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -199,7 +198,7 @@ export function createPanels(ctx){
     const jobs=grid();
     for(const j of s.jobs){
      const r=DB.recipes.find(r=>r.id===j.recipeId),k=card(r.label,j.count+" "+label(j.output),`recipe_${r.id}`);
-     k.append(timer(j.readyAt),readyButton("Nhận",j.readyAt,()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"})),...speedButton("boost",{action:"boost",jobId:j.id},j.readyAt));
+     k.append(recipeOutput(items,label,r.output,j.count,34),timer(j.readyAt),readyButton("Nhận",j.readyAt,()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"})),...speedButton("boost",{action:"boost",jobId:j.id},j.readyAt));
      jobs.append(k);
     }
     body.append(jobs);
@@ -209,7 +208,7 @@ export function createPanels(ctx){
     const n=r.hours?1:batches,locked=r.level>s.level,missing=Object.entries(r.inputs).some(([id,q])=>s.inventory[id]<q*n),busy=r.hours&&s.jobs.some(j=>j.station===r.station),k=card(r.label,"Cấp "+r.level+" · "+hours(realHours(r,s.level))+" · "+r.station,`recipe_${r.id}`);
     k.classList.toggle("locked",locked);
     for(const[id,q]of Object.entries(r.inputs))k.append(paragraph(label(id)+": "+num(s.inventory[id]||0)+" / "+num(q*n),s.inventory[id]<q*n?"missing":"meta"));
-    k.append(paragraph("Nhận "+(r.count*n)+" "+label(r.output)),button(locked?"Cấp "+r.level:busy?"Đang làm":"Làm",()=>run(x=>E.craft(x,r.id,n,Date.now()),r.hours?"Đã bắt đầu mẻ.":"Đã chế biến thành phẩm.",{action:"craft",recipeId:r.id,batches:n}),{disabled:locked||missing||busy,class:"primary"}));
+    k.append(recipeOutput(items,label,r.output,r.count*n),button(locked?"Cấp "+r.level:busy?"Đang làm":"Làm",()=>run(x=>E.craft(x,r.id,n,Date.now()),r.hours?"Đã bắt đầu mẻ.":"Đã chế biến thành phẩm.",{action:"craft",recipeId:r.id,batches:n}),{disabled:locked||missing||busy,class:"primary"}));
     g.append(k);
    }
    body.append(g);
@@ -342,6 +341,7 @@ export function createPanels(ctx){
     return makeInvCard({
      id,
      visualId:id,
+     kind:"harvest",
      title:label(id),
      subtitle:crop?`Nông sản · ${hours(realHours(crop,getState().level))}`:"Nông sản thu hoạch",
      qty:q,
@@ -357,7 +357,7 @@ export function createPanels(ctx){
     return makeInvCard({
      id,
      visualId:id,
-     kind:creatureId?"food":"",
+     kind:creatureId?"food":"output",
      title:label(id),
      subtitle:sub,
      qty:q,

@@ -1,7 +1,7 @@
 // Reward feedback that lives above the canvas: "+N" chips fly from the plot or
 // creature into the Kho/level buttons, which then bump. Reduced motion keeps
 // the same chips but only fades them in place beside the target.
-import {el, visualItemIcon} from './ui-utils.mjs?v=24.9.79';
+import {cropVisualKind, el, visualItemIcon} from './ui-utils.mjs?v=24.9.80';
 
 /** Positive inventory changes between two progression snapshots, largest first. */
 export function rewardDeltas(before = {}, after = {}) {
@@ -28,7 +28,7 @@ export function createJuice({layer, items, reducedMotion}) {
     if (!to || !amount) return;
     const node = el('div', {class: `juice-chip${size > 1 ? ' is-combo' : ''}`, 'aria-hidden': 'true'}, [
       el('b', {text: `+${amount}`}),
-      id ? visualItemIcon(items, id, {size: 22}) : el('span', {class: 'juice-chip-label', text: label}),
+      id ? visualItemIcon(items, id, {size: 22, kind: cropVisualKind(id)}) : el('span', {class: 'juice-chip-label', text: label}),
     ]);
     layer.append(node);
     const still = reducedMotion() || !from;

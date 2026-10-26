@@ -1,6 +1,7 @@
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.79';
-import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.79';
-import { DB } from './balance-data.mjs?v=24.9.79';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.80';
+import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.80';
+import { DB } from './balance-data.mjs?v=24.9.80';
+import { makeRecipeIcon } from './recipe-art-ui.mjs?v=24.9.80';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);
@@ -152,11 +153,6 @@ function chipLabel(label) {
   return String(label).replace(/^(Khẩu phần |Nuôi )/, '');
 }
 
-// Recipe tiles show the exact recipe identity; output chips below keep the canonical product art.
-function makeRecipeIcon(recipe, items) {
-  return visualItemIcon(items, `recipe_${recipe.id}`, { size: 40 });
-}
-
 function makeExpansionIcon(expansion, items) {
   return visualItemIcon(items, expansion.id, { size: 40 });
 }
@@ -196,6 +192,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     craft: { selectedId: null, batches: 1, dom: null, buttons: new Map(), badges: new Map() },
     build: { selectedId: null, dom: null, buttons: new Map(), badges: new Map() },
   };
+  const cropIds = new Set((E.DB.crops ?? []).map(crop => crop.id));
 
   const db = E.DB;
   const currentState = () => getState();
@@ -308,7 +305,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       const badge = el('span', { class: 'tray-badge' });
       badge.hidden = true;
       trayButton.append(
-        mode === 'craft' ? makeRecipeIcon(entry, items) : makeExpansionIcon(entry, items),
+        mode === 'craft' ? makeRecipeIcon(entry, items, 40, labels) : makeExpansionIcon(entry, items),
         el('span', { class: 'tray-label', text: mode === 'craft' ? chipLabel(entry.label) : title }),
         badge,
       );
@@ -345,11 +342,11 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       class: 'dock-cost' + (have < need ? ' is-short' : ''),
       'aria-hidden': 'true',
       title: `${readLabel(labels, id)}: cần ${num(need)}, có ${num(have)}`,
-    }, [visualItemIcon(items, id, { size: 22 }), el('b', { text: `×${num(need)}` }), el('small', { text: have < need ? `thiếu ${num(need - have)}` : `có ${num(have)}` })]));
+    }, [visualItemIcon(items, id, { size: 22, kind: cropIds.has(id) ? 'harvest' : 'output' }), el('b', { text: `×${num(need)}` }), el('small', { text: have < need ? `thiếu ${num(need - have)}` : `có ${num(have)}` })]));
     if (galleons) chips.push(el('span', { class: 'dock-cost is-galleons' + (galleonShort ? ' is-short' : ''), 'aria-hidden': 'true' }, [pixelIcon('coin', 1), el('b', { text: num(galleons) })]));
     if (output) {
       const chip = el('span', { class: 'dock-cost is-output', 'aria-hidden': 'true', title: `+${num(output.count)} ${readLabel(labels, output.id)}` });
-      chip.append(el('span', { class: 'dock-cost-arrow', text: '→' }), visualItemIcon(items, output.id, { size: 22 }), el('b', { text: `+${num(output.count)}` }));
+      chip.append(el('span', { class: 'dock-cost-arrow', text: '→' }), visualItemIcon(items, output.id, { size: 22, kind: 'output' }), el('b', { text: `+${num(output.count)}` }));
       chips.push(chip);
     }
     if (reason) chips.push(el('span', { class: 'dock-cost-reason', text: reason, 'aria-hidden': 'true' }));
@@ -371,7 +368,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       const bar = el('span', { class: 'work-job-bar', 'aria-hidden': 'true' }, el('i', { style: `width:${share}%` }));
       const time = el('span', { class: 'work-job-time' + (done ? ' ready-text' : ''), 'data-until': end, 'data-prefix': 'còn ', text: done ? 'Xong' : `còn ${duration(end - now)}` });
       return el('div', { class: 'work-job' + (done ? ' is-ready' : '') }, [
-        visualItemIcon(items, recipe ? `recipe_${recipe.id}` : job.id, { size: 26 }),
+        recipe ? makeRecipeIcon(recipe, items, 26, labels) : visualItemIcon(items, job.id, { size: 26 }),
         el('span', { class: 'work-job-name', text: name }),
         bar,
         time,

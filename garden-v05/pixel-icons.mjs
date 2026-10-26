@@ -1,7 +1,7 @@
 // HUD and action icons: 16×16 pixel grids in the approved palette (docs/art-bible.md),
 // drawn as crisp SVG <img> at integer scales only (1× = 16 px, 2× = 32 px).
 // Crops and creatures keep their own game sprites (ui-utils icon()).
-import {el, num, visualItemIcon} from './ui-utils.mjs?v=24.9.79';
+import {cropVisualKind, el, num, visualItemIcon} from './ui-utils.mjs?v=24.9.80';
 
 const INK = Object.freeze({
  k: '#231F2E', p: '#4A3042', b: '#735044', w: '#A57554',
@@ -832,7 +832,7 @@ export function setAction(buttonEl, {icon, label = '', count = '', text = label,
  */
 export function costChips(items, costs, galleons = 0, galleonShort = false) {
  const chips = costs.map(({id, have, need}) => el('span', {class: 'dock-cost' + (have < need ? ' is-short' : ''), 'aria-hidden': 'true'},
-  [visualItemIcon(items, id, {size: 22}), el('span', {text: `${num(have)}/${num(need)}`})]));
+  [visualItemIcon(items, id, {size: 22, kind: cropVisualKind(id)}), el('span', {text: `${num(have)}/${num(need)}`})]));
  if (galleons) chips.push(el('span', {class: 'dock-cost is-galleons' + (galleonShort ? ' is-short' : ''), 'aria-hidden': 'true'}, [pixelIcon('coin', 1), el('span', {text: num(galleons)})]));
  return chips;
 }
@@ -843,7 +843,7 @@ export function rewardChips(items, reward = {}) {
  if (reward.kind === 'water' && reward.amount) add(pixelIcon('water', 1), reward.amount);
  if (reward.kind === 'boost' && reward.amount) add(pixelIcon('boost', 1), reward.amount);
  if (reward.waterBonus) add(pixelIcon('water', 1), reward.waterBonus);
- if (reward.itemId && reward.bonusQty) add(visualItemIcon(items, reward.itemId, {size: 20}), reward.bonusQty);
+ if (reward.itemId && reward.bonusQty) add(visualItemIcon(items, reward.itemId, {size: 20, kind: cropVisualKind(reward.itemId)}), reward.bonusQty);
  if (reward.eventPoints) add(pixelIcon('festival', 1), reward.eventPoints);
  if (!chips.length && reward.label) chips.push(el('span', {class: 'reward-chip', text: reward.label}));
  return el('span', {class: 'reward-chips', role: 'img', 'aria-label': reward.label || '', title: reward.label || ''}, chips);

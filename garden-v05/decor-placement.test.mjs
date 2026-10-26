@@ -98,11 +98,12 @@ test('2×1 and 3×1 pieces may stand on a path; 2×2 and up may not', () => {
   assert.match(at(7, 8.5, {itemId: 'sp_aragog_hollow'}), /lối đi/);
 });
 
- test('zero-count keepsake keys reserve no land; earned keepsakes protect their actual band, not the later field',()=>{
+ test('zero-count keepsake keys reserve no land; earned keepsakes protect their own base, not a whole strip',()=>{
  const state={plots:[],built:[],decorations:[],keepsakes:{puffskein:0}};
  assert.equal(at(10,30,{state,decorations:{}}),'');
  state.keepsakes.puffskein=1;assert.equal(at(10,30,{state,decorations:{}}),'');
- assert.match(at(10,26,{state,decorations:{}}),/kỷ vật/);
+ assert.equal(at(10,26,{state,decorations:{}}),'');
+ assert.match(at(4.5,24.5,{state,decorations:{}}),/kỷ vật/);
  });
 
 // Owner 25/10/2026: pieces stood over plots, pens, the hut and each other. Done when every piece fits many

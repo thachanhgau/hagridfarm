@@ -38,7 +38,7 @@ const HOUR = 60 * 60 * 1000;
 const day = (hours) => hours * HOUR;
 // The approved source predates the Lý Lan name pass (V24.9.2); numbers must match exactly,
 // names are compared after the same renames the game applied.
-const LY_LAN_NAMES = [['Bằng Mã', 'Bằng-Mã'], ['Thestral', 'Vong mã'], ['Mandrake', 'Nhân sâm'], ['Bạch tiên', 'Bạch tiễn'], ['Bowtruckle', 'Que Xạo'], ['Niffler', 'Đào mỏ']];
+const LY_LAN_NAMES = [['Bằng Mã', 'Bằng-Mã'], ['Thestral', 'Vong mã'], ['Mandrake', 'Nhân sâm'], ['Bạch tiên', 'Bạch tiễn'], ['Bowtruckle', 'Que Xạo'], ['Niffler', 'Đào mỏ'], ['Sợi lông ba màu', 'Sợi lông trắng Chó ba đầu'], ['Cần mới', 'Có sprite']];
 const APPROVED = levelP1(JSON.parse(
   LY_LAN_NAMES.reduce((text, [from, to]) => text.replaceAll(from, to), readFileSync(new URL('../outputs/hagrid-levels-20261013/balance-data.json', import.meta.url), 'utf8')),
 ));

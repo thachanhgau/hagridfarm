@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "mimbulus",
+      "kind": "crop",
+      "master": "masters-flow-v1/mimbulus-v1.png",
+      "prompt": "Use case: stylized-concept. Production Hagrid Farm crop sprite atlas, ONE species only: Mimbulus mimbletonia. Reference image is only the existing game's pixel-art style and ground pivot, not a subject to copy. Create a clearly GREY cactus-like squat magical plant with swollen rounded lobes and boils instead of spines; no orange mushroom caps, no flowers. Cozy chunky pixel clusters, selective dark plum contour, upper-left light, 2:1 dimetric angle. Transparent alpha background, no labels/text, no border. Exactly FOUR rows with FOUR equal cells per row: row1 four growth stages seedling/tiny/young/mature; row2 four distinct mature idle poses subtle swelling and slight foliage breathing, fixed root; row3 first four care/action poses prepare/swell/lean/green stinksap release; row4 first TWO cells recovery/settle, last TWO cells fully transparent empty. Fourteen complete separate silhouettes total. Each cell has at least25% transparent space on all sides, roots same baseline in each row; no detached particles crossing gutters. All mature frames same scale and grey identity. Designed to be sampled to64x96 canvas, plant ink <=50x60 pixels. Restricted game palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Crisp pixel art, avoid painted gradients, blur, ground shadow and pots.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-eaf84ec9-97d0-47ab-b692-f6349192e204.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "bubotuber",
+      "kind": "crop",
+      "master": "masters-flow-v1/bubotuber-v1.png",
+      "prompt": "Use case: stylized-concept. Production crop animation atlas for ONE Bubotuber plant: upright THICK BLACK SLUG-like stems rooted in soil with large rounded glossy pustules, charcoal purple body and restrained yellow-green swellings. Cute magical herb, absolutely no orange mushrooms, no mushroom caps or petals. Small connected earth/root base. ONE species, exactly four rows of four equal cells. Row1 FOUR growth stages small/young/half-grown/mature. Row2 FOUR mature idle poses with fixed roots. Row3 FOUR action poses prepare/lean/stretch/peak. Row4 first TWO recovery/settle poses, last TWO cells empty transparent.14 complete separate silhouettes, clear transparent gutters and at least20% blank cell margins. No text, labels, borders, ground shadows or pots. Root baseline stable. True chunky pixel-art clusters, upper-left light, selective dark plum outline,2:1 dimetric camera. Each mature pose same size; designed for64x96 canvas and50x60 ink.Restrained Hagrid game palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-c3a691f6-28c3-434f-aaac-5cf48d47f03a.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "flitterbloom",
+      "kind": "crop",
+      "master": "masters-flow-v1/flitterbloom-v1.png",
+      "prompt": "Use case: stylized-concept. Production crop animation atlas for ONE Flitterbloom, a FRIENDLY magical vine visually related to Devil's Snare: soft green looping stems, broad rounded leaves, loose open curls and tiny pale mint buds; no predatory teeth, no eyes, no bell-shaped flowers. Distinct gentle rounded silhouette, rooted vine cluster. ONE species, exactly four rows of four equal cells. Row1 FOUR growth stages small/young/half-grown/mature. Row2 FOUR mature idle poses with fixed roots. Row3 FOUR action poses prepare/lean/stretch/peak. Row4 first TWO recovery/settle poses, last TWO cells empty transparent.14 complete separate silhouettes, clear transparent gutters and at least20% blank cell margins. No text, labels, borders, ground shadows or pots. Root baseline stable. True chunky pixel-art clusters, upper-left light, selective dark plum outline,2:1 dimetric camera. Each mature pose same size; designed for64x96 canvas and50x60 ink.Restrained Hagrid game palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-92ab9447-8024-48e4-add7-ec0e26479505.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "produce_three-headed-dog",
+      "kind": "produce",
+      "master": "masters-flow-v1/produce_three-headed-dog-v1.png",
+      "prompt": "Use case: stylized-concept. ONE small Hagrid inventory icon: a loose collected tuft of SOFT WHITE FUR from a white three-headed dog, bound with a short plum ribbon, three airy off-white tufts with grey/lavender shadow. No animal face, no head, no brown wool, no multicolour yarn skeins. 2:1 dimetric cozy chunky pixel art, selective dark plum outline, upper-left lighting, legible at40x40 pixels. Isolated complete object centered in a64x64 logical canvas with generous25% alpha margin, truly transparent background; no text, frame, ground shadow. Restrained Hagrid game palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-4a9e784e-e590-4825-93b1-25ff7e8f1aed.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "produce_thestral",
+      "kind": "produce",
+      "master": "masters-flow-v1/produce_thestral-v1.png",
+      "prompt": "Use case: stylized-concept. ONE small Hagrid inventory icon: a tidy bundle of LONG LOOSE BLACK-PURPLE THIN MANE HAIRS naturally collected from a Thestral, slender flowing fibres tied in the middle with a small ochre string. Clearly a MATERIAL bundle, no animal head, no horse face, no eye, no wings, no skull, no feather. Cozy chunky pixel clusters, 2:1 dimetric, dark plum contour and upper-left lighting. Designed for64x64 canvas with ink <=40x40; centered isolated complete object,25% true transparent alpha margin. No text, border or ground shadow. Restrained Hagrid game palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-c02b6991-c28a-4fed-ae29-1e2cb348c1c5.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_pumpkin",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_pumpkin-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE harvested orange pumpkin fruit, deep clearly separated ribs, short curved brown stem and ONE small green leaf; no roots, vines, patch or leaves below fruit. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-cfbf97f5-7e05-46ff-bf36-8a1f23d0546a.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_oats",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_oats-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE short tied sheaf of ripe golden oat seed heads,3 drooping panicles with visibly large grains and trimmed stalk ends; no soil or rooted growing plant. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-aacc092e-b4c7-4b13-b089-231ba67c7bda.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_carrot",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_carrot-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE harvested bunch of three orange carrots with small trimmed green tops, tied with a fine ochre cord; no soil or roots beyond the carrot taproots. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-d2ccfaad-bd03-47ae-b1d9-6423ede17998.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_lettuce",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_lettuce-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE fresh cut pale-green lettuce head, round layered broad leaves with a visible clean cut base; no earth or growing plot. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-335138dc-ecb9-42a2-8755-a1d5a2fa33e6.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_strawberry",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_strawberry-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: THREE picked ripe red strawberries, two in front one behind, large readable seeds and short green calyx; no bush, stem, flowers or basket. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-902bef20-4762-4f22-b7fe-76a8b1e4a8a9.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_daisy",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_daisy-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE small gathered bunch of three white daisies with golden centers, short stems tied together, a few green leaves; harvested herb icon, no roots, vase or flowerpot. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-4ce6c228-b0d6-4be0-8b87-9e2ae548c98a.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_dittany",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_dittany-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: ONE gathered herb bunch of rounded/oval soft green dittany leaves and TWO tiny pale cream blossoms, bound with ochre string; distinguish from generic white daisies, no roots or pot. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-852e06bb-3ec0-4ea6-9c5b-c76a667f006e.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_puffapod",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_puffapod-v1.png",
+      "prompt": "Use case: stylized-concept. ONE production harvested ingredient icon for Hagrid Farm inventory, not a whole live plant. Cozy chunky true pixel-art clusters with selective dark plum outline, upper-left light, slight2:1 dimetric view. Strong simple silhouette, maximum2-3 palette ramps, no fine noisy details. Native target64x64 canvas with object ink <=40x40, centered and complete,25% genuinely transparent alpha margin on every side. No letters, text, label, border, scenery, ground shadow or glow. Subject: TWO picked round swollen warm pink-orange magical Puffapod seed pods with a small green calyx, one split to reveal two large shiny brown seeds; no rooted bush or pot. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-0197aa85-0053-4aef-9850-1de005a5ee57.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_mandrake",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mandrake-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested mandrake root, recognizable orange-brown root with a small clipped leaf tuft; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-8a858848-7bef-4a81-9f9c-bcf171da29d4.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_clover",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_clover-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested loose bunch of three-leaf clover leaves with short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no root, soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-dd0eb05f-46bf-4860-9a23-93f5f3ad6a6c.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_beet",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_beet-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested red beet root with a small trimmed green tuft and burgundy ridges; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-6edf00c3-ce11-4132-a742-e97349c14ad5.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_maize",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_maize-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached golden maize cob with peeled green husk leaves and visible kernels; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no stalk, soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a8bf5ac2-e69d-40da-82c6-5cbc34ed4ec5.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_moonherb",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_moonherb-v1.png",
+      "prompt": "Transparent chunky pixel-art small tied bundle of pale blue-silver moonherb sprigs with subtle crescent markings and no glow; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, pot, scene, shadow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-4dca866b-9b77-45a2-aa8c-1f6efeda4f27.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_flax",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_flax-v1.png",
+      "prompt": "Transparent chunky pixel-art compact tied bundle of pale flax stems and blue-gray fibers with tiny seed heads and cut ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-57526a57-c86d-4349-a466-f4b28c31b6bd.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_sunflower",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_sunflower-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested cluster of sunflower seeds with a few yellow petal remnants, no plate, stalk, or whole flower; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a3203e21-a3b7-478a-bd47-db3de4b4bd9c.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_valerian",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_valerian-v1.png",
+      "prompt": "Transparent chunky pixel-art compact tied harvested valerian bundle with pale cream-green leafy sprigs and short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-a1906016-9bd3-4a9f-a6a8-860f78bba1b4.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_mint",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mint-v1.png",
+      "prompt": "Transparent chunky pixel-art loose harvested mint bundle with rounded serrated green leaves, short cut stems and cut ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no pot, roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-c738148c-9973-4c8c-ad06-3595dddf4f18.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_blueberry",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_blueberry-v1.png",
+      "prompt": "Transparent chunky pixel-art small harvested cluster of three to five plump blue-violet blueberries with tiny clipped stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no bush, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-dc089782-44bc-4a74-b724-1ac49c77bd09.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_firepepper",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_firepepper-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested firepepper, a curved red-orange pepper with flame-like hooked tip and tiny clipped cap; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-71b2f067-1a94-4942-bcf0-2d3f406b30ca.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_silverkelp",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_silverkelp-v1.png",
+      "prompt": "Transparent chunky pixel-art harvested silver-kelp bundle of flat cool silver-blue ribbon fronds tied at clipped ends, stylized dried aquatic material; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no water scene, roots, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-d9199fd5-0ca6-49ea-85fe-892643cff361.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_starbean",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_starbean-v1.png",
+      "prompt": "Transparent chunky pixel-art one harvested star-bean ingredient, a warm-brown bean pod with a crisp five-point star silhouette and small warm seed inside; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-3a157236-f885-4746-b7af-e2ace54844a5.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_ambermelon",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_ambermelon-v1.png",
+      "prompt": "Transparent chunky pixel-art detached faceted ambermelon, one squat angular golden-amber fruit built from clear jewel-like planar facets, unmistakably not a ribbed pumpkin; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no leaves, plant, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-58b8b1bb-1b8e-46e8-bf02-e61afbd98cf1.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_mistmushroom",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mistmushroom-v1.png",
+      "prompt": "Transparent chunky pixel-art small loose cluster of three detached harvested mist mushrooms with pale violet and blue-gray caps and short cut stems; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, ground, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-3f79e430-8161-4266-9677-2bc79137f02f.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_sunpetal",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_sunpetal-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested sunpetal bouquet of warm yellow-orange petals gathered with short clipped stems, a petal material bundle rather than a rooted flower; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-5ec3f025-33f6-47a0-812e-6712f543c4e7.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_fluxweed",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_fluxweed-v1.png",
+      "prompt": "Transparent chunky pixel-art compact harvested fluxweed bundle of upright magical grass-like teal and olive stems tied at cut ends, distinct from flat silverkelp; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-d9cf5da0-03a9-43ed-b134-44cea6e31b1f.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_bubotuber",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_bubotuber-v1.png",
+      "prompt": "Transparent chunky pixel-art cropped collected dark upright bubotuber specimen: short purple-brown bulbous stem with muted olive raised round bumps and clean cut tip, no potion bottle; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no pot, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-9bf5b1e6-de03-48d4-8b7e-aa415e97787f.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_knotgrass",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_knotgrass-v1.png",
+      "prompt": "Transparent chunky pixel-art small harvested knotgrass bundle of wiry green-brown knotted stems and tiny leaves tied at clipped ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no soil, pot, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-9bbf7c9f-7cfd-4379-aef8-3ab67b8342a3.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_shrivelfig",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_shrivelfig-v1.png",
+      "prompt": "Transparent chunky pixel-art one detached harvested shrivelfig fruit, a small wrinkled dusky purple-brown fig with short clipped stem and angular creases; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no tree, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-f8938200-d6fa-40bf-9ad9-90ab8b1ff735.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_gillyweed",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_gillyweed-v1.png",
+      "prompt": "Transparent chunky pixel-art loose harvested gillyweed bundle of thin slimy green seaweed strands with rounded wet tips gathered at clipped ends; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no water scene, roots, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-4e2043fb-3115-440e-a6dc-5db36407b0d1.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_mimbulus",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_mimbulus-v1.png",
+      "prompt": "Transparent chunky pixel-art cropped collected small gray mimbulus cactus-like specimen: squat cool-gray bulb with pale raised round knobs and tiny clipped leaf nubs, clean cut sample, no green spray, mushroom, pot, or soil; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-55972fa9-b082-48f0-9290-eb158ad1237e.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_flitterbloom",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_flitterbloom-v1.png",
+      "prompt": "Transparent chunky pixel-art friendly loose rounded harvested flitterbloom vine bundle, soft green curled tendrils gathered into a compact ball with tiny pale buds and clipped ends, distinct from a dark vine coil; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no roots, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-550a6843-05e0-48f3-a340-b3be021b6d62.png",
+      "tool": "builtin image_gen"
+    },
+    {
+      "id": "harvest_devilssnare",
+      "kind": "harvest",
+      "master": "masters-flow-v1/harvest_devilssnare-v1.png",
+      "prompt": "Transparent chunky pixel-art dark thick tightly coiled harvested vine bundle, dense deep green and blue-green rope-like loops with a few hooked tips, compact shadowy coil with no flowers or bright friendly buds; selective dark plum outline, upper-left light, 2:1 dimetric, exact sprite palette, generous transparent margin, no root, soil, scene, shadow, glow, text, or border.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1764a-3c31-7723-8946-2c53d7fe9dbd/exec-2932e2c4-6eb9-42ed-8689-8790575f4f1d.png",
+      "tool": "builtin image_gen"
+    }
+  ]
+}
