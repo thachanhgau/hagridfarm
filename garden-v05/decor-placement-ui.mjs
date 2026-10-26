@@ -1,15 +1,16 @@
-import {GRID_STEP,spriteGridMetrics,worldToGrid,snapGridPoint} from './garden-grid.mjs?v=24.9.81';
-import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.81';
-export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.81';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.81';
-import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.81';
-import {el,button} from './ui-utils.mjs?v=24.9.81';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.81';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.81';
-import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.81';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.81';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.81';
-import {keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.81';
+import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.82';
+import {GRID_STEP,spriteGridMetrics,worldToGrid,snapGridPoint} from './garden-grid.mjs?v=24.9.82';
+import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.82';
+export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.82';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.82';
+import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.82';
+import {el,button} from './ui-utils.mjs?v=24.9.82';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.82';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.82';
+import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.82';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.82';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.82';
+import {keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.82';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 // Art bible §2: a large piece keeps 0.9 tile off the fence so its body never sits on the rails.
@@ -95,14 +96,14 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const penRects=(map?.pens??[]).filter(pen=>built.has(pen.id)||queued.has(pen.id)).map(pen=>groundRect('pen',pen,map));
  if(plotRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền thửa đất.';
  if(penRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền chuồng.';
- for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&hits(d.col-0.25,d.row-0.25,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
+ for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&!isDefaultDecorHidden(decorations,id)&&hits(d.col-0.25,d.row-0.25,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
  // Saves contain all species keys, including zero counts. Reserve only the
  // occupied statue bases and the narrow museum access route; the rest of the
  // south field remains usable.
- const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),iso,keepsakeAnchorRow);
+ const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),iso,keepsakeAnchorRow,decorations);
  if(keepsakes.ground.some(occupied=>rectIntersects(rect,occupied)))return 'Chân đài kỷ vật đang ở đây.';
  if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
- for(const o of map?.objects??[])if(rectsOverlap(rect,sceneryGroundRect(o.id,o.col,o.row)))return 'Chỗ này vướng cảnh vật.';
+ for(const o of map?.objects??[])if(!isDefaultDecorHidden(decorations,'scene:'+o.id)&&rectsOverlap(rect,sceneryGroundRect(o.id,o.col,o.row)))return 'Chỗ này vướng cảnh vật.';
  for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
  if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){
@@ -118,12 +119,12 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
   if(grounds.some(poly=>rectPolygonOverlap(mine,poly)>OVERLAP_SHARE*Math.min(mineArea,polygonArea(poly))))return 'Món này sẽ chồng lên thửa đất hoặc chuồng.';
   const others=[];
   // Like the renderer: oak and pine anchors are not drawn (the forest layers own the trees).
-  for(const o of map?.objects??[]){const prop=!['oak','pine'].includes(o.id)&&map.props?.find(p=>p.id===o.id);if(prop){const [ox2,oy2]=iso(o.col,o.row);others.push([SCENE_NAMES[o.id]||'cảnh vật',spriteRect(prop,'default',ox2,oy2)]);}}
+  for(const o of map?.objects??[]){const prop=!isDefaultDecorHidden(decorations,'scene:'+o.id)&&!['oak','pine'].includes(o.id)&&map.props?.find(p=>p.id===o.id);if(prop){const [ox2,oy2]=iso(o.col,o.row);others.push([SCENE_NAMES[o.id]||'cảnh vật',spriteRect(prop,'default',ox2,oy2)]);}}
   // The cottage corner is drawn 150×75 px at iso(-2, 5.5), see scene-renderer drawObject.
   {const [cx,cy]=iso(-2,5.5);others.push([SCENE_NAMES.hut,{left:cx-75,top:cy-67,right:cx+75,bottom:cy+8}]);}
   for(const w of wizardTargets(iso))others.push([SCENE_NAMES[w.id]||'công trình',w.bounds]);
   const rotations=state?.decorationRotations??{};
-  for(const d of decorationPlacements(map))if(state?.decorations?.includes(d.id)){
+  for(const d of decorationPlacements(map))if(state?.decorations?.includes(d.id)&&!isDefaultDecorHidden(decorations,d.id)){
    const art=earnedDecorArt(d.id,rotations[d.id]==='right'?'right':'default');
    if(art)others.push(['đồ trang trí của vườn',spriteRect({pivotX:48,pivotY:96,...art},'default',d.xy[0],d.xy[1])]);
   }

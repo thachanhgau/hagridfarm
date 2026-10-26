@@ -1,14 +1,15 @@
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.81';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.81';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.81";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.81";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=24.9.81";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.81";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.81";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.81";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.81";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.81";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.81";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=24.9.82';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.82';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.82';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.82";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.82";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=24.9.82";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.82";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.82";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.82";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.82";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.82";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.82";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -396,6 +397,7 @@ export function createPanels(ctx){
    const s=getState(),session=getSession(),wallet=ctx.getGalleons?.()??Infinity;
    const tile=(name,id,opts,...rest)=>el("article",{class:"card gp-tile","data-item-id":id},[el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,...opts})]),el("strong",{class:"gp-tile-name",text:name}),...rest]);
    const turnText=facing=>facing==="right"?"Đang nhìn phải ↗":"Đang nhìn trái ↖";
+   body.append(renderGardenDefaults(ctx,{s,wallet,tile,priceRow,canPay,run,refresh,turnText}));
 
    const decorState=ctx.getDecorations?.()??session?.decorations??{};
    const allDecors=[...(ctx.decorAssets?.values?.()??[])].filter(a=>a.rotatable||a.id?.startsWith("decor_"));
@@ -446,26 +448,10 @@ export function createPanels(ctx){
      el("div",{class:"gp-meter",role:"progressbar","aria-label":`${a.produce} ${q}/5`,"aria-valuemin":"0","aria-valuemax":"5","aria-valuenow":String(Math.min(q,5))},[el("span",{style:`width:${Math.min(100,q*20)}%`})]),
      el("small",{class:"gp-tile-sub",text:`${num(q)}/5 · ${kept} kỷ vật`}),
      el("div",{class:"gp-tile-actions"},[iconButton("trophy","Đổi kỷ vật "+a.label,()=>run(x=>E.exchangeKeepsake(x,a.id),"Đã đổi kỷ vật "+a.label+".",{action:"exchangeKeepsake",species:a.id}),{text:"Đổi",class:q>=5?"primary":"",disabled:q<5})]));
+    if(kept>0)k.append(defaultDecorToggle(ctx,"keepsake:"+a.id,"đài kỷ vật "+a.label,refresh));
     g.append(k);
    }
    if(g.childElementCount)body.append(el("h3",{class:"gp-section-title",text:"Kỷ vật sinh vật"}),g);
-   const dec=el("div",{class:"cards gp-tiles"});
-   const earnedRot=ctx.getEarnedDecorRotations?.()??s.decorationRotations??{};
-   for(const d of DB.decorations.filter(d=>d.level<=s.level)){
-    const owned=s.decorations.includes(d.id);
-    const facing=earnedRot[d.id]==="right"?"right":"default";
-    const k=tile(d.label,d.id,{kind:"decoration",facing,badge:"2 góc"});
-    if(!owned&&!d.free)k.append(priceRow(s,d,wallet));
-    const row=el("div",{class:"gp-tile-actions"});
-    if(owned)row.append(el("span",{class:"gp-state is-on",text:"Đã có"}));
-    else row.append(iconButton("plus","Nhận "+d.label,()=>run(x=>E.buyDecoration(x,d.level),"Đã thêm "+d.label+" vào vườn.",{action:"buyDecoration",level:d.level}),{text:"Nhận",class:"primary",disabled:s.level<d.level||!canPay(s,d,wallet)}));
-    if(owned&&ctx.rotateEarnedDecoration){
-     row.append(iconButton("arrow",`Xoay ${d.label} · ${turnText(facing)}`,()=>{ctx.rotateEarnedDecoration(d.id);refresh();},{"data-rotate-earned-decor":d.id,class:facing==="right"?"is-flipped":""}));
-    }
-    k.append(row);
-    dec.append(k);
-   }
-   if(dec.childElementCount)body.append(el("h3",{class:"gp-section-title",text:"Trang trí lối đi"}),dec);
   },
 
   layout(){

@@ -78,3 +78,11 @@ export function drawFootprintGrid(context, rect, project, fits) {
   context.stroke();
   context.restore();
 }
+
+export const FARM_LAYOUT = Object.freeze({
+  plotWidth: 3,
+  plotHeight: 3,
+  plotCount: 18,
+  penCount: 6,
+  creatureSpotCount: 12,
+});

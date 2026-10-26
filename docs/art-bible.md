@@ -22,6 +22,8 @@
   Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
   hệ số phóng riêng cho ô trồng. Bảng `garden-grid-metrics.json` phải được tạo
   từ bootstrap đầy đủ (cả các override), kiểm tra bằng `export-grid-metrics.mjs --check`.
+- Khi cất trang trí mặc định phải bỏ cả paint/pick và vùng chiếm chỗ; giữ
+  ownership và lưu theo tài khoản. Xem [hợp đồng cất/đặt lại](default-decor-20261026.md).
 
 ## 3. Bảng màu chuẩn: 32 màu (24 sprite + 8 cảnh)
 

@@ -1,39 +1,41 @@
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.81';
-import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.81';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.81';
-import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.81';
-import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields} from './decor-runtime.mjs?v=24.9.81';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.81';
-import {showStore} from './garden-store-ui.mjs?v=24.9.81';
-import {setupProfile} from './profile-ui.mjs?v=24.9.81';
-import * as E from './progression-engine.mjs?v=24.9.81';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.81';
-import {setupCamera} from './camera.mjs?v=24.9.81';
-import {createPanels} from './progression-panels.mjs?v=24.9.81';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.81';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.81';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.81';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.81';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.81';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.81';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.81';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.81';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.81';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.81';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.81';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.81';
-import {nextGoal} from './next-goal.mjs?v=24.9.81';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.81';
-import {createMissions} from './garden-missions-ui.mjs?v=24.9.81';
-import {createHagridWork} from './garden-work-ui.mjs?v=24.9.81';
-import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.81';
-import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.81';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.81';
+import {openGardenLayout} from './garden-layout-ui.mjs?v=24.9.82';
+import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=24.9.82';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.82';
+import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.82';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.82';
+import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.82';
+import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields} from './decor-runtime.mjs?v=24.9.82';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.82';
+import {showStore} from './garden-store-ui.mjs?v=24.9.82';
+import {setupProfile} from './profile-ui.mjs?v=24.9.82';
+import * as E from './progression-engine.mjs?v=24.9.82';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.82';
+import {setupCamera} from './camera.mjs?v=24.9.82';
+import {createPanels} from './progression-panels.mjs?v=24.9.82';
+import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.82';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.82';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.82';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.82';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.82';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.82';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.82';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.82';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.82';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.82';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.82';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.82';
+import {nextGoal} from './next-goal.mjs?v=24.9.82';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.82';
+import {createMissions} from './garden-missions-ui.mjs?v=24.9.82';
+import {createHagridWork} from './garden-work-ui.mjs?v=24.9.82';
+import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.82';
+import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.82';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.82';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.81':'./garden-emulator-client.mjs?v=24.9.81');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.82':'./garden-emulator-client.mjs?v=24.9.82');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -568,23 +570,14 @@ function tickTimers(){const now=logical();document.querySelectorAll('[data-until
 function draw(clock=performance.now()){const renderState=activeTourSnapshot?activeTourSnapshot.state:state;const renderAtmo=activeTourSnapshot?activeTourSnapshot.atmosphereMode:atmosphereMode;const renderWeather=activeTourSnapshot?activeTourSnapshot.weatherMode:weatherMode;const renderEarnedRot=activeTourSnapshot?activeTourSnapshot.decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations};renderer?.render(renderState,{labelScale:1/(camera?.scale?.()||1),selectedPlot,line:activeTourSnapshot?[]:mode==='plant'?chosen():[],now:Date.now(),clock:(!motionEnabled||motionMedia.matches)?0:clock,animationClock:clock,propsVisible,grid,decorations:currentDecorations(),decorationRotations:renderEarnedRot,creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities(),previewDecoration,previewLayout,atmosphereMode:renderAtmo,weatherMode:renderWeather,eventMode,...(activeTourSnapshot?{}:tutorialRenderOptions())});placeTutorialBubble();const stage=renderer?.growthStage?.();if(stage&&(!connected||walletReady)&&stage.id!==lastGardenStage){const previous=lastGardenStage;lastGardenStage=stage.id;$('gardenStageName').textContent=stage.name;$('plotsButton').title='Giai đoạn '+stage.id+'/6 · '+stage.name;if(!activeTourSnapshot&&previous&&stage.id>previous){camera?.overview();message('Khu vườn đã mở rộng · '+stage.name+'.');}}}
 camera=setupCamera({viewport:$('cameraViewport'),canvas:$('world'),map,iso,plotCorners,getRenderer:()=>renderer,getSelectedPlot:()=>selectedPlot,notify:message,onTap:(x,y)=>mapTap?.(x,y),onPick:cell=>{playtest.track('tap',{kind:cell.kind||'plot'});if(activeTourSnapshot){if(cell.kind==='creature'){audio.play('care');renderer?.animate('care',{species:cell.species});message(`🐾 Đang ghé thăm ${CREATURE[cell.species]?.label||cell.species} tại vườn của ${activeTourSnapshot.tour.ownerName}.`);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) của ${activeTourSnapshot.tour.ownerName}.`);return;}message(`🧭 Đang tham quan ${activeTourSnapshot.tour.title} · Nhấn "Chăm giúp" trên thanh điều hướng để nhận quà!`);return;}if(cell.kind==='decoration'){const item=decorAssets.get(cell.itemId)||wallet?.snapshot?.catalog.find(i=>i.id===cell.itemId);if(item)openDecoration(item);return;}if(cell.kind==='earned-decoration'){rotateEarnedDecoration(cell.itemId);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) · Minh chứng vinh danh người giữ vườn.`);return;}if(cell.kind==='wizard'){audio.play('owl');wizard?.visit(cell.id);return;}if(cell.kind==='creature'&&cell.guest){feedTutorialGuest();return;}if(cell.kind==='creature'){selectCreature(cell.species);handlePetCreature(cell.species);return;}selectedPlot=cell.plot;setMode('plant');if(direction==='horizontal')line=Math.floor(cell.index/3);else if(direction==='vertical')line=cell.index%3;else if([0,8].includes(cell.index))line=0;else if([2,6].includes(cell.index))line=1;else if(cell.index!==4)message('Ô này không nằm trên đường chéo.');refresh();}});
 function openVisualLayout(){
- panels?.close();
- showVisualLayoutModal({
+ return openGardenLayout({
+  panels,E,layoutSlots,camera,iso,run,draw,
   getState:()=>state,
   getStage:()=>renderer?.growthStage?.(),
-  layoutSlots,
-  E,
-  camera,
-  iso,
   preview:val=>{previewLayout=val;draw();},
-  onMove:async(kind,index,targetSlot)=>{
-   const name=(kind==='plot'?'Thửa ':'Chuồng ')+(index+1);
-   await run(x=>E.moveBuilding(x,kind,index,targetSlot),`Đã chuyển ${name} sang Nền ${targetSlot+1}.`,{action:'moveBuilding',kind,index,targetSlot});
-  },
-  onClose:()=>draw(),
  });
 }
-panels=createPanels({getGuide:guideState,E,items,labels,layoutSlots,decorAssets,getDecorations:currentDecorations,openDecorate:openDecoration,quickRotateDecor:async(itemId,facing)=>{const spot=decorSpot(currentDecorations(),itemId),blocked=spot&&decorSpotProblem(spot[0],spot[1],{map,stage:renderer?.growthStage?.(),state,decorations:currentDecorations(),itemId,facing,asset:decorAssets.get(itemId),iso,assetOf:id=>decorAssets.get(id)});if(blocked){message(`Không xoay tại chỗ được: ${blocked} Bấm «Đặt» để dời món sang chỗ khác.`);return;}const prior=structuredClone(currentDecorations()??{});localDecorRotations[itemId]=facing;persistPrefs();audio.play('rotate');recordFestivalAction('rotate');wizard?.recordQuestAction?.('rotate');const at=decorSpot(currentDecorations(),itemId);if(wallet&&at){try{const before=state;await wallet.act({action:'placeDecoration',...decorPlaceFields(prior,itemId,at,facing)});acceptWallet(before,'',false);}catch(e){showRefusal(e);return;}}syncHudV20Buttons();draw();const turned=`Đã xoay sang ${facing==='right'?'Góc nhìn qua phải ↗':'Góc hiện tại ↖'}.`;if(wallet&&at)offerDecorUndo(prior,itemId,turned);else message(turned);},getEarnedDecorRotations:()=>({...state?.decorationRotations,...earnedDecorRotations}),rotateEarnedDecoration,getCreatureFacings:currentCreatureFacings,rotateCreatureFacing,getAffinityMap:()=>currentAffinitySummary().bySpeciesMap,openVisualLayout,getPostcard:postcardOptions,getAtmosphere:()=>atmosphereConfig(atmosphereMode),cycleAtmosphere,onSetAtmosphere:setAtmosphere,getWeather:()=>weatherConfig(weatherMode),cycleWeather,onSetWeather:setWeather,getEvent:()=>eventConfig(eventMode),onApplyEventTheme:applyEventTheme,onClaimEventMilestone:handleClaimEventMilestone,onClaimDailyQuest:handleClaimDailyQuest,onClaimGrandChest:handleClaimGrandChest,onPetCreature:handlePetCreature,onClaimAffinityGift:handleClaimAffinityGift,getActiveTourId:()=>activeTourSnapshot?.tour?.id||null,startTour,stopTour,helpTour,memberVisits:connected?close=>renderMemberVisits({level:state.level,load:()=>wallet.visit({}),onVisit:uid=>{close();startVisit(uid);}}):null,getAchievementExtra,openHagridWork:connected?()=>{panels.close();hagridWork.open();}:null,canSaleAcp:()=>Boolean(connected&&walletReady&&wallet.snapshot?.saleAdmin),openSaleAcp:()=>{panels.close();saleAcp.open();},onSelectTitle:handleSelectTitle,onClaimAchievement:handleClaimAchievement,getSoundEnabled:()=>audio.enabled,toggleAudio,shareToFloo,getState:()=>state,getGardenStage:()=>renderer?.growthStage?.(),run,notify:message,selectCrop,selectCreature,focusPlot,camera,getSelection:()=>({selectedPlot,cells:chosen(),seed,species}),getSession:()=>({session,qa,saveAvailable,saveProblem,connected,isPreview:!!wallet?.isPreview}),getSupplies:currentSupplies,getGalleons,openStore:f=>openStore(f),openProfile:connected?null:()=>{panels.close();profileUI.show();},openHagridLetter:()=>openHagridLetter('keepsake'),replayTutorial,switchSession,exportSave,getViewPreferences:()=>({motionEnabled,systemReducedMotion:motionMedia.matches,propsVisible,grid}),toggleMotion:()=>{if(motionMedia.matches)return false;motionEnabled=!motionEnabled;persistPrefs();syncMotionPreference();draw();return motionEnabled;},toggleProps:()=>{propsVisible=!propsVisible;persistPrefs();draw();return propsVisible;},toggleGrid:()=>{grid=!grid;persistPrefs();draw();return grid;},tickTimers,exportPlaytest:playtest.enabled?exportPlaytest:null});
+panels=createPanels({setDefaultDecorVisibility:(id,visible)=>changeDefaultDecorationVisibility({map,iso,getState:()=>state,getStage:()=>renderer?.growthStage?.(),getDecorations:currentDecorations,assetOf:id=>decorAssets.get(id),run,notify:message},id,visible),getGuide:guideState,E,items,labels,layoutSlots,decorAssets,getDecorations:currentDecorations,openDecorate:openDecoration,quickRotateDecor:async(itemId,facing)=>{const spot=decorSpot(currentDecorations(),itemId),blocked=spot&&decorSpotProblem(spot[0],spot[1],{map,stage:renderer?.growthStage?.(),state,decorations:currentDecorations(),itemId,facing,asset:decorAssets.get(itemId),iso,assetOf:id=>decorAssets.get(id)});if(blocked){message(`Không xoay tại chỗ được: ${blocked} Bấm «Đặt» để dời món sang chỗ khác.`);return;}const prior=structuredClone(currentDecorations()??{});localDecorRotations[itemId]=facing;persistPrefs();audio.play('rotate');recordFestivalAction('rotate');wizard?.recordQuestAction?.('rotate');const at=decorSpot(currentDecorations(),itemId);if(wallet&&at){try{const before=state;await wallet.act({action:'placeDecoration',...decorPlaceFields(prior,itemId,at,facing)});acceptWallet(before,'',false);}catch(e){showRefusal(e);return;}}syncHudV20Buttons();draw();const turned=`Đã xoay sang ${facing==='right'?'Góc nhìn qua phải ↗':'Góc hiện tại ↖'}.`;if(wallet&&at)offerDecorUndo(prior,itemId,turned);else message(turned);},getEarnedDecorRotations:()=>({...state?.decorationRotations,...earnedDecorRotations}),rotateEarnedDecoration,getCreatureFacings:currentCreatureFacings,rotateCreatureFacing,getAffinityMap:()=>currentAffinitySummary().bySpeciesMap,openVisualLayout,getPostcard:postcardOptions,getAtmosphere:()=>atmosphereConfig(atmosphereMode),cycleAtmosphere,onSetAtmosphere:setAtmosphere,getWeather:()=>weatherConfig(weatherMode),cycleWeather,onSetWeather:setWeather,getEvent:()=>eventConfig(eventMode),onApplyEventTheme:applyEventTheme,onClaimEventMilestone:handleClaimEventMilestone,onClaimDailyQuest:handleClaimDailyQuest,onClaimGrandChest:handleClaimGrandChest,onPetCreature:handlePetCreature,onClaimAffinityGift:handleClaimAffinityGift,getActiveTourId:()=>activeTourSnapshot?.tour?.id||null,startTour,stopTour,helpTour,memberVisits:connected?close=>renderMemberVisits({level:state.level,load:()=>wallet.visit({}),onVisit:uid=>{close();startVisit(uid);}}):null,getAchievementExtra,openHagridWork:connected?()=>{panels.close();hagridWork.open();}:null,canSaleAcp:()=>Boolean(connected&&walletReady&&wallet.snapshot?.saleAdmin),openSaleAcp:()=>{panels.close();saleAcp.open();},onSelectTitle:handleSelectTitle,onClaimAchievement:handleClaimAchievement,getSoundEnabled:()=>audio.enabled,toggleAudio,shareToFloo,getState:()=>state,getGardenStage:()=>renderer?.growthStage?.(),run,notify:message,selectCrop,selectCreature,focusPlot,camera,getSelection:()=>({selectedPlot,cells:chosen(),seed,species}),getSession:()=>({session,qa,saveAvailable,saveProblem,connected,isPreview:!!wallet?.isPreview}),getSupplies:currentSupplies,getGalleons,openStore:f=>openStore(f),openProfile:connected?null:()=>{panels.close();profileUI.show();},openHagridLetter:()=>openHagridLetter('keepsake'),replayTutorial,switchSession,exportSave,getViewPreferences:()=>({motionEnabled,systemReducedMotion:motionMedia.matches,propsVisible,grid}),toggleMotion:()=>{if(motionMedia.matches)return false;motionEnabled=!motionEnabled;persistPrefs();syncMotionPreference();draw();return motionEnabled;},toggleProps:()=>{propsVisible=!propsVisible;persistPrefs();draw();return propsVisible;},toggleGrid:()=>{grid=!grid;persistPrefs();draw();return grid;},tickTimers,exportPlaytest:playtest.enabled?exportPlaytest:null});
 const hagridWork=createHagridWork({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),deliver:orderId=>serverClaim({action:'deliverOrder',orderId}),setFrame:async frameKey=>{try{return await wallet.frame(frameKey);}catch(e){showRefusal(e);return {ok:false};}},items,notify:message});
 const saleAcp=createSaleAcp({call:data=>wallet.sales(data),notify:message});
 const missions=createMissions({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),claim:missionId=>serverClaim({action:'claimMission',missionId}),claimBacklog:()=>serverClaim({action:'claimMissionBacklog'}),claimEvent:taskId=>serverClaim({action:'claimDayEvent',taskId}),notify:message});

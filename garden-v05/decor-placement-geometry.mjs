@@ -1,5 +1,6 @@
-import {KEEPSAKE_ART} from './complete-object-art.mjs?v=24.9.81';
-import {stageContains} from './garden-growth.mjs?v=24.9.81';
+import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.82';
+import {KEEPSAKE_ART} from './complete-object-art.mjs?v=24.9.82';
+import {stageContains} from './garden-growth.mjs?v=24.9.82';
 
 // The scene opens one half-tile beyond the old server adapter. Keep this small
 // contract in one client module so placement, rendering and tests do not each
@@ -125,13 +126,13 @@ export function keepsakeSpriteRect(placement, iso, stage = null, anchorRow = nul
   return {left, top, right: left + bounds.w, bottom: top + bounds.h};
 }
 
-export function keepsakeObstacles(state, stage, iso, anchorRow = null) {
+export function keepsakeObstacles(state, stage, iso, anchorRow = null, decorations = null) {
   const source = state?.keepsakes;
   if (!source || typeof source !== 'object' || Array.isArray(source)) {
     return {placements: [], ground: [], screen: [], access: isFinalKeepsakeStage(stage) ? KEEPSAKE_ACCESS_PATHS : []};
   }
   const placements = keepsakeDisplayPlacements(stage, anchorRow)
-    .filter((placement) => Number(source[placement.species]) > 0);
+    .filter((placement) => Number(source[placement.species]) > 0 && !isDefaultDecorHidden(decorations, 'keepsake:' + placement.species));
   return {
     placements,
     ground: placements.map((placement) => keepsakeGroundRect(placement, stage, anchorRow)),

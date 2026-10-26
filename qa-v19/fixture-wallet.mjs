@@ -1,3 +1,4 @@
+import {applyDefaultDecorationVisibility} from '../garden-v05/default-decor.mjs?v=24.9.81';
 import * as E from "../garden-v05/progression-engine.mjs?v=24.9.63";
 import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=24.9.40";
 import {decorFootprintRect,rectsOverlap} from "../garden-v05/decor-runtime.mjs?v=24.9.40";
@@ -87,6 +88,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   premium:{felix:null,nests:[]},
   mastery:fresh?{}:{pumpkin:120,daisy:460,strawberry:1350,oats:95,carrot:200,lettuce:91},cup:{weekKey:'',points:0},
  };
+ if(scenario==="removable-decor"){garden.progression.decorations=["decoration-7"];garden.progression.keepsakes.puffskein=1;garden.decorations.placements=[null,null,null,null,null,null];}
  const wallet={spendable,balance:spendable-bankBalance,bankBalance};
  const dailies=new Map(),ops=new Map(),ledger=[];
  const season=festivalStatus(dayKey(),garden.festival.joinDay).active;
@@ -422,6 +424,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   }
   else if(c.action==="care"){if(!LINES.some(r=>c.cells?.length===3&&r.every(i=>c.cells.includes(i))))fail("invalid-action-input","Chăm cây cho một hàng, cột hoặc đường chéo đủ ba ô.");if((d.free.care||0)>=FREE_CAPS.care)fail("care-limit",`Hôm nay đã chăm đủ ${FREE_CAPS.care} lượt; mai bác Hagrid lại nhờ nhé.`);care(c,next);}
   else if(c.action==="placeDecoration")place(c,next);
+  else if(c.action==="setDefaultDecorationVisibility"){const visible=applyDefaultDecorationVisibility(next,c);next.decorations=visible.decorations;next.progression=visible.progression;}
   else{
    next.progression=model(c,before,Date.now());
    if(next.progression.revision!==before.revision+1)fail("action-noop","Lệnh khu vườn không tạo thay đổi mới.");
