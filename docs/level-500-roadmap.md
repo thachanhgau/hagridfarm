@@ -283,7 +283,7 @@ Mỗi rào chắn phải có một test làm hỏng được nó (test thất b�
 | 16 | Đơn hàng bác Hagrid: trồng cây rẻ rồi đổi lấy XP lớn | XP của đơn ≤ tổng XP gặt của chính số nông sản đó; thưởng Nước phép có trần mỗi ngày |
 | 17 | Trồng cây rẻ rồi dùng Nước suối thần cho rẻ | Không phải lỗ hổng: XP nhận được vẫn theo cây; trồng cây rẻ thì nhận ít XP |
 | 18 | Đổi múi giờ để có hai «ngày» | Ngày tính trên server theo giờ Việt Nam |
-| 19 | Thêm tính năng bán nông sản lấy Galleons sau này | Hạt rẻ (tối đa 2 G) sẽ thành máy in Galleons. Không thêm việc bán nông sản nếu chưa rà lại toàn bảng này |
+| 19 | Thêm tính năng bán nông sản lấy Galleons sau này | Đã rà 26/10/2026 khi làm Quầy chợ bác Hagrid: rào chắn #21–#32 trong `produce-market-plan.md` (cấp 25, 100 cái/loại, 2.500 G/ngày mỗi tài khoản) |
 | 20 | Sale hoặc giá sai đã trừ tiền | Mua và trừ Galleons trong một giao dịch; lỗi thì không trừ. Không có hoàn tiền tay ngoài admin |
 
 Phải chạy lại ma trận test tài chính (`test:galleons-matrix`, emulator) và thêm test cho các mục 3–12 trước khi phát hành P4.

@@ -4,6 +4,7 @@ import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v
 import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.88";
 import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.88";
 import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=24.9.88";
+import {marketCards} from "./garden-market-ui.mjs?v=24.9.88";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -21,15 +22,15 @@ const KIND_LABELS = Object.freeze({
  boost: "Nước phép",
  decoration: "Trang trí · 2 góc xoay",
 });
-const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", premium: "chest", decoration: "scenery", special: "trophy", festival: "festival"});
+const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", premium: "chest", decoration: "scenery", special: "trophy", festival: "festival", market: "coin"});
 // Level-500 P4: a premium item's unit, and what is in stock against its cap.
 const unitOf = item => item.kind === "nest" ? "ổ" : item.supply === "primeMeal" ? "phần" : item.kind === "boost" || item.kind === "spring" || item.kind === "premium" ? "chai" : "gói";
 const stockOf = (item, snap) => item.supply ? Number(snap?.garden?.supplies?.[item.supply] ?? 0) : 0;
 const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("coin", 1), el("b", {text: num(n)}), extra ? el("small", {text: extra}) : null]);
 
-export function showStore({state,items,wallet,connected,onPurchase,onDecorate,decorAssets=new Map(),onClose,initialFilter="all",returnFocus=document.activeElement}){
+export function showStore({state,items,wallet,connected,onPurchase,onSell,onDecorate,decorAssets=new Map(),onClose,initialFilter="all",returnFocus=document.activeElement}){
  document.querySelector(".store-overlay")?.remove();
- let filter=initialFilter,purchasing=false,clock=null;const quantities=new Map(),previewFacing=new Map();
+ let filter=initialFilter,purchasing=false,clock=null;const quantities=new Map(),sellQuantities=new Map(),previewFacing=new Map();
  const overlay=el("div",{class:"store-overlay"}),shade=el("div",{class:"popover-shade"});
  const box=el("section",{class:"popover store-popover",role:"dialog","aria-modal":"true","aria-labelledby":"storeTitle"});
  const heading=el("div",{class:"popover-heading"}),status=el("div",{class:"wallet-status store-vault-banner"}),tabs=el("div",{class:"panel-toolbar store-tabs",role:"group","aria-label":"Nhóm vật tư"}),notice=el("p",{class:"meta store-notice",role:"status","aria-live":"polite"}),cards=el("div",{class:"cards store-cards-grid"});
@@ -55,6 +56,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   ["decoration","Trang trí"],
   ["special","Sản phẩm đặc biệt"],
   ["festival","Lễ hội"],
+  // Quầy chợ bác Hagrid: only with the HPVN server wallet, which sends `market`.
+  ["market","Quầy chợ"],
  ];
 
  const catalog=()=>{
@@ -113,13 +116,22 @@ export function showStore({state,items,wallet,connected,onPurchase,onDecorate,de
   cards.replaceChildren();
   tabs.replaceChildren();
   for(const[id,name]of categories){
-   const count=id==="all"?allItems.length:allItems.filter(i=>tabOf(i)===id).length;
-   if(id!=="all"&&count===0)continue;
+   const market=snap?.market,count=id==="market"?Object.keys(market?.prices??{}).filter(c=>(snap.garden.progression.inventory?.[c]??0)>0).length:id==="all"?allItems.length:allItems.filter(i=>tabOf(i)===id).length;
+   if(id==="market"?!market:id!=="all"&&count===0)continue;
    const tab=button("",()=>{filter=id;render();tabs.querySelector("[aria-pressed=\"true\"]")?.focus();},{"data-kind":id,"aria-pressed":String(id===filter),"aria-label":`${name} (${count})`,title:name,class:"store-tab-btn gp-tab"});
    tab.append(pixelIcon(KIND_ICONS[id],2),el("span",{text:name}),el("b",{class:"gp-tab-count",text:String(count)}));
    tabs.append(tab);
   }
 
+  if(filter==="market"&&snap?.market){
+   cards.append(...marketCards({market:snap.market,inventory:snap.garden.progression.inventory,items,quantities:sellQuantities,busy:purchasing,onSell:async(goods,total,what)=>{
+    purchasing=true;notice.textContent="Đang xác nhận giao dịch…";render();
+    try{await onSell(goods,total);notice.textContent=`Đã bán ${what}, nhận ${num(total)} Galleons.`;sellQuantities.clear();}
+    catch(e){notice.textContent=e.message;}
+    finally{purchasing=false;render();}
+   }}));
+   return;
+  }
   for(const item of allItems.filter(i=>filter==="all"||tabOf(i)===filter)){
    const isDecor=item.kind==="decoration";
    const decorState=snap?.garden?.decorations;

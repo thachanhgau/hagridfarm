@@ -13,7 +13,7 @@
 | **Hạt giống** | Mua bằng Galleons | Gieo: 1 hạt / ô (chỉ trên server) | Chơi trên máy: **gieo miễn phí** |
 | **Nước** | Mua (5 G / 9); quà nhiệm vụ, rương, lễ hội, gắn kết, thành tựu, thăm vườn | Gieo: 1 nước / ô (chỉ trên server) | Chơi trên máy: **không có chỗ tiêu** |
 | **Phân bón** | Mua (60 G); quà | Rút 10% thời gian lớn của một hàng (server) | Món đắt nhất trong cửa hàng |
-| **Nông sản** | Gặt (1 / ô) | Chế biến (3+3 → 3 sản phẩm), nhiệm vụ | Không bán lấy Galleons |
+| **Nông sản** | Gặt (1 / ô) | Chế biến (3+3 → 3 sản phẩm), nhiệm vụ; từ cấp 25 bán ở Quầy chợ bác Hagrid (26/10/2026) | Tối đa 100 cái/loại và 2.500 G/ngày |
 | **Bộ vật liệu** | Chế biến (bí ngô + yến mạch, từ cấp 6), quà | Mở thửa/chuồng (6–54 bộ, từ cấp 12), trang trí từ món thứ 6 (3 bộ) | |
 | **Khẩu phần** | Chế biến; mua; 3 phần khởi đầu khi đón sinh vật | Cho ăn | |
 | **Sản phẩm sinh vật** | Thu sau bữa ăn (1 / lần) | Đổi 5 → 1 kỷ vật | Chỉ để trưng bày |
@@ -23,7 +23,7 @@
 
 **Phát hiện chính**
 1. **Hai nền kinh tế khác nhau.** Có ví (server): hạt và nước bị trừ khi gieo. Chơi trên máy: gieo miễn phí, nước và phân bón chỉ tăng chứ không giảm. Mọi cân bằng phải tính theo chế độ có ví, vì bản thật sẽ chạy với server.
-2. **Không có nguồn Galleons trong game.** Có ví thì một hàng bí ngô tốn khoảng 3,7 G (2 G hạt + 3 nước). Người ít Galleons trên diễn đàn sẽ bị chặn sớm **[CẦN QUYẾT]**: có cho bán nông sản hoặc sản phẩm sinh vật lấy một ít Galleons không.
+2. **Không có nguồn Galleons trong game.** Có ví thì một hàng bí ngô tốn khoảng 3,7 G (2 G hạt + 3 nước). Người ít Galleons trên diễn đàn sẽ bị chặn sớm Chủ dự án quyết 26/10/2026: từ cấp 25 bán nông sản ở Quầy chợ bác Hagrid (`produce-market-plan.md`); sản phẩm sinh vật chưa bán.
 3. **Có 7 loại tài nguyên người chơi phải để tâm**, trong khi core-design đã duyệt mục tiêu 4. Việc gộp (phân bón thành "nước phép", bộ vật liệu vào chi phí xây) chạm vào balance đã duyệt và backend, nên cần làm một đợt riêng, có migration.
 4. **Quà không gắn với cấp**: cấp 1 nhận Côn trùng (dùng từ cấp 17), Cỏ trăng (cấp 40), bộ vật liệu (dùng từ cấp 6–12).
 
