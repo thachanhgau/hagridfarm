@@ -127,6 +127,8 @@
 .decor-bar .decor-bar-apply{border:1px solid #ffe4a4;border-radius:3px;background:linear-gradient(165deg,#f1dfab,#d4b675 52%,#b48f4c 53%,#d0b071);color:#302d1e;font-weight:800;box-shadow:0 0 0 2px #493e29}
 .decor-bar-foot{display:flex;align-items:center;gap:8px}.decor-bar-hint{flex:1;margin:0;font-size:11px;color:#bdcbb1}.decor-bar-hint[data-error]{color:#ffb58e}
 .decor-bar .decor-bar-stash{flex:none;min-height:36px;padding:0 10px;font-size:12px;background:none}.decor-bar-stash[hidden]{display:none}
+/* «Hoàn tác» after a decoration change: the toast itself ignores taps, its button does not while shown. */
+.toast .toast-action{margin-left:10px;padding:4px 12px;border-radius:10px;border-color:#734f36;background:#fff0c6;color:#35291e;font-weight:800;box-shadow:none}.toast.visible .toast-action{pointer-events:auto}
 .placing-decor #playDock,.placing-decor .dock-toggle,.placing-decor .selection-hint,.placing-decor .guide-card{display:none!important}.placing-decor .toast{visibility:hidden}
 @media(max-width:440px){
  .decor-bar{bottom:max(6px,var(--host-inset-bottom,env(safe-area-inset-bottom)));width:calc(100% - 12px);gap:6px;padding:8px}

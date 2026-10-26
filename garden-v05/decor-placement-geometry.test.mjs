@@ -110,7 +110,7 @@ test('client decoration space stays in parity with the canonical Functions bound
 });
 
 test('pre-final keepsakes retain the legacy one-row frontier without paired overlaps', () => {
-  const levels = [1, 10, 24, 48, 72, 100];
+  const levels = [1, 10, 24, 48, 72];
   for (const level of levels) {
     const stage = GARDEN_STAGES.find(entry => entry.level === level);
     const obstacles = keepsakeObstacles({keepsakes: allKeepsakes}, stage, (...at) => iso(...at), keepsakeAnchorRow);
@@ -126,8 +126,18 @@ test('pre-final keepsakes retain the legacy one-row frontier without paired over
       }
     }
   }
-  const final = keepsakeDisplayPlacements(GARDEN_STAGES.at(-1), keepsakeAnchorRow);
-  assert.deepEqual([...new Set(final.map(entry => entry.anchor[1]))], [24.5, 26.5]);
+  // Chapter 6 (level 100) already holds the whole plaza and its access path.
+  for (const stage of GARDEN_STAGES.filter(entry => entry.level >= 100)) {
+    const final = keepsakeDisplayPlacements(stage, keepsakeAnchorRow);
+    assert.equal(final.length, 12, `level ${stage.level}: plaza`);
+    assert.deepEqual([...new Set(final.map(entry => entry.anchor[1]))], [24.5, 26.5]);
+    const {ground, access} = keepsakeObstacles({keepsakes: allKeepsakes}, stage, (...at) => iso(...at), keepsakeAnchorRow);
+    for (const rect of [...ground, ...access]) {
+      for (const [col, row] of [[rect.c0, rect.r0], [rect.c1, rect.r0], [rect.c0, rect.r1], [rect.c1, rect.r1]]) {
+        assert.ok(stageContains(stage, col, row), `level ${stage.level}: plaza inside the opened land`);
+      }
+    }
+  }
 });
 
 test('keepsake plaza uses real bases, authored silhouettes, and a reachable side path', () => {

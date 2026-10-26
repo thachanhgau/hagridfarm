@@ -191,3 +191,23 @@ test('an imported level-1 keepsake retains early visibility and leaves store pos
   assert.deepEqual(heroDecorations, storeBefore, 'rendering must not alter owned/placements/positions/rotations');
   assert.deepEqual(KEEPSAKE_LEGACY_LAYOUT.at(-1).species, 'dragon');
 });
+
+test('a store piece allowed beside a plot never takes the tap meant for a crop cell', async () => {
+  const now = 1_700_000_000_000;
+  const state = {
+    ...fullState(),
+    offsetMs: 0,
+    plots: scene.plots.map(() => ({slots: Array.from({length: 9}, (_, index) => ({id: `c${index}`, type: 'crop', species: 'pumpkin', plantedAt: now - 1e9, growMs: 1000}))})),
+    construction: [],
+  };
+  const itemId = 'decor_broom_rack', at = [7.5, 20.5];
+  assert.equal(decorSpotProblem(...at, {map: scene, stage: finalStage, state, decorations: emptyStoreDecorations, itemId, facing: 'default', asset: assetOf(itemId), iso, assetOf}), '', 'the spot is a valid placement');
+  const garden = await createGarden(fakeCanvas(), {allowMissingAssets: true, decorAssets: manifest.items});
+  garden.render(state, {now, clock: 0, propsVisible: false, decorations: {owned: [itemId], placements: [itemId], positions: {[itemId]: at}, rotations: {}}});
+  const {plotCellPosition} = await import('./scene-renderer.mjs');
+  const cell = iso(...plotCellPosition(scene.plots[8], 8));
+  const asset = assetOf(itemId), [x, y] = iso(...at), b = asset.bounds;
+  assert.ok(cell[0] >= x - asset.pivotX + b.x - 5 && cell[1] >= y - asset.pivotY + b.y - 5 && cell[1] <= y - asset.pivotY + b.y + b.h + 5, 'the crop cell lies in the piece tap box');
+  assert.notEqual(garden.pick(...cell)?.kind, 'decoration', 'the crop cell keeps its tap');
+  assert.equal(garden.pick(x, y - 20)?.kind, 'decoration', 'the piece itself stays tappable');
+});

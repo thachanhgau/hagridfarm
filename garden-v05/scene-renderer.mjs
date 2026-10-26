@@ -1243,7 +1243,7 @@ export async function createGarden(canvas, options = {}) {
     const source = state?.keepsakes;
     if (!source || typeof source !== 'object' || Array.isArray(source)) return [];
     const objects = [];
-    // The final chapter uses the compact authored plaza. Before that chapter,
+    // From chapter 6 (level 100) keepsakes use the compact authored plaza. Before it,
     // keep the old stepped frontier so a keepsake never renders beyond the
     // member's opened land. This is generated display geometry; saved species
     // counts and store-decoration positions are untouched.
@@ -1883,7 +1883,11 @@ export async function createGarden(canvas, options = {}) {
   function pick(clientX, clientY) {
     const rect = typeof canvas.getBoundingClientRect === 'function' ? canvas.getBoundingClientRect() : null;
     const world = clientToWorld(clientX, clientY, rect, canvas.width, canvas.height);
-    for (const actor of [...interactiveDecor].reverse()) {
+    const hit = pickFromWorld(world.x, world.y, lastBuiltPlotCount, map);
+    const plotHit = hit && lastPlotReady[map.plots.findIndex((plot) => (plot.id ?? map.plots.indexOf(plot)) === hit.plot)] ? hit : null;
+    // Placement lets a piece share a sliver of a plot on screen; a tap on a crop cell under its padded box
+    // still belongs to the crop.
+    if (!plotHit) for (const actor of [...interactiveDecor].reverse()) {
       const {xy, asset, facing} = actor;
       const b = (facing === 'right' && asset.rightBounds)
         ? asset.rightBounds
@@ -1910,8 +1914,7 @@ export async function createGarden(canvas, options = {}) {
     if(sceneryVisible)for(const target of wizardTargets(iso).sort((a,b)=>b.xy[1]-a.xy[1])){
       const b=target.hitbox;if(world.x>=b.left&&world.x<=b.right&&world.y>=b.top&&world.y<=b.bottom)return {kind:'wizard',id:target.id};
     }
-    const hit = pickFromWorld(world.x, world.y, lastBuiltPlotCount, map);
-    if (hit && lastPlotReady[map.plots.findIndex((plot) => (plot.id ?? map.plots.indexOf(plot)) === hit.plot)]) return hit;
+    if (plotHit) return plotHit;
     for (const kp of [...interactiveKeepsakes].reverse()) {
       const [kx, ky] = kp.xy;
       if (world.x >= kx - 18 && world.x <= kx + 18 && world.y >= ky - 38 && world.y <= ky + 6) {

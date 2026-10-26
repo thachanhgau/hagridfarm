@@ -11,7 +11,8 @@ export const DECORATION_SPACE = Object.freeze({
   maxRow: 33.5,
 });
 
-// Final-stage keepsakes form a compact two-row plaza west of the south path.
+// From chapter 6 («hoàn thiện sân kỷ vật», level 100) keepsakes form a compact two-row plaza west of the
+// south path; the old one-row frontier left no room for a 3×2 piece in a full level-100 garden.
 // `col`/`row` are the south-west ground corner, matching decoration footprints;
 // species order is the authored CREATURE/KEEPSAKE_ART order and is never used
 // as a save key or an inventory count.
@@ -30,7 +31,7 @@ export const KEEPSAKE_DISPLAY_LAYOUT = Object.freeze([
   {species: 'dragon', col: 17, row: 25.5, width: 1, height: 1},
 ].map(Object.freeze));
 
-// Before the south field opened, the twelve keepsakes used one stepped
+// Before chapter 6 opened the south field, the twelve keepsakes used one stepped
 // frontier row. Keep those authored columns stable while the final chapter
 // uses the compact two-row plaza above. The species order is the same as the
 // final layout, so a save never needs to be rewritten when the view changes.
@@ -58,7 +59,7 @@ export const KEEPSAKE_ACCESS_PATHS = Object.freeze([
 ]);
 
 const FINAL_BOTTOM = DECORATION_SPACE.maxRow;
-const FINAL_STAGE_LEVEL = 110;
+const FINAL_STAGE_LEVEL = 100;
 const LEGACY_BY_SPECIES = new Map(KEEPSAKE_LEGACY_LAYOUT.map((placement) => [placement.species, placement]));
 
 export function decorationSpaceContains(col, row) {

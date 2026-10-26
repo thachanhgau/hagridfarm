@@ -260,6 +260,11 @@ function isColor(buf, idx, hex) {
  * cycles, and exterior magical sparkles. Floating items translate uniformly
  * as a single rigid body.
  */
+function unionBounds(list) {
+  const x = Math.min(...list.map((b) => b.x)), y = Math.min(...list.map((b) => b.y));
+  return {x, y, w: Math.max(...list.map((b) => b.x + b.w)) - x, h: Math.max(...list.map((b) => b.y + b.h)) - y};
+}
+
 function buildAnimatedFrames(baseBuffer, spec, mirrored = false) {
   const {width, height, id} = spec;
   const b = outputBounds(baseBuffer, width, height).bounds;
@@ -535,10 +540,13 @@ for (const spec of specs) {
   // Generate 4 animated frames for default angle
   const defaultBuffers = buildAnimatedFrames(output, spec, false);
   const defaultFrames = [];
+  // Placement collides by these bounds, so they hold every frame (the candles bob above their base).
+  const defaultBounds = [baseChecked.checked.bounds];
   for (let i = 0; i < defaultBuffers.length; i += 1) {
     const frameFile = path.join(nativeRoot, `${spec.id}_f${i}.png`);
     const res = await writeAndValidateBuffer(defaultBuffers[i], frameFile, spec.width, spec.height, `${spec.id}_f${i}`);
     defaultFrames.push(res.relativeFile);
+    defaultBounds.push(res.checked.bounds);
   }
 
   // Generate right-facing angle + 4 animated frames for rotatable items
@@ -550,14 +558,16 @@ for (const spec of specs) {
     const rightNativeFile = path.join(nativeRoot, `${spec.id}_right.png`);
     const rightChecked = await writeAndValidateBuffer(mirroredBase, rightNativeFile, spec.width, spec.height, `${spec.id}_right`);
     rightFile = rightChecked.relativeFile;
-    rightBounds = rightChecked.checked.bounds;
+    const rightAll = [rightChecked.checked.bounds];
     const rightBuffers = buildAnimatedFrames(mirroredBase, spec, true);
     rightFrames = [];
     for (let i = 0; i < rightBuffers.length; i += 1) {
       const frameFile = path.join(nativeRoot, `${spec.id}_right_f${i}.png`);
       const res = await writeAndValidateBuffer(rightBuffers[i], frameFile, spec.width, spec.height, `${spec.id}_right_f${i}`);
       rightFrames.push(res.relativeFile);
+      rightAll.push(res.checked.bounds);
     }
+    rightBounds = unionBounds(rightAll);
   }
 
   const master = path.relative(root, masterFile).split(path.sep).join('/');
@@ -580,7 +590,7 @@ for (const spec of specs) {
     height: spec.height,
     pivotX: spec.pivotX,
     pivotY: spec.pivotY,
-    bounds: baseChecked.checked.bounds,
+    bounds: unionBounds(defaultBounds),
     footprintTiles: spec.footprintTiles,
     sourceSha256,
     nativeSha256: baseChecked.sha256,

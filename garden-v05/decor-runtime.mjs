@@ -69,6 +69,32 @@ export function decorSpot(decorations, itemId) {
   return index >= 0 && DECOR_SLOTS[index] ? [DECOR_SLOTS[index].col, DECOR_SLOTS[index].row] : null;
 }
 
+const snapHalf = n => Math.round(n * 2) / 2;
+const placedIndex = (decorations, itemId) => (decorations?.placements ?? []).findIndex(raw => placedId(raw) === itemId);
+
+/**
+ * placeDecoration fields that stand `itemId` at `at` (null puts it away). A legacy socket (row 7.15) is
+ * off the server's half-tile grid, so a turn where the piece already stands names the socket itself.
+ */
+export function decorPlaceFields(decorations, itemId, at, facing) {
+  if (!at) return {itemId, slot: null, facing};
+  const index = placedIndex(decorations, itemId);
+  const socket = !decorations?.positions?.[itemId] && DECOR_SLOTS[index];
+  if (socket && snapHalf(socket.col) === snapHalf(at[0]) && snapHalf(socket.row) === snapHalf(at[1])) return {itemId, slot: index, facing};
+  return {itemId, at: [at[0], at[1]], facing};
+}
+
+/** placeDecoration fields that undo the last change to `itemId` (decorations before → after), or null. */
+export function decorUndoFields(before, after, itemId) {
+  const facing = decorFacingFor(before, itemId), at = before?.positions?.[itemId];
+  if (Array.isArray(at) && at.length === 2) return {itemId, at: [at[0], at[1]], facing};
+  const index = placedIndex(before, itemId);
+  // ponytail: the server keeps a free spot once given, so a piece moved out of its legacy socket cannot
+  // return to it; add a server «back to socket» command if members ask for that undo.
+  if (DECOR_SLOTS[index] && after?.positions?.[itemId]) return null;
+  return {itemId, slot: DECOR_SLOTS[index] ? index : null, facing};
+}
+
 export function decorObjects(decorations, assets, iso, preview = null) {
   const owned = new Set(decorations?.owned ?? []);
   const placements = decorations?.placements ?? [];

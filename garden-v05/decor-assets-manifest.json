@@ -289,9 +289,9 @@
       ],
       "rightBounds": {
         "x": 24,
-        "y": 5,
+        "y": 3,
         "w": 31,
-        "h": 83
+        "h": 85
       },
       "angles": [
         "default",
@@ -304,9 +304,9 @@
       "pivotY": 88,
       "bounds": {
         "x": 25,
-        "y": 5,
+        "y": 3,
         "w": 31,
-        "h": 83
+        "h": 85
       },
       "footprintTiles": [
         1,

@@ -203,12 +203,14 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   thumb.src=runtimeImageUrl(right?(item.rightFile||item.file):item.file);
   thumb.classList.toggle('is-flipped',right&&!item.rightFile);
   const here=sameSpot(at,saved),sameFacing=selectedFacing===savedFacing;
-  where.textContent=!at?'Chạm chỗ trống trên vườn':here&&sameFacing?'Đang đặt ở đây':here?'Góc mới · nhấn «Đặt»':problem||'Chỗ mới · nhấn «Đặt»';
+  // Level-1 land cannot hold a 3×2 piece, and a full garden may have no room left: say so, it stays stored.
+  const noRoom=!at&&!grid.some(spot=>spot.ok);
+  where.textContent=!at?(noRoom?'Vườn hiện chưa có chỗ vừa món này':'Chạm chỗ trống trên vườn'):here&&sameFacing?'Đang đặt ở đây':here?'Góc mới · nhấn «Đặt»':problem||'Chỗ mới · nhấn «Đặt»';
   turn.disabled=pending;
   apply.disabled=pending||!at||!!problem||here&&sameFacing;
   apply.textContent=pending?'Đang lưu…':here&&!sameFacing?'Đặt góc này':here?'Đang ở đây':'Đặt';
   stash.hidden=!saved;stash.disabled=pending;
-  if(!hint.dataset.error)hint.textContent='Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu';
+  if(!hint.dataset.error)hint.textContent=noRoom?'Món vẫn ở trong kho · thử ↻ góc khác, cất bớt đồ hoặc chờ vườn mở rộng':'Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu';
  }
 
  // Turning is always a preview action. Even when the item is standing at its
