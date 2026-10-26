@@ -67,11 +67,12 @@ for(const [browserName,type]of [['Chrome',chromium],['WebKit',webkit]]){
    const garden=await createGarden(canvas,{decorAssets:manifest.items});
    if(garden.missing.length)throw Error('Missing scene art '+garden.missing);
    const now=Date.now(),state=E.testProfile(500,now);
-   state.level=500;state.xp=E.DB.levels.at(-1).totalXP;state.built=E.DB.expansions.map(e=>e.id);
+   state.level=500;state.xp=E.DB.levels.at(-1).totalXP;state.built=[...new Set([...state.built,...E.DB.expansions.map(e=>e.id)])];
    state.plots=Array.from({length:18},()=>({slots:Array(9).fill(null),cooldowns:Array(9).fill(0),patterns:[]}));
    state.decorations=E.DB.decorations.map(d=>d.id);state.keepsakes=Object.fromEntries(E.DB.animals.map(a=>[a.id,1]));
-   state.creatures=E.DB.animals.map(a=>({id:'qa-'+a.id,type:'creature',species:a.id,mealsCompleted:a.mealsToAdult,meal:null}));
-   for(let i=0;i<18*9;i++){const c=E.DB.crops[i%E.DB.crops.length];state.plots[Math.floor(i/9)].slots[i%9]={id:'qa-'+i,type:'crop',species:c.id,plantedAt:now-3*86400000,growMs:1000};}
+   state.creatures=E.DB.animals.map(a=>({id:'qa-'+a.id,type:'creature',species:a.id,level:a.level,mealsCompleted:a.mealsToAdult,meal:null,cyclesClaimed:0,preview:false,adoptedAt:now-3*86400000}));
+   for(let i=0;i<18*9;i++){const c=E.DB.crops[Math.floor(i/3)%E.DB.crops.length];state.plots[Math.floor(i/9)].slots[i%9]={id:'qa-'+i,type:'crop',species:c.id,plantedAt:now-3*86400000,growMs:c.growMs};}
+   E.restoreChecked(state,now);
    const decorations={owned:['sp_whomping_anglia','hw_violet_mist_pond','hw_lantern_ancient_tree'],placements:['sp_whomping_anglia','hw_violet_mist_pond','hw_lantern_ancient_tree'],positions:{hw_violet_mist_pond:[2.5,26],sp_whomping_anglia:[22,25.5],hw_lantern_ancient_tree:[27.5,25.5]},rotations:{}};
    const assetOf=id=>manifest.items.find(i=>i.id===id);
    for(const id of decorations.owned){const [col,row]=decorations.positions[id];const reason=decorSpotProblem(col,row,{map:window.FARM_SCENE,stage:GARDEN_STAGES.at(-1),state,decorations,itemId:id,asset:assetOf(id),iso,assetOf});if(reason)throw Error(id+': '+reason);}
@@ -79,11 +80,11 @@ for(const [browserName,type]of [['Chrome',chromium],['WebKit',webkit]]){
    CanvasRenderingContext2D.prototype.drawImage=function(image,...args){if(String(image.src).includes('/flow-')||String(image.src).includes('/decor-flow-'))draws.push({file:image.src,args});return original.call(this,image,...args)};
    let combinations=0;
    try{
-    for(const facing of ['default','right'])for(const weatherMode of ['clear','rain','snow','autumn'])for(const atmosphereMode of ['day','night']){
+    for(const facing of ['default','right'])for(const weatherMode of ['clear','rain','snow','autumn'])for(const atmosphereMode of ['day','dusk','night']){
      garden.render(state,{now,clock:2000,animationClock:2000,decorations:{...decorations,rotations:{hw_violet_mist_pond:facing}},weatherMode,atmosphereMode});combinations++;
     }
     for(const id of ['bubotuber','mimbulus','flitterbloom']){
-     const index=E.DB.crops.findIndex(c=>c.id===id);garden.animate('care',{plot:Math.floor(index/9),cells:[index%9]});
+     const index=E.DB.crops.findIndex(c=>c.id===id)*3;garden.animate('care',{plot:Math.floor(index/9),cells:[index%9]});
     }
     garden.render(state,{now,clock:2350,animationClock:2350,decorations,weatherMode:'clear',atmosphereMode:'day'});
    }finally{CanvasRenderingContext2D.prototype.drawImage=original;}

@@ -9,9 +9,9 @@
     "harvestArt": 32,
     "canonicalOutputs": 14,
     "keepsakes": 12,
-    "worldCombinations": 16,
+    "worldCombinations": 24,
     "heroTriple": true,
-    "newCropMotionDraws": 272,
+    "newCropMotionDraws": 250,
     "nativeAtlasSize": true,
     "viewportChecks": [
       {
@@ -67,7 +67,7 @@
       }
     ],
     "requests": 1178,
-    "bytes": 5627652,
+    "bytes": 5627973,
     "errors": []
   },
   {
@@ -80,9 +80,9 @@
     "harvestArt": 32,
     "canonicalOutputs": 14,
     "keepsakes": 12,
-    "worldCombinations": 16,
+    "worldCombinations": 24,
     "heroTriple": true,
-    "newCropMotionDraws": 272,
+    "newCropMotionDraws": 250,
     "nativeAtlasSize": true,
     "viewportChecks": [
       {
@@ -138,7 +138,7 @@
       }
     ],
     "requests": 1178,
-    "bytes": 5545870,
+    "bytes": 5546191,
     "errors": []
   }
 ]

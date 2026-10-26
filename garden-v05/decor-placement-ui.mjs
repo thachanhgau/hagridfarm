@@ -216,9 +216,12 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  function rotate(){
   selectedFacing=selectedFacing==='right'?'default':'right';
   regrid();
-  // A large piece turned in place may no longer fit; it slides to the nearest spot it does, else waits for a tap.
-  if(at&&problemAt(at))at=nearestFree(grid,at,2)??at;
-  sync(false);
+  // New pieces have no saved anchor: keep their suggestion valid even if the
+  // nearest free turned spot lies farther away in a crowded garden. Existing
+  // pieces retain the small local search; confirmation alone changes a save.
+  const isNew=!savedSpot();
+  if(at&&problemAt(at))at=nearestFree(grid,at,isNew?Infinity:2)??at;
+  sync(isNew);
  }
 
  // Any tap is kept so plots stay untouched while placing.
