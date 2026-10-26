@@ -1,4 +1,5 @@
-import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=24.9.80';
+import {nativePixelScale} from './garden-grid.mjs?v=24.9.81';
+import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=24.9.81';
 export {FARM_SIGN_ART};
 // Scenic-only composition: deterministic groves and a walkable-looking exit.
 // Never changes authored slots, collision data, or game state.
@@ -10,6 +11,7 @@ export function canopyClusters(map,sizes){
   const n=random(),id=n<.43?'oak':n<.81?'pine':n<.96?'grove':'log';
   if(id==='log')scale=.65+random()*.4;
   else if(id==='grove')scale*=.8;
+  scale=nativePixelScale(scale);
   const size=sizes[id],w=Math.round(size.width*scale),h=Math.round(size.height*scale);
   trees.push({id,x:Math.round((x+map.width)%map.width),y:Math.round((y+map.height)%map.height),w,h,flip:random()<.4});
  };

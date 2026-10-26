@@ -1,7 +1,7 @@
 // HUD and action icons: 16×16 pixel grids in the approved palette (docs/art-bible.md),
 // drawn as crisp SVG <img> at integer scales only (1× = 16 px, 2× = 32 px).
 // Crops and creatures keep their own game sprites (ui-utils icon()).
-import {cropVisualKind, el, num, visualItemIcon} from './ui-utils.mjs?v=24.9.80';
+import {cropVisualKind, el, num, visualItemIcon} from './ui-utils.mjs?v=24.9.81';
 
 const INK = Object.freeze({
  k: '#231F2E', p: '#4A3042', b: '#735044', w: '#A57554',

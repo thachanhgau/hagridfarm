@@ -119,7 +119,7 @@
 .decor-bar{position:fixed;z-index:40;left:50%;bottom:max(10px,var(--host-inset-bottom,env(safe-area-inset-bottom)));transform:translateX(-50%);width:min(560px,calc(100% - 16px));display:flex;flex-direction:column;gap:8px;padding:10px;border:1px solid #b6a271;border-radius:3px;background:#10261ef7;box-shadow:0 0 0 2px #091b16b3,0 8px 24px #03120ea6;color:#f3e2b5;font:13px/1.3 system-ui}
 .decor-bar-head{display:flex;align-items:center;gap:10px}
 .decor-bar-thumb{flex:none;width:52px;height:52px;object-fit:contain;image-rendering:pixelated;border:1px solid #c1b17966;background:#0b211b}.decor-bar-thumb.is-flipped{transform:scaleX(-1)}
-.decor-bar-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.decor-bar-text strong{font:600 17px/1.15 Georgia,serif;color:#f8e7bd}.decor-bar-where{font-size:12px;color:#d6c99c}
+.decor-bar-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.decor-bar-text strong{font:600 17px/1.15 Georgia,serif;color:#f8e7bd}.decor-bar-where{font-size:12px;color:#d6c99c}.decor-bar-size{font-size:11px;line-height:1.25;color:#d6c99c}
 .decor-bar button{min-height:44px;border:1px solid #c1b17966;border-radius:2px;background:#1a3428;color:#f1dfab;font:700 14px/1 system-ui;box-shadow:none}
 .decor-bar button:disabled{opacity:.4}
 .decor-bar-close{flex:none;width:44px;padding:0;font-size:20px!important}

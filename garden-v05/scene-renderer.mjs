@@ -1,25 +1,28 @@
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.80';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.80';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.80';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.80';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.80';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.80';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.80';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.80';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.80';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.80';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.80';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.80';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.80';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.80';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.80';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.80';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.80';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.80';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.80';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.80';
-import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.80';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.80';
+import {gardenObjectMetrics} from './garden-object-metrics.mjs?v=24.9.81';
+import {ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds,drawFootprintGrid} from './garden-grid.mjs?v=24.9.81';
+export {ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.81';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.81';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.81';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.81';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.81';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.81';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.81';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.81';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.81';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.81';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.81';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.81';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.81';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.81';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.81';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.81';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.81';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.81';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.81';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.81';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.81';
+import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.81';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.81';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -31,22 +34,18 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.80';
+} from './scene-animation.mjs?v=24.9.81';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.80';
+} from './forest-surround.mjs?v=24.9.81';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
 const motion = root.FARM_MOTION;
-const DEFAULT_TILE_WIDTH = 64;
-const DEFAULT_TILE_HEIGHT = 32;
-const DEFAULT_ORIGIN = Object.freeze({x: 0, y: 0});
 const layoutSnapshots = new WeakMap();
 
-export const ISO_TILE = Object.freeze({width: DEFAULT_TILE_WIDTH, height: DEFAULT_TILE_HEIGHT});
 export const FARM_LAYOUT = Object.freeze({
   plotWidth: 3,
   plotHeight: 3,
@@ -54,40 +53,6 @@ export const FARM_LAYOUT = Object.freeze({
   penCount: 6,
   creatureSpotCount: 12,
 });
-
-function sceneOrigin(scene = map) {
-  return scene?.origin ?? DEFAULT_ORIGIN;
-}
-
-function tileWidth(scene = map) {
-  return Number(scene?.tileWidth) || DEFAULT_TILE_WIDTH;
-}
-
-function tileHeight(scene = map) {
-  return Number(scene?.tileHeight) || DEFAULT_TILE_HEIGHT;
-}
-
-/** Convert logical map coordinates to the canvas' isometric ground anchor. */
-export function iso(col, row, scene = map) {
-  const width = tileWidth(scene);
-  const height = tileHeight(scene);
-  const origin = sceneOrigin(scene);
-  return [origin.x + (col - row) * (width / 2), origin.y + (col + row) * (height / 2)];
-}
-
-/** Convert a point in the canvas coordinate space to the nearest isometric tile. */
-export function worldToCell(x, y, scene = map) {
-  const width = tileWidth(scene);
-  const height = tileHeight(scene);
-  const origin = sceneOrigin(scene);
-  const dx = x - origin.x;
-  const dy = y - origin.y;
-  const col = Math.round((dx / (width / 2) + dy / (height / 2)) / 2);
-  const row = Math.round((dy / (height / 2) - dx / (width / 2)) / 2);
-  const [centerX, centerY] = iso(col, row, scene);
-  const inside = Math.abs(x - centerX) / (width / 2) + Math.abs(y - centerY) / (height / 2) <= 1.04;
-  return inside ? {col, row} : null;
-}
 
 /** Map a pointer coordinate through the canvas' transformed client rectangle. */
 export function clientToWorld(clientX, clientY, rect, canvasWidth, canvasHeight) {
@@ -112,27 +77,6 @@ function clipToStage(context, stage, scene, draw) {
   } finally {
     context.restore?.();
   }
-}
-
-function plotBounds(plot) {
-  return {
-    col: Number(plot?.col) || 0,
-    row: Number(plot?.row) || 0,
-    width: Number(plot?.width) || FARM_LAYOUT.plotWidth,
-    height: Number(plot?.height) || FARM_LAYOUT.plotHeight,
-  };
-}
-
-export function plotCellScale(scene = map) { return Number(scene?.plotCellScale) || 1; }
-export function plotCellPosition(plot, index, scene = map) {
-  const b=plotBounds(plot),scale=plotCellScale(scene);
-  return [b.col+(b.width-1)/2+(index%b.width-(b.width-1)/2)*scale,
-    b.row+(b.height-1)/2+(Math.floor(index/b.width)-(b.height-1)/2)*scale];
-}
-export function plotPhysicalBounds(plot, scene = map) {
-  const b=plotBounds(plot),scale=plotCellScale(scene);
-  return {col:b.col+(b.width-1)/2-b.width*scale/2,
-    row:b.row+(b.height-1)/2-b.height*scale/2,width:b.width*scale,height:b.height*scale};
 }
 
 /** Plot cells are centered on integer coordinates, including their soil tiles. */
@@ -249,9 +193,7 @@ export function plotContainsCell(plot, col, row, scene = map) {
 
 /** Pure picker used by the DOM-facing pick method and by layout tests. */
 export function pickFromWorld(x, y, builtPlotCount, scene = map) {
-  const origin=sceneOrigin(scene),dx=x-origin.x,dy=y-origin.y;
-  const col=(dx/(tileWidth(scene)/2)+dy/(tileHeight(scene)/2))/2;
-  const row=(dy/(tileHeight(scene)/2)-dx/(tileWidth(scene)/2))/2;
+  const [col,row]=worldToGrid(x,y,scene);
   if(!insideFarm(col,row))return null;
   const plots=Array.isArray(scene?.plots)?scene.plots:[];
   const built=Math.max(0,Math.min(plots.length,Number(builtPlotCount)||0)),scale=plotCellScale(scene);
@@ -1083,7 +1025,7 @@ export async function createGarden(canvas, options = {}) {
       const dc=(u-.5)*1.1,dr=(v-.5)*1.1;
       const col=stageContains(stage,placement.col+dc,placement.row+dr)?placement.col:placement.col+dc;
       const row=stageContains(stage,placement.col+dc,placement.row+dr)?placement.row:placement.row+dr;
-      const [x,y]=iso(col,row),scale=.78+((h>>>20)&255)/255*.64,flip=((h>>>8)&1)===1;
+      const [x,y]=iso(col,row),scale=nativePixelScale(.78+((h>>>20)&255)/255*.64),flip=((h>>>8)&1)===1;
       return {...placement,x,y,scale,flip};
     }).sort((a,b)=>a.y-b.y||a.x-b.x);
     for (const placement of placements) {
@@ -1301,8 +1243,8 @@ export async function createGarden(canvas, options = {}) {
 
   function drawBuiltPen(pen,state,clock){
     const residents=habitatResidents(pen,asArray(state.creatures),map.creatureSpots,iso);
-    const gap=currentStage.right-(pen.col+pen.width),sharedEast=gap>=0&&gap<=1.1;
-    const enclosure=sharedEast?{...pen,width:pen.width+gap}:pen;
+    const sharedEast=Math.abs(currentStage.right-(pen.col+pen.width))<0.001;
+    const enclosure=pen;
     const corners=penCorners(enclosure),key=activeWeather+':'+JSON.stringify([corners,residents]);
     let cached=penHabitatLayers.get(pen.id);
     if(cached?.key!==key){
@@ -1694,18 +1636,7 @@ export async function createGarden(canvas, options = {}) {
       context.restore();
     }
     if (options.previewDecoration?.rect) {
-      const {c0, c1, r0, r1} = options.previewDecoration.rect;
-      const fits = !options.previewDecoration.blocked;
-      context.save();
-      context.beginPath();
-      [[c0, r0], [c1, r0], [c1, r1], [c0, r1]].forEach(([c, r], i) => { const [x, y] = iso(c, r); if (i) context.lineTo(x, y); else context.moveTo(x, y); });
-      context.closePath();
-      context.fillStyle = fits ? 'rgba(245,214,154,.38)' : 'rgba(199,91,75,.34)';
-      context.strokeStyle = fits ? '#f5d69a' : '#c75b4b';
-      context.lineWidth = 2;
-      context.fill();
-      context.stroke();
-      context.restore();
+      drawFootprintGrid(context, options.previewDecoration.rect, iso, !options.previewDecoration.blocked);
     }
 
     sceneryVisible=propsVisible;
@@ -1944,6 +1875,7 @@ export async function createGarden(canvas, options = {}) {
     react: (before, after, options = {}) => animation.react(before, after, options),
     animations: () => animation.events(),
     order: () => lastOrder,
+    gridMetrics: () => gardenObjectMetrics(map,motion,[...decorAssets.values()],DECORATION_LAYOUT),
     growthBounds: () => stageWorldBounds(map, currentStage),
     growthStage: () => currentStage,
     images,

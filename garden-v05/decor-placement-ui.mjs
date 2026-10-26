@@ -1,19 +1,17 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.80';
-import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.80';
-import {el,button} from './ui-utils.mjs?v=24.9.80';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.80';
-import {STORE_CATALOG} from './garden-store-catalog.mjs?v=24.9.80';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.80';
-import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds,worldToCell} from './scene-renderer.mjs?v=24.9.80';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.80';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.80';
-import {keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.80';
+import {GRID_STEP,spriteGridMetrics,worldToGrid,snapGridPoint} from './garden-grid.mjs?v=24.9.81';
+import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.81';
+export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.81';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.81';
+import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.81';
+import {el,button} from './ui-utils.mjs?v=24.9.81';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.81';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.81';
+import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.81';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.81';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.81';
+import {keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.81';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
-const OBJECT_REACH=Object.freeze({hut:2.5,pond:2.5,oak:1,pine:1});
-const snap=v=>Math.round(v*2)/2;
-const FOOTPRINTS=new Map(STORE_CATALOG.filter(i=>i.kind==='decoration').map(i=>[i.id,i.footprint??[1,1]]));
-export const decorFootprint=id=>FOOTPRINTS.get(id)??[1,1];
 // Art bible §2: a large piece keeps 0.9 tile off the fence so its body never sits on the rails.
 const FENCE_CLEARANCE=0.9;
 // Owner 25/10/2026: smaller pieces keep 0.4 tile off it so no sprite stands on the rails.
@@ -62,7 +60,7 @@ function segmentRectDistance([a,b],[c,d],r){
 /** Ground a plot or pen base covers, in tiles. */
 export function groundRect(kind,g,map){
  if(kind==='plot'){const b=plotPhysicalBounds(g,map);return {c0:b.col,c1:b.col+b.width,r0:b.row,r1:b.row+b.height};}
- return {c0:g.col-0.5,c1:g.col-0.5+g.width,r0:g.row-0.5,r1:g.row-0.5+g.height};
+ return {c0:g.col,c1:g.col+g.width,r0:g.row,r1:g.row+g.height};
 }
 
 /** The placed store decoration standing on this ground, or null: a plot or pen may not be built over it. */
@@ -104,9 +102,8 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),iso,keepsakeAnchorRow);
  if(keepsakes.ground.some(occupied=>rectIntersects(rect,occupied)))return 'Chân đài kỷ vật đang ở đây.';
  if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
- const near=(c,r,reach)=>Math.hypot(Math.max(rect.c0-c,0,c-rect.c1),Math.max(rect.r0-r,0,r-rect.r1))<reach-0.5;
- for(const o of map?.objects??[])if(near(o.col,o.row,OBJECT_REACH[o.id]??1))return 'Chỗ này vướng cảnh vật.';
- for(const w of Object.values(WIZARD_LAYOUT))if(near(w.col,w.row,1.5))return 'Chỗ này vướng công trình.';
+ for(const o of map?.objects??[])if(rectsOverlap(rect,sceneryGroundRect(o.id,o.col,o.row)))return 'Chỗ này vướng cảnh vật.';
+ for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
  if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){
   const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw;
@@ -144,7 +141,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
 export function decorSpotGrid(stage,problemAt){
  const list=[];
  if(!stage)return list;
- for(let row=-1;row<=stage.bottom;row+=0.5)for(let col=-5;col<=stage.right;col+=0.5)if(stageContains(stage,col,row))list.push({at:[col,row],ok:!problemAt([col,row])});
+ for(let row=-1;row<=stage.bottom;row+=GRID_STEP)for(let col=-5;col<=stage.right;col+=GRID_STEP)if(stageContains(stage,col,row))list.push({at:[col,row],ok:!problemAt([col,row])});
  return list;
 }
 const nearestFree=(grid,[col,row],reach)=>{
@@ -164,7 +161,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  const itemLabel=decorLabelFor(item);
  let selectedFacing=decorFacingFor(getDecorations()??{},item.id);
  // Legacy sockets sit off the half-tile grid (row 7.15) and the server only takes half-tile spots.
- const savedSpot=()=>{const s=decorSpot(getDecorations()??{},item.id);return s&&[snap(s[0]),snap(s[1])];};
+ const savedSpot=()=>{const s=decorSpot(getDecorations()??{},item.id);return s&&snapGridPoint(s);};
  let at=savedSpot();
  let pending=false;
  const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,asset:item,iso,assetOf}):'';
@@ -178,12 +175,13 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  const thumb=el('img',{class:'decor-bar-thumb',alt:''});
  const title=el('strong',{id:'decorPlaceTitle',text:itemLabel});
  const where=el('span',{class:'decor-bar-where'});
+ const size=el('span',{class:'decor-bar-size'});
  const turn=button('↻ Xoay',rotate,{class:'decor-bar-turn','aria-label':'Xoay vật phẩm'});
  const apply=button('Đặt',commit,{class:'primary decor-bar-apply'});
  const stash=button('Cất vào kho',()=>save(null),{class:'decor-bar-stash'});
  const hint=el('p',{class:'decor-bar-hint',role:'status'});
  bar.append(
-  el('div',{class:'decor-bar-head'},[thumb,el('div',{class:'decor-bar-text'},[title,where]),button('×',close,{class:'decor-bar-close','aria-label':'Đóng'})]),
+  el('div',{class:'decor-bar-head'},[thumb,el('div',{class:'decor-bar-text'},[title,where,size]),button('×',close,{class:'decor-bar-close','aria-label':'Đóng'})]),
   el('div',{class:'decor-bar-row'},[turn,apply]),
   el('div',{class:'decor-bar-foot'},[hint,stash]),
  );
@@ -200,6 +198,8 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  function render(problem=problemAt(at)){
   const saved=savedSpot(),savedFacing=decorFacingFor(getDecorations()??{},item.id);
   const right=selectedFacing==='right';
+  const metrics=spriteGridMetrics(item,decorFootprint(item.id),selectedFacing);
+  size.textContent=`${metrics.footprint.join('×')} ô · nền ${metrics.ground.width}×${metrics.ground.height} px`;
   thumb.src=runtimeImageUrl(right?(item.rightFile||item.file):item.file);
   thumb.classList.toggle('is-flipped',right&&!item.rightFile);
   const here=sameSpot(at,saved),sameFacing=selectedFacing===savedFacing;
@@ -229,11 +229,8 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  // Any tap is kept so plots stay untouched while placing.
  function onTap(clientX,clientY){
   const point=toWorld?.(clientX,clientY);
-  const cell=point?worldToCell(point.x,point.y,map):null;
-  if(!point||!cell||!iso)return true;
-  // worldToCell rounds to whole tiles; refine to the nearest half-tile around it.
-  let best=null;
-  for(const dc of [-0.5,0,0.5])for(const dr of [-0.5,0,0.5]){const c=cell.col+dc,r=cell.row+dr,[x,y]=iso(c,r),d=Math.hypot(x-point.x,y-point.y);if(!best||d<best.d)best={d,spot:[snap(c),snap(r)]};}
+  if(!point||!iso)return true;
+  const best={spot:snapGridPoint(worldToGrid(point.x,point.y,map))};
   at=problemAt(best.spot)?nearestFree(grid,best.spot,1)??best.spot:best.spot;delete hint.dataset.error;sync(false);
   return true;
  }

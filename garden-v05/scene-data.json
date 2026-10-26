@@ -2,8 +2,8 @@
   "version": 4,
   "tileWidth": 64,
   "tileHeight": 32,
-  "columns": 32,
-  "rows": 26,
+  "columns": 34,
+  "rows": 34,
   "origin": {
     "x": 1120,
     "y": 300
@@ -758,5 +758,5 @@
       "height": 15
     }
   ],
-  "plotCellScale": 1.25
+  "plotCellScale": 1
 }

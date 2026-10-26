@@ -42,7 +42,7 @@ const spriteRect = (asset, col, row) => {
 };
 const plotPhysicalBounds = (plot) => {
   // Keep the test on the same physical contract as scene-renderer.mjs. The
-  // 1.25 plot-cell scale makes each authored 3×3 plot 3.75×3.75 ground.
+  // Crop ground shares the common 1×1 tile; each plot covers exactly 3×3.
   const scale = Number(scene.plotCellScale) || 1;
   const centerCol = Number(plot.col) + (Number(plot.width) - 1) / 2;
   const centerRow = Number(plot.row) + (Number(plot.height) - 1) / 2;
@@ -167,10 +167,10 @@ test('keepsake plaza uses real bases, authored silhouettes, and a reachable side
 test('final plaza clears physical plots, fixed pond/hut, earned decor, and all twelve statues', () => {
   const obstacles = keepsakeObstacles({keepsakes: allKeepsakes}, GARDEN_STAGES.at(-1), (...at) => iso(...at), keepsakeAnchorRow);
   assert.equal(obstacles.ground.length, 12);
-  assert.equal(plotPhysicalBounds(scene.plots[0]).c1 - plotPhysicalBounds(scene.plots[0]).c0, 3.75);
+  assert.equal(plotPhysicalBounds(scene.plots[0]).c1 - plotPhysicalBounds(scene.plots[0]).c0, 3);
   const plots = scene.plots.map(plotPhysicalBounds);
   for (const statue of obstacles.ground) {
-    assert.ok(plots.every(plot => !rectIntersects(statue, plot)), 'statue ground must clear 3.75×3.75 physical plots');
+    assert.ok(plots.every(plot => !rectIntersects(statue, plot)), 'statue ground must clear 3×3 physical plots');
   }
   for (let left = 0; left < obstacles.ground.length; left += 1) {
     for (let right = left + 1; right < obstacles.ground.length; right += 1) {

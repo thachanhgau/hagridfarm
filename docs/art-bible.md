@@ -18,6 +18,10 @@
 - Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
 - Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
 - Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
+- Chuẩn lưới 26/10/2026: [quy tắc và kích thước từng vật](garden-grid-20261026.md).
+  Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
+  hệ số phóng riêng cho ô trồng. Bảng `garden-grid-metrics.json` phải được tạo
+  từ bootstrap đầy đủ (cả các override), kiểm tra bằng `export-grid-metrics.mjs --check`.
 
 ## 3. Bảng màu chuẩn: 32 màu (24 sprite + 8 cảnh)
 

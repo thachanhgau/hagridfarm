@@ -8,6 +8,7 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const game=path.resolve(process.argv[2]||path.join(root,'garden-v05'));
 const output=path.resolve(process.argv[3]||path.join(root,'qa-v19/art-flow-qa.json'));
 const screenshot=process.argv[4]||null;
+const opaque=process.argv.includes('--opaque');
 const require=createRequire(import.meta.url),deps='/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/';
 const {chromium,webkit}=require(deps+'playwright'),sharp=require(deps+'sharp');
 const origin='http://127.0.0.1:3026',reports=[];
@@ -22,7 +23,9 @@ for(const [browserName,type]of [['Chrome',chromium],['WebKit',webkit]]){
    const pathname=decodeURIComponent(url.pathname);let file;
    try{
     let body,contentType;
-    if(pathname==='/qa-v19/ui-fixture.html'){
+    if(pathname==='/qa-v19/iframe-host.html'){
+     body=Buffer.from('<!doctype html><html><body style="margin:0"><iframe title="Garden fixture" sandbox="allow-scripts" style="display:block;border:0;width:100vw;height:100vh" src="/qa-v19/ui-fixture.html?wallet=emulator&amp;qa=1&amp;level=500&amp;scenario=habitats&amp;view=overview&amp;simulate=1"></iframe></body></html>');contentType='text/html';
+    }else if(pathname==='/qa-v19/ui-fixture.html'){
      body=Buffer.from((await fs.readFile(path.join(game,'index.html'),'utf8')).replace('<html lang="vi">','<html lang="vi" data-wallet="fixture">').replace('<head>','<head><base href="/garden-v05/">'));
      contentType='text/html';
     }else{
@@ -35,9 +38,11 @@ for(const [browserName,type]of [['Chrome',chromium],['WebKit',webkit]]){
    }catch(error){errors.push(pathname+': '+error.message);await route.fulfill({status:404,body:'missing'});}
   });
   const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));
-  await page.goto(origin+'/qa-v19/ui-fixture.html?wallet=emulator&qa=1&level=500&scenario=habitats&view=overview&simulate=1');
-  await page.waitForFunction(()=>window.__HAGRID_GARDEN_QA__?.getSnapshot().loaded&&window.__HAGRID_GARDEN_QA__?.getSnapshot().walletReady);
-  const coverage=await page.evaluate(async()=>{
+  await page.goto(origin+(opaque?'/qa-v19/iframe-host.html':'/qa-v19/ui-fixture.html?wallet=emulator&qa=1&level=500&scenario=habitats&view=overview&simulate=1'));
+  let gamePage=opaque?page.frames().find(f=>f!==page.mainFrame()):page;
+  if(opaque)assert.equal(await gamePage.evaluate(()=>window.origin),'null');
+  await gamePage.waitForFunction(()=>window.__HAGRID_GARDEN_QA__?.getSnapshot().loaded&&window.__HAGRID_GARDEN_QA__?.getSnapshot().walletReady);
+  const coverage=await gamePage.evaluate(async()=>{
    const E=await import('/garden-v05/progression-engine.mjs');
    const {visualItemIcon,itemArtKey}=await import('/garden-v05/ui-utils.mjs');
    const {makeRecipeIcon}=await import('/garden-v05/recipe-art-ui.mjs');
@@ -66,6 +71,10 @@ for(const [browserName,type]of [['Chrome',chromium],['WebKit',webkit]]){
    const manifest=window.FARM_DECOR_MANIFEST||await fetch('/garden-v05/decor-assets-manifest.json').then(r=>r.json());
    const garden=await createGarden(canvas,{decorAssets:manifest.items});
    if(garden.missing.length)throw Error('Missing scene art '+garden.missing);
+   const gridMetrics=garden.gridMetrics();
+   if(window.FARM_SCENE.plotCellScale!==1||gridMetrics.some(m=>m.footprint.some(n=>!Number.isInteger(n)||n<1)))throw Error('Non-uniform garden grid');
+   if(gridMetrics.filter(m=>m.kind==='plot').some(m=>m.ground.width!==192||m.ground.height!==96))throw Error('Wrong 3×3 plot pixels');
+   if(gridMetrics.filter(m=>m.kind==='pen').some(m=>m.ground.width!==256||m.ground.height!==128))throw Error('Wrong 5×3 pen pixels');
    const now=Date.now(),state=E.testProfile(500,now);
    state.level=500;state.xp=E.DB.levels.at(-1).totalXP;state.built=[...new Set([...state.built,...E.DB.expansions.map(e=>e.id)])];
    state.plots=Array.from({length:18},()=>({slots:Array(9).fill(null),cooldowns:Array(9).fill(0),patterns:[]}));
@@ -93,7 +102,7 @@ for(const [browserName,type]of [['Chrome',chromium],['WebKit',webkit]]){
    const material=E.DB.animals.find(a=>a.id==='three-headed-dog').produce;
    if(material!=='Sợi lông trắng Chó ba đầu')throw Error('Wrong dog fur name');
    const png=canvas.toDataURL('image/png');
-   return {visuals,failedImages:failed,iconOverflow:overflow,harvestArt:Object.keys(FLOW_ITEM_ART).filter(k=>k.startsWith('harvest_')).length,canonicalOutputs:new Set(E.DB.recipes.map(r=>r.output)).size,keepsakes:E.DB.animals.length,worldCombinations:combinations,heroTriple:true,newCropMotionDraws:draws.length,nativeAtlasSize:true,scenePng:png};
+   return {gridMetricEntries:gridMetrics.length,commonTilePixels:[64,32],plotGroundPixels:[192,96],penGroundPixels:[256,128],visuals,failedImages:failed,iconOverflow:overflow,harvestArt:Object.keys(FLOW_ITEM_ART).filter(k=>k.startsWith('harvest_')).length,canonicalOutputs:new Set(E.DB.recipes.map(r=>r.output)).size,keepsakes:E.DB.animals.length,worldCombinations:combinations,heroTriple:true,newCropMotionDraws:draws.length,nativeAtlasSize:true,scenePng:png};
   });
   assert.equal(coverage.failedImages,0);assert.equal(coverage.iconOverflow,false);
   assert.equal(coverage.harvestArt,32);assert.equal(coverage.canonicalOutputs,14);
@@ -102,33 +111,43 @@ for(const [browserName,type]of [['Chrome',chromium],['WebKit',webkit]]){
   const viewportChecks=[];
   for(const viewport of [{width:1280,height:800},{width:375,height:812},{width:812,height:375}]){
    await page.setViewportSize(viewport);
+   // Create the opaque child at the target viewport. Reusing its old OOP frame
+   // after resize produced successful driver clicks without any DOM click event.
+   if(opaque){
+    await page.goto('about:blank');await page.goto(origin+'/qa-v19/iframe-host.html');
+    gamePage=page.frames().find(f=>f!==page.mainFrame());
+    await gamePage.waitForFunction(()=>window.__HAGRID_GARDEN_QA__?.getSnapshot().loaded&&window.__HAGRID_GARDEN_QA__?.getSnapshot().walletReady);
+    assert.equal(await gamePage.evaluate(()=>window.origin),'null');
+   }
+   await gamePage.waitForFunction(({width,height})=>innerWidth===width&&innerHeight===height,viewport);
    // The inherited showcase uses an old off-grid socket. Stash through the UI
    // before testing a new placement; opening preview must not relocate it.
-   await page.evaluate(()=>window.__HAGRID_GARDEN_QA__.openDecorPlacement('decor_pumpkin_lantern'));
-   await page.locator('.decor-bar-stash').click();await page.locator('.decor-bar').waitFor({state:'detached'});
-   const before=await page.evaluate(()=>JSON.stringify(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations));
-   await page.evaluate(()=>window.__HAGRID_GARDEN_QA__.openDecorPlacement('decor_pumpkin_lantern'));
-   await page.locator('.decor-bar-turn').click();
-   const after=await page.evaluate(()=>JSON.stringify(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations));
+   await gamePage.evaluate(()=>window.__HAGRID_GARDEN_QA__.openDecorPlacement('decor_pumpkin_lantern'));
+   await gamePage.locator('.decor-bar-stash').click();await gamePage.locator('.decor-bar').waitFor({state:'detached',timeout:5000}).catch(async error=>{throw Error(JSON.stringify({phase:'stash',browser:browserName,hint:await gamePage.locator('.decor-bar-hint').innerText(),viewport,errors,external}),{cause:error});});
+   const before=await gamePage.evaluate(()=>JSON.stringify(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations));
+   await gamePage.evaluate(()=>window.__HAGRID_GARDEN_QA__.openDecorPlacement('decor_pumpkin_lantern'));
+   await gamePage.locator('.decor-bar-turn').click();
+   const after=await gamePage.evaluate(()=>JSON.stringify(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations));
    assert.equal(after,before,'preview rotation did not mutate saved decoration state');
-   const check=await page.evaluate(()=>({viewport:{width:innerWidth,height:innerHeight},overflow:document.documentElement.scrollWidth>innerWidth,bar:(()=>{const r=document.querySelector('.decor-bar').getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom}})(),hint:document.querySelector('.decor-bar-hint').innerText}));
+   assert.match(await gamePage.locator('.decor-bar-size').innerText(),/1×1 ô · nền 64×32 px/);
+   const check=await gamePage.evaluate(()=>({viewport:{width:innerWidth,height:innerHeight},overflow:document.documentElement.scrollWidth>innerWidth,bar:(()=>{const r=document.querySelector('.decor-bar').getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom}})(),hint:document.querySelector('.decor-bar-hint').innerText}));
    assert.equal(check.overflow,false);assert.ok(check.bar.left>=0&&check.bar.right<=viewport.width+1);assert.ok(check.bar.bottom<=viewport.height+1);
    if(screenshot&&browserName==='Chrome'&&viewport.width===375)await sharp(await page.screenshot()).resize({width:188}).png().toFile(screenshot);
-   assert.equal(await page.locator('.decor-bar-apply').isEnabled(),true,'valid preview can be confirmed');
-   await page.locator('.decor-bar-apply').click();
-   await page.locator('.decor-bar').waitFor({state:'detached'});
-   const confirmed=await page.evaluate(()=>JSON.stringify(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations));
+   assert.equal(await gamePage.locator('.decor-bar-apply').isEnabled(),true,'valid preview can be confirmed');
+   await gamePage.locator('.decor-bar-apply').click();
+   await gamePage.locator('.decor-bar').waitFor({state:'detached'});
+   const confirmed=await gamePage.evaluate(()=>JSON.stringify(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations));
    assert.notEqual(confirmed,before,'confirm saves the preview');
    const beforeFacing=JSON.parse(before).rotations?.decor_pumpkin_lantern||'default';
    assert.equal(JSON.parse(confirmed).rotations.decor_pumpkin_lantern,beforeFacing==='right'?'default':'right');
-   await page.evaluate(()=>window.__HAGRID_GARDEN_QA__.openDecorPlacement('decor_pumpkin_lantern'));
-   await page.locator('.decor-bar-turn').click();await page.locator('.decor-bar-close').click();
-   assert.equal(await page.evaluate(()=>JSON.stringify(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations)),confirmed,'cancel leaves the confirmed save unchanged');
+   await gamePage.evaluate(()=>window.__HAGRID_GARDEN_QA__.openDecorPlacement('decor_pumpkin_lantern'));
+   await gamePage.locator('.decor-bar-turn').click();await gamePage.locator('.decor-bar-close').click();
+   assert.equal(await gamePage.evaluate(()=>JSON.stringify(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations)),confirmed,'cancel leaves the confirmed save unchanged');
    viewportChecks.push({...check,previewRotationSaveUnchanged:true,explicitConfirmSaved:true,cancelPreservedSave:true});
   }
   assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
   assert.equal(requests.some(r=>/\.(png|jpe?g|gif)$/.test(r.path)),false,'internal raster requests are WebP');
-  reports.push({browser:browserName,game,network:'all intercepted, no service or real wallet',...coverage,viewportChecks,requests:requests.length,bytes:requests.reduce((n,r)=>n+r.bytes,0),errors});
+  reports.push({browser:browserName,game,opaqueSandbox:opaque,network:'all intercepted, no service or real wallet',...coverage,viewportChecks,requests:requests.length,bytes:requests.reduce((n,r)=>n+r.bytes,0),errors});
  }finally{await browser.close();}
 }
 await fs.writeFile(output,JSON.stringify(reports,null,2)+'\n');console.log(JSON.stringify(reports,null,2));

@@ -1,3 +1,4 @@
+import {nativePixelScale} from './garden-grid.mjs?v=24.9.81';
 const DEFAULT_TILE_WIDTH = 64;
 const DEFAULT_TILE_HEIGHT = 32;
 
@@ -233,7 +234,7 @@ function candidateFor(x, y, sequence, state, scene) {
   const band = forestBand(x, y, scene);
   const choice = chooseAsset(nextRandom(state), band);
   const rawScale = scaleFor(choice, () => nextRandom(state));
-  const scale = Math.round(rawScale * 1000) / 1000;
+  const scale = nativePixelScale(rawScale);
   const size = sizeFor(choice, state.sizes);
   const anchorX = Math.round(x);
   const anchorY = Math.round(y);

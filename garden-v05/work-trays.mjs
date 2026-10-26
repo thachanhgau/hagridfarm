@@ -1,7 +1,7 @@
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.80';
-import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.80';
-import { DB } from './balance-data.mjs?v=24.9.80';
-import { makeRecipeIcon } from './recipe-art-ui.mjs?v=24.9.80';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.81';
+import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.81';
+import { DB } from './balance-data.mjs?v=24.9.81';
+import { makeRecipeIcon } from './recipe-art-ui.mjs?v=24.9.81';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);

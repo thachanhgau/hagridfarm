@@ -245,7 +245,7 @@ test('plot frames match all soil cell edges after layout swaps', () => {
 });
 
 
-test('enlarged cells still select the correct slot at their centers and near every edge',()=>{
+test('standard cells still select the correct slot at their centers and near every edge',()=>{
   for(const plot of scene.plots)for(let slot=0;slot<9;slot++){
     const [col,row]=plotCellPosition(plot,slot,scene),scale=scene.plotCellScale;
     for(const [dc,dr] of [[0,0],[.4,.4],[-.4,.4],[.4,-.4],[-.4,-.4]]){
@@ -254,8 +254,8 @@ test('enlarged cells still select the correct slot at their centers and near eve
     }
   }
   const width=plotPhysicalBounds(scene.plots[0],scene).width;
-  assert.equal(width,3.75);
-  assert.equal(scene.plots[1].col-scene.plots[0].col-width,2.75);
+  assert.equal(width,3);
+  assert.equal(scene.plots[1].col-scene.plots[0].col-width,3.5);
   const plots=scene.plots.map(p=>plotPhysicalBounds(p,scene));
   for(let i=0;i<plots.length;i++)for(let j=i+1;j<plots.length;j++)assert.equal(overlap(plots[i],plots[j]),false);
 });
