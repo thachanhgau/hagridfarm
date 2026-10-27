@@ -369,26 +369,34 @@
       "label": "Lều phù thủy mái vẹo",
       "group": "Tiểu cảnh",
       "subject": "A small cosy one-room witch's hut decoration, weathered timber walls, dramatically crooked violet slate roof with curled chimney, amber arched window, little plank door, pumpkin by doorstep and sparse ivy. No landscape or ground tile, fully visible foundation.",
-      "w": 192,
-      "h": 208,
+      "w": 128,
+      "h": 176,
       "foot": [
         2,
         2
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        120,
+        145
+      ]
     },
     {
       "id": "hw_mini_pumpkin_house",
       "label": "Nhà bí ngô thu nhỏ",
       "group": "Tiểu cảnh",
       "subject": "A miniature cosy house built inside one giant orange pumpkin: round wooden door, two tiny amber windows, curled green stem chimney, two small stone steps, a violet leaf awning, small green vine around base. No landscape or tile platform.",
-      "w": 176,
-      "h": 176,
+      "w": 128,
+      "h": 144,
       "foot": [
         2,
         2
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        120,
+        122
+      ]
     },
     {
       "id": "hw_ghost_well",
@@ -421,13 +429,17 @@
       "label": "Cây cổ thụ treo đèn",
       "group": "Tiểu cảnh",
       "subject": "A compact venerable gnarled tree with a stout warm brown trunk, broad sparse canopy of moss green and autumn orange leaves, exactly four small pumpkin lanterns hanging at varied heights, exposed curling roots and one tiny mushroom. Entire canopy and roots visible, no landscape.",
-      "w": 208,
-      "h": 224,
+      "w": 160,
+      "h": 192,
       "foot": [
         3,
         2
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        152,
+        158
+      ]
     }
   ]
 }

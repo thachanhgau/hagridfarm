@@ -2,17 +2,14 @@
 
 Tạo bởi `node garden-v05/audit-grid-fit.mjs` theo [guideline khớp ô](grid-fit-guideline.md). Số đo là pixel thế giới ở zoom 1, đo từ phần có màu (alpha > 0) của file đang chạy trong game. Không sửa tay file này.
 
-Đã đo 147 món (242 hình, tính cả hai hướng xoay). Lệch: **41 món** — nặng 3, vừa 25, nhẹ 13. Đạt: 106.
+Đã đo 147 món (242 hình, tính cả hai hướng xoay). Lệch: **38 món** — nặng 0, vừa 25, nhẹ 13. Đạt: 109.
 
 Cột «Tạo lại»: canvas rộng × cao, pivot (x, y) = điểm chân, khung mực tối đa rộng × cao. Vẽ lại hoặc xuất lại từ master ở kích thước đó; không thu nhỏ ảnh đã xuất. «Hoặc nền» là nền nhỏ nhất vừa hình hiện tại, chỉ dùng khi chủ dự án muốn giữ nguyên hình (đổi catalog + server, không áp cho save cũ).
 
-## Đồ trang trí cửa hàng (mua) — 27 món
+## Đồ trang trí cửa hàng (mua) — 24 món
 
 | Mức | Món | Nền (ô · px) | Hình hiện tại (mực · canvas · pivot) | Lỗi | Cách sửa | Tạo lại: canvas · pivot · khung mực | Hoặc nền |
 |---|---|---|---|---|---|---|---|
-| nặng | Lều phù thủy mái vẹo `hw_crooked_witch_hut` | 2×2 · 128×64 | 169×202 · 192×208 · (96,204) | tràn trái 20, phải 21 px (hướng phải) | vẽ nhỏ lại | 128×176 · (64,160) · ≤ 120×143 | 3×3 |
-| nặng | Nhà bí ngô thu nhỏ `hw_mini_pumpkin_house` | 2×2 · 128×64 | 169×170 · 176×176 · (88,172) | tràn trái 20, phải 21 px (hướng phải) | vẽ nhỏ lại | 128×144 · (64,128) · ≤ 120×121 | 3×3 |
-| nặng | Cây cổ thụ treo đèn `hw_lantern_ancient_tree` | 2×3 · 160×80 | 202×210 · 208×224 · (104,220) | tràn trái 21, phải 21 px (hướng trái) | vẽ nhỏ lại | 160×192 · (80,176) · ≤ 152×158 | — |
 | vừa | Đèn lồng hình nhà ma `hw_haunted_house_lantern` | 1×1 · 64×32 | 83×114 · 96×120 · (48,116) | tràn trái 9, phải 10 px; 34% chân đế nằm ngoài nền (hướng trái) | vẽ nhỏ lại | 64×112 · (32,96) · ≤ 56×77 | 2×1 |
 | vừa | Mề đay Slytherin `sp_slytherin_locket` | 1×1 · 64×32 | 82×96 · 88×112 · (44,108) | tràn trái 9, phải 9 px (hướng trái) | vẽ nhỏ lại | 64×96 · (32,80) · ≤ 56×66 | 2×1 |
 | vừa | Nhẫn gia tộc Gaunt `sp_gaunt_ring` | 1×1 · 64×32 | 82×90 · 88×96 · (44,92) | tràn trái 9, phải 9 px (hướng trái) | vẽ nhỏ lại | 64×96 · (32,80) · ≤ 56×61 | 2×1 |

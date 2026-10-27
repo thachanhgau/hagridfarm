@@ -1,10 +1,10 @@
 {
   "schema": "hagrid-farm.decor-assets.provenance.v1",
-  "generatedAt": "2026-10-27T08:17:54.339Z",
+  "generatedAt": "2026-10-27T08:26:39.543Z",
   "tool": "build-assets.mjs",
   "specs": {
     "file": "specs.json",
-    "sha256": "943846f2c82f7651b48105bd29e175d1b59515a9161324fc245f6da38ab953c9"
+    "sha256": "24e8272997b799093671234cadc881c0ab06a257585a4b437fa7f576e9928971"
   },
   "itemPalettes": {
     "file": "item-palettes.json",
@@ -2478,33 +2478,33 @@
     {
       "id": "hw_crooked_witch_hut",
       "source": "masters/hw_crooked_witch_hut.png",
-      "sourceSha256": "9fb3512919c1d50012f331247769f4f22cfda1046bcf408da848c141007eec56",
+      "sourceSha256": "edf9c790006abef4b03a392b8c13b0bdbe3c082df477e71630b3646009e6867c",
       "sourceCanvas": {
-        "width": 1703,
-        "height": 924,
-        "splitX": 876,
+        "width": 1625,
+        "height": 968,
+        "splitX": 861,
         "transparentGap": {
-          "start": 837,
-          "end": 915
+          "start": 790,
+          "end": 932
         },
-        "defaultWidth": 876,
-        "alternateWidth": 827,
+        "defaultWidth": 861,
+        "alternateWidth": 764,
         "discardedCenterColumns": 0
       },
       "sourceViews": {
         "default": {
-          "x": 129,
-          "y": 21,
-          "w": 708,
-          "h": 856,
-          "count": 355128
+          "x": 94,
+          "y": 28,
+          "w": 696,
+          "h": 890,
+          "count": 380686
         },
         "alternate": {
-          "x": 40,
-          "y": 45,
-          "w": 699,
-          "h": 835,
-          "count": 351787
+          "x": 72,
+          "y": 64,
+          "w": 643,
+          "h": 869,
+          "count": 348146
         }
       },
       "palette": {
@@ -2535,15 +2535,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 63,
-              "y": 109,
-              "w": 15,
-              "h": 8
+              "x": 33,
+              "y": 88,
+              "w": 12,
+              "h": 5
             },
-            "pixelCount": 58,
-            "mappableCount": 58,
-            "maxPixels": 2442,
-            "rootBand": 156
+            "pixelCount": 36,
+            "mappableCount": 36,
+            "maxPixels": 1240,
+            "rootBand": 132
           }
         },
         "alternate": {
@@ -2552,66 +2552,66 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 48,
-              "y": 101,
-              "w": 14,
-              "h": 8
+              "x": 51,
+              "y": 95,
+              "w": 8,
+              "h": 13
             },
-            "pixelCount": 64,
-            "mappableCount": 64,
-            "maxPixels": 2546,
-            "rootBand": 156
+            "pixelCount": 55,
+            "mappableCount": 55,
+            "maxPixels": 1191,
+            "rootBand": 132
           }
         }
       },
       "outputs": {
-        "native/hw_crooked_witch_hut.png": "8cc9ae66eaedc8a93f504d9e6aafc3e3a7875245a8df540fd4d0dc2b9b840b1c",
-        "native/hw_crooked_witch_hut_right.png": "d555dd8ccab3967942156bba42eed5ceb82f70c47f888249c6b029b1be13aca3",
-        "native/hw_crooked_witch_hut_f0.png": "8cc9ae66eaedc8a93f504d9e6aafc3e3a7875245a8df540fd4d0dc2b9b840b1c",
-        "native/hw_crooked_witch_hut_f1.png": "f9a1e193e6f2cd4f3c740e45c1422c0b1994f727a05eb52083c194c3861bdfa1",
-        "native/hw_crooked_witch_hut_f2.png": "461d26110687252db26e0644f97b6ce6dc7bb53c85a7d3ae515998e347e05fdc",
-        "native/hw_crooked_witch_hut_f3.png": "8cc9ae66eaedc8a93f504d9e6aafc3e3a7875245a8df540fd4d0dc2b9b840b1c",
-        "native/hw_crooked_witch_hut_right_f0.png": "d555dd8ccab3967942156bba42eed5ceb82f70c47f888249c6b029b1be13aca3",
-        "native/hw_crooked_witch_hut_right_f1.png": "528ac00e990e5542b8b6c792d18095e54637f3b39d0020a0bb5e1e8416c9aca6",
-        "native/hw_crooked_witch_hut_right_f2.png": "82d5a89f2598a7d9fcb9c068f1acea4af8caa6689a41c2eee37eeceecdee8c84",
-        "native/hw_crooked_witch_hut_right_f3.png": "d555dd8ccab3967942156bba42eed5ceb82f70c47f888249c6b029b1be13aca3",
-        "spritesheets/hw_crooked_witch_hut.png": "cf3afce710ae57f4bd6390c6937119584befeb0949d66cf48ea7e282ecab6c0d",
-        "thumbnails/2x/hw_crooked_witch_hut.png": "25de729acad85b2f467a51b3978cb666266b65a81c9c49e01be4d8646eb2d3a9",
-        "thumbnails/2x/hw_crooked_witch_hut_right.png": "2999276c82551d49cacae68137bae5d5cf04d358175b076ea51f1c000821e882",
-        "thumbnails/3x/hw_crooked_witch_hut.png": "6d478943fdb0119560174e6682c455dfd2349abc505a33bb320b03faf19f8896",
-        "thumbnails/3x/hw_crooked_witch_hut_right.png": "29a51f2b22054ae152cd43a2ac88c046101450882fabecdbb8b2f192a2b69b94"
+        "native/hw_crooked_witch_hut.png": "9f7f4b5e205654ed5eda39033cbce8413f43555622472ae9254d4ab2f4b003b9",
+        "native/hw_crooked_witch_hut_right.png": "3133f1023c7c33943883699a1dc81d9f554dd83ad91c6d7927fbb30ab782d4db",
+        "native/hw_crooked_witch_hut_f0.png": "9f7f4b5e205654ed5eda39033cbce8413f43555622472ae9254d4ab2f4b003b9",
+        "native/hw_crooked_witch_hut_f1.png": "7ceb2999b3d96370f421562b6ef93158894a412c73cb1e2566e5386b6ca8d9af",
+        "native/hw_crooked_witch_hut_f2.png": "3f6ffb6f503547dbf3934f23f898633c56a9957153d10ddecb2f47004ae770b0",
+        "native/hw_crooked_witch_hut_f3.png": "9f7f4b5e205654ed5eda39033cbce8413f43555622472ae9254d4ab2f4b003b9",
+        "native/hw_crooked_witch_hut_right_f0.png": "3133f1023c7c33943883699a1dc81d9f554dd83ad91c6d7927fbb30ab782d4db",
+        "native/hw_crooked_witch_hut_right_f1.png": "5e9563e9f9beb9792d658ec20c2e7fcef92b31333af97c8c60b7e9e2559f409d",
+        "native/hw_crooked_witch_hut_right_f2.png": "379687993d5b541962d0fd7357d309c19697112d1801257a75e7564286c20e12",
+        "native/hw_crooked_witch_hut_right_f3.png": "3133f1023c7c33943883699a1dc81d9f554dd83ad91c6d7927fbb30ab782d4db",
+        "spritesheets/hw_crooked_witch_hut.png": "4341a6e5ef69905861c6476f48efe866fa655311729d409c08b99da09916f553",
+        "thumbnails/2x/hw_crooked_witch_hut.png": "80c3e75de27d2337a634ecdbfd9be240f1f80241f23206b1a0fb08fcb46e796e",
+        "thumbnails/2x/hw_crooked_witch_hut_right.png": "56d30f59138550efbf118e7105de19924e81185f4a2d40155fa503660aa1e7e5",
+        "thumbnails/3x/hw_crooked_witch_hut.png": "8402f10bcdae79f8add388278b960ef650345df925d40c335d0a72ca0158cf1a",
+        "thumbnails/3x/hw_crooked_witch_hut_right.png": "0ab629b84832ed2d827de4135095432369487f76b4bb95f5e0f105123580f9d1"
       }
     },
     {
       "id": "hw_mini_pumpkin_house",
       "source": "masters/hw_mini_pumpkin_house.png",
-      "sourceSha256": "e3530604734a6c638b9777f01687eed7d3c8cf75c69536d18b278f20e1f67672",
+      "sourceSha256": "a756186628b72b3560dc3b4b3652b8c9f0dfa4e1792ff99a08659d16df86de98",
       "sourceCanvas": {
         "width": 1774,
         "height": 887,
-        "splitX": 894,
+        "splitX": 896,
         "transparentGap": {
-          "start": 823,
-          "end": 965
+          "start": 829,
+          "end": 963
         },
-        "defaultWidth": 894,
-        "alternateWidth": 880,
+        "defaultWidth": 896,
+        "alternateWidth": 878,
         "discardedCenterColumns": 0
       },
       "sourceViews": {
         "default": {
-          "x": 91,
-          "y": 65,
-          "w": 732,
-          "h": 746,
-          "count": 379010
+          "x": 62,
+          "y": 74,
+          "w": 767,
+          "h": 777,
+          "count": 419641
         },
         "alternate": {
-          "x": 72,
-          "y": 71,
-          "w": 736,
-          "h": 740,
-          "count": 363714
+          "x": 68,
+          "y": 74,
+          "w": 752,
+          "h": 769,
+          "count": 399668
         }
       },
       "palette": {
@@ -2642,15 +2642,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 50,
-              "y": 52,
-              "w": 50,
+              "x": 37,
+              "y": 43,
+              "w": 37,
               "h": 44
             },
-            "pixelCount": 1054,
-            "mappableCount": 1054,
-            "maxPixels": 2417,
-            "rootBand": 132
+            "pixelCount": 747,
+            "mappableCount": 747,
+            "maxPixels": 1261,
+            "rootBand": 108
           }
         },
         "alternate": {
@@ -2659,34 +2659,34 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 21,
-              "y": 55,
-              "w": 44,
-              "h": 50
+              "x": 17,
+              "y": 45,
+              "w": 25,
+              "h": 47
             },
-            "pixelCount": 715,
-            "mappableCount": 715,
-            "maxPixels": 2354,
-            "rootBand": 132
+            "pixelCount": 569,
+            "mappableCount": 569,
+            "maxPixels": 1228,
+            "rootBand": 108
           }
         }
       },
       "outputs": {
-        "native/hw_mini_pumpkin_house.png": "b014fbff87fc33fc1cdb4ec4ae3903cffc1335e4118d422f406da20fd481e129",
-        "native/hw_mini_pumpkin_house_right.png": "dda209388d01ecf3651132bacc0eb5d6ed5a9676de86e44ddf384dbd9efcf498",
-        "native/hw_mini_pumpkin_house_f0.png": "b014fbff87fc33fc1cdb4ec4ae3903cffc1335e4118d422f406da20fd481e129",
-        "native/hw_mini_pumpkin_house_f1.png": "c369f4444603b4990b2959ea78ddfaa2bd65fddd50cefd317a4f7aca8e023d41",
-        "native/hw_mini_pumpkin_house_f2.png": "8309718d8cd5ca9c2b92d8d5d3159ea4ff57096cc7bc980a496d8a65f656391a",
-        "native/hw_mini_pumpkin_house_f3.png": "b014fbff87fc33fc1cdb4ec4ae3903cffc1335e4118d422f406da20fd481e129",
-        "native/hw_mini_pumpkin_house_right_f0.png": "dda209388d01ecf3651132bacc0eb5d6ed5a9676de86e44ddf384dbd9efcf498",
-        "native/hw_mini_pumpkin_house_right_f1.png": "a8274d87695ab9905888fccdc170cbeebd96081b20db1cd6cb82d5001254d061",
-        "native/hw_mini_pumpkin_house_right_f2.png": "a0698449a233ae32630ed09e0b05c7ce3bf9c6cd73e2363e0053dfa2657ae308",
-        "native/hw_mini_pumpkin_house_right_f3.png": "dda209388d01ecf3651132bacc0eb5d6ed5a9676de86e44ddf384dbd9efcf498",
-        "spritesheets/hw_mini_pumpkin_house.png": "274774ab580f9028f3818c5938fee855d0ebeff056fe9c5465fc7fe30b461573",
-        "thumbnails/2x/hw_mini_pumpkin_house.png": "da4e781e25f190700f83370b71eb6227f3df73ebdce9883f5a1e011238f3b79d",
-        "thumbnails/2x/hw_mini_pumpkin_house_right.png": "78b1c196cdf9ec861905ffecb398b0ddff7c31a0523a4d7ae627f76e9096bd9c",
-        "thumbnails/3x/hw_mini_pumpkin_house.png": "0e931548ed22fbd808daee801536668fd50052d1f97dbd07bf6f7a2d6dcf2ae0",
-        "thumbnails/3x/hw_mini_pumpkin_house_right.png": "3f9197b28a5da5fa971771c961a3857d8491d0fcf5813acb2d396faa22ea8def"
+        "native/hw_mini_pumpkin_house.png": "d787ddf3412db7988d37daab83bae528458c0a42ff7331db919b1a07bc01bd0b",
+        "native/hw_mini_pumpkin_house_right.png": "2c0e8574fa68affae33c896517e4071bfb42a95356e65116070bcf422f77db3e",
+        "native/hw_mini_pumpkin_house_f0.png": "d787ddf3412db7988d37daab83bae528458c0a42ff7331db919b1a07bc01bd0b",
+        "native/hw_mini_pumpkin_house_f1.png": "02ce82a69bc014d1a37b13a4b1290916a8dca662c29b0a92afc2e0cdeeee5a72",
+        "native/hw_mini_pumpkin_house_f2.png": "a09a2d606a7c427e4a8ea37ea9e1abe8c3f0dd125757f10ba9f4342ffba1ea0e",
+        "native/hw_mini_pumpkin_house_f3.png": "d787ddf3412db7988d37daab83bae528458c0a42ff7331db919b1a07bc01bd0b",
+        "native/hw_mini_pumpkin_house_right_f0.png": "2c0e8574fa68affae33c896517e4071bfb42a95356e65116070bcf422f77db3e",
+        "native/hw_mini_pumpkin_house_right_f1.png": "2914d1f35d702ff516b502420d45fa307f83719c59ec97254b1d4ab6f17a6174",
+        "native/hw_mini_pumpkin_house_right_f2.png": "2ad2db600e690f87fb5b29791ec20d612343b7d3039b7a5559f5d5c8a82c087a",
+        "native/hw_mini_pumpkin_house_right_f3.png": "2c0e8574fa68affae33c896517e4071bfb42a95356e65116070bcf422f77db3e",
+        "spritesheets/hw_mini_pumpkin_house.png": "1f22a4186222b58e17780b9e7453d77fadb4422a239e387d6ffe52e83c96801d",
+        "thumbnails/2x/hw_mini_pumpkin_house.png": "452b1ef9e8ba0debf51efb5c528184571407f4d2f64a429e509b01481b8a6546",
+        "thumbnails/2x/hw_mini_pumpkin_house_right.png": "ff98ef42845e19e7667ed87a37f7bb5865015c542b4651dabf111bd332a0ca55",
+        "thumbnails/3x/hw_mini_pumpkin_house.png": "4b79de0d9226d409f5cab9547bbbbc986864e835d2717141f8b967a2b286942a",
+        "thumbnails/3x/hw_mini_pumpkin_house_right.png": "2acb90d1ed11ba8fb1ce4ab08d3966ef188ee8c3cc071a1960878bf2099c4615"
       }
     },
     {
@@ -2884,33 +2884,33 @@
     {
       "id": "hw_lantern_ancient_tree",
       "source": "masters/hw_lantern_ancient_tree.png",
-      "sourceSha256": "608b08478e0a4b003906be5d39eed7704d5f46a70c567e85f79dfb905a022f9a",
+      "sourceSha256": "d631b08a7de295f76b19c3c5b1ee3a75cf00c9a806e089adeaa8feec338b0abd",
       "sourceCanvas": {
-        "width": 1706,
-        "height": 922,
-        "splitX": 869,
+        "width": 1737,
+        "height": 905,
+        "splitX": 881,
         "transparentGap": {
-          "start": 847,
-          "end": 891
+          "start": 832,
+          "end": 929
         },
-        "defaultWidth": 869,
-        "alternateWidth": 837,
+        "defaultWidth": 881,
+        "alternateWidth": 856,
         "discardedCenterColumns": 0
       },
       "sourceViews": {
         "default": {
-          "x": 41,
-          "y": 48,
-          "w": 806,
-          "h": 838,
-          "count": 358949
+          "x": 70,
+          "y": 47,
+          "w": 762,
+          "h": 825,
+          "count": 378785
         },
         "alternate": {
-          "x": 23,
-          "y": 43,
-          "w": 796,
-          "h": 843,
-          "count": 339382
+          "x": 49,
+          "y": 54,
+          "w": 744,
+          "h": 823,
+          "count": 355458
         }
       },
       "palette": {
@@ -2941,15 +2941,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 160,
-              "y": 144,
-              "w": 10,
-              "h": 10
+              "x": 118,
+              "y": 78,
+              "w": 13,
+              "h": 12
             },
-            "pixelCount": 57,
-            "mappableCount": 57,
-            "maxPixels": 2892,
-            "rootBand": 168
+            "pixelCount": 91,
+            "mappableCount": 91,
+            "maxPixels": 1758,
+            "rootBand": 144
           }
         },
         "alternate": {
@@ -2958,34 +2958,34 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 162,
-              "y": 126,
-              "w": 15,
-              "h": 7
+              "x": 118,
+              "y": 96,
+              "w": 12,
+              "h": 15
             },
-            "pixelCount": 54,
-            "mappableCount": 54,
-            "maxPixels": 2818,
-            "rootBand": 168
+            "pixelCount": 104,
+            "mappableCount": 104,
+            "maxPixels": 1657,
+            "rootBand": 144
           }
         }
       },
       "outputs": {
-        "native/hw_lantern_ancient_tree.png": "07a3c94d2bb0c5eb857ee20ad53d4cbb46a1bf6512e901c83d053e83bdc36d93",
-        "native/hw_lantern_ancient_tree_right.png": "848eaa05cac159cf599c3c795b08a52ad9c0f1a068e2683e09934966da310030",
-        "native/hw_lantern_ancient_tree_f0.png": "07a3c94d2bb0c5eb857ee20ad53d4cbb46a1bf6512e901c83d053e83bdc36d93",
-        "native/hw_lantern_ancient_tree_f1.png": "984bcf99cc74b9a128dc18a8fe50cc4bb726454a1cfb54705092e818652e5190",
-        "native/hw_lantern_ancient_tree_f2.png": "9ca13179939d419d9f66251af759409301eb7c7f99537f0d74bcd50e81a5c465",
-        "native/hw_lantern_ancient_tree_f3.png": "07a3c94d2bb0c5eb857ee20ad53d4cbb46a1bf6512e901c83d053e83bdc36d93",
-        "native/hw_lantern_ancient_tree_right_f0.png": "848eaa05cac159cf599c3c795b08a52ad9c0f1a068e2683e09934966da310030",
-        "native/hw_lantern_ancient_tree_right_f1.png": "199b82085579840b0b3d4073d82a99231330d0a0777ac6e0758cff9653a8a4cc",
-        "native/hw_lantern_ancient_tree_right_f2.png": "d40ab1350e986f5b5d97722ddf9dc1a98847f6fb7b863b141cd2dcb71185ac7b",
-        "native/hw_lantern_ancient_tree_right_f3.png": "848eaa05cac159cf599c3c795b08a52ad9c0f1a068e2683e09934966da310030",
-        "spritesheets/hw_lantern_ancient_tree.png": "1ff023df9e24978dd05c754db8855779a83a97d9c74d8a99353b2872d4aac176",
-        "thumbnails/2x/hw_lantern_ancient_tree.png": "ed463b5b4f127182652e93033714785b77989fc521f8dcbfc4ae7e44e7f27eb9",
-        "thumbnails/2x/hw_lantern_ancient_tree_right.png": "2ad8fede6478a5da132713b20007a4076f1c2569b76d7c91041b702bb33ff5ec",
-        "thumbnails/3x/hw_lantern_ancient_tree.png": "078b259e4f88cbad232cf3ef1b66544415ee300923ad935536a911720089a60d",
-        "thumbnails/3x/hw_lantern_ancient_tree_right.png": "a58b9b47a4f0da07547669d5453ab4a02aeaaae1f4531606c32158bd7da7677e"
+        "native/hw_lantern_ancient_tree.png": "bedbb68347d9757722adb3b767a601f288ab3de5c768b72d568c9b805393044f",
+        "native/hw_lantern_ancient_tree_right.png": "217fab8cb331ab2589721cbfd97b0d5432f262107c7b98f104ae573810a6ff56",
+        "native/hw_lantern_ancient_tree_f0.png": "bedbb68347d9757722adb3b767a601f288ab3de5c768b72d568c9b805393044f",
+        "native/hw_lantern_ancient_tree_f1.png": "1cf68ac6cef3b00e06f6a78d724ed322c6cdb43c89b360c5ecef76745c50a24a",
+        "native/hw_lantern_ancient_tree_f2.png": "ba73aa8bd6340dc5a035d758d35e54799b2ba3827c5a15302e8990daa2c9303d",
+        "native/hw_lantern_ancient_tree_f3.png": "bedbb68347d9757722adb3b767a601f288ab3de5c768b72d568c9b805393044f",
+        "native/hw_lantern_ancient_tree_right_f0.png": "217fab8cb331ab2589721cbfd97b0d5432f262107c7b98f104ae573810a6ff56",
+        "native/hw_lantern_ancient_tree_right_f1.png": "dbdb202c86cc34941fe2d4e460f8578ee49803eb23a729f2e306d3a6a8b40991",
+        "native/hw_lantern_ancient_tree_right_f2.png": "ac2c08a1fd957b16419c9bde3a1c8c802b9dcaabb85fd452108f8b0f72662c7f",
+        "native/hw_lantern_ancient_tree_right_f3.png": "217fab8cb331ab2589721cbfd97b0d5432f262107c7b98f104ae573810a6ff56",
+        "spritesheets/hw_lantern_ancient_tree.png": "445942aaaa243a9e45af076a1f959795985bc9609724aa23537a5e7566ea62f1",
+        "thumbnails/2x/hw_lantern_ancient_tree.png": "949c5cb342f8bcabfda3f49840bb2ac1d7eba2fcf39ad2bd35335524d20380b7",
+        "thumbnails/2x/hw_lantern_ancient_tree_right.png": "335c4d3e2cd4ebbb9c853fb2f1499775424dc07ef5a568409ca1616ac5b2dbec",
+        "thumbnails/3x/hw_lantern_ancient_tree.png": "e52225470674013671db94956e32583c702e398489eb7954f83c78c28b40618d",
+        "thumbnails/3x/hw_lantern_ancient_tree_right.png": "42d5ca9a5e31f46bccac6aa298d2b32c9e593cca19e61d2bbf0c59b7897f24c5"
       }
     }
   ]
