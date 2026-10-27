@@ -1,43 +1,43 @@
-import {refreshPremiumControls} from './garden-premium-controls.mjs?v=24.9.84';
-import {setupPetControls,renderPetCareButtons} from './pet-controls.mjs?v=24.9.84';
-import {openGardenLayout} from './garden-layout-ui.mjs?v=24.9.84';
-import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=24.9.84';
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.84';
-import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.84';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.84';
-import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.84';
-import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields} from './decor-runtime.mjs?v=24.9.84';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.84';
-import {showStore} from './garden-store-ui.mjs?v=24.9.84';
-import {setupProfile} from './profile-ui.mjs?v=24.9.84';
-import * as E from './progression-engine.mjs?v=24.9.84';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.84';
-import {setupCamera} from './camera.mjs?v=24.9.84';
-import {createPanels} from './progression-panels.mjs?v=24.9.84';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.84';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.84';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.84';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.84';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.84';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.84';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.84';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.84';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.84';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.84';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.84';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.84';
-import {nextGoal} from './next-goal.mjs?v=24.9.84';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.84';
-import {createMissions} from './garden-missions-ui.mjs?v=24.9.84';
-import {createHagridWork} from './garden-work-ui.mjs?v=24.9.84';
-import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.84';
-import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.84';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.84';
+import {refreshPremiumControls} from './garden-premium-controls.mjs?v=24.9.85';
+import {setupPetControls,renderPetCareButtons} from './pet-controls.mjs?v=24.9.85';
+import {openGardenLayout} from './garden-layout-ui.mjs?v=24.9.85';
+import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=24.9.85';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.85';
+import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.85';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.85';
+import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal} from './decor-placement-ui.mjs?v=24.9.85';
+import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields} from './decor-runtime.mjs?v=24.9.85';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.85';
+import {showStore} from './garden-store-ui.mjs?v=24.9.85';
+import {setupProfile} from './profile-ui.mjs?v=24.9.85';
+import * as E from './progression-engine.mjs?v=24.9.85';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.85';
+import {setupCamera} from './camera.mjs?v=24.9.85';
+import {createPanels} from './progression-panels.mjs?v=24.9.85';
+import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.85';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.85';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.85';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.85';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.85';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.85';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.85';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.85';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.85';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.85';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.85';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.85';
+import {nextGoal} from './next-goal.mjs?v=24.9.85';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.85';
+import {createMissions} from './garden-missions-ui.mjs?v=24.9.85';
+import {createHagridWork} from './garden-work-ui.mjs?v=24.9.85';
+import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.85';
+import {buildVisitSnapshot,renderMemberVisits} from './garden-visits-ui.mjs?v=24.9.85';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.85';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.84':'./garden-emulator-client.mjs?v=24.9.84');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.85':'./garden-emulator-client.mjs?v=24.9.85');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -548,7 +548,7 @@ function followGoal(){
 }
 function tickTimers(){const now=logical();document.querySelectorAll('[data-until]').forEach(e=>{const remaining=Number(e.dataset.until)-now;e.textContent=remaining<=0?'Sẵn sàng nhận':(e.dataset.prefix||'')+duration(remaining);e.classList.toggle('ready-text',remaining<=0);});document.querySelectorAll('[data-ready-button]').forEach(e=>e.disabled=Number(e.dataset.readyButton)>now);}
 function draw(clock=performance.now()){const renderState=activeTourSnapshot?activeTourSnapshot.state:state;const renderAtmo=activeTourSnapshot?activeTourSnapshot.atmosphereMode:atmosphereMode;const renderWeather=activeTourSnapshot?activeTourSnapshot.weatherMode:weatherMode;const renderEarnedRot=activeTourSnapshot?activeTourSnapshot.decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations};renderer?.render(renderState,{labelScale:1/(camera?.scale?.()||1),selectedPlot,line:activeTourSnapshot?[]:mode==='plant'?chosen():[],now:Date.now(),clock:(!motionEnabled||motionMedia.matches)?0:clock,animationClock:clock,propsVisible,grid,decorations:currentDecorations(),decorationRotations:renderEarnedRot,creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities(),previewDecoration,previewLayout,atmosphereMode:renderAtmo,weatherMode:renderWeather,eventMode,...(activeTourSnapshot?{}:tutorialRenderOptions())});placeTutorialBubble();const stage=renderer?.growthStage?.();if(stage&&(!connected||walletReady)&&stage.id!==lastGardenStage){const previous=lastGardenStage;lastGardenStage=stage.id;$('gardenStageName').textContent=stage.name;$('plotsButton').title='Giai đoạn '+stage.id+'/6 · '+stage.name;if(!activeTourSnapshot&&previous&&stage.id>previous){camera?.overview();message('Khu vườn đã mở rộng · '+stage.name+'.');}}}
-camera=setupCamera({viewport:$('cameraViewport'),canvas:$('world'),map,iso,plotCorners,getRenderer:()=>renderer,getSelectedPlot:()=>selectedPlot,notify:message,onTap:(x,y)=>mapTap?.(x,y),onPick:cell=>{playtest.track('tap',{kind:cell.kind||'plot'});if(activeTourSnapshot){if(cell.kind==='creature'){audio.play('care');renderer?.animate('care',{species:cell.species});message(`🐾 Đang ghé thăm ${CREATURE[cell.species]?.label||cell.species} tại vườn của ${activeTourSnapshot.tour.ownerName}.`);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) của ${activeTourSnapshot.tour.ownerName}.`);return;}message(`🧭 Đang tham quan ${activeTourSnapshot.tour.title} · Nhấn "Chăm giúp" trên thanh điều hướng để nhận quà!`);return;}if(cell.kind==='decoration'){const item=decorAssets.get(cell.itemId)||wallet?.snapshot?.catalog.find(i=>i.id===cell.itemId);if(item)openDecoration(item);return;}if(cell.kind==='earned-decoration'){rotateEarnedDecoration(cell.itemId);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) · Minh chứng vinh danh người giữ vườn.`);return;}if(cell.kind==='wizard'){audio.play('owl');wizard?.visit(cell.id);return;}if(cell.kind==='creature'&&cell.guest){feedTutorialGuest();return;}if(cell.kind==='creature'){selectCreature(cell.species);handlePetCreature(cell.species);return;}selectedPlot=cell.plot;setMode('plant');if(direction==='horizontal')line=Math.floor(cell.index/3);else if(direction==='vertical')line=cell.index%3;else if([0,8].includes(cell.index))line=0;else if([2,6].includes(cell.index))line=1;else if(cell.index!==4)message('Ô này không nằm trên đường chéo.');refresh();}});
+camera=setupCamera({viewport:$('cameraViewport'),canvas:$('world'),map,iso,plotCorners,getRenderer:()=>renderer,getSelectedPlot:()=>selectedPlot,notify:message,onTap:(x,y)=>mapTap?.(x,y),getDragTarget:()=>mapTap?.drag,onPick:cell=>{playtest.track('tap',{kind:cell.kind||'plot'});if(activeTourSnapshot){if(cell.kind==='creature'){audio.play('care');renderer?.animate('care',{species:cell.species});message(`🐾 Đang ghé thăm ${CREATURE[cell.species]?.label||cell.species} tại vườn của ${activeTourSnapshot.tour.ownerName}.`);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) của ${activeTourSnapshot.tour.ownerName}.`);return;}message(`🧭 Đang tham quan ${activeTourSnapshot.tour.title} · Nhấn "Chăm giúp" trên thanh điều hướng để nhận quà!`);return;}if(cell.kind==='decoration'){const item=decorAssets.get(cell.itemId)||wallet?.snapshot?.catalog.find(i=>i.id===cell.itemId);if(item)openDecoration(item);return;}if(cell.kind==='earned-decoration'){rotateEarnedDecoration(cell.itemId);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) · Minh chứng vinh danh người giữ vườn.`);return;}if(cell.kind==='wizard'){audio.play('owl');wizard?.visit(cell.id);return;}if(cell.kind==='creature'&&cell.guest){feedTutorialGuest();return;}if(cell.kind==='creature'){selectCreature(cell.species);handlePetCreature(cell.species);return;}selectedPlot=cell.plot;setMode('plant');if(direction==='horizontal')line=Math.floor(cell.index/3);else if(direction==='vertical')line=cell.index%3;else if([0,8].includes(cell.index))line=0;else if([2,6].includes(cell.index))line=1;else if(cell.index!==4)message('Ô này không nằm trên đường chéo.');refresh();}});
 function openVisualLayout(){
  return openGardenLayout({
   panels,E,layoutSlots,camera,iso,run,draw,
@@ -610,7 +610,7 @@ $('claimAnimalButton').onclick=()=>run(s=>E.claimAnimals(s,species,Date.now()),'
 for(const [id,name]of Object.entries({levelButton:'profile',plotsButton:'plots',inventoryButton:'inventory',menuButton:'menu'}))$(id).onclick=()=>panels.show(name);
 window.addEventListener('storage',e=>{if(connected)return;if(e.key!==gardenStorage.storageKey||!e.newValue||busy)return;try{const raw=gardenStorage.getItem(key);if(!raw)return;state=E.restoreChecked(raw,Date.now());refresh();panels.refresh();message('Đã cập nhật tiến độ từ tab còn lại.');}catch{message('Bản lưu ở tab khác không hợp lệ; giữ phiên đang mở.');}});
 petControls=setupPetControls({E,items,getState:()=>state,getSpecies:()=>species,getNow:logical,getReady:()=>loaded&&(!connected||walletReady)&&!busy,onSelect:selectCreature,onHelp:help=>help==='food'?openStore('food',$('petHelp')):help==='build'?setMode('build'):panels.show('roadmap')});
-workTrays=setupWorkTrays({E,items,labels,getState:()=>state,getReady:()=>loaded&&(!connected||walletReady)&&!busy,run,showPanel:name=>panels.show(name),getGalleons});
+workTrays=setupWorkTrays({E,items,labels,getState:()=>state,getReady:()=>loaded&&(!connected||walletReady)&&!busy,run,showPanel:name=>panels.show(name),getGalleons,decor:{getDecorations:currentDecorations,getAssets:()=>decorAssets,openDecorate:openDecoration,openStore}});
 $('craftTool').onclick=()=>setMode('craft');$('buildTool').onclick=()=>setMode('build');
 // Native touch/trackpad scrolling; a mouse wheel moves only this overflowing tray.
 for(const tray of document.querySelectorAll('.item-tray'))tray.addEventListener('wheel',event=>{
@@ -671,7 +671,7 @@ $('dockToggle').onclick=()=>{const collapsed=document.body.classList.toggle('doc
 const profileUI=setupProfile(message,()=>{$('levelButton').focus();panels.show('profile');});$('avatarButton').onclick=()=>panels.show('profile');
 
 function openStore(initialFilter='all',returnFocus=document.activeElement){panels.close();showStore({state,items,wallet,connected,initialFilter,returnFocus,decorAssets,onDecorate:openDecoration,onPurchase:async(id,count)=>{if(busy)throw Error('Đang xử lý thao tác khác.');busy=true;try{const before=state;await wallet.buy(id,count);audio.play('buy');guideEvent('buy',false);acceptWallet(before,'Đã mua vật tư.');}finally{busy=false;}}});}
-function openDecoration(item){if(!connected||!walletReady)return;const fullItem={...(decorAssets.get(item.id)||{}),...item};showDecorationPlacement({item:fullItem,map,assetOf:id=>decorAssets.get(id),getState:()=>state,getStage:()=>renderer?.growthStage?.(),getDecorations:currentDecorations,preview:value=>{previewDecoration=value;draw();},camera,iso,setTapHandler:fn=>{mapTap=fn;},toWorld:(x,y)=>{const c=$('world');return clientToWorld(x,y,c.getBoundingClientRect(),c.width,c.height);},onPlace:async(itemId,at,facing='default')=>{if(busy)throw Error('Đang xử lý thao tác khác.');busy=true;try{const before=state,prior=structuredClone(currentDecorations()??{});localDecorRotations[itemId]=facing;persistPrefs();audio.play('rotate');recordFestivalAction('rotate');wizard?.recordQuestAction?.('rotate');await wallet.act({action:'placeDecoration',...decorPlaceFields(prior,itemId,at,facing)});const angleLabel=facing==='right'?'Góc nhìn qua phải ↗':'Góc hiện tại ↖';acceptWallet(before,'');offerDecorUndo(prior,itemId,!at?'Đã cất đồ trang trí.':`Đã đặt đồ trang trí (${angleLabel}).`);}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'');}catch{}}throw e;}finally{busy=false;}},onClose:()=>draw()});}
+function openDecoration(item,returnFocus=document.activeElement){if(!connected||!walletReady)return;const fullItem={...(decorAssets.get(item.id)||{}),...item};showDecorationPlacement({item:fullItem,map,assetOf:id=>decorAssets.get(id),getState:()=>state,getStage:()=>renderer?.growthStage?.(),getDecorations:currentDecorations,preview:value=>{previewDecoration=value;draw();},camera,iso,setTapHandler:fn=>{mapTap=fn;},toWorld:(x,y)=>{const c=$('world');return clientToWorld(x,y,c.getBoundingClientRect(),c.width,c.height);},onPlace:async(itemId,at,facing='default')=>{if(busy)throw Error('Đang xử lý thao tác khác.');busy=true;try{const before=state,prior=structuredClone(currentDecorations()??{});localDecorRotations[itemId]=facing;persistPrefs();audio.play('rotate');recordFestivalAction('rotate');wizard?.recordQuestAction?.('rotate');await wallet.act({action:'placeDecoration',...decorPlaceFields(prior,itemId,at,facing)});const angleLabel=facing==='right'?'Góc nhìn qua phải ↗':'Góc hiện tại ↖';acceptWallet(before,'');offerDecorUndo(prior,itemId,!at?'Đã cất đồ trang trí.':`Đã đặt đồ trang trí (${angleLabel}).`);}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'');}catch{}}throw e;}finally{busy=false;}},onClose:()=>{draw();if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});}});}
 $('shopButton').onclick=()=>openStore();$('suppliesButton').onclick=()=>openStore();$('nextGoal').onclick=followGoal;
 if(qa)window.__HAGRID_GARDEN_QA__={
  getWorldSnapshot:()=>({order:renderer?.order(),loaded:renderer?.loaded,missing:renderer?.missing,stage:renderer?.growthStage(),animations:renderer?.animations()}),

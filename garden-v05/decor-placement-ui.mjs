@@ -1,16 +1,17 @@
-import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.84';
-import {GRID_STEP,spriteGridMetrics,worldToGrid,snapGridPoint} from './garden-grid.mjs?v=24.9.84';
-import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.84';
-export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.84';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.84';
-import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.84';
-import {el,button} from './ui-utils.mjs?v=24.9.84';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.84';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.84';
-import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.84';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.84';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.84';
-import {keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.84';
+import {createPlacementInput} from './placement-input.mjs?v=24.9.85';
+import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.85';
+import {GRID_STEP,spriteGridMetrics,worldToGrid,snapGridPoint} from './garden-grid.mjs?v=24.9.85';
+import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.85';
+export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.85';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.85';
+import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.85';
+import {el,button} from './ui-utils.mjs?v=24.9.85';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.85';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.85';
+import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.85';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.85';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.85';
+import {keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.85';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 // Art bible §2: a large piece keeps 0.9 tile off the fence so its body never sits on the rails.
@@ -164,13 +165,13 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  // Legacy sockets sit off the half-tile grid (row 7.15) and the server only takes half-tile spots.
  const savedSpot=()=>{const s=decorSpot(getDecorations()??{},item.id);return s&&snapGridPoint(s);};
  let at=savedSpot();
- let pending=false;
+ let pending=false,input;
  const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,asset:item,iso,assetOf}):'';
  let grid=[];
  const regrid=()=>{grid=decorSpotGrid(getStage?.(),problemAt);};
  regrid();
  // A new item starts on the free spot nearest the middle of the opened garden.
- if(!at){const stage=getStage?.();at=nearestFree(grid,[Math.min(stage?.right??20,30)/2,Math.min(stage?.bottom??9,24)/2],Infinity);}
+ if(!at){const stage=getStage?.();at=nearestFree(grid.filter(g=>g.at.every(Number.isInteger)),[Math.min(stage?.right??20,30)/2,Math.min(stage?.bottom??9,24)/2],Infinity)||nearestFree(grid,[Math.min(stage?.right??20,30)/2,Math.min(stage?.bottom??9,24)/2],Infinity);}
 
  const bar=el('div',{class:'decor-bar',role:'dialog','aria-labelledby':'decorPlaceTitle'});
  const thumb=el('img',{class:'decor-bar-thumb',alt:''});
@@ -192,7 +193,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  function sync(centerCamera){
   if(at&&centerCamera&&camera&&iso){const xy=iso(at[0],at[1]);camera.centerAt(xy[0],xy[1]-50,Math.max(1.2,camera.scale?.()||1.2));}
   const problem=problemAt(at);
-  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,grid,suggestions:placementSuggestions(grid,at,18),rect:at?decorFootprintRect(at[0],at[1],decorFootprint(item.id),selectedFacing):null});
+  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,grid,suggestions:placementSuggestions(grid.filter(g=>input?.step!==1||g.at.every(Number.isInteger)),at,18),rect:at?decorFootprintRect(at[0],at[1],decorFootprint(item.id),selectedFacing):null});
   render(problem);
  }
 
@@ -200,7 +201,8 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   const saved=savedSpot(),savedFacing=decorFacingFor(getDecorations()??{},item.id);
   const right=selectedFacing==='right';
   const metrics=spriteGridMetrics(item,decorFootprint(item.id),selectedFacing);
-  size.textContent=`${metrics.footprint.join('×')} ô · nền ${metrics.ground.width}×${metrics.ground.height} px`;
+  size.textContent=`Chiếm ${metrics.footprint.join('×')} ô · kéo món đồ hoặc dùng nút dịch`;
+  bar.dataset.col=at?.[0]??'';bar.dataset.row=at?.[1]??'';bar.dataset.facing=selectedFacing;bar.dataset.blocked=String(!!problem);input?.refresh();
   thumb.src=runtimeImageUrl(right?(item.rightFile||item.file):item.file);
   thumb.classList.toggle('is-flipped',right&&!item.rightFile);
   const here=sameSpot(at,saved),sameFacing=selectedFacing===savedFacing;
@@ -211,7 +213,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   apply.disabled=pending||!at||!!problem||here&&sameFacing;
   apply.textContent=pending?'Đang lưu…':here&&!sameFacing?'Đặt góc này':here?'Đang ở đây':'Đặt';
   stash.hidden=!saved;stash.disabled=pending;
-  if(!hint.dataset.error)hint.textContent=noRoom?'Món vẫn ở trong kho · thử ↻ góc khác, cất bớt đồ hoặc chờ vườn mở rộng':'Gợi ý xanh là chỗ gần nhất · chạm để dời · ↻ thử góc · «Đặt» để lưu';
+  if(!hint.dataset.error)hint.textContent=noRoom?'Món vẫn ở trong kho · thử ↻ góc khác, cất bớt đồ hoặc chờ vườn mở rộng':'Kéo món đồ hoặc chạm đất · mũi tên để dịch · R xoay · Enter đặt · Esc hủy';
  }
 
  // Turning is always a preview action. Even when the item is standing at its
@@ -227,14 +229,6 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   sync(isNew);
  }
 
- // Any tap is kept so plots stay untouched while placing.
- function onTap(clientX,clientY){
-  const point=toWorld?.(clientX,clientY);
-  if(!point||!iso)return true;
-  const best={spot:snapGridPoint(worldToGrid(point.x,point.y,map))};
-  at=problemAt(best.spot)?nearestFree(grid,best.spot,1)??best.spot:best.spot;delete hint.dataset.error;sync(false);
-  return true;
- }
 
  async function save(spot){
   if(pending)return;
@@ -244,12 +238,11 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  }
  function commit(){if(at&&!problemAt(at))save(at);}
 
- function onKey(e){if(e.key==='Escape')close();}
  function close(){
   if(pending)return;
   preview(null);
   setTapHandler?.(null);
-  document.removeEventListener('keydown',onKey);
+  input?.dispose();
   bar.remove();
   document.body.classList.remove('placing-decor');
   onClose?.();
@@ -257,10 +250,15 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
 
  document.getElementById('gameShell').append(bar);
  document.body.classList.add('placing-decor');
- document.addEventListener('keydown',onKey);
- setTapHandler?.(onTap);
+ input=createPlacementInput({map,item,project:iso,toWorld,getAt:()=>at,getFacing:()=>selectedFacing,getPending:()=>pending,rotate,commit,close,changed:()=>sync(false),moveAt:(spot,kind)=>{
+  const next=kind==='tap'&&problemAt(spot)?nearestFree(grid.filter(g=>input.step!==1||g.at.every(Number.isInteger)),spot,1)??spot:spot;
+  if(at&&at[0]===next[0]&&at[1]===next[1])return;
+  at=next;delete hint.dataset.error;sync(false);
+ }});
+ bar.querySelector('.decor-bar-row').insertBefore(input.tools,apply);
+ setTapHandler?.(input.onTap);
  sync(!!at);
- apply.focus?.({preventScroll:true});
+ (apply.disabled?input.tools.firstElementChild:apply).focus?.({preventScroll:true});
 }
 
 export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,iso,previewLayout,onMoveBuilding,onClose}){
@@ -268,7 +266,7 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
  let kind='plot';
  let selectedBuilding=0;
  let selectedSlot=null;
- let pending=false;
+ let pending=false,input;
 
  const dialog=el('dialog',{class:'decor-placement visual-layout-modal','aria-labelledby':'layoutModalTitle'});
  const heading=el('div',{class:'sheet-heading'});

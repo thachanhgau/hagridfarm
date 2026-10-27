@@ -1,7 +1,8 @@
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.84';
-import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.84';
-import { DB } from './balance-data.mjs?v=24.9.84';
-import { makeRecipeIcon } from './recipe-art-ui.mjs?v=24.9.84';
+import {setupBuildDecorDock} from './build-decor-dock.mjs?v=24.9.85';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.85';
+import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.85';
+import { DB } from './balance-data.mjs?v=24.9.85';
+import { makeRecipeIcon } from './recipe-art-ui.mjs?v=24.9.85';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);
@@ -153,10 +154,6 @@ function chipLabel(label) {
   return String(label).replace(/^(Khẩu phần |Nuôi )/, '');
 }
 
-function makeExpansionIcon(expansion, items) {
-  return visualItemIcon(items, expansion.id, { size: 40 });
-}
-
 function expansionTitle(expansion) {
   const number = String(expansion.id).split('_')[1] ?? '';
   return `${expansion.kind === 'plot' ? 'Thửa' : 'Chuồng'} ${number}`;
@@ -187,11 +184,12 @@ const BATCH_STEPS = Object.freeze([1, 3, 5, 10, 25, 50, 100].filter(n => n <= MA
  * tray of named tiles. Tray buttons are reconciled in place, so the refresh timer never
  * replaces the focused button or scroll container.
  */
-export function setupWorkTrays({ E, items, labels, getState, getReady, run, showPanel, getGalleons = () => Infinity }) {
+export function setupWorkTrays({ E, items, labels, getState, getReady, run, showPanel, getGalleons = () => Infinity, decor = null }) {
   const local = {
     craft: { selectedId: null, batches: 1, dom: null, buttons: new Map(), badges: new Map() },
     build: { selectedId: null, dom: null, buttons: new Map(), badges: new Map() },
   };
+  const buildDecor = decor ? setupBuildDecorDock({...decor,items,getReady,run,showPanel}) : null;
   const cropIds = new Set((E.DB.crops ?? []).map(crop => crop.id));
 
   const db = E.DB;
@@ -200,7 +198,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
   function ensure(mode) {
     const model = local[mode];
     if (model.dom) return model.dom;
-    const dock = $(`${mode}Dock`);
+    const dock = mode === 'build' && buildDecor ? buildDecor.buildPane : $(`${mode}Dock`);
     if (!dock) return null;
 
     const jobs = el('div', { class: 'work-jobs', role: 'status' });
@@ -305,7 +303,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       const badge = el('span', { class: 'tray-badge' });
       badge.hidden = true;
       trayButton.append(
-        mode === 'craft' ? makeRecipeIcon(entry, items, 40, labels) : makeExpansionIcon(entry, items),
+        mode === 'craft' ? makeRecipeIcon(entry, items, 40, labels) : visualItemIcon(items, entry.id, { size: 40 }),
         el('span', { class: 'tray-label', text: mode === 'craft' ? chipLabel(entry.label) : title }),
         badge,
       );
@@ -479,6 +477,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
   }
 
   function refresh(mode) {
+    buildDecor?.refresh();
     const state = currentState();
     const targets = mode && MODES.includes(mode) ? [mode] : MODES;
     for (const target of targets) {

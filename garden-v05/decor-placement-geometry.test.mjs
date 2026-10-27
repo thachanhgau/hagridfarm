@@ -232,6 +232,6 @@ test('placement suggestions are bounded and nearest-first', () => {
 test('rotation stays a preview until the explicit placement action', () => {
   const source = fs.readFileSync(new URL('./decor-placement-ui.mjs', import.meta.url), 'utf8');
   assert.equal(source.includes('save(at,true)'), false);
-  assert.match(source, /suggestions:placementSuggestions\(grid,at,18\)/);
+  assert.match(source, /suggestions:placementSuggestions\([^\n]+,at,18\)/);
   assert.match(source, /apply\.textContent=.*Đặt góc này/);
 });

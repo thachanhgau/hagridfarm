@@ -32,3 +32,23 @@ test('overview fits the entire active garden and zoom-out stops at that frame',(
   }
  } finally {globalThis.document=oldDocument;globalThis.ResizeObserver=oldObserver;}
 });
+
+test('dragging a decoration keeps the camera still and a second pointer changes to pinch',()=>{
+ const oldDocument=globalThis.document,oldObserver=globalThis.ResizeObserver;
+ try{
+  const buttons=new Map(),calls={move:0,cancel:0,end:0,pick:0};
+  globalThis.document={querySelectorAll:()=>[],getElementById:id=>{if(id==='playDock')return null;if(!buttons.has(id))buttons.set(id,{setAttribute(){}});return buttons.get(id);},addEventListener(){}};
+  globalThis.ResizeObserver=class{observe(){}};
+  const viewport={clientWidth:800,clientHeight:600,dataset:{},style:{setProperty(){}},getBoundingClientRect:()=>({top:0,left:0,width:800,height:600}),setPointerCapture(){},addEventListener(){},classList:{add(){},remove(){}}};
+  const drag={hit:()=>true,move(){calls.move++;},cancel(){calls.cancel++;},end(){calls.end++;}};
+  const camera=setupCamera({viewport,canvas:{style:{}},map:{width:2560,height:1440,objects:[],props:[]},iso:()=>[0,0],getRenderer:()=>({growthBounds:()=>({left:0,top:0,right:2560,bottom:1440})}),onPick:()=>calls.pick++,getDragTarget:()=>drag});
+  camera.overview();camera.zoom(2);const before=viewport.dataset.camera;
+  const e=(id,x,y,type='pointermove')=>({pointerId:id,clientX:x,clientY:y,button:0,type});
+  viewport.onpointerdown(e(1,200,200,'pointerdown'));viewport.onpointermove(e(1,235,225));
+  assert.equal(calls.move,1);assert.equal(viewport.dataset.camera,before);
+  viewport.onpointerdown(e(2,300,225,'pointerdown'));viewport.onpointermove(e(2,350,225));
+  assert.ok(calls.cancel>0);assert.notEqual(viewport.dataset.camera,before,'pinch still zooms while placing');
+  viewport.onpointerup(e(2,350,225,'pointerup'));viewport.onpointerup(e(1,235,225,'pointerup'));
+  assert.equal(calls.pick,0,'finishing a pinch never activates the garden underneath');
+ }finally{globalThis.document=oldDocument;globalThis.ResizeObserver=oldObserver;}
+});

@@ -1,0 +1,37 @@
+#playDock #buildDock.build-decor-dock{display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:9px}
+#playDock #buildWorkPane{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center;gap:7px 12px;min-width:0}
+.build-decor-tabs{display:flex;gap:4px;padding:0;border:1px solid #667d62;border-radius:5px;background:#081b15}
+#playDock .build-decor-tabs button{display:flex;align-items:center;justify-content:center;gap:7px;flex:1;min-width:0;min-height:44px;border:0;border-radius:3px;background:transparent;color:#d6d8bf;font:inherit;font-size:12px;font-weight:700}
+#playDock .build-decor-tabs button[aria-pressed=true]{background:#e6cd92;color:#192e24;box-shadow:inset 0 -2px #b2995e}
+.decor-work-pane{display:flex;flex-direction:column;gap:8px;min-width:0}
+#playDock .owned-decor-tray{display:flex;gap:6px;overflow-x:auto;min-width:0;padding:2px 2px 6px}
+#playDock .owned-decor-tray .decor-dock-choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex:0 0 92px;width:92px;min-width:92px;min-height:84px;height:84px;box-sizing:border-box;padding:4px 5px;border:1px solid #718569;border-radius:5px;background:linear-gradient(#29483a,#142d24);color:#f8efd8;box-shadow:inset 0 1px #c8dbab33}
+#playDock .owned-decor-tray .decor-dock-choice[aria-pressed=true]{background:#345440;border-color:#f3d593;box-shadow:0 0 0 1px #f3d593}
+.decor-choice-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:100%;min-height:24px;font-size:10px;line-height:12px;text-align:center;white-space:normal}
+.decor-choice-state{font-size:10px;color:#d6d8bf}
+.decor-dock-detail{display:flex;align-items:center;gap:8px;min-width:0;border-top:1px solid #536c57;padding-top:8px}
+.decor-dock-copy{display:flex;flex:1;flex-direction:column;gap:4px;min-width:0}
+#decorDockName{font-size:14px;line-height:1.3;color:#ffe2a7;overflow-wrap:anywhere}
+#decorDockStatus{font-size:11px;line-height:1.4;color:#d6d8bf}
+#playDock #decorDockPlace{display:flex;align-items:center;justify-content:center;gap:6px;flex:0 0 108px;width:108px;min-width:0;min-height:48px;height:auto;padding:7px 5px;font-size:12px}
+#playDock #decorDockStash{display:flex;align-items:center;justify-content:center;gap:5px;min-width:48px;min-height:44px;padding:7px;border:1px solid #829371;border-radius:4px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:11px}
+.decor-dock-footer{display:flex;gap:6px}
+#playDock .decor-dock-footer button{display:flex;align-items:center;justify-content:center;gap:7px;flex:1;min-width:0;min-height:44px;padding:6px;border:1px solid #718569;border-radius:4px;background:#243e30;color:#ffe2a7;font:inherit;font-size:11px}
+.decor-dock-empty{margin:5px 0;color:#d6d8bf;font-size:12px;line-height:1.5}
+#playDock .build-decor-dock button:focus-visible{outline:2px solid #fff0c2;outline-offset:2px}
+@media(max-width:440px){
+ #playDock #buildWorkPane{grid-template-columns:58px minmax(0,1fr);gap:7px 10px}
+ #playDock #buildDock.build-decor-dock{padding:8px;gap:6px}
+ #playDock #decorDockPlace{flex-basis:88px;width:88px;font-size:11px}
+ #decorDockName{font-size:12px}
+ #decorDockStatus{font-size:10px}
+ #playDock #decorDockStash{flex-direction:column;gap:2px;min-width:44px;padding:4px}
+}
+@media(max-height:480px) and (min-width:600px){
+ #playDock #buildDock.build-decor-dock{gap:5px;padding:6px 8px}
+ .decor-work-pane{gap:5px}
+ #playDock .owned-decor-tray .decor-dock-choice{min-height:70px;height:70px;padding:3px 5px}
+ #playDock .owned-decor-tray{padding:1px 1px 2px}
+ .decor-choice-name{-webkit-line-clamp:1;min-height:12px}
+ .decor-dock-detail{padding-top:5px}
+}

@@ -1,7 +1,7 @@
-import {el} from './ui-utils.mjs?v=24.9.84';
-import {iconButton} from './pixel-icons.mjs?v=24.9.84';
-import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.84';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.84';
+import {el} from './ui-utils.mjs?v=24.9.85';
+import {iconButton} from './pixel-icons.mjs?v=24.9.85';
+import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.85';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.85';
 
 export function defaultDecorToggle(ctx, id, label, refresh) {
   const hidden = isDefaultDecorHidden(ctx.getDecorations?.(), id);

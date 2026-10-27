@@ -1,0 +1,202 @@
+[
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "touch": false,
+    "owned": 66,
+    "stashPlaceCancel": true,
+    "noAutoPurchaseOrSave": true,
+    "constructionAndFocusPreserved": true,
+    "inventoryAndMoneyUnchanged": true,
+    "layout": {
+      "x": 330,
+      "y": 421,
+      "right": 950,
+      "bottom": 704,
+      "height": 283,
+      "overflow": false,
+      "pageOverflow": false,
+      "small": []
+    },
+    "errors": [],
+    "network": "strictly intercepted in-memory fixture"
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "touch": true,
+    "owned": 66,
+    "stashPlaceCancel": true,
+    "noAutoPurchaseOrSave": true,
+    "constructionAndFocusPreserved": true,
+    "inventoryAndMoneyUnchanged": true,
+    "layout": {
+      "x": 8,
+      "y": 441,
+      "right": 367,
+      "bottom": 720,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "small": []
+    },
+    "errors": [],
+    "network": "strictly intercepted in-memory fixture"
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "touch": true,
+    "owned": 66,
+    "stashPlaceCancel": true,
+    "noAutoPurchaseOrSave": true,
+    "constructionAndFocusPreserved": true,
+    "inventoryAndMoneyUnchanged": true,
+    "layout": {
+      "x": 8,
+      "y": 197,
+      "right": 312,
+      "bottom": 476,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "small": []
+    },
+    "errors": [],
+    "network": "strictly intercepted in-memory fixture"
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 812,
+      "height": 375
+    },
+    "touch": true,
+    "owned": 66,
+    "stashPlaceCancel": true,
+    "noAutoPurchaseOrSave": true,
+    "constructionAndFocusPreserved": true,
+    "inventoryAndMoneyUnchanged": true,
+    "layout": {
+      "x": 96,
+      "y": 54,
+      "right": 716,
+      "bottom": 300,
+      "height": 246,
+      "overflow": false,
+      "pageOverflow": false,
+      "small": []
+    },
+    "errors": [],
+    "network": "strictly intercepted in-memory fixture"
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "touch": false,
+    "owned": 66,
+    "stashPlaceCancel": true,
+    "noAutoPurchaseOrSave": true,
+    "constructionAndFocusPreserved": true,
+    "inventoryAndMoneyUnchanged": true,
+    "layout": {
+      "x": 330,
+      "y": 421,
+      "right": 950,
+      "bottom": 704,
+      "height": 283,
+      "overflow": false,
+      "pageOverflow": false,
+      "small": []
+    },
+    "errors": [],
+    "network": "strictly intercepted in-memory fixture"
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "touch": true,
+    "owned": 66,
+    "stashPlaceCancel": true,
+    "noAutoPurchaseOrSave": true,
+    "constructionAndFocusPreserved": true,
+    "inventoryAndMoneyUnchanged": true,
+    "layout": {
+      "x": 8,
+      "y": 441,
+      "right": 367,
+      "bottom": 720,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "small": []
+    },
+    "errors": [],
+    "network": "strictly intercepted in-memory fixture"
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "touch": true,
+    "owned": 66,
+    "stashPlaceCancel": true,
+    "noAutoPurchaseOrSave": true,
+    "constructionAndFocusPreserved": true,
+    "inventoryAndMoneyUnchanged": true,
+    "layout": {
+      "x": 8,
+      "y": 197,
+      "right": 312,
+      "bottom": 476,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "small": []
+    },
+    "errors": [],
+    "network": "strictly intercepted in-memory fixture"
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 812,
+      "height": 375
+    },
+    "touch": true,
+    "owned": 66,
+    "stashPlaceCancel": true,
+    "noAutoPurchaseOrSave": true,
+    "constructionAndFocusPreserved": true,
+    "inventoryAndMoneyUnchanged": true,
+    "layout": {
+      "x": 96,
+      "y": 54,
+      "right": 716,
+      "bottom": 300,
+      "height": 246,
+      "overflow": false,
+      "pageOverflow": false,
+      "small": []
+    },
+    "errors": [],
+    "network": "strictly intercepted in-memory fixture"
+  }
+]

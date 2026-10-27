@@ -1,0 +1,130 @@
+[
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "touchDrag": false,
+    "mouseDrag": true,
+    "wholeAndHalfCellNudge": true,
+    "keyboard": true,
+    "dragKeepsCamera": true,
+    "blockedCommitRejected": true,
+    "previewAndCancelNeverSave": true,
+    "errors": [],
+    "network": "strict intercepted fixture"
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "touchDrag": true,
+    "mouseDrag": false,
+    "wholeAndHalfCellNudge": true,
+    "keyboard": true,
+    "dragKeepsCamera": true,
+    "blockedCommitRejected": true,
+    "previewAndCancelNeverSave": true,
+    "errors": [],
+    "network": "strict intercepted fixture"
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "touchDrag": true,
+    "mouseDrag": false,
+    "wholeAndHalfCellNudge": true,
+    "keyboard": true,
+    "dragKeepsCamera": true,
+    "blockedCommitRejected": true,
+    "previewAndCancelNeverSave": true,
+    "errors": [],
+    "network": "strict intercepted fixture"
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 812,
+      "height": 375
+    },
+    "touchDrag": true,
+    "mouseDrag": false,
+    "wholeAndHalfCellNudge": true,
+    "keyboard": true,
+    "dragKeepsCamera": true,
+    "blockedCommitRejected": true,
+    "previewAndCancelNeverSave": true,
+    "errors": [],
+    "network": "strict intercepted fixture"
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "touchDrag": false,
+    "mouseDrag": true,
+    "wholeAndHalfCellNudge": true,
+    "keyboard": true,
+    "dragKeepsCamera": true,
+    "blockedCommitRejected": true,
+    "previewAndCancelNeverSave": true,
+    "errors": [],
+    "network": "strict intercepted fixture"
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "touchDrag": false,
+    "mouseDrag": true,
+    "wholeAndHalfCellNudge": true,
+    "keyboard": true,
+    "dragKeepsCamera": true,
+    "blockedCommitRejected": true,
+    "previewAndCancelNeverSave": true,
+    "errors": [],
+    "network": "strict intercepted fixture"
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "touchDrag": false,
+    "mouseDrag": true,
+    "wholeAndHalfCellNudge": true,
+    "keyboard": true,
+    "dragKeepsCamera": true,
+    "blockedCommitRejected": true,
+    "previewAndCancelNeverSave": true,
+    "errors": [],
+    "network": "strict intercepted fixture"
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 812,
+      "height": 375
+    },
+    "touchDrag": false,
+    "mouseDrag": true,
+    "wholeAndHalfCellNudge": true,
+    "keyboard": true,
+    "dragKeepsCamera": true,
+    "blockedCommitRejected": true,
+    "previewAndCancelNeverSave": true,
+    "errors": [],
+    "network": "strict intercepted fixture"
+  }
+]

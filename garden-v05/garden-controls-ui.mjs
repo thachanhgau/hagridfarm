@@ -1,10 +1,10 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.84';
-import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.84';
-import {V24_ART} from './v24-visuals.mjs?v=24.9.84';
-import {pixelIcon} from './pixel-icons.mjs?v=24.9.84';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.85';
+import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.85';
+import {V24_ART} from './v24-visuals.mjs?v=24.9.85';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.85';
 
 export function setupGardenControls({items,onSettings,getWeather}){
- const labels={sowTool:'Gieo hạt',harvestTool:'Gặt tất cả cây chín',creatureTool:'Nuôi sinh vật',craftTool:'Chế biến',buildTool:'Xây dựng'};
+ const labels={sowTool:'Gieo hạt',harvestTool:'Gặt tất cả cây chín',creatureTool:'Nuôi sinh vật',craftTool:'Chế biến',buildTool:'Xây dựng & Trang trí'};
  for(const [id,label] of Object.entries(labels)){
   const control=$(id);control.title=label;control.setAttribute('aria-label',label);
   control.querySelector('.tool-glyph')?.setAttribute('aria-hidden','true');
@@ -17,7 +17,7 @@ export function setupGardenControls({items,onSettings,getWeather}){
  document.querySelector('.camera-tools').append(settings);
 
  const portraits=['plant','craft','build'].map(kind=>{
-  const dock=$(`${kind}Dock`);
+  const dock=kind==='build'?$('buildWorkPane')||$('buildDock'):$(`${kind}Dock`);
   if(!dock)return null;
   const portrait=el('div',{class:'dock-portrait','aria-hidden':'true',hidden:true});
   dock.prepend(portrait);
