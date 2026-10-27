@@ -1,5 +1,5 @@
-import {$,el,button,icon,duration} from './ui-utils.mjs?v=24.9.83';
-import {setAction} from './pixel-icons.mjs?v=24.9.83';
+import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.84';
+import {setAction,pixelIcon} from './pixel-icons.mjs?v=24.9.84';
 
 // Read the same costs and timestamps as the engine; deriving a control never edits a save.
 export function petControlState({E,state,species,now,ready=true}) {
@@ -35,6 +35,39 @@ export function openingPetSpecies({E,state,species,now}) {
  return pets.find(a=>a.meal&&a.meal.readyAt<=now)?.species
   ||pets.find(a=>!a.meal&&(state.inventory[E.CREATURE[a.species].feed]||0)>=E.CREATURE[a.species].mealPortions)?.species
   ||pets.find(a=>a.species===species)?.species||pets[0]?.species||species;
+}
+
+// Keep the button nodes and their icons stable when stock/timers refresh.
+export function renderPetCareButtons(items,supplies={}) {
+ const actions=[
+  ['petButton','Vuốt ve','Vuốt ve sinh vật','heart',null,'rose'],
+  ['rotateCreatureButton','Xoay','Đổi hướng nhìn của sinh vật','replay',null,'sky'],
+  ['affinityButton','Gắn kết','Quà gắn kết','chest',null,'gold'],
+  ['mealBoostButton','Nước phép','Nước phép','boost','boost','sky'],
+  ['premium-prime_meal','Thượng hạng','Bữa thượng hạng','prime_meal','primeMeal','amber'],
+  ['premium-skele_gro','Mọc Xương','Mọc Xương','skele_gro','skeleGro','violet'],
+  ['premium-pen_feast','Tiệc chuồng','Tiệc chuồng','pen_feast','feast','leaf'],
+ ];
+ for(const [id,label,name,art,supply,tone] of actions) {
+  const control=$(id);if(!control)continue;
+  if(!control.dataset.careIcon){
+   const glyph=el('span',{class:'pet-care-glyph','aria-hidden':'true'},
+    supply?visualItemIcon(items,art,{size:28}):pixelIcon(art,2));
+   if(id==='affinityButton'){
+    const heart=pixelIcon('heart',1);heart.classList.add('pet-care-mini');glyph.append(heart);
+   }
+   control.replaceChildren(glyph,el('span',{class:'pet-care-label',text:label}));
+   control.dataset.careIcon=art;control.dataset.careTone=tone;
+   if(supply)control.append(el('b',{class:'pet-care-count','aria-hidden':'true'}));
+   else control.title=name;
+  }
+  const count=supply?Number(supplies[supply]||0):null;
+  if(supply){
+   const badge=control.querySelector('.pet-care-count');
+   if(badge.textContent!=='×'+count)badge.textContent='×'+count;
+  }
+  control.setAttribute('aria-label',name+(supply?' · còn '+count:''));
+ }
 }
 
 export function setupPetControls({E,items,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {

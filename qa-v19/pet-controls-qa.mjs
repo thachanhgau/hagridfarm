@@ -50,6 +50,8 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]) {
    await press(frame.locator('#creatureTool'));
    assert.equal(await frame.locator('#petCareTools #petButton').count(),1,'care actions live in the main pet dock');
    assert.equal(await frame.locator('#creatureOptions').count(),0,'care has no separate modal');
+   if(await frame.locator('#petCareTools').isVisible())assert.equal(await frame.locator('#petButton img').count()>0,true,'pet care uses a game icon, not a text-only control');
+   if(await frame.locator('#petCareTools').isVisible())await frame.waitForFunction(()=>[...document.querySelectorAll('#petCareTools button')].filter(b=>!b.hidden).every(b=>b.querySelector('img')&&[...b.querySelectorAll('img')].every(i=>i.complete&&i.naturalWidth>0)));
    const before=await snapshot();
    const detail=frame.locator('#petDetail');
    if(scenario==='habitats'){
@@ -80,6 +82,7 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]) {
      await press(frame.locator('#affinityButton'));
      await frame.locator('#panel:not([hidden])').waitFor();
      await press(frame.locator('#closePanel'));
+     await frame.locator('#panel').waitFor({state:'hidden'});
     }
    }else if(scenario==='pet-adopt'){
     assert.equal(await frame.locator('#petAdoptTab').getAttribute('aria-pressed'),'true');
@@ -116,6 +119,7 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]) {
     assert.equal(after.creatures[0].mealsCompleted,before.creatures[0].mealsCompleted);
     assert.equal(await frame.locator('#claimAnimalButton').isDisabled(),true);
    }else if(scenario==='feeding'){
+    const icon=await frame.locator('#premium-prime_meal .pet-care-glyph').elementHandle();
     assert.equal(await frame.locator('#claimAnimalButton').isDisabled(),true);
     assert.match(await frame.locator('#petTimer').innerText(),/Còn/);
     await press(frame.locator('#mealBoostButton'));
@@ -123,6 +127,8 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]) {
     await press(frame.locator('#premium-prime_meal'));
     await frame.waitForFunction(()=>!document.querySelector('#claimAnimalButton').disabled);
     assert.equal(await frame.locator('#claimAnimalButton').isVisible(),true);
+    assert.equal(await frame.locator('#premium-prime_meal .pet-care-count').innerText(),'×4');
+    assert.equal(await icon.evaluate(n=>n.isConnected),true,'stock refresh preserves the original icon node');
    }else if(scenario==='animal-ready'){
     assert.equal(await frame.locator('#claimAnimalButton').isEnabled(),true);
     await press(frame.locator('#claimAnimalButton'));
@@ -150,10 +156,10 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]) {
     const dock=document.querySelector('#creatureDock'),r=dock.getBoundingClientRect();
     return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height,overflow:dock.scrollWidth>dock.clientWidth+1,pageOverflow:document.documentElement.scrollWidth>innerWidth,smallTargets:[...dock.querySelectorAll('button')].filter(b=>b.getClientRects().length&&!b.hidden&&b.getBoundingClientRect().height<44).map(b=>b.id)};
    });
-   if(layout.overflow||scenario==='habitats'&&layout.height>270){console.log(await frame.locator('#creatureDock').evaluate(d=>[...d.children].map(e=>({id:e.id,class:e.className,w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height,scroll:e.scrollWidth,client:e.clientWidth,css:getComputedStyle(e).gridTemplateColumns}))));await sharp(await page.screenshot()).resize({width:Math.round(viewport.width*.5)}).png().toFile(output.replace(/\.json$/,'-failure.png'));}
+   if(layout.overflow||scenario==='habitats'&&layout.height>300){console.log(await frame.locator('#creatureDock').evaluate(d=>[...d.children].map(e=>({id:e.id,class:e.className,w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height,scroll:e.scrollWidth,client:e.clientWidth,css:getComputedStyle(e).gridTemplateColumns}))));await sharp(await page.screenshot()).resize({width:Math.round(viewport.width*.5)}).png().toFile(output.replace(/\.json$/,'-failure.png'));}
    assert.ok(layout.x>=0&&layout.right<=viewport.width+1,JSON.stringify(layout));
    assert.ok(layout.y>=48&&layout.bottom<=viewport.height+1,JSON.stringify(layout));
-   if(scenario==='habitats')assert.ok(layout.height<=270,JSON.stringify(layout));
+   if(scenario==='habitats')assert.ok(layout.height<=300,JSON.stringify(layout));
    assert.equal(layout.overflow,false,JSON.stringify(layout));assert.equal(layout.pageOverflow,false);assert.deepEqual(layout.smallTargets,[]);
    if(name==='Chrome'&&scenario==='habitats'&&[375,1280].includes(viewport.width))await sharp(await page.screenshot()).resize({width:Math.round(viewport.width*.5)}).png().toFile(output.replace(/\.json$/,viewport.width===375?'-phone.png':'-desktop.png'));
    assert.deepEqual(errors,[]);assert.deepEqual(external,[]);

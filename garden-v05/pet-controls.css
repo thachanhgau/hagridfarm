@@ -38,11 +38,34 @@
 #playDock #creatureDock .pet-actions .primary:disabled{background:#294535;color:#ced6c1;border-color:#68816c;box-shadow:none;opacity:1}
 #playDock #petHelp{min-height:44px;padding:6px;border:1px solid #829371;border-radius:4px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:11px}
 .pet-care-tools{display:flex;align-items:center;gap:5px;overflow-x:auto;min-width:0;border-top:1px solid #536c57;padding:4px 1px 1px;scroll-padding:1px}
-#playDock .pet-care-tools button{flex:0 0 auto;min-width:44px;min-height:44px;margin:0;padding:6px 10px;border:1px solid #718569;border-radius:4px;background:#243e30;color:#ffe2a7;font:inherit;font-size:11px;white-space:nowrap;box-shadow:none}
-#playDock .pet-care-tools button:disabled{color:#c1cab5;background:#1a3025;border-color:#52644d;opacity:1}
+#playDock .pet-care-tools button{position:relative;display:grid;grid-template-rows:32px auto;justify-items:center;align-content:center;gap:3px;flex:1 0 76px;max-width:88px;min-width:76px;min-height:66px;margin:0;padding:5px 4px 6px;border:1px solid #bca36d;border-radius:6px;background:linear-gradient(#365548,#213b30);color:#ffe5ab;font:inherit;font-size:10px;line-height:1.25;white-space:nowrap;box-shadow:inset 0 1px #d8e5b64a,inset 0 -3px #10261e,0 2px 0 #081b15;transition:transform .12s ease,border-color .12s ease,background .12s ease}
+.pet-care-glyph{position:relative;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:radial-gradient(ellipse,var(--care-glow,#d6ad5c55),transparent 72%);filter:drop-shadow(0 2px 0 #071b16);transition:transform .12s ease}
+#playDock .pet-care-glyph>.px-icon{width:32px;height:32px;margin:0;image-rendering:pixelated}
+#playDock .pet-care-glyph>.pet-care-mini{position:absolute;top:-1px;right:-5px;width:16px;height:16px}
+.pet-care-label{font-weight:700;text-shadow:0 1px #10261e}
+#playDock .pet-care-tools .pet-care-count{position:absolute;top:3px;right:3px;min-width:18px;padding:1px 3px;border:1px solid #b89d64;border-radius:4px;background:#f0d89c;color:#243a2a;font-family:inherit;font-size:10px;font-weight:700;line-height:13px;text-shadow:none;box-shadow:0 1px #10261e}
+[data-care-tone=rose]{--care-glow:#f593c07a}
+[data-care-tone=sky]{--care-glow:#8adbf07a}
+[data-care-tone=gold]{--care-glow:#ffd26f88}
+[data-care-tone=amber]{--care-glow:#ffa76e88}
+[data-care-tone=violet]{--care-glow:#c9a1ff88}
+[data-care-tone=leaf]{--care-glow:#bbdf7a88}
+#playDock .pet-care-tools button:disabled{color:#c5cfbb;background:linear-gradient(#294035,#1a3025);border-color:#6b7d64;box-shadow:inset 0 1px #bdcba72b,inset 0 -2px #10261e,0 1px #081b15;opacity:1}
+#playDock .pet-care-tools button:disabled .pet-care-glyph{filter:saturate(.45) brightness(.8);opacity:.75}
+#playDock .pet-care-tools button:disabled .pet-care-count{background:#9ea98d;border-color:#78886c;color:#182d21}
+#playDock .pet-care-tools button:not(:disabled):active{transform:translateY(2px);box-shadow:inset 0 2px 3px #071b1688}
+@media(hover:hover) and (pointer:fine){
+ #playDock .pet-care-tools button:not(:disabled):hover{border-color:#ffe8b1;background:linear-gradient(#476a50,#2b4d3a);transform:translateY(-2px)}
+ #playDock .pet-care-tools button:not(:disabled):hover .pet-care-glyph{transform:rotate(-6deg) scale(1.08)}
+}
+@media(prefers-reduced-motion:reduce){
+ #playDock .pet-care-tools button,#playDock .pet-care-glyph{transition:none}
+ #playDock .pet-care-tools button:not(:disabled):hover,#playDock .pet-care-tools button:not(:disabled):active,#playDock .pet-care-tools button:not(:disabled):hover .pet-care-glyph{transform:none}
+}
 #playDock .pet-dock button:focus-visible{outline:2px solid #fff0c2;outline-offset:2px}
 .pet-empty{margin:4px 0;color:#d6d8bf;font-size:12px;line-height:1.5}
 @media(max-width:600px){
+ #playDock .pet-care-tools button{flex-grow:0}
  #playDock .pet-tabs button{padding:5px 8px;font-size:11px}
  .pet-top-end{gap:4px}
  #petHousing{font-size:10px}

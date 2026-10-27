@@ -1,8 +1,8 @@
 // «Nhiệm vụ bác Hagrid» (owner decision 19/10/2026): the server's mission chain
 // (snapshot.missions, action claimMission). One mission at a time; from level 20
 // a chapter of three steps. Only with a wallet: the server checks every step.
-import {$,el} from './ui-utils.mjs?v=24.9.83';
-import {pixelIcon,iconButton} from './pixel-icons.mjs?v=24.9.83';
+import {$,el} from './ui-utils.mjs?v=24.9.84';
+import {pixelIcon,iconButton} from './pixel-icons.mjs?v=24.9.84';
 
 const meter=(done,target)=>el('div',{class:'gp-meter',role:'progressbar','aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(done)},[el('span',{style:`width:${Math.min(100,Math.round(done/target*100))}%`})]);
 

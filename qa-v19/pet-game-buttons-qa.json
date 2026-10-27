@@ -1,0 +1,554 @@
+[
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "scenario": "habitats",
+    "touch": false,
+    "opaque": true,
+    "layout": {
+      "x": 310,
+      "y": 445,
+      "right": 970,
+      "bottom": 704,
+      "width": 660,
+      "height": 259,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 820,
+      "height": 760
+    },
+    "scenario": "habitats",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 80,
+      "y": 405,
+      "right": 740,
+      "bottom": 664,
+      "width": 660,
+      "height": 259,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "habitats",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 441,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "scenario": "habitats",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 197,
+      "right": 310,
+      "bottom": 476,
+      "width": 300,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 812,
+      "height": 375
+    },
+    "scenario": "habitats",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 76,
+      "y": 55,
+      "right": 736,
+      "bottom": 300,
+      "width": 660,
+      "height": 245,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "pet-adopt",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 441,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "owned",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 422.703125,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 297.296875,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "feeding",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 441,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "animal-ready",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 441,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "pet-no-food",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 412,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 308,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "pet-no-space",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 484.21875,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 235.78125,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "pet-mixed-ready",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 441,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "scenario": "habitats",
+    "touch": false,
+    "opaque": true,
+    "layout": {
+      "x": 310,
+      "y": 445,
+      "right": 970,
+      "bottom": 704,
+      "width": 660,
+      "height": 259,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 820,
+      "height": 760
+    },
+    "scenario": "habitats",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 80,
+      "y": 405,
+      "right": 740,
+      "bottom": 664,
+      "width": 660,
+      "height": 259,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "habitats",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 441,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "scenario": "habitats",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 197,
+      "right": 310,
+      "bottom": 476,
+      "width": 300,
+      "height": 279,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 812,
+      "height": 375
+    },
+    "scenario": "habitats",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 76,
+      "y": 55,
+      "right": 736,
+      "bottom": 300,
+      "width": 660,
+      "height": 245,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "pet-adopt",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 438.203125,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 281.796875,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "owned",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 419.90625,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 300.09375,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "feeding",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 438.203125,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 281.796875,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "animal-ready",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 438.203125,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 281.796875,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "pet-no-food",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 412,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 308,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "pet-no-space",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 484.21875,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 235.78125,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "scenario": "pet-mixed-ready",
+    "touch": true,
+    "opaque": true,
+    "layout": {
+      "x": 10,
+      "y": 438.203125,
+      "right": 365,
+      "bottom": 720,
+      "width": 355,
+      "height": 281.796875,
+      "overflow": false,
+      "pageOverflow": false,
+      "smallTargets": []
+    },
+    "network": "strict interception; in-memory wallet",
+    "errors": []
+  }
+]
