@@ -22,9 +22,3 @@ export function drawV24Ground(c,{weatherMode='clear',clock=0,iso,stage,map}){
  }
  c.restore();
 }
-export function drawV24Scenery(c,{clock=0,weatherMode='clear',atmosphereMode='day',stageBounds}){
- const light=sceneryLighting(atmosphereMode,weatherMode);if(!light.sun)return;
- const bounds=stageBounds||{left:500,top:300,bottom:1100};c.save();
- for(let i=0;i<4;i++){const x=bounds.left+80+i*170+(clock>0?Math.round(Math.sin(clock/6500)*5):0);c.fillStyle=light.warm?'rgba(255,181,91,.055)':'rgba(255,236,167,.04)';c.beginPath();c.moveTo(x,bounds.top-190);c.lineTo(x+28,bounds.top-190);c.lineTo(x+310,bounds.bottom);c.lineTo(x+200,bounds.bottom);c.closePath();c.fill();}
- c.restore();
-}

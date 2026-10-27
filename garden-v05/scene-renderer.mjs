@@ -12,7 +12,7 @@ import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.87';
 import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.87';
 import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.87';
 import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.87';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.87';
+import {drawV24Ground} from './garden-v24-scenery.mjs?v=24.9.87';
 import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.87';
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.87';
 import {decorObjects} from './decor-runtime.mjs?v=24.9.87';
@@ -1692,7 +1692,7 @@ export async function createGarden(canvas, options = {}) {
     drawAnimationEffects(state, activeAnimations);
     if (tutorialFocus && map.plots[tutorialFocus.plot]) drawTutorialFocus(context, plotCorners(map.plots[tutorialFocus.plot], map), clock);
     const sBounds = stageWorldBounds(map, currentStage);
-    if(propsVisible)drawV24Scenery(context,{clock,weatherMode,atmosphereMode,eventMode,objects,stageBounds:sBounds});
+    // Owner 27/10/2026: the four slanted sun shafts read as stray stripes over the garden; removed.
     if (atmosphereMode !== 'day' || (weatherMode && weatherMode !== 'clear')) {
       drawAtmosphereOverlay(context, map.width, map.height, {
         mode: atmosphereMode,

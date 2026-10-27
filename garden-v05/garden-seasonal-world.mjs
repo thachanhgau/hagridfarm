@@ -71,10 +71,11 @@ export function clearOfBuildings(col,row,map){
 }
 export function festivalObjects({eventMode='none',stage,map,iso,decorAssets,occupied=[]}){
  const hero=FESTIVAL_HEROES[eventMode];if(!hero)return [];
- const heroSite=[[9,.7],[-3,4.7],[-3,1]].find(([c,r])=>stageContains(stage,c,r)&&clearOfBuildings(c,r,map)&&!occupied.some(o=>Math.abs(o.xy[0]-iso(c,r)[0])<110&&Math.abs(o.xy[1]-iso(c,r)[1])<70));
+ // Whole cells, and two rows off the north fence (row -0.5) so no rail is drawn across the 180 px hero.
+ const heroSite=[[9,2],[-3,5],[-3,2]].find(([c,r])=>stageContains(stage,c,r)&&clearOfBuildings(c,r,map)&&!occupied.some(o=>Math.abs(o.xy[0]-iso(c,r)[0])<110&&Math.abs(o.xy[1]-iso(c,r)[1])<70));
  const out=heroSite?[{kind:'festival',type:'festival',id:hero.id,asset:hero,xy:iso(...heroSite),col:heroSite[0],row:heroSite[1],hero:true}]:[];
  const ids=eventMode==='event_halloween'?['decor_pumpkin_lantern','decor_cauldron']:eventMode==='event_yule'?['decor_floating_candles']:['decor_mandrake_planter','decor_vine_arch'];
- for(const row of [1,7.1,13.4,20,26.7])for(const col of [6.1,12.6,19.1]){
+ for(const row of [1,8,13,20,27])for(const col of [6,13,19]){
   if(!stageContains(stage,col,row)||!clearOfBuildings(col,row,map))continue;
   const xy=iso(col,row);
   if(out.some(o=>o.hero&&Math.abs(o.xy[0]-xy[0])<135&&Math.abs(o.xy[1]-xy[1])<70)||occupied.some(o=>Math.abs(o.xy[0]-xy[0])<70&&Math.abs(o.xy[1]-xy[1])<45))continue;
