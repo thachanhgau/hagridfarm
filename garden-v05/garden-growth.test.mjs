@@ -3,14 +3,15 @@ import assert from 'node:assert/strict';
 import scene from './scene-data.json' with {type:'json'};
 import {newGame,testProfile} from './progression-engine.mjs';
 import {createBoundaryFence} from './garden-landscape.mjs';
-import {GARDEN_STAGES,gardenStage,stageContains,stageBoundary,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.65';
+import {GARDEN_STAGES,GREENHOUSE_BAY,gardenStage,stageContains,stageBoundary,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.65';
 const area=stage=>{const p=stageBoundary(stage);return Math.abs(p.reduce((sum,a,i)=>{const b=p[(i+1)%p.length];return sum+a[0]*b[1]-b[0]*a[1]},0))/2;};
 test('seven monotone spatial chapters grow from a quarter-sized starter yard',()=>{
  assert.deepEqual(GARDEN_STAGES.map(s=>s.level),[1,10,24,48,72,100,110]);
  assert.ok(area(GARDEN_STAGES[0])<area(GARDEN_STAGES.at(-1))*.3);
  for(let i=1;i<GARDEN_STAGES.length;i++){
   assert.ok(area(GARDEN_STAGES[i])>area(GARDEN_STAGES[i-1]));
-  for(const p of stageBoundary(GARDEN_STAGES[i-1]))assert.ok(stageContains(GARDEN_STAGES[i],...p));
+   // The greenhouse bay is scenery behind the north fence, not buildable land.
+  for(const p of stageBoundary(GARDEN_STAGES[i-1]).filter(p=>!GREENHOUSE_BAY.includes(p)))assert.ok(stageContains(GARDEN_STAGES[i],...p));
  }
 });
 test('every level transition includes all buildable plots and pens without editing state',()=>{

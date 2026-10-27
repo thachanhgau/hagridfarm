@@ -1,8 +1,4 @@
-import {FARM_BOUNDARY} from './garden-landscape.mjs?v=24.9.87';
-
-export const GREENHOUSE_FOOTPRINT = Object.freeze({
-  col: 2, row: -1, left: -78, top: -119, right: 80, bottom: 33,
-});
+import {FARM_BOUNDARY} from './garden-landscape.mjs?v=24.9.88';
 
 export const SCENIC_TERRAIN_PALETTE = Object.freeze({
   grass: '#71934b',
@@ -173,12 +169,6 @@ function paintHill(ctx, hill, index, grassImage) {
   ctx.restore();
 }
 
-function footprint(map) {
-  const spec = map?.greenhouseFootprint ?? GREENHOUSE_FOOTPRINT;
-  const [x, y] = iso(map, finite(spec.col, 2), finite(spec.row, -1));
-  return [[x + finite(spec.left, -78), y + finite(spec.top, -119)], [x + finite(spec.right, 80), y + finite(spec.top, -119)], [x + finite(spec.right, 80), y + finite(spec.bottom, 33)], [x + finite(spec.left, -78), y + finite(spec.bottom, 33)]];
-}
-
 function clipOutside(ctx, path, width, height) {
   ctx.beginPath();
   ctx.rect(0, 0, width, height);
@@ -186,10 +176,10 @@ function clipOutside(ctx, path, width, height) {
   ctx.clip('evenodd');
 }
 
-function clipOutsideFarmAndGreenhouse(ctx, map, width, height) {
+// The boundary includes the bay behind the greenhouse, so no screen-space box is needed.
+function clipOutsideFarm(ctx, map, width, height) {
   const boundary = Array.isArray(map?.farmBoundary) && map.farmBoundary.length >= 3 ? map.farmBoundary : FARM_BOUNDARY;
   clipOutside(ctx, boundary.map(([col, row]) => iso(map, col, row)), width, height);
-  clipOutside(ctx, footprint(map), width, height);
 }
 
 export function drawScenicTerrain(ctx, map, {grassImage = null, backdrop = null} = {}) {
@@ -202,7 +192,7 @@ export function drawScenicTerrain(ctx, map, {grassImage = null, backdrop = null}
   paintGrassTexture(ctx, width, height, grassImage, random);
   for (const patch of patches) fillPolygon(ctx, patch.points, patch.color, grassImage ? 0.1 : 0.2);
   ctx.save?.();
-  clipOutsideFarmAndGreenhouse(ctx, map, width, height);
+  clipOutsideFarm(ctx, map, width, height);
   if(backdrop){ctx.globalAlpha=1;ctx.fillStyle=ctx.createPattern(backdrop,'repeat');ctx.fillRect(0,0,width,height);}
   else hills.forEach((hill, index) => paintHill(ctx, hill, index, grassImage));
   ctx.restore?.();

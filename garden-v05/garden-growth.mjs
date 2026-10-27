@@ -15,7 +15,11 @@ export function stageContains(stage,col,row){
  if(stage.id===5&&(row>21.5&&col<25.5||row>15.5&&col>20.5&&col<25.5))return false;
  return true;
 }
-export function stageBoundary(stage){
+// The north fence steps back behind the greenhouse. It is part of the land, so
+// meadow, forest floor and tree clearance all follow the same line as the rail.
+export const GREENHOUSE_BAY=Object.freeze([[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5]]);
+export function stageBoundary(stage){const [nw,...rest]=stageOutline(stage);return [nw,...GREENHOUSE_BAY,...rest];}
+function stageOutline(stage){
  // Every corner lies on a cell line (cells are centred on whole numbers).
  if(stage.id===4)return [[-5.5,-.5],[33.5,-.5],[33.5,21.5],[25.5,21.5],[25.5,15.5],[-.5,15.5],[-.5,9.5],[-5.5,9.5]];
  if(stage.id===5)return [[-5.5,-.5],[33.5,-.5],[33.5,25.5],[25.5,25.5],[25.5,15.5],[20.5,15.5],[20.5,21.5],[-.5,21.5],[-.5,9.5],[-5.5,9.5]];

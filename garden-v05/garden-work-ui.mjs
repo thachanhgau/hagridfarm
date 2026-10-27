@@ -1,9 +1,9 @@
 // Level-500 roadmap P5 (§11): «Việc của bác Hagrid» — Đơn hàng (snapshot.orders, action deliverOrder),
 // Thông thạo cây (snapshot.mastery) and Cúp Nhà (snapshot.houseCup). Only with a wallet: the server
 // draws the orders, counts the mastery and the cup; this panel shows them.
-import {$,el,num,cropVisualKind,visualItemIcon} from './ui-utils.mjs?v=24.9.87';
-import {pixelIcon,iconButton} from './pixel-icons.mjs?v=24.9.87';
-import {CROP,CREATURE} from './balance-data.mjs?v=24.9.87';
+import {$,el,num,cropVisualKind,visualItemIcon} from './ui-utils.mjs?v=24.9.88';
+import {pixelIcon,iconButton} from './pixel-icons.mjs?v=24.9.88';
+import {CROP,CREATURE} from './balance-data.mjs?v=24.9.88';
 
 const HOUSE_COLORS = Object.freeze({gryffindor:'#C75B4B',hufflepuff:'#FFC36B',ravenclaw:'#3E3B70',slytherin:'#3F6A45'}); // palette.mjs only
 const labelOf = id => CROP[id]?.label || (id.startsWith('produce_') ? CREATURE[id.slice(8)]?.produce : null) || id;

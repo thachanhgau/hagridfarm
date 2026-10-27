@@ -1,6 +1,6 @@
 // Presentation boundary is separate from scenic grass and fixed gameplay slots.
 // Owner 27/10/2026: fences run on cell lines and paths along cell centres, one cell wide.
-export const FARM_BOUNDARY = Object.freeze([[-5.5,-.5],[33.5,-.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]]);
+export const FARM_BOUNDARY = Object.freeze([[-5.5,-.5],[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5],[33.5,-.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]]);
 export function insideFarm(col,row) {
   return Number.isFinite(col) && Number.isFinite(row) && col >= -5.5 && col <= 33.5 && row >= -.5 && row <= 33.5 && (col >= -.5 || row <= 9.5);
 }
@@ -36,12 +36,8 @@ export function drawGardenPaths(ctx,map){
 }
 export function createBoundaryFence(map,boundary=FARM_BOUNDARY){
   const source=Array.isArray(boundary)&&boundary.length>=3?boundary:FARM_BOUNDARY;
-  // Route the north fence behind the greenhouse, leaving its glazed door clear.
-  const perimeter=source.flatMap((a,index)=>{
-    const b=source[(index+1)%source.length];
-    return a[1]===-.5&&b[1]===-.5&&a[0]<=-.5&&b[0]>=5.5
-      ? [a,[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5]] : [a];
-  });
+  // The boundary already steps back behind the greenhouse (GREENHOUSE_BAY).
+  const perimeter=source;
   const southernEdge=perimeter.findIndex((a,index)=>{
     const b=perimeter[(index+1)%perimeter.length];
     return a[1]===b[1]&&a[1]>0&&Math.min(a[0],b[0])<=16&&16<Math.max(a[0],b[0]);

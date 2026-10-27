@@ -1,5 +1,5 @@
 // Authored habitat sprites; placement and ambient effects remain presentation-only.
-import {HABITAT_ART} from './complete-object-art.mjs?v=24.9.87';
+import {HABITAT_ART} from './complete-object-art.mjs?v=24.9.88';
 // Each sprite stays inside a 38 x 30 ground pocket between the two actors.
 const palette={d:'#4a3c2c',w:'#735044',h:'#b49a66',s:'#687486',l:'#a6b1ae',g:'#3f6a45',v:'#71934b',a:'#e7ae73',b:'#70a8b6',p:'#a57554',r:'#a57554',c:'#d6d8bf'};
 export const HABITAT_SPECIES=Object.freeze(Object.keys(HABITAT_ART));

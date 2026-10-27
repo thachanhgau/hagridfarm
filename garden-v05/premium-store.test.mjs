@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=24.9.87';
-import {STORE_CATALOG,CATALOG_VERSION} from './garden-store-catalog.mjs?v=24.9.87';
-import {ITEM_ART} from './item-art.mjs?v=24.9.87';
-import {itemArtKey} from './ui-utils.mjs?v=24.9.87';
+import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=24.9.88';
+import {STORE_CATALOG,CATALOG_VERSION} from './garden-store-catalog.mjs?v=24.9.88';
+import {ITEM_ART} from './item-art.mjs?v=24.9.88';
+import {itemArtKey} from './ui-utils.mjs?v=24.9.88';
 
 // Level-500 roadmap P4 (§10): what the store shows must equal what the server charges (garden-premium-core saleTotal).
 test('the premium catalog is in the store mirror with the P4 catalog version', () => {

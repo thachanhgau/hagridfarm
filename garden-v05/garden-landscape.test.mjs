@@ -13,7 +13,8 @@ test('fence encloses every fixed build footprint, decoration, keepsake and hut',
   // Earned decorations: `col`/`row` is the ground corner itself.
   for(const r of decorationPlacements(scene))for(const c of [r.col,r.col+r.width])for(const row of [r.row,r.row+r.height])assert.ok(insideFarm(c,row),`${r.id}: ${c},${row}`);
   assert.ok(insideFarm(0,4));
-  assert.ok(FARM_BOUNDARY.every(p=>insideFarm(...p)));
+  // Corners of the greenhouse bay (row -3.5) are scenery, not buildable land.
+  assert.ok(FARM_BOUNDARY.every(p=>p[1]<-.5||insideFarm(...p)));
 });
 test('expanded scenic meadow cannot select or build a crop cell even with all slots unlocked',()=>{
   let rejected=0;

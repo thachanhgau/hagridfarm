@@ -13,7 +13,7 @@
  * award XP.
  */
 
-import { DB, CROP, CREATURE, RECIPE, EXPANSION, MAX_LEVEL, TAN_SUC_LEVEL } from './balance-data.mjs?v=24.9.87';
+import { DB, CROP, CREATURE, RECIPE, EXPANSION, MAX_LEVEL, TAN_SUC_LEVEL } from './balance-data.mjs?v=24.9.88';
 
 export { DB, CROP, CREATURE, MAX_LEVEL, TAN_SUC_LEVEL };
 
