@@ -1,0 +1,66 @@
+/* A compact pet menu, sharing one native horizontal tray for care actions. */
+#playDock.pet-mode{width:min(660px,calc(100% - 20px));max-width:660px}
+#playDock #creatureDock.pet-dock{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:8px;min-width:0;background:#10261ef7}
+.pet-top,.pet-top-end,.pet-tabs,.pet-condition{display:flex;align-items:center;gap:6px}
+.pet-top{justify-content:space-between}
+.pet-tabs{gap:2px;padding:0;background:#081b15;border:1px solid #667d62;border-radius:5px}
+#playDock .pet-tabs button{min-height:44px;padding:6px 10px;border:0;border-radius:3px;background:transparent;color:#d6d8bf;font:inherit;font-size:12px;font-weight:700}
+#playDock .pet-tabs button[aria-pressed=true]{background:#e6cd92;color:#192e24;box-shadow:inset 0 -2px #b2995e}
+#petHousing{font-size:11px;color:#d6d8bf;white-space:nowrap}
+#playDock #careAllButton{min-width:44px;min-height:44px;padding:6px 8px;border:1px solid #667d62;border-radius:4px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:11px}
+#playDock .pet-list{display:flex;gap:5px;overflow-x:auto;min-width:0;padding:2px 2px 3px;scroll-padding:2px}
+#playDock .pet-list .pet-card{display:flex;flex:0 0 auto;align-items:center;gap:6px;width:auto;min-width:112px;height:44px;min-height:44px;padding:3px 8px;background:#182f26;border:1px solid #66816c;border-radius:4px;text-align:left;color:#f8efd8;box-shadow:none}
+#playDock .pet-list .pet-card[aria-pressed=true]{background:#345440;border-color:#f3d593;box-shadow:0 0 0 1px #f3d593}
+#playDock .pet-list .sprite-icon{flex-shrink:0;margin:0;transform:none}
+.pet-card-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pet-card-name{font-size:12px;font-weight:700;white-space:nowrap}
+.pet-card-state{font-size:10px;color:#d6d8bf;white-space:nowrap}
+#playDock .pet-list .pet-card[data-phase=ready] .pet-card-state{color:#ffe39f}
+.pet-detail{display:grid;grid-template-columns:minmax(145px,1fr) minmax(170px,1.3fr) 104px;align-items:center;gap:10px;border-top:1px solid #536c57;padding-top:7px}
+.pet-identity{display:flex;align-items:center;gap:8px;min-width:0}
+#petPortrait{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;box-sizing:border-box;border:1px solid #61775e;background:#213c2e;border-radius:5px}
+#petPortrait .sprite-icon{margin:0;transform:none;flex-shrink:0}
+.pet-heading{display:flex;flex-direction:column;gap:4px;min-width:0}
+#creatureName{font-size:15px;line-height:1.2;color:#ffe2a7;overflow-wrap:anywhere}
+#creatureTime{font-size:10px;color:#d6d8bf;line-height:1.3}
+#petProgress{width:100%;height:5px;accent-color:#e6cd92}
+.pet-care{display:flex;flex-direction:column;gap:4px;min-width:0}
+.pet-condition{flex-wrap:wrap;gap:4px 8px}
+#petBadge{font-size:12px;color:#f8efd8}
+#petBadge[data-phase=ready]{color:#ffe39f}
+#petTimer{font-size:11px;color:#ffe39f;font-variant-numeric:tabular-nums}
+#petFood{font-size:11px;color:#d6d8bf;line-height:1.4}
+#petFood.is-short{color:#ffc3a5}
+#creatureDock #creatureStatus{margin:0;color:#d6d8bf;font-size:11px;line-height:1.4;white-space:normal}
+.pet-actions{display:flex;flex-direction:column;gap:5px}
+#playDock #creatureDock .pet-actions .primary{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;min-width:0;min-height:48px;height:auto;padding:8px 6px;background:#e6cd92;color:#162c20;border:1px solid #ffe2a7;box-shadow:inset 0 -2px #b2995e;border-radius:4px;font-size:13px;white-space:nowrap}
+#playDock .pet-actions .action-count{position:static;min-width:0;height:auto;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-size:10px;box-shadow:none}
+#playDock #creatureDock .pet-actions .primary:disabled{background:#294535;color:#ced6c1;border-color:#68816c;box-shadow:none;opacity:1}
+#playDock #petHelp{min-height:44px;padding:6px;border:1px solid #829371;border-radius:4px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:11px}
+.pet-care-tools{display:flex;align-items:center;gap:5px;overflow-x:auto;min-width:0;border-top:1px solid #536c57;padding:4px 1px 1px;scroll-padding:1px}
+#playDock .pet-care-tools button{flex:0 0 auto;min-width:44px;min-height:44px;margin:0;padding:6px 10px;border:1px solid #718569;border-radius:4px;background:#243e30;color:#ffe2a7;font:inherit;font-size:11px;white-space:nowrap;box-shadow:none}
+#playDock .pet-care-tools button:disabled{color:#c1cab5;background:#1a3025;border-color:#52644d;opacity:1}
+#playDock .pet-dock button:focus-visible{outline:2px solid #fff0c2;outline-offset:2px}
+.pet-empty{margin:4px 0;color:#d6d8bf;font-size:12px;line-height:1.5}
+@media(max-width:600px){
+ #playDock .pet-tabs button{padding:5px 8px;font-size:11px}
+ .pet-top-end{gap:4px}
+ #petHousing{font-size:10px}
+ .pet-detail{grid-template-columns:minmax(0,1fr) 100px;gap:6px 10px}
+ .pet-identity{grid-column:1;grid-row:1}
+ .pet-care{grid-column:1;grid-row:2}
+ .pet-actions{grid-column:2;grid-row:1/3}
+ #creatureName{font-size:14px}
+ #petFood{font-size:10px}
+ #petBadge{display:none}
+ .pet-condition:not([data-phase=eating]){display:none}
+ #playDock #creatureDock .pet-actions .primary{font-size:12px}
+}
+@media(max-height:480px) and (min-width:600px){
+ #playDock.pet-mode{width:min(660px,calc(100% - 124px))}
+ #playDock #creatureDock.pet-dock{gap:4px;padding:6px 8px}
+ #playDock .pet-list{padding-bottom:2px}
+ #playDock .pet-list .pet-card{height:44px;min-height:44px;padding:3px 7px}
+ .pet-detail{padding-top:4px;gap:8px}
+ .pet-care-tools{padding-top:4px}
+}

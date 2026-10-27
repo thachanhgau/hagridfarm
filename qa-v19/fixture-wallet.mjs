@@ -43,12 +43,15 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  const fresh=scenario==="new";
  let state=fresh?E.newGame(origin):E.testProfile(level,origin);
  if(scenario==="halloween"){state.decorations=[];state.creatures=[];}
- if(["owned","feeding","animal-ready"].includes(scenario)){
+ if(["owned","feeding","animal-ready","pet-no-food"].includes(scenario)){
   state=E.adopt(state,"puffskein",origin);
-  if(scenario!=="owned")state=E.feed(state,"puffskein",origin);
+  if(["feeding","animal-ready"].includes(scenario))state=E.feed(state,"puffskein",origin);
+  if(scenario==="pet-no-food")state.inventory[E.CREATURE.puffskein.feed]=0;
  }
+ if(scenario==="pet-mixed-ready"){state=E.adopt(state,"puffskein",origin);state=E.adopt(state,"bowtruckle",origin);state=E.feed(state,"bowtruckle",origin);}
  if(["craft-busy","craft-ready"].includes(scenario))state=E.craft(state,"insects",1,origin);
  if(["build-busy","build-ready"].includes(scenario))state=E.build(state,"plot_12",origin);
+ if(scenario==="pet-no-space")state.built=state.built.filter(id=>!id.startsWith("pen_"));
  if(scenario==="missing")for(const id of Object.keys(state.inventory))state.inventory[id]=0;
  if(scenario==="prerequisite"){const base=E.newGame(origin);state.built=base.built;state.plots=base.plots;}
  // A lively showcase for the default preview: crops, adult and baby creatures, decorations.

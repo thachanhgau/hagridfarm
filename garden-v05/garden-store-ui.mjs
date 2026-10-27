@@ -1,9 +1,9 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.82";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.82";
-import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=24.9.82";
-import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.82";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.82";
-import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=24.9.82";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=24.9.83";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=24.9.83";
+import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=24.9.83";
+import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=24.9.83";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=24.9.83";
+import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=24.9.83";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -27,13 +27,13 @@ const unitOf = item => item.kind === "nest" ? "ổ" : item.supply === "primeMeal
 const stockOf = (item, snap) => item.supply ? Number(snap?.garden?.supplies?.[item.supply] ?? 0) : 0;
 const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("coin", 1), el("b", {text: num(n)}), extra ? el("small", {text: extra}) : null]);
 
-export function showStore({state,items,wallet,connected,onPurchase,onDecorate,decorAssets=new Map(),onClose,initialFilter="all"}){
+export function showStore({state,items,wallet,connected,onPurchase,onDecorate,decorAssets=new Map(),onClose,initialFilter="all",returnFocus=document.activeElement}){
  document.querySelector(".store-overlay")?.remove();
  let filter=initialFilter,purchasing=false,clock=null;const quantities=new Map(),previewFacing=new Map();
  const overlay=el("div",{class:"store-overlay"}),shade=el("div",{class:"popover-shade"});
  const box=el("section",{class:"popover store-popover",role:"dialog","aria-modal":"true","aria-labelledby":"storeTitle"});
  const heading=el("div",{class:"popover-heading"}),status=el("div",{class:"wallet-status store-vault-banner"}),tabs=el("div",{class:"panel-toolbar store-tabs",role:"group","aria-label":"Nhóm vật tư"}),notice=el("p",{class:"meta store-notice",role:"status","aria-live":"polite"}),cards=el("div",{class:"cards store-cards-grid"});
- const close=()=>{if(purchasing)return;clearInterval(clock);overlay.remove();onClose?.();$("shopButton")?.focus();};
+ const close=()=>{if(purchasing)return;clearInterval(clock);overlay.remove();(returnFocus?.isConnected?returnFocus:$("shopButton"))?.focus();onClose?.();};
  heading.append(
   el("div",{class:"store-heading-copy"},[
    el("h2",{id:"storeTitle",text:"Cửa hàng"}),

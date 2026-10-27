@@ -3,7 +3,7 @@
 // costs in Galleons under the wallet rules (one seed and one water per planted cell).
 // CLI: node sim-progression.mjs [days] → markdown report on stdout;
 // node sim-progression.mjs festival → festival pacing tables (docs/festival-pacing.md).
-import * as E from './progression-engine.mjs?v=24.9.82';
+import * as E from './progression-engine.mjs?v=24.9.83';
 import {STORE_CATALOG} from './garden-store-catalog.mjs';
 import {FESTIVAL_ACTION_POINTS, FREE_FESTIVAL_ACTIONS_PER_DAY, HOGWARTS_EVENTS, FESTIVAL_DAYS, FESTIVAL_FARM_POINTS_PER_DAY, FESTIVAL_FREE_POINTS_PER_DAY} from './garden-events.mjs';
 import {pickDailyQuests, dayKeyFor, DAILY_GRAND_CHEST_REWARD, questAmounts} from './garden-quests.mjs';

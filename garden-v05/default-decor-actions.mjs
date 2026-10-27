@@ -1,5 +1,5 @@
-import {decorSpot, decorFacingFor} from './decor-runtime.mjs?v=24.9.82';
-import {decorSpotProblem} from './decor-placement-ui.mjs?v=24.9.82';
+import {decorSpot, decorFacingFor} from './decor-runtime.mjs?v=24.9.83';
+import {decorSpotProblem} from './decor-placement-ui.mjs?v=24.9.83';
 
 export async function changeDefaultDecorationVisibility(ctx, itemId, visible) {
   const decorations = ctx.getDecorations?.() ?? {};

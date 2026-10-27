@@ -1,7 +1,7 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.82';
-import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.82';
-import {V24_ART} from './v24-visuals.mjs?v=24.9.82';
-import {pixelIcon} from './pixel-icons.mjs?v=24.9.82';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.83';
+import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=24.9.83';
+import {V24_ART} from './v24-visuals.mjs?v=24.9.83';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.83';
 
 export function setupGardenControls({items,onSettings,getWeather}){
  const labels={sowTool:'Gieo hạt',harvestTool:'Gặt tất cả cây chín',creatureTool:'Nuôi sinh vật',craftTool:'Chế biến',buildTool:'Xây dựng'};
@@ -16,7 +16,7 @@ export function setupGardenControls({items,onSettings,getWeather}){
  settings.append(pixelIcon('settings'));
  document.querySelector('.camera-tools').append(settings);
 
- const portraits=['plant','creature','craft','build'].map(kind=>{
+ const portraits=['plant','craft','build'].map(kind=>{
   const dock=$(`${kind}Dock`);
   if(!dock)return null;
   const portrait=el('div',{class:'dock-portrait','aria-hidden':'true',hidden:true});
