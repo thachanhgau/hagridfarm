@@ -127,31 +127,31 @@
       ],
       "rightBounds": {
         "x": 4,
-        "y": 12,
-        "w": 119,
-        "h": 92
+        "y": 13,
+        "w": 87,
+        "h": 67
       },
       "angles": [
         "default",
         "right"
       ],
       "master": "decor-assets/masters/decor_broom_rack.png",
-      "width": 128,
-      "height": 128,
-      "pivotX": 64,
-      "pivotY": 104,
+      "width": 96,
+      "height": 96,
+      "pivotX": 48,
+      "pivotY": 80,
       "bounds": {
         "x": 5,
-        "y": 12,
-        "w": 119,
-        "h": 92
+        "y": 13,
+        "w": 87,
+        "h": 67
       },
       "footprintTiles": [
         2,
         1
       ],
       "sourceSha256": "78d97ac2e11a92df54e599028d856167921e3f2ca047fd8c6d58384f0c922d3c",
-      "nativeSha256": "1168e13c58a7217cb1bbd56c29516810995250c0564ba4b1e71a83da05711479",
+      "nativeSha256": "73d4b6f9c8f1887561228fee8f5e4597c0df7bd3e3c9352fd12634503910eac0",
       "generationPromptId": "decor_broom_rack"
     },
     {

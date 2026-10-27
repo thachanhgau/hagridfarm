@@ -140,41 +140,30 @@
     "height": 48
    },
    "canvas": [
-    128,
-    128
+    96,
+    96
    ],
    "pivot": [
-    64,
-    104
+    48,
+    80
    ],
    "ink": {
     "x": 5,
-    "y": 12,
-    "w": 119,
-    "h": 92,
-    "foot": 104
+    "y": 13,
+    "w": 87,
+    "h": 67,
+    "foot": 80
    },
    "allowed": {
-    "left": 16,
-    "right": 112,
-    "centreY": 88,
-    "frontY": 112
+    "left": 0,
+    "right": 96,
+    "centreY": 64,
+    "frontY": 88
    },
-   "flat2x2": 0.12,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 12,
-     "left": 11,
-     "right": 12
-    },
-    {
-     "rule": "chân-đế-lệch-nền",
-     "off": 0.47
-    }
-   ],
-   "severity": "vừa",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.076,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      96,
@@ -185,15 +174,12 @@
      80
     ],
     "ink": [
-     88,
-     68
+     87,
+     67
     ],
-    "scale": 0.74
+    "scale": 1
    },
-   "roomierFootprint": [
-    2,
-    2
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "store-decoration",
@@ -211,41 +197,30 @@
     "height": 48
    },
    "canvas": [
-    128,
-    128
+    96,
+    96
    ],
    "pivot": [
-    64,
-    104
+    48,
+    80
    ],
    "ink": {
     "x": 4,
-    "y": 12,
-    "w": 119,
-    "h": 92,
-    "foot": 104
+    "y": 13,
+    "w": 87,
+    "h": 67,
+    "foot": 80
    },
    "allowed": {
-    "left": 16,
-    "right": 112,
-    "centreY": 88,
-    "frontY": 112
+    "left": 0,
+    "right": 96,
+    "centreY": 64,
+    "frontY": 88
    },
-   "flat2x2": 0.12,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 12,
-     "left": 12,
-     "right": 11
-    },
-    {
-     "rule": "chân-đế-lệch-nền",
-     "off": 0.47
-    }
-   ],
-   "severity": "vừa",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.076,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      96,
@@ -256,15 +231,12 @@
      80
     ],
     "ink": [
-     88,
-     68
+     87,
+     67
     ],
-    "scale": 0.74
+    "scale": 1
    },
-   "roomierFootprint": [
-    2,
-    2
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "store-decoration",

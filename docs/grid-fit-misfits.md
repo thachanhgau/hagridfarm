@@ -2,15 +2,14 @@
 
 Tạo bởi `node garden-v05/audit-grid-fit.mjs` theo [guideline khớp ô](grid-fit-guideline.md). Số đo là pixel thế giới ở zoom 1, đo từ phần có màu (alpha > 0) của file đang chạy trong game. Không sửa tay file này.
 
-Đã đo 147 món (242 hình, tính cả hai hướng xoay). Lệch: **14 món** — nặng 0, vừa 1, nhẹ 13. Đạt: 133.
+Đã đo 147 món (242 hình, tính cả hai hướng xoay). Lệch: **13 món** — nặng 0, vừa 0, nhẹ 13. Đạt: 134.
 
 Cột «Tạo lại»: canvas rộng × cao, pivot (x, y) = điểm chân, khung mực tối đa rộng × cao. Vẽ lại hoặc xuất lại từ master ở kích thước đó; không thu nhỏ ảnh đã xuất. «Hoặc nền» là nền nhỏ nhất vừa hình hiện tại, chỉ dùng khi chủ dự án muốn giữ nguyên hình (đổi catalog + server, không áp cho save cũ).
 
-## Đồ trang trí cửa hàng (mua) — 2 món
+## Đồ trang trí cửa hàng (mua) — 1 món
 
 | Mức | Món | Nền (ô · px) | Hình hiện tại (mực · canvas · pivot) | Lỗi | Cách sửa | Tạo lại: canvas · pivot · khung mực | Hoặc nền |
 |---|---|---|---|---|---|---|---|
-| vừa | Giá chổi `decor_broom_rack` | 1×2 · 96×48 | 119×92 · 128×128 · (64,104) | tràn trái 11, phải 12 px; 47% chân đế nằm ngoài nền (hướng trái) | vẽ nhỏ lại | 96×96 · (48,80) · ≤ 88×68 | 2×2 |
 | nhẹ | Nến lơ lửng `decor_floating_candles` | 1×1 · 64×32 | 31×83 · 80×104 · (40,88) | chỉ phủ 48% bề ngang nền (hướng trái) | vẽ to hơn (tuỳ chọn) | 64×128 · (32,112) · ≥ 39×104 | — |
 
 ## Đồ trang trí mặc định (mở theo cấp)

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "3aec8aba7adb",
+  "revision": "c8d2fa844958",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -6134,102 +6134,102 @@
     {
       "source": "decor-assets/native/decor_broom_rack_f0.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_f0.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3152,
-      "bytes": 1978,
-      "sourceSha256": "1168e13c58a7217cb1bbd56c29516810995250c0564ba4b1e71a83da05711479",
-      "sha256": "f45cf1e2c0c672da9d4788d9225c1b5de686186f0f43a7d93e151af555a372ce"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2022,
+      "bytes": 1278,
+      "sourceSha256": "73d4b6f9c8f1887561228fee8f5e4597c0df7bd3e3c9352fd12634503910eac0",
+      "sha256": "5c215aa124ac4fa99cc0ff29c73790cf2ee27168b30e8c114986dfd26c0e48ee"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_f1.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_f1.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3170,
-      "bytes": 1982,
-      "sourceSha256": "c2fe4bb38d42fb10ddea4a9520fe31c565b4d3ac62095e0b3593a3656bec7398",
-      "sha256": "6626f9213fde3a7724edca4cc1542b16eb6a2f6c716b55de684bfb29a882ad34"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2032,
+      "bytes": 1286,
+      "sourceSha256": "531a55daa91e050204617b55b7ef427558a5dd6f15ec2cb409e6866cd39f9d73",
+      "sha256": "4aabb55c8d1134ee6680b171779f2f8c96595759ff8898b0756d1561ee96085e"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_f2.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_f2.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3188,
-      "bytes": 2000,
-      "sourceSha256": "506cf5768a942e4acc9c4fdddcdd2e13b2f8a0a61f931f9fcbf3d2f1c8677f11",
-      "sha256": "e49cf6c342ff89950f6479080ba89b8503470dcfc630bd0f208345541eedc83c"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2045,
+      "bytes": 1296,
+      "sourceSha256": "6d21349af39f36ab72ff374d118998e79aaa6aed79934e68d5ff823a133e0d9e",
+      "sha256": "13237f8ff2eadbd818630d6a0b463330b2b41068c90b6cefb1f9931e2b17ef31"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_f3.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_f3.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3188,
-      "bytes": 1996,
-      "sourceSha256": "1a94f3be4a4fbf0c6953ae5110ef7e3327538f7d5db05d1fa819ae008826fdad",
-      "sha256": "1acf27d36bbe8a3e04cf7e247914f2a45a187e4160a21d40de6144597ff5c230"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2053,
+      "bytes": 1290,
+      "sourceSha256": "0524fb1739a967992ce2d45a28a335effa73b8d45d47c8e00b742e7466d36246",
+      "sha256": "6cfd793c05c334e55fde92bffd51307b3e8109b0d9aecbe096369a38b27ac7ef"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_right_f0.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_right_f0.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3156,
-      "bytes": 2058,
-      "sourceSha256": "87d8caa4a669da888c048973e65922e4fd24f05f5984a720d5be4aa5a76391b4",
-      "sha256": "455be4d4aba9a065311c68b2c0973f1c5f2c7c9136223c8f6283a1a029eb2cbb"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2034,
+      "bytes": 1278,
+      "sourceSha256": "85dac583d97eddd5286328ca95ffb47a43ae239096ad42e6c9990d59fd81d234",
+      "sha256": "d0c73a8eb2e2397a4a9085f3b9cc41fc964778620c21ab76c9768de317c82389"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_right_f1.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_right_f1.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3186,
-      "bytes": 2078,
-      "sourceSha256": "ccc0b53d5fdda2073782a572ba7672716cca5f904d0f4fc439d8a6462caabf8c",
-      "sha256": "21af2481b4bfc7e19d7d52581ee4fb64a61cd39a76f498682cf410391f4bb529"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2046,
+      "bytes": 1286,
+      "sourceSha256": "a62fc6696e471566284c9e685aef3c7bbb021a3823040d50e4ab194458482fa0",
+      "sha256": "7ca6bf6c080fa0b4cad15d5813aa17b39422067934efc7ff30c1275eb1b9a787"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_right_f2.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_right_f2.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3184,
-      "bytes": 2082,
-      "sourceSha256": "1ac8ec5883d4163a7b771a8b31ee05b9aa4a156397fce393e517334bcb6da011",
-      "sha256": "cd444edeb407e3204c935309acf27dfcef1e9ca069fdf5ac44a87b8b9539d268"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2069,
+      "bytes": 1292,
+      "sourceSha256": "fee2c7d735a7c1778e33a11ea278ce58579ecd9ef0ddd4df93cedf4126f9aa2a",
+      "sha256": "e50e5e66046b8a2382e00f0b3a37d73c22cea541d853ed8d3825791bd91df928"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_right_f3.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_right_f3.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3187,
-      "bytes": 2076,
-      "sourceSha256": "9d11cc8f395a9069d0ad606f6f8f11d0f49f8757accb4846c37f63fb768cdf99",
-      "sha256": "9c463a78d767239091a800d62cf71fd24bc515194227b91c8c923663f4822992"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2044,
+      "bytes": 1286,
+      "sourceSha256": "efc17543100432b064bfef1ed8a51fb2e8be749112751a42880f3d82693447a2",
+      "sha256": "72ef80becbacb1a87d79cd097a3cb58dbe3ef79e4f42e85b1309289514235309"
     },
     {
       "source": "decor-assets/native/decor_broom_rack_right.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack_right.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3156,
-      "bytes": 2058,
-      "sourceSha256": "87d8caa4a669da888c048973e65922e4fd24f05f5984a720d5be4aa5a76391b4",
-      "sha256": "455be4d4aba9a065311c68b2c0973f1c5f2c7c9136223c8f6283a1a029eb2cbb"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2034,
+      "bytes": 1278,
+      "sourceSha256": "85dac583d97eddd5286328ca95ffb47a43ae239096ad42e6c9990d59fd81d234",
+      "sha256": "d0c73a8eb2e2397a4a9085f3b9cc41fc964778620c21ab76c9768de317c82389"
     },
     {
       "source": "decor-assets/native/decor_broom_rack.png",
       "file": "runtime-webp/decor-assets/native/decor_broom_rack.webp",
-      "width": 128,
-      "height": 128,
-      "sourceBytes": 3152,
-      "bytes": 1978,
-      "sourceSha256": "1168e13c58a7217cb1bbd56c29516810995250c0564ba4b1e71a83da05711479",
-      "sha256": "f45cf1e2c0c672da9d4788d9225c1b5de686186f0f43a7d93e151af555a372ce"
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 2022,
+      "bytes": 1278,
+      "sourceSha256": "73d4b6f9c8f1887561228fee8f5e4597c0df7bd3e3c9352fd12634503910eac0",
+      "sha256": "5c215aa124ac4fa99cc0ff29c73790cf2ee27168b30e8c114986dfd26c0e48ee"
     },
     {
       "source": "decor-assets/native/decor_cauldron_f0.png",
@@ -11267,9 +11267,9 @@
   "totals": {
     "converted": 1120,
     "existingWebp": 8,
-    "originalBytes": 4931925,
-    "webpBytes": 3340408,
-    "savedBytes": 1591517,
+    "originalBytes": 4920607,
+    "webpBytes": 3332970,
+    "savedBytes": 1587637,
     "savedPercent": 32.27
   }
 }

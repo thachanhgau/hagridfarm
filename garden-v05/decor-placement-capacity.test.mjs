@@ -202,7 +202,7 @@ test('a store piece allowed beside a plot never takes the tap meant for a crop c
     plots: scene.plots.map(() => ({slots: Array.from({length: 9}, (_, index) => ({id: `c${index}`, type: 'crop', species: 'pumpkin', plantedAt: now - 1e9, growMs: 1000}))})),
     construction: [],
   };
-  const itemId = 'decor_broom_rack', at = [7.5, 20.5];
+  const itemId = 'decor_vine_arch', at = [7.5, 20.5]; // was the broom rack until it shrank to its 2x1 ground (27/10/2026)
   assert.equal(decorSpotProblem(...at, {map: scene, stage: finalStage, state, decorations: emptyStoreDecorations, itemId, facing: 'default', asset: assetOf(itemId), iso, assetOf}), '', 'the spot is a valid placement');
   const garden = await createGarden(fakeCanvas(), {allowMissingAssets: true, decorAssets: manifest.items});
   garden.render(state, {now, clock: 0, propsVisible: false, decorations: {owned: [itemId], placements: [itemId], positions: {[itemId]: at}, rotations: {}}});

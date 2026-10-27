@@ -43,7 +43,7 @@ const prompts = {
 
 const specs = [
   {id: 'decor_pumpkin_lantern', kind: 'decor', storeItem: true, rotatable: true, master: 'decor_pumpkin_lantern.png', width: 64, height: 96, pivotX: 32, pivotY: 80, maxWidth: 56, footprintTiles: [1, 1], durations: [460, 220, 420, 220]},
-  {id: 'decor_broom_rack', kind: 'decor', storeItem: true, rotatable: true, master: 'decor_broom_rack.png', width: 128, height: 128, pivotX: 64, pivotY: 104, maxWidth: 120, footprintTiles: [2, 1], durations: [520, 260, 480, 260]},
+  {id: 'decor_broom_rack', kind: 'decor', storeItem: true, rotatable: true, master: 'decor_broom_rack.png', width: 96, height: 96, pivotX: 48, pivotY: 80, maxWidth: 88, footprintTiles: [2, 1], durations: [520, 260, 480, 260]},
   {id: 'decor_cauldron', kind: 'decor', storeItem: true, rotatable: true, master: 'decor_cauldron.png', width: 64, height: 96, pivotX: 32, pivotY: 80, maxWidth: 56, footprintTiles: [1, 1], durations: [420, 240, 420, 240]},
   {id: 'decor_mandrake_planter', kind: 'decor', storeItem: true, rotatable: true, master: 'decor_mandrake_planter.png', width: 64, height: 96, pivotX: 32, pivotY: 80, maxWidth: 56, footprintTiles: [1, 1], durations: [480, 220, 440, 220]},
   {id: 'decor_floating_candles', kind: 'decor', storeItem: true, rotatable: true, master: 'decor_floating_candles.png', width: 80, height: 104, pivotX: 40, pivotY: 88, maxWidth: 72, footprintTiles: [1, 1], durations: [400, 220, 400, 220]},
