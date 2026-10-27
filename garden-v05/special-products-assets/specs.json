@@ -140,8 +140,8 @@
       "label": "Tấm gương Ảo Ảnh",
       "group": "Bảo vật Hogwarts",
       "subject": "The Mirror of Erised from the first Harry Potter book: tall magnificent ornate gold mirror with an arched top, elaborate scrollwork, two clawed feet, tarnished magical blue-grey glass with a barely visible soft abstract silhouette inside. Gold sculptural frame is the unmistakable focus. No readable inscription, no letters, no human standing outside, no surrounding room.",
-      "w": 144,
-      "h": 208,
+      "w": 96,
+      "h": 192,
       "foot": [
         2,
         1
@@ -151,7 +151,11 @@
       "chapter": 12,
       "term": "Erised",
       "lore": "Tấm gương cho người xem thấy điều họ khao khát nhất.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        88,
+        169
+      ]
     },
     {
       "id": "sp_sorting_hat",
@@ -202,7 +206,7 @@
       "label": "Cái Tưởng Ký",
       "group": "Bảo vật Hogwarts",
       "subject": "Dumbledore's Pensieve: a shallow grey stone basin carved with small non-letter rune marks around its rim, filled with luminous swirling silvery-blue memory liquid, standing on a short weathered ornate stone column. Two thin silver memory wisps rise above the surface. No faces, no scene inside, no readable text, no desk or room.",
-      "w": 128,
+      "w": 96,
       "h": 128,
       "foot": [
         2,
@@ -213,7 +217,11 @@
       "chapter": 30,
       "term": "Pensieve",
       "lore": "Chậu đá chứa và xem ký ức trong văn phòng Dumbledore.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        88,
+        99
+      ]
     },
     {
       "id": "sp_fawkes_perch",
@@ -243,7 +251,7 @@
       "label": "Quân mã cờ phù thủy",
       "group": "Bảo vật Hogwarts",
       "subject": "A large dark stone enchanted chess KNIGHT from the giant chess challenge guarding the Philosopher's Stone: armored horse head and neck rising from a worn square plinth, chunky medieval carved details, a faint purple glint in one eye. NO rider, no Ron figure, no chessboard, no other pieces. Strong readable stone chess silhouette.",
-      "w": 128,
+      "w": 96,
       "h": 176,
       "foot": [
         2,
@@ -254,7 +262,11 @@
       "chapter": 16,
       "term": "chess",
       "lore": "Bàn cờ phù thủy khổng lồ trong thử thách bảo vệ Hòn Đá Phù Thủy.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        88,
+        141
+      ]
     },
     {
       "id": "sp_riddle_diary",
@@ -283,8 +295,8 @@
       "label": "Mề đay Slytherin",
       "group": "Dấu tích Trường Sinh Linh Giá",
       "subject": "Salazar Slytherin's heavy oval GOLD locket displayed on a small dark-green velvet stand with its fine gold chain draped around the base. Green gemstones form a serpent-like S ornament on the front, stylized as a winding green snake rather than readable typography. Antique gold, one mysterious violet glint, no other jewelry.",
-      "w": 88,
-      "h": 112,
+      "w": 64,
+      "h": 96,
       "foot": [
         1,
         1
@@ -294,14 +306,18 @@
       "chapter": 19,
       "term": "locket",
       "lore": "Chiếc mề đay Trường Sinh Linh Giá được phá hủy bằng thanh gươm.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        56,
+        66
+      ]
     },
     {
       "id": "sp_gaunt_ring",
       "label": "Nhẫn gia tộc Gaunt",
       "group": "Dấu tích Trường Sinh Linh Giá",
       "subject": "The old Gaunt family ring: heavy tarnished gold ring with a large cracked black stone, displayed upright in a tiny weathered open wooden jewelry box lined dark purple. Stone bears a tiny angular triangle-circle-line geometric symbol, no lettering. One ring only, chunky readable dark artifact, no hand.",
-      "w": 88,
+      "w": 64,
       "h": 96,
       "foot": [
         1,
@@ -312,7 +328,11 @@
       "chapter": 10,
       "term": "ring",
       "lore": "Chiếc nhẫn gia tộc Gaunt, về sau được nhận diện là Trường Sinh Linh Giá.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        56,
+        61
+      ]
     },
     {
       "id": "sp_hufflepuff_cup",
@@ -363,8 +383,8 @@
       "label": "Tủ Biến Mất",
       "group": "Hắc thuật và bí mật",
       "subject": "The sinister Vanishing Cabinet associated with Borgin and Burkes: tall narrow blackened dark-brown wooden cabinet, gothic pointed top, heavily carved doors, one door slightly ajar showing pitch dark interior and a tiny pale bird feather at the threshold. Carved serpent and vine ornaments, copper hinges, no humanoid or portal effects.",
-      "w": 144,
-      "h": 208,
+      "w": 96,
+      "h": 192,
       "foot": [
         2,
         1
@@ -374,15 +394,19 @@
       "chapter": 27,
       "term": "cabinet",
       "lore": "Chiếc tủ Draco sửa để nối Hogwarts với Borgin và Burkes.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        88,
+        165
+      ]
     },
     {
       "id": "sp_hand_glory",
       "label": "Bàn Tay Vẻ Vang",
       "group": "Hắc thuật và bí mật",
       "subject": "The Hand of Glory sold in Borgin and Burkes: a withered ochre-brown preserved hand standing upright on a small dark antique display base, curled fingers gripping one burning candle between the thumb and forefinger. No arm, no blood, no gore, no flesh detail; clearly a spooky stylized magical artifact, warm isolated candle flame.",
-      "w": 80,
-      "h": 136,
+      "w": 64,
+      "h": 160,
       "foot": [
         1,
         1
@@ -392,7 +416,11 @@
       "chapter": 4,
       "term": "Hand of Glory",
       "lore": "Cổ vật trong cửa tiệm Borgin và Burkes.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Truyện xác nhận bàn tay khô dùng để cắm nến; bệ và thế ngón tay là diễn họa."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Truyện xác nhận bàn tay khô dùng để cắm nến; bệ và thế ngón tay là diễn họa.",
+      "inkMax": [
+        50,
+        128
+      ]
     },
     {
       "id": "sp_cursed_opal_necklace",
@@ -444,8 +472,8 @@
       "label": "Vòm màn che ở Bộ Pháp Thuật",
       "group": "Hắc thuật và bí mật",
       "subject": "The ancient stone archway and fluttering black veil in the Department of Mysteries: a weathered rough grey stone arch, no door, thin ragged dark-purple translucent curtain hanging inside it with a slight billow, on two low concentric stone steps. No ghosts, no skulls, no people. Solemn magical mystery, freestanding miniature.",
-      "w": 176,
-      "h": 208,
+      "w": 128,
+      "h": 192,
       "foot": [
         2,
         2
@@ -455,7 +483,11 @@
       "chapter": 34,
       "term": "veil",
       "lore": "Vòm đá có màn che trong Sở Bảo Mật.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        120,
+        164
+      ]
     },
     {
       "id": "sp_monster_book",
@@ -528,8 +560,8 @@
       "label": "Cái Xoay Thời Gian",
       "group": "Hành trình phép thuật",
       "subject": "Hermione's golden Time-Turner: a miniature hourglass enclosed within TWO nested circular gold rings, suspended on a fine gold chain from a small dark wooden stand. Sand visible in hourglass, delicate but chunky readable pixel geometry, no clock face, no numerals, no other jewelry.",
-      "w": 88,
-      "h": 128,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
@@ -539,15 +571,19 @@
       "chapter": 21,
       "term": "Time-Turner",
       "lore": "Dụng cụ Hermione dùng cùng Harry để quay lại thời gian.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Hoa văn/khung trang sức là diễn giải tạo hình, không phải chi tiết mô tả nguyên văn trong chương được dẫn."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Hoa văn/khung trang sức là diễn giải tạo hình, không phải chi tiết mô tả nguyên văn trong chương được dẫn.",
+      "inkMax": [
+        56,
+        78
+      ]
     },
     {
       "id": "sp_deluminator",
       "label": "Cái Tắt-Sáng",
       "group": "Hành trình phép thuật",
       "subject": "Dumbledore's Deluminator, a small old silver cigarette-lighter-shaped magical device with a hinged lid, open on a compact weathered timber pedestal, one little floating blue-white light hovering just above it. Fine engraved non-letter scrolls, no fire flame, no cigarette, no smoke, no letters.",
-      "w": 80,
-      "h": 104,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
@@ -557,7 +593,11 @@
       "chapter": 7,
       "term": "Deluminator",
       "lore": "Dumbledore để lại dụng cụ thu ánh sáng cho Ron.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        56,
+        84
+      ]
     },
     {
       "id": "sp_snitch_resurrection_stone",
@@ -608,8 +648,8 @@
       "label": "Xe Đò Hiệp Sĩ",
       "group": "Hành trình phép thuật",
       "subject": "The Knight Bus from Harry Potter: a compact collectible miniature PURPLE TRIPLE-DECKER bus, exactly THREE stacked levels of windows, narrow tall vintage body, black wheels, round amber headlights, side passenger door. No writing, no license plate text, no scenery, no people. Very clearly three levels, not two.",
-      "w": 160,
-      "h": 176,
+      "w": 128,
+      "h": 160,
       "foot": [
         3,
         1
@@ -619,7 +659,11 @@
       "chapter": 3,
       "term": "Knight Bus",
       "lore": "Chiếc xe buýt ba tầng đón Harry sau khi rời nhà Dursley.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        116,
+        139
+      ]
     }
   ]
 }

@@ -1,7 +1,7 @@
-// Import the 26 finished source artworks, retaining the four live assets byte-for-byte.
+// Import the 28 finished source artworks, retaining the two live assets byte-for-byte.
 import fs from 'node:fs/promises';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {packNativeAtlas} from './native-atlas.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url)),read=async f=>JSON.parse(await fs.readFile(path.join(root,f))),sha=b=>crypto.createHash('sha256').update(b).digest('hex');
-const pack=await read('halloween-assets/manifest.json'),runtime=await read('decor-assets-manifest.json'),originalIds=['hw_halloween_sign','hw_wooden_black_cat','hw_cloth_ghost_lantern','hw_monster_candy_barrel']; // hw_pumpkin_stack redrawn 27/10/2026, now imported like the rest
+const pack=await read('halloween-assets/manifest.json'),runtime=await read('decor-assets-manifest.json'),originalIds=['hw_wooden_black_cat','hw_monster_candy_barrel']; // pumpkin stack, sign and cloth ghost lantern refitted 27/10/2026, now imported like the rest
 const originals=runtime.items.filter(i=>originalIds.includes(i.id));if(originals.length!==originalIds.length)throw Error('Missing original Halloween assets');const generated=[],qaManifest=await read('halloween-assets/qa/validation.json');
 for(const item of pack.items.filter(i=>!originalIds.includes(i.id))){
  for(const file of [item.defaultFile,item.rightFile,...item.defaultFrames,...item.rightFrames])if(sha(await fs.readFile(path.join(root,'halloween-assets',file)))!==item.pngSha256[file])throw Error('Source hash '+file);

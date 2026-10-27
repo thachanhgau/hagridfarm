@@ -719,18 +719,18 @@
     {
       "id": "hw_halloween_sign",
       "dimensions": {
-        "width": 96,
-        "height": 128
+        "width": 64,
+        "height": 112
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 8,
-              "y": 2,
-              "w": 81,
-              "h": 122,
-              "count": 5361
+              "x": 4,
+              "y": 12,
+              "w": 56,
+              "h": 84,
+              "count": 2580
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -740,11 +740,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 81,
-                "h": 122,
-                "count": 5361
+                "x": 4,
+                "y": 12,
+                "w": 56,
+                "h": 84,
+                "count": 2580
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -754,11 +754,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 81,
-                "h": 122,
-                "count": 5361
+                "x": 4,
+                "y": 12,
+                "w": 56,
+                "h": 84,
+                "count": 2580
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -768,11 +768,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 81,
-                "h": 122,
-                "count": 5361
+                "x": 4,
+                "y": 12,
+                "w": 56,
+                "h": 84,
+                "count": 2580
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -782,11 +782,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 81,
-                "h": 122,
-                "count": 5361
+                "x": 4,
+                "y": 12,
+                "w": 56,
+                "h": 84,
+                "count": 2580
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -801,15 +801,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 16,
-                "y": 50,
-                "w": 25,
-                "h": 13
+                "x": 10,
+                "y": 45,
+                "w": 16,
+                "h": 9
               },
-              "pixelCount": 88,
-              "mappableCount": 88,
-              "maxPixels": 643,
-              "rootBand": 96
+              "pixelCount": 43,
+              "mappableCount": 43,
+              "maxPixels": 309,
+              "rootBand": 84
             }
           },
           "framesIdentical": false
@@ -817,11 +817,11 @@
         "alternate": {
           "base": {
             "bounds": {
-              "x": 20,
-              "y": 2,
-              "w": 57,
-              "h": 122,
-              "count": 4259
+              "x": 13,
+              "y": 12,
+              "w": 39,
+              "h": 84,
+              "count": 2011
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -831,11 +831,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 20,
-                "y": 2,
-                "w": 57,
-                "h": 122,
-                "count": 4259
+                "x": 13,
+                "y": 12,
+                "w": 39,
+                "h": 84,
+                "count": 2011
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -845,11 +845,11 @@
             },
             {
               "bounds": {
-                "x": 20,
-                "y": 2,
-                "w": 57,
-                "h": 122,
-                "count": 4259
+                "x": 13,
+                "y": 12,
+                "w": 39,
+                "h": 84,
+                "count": 2011
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -859,11 +859,11 @@
             },
             {
               "bounds": {
-                "x": 20,
-                "y": 2,
-                "w": 57,
-                "h": 122,
-                "count": 4259
+                "x": 13,
+                "y": 12,
+                "w": 39,
+                "h": 84,
+                "count": 2011
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -873,11 +873,11 @@
             },
             {
               "bounds": {
-                "x": 20,
-                "y": 2,
-                "w": 57,
-                "h": 122,
-                "count": 4259
+                "x": 13,
+                "y": 12,
+                "w": 39,
+                "h": 84,
+                "count": 2011
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -892,15 +892,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 55,
-                "y": 68,
-                "w": 10,
-                "h": 12
+                "x": 38,
+                "y": 72,
+                "w": 6,
+                "h": 7
               },
-              "pixelCount": 36,
-              "mappableCount": 36,
-              "maxPixels": 511,
-              "rootBand": 96
+              "pixelCount": 16,
+              "mappableCount": 16,
+              "maxPixels": 241,
+              "rootBand": 84
             }
           },
           "framesIdentical": false
@@ -958,18 +958,18 @@
     {
       "id": "hw_cloth_ghost_lantern",
       "dimensions": {
-        "width": 80,
-        "height": 128
+        "width": 64,
+        "height": 112
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 3,
-              "y": 5,
-              "w": 74,
-              "h": 119,
-              "count": 4258
+              "x": 4,
+              "y": 6,
+              "w": 56,
+              "h": 90,
+              "count": 2439
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -979,11 +979,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 3,
-                "y": 5,
-                "w": 74,
-                "h": 119,
-                "count": 4258
+                "x": 4,
+                "y": 6,
+                "w": 56,
+                "h": 90,
+                "count": 2439
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -993,11 +993,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 5,
-                "w": 74,
-                "h": 119,
-                "count": 4258
+                "x": 4,
+                "y": 6,
+                "w": 56,
+                "h": 90,
+                "count": 2439
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1007,11 +1007,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 5,
-                "w": 74,
-                "h": 119,
-                "count": 4258
+                "x": 4,
+                "y": 6,
+                "w": 56,
+                "h": 90,
+                "count": 2439
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1021,11 +1021,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 5,
-                "w": 74,
-                "h": 119,
-                "count": 4258
+                "x": 4,
+                "y": 6,
+                "w": 56,
+                "h": 90,
+                "count": 2439
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1045,11 +1045,11 @@
         "alternate": {
           "base": {
             "bounds": {
-              "x": 3,
-              "y": 3,
-              "w": 74,
-              "h": 121,
-              "count": 4188
+              "x": 5,
+              "y": 6,
+              "w": 55,
+              "h": 90,
+              "count": 2313
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -1059,11 +1059,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 3,
-                "y": 3,
-                "w": 74,
-                "h": 121,
-                "count": 4188
+                "x": 5,
+                "y": 6,
+                "w": 55,
+                "h": 90,
+                "count": 2313
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1073,11 +1073,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 3,
-                "w": 74,
-                "h": 121,
-                "count": 4188
+                "x": 5,
+                "y": 6,
+                "w": 55,
+                "h": 90,
+                "count": 2313
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1087,11 +1087,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 3,
-                "w": 74,
-                "h": 121,
-                "count": 4188
+                "x": 5,
+                "y": 6,
+                "w": 55,
+                "h": 90,
+                "count": 2313
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1101,11 +1101,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 3,
-                "w": 74,
-                "h": 121,
-                "count": 4188
+                "x": 5,
+                "y": 6,
+                "w": 55,
+                "h": 90,
+                "count": 2313
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1175,18 +1175,18 @@
     {
       "id": "hw_dead_bat_tree",
       "dimensions": {
-        "width": 128,
-        "height": 144
+        "width": 96,
+        "height": 128
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 8,
-              "y": 2,
-              "w": 113,
-              "h": 138,
-              "count": 6811
+              "x": 4,
+              "y": 5,
+              "w": 88,
+              "h": 107,
+              "count": 4094
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -1196,11 +1196,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 113,
-                "h": 138,
-                "count": 6811
+                "x": 4,
+                "y": 5,
+                "w": 88,
+                "h": 107,
+                "count": 4094
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1210,11 +1210,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 113,
-                "h": 138,
-                "count": 6811
+                "x": 4,
+                "y": 5,
+                "w": 88,
+                "h": 107,
+                "count": 4094
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1224,11 +1224,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 113,
-                "h": 138,
-                "count": 6811
+                "x": 4,
+                "y": 5,
+                "w": 88,
+                "h": 107,
+                "count": 4094
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1238,11 +1238,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 113,
-                "h": 138,
-                "count": 6811
+                "x": 4,
+                "y": 5,
+                "w": 88,
+                "h": 107,
+                "count": 4094
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1262,11 +1262,11 @@
         "alternate": {
           "base": {
             "bounds": {
-              "x": 16,
-              "y": 2,
-              "w": 96,
-              "h": 138,
-              "count": 5942
+              "x": 11,
+              "y": 5,
+              "w": 75,
+              "h": 107,
+              "count": 3598
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -1276,11 +1276,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 16,
-                "y": 2,
-                "w": 96,
-                "h": 138,
-                "count": 5942
+                "x": 11,
+                "y": 5,
+                "w": 75,
+                "h": 107,
+                "count": 3598
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1290,11 +1290,11 @@
             },
             {
               "bounds": {
-                "x": 16,
-                "y": 2,
-                "w": 96,
-                "h": 138,
-                "count": 5942
+                "x": 11,
+                "y": 5,
+                "w": 75,
+                "h": 107,
+                "count": 3598
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1304,11 +1304,11 @@
             },
             {
               "bounds": {
-                "x": 16,
-                "y": 2,
-                "w": 96,
-                "h": 138,
-                "count": 5942
+                "x": 11,
+                "y": 5,
+                "w": 75,
+                "h": 107,
+                "count": 3598
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1318,11 +1318,11 @@
             },
             {
               "bounds": {
-                "x": 16,
-                "y": 2,
-                "w": 96,
-                "h": 138,
-                "count": 5942
+                "x": 11,
+                "y": 5,
+                "w": 75,
+                "h": 107,
+                "count": 3598
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1392,18 +1392,18 @@
     {
       "id": "hw_bat_lantern",
       "dimensions": {
-        "width": 88,
-        "height": 120
+        "width": 64,
+        "height": 112
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 4,
-              "y": 2,
-              "w": 81,
-              "h": 114,
-              "count": 3626
+              "x": 6,
+              "y": 23,
+              "w": 52,
+              "h": 73,
+              "count": 1503
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -1413,11 +1413,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 4,
-                "y": 2,
-                "w": 81,
-                "h": 114,
-                "count": 3626
+                "x": 6,
+                "y": 23,
+                "w": 52,
+                "h": 73,
+                "count": 1503
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1427,11 +1427,11 @@
             },
             {
               "bounds": {
-                "x": 4,
-                "y": 2,
-                "w": 81,
-                "h": 114,
-                "count": 3626
+                "x": 6,
+                "y": 23,
+                "w": 52,
+                "h": 73,
+                "count": 1503
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1441,11 +1441,11 @@
             },
             {
               "bounds": {
-                "x": 4,
-                "y": 2,
-                "w": 81,
-                "h": 114,
-                "count": 3626
+                "x": 6,
+                "y": 23,
+                "w": 52,
+                "h": 73,
+                "count": 1503
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1455,11 +1455,11 @@
             },
             {
               "bounds": {
-                "x": 4,
-                "y": 2,
-                "w": 81,
-                "h": 114,
-                "count": 3626
+                "x": 6,
+                "y": 23,
+                "w": 52,
+                "h": 73,
+                "count": 1503
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1474,15 +1474,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 57,
-                "y": 63,
-                "w": 6,
-                "h": 7
+                "x": 34,
+                "y": 66,
+                "w": 5,
+                "h": 5
               },
-              "pixelCount": 24,
-              "mappableCount": 24,
-              "maxPixels": 435,
-              "rootBand": 90
+              "pixelCount": 13,
+              "mappableCount": 13,
+              "maxPixels": 180,
+              "rootBand": 84
             }
           },
           "framesIdentical": false
@@ -1490,11 +1490,11 @@
         "alternate": {
           "base": {
             "bounds": {
-              "x": 8,
-              "y": 2,
-              "w": 73,
-              "h": 114,
-              "count": 3306
+              "x": 7,
+              "y": 17,
+              "w": 51,
+              "h": 79,
+              "count": 1591
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -1504,11 +1504,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 73,
-                "h": 114,
-                "count": 3306
+                "x": 7,
+                "y": 17,
+                "w": 51,
+                "h": 79,
+                "count": 1591
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1518,11 +1518,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 73,
-                "h": 114,
-                "count": 3306
+                "x": 7,
+                "y": 17,
+                "w": 51,
+                "h": 79,
+                "count": 1591
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1532,11 +1532,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 73,
-                "h": 114,
-                "count": 3306
+                "x": 7,
+                "y": 17,
+                "w": 51,
+                "h": 79,
+                "count": 1591
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1546,11 +1546,11 @@
             },
             {
               "bounds": {
-                "x": 8,
-                "y": 2,
-                "w": 73,
-                "h": 114,
-                "count": 3306
+                "x": 7,
+                "y": 17,
+                "w": 51,
+                "h": 79,
+                "count": 1591
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1565,15 +1565,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 27,
-                "y": 72,
-                "w": 7,
-                "h": 7
+                "x": 20,
+                "y": 66,
+                "w": 5,
+                "h": 4
               },
-              "pixelCount": 33,
-              "mappableCount": 33,
-              "maxPixels": 396,
-              "rootBand": 90
+              "pixelCount": 16,
+              "mappableCount": 16,
+              "maxPixels": 190,
+              "rootBand": 84
             }
           },
           "framesIdentical": false
@@ -1870,18 +1870,18 @@
     {
       "id": "hw_haunted_house_lantern",
       "dimensions": {
-        "width": 96,
-        "height": 120
+        "width": 64,
+        "height": 112
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 7,
-              "y": 2,
-              "w": 83,
-              "h": 114,
-              "count": 6126
+              "x": 4,
+              "y": 19,
+              "w": 56,
+              "h": 77,
+              "count": 2788
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -1891,11 +1891,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 7,
-                "y": 2,
-                "w": 83,
-                "h": 114,
-                "count": 6126
+                "x": 4,
+                "y": 19,
+                "w": 56,
+                "h": 77,
+                "count": 2788
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1905,11 +1905,11 @@
             },
             {
               "bounds": {
-                "x": 7,
-                "y": 2,
-                "w": 83,
-                "h": 114,
-                "count": 6126
+                "x": 4,
+                "y": 19,
+                "w": 56,
+                "h": 77,
+                "count": 2788
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1919,11 +1919,11 @@
             },
             {
               "bounds": {
-                "x": 7,
-                "y": 2,
-                "w": 83,
-                "h": 114,
-                "count": 6126
+                "x": 4,
+                "y": 19,
+                "w": 56,
+                "h": 77,
+                "count": 2788
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1933,11 +1933,11 @@
             },
             {
               "bounds": {
-                "x": 7,
-                "y": 2,
-                "w": 83,
-                "h": 114,
-                "count": 6126
+                "x": 4,
+                "y": 19,
+                "w": 56,
+                "h": 77,
+                "count": 2788
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1952,15 +1952,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 35,
-                "y": 66,
-                "w": 6,
-                "h": 9
+                "x": 23,
+                "y": 62,
+                "w": 4,
+                "h": 5
               },
-              "pixelCount": 29,
-              "mappableCount": 29,
-              "maxPixels": 735,
-              "rootBand": 90
+              "pixelCount": 14,
+              "mappableCount": 14,
+              "maxPixels": 334,
+              "rootBand": 84
             }
           },
           "framesIdentical": false
@@ -1968,11 +1968,11 @@
         "alternate": {
           "base": {
             "bounds": {
-              "x": 9,
-              "y": 2,
-              "w": 78,
-              "h": 114,
-              "count": 5597
+              "x": 6,
+              "y": 19,
+              "w": 53,
+              "h": 77,
+              "count": 2568
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -1982,11 +1982,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 9,
-                "y": 2,
-                "w": 78,
-                "h": 114,
-                "count": 5597
+                "x": 6,
+                "y": 19,
+                "w": 53,
+                "h": 77,
+                "count": 2568
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -1996,11 +1996,11 @@
             },
             {
               "bounds": {
-                "x": 9,
-                "y": 2,
-                "w": 78,
-                "h": 114,
-                "count": 5597
+                "x": 6,
+                "y": 19,
+                "w": 53,
+                "h": 77,
+                "count": 2568
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -2010,11 +2010,11 @@
             },
             {
               "bounds": {
-                "x": 9,
-                "y": 2,
-                "w": 78,
-                "h": 114,
-                "count": 5597
+                "x": 6,
+                "y": 19,
+                "w": 53,
+                "h": 77,
+                "count": 2568
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -2024,11 +2024,11 @@
             },
             {
               "bounds": {
-                "x": 9,
-                "y": 2,
-                "w": 78,
-                "h": 114,
-                "count": 5597
+                "x": 6,
+                "y": 19,
+                "w": 53,
+                "h": 77,
+                "count": 2568
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -2043,15 +2043,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 58,
-                "y": 64,
-                "w": 6,
-                "h": 11
+                "x": 39,
+                "y": 63,
+                "w": 5,
+                "h": 9
               },
-              "pixelCount": 27,
-              "mappableCount": 27,
-              "maxPixels": 671,
-              "rootBand": 90
+              "pixelCount": 30,
+              "mappableCount": 30,
+              "maxPixels": 308,
+              "rootBand": 84
             }
           },
           "framesIdentical": false
@@ -2109,18 +2109,18 @@
     {
       "id": "hw_ghost_orb",
       "dimensions": {
-        "width": 80,
-        "height": 104
+        "width": 64,
+        "height": 96
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 3,
-              "y": 6,
-              "w": 74,
-              "h": 94,
-              "count": 4653
+              "x": 8,
+              "y": 19,
+              "w": 48,
+              "h": 61,
+              "count": 1962
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -2130,11 +2130,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 3,
-                "y": 6,
-                "w": 74,
-                "h": 94,
-                "count": 4653
+                "x": 8,
+                "y": 19,
+                "w": 48,
+                "h": 61,
+                "count": 1962
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -2144,11 +2144,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 6,
-                "w": 74,
-                "h": 94,
-                "count": 4653
+                "x": 8,
+                "y": 19,
+                "w": 48,
+                "h": 61,
+                "count": 1962
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -2158,11 +2158,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 6,
-                "w": 74,
-                "h": 94,
-                "count": 4653
+                "x": 8,
+                "y": 19,
+                "w": 48,
+                "h": 61,
+                "count": 1962
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -2172,11 +2172,102 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 6,
-                "w": 74,
-                "h": 94,
-                "count": 4653
+                "x": 8,
+                "y": 19,
+                "w": 48,
+                "h": 61,
+                "count": 1962
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 14,
+                "y": 26,
+                "w": 9,
+                "h": 10
+              },
+              "pixelCount": 45,
+              "mappableCount": 45,
+              "maxPixels": 235,
+              "rootBand": 72
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 8,
+              "y": 12,
+              "w": 48,
+              "h": 68,
+              "count": 2225
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 8,
+                "y": 12,
+                "w": 48,
+                "h": 68,
+                "count": 2225
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 12,
+                "w": 48,
+                "h": 68,
+                "count": 2225
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 12,
+                "w": 48,
+                "h": 68,
+                "count": 2225
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 8,
+                "y": 12,
+                "w": 48,
+                "h": 68,
+                "count": 2225
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -2192,105 +2283,14 @@
             "effect": {
               "bbox": {
                 "x": 11,
-                "y": 8,
-                "w": 29,
-                "h": 28
+                "y": 14,
+                "w": 21,
+                "h": 25
               },
-              "pixelCount": 201,
-              "mappableCount": 201,
-              "maxPixels": 558,
-              "rootBand": 78
-            }
-          },
-          "framesIdentical": false
-        },
-        "alternate": {
-          "base": {
-            "bounds": {
-              "x": 6,
-              "y": 2,
-              "w": 69,
-              "h": 98,
-              "count": 4634
-            },
-            "alphaBinary": true,
-            "paletteOnly": true,
-            "itemPaletteOnly": true,
-            "edgeClipped": false
-          },
-          "frames": [
-            {
-              "bounds": {
-                "x": 6,
-                "y": 2,
-                "w": 69,
-                "h": 98,
-                "count": 4634
-              },
-              "alphaBinary": true,
-              "paletteOnly": true,
-              "itemPaletteOnly": true,
-              "edgeClipped": false,
-              "rootedBottomQuarter": true
-            },
-            {
-              "bounds": {
-                "x": 6,
-                "y": 2,
-                "w": 69,
-                "h": 98,
-                "count": 4634
-              },
-              "alphaBinary": true,
-              "paletteOnly": true,
-              "itemPaletteOnly": true,
-              "edgeClipped": false,
-              "rootedBottomQuarter": true
-            },
-            {
-              "bounds": {
-                "x": 6,
-                "y": 2,
-                "w": 69,
-                "h": 98,
-                "count": 4634
-              },
-              "alphaBinary": true,
-              "paletteOnly": true,
-              "itemPaletteOnly": true,
-              "edgeClipped": false,
-              "rootedBottomQuarter": true
-            },
-            {
-              "bounds": {
-                "x": 6,
-                "y": 2,
-                "w": 69,
-                "h": 98,
-                "count": 4634
-              },
-              "alphaBinary": true,
-              "paletteOnly": true,
-              "itemPaletteOnly": true,
-              "edgeClipped": false,
-              "rootedBottomQuarter": true
-            }
-          ],
-          "motion": {
-            "requested": "glow",
-            "rendered": "glow",
-            "fallback": null,
-            "effect": {
-              "bbox": {
-                "x": 10,
-                "y": 4,
-                "w": 31,
-                "h": 40
-              },
-              "pixelCount": 322,
-              "mappableCount": 322,
-              "maxPixels": 556,
-              "rootBand": 78
+              "pixelCount": 149,
+              "mappableCount": 149,
+              "maxPixels": 267,
+              "rootBand": 72
             }
           },
           "framesIdentical": false
@@ -4172,18 +4172,18 @@
     {
       "id": "hw_grinning_stump",
       "dimensions": {
-        "width": 112,
-        "height": 104
+        "width": 96,
+        "height": 96
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 3,
-              "y": 13,
-              "w": 106,
-              "h": 87,
-              "count": 6011
+              "x": 5,
+              "y": 8,
+              "w": 87,
+              "h": 72,
+              "count": 4093
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -4193,11 +4193,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 3,
-                "y": 13,
-                "w": 106,
-                "h": 87,
-                "count": 6011
+                "x": 5,
+                "y": 8,
+                "w": 87,
+                "h": 72,
+                "count": 4093
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4207,11 +4207,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 13,
-                "w": 106,
-                "h": 87,
-                "count": 6011
+                "x": 5,
+                "y": 8,
+                "w": 87,
+                "h": 72,
+                "count": 4093
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4221,11 +4221,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 13,
-                "w": 106,
-                "h": 87,
-                "count": 6011
+                "x": 5,
+                "y": 8,
+                "w": 87,
+                "h": 72,
+                "count": 4093
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4235,11 +4235,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 13,
-                "w": 106,
-                "h": 87,
-                "count": 6011
+                "x": 5,
+                "y": 8,
+                "w": 87,
+                "h": 72,
+                "count": 4093
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4254,15 +4254,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 39,
-                "y": 38,
-                "w": 31,
-                "h": 8
+                "x": 35,
+                "y": 28,
+                "w": 25,
+                "h": 7
               },
-              "pixelCount": 88,
-              "mappableCount": 88,
-              "maxPixels": 721,
-              "rootBand": 78
+              "pixelCount": 59,
+              "mappableCount": 59,
+              "maxPixels": 491,
+              "rootBand": 72
             }
           },
           "framesIdentical": false
@@ -4270,11 +4270,11 @@
         "alternate": {
           "base": {
             "bounds": {
-              "x": 3,
-              "y": 6,
-              "w": 106,
-              "h": 94,
-              "count": 5783
+              "x": 8,
+              "y": 8,
+              "w": 81,
+              "h": 72,
+              "count": 3396
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -4284,11 +4284,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 3,
-                "y": 6,
-                "w": 106,
-                "h": 94,
-                "count": 5783
+                "x": 8,
+                "y": 8,
+                "w": 81,
+                "h": 72,
+                "count": 3396
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4298,11 +4298,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 6,
-                "w": 106,
-                "h": 94,
-                "count": 5783
+                "x": 8,
+                "y": 8,
+                "w": 81,
+                "h": 72,
+                "count": 3396
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4312,11 +4312,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 6,
-                "w": 106,
-                "h": 94,
-                "count": 5783
+                "x": 8,
+                "y": 8,
+                "w": 81,
+                "h": 72,
+                "count": 3396
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4326,11 +4326,11 @@
             },
             {
               "bounds": {
-                "x": 3,
-                "y": 6,
-                "w": 106,
-                "h": 94,
-                "count": 5783
+                "x": 8,
+                "y": 8,
+                "w": 81,
+                "h": 72,
+                "count": 3396
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4345,15 +4345,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 42,
-                "y": 21,
-                "w": 12,
-                "h": 10
+                "x": 38,
+                "y": 19,
+                "w": 9,
+                "h": 8
               },
-              "pixelCount": 63,
-              "mappableCount": 63,
-              "maxPixels": 693,
-              "rootBand": 78
+              "pixelCount": 37,
+              "mappableCount": 37,
+              "maxPixels": 407,
+              "rootBand": 72
             }
           },
           "framesIdentical": false
@@ -4411,18 +4411,18 @@
     {
       "id": "hw_skull_mushrooms",
       "dimensions": {
-        "width": 96,
-        "height": 88
+        "width": 64,
+        "height": 96
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 12,
-              "y": 2,
-              "w": 73,
-              "h": 82,
-              "count": 3633
+              "x": 4,
+              "y": 17,
+              "w": 56,
+              "h": 63,
+              "count": 2144
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -4432,11 +4432,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 12,
-                "y": 2,
-                "w": 73,
-                "h": 82,
-                "count": 3633
+                "x": 4,
+                "y": 17,
+                "w": 56,
+                "h": 63,
+                "count": 2144
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4446,11 +4446,11 @@
             },
             {
               "bounds": {
-                "x": 12,
-                "y": 2,
-                "w": 73,
-                "h": 82,
-                "count": 3633
+                "x": 4,
+                "y": 17,
+                "w": 56,
+                "h": 63,
+                "count": 2144
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4460,11 +4460,11 @@
             },
             {
               "bounds": {
-                "x": 12,
-                "y": 2,
-                "w": 73,
-                "h": 82,
-                "count": 3633
+                "x": 4,
+                "y": 17,
+                "w": 56,
+                "h": 63,
+                "count": 2144
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4474,11 +4474,11 @@
             },
             {
               "bounds": {
-                "x": 12,
-                "y": 2,
-                "w": 73,
-                "h": 82,
-                "count": 3633
+                "x": 4,
+                "y": 17,
+                "w": 56,
+                "h": 63,
+                "count": 2144
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4493,15 +4493,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 40,
-                "y": 17,
-                "w": 7,
-                "h": 6
+                "x": 35,
+                "y": 33,
+                "w": 6,
+                "h": 5
               },
-              "pixelCount": 21,
-              "mappableCount": 21,
-              "maxPixels": 435,
-              "rootBand": 66
+              "pixelCount": 16,
+              "mappableCount": 16,
+              "maxPixels": 257,
+              "rootBand": 72
             }
           },
           "framesIdentical": false
@@ -4509,11 +4509,11 @@
         "alternate": {
           "base": {
             "bounds": {
-              "x": 12,
-              "y": 2,
-              "w": 72,
-              "h": 82,
-              "count": 3619
+              "x": 5,
+              "y": 17,
+              "w": 55,
+              "h": 63,
+              "count": 2135
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -4523,11 +4523,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 12,
-                "y": 2,
-                "w": 72,
-                "h": 82,
-                "count": 3619
+                "x": 5,
+                "y": 17,
+                "w": 55,
+                "h": 63,
+                "count": 2135
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4537,11 +4537,11 @@
             },
             {
               "bounds": {
-                "x": 12,
-                "y": 2,
-                "w": 72,
-                "h": 82,
-                "count": 3619
+                "x": 5,
+                "y": 17,
+                "w": 55,
+                "h": 63,
+                "count": 2135
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4551,11 +4551,11 @@
             },
             {
               "bounds": {
-                "x": 12,
-                "y": 2,
-                "w": 72,
-                "h": 82,
-                "count": 3619
+                "x": 5,
+                "y": 17,
+                "w": 55,
+                "h": 63,
+                "count": 2135
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4565,11 +4565,11 @@
             },
             {
               "bounds": {
-                "x": 12,
-                "y": 2,
-                "w": 72,
-                "h": 82,
-                "count": 3619
+                "x": 5,
+                "y": 17,
+                "w": 55,
+                "h": 63,
+                "count": 2135
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -4584,15 +4584,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 24,
-                "y": 28,
-                "w": 8,
-                "h": 8
+                "x": 27,
+                "y": 31,
+                "w": 7,
+                "h": 5
               },
-              "pixelCount": 26,
-              "mappableCount": 26,
-              "maxPixels": 434,
-              "rootBand": 66
+              "pixelCount": 14,
+              "mappableCount": 14,
+              "maxPixels": 256,
+              "rootBand": 72
             }
           },
           "framesIdentical": false
@@ -5084,18 +5084,18 @@
     {
       "id": "hw_dewy_cobweb_frame",
       "dimensions": {
-        "width": 128,
-        "height": 136
+        "width": 96,
+        "height": 128
       },
       "views": {
         "default": {
           "base": {
             "bounds": {
-              "x": 7,
-              "y": 2,
-              "w": 114,
-              "h": 130,
-              "count": 6282
+              "x": 8,
+              "y": 20,
+              "w": 80,
+              "h": 92,
+              "count": 3119
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -5105,11 +5105,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 7,
-                "y": 2,
-                "w": 114,
-                "h": 130,
-                "count": 6282
+                "x": 8,
+                "y": 20,
+                "w": 80,
+                "h": 92,
+                "count": 3119
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -5119,11 +5119,11 @@
             },
             {
               "bounds": {
-                "x": 7,
-                "y": 2,
-                "w": 114,
-                "h": 130,
-                "count": 6282
+                "x": 8,
+                "y": 20,
+                "w": 80,
+                "h": 92,
+                "count": 3119
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -5133,11 +5133,11 @@
             },
             {
               "bounds": {
-                "x": 7,
-                "y": 2,
-                "w": 114,
-                "h": 130,
-                "count": 6282
+                "x": 8,
+                "y": 20,
+                "w": 80,
+                "h": 92,
+                "count": 3119
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -5147,11 +5147,11 @@
             },
             {
               "bounds": {
-                "x": 7,
-                "y": 2,
-                "w": 114,
-                "h": 130,
-                "count": 6282
+                "x": 8,
+                "y": 20,
+                "w": 80,
+                "h": 92,
+                "count": 3119
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -5166,15 +5166,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 82,
-                "y": 48,
-                "w": 5,
-                "h": 4
+                "x": 44,
+                "y": 47,
+                "w": 4,
+                "h": 3
               },
-              "pixelCount": 12,
-              "mappableCount": 12,
-              "maxPixels": 753,
-              "rootBand": 102
+              "pixelCount": 7,
+              "mappableCount": 7,
+              "maxPixels": 374,
+              "rootBand": 96
             }
           },
           "framesIdentical": false
@@ -5182,11 +5182,11 @@
         "alternate": {
           "base": {
             "bounds": {
-              "x": 16,
-              "y": 2,
-              "w": 97,
-              "h": 130,
-              "count": 5537
+              "x": 11,
+              "y": 12,
+              "w": 75,
+              "h": 100,
+              "count": 3298
             },
             "alphaBinary": true,
             "paletteOnly": true,
@@ -5196,11 +5196,11 @@
           "frames": [
             {
               "bounds": {
-                "x": 16,
-                "y": 2,
-                "w": 97,
-                "h": 130,
-                "count": 5537
+                "x": 11,
+                "y": 12,
+                "w": 75,
+                "h": 100,
+                "count": 3298
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -5210,11 +5210,11 @@
             },
             {
               "bounds": {
-                "x": 16,
-                "y": 2,
-                "w": 97,
-                "h": 130,
-                "count": 5537
+                "x": 11,
+                "y": 12,
+                "w": 75,
+                "h": 100,
+                "count": 3298
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -5224,11 +5224,11 @@
             },
             {
               "bounds": {
-                "x": 16,
-                "y": 2,
-                "w": 97,
-                "h": 130,
-                "count": 5537
+                "x": 11,
+                "y": 12,
+                "w": 75,
+                "h": 100,
+                "count": 3298
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -5238,11 +5238,11 @@
             },
             {
               "bounds": {
-                "x": 16,
-                "y": 2,
-                "w": 97,
-                "h": 130,
-                "count": 5537
+                "x": 11,
+                "y": 12,
+                "w": 75,
+                "h": 100,
+                "count": 3298
               },
               "alphaBinary": true,
               "paletteOnly": true,
@@ -5257,15 +5257,15 @@
             "fallback": null,
             "effect": {
               "bbox": {
-                "x": 63,
-                "y": 44,
-                "w": 5,
-                "h": 4
+                "x": 48,
+                "y": 45,
+                "w": 3,
+                "h": 3
               },
-              "pixelCount": 9,
-              "mappableCount": 9,
-              "maxPixels": 664,
-              "rootBand": 102
+              "pixelCount": 7,
+              "mappableCount": 7,
+              "maxPixels": 395,
+              "rootBand": 96
             }
           },
           "framesIdentical": false

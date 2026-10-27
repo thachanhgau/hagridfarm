@@ -51,52 +51,68 @@
       "label": "Biển gỗ Halloween",
       "group": "Cốt lõi",
       "subject": "A crooked rustic wooden garden signpost with a pumpkin-shaped sign and a bat-shaped arrow, decorated with autumn leaves and a small cobweb. The sign contains ONLY carved pumpkin and bat pictograms, absolutely NO writing, lettering or numbers.",
-      "w": 96,
-      "h": 128,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        56,
+        84
+      ]
     },
     {
       "id": "hw_cloth_ghost_lantern",
       "label": "Đèn ma vải",
       "group": "Cốt lõi",
       "subject": "A friendly ivory cloth ghost lantern with two oval purple eyes and a tiny surprised mouth, hanging from a curved dark wooden shepherd-hook post. Tattered cloth hem, tiny amber light shining inside, post firmly rooted in a little stone foot.",
-      "w": 80,
-      "h": 128,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
       ],
-      "motion": "sway"
+      "motion": "sway",
+      "inkMax": [
+        56,
+        90
+      ]
     },
     {
       "id": "hw_dead_bat_tree",
       "label": "Cây khô treo dơi",
       "group": "Cốt lõi",
       "subject": "A small twisted leafless brown tree with exactly three little purple bats hanging upside down from branches, a single pumpkin nestled among roots, tiny cobweb between two branches. Stable visible roots, readable sparse silhouette.",
-      "w": 128,
-      "h": 144,
+      "w": 96,
+      "h": 128,
       "foot": [
         2,
         1
       ],
-      "motion": "sway"
+      "motion": "sway",
+      "inkMax": [
+        88,
+        107
+      ]
     },
     {
       "id": "hw_bat_lantern",
       "label": "Đèn lồng dơi",
       "group": "Ánh sáng",
       "subject": "A hanging bat-shaped iron lantern on a short freestanding crooked timber post. Wide bat wings form the lantern frame around a warm amber glass belly, curled feet of post on ground. Charming handcrafted rustic Halloween object.",
-      "w": 88,
-      "h": 120,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        52,
+        79
+      ]
     },
     {
       "id": "hw_skull_lantern",
@@ -120,26 +136,34 @@
       "label": "Đèn lồng hình nhà ma",
       "group": "Ánh sáng",
       "subject": "A tiny haunted-house-shaped lantern on a low stone plinth: crooked slate roof, a little chimney, warm orange glowing windows and small open arched doorway. This is a miniature decorative lantern, not a full-size building; no ghosts outside.",
-      "w": 96,
-      "h": 120,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        56,
+        77
+      ]
     },
     {
       "id": "hw_ghost_orb",
       "label": "Quả cầu ma nhỏ",
       "group": "Ánh sáng",
       "subject": "A round teal glass orb held by a rustic brass three-pronged pedestal, containing one tiny smiling ivory ghost with purple eyes. Crisp pixel highlights on glass, miniature magical Halloween garden lamp, stable pedestal feet.",
-      "w": 80,
-      "h": 104,
+      "w": 64,
+      "h": 96,
       "foot": [
         1,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        48,
+        71
+      ]
     },
     {
       "id": "hw_spider_light_garland",
@@ -266,26 +290,34 @@
       "label": "Gốc cây mặt quỷ",
       "group": "Rừng tinh nghịch",
       "subject": "An old squat mossy tree stump with a carved mischievous smiling face, amber glowing eyes, crooked roots and one tiny violet mushroom at its foot. Hollow top with a few fallen autumn leaves, warm brown wood. Friendly rather than frightening.",
-      "w": 112,
-      "h": 104,
+      "w": 96,
+      "h": 96,
       "foot": [
         2,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        88,
+        72
+      ]
     },
     {
       "id": "hw_skull_mushrooms",
       "label": "Cụm nấm hình đầu lâu",
       "group": "Rừng tinh nghịch",
       "subject": "A tight cluster of exactly three whimsical ivory-capped mushrooms shaped like cute tiny skulls with purple eye holes, on short mossy stems with green fern leaves. No ground tile, only connected roots and a few moss pixels.",
-      "w": 96,
-      "h": 88,
+      "w": 64,
+      "h": 96,
       "foot": [
         1,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        56,
+        63
+      ]
     },
     {
       "id": "hw_eyeball_flowers",
@@ -322,13 +354,17 @@
       "label": "Giàn mạng nhện đọng sương",
       "group": "Rừng tinh nghịch",
       "subject": "An irregular rustic frame made of two forked branches and a crooked top beam, holding one large elegant spiderweb with pale blue dew beads and one tiny violet spider at the upper corner. Simple readable radial web, two root feet.",
-      "w": 128,
-      "h": 136,
+      "w": 96,
+      "h": 128,
       "foot": [
         2,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        80,
+        100
+      ]
     },
     {
       "id": "hw_pumpkin_spider_nest",
