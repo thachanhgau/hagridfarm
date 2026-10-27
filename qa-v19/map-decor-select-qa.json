@@ -1,0 +1,112 @@
+[
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "checks": [
+      "pond",
+      "bought",
+      "earned-turn",
+      "keepsake"
+    ],
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "checks": [
+      "pond",
+      "bought",
+      "earned-turn",
+      "keepsake"
+    ],
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "checks": [
+      "pond",
+      "bought",
+      "earned-turn",
+      "keepsake"
+    ],
+    "errors": []
+  },
+  {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 812,
+      "height": 375
+    },
+    "checks": [
+      "pond",
+      "earned-turn",
+      "keepsake"
+    ],
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "checks": [
+      "pond",
+      "bought",
+      "earned-turn",
+      "keepsake"
+    ],
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "checks": [
+      "pond",
+      "bought",
+      "earned-turn",
+      "keepsake"
+    ],
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "checks": [
+      "pond",
+      "bought",
+      "earned-turn",
+      "keepsake"
+    ],
+    "errors": []
+  },
+  {
+    "browser": "WebKit",
+    "viewport": {
+      "width": 812,
+      "height": 375
+    },
+    "checks": [
+      "pond",
+      "earned-turn",
+      "keepsake"
+    ],
+    "errors": []
+  }
+]

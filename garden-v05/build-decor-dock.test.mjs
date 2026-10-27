@@ -17,3 +17,9 @@ test('free placement at zero is placed; unknown art is omitted without deleting 
  assert.equal(rows[0].placed,true);assert.equal(rows.length,1);
  assert.deepEqual(ownedDecorChoices(undefined,assets),[]);
 });
+test('garden defaults join the tray with their stash state and facing',async()=>{
+ const {defaultDecorRows}=await import('./build-decor-dock.mjs');
+ const rows=defaultDecorRows({decorations:['decoration-3'],keepsakes:{puffskein:1,dragon:0}},{hiddenDefaults:['scene:pond']},{'decoration-3':'right'});
+ assert.deepEqual(rows.map(r=>[r.id,r.placed,r.facing]),[['scene:pond',false,'default'],['decoration-3',true,'right'],['keepsake:puffskein',true,'default']]);
+ assert.ok(rows.every(r=>r.isDefault));
+});

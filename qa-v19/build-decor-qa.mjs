@@ -53,7 +53,8 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]) {
    await press(frame.locator('#decorSectionButton'));
    assert.equal(await frame.locator('#buildWorkPane').isVisible(),false);
    assert.equal(await frame.locator('#decorWorkPane').isVisible(),true);
-   assert.equal(await frame.locator('.decor-dock-choice').count(),before.decorations.owned.length);
+   assert.equal(await frame.locator('.decor-dock-choice:not([data-decor-id^="decoration-"]):not([data-decor-id^="keepsake:"]):not([data-decor-id="scene:pond"])').count(),before.decorations.owned.length);
+    assert.ok(await frame.locator('[data-decor-id="scene:pond"]').count(),'garden defaults share the tray');
    assert.deepEqual(await snapshot(),before,'opening decor never mutates a save');
    await press(frame.locator('[data-decor-id="decor_pumpkin_lantern"]'));
    await press(frame.locator('#decorDockStash'));

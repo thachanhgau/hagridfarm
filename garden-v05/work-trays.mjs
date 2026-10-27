@@ -1,8 +1,8 @@
-import {setupBuildDecorDock} from './build-decor-dock.mjs?v=24.9.85';
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.85';
-import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.85';
-import { DB } from './balance-data.mjs?v=24.9.85';
-import { makeRecipeIcon } from './recipe-art-ui.mjs?v=24.9.85';
+import {setupBuildDecorDock} from './build-decor-dock.mjs?v=24.9.86';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=24.9.86';
+import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=24.9.86';
+import { DB } from './balance-data.mjs?v=24.9.86';
+import { makeRecipeIcon } from './recipe-art-ui.mjs?v=24.9.86';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);
@@ -525,7 +525,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
   }
 
   refresh();
-  return { refresh };
+  return { refresh, selectDecor: id => buildDecor?.select(id) };
 }
 
 export default setupWorkTrays;
