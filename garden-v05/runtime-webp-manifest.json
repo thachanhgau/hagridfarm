@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "90fa232d3ccd",
+  "revision": "4d9a8e28acb2",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -8554,102 +8554,102 @@
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_f0.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3185,
-      "bytes": 1992,
-      "sourceSha256": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
-      "sha256": "a5b925029a771802e6099e1287519d3d442b59a0b3863af8058a13b9c3ab8cc9"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1709,
+      "bytes": 1048,
+      "sourceSha256": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f",
+      "sha256": "aea06d059b2b4096961606b9ece08c97a3a47384fdaea5350cdb395497412f6f"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_f1.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3193,
-      "bytes": 1996,
-      "sourceSha256": "2665c3223e706c5cb49f4f908469b1b5854216cbcf63bd71ae42a45e3c64a544",
-      "sha256": "fa68347d15275c74236b96b691c3b97c69fe1eb32437e37d0f1cc5e6ca47758b"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1721,
+      "bytes": 1054,
+      "sourceSha256": "fb615ebd6227b97980ab873a5174991f992f861d568e6c66d92d894b53cbb67a",
+      "sha256": "ddb0817ac56106f05601267b8d949d7541caaecf70b4eddcb5e7d3a6add46f97"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_f2.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3193,
-      "bytes": 1996,
-      "sourceSha256": "2665c3223e706c5cb49f4f908469b1b5854216cbcf63bd71ae42a45e3c64a544",
-      "sha256": "fa68347d15275c74236b96b691c3b97c69fe1eb32437e37d0f1cc5e6ca47758b"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1721,
+      "bytes": 1054,
+      "sourceSha256": "09655652ab9b5e0991c8b3b0e87be2655b7381dd5fe63ef56e213b98faec3bd7",
+      "sha256": "773cbe18894e1e1ae08158b5f47913f78fe8ab0661068ac34a2922309ee83e00"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_f3.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3185,
-      "bytes": 1992,
-      "sourceSha256": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
-      "sha256": "a5b925029a771802e6099e1287519d3d442b59a0b3863af8058a13b9c3ab8cc9"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1709,
+      "bytes": 1048,
+      "sourceSha256": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f",
+      "sha256": "aea06d059b2b4096961606b9ece08c97a3a47384fdaea5350cdb395497412f6f"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_right_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_right_f0.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3137,
-      "bytes": 1934,
-      "sourceSha256": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
-      "sha256": "521cf27751d57923ab24f9e85f8fb94497e1dfa8347da91303944cb3a83f2b96"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1660,
+      "bytes": 1038,
+      "sourceSha256": "1461d281140fcb7d82addb0c017e1b2bf111d16d168399b5b7b8d5cf421607b7",
+      "sha256": "2a64cf0e92f1ea24c9e9edadc4b53add0564bcdb88bf2aa3fc5ed5ffdccff47e"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_right_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_right_f1.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3139,
-      "bytes": 1936,
-      "sourceSha256": "e024854c55b788b970fc7100981cfcdfa5f06604b2ebdd06ea4a48cf1d6dca81",
-      "sha256": "a0b32dd69163d01189b9d43306a55871701ba87284665fede119c03f2a47cb74"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1671,
+      "bytes": 1048,
+      "sourceSha256": "e24ac4171972e9fda9c11123acadd09de0f7120b27c48d39dc9c8bd484eb4500",
+      "sha256": "8c9d9213f2458803d67541e2fc9d71757128a9a856daf4d57190bc62ace42734"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_right_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_right_f2.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3139,
-      "bytes": 1936,
-      "sourceSha256": "e024854c55b788b970fc7100981cfcdfa5f06604b2ebdd06ea4a48cf1d6dca81",
-      "sha256": "a0b32dd69163d01189b9d43306a55871701ba87284665fede119c03f2a47cb74"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1674,
+      "bytes": 1048,
+      "sourceSha256": "e51f64a30bf60ff75b9605cbded68bfeea2895afeafb2a141f40ba35c2bd5385",
+      "sha256": "6d8aecd413f7f0ae84c8e9235a3953281ffbae63e43fbe07fe3548e2fc497c15"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_right_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_right_f3.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3137,
-      "bytes": 1934,
-      "sourceSha256": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
-      "sha256": "521cf27751d57923ab24f9e85f8fb94497e1dfa8347da91303944cb3a83f2b96"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1660,
+      "bytes": 1038,
+      "sourceSha256": "1461d281140fcb7d82addb0c017e1b2bf111d16d168399b5b7b8d5cf421607b7",
+      "sha256": "2a64cf0e92f1ea24c9e9edadc4b53add0564bcdb88bf2aa3fc5ed5ffdccff47e"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace_right.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace_right.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3137,
-      "bytes": 1934,
-      "sourceSha256": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
-      "sha256": "521cf27751d57923ab24f9e85f8fb94497e1dfa8347da91303944cb3a83f2b96"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1660,
+      "bytes": 1038,
+      "sourceSha256": "1461d281140fcb7d82addb0c017e1b2bf111d16d168399b5b7b8d5cf421607b7",
+      "sha256": "2a64cf0e92f1ea24c9e9edadc4b53add0564bcdb88bf2aa3fc5ed5ffdccff47e"
     },
     {
       "source": "decor-assets/native/sp_cursed_opal_necklace.png",
       "file": "runtime-webp/decor-assets/native/sp_cursed_opal_necklace.webp",
-      "width": 96,
-      "height": 136,
-      "sourceBytes": 3185,
-      "bytes": 1992,
-      "sourceSha256": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
-      "sha256": "a5b925029a771802e6099e1287519d3d442b59a0b3863af8058a13b9c3ab8cc9"
+      "width": 64,
+      "height": 112,
+      "sourceBytes": 1709,
+      "bytes": 1048,
+      "sourceSha256": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f",
+      "sha256": "aea06d059b2b4096961606b9ece08c97a3a47384fdaea5350cdb395497412f6f"
     },
     {
       "source": "decor-assets/native/sp_deathday_cake_f0.png",
@@ -8954,102 +8954,102 @@
     {
       "source": "decor-assets/native/sp_fawkes_perch_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_f0.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6017,
-      "bytes": 3602,
-      "sourceSha256": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
-      "sha256": "41133fc75cf0b227f2832420f8d9d54f4081900825680fdeaa9d8c90ec502adb"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2561,
+      "bytes": 1628,
+      "sourceSha256": "66eb1a249d03ea0b40b2a4a7470f7d260ca06724c6989efd6fe9bdd72c517601",
+      "sha256": "e20b73d0e047b26e4e228b354412f4c45e306e1c4105faa281a11227b68ac0e3"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_f1.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6029,
-      "bytes": 3596,
-      "sourceSha256": "a30642c049613f1bc1cc834f7bb6f80d3fb12367a2d185c4fbc79209435a2ba7",
-      "sha256": "41d36861d4d4379f66bbf833e52634182bd05e064925949600e47597725b7814"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2559,
+      "bytes": 1624,
+      "sourceSha256": "fe65eeaffd9bfb5de15e73c2a6f65f2f272bce87628d4ea075bf0096120ad590",
+      "sha256": "e96cfac4014e55bc2417ee9fbc7f882410ef61e76694cca43dbc2b3357fd9503"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_f2.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6024,
-      "bytes": 3602,
-      "sourceSha256": "5a92527044448b4a8b9d9e41cde8ad19a1cacacb2afbf9435334379cd639395a",
-      "sha256": "3db304cbe3a564a3ab4bb4e7e24537ef3cb2d33f96c476f977a98059df4499b9"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2559,
+      "bytes": 1618,
+      "sourceSha256": "142861fbde1892562a8cb6f75f003cbcef4d60591a0ea835d0476b18f1934cc3",
+      "sha256": "debc6c8a476c798c0ea162b907090e886602b273f75b4de9521c2cd73958ec71"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_f3.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6017,
-      "bytes": 3602,
-      "sourceSha256": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
-      "sha256": "41133fc75cf0b227f2832420f8d9d54f4081900825680fdeaa9d8c90ec502adb"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2561,
+      "bytes": 1628,
+      "sourceSha256": "66eb1a249d03ea0b40b2a4a7470f7d260ca06724c6989efd6fe9bdd72c517601",
+      "sha256": "e20b73d0e047b26e4e228b354412f4c45e306e1c4105faa281a11227b68ac0e3"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch_right_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_right_f0.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6035,
-      "bytes": 3636,
-      "sourceSha256": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
-      "sha256": "38c10992d8e4f49823ce32a12fbbc12c1eb93d4680f8e1869372941bf7d52b3c"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2408,
+      "bytes": 1534,
+      "sourceSha256": "21be7c0af32e36497634eb05765ba926d081ff43fe2b4835d23a55d485bcbfb5",
+      "sha256": "43d52860f7a785c6e7ee15deb3d162465851ddcbeaac2b354fdf6971b46cf08c"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch_right_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_right_f1.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6036,
-      "bytes": 3632,
-      "sourceSha256": "4bb88edab14d6bdddedf1d8087b9ba68ad14f8a5dcd476d1b62492376e376b64",
-      "sha256": "632c0c441f4726b967b1893f097f51c0f7bd085cb4009280f566b167950c35e5"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2416,
+      "bytes": 1534,
+      "sourceSha256": "830e611858ded536661bf9e6b5ed5c57011655c0c7bad513f181d961de960028",
+      "sha256": "f9bc6aee22c95b7fa9c08e0e465d11c7703eed15e7dca4dc5523c7848426f0ec"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch_right_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_right_f2.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6027,
-      "bytes": 3636,
-      "sourceSha256": "ee423539e9b547d0db48877482efb73a6463856f513a3fb917d7d3b19b157b88",
-      "sha256": "e634c8028fcb7cdb898667e9017e051a02c23b8616c2d09e3113e5d666862d48"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2393,
+      "bytes": 1508,
+      "sourceSha256": "d2d877faea115b479fa3b2de26a4370ad9ee696efa83c5d794c363a14ee00c35",
+      "sha256": "a2e725f236a5d59073149941cb856e8b3ce8eca61a46f3467b713c1c4b4d60ae"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch_right_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_right_f3.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6035,
-      "bytes": 3636,
-      "sourceSha256": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
-      "sha256": "38c10992d8e4f49823ce32a12fbbc12c1eb93d4680f8e1869372941bf7d52b3c"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2408,
+      "bytes": 1534,
+      "sourceSha256": "21be7c0af32e36497634eb05765ba926d081ff43fe2b4835d23a55d485bcbfb5",
+      "sha256": "43d52860f7a785c6e7ee15deb3d162465851ddcbeaac2b354fdf6971b46cf08c"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch_right.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch_right.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6035,
-      "bytes": 3636,
-      "sourceSha256": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
-      "sha256": "38c10992d8e4f49823ce32a12fbbc12c1eb93d4680f8e1869372941bf7d52b3c"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2408,
+      "bytes": 1534,
+      "sourceSha256": "21be7c0af32e36497634eb05765ba926d081ff43fe2b4835d23a55d485bcbfb5",
+      "sha256": "43d52860f7a785c6e7ee15deb3d162465851ddcbeaac2b354fdf6971b46cf08c"
     },
     {
       "source": "decor-assets/native/sp_fawkes_perch.png",
       "file": "runtime-webp/decor-assets/native/sp_fawkes_perch.webp",
-      "width": 128,
-      "height": 192,
-      "sourceBytes": 6017,
-      "bytes": 3602,
-      "sourceSha256": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
-      "sha256": "41133fc75cf0b227f2832420f8d9d54f4081900825680fdeaa9d8c90ec502adb"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 2561,
+      "bytes": 1628,
+      "sourceSha256": "66eb1a249d03ea0b40b2a4a7470f7d260ca06724c6989efd6fe9bdd72c517601",
+      "sha256": "e20b73d0e047b26e4e228b354412f4c45e306e1c4105faa281a11227b68ac0e3"
     },
     {
       "source": "decor-assets/native/sp_gaunt_ring_f0.png",
@@ -9454,102 +9454,102 @@
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_f0.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 3056,
-      "bytes": 2060,
-      "sourceSha256": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
-      "sha256": "4efcb999ac90e66076e519e70f512438ddc599bdc413be6e01c37dba9e4a6dbb"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1553,
+      "bytes": 1060,
+      "sourceSha256": "14d6fde245451a4000a87694b2101406e92845c25d459fa93dd4bd7bb4ff40bd",
+      "sha256": "8df6ccceaf35e5d3046fb791b06f4c1394070fde1060b3c7a689c1d2454892c5"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_f1.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 3051,
-      "bytes": 2054,
-      "sourceSha256": "c20c8b8d27e6615250f615a298f25171e7392da74747e5941f6df263428c63a3",
-      "sha256": "d9073b3919695175becd96d5e8aa6df3c3638ab160a9e6ffdc0c7fb4791519b5"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1549,
+      "bytes": 1056,
+      "sourceSha256": "72086412bd53b44f062e00eb3bda30b3668e70e4b29da50dc6e031a18a760d6f",
+      "sha256": "2d589775377d47f886160f43e46d1f3fafb886902effc64c85ae50dc3ed3f722"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_f2.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 3051,
-      "bytes": 2054,
-      "sourceSha256": "c20c8b8d27e6615250f615a298f25171e7392da74747e5941f6df263428c63a3",
-      "sha256": "d9073b3919695175becd96d5e8aa6df3c3638ab160a9e6ffdc0c7fb4791519b5"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1549,
+      "bytes": 1056,
+      "sourceSha256": "72086412bd53b44f062e00eb3bda30b3668e70e4b29da50dc6e031a18a760d6f",
+      "sha256": "2d589775377d47f886160f43e46d1f3fafb886902effc64c85ae50dc3ed3f722"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_f3.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 3056,
-      "bytes": 2060,
-      "sourceSha256": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
-      "sha256": "4efcb999ac90e66076e519e70f512438ddc599bdc413be6e01c37dba9e4a6dbb"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1553,
+      "bytes": 1060,
+      "sourceSha256": "14d6fde245451a4000a87694b2101406e92845c25d459fa93dd4bd7bb4ff40bd",
+      "sha256": "8df6ccceaf35e5d3046fb791b06f4c1394070fde1060b3c7a689c1d2454892c5"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_right_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_right_f0.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 2661,
-      "bytes": 1724,
-      "sourceSha256": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
-      "sha256": "ce8f94e34555432c9fe3ee802240d7846c1df82e1aac634c09ea9f6aa636d868"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1377,
+      "bytes": 912,
+      "sourceSha256": "39d9a93e6dcc8300b7e4548b784616a2197728168810d478ba5c2eb4a33f647a",
+      "sha256": "a5bc8dad40711a9900df2151e5d0c6bc90b6a9e5d8229d54651c1ddcabafd8db"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_right_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_right_f1.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 2647,
-      "bytes": 1712,
-      "sourceSha256": "e781585ccb86ccb1cd8b71861fad79887e25105a6bfbcc8af679aa7d234836b9",
-      "sha256": "0e62cc23a0426fc591aa4f0a2eac3397ea313a678cff55dedb63eaa0db3b625a"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1377,
+      "bytes": 910,
+      "sourceSha256": "e7d94cf75f095834a1ad4f80e560bc87ff525924866f90aca565230847bf1f86",
+      "sha256": "f8bdae885dd1da8e6d1654da181c5db5950952ede0f6c2eb1e083a6ba270b4be"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_right_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_right_f2.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 2647,
-      "bytes": 1712,
-      "sourceSha256": "e781585ccb86ccb1cd8b71861fad79887e25105a6bfbcc8af679aa7d234836b9",
-      "sha256": "0e62cc23a0426fc591aa4f0a2eac3397ea313a678cff55dedb63eaa0db3b625a"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1377,
+      "bytes": 910,
+      "sourceSha256": "e7d94cf75f095834a1ad4f80e560bc87ff525924866f90aca565230847bf1f86",
+      "sha256": "f8bdae885dd1da8e6d1654da181c5db5950952ede0f6c2eb1e083a6ba270b4be"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_right_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_right_f3.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 2661,
-      "bytes": 1724,
-      "sourceSha256": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
-      "sha256": "ce8f94e34555432c9fe3ee802240d7846c1df82e1aac634c09ea9f6aa636d868"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1377,
+      "bytes": 912,
+      "sourceSha256": "39d9a93e6dcc8300b7e4548b784616a2197728168810d478ba5c2eb4a33f647a",
+      "sha256": "a5bc8dad40711a9900df2151e5d0c6bc90b6a9e5d8229d54651c1ddcabafd8db"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup_right.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup_right.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 2661,
-      "bytes": 1724,
-      "sourceSha256": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
-      "sha256": "ce8f94e34555432c9fe3ee802240d7846c1df82e1aac634c09ea9f6aa636d868"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1377,
+      "bytes": 912,
+      "sourceSha256": "39d9a93e6dcc8300b7e4548b784616a2197728168810d478ba5c2eb4a33f647a",
+      "sha256": "a5bc8dad40711a9900df2151e5d0c6bc90b6a9e5d8229d54651c1ddcabafd8db"
     },
     {
       "source": "decor-assets/native/sp_hufflepuff_cup.png",
       "file": "runtime-webp/decor-assets/native/sp_hufflepuff_cup.webp",
-      "width": 96,
-      "height": 104,
-      "sourceBytes": 3056,
-      "bytes": 2060,
-      "sourceSha256": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
-      "sha256": "4efcb999ac90e66076e519e70f512438ddc599bdc413be6e01c37dba9e4a6dbb"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1553,
+      "bytes": 1060,
+      "sourceSha256": "14d6fde245451a4000a87694b2101406e92845c25d459fa93dd4bd7bb4ff40bd",
+      "sha256": "8df6ccceaf35e5d3046fb791b06f4c1394070fde1060b3c7a689c1d2454892c5"
     },
     {
       "source": "decor-assets/native/sp_knight_bus_f0.png",
@@ -9854,102 +9854,102 @@
     {
       "source": "decor-assets/native/sp_monster_book_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_f0.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3437,
-      "bytes": 2260,
-      "sourceSha256": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-      "sha256": "86bbf5ad51096dcccce18a1d577d7b40fe439132be3c66a7c626d51c05828c7d"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1322,
+      "bytes": 800,
+      "sourceSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+      "sha256": "68bee7233990f01787f75d9ab3d32f5815881979070f771c316380975edd734d"
     },
     {
       "source": "decor-assets/native/sp_monster_book_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_f1.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3437,
-      "bytes": 2260,
-      "sourceSha256": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-      "sha256": "86bbf5ad51096dcccce18a1d577d7b40fe439132be3c66a7c626d51c05828c7d"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1322,
+      "bytes": 800,
+      "sourceSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+      "sha256": "68bee7233990f01787f75d9ab3d32f5815881979070f771c316380975edd734d"
     },
     {
       "source": "decor-assets/native/sp_monster_book_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_f2.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3437,
-      "bytes": 2260,
-      "sourceSha256": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-      "sha256": "86bbf5ad51096dcccce18a1d577d7b40fe439132be3c66a7c626d51c05828c7d"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1322,
+      "bytes": 800,
+      "sourceSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+      "sha256": "68bee7233990f01787f75d9ab3d32f5815881979070f771c316380975edd734d"
     },
     {
       "source": "decor-assets/native/sp_monster_book_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_f3.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3437,
-      "bytes": 2260,
-      "sourceSha256": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-      "sha256": "86bbf5ad51096dcccce18a1d577d7b40fe439132be3c66a7c626d51c05828c7d"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1322,
+      "bytes": 800,
+      "sourceSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+      "sha256": "68bee7233990f01787f75d9ab3d32f5815881979070f771c316380975edd734d"
     },
     {
       "source": "decor-assets/native/sp_monster_book_right_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_right_f0.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3347,
-      "bytes": 2118,
-      "sourceSha256": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-      "sha256": "53cc1f912e647cbdc59281f71a252ff63ee77636c3ceead24c9cafd6eb22ded2"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1309,
+      "bytes": 804,
+      "sourceSha256": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+      "sha256": "086b62e6c1e603bf17ffa8d8a38d230f7179010291a24478bfc3faf4f60d0295"
     },
     {
       "source": "decor-assets/native/sp_monster_book_right_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_right_f1.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3347,
-      "bytes": 2118,
-      "sourceSha256": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-      "sha256": "53cc1f912e647cbdc59281f71a252ff63ee77636c3ceead24c9cafd6eb22ded2"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1309,
+      "bytes": 804,
+      "sourceSha256": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+      "sha256": "086b62e6c1e603bf17ffa8d8a38d230f7179010291a24478bfc3faf4f60d0295"
     },
     {
       "source": "decor-assets/native/sp_monster_book_right_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_right_f2.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3347,
-      "bytes": 2118,
-      "sourceSha256": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-      "sha256": "53cc1f912e647cbdc59281f71a252ff63ee77636c3ceead24c9cafd6eb22ded2"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1309,
+      "bytes": 804,
+      "sourceSha256": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+      "sha256": "086b62e6c1e603bf17ffa8d8a38d230f7179010291a24478bfc3faf4f60d0295"
     },
     {
       "source": "decor-assets/native/sp_monster_book_right_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_right_f3.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3347,
-      "bytes": 2118,
-      "sourceSha256": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-      "sha256": "53cc1f912e647cbdc59281f71a252ff63ee77636c3ceead24c9cafd6eb22ded2"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1309,
+      "bytes": 804,
+      "sourceSha256": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+      "sha256": "086b62e6c1e603bf17ffa8d8a38d230f7179010291a24478bfc3faf4f60d0295"
     },
     {
       "source": "decor-assets/native/sp_monster_book_right.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book_right.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3347,
-      "bytes": 2118,
-      "sourceSha256": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-      "sha256": "53cc1f912e647cbdc59281f71a252ff63ee77636c3ceead24c9cafd6eb22ded2"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1309,
+      "bytes": 804,
+      "sourceSha256": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+      "sha256": "086b62e6c1e603bf17ffa8d8a38d230f7179010291a24478bfc3faf4f60d0295"
     },
     {
       "source": "decor-assets/native/sp_monster_book.png",
       "file": "runtime-webp/decor-assets/native/sp_monster_book.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3437,
-      "bytes": 2260,
-      "sourceSha256": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-      "sha256": "86bbf5ad51096dcccce18a1d577d7b40fe439132be3c66a7c626d51c05828c7d"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1322,
+      "bytes": 800,
+      "sourceSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+      "sha256": "68bee7233990f01787f75d9ab3d32f5815881979070f771c316380975edd734d"
     },
     {
       "source": "decor-assets/native/sp_norbert_egg_f0.png",
@@ -10254,102 +10254,102 @@
     {
       "source": "decor-assets/native/sp_riddle_diary_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_f0.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2860,
-      "bytes": 1872,
-      "sourceSha256": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
-      "sha256": "f75481245716ce2801cf4a0c43e9cb984589fe68fd138d4149bc3fc5c8437ac0"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1127,
+      "bytes": 698,
+      "sourceSha256": "f94bfeb8dcefd2fc7df69508d88c71e7a8630c4b28970047a21660565002bd74",
+      "sha256": "29441ed9a5418a098cc7a07b647eaf840db30523350a18114ff70b76fbef2cc9"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_f1.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2863,
-      "bytes": 1874,
-      "sourceSha256": "5bacfc352d0b8bb0ef2d0cf1e7268e045c2278c140e160278f9d9ddab11016e7",
-      "sha256": "01d86fdb608381a81e637432b955167671aadfd25e40a7821248994fa99de7d4"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1128,
+      "bytes": 700,
+      "sourceSha256": "717635460f451d137c16404cbddfc23eb25179787475c14848cb22ebdcc649eb",
+      "sha256": "981637bf2b46f1ea3e2ae9b18742898c8015f81028179f3b3556cd07b6c1c59f"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_f2.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2863,
-      "bytes": 1874,
-      "sourceSha256": "5bacfc352d0b8bb0ef2d0cf1e7268e045c2278c140e160278f9d9ddab11016e7",
-      "sha256": "01d86fdb608381a81e637432b955167671aadfd25e40a7821248994fa99de7d4"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1128,
+      "bytes": 700,
+      "sourceSha256": "717635460f451d137c16404cbddfc23eb25179787475c14848cb22ebdcc649eb",
+      "sha256": "981637bf2b46f1ea3e2ae9b18742898c8015f81028179f3b3556cd07b6c1c59f"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_f3.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2860,
-      "bytes": 1872,
-      "sourceSha256": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
-      "sha256": "f75481245716ce2801cf4a0c43e9cb984589fe68fd138d4149bc3fc5c8437ac0"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1127,
+      "bytes": 698,
+      "sourceSha256": "f94bfeb8dcefd2fc7df69508d88c71e7a8630c4b28970047a21660565002bd74",
+      "sha256": "29441ed9a5418a098cc7a07b647eaf840db30523350a18114ff70b76fbef2cc9"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_right_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_right_f0.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2395,
-      "bytes": 1544,
-      "sourceSha256": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
-      "sha256": "3b66545bb37a83964a057fdeb5c0a9db8611acac7119072b54da1e02bfde7919"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1178,
+      "bytes": 736,
+      "sourceSha256": "62e544e6262c90a735ba16aae497180c7170cc74a8ecc9dcf44c4e4ec76751a1",
+      "sha256": "bc8791a4b6ea12803cdb571e269e14d079f8052651b685a409d2550bda053440"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_right_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_right_f1.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2382,
-      "bytes": 1516,
-      "sourceSha256": "763a6c1a7e39ec8053d5dd61d919cb587c28a52a3629ba1ab9abf7061688cc62",
-      "sha256": "01d022ce2b9fb3dd9e0c49fbdc366f86949f64c54acfe7304d41faf1fe80cead"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1175,
+      "bytes": 736,
+      "sourceSha256": "84925c2569f20fea2fbd019a2b57ac5d6b70bb4d1e5a28afaafd672718625357",
+      "sha256": "f226018cf9e779db344070179576f5dd8c2f292eba620045dc12232fdad5d190"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_right_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_right_f2.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2382,
-      "bytes": 1516,
-      "sourceSha256": "763a6c1a7e39ec8053d5dd61d919cb587c28a52a3629ba1ab9abf7061688cc62",
-      "sha256": "01d022ce2b9fb3dd9e0c49fbdc366f86949f64c54acfe7304d41faf1fe80cead"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1175,
+      "bytes": 736,
+      "sourceSha256": "84925c2569f20fea2fbd019a2b57ac5d6b70bb4d1e5a28afaafd672718625357",
+      "sha256": "f226018cf9e779db344070179576f5dd8c2f292eba620045dc12232fdad5d190"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_right_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_right_f3.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2395,
-      "bytes": 1544,
-      "sourceSha256": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
-      "sha256": "3b66545bb37a83964a057fdeb5c0a9db8611acac7119072b54da1e02bfde7919"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1178,
+      "bytes": 736,
+      "sourceSha256": "62e544e6262c90a735ba16aae497180c7170cc74a8ecc9dcf44c4e4ec76751a1",
+      "sha256": "bc8791a4b6ea12803cdb571e269e14d079f8052651b685a409d2550bda053440"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_right.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary_right.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2395,
-      "bytes": 1544,
-      "sourceSha256": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
-      "sha256": "3b66545bb37a83964a057fdeb5c0a9db8611acac7119072b54da1e02bfde7919"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1178,
+      "bytes": 736,
+      "sourceSha256": "62e544e6262c90a735ba16aae497180c7170cc74a8ecc9dcf44c4e4ec76751a1",
+      "sha256": "bc8791a4b6ea12803cdb571e269e14d079f8052651b685a409d2550bda053440"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary.png",
       "file": "runtime-webp/decor-assets/native/sp_riddle_diary.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2860,
-      "bytes": 1872,
-      "sourceSha256": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
-      "sha256": "f75481245716ce2801cf4a0c43e9cb984589fe68fd138d4149bc3fc5c8437ac0"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1127,
+      "bytes": 698,
+      "sourceSha256": "f94bfeb8dcefd2fc7df69508d88c71e7a8630c4b28970047a21660565002bd74",
+      "sha256": "29441ed9a5418a098cc7a07b647eaf840db30523350a18114ff70b76fbef2cc9"
     },
     {
       "source": "decor-assets/native/sp_sirius_motorbike_f0.png",
@@ -10754,102 +10754,102 @@
     {
       "source": "decor-assets/native/sp_sword_gryffindor_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_f0.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 4098,
-      "bytes": 2418,
-      "sourceSha256": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
-      "sha256": "cf2cc40cc83488519821ce2108dad131f45c7dc9027cb156f6c8ce778809e345"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1833,
+      "bytes": 1100,
+      "sourceSha256": "a40d41ad1ef4cc4ad62e67148a1930dbac9f231529afb703ff5491ba8be178c5",
+      "sha256": "cbf04f4e55e5336d1004fb1047a472b690141402d592916123bd79375c381bed"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_f1.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 4099,
-      "bytes": 2416,
-      "sourceSha256": "af544d07028dcd65ee0498ffe5e202383dbcc25b51b37919ed7c66f94539475e",
-      "sha256": "0106e1775b982d391e813b1d0dc87db6339b9836c00cc738c8071d3b886fdcd3"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1835,
+      "bytes": 1100,
+      "sourceSha256": "e71c9e897d0201f387d5266c8fdb767ed9109c47ea33688b5670af42a2644012",
+      "sha256": "89c714257afa52c064249f00ffa1caff7d0cf2d6a6c8ab6c5e9c730302ae0ac7"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_f2.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 4099,
-      "bytes": 2418,
-      "sourceSha256": "c0c6175dbb6ebe2cc49692c5c6cafc98c63fa8bc0b597b28ada5bf83a8db3a21",
-      "sha256": "351fe3ed51642e9f62e78b509aff697c7e569b5f2f45b797421e132bf7014e51"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1836,
+      "bytes": 1104,
+      "sourceSha256": "543d0c760966cac43388ce14f8055edb81e4ef46c868d8ede0d9923f0382a727",
+      "sha256": "cb1a83e4f0ec1877669ecc382967ca37b16438dea3511512916f0fbd544bc795"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_f3.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 4098,
-      "bytes": 2418,
-      "sourceSha256": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
-      "sha256": "cf2cc40cc83488519821ce2108dad131f45c7dc9027cb156f6c8ce778809e345"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1833,
+      "bytes": 1100,
+      "sourceSha256": "a40d41ad1ef4cc4ad62e67148a1930dbac9f231529afb703ff5491ba8be178c5",
+      "sha256": "cbf04f4e55e5336d1004fb1047a472b690141402d592916123bd79375c381bed"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor_right_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_right_f0.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 3996,
-      "bytes": 2294,
-      "sourceSha256": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
-      "sha256": "1fc99a6dbdd2e7e4f0933ac6aa997e47f02580a6656d42aaa79879a1d523edd9"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1821,
+      "bytes": 1104,
+      "sourceSha256": "ea11ccf296f587520b6a3f2d751bfb8d1dbbb642d5fbed07c58eece25a413829",
+      "sha256": "b9868caa5852c76df37c101055d2d97fd80e1b218a719b6dc9895764ec25965b"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor_right_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_right_f1.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 3989,
-      "bytes": 2292,
-      "sourceSha256": "02dbdbc447ca6adba4219ef90dd226f4fd639bebe823a3727183ec67e394e185",
-      "sha256": "c4a21e5bdb239c9c3638fbe315957a2fe876e20198167999123f6811a50a2db9"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1818,
+      "bytes": 1104,
+      "sourceSha256": "2f28dd7442ca3900234b9b858ae7553d1641e333f638b38148d55a06a85fe103",
+      "sha256": "df0b89aa8bb00663320c86c5b69f1e97c5ce013a63ed7045795d6c3c107370eb"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor_right_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_right_f2.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 3997,
-      "bytes": 2294,
-      "sourceSha256": "3bb490be3870f05bcc68b9bd4932adc99a5021f3b9755d8eae48852af0e6e5c0",
-      "sha256": "328913ab294233d00d9827fb6d0e16f87cd33bd0143aa82bea286a9ba67615ec"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1821,
+      "bytes": 1104,
+      "sourceSha256": "69186d38cbd409f108fa5d49e47b4148a36ae5bcbd8c060f466a366cc2ec4610",
+      "sha256": "56dd926b1271a9d87be16aca06ebdc18cc75a7aa997cb638efaabba1f67f0f47"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor_right_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_right_f3.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 3996,
-      "bytes": 2294,
-      "sourceSha256": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
-      "sha256": "1fc99a6dbdd2e7e4f0933ac6aa997e47f02580a6656d42aaa79879a1d523edd9"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1821,
+      "bytes": 1104,
+      "sourceSha256": "ea11ccf296f587520b6a3f2d751bfb8d1dbbb642d5fbed07c58eece25a413829",
+      "sha256": "b9868caa5852c76df37c101055d2d97fd80e1b218a719b6dc9895764ec25965b"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor_right.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor_right.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 3996,
-      "bytes": 2294,
-      "sourceSha256": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
-      "sha256": "1fc99a6dbdd2e7e4f0933ac6aa997e47f02580a6656d42aaa79879a1d523edd9"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1821,
+      "bytes": 1104,
+      "sourceSha256": "ea11ccf296f587520b6a3f2d751bfb8d1dbbb642d5fbed07c58eece25a413829",
+      "sha256": "b9868caa5852c76df37c101055d2d97fd80e1b218a719b6dc9895764ec25965b"
     },
     {
       "source": "decor-assets/native/sp_sword_gryffindor.png",
       "file": "runtime-webp/decor-assets/native/sp_sword_gryffindor.webp",
-      "width": 104,
-      "height": 176,
-      "sourceBytes": 4098,
-      "bytes": 2418,
-      "sourceSha256": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
-      "sha256": "cf2cc40cc83488519821ce2108dad131f45c7dc9027cb156f6c8ce778809e345"
+      "width": 64,
+      "height": 144,
+      "sourceBytes": 1833,
+      "bytes": 1100,
+      "sourceSha256": "a40d41ad1ef4cc4ad62e67148a1930dbac9f231529afb703ff5491ba8be178c5",
+      "sha256": "cbf04f4e55e5336d1004fb1047a472b690141402d592916123bd79375c381bed"
     },
     {
       "source": "decor-assets/native/sp_time_turner_f0.png",
@@ -11477,9 +11477,9 @@
   "totals": {
     "converted": 1141,
     "existingWebp": 8,
-    "originalBytes": 5562083,
-    "webpBytes": 3726630,
-    "savedBytes": 1835453,
-    "savedPercent": 33
+    "originalBytes": 5440311,
+    "webpBytes": 3651748,
+    "savedBytes": 1788563,
+    "savedPercent": 32.88
   }
 }

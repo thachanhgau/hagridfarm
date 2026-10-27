@@ -1350,15 +1350,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 79,
-              "y": 111,
-              "w": 11,
-              "h": 30
+              "x": 16,
+              "y": 34,
+              "w": 8,
+              "h": 15
             },
-            "pixelCount": 139,
-            "mappableCount": 139,
-            "maxPixels": 1013,
-            "rootBand": 144
+            "pixelCount": 66,
+            "mappableCount": 66,
+            "maxPixels": 385,
+            "rootBand": 108
           }
         },
         "alternate": {
@@ -1367,15 +1367,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 47,
-              "y": 115,
-              "w": 7,
-              "h": 29
+              "x": 19,
+              "y": 73,
+              "w": 14,
+              "h": 35
             },
-            "pixelCount": 127,
-            "mappableCount": 127,
-            "maxPixels": 1018,
-            "rootBand": 144
+            "pixelCount": 186,
+            "mappableCount": 186,
+            "maxPixels": 364,
+            "rootBand": 108
           }
         }
       },
@@ -1413,11 +1413,11 @@
         1,
         1
       ],
-      "width": 128,
-      "height": 192,
+      "width": 64,
+      "height": 144,
       "pivot": {
-        "x": 64,
-        "y": 188
+        "x": 32,
+        "y": 128
       },
       "defaultFile": "native/sp_fawkes_perch.png",
       "rightFile": "native/sp_fawkes_perch_right.png",
@@ -1451,23 +1451,23 @@
         260
       ],
       "source": "masters/sp_fawkes_perch.png",
-      "sourceSha256": "9cf29a64cd9da9085d762d0a1c7f14a757ac035e27457e3b99b6a5c2a146c01e",
+      "sourceSha256": "f05640dd787b9599a8559915e7409402660a2860591192ca0e63914688092009",
       "pngSha256": {
-        "native/sp_fawkes_perch.png": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
-        "native/sp_fawkes_perch_right.png": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
-        "native/sp_fawkes_perch_f0.png": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
-        "native/sp_fawkes_perch_f1.png": "a30642c049613f1bc1cc834f7bb6f80d3fb12367a2d185c4fbc79209435a2ba7",
-        "native/sp_fawkes_perch_f2.png": "5a92527044448b4a8b9d9e41cde8ad19a1cacacb2afbf9435334379cd639395a",
-        "native/sp_fawkes_perch_f3.png": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658",
-        "native/sp_fawkes_perch_right_f0.png": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
-        "native/sp_fawkes_perch_right_f1.png": "4bb88edab14d6bdddedf1d8087b9ba68ad14f8a5dcd476d1b62492376e376b64",
-        "native/sp_fawkes_perch_right_f2.png": "ee423539e9b547d0db48877482efb73a6463856f513a3fb917d7d3b19b157b88",
-        "native/sp_fawkes_perch_right_f3.png": "bdcee87cac9f094a3db0103ed3dc90f3dd6c9bfaec75fdb922153db361c708c6",
-        "spritesheets/sp_fawkes_perch.png": "983473d141c906079ec3244abfade7265c545d0f9636b5756a1700a27a633b7a",
-        "thumbnails/2x/sp_fawkes_perch.png": "4c04ee7055c010bdfae4fbf834420e5a375e022d22144ecaf0c3fa1d90bdc0f1",
-        "thumbnails/2x/sp_fawkes_perch_right.png": "7626e7ec3c9fff971382e657102d70ec5c8a749067874282d69bb24fd679e3b3",
-        "thumbnails/3x/sp_fawkes_perch.png": "83004e0ebc39f949e2b125b1622dc3fa331e3659d3f33e6342f0c7f60fde111c",
-        "thumbnails/3x/sp_fawkes_perch_right.png": "4dc363978af0ddb160eec77d65aa66ce89be9330da50c159fc70e0eabbcb3b33"
+        "native/sp_fawkes_perch.png": "66eb1a249d03ea0b40b2a4a7470f7d260ca06724c6989efd6fe9bdd72c517601",
+        "native/sp_fawkes_perch_right.png": "21be7c0af32e36497634eb05765ba926d081ff43fe2b4835d23a55d485bcbfb5",
+        "native/sp_fawkes_perch_f0.png": "66eb1a249d03ea0b40b2a4a7470f7d260ca06724c6989efd6fe9bdd72c517601",
+        "native/sp_fawkes_perch_f1.png": "fe65eeaffd9bfb5de15e73c2a6f65f2f272bce87628d4ea075bf0096120ad590",
+        "native/sp_fawkes_perch_f2.png": "142861fbde1892562a8cb6f75f003cbcef4d60591a0ea835d0476b18f1934cc3",
+        "native/sp_fawkes_perch_f3.png": "66eb1a249d03ea0b40b2a4a7470f7d260ca06724c6989efd6fe9bdd72c517601",
+        "native/sp_fawkes_perch_right_f0.png": "21be7c0af32e36497634eb05765ba926d081ff43fe2b4835d23a55d485bcbfb5",
+        "native/sp_fawkes_perch_right_f1.png": "830e611858ded536661bf9e6b5ed5c57011655c0c7bad513f181d961de960028",
+        "native/sp_fawkes_perch_right_f2.png": "d2d877faea115b479fa3b2de26a4370ad9ee696efa83c5d794c363a14ee00c35",
+        "native/sp_fawkes_perch_right_f3.png": "21be7c0af32e36497634eb05765ba926d081ff43fe2b4835d23a55d485bcbfb5",
+        "spritesheets/sp_fawkes_perch.png": "52135e0a2b8e7d05af7712df9e6e0837a4bef8f446d39b32a8c210652f9cde97",
+        "thumbnails/2x/sp_fawkes_perch.png": "0a49cb7b284f69c5a8e999c6823af733025a0d518ba327ad1cefba81ace864f1",
+        "thumbnails/2x/sp_fawkes_perch_right.png": "7e7a09774f1935d2f18384c6b9d097e15240d3edfe28a3789aeaac66f16f7cc5",
+        "thumbnails/3x/sp_fawkes_perch.png": "676958e5326abab13c879bc4183f66d9febdf6621b2004fcd2289f8e99d7ae23",
+        "thumbnails/3x/sp_fawkes_perch_right.png": "d2d3fc2948a79a5c2c6a6af9fa5dd98b185ca66ac134d94a18fb3e1bff0b2de3"
       }
     },
     {
@@ -1628,15 +1628,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 78,
-              "y": 39,
-              "w": 13,
-              "h": 15
+              "x": 24,
+              "y": 19,
+              "w": 3,
+              "h": 2
             },
-            "pixelCount": 63,
-            "mappableCount": 63,
-            "maxPixels": 710,
-            "rootBand": 78
+            "pixelCount": 4,
+            "mappableCount": 4,
+            "maxPixels": 162,
+            "rootBand": 60
           }
         },
         "alternate": {
@@ -1645,15 +1645,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 62,
-              "y": 38,
-              "w": 24,
+              "x": 20,
+              "y": 21,
+              "w": 11,
               "h": 8
             },
-            "pixelCount": 60,
-            "mappableCount": 60,
-            "maxPixels": 574,
-            "rootBand": 78
+            "pixelCount": 50,
+            "mappableCount": 50,
+            "maxPixels": 176,
+            "rootBand": 60
           }
         }
       },
@@ -1691,11 +1691,11 @@
         1,
         1
       ],
-      "width": 112,
-      "height": 104,
+      "width": 64,
+      "height": 80,
       "pivot": {
-        "x": 56,
-        "y": 100
+        "x": 32,
+        "y": 64
       },
       "defaultFile": "native/sp_riddle_diary.png",
       "rightFile": "native/sp_riddle_diary_right.png",
@@ -1729,23 +1729,23 @@
         260
       ],
       "source": "masters/sp_riddle_diary.png",
-      "sourceSha256": "9abb95c5e441e398ac51bf8ad3bd148f885e4846e011b23e3bf39d4864210cad",
+      "sourceSha256": "dbed55b988d31a7c588fce14448744048cd0c34e6ea3b514943b796cc27f88eb",
       "pngSha256": {
-        "native/sp_riddle_diary.png": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
-        "native/sp_riddle_diary_right.png": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
-        "native/sp_riddle_diary_f0.png": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
-        "native/sp_riddle_diary_f1.png": "5bacfc352d0b8bb0ef2d0cf1e7268e045c2278c140e160278f9d9ddab11016e7",
-        "native/sp_riddle_diary_f2.png": "5bacfc352d0b8bb0ef2d0cf1e7268e045c2278c140e160278f9d9ddab11016e7",
-        "native/sp_riddle_diary_f3.png": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389",
-        "native/sp_riddle_diary_right_f0.png": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
-        "native/sp_riddle_diary_right_f1.png": "763a6c1a7e39ec8053d5dd61d919cb587c28a52a3629ba1ab9abf7061688cc62",
-        "native/sp_riddle_diary_right_f2.png": "763a6c1a7e39ec8053d5dd61d919cb587c28a52a3629ba1ab9abf7061688cc62",
-        "native/sp_riddle_diary_right_f3.png": "49cbfed73d20c2863802273c15b8b46ca096057dd5eac0e7c182d417d91625c6",
-        "spritesheets/sp_riddle_diary.png": "4b6112341e2fecb89bcb482b07bf1bcc89bb38316241e49e3eee796de6d77e68",
-        "thumbnails/2x/sp_riddle_diary.png": "8bd49270f7de2ed386e9fb1e80a55a0aff091692942915b738bdbdd9ec4b2b78",
-        "thumbnails/2x/sp_riddle_diary_right.png": "eec5df516d9ae73a5133f8055f4ed2fa052d3ad4b9493375d79a76d300079437",
-        "thumbnails/3x/sp_riddle_diary.png": "8d1051c9638737ae68ff268babe78cfdd6ddf2e3dc6ac69574105f7a638d5e03",
-        "thumbnails/3x/sp_riddle_diary_right.png": "fdc8451ace2fbe055e67976f2230bee3d5aecad73437eda8dfe5f07250680f74"
+        "native/sp_riddle_diary.png": "f94bfeb8dcefd2fc7df69508d88c71e7a8630c4b28970047a21660565002bd74",
+        "native/sp_riddle_diary_right.png": "62e544e6262c90a735ba16aae497180c7170cc74a8ecc9dcf44c4e4ec76751a1",
+        "native/sp_riddle_diary_f0.png": "f94bfeb8dcefd2fc7df69508d88c71e7a8630c4b28970047a21660565002bd74",
+        "native/sp_riddle_diary_f1.png": "717635460f451d137c16404cbddfc23eb25179787475c14848cb22ebdcc649eb",
+        "native/sp_riddle_diary_f2.png": "717635460f451d137c16404cbddfc23eb25179787475c14848cb22ebdcc649eb",
+        "native/sp_riddle_diary_f3.png": "f94bfeb8dcefd2fc7df69508d88c71e7a8630c4b28970047a21660565002bd74",
+        "native/sp_riddle_diary_right_f0.png": "62e544e6262c90a735ba16aae497180c7170cc74a8ecc9dcf44c4e4ec76751a1",
+        "native/sp_riddle_diary_right_f1.png": "84925c2569f20fea2fbd019a2b57ac5d6b70bb4d1e5a28afaafd672718625357",
+        "native/sp_riddle_diary_right_f2.png": "84925c2569f20fea2fbd019a2b57ac5d6b70bb4d1e5a28afaafd672718625357",
+        "native/sp_riddle_diary_right_f3.png": "62e544e6262c90a735ba16aae497180c7170cc74a8ecc9dcf44c4e4ec76751a1",
+        "spritesheets/sp_riddle_diary.png": "f0999935ca34182c2f98542eca9bd066ecd359e425f334aa83d0aa63de90909c",
+        "thumbnails/2x/sp_riddle_diary.png": "1e9dcaeee5d56fb4bea4d2f915dff7a1a75ebbf41d4da02754a9ae355e1e3886",
+        "thumbnails/2x/sp_riddle_diary_right.png": "94489e0506c3fa921ee243359e85b67890f0e5b5ff5cc99103319af13cf04f96",
+        "thumbnails/3x/sp_riddle_diary.png": "bf5f500f89e98ca0ee1eb59e4064bd15dcd25689fefbf2e6eb3dfe0634bc3418",
+        "thumbnails/3x/sp_riddle_diary_right.png": "2063e61b170e229ab03b3451e3633c875664a54d0d004d20f0ffe77785028d49"
       }
     },
     {
@@ -2045,15 +2045,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 27,
-              "y": 14,
-              "w": 38,
-              "h": 5
+              "x": 20,
+              "y": 31,
+              "w": 4,
+              "h": 7
             },
-            "pixelCount": 67,
-            "mappableCount": 67,
-            "maxPixels": 713,
-            "rootBand": 78
+            "pixelCount": 14,
+            "mappableCount": 14,
+            "maxPixels": 284,
+            "rootBand": 72
           }
         },
         "alternate": {
@@ -2062,15 +2062,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 40,
-              "y": 32,
-              "w": 7,
-              "h": 16
+              "x": 28,
+              "y": 37,
+              "w": 5,
+              "h": 8
             },
-            "pixelCount": 70,
-            "mappableCount": 70,
-            "maxPixels": 609,
-            "rootBand": 78
+            "pixelCount": 19,
+            "mappableCount": 19,
+            "maxPixels": 237,
+            "rootBand": 72
           }
         }
       },
@@ -2108,11 +2108,11 @@
         1,
         1
       ],
-      "width": 96,
-      "height": 104,
+      "width": 64,
+      "height": 96,
       "pivot": {
-        "x": 48,
-        "y": 100
+        "x": 32,
+        "y": 80
       },
       "defaultFile": "native/sp_hufflepuff_cup.png",
       "rightFile": "native/sp_hufflepuff_cup_right.png",
@@ -2146,23 +2146,23 @@
         260
       ],
       "source": "masters/sp_hufflepuff_cup.png",
-      "sourceSha256": "b0d0587bba86f272c9b4d848da68c4af210a4db6f16f1188ce421f8f8e9a568e",
+      "sourceSha256": "e40335143be36131f90f2c121c325d6857c288f74f5f56bd05fa0f5a5acd2887",
       "pngSha256": {
-        "native/sp_hufflepuff_cup.png": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
-        "native/sp_hufflepuff_cup_right.png": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
-        "native/sp_hufflepuff_cup_f0.png": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
-        "native/sp_hufflepuff_cup_f1.png": "c20c8b8d27e6615250f615a298f25171e7392da74747e5941f6df263428c63a3",
-        "native/sp_hufflepuff_cup_f2.png": "c20c8b8d27e6615250f615a298f25171e7392da74747e5941f6df263428c63a3",
-        "native/sp_hufflepuff_cup_f3.png": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244",
-        "native/sp_hufflepuff_cup_right_f0.png": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
-        "native/sp_hufflepuff_cup_right_f1.png": "e781585ccb86ccb1cd8b71861fad79887e25105a6bfbcc8af679aa7d234836b9",
-        "native/sp_hufflepuff_cup_right_f2.png": "e781585ccb86ccb1cd8b71861fad79887e25105a6bfbcc8af679aa7d234836b9",
-        "native/sp_hufflepuff_cup_right_f3.png": "de5874346468a3d3892bddd1ebac694428bc4dc73e5e8589511f69013451222e",
-        "spritesheets/sp_hufflepuff_cup.png": "e45c843041ffa35afc522fc3c0fe94f834a73a327d44bada819ffd161f3fb1b2",
-        "thumbnails/2x/sp_hufflepuff_cup.png": "46ed8e0bef8233ef818ae40a015c0a1a86ae903f064f238a4a12e95cb83419b1",
-        "thumbnails/2x/sp_hufflepuff_cup_right.png": "602f15d9a38018bb7489db5b8dc08c70c448970d1472e90a0623b1064ffdc92a",
-        "thumbnails/3x/sp_hufflepuff_cup.png": "82c27f579875d707f66d4b35ec9bdc8ad91aaeae3ce3c0aa3330117873afe495",
-        "thumbnails/3x/sp_hufflepuff_cup_right.png": "fa67faa6796854af190affd0419c8dfc1d1a244be28696cac085f7327270ddee"
+        "native/sp_hufflepuff_cup.png": "14d6fde245451a4000a87694b2101406e92845c25d459fa93dd4bd7bb4ff40bd",
+        "native/sp_hufflepuff_cup_right.png": "39d9a93e6dcc8300b7e4548b784616a2197728168810d478ba5c2eb4a33f647a",
+        "native/sp_hufflepuff_cup_f0.png": "14d6fde245451a4000a87694b2101406e92845c25d459fa93dd4bd7bb4ff40bd",
+        "native/sp_hufflepuff_cup_f1.png": "72086412bd53b44f062e00eb3bda30b3668e70e4b29da50dc6e031a18a760d6f",
+        "native/sp_hufflepuff_cup_f2.png": "72086412bd53b44f062e00eb3bda30b3668e70e4b29da50dc6e031a18a760d6f",
+        "native/sp_hufflepuff_cup_f3.png": "14d6fde245451a4000a87694b2101406e92845c25d459fa93dd4bd7bb4ff40bd",
+        "native/sp_hufflepuff_cup_right_f0.png": "39d9a93e6dcc8300b7e4548b784616a2197728168810d478ba5c2eb4a33f647a",
+        "native/sp_hufflepuff_cup_right_f1.png": "e7d94cf75f095834a1ad4f80e560bc87ff525924866f90aca565230847bf1f86",
+        "native/sp_hufflepuff_cup_right_f2.png": "e7d94cf75f095834a1ad4f80e560bc87ff525924866f90aca565230847bf1f86",
+        "native/sp_hufflepuff_cup_right_f3.png": "39d9a93e6dcc8300b7e4548b784616a2197728168810d478ba5c2eb4a33f647a",
+        "spritesheets/sp_hufflepuff_cup.png": "dc5177abe898537dccdeeb97891b35a790740a6c6e1b5857c3ab15c845258a36",
+        "thumbnails/2x/sp_hufflepuff_cup.png": "7b9b374accaacd91357b6820bd1f0f9f5246922cf9d0a9705eff0da31af0605f",
+        "thumbnails/2x/sp_hufflepuff_cup_right.png": "da9cf9939740fbb3708bd1c87255f70a68870d2d09b076d6211c28c3f6301167",
+        "thumbnails/3x/sp_hufflepuff_cup.png": "7c5feb171fd8bebe4d65858c42a56da2216e5e287173f177e81ae72f293e9db3",
+        "thumbnails/3x/sp_hufflepuff_cup_right.png": "2ab440474cdd7af696338d2eca2e1725a4fb392c2d2a214c53a2e1782f0e5c8a"
       }
     },
     {
@@ -2579,15 +2579,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 70,
-              "y": 41,
-              "w": 4,
-              "h": 9
+              "x": 14,
+              "y": 56,
+              "w": 8,
+              "h": 16
             },
-            "pixelCount": 21,
-            "mappableCount": 21,
-            "maxPixels": 880,
-            "rootBand": 102
+            "pixelCount": 64,
+            "mappableCount": 64,
+            "maxPixels": 380,
+            "rootBand": 84
           }
         },
         "alternate": {
@@ -2596,15 +2596,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 34,
-              "y": 32,
-              "w": 19,
-              "h": 18
+              "x": 14,
+              "y": 35,
+              "w": 15,
+              "h": 37
             },
-            "pixelCount": 168,
-            "mappableCount": 168,
-            "maxPixels": 823,
-            "rootBand": 102
+            "pixelCount": 187,
+            "mappableCount": 187,
+            "maxPixels": 372,
+            "rootBand": 84
           }
         }
       },
@@ -2642,11 +2642,11 @@
         1,
         1
       ],
-      "width": 96,
-      "height": 136,
+      "width": 64,
+      "height": 112,
       "pivot": {
-        "x": 48,
-        "y": 132
+        "x": 32,
+        "y": 96
       },
       "defaultFile": "native/sp_cursed_opal_necklace.png",
       "rightFile": "native/sp_cursed_opal_necklace_right.png",
@@ -2680,23 +2680,23 @@
         260
       ],
       "source": "masters/sp_cursed_opal_necklace.png",
-      "sourceSha256": "48394d76da63d538835dc8e2d9002333ecfacabcf85620e913df0e8ccabb650b",
+      "sourceSha256": "4813624a3d623884cede40074ba7b35491380d58d12f9c7427f0d28fc2d25543",
       "pngSha256": {
-        "native/sp_cursed_opal_necklace.png": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
-        "native/sp_cursed_opal_necklace_right.png": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
-        "native/sp_cursed_opal_necklace_f0.png": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
-        "native/sp_cursed_opal_necklace_f1.png": "2665c3223e706c5cb49f4f908469b1b5854216cbcf63bd71ae42a45e3c64a544",
-        "native/sp_cursed_opal_necklace_f2.png": "2665c3223e706c5cb49f4f908469b1b5854216cbcf63bd71ae42a45e3c64a544",
-        "native/sp_cursed_opal_necklace_f3.png": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4",
-        "native/sp_cursed_opal_necklace_right_f0.png": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
-        "native/sp_cursed_opal_necklace_right_f1.png": "e024854c55b788b970fc7100981cfcdfa5f06604b2ebdd06ea4a48cf1d6dca81",
-        "native/sp_cursed_opal_necklace_right_f2.png": "e024854c55b788b970fc7100981cfcdfa5f06604b2ebdd06ea4a48cf1d6dca81",
-        "native/sp_cursed_opal_necklace_right_f3.png": "edb52b4f5a976b7f8059c047df3a959abcf734ba2edaba0273dec920ffbd1c75",
-        "spritesheets/sp_cursed_opal_necklace.png": "7dfa5ea9ff63208fbc4b13a638ca3fc859864203246daf2d77722536188ba058",
-        "thumbnails/2x/sp_cursed_opal_necklace.png": "303806e45a31d6d364f9445f61e395b83b011145b4db19447ebed51a8f74c7b6",
-        "thumbnails/2x/sp_cursed_opal_necklace_right.png": "7ffca69c9a6e312e9cdf3a695631f47a6674ed823e743fb6dd0812edae5b5216",
-        "thumbnails/3x/sp_cursed_opal_necklace.png": "26f0c3fae6c17e5a804e246592de857ae3b56ea438841195f71ce776140d7254",
-        "thumbnails/3x/sp_cursed_opal_necklace_right.png": "7a90ee8835bceb1a449afebf5d88232fcc2ae4e1dd1baf192e1267edb0b6ebd3"
+        "native/sp_cursed_opal_necklace.png": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f",
+        "native/sp_cursed_opal_necklace_right.png": "1461d281140fcb7d82addb0c017e1b2bf111d16d168399b5b7b8d5cf421607b7",
+        "native/sp_cursed_opal_necklace_f0.png": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f",
+        "native/sp_cursed_opal_necklace_f1.png": "fb615ebd6227b97980ab873a5174991f992f861d568e6c66d92d894b53cbb67a",
+        "native/sp_cursed_opal_necklace_f2.png": "09655652ab9b5e0991c8b3b0e87be2655b7381dd5fe63ef56e213b98faec3bd7",
+        "native/sp_cursed_opal_necklace_f3.png": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f",
+        "native/sp_cursed_opal_necklace_right_f0.png": "1461d281140fcb7d82addb0c017e1b2bf111d16d168399b5b7b8d5cf421607b7",
+        "native/sp_cursed_opal_necklace_right_f1.png": "e24ac4171972e9fda9c11123acadd09de0f7120b27c48d39dc9c8bd484eb4500",
+        "native/sp_cursed_opal_necklace_right_f2.png": "e51f64a30bf60ff75b9605cbded68bfeea2895afeafb2a141f40ba35c2bd5385",
+        "native/sp_cursed_opal_necklace_right_f3.png": "1461d281140fcb7d82addb0c017e1b2bf111d16d168399b5b7b8d5cf421607b7",
+        "spritesheets/sp_cursed_opal_necklace.png": "76164be18170b1bbf13b833bcb6a872db9788dbe5875b35d3c8b4786db392fc6",
+        "thumbnails/2x/sp_cursed_opal_necklace.png": "8474abd6ecaa87ccbb2c940970a4d2c8bc9706cd8a1bb0a0808ae11b1959f40f",
+        "thumbnails/2x/sp_cursed_opal_necklace_right.png": "eb92018cac615c69f91e0f7ad9c8401794ae0d149a1dbbf9d148353086c877a9",
+        "thumbnails/3x/sp_cursed_opal_necklace.png": "78c57e322e73c85334da0b6828c2aef8d6ea0688650b0faf3c170a4c8be7a02a",
+        "thumbnails/3x/sp_cursed_opal_necklace_right.png": "0858cda8c5c241a8e24f3d2df36a68a8da16378cb60e95aea0b64616f421058a"
       }
     },
     {
@@ -2993,11 +2993,11 @@
         1,
         1
       ],
-      "width": 112,
-      "height": 104,
+      "width": 64,
+      "height": 80,
       "pivot": {
-        "x": 56,
-        "y": 100
+        "x": 32,
+        "y": 64
       },
       "defaultFile": "native/sp_monster_book.png",
       "rightFile": "native/sp_monster_book_right.png",
@@ -3031,23 +3031,23 @@
         300
       ],
       "source": "masters/sp_monster_book.png",
-      "sourceSha256": "bb376efb69566238485a2eee7cc90de2d5e8a0104cb6f32511f7fedffc72ec8f",
+      "sourceSha256": "fb44d8c41a002d80567520a5cebfe60caa8308852b0a67ac557aef00c7568ef7",
       "pngSha256": {
-        "native/sp_monster_book.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-        "native/sp_monster_book_right.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-        "native/sp_monster_book_f0.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-        "native/sp_monster_book_f1.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-        "native/sp_monster_book_f2.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-        "native/sp_monster_book_f3.png": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778",
-        "native/sp_monster_book_right_f0.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-        "native/sp_monster_book_right_f1.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-        "native/sp_monster_book_right_f2.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-        "native/sp_monster_book_right_f3.png": "ffcf03d53031ecabf4d7b05110f682500f56d4eed40361e2832b00abdfd55091",
-        "spritesheets/sp_monster_book.png": "2f1184cb8cf3184ca755e407badcbecd2349226fba6245ff7cb92b10f162be74",
-        "thumbnails/2x/sp_monster_book.png": "02b272a62ca0c227cc123f1d7d35b0f8b7dc2a40491142025e577bd87fddffa8",
-        "thumbnails/2x/sp_monster_book_right.png": "865ab3d4a1d597ba1661a48952f9f1263adb88f2e156b3d983ca3bab91fbfa68",
-        "thumbnails/3x/sp_monster_book.png": "59f87224a7580c48cae5db13a0850aa87de33ff224d31efae7d96c49fe97421f",
-        "thumbnails/3x/sp_monster_book_right.png": "bb905d9a6081aa915a1033f67ace1f7ea22dc2eaa3f92835476a49efb01f086e"
+        "native/sp_monster_book.png": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+        "native/sp_monster_book_right.png": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+        "native/sp_monster_book_f0.png": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+        "native/sp_monster_book_f1.png": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+        "native/sp_monster_book_f2.png": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+        "native/sp_monster_book_f3.png": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26",
+        "native/sp_monster_book_right_f0.png": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+        "native/sp_monster_book_right_f1.png": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+        "native/sp_monster_book_right_f2.png": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+        "native/sp_monster_book_right_f3.png": "cfbe46fc9daee4487f139c690304f9a9f326366d0d160b8f3d72f015b8a254c2",
+        "spritesheets/sp_monster_book.png": "91aa52dd92fb0c4bc823892225e75cdb1e618a244e072313ad34baf0bff2e85e",
+        "thumbnails/2x/sp_monster_book.png": "0fda863c40b104c79201b5b11efc76b5bd68f36b13c34b001823cd2bca64cec2",
+        "thumbnails/2x/sp_monster_book_right.png": "8bdb2a297a2bd0f4c4e1c49577c0bfa9501bef611ac119eb3c96aa4f7018f8a1",
+        "thumbnails/3x/sp_monster_book.png": "7b5f12008e934726e147b564e424cb6231a7615d0208c16f6849725291e06f31",
+        "thumbnails/3x/sp_monster_book_right.png": "bdef12baba8dcd50e9a781e7bd5aeb6600633ef49c2d42ad3178b15d54c82217"
       }
     },
     {
@@ -3764,15 +3764,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 48,
-              "y": 7,
-              "w": 2,
-              "h": 4
+              "x": 21,
+              "y": 92,
+              "w": 4,
+              "h": 2
             },
             "pixelCount": 5,
             "mappableCount": 5,
-            "maxPixels": 741,
-            "rootBand": 132
+            "maxPixels": 275,
+            "rootBand": 108
           }
         },
         "alternate": {
@@ -3781,15 +3781,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 48,
-              "y": 5,
-              "w": 1,
+              "x": 29,
+              "y": 61,
+              "w": 3,
               "h": 2
             },
-            "pixelCount": 2,
-            "mappableCount": 2,
-            "maxPixels": 692,
-            "rootBand": 132
+            "pixelCount": 4,
+            "mappableCount": 4,
+            "maxPixels": 271,
+            "rootBand": 108
           }
         }
       },
@@ -3827,11 +3827,11 @@
         1,
         1
       ],
-      "width": 104,
-      "height": 176,
+      "width": 64,
+      "height": 144,
       "pivot": {
-        "x": 52,
-        "y": 172
+        "x": 32,
+        "y": 128
       },
       "defaultFile": "native/sp_sword_gryffindor.png",
       "rightFile": "native/sp_sword_gryffindor_right.png",
@@ -3865,23 +3865,23 @@
         260
       ],
       "source": "masters/sp_sword_gryffindor.png",
-      "sourceSha256": "7235e3fb76a5552e1877a8da9bd27e238f3ebd256fb75ea8ece076ee7b282d8d",
+      "sourceSha256": "1b8846254a8be5adb0296ab8042add2dafe2fc2430b6795434dfed4f05ff1151",
       "pngSha256": {
-        "native/sp_sword_gryffindor.png": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
-        "native/sp_sword_gryffindor_right.png": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
-        "native/sp_sword_gryffindor_f0.png": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
-        "native/sp_sword_gryffindor_f1.png": "af544d07028dcd65ee0498ffe5e202383dbcc25b51b37919ed7c66f94539475e",
-        "native/sp_sword_gryffindor_f2.png": "c0c6175dbb6ebe2cc49692c5c6cafc98c63fa8bc0b597b28ada5bf83a8db3a21",
-        "native/sp_sword_gryffindor_f3.png": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce",
-        "native/sp_sword_gryffindor_right_f0.png": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
-        "native/sp_sword_gryffindor_right_f1.png": "02dbdbc447ca6adba4219ef90dd226f4fd639bebe823a3727183ec67e394e185",
-        "native/sp_sword_gryffindor_right_f2.png": "3bb490be3870f05bcc68b9bd4932adc99a5021f3b9755d8eae48852af0e6e5c0",
-        "native/sp_sword_gryffindor_right_f3.png": "6d70aab36752ce0b2c20a9aa5ea3d7b5d3b0d44cee01bfb5ded8dcba87e1b988",
-        "spritesheets/sp_sword_gryffindor.png": "277899f0d0e7d1ce092d714bf9788b3c94a308c5d671e754f56ab90ec084cb4e",
-        "thumbnails/2x/sp_sword_gryffindor.png": "ed85043f331d1ea79489b1dac5cd7eab9d60b2dbe11bd47e3b768205bc3262a7",
-        "thumbnails/2x/sp_sword_gryffindor_right.png": "573cb916f2fe706fd7dc7b665f70f899b22a70f9d745b33249f20190a0f0571e",
-        "thumbnails/3x/sp_sword_gryffindor.png": "ed8350395d5363c7ad56d6794080f7ae698870e1812aa592986489d5e1ffe641",
-        "thumbnails/3x/sp_sword_gryffindor_right.png": "3617234d809d20a49a566be8a45c7e375f90b091ce29319b0a3ac0cc43aae39b"
+        "native/sp_sword_gryffindor.png": "a40d41ad1ef4cc4ad62e67148a1930dbac9f231529afb703ff5491ba8be178c5",
+        "native/sp_sword_gryffindor_right.png": "ea11ccf296f587520b6a3f2d751bfb8d1dbbb642d5fbed07c58eece25a413829",
+        "native/sp_sword_gryffindor_f0.png": "a40d41ad1ef4cc4ad62e67148a1930dbac9f231529afb703ff5491ba8be178c5",
+        "native/sp_sword_gryffindor_f1.png": "e71c9e897d0201f387d5266c8fdb767ed9109c47ea33688b5670af42a2644012",
+        "native/sp_sword_gryffindor_f2.png": "543d0c760966cac43388ce14f8055edb81e4ef46c868d8ede0d9923f0382a727",
+        "native/sp_sword_gryffindor_f3.png": "a40d41ad1ef4cc4ad62e67148a1930dbac9f231529afb703ff5491ba8be178c5",
+        "native/sp_sword_gryffindor_right_f0.png": "ea11ccf296f587520b6a3f2d751bfb8d1dbbb642d5fbed07c58eece25a413829",
+        "native/sp_sword_gryffindor_right_f1.png": "2f28dd7442ca3900234b9b858ae7553d1641e333f638b38148d55a06a85fe103",
+        "native/sp_sword_gryffindor_right_f2.png": "69186d38cbd409f108fa5d49e47b4148a36ae5bcbd8c060f466a366cc2ec4610",
+        "native/sp_sword_gryffindor_right_f3.png": "ea11ccf296f587520b6a3f2d751bfb8d1dbbb642d5fbed07c58eece25a413829",
+        "spritesheets/sp_sword_gryffindor.png": "921e325b7fbae4b1c6fa02f9a0627a7ae1eb487564523b3e9bea22e865567d55",
+        "thumbnails/2x/sp_sword_gryffindor.png": "e15c3eb0735299020b9836d16fdefae8d246e6b49e7e93b72c71b1f321634455",
+        "thumbnails/2x/sp_sword_gryffindor_right.png": "ba696c6e0aea60f2e199d09f0229875e2936be98408cd3684f92cfce4b0c99b1",
+        "thumbnails/3x/sp_sword_gryffindor.png": "e96b0ed7206e19789fe2e7b7bc9410a4062e4b81620ee5a2759cf9a1cc9aa1de",
+        "thumbnails/3x/sp_sword_gryffindor_right.png": "cda416437949ffe4c7269a1c5bf781767e602736ef1044617bf053b5bff9daff"
       }
     },
     {

@@ -1172,24 +1172,24 @@
         "decor-assets/native/sp_fawkes_perch_right_f3.png"
       ],
       "rightBounds": {
-        "x": 19,
-        "y": 2,
-        "w": 90,
-        "h": 186
+        "x": 12,
+        "y": 16,
+        "w": 40,
+        "h": 112
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 128,
-      "height": 192,
-      "pivotX": 64,
-      "pivotY": 188,
+      "width": 64,
+      "height": 144,
+      "pivotX": 32,
+      "pivotY": 128,
       "bounds": {
-        "x": 18,
-        "y": 2,
-        "w": 93,
-        "h": 186
+        "x": 10,
+        "y": 16,
+        "w": 45,
+        "h": 112
       },
       "footprintTiles": [
         1,
@@ -1202,7 +1202,7 @@
         "chapter": 12
       },
       "lore": "Phượng hoàng Fawkes trong văn phòng Dumbledore.",
-      "nativeSha256": "65192fe2792a27b1aaa805ebbd4e05744d4e9c3aff26d958ccbbdc36878f5658"
+      "nativeSha256": "66eb1a249d03ea0b40b2a4a7470f7d260ca06724c6989efd6fe9bdd72c517601"
     },
     {
       "id": "sp_wizard_chess_knight",
@@ -1294,24 +1294,24 @@
         "decor-assets/native/sp_riddle_diary_right_f3.png"
       ],
       "rightBounds": {
-        "x": 13,
-        "y": 2,
-        "w": 87,
-        "h": 98
+        "x": 8,
+        "y": 11,
+        "w": 48,
+        "h": 53
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 112,
-      "height": 104,
-      "pivotX": 56,
-      "pivotY": 100,
+      "width": 64,
+      "height": 80,
+      "pivotX": 32,
+      "pivotY": 64,
       "bounds": {
-        "x": 5,
-        "y": 2,
-        "w": 102,
-        "h": 98
+        "x": 8,
+        "y": 17,
+        "w": 48,
+        "h": 47
       },
       "footprintTiles": [
         1,
@@ -1324,7 +1324,7 @@
         "chapter": 17
       },
       "lore": "Harry dùng nanh Tử Xà phá hủy quyển nhật ký.",
-      "nativeSha256": "b2e9eae344c1c3b1a49bb12049b54e0416226cf8b83339723f38bacebec5a389"
+      "nativeSha256": "f94bfeb8dcefd2fc7df69508d88c71e7a8630c4b28970047a21660565002bd74"
     },
     {
       "id": "sp_slytherin_locket",
@@ -1477,24 +1477,24 @@
         "decor-assets/native/sp_hufflepuff_cup_right_f3.png"
       ],
       "rightBounds": {
-        "x": 11,
-        "y": 2,
-        "w": 75,
-        "h": 98
+        "x": 9,
+        "y": 18,
+        "w": 47,
+        "h": 62
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 96,
-      "height": 104,
-      "pivotX": 48,
-      "pivotY": 100,
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
       "bounds": {
-        "x": 4,
-        "y": 2,
-        "w": 89,
-        "h": 98
+        "x": 5,
+        "y": 18,
+        "w": 55,
+        "h": 62
       },
       "footprintTiles": [
         1,
@@ -1507,7 +1507,7 @@
         "chapter": 26
       },
       "lore": "Chiếc cúp được lấy khỏi hầm Lestrange ở Gringotts.",
-      "nativeSha256": "c1bc7c620cf487c0f434365fd083cf1c1689c5820a707850e6c1bd4271f63244"
+      "nativeSha256": "14d6fde245451a4000a87694b2101406e92845c25d459fa93dd4bd7bb4ff40bd"
     },
     {
       "id": "sp_ravenclaw_diadem",
@@ -1721,24 +1721,24 @@
         "decor-assets/native/sp_cursed_opal_necklace_right_f3.png"
       ],
       "rightBounds": {
-        "x": 6,
-        "y": 2,
-        "w": 85,
-        "h": 130
+        "x": 5,
+        "y": 17,
+        "w": 54,
+        "h": 79
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 96,
-      "height": 136,
-      "pivotX": 48,
-      "pivotY": 132,
+      "width": 64,
+      "height": 112,
+      "pivotX": 32,
+      "pivotY": 96,
       "bounds": {
-        "x": 3,
-        "y": 5,
-        "w": 90,
-        "h": 127
+        "x": 5,
+        "y": 17,
+        "w": 55,
+        "h": 79
       },
       "footprintTiles": [
         1,
@@ -1751,7 +1751,7 @@
         "chapter": 12
       },
       "lore": "Dây chuyền khiến Katie Bell bị nguyền.",
-      "nativeSha256": "34490741b11ea53b5afcfb4b7065c886e991f2c784f5ae4aaf2b2d25edfceab4"
+      "nativeSha256": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f"
     },
     {
       "id": "sp_chamber_serpent_door",
@@ -1904,24 +1904,24 @@
         "decor-assets/native/sp_monster_book_right_f3.png"
       ],
       "rightBounds": {
-        "x": 6,
-        "y": 2,
-        "w": 101,
-        "h": 98
+        "x": 7,
+        "y": 12,
+        "w": 51,
+        "h": 52
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 112,
-      "height": 104,
-      "pivotX": 56,
-      "pivotY": 100,
+      "width": 64,
+      "height": 80,
+      "pivotX": 32,
+      "pivotY": 64,
       "bounds": {
-        "x": 3,
-        "y": 2,
-        "w": 106,
-        "h": 98
+        "x": 6,
+        "y": 12,
+        "w": 53,
+        "h": 52
       },
       "footprintTiles": [
         1,
@@ -1934,7 +1934,7 @@
         "chapter": 1
       },
       "lore": "Cuốn sách Hagrid gửi tặng Harry và dùng cho môn Chăm Sóc Sinh Vật Huyền Bí.",
-      "nativeSha256": "2f75354fda2c30647623241d1823d4c20aaee85e347bd90d864bf2aa70036778"
+      "nativeSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26"
     },
     {
       "id": "sp_deathday_cake",
@@ -2270,24 +2270,24 @@
         "decor-assets/native/sp_sword_gryffindor_right_f3.png"
       ],
       "rightBounds": {
-        "x": 13,
-        "y": 2,
-        "w": 79,
-        "h": 170
+        "x": 4,
+        "y": 38,
+        "w": 56,
+        "h": 90
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 104,
-      "height": 176,
-      "pivotX": 52,
-      "pivotY": 172,
+      "width": 64,
+      "height": 144,
+      "pivotX": 32,
+      "pivotY": 128,
       "bounds": {
-        "x": 9,
-        "y": 2,
-        "w": 86,
-        "h": 170
+        "x": 4,
+        "y": 39,
+        "w": 56,
+        "h": 89
       },
       "footprintTiles": [
         1,
@@ -2300,7 +2300,7 @@
         "chapter": 17
       },
       "lore": "Thanh gươm xuất hiện từ Nón Phân Loại trong trận đối đầu Tử Xà.",
-      "nativeSha256": "a12cb995f16781abbdddf34f3436c7fa2e44036e47f111561183e41e1e7511ce"
+      "nativeSha256": "a40d41ad1ef4cc4ad62e67148a1930dbac9f231529afb703ff5491ba8be178c5"
     },
     {
       "id": "sp_knight_bus",

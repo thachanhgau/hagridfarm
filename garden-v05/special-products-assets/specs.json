@@ -216,8 +216,8 @@
       "label": "Cầu đậu phượng hoàng Fawkes",
       "group": "Bảo vật Hogwarts",
       "subject": "Fawkes with scarlet/crimson-red and gold plumage, long golden tail, golden beak and talons on brass perch.",
-      "w": 128,
-      "h": 192,
+      "w": 64,
+      "h": 144,
       "foot": [
         1,
         1
@@ -228,7 +228,11 @@
       "term": "Fawkes",
       "lore": "Phượng hoàng Fawkes trong văn phòng Dumbledore.",
       "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
-      "revision": 2
+      "revision": 2,
+      "inkMax": [
+        56,
+        112
+      ]
     },
     {
       "id": "sp_wizard_chess_knight",
@@ -253,8 +257,8 @@
       "label": "Nhật ký Riddle và nanh Tử Xà",
       "group": "Dấu tích Trường Sinh Linh Giá",
       "subject": "Tom Riddle's small black leather diary impaled by one long curved ivory basilisk fang, lying open at an angle on a low dark timber display lectern. A small black ink stain below the fang, silver worn corners, blank yellowed pages with NO writing. Recognizable destroyed diary Horcrux; no blood, no other weapons.",
-      "w": 112,
-      "h": 104,
+      "w": 64,
+      "h": 80,
       "foot": [
         1,
         1
@@ -264,7 +268,11 @@
       "chapter": 17,
       "term": "diary",
       "lore": "Harry dùng nanh Tử Xà phá hủy quyển nhật ký.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        48,
+        54
+      ]
     },
     {
       "id": "sp_slytherin_locket",
@@ -307,8 +315,8 @@
       "label": "Chiếc cúp Hufflepuff",
       "group": "Dấu tích Trường Sinh Linh Giá",
       "subject": "Helga Hufflepuff's small ancient golden cup, exactly two finely wrought handles, a simple engraved BADGER pictogram on its rounded belly, on a low black stone display block. Gold and amber highlights, book-proportioned compact cup, not the blue Triwizard Cup, no readable lettering.",
-      "w": 96,
-      "h": 104,
+      "w": 64,
+      "h": 96,
       "foot": [
         1,
         1
@@ -318,7 +326,11 @@
       "chapter": 26,
       "term": "cup",
       "lore": "Chiếc cúp được lấy khỏi hầm Lestrange ở Gringotts.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        56,
+        62
+      ]
     },
     {
       "id": "sp_ravenclaw_diadem",
@@ -383,8 +395,8 @@
       "label": "Dây chuyền opal bị nguyền",
       "group": "Hắc thuật và bí mật",
       "subject": "The cursed opal necklace from Borgin and Burkes displayed behind a small clear protective glass bell on a dark velvet jewelry bust. A long strand of pale iridescent opal stones with a larger central stone, fine silver chain, faint violet reflections. No hands, no text warning sign, no lettering.",
-      "w": 96,
-      "h": 136,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
@@ -394,7 +406,11 @@
       "chapter": 12,
       "term": "necklace",
       "lore": "Dây chuyền khiến Katie Bell bị nguyền.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        56,
+        79
+      ]
     },
     {
       "id": "sp_chamber_serpent_door",
@@ -438,8 +454,8 @@
       "label": "Sách Quái Vật về Quái Vật",
       "group": "Hắc thuật và bí mật",
       "subject": "The Monster Book of Monsters: one thick shaggy brown furry schoolbook on a low rough wooden reading stand, four small amber eyes on top, ivory fangs along the page edges, short tongue barely visible, a leather belt loosely buckled around the book. No title lettering, no extra books, cute but untamed.",
-      "w": 112,
-      "h": 104,
+      "w": 64,
+      "h": 80,
       "foot": [
         1,
         1
@@ -449,7 +465,11 @@
       "chapter": 1,
       "term": "Monster Book",
       "lore": "Cuốn sách Hagrid gửi tặng Harry và dùng cho môn Chăm Sóc Sinh Vật Huyền Bí.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        56,
+        52
+      ]
     },
     {
       "id": "sp_deathday_cake",
@@ -546,8 +566,8 @@
       "label": "Thanh gươm Gryffindor",
       "group": "Hành trình phép thuật",
       "subject": "The Sword of Godric Gryffindor displayed upright in a low weathered carved stone sword stand: long gleaming silver double-edged blade, silver crossguard and pommel inset with large dark ruby gemstones, elegant goblin-made craftsmanship. No readable inscription, no person, no shield, no blood. Entire sword fully visible.",
-      "w": 104,
-      "h": 176,
+      "w": 64,
+      "h": 144,
       "foot": [
         1,
         1
@@ -557,7 +577,11 @@
       "chapter": 17,
       "term": "sword",
       "lore": "Thanh gươm xuất hiện từ Nón Phân Loại trong trận đối đầu Tử Xà.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        56,
+        111
+      ]
     },
     {
       "id": "sp_knight_bus",
