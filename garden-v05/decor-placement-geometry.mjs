@@ -1,6 +1,6 @@
-import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.86';
-import {KEEPSAKE_ART} from './complete-object-art.mjs?v=24.9.86';
-import {stageContains} from './garden-growth.mjs?v=24.9.86';
+import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=24.9.87';
+import {KEEPSAKE_ART} from './complete-object-art.mjs?v=24.9.87';
+import {stageContains} from './garden-growth.mjs?v=24.9.87';
 
 // The scene opens one half-tile beyond the old server adapter. Keep this small
 // contract in one client module so placement, rendering and tests do not each
@@ -18,18 +18,18 @@ export const DECORATION_SPACE = Object.freeze({
 // species order is the authored CREATURE/KEEPSAKE_ART order and is never used
 // as a save key or an inventory count.
 export const KEEPSAKE_DISPLAY_LAYOUT = Object.freeze([
-  {species: 'puffskein', col: 4, row: 23.5, width: 1, height: 1},
-  {species: 'bowtruckle', col: 6, row: 23.5, width: 1, height: 1},
-  {species: 'niffler', col: 8, row: 23.5, width: 1, height: 1},
-  {species: 'mooncalf', col: 10, row: 23.5, width: 1, height: 1},
-  {species: 'kneazle', col: 12, row: 23.5, width: 1, height: 1},
-  {species: 'diricawl', col: 17, row: 23.5, width: 1, height: 1},
-  {species: 'fwooper', col: 4, row: 25.5, width: 1, height: 1},
-  {species: 'hippogriff', col: 6, row: 25.5, width: 1, height: 1},
-  {species: 'thestral', col: 8, row: 25.5, width: 1, height: 1},
-  {species: 'unicorn', col: 10, row: 25.5, width: 1, height: 1},
-  {species: 'three-headed-dog', col: 12, row: 25.5, width: 1, height: 1},
-  {species: 'dragon', col: 17, row: 25.5, width: 1, height: 1},
+  {species: 'puffskein', col: 4.5, row: 24, width: 1, height: 1},
+  {species: 'bowtruckle', col: 6.5, row: 24, width: 1, height: 1},
+  {species: 'niffler', col: 8.5, row: 24, width: 1, height: 1},
+  {species: 'mooncalf', col: 10.5, row: 24, width: 1, height: 1},
+  {species: 'kneazle', col: 12.5, row: 24, width: 1, height: 1},
+  {species: 'diricawl', col: 17.5, row: 24, width: 1, height: 1},
+  {species: 'fwooper', col: 4.5, row: 26, width: 1, height: 1},
+  {species: 'hippogriff', col: 6.5, row: 26, width: 1, height: 1},
+  {species: 'thestral', col: 8.5, row: 26, width: 1, height: 1},
+  {species: 'unicorn', col: 10.5, row: 26, width: 1, height: 1},
+  {species: 'three-headed-dog', col: 12.5, row: 26, width: 1, height: 1},
+  {species: 'dragon', col: 17.5, row: 26, width: 1, height: 1},
 ].map(Object.freeze));
 
 // Before chapter 6 opened the south field, the twelve keepsakes used one stepped
@@ -37,18 +37,18 @@ export const KEEPSAKE_DISPLAY_LAYOUT = Object.freeze([
 // uses the compact two-row plaza above. The species order is the same as the
 // final layout, so a save never needs to be rewritten when the view changes.
 export const KEEPSAKE_LEGACY_LAYOUT = Object.freeze([
-  {species: 'puffskein', col: 2, row: 25, width: 1, height: 1},
-  {species: 'bowtruckle', col: 4, row: 25, width: 1, height: 1},
-  {species: 'niffler', col: 6, row: 25, width: 1, height: 1},
-  {species: 'mooncalf', col: 8, row: 25, width: 1, height: 1},
-  {species: 'kneazle', col: 10, row: 25, width: 1, height: 1},
-  {species: 'diricawl', col: 12, row: 25, width: 1, height: 1},
-  {species: 'fwooper', col: 14, row: 25, width: 1, height: 1},
-  {species: 'hippogriff', col: 16, row: 25, width: 1, height: 1},
-  {species: 'thestral', col: 18, row: 25, width: 1, height: 1},
-  {species: 'unicorn', col: 20, row: 25, width: 1, height: 1},
-  {species: 'three-headed-dog', col: 22, row: 25, width: 1, height: 1},
-  {species: 'dragon', col: 24, row: 25, width: 1, height: 1},
+  {species: 'puffskein', col: 1.5, row: 25, width: 1, height: 1},
+  {species: 'bowtruckle', col: 3.5, row: 25, width: 1, height: 1},
+  {species: 'niffler', col: 5.5, row: 25, width: 1, height: 1},
+  {species: 'mooncalf', col: 7.5, row: 25, width: 1, height: 1},
+  {species: 'kneazle', col: 9.5, row: 25, width: 1, height: 1},
+  {species: 'diricawl', col: 11.5, row: 25, width: 1, height: 1},
+  {species: 'fwooper', col: 13.5, row: 25, width: 1, height: 1},
+  {species: 'hippogriff', col: 15.5, row: 25, width: 1, height: 1},
+  {species: 'thestral', col: 17.5, row: 25, width: 1, height: 1},
+  {species: 'unicorn', col: 19.5, row: 25, width: 1, height: 1},
+  {species: 'three-headed-dog', col: 21.5, row: 25, width: 1, height: 1},
+  {species: 'dragon', col: 23.5, row: 25, width: 1, height: 1},
 ].map(Object.freeze));
 
 // This is deliberately narrower than a garden tile so a person can walk from
@@ -56,7 +56,7 @@ export const KEEPSAKE_LEGACY_LAYOUT = Object.freeze([
 // reservation, not a full-width keepsake strip. A quarter-tile gap remains
 // between the route and the east-hand pedestals.
 export const KEEPSAKE_ACCESS_PATHS = Object.freeze([
-  Object.freeze({c0: 15.5, c1: 16.75, r0: 22.5, r1: 28}),
+  Object.freeze({c0: 15.5, c1: 16.5, r0: 22.5, r1: 28.5}),
 ]);
 
 const FINAL_BOTTOM = DECORATION_SPACE.maxRow;
@@ -119,23 +119,25 @@ export function keepsakeDisplayPlacements(stage = null, anchorRow = null) {
 
 export function keepsakeSpriteRect(placement, iso, stage = null, anchorRow = null) {
   const art = KEEPSAKE_ART[placement?.species];
-  const [x, y] = iso(...keepsakeAnchor(placement, stage, anchorRow));
+  const [x, y] = iso(...(placement?.moved ?? keepsakeAnchor(placement, stage, anchorRow)));
   const bounds = art?.bounds ?? {x: 0, y: 0, w: art?.width ?? 0, h: art?.height ?? 0};
   const left = x - (art?.pivotX ?? 0) + bounds.x;
   const top = y - (art?.pivotY ?? 0) + bounds.y;
   return {left, top, right: left + bounds.w, bottom: top + bounds.h};
 }
 
-export function keepsakeObstacles(state, stage, iso, anchorRow = null, decorations = null) {
+/** Occupied statue bases (moved ones on their saved spot); `skip` is the piece being moved. */
+export function keepsakeObstacles(state, stage, iso, anchorRow = null, decorations = null, skip = null) {
   const source = state?.keepsakes;
   if (!source || typeof source !== 'object' || Array.isArray(source)) {
     return {placements: [], ground: [], screen: [], access: isFinalKeepsakeStage(stage) ? KEEPSAKE_ACCESS_PATHS : []};
   }
   const placements = keepsakeDisplayPlacements(stage, anchorRow)
-    .filter((placement) => Number(source[placement.species]) > 0 && !isDefaultDecorHidden(decorations, 'keepsake:' + placement.species));
+    .filter((placement) => Number(source[placement.species]) > 0 && 'keepsake:' + placement.species !== skip && !isDefaultDecorHidden(decorations, 'keepsake:' + placement.species))
+    .map((placement) => {const moved = defaultDecorSpot(decorations, 'keepsake:' + placement.species); return moved ? {...placement, anchor: moved, moved} : placement;});
   return {
     placements,
-    ground: placements.map((placement) => keepsakeGroundRect(placement, stage, anchorRow)),
+    ground: placements.map((placement) => placement.moved ? {c0: placement.moved[0] - 0.5, c1: placement.moved[0] + 0.5, r0: placement.moved[1] - 0.5, r1: placement.moved[1] + 0.5} : keepsakeGroundRect(placement, stage, anchorRow)),
     screen: iso ? placements.map((placement) => keepsakeSpriteRect(placement, iso, stage, anchorRow)) : [],
     access: isFinalKeepsakeStage(stage) ? KEEPSAKE_ACCESS_PATHS : [],
   };

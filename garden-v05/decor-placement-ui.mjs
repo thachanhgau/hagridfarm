@@ -1,24 +1,26 @@
-import {createPlacementInput} from './placement-input.mjs?v=24.9.86';
-import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.86';
-import {GRID_STEP,spriteGridMetrics,worldToGrid,snapGridPoint} from './garden-grid.mjs?v=24.9.86';
-import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.86';
-export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.86';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.86';
-import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.86';
-import {el,button} from './ui-utils.mjs?v=24.9.86';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap} from './decor-runtime.mjs?v=24.9.86';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.86';
-import {DECORATION_LAYOUT,decorationPlacements,plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.86';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.86';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.86';
-import {keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.86';
+import {createPlacementInput} from './placement-input.mjs?v=24.9.87';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot} from './default-decor.mjs?v=24.9.87';
+import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=24.9.87';
+import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.87';
+export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.87';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.87';
+import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.87';
+import {el,button} from './ui-utils.mjs?v=24.9.87';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap,snapDecorSpot} from './decor-runtime.mjs?v=24.9.87';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.87';
+import {plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.87';
+import {KEEPSAKE_ART} from './complete-object-art.mjs?v=24.9.87';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.87';
+import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.87';
+import {keepsakeDisplayPlacements,keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.87';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 // Art bible §2: a large piece keeps 0.9 tile off the fence so its body never sits on the rails.
 const FENCE_CLEARANCE=0.9;
 // Owner 25/10/2026: smaller pieces keep 0.4 tile off it so no sprite stands on the rails.
 const SMALL_FENCE_CLEARANCE=0.4;
-const PATH_CLEARANCE=0.35;
+// Paths are one cell wide (centre ± half a cell): a large piece may touch one, never cover it.
+const PATH_CLEARANCE=0.5;
 // Owner 25/10/2026: a piece may share at most this sliver of a plot, a pen or another sprite on screen, in front or behind.
 const OVERLAP_SHARE=0.1;
 // Screen height above the ground the crops (plots) and the fence with its creatures (pens) reach.
@@ -82,29 +84,31 @@ export function decorOnGround(rect,decorations){
  * footprint (the server checks that last rule too). Pieces larger than one tile also keep off the garden
  * paths, and with `asset` + `iso` the sprite may not stand in front of a plot or pen and hide it.
  */
-export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',asset=null,iso=null,assetOf=null}){
+export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',asset=null,iso=null,assetOf=null,footprint=decorFootprint(itemId),centred=false}){
  // Art bible §2: 2×2 and up keep off the fence; owner 20/10/2026: they alone keep off the paths, 2×1 and 3×1 may stand on them.
- const big=decorFootprint(itemId).every(n=>n>1);
- const rect=decorFootprintRect(col,row,decorFootprint(itemId),facing);
+ const big=footprint.every(n=>n>1);
+ const rect=decorFootprintRect(col,row,footprint,facing,centred);
  const inset=0.05,margin=big?FENCE_CLEARANCE:SMALL_FENCE_CLEARANCE;
  if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
   if(!stageContains(stage,c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
  }
- const hits=(c,r,w,h)=>rectsOverlap(rect,{c0:c,c1:c+w,r0:r,r1:r+h});
  // Owner 20/10/2026: unbuilt bases are free ground; building there asks to move the piece first (decorOnGround).
  const queued=new Set((state?.construction??[]).map(j=>j.id)),built=new Set(state?.built??[]);
  const plotRects=(map?.plots??[]).filter((_,i)=>i<(state?.plots?.length??3)||queued.has('plot_'+(i+1))).map(plot=>groundRect('plot',plot,map));
  const penRects=(map?.pens??[]).filter(pen=>built.has(pen.id)||queued.has(pen.id)).map(pen=>groundRect('pen',pen,map));
  if(plotRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền thửa đất.';
  if(penRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền chuồng.';
- for(const id of state?.decorations??[]){const d=DECORATION_LAYOUT[id];if(d&&!isDefaultDecorHidden(decorations,id)&&hits(d.col-0.25,d.row-0.25,d.width,d.height+0.5))return 'Đã có đồ trang trí của vườn ở đây.';}
+ // Garden defaults stand where the member moved them; the piece being moved never blocks itself.
+ const earned=decorationPlacements(map,decorations,state?.decorationRotations).filter(d=>d.id!==itemId&&state?.decorations?.includes(d.id)&&!isDefaultDecorHidden(decorations,d.id));
+ for(const d of earned)if(rectsOverlap(rect,decorFootprintRect(...d.at,d.footprint,d.facing,true)))return 'Đã có đồ trang trí của vườn ở đây.';
  // Saves contain all species keys, including zero counts. Reserve only the
  // occupied statue bases and the narrow museum access route; the rest of the
  // south field remains usable.
- const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),iso,keepsakeAnchorRow,decorations);
+ const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),iso,keepsakeAnchorRow,decorations,itemId);
  if(keepsakes.ground.some(occupied=>rectIntersects(rect,occupied)))return 'Chân đài kỷ vật đang ở đây.';
  if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
- for(const o of map?.objects??[])if(!isDefaultDecorHidden(decorations,'scene:'+o.id)&&rectsOverlap(rect,sceneryGroundRect(o.id,o.col,o.row)))return 'Chỗ này vướng cảnh vật.';
+ const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??[o.col,o.row]}));
+ for(const o of scenery)if(rectsOverlap(rect,sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
  for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
  if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){
@@ -120,13 +124,12 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
   if(grounds.some(poly=>rectPolygonOverlap(mine,poly)>OVERLAP_SHARE*Math.min(mineArea,polygonArea(poly))))return 'Món này sẽ chồng lên thửa đất hoặc chuồng.';
   const others=[];
   // Like the renderer: oak and pine anchors are not drawn (the forest layers own the trees).
-  for(const o of map?.objects??[]){const prop=!isDefaultDecorHidden(decorations,'scene:'+o.id)&&!['oak','pine'].includes(o.id)&&map.props?.find(p=>p.id===o.id);if(prop){const [ox2,oy2]=iso(o.col,o.row);others.push([SCENE_NAMES[o.id]||'cảnh vật',spriteRect(prop,'default',ox2,oy2)]);}}
+  for(const o of scenery){const prop=!['oak','pine'].includes(o.id)&&map.props?.find(p=>p.id===o.id);if(prop){const [ox2,oy2]=iso(...o.at);others.push([SCENE_NAMES[o.id]||'cảnh vật',spriteRect(prop,'default',ox2,oy2)]);}}
   // The cottage corner is drawn 150×75 px at iso(-2, 5.5), see scene-renderer drawObject.
   {const [cx,cy]=iso(-2,5.5);others.push([SCENE_NAMES.hut,{left:cx-75,top:cy-67,right:cx+75,bottom:cy+8}]);}
   for(const w of wizardTargets(iso))others.push([SCENE_NAMES[w.id]||'công trình',w.bounds]);
-  const rotations=state?.decorationRotations??{};
-  for(const d of decorationPlacements(map))if(state?.decorations?.includes(d.id)&&!isDefaultDecorHidden(decorations,d.id)){
-   const art=earnedDecorArt(d.id,rotations[d.id]==='right'?'right':'default');
+  for(const d of earned){
+   const art=earnedDecorArt(d.id,d.facing);
    if(art)others.push(['đồ trang trí của vườn',spriteRect({pivotX:48,pivotY:96,...art},'default',d.xy[0],d.xy[1])]);
   }
   for(const raw of decorations?.placements??[]){
@@ -139,12 +142,28 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  return '';
 }
 
-/** Every half-tile foot spot on opened ground, with whether the item (in this facing) may stand there. */
-export function decorSpotGrid(stage,problemAt){
+/** Every foot spot on opened ground whose footprint fills whole cells (`snap`), and whether the item may stand there. */
+export function decorSpotGrid(stage,problemAt,snap=at=>at){
  const list=[];
  if(!stage)return list;
- for(let row=-1;row<=stage.bottom;row+=GRID_STEP)for(let col=-5;col<=stage.right;col+=GRID_STEP)if(stageContains(stage,col,row))list.push({at:[col,row],ok:!problemAt([col,row])});
+ for(let row=-1;row<=stage.bottom;row+=GRID_STEP)for(let col=-5;col<=stage.right;col+=GRID_STEP){
+  const [c,r]=snap([col,row]);
+  if(c===col&&r===row&&stageContains(stage,col,row))list.push({at:[col,row],ok:!problemAt([col,row])});
+ }
  return list;
+}
+
+/** Authored spot of a garden default before any move (a turned earned piece stepped onto whole cells). */
+export function defaultDecorHome(id,map,stage,rotations={}){
+ if(id==='scene:pond'){const o=map?.objects?.find(o=>o.id==='pond');return o?[o.col,o.row]:null;}
+ if(id.startsWith('keepsake:'))return keepsakeDisplayPlacements(stage??GARDEN_STAGES.at(-1),keepsakeAnchorRow).find(p=>p.species===id.slice(9))?.anchor??null;
+ return decorationPlacements(map,null,rotations).find(d=>d.id===id)?.at??null;
+}
+
+/** Art and ground size of a garden default (pond, earned decoration, keepsake statue) for the placement bar. */
+export function defaultDecorItem(id,label,map){
+ const art=id==='scene:pond'?map?.props?.find(p=>p.id==='pond'):id.startsWith('keepsake:')?KEEPSAKE_ART[id.slice(9)]:earnedDecorArt(id);
+ return {...art,id,label,isDefault:true,footprint:defaultDecorFootprint(id)};
 }
 const nearestFree=(grid,[col,row],reach)=>{
  let best=null,bd=reach;
@@ -158,20 +177,25 @@ const nearestFree=(grid,[col,row],reach)=>{
  * the tap lands just off one (red with the reason otherwise) — ↻ turns it, sliding to the nearest spot
  * the turned piece fits — and «Đặt» confirms both the position and facing.
  */
-export function showDecorationPlacement({item,map,assetOf,getState,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld}){
+export function showDecorationPlacement({item,map,assetOf,getState,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld,getSpot=null,startAt=null,facing=null}){
  for(const old of document.querySelectorAll('.decor-placement,.decor-bar')){try{old.close?.();}catch{}old.remove();}
  const itemLabel=decorLabelFor(item);
- let selectedFacing=decorFacingFor(getDecorations()??{},item.id);
- // Legacy sockets sit off the half-tile grid (row 7.15) and the server only takes half-tile spots.
- const savedSpot=()=>{const s=decorSpot(getDecorations()??{},item.id);return s&&snapGridPoint(s);};
- let at=savedSpot();
+ // Garden defaults stand centred on their foot like scenery; bought pieces use their catalog footprint.
+ const footprint=item.footprint??decorFootprint(item.id),centred=!!item.isDefault;
+ let selectedFacing=facing??decorFacingFor(getDecorations()??{},item.id);
+ const savedSpot=()=>getSpot?getSpot():decorSpot(getDecorations()??{},item.id);
+ // Owner 27/10/2026: a piece always covers whole cells. Legacy sockets (row 7.15) and older half-tile saves
+ // open on the nearest whole-cell spot; «Đặt» then saves it there.
+ const snap=spot=>snapDecorSpot(spot,footprint,selectedFacing,centred);
+ let at=(savedSpot()||startAt)&&snap(savedSpot()||startAt);
  let pending=false,input;
- const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,asset:item,iso,assetOf}):'';
+ const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,asset:item,iso,assetOf,footprint,centred}):'';
  let grid=[];
- const regrid=()=>{grid=decorSpotGrid(getStage?.(),problemAt);};
+ const regrid=()=>{grid=decorSpotGrid(getStage?.(),problemAt,snap);};
  regrid();
  // A new item starts on the free spot nearest the middle of the opened garden.
- if(!at){const stage=getStage?.();at=nearestFree(grid.filter(g=>g.at.every(Number.isInteger)),[Math.min(stage?.right??20,30)/2,Math.min(stage?.bottom??9,24)/2],Infinity)||nearestFree(grid,[Math.min(stage?.right??20,30)/2,Math.min(stage?.bottom??9,24)/2],Infinity);}
+ if(at&&problemAt(at)&&!savedSpot())at=nearestFree(grid,at,Infinity)??at;
+ if(!at){const stage=getStage?.();at=nearestFree(grid,[Math.min(stage?.right??20,30)/2,Math.min(stage?.bottom??9,24)/2],Infinity);}
 
  const bar=el('div',{class:'decor-bar',role:'dialog','aria-labelledby':'decorPlaceTitle'});
  const thumb=el('img',{class:'decor-bar-thumb',alt:''});
@@ -193,14 +217,14 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  function sync(centerCamera){
   if(at&&centerCamera&&camera&&iso){const xy=iso(at[0],at[1]);camera.centerAt(xy[0],xy[1]-50,Math.max(1.2,camera.scale?.()||1.2));}
   const problem=problemAt(at);
-  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,grid,suggestions:placementSuggestions(grid.filter(g=>input?.step!==1||g.at.every(Number.isInteger)),at,18),rect:at?decorFootprintRect(at[0],at[1],decorFootprint(item.id),selectedFacing):null});
+  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,grid,suggestions:placementSuggestions(grid,at,18),rect:at?decorFootprintRect(at[0],at[1],footprint,selectedFacing,centred):null});
   render(problem);
  }
 
  function render(problem=problemAt(at)){
   const saved=savedSpot(),savedFacing=decorFacingFor(getDecorations()??{},item.id);
   const right=selectedFacing==='right';
-  const metrics=spriteGridMetrics(item,decorFootprint(item.id),selectedFacing);
+  const metrics=spriteGridMetrics(item,footprint,selectedFacing);
   size.textContent=`Chiếm ${metrics.footprint.join('×')} ô · kéo món đồ hoặc dùng nút dịch`;
   bar.dataset.col=at?.[0]??'';bar.dataset.row=at?.[1]??'';bar.dataset.facing=selectedFacing;bar.dataset.blocked=String(!!problem);input?.refresh();
   thumb.src=runtimeImageUrl(right?(item.rightFile||item.file):item.file);
@@ -209,7 +233,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   // Level-1 land cannot hold a 3×2 piece, and a full garden may have no room left: say so, it stays stored.
   const noRoom=!at&&!grid.some(spot=>spot.ok);
   where.textContent=!at?(noRoom?'Vườn hiện chưa có chỗ vừa món này':'Chạm chỗ trống trên vườn'):here&&sameFacing?'Đang đặt ở đây':here?'Góc mới · nhấn «Đặt»':problem||'Chỗ mới · nhấn «Đặt»';
-  turn.disabled=pending;
+  turn.disabled=pending;turn.hidden=centred&&!item.rightFile;
   apply.disabled=pending||!at||!!problem||here&&sameFacing;
   apply.textContent=pending?'Đang lưu…':here&&!sameFacing?'Đặt góc này':here?'Đang ở đây':'Đặt';
   stash.hidden=!saved;stash.disabled=pending;
@@ -225,6 +249,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   // nearest free turned spot lies farther away in a crowded garden. Existing
   // pieces retain the small local search; confirmation alone changes a save.
   const isNew=!savedSpot();
+  if(at)at=snap(at);
   if(at&&problemAt(at))at=nearestFree(grid,at,isNew?Infinity:2)??at;
   sync(isNew);
  }
@@ -250,8 +275,8 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
 
  document.getElementById('gameShell').append(bar);
  document.body.classList.add('placing-decor');
- input=createPlacementInput({map,item,project:iso,toWorld,getAt:()=>at,getFacing:()=>selectedFacing,getPending:()=>pending,rotate,commit,close,changed:()=>sync(false),moveAt:(spot,kind)=>{
-  const next=kind==='tap'&&problemAt(spot)?nearestFree(grid.filter(g=>input.step!==1||g.at.every(Number.isInteger)),spot,1)??spot:spot;
+ input=createPlacementInput({map,item,project:iso,toWorld,getAt:()=>at,getFacing:()=>selectedFacing,getPending:()=>pending,rotate,commit,close,snap,moveAt:(spot,kind)=>{
+  const next=kind==='tap'&&problemAt(spot)?nearestFree(grid,spot,1)??spot:spot;
   if(at&&at[0]===next[0]&&at[1]===next[1])return;
   at=next;delete hint.dataset.error;sync(false);
  }});

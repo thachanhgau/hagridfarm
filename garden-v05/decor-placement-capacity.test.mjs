@@ -79,7 +79,7 @@ test('capacity fixture covers the authored full garden and actual three-hero sav
   assert.equal(earnedIds.length, 29);
   assert.equal(Object.keys(keepsakes).length, 12);
   assert.equal(storeItems.length, 66);
-  assert.equal(capacitySpots.length, 4998);
+  assert.equal(capacitySpots.length, 4950);
   assert.deepEqual(Object.keys(heroDecorations).sort(), ['owned', 'placements', 'positions', 'rotations']);
   assert.deepEqual(heroDecorations.owned, heroIds);
   assert.deepEqual(heroDecorations.placements, heroIds);
@@ -185,7 +185,7 @@ test('an imported level-1 keepsake retains early visibility and leaves store pos
   assert.equal(garden.growthStage().id, 2, 'legacy dragon column keeps the imported save on the visible east stage');
   const dragon = garden.order().find(object => object.type === 'keepsake' && object.id === 'keepsake:dragon');
   assert.ok(dragon, 'the imported dragon keepsake remains rendered');
-  const [dragonX, dragonY] = iso(24.5, 8, scene);
+  const [dragonX, dragonY] = iso(24, 8, scene);
   assert.deepEqual(garden.pick(dragonX, dragonY), {kind: 'keepsake', species: 'dragon', count: 1});
   assert.deepEqual(state, stateBefore, 'rendering must not alter keepsake counts');
   assert.deepEqual(heroDecorations, storeBefore, 'rendering must not alter owned/placements/positions/rotations');

@@ -1,14 +1,15 @@
 // Presentation boundary is separate from scenic grass and fixed gameplay slots.
-export const FARM_BOUNDARY = Object.freeze([[-5,-1],[33,-1],[33,33.5],[-1,33.5],[-1,9],[-5,9]]);
+// Owner 27/10/2026: fences run on cell lines and paths along cell centres, one cell wide.
+export const FARM_BOUNDARY = Object.freeze([[-5.5,-.5],[33.5,-.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]]);
 export function insideFarm(col,row) {
-  return Number.isFinite(col) && Number.isFinite(row) && col >= -5 && col <= 33 && row >= -1 && row <= 33.5 && (col >= -1 || row <= 9);
+  return Number.isFinite(col) && Number.isFinite(row) && col >= -5.5 && col <= 33.5 && row >= -.5 && row <= 33.5 && (col >= -.5 || row <= 9.5);
 }
 export const GARDEN_PATHS = Object.freeze([
-  [[-.5,4.5],[-.5,7.5],[26,7.5],[26,22.5],[16,22.5],[16,33.5]],
-  [[-.5,7.5],[-.5,22.5],[16,22.5]],
-  [[-.5,13.75],[26,13.75]],
-  ...[3,9.5,16,22.5].flatMap(col=>[
-    [[col,6.4],[col,7.5]],[[col,12.9],[col,13.75]],[[col,19.4],[col,22.5]],
+  [[0,5],[0,7],[26,7],[26,23],[16,23],[16,33]],
+  [[0,7],[0,23],[16,23]],
+  [[0,14],[26,14]],
+  ...[3,10,16,23].flatMap(col=>[
+    [[col,6],[col,7]],[[col,13],[col,14]],[[col,19],[col,23]],
   ]),
 ]);
 
@@ -38,8 +39,8 @@ export function createBoundaryFence(map,boundary=FARM_BOUNDARY){
   // Route the north fence behind the greenhouse, leaving its glazed door clear.
   const perimeter=source.flatMap((a,index)=>{
     const b=source[(index+1)%source.length];
-    return a[1]===-1&&b[1]===-1&&a[0]<=-1&&b[0]>=5
-      ? [a,[-1,-1],[-1,-3],[5,-3],[5,-1]] : [a];
+    return a[1]===-.5&&b[1]===-.5&&a[0]<=-.5&&b[0]>=5.5
+      ? [a,[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5]] : [a];
   });
   const southernEdge=perimeter.findIndex((a,index)=>{
     const b=perimeter[(index+1)%perimeter.length];
@@ -48,8 +49,8 @@ export function createBoundaryFence(map,boundary=FARM_BOUNDARY){
   const pieces=[];
   perimeter.forEach((a,index)=>{
     const b=perimeter[(index+1)%perimeter.length];
-    // Reserve a centered 2.5-tile opening where the path actually crosses this stage.
-    const cuts=index===southernEdge?[0,...[14.75,17.25].map(col=>(col-a[0])/(b[0]-a[0])).sort((x,y)=>x-y),1]:[0,1];
+    // Reserve a centred three-cell opening where the path actually crosses this stage.
+    const cuts=index===southernEdge?[0,...[14.5,17.5].map(col=>(col-a[0])/(b[0]-a[0])).sort((x,y)=>x-y),1]:[0,1];
     let panel=0;
     for(let part=0;part<cuts.length-1;part++){
       const from=cuts[part],to=cuts[part+1],gate=index===southernEdge&&part===1;

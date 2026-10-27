@@ -1,4 +1,4 @@
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.86';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.87';
 
 // Neutral ground colours: the terrain cache is weatherized after this layer.
 const COLORS = Object.freeze({
@@ -10,7 +10,8 @@ const COLORS = Object.freeze({
   moss: '#3f6a45',
   mossLight: '#71934b',
 });
-const MAX_RADIUS = 17;
+// A 64×32 stamp is one cell: sliding it along a cell-centre route paints exactly that row of cells.
+const MAX_RADIUS = 32;
 const DEFAULT_TILE_WIDTH = 64;
 const DEFAULT_TILE_HEIGHT = 32;
 
@@ -33,7 +34,7 @@ function fill(ctx, x, y, width, height, color) {
   ctx.fillRect(Math.round(x), Math.round(y), Math.max(1, Math.round(width)), Math.max(1, Math.round(height)));
 }
 
-// A shallow, stair-stepped stamp keeps the existing 17px route radius while
+// A shallow, stair-stepped stamp keeps the route one cell wide while
 // reading as hand-laid pixel art rather than a smooth vector stroke.
 function pathStamp(ctx, x, y, radius, color) {
   const px = Math.round(x);
@@ -57,7 +58,7 @@ function routeList(map) {
 
   // The west-side spine gives the first two pens a continuous approach while
   // the original garden routes remain the authored crop paths.
-  routes.push([[26, 1.5], [26, 21.5]]);
+  routes.push([[26, 2], [26, 22]]);
   for (const pen of rightPens) {
     const entryRow = Number(pen.row) + Number(pen.height) / 2;
     routes.push([[26, entryRow], [Number(pen.col), entryRow]]);
@@ -73,7 +74,7 @@ export function pathSegments(map) {
 function paintSample(ctx, x, y, normal, sampleIndex, detail) {
   if (!detail) {
   pathStamp(ctx, x, y, MAX_RADIUS, COLORS.edge);
-  pathStamp(ctx, x, y, 13, COLORS.earth);
+  pathStamp(ctx, x, y, 28, COLORS.earth);
     return;
   }
 

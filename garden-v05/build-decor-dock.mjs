@@ -1,8 +1,8 @@
-import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=24.9.86';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=24.9.86';
-import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=24.9.86';
-import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=24.9.86';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.86';
+import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=24.9.87';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=24.9.87';
+import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=24.9.87';
+import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=24.9.87';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.87';
 
 export function ownedDecorChoices(decorations,assets) {
  return [...new Set(decorations?.owned||[])].filter(id=>assets.has(id)).map(id=>({
@@ -11,7 +11,7 @@ export function ownedDecorChoices(decorations,assets) {
  }));
 }
 
-// Garden defaults (pond, earned path decor, keepsake statues) keep their authored spot; they only stash/restore.
+// Garden defaults (pond, earned path decor, keepsake statues) move like bought pieces; «Đặt lại» restores a stashed one.
 export function defaultDecorRows(progression,decorations,rotations={}) {
  return defaultDecorChoices(progression).map(d=>({...d,isDefault:true,placed:!isDefaultDecorHidden(decorations,d.id),facing:rotations[d.id]==='right'?'right':'default'}));
 }
@@ -23,7 +23,7 @@ function rowIcon(items,row,assets) {
 }
 
 // Construction keeps its existing grid and handlers inside buildPane; decor shares only the shell.
-export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,openDecorate,openStore,run,showPanel,getState,getRotations=()=>({}),setDefaultVisible,rotateEarned}) {
+export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,openDecorate,openDefault,openStore,run,showPanel,getState,getRotations=()=>({}),setDefaultVisible}) {
  const root=$('buildDock'),buildPane=el('div',{id:'buildWorkPane',class:'work-dock'});
  const pane=el('div',{id:'decorWorkPane',class:'decor-work-pane',hidden:true});
  const tabs=el('div',{class:'build-decor-tabs',role:'group','aria-label':'Xây dựng và trang trí'});
@@ -48,7 +48,7 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
   if(!row||!getReady())return;
   if(!row.isDefault)openDecorate(row,place);
   else if(!row.placed)act(()=>setDefaultVisible(row.id,true));
-  else{rotateEarned(row.id);refresh();}
+  else openDefault(row,place);
  },{id:'decorDockPlace',class:'primary'});
  const stash=button('',()=>{
   const row=current();
@@ -95,11 +95,11 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
   if(!row)return;
   const ready=getReady();
   title.textContent=row.label;
-  status.textContent=row.isDefault?(row.placed?'Đồ của vườn · cất để lấy chỗ đặt món mua':'Đang cất · đặt lại về chỗ cũ'):(row.placed?'Đang bày trong vườn':'Đang cất · sẵn sàng đặt');
+  status.textContent=row.isDefault?(row.placed?'Đồ của vườn · dời sang ô khác hoặc cất':'Đang cất · đặt lại về chỗ cũ'):(row.placed?'Đang bày trong vườn':'Đang cất · sẵn sàng đặt');
   stash.hidden=!row.placed;stash.disabled=!ready;
-  const label=!row.isDefault?(row.placed?'Di chuyển':'Đặt'):!row.placed?'Đặt lại':row.id.startsWith('decoration-')?'Xoay':null;
-  place.hidden=!label;place.disabled=!ready;
-  if(label)setAction(place,{icon:label==='Xoay'?'arrow':'scenery',label,text:label+' '+row.label});
+  const label=row.placed?'Di chuyển':row.isDefault?'Đặt lại':'Đặt';
+  place.disabled=!ready;
+  setAction(place,{icon:'scenery',label,text:label+' '+row.label});
  }
  // Tapping a piece in the garden selects it here, ready to move or stash.
  function select(id){

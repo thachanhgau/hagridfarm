@@ -1,30 +1,30 @@
-import {drawPlacementGrid} from './placement-grid.mjs?v=24.9.86';
-import {isDefaultDecorHidden} from './default-decor.mjs?v=24.9.86';
-import {gardenObjectMetrics} from './garden-object-metrics.mjs?v=24.9.86';
-import {FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.86';
-export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.86';
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.86';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.86';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.86';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.86';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.86';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.86';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.86';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.86';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.86';
-import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.86';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.86';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.86';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.86';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.86';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.86';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.86';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.86';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.86';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.86';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.86';
-import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.86';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.86';
+import {drawPlacementGrid} from './placement-grid.mjs?v=24.9.87';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT} from './default-decor.mjs?v=24.9.87';
+import {gardenObjectMetrics} from './garden-object-metrics.mjs?v=24.9.87';
+import {FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.87';
+export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.87';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.87';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.87';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.87';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.87';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.87';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.87';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.87';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.87';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.87';
+import {drawV24Ground,drawV24Scenery} from './garden-v24-scenery.mjs?v=24.9.87';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.87';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.87';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.87';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.87';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.87';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.87';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.87';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.87';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.87';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.87';
+import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.87';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.87';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -36,12 +36,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.86';
+} from './scene-animation.mjs?v=24.9.87';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.86';
+} from './forest-surround.mjs?v=24.9.87';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -298,56 +298,7 @@ function penAliases(pen) {
   return [String(pen.id)];
 }
 
-// All decoration unlocks have a deterministic logical footprint in the
-// walkable aisles. They deliberately stay outside every plot and pen cell so
-// artwork never hides crop soil or creature spots. Shape names remain only for
-// layout data compatibility; the authored raster views live in ITEM_ART.
-export const DECORATION_LAYOUT = Object.freeze({
-  'decoration-3': {col: -0.5, row: 3, width: 2, height: 1, shape: 'stone-border'},
-  'decoration-7': {col: 5.75, row: 3, width: 2, height: 1, shape: 'pumpkin-garden'},
-  'decoration-11': {col: 12.25, row: 3, width: 2, height: 1, shape: 'puffskein-nest'},
-  'decoration-15': {col: 18.75, row: 3, width: 2, height: 1, shape: 'low-fence'},
-  'decoration-19': {col: -0.5, row: 6, width: 2, height: 1, shape: 'branch-trellis'},
-  'decoration-23': {col: 5.75, row: 6, width: 2, height: 1, shape: 'wood-bridge'},
-  'decoration-27': {col: 12.25, row: 6, width: 2, height: 1, shape: 'niffler-cabinet'},
-  'decoration-30': {col: 18.75, row: 6, width: 2, height: 1, shape: 'wildflower-border'},
-  'decoration-31': {col: -0.5, row: 7, width: 2, height: 1, shape: 'moon-court'},
-  'decoration-35': {col: 5.75, row: 7, width: 1, height: 1, shape: 'moon-lantern'},
-  'decoration-39': {col: 12.25, row: 7, width: 2, height: 1, shape: 'straw-shed'},
-  'decoration-43': {col: 18.75, row: 7, width: 2, height: 1, shape: 'kneazle-post'},
-  'decoration-46': {col: -0.5, row: 9, width: 2, height: 1, shape: 'linen-pillows'},
-  'decoration-47': {col: 5.75, row: 9, width: 2, height: 1, shape: 'pond-vines'},
-  'decoration-51': {col: 12.25, row: 9, width: 2, height: 1, shape: 'bird-bath'},
-  'decoration-55': {col: 18.75, row: 9, width: 2, height: 1, shape: 'four-color-fence'},
-  'decoration-59': {col: -0.5, row: 13, width: 2, height: 1, shape: 'feather-perch'},
-  'decoration-63': {col: 5.75, row: 13, width: 2, height: 1, shape: 'hippogriff-court'},
-  'decoration-67': {col: 12.25, row: 13, width: 2, height: 1, shape: 'large-perch'},
-  'decoration-71': {col: 18.75, row: 13, width: 2, height: 1, shape: 'mist-lantern'},
-  'decoration-75': {col: -0.5, row: 14, width: 2, height: 1, shape: 'moon-bridge'},
-  'decoration-80': {col: 5.75, row: 14, width: 2, height: 1, shape: 'silver-border'},
-  'decoration-81': {col: 12.25, row: 14, width: 2, height: 1, shape: 'unicorn-arbor'},
-  'decoration-83': {col: 18.75, row: 14, width: 2, height: 1, shape: 'silver-mane-gazebo'},
-  'decoration-87': {col: -0.5, row: 15, width: 2, height: 1, shape: 'large-fence'},
-  'decoration-91': {col: 5.75, row: 15, width: 2, height: 1, shape: 'triple-gate'},
-  'decoration-95': {col: 12.25, row: 15, width: 2, height: 1, shape: 'dragon-scale-pedestal'},
-  'decoration-98': {col: 18.75, row: 15, width: 2, height: 1, shape: 'dragon-observatory'},
-  'decoration-99': {col: 25, row: 15, width: 2, height: 1, shape: 'garden-plan'},
-});
-
-export const DECORATION_IDS = Object.freeze(DB.decorations.map((entry) => entry.id));
-const DECORATION_LABELS = Object.freeze(Object.fromEntries(DB.decorations.map((entry) => [entry.id, entry.label])));
-for (const id of DECORATION_IDS) {
-  if (!DECORATION_LAYOUT[id]) throw new Error(`Thiếu layout trang trí ${id}.`);
-}
-
-/** Pure decoration placement data used by rendering and layout tests. */
-export function decorationPlacements(scene = map) {
-  return DECORATION_IDS.map((id) => {
-    const spec = DECORATION_LAYOUT[id];
-    const [x, y] = iso(spec.col + spec.width / 2, spec.row + spec.height, scene);
-    return {id, label: DECORATION_LABELS[id], ...spec, xy: [x, y]};
-  });
-}
+export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=24.9.87';
 
 /** Keepsakes are displayed as small labelled tokens in the final south plaza. */
 export function keepsakePlacements(scene = map) {
@@ -758,7 +709,6 @@ export async function createGarden(canvas, options = {}) {
   const tiles = new Map((map.tiles ?? []).map((item) => [item.id, item]));
   const grassTile = tiles.get('grass');
   const soilTile = tiles.get('soil');
-  const decorationMap = new Map(decorationPlacements(map).map((placement) => [placement.id, placement]));
   const terrainCaches = new Map();
   const plotBorderLayers = new Map();
   const penHabitatLayers = new Map();
@@ -1166,18 +1116,18 @@ export async function createGarden(canvas, options = {}) {
   function decorationObjects(state, options = {}) {
     const seen = new Set();
     const rotMap = options.decorationRotations ?? state?.decorationRotations ?? state?.decorRotations ?? {};
-    return asArray(state?.decorations).filter(id => !isDefaultDecorHidden(options.decorations, id)).map((id) => {
+    const decorationMap = new Map(decorationPlacements(map, options.decorations, rotMap, options.previewDecoration).map((placement) => [placement.id, placement]));
+    return asArray(state?.decorations).filter(id => !isDefaultDecorHidden(options.decorations, id) || options.previewDecoration?.itemId === id).map((id) => {
       const key = String(id);
       const placement = decorationMap.get(key);
       if (!placement) throw new Error(`Không có hình trang trí ${key}.`);
       if (seen.has(key)) throw new Error(`Trang trí bị lặp ${key}.`);
       seen.add(key);
-      const facing = rotMap[key] === 'right' ? 'right' : 'default';
-      return {kind: 'decoration', type: 'decoration', ...placement, facing};
+      return {kind: 'decoration', type: 'decoration', ...placement};
     });
   }
 
-  function keepsakeObjects(state, stage = currentStage, decorations = null) {
+  function keepsakeObjects(state, stage = currentStage, decorations = null, preview = null) {
     const source = state?.keepsakes;
     if (!source || typeof source !== 'object' || Array.isArray(source)) return [];
     const objects = [];
@@ -1188,8 +1138,8 @@ export async function createGarden(canvas, options = {}) {
     const display = keepsakeDisplayPlacements(stage, keepsakeAnchorRow);
     for (const placement of display) {
       const count = Number(source[placement.species]);
-      if (!Number.isFinite(count) || count <= 0 || isDefaultDecorHidden(decorations, 'keepsake:' + placement.species)) continue;
-      const xy = iso(...placement.anchor);
+      if (!Number.isFinite(count) || count <= 0 || isDefaultDecorHidden(decorations, 'keepsake:' + placement.species) && preview?.itemId !== 'keepsake:' + placement.species) continue;
+      const xy = iso(...(defaultDecorSpot(decorations, 'keepsake:' + placement.species, preview) ?? placement.anchor));
       objects.push({kind: 'keepsake', type: 'keepsake', id: `keepsake:${placement.species}`, species: placement.species, count, xy});
     }
     return objects;
@@ -1647,11 +1597,11 @@ export async function createGarden(canvas, options = {}) {
     if (propsVisible) {
       for (const prop of map.objects ?? []) {
         // Legacy edge-tree anchors straddled the fence; the bounded forest layers own trees now.
-        if (prop.id === 'oak' || prop.id === 'pine' || isDefaultDecorHidden(options.decorations, 'scene:' + prop.id)) continue;
+        if (prop.id === 'oak' || prop.id === 'pine' || isDefaultDecorHidden(options.decorations, 'scene:' + prop.id) && options.previewDecoration?.itemId !== 'scene:' + prop.id) continue;
         if (prop.id !== 'hut' && !stageContains(currentStage, Number(prop.col), Number(prop.row))) continue;
         const asset = props.get(prop.id);
         if (!asset) throw new Error(`Không có prop asset ${prop.id}.`);
-        const xy = iso(prop.col, prop.row);
+        const xy = iso(...(defaultDecorSpot(options.decorations, 'scene:' + prop.id, options.previewDecoration) ?? [prop.col, prop.row]));
         objects.push({kind: 'asset', type: 'prop', id: prop.id, species: prop.id, asset:{...asset,seasonalKind:prop.id==='hut'?'roof':['oak','pine'].includes(prop.id)?'tree':'water'}, xy});
       }
     }
@@ -1668,7 +1618,7 @@ export async function createGarden(canvas, options = {}) {
       }
     }
 
-    objects.push(...earnedDecorationObjects, ...keepsakeObjects(state, currentStage, options.decorations));
+    objects.push(...earnedDecorationObjects, ...keepsakeObjects(state, currentStage, options.decorations, options.previewDecoration));
 
     for (let plotIndex = 0; plotIndex < builtPlotCount; plotIndex += 1) {
       if (!lastPlotReady[plotIndex]) continue;

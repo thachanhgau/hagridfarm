@@ -1,25 +1,26 @@
 // Visual land chapters only. Building prices, unlocks, saves and slots stay engine-owned.
 export const GARDEN_STAGES=Object.freeze([
- {id:1,level:1,name:'Sân nhỏ bên lều',right:20.5,bottom:9,description:'Lều Hagrid và ba thửa khởi đầu, nép trong rừng.'},
- {id:2,level:10,name:'Khoảng sân sinh vật',right:33,bottom:9,description:'Mở lối sang khu nuôi đầu tiên và khoảng đất phía đông.'},
- {id:3,level:24,name:'Vườn thảo dược',right:33,bottom:15.5,description:'Nới hàng rào về phía nam, thêm một dải đất trồng và góc nghỉ.'},
- {id:4,level:48,name:'Trang trại bìa rừng',right:33,bottom:21,description:'Đường vườn đi sâu hơn, dành chỗ cho các thửa và chuồng tiếp theo.'},
- {id:5,level:72,name:'Miền sinh vật kỳ thú',right:33,bottom:25,description:'Mở gần trọn khu đất, đón các sinh vật lớn và những mùa vụ cuối.'},
- {id:6,level:100,name:'Đại khu vườn Hagrid',right:33,bottom:28,description:'Mở cánh đất cuối cho thửa thứ mười hai và hoàn thiện sân kỷ vật.'},
- {id:7,level:110,name:'Cánh đồng Tận Sức',right:33,bottom:33.5,description:'Bậc Tận Sức: rào lùi về phía nam, thêm một hàng sáu thửa (13 đến 18).'},
+ {id:1,level:1,name:'Sân nhỏ bên lều',right:20.5,bottom:9.5,description:'Lều Hagrid và ba thửa khởi đầu, nép trong rừng.'},
+ {id:2,level:10,name:'Khoảng sân sinh vật',right:33.5,bottom:9.5,description:'Mở lối sang khu nuôi đầu tiên và khoảng đất phía đông.'},
+ {id:3,level:24,name:'Vườn thảo dược',right:33.5,bottom:15.5,description:'Nới hàng rào về phía nam, thêm một dải đất trồng và góc nghỉ.'},
+ {id:4,level:48,name:'Trang trại bìa rừng',right:33.5,bottom:21.5,description:'Đường vườn đi sâu hơn, dành chỗ cho các thửa và chuồng tiếp theo.'},
+ {id:5,level:72,name:'Miền sinh vật kỳ thú',right:33.5,bottom:25.5,description:'Mở gần trọn khu đất, đón các sinh vật lớn và những mùa vụ cuối.'},
+ {id:6,level:100,name:'Đại khu vườn Hagrid',right:33.5,bottom:28.5,description:'Mở cánh đất cuối cho thửa thứ mười hai và hoàn thiện sân kỷ vật.'},
+ {id:7,level:110,name:'Cánh đồng Tận Sức',right:33.5,bottom:33.5,description:'Bậc Tận Sức: rào lùi về phía nam, thêm một hàng sáu thửa (13 đến 18).'},
 ].map(Object.freeze));
 export function stageContains(stage,col,row){
- const inside=Number.isFinite(col)&&Number.isFinite(row)&&col>=-5&&col<=stage.right&&row>=-1&&row<=stage.bottom&&(col>=-1||row<=9);
+ const inside=Number.isFinite(col)&&Number.isFinite(row)&&col>=-5.5&&col<=stage.right&&row>=-.5&&row<=stage.bottom&&(col>=-.5||row<=9.5);
  if(!inside)return false;
- if(stage.id===4&&row>15.5&&col<26)return false;
- if(stage.id===5&&(row>21&&col<26||row>15.5&&col>20.5&&col<26))return false;
+ if(stage.id===4&&row>15.5&&col<25.5)return false;
+ if(stage.id===5&&(row>21.5&&col<25.5||row>15.5&&col>20.5&&col<25.5))return false;
  return true;
 }
 export function stageBoundary(stage){
- if(stage.id===4)return [[-5,-1],[33,-1],[33,21],[26,21],[26,15.5],[-1,15.5],[-1,9],[-5,9]];
- if(stage.id===5)return [[-5,-1],[33,-1],[33,25],[26,25],[26,15.5],[20.5,15.5],[20.5,21],[-1,21],[-1,9],[-5,9]];
- return stage.bottom===9?[[-5,-1],[stage.right,-1],[stage.right,9],[-5,9]]:
- [[-5,-1],[stage.right,-1],[stage.right,stage.bottom],[-1,stage.bottom],[-1,9],[-5,9]];
+ // Every corner lies on a cell line (cells are centred on whole numbers).
+ if(stage.id===4)return [[-5.5,-.5],[33.5,-.5],[33.5,21.5],[25.5,21.5],[25.5,15.5],[-.5,15.5],[-.5,9.5],[-5.5,9.5]];
+ if(stage.id===5)return [[-5.5,-.5],[33.5,-.5],[33.5,25.5],[25.5,25.5],[25.5,15.5],[20.5,15.5],[20.5,21.5],[-.5,21.5],[-.5,9.5],[-5.5,9.5]];
+ return stage.bottom===9.5?[[-5.5,-.5],[stage.right,-.5],[stage.right,9.5],[-5.5,9.5]]:
+ [[-5.5,-.5],[stage.right,-.5],[stage.right,stage.bottom],[-.5,stage.bottom],[-.5,9.5],[-5.5,9.5]];
 }
 export function gardenStage(state={},scene={},occupiedPoints=[]){
  const level=Number(state.level)||1;
@@ -50,6 +51,7 @@ export function futureGroves(scene,stage){
 }
 
 export function keepsakeAnchorRow(stage,col){
- for(let row=Math.min(26,stage.bottom-1);row>=0;row-=.5)if(stageContains(stage,col-.5,row)&&stageContains(stage,col+.5,row))return row;
+ // Whole rows only, so the 1×1 statue base fills one cell.
+ for(let row=Math.min(26,Math.floor(stage.bottom-1));row>=0;row--)if(stageContains(stage,col-.5,row)&&stageContains(stage,col+.5,row))return row;
  return 8;
 }

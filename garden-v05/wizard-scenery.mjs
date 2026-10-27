@@ -50,7 +50,7 @@ const LAYOUT = Object.freeze({
   }),
   greenhouse: Object.freeze({
     id: 'greenhouse',
-    col: 2,
+    col: 2.5,
     row: -1,
     bounds: Object.freeze({left: -70, top: -111, right: 72, bottom: 27}),
     hitbox: Object.freeze({left: -78, top: -119, right: 80, bottom: 33}),

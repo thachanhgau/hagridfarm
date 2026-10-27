@@ -91,7 +91,8 @@ test('placement space matches the final 33.5-row scene edge', () => {
   assert.deepEqual(DECORATION_SPACE, {minCol: -5, maxCol: 33, minRow: -1, maxRow: 33.5});
   assert.equal(KEEPSAKE_DISPLAY_LAYOUT.length, Object.keys(CREATURE).length);
   assert.deepEqual(KEEPSAKE_DISPLAY_LAYOUT.map(entry => entry.species), Object.keys(CREATURE));
-  assert.deepEqual(KEEPSAKE_LEGACY_LAYOUT.map(entry => entry.col + .5), [2.5, 4.5, 6.5, 8.5, 10.5, 12.5, 14.5, 16.5, 18.5, 20.5, 22.5, 24.5]);
+  // Owner 27/10/2026: statue bases fill whole cells (cells are centred on whole numbers).
+  assert.deepEqual(KEEPSAKE_LEGACY_LAYOUT.map(entry => entry.col + .5), [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]);
   assert.equal(decorationSpaceContains(DECORATION_SPACE.minCol, DECORATION_SPACE.minRow), true);
   assert.equal(decorationSpaceContains(DECORATION_SPACE.maxCol, DECORATION_SPACE.maxRow), true);
   assert.equal(decorationSpaceContains(DECORATION_SPACE.maxCol + .5, DECORATION_SPACE.maxRow), false);
@@ -116,7 +117,7 @@ test('pre-final keepsakes retain the legacy one-row frontier without paired over
     const obstacles = keepsakeObstacles({keepsakes: allKeepsakes}, stage, (...at) => iso(...at), keepsakeAnchorRow);
     const expectedCount = level === 1 ? 10 : 12; // the final two legacy columns are outside the level-1 right edge
     assert.equal(obstacles.placements.length, expectedCount, `level ${level}: visible statues`);
-    assert.deepEqual(obstacles.placements.map(entry => entry.anchor[0]), Array.from({length: expectedCount}, (_, index) => 2.5 + index * 2));
+    assert.deepEqual(obstacles.placements.map(entry => entry.anchor[0]), Array.from({length: expectedCount}, (_, index) => 2 + index * 2));
     assert.equal(new Set(obstacles.placements.map(entry => entry.anchor.join(','))).size, expectedCount, `level ${level}: unique anchors`);
     assert.ok(obstacles.placements.every(entry => stageContains(stage, ...entry.anchor)), `level ${level}: stage-contained anchors`);
     assert.deepEqual(obstacles.access, [], `level ${level}: final-plaza path is not reserved early`);
@@ -130,7 +131,7 @@ test('pre-final keepsakes retain the legacy one-row frontier without paired over
   for (const stage of GARDEN_STAGES.filter(entry => entry.level >= 100)) {
     const final = keepsakeDisplayPlacements(stage, keepsakeAnchorRow);
     assert.equal(final.length, 12, `level ${stage.level}: plaza`);
-    assert.deepEqual([...new Set(final.map(entry => entry.anchor[1]))], [24.5, 26.5]);
+    assert.deepEqual([...new Set(final.map(entry => entry.anchor[1]))], [25, 27]);
     const {ground, access} = keepsakeObstacles({keepsakes: allKeepsakes}, stage, (...at) => iso(...at), keepsakeAnchorRow);
     for (const rect of [...ground, ...access]) {
       for (const [col, row] of [[rect.c0, rect.r0], [rect.c1, rect.r0], [rect.c0, rect.r1], [rect.c1, rect.r1]]) {
@@ -161,7 +162,7 @@ test('keepsake plaza uses real bases, authored silhouettes, and a reachable side
     }
   }
   assert.ok(KEEPSAKE_ACCESS_PATHS.some(path => path.c0 <= 16 && path.c1 >= 16 && path.r0 <= 22.5 && path.r1 >= 23));
-  assert.ok(GARDEN_PATHS.some(path => path.some(([col, row]) => col === 16 && row === 22.5)));
+  assert.ok(GARDEN_PATHS.some(path => path.some(([col, row]) => col === 16 && row === 23)));
 });
 
 test('final plaza clears physical plots, fixed pond/hut, earned decor, and all twelve statues', () => {

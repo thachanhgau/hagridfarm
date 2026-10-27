@@ -7,9 +7,11 @@ globalThis.FARM_SCENE=structuredClone(scene);globalThis.FARM_MOTION=motion;
 const {iso,pickFromWorld,decorationPlacements,keepsakePlacements,plotPhysicalBounds,plotCellPosition}=await import('./scene-renderer.mjs');
 
 test('fence encloses every fixed build footprint, decoration, keepsake and hut',()=>{
-  for(const r of [...scene.plots,...scene.pens,...decorationPlacements(scene),...keepsakePlacements(scene)]) {
+  for(const r of [...scene.plots,...scene.pens,...keepsakePlacements(scene)]) {
     for(const c of [r.col-.5,r.col+r.width])for(const row of [r.row-.5,r.row+r.height]) assert.ok(insideFarm(c,row),`${r.id??r.species}: ${c},${row}`);
   }
+  // Earned decorations: `col`/`row` is the ground corner itself.
+  for(const r of decorationPlacements(scene))for(const c of [r.col,r.col+r.width])for(const row of [r.row,r.row+r.height])assert.ok(insideFarm(c,row),`${r.id}: ${c},${row}`);
   assert.ok(insideFarm(0,4));
   assert.ok(FARM_BOUNDARY.every(p=>insideFarm(...p)));
 });
@@ -48,7 +50,7 @@ test('footpath stays inside fence and leaves all crop and pen cells clear',()=>{
 test('exit gate is centered on the trail and leaves its middle passage clear',()=>{
  const gate=createBoundaryFence(scene).find(p=>p.gate),calls=[];
  assert.equal((gate.cellA[0]+gate.cellB[0])/2,16);
- assert.equal(Math.abs(gate.cellA[0]-gate.cellB[0]),2.5);
+ assert.equal(Math.abs(gate.cellA[0]-gate.cellB[0]),3,'three whole cells');
  drawBoundaryFence({fillRect(x,y,w,h){calls.push({x,y,w,h});}},gate);
  const x=(gate.a[0]+gate.b[0])/2,y=(gate.a[1]+gate.b[1])/2;
  assert.equal(calls.some(r=>r.x<x+10&&r.x+r.w>x-10&&r.y<y+5&&r.y+r.h>y-24),false,'no closed rail or post across the passage');

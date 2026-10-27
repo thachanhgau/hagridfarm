@@ -9,7 +9,7 @@ globalThis.FARM_MOTION = motion;
 const {decorSpotProblem, decorSpotGrid, decorOnGround, groundRect} = await import('./decor-placement-ui.mjs');
 
 const {iso} = await import('./scene-renderer.mjs');
-const {decorFootprintRect} = await import('./decor-runtime.mjs');
+const {decorFootprintRect, snapDecorSpot} = await import('./decor-runtime.mjs');
 const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json', import.meta.url)));
 const assetOf = id => manifest.items.find(item => item.id === id);
 const last = GARDEN_STAGES.at(-1);
@@ -31,36 +31,49 @@ test('free placement: open ground is free; plots, pens, buildings, locked land a
   assert.match(at(29, 1, {state: {decorations: [], built: ['pen_1']}}), /chuồng/);
   assert.match(at(29, 1, {state: {decorations: [], construction: [{id: 'pen_1'}]}}), /chuồng/);
   assert.match(at(0, 4), /cảnh vật/);
-  assert.match(at(3, 0), /công trình/);
+  assert.match(at(1, 8), /công trình/);
   assert.match(at(12.5, 8.5), /Chồng/);
   // Moving the item itself never collides with its own spot.
   assert.equal(at(12.5, 8.5, {itemId: 'decor_cauldron'}), '');
   assert.match(at(6, 20, {stage: GARDEN_STAGES[0]}), /chưa mở/);
   // An earned decoration's aisle cell is taken only once the garden has it.
-  assert.equal(at(6, 3.5), '');
-  assert.match(at(6, 3.5, {state: {decorations: ['decoration-7']}}), /đồ trang trí của vườn/);
+  assert.equal(at(6, 4), '');
+  assert.match(at(6, 4, {state: {decorations: ['decoration-7']}}), /đồ trang trí của vườn/);
 });
 
 test('large pieces: the whole footprint counts, turned with the facing, off paths and the fence', () => {
   // The front tile alone is free aisle ground, but a 3×2 reaches back onto plot 1.
   // Long side along the rows in the default view, along the columns in the right view; centred under the foot.
-  assert.deepEqual(decorFootprintRect(6, 7, [3, 2]), {c0: 4.25, c1: 6.25, r0: 4.75, r1: 7.75});
-  assert.deepEqual(decorFootprintRect(6, 7, [3, 2], 'right'), {c0: 3.75, c1: 6.75, r0: 5.25, r1: 7.25});
+  assert.deepEqual(decorFootprintRect(6, 7.5, [3, 2]), {c0: 4.5, c1: 6.5, r0: 5.5, r1: 8.5});
+  assert.deepEqual(decorFootprintRect(6.5, 7, [3, 2], 'right'), {c0: 4.5, c1: 7.5, r0: 5.5, r1: 7.5});
   assert.deepEqual(decorFootprintRect(6, 7, [1, 1]), {c0: 5.5, c1: 6.5, r0: 6.5, r1: 7.5});
   assert.equal(at(6, 7), '');
   assert.match(at(6, 7, {itemId: 'sp_whomping_anglia'}), /thửa|lối đi/);
   // A 1×1 may sit at the aisle edge; a 2×2 there would cover the path.
-  assert.equal(at(7, 8.5), '');
-  assert.match(at(7, 8.5, {itemId: 'sp_aragog_hollow'}), /lối đi/);
+  assert.equal(at(7, 8), '');
+  assert.match(at(7, 8, {itemId: 'sp_aragog_hollow'}), /lối đi/);
   // Large pieces keep 0.9 tile off the fence: the north-west corner is open ground but too close.
-  assert.equal(at(-4, 0), '');
-  assert.match(at(-3.5, 0.5, {itemId: 'sp_buckbeak_pumpkins'}), /rào/);
+  assert.equal(at(-4, 1), '');
+  assert.match(at(-3, 1, {itemId: 'sp_buckbeak_pumpkins'}), /rào/);
   // A placed Knight Bus reaches back along the rows in its default view; turned right, it lies along the columns.
   const bus = {owned: ['sp_knight_bus'], placements: ['sp_knight_bus'], positions: {sp_knight_bus: [-2, 4]}, rotations: {}};
   const near = (col, row, rotations) => decorSpotProblem(col, row, {map: scene, stage: last, state: {decorations: []}, decorations: {...bus, rotations}, itemId: 'decor_mandrake_planter'});
   assert.match(near(-2, 2, {}), /Chồng/);
   assert.equal(near(-2, 2, {sp_knight_bus: 'right'}), '');
   assert.match(near(-3.5, 3.5, {sp_knight_bus: 'right'}), /Chồng/);
+});
+
+test('every footprint snaps onto whole cells, in both views, for bought pieces and garden defaults', () => {
+  const onLine = value => Math.abs(((value % 1) + 1) % 1 - 0.5) < 1e-9;
+  for (const footprint of [[1, 1], [2, 1], [2, 2], [3, 1], [3, 2], [3, 3]]) for (const facing of ['default', 'right']) for (const centred of [false, true]) {
+    for (const spot of [[6, 7], [6.5, 7], [6.25, 7.75], [-2.5, 4]]) {
+      const snapped = snapDecorSpot(spot, footprint, facing, centred);
+      assert.ok(snapped.every(n => Number.isInteger(n * 2)), 'server half-tile spot');
+      assert.ok(Math.hypot(snapped[0] - spot[0], snapped[1] - spot[1]) <= Math.SQRT1_2 + 1e-9);
+      const rect = decorFootprintRect(...snapped, footprint, facing, centred);
+      assert.ok(Object.values(rect).every(onLine), `${footprint} ${facing} ${centred}: ${JSON.stringify(rect)}`);
+    }
+  }
 });
 
 test('a tall piece may not stand in front of a plot and hide it', () => {

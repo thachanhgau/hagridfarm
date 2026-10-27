@@ -101,7 +101,7 @@ test('layout projection keeps logical ids while moving coordinates to authored s
   assert.deepEqual(projected.creatureSpots[0], scene.pens[5].spots[0]);
   assert.deepEqual(projected.creatureSpots[1], scene.pens[5].spots[1]);
   assert.deepEqual(scene.plots[0].positions.center, [3,4]);
-  assert.deepEqual(scene.pens[0].spots, [[27.9, 1.9], [31.35, 1.35]]);
+  assert.deepEqual(scene.pens[0].spots, [[28.4, 2.4], [31.85, 1.85]]);
 });
 
 function fakeContext() {
@@ -208,11 +208,11 @@ test('every purchased decoration has a unique aisle footprint outside plots and 
   assert.deepEqual(placements.map((placement) => placement.id), DB.decorations.map((entry) => entry.id));
   for (const placement of placements) {
     assert.ok(placement.shape, `${placement.id} needs a procedural shape`);
-    assert.ok(insideFarm(placement.col-.5,placement.row-.5));
-    assert.ok(insideFarm(placement.col+placement.width-.5,placement.row+placement.height-.5));
+    assert.ok(insideFarm(placement.col,placement.row));
+    assert.ok(insideFarm(placement.col+placement.width,placement.row+placement.height));
     assert.ok(placement.col + placement.width <= scene.columns, `${placement.id} exceeds map columns`);
     assert.ok(placement.row + placement.height <= scene.rows, `${placement.id} exceeds map rows`);
-    assert.equal(scene.plots.some(plot=>overlap({...placement,col:placement.col-.5,row:placement.row-.5},plotPhysicalBounds(plot,scene))),false,`${placement.id} overlaps a plot`);
+    assert.equal(scene.plots.some(plot=>overlap(placement,plotPhysicalBounds(plot,scene))),false,`${placement.id} overlaps a plot`);
     assert.equal(penCells.some((pen) => overlap(placement, pen)), false, `${placement.id} overlaps a pen`);
   }
   for (let left = 0; left < placements.length; left += 1) {
@@ -255,7 +255,7 @@ test('standard cells still select the correct slot at their centers and near eve
   }
   const width=plotPhysicalBounds(scene.plots[0],scene).width;
   assert.equal(width,3);
-  assert.equal(scene.plots[1].col-scene.plots[0].col-width,3.5);
+  assert.equal(scene.plots[1].col-scene.plots[0].col-width,4);
   const plots=scene.plots.map(p=>plotPhysicalBounds(p,scene));
   for(let i=0;i<plots.length;i++)for(let j=i+1;j<plots.length;j++)assert.equal(overlap(plots[i],plots[j]),false);
 });
