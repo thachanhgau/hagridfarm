@@ -72,7 +72,7 @@
         "decor-assets/native/decor_pumpkin_lantern_right_f3.png"
       ],
       "rightBounds": {
-        "x": 12,
+        "x": 13,
         "y": 4,
         "w": 39,
         "h": 76
@@ -126,10 +126,10 @@
         "decor-assets/native/decor_broom_rack_right_f3.png"
       ],
       "rightBounds": {
-        "x": 4,
-        "y": 13,
-        "w": 87,
-        "h": 67
+        "x": 14,
+        "y": 4,
+        "w": 70,
+        "h": 76
       },
       "angles": [
         "default",
@@ -180,9 +180,9 @@
         "decor-assets/native/decor_cauldron_right_f3.png"
       ],
       "rightBounds": {
-        "x": 4,
+        "x": 5,
         "y": 4,
-        "w": 55,
+        "w": 54,
         "h": 76
       },
       "angles": [
@@ -234,9 +234,9 @@
         "decor-assets/native/decor_mandrake_planter_right_f3.png"
       ],
       "rightBounds": {
-        "x": 5,
+        "x": 9,
         "y": 4,
-        "w": 54,
+        "w": 48,
         "h": 76
       },
       "angles": [
@@ -288,9 +288,9 @@
         "decor-assets/native/decor_floating_candles_right_f3.png"
       ],
       "rightBounds": {
-        "x": 24,
+        "x": 25,
         "y": 3,
-        "w": 31,
+        "w": 30,
         "h": 85
       },
       "angles": [
@@ -342,9 +342,9 @@
         "decor-assets/native/decor_vine_arch_right_f3.png"
       ],
       "rightBounds": {
-        "x": 28,
+        "x": 34,
         "y": 5,
-        "w": 72,
+        "w": 61,
         "h": 99
       },
       "angles": [

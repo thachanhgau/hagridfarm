@@ -554,7 +554,12 @@ for (const spec of specs) {
   let rightFrames = null;
   let rightBounds = null;
   if (spec.rotatable) {
-    const mirroredBase = mirrorBufferHorizontally(output, spec);
+    // A drawn right-facing master (`<id>_right.png`) gives a real 90° view; without one the default is mirrored.
+    const rightMasterFile = path.join(masterRoot, spec.master.replace(/\.png$/, '_right.png'));
+    const rightSource = await fs.access(rightMasterFile).then(() => sharp(rightMasterFile).ensureAlpha().raw().toBuffer({resolveWithObject: true}), () => null);
+    const mirroredBase = rightSource
+      ? renderNearest(rightSource, opaqueBounds(rightSource.data, rightSource.info.width, rightSource.info.height), spec).output
+      : mirrorBufferHorizontally(output, spec);
     const rightNativeFile = path.join(nativeRoot, `${spec.id}_right.png`);
     const rightChecked = await writeAndValidateBuffer(mirroredBase, rightNativeFile, spec.width, spec.height, `${spec.id}_right`);
     rightFile = rightChecked.relativeFile;
