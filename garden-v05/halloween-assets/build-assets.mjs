@@ -155,10 +155,9 @@ function renderNearest(view, item, palette) {
   const sourceBounds = boundsOf(view.data, view.width, view.height);
   if (!sourceBounds) throw new Error(`${item.id}: ${view.angle} view has no opaque pixels`);
 
-  const gridFit = item.id === 'hw_root_halloween_gate';
-  // The narrow 1x3 ground strip also has to contain the lowest 32 ink rows.
-  const maxWidth = gridFit ? 84 : item.w - EDGE_MARGIN * 2 - 2;
-  const maxHeight = gridFit ? 112 : item.h - EDGE_MARGIN * 2 - 2;
+  const gridFit = item.inkMax;
+  const maxWidth = gridFit?.[0] ?? item.w - EDGE_MARGIN * 2 - 2;
+  const maxHeight = gridFit?.[1] ?? item.h - EDGE_MARGIN * 2 - 2;
   const scale = Math.min(maxWidth / sourceBounds.w, maxHeight / sourceBounds.h);
   const drawWidth = Math.max(1, Math.round(sourceBounds.w * scale));
   const drawHeight = Math.max(1, Math.round(sourceBounds.h * scale));
@@ -878,7 +877,7 @@ async function main() {
       paletteNearest: 'weighted RGB distance (2,3,1), quantized to each item palette subset from item-palettes.json; global 24-color validation remains enforced',
       alphaThreshold: ALPHA_THRESHOLD,
       sampling: 'hard nearest pixel grid with opaque-neighborhood fallback; no smooth resize',
-      anchor: 'centered x pivot; grid-fit pilot id uses native height minus sixteen pixels, other ids minus four; every frame keeps the grounded bottom quarter alpha rooted',
+      anchor: 'centered x pivot; items with inkMax use native height minus sixteen pixels, other ids minus four; every frame keeps the grounded bottom quarter alpha rooted',
       animation: 'four idle frames per angle; only a small connected glow component may recolor; blink/sway/bubbles fall back to truthful identical poses without an explicit mask',
     },
     items: provenanceItems,

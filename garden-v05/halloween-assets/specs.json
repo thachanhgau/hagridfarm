@@ -326,7 +326,11 @@
         3,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        84,
+        112
+      ]
     },
     {
       "id": "hw_crooked_witch_hut",

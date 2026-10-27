@@ -1,10 +1,10 @@
 {
   "schema": "hagrid-farm.decor-assets.provenance.v1",
-  "generatedAt": "2026-10-27T07:12:42.849Z",
+  "generatedAt": "2026-10-27T07:47:47.934Z",
   "tool": "build-assets.mjs",
   "specs": {
     "file": "specs.json",
-    "sha256": "6193b7194143e56f27320c4c64fc0a83d2f0d229ef75bc417d734ed6b585ea98"
+    "sha256": "675db9892a30d955427439c1a2d8fb32afb4b70896fcd24d01eae52540825cde"
   },
   "itemPalettes": {
     "file": "item-palettes.json",
@@ -16,7 +16,7 @@
     "paletteNearest": "weighted RGB distance (2,3,1), quantized to each item palette subset from item-palettes.json; global 24-color validation remains enforced",
     "alphaThreshold": 192,
     "sampling": "hard nearest pixel grid with opaque-neighborhood fallback; no smooth resize",
-    "anchor": "centered x pivot; grid-fit pilot id uses native height minus sixteen pixels, other ids minus four; every frame keeps the grounded bottom quarter alpha rooted",
+    "anchor": "centered x pivot; items with inkMax use native height minus sixteen pixels, other ids minus four; every frame keeps the grounded bottom quarter alpha rooted",
     "animation": "four idle frames per angle; only a small connected glow component may recolor; blink/sway/bubbles fall back to truthful identical poses without an explicit mask"
   },
   "items": [
