@@ -198,15 +198,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 50,
-              "y": 108,
+              "x": 58,
+              "y": 67,
               "w": 6,
-              "h": 7
+              "h": 6
             },
             "pixelCount": 22,
             "mappableCount": 22,
-            "maxPixels": 1716,
-            "rootBand": 120
+            "maxPixels": 593,
+            "rootBand": 84
           }
         },
         "alternate": {
@@ -215,15 +215,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 45,
-              "y": 70,
-              "w": 6,
-              "h": 5
+              "x": 64,
+              "y": 41,
+              "w": 8,
+              "h": 11
             },
-            "pixelCount": 15,
-            "mappableCount": 15,
-            "maxPixels": 1415,
-            "rootBand": 120
+            "pixelCount": 29,
+            "mappableCount": 29,
+            "maxPixels": 520,
+            "rootBand": 84
           }
         }
       },
@@ -261,11 +261,11 @@
         2,
         1
       ],
-      "width": 144,
-      "height": 160,
+      "width": 96,
+      "height": 112,
       "pivot": {
-        "x": 72,
-        "y": 156
+        "x": 48,
+        "y": 96
       },
       "defaultFile": "native/sp_norbert_egg.png",
       "rightFile": "native/sp_norbert_egg_right.png",
@@ -299,23 +299,23 @@
         260
       ],
       "source": "masters/sp_norbert_egg.png",
-      "sourceSha256": "a24ee180f510176b6ad035fe99e880c1a2459dea20818964e1bb42b9913ce501",
+      "sourceSha256": "f3551267ff8b49a74e6a4e1ba922661a9ccaa9b23710b8467cdb7177a416db25",
       "pngSha256": {
-        "native/sp_norbert_egg.png": "22a6b63b353eb4a1f635f5c1661ed093afa33e719eb202ef59d5c263c3b9ed28",
-        "native/sp_norbert_egg_right.png": "8725bbc367f3e5d8c6d5ac9e2e1a71f2c044b7941a5a3200c4318f844d5a0247",
-        "native/sp_norbert_egg_f0.png": "22a6b63b353eb4a1f635f5c1661ed093afa33e719eb202ef59d5c263c3b9ed28",
-        "native/sp_norbert_egg_f1.png": "9cc2ffcc6c6de980cb4dff4458fd3a916be008ac7f4ac33a63d83da4ba60b424",
-        "native/sp_norbert_egg_f2.png": "f5f4d68bfef9b51e931b8d1e4e9921e37f5d25832380a6a1c599dc32ecc9d816",
-        "native/sp_norbert_egg_f3.png": "22a6b63b353eb4a1f635f5c1661ed093afa33e719eb202ef59d5c263c3b9ed28",
-        "native/sp_norbert_egg_right_f0.png": "8725bbc367f3e5d8c6d5ac9e2e1a71f2c044b7941a5a3200c4318f844d5a0247",
-        "native/sp_norbert_egg_right_f1.png": "43d032294b8e8b7118f810f6f062fe79cfd03c8e291034f0ff5da1c0e64318bb",
-        "native/sp_norbert_egg_right_f2.png": "ce327166b815e0c6f07bb51ef0049804e23cbf3ef8ae8bbccaf0c1014cb1a935",
-        "native/sp_norbert_egg_right_f3.png": "8725bbc367f3e5d8c6d5ac9e2e1a71f2c044b7941a5a3200c4318f844d5a0247",
-        "spritesheets/sp_norbert_egg.png": "6f46b1f58ea5ca782456b29b05213b092cee6b7b5a79eaad694aab98a00ada2e",
-        "thumbnails/2x/sp_norbert_egg.png": "e58d6f131508bfafee824cd1ec5925ca09073c651c58cd4b44b83f32e9cce6f7",
-        "thumbnails/2x/sp_norbert_egg_right.png": "c84a3418395e8235cf906de221e7e8d4c6504c91af1e7f1792f5798a19965830",
-        "thumbnails/3x/sp_norbert_egg.png": "00dcfb8bdd86025872bf039b22dc5bc5526d8b604f8a3d695fdf40d8b9200b2c",
-        "thumbnails/3x/sp_norbert_egg_right.png": "c73f98787a0a8e9f8f607942aebb62b6e0c898b6a677be9fad262f673cb93225"
+        "native/sp_norbert_egg.png": "887923d134852b09db30a231e44e281eaba7dda5fd33a5f6fe19f2f9a1dc264c",
+        "native/sp_norbert_egg_right.png": "bd61daea187db09006f0831636d370c9e2f494cf772490a49a5c8f4663031880",
+        "native/sp_norbert_egg_f0.png": "887923d134852b09db30a231e44e281eaba7dda5fd33a5f6fe19f2f9a1dc264c",
+        "native/sp_norbert_egg_f1.png": "11bbff0f09568b524a8483b8ad6e70781288c2f04ecf4a89d3d52c7e9424166f",
+        "native/sp_norbert_egg_f2.png": "dc19056e8bf74f697b91de7abfd2803a2da9e2a55b44c9f1c3aac86984aa22be",
+        "native/sp_norbert_egg_f3.png": "887923d134852b09db30a231e44e281eaba7dda5fd33a5f6fe19f2f9a1dc264c",
+        "native/sp_norbert_egg_right_f0.png": "bd61daea187db09006f0831636d370c9e2f494cf772490a49a5c8f4663031880",
+        "native/sp_norbert_egg_right_f1.png": "1b3298988e1dea92410b98e2d62e55d74d1256e6d55f8ce92526d713f36e41a0",
+        "native/sp_norbert_egg_right_f2.png": "e2bdbf91c4a268a28c82cdabb165da5b09b77af79bdb8f77a3136c39620a23c2",
+        "native/sp_norbert_egg_right_f3.png": "bd61daea187db09006f0831636d370c9e2f494cf772490a49a5c8f4663031880",
+        "spritesheets/sp_norbert_egg.png": "c17f5af7531391c35bf666ea0685ddac5c31ba9c01c1668bbc3772721efe354c",
+        "thumbnails/2x/sp_norbert_egg.png": "5fe27d6068d497170fcaf5a4d6b639ad17f736b7fe5d98e320d19b3bce7a5c2f",
+        "thumbnails/2x/sp_norbert_egg_right.png": "d25e15e7caf37178f0d755d91f18361ff0b26b28a9ece1452c7d1dd5239c4cb4",
+        "thumbnails/3x/sp_norbert_egg.png": "c62484150dd265732d76d05c936c9fd03100f52ca85e3f6e8f63628e02edf07b",
+        "thumbnails/3x/sp_norbert_egg_right.png": "854f642d3bf15d524e0f07ce3d71020ae9edffa07189c5916cf73df86f80f1e5"
       }
     },
     {
@@ -337,14 +337,14 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 34,
-              "y": 43,
-              "w": 8,
-              "h": 7
+              "x": 35,
+              "y": 62,
+              "w": 7,
+              "h": 6
             },
-            "pixelCount": 25,
-            "mappableCount": 25,
-            "maxPixels": 1297,
+            "pixelCount": 23,
+            "mappableCount": 23,
+            "maxPixels": 492,
             "rootBand": 96
           }
         },
@@ -354,14 +354,14 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 37,
-              "y": 21,
-              "w": 3,
-              "h": 5
+              "x": 90,
+              "y": 59,
+              "w": 6,
+              "h": 7
             },
-            "pixelCount": 9,
-            "mappableCount": 9,
-            "maxPixels": 1067,
+            "pixelCount": 23,
+            "mappableCount": 23,
+            "maxPixels": 538,
             "rootBand": 96
           }
         }
@@ -400,11 +400,11 @@
         3,
         1
       ],
-      "width": 160,
+      "width": 128,
       "height": 128,
       "pivot": {
-        "x": 80,
-        "y": 124
+        "x": 64,
+        "y": 112
       },
       "defaultFile": "native/sp_sirius_motorbike.png",
       "rightFile": "native/sp_sirius_motorbike_right.png",
@@ -438,23 +438,23 @@
         260
       ],
       "source": "masters/sp_sirius_motorbike.png",
-      "sourceSha256": "f2bfb1d6c0a7fc012d71fdf66600c0faa83a1b58c660220da031941591926b0c",
+      "sourceSha256": "e31b062369db8564fa3a127305fb658bdff5b30b9b4a2e4d6f108f078ff0f3f3",
       "pngSha256": {
-        "native/sp_sirius_motorbike.png": "740df4964bedcf80ccd1c82434745185375dc6ff34bc7d21e2646578b2dc3ff2",
-        "native/sp_sirius_motorbike_right.png": "23d5115596eb23b34cbcd959804bfe19d012c359c07a1939eefd2c17678d0acf",
-        "native/sp_sirius_motorbike_f0.png": "740df4964bedcf80ccd1c82434745185375dc6ff34bc7d21e2646578b2dc3ff2",
-        "native/sp_sirius_motorbike_f1.png": "a1c5a0e34bc7d945915a6f9fef6c9995b4586095e0fb09855de9ce046e44905f",
-        "native/sp_sirius_motorbike_f2.png": "a1c5a0e34bc7d945915a6f9fef6c9995b4586095e0fb09855de9ce046e44905f",
-        "native/sp_sirius_motorbike_f3.png": "740df4964bedcf80ccd1c82434745185375dc6ff34bc7d21e2646578b2dc3ff2",
-        "native/sp_sirius_motorbike_right_f0.png": "23d5115596eb23b34cbcd959804bfe19d012c359c07a1939eefd2c17678d0acf",
-        "native/sp_sirius_motorbike_right_f1.png": "cafc04aa392871050b7ef5811e882ce987395c91115ddf36e048f0950e8c0004",
-        "native/sp_sirius_motorbike_right_f2.png": "cafc04aa392871050b7ef5811e882ce987395c91115ddf36e048f0950e8c0004",
-        "native/sp_sirius_motorbike_right_f3.png": "23d5115596eb23b34cbcd959804bfe19d012c359c07a1939eefd2c17678d0acf",
-        "spritesheets/sp_sirius_motorbike.png": "75eac150919a7037a3c583a88c14c3be028b5d0a60e67db3404108f483856111",
-        "thumbnails/2x/sp_sirius_motorbike.png": "39753e6211f4b86db69821aef8e7e46b96878118b1381ee9a47e1bb84ff3e43b",
-        "thumbnails/2x/sp_sirius_motorbike_right.png": "a04033f617f408869741b1afa9488eaa443706b7e347bcec01c007c39c37e004",
-        "thumbnails/3x/sp_sirius_motorbike.png": "2368ae9e74c0c52ce92cbf6e1d570c022ce24042596d62773da72b97e0d249d8",
-        "thumbnails/3x/sp_sirius_motorbike_right.png": "d61aaa1465ecbe2a1f9826c78174b1341580ad9e7160830075f2f88fb313231e"
+        "native/sp_sirius_motorbike.png": "741124ae6b6116be10820128b1a4c35057934c9abb3bbf5ada0c8936d6d3782c",
+        "native/sp_sirius_motorbike_right.png": "0d1ca54e62e61bdca34ce370ec8f3131c78736ee2761d64f43524587c6818e14",
+        "native/sp_sirius_motorbike_f0.png": "741124ae6b6116be10820128b1a4c35057934c9abb3bbf5ada0c8936d6d3782c",
+        "native/sp_sirius_motorbike_f1.png": "b54943d0c15bb4f3a11ce12899ec0c4da6b1491ef3c40aa1838e95725af640cc",
+        "native/sp_sirius_motorbike_f2.png": "b54943d0c15bb4f3a11ce12899ec0c4da6b1491ef3c40aa1838e95725af640cc",
+        "native/sp_sirius_motorbike_f3.png": "741124ae6b6116be10820128b1a4c35057934c9abb3bbf5ada0c8936d6d3782c",
+        "native/sp_sirius_motorbike_right_f0.png": "0d1ca54e62e61bdca34ce370ec8f3131c78736ee2761d64f43524587c6818e14",
+        "native/sp_sirius_motorbike_right_f1.png": "1fb07b013ba8613df1adf052e1286d37e078bd7e14ce10cd19bba2c9c0cf16ee",
+        "native/sp_sirius_motorbike_right_f2.png": "1fb07b013ba8613df1adf052e1286d37e078bd7e14ce10cd19bba2c9c0cf16ee",
+        "native/sp_sirius_motorbike_right_f3.png": "0d1ca54e62e61bdca34ce370ec8f3131c78736ee2761d64f43524587c6818e14",
+        "spritesheets/sp_sirius_motorbike.png": "be64620d048077c4bfce97c9b7dd349a9821dc030d7bdd47580d104e6d94169e",
+        "thumbnails/2x/sp_sirius_motorbike.png": "416fb8417d4dc129eaacf39e5389e85005c1db4d50229a75e003c2ab1b8b8094",
+        "thumbnails/2x/sp_sirius_motorbike_right.png": "f9ab8c7c1540198d8fd7fb8a869dcda505357615f965edf75592af0cb872bcfc",
+        "thumbnails/3x/sp_sirius_motorbike.png": "268b9619d4af9e0b903e22ac28f2f25e46d71ff339ff4a20e0b8c577c7249539",
+        "thumbnails/3x/sp_sirius_motorbike_right.png": "ad8a29c4c256960d9526fcf7c142802ac4bb809bbacb960e4756cdd796b38350"
       }
     },
     {
@@ -517,11 +517,11 @@
         3,
         2
       ],
-      "width": 208,
-      "height": 224,
+      "width": 160,
+      "height": 192,
       "pivot": {
-        "x": 104,
-        "y": 220
+        "x": 80,
+        "y": 176
       },
       "defaultFile": "native/sp_whomping_anglia.png",
       "rightFile": "native/sp_whomping_anglia_right.png",
@@ -555,23 +555,23 @@
         300
       ],
       "source": "masters/sp_whomping_anglia.png",
-      "sourceSha256": "3fbccba0443f14043c7e037e77c695587d123b30049c5d694b7631e79d5f1f0f",
+      "sourceSha256": "1a15d87ea93851db0274db5e1980d077431e096161c197e232598b07e9212aaa",
       "pngSha256": {
-        "native/sp_whomping_anglia.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
-        "native/sp_whomping_anglia_right.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
-        "native/sp_whomping_anglia_f0.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
-        "native/sp_whomping_anglia_f1.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
-        "native/sp_whomping_anglia_f2.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
-        "native/sp_whomping_anglia_f3.png": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737",
-        "native/sp_whomping_anglia_right_f0.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
-        "native/sp_whomping_anglia_right_f1.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
-        "native/sp_whomping_anglia_right_f2.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
-        "native/sp_whomping_anglia_right_f3.png": "55390a33276dc3ecfa812198b9ee52be720a9d0d1fc822a11d544a3a668820d1",
-        "spritesheets/sp_whomping_anglia.png": "65f604e22b0f4544a4aeb715ed0adba6c527f6f57ab3e08303f7ab11253e9af4",
-        "thumbnails/2x/sp_whomping_anglia.png": "87d97a885151d9c2ffae2a57eb23bfece39d14063e713c1a211c2d374693e43f",
-        "thumbnails/2x/sp_whomping_anglia_right.png": "008fb3b9312a68030b583de1308fbdea6f8b4d1a3633a0d8f0c2b86fa64bb4ea",
-        "thumbnails/3x/sp_whomping_anglia.png": "c98fccbe5873529a62b5132ac46734ff6b1fe9de8431be4a3f03e1eda903199b",
-        "thumbnails/3x/sp_whomping_anglia_right.png": "347025786aaef06227574ad2884f6ec159b948c7dc1440569f51a3b9899db372"
+        "native/sp_whomping_anglia.png": "c34e2311657cc8e05a7d54bfd3178f1b533558a98a134c180dcaf5dbcd862ad9",
+        "native/sp_whomping_anglia_right.png": "19cbc6588c7d160b75218ad0a1bfcb8d50d1764e051b27cbf7e0e464eb3ea6e4",
+        "native/sp_whomping_anglia_f0.png": "c34e2311657cc8e05a7d54bfd3178f1b533558a98a134c180dcaf5dbcd862ad9",
+        "native/sp_whomping_anglia_f1.png": "c34e2311657cc8e05a7d54bfd3178f1b533558a98a134c180dcaf5dbcd862ad9",
+        "native/sp_whomping_anglia_f2.png": "c34e2311657cc8e05a7d54bfd3178f1b533558a98a134c180dcaf5dbcd862ad9",
+        "native/sp_whomping_anglia_f3.png": "c34e2311657cc8e05a7d54bfd3178f1b533558a98a134c180dcaf5dbcd862ad9",
+        "native/sp_whomping_anglia_right_f0.png": "19cbc6588c7d160b75218ad0a1bfcb8d50d1764e051b27cbf7e0e464eb3ea6e4",
+        "native/sp_whomping_anglia_right_f1.png": "19cbc6588c7d160b75218ad0a1bfcb8d50d1764e051b27cbf7e0e464eb3ea6e4",
+        "native/sp_whomping_anglia_right_f2.png": "19cbc6588c7d160b75218ad0a1bfcb8d50d1764e051b27cbf7e0e464eb3ea6e4",
+        "native/sp_whomping_anglia_right_f3.png": "19cbc6588c7d160b75218ad0a1bfcb8d50d1764e051b27cbf7e0e464eb3ea6e4",
+        "spritesheets/sp_whomping_anglia.png": "718a7e61095b77c06144d0b0abd4179e1c71d64eb28f9622da0c99e3c6802bd2",
+        "thumbnails/2x/sp_whomping_anglia.png": "39ebfc279cf78d9990abd04b8dfb18a5eb8be258ee543cd2f7940349a4503c21",
+        "thumbnails/2x/sp_whomping_anglia_right.png": "ded5c91a95e7eae470d6c6beca9b5483a2b6ea1407ec6c0ae861b046e496c670",
+        "thumbnails/3x/sp_whomping_anglia.png": "b57d48784bec8575ecc48aa0763ade2d535aef2e1e7e186aad3be10b6044e218",
+        "thumbnails/3x/sp_whomping_anglia_right.png": "13baea370eeb47f3047636c306424604d0ef7faadbadeeda9ea13b5a75609456"
       }
     },
     {
@@ -751,11 +751,11 @@
         2,
         2
       ],
-      "width": 176,
-      "height": 176,
+      "width": 128,
+      "height": 144,
       "pivot": {
-        "x": 88,
-        "y": 172
+        "x": 64,
+        "y": 128
       },
       "defaultFile": "native/sp_aragog_hollow.png",
       "rightFile": "native/sp_aragog_hollow_right.png",
@@ -789,23 +789,23 @@
         300
       ],
       "source": "masters/sp_aragog_hollow.png",
-      "sourceSha256": "3655b7bab0d1e19916d6ca71e1e35938f2d114e511f019cd392d4afb6e30ea39",
+      "sourceSha256": "fbe0c19a0be85f174bdbadc75c0e34bcc148359bd21f5c415ff5c21be489d1bb",
       "pngSha256": {
-        "native/sp_aragog_hollow.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
-        "native/sp_aragog_hollow_right.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
-        "native/sp_aragog_hollow_f0.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
-        "native/sp_aragog_hollow_f1.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
-        "native/sp_aragog_hollow_f2.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
-        "native/sp_aragog_hollow_f3.png": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502",
-        "native/sp_aragog_hollow_right_f0.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
-        "native/sp_aragog_hollow_right_f1.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
-        "native/sp_aragog_hollow_right_f2.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
-        "native/sp_aragog_hollow_right_f3.png": "eb0adf948ce6850b4000c23e0ed0a0b6af4468f2307e3484384265392f638b6b",
-        "spritesheets/sp_aragog_hollow.png": "1686a0563ffbb62e2598a1c3e24ca7c30cd297df94c67c3e7ce311cee8e89cd1",
-        "thumbnails/2x/sp_aragog_hollow.png": "6b9fd403e9e8359a0479465126d03df7b65f98e549786e7eca7cdf18fa552af8",
-        "thumbnails/2x/sp_aragog_hollow_right.png": "34b923ea295aaa0a81afe47e983d6547328c5cf75c6eb012d7b313eeb416da0b",
-        "thumbnails/3x/sp_aragog_hollow.png": "d05831d6f056932663abd49f334daf5ea554e6d3e22204700052d66b8e2885c2",
-        "thumbnails/3x/sp_aragog_hollow_right.png": "73f236d426e34ed5cc24bdd412482889309b0716471d76f2d85ce96ceeccf310"
+        "native/sp_aragog_hollow.png": "1dac59499eea442cbb95d3a98c2bc146e00301f7e2f621b4ac4e7e39d5ff359b",
+        "native/sp_aragog_hollow_right.png": "a906c9ff577283fa9c20baab8edbe7357b12a7aa3dd871d6ee5abbbcdb2746af",
+        "native/sp_aragog_hollow_f0.png": "1dac59499eea442cbb95d3a98c2bc146e00301f7e2f621b4ac4e7e39d5ff359b",
+        "native/sp_aragog_hollow_f1.png": "1dac59499eea442cbb95d3a98c2bc146e00301f7e2f621b4ac4e7e39d5ff359b",
+        "native/sp_aragog_hollow_f2.png": "1dac59499eea442cbb95d3a98c2bc146e00301f7e2f621b4ac4e7e39d5ff359b",
+        "native/sp_aragog_hollow_f3.png": "1dac59499eea442cbb95d3a98c2bc146e00301f7e2f621b4ac4e7e39d5ff359b",
+        "native/sp_aragog_hollow_right_f0.png": "a906c9ff577283fa9c20baab8edbe7357b12a7aa3dd871d6ee5abbbcdb2746af",
+        "native/sp_aragog_hollow_right_f1.png": "a906c9ff577283fa9c20baab8edbe7357b12a7aa3dd871d6ee5abbbcdb2746af",
+        "native/sp_aragog_hollow_right_f2.png": "a906c9ff577283fa9c20baab8edbe7357b12a7aa3dd871d6ee5abbbcdb2746af",
+        "native/sp_aragog_hollow_right_f3.png": "a906c9ff577283fa9c20baab8edbe7357b12a7aa3dd871d6ee5abbbcdb2746af",
+        "spritesheets/sp_aragog_hollow.png": "f12bcdf75d3996e5d1be4eff8616187dc6c25ccb1ac2dc075cd0f4592864629f",
+        "thumbnails/2x/sp_aragog_hollow.png": "996a762210355522d7f12f5e7575eac6b3e95f6752ad9067c7105085caa9c649",
+        "thumbnails/2x/sp_aragog_hollow_right.png": "2c977c31b17656e6d895a42529f2d99d941ebc9b58671490da54ee7bbe73dd58",
+        "thumbnails/3x/sp_aragog_hollow.png": "adeb85c827f6a20033b481627f973f7c16bae37ce27b047dc13f37ba311bce25",
+        "thumbnails/3x/sp_aragog_hollow_right.png": "c82de0d7b825cf937e5db9e614b48f85f3cd6a68663507a7bf2ea5501ab365a5"
       }
     },
     {
@@ -1007,11 +1007,11 @@
         1,
         1
       ],
-      "width": 104,
-      "height": 144,
+      "width": 64,
+      "height": 96,
       "pivot": {
-        "x": 52,
-        "y": 140
+        "x": 32,
+        "y": 80
       },
       "defaultFile": "native/sp_sorting_hat.png",
       "rightFile": "native/sp_sorting_hat_right.png",
@@ -1045,23 +1045,23 @@
         300
       ],
       "source": "masters/sp_sorting_hat.png",
-      "sourceSha256": "e45f0e0c9d5a187ca251526317790fe17dd88d429db6b5809aa0dd3d0fe6bcb6",
+      "sourceSha256": "10076166ecd65d8202cf5b3fbe58e833a1e33ad30e8bc0e9f7d3cf505d7bb672",
       "pngSha256": {
-        "native/sp_sorting_hat.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
-        "native/sp_sorting_hat_right.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
-        "native/sp_sorting_hat_f0.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
-        "native/sp_sorting_hat_f1.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
-        "native/sp_sorting_hat_f2.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
-        "native/sp_sorting_hat_f3.png": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac",
-        "native/sp_sorting_hat_right_f0.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
-        "native/sp_sorting_hat_right_f1.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
-        "native/sp_sorting_hat_right_f2.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
-        "native/sp_sorting_hat_right_f3.png": "6fe384abd4d7bf01532e3b7ff2c27357d7687e5913db8139eabc7a16563407ec",
-        "spritesheets/sp_sorting_hat.png": "86263661f68181436e7d07f382b7013cf5dd34dd6dd423b487ce40672ede9407",
-        "thumbnails/2x/sp_sorting_hat.png": "6230031b0dfee648b5516a67f6957397af5244d0bad3e779851042b63ee13e6f",
-        "thumbnails/2x/sp_sorting_hat_right.png": "6efdf52f73250922b4e4e12585eace154f22531345a19cf29491861dbc61a99c",
-        "thumbnails/3x/sp_sorting_hat.png": "30d6500ef8a3ae96956f0d156e009f90d6e22fdb24df3ec5c868d0105fbf25e2",
-        "thumbnails/3x/sp_sorting_hat_right.png": "66d6a94c2f43d38015c9ac585e5c0e8d9f83c508e44709242347ad519b53a362"
+        "native/sp_sorting_hat.png": "1d83f5809923a51440ec06fd9cef794f720e51d2c3e125635d33d4f8c5c0fd5c",
+        "native/sp_sorting_hat_right.png": "4db3b371ee731404147cc58a0e3811a7591ecbbd8d804756e4c6cb327ab6fab5",
+        "native/sp_sorting_hat_f0.png": "1d83f5809923a51440ec06fd9cef794f720e51d2c3e125635d33d4f8c5c0fd5c",
+        "native/sp_sorting_hat_f1.png": "1d83f5809923a51440ec06fd9cef794f720e51d2c3e125635d33d4f8c5c0fd5c",
+        "native/sp_sorting_hat_f2.png": "1d83f5809923a51440ec06fd9cef794f720e51d2c3e125635d33d4f8c5c0fd5c",
+        "native/sp_sorting_hat_f3.png": "1d83f5809923a51440ec06fd9cef794f720e51d2c3e125635d33d4f8c5c0fd5c",
+        "native/sp_sorting_hat_right_f0.png": "4db3b371ee731404147cc58a0e3811a7591ecbbd8d804756e4c6cb327ab6fab5",
+        "native/sp_sorting_hat_right_f1.png": "4db3b371ee731404147cc58a0e3811a7591ecbbd8d804756e4c6cb327ab6fab5",
+        "native/sp_sorting_hat_right_f2.png": "4db3b371ee731404147cc58a0e3811a7591ecbbd8d804756e4c6cb327ab6fab5",
+        "native/sp_sorting_hat_right_f3.png": "4db3b371ee731404147cc58a0e3811a7591ecbbd8d804756e4c6cb327ab6fab5",
+        "spritesheets/sp_sorting_hat.png": "45cf3c20c3a4ed5383c070d13fd602325304c58ce9fdc5b2cb6ffd4c3fcd2c88",
+        "thumbnails/2x/sp_sorting_hat.png": "ab3f20aab197b6979a906b3cfc1a2fb794bccb8d51fe1f2389d52ca4befa8951",
+        "thumbnails/2x/sp_sorting_hat_right.png": "b50fe40943c80e6559f53b867f31c8c022f8f9f7055490a83a2361aca38bfef5",
+        "thumbnails/3x/sp_sorting_hat.png": "8eb3642fb2b723d65b8f44fe32c8e8654f672db65aad7c117af815eeb43ecc17",
+        "thumbnails/3x/sp_sorting_hat_right.png": "56ad2c0746d7c77236d2e25811729153ae38b6fddbdb1490b80e16e7e503969b"
       }
     },
     {
@@ -1074,7 +1074,7 @@
       "motionRequested": "glow",
       "motionRendered": [
         "glow",
-        "glow"
+        "static"
       ],
       "motionPlan": {
         "default": {
@@ -1083,33 +1083,22 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 31,
-              "y": 35,
-              "w": 2,
-              "h": 3
+              "x": 36,
+              "y": 47,
+              "w": 3,
+              "h": 6
             },
-            "pixelCount": 5,
-            "mappableCount": 5,
-            "maxPixels": 890,
-            "rootBand": 132
+            "pixelCount": 13,
+            "mappableCount": 13,
+            "maxPixels": 356,
+            "rootBand": 120
           }
         },
         "alternate": {
           "requested": "glow",
-          "rendered": "glow",
-          "fallback": null,
-          "effect": {
-            "bbox": {
-              "x": 40,
-              "y": 35,
-              "w": 2,
-              "h": 3
-            },
-            "pixelCount": 4,
-            "mappableCount": 4,
-            "maxPixels": 826,
-            "rootBand": 132
-          }
+          "rendered": "static",
+          "fallback": "No small connected bright component is safe to animate; four exported poses remain identical.",
+          "effect": null
         }
       },
       "framesIdentical": false,
@@ -1146,11 +1135,11 @@
         1,
         1
       ],
-      "width": 112,
-      "height": 176,
+      "width": 64,
+      "height": 160,
       "pivot": {
-        "x": 56,
-        "y": 172
+        "x": 32,
+        "y": 144
       },
       "defaultFile": "native/sp_goblet_fire.png",
       "rightFile": "native/sp_goblet_fire_right.png",
@@ -1184,23 +1173,23 @@
         260
       ],
       "source": "masters/sp_goblet_fire.png",
-      "sourceSha256": "29a1a6aa608486a6998fb70df196503e0007b214fcd172793df1051faeaa3d8a",
+      "sourceSha256": "01d5e61efa26ae358e9b0bc726e7fe14c04c88dd399ba7263c2b6a9f96de2137",
       "pngSha256": {
-        "native/sp_goblet_fire.png": "2d8bec2517e6ce91f3d6f0075429834e9be89a91f7f8156986a19c97bb4c4fa1",
-        "native/sp_goblet_fire_right.png": "845ff2d9d60eaf2221b871c243de62b7258a8eecc8f1f0c52b3242caedecc295",
-        "native/sp_goblet_fire_f0.png": "2d8bec2517e6ce91f3d6f0075429834e9be89a91f7f8156986a19c97bb4c4fa1",
-        "native/sp_goblet_fire_f1.png": "c639e5d242479f3ee111676cf307ff27eb513b2909433a5c6186ac7029733ad2",
-        "native/sp_goblet_fire_f2.png": "1db6b5f91d35ceaa1f790c16536ea08b5b847fecb7ffff1f33c0502efff702e6",
-        "native/sp_goblet_fire_f3.png": "2d8bec2517e6ce91f3d6f0075429834e9be89a91f7f8156986a19c97bb4c4fa1",
-        "native/sp_goblet_fire_right_f0.png": "845ff2d9d60eaf2221b871c243de62b7258a8eecc8f1f0c52b3242caedecc295",
-        "native/sp_goblet_fire_right_f1.png": "6be4cfbbe56e81f2d766c71d6927f21e6db04662765706fa4f94c8178a6a4716",
-        "native/sp_goblet_fire_right_f2.png": "e52ad177819419e1749589d9056a939bdd305e9bf1a5417b968f9c20a3ac6eb6",
-        "native/sp_goblet_fire_right_f3.png": "845ff2d9d60eaf2221b871c243de62b7258a8eecc8f1f0c52b3242caedecc295",
-        "spritesheets/sp_goblet_fire.png": "d0606ed89cf8613589a5b647197b2e7e414d06e0c4b85ffb140870ec9b971c22",
-        "thumbnails/2x/sp_goblet_fire.png": "4b72ac3036a00fd1befd971f779d9952b57c96c6712ba36bdeadeedf0f9d837f",
-        "thumbnails/2x/sp_goblet_fire_right.png": "84c8dbda5a33bacb344ed7f89052401df8bab465415171c31323300051d4300e",
-        "thumbnails/3x/sp_goblet_fire.png": "f274da75d0132626521735f186a888e08132c02c37a831e4b2bf716a823a6888",
-        "thumbnails/3x/sp_goblet_fire_right.png": "417b78926ce27d4aa34047e85d9b35db7d0b636590023040cd0242ad8520df59"
+        "native/sp_goblet_fire.png": "dd644304c67fd3b551de93aa8658d1f0db0d810ba6e7eef057f2bebe177d569d",
+        "native/sp_goblet_fire_right.png": "c2cdf603083333c013201e676b47c18cf22766398a94332802092c17fe990290",
+        "native/sp_goblet_fire_f0.png": "dd644304c67fd3b551de93aa8658d1f0db0d810ba6e7eef057f2bebe177d569d",
+        "native/sp_goblet_fire_f1.png": "9f540e5141cc4ca854941f7022f75d193dab4bd96d3b39eceae383b214fca5ec",
+        "native/sp_goblet_fire_f2.png": "ab76e6fdb5048e90d6d693ec96c455283cd90862db5f37d96c12542f12edb50c",
+        "native/sp_goblet_fire_f3.png": "dd644304c67fd3b551de93aa8658d1f0db0d810ba6e7eef057f2bebe177d569d",
+        "native/sp_goblet_fire_right_f0.png": "c2cdf603083333c013201e676b47c18cf22766398a94332802092c17fe990290",
+        "native/sp_goblet_fire_right_f1.png": "c2cdf603083333c013201e676b47c18cf22766398a94332802092c17fe990290",
+        "native/sp_goblet_fire_right_f2.png": "c2cdf603083333c013201e676b47c18cf22766398a94332802092c17fe990290",
+        "native/sp_goblet_fire_right_f3.png": "c2cdf603083333c013201e676b47c18cf22766398a94332802092c17fe990290",
+        "spritesheets/sp_goblet_fire.png": "724dab6602bdacc2d23281c74f415e41d9a49af01df58dfddf2392169b7af548",
+        "thumbnails/2x/sp_goblet_fire.png": "023fe46ddda799d7f1efaa05acc4ba9a8919ce862508ecccddf8c7f28549c265",
+        "thumbnails/2x/sp_goblet_fire_right.png": "9cfac71e45941b3bcf3580bce874eb57779e12f1734745e5e96a024fac1bd8fa",
+        "thumbnails/3x/sp_goblet_fire.png": "c88de552e9b1d6c06f2c09492a5ec6d94bc7ce916c61c96e0d1eb4bf4b92d261",
+        "thumbnails/3x/sp_goblet_fire_right.png": "af8fddd3a4981e03d2076fba8d2e9c0ad420ccd8fee541eb3c7fbce0d916e919"
       }
     },
     {

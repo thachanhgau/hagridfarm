@@ -623,24 +623,24 @@
         "decor-assets/native/sp_norbert_egg_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 19,
-        "w": 138,
-        "h": 137
+        "x": 15,
+        "y": 11,
+        "w": 67,
+        "h": 85
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 144,
-      "height": 160,
-      "pivotX": 72,
-      "pivotY": 156,
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
       "bounds": {
-        "x": 3,
-        "y": 22,
-        "w": 138,
-        "h": 134
+        "x": 9,
+        "y": 11,
+        "w": 78,
+        "h": 85
       },
       "footprintTiles": [
         2,
@@ -653,7 +653,7 @@
         "chapter": 14
       },
       "lore": "Trứng rồng được ấp trong lò sưởi nhà Hagrid.",
-      "nativeSha256": "22a6b63b353eb4a1f635f5c1661ed093afa33e719eb202ef59d5c263c3b9ed28"
+      "nativeSha256": "887923d134852b09db30a231e44e281eaba7dda5fd33a5f6fe19f2f9a1dc264c"
     },
     {
       "id": "sp_sirius_motorbike",
@@ -684,24 +684,24 @@
         "decor-assets/native/sp_sirius_motorbike_right_f3.png"
       ],
       "rightBounds": {
-        "x": 4,
-        "y": 2,
-        "w": 153,
-        "h": 122
+        "x": 14,
+        "y": 33,
+        "w": 100,
+        "h": 79
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 160,
+      "width": 128,
       "height": 128,
-      "pivotX": 80,
-      "pivotY": 124,
+      "pivotX": 64,
+      "pivotY": 112,
       "bounds": {
-        "x": 3,
-        "y": 3,
-        "w": 154,
-        "h": 121
+        "x": 14,
+        "y": 33,
+        "w": 100,
+        "h": 79
       },
       "footprintTiles": [
         3,
@@ -714,7 +714,7 @@
         "chapter": 1
       },
       "lore": "Chiếc xe máy của Sirius được Hagrid dùng đưa Harry tới đường Privet.",
-      "nativeSha256": "740df4964bedcf80ccd1c82434745185375dc6ff34bc7d21e2646578b2dc3ff2"
+      "nativeSha256": "741124ae6b6116be10820128b1a4c35057934c9abb3bbf5ada0c8936d6d3782c"
     },
     {
       "id": "sp_whomping_anglia",
@@ -745,24 +745,24 @@
         "decor-assets/native/sp_whomping_anglia_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 2,
-        "w": 202,
-        "h": 218
+        "x": 19,
+        "y": 15,
+        "w": 123,
+        "h": 161
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 208,
-      "height": 224,
-      "pivotX": 104,
-      "pivotY": 220,
+      "width": 160,
+      "height": 192,
+      "pivotX": 80,
+      "pivotY": 176,
       "bounds": {
-        "x": 3,
-        "y": 6,
-        "w": 202,
-        "h": 214
+        "x": 14,
+        "y": 15,
+        "w": 133,
+        "h": 161
       },
       "footprintTiles": [
         3,
@@ -775,7 +775,7 @@
         "chapter": 5
       },
       "lore": "Harry và Ron đâm xe vào cây Liễu Roi.",
-      "nativeSha256": "0fabc55ccad827418116af4a8b98b349ef9eb17280101c08f2d3cca505541737"
+      "nativeSha256": "c34e2311657cc8e05a7d54bfd3178f1b533558a98a134c180dcaf5dbcd862ad9"
     },
     {
       "id": "sp_buckbeak_pumpkins",
@@ -867,24 +867,24 @@
         "decor-assets/native/sp_aragog_hollow_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 8,
-        "w": 170,
-        "h": 164
+        "x": 4,
+        "y": 36,
+        "w": 120,
+        "h": 92
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 176,
-      "height": 176,
-      "pivotX": 88,
-      "pivotY": 172,
+      "width": 128,
+      "height": 144,
+      "pivotX": 64,
+      "pivotY": 128,
       "bounds": {
-        "x": 3,
-        "y": 13,
-        "w": 170,
-        "h": 159
+        "x": 4,
+        "y": 39,
+        "w": 120,
+        "h": 89
       },
       "footprintTiles": [
         2,
@@ -897,7 +897,7 @@
         "chapter": 15
       },
       "lore": "Aragog và bầy nhện trong Rừng Cấm.",
-      "nativeSha256": "3f58658e78bd6875ff74db312ec47b7d3ec6396c0f6125d894a5a6099aa4d502"
+      "nativeSha256": "1dac59499eea442cbb95d3a98c2bc146e00301f7e2f621b4ac4e7e39d5ff359b"
     },
     {
       "id": "sp_mirror_erised",
@@ -989,24 +989,24 @@
         "decor-assets/native/sp_sorting_hat_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 21,
-        "w": 98,
-        "h": 119
+        "x": 4,
+        "y": 13,
+        "w": 56,
+        "h": 67
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 104,
-      "height": 144,
-      "pivotX": 52,
-      "pivotY": 140,
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
       "bounds": {
-        "x": 3,
-        "y": 7,
-        "w": 98,
-        "h": 133
+        "x": 7,
+        "y": 12,
+        "w": 51,
+        "h": 68
       },
       "footprintTiles": [
         1,
@@ -1019,7 +1019,7 @@
         "chapter": 7
       },
       "lore": "Nón Phân Loại được đặt trên ghế trong lễ phân loại.",
-      "nativeSha256": "10bbe6dcfa542c14d86e6966c729ab33dd4d2e0044883b498faaeb23418439ac"
+      "nativeSha256": "1d83f5809923a51440ec06fd9cef794f720e51d2c3e125635d33d4f8c5c0fd5c"
     },
     {
       "id": "sp_goblet_fire",
@@ -1050,24 +1050,24 @@
         "decor-assets/native/sp_goblet_fire_right_f3.png"
       ],
       "rightBounds": {
-        "x": 22,
-        "y": 2,
-        "w": 68,
-        "h": 170
+        "x": 7,
+        "y": 16,
+        "w": 50,
+        "h": 128
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 112,
-      "height": 176,
-      "pivotX": 56,
-      "pivotY": 172,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
       "bounds": {
-        "x": 19,
-        "y": 2,
-        "w": 74,
-        "h": 170
+        "x": 7,
+        "y": 34,
+        "w": 51,
+        "h": 110
       },
       "footprintTiles": [
         1,
@@ -1080,7 +1080,7 @@
         "chapter": 16
       },
       "lore": "Chiếc cốc bằng gỗ chọn các quán quân Tam Pháp Thuật.",
-      "nativeSha256": "2d8bec2517e6ce91f3d6f0075429834e9be89a91f7f8156986a19c97bb4c4fa1"
+      "nativeSha256": "dd644304c67fd3b551de93aa8658d1f0db0d810ba6e7eef057f2bebe177d569d"
     },
     {
       "id": "sp_pensieve",
