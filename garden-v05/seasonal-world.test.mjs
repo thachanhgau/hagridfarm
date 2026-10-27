@@ -42,7 +42,7 @@ test('world animation is deterministic, periodic, and freezes at reduced-motion 
 test('festival light anchors use placed props and disappear with the event',async()=>{
  const {collectLightSources}=await import('./garden-atmosphere.mjs');
  const objects=[{kind:'festival',hero:true,id:'hero-yule',xy:[500,600]},{kind:'festival',id:'festival:1',asset:{id:'decor_pumpkin_lantern'},xy:[800,900]}];
- const lights=collectLightSources(objects);assert.equal(lights.length,2);assert.equal(lights[0].x,500);assert.equal(lights[0].y,518);assert.equal(lights[1].x,800);assert.deepEqual(collectLightSources([]),[]);
+ const lights=collectLightSources(objects);assert.equal(lights.length,2);assert.equal(lights[0].x,500);assert.equal(lights[0].y,530);assert.equal(lights[1].x,800);assert.deepEqual(collectLightSources([]),[]);
 });
 
 test('roof snow mask preserves lower walls, doors and greenhouse glass',()=>{

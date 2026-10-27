@@ -46,7 +46,8 @@
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-2e1b23d7-05fc-4cec-8e13-d463e04d5b5f.png",
       "master": "masters-flow-v1/decor-hw_blinking_chest-v1.png",
       "tool": "builtin image_gen",
-      "framesIdentical": false
+      "framesIdentical": false,
+      "centreInk": true
     },
     {
       "id": "hw_monster_bookcase",
@@ -61,7 +62,8 @@
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-4584a530-350e-4006-99c0-e8787d90df21.png",
       "master": "masters-flow-v1/decor-hw_monster_bookcase-v1.png",
       "tool": "builtin image_gen",
-      "framesIdentical": false
+      "framesIdentical": false,
+      "centreInk": true
     },
     {
       "id": "hw_eyeball_flowers",

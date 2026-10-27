@@ -5767,49 +5767,42 @@
     "height": 48
    },
    "canvas": [
-    112,
+    96,
     144
    ],
    "pivot": [
-    56,
-    140
+    48,
+    128
    ],
    "ink": {
-    "x": 1,
-    "y": 28,
-    "w": 79,
-    "h": 112,
-    "foot": 140
+    "x": 4,
+    "y": 3,
+    "w": 88,
+    "h": 125,
+    "foot": 128
    },
    "allowed": {
-    "left": 8,
-    "right": 104,
-    "centreY": 124,
-    "frontY": 148
+    "left": 0,
+    "right": 96,
+    "centreY": 112,
+    "frontY": 136
    },
-   "flat2x2": 0.282,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 7,
-     "left": 7,
-     "right": 0
-    }
-   ],
-   "severity": "vừa",
-   "fix": "căn lại tâm",
+   "flat2x2": 0.323,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      96,
-     144
+     160
     ],
     "pivot": [
      48,
-     128
+     144
     ],
     "ink": [
-     79,
-     112
+     88,
+     125
     ],
     "scale": 1
    },
@@ -5831,37 +5824,30 @@
     "height": 48
    },
    "canvas": [
-    112,
+    96,
     144
    ],
    "pivot": [
-    56,
-    140
+    48,
+    128
    ],
    "ink": {
-    "x": 3,
-    "y": 29,
-    "w": 77,
-    "h": 111,
-    "foot": 140
+    "x": 5,
+    "y": 4,
+    "w": 86,
+    "h": 124,
+    "foot": 128
    },
    "allowed": {
-    "left": 8,
-    "right": 104,
-    "centreY": 124,
-    "frontY": 148
+    "left": 0,
+    "right": 96,
+    "centreY": 112,
+    "frontY": 136
    },
-   "flat2x2": 0.277,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 5,
-     "left": 5,
-     "right": 0
-    }
-   ],
-   "severity": "vừa",
-   "fix": "căn lại tâm",
+   "flat2x2": 0.307,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      96,
@@ -5872,8 +5858,8 @@
      128
     ],
     "ink": [
-     77,
-     111
+     86,
+     124
     ],
     "scale": 1
    },
@@ -5895,37 +5881,30 @@
     "height": 48
    },
    "canvas": [
-    112,
-    96
+    96,
+    112
    ],
    "pivot": [
-    56,
-    92
+    48,
+    96
    ],
    "ink": {
-    "x": 21,
-    "y": 7,
-    "w": 89,
-    "h": 85,
-    "foot": 92
+    "x": 6,
+    "y": 15,
+    "w": 85,
+    "h": 81,
+    "foot": 96
    },
    "allowed": {
-    "left": 8,
-    "right": 104,
-    "centreY": 76,
-    "frontY": 100
+    "left": 0,
+    "right": 96,
+    "centreY": 80,
+    "frontY": 104
    },
-   "flat2x2": 0.36,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 6,
-     "left": 0,
-     "right": 6
-    }
-   ],
-   "severity": "vừa",
-   "fix": "căn lại tâm",
+   "flat2x2": 0.337,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      96,
@@ -5936,8 +5915,8 @@
      96
     ],
     "ink": [
-     89,
-     85
+     85,
+     81
     ],
     "scale": 1
    },
@@ -5959,37 +5938,30 @@
     "height": 48
    },
    "canvas": [
-    112,
-    96
+    96,
+    112
    ],
    "pivot": [
-    56,
-    92
+    48,
+    96
    ],
    "ink": {
-    "x": 1,
-    "y": 6,
-    "w": 92,
-    "h": 86,
-    "foot": 92
+    "x": 4,
+    "y": 14,
+    "w": 87,
+    "h": 82,
+    "foot": 96
    },
    "allowed": {
-    "left": 8,
-    "right": 104,
-    "centreY": 76,
-    "frontY": 100
+    "left": 0,
+    "right": 96,
+    "centreY": 80,
+    "frontY": 104
    },
-   "flat2x2": 0.364,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 7,
-     "left": 7,
-     "right": 0
-    }
-   ],
-   "severity": "vừa",
-   "fix": "căn lại tâm",
+   "flat2x2": 0.337,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      96,
@@ -6000,8 +5972,8 @@
      96
     ],
     "ink": [
-     92,
-     86
+     87,
+     82
     ],
     "scale": 1
    },
@@ -10928,40 +10900,30 @@
     "height": 80
    },
    "canvas": [
-    176,
-    112
+    160,
+    100
    ],
    "pivot": [
-    88,
-    112
+    80,
+    99
    ],
    "ink": {
-    "x": 0,
-    "y": 0,
-    "w": 176,
-    "h": 112,
-    "foot": 112
+    "x": 4,
+    "y": 3,
+    "w": 152,
+    "h": 96,
+    "foot": 99
    },
    "allowed": {
-    "left": 8,
-    "right": 168,
-    "centreY": 80,
-    "frontY": 120
+    "left": 0,
+    "right": 160,
+    "centreY": 67,
+    "frontY": 107
    },
-   "flat2x2": 0.233,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 8,
-     "left": 8,
-     "right": 8
-    },
-    {
-     "rule": "chạm-mép-canvas"
-    }
-   ],
-   "severity": "vừa",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.192,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      160,
@@ -10973,14 +10935,11 @@
     ],
     "ink": [
      152,
-     97
+     96
     ],
-    "scale": 0.86
+    "scale": 1
    },
-   "roomierFootprint": [
-    3,
-    3
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "scenery",
@@ -11954,40 +11913,30 @@
     "height": 64
    },
    "canvas": [
-    141,
-    210
+    128,
+    183
    ],
    "pivot": [
-    70,
-    209
+    64,
+    180
    ],
    "ink": {
-    "x": 0,
-    "y": 0,
-    "w": 141,
-    "h": 210,
-    "foot": 210
+    "x": 4,
+    "y": 2,
+    "w": 120,
+    "h": 179,
+    "foot": 181
    },
    "allowed": {
-    "left": 6,
-    "right": 134,
-    "centreY": 209,
-    "frontY": 241
+    "left": 0,
+    "right": 128,
+    "centreY": 180,
+    "frontY": 212
    },
-   "flat2x2": 0.004,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 7,
-     "left": 6,
-     "right": 7
-    },
-    {
-     "rule": "chạm-mép-canvas"
-    }
-   ],
-   "severity": "vừa",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.002,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      128,
@@ -12001,12 +11950,9 @@
      120,
      179
     ],
-    "scale": 0.85
+    "scale": 1
    },
-   "roomierFootprint": [
-    3,
-    2
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "festival",

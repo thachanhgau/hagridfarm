@@ -1041,32 +1041,34 @@
         "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-2e1b23d7-05fc-4cec-8e13-d463e04d5b5f.png",
         "master": "masters-flow-v1/decor-hw_blinking_chest-v1.png",
         "tool": "builtin image_gen",
-        "framesIdentical": false
+        "framesIdentical": false,
+        "centreInk": true
       },
       "outputFolder": "native-crop-complete",
       "assetFolder": "native-crop-complete/decor-flow-hw_blinking_chest",
-      "scale": 0.241830065,
+      "scale": 0.23046775,
       "target": {
         "id": "decor-flow-hw_blinking_chest",
-        "width": 112,
-        "height": 96,
-        "pivotX": 56,
-        "pivotY": 92
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 96,
+        "inset": 4
       },
       "frames": [
         {
           "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-01.png",
-          "width": 112,
-          "height": 96,
-          "pivotX": 56,
-          "pivotY": 92,
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 96,
           "bounds": {
-            "x": 21,
-            "y": 7,
-            "w": 89,
-            "h": 85
+            "x": 6,
+            "y": 15,
+            "w": 85,
+            "h": 81
           },
-          "sha256": "edf6eb9055c1929e767fa78aa9468d5f5c8fa3544f6044a3899269d263aa2d52",
+          "sha256": "e51d3d6c617bc89c416b6471d285f4870d0e87b7f6738537c7eb0b79c78edfdc",
           "sourceRect": {
             "x": 49,
             "y": 52,
@@ -1076,17 +1078,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-02.png",
-          "width": 112,
-          "height": 96,
-          "pivotX": 56,
-          "pivotY": 92,
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 96,
           "bounds": {
-            "x": 21,
-            "y": 7,
-            "w": 89,
-            "h": 85
+            "x": 6,
+            "y": 15,
+            "w": 85,
+            "h": 81
           },
-          "sha256": "120419a06a7a4167f5989e3f80f62a49bc1c2a73a913269d6c0b3c72f210b947",
+          "sha256": "bc1e32bd4759508464749fa41e49fedf1859f5a58034c714a977f7f53ec31481",
           "sourceRect": {
             "x": 485,
             "y": 52,
@@ -1096,17 +1098,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-03.png",
-          "width": 112,
-          "height": 96,
-          "pivotX": 56,
-          "pivotY": 92,
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 96,
           "bounds": {
-            "x": 20,
-            "y": 7,
-            "w": 89,
-            "h": 85
+            "x": 6,
+            "y": 15,
+            "w": 85,
+            "h": 81
           },
-          "sha256": "ee58aef362c76a21b12baabbb792bd0f371e3ad3ebf24c8d749220bcdecfa3d9",
+          "sha256": "3ee91b0b182b39f89da1bb77820b608efdd6f6334ee20f9c0b8edd956ee6026f",
           "sourceRect": {
             "x": 919,
             "y": 52,
@@ -1116,17 +1118,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-04.png",
-          "width": 112,
-          "height": 96,
-          "pivotX": 56,
-          "pivotY": 92,
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 96,
           "bounds": {
-            "x": 21,
-            "y": 7,
-            "w": 89,
-            "h": 85
+            "x": 6,
+            "y": 15,
+            "w": 85,
+            "h": 81
           },
-          "sha256": "d841124f75afc104b40f45379867a736dd64d60c1b5717a69f9c98b7edbd8f51",
+          "sha256": "c540933ef24565c62921ebdad7d2205bebb2956c82715690b0a898867a133766",
           "sourceRect": {
             "x": 1354,
             "y": 52,
@@ -1136,17 +1138,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-05.png",
-          "width": 112,
-          "height": 96,
-          "pivotX": 56,
-          "pivotY": 92,
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 96,
           "bounds": {
-            "x": 1,
-            "y": 6,
-            "w": 92,
-            "h": 86
+            "x": 4,
+            "y": 14,
+            "w": 87,
+            "h": 82
           },
-          "sha256": "bbbe5b08d7f6a8b9a4aebc16fee2a9a6e4a1e69b0b533bde7fbeaf9a817ba20d",
+          "sha256": "f771c4a23252241b1f83dd00cf200f6cd7503c158450a1460000971ba9907037",
           "sourceRect": {
             "x": 42,
             "y": 466,
@@ -1156,17 +1158,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-06.png",
-          "width": 112,
-          "height": 96,
-          "pivotX": 56,
-          "pivotY": 92,
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 96,
           "bounds": {
-            "x": 2,
-            "y": 6,
-            "w": 91,
-            "h": 86
+            "x": 5,
+            "y": 14,
+            "w": 87,
+            "h": 82
           },
-          "sha256": "5d4931a52ad402839f3a2b596a274f5ee4badb50fc81cdc7c291439f29e9304f",
+          "sha256": "adadacd678980e0b512aeef0ca2015f0a71312f60db04689e89ceb2b2037b08b",
           "sourceRect": {
             "x": 485,
             "y": 466,
@@ -1176,17 +1178,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-07.png",
-          "width": 112,
-          "height": 96,
-          "pivotX": 56,
-          "pivotY": 92,
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 96,
           "bounds": {
-            "x": 1,
-            "y": 6,
-            "w": 93,
-            "h": 86
+            "x": 4,
+            "y": 14,
+            "w": 88,
+            "h": 82
           },
-          "sha256": "f7977859b384fcda9205576ca23033080b22b76fe983f296a480b282caa69570",
+          "sha256": "5c461703f89cabae7608a20ddedda76b1b6ddd120bd3f7456cf139a8dace5779",
           "sourceRect": {
             "x": 923,
             "y": 466,
@@ -1196,17 +1198,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_blinking_chest/frame-08.png",
-          "width": 112,
-          "height": 96,
-          "pivotX": 56,
-          "pivotY": 92,
+          "width": 96,
+          "height": 112,
+          "pivotX": 48,
+          "pivotY": 96,
           "bounds": {
-            "x": 2,
-            "y": 6,
-            "w": 91,
-            "h": 86
+            "x": 5,
+            "y": 14,
+            "w": 87,
+            "h": 82
           },
-          "sha256": "a3813fcf617dbc332dabc8626e5e1bcd30de39f7e02376058122de793b6f23bb",
+          "sha256": "509bf01fa4ff474a9c936b8f7439760555470173831ac77a165032d9411e7f32",
           "sourceRect": {
             "x": 1364,
             "y": 466,
@@ -1217,160 +1219,160 @@
       ],
       "atlas": {
         "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-        "sha256": "f4ab7059778b7ea5454ef98393fb356dd37cb8e20d84d2e27e83cfba559055a5",
-        "width": 448,
-        "height": 192,
+        "sha256": "d16d7e8e93124c3071439fbcdf09856451976fa00d66c9c7fc5de52cb8e1d869",
+        "width": 384,
+        "height": 224,
         "frames": [
           {
             "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-            "width": 112,
-            "height": 96,
-            "pivotX": 56,
-            "pivotY": 92,
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 96,
             "bounds": {
-              "x": 21,
-              "y": 7,
-              "w": 89,
-              "h": 85
+              "x": 6,
+              "y": 15,
+              "w": 85,
+              "h": 81
             },
             "atlasRect": {
               "x": 0,
               "y": 0,
-              "w": 112,
-              "h": 96
+              "w": 96,
+              "h": 112
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-            "width": 112,
-            "height": 96,
-            "pivotX": 56,
-            "pivotY": 92,
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 96,
             "bounds": {
-              "x": 21,
-              "y": 7,
-              "w": 89,
-              "h": 85
+              "x": 6,
+              "y": 15,
+              "w": 85,
+              "h": 81
             },
             "atlasRect": {
-              "x": 112,
+              "x": 96,
               "y": 0,
-              "w": 112,
-              "h": 96
+              "w": 96,
+              "h": 112
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-            "width": 112,
-            "height": 96,
-            "pivotX": 56,
-            "pivotY": 92,
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 96,
             "bounds": {
-              "x": 20,
-              "y": 7,
-              "w": 89,
-              "h": 85
+              "x": 6,
+              "y": 15,
+              "w": 85,
+              "h": 81
             },
             "atlasRect": {
-              "x": 224,
+              "x": 192,
               "y": 0,
-              "w": 112,
-              "h": 96
+              "w": 96,
+              "h": 112
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-            "width": 112,
-            "height": 96,
-            "pivotX": 56,
-            "pivotY": 92,
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 96,
             "bounds": {
-              "x": 21,
-              "y": 7,
-              "w": 89,
-              "h": 85
+              "x": 6,
+              "y": 15,
+              "w": 85,
+              "h": 81
             },
             "atlasRect": {
-              "x": 336,
+              "x": 288,
               "y": 0,
-              "w": 112,
-              "h": 96
+              "w": 96,
+              "h": 112
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-            "width": 112,
-            "height": 96,
-            "pivotX": 56,
-            "pivotY": 92,
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 96,
             "bounds": {
-              "x": 1,
-              "y": 6,
-              "w": 92,
-              "h": 86
+              "x": 4,
+              "y": 14,
+              "w": 87,
+              "h": 82
             },
             "atlasRect": {
               "x": 0,
-              "y": 96,
-              "w": 112,
-              "h": 96
+              "y": 112,
+              "w": 96,
+              "h": 112
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-            "width": 112,
-            "height": 96,
-            "pivotX": 56,
-            "pivotY": 92,
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 96,
             "bounds": {
-              "x": 2,
-              "y": 6,
-              "w": 91,
-              "h": 86
+              "x": 5,
+              "y": 14,
+              "w": 87,
+              "h": 82
             },
             "atlasRect": {
-              "x": 112,
-              "y": 96,
-              "w": 112,
-              "h": 96
+              "x": 96,
+              "y": 112,
+              "w": 96,
+              "h": 112
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-            "width": 112,
-            "height": 96,
-            "pivotX": 56,
-            "pivotY": 92,
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 96,
             "bounds": {
-              "x": 1,
-              "y": 6,
-              "w": 93,
-              "h": 86
+              "x": 4,
+              "y": 14,
+              "w": 88,
+              "h": 82
             },
             "atlasRect": {
-              "x": 224,
-              "y": 96,
-              "w": 112,
-              "h": 96
+              "x": 192,
+              "y": 112,
+              "w": 96,
+              "h": 112
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-            "width": 112,
-            "height": 96,
-            "pivotX": 56,
-            "pivotY": 92,
+            "width": 96,
+            "height": 112,
+            "pivotX": 48,
+            "pivotY": 96,
             "bounds": {
-              "x": 2,
-              "y": 6,
-              "w": 91,
-              "h": 86
+              "x": 5,
+              "y": 14,
+              "w": 87,
+              "h": 82
             },
             "atlasRect": {
-              "x": 336,
-              "y": 96,
-              "w": 112,
-              "h": 96
+              "x": 288,
+              "y": 112,
+              "w": 96,
+              "h": 112
             }
           }
         ]
@@ -1378,8 +1380,8 @@
       "thumbnails": {
         "file": "decor-assets/native/flow-hw_blinking_chest.png",
         "rightFile": "decor-assets/native/flow-hw_blinking_chest_right.png",
-        "sha256": "edf6eb9055c1929e767fa78aa9468d5f5c8fa3544f6044a3899269d263aa2d52",
-        "rightSha256": "bbbe5b08d7f6a8b9a4aebc16fee2a9a6e4a1e69b0b533bde7fbeaf9a817ba20d"
+        "sha256": "e51d3d6c617bc89c416b6471d285f4870d0e87b7f6738537c7eb0b79c78edfdc",
+        "rightSha256": "f771c4a23252241b1f83dd00cf200f6cd7503c158450a1460000971ba9907037"
       },
       "runtime": {
         "id": "hw_blinking_chest",
@@ -1407,52 +1409,52 @@
           {
             "x": 0,
             "y": 0,
-            "w": 112,
-            "h": 96
+            "w": 96,
+            "h": 112
           },
           {
-            "x": 112,
+            "x": 96,
             "y": 0,
-            "w": 112,
-            "h": 96
+            "w": 96,
+            "h": 112
           },
           {
-            "x": 224,
+            "x": 192,
             "y": 0,
-            "w": 112,
-            "h": 96
+            "w": 96,
+            "h": 112
           },
           {
-            "x": 336,
+            "x": 288,
             "y": 0,
-            "w": 112,
-            "h": 96
+            "w": 96,
+            "h": 112
           }
         ],
         "rightAtlasRects": [
           {
             "x": 0,
-            "y": 96,
-            "w": 112,
-            "h": 96
+            "y": 112,
+            "w": 96,
+            "h": 112
           },
           {
-            "x": 112,
-            "y": 96,
-            "w": 112,
-            "h": 96
+            "x": 96,
+            "y": 112,
+            "w": 96,
+            "h": 112
           },
           {
-            "x": 224,
-            "y": 96,
-            "w": 112,
-            "h": 96
+            "x": 192,
+            "y": 112,
+            "w": 96,
+            "h": 112
           },
           {
-            "x": 336,
-            "y": 96,
-            "w": 112,
-            "h": 96
+            "x": 288,
+            "y": 112,
+            "w": 96,
+            "h": 112
           }
         ],
         "durations": [
@@ -1465,21 +1467,21 @@
           "default",
           "right"
         ],
-        "width": 112,
-        "height": 96,
-        "pivotX": 56,
-        "pivotY": 92,
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 96,
         "bounds": {
-          "x": 20,
-          "y": 7,
-          "w": 90,
-          "h": 85
+          "x": 6,
+          "y": 15,
+          "w": 85,
+          "h": 81
         },
         "rightBounds": {
-          "x": 1,
-          "y": 6,
-          "w": 93,
-          "h": 86
+          "x": 4,
+          "y": 14,
+          "w": 88,
+          "h": 82
         },
         "footprintTiles": [
           2,
@@ -1507,32 +1509,34 @@
         "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-4584a530-350e-4006-99c0-e8787d90df21.png",
         "master": "masters-flow-v1/decor-hw_monster_bookcase-v1.png",
         "tool": "builtin image_gen",
-        "framesIdentical": false
+        "framesIdentical": false,
+        "centreInk": true
       },
       "outputFolder": "native-crop-complete",
       "assetFolder": "native-crop-complete/decor-flow-hw_monster_bookcase",
-      "scale": 0.262410348,
+      "scale": 0.294018934,
       "target": {
         "id": "decor-flow-hw_monster_bookcase",
-        "width": 112,
+        "width": 96,
         "height": 144,
-        "pivotX": 56,
-        "pivotY": 140
+        "pivotX": 48,
+        "pivotY": 128,
+        "inset": 4
       },
       "frames": [
         {
           "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-01.png",
-          "width": 112,
+          "width": 96,
           "height": 144,
-          "pivotX": 56,
-          "pivotY": 140,
+          "pivotX": 48,
+          "pivotY": 128,
           "bounds": {
-            "x": 1,
-            "y": 28,
-            "w": 79,
-            "h": 112
+            "x": 4,
+            "y": 3,
+            "w": 88,
+            "h": 125
           },
-          "sha256": "3673da9d72d6e2f309cd3094e0c3695a084d902776801b9d997fdc792a3bfc1a",
+          "sha256": "42ca27036a6964ec881494bfb02580dd335c70ada0dd630746fed4de04bace08",
           "sourceRect": {
             "x": 48,
             "y": 45,
@@ -1542,17 +1546,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-02.png",
-          "width": 112,
+          "width": 96,
           "height": 144,
-          "pivotX": 56,
-          "pivotY": 140,
+          "pivotX": 48,
+          "pivotY": 128,
           "bounds": {
-            "x": 1,
-            "y": 28,
-            "w": 79,
-            "h": 112
+            "x": 4,
+            "y": 3,
+            "w": 88,
+            "h": 125
           },
-          "sha256": "91c0569ec087b5d74040d32b61b6aa8093c0f6f6f7aee50ee2208721f7255cce",
+          "sha256": "9b0ba075c835aede6b3b9e342cd2d6fc5bede3a7a9cccde09aaf46a9469c1b77",
           "sourceRect": {
             "x": 432,
             "y": 45,
@@ -1562,17 +1566,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-03.png",
-          "width": 112,
+          "width": 96,
           "height": 144,
-          "pivotX": 56,
-          "pivotY": 140,
+          "pivotX": 48,
+          "pivotY": 128,
           "bounds": {
-            "x": 1,
-            "y": 28,
-            "w": 79,
-            "h": 112
+            "x": 4,
+            "y": 3,
+            "w": 88,
+            "h": 125
           },
-          "sha256": "8a14033b5062e41cf4acc285b10bad4baae5b9c2e59b32f241226bfd1921f06a",
+          "sha256": "ee80d7ad283e838b4add10352103d2ea65a17f4fafaddfa57ab3ba7086251871",
           "sourceRect": {
             "x": 816,
             "y": 45,
@@ -1582,17 +1586,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-04.png",
-          "width": 112,
+          "width": 96,
           "height": 144,
-          "pivotX": 56,
-          "pivotY": 140,
+          "pivotX": 48,
+          "pivotY": 128,
           "bounds": {
-            "x": 1,
-            "y": 28,
-            "w": 79,
-            "h": 112
+            "x": 4,
+            "y": 3,
+            "w": 88,
+            "h": 125
           },
-          "sha256": "008bcafb808dba61f3e539c4db445fafb68b15d938897e665ea6144954a1d964",
+          "sha256": "a019f1bc432b80ed69e6b9963f27c77dead931bec815c5b5336b56fdf0b34dfe",
           "sourceRect": {
             "x": 1200,
             "y": 45,
@@ -1602,17 +1606,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-05.png",
-          "width": 112,
+          "width": 96,
           "height": 144,
-          "pivotX": 56,
-          "pivotY": 140,
+          "pivotX": 48,
+          "pivotY": 128,
           "bounds": {
-            "x": 3,
-            "y": 29,
-            "w": 77,
-            "h": 111
+            "x": 5,
+            "y": 4,
+            "w": 86,
+            "h": 124
           },
-          "sha256": "191a6eba330992d81fce9a5b7d193688bb5d90aadba549569eb0471ce78ca0c3",
+          "sha256": "c6b9b7de10c98e5d5a95812e8402159402bde45888b5ebc4185f43d614a5ab06",
           "sourceRect": {
             "x": 53,
             "y": 542,
@@ -1622,17 +1626,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-06.png",
-          "width": 112,
+          "width": 96,
           "height": 144,
-          "pivotX": 56,
-          "pivotY": 140,
+          "pivotX": 48,
+          "pivotY": 128,
           "bounds": {
-            "x": 3,
-            "y": 29,
-            "w": 76,
-            "h": 111
+            "x": 5,
+            "y": 4,
+            "w": 86,
+            "h": 124
           },
-          "sha256": "0a0fdb84a0ee1d61518057752bfc74aa31d82c60e2edde994c270ad7a2ca050e",
+          "sha256": "eb20e0342ce385b49c93587eaf3f40aa74a066f62e8b8ca4c2a4aac66d727f0f",
           "sourceRect": {
             "x": 438,
             "y": 542,
@@ -1642,17 +1646,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-07.png",
-          "width": 112,
+          "width": 96,
           "height": 144,
-          "pivotX": 56,
-          "pivotY": 140,
+          "pivotX": 48,
+          "pivotY": 128,
           "bounds": {
-            "x": 3,
-            "y": 29,
-            "w": 76,
-            "h": 111
+            "x": 5,
+            "y": 4,
+            "w": 86,
+            "h": 124
           },
-          "sha256": "87587b61aa99e644ffb80525c53c84a2470f1f8e1a493ca6a6fc75ca783932f6",
+          "sha256": "7416b133e02181c8a406acfe8dadab8789c41d8d2fed527d5e7ea50ce367d9cc",
           "sourceRect": {
             "x": 822,
             "y": 542,
@@ -1662,17 +1666,17 @@
         },
         {
           "file": "native-crop-complete/decor-flow-hw_monster_bookcase/frame-08.png",
-          "width": 112,
+          "width": 96,
           "height": 144,
-          "pivotX": 56,
-          "pivotY": 140,
+          "pivotX": 48,
+          "pivotY": 128,
           "bounds": {
-            "x": 3,
-            "y": 29,
-            "w": 76,
-            "h": 111
+            "x": 5,
+            "y": 4,
+            "w": 86,
+            "h": 124
           },
-          "sha256": "d5ff73e658616dd94140c74760b653e8d8e4e86036a46190d6c2b6162d88061e",
+          "sha256": "9324bdfbffd16b3d20c09d5e8c1d67f01aba712166da8cb5c0e5bad914d8988c",
           "sourceRect": {
             "x": 1206,
             "y": 542,
@@ -1683,159 +1687,159 @@
       ],
       "atlas": {
         "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-        "sha256": "816e2583a94379f8d3a52ec0e81f34266302c4f001a62d29eab67ed0d68707db",
-        "width": 448,
+        "sha256": "990ab6db2f79b4ceec3e67bbe12ec51f75b865c95c6d66077cab5b3680faa487",
+        "width": 384,
         "height": 288,
         "frames": [
           {
             "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-            "width": 112,
+            "width": 96,
             "height": 144,
-            "pivotX": 56,
-            "pivotY": 140,
+            "pivotX": 48,
+            "pivotY": 128,
             "bounds": {
-              "x": 1,
-              "y": 28,
-              "w": 79,
-              "h": 112
+              "x": 4,
+              "y": 3,
+              "w": 88,
+              "h": 125
             },
             "atlasRect": {
               "x": 0,
               "y": 0,
-              "w": 112,
+              "w": 96,
               "h": 144
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-            "width": 112,
+            "width": 96,
             "height": 144,
-            "pivotX": 56,
-            "pivotY": 140,
+            "pivotX": 48,
+            "pivotY": 128,
             "bounds": {
-              "x": 1,
-              "y": 28,
-              "w": 79,
-              "h": 112
+              "x": 4,
+              "y": 3,
+              "w": 88,
+              "h": 125
             },
             "atlasRect": {
-              "x": 112,
+              "x": 96,
               "y": 0,
-              "w": 112,
+              "w": 96,
               "h": 144
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-            "width": 112,
+            "width": 96,
             "height": 144,
-            "pivotX": 56,
-            "pivotY": 140,
+            "pivotX": 48,
+            "pivotY": 128,
             "bounds": {
-              "x": 1,
-              "y": 28,
-              "w": 79,
-              "h": 112
+              "x": 4,
+              "y": 3,
+              "w": 88,
+              "h": 125
             },
             "atlasRect": {
-              "x": 224,
+              "x": 192,
               "y": 0,
-              "w": 112,
+              "w": 96,
               "h": 144
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-            "width": 112,
+            "width": 96,
             "height": 144,
-            "pivotX": 56,
-            "pivotY": 140,
+            "pivotX": 48,
+            "pivotY": 128,
             "bounds": {
-              "x": 1,
-              "y": 28,
-              "w": 79,
-              "h": 112
+              "x": 4,
+              "y": 3,
+              "w": 88,
+              "h": 125
             },
             "atlasRect": {
-              "x": 336,
+              "x": 288,
               "y": 0,
-              "w": 112,
+              "w": 96,
               "h": 144
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-            "width": 112,
+            "width": 96,
             "height": 144,
-            "pivotX": 56,
-            "pivotY": 140,
+            "pivotX": 48,
+            "pivotY": 128,
             "bounds": {
-              "x": 3,
-              "y": 29,
-              "w": 77,
-              "h": 111
+              "x": 5,
+              "y": 4,
+              "w": 86,
+              "h": 124
             },
             "atlasRect": {
               "x": 0,
               "y": 144,
-              "w": 112,
+              "w": 96,
               "h": 144
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-            "width": 112,
+            "width": 96,
             "height": 144,
-            "pivotX": 56,
-            "pivotY": 140,
+            "pivotX": 48,
+            "pivotY": 128,
             "bounds": {
-              "x": 3,
-              "y": 29,
-              "w": 76,
-              "h": 111
+              "x": 5,
+              "y": 4,
+              "w": 86,
+              "h": 124
             },
             "atlasRect": {
-              "x": 112,
+              "x": 96,
               "y": 144,
-              "w": 112,
+              "w": 96,
               "h": 144
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-            "width": 112,
+            "width": 96,
             "height": 144,
-            "pivotX": 56,
-            "pivotY": 140,
+            "pivotX": 48,
+            "pivotY": 128,
             "bounds": {
-              "x": 3,
-              "y": 29,
-              "w": 76,
-              "h": 111
+              "x": 5,
+              "y": 4,
+              "w": 86,
+              "h": 124
             },
             "atlasRect": {
-              "x": 224,
+              "x": 192,
               "y": 144,
-              "w": 112,
+              "w": 96,
               "h": 144
             }
           },
           {
             "file": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-            "width": 112,
+            "width": 96,
             "height": 144,
-            "pivotX": 56,
-            "pivotY": 140,
+            "pivotX": 48,
+            "pivotY": 128,
             "bounds": {
-              "x": 3,
-              "y": 29,
-              "w": 76,
-              "h": 111
+              "x": 5,
+              "y": 4,
+              "w": 86,
+              "h": 124
             },
             "atlasRect": {
-              "x": 336,
+              "x": 288,
               "y": 144,
-              "w": 112,
+              "w": 96,
               "h": 144
             }
           }
@@ -1844,8 +1848,8 @@
       "thumbnails": {
         "file": "decor-assets/native/flow-hw_monster_bookcase.png",
         "rightFile": "decor-assets/native/flow-hw_monster_bookcase_right.png",
-        "sha256": "3673da9d72d6e2f309cd3094e0c3695a084d902776801b9d997fdc792a3bfc1a",
-        "rightSha256": "191a6eba330992d81fce9a5b7d193688bb5d90aadba549569eb0471ce78ca0c3"
+        "sha256": "42ca27036a6964ec881494bfb02580dd335c70ada0dd630746fed4de04bace08",
+        "rightSha256": "c6b9b7de10c98e5d5a95812e8402159402bde45888b5ebc4185f43d614a5ab06"
       },
       "runtime": {
         "id": "hw_monster_bookcase",
@@ -1873,25 +1877,25 @@
           {
             "x": 0,
             "y": 0,
-            "w": 112,
+            "w": 96,
             "h": 144
           },
           {
-            "x": 112,
+            "x": 96,
             "y": 0,
-            "w": 112,
+            "w": 96,
             "h": 144
           },
           {
-            "x": 224,
+            "x": 192,
             "y": 0,
-            "w": 112,
+            "w": 96,
             "h": 144
           },
           {
-            "x": 336,
+            "x": 288,
             "y": 0,
-            "w": 112,
+            "w": 96,
             "h": 144
           }
         ],
@@ -1899,25 +1903,25 @@
           {
             "x": 0,
             "y": 144,
-            "w": 112,
+            "w": 96,
             "h": 144
           },
           {
-            "x": 112,
+            "x": 96,
             "y": 144,
-            "w": 112,
+            "w": 96,
             "h": 144
           },
           {
-            "x": 224,
+            "x": 192,
             "y": 144,
-            "w": 112,
+            "w": 96,
             "h": 144
           },
           {
-            "x": 336,
+            "x": 288,
             "y": 144,
-            "w": 112,
+            "w": 96,
             "h": 144
           }
         ],
@@ -1931,21 +1935,21 @@
           "default",
           "right"
         ],
-        "width": 112,
+        "width": 96,
         "height": 144,
-        "pivotX": 56,
-        "pivotY": 140,
+        "pivotX": 48,
+        "pivotY": 128,
         "bounds": {
-          "x": 1,
-          "y": 28,
-          "w": 79,
-          "h": 112
+          "x": 4,
+          "y": 3,
+          "w": 88,
+          "h": 125
         },
         "rightBounds": {
-          "x": 3,
-          "y": 29,
-          "w": 77,
-          "h": 111
+          "x": 5,
+          "y": 4,
+          "w": 86,
+          "h": 124
         },
         "footprintTiles": [
           2,

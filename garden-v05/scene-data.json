@@ -602,10 +602,10 @@
     {
       "id": "pond",
       "file": "environment/layers/pond.png",
-      "width": 176,
-      "height": 112,
-      "pivotX": 88,
-      "pivotY": 112,
+      "width": 160,
+      "height": 100,
+      "pivotX": 80,
+      "pivotY": 99,
       "source": "environment/props-v03.png",
       "sourceRect": [
         880,

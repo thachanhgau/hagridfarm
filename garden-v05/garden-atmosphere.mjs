@@ -120,7 +120,7 @@ export function collectLightSources(objects = []) {
     } else if (obj.kind === 'asset' && obj.type === 'prop' && obj.id === 'hut') {
       lights.push({ id: 'hut', x: x - 8, y: y - 54, radius: 92, color: [255, 194, 102] });
     } else if (obj.kind === 'festival') {
-      const spec = obj.hero ? (obj.id === 'hero-yule' ? {radius:110,offsetY:-82,color:[255,207,126]} : obj.id === 'hero-halloween' ? {radius:95,offsetY:-35,color:[255,167,84]} : null) : STORE_DECOR_LIGHTS[obj.asset?.id];
+      const spec = obj.hero ? (obj.id === 'hero-yule' ? {radius:94,offsetY:-70,color:[255,207,126]} : obj.id === 'hero-halloween' ? {radius:64,offsetY:-23,color:[255,167,84]} : null) : STORE_DECOR_LIGHTS[obj.asset?.id];
       if (spec) lights.push({id:obj.id,x,y:y+spec.offsetY,radius:spec.radius,color:spec.color});
     } else if (obj.kind === 'store-decor') {
       const spec = STORE_DECOR_LIGHTS[obj.id];

@@ -61,7 +61,7 @@ export function weatherizeCanvas(canvas,kind,weather){
 }
 export function worldPhase(clock=0,period=1680){return clock>0?Math.floor(clock/(period/4))%4:0;}
 export const FESTIVAL_HEROES=Object.freeze({
- event_yule:{id:'hero-yule',file:'world-v241/hero-yule.png',width:141,height:210,pivotX:70,pivotY:209},
+ event_yule:{id:'hero-yule',file:'world-v241/hero-yule.png',width:128,height:183,pivotX:64,pivotY:180},
  event_halloween:{id:'hero-halloween',file:'world-v241/hero-halloween.png',width:128,height:80,pivotX:64,pivotY:77},
  event_herbology_fair:{id:'hero-herbology',file:'world-v241/hero-herbology.png',width:132,height:155,pivotX:66,pivotY:154},
 });

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "e9e95d468847",
+  "revision": "3aec8aba7adb",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -5614,12 +5614,12 @@
     {
       "source": "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
       "file": "runtime-webp/native-crop-complete/decor-flow-hw_blinking_chest/atlas.webp",
-      "width": 448,
-      "height": 192,
-      "sourceBytes": 17420,
-      "bytes": 11472,
-      "sourceSha256": "f4ab7059778b7ea5454ef98393fb356dd37cb8e20d84d2e27e83cfba559055a5",
-      "sha256": "8eda13ec2b0a9754b8ff72e51a981e06df1f074a24bbb5d5d92e690c59fd80ec"
+      "width": 384,
+      "height": 224,
+      "sourceBytes": 16322,
+      "bytes": 10548,
+      "sourceSha256": "d16d7e8e93124c3071439fbcdf09856451976fa00d66c9c7fc5de52cb8e1d869",
+      "sha256": "a2300ae97b0a80df6aef5921ca85b524ae82c08f4594ae904416399bb66f64f2"
     },
     {
       "source": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
@@ -5644,12 +5644,12 @@
     {
       "source": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
       "file": "runtime-webp/native-crop-complete/decor-flow-hw_monster_bookcase/atlas.webp",
-      "width": 448,
+      "width": 384,
       "height": 288,
-      "sourceBytes": 20945,
-      "bytes": 13202,
-      "sourceSha256": "816e2583a94379f8d3a52ec0e81f34266302c4f001a62d29eab67ed0d68707db",
-      "sha256": "194bb0ef1331fd34b3aab90c994363f8c094c60becc36063300fcce5c3257b66"
+      "sourceBytes": 23930,
+      "bytes": 15230,
+      "sourceSha256": "990ab6db2f79b4ceec3e67bbe12ec51f75b865c95c6d66077cab5b3680faa487",
+      "sha256": "689b4bc98bec185d26a84af0077786a1ed82ec1174c3a366e8e58558935a576c"
     },
     {
       "source": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
@@ -6734,22 +6734,22 @@
     {
       "source": "decor-assets/native/flow-hw_blinking_chest_right.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_blinking_chest_right.webp",
-      "width": 112,
-      "height": 96,
-      "sourceBytes": 2700,
-      "bytes": 1734,
-      "sourceSha256": "bbbe5b08d7f6a8b9a4aebc16fee2a9a6e4a1e69b0b533bde7fbeaf9a817ba20d",
-      "sha256": "eb91376bb32e1e52b8140a03b055a5cf32f795625a338dcc96cef5bf22f40afc"
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 2572,
+      "bytes": 1646,
+      "sourceSha256": "f771c4a23252241b1f83dd00cf200f6cd7503c158450a1460000971ba9907037",
+      "sha256": "639cd3b51cecf481bc2ca9bc14fb983802dcadd3ca91733df489739807c9e990"
     },
     {
       "source": "decor-assets/native/flow-hw_blinking_chest.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_blinking_chest.webp",
-      "width": 112,
-      "height": 96,
-      "sourceBytes": 2683,
-      "bytes": 1736,
-      "sourceSha256": "edf6eb9055c1929e767fa78aa9468d5f5c8fa3544f6044a3899269d263aa2d52",
-      "sha256": "6aa7520cd32c4fe1fc57999beef365f78ee3482c4c19e5adb796d526fc51d038"
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 2513,
+      "bytes": 1606,
+      "sourceSha256": "e51d3d6c617bc89c416b6471d285f4870d0e87b7f6738537c7eb0b79c78edfdc",
+      "sha256": "390087c72937eaed9c213ccabb29e82ccb3a184288c0a773544ae78d0055d922"
     },
     {
       "source": "decor-assets/native/flow-hw_candy_cauldron_right.png",
@@ -6794,22 +6794,22 @@
     {
       "source": "decor-assets/native/flow-hw_monster_bookcase_right.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_monster_bookcase_right.webp",
-      "width": 112,
+      "width": 96,
       "height": 144,
-      "sourceBytes": 3334,
-      "bytes": 2066,
-      "sourceSha256": "191a6eba330992d81fce9a5b7d193688bb5d90aadba549569eb0471ce78ca0c3",
-      "sha256": "16f5a0a3fe44009a706e1e6afe06df48da0dbf946cef255dcb34b145ea3b3c23"
+      "sourceBytes": 3787,
+      "bytes": 2400,
+      "sourceSha256": "c6b9b7de10c98e5d5a95812e8402159402bde45888b5ebc4185f43d614a5ab06",
+      "sha256": "0014b2a37eed4ea703baa79b06052e9155f52388d85661b8738b58790d232f70"
     },
     {
       "source": "decor-assets/native/flow-hw_monster_bookcase.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_monster_bookcase.webp",
-      "width": 112,
+      "width": 96,
       "height": 144,
-      "sourceBytes": 3474,
-      "bytes": 2122,
-      "sourceSha256": "3673da9d72d6e2f309cd3094e0c3695a084d902776801b9d997fdc792a3bfc1a",
-      "sha256": "1cfb43f186d12fa1b57ea6d50e3a3b04491a2af6fe90411d78da6a3791e8924d"
+      "sourceBytes": 3936,
+      "bytes": 2466,
+      "sourceSha256": "42ca27036a6964ec881494bfb02580dd335c70ada0dd630746fed4de04bace08",
+      "sha256": "f9c1b7e585e8b01f6330608316105f634b10dd2fbf3a289a0e015b979e1cb36f"
     },
     {
       "source": "decor-assets/native/flow-hw_violet_mist_pond_right.png",
@@ -11154,12 +11154,12 @@
     {
       "source": "environment/layers/pond.png",
       "file": "runtime-webp/environment/layers/pond.webp",
-      "width": 176,
-      "height": 112,
-      "sourceBytes": 7278,
-      "bytes": 4886,
-      "sourceSha256": "6aa595a2a5545216b9286a17a2a3e2ac8d5f11a50e8d130814f85d8756e58f4a",
-      "sha256": "5e1bc41eb347a693837c9d559dde0c792c43413169ae85c65aaa6e5fa153ebe1"
+      "width": 160,
+      "height": 100,
+      "sourceBytes": 5892,
+      "bytes": 3968,
+      "sourceSha256": "49f942549768d82f3cb558a1addb24e8149e82b9915b7b45203d0bccf9d0f5fe",
+      "sha256": "4e370e5b2dbb09bcd5618bf280b436b28e98b5c2ce41a8e8af2813249126e7c8"
     },
     {
       "source": "environment/layers/tile-grass.png",
@@ -11204,12 +11204,12 @@
     {
       "source": "world-v241/hero-yule.png",
       "file": "runtime-webp/world-v241/hero-yule.webp",
-      "width": 141,
-      "height": 210,
-      "sourceBytes": 60283,
-      "bytes": 47504,
-      "sourceSha256": "50c1b43384259b25eeebd6f0152ee6431095b629f4ce3ced91ad365b4470879c",
-      "sha256": "46ad8ba2163effd310fb9ffa8975afff4c45624aafb4a587c5d44167b00cf656"
+      "width": 128,
+      "height": 183,
+      "sourceBytes": 44236,
+      "bytes": 36814,
+      "sourceSha256": "d88ffe03f146ed2f02b8c759fa1f13fdea933f96ba15bbea713d1ea3dad59f22",
+      "sha256": "5345793d3f6334ef1374635199008904ea0c944d8bb9ed574638ba7dc0c5ac4d"
     },
     {
       "source": "world-v242/cottage-corner.png",
@@ -11267,9 +11267,9 @@
   "totals": {
     "converted": 1120,
     "existingWebp": 8,
-    "originalBytes": 4946854,
-    "webpBytes": 3350452,
-    "savedBytes": 1596402,
+    "originalBytes": 4931925,
+    "webpBytes": 3340408,
+    "savedBytes": 1591517,
     "savedPercent": 32.27
   }
 }
