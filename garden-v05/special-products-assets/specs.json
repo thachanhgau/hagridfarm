@@ -417,8 +417,8 @@
       "label": "Cánh cửa Phòng Chứa Bí Mật",
       "group": "Hắc thuật và bí mật",
       "subject": "Solid stone wall with exactly two entwined serpents and emerald eyes; two wall halves with central seam. Freestanding stone monument adaptation.",
-      "w": 192,
-      "h": 208,
+      "w": 128,
+      "h": 128,
       "foot": [
         3,
         1
@@ -429,7 +429,11 @@
       "term": "door",
       "lore": "Vách đá có hai con rắn quấn nhau, mắt bằng ngọc lục bảo, mở bằng Xà Ngữ.",
       "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
-      "revision": 2
+      "revision": 2,
+      "inkMax": [
+        120,
+        107
+      ]
     },
     {
       "id": "sp_department_veil",
@@ -476,8 +480,8 @@
       "label": "Bánh ngày giỗ Nick Suýt Mất Đầu",
       "group": "Halloween Hogwarts",
       "subject": "A miniature decoration inspired by Nearly Headless Nick's 500th Deathday party: a large grey tombstone-shaped CAKE on an old silver platter atop a small dark wooden buffet table, exactly five tall black candles with small blue-violet flames, a few crumbs. Cake has NO writing or numbers, no rotting food, no corpse, no ghost figure.",
-      "w": 128,
-      "h": 144,
+      "w": 96,
+      "h": 128,
       "foot": [
         2,
         1
@@ -487,15 +491,19 @@
       "chapter": 8,
       "term": "cake",
       "lore": "Bánh hình bia mộ trong bữa tiệc ngày giỗ lần thứ 500 của Nick.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        88,
+        105
+      ]
     },
     {
       "id": "sp_marauders_map",
       "label": "Bản đồ của Đạo tặc",
       "group": "Hành trình phép thuật",
       "subject": "The Marauder's Map spread open and partly folded on a small dark wooden map display table: aged parchment with tiny dark line floorplans of Hogwarts, staircase-like paths and a few tiny ink FOOTPRINT pairs; no words, no names, no readable labels. Copper corner clips and a quill. Map remains clearly the centerpiece.",
-      "w": 128,
-      "h": 112,
+      "w": 96,
+      "h": 96,
       "foot": [
         2,
         1
@@ -505,7 +513,11 @@
       "chapter": 10,
       "term": "map",
       "lore": "Fred và George trao cho Harry bản đồ các lối đi bí mật Hogwarts.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Dấu chân và nét bản đồ là ký hiệu minh họa trong sprite."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế. Dấu chân và nét bản đồ là ký hiệu minh họa trong sprite.",
+      "inkMax": [
+        88,
+        69
+      ]
     },
     {
       "id": "sp_time_turner",
@@ -548,8 +560,8 @@
       "label": "Snitch giữ Hòn Đá Phục Sinh",
       "group": "Hành trình phép thuật",
       "subject": "The golden Snitch containing the Resurrection Stone: a small round gold ball with two delicate long silver wings, split slightly open to reveal a small cracked black stone within, resting on a simple low dark timber display mount. No text or inscription, no other balls, no human hands. Wings intact and symmetric.",
-      "w": 128,
-      "h": 104,
+      "w": 96,
+      "h": 80,
       "foot": [
         2,
         1
@@ -559,7 +571,11 @@
       "chapter": 34,
       "term": "Snitch",
       "lore": "Harry mở quả Snitch trước khi đi vào Rừng Cấm.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        88,
+        58
+      ]
     },
     {
       "id": "sp_sword_gryffindor",

@@ -1782,24 +1782,24 @@
         "decor-assets/native/sp_chamber_serpent_door_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 4,
-        "w": 186,
-        "h": 200
+        "x": 18,
+        "y": 5,
+        "w": 92,
+        "h": 107
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 192,
-      "height": 208,
-      "pivotX": 96,
-      "pivotY": 204,
+      "width": 128,
+      "height": 128,
+      "pivotX": 64,
+      "pivotY": 112,
       "bounds": {
-        "x": 3,
-        "y": 38,
-        "w": 186,
-        "h": 166
+        "x": 9,
+        "y": 5,
+        "w": 110,
+        "h": 107
       },
       "footprintTiles": [
         3,
@@ -1812,7 +1812,7 @@
         "chapter": 16
       },
       "lore": "Vách đá có hai con rắn quấn nhau, mắt bằng ngọc lục bảo, mở bằng Xà Ngữ.",
-      "nativeSha256": "57c323fbad2ccd9ae91eeae8c1a01be74cd3cd5bc907f65bb56b8d918266d75b"
+      "nativeSha256": "888a34536cf0bdf56f82a33437204fd85d6b8684016a283b9aeef946aa4ec360"
     },
     {
       "id": "sp_department_veil",
@@ -1965,24 +1965,24 @@
         "decor-assets/native/sp_deathday_cake_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
+        "x": 11,
         "y": 7,
-        "w": 122,
-        "h": 133
+        "w": 74,
+        "h": 105
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 128,
-      "height": 144,
-      "pivotX": 64,
-      "pivotY": 140,
+      "width": 96,
+      "height": 128,
+      "pivotX": 48,
+      "pivotY": 112,
       "bounds": {
         "x": 6,
-        "y": 2,
-        "w": 116,
-        "h": 138
+        "y": 7,
+        "w": 85,
+        "h": 105
       },
       "footprintTiles": [
         2,
@@ -1995,7 +1995,7 @@
         "chapter": 8
       },
       "lore": "Bánh hình bia mộ trong bữa tiệc ngày giỗ lần thứ 500 của Nick.",
-      "nativeSha256": "38f2b14e032fe5a942622a176a00c71a7fecbf027ca16f29f0f8c1f3b5e3f7c6"
+      "nativeSha256": "5b6de14ed17e19e31eca9ad816b88df92ecfc609a73b28d8ae88028372e755b0"
     },
     {
       "id": "sp_marauders_map",
@@ -2026,24 +2026,24 @@
         "decor-assets/native/sp_marauders_map_right_f3.png"
       ],
       "rightBounds": {
-        "x": 18,
-        "y": 19,
-        "w": 107,
-        "h": 89
+        "x": 9,
+        "y": 11,
+        "w": 79,
+        "h": 69
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 128,
-      "height": 112,
-      "pivotX": 64,
-      "pivotY": 108,
+      "width": 96,
+      "height": 96,
+      "pivotX": 48,
+      "pivotY": 80,
       "bounds": {
-        "x": 3,
-        "y": 12,
-        "w": 122,
-        "h": 96
+        "x": 4,
+        "y": 21,
+        "w": 88,
+        "h": 59
       },
       "footprintTiles": [
         2,
@@ -2056,7 +2056,7 @@
         "chapter": 10
       },
       "lore": "Fred và George trao cho Harry bản đồ các lối đi bí mật Hogwarts.",
-      "nativeSha256": "0196a1973c15516e33617a14877688ef2f01f1e226293b87e8d1768111559c1e"
+      "nativeSha256": "f4780570f2cbbe4493127580688cb524ddecf531ec78ce0946e15f441a5aacd4"
     },
     {
       "id": "sp_time_turner",
@@ -2209,24 +2209,24 @@
         "decor-assets/native/sp_snitch_resurrection_stone_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 4,
-        "w": 122,
-        "h": 96
+        "x": 14,
+        "y": 6,
+        "w": 69,
+        "h": 58
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 128,
-      "height": 104,
-      "pivotX": 64,
-      "pivotY": 100,
+      "width": 96,
+      "height": 80,
+      "pivotX": 48,
+      "pivotY": 64,
       "bounds": {
-        "x": 3,
-        "y": 19,
-        "w": 122,
-        "h": 81
+        "x": 8,
+        "y": 6,
+        "w": 81,
+        "h": 58
       },
       "footprintTiles": [
         2,
@@ -2239,7 +2239,7 @@
         "chapter": 34
       },
       "lore": "Harry mở quả Snitch trước khi đi vào Rừng Cấm.",
-      "nativeSha256": "443b9da40b823f2917fbc0de86cc9e3fc110bea8cc017210f00084037317c442"
+      "nativeSha256": "63c34907272dc2fe915c334b0babae73977ee8566817d5f659dab91a7b7adb85"
     },
     {
       "id": "sp_sword_gryffindor",
@@ -2885,52 +2885,52 @@
         {
           "x": 0,
           "y": 0,
-          "w": 80,
-          "h": 104
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 80,
+          "x": 64,
           "y": 0,
-          "w": 80,
-          "h": 104
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 160,
+          "x": 128,
           "y": 0,
-          "w": 80,
-          "h": 104
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 240,
+          "x": 192,
           "y": 0,
-          "w": 80,
-          "h": 104
+          "w": 64,
+          "h": 112
         }
       ],
       "rightAtlasRects": [
         {
           "x": 0,
-          "y": 104,
-          "w": 80,
-          "h": 104
+          "y": 112,
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 80,
-          "y": 104,
-          "w": 80,
-          "h": 104
+          "x": 64,
+          "y": 112,
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 160,
-          "y": 104,
-          "w": 80,
-          "h": 104
+          "x": 128,
+          "y": 112,
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 240,
-          "y": 104,
-          "w": 80,
-          "h": 104
+          "x": 192,
+          "y": 112,
+          "w": 64,
+          "h": 112
         }
       ],
       "durations": [
@@ -2943,21 +2943,21 @@
         "default",
         "right"
       ],
-      "width": 80,
-      "height": 104,
-      "pivotX": 40,
-      "pivotY": 100,
+      "width": 64,
+      "height": 112,
+      "pivotX": 32,
+      "pivotY": 96,
       "bounds": {
-        "x": 6,
-        "y": 2,
-        "w": 68,
-        "h": 98
+        "x": 10,
+        "y": 28,
+        "w": 44,
+        "h": 68
       },
       "rightBounds": {
-        "x": 5,
-        "y": 2,
-        "w": 70,
-        "h": 98
+        "x": 10,
+        "y": 27,
+        "w": 44,
+        "h": 69
       },
       "footprintTiles": [
         1,
@@ -2965,7 +2965,7 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "011f100f884358a2549f9b9d10525ee16e6946bbb2c1aededc41f3b25f0a7159"
+      "nativeSha256": "a2b8f607166aeb852c11df046b8299f747b74fc0c60d7d61d2e2d3cdf9e0b06c"
     },
     {
       "id": "hw_haunted_house_lantern",
@@ -3209,52 +3209,52 @@
         {
           "x": 0,
           "y": 0,
-          "w": 144,
-          "h": 112
+          "w": 96,
+          "h": 80
         },
         {
-          "x": 144,
+          "x": 96,
           "y": 0,
-          "w": 144,
-          "h": 112
+          "w": 96,
+          "h": 80
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 80
         },
         {
           "x": 288,
           "y": 0,
-          "w": 144,
-          "h": 112
-        },
-        {
-          "x": 432,
-          "y": 0,
-          "w": 144,
-          "h": 112
+          "w": 96,
+          "h": 80
         }
       ],
       "rightAtlasRects": [
         {
           "x": 0,
-          "y": 112,
-          "w": 144,
-          "h": 112
+          "y": 80,
+          "w": 96,
+          "h": 80
         },
         {
-          "x": 144,
-          "y": 112,
-          "w": 144,
-          "h": 112
+          "x": 96,
+          "y": 80,
+          "w": 96,
+          "h": 80
+        },
+        {
+          "x": 192,
+          "y": 80,
+          "w": 96,
+          "h": 80
         },
         {
           "x": 288,
-          "y": 112,
-          "w": 144,
-          "h": 112
-        },
-        {
-          "x": 432,
-          "y": 112,
-          "w": 144,
-          "h": 112
+          "y": 80,
+          "w": 96,
+          "h": 80
         }
       ],
       "durations": [
@@ -3267,21 +3267,21 @@
         "default",
         "right"
       ],
-      "width": 144,
-      "height": 112,
-      "pivotX": 72,
-      "pivotY": 108,
+      "width": 96,
+      "height": 80,
+      "pivotX": 48,
+      "pivotY": 64,
       "bounds": {
-        "x": 3,
-        "y": 17,
-        "w": 138,
-        "h": 91
+        "x": 9,
+        "y": 6,
+        "w": 78,
+        "h": 58
       },
       "rightBounds": {
-        "x": 15,
-        "y": 2,
-        "w": 114,
-        "h": 106
+        "x": 12,
+        "y": 6,
+        "w": 72,
+        "h": 58
       },
       "footprintTiles": [
         2,
@@ -3289,7 +3289,7 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "aa4787645ed95008305ea1da73ccfa0e638d9d53d7d407b99585b1eb32722b21"
+      "nativeSha256": "367663aed986d1d0b8f94241cb6c3375839be7e1a2e5eaceb62ea665819b17e6"
     },
     {
       "id": "hw_soul_bottle",

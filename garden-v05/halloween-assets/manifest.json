@@ -923,15 +923,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 19,
-              "y": 48,
-              "w": 5,
+              "x": 35,
+              "y": 63,
+              "w": 2,
               "h": 4
             },
-            "pixelCount": 13,
-            "mappableCount": 13,
-            "maxPixels": 416,
-            "rootBand": 78
+            "pixelCount": 5,
+            "mappableCount": 5,
+            "maxPixels": 204,
+            "rootBand": 84
           }
         },
         "alternate": {
@@ -940,15 +940,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 52,
-              "y": 46,
-              "w": 5,
-              "h": 7
+              "x": 43,
+              "y": 58,
+              "w": 2,
+              "h": 3
             },
-            "pixelCount": 14,
-            "mappableCount": 14,
-            "maxPixels": 426,
-            "rootBand": 78
+            "pixelCount": 5,
+            "mappableCount": 5,
+            "maxPixels": 205,
+            "rootBand": 84
           }
         }
       },
@@ -981,11 +981,11 @@
         1,
         1
       ],
-      "width": 80,
-      "height": 104,
+      "width": 64,
+      "height": 112,
       "pivot": {
-        "x": 40,
-        "y": 100
+        "x": 32,
+        "y": 96
       },
       "defaultFile": "native/hw_skull_lantern.png",
       "rightFile": "native/hw_skull_lantern_right.png",
@@ -1019,23 +1019,23 @@
         260
       ],
       "source": "masters/hw_skull_lantern.png",
-      "sourceSha256": "5083c174674621cecee5fa61c646e99ef15c560c2e1003e459ccdec36ec6769d",
+      "sourceSha256": "dc54884e15485683df1e8a62cb0b3567e498b5a352b33bf157ab731f530d8913",
       "pngSha256": {
-        "native/hw_skull_lantern.png": "011f100f884358a2549f9b9d10525ee16e6946bbb2c1aededc41f3b25f0a7159",
-        "native/hw_skull_lantern_right.png": "3c6ce50611e9536c00b9ad9198ccb93558c3652260c62a17e40b040f370df0ff",
-        "native/hw_skull_lantern_f0.png": "011f100f884358a2549f9b9d10525ee16e6946bbb2c1aededc41f3b25f0a7159",
-        "native/hw_skull_lantern_f1.png": "dbd9c74df1ed630af5c372aada35a1357bdb4324071d316572d9db1eb503ce5a",
-        "native/hw_skull_lantern_f2.png": "0c8ceaa07f96ed5b4fd05395da913c3f37f4f1de40825acaca44af281ca88457",
-        "native/hw_skull_lantern_f3.png": "011f100f884358a2549f9b9d10525ee16e6946bbb2c1aededc41f3b25f0a7159",
-        "native/hw_skull_lantern_right_f0.png": "3c6ce50611e9536c00b9ad9198ccb93558c3652260c62a17e40b040f370df0ff",
-        "native/hw_skull_lantern_right_f1.png": "101c26f9804a23a967cd7a0842c8bd4f91a9b8bcb1cc83df9e9e9cf22a99f718",
-        "native/hw_skull_lantern_right_f2.png": "dfd73f8e5d729c6ec3dc0e35b28ebf9dbb3718fdb8a2c68a99f38ff5721be8ce",
-        "native/hw_skull_lantern_right_f3.png": "3c6ce50611e9536c00b9ad9198ccb93558c3652260c62a17e40b040f370df0ff",
-        "spritesheets/hw_skull_lantern.png": "dbefa33bc4cdf2a6f216ec3ff88d871fa9bc6f29210609dcd600a1a10b28bdd6",
-        "thumbnails/2x/hw_skull_lantern.png": "3e6f4eb3906b9eb7e3431e8a51f640507b2bc03042c7e1f82f101124908074c9",
-        "thumbnails/2x/hw_skull_lantern_right.png": "05039c1007d3f06a1edce454f700b60659a30070c02e94d2086819b966313b55",
-        "thumbnails/3x/hw_skull_lantern.png": "cf45705f8cfe859389e6360afd8aa9297808dc2ca53e02a09189db7da83cdbdb",
-        "thumbnails/3x/hw_skull_lantern_right.png": "f6c58a31749f423eca5e958683c77866062825a5d29c936012fa3e6b9c600d48"
+        "native/hw_skull_lantern.png": "a2b8f607166aeb852c11df046b8299f747b74fc0c60d7d61d2e2d3cdf9e0b06c",
+        "native/hw_skull_lantern_right.png": "efda9e20fdba5e645e96e3c70fed5d4851d45a3daa9b07bd4e083164f748676a",
+        "native/hw_skull_lantern_f0.png": "a2b8f607166aeb852c11df046b8299f747b74fc0c60d7d61d2e2d3cdf9e0b06c",
+        "native/hw_skull_lantern_f1.png": "9f45a02aa502a19706eb42733804f037992a8faa341c2a84c2b3329106fe95e1",
+        "native/hw_skull_lantern_f2.png": "3fffa3a796125cbbb462de4135d2632338dd5311f9608126866d40ae075fe263",
+        "native/hw_skull_lantern_f3.png": "a2b8f607166aeb852c11df046b8299f747b74fc0c60d7d61d2e2d3cdf9e0b06c",
+        "native/hw_skull_lantern_right_f0.png": "efda9e20fdba5e645e96e3c70fed5d4851d45a3daa9b07bd4e083164f748676a",
+        "native/hw_skull_lantern_right_f1.png": "374655375a3dd42f2f27ea6b054b10e71acd5a3d5040b262d1313ed3d4769c9f",
+        "native/hw_skull_lantern_right_f2.png": "64bf9c70e369b200052012136bd3a658ad0bc8b732d6139f8d05400ca845cf64",
+        "native/hw_skull_lantern_right_f3.png": "efda9e20fdba5e645e96e3c70fed5d4851d45a3daa9b07bd4e083164f748676a",
+        "spritesheets/hw_skull_lantern.png": "48b330a6bffa73d2ba73558bcdb1dbf8ddc27efeab506618c57e79bc49f6d534",
+        "thumbnails/2x/hw_skull_lantern.png": "38f574ce750cf9cc1df037395ec155ccef1998f518adac7d2f96a904b3471db6",
+        "thumbnails/2x/hw_skull_lantern_right.png": "5b15b555b1c8400fe54ffeccce1e928a8a3a2a70d4542298f123e9d72f147325",
+        "thumbnails/3x/hw_skull_lantern.png": "aee7784224695800e5dea571be5b54c7e0c4ca3671ab4ef6b5609179e17c5cbb",
+        "thumbnails/3x/hw_skull_lantern_right.png": "71b1dccf6d5406530652d7ff1c3f87c579fa6a493f39f9d75ab4ea2eefba6d44"
       }
     },
     {
@@ -1322,15 +1322,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 52,
-              "y": 66,
-              "w": 7,
-              "h": 7
+              "x": 75,
+              "y": 37,
+              "w": 6,
+              "h": 6
             },
-            "pixelCount": 35,
-            "mappableCount": 35,
-            "maxPixels": 485,
-            "rootBand": 84
+            "pixelCount": 16,
+            "mappableCount": 16,
+            "maxPixels": 169,
+            "rootBand": 60
           }
         },
         "alternate": {
@@ -1339,15 +1339,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 83,
-              "y": 46,
+              "x": 17,
+              "y": 37,
               "w": 7,
-              "h": 7
+              "h": 6
             },
-            "pixelCount": 35,
-            "mappableCount": 35,
-            "maxPixels": 461,
-            "rootBand": 84
+            "pixelCount": 19,
+            "mappableCount": 19,
+            "maxPixels": 161,
+            "rootBand": 60
           }
         }
       },
@@ -1380,11 +1380,11 @@
         2,
         1
       ],
-      "width": 144,
-      "height": 112,
+      "width": 96,
+      "height": 80,
       "pivot": {
-        "x": 72,
-        "y": 108
+        "x": 48,
+        "y": 64
       },
       "defaultFile": "native/hw_spider_light_garland.png",
       "rightFile": "native/hw_spider_light_garland_right.png",
@@ -1418,23 +1418,23 @@
         260
       ],
       "source": "masters/hw_spider_light_garland.png",
-      "sourceSha256": "be7c9434e58820a93bfbc55b5e886000b41c33ad4e459ce0c5500301a18dca9e",
+      "sourceSha256": "045184a6972794b23c9a5cc4d8a304c4c99087c35424dffacbe42df750b0910c",
       "pngSha256": {
-        "native/hw_spider_light_garland.png": "aa4787645ed95008305ea1da73ccfa0e638d9d53d7d407b99585b1eb32722b21",
-        "native/hw_spider_light_garland_right.png": "20eaeb007957c47e45f6fbff8ce9e1f7ea121b41ba8788a167a2cb12a08b6809",
-        "native/hw_spider_light_garland_f0.png": "aa4787645ed95008305ea1da73ccfa0e638d9d53d7d407b99585b1eb32722b21",
-        "native/hw_spider_light_garland_f1.png": "ef1590c3389f5d827f515fb3770a0cdf86e30d41221bf5eb1f71876dcc07f695",
-        "native/hw_spider_light_garland_f2.png": "580f0531ae2020e6614f25dccc58405078e6d8922bd7a8078f4ab682c6183f00",
-        "native/hw_spider_light_garland_f3.png": "aa4787645ed95008305ea1da73ccfa0e638d9d53d7d407b99585b1eb32722b21",
-        "native/hw_spider_light_garland_right_f0.png": "20eaeb007957c47e45f6fbff8ce9e1f7ea121b41ba8788a167a2cb12a08b6809",
-        "native/hw_spider_light_garland_right_f1.png": "9d0e17df324a8c52478dd9995d676e3d546783d09993e78830ad6733d28338f8",
-        "native/hw_spider_light_garland_right_f2.png": "38f3ef4675db76ceda2b3a53b346c8d90de9e3678d8c4d46548023737b7ada06",
-        "native/hw_spider_light_garland_right_f3.png": "20eaeb007957c47e45f6fbff8ce9e1f7ea121b41ba8788a167a2cb12a08b6809",
-        "spritesheets/hw_spider_light_garland.png": "c16369759cf030ce5fa6f2acefc09c766d548ff57f2dd0a77e3d922d168d16ac",
-        "thumbnails/2x/hw_spider_light_garland.png": "fc7de081ec00ce832c45e973d28edf165fe837938601b19cd6c8f8fe00988093",
-        "thumbnails/2x/hw_spider_light_garland_right.png": "25ccf524faaa972359e742447075c0262d86febeff889cd27ae146e1860ae52b",
-        "thumbnails/3x/hw_spider_light_garland.png": "f78f9fb3553c7732ea2fd977b3d42e098d5bc3a23a14d659260ad345ff68b3ae",
-        "thumbnails/3x/hw_spider_light_garland_right.png": "2138f471f5bb77de5d971b69bc3f5c13ebedb843d91b587824b69011d5d26725"
+        "native/hw_spider_light_garland.png": "367663aed986d1d0b8f94241cb6c3375839be7e1a2e5eaceb62ea665819b17e6",
+        "native/hw_spider_light_garland_right.png": "208bd35321fbfa6ad167eb5969335ec8a344612acab5cf408c81666094f4281e",
+        "native/hw_spider_light_garland_f0.png": "367663aed986d1d0b8f94241cb6c3375839be7e1a2e5eaceb62ea665819b17e6",
+        "native/hw_spider_light_garland_f1.png": "f6cec2fa0d6d71524427a8a722ed86f4991926234025313c8387fad4b9f34976",
+        "native/hw_spider_light_garland_f2.png": "3644b651c846be0549b439bcdbbc45f45a7339a5624936175134ac5acd39bcca",
+        "native/hw_spider_light_garland_f3.png": "367663aed986d1d0b8f94241cb6c3375839be7e1a2e5eaceb62ea665819b17e6",
+        "native/hw_spider_light_garland_right_f0.png": "208bd35321fbfa6ad167eb5969335ec8a344612acab5cf408c81666094f4281e",
+        "native/hw_spider_light_garland_right_f1.png": "abf1bef00e48ac58e842b6929599a1a26b5c99449f5710f4faba796dec155f71",
+        "native/hw_spider_light_garland_right_f2.png": "cff692a63da6542d5728a67f3396ade612be89505caa7fc6bfe9ca4e698e5617",
+        "native/hw_spider_light_garland_right_f3.png": "208bd35321fbfa6ad167eb5969335ec8a344612acab5cf408c81666094f4281e",
+        "spritesheets/hw_spider_light_garland.png": "0780c4a30d3819098e7d04592c296fd0f43b45fb635a007eb8ef5babba1cbd92",
+        "thumbnails/2x/hw_spider_light_garland.png": "7c1cd42bd8371fbcdb3adba69cef951c1e2ea8c612c125b0e07fc04f6c05034e",
+        "thumbnails/2x/hw_spider_light_garland_right.png": "3259a525b50b3a726ccf628602994104438ae3535e5d55f78d5589c42e78af8f",
+        "thumbnails/3x/hw_spider_light_garland.png": "ae25ee9775d132aa4000ff2809e5b5225f8975aa184ee239c21649b014638481",
+        "thumbnails/3x/hw_spider_light_garland_right.png": "206c9a64702dcfba29fbcd4a29bf165aa54881768d7076f7186d5b340e03ba0f"
       }
     },
     {

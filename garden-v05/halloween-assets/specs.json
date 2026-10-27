@@ -99,13 +99,17 @@
       "label": "Đèn đầu lâu",
       "group": "Ánh sáng",
       "subject": "A cute carved ivory skull lantern on a dark copper three-legged stand, big rounded eye sockets lit with warm violet candlelight, small ornamental teeth, not realistic or gruesome. Handcrafted cosy Halloween prop.",
-      "w": 80,
-      "h": 104,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        44,
+        81
+      ]
     },
     {
       "id": "hw_haunted_house_lantern",
@@ -138,13 +142,17 @@
       "label": "Giàn đèn nhện",
       "group": "Ánh sáng",
       "subject": "Two short weathered timber posts connected by a drooping cord holding exactly five tiny spider-shaped lanterns, alternating muted orange and violet. Spider legs make distinct simple pixel silhouettes. Posts stand on two little stone feet.",
-      "w": 144,
-      "h": 112,
+      "w": 96,
+      "h": 80,
       "foot": [
         2,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        88,
+        58
+      ]
     },
     {
       "id": "hw_soul_bottle",
