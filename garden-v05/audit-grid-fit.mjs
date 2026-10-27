@@ -102,10 +102,12 @@ for (const s of subjects) {
   if (m.x0 === 0 || m.y0 === 0 || m.x1 === m.canvas[0] - 1 || m.y1 === m.canvas[1] - 1) issues.push({rule: 'chạm-mép-canvas'});
   // Remake target: same footprint, redrawn or re-exported (never resampled) inside W − margin.
   const fitW = W - FIT.margin, wide = m.w > W + FIT.side, tall = m.h > heightCap(W), small = m.w < W * FIT.minFill;
-  const scale = wide ? fitW / m.w : small ? Math.ceil(W * 0.6) / m.w : tall ? heightCap(W) / m.h : 1;
+  const baseOff = issues.some(i => i.rule === 'chân-đế-lệch-nền');
+  const scale = wide || baseOff && m.w > fitW ? fitW / m.w : small ? Math.ceil(W * 0.6) / m.w : tall ? heightCap(W) / m.h : 1;
   const inkW = Math.round(m.w * scale), inkH = Math.min(heightCap(W), Math.round(m.h * scale));
   const below = s.anchor === 'foot' ? 16 : half.y, canvasH = Math.ceil((inkH + 4 + below) / 16) * 16;
-  const target = {canvas: [W, canvasH], pivot: [W / 2, canvasH - below], ink: [inkW, inkH], scale: +scale.toFixed(2)};
+  const canvasW = W + 2 * Math.max(0, Math.ceil((inkW + 2 - W) / 2));
+  const target = {canvas: [canvasW, canvasH], pivot: [canvasW / 2, canvasH - below], ink: [inkW, inkH], scale: +scale.toFixed(2)};
   const fix = wide ? 'vẽ nhỏ lại' : over > FIT.side ? 'căn lại tâm' : issues.some(i => i.rule === 'chân-đế-lệch-nền') ? 'vẽ lại chân đế' : tall ? 'hạ chiều cao' : small ? 'vẽ to hơn (tuỳ chọn)' : issues.length ? 'nới canvas' : '';
   const [lo, hi] = [...s.footprint].sort((a, b) => a - b);
   const roomy = wide ? FOOTPRINTS.find(([c, r]) => Math.min(c, r) >= lo && Math.max(c, r) >= hi && (c + r) * 32 >= m.w - FIT.side) : null;

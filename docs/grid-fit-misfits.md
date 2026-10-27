@@ -42,7 +42,7 @@ Cột «Tạo lại»: canvas rộng × cao, pivot (x, y) = điểm chân, khung
 | nặng | Chiếc Cốc Lửa `sp_goblet_fire` | 1×1 · 64×32 | 74×170 · 112×176 · (56,172) | tràn trái 5, phải 5 px; cao hơn trần 42 px (hướng trái) | vẽ nhỏ lại | 64×160 · (32,144) · ≤ 56×128 | 2×1 |
 | nặng | Đèn đầu lâu `hw_skull_lantern` | 1×1 · 64×32 | 70×98 · 80×104 · (40,100) | 56% chân đế nằm ngoài nền (hướng phải) | vẽ nhỏ lại | 64×112 · (32,96) · ≤ 56×78 | 2×1 |
 | nặng | Ao sương tím `hw_violet_mist_pond` | 2×3 · 160×80 | 165×114 · 192×144 · (96,140) | tràn trái 15 px (hướng trái) | vẽ nhỏ lại | 160×128 · (80,112) · ≤ 152×105 | 3×3 |
-| nặng | Vạc kẹo sôi `hw_candy_cauldron` | 1×1 · 64×32 | 63×68 · 96×112 · (48,108) | tràn phải 14 px; 42% chân đế nằm ngoài nền (hướng phải) | căn lại tâm | 64×96 · (32,80) · giữ 63×68 | — |
+| nặng | Vạc kẹo sôi `hw_candy_cauldron` | 1×1 · 64×32 | 63×68 · 96×112 · (48,108) | tràn phải 14 px; 42% chân đế nằm ngoài nền (hướng phải) | căn lại tâm | 64×80 · (32,64) · giữ 56×60 | — |
 | nặng | Góc ô hồng của Hagrid `sp_hagrid_umbrella` | 2×1 · 96×48 | 87×89 · 128×144 · (64,140) | tràn trái 15 px (hướng phải) | căn lại tâm | 96×112 · (48,96) · giữ 87×89 | — |
 | vừa | Đèn lồng hình nhà ma `hw_haunted_house_lantern` | 1×1 · 64×32 | 83×114 · 96×120 · (48,116) | tràn trái 9, phải 10 px; 34% chân đế nằm ngoài nền (hướng trái) | vẽ nhỏ lại | 64×112 · (32,96) · ≤ 56×77 | 2×1 |
 | vừa | Mề đay Slytherin `sp_slytherin_locket` | 1×1 · 64×32 | 82×96 · 88×112 · (44,108) | tràn trái 9, phải 9 px (hướng trái) | vẽ nhỏ lại | 64×96 · (32,80) · ≤ 56×66 | 2×1 |
@@ -63,7 +63,7 @@ Cột «Tạo lại»: canvas rộng × cao, pivot (x, y) = điểm chân, khung
 | vừa | Tủ Biến Mất `sp_vanishing_cabinet` | 1×2 · 96×48 | 108×202 · 144×208 · (72,204) | tràn trái 6, phải 6 px; cao hơn trần 10 px (hướng trái) | vẽ nhỏ lại | 96×192 · (48,176) · ≤ 88×165 | 2×2 |
 | vừa | Gốc cây mặt quỷ `hw_grinning_stump` | 1×2 · 96×48 | 106×87 · 112×104 · (56,100) | tràn trái 5, phải 5 px (hướng trái) | vẽ nhỏ lại | 96×96 · (48,80) · ≤ 88×72 | 2×2 |
 | vừa | Tấm gương Ảo Ảnh `sp_mirror_erised` | 1×2 · 96×48 | 105×202 · 144×208 · (72,204) | tràn trái 4, phải 5 px; cao hơn trần 10 px (hướng trái) | vẽ nhỏ lại | 96×192 · (48,176) · ≤ 88×169 | 2×2 |
-| vừa | Cái Tắt-Sáng `sp_deluminator` | 1×1 · 64×32 | 65×98 · 80×104 · (40,100) | 32% chân đế nằm ngoài nền (hướng trái) | vẽ lại chân đế | 64×128 · (32,112) · ≤ 65×98 | — |
+| vừa | Cái Tắt-Sáng `sp_deluminator` | 1×1 · 64×32 | 65×98 · 80×104 · (40,100) | 32% chân đế nằm ngoài nền (hướng trái) | vẽ lại chân đế | 64×112 · (32,96) · ≤ 56×84 | — |
 | vừa | Rương nháy mắt `hw_blinking_chest` | 2×1 · 96×48 | 92×86 · 112×96 · (56,92) | tràn trái 7 px (hướng phải) | căn lại tâm | 96×112 · (48,96) · giữ 92×86 | — |
 | vừa | Tủ sách há miệng `hw_monster_bookcase` | 1×2 · 96×48 | 79×112 · 112×144 · (56,140) | tràn trái 7 px (hướng trái) | căn lại tâm | 96×144 · (48,128) · giữ 79×112 | — |
 | vừa | Bàn Tay Vẻ Vang `sp_hand_glory` | 1×1 · 64×32 | 52×130 · 80×136 · (40,132) | 33% chân đế nằm ngoài nền; cao hơn trần 2 px (hướng phải) | vẽ lại chân đế | 64×160 · (32,144) · ≤ 51×128 | — |
@@ -99,7 +99,7 @@ Tất cả đạt.
 |---|---|---|---|---|---|---|---|
 | nặng | Cổng bí ngô Halloween `hero-halloween` | 2×2 · 128×64 | 180×114 · 180×114 · (90,113) | tràn trái 26, phải 26 px; mực chạm mép canvas | vẽ nhỏ lại | 128×112 · (64,80) · ≤ 120×76 | 3×3 |
 | vừa | Cổng lễ hội Giáng sinh `hero-yule` | 2×2 · 128×64 | 141×210 · 141×210 · (70,209) | tràn trái 6, phải 7 px; mực chạm mép canvas | vẽ nhỏ lại | 128×224 · (64,192) · ≤ 120×179 | 3×2 |
-| nhẹ | Cổng Hội chợ Thảo dược `hero-herbology` | 2×2 · 128×64 | 132×155 · 132×155 · (66,154) | mực chạm mép canvas | nới canvas | 128×192 · (64,160) · giữ 132×155 | — |
+| nhẹ | Cổng Hội chợ Thảo dược `hero-herbology` | 2×2 · 128×64 | 132×155 · 132×155 · (66,154) | mực chạm mép canvas | nới canvas | 134×192 · (67,160) · giữ 132×155 | — |
 
 ## Cây trồng (giai đoạn chín) — 2 món
 
