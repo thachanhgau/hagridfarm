@@ -1,10 +1,10 @@
 {
   "schema": "hagrid-farm.decor-assets.provenance.v1",
-  "generatedAt": "2026-10-20T07:28:56.706Z",
+  "generatedAt": "2026-10-27T07:12:40.760Z",
   "tool": "build-assets.mjs",
   "specs": {
     "file": "specs.json",
-    "sha256": "37ecebe976bf3f40e1a60614314935ba1f0e399ffe37302c8559f520ff728a2e"
+    "sha256": "dcd86ce293c6db61a44ecdf7d0adcdc700add63e01515c9989e1a7355c95d794"
   },
   "itemPalettes": {
     "file": "item-palettes.json",
@@ -15,7 +15,7 @@
     "paletteNearest": "weighted RGB distance (2,3,1), quantized to each item palette subset from item-palettes.json; global 24-color validation remains enforced",
     "alphaThreshold": 192,
     "sampling": "hard nearest pixel grid with opaque-neighborhood fallback; no smooth resize",
-    "anchor": "centered x pivot; bottom pivot at native height minus four pixels; every frame keeps the grounded bottom quarter alpha rooted",
+    "anchor": "centered x pivot; grid-fit pilot ids use native height minus sixteen pixels, other ids minus four; every frame keeps the grounded bottom quarter alpha rooted",
     "animation": "four idle frames per angle; only a small connected glow component may recolor; blink/sway/bubbles fall back to truthful identical poses without an explicit mask"
   },
   "items": [
@@ -404,27 +404,27 @@
     {
       "id": "sp_buckbeak_pumpkins",
       "source": "masters/sp_buckbeak_pumpkins.png",
-      "sourceSha256": "2f2450ba43a1e423aa3af5ba8ce76207f2a21606d71e75506553347fe95f1168",
+      "sourceSha256": "3e9d70c6dc8071fb443e3f45df59dab40eb8aff566ed578510b2a500e514b2ad",
       "sourceCanvas": {
-        "width": 1857,
-        "height": 847,
-        "halfWidth": 928,
+        "width": 2129,
+        "height": 739,
+        "halfWidth": 1064,
         "discardedCenterColumns": 1
       },
       "sourceViews": {
         "default": {
-          "x": 18,
-          "y": 17,
-          "w": 910,
-          "h": 760,
-          "count": 371683
+          "x": 90,
+          "y": 92,
+          "w": 735,
+          "h": 591,
+          "count": 242725
         },
         "alternate": {
-          "x": 0,
-          "y": 24,
-          "w": 912,
-          "h": 785,
-          "count": 348089
+          "x": 239,
+          "y": 92,
+          "w": 718,
+          "h": 591,
+          "count": 233732
         }
       },
       "palette": {
@@ -463,21 +463,21 @@
         }
       },
       "outputs": {
-        "native/sp_buckbeak_pumpkins.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-        "native/sp_buckbeak_pumpkins_right.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-        "native/sp_buckbeak_pumpkins_f0.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-        "native/sp_buckbeak_pumpkins_f1.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-        "native/sp_buckbeak_pumpkins_f2.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-        "native/sp_buckbeak_pumpkins_f3.png": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-        "native/sp_buckbeak_pumpkins_right_f0.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-        "native/sp_buckbeak_pumpkins_right_f1.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-        "native/sp_buckbeak_pumpkins_right_f2.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-        "native/sp_buckbeak_pumpkins_right_f3.png": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-        "spritesheets/sp_buckbeak_pumpkins.png": "08c49158bf7f3ccb664fdba93d935e1adf8214fd8068c762cbc3acfca6c93389",
-        "thumbnails/2x/sp_buckbeak_pumpkins.png": "3fcda51b2030b7457d3246f19a14eff0391d33b99657f302e21427b457cbf6a6",
-        "thumbnails/2x/sp_buckbeak_pumpkins_right.png": "0c8ccdd58de716d1721208a16a9e1148bb76bd6c7e31088d45eb0d363b4122d2",
-        "thumbnails/3x/sp_buckbeak_pumpkins.png": "5fd8fce1e61a0f08065d3ca081a6df09f22baf35f80886a860c3227af250ab2a",
-        "thumbnails/3x/sp_buckbeak_pumpkins_right.png": "b6c176fef3cbf76b2bf69f1f3b2a7d5793aec01a8f0eb22d1e19ca41e9471c6c"
+        "native/sp_buckbeak_pumpkins.png": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+        "native/sp_buckbeak_pumpkins_right.png": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+        "native/sp_buckbeak_pumpkins_f0.png": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+        "native/sp_buckbeak_pumpkins_f1.png": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+        "native/sp_buckbeak_pumpkins_f2.png": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+        "native/sp_buckbeak_pumpkins_f3.png": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+        "native/sp_buckbeak_pumpkins_right_f0.png": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+        "native/sp_buckbeak_pumpkins_right_f1.png": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+        "native/sp_buckbeak_pumpkins_right_f2.png": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+        "native/sp_buckbeak_pumpkins_right_f3.png": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+        "spritesheets/sp_buckbeak_pumpkins.png": "bc9ecbe7d313acd6a8ce0ad6f0ba267e761a9443f5a075bbf53e31fcae408c0b",
+        "thumbnails/2x/sp_buckbeak_pumpkins.png": "468cffaf741b7139739dfea8a757f465ccedcf99a59ddf001504b125e85d1410",
+        "thumbnails/2x/sp_buckbeak_pumpkins_right.png": "4b7b3acdb003543cd2976f70716d1e14bf2cdc44619ad099296aaa55dd86dee2",
+        "thumbnails/3x/sp_buckbeak_pumpkins.png": "683dca48c2626df8eacdbb4a80d0995dbf1a2e60fea83dee83ec0cd8a81d23ab",
+        "thumbnails/3x/sp_buckbeak_pumpkins_right.png": "1135e17467ce64c0515c9e5cc7d129b017a0b618f241a5a7b404cca93afeb414"
       }
     },
     {
@@ -1550,27 +1550,27 @@
     {
       "id": "sp_ravenclaw_diadem",
       "source": "masters/sp_ravenclaw_diadem.png",
-      "sourceSha256": "f88e131872f2e6cb466041b115a35c5d1d88c9d73b31f2d4ac02f9f6ef29467f",
+      "sourceSha256": "c5253352cefc922a47ae6fa4b8c421da7d979d12e46862034524b01aca599df1",
       "sourceCanvas": {
-        "width": 1842,
-        "height": 854,
-        "halfWidth": 921,
+        "width": 1774,
+        "height": 887,
+        "halfWidth": 887,
         "discardedCenterColumns": 0
       },
       "sourceViews": {
         "default": {
-          "x": 82,
-          "y": 130,
-          "w": 839,
-          "h": 631,
-          "count": 350330
+          "x": 121,
+          "y": 228,
+          "w": 661,
+          "h": 480,
+          "count": 172285
         },
         "alternate": {
-          "x": 0,
-          "y": 106,
-          "w": 879,
-          "h": 683,
-          "count": 310088
+          "x": 168,
+          "y": 205,
+          "w": 606,
+          "h": 503,
+          "count": 155378
         }
       },
       "palette": {
@@ -1601,15 +1601,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 47,
-              "y": 35,
-              "w": 5,
-              "h": 6
+              "x": 6,
+              "y": 23,
+              "w": 3,
+              "h": 2
             },
-            "pixelCount": 14,
-            "mappableCount": 14,
-            "maxPixels": 685,
-            "rootBand": 78
+            "pixelCount": 4,
+            "mappableCount": 4,
+            "maxPixels": 153,
+            "rootBand": 48
           }
         },
         "alternate": {
@@ -1618,34 +1618,34 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 54,
-              "y": 64,
-              "w": 4,
-              "h": 8
+              "x": 17,
+              "y": 28,
+              "w": 2,
+              "h": 1
             },
-            "pixelCount": 13,
-            "mappableCount": 13,
-            "maxPixels": 554,
-            "rootBand": 78
+            "pixelCount": 2,
+            "mappableCount": 2,
+            "maxPixels": 134,
+            "rootBand": 48
           }
         }
       },
       "outputs": {
-        "native/sp_ravenclaw_diadem.png": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
-        "native/sp_ravenclaw_diadem_right.png": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
-        "native/sp_ravenclaw_diadem_f0.png": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
-        "native/sp_ravenclaw_diadem_f1.png": "989474bc51eda104d0e72ff9b6ce750f2f491ecd1a2da2eea5f76e980b33912e",
-        "native/sp_ravenclaw_diadem_f2.png": "79aa36d60b3fcad54aa4c133250fb04cf043e91cbbd86e969b27f5477bc45d02",
-        "native/sp_ravenclaw_diadem_f3.png": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
-        "native/sp_ravenclaw_diadem_right_f0.png": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
-        "native/sp_ravenclaw_diadem_right_f1.png": "9fd98364839377a527482b1a8844c188aa238aac705af3019f71e8eaca7c1a9b",
-        "native/sp_ravenclaw_diadem_right_f2.png": "1d81b62477c6fd6dd52c54f6f4abb8941bb0462804c6b85f433b459ce71461a9",
-        "native/sp_ravenclaw_diadem_right_f3.png": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
-        "spritesheets/sp_ravenclaw_diadem.png": "6bc0de7fb0fbc6969e14a02c5302f087d24cd39bcfdf2e9d87a7015470572b2c",
-        "thumbnails/2x/sp_ravenclaw_diadem.png": "f1a63d01cf1798e60010fb150595cdfe8bd51fd3bf017d4700774888ace0ca0e",
-        "thumbnails/2x/sp_ravenclaw_diadem_right.png": "ea77896e495ffe79878f2aa274313ea38d9ff0d26591aa86296bbb4966324a71",
-        "thumbnails/3x/sp_ravenclaw_diadem.png": "e1327f3ed30e3baeb15c168ed4e2888ee67b603cd2290056db4453ec1a3b6825",
-        "thumbnails/3x/sp_ravenclaw_diadem_right.png": "1c153f415a147d1c28b75965462fbcfeb3e5c2157bc4eca200f491cf3d55a362"
+        "native/sp_ravenclaw_diadem.png": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b",
+        "native/sp_ravenclaw_diadem_right.png": "76ea05dbfddecb924a3f4c13267c35a3bd7b893c307ab12b6f70aaceecf59703",
+        "native/sp_ravenclaw_diadem_f0.png": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b",
+        "native/sp_ravenclaw_diadem_f1.png": "60def94212e4b779b325c3bc5eaff682d805d3e109fc1297982f383432143bee",
+        "native/sp_ravenclaw_diadem_f2.png": "9138d91a0f8fb3899707345a14a42bf28521bc9f15aaea21781429d56389e7a3",
+        "native/sp_ravenclaw_diadem_f3.png": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b",
+        "native/sp_ravenclaw_diadem_right_f0.png": "76ea05dbfddecb924a3f4c13267c35a3bd7b893c307ab12b6f70aaceecf59703",
+        "native/sp_ravenclaw_diadem_right_f1.png": "17bebbcb1e9ee7bd42e92e8b309ff2613ca50e4f43bee7db3bf2cbaf928b2073",
+        "native/sp_ravenclaw_diadem_right_f2.png": "af95d0f28ec17ab049fd9a736dc0a1953ec347a569bbed5cdb8242a6b95aef05",
+        "native/sp_ravenclaw_diadem_right_f3.png": "76ea05dbfddecb924a3f4c13267c35a3bd7b893c307ab12b6f70aaceecf59703",
+        "spritesheets/sp_ravenclaw_diadem.png": "30f98d44c79d959456e469791dcae8f1431c26097b42436c5a49cefecb5f72d7",
+        "thumbnails/2x/sp_ravenclaw_diadem.png": "32eb55f8ef6d0d4173aa86c035b8f7c551a086d502c7bf4db005ee98864b1b29",
+        "thumbnails/2x/sp_ravenclaw_diadem_right.png": "f368024b88e6839ced1e4933f3b9b6e70a679f87ae32af1c0db3647ac197a1f0",
+        "thumbnails/3x/sp_ravenclaw_diadem.png": "cfb230e1014f79e693aae2e641cfe583019b1daf84a217ff05b9e0de39290b14",
+        "thumbnails/3x/sp_ravenclaw_diadem_right.png": "a5337762ba6dc61aa8a9fcc39eb303cb1a3c528f1e83bb6784e5455aa9b71bf5"
       }
     },
     {

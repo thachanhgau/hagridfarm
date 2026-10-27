@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "8d5d4a121c53",
+  "revision": "9ea969bb4b05",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -7894,32 +7894,32 @@
     {
       "source": "decor-assets/native/hw_root_halloween_gate_atlas.png",
       "file": "runtime-webp/decor-assets/native/hw_root_halloween_gate_atlas.webp",
-      "width": 768,
-      "height": 416,
-      "sourceBytes": 26173,
-      "bytes": 11146,
-      "sourceSha256": "0e3ecfefb5f5fd422f40b84ffc6b39fe423b545b3a302aa6127d7b9f2aa8798f",
-      "sha256": "b5c336fe75c34d5c5950309cd91680e915fa79a1f39af9e9e692677d682d8e33"
+      "width": 512,
+      "height": 288,
+      "sourceBytes": 7746,
+      "bytes": 3140,
+      "sourceSha256": "ffc51eed5ce153a59d928f586aa22abc94a3456a6132491f5519a87d94689496",
+      "sha256": "4af97f86265c3d0d830bbf237b4caef348cfe43ebea6710124dbbd7ed3a8706e"
     },
     {
       "source": "decor-assets/native/hw_root_halloween_gate_right.png",
       "file": "runtime-webp/decor-assets/native/hw_root_halloween_gate_right.webp",
-      "width": 192,
-      "height": 208,
-      "sourceBytes": 8816,
-      "bytes": 5408,
-      "sourceSha256": "6b5d1d89ad3bd4dda6738477707c22616521b6350d6c8625d18be934d0690da2",
-      "sha256": "480bc1361964593d762db4b50fdda4cf7b6c0d8b7a75ace317a07f11fd2bf629"
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 2545,
+      "bytes": 1490,
+      "sourceSha256": "1e6e1bab3626196d8ee94327bed18bc46d0a3b33bcd7a1180ba6f6581b015aa8",
+      "sha256": "b4d46e923f073d5c05980d5e6df8d405c30a180cd97375ef8dd7e3e4301edad8"
     },
     {
       "source": "decor-assets/native/hw_root_halloween_gate.png",
       "file": "runtime-webp/decor-assets/native/hw_root_halloween_gate.webp",
-      "width": 192,
-      "height": 208,
-      "sourceBytes": 8378,
-      "bytes": 5246,
-      "sourceSha256": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba",
-      "sha256": "d26a0320a6804753f956b17bce4a8da201a0a63a143bf2985531321625ec3b88"
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 2498,
+      "bytes": 1446,
+      "sourceSha256": "a5ee112a4b62e5bd1e3cfa1b0fc1134004a351e2d8277b1912bab2d1e949e9bc",
+      "sha256": "2637bbe5daf54467fcfe1c0e5f7bfe8ce80fad7accd2818fb241dddf8e4d9a62"
     },
     {
       "source": "decor-assets/native/hw_skull_lantern_atlas.png",
@@ -8354,102 +8354,102 @@
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_f0.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6807,
-      "bytes": 4734,
-      "sourceSha256": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-      "sha256": "33a72a09e83a2c1fcd41efc2d54236bcb61b63d11cd528f3ef03cad5c51531f4"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3861,
+      "bytes": 2546,
+      "sourceSha256": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+      "sha256": "99eaff2c62a15f1a20098025f9f88059f8137d902491a63eae245cb0df61f7c5"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_f1.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6807,
-      "bytes": 4734,
-      "sourceSha256": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-      "sha256": "33a72a09e83a2c1fcd41efc2d54236bcb61b63d11cd528f3ef03cad5c51531f4"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3861,
+      "bytes": 2546,
+      "sourceSha256": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+      "sha256": "99eaff2c62a15f1a20098025f9f88059f8137d902491a63eae245cb0df61f7c5"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_f2.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6807,
-      "bytes": 4734,
-      "sourceSha256": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-      "sha256": "33a72a09e83a2c1fcd41efc2d54236bcb61b63d11cd528f3ef03cad5c51531f4"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3861,
+      "bytes": 2546,
+      "sourceSha256": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+      "sha256": "99eaff2c62a15f1a20098025f9f88059f8137d902491a63eae245cb0df61f7c5"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_f3.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6807,
-      "bytes": 4734,
-      "sourceSha256": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-      "sha256": "33a72a09e83a2c1fcd41efc2d54236bcb61b63d11cd528f3ef03cad5c51531f4"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3861,
+      "bytes": 2546,
+      "sourceSha256": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+      "sha256": "99eaff2c62a15f1a20098025f9f88059f8137d902491a63eae245cb0df61f7c5"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_right_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_right_f0.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6350,
-      "bytes": 4258,
-      "sourceSha256": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-      "sha256": "294d4f965a34835b2b447fc469aeba91ad98377264b225d0198d16534891cc1d"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3886,
+      "bytes": 2592,
+      "sourceSha256": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+      "sha256": "d8ac7e15e575f574ca88ffd11911ccb1a44218cc34a7a5ca696bae221d8968d4"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_right_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_right_f1.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6350,
-      "bytes": 4258,
-      "sourceSha256": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-      "sha256": "294d4f965a34835b2b447fc469aeba91ad98377264b225d0198d16534891cc1d"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3886,
+      "bytes": 2592,
+      "sourceSha256": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+      "sha256": "d8ac7e15e575f574ca88ffd11911ccb1a44218cc34a7a5ca696bae221d8968d4"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_right_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_right_f2.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6350,
-      "bytes": 4258,
-      "sourceSha256": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-      "sha256": "294d4f965a34835b2b447fc469aeba91ad98377264b225d0198d16534891cc1d"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3886,
+      "bytes": 2592,
+      "sourceSha256": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+      "sha256": "d8ac7e15e575f574ca88ffd11911ccb1a44218cc34a7a5ca696bae221d8968d4"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_right_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_right_f3.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6350,
-      "bytes": 4258,
-      "sourceSha256": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-      "sha256": "294d4f965a34835b2b447fc469aeba91ad98377264b225d0198d16534891cc1d"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3886,
+      "bytes": 2592,
+      "sourceSha256": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+      "sha256": "d8ac7e15e575f574ca88ffd11911ccb1a44218cc34a7a5ca696bae221d8968d4"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins_right.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins_right.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6350,
-      "bytes": 4258,
-      "sourceSha256": "7d7823e5f2513696cec0cf523a37f0261566d60c5c184940889780ddbb9a8593",
-      "sha256": "294d4f965a34835b2b447fc469aeba91ad98377264b225d0198d16534891cc1d"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3886,
+      "bytes": 2592,
+      "sourceSha256": "2abe9eb035c9f686c0cb569d609e75d6db92f829a957a09b33ab78c08a06ba85",
+      "sha256": "d8ac7e15e575f574ca88ffd11911ccb1a44218cc34a7a5ca696bae221d8968d4"
     },
     {
       "source": "decor-assets/native/sp_buckbeak_pumpkins.png",
       "file": "runtime-webp/decor-assets/native/sp_buckbeak_pumpkins.webp",
-      "width": 176,
-      "height": 160,
-      "sourceBytes": 6807,
-      "bytes": 4734,
-      "sourceSha256": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b",
-      "sha256": "33a72a09e83a2c1fcd41efc2d54236bcb61b63d11cd528f3ef03cad5c51531f4"
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3861,
+      "bytes": 2546,
+      "sourceSha256": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f",
+      "sha256": "99eaff2c62a15f1a20098025f9f88059f8137d902491a63eae245cb0df61f7c5"
     },
     {
       "source": "decor-assets/native/sp_chamber_serpent_door_f0.png",
@@ -10154,102 +10154,102 @@
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_f0.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3117,
-      "bytes": 2010,
-      "sourceSha256": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
-      "sha256": "01f0334b0430710157ff4652d729fa94640e044be94dcfd31222a724d50fa496"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 945,
+      "bytes": 598,
+      "sourceSha256": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b",
+      "sha256": "b3ccd767e8c9a0505ee490428f81726d1905ec5832213b10ae90d2a2716ae28a"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_f1.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3118,
-      "bytes": 2008,
-      "sourceSha256": "989474bc51eda104d0e72ff9b6ce750f2f491ecd1a2da2eea5f76e980b33912e",
-      "sha256": "44f1b30e03d8859356a8073f134c1f5df790a5445fd53e14b6e64e2d9df0c578"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 953,
+      "bytes": 606,
+      "sourceSha256": "60def94212e4b779b325c3bc5eaff682d805d3e109fc1297982f383432143bee",
+      "sha256": "e3d830c51b7dc4d376ab825bb5f9435fe123f08acc1f734c2453656dab11f57f"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_f2.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3114,
-      "bytes": 2006,
-      "sourceSha256": "79aa36d60b3fcad54aa4c133250fb04cf043e91cbbd86e969b27f5477bc45d02",
-      "sha256": "ad685d82b2fa8399331970f43958d9e0c58dccc4bf469caa23bd9f2a0c50dd26"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 940,
+      "bytes": 594,
+      "sourceSha256": "9138d91a0f8fb3899707345a14a42bf28521bc9f15aaea21781429d56389e7a3",
+      "sha256": "cda69d6bbbf90b00a56c16bd67e034d741ee7b4edd134835dbf61450f143edb8"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_f3.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3117,
-      "bytes": 2010,
-      "sourceSha256": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
-      "sha256": "01f0334b0430710157ff4652d729fa94640e044be94dcfd31222a724d50fa496"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 945,
+      "bytes": 598,
+      "sourceSha256": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b",
+      "sha256": "b3ccd767e8c9a0505ee490428f81726d1905ec5832213b10ae90d2a2716ae28a"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_right_f0.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_right_f0.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2821,
-      "bytes": 1760,
-      "sourceSha256": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
-      "sha256": "89e6383af596ba050b511e90f9dd7d0316229a699cbc770fd2fa1c353df36aa5"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 851,
+      "bytes": 540,
+      "sourceSha256": "76ea05dbfddecb924a3f4c13267c35a3bd7b893c307ab12b6f70aaceecf59703",
+      "sha256": "f7bf84cf9bfda1f5cd6b740be33e35cd3beadcefd3a396c23b372d6c19bbf8d5"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_right_f1.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_right_f1.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2826,
-      "bytes": 1764,
-      "sourceSha256": "9fd98364839377a527482b1a8844c188aa238aac705af3019f71e8eaca7c1a9b",
-      "sha256": "212a281f7ed7787710de4d64e7d4ffd73d1559b6c8e1e9d981d8cc1db6a3d11e"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 855,
+      "bytes": 548,
+      "sourceSha256": "17bebbcb1e9ee7bd42e92e8b309ff2613ca50e4f43bee7db3bf2cbaf928b2073",
+      "sha256": "0e167724a77670e90b2de16a21bb30df785a54699e49d76ef59ae0afb61eaaee"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_right_f2.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_right_f2.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2814,
-      "bytes": 1750,
-      "sourceSha256": "1d81b62477c6fd6dd52c54f6f4abb8941bb0462804c6b85f433b459ce71461a9",
-      "sha256": "7ca66072fccf3d4d1ac084690d384553eb16ac9b53f9a617741caab72b393266"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 850,
+      "bytes": 540,
+      "sourceSha256": "af95d0f28ec17ab049fd9a736dc0a1953ec347a569bbed5cdb8242a6b95aef05",
+      "sha256": "8e7e092571195394fd2e7a2052e8454dfc1172361469978d5cd963bad8f6c0ae"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_right_f3.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_right_f3.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2821,
-      "bytes": 1760,
-      "sourceSha256": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
-      "sha256": "89e6383af596ba050b511e90f9dd7d0316229a699cbc770fd2fa1c353df36aa5"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 851,
+      "bytes": 540,
+      "sourceSha256": "76ea05dbfddecb924a3f4c13267c35a3bd7b893c307ab12b6f70aaceecf59703",
+      "sha256": "f7bf84cf9bfda1f5cd6b740be33e35cd3beadcefd3a396c23b372d6c19bbf8d5"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem_right.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem_right.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 2821,
-      "bytes": 1760,
-      "sourceSha256": "8c720aaffe66b9f62dc9ab3399027f6c95033a84b09fffafa9408398ec0d887e",
-      "sha256": "89e6383af596ba050b511e90f9dd7d0316229a699cbc770fd2fa1c353df36aa5"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 851,
+      "bytes": 540,
+      "sourceSha256": "76ea05dbfddecb924a3f4c13267c35a3bd7b893c307ab12b6f70aaceecf59703",
+      "sha256": "f7bf84cf9bfda1f5cd6b740be33e35cd3beadcefd3a396c23b372d6c19bbf8d5"
     },
     {
       "source": "decor-assets/native/sp_ravenclaw_diadem.png",
       "file": "runtime-webp/decor-assets/native/sp_ravenclaw_diadem.webp",
-      "width": 112,
-      "height": 104,
-      "sourceBytes": 3117,
-      "bytes": 2010,
-      "sourceSha256": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db",
-      "sha256": "01f0334b0430710157ff4652d729fa94640e044be94dcfd31222a724d50fa496"
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 945,
+      "bytes": 598,
+      "sourceSha256": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b",
+      "sha256": "b3ccd767e8c9a0505ee490428f81726d1905ec5832213b10ae90d2a2716ae28a"
     },
     {
       "source": "decor-assets/native/sp_riddle_diary_f0.png",
@@ -11477,9 +11477,9 @@
   "totals": {
     "converted": 1141,
     "existingWebp": 8,
-    "originalBytes": 5831777,
-    "webpBytes": 3898678,
-    "savedBytes": 1933099,
-    "savedPercent": 33.15
+    "originalBytes": 5753449,
+    "webpBytes": 3850548,
+    "savedBytes": 1902901,
+    "savedPercent": 33.07
   }
 }

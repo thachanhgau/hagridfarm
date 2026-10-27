@@ -3030,15 +3030,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 24,
-              "y": 116,
-              "w": 11,
-              "h": 10
+              "x": 28,
+              "y": 91,
+              "w": 8,
+              "h": 6
             },
-            "pixelCount": 68,
-            "mappableCount": 68,
-            "maxPixels": 1758,
-            "rootBand": 156
+            "pixelCount": 25,
+            "mappableCount": 25,
+            "maxPixels": 357,
+            "rootBand": 108
           }
         },
         "alternate": {
@@ -3047,15 +3047,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 32,
-              "y": 103,
-              "w": 16,
-              "h": 8
+              "x": 86,
+              "y": 91,
+              "w": 8,
+              "h": 9
             },
-            "pixelCount": 65,
-            "mappableCount": 65,
-            "maxPixels": 1901,
-            "rootBand": 156
+            "pixelCount": 37,
+            "mappableCount": 37,
+            "maxPixels": 379,
+            "rootBand": 108
           }
         }
       },
@@ -3088,11 +3088,11 @@
         3,
         1
       ],
-      "width": 192,
-      "height": 208,
+      "width": 128,
+      "height": 144,
       "pivot": {
-        "x": 96,
-        "y": 204
+        "x": 64,
+        "y": 128
       },
       "defaultFile": "native/hw_root_halloween_gate.png",
       "rightFile": "native/hw_root_halloween_gate_right.png",
@@ -3126,23 +3126,23 @@
         260
       ],
       "source": "masters/hw_root_halloween_gate.png",
-      "sourceSha256": "72ab8e57cd936b7c50f0750572a7fbb2b40f210fa31b676eed83df5a22fb4d7e",
+      "sourceSha256": "bc54f3d4fcc93432552495ec23338c1039daf527d9a94e5f8000c9730d70e0c0",
       "pngSha256": {
-        "native/hw_root_halloween_gate.png": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba",
-        "native/hw_root_halloween_gate_right.png": "6b5d1d89ad3bd4dda6738477707c22616521b6350d6c8625d18be934d0690da2",
-        "native/hw_root_halloween_gate_f0.png": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba",
-        "native/hw_root_halloween_gate_f1.png": "c6b9c9230c4d6a437a15060726673eaa45bc0e647f080e9e03667acf4eb9f9ee",
-        "native/hw_root_halloween_gate_f2.png": "335dc0c26252ea4ccddd41380702b20b57965800cb2170ee5b3b95892d72236a",
-        "native/hw_root_halloween_gate_f3.png": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba",
-        "native/hw_root_halloween_gate_right_f0.png": "6b5d1d89ad3bd4dda6738477707c22616521b6350d6c8625d18be934d0690da2",
-        "native/hw_root_halloween_gate_right_f1.png": "cdb2626cf6dc0a130c0544ec816d6f3afb29e36c0e43d8d09532185ff7688994",
-        "native/hw_root_halloween_gate_right_f2.png": "b024cfb3851755f5798d739033534f6b5756cdcb11e471eb951fdb31b534db07",
-        "native/hw_root_halloween_gate_right_f3.png": "6b5d1d89ad3bd4dda6738477707c22616521b6350d6c8625d18be934d0690da2",
-        "spritesheets/hw_root_halloween_gate.png": "0e3ecfefb5f5fd422f40b84ffc6b39fe423b545b3a302aa6127d7b9f2aa8798f",
-        "thumbnails/2x/hw_root_halloween_gate.png": "74f997343f13a51cd315d8cc0912a3650aa3efd7aa1fedbbb164ca0214b99c96",
-        "thumbnails/2x/hw_root_halloween_gate_right.png": "bec3debda6bdd9c7f32113b63b9079cc0e7790f7de9ca0554adfbe056d099062",
-        "thumbnails/3x/hw_root_halloween_gate.png": "b997ee788c66d1f1594d8bcec8ef3f8e7e2831a1ac7c3f0953f1f35a585becd1",
-        "thumbnails/3x/hw_root_halloween_gate_right.png": "f2a63e6f4b03aa0bd46ad1be118d1c49ea05f41b9f5910f4eebae20c624de951"
+        "native/hw_root_halloween_gate.png": "a5ee112a4b62e5bd1e3cfa1b0fc1134004a351e2d8277b1912bab2d1e949e9bc",
+        "native/hw_root_halloween_gate_right.png": "1e6e1bab3626196d8ee94327bed18bc46d0a3b33bcd7a1180ba6f6581b015aa8",
+        "native/hw_root_halloween_gate_f0.png": "a5ee112a4b62e5bd1e3cfa1b0fc1134004a351e2d8277b1912bab2d1e949e9bc",
+        "native/hw_root_halloween_gate_f1.png": "3af890db5251892e33a3abb1e028d014c1f19c988cd4bb081d958785f71b4e14",
+        "native/hw_root_halloween_gate_f2.png": "543d697e3160b49ae2c48416cd748f3117dfe37960d995287ed869cf570f53f4",
+        "native/hw_root_halloween_gate_f3.png": "a5ee112a4b62e5bd1e3cfa1b0fc1134004a351e2d8277b1912bab2d1e949e9bc",
+        "native/hw_root_halloween_gate_right_f0.png": "1e6e1bab3626196d8ee94327bed18bc46d0a3b33bcd7a1180ba6f6581b015aa8",
+        "native/hw_root_halloween_gate_right_f1.png": "8eb3ed6e099b2b4072176b3d7c3fb937bd40576369a3ff304b7c2233dbdb14b4",
+        "native/hw_root_halloween_gate_right_f2.png": "872cda7b5f6602e22fbc2c732fd810c49fb3eaa7a10e9a247d0aa20378afbf3e",
+        "native/hw_root_halloween_gate_right_f3.png": "1e6e1bab3626196d8ee94327bed18bc46d0a3b33bcd7a1180ba6f6581b015aa8",
+        "spritesheets/hw_root_halloween_gate.png": "ffc51eed5ce153a59d928f586aa22abc94a3456a6132491f5519a87d94689496",
+        "thumbnails/2x/hw_root_halloween_gate.png": "4ef80df661d5aca0dd0b05eca13c9d31a2bbee14d3774d7940c42974e8f963a6",
+        "thumbnails/2x/hw_root_halloween_gate_right.png": "1681da9f3ae9f4cf95f6469e840f995a71806b70f2b4910584d595d2412fcacd",
+        "thumbnails/3x/hw_root_halloween_gate.png": "b8fa1076a401d64f21c16eac4bf6f71dd87663210092f87090e717abdccfe8fb",
+        "thumbnails/3x/hw_root_halloween_gate_right.png": "88f011ecf12deba8a6e8ba04f6cdb616be6ac16c16c7bf083cce1f292185103e"
       }
     },
     {

@@ -806,24 +806,24 @@
         "decor-assets/native/sp_buckbeak_pumpkins_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 10,
-        "w": 170,
-        "h": 146
+        "x": 4,
+        "y": 13,
+        "w": 120,
+        "h": 99
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 176,
-      "height": 160,
-      "pivotX": 88,
-      "pivotY": 156,
+      "width": 128,
+      "height": 128,
+      "pivotX": 64,
+      "pivotY": 112,
       "bounds": {
-        "x": 3,
-        "y": 14,
-        "w": 170,
-        "h": 142
+        "x": 4,
+        "y": 16,
+        "w": 120,
+        "h": 96
       },
       "footprintTiles": [
         2,
@@ -836,7 +836,7 @@
         "chapter": 21
       },
       "lore": "Bằng-Mã được giải cứu ở khu vực nhà Hagrid trong đêm dùng Xoay Thời Gian.",
-      "nativeSha256": "d66ae1235bb62fef8e638b3ea2436fb6903cb54484433f8a6e1e6d741f5a441b"
+      "nativeSha256": "43358021c31a0edea2159090e3b13cd133c5aa55eaaf73f2e8281ccb30a3d49f"
     },
     {
       "id": "sp_aragog_hollow",
@@ -1538,24 +1538,24 @@
         "decor-assets/native/sp_ravenclaw_diadem_right_f3.png"
       ],
       "rightBounds": {
-        "x": 3,
-        "y": 18,
-        "w": 106,
-        "h": 82
+        "x": 7,
+        "y": 6,
+        "w": 51,
+        "h": 42
       },
       "angles": [
         "default",
         "right"
       ],
-      "width": 112,
-      "height": 104,
-      "pivotX": 56,
-      "pivotY": 100,
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 48,
       "bounds": {
-        "x": 3,
-        "y": 20,
-        "w": 106,
-        "h": 80
+        "x": 4,
+        "y": 7,
+        "w": 56,
+        "h": 41
       },
       "footprintTiles": [
         1,
@@ -1568,7 +1568,7 @@
         "chapter": 31
       },
       "lore": "Vương miện thất lạc của Ravenclaw trong Phòng Theo Yêu Cầu.",
-      "nativeSha256": "330a2c73d40b4f25e1cf9b1a7af500c5016633b51a05ee9f8ea6e0918a75c6db"
+      "nativeSha256": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b"
     },
     {
       "id": "sp_vanishing_cabinet",
@@ -4721,52 +4721,52 @@
         {
           "x": 0,
           "y": 0,
-          "w": 192,
-          "h": 208
+          "w": 128,
+          "h": 144
         },
         {
-          "x": 192,
+          "x": 128,
           "y": 0,
-          "w": 192,
-          "h": 208
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 144
         },
         {
           "x": 384,
           "y": 0,
-          "w": 192,
-          "h": 208
-        },
-        {
-          "x": 576,
-          "y": 0,
-          "w": 192,
-          "h": 208
+          "w": 128,
+          "h": 144
         }
       ],
       "rightAtlasRects": [
         {
           "x": 0,
-          "y": 208,
-          "w": 192,
-          "h": 208
+          "y": 144,
+          "w": 128,
+          "h": 144
         },
         {
-          "x": 192,
-          "y": 208,
-          "w": 192,
-          "h": 208
+          "x": 128,
+          "y": 144,
+          "w": 128,
+          "h": 144
+        },
+        {
+          "x": 256,
+          "y": 144,
+          "w": 128,
+          "h": 144
         },
         {
           "x": 384,
-          "y": 208,
-          "w": 192,
-          "h": 208
-        },
-        {
-          "x": 576,
-          "y": 208,
-          "w": 192,
-          "h": 208
+          "y": 144,
+          "w": 128,
+          "h": 144
         }
       ],
       "durations": [
@@ -4779,21 +4779,21 @@
         "default",
         "right"
       ],
-      "width": 192,
-      "height": 208,
-      "pivotX": 96,
-      "pivotY": 204,
+      "width": 128,
+      "height": 144,
+      "pivotX": 64,
+      "pivotY": 128,
       "bounds": {
-        "x": 3,
-        "y": 30,
-        "w": 186,
-        "h": 174
+        "x": 22,
+        "y": 33,
+        "w": 84,
+        "h": 95
       },
       "rightBounds": {
-        "x": 13,
-        "y": 2,
-        "w": 167,
-        "h": 202
+        "x": 22,
+        "y": 29,
+        "w": 84,
+        "h": 99
       },
       "footprintTiles": [
         3,
@@ -4801,7 +4801,7 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "4ca5fb963b84f9b1920e0ba1ca0a51e94eadb8ee7e0eb2b5544415bae2bd4eba"
+      "nativeSha256": "a5ee112a4b62e5bd1e3cfa1b0fc1134004a351e2d8277b1912bab2d1e949e9bc"
     },
     {
       "id": "hw_crooked_witch_hut",
