@@ -14,7 +14,8 @@
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-62b3bf2a-df75-46f3-aeab-8a484bcadcf4.png",
       "master": "masters-flow-v1/decor-sp_hagrid_umbrella-v1.png",
       "tool": "builtin image_gen",
-      "framesIdentical": false
+      "framesIdentical": false,
+      "centreInk": true
     },
     {
       "id": "hw_violet_mist_pond",
@@ -29,7 +30,8 @@
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-374a03a9-2535-4a83-9bbd-4c7b3dd4afd8.png",
       "master": "masters-flow-v1/decor-hw_violet_mist_pond-v1.png",
       "tool": "builtin image_gen",
-      "framesIdentical": false
+      "framesIdentical": false,
+      "centreInk": true
     },
     {
       "id": "hw_blinking_chest",
@@ -74,7 +76,8 @@
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-1466ac12-3046-4ecc-80b5-5f588b71461e.png",
       "master": "masters-flow-v1/decor-hw_eyeball_flowers-v1.png",
       "tool": "builtin image_gen",
-      "framesIdentical": false
+      "framesIdentical": false,
+      "centreInk": true
     },
     {
       "id": "hw_candy_cauldron",
@@ -89,7 +92,8 @@
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a17624-e7f8-7133-9ab0-d838c0fa1c3c/exec-f706dc71-54b3-4744-b0be-bbf6e8934bde.png",
       "master": "masters-flow-v1/decor-hw_candy_cauldron-v1.png",
       "tool": "builtin image_gen",
-      "framesIdentical": false
+      "framesIdentical": false,
+      "centreInk": true
     }
   ]
 }

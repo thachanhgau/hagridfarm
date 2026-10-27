@@ -8,8 +8,8 @@
       "label": "Góc ô hồng của Hagrid",
       "group": "Hagrid và Rừng Cấm",
       "subject": "Rubeus Hagrid's iconic battered closed pink umbrella with curved wooden handle, leaning beside his oversized rustic brass lantern and a pair of enormous brown gamekeeper boots on a low rough timber display stand. The umbrella is faded muted rose-purple, NOT open; no character, no wand visible. Recognizable Hagrid memorabilia, book-faithful objects; display arrangement is a game adaptation.",
-      "w": 128,
-      "h": 144,
+      "w": 96,
+      "h": 112,
       "foot": [
         2,
         1
@@ -19,7 +19,11 @@
       "chapter": 4,
       "term": "umbrella",
       "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
-      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế."
+      "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
+      "inkMax": [
+        84,
+        90
+      ]
     },
     {
       "id": "sp_norbert_egg",

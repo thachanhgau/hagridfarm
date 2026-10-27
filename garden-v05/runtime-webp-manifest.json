@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "b883ce9bba0d",
+  "revision": "f71ca05a6f9a",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -5624,22 +5624,22 @@
     {
       "source": "native-crop-complete/decor-flow-hw_candy_cauldron/atlas.png",
       "file": "runtime-webp/native-crop-complete/decor-flow-hw_candy_cauldron/atlas.webp",
-      "width": 384,
-      "height": 224,
-      "sourceBytes": 12657,
-      "bytes": 8358,
-      "sourceSha256": "71a5bd9a0be82bd24473f4b468a4f60d4ff963c3f9df084188d30b9bfebe648c",
-      "sha256": "a522b2a16df00be504bee1df2b3358252ab62f4c03e7552586b6fc36096f7055"
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 9842,
+      "bytes": 6278,
+      "sourceSha256": "d55ad3d5856911b8c4b2479c1815a81c25e0d62cbf62b47f01eabcf5fbe56210",
+      "sha256": "f7cd656d6987d3f4e72d694af3edb7f76d089ea7444fb4628cea314578b86462"
     },
     {
       "source": "native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.png",
       "file": "runtime-webp/native-crop-complete/decor-flow-hw_eyeball_flowers/atlas.webp",
-      "width": 416,
-      "height": 208,
-      "sourceBytes": 21285,
-      "bytes": 14126,
-      "sourceSha256": "d3cb42f24175ee552666fbb80b7fb674e95241bd5066ad036f1d7efa6f3002dc",
-      "sha256": "7f9164d38bcdd531029ad463b2d2430382aa86b91cbb78688c7ec6d3222adfc8"
+      "width": 256,
+      "height": 160,
+      "sourceBytes": 10418,
+      "bytes": 7278,
+      "sourceSha256": "cd6e2d525046648720d9aae7dd731a3633498ce820c2954c62bd6083a8a439f1",
+      "sha256": "284e3a03269748d59f6d298c74639bc2a7329e0705466e1a90b6ce54abefb8f1"
     },
     {
       "source": "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
@@ -5654,22 +5654,22 @@
     {
       "source": "native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.png",
       "file": "runtime-webp/native-crop-complete/decor-flow-hw_violet_mist_pond/atlas.webp",
-      "width": 768,
+      "width": 640,
       "height": 288,
-      "sourceBytes": 34837,
-      "bytes": 22228,
-      "sourceSha256": "3411c67c87fc21ff11b1ddb01b2c8e10342b767b6b185288c63af77c49b73650",
-      "sha256": "592c85931fd8711f8763a7f8156b30f84cc84b9429a5fbfe53730d9da5860229"
+      "sourceBytes": 30737,
+      "bytes": 20040,
+      "sourceSha256": "c822d2b44c1d0179ca7eb0839a76b556d7988cbf918a8b42befc3d1efbe846b1",
+      "sha256": "3d658c982dc6380ecec324dffd1fd2bd35bfe730439eb14155f754f00f11b5df"
     },
     {
       "source": "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
       "file": "runtime-webp/native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.webp",
-      "width": 512,
-      "height": 288,
-      "sourceBytes": 20656,
-      "bytes": 12936,
-      "sourceSha256": "5741a26df1bc15b13b655ec72c1fb23c25c1c4c3b16a26b7eb995d91fc217c84",
-      "sha256": "0b8230b0e0a3da06f13fa65c50c113e5b8de88b4fede8ae8d228b4338cc3f153"
+      "width": 384,
+      "height": 224,
+      "sourceBytes": 19361,
+      "bytes": 12864,
+      "sourceSha256": "71b764b5cc63585007e3932abb74e9f17e440c2c0577f012af54b0b1691eb6c6",
+      "sha256": "0df0f2ba9fbce1844b5b49ede27401415881846d5a3183b2cd9ea1c21ad9312f"
     },
     {
       "source": "native-crop-complete/devilssnare/atlas.png",
@@ -6754,42 +6754,42 @@
     {
       "source": "decor-assets/native/flow-hw_candy_cauldron_right.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_candy_cauldron_right.webp",
-      "width": 96,
-      "height": 112,
-      "sourceBytes": 1829,
-      "bytes": 1146,
-      "sourceSha256": "938e5e0bf711cee67223189dff732e9b89093f5460e793fae9a57e56953d109a",
-      "sha256": "d27c1d2f96cc30c9f487969a86a6b415103dbb790516c5a73993a5ade706d178"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1468,
+      "bytes": 940,
+      "sourceSha256": "6a2085943170e607b8b2d0a6078dbbfb7e6d0f10d73cd07f5ba0ab49a49fbfee",
+      "sha256": "8eb6a55003c722069aa0ca7a5ec33f15f6ecec17d5cc8d991c137b6faa5332f9"
     },
     {
       "source": "decor-assets/native/flow-hw_candy_cauldron.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_candy_cauldron.webp",
-      "width": 96,
-      "height": 112,
-      "sourceBytes": 1853,
-      "bytes": 1148,
-      "sourceSha256": "fd54f0c8b5c7b246c2fa3a47b3164a7dc56514f506bb8dde630cb62e9acfe20a",
-      "sha256": "13716cfce01d8dfabfd8b0087cdab427087024e4ee9d718babb8ffc88c460840"
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1574,
+      "bytes": 988,
+      "sourceSha256": "5c16de9c30fd13427f9b2e6de8fada1f43ea7996213b2b35b42517dfbea1ee27",
+      "sha256": "24871195c3f2e6dbdeb5890014812edddd45f8421664efd14ce76bef626245ae"
     },
     {
       "source": "decor-assets/native/flow-hw_eyeball_flowers_right.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_eyeball_flowers_right.webp",
-      "width": 104,
-      "height": 104,
-      "sourceBytes": 3170,
-      "bytes": 2156,
-      "sourceSha256": "eb760d8539044d23cc7c1bbe0ddb312d195b5b602408b72e0ee16f3ce367aaa5",
-      "sha256": "64ec21367e70db7737b0d9297d06d69a84380c53efe865a85766587c0ad84e5b"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1672,
+      "bytes": 1142,
+      "sourceSha256": "b0f82511c0a5342298ff9c67fbc25b2a12579d58475c7a4cc55e07d814c64615",
+      "sha256": "478431e56fc032d9b3ba3a1699523626638bf8bdf4a3b3c90e7ad3ca174b22fc"
     },
     {
       "source": "decor-assets/native/flow-hw_eyeball_flowers.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_eyeball_flowers.webp",
-      "width": 104,
-      "height": 104,
-      "sourceBytes": 3240,
-      "bytes": 2226,
-      "sourceSha256": "8224d3b79c4357097f3cc29cb9492a8007fa573ca74f257c242cdb977e573a34",
-      "sha256": "a61fc9cc6e46a98194b149adc56cb22925273c703b005c20e5429ec374218dc6"
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1712,
+      "bytes": 1174,
+      "sourceSha256": "f019d58c0335e0dd8200d7a357137dd26383ef2a532c929f02d0d1e30b236363",
+      "sha256": "66942d507262f2e1834a8fb3c53e1993ee7c27a24fce0c443a45ce6ea5f79398"
     },
     {
       "source": "decor-assets/native/flow-hw_monster_bookcase_right.png",
@@ -6814,42 +6814,42 @@
     {
       "source": "decor-assets/native/flow-hw_violet_mist_pond_right.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_violet_mist_pond_right.webp",
-      "width": 192,
+      "width": 160,
       "height": 144,
-      "sourceBytes": 5056,
-      "bytes": 3424,
-      "sourceSha256": "1a2de6b2b1b7ce29ec2128887c391734ec89e0f9c901983d90e03e6516f86765",
-      "sha256": "d34e287cb868c5c590d5b2e5e560d469bda5b9dfae29ded657ee3e09a5ed848c"
+      "sourceBytes": 4473,
+      "bytes": 2790,
+      "sourceSha256": "f079ac00c521807289112f30eb47eb6a534dbc54f9cfb6b67d79e9bc4c2034d2",
+      "sha256": "59659a48355fb932664776e05610ee63456bf4bba7b1a9b0ab83638907837876"
     },
     {
       "source": "decor-assets/native/flow-hw_violet_mist_pond.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_violet_mist_pond.webp",
-      "width": 192,
+      "width": 160,
       "height": 144,
-      "sourceBytes": 5007,
-      "bytes": 3074,
-      "sourceSha256": "fa381491e68178c8701f97f81e6a30209c9764a7bf236b133fddcaca6aab661b",
-      "sha256": "07e335d12ecd590bcb1272812c81e79d3b2a4570bb81810140fab35691890fd9"
+      "sourceBytes": 4417,
+      "bytes": 2822,
+      "sourceSha256": "236d59e3a991c1c75922f274718875da19cd639c10ca08f4ad2fe750d7ae57df",
+      "sha256": "2f074d7e7e3eb2fb5c64854b479d0f2b645ad1bd879e733c3da09992530ceb26"
     },
     {
       "source": "decor-assets/native/flow-sp_hagrid_umbrella_right.png",
       "file": "runtime-webp/decor-assets/native/flow-sp_hagrid_umbrella_right.webp",
-      "width": 128,
-      "height": 144,
-      "sourceBytes": 3032,
-      "bytes": 1788,
-      "sourceSha256": "7f85081eb5ac18a644e728f14a50b5605606e1d4fe48f391ca501fb8e6923bf7",
-      "sha256": "7a90025e70ec5e978c401e93eab395991927a8c88764b7cf293e96b28253865a"
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 2803,
+      "bytes": 1786,
+      "sourceSha256": "d360bc2c6916bc857e0641db02ed0907afa5b5b48de75b5b61f2b2dda5fefce6",
+      "sha256": "9395c00b69f58bc75154be9b49fde3890cef8ed070c7102a36705c689d0ffaac"
     },
     {
       "source": "decor-assets/native/flow-sp_hagrid_umbrella.png",
       "file": "runtime-webp/decor-assets/native/flow-sp_hagrid_umbrella.webp",
-      "width": 128,
-      "height": 144,
-      "sourceBytes": 3005,
-      "bytes": 1786,
-      "sourceSha256": "0e4a03f29ab203240d2894e982bef2384e4fadaaf06c690c899275b5f2262d82",
-      "sha256": "08dea3d7581a4618e6a2b9d6d4c84d1c46f2544ea8ee0d4773bb8c9ba41b533e"
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 2819,
+      "bytes": 1784,
+      "sourceSha256": "b71595d86d7ed702d3a83bf573ad35670e57a7cbdcd3a3e464ccfb41cc7fb22c",
+      "sha256": "98eafad1d72950f9fe47346488aac9adac1e87eeb50ef772e8de122fd258d9a3"
     },
     {
       "source": "decor-assets/native/gardener_friend_f0.png",
@@ -11407,9 +11407,9 @@
   "totals": {
     "converted": 1134,
     "existingWebp": 8,
-    "originalBytes": 5253603,
-    "webpBytes": 3535344,
-    "savedBytes": 1718259,
-    "savedPercent": 32.71
+    "originalBytes": 5229272,
+    "webpBytes": 3520834,
+    "savedBytes": 1708438,
+    "savedPercent": 32.67
   }
 }

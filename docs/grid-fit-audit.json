@@ -748,37 +748,30 @@
     "height": 48
    },
    "canvas": [
-    128,
-    144
+    96,
+    112
    ],
    "pivot": [
-    64,
-    140
+    48,
+    96
    ],
    "ink": {
-    "x": 41,
-    "y": 50,
+    "x": 6,
+    "y": 6,
     "w": 84,
     "h": 90,
-    "foot": 140
+    "foot": 96
    },
    "allowed": {
-    "left": 16,
-    "right": 112,
-    "centreY": 124,
-    "frontY": 148
+    "left": 0,
+    "right": 96,
+    "centreY": 80,
+    "frontY": 104
    },
    "flat2x2": 0.142,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 13,
-     "left": 0,
-     "right": 13
-    }
-   ],
-   "severity": "nặng",
-   "fix": "căn lại tâm",
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      96,
@@ -812,37 +805,30 @@
     "height": 48
    },
    "canvas": [
-    128,
-    144
+    96,
+    112
    ],
    "pivot": [
-    64,
-    140
+    48,
+    96
    ],
    "ink": {
-    "x": 1,
-    "y": 51,
-    "w": 87,
+    "x": 4,
+    "y": 7,
+    "w": 88,
     "h": 89,
-    "foot": 140
+    "foot": 96
    },
    "allowed": {
-    "left": 16,
-    "right": 112,
-    "centreY": 124,
-    "frontY": 148
+    "left": 0,
+    "right": 96,
+    "centreY": 80,
+    "frontY": 104
    },
-   "flat2x2": 0.134,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 15,
-     "left": 15,
-     "right": 0
-    }
-   ],
-   "severity": "nặng",
-   "fix": "căn lại tâm",
+   "flat2x2": 0.13,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      96,
@@ -853,7 +839,7 @@
      96
     ],
     "ink": [
-     87,
+     88,
      89
     ],
     "scale": 1
@@ -5884,41 +5870,30 @@
     "height": 32
    },
    "canvas": [
-    96,
-    112
+    64,
+    96
    ],
    "pivot": [
-    48,
-    108
+    32,
+    80
    ],
    "ink": {
-    "x": 3,
-    "y": 38,
-    "w": 61,
-    "h": 70,
-    "foot": 108
+    "x": 5,
+    "y": 17,
+    "w": 54,
+    "h": 63,
+    "foot": 80
    },
    "allowed": {
-    "left": 16,
-    "right": 80,
-    "centreY": 108,
-    "frontY": 124
+    "left": 0,
+    "right": 64,
+    "centreY": 80,
+    "frontY": 96
    },
-   "flat2x2": 0.307,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 13,
-     "left": 13,
-     "right": 0
-    },
-    {
-     "rule": "chân-đế-lệch-nền",
-     "off": 0.41
-    }
-   ],
-   "severity": "nặng",
-   "fix": "căn lại tâm",
+   "flat2x2": 0.274,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      64,
@@ -5929,10 +5904,10 @@
      80
     ],
     "ink": [
-     56,
-     64
+     54,
+     63
     ],
-    "scale": 0.92
+    "scale": 1
    },
    "roomierFootprint": null
   },
@@ -5952,41 +5927,30 @@
     "height": 32
    },
    "canvas": [
-    96,
-    112
+    64,
+    96
    ],
    "pivot": [
-    48,
-    108
+    32,
+    80
    ],
    "ink": {
-    "x": 31,
-    "y": 40,
-    "w": 63,
-    "h": 68,
-    "foot": 108
+    "x": 4,
+    "y": 20,
+    "w": 56,
+    "h": 60,
+    "foot": 80
    },
    "allowed": {
-    "left": 16,
-    "right": 80,
-    "centreY": 108,
-    "frontY": 124
+    "left": 0,
+    "right": 64,
+    "centreY": 80,
+    "frontY": 96
    },
-   "flat2x2": 0.299,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 14,
-     "left": 0,
-     "right": 14
-    },
-    {
-     "rule": "chân-đế-lệch-nền",
-     "off": 0.42
-    }
-   ],
-   "severity": "nặng",
-   "fix": "căn lại tâm",
+   "flat2x2": 0.285,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      64,
@@ -6000,7 +5964,7 @@
      56,
      60
     ],
-    "scale": 0.89
+    "scale": 1
    },
    "roomierFootprint": null
   },
@@ -6879,37 +6843,30 @@
     "height": 32
    },
    "canvas": [
-    104,
-    104
+    64,
+    80
    ],
    "pivot": [
-    52,
-    100
+    32,
+    64
    ],
    "ink": {
-    "x": 11,
-    "y": 17,
-    "w": 89,
-    "h": 83,
-    "foot": 100
+    "x": 4,
+    "y": 12,
+    "w": 56,
+    "h": 52,
+    "foot": 64
    },
    "allowed": {
-    "left": 20,
-    "right": 84,
-    "centreY": 100,
-    "frontY": 116
+    "left": 0,
+    "right": 64,
+    "centreY": 64,
+    "frontY": 80
    },
-   "flat2x2": 0.174,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 16,
-     "left": 9,
-     "right": 16
-    }
-   ],
-   "severity": "nặng",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.08,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      64,
@@ -6923,12 +6880,9 @@
      56,
      52
     ],
-    "scale": 0.63
+    "scale": 1
    },
-   "roomierFootprint": [
-    2,
-    1
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "store-decoration",
@@ -6946,41 +6900,30 @@
     "height": 32
    },
    "canvas": [
-    104,
-    104
+    64,
+    80
    ],
    "pivot": [
-    52,
-    100
+    32,
+    64
    ],
    "ink": {
-    "x": 4,
-    "y": 19,
-    "w": 87,
-    "h": 81,
-    "foot": 100
+    "x": 5,
+    "y": 13,
+    "w": 54,
+    "h": 51,
+    "foot": 64
    },
    "allowed": {
-    "left": 20,
-    "right": 84,
-    "centreY": 100,
-    "frontY": 116
+    "left": 0,
+    "right": 64,
+    "centreY": 64,
+    "frontY": 80
    },
-   "flat2x2": 0.168,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 16,
-     "left": 16,
-     "right": 7
-    },
-    {
-     "rule": "chân-đế-lệch-nền",
-     "off": 0.31
-    }
-   ],
-   "severity": "nặng",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.072,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      64,
@@ -6991,15 +6934,12 @@
      64
     ],
     "ink": [
-     56,
-     52
+     54,
+     51
     ],
-    "scale": 0.64
+    "scale": 1
    },
-   "roomierFootprint": [
-    2,
-    1
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "store-decoration",
@@ -7872,37 +7812,30 @@
     "height": 80
    },
    "canvas": [
-    192,
+    160,
     144
    ],
    "pivot": [
-    96,
-    140
+    80,
+    128
    ],
    "ink": {
-    "x": 1,
-    "y": 26,
-    "w": 165,
-    "h": 114,
-    "foot": 140
+    "x": 4,
+    "y": 22,
+    "w": 152,
+    "h": 106,
+    "foot": 128
    },
    "allowed": {
-    "left": 16,
-    "right": 176,
-    "centreY": 108,
-    "frontY": 148
+    "left": 0,
+    "right": 160,
+    "centreY": 96,
+    "frontY": 136
    },
-   "flat2x2": 0.44,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 15,
-     "left": 15,
-     "right": 0
-    }
-   ],
-   "severity": "nặng",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.415,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      160,
@@ -7914,14 +7847,11 @@
     ],
     "ink": [
      152,
-     105
+     106
     ],
-    "scale": 0.92
+    "scale": 1
    },
-   "roomierFootprint": [
-    3,
-    3
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "store-decoration",
@@ -7939,37 +7869,30 @@
     "height": 80
    },
    "canvas": [
-    192,
+    160,
     144
    ],
    "pivot": [
-    96,
-    140
+    80,
+    128
    ],
    "ink": {
-    "x": 25,
-    "y": 22,
-    "w": 165,
-    "h": 118,
-    "foot": 140
+    "x": 4,
+    "y": 19,
+    "w": 152,
+    "h": 109,
+    "foot": 128
    },
    "allowed": {
-    "left": 16,
-    "right": 176,
-    "centreY": 108,
-    "frontY": 148
+    "left": 0,
+    "right": 160,
+    "centreY": 96,
+    "frontY": 136
    },
-   "flat2x2": 0.454,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 14,
-     "left": 0,
-     "right": 14
-    }
-   ],
-   "severity": "nặng",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.418,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      160,
@@ -7983,12 +7906,9 @@
      152,
      109
     ],
-    "scale": 0.92
+    "scale": 1
    },
-   "roomierFootprint": [
-    3,
-    3
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "store-decoration",

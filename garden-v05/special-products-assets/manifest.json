@@ -59,15 +59,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 25,
-              "y": 89,
-              "w": 10,
-              "h": 9
+              "x": 23,
+              "y": 63,
+              "w": 6,
+              "h": 6
             },
-            "pixelCount": 47,
-            "mappableCount": 47,
-            "maxPixels": 1116,
-            "rootBand": 108
+            "pixelCount": 21,
+            "mappableCount": 21,
+            "maxPixels": 481,
+            "rootBand": 84
           }
         },
         "alternate": {
@@ -76,15 +76,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 51,
-              "y": 74,
-              "w": 7,
-              "h": 7
+              "x": 39,
+              "y": 49,
+              "w": 6,
+              "h": 8
             },
-            "pixelCount": 32,
-            "mappableCount": 32,
-            "maxPixels": 870,
-            "rootBand": 108
+            "pixelCount": 31,
+            "mappableCount": 31,
+            "maxPixels": 393,
+            "rootBand": 84
           }
         }
       },
@@ -122,11 +122,11 @@
         2,
         1
       ],
-      "width": 128,
-      "height": 144,
+      "width": 96,
+      "height": 112,
       "pivot": {
-        "x": 64,
-        "y": 140
+        "x": 48,
+        "y": 96
       },
       "defaultFile": "native/sp_hagrid_umbrella.png",
       "rightFile": "native/sp_hagrid_umbrella_right.png",
@@ -162,21 +162,21 @@
       "source": "masters/sp_hagrid_umbrella.png",
       "sourceSha256": "d6a25f1525dede3a895f45b0f139b83a22eb7d2cca5b81a9b50ba2d420611025",
       "pngSha256": {
-        "native/sp_hagrid_umbrella.png": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
-        "native/sp_hagrid_umbrella_right.png": "c09de13a9ea54390e56414eb44e51c40194afee17ae47a5257e9eb4c2f8d318b",
-        "native/sp_hagrid_umbrella_f0.png": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
-        "native/sp_hagrid_umbrella_f1.png": "16bfb0c33f583fb36bcd3a38fcd3e988dd69345dfc65ca313bbcb6e08675ecc0",
-        "native/sp_hagrid_umbrella_f2.png": "deb427bc7cab6685f12324b7371d1d1941c34d795b2aaf3f15b4e01d6f5e494f",
-        "native/sp_hagrid_umbrella_f3.png": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
-        "native/sp_hagrid_umbrella_right_f0.png": "c09de13a9ea54390e56414eb44e51c40194afee17ae47a5257e9eb4c2f8d318b",
-        "native/sp_hagrid_umbrella_right_f1.png": "4e02d6775da9c19c962c98b072dcbd16efe766789f0defe03883fb2f6c3f00ac",
-        "native/sp_hagrid_umbrella_right_f2.png": "60b23b9b7afe0cb3e0bd1094b3b415acfd2469199434ab22f2294a4b6d52473e",
-        "native/sp_hagrid_umbrella_right_f3.png": "c09de13a9ea54390e56414eb44e51c40194afee17ae47a5257e9eb4c2f8d318b",
-        "spritesheets/sp_hagrid_umbrella.png": "cadefb560314bf70d320226c80f9b3386bfde114e38c680cc5da43a2163226d0",
-        "thumbnails/2x/sp_hagrid_umbrella.png": "8d9ac40bd3672e5f0cebcae4bab757f85de3943c2fd8d138748526e7decd165a",
-        "thumbnails/2x/sp_hagrid_umbrella_right.png": "81028f9d058d994108c5bcd4aa1ecf6d3e35f0eba77a700b31822934b38d778e",
-        "thumbnails/3x/sp_hagrid_umbrella.png": "42a3f1fe6fa7305e3f043d9fc5fdbf0b651d149d14de9b929afa7f408419de51",
-        "thumbnails/3x/sp_hagrid_umbrella_right.png": "3f29cf8573743deb9596e22a0ef2a13de1f3a452001ab0ad1b593a61898b51ad"
+        "native/sp_hagrid_umbrella.png": "112d0cc132ce15782048d0b69e9d355538af473e6f8f5571614b07c43a429a07",
+        "native/sp_hagrid_umbrella_right.png": "ee00359ae3ccf048f14957c738332caca011132325979af6d37e76cdab5f9ff6",
+        "native/sp_hagrid_umbrella_f0.png": "112d0cc132ce15782048d0b69e9d355538af473e6f8f5571614b07c43a429a07",
+        "native/sp_hagrid_umbrella_f1.png": "c21f321063e0e4743313e8ff667275a756dfa7fad0b99189d0d432b8a26184f6",
+        "native/sp_hagrid_umbrella_f2.png": "4552f54bfd732e3251dcc19d3fc81151537e475513856064d092078d5aeb7608",
+        "native/sp_hagrid_umbrella_f3.png": "112d0cc132ce15782048d0b69e9d355538af473e6f8f5571614b07c43a429a07",
+        "native/sp_hagrid_umbrella_right_f0.png": "ee00359ae3ccf048f14957c738332caca011132325979af6d37e76cdab5f9ff6",
+        "native/sp_hagrid_umbrella_right_f1.png": "28dbaf9e36c1a67c2a418de30f0440e860555d8769f5f5af6cfe232523f2d49b",
+        "native/sp_hagrid_umbrella_right_f2.png": "d24dcc6532a55c8d2ee100a303a33b4f370413efb452accf26e720713199ad10",
+        "native/sp_hagrid_umbrella_right_f3.png": "ee00359ae3ccf048f14957c738332caca011132325979af6d37e76cdab5f9ff6",
+        "spritesheets/sp_hagrid_umbrella.png": "3c5f83261a000b6d4cb2a64622f208e6c18dce9d4dfb34d86597e09f8d89f337",
+        "thumbnails/2x/sp_hagrid_umbrella.png": "e39a20a13167f8ab3c886f758c2032563ef07cbd6771b6e7e03498acf268e716",
+        "thumbnails/2x/sp_hagrid_umbrella_right.png": "7ee8ee6d523891bc0993cbd9816dc2a67e0ab55bd8a7da03a393ebba9cb7c6b3",
+        "thumbnails/3x/sp_hagrid_umbrella.png": "1daf7b3741cd1d88b7434af1da9ea8269bdb5ce957cc5a4b3d972668e414f201",
+        "thumbnails/3x/sp_hagrid_umbrella_right.png": "b853a23fb1f2ea20e3aaf2db812c9ef458a7c0cbf6853bea1be98e9cad57c673"
       }
     },
     {

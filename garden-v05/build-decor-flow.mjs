@@ -52,7 +52,8 @@ function fits(pose, spec, scale) {
   const height = Math.max(1, Math.round(pose.bounds.h * scale));
   const x = Math.round(spec.pivotX - (pose.anchorX == null ? width / 2 : (pose.anchorX - pose.bounds.x) * scale));
   const y = spec.pivotY - height;
-  return x >= 1 && y >= 1 && x + width < spec.width && y + height < spec.height;
+  const side = spec.inset ?? 1;
+  return x >= side && y >= 1 && x + width <= spec.width - side && y + height < spec.height;
 }
 
 function nativeScale(poses, spec) {
@@ -111,6 +112,7 @@ export async function buildDecorFlow({
       height: Number(base.height),
       pivotX: Number(base.pivotX),
       pivotY: Number(base.pivotY),
+      ...(record.centreInk ? { inset: 4 } : {}),
     };
     if (![spec.width, spec.height, spec.pivotX, spec.pivotY].every(Number.isInteger)) {
       throw new Error(`${record.id}: runtime width/height/pivot must remain integer values`);
@@ -126,7 +128,7 @@ export async function buildDecorFlow({
     for (const pose of poses) {
       const b=pose.mainBounds,base=[];
       for(let y=Math.max(b.y,b.y+b.h-Math.max(2,Math.round(b.h*.05)));y<b.y+b.h;y++)for(let x=b.x;x<b.x+b.w;x++)if(pose.data[(y*pose.width+x)*4+3]>=192)base.push(x);
-      base.sort((a,b)=>a-b);pose.anchorX=base[Math.floor(base.length/2)]+.5;
+      base.sort((a,b)=>a-b);pose.anchorX=record.centreInk?b.x+b.w/2:base[Math.floor(base.length/2)]+.5; // grid-fit: centreInk keeps the ink balanced on the pivot
     }
     const scale = nativeScale(poses, spec);
     const outputFolder = 'native-crop-complete';
