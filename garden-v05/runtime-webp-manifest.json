@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "c8d2fa844958",
+  "revision": "ecf5b0da05a4",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11194,12 +11194,12 @@
     {
       "source": "world-v241/hero-herbology.png",
       "file": "runtime-webp/world-v241/hero-herbology.webp",
-      "width": 132,
-      "height": 155,
-      "sourceBytes": 46187,
-      "bytes": 33784,
-      "sourceSha256": "293b21cad4a2a1a67c994b3b836fc984968c968bd0be7f431dcaa1c87f863ac7",
-      "sha256": "a052bf156dd0f5133e737e0691b7d14c2a1ec3fb0356f10003eca795e60a8626"
+      "width": 136,
+      "height": 158,
+      "sourceBytes": 46766,
+      "bytes": 33678,
+      "sourceSha256": "bddcf0f14a1d8483b98e6b4c9e78bcfcae07ca2d2503ec5fb6322cffcaeb253c",
+      "sha256": "14d27044d12a802d14bd8394987b66dfcaffb56c0a79846731c9166c2dc0227b"
     },
     {
       "source": "world-v241/hero-yule.png",
@@ -11267,9 +11267,9 @@
   "totals": {
     "converted": 1120,
     "existingWebp": 8,
-    "originalBytes": 4920607,
-    "webpBytes": 3332970,
-    "savedBytes": 1587637,
-    "savedPercent": 32.27
+    "originalBytes": 4921186,
+    "webpBytes": 3332864,
+    "savedBytes": 1588322,
+    "savedPercent": 32.28
   }
 }

@@ -11999,34 +11999,30 @@
     "height": 64
    },
    "canvas": [
-    132,
-    155
+    136,
+    158
    ],
    "pivot": [
-    66,
-    154
+    68,
+    156
    ],
    "ink": {
-    "x": 0,
-    "y": 0,
+    "x": 2,
+    "y": 2,
     "w": 132,
     "h": 155,
-    "foot": 155
+    "foot": 157
    },
    "allowed": {
-    "left": 2,
-    "right": 130,
-    "centreY": 154,
-    "frontY": 186
+    "left": 4,
+    "right": 132,
+    "centreY": 156,
+    "frontY": 188
    },
    "flat2x2": 0.002,
-   "issues": [
-    {
-     "rule": "chạm-mép-canvas"
-    }
-   ],
-   "severity": "nhẹ",
-   "fix": "nới canvas",
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      134,

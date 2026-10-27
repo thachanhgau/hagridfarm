@@ -96,7 +96,7 @@
         "bbox_nonzero": [0, 0, 1518, 1024],
         "crop_bbox_alpha_gte_128": [400, 67, 1177, 973]
       },
-      "runtime_dimensions": [132, 155],
+      "runtime_dimensions": [136, 158],
       "runtime_alpha": {
         "nonzero": 14433,
         "partial": 14433,
@@ -104,7 +104,8 @@
         "max": 253,
         "bbox_nonzero": [0, 0, 132, 155]
       },
-      "pivot": {"x": 65.5, "y": 154}
+      "pivot": {"x": 67.5, "y": 156},
+      "runtime_note": "27/10/2026 grid-fit: same pixels padded with 2 transparent px left/right/top and 1 px bottom so the ink no longer touches the canvas edge"
     }
   ]
 }

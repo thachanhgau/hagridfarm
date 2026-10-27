@@ -63,7 +63,7 @@ export function worldPhase(clock=0,period=1680){return clock>0?Math.floor(clock/
 export const FESTIVAL_HEROES=Object.freeze({
  event_yule:{id:'hero-yule',file:'world-v241/hero-yule.png',width:128,height:183,pivotX:64,pivotY:180},
  event_halloween:{id:'hero-halloween',file:'world-v241/hero-halloween.png',width:128,height:80,pivotX:64,pivotY:77},
- event_herbology_fair:{id:'hero-herbology',file:'world-v241/hero-herbology.png',width:132,height:155,pivotX:66,pivotY:154},
+ event_herbology_fair:{id:'hero-herbology',file:'world-v241/hero-herbology.png',width:136,height:158,pivotX:68,pivotY:156},
 });
 export const FESTIVAL_FILES=Object.freeze(Object.values(FESTIVAL_HEROES).map(a=>a.file));
 export function clearOfBuildings(col,row,map){
