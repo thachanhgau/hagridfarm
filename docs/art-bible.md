@@ -18,6 +18,7 @@
 - Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
 - Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
 - Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
+- **Hình mới phải khớp ô (27/10/2026):** [guideline khớp ô lưới](grid-fit-guideline.md) — phần có màu nằm trong cột rộng W = (cột + hàng) × 32 px của nền, bảng canvas/pivot/khung mực theo từng nền, kiểm bằng `audit-grid-fit.mjs`. [Danh sách hình đang lệch](grid-fit-misfits.md).
 - Chuẩn lưới 26/10/2026: [quy tắc và kích thước từng vật](garden-grid-20261026.md).
   Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
   hệ số phóng riêng cho ô trồng. Bảng `garden-grid-metrics.json` phải được tạo
@@ -115,6 +116,7 @@ Quy tắc:
 **Kiểm kê 23/10/2026:** rà cả hình inline SVG/Canvas và số frame khác nhau trong từng clip, không chỉ số file/hash hoặc tên clip. Artwork vật tư/cao cấp, mở thửa và huy hiệu dùng chung `ITEM_ART` qua `ui-utils.mjs`; không thêm SVG tạm khi chưa có ảnh. Bộ 12 master mới nằm trong `supply-art-sources.json`, được pipeline `build-item-art.mjs` xuất cùng palette/pivot/alpha như các món cũ. [Bản kiểm kê](artwork-audit-20261023.md) phân biệt việc đã thay với phần chuyển động/prop chưa được vẽ riêng; `qa-v19/supply-art-qa.mjs` kiểm cả gallery và shop ở bốn kích thước bằng fixture không kết nối dữ liệu thật.
 
 - [ ] Kích thước đúng tầng (mục 4), pivot ở chân
+- [ ] Khớp nền theo [guideline khớp ô](grid-fit-guideline.md): `audit-grid-fit.mjs` không báo lỗi cho món mới
 - [ ] Chỉ dùng 24 màu; viền và hướng sáng đúng luật
 - [ ] Đặt cạnh 3 asset cũ cùng tầng trong cảnh thật: cùng độ chi tiết, cùng mật độ pixel
 - [ ] Đủ frame theo mục 5; bật "Giảm chuyển động" thì đứng yên

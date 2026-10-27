@@ -31,6 +31,8 @@ Forest artwork uses only integer magnification (1× or 2×), with its clearance
 rectangle calculated at that same scale. The existing camera may zoom the
 whole scene to fit a phone; these measurements are world pixels at zoom 1.
 
+How new art must size itself to its footprint (canvas, pivot, ink box per footprint) and the current misfits: [grid-fit-guideline.md](grid-fit-guideline.md), checked by `node garden-v05/audit-grid-fit.mjs`.
+
 The rebuildable per-object sheet is `docs/garden-grid-metrics.json`:
 
 ```
