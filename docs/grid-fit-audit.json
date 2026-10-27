@@ -12456,40 +12456,30 @@
     "height": 64
    },
    "canvas": [
-    180,
-    114
+    128,
+    80
    ],
    "pivot": [
-    90,
-    113
+    64,
+    77
    ],
    "ink": {
-    "x": 0,
-    "y": 0,
-    "w": 180,
-    "h": 114,
-    "foot": 114
+    "x": 4,
+    "y": 2,
+    "w": 120,
+    "h": 76,
+    "foot": 78
    },
    "allowed": {
-    "left": 26,
-    "right": 154,
-    "centreY": 113,
-    "frontY": 145
+    "left": 0,
+    "right": 128,
+    "centreY": 77,
+    "frontY": 109
    },
-   "flat2x2": 0.002,
-   "issues": [
-    {
-     "rule": "tràn-ngang",
-     "px": 26,
-     "left": 26,
-     "right": 26
-    },
-    {
-     "rule": "chạm-mép-canvas"
-    }
-   ],
-   "severity": "nặng",
-   "fix": "vẽ nhỏ lại",
+   "flat2x2": 0.001,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
    "target": {
     "canvas": [
      128,
@@ -12503,12 +12493,9 @@
      120,
      76
     ],
-    "scale": 0.67
+    "scale": 1
    },
-   "roomierFootprint": [
-    3,
-    3
-   ]
+   "roomierFootprint": null
   },
   {
    "group": "festival",

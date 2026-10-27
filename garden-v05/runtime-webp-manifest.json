@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "f71ca05a6f9a",
+  "revision": "33029d2db559",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11324,12 +11324,12 @@
     {
       "source": "world-v241/hero-halloween.png",
       "file": "runtime-webp/world-v241/hero-halloween.webp",
-      "width": 180,
-      "height": 114,
-      "sourceBytes": 40426,
-      "bytes": 30844,
-      "sourceSha256": "1f5e3e3509e5271f063c605a0cecf937996be7261362b1f614fe2e59238dc5ff",
-      "sha256": "fddc9de943ee72b6d0d68111e3a0d15b8d56551b1dfbf0b70671cb9ea55a73b7"
+      "width": 128,
+      "height": 80,
+      "sourceBytes": 19035,
+      "bytes": 15168,
+      "sourceSha256": "d9263507d1204d142b278992fabdf2f5e62f09f970a7025fb5ef519466e30eb0",
+      "sha256": "fc28ef15133303c5b537dbaabc9095b1f01b99c7814dbc6ea1d10f0e53c90676"
     },
     {
       "source": "world-v241/hero-herbology.png",
@@ -11407,9 +11407,9 @@
   "totals": {
     "converted": 1134,
     "existingWebp": 8,
-    "originalBytes": 5229272,
-    "webpBytes": 3520834,
-    "savedBytes": 1708438,
-    "savedPercent": 32.67
+    "originalBytes": 5207881,
+    "webpBytes": 3505158,
+    "savedBytes": 1702723,
+    "savedPercent": 32.7
   }
 }

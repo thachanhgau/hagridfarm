@@ -2,7 +2,7 @@
 
 Tạo bởi `node garden-v05/audit-grid-fit.mjs` theo [guideline khớp ô](grid-fit-guideline.md). Số đo là pixel thế giới ở zoom 1, đo từ phần có màu (alpha > 0) của file đang chạy trong game. Không sửa tay file này.
 
-Đã đo 147 món (242 hình, tính cả hai hướng xoay). Lệch: **42 món** — nặng 4, vừa 25, nhẹ 13. Đạt: 105.
+Đã đo 147 món (242 hình, tính cả hai hướng xoay). Lệch: **41 món** — nặng 3, vừa 25, nhẹ 13. Đạt: 106.
 
 Cột «Tạo lại»: canvas rộng × cao, pivot (x, y) = điểm chân, khung mực tối đa rộng × cao. Vẽ lại hoặc xuất lại từ master ở kích thước đó; không thu nhỏ ảnh đã xuất. «Hoặc nền» là nền nhỏ nhất vừa hình hiện tại, chỉ dùng khi chủ dự án muốn giữ nguyên hình (đổi catalog + server, không áp cho save cũ).
 
@@ -62,11 +62,10 @@ Tất cả đạt.
 | nhẹ | Tượng Que Xạo `keepsake_bowtruckle` | 1×1 · 64×32 | 25×44 · 56×56 · (28,50) | chỉ phủ 39% bề ngang nền | vẽ to hơn (tuỳ chọn) | 64×96 · (32,80) · ≥ 39×69 | — |
 | nhẹ | Tượng Mooncalf `keepsake_mooncalf` | 1×1 · 64×32 | 24×44 · 56×56 · (28,50) | chỉ phủ 38% bề ngang nền | vẽ to hơn (tuỳ chọn) | 64×96 · (32,80) · ≥ 39×72 | — |
 
-## Cổng lễ hội — 3 món
+## Cổng lễ hội — 2 món
 
 | Mức | Món | Nền (ô · px) | Hình hiện tại (mực · canvas · pivot) | Lỗi | Cách sửa | Tạo lại: canvas · pivot · khung mực | Hoặc nền |
 |---|---|---|---|---|---|---|---|
-| nặng | Cổng bí ngô Halloween `hero-halloween` | 2×2 · 128×64 | 180×114 · 180×114 · (90,113) | tràn trái 26, phải 26 px; mực chạm mép canvas | vẽ nhỏ lại | 128×112 · (64,80) · ≤ 120×76 | 3×3 |
 | vừa | Cổng lễ hội Giáng sinh `hero-yule` | 2×2 · 128×64 | 141×210 · 141×210 · (70,209) | tràn trái 6, phải 7 px; mực chạm mép canvas | vẽ nhỏ lại | 128×224 · (64,192) · ≤ 120×179 | 3×2 |
 | nhẹ | Cổng Hội chợ Thảo dược `hero-herbology` | 2×2 · 128×64 | 132×155 · 132×155 · (66,154) | mực chạm mép canvas | nới canvas | 134×192 · (67,160) · giữ 132×155 | — |
 

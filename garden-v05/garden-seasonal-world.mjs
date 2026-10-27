@@ -62,7 +62,7 @@ export function weatherizeCanvas(canvas,kind,weather){
 export function worldPhase(clock=0,period=1680){return clock>0?Math.floor(clock/(period/4))%4:0;}
 export const FESTIVAL_HEROES=Object.freeze({
  event_yule:{id:'hero-yule',file:'world-v241/hero-yule.png',width:141,height:210,pivotX:70,pivotY:209},
- event_halloween:{id:'hero-halloween',file:'world-v241/hero-halloween.png',width:180,height:114,pivotX:90,pivotY:113},
+ event_halloween:{id:'hero-halloween',file:'world-v241/hero-halloween.png',width:128,height:80,pivotX:64,pivotY:77},
  event_herbology_fair:{id:'hero-herbology',file:'world-v241/hero-herbology.png',width:132,height:155,pivotX:66,pivotY:154},
 });
 export const FESTIVAL_FILES=Object.freeze(Object.values(FESTIVAL_HEROES).map(a=>a.file));
@@ -71,7 +71,7 @@ export function clearOfBuildings(col,row,map){
 }
 export function festivalObjects({eventMode='none',stage,map,iso,decorAssets,occupied=[]}){
  const hero=FESTIVAL_HEROES[eventMode];if(!hero)return [];
- // Whole cells, and two rows off the north fence (row -0.5) so no rail is drawn across the 180 px hero.
+ // Whole cells, and two rows off the north fence (row -0.5) so no rail is drawn across the hero.
  const heroSite=[[9,2],[-3,5],[-3,2]].find(([c,r])=>stageContains(stage,c,r)&&clearOfBuildings(c,r,map)&&!occupied.some(o=>Math.abs(o.xy[0]-iso(c,r)[0])<110&&Math.abs(o.xy[1]-iso(c,r)[1])<70));
  const out=heroSite?[{kind:'festival',type:'festival',id:hero.id,asset:hero,xy:iso(...heroSite),col:heroSite[0],row:heroSite[1],hero:true}]:[];
  const ids=eventMode==='event_halloween'?['decor_pumpkin_lantern','decor_cauldron']:eventMode==='event_yule'?['decor_floating_candles']:['decor_mandrake_planter','decor_vine_arch'];

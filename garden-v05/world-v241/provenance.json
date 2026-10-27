@@ -68,7 +68,7 @@
         "bbox_nonzero": [0, 21, 1744, 887],
         "crop_bbox_alpha_gte_128": [369, 95, 1475, 800]
       },
-      "runtime_dimensions": [180, 114],
+      "runtime_dimensions": [128, 80],
       "runtime_alpha": {
         "nonzero": 12287,
         "partial": 12282,
@@ -76,7 +76,8 @@
         "max": 255,
         "bbox_nonzero": [0, 0, 180, 114]
       },
-      "pivot": {"x": 89.5, "y": 113}
+      "pivot": {"x": 64, "y": 77},
+      "runtime_note": "27/10/2026 grid-fit: re-exported from master_file (alpha>=128 crop) at 120x76 nearest-neighbour with a 4 px side margin, to fit its 2x2 footprint"
     },
     {
       "name": "hero-herbology",
