@@ -2372,11 +2372,70 @@
       "label": "Chồng bí ngô khắc mặt",
       "group": "Cốt lõi",
       "file": "decor-assets/native/hw_pumpkin_stack.png",
+      "rightFile": "decor-assets/native/hw_pumpkin_stack_right.png",
       "frames": [
-        "decor-assets/native/hw_pumpkin_stack_f0.png",
-        "decor-assets/native/hw_pumpkin_stack_f1.png",
-        "decor-assets/native/hw_pumpkin_stack_f2.png",
-        "decor-assets/native/hw_pumpkin_stack_f3.png"
+        "decor-assets/native/hw_pumpkin_stack_atlas.png",
+        "decor-assets/native/hw_pumpkin_stack_atlas.png",
+        "decor-assets/native/hw_pumpkin_stack_atlas.png",
+        "decor-assets/native/hw_pumpkin_stack_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_pumpkin_stack_atlas.png",
+        "decor-assets/native/hw_pumpkin_stack_atlas.png",
+        "decor-assets/native/hw_pumpkin_stack_atlas.png",
+        "decor-assets/native/hw_pumpkin_stack_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        }
       ],
       "durations": [
         520,
@@ -2384,32 +2443,25 @@
         480,
         260
       ],
-      "rightFile": "decor-assets/native/hw_pumpkin_stack_right.png",
-      "rightFrames": [
-        "decor-assets/native/hw_pumpkin_stack_right_f0.png",
-        "decor-assets/native/hw_pumpkin_stack_right_f1.png",
-        "decor-assets/native/hw_pumpkin_stack_right_f2.png",
-        "decor-assets/native/hw_pumpkin_stack_right_f3.png"
-      ],
-      "rightBounds": {
-        "x": 3,
-        "y": 4,
-        "w": 90,
-        "h": 104
-      },
       "angles": [
         "default",
         "right"
       ],
-      "width": 96,
-      "height": 112,
-      "pivotX": 48,
-      "pivotY": 108,
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
       "bounds": {
-        "x": 3,
-        "y": 2,
-        "w": 90,
-        "h": 106
+        "x": 4,
+        "y": 14,
+        "w": 56,
+        "h": 66
+      },
+      "rightBounds": {
+        "x": 11,
+        "y": 14,
+        "w": 42,
+        "h": 66
       },
       "footprintTiles": [
         1,
@@ -2417,7 +2469,7 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "45062cd5662ad5c05af02702d7fb15e14307ae20c4a2cbbabf6325e536ee1373"
+      "nativeSha256": "7c1ecac04d2c8eec6eb525286391d68a9b8071015c9c8caec9012472db9614a0"
     },
     {
       "id": "hw_monster_candy_barrel",
@@ -3533,52 +3585,52 @@
         {
           "x": 0,
           "y": 0,
-          "w": 144,
-          "h": 120
+          "w": 96,
+          "h": 96
         },
         {
-          "x": 144,
+          "x": 96,
           "y": 0,
-          "w": 144,
-          "h": 120
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 96
         },
         {
           "x": 288,
           "y": 0,
-          "w": 144,
-          "h": 120
-        },
-        {
-          "x": 432,
-          "y": 0,
-          "w": 144,
-          "h": 120
+          "w": 96,
+          "h": 96
         }
       ],
       "rightAtlasRects": [
         {
           "x": 0,
-          "y": 120,
-          "w": 144,
-          "h": 120
+          "y": 96,
+          "w": 96,
+          "h": 96
         },
         {
-          "x": 144,
-          "y": 120,
-          "w": 144,
-          "h": 120
+          "x": 96,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 96,
+          "h": 96
         },
         {
           "x": 288,
-          "y": 120,
-          "w": 144,
-          "h": 120
-        },
-        {
-          "x": 432,
-          "y": 120,
-          "w": 144,
-          "h": 120
+          "y": 96,
+          "w": 96,
+          "h": 96
         }
       ],
       "durations": [
@@ -3591,21 +3643,21 @@
         "default",
         "right"
       ],
-      "width": 144,
-      "height": 120,
-      "pivotX": 72,
-      "pivotY": 116,
+      "width": 96,
+      "height": 96,
+      "pivotX": 48,
+      "pivotY": 80,
       "bounds": {
-        "x": 5,
-        "y": 2,
-        "w": 134,
-        "h": 114
+        "x": 12,
+        "y": 5,
+        "w": 72,
+        "h": 75
       },
       "rightBounds": {
-        "x": 8,
-        "y": 2,
-        "w": 128,
-        "h": 114
+        "x": 9,
+        "y": 5,
+        "w": 79,
+        "h": 75
       },
       "footprintTiles": [
         2,
@@ -3613,7 +3665,7 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "516308ab5d8dda8697fcb6bc45d594e4419d68ef35c8f7ad328b09b870a353e2"
+      "nativeSha256": "f9eb8fd6f25ec76abaa69d47e650822520863f57c0ee2d9ad7ac6890ca933d27"
     },
     {
       "id": "hw_monster_bookcase",
@@ -3857,52 +3909,52 @@
         {
           "x": 0,
           "y": 0,
-          "w": 104,
-          "h": 144
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 104,
+          "x": 64,
           "y": 0,
-          "w": 104,
-          "h": 144
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 208,
+          "x": 128,
           "y": 0,
-          "w": 104,
-          "h": 144
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 312,
+          "x": 192,
           "y": 0,
-          "w": 104,
-          "h": 144
+          "w": 64,
+          "h": 112
         }
       ],
       "rightAtlasRects": [
         {
           "x": 0,
-          "y": 144,
-          "w": 104,
-          "h": 144
+          "y": 112,
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 104,
-          "y": 144,
-          "w": 104,
-          "h": 144
+          "x": 64,
+          "y": 112,
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 208,
-          "y": 144,
-          "w": 104,
-          "h": 144
+          "x": 128,
+          "y": 112,
+          "w": 64,
+          "h": 112
         },
         {
-          "x": 312,
-          "y": 144,
-          "w": 104,
-          "h": 144
+          "x": 192,
+          "y": 112,
+          "w": 64,
+          "h": 112
         }
       ],
       "durations": [
@@ -3915,21 +3967,21 @@
         "default",
         "right"
       ],
-      "width": 104,
-      "height": 144,
-      "pivotX": 52,
-      "pivotY": 140,
+      "width": 64,
+      "height": 112,
+      "pivotX": 32,
+      "pivotY": 96,
       "bounds": {
-        "x": 6,
-        "y": 2,
-        "w": 93,
-        "h": 138
+        "x": 5,
+        "y": 13,
+        "w": 55,
+        "h": 83
       },
       "rightBounds": {
-        "x": 7,
-        "y": 2,
-        "w": 91,
-        "h": 138
+        "x": 6,
+        "y": 13,
+        "w": 52,
+        "h": 83
       },
       "footprintTiles": [
         1,
@@ -3937,7 +3989,7 @@
       ],
       "motion": "sway",
       "framesIdentical": true,
-      "nativeSha256": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7"
+      "nativeSha256": "030f00583229ce1c982a9a987f6c04fc492f28c6aabb34f563b3d4d7df826c2f"
     },
     {
       "id": "hw_caramel_apple_cart",
@@ -3965,52 +4017,52 @@
         {
           "x": 0,
           "y": 0,
-          "w": 144,
-          "h": 144
+          "w": 96,
+          "h": 112
         },
         {
-          "x": 144,
+          "x": 96,
           "y": 0,
-          "w": 144,
-          "h": 144
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 112
         },
         {
           "x": 288,
           "y": 0,
-          "w": 144,
-          "h": 144
-        },
-        {
-          "x": 432,
-          "y": 0,
-          "w": 144,
-          "h": 144
+          "w": 96,
+          "h": 112
         }
       ],
       "rightAtlasRects": [
         {
           "x": 0,
-          "y": 144,
-          "w": 144,
-          "h": 144
+          "y": 112,
+          "w": 96,
+          "h": 112
         },
         {
-          "x": 144,
-          "y": 144,
-          "w": 144,
-          "h": 144
+          "x": 96,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 96,
+          "h": 112
         },
         {
           "x": 288,
-          "y": 144,
-          "w": 144,
-          "h": 144
-        },
-        {
-          "x": 432,
-          "y": 144,
-          "w": 144,
-          "h": 144
+          "y": 112,
+          "w": 96,
+          "h": 112
         }
       ],
       "durations": [
@@ -4023,21 +4075,21 @@
         "default",
         "right"
       ],
-      "width": 144,
-      "height": 144,
-      "pivotX": 72,
-      "pivotY": 140,
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
       "bounds": {
-        "x": 6,
-        "y": 2,
-        "w": 132,
-        "h": 138
+        "x": 9,
+        "y": 4,
+        "w": 78,
+        "h": 92
       },
       "rightBounds": {
-        "x": 11,
-        "y": 2,
-        "w": 123,
-        "h": 138
+        "x": 9,
+        "y": 4,
+        "w": 78,
+        "h": 92
       },
       "footprintTiles": [
         2,
@@ -4045,7 +4097,7 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "4ad941c4ac498a6e4a5ea16ea6791cc5100dd00d9237903720d4d210b34eb8c8"
+      "nativeSha256": "f281ce9bc42da396e4cf77499e8eddd242e91d0d9e8cea52e79a274b3a8576e6"
     },
     {
       "id": "hw_grinning_stump",
@@ -4397,52 +4449,52 @@
         {
           "x": 0,
           "y": 0,
-          "w": 96,
-          "h": 136
+          "w": 64,
+          "h": 96
         },
         {
-          "x": 96,
+          "x": 64,
           "y": 0,
-          "w": 96,
-          "h": 136
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
         },
         {
           "x": 192,
           "y": 0,
-          "w": 96,
-          "h": 136
-        },
-        {
-          "x": 288,
-          "y": 0,
-          "w": 96,
-          "h": 136
+          "w": 64,
+          "h": 96
         }
       ],
       "rightAtlasRects": [
         {
           "x": 0,
-          "y": 136,
-          "w": 96,
-          "h": 136
+          "y": 96,
+          "w": 64,
+          "h": 96
         },
         {
-          "x": 96,
-          "y": 136,
-          "w": 96,
-          "h": 136
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
         },
         {
           "x": 192,
-          "y": 136,
-          "w": 96,
-          "h": 136
-        },
-        {
-          "x": 288,
-          "y": 136,
-          "w": 96,
-          "h": 136
+          "y": 96,
+          "w": 64,
+          "h": 96
         }
       ],
       "durations": [
@@ -4455,21 +4507,21 @@
         "default",
         "right"
       ],
-      "width": 96,
-      "height": 136,
-      "pivotX": 48,
-      "pivotY": 132,
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
       "bounds": {
-        "x": 3,
-        "y": 20,
-        "w": 90,
-        "h": 112
+        "x": 8,
+        "y": 10,
+        "w": 48,
+        "h": 70
       },
       "rightBounds": {
-        "x": 3,
-        "y": 3,
-        "w": 90,
-        "h": 129
+        "x": 11,
+        "y": 10,
+        "w": 42,
+        "h": 70
       },
       "footprintTiles": [
         1,
@@ -4477,7 +4529,7 @@
       ],
       "motion": "blink",
       "framesIdentical": true,
-      "nativeSha256": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0"
+      "nativeSha256": "9479d5fba4922ec4020ff281908c3d216baca878f2e23cca74cefbb0d18c23cd"
     },
     {
       "id": "hw_dewy_cobweb_frame",
@@ -4613,52 +4665,52 @@
         {
           "x": 0,
           "y": 0,
-          "w": 104,
-          "h": 96
+          "w": 64,
+          "h": 80
         },
         {
-          "x": 104,
+          "x": 64,
           "y": 0,
-          "w": 104,
-          "h": 96
+          "w": 64,
+          "h": 80
         },
         {
-          "x": 208,
+          "x": 128,
           "y": 0,
-          "w": 104,
-          "h": 96
+          "w": 64,
+          "h": 80
         },
         {
-          "x": 312,
+          "x": 192,
           "y": 0,
-          "w": 104,
-          "h": 96
+          "w": 64,
+          "h": 80
         }
       ],
       "rightAtlasRects": [
         {
           "x": 0,
-          "y": 96,
-          "w": 104,
-          "h": 96
+          "y": 80,
+          "w": 64,
+          "h": 80
         },
         {
-          "x": 104,
-          "y": 96,
-          "w": 104,
-          "h": 96
+          "x": 64,
+          "y": 80,
+          "w": 64,
+          "h": 80
         },
         {
-          "x": 208,
-          "y": 96,
-          "w": 104,
-          "h": 96
+          "x": 128,
+          "y": 80,
+          "w": 64,
+          "h": 80
         },
         {
-          "x": 312,
-          "y": 96,
-          "w": 104,
-          "h": 96
+          "x": 192,
+          "y": 80,
+          "w": 64,
+          "h": 80
         }
       ],
       "durations": [
@@ -4671,21 +4723,21 @@
         "default",
         "right"
       ],
-      "width": 104,
-      "height": 96,
-      "pivotX": 52,
-      "pivotY": 92,
+      "width": 64,
+      "height": 80,
+      "pivotX": 32,
+      "pivotY": 64,
       "bounds": {
-        "x": 3,
-        "y": 12,
-        "w": 98,
-        "h": 80
+        "x": 4,
+        "y": 18,
+        "w": 56,
+        "h": 46
       },
       "rightBounds": {
-        "x": 3,
-        "y": 3,
-        "w": 98,
-        "h": 89
+        "x": 8,
+        "y": 18,
+        "w": 49,
+        "h": 46
       },
       "footprintTiles": [
         1,
@@ -4693,7 +4745,7 @@
       ],
       "motion": "sway",
       "framesIdentical": true,
-      "nativeSha256": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5"
+      "nativeSha256": "c9c4773d279c89731aa0fd7b5a1a3e1d5b721f74681ea43ac6a3cec9e89eb571"
     },
     {
       "id": "hw_root_halloween_gate",

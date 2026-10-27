@@ -58,15 +58,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 31,
-              "y": 24,
-              "w": 26,
-              "h": 22
+              "x": 17,
+              "y": 57,
+              "w": 28,
+              "h": 15
             },
-            "pixelCount": 285,
-            "mappableCount": 285,
-            "maxPixels": 645,
-            "rootBand": 84
+            "pixelCount": 229,
+            "mappableCount": 229,
+            "maxPixels": 272,
+            "rootBand": 72
           }
         },
         "alternate": {
@@ -75,15 +75,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 27,
-              "y": 20,
-              "w": 16,
-              "h": 18
+              "x": 12,
+              "y": 56,
+              "w": 14,
+              "h": 14
             },
-            "pixelCount": 151,
-            "mappableCount": 151,
-            "maxPixels": 571,
-            "rootBand": 84
+            "pixelCount": 109,
+            "mappableCount": 109,
+            "maxPixels": 225,
+            "rootBand": 72
           }
         }
       },
@@ -116,11 +116,11 @@
         1,
         1
       ],
-      "width": 96,
-      "height": 112,
+      "width": 64,
+      "height": 96,
       "pivot": {
-        "x": 48,
-        "y": 108
+        "x": 32,
+        "y": 80
       },
       "defaultFile": "native/hw_pumpkin_stack.png",
       "rightFile": "native/hw_pumpkin_stack_right.png",
@@ -154,23 +154,23 @@
         260
       ],
       "source": "masters/hw_pumpkin_stack.png",
-      "sourceSha256": "34da125518b3c43a2cad49074bf1b84bd6819adb9d75aa59a9e7db85cd600c8b",
+      "sourceSha256": "0d8812e4938cff00ebb060972fbca09e96f79b8b10b154cd99260a3a208b8af1",
       "pngSha256": {
-        "native/hw_pumpkin_stack.png": "686632b71220c1e41c44bf09173bb6ef67727f7e7d8d778cc031dea8409eb613",
-        "native/hw_pumpkin_stack_right.png": "2041cd48424ec8b40e002450d44ca201ccfda38036bf243aa246ed0c073fefcb",
-        "native/hw_pumpkin_stack_f0.png": "686632b71220c1e41c44bf09173bb6ef67727f7e7d8d778cc031dea8409eb613",
-        "native/hw_pumpkin_stack_f1.png": "cfe230583b79b2e5a6503b428418b4b664910eeb3cc4991a99f3c366acbe8ded",
-        "native/hw_pumpkin_stack_f2.png": "ea64916382bf967c7c35f9a77f841678021e4099b4bc2d37f1059006f3ad5641",
-        "native/hw_pumpkin_stack_f3.png": "686632b71220c1e41c44bf09173bb6ef67727f7e7d8d778cc031dea8409eb613",
-        "native/hw_pumpkin_stack_right_f0.png": "2041cd48424ec8b40e002450d44ca201ccfda38036bf243aa246ed0c073fefcb",
-        "native/hw_pumpkin_stack_right_f1.png": "cbc609f351d35ddcb5452eb22a32f59e41b1b26bcfcc34b5e8878802dc0c8584",
-        "native/hw_pumpkin_stack_right_f2.png": "354ed2bc54089ccfad402e0ce0700613a185ac421b61c73362052b0f7b458989",
-        "native/hw_pumpkin_stack_right_f3.png": "2041cd48424ec8b40e002450d44ca201ccfda38036bf243aa246ed0c073fefcb",
-        "spritesheets/hw_pumpkin_stack.png": "021aea74f6cb65a5c7e7e3ced3166ef5750a98f8818e6500c312a9654057199e",
-        "thumbnails/2x/hw_pumpkin_stack.png": "1bba8deb8db571c7807fa69edf0327565b8d23ff2f1db1c591537b22a033cc08",
-        "thumbnails/2x/hw_pumpkin_stack_right.png": "6bc298b87f21e1535275af1066d210a61d851d87ea1e96e1250ec115ace39a85",
-        "thumbnails/3x/hw_pumpkin_stack.png": "945615ed99f78450376e28699e2b7c39c2a436e0b820fad21f46a53609c72eb7",
-        "thumbnails/3x/hw_pumpkin_stack_right.png": "19b81d95bf6e1ef3b961e3810ce953760e8bae4d144936f1434870c871c23957"
+        "native/hw_pumpkin_stack.png": "7c1ecac04d2c8eec6eb525286391d68a9b8071015c9c8caec9012472db9614a0",
+        "native/hw_pumpkin_stack_right.png": "a2aa81df2c88167e91e99ac922d6af620c14263be82e68736424356617778095",
+        "native/hw_pumpkin_stack_f0.png": "7c1ecac04d2c8eec6eb525286391d68a9b8071015c9c8caec9012472db9614a0",
+        "native/hw_pumpkin_stack_f1.png": "93e1df0ef6fe5a0e4af01762789ff298392cc206f1b8deca32f22f2ce1fb4494",
+        "native/hw_pumpkin_stack_f2.png": "da9b8bf521025e0fa92dcd067430480d28b82283196ae5236e2e1b4136be7814",
+        "native/hw_pumpkin_stack_f3.png": "7c1ecac04d2c8eec6eb525286391d68a9b8071015c9c8caec9012472db9614a0",
+        "native/hw_pumpkin_stack_right_f0.png": "a2aa81df2c88167e91e99ac922d6af620c14263be82e68736424356617778095",
+        "native/hw_pumpkin_stack_right_f1.png": "821bdde99ad08790a3fcca0e169037a5cdcdd8834cad449fbff28488cc9039a4",
+        "native/hw_pumpkin_stack_right_f2.png": "55d8c1c9724b4a5d2106660fd8ee620a23a8426a112fdee10093d5847a61fb60",
+        "native/hw_pumpkin_stack_right_f3.png": "a2aa81df2c88167e91e99ac922d6af620c14263be82e68736424356617778095",
+        "spritesheets/hw_pumpkin_stack.png": "baee9b8b9a73375516ff1ab250b4e22a0c2f291bcbb8386fc7dcddcb439b719a",
+        "thumbnails/2x/hw_pumpkin_stack.png": "be24f43f4697cb39dcca19a8980453c54ae67ffa5b774384e30086f741423f51",
+        "thumbnails/2x/hw_pumpkin_stack_right.png": "3d0468f6077c44fcdefb3906073b171df560c55e954472d805cd1c420047e63c",
+        "thumbnails/3x/hw_pumpkin_stack.png": "a6b107450723a51763b6154811b974fb9cdb6118db8d62a9d0d95d52372f4ce3",
+        "thumbnails/3x/hw_pumpkin_stack_right.png": "c06c33f664de631213fec914bcb3ee4e15a85783781c71d3ea531acce8bbc506"
       }
     },
     {
@@ -1699,15 +1699,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 40,
-              "y": 41,
-              "w": 30,
-              "h": 19
+              "x": 33,
+              "y": 32,
+              "w": 29,
+              "h": 18
             },
-            "pixelCount": 268,
-            "mappableCount": 268,
-            "maxPixels": 1034,
-            "rootBand": 90
+            "pixelCount": 209,
+            "mappableCount": 209,
+            "maxPixels": 373,
+            "rootBand": 72
           }
         },
         "alternate": {
@@ -1716,15 +1716,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 48,
-              "y": 41,
-              "w": 33,
-              "h": 19
+              "x": 37,
+              "y": 27,
+              "w": 19,
+              "h": 14
             },
-            "pixelCount": 271,
-            "mappableCount": 271,
-            "maxPixels": 1045,
-            "rootBand": 90
+            "pixelCount": 112,
+            "mappableCount": 112,
+            "maxPixels": 412,
+            "rootBand": 72
           }
         }
       },
@@ -1757,11 +1757,11 @@
         2,
         1
       ],
-      "width": 144,
-      "height": 120,
+      "width": 96,
+      "height": 96,
       "pivot": {
-        "x": 72,
-        "y": 116
+        "x": 48,
+        "y": 80
       },
       "defaultFile": "native/hw_halloween_potion_table.png",
       "rightFile": "native/hw_halloween_potion_table_right.png",
@@ -1795,23 +1795,23 @@
         260
       ],
       "source": "masters/hw_halloween_potion_table.png",
-      "sourceSha256": "fd4e88b726f193896de49e7f6a7cc4cdfa42dfacb47f5c2518f3bddfd025324c",
+      "sourceSha256": "f6d666120ba6eaff30ef059c2e6087262256fa9c2214aeb9a23d92f914c9a2aa",
       "pngSha256": {
-        "native/hw_halloween_potion_table.png": "516308ab5d8dda8697fcb6bc45d594e4419d68ef35c8f7ad328b09b870a353e2",
-        "native/hw_halloween_potion_table_right.png": "d9759cb5cd00890fd427bca967031a422085504f62594c8fe716add18ee8060d",
-        "native/hw_halloween_potion_table_f0.png": "516308ab5d8dda8697fcb6bc45d594e4419d68ef35c8f7ad328b09b870a353e2",
-        "native/hw_halloween_potion_table_f1.png": "67e3abc01da1d8f017e01865f4bde53dbaeba39ccffbc0bec3833743a5d83a38",
-        "native/hw_halloween_potion_table_f2.png": "2e33fca8130008d068df683c629beb1de2baa36696597ea9b674085fbd7ade95",
-        "native/hw_halloween_potion_table_f3.png": "516308ab5d8dda8697fcb6bc45d594e4419d68ef35c8f7ad328b09b870a353e2",
-        "native/hw_halloween_potion_table_right_f0.png": "d9759cb5cd00890fd427bca967031a422085504f62594c8fe716add18ee8060d",
-        "native/hw_halloween_potion_table_right_f1.png": "d72969b31c05dd1eba89821020a70dc15d8cc430bdd004a995e2119e1a7422db",
-        "native/hw_halloween_potion_table_right_f2.png": "48a07ecb39ce21ffb30a585ba1294e004335be1c1820398368e9c95dc5036487",
-        "native/hw_halloween_potion_table_right_f3.png": "d9759cb5cd00890fd427bca967031a422085504f62594c8fe716add18ee8060d",
-        "spritesheets/hw_halloween_potion_table.png": "40e08cbcfedfb72acf212a8f93a36f17f1df63caab8b1d0519e46ddcab138214",
-        "thumbnails/2x/hw_halloween_potion_table.png": "61b84210ca505e7a907f6c484c113a230a93a788cb4c70c713621e7df9a9cf9a",
-        "thumbnails/2x/hw_halloween_potion_table_right.png": "06f07ffde15cb4ab70f382f31e2fd6c95231db3c40a52e5c824615f5bfae59d6",
-        "thumbnails/3x/hw_halloween_potion_table.png": "1b908d7572254723032e4f875e4b82800dd3a63a37942b63fd9db7fc969a528d",
-        "thumbnails/3x/hw_halloween_potion_table_right.png": "19a56897d0d8bf5dfb1fd53cb2127261c7687d6a03d72d24f0c08b23762cd07b"
+        "native/hw_halloween_potion_table.png": "f9eb8fd6f25ec76abaa69d47e650822520863f57c0ee2d9ad7ac6890ca933d27",
+        "native/hw_halloween_potion_table_right.png": "ff5198268048b6b88f70e1a4f33f9d6d44a4cf340c7b3be4f6beee53cec35c94",
+        "native/hw_halloween_potion_table_f0.png": "f9eb8fd6f25ec76abaa69d47e650822520863f57c0ee2d9ad7ac6890ca933d27",
+        "native/hw_halloween_potion_table_f1.png": "7c00f63d068f5fd2db7792de18511b4869e5bb51ee473197ed48f2d79dc13591",
+        "native/hw_halloween_potion_table_f2.png": "b90eb3b64880b6d5626577f5e961e1d3e3df5b56406d74b9055f1a1bb5aa1939",
+        "native/hw_halloween_potion_table_f3.png": "f9eb8fd6f25ec76abaa69d47e650822520863f57c0ee2d9ad7ac6890ca933d27",
+        "native/hw_halloween_potion_table_right_f0.png": "ff5198268048b6b88f70e1a4f33f9d6d44a4cf340c7b3be4f6beee53cec35c94",
+        "native/hw_halloween_potion_table_right_f1.png": "11dddff2721ab5758160f91dc15a9c3db5b0c453fc9bc687e20c4d703a3fb580",
+        "native/hw_halloween_potion_table_right_f2.png": "7f433e5859a0f4c57576a180cfd49d57fdb750d5c10a8b4a40b46b3f1ecf6182",
+        "native/hw_halloween_potion_table_right_f3.png": "ff5198268048b6b88f70e1a4f33f9d6d44a4cf340c7b3be4f6beee53cec35c94",
+        "spritesheets/hw_halloween_potion_table.png": "b64c0af21a3429e3f4786ada1d697252ce61900ed6521f7c9737a8f1cf7e81df",
+        "thumbnails/2x/hw_halloween_potion_table.png": "4e1466e96c5ac604b044d6ae3064c0f2d07ed6a1cc2e79563d0e9a7f89678c55",
+        "thumbnails/2x/hw_halloween_potion_table_right.png": "ed7f326bed5054b0c6c506e3fcd76c9e54bddc7be730f30fd50f71bfd0f23ad2",
+        "thumbnails/3x/hw_halloween_potion_table.png": "4af57d2f871961114b2bcd7413d6850ef8d50f0026835775ef80125058399d5d",
+        "thumbnails/3x/hw_halloween_potion_table_right.png": "062497a66d860982135d206da9d437208ab0fd0cc69b15f90bee9ec546996263"
       }
     },
     {
@@ -2090,11 +2090,11 @@
         1,
         1
       ],
-      "width": 104,
-      "height": 144,
+      "width": 64,
+      "height": 112,
       "pivot": {
-        "x": 52,
-        "y": 140
+        "x": 32,
+        "y": 96
       },
       "defaultFile": "native/hw_witch_hat_rack.png",
       "rightFile": "native/hw_witch_hat_rack_right.png",
@@ -2128,23 +2128,23 @@
         300
       ],
       "source": "masters/hw_witch_hat_rack.png",
-      "sourceSha256": "b1577bd40aa41ea84bd05c5467bb5d1ff676efc13cd97aec5b2e77021bfeeccc",
+      "sourceSha256": "b0f504689e35cd8c25c7aab0d8e166eaeee106688efa160b7a812e6647bfb6ff",
       "pngSha256": {
-        "native/hw_witch_hat_rack.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
-        "native/hw_witch_hat_rack_right.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
-        "native/hw_witch_hat_rack_f0.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
-        "native/hw_witch_hat_rack_f1.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
-        "native/hw_witch_hat_rack_f2.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
-        "native/hw_witch_hat_rack_f3.png": "55e214ca7d5a837d6c4d62c0855c7683f5e3a5293003c8775cbf36bfaa8156c7",
-        "native/hw_witch_hat_rack_right_f0.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
-        "native/hw_witch_hat_rack_right_f1.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
-        "native/hw_witch_hat_rack_right_f2.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
-        "native/hw_witch_hat_rack_right_f3.png": "f26642f3767b8682a8dd07317e4dc108521685eff5fcde073ef5fc3b57f122de",
-        "spritesheets/hw_witch_hat_rack.png": "077ed21c14d8452157fa17a62fb8d718320b8aa212a067ddf08e4fb39ae10a51",
-        "thumbnails/2x/hw_witch_hat_rack.png": "b3e36ba18cfc7aeeedf926de3c554e866b8ea289a5f2bffb788db9ea079cdfd6",
-        "thumbnails/2x/hw_witch_hat_rack_right.png": "bc82f2a6a14a577df6de2b9ebebb0025d5b440eeca2f3c25d32d1a217b81c30f",
-        "thumbnails/3x/hw_witch_hat_rack.png": "0d4f19ffdb21a7febd54e89b90b124d5e803661426704e6a98e2d21fbe2406c4",
-        "thumbnails/3x/hw_witch_hat_rack_right.png": "8ae341716af7eddb804b2717c168a2ea4bcdb9d1221129dcb0348298a7582269"
+        "native/hw_witch_hat_rack.png": "030f00583229ce1c982a9a987f6c04fc492f28c6aabb34f563b3d4d7df826c2f",
+        "native/hw_witch_hat_rack_right.png": "afdb5c5b2ebdfd3d26ee9ff2279a1b159b93846c61c5d4970195c9b470f53abb",
+        "native/hw_witch_hat_rack_f0.png": "030f00583229ce1c982a9a987f6c04fc492f28c6aabb34f563b3d4d7df826c2f",
+        "native/hw_witch_hat_rack_f1.png": "030f00583229ce1c982a9a987f6c04fc492f28c6aabb34f563b3d4d7df826c2f",
+        "native/hw_witch_hat_rack_f2.png": "030f00583229ce1c982a9a987f6c04fc492f28c6aabb34f563b3d4d7df826c2f",
+        "native/hw_witch_hat_rack_f3.png": "030f00583229ce1c982a9a987f6c04fc492f28c6aabb34f563b3d4d7df826c2f",
+        "native/hw_witch_hat_rack_right_f0.png": "afdb5c5b2ebdfd3d26ee9ff2279a1b159b93846c61c5d4970195c9b470f53abb",
+        "native/hw_witch_hat_rack_right_f1.png": "afdb5c5b2ebdfd3d26ee9ff2279a1b159b93846c61c5d4970195c9b470f53abb",
+        "native/hw_witch_hat_rack_right_f2.png": "afdb5c5b2ebdfd3d26ee9ff2279a1b159b93846c61c5d4970195c9b470f53abb",
+        "native/hw_witch_hat_rack_right_f3.png": "afdb5c5b2ebdfd3d26ee9ff2279a1b159b93846c61c5d4970195c9b470f53abb",
+        "spritesheets/hw_witch_hat_rack.png": "93a3054f99d1f2500a57a7276f3c5941654861c3e97125717ee770c50ae65b77",
+        "thumbnails/2x/hw_witch_hat_rack.png": "f48aed3ce2f0795a36a064b8cced8521df811bbf7f8aeebecfabc27fa78bdfae",
+        "thumbnails/2x/hw_witch_hat_rack_right.png": "5011b9d12ea56e01e8da9a894d966a23c7867b10c602bba25bb53247fc385f53",
+        "thumbnails/3x/hw_witch_hat_rack.png": "17c63180c91e66e3bbf0933773f4c3f78d1c933e3378cc88903f75cecec62e45",
+        "thumbnails/3x/hw_witch_hat_rack_right.png": "4accab13441bf713cabd430a2ada3f3055bb69973f02314e4f7e6a0f5385547d"
       }
     },
     {
@@ -2165,15 +2165,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 72,
-              "y": 32,
-              "w": 23,
-              "h": 14
+              "x": 36,
+              "y": 66,
+              "w": 3,
+              "h": 4
             },
-            "pixelCount": 124,
-            "mappableCount": 124,
-            "maxPixels": 1173,
-            "rootBand": 108
+            "pixelCount": 8,
+            "mappableCount": 8,
+            "maxPixels": 367,
+            "rootBand": 84
           }
         },
         "alternate": {
@@ -2182,15 +2182,15 @@
           "fallback": null,
           "effect": {
             "bbox": {
-              "x": 77,
-              "y": 22,
-              "w": 24,
-              "h": 16
+              "x": 50,
+              "y": 59,
+              "w": 3,
+              "h": 5
             },
-            "pixelCount": 145,
-            "mappableCount": 145,
-            "maxPixels": 1111,
-            "rootBand": 108
+            "pixelCount": 10,
+            "mappableCount": 10,
+            "maxPixels": 403,
+            "rootBand": 84
           }
         }
       },
@@ -2223,11 +2223,11 @@
         2,
         1
       ],
-      "width": 144,
-      "height": 144,
+      "width": 96,
+      "height": 112,
       "pivot": {
-        "x": 72,
-        "y": 140
+        "x": 48,
+        "y": 96
       },
       "defaultFile": "native/hw_caramel_apple_cart.png",
       "rightFile": "native/hw_caramel_apple_cart_right.png",
@@ -2261,23 +2261,23 @@
         260
       ],
       "source": "masters/hw_caramel_apple_cart.png",
-      "sourceSha256": "73c0bd9f28d7ace5460f2c0d95ecfd21ccccbb2ba3c03c189e5acf9bcbc3cbd5",
+      "sourceSha256": "08f6c43099808a96faf6d22a71dcf70e080fd944a10675319c5c31687892956f",
       "pngSha256": {
-        "native/hw_caramel_apple_cart.png": "4ad941c4ac498a6e4a5ea16ea6791cc5100dd00d9237903720d4d210b34eb8c8",
-        "native/hw_caramel_apple_cart_right.png": "04c6b5b87c9c74833f3cf4ca96e09ebe6215705b127ec7ebe7e747ba5d2e3295",
-        "native/hw_caramel_apple_cart_f0.png": "4ad941c4ac498a6e4a5ea16ea6791cc5100dd00d9237903720d4d210b34eb8c8",
-        "native/hw_caramel_apple_cart_f1.png": "91a33e61889caa29529f3c97b245626ccf92dacecc263ad9c790b97456d14060",
-        "native/hw_caramel_apple_cart_f2.png": "15e1e80e1f5f4354a0a30577091bb7a6934b051e64e3d4ee54ae9a90aef36364",
-        "native/hw_caramel_apple_cart_f3.png": "4ad941c4ac498a6e4a5ea16ea6791cc5100dd00d9237903720d4d210b34eb8c8",
-        "native/hw_caramel_apple_cart_right_f0.png": "04c6b5b87c9c74833f3cf4ca96e09ebe6215705b127ec7ebe7e747ba5d2e3295",
-        "native/hw_caramel_apple_cart_right_f1.png": "e03a2d0d6639b503bf780aeeb1155c231bf28e3cfb6bc8aea67060604c283b3d",
-        "native/hw_caramel_apple_cart_right_f2.png": "2170130a476f360bf676245b10ce7d831b3b90ec22801b3b44f143b1dce94923",
-        "native/hw_caramel_apple_cart_right_f3.png": "04c6b5b87c9c74833f3cf4ca96e09ebe6215705b127ec7ebe7e747ba5d2e3295",
-        "spritesheets/hw_caramel_apple_cart.png": "3bff4fbd7f55b57a2c5a73e295e9ce754f6d589631e32d1373c592dc820321ae",
-        "thumbnails/2x/hw_caramel_apple_cart.png": "cf7d129b3aaf2038f203dea8a85378feb55fac417b05424391820bb11d9f87ed",
-        "thumbnails/2x/hw_caramel_apple_cart_right.png": "71670517f2aae929bd6e04109293039a1ca14a6f7b837664415300e3cd25aa37",
-        "thumbnails/3x/hw_caramel_apple_cart.png": "4e5ba96fc556270b8b2dba8ca61972b4bf95a49fc74a4f756e0df68a97d1d95d",
-        "thumbnails/3x/hw_caramel_apple_cart_right.png": "ab700d35d5f4467c0fdd6f4ad2f74690dd4923993e1207e9c5020ca184194f4d"
+        "native/hw_caramel_apple_cart.png": "f281ce9bc42da396e4cf77499e8eddd242e91d0d9e8cea52e79a274b3a8576e6",
+        "native/hw_caramel_apple_cart_right.png": "223fdef67b73b6c08f71d6f2d5c1996bf44d5f29baa427194ffcd4fafcf681a5",
+        "native/hw_caramel_apple_cart_f0.png": "f281ce9bc42da396e4cf77499e8eddd242e91d0d9e8cea52e79a274b3a8576e6",
+        "native/hw_caramel_apple_cart_f1.png": "7236514d014bd23ae557121b8572391f3682cd904eace3e671453c1ea7c0f022",
+        "native/hw_caramel_apple_cart_f2.png": "bb4336f659942dad5e511cf2ba29344ab5dffa6a8687a3c2c9519c33596a8432",
+        "native/hw_caramel_apple_cart_f3.png": "f281ce9bc42da396e4cf77499e8eddd242e91d0d9e8cea52e79a274b3a8576e6",
+        "native/hw_caramel_apple_cart_right_f0.png": "223fdef67b73b6c08f71d6f2d5c1996bf44d5f29baa427194ffcd4fafcf681a5",
+        "native/hw_caramel_apple_cart_right_f1.png": "6be3b837ba698b41d300ddcdac1be8a3e68f140e5ef009d37ca7b56cdbfe6a29",
+        "native/hw_caramel_apple_cart_right_f2.png": "02cc4bf7733a39be1479d350e6802748d215a7f50fc0659affc613813fa2b87e",
+        "native/hw_caramel_apple_cart_right_f3.png": "223fdef67b73b6c08f71d6f2d5c1996bf44d5f29baa427194ffcd4fafcf681a5",
+        "spritesheets/hw_caramel_apple_cart.png": "81003f873a82076af169a8426ad2522e6078544c0bec3c8f963546b445dae799",
+        "thumbnails/2x/hw_caramel_apple_cart.png": "81d5cf239b9a6c55be74ee9c69ea3583e1abd7317ada9e253e8dafa41fd26353",
+        "thumbnails/2x/hw_caramel_apple_cart_right.png": "4edd2b4ba6e014ddf5356c1babec0553a1bd6c1df16735505c909a534046bd2a",
+        "thumbnails/3x/hw_caramel_apple_cart.png": "b00cd6703c9a9fd9dda703dc70f8fb927f81cf806e1aa023e87959af34ceb369",
+        "thumbnails/3x/hw_caramel_apple_cart_right.png": "5344f54ecf8e9423b67663e5852f8cc7f5e6249b5c51e92d528ce2b12fd56f7a"
       }
     },
     {
@@ -2711,11 +2711,11 @@
         1,
         1
       ],
-      "width": 96,
-      "height": 136,
+      "width": 64,
+      "height": 96,
       "pivot": {
-        "x": 48,
-        "y": 132
+        "x": 32,
+        "y": 80
       },
       "defaultFile": "native/hw_owl_tree_hollow.png",
       "rightFile": "native/hw_owl_tree_hollow_right.png",
@@ -2749,23 +2749,23 @@
         300
       ],
       "source": "masters/hw_owl_tree_hollow.png",
-      "sourceSha256": "259ab0937ff4303fb0b9a6b976a554c4537fa41b9cdaaeb1d9c2ba14a37f0c7b",
+      "sourceSha256": "548663818926a1f4a542368dd5c158c88801a5ae979e33486e9c7053588faae3",
       "pngSha256": {
-        "native/hw_owl_tree_hollow.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
-        "native/hw_owl_tree_hollow_right.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
-        "native/hw_owl_tree_hollow_f0.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
-        "native/hw_owl_tree_hollow_f1.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
-        "native/hw_owl_tree_hollow_f2.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
-        "native/hw_owl_tree_hollow_f3.png": "f59555a521dbc44d1c0e8cebbadabcc3316ab3bbb414b82abbb8d4faa3a797c0",
-        "native/hw_owl_tree_hollow_right_f0.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
-        "native/hw_owl_tree_hollow_right_f1.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
-        "native/hw_owl_tree_hollow_right_f2.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
-        "native/hw_owl_tree_hollow_right_f3.png": "b0d34ea1bb7630226a66f54967127be5e764052c43a3eb2eb8b95d30d54d1ab0",
-        "spritesheets/hw_owl_tree_hollow.png": "32b72c9a40cd136cbc1bd720ad627a6285a1e4bafc0be84b0b7cf54743faad90",
-        "thumbnails/2x/hw_owl_tree_hollow.png": "fef7d00ee862d1cfc397af48231bb6dd6955b9b26f93a25519f30af3ba2c9a07",
-        "thumbnails/2x/hw_owl_tree_hollow_right.png": "6ed0942f8a47ff4f07a32acac0105bf7b43690e659072ea74f80e26f4a857fb6",
-        "thumbnails/3x/hw_owl_tree_hollow.png": "152c6816c7fe199839ae590d041cca940bf05684dfa5546d3529531d245a34d9",
-        "thumbnails/3x/hw_owl_tree_hollow_right.png": "beba18c8d152ece1f332e992189d1581c3b7325f0683c81d089b5c606d1177c9"
+        "native/hw_owl_tree_hollow.png": "9479d5fba4922ec4020ff281908c3d216baca878f2e23cca74cefbb0d18c23cd",
+        "native/hw_owl_tree_hollow_right.png": "027aaf9c200a0890bda16e83fb3ac9ade17a792c46dee4058ac26e723cf44e39",
+        "native/hw_owl_tree_hollow_f0.png": "9479d5fba4922ec4020ff281908c3d216baca878f2e23cca74cefbb0d18c23cd",
+        "native/hw_owl_tree_hollow_f1.png": "9479d5fba4922ec4020ff281908c3d216baca878f2e23cca74cefbb0d18c23cd",
+        "native/hw_owl_tree_hollow_f2.png": "9479d5fba4922ec4020ff281908c3d216baca878f2e23cca74cefbb0d18c23cd",
+        "native/hw_owl_tree_hollow_f3.png": "9479d5fba4922ec4020ff281908c3d216baca878f2e23cca74cefbb0d18c23cd",
+        "native/hw_owl_tree_hollow_right_f0.png": "027aaf9c200a0890bda16e83fb3ac9ade17a792c46dee4058ac26e723cf44e39",
+        "native/hw_owl_tree_hollow_right_f1.png": "027aaf9c200a0890bda16e83fb3ac9ade17a792c46dee4058ac26e723cf44e39",
+        "native/hw_owl_tree_hollow_right_f2.png": "027aaf9c200a0890bda16e83fb3ac9ade17a792c46dee4058ac26e723cf44e39",
+        "native/hw_owl_tree_hollow_right_f3.png": "027aaf9c200a0890bda16e83fb3ac9ade17a792c46dee4058ac26e723cf44e39",
+        "spritesheets/hw_owl_tree_hollow.png": "90414c57de314ce459932af111beb523b2522311e9dc9302f9758baa103efa30",
+        "thumbnails/2x/hw_owl_tree_hollow.png": "c6cf6bc54ce3276aa4580050aeb63c803c08fe65ab980e3fe4d677d62c925855",
+        "thumbnails/2x/hw_owl_tree_hollow_right.png": "b13c1606245669defa59377109a6cee1742521e17d6f7c870472d0ec60810d77",
+        "thumbnails/3x/hw_owl_tree_hollow.png": "59bf32a05f0a63ac91ebf39292cd7a252c5f1a6a74ff18359541b0c0dc8c47c0",
+        "thumbnails/3x/hw_owl_tree_hollow_right.png": "1e05cba7ed2b4df0d6521958052167f6563e7fa372e706d3ea82d6e9c02007d9"
       }
     },
     {
@@ -2955,11 +2955,11 @@
         1,
         1
       ],
-      "width": 104,
-      "height": 96,
+      "width": 64,
+      "height": 80,
       "pivot": {
-        "x": 52,
-        "y": 92
+        "x": 32,
+        "y": 64
       },
       "defaultFile": "native/hw_pumpkin_spider_nest.png",
       "rightFile": "native/hw_pumpkin_spider_nest_right.png",
@@ -2993,23 +2993,23 @@
         300
       ],
       "source": "masters/hw_pumpkin_spider_nest.png",
-      "sourceSha256": "550e1a36e5fae314f8d9184e915215905b9e04930782e1992ef8de6510a0af7b",
+      "sourceSha256": "3a27ffc1d141744098a1993fb5f5560529c5cfe318d900db7d5d4c0849903ed5",
       "pngSha256": {
-        "native/hw_pumpkin_spider_nest.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
-        "native/hw_pumpkin_spider_nest_right.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
-        "native/hw_pumpkin_spider_nest_f0.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
-        "native/hw_pumpkin_spider_nest_f1.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
-        "native/hw_pumpkin_spider_nest_f2.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
-        "native/hw_pumpkin_spider_nest_f3.png": "154956a744f33c3e8366dadf6cffb3e7b20b6d211ff383a675f7c7160e7a5cd5",
-        "native/hw_pumpkin_spider_nest_right_f0.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
-        "native/hw_pumpkin_spider_nest_right_f1.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
-        "native/hw_pumpkin_spider_nest_right_f2.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
-        "native/hw_pumpkin_spider_nest_right_f3.png": "26127de17508c9c6e4aa7314026883bee8d2b78c376aca5b0cc0404307dcd5dd",
-        "spritesheets/hw_pumpkin_spider_nest.png": "e504404a7f50e522deebbaff96446b297670f7b5a4d058618a4bc1b826d102f7",
-        "thumbnails/2x/hw_pumpkin_spider_nest.png": "8b948caa9a71f6fb4bb007f1db97f588dfe518acd77dd3166004ae97d783965a",
-        "thumbnails/2x/hw_pumpkin_spider_nest_right.png": "b01ebeca809a0b7de37fac8dc32d0d26cd907420aa1a729a3618a7a3f0a3ceb7",
-        "thumbnails/3x/hw_pumpkin_spider_nest.png": "0d2264a14a80e81b382925d3ad32b70bce2644c74d1d7cdbfa26ac014be80b14",
-        "thumbnails/3x/hw_pumpkin_spider_nest_right.png": "bd87a00f7690a302f81d215489075f3e771a7748afba38282d4d5b2191046510"
+        "native/hw_pumpkin_spider_nest.png": "c9c4773d279c89731aa0fd7b5a1a3e1d5b721f74681ea43ac6a3cec9e89eb571",
+        "native/hw_pumpkin_spider_nest_right.png": "00c9d60a7df46fa29256957abb6cccf50d5cc5c1868df06b60605f802e214112",
+        "native/hw_pumpkin_spider_nest_f0.png": "c9c4773d279c89731aa0fd7b5a1a3e1d5b721f74681ea43ac6a3cec9e89eb571",
+        "native/hw_pumpkin_spider_nest_f1.png": "c9c4773d279c89731aa0fd7b5a1a3e1d5b721f74681ea43ac6a3cec9e89eb571",
+        "native/hw_pumpkin_spider_nest_f2.png": "c9c4773d279c89731aa0fd7b5a1a3e1d5b721f74681ea43ac6a3cec9e89eb571",
+        "native/hw_pumpkin_spider_nest_f3.png": "c9c4773d279c89731aa0fd7b5a1a3e1d5b721f74681ea43ac6a3cec9e89eb571",
+        "native/hw_pumpkin_spider_nest_right_f0.png": "00c9d60a7df46fa29256957abb6cccf50d5cc5c1868df06b60605f802e214112",
+        "native/hw_pumpkin_spider_nest_right_f1.png": "00c9d60a7df46fa29256957abb6cccf50d5cc5c1868df06b60605f802e214112",
+        "native/hw_pumpkin_spider_nest_right_f2.png": "00c9d60a7df46fa29256957abb6cccf50d5cc5c1868df06b60605f802e214112",
+        "native/hw_pumpkin_spider_nest_right_f3.png": "00c9d60a7df46fa29256957abb6cccf50d5cc5c1868df06b60605f802e214112",
+        "spritesheets/hw_pumpkin_spider_nest.png": "6a61cf8b947f3c77830d912e4e6a34bb2a0522e026555beb2ca1836e5a3e4c14",
+        "thumbnails/2x/hw_pumpkin_spider_nest.png": "5904b4c3c4e9c24c639c8cb7884e1a19e4b5cdb8238698f58b20d9232085333e",
+        "thumbnails/2x/hw_pumpkin_spider_nest_right.png": "39006cef18506e660a27b44e0af065c68b9c7b812be0c5b3e73f35e6feae4995",
+        "thumbnails/3x/hw_pumpkin_spider_nest.png": "c20aea9801ff2cd9ece05393b9f1535183ee21ca589a7801578bbec47019a838",
+        "thumbnails/3x/hw_pumpkin_spider_nest_right.png": "28918dcc6bc8c4ebecc79833f5f1ece373e956772d3f9d5c475d1fa2b9db5b3d"
       }
     },
     {

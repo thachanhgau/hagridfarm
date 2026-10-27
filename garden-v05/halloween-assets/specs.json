@@ -8,13 +8,17 @@
       "label": "Chồng bí ngô khắc mặt",
       "group": "Cốt lõi",
       "subject": "A compact stack of exactly three different carved jack-o-lantern pumpkins, one wearing a tiny crooked witch hat; varied cheerful spooky faces and candlelit amber interiors. Green stems, a few autumn leaves at the feet. A sturdy pyramid silhouette, no pedestal.",
-      "w": 96,
-      "h": 112,
+      "w": 64,
+      "h": 96,
       "foot": [
         1,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        56,
+        66
+      ]
     },
     {
       "id": "hw_monster_candy_barrel",
@@ -185,13 +189,17 @@
       "label": "Bàn pha độc dược Halloween",
       "group": "Góc phù thủy",
       "subject": "A rustic compact outdoor witch's potion worktable: thick plank tabletop, four sturdy legs, exactly three squat glass bottles of orange violet and teal liquid, a mortar and pestle, a small open grimoire with blank pictograms and a tiny pumpkin. Everything fits on table, no text.",
-      "w": 144,
-      "h": 120,
+      "w": 96,
+      "h": 96,
       "foot": [
         2,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        88,
+        75
+      ]
     },
     {
       "id": "hw_monster_bookcase",
@@ -224,26 +232,34 @@
       "label": "Giá treo mũ phù thủy",
       "group": "Góc phù thủy",
       "subject": "A freestanding twisted timber coat rack holding exactly three crooked witch hats: muted violet, moss green, pumpkin orange. Each hat has a copper buckle. Three stable wooden legs, no coats, no brooms, no people.",
-      "w": 104,
-      "h": 144,
+      "w": 64,
+      "h": 112,
       "foot": [
         1,
         1
       ],
-      "motion": "sway"
+      "motion": "sway",
+      "inkMax": [
+        56,
+        83
+      ]
     },
     {
       "id": "hw_caramel_apple_cart",
       "label": "Xe đẩy táo bọc kẹo",
       "group": "Góc phù thủy",
       "subject": "A small two-wheeled rustic market cart with two handles, tray displaying exactly five glossy pixel caramel apples on sticks, orange and purple striped small cloth awning and a carved bat ornament. No sign text, no vendors.",
-      "w": 144,
-      "h": 144,
+      "w": 96,
+      "h": 112,
       "foot": [
         2,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "inkMax": [
+        88,
+        92
+      ]
     },
     {
       "id": "hw_grinning_stump",
@@ -289,13 +305,17 @@
       "label": "Hốc cây có cú đêm",
       "group": "Rừng tinh nghịch",
       "subject": "A short upright hollow tree log with a small sleepy brown owl nestled in its round cavity, large amber owl eyes, moss roof and a few ivy leaves; twisted roots provide a stable base. This is one garden ornament scene, no flying owl.",
-      "w": 96,
-      "h": 136,
+      "w": 64,
+      "h": 96,
       "foot": [
         1,
         1
       ],
-      "motion": "blink"
+      "motion": "blink",
+      "inkMax": [
+        56,
+        70
+      ]
     },
     {
       "id": "hw_dewy_cobweb_frame",
@@ -315,13 +335,17 @@
       "label": "Tổ nhện trong bí ngô",
       "group": "Rừng tinh nghịch",
       "subject": "A hollow orange pumpkin lying on its side, cut opening filled with a small ivory web, one friendly dark-violet spider peeking out, two tiny spiderlings on the stem. A few green leaves and curly vine, no extra pumpkins.",
-      "w": 104,
-      "h": 96,
+      "w": 64,
+      "h": 80,
       "foot": [
         1,
         1
       ],
-      "motion": "sway"
+      "motion": "sway",
+      "inkMax": [
+        56,
+        46
+      ]
     },
     {
       "id": "hw_root_halloween_gate",
