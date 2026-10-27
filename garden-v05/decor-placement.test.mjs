@@ -10,6 +10,7 @@ const {decorSpotProblem, decorSpotGrid, decorOnGround, groundRect} = await impor
 
 const {iso} = await import('./scene-renderer.mjs');
 const {decorFootprintRect, snapDecorSpot} = await import('./decor-runtime.mjs');
+const {CREATURE, DB} = await import('./balance-data.mjs');
 const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json', import.meta.url)));
 const assetOf = id => manifest.items.find(item => item.id === id);
 const last = GARDEN_STAGES.at(-1);
@@ -44,8 +45,8 @@ test('free placement: open ground is free; plots, pens, buildings, locked land a
 test('large pieces: the whole footprint counts, turned with the facing, off paths and the fence', () => {
   // The front tile alone is free aisle ground, but a 3×2 reaches back onto plot 1.
   // Long side along the rows in the default view, along the columns in the right view; centred under the foot.
-  assert.deepEqual(decorFootprintRect(6, 7.5, [3, 2]), {c0: 4.5, c1: 6.5, r0: 5.5, r1: 8.5});
-  assert.deepEqual(decorFootprintRect(6.5, 7, [3, 2], 'right'), {c0: 4.5, c1: 7.5, r0: 5.5, r1: 7.5});
+  assert.deepEqual(decorFootprintRect(6.5, 7, [3, 2]), {c0: 4.5, c1: 6.5, r0: 4.5, r1: 7.5});
+  assert.deepEqual(decorFootprintRect(6, 7.5, [3, 2], 'right'), {c0: 3.5, c1: 6.5, r0: 5.5, r1: 7.5});
   assert.deepEqual(decorFootprintRect(6, 7, [1, 1]), {c0: 5.5, c1: 6.5, r0: 6.5, r1: 7.5});
   assert.equal(at(6, 7), '');
   assert.match(at(6, 7, {itemId: 'sp_whomping_anglia'}), /thửa|lối đi/);
@@ -60,7 +61,7 @@ test('large pieces: the whole footprint counts, turned with the facing, off path
   const near = (col, row, rotations) => decorSpotProblem(col, row, {map: scene, stage: last, state: {decorations: []}, decorations: {...bus, rotations}, itemId: 'decor_mandrake_planter'});
   assert.match(near(-2, 2, {}), /Chồng/);
   assert.equal(near(-2, 2, {sp_knight_bus: 'right'}), '');
-  assert.match(near(-3.5, 3.5, {sp_knight_bus: 'right'}), /Chồng/);
+  assert.match(near(-3, 3, {sp_knight_bus: 'right'}), /Chồng/);
 });
 
 test('every footprint snaps onto whole cells, in both views, for bought pieces and garden defaults', () => {
@@ -76,11 +77,14 @@ test('every footprint snaps onto whole cells, in both views, for bought pieces a
   }
 });
 
-test('a tall piece may not stand in front of a plot and hide it', () => {
-  const where = {itemId: 'sp_fawkes_perch', asset: assetOf('sp_fawkes_perch'), iso};
-  // Just below plot 2's front corner: free ground, but the 188 px perch covers the plot behind it.
-  assert.match(at(11, 7, where), /chồng lên thửa/);
-  assert.equal(at(11, 7, {itemId: 'sp_fawkes_perch'}), '');
+test('owner 27/10/2026: only the ground decides, so a tall piece may stand in front of a plot', () => {
+  // Just below plot 2's front corner: free ground; the 188 px perch is drawn in front of the plot.
+  assert.equal(at(11, 7, {itemId: 'sp_fawkes_perch', asset: assetOf('sp_fawkes_perch'), iso}), '');
+  // A full level-400 garden keeps most open cells usable (the screen-overlap rule left 130 for a 1×1).
+  const full = {plots: Array(18).fill({}), built: scene.pens.map(p => p.id), decorations: DB.decorations.map(d => d.id), keepsakes: Object.fromEntries(Object.keys(CREATURE).map(s => [s, 1]))};
+  let free = 0;
+  for (let row = -1; row <= last.bottom; row++) for (let col = -5; col <= last.right; col++) if (!decorSpotProblem(col, row, {map: scene, stage: last, state: full, decorations: {}, itemId: 'hw_pumpkin_stack'})) free++;
+  assert.ok(free >= 600, `${free} free cells`);
 });
 
 test('every special and Halloween product fits somewhere in the full garden, in both views', () => {
@@ -119,20 +123,18 @@ test('2×1 and 3×1 pieces may stand on a path; 2×2 and up may not', () => {
  assert.match(at(4.5,24.5,{state,decorations:{}}),/kỷ vật/);
  });
 
-// Owner 25/10/2026: pieces stood over plots, pens, the hut and each other. Done when every piece fits many
-// areas of the full garden without sharing more than a sliver of screen with a plot, pen, scenery or piece.
-test('full garden: no piece covers a plot, pen, scenery or another piece, and each still fits many areas', () => {
+// Owner 25/10/2026: pieces stood over plots, pens, the hut and each other. Owner 27/10/2026: the ground
+// decides — no footprint covers a plot, pen, scenery, the cottage or another piece; sprites may overlap.
+test('full garden: no footprint covers a plot, pen, scenery or another piece, and each fits many areas', () => {
   const full = {plots: Array(18).fill({}), built: scene.pens.map(p => p.id), decorations: []};
   const check = (id, col, row, decorations = {}) => decorSpotProblem(col, row, {map: scene, stage: last, state: full, decorations, itemId: id, asset: assetOf(id), iso, assetOf});
-  // Spots the old 40 % / 25 % rules allowed in a packed garden (QA 25/10/2026).
-  assert.match(check('hw_caramel_apple_cart', 7, 9), /thửa/);
-  assert.match(check('sp_knight_bus', 20.5, 10.5), /thửa/);
-  assert.match(check('sp_vanishing_cabinet', -3.5, 6.5), /lều/);
+  assert.match(check('hw_caramel_apple_cart', 9, 11), /thửa/);
+  assert.match(check('sp_vanishing_cabinet', -2.5, 5), /lều/);
   const placed = {owned: ['sp_sorting_hat'], placements: ['sp_sorting_hat'], positions: {sp_sorting_hat: [5, 23]}};
   assert.equal(check('sp_sorting_hat', 5, 23), '');
-  // Footprints touch but do not overlap; the sprites would.
-  assert.equal(check('sp_goblet_fire', 5, 24), '');
-  assert.match(check('sp_goblet_fire', 5, 24, placed), /Chỗ này chồng lên Nón/);
+  // Footprints touch but do not overlap: allowed, the renderer draws the front piece over the back one.
+  assert.equal(check('sp_goblet_fire', 5, 24, placed), '');
+  assert.match(check('sp_goblet_fire', 5, 23, placed), /Chồng lên/);
   for (const item of manifest.items.filter(item => ['special', 'festival'].includes(item.collection))) {
     for (const facing of ['default', 'right']) {
       let spots = 0;

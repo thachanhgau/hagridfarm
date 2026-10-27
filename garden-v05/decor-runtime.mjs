@@ -46,24 +46,24 @@ export function decorFacingFor(decorations, itemId, rawPlacement = null) {
 }
 
 export const orientedFootprint = (footprint = [1, 1], facing = 'default') => facing === 'right' ? [footprint[0], footprint[1]] : [footprint[1], footprint[0]];
-// Bought pieces lift their footprint up the screen so its front corner stays near the sprite's foot.
-// Whole half tiles only: then every footprint edge lies on a cell line (cells are centred on whole numbers).
-// Garden defaults (`centred`) use the scenery rule: footprint centred under the foot.
-const footLift = ([cols, rows], centred) => centred ? 0 : Math.floor((cols + rows) / 2 - 1) / 2;
+// The art's ground ends at the sprite's foot, so the footprint is lifted up the screen until its front corner
+// sits just below the foot. Whole half tiles only: then every footprint edge lies on a cell line (cells are
+// centred on whole numbers). Bought pieces and garden defaults share the rule.
+export const footLift = ([cols, rows]) => Math.ceil((cols + rows) / 2 - 1) / 2;
 
 /**
  * Ground a decoration covers, in tiles. The sprite's foot (pivot) stands at (col, row) and the footprint
  * is centred under it on screen. `footprint` [long, short] runs its long side along the rows in the
  * default (left) view — the way the art is drawn — and along the columns in the right view.
  */
-export function decorFootprintRect(col, row, footprint = [1, 1], facing = 'default', centred = false) {
-  const size = orientedFootprint(footprint, facing), [cols, rows] = size, lift = footLift(size, centred);
+export function decorFootprintRect(col, row, footprint = [1, 1], facing = 'default') {
+  const size = orientedFootprint(footprint, facing), [cols, rows] = size, lift = footLift(size);
   return {c0: col - lift - cols / 2, c1: col - lift + cols / 2, r0: row - lift - rows / 2, r1: row - lift + rows / 2};
 }
 
 /** Nearest foot spot whose footprint edges all lie on cell lines (a whole or half tile, by shape). */
-export function snapDecorSpot([col, row], footprint = [1, 1], facing = 'default', centred = false) {
-  const size = orientedFootprint(footprint, facing), lift = footLift(size, centred);
+export function snapDecorSpot([col, row], footprint = [1, 1], facing = 'default') {
+  const size = orientedFootprint(footprint, facing), lift = footLift(size);
   const snap = (value, span) => {const offset = (lift + span / 2 + 0.5) % 1; return Math.round(value - offset) + offset;};
   return [snap(col, size[0]), snap(row, size[1])];
 }

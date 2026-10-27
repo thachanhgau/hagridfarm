@@ -1,6 +1,6 @@
 import {DB} from './balance-data.mjs?v=24.9.87';
 import {iso} from './garden-grid.mjs?v=24.9.87';
-import {snapDecorSpot} from './decor-runtime.mjs?v=24.9.87';
+import {snapDecorSpot,footLift,orientedFootprint} from './decor-runtime.mjs?v=24.9.87';
 export const DEFAULT_DECOR_IDS = Object.freeze(['scene:pond', ...DB.decorations.map(d => d.id), ...DB.animals.map(a => 'keepsake:' + a.id)]);
 export const isDefaultDecorHidden = (decorations, id) => Array.isArray(decorations?.hiddenDefaults) && decorations.hiddenDefaults.includes(id);
 export function defaultDecorChoices(state) {
@@ -13,7 +13,7 @@ export function defaultDecorChoices(state) {
 
 // All decoration unlocks have a deterministic logical footprint in the walkable aisles, outside every
 // plot and pen cell. `col`/`row` is the north-west ground corner on a cell line (cells are centred on whole
-// numbers); the piece stands centred on its ground, so every edge lies on a cell line.
+// numbers); the sprite's foot stands just behind the ground's front corner (decorFootprintRect).
 // Shape names remain only for layout data compatibility; the authored raster views live in ITEM_ART.
 export const DECORATION_LAYOUT = Object.freeze({
   'decoration-3': {col: -0.5, row: 3.5, width: 2, height: 1, shape: 'stone-border'},
@@ -68,13 +68,14 @@ export function defaultDecorSpot(decorations, id, preview = null) {
 
 /**
  * Pure decoration placement data used by rendering, placement and layout tests. A moved piece stands on
- * its saved spot; one turned on its authored spot steps half a cell so it still covers whole cells.
+ * its saved spot; a turned one steps half a cell when needed so it still covers whole cells.
  */
 export function decorationPlacements(scene = globalThis.FARM_SCENE, decorations = null, rotations = {}, preview = null) {
   return DECORATION_IDS.map((id) => {
     const spec = DECORATION_LAYOUT[id], footprint = defaultDecorFootprint(id);
     const facing = preview?.itemId === id && preview.facing ? preview.facing : rotations?.[id] === 'right' ? 'right' : 'default';
-    const at = snapDecorSpot(defaultDecorSpot(decorations, id, preview) ?? [spec.col + spec.width / 2, spec.row + spec.height / 2], footprint, facing, true);
+    const lift = footLift(orientedFootprint(footprint));
+    const at = snapDecorSpot(defaultDecorSpot(decorations, id, preview) ?? [spec.col + spec.width / 2 + lift, spec.row + spec.height / 2 + lift], footprint, facing);
     return {id, label: DECORATION_LABELS[id], ...spec, footprint, facing, at, xy: iso(...at, scene)};
   });
 }

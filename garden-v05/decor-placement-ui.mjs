@@ -11,7 +11,7 @@ import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.87';
 import {plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.87';
 import {KEEPSAKE_ART} from './complete-object-art.mjs?v=24.9.87';
 import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.87';
-import {WIZARD_LAYOUT,wizardTargets} from './wizard-scenery.mjs?v=24.9.87';
+import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=24.9.87';
 import {keepsakeDisplayPlacements,keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.87';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
@@ -21,39 +21,10 @@ const FENCE_CLEARANCE=0.9;
 const SMALL_FENCE_CLEARANCE=0.4;
 // Paths are one cell wide (centre ± half a cell): a large piece may touch one, never cover it.
 const PATH_CLEARANCE=0.5;
-// Owner 25/10/2026: a piece may share at most this sliver of a plot, a pen or another sprite on screen, in front or behind.
-const OVERLAP_SHARE=0.1;
-// Screen height above the ground the crops (plots) and the fence with its creatures (pens) reach.
-const PLOT_HEIGHT=48,PEN_HEIGHT=72;
-const SCENE_NAMES=Object.freeze({hut:'lều Hagrid',oak:'cây sồi',pine:'cây thông',pond:'ao',gardener:'bác Hagrid',greenhouse:'nhà kính',owl:'bưu cục Cú'});
-
-function spriteRect(asset,facing,x,y){
- const b=facing==='right'&&asset.rightBounds?asset.rightBounds:asset.bounds??{x:0,y:0,w:asset.width,h:asset.height};
- const left=x-asset.pivotX+b.x,top=y-asset.pivotY+b.y;
- return {left,top,right:left+b.w,bottom:top+b.h};
-}
-const area=r=>Math.max(0,r.right-r.left)*Math.max(0,r.bottom-r.top);
-const overlapArea=(a,b)=>Math.max(0,Math.min(a.right,b.right)-Math.max(a.left,b.left))*Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top));
-const polygonArea=p=>Math.abs(p.reduce((s,a,i)=>{const b=p[(i+1)%p.length];return s+a[0]*b[1]-b[0]*a[1];},0))/2;
-/** Area of a convex polygon inside a screen rect (Sutherland–Hodgman clip, then shoelace). */
-function rectPolygonOverlap(r,poly){
- let p=poly;
- for(const [axis,limit,keep] of [[0,r.left,1],[0,r.right,-1],[1,r.top,1],[1,r.bottom,-1]]){
-  const out=[];
-  for(let i=0;i<p.length;i++){
-   const a=p[i],b=p[(i+1)%p.length],inA=(a[axis]-limit)*keep>=0,inB=(b[axis]-limit)*keep>=0;
-   if(inA)out.push(a);
-   if(inA!==inB){const t=(limit-a[axis])/(b[axis]-a[axis]);out.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]);}
-  }
-  if(!(p=out).length)return 0;
- }
- return polygonArea(p);
-}
-/** A plot or pen base on screen: its ground diamond swept up by what stands on it. */
-function groundSilhouette(g,height,iso){
- const [top,right,bottom,left]=[[g.c0,g.r0],[g.c1,g.r0],[g.c1,g.r1],[g.c0,g.r1]].map(([c,r])=>iso(c,r));
- return [[top[0],top[1]-height],[right[0],right[1]-height],right,bottom,left,[left[0],left[1]-height]];
-}
+// Owner 27/10/2026: only the ground decides. A piece may stand in front of or behind another sprite (the
+// renderer sorts by depth); the 25/10 screen-overlap rule left a full garden ~5× fewer free cells.
+// The cottage corner is art without a scene object; its ground sits under iso(-2, 5.5).
+const COTTAGE_GROUND=Object.freeze({c0:-3.5,c1:-1.5,r0:3.5,r1:5.5});
 
 function segmentRectDistance([a,b],[c,d],r){
  let best=Infinity;
@@ -82,12 +53,12 @@ export function decorOnGround(rect,decorations){
  * the fence — and clear built or queued plot and pen bases, earned
  * decorations, the keepsake aisle, scene objects, buildings and every other placed decoration's
  * footprint (the server checks that last rule too). Pieces larger than one tile also keep off the garden
- * paths, and with `asset` + `iso` the sprite may not stand in front of a plot or pen and hide it.
+ * paths. Sprites may overlap on screen; only the ground decides.
  */
-export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',asset=null,iso=null,assetOf=null,footprint=decorFootprint(itemId),centred=false}){
+export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',footprint=decorFootprint(itemId)}){
  // Art bible §2: 2×2 and up keep off the fence; owner 20/10/2026: they alone keep off the paths, 2×1 and 3×1 may stand on them.
  const big=footprint.every(n=>n>1);
- const rect=decorFootprintRect(col,row,footprint,facing,centred);
+ const rect=decorFootprintRect(col,row,footprint,facing);
  const inset=0.05,margin=big?FENCE_CLEARANCE:SMALL_FENCE_CLEARANCE;
  if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
   if(!stageContains(stage,c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
@@ -100,15 +71,17 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  if(penRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền chuồng.';
  // Garden defaults stand where the member moved them; the piece being moved never blocks itself.
  const earned=decorationPlacements(map,decorations,state?.decorationRotations).filter(d=>d.id!==itemId&&state?.decorations?.includes(d.id)&&!isDefaultDecorHidden(decorations,d.id));
- for(const d of earned)if(rectsOverlap(rect,decorFootprintRect(...d.at,d.footprint,d.facing,true)))return 'Đã có đồ trang trí của vườn ở đây.';
+ for(const d of earned)if(rectsOverlap(rect,decorFootprintRect(...d.at,d.footprint,d.facing)))return 'Đã có đồ trang trí của vườn ở đây.';
  // Saves contain all species keys, including zero counts. Reserve only the
  // occupied statue bases and the narrow museum access route; the rest of the
  // south field remains usable.
- const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),iso,keepsakeAnchorRow,decorations,itemId);
+ const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),null,keepsakeAnchorRow,decorations,itemId);
  if(keepsakes.ground.some(occupied=>rectIntersects(rect,occupied)))return 'Chân đài kỷ vật đang ở đây.';
  if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
  const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??[o.col,o.row]}));
- for(const o of scenery)if(rectsOverlap(rect,sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
+ // The pond is a garden default: its ground follows the decoration rule, like when it is moved.
+ for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond')):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
+ if(rectsOverlap(rect,COTTAGE_GROUND))return 'Chỗ này vướng lều Hagrid.';
  for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
  if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){
@@ -116,28 +89,6 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
   if(!other||other===itemId)continue;
   const at=decorSpot(decorations,other);
   if(at&&rectsOverlap(rect,decorFootprintRect(at[0],at[1],decorFootprint(other),decorFacingFor(decorations,other))))return 'Chồng lên món trang trí khác.';
- }
- // Screen overlap, owner 25/10/2026: the sprite may neither hide nor be hidden by a plot, a pen, scenery or another piece.
- if(asset&&iso){
-  const [x,y]=iso(col,row),mine=spriteRect(asset,facing,x,y),mineArea=area(mine);
-  const grounds=[...plotRects.map(g=>groundSilhouette(g,PLOT_HEIGHT,iso)),...penRects.map(g=>groundSilhouette(g,PEN_HEIGHT,iso))];
-  if(grounds.some(poly=>rectPolygonOverlap(mine,poly)>OVERLAP_SHARE*Math.min(mineArea,polygonArea(poly))))return 'Món này sẽ chồng lên thửa đất hoặc chuồng.';
-  const others=[];
-  // Like the renderer: oak and pine anchors are not drawn (the forest layers own the trees).
-  for(const o of scenery){const prop=!['oak','pine'].includes(o.id)&&map.props?.find(p=>p.id===o.id);if(prop){const [ox2,oy2]=iso(...o.at);others.push([SCENE_NAMES[o.id]||'cảnh vật',spriteRect(prop,'default',ox2,oy2)]);}}
-  // The cottage corner is drawn 150×75 px at iso(-2, 5.5), see scene-renderer drawObject.
-  {const [cx,cy]=iso(-2,5.5);others.push([SCENE_NAMES.hut,{left:cx-75,top:cy-67,right:cx+75,bottom:cy+8}]);}
-  for(const w of wizardTargets(iso))others.push([SCENE_NAMES[w.id]||'công trình',w.bounds]);
-  for(const d of earned){
-   const art=earnedDecorArt(d.id,d.facing);
-   if(art)others.push(['đồ trang trí của vườn',spriteRect({pivotX:48,pivotY:96,...art},'default',d.xy[0],d.xy[1])]);
-  }
-  for(const raw of decorations?.placements??[]){
-   const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw,otherAsset=other&&other!==itemId&&assetOf?.(other),spot=otherAsset&&decorSpot(decorations,other);
-   if(spot){const [ox2,oy2]=iso(spot[0],spot[1]);others.push([decorLabelFor(otherAsset),spriteRect(otherAsset,decorFacingFor(decorations,other),ox2,oy2)]);}
-  }
-  for(const [index,screen] of keepsakes.screen.entries())others.push([`đài kỷ vật ${index+1}`,screen]);
-  for(const [name,rect] of others)if(overlapArea(mine,rect)>OVERLAP_SHARE*Math.min(mineArea,area(rect)))return `Chỗ này chồng lên ${name}.`;
  }
  return '';
 }
@@ -180,16 +131,16 @@ const nearestFree=(grid,[col,row],reach)=>{
 export function showDecorationPlacement({item,map,assetOf,getState,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld,getSpot=null,startAt=null,facing=null}){
  for(const old of document.querySelectorAll('.decor-placement,.decor-bar')){try{old.close?.();}catch{}old.remove();}
  const itemLabel=decorLabelFor(item);
- // Garden defaults stand centred on their foot like scenery; bought pieces use their catalog footprint.
- const footprint=item.footprint??decorFootprint(item.id),centred=!!item.isDefault;
+ // Garden defaults carry their own ground size; bought pieces use their catalog footprint.
+ const footprint=item.footprint??decorFootprint(item.id);
  let selectedFacing=facing??decorFacingFor(getDecorations()??{},item.id);
  const savedSpot=()=>getSpot?getSpot():decorSpot(getDecorations()??{},item.id);
  // Owner 27/10/2026: a piece always covers whole cells. Legacy sockets (row 7.15) and older half-tile saves
  // open on the nearest whole-cell spot; «Đặt» then saves it there.
- const snap=spot=>snapDecorSpot(spot,footprint,selectedFacing,centred);
+ const snap=spot=>snapDecorSpot(spot,footprint,selectedFacing);
  let at=(savedSpot()||startAt)&&snap(savedSpot()||startAt);
  let pending=false,input;
- const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,asset:item,iso,assetOf,footprint,centred}):'';
+ const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,footprint}):'';
  let grid=[];
  const regrid=()=>{grid=decorSpotGrid(getStage?.(),problemAt,snap);};
  regrid();
@@ -217,7 +168,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  function sync(centerCamera){
   if(at&&centerCamera&&camera&&iso){const xy=iso(at[0],at[1]);camera.centerAt(xy[0],xy[1]-50,Math.max(1.2,camera.scale?.()||1.2));}
   const problem=problemAt(at);
-  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,grid,suggestions:placementSuggestions(grid,at,18),rect:at?decorFootprintRect(at[0],at[1],footprint,selectedFacing,centred):null});
+  preview({itemId:at?item.id:null,at,facing:selectedFacing,blocked:!!problem,grid,suggestions:placementSuggestions(grid,at,18),rect:at?decorFootprintRect(at[0],at[1],footprint,selectedFacing):null});
   render(problem);
  }
 
@@ -233,7 +184,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   // Level-1 land cannot hold a 3×2 piece, and a full garden may have no room left: say so, it stays stored.
   const noRoom=!at&&!grid.some(spot=>spot.ok);
   where.textContent=!at?(noRoom?'Vườn hiện chưa có chỗ vừa món này':'Chạm chỗ trống trên vườn'):here&&sameFacing?'Đang đặt ở đây':here?'Góc mới · nhấn «Đặt»':problem||'Chỗ mới · nhấn «Đặt»';
-  turn.disabled=pending;turn.hidden=centred&&!item.rightFile;
+  turn.disabled=pending;turn.hidden=!!item.isDefault&&!item.rightFile;
   apply.disabled=pending||!at||!!problem||here&&sameFacing;
   apply.textContent=pending?'Đang lưu…':here&&!sameFacing?'Đặt góc này':here?'Đang ở đây':'Đặt';
   stash.hidden=!saved;stash.disabled=pending;

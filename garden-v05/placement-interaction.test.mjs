@@ -6,8 +6,8 @@ import {rasterLine,footprintPoints,drawPlacementGrid} from './placement-grid.mjs
 const project=(c,r)=>[(c-r)*32,(c+r)*16];
 test('moves land on whole cells by shape and stay on the server half-tile precision',()=>{
  assert.deepEqual(snapDecorSpot([4.24,6.24],[1,1]),[4,6]);
- assert.deepEqual(snapDecorSpot([4.26,6.26],[2,1]),[4,6.5]);
- assert.deepEqual(snapDecorSpot([12.5,8],[2,1],'right'),[12.5,8]);
+ assert.deepEqual(snapDecorSpot([4.26,6.26],[2,1]),[4.5,6]);
+ assert.deepEqual(snapDecorSpot([12.5,8],[2,1],'right'),[13,8.5]);
 });
 test('the grabbed sprite uses native bounds above its ground anchor',()=>{
  const item={width:64,height:80,pivotX:32,pivotY:72,bounds:{x:8,y:8,w:48,h:64}};

@@ -11,7 +11,8 @@ import {earnedDecorArt} from './earned-decor-sprites.mjs';
 
 globalThis.FARM_SCENE = structuredClone(scene);
 globalThis.FARM_MOTION = motion;
-const {decorSpotProblem} = await import('./decor-placement-ui.mjs');
+const {decorSpotProblem, decorFootprint} = await import('./decor-placement-ui.mjs');
+const {snapDecorSpot} = await import('./decor-runtime.mjs');
 const {createGarden, iso} = await import('./scene-renderer.mjs');
 
 const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json', import.meta.url), 'utf8'));
@@ -111,7 +112,8 @@ test('the persisted three-hero placement triple clears each hero against the oth
   const stateBefore = structuredClone(state);
   const decorationsBefore = structuredClone(heroDecorations);
   for (const id of heroIds) {
-    const [col, row] = heroDecorations.positions[id];
+    // Owner 27/10/2026: the bar opens a saved piece on its nearest whole-cell spot.
+    const [col, row] = snapDecorSpot(heroDecorations.positions[id], decorFootprint(id), heroDecorations.rotations[id]);
     assert.equal(decorSpotProblem(col, row, {
       map: scene,
       stage: finalStage,
