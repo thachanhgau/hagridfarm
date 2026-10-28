@@ -1,4 +1,4 @@
-import {packTotal} from './ui-utils.mjs?v=24.9.89';
+import {packTotal} from './ui-utils.mjs?v=24.9.90';
 const PROJECT='demo-hpvnn-garden', UID='garden-demo-member';
 const BASE='http://127.0.0.1:5001/'+PROJECT+'/asia-southeast1/';
 // This token is an emulator fixture. It is neither an HPVN login nor a production credential.
@@ -12,7 +12,8 @@ const requestId=()=>crypto.randomUUID?crypto.randomUUID():'10000000-1000-4000-80
 export function createGardenClient(transport){
  let snapshot=null,pending=null,chain=Promise.resolve();
  const queue=fn=>{const run=chain.then(fn,fn);chain=run.catch(()=>{});return run;};
- async function call(name,data){const result=await transport(name,data);if(!result?.garden)throw Error('Phản hồi khu vườn không hợp lệ.');snapshot=result;return snapshot;}
+ // The server leaves out an unchanged catalog when the call carries the hash we hold (catalogHash).
+ async function call(name,data){const known=snapshot?.catalogHash;const result=await transport(name,known?{...data,catalogHash:known}:data);if(!result?.garden)throw Error('Phản hồi khu vườn không hợp lệ.');if(result.catalog===undefined&&known&&result.catalogHash===known)result.catalog=snapshot.catalog;snapshot=result;return snapshot;}
  async function mutate(name,payload){const signature=JSON.stringify({name,payload});if(pending&&pending.signature!==signature)throw Error('Giao dịch trước chưa có kết quả. Hãy thử lại đúng thao tác đó trước.');if(!pending)pending={signature,data:{...payload,requestId:requestId()}};try{const result=await call(name,pending.data);pending=null;return result;}catch(e){if(e.definitive)pending=null;throw e;}}
  const revision=()=>snapshot.garden.progression.revision;
  return {

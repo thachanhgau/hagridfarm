@@ -1,5 +1,5 @@
-import {getGardenStorage} from './garden-storage.mjs?v=24.9.89';
-import {CROP} from './balance-data.mjs?v=24.9.89';
+import {getGardenStorage} from './garden-storage.mjs?v=24.9.90';
+import {CROP} from './balance-data.mjs?v=24.9.90';
 export const OWL_QUEST_STORAGE_KEY = 'hpvn-garden-v21-owl-quests';
 
 // Owl quests, V24.9.8 (docs/economy-audit.md): three per day, picked by level and

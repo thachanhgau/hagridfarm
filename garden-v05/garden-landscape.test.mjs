@@ -59,7 +59,7 @@ test('exit gate is centered on the trail and leaves its middle passage clear',()
 test('fence and land share one outline, the bay behind the greenhouse included',async()=>{
   // 27/10/2026: the fence stepped back behind the greenhouse but the land did not, so the
   // meadow, forest floor and trees ignored the bay (a light box and a dark wedge inside the rail).
-  const {GARDEN_STAGES,stageBoundary}=await import('./garden-growth.mjs?v=24.9.89');
+  const {GARDEN_STAGES,stageBoundary}=await import('./garden-growth.mjs?v=24.9.90');
   const onEdge=(p,o)=>o.some((a,i)=>{const b=o[(i+1)%o.length];return Math.abs((b[0]-a[0])*(p[1]-a[1])-(b[1]-a[1])*(p[0]-a[0]))<1e-9&&p[0]>=Math.min(a[0],b[0])-1e-9&&p[0]<=Math.max(a[0],b[0])+1e-9&&p[1]>=Math.min(a[1],b[1])-1e-9&&p[1]<=Math.max(a[1],b[1])+1e-9;});
   for(const stage of GARDEN_STAGES){
     const outline=stageBoundary(stage);

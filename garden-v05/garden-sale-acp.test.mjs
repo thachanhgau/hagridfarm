@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {toLocal,fromLocal,foldText} from './garden-sale-acp-ui.mjs?v=24.9.89';
+import {toLocal,fromLocal,foldText} from './garden-sale-acp-ui.mjs?v=24.9.90';
 
 // ACP sale times are typed in Vietnam time as DD/MM/YYYY HH:mm (24 h), whatever the device locale.
 test('ACP sale time reads and writes DD/MM/YYYY HH:mm in Vietnam time', () => {
