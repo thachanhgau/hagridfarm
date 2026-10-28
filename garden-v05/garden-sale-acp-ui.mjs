@@ -12,9 +12,10 @@ const GROUPS = [['seed','Hạt giống',i=>i.kind==='seed'],['supply','Vật tư
  ['decor','Trang trí',i=>i.kind==='decoration'&&!i.collection],['special','Đặc biệt',i=>i.collection==='special'],['festival','Lễ hội',i=>i.collection==='festival']];
 const ITEM_FIELDS = [['price','Giá (G)'],['dailyLimit','Mua/ngày'],['stockCap','Trữ tối đa'],['usesPerDay','Dùng/ngày']];
 const MARKET_FIELDS = [['level','Mở từ cấp'],['dailyCap','Trần G/ngày'],['perCropDaily','Mỗi loại/ngày']];
-const fold = text => String(text||'').normalize('NFD').replace(/\p{M}/gu,'').replace(/đ/g,'d').toLowerCase();
+const fold = text => String(text||'').toLowerCase().normalize('NFD').replace(/\p{M}/gu,'').replace(/đ/g,'d');
 // Vietnam time typed as DD/MM/YYYY HH:mm (24 h): datetime-local followed the device locale and showed AM/PM.
 export const toLocal = ms => {if(!Number.isFinite(ms))return "";const d=new Date(ms+7*3600000),p=n=>String(n).padStart(2,'0');return `${p(d.getUTCDate())}/${p(d.getUTCMonth()+1)}/${d.getUTCFullYear()} ${p(d.getUTCHours())}:${p(d.getUTCMinutes())}`;};
+export const foldText = fold;
 export const fromLocal = value => {const m=/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})$/.exec(value.trim());if(!m)return NaN;const [,d,mo,y,h,mi]=m,ms=Date.parse(`${y}-${mo.padStart(2,'0')}-${d.padStart(2,'0')}T${h.padStart(2,'0')}:${mi}:00+07:00`);return toLocal(ms)===`${d.padStart(2,'0')}/${mo.padStart(2,'0')}/${y} ${h.padStart(2,'0')}:${mi}`?ms:NaN;};
 const when = ms => {const d=new Date(ms+7*3600000);return `${WEEKDAYS[d.getUTCDay()]} ${d.getUTCDate()}/${d.getUTCMonth()+1} ${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;};
 
@@ -22,7 +23,7 @@ export function createSaleAcp({call,notify}){
  let view=null,draft=null,saving=false,tab='sale',group='seed',search='',gift={username:'',itemId:'',quantity:1,query:''};
  const body=el('div',{class:'acp-body'}),status=el('p',{class:'meta',role:'status','aria-live':'polite'});
  const dialog=el('dialog',{id:'saleAcp',class:'owl-letter acp-letter','aria-labelledby':'saleAcpTitle'},[
-  el('div',{class:'popover-heading'},[el('h2',{id:'saleAcpTitle',text:'ACP bác Hagrid · KTV Gia Tinh'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
+  el('div',{class:'popover-heading'},[el('h2',{id:'saleAcpTitle',text:'ACP bác Hagrid'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
   status,body,
  ]);
  ($('gameShell')||document.body).append(dialog);
@@ -35,7 +36,7 @@ export function createSaleAcp({call,notify}){
  function itemRow(item){
   const row=draft.items[item.id]||{};
   const set=(key,value)=>{const next={...draft.items[item.id]};if(value===undefined||value===item[key])delete next[key];else next[key]=value;if(Object.keys(next).length)draft.items[item.id]=next;else delete draft.items[item.id];};
-  return el('fieldset',{class:'acp-sale'},[
+  return el('fieldset',{class:'acp-sale acp-compact'},[
    el('p',{class:'sheet-label acp-item',text:`${item.label} · cấp ${item.level}`}),
    ...ITEM_FIELDS.filter(([key])=>item[key]!==undefined).map(([key,label])=>numField(label,item[key],row[key],value=>set(key,value))),
    el('label',{class:'acp-toggle'},[el('input',{type:'checkbox',...((row.forSale??item.forSale)?{checked:''}:{}),onchange:e=>set('forSale',e.target.checked)}),el('span',{text:'Đang bán'})]),
@@ -52,9 +53,9 @@ export function createSaleAcp({call,notify}){
  function marketTab(){
   const m=view.market,set=(key,value)=>{if(value===undefined||value===m.defaults[key])delete draft.market[key];else draft.market[key]=value;};
   const price=(id,value)=>{if(value===undefined||value===m.prices[id])delete draft.market.prices[id];else draft.market.prices[id]=value;};
-  return [el('fieldset',{class:'acp-sale'},MARKET_FIELDS.map(([key,label])=>numField(label,m.defaults[key],draft.market[key],value=>set(key,value)))),
+  return [el('fieldset',{class:'acp-sale acp-compact'},MARKET_FIELDS.map(([key,label])=>numField(label,m.defaults[key],draft.market[key],value=>set(key,value)))),
    el('p',{class:'sheet-label',text:'Giá thu mua mỗi nông sản (G)'}),
-   el('fieldset',{class:'acp-sale'},m.crops.map(crop=>numField(crop.label,m.prices[crop.id],draft.market.prices[crop.id],value=>price(crop.id,value))))];
+   el('fieldset',{class:'acp-sale acp-compact'},m.crops.map(crop=>numField(crop.label,m.prices[crop.id],draft.market.prices[crop.id],value=>price(crop.id,value))))];
  }
  function giftTab(){
   const q=fold(gift.query),item=view.store.find(entry=>entry.id===gift.itemId);
@@ -73,7 +74,7 @@ export function createSaleAcp({call,notify}){
     ...(matches.length?[field('Chạm để chọn',chips('Món',matches.map(entry=>[entry.id,entry.label]),gift.itemId,id=>{gift.itemId=id;render();}))]:[]),
    ]),
    el('p',{class:'meta',text:item?`Tặng: ${item.label} · gói ${num(item.quantity||1)}. Bỏ qua cấp, mùa lễ hội, trạng thái bán và trần kho; đồ trang trí đã có thì không tặng thêm.`:'Chưa chọn món.'}),
-   el('div',{class:'acp-actions'},[iconButton('check','Tặng đồ',send,{text:saving?'Đang tặng…':'Tặng',class:'primary',disabled:saving||!item})])];
+   el('div',{class:'acp-actions'},[iconButton('check','Gửi quà cho thành viên',send,{text:saving?'Đang tặng…':'Tặng',class:'primary',disabled:saving||!item})])];
  }
  function saleRow(sale,index){
   const set=(key,value)=>{draft.sales[index]={...draft.sales[index],[key]:value};};
