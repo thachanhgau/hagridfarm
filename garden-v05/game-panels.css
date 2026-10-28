@@ -372,6 +372,8 @@
 #gameShell #saleAcp .acp-actions{display:flex;gap:8px;justify-content:flex-end}
 #gameShell #saleAcp .acp-item{grid-column:1/-1;margin:0;color:#F5D69A}
 #gameShell #saleAcp .acp-compact{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+#gameShell #saleAcp .acp-field{min-width:0}
+#gameShell #saleAcp .acp-field input{width:100%;min-width:0;box-sizing:border-box}
 
 /* Lễ Hội Ma secret present and leaderboard (owner 25/10/2026) */
 #gameShell #panel .v24-event-secret{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:8px;border:2px dashed #7A5C9E;background:rgba(35,31,46,.35)}

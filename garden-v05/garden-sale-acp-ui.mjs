@@ -30,6 +30,8 @@ export function createSaleAcp({call,notify}){
 
  const fresh=()=>{const now=view.serverNow;return {id:`sale-${Date.now().toString(36)}`,title:'Sale bác Hagrid',scope:'all',percent:20,itemIds:[],startsAt:now,endsAt:now+2*3600000};};
  const field=(label,input)=>el('label',{class:'acp-field'},[el('small',{text:label}),input]);
+ // A chip row is not wrapped in <label>: a label activates its first button (tapping the caption picked an item).
+ const chipField=(label,group)=>el('div',{class:'acp-field'},[el('small',{text:label}),group]);
  // Empty = the code value (its hint); a typed value equal to it is not stored either.
  const numField=(label,base,value,set)=>field(label,el('input',{type:'number',min:'1',step:'1',inputmode:'numeric',placeholder:String(base),value:value??'',oninput:e=>set(e.target.value===''?undefined:Math.round(Number(e.target.value)))}));
  const chips=(label,list,current,pick)=>el('div',{class:'gp-chips acp-chips',role:'group','aria-label':label},list.map(([id,name])=>button(name,()=>pick(id),{class:'gp-chip','aria-pressed':String(id===current)})));
@@ -71,7 +73,7 @@ export function createSaleAcp({call,notify}){
     field('Tên thành viên',el('input',{type:'text',maxlength:'40',autocomplete:'off',value:gift.username,oninput:e=>{gift.username=e.target.value;}})),
     field('Số lượng (gói)',el('input',{type:'number',min:'1',step:'1',inputmode:'numeric',value:String(gift.quantity),oninput:e=>{gift.quantity=Math.round(Number(e.target.value));}})),
     field('Tìm món',el('input',{type:'search',placeholder:'Gõ tên món…',value:gift.query,onchange:e=>{gift.query=e.target.value;render();}})),
-    ...(matches.length?[field('Chạm để chọn',chips('Món',matches.map(entry=>[entry.id,entry.label]),gift.itemId,id=>{gift.itemId=id;render();}))]:[]),
+    ...(matches.length?[chipField('Chạm để chọn',chips('Món',matches.map(entry=>[entry.id,entry.label]),gift.itemId,id=>{gift.itemId=id;render();}))]:[]),
    ]),
    el('p',{class:'meta',text:item?`Tặng: ${item.label} · gói ${num(item.quantity||1)}. Bỏ qua cấp, mùa lễ hội, trạng thái bán và trần kho; đồ trang trí đã có thì không tặng thêm.`:'Chưa chọn món.'}),
    el('div',{class:'acp-actions'},[iconButton('check','Gửi quà cho thành viên',send,{text:saving?'Đang tặng…':'Tặng',class:'primary',disabled:saving||!item})])];
@@ -86,7 +88,7 @@ export function createSaleAcp({call,notify}){
   const starts=time('startsAt'),ends=time('endsAt');
   const picks=sale.scope==='items'?el('div',{class:'gp-chips acp-chips',role:'group','aria-label':'Món giảm giá'},view.items.map(item=>button(`${item.label} · ${num(item.price)} G`,e=>{const ids=draft.sales[index].itemIds,on=!ids.includes(item.id);set('itemIds',on?[...ids,item.id]:ids.filter(id=>id!==item.id));e.currentTarget.setAttribute('aria-pressed',String(on));},{class:'gp-chip','aria-pressed':String(sale.itemIds.includes(item.id))}))):null;
   return el('fieldset',{class:'acp-sale'},[
-   field('Tên đợt',title),field('Phạm vi',scope),...(picks?[field('Món (chạm để chọn, chạm lại để bỏ)',picks)]:[]),
+   field('Tên đợt',title),chipField('Phạm vi',scope),...(picks?[chipField('Món (chạm để chọn, chạm lại để bỏ)',picks)]:[]),
    field(`Giảm % (1–${view.percentMax})`,percent),field('Bắt đầu (giờ VN)',starts),field('Kết thúc (giờ VN)',ends),
    iconButton('close',`Xóa đợt ${sale.title}`,()=>{draft.sales.splice(index,1);render();},{text:'Xóa'}),
   ]);
