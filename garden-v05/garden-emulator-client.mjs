@@ -1,4 +1,4 @@
-import {packTotal} from './ui-utils.mjs?v=24.9.88';
+import {packTotal} from './ui-utils.mjs?v=24.9.89';
 const PROJECT='demo-hpvnn-garden', UID='garden-demo-member';
 const BASE='http://127.0.0.1:5001/'+PROJECT+'/asia-southeast1/';
 // This token is an emulator fixture. It is neither an HPVN login nor a production credential.
