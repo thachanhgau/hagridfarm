@@ -75,7 +75,7 @@ export function createSaleAcp({call,notify}){
     field('Tìm món',el('input',{type:'search',placeholder:'Gõ tên món…',value:gift.query,onchange:e=>{gift.query=e.target.value;render();}})),
     ...(matches.length?[chipField('Chạm để chọn',chips('Món',matches.map(entry=>[entry.id,entry.label]),gift.itemId,id=>{gift.itemId=id;render();}))]:[]),
    ]),
-   el('p',{class:'meta',text:item?`Tặng: ${item.label} · gói ${num(item.quantity||1)}. Bỏ qua cấp, mùa lễ hội, trạng thái bán và trần kho; đồ trang trí đã có thì không tặng thêm.`:'Chưa chọn món.'}),
+   el('p',{class:'meta',text:item?`Tặng: ${item.label} · gói ${num(item.quantity||1)}`:'Chưa chọn món.'}),
    el('div',{class:'acp-actions'},[iconButton('check','Gửi quà cho thành viên',send,{text:saving?'Đang tặng…':'Tặng',class:'primary',disabled:saving||!item})])];
  }
  function saleRow(sale,index){
