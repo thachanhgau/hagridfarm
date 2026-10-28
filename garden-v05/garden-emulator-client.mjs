@@ -30,8 +30,8 @@ export function createGardenClient(transport){
   frame:frameKey=>queue(async()=>{const r=await transport('setHagridFlooFrame',{frameKey});if(snapshot&&r?.frames)snapshot={...snapshot,flooFrames:{frames:r.frames,worn:r.worn}};return r;}),
   // KTV Gia Tinh's in-game sale ACP (manageHagridGardenSales): its own answer.
   sales:data=>queue(()=>transport('manageHagridGardenSales',data)),
-  // Quầy chợ bác Hagrid (sellHagridGardenCrops): {cropId: n} and the total the player saw.
-  sell:(items,expectedTotal)=>queue(()=>mutate('sellHagridGardenCrops',{items,expectedTotal})),
+  // Quầy chợ bác Hagrid (sellHagridGardenCrops): {cropId: n} and the total the player saw; items null = the one-time xả kho.
+  sell:(items,expectedTotal)=>queue(()=>mutate('sellHagridGardenCrops',items?{items,expectedTotal}:{clearance:true,expectedTotal})),
   buy:(itemId,packages)=>queue(()=>{const item=snapshot.catalog.find(i=>i.id===itemId);if(!item)throw Error('Vật tư chưa mở.');return mutate('buyHagridGardenSupplies',{itemId,quantity:packages,catalogVersion:snapshot.catalogVersion,expectedTotal:packTotal(item,packages)});}),
  };
 }

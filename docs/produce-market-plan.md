@@ -12,6 +12,7 @@
 | Giá | `ceil(giá hạt/3 + 5/9 G nước + 1 G × số giờ lớn)`, tính trên server, không áp sale |
 | Giới hạn số lượng | 100 cái mỗi loại cây mỗi ngày |
 | Trần | 2.500 G mỗi tài khoản mỗi ngày, cộng mọi loại cây |
+| Xả kho | Owner 28/10/2026: mỗi tài khoản được **một lần** bán hết nông sản trong kho, không tính 100 cái/loại và 2.500 G/ngày, không cộng vào bộ đếm ngày (`garden.marketCleared`). Sau đó áp trần như trên. Nút cần bấm hai lần |
 | Ngày | Giờ Việt Nam trên server |
 | Sổ cái | Ghi có `garden_sale` (`sourceType: hagrid-garden-market`); ACP «Thu chi» tính vào chi của dòng Khu vườn |
 | Công tắc | `galleons_config/garden.marketOff = true` đóng quầy ngay; nút phanh Gringotts cũng đóng |
