@@ -202,6 +202,7 @@
 #gameShell .store-popover .gp-wallet small{color:#A6B1AE;font:700 11px/1 var(--gp-body)}
 #gameShell .store-popover .store-notice:empty{display:none}
 #gameShell .store-popover .store-cards-grid{flex:1;min-height:0;overflow:auto;align-content:start;padding:2px 2px 4px}
+#gameShell .store-popover .store-cards-grid>:is(.market-day,.empty){grid-column:1/-1;margin:0}
 #gameShell .store-popover .store-meta-row{display:flex;flex-direction:column;align-items:center;gap:3px;margin:0;padding:0;border:0}
 #gameShell .store-popover .store-meta-row .meta{color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
 #gameShell .store-popover .store-action-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;width:100%}
