@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "858ba0c64d43",
+  "revision": "eef36aaf7d4f",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11214,12 +11214,12 @@
     {
       "source": "world-v242/cottage-corner.png",
       "file": "runtime-webp/world-v242/cottage-corner.webp",
-      "width": 1774,
-      "height": 887,
-      "sourceBytes": 740685,
-      "bytes": 518990,
-      "sourceSha256": "340dc2b4d434b961ce70b09aba3f0e93d0866f228dec83a9b42e42b73f596e1d",
-      "sha256": "80c3c329b5c9fe093af6a8d61cf2d4817af514ff3542c25ff10ecf0978b3abc5"
+      "width": 150,
+      "height": 75,
+      "sourceBytes": 13155,
+      "bytes": 10246,
+      "sourceSha256": "f3897c452320e49cf68412adddeda2b55af427e6a9ecf499a3ff4d51e1365795",
+      "sha256": "6895d56059ec4b9bc68cc0ca4eefb20292b1926319b094ea90eaa184cfd6fa9c"
     }
   ],
   "existingWebp": [
@@ -11267,9 +11267,9 @@
   "totals": {
     "converted": 1120,
     "existingWebp": 8,
-    "originalBytes": 4919335,
-    "webpBytes": 3331604,
-    "savedBytes": 1587731,
-    "savedPercent": 32.28
+    "originalBytes": 4191805,
+    "webpBytes": 2822860,
+    "savedBytes": 1368945,
+    "savedPercent": 32.66
   }
 }
