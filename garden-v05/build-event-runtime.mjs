@@ -1,4 +1,4 @@
-// Import the event-assets pack («Mừng HPVN 2 tháng» statues) like build-halloween-runtime.mjs: collection 'event', not sold.
+// Import the event-assets pack («Mừng HPVN 3 tháng» statues) like build-halloween-runtime.mjs: collection 'event', not sold.
 import fs from 'node:fs/promises';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {packNativeAtlas} from './native-atlas.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url)),read=async f=>JSON.parse(await fs.readFile(path.join(root,f))),sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const pack=await read('event-assets/manifest.json'),runtime=await read('decor-assets-manifest.json'),qaManifest=await read('event-assets/qa/validation.json'),generated=[];

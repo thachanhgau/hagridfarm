@@ -105,12 +105,12 @@ export const FESTIVAL_PRODUCTS = Object.freeze(FESTIVAL_ROWS.map(([id, label, pr
   description: `${lore} · Đồ lễ hội, chỉ để trang trí. Chỉ bán trong ${SEASON_LABELS[season]}.`,
 })));
 
-// «Mừng HPVN 2 tháng» (owner 31/10/2026): the event's gift, never sold and not listed in the store.
+// «Mừng HPVN 3 tháng» (owner 31/10/2026): the event's gift, never sold and not listed in the store.
 // Same rows as the server (functions/games/garden-wallet-catalog.js EVENT_ROWS).
 export const EVENT_COLLECTION = 'event';
 const EVENT_ROWS = [
-  ['ev_dobby_spring_rider', 'Tượng Dobby cưỡi thú nhún', [2,2], 'Dobby cưỡi chú Bằng-Mã nhún lò xo, quà Hội Gia Tinh mừng HPVN 2 tháng.'],
-  ['ev_dark_dobby_red', 'Tượng Dobby Hắc Ám', [2,2], 'Dobby tạc đá đỏ, giơ chiếc tất, quà Hội Gia Tinh mừng HPVN 2 tháng.'],
+  ['ev_dobby_spring_rider', 'Tượng Dobby cưỡi thú nhún', [2,2], 'Dobby cưỡi chú Bằng-Mã nhún lò xo, quà Hội Gia Tinh mừng HPVN 3 tháng.'],
+  ['ev_dark_dobby_red', 'Tượng Dobby Hắc Ám', [2,2], 'Dobby tạc đá đỏ, giơ chiếc tất, quà Hội Gia Tinh mừng HPVN 3 tháng.'],
 ];
 export const EVENT_PRODUCTS = Object.freeze(EVENT_ROWS.map(([id, label, footprint, lore]) => Object.freeze({
   id, kind: 'decoration', collection: EVENT_COLLECTION, decorationId: id, icon: id, label, level: 1, price: 1, quantity: 1, dailyLimit: 1, // catalog shape only: `reward` refuses every purchase
