@@ -1,0 +1,293 @@
+{
+  "schema": "hagrid-farm.decor-assets.v1",
+  "collection": "Mừng HPVN 2 tháng — Hội Gia Tinh",
+  "version": 1,
+  "status": "complete",
+  "expectedItemCount": 2,
+  "packagedItemCount": 2,
+  "missing": [],
+  "palette": [
+    "#231F2E",
+    "#4A3042",
+    "#735044",
+    "#A57554",
+    "#41465C",
+    "#687486",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A",
+    "#874056",
+    "#C75B4B",
+    "#ED8A45",
+    "#FFC36B",
+    "#3E3B70",
+    "#6961A6",
+    "#70A8B6",
+    "#B7DEE0"
+  ],
+  "itemPaletteSource": "item-palettes.json",
+  "alphaThreshold": 192,
+  "nativeCanvas": "per-item dimensions from specs.json; RGBA, binary alpha",
+  "views": {
+    "default": "left view split at transparent central gap",
+    "alternate": "right view split at transparent central gap; never mirrored"
+  },
+  "items": [
+    {
+      "id": "ev_dobby_spring_rider",
+      "label": "Tượng Dobby cưỡi thú nhún",
+      "group": "Tượng sự kiện",
+      "subject": "A garden STATUE of Dobby the house-elf (tiny, huge bat-like ears, big round green eyes, long pointy nose, thin limbs, wearing only an old pillowcase tied like a toga, one mismatched sock) happily riding a playground spring-rider toy shaped like a little blue hippogriff: the toy sits on a thick coiled metal spring that is bolted to a low square stone plinth. Dobby grins, one hand raised waving, ears flapping. Cheerful, cute, celebratory. Whole statue including plinth fully visible, the plinth is the ground contact.",
+      "motion": "static",
+      "motionRequested": "static",
+      "motionRendered": [
+        "static",
+        "static"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "framesIdentical": true,
+      "motionNote": "Requested static; four exported idle poses are intentionally identical because no safe semantic motion mask is available.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "stone",
+          "warm",
+          "magic"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "width": 128,
+      "height": 176,
+      "pivot": {
+        "x": 64,
+        "y": 160
+      },
+      "defaultFile": "native/ev_dobby_spring_rider.png",
+      "rightFile": "native/ev_dobby_spring_rider_right.png",
+      "defaultFrames": [
+        "native/ev_dobby_spring_rider_f0.png",
+        "native/ev_dobby_spring_rider_f1.png",
+        "native/ev_dobby_spring_rider_f2.png",
+        "native/ev_dobby_spring_rider_f3.png"
+      ],
+      "rightFrames": [
+        "native/ev_dobby_spring_rider_right_f0.png",
+        "native/ev_dobby_spring_rider_right_f1.png",
+        "native/ev_dobby_spring_rider_right_f2.png",
+        "native/ev_dobby_spring_rider_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/ev_dobby_spring_rider.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/ev_dobby_spring_rider.png",
+          "alternate": "thumbnails/2x/ev_dobby_spring_rider_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/ev_dobby_spring_rider.png",
+          "alternate": "thumbnails/3x/ev_dobby_spring_rider_right.png"
+        }
+      },
+      "durationsMs": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "source": "masters/ev_dobby_spring_rider.png",
+      "sourceSha256": "5ace832d798941e9b800687e9d26aa2be048ceb7a1eb1dace324a9bac500d2e2",
+      "pngSha256": {
+        "native/ev_dobby_spring_rider.png": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f",
+        "native/ev_dobby_spring_rider_right.png": "984cc1e3e467536284ba888dd77155a8b80071985fd45c3ff11356bbe58177a7",
+        "native/ev_dobby_spring_rider_f0.png": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f",
+        "native/ev_dobby_spring_rider_f1.png": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f",
+        "native/ev_dobby_spring_rider_f2.png": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f",
+        "native/ev_dobby_spring_rider_f3.png": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f",
+        "native/ev_dobby_spring_rider_right_f0.png": "984cc1e3e467536284ba888dd77155a8b80071985fd45c3ff11356bbe58177a7",
+        "native/ev_dobby_spring_rider_right_f1.png": "984cc1e3e467536284ba888dd77155a8b80071985fd45c3ff11356bbe58177a7",
+        "native/ev_dobby_spring_rider_right_f2.png": "984cc1e3e467536284ba888dd77155a8b80071985fd45c3ff11356bbe58177a7",
+        "native/ev_dobby_spring_rider_right_f3.png": "984cc1e3e467536284ba888dd77155a8b80071985fd45c3ff11356bbe58177a7",
+        "spritesheets/ev_dobby_spring_rider.png": "7d2caa666f788d291c6a5d12e7b6aef654da3a9099189b14aee6b1e28fad0e12",
+        "thumbnails/2x/ev_dobby_spring_rider.png": "419bc27dcc87fe9339395923a4e74c1b8f7d65ff8df276dbac182bc52648ae53",
+        "thumbnails/2x/ev_dobby_spring_rider_right.png": "952ae0ed1ad18450c8221c067a6e205d002d8013b0faf3fc199724dda888f94a",
+        "thumbnails/3x/ev_dobby_spring_rider.png": "df9b92161fd73ac41ad418adc858a9f5091403ebdfcb3b34e32c6388224f441d",
+        "thumbnails/3x/ev_dobby_spring_rider_right.png": "e943e2f7b1cb8010cb1cdba82a1d005aa669ccb8873153ec87b0a9ca29c40602"
+      }
+    },
+    {
+      "id": "ev_dark_dobby_red",
+      "label": "Tượng Dobby Hắc Ám",
+      "group": "Tượng sự kiện",
+      "subject": "A garden STATUE of a sinister \"Dark Dobby\" house-elf carved from deep RED stone (crimson body, dark plum shadows): huge bat-like ears swept back, narrowed glowing amber eyes, sly toothy grin, pillowcase toga with ragged hem, one hand raising a single sock like a trophy, the other hand on hip. Stands on a low square dark stone plinth with a few cracks and small red rune marks. Mischievous-menacing, not gory. Whole statue including plinth fully visible, the plinth is the ground contact.",
+      "motion": "glow",
+      "motionRequested": "glow",
+      "motionRendered": [
+        "glow",
+        "glow"
+      ],
+      "motionPlan": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 46,
+              "y": 15,
+              "w": 14,
+              "h": 10
+            },
+            "pixelCount": 36,
+            "mappableCount": 36,
+            "maxPixels": 953,
+            "rootBand": 132
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 39,
+              "y": 23,
+              "w": 11,
+              "h": 4
+            },
+            "pixelCount": 20,
+            "mappableCount": 20,
+            "maxPixels": 929,
+            "rootBand": 132
+          }
+        }
+      },
+      "framesIdentical": false,
+      "motionNote": "Localized glow is limited to a connected bright component above the grounded quarter.",
+      "animationScope": "idle-only",
+      "palette": {
+        "ramps": [
+          "fire",
+          "wood",
+          "stone"
+        ],
+        "colors": [
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "bookReference": null,
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "width": 128,
+      "height": 176,
+      "pivot": {
+        "x": 64,
+        "y": 160
+      },
+      "defaultFile": "native/ev_dark_dobby_red.png",
+      "rightFile": "native/ev_dark_dobby_red_right.png",
+      "defaultFrames": [
+        "native/ev_dark_dobby_red_f0.png",
+        "native/ev_dark_dobby_red_f1.png",
+        "native/ev_dark_dobby_red_f2.png",
+        "native/ev_dark_dobby_red_f3.png"
+      ],
+      "rightFrames": [
+        "native/ev_dark_dobby_red_right_f0.png",
+        "native/ev_dark_dobby_red_right_f1.png",
+        "native/ev_dark_dobby_red_right_f2.png",
+        "native/ev_dark_dobby_red_right_f3.png"
+      ],
+      "spriteSheet": "spritesheets/ev_dark_dobby_red.png",
+      "thumbnails": {
+        "2x": {
+          "default": "thumbnails/2x/ev_dark_dobby_red.png",
+          "alternate": "thumbnails/2x/ev_dark_dobby_red_right.png"
+        },
+        "3x": {
+          "default": "thumbnails/3x/ev_dark_dobby_red.png",
+          "alternate": "thumbnails/3x/ev_dark_dobby_red_right.png"
+        }
+      },
+      "durationsMs": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "source": "masters/ev_dark_dobby_red.png",
+      "sourceSha256": "85114f273cbf7d1bc4b092f3c3f093ae81425b6a064e8402eec17c67abd38b53",
+      "pngSha256": {
+        "native/ev_dark_dobby_red.png": "d886e284e6f533278fc3c52fd8d486a5cc57a21a2d6ab525dacb6f5c79983f41",
+        "native/ev_dark_dobby_red_right.png": "fe4890586e8ba6c31eaffa9858ef7fa334e1c74d6df521cf637e7aae747bbaf7",
+        "native/ev_dark_dobby_red_f0.png": "d886e284e6f533278fc3c52fd8d486a5cc57a21a2d6ab525dacb6f5c79983f41",
+        "native/ev_dark_dobby_red_f1.png": "99f473aee8383eb6fb1a462660aa914eac5c5bf09af4a6db392b8d62d5b398d4",
+        "native/ev_dark_dobby_red_f2.png": "ed4c9a62900b7014e5f1ccbc1d4127909553a14c2c5faebefac9d49d564fc992",
+        "native/ev_dark_dobby_red_f3.png": "d886e284e6f533278fc3c52fd8d486a5cc57a21a2d6ab525dacb6f5c79983f41",
+        "native/ev_dark_dobby_red_right_f0.png": "fe4890586e8ba6c31eaffa9858ef7fa334e1c74d6df521cf637e7aae747bbaf7",
+        "native/ev_dark_dobby_red_right_f1.png": "687056996cc3f0750cb5a3dde3d6f395cc696673b218309b330372dde35f3a75",
+        "native/ev_dark_dobby_red_right_f2.png": "6c9971a3a1e10cc807e802ce52c8650b75fab0d4719c7a024af52201cb7c6341",
+        "native/ev_dark_dobby_red_right_f3.png": "fe4890586e8ba6c31eaffa9858ef7fa334e1c74d6df521cf637e7aae747bbaf7",
+        "spritesheets/ev_dark_dobby_red.png": "8b470b6a11545b8d8796b2cc412ecb8f3c564d6e1f9be1bf4fa0580f1ad7bd9c",
+        "thumbnails/2x/ev_dark_dobby_red.png": "74df9aae4eb1c1e3243adc74ba12968c85e5be28f2d9f6ad75cf2ea1c0a97bcf",
+        "thumbnails/2x/ev_dark_dobby_red_right.png": "6a4bc2f0593717dc469b8e672853a5e81440e1dc7fda277219fdeb134a5fa07f",
+        "thumbnails/3x/ev_dark_dobby_red.png": "b3f6fb51751f7d18d535742320b6b1ac225f2a027cf3967f7f2bf4596ed2781c",
+        "thumbnails/3x/ev_dark_dobby_red_right.png": "0f478332a3f82e09fe6009e92875ed84f113c947b63b3de4b0abbad6315ae47b"
+      }
+    }
+  ],
+  "qa": {
+    "validation": "qa/validation.json",
+    "contactSheet": "qa/contact-sheet.png"
+  },
+  "preview": "preview.html"
+}

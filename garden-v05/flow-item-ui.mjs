@@ -1,6 +1,6 @@
-import { ITEM_ART } from "./item-art.mjs?v=24.9.90";
-import { FLOW_ITEM_ART } from "./flow-item-art.mjs?v=24.9.90";
-import { KEEPSAKE_ART } from "./complete-object-art.mjs?v=24.9.90";
+import { ITEM_ART } from "./item-art.mjs?v=24.9.91";
+import { FLOW_ITEM_ART } from "./flow-item-art.mjs?v=24.9.91";
+import { KEEPSAKE_ART } from "./complete-object-art.mjs?v=24.9.91";
 
 // A recipe can have a different illustration while still producing one of
 // these canonical inventory items. ITEM_ART supplies the shared recipe icon;

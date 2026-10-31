@@ -1,0 +1,481 @@
+{
+  "schema": "hagrid-farm.decor-assets.qa.v1",
+  "status": "complete",
+  "assertions": {
+    "expectedItemCount": 2,
+    "packagedItemCount": 2,
+    "allExpectedMastersPresent": true,
+    "twoViewsPerMaster": true,
+    "masterViewsSeparatedByTransparentGap": true,
+    "fourFramesPerAngle": true,
+    "spriteSheetPerItem": true,
+    "nearestThumbnails2x3x": true,
+    "motionFallbackDocumented": true,
+    "staticFramesTruthful": true,
+    "glowLocalized": true,
+    "paletteOnly": true,
+    "perItemPaletteOnly": true,
+    "itemPaletteConfigured": true,
+    "binaryAlpha": true,
+    "noEdgeClipping": true,
+    "groundedBottomQuarterUnchanged": true
+  },
+  "items": [
+    {
+      "id": "ev_dobby_spring_rider",
+      "dimensions": {
+        "width": 128,
+        "height": 176
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 17,
+              "y": 10,
+              "w": 95,
+              "h": 150,
+              "count": 9458
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 17,
+                "y": 10,
+                "w": 95,
+                "h": 150,
+                "count": 9458
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 17,
+                "y": 10,
+                "w": 95,
+                "h": 150,
+                "count": 9458
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 17,
+                "y": 10,
+                "w": 95,
+                "h": 150,
+                "count": 9458
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 17,
+                "y": 10,
+                "w": 95,
+                "h": 150,
+                "count": 9458
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "static",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 18,
+              "y": 10,
+              "w": 93,
+              "h": 150,
+              "count": 9248
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 18,
+                "y": 10,
+                "w": 93,
+                "h": 150,
+                "count": 9248
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 10,
+                "w": 93,
+                "h": 150,
+                "count": 9248
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 10,
+                "w": 93,
+                "h": 150,
+                "count": 9248
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 18,
+                "y": 10,
+                "w": 93,
+                "h": 150,
+                "count": 9248
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "static",
+            "rendered": "static",
+            "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+            "effect": null
+          },
+          "framesIdentical": true
+        }
+      },
+      "palette": {
+        "ramps": [
+          "stone",
+          "warm",
+          "magic"
+        ],
+        "colors": [
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "static",
+        "rendered": [
+          "static",
+          "static"
+        ],
+        "frameCount": 4,
+        "framesIdentical": true,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/ev_dobby_spring_rider.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/ev_dobby_spring_rider.png",
+            "alternate": "thumbnails/2x/ev_dobby_spring_rider_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/ev_dobby_spring_rider.png",
+            "alternate": "thumbnails/3x/ev_dobby_spring_rider_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "ev_dark_dobby_red",
+      "dimensions": {
+        "width": 128,
+        "height": 176
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 14,
+              "y": 10,
+              "w": 101,
+              "h": 150,
+              "count": 7947
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 14,
+                "y": 10,
+                "w": 101,
+                "h": 150,
+                "count": 7947
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 10,
+                "w": 101,
+                "h": 150,
+                "count": 7947
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 10,
+                "w": 101,
+                "h": 150,
+                "count": 7947
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 14,
+                "y": 10,
+                "w": 101,
+                "h": 150,
+                "count": 7947
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 46,
+                "y": 15,
+                "w": 14,
+                "h": 10
+              },
+              "pixelCount": 36,
+              "mappableCount": 36,
+              "maxPixels": 953,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 19,
+              "y": 10,
+              "w": 90,
+              "h": 150,
+              "count": 7748
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 19,
+                "y": 10,
+                "w": 90,
+                "h": 150,
+                "count": 7748
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 10,
+                "w": 90,
+                "h": 150,
+                "count": 7748
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 10,
+                "w": 90,
+                "h": 150,
+                "count": 7748
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 19,
+                "y": 10,
+                "w": 90,
+                "h": 150,
+                "count": 7748
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 39,
+                "y": 23,
+                "w": 11,
+                "h": 4
+              },
+              "pixelCount": 20,
+              "mappableCount": 20,
+              "maxPixels": 929,
+              "rootBand": 132
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "fire",
+          "wood",
+          "stone"
+        ],
+        "colors": [
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/ev_dark_dobby_red.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/ev_dark_dobby_red.png",
+            "alternate": "thumbnails/2x/ev_dark_dobby_red_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/ev_dark_dobby_red.png",
+            "alternate": "thumbnails/3x/ev_dark_dobby_red_right.png"
+          }
+        }
+      }
+    }
+  ]
+}

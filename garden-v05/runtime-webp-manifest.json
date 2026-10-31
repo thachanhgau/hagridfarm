@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "eef36aaf7d4f",
+  "revision": "97dd6f196611",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -6732,6 +6732,66 @@
       "sha256": "724d5f07ab29f342d27d3337fcdcade779d1d9e8fd0a83bb7e91a4324a45f924"
     },
     {
+      "source": "decor-assets/native/ev_dark_dobby_red_atlas.png",
+      "file": "runtime-webp/decor-assets/native/ev_dark_dobby_red_atlas.webp",
+      "width": 512,
+      "height": 352,
+      "sourceBytes": 12312,
+      "bytes": 5430,
+      "sourceSha256": "8b470b6a11545b8d8796b2cc412ecb8f3c564d6e1f9be1bf4fa0580f1ad7bd9c",
+      "sha256": "8f8964f828e9cadaaaafd84adfa91f44fd2d3b67adcf1347a3d4b6d1cef14fa5"
+    },
+    {
+      "source": "decor-assets/native/ev_dark_dobby_red_right.png",
+      "file": "runtime-webp/decor-assets/native/ev_dark_dobby_red_right.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4052,
+      "bytes": 2506,
+      "sourceSha256": "fe4890586e8ba6c31eaffa9858ef7fa334e1c74d6df521cf637e7aae747bbaf7",
+      "sha256": "2b8ad4689f2e95f75bf42b3672e2c0cc5d15929a686303e6edb69cd410a6cc49"
+    },
+    {
+      "source": "decor-assets/native/ev_dark_dobby_red.png",
+      "file": "runtime-webp/decor-assets/native/ev_dark_dobby_red.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4112,
+      "bytes": 2552,
+      "sourceSha256": "d886e284e6f533278fc3c52fd8d486a5cc57a21a2d6ab525dacb6f5c79983f41",
+      "sha256": "f8b7f60235c7911be947ba31820fab80638b249d48c965de839aef1d2e93a97a"
+    },
+    {
+      "source": "decor-assets/native/ev_dobby_spring_rider_atlas.png",
+      "file": "runtime-webp/decor-assets/native/ev_dobby_spring_rider_atlas.webp",
+      "width": 512,
+      "height": 352,
+      "sourceBytes": 13667,
+      "bytes": 6214,
+      "sourceSha256": "7d2caa666f788d291c6a5d12e7b6aef654da3a9099189b14aee6b1e28fad0e12",
+      "sha256": "be0470349934420962a78da6409bc564509f84054cb3997a2df8d8b639e6b053"
+    },
+    {
+      "source": "decor-assets/native/ev_dobby_spring_rider_right.png",
+      "file": "runtime-webp/decor-assets/native/ev_dobby_spring_rider_right.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4622,
+      "bytes": 3118,
+      "sourceSha256": "984cc1e3e467536284ba888dd77155a8b80071985fd45c3ff11356bbe58177a7",
+      "sha256": "fc804acb15494f709dfc1478fee7f463931051f369c78d7fef3065db2dd1ea35"
+    },
+    {
+      "source": "decor-assets/native/ev_dobby_spring_rider.png",
+      "file": "runtime-webp/decor-assets/native/ev_dobby_spring_rider.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4604,
+      "bytes": 3022,
+      "sourceSha256": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f",
+      "sha256": "a0ede48a90a68f784fa5be757de9c60d4e6c0903718e0738fa302fdd28f315b0"
+    },
+    {
       "source": "decor-assets/native/flow-hw_blinking_chest_right.png",
       "file": "runtime-webp/decor-assets/native/flow-hw_blinking_chest_right.webp",
       "width": 96,
@@ -11265,11 +11325,11 @@
     }
   ],
   "totals": {
-    "converted": 1120,
+    "converted": 1126,
     "existingWebp": 8,
-    "originalBytes": 4191805,
-    "webpBytes": 2822860,
-    "savedBytes": 1368945,
-    "savedPercent": 32.66
+    "originalBytes": 4235174,
+    "webpBytes": 2845702,
+    "savedBytes": 1389472,
+    "savedPercent": 32.81
   }
 }

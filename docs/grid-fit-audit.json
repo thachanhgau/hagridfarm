@@ -7551,6 +7551,234 @@
    "roomierFootprint": null
   },
   {
+   "group": "store-decoration",
+   "id": "ev_dobby_spring_rider",
+   "label": "Tượng Dobby cưỡi thú nhún",
+   "facing": "default",
+   "file": "decor-assets/native/ev_dobby_spring_rider.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    176
+   ],
+   "pivot": [
+    64,
+    160
+   ],
+   "ink": {
+    "x": 17,
+    "y": 10,
+    "w": 95,
+    "h": 150,
+    "foot": 160
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 144,
+    "frontY": 176
+   },
+   "flat2x2": 0.325,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     176
+    ],
+    "pivot": [
+     64,
+     160
+    ],
+    "ink": [
+     95,
+     150
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "ev_dobby_spring_rider",
+   "label": "Tượng Dobby cưỡi thú nhún",
+   "facing": "right",
+   "file": "decor-assets/native/ev_dobby_spring_rider_right.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    176
+   ],
+   "pivot": [
+    64,
+    160
+   ],
+   "ink": {
+    "x": 18,
+    "y": 10,
+    "w": 93,
+    "h": 150,
+    "foot": 160
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 144,
+    "frontY": 176
+   },
+   "flat2x2": 0.304,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     176
+    ],
+    "pivot": [
+     64,
+     160
+    ],
+    "ink": [
+     93,
+     150
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "ev_dark_dobby_red",
+   "label": "Tượng Dobby Hắc Ám",
+   "facing": "default",
+   "file": "decor-assets/native/ev_dark_dobby_red.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    176
+   ],
+   "pivot": [
+    64,
+    160
+   ],
+   "ink": {
+    "x": 14,
+    "y": 10,
+    "w": 101,
+    "h": 150,
+    "foot": 160
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 144,
+    "frontY": 176
+   },
+   "flat2x2": 0.305,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     176
+    ],
+    "pivot": [
+     64,
+     160
+    ],
+    "ink": [
+     101,
+     150
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "ev_dark_dobby_red",
+   "label": "Tượng Dobby Hắc Ám",
+   "facing": "right",
+   "file": "decor-assets/native/ev_dark_dobby_red_right.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    176
+   ],
+   "pivot": [
+    64,
+    160
+   ],
+   "ink": {
+    "x": 19,
+    "y": 10,
+    "w": 90,
+    "h": 150,
+    "foot": 160
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 144,
+    "frontY": 176
+   },
+   "flat2x2": 0.303,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     176
+    ],
+    "pivot": [
+     64,
+     160
+    ],
+    "ink": [
+     90,
+     150
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
    "group": "earned-decoration",
    "id": "decoration-3",
    "label": "Viền luống đá cuội",

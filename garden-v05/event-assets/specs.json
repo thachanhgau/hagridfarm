@@ -1,0 +1,41 @@
+{
+ "collection": "Mừng HPVN 2 tháng — Hội Gia Tinh",
+ "version": 1,
+ "style": "Use case: stylized-concept. Asset type: production game decoration sprite master for Hagrid Farm. Crisp chunky handcrafted pixel art, cosy wizarding garden, 2:1 dimetric/isometric projection on a 64x32 logical tile. Top-left illumination; selective dark-purple outlines, no pure black/white; clear big pixel clusters, no small noisy texture, no antialiasing, no gradients, no blur. Palette ONLY #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Use 2-3 of those color ramps per object. Native look must match the existing Hagrid Farm decoration sprites (see garden-v05/halloween-assets/masters for the style). TRANSPARENT RGBA background, no scenery, no platform or tile base unless part of the actual subject, no text, no labels, no border, no watermark. Keep every part including glow as hard-edged pixels. Output ONE wide horizontal sprite master containing exactly TWO separated views of the SAME item: LEFT half default isometric view, RIGHT half the alternate isometric view rotated 90 degrees, NOT a mirror. Both views same size, same baseline near bottom, each fully contained in its own half with generous transparent margins, no overlap. Ground footprints consistent between views. Top-left light stays top-left in BOTH views. This is one asset turnaround sheet, not two different designs.",
+ "items": [
+  {
+   "id": "ev_dobby_spring_rider",
+   "label": "Tượng Dobby cưỡi thú nhún",
+   "group": "Tượng sự kiện",
+   "subject": "A garden STATUE of Dobby the house-elf (tiny, huge bat-like ears, big round green eyes, long pointy nose, thin limbs, wearing only an old pillowcase tied like a toga, one mismatched sock) happily riding a playground spring-rider toy shaped like a little blue hippogriff: the toy sits on a thick coiled metal spring that is bolted to a low square stone plinth. Dobby grins, one hand raised waving, ears flapping. Cheerful, cute, celebratory. Whole statue including plinth fully visible, the plinth is the ground contact.",
+   "w": 128,
+   "h": 176,
+   "foot": [
+    2,
+    2
+   ],
+   "motion": "static",
+   "inkMax": [
+    112,
+    150
+   ]
+  },
+  {
+   "id": "ev_dark_dobby_red",
+   "label": "Tượng Dobby Hắc Ám",
+   "group": "Tượng sự kiện",
+   "subject": "A garden STATUE of a sinister \"Dark Dobby\" house-elf carved from deep RED stone (crimson body, dark plum shadows): huge bat-like ears swept back, narrowed glowing amber eyes, sly toothy grin, pillowcase toga with ragged hem, one hand raising a single sock like a trophy, the other hand on hip. Stands on a low square dark stone plinth with a few cracks and small red rune marks. Mischievous-menacing, not gory. Whole statue including plinth fully visible, the plinth is the ground contact.",
+   "w": 128,
+   "h": 176,
+   "foot": [
+    2,
+    2
+   ],
+   "motion": "glow",
+   "inkMax": [
+    112,
+    150
+   ]
+  }
+ ]
+}

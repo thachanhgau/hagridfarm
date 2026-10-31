@@ -5498,6 +5498,222 @@
       "motion": "glow",
       "framesIdentical": false,
       "nativeSha256": "bedbb68347d9757722adb3b767a601f288ab3de5c768b72d568c9b805393044f"
+    },
+    {
+      "id": "ev_dobby_spring_rider",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": false,
+      "rotatable": true,
+      "label": "Tượng Dobby cưỡi thú nhún",
+      "group": "Tượng sự kiện",
+      "file": "decor-assets/native/ev_dobby_spring_rider.png",
+      "rightFile": "decor-assets/native/ev_dobby_spring_rider_right.png",
+      "frames": [
+        "decor-assets/native/ev_dobby_spring_rider_atlas.png",
+        "decor-assets/native/ev_dobby_spring_rider_atlas.png",
+        "decor-assets/native/ev_dobby_spring_rider_atlas.png",
+        "decor-assets/native/ev_dobby_spring_rider_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/ev_dobby_spring_rider_atlas.png",
+        "decor-assets/native/ev_dobby_spring_rider_atlas.png",
+        "decor-assets/native/ev_dobby_spring_rider_atlas.png",
+        "decor-assets/native/ev_dobby_spring_rider_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 128,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 256,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 384,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 176,
+      "pivotX": 64,
+      "pivotY": 160,
+      "bounds": {
+        "x": 17,
+        "y": 10,
+        "w": 95,
+        "h": 150
+      },
+      "rightBounds": {
+        "x": 18,
+        "y": 10,
+        "w": 93,
+        "h": 150
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "static",
+      "framesIdentical": true,
+      "nativeSha256": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f"
+    },
+    {
+      "id": "ev_dark_dobby_red",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": false,
+      "rotatable": true,
+      "label": "Tượng Dobby Hắc Ám",
+      "group": "Tượng sự kiện",
+      "file": "decor-assets/native/ev_dark_dobby_red.png",
+      "rightFile": "decor-assets/native/ev_dark_dobby_red_right.png",
+      "frames": [
+        "decor-assets/native/ev_dark_dobby_red_atlas.png",
+        "decor-assets/native/ev_dark_dobby_red_atlas.png",
+        "decor-assets/native/ev_dark_dobby_red_atlas.png",
+        "decor-assets/native/ev_dark_dobby_red_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/ev_dark_dobby_red_atlas.png",
+        "decor-assets/native/ev_dark_dobby_red_atlas.png",
+        "decor-assets/native/ev_dark_dobby_red_atlas.png",
+        "decor-assets/native/ev_dark_dobby_red_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 128,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 256,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 384,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 176,
+      "pivotX": 64,
+      "pivotY": 160,
+      "bounds": {
+        "x": 14,
+        "y": 10,
+        "w": 101,
+        "h": 150
+      },
+      "rightBounds": {
+        "x": 19,
+        "y": 10,
+        "w": 90,
+        "h": 150
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "d886e284e6f533278fc3c52fd8d486a5cc57a21a2d6ab525dacb6f5c79983f41"
     }
   ]
 }

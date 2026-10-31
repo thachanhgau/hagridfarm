@@ -26,5 +26,5 @@ test('reduced-motion action feedback is still removed by the real timeline',()=>
 test('all two-angle decorations (6 store, 30 special, 30 festival) use the same animation phase and dimensions',()=>{
  const data=JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json',import.meta.url)));let count=0;
  for(const asset of data.items.filter(a=>a.rightFrames)){count++;assert.equal(asset.frames.length,asset.rightFrames.length);for(let t=1;t<5000;t+=71){const left=decorFrameAt(asset,t,{seed:asset.id}),right=decorFrameAt(asset,t,{seed:asset.id,facing:'right'});assert.equal(left.index,right.index);assert.equal(right.file,asset.rightFrames[left.index]);}}
- assert.equal(count,66);
+ assert.equal(count,68);
 });

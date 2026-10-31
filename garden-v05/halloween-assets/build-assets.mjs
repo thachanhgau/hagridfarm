@@ -14,7 +14,8 @@ try {
   sharp = require('sharp');
 }
 
-const ROOT = path.dirname(fileURLToPath(import.meta.url));
+// DECOR_PACK_DIR builds another pack with this pipeline (event-assets: «Mừng HPVN 2 tháng» statues).
+const ROOT = process.env.DECOR_PACK_DIR ? path.resolve(process.env.DECOR_PACK_DIR) : path.dirname(fileURLToPath(import.meta.url));
 const SPECS_FILE = path.join(ROOT, 'specs.json');
 const ITEM_PALETTE_FILE = path.join(ROOT, 'item-palettes.json');
 const MASTER_DIR = path.join(ROOT, 'masters');

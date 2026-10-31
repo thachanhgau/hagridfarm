@@ -1,8 +1,8 @@
-# Hagrid — danh sách hình lệch lưới (2026-10-27)
+# Hagrid — danh sách hình lệch lưới (2026-10-31)
 
 Tạo bởi `node garden-v05/audit-grid-fit.mjs` theo [guideline khớp ô](grid-fit-guideline.md). Số đo là pixel thế giới ở zoom 1, đo từ phần có màu (alpha > 0) của file đang chạy trong game. Không sửa tay file này.
 
-Đã đo 147 món (242 hình, tính cả hai hướng xoay). Lệch: **12 món** — nặng 0, vừa 0, nhẹ 12. Đạt: 135.
+Đã đo 149 món (246 hình, tính cả hai hướng xoay). Lệch: **12 món** — nặng 0, vừa 0, nhẹ 12. Đạt: 137.
 
 Cột «Tạo lại»: canvas rộng × cao, pivot (x, y) = điểm chân, khung mực tối đa rộng × cao. Vẽ lại hoặc xuất lại từ master ở kích thước đó; không thu nhỏ ảnh đã xuất. «Hoặc nền» là nền nhỏ nhất vừa hình hiện tại, chỉ dùng khi chủ dự án muốn giữ nguyên hình (đổi catalog + server, không áp cho save cũ).
 

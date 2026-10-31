@@ -2,8 +2,8 @@
 // checks the account on every call: manageHagridGardenSales). Tabs: Sale (the four scheduled programs on/off, hand
 // sales up to 40%), Bảng giá (price, on sale, limits of every store item), Quầy chợ (unlock level, caps, buying
 // prices) and Tặng đồ (store goods into one member's garden). An empty box means the code value, shown as its hint.
-import {$,el,num,button} from './ui-utils.mjs?v=24.9.90';
-import {iconButton} from './pixel-icons.mjs?v=24.9.90';
+import {$,el,num,button} from './ui-utils.mjs?v=24.9.91';
+import {iconButton} from './pixel-icons.mjs?v=24.9.91';
 
 const SCOPE_LABELS = Object.freeze({all:'Mọi món có sale',crop:'Vật phẩm cây',creature:'Vật phẩm sinh vật, Ổ ấm',festival:'Đồ lễ hội',items:'Chọn món'});
 const WEEKDAYS = ['CN','T2','T3','T4','T5','T6','T7'];

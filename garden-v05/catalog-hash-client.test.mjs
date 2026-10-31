@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createGardenClient} from './garden-emulator-client.mjs?v=24.9.90';
+import {createGardenClient} from './garden-emulator-client.mjs?v=24.9.91';
 
 test('the client sends the catalog hash it holds and keeps its catalog when the server leaves it out', async () => {
   const sent = [];

@@ -79,7 +79,7 @@ test('capacity fixture covers the authored full garden and actual three-hero sav
   assert.equal(scene.pens.length, 6);
   assert.equal(earnedIds.length, 29);
   assert.equal(Object.keys(keepsakes).length, 12);
-  assert.equal(storeItems.length, 66);
+  assert.equal(storeItems.length, 68);
   assert.equal(capacitySpots.length, 4950);
   assert.deepEqual(Object.keys(heroDecorations).sort(), ['owned', 'placements', 'positions', 'rotations']);
   assert.deepEqual(heroDecorations.owned, heroIds);
@@ -95,8 +95,8 @@ test('every store decoration and facing has capacity against the full garden wit
   for (const item of storeItems) {
     for (const facing of ['default', 'right']) records.push(evaluateCapacity(item, facing, state, emptyStoreDecorations));
   }
-  assert.equal(records.length, 132);
-  assert.equal(new Set(records.map(record => record.id)).size, 66);
+  assert.equal(records.length, 136);
+  assert.equal(new Set(records.map(record => record.id)).size, 68);
   assert.deepEqual(new Set(records.map(record => record.facing)), new Set(['default', 'right']));
   for (const record of records) {
     const blocked = Object.values(record.blocked).reduce((sum, count) => sum + count, 0);

@@ -117,7 +117,7 @@ test('every store decoration bounds cover each drawn frame in both views', async
   const { STORE_CATALOG } = await import('./garden-store-catalog.mjs');
   const runtime = JSON.parse(await fs.readFile(runtimePath, 'utf8'));
   const ids = STORE_CATALOG.filter(item => item.kind === 'decoration').map(item => item.id);
-  assert.equal(ids.length, 66);
+  assert.equal(ids.length, 68);
   for (const id of ids) {
     const item = runtime.items.find(entry => entry.id === id);
     for (const [view, frames, rects, bounds] of [['default', item.frames, item.atlasRects, item.bounds], ['right', item.rightFrames, item.rightAtlasRects, item.rightBounds]]) {
