@@ -16,7 +16,7 @@ function eventSection(ev,claimEvent,notify,rerender){
  const card=gift.claimed
   ? el('div',{class:'gp-hero day-event-gift is-open'},[
     el('div',{class:'day-event-statues','aria-hidden':'true'},gift.decor.map(id=>el('img',{src:`./decor-assets/native/${id}.png`,alt:'',width:64,height:88,draggable:'false'}))),
-    el('div',{class:'gp-hero-copy'},[el('strong',{text:'Quà của Hội Gia Tinh'}),el('small',{text:gift.label+' · Cất trong Trang trí'})]),
+    el('div',{class:'gp-hero-copy'},[el('strong',{text:'Quà của Hội Gia Tinh'}),el('small',{text:`${gift.decor.length} tượng · đặt ở Trang trí`})]),
     iconButton('letter','Đọc thư của Hội Gia Tinh',()=>readLetter(gift.letter),{text:'Thư'}),
    ])
   : el('div',{class:`gp-hero owl-chest day-event-gift${gift.ready?' is-ready':' is-locked'}`},[
