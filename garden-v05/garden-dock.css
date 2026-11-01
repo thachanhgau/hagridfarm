@@ -20,7 +20,7 @@
 #playDock .item-tray button[aria-pressed=true]{border:1px solid #e5c47c;background:radial-gradient(ellipse at bottom,#d6bc6e66,transparent 85%),#39492d;box-shadow:inset 0 0 0 1px #d1b77944,0 0 8px #d6bc6e18}
 #playDock .item-tray button[aria-pressed=true]:after{top:auto;bottom:1px;left:calc(50% - 5px);width:10px;height:2px;right:auto;background:#ffe6a6}
 #playDock .item-tray .sprite-icon{transform:none}#playDock .item-tray .tray-label{display:none}
-#playDock #buildTray .tray-label{display:block;left:auto;right:2px;bottom:2px;min-width:15px;padding:1px 2px;font:700 10px/12px system-ui;color:#efdbab;border:1px solid #a3976855;background:#142c22}
+#playDock #buildTray .tray-label{display:block;left:auto;right:2px;bottom:2px;min-width:15px;padding:1px 2px;font:700 11px/12px system-ui;color:#efdbab;border:1px solid #a3976855;background:#142c22}
 #playDock .plant-actions{display:contents}
 #playDock #seedOptionsButton,#playDock #creatureOptionsButton,#playDock #dockBoost{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:center;width:44px;height:46px;min-height:46px;padding:0;border:1px solid #c1b17966;border-radius:2px;background:#1a34289c;box-shadow:inset 0 1px #d4c48b22;font-size:18px;color:#e4d4a5}
 #playDock #seedOptionsButton{flex-direction:column;font-size:13px}
@@ -62,17 +62,17 @@
 #playDock .tool[aria-pressed=true]{border:0;background:none;box-shadow:none;color:#ffe4a4}
 #playDock .tool[aria-pressed=true]:before{top:3px;background:linear-gradient(135deg,#a89053,#3c5231 58%,#172e20);border-color:#f6d891;box-shadow:inset 0 0 0 3px #3c4c2c,inset 0 0 0 4px #d7be7b88,0 0 13px #d6b87533}
 #playDock .tool[aria-pressed=true] .tool-glyph{transform:translateY(-7px);color:#ffe9b0}#playDock .tool[aria-pressed=true]:after{display:none}
-#playDock .tool>span:not(.tool-glyph){position:absolute;bottom:0;font:600 10px/11px system-ui;color:#f5dda5;letter-spacing:.01em;opacity:0;text-shadow:0 1px 2px #071b12}
+#playDock .tool>span:not(.tool-glyph){position:absolute;bottom:0;font:600 11px/12px system-ui;color:#f5dda5;letter-spacing:.01em;opacity:0;text-shadow:0 1px 2px #071b12}
 #playDock .tool[aria-pressed=true]>span:not(.tool-glyph),#playDock .tool:focus-visible>span:not(.tool-glyph),#playDock .tool:hover>span:not(.tool-glyph){opacity:1}
 #playDock .tool:hover:not(:disabled):before,#playDock .tool:focus-visible:before{border-color:#fff0b9;background:#56663c}
-#playDock .tool:disabled{opacity:.38}#playDock .tool b{position:absolute;top:0;right:0;min-width:16px;height:16px;padding:0 3px;font:800 9px/14px system-ui;color:#2a3324;background:#e3c382;border:1px solid #fae8af;border-radius:2px;box-shadow:0 1px 3px #071a12}
+#playDock .tool:disabled{opacity:.38}#playDock .tool b{position:absolute;top:0;right:0;min-width:16px;height:16px;padding:0 3px;font:800 11px/14px system-ui;color:#2a3324;background:#e3c382;border:1px solid #fae8af;border-radius:2px;box-shadow:0 1px 3px #071a12}
 #playDock .dock-toggle{top:13px;right:4px;bottom:auto;min-width:44px;width:44px;height:44px;min-height:44px;padding:0;border:0;border-left:1px solid #b4a16c55;border-radius:0;background:transparent;box-shadow:none;color:#cdbb87;font-size:21px}
 #playDock button:focus-visible,#playDock select:focus-visible{outline:2px solid #b8e4d0;outline-offset:2px}
 .dock-collapsed #playDock{max-width:420px}.dock-collapsed #playDock>section{display:none!important}
 #playDock #plantDock.single-choice .seed-side{display:none}
 @keyframes dock-breathe{0%,100%{translate:0 0}50%{translate:0 -2px}}
-@media(max-width:440px){#playDock{width:calc(100% - 16px);gap:10px;bottom:max(10px,var(--host-inset-bottom,env(safe-area-inset-bottom)))}#playDock .dock,#playDock .crop-context{padding:8px}#playDock #plantDock,#playDock #creatureDock{grid-template-columns:58px minmax(0,1fr) 44px 80px;gap:8px 6px}#playDock .dock-portrait{width:58px;height:64px}#playDock .dock-portrait>.sprite-icon{scale:.88}#playDock .seed-caption strong{font-size:15px}#playDock .seed-caption>span{font-size:10px}#playDock .primary,#playDock #plantButton,#playDock #creatureDock .primary{font-size:12px;padding:4px}#playDock .tools{padding-left:4px;padding-right:48px;gap:1px}#playDock .tool:before{width:32px;height:32px;left:calc(50% - 16px)}#playDock .tool b{right:-1px}#playDock .tool .tool-glyph{width:29px;height:29px}#playDock .work-dock{grid-template-columns:58px minmax(0,1fr);gap:7px 10px}#playDock .work-dock .seed-caption strong{font-size:15px}#playDock .work-dock .seed-caption>span{font-size:10px}#playDock .work-controls{gap:6px}#playDock .crop-context{grid-template-columns:54px minmax(0,1fr) 82px 44px;gap:6px}#playDock #contextIcon{width:54px;height:58px}#playDock .context-copy strong{font-size:16px}#playDock .context-copy>span{font-size:10px}}
-@media(max-height:450px) and (orientation:landscape){#playDock{width:min(620px,calc(100% - 124px));bottom:6px;gap:7px}#playDock .tools{height:60px;padding-top:1px;padding-bottom:1px}#playDock .tool{height:56px;min-height:56px}#playDock .tool:before{scale:.88}#playDock .tool[aria-pressed=true]:before{top:4px}#playDock .dock-toggle{top:7px}#playDock .dock,#playDock .crop-context{padding:6px 8px}#playDock .dock-portrait{height:58px;width:64px}#playDock .dock-portrait>.sprite-icon{scale:.85}#playDock .seed-side{padding-top:3px}#playDock .item-tray{padding-bottom:3px}#playDock .item-tray button{width:44px;min-width:44px;flex-basis:44px;height:44px;min-height:44px}#playDock .work-detail{font-size:10px}}
+@media(max-width:440px){#playDock{width:calc(100% - 16px);gap:10px;bottom:max(10px,var(--host-inset-bottom,env(safe-area-inset-bottom)))}#playDock .dock,#playDock .crop-context{padding:8px}#playDock #plantDock,#playDock #creatureDock{grid-template-columns:58px minmax(0,1fr) 44px 80px;gap:8px 6px}#playDock .dock-portrait{width:58px;height:64px}#playDock .dock-portrait>.sprite-icon{scale:.88}#playDock .seed-caption strong{font-size:15px}#playDock .seed-caption>span{font-size:11px}#playDock .primary,#playDock #plantButton,#playDock #creatureDock .primary{font-size:12px;padding:4px}#playDock .tools{padding-left:4px;padding-right:48px;gap:1px}#playDock .tool:before{width:32px;height:32px;left:calc(50% - 16px)}#playDock .tool b{right:-1px}#playDock .tool .tool-glyph{width:29px;height:29px}#playDock .work-dock{grid-template-columns:58px minmax(0,1fr);gap:7px 10px}#playDock .work-dock .seed-caption strong{font-size:15px}#playDock .work-dock .seed-caption>span{font-size:11px}#playDock .work-controls{gap:6px}#playDock .crop-context{grid-template-columns:54px minmax(0,1fr) 82px 44px;gap:6px}#playDock #contextIcon{width:54px;height:58px}#playDock .context-copy strong{font-size:16px}#playDock .context-copy>span{font-size:11px}}
+@media(max-height:450px) and (orientation:landscape){#playDock{width:min(620px,calc(100% - 124px));bottom:6px;gap:7px}#playDock .tools{height:60px;padding-top:1px;padding-bottom:1px}#playDock .tool{height:56px;min-height:56px}#playDock .tool:before{scale:.88}#playDock .tool[aria-pressed=true]:before{top:4px}#playDock .dock-toggle{top:7px}#playDock .dock,#playDock .crop-context{padding:6px 8px}#playDock .dock-portrait{height:58px;width:64px}#playDock .dock-portrait>.sprite-icon{scale:.85}#playDock .seed-side{padding-top:3px}#playDock .item-tray{padding-bottom:3px}#playDock .item-tray button{width:44px;min-width:44px;flex-basis:44px;height:44px;min-height:44px}#playDock .work-detail{font-size:11px}}
 @media(prefers-reduced-motion:reduce){#playDock .dock-portrait>.sprite-icon{animation:none}#playDock .tool:before,#playDock .item-tray button{transition:none}}
 
 #playDock .dock-portrait>.visual-slot,#playDock #buildTray .visual-slot,#playDock #craftTray .visual-slot{background:none;border:0;box-shadow:none;border-radius:0}#playDock .dock-portrait .visual-corner-tag,#playDock #buildTray .visual-corner-tag{display:none}
@@ -98,7 +98,7 @@
 #playDock .work-controls .work-stepper button:disabled{opacity:.35}
 #playDock .work-batch{min-width:36px;text-align:center;font:800 14px/1 system-ui;color:#f8e7bd}
 #playDock .work-dock .dock-cost{gap:4px;padding:2px 7px 2px 2px;border:1px solid #6b7f5a55;border-radius:2px;background:#0b211b99}
-#playDock .work-dock .dock-cost b{font:800 12px/1 system-ui;color:#f6e6bb}#playDock .work-dock .dock-cost small{font:10px/1 system-ui;color:#a9b89c}
+#playDock .work-dock .dock-cost b{font:800 12px/1 system-ui;color:#f6e6bb}#playDock .work-dock .dock-cost small{font:11px/1 system-ui;color:#a9b89c}
 #playDock .work-dock .dock-cost.is-short{border-color:#d9785a99}#playDock .work-dock .dock-cost.is-short small{color:#ff9f7a;font-weight:700}
 #playDock .work-dock .dock-cost.is-output{border-color:#c9b06e66}#playDock .dock-cost-arrow{color:#d6c99c}
 #playDock .work-dock .dock-cost-reason{font:700 11px/1.3 system-ui;color:#ffcf8a}
@@ -109,8 +109,8 @@
 #playDock .recipe-choice-output>.visual-slot{border:0;border-radius:0;background:none;box-shadow:none}
 #playDock .work-job>.recipe-choice-art{grid-column:1;grid-row:1/3;flex-basis:26px;width:26px;height:26px}
 #playDock .work-job .recipe-choice-output{width:14px;height:14px;right:-2px;bottom:-2px}
-#playDock #craftTray .tray-label,#playDock #buildTray .tray-label{display:-webkit-box;position:static;max-width:100%;min-width:0;padding:0;border:0;background:none;font:600 9.5px/1.15 system-ui;color:#e9dcb4;text-align:center;white-space:normal;overflow:hidden;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-#playDock .tray-badge{position:absolute;top:2px;right:2px;padding:1px 3px;border:1px solid #a3976888;border-radius:2px;background:#142c22;color:#efdbab;font:800 9px/11px system-ui;pointer-events:none}
+#playDock #craftTray .tray-label,#playDock #buildTray .tray-label{display:-webkit-box;position:static;max-width:100%;min-width:0;padding:0;border:0;background:none;font:600 11px/1.15 system-ui;color:#e9dcb4;text-align:center;white-space:normal;overflow:hidden;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+#playDock .tray-badge{position:absolute;top:2px;right:2px;padding:1px 3px;border:1px solid #a3976888;border-radius:2px;background:#142c22;color:#efdbab;font:800 11px/13px system-ui;pointer-events:none}
 #playDock .tray-badge.is-lock{background:#26261f;color:#cfc6a8}#playDock .tray-badge.is-busy{background:#3c4a2a;color:#ffe08a}#playDock .tray-badge.is-ready{background:#d9b65a;color:#24200f;border-color:#fff0bd}
 #playDock .tray-choice.is-locked .visual-slot{filter:grayscale(.8) brightness(.7)}
 @media(max-width:440px){#playDock .work-dock{grid-template-columns:58px minmax(0,1fr);gap:7px 10px}#playDock .work-dock .item-tray button{flex-basis:58px;width:58px;min-width:58px;height:76px;min-height:76px}#playDock .work-jobs .work-claim{min-width:64px}}
@@ -138,6 +138,6 @@
  .decor-bar-row{gap:5px}
  .decor-bar button{min-height:42px;font-size:13px}
  .decor-bar-foot{align-items:flex-start}
- .decor-bar-hint{font-size:10px;line-height:1.25}
+ .decor-bar-hint{font-size:11px;line-height:1.25}
  .decor-bar .decor-bar-stash{min-height:34px;padding:0 8px;font-size:11px}
 }
