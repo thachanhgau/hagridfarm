@@ -24,7 +24,7 @@
  #playDock #buildDock.build-decor-dock{padding:8px;gap:6px}
  #playDock #decorDockPlace{flex-basis:88px;width:88px;font-size:11px}
  #decorDockName{font-size:12px}
- #decorDockStatus{font-size:10px}
+ #decorDockStatus{font-size:11px}
  #playDock #decorDockStash{flex-direction:column;gap:2px;min-width:44px;padding:4px}
 }
 @media(max-height:480px) and (min-width:600px){
