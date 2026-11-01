@@ -155,23 +155,26 @@ body.garden-burning .camera-viewport::before{content:"";position:absolute;inset:
 .visit-tools{display:none}
 @media(max-width:960px){
  .tour-banner.is-member{top:auto!important;bottom:max(10px,var(--host-inset-bottom,env(safe-area-inset-bottom)));max-height:none!important;overflow:visible!important;
-  width:min(560px,calc(100vw - 16px));grid-template-columns:40px minmax(0,1fr) auto;gap:10px;padding:10px 10px 10px 12px;border-radius:18px;
+  width:min(560px,calc(100vw - 16px));grid-template-columns:36px minmax(0,1fr) auto;gap:8px;padding:8px 8px 8px 10px;border-radius:16px;
   border:1px solid rgba(226,196,120,.6);background:linear-gradient(180deg,rgba(38,68,52,.94),rgba(17,34,26,.97));-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);
   box-shadow:0 14px 34px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,244,204,.2);animation:visit-card-in .26s cubic-bezier(.2,.8,.2,1)}
  .tour-banner.is-member.is-fire{border-color:#ed8a45;background:linear-gradient(180deg,rgba(84,38,34,.94),rgba(35,22,26,.97))}
- .tour-banner.is-member>.visit-avatar{width:40px;height:40px;font-size:16px;box-shadow:0 0 0 2px #203b2f,0 0 0 3.5px #e2c478}
- .tour-banner.is-member .tour-banner-copy strong{font-size:15px}
- .tour-banner.is-member .tour-banner-copy small.visit-sub{display:block;font-size:12px}
+ .tour-banner.is-member>.visit-avatar{width:36px;height:36px;font-size:15px;box-shadow:0 0 0 2px #203b2f,0 0 0 3.5px #e2c478}
+ .tour-banner.is-member .tour-banner-copy strong{font-size:14px}
+ .tour-banner.is-member .tour-banner-copy small.visit-sub{display:block;font-size:11.5px}
  .visit-tools{display:flex;align-items:center;gap:6px}
  .tour-banner .visit-quick{display:none}
- .tour-banner.is-collapsed .visit-quick{display:block;min-height:44px!important;padding:4px 14px!important;font-size:13.5px!important;border-radius:12px!important;white-space:nowrap}
+ .tour-banner.is-collapsed .visit-quick{display:block;height:34px;min-height:34px!important;padding:0 12px!important;font-size:12.5px!important;border-radius:10px!important;white-space:nowrap}
  .tour-banner.is-collapsed :is(.visit-strip,.visit-fire-row,.tour-banner-actions){display:none!important}
- .tour-banner .visit-icon{display:grid;place-items:center;width:44px;height:44px;min-height:44px!important;padding:0!important;border-radius:12px!important;
+ .tour-banner .visit-icon{display:grid;place-items:center;width:34px;height:34px;min-height:34px!important;padding:0!important;border-radius:10px!important;
   background:rgba(255,244,204,.07)!important;border:1px solid rgba(226,196,120,.38)!important;box-shadow:none!important}
- .tour-banner .visit-icon .px-icon{width:24px;height:24px;image-rendering:pixelated;transition:transform .2s ease}
+ .tour-banner .visit-icon .px-icon{width:20px;height:20px;image-rendering:pixelated;transition:transform .2s ease}
  .tour-banner.is-collapsed .visit-toggle .px-icon{transform:scaleY(-1)}
- .tour-banner.is-member .tour-banner-actions{gap:8px}
- .tour-banner.is-member .tour-banner-actions button{min-height:44px!important;border-radius:12px!important;font-size:13px!important}
+ .tour-banner.is-member .tour-banner-actions{grid-template-columns:34px 1fr 1fr auto;gap:6px}
+ .tour-banner.is-member .tour-banner-actions button{height:34px;min-height:34px!important;padding:0 10px!important;border-radius:10px!important;font-size:12.5px!important}
+ .tour-banner.is-member .visit-fire-row button{min-height:30px!important;height:30px;padding:0 10px!important;font-size:11.5px!important}
+ .tour-banner.is-member .visit-dot{width:40px;height:40px;min-height:40px!important}
+ .tour-banner.is-member .visit-dot .visit-avatar{width:32px;height:32px}
  .tour-banner.is-member .visit-strip{padding:2px 2px 0;margin:0 -2px}
 }
 @keyframes visit-card-in{from{opacity:0;transform:translate(-50%,14px)}}
