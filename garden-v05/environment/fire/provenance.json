@@ -1,0 +1,194 @@
+{
+  "tool": "built-in image_gen",
+  "candidates": [
+    {
+      "id": "large-a",
+      "prompt": "Use case: stylized-concept. Generate a production pixel art animation sprite sheet: EIGHT sequential frames left to right in ONE ROW, same cells, transparent background. Tall roaring magical garden bonfire column, each cell conceptual 64x96 native pixels, entire sheet aspect 512:96. Base burning clump 48 pixels wide centred at very bottom, stationary pivot. Flame licking and swaying over a seamless eight phase cycle, frame 8 flows back into frame 1. Spectacular multiple forked tongues, bright pale yellow core #F5D69A, #E7AE73, orange #FFC36B #ED8A45, deep red tips #C75B4B #874056, selective #231F2E outline. Crisp chunky pixel clusters, actual pixel grid, NO smooth gradients, NO text, NO grid lines, NO cast shadow, no smoke. Each complete flame fully inside own cell, identical grounded base and scale, small transparent margins. Deliver large clear sheet suitable for nearest-neighbor reduction. Candidate A: powerful broad twisting blaze.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-1f9c1bab-b382-4459-9cc5-9d254bef1505.png",
+      "master": "large-a.png",
+      "sha256": "d763d6abdcf89eca944b4e046338df1588f57122d2002f08ed1486524dd64b3f"
+    },
+    {
+      "id": "large-b",
+      "prompt": "Use case: stylized-concept. Production pixel art sprite sheet on genuine transparent background. EIGHT sequential frames in one horizontal row. Tall roaring bonfire column, each cell 64x96, sheet aspect 512:96. Burning clump base 48px wide fixed bottom centre. Seamless flicker cycle frame8->1. Candidate B: dramatic curling forked red tongues and powerful pale yellow core. All frames equally sized with small clear margins, each complete flame inside own cell. Conceptual native pixel grid, chunky crisp clusters suitable for nearest-neighbour reduction. Fire palette #874056 #C75B4B #ED8A45 #FFC36B plus #F5D69A #E7AE73 hot core, selective #231F2E dark outline. Light top left. No soft gradients, no blur, no text, no cell lines, no extra rows, no logs or smoke. Spectacular game art reading clearly at tiny native size.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-1b5c61f2-9cb1-4286-9c38-24ad3add541c.png",
+      "master": "large-b.png",
+      "sha256": "6e24366750b3fb696bdc9148927fb22ccb02801da6361acd88fb2cb36eebf3d5"
+    },
+    {
+      "id": "small-a",
+      "prompt": "Use case: stylized-concept. Production pixel art sprite sheet on genuine transparent background. EIGHT sequential frames in one horizontal row. Small gap-filling garden flames, each cell 32x48, sheet aspect 256:48. Fixed bottom-centre base. Seamless swaying flicker cycle frame8->1. Candidate A: compact lively triple tongues. All frames equally sized with small clear margins, each complete flame inside own cell. Conceptual native pixel grid, chunky crisp clusters suitable for nearest-neighbour reduction. Fire palette #874056 #C75B4B #ED8A45 #FFC36B plus #F5D69A #E7AE73 hot core, selective #231F2E dark outline. Light top left. No soft gradients, no blur, no text, no cell lines, no extra rows, no logs or smoke. Spectacular game art reading clearly at tiny native size.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-a347f18b-8980-4def-944f-8bf872c60d6b.png",
+      "master": "small-a.png",
+      "sha256": "1c4903f3462df6f47813ed36bee933e9febe402e6e0d73e5831cc62de3e31a01"
+    },
+    {
+      "id": "small-b",
+      "prompt": "Use case: stylized-concept. Production pixel art sprite sheet on genuine transparent background. EIGHT sequential frames in one horizontal row. Small gap-filling garden flames, each cell 32x48, sheet aspect 256:48. Fixed bottom-centre base. Seamless flicker cycle frame8->1. Candidate B: bold twisting orange flame with very bright heart, energetic red tips. All frames equally sized with small clear margins, each complete flame inside own cell. Conceptual native pixel grid, chunky crisp clusters suitable for nearest-neighbour reduction. Fire palette #874056 #C75B4B #ED8A45 #FFC36B plus #F5D69A #E7AE73 hot core, selective #231F2E dark outline. Light top left. No soft gradients, no blur, no text, no cell lines, no extra rows, no logs or smoke. Spectacular game art reading clearly at tiny native size.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-0ceee143-a03a-4fbf-8ff3-2d7d0479ab78.png",
+      "master": "small-b.png",
+      "sha256": "9e8564f7740d20c534803423623a839adb4daa7c2854cac47212b8e70df56409"
+    },
+    {
+      "id": "smoke-a",
+      "prompt": "Use case: stylized-concept. Production game pixel art on genuine transparent background. SIX frames in a single horizontal row; equal square cells conceptual 48x48, total aspect 6:1. Dark smoke puff progression left to right: first dense small low puff, then rises and expands, last large sparse dissipated puff, transparency by stippled pixel dithering. Each complete puff inside own cell. Candidate A round billowing clustered smoke. Crisp chunky actual square pixel clusters, no anti-aliasing or blur, no soft gradients. No text, no grid or cell borders. Light top-left, selective dark outlines. Smoke ONLY uses #231F2E #4A3042 #41465C #687486. Native pixel design for nearest-neighbour reduction. No flames in smoke or scorch sheets.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-512b1a69-ffcb-4fc3-9213-b66f77d09339.png",
+      "master": "smoke-a.png",
+      "sha256": "a12e1e34d897c2f41a4d0043bec57938765aadfd356bff385ec4cfa1ffd8e22c"
+    },
+    {
+      "id": "smoke-b",
+      "prompt": "Use case: stylized-concept. Production game pixel art on genuine transparent background. SIX frames in a single horizontal row; equal square cells conceptual 48x48, total aspect 6:1. Rising and fading smoke animation, dense small puff frame1 to large thin mostly transparent sparse dither frame6. Candidate B expressive curling thick dark smoke, clear blocky clusters. Crisp chunky actual square pixel clusters, no anti-aliasing or blur, no soft gradients. No text, no grid or cell borders. Light top-left, selective dark outlines. Smoke ONLY uses #231F2E #4A3042 #41465C #687486. Native pixel design for nearest-neighbour reduction. No flames in smoke or scorch sheets.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-d43c6df1-d2ef-47ca-b343-885633ef21ac.png",
+      "master": "smoke-b.png",
+      "sha256": "591859cfacbe5b89f690e3af785bf752c8a71c858ed2806bd3bcc96434311a49"
+    },
+    {
+      "id": "scorch-a",
+      "prompt": "Use case: stylized-concept. Production game pixel art on genuine transparent background. ONE 64x32 conceptual pixel isometric diamond charred ground decal. Exactly 2:1 diamond silhouette, nothing outside diamond. Dark black-brown burnt earth #231F2E #4A3042 #735044 with a few bright thin orange ember cracks #C75B4B #ED8A45 #FFC36B. Candidate A jagged orange fissures through dark char. Crisp chunky actual square pixel clusters, no anti-aliasing or blur, no soft gradients. No text, no grid or cell borders. Light top-left, selective dark outlines. Smoke ONLY uses #231F2E #4A3042 #41465C #687486. Native pixel design for nearest-neighbour reduction. No flames in smoke or scorch sheets.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-45998211-38b6-43fd-b9a6-1db3423dffa7.png",
+      "master": "scorch-a.png",
+      "sha256": "35e9ad960964f5297a56af446c5ffba6f3fe4668f7769c6e1481aa9e1b2c8e25"
+    },
+    {
+      "id": "scorch-b",
+      "prompt": "Use case: stylized-concept. Production game pixel art on genuine transparent background. ONE 64x32 conceptual pixel isometric diamond charred ground decal. Exactly 2:1 diamond silhouette, nothing outside diamond. Candidate B scorched cinders with dramatic branching sparse glowing orange cracks in black-brown ash. #231F2E #4A3042 #735044 #C75B4B #ED8A45 #FFC36B. Crisp chunky actual square pixel clusters, no anti-aliasing or blur, no soft gradients. No text, no grid or cell borders. Light top-left, selective dark outlines. Smoke ONLY uses #231F2E #4A3042 #41465C #687486. Native pixel design for nearest-neighbour reduction. No flames in smoke or scorch sheets.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-a45205da-6fac-4f9f-aa74-60cb5efea044.png",
+      "master": "scorch-b.png",
+      "sha256": "8d0906b11c894dde13b7625be5e0e1537b09c9b4bb498e730641540e040dbd55"
+    },
+    {
+      "id": "banner-a",
+      "prompt": "Use case: stylized-concept. A spectacular pixel art UI title illustration for Hagrid's magical garden on fire. Wide 3:1 landscape composition, destined for 360x120 native pixels. Wall of towering roaring forked flames, pale yellow cores through orange and deep coral red tongues, behind dark silhouettes of rustic garden picket fence and several fat ribbed pumpkins burning in foreground. Epic curling conflagration, strong rhythmic silhouette. Transparent background outside silhouette, fill most of width, no text or lettering or logo. Painterly pixel art yet crisp square pixel clusters, no blur, no antialiasing, no smooth gradient. Palette exclusively #231F2E #4A3042 #735044 #A57554 #41465C #687486 #874056 #C75B4B #ED8A45 #FFC36B #E7AE73 #F5D69A. Top-left lighting, visually legible at tiny native size. No character, no human.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-2d8ff391-0d51-45ee-8bfe-6394a1b9da17.png",
+      "master": "banner-a.png",
+      "sha256": "b36c896c47b7a2937aa15cba4411cb33d6a5d7a2ee238e2482bdc32862962d60"
+    },
+    {
+      "id": "banner-b",
+      "prompt": "Use case: stylized-concept. A spectacular pixel art UI title illustration for Hagrid's magical garden on fire. Wide 3:1 landscape composition, destined for 360x120 native pixels. Wall of towering roaring forked flames, pale yellow cores through orange and deep coral red tongues, behind dark silhouettes of rustic garden picket fence and several fat ribbed pumpkins burning in foreground. Huge surging sea of fire, broken fence rails and expressive curling fire tongues, dramatic balanced composition. Transparent background outside silhouette, fill most of width, no text or lettering or logo. Painterly pixel art yet crisp square pixel clusters, no blur, no antialiasing, no smooth gradient. Palette exclusively #231F2E #4A3042 #735044 #A57554 #41465C #687486 #874056 #C75B4B #ED8A45 #FFC36B #E7AE73 #F5D69A. Top-left lighting, visually legible at tiny native size. No character, no human.",
+      "sourceGenerationPath": "/Users/thachanh/.codex/generated_images/01a1954f-1831-7933-b9c8-a553eb5ddea5/exec-46215185-bab0-4990-893d-fa6b04c298ac.png",
+      "master": "banner-b.png",
+      "sha256": "57da7f22d7ec8c983f78b1f1bec4033d96e1512bd57a68111c07c8b0ece58502"
+    }
+  ],
+  "exports": {
+    "flame-large.png": {
+      "master": "large-a.png",
+      "intervals": [
+        [
+          23,
+          271
+        ],
+        [
+          295,
+          543
+        ],
+        [
+          562,
+          809
+        ],
+        [
+          833,
+          1078
+        ],
+        [
+          1098,
+          1352
+        ],
+        [
+          1368,
+          1614
+        ],
+        [
+          1636,
+          1884
+        ],
+        [
+          1907,
+          2152
+        ]
+      ],
+      "vertical": [
+        36,
+        679
+      ]
+    },
+    "flame-small.png": {
+      "master": "small-a.png",
+      "intervals": [
+        [
+          41,
+          256
+        ],
+        [
+          286,
+          504
+        ],
+        [
+          535,
+          754
+        ],
+        [
+          792,
+          995
+        ],
+        [
+          1048,
+          1251
+        ],
+        [
+          1300,
+          1520
+        ],
+        [
+          1551,
+          1759
+        ],
+        [
+          1795,
+          2010
+        ]
+      ],
+      "vertical": [
+        202,
+        570
+      ]
+    },
+    "smoke.png": {
+      "master": "smoke-a.png",
+      "vertical": [
+        153,
+        579
+      ],
+      "ditherCoverage": [
+        1,
+        0.95,
+        0.85,
+        0.65,
+        0.4,
+        0.18
+      ]
+    },
+    "scorch.png": {
+      "master": "scorch-a.png",
+      "crop": [
+        94,
+        104,
+        1680,
+        858
+      ],
+      "mask": "pixel-centre diamond abs(x-32)/32+abs(y-16)/16<=1"
+    },
+    "fire-banner.png": {
+      "master": "banner-b.png",
+      "crop": [
+        15,
+        17,
+        2157,
+        705
+      ]
+    }
+  },
+  "processing": "native pixel nearest-neighbour sampling, palette RGB nearest colour, binary alpha; deterministic ordered smoke dithering; scorch diamond mask"
+}

@@ -1,0 +1,43 @@
+/* «Thăm vườn» rows and banner, «Đốt vườn» notice (owner 01/11/2026). One frame (the panel), bare rows on one grid. */
+.member-visits .visit-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 0 6px}
+.member-visits .visit-left{color:#c9dec4;font-size:12px}.member-visits .visit-left b{color:#f5d69a;font-size:15px;margin-right:2px}
+.visit-list{display:grid;gap:2px}
+.visit-row{display:grid;grid-template-columns:36px minmax(0,1fr) auto 64px;align-items:center;gap:10px;min-height:48px;padding:4px 0}
+.visit-row button{min-height:36px!important;padding:4px 10px!important;font-size:12px!important;border-radius:9px!important;width:64px}
+.visit-row:not(.can-help) .visit-name strong{color:#d6d8bf}
+.visit-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;display:grid;place-items:center;background:#24483f;color:#f5d69a;font:700 15px/1 system-ui;box-shadow:0 0 0 1.5px #c9ab6788}
+.visit-avatar.is-icon{background:#3f6a45;font-size:18px}
+.visit-name{display:flex;flex-direction:column;min-width:0}
+.visit-name strong{color:#f5d69a;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.visit-name small{color:#a6b1ae;font-size:11px}
+.visit-status{font-size:11.5px;color:#a6b1ae;text-align:right;white-space:nowrap}
+.visit-status.is-open{color:#b0bd67}.visit-status.is-done{color:#e7ae73}.visit-status.is-fire{color:#ff9b57;text-shadow:0 0 8px #c75b4b}
+.visit-helpers{grid-template-columns:36px minmax(0,1fr) auto;margin-bottom:6px}
+/* Visiting banner: avatar · name and run position · ‹ Chăm giúp › Về vườn. */
+.tour-banner.is-member{flex-wrap:nowrap;gap:10px;padding:8px 10px 8px 8px}
+.tour-banner.is-member .visit-avatar{flex:none}
+.tour-banner.is-member .tour-banner-copy{min-width:0}
+.tour-banner.is-member .tour-banner-copy strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:22ch}
+.tour-banner.is-member .tour-banner-copy small.visit-sub{display:block}
+.tour-banner.is-member .tour-banner-actions{flex-wrap:nowrap}
+.tour-banner .visit-step{width:36px;padding:0!important;font-size:18px!important;font-weight:700}
+.tour-banner.is-fire{border-color:#ed8a45;background:linear-gradient(135deg,rgba(74,28,30,.96),rgba(35,31,46,.97));box-shadow:0 8px 28px rgba(199,91,75,.45),inset 0 1px 0 rgba(255,195,107,.25)}
+@media(max-width:560px){
+ .tour-banner.is-member{flex-wrap:wrap;justify-content:flex-start;width:calc(100vw - 20px)}
+ .tour-banner.is-member .tour-banner-copy{flex:1}
+ .tour-banner.is-member .tour-banner-actions{width:100%;justify-content:space-between}
+ .tour-banner.is-member .tour-banner-actions button{flex:1}
+ .tour-banner.is-member .tour-banner-actions .visit-step{flex:none}
+}
+/* «Đốt vườn»: the player's own garden burning. Codex banner art behind, flicker off with reduced motion. */
+.fire-notice{position:fixed;top:58px;left:50%;transform:translateX(-50%);z-index:41;width:min(420px,calc(100vw - 20px));min-height:78px;
+ display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;border-radius:14px;overflow:hidden;
+ background:linear-gradient(0deg,rgba(35,31,46,.92),rgba(35,31,46,.15) 70%),var(--fire-banner,linear-gradient(135deg,#874056,#ed8a45)) center/cover no-repeat;
+ image-rendering:pixelated;border:1.5px solid #ed8a45;box-shadow:0 0 0 1px #874056,0 10px 30px rgba(199,91,75,.55);animation:fire-notice-glow 1.6s ease-in-out infinite alternate}
+.fire-notice[hidden]{display:none!important}
+.fire-notice strong{color:#ffc36b;font-size:15px;letter-spacing:.02em;text-shadow:0 1px 0 #231f2e,0 0 10px #c75b4b}
+.fire-notice small{color:#f5d69a;font-size:12px}
+@keyframes fire-notice-glow{from{box-shadow:0 0 0 1px #874056,0 10px 26px rgba(199,91,75,.45)}to{box-shadow:0 0 0 1px #c75b4b,0 10px 38px rgba(237,138,69,.75)}}
+@media(prefers-reduced-motion:reduce){.fire-notice{animation:none}}
+@media(max-width:1100px){.fire-notice{top:116px}}
+.acp-fire{background:linear-gradient(180deg,#ed8a45,#c75b4b)!important;color:#231f2e!important}

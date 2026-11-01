@@ -1,30 +1,31 @@
-import {drawPlacementGrid} from './placement-grid.mjs?v=24.9.91';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT} from './default-decor.mjs?v=24.9.91';
-import {gardenObjectMetrics} from './garden-object-metrics.mjs?v=24.9.91';
-import {FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.91';
-export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.91';
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.91';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.91';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.91';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.91';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.91';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.91';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.91';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.91';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.91';
-import {drawV24Ground} from './garden-v24-scenery.mjs?v=24.9.91';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.91';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.91';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.91';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.91';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.91';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.91';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.91';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.91';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.91';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.91';
-import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.91';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.91';
+import {drawPlacementGrid} from './placement-grid.mjs?v=24.9.92';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT} from './default-decor.mjs?v=24.9.92';
+import {gardenObjectMetrics} from './garden-object-metrics.mjs?v=24.9.92';
+import {FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.92';
+export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.92';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.92';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.92';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.92';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.92';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.92';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.92';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.92';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.92';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.92';
+import {drawV24Ground} from './garden-v24-scenery.mjs?v=24.9.92';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.92';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.92';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.92';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.92';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.92';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.92';
+import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.92';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.92';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.92';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.92';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.92';
+import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.92';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.92';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -36,12 +37,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.91';
+} from './scene-animation.mjs?v=24.9.92';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.91';
+} from './forest-surround.mjs?v=24.9.92';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -298,7 +299,7 @@ function penAliases(pen) {
   return [String(pen.id)];
 }
 
-export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=24.9.91';
+export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=24.9.92';
 
 /** Keepsakes are displayed as small labelled tokens in the final south plaza. */
 export function keepsakePlacements(scene = map) {
@@ -725,6 +726,7 @@ export async function createGarden(canvas, options = {}) {
   let boundaryStageId = null;
   let boundaryFence = [];
   let currentStage = gardenStage({}, map);
+  let fireCache = null; // «Đốt vườn» flame spots for the current stage
 
   function layoutCacheKey() {
     return JSON.stringify([
@@ -1709,6 +1711,12 @@ export async function createGarden(canvas, options = {}) {
         stageBounds: sBounds,
       });
     }
+    // «Đốt vườn»: options.fire is the server's garden.fire while it burns.
+    if (options.fire) {
+      if (fireCache?.stage !== currentStage.id) fireCache = {stage: currentStage.id, spots: fireSpots(currentStage, iso)};
+      drawGardenFire(context, {spots: fireCache.spots, bounds: sBounds, clock: animationClock && clock ? animationClock : 0, width: map.width, height: map.height});
+      if (canvas.dataset) canvas.dataset.fire = options.fire.mode;
+    } else if (canvas.dataset?.fire) delete canvas.dataset.fire;
 
     for (let index = 0; index < map.plots.length; index += 1) {
       const plot = map.plots[index];

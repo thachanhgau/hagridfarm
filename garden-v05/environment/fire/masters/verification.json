@@ -1,0 +1,98 @@
+{
+  "flame-large.png": {
+    "sheet": [
+      512,
+      96
+    ],
+    "frame": [
+      64,
+      96
+    ],
+    "frames": 8,
+    "colours": 8,
+    "sha256": "28600201c99a4756ba5525c12aede9682348683bc875e23ab02a990e6194d0e6",
+    "adjacentPixelChangeFractions": [
+      0.3741861979166667,
+      0.3606770833333333,
+      0.3108723958333333,
+      0.3802083333333333,
+      0.33056640625,
+      0.3006184895833333,
+      0.34521484375,
+      0.3307291666666667
+    ],
+    "wrapWithinAdjacentRange": true
+  },
+  "flame-small.png": {
+    "sheet": [
+      256,
+      48
+    ],
+    "frame": [
+      32,
+      48
+    ],
+    "frames": 8,
+    "colours": 8,
+    "sha256": "f570fda99bc73860233e6752e2d4f37aa90d5e49a50f5209811b7ccd846eabda",
+    "adjacentPixelChangeFractions": [
+      0.3723958333333333,
+      0.3059895833333333,
+      0.3294270833333333,
+      0.3072916666666667,
+      0.3098958333333333,
+      0.3958333333333333,
+      0.3704427083333333,
+      0.0625
+    ],
+    "wrapWithinAdjacentRange": true
+  },
+  "smoke.png": {
+    "sheet": [
+      288,
+      48
+    ],
+    "frame": [
+      48,
+      48
+    ],
+    "frames": 6,
+    "colours": 4,
+    "sha256": "02b02ada39ec4efd63b7f3da18f506e94d0d601d330d239e4a2431d117e52b35",
+    "opaquePixelCounts": [
+      292,
+      535,
+      737,
+      673,
+      381,
+      77
+    ]
+  },
+  "scorch.png": {
+    "sheet": [
+      64,
+      32
+    ],
+    "frame": [
+      64,
+      32
+    ],
+    "frames": 1,
+    "colours": 6,
+    "sha256": "d6b32a3389035a8a09872bfe7cc27181d3b78f1b01d450915df7c3d80d61778e",
+    "outsideDiamondOpaquePixels": 0
+  },
+  "fire-banner.png": {
+    "sheet": [
+      360,
+      120
+    ],
+    "frame": [
+      360,
+      120
+    ],
+    "frames": 1,
+    "colours": 16,
+    "sha256": "16001d130d7e01de79da81892fe9fb8bc23e3365bee911459db1044a0dc1f34b"
+  }
+}

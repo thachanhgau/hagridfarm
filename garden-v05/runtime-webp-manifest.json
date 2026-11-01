@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "97dd6f196611",
+  "revision": "3807f56d329f",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11102,6 +11102,56 @@
       "sha256": "07859b88b95bca737152a4566f752b830bf5e3d49a9ea5ee2a657c736768f802"
     },
     {
+      "source": "environment/fire/fire-banner.png",
+      "file": "runtime-webp/environment/fire/fire-banner.webp",
+      "width": 360,
+      "height": 120,
+      "sourceBytes": 18753,
+      "bytes": 8254,
+      "sourceSha256": "16001d130d7e01de79da81892fe9fb8bc23e3365bee911459db1044a0dc1f34b",
+      "sha256": "34db7a304d08cdc6a6f2cb1fa2a2288a43f0a34e0b6c0c66436c7b54e9fbd549"
+    },
+    {
+      "source": "environment/fire/flame-large.png",
+      "file": "runtime-webp/environment/fire/flame-large.webp",
+      "width": 512,
+      "height": 96,
+      "sourceBytes": 12689,
+      "bytes": 6246,
+      "sourceSha256": "28600201c99a4756ba5525c12aede9682348683bc875e23ab02a990e6194d0e6",
+      "sha256": "06d42348d1742b7ab8e8656744d3490ba6f9f70f3bd181fa3322a58c4cacf1b6"
+    },
+    {
+      "source": "environment/fire/flame-small.png",
+      "file": "runtime-webp/environment/fire/flame-small.webp",
+      "width": 256,
+      "height": 48,
+      "sourceBytes": 4103,
+      "bytes": 1874,
+      "sourceSha256": "f570fda99bc73860233e6752e2d4f37aa90d5e49a50f5209811b7ccd846eabda",
+      "sha256": "02b6f8e1e078b71992b543eec2106681b98c3a60c0731f00d9a2197495d16a2e"
+    },
+    {
+      "source": "environment/fire/scorch.png",
+      "file": "runtime-webp/environment/fire/scorch.webp",
+      "width": 64,
+      "height": 32,
+      "sourceBytes": 962,
+      "bytes": 400,
+      "sourceSha256": "d6b32a3389035a8a09872bfe7cc27181d3b78f1b01d450915df7c3d80d61778e",
+      "sha256": "4dde74bbd3c6ecb626828e6dfb66031257c7c5d1c5c84ef5fd442d196658f44b"
+    },
+    {
+      "source": "environment/fire/smoke.png",
+      "file": "runtime-webp/environment/fire/smoke.webp",
+      "width": 288,
+      "height": 48,
+      "sourceBytes": 2724,
+      "bytes": 1326,
+      "sourceSha256": "02b02ada39ec4efd63b7f3da18f506e94d0d601d330d239e4a2431d117e52b35",
+      "sha256": "ca0e5c9316d9c04231491260bc90899c26b6b693f94d5810c9ae746708991992"
+    },
+    {
       "source": "environment/forest-v06/grove.png",
       "file": "runtime-webp/environment/forest-v06/grove.webp",
       "width": 190,
@@ -11325,11 +11375,11 @@
     }
   ],
   "totals": {
-    "converted": 1126,
+    "converted": 1131,
     "existingWebp": 8,
-    "originalBytes": 4235174,
-    "webpBytes": 2845702,
-    "savedBytes": 1389472,
-    "savedPercent": 32.81
+    "originalBytes": 4274405,
+    "webpBytes": 2863802,
+    "savedBytes": 1410603,
+    "savedPercent": 33
   }
 }

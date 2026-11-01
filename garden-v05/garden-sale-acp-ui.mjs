@@ -1,13 +1,16 @@
 // ACP of Khu Vườn Hagrid, inside the game, for KTV Gia Tinh only (owner 23/10/2026, widened 28/10/2026; the server
 // checks the account on every call: manageHagridGardenSales). Tabs: Sale (the four scheduled programs on/off, hand
 // sales up to 40%), Bảng giá (price, on sale, limits of every store item), Quầy chợ (unlock level, caps, buying
-// prices) and Tặng đồ (store goods into one member's garden). An empty box means the code value, shown as its hint.
-import {$,el,num,button} from './ui-utils.mjs?v=24.9.91';
-import {iconButton} from './pixel-icons.mjs?v=24.9.91';
+// prices), Tặng đồ (store goods into one member's garden) and Đốt vườn (owner 01/11/2026: set a member's garden on
+// fire, picture only or burning the crops, for minutes, hours or days; garden-fire-core on the server). An empty box means the code value, shown as its hint.
+import {$,el,num,button} from './ui-utils.mjs?v=24.9.92';
+import {iconButton} from './pixel-icons.mjs?v=24.9.92';
 
 const SCOPE_LABELS = Object.freeze({all:'Mọi món có sale',crop:'Vật phẩm cây',creature:'Vật phẩm sinh vật, Ổ ấm',festival:'Đồ lễ hội',items:'Chọn món'});
 const WEEKDAYS = ['CN','T2','T3','T4','T5','T6','T7'];
-const TABS = [['sale','Sale'],['store','Bảng giá'],['market','Quầy chợ'],['gift','Tặng đồ']];
+const TABS = [['sale','Sale'],['store','Bảng giá'],['market','Quầy chợ'],['gift','Tặng đồ'],['fire','Đốt vườn']];
+const FIRE_MODES = [['visual','Chỉ hình'],['real','Cháy thật']];
+const FIRE_UNITS = [['m','Phút',1],['h','Giờ',60],['d','Ngày',1440]];
 const GROUPS = [['seed','Hạt giống',i=>i.kind==='seed'],['supply','Vật tư',i=>['water','food','boost','spring'].includes(i.kind)],['premium','Cao cấp',i=>['premium','nest'].includes(i.kind)],
  ['decor','Trang trí',i=>i.kind==='decoration'&&!i.collection],['special','Đặc biệt',i=>i.collection==='special'],['festival','Lễ hội',i=>i.collection==='festival']];
 const ITEM_FIELDS = [['price','Giá (G)'],['dailyLimit','Mua/ngày'],['stockCap','Trữ tối đa'],['usesPerDay','Dùng/ngày']];
@@ -20,7 +23,7 @@ export const fromLocal = value => {const m=/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d
 const when = ms => {const d=new Date(ms+7*3600000);return `${WEEKDAYS[d.getUTCDay()]} ${d.getUTCDate()}/${d.getUTCMonth()+1} ${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;};
 
 export function createSaleAcp({call,notify}){
- let view=null,draft=null,saving=false,tab='sale',group='seed',search='',gift={username:'',itemId:'',quantity:1,query:''};
+ let view=null,draft=null,saving=false,tab='sale',group='seed',search='',gift={username:'',itemId:'',quantity:1,query:''},fire={username:'',mode:'visual',amount:1,unit:'h'};
  const body=el('div',{class:'acp-body'}),status=el('p',{class:'meta',role:'status','aria-live':'polite'});
  const dialog=el('dialog',{id:'saleAcp',class:'owl-letter acp-letter','aria-labelledby':'saleAcpTitle'},[
   el('div',{class:'popover-heading'},[el('h2',{id:'saleAcpTitle',text:'ACP bác Hagrid'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
@@ -78,6 +81,30 @@ export function createSaleAcp({call,notify}){
    el('p',{class:'meta',text:item?`Tặng: ${item.label} · gói ${num(item.quantity||1)}`:'Chưa chọn món.'}),
    el('div',{class:'acp-actions'},[iconButton('check','Gửi quà cho thành viên',send,{text:saving?'Đang tặng…':'Tặng',class:'primary',disabled:saving||!item})])];
  }
+ function fireTab(){
+  const minutes=Math.round(fire.amount)*FIRE_UNITS.find(([id])=>id===fire.unit)[2];
+  const send=async off=>{
+   if(!fire.username.trim()){status.textContent='Nhập tên thành viên.';return;}
+   if(!off&&!(minutes>=1&&minutes<=43200)){status.textContent='Thời gian từ 1 phút tới 30 ngày.';return;}
+   // A sandboxed game has no confirm(): «Cháy thật» takes a second tap within 5 s.
+   if(!off&&fire.mode==='real'&&!fire.armed){fire.armed=true;status.textContent=`Cháy thật xoá mọi cây đang trồng của ${fire.username.trim()}, không hoàn lại.`;render();setTimeout(()=>{fire.armed=false;render();},5000);return;}
+   fire.armed=false;saving=true;render();
+   try{const reply=await call({mode:'fire',username:fire.username.trim(),fire:off?'off':fire.mode,...(off?{}:{minutes})});const r=reply.fire;
+    status.textContent=off?`Đã dập lửa vườn ${r.toUsername}.`:`Vườn ${r.toUsername} đang cháy tới ${toLocal(r.until)}${r.burned?` · ${num(r.burned)} cây đã cháy`:''}.`;notify?.(status.textContent);}
+   catch(e){status.textContent=e.message;}
+   finally{saving=false;render();}
+  };
+  return [el('fieldset',{class:'acp-sale'},[
+    field('Tên thành viên',el('input',{type:'text',maxlength:'40',autocomplete:'off',value:fire.username,oninput:e=>{fire.username=e.target.value;}})),
+    chipField('Kiểu',chips('Kiểu đốt',FIRE_MODES,fire.mode,id=>{fire.mode=id;render();})),
+    field('Thời gian',el('input',{type:'number',min:'1',step:'1',inputmode:'numeric',value:String(fire.amount),oninput:e=>{fire.amount=Number(e.target.value);}})),
+    chipField('Đơn vị',chips('Đơn vị',FIRE_UNITS.map(([id,name])=>[id,name]),fire.unit,id=>{fire.unit=id;render();})),
+   ]),
+   el('div',{class:'acp-actions'},[
+    iconButton('close','Dập lửa vườn này',()=>send(true),{text:'Dập lửa',disabled:saving}),
+    iconButton('check','Đốt vườn',()=>send(false),{text:saving?'Đang đốt…':fire.armed?'Chạm lần nữa: đốt thật':'Đốt',class:'primary acp-fire',disabled:saving}),
+   ])];
+ }
  function saleRow(sale,index){
   const set=(key,value)=>{draft.sales[index]={...draft.sales[index],[key]:value};};
   const title=el('input',{type:'text',maxlength:'40',value:sale.title,oninput:e=>set('title',e.target.value)});
@@ -102,6 +129,7 @@ export function createSaleAcp({call,notify}){
   if(tab==='store'){body.replaceChildren(tabs,...storeTab(),saveRow,version);return;}
   if(tab==='market'){body.replaceChildren(tabs,...marketTab(),saveRow,version);return;}
   if(tab==='gift'){body.replaceChildren(tabs,...giftTab());return;}
+  if(tab==='fire'){body.replaceChildren(tabs,...fireTab());return;}
   body.replaceChildren(tabs,
    el('p',{class:'sheet-label',text:'Chương trình tự động (chạy theo code)'}),
    ...view.programs.map(p=>el('label',{class:'acp-toggle'},[el('input',{type:'checkbox',...(draft.programs[p.id]?{checked:''}:{}),onchange:e=>{draft.programs[p.id]=e.target.checked;}}),el('span',{text:p.label})])),
