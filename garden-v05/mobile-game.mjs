@@ -34,6 +34,7 @@ import {createHagridWork} from './garden-work-ui.mjs?v=24.9.92';
 import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.92';
 import {buildVisitSnapshot,renderMemberVisits,nextVisit,newHelpers,visitBannerParts} from './garden-visits-ui.mjs?v=24.9.92';
 import {FIRE_BANNER,fireTimeLeft} from './garden-fire.mjs?v=24.9.92';
+import {createFireSheet,fireOutPrice} from './garden-fire-ui.mjs?v=24.9.92';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.92';
 import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.92';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
@@ -329,11 +330,27 @@ const fireNotice=el('section',{id:'fireNotice',class:'fire-notice',hidden:true,r
 $('gameShell')?.append(fireNotice);
 function syncFireNotice(){const f=!activeTourSnapshot&&currentFire();document.body.classList.toggle('garden-burning',Boolean(currentFire()));fireNotice.hidden=!f;queueMicrotask(placeToast);if(!f)return;
  fireNotice.style.setProperty('--fire-banner',`url("${runtimeImageUrl(FIRE_BANNER)}")`);
- fireNotice.replaceChildren(el('strong',{text:'Vườn đang chìm trong biển lửa'}),el('small',{text:[`còn ${fireTimeLeft(f.until)}`,f.burned?`${f.burned} cây đã cháy`:null].filter(Boolean).join(' · ')}));}
+ fireNotice.replaceChildren(el('div',{class:'fire-notice-copy'},[el('strong',{text:'Vườn đang chìm trong biển lửa'}),el('small',{text:[`còn ${fireTimeLeft(f.until)}`,f.burned?`${f.burned} cây đã cháy`:null].filter(Boolean).join(' · ')})]),
+  fireOutButton(f,null));}
 setInterval(()=>{if(!document.hidden)syncFireNotice();},30000);
+// «Chữa cháy» (owner 01/11/2026): the owner or a visitor pays Galleons (10 G per hour left) to put the fire out.
+function fireOutButton(f,hostUid){const price=fireOutPrice(f.until);return button(`💧 Dập lửa · ${price} G`,()=>fireOut(hostUid,price),{class:'primary fire-out','data-fire-out':hostUid||'self'});}
+async function fireOut(hostUid,price){
+ if(busy)return;busy=true;
+ try{const r=await wallet.fireOut({...(hostUid?{hostUid}:{}),expectedPrice:price});audio.play('care');
+  if(hostUid){const row=visitQueue.find(v=>v.uid===hostUid);if(row)delete row.fire;busy=false;await startVisit(hostUid);}else{await wallet.read();acceptWallet(state,'',false);}
+  message(`💧 Đã dập lửa · −${r.price} G`);}
+ catch(e){showRefusal(e);}finally{busy=false;syncFireNotice();draw();}
+}
+// KTV Gia Tinh burns the garden being visited straight from the banner (no ACP trip).
+const fireSheet=createFireSheet({call:data=>wallet.sales(data),notify:message,onDone:()=>{const t=activeTourSnapshot?.tour;if(t?.member){const row=visitQueue.find(v=>v.uid===t.uid);if(row)row.fire='visual';startVisit(t.uid);}},host:$('gameShell')||document.body});
+function visitFireButtons(t,v){const f=v.fire&&v.fire.until>Date.now()?v.fire:null,out=[];
+ if(f)out.push(fireOutButton(f,t.uid));
+ if(wallet?.snapshot?.saleAdmin)out.push(button(f?'🔥 Đốt lại':'🔥 Đốt vườn',()=>fireSheet.open({username:t.ownerName,burning:Boolean(f)}),{class:'acp-fire','data-burn-garden':t.uid}));
+ return out;}
 // The host is told who «Chăm giúp» their garden (server `helpers`, today's), once per helper.
 let helpersSeenAt=Number(gardenStorage.getItem(HELPERS_SEEN_KEY))||0;
-function syncHelpers(text){if(!loaded)return;const n=newHelpers(wallet?.snapshot?.helpers,helpersSeenAt);if(!n)return;helpersSeenAt=n.seenAt;gardenStorage.setItem(HELPERS_SEEN_KEY,String(n.seenAt));setTimeout(()=>{audio.play("owl");message(n.text);},text?5200:900);}
+function syncHelpers(text){if(!loaded)return;const o=wallet?.snapshot?.fireOut,uid=wallet?.snapshot?.uid;if(o&&o.at>helpersSeenAt&&o.uid!==uid){helpersSeenAt=o.at;gardenStorage.setItem(HELPERS_SEEN_KEY,String(o.at));setTimeout(()=>message(`💧 ${o.name} đã bỏ ${o.price} G dập lửa vườn con`),text?5200:900);return;}const n=newHelpers(wallet?.snapshot?.helpers,helpersSeenAt);if(!n)return;helpersSeenAt=n.seenAt;gardenStorage.setItem(HELPERS_SEEN_KEY,String(n.seenAt));setTimeout(()=>{audio.play("owl");message(n.text);},text?5200:900);}
 function syncTourBanner(){
  // While touring the dock would act on the player's own garden, so it steps aside.
  document.body.classList.toggle('touring',Boolean(activeTourSnapshot));syncFireNotice();
@@ -341,7 +358,7 @@ function syncTourBanner(){
  if(!activeTourSnapshot){tourBanner.hidden=true;return;}
  if(activeTourSnapshot.tour.member){const t=activeTourSnapshot.tour,v=activeTourSnapshot.visit,left=activeTourSnapshot.helpsLeft??0;tourBanner.hidden=false;
   tourBanner.classList.add('is-member');tourBanner.classList.toggle('is-fire',Boolean(currentFire()));
-  tourBanner.replaceChildren(...visitBannerParts({tour:t,visit:v,helpsLeft:left,queue:visitQueue,onHelp:helpVisit,onMove:moveVisit,onJump:uid=>startVisit(uid),onHome:stopTour}));return;}
+  tourBanner.replaceChildren(...visitBannerParts({tour:t,visit:v,helpsLeft:left,queue:visitQueue,onHelp:helpVisit,onMove:moveVisit,onJump:uid=>startVisit(uid),onHome:stopTour,fireButtons:visitFireButtons(t,v)}));return;}
  tourBanner.classList.remove('is-member','is-fire');
  // Vườn danh dự: the same banner as members' gardens (owner 01/11/2026), the honor gardens as its run.
  const t=activeTourSnapshot.tour,prog=loadTourProgress(),helped=prog.helpedIds.includes(t.id);

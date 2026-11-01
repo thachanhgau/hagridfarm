@@ -359,6 +359,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    programs:[['golden-hour','Giờ vàng 20:00–22:00 · −20% vật phẩm cây'],['creature-weekend','Cuối tuần sinh vật · −25% vật phẩm sinh vật và Ổ ấm'],['flash','Flash 30 phút · 1–2 lần/tuần · −30% Mưa suối thần, Tiệc chuồng'],['festival-end','Ba ngày cuối lễ hội · −25% đồ lễ hội']].map(([id,label])=>({id,label,on:salesConfig.programs[id]})),
    flash:[{startsAt:Date.parse('2026-10-24T19:30:00+07:00'),endsAt:Date.parse('2026-10-24T20:00:00+07:00')}],serverNow:now()});
   if(c.mode==='get')return view();
+  if(c.mode==='fire'&&visitRows.some(v=>v.username===c.username)){const row=visitRows.find(v=>v.username===c.username);row.fire=c.fire==='off'?null:c.fire;row.fireUntil=c.fire==='off'?null:now()+c.minutes*60000;if(c.fire==='real')row.growing=0;return {ok:true,fire:{fire:c.fire,minutes:c.minutes||0,burned:c.fire==='real'?6:0,to:row.uid,toUsername:row.username,until:row.fireUntil}};}
   if(c.mode==='fire'){fire=c.fire==='off'?null:{mode:c.fire,since:now(),until:now()+c.minutes*60000,burned:0};return {ok:true,fire:{fire:c.fire,minutes:c.minutes||0,burned:0,to:'garden-fixture-member',toUsername:c.username,until:fire?.until??null}};}
   if(c.expectedRevision!==salesConfig.revision)fail('sales-revision','Cấu hình sale vừa đổi ở nơi khác; hãy tải lại.');
   if(c.sales.some(x=>!(x.percent>=1&&x.percent<=40)))fail('invalid-sales','Mức giảm 1–40%.');
@@ -502,11 +503,21 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(name==="buyHagridGardenSupplies")return buy(clone(data));
    if(name==="setHagridFlooFrame")return setFrame(clone(data));
    if(name==="manageHagridGardenSales")return sales(clone(data));
+   if(name==="extinguishHagridGarden"){
+    const row=data?.hostUid?visitRows.find(v=>v.uid===data.hostUid):null,until=row?(row.fireUntil??=now()+26*3600000):fire?.until;
+    if(!until||until<=now()||(row&&!row.fire))fail("no-fire","Khu vườn này không còn cháy.");
+    const price=Math.min(500,Math.max(1,Math.ceil((until-now())/3600000))*10);
+    if(price>data.expectedPrice)fail("price-changed",`Giá chữa cháy giờ là ${price} G.`);
+    if(wallet.spendable<price)fail("insufficient-balance","Số dư Galleons không đủ.");
+    wallet.spendable-=price;wallet.balance=Math.max(0,wallet.balance-price);
+    if(row)row.fire=null;else fire=null;
+    return clone({ok:true,price,hostUid:data.hostUid||"garden-fixture-member",balance:wallet.spendable});
+   }
    if(name==="visitHagridGarden"){
     if(!data?.hostUid)return clone({helpsLeft,visitLevel:10,visits:visitRows});
     const row=visitRows.find(v=>v.uid===data.hostUid);if(!row)fail("visit-not-found","Thành viên này chưa có khu vườn.");
     if(data.help){if(row.helped)fail("already-helped","Hôm nay bạn đã chăm giúp vườn này rồi.");if(!row.growing)fail("nothing-to-help","Vườn này chưa có cây đang lớn để chăm giúp.");row.helped=true;helpsLeft-=1;garden.supplies.water+=6;}
-    const visit={uid:row.uid,username:row.username,level:row.level,progression:clone(garden.progression),decorations:clone(garden.decorations),helped:row.helped,hostHelpsLeft:10,fire:row.fire?{mode:row.fire,since:now(),until:now()+26*3600000,burned:9}:null};
+    const visit={uid:row.uid,username:row.username,level:row.level,progression:clone(garden.progression),decorations:clone(garden.decorations),helped:row.helped,hostHelpsLeft:10,fire:row.fire?{mode:row.fire,since:now(),until:(row.fireUntil??=now()+26*3600000),burned:row.fire==='real'?9:0}:null};
     return clone({...(data.help?{ok:true,reward:{water:6,label:'+6 Nước'}}:{}),helpsLeft,visitLevel:10,visit});
    }
    fail("unknown-callable","Không có lệnh này.");

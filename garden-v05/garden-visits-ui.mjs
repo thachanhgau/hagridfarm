@@ -126,7 +126,7 @@ function visitStrip(queue, current, onJump) {
 }
 
 /** The banner while visiting a member: who, where in the run, the avatar strip, and ‹ Chăm giúp › Về vườn. */
-export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp, onMove, onJump, onHome, now = Date.now()}) {
+export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp, onMove, onJump, onHome, fireButtons = [], now = Date.now()}) {
   const at = queue.findIndex(v => v.uid === tour.uid);
   const fire = visit.fire && visit.fire.until > now ? visit.fire : null;
   const sub = [`Cấp ${tour.level}`, `còn ${helpsLeft} lượt`, at >= 0 && queue.length > 1 ? `${at + 1}/${queue.length}` : null, fire ? `🔥 cháy ${fireTimeLeft(fire.until, now)}` : null].filter(Boolean).join(' · ');
@@ -135,6 +135,7 @@ export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp
     avatar(tour.initialOf || tour.ownerName, visit.avatarUrl),
     el('div', {class: 'tour-banner-copy'}, [el('strong', {text: tour.ownerName}), el('small', {class: 'visit-sub', text: sub})]),
     many && onJump ? visitStrip(queue, tour.uid, onJump) : null,
+    fireButtons.length ? el('div', {class: 'visit-fire-row'}, fireButtons) : null,
     el('div', {class: 'tour-banner-actions'}, [
       many ? button('‹', () => onMove(-1), {class: 'visit-step', 'aria-label': 'Vườn trước', 'data-banner-prev-visit': 'true'}) : null,
       button(visit.helped ? 'Đã giúp' : 'Chăm giúp', onHelp, {class: visit.helped ? '' : 'primary', disabled: visit.helped || helpsLeft < 1 || visit.hostHelpsLeft < 1, 'data-banner-help-visit': tour.uid}),
