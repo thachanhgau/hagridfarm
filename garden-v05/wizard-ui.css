@@ -221,22 +221,31 @@
 .inv-stat-copy small{font:700 9px/1.2 ui-monospace,Menlo,monospace;color:#c8ba8a;letter-spacing:.5px}
 .inv-stat-copy strong{font-size:15px;color:#f7e7c4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .inv-stat-copy span{font-size:10px;color:#9eb5a5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.inv-stat-sub{display:flex;align-items:center;gap:4px}
 
+/* One row: filter tabs scroll sideways, the panel links stay pinned at the end. */
 .inv-filter-bar{
  display:flex;
- flex-wrap:wrap;
+ flex-wrap:nowrap;
  align-items:center;
- justify-content:space-between;
  gap:8px;
- padding:8px 10px;
+ padding:8px;
  border-radius:10px;
  background:#10221acc;
  border:1px solid #8f9d7738;
  margin-bottom:14px;
 }
-.inv-tabs,.inv-quick-actions{display:flex;flex-wrap:wrap;gap:6px}
+.inv-tabs,.inv-quick-actions{display:flex;flex-wrap:nowrap;gap:4px}
+.inv-tabs{flex:1 1 auto;min-width:0;overflow-x:auto;padding:0 0 4px;scrollbar-width:none}
+.inv-tabs::-webkit-scrollbar{display:none}
+.inv-quick-actions{flex:none;padding:0 0 4px}
 .inv-tab-btn{
- padding:6px 11px;
+ flex:none;
+ display:inline-flex;
+ align-items:center;
+ gap:4px;
+ white-space:nowrap;
+ padding:6px 8px;
  font-size:12px;
  border-radius:999px;
  background:#193227;
@@ -289,8 +298,7 @@
  width:100%;
  display:flex;
  align-items:center;
- justify-content:space-between;
- gap:4px;
+ justify-content:flex-end;
 }
 .inv-kind-tag{
  font-size:9px;
@@ -302,9 +310,10 @@
  white-space:nowrap;
  overflow:hidden;
  text-overflow:ellipsis;
- max-width:96px;
+ max-width:100%;
 }
 .inv-qty-pill{
+ flex:none;
  font:800 11px/1.2 ui-monospace,Menlo,monospace;
  color:#13231a;
  background:linear-gradient(135deg,#f5d69a,#c8a04b);
@@ -609,10 +618,22 @@
 .journey-unlock-meta{font-size:10px!important;color:#9eb5a5!important;line-height:1.3}
 
 @media(max-width:640px){
- .inv-summary-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .inv-summary-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .inv-stat-card{padding:8px;gap:8px}
+ .inv-stat-card>.visual-slot{width:36px!important;height:36px!important}
+ .inv-card-action{min-height:44px!important;height:44px}
+ /* Eight 44 px targets do not fit one 320 px row: the five tabs fill it as icon + count, the links go under. */
+ .inv-filter-bar{flex-wrap:wrap;justify-content:flex-end}
+ .inv-tabs{flex:1 0 100%}
+ .inv-tab-btn{flex:1 1 0;min-width:0;justify-content:center;padding:6px 4px}
+ .inv-tab-name{display:none}
  .journey-hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
  .inv-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
  .journey-milestone-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:359px){
+ /* «38.864 món» needs the icon's width on a 320 px phone. */
+ .inv-stat-card>.visual-slot{display:none}
 }
 
 /* === V19.5: 2-ANGLE DECORATION ROTATION & PLACEMENT UI === */

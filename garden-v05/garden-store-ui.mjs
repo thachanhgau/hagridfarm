@@ -227,6 +227,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
  overlay.append(shade,box);
  $("gameShell").append(overlay);
  render();
+ // Phone tabs scroll sideways: bring a far tab («Lễ hội», «Sản phẩm đặc biệt») into view on open.
+ tabs.querySelector("[aria-pressed=\"true\"]")?.scrollIntoView({block:"nearest",inline:"center"});
  clock=setInterval(()=>{for(const badge of box.querySelectorAll("[data-ends]")){const ends=Number(badge.dataset.ends);if(ends<=Date.now()){badge.textContent="Đợt sale đã hết";badge.classList.add("is-over");}else badge.textContent=badge.textContent.replace(/ · .*$/,` · ${saleLeft({endsAt:ends})}`);}},30000);
  heading.querySelector("button").focus();
  overlay.addEventListener("keydown",e=>{
