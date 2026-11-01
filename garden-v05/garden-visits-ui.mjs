@@ -3,9 +3,9 @@
 // tour mode (read only) and «Chăm giúp» takes 15 minutes off its growing crops, 3 gardens a day.
 // Owner 01/11/2026: one grid of bare rows, gardens that can be helped first, «Thăm liên tục» walks
 // them one after another from the banner (‹ ›), the host is told who helped, and a burning garden shows it.
-import {el, button} from './ui-utils.mjs?v=24.9.94';
-import {FIRE_SHEETS,fireTimeLeft} from './garden-fire.mjs?v=24.9.94';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.94';
+import {el, button} from './ui-utils.mjs?v=24.9.95';
+import {FIRE_SHEETS,fireTimeLeft} from './garden-fire.mjs?v=24.9.95';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.95';
 
 export const VISIT_ART = Object.freeze({hearth: 'environment/visit/floo-hearth.png', ring: 'environment/visit/portal-ring.png'});
 

@@ -196,7 +196,7 @@
  border-radius:4px;
  background:linear-gradient(135deg,#e2c478,#b89742);
  color:#0f1f18;
- font:800 9px/11px ui-monospace,Menlo,monospace;
+ font:800 11px/13px ui-monospace,Menlo,monospace;
  box-shadow:0 2px 4px #0008;
 }
 
@@ -218,9 +218,9 @@
  box-shadow:inset 0 1px 0 #fff3c41f;
 }
 .inv-stat-copy{min-width:0;display:flex;flex-direction:column;gap:1px}
-.inv-stat-copy small{font:700 9px/1.2 ui-monospace,Menlo,monospace;color:#c8ba8a;letter-spacing:.5px}
+.inv-stat-copy small{font:700 11px/1.2 ui-monospace,Menlo,monospace;color:#c8ba8a;letter-spacing:.5px}
 .inv-stat-copy strong{font-size:15px;color:#f7e7c4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.inv-stat-copy span{font-size:10px;color:#9eb5a5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.inv-stat-copy span{font-size:11px;color:#9eb5a5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .inv-stat-sub{display:flex;align-items:center;gap:4px}
 
 /* One row: filter tabs scroll sideways, the panel links stay pinned at the end. */
@@ -301,7 +301,7 @@
  justify-content:flex-end;
 }
 .inv-kind-tag{
- font-size:9px;
+ font-size:11px;
  color:#b8cbb0;
  background:#0f2119;
  border:1px solid #7f947044;
@@ -421,7 +421,7 @@
 /* 4. Hành trình 100 cấp (Visual Journey) */
 .journey-kicker{
  display:block;
- font:700 9px/1.2 ui-monospace,Menlo,monospace;
+ font:700 11px/1.2 ui-monospace,Menlo,monospace;
  color:#e2c478;
  letter-spacing:.7px;
 }

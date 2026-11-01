@@ -1,4 +1,4 @@
-import {nativePixelScale} from './garden-grid.mjs?v=24.9.94';
+import {nativePixelScale} from './garden-grid.mjs?v=24.9.95';
 const DEFAULT_TILE_WIDTH = 64;
 const DEFAULT_TILE_HEIGHT = 32;
 
