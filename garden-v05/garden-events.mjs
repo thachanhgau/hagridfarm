@@ -1062,18 +1062,20 @@ export function renderEventsAndTasksSection({
       el('div', {}, [el('h3', {class: 'gp-points', text: `${points} / ${maxPoints}`})]),
       status.active ? el('span', {class: 'journey-stage-pill', text: `${pct}%`}) : el('span', {class: 'gp-state', title: 'Lễ hội chưa mở nên chưa tính điểm'}, [pixelIcon('lock', 1), el('span', {text: 'Chưa mở'})]),
     ]),
-    status.active ? el('div', {class: 'v24-event-caps gp-chips', title: 'Điểm hôm nay · quà nhiệm vụ cú luôn được tính'}, [
-      el('span', {class: 'reward-chip', 'aria-label': `Việc vườn ${evtState.farmToday}/${FESTIVAL_FARM_POINTS_PER_DAY} điểm`}, [pixelIcon('sow', 1), el('b', {text: `${evtState.farmToday}/${FESTIVAL_FARM_POINTS_PER_DAY}`})]),
-      el('span', {class: 'reward-chip', 'aria-label': `Việc khác ${evtState.freeToday}/${FESTIVAL_FREE_POINTS_PER_DAY} điểm`}, [pixelIcon('heart', 1), el('b', {text: `${evtState.freeToday}/${FESTIVAL_FREE_POINTS_PER_DAY}`})]),
-    ]) : null,
   ]);
-  // Server play: today's free taps as icons with used/cap; a full one dims.
-  if (evtState.server && evtState.freeCaps) {
-    milestoneSec.append(el('div', {class: 'v24-free-caps', role: 'group', 'aria-label': 'Thao tác miễn phí hôm nay'},
-      Object.entries(FREE_TAP_ICONS).filter(([kind]) => evtState.freeCaps[kind]).map(([kind, [px, label]]) => {
-        const used = evtState.freeCounts[kind] || 0, cap = evtState.freeCaps[kind];
-        return el('span', {class: `v24-free-cap${used >= cap ? ' is-full' : ''}`, 'data-free-kind': kind, title: `${label} ${used}/${cap}`, 'aria-label': `${label} ${used}/${cap}`}, [pixelIcon(px, 1), el('b', {text: `${used}/${cap}`})]);
-      })));
+  // Today's counts as one labelled grid (audit S4 #1): the two point caps, then each free tap (server play).
+  if (status.active) {
+    const stat = (px, label, used, cap, kind = null) => el('li', {class: `v24-event-stat${used >= cap ? ' is-full' : ''}`, ...(kind ? {'data-free-kind': kind} : {})}, [
+      pixelIcon(px, 1), el('span', {text: label}), el('b', {text: `${used}/${cap}`}),
+    ]);
+    const free = evtState.server && evtState.freeCaps
+      ? Object.entries(FREE_TAP_ICONS).filter(([kind]) => evtState.freeCaps[kind]).map(([kind, [px, label]]) => stat(px, label, evtState.freeCounts[kind] || 0, evtState.freeCaps[kind], kind))
+      : [];
+    milestoneSec.append(el('ul', {class: 'v24-event-stats', 'aria-label': 'Hôm nay'}, [
+      stat('sow', 'Điểm việc vườn', evtState.farmToday, FESTIVAL_FARM_POINTS_PER_DAY),
+      stat('heart', 'Điểm việc khác', evtState.freeToday, FESTIVAL_FREE_POINTS_PER_DAY),
+      ...free,
+    ]));
   }
   // The bar runs from the first stop to the last; stops sit evenly, so fill each gap by its own points.
   const stops = cfg.milestones.map((m) => m.points);

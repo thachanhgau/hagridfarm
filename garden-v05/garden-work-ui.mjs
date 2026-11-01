@@ -23,18 +23,18 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
  function orders(snap){
   const view=snap.orders,inv=snap.garden?.progression?.inventory||{},level=snap.garden?.progression?.level||1;
   if(!view.orders.length)return [el('p',{class:'meta',text:`Bác Hagrid nhận đơn từ cấp ${view.unlockLevel}.`})];
-  return [el('p',{class:'meta',text:'Mỗi ngày ba đơn. XP bằng đúng XP gặt của số hàng giao, thêm 1 Nước phép mỗi đơn.'}),...view.orders.map(order=>{
+  return view.orders.map(order=>{
    const ready=Object.entries(order.items).every(([id,n])=>(inv[id]||0)>=n);
    const action=order.delivered?el('span',{class:'gp-state',text:'Đã giao'})
     :iconButton(ready?'check':'lock',ready?`Giao đơn: +${num(order.xp)} XP`:'Kho chưa đủ hàng',ready?async()=>{const res=await deliver(order.id);if(res?.ok){notify(`📦 Đã giao đơn cho bác Hagrid: +${num(order.xp)} XP, +${order.boost} Nước phép.`);render();}}:null,{text:ready?'Giao':'Thiếu',class:ready?'primary':'',disabled:!ready,'data-deliver-order':order.id});
-   return el('div',{class:`gp-hero work-order${order.delivered?' is-done':ready?' is-ready':''}`},[
+   return el('div',{class:`work-order${order.delivered?' is-done':ready?' is-ready':''}`},[
     el('div',{class:'work-order-items'},Object.entries(order.items).map(([id,n])=>el('span',{class:'work-order-item',title:labelOf(id)},[
      visualItemIcon(items,id,{size:36,kind:cropVisualKind(id)}),el('b',{text:`${num(Math.min(inv[id]||0,n))}/${n}`}),el('small',{text:labelOf(id)}),
     ]))),
-    el('div',{class:'gp-hero-copy'},[el('small',{text:`+${num(order.xp)} XP · +${order.boost} Nước phép${level>=(snap.houseCup?.unlockLevel||20)?` · +${order.cup} điểm Cúp Nhà`:''}`})]),
+    el('small',{class:'work-order-reward',text:`+${num(order.xp)} XP · +${order.boost} Nước phép${level>=(snap.houseCup?.unlockLevel||20)?` · +${order.cup} điểm Cúp Nhà`:''}`}),
     action,
    ]);
-  })];
+  });
  }
 
  // Khung Floo earned here (owner 23/10/2026): worn on Mạng Floo through the Hẻm Xéo frame slot.

@@ -37,7 +37,7 @@ const fail=(reason,message,details={})=>{const e=Error(message);e.definitive=tru
 const stable=v=>JSON.stringify(v,Object.keys(v).sort());
 
 /** `day` (YYYY-MM-DD) moves only the Vietnam calendar day, for festival QA; crop timers keep real time. */
-export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,fireMode=null,helpers=false,now=()=>Date.now()}={}){
+export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,fireMode=null,helpers=false,missions=false,now=()=>Date.now()}={}){
  // «Thăm vườn» / «Đốt vườn» QA (01/11/2026): ?fire=visual|real burns this garden, ?helpers=1 has three helpers today.
  let fire=fireMode?{mode:fireMode,since:now(),until:now()+2*3600000+5*60000,burned:fireMode==='real'?27:0}:null;
  const helperRows=helpers?[['u1','tara'],['u2','Linh'],['u3','Mai Phương']].map(([uid,name],i)=>({uid,name,at:now()-(3-i)*60000})):[];
@@ -181,7 +181,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    festival:{active,next:{...view(status.next),daysUntil:status.next.daysUntil},today:{farm:d.farm,farmCap:FESTIVAL_FARM_POINTS_PER_DAY,free:d.freeToday,freeCap:FESTIVAL_FREE_POINTS_PER_DAY},pending},
    bonding:bondingView(d.dayKey),achievements:achievementsView(),
    // Server garden-retention-core views (QA approximation: fixed board, orders drawn per day from the unlocked crops).
-   ...retentionViews(d),flooFrames:{frames:frameViews(),worn:wornFrame},saleAdmin:true,
+   ...retentionViews(d),...(missions?missionViews():{}),flooFrames:{frames:frameViews(),worn:wornFrame},saleAdmin:true,
    serverNow:now(),profile:{username:"Xem thử · không lưu"},fire:fire&&fire.until>now()?fire:null,helpers:helperRows,
    ...(receipt?{receipt}:{}),
   });
@@ -365,6 +365,20 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   if(c.sales.some(x=>!(x.percent>=1&&x.percent<=40)))fail('invalid-sales','Mức giảm 1–40%.');
   salesConfig={revision:salesConfig.revision+1,programs:{...c.programs},sales:clone(c.sales)};return {ok:true,...view()};
  }
+ // ?missions=1 (audit S4, 01/11/2026): static copies of the server's missionsView and dayEventView
+ // (HPVNN garden-mission-core / garden-day-event-core) so the «Nhiệm vụ» letter can be measured.
+ function missionViews(){
+  const task=(id,label,n,boost,state)=>({id,label:state==="hidden"?"???":label,target:n,current:state==="claimed"?n:state==="open"?Math.ceil(n/2):0,claimed:state==="claimed",open:state==="open",claimable:false,reward:{boost,label:`+${boost} Nước phép`}});
+  return {
+   missions:{current:{id:"c-mandrake",level:23,title:"Nhân sâm",chapter:true,open:true,claimable:false,reward:{boost:4,spring:2,label:"+2 Nước suối thần, +4 Nước phép"},
+     steps:[{label:"Mở Thửa 5",current:1,target:1,done:true},{label:"Gieo 9 ô Nhân sâm",current:4,target:9,done:false},{label:"Giao 20 Bạch tiễn",current:12,target:20,done:false}]},
+    upcoming:[{id:"c-niffler",level:26,title:"Đào mỏ tinh nghịch",chapter:true,reward:{label:"+2 Nước suối thần, +5 Nước phép, Vòm dây leo"}},{id:"c-clover",level:28,title:"Đồng cỏ ba lá",chapter:true,reward:{label:"+3 Nước suối thần, +5 Nước phép, +30 Nước"}}],
+    claimedCount:33,totalCount:60,backlog:null},
+   dayEvent:{id:"hpvn_2m_2026",title:"Mừng HPVN 3 tháng — Hội Gia Tinh",icon:"🧦",endsAt:Date.parse("2026-11-02T12:00:00+07:00"),
+    tasks:[task("g1","Gieo 12 ô",12,2,"claimed"),task("g2","Gặt 9 Bí ngô",9,2,"claimed"),task("g3","Ca đêm gia tinh: gặt 12 cây từ 19:00 tới 06:00",12,3,"open"),task("g4","",2,2,"hidden"),task("g5","",22,3,"hidden"),task("g6","",1,3,"hidden"),task("g7","",22,5,"hidden")],
+    finale:{ready:false,claimed:false}},
+  };
+ }
  function retentionViews(d){
   const p=garden.progression,m=garden.mastery||{},tier=n=>TIERS.filter(t=>n>=t).length,house=p.level>=20?"hufflepuff":null;
   return {
@@ -529,7 +543,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
 // The page side: the real garden client over the in-memory server above.
 export function createEmulatorClient(){
  const query=new URLSearchParams(globalThis.location?.search||"");
- const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null,previewHalloween:query.get("halloweenPreview")==="1",fireMode:["visual","real"].includes(query.get("fire"))?query.get("fire"):null,helpers:query.get("helpers")==="1"});
+ const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null,previewHalloween:query.get("halloweenPreview")==="1",fireMode:["visual","real"].includes(query.get("fire"))?query.get("fire"):null,helpers:query.get("helpers")==="1",missions:query.get("missions")==="1"});
  let actions=0;
  const client=createGardenClient(async(name,data)=>{
   const result=server.handle(name,data);

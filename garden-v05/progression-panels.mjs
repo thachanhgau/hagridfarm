@@ -146,12 +146,16 @@ export function createPanels(ctx){
   plots(){
    const s=getState(),sel=getSelection();
    body.append(toolbar(button("Mở thêm thửa",()=>show("build")),button("Bố trí",()=>show("layout")),button("Gặt tất cả",()=>run(x=>E.harvest(x,null,null,Date.now()),"Đã gặt cây chín.",{action:"harvest"}))));
-   const g=grid();
+   // Bare rows on one grid (audit S4 #5): icon, name and counts, then the two buttons.
+   const g=el("ul",{class:"plot-list"});
    s.plots.forEach((p,i)=>{
     const n=p.slots.filter(Boolean).length,ready=p.slots.filter(e=>e&&E.growth(e,now()).mature).length;
-    const k=card("Thửa "+(i+1),n+"/9 ô · "+new Set(p.slots.filter(Boolean).map(e=>e.species)).size+"/3 loại · "+ready+" cây chín","plot_"+(i+1));
-    k.append(actions(button("Đến thửa",()=>{focusPlot(i);close();}),button("Gieo lại",()=>run(x=>E.replant(x,i,Date.now()),"Đã gieo lại hàng còn trống.",{action:"replant",plotIndex:i}),{disabled:!p.patterns.length})));
-    g.append(k);
+    g.append(el("li",{class:"plot-row"},[
+     visualItemIcon(items,"plot_"+(i+1),{size:44}),
+     el("div",{class:"plot-row-copy"},[el("strong",{text:"Thửa "+(i+1)}),el("small",{text:n+"/9 ô · "+new Set(p.slots.filter(Boolean).map(e=>e.species)).size+"/3 loại · "+ready+" cây chín"})]),
+     button("Đến thửa",()=>{focusPlot(i);close();}),
+     button("Gieo lại",()=>run(x=>E.replant(x,i,Date.now()),"Đã gieo lại hàng còn trống.",{action:"replant",plotIndex:i}),{disabled:!p.patterns.length}),
+    ]));
    });
    body.append(g);
    const selected=s.plots[sel.selectedPlot],filled=sel.cells.some(i=>selected.slots[i]);
@@ -582,7 +586,6 @@ export function createPanels(ctx){
   // «Sổ tay bác Hagrid» (garden-guide.mjs): every lesson to level 20, done ones ticked.
   guide(){
    const g=ctx.getGuide?.();if(!g)return;
-   body.append(paragraph("Bác Hagrid chỉ từng việc khi nó mở. Bấm «Đã hiểu» trên thẻ để qua bài."));
    const list=el("ol",{class:"guide-list"});
    for(const lesson of g.lessons){
     const done=g.done.has(lesson.id),locked=lesson.level>g.level,state=done?"done":locked?"locked":lesson.id===g.current?"current":"open";
