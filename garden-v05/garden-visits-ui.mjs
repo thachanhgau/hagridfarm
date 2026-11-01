@@ -103,8 +103,19 @@ export function newHelpers(helpers = [], seenAt = 0) {
   return {text: `🤝 ${helperNames(fresh)} đã chăm giúp vườn con · cây chín sớm ${minutes} phút`, seenAt: Math.max(...fresh.map(h => h.at))};
 }
 
-/** The banner while visiting a member: who, where in the run, and ‹ Chăm giúp › Về vườn. */
-export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp, onMove, onHome, now = Date.now()}) {
+/** The run as a strip of avatars: tap one to fly there; ✓ helped, flame ring burning, glow can still be helped. */
+function visitStrip(queue, current, onJump) {
+  const strip = el('div', {class: 'visit-strip', role: 'group', 'aria-label': 'Các vườn trong lượt thăm'}, queue.map(v => {
+    const state = v.uid === current ? ' is-current' : v.fire ? ' is-fire' : v.helped ? ' is-helped' : canHelp(v) ? ' can-help' : '';
+    return el('button', {type: 'button', class: 'visit-dot' + state, onclick: () => v.uid !== current && onJump(v.uid),
+      'aria-label': v.username || 'Thành viên', 'aria-current': v.uid === current ? 'true' : 'false', 'data-visit-dot': v.uid}, [avatar(v.username, v.avatarUrl)]);
+  }));
+  queueMicrotask(() => strip.querySelector('.is-current')?.scrollIntoView?.({inline: 'center', block: 'nearest'}));
+  return strip;
+}
+
+/** The banner while visiting a member: who, where in the run, the avatar strip, and ‹ Chăm giúp › Về vườn. */
+export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp, onMove, onJump, onHome, now = Date.now()}) {
   const at = queue.findIndex(v => v.uid === tour.uid);
   const fire = visit.fire && visit.fire.until > now ? visit.fire : null;
   const sub = [`Cấp ${tour.level}`, `còn ${helpsLeft} lượt`, at >= 0 && queue.length > 1 ? `${at + 1}/${queue.length}` : null, fire ? `🔥 cháy ${fireTimeLeft(fire.until, now)}` : null].filter(Boolean).join(' · ');
@@ -112,6 +123,7 @@ export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp
   return [
     avatar(tour.ownerName, visit.avatarUrl),
     el('div', {class: 'tour-banner-copy'}, [el('strong', {text: tour.ownerName}), el('small', {class: 'visit-sub', text: sub})]),
+    many && onJump ? visitStrip(queue, tour.uid, onJump) : null,
     el('div', {class: 'tour-banner-actions'}, [
       many ? button('‹', () => onMove(-1), {class: 'visit-step', 'aria-label': 'Vườn trước', 'data-banner-prev-visit': 'true'}) : null,
       button(visit.helped ? 'Đã giúp' : 'Chăm giúp', onHelp, {class: visit.helped ? '' : 'primary', disabled: visit.helped || helpsLeft < 1 || visit.hostHelpsLeft < 1, 'data-banner-help-visit': tour.uid}),

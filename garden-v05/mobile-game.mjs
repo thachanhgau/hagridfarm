@@ -208,8 +208,12 @@ function startTour(tourId='tour_sprout'){
 // A member's garden (server visitHagridGarden): drawn in the tour mode, read only.
 // `queue` (the panel's list, helpable first) lets the banner's ‹ › walk garden after garden (owner 01/11/2026).
 let visitQueue=[];
+// Floo travel between gardens: a green flame burst over the view (CSS, off with reduced motion).
+const flooFlash=el('div',{id:'flooFlash',class:'floo-flash','aria-hidden':'true'});
+$('gameShell')?.append(flooFlash);
+function flooBurst(){flooFlash.classList.remove('go');void flooFlash.offsetWidth;flooFlash.classList.add('go');}
 async function startVisit(hostUid,queue=null){
- if(!walletReady||busy)return;if(queue)visitQueue=queue;busy=true;
+ if(!walletReady||busy)return;if(queue)visitQueue=queue;busy=true;flooBurst();
  try{const res=await wallet.visit({hostUid});activeTourSnapshot=buildVisitSnapshot(res.visit,weatherMode);activeTourSnapshot.helpsLeft=res.helpsLeft;}catch(e){showRefusal(e);return;}finally{busy=false;}
  audio.play('owl');syncTourBanner();syncHudV20Buttons();camera?.overview();draw();
  const f=activeTourSnapshot.visit.fire;message(f?`🔥 Vườn của ${activeTourSnapshot.tour.ownerName} đang chìm trong biển lửa.`:`🧭 Đang thăm vườn của ${activeTourSnapshot.tour.ownerName}.`);
@@ -218,13 +222,18 @@ function moveVisit(dir){const t=activeTourSnapshot?.tour;const next=t&&nextVisit
 async function helpVisit(){
  const t=activeTourSnapshot?.tour;if(!t?.member||busy)return;busy=true;
  try{const res=await wallet.visit({hostUid:t.uid,help:true});const left=res.helpsLeft;activeTourSnapshot=buildVisitSnapshot(res.visit,weatherMode);activeTourSnapshot.helpsLeft=left;
-  renderer?.animate?.('care',{plot:0,cells:[0,1,2]});await wallet.read();acceptWallet(state,'',false);
+  // Water every plot that has a crop growing, then fly on to the next garden that can still be helped.
+  (activeTourSnapshot.state?.plots||[]).forEach((plot,i)=>{const cells=(plot?.slots||[]).map((x,c)=>x?c:-1).filter(c=>c>=0);if(cells.length)renderer?.animate?.('water',{plot:i,cells});});
+  await wallet.read();acceptWallet(state,'',false);
   const row=visitQueue.find(v=>v.uid===t.uid);if(row)row.helped=true;
-  message(`🤝 Đã chăm giúp vườn của ${t.ownerName}: cây chín sớm 15 phút. Nhận ${res.reward.label}.`);}
+  const next=left>0?nextVisit(visitQueue,t.uid,1):null,onward=next&&!next.helped&&next.growing>0;
+  message(`🤝 Đã chăm giúp ${t.ownerName} · ${res.reward.label}${onward?` · bay sang vườn ${next.username||'kế tiếp'}…`:left>0?'':' · hết lượt hôm nay'}`);
+  if(onward)setTimeout(()=>{if(activeTourSnapshot?.tour?.uid===t.uid)startVisit(next.uid);},1700);}
  catch(e){showRefusal(e);}finally{busy=false;syncTourBanner();draw();}
 }
 function stopTour(){
  if(!activeTourSnapshot)return;
+ if(activeTourSnapshot.tour.member)flooBurst();
  activeTourSnapshot=null;visitQueue=[];
  audio.play('care');
  syncTourBanner();
@@ -331,7 +340,7 @@ function syncTourBanner(){
  if(!activeTourSnapshot){tourBanner.hidden=true;return;}
  if(activeTourSnapshot.tour.member){const t=activeTourSnapshot.tour,v=activeTourSnapshot.visit,left=activeTourSnapshot.helpsLeft??0;tourBanner.hidden=false;
   tourBanner.classList.add('is-member');tourBanner.classList.toggle('is-fire',Boolean(currentFire()));
-  tourBanner.replaceChildren(...visitBannerParts({tour:t,visit:v,helpsLeft:left,queue:visitQueue,onHelp:helpVisit,onMove:moveVisit,onHome:stopTour}));return;}
+  tourBanner.replaceChildren(...visitBannerParts({tour:t,visit:v,helpsLeft:left,queue:visitQueue,onHelp:helpVisit,onMove:moveVisit,onJump:uid=>startVisit(uid),onHome:stopTour}));return;}
  tourBanner.classList.remove('is-member','is-fire');
  const t=activeTourSnapshot.tour,prog=loadTourProgress(),helped=prog.helpedIds.includes(t.id);
  const nextIdx=(HONOR_GARDENS.findIndex(g=>g.id===t.id)+1)%HONOR_GARDENS.length;
