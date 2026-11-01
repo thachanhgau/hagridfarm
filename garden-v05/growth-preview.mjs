@@ -1,6 +1,6 @@
-import {GARDEN_STAGES,stageWorldBounds} from './garden-growth.mjs?v=24.9.93';
-import {createGarden} from './scene-renderer.mjs?v=24.9.93';
-import * as E from './progression-engine.mjs?v=24.9.93';
+import {GARDEN_STAGES,stageWorldBounds} from './garden-growth.mjs?v=24.9.94';
+import {createGarden} from './scene-renderer.mjs?v=24.9.94';
+import * as E from './progression-engine.mjs?v=24.9.94';
 const $=id=>document.getElementById(id),canvas=$('stageCanvas'),viewport=$('stageViewport'),scene=window.FARM_SCENE;
 let renderer,state,index=0;
 for(const [i,stage] of GARDEN_STAGES.entries()){

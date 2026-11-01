@@ -1,7 +1,7 @@
 // «Đốt vườn» from the visiting banner (KTV Gia Tinh, owner 01/11/2026) and «Chữa cháy» for everyone:
 // the sheet sets the fire on the garden being visited (manageHagridGardenSales mode 'fire'), the price
 // mirrors the server (garden-fire-handlers: 10 G per hour left, rounded up, 10–500 G).
-import {el, button} from './ui-utils.mjs?v=24.9.93';
+import {el, button} from './ui-utils.mjs?v=24.9.94';
 
 export const fireOutPrice = (until, now = Date.now()) => Math.min(500, Math.max(1, Math.ceil((until - now) / 3_600_000)) * 10);
 

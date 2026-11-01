@@ -1,6 +1,6 @@
-import {DB} from './balance-data.mjs?v=24.9.93';
-import {iso} from './garden-grid.mjs?v=24.9.93';
-import {snapDecorSpot,footLift,orientedFootprint} from './decor-runtime.mjs?v=24.9.93';
+import {DB} from './balance-data.mjs?v=24.9.94';
+import {iso} from './garden-grid.mjs?v=24.9.94';
+import {snapDecorSpot,footLift,orientedFootprint} from './decor-runtime.mjs?v=24.9.94';
 export const DEFAULT_DECOR_IDS = Object.freeze(['scene:pond', ...DB.decorations.map(d => d.id), ...DB.animals.map(a => 'keepsake:' + a.id)]);
 export const isDefaultDecorHidden = (decorations, id) => Array.isArray(decorations?.hiddenDefaults) && decorations.hiddenDefaults.includes(id);
 export function defaultDecorChoices(state) {

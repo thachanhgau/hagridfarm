@@ -1,6 +1,6 @@
-import {getGardenStorage} from './garden-storage.mjs?v=24.9.93';
-import {el} from './ui-utils.mjs?v=24.9.93';
-import {portalTile} from './garden-visits-ui.mjs?v=24.9.93';
+import {getGardenStorage} from './garden-storage.mjs?v=24.9.94';
+import {el} from './ui-utils.mjs?v=24.9.94';
+import {portalTile} from './garden-visits-ui.mjs?v=24.9.94';
 
 export const TOUR_STORAGE_KEY = 'hpvn-garden-v22-tour';
 
