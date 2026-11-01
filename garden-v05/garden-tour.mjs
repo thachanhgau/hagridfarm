@@ -1,6 +1,6 @@
 import {getGardenStorage} from './garden-storage.mjs?v=24.9.92';
-import {el, button} from './ui-utils.mjs?v=24.9.92';
-import {atmosphereConfig, weatherConfig} from './garden-atmosphere.mjs?v=24.9.92';
+import {el} from './ui-utils.mjs?v=24.9.92';
+import {portalTile} from './garden-visits-ui.mjs?v=24.9.92';
 
 export const TOUR_STORAGE_KEY = 'hpvn-garden-v22-tour';
 
@@ -370,95 +370,18 @@ export function renderTourSection({
   storage = getGardenStorage(),
   nowMs = Date.now(),
 } = {}) {
+  // Owner 01/11/2026: the same portals as members' gardens, gold-ringed; tap one to visit, «Chăm giúp» is on the banner.
   const progress = loadTourProgress(storage, nowMs);
-  const root = el('div', {class: 'tour-panel-root'});
-
-  const hero = el('section', {class: 'journey-hero-card tour-hero-card'}, [
-    el('div', {class: 'journey-hero-main'}, [
-      el('div', {class: 'journey-medal-seal'}, [
-        el('small', {text: 'THAM QUAN'}),
-        el('b', {text: `${HONOR_GARDENS.length}`}),
-      ]),
-      el('div', {class: 'journey-hero-copy'}, [
-        el('small', {class: 'journey-kicker', text: 'VƯỜN DANH DỰ'}),
-        el('h3', {
-          text: activeTourId
-            ? `Đang ghé thăm: ${getHonorGarden(activeTourId).ownerName}`
-            : 'Thăm vườn',
-        }),
-        el('p', {
-          text: 'Chăm giúp · nhận quà mỗi ngày.',
-        }),
-      ]),
-    ]),
-    ...(activeTourId && typeof onStopTour === 'function'
-      ? [
-          el('div', {class: 'actions'}, [
-            button('Về vườn', () => onStopTour(), {
-              class: 'primary',
-              'data-stop-tour': 'true',
-            }),
-          ]),
-        ]
-      : []),
-  ]);
-  root.append(hero);
-
-  const list = el('div', {class: 'cards tour-cards-grid'});
-  for (const tour of HONOR_GARDENS) {
-    const isVisiting = activeTourId === tour.id;
-    const helped = progress.helpedIds.includes(tour.id);
-    const atmo = atmosphereConfig(tour.atmosphereMode);
-    const weather = weatherConfig(tour.weatherMode);
-
-    const card = el('article', {
-      class: `card tour-garden-card${isVisiting ? ' is-visiting' : ''}`,
-      'data-tour-id': tour.id,
-    }, [
-      el('div', {class: 'tour-card-top'}, [
-        el('span', {class: 'journey-stage-badge', text: `Cấp ${tour.level}`}),
-        el('span', {
-          class: 'almanac-status-pill is-ready',
-          text: `${atmo.shortLabel} · ${weather.shortLabel}`,
-        }),
-      ]),
-      el('strong', {class: 'tour-card-title', text: tour.ownerName}),
-      el('small', {class: 'tour-card-keeper', text: `Cấp ${tour.level}`}),
-      el('details', {}, [el('summary', {text:'Về khu vườn'}), el('p', {text:tour.description})]),
-      el('div', {class: 'tour-reward-pill'}, [
-        el('span', {text: tour.reward.label}),
-        el('b', {text: helped ? 'Đã nhận' : ''}),
-      ]),
-    ]);
-
-    const btnRow = el('div', {class: 'actions'});
-    if (isVisiting) {
-      btnRow.append(
-        button('Về vườn', () => onStopTour?.(), {
-          'data-stop-tour': 'true',
-        }),
-      );
-    } else {
-      btnRow.append(
-        button('Ghé thăm', () => onStartTour?.(tour.id), {
-          class: 'primary',
-          'data-start-tour': tour.id,
-        }),
-      );
-    }
-    btnRow.append(
-      button(
-        helped ? 'Đã giúp' : 'Chăm giúp',
-        () => onHelpTour?.(tour.id),
-        {
-          disabled: helped,
-          'data-help-tour': tour.id,
-        },
-      ),
-    );
-    card.append(btnRow);
-    list.append(card);
-  }
-  root.append(list);
+  const root = el('section', {class: 'member-visits honor-visits'}, [el('p', {class: 'sheet-label', text: 'Vườn danh dự'})]);
+  const grid = el('div', {class: 'visit-grid', role: 'list'}, HONOR_GARDENS.map(tour => {
+    const helped = progress.helpedIds.includes(tour.id), visiting = activeTourId === tour.id;
+    const tile = portalTile({uid: tour.id, username: tour.ownerName, initialOf: tour.ownerName.replace(/^Giáo sư /, ''), level: tour.level},
+      () => (visiting ? onStopTour?.() : onStartTour?.(tour.id)),
+      {state: visiting ? 'is-current' : helped ? 'is-helped' : 'can-help', text: visiting ? 'Đang ghé · Về vườn' : helped ? 'Đã nhận quà' : tour.reward.label.replace(/ & /g, ' · ')});
+    tile.dataset.tourId = tour.id;
+    tile.setAttribute(visiting ? 'data-stop-tour' : 'data-start-tour', visiting ? 'true' : tour.id);
+    return tile;
+  }));
+  root.append(grid);
   return root;
 }

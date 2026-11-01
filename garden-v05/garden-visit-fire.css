@@ -16,8 +16,8 @@
 @keyframes floo-go{to{box-shadow:0 0 0 2px #d6d8bf,0 0 30px rgba(183,222,224,.75)}}
 .visit-hero.is-locked{justify-content:flex-end;filter:saturate(.5) brightness(.8)}
 .visit-helpers{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px}
-.visit-stack{display:flex;padding-left:10px}
-.visit-stack .visit-avatar{width:32px;height:32px;margin-left:-10px;font-size:13px;box-shadow:0 0 0 2px #203b2f,0 0 0 3.5px #e7ae73}
+.visit-stack{display:flex;padding-left:5px}
+.visit-stack .visit-avatar{width:32px;height:32px;margin-left:-5px;font-size:13px;box-shadow:0 0 0 2px #203b2f,0 0 0 3.5px #e7ae73}
 .visit-bonus{color:#b0bd67;font-size:15px}
 .visit-name{display:flex;flex-direction:column;min-width:0}
 .visit-name strong{color:#f5d69a;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -117,3 +117,8 @@ body.garden-burning .camera-viewport::before{content:"";position:absolute;inset:
 #gameShell .member-visits .visit-avatar{background:radial-gradient(circle at 35% 30%,#3f6a45,#24483f 70%)!important;color:#f5d69a!important;border:0!important}
 #gameShell .member-visits img.visit-avatar{background:#24483f!important}
 #gameShell .member-visits .visit-stack .visit-avatar{background:#735044!important;color:#f5d69a!important}
+/* Vườn danh dự: the same portals with a gold glow. */
+.honor-visits .visit-tile.can-help .visit-portal::before{animation:none;box-shadow:0 0 16px 4px rgba(245,214,154,.55)}
+.honor-visits .visit-tile.can-help .visit-status{color:#f5d69a}
+.visit-tile.is-current .visit-portal::before{box-shadow:0 0 0 3px #f5d69a,0 0 22px 6px rgba(245,214,154,.7)}
+.visit-tile.is-current .visit-status{color:#f5d69a}

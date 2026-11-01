@@ -52,11 +52,11 @@ const art = file => `url("${runtimeImageUrl(file)}")`;
 const STATUS = v => v.fire ? ['is-fire', 'Đang cháy'] : v.helped ? ['is-helped', 'Đã giúp'] : v.growing > 0 ? ['can-help', `${v.growing} cây đang lớn`] : ['', 'Chưa có cây'];
 
 /** One garden as a Floo portal: the member's avatar in a vine ring, level on the ring, tap to fly there. */
-function portalTile(v, onVisit) {
-  const [state, text] = STATUS(v);
+export function portalTile(v, onVisit, {state: forcedState, text: forcedText} = {}) {
+  const [state, text] = forcedState !== undefined ? [forcedState, forcedText] : STATUS(v);
   return el('button', {type: 'button', class: `visit-tile ${state}`, role: 'listitem', onclick: onVisit, 'data-visit': v.uid, 'aria-label': `${v.username || 'Thành viên'}, cấp ${v.level}, ${text}`}, [
     el('span', {class: 'visit-portal'}, [
-      avatar(v.username, v.avatarUrl),
+      avatar(v.initialOf || v.username, v.avatarUrl),
       el('img', {class: 'visit-ring', src: VISIT_ART.ring, alt: '', onerror: e => e.target.remove()}),
       v.fire ? el('span', {class: 'visit-flame', 'aria-hidden': 'true'}) : null,
       el('span', {class: 'visit-level', text: String(v.level)}),
@@ -119,7 +119,7 @@ function visitStrip(queue, current, onJump) {
   const strip = el('div', {class: 'visit-strip', role: 'group', 'aria-label': 'Các vườn trong lượt thăm'}, queue.map(v => {
     const state = v.uid === current ? ' is-current' : v.fire ? ' is-fire' : v.helped ? ' is-helped' : canHelp(v) ? ' can-help' : '';
     return el('button', {type: 'button', class: 'visit-dot' + state, onclick: () => v.uid !== current && onJump(v.uid),
-      'aria-label': v.username || 'Thành viên', 'aria-current': v.uid === current ? 'true' : 'false', 'data-visit-dot': v.uid}, [avatar(v.username, v.avatarUrl)]);
+      'aria-label': v.username || 'Thành viên', 'aria-current': v.uid === current ? 'true' : 'false', 'data-visit-dot': v.uid}, [avatar(v.initialOf || v.username, v.avatarUrl)]);
   }));
   queueMicrotask(() => strip.querySelector('.is-current')?.scrollIntoView?.({inline: 'center', block: 'nearest'}));
   return strip;
@@ -132,7 +132,7 @@ export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp
   const sub = [`Cấp ${tour.level}`, `còn ${helpsLeft} lượt`, at >= 0 && queue.length > 1 ? `${at + 1}/${queue.length}` : null, fire ? `🔥 cháy ${fireTimeLeft(fire.until, now)}` : null].filter(Boolean).join(' · ');
   const many = queue.length > 1;
   return [
-    avatar(tour.ownerName, visit.avatarUrl),
+    avatar(tour.initialOf || tour.ownerName, visit.avatarUrl),
     el('div', {class: 'tour-banner-copy'}, [el('strong', {text: tour.ownerName}), el('small', {class: 'visit-sub', text: sub})]),
     many && onJump ? visitStrip(queue, tour.uid, onJump) : null,
     el('div', {class: 'tour-banner-actions'}, [

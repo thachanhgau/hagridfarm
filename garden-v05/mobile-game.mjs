@@ -193,6 +193,7 @@ function grantOwlReward(reward){
 }
 
 function startTour(tourId='tour_sprout'){
+ flooBurst();
  activeTourSnapshot=buildHonorGardenSnapshot(tourId,E,Date.now());
  audio.play('owl');
  recordFestivalAction('startTour');
@@ -233,7 +234,7 @@ async function helpVisit(){
 }
 function stopTour(){
  if(!activeTourSnapshot)return;
- if(activeTourSnapshot.tour.member)flooBurst();
+ flooBurst();
  activeTourSnapshot=null;visitQueue=[];
  audio.play('care');
  syncTourBanner();
@@ -342,21 +343,13 @@ function syncTourBanner(){
   tourBanner.classList.add('is-member');tourBanner.classList.toggle('is-fire',Boolean(currentFire()));
   tourBanner.replaceChildren(...visitBannerParts({tour:t,visit:v,helpsLeft:left,queue:visitQueue,onHelp:helpVisit,onMove:moveVisit,onJump:uid=>startVisit(uid),onHome:stopTour}));return;}
  tourBanner.classList.remove('is-member','is-fire');
+ // Vườn danh dự: the same banner as members' gardens (owner 01/11/2026), the honor gardens as its run.
  const t=activeTourSnapshot.tour,prog=loadTourProgress(),helped=prog.helpedIds.includes(t.id);
- const nextIdx=(HONOR_GARDENS.findIndex(g=>g.id===t.id)+1)%HONOR_GARDENS.length;
- const nextTour=HONOR_GARDENS[nextIdx];
- tourBanner.hidden=false;
- tourBanner.replaceChildren(
-  el('div',{class:'tour-banner-copy'},[
-   el('strong',{text:t.ownerName}),
-   el('small',{text:`Cấp ${t.level}`}),
-  ]),
-  el('div',{class:'tour-banner-actions'},[
-   button(helped?'Đã giúp':'Chăm giúp',()=>helpTour(t.id),{class:'primary',disabled:helped,'data-banner-help-tour':t.id}),
-   button('Vườn tiếp',()=>startTour(nextTour.id),{'data-banner-next-tour':nextTour.id}),
-   button('Về vườn',stopTour,{'data-banner-stop-tour':'true'}),
-  ])
- );
+ const honorQueue=HONOR_GARDENS.map(g=>({uid:g.id,username:g.ownerName,initialOf:g.ownerName.replace(/^Giáo sư /,''),level:g.level,helped:prog.helpedIds.includes(g.id),growing:1}));
+ const moveHonor=dir=>{const at=HONOR_GARDENS.findIndex(g=>g.id===t.id),n=HONOR_GARDENS.length;startTour(HONOR_GARDENS[(at+dir+n)%n].id);};
+ tourBanner.hidden=false;tourBanner.classList.add('is-member');tourBanner.classList.remove('is-fire');
+ tourBanner.replaceChildren(...visitBannerParts({tour:{uid:t.id,ownerName:t.ownerName,initialOf:t.ownerName.replace(/^Giáo sư /,''),level:t.level},visit:{helped,hostHelpsLeft:1},helpsLeft:helped?0:1,queue:honorQueue,
+  onHelp:()=>helpTour(t.id),onMove:moveHonor,onJump:id=>startTour(id),onHome:stopTour}));
 }
 const keeperTitleBtn=button('',()=>panels?.show('achievements'),{id:'keeperTitleButton',class:'hud-keeper-title',title:'Hồ sơ'});
 $('levelButton')?.after(keeperTitleBtn);
