@@ -11,7 +11,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Tập Sự Thảo Dược',
     badge: '🌱 Tập Sự Thảo Dược',
     category: 'Khởi đầu',
-    description: 'Khởi đầu hành trình chăm sóc những thửa đất đầu tiên bên lều bác Hagrid.',
+    description: 'Mở sẵn từ Cấp 1',
     reward: Object.freeze({kind: 'water', amount: 8, itemId: 'pumpkin', bonusQty: 3, label: '+8 Nước tưới & +3 Bí ngô'}),
     check(state) {
       const level = Number(state?.level) || 1;
@@ -24,7 +24,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Bạn Thân Sinh Vật',
     badge: '🐾 Bạn Thân Sinh Vật',
     category: 'Sinh vật',
-    description: 'Đón nuôi ít nhất 2 loài sinh vật huyền bí về khu vườn Rừng Cấm.',
+    description: 'Nuôi 2 loài sinh vật',
     reward: Object.freeze({kind: 'water', amount: 10, itemId: 'puff_feed', bonusQty: 3, label: '+10 Nước tưới & +3 Khẩu phần'}),
     check(state) {
       const count = Array.isArray(state?.creatures) ? state.creatures.length : 0;
@@ -37,7 +37,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Nghệ Nhân Thảo Dược',
     badge: '🌿 Nghệ Nhân Thảo Dược',
     category: 'Cây trồng',
-    description: 'Đạt Cấp 24 (mở khóa Nhân sâm) hoặc mở rộng từ 5 thửa đất trở lên.',
+    description: 'Cấp 24 hoặc 5 thửa đất',
     reward: Object.freeze({kind: 'water', amount: 12, itemId: 'mandrake', bonusQty: 2, label: '+12 Nước tưới & +2 Nhân sâm'}),
     check(state) {
       const level = Number(state?.level) || 1;
@@ -52,7 +52,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Bậc Thầy Chế Biến',
     badge: '⚗ Bậc Thầy Chế Biến',
     category: 'Chế biến',
-    description: 'Đạt Cấp 35 hoặc tích trữ ít nhất 20 đơn vị vật tư & khẩu phần trong kho.',
+    description: 'Cấp 35 hoặc 20 món trong kho',
     reward: Object.freeze({kind: 'water', amount: 8, itemId: 'insects', bonusQty: 4, label: '+8 Nước & +4 Côn trùng'}),
     check(state) {
       const level = Number(state?.level) || 1;
@@ -69,7 +69,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Kiến Trúc Sư Rừng Cấm',
     badge: '🏡 Kiến Trúc Sư Rừng Cấm',
     category: 'Công trình',
-    description: 'Mở rộng khu vườn đạt từ 7 thửa đất trở lên (Chương 4: Bìa rừng mở lối).',
+    description: 'Mở rộng đến 7 thửa đất',
     reward: Object.freeze({kind: 'water', amount: 12, itemId: 'pumpkin', label: '+12 Nước'}),
     check(state) {
       const plots = Array.isArray(state?.plots) ? state.plots.length : 3;
@@ -82,7 +82,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Nghệ Sĩ Cảnh Quan',
     badge: '✨ Nghệ Sĩ Cảnh Quan',
     category: 'Cảnh quan',
-    description: 'Sở hữu ít nhất 4 vật phẩm trang trí lối đi hoặc vật phẩm Tiệm Hẻm Xéo.',
+    description: 'Có 4 vật phẩm trang trí',
     reward: Object.freeze({kind: 'water', amount: 15, itemId: 'flax', bonusQty: 3, label: '+15 Nước tưới & +3 Lanh'}),
     check(state, extra = {}) {
       const earned = Array.isArray(state?.decorations) ? state.decorations.length : 0;
@@ -97,7 +97,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Người Giữ Kỷ Vật',
     badge: '🏆 Người Giữ Kỷ Vật',
     category: 'Bộ sưu tập',
-    description: 'Sưu tầm và trưng bày ít nhất 3 Kỷ vật sinh vật trên bệ đá lối đi phía Nam.',
+    description: 'Trưng bày 3 Kỷ vật',
     reward: Object.freeze({kind: 'water', amount: 8, itemId: 'moonherb', bonusQty: 2, label: '+8 Nước & +2 Cỏ trăng'}),
     check(state) {
       const keepsakes = state?.keepsakes && typeof state.keepsakes === 'object'
@@ -112,7 +112,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Kỵ Sĩ Bằng-Mã',
     badge: '🦅 Kỵ Sĩ Bằng-Mã',
     category: 'Sinh vật',
-    description: 'Đạt Cấp 66 hoặc đón Bằng-Mã kiêu hãnh về chăm sóc trong khu vườn.',
+    description: 'Cấp 66 hoặc nuôi Bằng-Mã',
     reward: Object.freeze({kind: 'water', amount: 15, itemId: 'fish', bonusQty: 4, label: '+15 Nước tưới & +4 Cá nhỏ'}),
     check(state) {
       const level = Number(state?.level) || 1;
@@ -127,7 +127,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Hộ Vệ Kỳ Lân',
     badge: '🦄 Hộ Vệ Kỳ Lân',
     category: 'Sinh vật',
-    description: 'Đạt Cấp 82 hoặc đón Kỳ lân bờm bạc về dưới vòm cây Rừng Cấm.',
+    description: 'Cấp 82 hoặc nuôi Kỳ lân',
     reward: Object.freeze({kind: 'water', amount: 18, itemId: 'starbean', bonusQty: 3, label: '+18 Nước tưới & +3 Đậu sao'}),
     check(state) {
       const level = Number(state?.level) || 1;
@@ -142,7 +142,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Bậc Thầy Luyện Rồng',
     badge: '🐉 Bậc Thầy Luyện Rồng',
     category: 'Huyền thoại',
-    description: 'Đạt Cấp 94 hoặc chăm sóc Rồng và Chó ba đầu trong khu bảo tồn.',
+    description: 'Cấp 94 hoặc nuôi Rồng',
     reward: Object.freeze({kind: 'water', amount: 12, itemId: 'firepepper', bonusQty: 3, label: '+12 Nước & +3 Ớt lửa'}),
     check(state) {
       const level = Number(state?.level) || 1;
@@ -157,7 +157,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Sứ Giả Rừng Cấm',
     badge: '🦉 Sứ Giả Rừng Cấm',
     category: 'Cộng đồng',
-    description: 'Ghé thăm chăm giúp khu vườn bạn bè hoặc đạt Cấp 50+ trên hành trình.',
+    description: 'Chăm giúp 1 vườn hoặc Cấp 50',
     reward: Object.freeze({kind: 'water', amount: 12, itemId: 'sunflower', bonusQty: 3, label: '+12 Nước tưới & +3 Hướng dương'}),
     check(state, extra = {}) {
       const level = Number(state?.level) || 1;
@@ -177,7 +177,7 @@ export const KEEPER_ACHIEVEMENTS = Object.freeze([
     title: 'Đại Quản Gia Rừng Cấm',
     badge: '👑 Đại Quản Gia Rừng Cấm',
     category: 'Đỉnh cao',
-    description: 'Chinh phục mốc Cấp 100 · Mở khóa toàn vẹn 6 chương Đại khu vườn Hagrid.',
+    description: 'Đạt Cấp 100',
     reward: Object.freeze({kind: 'water', amount: 20, itemId: 'sunpetal', bonusQty: 3, label: '+20 Nước & +3 Hoa nhật quang'}),
     check(state) {
       const level = Number(state?.level) || 1;
@@ -331,7 +331,8 @@ export function renderAchievementsSection({
     if (ach.unlocked && !ach.claimed) {
       actions.append(iconButton('chest', `Nhận quà ${ach.title}`, () => onClaimReward?.(ach.id), {text: 'Nhận', class: 'primary', 'data-claim-achievement': ach.id}));
     }
-    if (isEquipped) actions.append(el('span', {class: 'gp-state is-on', text: 'Đang đeo'}));
+    // «Đang đeo» is the «Đeo» button pressed: same slot, same size.
+    if (isEquipped) actions.append(iconButton('profile', `Đang đeo ${ach.title}`, null, {text: 'Đang đeo', class: 'is-on', disabled: true, 'aria-pressed': 'true'}));
     else if (ach.unlocked) actions.append(iconButton('profile', `Đeo danh hiệu ${ach.title}`, () => onSelectTitle?.(ach.id), {text: 'Đeo', 'data-equip-title': ach.id}));
     else if (ach.claimed) actions.append(el('span', {class: 'gp-state', text: 'Đã nhận'}));
     grid.append(el('article', {

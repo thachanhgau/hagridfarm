@@ -96,6 +96,15 @@
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile-sub{color:#A6B1AE;font:700 11.5px/1.25 var(--gp-body)}
 #gameShell #panel .gp-tile-cond{display:block;max-width:100%;color:#A6B1AE;font:600 11.5px/1.3 var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #gameShell #panel .gp-tile:hover .gp-tile-cond,#gameShell #panel .gp-tile:focus-within .gp-tile-cond{white-space:normal}
+/* Thành tựu: each card spans the same 6 grid rows (art, name, meter, condition, rewards, buttons) so a row of cards lines up. */
+#gameShell #panel .achievements-grid{row-gap:0}
+#gameShell #panel .achievements-grid .gp-tile{display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:6px;justify-items:center;align-content:start;margin-bottom:10px}
+#gameShell #panel .achievements-grid .gp-tile-name{align-self:center}
+#gameShell #panel .achievements-grid .gp-meter{align-self:center;width:100%}
+#gameShell #panel .achievements-grid .gp-tile-cond{white-space:normal;overflow:visible;align-self:start}
+#gameShell #panel .achievements-grid .gp-tile-actions{align-self:start;width:100%;margin:0;padding:0}
+#gameShell #panel .achievements-grid .gp-tile-actions>*{flex:1 1 100%}
+#gameShell #panel .achievements-grid .icon-btn.is-on:disabled{opacity:1;background:#231F2E;color:#FFC36B;border-color:#B49A66;box-shadow:inset 0 2px #41465C,0 3px #231F2E;cursor:default}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile-actions>*{flex:0 0 auto;width:auto;max-width:100%}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin-top:auto;padding-top:2px}
 #gameShell :is(#panel,.store-popover,#owlLetter,#missionLetter,#hagridWork,#saleAcp) .gp-tile.is-locked .gp-tile-art>:not(.lock-badge){filter:grayscale(1) brightness(.5)}
