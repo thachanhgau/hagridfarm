@@ -1,18 +1,18 @@
-import {createPlacementInput} from './placement-input.mjs?v=24.9.95';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot} from './default-decor.mjs?v=24.9.95';
-import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=24.9.95';
-import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.95';
-export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.95';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.95';
-import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.95';
-import {el,button} from './ui-utils.mjs?v=24.9.95';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap,snapDecorSpot} from './decor-runtime.mjs?v=24.9.95';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.95';
-import {plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.95';
-import {KEEPSAKE_ART} from './complete-object-art.mjs?v=24.9.95';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.95';
-import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=24.9.95';
-import {keepsakeDisplayPlacements,keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.95';
+import {createPlacementInput} from './placement-input.mjs?v=24.9.96';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot} from './default-decor.mjs?v=24.9.96';
+import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=24.9.96';
+import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=24.9.96';
+export {decorFootprint} from './garden-object-metrics.mjs?v=24.9.96';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.96';
+import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.96';
+import {el,button} from './ui-utils.mjs?v=24.9.96';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap,snapDecorSpot} from './decor-runtime.mjs?v=24.9.96';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=24.9.96';
+import {plotPhysicalBounds} from './scene-renderer.mjs?v=24.9.96';
+import {KEEPSAKE_ART} from './complete-object-art.mjs?v=24.9.96';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=24.9.96';
+import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=24.9.96';
+import {keepsakeDisplayPlacements,keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=24.9.96';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 // Art bible §2: a large piece keeps 0.9 tile off the fence so its body never sits on the rails.

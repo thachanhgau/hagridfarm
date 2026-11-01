@@ -1,7 +1,7 @@
 // Owner 01/11/2026: «Thăm liên tục» order, ‹ › walking, «ai đã chăm giúp» toast, fire time left.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {visitOrder, nextVisit, newHelpers, helperNames, avatarSrc} from './garden-visits-ui.mjs';
+import {visitOrder, nextVisit, newHelpers, helperNames, avatarSrc, quickVisitStep} from './garden-visits-ui.mjs';
 import {fireTimeLeft} from './garden-fire.mjs';
 
 test('helpable gardens come first, most growing first; ‹ › skip to the next helpable one', () => {
@@ -34,4 +34,11 @@ test('archive avatars load from the site /media, never the cookie-less game host
   assert.equal(avatarSrc('/forum-images/avatars/HPVN%202010/a b.jpg', site), site + '/media/archive-media%2Fv1%2Fforum-images%2Favatars%2FHPVN%202010%2Fa%20b.jpg?alt=media');
   assert.equal(avatarSrc('https://firebasestorage.googleapis.com/v0/b/hpvnn-archive.firebasestorage.app/o/archive-media%2Fv1%2Fforum-images%2Favatars%2Fx.gif?alt=media', site), site + '/media/archive-media%2Fv1%2Fforum-images%2Favatars%2Fx.gif?alt=media');
   assert.equal(avatarSrc(undefined, site), '');
+});
+
+test('the collapsed visit card offers help first, then the next garden, then home', () => {
+  assert.equal(quickVisitStep({visit: {helped: false, hostHelpsLeft: 3}, helpsLeft: 2, many: true}), 'help');
+  assert.equal(quickVisitStep({visit: {helped: true}, helpsLeft: 2, many: true}), 'next');
+  assert.equal(quickVisitStep({visit: {helped: false, hostHelpsLeft: 0}, helpsLeft: 2, many: false}), 'home');
+  assert.equal(quickVisitStep({visit: {helped: false}, helpsLeft: 0, many: true}), 'next');
 });

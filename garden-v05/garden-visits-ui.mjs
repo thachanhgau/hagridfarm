@@ -3,9 +3,10 @@
 // tour mode (read only) and «Chăm giúp» takes 15 minutes off its growing crops, 3 gardens a day.
 // Owner 01/11/2026: one grid of bare rows, gardens that can be helped first, «Thăm liên tục» walks
 // them one after another from the banner (‹ ›), the host is told who helped, and a burning garden shows it.
-import {el, button} from './ui-utils.mjs?v=24.9.95';
-import {FIRE_SHEETS,fireTimeLeft} from './garden-fire.mjs?v=24.9.95';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.95';
+import {el, button} from './ui-utils.mjs?v=24.9.96';
+import {FIRE_SHEETS,fireTimeLeft} from './garden-fire.mjs?v=24.9.96';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.96';
+import {pixelIcon} from './pixel-icons.mjs?v=24.9.96';
 
 export const VISIT_ART = Object.freeze({hearth: 'environment/visit/floo-hearth.png', ring: 'environment/visit/portal-ring.png'});
 
@@ -141,15 +142,29 @@ function visitStrip(queue, current, onJump) {
   return strip;
 }
 
-/** The banner while visiting a member: who, where in the run, the avatar strip, and ‹ Chăm giúp › Về vườn. */
-export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp, onMove, onJump, onHome, fireButtons = [], now = Date.now()}) {
+/** The step the collapsed card offers: help here, else fly on, else go home. */
+export function quickVisitStep({visit, helpsLeft = 0, many = false}) {
+  if (!(visit.helped || helpsLeft < 1 || visit.hostHelpsLeft < 1)) return 'help';
+  return many ? 'next' : 'home';
+}
+
+/** The banner while visiting a member: who, where in the run, the avatar strip, and ‹ Chăm giúp › Về vườn.
+ * Phones (≤960px, owner 01/11/2026) dock it at the bottom under the thumb; collapsed it keeps one row there
+ * (who, the next step, Floo, ⌃). `onFloo` when the shell docks Floo into the game (no bubble over the card). */
+export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp, onMove, onJump, onHome, fireButtons = [], collapsed = false, onToggle, onFloo, now = Date.now()}) {
   const at = queue.findIndex(v => v.uid === tour.uid);
   const fire = visit.fire && visit.fire.until > now ? visit.fire : null;
   const sub = [`Cấp ${tour.level}`, `còn ${helpsLeft} lượt`, at >= 0 && queue.length > 1 ? `${at + 1}/${queue.length}` : null, fire ? `🔥 cháy ${fireTimeLeft(fire.until, now)}` : null].filter(Boolean).join(' · ');
   const many = queue.length > 1;
+  const quick = {help: ['Chăm giúp', onHelp], next: ['Vườn tiếp ›', () => onMove(1)], home: ['Về vườn', onHome]}[quickVisitStep({visit, helpsLeft, many})];
   return [
     avatar(tour.initialOf || tour.ownerName, visit.avatarUrl),
     el('div', {class: 'tour-banner-copy'}, [el('strong', {text: tour.ownerName}), el('small', {class: 'visit-sub', text: sub})]),
+    el('div', {class: 'visit-tools'}, [
+      button(quick[0], quick[1], {class: 'primary visit-quick', 'data-banner-quick-visit': 'true'}),
+      onFloo ? iconButton('floo', 'Mạng Floo', onFloo, {class: 'visit-icon visit-floo'}) : null,
+      onToggle ? iconButton('chevron', collapsed ? 'Mở khung thăm vườn' : 'Thu gọn khung thăm vườn', onToggle, {class: 'visit-icon visit-toggle', 'aria-expanded': String(!collapsed)}) : null,
+    ]),
     many && onJump ? visitStrip(queue, tour.uid, onJump) : null,
     fireButtons.length ? el('div', {class: 'visit-fire-row'}, fireButtons) : null,
     el('div', {class: 'tour-banner-actions'}, [
@@ -159,4 +174,10 @@ export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp
       button('Về vườn', onHome, {'data-banner-stop-tour': 'true'}),
     ]),
   ];
+}
+
+function iconButton(name, label, onclick, attrs) {
+  const b = button('', onclick, {...attrs, 'aria-label': label, title: label});
+  b.append(pixelIcon(name));
+  return b;
 }

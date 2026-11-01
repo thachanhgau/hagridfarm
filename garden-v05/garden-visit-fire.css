@@ -58,7 +58,7 @@
  .visit-grid{grid-template-columns:repeat(3,1fr)}
 }
 @media(prefers-reduced-motion:reduce){.visit-hero::after,.visit-hero-go,.visit-tile.can-help .visit-portal::before,.visit-flame,.visit-tile.is-ghost .visit-portal{animation:none}.visit-tile{transition:none}}
-/* Visiting banner: avatar · name and run position on top, ‹ Chăm giúp › Về vườn below; one row from 820px. */
+/* Visiting banner: avatar · name and run position on top, ‹ Chăm giúp › Về vườn below; one row from 961px (phones: the bottom card below). */
 .tour-banner.is-member{display:grid;grid-template-columns:36px minmax(0,1fr);gap:8px 10px;align-items:center;justify-content:stretch;
  width:min(560px,calc(100vw - 20px));max-width:none;padding:8px 10px}
 .tour-banner.is-member .tour-banner-copy{min-width:0}
@@ -86,7 +86,7 @@
 @media(prefers-reduced-motion:reduce){.floo-flash.go{animation:none}.visit-dot,.visit-dot.is-fire .visit-avatar{transition:none;animation:none}}
 .tour-banner .visit-step{padding:0!important;font-size:18px!important;font-weight:700}
 .tour-banner.is-fire{border-color:#ed8a45;background:linear-gradient(135deg,rgba(74,28,30,.96),rgba(35,31,46,.97));box-shadow:0 8px 28px rgba(199,91,75,.45),inset 0 1px 0 rgba(255,195,107,.25)}
-@media(min-width:820px){
+@media(min-width:961px){
  .tour-banner.is-member{grid-template-columns:36px minmax(140px,1fr) auto;width:min(780px,calc(100vw - 24px))}
  .tour-banner.is-member .tour-banner-actions{grid-column:3;grid-row:1;grid-template-columns:44px auto auto auto}
  .tour-banner.is-member .visit-strip{grid-row:2}
@@ -128,7 +128,7 @@ body.garden-burning .camera-viewport::before{content:"";position:absolute;inset:
 /* Fire row on the banner: «Dập lửa · N G» for everyone, «Đốt vườn» for KTV Gia Tinh. */
 .tour-banner.is-member .visit-fire-row{grid-column:1/-1;display:flex;justify-content:flex-end;gap:6px}
 .tour-banner.is-member .visit-fire-row button{white-space:nowrap;min-height:36px!important;padding:4px 12px!important;font-size:12px!important;border-radius:9px!important}
-@media(min-width:820px){.tour-banner.is-member .visit-strip{grid-column:1/3}.tour-banner.is-member .visit-fire-row{grid-row:2;grid-column:3;align-self:center}}
+@media(min-width:961px){.tour-banner.is-member .visit-strip{grid-column:1/3}.tour-banner.is-member .visit-fire-row{grid-row:2;grid-column:3;align-self:center}}
 .fire-out{background:linear-gradient(180deg,#b7dee0,#70a8b6)!important;color:#231f2e!important;box-shadow:0 0 14px rgba(112,168,182,.6)!important}
 /* Own garden: the notice carries its «Dập lửa» button. */
 .fire-notice{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:10px}
@@ -149,3 +149,30 @@ body.garden-burning .camera-viewport::before{content:"";position:absolute;inset:
 .fire-sheet-actions button{min-height:40px!important;padding:4px 14px!important;border-radius:10px!important}
 .fire-sheet-status{margin:0;min-height:1em;color:#ffc36b;font-size:12px}
 @media(max-width:560px){.fire-notice strong{font-size:13.5px}}
+/* Phones and narrow frames (≤960px, the shell's phone layout; owner 01/11/2026): the visit banner is a card docked at the
+ bottom, under the thumb, where the play dock sits at home. Expanded: who · Floo · ⌄, the run strip, the fire row,
+ ‹ Chăm giúp › Về vườn. Collapsed (⌄): one row, who · the next step · Floo · ⌃, the garden in full view. */
+.visit-tools{display:none}
+@media(max-width:960px){
+ .tour-banner.is-member{top:auto!important;bottom:max(10px,var(--host-inset-bottom,env(safe-area-inset-bottom)));max-height:none!important;overflow:visible!important;
+  width:min(560px,calc(100vw - 16px));grid-template-columns:40px minmax(0,1fr) auto;gap:10px;padding:10px 10px 10px 12px;border-radius:18px;
+  border:1px solid rgba(226,196,120,.6);background:linear-gradient(180deg,rgba(38,68,52,.94),rgba(17,34,26,.97));-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);
+  box-shadow:0 14px 34px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,244,204,.2);animation:visit-card-in .26s cubic-bezier(.2,.8,.2,1)}
+ .tour-banner.is-member.is-fire{border-color:#ed8a45;background:linear-gradient(180deg,rgba(84,38,34,.94),rgba(35,22,26,.97))}
+ .tour-banner.is-member>.visit-avatar{width:40px;height:40px;font-size:16px;box-shadow:0 0 0 2px #203b2f,0 0 0 3.5px #e2c478}
+ .tour-banner.is-member .tour-banner-copy strong{font-size:15px}
+ .tour-banner.is-member .tour-banner-copy small.visit-sub{display:block;font-size:12px}
+ .visit-tools{display:flex;align-items:center;gap:6px}
+ .tour-banner .visit-quick{display:none}
+ .tour-banner.is-collapsed .visit-quick{display:block;min-height:44px!important;padding:4px 14px!important;font-size:13.5px!important;border-radius:12px!important;white-space:nowrap}
+ .tour-banner.is-collapsed :is(.visit-strip,.visit-fire-row,.tour-banner-actions){display:none!important}
+ .tour-banner .visit-icon{display:grid;place-items:center;width:44px;height:44px;min-height:44px!important;padding:0!important;border-radius:12px!important;
+  background:rgba(255,244,204,.07)!important;border:1px solid rgba(226,196,120,.38)!important;box-shadow:none!important}
+ .tour-banner .visit-icon .px-icon{width:24px;height:24px;image-rendering:pixelated;transition:transform .2s ease}
+ .tour-banner.is-collapsed .visit-toggle .px-icon{transform:scaleY(-1)}
+ .tour-banner.is-member .tour-banner-actions{gap:8px}
+ .tour-banner.is-member .tour-banner-actions button{min-height:44px!important;border-radius:12px!important;font-size:13px!important}
+ .tour-banner.is-member .visit-strip{padding:2px 2px 0;margin:0 -2px}
+}
+@keyframes visit-card-in{from{opacity:0;transform:translate(-50%,14px)}}
+@media(prefers-reduced-motion:reduce){.tour-banner.is-member{animation:none}.tour-banner .visit-icon .px-icon{transition:none}}

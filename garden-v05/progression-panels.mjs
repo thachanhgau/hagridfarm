@@ -1,15 +1,15 @@
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=24.9.95';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.95';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.95';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.95";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.95";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=24.9.95";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.95";
-import {renderTourSection} from "./garden-tour.mjs?v=24.9.95";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.95";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.95";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.95";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.95";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=24.9.96';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=24.9.96';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=24.9.96';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=24.9.96";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=24.9.96";
+import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=24.9.96";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=24.9.96";
+import {renderTourSection} from "./garden-tour.mjs?v=24.9.96";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=24.9.96";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=24.9.96";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=24.9.96";
+import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=24.9.96";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
