@@ -37,7 +37,12 @@ const fail=(reason,message,details={})=>{const e=Error(message);e.definitive=tru
 const stable=v=>JSON.stringify(v,Object.keys(v).sort());
 
 /** `day` (YYYY-MM-DD) moves only the Vietnam calendar day, for festival QA; crop timers keep real time. */
-export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,now=()=>Date.now()}={}){
+export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,fireMode=null,helpers=false,now=()=>Date.now()}={}){
+ // «Thăm vườn» / «Đốt vườn» QA (01/11/2026): ?fire=visual|real burns this garden, ?helpers=1 has three helpers today.
+ let fire=fireMode?{mode:fireMode,since:now(),until:now()+2*3600000+5*60000,burned:fireMode==='real'?27:0}:null;
+ const helperRows=helpers?[['u1','tara'],['u2','Linh'],['u3','Mai Phương']].map(([uid,name],i)=>({uid,name,at:now()-(3-i)*60000})):[];
+ const visitRows=[['m1','tara',42,6],['m2','Linh',18,0],['m3','Hermione Granger',120,9],['m4','Mai Phương',11,3],['m5','Draco',64,0]].map(([uid,username,lv,growing])=>({uid,username,level:lv,growing,helped:false,...(uid==='m3'?{fire:'real'}:{})}));
+ let helpsLeft=3;
  const dayOffset=day?Date.parse(day+"T12:00:00+07:00")-now():0,dayKey=()=>vnDayKey(now()+dayOffset);
  const past=scenario.endsWith("ready"),origin=past?now()-26*3600000:now();
  const fresh=scenario==="new";
@@ -177,7 +182,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    bonding:bondingView(d.dayKey),achievements:achievementsView(),
    // Server garden-retention-core views (QA approximation: fixed board, orders drawn per day from the unlocked crops).
    ...retentionViews(d),flooFrames:{frames:frameViews(),worn:wornFrame},saleAdmin:true,
-   serverNow:now(),profile:{username:"Xem thử · không lưu"},
+   serverNow:now(),profile:{username:"Xem thử · không lưu"},fire:fire&&fire.until>now()?fire:null,helpers:helperRows,
    ...(receipt?{receipt}:{}),
   });
  }
@@ -354,6 +359,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    programs:[['golden-hour','Giờ vàng 20:00–22:00 · −20% vật phẩm cây'],['creature-weekend','Cuối tuần sinh vật · −25% vật phẩm sinh vật và Ổ ấm'],['flash','Flash 30 phút · 1–2 lần/tuần · −30% Mưa suối thần, Tiệc chuồng'],['festival-end','Ba ngày cuối lễ hội · −25% đồ lễ hội']].map(([id,label])=>({id,label,on:salesConfig.programs[id]})),
    flash:[{startsAt:Date.parse('2026-10-24T19:30:00+07:00'),endsAt:Date.parse('2026-10-24T20:00:00+07:00')}],serverNow:now()});
   if(c.mode==='get')return view();
+  if(c.mode==='fire'){fire=c.fire==='off'?null:{mode:c.fire,since:now(),until:now()+c.minutes*60000,burned:0};return {ok:true,fire:{fire:c.fire,minutes:c.minutes||0,burned:0,to:'garden-fixture-member',toUsername:c.username,until:fire?.until??null}};}
   if(c.expectedRevision!==salesConfig.revision)fail('sales-revision','Cấu hình sale vừa đổi ở nơi khác; hãy tải lại.');
   if(c.sales.some(x=>!(x.percent>=1&&x.percent<=40)))fail('invalid-sales','Mức giảm 1–40%.');
   salesConfig={revision:salesConfig.revision+1,programs:{...c.programs},sales:clone(c.sales)};return {ok:true,...view()};
@@ -496,6 +502,13 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    if(name==="buyHagridGardenSupplies")return buy(clone(data));
    if(name==="setHagridFlooFrame")return setFrame(clone(data));
    if(name==="manageHagridGardenSales")return sales(clone(data));
+   if(name==="visitHagridGarden"){
+    if(!data?.hostUid)return clone({helpsLeft,visitLevel:10,visits:visitRows});
+    const row=visitRows.find(v=>v.uid===data.hostUid);if(!row)fail("visit-not-found","Thành viên này chưa có khu vườn.");
+    if(data.help){if(row.helped)fail("already-helped","Hôm nay bạn đã chăm giúp vườn này rồi.");if(!row.growing)fail("nothing-to-help","Vườn này chưa có cây đang lớn để chăm giúp.");row.helped=true;helpsLeft-=1;garden.supplies.water+=6;}
+    const visit={uid:row.uid,username:row.username,level:row.level,progression:clone(garden.progression),decorations:clone(garden.decorations),helped:row.helped,hostHelpsLeft:10,fire:row.fire?{mode:row.fire,since:now(),until:now()+26*3600000,burned:9}:null};
+    return clone({...(data.help?{ok:true,reward:{water:6,label:'+6 Nước'}}:{}),helpsLeft,visitLevel:10,visit});
+   }
    fail("unknown-callable","Không có lệnh này.");
   },
   ledger,
@@ -505,7 +518,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
 // The page side: the real garden client over the in-memory server above.
 export function createEmulatorClient(){
  const query=new URLSearchParams(globalThis.location?.search||"");
- const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null,previewHalloween:query.get("halloweenPreview")==="1"});
+ const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null,previewHalloween:query.get("halloweenPreview")==="1",fireMode:["visual","real"].includes(query.get("fire"))?query.get("fire"):null,helpers:query.get("helpers")==="1"});
  let actions=0;
  const client=createGardenClient(async(name,data)=>{
   const result=server.handle(name,data);

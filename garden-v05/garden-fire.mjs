@@ -36,22 +36,11 @@ export function fireSpots(stage, iso, cols = 34, rows = 34) {
 }
 
 /** Draws the fire over the scene. `clock` 0 (reduced motion) freezes the flames on one frame and stops embers. */
-export function drawGardenFire(ctx, {spots = [], bounds, clock = 0, width, height}) {
+export function drawGardenFire(ctx, {spots = [], clock = 0, width, height}) {
   if (!ctx) return 0;
-  const b = bounds || {left: 0, top: 0, right: width, bottom: height};
   const tick = Math.floor(clock / 90);
   ctx.save();
-  // Burnt light: darken and redden the whole stage, then a hot glow from below.
-  ctx.globalCompositeOperation = 'multiply';
-  ctx.fillStyle = '#c97952';
-  ctx.fillRect(b.left, b.top, b.right - b.left, b.bottom - b.top);
-  ctx.globalCompositeOperation = 'source-over';
-  const glow = ctx.createLinearGradient(0, b.top, 0, b.bottom);
-  glow.addColorStop(0, 'rgba(35,31,46,.35)');
-  glow.addColorStop(0.55, 'rgba(199,91,75,.10)');
-  glow.addColorStop(1, `rgba(237,138,69,${0.22 + 0.06 * Math.sin(clock / 260)})`);
-  ctx.fillStyle = glow;
-  ctx.fillRect(b.left, b.top, b.right - b.left, b.bottom - b.top);
+  // The burnt light over the whole view is CSS (body.garden-burning in garden-visit-fire.css): a canvas tint showed the canvas edge.
   const scorch = sheet('scorch'), large = sheet('large'), small = sheet('small'), smoke = sheet('smoke');
   ctx.imageSmoothingEnabled = false;
   if (scorch) {ctx.globalAlpha = 0.9; for (const s of spots) ctx.drawImage(scorch, s.x - 32, s.y - 16); ctx.globalAlpha = 1;}

@@ -30,7 +30,7 @@
  .tour-banner.is-member .tour-banner-actions .visit-step{flex:none}
 }
 /* «Đốt vườn»: the player's own garden burning. Codex banner art behind, flicker off with reduced motion. */
-.fire-notice{position:fixed;top:58px;left:50%;transform:translateX(-50%);z-index:41;width:min(420px,calc(100vw - 20px));min-height:78px;
+.fire-notice{position:fixed;top:58px;left:50%;transform:translateX(-50%);z-index:5;width:min(420px,calc(100vw - 20px));min-height:78px;
  display:flex;flex-direction:column;justify-content:flex-end;padding:10px 14px;border-radius:14px;overflow:hidden;
  background:linear-gradient(0deg,rgba(35,31,46,.92),rgba(35,31,46,.15) 70%),var(--fire-banner,linear-gradient(135deg,#874056,#ed8a45)) center/cover no-repeat;
  image-rendering:pixelated;border:1.5px solid #ed8a45;box-shadow:0 0 0 1px #874056,0 10px 30px rgba(199,91,75,.55);animation:fire-notice-glow 1.6s ease-in-out infinite alternate}
@@ -41,3 +41,10 @@
 @media(prefers-reduced-motion:reduce){.fire-notice{animation:none}}
 @media(max-width:1100px){.fire-notice{top:116px}}
 .acp-fire{background:linear-gradient(180deg,#ed8a45,#c75b4b)!important;color:#231f2e!important}
+/* Burnt light over the whole view while a fire burns (the canvas only draws flames, halos, smoke, embers). */
+body.garden-burning .camera-viewport::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+ background:linear-gradient(180deg,rgba(74,48,66,.78),rgba(135,64,86,.55) 45%,rgba(237,138,69,.6));mix-blend-mode:multiply}
+body.garden-burning .camera-viewport::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+ background:radial-gradient(ellipse at 50% 55%,rgba(255,195,107,.32),rgba(199,91,75,.12) 45%,rgba(199,91,75,0) 75%);mix-blend-mode:screen;z-index:2;animation:fire-view-glow 1.8s ease-in-out infinite alternate}
+@keyframes fire-view-glow{from{opacity:.65}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){body.garden-burning .camera-viewport::before{animation:none}}

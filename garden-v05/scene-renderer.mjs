@@ -1714,7 +1714,7 @@ export async function createGarden(canvas, options = {}) {
     // «Đốt vườn»: options.fire is the server's garden.fire while it burns.
     if (options.fire) {
       if (fireCache?.stage !== currentStage.id) fireCache = {stage: currentStage.id, spots: fireSpots(currentStage, iso)};
-      drawGardenFire(context, {spots: fireCache.spots, bounds: sBounds, clock: animationClock && clock ? animationClock : 0, width: map.width, height: map.height});
+      drawGardenFire(context, {spots: fireCache.spots, clock: animationClock && clock ? animationClock : 0, width: map.width, height: map.height});
       if (canvas.dataset) canvas.dataset.fire = options.fire.mode;
     } else if (canvas.dataset?.fire) delete canvas.dataset.fire;
 
