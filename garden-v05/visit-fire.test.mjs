@@ -1,7 +1,7 @@
 // Owner 01/11/2026: «Thăm liên tục» order, ‹ › walking, «ai đã chăm giúp» toast, fire time left.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {visitOrder, nextVisit, newHelpers, helperNames} from './garden-visits-ui.mjs';
+import {visitOrder, nextVisit, newHelpers, helperNames, avatarSrc} from './garden-visits-ui.mjs';
 import {fireTimeLeft} from './garden-fire.mjs';
 
 test('helpable gardens come first, most growing first; ‹ › skip to the next helpable one', () => {
@@ -27,4 +27,11 @@ test('fire time left reads in days, hours or minutes', () => {
   assert.equal(fireTimeLeft(26 * 3600000, 0), '1 ngày 2 giờ');
   assert.equal(fireTimeLeft(3 * 3600000 + 5 * 60000, 0), '3 giờ 05 phút');
   assert.equal(fireTimeLeft(12 * 60000 - 1, 0), '12 phút');
+});
+
+test('archive avatars load from the site /media, never the cookie-less game host', () => {
+  const site = 'https://hpvn-archive.net';
+  assert.equal(avatarSrc('/forum-images/avatars/HPVN%202010/a b.jpg', site), site + '/media/archive-media%2Fv1%2Fforum-images%2Favatars%2FHPVN%202010%2Fa%20b.jpg?alt=media');
+  assert.equal(avatarSrc('https://firebasestorage.googleapis.com/v0/b/hpvnn-archive.firebasestorage.app/o/archive-media%2Fv1%2Fforum-images%2Favatars%2Fx.gif?alt=media', site), site + '/media/archive-media%2Fv1%2Fforum-images%2Favatars%2Fx.gif?alt=media');
+  assert.equal(avatarSrc(undefined, site), '');
 });

@@ -1,31 +1,31 @@
-import {drawPlacementGrid} from './placement-grid.mjs?v=24.9.92';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT} from './default-decor.mjs?v=24.9.92';
-import {gardenObjectMetrics} from './garden-object-metrics.mjs?v=24.9.92';
-import {FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.92';
-export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.92';
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.92';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.92';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.92';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.92';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.92';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.92';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.92';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.92';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.92';
-import {drawV24Ground} from './garden-v24-scenery.mjs?v=24.9.92';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.92';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.92';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.92';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.92';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.92';
-import {drawEventOverlay} from './garden-events.mjs?v=24.9.92';
-import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.92';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.92';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.92';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.92';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.92';
-import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.92';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.92';
+import {drawPlacementGrid} from './placement-grid.mjs?v=24.9.93';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT} from './default-decor.mjs?v=24.9.93';
+import {gardenObjectMetrics} from './garden-object-metrics.mjs?v=24.9.93';
+import {FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.93';
+export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.93';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.93';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=24.9.93';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=24.9.93';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.93';
+import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=24.9.93';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=24.9.93';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=24.9.93';
+import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=24.9.93';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=24.9.93';
+import {drawV24Ground} from './garden-v24-scenery.mjs?v=24.9.93';
+import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.93';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.93';
+import {decorObjects} from './decor-runtime.mjs?v=24.9.93';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.93';
+import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.93';
+import {drawEventOverlay} from './garden-events.mjs?v=24.9.93';
+import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.93';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.93';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.93';
+import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.93';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=24.9.93';
+import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=24.9.93';
+import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=24.9.93';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -37,12 +37,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=24.9.92';
+} from './scene-animation.mjs?v=24.9.93';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=24.9.92';
+} from './forest-surround.mjs?v=24.9.93';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -299,7 +299,7 @@ function penAliases(pen) {
   return [String(pen.id)];
 }
 
-export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=24.9.92';
+export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=24.9.93';
 
 /** Keepsakes are displayed as small labelled tokens in the final south plaza. */
 export function keepsakePlacements(scene = map) {
@@ -1718,14 +1718,17 @@ export async function createGarden(canvas, options = {}) {
       if (canvas.dataset) canvas.dataset.fire = options.fire.mode;
     } else if (canvas.dataset?.fire) delete canvas.dataset.fire;
 
+    const blockers = decorRects();
     for (let index = 0; index < map.plots.length; index += 1) {
       const plot = map.plots[index];
       if (!plotIsVisible(state, index, logicalNow)) continue;
-      const [x, y] = iso(...resolvedPlotPosition(plot, 'label'));
+      const [x, frontY] = iso(...resolvedPlotPosition(plot, 'label')), centreY = iso(...resolvedPlotPosition(plot))[1];
+      const place = (text, font) => clearLabelY(text, font, x, frontY, centreY, blockers);
       const built = plotIsBuilt(state, index, logicalNow);
       const queued = Boolean(plotConstruction(state, index));
       if (!built) {
-        label(context, queued ? `THỬA ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`, x, y, queued ? '#d6d8bf' : '#a6b1ae', 'bold 11px sans-serif');
+        const text = queued ? `THỬA ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`, font = 'bold 11px sans-serif';
+        label(context, text, x, place(text, font), queued ? '#d6d8bf' : '#a6b1ae', font);
         continue;
       }
       // Each built plot says how it is doing: ripe count, or the time until its first crop ripens.
@@ -1733,10 +1736,38 @@ export async function createGarden(canvas, options = {}) {
       const ripe = slots.filter(entry => growthFor(entry, logicalNow).mature).length;
       const left = slots.length && !ripe ? Math.min(...slots.map(entry => entry.plantedAt + (entry.growMs ?? growthFor(entry, logicalNow).growMs) - logicalNow)) : 0;
       const tag = ripe ? ` · CHÍN ${ripe}` : slots.length ? ` · ${shortTime(left)}` : '';
-      label(context, `THỬA ${index + 1}${tag}`, x, y, ripe ? '#231f2e' : index === selectedPlot ? '#f5d69a' : '#e8f0ed', `bold ${Math.round(12 * labelScale)}px sans-serif`, ripe ? 'rgba(244,206,98,.94)' : 'rgba(18,38,33,.88)');
+      const text = `THỬA ${index + 1}${tag}`, font = `bold ${Math.round(12 * labelScale)}px sans-serif`;
+      label(context, text, x, place(text, font), ripe ? '#231f2e' : index === selectedPlot ? '#f5d69a' : '#e8f0ed', font, ripe ? 'rgba(244,206,98,.94)' : 'rgba(18,38,33,.88)');
     }
     drawPenLabels(state, logicalNow);
 
+  }
+
+  // Plot labels sit on the path in front of each plot, where members stand statues: a label that would cover a
+  // decoration slides up over its own plot (at most to its centre) to where it covers the least of it (owner 01/11/2026).
+  function decorRects() {
+    const rects = [];
+    for (const {xy, asset, facing} of interactiveDecor) {
+      const b = (facing === 'right' && asset.rightBounds) ? asset.rightBounds : (asset.bounds ?? {x: 0, y: 0, w: asset.width, h: asset.height});
+      rects.push({left: xy[0] - asset.pivotX + b.x, top: xy[1] - asset.pivotY + b.y, w: b.w, h: b.h});
+    }
+    for (const decor of interactiveEarnedDecor) {
+      const asset = earnedDecorArt(decor.id, decor.facing);
+      if (!asset) continue;
+      const b = asset.bounds ?? {x: 0, y: 0, w: asset.width, h: asset.height};
+      rects.push({left: decor.xy[0] - finite(asset.pivotX, 48) + b.x, top: decor.xy[1] - finite(asset.pivotY, 96) + b.y, w: b.w, h: b.h});
+    }
+    return rects;
+  }
+
+  function clearLabelY(text, font, x, y, floor, rects) {
+    context.font = font;
+    const w = context.measureText(text).width + 10, h = (Number(font.match(/(\d+)px/)?.[1]) || 13) + 6;
+    const overlap = cy => rects.reduce((sum, r) => sum + Math.max(0, Math.min(x + w / 2, r.left + r.w) - Math.max(x - w / 2, r.left))
+      * Math.max(0, Math.min(cy + h / 2, r.top + r.h) - Math.max(cy - h / 2, r.top)), 0);
+    let best = y, least = overlap(y);
+    for (let cy = y - 4; least > 0 && cy >= floor; cy -= 4) { const area = overlap(cy); if (area < least) [best, least] = [cy, area]; }
+    return best;
   }
 
   function pick(clientX, clientY) {

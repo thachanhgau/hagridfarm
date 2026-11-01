@@ -1,47 +1,47 @@
-import {refreshPremiumControls} from './garden-premium-controls.mjs?v=24.9.92';
-import {setupPetControls,renderPetCareButtons} from './pet-controls.mjs?v=24.9.92';
-import {openGardenLayout} from './garden-layout-ui.mjs?v=24.9.92';
-import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=24.9.92';
-import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=24.9.92';
-import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.92';
-import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.92';
-import {setupWorkTrays} from './work-trays.mjs?v=24.9.92';
-import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal,defaultDecorItem,defaultDecorHome} from './decor-placement-ui.mjs?v=24.9.92';
-import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields} from './decor-runtime.mjs?v=24.9.92';
-import {setupWizardUI} from './wizard-ui.mjs?v=24.9.92';
-import {showStore} from './garden-store-ui.mjs?v=24.9.92';
-import {setupProfile} from './profile-ui.mjs?v=24.9.92';
-import * as E from './progression-engine.mjs?v=24.9.92';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.92';
-import {setupCamera} from './camera.mjs?v=24.9.92';
-import {createPanels} from './progression-panels.mjs?v=24.9.92';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.92';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.92';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.92';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.92';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.92';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.92';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.92';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.92';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.92';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.92';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.92';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.92';
-import {nextGoal} from './next-goal.mjs?v=24.9.92';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.92';
-import {createMissions} from './garden-missions-ui.mjs?v=24.9.92';
-import {createHagridWork} from './garden-work-ui.mjs?v=24.9.92';
-import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.92';
-import {buildVisitSnapshot,renderMemberVisits,nextVisit,newHelpers,visitBannerParts} from './garden-visits-ui.mjs?v=24.9.92';
-import {FIRE_BANNER,fireTimeLeft} from './garden-fire.mjs?v=24.9.92';
-import {createFireSheet,fireOutPrice} from './garden-fire-ui.mjs?v=24.9.92';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.92';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.92';
+import {refreshPremiumControls} from './garden-premium-controls.mjs?v=24.9.93';
+import {setupPetControls,renderPetCareButtons} from './pet-controls.mjs?v=24.9.93';
+import {openGardenLayout} from './garden-layout-ui.mjs?v=24.9.93';
+import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=24.9.93';
+import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=24.9.93';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=24.9.93';
+import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=24.9.93';
+import {setupWorkTrays} from './work-trays.mjs?v=24.9.93';
+import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal,defaultDecorItem,defaultDecorHome} from './decor-placement-ui.mjs?v=24.9.93';
+import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields} from './decor-runtime.mjs?v=24.9.93';
+import {setupWizardUI} from './wizard-ui.mjs?v=24.9.93';
+import {showStore} from './garden-store-ui.mjs?v=24.9.93';
+import {setupProfile} from './profile-ui.mjs?v=24.9.93';
+import * as E from './progression-engine.mjs?v=24.9.93';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=24.9.93';
+import {setupCamera} from './camera.mjs?v=24.9.93';
+import {createPanels} from './progression-panels.mjs?v=24.9.93';
+import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=24.9.93';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=24.9.93';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=24.9.93';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=24.9.93';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=24.9.93';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=24.9.93';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.93';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=24.9.93';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=24.9.93';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=24.9.93';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=24.9.93';
+import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=24.9.93';
+import {nextGoal} from './next-goal.mjs?v=24.9.93';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=24.9.93';
+import {createMissions} from './garden-missions-ui.mjs?v=24.9.93';
+import {createHagridWork} from './garden-work-ui.mjs?v=24.9.93';
+import {createSaleAcp} from './garden-sale-acp-ui.mjs?v=24.9.93';
+import {buildVisitSnapshot,renderMemberVisits,nextVisit,newHelpers,visitBannerParts,avatarSrc} from './garden-visits-ui.mjs?v=24.9.93';
+import {FIRE_BANNER,fireTimeLeft} from './garden-fire.mjs?v=24.9.93';
+import {createFireSheet,fireOutPrice} from './garden-fire-ui.mjs?v=24.9.93';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.93';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=24.9.93';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.92':'./garden-emulator-client.mjs?v=24.9.92');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=24.9.93':'./garden-emulator-client.mjs?v=24.9.93');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -757,7 +757,7 @@ function careCells(cells){const growing=cells.filter(i=>state.plots[selectedPlot
 $('cropCareButton').onclick=()=>{$('seedOptions').close();return careCells(chosen());};
 $('petButton').onclick=()=>{guideEvent('pet');handlePetCreature(species);};
 
-function acceptWallet(before,text,showLevelChange=true){state=wallet.snapshot.garden.progression;walletReady=true;syncDaily();syncFireNotice();syncHelpers(text);const juiceEvents=renderer?.react?.(before,state)||[];refresh();if(showLevelChange)showRewards(before,state,juiceEvents);panels?.refresh();if(showLevelChange&&state.level>before.level)celebrate(before.level,state.level);$('walletValue').textContent=num(wallet.snapshot.wallet.spendable);$('galleonCounter').hidden=false;syncSupplies();const p=wallet.snapshot.profile;$('playerName').textContent=p.username||'Thành viên thử nghiệm';$('avatarButton').title=WALLET_TEXT.avatar;if(p.avatarUrl){$('avatarGlyph').replaceChildren(el('img',{src:p.avatarUrl,alt:'Avatar '+(p.username||'thành viên'),style:'width:28px;height:28px;border-radius:50%;object-fit:cover'}));}$('levelButton').title=WALLET_TEXT.title;missions.sync();hagridWork.sync();if(text)message(text);if(!tutorialChecked)setupTutorial();}
+function acceptWallet(before,text,showLevelChange=true){state=wallet.snapshot.garden.progression;walletReady=true;syncDaily();syncFireNotice();syncHelpers(text);const juiceEvents=renderer?.react?.(before,state)||[];refresh();if(showLevelChange)showRewards(before,state,juiceEvents);panels?.refresh();if(showLevelChange&&state.level>before.level)celebrate(before.level,state.level);$('walletValue').textContent=num(wallet.snapshot.wallet.spendable);$('galleonCounter').hidden=false;syncSupplies();const p=wallet.snapshot.profile;$('playerName').textContent=p.username||'Thành viên thử nghiệm';$('avatarButton').title=WALLET_TEXT.avatar;if(avatarSrc(p.avatarUrl)){$('avatarGlyph').replaceChildren(el('img',{src:avatarSrc(p.avatarUrl),onerror:e=>e.target.remove(),alt:'Avatar '+(p.username||'thành viên'),style:'width:28px;height:28px;border-radius:50%;object-fit:cover'}));}$('levelButton').title=WALLET_TEXT.title;missions.sync();hagridWork.sync();if(text)message(text);if(!tutorialChecked)setupTutorial();}
 if(connected){
  const badge=el('div',{class:'emulator-badge',text:WALLET_TEXT.badge});$('gameShell').append(badge);
  const boost=button('Nước phép',()=>{$('seedOptions').close();return run(null,'Đã tưới nước phép cho hàng đang chọn.',{action:'boost',plotIndex:selectedPlot,cells:chosen()});},{id:'boostButton',disabled:true});$('cropCareButton').after(boost);$('dockBoost').onclick=()=>boost.click();

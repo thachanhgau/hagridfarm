@@ -3,9 +3,9 @@
 // tour mode (read only) and «Chăm giúp» takes 15 minutes off its growing crops, 3 gardens a day.
 // Owner 01/11/2026: one grid of bare rows, gardens that can be helped first, «Thăm liên tục» walks
 // them one after another from the banner (‹ ›), the host is told who helped, and a burning garden shows it.
-import {el, button} from './ui-utils.mjs?v=24.9.92';
-import {FIRE_SHEETS,fireTimeLeft} from './garden-fire.mjs?v=24.9.92';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.92';
+import {el, button} from './ui-utils.mjs?v=24.9.93';
+import {FIRE_SHEETS,fireTimeLeft} from './garden-fire.mjs?v=24.9.93';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.93';
 
 export const VISIT_ART = Object.freeze({hearth: 'environment/visit/floo-hearth.png', ring: 'environment/visit/portal-ring.png'});
 
@@ -42,10 +42,26 @@ export function nextVisit(queue, uid, dir = 1) {
   return v && v.uid !== uid ? v : null;
 }
 
+// The frame runs on the cookie-less game host (media.hpvn-archive.net), where '/forum-images/…' is a 404 and Storage
+// answers 403: archive avatars load only from the site's own /media with the member's cookie (lib/archiveMediaUrls.ts).
+const SITE = (() => { try { return new URL(document.referrer).origin; } catch { return ''; } })();
+const STORAGE = 'https://firebasestorage.googleapis.com/v0/b/hpvnn-archive.firebasestorage.app/o';
+export function avatarSrc(url, site = SITE) {
+  if (typeof url !== 'string' || !url) return '';
+  if (url.startsWith(STORAGE + '/')) return site + '/media' + url.slice(STORAGE.length);
+  if (!url.startsWith('/forum-images/avatars/')) return url;
+  let path = url.slice(1);
+  try { path = decodeURIComponent(path); } catch {}
+  return `${site}/media/${encodeURIComponent('archive-media/v1/' + path)}?alt=media`;
+}
+
+function initial(name) {
+  return el('span', {class: 'visit-avatar', 'aria-hidden': 'true', text: (name || '?').trim().charAt(0).toUpperCase()});
+}
+
 function avatar(name, url) {
-  return url
-    ? el('img', {class: 'visit-avatar', src: url, alt: ''})
-    : el('span', {class: 'visit-avatar', 'aria-hidden': 'true', text: (name || '?').trim().charAt(0).toUpperCase()});
+  const src = avatarSrc(url);
+  return src ? el('img', {class: 'visit-avatar', src, alt: '', onerror: e => e.target.replaceWith(initial(name))}) : initial(name);
 }
 
 const art = file => `url("${runtimeImageUrl(file)}")`;

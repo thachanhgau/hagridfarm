@@ -22,8 +22,9 @@
 .visit-name{display:flex;flex-direction:column;min-width:0}
 .visit-name strong{color:#f5d69a;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .visit-name small{color:#a6b1ae;font-size:11px}
-.visit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,140px));justify-content:center;gap:14px 8px}
-.visit-tile{display:grid;justify-items:center;gap:3px;min-width:0;padding:6px 2px 4px!important;min-height:0!important;background:none!important;border:0!important;box-shadow:none!important;
+/* auto-fill + space-between: members and Vườn danh dự share the same columns, the first one under the section label. */
+.visit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,140px));justify-content:space-between;gap:14px 8px}
+.visit-tile{display:grid;justify-items:center;align-content:start;gap:3px;min-width:0;padding:6px 2px 4px!important;min-height:0!important;background:none!important;border:0!important;box-shadow:none!important;
  color:inherit;cursor:pointer;transition:transform .16s ease}
 .visit-tile:hover,.visit-tile:focus-visible{transform:translateY(-3px)}
 .visit-tile:active{transform:scale(.96)}

@@ -1,6 +1,6 @@
-import {getGardenStorage} from './garden-storage.mjs?v=24.9.92';
-import {el} from './ui-utils.mjs?v=24.9.92';
-import {portalTile} from './garden-visits-ui.mjs?v=24.9.92';
+import {getGardenStorage} from './garden-storage.mjs?v=24.9.93';
+import {el} from './ui-utils.mjs?v=24.9.93';
+import {portalTile} from './garden-visits-ui.mjs?v=24.9.93';
 
 export const TOUR_STORAGE_KEY = 'hpvn-garden-v22-tour';
 
@@ -375,7 +375,8 @@ export function renderTourSection({
   const root = el('section', {class: 'member-visits honor-visits'}, [el('p', {class: 'sheet-label', text: 'Vườn danh dự'})]);
   const grid = el('div', {class: 'visit-grid', role: 'list'}, HONOR_GARDENS.map(tour => {
     const helped = progress.helpedIds.includes(tour.id), visiting = activeTourId === tour.id;
-    const tile = portalTile({uid: tour.id, username: tour.ownerName, initialOf: tour.ownerName.replace(/^Giáo sư /, ''), level: tour.level},
+    const name = tour.ownerName.replace(/^Giáo sư /, ''); // «Giáo sư Pomona Sprout» does not fit a 140px tile
+    const tile = portalTile({uid: tour.id, username: name, level: tour.level},
       () => (visiting ? onStopTour?.() : onStartTour?.(tour.id)),
       {state: visiting ? 'is-current' : helped ? 'is-helped' : 'can-help', text: visiting ? 'Đang ghé · Về vườn' : helped ? 'Đã nhận quà' : tour.reward.label.replace(/ & /g, ' · ')});
     tile.dataset.tourId = tour.id;

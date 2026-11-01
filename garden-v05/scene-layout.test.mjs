@@ -297,3 +297,14 @@ test('a decoration being placed outside the fence never opens later garden stage
  garden.render(state,{now:1700000000000,clock:0,propsVisible:false,decorations:{owned:['decor_cauldron'],placements:['decor_cauldron'],positions:{decor_cauldron:[12,26]}}});
  assert.equal(garden.growthStage().id,1);
 });
+
+test('a plot label slides up over its plot instead of covering a statue in front of it',async()=>{
+ const statue={id:'decor_cauldron',file:'decor-assets/x.png',width:40,height:60,pivotX:20,pivotY:56};
+ const canvas=fakeCanvas(),labels=[];canvas.getContext().fillText=(text,x,y)=>labels.push({text,y});
+ const garden=await createGarden(canvas,{allowMissingAssets:true,decorAssets:[statue]}),state=newGame(1700000000000);
+ const plot=garden.map.plots[0],[,front]=iso(...plot.positions.label,garden.map),[,centre]=iso(...plot.positions.center,garden.map);
+ const y=decorations=>{labels.length=0;garden.render(state,{now:1700000000000,clock:0,propsVisible:false,decorations});return labels.find(l=>/^THỬA 1\b/.test(l.text)).y;};
+ assert.equal(y(undefined),Math.round(front));
+ const moved=y({owned:['decor_cauldron'],placements:['decor_cauldron'],positions:{decor_cauldron:[plot.positions.label[0],plot.positions.label[1]+.6]}});
+ assert.ok(moved<front&&moved>=centre-1,`label at ${moved}, front ${front}, centre ${centre}`);
+});
