@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-01",
+  "tool": "built-in image_gen",
+  "promptFile": "prompts.json",
+  "palette": "garden-v05/palette.mjs SPRITE_PALETTE (24 colors)",
+  "processing": "Nearest-neighbour resize; nearest RGB palette quantization without dithering; ring cropped to alpha bounds then normalized to 80x80, binary alpha, cleared inner radius 30 and outside radius 40 using both integer coordinates and pixel centers. No artwork drawn procedurally.",
+  "candidates": [
+    {
+      "file": "masters/floo-hearth-a.png",
+      "sha256": "ab8dcfecc8aa4985c7e0f3e14ad696f8ce09a6e7cea737f5230f5fc7a28b82f3"
+    },
+    {
+      "file": "masters/floo-hearth-b.png",
+      "sha256": "e36478df9a5ebd3ccc31f3a4f6c5e9a3d4c09a8965b62bd3d40944746c8c5914"
+    },
+    {
+      "file": "masters/portal-ring-a.png",
+      "sha256": "7798b8dafa1a401cc7fd9994ab2144b2dfa9c03d98de8b6eb9456a4ebac7636a"
+    },
+    {
+      "file": "masters/portal-ring-b.png",
+      "sha256": "211ed0f1033339c3a209797cdb7c5a555ba2891dbcb75346d82544bcba64713a"
+    }
+  ],
+  "selected": {
+    "floo-hearth.png": "floo-hearth-b.png",
+    "portal-ring.png": "portal-ring-a.png"
+  },
+  "outputs": [
+    {
+      "file": "floo-hearth.png",
+      "sha256": "5e0dd8b35633b577d146c77d88ef98736789cc1610f14e434585953c3557de74"
+    },
+    {
+      "file": "portal-ring.png",
+      "sha256": "fea80d6856753c940a6d6b9726191b304eb6b8ffb31e8b917637fbcd96d50c43"
+    }
+  ]
+}

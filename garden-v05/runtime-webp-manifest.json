@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "3807f56d329f",
+  "revision": "70c1c7d8d22c",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11292,6 +11292,26 @@
       "sha256": "bfec26aa1294fa91c462d5dddc5562b43cd24f7c2e474e44fd2036ede5b3476b"
     },
     {
+      "source": "environment/visit/floo-hearth.png",
+      "file": "runtime-webp/environment/visit/floo-hearth.webp",
+      "width": 360,
+      "height": 120,
+      "sourceBytes": 9532,
+      "bytes": 5760,
+      "sourceSha256": "5e0dd8b35633b577d146c77d88ef98736789cc1610f14e434585953c3557de74",
+      "sha256": "e86550f694d2bb35e301782215aee555df69b46b3944cb6c753501085178a402"
+    },
+    {
+      "source": "environment/visit/portal-ring.png",
+      "file": "runtime-webp/environment/visit/portal-ring.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1923,
+      "bytes": 1114,
+      "sourceSha256": "fea80d6856753c940a6d6b9726191b304eb6b8ffb31e8b917637fbcd96d50c43",
+      "sha256": "e6da9af0b1c6bf90f1198f7c76cafa410bcffdf36991d83eaf279c7ad00eec5b"
+    },
+    {
       "source": "world-v241/hero-halloween.png",
       "file": "runtime-webp/world-v241/hero-halloween.webp",
       "width": 128,
@@ -11375,11 +11395,11 @@
     }
   ],
   "totals": {
-    "converted": 1131,
+    "converted": 1133,
     "existingWebp": 8,
-    "originalBytes": 4274405,
-    "webpBytes": 2863802,
-    "savedBytes": 1410603,
-    "savedPercent": 33
+    "originalBytes": 4285860,
+    "webpBytes": 2870676,
+    "savedBytes": 1415184,
+    "savedPercent": 33.02
   }
 }

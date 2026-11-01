@@ -4,7 +4,10 @@
 // Owner 01/11/2026: one grid of bare rows, gardens that can be helped first, «Thăm liên tục» walks
 // them one after another from the banner (‹ ›), the host is told who helped, and a burning garden shows it.
 import {el, button} from './ui-utils.mjs?v=24.9.92';
-import {fireTimeLeft} from './garden-fire.mjs?v=24.9.92';
+import {FIRE_SHEETS,fireTimeLeft} from './garden-fire.mjs?v=24.9.92';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.92';
+
+export const VISIT_ART = Object.freeze({hearth: 'environment/visit/floo-hearth.png', ring: 'environment/visit/portal-ring.png'});
 
 /** A member's garden in the shape the tour mode draws (garden-tour.mjs buildHonorGardenSnapshot). */
 export function buildVisitSnapshot(visit, weatherMode = 'clear') {
@@ -45,48 +48,56 @@ function avatar(name, url) {
     : el('span', {class: 'visit-avatar', 'aria-hidden': 'true', text: (name || '?').trim().charAt(0).toUpperCase()});
 }
 
-function status(v) {
-  if (v.fire) return el('span', {class: 'visit-status is-fire', text: 'Đang cháy'});
-  if (v.helped) return el('span', {class: 'visit-status is-done', text: 'Đã giúp'});
-  if (v.growing > 0) return el('span', {class: 'visit-status is-open', text: `${v.growing} cây đang lớn`});
-  return el('span', {class: 'visit-status', text: 'Chưa có cây'});
+const art = file => `url("${runtimeImageUrl(file)}")`;
+const STATUS = v => v.fire ? ['is-fire', 'Đang cháy'] : v.helped ? ['is-helped', 'Đã giúp'] : v.growing > 0 ? ['can-help', `${v.growing} cây đang lớn`] : ['', 'Chưa có cây'];
+
+/** One garden as a Floo portal: the member's avatar in a vine ring, level on the ring, tap to fly there. */
+function portalTile(v, onVisit) {
+  const [state, text] = STATUS(v);
+  return el('button', {type: 'button', class: `visit-tile ${state}`, role: 'listitem', onclick: onVisit, 'data-visit': v.uid, 'aria-label': `${v.username || 'Thành viên'}, cấp ${v.level}, ${text}`}, [
+    el('span', {class: 'visit-portal'}, [
+      avatar(v.username, v.avatarUrl),
+      el('img', {class: 'visit-ring', src: VISIT_ART.ring, alt: '', onerror: e => e.target.remove()}),
+      v.fire ? el('span', {class: 'visit-flame', 'aria-hidden': 'true'}) : null,
+      el('span', {class: 'visit-level', text: String(v.level)}),
+    ]),
+    el('strong', {class: 'visit-tile-name', text: v.username || 'Thành viên'}),
+    el('small', {class: 'visit-status', text}),
+  ]);
 }
 
-/** Panel section: locked below the visit level, else today's helpers and the gardens, one row each. */
+/** Panel section: locked below the visit level, else the Floo hearth (helps left, gardens waiting, «Bay Floo»),
+ * today's helpers as an avatar stack, and every garden as a portal tile. */
 export function renderMemberVisits({level, visitLevel = 10, load, onVisit, helpers = []}) {
-  const root = el('section', {class: 'member-visits'}, [el('p', {class: 'sheet-label', text: 'Vườn thành viên'})]);
+  const root = el('section', {class: 'member-visits'});
+  root.style.setProperty('--hearth', art(VISIT_ART.hearth));
+  root.style.setProperty('--flame', art(FIRE_SHEETS.small.file));
   if (level < visitLevel) {
-    root.append(el('p', {class: 'meta', text: `Từ cấp ${visitLevel} con sang thăm và chăm giúp vườn của thành viên khác được.`}));
+    root.append(el('div', {class: 'visit-hero is-locked'}, [el('div', {class: 'visit-hero-copy'}, [el('b', {text: `Cấp ${visitLevel}`}), el('span', {text: 'mở Thăm vườn'})])]));
     return root;
   }
+  const hero = el('div', {class: 'visit-hero'}, [el('div', {class: 'visit-hero-copy'}, [el('b', {text: '…'}), el('span', {text: 'lượt chăm giúp'})])]);
+  root.append(hero);
   if (helpers.length) {
-    root.append(el('div', {class: 'visit-row visit-helpers'}, [
-      el('span', {class: 'visit-avatar is-icon', 'aria-hidden': 'true', text: '🤝'}),
-      el('span', {class: 'visit-name'}, [el('strong', {text: helperNames(helpers)}), el('small', {text: 'Chăm giúp vườn con hôm nay'})]),
-      el('span', {class: 'visit-status is-done', text: `+${helpers.length * 15} phút`}),
+    const names = [...new Map(helpers.map(h => [h.name, h])).values()];
+    root.append(el('div', {class: 'visit-helpers'}, [
+      el('span', {class: 'visit-stack', 'aria-hidden': 'true'}, names.slice(0, 4).map(h => avatar(h.name))),
+      el('span', {class: 'visit-name'}, [el('strong', {text: helperNames(helpers)}), el('small', {text: 'chăm giúp hôm nay'})]),
+      el('b', {class: 'visit-bonus', text: `+${helpers.length * 15} phút`}),
     ]));
   }
-  const list = el('div', {class: 'visit-list', role: 'list'}, [el('p', {class: 'meta', text: 'Đang tìm vườn…'})]);
-  root.append(list);
+  const grid = el('div', {class: 'visit-grid', role: 'list', 'aria-busy': 'true'}, Array.from({length: 6}, () => el('span', {class: 'visit-tile is-ghost', 'aria-hidden': 'true'}, [el('span', {class: 'visit-portal'})])));
+  root.append(grid);
   load().then(res => {
-    const rows = visitOrder(res?.visits || []);
-    const first = rows.find(canHelp);
-    root.querySelector('.visit-head')?.remove();
-    root.insertBefore(el('div', {class: 'visit-head'}, [
-      el('span', {class: 'visit-left'}, [el('b', {text: String(res.helpsLeft)}), ' lượt chăm giúp']),
-      first && res.helpsLeft > 0 ? button('Thăm liên tục ›', () => onVisit(first.uid, rows), {class: 'primary', 'data-visit-run': 'true'}) : null,
-    ]), list);
-    list.replaceChildren();
-    if (!rows.length) list.append(el('p', {class: 'meta', text: 'Chưa có vườn nào khác.'}));
-    for (const v of rows) {
-      list.append(el('div', {class: 'visit-row' + (canHelp(v) ? ' can-help' : ''), role: 'listitem', 'data-visit-uid': v.uid}, [
-        avatar(v.username, v.avatarUrl),
-        el('span', {class: 'visit-name'}, [el('strong', {text: v.username || 'Thành viên'}), el('small', {text: `Cấp ${v.level}`})]),
-        status(v),
-        button('Ghé', () => onVisit(v.uid, rows), {class: canHelp(v) ? 'primary' : '', 'data-visit': v.uid}),
-      ]));
-    }
-  }).catch(e => list.replaceChildren(el('p', {class: 'meta', text: e.message || 'Chưa tải được danh sách vườn.'})));
+    const rows = visitOrder(res?.visits || []), waiting = rows.filter(canHelp), left = res.helpsLeft ?? 0;
+    const go = waiting.length && left > 0;
+    hero.replaceChildren(
+      el('div', {class: 'visit-hero-copy'}, [el('b', {text: String(left)}), el('span', {text: 'lượt chăm giúp'}), el('small', {text: `${waiting.length} vườn đang chờ`})]),
+      button(go ? 'Bay Floo ›' : left > 0 ? 'Chưa vườn nào cần' : 'Hết lượt hôm nay', () => onVisit(waiting[0].uid, rows), {class: 'primary visit-hero-go', disabled: !go, 'data-visit-run': 'true'}),
+    );
+    grid.removeAttribute('aria-busy');
+    grid.replaceChildren(...(rows.length ? rows.map(v => portalTile(v, () => onVisit(v.uid, rows))) : [el('p', {class: 'meta', text: 'Chưa có vườn nào khác.'})]));
+  }).catch(e => grid.replaceChildren(el('p', {class: 'meta', text: e.message || 'Chưa tải được danh sách vườn.'})));
   return root;
 }
 
