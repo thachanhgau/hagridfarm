@@ -119,3 +119,19 @@ test('25.0 elf statue glow: loads only at dusk/night for a placed statue; reduce
   assert.equal(statueGlow({...object, preview: true}, 0), null);
   assert.equal(statueGlow({...object, id: 'ev_elf_tent'}, 0), null);
 });
+
+test('25.0 S6 budget: visiting friends load only while a visit is drawn, never before the first frame', async () => {
+  const friendsKit = await import('./garden-friends.mjs'), {FRIEND_FILES, friendVisit} = friendsKit;
+  assert.equal(FRIEND_FILES.length, 42); // 7 sheets × 6 poses (Fred and George share one)
+  const urls = FRIEND_FILES.map(runtimeImageUrl);
+  const {canvas, requested} = recordingCanvas();
+  const garden = await createGarden(canvas, {decorAssets: manifest.items});
+  for (const url of urls) assert.ok(!requested.has(url), url + ' loaded before the first frame');
+  const state = E.testProfile(100, 1_700_000_000_000), night = Date.parse('2026-12-01T22:00:00+07:00'), day = Date.parse('2026-12-01T10:00:00+07:00');
+  garden.render(state, {now: night, clock: 0, propsVisible: true, eventMode: 'none', friendsKit});
+  for (const url of urls) assert.ok(!requested.has(url), url + ' loaded with nobody visiting');
+  garden.render(state, {now: day, clock: 0, propsVisible: true, eventMode: 'none', friendsKit});
+  const visitor = friendVisit(day).members[0];
+  assert.ok([...requested].some((url) => url.includes(`/friends/${friendsKit.FRIENDS[visitor].art || visitor}/`)), visitor + ' requested once visiting');
+  for (const file of FRIEND_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
+});

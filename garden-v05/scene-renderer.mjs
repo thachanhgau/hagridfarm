@@ -770,6 +770,7 @@ export async function createGarden(canvas, options = {}) {
   let currentStage = gardenStage({}, map);
   let fireCache = null; // «Đốt vườn» flame spots for the current stage
   let duty = null; // 25.0 S5 options.duty: {wilt: Set, dead: Map, sick: Set, gnomes: [plot], kit: garden-duty-art} ('plot:slot' keys)
+  let friends = null; // 25.0 S6 garden-friends.mjs
 
   function layoutCacheKey() {
     return JSON.stringify([
@@ -1412,6 +1413,7 @@ export async function createGarden(canvas, options = {}) {
       context.restore();
       return;
     }
+    if (object.draw) return object.draw(context);
     if (object.kind === 'elf') {
       drawAsset({...object.asset, noSnowCap: true}, object.xy[0], object.xy[1], null, null, object.flip);
       breathOf(object.asset, object.xy, object.flip, object.flip, object.id, clock);
@@ -1567,6 +1569,7 @@ export async function createGarden(canvas, options = {}) {
     const weatherMode = options.weatherMode || 'clear';
     const eventMode = options.eventMode || 'none';
     // Winter: snow lies even under a clear sky; its scenery is requested only while winter is on.
+    if (options.friendsKit && !friends) for (const file of (friends = options.friendsKit).FRIEND_FILES) deferredFiles.add(file);
     if (options.winterKit && !kit) { kit = options.winterKit; for (const file of [...kit.WINTER_FILES, ...kit.STATUE_GLOW_FILES]) deferredFiles.add(file); }
     activeWinter = kit && options.winter?.active ? options.winter : null;
     const groundWeather = activeWinter && weatherMode === 'clear' ? 'snow' : weatherMode;
@@ -1670,7 +1673,8 @@ export async function createGarden(canvas, options = {}) {
     const cheering = Object.fromEntries(Object.entries(elfCheers).filter(([, until]) => until > performance.now()));
     elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering, work: options.elfWork}) : [];
     if (propsVisible && options.norbert) elfList.push(norbertObject(iso, clock, {night: atmosphereMode === 'night', cheering: !!cheering.norbert}));
-    const objects = [...boundaryFence, ...wizList, ...elfList, ...storeDecorationObjects];
+    const fx = propsVisible && friends ? friends.friendObjects(iso, clock, options.now, elfList, {night: atmosphereMode === 'night', winter: !!activeWinter, cheering}) : [];
+    const objects = [...boundaryFence, ...wizList, ...elfList, ...fx, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {
         // Legacy edge-tree anchors straddled the fence; the bounded forest layers own trees now.
@@ -1904,7 +1908,7 @@ export async function createGarden(canvas, options = {}) {
     }
     for(const elf of [...elfList].sort((a,b)=>b.xy[1]-a.xy[1])){
       const {xy,asset,flip}=elf,b=asset.bounds,left=flip?xy[0]+asset.pivotX-b.x-b.w:xy[0]-asset.pivotX+b.x,top=xy[1]-asset.pivotY+b.y;
-      if(world.x>=left-5&&world.x<=left+b.w+5&&world.y>=top-5&&world.y<=top+b.h+5)return {kind:'elf',id:elf.id};
+      if(world.x>=left-5&&world.x<=left+b.w+5&&world.y>=top-5&&world.y<=top+b.h+5)return {kind:'elf',id:elf.id,friend:elf.friend};
     }
     if(sceneryVisible)for(const target of wizardTargets(iso).sort((a,b)=>b.xy[1]-a.xy[1])){
       const b=target.hitbox;if(world.x>=b.left&&world.x<=b.right&&world.y>=b.top&&world.y<=b.bottom)return {kind:'wizard',id:target.id};

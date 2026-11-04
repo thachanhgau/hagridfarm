@@ -1,0 +1,1589 @@
+Reading additional input from stdin...
+OpenAI Codex v0.164.0-alpha.11.1
+--------
+workdir: /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1a740-bd0c-7ff3-8e48-1c039b3f2297
+--------
+user
+# Codex brief — Hagrid Farm 25.0 S6: Harry visits the garden (pilot sheet, 04/11/2026)
+
+You are Codex in the Hagrid Farm repo. You only draw masters; Claude Code resizes them into game sprites itself.
+Follow `docs/art-bible.md`. Match the look and quality of the approved house-elf masters
+(`garden-v05/environment/elves/masters/v3-dobby.png`, `v3-winky.png`) — same pixel style, same light, same outline —
+and stand beside Hagrid (`garden-v05/native-complete-objects/gardener_friend/frame-01.png`).
+
+This is the **pilot**: the owner approves Harry's look before Ron, Hermione, Neville, Luna, Ginny, Fred and George are drawn.
+
+## Character (book version, HP1–HP3 — never the film)
+
+**Harry Potter**, about 12, a cute **chibi** (big head ≈ 40 % of the height, small body): thin, knobbly knees,
+**untidy jet-black hair** sticking up at the back, **round glasses**, bright **green** eyes with a white highlight,
+a thin **lightning-bolt scar** on the forehead (2–3 blocks, `#C75B4B`), friendly grin.
+Winter clothes: Mrs Weasley's hand-knitted **emerald-green wool sweater** (plain, no letter), a scarlet-and-gold striped
+Gryffindor scarf, dark trousers, brown boots.
+
+**He must not look like any film actor.** Stylised chibi face: simple shapes, no realistic nose or jaw, no actor likeness,
+no film costume (no film-style robes or film glasses frames). If a candidate reads like a film still, redraw it.
+
+Props: his broom (the **Nimbus Two Thousand**: dark polished wooden handle, neat bundle of twigs at the tail, no lettering),
+the **Quaffle** (a bright red leather ball, `#C75B4B`/`#874056`, about the size of his head), a snowball (`#E8F0ED`-ish white
+from the sprite palette: use `#D6D8BF` + `#B7DEE0` shading).
+
+## Style rules (so the resize stays clean)
+
+- True pixel art on **one square grid of exactly 6 × 6 px blocks** (every block one flat colour, edges on multiples of 6 from
+  the cell's top-left). No anti-aliasing, gradients, blur, glow, drop shadow or sub-block noise. Transparent background,
+  hard alpha.
+- Harry about **64–68 blocks tall** standing (hair top to feet) — a little taller than Dobby. 1-block dark outline
+  (`#231F2E`), light from the top-left. Colours only from the 24 sprite colours in `garden-v05/palette.mjs`, ≤ 16 on the sheet.
+
+## Sheet
+
+`garden-v05/environment/friends/masters/harry.png`: 1536 × 1024 PNG, a 3 × 2 grid of 512 × 512 cells, one pose per cell in
+this order (row 1 left→right, then row 2); feet (or the broom's lowest point) at y ≈ 470, body centred on x = 256,
+≥ 24 px empty margin. Three-quarter view toward the lower-left.
+
+1. `idle` — standing, waving one hand, smiling.
+2. `walk-1` — walking, left foot clearly forward.
+3. `walk-2` — walking, right foot clearly forward (legs visibly different from walk-1, head at the same height).
+4. `fly-throw` — sitting astride the broom (broom roughly horizontal, twigs to the right), arm back about to throw the Quaffle.
+5. `fly-catch` — same broom position, both hands forward catching the Quaffle.
+6. `snowball` — standing, throwing a snowball overarm, scarf flying.
+
+Make two candidates with your image tool and keep the better (closest to the book, most charming, closest to the 6 px grid).
+Save both as `harry-candidate-a.png` / `harry-candidate-b.png` beside the chosen file. Append the prompt to
+`garden-v05/environment/friends/prompts.json` (create it as `{"entries": []}` if missing). Do not resize, write native frames
+or previews, or run builders.
+
+Hard rules: no commit/push/deploy; do not edit `.mjs`, CSS, `functions/` or HPVNN; if image generation or usage is
+unavailable, stop and say so — never fake art with code. Report in `docs/codex-briefs/friends-harry-s6-report.md`.
+codex
+Bệ hạ, tiểu nữ sẽ đọc art bible, bảng màu và các master tham chiếu, rồi dùng skill `imagegen` tạo hai ứng viên Harry để chọn bản phù hợp nhất. Tiểu nữ chỉ lưu master, prompt và báo cáo trong phạm vi brief.
+exec
+/bin/zsh -lc "pwd && rg --files -g 'AGENTS.md' -g 'art-bible.md' -g 'palette.mjs' -g 'prompts.json' -g '*dobby*' -g '*winky*' -g 'frame-01.png' -g '*harry*'" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 0ms:
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+garden-v05/runtime-webp/decor-assets/native/ev_dobby_spring_rider_right.webp
+garden-v05/runtime-webp/decor-assets/native/ev_dobby_spring_rider.webp
+garden-v05/runtime-webp/decor-assets/native/ev_dark_dobby_red.webp
+garden-v05/runtime-webp/decor-assets/native/ev_dobby_spring_rider_atlas.webp
+garden-v05/runtime-webp/decor-assets/native/ev_dark_dobby_red_right.webp
+garden-v05/runtime-webp/decor-assets/native/ev_dark_dobby_red_atlas.webp
+garden-v05/environment/floo-frames/prompts.json
+garden-v05/environment/statue-night/ev_dobby_spring_rider-n1.png
+garden-v05/environment/statue-night/ev_dobby_spring_rider-n0.png
+garden-v05/environment/statue-night/ev_dobby_spring_rider-n2.png
+garden-v05/environment/statue-night/ev_dark_dobby_red-n2.png
+garden-v05/environment/statue-night/ev_dark_dobby_red-n0.png
+garden-v05/native-complete-objects/keepsake_hippogriff/frame-01.png
+garden-v05/environment/statue-night/masters/ev_dobby_spring_rider.png
+garden-v05/environment/statue-night/masters/ev_dobby_spring_rider.txt
+garden-v05/environment/statue-night/masters/ev_dark_dobby_red-reference.png
+garden-v05/environment/statue-night/masters/ev_dark_dobby_red.png
+garden-v05/environment/statue-night/masters/ev_dobby_spring_rider-reference.png
+garden-v05/native-complete-objects/habitat_bowtruckle/frame-01.png
+garden-v05/decor-assets/prompts.json
+garden-v05/native-complete-objects/keepsake_diricawl/frame-01.png
+docs/codex-briefs/elves-dobby-pilot-last.md
+docs/codex-briefs/friends-harry-s6-report.md
+docs/codex-briefs/friends-harry-s6-last.md
+docs/codex-briefs/elves-dobby-pilot-v2-last.md
+docs/codex-briefs/friends-harry-s6-last.log
+docs/codex-briefs/elves-dobby-pilot-preview.png
+docs/codex-briefs/elves-dobby-pilot-v2.md
+docs/codex-briefs/elves-dobby-pilot-scene.png
+docs/codex-briefs/elves-dobby-pilot.md
+docs/codex-briefs/statue-glow-trial-dark-dobby.png
+docs/codex-briefs/elves-dobby-pilot-v2-preview.png
+docs/codex-briefs/elves-dobby-pilot-report.md
+docs/codex-briefs/elves-dobby-pilot-v2-report.md
+docs/codex-briefs/friends-harry-s6.md
+docs/codex-briefs/friends-harry-s6-report-try1.md
+garden-v05/native-complete-objects/habitat_dragon/frame-01.png
+docs/art-bible.md
+garden-v05/environment/statue-night/masters/variants/rider-v1/ev_dobby_spring_rider-n1.png
+garden-v05/environment/statue-night/masters/variants/rider-v1/ev_dobby_spring_rider.png
+garden-v05/environment/statue-night/masters/variants/rider-v1/ev_dobby_spring_rider-n0.png
+garden-v05/environment/statue-night/masters/variants/rider-v1/ev_dobby_spring_rider-n2.png
+garden-v05/environment/statue-night/masters/variants/rider-v1/ev_dobby_spring_rider.txt
+garden-v05/environment/statue-night/masters/variants/rider-v1/ev_dobby_spring_rider_right-n2.png
+garden-v05/environment/statue-night/masters/variants/rider-v1/ev_dobby_spring_rider_right-n1.png
+garden-v05/environment/statue-night/masters/variants/rider-v1/ev_dobby_spring_rider_right-n0.png
+garden-v05/environment/statue-night/masters/variants/ev_dobby_spring_rider-generated.png
+garden-v05/environment/statue-night/masters/variants/ev_dark_dobby_red-halo-size-trial.png
+garden-v05/environment/statue-night/masters/variants/ev_dobby_spring_rider-halo-revision.png
+garden-v05/environment/statue-night/masters/variants/ev_dark_dobby_red-halo-size-trial.txt
+garden-v05/environment/statue-night/masters/variants/ev_dark_dobby_red-generated.png
+garden-v05/environment/statue-night/masters/variants/ev_dark_dobby_red-halo-revision.png
+garden-v05/environment/statue-night/masters/ev_dark_dobby_red.txt
+garden-v05/environment/statue-night/ev_dark_dobby_red-n1.png
+garden-v05/environment/statue-night/ev_dobby_spring_rider_right-n2.png
+garden-v05/environment/statue-night/ev_dobby_spring_rider_right-n1.png
+garden-v05/environment/statue-night/ev_dobby_spring_rider_right-n0.png
+garden-v05/environment/statue-night/ev_dark_dobby_red_right-n1.png
+garden-v05/environment/statue-night/ev_dark_dobby_red_right-n0.png
+garden-v05/environment/statue-night/ev_dark_dobby_red_right-n2.png
+garden-v05/native-complete-objects/keepsake_fwooper/frame-01.png
+garden-v05/native-complete-objects/habitat_mooncalf/frame-01.png
+garden-v05/native-complete-objects/keepsake_dragon/frame-01.png
+garden-v05/native-complete-objects/habitat_hippogriff/frame-01.png
+garden-v05/native-complete-objects/keepsake_bowtruckle/frame-01.png
+garden-v05/native-complete-objects/habitat_thestral/frame-01.png
+garden-v05/native-complete-objects/gardener_friend/frame-01.png
+garden-v05/runtime-webp/environment/statue-night/ev_dobby_spring_rider-n0.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dark_dobby_red_right-n0.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dark_dobby_red_right-n1.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dobby_spring_rider-n1.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dark_dobby_red-n1.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dobby_spring_rider_right-n2.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dark_dobby_red-n0.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dobby_spring_rider_right-n0.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dark_dobby_red-n2.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dobby_spring_rider_right-n1.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dobby_spring_rider-n2.webp
+garden-v05/runtime-webp/environment/statue-night/ev_dark_dobby_red_right-n2.webp
+garden-v05/environment/duty/prompts.json
+garden-v05/native-complete-objects/habitat_fwooper/frame-01.png
+garden-v05/native-complete-objects/keepsake_kneazle/frame-01.png
+garden-v05/environment/friends/prompts.json
+garden-v05/native-complete-objects/keepsake_unicorn/frame-01.png
+garden-v05/native-complete-objects/habitat_niffler/frame-01.png
+garden-v05/native-complete-objects/habitat_diricawl/frame-01.png
+garden-v05/native-complete-objects/keepsake_puffskein/frame-01.png
+garden-v05/native-complete-objects/habitat_puffskein/frame-01.png
+garden-v05/native/dragon/frame-01.png
+garden-v05/native/puffskein/frame-01.png
+garden-v05/native/niffler/frame-01.png
+garden-v05/native-complete-objects/herbology_greenhouse/frame-01.png
+garden-v05/native/mandrake/frame-01.png
+garden-v05/native-complete-objects/keepsake_thestral/frame-01.png
+garden-v05/native/hippogriff/frame-01.png
+garden-v05/native-complete-objects/habitat_unicorn/frame-01.png
+garden-v05/native-complete-objects/keepsake_three-headed-dog/frame-01.png
+garden-v05/environment/visit/prompts.json
+garden-v05/decor-assets/native/ev_dobby_spring_rider.png
+garden-v05/decor-assets/native/ev_dark_dobby_red_right.png
+garden-v05/decor-assets/native/ev_dark_dobby_red.png
+garden-v05/decor-assets/native/ev_dobby_spring_rider_right.png
+garden-v05/decor-assets/native/ev_dark_dobby_red_atlas.png
+garden-v05/decor-assets/native/ev_dobby_spring_rider_atlas.png
+garden-v05/native-complete-objects/habitat_kneazle/frame-01.png
+garden-v05/native/bowtruckle/frame-01.png
+garden-v05/halloween-assets/prompts.json
+garden-v05/native/three-headed-dog/frame-01.png
+garden-v05/native/puffapod/frame-01.png
+garden-v05/native/pumpkin/frame-01.png
+garden-v05/native-complete-objects/keepsake_mooncalf/frame-01.png
+garden-v05/native-complete-objects/habitat_three-headed-dog/frame-01.png
+garden-v05/native/strawberry/frame-01.png
+garden-v05/environment/statue-glow/masters/ev_dobby_spring_rider.png
+garden-v05/native-care/kneazle/frame-01.png
+garden-v05/environment/statue-glow/masters/ev_dark_dobby_red-halo.png
+garden-v05/environment/statue-glow/masters/ev_dobby_spring_rider.txt
+garden-v05/environment/statue-glow/masters/ev_dark_dobby_red-halo.txt
+garden-v05/environment/statue-glow/masters/ev_dobby_spring_rider-halo.png
+garden-v05/environment/statue-glow/masters/ev_dark_dobby_red.png
+garden-v05/environment/statue-glow/masters/ev_dobby_spring_rider-halo.txt
+garden-v05/native-levels/maize/frame-01.png
+garden-v05/native-complete-objects/keepsake_niffler/frame-01.png
+garden-v05/native/dittany/frame-01.png
+garden-v05/native-levels/sunflower/frame-01.png
+garden-v05/native/daisy/frame-01.png
+garden-v05/environment/statue-glow/masters/variants/ev_dark_dobby_red-v1.png
+garden-v05/special-products-assets/prompts.json
+garden-v05/native-care/unicorn/frame-01.png
+garden-v05/native-levels/lettuce/frame-01.png
+garden-v05/native-levels/carrot/frame-01.png
+garden-v05/event-assets/thumbnails/2x/ev_dobby_spring_rider.png
+garden-v05/event-assets/thumbnails/2x/ev_dark_dobby_red_right.png
+garden-v05/event-assets/thumbnails/2x/ev_dark_dobby_red.png
+garden-v05/event-assets/thumbnails/2x/ev_dobby_spring_rider_right.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dobby_spring_rider.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dobby_spring_rider.txt
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dark_dobby_red-g0.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dark_dobby_red-g1.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dark_dobby_red-g2.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dobby_spring_rider-g2.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dark_dobby_red.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dobby_spring_rider-g1.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dobby_spring_rider-g0.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dark_dobby_red_right-g2.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dark_dobby_red_right-g1.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dark_dobby_red_right-g0.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dark_dobby_red.txt
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dobby_spring_rider_right-g1.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dobby_spring_rider_right-g0.png
+garden-v05/environment/statue-glow/masters/variants/aura-v1/ev_dobby_spring_rider_right-g2.png
+garden-v05/native-care/thestral/frame-01.png
+garden-v05/native-levels/mint/frame-01.png
+garden-v05/native-complete-objects/owl_post/frame-01.png
+garden-v05/native-levels/valerian/frame-01.png
+garden-v05/event-assets/spritesheets/ev_dobby_spring_rider.png
+garden-v05/event-assets/spritesheets/ev_dark_dobby_red.png
+garden-v05/event-assets/thumbnails/3x/ev_dobby_spring_rider.png
+garden-v05/event-assets/thumbnails/3x/ev_dark_dobby_red_right.png
+garden-v05/event-assets/thumbnails/3x/ev_dark_dobby_red.png
+garden-v05/event-assets/thumbnails/3x/ev_dobby_spring_rider_right.png
+garden-v05/native-care/mooncalf/frame-01.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dark_dobby_red-g0.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dark_dobby_red-g1.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dark_dobby_red-g2.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dobby_spring_rider-g2.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dobby_spring_rider-g1.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dobby_spring_rider-g0.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dark_dobby_red_right-g2.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dark_dobby_red_right-g1.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dark_dobby_red_right-g0.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dobby_spring_rider_right-g1.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dobby_spring_rider_right-g0.png
+garden-v05/environment/statue-glow/masters/variants/overlay-v2/ev_dobby_spring_rider_right-g2.png
+garden-v05/environment/statue-glow/masters/variants/ev_dark_dobby_red-v1.txt
+garden-v05/native-levels/knotgrass/frame-01.png
+garden-v05/native-levels/kneazle/frame-01.png
+garden-v05/event-assets/masters/ev_dobby_spring_rider.png
+garden-v05/event-assets/masters/ev_dark_dobby_red.png
+garden-v05/native-care/fwooper/frame-01.png
+garden-v05/environment/statue-glow/masters/variants/trial-v1/ev_dark_dobby_red-g0.png
+garden-v05/environment/statue-glow/masters/variants/trial-v1/ev_dark_dobby_red-g1.png
+garden-v05/environment/statue-glow/masters/variants/trial-v1/ev_dark_dobby_red-master.png
+garden-v05/environment/statue-glow/masters/variants/trial-v1/ev_dark_dobby_red-g2.png
+garden-v05/environment/statue-glow/masters/variants/trial-v1/ev_dark_dobby_red_right-g2.png
+garden-v05/environment/statue-glow/masters/variants/trial-v1/ev_dark_dobby_red_right-g1.png
+garden-v05/environment/statue-glow/masters/variants/trial-v1/ev_dark_dobby_red-master.txt
+garden-v05/environment/statue-glow/masters/variants/trial-v1/ev_dark_dobby_red_right-g0.png
+garden-v05/environment/statue-glow/masters/ev_dark_dobby_red.txt
+garden-v05/native-care/diricawl/frame-01.png
+garden-v05/native-levels/firepepper/frame-01.png
+garden-v05/native-levels/beet/frame-01.png
+garden-v05/native-levels/sunpetal/frame-01.png
+garden-v05/native-levels/fwooper/frame-01.png
+garden-v05/event-assets/native/ev_dark_dobby_red_f1.png
+garden-v05/event-assets/native/ev_dobby_spring_rider.png
+garden-v05/event-assets/native/ev_dark_dobby_red_f0.png
+garden-v05/event-assets/native/ev_dark_dobby_red_f2.png
+garden-v05/event-assets/native/ev_dark_dobby_red_f3.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_f3.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_f2.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_f0.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_f1.png
+garden-v05/event-assets/native/ev_dark_dobby_red_right_f3.png
+garden-v05/event-assets/native/ev_dark_dobby_red_right_f2.png
+garden-v05/event-assets/native/ev_dark_dobby_red_right_f0.png
+garden-v05/event-assets/native/ev_dark_dobby_red_right_f1.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_right_f0.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_right_f1.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_right_f3.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_right_f2.png
+garden-v05/event-assets/native/ev_dark_dobby_red_right.png
+garden-v05/event-assets/native/ev_dark_dobby_red.png
+garden-v05/event-assets/native/ev_dobby_spring_rider_right.png
+garden-v05/native-levels/gillyweed/frame-01.png
+garden-v05/environment/elves/masters/v3-dobby-extra-candidate-a.png
+garden-v05/environment/elves/masters/dobby-v2-b.png
+garden-v05/environment/elves/masters/v3-dobby-extra-candidate-b.png
+garden-v05/environment/elves/masters/dobby-v2-a.png
+garden-v05/environment/elves/masters/v3-dobby-candidate-a.png
+garden-v05/environment/elves/masters/v3-winky-candidate-a.png
+garden-v05/environment/elves/masters/v3-dobby-candidate-b.png
+garden-v05/environment/elves/masters/v3-winky-candidate-b.png
+garden-v05/environment/elves/masters/dobby-v2-extra.png
+garden-v05/environment/elves/masters/winky.png
+garden-v05/environment/elves/masters/v3-winky.png
+garden-v05/environment/elves/masters/v3-dobby-extra.png
+garden-v05/environment/elves/masters/dobby-v2-extra-candidate-b.png
+garden-v05/environment/elves/masters/dobby-v2-extra-candidate-a.png
+garden-v05/environment/elves/masters/v3-dobby.png
+garden-v05/environment/elves/masters/dobby-candidate-a.png
+garden-v05/environment/elves/masters/winky-candidate-a.png
+garden-v05/environment/elves/masters/dobby-candidate-b.png
+garden-v05/environment/elves/masters/winky-candidate-b.png
+garden-v05/environment/elves/prompts.json
+garden-v05/native-levels/unicorn/frame-01.png
+garden-v05/native-levels/flitterbloom/frame-01.png
+garden-v05/native-levels/silverkelp/frame-01.png
+garden-v05/native-levels/bubotuber/frame-01.png
+garden-v05/native-crop-complete/sunpetal/frame-01.png
+garden-v05/native-levels/devilssnare/frame-01.png
+garden-v05/native-levels/ambermelon/frame-01.png
+garden-v05/native-crop-complete/maize/frame-01.png
+garden-v05/native-crop-complete/mint/frame-01.png
+garden-v05/native-levels/clover/frame-01.png
+garden-v05/native-crop-complete/gillyweed/frame-01.png
+garden-v05/native-items/produce_thestral/frame-01.png
+garden-v05/native-levels/thestral/frame-01.png
+garden-v05/native-crop-complete/knotgrass/frame-01.png
+garden-v05/native-crop-complete/sunflower/frame-01.png
+garden-v05/native-items/harvest_puffapod/frame-01.png
+garden-v05/native-levels/starbean/frame-01.png
+garden-v05/native-crop-complete/oats/frame-01.png
+garden-v05/native-levels/oats/frame-01.png
+garden-v05/native-crop-complete/decor-flow-hw_blinking_chest/frame-01.png
+garden-v05/native-items/harvest_blueberry/frame-01.png
+garden-v05/native-crop-complete/beet/frame-01.png
+garden-v05/native-crop-complete/carrot/frame-01.png
+garden-v05/native-crop-complete/blueberry/frame-01.png
+garden-v05/native-crop-complete/mimbulus/frame-01.png
+garden-v05/native-levels/mooncalf/frame-01.png
+garden-v05/native-items/harvest_ambermelon/frame-01.png
+garden-v05/native-crop-complete/flow-mimbulus/frame-01.png
+garden-v05/native-items/harvest_daisy/frame-01.png
+garden-v05/native-crop-complete/decor-flow-hw_violet_mist_pond/frame-01.png
+garden-v05/native-levels/mistmushroom/frame-01.png
+garden-v05/native-levels/flax/frame-01.png
+garden-v05/native-items/harvest_carrot/frame-01.png
+garden-v05/native-crop-complete/clover/frame-01.png
+garden-v05/native-crop-complete/decor-flow-hw_eyeball_flowers/frame-01.png
+garden-v05/native-levels/moonherb/frame-01.png
+garden-v05/native-levels/fluxweed/frame-01.png
+garden-v05/native-levels/mimbulus/frame-01.png
+garden-v05/native-items/harvest_mandrake/frame-01.png
+garden-v05/native-crop-complete/lettuce/frame-01.png
+garden-v05/native-items/harvest_beet/frame-01.png
+garden-v05/native-levels/shrivelfig/frame-01.png
+garden-v05/native-crop-complete/shrivelfig/frame-01.png
+garden-v05/native-levels/diricawl/frame-01.png
+garden-v05/native-items/harvest_strawberry/frame-01.png
+garden-v05/native-items/harvest_starbean/frame-01.png
+garden-v05/palette.mjs
+garden-v05/native-crop-complete/valerian/frame-01.png
+garden-v05/native-crop-complete/flitterbloom/frame-01.png
+garden-v05/native-crop-complete/ambermelon/frame-01.png
+garden-v05/native-items/harvest_sunflower/frame-01.png
+garden-v05/native-crop-complete/bubotuber/frame-01.png
+garden-v05/native-levels/blueberry/frame-01.png
+garden-v05/native-items/harvest_mint/frame-01.png
+garden-v05/native-crop-complete/flax/frame-01.png
+garden-v05/native-items/harvest_moonherb/frame-01.png
+garden-v05/native-items/harvest_devilssnare/frame-01.png
+garden-v05/native-items/harvest_flitterbloom/frame-01.png
+garden-v05/native-items/harvest_shrivelfig/frame-01.png
+garden-v05/native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-01.png
+garden-v05/native-crop-complete/starbean/frame-01.png
+garden-v05/native-crop-complete/moonherb/frame-01.png
+garden-v05/native-items/harvest_valerian/frame-01.png
+garden-v05/native-crop-complete/decor-flow-hw_monster_bookcase/frame-01.png
+garden-v05/native-items/harvest_mistmushroom/frame-01.png
+garden-v05/native-crop-complete/firepepper/frame-01.png
+garden-v05/native-items/harvest_firepepper/frame-01.png
+garden-v05/native-items/harvest_flax/frame-01.png
+garden-v05/native-crop-complete/flow-bubotuber/frame-01.png
+garden-v05/native-crop-complete/silverkelp/frame-01.png
+garden-v05/native-items/harvest_pumpkin/frame-01.png
+garden-v05/native-crop-complete/decor-flow-hw_candy_cauldron/frame-01.png
+garden-v05/native-crop-complete/mistmushroom/frame-01.png
+garden-v05/native-items/harvest_bubotuber/frame-01.png
+garden-v05/native-items/harvest_silverkelp/frame-01.png
+garden-v05/native-items/harvest_maize/frame-01.png
+garden-v05/native-items/harvest_gillyweed/frame-01.png
+garden-v05/native-items/harvest_fluxweed/frame-01.png
+garden-v05/native-items/harvest_mimbulus/frame-01.png
+garden-v05/native-crop-complete/flow-flitterbloom/frame-01.png
+garden-v05/native-items/harvest_lettuce/frame-01.png
+garden-v05/native-items/harvest_sunpetal/frame-01.png
+garden-v05/native-items/produce_three-headed-dog/frame-01.png
+garden-v05/native-items/harvest_oats/frame-01.png
+garden-v05/native-items/harvest_knotgrass/frame-01.png
+garden-v05/native-crop-complete/fluxweed/frame-01.png
+garden-v05/native-items/harvest_dittany/frame-01.png
+garden-v05/native-items/harvest_clover/frame-01.png
+garden-v05/native-crop-complete/devilssnare/frame-01.png
+
+exec
+/bin/zsh -lc 'cat /Users/thachanh/.codex/skills/.system/imagegen/SKILL.md' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 0ms:
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural — candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup — product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup — app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram — diagrams/infographics with structured layout and text.
+- scientific-educational — classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing — campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual — slide, chart, workflow, and data-heavy business visuals.
+- logo-brand — logo/mark exploration, vector-friendly.
+- illustration-story — comics, children’s book art, narrative scenes.
+- stylized-concept — style-driven concept art, 3D/stylized renders.
+- historical-scene — period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization — translate/replace in-image text, preserve layout.
+- identity-preserve — try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit — remove/replace a specific element (including interior swaps).
+- lighting-weather — time-of-day/season/atmosphere changes only.
+- background-extraction — transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer — apply reference style while changing subject/scene.
+- compositing — multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render — drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+
+exec
+/bin/zsh -lc "rg -n 'hagrid|pixel|art' /Users/thachanh/.codex/memories/MEMORY.md" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 0ms:
+3:2026-10-22 21:15:09.462 xcodebuild[86265:12283227]  DVTFilePathFSEvents: Failed to start fs event stream.
+7:2026-10-22 21:15:09.932 xcodebuild[86267:12283261]  DVTFilePathFSEvents: Failed to start fs event stream.
+9:# Task Group: HPVNN Hagrid garden shared pixel grid and click-to-select decorations
+17:- rollout_summaries/2026-10-26T10-48-12-tUMy-hagrid_garden_pixel_grid_and_decoration_selection.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/26/rollout-2026-10-26T17-48-12-01a177d3-3384-79b3-a5f7-2881aa684eca.jsonl, updated_at=2026-10-27T02:42:15+00:00, thread_id=01a177d3-3384-79b3-a5f7-2881aa684eca, local source/import commits `52c9005b` / `af2ae4d1`; no production or physical-iOS proof)
+21:- Hagrid, 64x32, placement-grid, half-cell, decor-dock, `sync-hagrid-garden.mjs`, `52c9005b`, `af2ae4d1`, controls-placement-20261027
+23:## Task 2: Click any decoration to select it for move/store, partial and uncommitted
+27:- rollout_summaries/2026-10-26T10-48-12-tUMy-hagrid_garden_pixel_grid_and_decoration_selection.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/26/rollout-2026-10-26T17-48-12-01a177d3-3384-79b3-a5f7-2881aa684eca.jsonl, updated_at=2026-10-27T02:42:15+00:00, thread_id=01a177d3-3384-79b3-a5f7-2881aa684eca, branch `codex/hagrid-map-decor-selection`; experimental backend edits uncommitted)
+35:- when the user asked for every object to share a pixel ratio so scenery, garden, pens, characters, and decorations can be moved and expanded consistently -> use one shared logical grid while preserving native artwork pixels. [Task 1]
+40:- The authored isometric map cell is 64×32 px; plots had been scaled 1.25 while pens/decorations used the base cell. The completed controls retain native raster pixels, preserve saved half-cell coordinates, and prefer whole-cell positions for new items. Synchronize source with `node scripts/sync-hagrid-garden.mjs <source-worktree>`. [Task 1]
+41:- Committed controls include 64×32 stepped-pixel placement, whole/half-cell movement, drag, keyboard nudge/rotation, Enter confirm, Escape cancel, pan/pinch preservation, cached placement rasters, and owned-only decoration dock actions. Recorded local verification: source 313/313; parity/importer/launcher 17/17; client model 5/5; decoration UI 8/8 source/imported; placement 8/8 at DPR2 and source 8/8 at DPR1. [Task 1]
+49:# Task Group: HPVNN Hagrid artwork/item flow local acceptance and continuation handoff
+50:scope: Use for source-to-runtime Hagrid artwork, crop/item flow, decoration placement/rotation, local emulator/browser acceptance, or a bounded continuation handoff. This is local evidence, not a production or physical-device release.
+51:applies_to: cwd=/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-art-flow-20261026; reuse_rule=confirm the current production baseline and source worktree before edits; edit source then use the existing sync pipeline, and keep local/emulator/browser evidence separate from production/device proof.
+53:## Task 1: Implement and accept Hagrid artwork/item/placement flow locally, success
+57:- rollout_summaries/2026-10-26T02-58-12-6I0c-hagrid_art_flow_local_acceptance_and_handoff.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/26/rollout-2026-10-26T09-58-12-01a17624-e7f8-7133-9ab0-d838c0fa1c3c.jsonl, updated_at=2026-10-26T09:24:02+00:00, thread_id=01a17624-e7f8-7133-9ab0-d838c0fa1c3c, local commit `30e3fad86`; no push/deploy)
+61:- hagrid-art-flow, rotation-preview, harvested-icons, demo-hpvnn-garden, Firestore emulator, browser-acceptance.mjs, WebKit, source-sync, `8fb1a948`, `30e3fad86`, production-baseline
+71:- Edit Hagrid in `/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-art-flow-source-20261026`, then import through the existing sync pipeline; never hand-edit exported runtime files. Source pin was `8fb1a94821d18302c242a088228e6693dc5320bf`; HPVNN baseline was `24a0e76b35a211fb9d5f07c749c20cb06935a93a`. [Task 1]
+86:## Task 1: Assess safe rooting and recovery, partial
+114:- `archive-root probe` is active root-chain execution, not a passive compatibility probe; it may stage files under `/home/owner/share/tmp/sdk_tools` and leave artifacts if interrupted. Samsung does not support firmware downgrade, factory reset does not restore firmware, and the official `T-MSLUABC.zip` is a normal upgrade package, not a proven recovery image. [Task 1]
+123:# Task Group: HPVNN Chocolate Frog portrait cleanup and local collection catalog artwork
+127:## Task 1: Complete and validate Chocolate Frog portrait artwork, success
+135:- chocolate-frog, frog-cards, portrait-cutout, alpha-matte, cutoutPortraitToWebp, artifactArtworkCatalog, S1, S2, image-validation, baseline-gate, `b2c192486`
+140:- when no push/deploy is authorized -> state “Chưa push/deploy” and do not imply a local commit made artwork live. [Task 1]
+144:- `cutout-portrait.mjs` produces 720×720 WebP portrait cutouts with alpha cleanup, edge decontamination, trapped-background removal, and rounded bust bottoms. Artwork lives in `client/features/galleons/store/artwork-collectibles/`; the main catalog is `client/features/galleons/store/model/artifactArtworkCatalog.json`. [Task 1]
+152:# Task Group: Hagrid Farm unique artwork audit and HPVNN WebP runtime refresh
+153:scope: Use for duplicate/missing Hagrid Farm artwork, approved pixel-art production, standalone-source synchronization, or the complete WebP runtime import. This is separate from the `garden-v05` local artifact and does not prove a production or physical-device release.
+154:applies_to: cwd=/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-unique-art and /Users/thachanh/Downloads/hagrid-farm; reuse_rule=edit the standalone source, synchronize it into HPVNN, and separately verify source, imported runtime, browser, and production/device stages.
+156:## Task 1: Audit and replace missing/duplicate Hagrid artwork; refresh runtime WebP, success
+160:- rollout_summaries/2026-10-22T14-11-58-F6DF-hagrid_farm_unique_art_webp_runtime_refresh.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/22/rollout-2026-10-22T21-11-58-01a163f4-5281-7712-8aeb-2e9773f5ed9b.jsonl, updated_at=2026-10-23T02:43:29+00:00, thread_id=01a163f4-5281-7712-8aeb-2e9773f5ed9b, local source/runtime verification; no push/deploy)
+164:- hagrid-farm, unique artwork, pixel-art, dimetric 2:1, binary alpha, nearest-neighbor, runtime-webp, `sync-hagrid-garden.mjs`, shared-fences, forest-clearance, opaque iframe, `bc640f49d`
+169:- when assets must follow the approved guideline -> retain dimetric 2:1 pixel art, fixed palette, binary alpha, nearest-neighbor scaling, correct pivots, and distinct silhouettes. [Task 1]
+173:- Hagrid source ownership is standalone at `/Users/thachanh/Downloads/hagrid-farm`; synchronize into HPVNN with `node scripts/sync-hagrid-garden.mjs <source>`. Do not manually edit vendored runtime files. Final source commit was `d0bae16a39a935c7215edfe8cb7e16efc103a92a`; HPVNN import commit was `bc640f49d`. [Task 1]
+174:- The refreshed runtime has 910 WebP and zero PNG files; import audit found 914 runtime references, 910 files, zero missing files/cross-entity duplicates, 356 resolved species references, and matching hashes. Run `node garden-v05/build-runtime-webp.mjs --check` and inspect `docs/garden/artwork-import-20261023.json`. [Task 1]
+184:scope: Use for standalone Hagrid Farm cosmetic decorations, shop/catalog research, festival artwork generation, importer handoff, asset QA, or an approved Halloween sales release.
+185:applies_to: cwd=/Users/thachanh/Downloads/hagrid-farm and /Users/thachanh/Downloads/HPVNN.nosync; reuse_rule=research/reporting, generated assets, runtime import, in-game/device QA, wallet, and production proof remain separate stages; never manually edit the vendored HPVNN client, and enable sales only after direct owner approval of the price table.
+191:- rollout_summaries/2026-10-20T06-11-52-nduq-hagrid_farm_decoration_and_halloween_assets.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/20/rollout-2026-10-20T13-11-52-01a157f0-0fd0-7510-8b3f-c7b1ba2a640a.jsonl, updated_at=2026-10-23T13:54:46+00:00, thread_id=01a157f0-0fd0-7510-8b3f-c7b1ba2a640a, special-products pack committed locally as `c05209a`)
+195:- hagrid-farm, decorations, special-products, `c05209a`, garden-store-catalog.mjs, decor-runtime.mjs, positions[itemId], `phase4-reconcile.md`, special-products-import-handoff
+201:- rollout_summaries/2026-10-20T06-11-52-nduq-hagrid_farm_decoration_and_halloween_assets.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/20/rollout-2026-10-20T13-11-52-01a157f0-0fd0-7510-8b3f-c7b1ba2a640a.jsonl, updated_at=2026-10-23T13:54:46+00:00, thread_id=01a157f0-0fd0-7510-8b3f-c7b1ba2a640a, local commit `acf4cd5`; pre-release asset proof)
+211:- rollout_summaries/2026-10-23T05-35-11-icq8-hagrid_halloween_sales_approved_production_release.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/23/rollout-2026-10-23T12-35-11-01a16741-8d8d-7643-8285-9ae6ab1f2c14.jsonl, updated_at=2026-10-24T16:04:03+00:00, thread_id=01a16741-8d8d-7643-8285-9ae6ab1f2c14, production release verified; no real-wallet purchase or physical-iPhone acceptance)
+225:- Decorations are cosmetic, one-time Galleons purchases with server-owned ownership/ledger mutations; placement/rotation is server-controlled. Existing source is vendored through `client/public/game/khu-vuon-hagrid/SOURCE.json`; use standalone `/Users/thachanh/Downloads/hagrid-farm`, not the vendored client. The special-products pack is local commit `c05209a`; its import handoff is `docs/special-products-import-handoff.md`. [Task 1]
+234:- Symptom: two-view output has detached neighboring-view seam fragments. Cause: fixed half-width crop. Fix: split masters at a verified transparent central gap and audit source-pixel preservation before packaging. [Task 2]
+242:## Task 1: Plan a standalone plugin and inspect drag/drop seams, partial
+246:- rollout_summaries/2026-10-14T10-44-02-GAt1-artboardtools_macos_plan_drag_drop_partial.md (cwd=/Users/thachanh/Documents/ChatGPT/Dự án mẫu, rollout_path=/Users/thachanh/.codex/sessions/2026/10/14/rollout-2026-10-14T17-44-02-01a13a03-132d-7df1-a3ba-9a23e3d5e067.jsonl, updated_at=2026-10-15T03:51:05+00:00, thread_id=01a13a03-132d-7df1-a3ba-9a23e3d5e067, plan/initial inspection only)
+256:- rollout_summaries/2026-10-15T03-51-09-LnFC-artboardtools_drag_drop_fit_and_push.md (cwd=/Users/thachanh/Documents/ChatGPT/Dự án mẫu, rollout_path=/Users/thachanh/.codex/sessions/2026/10/15/rollout-2026-10-15T10-51-09-01a13daf-6f7e-7c41-b7b3-bb11ecb5ffb8.jsonl, updated_at=2026-10-15T06:22:43+00:00, thread_id=01a13daf-6f7e-7c41-b7b3-bb11ecb5ffb8, Illustrator 2026 QA; commit `5213a33` pushed)
+260:- NSTableView, NSDragOperationLink, documentToken, AIPlacedSuite, TransformArt, contain-fit, `min(boardWidth/artWidth, boardHeight/artHeight)`, `5213a33`, Lazyplugin
+266:- rollout_summaries/2026-10-15T09-00-55-gLP7-artboard_tools_035_print_pdf_and_theme_fixes.md (cwd=/Users/thachanh/Documents/ChatGPT/Dự án mẫu, rollout_path=/Users/thachanh/.codex/sessions/2026/10/15/rollout-2026-10-15T16-00-56-01a13ecb-093e-7602-9b69-8cd4baf46add.jsonl, updated_at=2026-10-16T07:46:31+00:00, thread_id=01a13ecb-093e-7602-9b69-8cd4baf46add, build `0.3.5`/18; commit `35420ee`, no push)
+276:- rollout_summaries/2026-10-16T07-47-28-TTbM-artboardtools_fix_bitmap_pdf_downsampling.md (cwd=/Users/thachanh/Documents/ChatGPT/Dự án mẫu, rollout_path=/Users/thachanh/.codex/sessions/2026/10/16/rollout-2026-10-16T14-47-28-01a143ae-235e-7542-88d7-1557e78c205e.jsonl, updated_at=2026-10-29T01:32:49+00:00, thread_id=01a143ae-235e-7542-88d7-1557e78c205e, real Illustrator/PDF and package regression verification; build `0.3.8`/21; client confirmation pending)
+286:- rollout_summaries/2026-10-16T07-47-28-TTbM-artboardtools_fix_bitmap_pdf_downsampling.md (cwd=/Users/thachanh/Documents/ChatGPT/Dự án mẫu, rollout_path=/Users/thachanh/.codex/sessions/2026/10/16/rollout-2026-10-16T14-47-28-01a143ae-235e-7542-88d7-1557e78c205e.jsonl, updated_at=2026-10-29T01:32:49+00:00, thread_id=01a143ae-235e-7542-88d7-1557e78c205e, initial and retry filtering locally verified)
+290:- selectedFormats, retryOptionsForFailedFiles, exportOptionsForFormats, lastExportFiles, format, artboard, host target filtering
+296:- when asking “thêm chức năng cầm kéo drag and drop hình vào artboard” and automatic scaling -> implement and verify direct original-file placement end-to-end, not a UI-only proposal. [Task 1][Task 2]
+303:- `ATPanelController` reads live checkboxes in `selectedFormats`; `retryOptionsForFailedFiles:` narrows retries to failed format/artboard targets and rejects unscoped failures rather than broadening selection. Host filtering publishes only requested formats; combined PDFs avoid unnecessary per-artboard PDFs. [Task 5]
+305:- Uniform placement is `scale = min(boardWidth/artWidth, boardHeight/artHeight)`, transformed about artwork center then translated to artboard center. Wait for Illustrator’s asynchronous import/selection update, find the new linked item, then fit; immediate fitting is unreliable. Illustrator 2026 QA produced four linked PSD artworks with no duplicates/raster artifacts. [Task 2]
+309:- Related skill: skills/artboardtools-pdf-export-verify/SKILL.md [Task 3][Task 4]
+314:- Symptom: a plan/review is blocked because product brief egress is unauthorized. Fix: keep design review local; do not bypass the authorization boundary. Initial drag inspection did not implement or test a contract, so treat it as partial until source, build, and host QA exist. [Task 1]
+315:- Symptom: fit runs at drag-session end but cannot reliably identify the inserted artwork. Cause: Illustrator import is asynchronous. Fix: use post-drop selection/artwork-state detection before transforming. [Task 2]
+319:# Task Group: Khu Vườn Hagrid local V14–V24.8.5 artifact continuation, embedded HUD QA, and Git setup
+320:scope: Use for the local-only `garden-v05` artifact, greenhouse/forest scenery, QA/emulator review, seed/creature selection, resuming paused V19, or V24.8.5 embedded HUD and isolated repository setup. This is distinct from the HPVNN Game Zone concept and is not proof of account recovery, repository integration, deployment, or production state.
+321:applies_to: cwd=/Users/thachanh/.codex/visualizations/2026/10/13/01a1336a-1a81-7fd1-838a-938d62b6dd7d/garden-v05 (artifact; rollout metadata from HPVNN worktrees 81ef, d939, and 5b33); reuse_rule=read the latest handoff and inspect current artifact/server state first; preserve the protected main-account tab and separate QA/emulator/preview from production before any browser or backend action.
+327:- rollout_summaries/2026-10-13T03-59-14-52DH-hagrid_garden_v14_handoff_and_greenhouse_qa.md (cwd=/Users/thachanh/.codex/worktrees/81ef/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/13/rollout-2026-10-13T10-59-14-01a1336a-1a81-7fd1-838a-938d62b6dd7d.jsonl, updated_at=2026-10-14T04:24:13+00:00, thread_id=01a1336a-1a81-7fd1-838a-938d62b6dd7d, local-only success; 74/74 tests)
+337:- rollout_summaries/2026-10-14T01-59-34-T4uu-hagrid_garden_v14_readonly_status_reconciliation.md (cwd=/Users/thachanh/.codex/worktrees/d939/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/14/rollout-2026-10-14T08-59-34-01a13822-e79b-7a63-9ee4-f9503ae93ada.jsonl, updated_at=2026-10-14T02:00:21+00:00, thread_id=01a13822-e79b-7a63-9ee4-f9503ae93ada, read-only inspection; no files or external state changed)
+343:## Task 3: Reconcile V14, open isolated QA, and capture horizontal tray feedback, partial
+347:- rollout_summaries/2026-10-14T02-13-20-mGi0-hagrid_v14_qa_seed_tray_v19_paused_handoff.md (cwd=/Users/thachanh/.codex/worktrees/5b33/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/14/rollout-2026-10-14T09-13-20-01a1382f-841c-7e20-bfc2-a5d7102ced74.jsonl, updated_at=2026-10-17T04:11:05+00:00, thread_id=01a1382f-841c-7e20-bfc2-a5d7102ced74, QA opened; horizontal tray unimplemented)
+353:- Related skill: skills/hagrid-local-artifact-safe-resume/SKILL.md
+355:## Task 4: Pause partial V19 natural-forest work and preserve recovery evidence, partial
+359:- rollout_summaries/2026-10-14T02-13-20-mGi0-hagrid_v14_qa_seed_tray_v19_paused_handoff.md (cwd=/Users/thachanh/.codex/worktrees/5b33/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/14/rollout-2026-10-14T09-13-20-01a1382f-841c-7e20-bfc2-a5d7102ced74.jsonl, updated_at=2026-10-17T04:11:05+00:00, thread_id=01a1382f-841c-7e20-bfc2-a5d7102ced74, paused by user; V19 full verification outstanding)
+369:- rollout_summaries/2026-10-17T04-12-04-JX2H-hagrid_garden_v24_8_5_qa_hud_git_setup.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/17/rollout-2026-10-17T11-12-04-01a1480f-4d73-7520-ad5b-221575ca7c7b.jsonl, updated_at=2026-10-17T10:13:03+00:00, thread_id=01a1480f-4d73-7520-ad5b-221575ca7c7b, local prototype QA complete)
+375:## Task 6: Create separate prototype Git repository and commit, partial
+379:- rollout_summaries/2026-10-17T04-12-04-JX2H-hagrid_garden_v24_8_5_qa_hud_git_setup.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/17/rollout-2026-10-17T11-12-04-01a1480f-4d73-7520-ad5b-221575ca7c7b.jsonl, updated_at=2026-10-17T10:13:03+00:00, thread_id=01a1480f-4d73-7520-ad5b-221575ca7c7b, Git init/stage/commit blocked before execution)
+390:- when continuing Hagrid, the user required “bản local V14 hiện có” / “giữ dữ liệu hiện tại” -> continue incrementally from the existing artifact and approved visual direction; never restart, replace, reseed, or infer recovery from QA. [Task 1][Task 3]
+395:- when continuing the approved V14 artifact, the user said “Tiếp tục ... từ bản V14 hiện có, không làm lại từ đầu” -> preserve it and wait after a requested short status check; do not begin unsolicited rewrites or features. [Task 2]
+402:- Intended Git root is the artifact parent; branch `codex/prototype-v24.8.5`, with active `garden-v05`, selected `qa-v19`, handoff and manifest; exclude historical ZIPs, recovery copies, `.env*`, and dependencies. The 617-file staging plan is not a commit. [Task 6]
+403:- The frontend artifact was outside Git at `/Users/thachanh/.codex/visualizations/2026/10/13/01a1336a-1a81-7fd1-838a-938d62b6dd7d/garden-v05`; its backend/emulator worktree is separate at `/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-garden-wallet-local-20261013`. Read `HANDOFF.txt`, `README.txt`, and `CONTINUE-PROMPT-v14.txt` before editing; inspect worktree status/HEAD and service identity before touching backend work. [Task 1][Task 3]
+407:- At the V19 handoff, V19 was paused local WIP, with `HANDOFF-V19-PAUSED.md` and hashes/snapshots/`v19-wip.patch` under `qa-v19/paused-state/`. Seven artifact files were partially changed; no repository commit, backend change, deployment, production action, or account-data mutation was made. [Task 4]
+414:- Symptom: packaging expects `README.md`. Cause: this artifact uses `README.txt`. Fix: inspect actual filenames and correct the narrow packaging manifest before packaging. [Task 1]
+415:- Symptom: visible retained client values tempt recovery claims. Cause: a snapshot is partial evidence, not verified ledger/state. Fix: do not reseed or reconstruct from guesses; main-account recovery remains blocked without verified ledger/IDs/timestamps and complete export. [Task 1][Task 3]
+416:- At the V19 pause, the horizontal tray remained unimplemented and natural-forest work was partial; later V24.8.5 QA is newer but does not establish the tray request. Do not assume either is complete: inspect existing tray DOM/CSS before a bounded interaction change; for V19 read the paused handoff, compare hashes, fix repetitive/abrupt exit-path continuity, then rerun full tests and responsive browser QA. V18's 82/82 result cannot validate V19. [Task 3][Task 4]
+427:- rollout_summaries/2026-10-15T06-23-40-gasd-artboardtools_ui_preview_installer_lipo_fix.md (cwd=/Users/thachanh/Documents/ChatGPT/Dự án mẫu, rollout_path=/Users/thachanh/.codex/sessions/2026/10/15/rollout-2026-10-15T13-23-40-01a13e3b-1188-7192-8e9c-12e61802762d.jsonl, updated_at=2026-10-15T08:48:59+00:00, thread_id=01a13e3b-1188-7192-8e9c-12e61802762d, planning evidence at `5213a33`)
+437:- rollout_summaries/2026-10-15T06-23-40-gasd-artboardtools_ui_preview_installer_lipo_fix.md (cwd=/Users/thachanh/Documents/ChatGPT/Dự án mẫu, rollout_path=/Users/thachanh/.codex/sessions/2026/10/15/rollout-2026-10-15T13-23-40-01a13e3b-1188-7192-8e9c-12e61802762d.jsonl, updated_at=2026-10-15T08:48:59+00:00, thread_id=01a13e3b-1188-7192-8e9c-12e61802762d, intended `ArtboardTools/ui-preview/index.html`; completion unconfirmed)
+447:- rollout_summaries/2026-10-15T06-23-40-gasd-artboardtools_ui_preview_installer_lipo_fix.md (cwd=/Users/thachanh/Documents/ChatGPT/Dự án mẫu, rollout_path=/Users/thachanh/.codex/sessions/2026/10/15/rollout-2026-10-15T13-23-40-01a13e3b-1188-7192-8e9c-12e61802762d.jsonl, updated_at=2026-10-15T08:48:59+00:00, thread_id=01a13e3b-1188-7192-8e9c-12e61802762d, package `0.3.4` build `17` locally verified)
+456:- when clarifying “Các module/tool trong cùng panel” -> use compiled-in internal modules, not arbitrary third-party `.aip` loading. [Task 1]
+462:- Keep `ATPanelController` responsible for window lifecycle, document context, shared worker, and shutdown; its private selectors/KVC names are test-sensitive. Start a stable-ID registry with compiled-in `quick`/`library`, persisted visibility/order, and overflow handling. Proposed widths are compact 360–419 pt, standard 420–699 pt, and wide 700+ pt. [Task 1]
+469:- The preview’s final artifact/user approval is unconfirmed; verify its path and behavior before treating it as complete. [Task 2]
+472:# Task Group: HPVNN Game Zone Hagrid Farm concept, pixel-art production, and motion handoff
+473:scope: Use for the planned Happy Farm-style “Khu Vườn Hagrid”, its registry-driven Game Zone integration, the approved dimetric pixel-art standard, or the existing motion-growth prototype. This is planning/prototype evidence only, not repository integration, gameplay authorization, or release proof.
+474:applies_to: cwd=/Users/thachanh/.codex/worktrees/6029/HPVNN.nosync; reuse_rule=continue from the named worktree and `motion-data.json`/`HANDOFF.txt`; preserve the approved 2D dimetric direction, run remaining QA/art cleanup, and do not integrate or deploy without explicit authorization and repository gates.
+480:- rollout_summaries/2026-10-13T01-30-42-tFAl-hagrid_farm_pixel_assets_motion_guideline.md (cwd=/Users/thachanh/.codex/worktrees/6029/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/13/rollout-2026-10-13T08-30-42-01a132e2-1f2e-7533-acc5-6ddda6001249.jsonl, updated_at=2026-10-13T07:10:05+00:00, thread_id=01a132e2-1f2e-7533-acc5-6ddda6001249, planning only; no code changed)
+484:- hagrid-farm, Khu Vườn Hagrid, Game Zone, `HagridFarmGame`, `GameEmbedShell`, `hagrid_farms/{uid}`, authenticated callable, Firestore transaction, request IDs, receipts, BroadcastChannel
+486:## Task 2: Create reusable Hagrid Farm pixel-art asset guideline, success
+490:- rollout_summaries/2026-10-13T01-30-42-tFAl-hagrid_farm_pixel_assets_motion_guideline.md (cwd=/Users/thachanh/.codex/worktrees/6029/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/13/rollout-2026-10-13T08-30-42-01a132e2-1f2e-7533-acc5-6ddda6001249.jsonl, updated_at=2026-10-13T07:10:05+00:00, thread_id=01a132e2-1f2e-7533-acc5-6ddda6001249, guideline Page created)
+494:- pixel-art, dimetric, 2:1, 64×32 tile, 24-color palette, nearest-neighbor, RGBA/sRGB, pivot, sprite sheet, `page_d0e77fe13ebc8191930c1108811ac1d1`, Hagrid pumpkin Puffskein
+496:## Task 3: Build motion/growth prototype and continuation handoff, partial
+500:- rollout_summaries/2026-10-13T01-30-42-tFAl-hagrid_farm_pixel_assets_motion_guideline.md (cwd=/Users/thachanh/.codex/worktrees/6029/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/13/rollout-2026-10-13T08-30-42-01a132e2-1f2e-7533-acc5-6ddda6001249.jsonl, updated_at=2026-10-13T07:10:05+00:00, thread_id=01a132e2-1f2e-7533-acc5-6ddda6001249, useful prototype; browser QA and production art cleanup incomplete)
+510:- when the user requested “một bộ guideline cho việc tạo asset đi, style pixel nhé” -> use a written reusable production standard, not ad-hoc asset prompts. [Task 2]
+511:- after reviewing the prototype, the user said “anh ok, các motion” and requested a continuation prompt -> preserve the approved direction and handoff artifacts rather than restarting generation. [Task 3]
+515:- The proposed MVP is one garden, 6 crops, 3 creatures, orders, 10 early levels, private farm currency, and a 3–5 minute loop. Registry-driven native integration uses `functions/shared/game-registry.json`, byte-identical `client/features/game-zone/model/gameRegistry.json`, `GameEmbedShell.tsx`, route `/phongsinhoatchung/hagrid-farm`, lobby data, and `HagridFarmGame`. [Task 1]
+516:- Keep `hagrid_farms/{uid}` state server-owned: materialize crop/creature state from server timestamps; use authenticated callable actions, Firestore transactions, request IDs/receipts for idempotent retries, and no direct client writes. Keep private farm currency separate from Galleons unless a later authorized economy slice uses the server ledger. [Task 1]
+525:- Source sheets are not production pixel art: roughly 1536×1024/1448×1086, alpha halos/semitransparency, inconsistent frames, and a dragon juvenile/adult facing mismatch remain. Clean pixels, alpha, palette, pivots, and timing before engine integration. Image-generation moderation blocked Hagrid motion; do not bypass safeguards or substitute an unapproved character. [Task 3]
+531:## Task 1: Create the local Hẻm Xéo catalog/artwork plan with item-level sources, success
+535:- rollout_summaries/2026-10-11T10-01-20-cGKV-hem_xeo_catalog_chocolate_frog_500k_gate_pricing.md (cwd=/Users/thachanh/.codex/worktrees/d96f/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/11/rollout-2026-10-11T17-01-20-01a12a68-e730-7c43-b956-923babec99d5.jsonl, updated_at=2026-10-12T04:47:55+00:00, thread_id=01a12a68-e730-7c43-b956-923babec99d5, success; accepted worktree and local artwork polish committed, no push/deploy)
+539:- Hẻm Xéo, `hem-xeo-five-collections-plan`, `codex/hem-xeo-five-collections-plan`, `e4761982`, 120-entry artwork catalog, HarryPotter.com, Noble Collection, `hemXeoDraftManifest.json`, port 3026
+541:## Task 2: Define Chocolate Frog 500K held-legendary gate and 40% collectible pricing, partial
+545:- rollout_summaries/2026-10-11T10-01-20-cGKV-hem_xeo_catalog_chocolate_frog_500k_gate_pricing.md (cwd=/Users/thachanh/.codex/worktrees/d96f/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/11/rollout-2026-10-11T17-01-20-01a12a68-e730-7c43-b956-923babec99d5.jsonl, updated_at=2026-10-12T04:47:55+00:00, thread_id=01a12a68-e730-7c43-b956-923babec99d5, partial; focused tests passed but draft model/UI remained uncommitted and unverified end-to-end)
+561:- The accepted worktree is `/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hem-xeo-five-collections-plan` on `codex/hem-xeo-five-collections-plan`. Local artwork polish is `e4761982d0a92437079af681d047d809bdc5bfab` (`Polish imported Chocolate Frog portraits for local review`); it passed baseline, isolation, Superpowers, code-ceiling, environment, Telegram, Floo, and continuity gates, but was not pushed/deployed. [Task 1]
+562:- Current Hẻm Xéo content rules define five collections and omit the earlier “Hogwarts artifacts” group. Keep canon facts separate from film references, prototypes, and replica/merchandise listings. [Task 1]
+588:## Task 2: Configure macOS-specific project agents and clarify Photoshop/Trash behavior, partial
+592:- rollout_summaries/2026-10-08T10-16-31-T9aY-sku_studio_macos_skills_photoshop_drive_trash.md (cwd=/Users/thachanh/Documents/ChatGPT/Image, rollout_path=/Users/thachanh/.codex/sessions/2026/10/08/rollout-2026-10-08T17-16-31-01a11b03-bac3-7aa3-9a4b-c965d2662bf4.jsonl, updated_at=2026-10-11T09:58:51+00:00, thread_id=01a11b03-bac3-7aa3-9a4b-c965d2662bf4, partial; project guidance/build verified, live Photoshop opening unproven)
+624:scope: Use for the named Hẻm Xéo store, Gringotts item powers, Azkaban/Dementor replay integration, or resuming the local-only `hem-xeo-artifacts` continuation. It is not production-release or completed browser-acceptance evidence.
+625:applies_to: cwd=/Users/thachanh/.codex/worktrees/09b0/HPVNN.nosync (active continuation) and historical /Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hem-xeo-artifacts; reuse_rule=continue in the explicitly requested worktree, rerun the current production-baseline gate, preserve recovery artifacts/unrelated dirt, and keep item mode local-only unless separately authorized.
+627:## Task 1: Plan Hẻm Xéo and integrate real store items locally, partial—strong local proof but blocked on an advancing baseline
+641:- rollout_summaries/2026-10-05T03-35-21-AzXn-hem_xeo_artifacts_production_reconciliation_local_commit.md (cwd=/Users/thachanh/.codex/worktrees/09b0/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/05/rollout-2026-10-05T10-35-21-01a10a21-5fc6-7ff2-b84b-d93f3b8772fd.jsonl, updated_at=2026-10-07T08:46:23+00:00, thread_id=01a10a21-5fc6-7ff2-b84b-d93f3b8772fd, local merge commit; no push/deploy/browser acceptance)
+645:- codex/hem-xeo-artifacts-09b0, a8216d89, 81accd1a, check-task-baseline.mjs, sync-dementor-replay.mjs, Node 24, Firebase emulator, .next route types, port 3026, 19752 ticks
+660:- The reconciled local branch is `codex/hem-xeo-artifacts-09b0` at `a8216d897c59fc90ce7190970c17cfc15c637100`, with production parent `81accd1a8a32fd5b41f74e1fe8b0d68bbaab3afa`; original worktree/recovery artifacts remain preserved, ignored env/artwork/emulator data was not staged. Item mode stays behind `NODE_ENV !== production` and `HPVNN_LOCAL_STORE_PROTOTYPE=true`; classic production routing remains default. [Task 2]
+661:- Strong local evidence after reconciliation: 1,339 client tests; Functions 397 pass/1 existing skip/0 fail; finance 215/215; store Rules 20/20; item Rules 24/24; disposable-UID item-game emulator proof with no wallet/classic-score mutation; classic replay parity in 168 cases/19,752 ticks including seven chapter starts and the 1,000,000 cap. [Task 2]
+715:## Task 5: Audit leaderboard top-50 report and close out local commit, partial
+754:- Ranked replay must reject `finish: true` while verified replay state is alive; reconstruct pit accounting from passed pits on resume, discard stale saves for fresh chapter starts, clear saves on death/finish, and preserve idempotent badge/reward progress. Server seams are `functions/games/dementor-game-handlers.js`, `dementor-progress-core.js`, and `dementor-progress-service.js`; never trust client score or finish flags. [Task 6]
+756:- Chapters 4+ use 100 seeded surprise combinations; Chapters 6–8 add creatures and Voldemort/Avada hazards. Avada bypasses protection/rescue and chapter-specific retries apply. At the 1.5M gate, false/timeout returns to Chapter 8 without the legend reward; true ending preserves the existing reward. Old incompatible saves fail closed with a restart message. [Task 6]
+766:- Symptom: alive runs settle via `finish:true`, resumed saves recount a pit, or fresh starts retain an old save. Cause: replay transition/accounting gaps. Fix: explicitly test all three transitions in focused emulator regressions before accepting ranked-game changes. [Task 6]
+767:- Symptom: replay artifacts or old saves disagree after gameplay changes. Fix: sync and check generated replay artifacts; fail incompatible save/replay versions closed with a restart message rather than trying to reinterpret state. [Task 6]
+825:- The existing web app already exposes an installable PWA manifest and uses Firebase Auth/Firestore/Storage/Functions, but the repository has no native iOS/Xcode project yet. Start with a bounded SwiftUI shell and explicit shared-backend contracts. [Task 1] [ad-hoc note]
+828:# Task Group: HPVNN Game Zone/Floo integration audit and Galleons/Gringotts feature slice, partial
+832:## Task 1: Audit Game Zone source/integration and tagged Preview multiplayer behavior, partial
+840:- Game Zone, `undercover-hogwarts`, `7-potters`, `GameEmbedShell.tsx`, `installGameBridge.ts`, `hpvnTransport.ts`, `ACTION_SUBMIT`, `gameEpoch`, `ROOM_STATE_SYNC`, `whiteGuesses`, Kingsley, authenticated Preview
+842:## Task 2: Server-owned Galleons/Gringotts feature in Floo, partial
+846:- rollout_summaries/2026-09-22T09-07-09-H4ax-galleons_gringotts_floo_production_worktree_partial.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/09/22/rollout-2026-09-22T16-07-09-01a0c85e-7830-75a2-bfe0-52015990fc95.jsonl, updated_at=2026-09-24T02:25:36+00:00, thread_id=01a0c85e-7830-75a2-bfe0-52015990fc95, partial and uncommitted; code-ceiling/export-contract gates pending)
+902:- Commit `9eb5525e` restored Chapter 3 statistics modes (`Top Poster`, `Thanked`, `Top Starter`, `Newest Member`) and source-era navigation/pagination, sticky mobile notch, Hẻm Xéo, moderator inheritance, signatures, polls, profile links/paging, safe historical BBCode/HTML, iShop read-only presentation, and FAQ/theme removal. Client 923/923, archive Python 95/95, TypeScript, `git diff --check`, browser QA at 390×844, and local API checks passed. A clean original for the watermarked `milimet` signature was unavailable and remains an honest missing state. [Task 1]
+914:applies_to: cwd=/Users/thachanh/Documents/CODE BASE/Tools/The New Tools 2026; reuse_rule=verify current source/scripts and artifact version before acting; this group is supported by ad-hoc notes, not an on-disk rollout summary.
+952:- Native `Fill Group` must call `FillSelectedGroup()` rather than `FillCurrentRow()`; empty group values clear core text rather than deleting major art, and successful group fill is silent [Task 1] [ad-hoc note]
+955:- Fill Audit is a native Cocoa dialog in `xcode/Source/TNTPanelController.mm`; `ResetFillAuditHistory()` clears only the current document + CSV audit scope, not live artwork. The audit maps codes from all live group/named-art identifiers rather than relying on `IsProductGroup(...)`. [Task 1] [ad-hoc note]
+1003:- `agy` startup failed with `operation not permitted` while creating `~/.gemini/antigravity-cli`; retry with authorized filesystem access. Do not confuse the CLI with the desktop app.
+1009:applies_to: cwd=/Users/thachanh/Documents/CODE BASE/Tools/The New Tools 2026; reuse_rule=verify current dirty worktree, SDK path, version, and artifact before reuse; package/signature state is time-specific.
+1039:- `rules/UPDATE-LOG.md`, BridgeContract, stable/beta deployment, package artifact, unsigned status
+1046:- when a change ships, record implementation, verification, deployment targets, package artifact, and unsigned status in `rules/UPDATE-LOG.md`. [Task 3]
+1051:- Build/deploy with `env TNT_SDK_ROOT="/Users/thachanh/Documents/CODE BASE/Tools/CSV_ILLUSTRATOR/Adobe Illustrator 2026 SDK" ./xcode/build.sh`; package with the same environment and `./scripts/build_macos_installer.sh`. The production artifact is SDK/Xcode `samplecode/output/mac/debug/EmptyPanel.aip`, never `build/TheNewTools.aip`.
+1053:- Restart Illustrator after deployment to load the new plugin. [Task 2]
+1054:- `rules/UPDATE-LOG.md` contains the dated session record for shortcut ownership, BridgeContract, deployment, package artifact, and unsigned status. [Task 3]
+1060:- Never claim Developer ID signing/notarization for this artifact; do not add broad Gatekeeper-disable commands. [Task 2]
+
+exec
+/bin/zsh -lc 'cat /Users/thachanh/.codex/skills/.system/imagegen/SKILL.md' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 0ms:
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural — candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup — product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup — app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram — diagrams/infographics with structured layout and text.
+- scientific-educational — classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing — campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual — slide, chart, workflow, and data-heavy business visuals.
+- logo-brand — logo/mark exploration, vector-friendly.
+- illustration-story — comics, children’s book art, narrative scenes.
+- stylized-concept — style-driven concept art, 3D/stylized renders.
+- historical-scene — period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization — translate/replace in-image text, preserve layout.
+- identity-preserve — try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit — remove/replace a specific element (including interior swaps).
+- lighting-weather — time-of-day/season/atmosphere changes only.
+- background-extraction — transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer — apply reference style while changing subject/scene.
+- compositing — multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render — drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+
+exec
+/bin/zsh -lc 'git status --short && find .. -name AGENTS.md -print' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 959ms:
+ M garden-v05/build-elf-art.mjs
+ M garden-v05/festival-lazy-art.test.mjs
+ M garden-v05/mobile-game.mjs
+ M garden-v05/scene-renderer.mjs
+?? docs/codex-briefs/friends-harry-s6-last.log
+?? docs/codex-briefs/friends-harry-s6-last.md
+?? docs/codex-briefs/friends-harry-s6-report-try1.md
+?? docs/codex-briefs/friends-harry-s6-report.md
+?? docs/codex-briefs/friends-harry-s6.md
+?? garden-v05/environment/friends/
+?? garden-v05/garden-friends.mjs
+?? garden-v05/garden-friends.test.mjs
+
+exec
+/bin/zsh -lc 'cat docs/art-bible.md && cat garden-v05/palette.mjs' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 0ms:
+# Khu Vườn Hagrid — Art bible
+
+> **Trạng thái:** ĐÃ DUYỆT 17/10/2026 (chủ dự án: "đồng ý và làm tiếp"), các đề xuất [CẦN QUYẾT] được chấp nhận như ghi · 17/10/2026 · Claude Code (Anthropic)
+> Áp dụng cho mọi asset mới, dù do người vẽ, Codex, Claude hay công cụ tạo ảnh làm ra. Mục **[CẦN QUYẾT]** là đề xuất.
+> Số liệu "hiện trạng" đo từ `motion-data.js`, `level-assets.js`, `motion-care-data.js` và mã nguồn ngày 17/10/2026.
+
+## 1. Năm luật cứng
+
+1. **1 pixel nguồn = 1 pixel trong game ở zoom 1.** Không scale lẻ. Zoom camera chỉ dùng hệ số nguyên khi có thể, luôn `imageSmoothingEnabled = false` và `image-rendering: pixelated`.
+2. **Chỉ dùng 32 màu chuẩn** (mục 3): 24 màu sprite + 8 màu cảnh. Thời tiết, đêm và lễ hội đổi **ánh sáng** (lớp phủ, tint), không thêm màu mới vào sprite.
+3. **Nguồn sáng trên–trái.** Mặt hướng trái/trên sáng hơn, bóng đổ xuống phải–dưới. (Đã đối chiếu với lều Hagrid và Bằng Mã.)
+4. **Viền tối chọn lọc:** viền ngoài dùng `#231F2E` hoặc màu tối nhất trong ramp của vật; không viền đen thuần, không viền trắng.
+5. **Ảnh minh hoạ không vào cảnh chơi.** Tranh khổ lớn (bìa, màn chọn lễ hội/thời tiết) đặt trong UI. Mọi thứ đứng trong vườn phải là sprite theo luật 1–4.
+
+## 2. Lưới và phối cảnh
+
+- Isometric 2:1, ô **64 × 32 px** (`tileWidth`/`tileHeight` trong `scene-data`).
+- Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
+- Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
+- Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
+- **Nền mới (04/11/2026):** không bao giờ lặp một ô nền. Cỏ hiện vẽ bằng mảng ngẫu nhiên theo seed (`meadow-ground.mjs`); nền mới vẽ tay (tuyết, băng, cát) thì làm bộ 16 Wang góc cho 2 loại nền, mép khớp nhau theo màu góc, để ghép không thấy lặp.
+- **Hình mới phải khớp ô (27/10/2026):** [guideline khớp ô lưới](grid-fit-guideline.md) — phần có màu nằm trong cột rộng W = (cột + hàng) × 32 px của nền, bảng canvas/pivot/khung mực theo từng nền, kiểm bằng `audit-grid-fit.mjs`. [Danh sách hình đang lệch](grid-fit-misfits.md).
+- Chuẩn lưới 26/10/2026: [quy tắc và kích thước từng vật](garden-grid-20261026.md).
+  Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
+  hệ số phóng riêng cho ô trồng. Bảng `garden-grid-metrics.json` phải được tạo
+  từ bootstrap đầy đủ (cả các override), kiểm tra bằng `export-grid-metrics.mjs --check`.
+- Khi cất trang trí mặc định phải bỏ cả paint/pick và vùng chiếm chỗ; giữ
+  ownership và lưu theo tài khoản. Xem [hợp đồng cất/đặt lại](default-decor-20261026.md).
+
+## 3. Bảng màu chuẩn: 32 màu (24 sprite + 8 cảnh)
+
+Ảnh: [`palette.svg`](palette.svg). Nguồn duy nhất trong code: `garden-v05/palette.mjs`. 24 màu sprite là bảng **đang dùng sẵn** trong cả ba manifest asset.
+
+| Dải | Tối → sáng | Dùng cho |
+|---|---|---|
+| Gỗ · da · bóng tối | `#231F2E` `#4A3042` `#735044` `#A57554` | Viền, gỗ, đất tối, lông nâu |
+| Đá · kim loại · kem | `#41465C` `#687486` `#A6B1AE` `#D6D8BF` | Mái, đá, kim loại, lông sáng |
+| Cỏ · lá | `#24483F` `#3F6A45` `#71934B` `#B0BD67` | Cỏ, lá, rêu |
+| Đất · ánh ấm | `#8B4A3F` `#C97952` `#E7AE73` `#F5D69A` | Đất trồng, da, điểm sáng ấm, chữ vàng UI |
+| Lửa · bí ngô | `#874056` `#C75B4B` `#ED8A45` `#FFC36B` | Bí ngô, lửa, đèn, quả chín |
+| Phép · đêm · nước | `#3E3B70` `#6961A6` `#70A8B6` `#B7DEE0` | Phép thuật, đêm, nước, băng |
+
+**8 màu cảnh** (thêm ngày 17/10/2026, V24.9.2) cho những gì sprite chưa cần: `#142620` rừng đêm sâu · `#4A3C2C` nâu đất trung tính · `#5D6046` `#777044` ô liu · `#B49A66` đá lối đi, rơm · `#E8F0ED` tuyết, điểm sáng trắng · `#B378FF` phép tím sáng · `#E07A9E` hồng (tim, hoa). Chọn bằng cách phân cụm 309 màu lệch cũ; với bảng 24 màu, đá lối đi bị đẩy thành cam và đom đóm tím thành xám.
+
+Quy tắc dùng:
+- Sprite chỉ dùng 24 màu sprite; 8 màu cảnh dành cho địa hình, thời tiết, hiệu ứng.
+- Một vật dùng tối đa **2–3 dải**; đổ bóng bằng màu tối hơn **trong cùng dải**, không trộn xám.
+- Muốn thêm màu thứ 33 thì phải sửa tài liệu này và `palette.mjs` trước.
+
+**Đã sửa (V24.9.2):** khoảng 300 mã màu lệch trong 17 file vẽ bằng code đã được đưa về màu gần nhất trong bảng 32 (đo OKLab; trung vị lệch 0.039, tối đa 0.119). Riêng tuyết của chuồng và cỏ tuyết quanh chuồng được chỉnh tay để không thành màu nước. `palette.test.mjs` sẽ báo lỗi nếu module nào dùng mã màu ngoài bảng. CSS của giao diện **chưa** chuyển, làm ở bước UI.
+
+## 4. Kích thước theo tầng
+
+Đo phần có nội dung (không tính viền trong suốt) ở giai đoạn trưởng thành:
+
+| Tầng | Chiều cao hiện có | Loài | Chiếm chỗ |
+|---|---|---|---|
+| Cây trồng | 27–66 px, rộng ≤ 54 px | 24 loại | 1 ô |
+| Sinh vật nhỏ | 20–39 px | Puffskein, Đào mỏ, Que Xạo | 1 ô |
+| Sinh vật vừa | 58–88 px | Kneazle, Mooncalf, Fwooper, Diricawl | 1–2 ô |
+| Sinh vật lớn | 95–130 px | Bằng-Mã, kỳ lân, vong mã, chó ba đầu, rồng | 2–3 ô |
+| Công trình | ~150–210 px | Lều, nhà kính, cụm lễ hội | Theo bố cục |
+
+Quy tắc:
+- Sinh vật mới phải rơi vào đúng một tầng. Trong một tầng, chênh lệch không quá ±20%.
+- Các giai đoạn lớn lên (sơ sinh → trưởng thành) dùng **cùng mật độ pixel**, chỉ khác số pixel.
+- Tên sinh vật và địa danh theo bản dịch **Lý Lan** (xem `core-design.md` mục 7).
+
+## 5. Chuyển động
+
+| Loại | Số frame tối thiểu | Ghi chú |
+|---|---|---|
+| Lớn lên (cây, sinh vật) | 4 | Hạt → mầm → đang lớn → trưởng thành |
+| Đứng yên (idle) | 2–4, vòng lặp ≥ 1,2 giây | Thở, lá rung; chân/gốc **không** dịch chuyển |
+| Hành động (gặt, cho ăn, vuốt ve) | 4–6 | Có nhịp chuẩn bị → đỉnh → hồi |
+| Hiệu ứng (hạt, sao, tim) | 3–5 | Vẽ bằng pixel trong bảng màu |
+
+- Mọi chuyển động đứng yên đúng khi bật "Giảm chuyển động".
+- Chuyển động vẽ bằng code chỉ dịch **số nguyên pixel**.
+
+**Hiện trạng không đồng đều:**
+- 6 cây đầu (bí ngô, cúc trắng, dâu tây, bạch tiên, puffapod, mandrake) có 12 frame; **18 cây sau chỉ có 4 frame lớn lên, chưa có idle/hành động riêng**.
+- 6 sinh vật đầu có 12 frame; 6 loài sau có 8 frame cộng bộ ăn/chăm sóc riêng.
+- Ưu tiên cho Phase 1: bổ sung idle và hành động cho cây và sinh vật **xuất hiện trong 3 phút đầu và vòng 5 phút**, không làm cả 36 loài một lúc.
+- **Đã làm (V24.9.5):** ba phút đầu chỉ dùng bí ngô và Puffskein, vốn đã đủ 12 frame. Vòng 5 phút ở cấp 1–12 thêm yến mạch, cà rốt, xà lách: `build-idle-assets.mjs` dựng 7 frame mới cho mỗi loại từ chính frame trưởng thành, bằng cách dịch nguyên dải hàng pixel (ngọn lay tối đa 2 px, rướn 1 px). Phần gốc đứng yên: 25% chiều cao, cà rốt 42% để củ không lệch. Không resample, không thêm màu; `idle-assets.test.mjs` kiểm tra. Đây là cách tạm hợp lệ khi chưa có hoạ sĩ; frame vẽ tay vẫn đẹp hơn và có thể thay sau, cùng chỉ số frame.
+- Cây chín ở luống đang chọn phát clip hành động "giật" khoảng 3,4 giây một lần (1,5 giây trong bước gặt của hướng dẫn). Áp dụng cho cả 6 cây gốc, trước đây có clip nhưng chưa phát.
+
+## 6. Giao diện (UI)
+
+- Khung, nút và chữ dùng màu từ bảng chuẩn: nền dải "Cỏ · lá" tối, viền và chữ nhấn dải "Đất · ánh ấm".
+- Icon vật phẩm giữ cùng pixel style và palette của cảnh. Hạt dùng gói có hình cây; nông sản đã gặt dùng icon nguyên liệu riêng; sản vật, thành phẩm và tượng kỷ vật dùng đúng danh tính, không lấy chân dung loài thay nguyên liệu.
+- Giảm emoji hệ thống trong nút chính: emoji hiển thị khác nhau trên iOS và Android, lệch style pixel.
+- Chữ số trong game (`+3`, `2/5`) **[CẦN QUYẾT]**: đề xuất dùng font pixel có hỗ trợ tiếng Việt cho số và nhãn ngắn. Phải kiểm tra đủ dấu tiếng Việt trước khi chọn; nếu không có font đạt thì giữ font hệ thống.
+
+## 7. Ảnh tạo bằng AI
+
+- Được dùng làm **concept** và **ảnh minh hoạ UI** (khổ 640 × 360 như bộ `v24-art`).
+- Muốn đưa một vật từ ảnh AI vào cảnh chơi, phải: vẽ lại hoặc thu về **đúng lưới pixel thật** (không chỉ resize), lượng tử về 24 màu, kiểm tra viền theo luật 4.
+- Không vẽ chữ vào ảnh. Ghi prompt, nguồn và hash vào `provenance.json` như các bộ hiện có.
+
+**Bộ ảnh V24.9.66:** `item-art-manifest.json` và `three-headed-dog-art-generation.json` giữ prompt, nguồn và hash riêng của bộ mới. `build-item-art.mjs` tách atlas tại khe alpha trống, lấy mẫu trên lưới native, lượng tử 24 màu và xuất alpha 0/255; không sửa master. UI và cảnh chơi cùng tra một ID trong `item-art.mjs`, hai góc trang trí có file và bounds riêng. So khác biệt theo danh tính vật phẩm: nhiều góc/frame của cùng món là hợp lệ; hai món khác nhau dùng cùng hình phải được kiểm tra lại. Chạy `verify-image-assets.mjs` và `qa-v19/image-ui-qa.mjs` sau khi nhập bộ ảnh. Kiểm tra cảnh thật vẫn bắt buộc: lớp cache đã dịch tọa độ thì không dịch lần thứ hai khi vẽ sprite vào lớp đó.
+
+**Định dạng chạy game từ V24.9.70:** sau khi xuất PNG native, chạy `node garden-v05/build-runtime-webp.mjs` rồi `--check`. PNG/master vẫn là nguồn phục hồi; chỉ các WebP trong `runtime-webp-manifest.json` được đóng gói. Encoder dùng lossless + exact, đối chiếu toàn bộ RGBA sau giải mã (kể cả RGB ở pixel trong suốt), không resize. URL tải ảnh qua `runtimeImageUrl`, còn ID/file nguồn trong manifest và cache giữ nguyên; revision hash chống dùng nhầm WebP cũ. 8 ảnh WebP có sẵn được giữ nguyên byte, không mã hóa lại. Không đóng gói ảnh contact sheet, atlas nguồn hay master vào game. QA trình duyệt phải có 0 request PNG/JPEG/GIF cho ảnh nội bộ.
+
+**Khu nuôi từ V24.9.70:** không đặt mái trú trong sân. `garden-pen-details.mjs` vẽ rào sát bốn cạnh của sân 5×3; cổng bên tây nối đúng đường vào. Rào sau cao 24px, rào trước cao 18px; toàn bộ rào nằm trong lớp cache dưới thú để không che các loài nhỏ. Giữ nguyên 12 vị trí, hitbox và dữ liệu nuôi. `build-item-art.mjs` xuất 6 icon từ chính hàm vẽ rào, giữ palette/alpha/pivot như các ảnh native khác. Các master mái cũ chỉ là tài liệu phục hồi, không dùng trong cảnh hay ảnh cửa hàng.
+
+**Biên rừng:** dùng `forestRectOutsideBoundary` với `stageBoundary` của mốc mở sân hiện tại, kiểm tra cả hình chữ nhật sprite và phần cao của rào. Áp dụng cho wallpaper, rừng viền và rừng đất chưa mở; nền lặp dùng biên sân cuối. Không đặt cây cũ xuyên mép rào. Cổng mở và bảng tên hai dòng phải được kiểm tra bằng cảnh thật; bảng nằm ngoài rào và có khoảng trống chống cây che.
+
+## 8. Checklist nhận một asset mới
+
+**V24.9.75 — đồ lễ hội:** sprite lớn phải được kiểm đặt/cất/xoay với save có đủ key kỷ vật bằng0; key tồn tại không có nghĩa đã có tượng. Chỉ bảo vệ dải kỷ vật thực tế, không khóa cả cánh đồng mở về sau. Giữ các frame glow/tĩnh đúng metadata, không quảng cáo chớp mắt/đung đưa khi chưa có pose. Atlas decor phải mang rect đúng góc vào cả picker frame và renderer; xác nhận từng rect RGBA trùng native nguồn.
+
+**V24.9.74 — atlas chuyển động:** lưu prompt và hash trước/sau tạo master; không tin số file hoặc lưới atlas danh nghĩa. Xác nhận đủ silhouette/pose, dùng khe alpha hoặc component để tách đúng hình, không cắt theo ô đều khi nguồn lệch. Duyệt ảnh native 1×, giữ pivot chân và palette24. Atlas runtime phải đối chiếu RGBA từng rect với PNG native; kiểm clip được gọi thực tế khi chăm/thu hoạch, hitbox của góc được vẽ riêng và reduced motion. [Đợt hoàn thiện](artwork-completion-20261023.md) đóng toàn bộ backlog ngoài Halloween theo yêu cầu.
+
+**V24.9.73 — icon nhỏ:** vật tư/cao cấp có vùng mực tối đa 40×40 trong canvas 64×64, vừa ô kho 40px ở 1×. Vẽ mảng màu lớn và biểu tượng rõ, bỏ chi tiết nhỏ hơn pixel đích. UI ưu tiên tỷ lệ nguyên và tọa độ nguyên khi ảnh vừa ô; không nhân grayscale/giảm sáng lên ảnh hàng khóa cấp trong cửa hàng. Duyệt ảnh ở native 1× và đúng kích thước CSS trong shop/kho; xem [đợt chất lượng v2](artwork-quality-v2-20261023.md).
+
+**Kiểm kê 23/10/2026:** rà cả hình inline SVG/Canvas và số frame khác nhau trong từng clip, không chỉ số file/hash hoặc tên clip. Artwork vật tư/cao cấp, mở thửa và huy hiệu dùng chung `ITEM_ART` qua `ui-utils.mjs`; không thêm SVG tạm khi chưa có ảnh. Bộ 12 master mới nằm trong `supply-art-sources.json`, được pipeline `build-item-art.mjs` xuất cùng palette/pivot/alpha như các món cũ. [Bản kiểm kê](artwork-audit-20261023.md) phân biệt việc đã thay với phần chuyển động/prop chưa được vẽ riêng; `qa-v19/supply-art-qa.mjs` kiểm cả gallery và shop ở bốn kích thước bằng fixture không kết nối dữ liệu thật.
+
+- [ ] Kích thước đúng tầng (mục 4), pivot ở chân
+- [ ] Khớp nền theo [guideline khớp ô](grid-fit-guideline.md): `audit-grid-fit.mjs` không báo lỗi cho món mới
+- [ ] Chỉ dùng 24 màu; viền và hướng sáng đúng luật
+- [ ] Đặt cạnh 3 asset cũ cùng tầng trong cảnh thật: cùng độ chi tiết, cùng mật độ pixel
+- [ ] Đủ frame theo mục 5; bật "Giảm chuyển động" thì đứng yên
+- [ ] Xem ở zoom nhỏ nhất trên điện thoại 375 px: vẫn nhận ra vật
+- [ ] Xem đủ 4 thời tiết và 3 thời điểm ngày/đêm
+- [ ] Có ghi nguồn (`provenance`) và cập nhật manifest
+
+## 9. Việc kiểm toán cho Phase 1
+
+1. ~~Tạo `palette.mjs`, đưa màu vẽ bằng code về bảng~~ (xong V24.9.2). Còn lại: CSS giao diện.
+2. ~~Bổ sung idle và hành động cho cây và sinh vật của 3 phút đầu và vòng 5 phút~~ (xong V24.9.5). Còn 15 cây từ cấp 28 trở lên: thêm id vào `IDLE_TARGETS` rồi chạy lại script.
+3. So tầng kích thước trong cảnh thật, sửa loài nào lệch quá ±20%.
+4. Thay emoji ở 6 nút chính bằng icon pixel.
+
+Bảng tên chính dùng master ImageGen `masters/hagrid-farm-sign-v01.png`, xuất bằng `build-sign-art.mjs`; native288×288 và chữ trên mặt bảng cùng trục dốc1/2. Giữ chữ ở lớp runtime để không sai dấu. Khi khu nuôi sát rào ngoài, dùng chung cạnh đông và đặt nhãn ra ngoài rào, không vẽ hai hàng rào chồng nhau.
+
+## V24.9.80 — flow sản phẩm và sân trang trí (26/10/2026)
+
+Bộ mới có32 icon nông sản,hai sản vật sửa nhận diện,41 frame của Bubotuber/Mimbulus/Flitterbloom và48 pose hai hướng cho sáu đồ trang trí. Master/prompt ở flow-art-sources.json,harvest-extra-sources.json,decor-flow-sources.json; build-flow-art.mjs và build-decor-flow.mjs giữ provenance,alpha nhị phân,palette24 và pivot chân. Thumbnail phải là PNG native đứng riêng; atlas chỉ dùng cho clip cùng rect đúng, tránh đưa cả sheet vào thẻ shop. Dùng chung scale lấy mẫu và neo chân theo phần thân/gốc,không neo theo hiệu ứng bay.
+
+27 công thức giữ tranh biến thể nhưng luôn hiển thị một trong14 icon thành phẩm chuẩn. Kho dùng12 tượng đã có thay ảnh sản vật cộng cúp. Trước cấp110 giữ hàng kỷ vật cũ; từ110 dùng sân hai hàng. Bảo vệ chân và silhouette từng tượng cùng lối tiếp cận,không khóa cả chiều ngang vì một tượng. Giữ tọa độ đồ mua đã lưu. Mỗi góc của66 món phải còn điểm đặt; test riêng ba món3×2 cùng lúc và round-trip máy chủ qua hàng28. Xoay trong thanh đặt là preview,chỉ nút Đặt lưu.
+
+Kiểm: node garden-v05/build-flow-art.mjs;node garden-v05/build-decor-flow.mjs;node garden-v05/build-runtime-webp.mjs;node garden-v05/verify-image-assets.mjs;GARDEN_HPVNN_ROOT=<paired HPVNN worktree> node --test garden-v05/*.test.mjs. qa-v19/art-flow-qa.mjs kiểm source/import bằng Chrome/WebKit với toàn bộ request chặn về file cục bộ; không lấy fixture làm bằng chứng production.
+
+Với món mới chưa có tọa độ lưu, xoay phải tìm gợi ý hợp lệ gần nhất trên toàn vùng đã mở và đưa camera theo preview. Vật đã bày giữ tìm kiếm cục bộ trong hai ô; không ghi hoặc dời save khi chỉ thử góc. Fixture đầy đủ phải qua restoreChecked/server trước khi dùng làm bằng chứng: giữ ba thửa khởi đầu, tối đa ba loài mỗi thửa và đầy đủ schema sinh vật. Render fixture vẫn tách biệt với kiểm đăng nhập/iframe/save thật.
+// The only colours the garden may draw with (docs/art-bible.md, section 3).
+// SPRITE_PALETTE is the authored sprite set shared by every asset manifest;
+// SCENE_EXTENSION covers terrain, snow and magic effects the sprites never needed.
+// palette.test.mjs fails if any runtime module uses a hex colour outside PALETTE.
+export const SPRITE_PALETTE = Object.freeze([
+  '#231F2E', '#4A3042', '#735044', '#A57554', // gỗ · da · bóng tối
+  '#41465C', '#687486', '#A6B1AE', '#D6D8BF', // đá · kim loại · kem
+  '#24483F', '#3F6A45', '#71934B', '#B0BD67', // cỏ · lá
+  '#8B4A3F', '#C97952', '#E7AE73', '#F5D69A', // đất · ánh ấm
+  '#874056', '#C75B4B', '#ED8A45', '#FFC36B', // lửa · bí ngô
+  '#3E3B70', '#6961A6', '#70A8B6', '#B7DEE0', // phép · đêm · nước
+]);
+
+export const SCENE_EXTENSION = Object.freeze([
+  '#142620', // rừng đêm sâu
+  '#4A3C2C', // nâu đất trung tính
+  '#5D6046', '#777044', // ô liu tối · ô liu
+  '#B49A66', // đá lối đi · rơm
+  '#E8F0ED', // tuyết · điểm sáng trắng
+  '#B378FF', // phép tím sáng
+  '#E07A9E', // hồng: tim, hoa
+]);
+
+export const PALETTE = Object.freeze([...SPRITE_PALETTE, ...SCENE_EXTENSION]);
+
+exec
+/bin/zsh -lc 'cat docs/codex-briefs/friends-harry-s6-report.md && cat garden-v05/environment/friends/prompts.json && ls -l garden-v05/environment/friends/masters' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 0ms:
+# Harry S6 pilot — 2026-11-04
+
+Status: BLOCKED — image generation returned no images. 0/2 candidate sheets generated; no chosen master.
+
+Read `docs/art-bible.md` and `garden-v05/palette.mjs`; visually inspected the approved `v3-dobby.png`, `v3-winky.png`, and Hagrid `gardener_friend/frame-01.png` references. Used the imagegen skill and built-in `image_gen.imagegen` tool with transparent background requested.
+
+Two candidate requests were submitted. Both failed with HTTP 400 `moderation_blocked`, moderation stage `output`, category `other`. The tool provided no image or detailed reason. Candidate B was already in flight when candidate A's failure became available. No further generation or fallback was attempted after both results were known.
+
+| Candidate | Result | Request ID |
+| --- | --- | --- |
+| A | No image returned | `3bc60766-6d5d-4c6a-998f-cdc5142aa2fb` |
+| B | No image returned | `0cc7470d-a1f6-4478-8b21-64a13740fd9e` |
+
+Exact submitted prompts and failure metadata are recorded in `garden-v05/environment/friends/prompts.json`. Its file paths describe intended destinations, not existing artifacts.
+
+`harry.png`, `harry-candidate-a.png`, and `harry-candidate-b.png` were not created. No visual comparison, dimensions, palette, alpha, grid, or pose acceptance could be performed. No substitute art was drawn with code. No resizing, native frames, previews, builders, runtime edits, commits, pushes, or deployments were performed. Existing brief/log files were preserved.
+
+Remaining: generate both actual candidate sheets using an available image tool, inspect their visual and technical compliance, select the better sheet as `harry.png`, and submit the pilot for owner approval before drawing other friends.
+{
+  "entries": [
+    {
+      "date": "2026-11-04",
+      "candidate": "a",
+      "file": "masters/harry-candidate-a.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "prompt": "Use case: stylized-concept. Create candidate A of a production pixel-art character master sheet for Hagrid Farm. Output exactly 1536x1024 PNG, genuine transparent background, no backdrop or shadow. Reference images visible in context: approved Dobby and Winky masters are STYLE REFERENCES ONLY (not characters to include); Hagrid is a scale/style reference only. Match their charming chunky outlined pixel art, warm top-left light, simple joyful storybook faces. Do NOT copy their background, glow, blur or fine texture.\n\nONLY Harry Potter from the BOOKS HP1–HP3, about 12, absolutely no actor likeness or movie styling. Cute chibi, head 40% of standing height, thin limbs and knobbly knees, unruly jet-black hair sticking up behind, large round simple glasses, bright green eyes with pale highlight, tiny geometric nose, friendly grin, thin 2–3 pixel-block lightning scar #C75B4B on forehead. Plain emerald hand-knitted sweater WITHOUT letter, scarlet and gold striped scarf, dark trousers, brown boots. No robes.\n\nTechnical: TRUE PIXEL ART, one uniform grid of EXACT 6x6 output-pixel squares; each square one flat colour, all edges snapped to multiples of 6 measured from each cell top-left. NO antialiasing, intermediate tones, gradients, noise, glow, drop shadows, blur, soft alpha. Hard alpha 0 or 255. Outline one block thick #231F2E. At most 16 opaque colours TOTAL across entire sheet, exclusively these 16: #231F2E #4A3042 #735044 #A57554 #41465C #D6D8BF #24483F #3F6A45 #71934B #C97952 #E7AE73 #F5D69A #874056 #C75B4B #FFC36B #B7DEE0. Pale eye highlights #D6D8BF. No extra colours. Emerald effect via #24483F #3F6A45 #71934B.\n\nLayout: exact 3 columns x 2 rows of 512x512 cells. No visible grid, captions, lettering or decorations. Each cell has >=24px empty margin; body centre local x=256. Standing hair-to-feet height 64–68 blocks (384–408 px), feet at local y=468 (approximately 470). Three-quarter dimetric view toward lower-left, same identity/size in every pose. Row 1 heads at same height and feet baseline. All poses entirely contained.\nCell 1 top-left IDLE: standing, one hand waving, smiling.\nCell 2 top-middle WALK-1: left leg steps clearly toward viewer/lower-left, right leg back; keep head height.\nCell 3 top-right WALK-2: RIGHT leg now forward, left leg back; visibly opposite silhouette from cell 2, same head height.\nCell 4 bottom-left FLY-THROW: Harry sits ASTRIDE a roughly horizontal Nimbus Two Thousand broom, polished dark wood handle pointing left, neat bound twig tail RIGHT, no lettering. His arm drawn back, holding a bright red leather Quaffle about head-size (#C75B4B with #874056 seams/shading), about to throw. Broom lowest point local y~468; whole broom fits margins.\nCell 5 bottom-middle FLY-CATCH: same broom position and scale, twigs RIGHT, Harry sits astride, BOTH hands extended forward LEFT catching the head-size red Quaffle. Clearly two arms and two legs, no duplication.\nCell 6 bottom-right SNOWBALL: standing overarm throwing a small snowball, scarf flying, happy grin. Snowball #D6D8BF with #B7DEE0 shading; not pure white or scene-only colours. Feet y468.\nPrioritise book-faithful charm and readable six distinct poses, consistent large pixel grid. No photorealism or film still. Do not draw any other characters.",
+      "status": "failed: moderation_blocked at output; no image returned",
+      "request_id": "3bc60766-6d5d-4c6a-998f-cdc5142aa2fb"
+    },
+    {
+      "date": "2026-11-04",
+      "candidate": "b",
+      "file": "masters/harry-candidate-b.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "failed: moderation_blocked at output; no image returned",
+      "request_id": "0cc7470d-a1f6-4478-8b21-64a13740fd9e"
+    }
+  ]
+}
+total 0
+
+exec
+/bin/zsh -lc "sed -n '1,85p' docs/art-bible.md && git status --short && rg --files -g AGENTS.md -g '"'!node_modules'"' -g '"'!vendor'"' && sed -n '215,235p' /Users/thachanh/.codex/memories/MEMORY.md" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ exited 1 in 139ms:
+# Khu Vườn Hagrid — Art bible
+
+> **Trạng thái:** ĐÃ DUYỆT 17/10/2026 (chủ dự án: "đồng ý và làm tiếp"), các đề xuất [CẦN QUYẾT] được chấp nhận như ghi · 17/10/2026 · Claude Code (Anthropic)
+> Áp dụng cho mọi asset mới, dù do người vẽ, Codex, Claude hay công cụ tạo ảnh làm ra. Mục **[CẦN QUYẾT]** là đề xuất.
+> Số liệu "hiện trạng" đo từ `motion-data.js`, `level-assets.js`, `motion-care-data.js` và mã nguồn ngày 17/10/2026.
+
+## 1. Năm luật cứng
+
+1. **1 pixel nguồn = 1 pixel trong game ở zoom 1.** Không scale lẻ. Zoom camera chỉ dùng hệ số nguyên khi có thể, luôn `imageSmoothingEnabled = false` và `image-rendering: pixelated`.
+2. **Chỉ dùng 32 màu chuẩn** (mục 3): 24 màu sprite + 8 màu cảnh. Thời tiết, đêm và lễ hội đổi **ánh sáng** (lớp phủ, tint), không thêm màu mới vào sprite.
+3. **Nguồn sáng trên–trái.** Mặt hướng trái/trên sáng hơn, bóng đổ xuống phải–dưới. (Đã đối chiếu với lều Hagrid và Bằng Mã.)
+4. **Viền tối chọn lọc:** viền ngoài dùng `#231F2E` hoặc màu tối nhất trong ramp của vật; không viền đen thuần, không viền trắng.
+5. **Ảnh minh hoạ không vào cảnh chơi.** Tranh khổ lớn (bìa, màn chọn lễ hội/thời tiết) đặt trong UI. Mọi thứ đứng trong vườn phải là sprite theo luật 1–4.
+
+## 2. Lưới và phối cảnh
+
+- Isometric 2:1, ô **64 × 32 px** (`tileWidth`/`tileHeight` trong `scene-data`).
+- Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
+- Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
+- Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
+- **Nền mới (04/11/2026):** không bao giờ lặp một ô nền. Cỏ hiện vẽ bằng mảng ngẫu nhiên theo seed (`meadow-ground.mjs`); nền mới vẽ tay (tuyết, băng, cát) thì làm bộ 16 Wang góc cho 2 loại nền, mép khớp nhau theo màu góc, để ghép không thấy lặp.
+- **Hình mới phải khớp ô (27/10/2026):** [guideline khớp ô lưới](grid-fit-guideline.md) — phần có màu nằm trong cột rộng W = (cột + hàng) × 32 px của nền, bảng canvas/pivot/khung mực theo từng nền, kiểm bằng `audit-grid-fit.mjs`. [Danh sách hình đang lệch](grid-fit-misfits.md).
+- Chuẩn lưới 26/10/2026: [quy tắc và kích thước từng vật](garden-grid-20261026.md).
+  Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
+  hệ số phóng riêng cho ô trồng. Bảng `garden-grid-metrics.json` phải được tạo
+  từ bootstrap đầy đủ (cả các override), kiểm tra bằng `export-grid-metrics.mjs --check`.
+- Khi cất trang trí mặc định phải bỏ cả paint/pick và vùng chiếm chỗ; giữ
+  ownership và lưu theo tài khoản. Xem [hợp đồng cất/đặt lại](default-decor-20261026.md).
+
+## 3. Bảng màu chuẩn: 32 màu (24 sprite + 8 cảnh)
+
+Ảnh: [`palette.svg`](palette.svg). Nguồn duy nhất trong code: `garden-v05/palette.mjs`. 24 màu sprite là bảng **đang dùng sẵn** trong cả ba manifest asset.
+
+| Dải | Tối → sáng | Dùng cho |
+|---|---|---|
+| Gỗ · da · bóng tối | `#231F2E` `#4A3042` `#735044` `#A57554` | Viền, gỗ, đất tối, lông nâu |
+| Đá · kim loại · kem | `#41465C` `#687486` `#A6B1AE` `#D6D8BF` | Mái, đá, kim loại, lông sáng |
+| Cỏ · lá | `#24483F` `#3F6A45` `#71934B` `#B0BD67` | Cỏ, lá, rêu |
+| Đất · ánh ấm | `#8B4A3F` `#C97952` `#E7AE73` `#F5D69A` | Đất trồng, da, điểm sáng ấm, chữ vàng UI |
+| Lửa · bí ngô | `#874056` `#C75B4B` `#ED8A45` `#FFC36B` | Bí ngô, lửa, đèn, quả chín |
+| Phép · đêm · nước | `#3E3B70` `#6961A6` `#70A8B6` `#B7DEE0` | Phép thuật, đêm, nước, băng |
+
+**8 màu cảnh** (thêm ngày 17/10/2026, V24.9.2) cho những gì sprite chưa cần: `#142620` rừng đêm sâu · `#4A3C2C` nâu đất trung tính · `#5D6046` `#777044` ô liu · `#B49A66` đá lối đi, rơm · `#E8F0ED` tuyết, điểm sáng trắng · `#B378FF` phép tím sáng · `#E07A9E` hồng (tim, hoa). Chọn bằng cách phân cụm 309 màu lệch cũ; với bảng 24 màu, đá lối đi bị đẩy thành cam và đom đóm tím thành xám.
+
+Quy tắc dùng:
+- Sprite chỉ dùng 24 màu sprite; 8 màu cảnh dành cho địa hình, thời tiết, hiệu ứng.
+- Một vật dùng tối đa **2–3 dải**; đổ bóng bằng màu tối hơn **trong cùng dải**, không trộn xám.
+- Muốn thêm màu thứ 33 thì phải sửa tài liệu này và `palette.mjs` trước.
+
+**Đã sửa (V24.9.2):** khoảng 300 mã màu lệch trong 17 file vẽ bằng code đã được đưa về màu gần nhất trong bảng 32 (đo OKLab; trung vị lệch 0.039, tối đa 0.119). Riêng tuyết của chuồng và cỏ tuyết quanh chuồng được chỉnh tay để không thành màu nước. `palette.test.mjs` sẽ báo lỗi nếu module nào dùng mã màu ngoài bảng. CSS của giao diện **chưa** chuyển, làm ở bước UI.
+
+## 4. Kích thước theo tầng
+
+Đo phần có nội dung (không tính viền trong suốt) ở giai đoạn trưởng thành:
+
+| Tầng | Chiều cao hiện có | Loài | Chiếm chỗ |
+|---|---|---|---|
+| Cây trồng | 27–66 px, rộng ≤ 54 px | 24 loại | 1 ô |
+| Sinh vật nhỏ | 20–39 px | Puffskein, Đào mỏ, Que Xạo | 1 ô |
+| Sinh vật vừa | 58–88 px | Kneazle, Mooncalf, Fwooper, Diricawl | 1–2 ô |
+| Sinh vật lớn | 95–130 px | Bằng-Mã, kỳ lân, vong mã, chó ba đầu, rồng | 2–3 ô |
+| Công trình | ~150–210 px | Lều, nhà kính, cụm lễ hội | Theo bố cục |
+
+Quy tắc:
+- Sinh vật mới phải rơi vào đúng một tầng. Trong một tầng, chênh lệch không quá ±20%.
+- Các giai đoạn lớn lên (sơ sinh → trưởng thành) dùng **cùng mật độ pixel**, chỉ khác số pixel.
+- Tên sinh vật và địa danh theo bản dịch **Lý Lan** (xem `core-design.md` mục 7).
+
+## 5. Chuyển động
+
+| Loại | Số frame tối thiểu | Ghi chú |
+|---|---|---|
+| Lớn lên (cây, sinh vật) | 4 | Hạt → mầm → đang lớn → trưởng thành |
+| Đứng yên (idle) | 2–4, vòng lặp ≥ 1,2 giây | Thở, lá rung; chân/gốc **không** dịch chuyển |
+| Hành động (gặt, cho ăn, vuốt ve) | 4–6 | Có nhịp chuẩn bị → đỉnh → hồi |
+| Hiệu ứng (hạt, sao, tim) | 3–5 | Vẽ bằng pixel trong bảng màu |
+
+- Mọi chuyển động đứng yên đúng khi bật "Giảm chuyển động".
+- Chuyển động vẽ bằng code chỉ dịch **số nguyên pixel**.
+
+**Hiện trạng không đồng đều:**
+- 6 cây đầu (bí ngô, cúc trắng, dâu tây, bạch tiên, puffapod, mandrake) có 12 frame; **18 cây sau chỉ có 4 frame lớn lên, chưa có idle/hành động riêng**.
+- 6 sinh vật đầu có 12 frame; 6 loài sau có 8 frame cộng bộ ăn/chăm sóc riêng.
+- Ưu tiên cho Phase 1: bổ sung idle và hành động cho cây và sinh vật **xuất hiện trong 3 phút đầu và vòng 5 phút**, không làm cả 36 loài một lúc.
+- **Đã làm (V24.9.5):** ba phút đầu chỉ dùng bí ngô và Puffskein, vốn đã đủ 12 frame. Vòng 5 phút ở cấp 1–12 thêm yến mạch, cà rốt, xà lách: `build-idle-assets.mjs` dựng 7 frame mới cho mỗi loại từ chính frame trưởng thành, bằng cách dịch nguyên dải hàng pixel (ngọn lay tối đa 2 px, rướn 1 px). Phần gốc đứng yên: 25% chiều cao, cà rốt 42% để củ không lệch. Không resample, không thêm màu; `idle-assets.test.mjs` kiểm tra. Đây là cách tạm hợp lệ khi chưa có hoạ sĩ; frame vẽ tay vẫn đẹp hơn và có thể thay sau, cùng chỉ số frame.
+ M garden-v05/build-elf-art.mjs
+ M garden-v05/festival-lazy-art.test.mjs
+ M garden-v05/mobile-game.mjs
+ M garden-v05/scene-renderer.mjs
+?? docs/codex-briefs/friends-harry-s6-last.log
+?? docs/codex-briefs/friends-harry-s6-last.md
+?? docs/codex-briefs/friends-harry-s6-report-try1.md
+?? docs/codex-briefs/friends-harry-s6-report.md
+?? docs/codex-briefs/friends-harry-s6.md
+?? garden-v05/environment/friends/
+?? garden-v05/garden-friends.mjs
+?? garden-v05/garden-friends.test.mjs
+
+codex
+Tiểu nữ đã đọc đủ quy chuẩn và xem ba ảnh tham chiếu. Repo có báo cáo lần trước cả hai yêu cầu tạo ảnh đều bị công cụ chặn, chưa có master nào; tiểu nữ sẽ thử công cụ ở phiên này và dừng nếu vẫn không trả ảnh, đúng điều kiện của brief.
+exec
+/bin/zsh -lc "sed -n '215,235p' /Users/thachanh/.codex/memories/MEMORY.md" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 0ms:
+- Halloween, Hagrid, 90400G, garden-2026-10-24-halloween-approved, scenario-1061, Firebase, Cloud Run, `85ae8f24e`, `2204a3844`
+
+## User preferences
+
+- when decorative items are “để dùng cho mục đích trang trí bán trong cửa hàng” -> keep decoration-only items separate from gameplay powers, XP, production, or rewards. [Task 1]
+- when the user corrected “ủa em còn 25 món h alloween chưa vẽ xong hả?” -> keep Halloween separate from special products, verify collection counts before reporting done, and proactively provide exact absolute paths and commit IDs when asked “em để đâu vậy”. [Task 2]
+- when the user says “Duyệt bảng giá này và mở bán” and then “làm đi” -> direct approval of the exact table authorizes enabling sales and completing deployment; do not infer approval from prior plans. [Task 3]
+
+## Reusable knowledge
+
+- Decorations are cosmetic, one-time Galleons purchases with server-owned ownership/ledger mutations; placement/rotation is server-controlled. Existing source is vendored through `client/public/game/khu-vuon-hagrid/SOURCE.json`; use standalone `/Users/thachanh/Downloads/hagrid-farm`, not the vendored client. The special-products pack is local commit `c05209a`; its import handoff is `docs/special-products-import-handoff.md`. [Task 1]
+- The Halloween `festival` collection is separate from the 30 `sp_*` special products. `garden-v05/halloween-assets/manifest.json` is the source of truth; integrate with `node garden-v05/special-products-assets/import-runtime.mjs garden-v05/halloween-assets festival`, importing only allowlisted native/frame files plus metadata. Do not ship masters, prompts, QA, thumbnails, or research logs. [Task 2]
+- Final local package: 30 items/60 views, 300 native PNGs, 30 spritesheets, 120 thumbnails, and 450 verified hashes. Split masters at a transparent central gap, not equal half-widths; this prevents detached seam fragments. Preserve the five original seasonal masters byte-for-byte. [Task 2]
+- The approved release enabled 25 new Halloween items totaling 90,400 G while preserving five existing Halloween IDs/prices. Catalog version `garden-2026-10-24-halloween-approved`, module `24.9.76`; scenario 1061 proved 25 purchases, debit/ledger totals, idempotent retries, wrong-price/off-season rejection, and ownership retention in an isolated emulator. [Task 3]
+- Production proof was Cloud Run `hpvnn-client-production-00476-tnw` at 100% traffic with image/source `85ae8f24e`; all three aliases returned that commit, all six Hagrid Functions were ACTIVE, and unauthenticated calls returned 401. Revalidate live before reuse. [Task 3]
+
+## Failures and how to do differently
+
+- Do not treat the later special-products collection as a replacement for Halloween. [Task 1][Task 2]
+- Symptom: two-view output has detached neighboring-view seam fragments. Cause: fixed half-width crop. Fix: split masters at a verified transparent central gap and audit source-pixel preservation before packaging. [Task 2]
+- Asset QA alone does not prove runtime import, in-game rendering, phone QA, connected wallet, or production. This later release proved catalog/deployment behavior but still did not claim a real-wallet purchase or physical iPhone acceptance. [Task 2][Task 3]
+
+2026-11-04T15:51:59.155738Z ERROR codex_core::tools::router: error=image generation failed: http 400 Bad Request: Some("{\n  \"error\": {\n    \"message\": \"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 01d5d141-a989-40d5-8179-5430987cd082.\",\n    \"type\": \"image_generation_user_error\",\n    \"param\": null,\n    \"code\": \"moderation_blocked\",\n    \"moderation_details\": {\n      \"moderation_stage\": \"output\",\n      \"categories\": [\n        \"other\"\n      ]\n    }\n  }\n}")
+codex
+Công cụ vừa trả lỗi `moderation_blocked` ở bước xuất ảnh, không tạo được ứng viên A. Tiểu nữ dừng tại đây theo brief, giữ nguyên bản ghi cũ và bổ sung prompt cùng mã lỗi vào báo cáo; hiện vẫn có 0/2 ứng viên.
+exec
+/bin/zsh -lc "python3 -c 'import json
+from pathlib import Path
+p=Path('\\''garden-v05/environment/friends/prompts.json'\\'')
+data=json.loads(p.read_text()) if p.exists() else {'\\''entries'\\'': []}
+data['\\''entries'\\''].append(json.loads(\"{\\\"date\\\":\\\"2026-11-04\\\",\\\"attempt\\\":\\\"current-session-retry\\\",\\\"candidate\\\":\\\"a\\\",\\\"file\\\":\\\"masters/harry-candidate-a.png\\\",\\\"tool\\\":\\\"image_gen.imagegen (built-in)\\\",\\\"prompt\\\":\\\"Use case: stylized-concept. Generate candidate A: a book-faithful Harry Potter pixel-art master sprite sheet for Hagrid Farm, matching the approved Dobby and Winky STYLE references visible in conversation: charming chibi proportions, chunky stepped silhouettes, dark outline, warm top-left illumination. Hagrid is a style companion reference only. Include ONLY Harry, no other characters. Transparent background, no ground or shadow. Exact output 1536 x 1024 PNG, 3 columns x 2 rows of 512 x 512 cells, no drawn cell borders or labels.\\\\nCharacter: Harry Potter from books HP1–HP3, about 12 years old, cute chibi with head approximately 40% of height, thin body and knobbly knees. Untidy jet-black hair sticking up at the back, simple round glasses, bright green eyes with pale white-looking highlight, thin lightning scar of 2–3 blocks #C75B4B, friendly grin. Simple geometric face, no realistic nose or jaw, no actor likeness, no film styling or robes. Mrs Weasley'\\''s plain emerald-green hand-knitted sweater WITHOUT a letter; scarlet-and-gold striped Gryffindor scarf, dark trousers, brown boots.\\\\nTechnical: TRUE pixel art drawn exclusively in exact flat 6 x 6 output-pixel blocks. Every edge aligned to multiples of 6 from each cell'\\''s own top-left. One-block outline #231F2E. No antialiasing, gradients, blur, glow, drop shadows, sub-block noise or intermediate tones. Hard alpha 0/255. At most these 16 opaque colours on the entire sheet, all from sprite palette: #231F2E #4A3042 #735044 #A57554 #41465C #D6D8BF #24483F #3F6A45 #71934B #C97952 #E7AE73 #F5D69A #874056 #C75B4B #FFC36B #B7DEE0. Eye highlight #D6D8BF, green iris #71934B; sweater #24483F/#3F6A45/#71934B.\\\\nComposition: three-quarter view toward lower-left, consistent identity and scale. Standing Harry 64–68 blocks tall (384–408 pixels), local body center x about 256, feet or broom lowest point at local y468 (approximately 470). At least 24 px transparent margin in every cell. Keep the three top-row heads at identical height. Broom roughly horizontal with dark polished wooden handle to LEFT and neat bound twig tail to RIGHT; Nimbus Two Thousand, no lettering. Quaffle is a bright red leather ball about head-size, #C75B4B with #874056 shading/seams.\\\\nExact poses in reading order:\\\\n1 top-left idle: standing, one hand waving, friendly smile.\\\\n2 top-middle walk-1: left foot clearly forward toward lower-left, right foot back.\\\\n3 top-right walk-2: right foot clearly forward, left foot back; visibly opposite legs to walk-1, same head height.\\\\n4 bottom-left fly-throw: sitting astride the horizontal broom, arm back holding Quaffle about to throw; twigs on right.\\\\n5 bottom-middle fly-catch: same broom position, sitting astride, both hands forward to the left catching Quaffle; twigs on right.\\\\n6 bottom-right snowball: standing throwing a small snowball overarm, scarf flying. Snowball pale #D6D8BF with #B7DEE0 shading.\\\\nNo text, watermark, backdrop, realism, film still, extra props, or extra poses. Preserve book charm and exact square grid above all.\\\",\\\"transparent_background\\\":true,\\\"status\\\":\\\"failed: moderation_blocked at output; no image returned\\\",\\\"request_id\\\":\\\"01d5d141-a989-40d5-8179-5430987cd082\\\",\\\"followup\\\":\\\"Stopped per user brief; candidate B not requested in this attempt.\\\"}\"))
+p.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\\''\\n'\\'')
+'" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 0ms:
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/docs/codex-briefs/friends-harry-s6-report.md
+diff --git a/docs/codex-briefs/friends-harry-s6-report.md b/docs/codex-briefs/friends-harry-s6-report.md
+index 847b9a1d249c6229fcbfd805f41a2d3002ad9637..94473a4c5f666a35e34874ce3d1eab22bd471928
+--- a/docs/codex-briefs/friends-harry-s6-report.md
++++ b/docs/codex-briefs/friends-harry-s6-report.md
+@@ -16,3 +16,13 @@
+ `harry.png`, `harry-candidate-a.png`, and `harry-candidate-b.png` were not created. No visual comparison, dimensions, palette, alpha, grid, or pose acceptance could be performed. No substitute art was drawn with code. No resizing, native frames, previews, builders, runtime edits, commits, pushes, or deployments were performed. Existing brief/log files were preserved.
+ 
+ Remaining: generate both actual candidate sheets using an available image tool, inspect their visual and technical compliance, select the better sheet as `harry.png`, and submit the pilot for owner approval before drawing other friends.
++
++## Current-session retry — 2026-11-04
++
++Status remains BLOCKED: 0/2 candidate sheets exist; no master selected.
++
++Re-read the art bible and sprite palette and visually inspected all three requested reference images. Submitted one new candidate A request using the built-in `image_gen.imagegen` tool, requesting genuine transparency and the full six-pose, 1536 × 1024, 6 px grid specification. The tool returned HTTP 400 `moderation_blocked`, at moderation stage `output`, category `other`, request ID `01d5d141-a989-40d5-8179-5430987cd082`. No image or more specific explanation was returned.
++
++Stopped immediately under the brief's instruction to stop if generation or usage is unavailable. Candidate B was not requested in this retry. No fallback or substitute artwork was attempted. The exact new prompt and failure metadata were appended to `garden-v05/environment/friends/prompts.json`; previous entries were preserved.
++
++Verification: the masters directory remains empty. Dimensions, hard alpha, palette count, exact 6 × 6 blocks, margins, poses, and visual quality cannot be validated without generated images. No resizing, previews, native frames, builders, `.mjs`/CSS/backend/HPVNN edits, commits, pushes, or deployments were performed by this session. Pre-existing unrelated work was preserved.
+
+exec
+/bin/zsh -lc "python3 -c 'import json; from pathlib import Path; p=Path(\"garden-v05/environment/friends/prompts.json\"); d=json.loads(p.read_text()); print(\"Prompt entries:\", len(d[\"entries\"])); print(\"Latest request:\", d[\"entries\"][-1][\"request_id\"]); print(\"Masters:\", [x.name for x in Path(\"garden-v05/environment/friends/masters\").iterdir()])' && git diff --check" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6
+ succeeded in 474ms:
+Prompt entries: 3
+Latest request: 01d5d141-a989-40d5-8179-5430987cd082
+Masters: []
+
+codex
+Bệ hạ, công cụ tạo ảnh trả lỗi `moderation_blocked`, không xuất ảnh. Tiểu nữ đã dừng đúng brief: **0/2 ứng viên**, chưa có `harry.png`.
+
+Đã lưu prompt và mã lỗi vào [prompts.json](garden-v05/environment/friends/prompts.json), cập nhật [báo cáo](docs/codex-briefs/friends-harry-s6-report.md). Không tạo ảnh bằng code, resize, chạy builder hay commit/push/deploy.
+
+
+tokens used
+41,820
+Bệ hạ, công cụ tạo ảnh trả lỗi `moderation_blocked`, không xuất ảnh. Tiểu nữ đã dừng đúng brief: **0/2 ứng viên**, chưa có `harry.png`.
+
+Đã lưu prompt và mã lỗi vào [prompts.json](garden-v05/environment/friends/prompts.json), cập nhật [báo cáo](docs/codex-briefs/friends-harry-s6-report.md). Không tạo ảnh bằng code, resize, chạy builder hay commit/push/deploy.
+
+

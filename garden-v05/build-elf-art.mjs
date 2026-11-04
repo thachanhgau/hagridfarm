@@ -33,6 +33,19 @@ export const ELF_SOURCES = {
   // 25.0 S5: ma lùm (a 2 × 2 sheet), drawn in the weeds of a neglected plot.
   'ma-lum': [['environment/duty/masters/ma-lum.png', ['idle', 'chew-1', 'chew-2', 'flung'], 'idle', 36, 2]],
 };
+// 25.0 S6: visiting friends, written to environment/friends/<id>/ (Fred and George share `fred`). Chibi children stand a
+// little taller than Dobby.
+const F = 'environment/friends/masters/';
+export const FRIEND_SOURCES = {
+  harry: [[F + 'harry.png', ['idle', 'walk-1', 'walk-2', 'fly-throw', 'fly-catch', 'snowball'], 'idle', 66]],
+  ron: [[F + 'ron.png', ['idle', 'walk-1', 'walk-2', 'fly-throw', 'fly-catch', 'snowball'], 'idle', 68]],
+  hermione: [[F + 'hermione.png', ['idle', 'walk-1', 'walk-2', 'read', 'knit', 'snowball'], 'idle', 64]],
+  neville: [[F + 'neville.png', ['idle', 'walk-1', 'walk-2', 'tend', 'pull', 'cheer'], 'idle', 66]],
+  luna: [[F + 'luna.png', ['idle', 'walk-1', 'walk-2', 'feed', 'read', 'cheer'], 'idle', 64]],
+  ginny: [[F + 'ginny.png', ['idle', 'walk-1', 'walk-2', 'snowball', 'fly-throw', 'cheer'], 'idle', 62]],
+  fred: [[F + 'fred.png', ['idle', 'walk-1', 'walk-2', 'light', 'cheer', 'wave'], 'idle', 70]],
+};
+const dirOf = (id) => (FRIEND_SOURCES[id] ? 'environment/friends' : 'environment/elves');
 
 // Redmean distance: close to perceived difference for this palette (OKLab tipped skin to orange and lost Dobby's hat).
 function nearest(r, g, b) {
@@ -91,9 +104,9 @@ export function tidy(px, n) {
 }
 
 export async function buildElf(id) {
-  await fs.mkdir(path.join(root, 'environment/elves', id), {recursive: true});
+  await fs.mkdir(path.join(root, dirOf(id), id), {recursive: true});
   const sheets = [];
-  for (const [masterFile, poses, ref, height, cols = 3] of ELF_SOURCES[id]) {
+  for (const [masterFile, poses, ref, height, cols = 3] of ELF_SOURCES[id] || FRIEND_SOURCES[id]) {
     const master = await fs.readFile(path.join(root, masterFile));
     const rows = Math.ceil(poses.length / cols), meta = await sharp(master).metadata();
     // A master drawn at another size (the ma lùm came at 627 px cells) is first brought to 512 px cells.
@@ -115,7 +128,7 @@ export async function buildElf(id) {
         if (cx < 1 || cy < 1 || cx >= CANVAS.width - 1 || cy > CANVAS.pivotY) throw Error(`${id}/${pose}: ink leaves the canvas margin`);
         out.set([...RGB[c], 255], (cy * CANVAS.width + cx) * 4);
       }
-      const file = `environment/elves/${id}/${pose}.png`, png = await sharp(out, {raw: {width: CANVAS.width, height: CANVAS.height, channels: 4}}).png().toBuffer();
+      const file = `${dirOf(id)}/${id}/${pose}.png`, png = await sharp(out, {raw: {width: CANVAS.width, height: CANVAS.height, channels: 4}}).png().toBuffer();
       await fs.writeFile(path.join(root, file), png);
       frames.push({file, cell: cellOf(index), sha256: sha256(png)});
     }
@@ -125,11 +138,13 @@ export async function buildElf(id) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const ids = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(ELF_SOURCES);
   const elves = [];
-  for (const id of process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(ELF_SOURCES)) elves.push(await buildElf(id));
-  const file = path.join(root, 'environment/elves/provenance.json');
-  const provenance = JSON.parse(await fs.readFile(file, 'utf8'));
-  provenance.export = {tool: 'build-elf-art.mjs', method: 'area average to a reference ink height, palette24 (redmean), lone pixels absorbed unless a strong accent, #231F2E rim', elves};
+  for (const id of ids) elves.push(await buildElf(id));
+  // Friends and elves keep separate provenance files; one run builds one kind.
+  const file = path.join(root, dirOf(ids[0]), 'provenance.json');
+  const provenance = await fs.readFile(file, 'utf8').then(JSON.parse, () => ({}));
+  provenance.export = {tool: 'build-elf-art.mjs', method: 'area average to a reference ink height, palette24 (redmean), lone pixels absorbed unless a strong accent, #231F2E rim', elves: [...(provenance.export?.elves || []).filter((e) => !ids.includes(e.id)), ...elves]};
   await fs.writeFile(file, JSON.stringify(provenance, null, 2) + '\n');
   console.log(elves.map((e) => `${e.id}: ${e.sheets.map((s) => `${path.basename(s.master)} ×${s.scale}`).join(', ')}`).join('\n'));
 }
