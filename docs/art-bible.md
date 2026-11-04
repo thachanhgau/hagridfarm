@@ -18,6 +18,7 @@
 - Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
 - Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
 - Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
+- **Nền mới (04/11/2026):** không bao giờ lặp một ô nền. Cỏ hiện vẽ bằng mảng ngẫu nhiên theo seed (`meadow-ground.mjs`); nền mới vẽ tay (tuyết, băng, cát) thì làm bộ 16 Wang góc cho 2 loại nền, mép khớp nhau theo màu góc, để ghép không thấy lặp.
 - **Hình mới phải khớp ô (27/10/2026):** [guideline khớp ô lưới](grid-fit-guideline.md) — phần có màu nằm trong cột rộng W = (cột + hàng) × 32 px của nền, bảng canvas/pivot/khung mực theo từng nền, kiểm bằng `audit-grid-fit.mjs`. [Danh sách hình đang lệch](grid-fit-misfits.md).
 - Chuẩn lưới 26/10/2026: [quy tắc và kích thước từng vật](garden-grid-20261026.md).
   Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
