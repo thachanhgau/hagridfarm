@@ -9,7 +9,7 @@
 
 **Khán giả chính [CẦN QUYẾT]**
 - Đề xuất: thành viên HPVN đang hoạt động, trưởng thành, yêu Harry Potter, **không nhất thiết chơi game nhiều**. Họ mở diễn đàn hằng ngày, có 2–5 phút rảnh.
-- Hệ quả: chạm là hiểu; không bắt đọc; không phạt khi vắng mặt (cây chín không héo, sinh vật không chết).
+- Hệ quả: chạm là hiểu; không bắt đọc; không phạt khi vắng mặt (cây chín không héo, sinh vật không chết). Từ cấp 130 là «bậc trách nhiệm»: xem `big-update-25-roadmap.md` §5 (duyệt 04/11/2026).
 
 **Không phải là:** game cày cuốc, game PvP, game nạp tiền.
 
