@@ -1,6 +1,8 @@
 import {packTotal} from './ui-utils.mjs?v=24.9.96';
 const PROJECT='demo-hpvnn-garden', UID='garden-demo-member';
-const BASE='http://127.0.0.1:5001/'+PROJECT+'/asia-southeast1/';
+// ?functionsPort=5002: a second Functions emulator beside the shared Firestore/Auth one (one per worktree).
+const PORT=/^\d{4,5}$/.test(new URLSearchParams(globalThis.location?.search||'').get('functionsPort')||'')?new URLSearchParams(globalThis.location.search).get('functionsPort'):'5001';
+const BASE='http://127.0.0.1:'+PORT+'/'+PROJECT+'/asia-southeast1/';
 // This token is an emulator fixture. It is neither an HPVN login nor a production credential.
 function fixtureToken(uid){const encode=v=>btoa(JSON.stringify(v)).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'');const now=Math.floor(Date.now()/1000);return encode({alg:'none',typ:'JWT'})+'.'+encode({iss:'https://securetoken.google.com/'+PROJECT,aud:PROJECT,sub:uid,user_id:uid,iat:now,exp:now+3600,auth_time:now,email:'garden-demo@example.test',email_verified:true,firebase:{sign_in_provider:'password',identities:{email:['garden-demo@example.test']}}})+'.';}
 // randomUUID exists only on HTTPS and localhost; a phone on the LAN (plain http) gets the
