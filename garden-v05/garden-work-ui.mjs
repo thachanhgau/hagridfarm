@@ -95,7 +95,7 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
    const b=el('button',{type:'button',class:'gp-tab','aria-pressed':String(tab===id),onclick:()=>{tab=id;render();}});b.append(pixelIcon(glyph,2),el('span',{text:name}));return b;
   }));
   if(!snap?.orders){body.replaceChildren(el('p',{class:'meta',text:'Việc của bác Hagrid cần kết nối tài khoản.'}));return;}
-  body.replaceChildren(...(tab==='orders'?orders(snap):tab==='mastery'?mastery(snap):cup(snap)));
+  body.replaceChildren(...(tab==='orders'?[...orders(snap),...frames(snap,'level')]:tab==='mastery'?mastery(snap):cup(snap))); // 25.0 S5: level frames under the orders
  }
  return {
   open(){render();dialog.showModal();},

@@ -7779,6 +7779,234 @@
    "roomierFootprint": null
   },
   {
+   "group": "store-decoration",
+   "id": "ev_elf_tent",
+   "label": "Lều gia tinh",
+   "facing": "default",
+   "file": "decor-assets/native/ev_elf_tent.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    176
+   ],
+   "pivot": [
+    64,
+    160
+   ],
+   "ink": {
+    "x": 8,
+    "y": 40,
+    "w": 112,
+    "h": 120,
+    "foot": 160
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 144,
+    "frontY": 176
+   },
+   "flat2x2": 0.42,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     144
+    ],
+    "pivot": [
+     64,
+     128
+    ],
+    "ink": [
+     112,
+     120
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "ev_elf_tent",
+   "label": "Lều gia tinh",
+   "facing": "right",
+   "file": "decor-assets/native/ev_elf_tent_right.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    176
+   ],
+   "pivot": [
+    64,
+    160
+   ],
+   "ink": {
+    "x": 8,
+    "y": 46,
+    "w": 112,
+    "h": 114,
+    "foot": 160
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 144,
+    "frontY": 176
+   },
+   "flat2x2": 0.473,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     144
+    ],
+    "pivot": [
+     64,
+     128
+    ],
+    "ink": [
+     112,
+     114
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "ev_kitchen_corner",
+   "label": "Góc bếp",
+   "facing": "default",
+   "file": "decor-assets/native/ev_kitchen_corner.png",
+   "anchor": "foot",
+   "footprint": [
+    1,
+    2
+   ],
+   "ground": {
+    "width": 96,
+    "height": 48
+   },
+   "canvas": [
+    96,
+    112
+   ],
+   "pivot": [
+    48,
+    96
+   ],
+   "ink": {
+    "x": 8,
+    "y": 4,
+    "w": 81,
+    "h": 92,
+    "foot": 96
+   },
+   "allowed": {
+    "left": 0,
+    "right": 96,
+    "centreY": 80,
+    "frontY": 104
+   },
+   "flat2x2": 0.23,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     96,
+     112
+    ],
+    "pivot": [
+     48,
+     96
+    ],
+    "ink": [
+     81,
+     92
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "ev_kitchen_corner",
+   "label": "Góc bếp",
+   "facing": "right",
+   "file": "decor-assets/native/ev_kitchen_corner_right.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    1
+   ],
+   "ground": {
+    "width": 96,
+    "height": 48
+   },
+   "canvas": [
+    96,
+    112
+   ],
+   "pivot": [
+    48,
+    96
+   ],
+   "ink": {
+    "x": 9,
+    "y": 4,
+    "w": 78,
+    "h": 92,
+    "foot": 96
+   },
+   "allowed": {
+    "left": 0,
+    "right": 96,
+    "centreY": 80,
+    "frontY": 104
+   },
+   "flat2x2": 0.23,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     96,
+     112
+    ],
+    "pivot": [
+     48,
+     96
+    ],
+    "ink": [
+     78,
+     92
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
    "group": "earned-decoration",
    "id": "decoration-3",
    "label": "Viền luống đá cuội",

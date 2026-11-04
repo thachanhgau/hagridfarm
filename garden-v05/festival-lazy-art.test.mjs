@@ -14,7 +14,7 @@ const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.jso
 
 function recordingCanvas() {
   const requested = new Set();
-  const context = new Proxy({}, {get: (o, k) => k === 'measureText' ? () => ({width: 64}) : (o[k] ??= () => {})});
+  const context = new Proxy({}, {get: (o, k) => k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
   class RecordingImage {
     naturalWidth = 64; naturalHeight = 64;
     set src(value) { requested.add(value); queueMicrotask(() => this.onload?.()); }
@@ -48,4 +48,52 @@ test('25.0 budget: festival art waits until its season or a placed piece draws i
   assert.ok(requested.has(runtimeImageUrl('world-v241/hero-halloween.png')), 'the open festival loads its hero');
   assert.ok(urlsOf(piece).some(url => requested.has(url)), 'a placed festival piece loads after its season');
   assert.ok(!requested.has(runtimeImageUrl('world-v241/hero-yule.png')), 'other festivals stay unloaded');
+});
+
+test('25.0 budget: event pieces and Dobby\'s work poses load only when first drawn', async () => {
+  const {elfWorkFiles} = await import('./garden-elves.mjs');
+  const event = manifest.items.filter(a => a.collection === 'event');
+  assert.deepEqual(event.map(a => a.id).sort(), ['ev_dark_dobby_red', 'ev_dobby_spring_rider', 'ev_elf_tent', 'ev_kitchen_corner']);
+  const urlsOf = a => [a.file, ...(a.frames ?? []), a.rightFile, ...(a.rightFrames ?? [])].filter(Boolean).map(runtimeImageUrl);
+  const {canvas, requested} = recordingCanvas();
+  const garden = await createGarden(canvas, {decorAssets: manifest.items});
+  const work = elfWorkFiles().map(runtimeImageUrl);
+  assert.deepEqual(work, ['environment/elves/dobby/harvest.png', 'environment/elves/dobby/feed.png'].map(runtimeImageUrl));
+  for (const url of [...work, ...event.flatMap(urlsOf)]) assert.ok(!requested.has(url), url + ' loaded before the first frame');
+  const state = E.testProfile(100, 1_700_000_000_000);
+  const tent = event.find(a => a.id === 'ev_elf_tent');
+  garden.render(state, {
+    now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none',
+    decorations: {owned: [tent.id], placements: [tent.id], positions: {[tent.id]: [2.5, 26]}, rotations: {}},
+  });
+  assert.ok(urlsOf(tent).some(url => requested.has(url)), 'a placed Lều gia tinh loads');
+});
+
+test('25.0 S3 budget: winter scenery (lều tuyết, hồ băng, rừng đông) loads only while winter is on', async () => {
+  const winterKit = await import('./garden-winter.mjs'), {WINTER_FILES, winterSeason} = winterKit;
+  assert.equal(WINTER_FILES.length, 6);
+  for (const file of WINTER_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
+  const winterUrls = WINTER_FILES.map(runtimeImageUrl);
+  const {canvas, requested} = recordingCanvas();
+  const garden = await createGarden(canvas, {decorAssets: manifest.items});
+  for (const url of winterUrls) assert.ok(!requested.has(url), url + ' loaded before the first frame');
+  const state = E.testProfile(100, 1_700_000_000_000);
+  garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', weatherMode: 'snow', winterKit, winter: winterSeason(Date.parse('2026-11-30T12:00:00+07:00'))});
+  for (const url of winterUrls) assert.ok(!requested.has(url), url + ' loaded outside winter (snow chosen in November)');
+  garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', winterKit, winter: winterSeason(Date.parse('2026-12-01T12:00:00+07:00'))});
+  for (const url of winterUrls) assert.ok(requested.has(url), url + ' requested once winter starts');
+});
+
+test('25.0 S4 budget: Norbert loads only once he is drawn (S7 hatches him)', async () => {
+  const {norbertFiles} = await import('./garden-elves.mjs');
+  const urls = norbertFiles().map(runtimeImageUrl);
+  assert.equal(urls.length, 6);
+  for (const file of norbertFiles()) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
+  const {canvas, requested} = recordingCanvas();
+  const garden = await createGarden(canvas, {decorAssets: manifest.items});
+  const state = E.testProfile(100, 1_700_000_000_000);
+  garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none'});
+  for (const url of urls) assert.ok(!requested.has(url), url + ' loaded without Norbert');
+  garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', norbert: true});
+  assert.ok(requested.has(runtimeImageUrl('environment/elves/norbert/idle.png')), 'a hatched Norbert loads');
 });

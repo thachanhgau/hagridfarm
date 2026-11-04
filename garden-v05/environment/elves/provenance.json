@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "date": "2026-11-04",
+  "generator": "image_gen.imagegen, built-in",
+  "selection": "Candidate B: clearer eye circles, flatter cream tunic, complementary sock strides; candidate A was also inspected after reduction.",
+  "sources": [
+    {
+      "file": "garden-v05/environment/elves/masters/dobby-candidate-a.png",
+      "sha256": "d1f99cf86574c0fb72eedab5987ffe676ec724f4cab6f3fae8c48a22a40b2adf"
+    },
+    {
+      "file": "garden-v05/environment/elves/masters/dobby-candidate-b.png",
+      "sha256": "c6cad4a83b62a30dac1d3fdcc11acbd05af184dfc97c3c5653b3bb77a15ef9a6"
+    }
+  ],
+  "processing": {
+    "alphaThreshold": 128,
+    "resampling": "nearest-neighbour",
+    "palette": "garden-v05/palette.mjs SPRITE_PALETTE (24)",
+    "quantization": "nearest RGB palette colour, no dithering",
+    "backgroundRgbWhenTransparent": [
+      0,
+      0,
+      0
+    ],
+    "nativeScale": 0.1,
+    "alignment": "Body foot-center estimates map to x32; lowest opaque row58. Walk filenames match the forward sock, green left / purple right.",
+    "sourceRowBoundary": 460
+  },
+  "frames": [
+    {
+      "file": "garden-v05/environment/elves/dobby/idle.png",
+      "source": "garden-v05/environment/elves/masters/dobby-candidate-b.png",
+      "sourceRect": {
+        "left": 126,
+        "top": 32,
+        "width": 317,
+        "height": 416
+      },
+      "scale": 0.1,
+      "resized": {
+        "width": 32,
+        "height": 42
+      },
+      "offset": {
+        "x": 16,
+        "y": 17
+      },
+      "bounds": [
+        16,
+        17,
+        47,
+        58
+      ],
+      "inkWidth": 32,
+      "inkHeight": 42,
+      "colours": [
+        "#231F2E",
+        "#24483F",
+        "#3E3B70",
+        "#3F6A45",
+        "#41465C",
+        "#4A3042",
+        "#687486",
+        "#6961A6",
+        "#71934B",
+        "#735044",
+        "#8B4A3F",
+        "#A57554",
+        "#A6B1AE",
+        "#B0BD67",
+        "#C75B4B",
+        "#C97952",
+        "#D6D8BF",
+        "#E7AE73",
+        "#ED8A45",
+        "#F5D69A"
+      ],
+      "sha256": "5552b7a536be69031ebfdd70d93ba5fa762a6ed5ad5800525c57a3409bc1fb19",
+      "pivot": [
+        32,
+        58
+      ]
+    },
+    {
+      "file": "garden-v05/environment/elves/dobby/walk-2.png",
+      "source": "garden-v05/environment/elves/masters/dobby-candidate-b.png",
+      "sourceRect": {
+        "left": 576,
+        "top": 35,
+        "width": 318,
+        "height": 413
+      },
+      "scale": 0.1,
+      "resized": {
+        "width": 32,
+        "height": 41
+      },
+      "offset": {
+        "x": 16,
+        "y": 18
+      },
+      "bounds": [
+        16,
+        18,
+        47,
+        58
+      ],
+      "inkWidth": 32,
+      "inkHeight": 41,
+      "colours": [
+        "#231F2E",
+        "#3E3B70",
+        "#3F6A45",
+        "#41465C",
+        "#4A3042",
+        "#687486",
+        "#6961A6",
+        "#71934B",
+        "#735044",
+        "#8B4A3F",
+        "#A57554",
+        "#A6B1AE",
+        "#B0BD67",
+        "#C75B4B",
+        "#C97952",
+        "#D6D8BF",
+        "#E7AE73",
+        "#ED8A45",
+        "#F5D69A"
+      ],
+      "sha256": "15cac75e6f34b4793c0a172557cef25b2f85e31b6662173b68a35d1d9b6efb04",
+      "pivot": [
+        32,
+        58
+      ]
+    },
+    {
+      "file": "garden-v05/environment/elves/dobby/walk-1.png",
+      "source": "garden-v05/environment/elves/masters/dobby-candidate-b.png",
+      "sourceRect": {
+        "left": 1068,
+        "top": 32,
+        "width": 309,
+        "height": 410
+      },
+      "scale": 0.1,
+      "resized": {
+        "width": 31,
+        "height": 41
+      },
+      "offset": {
+        "x": 17,
+        "y": 18
+      },
+      "bounds": [
+        17,
+        18,
+        47,
+        58
+      ],
+      "inkWidth": 31,
+      "inkHeight": 41,
+      "colours": [
+        "#231F2E",
+        "#24483F",
+        "#3E3B70",
+        "#3F6A45",
+        "#41465C",
+        "#4A3042",
+        "#687486",
+        "#6961A6",
+        "#71934B",
+        "#735044",
+        "#8B4A3F",
+        "#A57554",
+        "#A6B1AE",
+        "#B0BD67",
+        "#C75B4B",
+        "#C97952",
+        "#D6D8BF",
+        "#E7AE73",
+        "#ED8A45",
+        "#F5D69A",
+        "#FFC36B"
+      ],
+      "sha256": "8a290c6222454652d681754325ce80d40f7f29f8b3bb5a249f94ac5fa30426af",
+      "pivot": [
+        32,
+        58
+      ]
+    },
+    {
+      "file": "garden-v05/environment/elves/dobby/sweep.png",
+      "source": "garden-v05/environment/elves/masters/dobby-candidate-b.png",
+      "sourceRect": {
+        "left": 47,
+        "top": 533,
+        "width": 389,
+        "height": 458
+      },
+      "scale": 0.1,
+      "resized": {
+        "width": 39,
+        "height": 46
+      },
+      "offset": {
+        "x": 6,
+        "y": 13
+      },
+      "bounds": [
+        6,
+        15,
+        44,
+        58
+      ],
+      "inkWidth": 39,
+      "inkHeight": 44,
+      "colours": [
+        "#231F2E",
+        "#3E3B70",
+        "#3F6A45",
+        "#41465C",
+        "#4A3042",
+        "#687486",
+        "#6961A6",
+        "#70A8B6",
+        "#71934B",
+        "#735044",
+        "#8B4A3F",
+        "#A57554",
+        "#A6B1AE",
+        "#B0BD67",
+        "#C75B4B",
+        "#C97952",
+        "#D6D8BF",
+        "#E7AE73",
+        "#ED8A45",
+        "#F5D69A",
+        "#FFC36B"
+      ],
+      "sha256": "c242d37ba5d86b020653ff92dd2b5add99c955c50d08e21af39b3ae335ba8bd0",
+      "pivot": [
+        32,
+        58
+      ],
+      "pixelReposition": "Generated lower snow/bristle-tip patch kept in place while the remaining sprite moves down 2px, aligning sock soles and snow to row 58."
+    },
+    {
+      "file": "garden-v05/environment/elves/dobby/water.png",
+      "source": "garden-v05/environment/elves/masters/dobby-candidate-b.png",
+      "sourceRect": {
+        "left": 520,
+        "top": 532,
+        "width": 374,
+        "height": 439
+      },
+      "scale": 0.1,
+      "resized": {
+        "width": 37,
+        "height": 44
+      },
+      "offset": {
+        "x": 9,
+        "y": 15
+      },
+      "bounds": [
+        9,
+        15,
+        45,
+        58
+      ],
+      "inkWidth": 37,
+      "inkHeight": 44,
+      "colours": [
+        "#231F2E",
+        "#24483F",
+        "#3E3B70",
+        "#3F6A45",
+        "#41465C",
+        "#4A3042",
+        "#687486",
+        "#6961A6",
+        "#70A8B6",
+        "#71934B",
+        "#735044",
+        "#8B4A3F",
+        "#A57554",
+        "#A6B1AE",
+        "#B0BD67",
+        "#C75B4B",
+        "#C97952",
+        "#D6D8BF",
+        "#E7AE73",
+        "#ED8A45",
+        "#F5D69A",
+        "#FFC36B"
+      ],
+      "sha256": "18a2d739e677733ba65e0c528adc2e7cf6cc70910b7201ac18ed6c1dc81234b2",
+      "pivot": [
+        32,
+        58
+      ]
+    },
+    {
+      "file": "garden-v05/environment/elves/dobby/carry.png",
+      "source": "garden-v05/environment/elves/masters/dobby-candidate-b.png",
+      "sourceRect": {
+        "left": 1068,
+        "top": 473,
+        "width": 307,
+        "height": 498
+      },
+      "scale": 0.1,
+      "resized": {
+        "width": 31,
+        "height": 50
+      },
+      "offset": {
+        "x": 18,
+        "y": 9
+      },
+      "bounds": [
+        18,
+        9,
+        48,
+        58
+      ],
+      "inkWidth": 31,
+      "inkHeight": 50,
+      "colours": [
+        "#231F2E",
+        "#24483F",
+        "#3E3B70",
+        "#3F6A45",
+        "#41465C",
+        "#4A3042",
+        "#687486",
+        "#6961A6",
+        "#71934B",
+        "#735044",
+        "#8B4A3F",
+        "#A57554",
+        "#A6B1AE",
+        "#B0BD67",
+        "#C75B4B",
+        "#C97952",
+        "#D6D8BF",
+        "#E7AE73",
+        "#ED8A45",
+        "#F5D69A"
+      ],
+      "sha256": "7661a256b5587c7b3e657aeaef88407d3a097a2283fbddede0b4fa55d991ccee",
+      "pivot": [
+        32,
+        58
+      ]
+    }
+  ],
+  "preview": {
+    "file": "docs/codex-briefs/elves-dobby-pilot-preview.png",
+    "sha256": "9f7124ac77a5f61f7f3793c06eb1c4212a3583ed51563ed1f4d31d7038246251",
+    "background": "#71934B",
+    "layout": "Top: six 1x frames in file order. Middle: 3x2 at 4x in same order. Bottom left: 1x Dobby/Hagrid; bottom right: 4x Dobby/Hagrid. Feet share their ground line.",
+    "hagridSource": "garden-v05/native-complete-objects/gardener_friend/frame-01.png",
+    "hagridSha256": "6dedf8e885c63f5dac87881006a965501540493a0eaa9e623b5bbcfc7c2ee17c",
+    "hagridLowestOpaqueRow": 99
+  },
+  "checks": [
+    {
+      "name": "idle",
+      "bounds": [
+        16,
+        17,
+        47,
+        58
+      ],
+      "inkWidth": 32,
+      "inkHeight": 42,
+      "colours": 20,
+      "sha256": "5552b7a536be69031ebfdd70d93ba5fa762a6ed5ad5800525c57a3409bc1fb19"
+    },
+    {
+      "name": "walk-1",
+      "bounds": [
+        17,
+        18,
+        47,
+        58
+      ],
+      "inkWidth": 31,
+      "inkHeight": 41,
+      "colours": 21,
+      "sha256": "8a290c6222454652d681754325ce80d40f7f29f8b3bb5a249f94ac5fa30426af"
+    },
+    {
+      "name": "walk-2",
+      "bounds": [
+        16,
+        18,
+        47,
+        58
+      ],
+      "inkWidth": 32,
+      "inkHeight": 41,
+      "colours": 19,
+      "sha256": "15cac75e6f34b4793c0a172557cef25b2f85e31b6662173b68a35d1d9b6efb04"
+    },
+    {
+      "name": "sweep",
+      "bounds": [
+        6,
+        15,
+        44,
+        58
+      ],
+      "inkWidth": 39,
+      "inkHeight": 44,
+      "colours": 21,
+      "sha256": "c242d37ba5d86b020653ff92dd2b5add99c955c50d08e21af39b3ae335ba8bd0"
+    },
+    {
+      "name": "water",
+      "bounds": [
+        9,
+        15,
+        45,
+        58
+      ],
+      "inkWidth": 37,
+      "inkHeight": 44,
+      "colours": 22,
+      "sha256": "18a2d739e677733ba65e0c528adc2e7cf6cc70910b7201ac18ed6c1dc81234b2"
+    },
+    {
+      "name": "carry",
+      "bounds": [
+        18,
+        9,
+        48,
+        58
+      ],
+      "inkWidth": 31,
+      "inkHeight": 50,
+      "colours": 20,
+      "sha256": "7661a256b5587c7b3e657aeaef88407d3a097a2283fbddede0b4fa55d991ccee"
+    }
+  ],
+  "export": {
+    "tool": "build-elf-art.mjs",
+    "method": "area average to a reference ink height, palette24 (redmean), lone pixels absorbed unless a strong accent, #231F2E rim",
+    "elves": [
+      {
+        "id": "ma-lum",
+        "canvas": {
+          "width": 80,
+          "height": 80,
+          "pivotX": 40,
+          "pivotY": 76
+        },
+        "sheets": [
+          {
+            "master": "environment/duty/masters/ma-lum.png",
+            "masterSha256": "dbad462d998ac9f608d7fdf9846ffd9a61b9e7fd969c7da320522ed15de1a0c1",
+            "scale": 0.1146,
+            "frames": [
+              {
+                "file": "environment/elves/ma-lum/idle.png",
+                "cell": [
+                  0,
+                  0
+                ],
+                "sha256": "3b8f8b3d603a2d87d7fa656245fe99ca21b7d3324c86d8fc7b56fe8015234cec"
+              },
+              {
+                "file": "environment/elves/ma-lum/chew-1.png",
+                "cell": [
+                  512,
+                  0
+                ],
+                "sha256": "d55d2a4c02e872eb753c0fa14f538a733d193e39a438e9f9e1e61e49548610aa"
+              },
+              {
+                "file": "environment/elves/ma-lum/chew-2.png",
+                "cell": [
+                  0,
+                  512
+                ],
+                "sha256": "39c0ebb6cfc0abac55f6f292bcc9c57c5fbe23aee7113129cfd49ca2aba3f89b"
+              },
+              {
+                "file": "environment/elves/ma-lum/flung.png",
+                "cell": [
+                  512,
+                  512
+                ],
+                "sha256": "6d92ad679f24fe72412537f10aa11451573a7b1fff30a5c8aa3a641cf42e1e4f"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1522 @@
+Reading additional input from stdin...
+OpenAI Codex v0.164.0-alpha.11.1
+--------
+workdir: /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1a68c-624f-7820-bbdf-b865eea8a222
+--------
+user
+# Codex brief — Hagrid Farm 25.0 S4: baby Norbert, the garden companion (04/11/2026)
+
+You are Codex in the Hagrid Farm repo. You only draw masters; Claude Code resizes them into game sprites itself.
+Follow `docs/art-bible.md`. Match the look and quality of the approved house-elf masters
+(`garden-v05/environment/elves/masters/v3-dobby.png`) — same pixel style, same light, same outline.
+
+## Character (HP1, book version — never film CGI)
+
+**Norbert**, Hagrid's baby **Hắc long Na Uy** (Norwegian Ridgeback), a few weeks old: skinny jet-black body
+(`#231F2E`/`#41465C` with `#687486` highlights), a row of small bony ridges down the back, big bony spiky wings
+folded like a wet umbrella, a long snout with wide nostrils, stubby horn buds, large bulging **orange** eyes with a white
+highlight, a thin tail with a small spade tip. Cute and mischievous, not scary. Smaller than Dobby.
+
+## Style rules (so the resize stays clean)
+
+- True pixel art on **one square grid of exactly 6 × 6 px blocks** (every block one flat colour, edges on multiples of 6 from
+  the cell's top-left). No anti-aliasing, gradients, blur, glow, drop shadow or sub-block noise. Transparent background.
+- Norbert about **48–54 blocks tall** standing (head top to feet). 1-block dark outline; on the black body use `#41465C`
+  rim-lights on the top-left edges so the shape reads on dark grass. Colours only from the 24 sprite colours in
+  `garden-v05/palette.mjs`, ≤ 14 on the sheet.
+
+## Sheet
+
+`garden-v05/environment/elves/masters/v4-norbert.png`: 1536 × 1024 PNG, a 3 × 2 grid of 512 × 512 cells, one pose per cell in
+this order (row 1 left→right, then row 2); feet at y ≈ 470, body centred on x = 256, ≥ 24 px empty margin. Three-quarter view
+toward the lower-left.
+
+1. `idle` — sitting up, wings folded, looking up happily.
+2. `walk-1` — waddling, left foot forward.
+3. `walk-2` — waddling, right foot forward (legs visibly different from walk-1, head at the same height).
+4. `sleep` — curled up in a ball, tail around the snout, eyes shut, wings folded.
+5. `play` — pouncing on a small red wool ball (`#C75B4B`) with the front paws, tail up.
+6. `puff` — sneezing a small puff of grey smoke with two tiny orange sparks from the nostrils (no big fire).
+
+Make two candidates with your image tool and keep the better (cuter, closest to the 6 px grid). Append the prompt to
+`garden-v05/environment/elves/prompts.json` (keep earlier entries). Do not resize, write native frames or previews, or run
+builders.
+
+Hard rules: no commit/push/deploy; do not edit `.mjs`, CSS, `functions/` or HPVNN; if image generation or usage is
+unavailable, stop and say so — never fake art with code. Report in `docs/codex-briefs/norbert-s4-report.md`.
+2026-11-04T12:33:02.750630Z ERROR codex_memories_write::phase2: Phase 2 no changes
+codex
+Bệ hạ, tiểu nữ sẽ đọc art bible, palette và master Dobby, rồi dùng skill imagegen tạo hai ứng viên, chọn bản phù hợp hơn và ghi prompt cùng báo cáo.
+exec
+/bin/zsh -lc "pwd; rg --files -g AGENTS.md -g art-bible.md -g prompts.json -g palette.mjs -g v3-dobby.png -g '*norbert*' -g SKILL.md ." in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ succeeded in 0ms:
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_f2.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_f3.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_right_f2.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_right_f3.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_right_f0.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_right_f1.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_right.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_f0.webp
+./garden-v05/runtime-webp/decor-assets/native/sp_norbert_egg_f1.webp
+./garden-v05/special-products-assets/spritesheets/sp_norbert_egg.png
+./garden-v05/special-products-assets/thumbnails/2x/sp_norbert_egg.png
+./garden-v05/special-products-assets/thumbnails/2x/sp_norbert_egg_right.png
+./garden-v05/special-products-assets/thumbnails/3x/sp_norbert_egg.png
+./garden-v05/special-products-assets/thumbnails/3x/sp_norbert_egg_right.png
+./garden-v05/special-products-assets/masters/sp_norbert_egg.png
+./docs/codex-briefs/norbert-s4.md
+./docs/codex-briefs/norbert-s4-last.log
+./garden-v05/special-products-assets/masters/variants/sp_norbert_egg-v1.png
+./garden-v05/special-products-assets/prompts.json
+./docs/art-bible.md
+./garden-v05/special-products-assets/native/sp_norbert_egg_right_f3.png
+./garden-v05/special-products-assets/native/sp_norbert_egg_right_f2.png
+./garden-v05/special-products-assets/native/sp_norbert_egg_right_f0.png
+./garden-v05/special-products-assets/native/sp_norbert_egg_right_f1.png
+./garden-v05/special-products-assets/native/sp_norbert_egg.png
+./garden-v05/special-products-assets/native/sp_norbert_egg_right.png
+./garden-v05/special-products-assets/native/sp_norbert_egg_f0.png
+./garden-v05/special-products-assets/native/sp_norbert_egg_f1.png
+./garden-v05/special-products-assets/native/sp_norbert_egg_f3.png
+./garden-v05/special-products-assets/native/sp_norbert_egg_f2.png
+./garden-v05/palette.mjs
+./garden-v05/halloween-assets/prompts.json
+./garden-v05/environment/elves/prompts.json
+./garden-v05/environment/visit/prompts.json
+./garden-v05/decor-assets/prompts.json
+./garden-v05/environment/elves/masters/v3-dobby.png
+./garden-v05/decor-assets/native/sp_norbert_egg_right_f3.png
+./garden-v05/decor-assets/native/sp_norbert_egg_right_f2.png
+./garden-v05/decor-assets/native/sp_norbert_egg_right_f0.png
+./garden-v05/decor-assets/native/sp_norbert_egg_right_f1.png
+./garden-v05/decor-assets/native/sp_norbert_egg.png
+./garden-v05/decor-assets/native/sp_norbert_egg_right.png
+./garden-v05/decor-assets/native/sp_norbert_egg_f0.png
+./garden-v05/decor-assets/native/sp_norbert_egg_f1.png
+./garden-v05/decor-assets/native/sp_norbert_egg_f3.png
+./garden-v05/decor-assets/native/sp_norbert_egg_f2.png
+
+exec
+/bin/zsh -lc 'cat /Users/thachanh/.codex/skills/.system/imagegen/SKILL.md' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ succeeded in 0ms:
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural — candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup — product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup — app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram — diagrams/infographics with structured layout and text.
+- scientific-educational — classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing — campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual — slide, chart, workflow, and data-heavy business visuals.
+- logo-brand — logo/mark exploration, vector-friendly.
+- illustration-story — comics, children’s book art, narrative scenes.
+- stylized-concept — style-driven concept art, 3D/stylized renders.
+- historical-scene — period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization — translate/replace in-image text, preserve layout.
+- identity-preserve — try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit — remove/replace a specific element (including interior swaps).
+- lighting-weather — time-of-day/season/atmosphere changes only.
+- background-extraction — transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer — apply reference style while changing subject/scene.
+- compositing — multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render — drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+
+exec
+/bin/zsh -lc "rg -n 'hagrid|pixel|artwork' /Users/thachanh/.codex/memories/MEMORY.md" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ succeeded in 0ms:
+9:# Task Group: HPVNN Hagrid garden shared pixel grid and click-to-select decorations
+17:- rollout_summaries/2026-10-26T10-48-12-tUMy-hagrid_garden_pixel_grid_and_decoration_selection.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/26/rollout-2026-10-26T17-48-12-01a177d3-3384-79b3-a5f7-2881aa684eca.jsonl, updated_at=2026-10-27T02:42:15+00:00, thread_id=01a177d3-3384-79b3-a5f7-2881aa684eca, local source/import commits `52c9005b` / `af2ae4d1`; no production or physical-iOS proof)
+21:- Hagrid, 64x32, placement-grid, half-cell, decor-dock, `sync-hagrid-garden.mjs`, `52c9005b`, `af2ae4d1`, controls-placement-20261027
+27:- rollout_summaries/2026-10-26T10-48-12-tUMy-hagrid_garden_pixel_grid_and_decoration_selection.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/26/rollout-2026-10-26T17-48-12-01a177d3-3384-79b3-a5f7-2881aa684eca.jsonl, updated_at=2026-10-27T02:42:15+00:00, thread_id=01a177d3-3384-79b3-a5f7-2881aa684eca, branch `codex/hagrid-map-decor-selection`; experimental backend edits uncommitted)
+35:- when the user asked for every object to share a pixel ratio so scenery, garden, pens, characters, and decorations can be moved and expanded consistently -> use one shared logical grid while preserving native artwork pixels. [Task 1]
+40:- The authored isometric map cell is 64×32 px; plots had been scaled 1.25 while pens/decorations used the base cell. The completed controls retain native raster pixels, preserve saved half-cell coordinates, and prefer whole-cell positions for new items. Synchronize source with `node scripts/sync-hagrid-garden.mjs <source-worktree>`. [Task 1]
+41:- Committed controls include 64×32 stepped-pixel placement, whole/half-cell movement, drag, keyboard nudge/rotation, Enter confirm, Escape cancel, pan/pinch preservation, cached placement rasters, and owned-only decoration dock actions. Recorded local verification: source 313/313; parity/importer/launcher 17/17; client model 5/5; decoration UI 8/8 source/imported; placement 8/8 at DPR2 and source 8/8 at DPR1. [Task 1]
+49:# Task Group: HPVNN Hagrid artwork/item flow local acceptance and continuation handoff
+50:scope: Use for source-to-runtime Hagrid artwork, crop/item flow, decoration placement/rotation, local emulator/browser acceptance, or a bounded continuation handoff. This is local evidence, not a production or physical-device release.
+51:applies_to: cwd=/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-art-flow-20261026; reuse_rule=confirm the current production baseline and source worktree before edits; edit source then use the existing sync pipeline, and keep local/emulator/browser evidence separate from production/device proof.
+53:## Task 1: Implement and accept Hagrid artwork/item/placement flow locally, success
+57:- rollout_summaries/2026-10-26T02-58-12-6I0c-hagrid_art_flow_local_acceptance_and_handoff.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/26/rollout-2026-10-26T09-58-12-01a17624-e7f8-7133-9ab0-d838c0fa1c3c.jsonl, updated_at=2026-10-26T09:24:02+00:00, thread_id=01a17624-e7f8-7133-9ab0-d838c0fa1c3c, local commit `30e3fad86`; no push/deploy)
+61:- hagrid-art-flow, rotation-preview, harvested-icons, demo-hpvnn-garden, Firestore emulator, browser-acceptance.mjs, WebKit, source-sync, `8fb1a948`, `30e3fad86`, production-baseline
+71:- Edit Hagrid in `/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-art-flow-source-20261026`, then import through the existing sync pipeline; never hand-edit exported runtime files. Source pin was `8fb1a94821d18302c242a088228e6693dc5320bf`; HPVNN baseline was `24a0e76b35a211fb9d5f07c749c20cb06935a93a`. [Task 1]
+123:# Task Group: HPVNN Chocolate Frog portrait cleanup and local collection catalog artwork
+127:## Task 1: Complete and validate Chocolate Frog portrait artwork, success
+140:- when no push/deploy is authorized -> state “Chưa push/deploy” and do not imply a local commit made artwork live. [Task 1]
+144:- `cutout-portrait.mjs` produces 720×720 WebP portrait cutouts with alpha cleanup, edge decontamination, trapped-background removal, and rounded bust bottoms. Artwork lives in `client/features/galleons/store/artwork-collectibles/`; the main catalog is `client/features/galleons/store/model/artifactArtworkCatalog.json`. [Task 1]
+152:# Task Group: Hagrid Farm unique artwork audit and HPVNN WebP runtime refresh
+153:scope: Use for duplicate/missing Hagrid Farm artwork, approved pixel-art production, standalone-source synchronization, or the complete WebP runtime import. This is separate from the `garden-v05` local artifact and does not prove a production or physical-device release.
+154:applies_to: cwd=/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-unique-art and /Users/thachanh/Downloads/hagrid-farm; reuse_rule=edit the standalone source, synchronize it into HPVNN, and separately verify source, imported runtime, browser, and production/device stages.
+156:## Task 1: Audit and replace missing/duplicate Hagrid artwork; refresh runtime WebP, success
+160:- rollout_summaries/2026-10-22T14-11-58-F6DF-hagrid_farm_unique_art_webp_runtime_refresh.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/22/rollout-2026-10-22T21-11-58-01a163f4-5281-7712-8aeb-2e9773f5ed9b.jsonl, updated_at=2026-10-23T02:43:29+00:00, thread_id=01a163f4-5281-7712-8aeb-2e9773f5ed9b, local source/runtime verification; no push/deploy)
+164:- hagrid-farm, unique artwork, pixel-art, dimetric 2:1, binary alpha, nearest-neighbor, runtime-webp, `sync-hagrid-garden.mjs`, shared-fences, forest-clearance, opaque iframe, `bc640f49d`
+169:- when assets must follow the approved guideline -> retain dimetric 2:1 pixel art, fixed palette, binary alpha, nearest-neighbor scaling, correct pivots, and distinct silhouettes. [Task 1]
+173:- Hagrid source ownership is standalone at `/Users/thachanh/Downloads/hagrid-farm`; synchronize into HPVNN with `node scripts/sync-hagrid-garden.mjs <source>`. Do not manually edit vendored runtime files. Final source commit was `d0bae16a39a935c7215edfe8cb7e16efc103a92a`; HPVNN import commit was `bc640f49d`. [Task 1]
+174:- The refreshed runtime has 910 WebP and zero PNG files; import audit found 914 runtime references, 910 files, zero missing files/cross-entity duplicates, 356 resolved species references, and matching hashes. Run `node garden-v05/build-runtime-webp.mjs --check` and inspect `docs/garden/artwork-import-20261023.json`. [Task 1]
+184:scope: Use for standalone Hagrid Farm cosmetic decorations, shop/catalog research, festival artwork generation, importer handoff, asset QA, or an approved Halloween sales release.
+185:applies_to: cwd=/Users/thachanh/Downloads/hagrid-farm and /Users/thachanh/Downloads/HPVNN.nosync; reuse_rule=research/reporting, generated assets, runtime import, in-game/device QA, wallet, and production proof remain separate stages; never manually edit the vendored HPVNN client, and enable sales only after direct owner approval of the price table.
+191:- rollout_summaries/2026-10-20T06-11-52-nduq-hagrid_farm_decoration_and_halloween_assets.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/20/rollout-2026-10-20T13-11-52-01a157f0-0fd0-7510-8b3f-c7b1ba2a640a.jsonl, updated_at=2026-10-23T13:54:46+00:00, thread_id=01a157f0-0fd0-7510-8b3f-c7b1ba2a640a, special-products pack committed locally as `c05209a`)
+195:- hagrid-farm, decorations, special-products, `c05209a`, garden-store-catalog.mjs, decor-runtime.mjs, positions[itemId], `phase4-reconcile.md`, special-products-import-handoff
+201:- rollout_summaries/2026-10-20T06-11-52-nduq-hagrid_farm_decoration_and_halloween_assets.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/20/rollout-2026-10-20T13-11-52-01a157f0-0fd0-7510-8b3f-c7b1ba2a640a.jsonl, updated_at=2026-10-23T13:54:46+00:00, thread_id=01a157f0-0fd0-7510-8b3f-c7b1ba2a640a, local commit `acf4cd5`; pre-release asset proof)
+211:- rollout_summaries/2026-10-23T05-35-11-icq8-hagrid_halloween_sales_approved_production_release.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/23/rollout-2026-10-23T12-35-11-01a16741-8d8d-7643-8285-9ae6ab1f2c14.jsonl, updated_at=2026-10-24T16:04:03+00:00, thread_id=01a16741-8d8d-7643-8285-9ae6ab1f2c14, production release verified; no real-wallet purchase or physical-iPhone acceptance)
+225:- Decorations are cosmetic, one-time Galleons purchases with server-owned ownership/ledger mutations; placement/rotation is server-controlled. Existing source is vendored through `client/public/game/khu-vuon-hagrid/SOURCE.json`; use standalone `/Users/thachanh/Downloads/hagrid-farm`, not the vendored client. The special-products pack is local commit `c05209a`; its import handoff is `docs/special-products-import-handoff.md`. [Task 1]
+234:- Symptom: two-view output has detached neighboring-view seam fragments. Cause: fixed half-width crop. Fix: split masters at a verified transparent central gap and audit source-pixel preservation before packaging. [Task 2]
+305:- Uniform placement is `scale = min(boardWidth/artWidth, boardHeight/artHeight)`, transformed about artwork center then translated to artboard center. Wait for Illustrator’s asynchronous import/selection update, find the new linked item, then fit; immediate fitting is unreliable. Illustrator 2026 QA produced four linked PSD artworks with no duplicates/raster artifacts. [Task 2]
+315:- Symptom: fit runs at drag-session end but cannot reliably identify the inserted artwork. Cause: Illustrator import is asynchronous. Fix: use post-drop selection/artwork-state detection before transforming. [Task 2]
+327:- rollout_summaries/2026-10-13T03-59-14-52DH-hagrid_garden_v14_handoff_and_greenhouse_qa.md (cwd=/Users/thachanh/.codex/worktrees/81ef/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/13/rollout-2026-10-13T10-59-14-01a1336a-1a81-7fd1-838a-938d62b6dd7d.jsonl, updated_at=2026-10-14T04:24:13+00:00, thread_id=01a1336a-1a81-7fd1-838a-938d62b6dd7d, local-only success; 74/74 tests)
+337:- rollout_summaries/2026-10-14T01-59-34-T4uu-hagrid_garden_v14_readonly_status_reconciliation.md (cwd=/Users/thachanh/.codex/worktrees/d939/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/14/rollout-2026-10-14T08-59-34-01a13822-e79b-7a63-9ee4-f9503ae93ada.jsonl, updated_at=2026-10-14T02:00:21+00:00, thread_id=01a13822-e79b-7a63-9ee4-f9503ae93ada, read-only inspection; no files or external state changed)
+347:- rollout_summaries/2026-10-14T02-13-20-mGi0-hagrid_v14_qa_seed_tray_v19_paused_handoff.md (cwd=/Users/thachanh/.codex/worktrees/5b33/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/14/rollout-2026-10-14T09-13-20-01a1382f-841c-7e20-bfc2-a5d7102ced74.jsonl, updated_at=2026-10-17T04:11:05+00:00, thread_id=01a1382f-841c-7e20-bfc2-a5d7102ced74, QA opened; horizontal tray unimplemented)
+353:- Related skill: skills/hagrid-local-artifact-safe-resume/SKILL.md
+359:- rollout_summaries/2026-10-14T02-13-20-mGi0-hagrid_v14_qa_seed_tray_v19_paused_handoff.md (cwd=/Users/thachanh/.codex/worktrees/5b33/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/14/rollout-2026-10-14T09-13-20-01a1382f-841c-7e20-bfc2-a5d7102ced74.jsonl, updated_at=2026-10-17T04:11:05+00:00, thread_id=01a1382f-841c-7e20-bfc2-a5d7102ced74, paused by user; V19 full verification outstanding)
+369:- rollout_summaries/2026-10-17T04-12-04-JX2H-hagrid_garden_v24_8_5_qa_hud_git_setup.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/17/rollout-2026-10-17T11-12-04-01a1480f-4d73-7520-ad5b-221575ca7c7b.jsonl, updated_at=2026-10-17T10:13:03+00:00, thread_id=01a1480f-4d73-7520-ad5b-221575ca7c7b, local prototype QA complete)
+379:- rollout_summaries/2026-10-17T04-12-04-JX2H-hagrid_garden_v24_8_5_qa_hud_git_setup.md (cwd=/Users/thachanh/Downloads/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/17/rollout-2026-10-17T11-12-04-01a1480f-4d73-7520-ad5b-221575ca7c7b.jsonl, updated_at=2026-10-17T10:13:03+00:00, thread_id=01a1480f-4d73-7520-ad5b-221575ca7c7b, Git init/stage/commit blocked before execution)
+403:- The frontend artifact was outside Git at `/Users/thachanh/.codex/visualizations/2026/10/13/01a1336a-1a81-7fd1-838a-938d62b6dd7d/garden-v05`; its backend/emulator worktree is separate at `/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hagrid-garden-wallet-local-20261013`. Read `HANDOFF.txt`, `README.txt`, and `CONTINUE-PROMPT-v14.txt` before editing; inspect worktree status/HEAD and service identity before touching backend work. [Task 1][Task 3]
+472:# Task Group: HPVNN Game Zone Hagrid Farm concept, pixel-art production, and motion handoff
+473:scope: Use for the planned Happy Farm-style “Khu Vườn Hagrid”, its registry-driven Game Zone integration, the approved dimetric pixel-art standard, or the existing motion-growth prototype. This is planning/prototype evidence only, not repository integration, gameplay authorization, or release proof.
+480:- rollout_summaries/2026-10-13T01-30-42-tFAl-hagrid_farm_pixel_assets_motion_guideline.md (cwd=/Users/thachanh/.codex/worktrees/6029/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/13/rollout-2026-10-13T08-30-42-01a132e2-1f2e-7533-acc5-6ddda6001249.jsonl, updated_at=2026-10-13T07:10:05+00:00, thread_id=01a132e2-1f2e-7533-acc5-6ddda6001249, planning only; no code changed)
+484:- hagrid-farm, Khu Vườn Hagrid, Game Zone, `HagridFarmGame`, `GameEmbedShell`, `hagrid_farms/{uid}`, authenticated callable, Firestore transaction, request IDs, receipts, BroadcastChannel
+486:## Task 2: Create reusable Hagrid Farm pixel-art asset guideline, success
+490:- rollout_summaries/2026-10-13T01-30-42-tFAl-hagrid_farm_pixel_assets_motion_guideline.md (cwd=/Users/thachanh/.codex/worktrees/6029/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/13/rollout-2026-10-13T08-30-42-01a132e2-1f2e-7533-acc5-6ddda6001249.jsonl, updated_at=2026-10-13T07:10:05+00:00, thread_id=01a132e2-1f2e-7533-acc5-6ddda6001249, guideline Page created)
+494:- pixel-art, dimetric, 2:1, 64×32 tile, 24-color palette, nearest-neighbor, RGBA/sRGB, pivot, sprite sheet, `page_d0e77fe13ebc8191930c1108811ac1d1`, Hagrid pumpkin Puffskein
+500:- rollout_summaries/2026-10-13T01-30-42-tFAl-hagrid_farm_pixel_assets_motion_guideline.md (cwd=/Users/thachanh/.codex/worktrees/6029/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/13/rollout-2026-10-13T08-30-42-01a132e2-1f2e-7533-acc5-6ddda6001249.jsonl, updated_at=2026-10-13T07:10:05+00:00, thread_id=01a132e2-1f2e-7533-acc5-6ddda6001249, useful prototype; browser QA and production art cleanup incomplete)
+510:- when the user requested “một bộ guideline cho việc tạo asset đi, style pixel nhé” -> use a written reusable production standard, not ad-hoc asset prompts. [Task 2]
+515:- The proposed MVP is one garden, 6 crops, 3 creatures, orders, 10 early levels, private farm currency, and a 3–5 minute loop. Registry-driven native integration uses `functions/shared/game-registry.json`, byte-identical `client/features/game-zone/model/gameRegistry.json`, `GameEmbedShell.tsx`, route `/phongsinhoatchung/hagrid-farm`, lobby data, and `HagridFarmGame`. [Task 1]
+516:- Keep `hagrid_farms/{uid}` state server-owned: materialize crop/creature state from server timestamps; use authenticated callable actions, Firestore transactions, request IDs/receipts for idempotent retries, and no direct client writes. Keep private farm currency separate from Galleons unless a later authorized economy slice uses the server ledger. [Task 1]
+525:- Source sheets are not production pixel art: roughly 1536×1024/1448×1086, alpha halos/semitransparency, inconsistent frames, and a dragon juvenile/adult facing mismatch remain. Clean pixels, alpha, palette, pivots, and timing before engine integration. Image-generation moderation blocked Hagrid motion; do not bypass safeguards or substitute an unapproved character. [Task 3]
+531:## Task 1: Create the local Hẻm Xéo catalog/artwork plan with item-level sources, success
+535:- rollout_summaries/2026-10-11T10-01-20-cGKV-hem_xeo_catalog_chocolate_frog_500k_gate_pricing.md (cwd=/Users/thachanh/.codex/worktrees/d96f/HPVNN.nosync, rollout_path=/Users/thachanh/.codex/sessions/2026/10/11/rollout-2026-10-11T17-01-20-01a12a68-e730-7c43-b956-923babec99d5.jsonl, updated_at=2026-10-12T04:47:55+00:00, thread_id=01a12a68-e730-7c43-b956-923babec99d5, success; accepted worktree and local artwork polish committed, no push/deploy)
+539:- Hẻm Xéo, `hem-xeo-five-collections-plan`, `codex/hem-xeo-five-collections-plan`, `e4761982`, 120-entry artwork catalog, HarryPotter.com, Noble Collection, `hemXeoDraftManifest.json`, port 3026
+561:- The accepted worktree is `/Users/thachanh/Downloads/HPVNN.nosync/.worktrees/hem-xeo-five-collections-plan` on `codex/hem-xeo-five-collections-plan`. Local artwork polish is `e4761982d0a92437079af681d047d809bdc5bfab` (`Polish imported Chocolate Frog portraits for local review`); it passed baseline, isolation, Superpowers, code-ceiling, environment, Telegram, Floo, and continuity gates, but was not pushed/deployed. [Task 1]
+660:- The reconciled local branch is `codex/hem-xeo-artifacts-09b0` at `a8216d897c59fc90ce7190970c17cfc15c637100`, with production parent `81accd1a8a32fd5b41f74e1fe8b0d68bbaab3afa`; original worktree/recovery artifacts remain preserved, ignored env/artwork/emulator data was not staged. Item mode stays behind `NODE_ENV !== production` and `HPVNN_LOCAL_STORE_PROTOTYPE=true`; classic production routing remains default. [Task 2]
+955:- Fill Audit is a native Cocoa dialog in `xcode/Source/TNTPanelController.mm`; `ResetFillAuditHistory()` clears only the current document + CSV audit scope, not live artwork. The audit maps codes from all live group/named-art identifiers rather than relying on `IsProductGroup(...)`. [Task 1] [ad-hoc note]
+
+exec
+/bin/zsh -lc 'git status --short; cat docs/art-bible.md; cat garden-v05/palette.mjs; cat garden-v05/environment/elves/prompts.json; cat docs/codex-briefs/norbert-s4.md' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ succeeded in 121ms:
+?? docs/codex-briefs/norbert-s4-last.log
+?? docs/codex-briefs/norbert-s4.md
+# Khu Vườn Hagrid — Art bible
+
+> **Trạng thái:** ĐÃ DUYỆT 17/10/2026 (chủ dự án: "đồng ý và làm tiếp"), các đề xuất [CẦN QUYẾT] được chấp nhận như ghi · 17/10/2026 · Claude Code (Anthropic)
+> Áp dụng cho mọi asset mới, dù do người vẽ, Codex, Claude hay công cụ tạo ảnh làm ra. Mục **[CẦN QUYẾT]** là đề xuất.
+> Số liệu "hiện trạng" đo từ `motion-data.js`, `level-assets.js`, `motion-care-data.js` và mã nguồn ngày 17/10/2026.
+
+## 1. Năm luật cứng
+
+1. **1 pixel nguồn = 1 pixel trong game ở zoom 1.** Không scale lẻ. Zoom camera chỉ dùng hệ số nguyên khi có thể, luôn `imageSmoothingEnabled = false` và `image-rendering: pixelated`.
+2. **Chỉ dùng 32 màu chuẩn** (mục 3): 24 màu sprite + 8 màu cảnh. Thời tiết, đêm và lễ hội đổi **ánh sáng** (lớp phủ, tint), không thêm màu mới vào sprite.
+3. **Nguồn sáng trên–trái.** Mặt hướng trái/trên sáng hơn, bóng đổ xuống phải–dưới. (Đã đối chiếu với lều Hagrid và Bằng Mã.)
+4. **Viền tối chọn lọc:** viền ngoài dùng `#231F2E` hoặc màu tối nhất trong ramp của vật; không viền đen thuần, không viền trắng.
+5. **Ảnh minh hoạ không vào cảnh chơi.** Tranh khổ lớn (bìa, màn chọn lễ hội/thời tiết) đặt trong UI. Mọi thứ đứng trong vườn phải là sprite theo luật 1–4.
+
+## 2. Lưới và phối cảnh
+
+- Isometric 2:1, ô **64 × 32 px** (`tileWidth`/`tileHeight` trong `scene-data`).
+- Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
+- Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
+- Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
+- **Nền mới (04/11/2026):** không bao giờ lặp một ô nền. Cỏ hiện vẽ bằng mảng ngẫu nhiên theo seed (`meadow-ground.mjs`); nền mới vẽ tay (tuyết, băng, cát) thì làm bộ 16 Wang góc cho 2 loại nền, mép khớp nhau theo màu góc, để ghép không thấy lặp.
+- **Hình mới phải khớp ô (27/10/2026):** [guideline khớp ô lưới](grid-fit-guideline.md) — phần có màu nằm trong cột rộng W = (cột + hàng) × 32 px của nền, bảng canvas/pivot/khung mực theo từng nền, kiểm bằng `audit-grid-fit.mjs`. [Danh sách hình đang lệch](grid-fit-misfits.md).
+- Chuẩn lưới 26/10/2026: [quy tắc và kích thước từng vật](garden-grid-20261026.md).
+  Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
+  hệ số phóng riêng cho ô trồng. Bảng `garden-grid-metrics.json` phải được tạo
+  từ bootstrap đầy đủ (cả các override), kiểm tra bằng `export-grid-metrics.mjs --check`.
+- Khi cất trang trí mặc định phải bỏ cả paint/pick và vùng chiếm chỗ; giữ
+  ownership và lưu theo tài khoản. Xem [hợp đồng cất/đặt lại](default-decor-20261026.md).
+
+## 3. Bảng màu chuẩn: 32 màu (24 sprite + 8 cảnh)
+
+Ảnh: [`palette.svg`](palette.svg). Nguồn duy nhất trong code: `garden-v05/palette.mjs`. 24 màu sprite là bảng **đang dùng sẵn** trong cả ba manifest asset.
+
+| Dải | Tối → sáng | Dùng cho |
+|---|---|---|
+| Gỗ · da · bóng tối | `#231F2E` `#4A3042` `#735044` `#A57554` | Viền, gỗ, đất tối, lông nâu |
+| Đá · kim loại · kem | `#41465C` `#687486` `#A6B1AE` `#D6D8BF` | Mái, đá, kim loại, lông sáng |
+| Cỏ · lá | `#24483F` `#3F6A45` `#71934B` `#B0BD67` | Cỏ, lá, rêu |
+| Đất · ánh ấm | `#8B4A3F` `#C97952` `#E7AE73` `#F5D69A` | Đất trồng, da, điểm sáng ấm, chữ vàng UI |
+| Lửa · bí ngô | `#874056` `#C75B4B` `#ED8A45` `#FFC36B` | Bí ngô, lửa, đèn, quả chín |
+| Phép · đêm · nước | `#3E3B70` `#6961A6` `#70A8B6` `#B7DEE0` | Phép thuật, đêm, nước, băng |
+
+**8 màu cảnh** (thêm ngày 17/10/2026, V24.9.2) cho những gì sprite chưa cần: `#142620` rừng đêm sâu · `#4A3C2C` nâu đất trung tính · `#5D6046` `#777044` ô liu · `#B49A66` đá lối đi, rơm · `#E8F0ED` tuyết, điểm sáng trắng · `#B378FF` phép tím sáng · `#E07A9E` hồng (tim, hoa). Chọn bằng cách phân cụm 309 màu lệch cũ; với bảng 24 màu, đá lối đi bị đẩy thành cam và đom đóm tím thành xám.
+
+Quy tắc dùng:
+- Sprite chỉ dùng 24 màu sprite; 8 màu cảnh dành cho địa hình, thời tiết, hiệu ứng.
+- Một vật dùng tối đa **2–3 dải**; đổ bóng bằng màu tối hơn **trong cùng dải**, không trộn xám.
+- Muốn thêm màu thứ 33 thì phải sửa tài liệu này và `palette.mjs` trước.
+
+**Đã sửa (V24.9.2):** khoảng 300 mã màu lệch trong 17 file vẽ bằng code đã được đưa về màu gần nhất trong bảng 32 (đo OKLab; trung vị lệch 0.039, tối đa 0.119). Riêng tuyết của chuồng và cỏ tuyết quanh chuồng được chỉnh tay để không thành màu nước. `palette.test.mjs` sẽ báo lỗi nếu module nào dùng mã màu ngoài bảng. CSS của giao diện **chưa** chuyển, làm ở bước UI.
+
+## 4. Kích thước theo tầng
+
+Đo phần có nội dung (không tính viền trong suốt) ở giai đoạn trưởng thành:
+
+| Tầng | Chiều cao hiện có | Loài | Chiếm chỗ |
+|---|---|---|---|
+| Cây trồng | 27–66 px, rộng ≤ 54 px | 24 loại | 1 ô |
+| Sinh vật nhỏ | 20–39 px | Puffskein, Đào mỏ, Que Xạo | 1 ô |
+| Sinh vật vừa | 58–88 px | Kneazle, Mooncalf, Fwooper, Diricawl | 1–2 ô |
+| Sinh vật lớn | 95–130 px | Bằng-Mã, kỳ lân, vong mã, chó ba đầu, rồng | 2–3 ô |
+| Công trình | ~150–210 px | Lều, nhà kính, cụm lễ hội | Theo bố cục |
+
+Quy tắc:
+- Sinh vật mới phải rơi vào đúng một tầng. Trong một tầng, chênh lệch không quá ±20%.
+- Các giai đoạn lớn lên (sơ sinh → trưởng thành) dùng **cùng mật độ pixel**, chỉ khác số pixel.
+- Tên sinh vật và địa danh theo bản dịch **Lý Lan** (xem `core-design.md` mục 7).
+
+## 5. Chuyển động
+
+| Loại | Số frame tối thiểu | Ghi chú |
+|---|---|---|
+| Lớn lên (cây, sinh vật) | 4 | Hạt → mầm → đang lớn → trưởng thành |
+| Đứng yên (idle) | 2–4, vòng lặp ≥ 1,2 giây | Thở, lá rung; chân/gốc **không** dịch chuyển |
+| Hành động (gặt, cho ăn, vuốt ve) | 4–6 | Có nhịp chuẩn bị → đỉnh → hồi |
+| Hiệu ứng (hạt, sao, tim) | 3–5 | Vẽ bằng pixel trong bảng màu |
+
+- Mọi chuyển động đứng yên đúng khi bật "Giảm chuyển động".
+- Chuyển động vẽ bằng code chỉ dịch **số nguyên pixel**.
+
+**Hiện trạng không đồng đều:**
+- 6 cây đầu (bí ngô, cúc trắng, dâu tây, bạch tiên, puffapod, mandrake) có 12 frame; **18 cây sau chỉ có 4 frame lớn lên, chưa có idle/hành động riêng**.
+- 6 sinh vật đầu có 12 frame; 6 loài sau có 8 frame cộng bộ ăn/chăm sóc riêng.
+- Ưu tiên cho Phase 1: bổ sung idle và hành động cho cây và sinh vật **xuất hiện trong 3 phút đầu và vòng 5 phút**, không làm cả 36 loài một lúc.
+- **Đã làm (V24.9.5):** ba phút đầu chỉ dùng bí ngô và Puffskein, vốn đã đủ 12 frame. Vòng 5 phút ở cấp 1–12 thêm yến mạch, cà rốt, xà lách: `build-idle-assets.mjs` dựng 7 frame mới cho mỗi loại từ chính frame trưởng thành, bằng cách dịch nguyên dải hàng pixel (ngọn lay tối đa 2 px, rướn 1 px). Phần gốc đứng yên: 25% chiều cao, cà rốt 42% để củ không lệch. Không resample, không thêm màu; `idle-assets.test.mjs` kiểm tra. Đây là cách tạm hợp lệ khi chưa có hoạ sĩ; frame vẽ tay vẫn đẹp hơn và có thể thay sau, cùng chỉ số frame.
+- Cây chín ở luống đang chọn phát clip hành động "giật" khoảng 3,4 giây một lần (1,5 giây trong bước gặt của hướng dẫn). Áp dụng cho cả 6 cây gốc, trước đây có clip nhưng chưa phát.
+
+## 6. Giao diện (UI)
+
+- Khung, nút và chữ dùng màu từ bảng chuẩn: nền dải "Cỏ · lá" tối, viền và chữ nhấn dải "Đất · ánh ấm".
+- Icon vật phẩm giữ cùng pixel style và palette của cảnh. Hạt dùng gói có hình cây; nông sản đã gặt dùng icon nguyên liệu riêng; sản vật, thành phẩm và tượng kỷ vật dùng đúng danh tính, không lấy chân dung loài thay nguyên liệu.
+- Giảm emoji hệ thống trong nút chính: emoji hiển thị khác nhau trên iOS và Android, lệch style pixel.
+- Chữ số trong game (`+3`, `2/5`) **[CẦN QUYẾT]**: đề xuất dùng font pixel có hỗ trợ tiếng Việt cho số và nhãn ngắn. Phải kiểm tra đủ dấu tiếng Việt trước khi chọn; nếu không có font đạt thì giữ font hệ thống.
+
+## 7. Ảnh tạo bằng AI
+
+- Được dùng làm **concept** và **ảnh minh hoạ UI** (khổ 640 × 360 như bộ `v24-art`).
+- Muốn đưa một vật từ ảnh AI vào cảnh chơi, phải: vẽ lại hoặc thu về **đúng lưới pixel thật** (không chỉ resize), lượng tử về 24 màu, kiểm tra viền theo luật 4.
+- Không vẽ chữ vào ảnh. Ghi prompt, nguồn và hash vào `provenance.json` như các bộ hiện có.
+
+**Bộ ảnh V24.9.66:** `item-art-manifest.json` và `three-headed-dog-art-generation.json` giữ prompt, nguồn và hash riêng của bộ mới. `build-item-art.mjs` tách atlas tại khe alpha trống, lấy mẫu trên lưới native, lượng tử 24 màu và xuất alpha 0/255; không sửa master. UI và cảnh chơi cùng tra một ID trong `item-art.mjs`, hai góc trang trí có file và bounds riêng. So khác biệt theo danh tính vật phẩm: nhiều góc/frame của cùng món là hợp lệ; hai món khác nhau dùng cùng hình phải được kiểm tra lại. Chạy `verify-image-assets.mjs` và `qa-v19/image-ui-qa.mjs` sau khi nhập bộ ảnh. Kiểm tra cảnh thật vẫn bắt buộc: lớp cache đã dịch tọa độ thì không dịch lần thứ hai khi vẽ sprite vào lớp đó.
+
+**Định dạng chạy game từ V24.9.70:** sau khi xuất PNG native, chạy `node garden-v05/build-runtime-webp.mjs` rồi `--check`. PNG/master vẫn là nguồn phục hồi; chỉ các WebP trong `runtime-webp-manifest.json` được đóng gói. Encoder dùng lossless + exact, đối chiếu toàn bộ RGBA sau giải mã (kể cả RGB ở pixel trong suốt), không resize. URL tải ảnh qua `runtimeImageUrl`, còn ID/file nguồn trong manifest và cache giữ nguyên; revision hash chống dùng nhầm WebP cũ. 8 ảnh WebP có sẵn được giữ nguyên byte, không mã hóa lại. Không đóng gói ảnh contact sheet, atlas nguồn hay master vào game. QA trình duyệt phải có 0 request PNG/JPEG/GIF cho ảnh nội bộ.
+
+**Khu nuôi từ V24.9.70:** không đặt mái trú trong sân. `garden-pen-details.mjs` vẽ rào sát bốn cạnh của sân 5×3; cổng bên tây nối đúng đường vào. Rào sau cao 24px, rào trước cao 18px; toàn bộ rào nằm trong lớp cache dưới thú để không che các loài nhỏ. Giữ nguyên 12 vị trí, hitbox và dữ liệu nuôi. `build-item-art.mjs` xuất 6 icon từ chính hàm vẽ rào, giữ palette/alpha/pivot như các ảnh native khác. Các master mái cũ chỉ là tài liệu phục hồi, không dùng trong cảnh hay ảnh cửa hàng.
+
+**Biên rừng:** dùng `forestRectOutsideBoundary` với `stageBoundary` của mốc mở sân hiện tại, kiểm tra cả hình chữ nhật sprite và phần cao của rào. Áp dụng cho wallpaper, rừng viền và rừng đất chưa mở; nền lặp dùng biên sân cuối. Không đặt cây cũ xuyên mép rào. Cổng mở và bảng tên hai dòng phải được kiểm tra bằng cảnh thật; bảng nằm ngoài rào và có khoảng trống chống cây che.
+
+## 8. Checklist nhận một asset mới
+
+**V24.9.75 — đồ lễ hội:** sprite lớn phải được kiểm đặt/cất/xoay với save có đủ key kỷ vật bằng0; key tồn tại không có nghĩa đã có tượng. Chỉ bảo vệ dải kỷ vật thực tế, không khóa cả cánh đồng mở về sau. Giữ các frame glow/tĩnh đúng metadata, không quảng cáo chớp mắt/đung đưa khi chưa có pose. Atlas decor phải mang rect đúng góc vào cả picker frame và renderer; xác nhận từng rect RGBA trùng native nguồn.
+
+**V24.9.74 — atlas chuyển động:** lưu prompt và hash trước/sau tạo master; không tin số file hoặc lưới atlas danh nghĩa. Xác nhận đủ silhouette/pose, dùng khe alpha hoặc component để tách đúng hình, không cắt theo ô đều khi nguồn lệch. Duyệt ảnh native 1×, giữ pivot chân và palette24. Atlas runtime phải đối chiếu RGBA từng rect với PNG native; kiểm clip được gọi thực tế khi chăm/thu hoạch, hitbox của góc được vẽ riêng và reduced motion. [Đợt hoàn thiện](artwork-completion-20261023.md) đóng toàn bộ backlog ngoài Halloween theo yêu cầu.
+
+**V24.9.73 — icon nhỏ:** vật tư/cao cấp có vùng mực tối đa 40×40 trong canvas 64×64, vừa ô kho 40px ở 1×. Vẽ mảng màu lớn và biểu tượng rõ, bỏ chi tiết nhỏ hơn pixel đích. UI ưu tiên tỷ lệ nguyên và tọa độ nguyên khi ảnh vừa ô; không nhân grayscale/giảm sáng lên ảnh hàng khóa cấp trong cửa hàng. Duyệt ảnh ở native 1× và đúng kích thước CSS trong shop/kho; xem [đợt chất lượng v2](artwork-quality-v2-20261023.md).
+
+**Kiểm kê 23/10/2026:** rà cả hình inline SVG/Canvas và số frame khác nhau trong từng clip, không chỉ số file/hash hoặc tên clip. Artwork vật tư/cao cấp, mở thửa và huy hiệu dùng chung `ITEM_ART` qua `ui-utils.mjs`; không thêm SVG tạm khi chưa có ảnh. Bộ 12 master mới nằm trong `supply-art-sources.json`, được pipeline `build-item-art.mjs` xuất cùng palette/pivot/alpha như các món cũ. [Bản kiểm kê](artwork-audit-20261023.md) phân biệt việc đã thay với phần chuyển động/prop chưa được vẽ riêng; `qa-v19/supply-art-qa.mjs` kiểm cả gallery và shop ở bốn kích thước bằng fixture không kết nối dữ liệu thật.
+
+- [ ] Kích thước đúng tầng (mục 4), pivot ở chân
+- [ ] Khớp nền theo [guideline khớp ô](grid-fit-guideline.md): `audit-grid-fit.mjs` không báo lỗi cho món mới
+- [ ] Chỉ dùng 24 màu; viền và hướng sáng đúng luật
+- [ ] Đặt cạnh 3 asset cũ cùng tầng trong cảnh thật: cùng độ chi tiết, cùng mật độ pixel
+- [ ] Đủ frame theo mục 5; bật "Giảm chuyển động" thì đứng yên
+- [ ] Xem ở zoom nhỏ nhất trên điện thoại 375 px: vẫn nhận ra vật
+- [ ] Xem đủ 4 thời tiết và 3 thời điểm ngày/đêm
+- [ ] Có ghi nguồn (`provenance`) và cập nhật manifest
+
+## 9. Việc kiểm toán cho Phase 1
+
+1. ~~Tạo `palette.mjs`, đưa màu vẽ bằng code về bảng~~ (xong V24.9.2). Còn lại: CSS giao diện.
+2. ~~Bổ sung idle và hành động cho cây và sinh vật của 3 phút đầu và vòng 5 phút~~ (xong V24.9.5). Còn 15 cây từ cấp 28 trở lên: thêm id vào `IDLE_TARGETS` rồi chạy lại script.
+3. So tầng kích thước trong cảnh thật, sửa loài nào lệch quá ±20%.
+4. Thay emoji ở 6 nút chính bằng icon pixel.
+
+Bảng tên chính dùng master ImageGen `masters/hagrid-farm-sign-v01.png`, xuất bằng `build-sign-art.mjs`; native288×288 và chữ trên mặt bảng cùng trục dốc1/2. Giữ chữ ở lớp runtime để không sai dấu. Khi khu nuôi sát rào ngoài, dùng chung cạnh đông và đặt nhãn ra ngoài rào, không vẽ hai hàng rào chồng nhau.
+
+## V24.9.80 — flow sản phẩm và sân trang trí (26/10/2026)
+
+Bộ mới có32 icon nông sản,hai sản vật sửa nhận diện,41 frame của Bubotuber/Mimbulus/Flitterbloom và48 pose hai hướng cho sáu đồ trang trí. Master/prompt ở flow-art-sources.json,harvest-extra-sources.json,decor-flow-sources.json; build-flow-art.mjs và build-decor-flow.mjs giữ provenance,alpha nhị phân,palette24 và pivot chân. Thumbnail phải là PNG native đứng riêng; atlas chỉ dùng cho clip cùng rect đúng, tránh đưa cả sheet vào thẻ shop. Dùng chung scale lấy mẫu và neo chân theo phần thân/gốc,không neo theo hiệu ứng bay.
+
+27 công thức giữ tranh biến thể nhưng luôn hiển thị một trong14 icon thành phẩm chuẩn. Kho dùng12 tượng đã có thay ảnh sản vật cộng cúp. Trước cấp110 giữ hàng kỷ vật cũ; từ110 dùng sân hai hàng. Bảo vệ chân và silhouette từng tượng cùng lối tiếp cận,không khóa cả chiều ngang vì một tượng. Giữ tọa độ đồ mua đã lưu. Mỗi góc của66 món phải còn điểm đặt; test riêng ba món3×2 cùng lúc và round-trip máy chủ qua hàng28. Xoay trong thanh đặt là preview,chỉ nút Đặt lưu.
+
+Kiểm: node garden-v05/build-flow-art.mjs;node garden-v05/build-decor-flow.mjs;node garden-v05/build-runtime-webp.mjs;node garden-v05/verify-image-assets.mjs;GARDEN_HPVNN_ROOT=<paired HPVNN worktree> node --test garden-v05/*.test.mjs. qa-v19/art-flow-qa.mjs kiểm source/import bằng Chrome/WebKit với toàn bộ request chặn về file cục bộ; không lấy fixture làm bằng chứng production.
+
+Với món mới chưa có tọa độ lưu, xoay phải tìm gợi ý hợp lệ gần nhất trên toàn vùng đã mở và đưa camera theo preview. Vật đã bày giữ tìm kiếm cục bộ trong hai ô; không ghi hoặc dời save khi chỉ thử góc. Fixture đầy đủ phải qua restoreChecked/server trước khi dùng làm bằng chứng: giữ ba thửa khởi đầu, tối đa ba loài mỗi thửa và đầy đủ schema sinh vật. Render fixture vẫn tách biệt với kiểm đăng nhập/iframe/save thật.
+// The only colours the garden may draw with (docs/art-bible.md, section 3).
+// SPRITE_PALETTE is the authored sprite set shared by every asset manifest;
+// SCENE_EXTENSION covers terrain, snow and magic effects the sprites never needed.
+// palette.test.mjs fails if any runtime module uses a hex colour outside PALETTE.
+export const SPRITE_PALETTE = Object.freeze([
+  '#231F2E', '#4A3042', '#735044', '#A57554', // gỗ · da · bóng tối
+  '#41465C', '#687486', '#A6B1AE', '#D6D8BF', // đá · kim loại · kem
+  '#24483F', '#3F6A45', '#71934B', '#B0BD67', // cỏ · lá
+  '#8B4A3F', '#C97952', '#E7AE73', '#F5D69A', // đất · ánh ấm
+  '#874056', '#C75B4B', '#ED8A45', '#FFC36B', // lửa · bí ngô
+  '#3E3B70', '#6961A6', '#70A8B6', '#B7DEE0', // phép · đêm · nước
+]);
+
+export const SCENE_EXTENSION = Object.freeze([
+  '#142620', // rừng đêm sâu
+  '#4A3C2C', // nâu đất trung tính
+  '#5D6046', '#777044', // ô liu tối · ô liu
+  '#B49A66', // đá lối đi · rơm
+  '#E8F0ED', // tuyết · điểm sáng trắng
+  '#B378FF', // phép tím sáng
+  '#E07A9E', // hồng: tim, hoa
+]);
+
+export const PALETTE = Object.freeze([...SPRITE_PALETTE, ...SCENE_EXTENSION]);
+{
+  "version": 1,
+  "date": "2026-11-04",
+  "tool": "image_gen.imagegen (built-in)",
+  "candidates": [
+    {
+      "file": "masters/dobby-candidate-a.png",
+      "prompt": "Use case: stylized-concept. Asset: production pixel-art character sprite sheet for Hagrid's garden. Draw six distinct poses of LIVING DOBBY, book illustration interpretation, never film CGI likeness. Tiny thin house elf, huge bat ears, very large ROUND green tennis-ball eyes (#71934B #B0BD67), long pointed nose pointed toward viewer's LOWER LEFT, tan skin #E7AE73 with #C97952 #A57554 shading, long thin fingers. Cheerful eager clumsy. Old cream pillowcase tunic tied at shoulder, knitted warm red-orange TEA COSY HAT with tiny bobble, two odd socks: one green striped, one plain purple. This hat and socks stay identical across all six poses. Face and proportions identical. Three-quarter facing LOWER LEFT throughout, never right. Crisp actual low-resolution pixel clusters, single-pixel selective dark outline #231F2E, NO smooth edges, no white outline, light from top left, no pure black. Match the restrained detailed pixel density of the Hagrid reference (80x112 with 58x90 ink); Dobby body only 42 pixels tall at native scale and head about 18 pixels wide; ears span about 35 native pixels. Small lean body, big eyes, recognizable silhouette.\nTransparent background, no shadow, no ground, NO TEXT or labels or cell lines. Large evenly spaced 3 columns by 2 rows sheet, each sprite centered in its own generous cell and with clear transparent gaps. Draw as if each cell is 64x64 logical pixels enlarged uniformly, do not add subpixel detail.\nPose order left to right top row: 1 standing idle hands together ears up smiling; 2 walking LEFT foot forward, ears bounce; 3 walking RIGHT foot forward, same head height, complementary step. Bottom row: 4 sweeping snow, small twig broom across body down toward lower left, small cream/cyan snow puff at bristles; 5 tin watering can tipped toward lower left in front of body with a few cyan drops; 6 both hands raised carrying a wicker basket OVER his HAT/head, visible pumpkin and carrots, basket adds 10 pixels above normal body height. All feet on equal ground level within cells. Carry body SAME SIZE as others.\nUse ONLY these 24 colours: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Warm living flesh, not statue or bronze. Keep outer ears and all props entirely in cells. No other characters."
+    },
+    {
+      "file": "masters/dobby-candidate-b.png",
+      "prompt": "Use case: stylized-concept. Asset: production pixel-art character sprite sheet for Hagrid's garden. Draw six distinct poses of LIVING DOBBY, book illustration interpretation, never film CGI likeness. Tiny thin house elf, huge bat ears, very large ROUND green tennis-ball eyes (#71934B #B0BD67), long pointed nose pointed toward viewer's LOWER LEFT, tan skin #E7AE73 with #C97952 #A57554 shading, long thin fingers. Cheerful eager clumsy. Old cream pillowcase tunic tied at shoulder, knitted warm red-orange TEA COSY HAT with tiny bobble, two odd socks: one green striped, one plain purple. This hat and socks stay identical across all six poses. Face and proportions identical. Three-quarter facing LOWER LEFT throughout, never right. Crisp actual low-resolution pixel clusters, single-pixel selective dark outline #231F2E, NO smooth edges, no white outline, light from top left, no pure black. Match the restrained detailed pixel density of the Hagrid reference (80x112 with 58x90 ink); Dobby body only 42 pixels tall at native scale and head about 18 pixels wide; ears span about 35 native pixels. Small lean body, big eyes, recognizable silhouette.\nTransparent background, no shadow, no ground, NO TEXT or labels or cell lines. Large evenly spaced 3 columns by 2 rows sheet, each sprite centered in its own generous cell and with clear transparent gaps. Draw as if each cell is 64x64 logical pixels enlarged uniformly, do not add subpixel detail.\nPose order left to right top row: 1 standing idle hands together ears up smiling; 2 walking LEFT foot forward, ears bounce; 3 walking RIGHT foot forward, same head height, complementary step. Bottom row: 4 sweeping snow, small twig broom across body down toward lower left, small cream/cyan snow puff at bristles; 5 tin watering can tipped toward lower left in front of body with a few cyan drops; 6 both hands raised carrying a wicker basket OVER his HAT/head, visible pumpkin and carrots, basket adds 10 pixels above normal body height. All feet on equal ground level within cells. Carry body SAME SIZE as others.\nUse ONLY these 24 colours: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Warm living flesh, not statue or bronze. Keep outer ears and all props entirely in cells. No other characters.\nSECOND CANDIDATE: simplify strongly into clean hand-placed chunky pixels, absolutely no painterly texture or gradients. Head eyes are two HUGE round green circles with dark pupils and pale cream highlights, no human-like eyelids. Clearly book-Dobby with pencil-thin neck, long pointed nose, large thin triangular ears, small spare limbs, gentle toothless cheerful smile. Hat is a short rounded TEA COSY, red-orange with bobble, not a tall beanie. Native body height 42px; eye circles 5px diameter. Outline 1 logical pixel. Skin pale warm TAN, pillowcase muted cream, not golden. Six figures at SAME SCALE. Walk 2 must put purple right foot ahead and green left foot back, visibly reverse the stride of walk 1. TRANSPARENT EMPTY BACKGROUND, no coloured backdrop or glows, no black background."
+    },
+    {
+      "file": "masters/dobby-v2-a.png",
+      "prompt": "Use case: stylized-concept.\nAsset: master sprite sheet, PNG RGBA, EXACTLY 1536 x 1024 pixels, transparent background. Draw original living BOOK DOBBY, never the film actor/CGI face. Six poses in 3 columns x 2 rows, each cell EXACTLY 512x512. No visible grid, no text, no labels.\nMOST IMPORTANT: this is genuine TINY NATIVE PIXEL ART enlarged exactly 8 times with nearest-neighbor. Think of the entire sheet as a 192x128 pixel image, six 64x64 logical-pixel cells. Every logical pixel MUST be an EXACT 8x8 square of ONE FLAT colour, all boundaries aligned to global multiples of 8. Do not paint fine pixel-styled illustration. NO details smaller than an 8x8 block. NO anti-aliasing, gradients, texture noise, dithering, knit pattern, glow, cast shadow, ground, backdrop, or ornamental micro-detail.\nEach pose maximum 56 logical pixels wide, 60 logical pixels tall; carry can be 64 high. Keep every sprite fully within its own cell. Body centered at local logical x32 (actual x256); feet bottom edge at local y480 (logical row60). Same body scale across poses, about 42 logical pixels high including hat, carry basket adds height above it. Clear transparent space between poses.\nCharacter: tiny thin cheerful eager house-elf with HUGE triangular bat ears, very large ROUND green eyes, pencil-thin neck, long pointed nose rendered as a clear single-logical-pixel-wide line. Each eye a simple 4-5 logical pixel circle with 1-2 pixel dark pupil, minimal face. Three-quarter facing lower-left. Pale warm tan skin. Old pillowcase tunic tied on shoulder. Low rounded red-orange wool TEA-COSY hat with bobble, simplified flat shapes without knitting texture. One green sock with broad cream stripe, one plain purple sock, consistent sides. Thin arms and fingers expressed with simple block clusters. Friendly book illustration proportions.\nOutline entire silhouette in clean ONE logical pixel (8 actual pixels) #231F2E. Top-left lit, a single darker flat patch lower-right; no folds smaller than 2 logical pixels.\nUse ONLY these TWELVE exact flat opaque colours (plus fully transparent): #231F2E #F5D69A #E7AE73 #C97952 #C75B4B #ED8A45 #D6D8BF #A6B1AE #B0BD67 #71934B #6961A6 #8B4A3F. Reuse cream/gray for tin watering can, water drops and snow; brown/orange for basket/broom/vegetables. Do not add white or pure black.\nPose order top row left to right: idle standing hands together ears up smiling; walk-1 LEFT foot forward green sock, other foot back; walk-2 RIGHT purple foot forward green back, complementary stride and head same height. Bottom row left to right: sweep with twig broom across body pointing lower-left, tiny snow puff at bristles; water with small tin watering can tipped lower-left and a few simple block drops; carry with BOTH hands raised holding wicker basket OVER his head/hat, visible pumpkin and carrots, same body size as other poses. Basket rendered in 2-3 broad flat clusters, no woven texture.\nNative Hagrid reference is only style guidance: hand-placed chunky low-resolution sprite clusters and restrained detail. No Hagrid included.\nCANDIDATE A: wide bat ears, round big-eyed head, short simple tea-cosy hat. Prioritize unbroken flat 8x8 block shapes and immediately readable actions.",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "candidate-only; fails exact 8x8 grid, palette and alpha requirements",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a50c-6cba-7313-99d4-53037b8ce8a8/exec-1fb7b450-e9d8-4067-9874-80f5cbbdde61.png",
+      "rejected_edit": {
+        "prompt": "Edit this sprite sheet only. Preserve six characters, poses, order and 1536x1024 canvas. REMOVE THE ENTIRE DARK BACKGROUND AND ALL GLOWS: every pixel outside character or prop silhouettes must be FULLY TRANSPARENT alpha zero, not black or checkerboard. Snap the artwork to a rigid 8x8 pixel block grid: each 8x8 square aligned from global (0,0) contains one uniform solid colour or transparency. This must look like a 192x128 native pixel image enlarged exactly 8x. Remove all texture, smooth edges, grain, gradients. Use only twelve exact RGB colours #231F2E #F5D69A #E7AE73 #C97952 #C75B4B #ED8A45 #D6D8BF #A6B1AE #B0BD67 #71934B #6961A6 #8B4A3F. 1 block dark outline. Maintain 3x2 512px cells, local foot baseline 480 and center x256. Do not add details. Uniform 8x8 blocks and real alpha transparency are the entire purpose of this correction.",
+        "reason": "Lost distinct pupils; background and nonuniform pixels remained."
+      }
+    },
+    {
+      "file": "masters/dobby-v2-b.png",
+      "prompt": "Use case: stylized-concept.\nAsset: master sprite sheet, PNG RGBA, EXACTLY 1536 x 1024 pixels, transparent background. Draw original living BOOK DOBBY, never the film actor/CGI face. Six poses in 3 columns x 2 rows, each cell EXACTLY 512x512. No visible grid, no text, no labels.\nMOST IMPORTANT: this is genuine TINY NATIVE PIXEL ART enlarged exactly 8 times with nearest-neighbor. Think of the entire sheet as a 192x128 pixel image, six 64x64 logical-pixel cells. Every logical pixel MUST be an EXACT 8x8 square of ONE FLAT colour, all boundaries aligned to global multiples of 8. Do not paint fine pixel-styled illustration. NO details smaller than an 8x8 block. NO anti-aliasing, gradients, texture noise, dithering, knit pattern, glow, cast shadow, ground, backdrop, or ornamental micro-detail.\nEach pose maximum 56 logical pixels wide, 60 logical pixels tall; carry can be 64 high. Keep every sprite fully within its own cell. Body centered at local logical x32 (actual x256); feet bottom edge at local y480 (logical row60). Same body scale across poses, about 42 logical pixels high including hat, carry basket adds height above it. Clear transparent space between poses.\nCharacter: tiny thin cheerful eager house-elf with HUGE triangular bat ears, very large ROUND green eyes, pencil-thin neck, long pointed nose rendered as a clear single-logical-pixel-wide line. Each eye a simple 4-5 logical pixel circle with 1-2 pixel dark pupil, minimal face. Three-quarter facing lower-left. Pale warm tan skin. Old pillowcase tunic tied on shoulder. Low rounded red-orange wool TEA-COSY hat with bobble, simplified flat shapes without knitting texture. One green sock with broad cream stripe, one plain purple sock, consistent sides. Thin arms and fingers expressed with simple block clusters. Friendly book illustration proportions.\nOutline entire silhouette in clean ONE logical pixel (8 actual pixels) #231F2E. Top-left lit, a single darker flat patch lower-right; no folds smaller than 2 logical pixels.\nUse ONLY these TWELVE exact flat opaque colours (plus fully transparent): #231F2E #F5D69A #E7AE73 #C97952 #C75B4B #ED8A45 #D6D8BF #A6B1AE #B0BD67 #71934B #6961A6 #8B4A3F. Reuse cream/gray for tin watering can, water drops and snow; brown/orange for basket/broom/vegetables. Do not add white or pure black.\nPose order top row left to right: idle standing hands together ears up smiling; walk-1 LEFT foot forward green sock, other foot back; walk-2 RIGHT purple foot forward green back, complementary stride and head same height. Bottom row left to right: sweep with twig broom across body pointing lower-left, tiny snow puff at bristles; water with small tin watering can tipped lower-left and a few simple block drops; carry with BOTH hands raised holding wicker basket OVER his head/hat, visible pumpkin and carrots, same body size as other poses. Basket rendered in 2-3 broad flat clusters, no woven texture.\nNative Hagrid reference is only style guidance: hand-placed chunky low-resolution sprite clusters and restrained detail. No Hagrid included.\nCANDIDATE B: simplify even further: spare very thin body, bold clean ear triangles, slightly longer narrow book-elf face, eyes the dominant facial shapes, only 2 broad skin-tone planes. Keep silhouette angular and stepped with long clean runs of uniform 8x8 squares. No tiny folds, no individual basket weave or broom twigs smaller than 1 logical pixel. All six poses consistently chunky.",
+      "edit_prompt": "Edit this sprite sheet only. Preserve six characters, poses, order and 1536x1024 canvas. REMOVE THE ENTIRE DARK BACKGROUND AND ALL GLOWS: every pixel outside character or prop silhouettes must be FULLY TRANSPARENT alpha zero, not black or checkerboard. Snap artwork to a rigid 8x8 pixel block grid: each 8x8 square aligned from global (0,0) contains one uniform solid colour or transparency. Make a 192x128 native pixel image enlarged exactly 8x nearest neighbor. Remove all texture, smooth edges, grain, gradients. Use ONLY twelve exact RGB colours #231F2E #F5D69A #E7AE73 #C97952 #C75B4B #ED8A45 #D6D8BF #A6B1AE #B0BD67 #71934B #6961A6 #8B4A3F. 1 block dark outline. Maintain 3x2 512px cells, local foot baseline 480 and center x256. Do not add details. Uniform 8x8 blocks and actual alpha transparency are the entire purpose of this correction.",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visually closer candidate; fails exact 8x8 grid, palette and alpha requirements",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a50c-6cba-7313-99d4-53037b8ce8a8/exec-925b30ca-1ad3-41ed-87c3-03a4214c4d85.png"
+    },
+    {
+      "file": "masters/dobby-v2-extra-candidate-a.png",
+      "batch": "elves-batch-01",
+      "candidate": "A",
+      "prompt": "Use case: stylized-concept. Production master sprite sheet, EXACT 1536x1024 RGBA transparent canvas, 3 columns x 2 rows of 512x512 cells. Reference image is APPROVED DOBBY STYLE AND PIXEL DENSITY reference, not background reference. Match its chunky large square pixels (~11.6 actual px per logical pixel), about 44x44 logical squares per cell. Every sprite pixel is ONE flat square block; no detail or outline thinner than one 11.6px block. Clean one-block #231F2E outline, big simple flat colour regions, top-left light expressed only with one broad flat shadow. NO texture, anti-aliasing, gradients, glow, shadows behind sprites, backdrop, ground plane, text, labels, grid lines or checkerboard. True transparent alpha outside silhouettes. Do NOT reproduce reference's dark backdrop/glow.\nSix poses exactly in row-major order below. Body centered at local x256, standing foot baseline local y480, top of standing hat/ears local y20-60, all characters at reference Dobby body scale (~420-460px tall); sitting/sleep crouches naturally while retaining same head and block scale, jumping keeps all raised arms within cell. Entire silhouette and props within local x16..496 y16..496 minimum 16px clear cell-edge margin. Three-quarter view facing lower-left. Same character identity, clothes, proportions, colour assignments and block size in all six poses. Walk-1 anatomical left foot forward, walk-2 anatomical right foot forward with visibly opposite stride, head at same height. Never copy reference poses; draw requested poses.\nUse at most TWELVE exact solid sprite colours specified below plus transparency; no extra colours, black or white. No film CGI, painterly or detailed pixel illustration.\nSubject: SAME approved Dobby design as reference: huge triangular ears, enormous green round eyes with dark square pupils, long thin pointed nose, thin neck and limbs, cream pillowcase tunic tied at shoulder, red-orange low bobbled tea-cosy hat, one green sock with broad cream stripe, one purple sock. Keep his face and clothes exactly recognizable.\nAllowed twelve colours: #231F2E #F5D69A #E7AE73 #C97952 #C75B4B #ED8A45 #D6D8BF #A6B1AE #B0BD67 #71934B #6961A6 #8B4A3F\nPose order: 1 sleep: curled up asleep seated with head on knees and hat pulled over eyes, no z or text. 2 feed: pouring a scoop of feed down to lower-left, several large block grains. 3 harvest: pulling up an orange carrot with both hands, broad green leaves. 4 cheer: joyful jump, both arms raised, feet slightly airborne near baseline. 5 hat: holding up a NEW knitted wool hat proudly with BOTH hands, still wearing original hat; no knit texture. 6 sock: delighted holding up ONE extra knitted sock.\nCandidate A: match reference silhouette and flat chunky block economy as closely as possible.",
+      "reference": "masters/dobby-v2-b.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-df9295f9-5e88-4611-83c1-96edf968cf88.png"
+    },
+    {
+      "file": "masters/dobby-v2-extra-candidate-b.png",
+      "batch": "elves-batch-01",
+      "candidate": "B",
+      "prompt": "Use case: stylized-concept. Production master sprite sheet, EXACT 1536x1024 RGBA transparent canvas, 3 columns x 2 rows of 512x512 cells. Reference image is APPROVED DOBBY STYLE AND PIXEL DENSITY reference, not background reference. Match its chunky large square pixels (~11.6 actual px per logical pixel), about 44x44 logical squares per cell. Every sprite pixel is ONE flat square block; no detail or outline thinner than one 11.6px block. Clean one-block #231F2E outline, big simple flat colour regions, top-left light expressed only with one broad flat shadow. NO texture, anti-aliasing, gradients, glow, shadows behind sprites, backdrop, ground plane, text, labels, grid lines or checkerboard. True transparent alpha outside silhouettes. Do NOT reproduce reference's dark backdrop/glow.\nSix poses exactly in row-major order below. Body centered at local x256, standing foot baseline local y480, top of standing hat/ears local y20-60, all characters at reference Dobby body scale (~420-460px tall); sitting/sleep crouches naturally while retaining same head and block scale, jumping keeps all raised arms within cell. Entire silhouette and props within local x16..496 y16..496 minimum 16px clear cell-edge margin. Three-quarter view facing lower-left. Same character identity, clothes, proportions, colour assignments and block size in all six poses. Walk-1 anatomical left foot forward, walk-2 anatomical right foot forward with visibly opposite stride, head at same height. Never copy reference poses; draw requested poses.\nUse at most TWELVE exact solid sprite colours specified below plus transparency; no extra colours, black or white. No film CGI, painterly or detailed pixel illustration.\nSubject: SAME approved Dobby design as reference: huge triangular ears, enormous green round eyes with dark square pupils, long thin pointed nose, thin neck and limbs, cream pillowcase tunic tied at shoulder, red-orange low bobbled tea-cosy hat, one green sock with broad cream stripe, one purple sock. Keep his face and clothes exactly recognizable.\nAllowed twelve colours: #231F2E #F5D69A #E7AE73 #C97952 #C75B4B #ED8A45 #D6D8BF #A6B1AE #B0BD67 #71934B #6961A6 #8B4A3F\nPose order: 1 sleep: curled up asleep seated with head on knees and hat pulled over eyes, no z or text. 2 feed: pouring a scoop of feed down to lower-left, several large block grains. 3 harvest: pulling up an orange carrot with both hands, broad green leaves. 4 cheer: joyful jump, both arms raised, feet slightly airborne near baseline. 5 hat: holding up a NEW knitted wool hat proudly with BOTH hands, still wearing original hat; no knit texture. 6 sock: delighted holding up ONE extra knitted sock.\nCandidate B: generate fresh isolated sprite cutouts. The reference is ONLY the character design. Fully DELETE/IGNORE its entire dark background and glow. Empty canvas must be alpha=0. No coloured pixels outside elf/prop shapes. Keep the exact same ~11.6px square block density and chunky face. Sleeping head rests ON KNEES, feed has no glow, cheer is visibly airborne, hat held with BOTH hands.",
+      "reference": "masters/dobby-v2-b.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-17ec2463-145d-499e-8c31-ef3401941d3d.png"
+    },
+    {
+      "file": "masters/winky-candidate-a.png",
+      "batch": "elves-batch-01",
+      "candidate": "A",
+      "prompt": "Use case: stylized-concept. Production master sprite sheet, EXACT 1536x1024 RGBA transparent canvas, 3 columns x 2 rows of 512x512 cells. Reference image is APPROVED DOBBY STYLE AND PIXEL DENSITY reference, not background reference. Match its chunky large square pixels (~11.6 actual px per logical pixel), about 44x44 logical squares per cell. Every sprite pixel is ONE flat square block; no detail or outline thinner than one 11.6px block. Clean one-block #231F2E outline, big simple flat colour regions, top-left light expressed only with one broad flat shadow. NO texture, anti-aliasing, gradients, glow, shadows behind sprites, backdrop, ground plane, text, labels, grid lines or checkerboard. True transparent alpha outside silhouettes. Do NOT reproduce reference's dark backdrop/glow.\nSix poses exactly in row-major order below. Body centered at local x256, standing foot baseline local y480, top of standing hat/ears local y20-60, all characters at reference Dobby body scale (~420-460px tall); sitting/sleep crouches naturally while retaining same head and block scale, jumping keeps all raised arms within cell. Entire silhouette and props within local x16..496 y16..496 minimum 16px clear cell-edge margin. Three-quarter view facing lower-left. Same character identity, clothes, proportions, colour assignments and block size in all six poses. Walk-1 anatomical left foot forward, walk-2 anatomical right foot forward with visibly opposite stride, head at same height. Never copy reference poses; draw requested poses.\nUse at most TWELVE exact solid sprite colours specified below plus transparency; no extra colours, black or white. No film CGI, painterly or detailed pixel illustration.\nSubject: BOOK Winky, female house-elf, rounder and subtly smaller than Dobby while comparable master height; huge BROWN eyes #735044/#A57554 with dark pupils, round nose, large ears, warm pale tan skin. Plain warm orange tea towel tied like toga, ONE darker stripe only (no checks), small blue #70A8B6 winter scarf with plain block ends, no knit texture, no hat. Clearly a house-elf, not a human child.\nAllowed twelve colours: #231F2E #735044 #A57554 #F5D69A #E7AE73 #C97952 #8B4A3F #D6D8BF #A6B1AE #70A8B6 #ED8A45 #FFC36B\nPose order: 1 idle hands together. 2 walk-1 left foot forward. 3 walk-2 right foot forward opposite stride, same head height as pose2. 4 water: small grey tin watering can tipped lower-left with simple blue block drops. 5 carry: basket of eggs held in FRONT, large simple cream eggs, no basket weave. 6 sleep: sitting asleep, hands folded, tiny flat block campfire beside her inside same cell; NO glow or light halo.\nCandidate A: prioritize large flat square blocks, correct brown eyes, full-height sprite and clearly opposite walking feet. ALPHA TRANSPARENT BACKGROUND, reference dark backdrop must not be copied.",
+      "reference": "masters/dobby-v2-b.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-1f7f8607-4b99-4fbb-b95e-9a6bac34634d.png"
+    },
+    {
+      "file": "masters/winky-candidate-b.png",
+      "batch": "elves-batch-01",
+      "candidate": "B",
+      "prompt": "Use case: stylized-concept. Production master sprite sheet, EXACT 1536x1024 RGBA transparent canvas, 3 columns x 2 rows of 512x512 cells. Reference image is APPROVED DOBBY STYLE AND PIXEL DENSITY reference, not background reference. Match its chunky large square pixels (~11.6 actual px per logical pixel), about 44x44 logical squares per cell. Every sprite pixel is ONE flat square block; no detail or outline thinner than one 11.6px block. Clean one-block #231F2E outline, big simple flat colour regions, top-left light expressed only with one broad flat shadow. NO texture, anti-aliasing, gradients, glow, shadows behind sprites, backdrop, ground plane, text, labels, grid lines or checkerboard. True transparent alpha outside silhouettes. Do NOT reproduce reference's dark backdrop/glow.\nSix poses exactly in row-major order below. Body centered at local x256, standing foot baseline local y480, top of standing hat/ears local y20-60, all characters at reference Dobby body scale (~420-460px tall); sitting/sleep crouches naturally while retaining same head and block scale, jumping keeps all raised arms within cell. Entire silhouette and props within local x16..496 y16..496 minimum 16px clear cell-edge margin. Three-quarter view facing lower-left. Same character identity, clothes, proportions, colour assignments and block size in all six poses. Walk-1 anatomical left foot forward, walk-2 anatomical right foot forward with visibly opposite stride, head at same height. Never copy reference poses; draw requested poses.\nUse at most TWELVE exact solid sprite colours specified below plus transparency; no extra colours, black or white. No film CGI, painterly or detailed pixel illustration.\nSubject: BOOK Winky, female house-elf, rounder and subtly smaller than Dobby while comparable master height; huge BROWN eyes #735044/#A57554 with dark pupils, round nose, large ears, warm pale tan skin. Plain warm orange tea towel tied like toga, ONE darker stripe only (no checks), small blue #70A8B6 winter scarf with plain block ends, no knit texture, no hat. Clearly a house-elf, not a human child.\nAllowed twelve colours: #231F2E #735044 #A57554 #F5D69A #E7AE73 #C97952 #8B4A3F #D6D8BF #A6B1AE #70A8B6 #ED8A45 #FFC36B\nPose order: 1 idle hands together. 2 walk-1 left foot forward. 3 walk-2 right foot forward opposite stride, same head height as pose2. 4 water: small grey tin watering can tipped lower-left with simple blue block drops. 5 carry: basket of eggs held in FRONT, large simple cream eggs, no basket weave. 6 sleep: sitting asleep, hands folded, tiny flat block campfire beside her inside same cell; NO glow or light halo.\nCandidate B: rounder head, ROUND blunt nose (not Dobby's pointed nose), rounder compact body, plain orange toga and blue scarf. Draw as coarse pixel squares, about 38-40 blocks tall and one-block dark outline. Generate on TRUE ALPHA TRANSPARENCY, no dark background, no diffuse lighting, no halo. Fire and water are only solid blocks. Walking frames must reverse legs AND arms. No reference background.",
+      "reference": "masters/dobby-v2-b.png (visually inspected; not passed to this generation)",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-84431ef5-027a-4fbc-b866-3fa4067b49b0.png"
+    },
+    {
+      "file": "masters/kitchen-elf-a-candidate-a.png",
+      "batch": "elves-batch-01",
+      "candidate": "A",
+      "prompt": "Use case: stylized-concept. Production master sprite sheet, EXACT 1536x1024 RGBA transparent canvas, 3 columns x 2 rows of 512x512 cells. Reference image is APPROVED DOBBY STYLE AND PIXEL DENSITY reference, not background reference. Match its chunky large square pixels (~11.6 actual px per logical pixel), about 44x44 logical squares per cell. Every sprite pixel is ONE flat square block; no detail or outline thinner than one 11.6px block. Clean one-block #231F2E outline, big simple flat colour regions, top-left light expressed only with one broad flat shadow. NO texture, anti-aliasing, gradients, glow, shadows behind sprites, backdrop, ground plane, text, labels, grid lines or checkerboard. True transparent alpha outside silhouettes. Do NOT reproduce reference's dark backdrop/glow.\nSix poses exactly in row-major order below. Body centered at local x256, standing foot baseline local y480, top of standing hat/ears local y20-60, all characters at reference Dobby body scale (~420-460px tall); sitting/sleep crouches naturally while retaining same head and block scale, jumping keeps all raised arms within cell. Entire silhouette and props within local x16..496 y16..496 minimum 16px clear cell-edge margin. Three-quarter view facing lower-left. Same character identity, clothes, proportions, colour assignments and block size in all six poses. Walk-1 anatomical left foot forward, walk-2 anatomical right foot forward with visibly opposite stride, head at same height. Never copy reference poses; draw requested poses.\nUse at most TWELVE exact solid sprite colours specified below plus transparency; no extra colours, black or white. No film CGI, painterly or detailed pixel illustration.\nSubject: Older Hogwarts kitchen house-elf A: lean long face and long drooping ears, large BLUE-GREY eyes with dark pupils, pointed nose and just one broad brow shape suggesting age, pale warm tan skin. Cream tea towel as shoulder-tied toga, small PLAIN blue-grey shield silhouette on chest (no lettering or crest details), no hat, no scarf, bare feet. Different face/clothing from reference Dobby but same coarse square blocks and master height.\nAllowed twelve colours: #231F2E #735044 #A57554 #F5D69A #E7AE73 #C97952 #D6D8BF #A6B1AE #687486 #70A8B6 #B7DEE0 #8B4A3F\nPose order: 1 idle. 2 walk-1 left foot forward. 3 walk-2 right foot forward opposite stride same head height. 4 sweep: twig broom down toward lower-left, small cream/pale cyan snow puff at bristles; no tiny twig details. 5 carry: a clear stack of exactly THREE simple plates held in front. 6 sleep: sitting asleep hands resting on knees, drooping ears.\nCandidate A: same square-block scale and simple silhouette as Dobby reference. Older drooping ears and small plain chest shield must be clear. Transparent EMPTY backdrop; no glows.",
+      "reference": "masters/dobby-v2-b.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-38fd4b98-ef19-41c8-9a4a-bfc6601695e0.png"
+    },
+    {
+      "file": "masters/kitchen-elf-a-candidate-b.png",
+      "batch": "elves-batch-01",
+      "candidate": "B",
+      "prompt": "Use case: stylized-concept. Production master sprite sheet, EXACT 1536x1024 RGBA transparent canvas, 3 columns x 2 rows of 512x512 cells. Reference image is APPROVED DOBBY STYLE AND PIXEL DENSITY reference, not background reference. Match its chunky large square pixels (~11.6 actual px per logical pixel), about 44x44 logical squares per cell. Every sprite pixel is ONE flat square block; no detail or outline thinner than one 11.6px block. Clean one-block #231F2E outline, big simple flat colour regions, top-left light expressed only with one broad flat shadow. NO texture, anti-aliasing, gradients, glow, shadows behind sprites, backdrop, ground plane, text, labels, grid lines or checkerboard. True transparent alpha outside silhouettes. Do NOT reproduce reference's dark backdrop/glow.\nSix poses exactly in row-major order below. Body centered at local x256, standing foot baseline local y480, top of standing hat/ears local y20-60, all characters at reference Dobby body scale (~420-460px tall); sitting/sleep crouches naturally while retaining same head and block scale, jumping keeps all raised arms within cell. Entire silhouette and props within local x16..496 y16..496 minimum 16px clear cell-edge margin. Three-quarter view facing lower-left. Same character identity, clothes, proportions, colour assignments and block size in all six poses. Walk-1 anatomical left foot forward, walk-2 anatomical right foot forward with visibly opposite stride, head at same height. Never copy reference poses; draw requested poses.\nUse at most TWELVE exact solid sprite colours specified below plus transparency; no extra colours, black or white. No film CGI, painterly or detailed pixel illustration.\nSubject: Older Hogwarts kitchen house-elf A: lean long face and long drooping ears, large BLUE-GREY eyes with dark pupils, pointed nose and just one broad brow shape suggesting age, pale warm tan skin. Cream tea towel as shoulder-tied toga, small PLAIN blue-grey shield silhouette on chest (no lettering or crest details), no hat, no scarf, bare feet. Different face/clothing from reference Dobby but same coarse square blocks and master height.\nAllowed twelve colours: #231F2E #735044 #A57554 #F5D69A #E7AE73 #C97952 #D6D8BF #A6B1AE #687486 #70A8B6 #B7DEE0 #8B4A3F\nPose order: 1 idle. 2 walk-1 left foot forward. 3 walk-2 right foot forward opposite stride same head height. 4 sweep: twig broom down toward lower-left, small cream/pale cyan snow puff at bristles; no tiny twig details. 5 carry: a clear stack of exactly THREE simple plates held in front. 6 sleep: sitting asleep hands resting on knees, drooping ears.\nCandidate B: LONG DROOPY ears on EVERY pose, narrow older face, hunched shoulders. Simple chunky square blocks with one-block outline, no small features. Walk1 LEFT foot projects lower-left while right foot behind at lower-right; Walk2 RIGHT foot projects lower-left while left foot behind at lower-right, reverse arm swing and show overlapping legs in opposite order. Fully transparent alpha background, no glow, no blurred halos. Face must not be round like Winky.",
+      "reference": "masters/dobby-v2-b.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-4b228a46-db77-405f-aa26-269f1d04afdd.png"
+    },
+    {
+      "file": "masters/kitchen-elf-b-candidate-a.png",
+      "batch": "elves-batch-01",
+      "candidate": "A",
+      "prompt": "Use case: stylized-concept. Production master sprite sheet, EXACT 1536x1024 RGBA transparent canvas, 3 columns x 2 rows of 512x512 cells. Reference image is APPROVED DOBBY STYLE AND PIXEL DENSITY reference, not background reference. Match its chunky large square pixels (~11.6 actual px per logical pixel), about 44x44 logical squares per cell. Every sprite pixel is ONE flat square block; no detail or outline thinner than one 11.6px block. Clean one-block #231F2E outline, big simple flat colour regions, top-left light expressed only with one broad flat shadow. NO texture, anti-aliasing, gradients, glow, shadows behind sprites, backdrop, ground plane, text, labels, grid lines or checkerboard. True transparent alpha outside silhouettes. Do NOT reproduce reference's dark backdrop/glow.\nSix poses exactly in row-major order below. Body centered at local x256, standing foot baseline local y480, top of standing hat/ears local y20-60, all characters at reference Dobby body scale (~420-460px tall); sitting/sleep crouches naturally while retaining same head and block scale, jumping keeps all raised arms within cell. Entire silhouette and props within local x16..496 y16..496 minimum 16px clear cell-edge margin. Three-quarter view facing lower-left. Same character identity, clothes, proportions, colour assignments and block size in all six poses. Walk-1 anatomical left foot forward, walk-2 anatomical right foot forward with visibly opposite stride, head at same height. Never copy reference poses; draw requested poses.\nUse at most TWELVE exact solid sprite colours specified below plus transparency; no extra colours, black or white. No film CGI, painterly or detailed pixel illustration.\nSubject: Hogwarts kitchen house-elf B: clearly DIFFERENT from older lean elf A: compact shorter body, large ROUND face, short round nose, very large ears sticking UP, big expressive eyes with dark square pupils. Warm tan skin. White-looking cream #D6D8BF chef-style tea towel tied as an APRON with a broad waist tie, bare shoulders and feet, no hat, no scarf, no shield. Carries a simple wooden spoon in idle. Comparable master height through upright ears, same ~11.6px coarse blocks and head scale as Dobby.\nAllowed twelve colours: #231F2E #735044 #A57554 #F5D69A #E7AE73 #C97952 #D6D8BF #A6B1AE #687486 #70A8B6 #B7DEE0 #8B4A3F\nPose order: 1 idle holding wooden spoon. 2 walk-1 left foot forward. 3 walk-2 right foot forward opposite stride same head height. 4 sweep with simple twig broom down lower-left and tiny block snow puff. 5 water with small tin watering can tipped lower-left, simple blue block drops. 6 sleep seated with folded hands, upright ears relaxed.\nCandidate A: squat ROUND face, ROUND short nose, very large UPRIGHT ear triangles, compact apron body, bare feet. Match Dobby large square pixel block density, not fine pixel illustration. Transparent empty background only.",
+      "reference": "masters/dobby-v2-b.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-b6f92237-8b72-4fc1-afcf-6e3582b47592.png"
+    },
+    {
+      "file": "masters/kitchen-elf-b-candidate-b.png",
+      "batch": "elves-batch-01",
+      "candidate": "B",
+      "prompt": "Use case: stylized-concept. Production master sprite sheet, EXACT 1536x1024 RGBA transparent canvas, 3 columns x 2 rows of 512x512 cells. Reference image is APPROVED DOBBY STYLE AND PIXEL DENSITY reference, not background reference. Match its chunky large square pixels (~11.6 actual px per logical pixel), about 44x44 logical squares per cell. Every sprite pixel is ONE flat square block; no detail or outline thinner than one 11.6px block. Clean one-block #231F2E outline, big simple flat colour regions, top-left light expressed only with one broad flat shadow. NO texture, anti-aliasing, gradients, glow, shadows behind sprites, backdrop, ground plane, text, labels, grid lines or checkerboard. True transparent alpha outside silhouettes. Do NOT reproduce reference's dark backdrop/glow.\nSix poses exactly in row-major order below. Body centered at local x256, standing foot baseline local y480, top of standing hat/ears local y20-60, all characters at reference Dobby body scale (~420-460px tall); sitting/sleep crouches naturally while retaining same head and block scale, jumping keeps all raised arms within cell. Entire silhouette and props within local x16..496 y16..496 minimum 16px clear cell-edge margin. Three-quarter view facing lower-left. Same character identity, clothes, proportions, colour assignments and block size in all six poses. Walk-1 anatomical left foot forward, walk-2 anatomical right foot forward with visibly opposite stride, head at same height. Never copy reference poses; draw requested poses.\nUse at most TWELVE exact solid sprite colours specified below plus transparency; no extra colours, black or white. No film CGI, painterly or detailed pixel illustration.\nSubject: Hogwarts kitchen house-elf B: clearly DIFFERENT from older lean elf A: compact shorter body, large ROUND face, short round nose, very large ears sticking UP, big expressive eyes with dark square pupils. Warm tan skin. White-looking cream #D6D8BF chef-style tea towel tied as an APRON with a broad waist tie, bare shoulders and feet, no hat, no scarf, no shield. Carries a simple wooden spoon in idle. Comparable master height through upright ears, same ~11.6px coarse blocks and head scale as Dobby.\nAllowed twelve colours: #231F2E #735044 #A57554 #F5D69A #E7AE73 #C97952 #D6D8BF #A6B1AE #687486 #70A8B6 #B7DEE0 #8B4A3F\nPose order: 1 idle holding wooden spoon. 2 walk-1 left foot forward. 3 walk-2 right foot forward opposite stride same head height. 4 sweep with simple twig broom down lower-left and tiny block snow puff. 5 water with small tin watering can tipped lower-left, simple blue block drops. 6 sleep seated with folded hands, upright ears relaxed.\nCandidate B: brown #735044 eyes so every colour remains in the 12 listed. Round head, short round nose, upright ears, SHORTER compact body, cream chef APRON with visible waist tie, not a toga. Large single 11.6px blocks and one-block outline. Walk1 left knee extends lower-left and opposite arm swings forward; walk2 RIGHT knee extends lower-left and REVERSE arm swing, not a duplicate. True transparent background, NO glows on snow or water, NO backdrop. Same pixel density as approved Dobby.",
+      "reference": "masters/dobby-v2-b.png",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-33b0afb2-cdbc-4af2-8ce2-c43981687f34.png"
+    },
+    {
+      "key": "dobby",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Dobby: huge bat ears, big ROUND green eyes, pencil-thin neck, long pointed nose, pale warm tan skin, old cream pillowcase tunic tied at shoulder, red-orange tea-cosy wool hat with bobble, one green sock and one purple sock. Charming eager gentle smile. Preserve detailed first Dobby's lovable face and appealing silhouette while using exact 6px clusters.\nPose order row-major: idle hands gently together; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; water tin can tipped with drops; carry vegetable basket OVERHEAD held in both hands. Keep body scale identical even under overhead basket.\nCandidate A: focus on luminous big green eyes, sweet asymmetrical smile and expressive bat ears; refined cozy-game charm, restrained readable 6px clusters.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-ff667543-0196-49ec-bf36-7871d51b0983.png",
+      "file": "masters/v3-dobby-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "dobby",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Dobby: huge bat ears, big ROUND green eyes, pencil-thin neck, long pointed nose, pale warm tan skin, old cream pillowcase tunic tied at shoulder, red-orange tea-cosy wool hat with bobble, one green sock and one purple sock. Charming eager gentle smile. Preserve detailed first Dobby's lovable face and appealing silhouette while using exact 6px clusters.\nPose order row-major: idle hands gently together; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; water tin can tipped with drops; carry vegetable basket OVERHEAD held in both hands. Keep body scale identical even under overhead basket.\nCandidate B. CRITICAL correction from candidate A: background must be ALPHA ZERO, not a dark brown background; remove ALL halos. Crisp flat pixel blocks only. Precisely 6 actual pixel squares, not irregular pixel-style painting. Keep head tops near y66 and feet y468, so height is 402px = 67 blocks. Big round sparkling eyes, beautifully shaped bat ears, delicate readable hands, long pointed nose. Make warm friendly face and elegant cloth folds using only 3 solid colours. Avoid detailed micro-textures. Walk poses must visibly reverse feet without swapping sock colours between anatomical legs.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-b875b98f-164a-41db-8bc7-b6e07485a244.png",
+      "file": "masters/v3-dobby-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "dobby-extra",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Dobby: huge bat ears, big ROUND green eyes, pencil-thin neck, long pointed nose, pale warm tan skin, cream pillowcase tunic tied at shoulder, red-orange tea-cosy wool hat with bobble, one green sock and one purple sock. Charming eager gentle smile. Same character design as main Dobby.\nPose order row-major: sleep sitting with head on knees and hat over eyes; feed pouring a scoop downward lower-left; harvest pulling a carrot with both hands; cheer jumping with arms up; hat proudly holding up a knitted hat with both hands; sock delighted holding up one knitted sock. Same head and body scale even seated.\nCandidate A: emotionally expressive, delicate but readable hands, charming head tilt, elegant flat-cluster cloth folds. Strict alpha-zero background, NO dark brown or black backdrop and NO halo. Hat pulled over eyes only in sleep, otherwise large sparkling green eyes.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-b3c93072-d60c-4000-b251-ae04ed616533.png",
+      "file": "masters/v3-dobby-extra-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "dobby-extra",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Dobby: huge bat ears, big ROUND green eyes, pencil-thin neck, long pointed nose, pale warm tan skin, cream pillowcase tunic tied at shoulder, red-orange tea-cosy wool hat with bobble, one green sock and one purple sock. Charming eager gentle smile. Same character design as main Dobby.\nPose order row-major: sleep sitting with head on knees and hat over eyes; feed pouring a scoop downward lower-left; harvest pulling a carrot with both hands; cheer jumping with arms up; hat proudly holding up a knitted hat with both hands; sock delighted holding up one knitted sock. Same head and body scale even seated.\nCandidate B: maximize adorable expressive green eyes, graceful long ears, warm affectionate book-Dobby face. Sleep head must actually rest ON KNEES beneath hat. Feed scoop must visibly pour. Cheer both feet OFF ground. Holding up hat with BOTH hands. CRITICAL: transparent alpha ZERO background everywhere outside silhouette, no brown backdrop and NO halo. Rigid six-pixel blocks, no finer details.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-09a37009-6f6f-4bdc-ad7b-87d01ddc0d2e.png",
+      "file": "masters/v3-dobby-extra-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "winky",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Winky, female book house-elf, rounder and slightly smaller (about 60-64 blocks tall), huge BROWN eyes with pupils and highlights, round blunt nose, warm tan skin, plain warm-orange tea towel toga with ONE darker stripe, small BLUE scarf. Endearing shy gentle expression, rounded ears and soft cheeks, recognizably a house-elf.\nPose order row-major: idle hands together; walk1 left foot forward; walk2 right foot forward; water with tin watering can and drops; carry basket of eggs in front; sleep sitting with folded hands beside TINY flat block fire, absolutely NO glow.\nCandidate A: warm gentle round face, enormous soulful BROWN eyes with distinct cream catchlights, appealing soft ears and carefully shaped blue scarf. Strong rounded silhouette. Preserve readable 6px flat square clusters. Background alpha zero; absolutely no halos, vignette, diffuse brown background or shadows.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-871ab67a-8291-40ee-ad44-3414ef3c5603.png",
+      "file": "masters/v3-winky-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "winky",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Winky, female book house-elf, rounder and slightly smaller (about 60-64 blocks tall), huge BROWN eyes with pupils and highlights, round blunt nose, warm tan skin, plain warm-orange tea towel toga with ONE darker stripe, small BLUE scarf. Endearing shy gentle expression, rounded ears and soft cheeks, recognizably a house-elf.\nPose order row-major: idle hands together; walk1 left foot forward; walk2 right foot forward; water with tin watering can and drops; carry basket of eggs in front; sleep sitting with folded hands beside TINY flat block fire, absolutely NO glow.\nCandidate B: refine Winky with huge BROWN eyes, visible dark pupils and cream eye highlights, soft rounded cheeks, tiny warm smile and rounded house-elf ears. Slightly smaller than adult elves. NO glow around fire or water, no 'z' or any letters. She wears plain orange toga with exactly one darker stripe and blue scarf. Pixel grid strictly SIX actual pixels square, fine enough for lovely expressive face but every square flat. Fully transparent empty backdrop.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-aaae6bcc-9b56-4aca-a349-f3d2564fc0ed.png",
+      "file": "masters/v3-winky-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "kitchen-a",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Hogwarts kitchen elf A: older, long DROOPY ears, lean long face, blue-grey expressive eyes, long nose, a gentle kind smile and subtly aged brow. Cream tea towel toga tied at one shoulder with small plain blue-grey SHIELD silhouette on chest, no letters or detailed crest. Bare feet. Same adult height and head/body proportions as Dobby.\nPose order row-major: idle; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; carry exactly THREE plates stacked in front; sleep seated with hands on knees and relaxed droopy ears.\nCandidate A: lovable older kitchen helper, expressive large blue-grey eyes, gentle amused smile, elegant long droopy ears and warm kind face. Use delicate but clear hands holding three separate plate rims. PLAIN shield chest patch. Keep same mature proportions as Dobby, no squat child proportions. Transparent alpha background, NO coloured backdrop, NO halo. Strict flat 6px squares.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-711f8101-9850-4234-8e80-b44eed6e1746.png",
+      "file": "masters/v3-kitchen-a-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "kitchen-a",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Hogwarts kitchen elf A: older, long DROOPY ears, lean long face, blue-grey expressive eyes, long nose, a gentle kind smile and subtly aged brow. Cream tea towel toga tied at one shoulder with small plain blue-grey SHIELD silhouette on chest, no letters or detailed crest. Bare feet. Same adult height and head/body proportions as Dobby.\nPose order row-major: idle; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; carry exactly THREE plates stacked in front; sleep seated with hands on knees and relaxed droopy ears.\nCandidate B: charming kindly older elf, soft smiling eyes with LARGE blue-grey irises, one simple age-brow crease, no dense wrinkles or face microtexture. Long DROOPING ears all poses. Lean body but head scale like Dobby. Beautiful clean 6-pixel clusters, every single square flat and grid aligned. True alpha-zero negative space no brown backdrop or halos. Three plain plates clearly separated, plain shield, reversed walking legs and arms. Slight head tilt conveys kindness.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-0c4fc1aa-d196-4825-9019-c8c744777b2a.png",
+      "file": "masters/v3-kitchen-a-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "kitchen-b",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Hogwarts kitchen elf B: compact shorter body but upright ears reach adult height; ROUND face, ears pointing UP, round nose, big kind brown eyes with pupils and highlights, cheerful warm smile. White-looking cream tea towel tied as chef APRON with a readable waist tie and bare shoulders and feet. Wooden spoon held in idle. Distinct from lean droopy-eared A, no hat, scarf or chest shield.\nPose order row-major: idle holding wooden spoon; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; water tin can and drops; sleep seated folded hands, ears relaxed.\nCandidate A: delightful round-faced kitchen companion with very upright bat ears and enormous warm BROWN eyes, a clear spoon and broad apron waist tie. Compact adult body, not baby, same head scale and overall ear-tip height as other adults. Lovely soft smile and friendly face. All detail rigid 6px squares; alpha-zero background and no halos.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-3e76de54-2d38-4d0a-90ba-67bdf73b30d5.png",
+      "file": "masters/v3-kitchen-b-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "kitchen-b",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Hogwarts kitchen elf B: compact shorter body but upright ears reach adult height; ROUND face, ears pointing UP, round nose, big kind brown eyes with pupils and highlights, cheerful warm smile. White-looking cream tea towel tied as chef APRON with a readable waist tie and bare shoulders and feet. Wooden spoon held in idle. Distinct from lean droopy-eared A, no hat, scarf or chest shield.\nPose order row-major: idle holding wooden spoon; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; water tin can and drops; sleep seated folded hands, ears relaxed.\nCandidate B: polished lovable compact ADULT elf, round cheeks, UPWARD ears but not excessively long rabbit ears, big round BROWN irises with distinct dark pupil and pale highlight, smile with expressive corners. Head/body scale like Dobby, shorter torso. Readable hands, spoon, broad apron ties. All six identities consistent, both walking heads same height. Exactly SIX pixel square flat blocks and single-block outline, no sub-block painting, NO dark background, NO glow, alpha zero outside clean silhouettes. Use restrained 2-3 shades per material for hand-placed cozy-game pixel beauty.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-d4d50998-c33e-40a5-90d7-5204ea238cff.png",
+      "file": "masters/v3-kitchen-b-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    }
+  ],
+  "selected": "masters/dobby-candidate-b.png",
+  "batch_01": {
+    "date": "2026-11-04",
+    "selected": [
+      {
+        "file": "masters/dobby-v2-extra.png",
+        "candidate": "masters/dobby-v2-extra-candidate-b.png"
+      },
+      {
+        "file": "masters/winky.png",
+        "candidate": "masters/winky-candidate-b.png"
+      },
+      {
+        "file": "masters/kitchen-elf-a.png",
+        "candidate": "masters/kitchen-elf-a-candidate-b.png"
+      },
+      {
+        "file": "masters/kitchen-elf-b.png",
+        "candidate": "masters/kitchen-elf-b-candidate-b.png"
+      }
+    ],
+    "status": "8/8 candidates generated, 4/4 selections saved; not production-ready; see docs/codex-briefs/elves-batch-01-report.md"
+  },
+  "v3": {
+    "date": "2026-11-04",
+    "selected": [
+      {
+        "file": "masters/v3-dobby.png",
+        "candidate": "masters/v3-dobby-candidate-a.png"
+      },
+      {
+        "file": "masters/v3-dobby-extra.png",
+        "candidate": "masters/v3-dobby-extra-candidate-a.png"
+      },
+      {
+        "file": "masters/v3-winky.png",
+        "candidate": "masters/v3-winky-candidate-b.png"
+      },
+      {
+        "file": "masters/v3-kitchen-a.png",
+        "candidate": "masters/v3-kitchen-a-candidate-b.png"
+      },
+      {
+        "file": "masters/v3-kitchen-b.png",
+        "candidate": "masters/v3-kitchen-b-candidate-b.png"
+      }
+    ],
+    "status": "10/10 candidates generated; 5/5 visual selections saved; strict technical acceptance FAILED; see docs/codex-briefs/elves-v3-report.md",
+    "verification": {
+      "selected": [
+        {
+          "file": "garden-v05/environment/elves/masters/v3-dobby.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 153712,
+          "alpha_values": 255,
+          "transparent_pixels": 893127,
+          "partial_alpha_pixels": 679737,
+          "off_palette_pixels": 679725,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-dobby-extra.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 170210,
+          "alpha_values": 255,
+          "transparent_pixels": 548810,
+          "partial_alpha_pixels": 1024054,
+          "off_palette_pixels": 1024052,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-winky.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 81570,
+          "alpha_values": 255,
+          "transparent_pixels": 838139,
+          "partial_alpha_pixels": 734725,
+          "off_palette_pixels": 734722,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-kitchen-a.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 82506,
+          "alpha_values": 255,
+          "transparent_pixels": 668620,
+          "partial_alpha_pixels": 904244,
+          "off_palette_pixels": 904238,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-kitchen-b.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 101508,
+          "alpha_values": 255,
+          "transparent_pixels": 810980,
+          "partial_alpha_pixels": 761884,
+          "off_palette_pixels": 761855,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        }
+      ],
+      "other_candidates": [
+        {
+          "file": "garden-v05/environment/elves/masters/v3-dobby-candidate-b.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 148431,
+          "alpha_values": 255,
+          "transparent_pixels": 889499,
+          "partial_alpha_pixels": 683365,
+          "off_palette_pixels": 683349,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-dobby-extra-candidate-b.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 162162,
+          "alpha_values": 254,
+          "transparent_pixels": 79,
+          "partial_alpha_pixels": 1572785,
+          "off_palette_pixels": 1572767,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-winky-candidate-a.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 91426,
+          "alpha_values": 255,
+          "transparent_pixels": 910205,
+          "partial_alpha_pixels": 662659,
+          "off_palette_pixels": 662656,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-kitchen-a-candidate-a.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 88104,
+          "alpha_values": 255,
+          "transparent_pixels": 925218,
+          "partial_alpha_pixels": 647646,
+          "off_palette_pixels": 647643,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-kitchen-b-candidate-a.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 100238,
+          "alpha_values": 255,
+          "transparent_pixels": 807368,
+          "partial_alpha_pixels": 765496,
+          "off_palette_pixels": 765493,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        }
+      ],
+      "method": "read-only PNG RGBA decode; complete cell-local 6px block checks; 24-colour palette membership"
+    }
+  }
+}
+# Codex brief — Hagrid Farm 25.0 S4: baby Norbert, the garden companion (04/11/2026)
+
+You are Codex in the Hagrid Farm repo. You only draw masters; Claude Code resizes them into game sprites itself.
+Follow `docs/art-bible.md`. Match the look and quality of the approved house-elf masters
+(`garden-v05/environment/elves/masters/v3-dobby.png`) — same pixel style, same light, same outline.
+
+## Character (HP1, book version — never film CGI)
+
+**Norbert**, Hagrid's baby **Hắc long Na Uy** (Norwegian Ridgeback), a few weeks old: skinny jet-black body
+(`#231F2E`/`#41465C` with `#687486` highlights), a row of small bony ridges down the back, big bony spiky wings
+folded like a wet umbrella, a long snout with wide nostrils, stubby horn buds, large bulging **orange** eyes with a white
+highlight, a thin tail with a small spade tip. Cute and mischievous, not scary. Smaller than Dobby.
+
+## Style rules (so the resize stays clean)
+
+- True pixel art on **one square grid of exactly 6 × 6 px blocks** (every block one flat colour, edges on multiples of 6 from
+  the cell's top-left). No anti-aliasing, gradients, blur, glow, drop shadow or sub-block noise. Transparent background.
+- Norbert about **48–54 blocks tall** standing (head top to feet). 1-block dark outline; on the black body use `#41465C`
+  rim-lights on the top-left edges so the shape reads on dark grass. Colours only from the 24 sprite colours in
+  `garden-v05/palette.mjs`, ≤ 14 on the sheet.
+
+## Sheet
+
+`garden-v05/environment/elves/masters/v4-norbert.png`: 1536 × 1024 PNG, a 3 × 2 grid of 512 × 512 cells, one pose per cell in
+this order (row 1 left→right, then row 2); feet at y ≈ 470, body centred on x = 256, ≥ 24 px empty margin. Three-quarter view
+toward the lower-left.
+
+1. `idle` — sitting up, wings folded, looking up happily.
+2. `walk-1` — waddling, left foot forward.
+3. `walk-2` — waddling, right foot forward (legs visibly different from walk-1, head at the same height).
+4. `sleep` — curled up in a ball, tail around the snout, eyes shut, wings folded.
+5. `play` — pouncing on a small red wool ball (`#C75B4B`) with the front paws, tail up.
+6. `puff` — sneezing a small puff of grey smoke with two tiny orange sparks from the nostrils (no big fire).
+
+Make two candidates with your image tool and keep the better (cuter, closest to the 6 px grid). Append the prompt to
+`garden-v05/environment/elves/prompts.json` (keep earlier entries). Do not resize, write native frames or previews, or run
+builders.
+
+Hard rules: no commit/push/deploy; do not edit `.mjs`, CSS, `functions/` or HPVNN; if image generation or usage is
+unavailable, stop and say so — never fake art with code. Report in `docs/codex-briefs/norbert-s4-report.md`.
+
+exec
+/bin/zsh -lc "sed -n '521,526p' /Users/thachanh/.codex/memories/MEMORY.md; python3 - <<'PY'
+import json
+p=json.load(open('garden-v05/environment/elves/prompts.json'))
+print('Root keys:',list(p))
+for k,v in p.items():
+ if isinstance(v,list): print(k,len(v))
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ succeeded in 0ms:
+## Failures and how to do differently
+
+- `GameEmbedShell` currently applies one active table per account through `BroadcastChannel`; before implementing an asynchronous farm, explicitly choose multi-tab/device support or the single-session constraint. Do not claim delegation-dependent findings without independently checking them. [Task 1]
+- The prototype has not completed browser QA: a verifier clicked a disabled final growth step, then Playwright resolution failed with `ENOTFOUND`/`ENOTCACHED`. Do not claim all clips, pause/replay, screenshots, pivot checks, or 320px/mobile overflow passed. [Task 3]
+- Source sheets are not production pixel art: roughly 1536×1024/1448×1086, alpha halos/semitransparency, inconsistent frames, and a dragon juvenile/adult facing mismatch remain. Clean pixels, alpha, palette, pivots, and timing before engine integration. Image-generation moderation blocked Hagrid motion; do not bypass safeguards or substitute an unapproved character. [Task 3]
+
+Root keys: ['version', 'date', 'tool', 'candidates', 'selected', 'batch_01', 'v3']
+candidates 22
+
+codex
+Đã tạo ứng viên 1/2. Tiểu nữ sẽ tạo bản thứ hai với mảng pixel đơn giản hơn, rồi kiểm tra trực tiếp lưới 6 px, palette và alpha của cả hai.
+exec
+/bin/zsh -lc "python3 - <<'PY'
+from PIL import Image
+import numpy as np,json,re
+from pathlib import Path
+palette=set(tuple(bytes.fromhex(h)) for h in re.findall(r\"'#([0-9A-Fa-f]{6})'\",Path('garden-v05/palette.mjs').read_text().split('export const SCENE_EXTENSION')[0]))
+root=Path('/Users/thachanh/.codex/generated_images/01a1a68c-624f-7820-bbdf-b865eea8a222')
+result=[]
+for name,f in [('a','exec-155334c9-795c-4c42-a2ed-2f03867608fa.png'),('b','exec-78761495-ef46-4a7a-9230-e2d161732104.png')]:
+ a=np.asarray(Image.open(root/f).convert('RGBA')); visible=a[:,:,3]>0
+ colours,counts=np.unique(a[:,:,:3][visible],axis=0,return_counts=True)
+ bad=sum(int(n) for c,n in zip(colours,counts) if tuple(c) not in palette)
+ nonuniform=0;total=0;occupied=0;badoccupied=0
+ bounds=[]
+ for row in range(2):
+  for col in range(3):
+   cell=a[row*512:(row+1)*512,col*512:(col+1)*512]
+   # Ignore hidden RGB at alpha zero; include partial edge blocks at local 510.
+   cell=cell.copy();cell[cell[:,:,3]==0]=0
+   for y in range(0,512,6):
+    for x in range(0,512,6):
+     block=cell[y:y+6,x:x+6];isbad=bool(np.any(block"'!=block[0,0]));ink=bool(np.any(block[:,:,3]>0))
+     total+=1;nonuniform+=isbad;occupied+=ink;badoccupied+=isbad and ink
+   yy,xx=np.where(cell[:,:,3]>=128)
+   bounds.append([int(xx.min()),int(yy.min()),int(xx.max()+1),int(yy.max()+1)] if len(xx) else None)
+ result.append(dict(candidate=name,size=[a.shape[1],a.shape[0]],visible_rgb_colours=len(colours),off_palette_pixels=bad,transparent_pixels=int((a[:,:,3]==0).sum()),partial_alpha_pixels=int(((a[:,:,3]>0)&(a[:,:,3]<255)).sum()),opaque_pixels=int((a[:,:,3]==255).sum()),nonuniform_6px_blocks=nonuniform,total_blocks=total,occupied_blocks=occupied,nonuniform_occupied_blocks=badoccupied,cell_bounds_alpha128=bounds))
+Path('"'/tmp/norbert-s4-verification.json').write_text(json.dumps(result,indent=2)+'\\n')
+print(json.dumps(result,indent=2))
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ exited 1 in 0ms:
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'PIL'
+
+exec
+/bin/zsh -lc 'command -v python3 uv magick; ls /Users/thachanh/.codex/skills/.system/imagegen/scripts; ls /opt/homebrew/bin/python* /tmp/*/bin/python* /Users/thachanh/.codex/.venv/bin/python* 2>/dev/null' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ exited 1 in 0ms:
+/opt/homebrew/bin/python3
+/opt/homebrew/bin/uv
+image_gen.py
+remove_chroma_key.py
+zsh:1: no matches found: /tmp/*/bin/python*
+
+codex
+Đã tạo đủ 2/2 ứng viên. Bản A đáng yêu hơn và động tác chơi rõ hơn; bản B có mảng cánh đơn giản hơn. Cả hai vẫn có dấu hiệu halo và chi tiết lệch lưới, nên tiểu nữ đang đo file gốc và sẽ ghi rõ phần chưa đạt trong báo cáo, không sửa ảnh bằng code.
+exec
+/bin/zsh -lc "cat > /tmp/verify-norbert-s4.py <<'PY'
+import struct,zlib,json,re,collections
+from pathlib import Path
+
+def png(path):
+ data=Path(path).read_bytes();pos=8;compressed=b''
+ while pos<len(data):
+  n=struct.unpack('>I',data[pos:pos+4])[0];kind=data[pos+4:pos+8];chunk=data[pos+8:pos+8+n];pos+=12+n
+  if kind==b'IHDR': w,h,depth,typ,_,_,inter=struct.unpack('>IIBBBBB',chunk)
+  if kind==b'IDAT': compressed+=chunk
+ assert (depth,typ,inter)==(8,6,0),(depth,typ,inter)
+ raw=zlib.decompress(compressed);stride=w*4;prev=bytearray(stride);out=[];offset=0
+ for _ in range(h):
+  filt=raw[offset];offset+=1;row=bytearray(raw[offset:offset+stride]);offset+=stride
+  for i in range(stride):
+   a=row[i-4] if i>=4 else 0;b=prev[i];c=prev[i-4] if i>=4 else 0
+   if filt==1:v=a
+   elif filt==2:v=b
+   elif filt==3:v=(a+b)//2
+   elif filt==4:
+    p=a+b-c;pa=abs(p-a);pb=abs(p-b);pc=abs(p-c);v=a if pa<=pb and pa<=pc else b if pb<=pc else c
+   else:v=0
+   row[i]=(row[i]+v)&255
+  out.append([tuple(row[i:i+4]) for i in range(0,stride,4)]);prev=row
+ return w,h,out
+palette=set(tuple(bytes.fromhex(c)) for c in re.findall(r\"'#([0-9A-Fa-f]{6})'\",Path('garden-v05/palette.mjs').read_text().split('export const SCENE_EXTENSION')[0]))
+root=Path('/Users/thachanh/.codex/generated_images/01a1a68c-624f-7820-bbdf-b865eea8a222');result=[]
+for name,f in [('a','exec-155334c9-795c-4c42-a2ed-2f03867608fa.png'),('b','exec-78761495-ef46-4a7a-9230-e2d161732104.png')]:
+ w,h,img=png(root/f);colours=collections.Counter(p[:3] for row in img for p in row if p[3]);alpha=collections.Counter(p[3] for row in img for p in row)
+ badblocks=total=occupied=0;bounds=[]
+ for cy in (0,512):
+  for cx in (0,512,1024):
+   coords=[(x,y) for y in range(512) for x in range(512) if img[cy+y][cx+x][3]>=128]
+   bounds.append([min(x for x,y in coords),min(y for x,y in coords),max(x for x,y in coords)+1,max(y for x,y in coords)+1] if coords else None)
+   for y in range(0,512,6):
+    for x in range(0,512,6):
+     block={p if p[3] else (0,0,0,0) for yy in range(y,min(y+6,512)) for xx in range(x,min(x+6,512)) for p in [img[cy+yy][cx+xx]]}
+     total+=1;badblocks+=len(block)>1;occupied+=any(p[3] for p in block)
+ result.append(dict(candidate=name,size=[w,h],visible_rgb_colours=len(colours),off_palette_pixels=sum(n for c,n in colours.items() if c not in palette),transparent_pixels=alpha[0],partial_alpha_pixels=sum(n for a,n in alpha.items() if 0<a<255),opaque_pixels=alpha[255],nonuniform_6px_blocks=badblocks,total_blocks=total,occupied_blocks=occupied,cell_bounds_alpha128=bounds))
+Path('/tmp/norbert-s4-verification.json').write_text(json.dumps(result,indent=2)+'\\n');print(json.dumps(result,indent=2))
+PY
+python3 /tmp/verify-norbert-s4.py" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ succeeded in 3034ms:
+[
+  {
+    "candidate": "a",
+    "size": [
+      1536,
+      1024
+    ],
+    "visible_rgb_colours": 32597,
+    "off_palette_pixels": 414845,
+    "transparent_pixels": 1158002,
+    "partial_alpha_pixels": 414862,
+    "opaque_pixels": 0,
+    "nonuniform_6px_blocks": 15089,
+    "total_blocks": 44376,
+    "occupied_blocks": 15089,
+    "cell_bounds_alpha128": [
+      [
+        122,
+        96,
+        421,
+        438
+      ],
+      [
+        91,
+        96,
+        430,
+        435
+      ],
+      [
+        90,
+        97,
+        433,
+        438
+      ],
+      [
+        121,
+        201,
+        408,
+        417
+      ],
+      [
+        61,
+        113,
+        415,
+        442
+      ],
+      [
+        25,
+        156,
+        453,
+        411
+      ]
+    ]
+  },
+  {
+    "candidate": "b",
+    "size": [
+      1536,
+      1024
+    ],
+    "visible_rgb_colours": 30016,
+    "off_palette_pixels": 500125,
+    "transparent_pixels": 1072739,
+    "partial_alpha_pixels": 500125,
+    "opaque_pixels": 0,
+    "nonuniform_6px_blocks": 18002,
+    "total_blocks": 44376,
+    "occupied_blocks": 18002,
+    "cell_bounds_alpha128": [
+      [
+        114,
+        61,
+        426,
+        451
+      ],
+      [
+        82,
+        61,
+        427,
+        451
+      ],
+      [
+        50,
+        61,
+        397,
+        451
+      ],
+      [
+        77,
+        185,
+        426,
+        450
+      ],
+      [
+        32,
+        107,
+        512,
+        477
+      ],
+      [
+        0,
+        86,
+        424,
+        450
+      ]
+    ]
+  }
+]
+
+apply patch
+patch: completed
+/tmp/norbert-s4-entries.json
+diff --git a//tmp/norbert-s4-entries.json b//tmp/norbert-s4-entries.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..9bf4f575b02ba12773b409e31cf047e5c17ef12e
+--- /dev/null
++++ b//tmp/norbert-s4-entries.json
+@@ -0,0 +1,22 @@
++[
++  {
++    "key": "norbert",
++    "candidate": "a",
++    "batch": "norbert-s4",
++    "tool": "image_gen.imagegen (built-in)",
++    "prompt": "Use case: stylized-concept. Asset: hand-placed pixel art master sprite sheet for Hagrid Farm, 1536 x 1024 PNG, true transparent alpha background. Exactly six poses in 3 columns and 2 rows of 512 x 512 cells, no labels or grid lines. Reference image is STYLE ONLY: match Dobby's cute expressive face design, chunky outline and top-left light, but DO NOT copy its backdrop, blur, shading noise, clothes or character. Draw book HP1 baby Norbert the Norwegian Ridgeback, never film CGI. A few weeks old, skinny jet-black baby body, long snout with wide nostrils, stubby horn buds, big bulging ORANGE eyes with a pale-white highlight, thin tail with small spade tip, row of small bony ridges down back, large bony spiky wings folded like a wet umbrella. Cute mischievous companion, not scary, not plump, not purple, no ears. Three-quarter view facing LOWER LEFT throughout. Smaller than Dobby: upright poses are ONLY 48–54 square blocks (288–324 actual px) from horn top to feet. Feet local y468, torso centered local x256, all ink and effects at least 24 px from each cell edge. Match head height in idle and both walks.\nCRITICAL pixel geometry: exactly ONE grid of 6 x 6 actual-pixel squares per cell, aligned to multiples of 6 measured from that cell's top-left corner. EVERY square one perfectly uniform flat RGBA colour, including transparency. All outlines exactly one 6px block wide. Absolutely no sub-block detail, smooth curves, anti-alias, gradients, blur, glow, drop shadow, halos, noisy texture, rendered lighting or background. Large flat colour clusters, deliberate sparse detail, hard stair-step corners. Use #231F2E body and outline, #41465C top-left rim lights, #687486 highlights. At most FOURTEEN colours TOTAL, all from this exact permitted palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Prefer just #231F2E #41465C #687486 #A6B1AE #D6D8BF #ED8A45 #FFC36B #C75B4B. Pale eye highlights #D6D8BF, not off-palette pure white.\nPose order row-major:\n1 idle: sitting upright, wings folded, gazing happily upwards.\n2 walk-1: waddling, LEFT foot forward, right foot back.\n3 walk-2: waddling, RIGHT foot forward, left foot back; visibly reverse leg overlap and front/back foot placement, same head height as walk-1.\n4 sleep: curled in a ball, tail wrapped around snout, both eyes shut, wings folded.\n5 play: pouncing with front paws onto one small RED WOOL BALL #C75B4B, tail up; folded wings.\n6 puff: sneezing one small grey smoke puff from nostrils plus exactly TWO tiny orange sparks, no fire plume. Smoke has flat hard pixel clusters and NO translucent blur.\nOnly the six Norbert poses and requested ball/smoke/sparks. Empty space must be truly alpha-zero. No floor, no shadow, no scenery, no text.\nCandidate A: emphasize a tender curious baby expression with slightly tilted head, enormous orange eyes, lean small chest, long gently smiling muzzle. Sparse broad clean pixel clusters and very readable folded umbrella wings.",
++    "source": "/Users/thachanh/.codex/generated_images/01a1a68c-624f-7820-bbdf-b865eea8a222/exec-155334c9-795c-4c42-a2ed-2f03867608fa.png",
++    "file": "masters/v4-norbert.png",
++    "status": "selected visual master; strict technical acceptance FAILED"
++  },
++  {
++    "key": "norbert",
++    "candidate": "b",
++    "batch": "norbert-s4",
++    "tool": "image_gen.imagegen (built-in)",
++    "prompt": "Use case: stylized-concept. Asset: hand-placed pixel art master sprite sheet for Hagrid Farm, 1536 x 1024 PNG, true transparent alpha background. Exactly six poses in 3 columns and 2 rows of 512 x 512 cells, no labels or grid lines. Reference image is STYLE ONLY: match Dobby's cute expressive face design, chunky outline and top-left light, but DO NOT copy its backdrop, blur, shading noise, clothes or character. Draw book HP1 baby Norbert the Norwegian Ridgeback, never film CGI. A few weeks old, skinny jet-black baby body, long snout with wide nostrils, stubby horn buds, big bulging ORANGE eyes with a pale-white highlight, thin tail with small spade tip, row of small bony ridges down back, large bony spiky wings folded like a wet umbrella. Cute mischievous companion, not scary, not plump, not purple, no ears. Three-quarter view facing LOWER LEFT throughout. Smaller than Dobby: upright poses are ONLY 48–54 square blocks (288–324 actual px) from horn top to feet. Feet local y468, torso centered local x256, all ink and effects at least 24 px from each cell edge. Match head height in idle and both walks.\nCRITICAL pixel geometry: exactly ONE grid of 6 x 6 actual-pixel squares per cell, aligned to multiples of 6 measured from that cell's top-left corner. EVERY square one perfectly uniform flat RGBA colour, including transparency. All outlines exactly one 6px block wide. Absolutely no sub-block detail, smooth curves, anti-alias, gradients, blur, glow, drop shadow, halos, noisy texture, rendered lighting or background. Large flat colour clusters, deliberate sparse detail, hard stair-step corners. Use #231F2E body and outline, #41465C top-left rim lights, #687486 highlights. At most FOURTEEN colours TOTAL, all from this exact permitted palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Prefer just #231F2E #41465C #687486 #A6B1AE #D6D8BF #ED8A45 #FFC36B #C75B4B. Pale eye highlights #D6D8BF, not off-palette pure white.\nPose order row-major:\n1 idle: sitting upright, wings folded, gazing happily upwards.\n2 walk-1: waddling, LEFT foot forward, right foot back.\n3 walk-2: waddling, RIGHT foot forward, left foot back; visibly reverse leg overlap and front/back foot placement, same head height as walk-1.\n4 sleep: curled in a ball, tail wrapped around snout, both eyes shut, wings folded.\n5 play: pouncing with front paws onto one small RED WOOL BALL #C75B4B, tail up; folded wings.\n6 puff: sneezing one small grey smoke puff from nostrils plus exactly TWO tiny orange sparks, no fire plume. Smoke has flat hard pixel clusters and NO translucent blur.\nOnly the six Norbert poses and requested ball/smoke/sparks. Empty space must be truly alpha-zero. No floor, no shadow, no scenery, no text.\nCandidate B: prioritize the simplest bold flat pixel clusters and exact grid above fine illustration detail. Charming scrawny hatchling with oversized round orange eyes, slightly cheeky closed smile, long slender snout, little horn buds, visibly bony folded spiky wings. Lean narrow torso, skinny limbs, long thin tail. Restrained highlights only on upper-left edges. Keep all poses visually consistent and 300px tall standing; use a few enormous block shapes, zero fine scales or texture.",
++    "source": "/Users/thachanh/.codex/generated_images/01a1a68c-624f-7820-bbdf-b865eea8a222/exec-78761495-ef46-4a7a-9230-e2d161732104.png",
++    "file": null,
++    "status": "not selected; retained at generation source; strict technical acceptance FAILED"
++  }
++]
+
+exec
+/bin/zsh -lc "python3 - <<'PY'
+from pathlib import Path
+import json,hashlib,shutil
+p=Path('garden-v05/environment/elves/prompts.json');before=json.loads(p.read_text());entries=json.loads(Path('/tmp/norbert-s4-entries.json').read_text());metrics=json.loads(Path('/tmp/norbert-s4-verification.json').read_text())
+for e in entries:e['sha256']=hashlib.sha256(Path(e['source']).read_bytes()).hexdigest()
+dst=Path('garden-v05/environment/elves/masters/v4-norbert.png')
+assert not dst.exists(),'Refuse unexpected overwrite'
+shutil.copyfile(entries[0]['source'],dst)
+after=json.loads(p.read_text());after['candidates'].extend(entries);after['norbert_s4']={'date':'2026-11-04','selected':'masters/v4-norbert.png','selected_candidate':'a','status':'2/2 candidates generated; visual master selected; strict technical acceptance FAILED','verification':metrics,'method':'Read-only stdlib PNG RGBA decode. Cell-local 6x6 checks including partial edge blocks; hidden RGB ignored at alpha zero. Bounds use alpha >=128 and are not a substitute for true-alpha margin acceptance.'}
+p.write_text(json.dumps(after,ensure_ascii=False,indent=2)+'\\n')
+assert all(after[k]==v for k,v in before.items() if k"'!='"'candidates')
+assert after['candidates'][:len(before['candidates'])]==before['candidates']
+assert dst.read_bytes()==Path(entries[0]['source']).read_bytes()
+print('Selected original bytes copied; all earlier prompt entries preserved.')
+print('SHA256:',entries[0]['sha256'])
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ succeeded in 0ms:
+Selected original bytes copied; all earlier prompt entries preserved.
+SHA256: ad5dde3ea99b066d6d0b5297096a5c5c54f64ef1403480eb0630e25530874378
+
+codex
+Tiểu nữ chọn A: biểu cảm đáng yêu hơn, tư thế đứng gần chiều cao yêu cầu hơn và ít ô 6 px lỗi hơn B. Đã lưu nguyên file vào `v4-norbert.png`; tuy nhiên bản này **chưa đạt chuẩn kỹ thuật**: 32.597 màu, alpha bán trong suốt và lưới chưa chính xác. Báo cáo sẽ ghi đầy đủ các sai lệch để bàn giao.
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4/docs/codex-briefs/norbert-s4-report.md
+diff --git a//tmp/norbert-s4-entries.json b//tmp/norbert-s4-entries.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..9bf4f575b02ba12773b409e31cf047e5c17ef12e
+--- /dev/null
++++ b//tmp/norbert-s4-entries.json
+@@ -0,0 +1,22 @@
++[
++  {
++    "key": "norbert",
++    "candidate": "a",
++    "batch": "norbert-s4",
++    "tool": "image_gen.imagegen (built-in)",
++    "prompt": "Use case: stylized-concept. Asset: hand-placed pixel art master sprite sheet for Hagrid Farm, 1536 x 1024 PNG, true transparent alpha background. Exactly six poses in 3 columns and 2 rows of 512 x 512 cells, no labels or grid lines. Reference image is STYLE ONLY: match Dobby's cute expressive face design, chunky outline and top-left light, but DO NOT copy its backdrop, blur, shading noise, clothes or character. Draw book HP1 baby Norbert the Norwegian Ridgeback, never film CGI. A few weeks old, skinny jet-black baby body, long snout with wide nostrils, stubby horn buds, big bulging ORANGE eyes with a pale-white highlight, thin tail with small spade tip, row of small bony ridges down back, large bony spiky wings folded like a wet umbrella. Cute mischievous companion, not scary, not plump, not purple, no ears. Three-quarter view facing LOWER LEFT throughout. Smaller than Dobby: upright poses are ONLY 48–54 square blocks (288–324 actual px) from horn top to feet. Feet local y468, torso centered local x256, all ink and effects at least 24 px from each cell edge. Match head height in idle and both walks.\nCRITICAL pixel geometry: exactly ONE grid of 6 x 6 actual-pixel squares per cell, aligned to multiples of 6 measured from that cell's top-left corner. EVERY square one perfectly uniform flat RGBA colour, including transparency. All outlines exactly one 6px block wide. Absolutely no sub-block detail, smooth curves, anti-alias, gradients, blur, glow, drop shadow, halos, noisy texture, rendered lighting or background. Large flat colour clusters, deliberate sparse detail, hard stair-step corners. Use #231F2E body and outline, #41465C top-left rim lights, #687486 highlights. At most FOURTEEN colours TOTAL, all from this exact permitted palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Prefer just #231F2E #41465C #687486 #A6B1AE #D6D8BF #ED8A45 #FFC36B #C75B4B. Pale eye highlights #D6D8BF, not off-palette pure white.\nPose order row-major:\n1 idle: sitting upright, wings folded, gazing happily upwards.\n2 walk-1: waddling, LEFT foot forward, right foot back.\n3 walk-2: waddling, RIGHT foot forward, left foot back; visibly reverse leg overlap and front/back foot placement, same head height as walk-1.\n4 sleep: curled in a ball, tail wrapped around snout, both eyes shut, wings folded.\n5 play: pouncing with front paws onto one small RED WOOL BALL #C75B4B, tail up; folded wings.\n6 puff: sneezing one small grey smoke puff from nostrils plus exactly TWO tiny orange sparks, no fire plume. Smoke has flat hard pixel clusters and NO translucent blur.\nOnly the six Norbert poses and requested ball/smoke/sparks. Empty space must be truly alpha-zero. No floor, no shadow, no scenery, no text.\nCandidate A: emphasize a tender curious baby expression with slightly tilted head, enormous orange eyes, lean small chest, long gently smiling muzzle. Sparse broad clean pixel clusters and very readable folded umbrella wings.",
++    "source": "/Users/thachanh/.codex/generated_images/01a1a68c-624f-7820-bbdf-b865eea8a222/exec-155334c9-795c-4c42-a2ed-2f03867608fa.png",
++    "file": "masters/v4-norbert.png",
++    "status": "selected visual master; strict technical acceptance FAILED"
++  },
++  {
++    "key": "norbert",
++    "candidate": "b",
++    "batch": "norbert-s4",
++    "tool": "image_gen.imagegen (built-in)",
++    "prompt": "Use case: stylized-concept. Asset: hand-placed pixel art master sprite sheet for Hagrid Farm, 1536 x 1024 PNG, true transparent alpha background. Exactly six poses in 3 columns and 2 rows of 512 x 512 cells, no labels or grid lines. Reference image is STYLE ONLY: match Dobby's cute expressive face design, chunky outline and top-left light, but DO NOT copy its backdrop, blur, shading noise, clothes or character. Draw book HP1 baby Norbert the Norwegian Ridgeback, never film CGI. A few weeks old, skinny jet-black baby body, long snout with wide nostrils, stubby horn buds, big bulging ORANGE eyes with a pale-white highlight, thin tail with small spade tip, row of small bony ridges down back, large bony spiky wings folded like a wet umbrella. Cute mischievous companion, not scary, not plump, not purple, no ears. Three-quarter view facing LOWER LEFT throughout. Smaller than Dobby: upright poses are ONLY 48–54 square blocks (288–324 actual px) from horn top to feet. Feet local y468, torso centered local x256, all ink and effects at least 24 px from each cell edge. Match head height in idle and both walks.\nCRITICAL pixel geometry: exactly ONE grid of 6 x 6 actual-pixel squares per cell, aligned to multiples of 6 measured from that cell's top-left corner. EVERY square one perfectly uniform flat RGBA colour, including transparency. All outlines exactly one 6px block wide. Absolutely no sub-block detail, smooth curves, anti-alias, gradients, blur, glow, drop shadow, halos, noisy texture, rendered lighting or background. Large flat colour clusters, deliberate sparse detail, hard stair-step corners. Use #231F2E body and outline, #41465C top-left rim lights, #687486 highlights. At most FOURTEEN colours TOTAL, all from this exact permitted palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Prefer just #231F2E #41465C #687486 #A6B1AE #D6D8BF #ED8A45 #FFC36B #C75B4B. Pale eye highlights #D6D8BF, not off-palette pure white.\nPose order row-major:\n1 idle: sitting upright, wings folded, gazing happily upwards.\n2 walk-1: waddling, LEFT foot forward, right foot back.\n3 walk-2: waddling, RIGHT foot forward, left foot back; visibly reverse leg overlap and front/back foot placement, same head height as walk-1.\n4 sleep: curled in a ball, tail wrapped around snout, both eyes shut, wings folded.\n5 play: pouncing with front paws onto one small RED WOOL BALL #C75B4B, tail up; folded wings.\n6 puff: sneezing one small grey smoke puff from nostrils plus exactly TWO tiny orange sparks, no fire plume. Smoke has flat hard pixel clusters and NO translucent blur.\nOnly the six Norbert poses and requested ball/smoke/sparks. Empty space must be truly alpha-zero. No floor, no shadow, no scenery, no text.\nCandidate B: prioritize the simplest bold flat pixel clusters and exact grid above fine illustration detail. Charming scrawny hatchling with oversized round orange eyes, slightly cheeky closed smile, long slender snout, little horn buds, visibly bony folded spiky wings. Lean narrow torso, skinny limbs, long thin tail. Restrained highlights only on upper-left edges. Keep all poses visually consistent and 300px tall standing; use a few enormous block shapes, zero fine scales or texture.",
++    "source": "/Users/thachanh/.codex/generated_images/01a1a68c-624f-7820-bbdf-b865eea8a222/exec-78761495-ef46-4a7a-9230-e2d161732104.png",
++    "file": null,
++    "status": "not selected; retained at generation source; strict technical acceptance FAILED"
++  }
++]
+diff --git a/docs/codex-briefs/norbert-s4-report.md b/docs/codex-briefs/norbert-s4-report.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..dc90fa4ec05860327e3dfd176999227ac30bf03a
+--- /dev/null
++++ b/docs/codex-briefs/norbert-s4-report.md
+@@ -0,0 +1,34 @@
++# Norbert S4 master report — 2026-11-04
++
++Generated 2/2 candidates using the built-in `image_gen.imagegen` tool with true transparency requested and `v3-dobby.png` supplied as a style reference. Selected candidate A, copied byte-for-byte to `garden-v05/environment/elves/masters/v4-norbert.png`. This is a visual master selection; **the brief's strict technical requirements are not satisfied**.
++
++## Selection
++
++A has the sweeter upward-looking expression, a clearer wool-ball pounce, more compact upright proportions, and fewer nonuniform cell-local 6 px blocks than B. B has simpler dark wing shapes, but is taller, has more nonuniform blocks and its play/puff alpha-threshold bounds reach cell edges. Both show the requested six poses in row-major order, orange eyes, a long muzzle, horn buds, dorsal ridges and a spade tail. The walks visibly differ, and the puff contains two orange sparks.
++
++Visual limitations: A's wings read partly opened rather than tightly folded like a wet umbrella; its sleep tail does not clearly wrap around the snout. Walk head heights differ by about 1 px. The outline/light resemble the reference visually, but there is halo-like shading and sub-block detail. These are not approved production sprites.
++
++## Read-only verification
++
++Decoded original PNG bytes with Python standard-library `struct`/`zlib`; no image edits or generated code artwork. Tested exact palette membership, alpha, and uniform RGBA in every cell-local 6×6 block, including the final 2 px edge strips of each 512 px cell. Hidden RGB is ignored where alpha is zero. All prior prompt entries were checked for preservation.
++
++| Check | A — selected | B |
++|---|---:|---:|
++| PNG dimensions | 1536 × 1024 | 1536 × 1024 |
++| Visible RGB colours (maximum 14 required) | 32,597 | 30,016 |
++| Visible pixels outside sprite palette | 414,845 | 500,125 |
++| Fully transparent pixels | 1,158,002 | 1,072,739 |
++| Partially transparent pixels | 414,862 | 500,125 |
++| Fully opaque pixels | 0 | 0 |
++| Nonuniform 6 px blocks / all blocks | 15,089 / 44,376 | 18,002 / 44,376 |
++
++All occupied blocks in both candidates are nonuniform. The alpha channel exists, but every visible pixel is partially transparent; hard alpha and flat-colour acceptance fail. A's alpha ≥128 upright bounds measure approximately 339–342 px high (56.5–57 blocks), above the requested 288–324 px. Its standing bottom edges are around local y435–438, above the requested y≈470. Bounds at alpha ≥128 do not prove the requested empty margins because faint alpha extends beyond them. Exact measurements for all six cells are preserved under `norbert_s4.verification` in `prompts.json`.
++
++## Provenance and handoff
++
++- Selected file: `garden-v05/environment/elves/masters/v4-norbert.png`.
++- Selected SHA-256: `ad5dde3ea99b066d6d0b5297096a5c5c54f64ef1403480eb0630e25530874378`.
++- Both full prompts, original generation paths, candidate hashes, selection and verification results were appended to `garden-v05/environment/elves/prompts.json`; earlier entries remain intact. The unselected candidate remains at its recorded generation source and was not copied into the repository.
++- No resizing, native frames, previews, builders, commits, pushes or deployments. No `.mjs`, CSS, `functions/` or HPVNN edits. The existing brief and log were preserved.
++
++The requested generation/comparison and master handoff are complete. Strict art acceptance remains failed: the selected master needs further image-tool or artist work on grid, exact palette, binary alpha, folded-wing poses, height and foot baseline before it can satisfy the brief. Resizing alone does not resolve those defects. No runtime or production acceptance is claimed.
+
+exec
+/bin/zsh -lc "git diff --check; git diff --stat; git status --short; python3 - <<'PY'
+import json,hashlib
+from pathlib import Path
+p=json.loads(Path('garden-v05/environment/elves/prompts.json').read_text())
+assert len(p['candidates'])==24
+assert [e['candidate'] for e in p['candidates'][-2:]]==['a','b']
+f=Path('garden-v05/environment/elves/masters/v4-norbert.png')
+assert hashlib.sha256(f.read_bytes()).hexdigest()==p['candidates'][-2]['sha256']
+print('Final provenance and selected master hash verified.')
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s4
+ succeeded in 580ms:
+ garden-v05/environment/elves/prompts.json | 137 ++++++++++++++++++++++++
+ garden-v05/festival-lazy-art.test.mjs     |  14 +++
+ garden-v05/game-panels.css                | 171 ++++++++++++++++--------------
+ garden-v05/garden-elves.mjs               |  19 +++-
+ garden-v05/garden-winter.mjs              |  28 ++---
+ garden-v05/garden-winter.test.mjs         |  19 ++--
+ garden-v05/mobile-game.mjs                |  26 +++--
+ garden-v05/pet-controls.mjs               |   7 +-
+ garden-v05/scene-animation.mjs            |   9 ++
+ garden-v05/scene-renderer.mjs             |  14 ++-
+ 10 files changed, 330 insertions(+), 114 deletions(-)
+ M garden-v05/environment/elves/prompts.json
+ M garden-v05/festival-lazy-art.test.mjs
+ M garden-v05/game-panels.css
+ M garden-v05/garden-elves.mjs
+ M garden-v05/garden-winter.mjs
+ M garden-v05/garden-winter.test.mjs
+ M garden-v05/mobile-game.mjs
+ M garden-v05/pet-controls.mjs
+ M garden-v05/scene-animation.mjs
+ M garden-v05/scene-renderer.mjs
+?? docs/codex-briefs/norbert-s4-last.log
+?? docs/codex-briefs/norbert-s4-report.md
+?? docs/codex-briefs/norbert-s4.md
+?? garden-v05/environment/elves/masters/v4-norbert.png
+?? garden-v05/garden-mood-ui.mjs
+?? garden-v05/garden-mood-ui.test.mjs
+Final provenance and selected master hash verified.
+
+codex
+Bệ hạ, đã tạo **2/2 ứng viên**, chọn A và lưu [master Norbert](garden-v05/environment/elves/masters/v4-norbert.png). Đã thêm cả hai prompt, hash và kết quả kiểm tra, giữ nguyên các mục cũ.
+
+**Master chưa đạt chuẩn kỹ thuật**: lệch lưới 6 px, vượt palette, alpha bán trong suốt và sai chiều cao/vị trí chân. Chi tiết trong [báo cáo](docs/codex-briefs/norbert-s4-report.md).
+
+Không resize, tạo frame/preview, chạy builder hay commit/push/deploy.
+
+
+tokens used
+45,790
+Bệ hạ, đã tạo **2/2 ứng viên**, chọn A và lưu [master Norbert](garden-v05/environment/elves/masters/v4-norbert.png). Đã thêm cả hai prompt, hash và kết quả kiểm tra, giữ nguyên các mục cũ.
+
+**Master chưa đạt chuẩn kỹ thuật**: lệch lưới 6 px, vượt palette, alpha bán trong suốt và sai chiều cao/vị trí chân. Chi tiết trong [báo cáo](docs/codex-briefs/norbert-s4-report.md).
+
+Không resize, tạo frame/preview, chạy builder hay commit/push/deploy.
+
+

@@ -32,6 +32,8 @@ const DISPLAY_LABELS = Object.freeze(Object.fromEntries([
  ...DB.animals.map(animal => [`produce_${animal.id}`, animal.produce]),
  ['insects', 'Côn trùng'],
  ['fish', 'Cá nhỏ'],
+ ['elf_hat', 'Nón len gia tinh'],
+ ['elf_sock', 'Vớ len gia tinh'],
 ]));
 
 /** Route inventory/reward crop identities to harvested art without changing live-plant surfaces. */

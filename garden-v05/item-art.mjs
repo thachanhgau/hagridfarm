@@ -39,6 +39,8 @@ export const ITEM_ART = Object.freeze({
  "produce_unicorn": {"file":"native-items/produce_unicorn.png","width":64,"height":64,"pivotX":32,"pivotY":56,"bounds":{"x":9,"y":8,"w":46,"h":48}},
  "produce_three-headed-dog": {"file":"native-items/produce_three-headed-dog.png","width":64,"height":64,"pivotX":32,"pivotY":56,"bounds":{"x":8,"y":8,"w":47,"h":48}},
  "produce_dragon": {"file":"native-items/produce_dragon.png","width":64,"height":64,"pivotX":32,"pivotY":56,"bounds":{"x":7,"y":8,"w":49,"h":48}},
+ "recipe_elf_hat": {"file":"native-items/recipe_elf_hat.png","width":64,"height":64,"pivotX":32,"pivotY":56,"bounds":{"x":6,"y":12,"w":52,"h":44}},
+ "recipe_elf_sock": {"file":"native-items/recipe_elf_sock.png","width":64,"height":64,"pivotX":32,"pivotY":56,"bounds":{"x":15,"y":8,"w":33,"h":48}},
  "decoration-3": {"file":"native-items/decoration-3.png","rightFile":"native-items/decoration-3_right.png","width":96,"height":112,"pivotX":48,"pivotY":96,"bounds":{"x":6,"y":65,"w":84,"h":31},"rightBounds":{"x":6,"y":64,"w":84,"h":32}},
  "decoration-3_right": {"file":"native-items/decoration-3_right.png","width":96,"height":112,"pivotX":48,"pivotY":96,"bounds":{"x":6,"y":64,"w":84,"h":32}},
  "decoration-7": {"file":"native-items/decoration-7.png","rightFile":"native-items/decoration-7_right.png","width":96,"height":112,"pivotX":48,"pivotY":96,"bounds":{"x":6,"y":24,"w":84,"h":72},"rightBounds":{"x":6,"y":18,"w":84,"h":78}},

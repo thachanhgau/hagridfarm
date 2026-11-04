@@ -122,6 +122,8 @@ export function collectLightSources(objects = []) {
     } else if (obj.kind === 'festival') {
       const spec = obj.hero ? (obj.id === 'hero-yule' ? {radius:94,offsetY:-70,color:[255,207,126]} : obj.id === 'hero-halloween' ? {radius:64,offsetY:-23,color:[255,167,84]} : null) : STORE_DECOR_LIGHTS[obj.asset?.id];
       if (spec) lights.push({id:obj.id,x,y:y+spec.offsetY,radius:spec.radius,color:spec.color});
+    } else if (obj.kind === 'winter-lantern' && obj.light) {
+      lights.push(obj.light);
     } else if (obj.kind === 'store-decor') {
       const spec = STORE_DECOR_LIGHTS[obj.id];
       if (spec) {

@@ -1,0 +1,35 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "local intercepted level500 fixture,375px mobile simulated throttling; no server/Firebase/real wallet",
+  "game": "/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s5/garden-v05",
+  "runs": [
+    {
+      "performance": 51,
+      "fcpMs": 10110,
+      "lcpMs": 14280,
+      "tbtMs": 253,
+      "bytes": 4320664
+    },
+    {
+      "performance": 51,
+      "fcpMs": 10110,
+      "lcpMs": 14280,
+      "tbtMs": 262.5,
+      "bytes": 4320664
+    },
+    {
+      "performance": 50,
+      "fcpMs": 10065,
+      "lcpMs": 14280,
+      "tbtMs": 281.5,
+      "bytes": 4320664
+    }
+  ],
+  "median": {
+    "performance": 51,
+    "fcpMs": 10110,
+    "lcpMs": 14280,
+    "tbtMs": 262.5,
+    "bytes": 4320664
+  }
+}

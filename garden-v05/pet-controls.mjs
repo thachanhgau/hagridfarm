@@ -42,6 +42,8 @@ export function renderPetCareButtons(items,supplies={}) {
  const actions=[
   ['petButton','Vuốt ve','Vuốt ve sinh vật','heart',null,'rose'],
   ['rotateCreatureButton','Xoay','Đổi hướng nhìn của sinh vật','replay',null,'sky'],
+  ['moodButton','Chăm bé','Chơi, chải lông, dạy trò','care',null,'rose'],
+  ['coatButton','Bộ lông','Đổi bộ lông hiếm (chỉ để ngắm)','festival',null,'violet'],
   ['affinityButton','Gắn kết','Quà gắn kết','chest',null,'gold'],
   ['mealBoostButton','Nước phép','Nước phép','boost','boost','sky'],
   ['premium-prime_meal','Thượng hạng','Bữa thượng hạng','prime_meal','primeMeal','amber'],
@@ -70,7 +72,7 @@ export function renderPetCareButtons(items,supplies={}) {
  }
 }
 
-export function setupPetControls({E,items,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {
+export function setupPetControls({E,items,getMood=()=>null,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {
  let group='owned',lastPortrait='',previousOwned=false;
  const entries=new Map(), tray=$('creatureTray');
  for(const config of E.DB.animals) {
@@ -122,7 +124,8 @@ export function setupPetControls({E,items,getState,getSpecies,getNow,getReady,on
   if(!visible)return;
   if(lastPortrait!==species){$('petPortrait').replaceChildren(icon(items,species,3,40));lastPortrait=species;}
   $('creatureName').textContent=config.label;
-  $('creatureTime').textContent=animal?(view.adult?'Trưởng thành':`Đang lớn · ${view.mealsDone}/${config.mealsToAdult} bữa`)+` · ${view.badge}`:`Nhận nuôi · Cấp ${config.level}`;
+  const mood=animal?getMood(species):null;
+  $('creatureTime').textContent=animal?(view.adult?'Trưởng thành':`Đang lớn · ${view.mealsDone}/${config.mealsToAdult} bữa`)+` · ${view.badge}`+(mood!=null?` · ♥ ${mood}`:''):`Nhận nuôi · Cấp ${config.level}`;
   $('petProgress').hidden=!animal||view.adult;
   $('petProgress').max=config.mealsToAdult;
   $('petProgress').value=view.mealsDone;
@@ -139,6 +142,8 @@ export function setupPetControls({E,items,getState,getSpecies,getNow,getReady,on
   $('petButton').hidden=!animal;
   $('petButton').disabled=!getReady();
   if($('rotateCreatureButton'))$('rotateCreatureButton').hidden=!animal;
+  if($('coatButton'))$('coatButton').hidden=!animal;
+  if($('moodButton'))$('moodButton').hidden=!animal||getMood(species)==null;
   const primary=animal?(animal.meal?'claimAnimalButton':'feedButton'):'adoptButton';
   const label=primary==='adoptButton'?'Đón về':primary==='feedButton'?'Cho ăn':view.phase==='eating'?'Đang ăn':view.adult?'Nhận quà':'Hoàn tất';
   for(const id of ['adoptButton','feedButton','claimAnimalButton']){

@@ -8,6 +8,7 @@ const EVENT_DURATIONS = Object.freeze({
   harvest: 760,
   water: 900,
   care: 1960,
+  ride: 3600, // 25.0 S4 «Cưỡi bay»: Bằng-Mã or Vong mã flies a loop over the garden
 });
 
 const KIND_ALIASES = Object.freeze({
@@ -20,6 +21,7 @@ const KIND_ALIASES = Object.freeze({
   plant: 'plant',
   water: 'water',
   care: 'care',
+  ride: 'ride',
 });
 
 const BREEZE_STEPS = Object.freeze([
@@ -367,6 +369,13 @@ export function eventHop(event) {
   const progress = finite(event?.progress);
   if (!curve || progress <= 0 || progress >= 1) return 0;
   return curve[Math.min(curve.length - 1, Math.floor(progress * curve.length))];
+}
+
+/** «Cưỡi bay» (25.0 S4): a whole-pixel loop up and across the garden and back to the pen. */
+export function rideFlight(event) {
+  const progress = finite(event?.progress);
+  if (event?.kind !== 'ride' || progress <= 0 || progress >= 1) return null;
+  return {dx: Math.round(Math.sin(progress * 2 * Math.PI) * 90), dy: -Math.round(Math.sin(progress * Math.PI) * 120)};
 }
 
 /** A harvested crop's last frame rises and fades out; null means draw nothing. */

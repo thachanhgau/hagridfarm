@@ -1,0 +1,247 @@
+{
+  "tool": "Built-in image_gen",
+  "master": "masters/winter-sheet.png",
+  "masterSha256": "812008daf59b2500029d7676a4cf1fc550b738b64c7f2e56b8d2acc3c9c63a53",
+  "prompt": "masters/prompt.txt",
+  "reference": "Original six sprites combined in table order at 2x nearest-neighbour; snowy background for reference only.",
+  "method": "Alpha threshold 192; crop cell alpha bounds; nearest-neighbour resize to original ink box (hut inset 1px); quantize RGB Euclidean to sprite24 plus E8F0ED; binary alpha, transparent RGB zero; unchanged canvas/pivot.",
+  "colors": [
+    "#231F2E",
+    "#4A3042",
+    "#735044",
+    "#A57554",
+    "#41465C",
+    "#687486",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A",
+    "#874056",
+    "#C75B4B",
+    "#ED8A45",
+    "#FFC36B",
+    "#3E3B70",
+    "#6961A6",
+    "#70A8B6",
+    "#B7DEE0",
+    "#E8F0ED"
+  ],
+  "assets": [
+    {
+      "file": "hut-snow.png",
+      "original": "environment/layers/hut.png",
+      "width": 164,
+      "height": 184,
+      "pivot": [
+        82,
+        184
+      ],
+      "originalInkBox": [
+        0,
+        0,
+        164,
+        184
+      ],
+      "inkBox": [
+        1,
+        1,
+        163,
+        183
+      ],
+      "sourceCell": [
+        0,
+        0,
+        490,
+        520
+      ],
+      "sourceInkBox": [
+        32,
+        14,
+        463,
+        491
+      ],
+      "sha256": "3a42e43c1daa4f2f7d5cc21da40dfe85f0a5f8ec8c8295618114e80ee9e96a88"
+    },
+    {
+      "file": "pond-ice.png",
+      "original": "environment/layers/pond.png",
+      "width": 160,
+      "height": 100,
+      "pivot": [
+        80,
+        99
+      ],
+      "originalInkBox": [
+        4,
+        3,
+        156,
+        99
+      ],
+      "inkBox": [
+        4,
+        3,
+        156,
+        99
+      ],
+      "sourceCell": [
+        490,
+        0,
+        500,
+        520
+      ],
+      "sourceInkBox": [
+        36,
+        94,
+        473,
+        382
+      ],
+      "sha256": "0bd7f0450ed881ce60fd1d715e53837a8cda39b49df464051cc9f7260c87c37f"
+    },
+    {
+      "file": "oak.png",
+      "original": "environment/forest-v06/oak.png",
+      "width": 190,
+      "height": 176,
+      "pivot": [
+        95,
+        174
+      ],
+      "originalInkBox": [
+        2,
+        33,
+        188,
+        174
+      ],
+      "inkBox": [
+        2,
+        34,
+        187,
+        174
+      ],
+      "sourceCell": [
+        990,
+        0,
+        509,
+        520
+      ],
+      "sourceInkBox": [
+        15,
+        73,
+        486,
+        461
+      ],
+      "sha256": "40b80e5cb5357db38bd52c8ffcb4847fc546809a86bbc0b8b91b05101d86a7fa"
+    },
+    {
+      "file": "pine.png",
+      "original": "environment/forest-v06/pine.png",
+      "width": 104,
+      "height": 196,
+      "pivot": [
+        52,
+        194
+      ],
+      "originalInkBox": [
+        2,
+        9,
+        102,
+        194
+      ],
+      "inkBox": [
+        2,
+        9,
+        102,
+        194
+      ],
+      "sourceCell": [
+        0,
+        520,
+        490,
+        529
+      ],
+      "sourceInkBox": [
+        99,
+        14,
+        386,
+        503
+      ],
+      "sha256": "a990c2da14c06066eaf6ab6c207d5e01a49f358f7a82fab1e898640f9f2d1648"
+    },
+    {
+      "file": "grove.png",
+      "original": "environment/forest-v06/grove.png",
+      "width": 190,
+      "height": 136,
+      "pivot": [
+        95,
+        134
+      ],
+      "originalInkBox": [
+        2,
+        6,
+        188,
+        134
+      ],
+      "inkBox": [
+        2,
+        6,
+        188,
+        134
+      ],
+      "sourceCell": [
+        490,
+        520,
+        500,
+        529
+      ],
+      "sourceInkBox": [
+        4,
+        43,
+        485,
+        410
+      ],
+      "sha256": "b53b0bcc1ffd4bdb4f03b7dd6f9472a4a67083dbc528ae55f89694ce00cbce7c"
+    },
+    {
+      "file": "log.png",
+      "original": "environment/forest-v06/log.png",
+      "width": 144,
+      "height": 88,
+      "pivot": [
+        72,
+        86
+      ],
+      "originalInkBox": [
+        2,
+        3,
+        142,
+        86
+      ],
+      "inkBox": [
+        2,
+        3,
+        142,
+        86
+      ],
+      "sourceCell": [
+        990,
+        520,
+        509,
+        529
+      ],
+      "sourceInkBox": [
+        48,
+        83,
+        470,
+        353
+      ],
+      "sha256": "2f76f85270bb70b7a46090f60a5f5730c463da95170356c01caf13ea242ab2eb"
+    }
+  ]
+}

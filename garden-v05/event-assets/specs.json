@@ -36,6 +36,40 @@
     112,
     150
    ]
+  },
+  {
+   "id": "ev_elf_tent",
+   "label": "Lều gia tinh",
+   "group": "Gia tinh",
+   "subject": "A small cosy house-elf TENT in a wizard garden, sewn from old patched pillowcases and faded tea towels in cream, rust and plum, a little round flap door held open with a wooden peg showing a warm lamp-lit inside with a tiny straw bed, a string of drying mismatched woolly socks as bunting across the front, a knitted woolly hat on the tent pole tip, a tiny lantern hanging by the door, two little pairs of elf shoes outside. Low and wide, the tent base is the ground contact on a 2x2 tile footprint. Cute, humble, homely.",
+   "w": 128,
+   "h": 176,
+   "foot": [
+    2,
+    2
+   ],
+   "motion": "glow",
+   "inkMax": [
+    112,
+    150
+   ]
+  },
+  {
+   "id": "ev_kitchen_corner",
+   "label": "Góc bếp",
+   "group": "Gia tinh",
+   "subject": "A house-elf KITCHEN CORNER like the Hogwarts kitchens, set outdoors: a small low brick hearth with a glowing fire under a big copper pot steaming with stew, beside it a low wooden work table with a stack of plates, a golden pie and a brown teapot, a ladle and copper pans hanging from a short wooden rail above. Everything elf-sized, warm and busy. The hearth and table stand side by side along a 2x1 tile footprint (long axis along the strip). Bases are the ground contact.",
+   "w": 96,
+   "h": 112,
+   "foot": [
+    2,
+    1
+   ],
+   "motion": "bubbles",
+   "inkMax": [
+    88,
+    92
+   ]
   }
  ]
 }
