@@ -1,7 +1,7 @@
 // Gia tinh in the garden (25.0 S2): each elf walks a loop of stops and does a chore at each one, sleeps by the hut at
 // night and cheers when tapped. Pure data + clock → scene objects; the renderer draws them like any pivoted asset.
 
-const FRAME = {width: 56, height: 56, pivotX: 28, pivotY: 52, bounds: {x: 10, y: 11, w: 34, h: 42}};
+const FRAME = {width: 80, height: 80, pivotX: 40, pivotY: 76, bounds: {x: 11, y: 14, w: 53, h: 63}};
 const CELL_MS = 900; // walking speed: one tile per 0.9 s
 const STEP_MS = 220; // walk-1 ↔ walk-2
 export const CHEER_MS = 1600;

@@ -109,6 +109,106 @@
       "tool": "image_gen.imagegen (built-in)",
       "status": "generated; visual candidate only; transparency present but soft alpha/glow and excess colours remain; walk defects on walking sheets; strict compliance not established",
       "source": "/Users/thachanh/.codex/generated_images/01a1a517-69ef-79e0-b706-9d0f6b7f9cc6/exec-33b0afb2-cdbc-4af2-8ce2-c43981687f34.png"
+    },
+    {
+      "key": "dobby",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Dobby: huge bat ears, big ROUND green eyes, pencil-thin neck, long pointed nose, pale warm tan skin, old cream pillowcase tunic tied at shoulder, red-orange tea-cosy wool hat with bobble, one green sock and one purple sock. Charming eager gentle smile. Preserve detailed first Dobby's lovable face and appealing silhouette while using exact 6px clusters.\nPose order row-major: idle hands gently together; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; water tin can tipped with drops; carry vegetable basket OVERHEAD held in both hands. Keep body scale identical even under overhead basket.\nCandidate A: focus on luminous big green eyes, sweet asymmetrical smile and expressive bat ears; refined cozy-game charm, restrained readable 6px clusters.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-ff667543-0196-49ec-bf36-7871d51b0983.png",
+      "file": "masters/v3-dobby-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "dobby",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Dobby: huge bat ears, big ROUND green eyes, pencil-thin neck, long pointed nose, pale warm tan skin, old cream pillowcase tunic tied at shoulder, red-orange tea-cosy wool hat with bobble, one green sock and one purple sock. Charming eager gentle smile. Preserve detailed first Dobby's lovable face and appealing silhouette while using exact 6px clusters.\nPose order row-major: idle hands gently together; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; water tin can tipped with drops; carry vegetable basket OVERHEAD held in both hands. Keep body scale identical even under overhead basket.\nCandidate B. CRITICAL correction from candidate A: background must be ALPHA ZERO, not a dark brown background; remove ALL halos. Crisp flat pixel blocks only. Precisely 6 actual pixel squares, not irregular pixel-style painting. Keep head tops near y66 and feet y468, so height is 402px = 67 blocks. Big round sparkling eyes, beautifully shaped bat ears, delicate readable hands, long pointed nose. Make warm friendly face and elegant cloth folds using only 3 solid colours. Avoid detailed micro-textures. Walk poses must visibly reverse feet without swapping sock colours between anatomical legs.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-b875b98f-164a-41db-8bc7-b6e07485a244.png",
+      "file": "masters/v3-dobby-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "dobby-extra",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Dobby: huge bat ears, big ROUND green eyes, pencil-thin neck, long pointed nose, pale warm tan skin, cream pillowcase tunic tied at shoulder, red-orange tea-cosy wool hat with bobble, one green sock and one purple sock. Charming eager gentle smile. Same character design as main Dobby.\nPose order row-major: sleep sitting with head on knees and hat over eyes; feed pouring a scoop downward lower-left; harvest pulling a carrot with both hands; cheer jumping with arms up; hat proudly holding up a knitted hat with both hands; sock delighted holding up one knitted sock. Same head and body scale even seated.\nCandidate A: emotionally expressive, delicate but readable hands, charming head tilt, elegant flat-cluster cloth folds. Strict alpha-zero background, NO dark brown or black backdrop and NO halo. Hat pulled over eyes only in sleep, otherwise large sparkling green eyes.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-b3c93072-d60c-4000-b251-ae04ed616533.png",
+      "file": "masters/v3-dobby-extra-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "dobby-extra",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Dobby: huge bat ears, big ROUND green eyes, pencil-thin neck, long pointed nose, pale warm tan skin, cream pillowcase tunic tied at shoulder, red-orange tea-cosy wool hat with bobble, one green sock and one purple sock. Charming eager gentle smile. Same character design as main Dobby.\nPose order row-major: sleep sitting with head on knees and hat over eyes; feed pouring a scoop downward lower-left; harvest pulling a carrot with both hands; cheer jumping with arms up; hat proudly holding up a knitted hat with both hands; sock delighted holding up one knitted sock. Same head and body scale even seated.\nCandidate B: maximize adorable expressive green eyes, graceful long ears, warm affectionate book-Dobby face. Sleep head must actually rest ON KNEES beneath hat. Feed scoop must visibly pour. Cheer both feet OFF ground. Holding up hat with BOTH hands. CRITICAL: transparent alpha ZERO background everywhere outside silhouette, no brown backdrop and NO halo. Rigid six-pixel blocks, no finer details.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-09a37009-6f6f-4bdc-ad7b-87d01ddc0d2e.png",
+      "file": "masters/v3-dobby-extra-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "winky",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Winky, female book house-elf, rounder and slightly smaller (about 60-64 blocks tall), huge BROWN eyes with pupils and highlights, round blunt nose, warm tan skin, plain warm-orange tea towel toga with ONE darker stripe, small BLUE scarf. Endearing shy gentle expression, rounded ears and soft cheeks, recognizably a house-elf.\nPose order row-major: idle hands together; walk1 left foot forward; walk2 right foot forward; water with tin watering can and drops; carry basket of eggs in front; sleep sitting with folded hands beside TINY flat block fire, absolutely NO glow.\nCandidate A: warm gentle round face, enormous soulful BROWN eyes with distinct cream catchlights, appealing soft ears and carefully shaped blue scarf. Strong rounded silhouette. Preserve readable 6px flat square clusters. Background alpha zero; absolutely no halos, vignette, diffuse brown background or shadows.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-871ab67a-8291-40ee-ad44-3414ef3c5603.png",
+      "file": "masters/v3-winky-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "winky",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Winky, female book house-elf, rounder and slightly smaller (about 60-64 blocks tall), huge BROWN eyes with pupils and highlights, round blunt nose, warm tan skin, plain warm-orange tea towel toga with ONE darker stripe, small BLUE scarf. Endearing shy gentle expression, rounded ears and soft cheeks, recognizably a house-elf.\nPose order row-major: idle hands together; walk1 left foot forward; walk2 right foot forward; water with tin watering can and drops; carry basket of eggs in front; sleep sitting with folded hands beside TINY flat block fire, absolutely NO glow.\nCandidate B: refine Winky with huge BROWN eyes, visible dark pupils and cream eye highlights, soft rounded cheeks, tiny warm smile and rounded house-elf ears. Slightly smaller than adult elves. NO glow around fire or water, no 'z' or any letters. She wears plain orange toga with exactly one darker stripe and blue scarf. Pixel grid strictly SIX actual pixels square, fine enough for lovely expressive face but every square flat. Fully transparent empty backdrop.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-aaae6bcc-9b56-4aca-a349-f3d2564fc0ed.png",
+      "file": "masters/v3-winky-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "kitchen-a",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Hogwarts kitchen elf A: older, long DROOPY ears, lean long face, blue-grey expressive eyes, long nose, a gentle kind smile and subtly aged brow. Cream tea towel toga tied at one shoulder with small plain blue-grey SHIELD silhouette on chest, no letters or detailed crest. Bare feet. Same adult height and head/body proportions as Dobby.\nPose order row-major: idle; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; carry exactly THREE plates stacked in front; sleep seated with hands on knees and relaxed droopy ears.\nCandidate A: lovable older kitchen helper, expressive large blue-grey eyes, gentle amused smile, elegant long droopy ears and warm kind face. Use delicate but clear hands holding three separate plate rims. PLAIN shield chest patch. Keep same mature proportions as Dobby, no squat child proportions. Transparent alpha background, NO coloured backdrop, NO halo. Strict flat 6px squares.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-711f8101-9850-4234-8e80-b44eed6e1746.png",
+      "file": "masters/v3-kitchen-a-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "kitchen-a",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Hogwarts kitchen elf A: older, long DROOPY ears, lean long face, blue-grey expressive eyes, long nose, a gentle kind smile and subtly aged brow. Cream tea towel toga tied at one shoulder with small plain blue-grey SHIELD silhouette on chest, no letters or detailed crest. Bare feet. Same adult height and head/body proportions as Dobby.\nPose order row-major: idle; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; carry exactly THREE plates stacked in front; sleep seated with hands on knees and relaxed droopy ears.\nCandidate B: charming kindly older elf, soft smiling eyes with LARGE blue-grey irises, one simple age-brow crease, no dense wrinkles or face microtexture. Long DROOPING ears all poses. Lean body but head scale like Dobby. Beautiful clean 6-pixel clusters, every single square flat and grid aligned. True alpha-zero negative space no brown backdrop or halos. Three plain plates clearly separated, plain shield, reversed walking legs and arms. Slight head tilt conveys kindness.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-0c4fc1aa-d196-4825-9019-c8c744777b2a.png",
+      "file": "masters/v3-kitchen-a-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "kitchen-b",
+      "candidate": "a",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Hogwarts kitchen elf B: compact shorter body but upright ears reach adult height; ROUND face, ears pointing UP, round nose, big kind brown eyes with pupils and highlights, cheerful warm smile. White-looking cream tea towel tied as chef APRON with a readable waist tie and bare shoulders and feet. Wooden spoon held in idle. Distinct from lean droopy-eared A, no hat, scarf or chest shield.\nPose order row-major: idle holding wooden spoon; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; water tin can and drops; sleep seated folded hands, ears relaxed.\nCandidate A: delightful round-faced kitchen companion with very upright bat ears and enormous warm BROWN eyes, a clear spoon and broad apron waist tie. Compact adult body, not baby, same head scale and overall ear-tip height as other adults. Lovely soft smile and friendly face. All detail rigid 6px squares; alpha-zero background and no halos.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-3e76de54-2d38-4d0a-90ba-67bdf73b30d5.png",
+      "file": "masters/v3-kitchen-b-candidate-a.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "kitchen-b",
+      "candidate": "b",
+      "prompt": "Use case: stylized-concept. Create a beautiful polished cozy farm game PIXEL ART master sprite sheet, exactly 1536 x 1024 PNG with TRUE TRANSPARENT background. Six poses in 3 columns x 2 rows of exactly 512 x 512 cells, no grid lines or labels. Each cell uses its OWN pixel grid starting at its top-left: every pixel-art block is EXACTLY 6x6 actual pixels of ONE uniform flat colour, all block edges at multiples of 6 relative to cell origin. No detail smaller than a block, no antialiasing, gradients, blur, glow, shadow, texture noise or backdrop. 1-block dark outline #231F2E, 2-3 shades per material, top-left light. Lovable book-illustration house-elves, never film CGI or actors. Beautiful expressive face, huge readable eyes with dark pupils and pale-white highlights using #D6D8BF or #B7DEE0 (not pure white), nuanced ears and warm smiles, clearly readable hands and carefully designed flat colour clusters. Adult characters about 64-70 blocks tall including ear/hat tips; same head/body proportions between poses. Body centered local x256, standing feet at y468, >=24px empty margin on every side including props. Three-quarter toward LOWER LEFT. Same head height for idle and two walks; walk1 clearly LEFT foot forward, walk2 clearly RIGHT foot forward, reversed arm swing and leg overlap. No extra characters, no text, no background. Palette must contain at most 16 EXACT colours chosen ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not introduce other RGB shades.\nSubject: Hogwarts kitchen elf B: compact shorter body but upright ears reach adult height; ROUND face, ears pointing UP, round nose, big kind brown eyes with pupils and highlights, cheerful warm smile. White-looking cream tea towel tied as chef APRON with a readable waist tie and bare shoulders and feet. Wooden spoon held in idle. Distinct from lean droopy-eared A, no hat, scarf or chest shield.\nPose order row-major: idle holding wooden spoon; walk1 left foot forward; walk2 right foot forward; sweep twig broom and tiny snow puff; water tin can and drops; sleep seated folded hands, ears relaxed.\nCandidate B: polished lovable compact ADULT elf, round cheeks, UPWARD ears but not excessively long rabbit ears, big round BROWN irises with distinct dark pupil and pale highlight, smile with expressive corners. Head/body scale like Dobby, shorter torso. Readable hands, spoon, broad apron ties. All six identities consistent, both walking heads same height. Exactly SIX pixel square flat blocks and single-block outline, no sub-block painting, NO dark background, NO glow, alpha zero outside clean silhouettes. Use restrained 2-3 shades per material for hand-placed cozy-game pixel beauty.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a538-cecc-75e2-ac2d-6ea9a6d60365/exec-d4d50998-c33e-40a5-90d7-5204ea238cff.png",
+      "file": "masters/v3-kitchen-b-candidate-b.png",
+      "batch": "elves-v3",
+      "tool": "image_gen.imagegen (built-in)",
+      "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
     }
   ],
   "selected": "masters/dobby-candidate-b.png",
@@ -133,5 +233,178 @@
       }
     ],
     "status": "8/8 candidates generated, 4/4 selections saved; not production-ready; see docs/codex-briefs/elves-batch-01-report.md"
+  },
+  "v3": {
+    "date": "2026-11-04",
+    "selected": [
+      {
+        "file": "masters/v3-dobby.png",
+        "candidate": "masters/v3-dobby-candidate-a.png"
+      },
+      {
+        "file": "masters/v3-dobby-extra.png",
+        "candidate": "masters/v3-dobby-extra-candidate-a.png"
+      },
+      {
+        "file": "masters/v3-winky.png",
+        "candidate": "masters/v3-winky-candidate-b.png"
+      },
+      {
+        "file": "masters/v3-kitchen-a.png",
+        "candidate": "masters/v3-kitchen-a-candidate-b.png"
+      },
+      {
+        "file": "masters/v3-kitchen-b.png",
+        "candidate": "masters/v3-kitchen-b-candidate-b.png"
+      }
+    ],
+    "status": "10/10 candidates generated; 5/5 visual selections saved; strict technical acceptance FAILED; see docs/codex-briefs/elves-v3-report.md",
+    "verification": {
+      "selected": [
+        {
+          "file": "garden-v05/environment/elves/masters/v3-dobby.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 153712,
+          "alpha_values": 255,
+          "transparent_pixels": 893127,
+          "partial_alpha_pixels": 679737,
+          "off_palette_pixels": 679725,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-dobby-extra.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 170210,
+          "alpha_values": 255,
+          "transparent_pixels": 548810,
+          "partial_alpha_pixels": 1024054,
+          "off_palette_pixels": 1024052,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-winky.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 81570,
+          "alpha_values": 255,
+          "transparent_pixels": 838139,
+          "partial_alpha_pixels": 734725,
+          "off_palette_pixels": 734722,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-kitchen-a.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 82506,
+          "alpha_values": 255,
+          "transparent_pixels": 668620,
+          "partial_alpha_pixels": 904244,
+          "off_palette_pixels": 904238,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-kitchen-b.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 101508,
+          "alpha_values": 255,
+          "transparent_pixels": 810980,
+          "partial_alpha_pixels": 761884,
+          "off_palette_pixels": 761855,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        }
+      ],
+      "other_candidates": [
+        {
+          "file": "garden-v05/environment/elves/masters/v3-dobby-candidate-b.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 148431,
+          "alpha_values": 255,
+          "transparent_pixels": 889499,
+          "partial_alpha_pixels": 683365,
+          "off_palette_pixels": 683349,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-dobby-extra-candidate-b.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 162162,
+          "alpha_values": 254,
+          "transparent_pixels": 79,
+          "partial_alpha_pixels": 1572785,
+          "off_palette_pixels": 1572767,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-winky-candidate-a.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 91426,
+          "alpha_values": 255,
+          "transparent_pixels": 910205,
+          "partial_alpha_pixels": 662659,
+          "off_palette_pixels": 662656,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-kitchen-a-candidate-a.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 88104,
+          "alpha_values": 255,
+          "transparent_pixels": 925218,
+          "partial_alpha_pixels": 647646,
+          "off_palette_pixels": 647643,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        },
+        {
+          "file": "garden-v05/environment/elves/masters/v3-kitchen-b-candidate-a.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rgb_colours": 100238,
+          "alpha_values": 255,
+          "transparent_pixels": 807368,
+          "partial_alpha_pixels": 765496,
+          "off_palette_pixels": 765493,
+          "nonuniform_6px_blocks": 43350,
+          "total_6px_blocks": 43350
+        }
+      ],
+      "method": "read-only PNG RGBA decode; complete cell-local 6px block checks; 24-colour palette membership"
+    }
   }
 }
