@@ -1,5 +1,6 @@
 // Level-500 roadmap P4 (§10): the premium store. Mirror of HPVN functions/games/garden-premium-core.js
 // (PREMIUM_ITEMS, saleTotal); the HPVN catalog test compares the two. The server prices every purchase.
+// Prices here are the 24.x base; garden-store-catalog storePrice sets the store price (big update 25.0 §3).
 const ROWS = [
  ["spring_rain","rain","Mưa suối thần",50,6300,10,1,"Cả vườn chín và được gặt ngay. Giá cố định, không tính theo số thửa. Dùng 1 lần mỗi ngày, từ cấp 101 được 2 lần."],
  ["felix_felicis","felix","Phúc Lạc Dược",40,3000,10,1,"XP ×1,5 trong 2 giờ; phần thưởng thêm tối đa bằng nửa XP cần của cấp lúc uống. Không nhân XP từ suối thần. 1 lọ mỗi ngày."],
