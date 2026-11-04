@@ -1,4 +1,4 @@
-// Gia tinh in the garden (25.0 S2): each elf walks a loop of stops and does a chore at each one, sleeps by the hut at
+// Gia tinh in the garden (25.0 S2): each elf walks a loop of stops and does a chore at each one, sleeps in the aisle at
 // night and cheers when tapped. Pure data + clock → scene objects; the renderer draws them like any pivoted asset.
 import {CREATURE} from './progression-engine.mjs?v=24.9.96';
 
@@ -7,35 +7,39 @@ const CELL_MS = 900; // walking speed: one tile per 0.9 s
 const STEP_MS = 220; // walk-1 ↔ walk-2
 export const CHEER_MS = 1600;
 
-// Stops are [col, row, pose, stay ms], all inside stage 1 (cols ≤ 20.5, rows ≤ 9.5) between the plot rows.
-// `sleep` is the night spot beside the hut; `lines` are what a tap shows, in turn (Dobby talks of himself by name, HP2).
+// Stops are [col, row, pose, stay ms, faces right?], all inside stage 1 (cols ≤ 20.5, rows ≤ 9.5). Elves keep to the
+// aisles that no plot, earned-decor slot or festival spot uses: rows 7 and 8.9 between the plot rows, cols 5, 8, 12, 18
+// beside the plots and row 1.9 behind them; 'walk-1' stops are corners. Standing, an elf is north or west of the plot
+// it tends, so its sprite never covers a plot frame (garden-elves.test.mjs).
+// ponytail: fixed aisles for the authored layout; a decoration the player moves into an aisle can still meet an elf.
+// `sleep` is the night spot; `lines` are what a tap shows, in turn (Dobby talks of himself by name, HP2).
 export const ELVES = Object.freeze({
   dobby: Object.freeze({
     name: 'Dobby',
     poses: ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'carry', 'sleep', 'cheer', 'harvest', 'feed'],
-    stops: [[1.5, 7.5, 'idle', 2600], [6.1, 4.5, 'water', 3200], [7.5, 7.5, 'sweep', 3600], [12.5, 8, 'carry', 0], [6, 8.5, 'idle', 2000]],
-    sleep: [2.4, 7.1],
+    stops: [[2.5, 8.9, 'idle', 2600], [5, 8.9, 'walk-1', 0], [5, 1.9, 'walk-1', 0], [3, 1.9, 'water', 3200], [5, 1.9, 'walk-1', 0], [5, 7, 'walk-1', 0], [7.5, 7, 'sweep', 3600], [12, 7, 'walk-1', 0], [12, 8.9, 'carry', 0], [4, 8.9, 'idle', 2000]],
+    sleep: [2, 8.9],
     lines: ['Dobby quét tuyết cho vườn bác Hagrid đây ạ!', 'Dobby thích tất len lắm, thưa ngài!', 'Dobby là gia tinh tự do!'],
   }),
   winky: Object.freeze({
     name: 'Winky',
     poses: ['idle', 'walk-1', 'walk-2', 'water', 'carry', 'sleep'],
-    stops: [[8.5, 7, 'idle', 2400], [12.6, 4.5, 'water', 3200], [13.5, 7.5, 'carry', 0], [9, 8.2, 'idle', 2000]],
-    sleep: [3.6, 7],
+    stops: [[7.9, 7, 'idle', 2400], [7.9, 4, 'water', 3200, true], [7.9, 8.9, 'walk-1', 0], [12, 8.9, 'carry', 0], [12, 7, 'walk-1', 0]],
+    sleep: [3.5, 8.9],
     lines: ['Winky tưới rau cho bác Hagrid!', 'Winky nhặt trứng xong rồi ạ!'],
   }),
   'kitchen-a': Object.freeze({
     name: 'Gia tinh bếp Hogwarts',
     poses: ['idle', 'walk-1', 'walk-2', 'sweep', 'carry', 'sleep'],
-    stops: [[3, 8.6, 'sweep', 3600], [10.5, 8.8, 'sweep', 3000], [16, 7.5, 'carry', 0], [4.5, 8.4, 'idle', 2200]],
-    sleep: [1.3, 7.3],
+    stops: [[3, 8.9, 'sweep', 3600], [10.5, 8.9, 'sweep', 3000], [16, 8.9, 'carry', 0], [6.5, 8.9, 'idle', 2200]],
+    sleep: [5, 8.9],
     lines: ['Bếp Hogwarts gửi bánh nóng cho bác Hagrid!', 'Lối đi sạch tuyết rồi ạ!'],
   }),
   'kitchen-b': Object.freeze({
     name: 'Gia tinh bếp Hogwarts',
     poses: ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'sleep'],
-    stops: [[14.5, 8, 'idle', 2400], [18.6, 4.5, 'water', 3000], [19, 8, 'sweep', 3200], [15, 9, 'idle', 1800]],
-    sleep: [4.8, 6.9],
+    stops: [[14.5, 8.9, 'idle', 2400], [18, 8.9, 'walk-1', 0], [18, 1.9, 'walk-1', 0], [16, 1.9, 'water', 3000], [18, 1.9, 'walk-1', 0], [18, 8.9, 'walk-1', 0], [19.5, 8.9, 'sweep', 3200]],
+    sleep: [6.5, 8.9],
     lines: ['Nồi súp bí ngô sắp chín rồi ạ!', 'Gia tinh bếp không bao giờ nghỉ!'],
   }),
 });
@@ -54,7 +58,7 @@ export function elfPose(id, clock, stops = ELVES[id].stops) {
   const loop = legs.reduce((sum, leg) => sum + leg.stop[3] + leg.walk, 0);
   let t = clock > 0 ? clock % loop : 0;
   for (const {stop, next, walk} of legs) {
-    if (t < stop[3]) return [stop[0], stop[1], stop[2], false];
+    if (t < stop[3]) return [stop[0], stop[1], stop[2], stop[4] === true];
     t -= stop[3];
     if (t < walk) {
       const k = t / walk;

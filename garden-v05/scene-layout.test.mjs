@@ -276,14 +276,14 @@ test('renderer hides future plot and pen labels and expands without losing initi
  garden.render(state,{now:1700000000000,clock:0,propsVisible:false});
  assert.equal(garden.growthStage().id,1);
  assert.equal(canvas.dataset.gardenStage,'1');
- assert.equal(labels.filter(t=>/^THỬA /.test(t)).length,3);
+ assert.equal(labels.filter(t=>/^Thửa /.test(t)).length,3);
  assert.equal(labels.some(t=>/Lv/.test(t)),false,'no future construction labels in starter scene');
  const initial=garden.growthBounds();labels.length=0;state.level=100;
  garden.render(state,{now:1700000000000,clock:0,propsVisible:false});
  assert.equal(garden.growthStage().id,6);
  assert.ok(garden.growthBounds().bottom>initial.bottom);
  assert.ok(labels.some(t=>/T12/.test(t)),'final plot is offered but not automatically built');
- assert.equal(labels.filter(t=>/^THỬA /.test(t)).length,3);
+ assert.equal(labels.filter(t=>/^Thửa /.test(t)).length,3);
  const [x,y]=iso(garden.map.plots[0].col+1,garden.map.plots[0].row+1,garden.map);
  assert.deepEqual(garden.pick(x,y),{plot:0,index:4});
 });
@@ -302,9 +302,11 @@ test('a plot label slides up over its plot instead of covering a statue in front
  const statue={id:'decor_cauldron',file:'decor-assets/x.png',width:40,height:60,pivotX:20,pivotY:56};
  const canvas=fakeCanvas(),labels=[];canvas.getContext().fillText=(text,x,y)=>labels.push({text,y});
  const garden=await createGarden(canvas,{allowMissingAssets:true,decorAssets:[statue]}),state=newGame(1700000000000);
- const plot=garden.map.plots[0],[,front]=iso(...plot.positions.label,garden.map),[,centre]=iso(...plot.positions.center,garden.map);
- const y=decorations=>{labels.length=0;garden.render(state,{now:1700000000000,clock:0,propsVisible:false,decorations});return labels.find(l=>/^THỬA 1\b/.test(l.text)).y;};
- assert.equal(y(undefined),Math.round(front));
- const moved=y({owned:['decor_cauldron'],placements:['decor_cauldron'],positions:{decor_cauldron:[plot.positions.label[0],plot.positions.label[1]+.6]}});
+ // The tag stands on the plot's front tip (owner 04/11/2026: small, on its own plot, never over the path).
+ const plot=garden.map.plots[0],tipAt=[plot.col+plot.width-.5,plot.row+plot.height-.5],[,tip]=iso(...tipAt,garden.map),[,centre]=iso(...plot.positions.center,garden.map);
+ const y=decorations=>{labels.length=0;garden.render(state,{now:1700000000000,clock:0,propsVisible:false,decorations});return labels.find(l=>/^Thửa 1$/.test(l.text)).y;};
+ const front=y(undefined);
+ assert.ok(front<tip&&front>tip-12,`tag at ${front}, tip ${tip}`);
+ const moved=y({owned:['decor_cauldron'],placements:['decor_cauldron'],positions:{decor_cauldron:[tipAt[0]+.5,tipAt[1]+.5]}});
  assert.ok(moved<front&&moved>=centre-1,`label at ${moved}, front ${front}, centre ${centre}`);
 });

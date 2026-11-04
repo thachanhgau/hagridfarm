@@ -10,9 +10,10 @@ import {pixelIcon} from './pixel-icons.mjs?v=24.9.96';
 
 export const VISIT_ART = Object.freeze({hearth: 'environment/visit/floo-hearth.png', ring: 'environment/visit/portal-ring.png'});
 
-/** A member's garden in the shape the tour mode draws (garden-tour.mjs buildHonorGardenSnapshot). */
-export function buildVisitSnapshot(visit, weatherMode = 'clear') {
-  const name = visit.username || 'Thành viên';
+/** A member's garden in the shape the tour mode draws (garden-tour.mjs buildHonorGardenSnapshot).
+ * The scene is the host's own choice (server decorations.scene), never the visitor's; a host who never picked one gets the defaults. */
+export function buildVisitSnapshot(visit) {
+  const name = visit.username || 'Thành viên', scene = visit.decorations?.scene;
   return {
     tour: {id: 'visit:' + visit.uid, member: true, uid: visit.uid, ownerName: name, level: visit.level, title: 'Vườn của ' + name},
     visit,
@@ -20,8 +21,9 @@ export function buildVisitSnapshot(visit, weatherMode = 'clear') {
     decorations: visit.decorations,
     decorationRotations: visit.progression?.decorationRotations || {},
     creatureFacings: {},
-    atmosphereMode: 'day',
-    weatherMode,
+    atmosphereMode: scene?.atmosphere || 'day',
+    weatherMode: scene?.weather || 'clear',
+    eventMode: scene?.event || null,
   };
 }
 
@@ -173,7 +175,7 @@ export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp
       many ? button('Vườn tiếp ›', () => onMove(1), {class: visit.helped || helpsLeft < 1 ? 'primary' : '', 'data-banner-next-visit': 'true'}) : null,
       button('Về vườn', onHome, {'data-banner-stop-tour': 'true'}),
     ]),
-  ];
+  ].filter(Boolean); // replaceChildren prints a null as «null» (the «nullnull» line under the host's name)
 }
 
 function iconButton(name, label, onclick, attrs) {
