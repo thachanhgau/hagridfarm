@@ -18,13 +18,13 @@ Cắt nếu trễ, theo thứ tự: chương 5 → S6 còn 4 nhân vật (Harry,
 | # | Phần | Nội dung | Codex | Phụ thuộc |
 |---|---|---|---|---|
 | S0 | Nền móng | Số liệu gốc (phân bố cấp, quay lại D1/D7, Galleons); ngân sách tốc độ (LCP điện thoại < 8 s, ảnh lễ hội chỉ tải khi mùa mở); script chạy Codex tự chờ hết giới hạn; tra Lý Lan mọi tên mới (§7) | 0 | — |
-| S1 | Giá cửa hàng | §3 | 0 | — |
+| S1 | Giá cửa hàng | §3; mở bán 30 sản phẩm đặc biệt (`SPECIAL_PRICES_APPROVED`, server `forSale`) theo giá §3 | 0 | — |
 | S2 | Gia tinh làm chủ đạo | Dobby, Winky, 2 gia tinh bếp Hogwarts đi lại, quét tuyết, tưới, khiêng giỏ, ngủ cạnh lò; **Gia tinh trông vườn** (§5); Hermione đan mũ/tất len (công thức chế biến mới) để trả công; Lều gia tinh, Góc bếp | ~6 | S0 |
 | S3 | Mùa đông thật + bộ lông hiếm | Tuyết, sương mù, hồ băng, hơi thở, đèn đêm đông; code phủ tuyết mép trên cho mọi ảnh sẵn có (màu `#D6D8BF`/`#B7DEE0`); Codex chỉ vẽ lều phủ tuyết, hồ băng, rừng đông. Tuyết trên nền: thử trước bằng bộ vẽ mảng ngẫu nhiên sẵn có (`meadow-ground.mjs`) với màu tuyết; nếu mép tuyết–cỏ trông giả thì Codex vẽ **bộ 16 Wang góc** (cỏ/tuyết, ô 64×32) và code chọn ô theo độ dày tuyết ở 4 góc mỗi ô, tuyết dày dần theo số ngày tuyết rơi Bộ lông hiếm (đông, bạc, Noel) = đổi màu trong bảng 32 màu bằng code, chỉ để trang điểm | ~5 | S0 |
 | S4 | Đàn thú: tâm trạng và tương tác | §4; tính cách mùa đông từng loài; **rồng con Norbert là bạn đồng hành** (loài Rồng cấp 94 đã có, Norbert không cho Vảy Rồng) | ~8 | S0 |
-| S5 | Bậc trách nhiệm (cấp ≥ 130) | §5 | ~2 | S2, S4 |
+| S5 | Bậc trách nhiệm (cấp ≥ 130) | §5; khung Floo mỗi 10 cấp (việc còn treo của P3 `level-500-roadmap.md`) | ~2 | S2, S4 |
 | S6 | Harry và bạn bè ghé vườn | Harry–Ron bay chổi chuyền Quaffle, Hermione đọc sách/đan mũ, Neville chăm Nhân sâm, Luna cho vong mã ăn, Ginny ném tuyết, Fred–George pháo hoa; chạm → một câu + quà nhỏ có trần ngày. Pixel chibi theo sách, **không giống mặt diễn viên** | ~10 | S0 |
-| S7 | Chuỗi sự kiện Giáng sinh | §6 | ~10 | S2, S6 |
+| S7 | Chuỗi sự kiện Giáng sinh | §6; bộ sản phẩm đặc biệt Noel cho bậc Tận Sức (việc còn treo của P3) | ~10 | S2, S6 |
 | S8 | Kiểm thử, phát hành | Mô phỏng cân bằng, đủ test, 3026 `--lan`, iPhone thật, hai đợt | — | tất cả |
 
 Codex: khoảng 50 tấm, mỗi tấm 6 món, mức `medium`. Mỗi phần chạy thử 1 tấm trước; tấm đầu của S2 (Dobby) và S6 (Harry) chờ chủ dự án duyệt nét nhân vật. Quy trình: brief theo art bible và `grid-fit-guideline.md` → masters → builder sẵn có → `build-runtime-webp.mjs` → `verify-image-assets.mjs`, `audit-grid-fit.mjs` → Claude soát và trả lại record Codex sửa nhầm → chủ dự án duyệt trên `qa-v19/art-gallery.html`.
@@ -142,6 +142,8 @@ Tra lại: `python3 -I` đếm chuỗi trong `resource/FullHP/HP*_VN.txt` (ugrep
 | 38 | Bơm tâm trạng bằng thao tác lặp | Mỗi tương tác một lần mỗi con mỗi chu kỳ |
 | 39 | Bộ lông hiếm có lợi kinh tế | Chỉ để trang điểm |
 | 40 | Dụ thú về, chữa bệnh | Chi bằng mồi hoặc Galleons theo cấp: là chỗ hút Galleons, không phải nguồn |
+
+Gộp ngày 04/11/2026 (chủ dự án «Ok»): ba việc còn treo của kế hoạch cấp 500 vào S1, S5, S7 như bảng §2.
 
 ## 9. Mặc định chưa được trả lời riêng
 
