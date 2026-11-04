@@ -1,0 +1,35 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "local intercepted level500 fixture,375px mobile simulated throttling; no server/Firebase/real wallet",
+  "game": "/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-elf-glow/garden-v05",
+  "runs": [
+    {
+      "performance": 50,
+      "fcpMs": 10095,
+      "lcpMs": 14235,
+      "tbtMs": 289,
+      "bytes": 4323427
+    },
+    {
+      "performance": 51,
+      "fcpMs": 10095,
+      "lcpMs": 14235,
+      "tbtMs": 239.5,
+      "bytes": 4323427
+    },
+    {
+      "performance": 51,
+      "fcpMs": 10080,
+      "lcpMs": 14205,
+      "tbtMs": 255,
+      "bytes": 4323427
+    }
+  ],
+  "median": {
+    "performance": 51,
+    "fcpMs": 10095,
+    "lcpMs": 14235,
+    "tbtMs": 255,
+    "bytes": 4323427
+  }
+}

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "c5388c15f08d",
+  "revision": "1ca700c305c5",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11732,6 +11732,126 @@
       "sha256": "bfec26aa1294fa91c462d5dddc5562b43cd24f7c2e474e44fd2036ede5b3476b"
     },
     {
+      "source": "environment/statue-glow/ev_dark_dobby_red_right-g0.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red_right-g0.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1835,
+      "bytes": 1134,
+      "sourceSha256": "92c3f61b24e603271e7588f34e5e165b21da847d6a90ab80ca08cfc4d5e4097c",
+      "sha256": "1354aabc3054bc2c4ae3b176819a74f878db8305e1768b7effa3ddbb4e5c6872"
+    },
+    {
+      "source": "environment/statue-glow/ev_dark_dobby_red_right-g1.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red_right-g1.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1911,
+      "bytes": 1226,
+      "sourceSha256": "5d13357872dd64451a75d3343c060bd20c42e7632b292302556627f032b072c8",
+      "sha256": "bb2a7c0dfc6efcec1b501398bac9f56a57f64029e1cd3cbff8c14de01bece159"
+    },
+    {
+      "source": "environment/statue-glow/ev_dark_dobby_red_right-g2.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red_right-g2.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1791,
+      "bytes": 1060,
+      "sourceSha256": "36081a5d2d5a75bb5eebc95fd823a740b56731d77a510e22816ff3215e55b02a",
+      "sha256": "0e629a43023f037d85be9a0604df626ea7015114f9dc66f94fe119da546658a3"
+    },
+    {
+      "source": "environment/statue-glow/ev_dark_dobby_red-g0.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red-g0.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1881,
+      "bytes": 1162,
+      "sourceSha256": "1d6a48e68324c76524af22affc8d27de307308e534811659867ce182300176eb",
+      "sha256": "46acc44e9a91c97235885eab166d8f034fce36c9dc2335bee45343ab28d621e1"
+    },
+    {
+      "source": "environment/statue-glow/ev_dark_dobby_red-g1.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red-g1.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1954,
+      "bytes": 1266,
+      "sourceSha256": "9fa5c7118a294367d1f42785485be017da01846b2b8da0b0460b16f91abc1a33",
+      "sha256": "d67b2515f69ae28f27120c3437187b2dbeb08930d5f42545174e5eb1fafa1e03"
+    },
+    {
+      "source": "environment/statue-glow/ev_dark_dobby_red-g2.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red-g2.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1824,
+      "bytes": 1084,
+      "sourceSha256": "441ab0ea5dc73181208159e5ecc615165ef2d8277c4230732610b2ccb211db86",
+      "sha256": "c3c44f2480c50e8a4eae04b1ec3ad38aede10fdb171377876d11e2dc9b837059"
+    },
+    {
+      "source": "environment/statue-glow/ev_dobby_spring_rider_right-g0.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider_right-g0.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1705,
+      "bytes": 1038,
+      "sourceSha256": "e60c2fa6b20e99a14314b3f5800578de070e12144950be0232bba4e5eecc256b",
+      "sha256": "c468096e1d61c8ee62c0718d21d1a282a840ae213e28e625fe873308091da397"
+    },
+    {
+      "source": "environment/statue-glow/ev_dobby_spring_rider_right-g1.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider_right-g1.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1757,
+      "bytes": 1128,
+      "sourceSha256": "bf79d82c69e96ef532999b8b8c2d7ea661b94883ed08fc1ab4cc05edd26a2f5d",
+      "sha256": "b73fd403e725b91058f5c7f29515ba5da0730fd15819013cda681b256ffe176e"
+    },
+    {
+      "source": "environment/statue-glow/ev_dobby_spring_rider_right-g2.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider_right-g2.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1673,
+      "bytes": 954,
+      "sourceSha256": "561b6cff694a075257c0d29d2cf1a15f364b74b2ef990594d94018ac2e641db1",
+      "sha256": "3aa6d245cdfb27d723da87d53661f958ed5f4a618cdf12639a73014679c6dcf1"
+    },
+    {
+      "source": "environment/statue-glow/ev_dobby_spring_rider-g0.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider-g0.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1852,
+      "bytes": 1144,
+      "sourceSha256": "df2be300cae659805336bcd16462ff0d3643b59bcb6238f55b58bc9039e90dc6",
+      "sha256": "ed1358177517845516c2b5b7fe5217ee1883aada434cc083e01bb5ff528017e8"
+    },
+    {
+      "source": "environment/statue-glow/ev_dobby_spring_rider-g1.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider-g1.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1905,
+      "bytes": 1234,
+      "sourceSha256": "52cd73b8744d53a408d48efc8b36b30e8851b720c2aa130ca9c339da1d705e60",
+      "sha256": "08bee2d8200988097c641e34aecce3566b6c2f144b1e55489aa8293886e07f83"
+    },
+    {
+      "source": "environment/statue-glow/ev_dobby_spring_rider-g2.png",
+      "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider-g2.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 1765,
+      "bytes": 1042,
+      "sourceSha256": "b26c3cd0a3e7740ba2664df4a498894783768d1efe300478835defc1156e11d5",
+      "sha256": "f149f39e544ec4c856124d75e2f419e2fff4ab83c666ab780a7def320bf68a62"
+    },
+    {
       "source": "environment/visit/floo-hearth.png",
       "file": "runtime-webp/environment/visit/floo-hearth.webp",
       "width": 360,
@@ -11895,11 +12015,11 @@
     }
   ],
   "totals": {
-    "converted": 1183,
+    "converted": 1195,
     "existingWebp": 8,
-    "originalBytes": 4390126,
-    "webpBytes": 2934456,
-    "savedBytes": 1455670,
-    "savedPercent": 33.16
+    "originalBytes": 4411979,
+    "webpBytes": 2947928,
+    "savedBytes": 1464051,
+    "savedPercent": 33.18
   }
 }

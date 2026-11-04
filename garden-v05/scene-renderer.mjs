@@ -1537,7 +1537,7 @@ export async function createGarden(canvas, options = {}) {
     const weatherMode = options.weatherMode || 'clear';
     const eventMode = options.eventMode || 'none';
     // Winter: snow lies even under a clear sky; its scenery is requested only while winter is on.
-    if (options.winterKit && !kit) { kit = options.winterKit; for (const file of kit.WINTER_FILES) deferredFiles.add(file); }
+    if (options.winterKit && !kit) { kit = options.winterKit; for (const file of [...kit.WINTER_FILES, ...kit.STATUE_GLOW_FILES]) deferredFiles.add(file); }
     activeWinter = kit && options.winter?.active ? options.winter : null;
     const groundWeather = activeWinter && weatherMode === 'clear' ? 'snow' : weatherMode;
     prepareWeather(groundWeather, activeWinter && groundWeather === 'snow' ? activeWinter.depth : 1, Boolean(activeWinter));syncBackdropLighting(atmosphereMode,weatherMode);activeEvent=eventMode;
@@ -1753,6 +1753,7 @@ export async function createGarden(canvas, options = {}) {
       });
     }
     if (activeWinter) kit.drawWinterLayer(context, {width: map.width, height: map.height, lanterns, mode: atmosphereMode, clock});
+    if (kit && atmosphereMode !== 'day') for (const object of objects) { const glow = kit.statueGlow(object, clock); if (glow) drawAsset(glow, object.xy[0], object.xy[1]); }
     if (eventMode && eventMode !== 'none') {
       drawEventOverlay(context, map.width, map.height, {
         eventMode,

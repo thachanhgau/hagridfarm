@@ -198,3 +198,15 @@ export function drawWinterLayer(ctx, {width, height, lanterns = [], mode = 'day'
   for (const light of lanterns) drawLantern(ctx, light.x, light.y, mode !== 'day');
   drawWinterFog(ctx, width, height, {clock, mode});
 }
+
+// 25.0: elf statues glow at dusk and night. The glow layers (Codex) hold only the lit pixels on the statue's canvas
+// and pivot; the renderer draws them after the night tint and loads them only once it is dark (deferred files).
+const STATUE_GLOW_IDS = ['ev_dark_dobby_red', 'ev_dobby_spring_rider'];
+const glowFile = (id, right, n) => `environment/statue-glow/${id}${right ? '_right' : ''}-g${n}.png`;
+export const STATUE_GLOW_FILES = Object.freeze(STATUE_GLOW_IDS.flatMap((id) => [0, 1, 2].flatMap((n) => [glowFile(id, false, n), glowFile(id, true, n)])));
+// Slow flicker g0 g1 g0 g2, each statue on its own beat; reduced motion (clock 0) holds g0.
+export function statueGlow(object, clock = 0) {
+  if (object?.kind !== 'store-decor' || object.preview || !STATUE_GLOW_IDS.includes(object.id)) return null;
+  const n = clock > 0 ? [0, 1, 0, 2][Math.floor(clock / 600 + (object.slot ?? 0)) % 4] : 0;
+  return {file: glowFile(object.id, object.facing === 'right', n), pivotX: object.asset.pivotX, pivotY: object.asset.pivotY, noSnowCap: true};
+}
