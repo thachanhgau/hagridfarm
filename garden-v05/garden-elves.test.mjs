@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {ELVES, elfFiles, elfPose, elfObjects} from './garden-elves.mjs';
 import {GARDEN_STAGES, stageContains} from './garden-growth.mjs';
 
-test('every elf frame exists as a 64×64 runtime image', () => {
+test('every elf frame exists as a runtime image', () => {
   const manifest = JSON.parse(fs.readFileSync(new URL('./runtime-webp-manifest.json', import.meta.url)));
   const sources = new Set(manifest.images.map((image) => image.source));
   for (const file of elfFiles()) assert.ok(sources.has(file), file);

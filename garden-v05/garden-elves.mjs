@@ -2,7 +2,7 @@
 // Pure data + clock → scene objects; the renderer draws them like any pivoted asset.
 
 const POSES = ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'carry'];
-const FRAME = {width: 64, height: 64, pivotX: 32, pivotY: 58, bounds: {x: 4, y: 12, w: 56, h: 47}};
+const FRAME = {width: 56, height: 56, pivotX: 28, pivotY: 52, bounds: {x: 10, y: 11, w: 34, h: 42}};
 const CELL_MS = 900; // walking speed: one tile per 0.9 s
 const STEP_MS = 220; // walk-1 ↔ walk-2
 
@@ -10,7 +10,7 @@ const STEP_MS = 220; // walk-1 ↔ walk-2
 export const ELVES = Object.freeze({
   dobby: Object.freeze({
     name: 'Dobby',
-    stops: [[1.5, 7.5, 'idle', 2600], [5.6, 4.5, 'water', 3200], [7.5, 7.5, 'sweep', 3600], [12.5, 8, 'carry', 0], [6, 8.5, 'idle', 2000]],
+    stops: [[1.5, 7.5, 'idle', 2600], [6.1, 4.5, 'water', 3200], [7.5, 7.5, 'sweep', 3600], [12.5, 8, 'carry', 0], [6, 8.5, 'idle', 2000]],
   }),
 });
 
