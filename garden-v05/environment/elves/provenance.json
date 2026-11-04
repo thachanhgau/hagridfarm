@@ -448,140 +448,624 @@
   ],
   "export": {
     "tool": "build-elf-art.mjs",
-    "method": "grid masters: block-grid phase search, centre-mode colour per block, palette24; illustration masters: area average, colours < 0.6 % merged, lone pixels absorbed, #231F2E rim",
+    "method": "one native pixel per master block: block from colour run lengths, phase from colour edges, block-centre main colour, palette24",
     "elves": [
       {
         "id": "dobby",
-        "master": "environment/elves/masters/dobby-v2-b.png",
-        "masterSha256": "44f2e53cca48282820f37387959dfa5bd4e3bd5e8f07548316553bc7600c8651",
-        "grids": [
-          "11.60",
-          "11.60",
-          "11.60",
-          "11.60",
-          "11.60",
-          "11.60"
-        ],
         "canvas": {
           "width": 56,
           "height": 56,
           "pivotX": 28,
           "pivotY": 52
         },
-        "frames": [
+        "sheets": [
           {
-            "file": "environment/elves/dobby/idle.png",
-            "sourceRect": [
-              0,
-              0,
-              512,
-              512
-            ],
-            "footX": 256,
-            "size": [
-              43,
-              43
-            ],
-            "offset": [
-              7,
-              11
-            ],
-            "sha256": "1b3625163fe203e6e1035e8130f1026dd21051219e00164bbb792ce0162828bb"
+            "master": "environment/elves/masters/dobby-v2-b.png",
+            "masterSha256": "44f2e53cca48282820f37387959dfa5bd4e3bd5e8f07548316553bc7600c8651",
+            "block": 11.59,
+            "frames": [
+              {
+                "file": "environment/elves/dobby/idle.png",
+                "sourceRect": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  43
+                ],
+                "offset": [
+                  7,
+                  11
+                ],
+                "sha256": "a53579d1b0598463b263e3e154a5c534f62475b73f8113487cd1f27d76c856bc"
+              },
+              {
+                "file": "environment/elves/dobby/walk-1.png",
+                "sourceRect": [
+                  512,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  44,
+                  43
+                ],
+                "offset": [
+                  6,
+                  11
+                ],
+                "sha256": "929725337518447b41d435e1d60514bd434aac28364fa54ec0e33701e2a20085"
+              },
+              {
+                "file": "environment/elves/dobby/walk-2.png",
+                "sourceRect": [
+                  1024,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  43
+                ],
+                "offset": [
+                  6,
+                  11
+                ],
+                "sha256": "d32764c3aa08668113ca0dd8373af11647a6122c82dd2706aeaa94cb8ab278cd"
+              },
+              {
+                "file": "environment/elves/dobby/sweep.png",
+                "sourceRect": [
+                  0,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  44,
+                  43
+                ],
+                "offset": [
+                  6,
+                  11
+                ],
+                "sha256": "b67c5257d41e86d5b3fd76812ed62cf20811e056234f2539292a17bba92760fd"
+              },
+              {
+                "file": "environment/elves/dobby/water.png",
+                "sourceRect": [
+                  512,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  43
+                ],
+                "offset": [
+                  7,
+                  11
+                ],
+                "sha256": "680226802ce14a1f2508ebe444e20ef44086fa78dbd51a677be2f8f11b2dcd87"
+              },
+              {
+                "file": "environment/elves/dobby/carry.png",
+                "sourceRect": [
+                  1024,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  43
+                ],
+                "offset": [
+                  7,
+                  11
+                ],
+                "sha256": "db8209b452632ebd3156c547e59af27b77ce5f8f735cb4c73c5b28f5ccedc9cf"
+              }
+            ]
           },
           {
-            "file": "environment/elves/dobby/walk-1.png",
-            "sourceRect": [
-              512,
-              0,
-              512,
-              512
-            ],
-            "footX": 768,
-            "size": [
-              43,
-              43
-            ],
-            "offset": [
-              7,
-              11
-            ],
-            "sha256": "6aa2eb4b8ee7fa2f9b3faade7bbfe98f54ab29efae9b422457b69db23f543a87"
-          },
+            "master": "environment/elves/masters/dobby-v2-extra.png",
+            "masterSha256": "1af12614a8c01add1ac97b385ccf58ae2b0e819dd8a9767776677cc5d6ddfe0d",
+            "block": 10.65,
+            "frames": [
+              {
+                "file": "environment/elves/dobby/sleep.png",
+                "sourceRect": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  47,
+                  47
+                ],
+                "offset": [
+                  4,
+                  8
+                ],
+                "sha256": "ea843da918e9d76698dcf27f015daa7ffb21f909b0580e783b1309cff2d66135"
+              },
+              {
+                "file": "environment/elves/dobby/feed.png",
+                "sourceRect": [
+                  512,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  47,
+                  47
+                ],
+                "offset": [
+                  5,
+                  7
+                ],
+                "sha256": "8e77325e98f6cdda90d664eea378d1f03ed8c219b7ae19fdf747de07e724ab42"
+              },
+              {
+                "file": "environment/elves/dobby/harvest.png",
+                "sourceRect": [
+                  1024,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  47,
+                  47
+                ],
+                "offset": [
+                  5,
+                  6
+                ],
+                "sha256": "852a83c2ae5a7358d04a8521490bfdb83ec1001289bec982cc5e107042b74634"
+              },
+              {
+                "file": "environment/elves/dobby/cheer.png",
+                "sourceRect": [
+                  0,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  47,
+                  47
+                ],
+                "offset": [
+                  5,
+                  9
+                ],
+                "sha256": "4c1ea8946bc9ee4153b5c2bcadd262630e5a83972cc814a8fb0afa01feaebe2b"
+              },
+              {
+                "file": "environment/elves/dobby/hat.png",
+                "sourceRect": [
+                  512,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  47,
+                  47
+                ],
+                "offset": [
+                  5,
+                  7
+                ],
+                "sha256": "aafce2b58f5de2311c39714d9846166f6b27d7a6b910db5bcd6b93ebd3a0fa86"
+              },
+              {
+                "file": "environment/elves/dobby/sock.png",
+                "sourceRect": [
+                  1024,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  47,
+                  47
+                ],
+                "offset": [
+                  4,
+                  7
+                ],
+                "sha256": "db475bd15501ccbbb0ddaf6cc8e001cb3b37e8e69a72f93cf65bbaf7dea8d0f2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "winky",
+        "canvas": {
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 52
+        },
+        "sheets": [
           {
-            "file": "environment/elves/dobby/walk-2.png",
-            "sourceRect": [
-              1024,
-              0,
-              512,
-              512
-            ],
-            "footX": 1280,
-            "size": [
-              43,
-              43
-            ],
-            "offset": [
-              6,
-              11
-            ],
-            "sha256": "f504a6d32464152f5cbc664107d64ae88f3b0c87616a1f81378bfb8477b78d51"
-          },
+            "master": "environment/elves/masters/winky.png",
+            "masterSha256": "8241590f79624798e3bf6a89ffb50f9278c12be683290c388f8bd47abac37595",
+            "block": 11.55,
+            "frames": [
+              {
+                "file": "environment/elves/winky/idle.png",
+                "sourceRect": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  44,
+                  44
+                ],
+                "offset": [
+                  6,
+                  12
+                ],
+                "sha256": "75b2fda1d371a88a823413e4d3db1e4ad49b7e04ba50e621c1930388f50327ad"
+              },
+              {
+                "file": "environment/elves/winky/walk-1.png",
+                "sourceRect": [
+                  512,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  43
+                ],
+                "offset": [
+                  6,
+                  13
+                ],
+                "sha256": "f3dcd405c2013f3daeb5bd6db5da493ad11717e16eb910dfa8923bcafabbc405"
+              },
+              {
+                "file": "environment/elves/winky/walk-2.png",
+                "sourceRect": [
+                  1024,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  43
+                ],
+                "offset": [
+                  6,
+                  13
+                ],
+                "sha256": "f5dcaa22c40a778610e9bc555199d1f054019335255760ff75ee7f8dd0627c3d"
+              },
+              {
+                "file": "environment/elves/winky/water.png",
+                "sourceRect": [
+                  0,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  44,
+                  43
+                ],
+                "offset": [
+                  6,
+                  11
+                ],
+                "sha256": "26b4d91ccc8cc22dd9e2430173d207bd0200aa61e8933b790ced18c3f068e79a"
+              },
+              {
+                "file": "environment/elves/winky/carry.png",
+                "sourceRect": [
+                  512,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  43
+                ],
+                "offset": [
+                  7,
+                  11
+                ],
+                "sha256": "72187ddfd5e1fd0a0fbe75a4f448587bccdc69c297d32291912e4f71465549b6"
+              },
+              {
+                "file": "environment/elves/winky/sleep.png",
+                "sourceRect": [
+                  1024,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  43
+                ],
+                "offset": [
+                  6,
+                  11
+                ],
+                "sha256": "47f5d65dd05543ca97916c90311f1cb83b49bb686280ceeca9e04aa9e03634b1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kitchen-a",
+        "canvas": {
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 52
+        },
+        "sheets": [
           {
-            "file": "environment/elves/dobby/sweep.png",
-            "sourceRect": [
-              0,
-              512,
-              512,
-              512
-            ],
-            "footX": 256,
-            "size": [
-              44,
-              43
-            ],
-            "offset": [
-              6,
-              11
-            ],
-            "sha256": "ad9304e66a3dff241017e040ff950e38b20952f547edcd8818788759aa964fda"
-          },
+            "master": "environment/elves/masters/kitchen-elf-a.png",
+            "masterSha256": "be257866b4a3be3c68463349740f38316a6fdc34dbf40c4ac1dfb4bfae15c26d",
+            "block": 11.47,
+            "frames": [
+              {
+                "file": "environment/elves/kitchen-a/idle.png",
+                "sourceRect": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  44,
+                  44
+                ],
+                "offset": [
+                  6,
+                  10
+                ],
+                "sha256": "8231e784f8e4359321d7ed5f284064b496e7bdb96c7bb24b3893833edbb5f1c0"
+              },
+              {
+                "file": "environment/elves/kitchen-a/walk-1.png",
+                "sourceRect": [
+                  512,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  44
+                ],
+                "offset": [
+                  7,
+                  10
+                ],
+                "sha256": "764bf3283de4ac83b4a5ac47340f1ce03b337c89fd7fdcc38f10cab0621d83d9"
+              },
+              {
+                "file": "environment/elves/kitchen-a/walk-2.png",
+                "sourceRect": [
+                  1024,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  44
+                ],
+                "offset": [
+                  7,
+                  10
+                ],
+                "sha256": "695813ab2b86040fc4a4cd49c2286999ee3b7fb173221d2af2a1e936b9930658"
+              },
+              {
+                "file": "environment/elves/kitchen-a/sweep.png",
+                "sourceRect": [
+                  0,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  44,
+                  43
+                ],
+                "offset": [
+                  6,
+                  10
+                ],
+                "sha256": "565fe47576eb2a706438c753a05bcf1025bdf52d941839d4fd80b3b525e5691f"
+              },
+              {
+                "file": "environment/elves/kitchen-a/carry.png",
+                "sourceRect": [
+                  512,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  44,
+                  43
+                ],
+                "offset": [
+                  6,
+                  11
+                ],
+                "sha256": "d4ba08ab8d51a556a7718c551d0952f426e3ad1eeb617039666ba4a2abe85b64"
+              },
+              {
+                "file": "environment/elves/kitchen-a/sleep.png",
+                "sourceRect": [
+                  1024,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  43,
+                  44
+                ],
+                "offset": [
+                  6,
+                  10
+                ],
+                "sha256": "b835303aeaa2ee01a304e884ea6b17b34c6e44b90a8fd2ed059ddd3a364de966"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kitchen-b",
+        "canvas": {
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 52
+        },
+        "sheets": [
           {
-            "file": "environment/elves/dobby/water.png",
-            "sourceRect": [
-              512,
-              512,
-              512,
-              512
-            ],
-            "footX": 768,
-            "size": [
-              43,
-              43
-            ],
-            "offset": [
-              7,
-              11
-            ],
-            "sha256": "81ad726582b5aff3cbf5e194c48e0ff14c95ebab843cd7b9af3d7debe43446df"
-          },
-          {
-            "file": "environment/elves/dobby/carry.png",
-            "sourceRect": [
-              1024,
-              512,
-              512,
-              512
-            ],
-            "footX": 1280,
-            "size": [
-              43,
-              43
-            ],
-            "offset": [
-              7,
-              11
-            ],
-            "sha256": "790773c90796d0355742f8536e47fdaee36db7edc157f0840b8449cff9dce37b"
+            "master": "environment/elves/masters/kitchen-elf-b.png",
+            "masterSha256": "1c089e0e48571a0bbd65211371080133e08c51679dbf6472468a0d4e726f9705",
+            "block": 10.52,
+            "frames": [
+              {
+                "file": "environment/elves/kitchen-b/idle.png",
+                "sourceRect": [
+                  0,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  48,
+                  47
+                ],
+                "offset": [
+                  4,
+                  7
+                ],
+                "sha256": "d40ba8530dd9775c83496ba24e320b51dc994b300e702eb4c0ab63cada38973c"
+              },
+              {
+                "file": "environment/elves/kitchen-b/walk-1.png",
+                "sourceRect": [
+                  512,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  48,
+                  48
+                ],
+                "offset": [
+                  4,
+                  6
+                ],
+                "sha256": "17082eac1fd93f18462378be822d7668963f4d16521037d37e80aa33c9d898cd"
+              },
+              {
+                "file": "environment/elves/kitchen-b/walk-2.png",
+                "sourceRect": [
+                  1024,
+                  0,
+                  512,
+                  512
+                ],
+                "size": [
+                  48,
+                  48
+                ],
+                "offset": [
+                  4,
+                  6
+                ],
+                "sha256": "cfaaf1eb6fbd85fa5f3b3efafc1615e72ee97bb7f726215878da82820f35cfbb"
+              },
+              {
+                "file": "environment/elves/kitchen-b/sweep.png",
+                "sourceRect": [
+                  0,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  48,
+                  48
+                ],
+                "offset": [
+                  4,
+                  8
+                ],
+                "sha256": "32e408d1bdd244c91a94a298bd830da813fc2eefa4a1dad8a63036747cfc4bfd"
+              },
+              {
+                "file": "environment/elves/kitchen-b/water.png",
+                "sourceRect": [
+                  512,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  48,
+                  48
+                ],
+                "offset": [
+                  4,
+                  8
+                ],
+                "sha256": "c572e05e48907890483b223ed536b6e86819a69cc5d7a467393f4a19a265f166"
+              },
+              {
+                "file": "environment/elves/kitchen-b/sleep.png",
+                "sourceRect": [
+                  1024,
+                  512,
+                  512,
+                  512
+                ],
+                "size": [
+                  48,
+                  48
+                ],
+                "offset": [
+                  4,
+                  8
+                ],
+                "sha256": "93863f8f77bb7d2d12f6f90deda914ab3ee5a259ccfa5b67c9f26001526a8a4b"
+              }
+            ]
           }
         ]
       }

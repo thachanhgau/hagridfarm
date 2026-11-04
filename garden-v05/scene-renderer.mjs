@@ -17,7 +17,7 @@ import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsT
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.96';
 import {decorObjects} from './decor-runtime.mjs?v=24.9.96';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.96';
-import {elfObjects,elfFiles} from './garden-elves.mjs?v=24.9.96';
+import {elfObjects,elfFiles,CHEER_MS} from './garden-elves.mjs?v=24.9.96';
 import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.96';
 import {drawEventOverlay} from './garden-events.mjs?v=24.9.96';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.96';
@@ -773,6 +773,8 @@ export async function createGarden(canvas, options = {}) {
   const animation = createAnimationRuntime();
 
   const requestedFiles = new Set();
+  let elfList = []; // last drawn gia tinh, for taps
+  const elfCheers = {};
   function imageFor(file) {
     if (images.has(file)) return images.get(file);
     if (deferredFiles.has(file)) {
@@ -1606,7 +1608,9 @@ export async function createGarden(canvas, options = {}) {
           : w
       ))
       : [];
-    const objects = [...boundaryFence, ...wizList, ...(propsVisible ? elfObjects(iso, clock) : []), ...storeDecorationObjects];
+    const cheering = Object.fromEntries(Object.entries(elfCheers).filter(([, until]) => until > performance.now()));
+    elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering}) : [];
+    const objects = [...boundaryFence, ...wizList, ...elfList, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {
         // Legacy edge-tree anchors straddled the fence; the bounded forest layers own trees now.
@@ -1812,6 +1816,10 @@ export async function createGarden(canvas, options = {}) {
       const left=actor.facing==='right'&&!actor.authoredFacing?xy[0]+asset.pivotX-bounds.x-bounds.w:xy[0]-asset.pivotX+bounds.x,top=xy[1]-asset.pivotY+bounds.y;
       if(world.x>=left-5&&world.x<=left+bounds.w+5&&world.y>=top-5&&world.y<=top+bounds.h+5)return {kind:'creature',species:actor.species,...(actor.guest?{guest:true}:{})};
     }
+    for(const elf of [...elfList].sort((a,b)=>b.xy[1]-a.xy[1])){
+      const {xy,asset,flip}=elf,b=asset.bounds,left=flip?xy[0]+asset.pivotX-b.x-b.w:xy[0]-asset.pivotX+b.x,top=xy[1]-asset.pivotY+b.y;
+      if(world.x>=left-5&&world.x<=left+b.w+5&&world.y>=top-5&&world.y<=top+b.h+5)return {kind:'elf',id:elf.id};
+    }
     if(sceneryVisible)for(const target of wizardTargets(iso).sort((a,b)=>b.xy[1]-a.xy[1])){
       const b=target.hitbox;if(world.x>=b.left&&world.x<=b.right&&world.y>=b.top&&world.y<=b.bottom)return {kind:'wizard',id:target.id};
     }
@@ -1845,6 +1853,7 @@ export async function createGarden(canvas, options = {}) {
     render,
     pick,
     greet:()=>{reactionUntil=performance.now()+2600;},
+    cheerElf:(id)=>{elfCheers[id]=performance.now()+CHEER_MS;},
     animate: (kind, target = {}) => animation.animate(kind, target),
     react: (before, after, options = {}) => animation.react(before, after, options),
     animations: () => animation.events(),

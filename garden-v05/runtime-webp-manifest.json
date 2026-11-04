@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "35dcaeaf9c46",
+  "revision": "262d34c48a07",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11106,60 +11106,300 @@
       "file": "runtime-webp/environment/elves/dobby/carry.webp",
       "width": 56,
       "height": 56,
-      "sourceBytes": 640,
+      "sourceBytes": 641,
       "bytes": 430,
-      "sourceSha256": "790773c90796d0355742f8536e47fdaee36db7edc157f0840b8449cff9dce37b",
-      "sha256": "aad4bf5a69d4d32068bf4bc3dbe2dfb90bae254b5760d454425476ce54910674"
+      "sourceSha256": "db8209b452632ebd3156c547e59af27b77ce5f8f735cb4c73c5b28f5ccedc9cf",
+      "sha256": "38692de54919d371bad11df24180a80fa5f249bab3d9f7b1c0ed1c8397d31dba"
+    },
+    {
+      "source": "environment/elves/dobby/cheer.png",
+      "file": "runtime-webp/environment/elves/dobby/cheer.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 609,
+      "bytes": 414,
+      "sourceSha256": "4c1ea8946bc9ee4153b5c2bcadd262630e5a83972cc814a8fb0afa01feaebe2b",
+      "sha256": "f6a9bd4e7ee85fb2278531146fdae0bac5b5fac79923b835c2392d2ce35b156e"
+    },
+    {
+      "source": "environment/elves/dobby/feed.png",
+      "file": "runtime-webp/environment/elves/dobby/feed.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 674,
+      "bytes": 464,
+      "sourceSha256": "8e77325e98f6cdda90d664eea378d1f03ed8c219b7ae19fdf747de07e724ab42",
+      "sha256": "6343e6e9c1afd9ae536ccc8267e302d10276d93eb5944b9f3d0c8a623039ac53"
+    },
+    {
+      "source": "environment/elves/dobby/harvest.png",
+      "file": "runtime-webp/environment/elves/dobby/harvest.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 711,
+      "bytes": 500,
+      "sourceSha256": "852a83c2ae5a7358d04a8521490bfdb83ec1001289bec982cc5e107042b74634",
+      "sha256": "1f8aea05668ecc5f266efd35d4efaa317a7fb0e2f4233f83e7f7b08a25dd5ec7"
+    },
+    {
+      "source": "environment/elves/dobby/hat.png",
+      "file": "runtime-webp/environment/elves/dobby/hat.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 633,
+      "bytes": 440,
+      "sourceSha256": "aafce2b58f5de2311c39714d9846166f6b27d7a6b910db5bcd6b93ebd3a0fa86",
+      "sha256": "735fe7aa7919a0eaa8f9419cd258a3f3ae01cc395c4e592ba6aa6de3f19774cb"
     },
     {
       "source": "environment/elves/dobby/idle.png",
       "file": "runtime-webp/environment/elves/dobby/idle.webp",
       "width": 56,
       "height": 56,
-      "sourceBytes": 564,
-      "bytes": 376,
-      "sourceSha256": "1b3625163fe203e6e1035e8130f1026dd21051219e00164bbb792ce0162828bb",
-      "sha256": "3dbb2645ad34a31890d33f611bff0e626311f0f7f875021056263a6166cdf7f5"
+      "sourceBytes": 568,
+      "bytes": 378,
+      "sourceSha256": "a53579d1b0598463b263e3e154a5c534f62475b73f8113487cd1f27d76c856bc",
+      "sha256": "bdb9d2bee8f07c4b9e2478875cff13d787582cb8cc672fe6c74507ba29a35eba"
+    },
+    {
+      "source": "environment/elves/dobby/sleep.png",
+      "file": "runtime-webp/environment/elves/dobby/sleep.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 530,
+      "bytes": 352,
+      "sourceSha256": "ea843da918e9d76698dcf27f015daa7ffb21f909b0580e783b1309cff2d66135",
+      "sha256": "ee83ccfcc1157508e5d775e7d004b71425666f5841855a6751d035490b0db346"
+    },
+    {
+      "source": "environment/elves/dobby/sock.png",
+      "file": "runtime-webp/environment/elves/dobby/sock.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 649,
+      "bytes": 438,
+      "sourceSha256": "db475bd15501ccbbb0ddaf6cc8e001cb3b37e8e69a72f93cf65bbaf7dea8d0f2",
+      "sha256": "4e8d9f2effab50f77e97dbdf946c717d32044e1e37a70d25f0774f59e98d63e4"
     },
     {
       "source": "environment/elves/dobby/sweep.png",
       "file": "runtime-webp/environment/elves/dobby/sweep.webp",
       "width": 56,
       "height": 56,
-      "sourceBytes": 623,
-      "bytes": 426,
-      "sourceSha256": "ad9304e66a3dff241017e040ff950e38b20952f547edcd8818788759aa964fda",
-      "sha256": "f22cc20f762af8e4f654ac8d5da7833be53c4585a2500c2583b55029606d21f5"
+      "sourceBytes": 627,
+      "bytes": 432,
+      "sourceSha256": "b67c5257d41e86d5b3fd76812ed62cf20811e056234f2539292a17bba92760fd",
+      "sha256": "ab11875f45dfedad6fc00a87e3113fcdabbce03a1291c5b82b9ad3382b8f477d"
     },
     {
       "source": "environment/elves/dobby/walk-1.png",
       "file": "runtime-webp/environment/elves/dobby/walk-1.webp",
       "width": 56,
       "height": 56,
-      "sourceBytes": 603,
-      "bytes": 410,
-      "sourceSha256": "6aa2eb4b8ee7fa2f9b3faade7bbfe98f54ab29efae9b422457b69db23f543a87",
-      "sha256": "9420217e68bc30b45201d6427ead8593ad30cf26b4114720166441a46e56031e"
+      "sourceBytes": 602,
+      "bytes": 412,
+      "sourceSha256": "929725337518447b41d435e1d60514bd434aac28364fa54ec0e33701e2a20085",
+      "sha256": "68cc7604c66170fb2b15811892613fd47cb7177b6d775b63d7309b726a70952f"
     },
     {
       "source": "environment/elves/dobby/walk-2.png",
       "file": "runtime-webp/environment/elves/dobby/walk-2.webp",
       "width": 56,
       "height": 56,
-      "sourceBytes": 620,
+      "sourceBytes": 621,
       "bytes": 414,
-      "sourceSha256": "f504a6d32464152f5cbc664107d64ae88f3b0c87616a1f81378bfb8477b78d51",
-      "sha256": "7afa46d12cf5cbc5b27494b85ee5f0e3f306f7019043345893029fa832301871"
+      "sourceSha256": "d32764c3aa08668113ca0dd8373af11647a6122c82dd2706aeaa94cb8ab278cd",
+      "sha256": "dfb4994b2d43aa89ff0c1eadab55734285cfc310f73bc8fd10d0bed2373fbe0e"
     },
     {
       "source": "environment/elves/dobby/water.png",
       "file": "runtime-webp/environment/elves/dobby/water.webp",
       "width": 56,
       "height": 56,
+      "sourceBytes": 613,
+      "bytes": 412,
+      "sourceSha256": "680226802ce14a1f2508ebe444e20ef44086fa78dbd51a677be2f8f11b2dcd87",
+      "sha256": "37335130338723d9d56571824f4abfbaf6eb99201ca593b5d099b998ee40a7b1"
+    },
+    {
+      "source": "environment/elves/kitchen-a/carry.png",
+      "file": "runtime-webp/environment/elves/kitchen-a/carry.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 527,
+      "bytes": 356,
+      "sourceSha256": "d4ba08ab8d51a556a7718c551d0952f426e3ad1eeb617039666ba4a2abe85b64",
+      "sha256": "67d8d2588dd6ec2f21f37a60d872f0614f042f2e2a88820d9c8f623e4b7a9940"
+    },
+    {
+      "source": "environment/elves/kitchen-a/idle.png",
+      "file": "runtime-webp/environment/elves/kitchen-a/idle.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 493,
+      "bytes": 322,
+      "sourceSha256": "8231e784f8e4359321d7ed5f284064b496e7bdb96c7bb24b3893833edbb5f1c0",
+      "sha256": "2c314f58b9203d6a5f7b3f5301632305318f4df3175cbcf5fdc53908f1836955"
+    },
+    {
+      "source": "environment/elves/kitchen-a/sleep.png",
+      "file": "runtime-webp/environment/elves/kitchen-a/sleep.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 497,
+      "bytes": 308,
+      "sourceSha256": "b835303aeaa2ee01a304e884ea6b17b34c6e44b90a8fd2ed059ddd3a364de966",
+      "sha256": "470f297af161b7c734f56b6d2c4f093dc067850598ef927dfb36f573c1569aa8"
+    },
+    {
+      "source": "environment/elves/kitchen-a/sweep.png",
+      "file": "runtime-webp/environment/elves/kitchen-a/sweep.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 588,
+      "bytes": 400,
+      "sourceSha256": "565fe47576eb2a706438c753a05bcf1025bdf52d941839d4fd80b3b525e5691f",
+      "sha256": "3535f81c48e17164f365878d810509c4ace3d363a70dc36d697dc14bf7c41aea"
+    },
+    {
+      "source": "environment/elves/kitchen-a/walk-1.png",
+      "file": "runtime-webp/environment/elves/kitchen-a/walk-1.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 542,
+      "bytes": 354,
+      "sourceSha256": "764bf3283de4ac83b4a5ac47340f1ce03b337c89fd7fdcc38f10cab0621d83d9",
+      "sha256": "7c01a6015e49b318629c6b60af8793ba9c41f432207f7b568c0c9d3679c93ad7"
+    },
+    {
+      "source": "environment/elves/kitchen-a/walk-2.png",
+      "file": "runtime-webp/environment/elves/kitchen-a/walk-2.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 532,
+      "bytes": 352,
+      "sourceSha256": "695813ab2b86040fc4a4cd49c2286999ee3b7fb173221d2af2a1e936b9930658",
+      "sha256": "accac6a55ea948daa70bbf96fc0ed79b5b741b05066123d964263bf64e3f09e1"
+    },
+    {
+      "source": "environment/elves/kitchen-b/idle.png",
+      "file": "runtime-webp/environment/elves/kitchen-b/idle.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 542,
+      "bytes": 330,
+      "sourceSha256": "d40ba8530dd9775c83496ba24e320b51dc994b300e702eb4c0ab63cada38973c",
+      "sha256": "d3efcde6b04b9b1a6f7eb68fd76741c547252e986185a828eecb3500a53f01e6"
+    },
+    {
+      "source": "environment/elves/kitchen-b/sleep.png",
+      "file": "runtime-webp/environment/elves/kitchen-b/sleep.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 485,
+      "bytes": 280,
+      "sourceSha256": "93863f8f77bb7d2d12f6f90deda914ab3ee5a259ccfa5b67c9f26001526a8a4b",
+      "sha256": "3b4301d3ac92945e3873522053f2cd25e426b822123cde0687cbddcaa3c36ba6"
+    },
+    {
+      "source": "environment/elves/kitchen-b/sweep.png",
+      "file": "runtime-webp/environment/elves/kitchen-b/sweep.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 605,
+      "bytes": 396,
+      "sourceSha256": "32e408d1bdd244c91a94a298bd830da813fc2eefa4a1dad8a63036747cfc4bfd",
+      "sha256": "28310d463293351e71eb56b9555c2c6ebd8f7863f297afde1ebffc321fcdb8ab"
+    },
+    {
+      "source": "environment/elves/kitchen-b/walk-1.png",
+      "file": "runtime-webp/environment/elves/kitchen-b/walk-1.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 546,
+      "bytes": 338,
+      "sourceSha256": "17082eac1fd93f18462378be822d7668963f4d16521037d37e80aa33c9d898cd",
+      "sha256": "926aa3b74e4de8fc1de3948c2d32c5e92d89320be4b8a2e545f7a2b02c2aa81d"
+    },
+    {
+      "source": "environment/elves/kitchen-b/walk-2.png",
+      "file": "runtime-webp/environment/elves/kitchen-b/walk-2.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 516,
+      "bytes": 330,
+      "sourceSha256": "cfaaf1eb6fbd85fa5f3b3efafc1615e72ee97bb7f726215878da82820f35cfbb",
+      "sha256": "3ed778e6f266255b20a870016d10072709295f0976b4c3e389ddb57dea8f212c"
+    },
+    {
+      "source": "environment/elves/kitchen-b/water.png",
+      "file": "runtime-webp/environment/elves/kitchen-b/water.webp",
+      "width": 56,
+      "height": 56,
       "sourceBytes": 609,
-      "bytes": 410,
-      "sourceSha256": "81ad726582b5aff3cbf5e194c48e0ff14c95ebab843cd7b9af3d7debe43446df",
-      "sha256": "ecb315d063e4842a821c19c17ffc936f660534371fc33690a18f0851f5730d5f"
+      "bytes": 404,
+      "sourceSha256": "c572e05e48907890483b223ed536b6e86819a69cc5d7a467393f4a19a265f166",
+      "sha256": "5409d0257395a538641a1212a1129ffe757044fe6fba30adf369c4e5e760abad"
+    },
+    {
+      "source": "environment/elves/winky/carry.png",
+      "file": "runtime-webp/environment/elves/winky/carry.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 608,
+      "bytes": 398,
+      "sourceSha256": "72187ddfd5e1fd0a0fbe75a4f448587bccdc69c297d32291912e4f71465549b6",
+      "sha256": "a1eb66ca52103463215540159ad55c1ba27e57209c4cd17c0eb1d4f8671a5c73"
+    },
+    {
+      "source": "environment/elves/winky/idle.png",
+      "file": "runtime-webp/environment/elves/winky/idle.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 553,
+      "bytes": 370,
+      "sourceSha256": "75b2fda1d371a88a823413e4d3db1e4ad49b7e04ba50e621c1930388f50327ad",
+      "sha256": "96e19c065c2d4af3911d2880f177bfd1e8ba6be035a345f5a8e129e6c1c7e38e"
+    },
+    {
+      "source": "environment/elves/winky/sleep.png",
+      "file": "runtime-webp/environment/elves/winky/sleep.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 578,
+      "bytes": 388,
+      "sourceSha256": "47f5d65dd05543ca97916c90311f1cb83b49bb686280ceeca9e04aa9e03634b1",
+      "sha256": "7be2766180f3ddf5e10ca924bd9f361a15ac89b61649177ff3963256da06f8b2"
+    },
+    {
+      "source": "environment/elves/winky/walk-1.png",
+      "file": "runtime-webp/environment/elves/winky/walk-1.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 587,
+      "bytes": 406,
+      "sourceSha256": "f3dcd405c2013f3daeb5bd6db5da493ad11717e16eb910dfa8923bcafabbc405",
+      "sha256": "127fbcdc3d19d7a41cc29f141a1e73ac11e0c10604703d83f87bd01ce7873c46"
+    },
+    {
+      "source": "environment/elves/winky/walk-2.png",
+      "file": "runtime-webp/environment/elves/winky/walk-2.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 584,
+      "bytes": 386,
+      "sourceSha256": "f5dcaa22c40a778610e9bc555199d1f054019335255760ff75ee7f8dd0627c3d",
+      "sha256": "d0152a03bc18c06c0b967ba48568faeabedca304acdf2aef5e834a82700a16dd"
+    },
+    {
+      "source": "environment/elves/winky/water.png",
+      "file": "runtime-webp/environment/elves/winky/water.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 645,
+      "bytes": 430,
+      "sourceSha256": "26b4d91ccc8cc22dd9e2430173d207bd0200aa61e8933b790ced18c3f068e79a",
+      "sha256": "c2ec5cce77c36edfb539331a8cf2616291c973161112c1b9a6c0f892fc91f4ab"
     },
     {
       "source": "environment/fire/fire-banner.png",
@@ -11455,11 +11695,11 @@
     }
   ],
   "totals": {
-    "converted": 1139,
+    "converted": 1163,
     "existingWebp": 8,
-    "originalBytes": 4289519,
-    "webpBytes": 2873142,
-    "savedBytes": 1416377,
+    "originalBytes": 4303375,
+    "webpBytes": 2882310,
+    "savedBytes": 1421065,
     "savedPercent": 33.02
   }
 }
