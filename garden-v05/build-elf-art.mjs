@@ -31,7 +31,7 @@ export const ELF_SOURCES = {
   // 25.0 S4: baby Norbert, the companion (hatched by S7's egg).
   norbert: [[M + 'v4-norbert.png', ['idle', 'walk-1', 'walk-2', 'sleep', 'play', 'puff'], 'idle', 50]],
   // 25.0 S5: ma lùm (a 2 × 2 sheet), drawn in the weeds of a neglected plot.
-  'ma-lum': [['environment/duty/masters/ma-lum.png', ['idle', 'chew-1', 'chew-2', 'flung'], 'idle', 28, 2]],
+  'ma-lum': [['environment/duty/masters/ma-lum.png', ['idle', 'chew-1', 'chew-2', 'flung'], 'idle', 36, 2]],
 };
 
 // Redmean distance: close to perceived difference for this palette (OKLab tipped skin to orange and lost Dobby's hat).

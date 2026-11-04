@@ -21,7 +21,6 @@ import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} fr
 import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.96';
 import {drawEventOverlay} from './garden-events.mjs?v=24.9.96';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.96';
-import {drawGnome,drawWeeds,gnomeFile,witherCanvas,GNOME_FILES,GNOME_FRAME} from './garden-duty-art.mjs?v=24.9.96';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.96';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.96';
 import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.96';
@@ -672,7 +671,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set([...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...GNOME_FILES, ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
+  const deferredFiles = new Set([...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -728,7 +727,7 @@ export async function createGarden(canvas, options = {}) {
   const witherImages=new Map();
   function witherImage(file,mode){
     const key=mode+':'+file,source=imageFor(file);
-    if(!witherImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);witherImages.set(key,witherCanvas(copy,mode));}
+    if(!witherImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);witherImages.set(key,duty.kit.witherCanvas(copy,mode));}
     return witherImages.get(key)??null;
   }
   function coatImage(file,coat){
@@ -749,7 +748,7 @@ export async function createGarden(canvas, options = {}) {
   let boundaryFence = [];
   let currentStage = gardenStage({}, map);
   let fireCache = null; // «Đốt vườn» flame spots for the current stage
-  let duty = null; // 25.0 S5 options.duty: {wilt: Set, dead: Map, sick: Set, gnomes: [plot]} of 'plot:slot' keys
+  let duty = null; // 25.0 S5 options.duty: {wilt: Set, dead: Map, sick: Set, gnomes: [plot], kit: garden-duty-art} ('plot:slot' keys)
 
   function layoutCacheKey() {
     return JSON.stringify([
@@ -1593,7 +1592,8 @@ export async function createGarden(canvas, options = {}) {
     activeAnimations = animation.active(animationClock, {reducedMotion: clock === 0});
     authoredEffectEventIds = new Set();
     const logicalNow = finite(nowFor(state, now), now);
-    duty = options.duty || null;
+    duty = options.duty || null; // its art module (kit) is imported by the game only once the duty tier is on
+    for (const file of duty?.kit.GNOME_FILES ?? []) deferredFiles.add(file);
     const builtPlotCount = Math.min(map.plots.length, asArray(state.plots).length);
     lastBuiltPlotCount = builtPlotCount;
     lastPlotReady = map.plots.map((_, index) => plotIsBuilt(state, index, logicalNow));
@@ -1789,8 +1789,8 @@ export async function createGarden(canvas, options = {}) {
       // On the bed's front half, between its centre and its front corner, so crops do not hide it.
       const [cx, cy] = iso(...resolvedPlotPosition(plot)), [fx, fy] = plotCorners(plot, map)[2];
       const x = Math.round(cx + (fx - cx) * 0.55), y = Math.round(cy + (fy - cy) * 0.55), tick = animationClock && clock ? animationClock : 0;
+      const {drawGnome, drawWeeds, gnomeFile, GNOME_FRAME} = duty.kit, file = gnomeFile(tick);
       drawWeeds(context, x, y, plotIndex);
-      const file = gnomeFile(tick);
       if (imageFor(file)) drawAsset({...GNOME_FRAME, file}, x, y + 2);
       else drawGnome(context, x, y + 2, tick);
     }

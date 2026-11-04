@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "9e0f8c9da858",
+  "revision": "12e4b45b1fd4",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11426,40 +11426,40 @@
       "file": "runtime-webp/environment/elves/ma-lum/chew-1.webp",
       "width": 80,
       "height": 80,
-      "sourceBytes": 579,
-      "bytes": 360,
-      "sourceSha256": "cdc695f1ca2127dfbcd4c675dbecb97cec371a2148fd5bd22e76f231f7f4a439",
-      "sha256": "dc26d4970acf28e2d20720c3e15289240947684746825cd8de89bddfe1649a68"
+      "sourceBytes": 754,
+      "bytes": 480,
+      "sourceSha256": "d55d2a4c02e872eb753c0fa14f538a733d193e39a438e9f9e1e61e49548610aa",
+      "sha256": "9ff4cd83737a41bc04448791a7bc0352d448040555f8f645ddfaddad9257a279"
     },
     {
       "source": "environment/elves/ma-lum/chew-2.png",
       "file": "runtime-webp/environment/elves/ma-lum/chew-2.webp",
       "width": 80,
       "height": 80,
-      "sourceBytes": 594,
-      "bytes": 366,
-      "sourceSha256": "8c289e13484f18f96bcca412569c56cc39e77bebdbc5ba94d0d1275ed1882db9",
-      "sha256": "d4cb63820af3eab0ac42f0659388d6f6edf847b6c0e1e8431fdee5e0c1dc1b7b"
+      "sourceBytes": 790,
+      "bytes": 496,
+      "sourceSha256": "39c0ebb6cfc0abac55f6f292bcc9c57c5fbe23aee7113129cfd49ca2aba3f89b",
+      "sha256": "95b320546bb6c4b26d4a4fc1c6c9f4503eef54cdc2634ff707a9c00038bfb695"
     },
     {
       "source": "environment/elves/ma-lum/flung.png",
       "file": "runtime-webp/environment/elves/ma-lum/flung.webp",
       "width": 80,
       "height": 80,
-      "sourceBytes": 528,
-      "bytes": 290,
-      "sourceSha256": "aaed71115d2fa7c0344e6903b08a60c08081d1d77065e40766934a4507761051",
-      "sha256": "f52298b0c7f5e46e3794ffe14532567c50d84bfe189a7dc80a7e7ee855f9b34f"
+      "sourceBytes": 672,
+      "bytes": 398,
+      "sourceSha256": "6d92ad679f24fe72412537f10aa11451573a7b1fff30a5c8aa3a641cf42e1e4f",
+      "sha256": "035f6fd75d5e0563d14ca4acf439bc29f9a65f5e0f8ff66efa79b798da0b52a0"
     },
     {
       "source": "environment/elves/ma-lum/idle.png",
       "file": "runtime-webp/environment/elves/ma-lum/idle.webp",
       "width": 80,
       "height": 80,
-      "sourceBytes": 574,
-      "bytes": 356,
-      "sourceSha256": "7b5104e7ee0c7ca23f955e9da98c8a916622a4b88e2bdec77901868b15096686",
-      "sha256": "d32ce40ac2d275bc21cbdc44e9d21990519ddb21b7bf88661d9efe62cdf26a6b"
+      "sourceBytes": 751,
+      "bytes": 488,
+      "sourceSha256": "3b8f8b3d603a2d87d7fa656245fe99ca21b7d3324c86d8fc7b56fe8015234cec",
+      "sha256": "243e65d14de65ddcb37f9271b5e50af02eeec1e40846951d8bdc513ebc1e8cb9"
     },
     {
       "source": "environment/elves/norbert/idle.png",
@@ -11937,9 +11937,9 @@
   "totals": {
     "converted": 1187,
     "existingWebp": 8,
-    "originalBytes": 4392401,
-    "webpBytes": 2935828,
-    "savedBytes": 1456573,
+    "originalBytes": 4393093,
+    "webpBytes": 2936318,
+    "savedBytes": 1456775,
     "savedPercent": 33.16
   }
 }

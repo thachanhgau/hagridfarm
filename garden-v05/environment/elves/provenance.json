@@ -462,7 +462,7 @@
           {
             "master": "environment/duty/masters/ma-lum.png",
             "masterSha256": "dbad462d998ac9f608d7fdf9846ffd9a61b9e7fd969c7da320522ed15de1a0c1",
-            "scale": 0.0892,
+            "scale": 0.1146,
             "frames": [
               {
                 "file": "environment/elves/ma-lum/idle.png",
@@ -470,7 +470,7 @@
                   0,
                   0
                 ],
-                "sha256": "7b5104e7ee0c7ca23f955e9da98c8a916622a4b88e2bdec77901868b15096686"
+                "sha256": "3b8f8b3d603a2d87d7fa656245fe99ca21b7d3324c86d8fc7b56fe8015234cec"
               },
               {
                 "file": "environment/elves/ma-lum/chew-1.png",
@@ -478,7 +478,7 @@
                   512,
                   0
                 ],
-                "sha256": "cdc695f1ca2127dfbcd4c675dbecb97cec371a2148fd5bd22e76f231f7f4a439"
+                "sha256": "d55d2a4c02e872eb753c0fa14f538a733d193e39a438e9f9e1e61e49548610aa"
               },
               {
                 "file": "environment/elves/ma-lum/chew-2.png",
@@ -486,7 +486,7 @@
                   0,
                   512
                 ],
-                "sha256": "8c289e13484f18f96bcca412569c56cc39e77bebdbc5ba94d0d1275ed1882db9"
+                "sha256": "39c0ebb6cfc0abac55f6f292bcc9c57c5fbe23aee7113129cfd49ca2aba3f89b"
               },
               {
                 "file": "environment/elves/ma-lum/flung.png",
@@ -494,7 +494,7 @@
                   512,
                   512
                 ],
-                "sha256": "aaed71115d2fa7c0344e6903b08a60c08081d1d77065e40766934a4507761051"
+                "sha256": "6d92ad679f24fe72412537f10aa11451573a7b1fff30a5c8aa3a641cf42e1e4f"
               }
             ]
           }

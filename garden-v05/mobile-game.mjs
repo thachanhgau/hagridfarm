@@ -357,7 +357,9 @@ let dutyPanel=null;
 const dutyChip=button('',()=>openDuty(),{id:'dutyChip',class:'duty-chip',hidden:true,'aria-label':'Bậc trách nhiệm'});
 $('gameShell')?.append(dutyChip);
 function currentDuty(){return !activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.duty:null;}
-function dutyRender(){const d=currentDuty();if(!d?.on)return null;return {wilt:new Set((d.wilted||[]).map(w=>w.plot+':'+w.slot)),dead:new Map((d.dead||[]).map(x=>[x.plot+':'+x.slot,x.species])),sick:new Set((d.sick||[]).map(s=>s.species)),gnomes:(d.gnomes||[]).map(g=>g.plot)};}
+// The scene art (garden-duty-art) is imported only once a garden has the duty tier (25.0 speed budget).
+let dutyKit=null,dutyKitLoading=false;
+function dutyRender(){const d=currentDuty();if(!d?.on)return null;if(!dutyKit){if(!dutyKitLoading){dutyKitLoading=true;import('./garden-duty-art.mjs?v=24.9.96').then(m=>{dutyKit=m;draw();}).catch(()=>{dutyKitLoading=false;});}return null;}return {kit:dutyKit,wilt:new Set((d.wilted||[]).map(w=>w.plot+':'+w.slot)),dead:new Map((d.dead||[]).map(x=>[x.plot+':'+x.slot,x.species])),sick:new Set((d.sick||[]).map(s=>s.species)),gnomes:(d.gnomes||[]).map(g=>g.plot)};}
 const dutyUi=()=>import('./garden-duty-ui.mjs?v=24.9.96');
 async function openDuty(){if(!currentDuty())return;dutyPanel??=(await dutyUi()).createDutyPanel({getSnapshot:()=>wallet.snapshot,act:serverClaim,notify:message,labelOf:s=>E.CREATURE[s]?.label||s});dutyPanel.open();}
 function dutyTap(plot){const d=currentDuty(),kind=d?.gnomes?.some(g=>g.plot===plot)?'gnome':d?.dead?.some(x=>x.plot===plot)?'clear':null;if(!kind)return false;
