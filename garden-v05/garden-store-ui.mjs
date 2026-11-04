@@ -149,7 +149,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
 
    const head=el("div",{class:"gp-tile-art"},[artVisual]);
    const angleBtn=isDecor?iconButton("replay",`Xem góc ${shownFacing==="right"?"trái ↖":"phải ↗"} của ${item.label}`,()=>{previewFacing.set(item.id,shownFacing==="right"?"default":"right");render();},{class:"gp-step store-angle-btn","data-store-angle":item.id}):null;
-   // The HPVN server lists «Sản phẩm đặc biệt» before the owner approves their prices, without selling them.
+   // An item the HPVN server lists without selling (`forSale: false`: switched off in the ACP or waiting for its price).
    const pendingPrice=item.forSale===false;
    const remaining=item.dailyRemaining??item.dailyLimit;
    const tiered=Boolean(item.overflowMultiplier);

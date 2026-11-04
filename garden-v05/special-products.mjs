@@ -1,10 +1,9 @@
 // «Sản phẩm đặc biệt»: 30 decorations from the books (art and lore: special-products-assets/manifest.json,
 // runtime sprites in decor-assets-manifest.json). Decoration only: no XP, yield, power or reward.
-// PROPOSED prices and unlock levels, not approved by the owner: the HPVN server lists them but does not sell
-// them yet (`forSale: false` there); only the in-memory preview wallet sells them. Server copy:
-// HPVNN functions/games/garden-wallet-catalog.js (a parity test compares both).
+// Owner 04/11/2026 (big update 25.0 S1): on sale at the §3 prices (garden-store-catalog storePrice); the HPVN server
+// decides `forSale`. Server copy: HPVNN functions/games/garden-wallet-catalog.js (a parity test compares both).
 export const SPECIAL_COLLECTION = 'special';
-export const SPECIAL_PRICES_APPROVED = false;
+export const SPECIAL_PRICES_APPROVED = true;
 
 export const BOOK_TITLES = Object.freeze({
   1: 'Hòn Đá Phù Thủy',
