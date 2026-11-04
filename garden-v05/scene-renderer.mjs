@@ -458,6 +458,27 @@ function label(context, text, x, y, color = '#d6d8bf', font = 'bold 13px sans-se
   context.fillText(text, Math.round(x), Math.round(y));
 }
 
+// Plot tag (owner 04/11/2026: the old boxes were «thô và che rất nhiều thứ»): a small dark chip with a thin gold
+// rule on the plot's own front tip; status is coloured text, never a filled box. `parts` are [text, colour] runs.
+const TAG_FONT = px => `600 ${px}px system-ui, sans-serif`;
+function plotTag(context, parts, x, y, px, rule) {
+  context.save();
+  context.font = TAG_FONT(px);
+  context.textAlign = 'left';
+  context.textBaseline = 'middle';
+  const widths = parts.map(([text]) => context.measureText(text).width), pad = Math.round(px * .45);
+  const w = Math.ceil(widths.reduce((sum, width) => sum + width, 0) + pad * 2), h = Math.round(px * 1.5);
+  const left = Math.round(x - w / 2), top = Math.round(y - h / 2), line = Math.max(1, Math.round(px / 10));
+  context.fillStyle = 'rgba(18,38,33,.8)';
+  context.fillRect(left, top, w, h);
+  context.strokeStyle = rule;
+  context.lineWidth = line;
+  context.strokeRect(left + line / 2, top + line / 2, w - line, h - line);
+  let at = left + pad;
+  parts.forEach(([text, colour], i) => { context.fillStyle = colour; context.fillText(text, at, top + h / 2); at += widths[i]; });
+  context.restore();
+}
+
 function drawProgress(context, x, y, progress) {
   const width = 56;
   context.fillStyle = 'rgba(24,45,43,.84)';
@@ -1071,7 +1092,7 @@ export async function createGarden(canvas, options = {}) {
   let activeAnimations = [];
   let guestActor = null; // tutorial visitor; never part of state.creatures
   let speechScale = 1; // tutorial text stays readable when zoomed out
-  let labelScale = 1; // plot labels keep ~12 screen px when the camera zooms out
+  let labelScale = 1; // plot tags keep ~10 screen px at any zoom (floor .8 when zoomed in)
   let authoredEffectEventIds = new Set();
 
   function actorObject(entry, col, row, logicalNow, clock, target = {}) {
@@ -1508,7 +1529,7 @@ export async function createGarden(canvas, options = {}) {
     const hagridLine = options.hagridLine || null;
     const tutorialFocus = options.tutorialFocus || null;
     speechScale = Math.max(1, finite(options.speechScale, 1));
-    labelScale = Math.min(2.6, Math.max(1, finite(options.labelScale, 1)));
+    labelScale = Math.min(3.6, Math.max(.8, finite(options.labelScale, 1)));
     if (canvas.dataset) canvas.dataset.speechScale = String(speechScale);
     guestActor = options.guestActor || null;
     const atmosphereMode = options.atmosphereMode || 'day';
@@ -1738,22 +1759,24 @@ export async function createGarden(canvas, options = {}) {
     for (let index = 0; index < map.plots.length; index += 1) {
       const plot = map.plots[index];
       if (!plotIsVisible(state, index, logicalNow)) continue;
-      const [x, frontY] = iso(...resolvedPlotPosition(plot, 'label')), centreY = iso(...resolvedPlotPosition(plot))[1];
-      const place = (text, font) => clearLabelY(text, font, x, frontY, centreY, blockers);
+      // ~10 screen px at every zoom (8 world px at least, so it stays legible when zoomed in), its foot on the plot's front tip.
+      const px = Math.round(10 * labelScale), [x, tipY] = plotCorners(plot)[2], centreY = iso(...resolvedPlotPosition(plot))[1];
+      const place = text => clearLabelY(text, TAG_FONT(px), x, tipY - px * .55, centreY, blockers);
       const built = plotIsBuilt(state, index, logicalNow);
       const queued = Boolean(plotConstruction(state, index));
       if (!built) {
-        const text = queued ? `THỬA ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`, font = 'bold 11px sans-serif';
-        label(context, text, x, place(text, font), queued ? '#d6d8bf' : '#a6b1ae', font);
+        const text = queued ? `Thửa ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`;
+        plotTag(context, [[text, queued ? '#d6d8bf' : '#a6b1ae']], x, place(text), px, 'rgba(166,177,174,.35)');
         continue;
       }
       // Each built plot says how it is doing: ripe count, or the time until its first crop ripens.
       const slots = (state.plots?.[index]?.slots ?? []).filter(Boolean);
       const ripe = slots.filter(entry => growthFor(entry, logicalNow).mature).length;
       const left = slots.length && !ripe ? Math.min(...slots.map(entry => entry.plantedAt + (entry.growMs ?? growthFor(entry, logicalNow).growMs) - logicalNow)) : 0;
-      const tag = ripe ? ` · CHÍN ${ripe}` : slots.length ? ` · ${shortTime(left)}` : '';
-      const text = `THỬA ${index + 1}${tag}`, font = `bold ${Math.round(12 * labelScale)}px sans-serif`;
-      label(context, text, x, place(text, font), ripe ? '#231f2e' : index === selectedPlot ? '#f5d69a' : '#e8f0ed', font, ripe ? 'rgba(244,206,98,.94)' : 'rgba(18,38,33,.88)');
+      const name = `Thửa ${index + 1}`, tag = ripe ? ` · chín ${ripe}` : slots.length ? ` · ${shortTime(left)}` : '';
+      const selected = index === selectedPlot;
+      plotTag(context, [[name, selected ? '#f5d69a' : '#e8f0ed'], [tag, ripe ? '#ffc36b' : '#a6b1ae']], x, place(name + tag), px,
+        ripe || selected ? 'rgba(255,195,107,.85)' : 'rgba(245,214,154,.3)');
     }
     drawPenLabels(state, logicalNow);
 
