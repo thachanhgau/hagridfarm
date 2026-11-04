@@ -40,8 +40,8 @@ test('special runtime art resolves to native images or verified flow atlases, ne
   assert.equal(shipped.length, 300);
 });
 
-test('special products are decorations only, one each, in their own store group, priced high and not yet approved', () => {
-  assert.equal(SPECIAL_PRICES_APPROVED, false);
+test('special products are decorations only, one each, in their own store group, priced high and approved (04/11/2026)', () => {
+  assert.equal(SPECIAL_PRICES_APPROVED, true);
   for (const item of SPECIAL_PRODUCTS) {
     assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), storePrice(item));
     assert.equal(item.kind, 'decoration');
