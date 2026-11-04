@@ -1,0 +1,76 @@
+{
+  "generator": "built-in ImageGen",
+  "date": "2026-11-04",
+  "files": [
+    {
+      "file": "garden-v05/environment/statue-night/ev_dark_dobby_red-n0.png",
+      "sha256": "8ed43685f836f282c413c9d221af4703ec3cc7afdbab1eefa3c3cdaf06df67ef"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dark_dobby_red-n1.png",
+      "sha256": "6675b0ecaab2d9ac85a9bbe95bd045c1dc95d3645861f208481704bd6630d9cb"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dark_dobby_red-n2.png",
+      "sha256": "615ed73785489ad6a9e1870e57d2415202b9b2fd7d3251644c14a83f837418f4"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dark_dobby_red_right-n0.png",
+      "sha256": "adda16d3786f8568700b07d894950c4ed943323a559faee0a6d43f41383d6d08"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dark_dobby_red_right-n1.png",
+      "sha256": "c34d46b52ac3cf825c8a0ce540c3977afe19f9cd93a7cc6ecac1e697b577dc94"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dark_dobby_red_right-n2.png",
+      "sha256": "5957ae773a93783a51ad69265c62de046852ade474af4eaf6930216dbfd46023"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dobby_spring_rider-n0.png",
+      "sha256": "4e71cfd0659b8986c7c5ec95c649fa40c3fef509b394a938c4cc141359de5986"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dobby_spring_rider-n1.png",
+      "sha256": "44513ee23d16958e3b92398acd12b657c849a565606c3f84447bd32bba8cb2b5"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dobby_spring_rider-n2.png",
+      "sha256": "b6a6499722d49ffd34d76431c5175382dc6fa707ba0f7276b9b2b83bf88cc432"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dobby_spring_rider_right-n0.png",
+      "sha256": "3476834f0cf72dadd728fe061f5138f0713da33c2dfb1ef705566df8b4500e90"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dobby_spring_rider_right-n1.png",
+      "sha256": "4f838a7709a4560533db3d114f5ee869d546bfb6d963e848d516f9fd5177c0ce"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/ev_dobby_spring_rider_right-n2.png",
+      "sha256": "45e05a7f2aa03dee43ec5bcd31fcd593023c16780589c834bd574663123337ed"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/masters/ev_dark_dobby_red.png",
+      "sha256": "703e32e0e54900c3466d3ba6b19e638fcd11affb367e06c5d62a38fe67c91c40"
+    },
+    {
+      "file": "garden-v05/environment/statue-night/masters/ev_dobby_spring_rider.png",
+      "sha256": "e0a005c835984984f5a3d59852d72b911c19348294d7b6ea68fccaa860b2b153"
+    }
+  ],
+  "riderRevision": {
+    "generator": "built-in ImageGen",
+    "masterSize": [
+      1536,
+      1408
+    ],
+    "cells": [
+      512,
+      704
+    ],
+    "source": "/Users/thachanh/.codex/generated_images/01a1a710-ad49-7690-a3a1-4a4cd63c39a6/exec-35b310c0-73c0-42d6-a375-5bf603e847d5.png",
+    "prompt": "garden-v05/environment/statue-night/masters/ev_dobby_spring_rider.txt",
+    "protectedDarkFilesVerified": 15
+  }
+}

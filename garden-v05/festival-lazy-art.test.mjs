@@ -98,7 +98,7 @@ test('25.0 S4 budget: Norbert loads only once he is drawn (S7 hatches him)', asy
   assert.ok(requested.has(runtimeImageUrl('environment/elves/norbert/idle.png')), 'a hatched Norbert loads');
 });
 
-test('25.0 elf statue glow: loads only at dusk/night for a placed statue; reduced motion holds g0', async () => {
+test('25.0 elf statue glow: loads only at dusk/night for a placed statue; reduced motion holds n0', async () => {
   const winterKit = await import('./garden-winter.mjs'), {STATUE_GLOW_FILES, statueGlow} = winterKit;
   assert.equal(STATUE_GLOW_FILES.length, 12);
   for (const file of STATUE_GLOW_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
@@ -111,11 +111,11 @@ test('25.0 elf statue glow: loads only at dusk/night for a placed statue; reduce
   garden.render(state, {...base, atmosphereMode: 'day'});
   for (const url of glowUrls) assert.ok(!requested.has(url), url + ' loaded by day');
   garden.render(state, {...base, atmosphereMode: 'night'});
-  assert.ok(requested.has(runtimeImageUrl(`environment/statue-glow/${id}-g0.png`)), 'the placed statue glows at night');
-  assert.ok(!requested.has(runtimeImageUrl('environment/statue-glow/ev_dobby_spring_rider-g0.png')), 'an unplaced statue stays unloaded');
+  assert.ok(requested.has(runtimeImageUrl(`environment/statue-night/${id}-n0.png`)), 'the placed statue glows at night');
+  assert.ok(!requested.has(runtimeImageUrl('environment/statue-night/ev_dobby_spring_rider-n0.png')), 'an unplaced statue stays unloaded');
   const object = {kind: 'store-decor', id, slot: 0, facing: 'right', asset: {pivotX: 64, pivotY: 160}};
-  assert.equal(statueGlow(object, 0).file, `environment/statue-glow/${id}_right-g0.png`);
-  assert.deepEqual(new Set([0, 600, 1200, 1800].map(t => statueGlow(object, t + 1).file.slice(-6))), new Set(['g0.png', 'g1.png', 'g2.png']));
+  assert.equal(statueGlow(object, 0).file, `environment/statue-night/${id}_right-n0.png`);
+  assert.deepEqual(new Set([0, 600, 1200, 1800].map(t => statueGlow(object, t + 1).file.slice(-6))), new Set(['n0.png', 'n1.png', 'n2.png']));
   assert.equal(statueGlow({...object, preview: true}, 0), null);
   assert.equal(statueGlow({...object, id: 'ev_elf_tent'}, 0), null);
 });

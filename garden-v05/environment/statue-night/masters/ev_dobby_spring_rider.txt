@@ -1,0 +1,17 @@
+Use case: lighting-weather. Edit target: attached day-original sprite reference sheet. Produce ONE detailed pixel-art night master sheet, EXACTLY 1536 x 1408 pixels, 3 columns x 2 rows, each cell 512x704 (4x a 128x176 game sprite). No gutters, no text. Flat solid dark background #101820.
+
+Keep every statue in the EXACT same pixel-position, silhouette, proportions, pose, pivot and scale as its reference cell. Top row is default facing, bottom row is turned facing. Columns n0 normal, n1 slightly brighter halo/rim, n2 slightly dimmer halo/rim. NO MOVEMENT between columns. Preserve the cheerful waving Dobby, big friendly round eyes and smiling face, the BLUE hippogriff spring toy, dark coil and grey stone plinth as three clearly distinct materials.
+
+Start from the original colours! Dobby stays pale warm peach/beige skin, white ivory pillowcase toga; hippogriff stays BLUE/cyan with deeper indigo blue shadows, warm beak. Plinth stays neutral grey stone. Night cools/darkens only 1-2 palette steps. Do NOT repaint everything cyan/purple or grey. Not scary, not hollow eyes. Dobby eyes soft pale cyan with white hot spots and round friendly shapes. Hippogriff eye glows similarly.
+
+Add a clear thick ROUND halo behind Dobby's HEAD, occluded by his head and ears. Halo diameter about 1.5 times head width including ears; fit within x 4..123 at game size, keep 1px transparent margin top/bottom. Luminous thick core 2-3 game pixels (#E8F0ED/#B7DEE0), outer edge 1-2 game pixels #70A8B6. The halo is the light source: warm white/cyan rim on top of head, ears, shoulders, waving hand, top of hippogriff head and wing; fades down. Preserve friendly face warm skin under light.
+
+Visible pool of cool light around the plinth foot, contained in a 128x64 game-pixel isometric ground diamond centered x=64, spanning rows 96..160, front corner at y160. Do not move plinth. Add 2-4 tiny sparkles on dark spring coil. Flat untextured dark background elsewhere. Crisp chunky pixel shapes, no smoothing, no blur, no glow haze. Use original pixels as exact shape guide, preserve all opaque original silhouette.
+
+At 4x scale every game pixel is 4x4. Allowed final palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0 #142620 #4A3C2C #5D6046 #777044 #B49A66 #E8F0ED #B378FF #E07A9E. NO new objects or changes to statue geometry.
+
+Revision 1: enlarge halo to include ears; pale-cyan glowing eyes for Dobby and toy; retain warm skin, white toga, blue toy and grey plinth.
+Revision 2: enlarge circle 50% while keeping top margin; target circle x14..114/y2..102 at native size, behind the head/ears/waving hand; strengthen light around both sides of plinth.
+Built-in ImageGen final source: /Users/thachanh/.codex/generated_images/01a1a710-ad49-7690-a3a1-4a4cd63c39a6/exec-35b310c0-73c0-42d6-a375-5bf603e847d5.png
+Delivery master normalized nearest-neighbour to 1536x1408 (512x704 per cell).
+Reduction uses n0 geometry for all three frames; n1/n2 vary only cyan/white light planes and effects so the body never moves.
