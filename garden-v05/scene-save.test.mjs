@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createFixtureServer} from '../qa-v19/fixture-wallet.mjs';
 import {createGardenClient} from './garden-emulator-client.mjs';
-import {buildVisitSnapshot} from './garden-visits-ui.mjs';
+import {buildVisitSnapshot, visitBannerParts} from './garden-visits-ui.mjs';
 
 const SNOW_NIGHT = {weather: 'snow', atmosphere: 'night', event: 'event_yule'};
 
@@ -31,6 +31,12 @@ test('a visit draws the host scene, never the visitor one', async () => {
   assert.deepEqual([host.weatherMode, host.atmosphereMode, host.eventMode], ['snow', 'night', 'event_yule']);
   const unset = buildVisitSnapshot((await client.visit({hostUid: 'm2'})).visit);
   assert.deepEqual([unset.weatherMode, unset.atmosphereMode, unset.eventMode], ['clear', 'day', null]);
+});
+
+test('the visit banner has no empty parts (they printed as «nullnull»)', () => {
+  globalThis.document ??= {createElement: () => ({append() {}, setAttribute() {}, addEventListener() {}, classList: {add() {}}, style: {}, dataset: {}}), createElementNS: () => ({append() {}, setAttribute() {}, setAttributeNS() {}, style: {}, dataset: {}}), createTextNode: () => ({})};
+  const parts = visitBannerParts({tour: {uid: 'h', ownerName: 'Hermione', level: 30}, visit: {helped: false, hostHelpsLeft: 3}, helpsLeft: 3, onHelp() {}, onHome() {}});
+  assert.ok(parts.every(Boolean));
 });
 
 test('the game adopts the server scene once, pushes changes, and draws a visit with the host event', () => {

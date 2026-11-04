@@ -175,7 +175,7 @@ export function visitBannerParts({tour, visit, helpsLeft = 0, queue = [], onHelp
       many ? button('Vườn tiếp ›', () => onMove(1), {class: visit.helped || helpsLeft < 1 ? 'primary' : '', 'data-banner-next-visit': 'true'}) : null,
       button('Về vườn', onHome, {'data-banner-stop-tour': 'true'}),
     ]),
-  ];
+  ].filter(Boolean); // replaceChildren prints a null as «null» (the «nullnull» line under the host's name)
 }
 
 function iconButton(name, label, onclick, attrs) {
