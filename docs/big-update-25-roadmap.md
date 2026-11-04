@@ -37,6 +37,7 @@ Thu nhập 30 ngày tới 04/11/2026 (`docs/galleons-income.sh`): trung vị 32.
 - Đồ lễ hội (`FESTIVAL_PRODUCTS`, đều cấp 1): **× 4** cố định.
 - Hạt và nước có cấp mở ≤ 24: **giữ giá cũ** (người mới chưa có Quầy chợ).
 - Áp cho cả danh mục server (nguồn sự thật) và bản sao client, đổi `CATALOG_VERSION`. Sale và ACP bảng giá áp trên giá mới. Quầy chợ không sửa: giá bán đã tính theo giá hạt.
+- «Xả kho» (bán cả kho một lần, vượt trần): **giữ giá chợ mới** (owner 04/11/2026). Ai trữ cây cấp > 24 trồng bằng hạt giá cũ được thêm 5–14 G mỗi cây khi xả; không làm đường giá cũ riêng.
 
 | Món | Cấp | Cũ | Mới |
 |---|---|---|---|
