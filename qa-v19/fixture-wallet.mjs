@@ -6,6 +6,7 @@ import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.
 import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.40";
 import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.40";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs?v=24.9.63";
+import {ATMOSPHERE_MODES,WEATHER_MODES} from "../garden-v05/garden-atmosphere.mjs?v=24.9.96";
 import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
 import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=24.9.40";
 const PREMIUM_CAPS=Object.freeze({rain:1,felix:1,primeMeal:30,feast:3,skeleGro:3});
@@ -41,7 +42,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  // «Thăm vườn» / «Đốt vườn» QA (01/11/2026): ?fire=visual|real burns this garden, ?helpers=1 has three helpers today.
  let fire=fireMode?{mode:fireMode,since:now(),until:now()+2*3600000+5*60000,burned:fireMode==='real'?27:0}:null;
  const helperRows=helpers?[['u1','tara'],['u2','Linh'],['u3','Mai Phương']].map(([uid,name],i)=>({uid,name,at:now()-(3-i)*60000})):[];
- const visitRows=[['m1','tara',42,6],['m2','Linh',18,0],['m3','Hermione Granger',120,9],['m4','Mai Phương',11,3],['m5','Draco',64,0]].map(([uid,username,lv,growing])=>({uid,username,level:lv,growing,helped:false,...(uid==='m3'?{fire:'real'}:{})}));
+ const visitRows=[['m1','tara',42,6],['m2','Linh',18,0],['m3','Hermione Granger',120,9],['m4','Mai Phương',11,3],['m5','Draco',64,0]].map(([uid,username,lv,growing])=>({uid,username,level:lv,growing,helped:false,...(uid==='m3'?{fire:'real'}:{}),...(uid==='m1'?{scene:{weather:'snow',atmosphere:'night',event:'event_yule'}}:{})}));
  let helpsLeft=3;
  const dayOffset=day?Date.parse(day+"T12:00:00+07:00")-now():0,dayKey=()=>vnDayKey(now()+dayOffset);
  const past=scenario.endsWith("ready"),origin=past?now()-26*3600000:now();
@@ -416,9 +417,9 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const {requestId,...payload}=c,hash=stable(payload),seen=ops.get(requestId);
   if(seen){if(seen.hash!==hash)fail("request-id-conflict","Mã thao tác đã được dùng cho dữ liệu khác.");return response(seen.receipt);}
   // The read-only preview still claims, taps and arranges; farm work needs ?simulate=1.
-  if(!simulate&&!DAILY.has(c.action)&&!["placeDecoration","moveBuilding","guideDone"].includes(c.action))fail("preview-read-only","Bản xem UI chỉ đọc · không ghi tài khoản.");
+  if(!simulate&&!DAILY.has(c.action)&&!["placeDecoration","moveBuilding","guideDone","setScene"].includes(c.action))fail("preview-read-only","Bản xem UI chỉ đọc · không ghi tài khoản.");
   const before=garden.progression;
-  if(c.action!=="freeAction"&&c.action!=="guideDone"&&c.expectedRevision!==before.revision)fail("revision-conflict","Khu vườn đã thay đổi; hãy tải lại trước khi thao tác.",{expectedRevision:c.expectedRevision,actualRevision:before.revision});
+  if(!["freeAction","guideDone","setScene"].includes(c.action)&&c.expectedRevision!==before.revision)fail("revision-conflict","Khu vườn đã thay đổi; hãy tải lại trước khi thao tác.",{expectedRevision:c.expectedRevision,actualRevision:before.revision});
   // Work on copies; nothing is kept unless every check passed (like the server transaction).
   const d=clone(daily()),next=clone(garden),extra={};
   if(["claimQuest","claimChest","claimFestival","claimBondGift","claimAchievement"].includes(c.action)){
@@ -445,6 +446,12 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    next.tutorial.guide??=[];
    if(next.tutorial.guide.includes(c.lessonId))fail("action-noop","Bài hướng dẫn này đã xong.");
    next.tutorial.guide.push(c.lessonId);
+  }
+  // Server setScene (garden-scene.js): the owner's «Khung cảnh» in decorations.scene, no revision or points.
+  else if(c.action==="setScene"){
+   const s=c.scene,ok=(ids,v)=>ids.some(x=>x.id===v);
+   if(!s||Object.keys(s).length!==3||!ok(WEATHER_MODES,s.weather)||!ok(ATMOSPHERE_MODES,s.atmosphere)||!ok(HOGWARTS_EVENTS,s.event))fail("invalid-action-input","Khung cảnh không hợp lệ.");
+   next.decorations.scene={weather:s.weather,atmosphere:s.atmosphere,event:s.event};
   }
   else if(c.action==="care"){if(!LINES.some(r=>c.cells?.length===3&&r.every(i=>c.cells.includes(i))))fail("invalid-action-input","Chăm cây cho một hàng, cột hoặc đường chéo đủ ba ô.");if((d.free.care||0)>=FREE_CAPS.care)fail("care-limit",`Hôm nay đã chăm đủ ${FREE_CAPS.care} lượt; mai bác Hagrid lại nhờ nhé.`);care(c,next);}
   else if(c.action==="placeDecoration")place(c,next);
@@ -477,7 +484,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Moving a plot/pen and placing a decoration are free taps (placing counts as rotate); the rest is farm work.
    const free={moveBuilding:"moveBuilding",placeDecoration:"rotate",care:"care"}[c.action];
    if(free){extra.freeAction=countFree(d,free);extra.festivalPoints=addPoints(d,next.festival,free,{counted:extra.freeAction.counted});}
-   else if(c.action!=="tutorialGrow"&&c.action!=="guideDone")extra.festivalPoints=addPoints(d,next.festival,c.action);
+   else if(!["tutorialGrow","guideDone","setScene"].includes(c.action))extra.festivalPoints=addPoints(d,next.festival,c.action);
   }
   // Galleons last, so a short wallet leaves garden, daily record and wallet untouched.
   const cost=c.action==="build"?E.DB.expansions.find(e=>e.id===c.expansionId)?.galleons||0:c.action==="buyDecoration"?E.DB.decorations.find(e=>e.level===c.level)?.galleons||0:0;
@@ -531,7 +538,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
     if(!data?.hostUid)return clone({helpsLeft,visitLevel:10,visits:visitRows});
     const row=visitRows.find(v=>v.uid===data.hostUid);if(!row)fail("visit-not-found","Thành viên này chưa có khu vườn.");
     if(data.help){if(row.helped)fail("already-helped","Hôm nay bạn đã chăm giúp vườn này rồi.");if(!row.growing)fail("nothing-to-help","Vườn này chưa có cây đang lớn để chăm giúp.");row.helped=true;helpsLeft-=1;garden.supplies.water+=6;}
-    const visit={uid:row.uid,username:row.username,level:row.level,progression:clone(garden.progression),decorations:clone(garden.decorations),helped:row.helped,hostHelpsLeft:10,fire:row.fire?{mode:row.fire,since:now(),until:(row.fireUntil??=now()+26*3600000),burned:row.fire==='real'?9:0}:null};
+    const visit={uid:row.uid,username:row.username,level:row.level,progression:clone(garden.progression),decorations:{...clone(garden.decorations),scene:row.scene},helped:row.helped,hostHelpsLeft:10,fire:row.fire?{mode:row.fire,since:now(),until:(row.fireUntil??=now()+26*3600000),burned:row.fire==='real'?9:0}:null};
     return clone({...(data.help?{ok:true,reward:{water:6,label:'+6 Nước'}}:{}),helpsLeft,visitLevel:10,visit});
    }
    fail("unknown-callable","Không có lệnh này.");

@@ -1484,7 +1484,7 @@ export async function createGarden(canvas, options = {}) {
   }
 
   let lastOrder = [];
-  let interactiveDecor = [], interactiveEarnedDecor = [], interactiveKeepsakes = [], interactivePond = [], interactiveActors = [], sceneryVisible=true, reactionUntil=0;
+  let interactiveDecor = [], festivalProps = [], interactiveEarnedDecor = [], interactiveKeepsakes = [], interactivePond = [], interactiveActors = [], sceneryVisible=true, reactionUntil=0;
   let lastBuiltPlotCount = 0;
   let lastPlotReady = [];
 
@@ -1701,7 +1701,7 @@ export async function createGarden(canvas, options = {}) {
     if(propsVisible)objects.push(...festivalObjects({eventMode,stage:currentStage,map,iso,decorAssets,occupied:[...storeDecorationObjects,...earnedDecorationObjects]}));
     objects.sort((a, b) => (a.xy?.[1] ?? 0) - (b.xy?.[1] ?? 0) || (a.xy?.[0] ?? 0) - (b.xy?.[0] ?? 0));
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
-    interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
+    interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');festivalProps=objects.filter(o=>o.kind==='festival');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');
     interactivePond=objects.filter(o=>o.type==='prop'&&o.id==='pond');
     interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
@@ -1763,7 +1763,8 @@ export async function createGarden(canvas, options = {}) {
   // decoration slides up over its own plot (at most to its centre) to where it covers the least of it (owner 01/11/2026).
   function decorRects() {
     const rects = [];
-    for (const {xy, asset, facing} of interactiveDecor) {
+    // Festival props too: the Halloween lanterns and cauldrons stand under the Thửa labels (bug 04/11/2026).
+    for (const {xy, asset, facing} of [...interactiveDecor, ...festivalProps]) {
       const b = (facing === 'right' && asset.rightBounds) ? asset.rightBounds : (asset.bounds ?? {x: 0, y: 0, w: asset.width, h: asset.height});
       rects.push({left: xy[0] - asset.pivotX + b.x, top: xy[1] - asset.pivotY + b.y, w: b.w, h: b.h});
     }
