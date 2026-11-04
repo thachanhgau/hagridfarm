@@ -17,7 +17,7 @@ import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsT
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.96';
 import {decorObjects} from './decor-runtime.mjs?v=24.9.96';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.96';
-import {elfObjects,elfFiles,CHEER_MS} from './garden-elves.mjs?v=24.9.96';
+import {elfObjects,elfFiles,elfWorkFiles,CHEER_MS} from './garden-elves.mjs?v=24.9.96';
 import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.96';
 import {drawEventOverlay} from './garden-events.mjs?v=24.9.96';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.96';
@@ -669,7 +669,8 @@ export async function createGarden(canvas, options = {}) {
   const decorAssets = new Map([...(options.decorAssets ?? []),...COMPLETE_SCENERY].map(a=>[a.id,a]));
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
-  const deferredFiles = new Set([...FESTIVAL_FILES, ...[...decorAssets.values()].filter((a) => a.collection === 'festival').flatMap(decorFiles)]);
+  // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
+  const deferredFiles = new Set([...FESTIVAL_FILES, ...elfWorkFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -1609,7 +1610,7 @@ export async function createGarden(canvas, options = {}) {
       ))
       : [];
     const cheering = Object.fromEntries(Object.entries(elfCheers).filter(([, until]) => until > performance.now()));
-    elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering}) : [];
+    elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering, work: options.elfWork}) : [];
     const objects = [...boundaryFence, ...wizList, ...elfList, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {

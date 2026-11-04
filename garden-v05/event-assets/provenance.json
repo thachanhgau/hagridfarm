@@ -1,14 +1,14 @@
 {
   "schema": "hagrid-farm.decor-assets.provenance.v1",
-  "generatedAt": "2026-10-31T03:40:29.311Z",
+  "generatedAt": "2026-11-04T06:52:07.906Z",
   "tool": "build-assets.mjs",
   "specs": {
     "file": "specs.json",
-    "sha256": "e73a4de200454be5cebeb322abda8d2f50747760916d75aefa2dfe0506ab4ee8"
+    "sha256": "5749454d4f459aed787fdb07b4642cf606267ae7e0679cd70464e5363ff5599a"
   },
   "itemPalettes": {
     "file": "item-palettes.json",
-    "sha256": "dfd1c97c36d590c8cf5fd260c28199a2dd55c4d0848e2c3cc59e6a766f239500"
+    "sha256": "519731a514665c90fe607a3bc0672fae0dd1f0f73da537d5749852b204a7bc20"
   },
   "sourceContract": "Masters are preserved under masters/; each contains a real left default and right alternate view, separated at a verified transparent gap.",
   "processing": {
@@ -210,6 +210,198 @@
         "thumbnails/2x/ev_dark_dobby_red_right.png": "6a4bc2f0593717dc469b8e672853a5e81440e1dc7fda277219fdeb134a5fa07f",
         "thumbnails/3x/ev_dark_dobby_red.png": "b3f6fb51751f7d18d535742320b6b1ac225f2a027cf3967f7f2bf4596ed2781c",
         "thumbnails/3x/ev_dark_dobby_red_right.png": "0f478332a3f82e09fe6009e92875ed84f113c947b63b3de4b0abbad6315ae47b"
+      }
+    },
+    {
+      "id": "ev_elf_tent",
+      "source": "masters/ev_elf_tent.png",
+      "sourceSha256": "df686918a3e2ae7af0379a3341711b6ed48b7c512b760a396a7a9358624b48e0",
+      "sourceCanvas": {
+        "width": 1774,
+        "height": 887,
+        "splitX": 878,
+        "transparentGap": {
+          "start": 764,
+          "end": 992
+        },
+        "defaultWidth": 878,
+        "alternateWidth": 896,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 35,
+          "y": 76,
+          "w": 729,
+          "h": 779,
+          "count": 305991
+        },
+        "alternate": {
+          "x": 115,
+          "y": 76,
+          "w": 746,
+          "h": 760,
+          "count": 310901
+        }
+      },
+      "palette": {
+        "ramps": [
+          "warm",
+          "wood",
+          "magic"
+        ],
+        "colors": [
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 21,
+              "y": 84,
+              "w": 61,
+              "h": 37
+            },
+            "pixelCount": 564,
+            "mappableCount": 564,
+            "maxPixels": 895,
+            "rootBand": 132
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 77,
+              "y": 92,
+              "w": 38,
+              "h": 40
+            },
+            "pixelCount": 262,
+            "mappableCount": 262,
+            "maxPixels": 863,
+            "rootBand": 132
+          }
+        }
+      },
+      "outputs": {
+        "native/ev_elf_tent.png": "47c9e5bd4dbe095c45a3c2e4d71d986fc7fa8eb1b847dfd35de1b8994fe7b86a",
+        "native/ev_elf_tent_right.png": "c5b7c9f7601afbecc5668d870f38560312a7fe9d894d6be3d9c06ff17c0a09f1",
+        "native/ev_elf_tent_f0.png": "47c9e5bd4dbe095c45a3c2e4d71d986fc7fa8eb1b847dfd35de1b8994fe7b86a",
+        "native/ev_elf_tent_f1.png": "9aec1047a5d148c358740baef39822f26f0baaed256ead3534058a70a054658b",
+        "native/ev_elf_tent_f2.png": "9aec1047a5d148c358740baef39822f26f0baaed256ead3534058a70a054658b",
+        "native/ev_elf_tent_f3.png": "47c9e5bd4dbe095c45a3c2e4d71d986fc7fa8eb1b847dfd35de1b8994fe7b86a",
+        "native/ev_elf_tent_right_f0.png": "c5b7c9f7601afbecc5668d870f38560312a7fe9d894d6be3d9c06ff17c0a09f1",
+        "native/ev_elf_tent_right_f1.png": "4d84c8d5ee8b42e21d8efb09394ae83ff0328b1b9bd0e86cb8e2630f1317de1c",
+        "native/ev_elf_tent_right_f2.png": "4d84c8d5ee8b42e21d8efb09394ae83ff0328b1b9bd0e86cb8e2630f1317de1c",
+        "native/ev_elf_tent_right_f3.png": "c5b7c9f7601afbecc5668d870f38560312a7fe9d894d6be3d9c06ff17c0a09f1",
+        "spritesheets/ev_elf_tent.png": "b38e3ef162f06b70fe99b3ebde2d5fc5cdf2574dfdee6cb4723041a729260ed7",
+        "thumbnails/2x/ev_elf_tent.png": "ff0f60b39260837a172c4485f197de9f8bfda7362eee02c9771e0bd718d222d4",
+        "thumbnails/2x/ev_elf_tent_right.png": "ea4086e0d1f4ff80234c56c69aff1ac7348fdefbbc85df76f417c05f46cabacb",
+        "thumbnails/3x/ev_elf_tent.png": "a7e577620af1e17ae4d3f26f64fc8a3ea5acc69cd8e797e11c12997bcbf865a9",
+        "thumbnails/3x/ev_elf_tent_right.png": "fbf6730b8d0efe7b64b929141405aba08ccc42b7610b5e689e95b3908e3067ec"
+      }
+    },
+    {
+      "id": "ev_kitchen_corner",
+      "source": "masters/ev_kitchen_corner.png",
+      "sourceSha256": "22fe6e4e4a6c659e8ed040c743fd4bef26632c24b0687905935278b1025c18c6",
+      "sourceCanvas": {
+        "width": 1774,
+        "height": 887,
+        "splitX": 882,
+        "transparentGap": {
+          "start": 740,
+          "end": 1023
+        },
+        "defaultWidth": 882,
+        "alternateWidth": 892,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 115,
+          "y": 89,
+          "w": 625,
+          "h": 712,
+          "count": 245620
+        },
+        "alternate": {
+          "x": 142,
+          "y": 83,
+          "w": 624,
+          "h": 733,
+          "count": 247611
+        }
+      },
+      "palette": {
+        "ramps": [
+          "fire",
+          "wood",
+          "stone"
+        ],
+        "colors": [
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "bubbles",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        },
+        "alternate": {
+          "requested": "bubbles",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical.",
+          "effect": null
+        }
+      },
+      "outputs": {
+        "native/ev_kitchen_corner.png": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258",
+        "native/ev_kitchen_corner_right.png": "06eb33b2811fd58fdc801f0a15c946f0798079141c18ff47ac2c2f52d7984441",
+        "native/ev_kitchen_corner_f0.png": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258",
+        "native/ev_kitchen_corner_f1.png": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258",
+        "native/ev_kitchen_corner_f2.png": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258",
+        "native/ev_kitchen_corner_f3.png": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258",
+        "native/ev_kitchen_corner_right_f0.png": "06eb33b2811fd58fdc801f0a15c946f0798079141c18ff47ac2c2f52d7984441",
+        "native/ev_kitchen_corner_right_f1.png": "06eb33b2811fd58fdc801f0a15c946f0798079141c18ff47ac2c2f52d7984441",
+        "native/ev_kitchen_corner_right_f2.png": "06eb33b2811fd58fdc801f0a15c946f0798079141c18ff47ac2c2f52d7984441",
+        "native/ev_kitchen_corner_right_f3.png": "06eb33b2811fd58fdc801f0a15c946f0798079141c18ff47ac2c2f52d7984441",
+        "spritesheets/ev_kitchen_corner.png": "ee750011df7ee982722afc880f70ab594e91291ad22c55b122e5b9f3fae93e53",
+        "thumbnails/2x/ev_kitchen_corner.png": "b133c99459d1f0efc6cead647cf52a6a19943411eed534456d4c0bd64dfba3fa",
+        "thumbnails/2x/ev_kitchen_corner_right.png": "98e582870249c1d38665b1bb41939851c81a025d8db6109f4cd822c78d50be1c",
+        "thumbnails/3x/ev_kitchen_corner.png": "eb8f76c87e6ea2163cc660a6e6e9eb21f6550f1958d75979e2b2a02de8b1bf5e",
+        "thumbnails/3x/ev_kitchen_corner_right.png": "357917e75a8f38594f49cf3b15a84b16b8c507b02b0e43a38620f90cb626b34f"
       }
     }
   ]

@@ -189,6 +189,21 @@
         ]
       ],
       "prompt": "Use case: stylized-concept. Asset: one production sprite atlas for Hagrid Farm inventory, approved cozy handheld farming pixel style. Exactly 3 rows and 4 columns, 12 isolated DISTINCT objects, read left to right then top to bottom. Each cell contains ONLY the described object. Genuine transparent alpha background. Equal size cells. Every object is centered in its own cell with at least 22 percent completely transparent margin on all FOUR sides, never touching cell borders. No objects outside grid. No labels, no letters, no text, no decorative frames, no shadows on ground. True chunky pixel-art clusters, upper-left lighting, selective dark plum outlines, cute 2:1 dimetric view, readable at 44x44 logical pixels. Different silhouettes, containers and ingredients must clearly distinguish every item; no repeated generic dish. Restrained warm earthy 24-color palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Avoid blur, smooth gradients, detailed painted textures. Objects in grid order:\n1.1: A soft golden cream wool ball with a loose curled yarn strand\n1.2: A tied bundle of three shed brown bark fragments with pale inner wood and tiny green leaf\n1.3: Three shiny mismatched collected brass buttons, with visible two or four button holes\n1.4: A folded kraft paper fertilizer bag with moon-shaped pale blue seal, small pile of earthy granules\n2.1: A fluffy orange-brown tuft of spotted cat fur tied with dark thread\n2.2: Three short rounded teal-blue dodo feathers fanned at the quills\n2.3: A fan of four distinctly coloured magical bird feathers, coral orange gold and violet\n2.4: A single LARGE long curved slate-gray and ivory eagle flight feather\n3.1: A tied flowing bundle of dark plum charcoal horse mane hairs, slender wisps\n3.2: A neatly looped shining ivory-silver unicorn mane strand, tied with a tiny gold cord\n3.3: Three compact fur tufts of tan brown and charcoal tied together with ribbon\n3.4: Three overlapping shield-shaped deep-green and bronze shed dragon scales"
+    },
+    {
+      "name": "elf-knits",
+      "columns": 2,
+      "rows": 1,
+      "items": [
+        [
+          "recipe_elf_hat",
+          "A lumpy hand-knitted woolly house-elf hat in red and gold stripes with a big pompom, slightly uneven like a beginner knitted it, a knitting needle pushed through it"
+        ],
+        [
+          "recipe_elf_sock",
+          "A single long hand-knitted woolly sock in bright mismatched green and purple stripes with a darned heel, slightly uneven like a beginner knitted it"
+        ]
+      ]
     }
   ]
 }

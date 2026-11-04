@@ -52,9 +52,9 @@ test('special products are decorations only, one each, in their own store group,
     assert.match(item.description, /chỉ để trang trí/);
     for (const key of ['xp', 'reward', 'yield', 'galleonsBonus']) assert.equal(item[key], undefined);
   }
-  // The six older store decorations at their 25.0 prices (§3), still sold below every special product.
+  // The six older store decorations and 25.0 Góc bếp at their 25.0 prices (§3), still sold below every special product.
   const older = STORE_CATALOG.filter(item => item.kind === 'decoration' && !item.collection);
-  assert.deepEqual(older.map(item => [item.id, item.price]), [['decor_pumpkin_lantern', 240], ['decor_broom_rack', 370], ['decor_cauldron', 560], ['decor_mandrake_planter', 770], ['decor_floating_candles', 1200], ['decor_vine_arch', 2100]]);
+  assert.deepEqual(older.map(item => [item.id, item.price]), [['decor_pumpkin_lantern', 240], ['decor_broom_rack', 370], ['decor_cauldron', 560], ['decor_mandrake_planter', 770], ['decor_floating_candles', 1200], ['decor_vine_arch', 2100], ['ev_kitchen_corner', 1300]]);
 });
 
 test('Halloween pieces sell only during the Halloween festival, to every level, priced above the regular ones', () => {

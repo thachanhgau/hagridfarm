@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {ELVES, elfFiles, elfPose, elfObjects, elfLine} from './garden-elves.mjs';
+import {ELVES, elfFiles, elfPose, elfObjects, elfLine, elfShiftText} from './garden-elves.mjs';
 import {GARDEN_STAGES, stageContains} from './garden-growth.mjs';
 
 test('every elf frame exists as a runtime image', () => {
@@ -38,6 +38,18 @@ test('at night every elf sleeps at its own spot by the hut; a tapped elf cheers,
   const tapped = elfObjects(iso, 12345, {cheering: {dobby: true, winky: true}});
   assert.equal(tapped.find((o) => o.id === 'dobby').asset.file, 'environment/elves/dobby/cheer.png');
   assert.equal(tapped.find((o) => o.id === 'winky').asset.file, 'environment/elves/winky/idle.png');
+});
+
+test('after today\'s gia tinh jobs Dobby harvests at his watering stop and feeds at his sweeping stop', () => {
+  const iso = (col, row) => [(col - row) * 32, (col + row) * 16];
+  const at = (pose) => { for (let clock = 1; ; clock += 53) if (elfPose('dobby', clock)[2] === pose) return clock; };
+  const dobby = (clock, work) => elfObjects(iso, clock, {work}).find((o) => o.id === 'dobby').asset.file;
+  assert.equal(dobby(at('water'), []), 'environment/elves/dobby/water.png');
+  assert.equal(dobby(at('water'), ['harvest']), 'environment/elves/dobby/harvest.png');
+  assert.equal(dobby(at('sweep'), ['harvest', 'feed']), 'environment/elves/dobby/feed.png');
+  assert.equal(elfObjects(iso, at('water'), {work: ['harvest'], night: true}).find((o) => o.id === 'dobby').asset.file, 'environment/elves/dobby/sleep.png');
+  assert.equal(elfShiftText([{kind: 'harvest', plotIndex: 0, crops: 3}, {kind: 'feed', species: 'puffskein'}]), '🧦 Gia tinh: Gặt thửa 1 · 3 cây; Cho Puffskein ăn');
+  assert.equal(elfShiftText(undefined), '');
 });
 
 test('tap lines loop per elf and stay short', () => {

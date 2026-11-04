@@ -82,7 +82,7 @@ function emptyCreatureProfile(level = 10) {
 test('approved balance exposes all crops, creatures, levels, recipes, and Vietnamese labels', () => {
   assert.equal(DB.crops.length, 32); // level-500 roadmap P3: eight bậc Tận Sức crops
   assert.equal(DB.animals.length, 12);
-  assert.equal(DB.recipes.length, 27); // the two kit recipes were removed on 18/10/2026
+  assert.equal(DB.recipes.length, 29); // the two kit recipes were removed on 18/10/2026; 25.0 S2 added the two knits
   assert.equal(DB.levels.length, 500);
   assert.equal(CROP.daisy.label, 'Cúc trắng');
   assert.equal(CROP.dittany.label, 'Bạch tiễn');
@@ -581,7 +581,7 @@ test('engine core remains in parity with the approved 1-100 balance source and t
   const classic = (rows) => rows.filter((row) => row.level <= 100); // level-500 roadmap P3 adds crops and plots above 100
   assert.deepEqual(selectFields(classic(DB.crops), cropFields), selectFields(patch(APPROVED.crops, 'id', KIT_TEXT.crops, 'use'), cropFields));
   assert.deepEqual(selectFields(DB.animals, animalFields), selectFields(APPROVED.animals, animalFields));
-  assert.deepEqual(DB.recipes, APPROVED.recipes.filter((r) => r.output !== 'kit'));
+  assert.deepEqual(DB.recipes.filter((r) => r.station !== 'Giỏ đan của Hermione'), APPROVED.recipes.filter((r) => r.output !== 'kit')); // 25.0 S2 knits are new
   assert.deepEqual(selectFields(classic(DB.expansions), expansionFields), selectFields(APPROVED.expansions, expansionFields));
   assert.deepEqual(
     selectFields(DB.levels.slice(0, 99), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),

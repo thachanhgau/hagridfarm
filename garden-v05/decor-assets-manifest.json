@@ -5714,6 +5714,222 @@
       "motion": "glow",
       "framesIdentical": false,
       "nativeSha256": "d886e284e6f533278fc3c52fd8d486a5cc57a21a2d6ab525dacb6f5c79983f41"
+    },
+    {
+      "id": "ev_elf_tent",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": false,
+      "rotatable": true,
+      "label": "Lều gia tinh",
+      "group": "Gia tinh",
+      "file": "decor-assets/native/ev_elf_tent.png",
+      "rightFile": "decor-assets/native/ev_elf_tent_right.png",
+      "frames": [
+        "decor-assets/native/ev_elf_tent_atlas.png",
+        "decor-assets/native/ev_elf_tent_atlas.png",
+        "decor-assets/native/ev_elf_tent_atlas.png",
+        "decor-assets/native/ev_elf_tent_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/ev_elf_tent_atlas.png",
+        "decor-assets/native/ev_elf_tent_atlas.png",
+        "decor-assets/native/ev_elf_tent_atlas.png",
+        "decor-assets/native/ev_elf_tent_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 176
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 128,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 256,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        },
+        {
+          "x": 384,
+          "y": 176,
+          "w": 128,
+          "h": 176
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 176,
+      "pivotX": 64,
+      "pivotY": 160,
+      "bounds": {
+        "x": 8,
+        "y": 40,
+        "w": 112,
+        "h": 120
+      },
+      "rightBounds": {
+        "x": 8,
+        "y": 46,
+        "w": 112,
+        "h": 114
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "47c9e5bd4dbe095c45a3c2e4d71d986fc7fa8eb1b847dfd35de1b8994fe7b86a"
+    },
+    {
+      "id": "ev_kitchen_corner",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Góc bếp",
+      "group": "Gia tinh",
+      "file": "decor-assets/native/ev_kitchen_corner.png",
+      "rightFile": "decor-assets/native/ev_kitchen_corner_right.png",
+      "frames": [
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 8,
+        "y": 4,
+        "w": 81,
+        "h": 92
+      },
+      "rightBounds": {
+        "x": 9,
+        "y": 4,
+        "w": 78,
+        "h": 92
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "bubbles",
+      "framesIdentical": true,
+      "nativeSha256": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258"
     }
   ]
 }

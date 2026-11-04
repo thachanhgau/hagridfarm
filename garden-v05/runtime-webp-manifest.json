@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "afb0ce962f9e",
+  "revision": "4e47ca4dbbb5",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -4942,6 +4942,26 @@
       "sha256": "947a5a8cc3ff072f18fd6116b08dcbf1655d0db60fecc2ad10598c28f6343579"
     },
     {
+      "source": "native-items/recipe_elf_hat.png",
+      "file": "runtime-webp/native-items/recipe_elf_hat.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1205,
+      "bytes": 788,
+      "sourceSha256": "2efd87cbf1791e0e2b4a2dcf944b6fa0fceb5d47a641d169d9a963b9686d6c1b",
+      "sha256": "9831b389f969e3c7ca71b51b54bae5807d985904a1dbb7a86482481fa555fb53"
+    },
+    {
+      "source": "native-items/recipe_elf_sock.png",
+      "file": "runtime-webp/native-items/recipe_elf_sock.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 905,
+      "bytes": 550,
+      "sourceSha256": "99e3071e8517e1627097653dd530fd9b3b9dce085294f7eee583022a34ea8d2d",
+      "sha256": "d1132758dd619118e0913fe0dff8eff5c23b07937ac5e13257fa2b7650338b57"
+    },
+    {
       "source": "native-items/recipe_fish_cake.png",
       "file": "runtime-webp/native-items/recipe_fish_cake.webp",
       "width": 64,
@@ -6790,6 +6810,66 @@
       "bytes": 3022,
       "sourceSha256": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f",
       "sha256": "a0ede48a90a68f784fa5be757de9c60d4e6c0903718e0738fa302fdd28f315b0"
+    },
+    {
+      "source": "decor-assets/native/ev_elf_tent_atlas.png",
+      "file": "runtime-webp/decor-assets/native/ev_elf_tent_atlas.webp",
+      "width": 512,
+      "height": 352,
+      "sourceBytes": 10943,
+      "bytes": 5022,
+      "sourceSha256": "b38e3ef162f06b70fe99b3ebde2d5fc5cdf2574dfdee6cb4723041a729260ed7",
+      "sha256": "9ee090d574ea7101ba4af2a85d05496e2d1d0e0ec4ce5dfb37401348fd029bcf"
+    },
+    {
+      "source": "decor-assets/native/ev_elf_tent_right.png",
+      "file": "runtime-webp/decor-assets/native/ev_elf_tent_right.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 3234,
+      "bytes": 2058,
+      "sourceSha256": "c5b7c9f7601afbecc5668d870f38560312a7fe9d894d6be3d9c06ff17c0a09f1",
+      "sha256": "1ffb6406332833e562a4204837a56bdfcbdff9d76de845ab88b937e6c5837747"
+    },
+    {
+      "source": "decor-assets/native/ev_elf_tent.png",
+      "file": "runtime-webp/decor-assets/native/ev_elf_tent.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 3586,
+      "bytes": 2322,
+      "sourceSha256": "47c9e5bd4dbe095c45a3c2e4d71d986fc7fa8eb1b847dfd35de1b8994fe7b86a",
+      "sha256": "47222cce488a718e3d9edb2dd2309dbacc4ac06dddc4720a7e1b446f849cdc45"
+    },
+    {
+      "source": "decor-assets/native/ev_kitchen_corner_atlas.png",
+      "file": "runtime-webp/decor-assets/native/ev_kitchen_corner_atlas.webp",
+      "width": 384,
+      "height": 224,
+      "sourceBytes": 7078,
+      "bytes": 3338,
+      "sourceSha256": "ee750011df7ee982722afc880f70ab594e91291ad22c55b122e5b9f3fae93e53",
+      "sha256": "f6f43891c6c1f2a99c88bc6b1c3372de42c25024f0a066281c5f523d2e163e29"
+    },
+    {
+      "source": "decor-assets/native/ev_kitchen_corner_right.png",
+      "file": "runtime-webp/decor-assets/native/ev_kitchen_corner_right.webp",
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 2469,
+      "bytes": 1654,
+      "sourceSha256": "06eb33b2811fd58fdc801f0a15c946f0798079141c18ff47ac2c2f52d7984441",
+      "sha256": "42cad9b52c463e053676db563b5418e6586d1cbb16ebe25fd3e13dc88fcc65ff"
+    },
+    {
+      "source": "decor-assets/native/ev_kitchen_corner.png",
+      "file": "runtime-webp/decor-assets/native/ev_kitchen_corner.webp",
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 2552,
+      "bytes": 1732,
+      "sourceSha256": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258",
+      "sha256": "a0306ae9ef828eab1e5c641162ca5c383a5388b5b7abe9e96db65b6802e7b8c1"
     },
     {
       "source": "decor-assets/native/flow-hw_blinking_chest_right.png",
@@ -11695,11 +11775,11 @@
     }
   ],
   "totals": {
-    "converted": 1163,
+    "converted": 1171,
     "existingWebp": 8,
-    "originalBytes": 4319142,
-    "webpBytes": 2891788,
-    "savedBytes": 1427354,
-    "savedPercent": 33.05
+    "originalBytes": 4351114,
+    "webpBytes": 2909252,
+    "savedBytes": 1441862,
+    "savedPercent": 33.14
   }
 }

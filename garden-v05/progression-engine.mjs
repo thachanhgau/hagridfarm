@@ -41,7 +41,9 @@ const PEN_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind 
 const LAYOUT_COUNTS = Object.freeze({ plots: 18, pens: 6 });
 // Level-500 roadmap P3: saves from before thửa 13–18 hold 12 plot sockets and none of the bậc Tận Sức crops.
 const LEGACY_PLOT_SOCKETS = 12;
+// Saves from before these ids existed lack them: bậc Tận Sức crops (level-500 P3) and the 25.0 S2 knits.
 const LATE_CROP_IDS = new Set(DB.crops.filter((crop) => crop.level > TAN_SUC_LEVEL).map((crop) => crop.id));
+for (const id of ['elf_hat', 'elf_sock']) LATE_CROP_IDS.add(id);
 const DECORATIONS = Object.freeze(Object.fromEntries(DB.decorations.map((entry) => [entry.id, entry])));
 const CROP_IDS = Object.freeze(Object.keys(CROP));
 const CREATURE_IDS = Object.freeze(Object.keys(CREATURE));

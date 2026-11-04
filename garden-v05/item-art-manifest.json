@@ -886,6 +886,50 @@
         "height": 362
       }
     },
+    "recipe_elf_hat": {
+      "file": "native-items/recipe_elf_hat.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 6,
+        "y": 12,
+        "w": 52,
+        "h": 44
+      },
+      "sha256": "2efd87cbf1791e0e2b4a2dcf944b6fa0fceb5d47a641d169d9a963b9686d6c1b",
+      "source": "masters-items/elf-knits.png",
+      "sourceSha256": "3f7f0b1e354ad8dba12389c73beee6bccae6c63bd9de7e7d2a7b37db76d5ede5",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 887,
+        "height": 887
+      }
+    },
+    "recipe_elf_sock": {
+      "file": "native-items/recipe_elf_sock.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 15,
+        "y": 8,
+        "w": 33,
+        "h": 48
+      },
+      "sha256": "99e3071e8517e1627097653dd530fd9b3b9dce085294f7eee583022a34ea8d2d",
+      "source": "masters-items/elf-knits.png",
+      "sourceSha256": "3f7f0b1e354ad8dba12389c73beee6bccae6c63bd9de7e7d2a7b37db76d5ede5",
+      "sourceRect": {
+        "left": 887,
+        "top": 0,
+        "width": 887,
+        "height": 887
+      }
+    },
     "decoration-3": {
       "file": "native-items/decoration-3.png",
       "width": 96,

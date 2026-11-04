@@ -1,5 +1,6 @@
 // Gia tinh in the garden (25.0 S2): each elf walks a loop of stops and does a chore at each one, sleeps by the hut at
 // night and cheers when tapped. Pure data + clock → scene objects; the renderer draws them like any pivoted asset.
+import {CREATURE} from './progression-engine.mjs?v=24.9.96';
 
 const FRAME = {width: 80, height: 80, pivotX: 40, pivotY: 76, bounds: {x: 11, y: 14, w: 53, h: 63}};
 const CELL_MS = 900; // walking speed: one tile per 0.9 s
@@ -11,7 +12,7 @@ export const CHEER_MS = 1600;
 export const ELVES = Object.freeze({
   dobby: Object.freeze({
     name: 'Dobby',
-    poses: ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'carry', 'sleep', 'cheer'],
+    poses: ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'carry', 'sleep', 'cheer', 'harvest', 'feed'],
     stops: [[1.5, 7.5, 'idle', 2600], [6.1, 4.5, 'water', 3200], [7.5, 7.5, 'sweep', 3600], [12.5, 8, 'carry', 0], [6, 8.5, 'idle', 2000]],
     sleep: [2.4, 7.1],
     lines: ['Dobby quét tuyết cho vườn bác Hagrid đây ạ!', 'Dobby thích tất len lắm, thưa ngài!', 'Dobby là gia tinh tự do!'],
@@ -41,6 +42,8 @@ export const ELVES = Object.freeze({
 
 export const elfFile = (id, pose) => `environment/elves/${id}/${pose}.png`;
 export const elfFiles = () => Object.entries(ELVES).flatMap(([id, elf]) => elf.poses.map((pose) => elfFile(id, pose)));
+// Poses drawn only after a gia tinh job today (WORK_POSES): the renderer loads them when first drawn.
+export const elfWorkFiles = () => Object.entries(ELVES).flatMap(([id, elf]) => elf.poses.filter((pose) => Object.values(WORK_POSES).includes(pose)).map((pose) => elfFile(id, pose)));
 
 // Where an elf is at `clock` ms: [col, row, pose, facingRight]. clock 0 (reduced motion) = standing at the first stop.
 export function elfPose(id, clock) {
@@ -67,10 +70,17 @@ export function elfPose(id, clock) {
   return [stops[0][0], stops[0][1], stops[0][2], false];
 }
 
+// «Gia tinh trông vườn» (S2 part 2): once the elves harvested or fed today, Dobby's watering stop shows him harvesting
+// and his sweeping stop feeding (the pose is named like the job kind).
+const WORK_POSES = Object.freeze({water: 'harvest', sweep: 'feed'});
+
 // night: every elf sleeps at its spot. cheering: {id: true} for elves just tapped (cheer pose, else idle).
-export function elfObjects(iso, clock, {night = false, cheering = {}} = {}) {
+// work: the kinds of today's gia tinh jobs ('harvest', 'feed').
+export function elfObjects(iso, clock, {night = false, cheering = {}, work = []} = {}) {
   return Object.entries(ELVES).map(([id, elf]) => {
     let [col, row, pose, flip] = night ? [...elf.sleep, 'sleep', false] : elfPose(id, clock);
+    const workPose = WORK_POSES[pose];
+    if (!night && work.includes(workPose) && elf.poses.includes(workPose)) pose = workPose;
     if (!night && cheering[id]) pose = elf.poses.includes('cheer') ? 'cheer' : 'idle';
     const [x, y] = iso(col, row);
     return {kind: 'elf', id, xy: [Math.round(x), Math.round(y)], flip, asset: {...FRAME, file: elfFile(id, pose)}};
@@ -82,3 +92,9 @@ export const elfLine = (id, taps) => {
   const lines = ELVES[id].lines;
   return lines[taps % lines.length];
 };
+
+// A «Gia tinh trông vườn» job (server garden-elf-core) as one line, and the toast after an action the elves worked in.
+export const elfJobText = (job) => (job.kind === 'harvest'
+  ? `Gặt thửa ${job.plotIndex + 1} · ${job.crops} cây`
+  : `Cho ${CREATURE[job.species]?.label || job.species} ăn`);
+export const elfShiftText = (jobs) => (jobs?.length ? `🧦 Gia tinh: ${jobs.map(elfJobText).join('; ')}` : '');

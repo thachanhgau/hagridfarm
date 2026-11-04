@@ -3,7 +3,7 @@ import {EVENT_PRODUCTS,FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-produ
 import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.96";
 import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.96";
 import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=24.9.96";
-export const CATALOG_VERSION="garden-2026-11-04-prices-25";
+export const CATALOG_VERSION="garden-2026-11-04-elves-25";
 // Big update 25.0 §3 (owner 04/11/2026): prices below are the 24.x base; the store sells at base × min(8, 3 + level / 50),
 // festival goods × 4, rounded to 1 G under 100, 10 G under 1,000, else 100 G. Seeds and water up to level 24 keep their
 // price; event gifts are never sold. Same rule as HPVN functions/games/garden-wallet-catalog.js storePrice.
@@ -693,6 +693,20 @@ export const STORE_CATALOG=Object.freeze([
     "quantity": 1,
     "dailyLimit": 1,
     "description": "Đồ trang trí vườn · sở hữu một lần · không tăng XP."
+  },
+  // Big update 25.0 S2: the gia tinh kitchen corner; base price, the store sells it at storePrice (same row on the server).
+  {
+    "id": "ev_kitchen_corner",
+    "kind": "decoration",
+    "footprint": [2, 1],
+    "decorationId": "ev_kitchen_corner",
+    "icon": "ev_kitchen_corner",
+    "label": "Góc bếp",
+    "level": 12,
+    "price": 400,
+    "quantity": 1,
+    "dailyLimit": 1,
+    "description": "Bếp gạch, nồi đồng và bàn nhỏ của gia tinh, như dưới nhà bếp Hogwarts · Đồ trang trí vườn · sở hữu một lần · không tăng XP."
   }
 ].map(Object.freeze).concat(PREMIUM_PRODUCTS,SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS,EVENT_PRODUCTS).map(storePrice));
 // A seasonal item (`season`: festival id) is on sale only while that festival runs, at any level (server garden-wallet-catalog inSeason).

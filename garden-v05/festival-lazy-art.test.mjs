@@ -49,3 +49,22 @@ test('25.0 budget: festival art waits until its season or a placed piece draws i
   assert.ok(urlsOf(piece).some(url => requested.has(url)), 'a placed festival piece loads after its season');
   assert.ok(!requested.has(runtimeImageUrl('world-v241/hero-yule.png')), 'other festivals stay unloaded');
 });
+
+test('25.0 budget: event pieces and Dobby\'s work poses load only when first drawn', async () => {
+  const {elfWorkFiles} = await import('./garden-elves.mjs');
+  const event = manifest.items.filter(a => a.collection === 'event');
+  assert.deepEqual(event.map(a => a.id).sort(), ['ev_dark_dobby_red', 'ev_dobby_spring_rider', 'ev_elf_tent', 'ev_kitchen_corner']);
+  const urlsOf = a => [a.file, ...(a.frames ?? []), a.rightFile, ...(a.rightFrames ?? [])].filter(Boolean).map(runtimeImageUrl);
+  const {canvas, requested} = recordingCanvas();
+  const garden = await createGarden(canvas, {decorAssets: manifest.items});
+  const work = elfWorkFiles().map(runtimeImageUrl);
+  assert.deepEqual(work, ['environment/elves/dobby/harvest.png', 'environment/elves/dobby/feed.png'].map(runtimeImageUrl));
+  for (const url of [...work, ...event.flatMap(urlsOf)]) assert.ok(!requested.has(url), url + ' loaded before the first frame');
+  const state = E.testProfile(100, 1_700_000_000_000);
+  const tent = event.find(a => a.id === 'ev_elf_tent');
+  garden.render(state, {
+    now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none',
+    decorations: {owned: [tent.id], placements: [tent.id], positions: {[tent.id]: [2.5, 26]}, rotations: {}},
+  });
+  assert.ok(urlsOf(tent).some(url => requested.has(url)), 'a placed Lều gia tinh loads');
+});
