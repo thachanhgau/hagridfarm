@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "70c1c7d8d22c",
+  "revision": "61a92606e513",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11102,6 +11102,66 @@
       "sha256": "07859b88b95bca737152a4566f752b830bf5e3d49a9ea5ee2a657c736768f802"
     },
     {
+      "source": "environment/elves/dobby/carry.png",
+      "file": "runtime-webp/environment/elves/dobby/carry.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1024,
+      "bytes": 622,
+      "sourceSha256": "7661a256b5587c7b3e657aeaef88407d3a097a2283fbddede0b4fa55d991ccee",
+      "sha256": "d36cb426d15c35c2eb05e7fbcb23ff4474bb4657cc899075c27c40532e185e4d"
+    },
+    {
+      "source": "environment/elves/dobby/idle.png",
+      "file": "runtime-webp/environment/elves/dobby/idle.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 797,
+      "bytes": 476,
+      "sourceSha256": "5552b7a536be69031ebfdd70d93ba5fa762a6ed5ad5800525c57a3409bc1fb19",
+      "sha256": "ec134c8535c0e40c080075546a5f9f5be57a511d93cb8aebfb2688c9ba11079b"
+    },
+    {
+      "source": "environment/elves/dobby/sweep.png",
+      "file": "runtime-webp/environment/elves/dobby/sweep.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 949,
+      "bytes": 568,
+      "sourceSha256": "c242d37ba5d86b020653ff92dd2b5add99c955c50d08e21af39b3ae335ba8bd0",
+      "sha256": "543398f117874ef9cfb260e59cca61a30d1231468e3dfb89ecbed30d974884c1"
+    },
+    {
+      "source": "environment/elves/dobby/walk-1.png",
+      "file": "runtime-webp/environment/elves/dobby/walk-1.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 851,
+      "bytes": 522,
+      "sourceSha256": "8a290c6222454652d681754325ce80d40f7f29f8b3bb5a249f94ac5fa30426af",
+      "sha256": "7bb0dc7f56bf2c162dd8f30276c4c008f86ac352e761a36df13c3b1fa15fdcd9"
+    },
+    {
+      "source": "environment/elves/dobby/walk-2.png",
+      "file": "runtime-webp/environment/elves/dobby/walk-2.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 842,
+      "bytes": 514,
+      "sourceSha256": "15cac75e6f34b4793c0a172557cef25b2f85e31b6662173b68a35d1d9b6efb04",
+      "sha256": "1e633d7877de7d5cecdffde7251f36fb0277137c683aae859f7dea65f6b77906"
+    },
+    {
+      "source": "environment/elves/dobby/water.png",
+      "file": "runtime-webp/environment/elves/dobby/water.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1007,
+      "bytes": 608,
+      "sourceSha256": "18a2d739e677733ba65e0c528adc2e7cf6cc70910b7201ac18ed6c1dc81234b2",
+      "sha256": "758bb61811cce92d9e7b83a4857a914ce64e0726925af89c10ba34f1bbf4c7d3"
+    },
+    {
       "source": "environment/fire/fire-banner.png",
       "file": "runtime-webp/environment/fire/fire-banner.webp",
       "width": 360,
@@ -11395,11 +11455,11 @@
     }
   ],
   "totals": {
-    "converted": 1133,
+    "converted": 1139,
     "existingWebp": 8,
-    "originalBytes": 4285860,
-    "webpBytes": 2870676,
-    "savedBytes": 1415184,
-    "savedPercent": 33.02
+    "originalBytes": 4291330,
+    "webpBytes": 2873986,
+    "savedBytes": 1417344,
+    "savedPercent": 33.03
   }
 }

@@ -17,6 +17,7 @@ import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsT
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.96';
 import {decorObjects} from './decor-runtime.mjs?v=24.9.96';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.96';
+import {elfObjects,elfFiles} from './garden-elves.mjs?v=24.9.96';
 import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.96';
 import {drawEventOverlay} from './garden-events.mjs?v=24.9.96';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.96';
@@ -676,6 +677,7 @@ export async function createGarden(canvas, options = {}) {
     FARM_SIGN_ART.file,
     'world-v242/cottage-corner.png',
     ...[...decorAssets.values()].flatMap(decorFiles),
+    ...elfFiles(),
   ])].filter((file) => !deferredFiles.has(file));
   const authoredSlots = authoredLayoutScene(map);
   canvas.width = map.width;
@@ -1362,6 +1364,7 @@ export async function createGarden(canvas, options = {}) {
       context.restore();
       return;
     }
+    if (object.kind === 'elf') { drawAsset(object.asset, object.xy[0], object.xy[1], null, null, object.flip); return; }
     if (object.kind === 'wizard-scenery') {
       const assetId = object.id === 'gardener'
         ? 'gardener_friend'
@@ -1603,7 +1606,7 @@ export async function createGarden(canvas, options = {}) {
           : w
       ))
       : [];
-    const objects = [...boundaryFence, ...wizList, ...storeDecorationObjects];
+    const objects = [...boundaryFence, ...wizList, ...(propsVisible ? elfObjects(iso, clock) : []), ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {
         // Legacy edge-tree anchors straddled the fence; the bounded forest layers own trees now.
