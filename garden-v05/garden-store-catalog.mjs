@@ -3,7 +3,15 @@ import {EVENT_PRODUCTS,FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-produ
 import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.96";
 import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.96";
 import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=24.9.96";
-export const CATALOG_VERSION="garden-2026-10-24-halloween-approved";
+export const CATALOG_VERSION="garden-2026-11-04-prices-25";
+// Big update 25.0 §3 (owner 04/11/2026): prices below are the 24.x base; the store sells at base × min(8, 3 + level / 50),
+// festival goods × 4, rounded to 1 G under 100, 10 G under 1,000, else 100 G. Seeds and water up to level 24 keep their
+// price; event gifts are never sold. Same rule as HPVN functions/games/garden-wallet-catalog.js storePrice.
+export const storePrice=item=>{
+ if(item.reward||((item.kind==="seed"||item.kind==="water")&&item.level<=24))return item;
+ const raw=item.collection==="festival"?item.price*4:item.price*Math.min(400,150+item.level)/50,step=raw<100?1:raw<1000?10:100;
+ return Object.freeze({...item,price:Math.round(raw/step)*step});
+};
 export const STORE_CATALOG=Object.freeze([
   {
     "id": "seed_pumpkin",
@@ -686,7 +694,7 @@ export const STORE_CATALOG=Object.freeze([
     "dailyLimit": 1,
     "description": "Đồ trang trí vườn · sở hữu một lần · không tăng XP."
   }
-].map(Object.freeze).concat(PREMIUM_PRODUCTS,SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS,EVENT_PRODUCTS));
+].map(Object.freeze).concat(PREMIUM_PRODUCTS,SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS,EVENT_PRODUCTS).map(storePrice));
 // A seasonal item (`season`: festival id) is on sale only while that festival runs, at any level (server garden-wallet-catalog inSeason).
 export const inSeason=(item,dayKey=vnDayKey(),nowMs=Date.now())=>!item.season||festivalStatus(dayKey,'',nowMs).active?.id===item.season;
 // The first day (YYYY-MM-DD) a seasonal item goes on sale again.

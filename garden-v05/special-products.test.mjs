@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {SPECIAL_PRODUCTS, SPECIAL_PRICES_APPROVED} from './special-products.mjs';
-import {STORE_CATALOG, unlockedCatalog} from './garden-store-catalog.mjs';
+import {STORE_CATALOG, storePrice, unlockedCatalog} from './garden-store-catalog.mjs';
 
 const runtime = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json', import.meta.url)));
 const source = JSON.parse(fs.readFileSync(new URL('./special-products-assets/manifest.json', import.meta.url)));
@@ -43,7 +43,7 @@ test('special runtime art resolves to native images or verified flow atlases, ne
 test('special products are decorations only, one each, in their own store group, priced high and not yet approved', () => {
   assert.equal(SPECIAL_PRICES_APPROVED, false);
   for (const item of SPECIAL_PRODUCTS) {
-    assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), item);
+    assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), storePrice(item));
     assert.equal(item.kind, 'decoration');
     assert.equal(item.collection, 'special');
     assert.deepEqual([item.quantity, item.dailyLimit], [1, 1]);
@@ -52,9 +52,9 @@ test('special products are decorations only, one each, in their own store group,
     assert.match(item.description, /chỉ để trang trí/);
     for (const key of ['xp', 'reward', 'yield', 'galleonsBonus']) assert.equal(item[key], undefined);
   }
-  // The six older store decorations are unchanged and still sold below every special product.
+  // The six older store decorations at their 25.0 prices (§3), still sold below every special product.
   const older = STORE_CATALOG.filter(item => item.kind === 'decoration' && !item.collection);
-  assert.deepEqual(older.map(item => [item.id, item.price]), [['decor_pumpkin_lantern', 80], ['decor_broom_rack', 120], ['decor_cauldron', 180], ['decor_mandrake_planter', 240], ['decor_floating_candles', 360], ['decor_vine_arch', 600]]);
+  assert.deepEqual(older.map(item => [item.id, item.price]), [['decor_pumpkin_lantern', 240], ['decor_broom_rack', 370], ['decor_cauldron', 560], ['decor_mandrake_planter', 770], ['decor_floating_candles', 1200], ['decor_vine_arch', 2100]]);
 });
 
 test('Halloween pieces sell only during the Halloween festival, to every level, priced above the regular ones', () => {
@@ -96,7 +96,7 @@ test('Halloween festival pieces: 30 distinct two-view sprites, existing five pri
   assert.deepEqual(sprites.map(i => i.id).sort(), active);
   for (const item of FESTIVAL_PRODUCTS) {
     const sprite = sprites.find(x => x.id === item.id);
-    assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), item);
+    assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), storePrice(item));
     assert.deepEqual([item.season, item.level, item.kind, item.quantity], ['event_halloween', 1, 'decoration', 1]);
     assert.notEqual(sprite.rightFile, sprite.file);
     for (const file of [sprite.file, sprite.rightFile, ...sprite.frames, ...sprite.rightFrames]) assert.ok(fs.existsSync(new URL(`./${file}`, import.meta.url)), file);
