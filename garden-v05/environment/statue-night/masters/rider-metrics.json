@@ -1,0 +1,372 @@
+[
+  {
+    "file": "ev_dobby_spring_rider-n0.png",
+    "bytes": 6079,
+    "original": [
+      17,
+      10,
+      111,
+      159
+    ],
+    "body": [
+      17,
+      8,
+      111,
+      159
+    ],
+    "ink": [
+      9,
+      1,
+      118,
+      159
+    ],
+    "uncovered": 0,
+    "colours": [
+      "#142620",
+      "#231F2E",
+      "#24483F",
+      "#3E3B70",
+      "#3F6A45",
+      "#41465C",
+      "#4A3042",
+      "#4A3C2C",
+      "#5D6046",
+      "#687486",
+      "#6961A6",
+      "#70A8B6",
+      "#735044",
+      "#777044",
+      "#8B4A3F",
+      "#A57554",
+      "#A6B1AE",
+      "#B49A66",
+      "#B7DEE0",
+      "#C75B4B",
+      "#C97952",
+      "#D6D8BF",
+      "#E7AE73",
+      "#E8F0ED",
+      "#ED8A45",
+      "#F5D69A",
+      "#FFC36B"
+    ],
+    "coverRepairs": 173,
+    "verdict": "PASS",
+    "checks": {
+      "cover": 0,
+      "palette": 0,
+      "margin": 0,
+      "poolOutside": 0,
+      "alpha": "0/255",
+      "dimensions": "128x176",
+      "fixedGeometry": true
+    }
+  },
+  {
+    "file": "ev_dobby_spring_rider-n1.png",
+    "bytes": 5847,
+    "original": [
+      17,
+      10,
+      111,
+      159
+    ],
+    "body": [
+      17,
+      8,
+      111,
+      159
+    ],
+    "ink": [
+      9,
+      1,
+      118,
+      159
+    ],
+    "uncovered": 0,
+    "colours": [
+      "#142620",
+      "#231F2E",
+      "#24483F",
+      "#3E3B70",
+      "#3F6A45",
+      "#41465C",
+      "#4A3042",
+      "#4A3C2C",
+      "#5D6046",
+      "#687486",
+      "#6961A6",
+      "#70A8B6",
+      "#735044",
+      "#777044",
+      "#8B4A3F",
+      "#A57554",
+      "#B49A66",
+      "#C75B4B",
+      "#C97952",
+      "#D6D8BF",
+      "#E7AE73",
+      "#E8F0ED",
+      "#ED8A45",
+      "#F5D69A",
+      "#FFC36B"
+    ],
+    "coverRepairs": 173,
+    "verdict": "PASS",
+    "checks": {
+      "cover": 0,
+      "palette": 0,
+      "margin": 0,
+      "poolOutside": 0,
+      "alpha": "0/255",
+      "dimensions": "128x176",
+      "fixedGeometry": true
+    }
+  },
+  {
+    "file": "ev_dobby_spring_rider-n2.png",
+    "bytes": 5983,
+    "original": [
+      17,
+      10,
+      111,
+      159
+    ],
+    "body": [
+      17,
+      8,
+      111,
+      159
+    ],
+    "ink": [
+      9,
+      1,
+      118,
+      159
+    ],
+    "uncovered": 0,
+    "colours": [
+      "#142620",
+      "#231F2E",
+      "#24483F",
+      "#3E3B70",
+      "#3F6A45",
+      "#41465C",
+      "#4A3042",
+      "#4A3C2C",
+      "#5D6046",
+      "#687486",
+      "#6961A6",
+      "#70A8B6",
+      "#735044",
+      "#777044",
+      "#8B4A3F",
+      "#A57554",
+      "#A6B1AE",
+      "#B49A66",
+      "#C75B4B",
+      "#C97952",
+      "#D6D8BF",
+      "#E7AE73",
+      "#ED8A45",
+      "#F5D69A",
+      "#FFC36B"
+    ],
+    "coverRepairs": 173,
+    "verdict": "PASS",
+    "checks": {
+      "cover": 0,
+      "palette": 0,
+      "margin": 0,
+      "poolOutside": 0,
+      "alpha": "0/255",
+      "dimensions": "128x176",
+      "fixedGeometry": true
+    }
+  },
+  {
+    "file": "ev_dobby_spring_rider_right-n0.png",
+    "bytes": 6155,
+    "original": [
+      18,
+      10,
+      110,
+      159
+    ],
+    "body": [
+      17,
+      9,
+      110,
+      159
+    ],
+    "ink": [
+      9,
+      1,
+      118,
+      160
+    ],
+    "uncovered": 0,
+    "colours": [
+      "#142620",
+      "#231F2E",
+      "#24483F",
+      "#3E3B70",
+      "#3F6A45",
+      "#41465C",
+      "#4A3042",
+      "#4A3C2C",
+      "#5D6046",
+      "#687486",
+      "#6961A6",
+      "#70A8B6",
+      "#735044",
+      "#777044",
+      "#8B4A3F",
+      "#A57554",
+      "#A6B1AE",
+      "#B49A66",
+      "#B7DEE0",
+      "#C75B4B",
+      "#C97952",
+      "#D6D8BF",
+      "#E7AE73",
+      "#E8F0ED",
+      "#ED8A45",
+      "#F5D69A",
+      "#FFC36B"
+    ],
+    "coverRepairs": 193,
+    "verdict": "PASS",
+    "checks": {
+      "cover": 0,
+      "palette": 0,
+      "margin": 0,
+      "poolOutside": 0,
+      "alpha": "0/255",
+      "dimensions": "128x176",
+      "fixedGeometry": true
+    }
+  },
+  {
+    "file": "ev_dobby_spring_rider_right-n1.png",
+    "bytes": 5957,
+    "original": [
+      18,
+      10,
+      110,
+      159
+    ],
+    "body": [
+      17,
+      9,
+      110,
+      159
+    ],
+    "ink": [
+      9,
+      1,
+      118,
+      160
+    ],
+    "uncovered": 0,
+    "colours": [
+      "#142620",
+      "#231F2E",
+      "#24483F",
+      "#3E3B70",
+      "#3F6A45",
+      "#41465C",
+      "#4A3042",
+      "#4A3C2C",
+      "#5D6046",
+      "#687486",
+      "#6961A6",
+      "#70A8B6",
+      "#735044",
+      "#777044",
+      "#8B4A3F",
+      "#A57554",
+      "#B49A66",
+      "#C75B4B",
+      "#C97952",
+      "#D6D8BF",
+      "#E7AE73",
+      "#E8F0ED",
+      "#ED8A45",
+      "#F5D69A",
+      "#FFC36B"
+    ],
+    "coverRepairs": 193,
+    "verdict": "PASS",
+    "checks": {
+      "cover": 0,
+      "palette": 0,
+      "margin": 0,
+      "poolOutside": 0,
+      "alpha": "0/255",
+      "dimensions": "128x176",
+      "fixedGeometry": true
+    }
+  },
+  {
+    "file": "ev_dobby_spring_rider_right-n2.png",
+    "bytes": 6056,
+    "original": [
+      18,
+      10,
+      110,
+      159
+    ],
+    "body": [
+      17,
+      9,
+      110,
+      159
+    ],
+    "ink": [
+      9,
+      1,
+      118,
+      160
+    ],
+    "uncovered": 0,
+    "colours": [
+      "#142620",
+      "#231F2E",
+      "#24483F",
+      "#3E3B70",
+      "#3F6A45",
+      "#41465C",
+      "#4A3042",
+      "#4A3C2C",
+      "#5D6046",
+      "#687486",
+      "#6961A6",
+      "#70A8B6",
+      "#735044",
+      "#777044",
+      "#8B4A3F",
+      "#A57554",
+      "#A6B1AE",
+      "#B49A66",
+      "#C75B4B",
+      "#C97952",
+      "#D6D8BF",
+      "#E7AE73",
+      "#ED8A45",
+      "#F5D69A",
+      "#FFC36B"
+    ],
+    "coverRepairs": 193,
+    "verdict": "PASS",
+    "checks": {
+      "cover": 0,
+      "palette": 0,
+      "margin": 0,
+      "poolOutside": 0,
+      "alpha": "0/255",
+      "dimensions": "128x176",
+      "fixedGeometry": true
+    }
+  }
+]

@@ -198,3 +198,16 @@ export function drawWinterLayer(ctx, {width, height, lanterns = [], mode = 'day'
   for (const light of lanterns) drawLantern(ctx, light.x, light.y, mode !== 'day');
   drawWinterFog(ctx, width, height, {clock, mode});
 }
+
+// 25.0: elf statues glow at dusk and night. Codex drew each statue whole at night (halo behind the head lighting it)
+// on the day sprite's canvas and pivot, covering every day pixel; the renderer draws it over the statue after the
+// night tint and loads it only once it is dark (deferred files).
+const STATUE_GLOW_IDS = ['ev_dark_dobby_red', 'ev_dobby_spring_rider'];
+const glowFile = (id, right, n) => `environment/statue-night/${id}${right ? '_right' : ''}-n${n}.png`;
+export const STATUE_GLOW_FILES = Object.freeze(STATUE_GLOW_IDS.flatMap((id) => [0, 1, 2].flatMap((n) => [glowFile(id, false, n), glowFile(id, true, n)])));
+// Slow breath n0 n1 n0 n2, each statue on its own beat; reduced motion (clock 0) holds n0.
+export function statueGlow(object, clock = 0) {
+  if (object?.kind !== 'store-decor' || object.preview || !STATUE_GLOW_IDS.includes(object.id)) return null;
+  const n = clock > 0 ? [0, 1, 0, 2][Math.floor(clock / 600 + (object.slot ?? 0)) % 4] : 0;
+  return {file: glowFile(object.id, object.facing === 'right', n), pivotX: object.asset.pivotX, pivotY: object.asset.pivotY, noSnowCap: true};
+}

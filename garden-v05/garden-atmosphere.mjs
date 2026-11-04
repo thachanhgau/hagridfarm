@@ -102,6 +102,8 @@ const STORE_DECOR_LIGHTS = Object.freeze({
   decor_cauldron: { radius: 52, offsetY: -26, color: [168, 228, 210] },
   decor_vine_arch: { radius: 48, offsetY: -36, color: [210, 232, 142] },
   decor_mandrake_planter: { radius: 38, offsetY: -22, color: [190, 218, 128] },
+  ev_dark_dobby_red: { radius: 84, offsetY: -56, color: [255, 195, 107] },
+  ev_dobby_spring_rider: { radius: 84, offsetY: -56, color: [183, 222, 224] },
 });
 
 export function collectLightSources(objects = []) {

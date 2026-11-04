@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "12e4b45b1fd4",
+  "revision": "c8168fe979a4",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11772,6 +11772,126 @@
       "sha256": "bfec26aa1294fa91c462d5dddc5562b43cd24f7c2e474e44fd2036ede5b3476b"
     },
     {
+      "source": "environment/statue-night/ev_dark_dobby_red_right-n0.png",
+      "file": "runtime-webp/environment/statue-night/ev_dark_dobby_red_right-n0.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4310,
+      "bytes": 2682,
+      "sourceSha256": "adda16d3786f8568700b07d894950c4ed943323a559faee0a6d43f41383d6d08",
+      "sha256": "ed0a9c875e43f27b7f07606c2522f93ccde306548abfa4e81c3840e81c8600aa"
+    },
+    {
+      "source": "environment/statue-night/ev_dark_dobby_red_right-n1.png",
+      "file": "runtime-webp/environment/statue-night/ev_dark_dobby_red_right-n1.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4263,
+      "bytes": 2806,
+      "sourceSha256": "c34d46b52ac3cf825c8a0ce540c3977afe19f9cd93a7cc6ecac1e697b577dc94",
+      "sha256": "b7d47eac03f46df8bc3f7ada89035b0cdac832b01646ef9be0dc3aa262a3b4b9"
+    },
+    {
+      "source": "environment/statue-night/ev_dark_dobby_red_right-n2.png",
+      "file": "runtime-webp/environment/statue-night/ev_dark_dobby_red_right-n2.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4291,
+      "bytes": 2822,
+      "sourceSha256": "5957ae773a93783a51ad69265c62de046852ade474af4eaf6930216dbfd46023",
+      "sha256": "f1bf154bb63f49f625e7fbb48d70516cbb785be007fb9384739886f29cd8af28"
+    },
+    {
+      "source": "environment/statue-night/ev_dark_dobby_red-n0.png",
+      "file": "runtime-webp/environment/statue-night/ev_dark_dobby_red-n0.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4351,
+      "bytes": 2746,
+      "sourceSha256": "8ed43685f836f282c413c9d221af4703ec3cc7afdbab1eefa3c3cdaf06df67ef",
+      "sha256": "86fabc3cf7a17ddb59b308e1f814f36accd751d3739f2c9d0ab6eae6989fba9a"
+    },
+    {
+      "source": "environment/statue-night/ev_dark_dobby_red-n1.png",
+      "file": "runtime-webp/environment/statue-night/ev_dark_dobby_red-n1.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4277,
+      "bytes": 2842,
+      "sourceSha256": "6675b0ecaab2d9ac85a9bbe95bd045c1dc95d3645861f208481704bd6630d9cb",
+      "sha256": "7d8ff25fe62226e56dbdf19482a347efdc9b9f19a963fbfa80f67fea62155f6e"
+    },
+    {
+      "source": "environment/statue-night/ev_dark_dobby_red-n2.png",
+      "file": "runtime-webp/environment/statue-night/ev_dark_dobby_red-n2.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 4321,
+      "bytes": 2880,
+      "sourceSha256": "615ed73785489ad6a9e1870e57d2415202b9b2fd7d3251644c14a83f837418f4",
+      "sha256": "e884a1ee4cb4371efc68e7a6e8ee1f54a9b6cccc4db35f453d8b00ebdc77cd34"
+    },
+    {
+      "source": "environment/statue-night/ev_dobby_spring_rider_right-n0.png",
+      "file": "runtime-webp/environment/statue-night/ev_dobby_spring_rider_right-n0.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 6155,
+      "bytes": 4138,
+      "sourceSha256": "3476834f0cf72dadd728fe061f5138f0713da33c2dfb1ef705566df8b4500e90",
+      "sha256": "00d7ff1046a1ff53fc37e66dfcd79e25fc611d66091af8aec543f18c197dfbe9"
+    },
+    {
+      "source": "environment/statue-night/ev_dobby_spring_rider_right-n1.png",
+      "file": "runtime-webp/environment/statue-night/ev_dobby_spring_rider_right-n1.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 5957,
+      "bytes": 3940,
+      "sourceSha256": "4f838a7709a4560533db3d114f5ee869d546bfb6d963e848d516f9fd5177c0ce",
+      "sha256": "48b45cf029841c479dfc1dd13abdab489bee7922aacf87bf299e297197b608f8"
+    },
+    {
+      "source": "environment/statue-night/ev_dobby_spring_rider_right-n2.png",
+      "file": "runtime-webp/environment/statue-night/ev_dobby_spring_rider_right-n2.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 6056,
+      "bytes": 4044,
+      "sourceSha256": "45e05a7f2aa03dee43ec5bcd31fcd593023c16780589c834bd574663123337ed",
+      "sha256": "02f09c39feebffbbdbb869fa63c744e8838fce49847e91b17da00816631b1c48"
+    },
+    {
+      "source": "environment/statue-night/ev_dobby_spring_rider-n0.png",
+      "file": "runtime-webp/environment/statue-night/ev_dobby_spring_rider-n0.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 6079,
+      "bytes": 4042,
+      "sourceSha256": "4e71cfd0659b8986c7c5ec95c649fa40c3fef509b394a938c4cc141359de5986",
+      "sha256": "da76160a765f14a19db20f707291b023e9fc0197f33d1def1fc0a453da54f782"
+    },
+    {
+      "source": "environment/statue-night/ev_dobby_spring_rider-n1.png",
+      "file": "runtime-webp/environment/statue-night/ev_dobby_spring_rider-n1.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 5847,
+      "bytes": 3872,
+      "sourceSha256": "44513ee23d16958e3b92398acd12b657c849a565606c3f84447bd32bba8cb2b5",
+      "sha256": "c1d4cc77fb0d97da4999ca33f6beee1925febc1b217b0153dce44e8859a4fee9"
+    },
+    {
+      "source": "environment/statue-night/ev_dobby_spring_rider-n2.png",
+      "file": "runtime-webp/environment/statue-night/ev_dobby_spring_rider-n2.webp",
+      "width": 128,
+      "height": 176,
+      "sourceBytes": 5983,
+      "bytes": 3944,
+      "sourceSha256": "b6a6499722d49ffd34d76431c5175382dc6fa707ba0f7276b9b2b83bf88cc432",
+      "sha256": "2518ab3f13cb38814ea258b85156627c8b5ab1897caaf948802134140789ce4c"
+    },
+    {
       "source": "environment/visit/floo-hearth.png",
       "file": "runtime-webp/environment/visit/floo-hearth.webp",
       "width": 360,
@@ -11935,11 +12055,11 @@
     }
   ],
   "totals": {
-    "converted": 1187,
+    "converted": 1199,
     "existingWebp": 8,
-    "originalBytes": 4393093,
-    "webpBytes": 2936318,
-    "savedBytes": 1456775,
-    "savedPercent": 33.16
+    "originalBytes": 4454983,
+    "webpBytes": 2977076,
+    "savedBytes": 1477907,
+    "savedPercent": 33.17
   }
 }
