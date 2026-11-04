@@ -745,6 +745,7 @@ if(qa)window.__HAGRID_GARDEN_QA__={
  getWorldSnapshot:()=>({order:renderer?.order(),loaded:renderer?.loaded,missing:renderer?.missing,stage:renderer?.growthStage(),animations:renderer?.animations()}),
  getSnapshot:()=>({clock:lastClock,loaded,walletReady,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,activeTourId:activeTourSnapshot?.tour?.id||null,soundEnabled:audio.enabled,supplies:currentSupplies(),storageKey:gardenStorage.storageKey,state:{...state,decorations:currentDecorations(),decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations},creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities()}}),
  openDecorPlacement:id=>{const item=decorAssets.get(id);if(item)openDecoration(item);},
+ openElfCare,
  openVisualLayout,
  openPostcard,
  openAlmanac:()=>panels.show('almanac'),
