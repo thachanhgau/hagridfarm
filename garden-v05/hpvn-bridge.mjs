@@ -26,11 +26,18 @@ function normalizeFacingMap(raw) {
   return result;
 }
 
+// Rare coats (25.0 S3): species → coat id, device-only like the facing.
+function normalizeCoatMap(raw) {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
+  return Object.fromEntries(Object.entries(raw).filter(([key, val]) => key && ['winter', 'noel', 'silver'].includes(val)));
+}
+
 export function loadVisualPrefs(storage = getGardenStorage()) {
   const defaults = {
     storeRotations: {},
     earnedRotations: {},
     creatureFacings: {},
+    creatureCoats: {},
     atmosphereMode: 'day',
     weatherMode: 'clear',
     eventMode: 'event_halloween',
@@ -58,6 +65,7 @@ export function loadVisualPrefs(storage = getGardenStorage()) {
       storeRotations: { ...defaults.storeRotations, ...normalizeFacingMap(parsed.storeRotations) },
       earnedRotations: normalizeFacingMap(parsed.earnedRotations),
       creatureFacings: normalizeFacingMap(parsed.creatureFacings),
+      creatureCoats: normalizeCoatMap(parsed.creatureCoats),
       atmosphereMode: normalizeAtmosphereMode(parsed.atmosphereMode),
       weatherMode: normalizeWeatherMode(parsed.weatherMode),
       eventMode: normalizeEventMode(parsed.eventMode),
@@ -76,6 +84,7 @@ export function saveVisualPrefs(prefs = {}, storage = getGardenStorage()) {
     storeRotations: normalizeFacingMap(prefs.storeRotations),
     earnedRotations: normalizeFacingMap(prefs.earnedRotations),
     creatureFacings: normalizeFacingMap(prefs.creatureFacings),
+    creatureCoats: normalizeCoatMap(prefs.creatureCoats),
     atmosphereMode: normalizeAtmosphereMode(prefs.atmosphereMode),
     weatherMode: normalizeWeatherMode(prefs.weatherMode),
     eventMode: normalizeEventMode(prefs.eventMode),

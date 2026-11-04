@@ -23,7 +23,7 @@ export function roofSnowCoverage(kind,x,y,width,height){
  return insidePolygon(x,y,[[81,2],[162,72],[162,83],[94,111],[50,80],[16,100],[2,85],[2,74]]);
 }
 // All variants derive from immutable native pixels, once per weather change.
-export function seasonPixel(r,g,b,x,y,width,height,kind,weather){
+export function seasonPixel(r,g,b,x,y,width,height,kind,weather,covered=null){
  const green=g>r*.97&&g>b*1.08,lum=(r+g+b)/3;
  const patch=((Math.floor(x/5)*13+Math.floor(y/3)*7)%17)/17;
  if(weather==='snow'){
@@ -36,6 +36,12 @@ export function seasonPixel(r,g,b,x,y,width,height,kind,weather){
    return [r,g,b];
   }
   if(kind==='water'&&b>r*1.1&&lum>30)return [175+Math.min(50,Math.round(lum/4)),211,224];
+  // 25.0 S3: thin winter snow lies in patches (covered, from garden-winter.mjs) with a shaded lip and lit rim.
+  if(green&&kind==='ground'&&covered){
+   if(!covered(x,y))return [Math.round(r*.7),Math.round(g*.78),Math.round(b*.95+12)];
+   if(!covered(x,y+2))return [166,177,174];
+   if(!covered(x,y-2))return [232,240,237];
+  }
   if(green&&(kind==='ground'||kind==='tree'&&lum>35&&patch>.15)){
    const shade=Math.min(3,Math.floor(lum/45));
    return [[135,168,180],[177,202,211],[216,231,234],[242,246,235]][shade];
@@ -49,12 +55,14 @@ export function seasonPixel(r,g,b,x,y,width,height,kind,weather){
  if(weather==='rain')return [Math.round(r*.71),Math.round(g*.78),Math.round(b*.85+5)];
  return [r,g,b];
 }
-export function weatherizeCanvas(canvas,kind,weather){
+export function weatherizeCanvas(canvas,kind,weather,depth=1,kit=null){
  if(weather==='clear')return canvas;
  const c=canvas.getContext('2d'),im=c.getImageData(0,0,canvas.width,canvas.height),d=im.data;
+ if(kind==='cap'){if(weather==='snow'&&kit)c.putImageData(kit.snowCapImageData(im),0,0);return canvas;}
+ const covered=depth<1&&kit?(x,y)=>kit.snowCovered(x,y,depth):null;
  for(let y=0;y<im.height;y++)for(let x=0;x<im.width;x++){
   const i=(y*im.width+x)*4;if(!d[i+3])continue;
-  const rgb=seasonPixel(d[i],d[i+1],d[i+2],x,y,im.width,im.height,kind,weather);
+  const rgb=seasonPixel(d[i],d[i+1],d[i+2],x,y,im.width,im.height,kind,weather,covered);
   d[i]=rgb[0];d[i+1]=rgb[1];d[i+2]=rgb[2];
  }
  c.putImageData(im,0,0);return canvas;

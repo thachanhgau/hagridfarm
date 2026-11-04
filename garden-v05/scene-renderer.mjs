@@ -718,13 +718,20 @@ export async function createGarden(canvas, options = {}) {
   const terrainCaches = new Map();
   const plotBorderLayers = new Map();
   const penHabitatLayers = new Map();
-  let activeWeather='clear',activeEvent='none';
-  const seasonalImages=new Map();
+  // 25.0 S3: kit = garden-winter.mjs from options.winterKit (import() after the first frame).
+  let activeWeather='clear',activeEvent='none',activeSnowDepth=1,winterArt=false,activeWinter=null,kit=null;
+  const seasonalImages=new Map(),coatImages=new Map();
+  function coatImage(file,coat){
+    const key=coat+':'+file,source=imageFor(file);
+    if(!coatImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);coatImages.set(key,kit.recolorCanvas(copy,coat));}
+    return coatImages.get(key)??null;
+  }
+  const winterFile=file=>winterArt&&images.has(kit.WINTER_ART[file])?kit.WINTER_ART[file]:null;
   function seasonalImage(file,kind){
     const source=imageFor(file);if(activeWeather==='clear'||!source)return source;
     const key=kind+':'+file;if(seasonalImages.has(key))return seasonalImages.get(key);
     const result=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height),brush=result.getContext('2d',{willReadFrequently:true});
-    brush.imageSmoothingEnabled=false;brush.drawImage(source,0,0);weatherizeCanvas(result,kind,activeWeather);seasonalImages.set(key,result);return result;
+    brush.imageSmoothingEnabled=false;brush.drawImage(source,0,0);weatherizeCanvas(result,kind,activeWeather,1,kit);seasonalImages.set(key,result);return result;
   }
   let terrainStageId = null;
   let terrainLayoutKey = '';
@@ -885,18 +892,20 @@ export async function createGarden(canvas, options = {}) {
     });
   }
   publishBackdrop();
-  function prepareWeather(weather){
-    if(weather===activeWeather)return;
-    activeWeather=weather;seasonalImages.clear();terrainCaches.clear();
+  function prepareWeather(weather,depth=1,winter=false){
+    if(winter)for(const file of kit.WINTER_FILES)imageFor(file);
+    const art=winter&&kit.WINTER_FILES.every(file=>images.has(file));
+    if(weather===activeWeather&&depth===activeSnowDepth&&art===winterArt)return;
+    activeWeather=weather;activeSnowDepth=depth;winterArt=art;seasonalImages.clear();terrainCaches.clear();
     // Bound memory to the current season. Never retain four world-size caches.
     for(const asset of FOREST_ASSETS){
-      const source=seasonalImage(asset.file,'tree'),copy=forestImages.get(asset.id),brush=copy.getContext('2d');
+      const source=winterFile(asset.file)?imageFor(winterFile(asset.file)):seasonalImage(asset.file,'tree'),copy=forestImages.get(asset.id),brush=copy.getContext('2d');
       brush.clearRect(0,0,copy.width,copy.height);brush.drawImage(source,0,0);
       if(weather==='clear'){brush.globalCompositeOperation='source-atop';brush.fillStyle='rgba(9,29,31,.24)';brush.fillRect(0,0,copy.width,copy.height);brush.globalCompositeOperation='source-over';}
     }
     for(const tree of wallpaper)tree.img=forestImages.get(tree.id);
     back.clearRect(0,0,map.width,map.height);back.drawImage(scenicBackdrop,0,0);
-    weatherizeCanvas(forestBackdrop,'ground',weather);
+    weatherizeCanvas(forestBackdrop,'ground',weather,depth,kit);
     westBack.clearRect(0,0,map.width,map.height);westBack.drawImage(forestBackdrop,0,0);
     drawExitTrail(westBack,[[map.width+32,seamY],...backgroundTrail],{taperEnd:true});
     for(const tree of wallpaper)if(forestRectOutsideBoundary(tree.rect,map,backdropBoundary)){
@@ -917,7 +926,9 @@ export async function createGarden(canvas, options = {}) {
   function drawAssetTo(target, asset, x, y, breeze = null, actorMotion = null, flipX = false) {
     if (!asset) return;
     const file = frameFile(asset);
-    const image = asset.seasonalKind ? seasonalImage(file,asset.seasonalKind) : imageFor(file);
+    // Snow caps every sprite but living things (noSnowCap).
+    const kind = asset.seasonalKind || (activeWeather === 'snow' && !asset.noSnowCap ? 'cap' : null);
+    const image = asset.coat ? coatImage(file, asset.coat) : kind ? seasonalImage(file,kind) : imageFor(file);
     if (image) {
       const left = Math.round(x - finite(asset.pivotX, 0));
       const top = Math.round(y - finite(asset.pivotY, 0));
@@ -1025,7 +1036,7 @@ export async function createGarden(canvas, options = {}) {
         }
       });
     });
-    weatherizeCanvas(cachedCanvas,'ground',activeWeather);
+    weatherizeCanvas(cachedCanvas,'ground',activeWeather,activeSnowDepth,kit);
     if(withForest)drawCottageGround(cachedContext,{iso,weatherMode:activeWeather});
     if (withForest) {
       // Existing perimeter placements and the stage's unopened grove both
@@ -1340,6 +1351,8 @@ export async function createGarden(canvas, options = {}) {
     }
   }
 
+  const breathOf=(...a)=>activeWinter&&kit.drawActorBreath(context,...a);
+
   function drawObject(object, logicalNow, clock = 0) {
     if(object.kind==='cottage-corner'){
       const img=imageFor('world-v242/cottage-corner.png');
@@ -1367,7 +1380,11 @@ export async function createGarden(canvas, options = {}) {
       context.restore();
       return;
     }
-    if (object.kind === 'elf') { drawAsset(object.asset, object.xy[0], object.xy[1], null, null, object.flip); return; }
+    if (object.kind === 'elf') {
+      drawAsset({...object.asset, noSnowCap: true}, object.xy[0], object.xy[1], null, null, object.flip);
+      breathOf(object.asset, object.xy, object.flip, object.flip, object.id, clock);
+      return;
+    }
     if (object.kind === 'wizard-scenery') {
       const assetId = object.id === 'gardener'
         ? 'gardener_friend'
@@ -1386,8 +1403,9 @@ export async function createGarden(canvas, options = {}) {
           greet: false,
           reducedMotion: clock === 0,
         });
-        const activeAsset = {...asset,...(frameInfo.file?{file:frameInfo.file}:{}),...(frameInfo.atlasRect?{atlasRect:frameInfo.atlasRect}:{}),...(object.id==='greenhouse'?{seasonalKind:'greenhouse-roof'}:{})};
+        const activeAsset = {...asset,...(frameInfo.file?{file:frameInfo.file}:{}),...(frameInfo.atlasRect?{atlasRect:frameInfo.atlasRect}:{}),...(object.id==='greenhouse'?{seasonalKind:'greenhouse-roof'}:{}),...(object.id==='gardener'?{noSnowCap:true}:{})};
         drawAsset(activeAsset, object.xy[0], object.xy[1]);
+        if (object.id === 'gardener') breathOf(activeAsset, object.xy, false, false, 'hagrid', clock);
         if (greeting) label(context, '♥', object.xy[0], object.xy[1] - 85, '#f5d69a', 'bold 16px sans-serif');
         if (object.id === 'gardener' && object.speechText) {
           drawHagridSpeechBubble(context, object.xy[0], object.xy[1], object.speechText, {emphasized: greeting, scale: object.speechScale || 1, align: object.speechScale ? 'right' : 'center'});
@@ -1400,18 +1418,19 @@ export async function createGarden(canvas, options = {}) {
     if (object.kind === 'boundary-fence') { context.drawImage(object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock); return; }
     if (object.kind === 'decoration') {
       const asset = earnedDecorArt(object.id, object.facing);
-      const image = asset?.file ? imageFor(asset.file) : null;
+      const image = asset?.file ? (activeWeather === 'snow' ? seasonalImage(asset.file, 'cap') : imageFor(asset.file)) : null;
       drawDecoration(context, object, clock, {asset, image});
       return;
     }
     if (object.kind === 'keepsake') {
-      const asset=KEEPSAKE_ART[object.species],image=asset&&imageFor(asset.file);
+      const asset=KEEPSAKE_ART[object.species],image=asset&&(activeWeather==='snow'?seasonalImage(asset.file,'cap'):imageFor(asset.file));
       drawKeepsake(context,object,clock,{asset,image});
       return;
     }
     if (object.kind === 'asset') {
       drawAsset(object.asset, object.xy[0], object.xy[1] + (object.hop || 0), object.stage > 0 ? object.breeze : null, object.motion, object.facing === 'right'&&!object.authoredFacing);
-      if (object.type === 'prop' && object.id === 'hut') {drawHutMotion(context, object.xy[0], object.xy[1], clock);drawRoofWeather(context,object,activeWeather,clock);}
+      if (object.type === 'prop' && object.id === 'hut') {drawHutMotion(context, object.xy[0], object.xy[1], clock);if(!object.asset.winter)drawRoofWeather(context,object,activeWeather,clock);}
+      if (object.item?.kind === 'creature') breathOf(object.asset, [object.xy[0], object.xy[1] + (object.hop || 0)], object.facing === 'right' && !object.authoredFacing, object.facing === 'right', object.species, clock);
       if (object.item?.kind === 'crop') drawCropBreeze(context, object);
       if (object.item?.kind === 'creature' && object.motion?.sparkle) {
         drawPixelSparkle(context, object.xy[0] + (object.motion.swayX || 0) * 8, object.xy[1] - 42 + (object.motion.bobY || 0), '#f5d69a', 1);
@@ -1514,7 +1533,11 @@ export async function createGarden(canvas, options = {}) {
     const atmosphereMode = options.atmosphereMode || 'day';
     const weatherMode = options.weatherMode || 'clear';
     const eventMode = options.eventMode || 'none';
-    prepareWeather(weatherMode);syncBackdropLighting(atmosphereMode,weatherMode);activeEvent=eventMode;
+    // Winter: snow lies even under a clear sky; its scenery is requested only while winter is on.
+    if (options.winterKit && !kit) { kit = options.winterKit; for (const file of kit.WINTER_FILES) deferredFiles.add(file); }
+    activeWinter = kit && options.winter?.active ? options.winter : null;
+    const groundWeather = activeWinter && weatherMode === 'clear' ? 'snow' : weatherMode;
+    prepareWeather(groundWeather, activeWinter && groundWeather === 'snow' ? activeWinter.depth : 1, Boolean(activeWinter));syncBackdropLighting(atmosphereMode,weatherMode);activeEvent=eventMode;
     const creatureFacings = options.creatureFacings ?? state?.creatureFacings ?? {};
     const creatureAffinities = options.creatureAffinities ?? {};
     applyLayout(state?.layout);
@@ -1620,7 +1643,8 @@ export async function createGarden(canvas, options = {}) {
         const asset = props.get(prop.id);
         if (!asset) throw new Error(`Không có prop asset ${prop.id}.`);
         const xy = iso(...(defaultDecorSpot(options.decorations, 'scene:' + prop.id, options.previewDecoration) ?? [prop.col, prop.row]));
-        objects.push({kind: 'asset', type: 'prop', id: prop.id, species: prop.id, asset:{...asset,seasonalKind:prop.id==='hut'?'roof':['oak','pine'].includes(prop.id)?'tree':'water'}, xy});
+        const winterProp = winterFile(asset.file);
+        objects.push({kind: 'asset', type: 'prop', id: prop.id, species: prop.id, asset:winterProp?{...asset,file:winterProp,noSnowCap:true,winter:true}:{...asset,seasonalKind:prop.id==='hut'?'roof':['oak','pine'].includes(prop.id)?'tree':'water'}, xy});
       }
     }
 
@@ -1673,6 +1697,8 @@ export async function createGarden(canvas, options = {}) {
       const facing = creatureFacings[entry.species] === 'right' ? 'right' : 'default';
       const actor = actorObject(entry, spot[0], spot[1], logicalNow, clock, {creatureIndex: index, facing});
       actor.affinityLevel = Number(creatureAffinities[entry.species]) || 1;
+      const coat = options.creatureCoats?.[entry.species];
+      if (actor.asset) actor.asset = {...actor.asset, noSnowCap: true, ...(coat ? {coat} : {})};
       objects.push(actor);
     }
 
@@ -1711,15 +1737,18 @@ export async function createGarden(canvas, options = {}) {
     if (tutorialFocus && map.plots[tutorialFocus.plot]) drawTutorialFocus(context, plotCorners(map.plots[tutorialFocus.plot], map), clock);
     const sBounds = stageWorldBounds(map, currentStage);
     // Owner 27/10/2026: the four slanted sun shafts read as stray stripes over the garden; removed.
+    // Winter fence lanterns glow through the atmosphere overlay.
+    const lanterns = activeWinter && propsVisible ? kit.winterFenceLights(boundaryFence) : [];
     if (atmosphereMode !== 'day' || (weatherMode && weatherMode !== 'clear')) {
       drawAtmosphereOverlay(context, map.width, map.height, {
         mode: atmosphereMode,
         weatherMode,
         clock,
-        objects,
+        objects: lanterns.length ? [...objects, ...lanterns.map((light) => ({kind: 'winter-lantern', xy: [light.x, light.y], light}))] : objects,
         stageBounds: sBounds,
       });
     }
+    if (activeWinter) kit.drawWinterLayer(context, {width: map.width, height: map.height, lanterns, mode: atmosphereMode, clock});
     if (eventMode && eventMode !== 'none') {
       drawEventOverlay(context, map.width, map.height, {
         eventMode,

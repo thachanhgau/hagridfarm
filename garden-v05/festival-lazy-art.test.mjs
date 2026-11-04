@@ -14,7 +14,7 @@ const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.jso
 
 function recordingCanvas() {
   const requested = new Set();
-  const context = new Proxy({}, {get: (o, k) => k === 'measureText' ? () => ({width: 64}) : (o[k] ??= () => {})});
+  const context = new Proxy({}, {get: (o, k) => k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
   class RecordingImage {
     naturalWidth = 64; naturalHeight = 64;
     set src(value) { requested.add(value); queueMicrotask(() => this.onload?.()); }
@@ -67,4 +67,19 @@ test('25.0 budget: event pieces and Dobby\'s work poses load only when first dra
     decorations: {owned: [tent.id], placements: [tent.id], positions: {[tent.id]: [2.5, 26]}, rotations: {}},
   });
   assert.ok(urlsOf(tent).some(url => requested.has(url)), 'a placed Lều gia tinh loads');
+});
+
+test('25.0 S3 budget: winter scenery (lều tuyết, hồ băng, rừng đông) loads only while winter is on', async () => {
+  const winterKit = await import('./garden-winter.mjs'), {WINTER_FILES, winterSeason} = winterKit;
+  assert.equal(WINTER_FILES.length, 6);
+  for (const file of WINTER_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
+  const winterUrls = WINTER_FILES.map(runtimeImageUrl);
+  const {canvas, requested} = recordingCanvas();
+  const garden = await createGarden(canvas, {decorAssets: manifest.items});
+  for (const url of winterUrls) assert.ok(!requested.has(url), url + ' loaded before the first frame');
+  const state = E.testProfile(100, 1_700_000_000_000);
+  garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', weatherMode: 'snow', winterKit, winter: winterSeason(Date.parse('2026-11-30T12:00:00+07:00'))});
+  for (const url of winterUrls) assert.ok(!requested.has(url), url + ' loaded outside winter (snow chosen in November)');
+  garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', winterKit, winter: winterSeason(Date.parse('2026-12-01T12:00:00+07:00'))});
+  for (const url of winterUrls) assert.ok(requested.has(url), url + ' requested once winter starts');
 });

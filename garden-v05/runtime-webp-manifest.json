@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "4e47ca4dbbb5",
+  "revision": "e51abf94ec05",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11692,6 +11692,66 @@
       "sha256": "e6da9af0b1c6bf90f1198f7c76cafa410bcffdf36991d83eaf279c7ad00eec5b"
     },
     {
+      "source": "environment/winter/grove.png",
+      "file": "runtime-webp/environment/winter/grove.webp",
+      "width": 190,
+      "height": 136,
+      "sourceBytes": 5063,
+      "bytes": 3154,
+      "sourceSha256": "b53b0bcc1ffd4bdb4f03b7dd6f9472a4a67083dbc528ae55f89694ce00cbce7c",
+      "sha256": "62da308d6004df24bcea276a79da97ff165f8c6f564b7095e7aa0f7f3dc30198"
+    },
+    {
+      "source": "environment/winter/hut-snow.png",
+      "file": "runtime-webp/environment/winter/hut-snow.webp",
+      "width": 164,
+      "height": 184,
+      "sourceBytes": 8918,
+      "bytes": 5704,
+      "sourceSha256": "3a42e43c1daa4f2f7d5cc21da40dfe85f0a5f8ec8c8295618114e80ee9e96a88",
+      "sha256": "b54cee4b8a6c2f22af493b055db08139607789747acc5be4e09c9e4198069a99"
+    },
+    {
+      "source": "environment/winter/log.png",
+      "file": "runtime-webp/environment/winter/log.webp",
+      "width": 144,
+      "height": 88,
+      "sourceBytes": 2925,
+      "bytes": 2006,
+      "sourceSha256": "2f76f85270bb70b7a46090f60a5f5730c463da95170356c01caf13ea242ab2eb",
+      "sha256": "6c8008b6472f06e6a782db471a53685226c287cac72b4434feb23cd52bf179f0"
+    },
+    {
+      "source": "environment/winter/oak.png",
+      "file": "runtime-webp/environment/winter/oak.webp",
+      "width": 190,
+      "height": 176,
+      "sourceBytes": 5977,
+      "bytes": 3930,
+      "sourceSha256": "40b80e5cb5357db38bd52c8ffcb4847fc546809a86bbc0b8b91b05101d86a7fa",
+      "sha256": "c2459d8d29b8aa35439772ac4af7fe065d9d2eaa7d19c739b33550ff935392ae"
+    },
+    {
+      "source": "environment/winter/pine.png",
+      "file": "runtime-webp/environment/winter/pine.webp",
+      "width": 104,
+      "height": 196,
+      "sourceBytes": 5278,
+      "bytes": 3508,
+      "sourceSha256": "a990c2da14c06066eaf6ab6c207d5e01a49f358f7a82fab1e898640f9f2d1648",
+      "sha256": "776aebe048b5a6cc4142b3d2e8854213d7c9c01c195720c5dbca4e09a5f4ac06"
+    },
+    {
+      "source": "environment/winter/pond-ice.png",
+      "file": "runtime-webp/environment/winter/pond-ice.webp",
+      "width": 160,
+      "height": 100,
+      "sourceBytes": 5422,
+      "bytes": 3628,
+      "sourceSha256": "0bd7f0450ed881ce60fd1d715e53837a8cda39b49df464051cc9f7260c87c37f",
+      "sha256": "406896170bce56b4c1464443da5080ca850e046c4890a387b4bc95b73d4c6602"
+    },
+    {
       "source": "world-v241/hero-halloween.png",
       "file": "runtime-webp/world-v241/hero-halloween.webp",
       "width": 128,
@@ -11775,11 +11835,11 @@
     }
   ],
   "totals": {
-    "converted": 1171,
+    "converted": 1177,
     "existingWebp": 8,
-    "originalBytes": 4351114,
-    "webpBytes": 2909252,
-    "savedBytes": 1441862,
-    "savedPercent": 33.14
+    "originalBytes": 4384697,
+    "webpBytes": 2931182,
+    "savedBytes": 1453515,
+    "savedPercent": 33.15
   }
 }
