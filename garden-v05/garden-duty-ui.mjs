@@ -73,13 +73,13 @@ export function createDutyPanel({getSnapshot,act,notify,labelOf}){
     :tile('map',`Dụ ${name} về`,`${duty.lureMeals} bữa ăn · 1 ngày`,()=>run({kind:'lure',species:f.species},r=>`🍖 Đã đặt mồi · ${name} về lúc ${clockText(r.backAt)}.`)));
   }
   const leave=duty.leave
-   ?[tile('book','Về vườn',`bác trông tới ${clockText(duty.leave.until)}`,()=>run({kind:'leave',days:0},r=>`🏡 Con về rồi · còn ${Math.floor(r.leftDays)} ngày nhờ bác.`))]
-   :[1,3,7].filter(d=>d<=duty.leaveLeftDays).map(d=>tile('book',`Nhờ bác ${d} ngày`,'vườn dừng lại',()=>run({kind:'leave',days:d},r=>`🧔 Bác Hagrid trông vườn tới ${clockText(r.until)}.`)));
+   ?[tile('book','Về vườn',`bác trông tới ${clockText(duty.leave.until)}`,()=>run({kind:'leave',days:0},r=>`🏡 Con về rồi · còn ${left(Date.now()+r.leftMs)} nhờ bác.`))]
+   :[1,3,7].filter(d=>d*24*HOUR<=duty.leaveLeftMs).map(d=>tile('book',`Nhờ bác ${d} ngày`,'vườn dừng lại',()=>run({kind:'leave',days:d},r=>`🧔 Bác Hagrid trông vườn tới ${clockText(r.until)}.`)));
   const clocks=dutyClocks(duty,labelOf);
   body.replaceChildren(...[
    el('div',{class:'duty-clocks'},clocks.length?clocks.map(([art,label,at])=>el('div',{class:'duty-clock'+(at-now<6*HOUR?' is-soon':'')},[pixelIcon(art,1),el('span',{text:label}),el('b',{text:left(at,now)})])):[el('p',{class:'meta',text:duty.leave?'Vườn đang dừng.':'Không có gì sắp tới.'})]),
    tiles.length?el('div',{class:'mood-tiles duty-tiles'},tiles):null,
-   el('div',{class:'mood-row'},[el('small',{text:`Nhờ bác Hagrid · còn ${duty.leaveLeftDays}/${duty.leaveDays} ngày trong 30 ngày`})]),
+   el('div',{class:'mood-row'},[el('small',{text:`Nhờ bác Hagrid · còn ${duty.leaveLeftMs?left(now+duty.leaveLeftMs,now):'0 phút'} / ${duty.leaveDays} ngày trong 30 ngày`})]),
    el('div',{class:'mood-tiles duty-tiles'},leave),
   ].filter(Boolean));
  }
