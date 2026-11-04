@@ -27,6 +27,8 @@ export const ELF_SOURCES = {
   winky: [[M + 'v3-winky.png', ['idle', 'walk-1', 'walk-2', 'water', 'carry', 'sleep'], 'idle', 52]],
   'kitchen-a': [[M + 'v3-kitchen-a.png', ['idle', 'walk-1', 'walk-2', 'sweep', 'carry', 'sleep'], 'idle', 60]],
   'kitchen-b': [[M + 'v3-kitchen-b.png', ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'sleep'], 'idle', 55]],
+  // 25.0 S4: baby Norbert, the companion (hatched by S7's egg).
+  norbert: [[M + 'v4-norbert.png', ['idle', 'walk-1', 'walk-2', 'sleep', 'play', 'puff'], 'idle', 50]],
 };
 
 // Redmean distance: close to perceived difference for this palette (OKLab tipped skin to orange and lost Dobby's hat).

@@ -209,6 +209,28 @@
       "batch": "elves-v3",
       "tool": "image_gen.imagegen (built-in)",
       "status": "visual candidate only; fails strict grid/palette/hard-alpha requirements"
+    },
+    {
+      "key": "norbert",
+      "candidate": "a",
+      "batch": "norbert-s4",
+      "tool": "image_gen.imagegen (built-in)",
+      "prompt": "Use case: stylized-concept. Asset: hand-placed pixel art master sprite sheet for Hagrid Farm, 1536 x 1024 PNG, true transparent alpha background. Exactly six poses in 3 columns and 2 rows of 512 x 512 cells, no labels or grid lines. Reference image is STYLE ONLY: match Dobby's cute expressive face design, chunky outline and top-left light, but DO NOT copy its backdrop, blur, shading noise, clothes or character. Draw book HP1 baby Norbert the Norwegian Ridgeback, never film CGI. A few weeks old, skinny jet-black baby body, long snout with wide nostrils, stubby horn buds, big bulging ORANGE eyes with a pale-white highlight, thin tail with small spade tip, row of small bony ridges down back, large bony spiky wings folded like a wet umbrella. Cute mischievous companion, not scary, not plump, not purple, no ears. Three-quarter view facing LOWER LEFT throughout. Smaller than Dobby: upright poses are ONLY 48–54 square blocks (288–324 actual px) from horn top to feet. Feet local y468, torso centered local x256, all ink and effects at least 24 px from each cell edge. Match head height in idle and both walks.\nCRITICAL pixel geometry: exactly ONE grid of 6 x 6 actual-pixel squares per cell, aligned to multiples of 6 measured from that cell's top-left corner. EVERY square one perfectly uniform flat RGBA colour, including transparency. All outlines exactly one 6px block wide. Absolutely no sub-block detail, smooth curves, anti-alias, gradients, blur, glow, drop shadow, halos, noisy texture, rendered lighting or background. Large flat colour clusters, deliberate sparse detail, hard stair-step corners. Use #231F2E body and outline, #41465C top-left rim lights, #687486 highlights. At most FOURTEEN colours TOTAL, all from this exact permitted palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Prefer just #231F2E #41465C #687486 #A6B1AE #D6D8BF #ED8A45 #FFC36B #C75B4B. Pale eye highlights #D6D8BF, not off-palette pure white.\nPose order row-major:\n1 idle: sitting upright, wings folded, gazing happily upwards.\n2 walk-1: waddling, LEFT foot forward, right foot back.\n3 walk-2: waddling, RIGHT foot forward, left foot back; visibly reverse leg overlap and front/back foot placement, same head height as walk-1.\n4 sleep: curled in a ball, tail wrapped around snout, both eyes shut, wings folded.\n5 play: pouncing with front paws onto one small RED WOOL BALL #C75B4B, tail up; folded wings.\n6 puff: sneezing one small grey smoke puff from nostrils plus exactly TWO tiny orange sparks, no fire plume. Smoke has flat hard pixel clusters and NO translucent blur.\nOnly the six Norbert poses and requested ball/smoke/sparks. Empty space must be truly alpha-zero. No floor, no shadow, no scenery, no text.\nCandidate A: emphasize a tender curious baby expression with slightly tilted head, enormous orange eyes, lean small chest, long gently smiling muzzle. Sparse broad clean pixel clusters and very readable folded umbrella wings.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a68c-624f-7820-bbdf-b865eea8a222/exec-155334c9-795c-4c42-a2ed-2f03867608fa.png",
+      "file": "masters/v4-norbert.png",
+      "status": "selected visual master; strict technical acceptance FAILED",
+      "sha256": "ad5dde3ea99b066d6d0b5297096a5c5c54f64ef1403480eb0630e25530874378"
+    },
+    {
+      "key": "norbert",
+      "candidate": "b",
+      "batch": "norbert-s4",
+      "tool": "image_gen.imagegen (built-in)",
+      "prompt": "Use case: stylized-concept. Asset: hand-placed pixel art master sprite sheet for Hagrid Farm, 1536 x 1024 PNG, true transparent alpha background. Exactly six poses in 3 columns and 2 rows of 512 x 512 cells, no labels or grid lines. Reference image is STYLE ONLY: match Dobby's cute expressive face design, chunky outline and top-left light, but DO NOT copy its backdrop, blur, shading noise, clothes or character. Draw book HP1 baby Norbert the Norwegian Ridgeback, never film CGI. A few weeks old, skinny jet-black baby body, long snout with wide nostrils, stubby horn buds, big bulging ORANGE eyes with a pale-white highlight, thin tail with small spade tip, row of small bony ridges down back, large bony spiky wings folded like a wet umbrella. Cute mischievous companion, not scary, not plump, not purple, no ears. Three-quarter view facing LOWER LEFT throughout. Smaller than Dobby: upright poses are ONLY 48–54 square blocks (288–324 actual px) from horn top to feet. Feet local y468, torso centered local x256, all ink and effects at least 24 px from each cell edge. Match head height in idle and both walks.\nCRITICAL pixel geometry: exactly ONE grid of 6 x 6 actual-pixel squares per cell, aligned to multiples of 6 measured from that cell's top-left corner. EVERY square one perfectly uniform flat RGBA colour, including transparency. All outlines exactly one 6px block wide. Absolutely no sub-block detail, smooth curves, anti-alias, gradients, blur, glow, drop shadow, halos, noisy texture, rendered lighting or background. Large flat colour clusters, deliberate sparse detail, hard stair-step corners. Use #231F2E body and outline, #41465C top-left rim lights, #687486 highlights. At most FOURTEEN colours TOTAL, all from this exact permitted palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Prefer just #231F2E #41465C #687486 #A6B1AE #D6D8BF #ED8A45 #FFC36B #C75B4B. Pale eye highlights #D6D8BF, not off-palette pure white.\nPose order row-major:\n1 idle: sitting upright, wings folded, gazing happily upwards.\n2 walk-1: waddling, LEFT foot forward, right foot back.\n3 walk-2: waddling, RIGHT foot forward, left foot back; visibly reverse leg overlap and front/back foot placement, same head height as walk-1.\n4 sleep: curled in a ball, tail wrapped around snout, both eyes shut, wings folded.\n5 play: pouncing with front paws onto one small RED WOOL BALL #C75B4B, tail up; folded wings.\n6 puff: sneezing one small grey smoke puff from nostrils plus exactly TWO tiny orange sparks, no fire plume. Smoke has flat hard pixel clusters and NO translucent blur.\nOnly the six Norbert poses and requested ball/smoke/sparks. Empty space must be truly alpha-zero. No floor, no shadow, no scenery, no text.\nCandidate B: prioritize the simplest bold flat pixel clusters and exact grid above fine illustration detail. Charming scrawny hatchling with oversized round orange eyes, slightly cheeky closed smile, long slender snout, little horn buds, visibly bony folded spiky wings. Lean narrow torso, skinny limbs, long thin tail. Restrained highlights only on upper-left edges. Keep all poses visually consistent and 300px tall standing; use a few enormous block shapes, zero fine scales or texture.",
+      "source": "/Users/thachanh/.codex/generated_images/01a1a68c-624f-7820-bbdf-b865eea8a222/exec-78761495-ef46-4a7a-9230-e2d161732104.png",
+      "file": null,
+      "status": "not selected; retained at generation source; strict technical acceptance FAILED",
+      "sha256": "e1af71ed1226ad42ef19b493dc884725c4a7a04507fd093ade4a8c3dcf2ebc01"
     }
   ],
   "selected": "masters/dobby-candidate-b.png",
@@ -406,5 +428,120 @@
       ],
       "method": "read-only PNG RGBA decode; complete cell-local 6px block checks; 24-colour palette membership"
     }
+  },
+  "norbert_s4": {
+    "date": "2026-11-04",
+    "selected": "masters/v4-norbert.png",
+    "selected_candidate": "a",
+    "status": "2/2 candidates generated; visual master selected; strict technical acceptance FAILED",
+    "verification": [
+      {
+        "candidate": "a",
+        "size": [
+          1536,
+          1024
+        ],
+        "visible_rgb_colours": 32597,
+        "off_palette_pixels": 414845,
+        "transparent_pixels": 1158002,
+        "partial_alpha_pixels": 414862,
+        "opaque_pixels": 0,
+        "nonuniform_6px_blocks": 15089,
+        "total_blocks": 44376,
+        "occupied_blocks": 15089,
+        "cell_bounds_alpha128": [
+          [
+            122,
+            96,
+            421,
+            438
+          ],
+          [
+            91,
+            96,
+            430,
+            435
+          ],
+          [
+            90,
+            97,
+            433,
+            438
+          ],
+          [
+            121,
+            201,
+            408,
+            417
+          ],
+          [
+            61,
+            113,
+            415,
+            442
+          ],
+          [
+            25,
+            156,
+            453,
+            411
+          ]
+        ]
+      },
+      {
+        "candidate": "b",
+        "size": [
+          1536,
+          1024
+        ],
+        "visible_rgb_colours": 30016,
+        "off_palette_pixels": 500125,
+        "transparent_pixels": 1072739,
+        "partial_alpha_pixels": 500125,
+        "opaque_pixels": 0,
+        "nonuniform_6px_blocks": 18002,
+        "total_blocks": 44376,
+        "occupied_blocks": 18002,
+        "cell_bounds_alpha128": [
+          [
+            114,
+            61,
+            426,
+            451
+          ],
+          [
+            82,
+            61,
+            427,
+            451
+          ],
+          [
+            50,
+            61,
+            397,
+            451
+          ],
+          [
+            77,
+            185,
+            426,
+            450
+          ],
+          [
+            32,
+            107,
+            512,
+            477
+          ],
+          [
+            0,
+            86,
+            424,
+            450
+          ]
+        ]
+      }
+    ],
+    "method": "Read-only stdlib PNG RGBA decode. Cell-local 6x6 checks including partial edge blocks; hidden RGB ignored at alpha zero. Bounds use alpha >=128 and are not a substitute for true-alpha margin acceptance."
   }
 }

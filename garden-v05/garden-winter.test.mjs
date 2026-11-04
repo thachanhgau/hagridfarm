@@ -54,15 +54,18 @@ test('snow caps sit on flat tops inside the silhouette, never on steep sides or 
 
 test('rare coats are looks only: unlocked by bond and season, outline kept', () => {
   const dec = winterSeason(at('2026-12-20')), jan = winterSeason(at('2027-01-10')), jul = winterSeason(at('2026-07-01'));
-  assert.deepEqual(unlockedCoats(1, dec), []);
-  assert.deepEqual(unlockedCoats(3, dec), ['winter', 'noel']);
-  assert.deepEqual(unlockedCoats(5, jan), ['winter', 'silver']);
-  assert.deepEqual(unlockedCoats(5, jul), ['silver']);
-  assert.equal(wornCoat('noel', 5, jan), null, 'Lông Noel only in December');
-  assert.equal(nextCoat(null, 3, dec), 'winter');
-  assert.equal(nextCoat('noel', 3, dec), null, 'cycles back to the normal coat');
+  assert.deepEqual(unlockedCoats(1, dec, 99), []);
+  // 25.0 S4: grooming points too (Lông đông 3, Noel 6, bạc 12).
+  assert.deepEqual(unlockedCoats(5, dec, 5), ['winter']);
+  assert.deepEqual(unlockedCoats(5, dec, 0), []);
+  assert.deepEqual(unlockedCoats(3, dec, 6), ['winter', 'noel']);
+  assert.deepEqual(unlockedCoats(5, jan, 12), ['winter', 'silver']);
+  assert.deepEqual(unlockedCoats(5, jul, 12), ['silver']);
+  assert.equal(wornCoat('noel', 5, jan, 12), null, 'Lông Noel only in December');
+  assert.equal(nextCoat(null, 3, dec, 6), 'winter');
+  assert.equal(nextCoat('noel', 3, dec, 6), null, 'cycles back to the normal coat');
   assert.deepEqual(cycleCoat({}, 'kneazle', 1, dec).coats, {}, 'locked: nothing changes');
-  assert.deepEqual(cycleCoat({kneazle: 'noel'}, 'kneazle', 3, dec).coats, {}, 'back to the normal coat');
+  assert.deepEqual(cycleCoat({kneazle: 'noel'}, 'kneazle', 3, dec, 6).coats, {}, 'back to the normal coat');
   // Orange fur (#ED8A45 #FFC36B) with an outline (#231F2E) and blue eyes (#70A8B6).
   const im = recolorCoatImageData(image(4, 1, (x) => [[237, 138, 69], [255, 195, 107], [35, 31, 46], [112, 168, 182]][x]), 'winter');
   assert.deepEqual(px(im, 0, 0).slice(0, 3), [214, 216, 191]);

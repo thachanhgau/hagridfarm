@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "e51abf94ec05",
+  "revision": "c5388c15f08d",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11422,6 +11422,66 @@
       "sha256": "2bb8a455307b1f3d9ac41db1a2808b743e4d19c8202e48c76316e149c6256d49"
     },
     {
+      "source": "environment/elves/norbert/idle.png",
+      "file": "runtime-webp/environment/elves/norbert/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 905,
+      "bytes": 522,
+      "sourceSha256": "0801f8629e9cd732d131a20523247847dd706946f01bd8174eb3145d59e1cf54",
+      "sha256": "8044529b12e2f7a65fef7d9a82e84b00943b60646e30974f75522dc5b99b256b"
+    },
+    {
+      "source": "environment/elves/norbert/play.png",
+      "file": "runtime-webp/environment/elves/norbert/play.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1067,
+      "bytes": 678,
+      "sourceSha256": "99527bc42626d6ca3bfbe440735476a4cb4860235352b9e2579f023e2d7c0bbd",
+      "sha256": "36ebee1953c662e1462f24b044105abdbb7d5f5e524c81d9b439b283856a9ef8"
+    },
+    {
+      "source": "environment/elves/norbert/puff.png",
+      "file": "runtime-webp/environment/elves/norbert/puff.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 935,
+      "bytes": 560,
+      "sourceSha256": "087411bbb3644d36dfd9994a7b788499103ade4d04b37d2ad908bde89a5e8771",
+      "sha256": "90bd05f0c4df47335865bb0004e8491989d8146bb023e160da8cad2b2a239850"
+    },
+    {
+      "source": "environment/elves/norbert/sleep.png",
+      "file": "runtime-webp/environment/elves/norbert/sleep.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 735,
+      "bytes": 428,
+      "sourceSha256": "85b5e474150a76e45f2cf06465965eae0596cfb54512e03c93387f9124470ddb",
+      "sha256": "9a9d8253424ddcf676005363ab91cb0d69cf5730bb346a567c9849544152d175"
+    },
+    {
+      "source": "environment/elves/norbert/walk-1.png",
+      "file": "runtime-webp/environment/elves/norbert/walk-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 898,
+      "bytes": 554,
+      "sourceSha256": "3a2136ed91cb0d0daf2c7fcb1ef139d66efcc3cf09c336f009569479125bc491",
+      "sha256": "1f2c5fda8a0f6793c71c624d60f368376939c8b516d41b2bc81da54aef53f1fe"
+    },
+    {
+      "source": "environment/elves/norbert/walk-2.png",
+      "file": "runtime-webp/environment/elves/norbert/walk-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 889,
+      "bytes": 532,
+      "sourceSha256": "1fb55e1dda1b6387c3bd75b0f3aa78aba6387818b3357a01c93506e05411f175",
+      "sha256": "0d19b49956bcd01def14062f35e14ce52521be29006e8209aef5b79da1e7e7c3"
+    },
+    {
       "source": "environment/elves/winky/carry.png",
       "file": "runtime-webp/environment/elves/winky/carry.webp",
       "width": 80,
@@ -11835,11 +11895,11 @@
     }
   ],
   "totals": {
-    "converted": 1177,
+    "converted": 1183,
     "existingWebp": 8,
-    "originalBytes": 4384697,
-    "webpBytes": 2931182,
-    "savedBytes": 1453515,
-    "savedPercent": 33.15
+    "originalBytes": 4390126,
+    "webpBytes": 2934456,
+    "savedBytes": 1455670,
+    "savedPercent": 33.16
   }
 }

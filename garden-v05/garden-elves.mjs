@@ -46,8 +46,7 @@ export const elfFiles = () => Object.entries(ELVES).flatMap(([id, elf]) => elf.p
 export const elfWorkFiles = () => Object.entries(ELVES).flatMap(([id, elf]) => elf.poses.filter((pose) => Object.values(WORK_POSES).includes(pose)).map((pose) => elfFile(id, pose)));
 
 // Where an elf is at `clock` ms: [col, row, pose, facingRight]. clock 0 (reduced motion) = standing at the first stop.
-export function elfPose(id, clock) {
-  const stops = ELVES[id].stops;
+export function elfPose(id, clock, stops = ELVES[id].stops) {
   const legs = stops.map((stop, index) => {
     const next = stops[(index + 1) % stops.length];
     return {stop, next, walk: Math.hypot(next[0] - stop[0], next[1] - stop[1]) * CELL_MS};
@@ -85,6 +84,22 @@ export function elfObjects(iso, clock, {night = false, cheering = {}, work = []}
     const [x, y] = iso(col, row);
     return {kind: 'elf', id, xy: [Math.round(x), Math.round(y)], flip, asset: {...FRAME, file: elfFile(id, pose)}};
   });
+}
+
+// Norbert (25.0 S4), Hagrid's baby Hắc long Na Uy: a companion that waddles between Hagrid's hut and the pens, plays
+// and sneezes smoke; asleep by the hut at night. Drawn only once S7's egg hatched (snapshot.mood.norbert), so his
+// frames load the first time he is drawn. He gives nothing: no produce, no Vảy Rồng.
+export const NORBERT = Object.freeze({
+  poses: ['idle', 'walk-1', 'walk-2', 'sleep', 'play', 'puff'],
+  stops: [[2.6, 8.2, 'idle', 2400], [5.5, 9.2, 'play', 3000], [9.5, 9.4, 'puff', 1800], [4, 9, 'idle', 1600]],
+  sleep: [2.9, 7.6],
+});
+export const norbertFiles = () => NORBERT.poses.map((pose) => elfFile('norbert', pose));
+export function norbertObject(iso, clock, {night = false, cheering = false} = {}) {
+  let [col, row, pose, flip] = night ? [...NORBERT.sleep, 'sleep', false] : elfPose('norbert', clock, NORBERT.stops);
+  if (!night && cheering) pose = 'puff';
+  const [x, y] = iso(col, row);
+  return {kind: 'elf', id: 'norbert', xy: [Math.round(x), Math.round(y)], flip, asset: {...FRAME, file: elfFile('norbert', pose)}};
 }
 
 // The line a tap shows: the n-th tap on that elf picks the n-th line, looping.

@@ -17,7 +17,7 @@ import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsT
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.96';
 import {decorObjects} from './decor-runtime.mjs?v=24.9.96';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.96';
-import {elfObjects,elfFiles,elfWorkFiles,CHEER_MS} from './garden-elves.mjs?v=24.9.96';
+import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=24.9.96';
 import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.96';
 import {drawEventOverlay} from './garden-events.mjs?v=24.9.96';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.96';
@@ -35,6 +35,7 @@ import {
   cropBreeze,
   decorFrameAt,
   eventHop,
+  rideFlight,
   harvestPop,
   selectAnimation,
   stableHash,
@@ -670,7 +671,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set([...FESTIVAL_FILES, ...elfWorkFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
+  const deferredFiles = new Set([...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -679,6 +680,7 @@ export async function createGarden(canvas, options = {}) {
     'world-v242/cottage-corner.png',
     ...[...decorAssets.values()].flatMap(decorFiles),
     ...elfFiles(),
+    ...norbertFiles(),
   ])].filter((file) => !deferredFiles.has(file));
   const authoredSlots = authoredLayoutScene(map);
   canvas.width = map.width;
@@ -1132,7 +1134,8 @@ export async function createGarden(canvas, options = {}) {
       authoredFacing:item!==baseItem,
       animation: event,
       // Sprout pop on planting, a happy hop when a creature eats or is collected from.
-      hop: event && ((item.kind === 'crop' && event.kind === 'plant') || (item.kind === 'creature' && (event.kind === 'eat' || event.kind === 'claim'))) ? eventHop(event) : 0,
+      hop: event && ((item.kind === 'crop' && event.kind === 'plant') || (item.kind === 'creature' && (event.kind === 'eat' || event.kind === 'claim'))) ? eventHop(event) : (item.kind === 'creature' && rideFlight(event)?.dy) || 0,
+      drift: (item.kind === 'creature' && rideFlight(event)?.dx) || 0,
       breeze: item.kind === 'crop' && (!progress.mature || new Set(item.clips?.idle?.frames).size <= 1) ? cropBreeze(entry?.species, clock, {reducedMotion: clock === 0, seed: seedKey}) : null,
       motion: item.kind === 'creature' && !action && (!progress.mature || new Set(item.clips?.idle?.frames).size <= 1) ? creatureMotion(entry?.species, clock, {reducedMotion: clock === 0, index: target.creatureIndex ?? 0, mature: progress.mature, facing}) : null,
       ...target,
@@ -1428,9 +1431,9 @@ export async function createGarden(canvas, options = {}) {
       return;
     }
     if (object.kind === 'asset') {
-      drawAsset(object.asset, object.xy[0], object.xy[1] + (object.hop || 0), object.stage > 0 ? object.breeze : null, object.motion, object.facing === 'right'&&!object.authoredFacing);
+      drawAsset(object.asset, object.xy[0] + (object.drift || 0), object.xy[1] + (object.hop || 0), object.stage > 0 ? object.breeze : null, object.motion, object.facing === 'right'&&!object.authoredFacing);
       if (object.type === 'prop' && object.id === 'hut') {drawHutMotion(context, object.xy[0], object.xy[1], clock);if(!object.asset.winter)drawRoofWeather(context,object,activeWeather,clock);}
-      if (object.item?.kind === 'creature') breathOf(object.asset, [object.xy[0], object.xy[1] + (object.hop || 0)], object.facing === 'right' && !object.authoredFacing, object.facing === 'right', object.species, clock);
+      if (object.item?.kind === 'creature') breathOf(object.asset, [object.xy[0] + (object.drift || 0), object.xy[1] + (object.hop || 0)], object.facing === 'right' && !object.authoredFacing, object.facing === 'right', object.species, clock);
       if (object.item?.kind === 'crop') drawCropBreeze(context, object);
       if (object.item?.kind === 'creature' && object.motion?.sparkle) {
         drawPixelSparkle(context, object.xy[0] + (object.motion.swayX || 0) * 8, object.xy[1] - 42 + (object.motion.bobY || 0), '#f5d69a', 1);
@@ -1634,6 +1637,7 @@ export async function createGarden(canvas, options = {}) {
       : [];
     const cheering = Object.fromEntries(Object.entries(elfCheers).filter(([, until]) => until > performance.now()));
     elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering, work: options.elfWork}) : [];
+    if (propsVisible && options.norbert) elfList.push(norbertObject(iso, clock, {night: atmosphereMode === 'night', cheering: !!cheering.norbert}));
     const objects = [...boundaryFence, ...wizList, ...elfList, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {

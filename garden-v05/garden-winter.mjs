@@ -84,30 +84,32 @@ export function snowCapImageData(image) {
 }
 
 // Rare coats: the creature's dominant colour ramp maps onto the coat's ramp; outline, eyes and accents stay.
+// 25.0 S4: each also needs grooming points (server garden-mood-core `coat`, 2 a grooming when happy, 1 otherwise).
 export const RARE_COATS = Object.freeze([
-  Object.freeze({id: 'winter', label: 'Lông đông', minAffinity: 2, ramp: ['#687486', '#A6B1AE', '#D6D8BF', '#E8F0ED'], when: (w) => w.active}),
-  Object.freeze({id: 'noel', label: 'Lông Noel', minAffinity: 3, ramp: ['#4A3042', '#874056', '#C75B4B', '#E8F0ED'], when: (w) => w.christmas}),
-  Object.freeze({id: 'silver', label: 'Lông bạc', minAffinity: 5, ramp: ['#41465C', '#687486', '#A6B1AE', '#B7DEE0'], when: () => true}),
+  Object.freeze({id: 'winter', label: 'Lông đông', minAffinity: 2, coat: 3, ramp: ['#687486', '#A6B1AE', '#D6D8BF', '#E8F0ED'], when: (w) => w.active}),
+  Object.freeze({id: 'noel', label: 'Lông Noel', minAffinity: 3, coat: 6, ramp: ['#4A3042', '#874056', '#C75B4B', '#E8F0ED'], when: (w) => w.christmas}),
+  Object.freeze({id: 'silver', label: 'Lông bạc', minAffinity: 5, coat: 12, ramp: ['#41465C', '#687486', '#A6B1AE', '#B7DEE0'], when: () => true}),
 ]);
+export const COAT_STEPS = Object.freeze(RARE_COATS.map((c) => [c.label, c.coat]));
 const COAT_BY_ID = new Map(RARE_COATS.map((c) => [c.id, c]));
-export function unlockedCoats(affinityLevel = 1, winter = {}) {
-  return RARE_COATS.filter((c) => (Number(affinityLevel) || 1) >= c.minAffinity && c.when(winter)).map((c) => c.id);
+export function unlockedCoats(affinityLevel = 1, winter = {}, coat = 0) {
+  return RARE_COATS.filter((c) => (Number(affinityLevel) || 1) >= c.minAffinity && (Number(coat) || 0) >= c.coat && c.when(winter)).map((c) => c.id);
 }
 // The worn coat, or none when it is no longer unlocked (Noel after December, đông after winter).
-export function wornCoat(choice, affinityLevel, winter) {
-  return choice && unlockedCoats(affinityLevel, winter).includes(choice) ? choice : null;
+export function wornCoat(choice, affinityLevel, winter, coat) {
+  return choice && unlockedCoats(affinityLevel, winter, coat).includes(choice) ? choice : null;
 }
-export function nextCoat(choice, affinityLevel, winter) {
-  const list = [null, ...unlockedCoats(affinityLevel, winter)], at = list.indexOf(wornCoat(choice, affinityLevel, winter));
+export function nextCoat(choice, affinityLevel, winter, coat) {
+  const list = [null, ...unlockedCoats(affinityLevel, winter, coat)], at = list.indexOf(wornCoat(choice, affinityLevel, winter, coat));
   return list[(at + 1) % list.length];
 }
 export function wornCoats(coats = {}, affinities = {}, winter = {}) {
-  return Object.fromEntries(Object.entries(coats).map(([sp, c]) => [sp, wornCoat(c, affinities[sp]?.level, winter)]).filter(([, c]) => c));
+  return Object.fromEntries(Object.entries(coats).map(([sp, c]) => [sp, wornCoat(c, affinities[sp]?.level, winter, affinities[sp]?.coat)]).filter(([, c]) => c));
 }
 // The coat button: next unlocked coat (or back to the normal one), with the toast text.
-export function cycleCoat(coats, species, affinityLevel, winter) {
-  if (!unlockedCoats(affinityLevel, winter).length) return {coats, text: 'Bộ lông hiếm mở khi gắn kết cấp 2 (Lông đông, mùa đông) · cấp 3 (Lông Noel, tháng 12) · cấp 5 (Lông bạc). Chỉ để ngắm.'};
-  const next = nextCoat(coats[species], affinityLevel, winter), out = {...coats, [species]: next};
+export function cycleCoat(coats, species, affinityLevel, winter, coat) {
+  if (!unlockedCoats(affinityLevel, winter, coat).length) return {coats, text: 'Bộ lông hiếm: chải lông trong «Chăm bé» · Lông đông (gắn kết 2, 3 lần chải, mùa đông) · Lông Noel (3, 6 lần, tháng 12) · Lông bạc (5, 12 lần). Bé vui thì mỗi lần chải tính 2. Chỉ để ngắm.'};
+  const next = nextCoat(coats[species], affinityLevel, winter, coat), out = {...coats, [species]: next};
   if (!next) delete out[species];
   return {coats: out, text: coatLabel(next) + ' · chỉ để ngắm.'};
 }

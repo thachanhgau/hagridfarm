@@ -451,7 +451,7 @@
     "method": "area average to a reference ink height, palette24 (redmean), lone pixels absorbed unless a strong accent, #231F2E rim",
     "elves": [
       {
-        "id": "dobby",
+        "id": "norbert",
         "canvas": {
           "width": 80,
           "height": 80,
@@ -460,310 +460,57 @@
         },
         "sheets": [
           {
-            "master": "environment/elves/masters/v3-dobby.png",
-            "masterSha256": "5e93f85b619d6898dd872563d99b02d5654d69fa1d3b4babb8081f0b5cca7367",
-            "scale": 0.1263,
+            "master": "environment/elves/masters/v4-norbert.png",
+            "masterSha256": "ad5dde3ea99b066d6d0b5297096a5c5c54f64ef1403480eb0630e25530874378",
+            "scale": 0.1462,
             "frames": [
               {
-                "file": "environment/elves/dobby/idle.png",
+                "file": "environment/elves/norbert/idle.png",
                 "cell": [
                   0,
                   0
                 ],
-                "sha256": "acfdc633e1b2be98f0749914f0f0972e1ba2f91b97e0a9db5a9b635a7b7fa01d"
+                "sha256": "0801f8629e9cd732d131a20523247847dd706946f01bd8174eb3145d59e1cf54"
               },
               {
-                "file": "environment/elves/dobby/walk-1.png",
+                "file": "environment/elves/norbert/walk-1.png",
                 "cell": [
                   512,
                   0
                 ],
-                "sha256": "81f0e12596c61e8c53c2539b4945b9fb193e8b9009c885b7cffca30eab7c36f9"
+                "sha256": "3a2136ed91cb0d0daf2c7fcb1ef139d66efcc3cf09c336f009569479125bc491"
               },
               {
-                "file": "environment/elves/dobby/walk-2.png",
+                "file": "environment/elves/norbert/walk-2.png",
                 "cell": [
                   1024,
                   0
                 ],
-                "sha256": "33a187e9e079cbb931af7d9ddcf6d091c64ba65100474693e30c192e7644df2b"
+                "sha256": "1fb55e1dda1b6387c3bd75b0f3aa78aba6387818b3357a01c93506e05411f175"
               },
               {
-                "file": "environment/elves/dobby/sweep.png",
+                "file": "environment/elves/norbert/sleep.png",
                 "cell": [
                   0,
                   512
                 ],
-                "sha256": "66a2cb32edc347e008ffa39fd3d8a8fb9b966965b3b7e7cc53fa4a5bdb02372b"
+                "sha256": "85b5e474150a76e45f2cf06465965eae0596cfb54512e03c93387f9124470ddb"
               },
               {
-                "file": "environment/elves/dobby/water.png",
+                "file": "environment/elves/norbert/play.png",
                 "cell": [
                   512,
                   512
                 ],
-                "sha256": "9a0742ea5a9c25a4c06b6f586c32831d1661e3e019fb2e96e07fcc0eded126f0"
+                "sha256": "99527bc42626d6ca3bfbe440735476a4cb4860235352b9e2579f023e2d7c0bbd"
               },
               {
-                "file": "environment/elves/dobby/carry.png",
+                "file": "environment/elves/norbert/puff.png",
                 "cell": [
                   1024,
                   512
                 ],
-                "sha256": "87e14a3c62eec291aa6056963379d862ff403999f994db84b58c1634d0c46a42"
-              }
-            ]
-          },
-          {
-            "master": "environment/elves/masters/v3-dobby-extra.png",
-            "masterSha256": "ae8ffa11e2ddd8347ba4661890658c60fd70cb9b16d4fbbfef6bcb6cc1f56b79",
-            "scale": 0.1237,
-            "frames": [
-              {
-                "file": "environment/elves/dobby/sleep.png",
-                "cell": [
-                  0,
-                  0
-                ],
-                "sha256": "ed9901a4aa35f677e5e5b57719822dc98040d8cecdcdaea27a71b9d91750be3b"
-              },
-              {
-                "file": "environment/elves/dobby/feed.png",
-                "cell": [
-                  512,
-                  0
-                ],
-                "sha256": "1f80bf0069ec0b4840dc99c58bd5646e1de29e4922f6c1e6472dffdcb421e19f"
-              },
-              {
-                "file": "environment/elves/dobby/harvest.png",
-                "cell": [
-                  1024,
-                  0
-                ],
-                "sha256": "44ba67cfef22d9bda7ce9f253784e3e7574fef2b4905343bc2e6c04fab10db86"
-              },
-              {
-                "file": "environment/elves/dobby/cheer.png",
-                "cell": [
-                  0,
-                  512
-                ],
-                "sha256": "23b6cb548dfd3daf61bf6d75725a1ca3e50a87c0c93f05590b32db5722a59f6e"
-              },
-              {
-                "file": "environment/elves/dobby/hat.png",
-                "cell": [
-                  512,
-                  512
-                ],
-                "sha256": "827020dc576caaca23c960666693356aa72826a75f31c2e993fa4976a02e6227"
-              },
-              {
-                "file": "environment/elves/dobby/sock.png",
-                "cell": [
-                  1024,
-                  512
-                ],
-                "sha256": "30e3635695fda9b320e98be957bff02a2f38793098c575ce728a0a017a7f26ac"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "winky",
-        "canvas": {
-          "width": 80,
-          "height": 80,
-          "pivotX": 40,
-          "pivotY": 76
-        },
-        "sheets": [
-          {
-            "master": "environment/elves/masters/v3-winky.png",
-            "masterSha256": "cf2309bc18719c03eb89e1d17e9f2d8c28ba6e80acb2dedd3fac8ae81b7b840c",
-            "scale": 0.114,
-            "frames": [
-              {
-                "file": "environment/elves/winky/idle.png",
-                "cell": [
-                  0,
-                  0
-                ],
-                "sha256": "fe154f9bc2ff02e3b9e5d0f5318f7ed8895972af1677586361212a0cd0d6cb8f"
-              },
-              {
-                "file": "environment/elves/winky/walk-1.png",
-                "cell": [
-                  512,
-                  0
-                ],
-                "sha256": "502e8d0f0a67d057f08cf8d9ee75a87c4fd3dddc1345f20b0e5a94cdd0c8bb0e"
-              },
-              {
-                "file": "environment/elves/winky/walk-2.png",
-                "cell": [
-                  1024,
-                  0
-                ],
-                "sha256": "c53d2cc120a0148bd2254790c08e73874af30a20b50fef0e6cd34e50c370883e"
-              },
-              {
-                "file": "environment/elves/winky/water.png",
-                "cell": [
-                  0,
-                  512
-                ],
-                "sha256": "eae2bf3128972d8abacbca6751907bee3bba0f768a55fee758366c7100560efb"
-              },
-              {
-                "file": "environment/elves/winky/carry.png",
-                "cell": [
-                  512,
-                  512
-                ],
-                "sha256": "8c148d9110c2826e47b557a235c58e911858b4546a298f41d65b761b014dcc44"
-              },
-              {
-                "file": "environment/elves/winky/sleep.png",
-                "cell": [
-                  1024,
-                  512
-                ],
-                "sha256": "fa483db1ab2d6dd47f536d6d0475b7ebc7ad6391ad64863f1ea153f27bb04349"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "kitchen-a",
-        "canvas": {
-          "width": 80,
-          "height": 80,
-          "pivotX": 40,
-          "pivotY": 76
-        },
-        "sheets": [
-          {
-            "master": "environment/elves/masters/v3-kitchen-a.png",
-            "masterSha256": "e87100b811df7ab9b7ad987c456f4d8e1781b3b5286981d277dbc2adca60b931",
-            "scale": 0.1296,
-            "frames": [
-              {
-                "file": "environment/elves/kitchen-a/idle.png",
-                "cell": [
-                  0,
-                  0
-                ],
-                "sha256": "26dc48f407c409b1ff4e879625fce8b1fe28df34766f2fb1b7a302619078395b"
-              },
-              {
-                "file": "environment/elves/kitchen-a/walk-1.png",
-                "cell": [
-                  512,
-                  0
-                ],
-                "sha256": "c348ab2663fd8eab8822a997d5696af63be09de77d6b9fd0362b9e139cd8d85e"
-              },
-              {
-                "file": "environment/elves/kitchen-a/walk-2.png",
-                "cell": [
-                  1024,
-                  0
-                ],
-                "sha256": "fe4b4ed9cd38f49ef6ae41bd20bfc9c0b808723df5e47ff0f53cef72e38d7060"
-              },
-              {
-                "file": "environment/elves/kitchen-a/sweep.png",
-                "cell": [
-                  0,
-                  512
-                ],
-                "sha256": "977a28d6ef18f303be1b961e9d4dd4e77c5d1156bdde780442757beb6e218cc8"
-              },
-              {
-                "file": "environment/elves/kitchen-a/carry.png",
-                "cell": [
-                  512,
-                  512
-                ],
-                "sha256": "0b4934f1264962aa6442fc98c0aae7f3fdcbc7950a755bae9ce7932b32a354f0"
-              },
-              {
-                "file": "environment/elves/kitchen-a/sleep.png",
-                "cell": [
-                  1024,
-                  512
-                ],
-                "sha256": "76eb591c1046fd2e4f58edc8272c80aeec315ab84517047f269032a3c5f599d3"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "kitchen-b",
-        "canvas": {
-          "width": 80,
-          "height": 80,
-          "pivotX": 40,
-          "pivotY": 76
-        },
-        "sheets": [
-          {
-            "master": "environment/elves/masters/v3-kitchen-b.png",
-            "masterSha256": "88b0ce3d536add03b10926881e88be6ac6fadfbeaf4d32e077a25c0cab7cb9be",
-            "scale": 0.1222,
-            "frames": [
-              {
-                "file": "environment/elves/kitchen-b/idle.png",
-                "cell": [
-                  0,
-                  0
-                ],
-                "sha256": "a611662a26bc68dae6dd662de6415d293f559192468b31d0d0c6eb2828a83b94"
-              },
-              {
-                "file": "environment/elves/kitchen-b/walk-1.png",
-                "cell": [
-                  512,
-                  0
-                ],
-                "sha256": "47e7f70a3236476dc36da20e4ec71c1f70d5bcccbc59f2e6e378ad6b0650e33a"
-              },
-              {
-                "file": "environment/elves/kitchen-b/walk-2.png",
-                "cell": [
-                  1024,
-                  0
-                ],
-                "sha256": "ddf3c3844dc974a8c7a41c529046d7efdb555f33579aa26d8ef8636bf5d12285"
-              },
-              {
-                "file": "environment/elves/kitchen-b/sweep.png",
-                "cell": [
-                  0,
-                  512
-                ],
-                "sha256": "c58744553129d44047b4478011fa58760c955573da6325b6a5974b2a6abb78a2"
-              },
-              {
-                "file": "environment/elves/kitchen-b/water.png",
-                "cell": [
-                  512,
-                  512
-                ],
-                "sha256": "bd4646d7477127db6d0edf94ff25ed238cd5bca97243d1ecbc79b5b82f0d803f"
-              },
-              {
-                "file": "environment/elves/kitchen-b/sleep.png",
-                "cell": [
-                  1024,
-                  512
-                ],
-                "sha256": "fa6d082b28c3bdb191e094e772a49caad1d5bc17a6e4bbab5ba80955fe3cb4a9"
+                "sha256": "087411bbb3644d36dfd9994a7b788499103ade4d04b37d2ad908bde89a5e8771"
               }
             ]
           }

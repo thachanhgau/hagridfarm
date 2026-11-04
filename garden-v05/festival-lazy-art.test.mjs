@@ -83,3 +83,17 @@ test('25.0 S3 budget: winter scenery (lều tuyết, hồ băng, rừng đông) 
   garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', winterKit, winter: winterSeason(Date.parse('2026-12-01T12:00:00+07:00'))});
   for (const url of winterUrls) assert.ok(requested.has(url), url + ' requested once winter starts');
 });
+
+test('25.0 S4 budget: Norbert loads only once he is drawn (S7 hatches him)', async () => {
+  const {norbertFiles} = await import('./garden-elves.mjs');
+  const urls = norbertFiles().map(runtimeImageUrl);
+  assert.equal(urls.length, 6);
+  for (const file of norbertFiles()) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
+  const {canvas, requested} = recordingCanvas();
+  const garden = await createGarden(canvas, {decorAssets: manifest.items});
+  const state = E.testProfile(100, 1_700_000_000_000);
+  garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none'});
+  for (const url of urls) assert.ok(!requested.has(url), url + ' loaded without Norbert');
+  garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', norbert: true});
+  assert.ok(requested.has(runtimeImageUrl('environment/elves/norbert/idle.png')), 'a hatched Norbert loads');
+});
