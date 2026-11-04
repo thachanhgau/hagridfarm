@@ -425,3 +425,4 @@
 #gameShell #elfCare .elf-care-body{display:grid;gap:8px}
 #gameShell #elfCare .elf-wages{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px}
 #gameShell #elfCare .elf-job{margin:0}
+#gameShell #elfCare .owl-chest-meter small{white-space:nowrap}

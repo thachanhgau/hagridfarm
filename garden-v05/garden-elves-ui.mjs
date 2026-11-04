@@ -3,7 +3,7 @@
 // mobile-game imports it on that first tap (25.0 speed budget).
 import {$,el,num,visualItemIcon} from './ui-utils.mjs?v=24.9.96';
 import {iconButton} from './pixel-icons.mjs?v=24.9.96';
-import {elfJobText} from './garden-elves.mjs?v=24.9.96';
+import {elfJobText,elfShiftText} from './garden-elves.mjs?v=24.9.96';
 
 const WAGES=Object.freeze([['elf_sock','Vớ len'],['elf_hat','Nón len']]);
 const wageName=id=>WAGES.find(([key])=>key===id)?.[1]||id;
@@ -28,7 +28,7 @@ export function createElfCare({getSnapshot,fill,items,notify}){
     return el('div',{class:'gp-hero elf-wage'},[
      visualItemIcon(items,`recipe_${id}`,{size:40}),
      el('div',{class:'gp-hero-copy'},[el('strong',{text:label}),el('small',{text:`Hộp ${num(view.box[id])} · Kho ${num(have)}`})]),
-     iconButton('chest',`Bỏ ${num(have)} ${label} vào hộp công`,async()=>{const res=await fill(id,have);if(res?.ok){notify(`🧦 Đã bỏ ${num(have)} ${label} vào hộp công gia tinh.`);render();}},{text:'Trả công',class:'primary',disabled:have<1,'data-elf-wage':id}),
+     iconButton('chest',`Bỏ ${num(have)} ${label} vào hộp công`,async()=>{const res=await fill(id,have);if(res?.ok){notify([`🧦 Đã bỏ ${num(have)} ${label} vào hộp công gia tinh.`,elfShiftText(res.receipt?.elfJobs)].filter(Boolean).join(' · '));render();}},{text:'Trả công',class:'primary',disabled:have<1,'data-elf-wage':id}),
     ]);
    })),
    el('div',{class:'owl-chest-meter'},[
