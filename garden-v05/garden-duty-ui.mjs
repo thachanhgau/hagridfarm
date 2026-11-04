@@ -46,7 +46,7 @@ export const DUTY_LETTER=Object.freeze({
 
 export function createDutyPanel({getSnapshot,act,notify,labelOf}){
  const body=el('div',{class:'duty-body'});
- const dialog=el('dialog',{id:'dutyPanel',class:'owl-letter duty-panel','aria-labelledby':'dutyTitle'},[
+ const dialog=el('dialog',{id:'dutyPanel',class:'owl-letter mood-care duty-panel','aria-labelledby':'dutyTitle'},[
   el('div',{class:'popover-heading'},[el('h2',{id:'dutyTitle',text:'Bậc trách nhiệm'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
   body,
  ]);
@@ -76,12 +76,12 @@ export function createDutyPanel({getSnapshot,act,notify,labelOf}){
    ?[tile('book','Về vườn',`bác trông tới ${clockText(duty.leave.until)}`,()=>run({kind:'leave',days:0},r=>`🏡 Con về rồi · còn ${Math.floor(r.leftDays)} ngày nhờ bác.`))]
    :[1,3,7].filter(d=>d<=duty.leaveLeftDays).map(d=>tile('book',`Nhờ bác ${d} ngày`,'vườn dừng lại',()=>run({kind:'leave',days:d},r=>`🧔 Bác Hagrid trông vườn tới ${clockText(r.until)}.`)));
   const clocks=dutyClocks(duty,labelOf);
-  body.replaceChildren(
+  body.replaceChildren(...[
    el('div',{class:'duty-clocks'},clocks.length?clocks.map(([art,label,at])=>el('div',{class:'duty-clock'+(at-now<6*HOUR?' is-soon':'')},[pixelIcon(art,1),el('span',{text:label}),el('b',{text:left(at,now)})])):[el('p',{class:'meta',text:duty.leave?'Vườn đang dừng.':'Không có gì sắp tới.'})]),
    tiles.length?el('div',{class:'mood-tiles duty-tiles'},tiles):null,
    el('div',{class:'mood-row'},[el('small',{text:`Nhờ bác Hagrid · còn ${duty.leaveLeftDays}/${duty.leaveDays} ngày trong 30 ngày`})]),
    el('div',{class:'mood-tiles duty-tiles'},leave),
-  );
+  ].filter(Boolean));
  }
  return {open(){render();dialog.showModal();},sync(){if(dialog.open)render();}};
 }
