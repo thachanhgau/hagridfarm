@@ -21,6 +21,7 @@ import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} fr
 import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.96';
 import {drawEventOverlay} from './garden-events.mjs?v=24.9.96';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.96';
+import {drawGnome,drawWeeds,witherCanvas} from './garden-duty-art.mjs?v=24.9.96';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.96';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.96';
 import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.96';
@@ -723,6 +724,13 @@ export async function createGarden(canvas, options = {}) {
   // 25.0 S3: kit = garden-winter.mjs from options.winterKit (import() after the first frame).
   let activeWeather='clear',activeEvent='none',activeSnowDepth=1,winterArt=false,activeWinter=null,kit=null;
   const seasonalImages=new Map(),coatImages=new Map();
+  // 25.0 S5: a wilted or dried-out crop is its own sprite snapped to a palette ramp (garden-duty-art).
+  const witherImages=new Map();
+  function witherImage(file,mode){
+    const key=mode+':'+file,source=imageFor(file);
+    if(!witherImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);witherImages.set(key,witherCanvas(copy,mode));}
+    return witherImages.get(key)??null;
+  }
   function coatImage(file,coat){
     const key=coat+':'+file,source=imageFor(file);
     if(!coatImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);coatImages.set(key,kit.recolorCanvas(copy,coat));}
@@ -741,6 +749,7 @@ export async function createGarden(canvas, options = {}) {
   let boundaryFence = [];
   let currentStage = gardenStage({}, map);
   let fireCache = null; // «Đốt vườn» flame spots for the current stage
+  let duty = null; // 25.0 S5 options.duty: {wilt: Set, dead: Map, sick: Set, gnomes: [plot]} of 'plot:slot' keys
 
   function layoutCacheKey() {
     return JSON.stringify([
@@ -930,7 +939,7 @@ export async function createGarden(canvas, options = {}) {
     const file = frameFile(asset);
     // Snow caps every sprite but living things (noSnowCap).
     const kind = asset.seasonalKind || (activeWeather === 'snow' && !asset.noSnowCap ? 'cap' : null);
-    const image = asset.coat ? coatImage(file, asset.coat) : kind ? seasonalImage(file,kind) : imageFor(file);
+    const image = asset.wither ? witherImage(file, asset.wither) : asset.coat ? coatImage(file, asset.coat) : kind ? seasonalImage(file,kind) : imageFor(file);
     if (image) {
       const left = Math.round(x - finite(asset.pivotX, 0));
       const top = Math.round(y - finite(asset.pivotY, 0));
@@ -1439,6 +1448,7 @@ export async function createGarden(canvas, options = {}) {
         drawPixelSparkle(context, object.xy[0] + (object.motion.swayX || 0) * 8, object.xy[1] - 42 + (object.motion.bobY || 0), '#f5d69a', 1);
       }
       drawActorOverlay(object, logicalNow);
+      if (object.item?.kind === 'creature' && duty?.sick.has(object.species)) drawCreatureBubble(context, object.xy[0], object.xy[1] + (object.hop || 0) - finite(object.asset?.pivotY, 0) + finite((object.asset?.bounds ?? {}).y, 0), 'Ốm…', {scale: speechScale});
       if (object.guest && object.hungry) drawCreatureBubble(context, object.xy[0], object.xy[1] + (object.hop || 0) - finite(object.asset?.pivotY, 0) + finite((object.asset?.bounds ?? {}).y, 0), 'Đói…', {scale: speechScale, avoid: sceneryVisible ? {xy: wizardTargets(iso).find((t) => t.id === 'owl')?.xy, asset: decorAssets.get('owl_post')} : null});
       return;
     }
@@ -1583,6 +1593,7 @@ export async function createGarden(canvas, options = {}) {
     activeAnimations = animation.active(animationClock, {reducedMotion: clock === 0});
     authoredEffectEventIds = new Set();
     const logicalNow = finite(nowFor(state, now), now);
+    duty = options.duty || null;
     const builtPlotCount = Math.min(map.plots.length, asArray(state.plots).length);
     lastBuiltPlotCount = builtPlotCount;
     lastPlotReady = map.plots.map((_, index) => plotIsBuilt(state, index, logicalNow));
@@ -1671,7 +1682,9 @@ export async function createGarden(canvas, options = {}) {
       const entryList = asArray(state.plots[plotIndex]?.slots);
       const bounds = plotBounds(map.plots[plotIndex]);
       for (let slot = 0; slot < entryList.length && slot < bounds.width * bounds.height; slot += 1) {
-        const entry = entryList[slot];
+        // 25.0 S5: a dried-out slot shows its dead crop until «Dọn thửa».
+        const deadSpecies = duty?.dead.get(plotIndex + ':' + slot);
+        const entry = entryList[slot] || (deadSpecies ? {id: 'dead-' + plotIndex + '-' + slot, type: 'crop', species: deadSpecies, plantedAt: 0, growMs: 1} : null);
         if (!entry) continue;
         const [col,row] = plotCellPosition(map.plots[plotIndex],slot);
         const crop = actorObject(entry, col, row, logicalNow, clock, {plot: plotIndex, cell: slot});
@@ -1690,6 +1703,8 @@ export async function createGarden(canvas, options = {}) {
             crop.hop = [0, -1, -2, -1][Math.floor(clock / 110) % 4];
           }
         }
+        const wither = deadSpecies ? 'dead' : duty?.wilt.has(plotIndex + ':' + slot) ? 'wilt' : null;
+        if (wither && crop.asset) { crop.asset = {...crop.asset, wither}; crop.breeze = null; }
         objects.push(crop);
       }
     }
@@ -1767,6 +1782,14 @@ export async function createGarden(canvas, options = {}) {
       if (canvas.dataset) canvas.dataset.fire = options.fire.mode;
     } else if (canvas.dataset?.fire) delete canvas.dataset.fire;
 
+    // 25.0 S5: ma lùm chewing in the weeds of their plot.
+    for (const plotIndex of duty?.gnomes ?? []) {
+      const plot = map.plots[plotIndex];
+      if (!plot || !plotIsVisible(state, plotIndex, logicalNow)) continue;
+      const [x, y] = iso(...resolvedPlotPosition(plot));
+      drawWeeds(context, x, y + 4, plotIndex);
+      drawGnome(context, x + 6, y + 6, animationClock && clock ? animationClock : 0);
+    }
     const blockers = decorRects();
     for (let index = 0; index < map.plots.length; index += 1) {
       const plot = map.plots[index];

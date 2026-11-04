@@ -441,3 +441,11 @@
 #gameShell #creatureMood .mood-row>small{min-width:92px;color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
 #gameShell #creatureMood .mood-chip{padding:2px 6px;border:2px solid #231F2E;background:#142620;color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
 #gameShell #creatureMood .mood-chip.is-on{background:#71934B;color:#F5D69A}
+/* «Bậc trách nhiệm» (25.0 S5): the chip with the nearest clock and the panel (garden-duty-ui.mjs). */
+#gameShell .duty-chip{position:fixed;top:58px;right:10px;z-index:5;display:flex;gap:6px;align-items:center;min-height:30px;padding:4px 10px;border:2px solid #231f2e;border-radius:6px;background:#4a3042;color:#f5d69a;font-size:12px;font-weight:700;box-shadow:0 2px 0 #231f2e}
+#gameShell .duty-chip.is-alert{background:#874056;color:#ffc36b}
+#gameShell .duty-chip[hidden],body.touring #gameShell .duty-chip{display:none!important}
+.duty-panel .duty-clocks{display:grid;gap:2px;margin:0 0 10px}
+.duty-panel .duty-clock{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:5px 4px;border-bottom:1px solid rgba(166,177,174,.25)}
+.duty-panel .duty-clock.is-soon b{color:#ed8a45}
+.duty-panel .duty-tiles{margin-bottom:8px}
