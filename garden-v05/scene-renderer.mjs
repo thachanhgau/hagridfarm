@@ -219,6 +219,10 @@ function frameFile(frame) {
   return typeof frame === 'string' ? frame : frame?.file;
 }
 
+function decorFiles(asset) {
+  return [asset.file, ...(asset.frames ?? []), asset.rightFile, ...(asset.rightFrames ?? [])].filter(Boolean);
+}
+
 function collectFiles() {
   const files = [];
   files.push(...FOREST_ASSET_FILES);
@@ -662,20 +666,17 @@ export async function createGarden(canvas, options = {}) {
   if (!canvas || typeof canvas.getContext !== 'function') throw new Error('Cần canvas để vẽ Khu vườn Hagrid.');
   const allowMissingAssets = options.allowMissingAssets === true || root.FARM_DEV_KNOWN_NEW_ASSETS_NOT_READY === true;
   const decorAssets = new Map([...(options.decorAssets ?? []),...COMPLETE_SCENERY].map(a=>[a.id,a]));
+  // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
+  // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
+  const deferredFiles = new Set([...FESTIVAL_FILES, ...[...decorAssets.values()].filter((a) => a.collection === 'festival').flatMap(decorFiles)]);
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
     ...earnedDecorFiles(),
     FARM_SIGN_ART.file,
-    ...FESTIVAL_FILES,
     'world-v242/cottage-corner.png',
-    ...[...decorAssets.values()].flatMap((a) => [
-      a.file,
-      ...(a.frames ?? []),
-      ...(a.rightFile ? [a.rightFile] : []),
-      ...(a.rightFrames ?? []),
-    ]).filter(Boolean),
-  ])];
+    ...[...decorAssets.values()].flatMap(decorFiles),
+  ])].filter((file) => !deferredFiles.has(file));
   const authoredSlots = authoredLayoutScene(map);
   canvas.width = map.width;
   canvas.height = map.height;
@@ -689,7 +690,7 @@ export async function createGarden(canvas, options = {}) {
   const ImageCtor = canvas.ownerDocument?.defaultView?.Image ?? root.Image;
   if (typeof ImageCtor !== 'function') throw new Error('Không có Image loader cho asset Khu vườn Hagrid.');
 
-  await Promise.all(assetFiles.map((file) => new Promise((resolve, reject) => {
+  const loadImage = (file) => new Promise((resolve, reject) => {
     const image = new ImageCtor();
     // In HPVN's opaque sandbox every asset is cross-origin; CORS keeps the canvas readable (toBlob).
     image.crossOrigin = 'anonymous';
@@ -703,7 +704,8 @@ export async function createGarden(canvas, options = {}) {
       else reject(new Error(`Không tải được asset Khu vườn Hagrid: ${file}`));
     };
     image.src = runtimeImageUrl(file);
-  })));
+  });
+  await Promise.all(assetFiles.map(loadImage));
 
   const items = new Map(motion.items.map((item) => [item.id, item]));
   const props = new Map((map.props ?? []).map((item) => [item.id, item]));
@@ -768,8 +770,13 @@ export async function createGarden(canvas, options = {}) {
   }
   const animation = createAnimationRuntime();
 
+  const requestedFiles = new Set();
   function imageFor(file) {
     if (images.has(file)) return images.get(file);
+    if (deferredFiles.has(file)) {
+      if (!requestedFiles.has(file)) { requestedFiles.add(file); loadImage(file).catch(() => {}); }
+      return null;
+    }
     if (missing.has(file) && allowMissingAssets) return null;
     throw new Error(`Thiếu asset đã nạp: ${file}`);
   }
@@ -933,6 +940,7 @@ export async function createGarden(canvas, options = {}) {
       target.drawImage(image, left + offsetX, top + offsetY);
       return;
     }
+    if (deferredFiles.has(file)) return; // festival art still loading: the next frame draws it
     // Explicit development diagnostic. It is never reached in a normal load.
     target.save?.();
     target.strokeStyle = '#e07a9e';

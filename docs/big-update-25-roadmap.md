@@ -74,7 +74,7 @@ Sửa luật «không phạt khi vắng mặt» của `core-design.md` §1: lu�
 |---|---|
 | Cây chín quá 24 giờ | Héo, thu hoạch −50% (hình héo bằng code giảm màu) |
 | Quá 48 giờ | Chết khô, mất hạt, phải dọn thửa |
-| Không vào vườn quá 24 giờ | Cỏ dại; quỷ lùn ăn trộm nông sản chín, người chơi tóm quăng ra (HP2) |
+| Không vào vườn quá 24 giờ | Cỏ dại; ma lùm ăn trộm nông sản chín, người chơi tóm quăng ra (HP2, «dọn dẹp ma lùm ma bụi») |
 
 | Tâm trạng thú | Hậu quả |
 |---|---|
@@ -102,7 +102,32 @@ Trứng rồng: giao miễn phí qua chuỗi thư cú (mặc định), ấp 21 n
 
 ## 7. Tên cần tra Lý Lan (S0, `resource/FullHP`)
 
-gia tinh, Dobby, Winky, Kreacher, tên hội S.P.E.W., Norbert và giống rồng Na Uy, Fang, quỷ lùn (khử quỷ lùn HP2), Neville, Luna, Ginny, Fred, George, Quaffle, áo len bà Weasley, Quái tôm nổ đuôi, ngựa có cánh Beauxbatons, phượng hoàng, Aragog.
+Đã tra 04/11/2026 (S0) trong `HP1_VN.txt` … `HP7_VN.txt`, khớp chữ hoa/thường; số là số lần xuất hiện. Cả 19 mục đều có trong 7 cuốn.
+
+| Mục | Chữ của Lý Lan (dùng trong game) | Sách · số lần | Ghi chú |
+|---|---|---|---|
+| house-elf | **gia tinh** | HP2 45 · HP3 2 · HP4 146 · HP5 99 · HP6 47 · HP7 101 | đầu câu «Gia tinh» (HP4 8, HP5 5, HP6 1) |
+| Dobby | **Dobby** | HP2 154 · HP4 203 · HP5 70 · HP6 39 · HP7 49 | HP2 có chỗ gọi Dobby là «con quỷ lùn»: không dùng cách gọi đó |
+| Winky | **Winky** | HP4 188 · HP5 5 | |
+| Kreacher | **Kreacher** | HP5 119 · HP6 60 · HP7 143 | |
+| S.P.E.W. | **H.V.Đ.C.Q.L.G.T** = **Hội Vận động cho Quyền lợi Gia tinh** | viết tắt HP4 12 · HP6 1; tên đủ HP4 1 · HP5 2 | Ron đọc chệch là «Hột Vịt Đẹt» (HP4) |
+| Norbert | **Norbert** | HP1 18 · HP3 2 · HP4 2 · HP5 2 · HP7 5 | HP7: đổi tên «Norberta» |
+| Norwegian Ridgeback | **Hắc long Na Uy** | HP1 1 | ba cách dịch: HP4 «rồng Na Uy loại Lưng nhô» (1), HP7 «rồng Lưng gai Na Uy» (1); chọn HP1, cuốn của Norbert |
+| Fang | **Fang**, «con Fang» | Fang: HP1 18 · HP2 33 · HP3 7 · HP4 16 · HP5 18 · HP6 12 · HP7 7 | «con chó săn đen khổng lồ» (HP1) |
+| garden gnome | **ma lùm** | HP2 21 · HP4 6 | khử gnome = «dọn dẹp ma lùm ma bụi» (HP2). HP6–7 lại gọi «quỷ lùn» (21), nhưng «quỷ lùn» còn chỉ Dobby (HP2), Chỏm Đỏ (HP3), leprechaun (HP4): game dùng «ma lùm» |
+| Neville | **Neville** | HP1 131 · HP2 35 · HP3 121 · HP4 90 · HP5 299 · HP6 74 · HP7 97 | |
+| Luna | **Luna** | HP5 158 · HP6 59 · HP7 150 | |
+| Ginny | **Ginny** | HP1 5 · HP2 154 · HP3 19 · HP4 48 · HP5 244 · HP6 245 · HP7 135 | |
+| Fred | **Fred** | HP1 35 · HP2 107 · HP3 83 · HP4 203 · HP5 339 · HP6 83 · HP7 95 | |
+| George | **George** | HP1 32 · HP2 97 · HP3 69 · HP4 168 · HP5 294 · HP6 63 · HP7 78 | |
+| Quaffle | **trái Quaffle** | HP1 2 · HP2 1 · HP3 12 · HP4 11 · HP5 32 · HP6 6 | «quả Quaffle» chỉ 1 lần (HP1) |
+| Weasley sweater | **áo ấm Weasley** (HP1 2); **áo len đan tay của bà Weasley** (HP2 1) | «áo ấm» HP1 8 · HP2 2 · HP7 4; «áo len» 30 lần ở cả 7 cuốn | tên món: «Áo len bà Weasley» khớp HP2 |
+| Blast-Ended Skrewt | **Quái Tôm Đuôi Nổ** (gọn: «Quái Tôm») | HP4 19 · HP5 1 · HP6 1 · HP7 1; «Quái Tôm» HP4 69 | không phải «Quái tôm nổ đuôi» |
+| Beauxbatons winged horses | **ngựa có cánh khổng lồ của bà [Maxime]**, «ngựa bay» | HP4: mỗi cách 1 | sách không có tên giống (Abraxan chỉ ở HP5 bản Anh); «ngựa có cánh dơi» (HP5) là vong mã, đừng lẫn |
+| phoenix | **phượng hoàng** (con của cụ Dumbledore: **Fawkes**) | HP1 2 · HP2 22 · HP4 16 · HP5 16 · HP6 11 · HP7 16; Fawkes HP2 31 · HP4 9 · HP5 14 · HP6 9 · HP7 2 | «Hội Phượng Hoàng» là tên riêng khác |
+| Aragog | **Aragog** | HP2 19 · HP5 2 · HP6 26 · HP7 3 | |
+
+Tra lại: `python3 -I` đếm chuỗi trong `resource/FullHP/HP*_VN.txt` (ugrep hỏng với regex tiếng Việt dài).
 
 ## 8. Rào chắn (nối tiếp `produce-market-plan.md` #32)
 
@@ -123,3 +148,26 @@ gia tinh, Dobby, Winky, Kreacher, tên hội S.P.E.W., Norbert và giống rồn
 - Trứng rồng miễn phí qua nhiệm vụ.
 - Gia tinh trông vườn 6 việc/ngày; 4 gia tinh, chưa có Kreacher.
 - 6 loài bậc Tận Sức vào bản Tết 25.1.
+
+## 10. Ngân sách tốc độ (S0, 04/11/2026)
+
+**Đo:** `node qa-v19/art-flow-lighthouse.mjs garden-v05 qa-v19/<phần>-lighthouse.json` — Lighthouse 13.5, điện thoại 375 px, mạng chậm giả lập, fixture cấp 500 đủ chuồng, mọi request trả từ file cục bộ (không nén, không server), trung vị 3 lần. Chạy một mình: lượt đầu khi máy bận ra LCP 18,4 s.
+
+| | Điểm | FCP | LCP | Tải trước khung đầu |
+|---|---|---|---|---|
+| 26/10 (`art-flow-20261026.md`) | 50 | 9.330 ms | 13.200 ms | 5.468.946 B |
+| S0 trước (`qa-v19/s0-lighthouse-before.json`) | 49 | 9.975 ms | 14.235 ms | 4.629.071 B |
+| S0 sau tải trễ ảnh lễ hội (`s0-lighthouse-after.json`) | 51 | 9.975 ms | 14.235 ms | **4.293.276 B** (−7,3 %) |
+
+**Đã làm:** `createGarden` không chờ ảnh lễ hội trước khung đầu nữa (3 hero lễ hội và 30 món `collection: 'festival'`, 107 ảnh, ~336 KB). Ảnh tải lần đầu nó được vẽ: khi lễ hội đang mở, hoặc khi thành viên đã đặt món đó (đồ đã mua vẫn hiện sau mùa, trễ một khung 100 ms). Test: `garden-v05/festival-lazy-art.test.mjs`.
+
+**Vì sao LCP chưa giảm:** LCP là dock gieo trồng, bị chặn bởi chuỗi tải trước khi vẽ: 14 file CSS (~250 KB) và 8 script dữ liệu thường (~620 KB, riêng `level-assets.js` 357 KB ≈ 4,5 s) rồi ~90 module. Thử trễ cả 353 ảnh đồ cửa hàng chưa đặt: tải giảm còn 3,74 MB nhưng LCP vẫn 14.235 ms, nên ảnh không phải nút thắt. Fixture không nén (Firebase Hosting nén JS/CSS), nên số tuyệt đối là cận trên. Fixture cũng nạp hai bản một số module (`qa-v19/fixture-wallet.mjs` còn tem `?v=24.9.40/63/81`); chỉ ảnh hưởng fixture.
+
+**Ngân sách 25.0:**
+
+1. **Không lùi (mỗi phần S2–S7):** LCP fixture trung vị ≤ 14.300 ms; tải trước khung đầu ≤ 4.400.000 B. Phần nào vượt thì sửa trước khi commit.
+2. **Ảnh theo mùa không tải ngoài mùa:** mọi ảnh mới của lễ hội, Giáng sinh, mùa đông (S3 lều tuyết, hồ băng, rừng đông; S7 cây thông, tất, áo len) và nhân vật chỉ đến theo sự kiện (S6) đi vào `deferredFiles` trong `createGarden` (gắn `collection: 'festival'`, hoặc mở rộng điều kiện ở đó), và `festival-lazy-art.test.mjs` thêm khẳng định cho bộ đó. Dobby/gia tinh thường trực (S2) không thuộc diện này nhưng tính vào mục 1.
+3. **Đích LCP < 8 s trên điện thoại:** chưa đạt (fixture 14,2 s). Cần một lát việc riêng cắt chuỗi chặn vẽ (gộp CSS, nạp script dữ liệu sau khung đầu hoặc chuyển thành JSON lấy khi cần), đo lại bằng fixture. S8 đo thêm trên iPhone thật qua `run-hpvnn-local.sh --lan` (mở lạnh tới khi hiện dock) và ghi cả hai số.
+4. **Tem `?v=`:** mọi import trong `garden-v05` mang tem phiên bản hiện tại, cùng một tem cho một module. Kiểm: `rg -n "from ['\"]\./[^?'\"]+\.mjs['\"]" garden-v05 -g '!*.test.mjs' -g '!build-*'` chỉ còn công cụ CLI (`playtest-summary.mjs`).
+
+Mỗi phần ghi vào báo cáo của mình: dòng Lighthouse (điểm, FCP, LCP, byte) cạnh số S0, và kết quả `node --test *.test.mjs`.
