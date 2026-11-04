@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "1ca700c305c5",
+  "revision": "b6079df26c1f",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11736,120 +11736,120 @@
       "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red_right-g0.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1835,
-      "bytes": 1134,
-      "sourceSha256": "92c3f61b24e603271e7588f34e5e165b21da847d6a90ab80ca08cfc4d5e4097c",
-      "sha256": "1354aabc3054bc2c4ae3b176819a74f878db8305e1768b7effa3ddbb4e5c6872"
+      "sourceBytes": 2165,
+      "bytes": 1398,
+      "sourceSha256": "a3a9600c9349f3df1ba522fc72aa6949826a0d322253a6b485a79734be5246bf",
+      "sha256": "dae11252a6edc35ed3fcf667afbb53cd8712a8bef0a554cc234a90d62a6c40fe"
     },
     {
       "source": "environment/statue-glow/ev_dark_dobby_red_right-g1.png",
       "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red_right-g1.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1911,
-      "bytes": 1226,
-      "sourceSha256": "5d13357872dd64451a75d3343c060bd20c42e7632b292302556627f032b072c8",
-      "sha256": "bb2a7c0dfc6efcec1b501398bac9f56a57f64029e1cd3cbff8c14de01bece159"
+      "sourceBytes": 2260,
+      "bytes": 1496,
+      "sourceSha256": "f66ff76c7543ba45e0e573e5dc918cd0e532086b8ae90fab4e1d15cb0c30781a",
+      "sha256": "87be212e0ecdf281b7b6eb2da06f830f20e47cc476e11337991fa3865a7c7a4a"
     },
     {
       "source": "environment/statue-glow/ev_dark_dobby_red_right-g2.png",
       "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red_right-g2.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1791,
-      "bytes": 1060,
-      "sourceSha256": "36081a5d2d5a75bb5eebc95fd823a740b56731d77a510e22816ff3215e55b02a",
-      "sha256": "0e629a43023f037d85be9a0604df626ea7015114f9dc66f94fe119da546658a3"
+      "sourceBytes": 2081,
+      "bytes": 1270,
+      "sourceSha256": "9a965258a14423a97a0f40214e37266d97229d21fa944624a8bf8c4b5fa0b8ae",
+      "sha256": "8394a686ff57d59f368bb460bb1ab658b885a40ca93e7a9cd8d92a79dd2d9571"
     },
     {
       "source": "environment/statue-glow/ev_dark_dobby_red-g0.png",
       "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red-g0.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1881,
-      "bytes": 1162,
-      "sourceSha256": "1d6a48e68324c76524af22affc8d27de307308e534811659867ce182300176eb",
-      "sha256": "46acc44e9a91c97235885eab166d8f034fce36c9dc2335bee45343ab28d621e1"
+      "sourceBytes": 2153,
+      "bytes": 1366,
+      "sourceSha256": "f866c7bbd9c25a9c8331605c8b9e1a1108c470435047903dc518c26eaf13cf92",
+      "sha256": "65ea05524b5f3f101a5ede0f4d00be1c45a5d785b9c602afdf2adde1e8c58325"
     },
     {
       "source": "environment/statue-glow/ev_dark_dobby_red-g1.png",
       "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red-g1.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1954,
-      "bytes": 1266,
-      "sourceSha256": "9fa5c7118a294367d1f42785485be017da01846b2b8da0b0460b16f91abc1a33",
-      "sha256": "d67b2515f69ae28f27120c3437187b2dbeb08930d5f42545174e5eb1fafa1e03"
+      "sourceBytes": 2240,
+      "bytes": 1484,
+      "sourceSha256": "c013ea4f5cf5181f3f51ade941a811d6bf1266dab4fe7cd88b2bcf3196d93207",
+      "sha256": "06da51d259cf3dd2957dda901fc6183300ac441a1f16df31735ff499c773f420"
     },
     {
       "source": "environment/statue-glow/ev_dark_dobby_red-g2.png",
       "file": "runtime-webp/environment/statue-glow/ev_dark_dobby_red-g2.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1824,
-      "bytes": 1084,
-      "sourceSha256": "441ab0ea5dc73181208159e5ecc615165ef2d8277c4230732610b2ccb211db86",
-      "sha256": "c3c44f2480c50e8a4eae04b1ec3ad38aede10fdb171377876d11e2dc9b837059"
+      "sourceBytes": 2041,
+      "bytes": 1238,
+      "sourceSha256": "b8f1ac410ccde593e7f07881674e23a2412f3ed8777e5b5ac346f2a7b80be994",
+      "sha256": "7678c15edda83ce25ae6accd3deafc7da5b3a3f9e81e31e60c7b8659a3ffd4e1"
     },
     {
       "source": "environment/statue-glow/ev_dobby_spring_rider_right-g0.png",
       "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider_right-g0.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1705,
-      "bytes": 1038,
-      "sourceSha256": "e60c2fa6b20e99a14314b3f5800578de070e12144950be0232bba4e5eecc256b",
-      "sha256": "c468096e1d61c8ee62c0718d21d1a282a840ae213e28e625fe873308091da397"
+      "sourceBytes": 2000,
+      "bytes": 1252,
+      "sourceSha256": "d2c62486a02778b2d12ae983b3a3662b63bfa667c2b978898bcc5db513df1c19",
+      "sha256": "e034b02b91650b9178a7729345d8bbdfe0cb95e9f36845659caf351d075c7059"
     },
     {
       "source": "environment/statue-glow/ev_dobby_spring_rider_right-g1.png",
       "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider_right-g1.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1757,
-      "bytes": 1128,
-      "sourceSha256": "bf79d82c69e96ef532999b8b8c2d7ea661b94883ed08fc1ab4cc05edd26a2f5d",
-      "sha256": "b73fd403e725b91058f5c7f29515ba5da0730fd15819013cda681b256ffe176e"
+      "sourceBytes": 2072,
+      "bytes": 1328,
+      "sourceSha256": "0f7b65697003f79f41163944959cfbf9a6f21e3acc3847bcb071c33839684f06",
+      "sha256": "c26df0e9eedc9f49dd80ae7cb0f8111c186b8f53115a030f496ed86465ee5dab"
     },
     {
       "source": "environment/statue-glow/ev_dobby_spring_rider_right-g2.png",
       "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider_right-g2.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1673,
-      "bytes": 954,
-      "sourceSha256": "561b6cff694a075257c0d29d2cf1a15f364b74b2ef990594d94018ac2e641db1",
-      "sha256": "3aa6d245cdfb27d723da87d53661f958ed5f4a618cdf12639a73014679c6dcf1"
+      "sourceBytes": 1912,
+      "bytes": 1106,
+      "sourceSha256": "38b201f967411009869d5ec263cb044053c842dacc9ade1526f71d4d9b5b799b",
+      "sha256": "850f009739baf1fb2d6b0a5e0c08f6d469f1d065a8621f540bbb79520acf40c4"
     },
     {
       "source": "environment/statue-glow/ev_dobby_spring_rider-g0.png",
       "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider-g0.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1852,
-      "bytes": 1144,
-      "sourceSha256": "df2be300cae659805336bcd16462ff0d3643b59bcb6238f55b58bc9039e90dc6",
-      "sha256": "ed1358177517845516c2b5b7fe5217ee1883aada434cc083e01bb5ff528017e8"
+      "sourceBytes": 2140,
+      "bytes": 1364,
+      "sourceSha256": "2af5f4af888c0cc0265f73f6945ee145d49b50a86cdbf36826c93b9045f3b5ba",
+      "sha256": "fe9bb1ab0f6f8be5b0cb01f307b00819d10177caeb5bfcc77645c82e846cbd56"
     },
     {
       "source": "environment/statue-glow/ev_dobby_spring_rider-g1.png",
       "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider-g1.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1905,
-      "bytes": 1234,
-      "sourceSha256": "52cd73b8744d53a408d48efc8b36b30e8851b720c2aa130ca9c339da1d705e60",
-      "sha256": "08bee2d8200988097c641e34aecce3566b6c2f144b1e55489aa8293886e07f83"
+      "sourceBytes": 2197,
+      "bytes": 1454,
+      "sourceSha256": "b8fd9b7d3f1f23108dedea6625bd7e29958d65e25dcb873531fb540a0bbef6a8",
+      "sha256": "ccbc0ac8590559417469aab6c172618c93b4d648e68b03b0fa1dbd851f29c648"
     },
     {
       "source": "environment/statue-glow/ev_dobby_spring_rider-g2.png",
       "file": "runtime-webp/environment/statue-glow/ev_dobby_spring_rider-g2.webp",
       "width": 128,
       "height": 176,
-      "sourceBytes": 1765,
-      "bytes": 1042,
-      "sourceSha256": "b26c3cd0a3e7740ba2664df4a498894783768d1efe300478835defc1156e11d5",
-      "sha256": "f149f39e544ec4c856124d75e2f419e2fff4ab83c666ab780a7def320bf68a62"
+      "sourceBytes": 1996,
+      "bytes": 1206,
+      "sourceSha256": "b76c23f2ac2ecc6c3f2f41b6abd26a4947e40de37d9b95660c96e50bcb5d6f4b",
+      "sha256": "a749ed15383316d0f3f7188987e77e2d2afcb5c2ac1684311d13239a8faa901a"
     },
     {
       "source": "environment/visit/floo-hearth.png",
@@ -12017,9 +12017,9 @@
   "totals": {
     "converted": 1195,
     "existingWebp": 8,
-    "originalBytes": 4411979,
-    "webpBytes": 2947928,
-    "savedBytes": 1464051,
+    "originalBytes": 4415383,
+    "webpBytes": 2950418,
+    "savedBytes": 1464965,
     "savedPercent": 33.18
   }
 }
