@@ -21,3 +21,4 @@ __pycache__/
 !/qa-v19/ftue-smoke/
 /qa-v19/ftue-smoke/*
 !/qa-v19/ftue-smoke/report.json
+/docs/codex-briefs/last.*

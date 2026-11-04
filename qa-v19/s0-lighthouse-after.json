@@ -1,0 +1,35 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "local intercepted level500 fixture,375px mobile simulated throttling; no server/Firebase/real wallet",
+  "game": "garden-v05",
+  "runs": [
+    {
+      "performance": 51,
+      "fcpMs": 9975,
+      "lcpMs": 14235,
+      "tbtMs": 243,
+      "bytes": 4293276
+    },
+    {
+      "performance": 51,
+      "fcpMs": 9975,
+      "lcpMs": 14235,
+      "tbtMs": 258.5,
+      "bytes": 4293276
+    },
+    {
+      "performance": 51,
+      "fcpMs": 9990,
+      "lcpMs": 14235,
+      "tbtMs": 242,
+      "bytes": 4293276
+    }
+  ],
+  "median": {
+    "performance": 51,
+    "fcpMs": 9975,
+    "lcpMs": 14235,
+    "tbtMs": 243,
+    "bytes": 4293276
+  }
+}
