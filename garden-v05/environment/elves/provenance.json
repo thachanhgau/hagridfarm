@@ -451,7 +451,7 @@
     "method": "area average to a reference ink height, palette24 (redmean), lone pixels absorbed unless a strong accent, #231F2E rim",
     "elves": [
       {
-        "id": "norbert",
+        "id": "ma-lum",
         "canvas": {
           "width": 80,
           "height": 80,
@@ -460,57 +460,41 @@
         },
         "sheets": [
           {
-            "master": "environment/elves/masters/v4-norbert.png",
-            "masterSha256": "ad5dde3ea99b066d6d0b5297096a5c5c54f64ef1403480eb0630e25530874378",
-            "scale": 0.1462,
+            "master": "environment/duty/masters/ma-lum.png",
+            "masterSha256": "dbad462d998ac9f608d7fdf9846ffd9a61b9e7fd969c7da320522ed15de1a0c1",
+            "scale": 0.0892,
             "frames": [
               {
-                "file": "environment/elves/norbert/idle.png",
+                "file": "environment/elves/ma-lum/idle.png",
                 "cell": [
                   0,
                   0
                 ],
-                "sha256": "0801f8629e9cd732d131a20523247847dd706946f01bd8174eb3145d59e1cf54"
+                "sha256": "7b5104e7ee0c7ca23f955e9da98c8a916622a4b88e2bdec77901868b15096686"
               },
               {
-                "file": "environment/elves/norbert/walk-1.png",
+                "file": "environment/elves/ma-lum/chew-1.png",
                 "cell": [
                   512,
                   0
                 ],
-                "sha256": "3a2136ed91cb0d0daf2c7fcb1ef139d66efcc3cf09c336f009569479125bc491"
+                "sha256": "cdc695f1ca2127dfbcd4c675dbecb97cec371a2148fd5bd22e76f231f7f4a439"
               },
               {
-                "file": "environment/elves/norbert/walk-2.png",
-                "cell": [
-                  1024,
-                  0
-                ],
-                "sha256": "1fb55e1dda1b6387c3bd75b0f3aa78aba6387818b3357a01c93506e05411f175"
-              },
-              {
-                "file": "environment/elves/norbert/sleep.png",
+                "file": "environment/elves/ma-lum/chew-2.png",
                 "cell": [
                   0,
                   512
                 ],
-                "sha256": "85b5e474150a76e45f2cf06465965eae0596cfb54512e03c93387f9124470ddb"
+                "sha256": "8c289e13484f18f96bcca412569c56cc39e77bebdbc5ba94d0d1275ed1882db9"
               },
               {
-                "file": "environment/elves/norbert/play.png",
+                "file": "environment/elves/ma-lum/flung.png",
                 "cell": [
                   512,
                   512
                 ],
-                "sha256": "99527bc42626d6ca3bfbe440735476a4cb4860235352b9e2579f023e2d7c0bbd"
-              },
-              {
-                "file": "environment/elves/norbert/puff.png",
-                "cell": [
-                  1024,
-                  512
-                ],
-                "sha256": "087411bbb3644d36dfd9994a7b788499103ade4d04b37d2ad908bde89a5e8771"
+                "sha256": "aaed71115d2fa7c0344e6903b08a60c08081d1d77065e40766934a4507761051"
               }
             ]
           }

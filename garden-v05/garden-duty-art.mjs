@@ -31,7 +31,14 @@ export function drawWeeds(ctx,x,y,seed=0){
  }
 }
 
-/** One ma lùm, feet at (x, y); it bobs and chews a leaf (clock 0 = still). */
+// The Codex ma lùm (build-elf-art.mjs 'ma-lum', 80 × 80 frames, feet at the pivot): deferred, so it loads the first
+// time a gnome shows; drawGnome stands in until it has.
+export const GNOME_FRAME={width:80,height:80,pivotX:40,pivotY:76,noSnowCap:true};
+const GNOME_POSES=['idle','chew-1','idle','chew-2'];
+export const GNOME_FILES=['idle','chew-1','chew-2'].map(pose=>`environment/elves/ma-lum/${pose}.png`);
+export const gnomeFile=clock=>`environment/elves/ma-lum/${clock?GNOME_POSES[Math.floor(clock/420)%4]:'idle'}.png`;
+
+/** Placeholder ma lùm, feet at (x, y); it bobs and chews a leaf (clock 0 = still). */
 export function drawGnome(ctx,x,y,clock=0){
  const chew=clock?Math.floor(clock/260)%2:0,bob=clock?Math.floor(clock/520)%2:0,top=y-14-bob;
  box(ctx,x-4,y-1,8,1,'#231F2E'); // shadow

@@ -1,0 +1,374 @@
+[
+  {
+    "date": "2026-11-04",
+    "sheet": "A",
+    "candidate": 1,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: transparent pixel-art sprite master sheet for Hagrid Farm Floo chat corner ornaments. Generate exactly 1536 x 1024 PNG, transparent RGBA background. Invisible 3 columns x 2 rows of 512 x 512 cells. Each item's top-left ink at cell-local (64,64). No labels, text, numerals, grid lines or background. CRITICAL: draw on a single uniform grid of EXACTLY 16 x 16 physical pixels per logical pixel: every square block flat colour, boundaries at multiples of 16 from each cell origin. This is extremely coarse tiny pixel art enlarged 16x, NOT detailed pixel illustration. No smaller details, antialiasing, texture, gradients, blur, glow, shadows or noise. Binary alpha. Light from top-left represented only by flat blocks. One-block outline #231F2E, no pure black or white. Every corner ornament occupies at most 22 x 22 logical blocks (352 x 352 physical px) starting at (64,64), forms an L hugging top and left, arms 18–22 blocks long and 2–4 blocks thick including outline. Motif clustered in elbow; interior below/right stays EMPTY transparent for text. No full rectangular frames or lower/right arms. At least 24 px clear margin. All colours restricted to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0, maximum 6 colours per item including outline. Design bright readable silhouettes for eventual use on dark #142620 / #24202E chat bubbles, but do NOT draw those bubbles.\nSheet A, row-major order: 1 top-left: simple seedling sprouts on green twine, palette #231F2E #4A3042 #3F6A45 #71934B #B0BD67. 2 top-middle: pumpkin vine with ONE small orange pumpkin in elbow, palette #231F2E #3F6A45 #71934B #B0BD67 #ED8A45 #FFC36B. 3 top-right: tufted Mandrake leaves with tiny root face peeking at elbow; palette #231F2E #3F6A45 #71934B #B0BD67 #A57554 #E7AE73. 4 bottom-left: pale Puffskein-fur rope and brown owl feather at elbow, palette #231F2E #4A3042 #735044 #A57554 #E7AE73 #F5D69A. 5 bottom-middle: silver-grey Hippogriff feather over stone L, palette #231F2E #41465C #687486 #A6B1AE #D6D8BF. 6 bottom-right: moonlit vine with a pale Mooncalf crescent at elbow, palette #231F2E #24483F #3F6A45 #71934B #70A8B6 #B7DEE0. Increasing richness across the six, preserve equally coarse 16-pixel grid and empty L interiors.\nCandidate 1: use restrained geometric square clusters, strict regular block grid as highest priority.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1a6fc-622f-73d1-afc8-55f9337900c3/exec-1af291ed-972d-4d5b-8df6-e82db3191374.png",
+    "selected": true,
+    "destination": "garden-v05/environment/floo-frames/masters/level-frames-a.png",
+    "inspection": {
+      "path": "/Users/thachanh/.codex/generated_images/01a1a6fc-622f-73d1-afc8-55f9337900c3/exec-1af291ed-972d-4d5b-8df6-e82db3191374.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_values": 255,
+      "transparent_pixels": 1147409,
+      "opaque_pixels": 0,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "semitransparent_pixels": 425455,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "visible_colors": 45710,
+      "off_palette_colors": 45706,
+      "cells": [
+        {
+          "bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "colors": 9393,
+          "off_palette": 9392
+        },
+        {
+          "bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "colors": 11502,
+          "off_palette": 11501
+        },
+        {
+          "bbox": [
+            7,
+            17,
+            506,
+            512
+          ],
+          "colors": 12025,
+          "off_palette": 12024
+        },
+        {
+          "bbox": [
+            39,
+            0,
+            512,
+            496
+          ],
+          "colors": 11264,
+          "off_palette": 11261
+        },
+        {
+          "bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "colors": 6582,
+          "off_palette": 6580
+        },
+        {
+          "bbox": [
+            1,
+            0,
+            492,
+            512
+          ],
+          "colors": 10754,
+          "off_palette": 10753
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated master candidate only."
+  },
+  {
+    "date": "2026-11-04",
+    "sheet": "A",
+    "candidate": 2,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: transparent pixel-art sprite master sheet for Hagrid Farm Floo chat corner ornaments. Generate exactly 1536 x 1024 PNG, transparent RGBA background. Invisible 3 columns x 2 rows of 512 x 512 cells. Each item's top-left ink at cell-local (64,64). No labels, text, numerals, grid lines or background. CRITICAL: draw on a single uniform grid of EXACTLY 16 x 16 physical pixels per logical pixel: every square block flat colour, boundaries at multiples of 16 from each cell origin. This is extremely coarse tiny pixel art enlarged 16x, NOT detailed pixel illustration. No smaller details, antialiasing, texture, gradients, blur, glow, shadows or noise. Binary alpha. Light from top-left represented only by flat blocks. One-block outline #231F2E, no pure black or white. Every corner ornament occupies at most 22 x 22 logical blocks (352 x 352 physical px) starting at (64,64), forms an L hugging top and left, arms 18–22 blocks long and 2–4 blocks thick including outline. Motif clustered in elbow; interior below/right stays EMPTY transparent for text. No full rectangular frames or lower/right arms. At least 24 px clear margin. All colours restricted to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0, maximum 6 colours per item including outline. Design bright readable silhouettes for eventual use on dark #142620 / #24202E chat bubbles, but do NOT draw those bubbles.\nSheet A, row-major order: 1 top-left: simple seedling sprouts on green twine, palette #231F2E #4A3042 #3F6A45 #71934B #B0BD67. 2 top-middle: pumpkin vine with ONE small orange pumpkin in elbow, palette #231F2E #3F6A45 #71934B #B0BD67 #ED8A45 #FFC36B. 3 top-right: tufted Mandrake leaves with tiny root face peeking at elbow; palette #231F2E #3F6A45 #71934B #B0BD67 #A57554 #E7AE73. 4 bottom-left: pale Puffskein-fur rope and brown owl feather at elbow, palette #231F2E #4A3042 #735044 #A57554 #E7AE73 #F5D69A. 5 bottom-middle: silver-grey Hippogriff feather over stone L, palette #231F2E #41465C #687486 #A6B1AE #D6D8BF. 6 bottom-right: moonlit vine with a pale Mooncalf crescent at elbow, palette #231F2E #24483F #3F6A45 #71934B #70A8B6 #B7DEE0. Increasing richness across the six, preserve equally coarse 16-pixel grid and empty L interiors.\nCandidate 2. Correct strict spacing: every item begins exactly at (64,64) inside its cell. Build silhouettes as tiny 22x22 logical pixel icons enlarged 16x. Emphasize long skinny L arms and very small motifs, 2-4-block total arm thickness; keep elbow leaves compact. TRANSPARENT outside artwork with no dark painted backdrop, no lighting vignette, no halo. No sub-block marks or highlights.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1a6fc-622f-73d1-afc8-55f9337900c3/exec-9a163e2c-3b8f-4d3a-b618-f14321091075.png",
+    "selected": false,
+    "destination": null,
+    "inspection": {
+      "path": "/Users/thachanh/.codex/generated_images/01a1a6fc-622f-73d1-afc8-55f9337900c3/exec-9a163e2c-3b8f-4d3a-b618-f14321091075.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_values": 255,
+      "transparent_pixels": 1254912,
+      "opaque_pixels": 0,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "semitransparent_pixels": 317952,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "visible_colors": 46317,
+      "off_palette_colors": 46314,
+      "cells": [
+        {
+          "bbox": [
+            31,
+            29,
+            512,
+            512
+          ],
+          "colors": 10044,
+          "off_palette": 10044
+        },
+        {
+          "bbox": [
+            7,
+            25,
+            512,
+            512
+          ],
+          "colors": 12556,
+          "off_palette": 12555
+        },
+        {
+          "bbox": [
+            1,
+            19,
+            500,
+            512
+          ],
+          "colors": 11528,
+          "off_palette": 11527
+        },
+        {
+          "bbox": [
+            0,
+            5,
+            498,
+            494
+          ],
+          "colors": 10645,
+          "off_palette": 10642
+        },
+        {
+          "bbox": [
+            37,
+            1,
+            512,
+            488
+          ],
+          "colors": 6324,
+          "off_palette": 6323
+        },
+        {
+          "bbox": [
+            1,
+            0,
+            498,
+            482
+          ],
+          "colors": 9909,
+          "off_palette": 9909
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated master candidate only."
+  },
+  {
+    "date": "2026-11-04",
+    "sheet": "B",
+    "candidate": 1,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: transparent pixel-art sprite master sheet for Hagrid Farm Floo chat corner ornaments. Generate exactly 1536 x 1024 PNG, transparent RGBA background. Invisible 3 columns x 2 rows of 512 x 512 cells. Each item's top-left ink at cell-local (64,64). No labels, text, numerals, grid lines or background. CRITICAL: draw on a single uniform grid of EXACTLY 16 x 16 physical pixels per logical pixel: every square block flat colour, boundaries at multiples of 16 from each cell origin. This is extremely coarse tiny pixel art enlarged 16x, NOT detailed pixel illustration. No smaller details, antialiasing, texture, gradients, blur, glow, shadows or noise. Binary alpha. Light from top-left represented only by flat blocks. One-block outline #231F2E, no pure black or white. Every corner ornament occupies at most 22 x 22 logical blocks (352 x 352 physical px) starting at (64,64), forms an L hugging top and left, arms 18–22 blocks long and 2–4 blocks thick including outline. Motif clustered in elbow; interior below/right stays EMPTY transparent for text. No full rectangular frames or lower/right arms. At least 24 px clear margin. All colours restricted to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0, maximum 6 colours per item including outline. Design bright readable silhouettes for eventual use on dark #142620 / #24202E chat bubbles, but do NOT draw those bubbles.\nSheet B, row-major order: 1 top-left: violet magic ivy L with EXACTLY TWO pale square cross sparks at elbow; palette #231F2E #3E3B70 #6961A6 #70A8B6 #B7DEE0. 2 top-middle: dragon scale L in ember with gold rim; palette #231F2E #4A3042 #874056 #C75B4B #ED8A45 #FFC36B. 3 top-right: wand-wood twig L, Bowtruckle home motif, gold leaves; palette #231F2E #4A3042 #735044 #A57554 #E7AE73 #FFC36B. 4 bottom-left: richest golden oak wreath L with Hagrid's small lantern in elbow, light is solid flat pale blocks without glow; palette #231F2E #4A3042 #735044 #E7AE73 #FFC36B #F5D69A. 5 bottom-middle: single FIVE-POINT gold star, exactly 9 x 9 logical blocks (144 x 144 px), starting at cell-local (64,64); palette #231F2E #4A3042 #A57554 #FFC36B #F5D69A. 6 bottom-right: level-500 badge, a ROUND crest exactly 24 x 24 logical blocks (384 x 384 px), starting at cell-local (64,64), gold wreath ring around Hagrid's hut and a pumpkin on a #24483F inner disc. Badge palette ONLY #231F2E #24483F #735044 #E7AE73 #FFC36B #ED8A45. No letters or numbers. First four are L ornaments, last two are standalone star and round badge, NOT L shapes.\nCandidate 1: severe coarse square grid, compact elbow motifs, no painted background or surrounding halo. All empty areas genuinely transparent, including the L interiors.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1a6fc-622f-73d1-afc8-55f9337900c3/exec-54a8b452-da6f-4aff-9ed8-923ef1e05098.png",
+    "selected": false,
+    "destination": null,
+    "inspection": {
+      "path": "/Users/thachanh/.codex/generated_images/01a1a6fc-622f-73d1-afc8-55f9337900c3/exec-54a8b452-da6f-4aff-9ed8-923ef1e05098.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_values": 255,
+      "transparent_pixels": 980559,
+      "opaque_pixels": 0,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "semitransparent_pixels": 592305,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "visible_colors": 68374,
+      "off_palette_colors": 68369,
+      "cells": [
+        {
+          "bbox": [
+            0,
+            19,
+            512,
+            512
+          ],
+          "colors": 10849,
+          "off_palette": 10847
+        },
+        {
+          "bbox": [
+            9,
+            20,
+            512,
+            512
+          ],
+          "colors": 17957,
+          "off_palette": 17956
+        },
+        {
+          "bbox": [
+            1,
+            23,
+            506,
+            512
+          ],
+          "colors": 13680,
+          "off_palette": 13679
+        },
+        {
+          "bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "colors": 15655,
+          "off_palette": 15654
+        },
+        {
+          "bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "colors": 7046,
+          "off_palette": 7045
+        },
+        {
+          "bbox": [
+            0,
+            0,
+            506,
+            500
+          ],
+          "colors": 29076,
+          "off_palette": 29073
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated master candidate only."
+  },
+  {
+    "date": "2026-11-04",
+    "sheet": "B",
+    "candidate": 2,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: transparent pixel-art sprite master sheet for Hagrid Farm Floo chat corner ornaments. Generate exactly 1536 x 1024 PNG, transparent RGBA background. Invisible 3 columns x 2 rows of 512 x 512 cells. Each item's top-left ink at cell-local (64,64). No labels, text, numerals, grid lines or background. CRITICAL: draw on a single uniform grid of EXACTLY 16 x 16 physical pixels per logical pixel: every square block flat colour, boundaries at multiples of 16 from each cell origin. This is extremely coarse tiny pixel art enlarged 16x, NOT detailed pixel illustration. No smaller details, antialiasing, texture, gradients, blur, glow, shadows or noise. Binary alpha. Light from top-left represented only by flat blocks. One-block outline #231F2E, no pure black or white. Every corner ornament occupies at most 22 x 22 logical blocks (352 x 352 physical px) starting at (64,64), forms an L hugging top and left, arms 18–22 blocks long and 2–4 blocks thick including outline. Motif clustered in elbow; interior below/right stays EMPTY transparent for text. No full rectangular frames or lower/right arms. At least 24 px clear margin. All colours restricted to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0, maximum 6 colours per item including outline. Design bright readable silhouettes for eventual use on dark #142620 / #24202E chat bubbles, but do NOT draw those bubbles.\nSheet B, row-major order: 1 top-left: violet magic ivy L with EXACTLY TWO pale square cross sparks at elbow; palette #231F2E #3E3B70 #6961A6 #70A8B6 #B7DEE0. 2 top-middle: dragon scale L in ember with gold rim; palette #231F2E #4A3042 #874056 #C75B4B #ED8A45 #FFC36B. 3 top-right: wand-wood twig L, Bowtruckle home motif, gold leaves; palette #231F2E #4A3042 #735044 #A57554 #E7AE73 #FFC36B. 4 bottom-left: richest golden oak wreath L with Hagrid's small lantern in elbow, light is solid flat pale blocks without glow; palette #231F2E #4A3042 #735044 #E7AE73 #FFC36B #F5D69A. 5 bottom-middle: single FIVE-POINT gold star, exactly 9 x 9 logical blocks (144 x 144 px), starting at cell-local (64,64); palette #231F2E #4A3042 #A57554 #FFC36B #F5D69A. 6 bottom-right: level-500 badge, a ROUND crest exactly 24 x 24 logical blocks (384 x 384 px), starting at cell-local (64,64), gold wreath ring around Hagrid's hut and a pumpkin on a #24483F inner disc. Badge palette ONLY #231F2E #24483F #735044 #E7AE73 #FFC36B #ED8A45. No letters or numbers. First four are L ornaments, last two are standalone star and round badge, NOT L shapes.\nCandidate 2. The entire sheet is conceptually ONLY 96 x 64 logical pixels, shown as a 1536 x 1024 PNG with each logical pixel occupying a perfectly flat 16 x 16 block. Each cell is 32 x 32 logical pixels. For each cell start ink at logical (4,4). First four L ornaments fit logical [4,26) on both axes. Star occupies logical [4,13) on both axes. Badge occupies logical [4,28) on both axes. Star MUST be tiny compared with crest: 9 blocks wide versus crest 24 blocks wide. SIMPLIFY radically to these pixel budgets; no fine decorative detail at all. GOLD OAK L MUST include visible lantern in corner. Badge six colours only, tiny orange pumpkin at hut base. No dark backdrop, halo, diffusion or painted shadows: alpha 0 outside, alpha 255 on each flat square of artwork.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1a6fc-622f-73d1-afc8-55f9337900c3/exec-3152f31a-17b4-42fc-a720-c98eb678e6e0.png",
+    "selected": true,
+    "destination": "garden-v05/environment/floo-frames/masters/level-frames-b.png",
+    "inspection": {
+      "path": "/Users/thachanh/.codex/generated_images/01a1a6fc-622f-73d1-afc8-55f9337900c3/exec-3152f31a-17b4-42fc-a720-c98eb678e6e0.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_values": 255,
+      "transparent_pixels": 1051351,
+      "opaque_pixels": 0,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "semitransparent_pixels": 521513,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "visible_colors": 65078,
+      "off_palette_colors": 65077,
+      "cells": [
+        {
+          "bbox": [
+            0,
+            11,
+            512,
+            512
+          ],
+          "colors": 10351,
+          "off_palette": 10350
+        },
+        {
+          "bbox": [
+            1,
+            36,
+            498,
+            512
+          ],
+          "colors": 15486,
+          "off_palette": 15486
+        },
+        {
+          "bbox": [
+            15,
+            10,
+            511,
+            512
+          ],
+          "colors": 13512,
+          "off_palette": 13512
+        },
+        {
+          "bbox": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "colors": 17146,
+          "off_palette": 17146
+        },
+        {
+          "bbox": [
+            0,
+            0,
+            512,
+            490
+          ],
+          "colors": 5905,
+          "off_palette": 5905
+        },
+        {
+          "bbox": [
+            0,
+            0,
+            500,
+            512
+          ],
+          "colors": 23599,
+          "off_palette": 23599
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated master candidate only."
+  }
+]

@@ -12,15 +12,16 @@ import {fileURLToPath} from 'node:url';
 import {SPRITE_PALETTE} from './palette.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
-const sharp = createRequire(import.meta.url)(process.env.SHARP_MODULE || '/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
-const sha256 = (bytes) => crypto.createHash('sha256').update(bytes).digest('hex');
-const RGB = SPRITE_PALETTE.map((hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)));
+export const sharp = createRequire(import.meta.url)(process.env.SHARP_MODULE || '/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+export const sha256 = (bytes) => crypto.createHash('sha256').update(bytes).digest('hex');
+export const RGB = SPRITE_PALETTE.map((hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)));
 const LUMA = RGB.map(([r, g, b]) => 0.3 * r + 0.59 * g + 0.11 * b);
 const RIM = 0; // '#231F2E'
 const CELL = 512;
 export const CANVAS = {width: 80, height: 80, pivotX: 40, pivotY: 76};
 
-// Per elf: sheets of [master, six pose names in cell order (row 1 left→right, then row 2), reference pose, its ink height].
+// Per elf: sheets of [master, pose names in cell order (row 1 left→right, then row 2), reference pose, its ink height,
+// columns (3)].
 const M = 'environment/elves/masters/';
 export const ELF_SOURCES = {
   dobby: [[M + 'v3-dobby.png', ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'carry'], 'idle', 60], [M + 'v3-dobby-extra.png', ['sleep', 'feed', 'harvest', 'cheer', 'hat', 'sock'], 'hat', 60]],
@@ -29,6 +30,8 @@ export const ELF_SOURCES = {
   'kitchen-b': [[M + 'v3-kitchen-b.png', ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'sleep'], 'idle', 55]],
   // 25.0 S4: baby Norbert, the companion (hatched by S7's egg).
   norbert: [[M + 'v4-norbert.png', ['idle', 'walk-1', 'walk-2', 'sleep', 'play', 'puff'], 'idle', 50]],
+  // 25.0 S5: ma lùm (a 2 × 2 sheet), drawn in the weeds of a neglected plot.
+  'ma-lum': [['environment/duty/masters/ma-lum.png', ['idle', 'chew-1', 'chew-2', 'flung'], 'idle', 28, 2]],
 };
 
 // Redmean distance: close to perceived difference for this palette (OKLab tipped skin to orange and lost Dobby's hat).
@@ -49,7 +52,7 @@ function inkRows(data, W, left, top) {
 }
 
 // Area-average a CELL square at `scale` into palette indices, -1 = transparent (coverage < 50 %).
-function shrink(data, W, left, top, scale) {
+export function shrink(data, W, left, top, scale) {
   const n = Math.round(CELL * scale), f = CELL / n, px = new Int16Array(n * n).fill(-1);
   for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
     let a = 0, r = 0, g = 0, b = 0;
@@ -66,7 +69,7 @@ function shrink(data, W, left, top, scale) {
 const around = (x, y, n, eight) => (eight ? [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]] : [[0, -1], [-1, 0], [1, 0], [0, 1]])
   .map(([dx, dy]) => [x + dx, y + dy]).filter(([u, v]) => u >= 0 && v >= 0 && u < n && v < n).map(([u, v]) => v * n + u);
 
-function tidy(px, n) {
+export function tidy(px, n) {
   const next = px.slice();
   for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
     const i = y * n + x, c = px[i];
@@ -90,10 +93,13 @@ function tidy(px, n) {
 export async function buildElf(id) {
   await fs.mkdir(path.join(root, 'environment/elves', id), {recursive: true});
   const sheets = [];
-  for (const [masterFile, poses, ref, height] of ELF_SOURCES[id]) {
+  for (const [masterFile, poses, ref, height, cols = 3] of ELF_SOURCES[id]) {
     const master = await fs.readFile(path.join(root, masterFile));
-    const {data, info} = await sharp(master).ensureAlpha().raw().toBuffer({resolveWithObject: true});
-    const cellOf = (index) => [(index % 3) * CELL, Math.floor(index / 3) * CELL];
+    const rows = Math.ceil(poses.length / cols), meta = await sharp(master).metadata();
+    // A master drawn at another size (the ma lùm came at 627 px cells) is first brought to 512 px cells.
+    const sized = meta.width === cols * CELL ? sharp(master) : sharp(master).resize(cols * CELL, rows * CELL, {kernel: 'lanczos3'});
+    const {data, info} = await sized.ensureAlpha().raw().toBuffer({resolveWithObject: true});
+    const cellOf = (index) => [(index % cols) * CELL, Math.floor(index / cols) * CELL];
     const [rt, rb] = inkRows(data, info.width, ...cellOf(poses.indexOf(ref)));
     const scale = height / (rb - rt + 1), frames = [];
     for (const [index, pose] of poses.entries()) {

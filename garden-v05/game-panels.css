@@ -368,6 +368,7 @@
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-hufflepuff"]{border-color:#FFC36B}
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-ravenclaw"]{border-color:#6961A6}
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-slytherin"]{border-color:#71934B}
+#gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-level-"]{border-color:#FFC36B;background:#231F2E}
 /* ---- ACP sale (KTV Gia Tinh) ---- */
 #gameShell #saleAcp{width:min(620px,calc(100vw - 16px));max-height:min(88vh,760px)}
 #gameShell #saleAcp .acp-body{display:grid;gap:8px}

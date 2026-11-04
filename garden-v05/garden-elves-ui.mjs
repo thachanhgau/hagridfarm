@@ -7,7 +7,9 @@ import {elfJobText,elfShiftText} from './garden-elves.mjs?v=24.9.96';
 
 const WAGES=Object.freeze([['elf_sock','Vớ len'],['elf_hat','Nón len']]);
 const wageName=id=>WAGES.find(([key])=>key===id)?.[1]||id;
-const clockText=ms=>{const d=new Date(ms+7*3600000);return `${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;};
+const pad=n=>String(n).padStart(2,'0');
+const clockText=ms=>{const d=new Date(ms+7*3600000);return `${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`;};
+const dayClockText=ms=>{const d=new Date(ms+7*3600000);return `${pad(d.getUTCDate())}/${pad(d.getUTCMonth()+1)} ${clockText(ms)}`;};
 
 export function createElfCare({getSnapshot,fill,items,notify}){
  const body=el('div',{class:'elf-care-body'});
@@ -37,6 +39,8 @@ export function createElfCare({getSnapshot,fill,items,notify}){
     el('b',{text:`${done}/${view.cap}`}),
    ]),
    ...view.jobs.map(job=>el('p',{class:'meta elf-job',text:`${clockText(job.at)} · ${elfJobText(job)} · ${wageName(job.wage)}`})),
+   // S5: work done while the member was away, on a day that is over.
+   ...(view.past||[]).map(job=>el('p',{class:'meta elf-job',text:`${dayClockText(job.at)} · ${elfJobText(job)} · ${wageName(job.wage)}`})),
   );
  }
  return {

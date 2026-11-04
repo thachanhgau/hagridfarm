@@ -21,7 +21,7 @@ import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} fr
 import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.96';
 import {drawEventOverlay} from './garden-events.mjs?v=24.9.96';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=24.9.96';
-import {drawGnome,drawWeeds,witherCanvas} from './garden-duty-art.mjs?v=24.9.96';
+import {drawGnome,drawWeeds,gnomeFile,witherCanvas,GNOME_FILES,GNOME_FRAME} from './garden-duty-art.mjs?v=24.9.96';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=24.9.96';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=24.9.96';
 import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.96';
@@ -672,7 +672,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set([...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
+  const deferredFiles = new Set([...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...GNOME_FILES, ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -1786,9 +1786,13 @@ export async function createGarden(canvas, options = {}) {
     for (const plotIndex of duty?.gnomes ?? []) {
       const plot = map.plots[plotIndex];
       if (!plot || !plotIsVisible(state, plotIndex, logicalNow)) continue;
-      const [x, y] = iso(...resolvedPlotPosition(plot));
-      drawWeeds(context, x, y + 4, plotIndex);
-      drawGnome(context, x + 6, y + 6, animationClock && clock ? animationClock : 0);
+      // On the bed's front half, between its centre and its front corner, so crops do not hide it.
+      const [cx, cy] = iso(...resolvedPlotPosition(plot)), [fx, fy] = plotCorners(plot, map)[2];
+      const x = Math.round(cx + (fx - cx) * 0.55), y = Math.round(cy + (fy - cy) * 0.55), tick = animationClock && clock ? animationClock : 0;
+      drawWeeds(context, x, y, plotIndex);
+      const file = gnomeFile(tick);
+      if (imageFor(file)) drawAsset({...GNOME_FRAME, file}, x, y + 2);
+      else drawGnome(context, x, y + 2, tick);
     }
     const blockers = decorRects();
     for (let index = 0; index < map.plots.length; index += 1) {

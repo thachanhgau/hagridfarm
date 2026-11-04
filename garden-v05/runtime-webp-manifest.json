@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "c5388c15f08d",
+  "revision": "9e0f8c9da858",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11422,6 +11422,46 @@
       "sha256": "2bb8a455307b1f3d9ac41db1a2808b743e4d19c8202e48c76316e149c6256d49"
     },
     {
+      "source": "environment/elves/ma-lum/chew-1.png",
+      "file": "runtime-webp/environment/elves/ma-lum/chew-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 579,
+      "bytes": 360,
+      "sourceSha256": "cdc695f1ca2127dfbcd4c675dbecb97cec371a2148fd5bd22e76f231f7f4a439",
+      "sha256": "dc26d4970acf28e2d20720c3e15289240947684746825cd8de89bddfe1649a68"
+    },
+    {
+      "source": "environment/elves/ma-lum/chew-2.png",
+      "file": "runtime-webp/environment/elves/ma-lum/chew-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 594,
+      "bytes": 366,
+      "sourceSha256": "8c289e13484f18f96bcca412569c56cc39e77bebdbc5ba94d0d1275ed1882db9",
+      "sha256": "d4cb63820af3eab0ac42f0659388d6f6edf847b6c0e1e8431fdee5e0c1dc1b7b"
+    },
+    {
+      "source": "environment/elves/ma-lum/flung.png",
+      "file": "runtime-webp/environment/elves/ma-lum/flung.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 528,
+      "bytes": 290,
+      "sourceSha256": "aaed71115d2fa7c0344e6903b08a60c08081d1d77065e40766934a4507761051",
+      "sha256": "f52298b0c7f5e46e3794ffe14532567c50d84bfe189a7dc80a7e7ee855f9b34f"
+    },
+    {
+      "source": "environment/elves/ma-lum/idle.png",
+      "file": "runtime-webp/environment/elves/ma-lum/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 574,
+      "bytes": 356,
+      "sourceSha256": "7b5104e7ee0c7ca23f955e9da98c8a916622a4b88e2bdec77901868b15096686",
+      "sha256": "d32ce40ac2d275bc21cbdc44e9d21990519ddb21b7bf88661d9efe62cdf26a6b"
+    },
+    {
       "source": "environment/elves/norbert/idle.png",
       "file": "runtime-webp/environment/elves/norbert/idle.webp",
       "width": 80,
@@ -11895,11 +11935,11 @@
     }
   ],
   "totals": {
-    "converted": 1183,
+    "converted": 1187,
     "existingWebp": 8,
-    "originalBytes": 4390126,
-    "webpBytes": 2934456,
-    "savedBytes": 1455670,
+    "originalBytes": 4392401,
+    "webpBytes": 2935828,
+    "savedBytes": 1456573,
     "savedPercent": 33.16
   }
 }
