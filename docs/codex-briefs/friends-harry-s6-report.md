@@ -26,3 +26,17 @@ Re-read the art bible and sprite palette and visually inspected all three reques
 Stopped immediately under the brief's instruction to stop if generation or usage is unavailable. Candidate B was not requested in this retry. No fallback or substitute artwork was attempted. The exact new prompt and failure metadata were appended to `garden-v05/environment/friends/prompts.json`; previous entries were preserved.
 
 Verification: the masters directory remains empty. Dimensions, hard alpha, palette count, exact 6 × 6 blocks, margins, poses, and visual quality cannot be validated without generated images. No resizing, previews, native frames, builders, `.mjs`/CSS/backend/HPVNN edits, commits, pushes, or deployments were performed by this session. Pre-existing unrelated work was preserved.
+
+
+## Retry — 2026-11-05
+
+Status: BLOCKED — 0/2 candidate sheets generated; no chosen master.
+
+Read the art bible, sprite palette, existing prompt history and report; visually inspected the approved Dobby, Winky and Hagrid references. Used the imagegen skill and submitted candidate A to the built-in image tool with genuine transparency requested. The full submitted prompt is appended to `garden-v05/environment/friends/prompts.json`.
+
+The tool returned HTTP 400 `moderation_blocked`, moderation stage `output`, category `other`, request ID `8e1c0872-f9d2-4fbd-8092-54ee588a0e73`. No image or specific reason was returned. Stopped as required by the brief; candidate B was not requested, and no fallback or code-drawn substitute was attempted.
+
+No candidate or chosen PNG was produced. Visual quality, dimensions, exact 6 × 6 grid, colour count, hard alpha, pose layout and margins remain unverified. No resizing, native frames, previews, builders, runtime edits, commits, pushes or deployments were performed. Pre-existing dirty log and try2 report were preserved.
+
+Remaining: obtain two actual generated candidate sheets, compare book likeness/charm/grid compliance, and select `harry.png` for owner approval before other friends.
+

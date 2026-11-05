@@ -29,5 +29,17 @@
       "request_id": "01d5d141-a989-40d5-8179-5430987cd082",
       "followup": "Stopped per user brief; candidate B not requested in this attempt."
     }
+    ,{
+  "date": "2026-11-05",
+  "attempt": "2026-11-05-session",
+  "candidate": "a",
+  "file": "masters/harry-candidate-a.png",
+  "tool": "image_gen.imagegen (built-in)",
+  "prompt": "Use case: stylized-concept. Create candidate A, a Harry Potter BOOK character pilot master sheet for Hagrid Farm. Exactly 1536 x 1024 pixels, 3 columns x 2 rows of 512 x 512 cells. Genuine transparent background. No text, labels, grid lines, ground, shadows or other characters.\nStyle references: approved Dobby and Winky sheets previously shown: match their charming chibi faces, chunky pixel silhouettes, dark outline and top-left light. Hagrid reference is companion style only. Do not reproduce reference backgrounds, glow or texture.\nSubject is Harry from HP1–HP3 books, about 12: cute chibi with head 40% of standing height, small thin body, knobbly knees, messy jet-black hair sticking up behind, simple round glasses, bright green eyes with pale highlights, 2–3-block lightning scar #C75B4B on forehead, friendly grin. Geometric face without realistic nose or jaw, no actor likeness. Plain emerald-green hand-knitted sweater, NO letter; scarlet-and-gold striped scarf, dark trousers, brown boots. No robes or movie costume.\nTRUE pixel art: one square grid of EXACTLY 6x6 output-pixel blocks, each block one flat colour. All edges aligned to multiples of six relative to each cell top-left. One-block outline #231F2E, light upper-left. Hard alpha 0 or 255. No antialiasing, gradients, blur, glow, drop shadow or sub-block texture. Maximum 16 opaque colours TOTAL, use only: #231F2E #4A3042 #735044 #A57554 #41465C #D6D8BF #24483F #3F6A45 #71934B #C97952 #E7AE73 #F5D69A #874056 #C75B4B #FFC36B #B7DEE0. Eye highlights #D6D8BF.\nConsistent three-quarter view toward lower-left. Standing hair-to-feet height 64–68 blocks (384–408 px), body centered local x256, feet local y468, >=24px transparent margin. Top row head heights identical. All limbs and props entirely inside each cell.\nSix distinct poses in reading order:\n1 top-left IDLE: standing waving one hand, smiling.\n2 top-middle WALK-1: LEFT foot clearly forward, right back.\n3 top-right WALK-2: RIGHT foot clearly forward, left back, visibly different legs from walk-1, same head height.\n4 bottom-left FLY-THROW: sitting astride Nimbus Two Thousand broom, approximately horizontal dark polished wooden handle pointing LEFT and neat bound twig tail to RIGHT, no lettering. Arm BACK holding a head-size bright red leather Quaffle #C75B4B/#874056, about to throw. Broom lowest point local y468.\n5 bottom-middle FLY-CATCH: same broom position and orientation, sitting astride with BOTH hands forward LEFT catching head-size red Quaffle.\n6 bottom-right SNOWBALL: standing throwing a small snowball overarm, scarf flying. Snowball #D6D8BF with #B7DEE0 shading. Feet local y468.\nPrioritize book-faithful charming identity, chunky uniform six-pixel grid and clear six-pose silhouettes.",
+  "transparent_background": true,
+  "status": "failed: moderation_blocked at output; no image returned",
+  "request_id": "8e1c0872-f9d2-4fbd-8092-54ee588a0e73",
+  "followup": "Stopped per user brief; candidate B not requested."
+}
   ]
 }
