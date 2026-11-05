@@ -110,3 +110,13 @@ test('QA ?friends=all draws all seven at once, with the Quaffle and fireworks', 
   assert.deepEqual(people.map((o) => o.id).sort(), Object.keys(FRIENDS).sort());
   assert.ok(fx.length >= 2);
 });
+
+// 05/11/2026: a generic `if (object.draw) return …` before the wizard-scenery branch drew the 17/10 hand-drawn Hagrid
+// and owl (their fallback `draw`) instead of the sprites, from S6 until this fix.
+test("visitor fx drawing never short-circuits the Hagrid and owl sprites", () => {
+  const src = fs.readFileSync(new URL("./scene-renderer.mjs", import.meta.url), "utf8");
+  const sprite = src.indexOf("if (object.kind === 'wizard-scenery')");
+  assert.ok(sprite > 0);
+  assert.doesNotMatch(src.slice(0, sprite), /if \(object\.draw\) return/);
+  assert.match(src.slice(0, sprite), /object\.kind !== 'wizard-scenery'\) return object\.draw/);
+});

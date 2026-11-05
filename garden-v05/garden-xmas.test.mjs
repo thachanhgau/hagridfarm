@@ -56,3 +56,13 @@ test('vớ lock texts follow the server view; nudges point at the letter, a vớ
 test('the seven hearth frames exist', () => {
   for (const f of XMAS_FILES) assert.ok(fs.existsSync(new URL('./' + f, import.meta.url)), f);
 });
+
+// 05/11/2026 owner: a decoration could stand inside the hearth (the placement rule did not know it).
+test('no decoration may stand on the December hearth', async () => {
+  const {HEARTH_GROUND, decorSpotProblem} = await import('./decor-placement-ui.mjs');
+  const {decorFootprintRect} = await import('./decor-runtime.mjs');
+  assert.deepEqual(HEARTH_GROUND, {...decorFootprintRect(...HEARTH_SPOT, [2, 2])});
+  const scene = JSON.parse(fs.readFileSync(new URL('./scene-data.json', import.meta.url)));
+  const reason = decorSpotProblem(16, 1.5, {map: scene, stage: GARDEN_STAGES.at(-1), state: {decorations: []}, decorations: {}, itemId: 'decor_cauldron'});
+  assert.equal(reason, 'Chỗ này là lò sưởi Giáng sinh.');
+});

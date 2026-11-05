@@ -25,6 +25,9 @@ const PATH_CLEARANCE=0.5;
 // renderer sorts by depth); the 25/10 screen-overlap rule left a full garden ~5× fewer free cells.
 // The cottage corner is art without a scene object; its ground sits under iso(-2, 5.5).
 const COTTAGE_GROUND=Object.freeze({c0:-3.5,c1:-1.5,r0:3.5,r1:5.5});
+// 25.0 S7 December hearth (garden-xmas HEARTH_SPOT [16, 1.3], 2 × 2 under its foot). Kept free all year: a piece
+// set there in November would stand inside the hearth in December. garden-xmas.test.mjs checks the spot.
+export const HEARTH_GROUND=Object.freeze(decorFootprintRect(16,1.3,[2,2]));
 
 function segmentRectDistance([a,b],[c,d],r){
  let best=Infinity;
@@ -82,6 +85,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  // The pond is a garden default: its ground follows the decoration rule, like when it is moved.
  for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond')):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
  if(rectsOverlap(rect,COTTAGE_GROUND))return 'Chỗ này vướng lều Hagrid.';
+ if(rectsOverlap(rect,HEARTH_GROUND))return 'Chỗ này là lò sưởi Giáng sinh.';
  for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
  if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){

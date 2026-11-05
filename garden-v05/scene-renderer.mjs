@@ -1429,7 +1429,9 @@ export async function createGarden(canvas, options = {}) {
       context.restore();
       return;
     }
-    if (object.draw) return object.draw(context);
+    // Visitor fx and plot signs draw themselves. Wizard scenery also carries a `draw` (the 17/10 hand-drawn Hagrid
+    // and owl): that is only the fallback when its sprite is missing, never the first choice.
+    if (object.draw && object.kind !== 'wizard-scenery') return object.draw(context);
     if (object.kind === 'elf') {
       drawAsset({...object.asset, noSnowCap: true}, object.xy[0], object.xy[1], null, null, object.flip);
       if (!object.still) breathOf(object.asset, object.xy, object.flip, object.flip, object.id, clock);
