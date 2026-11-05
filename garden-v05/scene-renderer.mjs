@@ -1418,8 +1418,7 @@ export async function createGarden(canvas, options = {}) {
     if (object.kind === 'elf') {
       drawAsset({...object.asset, noSnowCap: true}, object.xy[0], object.xy[1], null, null, object.flip);
       breathOf(object.asset, object.xy, object.flip, object.flip, object.id, clock);
-      // A tapped gia tinh or friend says its line in a bubble over its head (owner 05/11/2026).
-      if (said.id === object.id && said.until > performance.now()) drawHagridSpeechBubble(context, object.xy[0], object.xy[1], said.text, {lift: 72, scale: labelScale});
+      if (said.id === object.id) said.xy = object.xy; // its bubble is drawn last, over the plot labels
       return;
     }
     if (object.kind === 'wizard-scenery') {
@@ -1847,6 +1846,8 @@ export async function createGarden(canvas, options = {}) {
         ripe || selected ? 'rgba(255,195,107,.85)' : 'rgba(245,214,154,.3)');
     }
     drawPenLabels(state, logicalNow);
+    // A tapped gia tinh or friend says its line in a bubble over its head (owner 05/11/2026).
+    if (said.xy && said.until > performance.now()) drawHagridSpeechBubble(context, said.xy[0], said.xy[1], said.text, {lift: 72, scale: labelScale});
 
   }
 
