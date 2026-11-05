@@ -93,7 +93,7 @@ test('friends walk the aisles inside stage 1: never on a plot or a fixed piece, 
 
 test('a tap says a line and asks the server for the gift only while one is still due', async () => {
   const said = [], claims = [], cheers = [];
-  const deps = (friends) => ({snapshot: {friends}, cheer: (id) => cheers.push(id), say: (t) => said.push(t),
+  const deps = (friends) => ({snapshot: {friends}, cheer: (id) => cheers.push(id), say: (t) => said.push(t), line: (id, t) => said.push(`${id}: ${t}`),
     claim: (c) => { claims.push(c); return Promise.resolve({ok: true, receipt: {friend: {friendId: 'luna', gift: {kind: 'water', amount: 3}, gifts: 1, cap: 3}}}); }});
   const visit = {members: ['luna'], gifted: false};
   tapFriend('luna', 1, deps({visit, gifts: 0, cap: 3}));
@@ -101,7 +101,7 @@ test('a tap says a line and asks the server for the gift only while one is still
   tapFriend('luna', 3, deps({visit, gifts: 3, cap: 3}));
   tapFriend('luna', 4, deps(undefined));
   assert.deepEqual(claims, [{action: 'greetFriend', friendId: 'luna'}]);
-  assert.deepEqual(said.slice(0, 2), ['Luna: «' + FRIENDS.luna.lines[0] + '»', 'Luna: «' + FRIENDS.luna.lines[1] + '»']);
+  assert.deepEqual(said.slice(0, 2), ['luna: ' + FRIENDS.luna.lines[0], 'luna: ' + FRIENDS.luna.lines[1]]);
   assert.equal(cheers.length, 4);
 });
 

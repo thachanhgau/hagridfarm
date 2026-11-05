@@ -130,10 +130,11 @@ const GIFT_LABEL = {water: '💧', boost: '✨'}, ITEM_LABEL = {elf_sock: 'Vớ 
 export const friendGiftText = (friend) => `${FRIENDS[friend.friendId].name} tặng ${GIFT_LABEL[friend.gift.kind]} ${friend.gift.amount}`
   + (friend.gift.itemId ? ` · ${ITEM_LABEL[friend.gift.itemId] || friend.gift.itemId} ${friend.gift.bonusQty}` : '') + ` (${friend.gifts}/${friend.cap} hôm nay)`;
 
-// A tap (`taps` counts from 1): a line, a cheer, and the visit's gift once (server greetFriend, 3 a VN day).
-export function tapFriend(id, taps, {snapshot, claim, say, cheer}) {
+// A tap (`taps` counts from 1): a cheer, the line in a bubble over the friend (`line`), and the visit's gift once
+// (server greetFriend, 3 a VN day) as a toast (`say`).
+export function tapFriend(id, taps, {snapshot, claim, say, line, cheer}) {
   cheer(id);
-  say(`${FRIENDS[id].name}: «${friendLine(id, taps - 1)}»`);
+  line(id, friendLine(id, taps - 1));
   const f = snapshot?.friends;
   if (!f?.visit || f.visit.gifted || f.gifts >= f.cap || !f.visit.members.includes(id)) return;
   claim({action: 'greetFriend', friendId: id}).then((r) => { if (r.ok && r.receipt?.friend) setTimeout(() => say(friendGiftText(r.receipt.friend)), 900); });

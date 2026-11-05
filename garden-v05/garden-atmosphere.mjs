@@ -367,8 +367,9 @@ export function hagridSpeechFor(state = {}, { matureCropCount = 0, readyMealCoun
 }
 
 // `scale` enlarges the bubble in world space so its text stays readable when the
-// camera is zoomed out (the tutorial passes it); the bubble's bottom edge stays put.
-export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false, scale = 1, align = 'center' } = {}) {
+// camera is zoomed out (the tutorial passes it); the bubble's bottom edge stays put. `lift` is the bubble's height above
+// the feet: Hagrid's 94 px, a gia tinh or a visiting friend less.
+export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false, scale = 1, align = 'center', lift = 94 } = {}) {
   if (!ctx || !text) return;
   const copy = String(text).slice(0, 68);
   ctx.save?.();
@@ -382,7 +383,7 @@ export function drawHagridSpeechBubble(ctx, x, y, text, { emphasized = false, sc
   const boxH = Math.round(24 * k);
   // 'right' grows the bubble from Hagrid's head towards the garden, away from the forest edge.
   const bx = Math.round(align === 'right' ? x - 24 * k : x - boxW / 2);
-  const by = Math.round(y - 94 - boxH);
+  const by = Math.round(y - lift - boxH);
 
   ctx.fillStyle = emphasized ? 'rgba(19, 39, 32, 0.95)' : 'rgba(20, 38, 34, 0.88)';
   ctx.fillRect?.(bx, by, boxW, boxH);

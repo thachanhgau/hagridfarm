@@ -771,6 +771,7 @@ export async function createGarden(canvas, options = {}) {
   let fireCache = null; // «Đốt vườn» flame spots for the current stage
   let duty = null; // 25.0 S5 options.duty: {wilt: Set, dead: Map, sick: Set, gnomes: [plot], kit: garden-duty-art} ('plot:slot' keys)
   let friends = null; // 25.0 S6 garden-friends.mjs
+  let said = {}; // {id, text, until}: the last tapped gia tinh or friend's line
 
   function layoutCacheKey() {
     return JSON.stringify([
@@ -1417,6 +1418,8 @@ export async function createGarden(canvas, options = {}) {
     if (object.kind === 'elf') {
       drawAsset({...object.asset, noSnowCap: true}, object.xy[0], object.xy[1], null, null, object.flip);
       breathOf(object.asset, object.xy, object.flip, object.flip, object.id, clock);
+      // A tapped gia tinh or friend says its line in a bubble over its head (owner 05/11/2026).
+      if (said.id === object.id && said.until > performance.now()) drawHagridSpeechBubble(context, object.xy[0], object.xy[1], said.text, {lift: 72, scale: labelScale});
       return;
     }
     if (object.kind === 'wizard-scenery') {
@@ -1944,6 +1947,7 @@ export async function createGarden(canvas, options = {}) {
     pick,
     greet:()=>{reactionUntil=performance.now()+2600;},
     cheerElf:(id)=>{elfCheers[id]=performance.now()+CHEER_MS;},
+    say:(id,text)=>{said={id,text,until:performance.now()+3600};},
     animate: (kind, target = {}) => animation.animate(kind, target),
     react: (before, after, options = {}) => animation.react(before, after, options),
     animations: () => animation.events(),
