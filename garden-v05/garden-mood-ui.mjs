@@ -45,7 +45,7 @@ export function moodTiles({species,entry,view,bondLevel=1,now=Date.now()}){
 
 export function tendText(tend,labelOf){
  const name=labelOf(tend.species);
- if(tend.kind==='roam')return tend.back?`${name} đi rông về, mang theo ${Object.values(tend.found||{})[0]||0} phần ăn · tâm trạng ${tend.mood}.`:`${name} đi rông tới ${clockText(tend.roamUntil)}.`;
+ if(tend.kind==='roam')return tend.back?`${name} đi rông về${Object.values(tend.found||{})[0]?`, mang theo ${Object.values(tend.found)[0]} phần ăn`:''} · tâm trạng ${tend.mood}.`:`${name} đi rông tới ${clockText(tend.roamUntil)}.`;
  const verb={play:'chơi vui',groom:'sạch sẽ, mượt mà',train:'học thêm một bài',ride:'chở bạn bay một vòng vườn',reclaim:'trả lại món đồ trang trí'}[tend.kind]||'vui';
  return `${name} ${verb} · tâm trạng ${tend.mood}.`;
 }

@@ -18,8 +18,8 @@ import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=25.0.
 import {decorObjects,decorFootprintRect,depthCompare} from './decor-runtime.mjs?v=25.0.0';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=25.0.0';
 import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=25.0.0';
-import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.0.0';
-import {drawEventOverlay} from './garden-events.mjs?v=25.0.0';
+import {atmosphereConfig,weatherConfig,backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.0.0';
+import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.0.0';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.0.0';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.0.0';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.0.0';
@@ -918,21 +918,20 @@ export async function createGarden(canvas, options = {}) {
     target.drawImage(img,0,0,w,h);target.restore();
   }
   let backdropRevision=0,backdropUrls=[],backdropLightKey='';
-  function syncBackdropLighting(atmosphere,weather){
-    const surface=canvas.parentElement,key=atmosphere+':'+weather;if(!surface?.style||key===backdropLightKey)return;
+  function syncBackdropLighting(atmosphere,weather,event,winter){
+    const surface=canvas.parentElement,key=[atmosphere,weather,event,winter].join(':');if(!surface?.style||key===backdropLightKey)return;
     backdropLightKey=key;
-    const tint=atmosphereConfig(atmosphere).tint||'transparent',wet=weatherConfig(weather).tint||'transparent';
-    // Same compositing order as Canvas: weather over time-of-day over scenery.
-    surface.style.backgroundImage=`linear-gradient(${wet},${wet}),linear-gradient(${tint},${tint}),var(--scenic-ground,none)`;
+    const tints=backdropTints({atmosphere,weather,eventTint:event&&event!=='none'?eventConfig(event).tint:null,winter});
+    surface.style.backgroundImage=tints.map(tint=>`linear-gradient(${tint},${tint})`).join(',')+',var(--scenic-ground,none)';
   }
   function publishBackdrop(){
     const surface=canvas.parentElement;if(!surface?.style)return;
     const revision=++backdropRevision;
     surface.style.backgroundColor=activeWeather==='snow'?'#a6b1ae':activeWeather==='autumn'?'#735044':'#142620';
-    surface.style.backgroundRepeat='no-repeat, no-repeat, no-repeat, repeat';
+    surface.style.backgroundRepeat='no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat';
     const size='calc(2560px * var(--forest-scale,1)) calc(1440px * var(--forest-scale,1))';
-    surface.style.backgroundSize='100% 100%,100% 100%,'+size+','+size;
-    surface.style.backgroundPosition='0 0,0 0,calc(var(--forest-x,0px) - 2560px * var(--forest-scale,1)) var(--forest-y,0px), var(--forest-x,0px) var(--forest-y,0px)';
+    surface.style.backgroundSize='100% 100%,100% 100%,100% 100%,100% 100%,'+size+','+size;
+    surface.style.backgroundPosition='0 0,0 0,0 0,0 0,calc(var(--forest-x,0px) - 2560px * var(--forest-scale,1)) var(--forest-y,0px), var(--forest-x,0px) var(--forest-y,0px)';
     if(typeof forestBackdrop.toBlob!=='function')return;
     const toUrl=source=>new Promise(resolve=>source.toBlob(blob=>resolve(blob?URL.createObjectURL(blob):null),'image/webp',.9));
     Promise.all([toUrl(westBackdrop),toUrl(forestBackdrop)]).then(urls=>{
@@ -1597,7 +1596,7 @@ export async function createGarden(canvas, options = {}) {
     if (options.winterKit && !kit) { kit = options.winterKit; for (const file of [...kit.WINTER_FILES, ...kit.STATUE_GLOW_FILES]) deferredFiles.add(file); }
     activeWinter = kit && options.winter?.active ? options.winter : null;
     const groundWeather = activeWinter && weatherMode === 'clear' ? 'snow' : weatherMode;
-    prepareWeather(groundWeather, activeWinter && groundWeather === 'snow' ? activeWinter.depth : 1, Boolean(activeWinter));syncBackdropLighting(atmosphereMode,weatherMode);activeEvent=eventMode;
+    prepareWeather(groundWeather, activeWinter && groundWeather === 'snow' ? activeWinter.depth : 1, Boolean(activeWinter));syncBackdropLighting(atmosphereMode,weatherMode,eventMode,Boolean(activeWinter));activeEvent=eventMode;
     const creatureFacings = options.creatureFacings ?? state?.creatureFacings ?? {};
     const creatureAffinities = options.creatureAffinities ?? {};
     applyLayout(state?.layout);

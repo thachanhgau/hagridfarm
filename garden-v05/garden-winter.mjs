@@ -3,6 +3,7 @@
 // Rare coats (đông, bạc, Noel) only recolour a creature inside the 32-colour palette: looks, never economy (#39).
 import {stableHash} from './scene-animation.mjs?v=25.0.0';
 import {SPRITE_PALETTE} from './palette.mjs?v=25.0.0';
+import {WINTER_NIGHT_TINT} from './garden-atmosphere.mjs?v=25.0.0';
 
 const VN_OFFSET_MS = 7 * 3600000, DAY_MS = 86400000;
 const vnDate = (ms) => new Date(ms + VN_OFFSET_MS);
@@ -194,7 +195,7 @@ export function drawActorBreath(ctx, asset, xy, flipped, looksRight, seed, clock
 }
 // Over the scene: moonlight on snow reads blue, lanterns drawn after the night tint stay lit, then the fog.
 export function drawWinterLayer(ctx, {width, height, lanterns = [], mode = 'day', clock = 0}) {
-  if (mode === 'night') { ctx.fillStyle = 'rgba(62,59,112,.18)'; ctx.fillRect?.(0, 0, width, height); }
+  if (mode === 'night') { ctx.fillStyle = WINTER_NIGHT_TINT; ctx.fillRect?.(0, 0, width, height); }
   for (const light of lanterns) drawLantern(ctx, light.x, light.y, mode !== 'day');
   drawWinterFog(ctx, width, height, {clock, mode});
 }

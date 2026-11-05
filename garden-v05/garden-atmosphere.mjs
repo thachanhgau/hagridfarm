@@ -71,6 +71,13 @@ export function normalizeAtmosphereMode(value) {
   return MODE_MAP.has(key) ? key : 'day';
 }
 
+// Canvas tints that must also lie on the surface behind the canvas, or its edge shows as a rectangle (portrait, zoomed out).
+export const WINTER_NIGHT_TINT = 'rgba(62,59,112,.18)';
+/** Top first, the order the canvas paints them last to first: event, winter night, weather, time of day. */
+export function backdropTints({atmosphere, weather, eventTint = null, winter = false}) {
+  return [eventTint, winter && atmosphere === 'night' ? WINTER_NIGHT_TINT : null, weatherConfig(weather).tint, atmosphereConfig(atmosphere).tint].map((tint) => tint || 'transparent');
+}
+
 export function atmosphereConfig(mode) {
   return MODE_MAP.get(normalizeAtmosphereMode(mode)) ?? ATMOSPHERE_MODES[0];
 }

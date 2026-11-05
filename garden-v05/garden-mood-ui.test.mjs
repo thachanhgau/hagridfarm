@@ -30,4 +30,5 @@ test('tiles: riding only Bằng-Mã and Vong mã at gắn kết 5; Norbert never
   assert.deepEqual([roam(moodTiles({species: 'kneazle', entry: entry({roamUntil: now - 1}), view, now})).label], ['Đón về']);
   assert.equal(roam(moodTiles({species: 'kneazle', entry: entry(), view: {...view, roamsLeft: 0}, now})).state, 'Hết lượt hôm nay');
   assert.match(tendText({species: 'kneazle', kind: 'roam', back: true, found: {kneazle_feed: 1}, mood: 70}, () => 'Kneazle'), /mang theo 1 phần ăn/);
+  assert.equal(tendText({species: 'kneazle', kind: 'roam', back: true, found: {}, mood: 70}, () => 'Kneazle'), 'Kneazle đi rông về · tâm trạng 70.');
 });
