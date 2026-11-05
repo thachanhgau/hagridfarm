@@ -11,6 +11,7 @@
 import {el,num} from './ui-utils.mjs?v=24.9.96';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=24.9.96';
 import {fireworks} from './garden-friends.mjs?v=24.9.96';
+import {FEAST_GROUND, decorOnGround} from './decor-placement-ui.mjs?v=24.9.96';
 import {iconButton} from './pixel-icons.mjs?v=24.9.96';
 import {showHagridLetter} from './hagrid-letter-ui.mjs?v=24.9.96';
 
@@ -44,7 +45,7 @@ const snowball = (from, to, k) => {
 
 /** The hearth goes into `elves` (picked like a gia tinh, id 'xmas-hearth'); returns the vớ and egg drawn over it, and
  * by date the Đêm Noel feast and carried tree, the New Year fireworks (night) and a thrown banh tuyết. */
-export function hearthObjects(iso, view, elves = [], {clock = 0, night = false} = {}) {
+export function hearthObjects(iso, view, elves = [], {clock = 0, night = false, decorations = null} = {}) {
   if (!view || view.hearth === false) return [];
   const [x, y] = iso(...HEARTH_SPOT), xy = [Math.round(x), Math.round(y)];
   elves.push({kind: 'elf', id: 'xmas-hearth', still: true, xy, flip: false, asset: {...HEARTH, file: file('hearth')}});
@@ -54,7 +55,8 @@ export function hearthObjects(iso, view, elves = [], {clock = 0, night = false} 
   if (view.egg && !view.egg.hatched) out.push(overlay('xmas-egg', xy, EGG, `egg-${view.egg.stage}`, FIREBOX));
   if (view.eve) {
     const [fx, fy] = iso(...FEAST_SPOT), [gx, gy] = iso(...GARDENER);
-    out.push({kind: 'elf', id: 'xmas-feast', still: true, xy: [Math.round(fx), Math.round(fy)], flip: false, asset: {...FEAST, file: file('feast')}});
+    // A piece placed there before the ground was kept free wins: no feast drawn over it.
+    if (!decorOnGround(FEAST_GROUND, decorations)) out.push({kind: 'elf', id: 'xmas-feast', still: true, xy: [Math.round(fx), Math.round(fy)], flip: false, asset: {...FEAST, file: file('feast')}});
     out.push({kind: 'elf', id: 'xmas-carried-tree', still: true, xy: [Math.round(gx), Math.round(gy) + 1], flip: false,
       asset: {...CARRIED, file: file('carried-tree'), pivotX: CARRIED.pivotX - HAND[0], pivotY: CARRIED.pivotY - HAND[1], bounds: {x: 0, y: 0, w: 0, h: 0}}});
   }
@@ -164,8 +166,10 @@ export function createXmasCare({getSnapshot, act, notify}) {
         }), {text: E.claimed ? 'Đã nhận' : 'Nhận quà', class: E.claimed ? '' : 'primary', disabled: E.claimed})));
     }
     if (view.yule) {
-      if (view.yule.board) lastBoard = {board: view.yule.board, stage: view.yule.stage};
+      if (view.yule.board) lastBoard = {board: view.yule.board, stage: view.yule.stage, pointsAt: view.yule.points};
       const Y = {...lastBoard, ...view.yule};
+      // Between reads, the member's own points since the last read are added to their house's row.
+      if (!view.yule.board && lastBoard) Y.board = lastBoard.board.map((b) => (b.house === Y.house ? {...b, points: b.points + Y.points - lastBoard.pointsAt} : b)).sort((a, b) => b.points - a.points);
       rows.push(el('p', {class: 'meta', text: Y.house
         ? `Dạ Vũ Noel (18–31/12) · cây thông nhà ${Y.houseLabel} · con góp ${num(Y.points)} điểm${Y.points >= Y.championMin ? '' : ` (từ ${Y.championMin} điểm mới nhận Cây thông nhà vô địch)`}`
         : 'Dạ Vũ Noel (18–31/12) · từ cấp 20 và có nhà trong Floo, điểm Cúp Nhà mới vào cây thông nhà'}));

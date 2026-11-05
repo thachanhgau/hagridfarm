@@ -1694,7 +1694,7 @@ export async function createGarden(canvas, options = {}) {
     elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering, work: options.elfWork}) : [];
     if (propsVisible && options.norbert) elfList.push(norbertObject(iso, clock, {night: atmosphereMode === 'night', cheering: !!cheering.norbert}));
     const fx = propsVisible && friends ? friends.friendObjects(iso, clock, options.now, elfList, {night: atmosphereMode === 'night', winter: !!activeWinter, cheering, all: options.allFriends}) : [];
-    if (propsVisible && xmasKit) fx.push(...xmasKit.hearthObjects(iso, options.xmas, elfList, {clock, night: atmosphereMode === 'night'})); // December hearth, vớ, egg; S7 part 2 by date
+    if (propsVisible && xmasKit) fx.push(...xmasKit.hearthObjects(iso, options.xmas, elfList, {clock, night: atmosphereMode === 'night', decorations: options.decorations})); // December hearth, vớ, egg; S7 part 2 by date
     const objects = [...boundaryFence, ...wizList, ...elfList, ...fx, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {

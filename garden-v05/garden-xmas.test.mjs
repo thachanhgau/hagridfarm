@@ -95,6 +95,9 @@ test('hearthObjects by date: Đêm Noel feast and carried tree, New Year firewor
   const view = {hearth: true, chapter: null, egg: null, eve: {claimed: false}, newYear: {year: 2027}};
   const day = hearthObjects(iso, view, [], {clock: 500, night: false}).map((o) => o.id ?? o.kind);
   assert.deepEqual(day, ['xmas-feast', 'xmas-carried-tree']);
+  // A decoration already standing on the feast ground keeps it: the feast is not drawn over it.
+  const taken = {placements: ['decor_cauldron'], positions: {decor_cauldron: [12, 0.5]}};
+  assert.deepEqual(hearthObjects(iso, view, [], {clock: 500, decorations: taken}).map((o) => o.id), ['xmas-carried-tree']);
   const night = hearthObjects(iso, view, [], {clock: 500, night: true});
   assert.ok(night.filter((o) => o.kind === 'fx').length >= 1);
   assert.equal(hearthObjects(iso, view, [], {clock: 0, night: true}).filter((o) => o.kind === 'fx').length, 0); // reduced motion
