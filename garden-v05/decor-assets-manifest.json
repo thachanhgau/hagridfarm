@@ -487,7 +487,7 @@
       "collection": "special",
       "storeItem": true,
       "rotatable": true,
-      "label": "Góc ô hồng của Hagrid",
+      "label": "Góc dù hồng của Hagrid",
       "group": "Hagrid và Rừng Cấm",
       "file": "decor-assets/native/flow-sp_hagrid_umbrella.png",
       "frames": [
@@ -539,7 +539,7 @@
         "book": 1,
         "chapter": 4
       },
-      "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
+      "lore": "Cây dù hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
       "nativeSha256": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
       "atlasRects": [
         {
@@ -1210,7 +1210,7 @@
       "collection": "special",
       "storeItem": true,
       "rotatable": true,
-      "label": "Quân mã cờ phù thủy",
+      "label": "Quân cờ hiệp sĩ",
       "group": "Bảo vật Hogwarts",
       "file": "decor-assets/native/sp_wizard_chess_knight.png",
       "frames": [
@@ -1698,7 +1698,7 @@
       "collection": "special",
       "storeItem": true,
       "rotatable": true,
-      "label": "Dây chuyền opal bị nguyền",
+      "label": "Chuỗi ngọc bị nguyền",
       "group": "Hắc thuật và bí mật",
       "file": "decor-assets/native/sp_cursed_opal_necklace.png",
       "frames": [
@@ -1750,7 +1750,7 @@
         "book": 6,
         "chapter": 12
       },
-      "lore": "Dây chuyền khiến Katie Bell bị nguyền.",
+      "lore": "Chuỗi ngọc khiến Katie Bell bị nguyền.",
       "nativeSha256": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f"
     },
     {
@@ -2186,7 +2186,7 @@
       "collection": "special",
       "storeItem": true,
       "rotatable": true,
-      "label": "Snitch giữ Hòn Đá Phục Sinh",
+      "label": "Snitch giữ viên đá Phục sinh",
       "group": "Hành trình phép thuật",
       "file": "decor-assets/native/sp_snitch_resurrection_stone.png",
       "frames": [
@@ -2238,7 +2238,7 @@
         "book": 7,
         "chapter": 34
       },
-      "lore": "Harry mở quả Snitch trước khi đi vào Rừng Cấm.",
+      "lore": "Harry mở trái Snitch trước khi đi vào Rừng Cấm.",
       "nativeSha256": "63c34907272dc2fe915c334b0babae73977ee8566817d5f659dab91a7b7adb85"
     },
     {
@@ -3993,7 +3993,7 @@
       "collection": "festival",
       "storeItem": true,
       "rotatable": true,
-      "label": "Giá treo mũ phù thủy",
+      "label": "Giá treo nón phù thủy",
       "group": "Góc phù thủy",
       "file": "decor-assets/native/hw_witch_hat_rack.png",
       "rightFile": "decor-assets/native/hw_witch_hat_rack_right.png",

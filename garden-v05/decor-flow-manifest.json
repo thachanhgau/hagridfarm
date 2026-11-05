@@ -448,7 +448,7 @@
         "collection": "special",
         "storeItem": true,
         "rotatable": true,
-        "label": "Góc ô hồng của Hagrid",
+        "label": "Góc dù hồng của Hagrid",
         "group": "Hagrid và Rừng Cấm",
         "file": "decor-assets/native/flow-sp_hagrid_umbrella.png",
         "frames": [
@@ -500,7 +500,7 @@
           "book": 1,
           "chapter": 4
         },
-        "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
+        "lore": "Cây dù hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
         "nativeSha256": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
         "atlasRects": [
           {

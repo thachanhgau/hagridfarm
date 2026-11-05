@@ -42,7 +42,7 @@
   "items": [
     {
       "id": "sp_hagrid_umbrella",
-      "label": "Góc ô hồng của Hagrid",
+      "label": "Góc dù hồng của Hagrid",
       "group": "Hagrid và Rừng Cấm",
       "subject": "Rubeus Hagrid's iconic battered closed pink umbrella with curved wooden handle, leaning beside his oversized rustic brass lantern and a pair of enormous brown gamekeeper boots on a low rough timber display stand. The umbrella is faded muted rose-purple, NOT open; no character, no wand visible. Recognizable Hagrid memorabilia, book-faithful objects; display arrangement is a game adaptation.",
       "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
@@ -116,7 +116,7 @@
         "book": 1,
         "chapter": 4,
         "term": "umbrella",
-        "lore": "Chiếc ô hồng của Hagrid; bố cục trưng bày là chuyển thể cho game."
+        "lore": "Cây dù hồng của Hagrid; bố cục trưng bày là chuyển thể cho game."
       },
       "footprintTiles": [
         2,
@@ -1472,7 +1472,7 @@
     },
     {
       "id": "sp_wizard_chess_knight",
-      "label": "Quân mã cờ phù thủy",
+      "label": "Quân cờ hiệp sĩ",
       "group": "Bảo vật Hogwarts",
       "subject": "A large dark stone enchanted chess KNIGHT from the giant chess challenge guarding the Philosopher's Stone: armored horse head and neck rising from a worn square plinth, chunky medieval carved details, a faint purple glint in one eye. NO rider, no Ron figure, no chessboard, no other pieces. Strong readable stone chess silhouette.",
       "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
@@ -2562,7 +2562,7 @@
     },
     {
       "id": "sp_cursed_opal_necklace",
-      "label": "Dây chuyền opal bị nguyền",
+      "label": "Chuỗi ngọc bị nguyền",
       "group": "Hắc thuật và bí mật",
       "subject": "The cursed opal necklace from Borgin and Burkes displayed behind a small clear protective glass bell on a dark velvet jewelry bust. A long strand of pale iridescent opal stones with a larger central stone, fine silver chain, faint violet reflections. No hands, no text warning sign, no lettering.",
       "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
@@ -2636,7 +2636,7 @@
         "book": 6,
         "chapter": 12,
         "term": "necklace",
-        "lore": "Dây chuyền khiến Katie Bell bị nguyền."
+        "lore": "Chuỗi ngọc khiến Katie Bell bị nguyền."
       },
       "footprintTiles": [
         1,
@@ -3608,7 +3608,7 @@
     },
     {
       "id": "sp_snitch_resurrection_stone",
-      "label": "Snitch giữ Hòn Đá Phục Sinh",
+      "label": "Snitch giữ viên đá Phục sinh",
       "group": "Hành trình phép thuật",
       "subject": "The golden Snitch containing the Resurrection Stone: a small round gold ball with two delicate long silver wings, split slightly open to reveal a small cracked black stone within, resting on a simple low dark timber display mount. No text or inscription, no other balls, no human hands. Wings intact and symmetric.",
       "designAdaptation": "Chuyển thể đồ vật/cảnh trong truyện thành tiểu cảnh pixel art; bệ đỡ, tỷ lệ thu nhỏ và bố cục trưng bày do game thiết kế.",
@@ -3682,7 +3682,7 @@
         "book": 7,
         "chapter": 34,
         "term": "Snitch",
-        "lore": "Harry mở quả Snitch trước khi đi vào Rừng Cấm."
+        "lore": "Harry mở trái Snitch trước khi đi vào Rừng Cấm."
       },
       "footprintTiles": [
         2,
