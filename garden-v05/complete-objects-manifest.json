@@ -10,17 +10,17 @@
       "pivotX": 40,
       "pivotY": 100,
       "bounds": {
-        "x": 11,
-        "y": 10,
-        "w": 58,
-        "h": 90
+        "x": 10,
+        "y": 36,
+        "w": 53,
+        "h": 64
       },
-      "sha256": "6dedf8e885c63f5dac87881006a965501540493a0eaa9e623b5bbcfc7c2ee17c",
+      "sha256": "f48b7c29f3e60b7cd846f5174a695c26179b6ce4934dc9d14d4951cf12587826",
       "sourceRect": {
         "x": 0,
         "y": 0,
-        "w": 620,
-        "h": 634
+        "w": 512,
+        "h": 512
       },
       "frames": [
         "native-complete-objects/gardener_friend/frame-01.png",
@@ -36,17 +36,17 @@
           "pivotX": 40,
           "pivotY": 100,
           "bounds": {
-            "x": 11,
-            "y": 10,
-            "w": 58,
-            "h": 90
+            "x": 10,
+            "y": 36,
+            "w": 53,
+            "h": 64
           },
-          "sha256": "6dedf8e885c63f5dac87881006a965501540493a0eaa9e623b5bbcfc7c2ee17c",
+          "sha256": "f48b7c29f3e60b7cd846f5174a695c26179b6ce4934dc9d14d4951cf12587826",
           "sourceRect": {
             "x": 0,
             "y": 0,
-            "w": 620,
-            "h": 634
+            "w": 512,
+            "h": 512
           }
         },
         {
@@ -56,17 +56,17 @@
           "pivotX": 40,
           "pivotY": 100,
           "bounds": {
-            "x": 12,
-            "y": 10,
-            "w": 57,
-            "h": 90
+            "x": 11,
+            "y": 36,
+            "w": 54,
+            "h": 64
           },
-          "sha256": "7bf35277ae4327253a1795cba34e0e24222d9522032b8133d3c404feac9258cc",
+          "sha256": "a7686a71a5dbeef22e65762517fd620490982a4af4f5a5637de2118197cc0712",
           "sourceRect": {
-            "x": 620,
+            "x": 512,
             "y": 0,
-            "w": 620,
-            "h": 634
+            "w": 512,
+            "h": 512
           }
         },
         {
@@ -76,17 +76,17 @@
           "pivotX": 40,
           "pivotY": 100,
           "bounds": {
-            "x": 9,
-            "y": 9,
-            "w": 63,
-            "h": 91
+            "x": 5,
+            "y": 36,
+            "w": 59,
+            "h": 64
           },
-          "sha256": "9d3503d8666a8317852a75a1df7aed0896907d781b6e43ddac212f1b09044fd6",
+          "sha256": "eaabe672c85663a0a3e4ab013d73837e9e6f9860bbd8008ccbbad3d7a1c5d9c0",
           "sourceRect": {
             "x": 0,
-            "y": 634,
-            "w": 620,
-            "h": 634
+            "y": 512,
+            "w": 512,
+            "h": 512
           }
         },
         {
@@ -96,17 +96,17 @@
           "pivotX": 40,
           "pivotY": 100,
           "bounds": {
-            "x": 9,
-            "y": 6,
-            "w": 63,
-            "h": 94
+            "x": 7,
+            "y": 35,
+            "w": 56,
+            "h": 65
           },
-          "sha256": "3e08b55f3c2762d289c0f00362e027c68d065afa4453f3b9c83cf61b58ea3b7e",
+          "sha256": "ad19d813bf8e21c9bb1596d2dc26f8c1c87bac590560c558aa85d5f30765866b",
           "sourceRect": {
-            "x": 620,
-            "y": 634,
-            "w": 620,
-            "h": 634
+            "x": 512,
+            "y": 512,
+            "w": 512,
+            "h": 512
           }
         }
       ],
@@ -119,9 +119,9 @@
       "rotatable": false,
       "storeItem": false,
       "master": "masters-complete-objects/gardener_friend.png",
-      "masterSha256": "58c44e47e4244cc8f0075738222f106a750534c2c6e7d2cc8125ce0715330361",
-      "prompt": "EDIT this sprite atlas to fix prop consistency across all four poses. Keep exact 2x2 grid and same character identity, proportions, colors and very clean chunky pixel style. In ALL FOUR CELLS put the brass lantern ON THE GROUND immediately next to his screen-RIGHT boot, at exactly the same position relative to his boots; NEVER held in a hand. Strap the folded pink umbrella to his back on his screen-RIGHT side, visible above/beside coat, same position every pose, NEVER held in a hand. Both hands free. Top-left neutral open eyes, top-right blink, bottom-left raising screen-LEFT hand, bottom-right screen-LEFT hand waving. Same coat buttons belt beard hair face and boot placements every pose. No missing lantern or swapped objects, no new accessories, no extra hands. Four isolated full figures in equal square cells, generous transparent gutters at center and margin. True alpha transparent background, no floor shadows, no text. Broad flat clusters and only2-3 shades per material, no texture/dithering or stray pixels.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-0dcd1459-95e3-4db2-bc76-0380aef4fba2.png",
+      "masterSha256": "f231b73d92ebb90e6ea38180322fa2460ac42c0ae34a02a4131a1edaccbaefcb",
+      "prompt": "A 3x2 character sprite sheet of Rubeus Hagrid from the Harry Potter books (not the films, not looking like any actor), rendered in chunky 16-bit pixel art style matching the approved Harry sprite sheet and Dobby sprite sheet: dark #231F2E outlines, light from the top-left, flat color shading, pure solid white background.\n\nCharacter design of Rubeus Hagrid (book version):\nA lovable half-giant chibi gamekeeper of Hogwarts, about 1.5x the height of Harry and much broader with huge shoulders, big hands, and boots, retaining cute chibi proportions with a large head. Wild tangled long black hair and a bushy black beard hiding most of his lower face, small kind beetle-black eyes crinkling with warmth, rosy cheeks. Wearing an oversized brown moleskin coat with bulging patch pockets, a dark waistcoat underneath, a wide leather belt with a brass buckle, and dark trousers tucked into enormous brown boots. A folded pink flowered umbrella is strapped across his back and visible poking out over his screen-right shoulder. A freestanding brass lantern stands on the ground right next to his screen-right boot in EVERY pose (never held in hands).\n\nSheet format:\n3x2 grid (3 columns by 2 rows) on a clean, solid white background with generous empty spacing between poses, no background, no shadows, no floor tiles, no grid lines, no text. All 6 poses face three-quarter view toward the lower-left, sharing the exact same scale, sprite height, and row baselines:\nRow 1:\n1. 'idle' (top-left): Rubeus Hagrid standing still, warm smile, both hands resting relaxed at his sides. Brass lantern sitting on the ground next to his screen-right boot.\n2. 'blink' (top-middle): Exactly the same stance, body, coat, hands, umbrella, and ground lantern as idle, but eyes closed in a gentle blink.\n3. 'raise' (top-right): Same standing stance, his screen-left hand (viewer's left side) lifted to shoulder height with open palm facing forward to begin waving; screen-right hand rests at his side. Lantern on the ground at screen-right boot.\n\nRow 2:\n4. 'wave' (bottom-left): Same standing stance, his screen-left hand (viewer's left side) raised high above his head waving enthusiastically, screen-right hand resting down at his side, big joyful crinkly-eyed smile. Lantern on the ground at screen-right boot.\n5. 'laugh' (bottom-middle): Laughing heartily with mouth open in a big happy laugh, both hands placed on his belly. Lantern on the ground at screen-right boot.\n6. 'pat' (bottom-right): Bending forward slightly at the waist, reaching his screen-left hand down to pat something small at knee height, screen-right hand back. Lantern on ground at screen-right boot.",
+      "generatedFile": "masters-complete-objects/hagrid-chibi-candidate-b.jpg",
       "tool": "builtin image_gen",
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
@@ -1554,17 +1554,17 @@
       "pivotX": 40,
       "pivotY": 92,
       "bounds": {
-        "x": 17,
-        "y": 8,
-        "w": 47,
-        "h": 84
+        "x": 13,
+        "y": 6,
+        "w": 54,
+        "h": 86
       },
-      "sha256": "c4b5354d66965cdb353d7c697aa23ae2f09f07c03c8c76176da3e0b588c4aa37",
+      "sha256": "570e4ece6f8cf6c0b7504d80bf4e10774f8556b35b4d49ce25d162e1fd5f4bd3",
       "sourceRect": {
         "x": 0,
         "y": 0,
-        "w": 613,
-        "h": 642
+        "w": 512,
+        "h": 512
       },
       "frames": [
         "native-complete-objects/owl_post/frame-01.png",
@@ -1580,17 +1580,17 @@
           "pivotX": 40,
           "pivotY": 92,
           "bounds": {
-            "x": 17,
-            "y": 8,
-            "w": 47,
-            "h": 84
+            "x": 13,
+            "y": 6,
+            "w": 54,
+            "h": 86
           },
-          "sha256": "c4b5354d66965cdb353d7c697aa23ae2f09f07c03c8c76176da3e0b588c4aa37",
+          "sha256": "570e4ece6f8cf6c0b7504d80bf4e10774f8556b35b4d49ce25d162e1fd5f4bd3",
           "sourceRect": {
             "x": 0,
             "y": 0,
-            "w": 613,
-            "h": 642
+            "w": 512,
+            "h": 512
           }
         },
         {
@@ -1600,17 +1600,17 @@
           "pivotX": 40,
           "pivotY": 92,
           "bounds": {
-            "x": 17,
-            "y": 8,
-            "w": 47,
-            "h": 84
+            "x": 13,
+            "y": 6,
+            "w": 54,
+            "h": 86
           },
-          "sha256": "8522785127b25102cb58eee1856786101e31cfcca6fc493c1e8d346b94b11e3d",
+          "sha256": "33a139a497f48927b8fcee972659d42f315292765387f6ba8a2c7c8774fa1005",
           "sourceRect": {
-            "x": 613,
+            "x": 512,
             "y": 0,
-            "w": 612,
-            "h": 642
+            "w": 512,
+            "h": 512
           }
         },
         {
@@ -1620,17 +1620,17 @@
           "pivotX": 40,
           "pivotY": 92,
           "bounds": {
-            "x": 12,
+            "x": 7,
             "y": 6,
-            "w": 56,
+            "w": 59,
             "h": 86
           },
-          "sha256": "cf03afce6182159dc259e3bdd2b6b57c5f512d4e5d55f0859b6fddd7085db2c8",
+          "sha256": "d2bc424abb05b604dd97e9cef34c46c0826a4b01e856f5ef9a74a71e21d621ad",
           "sourceRect": {
             "x": 0,
-            "y": 642,
-            "w": 613,
-            "h": 642
+            "y": 512,
+            "w": 512,
+            "h": 512
           }
         },
         {
@@ -1640,17 +1640,17 @@
           "pivotX": 40,
           "pivotY": 92,
           "bounds": {
-            "x": 17,
+            "x": 13,
             "y": 6,
-            "w": 47,
+            "w": 54,
             "h": 86
           },
-          "sha256": "b5ce97c73353d0ede1359f806e9bf563bfacdbb41a5b02f033a79e771f223477",
+          "sha256": "6d1660fb72bbee7eaa552d3ca5ac61b64bc9085c5113e457f42a1be2f7584fbd",
           "sourceRect": {
-            "x": 613,
-            "y": 642,
-            "w": 612,
-            "h": 642
+            "x": 512,
+            "y": 512,
+            "w": 512,
+            "h": 512
           }
         }
       ],
@@ -1663,9 +1663,9 @@
       "rotatable": false,
       "storeItem": false,
       "master": "masters-complete-objects/owl_post.png",
-      "masterSha256": "8746e353914e161bae9756133b35182979377676c220f7ced313b6c9df296302",
-      "prompt": "Create ONE transparent production sprite atlas for the snowy messenger owl on a rustic wooden T perch with one hanging cream envelope and red wax seal. Supplied image is STYLE/IDENTITY reference: use its center owl post, ignore other objects. Four authored poses exact 2 columns by 2 rows grid, row-major: neutral owl looking ahead, head turned gently to left, blink and little wing stretch, head tilted right with wing folded again. Same post/envelope and planted post baseline and camera/scale every square cell. Cute white owl, amber eyes/beak, grey simple wing areas. Clean chunky pixel art, logical sprite 52x80 pixels per cell. Broad flat solid pixel clusters, 2-3 shades per material, NO tiny feather pattern or noisy fur/dithering/gradient/glow. 2:1 dimetric viewpoint, selective dark purple outline, top-left lighting. Palette ONLY #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Generous clear alpha gutters along both center axes, full object isolated in each equally sized square cell, no touching edges/no ground plate/no text. True transparent background.",
-      "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-e4a0fe5a-7b0b-4247-8480-bfaeb9e825a8.png",
+      "masterSha256": "8b19727293c642351fba9c89b59b4409c400201850976f94b44172cdcad82d5d",
+      "prompt": "Pixel art sprite sheet of Hedwig, Harry Potter's snowy owl, arranged in a 3x2 grid (3 columns by 2 rows) on a solid white background, matching the chunky pixel art style, dark #231F2E pixel outline, top-left lighting, and proportions of the reference images.\n\nBook-accurate Hedwig: cute chibi proportions with a large round head, large amber-gold eyes, small dark beak, and pure snow-white plumage with only a few subtle dark flecks on the wings (pure white body, not grey or blue).\n\nPerch consistency (CRITICAL):\nShe perches on an upright rustic carved wooden T-shaped perch post. The post, its height, its width, and the cream parchment letter with red wax seal hanging by a string from the right perch arm are 100% IDENTICAL and at the exact same position in all 6 poses. The bottom of the vertical wooden post aligns to a single strict horizontal baseline across row 1, and a single strict horizontal baseline across row 2 (in pose 5 'spread', the vertical post must NOT be cut short, it must have the full vertical post down to the row baseline). The hanging letter is identical in shape, size, and orientation across all poses.\n\nSheet layout:\n3x2 grid, three-quarter view toward lower-left, same size in every pose, wide empty gaps between cells, plain solid white background, no text, no shadows, no grid lines.\n\nPoses (only Hedwig moves):\nRow 1:\n1. idle: Hedwig perched upright on the wooden T-perch, looking forward with bright amber-gold eyes, wings folded.\n2. look: Head turned gently to the screen-left, wings folded.\n3. stretch: Eyes happily closed, one wing stretched out a little.\nRow 2:\n4. tilt: Head tilted to the screen-right, curious amber eyes, wings folded.\n5. spread: Both wings spread wide open ready to take flight, perched on the full-length wooden post.\n6. letter: Holding the letter in her beak.",
+      "generatedFile": "masters-complete-objects/hedwig-chibi-candidate-a.jpg",
       "tool": "builtin image_gen",
       "method": "authored master cells, common native scale, palette24, binary alpha"
     }

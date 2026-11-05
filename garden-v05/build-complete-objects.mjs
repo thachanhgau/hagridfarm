@@ -40,6 +40,12 @@ function cell(raw,column,row,columns,rows){
  if(box.x<2||box.y<2||box.x+box.w>width-2||box.y+box.h>height-2)throw Error('Sprite touches atlas cell boundary');
  return {data,width,height,bounds:box,sourceRect:{x:x0,y:y0,w:width,h:height}};
 }
+// Middle of the ink in the lowest eighth of the pose.
+export function footX({data,width,bounds:b}){
+ let sum=0,n=0;
+ for(let y=Math.round(b.y+b.h*7/8);y<b.y+b.h;y++)for(let x=b.x;x<b.x+b.w;x++)if(data[(y*width+x)*4+3]>=192){sum+=x;n++;}
+ return n?sum/n:b.x+b.w/2;
+}
 export async function exportSprite(source,pose,index,spec,scale){
  const {width,height,pivotX,pivotY}=spec;
  const w=Math.max(1,Math.round(pose.bounds.w*scale)),h=Math.max(1,Math.round(pose.bounds.h*scale));
@@ -74,7 +80,11 @@ async function main(){
    :{width:56,height:56,pivotX:28,pivotY:50,maxWidth:44,maxHeight:44};
   if(!spec)throw Error('Unknown scene '+source.id);
   const poses=Array.from({length:scene?4:1},(_,index)=>cell(raw,scene?index%2:0,scene?Math.floor(index/2):0,scene?2:1,scene?2:1));
-  const scale=Math.min(spec.maxWidth/Math.max(...poses.map(p=>p.bounds.w)),spec.maxHeight/Math.max(...poses.map(p=>p.bounds.h)));
+  // anchor 'foot': every pose stands on the middle of its lowest ink (feet, a post's base), so a raised arm or a
+  // spread wing does not slide the body sideways between frames (05/11/2026, chibi Hagrid and Hedwig).
+  if(source.anchor==='foot')for(const p of poses)p.anchorX=footX(p);
+  const half=p=>p.anchorX==null?p.bounds.w/2:Math.max(p.anchorX-p.bounds.x,p.bounds.x+p.bounds.w-p.anchorX);
+  const scale=Math.min(spec.maxWidth/(2*Math.max(...poses.map(half))),spec.maxHeight/Math.max(...poses.map(p=>p.bounds.h)));
   const frames=[];
   for(const [index,pose] of poses.entries())frames.push(await exportSprite(source,pose,index,spec,scale));
   items.push({id:source.id,kind:source.kind,...(source.species?{species:source.species}:{}),...frames[0],frames:frames.map(frame=>frame.file),frameRecords:frames,...(scene?{durations:spec.durations,rotatable:false,storeItem:false}:{}),master:source.master,masterSha256:source.masterSha256,prompt:source.prompt,generatedFile:source.generatedFile,tool:'builtin image_gen',method:'authored master cells, common native scale, palette24, binary alpha'});
