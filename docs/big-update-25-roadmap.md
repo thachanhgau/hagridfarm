@@ -162,7 +162,7 @@ Tra lại: `python3 -I` đếm chuỗi trong `resource/FullHP/HP*_VN.txt` (ugrep
 **Rà S7 phần 1 (05/11/2026), chương 1, trứng rồng, bộ Noel (#36):**
 - *Nhiều tab, gửi lại:* `garden.xmas` đổi trong cùng giao dịch với kho và quà; lệnh `xmas` kiểm `expectedRevision` nên tab cũ bị từ chối; `requestId` gửi lại trả biên nhận cũ; vớ đã mở trả `sock-opened`.
 - *Chỉnh giờ máy:* ngày mở vớ, trần 2 vớ/ngày, thư 1/ngày, ủ lửa 1/ngày đều theo giờ server (ngày VN); giờ máy chỉ đổi chữ hiển thị. Cờ QA `GARDEN_QA_XMAS_DAYS` chỉ đọc khi `FUNCTIONS_EMULATOR=true`.
-- *Tài khoản phụ:* mỗi tài khoản một vườn; 10 vớ cho tổng ~30 nước + 5 Nước phép và tốn ~38 nông sản cấp thấp; Lều gia tinh và Norbert chỉ để ngắm, không ra Galleons hay sản phẩm, không chuyển được. Nuôi tài khoản phụ không lời.
+- *Tài khoản phụ:* mỗi tài khoản một vườn; 10 vớ cho tổng 20 nước + 5 Nước phép và tốn ~38 nông sản cấp thấp; Lều gia tinh và Norbert chỉ để ngắm, không ra Galleons hay sản phẩm, không chuyển được. Nuôi tài khoản phụ không lời.
 - *Ấp nhanh:* 21 lần ủ lửa cần 21 ngày VN khác nhau; thư 1/ngày; không vật phẩm nào rút ngắn.
 - *Bộ Noel:* lệnh mua kiểm mùa (`inSeason`, tháng 12 theo giờ server) và cấp trên server; mỗi món sở hữu một lần như sản phẩm đặc biệt; chỉ trang trí.
 
@@ -210,7 +210,7 @@ Gộp ngày 04/11/2026 (chủ dự án «Ok»): ba việc còn treo của kế h
 1. **Không lùi (mỗi phần S2–S7):** LCP fixture trung vị ≤ 14.300 ms; tải trước khung đầu ≤ 4.400.000 B. Phần nào vượt thì sửa trước khi commit.
 2. **Ảnh theo mùa không tải ngoài mùa:** mọi ảnh mới của lễ hội, Giáng sinh, mùa đông (S3 lều tuyết, hồ băng, rừng đông; S7 cây thông, tất, áo len) và nhân vật chỉ đến theo sự kiện (S6) đi vào `deferredFiles` trong `createGarden` (gắn `collection: 'festival'`, hoặc mở rộng điều kiện ở đó), và `festival-lazy-art.test.mjs` thêm khẳng định cho bộ đó. Dobby/gia tinh thường trực (S2) không thuộc diện này nhưng tính vào mục 1.
 3. **Đích LCP < 8 s trên điện thoại:** chưa đạt (fixture 14,2 s). Cần một lát việc riêng cắt chuỗi chặn vẽ (gộp CSS, nạp script dữ liệu sau khung đầu hoặc chuyển thành JSON lấy khi cần), đo lại bằng fixture. S8 đo thêm trên iPhone thật qua `run-hpvnn-local.sh --lan` (mở lạnh tới khi hiện dock) và ghi cả hai số.
-4. **Tem `?v=`:** mọi import trong `garden-v05` mang tem phiên bản hiện tại, cùng một tem cho một module. Kiểm: `rg -n "from ['\"]\./[^?'\"]+\.mjs['\"]" garden-v05 -g '!*.test.mjs' -g '!build-*'` chỉ còn công cụ CLI (`playtest-summary.mjs`).
+4. **Tem `?v=`:** mọi import trong `garden-v05` mang tem phiên bản hiện tại, cùng một tem cho một module. Kiểm: `rg -n "from ['\"]\./[^?'\"]+\.mjs['\"]" garden-v05 -g '!*.test.mjs' -g '!build-*'` còn 21 dòng trong 7 file công cụ (CLI, dựng art), không file nào vào gói sync của HPVN.
 
 Mỗi phần ghi vào báo cáo của mình: dòng Lighthouse (điểm, FCP, LCP, byte) cạnh số S0, và kết quả `node --test *.test.mjs`.
 
@@ -240,7 +240,7 @@ Mỗi phần ghi vào báo cáo của mình: dòng Lighthouse (điểm, FCP, LCP
 
 **Gộp `asset-overlap` (05/11/2026, chủ dự án duyệt):** e1b07d2 trên `s8-qa`, chép nguyên thay đổi chưa commit của worktree đó (worktree giữ nguyên). Giữ `FEAST_GROUND`, `ev_champion_tree`; không điểm đứng nào rơi vào đất bàn tiệc. Phiên `hagrid-asset-fix` không tìm thấy trong danh sách phiên; phần dọn asset thừa từng được nhắc tới không có trong thay đổi này.
 
-**Phiên bản:** 7e64a7e, tiêu đề «V25.0», tem `?v=25.0.0`. Import thiếu tem chỉ còn công cụ CLI và `player.js`. Test sau cả hai commit: Hagrid 379 đạt / 0 lỗi / 2 bỏ qua (381 test). HPVNN đã sync 7e64a7e.
+**Phiên bản:** 7e64a7e, tiêu đề «V25.0», tem `?v=25.0.0`. Import thiếu tem chỉ còn file công cụ, không file nào vào gói sync. Test sau cả hai commit: Hagrid 379 đạt / 0 lỗi / 2 bỏ qua (381 test). HPVNN đã sync 7e64a7e.
 
 **Duyệt trình duyệt từng mốc (bản 7e64a7e, cổng 3027 + Functions 5006, `GARDEN_QA_XMAS_DAYS`, có bấm thật; console không lỗi ở cả 6 mốc):**
 
@@ -258,5 +258,7 @@ Dữ liệu vườn demo đã trả về như trước khi bấm: 70 tài liệu
 **Không làm theo lệnh chủ dự án (05/11/2026, «bỏ qua lan cho iphone»):** `--lan` + iPhone thật; số LCP thật ở §10 mục 3 **chưa đo**. Đích LCP < 8 s vẫn chưa đạt trên fixture.
 
 **S1 (giá):** chủ dự án chọn không phát hành sớm, đi cùng đợt 01/12.
+
+**Audit 05/11/2026 (nhánh `audit-25`, chưa phát hành):** sửa chữ Lý Lan ở catalog; ma lùm vào lượt vẽ theo chiều sâu nên tông đêm phủ lên; ảnh trễ tải hỏng được hỏi lại sau 5 giây, chưa hiện thì chưa chạm được; bảng lò sưởi một khung, bỏ câu giải thích; tổng thửa theo Tận Sức (12 hoặc 18); cấp 12 ghi Giỏ đan của Hermione; Thuốc Mọc Xương vượt cấp ≤ 19 có quà Nước phép. Xem ở 375 px các mốc 26, 36, 43, 49, 56, 57: console sạch, bác Hagrid vác cây đúng vai; pháo hoa có vẽ nhưng nhỏ và tối dưới tông đêm, chờ chủ dự án quyết. Hàng tab cửa hàng cuộn được, không thanh cuộn, tới đủ 10 tab: không phải lỗi.
 
 **Còn trước khi phát hành:** chủ dự án thử trên trình duyệt; chủ dự án duyệt deploy (01/12 và 10/12, cả Functions lẫn client).
