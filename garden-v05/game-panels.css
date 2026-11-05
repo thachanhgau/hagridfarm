@@ -435,7 +435,7 @@
 #gameShell #xmasCare .gp-hero{margin:0;padding:0;border:0;background:none;box-shadow:none;clip-path:none}
 #gameShell #xmasCare .gp-hero-copy strong{font:700 14px/1.25 var(--gp-body)}
 #gameShell #xmasCare .gp-hero-copy small{font-size:12px}
-#gameShell #xmasCare .gp-hero .icon-btn{flex:none}
+#gameShell #xmasCare .gp-hero .icon-btn{flex:none;min-width:124px}
 #gameShell #xmasCare .xmas-board{display:grid;gap:4px;margin:0;padding:0;list-style:none}
 #gameShell #xmasCare .xmas-board li{display:flex;justify-content:space-between;gap:8px;color:#A6B1AE;font:700 13px/1.25 var(--gp-body);font-variant-numeric:tabular-nums}
 #gameShell #xmasCare .xmas-board li[aria-current]{color:#FFC36B}
