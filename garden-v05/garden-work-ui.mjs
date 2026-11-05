@@ -40,7 +40,7 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
  // Khung Floo earned here (owner 23/10/2026): worn on Mạng Floo through the Hẻm Xéo frame slot.
  function frames(snap,kind){
   const view=snap.flooFrames;if(!view)return [];
-  const list=view.frames.filter(f=>f.kind===kind);
+  const list=view.frames.filter(f=>f.kind===kind);if(kind==='xmas'&&!list.length)return []; // Giáng sinh frames only once earned or begun
   return [el('p',{class:'sheet-label',text:'Khung Floo'}),el('p',{class:'meta',text:'Đeo khung để hiện quanh tin nhắn trên Mạng Floo. Khung Hẻm Xéo đang hiện sẽ tạm dừng và giữ thời gian còn lại (bật lại trong Hẻm Xéo trong 7 ngày).'}),
    el('div',{class:'work-frames'},list.map(f=>{
     const worn=view.worn===f.key;
@@ -95,7 +95,7 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
    const b=el('button',{type:'button',class:'gp-tab','aria-pressed':String(tab===id),onclick:()=>{tab=id;render();}});b.append(pixelIcon(glyph,2),el('span',{text:name}));return b;
   }));
   if(!snap?.orders){body.replaceChildren(el('p',{class:'meta',text:'Việc của bác Hagrid cần kết nối tài khoản.'}));return;}
-  body.replaceChildren(...(tab==='orders'?[...orders(snap),...frames(snap,'level')]:tab==='mastery'?mastery(snap):cup(snap))); // 25.0 S5: level frames under the orders
+  body.replaceChildren(...(tab==='orders'?[...orders(snap),...frames(snap,'level')]:tab==='mastery'?mastery(snap):[...cup(snap),...frames(snap,'xmas')])); // 25.0 S5: level frames under the orders; S7: Giáng sinh frames under the cup
  }
  return {
   open(){render();dialog.showModal();},
