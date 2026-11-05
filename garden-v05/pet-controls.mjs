@@ -1,5 +1,5 @@
-import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=24.9.96';
-import {setAction,pixelIcon} from './pixel-icons.mjs?v=24.9.96';
+import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=25.0.0';
+import {setAction,pixelIcon} from './pixel-icons.mjs?v=25.0.0';
 
 // Read the same costs and timestamps as the engine; deriving a control never edits a save.
 export function petControlState({E,state,species,now,ready=true}) {

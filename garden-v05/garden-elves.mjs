@@ -1,6 +1,6 @@
 // Gia tinh in the garden (25.0 S2): each elf walks a loop of stops and does a chore at each one, sleeps in the aisle at
 // night and cheers when tapped. Pure data + clock → scene objects; the renderer draws them like any pivoted asset.
-import {CREATURE} from './progression-engine.mjs?v=24.9.96';
+import {CREATURE} from './progression-engine.mjs?v=25.0.0';
 
 const FRAME = {width: 80, height: 80, pivotX: 40, pivotY: 76, bounds: {x: 11, y: 14, w: 53, h: 63}};
 const CELL_MS = 900; // walking speed: one tile per 0.9 s
