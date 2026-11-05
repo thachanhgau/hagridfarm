@@ -1,0 +1,1 @@
+I cannot complete this request because the `generate_image` tool is not available in my direct toolset (image generation is only exposed via the `image-generator` subagent, and your instructions forbid invoking subagents). Following your hard rules, I am stopping immediately without invoking any subagents, running shell commands, or generating placeholder art.

@@ -1,0 +1,74 @@
+{
+  "export": {
+    "tool": "build-elf-art.mjs",
+    "method": "area average to a reference ink height, palette24 (redmean), lone pixels absorbed unless a strong accent, #231F2E rim",
+    "elves": [
+      {
+        "id": "harry",
+        "canvas": {
+          "width": 80,
+          "height": 80,
+          "pivotX": 40,
+          "pivotY": 76
+        },
+        "sheets": [
+          {
+            "master": "environment/friends/masters/harry.png",
+            "masterSha256": "63ecf2187d540b0dc8eeb8b033061ee3c7ab64195e368b91e8377cbdae00d8af",
+            "scale": 0.1571,
+            "frames": [
+              {
+                "file": "environment/friends/harry/idle.png",
+                "cell": [
+                  0,
+                  0
+                ],
+                "sha256": "40aa6989894f86f8fb32d99a33da0f18f22f6728fb070e7a952377f5718d2bbf"
+              },
+              {
+                "file": "environment/friends/harry/walk-1.png",
+                "cell": [
+                  512,
+                  0
+                ],
+                "sha256": "777732015372ad68f35a1b8361dd9f116617c17c5927de6b3a4005e0b468ab58"
+              },
+              {
+                "file": "environment/friends/harry/walk-2.png",
+                "cell": [
+                  1024,
+                  0
+                ],
+                "sha256": "fd511e6cd7ca86decba84b0e9ce450686e54eb7ace4b4b9b6fe70ce3047d44b7"
+              },
+              {
+                "file": "environment/friends/harry/fly-throw.png",
+                "cell": [
+                  0,
+                  512
+                ],
+                "sha256": "3ce7dec5bdf724910172d4fb948bd93bec82c1df8e13dcc0a3094ab86f453b87"
+              },
+              {
+                "file": "environment/friends/harry/fly-catch.png",
+                "cell": [
+                  512,
+                  512
+                ],
+                "sha256": "943a5c659079795f3340458858722e6cef827cfd9b74267cbb9d0b6c63508a9c"
+              },
+              {
+                "file": "environment/friends/harry/snowball.png",
+                "cell": [
+                  1024,
+                  512
+                ],
+                "sha256": "a6a20a1291f87cc91657dd63c63501f2d0f604bea0c24d72b39d86ec61b99193"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

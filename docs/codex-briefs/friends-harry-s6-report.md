@@ -40,3 +40,28 @@ No candidate or chosen PNG was produced. Visual quality, dimensions, exact 6 × 
 
 Remaining: obtain two actual generated candidate sheets, compare book likeness/charm/grid compliance, and select `harry.png` for owner approval before other friends.
 
+## Antigravity `image-generator` Subagent Run — 2026-11-05
+
+Status: COMPLETED — 2/2 candidate sheets generated via the `image-generator` subagent with reference images (`v3-dobby.png`, `v3-winky.png`, `gardener_friend/frame-01.png`); **Candidate A** selected as the chosen master (`harry.png`).
+
+### Generated Files (for Claude Code to copy, check, and resize)
+- **Candidate A (Chosen for `harry.png` and `harry-candidate-a.png`):**
+  `/Users/thachanh/.gemini/antigravity-cli/brain/fccb9cc1-fc94-48b4-b445-46f40a6935a1/harry_candidate_a_1793843581685.jpg`
+- **Candidate B (`harry-candidate-b.png`):**
+  `/Users/thachanh/.gemini/antigravity-cli/brain/fccb9cc1-fc94-48b4-b445-46f40a6935a1/harry_candidate_b_1793843731065.jpg`
+
+### Visual Comparison & Selection Rationale
+- **Candidate A (Winner):**
+  - Strictly follows the three-quarter view facing the lower-left across all 6 poses.
+  - Book-faithful 12-year-old chibi Harry Potter: untidy jet-black hair sticking up at the back, round glasses, bright green eyes with white catchlights, thin scarlet lightning scar on forehead, plain emerald-green wool sweater (no letter), scarlet-and-gold striped scarf, dark trousers, brown boots, no film actor likeness or robes.
+  - `walk-1` and `walk-2` have clearly opposite leg silhouettes while keeping uniform head height.
+  - `fly-throw` and `fly-catch` have the Nimbus Two Thousand broom horizontal with the dark wooden handle to the left and neat bundle of twigs to the right, and clear Quaffle throw/catch silhouettes.
+  - `snowball` has a clear overarm throw pose with flying scarf.
+- **Candidate B:**
+  - Faces the lower-right instead of lower-left, places the broom twigs on the left instead of the right, and has near-duplicate leg positions between `walk-1` and `walk-2`.
+
+### Notes
+- No shell commands, resizing, native frame generation, previews, or builders were run per instructions; Claude Code copies, checks, and resizes the files.
+- Exact prompts and paths have been appended to `garden-v05/environment/friends/prompts.json`.
+
+
