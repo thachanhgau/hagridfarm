@@ -11,10 +11,10 @@ const read=file=>fs.readFile(new URL(file,import.meta.url));
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const manifest=JSON.parse(await read('complete-objects-manifest.json'));
 test('authored scenery, habitat props and species statuettes cover the whole backlog',()=>{
- assert.deepEqual(COMPLETE_SCENERY.map(i=>i.id).sort(),['gardener_friend','herbology_greenhouse','owl_post']);
+ assert.deepEqual(COMPLETE_SCENERY.map(i=>i.id).sort(),['fang','gardener_friend','herbology_greenhouse','owl_post']);
  assert.deepEqual(Object.keys(HABITAT_ART).sort(),Object.keys(CREATURE).sort());
  assert.deepEqual(Object.keys(KEEPSAKE_ART).sort(),Object.keys(CREATURE).sort());
- assert.equal(completeObjectFiles().length,36);assert.equal(new Set(completeObjectFiles()).size,36);
+ assert.equal(completeObjectFiles().length,40);assert.equal(new Set(completeObjectFiles()).size,40);
  assert(COMPLETE_SCENERY.every(i=>i.frames.length===4));
 });
 test('new native sprites retain master provenance, exact palette, alpha and safe grounded geometry',async()=>{

@@ -18,6 +18,7 @@ const sceneSpecs={
  // Owner 05/11/2026 («người khổng lồ gì mà nhỏ hơn con cú»): the half-giant stands about twice a visiting
  // friend (80 px cells), Hedwig and her perch stay small beside him.
  gardener_friend:{width:112,height:140,pivotX:56,pivotY:130,maxWidth:100,maxHeight:120,durations:[900,180,320,380]},
+ fang:{width:80,height:72,pivotX:40,pivotY:66,maxWidth:70,maxHeight:58,durations:[1600,160,700,500]},
  owl_post:{width:64,height:80,pivotX:32,pivotY:72,maxWidth:50,maxHeight:60,durations:[760,400,220,460]},
  herbology_greenhouse:{width:156,height:152,pivotX:78,pivotY:118,drawBottomY:142,maxWidth:136,maxHeight:138,durations:[1200,540,650,540]},
 };
@@ -61,6 +62,12 @@ export async function exportSprite(source,pose,index,spec,scale){
   const color=palette[closest(pose.data[si],pose.data[si+1],pose.data[si+2])],di=((y0+y)*width+x0+x)*4;
   out[di]=color[0];out[di+1]=color[1];out[di+2]=color[2];out[di+3]=255;
  }
+ // defringe: [hex…] palette colours a white-background JPEG leaves on the outer edge; two passes peel them off
+ // (05/11/2026, chibi Hagrid and Hedwig: a grey halo around the hair and the lantern).
+ if(source.defringe){const drop=new Set(source.defringe.map(h=>parseInt(h.slice(1),16)));for(let pass=0;pass<2;pass++){const off=[];
+  for(let y=0;y<height;y++)for(let x=0;x<width;x++){const i=(y*width+x)*4;if(!out[i+3]||!drop.has((out[i]<<16)|(out[i+1]<<8)|out[i+2]))continue;
+   if([[1,0],[-1,0],[0,1],[0,-1]].some(([dx,dy])=>{const u=x+dx,v=y+dy;return u<0||v<0||u>=width||v>=height||!out[(v*width+u)*4+3];}))off.push(i);}
+  for(const i of off)out[i+3]=0;}}
  const file=`${source.outputFolder||'native-complete-objects'}/${source.id}/frame-${String(index+1).padStart(2,'0')}.png`;
  await fs.mkdir(path.dirname(path.join(root,file)),{recursive:true});
  const png=await sharp(out,{raw:{width,height,channels:4}}).png().toBuffer();await fs.writeFile(path.join(root,file),png);

@@ -62,7 +62,7 @@ for (const id of Object.keys(DECORATION_LAYOUT)) for (const facing of ['default'
   add('earned-decoration', id, decorLabel.get(id), facing, ITEM_ART[facing === 'right' ? id + '_right' : id], defaultDecorFootprint(id), 'foot');
 }
 const props = new Map(scene.props.map(p => [p.id, p]));
-const sceneryLabel = {pond: 'Ao trang trí', hut: 'Lều Hagrid', gardener_friend: 'Bác Hagrid', herbology_greenhouse: 'Nhà kính Thảo dược', owl_post: 'Trạm cú'};
+const sceneryLabel = {pond: 'Ao trang trí', hut: 'Lều Hagrid', gardener_friend: 'Bác Hagrid', fang: 'Fang', herbology_greenhouse: 'Nhà kính Thảo dược', owl_post: 'Trạm cú'};
 add('scenery', 'pond', sceneryLabel.pond, 'default', props.get('pond'), [3, 2], 'foot');
 add('scenery', 'hut', sceneryLabel.hut, 'default', props.get('hut'), SCENERY_FOOTPRINTS.hut, 'center');
 for (const a of COMPLETE_SCENERY) add('scenery', a.id, sceneryLabel[a.id], 'default', a, SCENERY_FOOTPRINTS[a.id], 'center');

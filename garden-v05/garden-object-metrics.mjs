@@ -9,7 +9,7 @@ import {ITEM_ART} from './item-art.mjs?v=24.9.96';
 // raster bounds remain a separate screen-occlusion check during placement.
 export const SCENERY_FOOTPRINTS = Object.freeze({
   hut: [3, 3], pond: [3, 2], oak: [2, 2], pine: [1, 1],
-  gardener_friend: [1, 1], herbology_greenhouse: [3, 2], owl_post: [1, 1],
+  gardener_friend: [1, 1], fang: [1, 1], herbology_greenhouse: [3, 2], owl_post: [1, 1],
   fenceNE: [2, 1], fenceNW: [2, 1], gate: [2, 1],
 });
 export function sceneryGroundRect(id, col, row) {

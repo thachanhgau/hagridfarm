@@ -86,7 +86,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond')):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
  if(rectsOverlap(rect,COTTAGE_GROUND))return 'Chỗ này vướng lều Hagrid.';
  if(rectsOverlap(rect,HEARTH_GROUND))return 'Chỗ này là lò sưởi Giáng sinh.';
- for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
+ for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post',fang:'fang'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
  if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){
   const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw;

@@ -216,6 +216,6 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
   refresh,
   openLetter,
   recordQuestAction:(actionType,amount=1)=>{recordOwlQuestAction(actionType,amount);syncMailBadge();},
-  visit(id){if(id==='gardener'){getRenderer()?.greet?.();openLetter('gardener');}else openLetter(id);},
+  visit(id){if(id==='gardener'||id==='fang'){getRenderer()?.greet?.();openLetter('gardener');}else openLetter(id);},
  };
 }

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "1af9c33537a4",
+  "revision": "a65b69a14605",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -5212,44 +5212,84 @@
       "sha256": "7c01c8ece61633aa8ebf3b168dc8252ccb87b86739e6c3be3bb68ea3e269e9e5"
     },
     {
+      "source": "native-complete-objects/fang/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/fang/frame-01.webp",
+      "width": 80,
+      "height": 72,
+      "sourceBytes": 1251,
+      "bytes": 718,
+      "sourceSha256": "734d2dd6e3908123d2efd895f380be024fe1a54604a47091f862e488546f5c13",
+      "sha256": "dce55d0d791c068eabf36af72f33371d897a15312d33265b9a195a8a3e435dd2"
+    },
+    {
+      "source": "native-complete-objects/fang/frame-02.png",
+      "file": "runtime-webp/native-complete-objects/fang/frame-02.webp",
+      "width": 80,
+      "height": 72,
+      "sourceBytes": 1225,
+      "bytes": 700,
+      "sourceSha256": "d838b2eda6151dd7428762fa7199c7c0de8e3402b245bacf7b3b54c4a52cbb8d",
+      "sha256": "b7c80020e8c10935132f922cdd28d6a8c8d028d225117b60f1315f44c4d988dc"
+    },
+    {
+      "source": "native-complete-objects/fang/frame-03.png",
+      "file": "runtime-webp/native-complete-objects/fang/frame-03.webp",
+      "width": 80,
+      "height": 72,
+      "sourceBytes": 1291,
+      "bytes": 750,
+      "sourceSha256": "b9d5992358e5f7b6e6b2467e2b4ba885f0af560bc979a486de16f7123016a76d",
+      "sha256": "b40ee8c25d2fb6c7939113824ad03fecdb02f8b832854d8e3cb3c696c015c340"
+    },
+    {
+      "source": "native-complete-objects/fang/frame-04.png",
+      "file": "runtime-webp/native-complete-objects/fang/frame-04.webp",
+      "width": 80,
+      "height": 72,
+      "sourceBytes": 1368,
+      "bytes": 774,
+      "sourceSha256": "8a217ffc627e2f37076749810316f144c8cd447e10c22d244e4b0ad2c3bd1936",
+      "sha256": "1d6299415c74512a833136847eb4dcca052cff88b17a121d880abe9b75b9cfe5"
+    },
+    {
       "source": "native-complete-objects/gardener_friend/frame-01.png",
       "file": "runtime-webp/native-complete-objects/gardener_friend/frame-01.webp",
       "width": 112,
       "height": 140,
-      "sourceBytes": 2361,
-      "bytes": 1314,
-      "sourceSha256": "fc750f55fc53ccda662eb41b6d93db08a1fc24c2c88b2b14438a1b6564d9ec9c",
-      "sha256": "02fdc4a83d2f87a8bf07f30aa86a175cb7c000b973e1da7c1b4a375532ed737c"
+      "sourceBytes": 2370,
+      "bytes": 1324,
+      "sourceSha256": "d7ea1f83756aba95a0395522d0b1ddbcd58f356e429483ccfeafbee2dbc03159",
+      "sha256": "15d286f0e36080c1a4a08f860bdb88d3736d80bb2d8cf76860bba2a8e8a28298"
     },
     {
       "source": "native-complete-objects/gardener_friend/frame-02.png",
       "file": "runtime-webp/native-complete-objects/gardener_friend/frame-02.webp",
       "width": 112,
       "height": 140,
-      "sourceBytes": 2357,
-      "bytes": 1344,
-      "sourceSha256": "4bb1fd9411ae614406a11f4ac3f8c18594e2f27fb55f0992182c554316d7c148",
-      "sha256": "abb95edac896a0ca19dff0f69556d3cb24b80fad1f74ac2d101bf88aefdf4fd7"
+      "sourceBytes": 2367,
+      "bytes": 1348,
+      "sourceSha256": "86530b1825bdc7f01e52324dd9ea867b9afbcf7964724a46bc2fba8d4da7b149",
+      "sha256": "a9f206f3e0839af9b618c84ad225c805d3a7705aaa2fd41174b4245281aa8b8c"
     },
     {
       "source": "native-complete-objects/gardener_friend/frame-03.png",
       "file": "runtime-webp/native-complete-objects/gardener_friend/frame-03.webp",
       "width": 112,
       "height": 140,
-      "sourceBytes": 2479,
-      "bytes": 1394,
-      "sourceSha256": "20b2a5256d6a01d5adebe7392d6e7e669e25379225742b3ae4543cbd6df2d176",
-      "sha256": "630e20b11c08eb307d33e15f5351c615ee601a7519e125f29949615dddd2b6f5"
+      "sourceBytes": 2480,
+      "bytes": 1400,
+      "sourceSha256": "14a1a6f87bfebac4490c1946a74c0d6f76869539086156704ae77424d2aa9f5a",
+      "sha256": "1265c9408fccb6a0d71447e46c1a8e3008b3e53544b063844b38678172d9c210"
     },
     {
       "source": "native-complete-objects/gardener_friend/frame-04.png",
       "file": "runtime-webp/native-complete-objects/gardener_friend/frame-04.webp",
       "width": 112,
       "height": 140,
-      "sourceBytes": 2565,
-      "bytes": 1442,
-      "sourceSha256": "8fe3b5b575623462c0c0ddb361de066b7d4698b4b6be6fb2b5f8cb4cd192176d",
-      "sha256": "46f08c58cd1b7060d3e65941e45f762a92ae8be0340cefea52494dcf74694d78"
+      "sourceBytes": 2575,
+      "bytes": 1452,
+      "sourceSha256": "dd21caad5c7a429f25d5e8ba245595bfe9ac3597c2c95636ee81bd1280918732",
+      "sha256": "52edb8b173c6c1624a363ef00aa2b85ff7de51f2c4f560908fe745fa4889231d"
     },
     {
       "source": "native-complete-objects/habitat_bowtruckle/frame-01.png",
@@ -12725,11 +12765,11 @@
     }
   ],
   "totals": {
-    "converted": 1266,
+    "converted": 1270,
     "existingWebp": 8,
-    "originalBytes": 4600451,
-    "webpBytes": 3060516,
-    "savedBytes": 1539935,
-    "savedPercent": 33.47
+    "originalBytes": 4605616,
+    "webpBytes": 3063488,
+    "savedBytes": 1542128,
+    "savedPercent": 33.48
   }
 }

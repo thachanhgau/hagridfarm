@@ -2,6 +2,130 @@
   "version": 1,
   "items": [
     {
+      "id": "fang",
+      "kind": "scene",
+      "file": "native-complete-objects/fang/frame-01.png",
+      "width": 80,
+      "height": 72,
+      "pivotX": 40,
+      "pivotY": 66,
+      "bounds": {
+        "x": 15,
+        "y": 12,
+        "w": 51,
+        "h": 54
+      },
+      "sha256": "734d2dd6e3908123d2efd895f380be024fe1a54604a47091f862e488546f5c13",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "frames": [
+        "native-complete-objects/fang/frame-01.png",
+        "native-complete-objects/fang/frame-02.png",
+        "native-complete-objects/fang/frame-03.png",
+        "native-complete-objects/fang/frame-04.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/fang/frame-01.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 66,
+          "bounds": {
+            "x": 15,
+            "y": 12,
+            "w": 51,
+            "h": 54
+          },
+          "sha256": "734d2dd6e3908123d2efd895f380be024fe1a54604a47091f862e488546f5c13",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 512,
+            "h": 512
+          }
+        },
+        {
+          "file": "native-complete-objects/fang/frame-02.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 66,
+          "bounds": {
+            "x": 15,
+            "y": 12,
+            "w": 51,
+            "h": 54
+          },
+          "sha256": "d838b2eda6151dd7428762fa7199c7c0de8e3402b245bacf7b3b54c4a52cbb8d",
+          "sourceRect": {
+            "x": 512,
+            "y": 0,
+            "w": 512,
+            "h": 512
+          }
+        },
+        {
+          "file": "native-complete-objects/fang/frame-03.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 66,
+          "bounds": {
+            "x": 15,
+            "y": 12,
+            "w": 51,
+            "h": 54
+          },
+          "sha256": "b9d5992358e5f7b6e6b2467e2b4ba885f0af560bc979a486de16f7123016a76d",
+          "sourceRect": {
+            "x": 0,
+            "y": 512,
+            "w": 512,
+            "h": 512
+          }
+        },
+        {
+          "file": "native-complete-objects/fang/frame-04.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 66,
+          "bounds": {
+            "x": 10,
+            "y": 8,
+            "w": 52,
+            "h": 58
+          },
+          "sha256": "8a217ffc627e2f37076749810316f144c8cd447e10c22d244e4b0ad2c3bd1936",
+          "sourceRect": {
+            "x": 512,
+            "y": 512,
+            "w": 512,
+            "h": 512
+          }
+        }
+      ],
+      "durations": [
+        1600,
+        160,
+        700,
+        500
+      ],
+      "rotatable": false,
+      "storeItem": false,
+      "master": "masters-complete-objects/fang.png",
+      "masterSha256": "6c28900cfdf19ce2149ba7a5d5d2c5f1a0224f76300975961fa4f4434d9596e8",
+      "prompt": "A 3x2 sprite sheet of Fang, Rubeus Hagrid's enormous black boarhound from the Harry Potter books, in charming chunky 16-bit pixel art style identical to the reference Hagrid sprite sheet. Fang is drawn as a cute chunky chibi boarhound: big expressive head, deep drooping jowls with a hint of drool, floppy triangular ears, gentle warm brown eyes, heavy muscular chibi body with a sleek black coat shaded with subtle cool charcoal tones, and a wide dark brown leather collar with a brass buckle. All sprites are in three-quarter view facing lower-left, perfectly consistent in scale, proportions, and colors, framed with thick dark #231F2E pixel art outlines and illuminated from top-left. Crisp pure white background, no floor shadows, no dividing lines, no text. Generous spacing between cells, feet aligned along a straight horizontal baseline in each row.\n\nGrid arrangement (3 columns by 2 rows):\nRow 1 (left to right):\n1. sit: Fang sitting upright on his haunches facing lower-left, mouth closed, calm and gentle expression, tongue tucked in.\n2. blink: identical sitting sprite to frame 1 in exact pixel placement, with both eyes softly shut in a blink.\n3. pant: identical sitting pose, mouth open in a goofy pant, bright pink tongue hanging out to the side with slobber.\n\nRow 2 (left to right):\n4. wag: identical sitting pose, both ears perked up attentively, tail happily wagging to the opposite side.\n5. lie: Fang lying flat on his belly sleeping, front paws forward with chin resting comfortably on paws, eyes peacefully shut.\n6. stand: Fang standing stoutly on all four legs facing lower-left, tail held upright.",
+      "generatedFile": "masters-complete-objects/fang-chibi-candidate-b.jpg",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
       "id": "gardener_friend",
       "kind": "scene",
       "file": "native-complete-objects/gardener_friend/frame-01.png",
@@ -15,7 +139,7 @@
         "w": 75,
         "h": 91
       },
-      "sha256": "fc750f55fc53ccda662eb41b6d93db08a1fc24c2c88b2b14438a1b6564d9ec9c",
+      "sha256": "d7ea1f83756aba95a0395522d0b1ddbcd58f356e429483ccfeafbee2dbc03159",
       "sourceRect": {
         "x": 0,
         "y": 0,
@@ -41,7 +165,7 @@
             "w": 75,
             "h": 91
           },
-          "sha256": "fc750f55fc53ccda662eb41b6d93db08a1fc24c2c88b2b14438a1b6564d9ec9c",
+          "sha256": "d7ea1f83756aba95a0395522d0b1ddbcd58f356e429483ccfeafbee2dbc03159",
           "sourceRect": {
             "x": 0,
             "y": 0,
@@ -61,7 +185,7 @@
             "w": 77,
             "h": 91
           },
-          "sha256": "4bb1fd9411ae614406a11f4ac3f8c18594e2f27fb55f0992182c554316d7c148",
+          "sha256": "86530b1825bdc7f01e52324dd9ea867b9afbcf7964724a46bc2fba8d4da7b149",
           "sourceRect": {
             "x": 512,
             "y": 0,
@@ -81,7 +205,7 @@
             "w": 84,
             "h": 91
           },
-          "sha256": "20b2a5256d6a01d5adebe7392d6e7e669e25379225742b3ae4543cbd6df2d176",
+          "sha256": "14a1a6f87bfebac4490c1946a74c0d6f76869539086156704ae77424d2aa9f5a",
           "sourceRect": {
             "x": 0,
             "y": 512,
@@ -101,7 +225,7 @@
             "w": 80,
             "h": 93
           },
-          "sha256": "8fe3b5b575623462c0c0ddb361de066b7d4698b4b6be6fb2b5f8cb4cd192176d",
+          "sha256": "dd21caad5c7a429f25d5e8ba245595bfe9ac3597c2c95636ee81bd1280918732",
           "sourceRect": {
             "x": 512,
             "y": 512,

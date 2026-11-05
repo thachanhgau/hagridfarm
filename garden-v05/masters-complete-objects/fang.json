@@ -1,0 +1,16 @@
+{
+  "id": "fang",
+  "kind": "scene",
+  "anchor": "foot",
+  "defringe": [
+    "#A6B1AE",
+    "#70A8B6",
+    "#D6D8BF"
+  ],
+  "source": "Antigravity CLI (owner 05/11/2026: «bên cạnh bác hagrid nên có thêm con Fang»), brief docs/codex-briefs/fang-chibi-s7.md, prompt names Fang",
+  "generatedFile": "masters-complete-objects/fang-chibi-candidate-b.jpg",
+  "poses": "sit, blink, pant, wag (cells 1–4 of the 3 × 2 sheet; prep-friend-master + 2 × 2 atlas); RGB ×1.8 before the palette so the black coat keeps its shading",
+  "master": "masters-complete-objects/fang.png",
+  "masterSha256": "6c28900cfdf19ce2149ba7a5d5d2c5f1a0224f76300975961fa4f4434d9596e8",
+  "prompt": "A 3x2 sprite sheet of Fang, Rubeus Hagrid's enormous black boarhound from the Harry Potter books, in charming chunky 16-bit pixel art style identical to the reference Hagrid sprite sheet. Fang is drawn as a cute chunky chibi boarhound: big expressive head, deep drooping jowls with a hint of drool, floppy triangular ears, gentle warm brown eyes, heavy muscular chibi body with a sleek black coat shaded with subtle cool charcoal tones, and a wide dark brown leather collar with a brass buckle. All sprites are in three-quarter view facing lower-left, perfectly consistent in scale, proportions, and colors, framed with thick dark #231F2E pixel art outlines and illuminated from top-left. Crisp pure white background, no floor shadows, no dividing lines, no text. Generous spacing between cells, feet aligned along a straight horizontal baseline in each row.\n\nGrid arrangement (3 columns by 2 rows):\nRow 1 (left to right):\n1. sit: Fang sitting upright on his haunches facing lower-left, mouth closed, calm and gentle expression, tongue tucked in.\n2. blink: identical sitting sprite to frame 1 in exact pixel placement, with both eyes softly shut in a blink.\n3. pant: identical sitting pose, mouth open in a goofy pant, bright pink tongue hanging out to the side with slobber.\n\nRow 2 (left to right):\n4. wag: identical sitting pose, both ears perked up attentively, tail happily wagging to the opposite side.\n5. lie: Fang lying flat on his belly sleeping, front paws forward with chin resting comfortably on paws, eyes peacefully shut.\n6. stand: Fang standing stoutly on all four legs facing lower-left, tail held upright."
+}

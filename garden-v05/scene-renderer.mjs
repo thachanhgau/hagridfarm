@@ -1439,7 +1439,7 @@ export async function createGarden(canvas, options = {}) {
       return;
     }
     if (object.kind === 'wizard-scenery') {
-      const assetId = object.id === 'gardener'
+      const assetId = object.id === 'fang' ? 'fang' : object.id === 'gardener'
         ? 'gardener_friend'
         : object.id === 'owl'
           ? 'owl_post'

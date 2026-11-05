@@ -21,6 +21,7 @@ export const DECOR_LABELS = Object.freeze({
   decor_floating_candles: 'Nến lơ lửng',
   decor_vine_arch: 'Vòm dây leo',
   gardener_friend: 'Bác Hagrid',
+  fang: 'Fang',
   owl_post: 'Bưu cục Cú',
   herbology_greenhouse: 'Nhà kính Thảo dược',
 });

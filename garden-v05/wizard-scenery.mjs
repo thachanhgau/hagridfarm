@@ -48,6 +48,14 @@ const LAYOUT = Object.freeze({
     bounds: Object.freeze({left: -50, top: -122, right: 50, bottom: 4}),
     hitbox: Object.freeze({left: -58, top: -130, right: 58, bottom: 10}),
   }),
+  // Owner 05/11/2026: «bên cạnh bác hagrid nên có thêm con Fang» — his boarhound sits at his screen-left.
+  fang: Object.freeze({
+    id: 'fang',
+    col: -3.5,
+    row: 8.5,
+    bounds: Object.freeze({left: -26, top: -46, right: 26, bottom: 4}),
+    hitbox: Object.freeze({left: -32, top: -52, right: 32, bottom: 10}),
+  }),
   greenhouse: Object.freeze({
     id: 'greenhouse',
     col: 2.5,
@@ -436,7 +444,8 @@ function drawOwl(ctx, x, y, state) {
 
 function objectFor(spec, iso, state) {
   const xy = screenAnchor(iso, spec.col, spec.row);
-  const draw = spec.id === 'gardener'
+  // Fang has no hand-drawn fallback: without his sprite he is simply not drawn.
+  const draw = spec.id === 'fang' ? () => {} : spec.id === 'gardener'
     ? (ctx) => drawGardener(ctx, xy[0], xy[1], state)
     : spec.id === 'greenhouse'
       ? (ctx) => drawGreenhouse(ctx, xy[0], xy[1])
@@ -452,6 +461,7 @@ export function wizardObjects(iso, clock, {reactionUntil = 0} = {}) {
   const state = animate(clock, reactionUntil);
   return [
     objectFor(LAYOUT.gardener, iso, state),
+    objectFor(LAYOUT.fang, iso, state),
     objectFor(LAYOUT.greenhouse, iso, state),
     objectFor(LAYOUT.owl, iso, state),
   ].sort((left, right) => left.xy[1] - right.xy[1] || left.xy[0] - right.xy[0]);
