@@ -298,15 +298,14 @@ test('a decoration being placed outside the fence never opens later garden stage
  assert.equal(garden.growthStage().id,1);
 });
 
-test('a plot label slides up over its plot instead of covering a statue in front of it',async()=>{
+test('each plot has a sign planted at its west corner, sorted with the sprites so a statue in front covers it',async()=>{
  const statue={id:'decor_cauldron',file:'decor-assets/x.png',width:40,height:60,pivotX:20,pivotY:56};
- const canvas=fakeCanvas(),labels=[];canvas.getContext().fillText=(text,x,y)=>labels.push({text,y});
+ const canvas=fakeCanvas(),labels=[];canvas.getContext().fillText=(text,x,y)=>labels.push({text,x,y});
  const garden=await createGarden(canvas,{allowMissingAssets:true,decorAssets:[statue]}),state=newGame(1700000000000);
- // The tag stands on the plot's front tip (owner 04/11/2026: small, on its own plot, never over the path).
- const plot=garden.map.plots[0],tipAt=[plot.col+plot.width-.5,plot.row+plot.height-.5],[,tip]=iso(...tipAt,garden.map),[,centre]=iso(...plot.positions.center,garden.map);
- const y=decorations=>{labels.length=0;garden.render(state,{now:1700000000000,clock:0,propsVisible:false,decorations});return labels.find(l=>/^Thửa 1$/.test(l.text)).y;};
- const front=y(undefined);
- assert.ok(front<tip&&front>tip-12,`tag at ${front}, tip ${tip}`);
- const moved=y({owned:['decor_cauldron'],placements:['decor_cauldron'],positions:{decor_cauldron:[tipAt[0]+.5,tipAt[1]+.5]}});
- assert.ok(moved<front&&moved>=centre-1,`label at ${moved}, front ${front}, centre ${centre}`);
+ const [cx,cy]=plotCorners(garden.map.plots[0],garden.map)[3],corner=[garden.map.plots[0].col,garden.map.plots[0].row+3];
+ garden.render(state,{now:1700000000000,clock:0,propsVisible:false,decorations:{owned:['decor_cauldron'],placements:['decor_cauldron'],positions:{decor_cauldron:[corner[0]+.5,corner[1]+.5]}}});
+ const tag=labels.find(l=>/^Thửa 1$/.test(l.text));
+ assert.ok(tag.y<cy-8&&tag.y>cy-30&&tag.x<cx&&tag.x>cx-150,`sign text at ${tag.x},${tag.y}, corner ${cx},${cy}`);
+ const order=garden.order().map(o=>o.id);
+ assert.ok(order.indexOf('sign:0')>=0&&order.indexOf('sign:0')<order.indexOf('decor_cauldron'),order.join());
 });

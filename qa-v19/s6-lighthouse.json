@@ -5,31 +5,31 @@
   "runs": [
     {
       "performance": 50,
-      "fcpMs": 10065,
-      "lcpMs": 14250,
-      "tbtMs": 274,
-      "bytes": 4327657
+      "fcpMs": 10080,
+      "lcpMs": 14295,
+      "tbtMs": 288.5,
+      "bytes": 4327116
     },
     {
       "performance": 51,
-      "fcpMs": 10095,
+      "fcpMs": 10065,
       "lcpMs": 14265,
-      "tbtMs": 264.5,
-      "bytes": 4327657
+      "tbtMs": 262.5,
+      "bytes": 4327116
     },
     {
-      "performance": 50,
-      "fcpMs": 10110,
-      "lcpMs": 14280,
-      "tbtMs": 266,
-      "bytes": 4327657
+      "performance": 51,
+      "fcpMs": 10065,
+      "lcpMs": 14265,
+      "tbtMs": 260.5,
+      "bytes": 4327116
     }
   ],
   "median": {
-    "performance": 50,
-    "fcpMs": 10095,
+    "performance": 51,
+    "fcpMs": 10065,
     "lcpMs": 14265,
-    "tbtMs": 266,
-    "bytes": 4327657
+    "tbtMs": 262.5,
+    "bytes": 4327116
   }
 }

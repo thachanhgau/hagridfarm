@@ -470,14 +470,28 @@ function plotTag(context, parts, x, y, px, rule) {
   const widths = parts.map(([text]) => context.measureText(text).width), pad = Math.round(px * .45);
   const w = Math.ceil(widths.reduce((sum, width) => sum + width, 0) + pad * 2), h = Math.round(px * 1.5);
   const left = Math.round(x - w / 2), top = Math.round(y - h / 2), line = Math.max(1, Math.round(px / 10));
-  context.fillStyle = 'rgba(18,38,33,.8)';
+  // A small wooden plaque in the garden palette: dark wood, a lighter top edge, a #231F2E rim; `rule` lights the rim
+  // for a ripe or selected plot.
+  context.fillStyle = '#231F2E';
+  context.fillRect(left - line, top - line, w + line * 2, h + line * 2);
+  context.fillStyle = '#4A3042';
   context.fillRect(left, top, w, h);
-  context.strokeStyle = rule;
-  context.lineWidth = line;
-  context.strokeRect(left + line / 2, top + line / 2, w - line, h - line);
+  context.fillStyle = '#735044';
+  context.fillRect(left, top, w, line);
+  if (rule) { context.strokeStyle = rule; context.lineWidth = line; context.strokeRect(left - line / 2, top - line / 2, w + line, h + line); }
   let at = left + pad;
   parts.forEach(([text, colour], i) => { context.fillStyle = colour; context.fillText(text, at, top + h / 2); at += widths[i]; });
   context.restore();
+}
+
+// A plot's sign: a short wooden post planted at (x, y) with the plaque on top.
+function plotSign(context, parts, x, y, px, rule) {
+  const post = Math.round(px * .9), line = Math.max(1, Math.round(px / 10));
+  context.fillStyle = '#231F2E';
+  context.fillRect(x - line * 2, y - post, line * 4, post);
+  context.fillStyle = '#735044';
+  context.fillRect(x - line, y - post, line * 2, post - line);
+  plotTag(context, parts, x, y - post - Math.round(px * .7), px, rule);
 }
 
 function drawProgress(context, x, y, progress) {
@@ -1540,7 +1554,7 @@ export async function createGarden(canvas, options = {}) {
   }
 
   let lastOrder = [];
-  let interactiveDecor = [], festivalProps = [], interactiveEarnedDecor = [], interactiveKeepsakes = [], interactivePond = [], interactiveActors = [], sceneryVisible=true, reactionUntil=0;
+  let interactiveDecor = [], interactiveEarnedDecor = [], interactiveKeepsakes = [], interactivePond = [], interactiveActors = [], sceneryVisible=true, reactionUntil=0;
   let lastBuiltPlotCount = 0;
   let lastPlotReady = [];
 
@@ -1771,13 +1785,33 @@ export async function createGarden(canvas, options = {}) {
 
     if(propsVisible)objects.push({kind:'cottage-corner',type:'scenery',id:'cottage-corner',xy:iso(-2,5.5)});
     if(propsVisible)objects.push(...festivalObjects({eventMode,stage:currentStage,map,iso,decorAssets,occupied:[...storeDecorationObjects,...earnedDecorationObjects]}));
+    // Each plot has a little wooden sign planted at its west corner (owner 05/11/2026), sorted with the sprites: whatever
+    // stands in front of it covers it. Built plots say how they are doing: ripe count, or the time to the first ripe crop.
+    for (let index = 0; index < map.plots.length; index += 1) {
+      const plot = map.plots[index];
+      if (!plotIsVisible(state, index, logicalNow)) continue;
+      const px = Math.round(10 * labelScale), [x, y] = plotCorners(plot)[3], selected = index === selectedPlot;
+      let parts, rule = selected ? '#FFC36B' : null;
+      if (!plotIsBuilt(state, index, logicalNow)) {
+        const queued = Boolean(plotConstruction(state, index));
+        parts = [[queued ? `Thửa ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`, queued ? '#D6D8BF' : '#A6B1AE']];
+      } else {
+        const slots = (state.plots?.[index]?.slots ?? []).filter(Boolean);
+        const ripe = slots.filter(entry => growthFor(entry, logicalNow).mature).length;
+        const left = slots.length && !ripe ? Math.min(...slots.map(entry => entry.plantedAt + (entry.growMs ?? growthFor(entry, logicalNow).growMs) - logicalNow)) : 0;
+        parts = [[`Thửa ${index + 1}`, selected ? '#FFC36B' : '#F5D69A'], [ripe ? ` · chín ${ripe}` : slots.length ? ` · ${shortTime(left)}` : '', ripe ? '#FFC36B' : '#A6B1AE']];
+        if (ripe) rule = '#FFC36B';
+      }
+      objects.push({kind: 'sign', id: `sign:${index}`, xy: [x, y], draw: ctx => plotSign(ctx, parts, x, y, px, rule)});
+    }
     objects.sort((a, b) => (a.xy?.[1] ?? 0) - (b.xy?.[1] ?? 0) || (a.xy?.[0] ?? 0) - (b.xy?.[0] ?? 0));
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
-    interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');festivalProps=objects.filter(o=>o.kind==='festival');
+    interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');
     interactivePond=objects.filter(o=>o.type==='prop'&&o.id==='pond');
     interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
     lastOrder = objects.map((object) => ({id: object.id ?? object.species, y: object.xy?.[1] ?? 0, type: object.type}));
+    drawPenLabels(state, logicalNow);
     for (const object of objects) drawObject(object, logicalNow, clock);
     drawAnimationEffects(state, activeAnimations);
     if (tutorialFocus && map.plots[tutorialFocus.plot]) drawTutorialFocus(context, plotCorners(map.plots[tutorialFocus.plot], map), clock);
@@ -1822,61 +1856,9 @@ export async function createGarden(canvas, options = {}) {
       if (imageFor(file)) drawAsset({...GNOME_FRAME, file}, x, y + 2);
       else drawGnome(context, x, y + 2, tick);
     }
-    const blockers = decorRects();
-    for (let index = 0; index < map.plots.length; index += 1) {
-      const plot = map.plots[index];
-      if (!plotIsVisible(state, index, logicalNow)) continue;
-      // ~10 screen px at every zoom (8 world px at least, so it stays legible when zoomed in), its foot on the plot's front tip.
-      const px = Math.round(10 * labelScale), [x, tipY] = plotCorners(plot)[2], centreY = iso(...resolvedPlotPosition(plot))[1];
-      const place = text => clearLabelY(text, TAG_FONT(px), x, tipY - px * .55, centreY, blockers);
-      const built = plotIsBuilt(state, index, logicalNow);
-      const queued = Boolean(plotConstruction(state, index));
-      if (!built) {
-        const text = queued ? `Thửa ${index + 1}` : `T${index + 1} · Lv ${plot.requiredLevel}`;
-        plotTag(context, [[text, queued ? '#d6d8bf' : '#a6b1ae']], x, place(text), px, 'rgba(166,177,174,.35)');
-        continue;
-      }
-      // Each built plot says how it is doing: ripe count, or the time until its first crop ripens.
-      const slots = (state.plots?.[index]?.slots ?? []).filter(Boolean);
-      const ripe = slots.filter(entry => growthFor(entry, logicalNow).mature).length;
-      const left = slots.length && !ripe ? Math.min(...slots.map(entry => entry.plantedAt + (entry.growMs ?? growthFor(entry, logicalNow).growMs) - logicalNow)) : 0;
-      const name = `Thửa ${index + 1}`, tag = ripe ? ` · chín ${ripe}` : slots.length ? ` · ${shortTime(left)}` : '';
-      const selected = index === selectedPlot;
-      plotTag(context, [[name, selected ? '#f5d69a' : '#e8f0ed'], [tag, ripe ? '#ffc36b' : '#a6b1ae']], x, place(name + tag), px,
-        ripe || selected ? 'rgba(255,195,107,.85)' : 'rgba(245,214,154,.3)');
-    }
-    drawPenLabels(state, logicalNow);
     // A tapped gia tinh or friend says its line in a bubble over its head (owner 05/11/2026).
     if (said.xy && said.until > performance.now()) drawHagridSpeechBubble(context, said.xy[0], said.xy[1], said.text, {lift: 72, scale: labelScale});
 
-  }
-
-  // Plot labels sit on the path in front of each plot, where members stand statues: a label that would cover a
-  // decoration slides up over its own plot (at most to its centre) to where it covers the least of it (owner 01/11/2026).
-  function decorRects() {
-    const rects = [];
-    // Festival props too: the Halloween lanterns and cauldrons stand under the Thửa labels (bug 04/11/2026).
-    for (const {xy, asset, facing} of [...interactiveDecor, ...festivalProps]) {
-      const b = (facing === 'right' && asset.rightBounds) ? asset.rightBounds : (asset.bounds ?? {x: 0, y: 0, w: asset.width, h: asset.height});
-      rects.push({left: xy[0] - asset.pivotX + b.x, top: xy[1] - asset.pivotY + b.y, w: b.w, h: b.h});
-    }
-    for (const decor of interactiveEarnedDecor) {
-      const asset = earnedDecorArt(decor.id, decor.facing);
-      if (!asset) continue;
-      const b = asset.bounds ?? {x: 0, y: 0, w: asset.width, h: asset.height};
-      rects.push({left: decor.xy[0] - finite(asset.pivotX, 48) + b.x, top: decor.xy[1] - finite(asset.pivotY, 96) + b.y, w: b.w, h: b.h});
-    }
-    return rects;
-  }
-
-  function clearLabelY(text, font, x, y, floor, rects) {
-    context.font = font;
-    const w = context.measureText(text).width + 10, h = (Number(font.match(/(\d+)px/)?.[1]) || 13) + 6;
-    const overlap = cy => rects.reduce((sum, r) => sum + Math.max(0, Math.min(x + w / 2, r.left + r.w) - Math.max(x - w / 2, r.left))
-      * Math.max(0, Math.min(cy + h / 2, r.top + r.h) - Math.max(cy - h / 2, r.top)), 0);
-    let best = y, least = overlap(y);
-    for (let cy = y - 4; least > 0 && cy >= floor; cy -= 4) { const area = overlap(cy); if (area < least) [best, least] = [cy, area]; }
-    return best;
   }
 
   function pick(clientX, clientY) {
