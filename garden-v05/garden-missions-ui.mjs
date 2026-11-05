@@ -7,7 +7,7 @@ import {showHagridLetter} from './hagrid-letter-ui.mjs?v=25.0.0';
 
 const meter=(done,target)=>el('div',{class:'gp-meter',role:'progressbar','aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(done)},[el('span',{style:`width:${Math.min(100,Math.round(done/target*100))}%`})]);
 
-// Event channel (snapshot.dayEvent, action claimDayEvent); now «Mừng HPVN 3 tháng — Hội Gia Tinh» (owner 31/10/2026).
+// Event channel (snapshot.dayEvent, action claimDayEvent); now «Mừng HPVN 3 tháng — Hội Vận động cho Quyền lợi Gia tinh» (owner 31/10/2026).
 // Tasks in order, the ones after the current one read «???»; the gift (two statues + a letter) arrives in the claim reply.
 const endText=ms=>{const d=new Date(ms+7*3600000);const p=n=>String(n).padStart(2,'0');return `Đến ${p(d.getUTCHours())}:${p(d.getUTCMinutes())} ${p(d.getUTCDate())}/${p(d.getUTCMonth()+1)}`;};
 const readLetter=letter=>showHagridLetter({greeting:letter.greeting,mode:'gift',letter});
@@ -16,14 +16,14 @@ function eventSection(ev,claimEvent,notify,rerender){
  const card=gift.claimed
   ? el('div',{class:'gp-hero day-event-gift is-open'},[
     el('div',{class:'day-event-statues','aria-hidden':'true'},gift.decor.map(id=>el('img',{src:`./decor-assets/native/${id}.png`,alt:'',width:64,height:88,draggable:'false'}))),
-    el('div',{class:'gp-hero-copy'},[el('strong',{text:'Quà của Hội Gia Tinh'}),el('small',{text:`${gift.decor.length} tượng · +${gift.boost} Nước phép`})]),
-    iconButton('letter','Đọc thư của Hội Gia Tinh',()=>readLetter(gift.letter),{text:'Thư'}),
+    el('div',{class:'gp-hero-copy'},[el('strong',{text:'Quà của Hội Vận động cho Quyền lợi Gia tinh'}),el('small',{text:`${gift.decor.length} tượng · +${gift.boost} Nước phép`})]),
+    iconButton('letter','Đọc thư của Hội Vận động cho Quyền lợi Gia tinh',()=>readLetter(gift.letter),{text:'Thư'}),
    ])
   : el('div',{class:`gp-hero owl-chest day-event-gift${gift.ready?' is-ready':' is-locked'}`},[
     el('div',{class:'gp-tile-art'},[pixelIcon('chest',3)]),
-    el('div',{class:'gp-hero-copy'},[el('strong',{text:'Quà của Hội Gia Tinh'}),el('small',{text:gift.ready?'Mở quà nào!':`Xong ${ev.tasks.length} nhiệm vụ để mở`})]),
+    el('div',{class:'gp-hero-copy'},[el('strong',{text:'Quà của Hội Vận động cho Quyền lợi Gia tinh'}),el('small',{text:gift.ready?'Mở quà nào!':`Xong ${ev.tasks.length} nhiệm vụ để mở`})]),
     gift.ready
-     ? iconButton('chest','Mở quà của Hội Gia Tinh',async()=>{const res=await claimEvent('finale');if(res?.ok){notify(`🧦 Hội Gia Tinh tặng con ${res.reward.label}!`);rerender();readLetter(res.reward.letter);}},{text:'Mở',class:'primary','data-claim-day-event':'finale'})
+     ? iconButton('chest','Mở quà của Hội Vận động cho Quyền lợi Gia tinh',async()=>{const res=await claimEvent('finale');if(res?.ok){notify(`🧦 Hội Vận động cho Quyền lợi Gia tinh tặng con ${res.reward.label}!`);rerender();readLetter(res.reward.letter);}},{text:'Mở',class:'primary','data-claim-day-event':'finale'})
      : iconButton('lock','Chưa mở',null,{disabled:true}),
    ]);
  return el('section',{class:'day-event'},[
@@ -33,7 +33,7 @@ function eventSection(ev,claimEvent,notify,rerender){
     el('small',{text:`${i+1}. ${t.claimed?'✓ ':''}${t.label} · ${t.reward.label}`}),
     t.open?el('div',{class:'owl-chest-meter'},[meter(t.current,t.target),el('b',{text:`${t.current}/${t.target}`})]):null,
    ]),
-   t.claimable?iconButton('chest',`${t.deliver?'Nộp và nhận':'Nhận'} ${t.reward.label}`,async()=>{const res=await claimEvent(t.id);if(res?.ok){notify(`🧦 Hội Gia Tinh: ${res.reward.label}!`);rerender();}},{text:t.deliver?'Nộp':'Nhận',class:'primary','data-claim-day-event':t.id}):null,
+   t.claimable?iconButton('chest',`${t.deliver?'Nộp và nhận':'Nhận'} ${t.reward.label}`,async()=>{const res=await claimEvent(t.id);if(res?.ok){notify(`🧦 Hội Vận động cho Quyền lợi Gia tinh: ${res.reward.label}!`);rerender();}},{text:t.deliver?'Nộp':'Nhận',class:'primary','data-claim-day-event':t.id}):null,
   ])),
   card,
  ]);

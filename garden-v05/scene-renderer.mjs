@@ -1698,7 +1698,7 @@ export async function createGarden(canvas, options = {}) {
     elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering, work: options.elfWork}) : [];
     if (propsVisible && options.norbert) elfList.push(norbertObject(iso, clock, {night: atmosphereMode === 'night', cheering: !!cheering.norbert}));
     const fx = propsVisible && friends ? friends.friendObjects(iso, clock, options.now, elfList, {night: atmosphereMode === 'night', winter: !!activeWinter, cheering, all: options.allFriends}) : [];
-    if (propsVisible && xmasKit) fx.push(...xmasKit.hearthObjects(iso, options.xmas, elfList, {clock, night: atmosphereMode === 'night', decorations: options.decorations})); // December hearth, vớ, egg; S7 part 2 by date
+    if (propsVisible && xmasKit) fx.push(...xmasKit.hearthObjects(iso, options.xmas, elfList, {clock, decorations: options.decorations})); // December hearth, vớ, egg; S7 part 2 by date
     const objects = [...boundaryFence, ...wizList, ...elfList, ...fx, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {
@@ -1862,6 +1862,7 @@ export async function createGarden(canvas, options = {}) {
         stageBounds: sBounds,
       });
     }
+    if (propsVisible && xmasKit) for (const spark of xmasKit.newYearFireworks(iso, options.xmas, {clock, now: options.now})) spark.draw(context);
     // «Đốt vườn»: options.fire is the server's garden.fire while it burns.
     if (options.fire) {
       if (fireCache?.stage !== currentStage.id) fireCache = {stage: currentStage.id, spots: fireSpots(currentStage, iso)};

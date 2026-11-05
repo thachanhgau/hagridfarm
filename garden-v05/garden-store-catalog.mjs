@@ -446,7 +446,7 @@ export const STORE_CATALOG=Object.freeze([
     "icon": "puffskein",
     "species": "puffskein",
     "inventoryId": "puff_feed",
-    "label": "Thức ăn Puffskein",
+    "label": "Thức ăn quái lùng nhùng",
     "level": 10,
     "price": 15,
     "quantity": 1,

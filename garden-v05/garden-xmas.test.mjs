@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {GARDEN_STAGES, stageContains} from './garden-growth.mjs';
-import {FEAST_SPOT, FOLIAGE, HEARTH, HEARTH_SPOT, TREE_FILES, XMAS_FILES, hearthObjects, ornamentLock, ornamentPin, sockLock, sockTask, xmasNudge} from './garden-xmas.mjs';
+import {FEAST_SPOT, FOLIAGE, HEARTH, HEARTH_SPOT, TREE_FILES, XMAS_FILES, hearthObjects, newYearFireworks, ornamentLock, ornamentPin, ornamentPoints, sockLock, sockTask, xmasNudge} from './garden-xmas.mjs';
 
 const iso = (c, r) => [(c - r) * 32, (c + r) * 16];
 const socks = (opened = 0, unlocked = 10) => Array.from({length: 10}, (_, i) => ({n: i + 1, crop: 'pumpkin', qty: 3, label: 'x', gift: {water: 3}, opened: i < opened, unlocked: i < unlocked}));
@@ -91,16 +91,13 @@ test('the feast spot clears every plot and the hearth; decorations may not stand
   assert.equal(reason, 'Chỗ này là bàn tiệc Đêm Noel.');
 });
 
-test('hearthObjects by date: Đêm Noel feast and carried tree, New Year fireworks at night only, no hearth in January', () => {
+test('hearthObjects by date: Đêm Noel feast and carried tree, no hearth in January', () => {
   const view = {hearth: true, chapter: null, egg: null, eve: {claimed: false}, newYear: {year: 2027}};
   const day = hearthObjects(iso, view, [], {clock: 500, night: false}).map((o) => o.id ?? o.kind);
   assert.deepEqual(day, ['xmas-feast', 'xmas-carried-tree']);
   // A decoration already standing on the feast ground keeps it: the feast is not drawn over it.
   const taken = {placements: ['decor_cauldron'], positions: {decor_cauldron: [12, 0.5]}};
   assert.deepEqual(hearthObjects(iso, view, [], {clock: 500, decorations: taken}).map((o) => o.id), ['xmas-carried-tree']);
-  const night = hearthObjects(iso, view, [], {clock: 500, night: true});
-  assert.ok(night.filter((o) => o.kind === 'fx').length >= 1);
-  assert.equal(hearthObjects(iso, view, [], {clock: 0, night: true}).filter((o) => o.kind === 'fx').length, 0); // reduced motion
   const elves = [];
   assert.deepEqual(hearthObjects(iso, {hearth: false, champion: {won: true}}, elves), []);
   assert.deepEqual(elves, []);
@@ -132,4 +129,23 @@ test('part 2 nudges: New Year frame, Đêm Noel present, an ornament, banh tuy�
   assert.match(xmasNudge({...base, yule: {today: 0, cap: 2, ornaments: [{unlocked: true, hung: false}]}}), /cây thông nhà/);
   assert.match(xmasNudge({...base, snow: {today: 1, cap: 3}}), /còn 2 banh tuyết/);
   assert.equal(xmasNudge({...base, snow: {today: 3, cap: 3}}), '');
+});
+
+test('fireworks: from 18:00 VN on 31/12 whatever the saved scene, drawn after the night tint', () => {
+  const view = {hearth: true, newYear: {year: 2027}}, at = (h, m = 0) => Date.UTC(2026, 11, 31, h - 7, m);
+  assert.equal(newYearFireworks(iso, view, {clock: 500, now: at(17, 59)}).length, 0);
+  assert.ok(newYearFireworks(iso, view, {clock: 500, now: at(18)}).length >= 1);
+  assert.equal(newYearFireworks(iso, view, {clock: 0, now: at(20)}).length, 0); // reduced motion
+  assert.equal(newYearFireworks(iso, {hearth: true}, {clock: 500, now: at(20)}).length, 0); // another day: no newYear
+  assert.equal(hearthObjects(iso, view, [], {clock: 500}).filter((o) => o.kind === 'fx').length, 0); // not in the tinted depth pass
+  const src = fs.readFileSync(new URL('./scene-renderer.mjs', import.meta.url), 'utf8');
+  assert.ok(src.indexOf('newYearFireworks(') > src.indexOf('drawAtmosphereOverlay(context'), 'after the tint');
+});
+
+test('ornamentPoints: what a hang really adds, 0 at the 60-point cap or without a house', () => {
+  const yule = {house: 'gryffindor', cup: 10};
+  assert.equal(ornamentPoints(yule, {today: 0, dailyCap: 60}), 10);
+  assert.equal(ornamentPoints(yule, {today: 55, dailyCap: 60}), 5);
+  assert.equal(ornamentPoints(yule, {today: 60, dailyCap: 60}), 0);
+  assert.equal(ornamentPoints({house: null, cup: 10}, {today: 0, dailyCap: 60}), 0);
 });

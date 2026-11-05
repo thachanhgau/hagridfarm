@@ -43,9 +43,17 @@ const snowball = (from, to, k) => {
   return {kind: 'fx', xy: [x, y + 300], draw: (ctx) => { ctx.fillStyle = '#E8F0ED'; ctx.fillRect(x - 2, y - 2, 4, 4); ctx.fillStyle = '#B7DEE0'; ctx.fillRect(x, y, 2, 2); }};
 };
 
+/** Pháo hoa Giao thừa: from 18:00 VN on the day the server sends `newYear`, whatever scene the member saved. The renderer
+ * draws them after the night tint so they stay bright. */
+export function newYearFireworks(iso, view, {clock = 0, now = Date.now()} = {}) {
+  if (!view?.newYear || view.hearth === false || clock <= 0 || new Date(now + 7 * 3600000).getUTCHours() < 18) return [];
+  const [x, y] = iso(...HEARTH_SPOT);
+  return [-90, 0, 90].map((dx, i) => fireworks([Math.round(x) + dx, Math.round(y) - 40 * (i % 2)], clock, i)).filter(Boolean);
+}
+
 /** The hearth goes into `elves` (picked like a gia tinh, id 'xmas-hearth'); returns the vớ and egg drawn over it, and
- * by date the Đêm Noel feast and carried tree, the New Year fireworks (night) and a thrown banh tuyết. */
-export function hearthObjects(iso, view, elves = [], {clock = 0, night = false, decorations = null} = {}) {
+ * by date the Đêm Noel feast and carried tree and a thrown banh tuyết. */
+export function hearthObjects(iso, view, elves = [], {clock = 0, decorations = null} = {}) {
   if (!view || view.hearth === false) return [];
   const [x, y] = iso(...HEARTH_SPOT), xy = [Math.round(x), Math.round(y)];
   elves.push({kind: 'elf', id: 'xmas-hearth', still: true, xy, flip: false, asset: {...HEARTH, file: file('hearth')}});
@@ -60,7 +68,6 @@ export function hearthObjects(iso, view, elves = [], {clock = 0, night = false, 
     out.push({kind: 'elf', id: 'xmas-carried-tree', still: true, xy: [Math.round(gx), Math.round(gy) + 1], flip: false,
       asset: {...CARRIED, file: file('carried-tree'), pivotX: CARRIED.pivotX - HAND[0], pivotY: CARRIED.pivotY - HAND[1], bounds: {x: 0, y: 0, w: 0, h: 0}}});
   }
-  if (view.newYear && night && clock > 0) out.push(...[-90, 0, 90].map((dx, i) => fireworks([xy[0] + dx, xy[1] - 40 * (i % 2)], clock, i)).filter(Boolean));
   if (thrown && clock > 0) {
     const k = (clock - thrown.start) / THROW_MS, target = elves.find((o) => o.id === thrown.target);
     if (k >= 1) thrown = null;
@@ -120,6 +127,8 @@ const pad = (n) => String(n).padStart(2, '0');
 const giftText = (gift) => Object.entries(gift).map(([k, v]) => `${GIFT[k] || k} ${v}`).join(' ');
 export const sockTask = (s) => `Nộp ${s.qty} ${CROPS[s.crop] || s.crop}: ${s.label}`;
 const NAMES = {harry: 'Harry', ron: 'Ron', hermione: 'Hermione', ginny: 'Ginny'};
+/** What hanging one really adds: the member's room under the Cúp Nhà day cap, nothing without a house. Hanging stays allowed. */
+export const ornamentPoints = (yule, cup) => (yule.house ? Math.max(0, Math.min(yule.cup, (cup?.dailyCap ?? yule.cup) - (cup?.today ?? 0))) : 0);
 /** Why an ornament cannot be hung now ('' when it can). */
 export function ornamentLock(o, yule, stock = {}) {
   if (o.hung) return 'Đã treo';
@@ -177,10 +186,11 @@ export function createXmasCare({getSnapshot, act, notify}) {
         : 'Dạ Vũ Noel (18–31/12) · cây thông nhà: cần cấp 20 và nhà trong Floo'}));
       if (Y.house) rows.push(treeCanvas(Y.stage ?? 0, Y.ornaments));
       if (Y.board) rows.push(el('ol', {class: 'xmas-board'}, Y.board.map((b) => el('li', b.house === Y.house ? {'aria-current': 'true'} : {}, [el('span', {text: b.label}), el('b', {text: num(b.points)})]))));
-      rows.push(el('p', {class: 'meta', text: `Món trang trí: hôm nay ${Y.today}/${Y.cap} · mỗi món +${Y.cup} điểm Cúp Nhà và cây thông nhà`}));
+      rows.push(el('p', {class: 'meta', text: `Món trang trí: hôm nay ${Y.today}/${Y.cap}`}));
+      const points = ornamentPoints(Y, snap?.houseCup);
       for (const o of Y.ornaments) {
         const lock = ornamentLock(o, Y, stock);
-        rows.push(hero(`Món ${o.n} · ${o.label}`, o.unlocked || o.hung ? `Nộp ${o.qty} ${CROPS[o.crop] || o.crop}` : '???',
+        rows.push(hero(`Món ${o.n} · ${o.label}`, o.hung ? `Nộp ${o.qty} ${CROPS[o.crop] || o.crop}` : o.unlocked ? `Nộp ${o.qty} ${CROPS[o.crop] || o.crop} · ${points ? `+${points}` : 0} điểm` : '???',
           iconButton('chest', `Treo ${o.label}`, () => send({kind: 'ornament', n: o.n}, () => notify(`🎄 Đã treo ${o.label} lên cây thông nhà.`)),
             {text: lock || 'Treo', class: lock ? '' : 'primary', disabled: Boolean(lock)})));
       }

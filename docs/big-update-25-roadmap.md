@@ -136,10 +136,10 @@ Tra lại: `python3 -I` đếm chuỗi trong `resource/FullHP/HP*_VN.txt` (ugrep
 
 | # | Đường lách | Rào chắn |
 |---|---|---|
-| 33 | Gia tinh trông vườn thành bot | 6 việc/ngày; công trả bằng mũ/tất chỉ có từ việc chơi |
+| 33 | Gia tinh trông vườn thành bot | 6 việc/ngày; công trả bằng nón/vớ len từ Giỏ đan của Hermione và quà Hermione ghé vườn (S6) |
 | 34 | Nghỉ phép để lợi | Vườn dừng lớn khi nghỉ; ≤ 7 ngày/30 ngày, tính trên server |
 | 35 | Thả rông ra Galleons | Chỉ ra nguyên liệu, trần ngày |
-| 36 | Quà nhân vật ghé vườn, ném tuyết | Trần ngày trên server, `requestId` idempotent |
+| 36 | Quà nhân vật ghé vườn, ném tuyết | Trần ngày trên server, `requestId` idempotent; Nhân sâm của Neville bán được 9 G (≈189 G/tháng), không có quà Galleons trực tiếp |
 | 37 | Cây thông nhà bị bơm điểm | Trần điểm mỗi thành viên mỗi ngày; bộ đếm chia mảnh, theo skill ngân sách đọc |
 | 38 | Bơm tâm trạng bằng thao tác lặp | Mỗi tương tác một lần mỗi con mỗi chu kỳ |
 | 39 | Bộ lông hiếm có lợi kinh tế | Chỉ để trang điểm |
@@ -149,7 +149,7 @@ Tra lại: `python3 -I` đếm chuỗi trong `resource/FullHP/HP*_VN.txt` (ugrep
 - *Chuyển vườn / tài khoản phụ:* `garden.duty` nằm trong chính vườn của tài khoản; vườn phụ có đồng hồ riêng, không có gì chuyển sang được. Thả rông, quà, Galleons không đi qua bậc trách nhiệm.
 - *Cấp sát ngưỡng 130:* đồng hồ chỉ chạy từ lệnh đầu tiên ở cấp ≥ 130 (`since`); không có lợi gì khi đứng ở 129 vì luật cũ chỉ là không bị phạt, còn thưởng cấp vẫn theo XP.
 - *Vắng lâu:* làm bù của gia tinh tính tối đa 7 ngày gần nhất, mỗi ngày tối đa 6 việc và chỉ khi hộp công còn len; ma lùm tối đa 3; cây chết khô chỉ mất hạt, thú không bao giờ chết, đồ đã mua không mất.
-- *Gia tinh (#33):* công trả bằng nón/vớ len chỉ có từ Giỏ đan của Hermione; làm bù đúng giờ tới hạn nên không «gặt trước»; tính như một lần ghé để giữ ma lùm ngoài vườn nhưng không cộng nhiệm vụ, lễ hội, cúp.
+- *Gia tinh (#33):* công trả bằng nón/vớ len từ Giỏ đan của Hermione và Vớ len Hermione tặng khi ghé vườn (S6); làm bù đúng giờ tới hạn nên không «gặt trước»; tính như một lần ghé để giữ ma lùm ngoài vườn nhưng không cộng nhiệm vụ, lễ hội, cúp.
 - *Nghỉ phép (#34):* vườn dừng cả lớn lẫn héo; ≤ 7 ngày trong 30 ngày tính trên server; lệnh làm vườn chờ tới khi về.
 - *Chữa bệnh, dụ về (#40):* chỉ tốn Thuốc Mọc Xương, Galleons theo cấp hoặc thức ăn; không trả lại gì.
 
@@ -157,7 +157,7 @@ Tra lại: `python3 -I` đếm chuỗi trong `resource/FullHP/HP*_VN.txt` (ugrep
 - *Nhiều tab, gửi lại:* lượt đã tặng nằm trong `garden_daily/{uid}_{ngày}` và đổi trong cùng giao dịch với kho; `requestId` gửi lại trả biên nhận cũ; tab cũ bị từ chối «đã tặng».
 - *Chỉnh giờ máy, chạm người không có mặt:* server tự tính ai đang ghé theo giờ của nó (ân hạn 2 phút cuối lượt); người vắng bị từ chối.
 - *Đổi vườn, thăm vườn người khác:* một tài khoản một vườn, trần tính theo tài khoản; lệnh thăm vườn không có quà.
-- *Tài khoản phụ:* mỗi tài khoản tối đa 3 quà nhỏ một ngày (nhiều nhất 9 nước, hoặc nước phép, Vớ len, Nhân sâm thay một phần), không có Galleons; ngang một nhiệm vụ cú, nên nuôi tài khoản phụ không lời.
+- *Tài khoản phụ:* mỗi tài khoản tối đa 3 quà nhỏ một ngày (nhiều nhất 9 nước, hoặc nước phép, Vớ len, Nhân sâm thay một phần), không có quà Galleons trực tiếp (Nhân sâm bán 9 G, ≈189 G/tháng); ngang một nhiệm vụ cú, nên nuôi tài khoản phụ không lời.
 
 **Rà S7 phần 1 (05/11/2026), chương 1, trứng rồng, bộ Noel (#36):**
 - *Nhiều tab, gửi lại:* `garden.xmas` đổi trong cùng giao dịch với kho và quà; lệnh `xmas` kiểm `expectedRevision` nên tab cũ bị từ chối; `requestId` gửi lại trả biên nhận cũ; vớ đã mở trả `sock-opened`.
@@ -262,3 +262,5 @@ Dữ liệu vườn demo đã trả về như trước khi bấm: 70 tài liệu
 **Audit 05/11/2026 (nhánh `audit-25`, chưa phát hành):** sửa chữ Lý Lan ở catalog; ma lùm vào lượt vẽ theo chiều sâu nên tông đêm phủ lên; ảnh trễ tải hỏng được hỏi lại sau 5 giây, chưa hiện thì chưa chạm được; bảng lò sưởi một khung, bỏ câu giải thích; tổng thửa theo Tận Sức (12 hoặc 18); cấp 12 ghi Giỏ đan của Hermione; Thuốc Mọc Xương vượt cấp ≤ 19 có quà Nước phép. Xem ở 375 px các mốc 26, 36, 43, 49, 56, 57: console sạch, bác Hagrid vác cây đúng vai; pháo hoa có vẽ nhưng nhỏ và tối dưới tông đêm, chờ chủ dự án quyết. Hàng tab cửa hàng cuộn được, không thanh cuộn, tới đủ 10 tab: không phải lỗi.
 
 **Còn trước khi phát hành:** chủ dự án thử trên trình duyệt; chủ dự án duyệt deploy (01/12 và 10/12, cả Functions lẫn client).
+
+**Audit 05/11/2026, đợt quyết định của owner (nhánh `audit-25`, chưa phát hành):** pháo hoa từ 18:00 VN ngày 31/12 không phụ thuộc cảnh đã lưu, vẽ sau tông đêm; hàng món trang trí ghi điểm thật (0 khi chạm trần 60 hoặc chưa có nhà), vẫn treo được; §8 #33, #36 khớp S6; từ chối thăm và chăm giúp vườn của chủ bị cấm hoặc vô hiệu hóa; `postcard`, `shareFloo` chỉ tính khi đã lưu ảnh hoặc lời khoe đã tới Floo/clipboard (server không thấy được ba thao tác này, yêu cầu tự chế vẫn tính); đổi tên «Thức ăn quái lùng nhùng» (HP5), «Hội Vận động cho Quyền lợi Gia tinh» (HP4, HP5). Giữ B, D, E. F, G, H chờ owner duyệt số; L chờ owner cho đọc production.

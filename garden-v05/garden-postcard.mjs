@@ -200,6 +200,7 @@ export function renderPostcardSection({
   playerName,
   keeperTitle,
   onShareFloo,
+  onSaved,
   notify,
 }) {
   const meta = extractPostcardMeta({state, stage, atmosphere, weather, event, totalAffinity, playerName, keeperTitle});
@@ -216,6 +217,7 @@ export function renderPostcardSection({
         download: `buu-thiep-vuon-hagrid-cap-${meta.level}.png`,
       });
       link.click();
+      onSaved?.();
       notify?.('📸 Đã tải ảnh Bưu thiếp Rừng Cấm (.png) về máy!');
     } catch {
       notify?.('Trình duyệt hiện tại hạn chế xuất ảnh trực tiếp.');

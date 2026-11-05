@@ -27,7 +27,7 @@ function fakeCanvas(failFirst = () => false) {
     ownerDocument: {createElement: () => fakeCanvas().canvas, defaultView: {Image: FakeImage}}};
   return {canvas, requested};
 }
-const hearthKit = {XMAS_FILES: [HEARTH], hearthObjects: (iso, view, elves) => {
+const hearthKit = {XMAS_FILES: [HEARTH], newYearFireworks: () => [], hearthObjects: (iso, view, elves) => {
   elves.push({kind: 'elf', id: 'xmas-hearth', still: true, xy: [400, 400], flip: false, asset: {file: HEARTH, width: 112, height: 120, pivotX: 56, pivotY: 116, bounds: {x: 8, y: 4, w: 96, h: 114}}});
   return [];
 }};

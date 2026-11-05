@@ -141,7 +141,7 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]) {
     await press(frame.locator('#petHelp'));
     await frame.locator('.store-popover[role=dialog]').waitFor();
     assert.equal(await frame.locator('.store-tabs [data-kind=food]').getAttribute('aria-pressed'),'true');
-    assert.match(await frame.locator('.store-cards-grid').innerText(),/Thức ăn Puffskein/);
+    assert.match(await frame.locator('.store-cards-grid').innerText(),/Thức ăn quái lùng nhùng/);
     await press(frame.getByRole('button',{name:'Đóng cửa hàng',exact:true}));
     assert.equal(await frame.locator('#petHelp').evaluate(e=>e===document.activeElement),true);
     assert.deepEqual(await snapshot(),before,'opening the shop never buys or spends');

@@ -115,8 +115,8 @@ export const FESTIVAL_PRODUCTS = Object.freeze(FESTIVAL_ROWS.map(([id, label, pr
 // Same rows as the server (functions/games/garden-wallet-catalog.js EVENT_ROWS).
 export const EVENT_COLLECTION = 'event';
 const EVENT_ROWS = [
-  ['ev_dobby_spring_rider', 'Tượng Dobby cưỡi thú nhún', [2,2], 'Dobby cưỡi chú Bằng-Mã nhún lò xo, quà Hội Gia Tinh mừng HPVN 3 tháng.'],
-  ['ev_dark_dobby_red', 'Tượng Dobby Hắc Ám', [2,2], 'Dobby tạc đá đỏ, giơ chiếc vớ, quà Hội Gia Tinh mừng HPVN 3 tháng.'],
+  ['ev_dobby_spring_rider', 'Tượng Dobby cưỡi thú nhún', [2,2], 'Dobby cưỡi chú Bằng-Mã nhún lò xo, quà Hội Vận động cho Quyền lợi Gia tinh mừng HPVN 3 tháng.'],
+  ['ev_dark_dobby_red', 'Tượng Dobby Hắc Ám', [2,2], 'Dobby tạc đá đỏ, giơ chiếc vớ, quà Hội Vận động cho Quyền lợi Gia tinh mừng HPVN 3 tháng.'],
   // Big update 25.0: the gift of Giáng sinh chapter 1 «Gia tinh đón đông» (S7, ten stockings).
   ['ev_elf_tent', 'Lều gia tinh', [2,2], 'Cái lều gia tinh khâu từ áo gối cũ, treo dây vớ len, quà chương «Gia tinh đón đông».'],
   // S7 chapter 3 «Dạ Vũ Noel»: the winning house's tree (server garden-xmas-chapters settleTree).

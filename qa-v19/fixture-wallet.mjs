@@ -381,7 +381,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
      steps:[{label:"Mở Thửa 5",current:1,target:1,done:true},{label:"Gieo 9 ô Nhân sâm",current:4,target:9,done:false},{label:"Giao 20 Bạch tiễn",current:12,target:20,done:false}]},
     upcoming:[{id:"c-niffler",level:26,title:"Đào mỏ tinh nghịch",chapter:true,reward:{label:"+2 Nước suối thần, +5 Nước phép, Vòm dây leo"}},{id:"c-clover",level:28,title:"Đồng cỏ ba lá",chapter:true,reward:{label:"+3 Nước suối thần, +5 Nước phép, +30 Nước"}}],
     claimedCount:33,totalCount:60,backlog:null},
-   dayEvent:{id:"hpvn_2m_2026",title:"Mừng HPVN 3 tháng — Hội Gia Tinh",icon:"🧦",endsAt:Date.parse("2026-11-02T12:00:00+07:00"),
+   dayEvent:{id:"hpvn_2m_2026",title:"Mừng HPVN 3 tháng — Hội Vận động cho Quyền lợi Gia tinh",icon:"🧦",endsAt:Date.parse("2026-11-02T12:00:00+07:00"),
     tasks:[task("g1","Gieo 12 ô",12,2,"claimed"),task("g2","Gặt 9 Bí ngô",9,2,"claimed"),task("g3","Ca đêm gia tinh: gặt 12 cây từ 19:00 tới 06:00",12,3,"open"),task("g4","",2,2,"hidden"),task("g5","",22,3,"hidden"),task("g6","",1,3,"hidden"),task("g7","",22,5,"hidden")],
     finale:{ready:false,claimed:false}},
   };
