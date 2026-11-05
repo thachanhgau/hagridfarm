@@ -15,6 +15,8 @@ Cắt nếu trễ, theo thứ tự: chương 5 → S6 còn 4 nhân vật (Harry,
 
 ## 2. Các phần (một phiên mỗi phần, tự chuyển phiên khi gần 250k context)
 
+Điều kiện đổi phiên (chủ dự án nhắc lại 05/11/2026): trước mỗi bước, đọc `context.tokensUsed` bằng `get_usage`; vượt 250.000 thì commit rồi `hand_off_to_session` kèm phần việc còn lại và chính điều kiện này.
+
 | # | Phần | Nội dung | Codex | Phụ thuộc |
 |---|---|---|---|---|
 | S0 | Nền móng | Số liệu gốc (phân bố cấp, quay lại D1/D7, Galleons); ngân sách tốc độ (LCP điện thoại < 8 s, ảnh lễ hội chỉ tải khi mùa mở); script chạy Codex tự chờ hết giới hạn; tra Lý Lan mọi tên mới (§7) | 0 | — |
@@ -211,3 +213,29 @@ Gộp ngày 04/11/2026 (chủ dự án «Ok»): ba việc còn treo của kế h
 4. **Tem `?v=`:** mọi import trong `garden-v05` mang tem phiên bản hiện tại, cùng một tem cho một module. Kiểm: `rg -n "from ['\"]\./[^?'\"]+\.mjs['\"]" garden-v05 -g '!*.test.mjs' -g '!build-*'` chỉ còn công cụ CLI (`playtest-summary.mjs`).
 
 Mỗi phần ghi vào báo cáo của mình: dòng Lighthouse (điểm, FCP, LCP, byte) cạnh số S0, và kết quả `node --test *.test.mjs`.
+
+## 11. S8: kết quả kiểm thử (05/11/2026)
+
+**Trạng thái: CHẶN PHÁT HÀNH, chờ chủ dự án quyết tốc độ giảm tâm trạng.** Chạy lại: `node functions/test/garden-balance-25.sim.js` (HPVNN), gọi đúng hàm server; 12 loài, cấp 140, 30 ngày, chữa ngay bằng Galleons (560 G/lần).
+
+| Vào vườn mỗi ngày, chăm mỗi lượt | Chạm/ngày | Giảm 2/giờ (hiện tại) | Giảm 1,5/giờ | Giảm 1/giờ |
+|---|---|---|---|---|
+| 1 lượt, chỉ cho ăn | 12 | 11,2 lần chữa/ngày, 6.272 G | 5,6, 3.136 G | 3,6, 2.016 G |
+| 1 lượt, cho ăn + chải | 24 | 5,6, 3.136 G | 3,6, 2.016 G | **không ốm** |
+| 1 lượt, chăm đủ (ăn, chơi, chải, dạy) | 40 | 2,4, 1.344 G | **không ốm** | **không ốm** |
+| 1 lượt, chỉ cho ăn + gia tinh 6 việc | 12 | 8,4, 4.704 G | 4,0, 2.240 G | 1,6, 896 G |
+| 2 lượt, chỉ cho ăn | 24 | 7,6, 4.256 G | 2,4, 1.344 G | **không ốm** |
+| 2 lượt, cho ăn + chải | 48 | **không ốm** | **không ốm** | **không ốm** |
+| 3 lượt, chỉ cho ăn | 36 | 0,8, 448 G; 792/1.068 lần nhận bị giảm nửa | **không ốm** | **không ốm** |
+
+- **Lỗi cân bằng:** giảm 48 điểm/ngày, mỗi bữa +15, mỗi chu kỳ 6 giờ một bữa, nên người không dậy lúc 00–06 giờ cho ăn tối đa 45 điểm/ngày, vẫn thua. Người chơi mỗi ngày một lượt, chăm đủ mọi nút vẫn mất ~1.344 G/ngày tiền chữa (tự chơi trung vị 101 G/ngày, §3). Trái ý §5: hậu quả dành cho người bỏ bê.
+- **Gia tinh không đỡ được:** 6 việc × 15 = 90 điểm, trong khi 12 loài mất 576 điểm/ngày.
+- **Đề xuất: giảm 1/giờ, sửa một hằng số.** Bỏ bê vẫn có hậu quả: từ 60 điểm ốm sau 35 giờ, vào Rừng Cấm sau 84 giờ (hiện tại 17,5 và 54 giờ). **Tác dụng phụ phải chấp nhận:** 3 lượt chỉ cho ăn đạt ≥ 80 ở 1.044/1.068 lần nhận (+1 sản phẩm gần như luôn có); muốn giữ thưởng khó thì nâng `HAPPY`. Chưa sửa code.
+
+**Giá (S1):** cả 32 cây đều lãi ở Quầy chợ theo giá mới với giả định 1 cây cho 1 sản phẩm (cận dưới); mỏng nhất nhóm cấp cao ~3,1 G/cây (Bạc hà cấp 56, so với Nhân sâm cấp 24 giá cũ 6,8 G). Toàn bộ 102 món không phải hạt/nước = 1.379.823 G, ≈ 43 ngày thu nhập trung vị 32.430 G/ngày (đa số `manual_reward`, §3).
+
+**Test:** Hagrid 375 đạt / 0 lỗi / 2 bỏ qua; Functions 776 / 0 / 1; client `tsc` không lỗi. Worktree mới cần link `outputs/` (Hagrid), `client/node_modules` và `npm ci` trong `functions/` (HPVNN), thiếu thì test báo đỏ giả.
+
+**3026 + emulator 5006, điện thoại 375 px:** vườn cấp 500 mở được, console không lỗi; chỉ xem, không bấm. Vườn demo có tuyết ngày 05/11 là thời tiết đã lưu theo vườn (`decorations.scene.weather`), không phải lịch: thêm `?weather=clear` thì hết tuyết. Chưa làm: duyệt từng mốc ngày trên trình duyệt (chỉ có test server, S7 phần 2 mới xem 24/12), `--lan` + iPhone thật và số LCP thật (§10 mục 3, cần chủ dự án).
+
+**Còn trước khi phát hành:** chốt tốc độ giảm; gộp `asset-overlap`; nâng phiên bản (tiêu đề còn «V24.9», tem module còn `?v=24.9.96`); chủ dự án duyệt deploy.
