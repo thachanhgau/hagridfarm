@@ -14,8 +14,9 @@ export const GROUPS = Object.freeze({
   'harry-ron': ['harry', 'ron'], hermione: ['hermione'], neville: ['neville'], luna: ['luna'], ginny: ['ginny'], twins: ['fred', 'george'],
 });
 
-// Stops as in garden-elves.mjs ([col, row, pose, stay ms, faces right?]) where a standing visitor hides no plot frame:
-// row 8.5–9 in front of Thửa 2–3, row 7 beside them, row 1.2–1.9 behind the plots (garden-friends.test.mjs). Lines follow Lý Lan's wording («bồ», «banh
+// Stops as in garden-elves.mjs ([col, row, pose, stay ms, faces right?]) where a standing visitor hides no plot frame
+// and nothing covers it: row 1 behind Thửa 2, clear of the elves' spots on row 8 (garden-friends.test.mjs,
+// character-cover.test.mjs). They may share spots with each other (one group at a time), never stand on an elf. Lines follow Lý Lan's wording («bồ», «banh
 // tuyết», «pháo hoa bung xòe», «Kẻ Lý Sự», «vong mã», «Nhân sâm»).
 export const FRIENDS = Object.freeze({
   harry: {name: 'Harry', poses: ['idle', 'walk-1', 'walk-2', 'fly-throw', 'fly-catch', 'snowball'], fly: [6.5, 1.9, true],
@@ -23,22 +24,22 @@ export const FRIENDS = Object.freeze({
   ron: {name: 'Ron', poses: ['idle', 'walk-1', 'walk-2', 'fly-throw', 'fly-catch', 'snowball'], fly: [11.5, 1.9, false],
     lines: ['Bồ chụp trái Quaffle hay dữ!', 'Má mình gửi bánh cho bác Hagrid đó.', 'Ối, suýt rớt khỏi chổi!']},
   hermione: {name: 'Hermione', poses: ['idle', 'walk-1', 'walk-2', 'read', 'knit', 'snowball'],
-    stops: [[10, 8.5, 'read', 5200], [12.5, 9, 'walk-1', 0], [14, 9, 'knit', 5200], [12.5, 9, 'walk-1', 0]],
+    stops: [[7, 1, 'read', 5200], [10, 1, 'knit', 5200]],
     lines: ['Mình đan nón len cho gia tinh, bồ phụ mình nha?', 'Bồ vô Hội Vận động cho Quyền lợi Gia tinh không?', 'Sách nói Nhân sâm khóc là chết người đó!']},
   neville: {name: 'Neville', poses: ['idle', 'walk-1', 'walk-2', 'tend', 'pull', 'cheer'],
-    stops: [[8.5, 1.2, 'tend', 5200], [11, 1.2, 'pull', 3200]],
+    stops: [[8.5, 1, 'tend', 5200], [11, 1, 'pull', 3200]],
     lines: ['Nhổ Nhân sâm phải bịt tai nha!', 'Bà nội mình mà thấy vườn này chắc mê lắm.', 'Trevor! Mày lại trốn đâu rồi?']},
   luna: {name: 'Luna', poses: ['idle', 'walk-1', 'walk-2', 'feed', 'read', 'cheer'],
-    stops: [[15, 8.5, 'feed', 5200], [17.5, 8.5, 'read', 5200]],
+    stops: [[8, 1, 'feed', 5200], [11.5, 1, 'read', 5200]],
     lines: ['Vong mã hiền lắm, tụi nó thích bồ đó.', 'Ba mình mới in số Kẻ Lý Sự mới.', 'Tuyết hôm nay có mùi bánh gừng.']},
   ginny: {name: 'Ginny', poses: ['idle', 'walk-1', 'walk-2', 'snowball', 'fly-throw', 'cheer'],
-    stops: [[9.5, 1.2, 'snowball', 3600], [12, 1.2, 'cheer', 2400]],
+    stops: [[9.5, 1, 'snowball', 3600], [12, 1, 'cheer', 2400]],
     lines: ['Banh tuyết tới nè!', 'Coi chừng nha, mình là Truy thủ đó!', 'Anh Fred với anh George lại bày trò rồi.']},
   fred: {name: 'Fred', poses: ['idle', 'walk-1', 'walk-2', 'light', 'cheer', 'wave'],
-    stops: [[15, 7, 'light', 4200], [15.5, 8.5, 'cheer', 2600]],
+    stops: [[7.5, 1, 'light', 4200], [9, 1, 'cheer', 2600]],
     lines: ['Pháo hoa bung xòe đây!', 'Đừng méc má nha!']},
   george: {name: 'George', poses: ['idle', 'walk-1', 'walk-2', 'light', 'cheer', 'wave'], art: 'fred',
-    stops: [[18, 8.5, 'light', 4200], [17, 8.5, 'cheer', 2600]],
+    stops: [[10.5, 1, 'light', 4200], [12, 1, 'cheer', 2600]],
     lines: ['Tụi này mới chế loại pháo mới đó.', 'Fred, châm ngòi đi!']},
 });
 
@@ -109,7 +110,7 @@ export function friendObjects(iso, clock, now = Date.now(), elves = [], {night =
     let [col, row, pose, flip, lift] = friendPose(id, clock, {winter});
     if (cheering[id] && !lift) pose = FRIENDS[id].poses.includes('cheer') ? 'cheer' : 'idle';
     const [x, y] = iso(col, row);
-    return {kind: 'elf', id, friend: true, xy: [Math.round(x), Math.round(y) - lift], flip, asset: {...FRAME, file: friendFile(id, pose)}};
+    return {kind: 'elf', id, friend: true, feet: [col, row], xy: [Math.round(x), Math.round(y) - lift], flip, asset: {...FRAME, file: friendFile(id, pose)}};
   });
   elves.push(...people);
   const fx = [];

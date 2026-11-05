@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {ELVES, elfFiles, elfPose, elfObjects, elfLine, elfShiftText} from './garden-elves.mjs';
+import {ELVES, NORBERT, elfFiles, elfPose, elfObjects, elfLine, elfShiftText} from './garden-elves.mjs';
 import {GARDEN_STAGES, stageContains} from './garden-growth.mjs';
 import {DECORATION_LAYOUT} from './default-decor.mjs';
 
@@ -30,7 +30,7 @@ test('reduced motion stands still; walking alternates frames and faces the way i
   assert.equal(object.asset.file, 'environment/elves/dobby/idle.png');
 });
 
-test('at night every elf sleeps at its own spot by the hut; a tapped elf cheers, Dobby with his own pose', () => {
+test('at night every elf sleeps at its own spot in the aisle; a tapped elf cheers, Dobby with his own pose', () => {
   const iso = (col, row) => [(col - row) * 32, (col + row) * 16];
   const night = elfObjects(iso, 12345, {night: true});
   assert.ok(night.every((o) => o.asset.file.endsWith('/sleep.png')));
@@ -93,8 +93,11 @@ test('elves walk the aisles: never on a plot or a fixed piece, and standing they
   };
   for (const [id, elf] of Object.entries(ELVES)) {
     for (let clock = 1; clock < 200000; clock += 37) feetClear(id, ...elfPose(id, clock).slice(0, 2));
-    for (const [c, r, pose, , right] of elf.stops) if (pose !== 'walk-1') assert.ok(!hidesPlot(c, r, right === true), `${id} ${pose} at ${c},${r} hides a plot`);
+    for (const [c, r, pose, stay, right] of elf.stops) if (stay > 0) assert.ok(!hidesPlot(c, r, right === true), `${id} ${pose} at ${c},${r} hides a plot`);
     feetClear(id, ...elf.sleep);
     assert.ok(!hidesPlot(...elf.sleep, false), `${id} sleeps over a plot`);
   }
+  // Norbert keeps to the same ground (05/11/2026: his old loop crossed the row-8.9 aisle behind Thửa 5–6).
+  for (let clock = 1; clock < 200000; clock += 37) feetClear('norbert', ...elfPose('norbert', clock, NORBERT.stops).slice(0, 2));
+  feetClear('norbert', ...NORBERT.sleep);
 });

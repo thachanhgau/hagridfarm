@@ -8,38 +8,40 @@ const STEP_MS = 220; // walk-1 ↔ walk-2
 export const CHEER_MS = 1600;
 
 // Stops are [col, row, pose, stay ms, faces right?], all inside stage 1 (cols ≤ 20.5, rows ≤ 9.5). Elves keep to the
-// aisles that no plot, earned-decor slot or festival spot uses: rows 7 and 8.9 between the plot rows, cols 5, 8, 12, 18
-// beside the plots and row 1.9 behind them; 'walk-1' stops are corners. Standing, an elf is north or west of the plot
-// it tends, so its sprite never covers a plot frame (garden-elves.test.mjs).
+// aisles that no plot, earned-decor slot or festival spot uses: row 7 between the plot rows, cols 5, 12 and 18 beside
+// the plots and row 1 behind them; zero-stay stops are corners. They stand only where nothing drawn after them covers
+// them and they cover no plot frame: row 8 in the gaps between the decorations (cols 7.5–12, 15–17.5), row 7 there,
+// row 1 (garden-elves.test.mjs, character-cover.test.mjs). Owner 05/11/2026: the old row-8.9 aisle ran half a tile
+// behind Thửa 5–8, so ripe crops covered the elves' legs, and in front of the decoration row.
 // ponytail: fixed aisles for the authored layout; a decoration the player moves into an aisle can still meet an elf.
 // `sleep` is the night spot; `lines` are what a tap shows, in turn (Dobby talks of himself by name, HP2).
 export const ELVES = Object.freeze({
   dobby: Object.freeze({
     name: 'Dobby',
     poses: ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'carry', 'sleep', 'cheer', 'harvest', 'feed'],
-    stops: [[2.5, 8.9, 'idle', 2600], [5, 8.9, 'walk-1', 0], [5, 1.9, 'walk-1', 0], [3, 1.9, 'water', 3200], [5, 1.9, 'walk-1', 0], [5, 7, 'walk-1', 0], [7.5, 7, 'sweep', 3600], [12, 7, 'walk-1', 0], [12, 8.9, 'carry', 0], [4, 8.9, 'idle', 2000]],
-    sleep: [2, 8.9],
+    stops: [[8, 8, 'idle', 2600], [8, 7, 'walk-1', 0], [5, 7, 'walk-1', 0], [5, 1, 'walk-1', 0], [2, 1, 'water', 3200], [5, 1, 'walk-1', 0], [5, 7, 'walk-1', 0], [7.5, 7, 'sweep', 3600], [9, 7, 'carry', 0]],
+    sleep: [8, 8],
     lines: ['Dobby quét tuyết cho vườn bác Hagrid đây ạ!', 'Dobby thích tất len lắm, thưa ngài!', 'Dobby là gia tinh tự do!'],
   }),
   winky: Object.freeze({
     name: 'Winky',
     poses: ['idle', 'walk-1', 'walk-2', 'water', 'carry', 'sleep'],
-    stops: [[7.9, 7, 'idle', 2400], [7.9, 4, 'water', 3200, true], [7.9, 8.9, 'walk-1', 0], [12, 8.9, 'carry', 0], [12, 7, 'walk-1', 0]],
-    sleep: [3.5, 8.9],
+    stops: [[10, 8, 'idle', 2400], [10, 7, 'walk-1', 0], [12, 7, 'walk-1', 0], [11.5, 8, 'water', 3200, true], [10.5, 8, 'carry', 0]],
+    sleep: [10, 8],
     lines: ['Winky tưới rau cho bác Hagrid!', 'Winky nhặt trứng xong rồi ạ!'],
   }),
   'kitchen-a': Object.freeze({
     name: 'Gia tinh bếp Hogwarts',
     poses: ['idle', 'walk-1', 'walk-2', 'sweep', 'carry', 'sleep'],
-    stops: [[3, 8.9, 'sweep', 3600], [10.5, 8.9, 'sweep', 3000], [16, 8.9, 'carry', 0], [6.5, 8.9, 'idle', 2200]],
-    sleep: [5, 8.9],
+    stops: [[15, 8, 'sweep', 3600], [15, 7, 'walk-1', 0], [5, 7, 'walk-1', 0], [5, 2, 'idle', 2200], [5, 2, 'carry', 0], [5, 7, 'carry', 0], [15, 7, 'walk-1', 0]],
+    sleep: [15, 8],
     lines: ['Bếp Hogwarts gửi bánh nóng cho bác Hagrid!', 'Lối đi sạch tuyết rồi ạ!'],
   }),
   'kitchen-b': Object.freeze({
     name: 'Gia tinh bếp Hogwarts',
     poses: ['idle', 'walk-1', 'walk-2', 'sweep', 'water', 'sleep'],
-    stops: [[14.5, 8.9, 'idle', 2400], [18, 8.9, 'walk-1', 0], [18, 1.9, 'walk-1', 0], [16, 1.9, 'water', 3000], [18, 1.9, 'walk-1', 0], [18, 8.9, 'walk-1', 0], [19.5, 8.9, 'sweep', 3200]],
-    sleep: [6.5, 8.9],
+    stops: [[17, 8, 'idle', 2400], [18, 8, 'walk-1', 0], [18, 1, 'walk-1', 0], [17.5, 1, 'water', 3000], [18, 1, 'walk-1', 0], [18, 8, 'walk-1', 0], [16.5, 8, 'sweep', 3200]],
+    sleep: [17, 8],
     lines: ['Nồi súp bí ngô sắp chín rồi ạ!', 'Gia tinh bếp không bao giờ nghỉ!'],
   }),
 });
@@ -86,24 +88,25 @@ export function elfObjects(iso, clock, {night = false, cheering = {}, work = []}
     if (!night && work.includes(workPose) && elf.poses.includes(workPose)) pose = workPose;
     if (!night && cheering[id]) pose = elf.poses.includes('cheer') ? 'cheer' : 'idle';
     const [x, y] = iso(col, row);
-    return {kind: 'elf', id, xy: [Math.round(x), Math.round(y)], flip, asset: {...FRAME, file: elfFile(id, pose)}};
+    return {kind: 'elf', id, feet: [col, row], xy: [Math.round(x), Math.round(y)], flip, asset: {...FRAME, file: elfFile(id, pose)}};
   });
 }
 
-// Norbert (25.0 S4), Hagrid's baby Hắc long Na Uy: a companion that waddles between Hagrid's hut and the pens, plays
-// and sneezes smoke; asleep by the hut at night. Drawn only once S7's egg hatched (snapshot.mood.norbert), so his
+// Norbert (25.0 S4), Hagrid's baby Hắc long Na Uy: a companion that waddles about by Hagrid and the owl post, plays
+// and sneezes smoke; asleep by the hut at night (05/11/2026: kept off the decoration row and the plots).
+// Drawn only once S7's egg hatched (snapshot.mood.norbert), so his
 // frames load the first time he is drawn. He gives nothing: no produce, no Vảy Rồng.
 export const NORBERT = Object.freeze({
   poses: ['idle', 'walk-1', 'walk-2', 'sleep', 'play', 'puff'],
-  stops: [[2.6, 8.2, 'idle', 2400], [5.5, 9.2, 'play', 3000], [9.5, 9.4, 'puff', 1800], [4, 9, 'idle', 1600]],
-  sleep: [2.9, 7.6],
+  stops: [[2, 7, 'idle', 2400], [-0.5, 7, 'walk-1', 0], [-0.5, 8, 'play', 3000], [-1, 7.5, 'puff', 1800], [-0.5, 7, 'walk-1', 0]],
+  sleep: [1.5, 7],
 });
 export const norbertFiles = () => NORBERT.poses.map((pose) => elfFile('norbert', pose));
 export function norbertObject(iso, clock, {night = false, cheering = false} = {}) {
   let [col, row, pose, flip] = night ? [...NORBERT.sleep, 'sleep', false] : elfPose('norbert', clock, NORBERT.stops);
   if (!night && cheering) pose = 'puff';
   const [x, y] = iso(col, row);
-  return {kind: 'elf', id: 'norbert', xy: [Math.round(x), Math.round(y)], flip, asset: {...FRAME, file: elfFile('norbert', pose)}};
+  return {kind: 'elf', id: 'norbert', feet: [col, row], xy: [Math.round(x), Math.round(y)], flip, asset: {...FRAME, file: elfFile('norbert', pose)}};
 }
 
 // The line a tap shows: the n-th tap on that elf picks the n-th line, looping.

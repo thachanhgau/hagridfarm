@@ -71,6 +71,21 @@ export function snapDecorSpot([col, row], footprint = [1, 1], facing = 'default'
 
 export const rectsOverlap = (a, b) => a.c0 < b.c1 && b.c0 < a.c1 && a.r0 < b.r1 && b.r0 < a.r1;
 
+/**
+ * Draw order of two scene objects: by foot y, then x. A decoration's foot stands near its front corner, so a gia tinh in
+ * front of its west half sorted behind it (owner 05/11/2026: Dobby under «Mẫu sân tròn dưới trăng»). When both carry a
+ * `ground` rect (a footprint, or a zero-size rect at a character's feet) and one lies wholly west or north of the
+ * other, that one is drawn first.
+ */
+export function depthCompare(a, b) {
+  const A = a.ground, B = b.ground;
+  if (A && B) {
+    const ab = A.c1 <= B.c0 || A.r1 <= B.r0, ba = B.c1 <= A.c0 || B.r1 <= A.r0;
+    if (ab !== ba) return ab ? -1 : 1;
+  }
+  return (a.xy?.[1] ?? 0) - (b.xy?.[1] ?? 0) || (a.xy?.[0] ?? 0) - (b.xy?.[0] ?? 0);
+}
+
 const placedId = raw => (typeof raw === 'object' && raw !== null ? (raw.itemId ?? raw.id) : raw);
 
 /** Where a placed item stands: its own `positions` spot (free placement), else its legacy socket. */

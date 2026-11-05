@@ -61,7 +61,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  if(scenario==="missing")for(const id of Object.keys(state.inventory))state.inventory[id]=0;
  if(scenario==="prerequisite"){const base=E.newGame(origin);state.built=base.built;state.plots=base.plots;}
  // A lively showcase for the default preview: crops, adult and baby creatures, decorations.
- if(["empty","habitats"].includes(scenario)&&level>=10){
+ if(["empty","habitats","all-decor"].includes(scenario)&&level>=10){
   const showcaseCrops=[[0,[0,1,2],"pumpkin",origin-8*3600000],[0,[3,4,5],"daisy",origin-8*3600000],[0,[6,7,8],"mushroom",origin-30*60000],[1,[0,1,2],"clover",origin-8*3600000],[1,[3,4,5],"ginger",origin-45*60000],[2,[0,1,2],"bluebell",origin-12*3600000]];
   for(const [plotIdx,cells,cropId,plantedAt] of showcaseCrops){
    const spec=E.CROP[cropId];
@@ -79,6 +79,12 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   state.decorationRotations={"decoration-7":"right","decoration-23":"right"};
   state.creatureFacings={puffskein:"default",bowtruckle:"right",niffler:"default",kneazle:"right",hippogriff:"default",unicorn:"right"};
   if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{})};
+ }
+ // Asset-overlap QA (05/11/2026): every earned decoration at home and a ripe crop on every cell of every plot.
+ if(scenario==="all-decor"){
+  state.decorations=E.DB.decorations.filter(d=>d.level<=level).map(d=>d.id);
+  const tall=E.DB.crops.filter(c=>c.level<=level).map(c=>c.id);
+  state.plots.forEach((plot,i)=>{for(let cell=0;cell<9;cell++){const species=tall[(i*3+Math.floor(cell/3))%tall.length];plot.slots[cell]={id:`crop-p${i}-s${cell}-2`,type:"crop",species,plantedAt:origin-48*3600000,growMs:E.CROP[species].growMs};}});
  }
  const catalog=unlockedCatalog(state.level,dayKey()).map(item=>({...item,dailyRemaining:item.dailyLimit,...(previewHalloween&&item.collection==='festival'?{forSale:undefined}:{})}));
  const storeDecors=catalog.filter(i=>i.kind==="decoration").map(i=>i.id),full=scenario==="empty"&&level>=30;

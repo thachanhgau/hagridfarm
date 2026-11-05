@@ -1,6 +1,6 @@
 import {drawPlacementGrid} from './placement-grid.mjs?v=24.9.96';
 import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT} from './default-decor.mjs?v=24.9.96';
-import {gardenObjectMetrics} from './garden-object-metrics.mjs?v=24.9.96';
+import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=24.9.96';
 import {FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.96';
 export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=24.9.96';
 import {creatureView,creatureViewFrames} from './creature-view.mjs?v=24.9.96';
@@ -15,7 +15,7 @@ import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRo
 import {drawV24Ground} from './garden-v24-scenery.mjs?v=24.9.96';
 import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=24.9.96';
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=24.9.96';
-import {decorObjects} from './decor-runtime.mjs?v=24.9.96';
+import {decorObjects,decorFootprintRect,depthCompare} from './decor-runtime.mjs?v=24.9.96';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=24.9.96';
 import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=24.9.96';
 import {atmosphereConfig,weatherConfig,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=24.9.96';
@@ -1809,7 +1809,9 @@ export async function createGarden(canvas, options = {}) {
       }
       objects.push({kind: 'sign', id: `sign:${index}`, xy: [x, y], draw: ctx => plotSign(ctx, parts, x, y, px, rule)});
     }
-    objects.sort((a, b) => (a.xy?.[1] ?? 0) - (b.xy?.[1] ?? 0) || (a.xy?.[0] ?? 0) - (b.xy?.[0] ?? 0));
+    // Decorations sort by their footprint and characters, crops and creatures by their feet (depthCompare).
+    for (const object of objects) object.ground ??= groundOf(object);
+    objects.sort(depthCompare);
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');
@@ -1864,6 +1866,15 @@ export async function createGarden(canvas, options = {}) {
     // A tapped gia tinh or friend says its line in a bubble over its head (owner 05/11/2026).
     if (said.xy && said.until > performance.now()) drawHagridSpeechBubble(context, said.xy[0], said.xy[1], said.text, {lift: 72, scale: labelScale});
 
+  }
+
+  function groundOf(object) {
+    const point = ([col, row]) => ({c0: col, c1: col, r0: row, r1: row});
+    if (object.kind === 'decoration') return decorFootprintRect(...object.at, object.footprint, object.facing);
+    if (object.kind === 'store-decor') return decorFootprintRect(object.col, object.row, decorFootprint(object.id), object.facing);
+    if (object.feet) return point(object.feet);
+    if (object.item || (object.kind === 'wizard-scenery' && object.id !== 'greenhouse')) return point(worldToGrid(object.xy[0], object.xy[1], map));
+    return null;
   }
 
   function pick(clientX, clientY) {
