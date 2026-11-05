@@ -13,7 +13,7 @@ export const XMAS_FILES = ['hearth', 'sock', 'sock-open', 'egg-0', 'egg-1', 'egg
 export const HEARTH_SPOT = [16, 1.3]; // behind the gap between Thửa 3 and 4: the tall sprite hides no plot (garden-xmas.test.mjs)
 export const HEARTH = {width: 112, height: 120, pivotX: 56, pivotY: 116, bounds: {x: 8, y: 4, w: 96, h: 114}};
 // Where vớ and egg sit on hearth.png (Codex report docs/codex-briefs/xmas-hearth-s7-report.md).
-export const MANTEL = {x0: 18, x1: 88, y: 56}, FIREBOX = [55, 102]; // measured on the 05/11 sheet: beam y 47–57, fire x 33–75
+export const MANTEL = {x0: 18, x1: 86, y: 58}, FIREBOX = [56, 104]; // Codex report: mantel face (12,48,92,60), egg pivot (56,104)
 const SOCK = {width: 14, height: 20, pivotX: 7, pivotY: 1}, EGG = {width: 22, height: 26, pivotX: 11, pivotY: 25};
 const CROPS = {pumpkin: 'Bí ngô', daisy: 'Cúc trắng', strawberry: 'Dâu tây'};
 const GIFT = {water: '💧', boost: '✨'};

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "33b9d1b119a4",
+  "revision": "68aafe588a7f",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -12392,6 +12392,76 @@
       "sha256": "406896170bce56b4c1464443da5080ca850e046c4890a387b4bc95b73d4c6602"
     },
     {
+      "source": "environment/xmas/egg-0.png",
+      "file": "runtime-webp/environment/xmas/egg-0.webp",
+      "width": 22,
+      "height": 26,
+      "sourceBytes": 292,
+      "bytes": 192,
+      "sourceSha256": "7c3c37d4e5be5448906d1f5b078b439a60fef17f89284a3a22a37a0f62ff03d7",
+      "sha256": "be66a003a94743072a072a51c6ecbb06b01f17b97b42e0b366f736db5296c95a"
+    },
+    {
+      "source": "environment/xmas/egg-1.png",
+      "file": "runtime-webp/environment/xmas/egg-1.webp",
+      "width": 22,
+      "height": 26,
+      "sourceBytes": 300,
+      "bytes": 202,
+      "sourceSha256": "5b0928e3e13e3e177c2ada3dc38baaffff0a35f7511be58f09997820bbe65929",
+      "sha256": "af12150942b5c4e9a711bc9e400cad1773cad2d0212e85ef3d5c5f924dde40cc"
+    },
+    {
+      "source": "environment/xmas/egg-2.png",
+      "file": "runtime-webp/environment/xmas/egg-2.webp",
+      "width": 22,
+      "height": 26,
+      "sourceBytes": 305,
+      "bytes": 200,
+      "sourceSha256": "c44131aa57b81f67f14ee6ee090cf7003008f70de4c5671d275f7cec55b56550",
+      "sha256": "ba00c657c39ea3a40d732bc039d0240abc0adfadb331bc473fb3091a928d7a30"
+    },
+    {
+      "source": "environment/xmas/egg-3.png",
+      "file": "runtime-webp/environment/xmas/egg-3.webp",
+      "width": 22,
+      "height": 26,
+      "sourceBytes": 363,
+      "bytes": 246,
+      "sourceSha256": "2a3f61baf897e0dceb73840921e52812724a7a4761cd18da0bd352c2a640ab75",
+      "sha256": "88fa83c71ed4ab90faca4585a83bd893c5f00426980d27769d1b2e69fd45d0a7"
+    },
+    {
+      "source": "environment/xmas/hearth.png",
+      "file": "runtime-webp/environment/xmas/hearth.webp",
+      "width": 112,
+      "height": 120,
+      "sourceBytes": 3360,
+      "bytes": 2062,
+      "sourceSha256": "b2cd8d4ff150aacce59ae8ab99d73e7de708577f49034028daf17ec225c5ac19",
+      "sha256": "5f0e16fdd1053a1660905f2f7e19baa44967af0b37d5fd12fd4595c391f0ff59"
+    },
+    {
+      "source": "environment/xmas/sock-open.png",
+      "file": "runtime-webp/environment/xmas/sock-open.webp",
+      "width": 14,
+      "height": 20,
+      "sourceBytes": 311,
+      "bytes": 208,
+      "sourceSha256": "5060b393b8937ef72896dc1e00881ccafda671ee89cead09665bdcefcbcf06c7",
+      "sha256": "448ec1f8d2a1ba07882cc665d55470d691c0bc4dee90a2b948e676ea89232d00"
+    },
+    {
+      "source": "environment/xmas/sock.png",
+      "file": "runtime-webp/environment/xmas/sock.webp",
+      "width": 14,
+      "height": 20,
+      "sourceBytes": 278,
+      "bytes": 206,
+      "sourceSha256": "51aeff7904fd2870667e09841f4255386acfa55f961a02d63bb0403889bf8102",
+      "sha256": "edcd0d6164d0744f85f6f1776bc1d5226b1068bc89dcd312b67a9d62b04615e3"
+    },
+    {
       "source": "world-v241/hero-halloween.png",
       "file": "runtime-webp/world-v241/hero-halloween.webp",
       "width": 128,
@@ -12475,11 +12545,11 @@
     }
   ],
   "totals": {
-    "converted": 1241,
+    "converted": 1248,
     "existingWebp": 8,
-    "originalBytes": 4503879,
-    "webpBytes": 3008230,
-    "savedBytes": 1495649,
+    "originalBytes": 4509088,
+    "webpBytes": 3011546,
+    "savedBytes": 1497542,
     "savedPercent": 33.21
   }
 }
