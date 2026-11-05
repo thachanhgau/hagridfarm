@@ -25,8 +25,8 @@ const PATH_CLEARANCE=0.5;
 // renderer sorts by depth); the 25/10 screen-overlap rule left a full garden ~5× fewer free cells.
 // The cottage corner is art without a scene object; its ground sits under iso(-2, 5.5).
 const COTTAGE_GROUND=Object.freeze({c0:-3.5,c1:-1.5,r0:3.5,r1:5.5});
-// 25.0 S7 December hearth (garden-xmas HEARTH_SPOT [16, 1.3], 2 × 2 under its foot). Kept free all year: a piece
-// set there in November would stand inside the hearth in December. garden-xmas.test.mjs checks the spot.
+// 25.0 S7 hearth (garden-xmas HEARTH_SPOT [16, 1.3], 2 × 2 under its foot). Kept free all year: a piece
+// set there before the hearth's open day would stand inside it. garden-xmas.test.mjs checks the spot.
 export const HEARTH_GROUND=Object.freeze(decorFootprintRect(16,1.3,[2,2]));
 // S7 part 2: the elves' Đêm Noel feast (garden-xmas FEAST_SPOT [12, 0.4], 24–25/12), kept free the same way.
 export const FEAST_GROUND=Object.freeze(decorFootprintRect(12,0.4,[2,2]));

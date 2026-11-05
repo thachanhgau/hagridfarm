@@ -1,9 +1,10 @@
-// «Gia tinh đón đông» (25.0 S7 part 1; server HPVNN functions/games/garden-xmas-core.js, fence #36). In December an
-// outdoor hearth stands behind Thửa 3 with ten vớ on its mantel (chapter 1, 01–10/12: one opens a day, each asks the gia
+// «Gia tinh đón đông» (25.0 S7 part 1; server HPVNN functions/games/garden-xmas-core.js, fence #36). From the server's open
+// day (2026: the release day, later years 01/12) an outdoor hearth stands behind Thửa 3 with ten vớ on its mantel (chapter 1,
+// until 10/12: one opens a day, each asks the gia
 // tinh a small crop delivery, the tenth gives the Lều gia tinh) and, after bác Hagrid's three letters, the dragon egg in
 // its fire: one stoke a VN day, 21 hatch Norbert (S4 companion). The server keeps every count and cap; this module only
-// draws `snapshot.xmas` and sends action `xmas`. mobile-game imports it once the server sends `xmas` (never outside
-// December), and its frames load the first time they are drawn (festival-lazy-art.test.mjs).
+// draws `snapshot.xmas` and sends action `xmas`. mobile-game imports it once the server sends `xmas` (never before the
+// open day), and its frames load the first time they are drawn (festival-lazy-art.test.mjs).
 // Part 2 (chapters 2–5, server garden-xmas-chapters.js): «Trận ném tuyết» 11–17/12 (3 banh tuyết a day, House Cup
 // points, nine earn the «Áo len bà Weasley» Floo frame), «Dạ Vũ Noel» 18–31/12 (twelve ornaments for the house tree,
 // whose size follows the house's share of the points), «Đêm Noel» 24–25/12 (feast at the hearth, bác Hagrid carries a
@@ -123,7 +124,6 @@ function treeCanvas(stage, ornaments) {
   return canvas;
 }
 
-const pad = (n) => String(n).padStart(2, '0');
 const giftText = (gift) => Object.entries(gift).map(([k, v]) => `${GIFT[k] || k} ${v}`).join(' ');
 export const sockTask = (s) => `Nộp ${s.qty} ${CROPS[s.crop] || s.crop}: ${s.label}`;
 const NAMES = {harry: 'Harry', ron: 'Ron', hermione: 'Hermione', ginny: 'Ginny'};
@@ -141,7 +141,7 @@ let lastBoard = null; // an action reply has no tree board: keep the last read's
 export function sockLock(s, chapter, stock = {}) {
   if (s.opened) return 'Đã mở';
   if (!chapter.open) return 'Hết hạn';
-  if (!s.unlocked) return `Mở ${pad(s.n)}/12`;
+  if (!s.unlocked) return `Mở ${s.opens}`;
   if (chapter.today >= chapter.cap) return 'Mai mở tiếp';
   return (stock[s.crop] || 0) >= s.qty ? '' : `Thiếu ${CROPS[s.crop] || s.crop}`;
 }
@@ -206,7 +206,7 @@ export function createXmasCare({getSnapshot, act, notify}) {
     const ch = view.chapter;
     if (ch && !ch.open) rows.push(el('p', {class: 'meta', text: `Mười chiếc vớ: đã mở ${ch.socks.filter((s) => s.opened).length}/10${ch.tent ? ' · đã nhận Lều gia tinh' : ''}`}));
     if (ch?.open) {
-      rows.push(el('p', {class: 'meta', text: `Mười chiếc vớ (01–10/12) · hôm nay ${ch.today}/${ch.cap} · ${ch.tent ? 'đã nhận Lều gia tinh' : 'đủ 10 vớ nhận Lều gia tinh'}`}));
+      rows.push(el('p', {class: 'meta', text: `Mười chiếc vớ (tới 10/12) · hôm nay ${ch.today}/${ch.cap} · ${ch.tent ? 'đã nhận Lều gia tinh' : 'đủ 10 vớ nhận Lều gia tinh'}`}));
       for (const s of ch.socks) {
         const lock = sockLock(s, ch, stock);
         rows.push(el('div', {class: 'gp-hero elf-wage', 'data-xmas-sock': String(s.n)}, [

@@ -6,7 +6,7 @@ import {GARDEN_STAGES, stageContains} from './garden-growth.mjs';
 import {FEAST_SPOT, FOLIAGE, HEARTH, HEARTH_SPOT, TREE_FILES, XMAS_FILES, hearthObjects, newYearFireworks, ornamentLock, ornamentPin, ornamentPoints, sockLock, sockTask, xmasNudge} from './garden-xmas.mjs';
 
 const iso = (c, r) => [(c - r) * 32, (c + r) * 16];
-const socks = (opened = 0, unlocked = 10) => Array.from({length: 10}, (_, i) => ({n: i + 1, crop: 'pumpkin', qty: 3, label: 'x', gift: {water: 3}, opened: i < opened, unlocked: i < unlocked}));
+const socks = (opened = 0, unlocked = 10) => Array.from({length: 10}, (_, i) => ({n: i + 1, crop: 'pumpkin', qty: 3, label: 'x', gift: {water: 3}, opened: i < opened, unlocked: i < unlocked, opens: `${String(6 + i).padStart(2, '0')}/11`}));
 
 test('the hearth stands inside stage 1 and its whole sprite clears every plot', () => {
   const scene = JSON.parse(fs.readFileSync(new URL('./scene-data.json', import.meta.url)));
@@ -41,7 +41,8 @@ test('vớ lock texts follow the server view; nudges point at the letter, a vớ
   const [s1, , , s4] = socks(0, 3);
   assert.equal(sockLock(s1, chapter, {pumpkin: 3}), '');
   assert.equal(sockLock(s1, chapter, {pumpkin: 2}), 'Thiếu Bí ngô');
-  assert.equal(sockLock(s4, chapter, {pumpkin: 9}), 'Mở 04/12');
+  assert.equal(sockLock(s4, chapter, {pumpkin: 9}), 'Mở 09/11'); // the server's date, never computed here
+  assert.doesNotMatch(fs.readFileSync(new URL('./garden-xmas.mjs', import.meta.url), 'utf8'), /01–10\/12/);
   assert.equal(sockLock(s1, {...chapter, today: 2}, {pumpkin: 9}), 'Mai mở tiếp');
   assert.equal(sockLock(s1, {...chapter, open: false}, {pumpkin: 9}), 'Hết hạn');
   assert.equal(sockLock({...s1, opened: true}, chapter), 'Đã mở');
