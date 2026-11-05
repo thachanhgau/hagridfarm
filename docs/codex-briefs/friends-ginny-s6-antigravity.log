@@ -1,0 +1,61 @@
+I have launched the `image-generator` subagent to generate `ginny-candidate-a` and `ginny-candidate-b` using the specified reference images and strict prompt rules. Waiting for the subagent to return the generated files and prompts.
+Here are the generated sprite sheet candidates for **Ginny Weasley** and the exact prompts used:
+
+### 1. `ginny-candidate-a`
+- **Absolute Path**: [ginny_candidate_a_1793844696014.jpg](file:///Users/thachanh/.gemini/antigravity-cli/brain/089aff54-3810-4a91-bd78-49991ec009f5/ginny_candidate_a_1793844696014.jpg) (`/Users/thachanh/.gemini/antigravity-cli/brain/089aff54-3810-4a91-bd78-49991ec009f5/ginny_candidate_a_1793844696014.jpg`)
+- **Reference Images Passed**:
+  - [harry-candidate-a.jpg](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/friends/masters/harry-candidate-a.jpg) (`/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/friends/masters/harry-candidate-a.jpg`)
+  - [v3-dobby.png](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/elves/masters/v3-dobby.png) (`/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/elves/masters/v3-dobby.png`)
+- **Exact Prompt Used**:
+```text
+A 3x2 sprite sheet of Ginny Weasley from the Harry Potter books, rendered in chunky pixel art matching the exact art style, chibi proportions, dark #231F2E outlines, lighting from top-left, and flat color palette of the Harry reference image. Ginny Weasley is an 11-year-old girl, slightly shorter than Harry, with long bright red hair, freckles across her nose and cheeks, bright warm brown eyes, and a bold cheeky grin. She wears a plain hand-knitted plum-purple sweater (no letters), a scarlet-and-gold striped Gryffindor winter scarf, dark charcoal trousers, and sturdy brown boots.
+
+Arranged in an exact 3x2 grid (3 columns, 2 rows) on a pure solid white background (#FFFFFF), with wide empty gaps between each frame, no shadows on ground, no text, no letters, no border lines. All poses face three-quarter view toward lower-left:
+
+Row 1:
+1. (top-left) idle: Ginny standing on foot, hands on hips, bold cheeky grin.
+2. (top-middle) walk-1: Ginny walking on foot, left foot clearly stepped forward.
+3. (top-right) walk-2: Ginny walking on foot, right foot clearly stepped forward, head at same baseline height as walk-1.
+
+Row 2:
+4. (bottom-left) snowball: Ginny STANDING ON FOOT ON THE GROUND, NO BROOM, feet planted on the ground, throwing a white snowball overarm, long red hair and Gryffindor scarf flying behind her.
+5. (bottom-middle) fly-throw: THE ONLY POSE WITH A BROOM. Ginny sitting astride an old family wooden broomstick with twig bristles (handle pointing lower-left, twig tail pointing right), arm drawn back holding a bright red Quaffle ball, about to throw.
+6. (bottom-right) cheer: Ginny jumping happily in the air, NO BROOM, one fist pumped triumphantly into the air, big happy open-mouth smile.
+
+CRITICAL: ONLY bottom-middle has a broomstick! Bottom-left MUST be standing on feet on the ground throwing a snowball! Pure white background throughout.
+```
+
+---
+
+### 2. `ginny-candidate-b`
+- **Absolute Path**: [ginny_candidate_b_1793844749742.jpg](file:///Users/thachanh/.gemini/antigravity-cli/brain/089aff54-3810-4a91-bd78-49991ec009f5/ginny_candidate_b_1793844749742.jpg) (`/Users/thachanh/.gemini/antigravity-cli/brain/089aff54-3810-4a91-bd78-49991ec009f5/ginny_candidate_b_1793844749742.jpg`)
+- **Reference Images Passed**:
+  - [harry-candidate-a.jpg](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/friends/masters/harry-candidate-a.jpg) (`/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/friends/masters/harry-candidate-a.jpg`)
+  - [v3-dobby.png](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/elves/masters/v3-dobby.png) (`/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/elves/masters/v3-dobby.png`)
+- **Exact Prompt Used**:
+```text
+A 3x2 sprite sheet candidate B of Ginny Weasley from the Harry Potter books, rendered in chunky pixel art matching the approved Harry reference sprite sheet's exact style, chibi proportions, dark #231F2E pixel outline, top-left illumination, and flat color palette.
+
+Ginny Weasley character details (book version):
+- Age 11, cute chibi proportions slightly shorter than Harry.
+- Bright warm BROWN eyes (chestnut brown iris, DO NOT make them green).
+- Long bright red ginger hair and freckles across her cheeks and nose.
+- Bold, cheeky confident grin.
+- Plain hand-knitted plum-purple wool sweater (no letter on chest), scarlet-and-gold striped Gryffindor winter scarf, dark charcoal trousers, sturdy brown leather boots.
+
+Grid layout: 3 columns by 2 rows (3:2 landscape) on a pure solid white background (#FFFFFF), wide empty gaps between poses, no ground shadows, no text, no lines:
+
+Row 1:
+1. (top-left) idle: Ginny standing three-quarter view facing lower-left, hands placed firmly on hips, warm brown eyes, bold cheeky grin.
+2. (top-middle) walk-1: Ginny walking three-quarter view facing lower-left, left foot clearly stepped forward, natural stride.
+3. (top-right) walk-2: Ginny walking three-quarter view facing lower-left, right foot clearly stepped forward, distinct leg motion, head at same height.
+
+Row 2:
+4. (bottom-left) snowball: Ginny STANDING ON FOOT ON THE GROUND (NO BROOM), feet firmly planted, throwing a white snowball overarm with force, hair and scarf flying.
+5. (bottom-middle) fly-throw: ONLY BROOM POSE. Ginny sitting astride an old family wooden broomstick with twig bristles (handle pointing lower-left, twig tail to right), arm drawn back cocked holding the bright red Quaffle ball, about to throw.
+6. (bottom-right) cheer: Ginny jumping in mid-air (NO BROOM), cheering happily with one fist raised up high and an excited happy expression.
+
+CRITICAL:
+- Eyes must be bright BROWN (not green).
+- Only frame 5 has a broom. Frame 4 is standing on foot. Pure white background.
+```

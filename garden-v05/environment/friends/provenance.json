@@ -4,6 +4,138 @@
     "method": "area average to a reference ink height, palette24 (redmean), lone pixels absorbed unless a strong accent, #231F2E rim",
     "elves": [
       {
+        "id": "hermione",
+        "canvas": {
+          "width": 80,
+          "height": 80,
+          "pivotX": 40,
+          "pivotY": 76
+        },
+        "sheets": [
+          {
+            "master": "environment/friends/masters/hermione.png",
+            "masterSha256": "6102616410b0c700bf77ae72098bba34b0a63d29d10e69e28a3a2779c4768763",
+            "scale": 0.1576,
+            "frames": [
+              {
+                "file": "environment/friends/hermione/idle.png",
+                "cell": [
+                  0,
+                  0
+                ],
+                "sha256": "fbcee05e9a755c0d622829fa0bc9bbac21eab6c1e30d63dc0c9fdbfc0b21cd3e"
+              },
+              {
+                "file": "environment/friends/hermione/walk-1.png",
+                "cell": [
+                  512,
+                  0
+                ],
+                "sha256": "45f0e59f809034d4600f5987a90139fc71c095a847bcda8766d1650f2c396a8c"
+              },
+              {
+                "file": "environment/friends/hermione/walk-2.png",
+                "cell": [
+                  1024,
+                  0
+                ],
+                "sha256": "00d95d67fb2b0ee55acf98e7d4a62e389333be70cbe53129da1b1eb9d82d4f37"
+              },
+              {
+                "file": "environment/friends/hermione/read.png",
+                "cell": [
+                  0,
+                  512
+                ],
+                "sha256": "390cd1d931a2d656b4633b64090c7303fb7cf5a2f87b7d5e6fb4a53e314c97e1"
+              },
+              {
+                "file": "environment/friends/hermione/knit.png",
+                "cell": [
+                  512,
+                  512
+                ],
+                "sha256": "4f2f54fa028330d0609e4b467ad68b203d127f5a847c8b7c9539d97490f6e150"
+              },
+              {
+                "file": "environment/friends/hermione/snowball.png",
+                "cell": [
+                  1024,
+                  512
+                ],
+                "sha256": "9ed1feea62f4d2c0f0ef4a94d7ebe934f4baf907807052b7a4300f2f864f1a38"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "luna",
+        "canvas": {
+          "width": 80,
+          "height": 80,
+          "pivotX": 40,
+          "pivotY": 76
+        },
+        "sheets": [
+          {
+            "master": "environment/friends/masters/luna.png",
+            "masterSha256": "6ef5d3e857be955e70850cbe77625f5014a24099c07e41660008411f79ac52d2",
+            "scale": 0.1557,
+            "frames": [
+              {
+                "file": "environment/friends/luna/idle.png",
+                "cell": [
+                  0,
+                  0
+                ],
+                "sha256": "e5fffb6a40ed308ca283ebd905160c684951f6a87e2693010d0275bf6c916af4"
+              },
+              {
+                "file": "environment/friends/luna/walk-1.png",
+                "cell": [
+                  512,
+                  0
+                ],
+                "sha256": "75d80e95e672cac388551efb7044561d8cbf49cd2bf9f3e7316a718d7edb006b"
+              },
+              {
+                "file": "environment/friends/luna/walk-2.png",
+                "cell": [
+                  1024,
+                  0
+                ],
+                "sha256": "6050b43961c6abf57f4f6d687589ff4f32c54474d412125e34d3233568afb280"
+              },
+              {
+                "file": "environment/friends/luna/feed.png",
+                "cell": [
+                  0,
+                  512
+                ],
+                "sha256": "2f42d0dcd49f159cb3eec7dc2426809c39dc61b82a212651d166d797f0a19e94"
+              },
+              {
+                "file": "environment/friends/luna/read.png",
+                "cell": [
+                  512,
+                  512
+                ],
+                "sha256": "eb9b8991dc320872ea66fe9808a439d9cbbe0376d262f47ccb4942415f4c561f"
+              },
+              {
+                "file": "environment/friends/luna/cheer.png",
+                "cell": [
+                  1024,
+                  512
+                ],
+                "sha256": "e9a8e468c3380c7a0f082c0f176a53ebf0e675f90f5dc6661a8359e7c3af7dbd"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "harry",
         "canvas": {
           "width": 80,
@@ -64,6 +196,270 @@
                   512
                 ],
                 "sha256": "a6a20a1291f87cc91657dd63c63501f2d0f604bea0c24d72b39d86ec61b99193"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ron",
+        "canvas": {
+          "width": 80,
+          "height": 80,
+          "pivotX": 40,
+          "pivotY": 76
+        },
+        "sheets": [
+          {
+            "master": "environment/friends/masters/ron.png",
+            "masterSha256": "17e8740112bf7cf8cdf44227f7a3aa720b0cd1924db5290f1ee83fb72ef8e840",
+            "scale": 0.1619,
+            "frames": [
+              {
+                "file": "environment/friends/ron/idle.png",
+                "cell": [
+                  0,
+                  0
+                ],
+                "sha256": "d5c3d74b26fa6b002f065fe9d527900a03870a0083b9672abc95466dd932c129"
+              },
+              {
+                "file": "environment/friends/ron/walk-1.png",
+                "cell": [
+                  512,
+                  0
+                ],
+                "sha256": "e463f8839b4398302ab0181806432a683a5d6e2f5ca7388b559489c38fbd4ce8"
+              },
+              {
+                "file": "environment/friends/ron/walk-2.png",
+                "cell": [
+                  1024,
+                  0
+                ],
+                "sha256": "d3290499ca3ad2afe5d84b2c01b998bd9982e01b9c901937d75b95005ebd2125"
+              },
+              {
+                "file": "environment/friends/ron/fly-throw.png",
+                "cell": [
+                  0,
+                  512
+                ],
+                "sha256": "db66b3fccd70a1afeae3375cef23788b4a96a63c213ca6619984db17923fb919"
+              },
+              {
+                "file": "environment/friends/ron/fly-catch.png",
+                "cell": [
+                  512,
+                  512
+                ],
+                "sha256": "f2e9ee9cc273330cd2c313c267f37b6157f720d755fc3fd5a733662ad33508e4"
+              },
+              {
+                "file": "environment/friends/ron/snowball.png",
+                "cell": [
+                  1024,
+                  512
+                ],
+                "sha256": "ce4c18120c04a5719272c81cece3e4892498617aab8aacc22391df42f540663e"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "neville",
+        "canvas": {
+          "width": 80,
+          "height": 80,
+          "pivotX": 40,
+          "pivotY": 76
+        },
+        "sheets": [
+          {
+            "master": "environment/friends/masters/neville.png",
+            "masterSha256": "e97ec0ff52fca6cf7c1e14a1f5b6cea4aa47a55db67fae039c6a1438384a12df",
+            "scale": 0.161,
+            "frames": [
+              {
+                "file": "environment/friends/neville/idle.png",
+                "cell": [
+                  0,
+                  0
+                ],
+                "sha256": "09f126b8e300b00dc6be38d498f7272bc2467c926ad30a7e7f40fe6b0114dbf4"
+              },
+              {
+                "file": "environment/friends/neville/walk-1.png",
+                "cell": [
+                  512,
+                  0
+                ],
+                "sha256": "afe1ae493cb4724dbf0209b8da234f5cf489df6c57f2880a100ccdc92d700f5f"
+              },
+              {
+                "file": "environment/friends/neville/walk-2.png",
+                "cell": [
+                  1024,
+                  0
+                ],
+                "sha256": "54356632444466bf22daf56ad86854ff0b1643b92cc9919f34e6cc722ef0e2f2"
+              },
+              {
+                "file": "environment/friends/neville/tend.png",
+                "cell": [
+                  0,
+                  512
+                ],
+                "sha256": "579950f75811b37b68bcbb5a6fcdb7fc5463931cd62ba559c5d243a7e240916a"
+              },
+              {
+                "file": "environment/friends/neville/pull.png",
+                "cell": [
+                  512,
+                  512
+                ],
+                "sha256": "c8ac520eba772bd249715505e8b1444c39ab256c971c16e19ec38e5eb3bac714"
+              },
+              {
+                "file": "environment/friends/neville/cheer.png",
+                "cell": [
+                  1024,
+                  512
+                ],
+                "sha256": "d2bf2eab74e5d639178208032d7e83a49f223e54c565d9ac3106e420b14e5999"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ginny",
+        "canvas": {
+          "width": 80,
+          "height": 80,
+          "pivotX": 40,
+          "pivotY": 76
+        },
+        "sheets": [
+          {
+            "master": "environment/friends/masters/ginny.png",
+            "masterSha256": "fe8bc740b49bf842c51775feafe143fa5c4d088954678df6c1171d869d0cad49",
+            "scale": 0.1498,
+            "frames": [
+              {
+                "file": "environment/friends/ginny/idle.png",
+                "cell": [
+                  0,
+                  0
+                ],
+                "sha256": "bbcabc30e9b0aaa21e376713c4e3dbde348990e3224518dc178c70fc34ca65f0"
+              },
+              {
+                "file": "environment/friends/ginny/walk-1.png",
+                "cell": [
+                  512,
+                  0
+                ],
+                "sha256": "c71ea251305e10705469c3a81a09499c6fa774035a56934770e36c75dd9e89ad"
+              },
+              {
+                "file": "environment/friends/ginny/walk-2.png",
+                "cell": [
+                  1024,
+                  0
+                ],
+                "sha256": "752703d6b94333375633ce3e7e9451192643b1f57629f8a281db6ce1b4e8ad85"
+              },
+              {
+                "file": "environment/friends/ginny/snowball.png",
+                "cell": [
+                  0,
+                  512
+                ],
+                "sha256": "9cefccfbf14da96260db263e055cd6c807f7d7eb2574bdffaf895e374bf9352c"
+              },
+              {
+                "file": "environment/friends/ginny/fly-throw.png",
+                "cell": [
+                  512,
+                  512
+                ],
+                "sha256": "63eb9cb5c7b3ddb0e207db744a768c6d9627a7fe3d7bc6d7416e8a3a6cf56d66"
+              },
+              {
+                "file": "environment/friends/ginny/cheer.png",
+                "cell": [
+                  1024,
+                  512
+                ],
+                "sha256": "07379f7187682103b72c2764c3192961c32acb6aeb98a19718209ee25db8962b"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fred",
+        "canvas": {
+          "width": 80,
+          "height": 80,
+          "pivotX": 40,
+          "pivotY": 76
+        },
+        "sheets": [
+          {
+            "master": "environment/friends/masters/fred.png",
+            "masterSha256": "e9efda647cec10b3c81efd5136f6c79627d9558e51a24e98de782cfe65aa7337",
+            "scale": 0.1679,
+            "frames": [
+              {
+                "file": "environment/friends/fred/idle.png",
+                "cell": [
+                  0,
+                  0
+                ],
+                "sha256": "7dce6b471c0281fb00c0e4a9f101bc004adbbdce5365cf878ccab0085b7a6782"
+              },
+              {
+                "file": "environment/friends/fred/walk-1.png",
+                "cell": [
+                  512,
+                  0
+                ],
+                "sha256": "6e19238fc3776da9f5384e2ca2d7de5f93607c3c93461660d40e577d8b989530"
+              },
+              {
+                "file": "environment/friends/fred/walk-2.png",
+                "cell": [
+                  1024,
+                  0
+                ],
+                "sha256": "3bfc9351d6cfba5358022b774f5ef36afe60246e0aace239bfe4c5445675b529"
+              },
+              {
+                "file": "environment/friends/fred/light.png",
+                "cell": [
+                  0,
+                  512
+                ],
+                "sha256": "4314204b4a4338b03e31de69d49c5c622b5584865967611a0f423b391224bd9e"
+              },
+              {
+                "file": "environment/friends/fred/cheer.png",
+                "cell": [
+                  512,
+                  512
+                ],
+                "sha256": "6475541a03968b22883640a70028d17fd668c460a54073712e45393d11ad2d77"
+              },
+              {
+                "file": "environment/friends/fred/wave.png",
+                "cell": [
+                  1024,
+                  512
+                ],
+                "sha256": "e83e620aff5d72649f60f363d9eab908bbb071199369f4c44d3bfa98668c5543"
               }
             ]
           }

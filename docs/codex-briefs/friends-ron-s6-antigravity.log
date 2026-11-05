@@ -1,0 +1,52 @@
+I have launched the `image-generator` subagent ([Ron Sprite Sheet Generator](conversation://d85aee5a-0d59-4711-82a0-4c08a4af6e51)) to generate `ron-candidate-a` and `ron-candidate-b` following your exact specifications and reference images. Waiting for it to complete.
+Both candidate sprite sheets have been generated using [harry-candidate-a.jpg](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/friends/masters/harry-candidate-a.jpg) and [v3-dobby.png](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/elves/masters/v3-dobby.png) as reference images.
+
+### 1. `ron-candidate-a`
+- **Absolute Path**: [`/Users/thachanh/.gemini/antigravity-cli/brain/7b38d537-5151-4b9c-82c0-23ac33f069f5/ron_candidate_a_1793844354056.jpg`](file:///Users/thachanh/.gemini/antigravity-cli/brain/7b38d537-5151-4b9c-82c0-23ac33f069f5/ron_candidate_a_1793844354056.jpg)
+- **Exact Prompt**:
+```text
+A 3x2 sprite sheet of Ron Weasley as described in the Harry Potter books (not the films, not looking like any film actor). Chunky pixel art character sprite sheet matching the exact style, proportions, dark #231F2E outlines, flat palette, and top-left lighting of the reference Harry Potter sprite sheet (harry-candidate-a.jpg).
+
+Character: 12-year-old Ron Weasley, a cute chibi boy slightly taller and lankier than Harry, with bright flaming orange-red hair, freckles across his face and nose, a prominent long nose, and notably big hands and big boots. Winter attire: a plain hand-knitted maroon wool sweater (solid maroon, no letters), a scarlet and gold striped Gryffindor winter scarf, worn brown trousers, and dark brown boots. Old battered second-hand wooden broomstick with scruffy splayed twigs.
+
+Format and Layout:
+- 3 columns by 2 rows (3x2 grid), 3:2 landscape aspect ratio.
+- Solid pure white background (#FFFFFF) with absolutely no background elements, no floor, no drop shadows, no grid lines, and no text.
+- Generous empty white space between each pose so nothing touches or overlaps.
+- All 6 poses face three-quarter view toward the lower-left.
+- Strict height and character consistency across all frames; feet aligned to horizontal ground baselines on each row.
+
+Poses in order (Row 1 left-to-right, then Row 2 left-to-right):
+1. [Row 1, Col 1] idle: Ron Weasley standing, grinning cheerfully, one big hand raised waving in greeting.
+2. [Row 1, Col 2] walk-1: Ron Weasley walking, left leg stepping clearly forward, right leg back.
+3. [Row 1, Col 3] walk-2: Ron Weasley walking, right leg stepping clearly forward, left leg back (legs visibly opposite to walk-1, head at matching height).
+4. [Row 2, Col 1] fly-throw: Ron Weasley sitting astride his broomstick angled down to the lower-left with twig tail pointing right, right arm drawn back holding a bright red Quaffle ball (about head-sized) ready to throw.
+5. [Row 2, Col 2] fly-catch: Ron Weasley on the same broomstick, leaning forward catching the bright red Quaffle ball with both hands.
+6. [Row 2, Col 3] snowball: Ron Weasley standing in an active dynamic stance, throwing a white snowball overarm, scarf trailing in motion.
+```
+
+---
+
+### 2. `ron-candidate-b`
+- **Absolute Path**: [`/Users/thachanh/.gemini/antigravity-cli/brain/7b38d537-5151-4b9c-82c0-23ac33f069f5/ron_candidate_b_1793844390367.jpg`](file:///Users/thachanh/.gemini/antigravity-cli/brain/7b38d537-5151-4b9c-82c0-23ac33f069f5/ron_candidate_b_1793844390367.jpg)
+- **Exact Prompt**:
+```text
+A second candidate 3x2 sprite sheet of Ron Weasley as described in the Harry Potter books (book version, not the films, not Rupert Grint or any film actor). 16-bit chunky pixel art sprite sheet perfectly matching the style, pixel density, #231F2E dark outlines, flat color palette, and top-left lighting of harry-candidate-a.jpg.
+
+Character: Ron Weasley at age 12, an endearing chibi boy noticeably lanky and slightly taller than Harry, with bright fiery carrot-red messy hair, scattered freckles across nose and cheeks, a long pointed nose, big ears, gangly hands, and chunky boots. Winter outfit: a plain oversized hand-knitted maroon wool sweater from Molly Weasley (solid maroon texture, no letter monogram), scarlet and gold striped Gryffindor wool scarf, worn baggy brown trousers, and rugged dark brown boots. Old battered broomstick with a flared, rustic twig tail.
+
+Grid & Layout:
+- 3 columns by 2 rows (3x2 layout), 3:2 landscape aspect ratio.
+- Plain clean white background (#FFFFFF) with zero drop shadows, no floor lines, no grid lines, no typography.
+- Wide, clear empty margins separating each pose cleanly.
+- Consistent three-quarter view angled toward the lower-left for every pose.
+- Consistent scale across all 6 figures, baseline alignment for feet in each row.
+
+The 6 poses in reading order:
+1. [Row 1, Pose 1] idle: Ron Weasley standing, cheerful open grin, waving his left hand high in greeting.
+2. [Row 1, Pose 2] walk-1: Ron Weasley mid-stride walking forward, left leg stepping forward, right leg back.
+3. [Row 1, Pose 3] walk-2: Ron Weasley walking forward, right leg stepping forward, left leg back (clear contrast from walk-1, head at consistent height).
+4. [Row 2, Pose 1] fly-throw: Ron Weasley mounted astride his broomstick angled down to lower-left, leaning forward while drawing back a bright red leather Quaffle ball in hand, ready to throw.
+5. [Row 2, Pose 2] fly-catch: Ron Weasley astride the broomstick, stretching both hands forward securely catching the round red Quaffle.
+6. [Row 2, Pose 3] snowball: Ron Weasley standing in an athletic throwing pose, hurling a white snowball forward overhand, Gryffindor scarf whipping back.
+```

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "c8168fe979a4",
+  "revision": "33b9d1b119a4",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11672,6 +11672,426 @@
       "sha256": "db155ca2b2f8b6e565b90948692c37f207b9387fd0029f926fbe843b827dc964"
     },
     {
+      "source": "environment/friends/fred/cheer.png",
+      "file": "runtime-webp/environment/friends/fred/cheer.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1260,
+      "bytes": 784,
+      "sourceSha256": "6475541a03968b22883640a70028d17fd668c460a54073712e45393d11ad2d77",
+      "sha256": "f10eccf8884a1192bba215bd4523cf5b1bfed19e6081eae5fee121fbe9ae64e6"
+    },
+    {
+      "source": "environment/friends/fred/idle.png",
+      "file": "runtime-webp/environment/friends/fred/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1100,
+      "bytes": 708,
+      "sourceSha256": "7dce6b471c0281fb00c0e4a9f101bc004adbbdce5365cf878ccab0085b7a6782",
+      "sha256": "a661a90fdb271a90ee11bebfc064376d27e364baae27493a04ded41fed45097e"
+    },
+    {
+      "source": "environment/friends/fred/light.png",
+      "file": "runtime-webp/environment/friends/fred/light.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1292,
+      "bytes": 852,
+      "sourceSha256": "4314204b4a4338b03e31de69d49c5c622b5584865967611a0f423b391224bd9e",
+      "sha256": "8092600a51f9cd9eec15f982192489ee46a98911b11846e9df20bb3ab5265850"
+    },
+    {
+      "source": "environment/friends/fred/walk-1.png",
+      "file": "runtime-webp/environment/friends/fred/walk-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1110,
+      "bytes": 716,
+      "sourceSha256": "6e19238fc3776da9f5384e2ca2d7de5f93607c3c93461660d40e577d8b989530",
+      "sha256": "13ff78b5844fb9c08bee2104080b10878d04a0e0cf90e4a90407de557fd67f0e"
+    },
+    {
+      "source": "environment/friends/fred/walk-2.png",
+      "file": "runtime-webp/environment/friends/fred/walk-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1087,
+      "bytes": 700,
+      "sourceSha256": "3bfc9351d6cfba5358022b774f5ef36afe60246e0aace239bfe4c5445675b529",
+      "sha256": "34da5ac2e3140cacbaf69bd4e1ebfb2a8840062573b352eaffc307fad6536acc"
+    },
+    {
+      "source": "environment/friends/fred/wave.png",
+      "file": "runtime-webp/environment/friends/fred/wave.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1159,
+      "bytes": 752,
+      "sourceSha256": "e83e620aff5d72649f60f363d9eab908bbb071199369f4c44d3bfa98668c5543",
+      "sha256": "1883f974a25826f10ca18cf8e270e75d4f643f1e5107c622e3066a805fb4ce70"
+    },
+    {
+      "source": "environment/friends/ginny/cheer.png",
+      "file": "runtime-webp/environment/friends/ginny/cheer.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1028,
+      "bytes": 666,
+      "sourceSha256": "07379f7187682103b72c2764c3192961c32acb6aeb98a19718209ee25db8962b",
+      "sha256": "819c8887ccf1f256427dcce9801404a2029d2a57d070aeae4cd0951ae25e00d8"
+    },
+    {
+      "source": "environment/friends/ginny/fly-throw.png",
+      "file": "runtime-webp/environment/friends/ginny/fly-throw.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1147,
+      "bytes": 766,
+      "sourceSha256": "63eb9cb5c7b3ddb0e207db744a768c6d9627a7fe3d7bc6d7416e8a3a6cf56d66",
+      "sha256": "e74ad4d3402557495226f0eeb81047f05e4782146cb1bcc821ade9d93b51cc23"
+    },
+    {
+      "source": "environment/friends/ginny/idle.png",
+      "file": "runtime-webp/environment/friends/ginny/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 967,
+      "bytes": 624,
+      "sourceSha256": "bbcabc30e9b0aaa21e376713c4e3dbde348990e3224518dc178c70fc34ca65f0",
+      "sha256": "8199a64d9ccb4c2ca91a8ecf52d4cf305c025a9333ebbc792bb66c7ee69891a0"
+    },
+    {
+      "source": "environment/friends/ginny/snowball.png",
+      "file": "runtime-webp/environment/friends/ginny/snowball.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1160,
+      "bytes": 780,
+      "sourceSha256": "9cefccfbf14da96260db263e055cd6c807f7d7eb2574bdffaf895e374bf9352c",
+      "sha256": "c276b3352ed748f66426d3f00eef37ad91bb8ede8521530ce186b5609564135a"
+    },
+    {
+      "source": "environment/friends/ginny/walk-1.png",
+      "file": "runtime-webp/environment/friends/ginny/walk-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1010,
+      "bytes": 648,
+      "sourceSha256": "c71ea251305e10705469c3a81a09499c6fa774035a56934770e36c75dd9e89ad",
+      "sha256": "4f694eb9dac1a584812794bf0cb899fb95ffa8df2bc7d169aa237fa863f67981"
+    },
+    {
+      "source": "environment/friends/ginny/walk-2.png",
+      "file": "runtime-webp/environment/friends/ginny/walk-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 981,
+      "bytes": 642,
+      "sourceSha256": "752703d6b94333375633ce3e7e9451192643b1f57629f8a281db6ce1b4e8ad85",
+      "sha256": "82536c0232455f583c779dd1d5b89ae11a46293883fa729b7e3a6d280178ab88"
+    },
+    {
+      "source": "environment/friends/harry/fly-catch.png",
+      "file": "runtime-webp/environment/friends/harry/fly-catch.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1147,
+      "bytes": 738,
+      "sourceSha256": "943a5c659079795f3340458858722e6cef827cfd9b74267cbb9d0b6c63508a9c",
+      "sha256": "757858be3b02ceb5a266278ee57f000a71f6b55a60cc1cff0433564a782c3ef7"
+    },
+    {
+      "source": "environment/friends/harry/fly-throw.png",
+      "file": "runtime-webp/environment/friends/harry/fly-throw.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1205,
+      "bytes": 788,
+      "sourceSha256": "3ce7dec5bdf724910172d4fb948bd93bec82c1df8e13dcc0a3094ab86f453b87",
+      "sha256": "2abf31eb4cefb06a39848d86843488be65db5497604e3357fa731f392716076c"
+    },
+    {
+      "source": "environment/friends/harry/idle.png",
+      "file": "runtime-webp/environment/friends/harry/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 990,
+      "bytes": 604,
+      "sourceSha256": "40aa6989894f86f8fb32d99a33da0f18f22f6728fb070e7a952377f5718d2bbf",
+      "sha256": "43f30a70845fcf2f4beca19db544aa9efd6e00a7ca9850fa0ddb7d1d67e021d3"
+    },
+    {
+      "source": "environment/friends/harry/snowball.png",
+      "file": "runtime-webp/environment/friends/harry/snowball.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1056,
+      "bytes": 646,
+      "sourceSha256": "a6a20a1291f87cc91657dd63c63501f2d0f604bea0c24d72b39d86ec61b99193",
+      "sha256": "f1160e0ee244d6c6d74501f0448e12bf7d1cc7f52b5dff3385a29d6b25999156"
+    },
+    {
+      "source": "environment/friends/harry/walk-1.png",
+      "file": "runtime-webp/environment/friends/harry/walk-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 973,
+      "bytes": 588,
+      "sourceSha256": "777732015372ad68f35a1b8361dd9f116617c17c5927de6b3a4005e0b468ab58",
+      "sha256": "d77843b95367d724231cb0adafbad7bb39e6178fd003490e35a5290a4c94246b"
+    },
+    {
+      "source": "environment/friends/harry/walk-2.png",
+      "file": "runtime-webp/environment/friends/harry/walk-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 956,
+      "bytes": 594,
+      "sourceSha256": "fd511e6cd7ca86decba84b0e9ce450686e54eb7ace4b4b9b6fe70ce3047d44b7",
+      "sha256": "4b3cabfab1c61e3ec400a5f895bbd1fe188e6e70bcff228f56b4ff5a3fff67cf"
+    },
+    {
+      "source": "environment/friends/hermione/idle.png",
+      "file": "runtime-webp/environment/friends/hermione/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1099,
+      "bytes": 696,
+      "sourceSha256": "fbcee05e9a755c0d622829fa0bc9bbac21eab6c1e30d63dc0c9fdbfc0b21cd3e",
+      "sha256": "f58d062c6d51b7ed9afd8a0459d9bd03cc22a4fedeff8732cc1f177980bdff35"
+    },
+    {
+      "source": "environment/friends/hermione/knit.png",
+      "file": "runtime-webp/environment/friends/hermione/knit.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1212,
+      "bytes": 798,
+      "sourceSha256": "4f2f54fa028330d0609e4b467ad68b203d127f5a847c8b7c9539d97490f6e150",
+      "sha256": "ff68d7face3637e4ca427882107b7e95b48075bd6a4e9ab76862e77237378c76"
+    },
+    {
+      "source": "environment/friends/hermione/read.png",
+      "file": "runtime-webp/environment/friends/hermione/read.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1146,
+      "bytes": 706,
+      "sourceSha256": "390cd1d931a2d656b4633b64090c7303fb7cf5a2f87b7d5e6fb4a53e314c97e1",
+      "sha256": "0b659584fc78464561a37856e4cb7f09df26c124b58113ccf7968cd4b953261f"
+    },
+    {
+      "source": "environment/friends/hermione/snowball.png",
+      "file": "runtime-webp/environment/friends/hermione/snowball.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1250,
+      "bytes": 800,
+      "sourceSha256": "9ed1feea62f4d2c0f0ef4a94d7ebe934f4baf907807052b7a4300f2f864f1a38",
+      "sha256": "6a25ecaacb9aa0b50429d4cedb31f1c3657864a80b70132103505e1ee69e843d"
+    },
+    {
+      "source": "environment/friends/hermione/walk-1.png",
+      "file": "runtime-webp/environment/friends/hermione/walk-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1163,
+      "bytes": 728,
+      "sourceSha256": "45f0e59f809034d4600f5987a90139fc71c095a847bcda8766d1650f2c396a8c",
+      "sha256": "8aec0050aec96ab0f33c6a919e19d77e9fa83e3a46ea2403ba379f1fabac7b2b"
+    },
+    {
+      "source": "environment/friends/hermione/walk-2.png",
+      "file": "runtime-webp/environment/friends/hermione/walk-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1178,
+      "bytes": 718,
+      "sourceSha256": "00d95d67fb2b0ee55acf98e7d4a62e389333be70cbe53129da1b1eb9d82d4f37",
+      "sha256": "164fcbe9991a45c8428098797ba66ef57324d5fa286ad5283865d3f48affbe8e"
+    },
+    {
+      "source": "environment/friends/luna/cheer.png",
+      "file": "runtime-webp/environment/friends/luna/cheer.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1281,
+      "bytes": 798,
+      "sourceSha256": "e9a8e468c3380c7a0f082c0f176a53ebf0e675f90f5dc6661a8359e7c3af7dbd",
+      "sha256": "574f3c9553a92ab930bce739153b3895134f56630a2be68b6b166292bbf16c45"
+    },
+    {
+      "source": "environment/friends/luna/feed.png",
+      "file": "runtime-webp/environment/friends/luna/feed.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1238,
+      "bytes": 744,
+      "sourceSha256": "2f42d0dcd49f159cb3eec7dc2426809c39dc61b82a212651d166d797f0a19e94",
+      "sha256": "5d9f05a5991d32cc000870110b57a0f45b2b2106232dcfa4aed83f3c417d613f"
+    },
+    {
+      "source": "environment/friends/luna/idle.png",
+      "file": "runtime-webp/environment/friends/luna/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1240,
+      "bytes": 714,
+      "sourceSha256": "e5fffb6a40ed308ca283ebd905160c684951f6a87e2693010d0275bf6c916af4",
+      "sha256": "66a52d73b097fcac3f009a73f219e1421529fdb1267b14ab3470cb397fd91c75"
+    },
+    {
+      "source": "environment/friends/luna/read.png",
+      "file": "runtime-webp/environment/friends/luna/read.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1274,
+      "bytes": 770,
+      "sourceSha256": "eb9b8991dc320872ea66fe9808a439d9cbbe0376d262f47ccb4942415f4c561f",
+      "sha256": "722d4a20d4261b42b82c2e5dddb8c67e71b945c22fefaeef42f99b469bcdaf7d"
+    },
+    {
+      "source": "environment/friends/luna/walk-1.png",
+      "file": "runtime-webp/environment/friends/luna/walk-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1277,
+      "bytes": 790,
+      "sourceSha256": "75d80e95e672cac388551efb7044561d8cbf49cd2bf9f3e7316a718d7edb006b",
+      "sha256": "86ba628ea8275e32d7d1b714dc52218e9d45d6122c1c77996454480d9880b784"
+    },
+    {
+      "source": "environment/friends/luna/walk-2.png",
+      "file": "runtime-webp/environment/friends/luna/walk-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1291,
+      "bytes": 798,
+      "sourceSha256": "6050b43961c6abf57f4f6d687589ff4f32c54474d412125e34d3233568afb280",
+      "sha256": "2ac45272b1c42a6437068d19a6611d3d1386d053bf5dfec560e71c2e91c3ff90"
+    },
+    {
+      "source": "environment/friends/neville/cheer.png",
+      "file": "runtime-webp/environment/friends/neville/cheer.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1237,
+      "bytes": 826,
+      "sourceSha256": "d2bf2eab74e5d639178208032d7e83a49f223e54c565d9ac3106e420b14e5999",
+      "sha256": "03b00114c409d5fc931a04b8e561df522718f4ba85cdb1a9344f2789dc71dcba"
+    },
+    {
+      "source": "environment/friends/neville/idle.png",
+      "file": "runtime-webp/environment/friends/neville/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1245,
+      "bytes": 746,
+      "sourceSha256": "09f126b8e300b00dc6be38d498f7272bc2467c926ad30a7e7f40fe6b0114dbf4",
+      "sha256": "a0915d2f5623c723c058b647c499ba8aaf922c14f4de0c2708ff38f819959627"
+    },
+    {
+      "source": "environment/friends/neville/pull.png",
+      "file": "runtime-webp/environment/friends/neville/pull.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1524,
+      "bytes": 954,
+      "sourceSha256": "c8ac520eba772bd249715505e8b1444c39ab256c971c16e19ec38e5eb3bac714",
+      "sha256": "baef1278b2c191b35324782f90077890ba5ddc774334cd945ff4e92949393667"
+    },
+    {
+      "source": "environment/friends/neville/tend.png",
+      "file": "runtime-webp/environment/friends/neville/tend.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1412,
+      "bytes": 888,
+      "sourceSha256": "579950f75811b37b68bcbb5a6fcdb7fc5463931cd62ba559c5d243a7e240916a",
+      "sha256": "6417ac4a9812cf7584965411c0d540dad52dc26bb999926c554ea1a518e7bc63"
+    },
+    {
+      "source": "environment/friends/neville/walk-1.png",
+      "file": "runtime-webp/environment/friends/neville/walk-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1212,
+      "bytes": 764,
+      "sourceSha256": "afe1ae493cb4724dbf0209b8da234f5cf489df6c57f2880a100ccdc92d700f5f",
+      "sha256": "dc4dd27f8412b338201ae351c2d279eed12924e921e59fd19b24fcca882d7330"
+    },
+    {
+      "source": "environment/friends/neville/walk-2.png",
+      "file": "runtime-webp/environment/friends/neville/walk-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1186,
+      "bytes": 742,
+      "sourceSha256": "54356632444466bf22daf56ad86854ff0b1643b92cc9919f34e6cc722ef0e2f2",
+      "sha256": "92e98711b474496b544a4a99a3d04bb469f08130e48a4b338ce59ff6b142fd63"
+    },
+    {
+      "source": "environment/friends/ron/fly-catch.png",
+      "file": "runtime-webp/environment/friends/ron/fly-catch.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1246,
+      "bytes": 852,
+      "sourceSha256": "f2e9ee9cc273330cd2c313c267f37b6157f720d755fc3fd5a733662ad33508e4",
+      "sha256": "54980c2b3e1fe52ec3086bcfabf4c0338856ddb7a42f45a6f63630af4b7770c0"
+    },
+    {
+      "source": "environment/friends/ron/fly-throw.png",
+      "file": "runtime-webp/environment/friends/ron/fly-throw.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1258,
+      "bytes": 882,
+      "sourceSha256": "db66b3fccd70a1afeae3375cef23788b4a96a63c213ca6619984db17923fb919",
+      "sha256": "d871d0752667815c065a5f941467e1ef97c8aeac656079055cff48ba6bb396c9"
+    },
+    {
+      "source": "environment/friends/ron/idle.png",
+      "file": "runtime-webp/environment/friends/ron/idle.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1070,
+      "bytes": 686,
+      "sourceSha256": "d5c3d74b26fa6b002f065fe9d527900a03870a0083b9672abc95466dd932c129",
+      "sha256": "460833c18521112de309b08e9d878962f75a12a89c6e203547fcfc5d7c63e469"
+    },
+    {
+      "source": "environment/friends/ron/snowball.png",
+      "file": "runtime-webp/environment/friends/ron/snowball.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1168,
+      "bytes": 790,
+      "sourceSha256": "ce4c18120c04a5719272c81cece3e4892498617aab8aacc22391df42f540663e",
+      "sha256": "e21ed4f868d2e263afed4e4620d085dcaad7e914b10a091e98f3e1879c1c59ca"
+    },
+    {
+      "source": "environment/friends/ron/walk-1.png",
+      "file": "runtime-webp/environment/friends/ron/walk-1.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1044,
+      "bytes": 698,
+      "sourceSha256": "e463f8839b4398302ab0181806432a683a5d6e2f5ca7388b559489c38fbd4ce8",
+      "sha256": "48766c1ee48c528b1de2c1557a7638f4ccd7718cdc7caf4a670991393659a022"
+    },
+    {
+      "source": "environment/friends/ron/walk-2.png",
+      "file": "runtime-webp/environment/friends/ron/walk-2.webp",
+      "width": 80,
+      "height": 80,
+      "sourceBytes": 1017,
+      "bytes": 670,
+      "sourceSha256": "d3290499ca3ad2afe5d84b2c01b998bd9982e01b9c901937d75b95005ebd2125",
+      "sha256": "44a4cb56bb8da266ccbc437125368a6ae354b823fa8c2dd60d48aa521ca5bf4f"
+    },
+    {
       "source": "environment/layers/fenceNE.png",
       "file": "runtime-webp/environment/layers/fenceNE.webp",
       "width": 112,
@@ -12055,11 +12475,11 @@
     }
   ],
   "totals": {
-    "converted": 1199,
+    "converted": 1241,
     "existingWebp": 8,
-    "originalBytes": 4454983,
-    "webpBytes": 2977076,
-    "savedBytes": 1477907,
-    "savedPercent": 33.17
+    "originalBytes": 4503879,
+    "webpBytes": 3008230,
+    "savedBytes": 1495649,
+    "savedPercent": 33.21
   }
 }

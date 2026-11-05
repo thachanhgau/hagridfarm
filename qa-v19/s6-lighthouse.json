@@ -5,31 +5,31 @@
   "runs": [
     {
       "performance": 50,
-      "fcpMs": 10110,
-      "lcpMs": 14280,
-      "tbtMs": 284,
+      "fcpMs": 10065,
+      "lcpMs": 14250,
+      "tbtMs": 274,
+      "bytes": 4327657
+    },
+    {
+      "performance": 51,
+      "fcpMs": 10095,
+      "lcpMs": 14265,
+      "tbtMs": 264.5,
       "bytes": 4327657
     },
     {
       "performance": 50,
       "fcpMs": 10110,
       "lcpMs": 14280,
-      "tbtMs": 282,
-      "bytes": 4327657
-    },
-    {
-      "performance": 51,
-      "fcpMs": 10110,
-      "lcpMs": 14340,
-      "tbtMs": 244.5,
+      "tbtMs": 266,
       "bytes": 4327657
     }
   ],
   "median": {
     "performance": 50,
-    "fcpMs": 10110,
-    "lcpMs": 14280,
-    "tbtMs": 282,
+    "fcpMs": 10095,
+    "lcpMs": 14265,
+    "tbtMs": 266,
     "bytes": 4327657
   }
 }

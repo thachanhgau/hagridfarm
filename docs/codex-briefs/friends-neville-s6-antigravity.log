@@ -1,0 +1,52 @@
+I have launched the `image-generator` subagent to generate `neville-candidate-a` and `neville-candidate-b` using the specified reference images and instructions. Waiting for the subagent to complete and report back.
+Here are the generated candidate sprite sheets for Neville Longbottom, along with their absolute paths and the exact prompts used:
+
+### 1. `neville-candidate-a`
+- **Absolute Path:** [neville_candidate_a_1793844506947.jpg](file:///Users/thachanh/.gemini/antigravity-cli/brain/570c3318-563d-41e6-a447-df8dadabddd5/neville_candidate_a_1793844506947.jpg) (`/Users/thachanh/.gemini/antigravity-cli/brain/570c3318-563d-41e6-a447-df8dadabddd5/neville_candidate_a_1793844506947.jpg`)
+- **Reference Images Passed:**
+  - [harry-candidate-a.jpg](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/friends/masters/harry-candidate-a.jpg)
+  - [v3-dobby.png](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/elves/masters/v3-dobby.png)
+- **Exact Prompt:**
+```text
+A 3x2 sprite sheet of Neville Longbottom as described in the Harry Potter books (book-accurate, not the film actor), in the exact chunky pixel art style, palette, and proportions of reference harry-candidate-a.jpg and v3-dobby.png. Dark #231F2E outline, solid flat colors, light from top-left, pure solid white background.
+
+Character: Neville Longbottom, age 12, cute chibi proportion identical in height and scale to Harry in the reference. Round plump face, short sandy-brown hair, kind nervous shy smile. Wearing Herbology gear: fluffy pink earmuffs on his ears, scarlet-and-gold striped Gryffindor scarf, brown knitted cardigan sweater over white shirt, dark trousers, sturdy brown boots, dragon-hide gardening gloves.
+
+Layout: Exactly 3 columns by 2 rows (6 poses total) in 3:2 landscape. Pure white background, wide spacing between cells, no text, no letters, no grid lines, no cast shadows. All poses in three-quarter view facing lower-left, consistent size and identity.
+
+Row 1 (left to right, standing baseline aligned):
+1. idle — standing, shy gentle smile, holding a small gardening trowel.
+2. walk-1 — walking forward to the lower-left, left leg stepping forward.
+3. walk-2 — walking forward to the lower-left, right leg stepping forward (visibly different stride from walk-1, same head height).
+
+Row 2 (left to right):
+4. tend — kneeling beside a small terracotta clay flowerpot with a leafy Mandrake sprout, patting the soil with his trowel, pink earmuffs on.
+5. pull — standing, pulling an ugly muddy screaming Mandrake baby-root out of a terracotta pot by its green leaves, pink earmuffs on.
+6. cheer — jumping happily with both arms raised high in celebration, cheerful broad smile.
+```
+
+---
+
+### 2. `neville-candidate-b`
+- **Absolute Path:** [neville_candidate_b_1793844542963.jpg](file:///Users/thachanh/.gemini/antigravity-cli/brain/570c3318-563d-41e6-a447-df8dadabddd5/neville_candidate_b_1793844542963.jpg) (`/Users/thachanh/.gemini/antigravity-cli/brain/570c3318-563d-41e6-a447-df8dadabddd5/neville_candidate_b_1793844542963.jpg`)
+- **Reference Images Passed:**
+  - [harry-candidate-a.jpg](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/friends/masters/harry-candidate-a.jpg)
+  - [v3-dobby.png](file:///Users/thachanh/.codex/visualizations/2026/10/13/hagrid-25-s6/garden-v05/environment/elves/masters/v3-dobby.png)
+- **Exact Prompt:**
+```text
+A 3x2 sprite sheet candidate B of Neville Longbottom as described in the Harry Potter books (book version, not the film actor), in the identical chunky pixel art style, palette, and proportions of reference harry-candidate-a.jpg. Dark #231F2E outline, light from top-left, flat colors, pure solid white background.
+
+Character design: Neville Longbottom, age 12, cute chibi proportion identical in height to Harry. Round plump face, slightly rounder rosy cheeks, short textured sandy-brown hair, shy nervous friendly expression. Wearing Herbology clothes: fluffy pink earmuffs over his ears, scarlet-and-gold striped Gryffindor wool scarf, brown chunky knit cardigan sweater over white collared shirt, dark charcoal trousers, sturdy brown work boots, dragon-hide gardening gloves.
+
+Layout: Exactly 3 columns by 2 rows (6 poses total) in 3:2 landscape aspect ratio. Pure solid white background (#FFFFFF), generous whitespace separating each cell, no background elements, no floor lines, no grid borders, no text. All poses in three-quarter view facing lower-left, consistent character proportions and height across all frames.
+
+Row 1 (left to right, standing baseline aligned):
+1. idle — standing, gentle shy smile, holding a small silver gardening trowel with a wooden handle in his gloved right hand at his side.
+2. walk-1 — walking forward towards the lower-left, left foot clearly forward on the ground, right arm swinging forward.
+3. walk-2 — walking forward towards the lower-left, right foot clearly forward on the ground, left arm swinging forward (distinct stride from walk-1, same head height).
+
+Row 2 (left to right):
+4. tend — kneeling on the ground facing lower-left beside a terracotta clay flowerpot containing soil and a leafy green Mandrake shoot, carefully patting the soil around the seedling with his trowel, pink earmuffs on ears.
+5. pull — standing firmly, bracing himself with a nervous determined face, pink earmuffs on ears, pulling an ugly muddy screaming squalling Mandrake baby root out of a terracotta clay flowerpot by its top green leaves.
+6. cheer — jumping excitedly in mid-air with both arms thrust straight up in triumph, wide happy grin, feet kicking up joyfully.
+```
