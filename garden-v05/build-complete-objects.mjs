@@ -15,8 +15,10 @@ const palette=SPRITE_PALETTE.map(hex=>[1,3,5].map(offset=>parseInt(hex.slice(off
 const cache=new Map();
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const sceneSpecs={
- gardener_friend:{width:80,height:112,pivotX:40,pivotY:100,maxWidth:70,maxHeight:94,durations:[900,180,320,380]},
- owl_post:{width:80,height:104,pivotX:40,pivotY:92,maxWidth:66,maxHeight:86,durations:[760,400,220,460]},
+ // Owner 05/11/2026 («người khổng lồ gì mà nhỏ hơn con cú»): the half-giant stands about twice a visiting
+ // friend (80 px cells), Hedwig and her perch stay small beside him.
+ gardener_friend:{width:112,height:140,pivotX:56,pivotY:130,maxWidth:100,maxHeight:120,durations:[900,180,320,380]},
+ owl_post:{width:64,height:80,pivotX:32,pivotY:72,maxWidth:50,maxHeight:60,durations:[760,400,220,460]},
  herbology_greenhouse:{width:156,height:152,pivotX:78,pivotY:118,drawBottomY:142,maxWidth:136,maxHeight:138,durations:[1200,540,650,540]},
 };
 function closest(r,g,b){

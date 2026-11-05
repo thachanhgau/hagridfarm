@@ -1459,9 +1459,9 @@ export async function createGarden(canvas, options = {}) {
         const activeAsset = {...asset,...(frameInfo.file?{file:frameInfo.file}:{}),...(frameInfo.atlasRect?{atlasRect:frameInfo.atlasRect}:{}),...(object.id==='greenhouse'?{seasonalKind:'greenhouse-roof'}:{}),...(object.id==='gardener'?{noSnowCap:true}:{})};
         drawAsset(activeAsset, object.xy[0], object.xy[1]);
         if (object.id === 'gardener') breathOf(activeAsset, object.xy, false, false, 'hagrid', clock);
-        if (greeting) label(context, '♥', object.xy[0], object.xy[1] - 85, '#f5d69a', 'bold 16px sans-serif');
+        if (greeting) label(context, '♥', object.xy[0], object.xy[1] - 128, '#f5d69a', 'bold 16px sans-serif');
         if (object.id === 'gardener' && object.speechText) {
-          drawHagridSpeechBubble(context, object.xy[0], object.xy[1], object.speechText, {emphasized: greeting, scale: object.speechScale || 1, align: object.speechScale ? 'right' : 'center'});
+          drawHagridSpeechBubble(context, object.xy[0], object.xy[1], object.speechText, {emphasized: greeting, scale: object.speechScale || 1, align: object.speechScale ? 'right' : 'center', lift: 128});
         }
       } else {
         object.draw(context);

@@ -56,7 +56,7 @@ const plotPhysicalBounds = (plot) => {
 const earnedLayout = [
   ['decoration-3', -.5, 3, 2, 1], ['decoration-7', 5.75, 3, 2, 1], ['decoration-11', 12.25, 3, 2, 1], ['decoration-15', 18.75, 3, 2, 1],
   ['decoration-19', -.5, 6, 2, 1], ['decoration-23', 5.75, 6, 2, 1], ['decoration-27', 12.25, 6, 2, 1], ['decoration-30', 18.75, 6, 2, 1],
-  ['decoration-31', -.5, 7, 2, 1], ['decoration-35', 5.75, 7, 1, 1], ['decoration-39', 12.25, 7, 2, 1], ['decoration-43', 18.75, 7, 2, 1],
+  ['decoration-31', 2.5, 7, 2, 1], ['decoration-35', 5.75, 7, 1, 1], ['decoration-39', 12.25, 7, 2, 1], ['decoration-43', 18.75, 7, 2, 1],
   ['decoration-46', -.5, 9, 2, 1], ['decoration-47', 5.75, 9, 2, 1], ['decoration-51', 12.25, 9, 2, 1], ['decoration-55', 18.75, 9, 2, 1],
   ['decoration-59', -.5, 13, 2, 1], ['decoration-63', 5.75, 13, 2, 1], ['decoration-67', 12.25, 13, 2, 1], ['decoration-71', 18.75, 13, 2, 1],
   ['decoration-75', -.5, 14, 2, 1], ['decoration-80', 5.75, 14, 2, 1], ['decoration-81', 12.25, 14, 2, 1], ['decoration-83', 18.75, 14, 2, 1],

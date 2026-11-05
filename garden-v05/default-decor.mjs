@@ -24,7 +24,7 @@ export const DECORATION_LAYOUT = Object.freeze({
   'decoration-23': {col: 5.5, row: 5.5, width: 2, height: 1, shape: 'wood-bridge'},
   'decoration-27': {col: 12.5, row: 5.5, width: 2, height: 1, shape: 'niffler-cabinet'},
   'decoration-30': {col: 18.5, row: 5.5, width: 2, height: 1, shape: 'wildflower-border'},
-  'decoration-31': {col: -0.5, row: 7.5, width: 2, height: 1, shape: 'moon-court'},
+  'decoration-31': {col: 2.5, row: 7.5, width: 2, height: 1, shape: 'moon-court'}, // home [4, 8.5]; it stood on the owl post (05/11/2026)
   'decoration-35': {col: 5.5, row: 7.5, width: 1, height: 1, shape: 'moon-lantern'},
   'decoration-39': {col: 12.5, row: 7.5, width: 2, height: 1, shape: 'straw-shed'},
   'decoration-43': {col: 18.5, row: 7.5, width: 2, height: 1, shape: 'kneazle-post'},

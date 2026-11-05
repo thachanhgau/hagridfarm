@@ -5,17 +5,17 @@
       "id": "gardener_friend",
       "kind": "scene",
       "file": "native-complete-objects/gardener_friend/frame-01.png",
-      "width": 80,
-      "height": 112,
-      "pivotX": 40,
-      "pivotY": 100,
+      "width": 112,
+      "height": 140,
+      "pivotX": 56,
+      "pivotY": 130,
       "bounds": {
-        "x": 10,
-        "y": 36,
-        "w": 53,
-        "h": 64
+        "x": 14,
+        "y": 39,
+        "w": 75,
+        "h": 91
       },
-      "sha256": "f48b7c29f3e60b7cd846f5174a695c26179b6ce4934dc9d14d4951cf12587826",
+      "sha256": "fc750f55fc53ccda662eb41b6d93db08a1fc24c2c88b2b14438a1b6564d9ec9c",
       "sourceRect": {
         "x": 0,
         "y": 0,
@@ -31,17 +31,17 @@
       "frameRecords": [
         {
           "file": "native-complete-objects/gardener_friend/frame-01.png",
-          "width": 80,
-          "height": 112,
-          "pivotX": 40,
-          "pivotY": 100,
+          "width": 112,
+          "height": 140,
+          "pivotX": 56,
+          "pivotY": 130,
           "bounds": {
-            "x": 10,
-            "y": 36,
-            "w": 53,
-            "h": 64
+            "x": 14,
+            "y": 39,
+            "w": 75,
+            "h": 91
           },
-          "sha256": "f48b7c29f3e60b7cd846f5174a695c26179b6ce4934dc9d14d4951cf12587826",
+          "sha256": "fc750f55fc53ccda662eb41b6d93db08a1fc24c2c88b2b14438a1b6564d9ec9c",
           "sourceRect": {
             "x": 0,
             "y": 0,
@@ -51,17 +51,17 @@
         },
         {
           "file": "native-complete-objects/gardener_friend/frame-02.png",
-          "width": 80,
-          "height": 112,
-          "pivotX": 40,
-          "pivotY": 100,
+          "width": 112,
+          "height": 140,
+          "pivotX": 56,
+          "pivotY": 130,
           "bounds": {
-            "x": 11,
-            "y": 36,
-            "w": 54,
-            "h": 64
+            "x": 14,
+            "y": 39,
+            "w": 77,
+            "h": 91
           },
-          "sha256": "a7686a71a5dbeef22e65762517fd620490982a4af4f5a5637de2118197cc0712",
+          "sha256": "4bb1fd9411ae614406a11f4ac3f8c18594e2f27fb55f0992182c554316d7c148",
           "sourceRect": {
             "x": 512,
             "y": 0,
@@ -71,17 +71,17 @@
         },
         {
           "file": "native-complete-objects/gardener_friend/frame-03.png",
-          "width": 80,
-          "height": 112,
-          "pivotX": 40,
-          "pivotY": 100,
+          "width": 112,
+          "height": 140,
+          "pivotX": 56,
+          "pivotY": 130,
           "bounds": {
-            "x": 5,
-            "y": 36,
-            "w": 59,
-            "h": 64
+            "x": 6,
+            "y": 39,
+            "w": 84,
+            "h": 91
           },
-          "sha256": "eaabe672c85663a0a3e4ab013d73837e9e6f9860bbd8008ccbbad3d7a1c5d9c0",
+          "sha256": "20b2a5256d6a01d5adebe7392d6e7e669e25379225742b3ae4543cbd6df2d176",
           "sourceRect": {
             "x": 0,
             "y": 512,
@@ -91,17 +91,17 @@
         },
         {
           "file": "native-complete-objects/gardener_friend/frame-04.png",
-          "width": 80,
-          "height": 112,
-          "pivotX": 40,
-          "pivotY": 100,
+          "width": 112,
+          "height": 140,
+          "pivotX": 56,
+          "pivotY": 130,
           "bounds": {
-            "x": 7,
-            "y": 35,
-            "w": 56,
-            "h": 65
+            "x": 9,
+            "y": 37,
+            "w": 80,
+            "h": 93
           },
-          "sha256": "ad19d813bf8e21c9bb1596d2dc26f8c1c87bac590560c558aa85d5f30765866b",
+          "sha256": "8fe3b5b575623462c0c0ddb361de066b7d4698b4b6be6fb2b5f8cb4cd192176d",
           "sourceRect": {
             "x": 512,
             "y": 512,
@@ -1549,17 +1549,17 @@
       "id": "owl_post",
       "kind": "scene",
       "file": "native-complete-objects/owl_post/frame-01.png",
-      "width": 80,
-      "height": 104,
-      "pivotX": 40,
-      "pivotY": 92,
+      "width": 64,
+      "height": 80,
+      "pivotX": 32,
+      "pivotY": 72,
       "bounds": {
         "x": 13,
-        "y": 6,
-        "w": 54,
-        "h": 86
+        "y": 12,
+        "w": 37,
+        "h": 60
       },
-      "sha256": "570e4ece6f8cf6c0b7504d80bf4e10774f8556b35b4d49ce25d162e1fd5f4bd3",
+      "sha256": "8cfeadd9ab3f48e2e7ca1667eee0ea8ac06e75b91003ea8119e3ca55796784c1",
       "sourceRect": {
         "x": 0,
         "y": 0,
@@ -1575,17 +1575,17 @@
       "frameRecords": [
         {
           "file": "native-complete-objects/owl_post/frame-01.png",
-          "width": 80,
-          "height": 104,
-          "pivotX": 40,
-          "pivotY": 92,
+          "width": 64,
+          "height": 80,
+          "pivotX": 32,
+          "pivotY": 72,
           "bounds": {
             "x": 13,
-            "y": 6,
-            "w": 54,
-            "h": 86
+            "y": 12,
+            "w": 37,
+            "h": 60
           },
-          "sha256": "570e4ece6f8cf6c0b7504d80bf4e10774f8556b35b4d49ce25d162e1fd5f4bd3",
+          "sha256": "8cfeadd9ab3f48e2e7ca1667eee0ea8ac06e75b91003ea8119e3ca55796784c1",
           "sourceRect": {
             "x": 0,
             "y": 0,
@@ -1595,17 +1595,17 @@
         },
         {
           "file": "native-complete-objects/owl_post/frame-02.png",
-          "width": 80,
-          "height": 104,
-          "pivotX": 40,
-          "pivotY": 92,
+          "width": 64,
+          "height": 80,
+          "pivotX": 32,
+          "pivotY": 72,
           "bounds": {
             "x": 13,
-            "y": 6,
-            "w": 54,
-            "h": 86
+            "y": 12,
+            "w": 37,
+            "h": 60
           },
-          "sha256": "33a139a497f48927b8fcee972659d42f315292765387f6ba8a2c7c8774fa1005",
+          "sha256": "491426c806ae067ae8717d549ceccced1d196ff331ae55a95768d21b6750ede5",
           "sourceRect": {
             "x": 512,
             "y": 0,
@@ -1615,17 +1615,17 @@
         },
         {
           "file": "native-complete-objects/owl_post/frame-03.png",
-          "width": 80,
-          "height": 104,
-          "pivotX": 40,
-          "pivotY": 92,
+          "width": 64,
+          "height": 80,
+          "pivotX": 32,
+          "pivotY": 72,
           "bounds": {
-            "x": 7,
-            "y": 6,
-            "w": 59,
-            "h": 86
+            "x": 9,
+            "y": 12,
+            "w": 41,
+            "h": 60
           },
-          "sha256": "d2bc424abb05b604dd97e9cef34c46c0826a4b01e856f5ef9a74a71e21d621ad",
+          "sha256": "878d37a5470fe45d328d649dbf6790b2421d9a1e435e3305e0518a0c048d9c66",
           "sourceRect": {
             "x": 0,
             "y": 512,
@@ -1635,17 +1635,17 @@
         },
         {
           "file": "native-complete-objects/owl_post/frame-04.png",
-          "width": 80,
-          "height": 104,
-          "pivotX": 40,
-          "pivotY": 92,
+          "width": 64,
+          "height": 80,
+          "pivotX": 32,
+          "pivotY": 72,
           "bounds": {
             "x": 13,
-            "y": 6,
-            "w": 54,
-            "h": 86
+            "y": 12,
+            "w": 37,
+            "h": 60
           },
-          "sha256": "6d1660fb72bbee7eaa552d3ca5ac61b64bc9085c5113e457f42a1be2f7584fbd",
+          "sha256": "d143b243e5ff8cdfa3751ac728b45fd5624b34e70c7faaeaac797f4c8165c231",
           "sourceRect": {
             "x": 512,
             "y": 512,

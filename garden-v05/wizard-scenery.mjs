@@ -45,8 +45,8 @@ const LAYOUT = Object.freeze({
     col: -2,
     row: 8,
     // Screen-space artwork bounds relative to the ground anchor.
-    bounds: Object.freeze({left: -54, top: -115, right: 44, bottom: 5}),
-    hitbox: Object.freeze({left: -61, top: -123, right: 52, bottom: 11}),
+    bounds: Object.freeze({left: -50, top: -122, right: 50, bottom: 4}),
+    hitbox: Object.freeze({left: -58, top: -130, right: 58, bottom: 10}),
   }),
   greenhouse: Object.freeze({
     id: 'greenhouse',
@@ -59,8 +59,8 @@ const LAYOUT = Object.freeze({
     id: 'owl',
     col: 1,
     row: 8,
-    bounds: Object.freeze({left: -27, top: -80, right: 47, bottom: 7}),
-    hitbox: Object.freeze({left: -35, top: -88, right: 55, bottom: 15}),
+    bounds: Object.freeze({left: -25, top: -62, right: 25, bottom: 4}),
+    hitbox: Object.freeze({left: -33, top: -70, right: 33, bottom: 12}),
   }),
 });
 

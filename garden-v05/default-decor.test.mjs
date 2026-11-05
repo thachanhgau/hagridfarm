@@ -43,3 +43,13 @@ test('putting back a default cannot cover the bought decoration that replaced it
   assert.equal(commands[0][2].action, 'setDefaultDecorationVisibility');
   assert.equal(commands[0][2].visible, false);
 });
+
+// 05/11/2026 owner («bãi đá gì mà đè luôn con cú»): «Mẫu sân tròn dưới trăng» (decoration-31) had its home on the
+// owl post. No earned decoration's home may stand on Hagrid, the owl post or the greenhouse.
+test('no earned decoration stands, by default, on Hagrid, the owl or the greenhouse', async () => {
+  const {decorationPlacements, DECORATION_IDS} = await import('./default-decor.mjs');
+  const all = {plots: [], built: [], decorations: [...DECORATION_IDS], keepsakes: {}};
+  for (const d of decorationPlacements(scene)) {
+    assert.notEqual(decorSpotProblem(...d.at, {map: scene, stage, state: all, decorations: {}, itemId: d.id, footprint: d.footprint}), 'Chỗ này vướng công trình.', d.id + ' at ' + d.at);
+  }
+});
