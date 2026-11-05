@@ -20,7 +20,7 @@ export const GROUPS = Object.freeze({
 export const FRIENDS = Object.freeze({
   harry: {name: 'Harry', poses: ['idle', 'walk-1', 'walk-2', 'fly-throw', 'fly-catch', 'snowball'], fly: [6.5, 1.9, true],
     lines: ['Chụp nè Ron!', 'Vườn của bác Hagrid đẹp quá trời!', 'Bồ có thấy Hedwig bay ngang đây không?']},
-  ron: {name: 'Ron', poses: ['idle', 'walk-1', 'walk-2', 'fly-throw', 'fly-catch', 'snowball'], fly: [13, 1.9, false],
+  ron: {name: 'Ron', poses: ['idle', 'walk-1', 'walk-2', 'fly-throw', 'fly-catch', 'snowball'], fly: [11.5, 1.9, false],
     lines: ['Bồ chụp trái Quaffle hay dữ!', 'Má mình gửi bánh cho bác Hagrid đó.', 'Ối, suýt rớt khỏi chổi!']},
   hermione: {name: 'Hermione', poses: ['idle', 'walk-1', 'walk-2', 'read', 'knit', 'snowball'],
     stops: [[10, 8.5, 'read', 5200], [12.5, 9, 'walk-1', 0], [14, 9, 'knit', 5200], [12.5, 9, 'walk-1', 0]],
@@ -89,11 +89,13 @@ function quaffle(from, to, clock) {
 function fireworks(xy, clock, seed) {
   const t = (clock + seed * 700) % 2100;
   if (t > 1000) return null;
-  const r = Math.round(4 + t / 1000 * 16), cx = xy[0] + ((Math.floor((clock + seed * 700) / 2100) * 37 + seed * 23) % 60) - 30, cy = xy[1] - 120;
-  const color = SPARKS[(Math.floor(clock / 2100) + seed) % SPARKS.length];
+  const r = Math.round(6 + t / 1000 * 24), cx = xy[0] + ((Math.floor((clock + seed * 700) / 2100) * 37 + seed * 23) % 60) - 30, cy = xy[1] - 130;
+  const color = SPARKS[(Math.floor(clock / 2100) + seed) % SPARKS.length], inner = SPARKS[(Math.floor(clock / 2100) + seed + 2) % SPARKS.length];
   return {kind: 'fx', xy: [cx, xy[1] + 300], draw: (ctx) => {
-    ctx.fillStyle = color;
-    for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6; ctx.fillRect(Math.round(cx + Math.cos(a) * r) - 1, Math.round(cy + Math.sin(a) * r * 0.8) - 1, 2, 2); }
+    for (const [ring, size, fill] of [[r, 3, color], [Math.round(r * 0.55), 2, inner]]) {
+      ctx.fillStyle = fill;
+      for (let i = 0; i < 16; i++) { const a = i * Math.PI / 8; ctx.fillRect(Math.round(cx + Math.cos(a) * ring) - 1, Math.round(cy + Math.sin(a) * ring * 0.8) - 1, size, size); }
+    }
   }};
 }
 
