@@ -70,3 +70,9 @@ test('the plot total follows bậc Tận Sức everywhere', () => {
 test('level 12 names the Giỏ đan its recipes open with', () => {
   assert.equal(E.DB.levels[11].unlock, 'Thửa 4; Xà lách; Giỏ đan của Hermione');
 });
+
+test('the duty chip stays left of the icon rows and drops below an open row on phones', () => {
+  const css = fs.readFileSync(new URL('./game-panels.css', import.meta.url), 'utf8');
+  assert.match(css, /#gameShell \.duty-chip\{position:fixed;top:60px;left:/);
+  assert.match(css, /@media \(max-width:599px\)\{body:not\(\.hud-compact\) #gameShell \.duty-chip\{top:108px\}\}/);
+});
