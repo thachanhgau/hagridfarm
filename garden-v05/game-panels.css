@@ -430,6 +430,17 @@
 #gameShell #elfCare .elf-wages{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px}
 #gameShell #elfCare .elf-job{margin:0}
 #gameShell #elfCare .owl-chest-meter small{white-space:nowrap}
+/* 25.0 S7 «Lò sưởi Giáng sinh» (garden-xmas.mjs): one frame, bare rows, one grid. */
+#gameShell #xmasCare .elf-care-body{display:grid;gap:8px}
+#gameShell #xmasCare .gp-hero{margin:0;padding:0;border:0;background:none;box-shadow:none;clip-path:none}
+#gameShell #xmasCare .gp-hero-copy strong{font:700 14px/1.25 var(--gp-body)}
+#gameShell #xmasCare .gp-hero-copy small{font-size:12px}
+#gameShell #xmasCare .gp-hero .icon-btn{flex:none}
+#gameShell #xmasCare .xmas-board{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+#gameShell #xmasCare .xmas-board li{display:flex;justify-content:space-between;gap:8px;color:#A6B1AE;font:700 13px/1.25 var(--gp-body);font-variant-numeric:tabular-nums}
+#gameShell #xmasCare .xmas-board li[aria-current]{color:#FFC36B}
+#gameShell #xmasCare .xmas-snow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0}
+#gameShell #xmasCare .owl-chest-meter small{white-space:nowrap}
 /* 25.0 S4 «Chăm bé» (garden-mood-ui.mjs): mood meter, interaction tiles, tricks and coat chips. */
 #gameShell :is(#creatureMood,#dutyPanel) .mood-care-body{display:grid;gap:8px}
 #gameShell #creatureMood .mood-hero{margin:0}

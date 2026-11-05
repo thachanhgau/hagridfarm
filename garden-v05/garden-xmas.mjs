@@ -104,6 +104,8 @@ function treeCanvas(stage, ornaments) {
   const canvas = el('canvas', {class: 'xmas-tree', width: '96', height: '160', role: 'img', style: 'width:192px;height:320px;image-rendering:pixelated;display:block;margin:0 auto 8px',
     'aria-label': `Cây thông nhà, bậc ${stage + 1}/4, ${ornaments.filter((o) => o.hung).length} món trang trí`});
   const img = new Image();
+  let tries = 0;
+  img.onerror = () => { if (++tries < 3) setTimeout(() => { img.src = runtimeImageUrl(TREE_FILES[stage] ?? TREE_FILES[0]); }, 3000); else canvas.hidden = true; };
   img.onload = () => {
     const ctx = canvas.getContext('2d');
     ctx.imageSmoothingEnabled = false;
@@ -148,18 +150,18 @@ export function createXmasCare({getSnapshot, act, notify}) {
 
   function render() {
     const snap = getSnapshot(), view = snap?.xmas, stock = snap?.garden?.progression?.inventory || {};
-    if (!view) { body.replaceChildren(el('p', {class: 'meta', text: 'Lò sưởi chỉ đỏ lửa trong tháng 12.'})); return; }
+    if (!view) { body.replaceChildren(); if (dialog.open) dialog.close(); return; }
     const rows = [];
-    const hero = (title, note, button) => el('div', {class: 'gp-hero elf-wage'}, [el('div', {class: 'gp-hero-copy'}, [el('strong', {text: title}), el('small', {text: note})]), button]);
+    const hero = (title, note, button) => el('div', {class: 'gp-hero elf-wage'}, [el('div', {class: 'gp-hero-copy'}, [el('strong', {text: title}), ...(note ? [el('small', {text: note})] : [])]), button]);
     if (view.newYear) {
       const N = view.newYear;
-      rows.push(hero(`Pháo hoa Giao thừa · khung Floo «${N.year}»`, 'Fred và George bắn pháo hoa trên trời đêm nay.',
+      rows.push(hero(`Pháo hoa Giao thừa · khung Floo «${N.year}»`, '',
         iconButton('chest', `Nhận khung Pháo hoa ${N.year}`, () => send({kind: 'newyear'}, (r) => notify(`🎆 Đã nhận khung Pháo hoa ${r.year}: đeo trong Khung Floo.`)),
           {text: N.claimed ? 'Đã nhận' : 'Nhận khung', class: N.claimed || !N.ready ? '' : 'primary', disabled: N.claimed || !N.ready})));
     }
     if (view.eve) {
       const E = view.eve;
-      rows.push(hero(`Đêm Noel · quà bí mật ${giftText(E.gift)}`, 'Bác Hagrid vác cây thông qua vườn, gia tinh dọn tiệc bên lò sưởi.',
+      rows.push(hero(`Đêm Noel · quà bí mật ${giftText(E.gift)}`, '',
         iconButton('letter', 'Nhận quà Đêm Noel', () => send({kind: 'eve'}, (r) => {
           notify(`🎁 Quà Đêm Noel: ${giftText(r.gift)}`);
           showHagridLetter({greeting: r.letter.greeting, mode: 'gift', letter: r.letter});
@@ -172,9 +174,9 @@ export function createXmasCare({getSnapshot, act, notify}) {
       if (!view.yule.board && lastBoard) Y.board = lastBoard.board.map((b) => (b.house === Y.house ? {...b, points: b.points + Y.points - lastBoard.pointsAt} : b)).sort((a, b) => b.points - a.points);
       rows.push(el('p', {class: 'meta', text: Y.house
         ? `Dạ Vũ Noel (18–31/12) · cây thông nhà ${Y.houseLabel} · con góp ${num(Y.points)} điểm${Y.points >= Y.championMin ? '' : ` (từ ${Y.championMin} điểm mới nhận Cây thông nhà vô địch)`}`
-        : 'Dạ Vũ Noel (18–31/12) · từ cấp 20 và có nhà trong Floo, điểm Cúp Nhà mới vào cây thông nhà'}));
+        : 'Dạ Vũ Noel (18–31/12) · cây thông nhà: cần cấp 20 và nhà trong Floo'}));
       if (Y.house) rows.push(treeCanvas(Y.stage ?? 0, Y.ornaments));
-      if (Y.board) rows.push(el('ol', {class: 'xmas-board'}, Y.board.map((b) => el('li', {text: `${b.label} · ${num(b.points)}${b.house === Y.house ? ' ← nhà con' : ''}`}))));
+      if (Y.board) rows.push(el('ol', {class: 'xmas-board'}, Y.board.map((b) => el('li', b.house === Y.house ? {'aria-current': 'true'} : {}, [el('span', {text: b.label}), el('b', {text: num(b.points)})]))));
       rows.push(el('p', {class: 'meta', text: `Món trang trí: hôm nay ${Y.today}/${Y.cap} · mỗi món +${Y.cup} điểm Cúp Nhà và cây thông nhà`}));
       for (const o of Y.ornaments) {
         const lock = ornamentLock(o, Y, stock);
@@ -228,7 +230,7 @@ export function createXmasCare({getSnapshot, act, notify}) {
     }
     body.replaceChildren(...rows);
   }
-  return {open() { render(); dialog.showModal(); }, sync() { if (dialog.open) render(); }};
+  return {open() { render(); if (getSnapshot()?.xmas) dialog.showModal(); }, sync() { if (dialog.open) render(); }};
 }
 
 /** A one-line nudge after a server reply: a letter is waiting, a vớ can open, the fire wants stoking ('' when none). */

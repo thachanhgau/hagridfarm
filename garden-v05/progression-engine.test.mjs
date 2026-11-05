@@ -572,8 +572,8 @@ test('every approved expansion builds sequentially from a normal level-500 progr
 
 test('engine core remains in parity with the approved 1-100 balance source and the level-500 P1 rules', () => {
   // 18/10/2026 (docs/economy-audit.md §5) overrides only these: kit recipes removed, expansion
-  // kitCost replaced by cropCost + galleons, and the texts that named kits (3 crop uses, 3 level unlocks).
-  const KIT_TEXT = {crops: ['pumpkin', 'oats', 'flax'], levels: [5, 6, 45]};
+  // kitCost replaced by cropCost + galleons, and the texts that named kits (3 crop uses, 3 level unlocks). Level 12 also names the 25.0 S2 Giỏ đan.
+  const KIT_TEXT = {crops: ['pumpkin', 'oats', 'flax'], levels: [5, 6, 12, 45]};
   const patch = (rows, key, ids, field) => rows.map((row) => (ids.includes(row[key]) ? {...row, [field]: (field === 'use' ? DB.crops : DB.levels).find((d) => d[key] === row[key])[field]} : row));
   const cropFields = ['id', 'label', 'level', 'hours', 'rarity', 'art', 'use', 'yieldPerCell', 'plantXP', 'harvestXP', 'totalXP'];
   const animalFields = ['id', 'label', 'level', 'rarity', 'hours', 'mealsToAdult', 'mealPortions', 'feed', 'feedXP', 'adultClaimXP', 'cycleXP', 'stageMeals', 'stageXP', 'minAdultDays', 'produce', 'producePerCycle', 'art'];

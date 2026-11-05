@@ -828,13 +828,17 @@ export async function createGarden(canvas, options = {}) {
   }
   const animation = createAnimationRuntime();
 
-  const requestedFiles = new Set();
+  const requestedFiles = new Set(), DEFERRED_RETRY_MS = 5000;
   let elfList = []; // last drawn gia tinh, for taps
   const elfCheers = {};
   function imageFor(file) {
     if (images.has(file)) return images.get(file);
     if (deferredFiles.has(file)) {
-      if (!requestedFiles.has(file)) { requestedFiles.add(file); loadImage(file).catch(() => {}); }
+      if (!requestedFiles.has(file)) {
+        requestedFiles.add(file);
+        // A dropped fetch must not leave the art missing until reload: a later frame asks again.
+        loadImage(file).catch(() => {}).then(() => { if (!images.has(file)) setTimeout(() => requestedFiles.delete(file), DEFERRED_RETRY_MS); });
+      }
       return null;
     }
     if (missing.has(file) && allowMissingAssets) return null;
@@ -1809,6 +1813,20 @@ export async function createGarden(canvas, options = {}) {
       }
       objects.push({kind: 'sign', id: `sign:${index}`, xy: [x, y], draw: ctx => plotSign(ctx, parts, x, y, px, rule)});
     }
+    // 25.0 S5: ma lùm chewing in the weeds of their plot, in the depth-sorted pass so the night tint covers them.
+    for (const plotIndex of duty?.gnomes ?? []) {
+      const plot = map.plots[plotIndex];
+      if (!plot || !plotIsVisible(state, plotIndex, logicalNow)) continue;
+      // On the bed's front half, between its centre and its front corner, so crops do not hide it.
+      const [cx, cy] = iso(...resolvedPlotPosition(plot)), [fx, fy] = plotCorners(plot, map)[2];
+      const x = Math.round(cx + (fx - cx) * 0.55), y = Math.round(cy + (fy - cy) * 0.55), tick = animationClock && clock ? animationClock : 0;
+      const {drawGnome, drawWeeds, gnomeFile, GNOME_FRAME} = duty.kit, file = gnomeFile(tick);
+      objects.push({kind: 'gnome', id: `gnome:${plotIndex}`, xy: [x, y + 2], draw: (ctx) => {
+        drawWeeds(ctx, x, y, plotIndex);
+        if (imageFor(file)) drawAsset({...GNOME_FRAME, file}, x, y + 2);
+        else drawGnome(ctx, x, y + 2, tick);
+      }});
+    }
     // Decorations sort by their footprint and characters, crops and creatures by their feet (depthCompare).
     for (const object of objects) object.ground ??= groundOf(object);
     objects.sort(depthCompare);
@@ -1851,18 +1869,6 @@ export async function createGarden(canvas, options = {}) {
       if (canvas.dataset) canvas.dataset.fire = options.fire.mode;
     } else if (canvas.dataset?.fire) delete canvas.dataset.fire;
 
-    // 25.0 S5: ma lùm chewing in the weeds of their plot.
-    for (const plotIndex of duty?.gnomes ?? []) {
-      const plot = map.plots[plotIndex];
-      if (!plot || !plotIsVisible(state, plotIndex, logicalNow)) continue;
-      // On the bed's front half, between its centre and its front corner, so crops do not hide it.
-      const [cx, cy] = iso(...resolvedPlotPosition(plot)), [fx, fy] = plotCorners(plot, map)[2];
-      const x = Math.round(cx + (fx - cx) * 0.55), y = Math.round(cy + (fy - cy) * 0.55), tick = animationClock && clock ? animationClock : 0;
-      const {drawGnome, drawWeeds, gnomeFile, GNOME_FRAME} = duty.kit, file = gnomeFile(tick);
-      drawWeeds(context, x, y, plotIndex);
-      if (imageFor(file)) drawAsset({...GNOME_FRAME, file}, x, y + 2);
-      else drawGnome(context, x, y + 2, tick);
-    }
     // A tapped gia tinh or friend says its line in a bubble over its head (owner 05/11/2026).
     if (said.xy && said.until > performance.now()) drawHagridSpeechBubble(context, said.xy[0], said.xy[1], said.text, {lift: 72, scale: labelScale});
 
@@ -1909,6 +1915,7 @@ export async function createGarden(canvas, options = {}) {
       if(world.x>=left-5&&world.x<=left+bounds.w+5&&world.y>=top-5&&world.y<=top+bounds.h+5)return {kind:'creature',species:actor.species,...(actor.guest?{guest:true}:{})};
     }
     for(const elf of [...elfList].sort((a,b)=>b.xy[1]-a.xy[1])){
+      if(deferredFiles.has(elf.asset.file)&&!images.has(elf.asset.file))continue; // art still loading: nothing to tap yet
       const {xy,asset,flip}=elf,b=asset.bounds,left=flip?xy[0]+asset.pivotX-b.x-b.w:xy[0]-asset.pivotX+b.x,top=xy[1]-asset.pivotY+b.y;
       if(world.x>=left-5&&world.x<=left+b.w+5&&world.y>=top-5&&world.y<=top+b.h+5)return {kind:'elf',id:elf.id,friend:elf.friend};
     }

@@ -219,6 +219,9 @@ function expansionCapacity(built) {
 }
 
 /** Return the number of housed creatures allowed by the claimed pen builds. */
+/** Plots on the player's road: bậc Tận Sức adds six to the first twelve. */
+export const plotLimit = (state) => (state.level >= TAN_SUC_LEVEL ? 18 : 12);
+
 export function housingCapacity(state) {
   const base = normalizeState(state);
   return expansionCapacity(base.built);
