@@ -101,8 +101,9 @@ function fireworks(xy, clock, seed) {
 
 /** The visit at `now`: visitors (kind 'elf', drawn and picked like gia tinh) go into `elves`; returns the Quaffle and
  * fireworks (objects with their own `draw`). */
-export function friendObjects(iso, clock, now = Date.now(), elves = [], {night = false, winter = false, cheering = {}} = {}) {
-  const visit = !night && friendVisit(now);
+export function friendObjects(iso, clock, now = Date.now(), elves = [], {night = false, winter = false, cheering = {}, all = false} = {}) {
+  // `all` (QA ?friends=all): every friend at once, for review.
+  const visit = !night && (all ? {group: 'all', members: Object.keys(FRIENDS)} : friendVisit(now));
   if (!visit) return [];
   const people = visit.members.map((id) => {
     let [col, row, pose, flip, lift] = friendPose(id, clock, {winter});
@@ -111,12 +112,14 @@ export function friendObjects(iso, clock, now = Date.now(), elves = [], {night =
     return {kind: 'elf', id, friend: true, xy: [Math.round(x), Math.round(y) - lift], flip, asset: {...FRAME, file: friendFile(id, pose)}};
   });
   elves.push(...people);
-  if (clock > 0 && visit.group === 'harry-ron') {
-    const [harry, ron] = people, hand = (o) => [o.xy[0] + (o.flip ? 14 : -14), o.xy[1] - 44];
+  const fx = [];
+  if (clock > 0 && visit.members.includes('harry')) {
+    const [harry, ron] = ['harry', 'ron'].map((id) => people.find((o) => o.id === id)), hand = (o) => [o.xy[0] + (o.flip ? 14 : -14), o.xy[1] - 44];
     const harryThrows = Math.floor(clock / PASS_MS) % 2 === 0;
-    return [quaffle(...(harryThrows ? [hand(harry), hand(ron)] : [hand(ron), hand(harry)]), clock)];
+    fx.push(quaffle(...(harryThrows ? [hand(harry), hand(ron)] : [hand(ron), hand(harry)]), clock));
   }
-  return clock > 0 && visit.group === 'twins' ? people.map((o, i) => fireworks(o.xy, clock, i)).filter(Boolean) : [];
+  if (clock > 0) fx.push(...people.filter((o) => o.id === 'fred' || o.id === 'george').map((o, i) => fireworks(o.xy, clock, i)).filter(Boolean));
+  return fx;
 }
 
 // The line a tap shows: the n-th tap on that friend picks the n-th line, looping.

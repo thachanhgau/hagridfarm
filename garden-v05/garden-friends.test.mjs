@@ -104,3 +104,9 @@ test('a tap says a line and asks the server for the gift only while one is still
   assert.deepEqual(said.slice(0, 2), ['Luna: «' + FRIENDS.luna.lines[0] + '»', 'Luna: «' + FRIENDS.luna.lines[1] + '»']);
   assert.equal(cheers.length, 4);
 });
+
+test('QA ?friends=all draws all seven at once, with the Quaffle and fireworks', () => {
+  const people = [], fx = friendObjects(iso, 300, DAY - 1, people, {all: true});
+  assert.deepEqual(people.map((o) => o.id).sort(), Object.keys(FRIENDS).sort());
+  assert.ok(fx.length >= 2);
+});
