@@ -8007,6 +8007,690 @@
    "roomierFootprint": null
   },
   {
+   "group": "store-decoration",
+   "id": "sp_xmas_firebolt",
+   "label": "Cây chổi Tia Chớp quà Giáng sinh",
+   "facing": "default",
+   "file": "decor-assets/native/sp_xmas_firebolt.png",
+   "anchor": "foot",
+   "footprint": [
+    1,
+    1
+   ],
+   "ground": {
+    "width": 64,
+    "height": 32
+   },
+   "canvas": [
+    64,
+    128
+   ],
+   "pivot": [
+    32,
+    112
+   ],
+   "ink": {
+    "x": 4,
+    "y": 23,
+    "w": 56,
+    "h": 89,
+    "foot": 112
+   },
+   "allowed": {
+    "left": 0,
+    "right": 64,
+    "centreY": 112,
+    "frontY": 128
+   },
+   "flat2x2": 0.093,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     64,
+     112
+    ],
+    "pivot": [
+     32,
+     96
+    ],
+    "ink": [
+     56,
+     89
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_firebolt",
+   "label": "Cây chổi Tia Chớp quà Giáng sinh",
+   "facing": "right",
+   "file": "decor-assets/native/sp_xmas_firebolt_right.png",
+   "anchor": "foot",
+   "footprint": [
+    1,
+    1
+   ],
+   "ground": {
+    "width": 64,
+    "height": 32
+   },
+   "canvas": [
+    64,
+    128
+   ],
+   "pivot": [
+    32,
+    112
+   ],
+   "ink": {
+    "x": 4,
+    "y": 24,
+    "w": 56,
+    "h": 88,
+    "foot": 112
+   },
+   "allowed": {
+    "left": 0,
+    "right": 64,
+    "centreY": 112,
+    "frontY": 128
+   },
+   "flat2x2": 0.143,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     64,
+     112
+    ],
+    "pivot": [
+     32,
+     96
+    ],
+    "ink": [
+     56,
+     88
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_butterbeer",
+   "label": "Quầy bia bơ quán Ba Cây Chổi",
+   "facing": "default",
+   "file": "decor-assets/native/sp_xmas_butterbeer.png",
+   "anchor": "foot",
+   "footprint": [
+    1,
+    2
+   ],
+   "ground": {
+    "width": 96,
+    "height": 48
+   },
+   "canvas": [
+    96,
+    112
+   ],
+   "pivot": [
+    48,
+    96
+   ],
+   "ink": {
+    "x": 4,
+    "y": 26,
+    "w": 88,
+    "h": 70,
+    "foot": 96
+   },
+   "allowed": {
+    "left": 0,
+    "right": 96,
+    "centreY": 80,
+    "frontY": 104
+   },
+   "flat2x2": 0.233,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     96,
+     96
+    ],
+    "pivot": [
+     48,
+     80
+    ],
+    "ink": [
+     88,
+     70
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_butterbeer",
+   "label": "Quầy bia bơ quán Ba Cây Chổi",
+   "facing": "right",
+   "file": "decor-assets/native/sp_xmas_butterbeer_right.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    1
+   ],
+   "ground": {
+    "width": 96,
+    "height": 48
+   },
+   "canvas": [
+    96,
+    112
+   ],
+   "pivot": [
+    48,
+    96
+   ],
+   "ink": {
+    "x": 14,
+    "y": 4,
+    "w": 69,
+    "h": 92,
+    "foot": 96
+   },
+   "allowed": {
+    "left": 0,
+    "right": 96,
+    "centreY": 80,
+    "frontY": 104
+   },
+   "flat2x2": 0.256,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     96,
+     112
+    ],
+    "pivot": [
+     48,
+     96
+    ],
+    "ink": [
+     69,
+     92
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_honeydukes",
+   "label": "Tủ kẹo tiệm Công tước Mật",
+   "facing": "default",
+   "file": "decor-assets/native/sp_xmas_honeydukes.png",
+   "anchor": "foot",
+   "footprint": [
+    1,
+    2
+   ],
+   "ground": {
+    "width": 96,
+    "height": 48
+   },
+   "canvas": [
+    96,
+    144
+   ],
+   "pivot": [
+    48,
+    128
+   ],
+   "ink": {
+    "x": 9,
+    "y": 4,
+    "w": 78,
+    "h": 124,
+    "foot": 128
+   },
+   "allowed": {
+    "left": 0,
+    "right": 96,
+    "centreY": 112,
+    "frontY": 136
+   },
+   "flat2x2": 0.188,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     96,
+     144
+    ],
+    "pivot": [
+     48,
+     128
+    ],
+    "ink": [
+     78,
+     124
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_honeydukes",
+   "label": "Tủ kẹo tiệm Công tước Mật",
+   "facing": "right",
+   "file": "decor-assets/native/sp_xmas_honeydukes_right.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    1
+   ],
+   "ground": {
+    "width": 96,
+    "height": 48
+   },
+   "canvas": [
+    96,
+    144
+   ],
+   "pivot": [
+    48,
+    128
+   ],
+   "ink": {
+    "x": 16,
+    "y": 4,
+    "w": 64,
+    "h": 124,
+    "foot": 128
+   },
+   "allowed": {
+    "left": 0,
+    "right": 96,
+    "centreY": 112,
+    "frontY": 136
+   },
+   "flat2x2": 0.18,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     96,
+     144
+    ],
+    "pivot": [
+     48,
+     128
+    ],
+    "ink": [
+     64,
+     124
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_invisibility_cloak",
+   "label": "Áo khoác tàng hình trong gói quà",
+   "facing": "default",
+   "file": "decor-assets/native/sp_xmas_invisibility_cloak.png",
+   "anchor": "foot",
+   "footprint": [
+    1,
+    1
+   ],
+   "ground": {
+    "width": 64,
+    "height": 32
+   },
+   "canvas": [
+    64,
+    96
+   ],
+   "pivot": [
+    32,
+    80
+   ],
+   "ink": {
+    "x": 4,
+    "y": 23,
+    "w": 56,
+    "h": 57,
+    "foot": 80
+   },
+   "allowed": {
+    "left": 0,
+    "right": 64,
+    "centreY": 80,
+    "frontY": 96
+   },
+   "flat2x2": 0.318,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     64,
+     80
+    ],
+    "pivot": [
+     32,
+     64
+    ],
+    "ink": [
+     56,
+     57
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_invisibility_cloak",
+   "label": "Áo khoác tàng hình trong gói quà",
+   "facing": "right",
+   "file": "decor-assets/native/sp_xmas_invisibility_cloak_right.png",
+   "anchor": "foot",
+   "footprint": [
+    1,
+    1
+   ],
+   "ground": {
+    "width": 64,
+    "height": 32
+   },
+   "canvas": [
+    64,
+    96
+   ],
+   "pivot": [
+    32,
+    80
+   ],
+   "ink": {
+    "x": 4,
+    "y": 12,
+    "w": 56,
+    "h": 68,
+    "foot": 80
+   },
+   "allowed": {
+    "left": 0,
+    "right": 64,
+    "centreY": 80,
+    "frontY": 96
+   },
+   "flat2x2": 0.296,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     64,
+     96
+    ],
+    "pivot": [
+     32,
+     80
+    ],
+    "ink": [
+     56,
+     68
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_weasley_tree",
+   "label": "Cây thông Giáng sinh nhà Weasley",
+   "facing": "default",
+   "file": "decor-assets/native/sp_xmas_weasley_tree.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    208
+   ],
+   "pivot": [
+    64,
+    192
+   ],
+   "ink": {
+    "x": 8,
+    "y": 8,
+    "w": 112,
+    "h": 184,
+    "foot": 192
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 176,
+    "frontY": 208
+   },
+   "flat2x2": 0.485,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     208
+    ],
+    "pivot": [
+     64,
+     192
+    ],
+    "ink": [
+     112,
+     184
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_weasley_tree",
+   "label": "Cây thông Giáng sinh nhà Weasley",
+   "facing": "right",
+   "file": "decor-assets/native/sp_xmas_weasley_tree_right.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    208
+   ],
+   "pivot": [
+    64,
+    192
+   ],
+   "ink": {
+    "x": 13,
+    "y": 8,
+    "w": 103,
+    "h": 184,
+    "foot": 192
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 176,
+    "frontY": 208
+   },
+   "flat2x2": 0.508,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     208
+    ],
+    "pivot": [
+     64,
+     192
+    ],
+    "ink": [
+     103,
+     184
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_yule_roses",
+   "label": "Vườn hồng đêm Dạ vũ",
+   "facing": "default",
+   "file": "decor-assets/native/sp_xmas_yule_roses.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    3
+   ],
+   "ground": {
+    "width": 160,
+    "height": 80
+   },
+   "canvas": [
+    160,
+    176
+   ],
+   "pivot": [
+    80,
+    160
+   ],
+   "ink": {
+    "x": 4,
+    "y": 62,
+    "w": 152,
+    "h": 98,
+    "foot": 160
+   },
+   "allowed": {
+    "left": 0,
+    "right": 160,
+    "centreY": 128,
+    "frontY": 168
+   },
+   "flat2x2": 0.394,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     160,
+     128
+    ],
+    "pivot": [
+     80,
+     112
+    ],
+    "ink": [
+     152,
+     98
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "sp_xmas_yule_roses",
+   "label": "Vườn hồng đêm Dạ vũ",
+   "facing": "right",
+   "file": "decor-assets/native/sp_xmas_yule_roses_right.png",
+   "anchor": "foot",
+   "footprint": [
+    3,
+    2
+   ],
+   "ground": {
+    "width": 160,
+    "height": 80
+   },
+   "canvas": [
+    160,
+    176
+   ],
+   "pivot": [
+    80,
+    160
+   ],
+   "ink": {
+    "x": 4,
+    "y": 63,
+    "w": 152,
+    "h": 97,
+    "foot": 160
+   },
+   "allowed": {
+    "left": 0,
+    "right": 160,
+    "centreY": 128,
+    "frontY": 168
+   },
+   "flat2x2": 0.391,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     160,
+     128
+    ],
+    "pivot": [
+     80,
+     112
+    ],
+    "ink": [
+     152,
+     97
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
    "group": "earned-decoration",
    "id": "decoration-3",
    "label": "Viền luống đá cuội",

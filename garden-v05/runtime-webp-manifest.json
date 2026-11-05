@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "68aafe588a7f",
+  "revision": "aa43cd3e4acf",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -11182,6 +11182,186 @@
       "sha256": "07859b88b95bca737152a4566f752b830bf5e3d49a9ea5ee2a657c736768f802"
     },
     {
+      "source": "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_butterbeer_atlas.webp",
+      "width": 384,
+      "height": 224,
+      "sourceBytes": 6876,
+      "bytes": 3226,
+      "sourceSha256": "fcbc43960b5982cbb7a733ff310687c135de1b0c4b3cf7fbc3ad8fcec350d1d1",
+      "sha256": "18b6214150367d8ac13fce2aa4ca8146f73bfa28668e983d45cea1bc97786b68"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_butterbeer_right.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_butterbeer_right.webp",
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 2427,
+      "bytes": 1528,
+      "sourceSha256": "c0719009cd61de34661eeed45fc858c0a17fef02482dbffdc958d27245e10e3e",
+      "sha256": "9173c25cc4578b4bf25455f2b1899b3c45f8e7a58102fea737e8cffbb9b73b5b"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_butterbeer.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_butterbeer.webp",
+      "width": 96,
+      "height": 112,
+      "sourceBytes": 2454,
+      "bytes": 1578,
+      "sourceSha256": "1e97ccf7dc4d8347b183e2ffc580d1b90b8e85d25835612172269721bd2446dc",
+      "sha256": "d6d5ccf629bde888afa952c3438b6d7d724cce0b517b06fe71978334e52c2ade"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_firebolt_atlas.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_firebolt_atlas.webp",
+      "width": 256,
+      "height": 256,
+      "sourceBytes": 4873,
+      "bytes": 2240,
+      "sourceSha256": "8848a53b5a157e537aa3753ed3ec3727762a695dab8840a675f850872f109cae",
+      "sha256": "5c3d3e445715800b0828f617b9617d9128858059a0439f686027a1eeceb0131b"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_firebolt_right.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_firebolt_right.webp",
+      "width": 64,
+      "height": 128,
+      "sourceBytes": 1367,
+      "bytes": 808,
+      "sourceSha256": "59b514457cbaae89f054b23da775f869f661c2224c18bd45965519fdc8058922",
+      "sha256": "22824dac916564d4561bbae82d667ac31c4ee608fd36bff66f98982722ee73a0"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_firebolt.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_firebolt.webp",
+      "width": 64,
+      "height": 128,
+      "sourceBytes": 1714,
+      "bytes": 1010,
+      "sourceSha256": "5a8d9a10186c281c7b683e6fa666e9b318418374de0f905327268dd5721dc753",
+      "sha256": "90932d05988d239839a212da770a001cc4e102bb31025fe28f34327a6421f08e"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_honeydukes_atlas.webp",
+      "width": 384,
+      "height": 288,
+      "sourceBytes": 11528,
+      "bytes": 5856,
+      "sourceSha256": "38766e7415058a2f2c8968ab8c917061b243cfa9410c4871ea02223fef180729",
+      "sha256": "9b937a5727701f18cbcaadfb303da383f59bc7c93fd27768c79b5e2fff91361b"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_honeydukes_right.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_honeydukes_right.webp",
+      "width": 96,
+      "height": 144,
+      "sourceBytes": 3663,
+      "bytes": 2324,
+      "sourceSha256": "5f2a6403e05f195e2d5e8d79fee963560343abb8d9f92884331146929ef20072",
+      "sha256": "45e361b84fadc819f24737c0b7f8f3e60bdbe75a6dcc3a4dcb05d86fde8385ca"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_honeydukes.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_honeydukes.webp",
+      "width": 96,
+      "height": 144,
+      "sourceBytes": 4100,
+      "bytes": 2736,
+      "sourceSha256": "434f791bd881e9e0a9c96d7ad35703648830539db321dd5dee58693645c6ef5f",
+      "sha256": "862bd25ab6241eb1f9d8eafcaa7e8df2aefa99ea8f0650308b710369fcdc38e4"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_invisibility_cloak_atlas.webp",
+      "width": 256,
+      "height": 192,
+      "sourceBytes": 4165,
+      "bytes": 2138,
+      "sourceSha256": "2c511422e90f2a9e4148863963212f77a320a890858eb8da78dbd9dcec66f9e2",
+      "sha256": "630300a0a19f77036af29b6fe742f3007d9ea3d27e98e0dcc7b75dcda4448dbd"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_invisibility_cloak_right.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_invisibility_cloak_right.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1510,
+      "bytes": 986,
+      "sourceSha256": "0b39787d4bef2427f4f7959a13bffc5f4159893eaab8ceabaa235168ad0590fc",
+      "sha256": "9580e192fc5744865a0b39efdad08b07e301444edee2a4acd87f2df4625433b8"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_invisibility_cloak.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_invisibility_cloak.webp",
+      "width": 64,
+      "height": 96,
+      "sourceBytes": 1340,
+      "bytes": 902,
+      "sourceSha256": "01d313839f4a0c24c868404d590d3496f8bd9ff3cedb10d4cb2f8cfd3bed9f51",
+      "sha256": "9ef7738ab5faaf2447017918c908599fe71cf2b39c4a5823fb7885fd8fc0dfe2"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_weasley_tree_atlas.webp",
+      "width": 512,
+      "height": 416,
+      "sourceBytes": 15153,
+      "bytes": 6882,
+      "sourceSha256": "ef7aebbeafa0d958fa2be610c255c6fa82b8c82b4c003e474ed057a843e055a4",
+      "sha256": "b3dd9e7063f96e30064ae8f048cc73d818cc67a70fb839bf9bfd05cf40898441"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_weasley_tree_right.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_weasley_tree_right.webp",
+      "width": 128,
+      "height": 208,
+      "sourceBytes": 4511,
+      "bytes": 2856,
+      "sourceSha256": "68afd94db2f0ea33f2bea9c22916caff37a72c0fa181eafc161b41df5ce23cb7",
+      "sha256": "43c35f0288d783e4d73b7097982d1a673f8d6cb4a8c10df6f1ecfc263056be0b"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_weasley_tree.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_weasley_tree.webp",
+      "width": 128,
+      "height": 208,
+      "sourceBytes": 5139,
+      "bytes": 3406,
+      "sourceSha256": "7c042120ecd7621636fec70c0d221f09d5817297c8817e3ff347a9c90b300ec9",
+      "sha256": "3b676d541540d217bf66a4bc236e7d276527ce2d6e2e77f11afbe7685a19eff8"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_yule_roses_atlas.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_yule_roses_atlas.webp",
+      "width": 640,
+      "height": 352,
+      "sourceBytes": 12849,
+      "bytes": 6080,
+      "sourceSha256": "3a1fe36f189d80d8100a7a10f595359fe8749e3fb488d4143f2efeee0d4e5468",
+      "sha256": "4b0d1a7d7a0987136ca2155662c02f698d7aaedf532222d1ce94d3f7435af4e4"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_yule_roses_right.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_yule_roses_right.webp",
+      "width": 160,
+      "height": 176,
+      "sourceBytes": 4140,
+      "bytes": 2640,
+      "sourceSha256": "fef6990e50f0c570efb2e37ff08397de3cf2ae79482d284a250843f1fcb470ed",
+      "sha256": "25f9adfee20b5efd85fb55aa0e1ddd1cc6e0f82ab869e16d1eea63553c19518e"
+    },
+    {
+      "source": "decor-assets/native/sp_xmas_yule_roses.png",
+      "file": "runtime-webp/decor-assets/native/sp_xmas_yule_roses.webp",
+      "width": 160,
+      "height": 176,
+      "sourceBytes": 4319,
+      "bytes": 2890,
+      "sourceSha256": "9bdce440e3be390b4ab37dcc7540002b36f7fc9f4c60cf9c3d21db6ba2ca9722",
+      "sha256": "aac7d4cc45a1c77bba86c18ba1a3da6838cc30e6ae473f147454038c2c2b6def"
+    },
+    {
       "source": "environment/elves/dobby/carry.png",
       "file": "runtime-webp/environment/elves/dobby/carry.webp",
       "width": 80,
@@ -12545,11 +12725,11 @@
     }
   ],
   "totals": {
-    "converted": 1248,
+    "converted": 1266,
     "existingWebp": 8,
-    "originalBytes": 4509088,
-    "webpBytes": 3011546,
-    "savedBytes": 1497542,
-    "savedPercent": 33.21
+    "originalBytes": 4601216,
+    "webpBytes": 3061632,
+    "savedBytes": 1539584,
+    "savedPercent": 33.46
   }
 }

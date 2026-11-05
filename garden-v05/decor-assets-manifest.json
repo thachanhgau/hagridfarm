@@ -5930,6 +5930,654 @@
       "motion": "bubbles",
       "framesIdentical": true,
       "nativeSha256": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258"
+    },
+    {
+      "id": "sp_xmas_firebolt",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cây chổi Tia Chớp quà Giáng sinh",
+      "group": "Giáng sinh",
+      "file": "decor-assets/native/sp_xmas_firebolt.png",
+      "rightFile": "decor-assets/native/sp_xmas_firebolt_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_firebolt_atlas.png",
+        "decor-assets/native/sp_xmas_firebolt_atlas.png",
+        "decor-assets/native/sp_xmas_firebolt_atlas.png",
+        "decor-assets/native/sp_xmas_firebolt_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_firebolt_atlas.png",
+        "decor-assets/native/sp_xmas_firebolt_atlas.png",
+        "decor-assets/native/sp_xmas_firebolt_atlas.png",
+        "decor-assets/native/sp_xmas_firebolt_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 128
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 128
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 128
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 128
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 128,
+          "w": 64,
+          "h": 128
+        },
+        {
+          "x": 64,
+          "y": 128,
+          "w": 64,
+          "h": 128
+        },
+        {
+          "x": 128,
+          "y": 128,
+          "w": 64,
+          "h": 128
+        },
+        {
+          "x": 192,
+          "y": 128,
+          "w": 64,
+          "h": 128
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 128,
+      "pivotX": 32,
+      "pivotY": 112,
+      "bounds": {
+        "x": 4,
+        "y": 23,
+        "w": 56,
+        "h": 89
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 24,
+        "w": 56,
+        "h": 88
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "5a8d9a10186c281c7b683e6fa666e9b318418374de0f905327268dd5721dc753"
+    },
+    {
+      "id": "sp_xmas_butterbeer",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Quầy bia bơ quán Ba Cây Chổi",
+      "group": "Giáng sinh",
+      "file": "decor-assets/native/sp_xmas_butterbeer.png",
+      "rightFile": "decor-assets/native/sp_xmas_butterbeer_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 4,
+        "y": 26,
+        "w": 88,
+        "h": 70
+      },
+      "rightBounds": {
+        "x": 14,
+        "y": 4,
+        "w": 69,
+        "h": 92
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "1e97ccf7dc4d8347b183e2ffc580d1b90b8e85d25835612172269721bd2446dc"
+    },
+    {
+      "id": "sp_xmas_honeydukes",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Tủ kẹo tiệm Công tước Mật",
+      "group": "Giáng sinh",
+      "file": "decor-assets/native/sp_xmas_honeydukes.png",
+      "rightFile": "decor-assets/native/sp_xmas_honeydukes_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 96,
+          "y": 144,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 192,
+          "y": 144,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 288,
+          "y": 144,
+          "w": 96,
+          "h": 144
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 144,
+      "pivotX": 48,
+      "pivotY": 128,
+      "bounds": {
+        "x": 9,
+        "y": 4,
+        "w": 78,
+        "h": 124
+      },
+      "rightBounds": {
+        "x": 16,
+        "y": 4,
+        "w": 64,
+        "h": 124
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "434f791bd881e9e0a9c96d7ad35703648830539db321dd5dee58693645c6ef5f"
+    },
+    {
+      "id": "sp_xmas_invisibility_cloak",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Áo khoác tàng hình trong gói quà",
+      "group": "Giáng sinh",
+      "file": "decor-assets/native/sp_xmas_invisibility_cloak.png",
+      "rightFile": "decor-assets/native/sp_xmas_invisibility_cloak_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png",
+        "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png",
+        "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png",
+        "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png",
+        "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png",
+        "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png",
+        "decor-assets/native/sp_xmas_invisibility_cloak_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "bounds": {
+        "x": 4,
+        "y": 23,
+        "w": 56,
+        "h": 57
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 12,
+        "w": 56,
+        "h": 68
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "01d313839f4a0c24c868404d590d3496f8bd9ff3cedb10d4cb2f8cfd3bed9f51"
+    },
+    {
+      "id": "sp_xmas_weasley_tree",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Cây thông Giáng sinh nhà Weasley",
+      "group": "Giáng sinh",
+      "file": "decor-assets/native/sp_xmas_weasley_tree.png",
+      "rightFile": "decor-assets/native/sp_xmas_weasley_tree_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 128,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 256,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 208,
+      "pivotX": 64,
+      "pivotY": 192,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "w": 112,
+        "h": 184
+      },
+      "rightBounds": {
+        "x": 13,
+        "y": 8,
+        "w": 103,
+        "h": 184
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "7c042120ecd7621636fec70c0d221f09d5817297c8817e3ff347a9c90b300ec9"
+    },
+    {
+      "id": "sp_xmas_yule_roses",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Vườn hồng đêm Dạ vũ",
+      "group": "Giáng sinh",
+      "file": "decor-assets/native/sp_xmas_yule_roses.png",
+      "rightFile": "decor-assets/native/sp_xmas_yule_roses_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_yule_roses_atlas.png",
+        "decor-assets/native/sp_xmas_yule_roses_atlas.png",
+        "decor-assets/native/sp_xmas_yule_roses_atlas.png",
+        "decor-assets/native/sp_xmas_yule_roses_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_yule_roses_atlas.png",
+        "decor-assets/native/sp_xmas_yule_roses_atlas.png",
+        "decor-assets/native/sp_xmas_yule_roses_atlas.png",
+        "decor-assets/native/sp_xmas_yule_roses_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 176
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 160,
+          "h": 176
+        },
+        {
+          "x": 320,
+          "y": 0,
+          "w": 160,
+          "h": 176
+        },
+        {
+          "x": 480,
+          "y": 0,
+          "w": 160,
+          "h": 176
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 176,
+          "w": 160,
+          "h": 176
+        },
+        {
+          "x": 160,
+          "y": 176,
+          "w": 160,
+          "h": 176
+        },
+        {
+          "x": 320,
+          "y": 176,
+          "w": 160,
+          "h": 176
+        },
+        {
+          "x": 480,
+          "y": 176,
+          "w": 160,
+          "h": 176
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 160,
+      "height": 176,
+      "pivotX": 80,
+      "pivotY": 160,
+      "bounds": {
+        "x": 4,
+        "y": 62,
+        "w": 152,
+        "h": 98
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 63,
+        "w": 152,
+        "h": 97
+      },
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "9bdce440e3be390b4ab37dcc7540002b36f7fc9f4c60cf9c3d21db6ba2ca9722"
     }
   ]
 }

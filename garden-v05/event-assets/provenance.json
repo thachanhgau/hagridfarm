@@ -1,14 +1,14 @@
 {
   "schema": "hagrid-farm.decor-assets.provenance.v1",
-  "generatedAt": "2026-11-04T06:52:07.906Z",
+  "generatedAt": "2026-11-05T03:55:46.995Z",
   "tool": "build-assets.mjs",
   "specs": {
     "file": "specs.json",
-    "sha256": "5749454d4f459aed787fdb07b4642cf606267ae7e0679cd70464e5363ff5599a"
+    "sha256": "4f740d4d2204f40ee17e4d387d6f1c2f9248422ac1b29796582154623a25241b"
   },
   "itemPalettes": {
     "file": "item-palettes.json",
-    "sha256": "519731a514665c90fe607a3bc0672fae0dd1f0f73da537d5749852b204a7bc20"
+    "sha256": "4710462b27ab5bf9f0fb74b7d4d760178e30ecf6f9af6e2f2abba65de778379b"
   },
   "sourceContract": "Masters are preserved under masters/; each contains a real left default and right alternate view, separated at a verified transparent gap.",
   "processing": {
@@ -402,6 +402,648 @@
         "thumbnails/2x/ev_kitchen_corner_right.png": "98e582870249c1d38665b1bb41939851c81a025d8db6109f4cd822c78d50be1c",
         "thumbnails/3x/ev_kitchen_corner.png": "eb8f76c87e6ea2163cc660a6e6e9eb21f6550f1958d75979e2b2a02de8b1bf5e",
         "thumbnails/3x/ev_kitchen_corner_right.png": "357917e75a8f38594f49cf3b15a84b16b8c507b02b0e43a38620f90cb626b34f"
+      }
+    },
+    {
+      "id": "sp_xmas_firebolt",
+      "source": "masters/sp_xmas_firebolt.png",
+      "sourceSha256": "baedf5d1cc38f11a96b1c3f6f59de18beaf03e86a5b9ba7ffbe4022a4390bc53",
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1024,
+        "splitX": 767,
+        "transparentGap": {
+          "start": 634,
+          "end": 900
+        },
+        "defaultWidth": 767,
+        "alternateWidth": 769,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 38,
+          "y": 33,
+          "w": 596,
+          "h": 947,
+          "count": 205670
+        },
+        "alternate": {
+          "x": 134,
+          "y": 33,
+          "w": 593,
+          "h": 933,
+          "count": 154691
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "warm"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 24,
+              "y": 71,
+              "w": 14,
+              "h": 20
+            },
+            "pixelCount": 125,
+            "mappableCount": 125,
+            "maxPixels": 227,
+            "rootBand": 96
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 25,
+              "y": 76,
+              "w": 7,
+              "h": 13
+            },
+            "pixelCount": 55,
+            "mappableCount": 55,
+            "maxPixels": 173,
+            "rootBand": 96
+          }
+        }
+      },
+      "outputs": {
+        "native/sp_xmas_firebolt.png": "5a8d9a10186c281c7b683e6fa666e9b318418374de0f905327268dd5721dc753",
+        "native/sp_xmas_firebolt_right.png": "59b514457cbaae89f054b23da775f869f661c2224c18bd45965519fdc8058922",
+        "native/sp_xmas_firebolt_f0.png": "5a8d9a10186c281c7b683e6fa666e9b318418374de0f905327268dd5721dc753",
+        "native/sp_xmas_firebolt_f1.png": "1a89acf03f51747f471f7bd3e5e52d43fcb452227e46a0f2c952dfdbdec6592d",
+        "native/sp_xmas_firebolt_f2.png": "29bfb9ba448a8a689bb808068b288c3b1508621e05e7271239422a83f56c2be9",
+        "native/sp_xmas_firebolt_f3.png": "5a8d9a10186c281c7b683e6fa666e9b318418374de0f905327268dd5721dc753",
+        "native/sp_xmas_firebolt_right_f0.png": "59b514457cbaae89f054b23da775f869f661c2224c18bd45965519fdc8058922",
+        "native/sp_xmas_firebolt_right_f1.png": "952b23cd65e274c6b276f9465b7129b023eab327e62421a16dc58f686fa66e73",
+        "native/sp_xmas_firebolt_right_f2.png": "754602fd17b820a473728ae2d47c0685386e3b356bcda344f76f496f19ff6eba",
+        "native/sp_xmas_firebolt_right_f3.png": "59b514457cbaae89f054b23da775f869f661c2224c18bd45965519fdc8058922",
+        "spritesheets/sp_xmas_firebolt.png": "8848a53b5a157e537aa3753ed3ec3727762a695dab8840a675f850872f109cae",
+        "thumbnails/2x/sp_xmas_firebolt.png": "4fed6be2a2e5f0c987b92fc1df5ff5e120c13b8bb101fbe6305e4ae29605457e",
+        "thumbnails/2x/sp_xmas_firebolt_right.png": "d4d5f6bf906cb48fa23f2cf22e62164215914c01c762a05a154f91b8bbc3d4ac",
+        "thumbnails/3x/sp_xmas_firebolt.png": "7cd1f88621adb2bd0b471e0cff05fd2600bfd0087ec0a5b298d2d234ced5dd7f",
+        "thumbnails/3x/sp_xmas_firebolt_right.png": "4d26d3c6bd6c72488f189909e24d126e42f23afcb9cda64e34d940c5bd6d27ab"
+      }
+    },
+    {
+      "id": "sp_xmas_butterbeer",
+      "source": "masters/sp_xmas_butterbeer.png",
+      "sourceSha256": "c78af38bf8f7db1548967717b2ad21ba2e6d9294d95d25a68b1c13d058c2d39b",
+      "sourceCanvas": {
+        "width": 1774,
+        "height": 887,
+        "splitX": 937,
+        "transparentGap": {
+          "start": 742,
+          "end": 1131
+        },
+        "defaultWidth": 937,
+        "alternateWidth": 837,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 62,
+          "y": 243,
+          "w": 680,
+          "h": 539,
+          "count": 243113
+        },
+        "alternate": {
+          "x": 195,
+          "y": 176,
+          "w": 478,
+          "h": 638,
+          "count": 179820
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "warm",
+          "stone"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 24,
+              "y": 47,
+              "w": 12,
+              "h": 9
+            },
+            "pixelCount": 60,
+            "mappableCount": 60,
+            "maxPixels": 504,
+            "rootBand": 84
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 30,
+              "y": 33,
+              "w": 12,
+              "h": 7
+            },
+            "pixelCount": 46,
+            "mappableCount": 46,
+            "maxPixels": 465,
+            "rootBand": 84
+          }
+        }
+      },
+      "outputs": {
+        "native/sp_xmas_butterbeer.png": "1e97ccf7dc4d8347b183e2ffc580d1b90b8e85d25835612172269721bd2446dc",
+        "native/sp_xmas_butterbeer_right.png": "c0719009cd61de34661eeed45fc858c0a17fef02482dbffdc958d27245e10e3e",
+        "native/sp_xmas_butterbeer_f0.png": "1e97ccf7dc4d8347b183e2ffc580d1b90b8e85d25835612172269721bd2446dc",
+        "native/sp_xmas_butterbeer_f1.png": "01a2663fa6f621239d3cddadf0ad031aaf1dd5b5049740e79c45502f5bb34c59",
+        "native/sp_xmas_butterbeer_f2.png": "01a2663fa6f621239d3cddadf0ad031aaf1dd5b5049740e79c45502f5bb34c59",
+        "native/sp_xmas_butterbeer_f3.png": "1e97ccf7dc4d8347b183e2ffc580d1b90b8e85d25835612172269721bd2446dc",
+        "native/sp_xmas_butterbeer_right_f0.png": "c0719009cd61de34661eeed45fc858c0a17fef02482dbffdc958d27245e10e3e",
+        "native/sp_xmas_butterbeer_right_f1.png": "2a5409abc4434957d7bb369fa1941c41d576ecabad4c502a093f5065b261b4e8",
+        "native/sp_xmas_butterbeer_right_f2.png": "2a5409abc4434957d7bb369fa1941c41d576ecabad4c502a093f5065b261b4e8",
+        "native/sp_xmas_butterbeer_right_f3.png": "c0719009cd61de34661eeed45fc858c0a17fef02482dbffdc958d27245e10e3e",
+        "spritesheets/sp_xmas_butterbeer.png": "fcbc43960b5982cbb7a733ff310687c135de1b0c4b3cf7fbc3ad8fcec350d1d1",
+        "thumbnails/2x/sp_xmas_butterbeer.png": "5aa81d597d29732a9366be9cb1b7e2525d74dd2455fb4a5dbd52a52ac3ee2116",
+        "thumbnails/2x/sp_xmas_butterbeer_right.png": "004cf1cbca0979f6fd215efe226d5b4581305d3055550e06e48942592d07e11a",
+        "thumbnails/3x/sp_xmas_butterbeer.png": "5c4a31a8bc7e329475b9632e22a1324b30c117610e81948c5aa7e0082a579fef",
+        "thumbnails/3x/sp_xmas_butterbeer_right.png": "6b5df172de5e92fe27179abdca8698e6c82a13a49ca84e3a4f3fc5c0f6ec7ea7"
+      }
+    },
+    {
+      "id": "sp_xmas_honeydukes",
+      "source": "masters/sp_xmas_honeydukes.png",
+      "sourceSha256": "e89d2029b7aaf58dc298d424a773814498e31e9b0ed4cb8cb1183ebf22d3b58f",
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1024,
+        "splitX": 787,
+        "transparentGap": {
+          "start": 643,
+          "end": 931
+        },
+        "defaultWidth": 787,
+        "alternateWidth": 749,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 30,
+          "y": 34,
+          "w": 613,
+          "h": 975,
+          "count": 446738
+        },
+        "alternate": {
+          "x": 145,
+          "y": 34,
+          "w": 509,
+          "h": 989,
+          "count": 362106
+        }
+      },
+      "palette": {
+        "ramps": [
+          "wood",
+          "fire",
+          "magic"
+        ],
+        "colors": [
+          "#231F2E",
+          "#4A3042",
+          "#735044",
+          "#A57554",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 16,
+              "y": 30,
+              "w": 57,
+              "h": 23
+            },
+            "pixelCount": 490,
+            "mappableCount": 490,
+            "maxPixels": 883,
+            "rootBand": 108
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 21,
+              "y": 30,
+              "w": 41,
+              "h": 23
+            },
+            "pixelCount": 336,
+            "mappableCount": 336,
+            "maxPixels": 701,
+            "rootBand": 108
+          }
+        }
+      },
+      "outputs": {
+        "native/sp_xmas_honeydukes.png": "434f791bd881e9e0a9c96d7ad35703648830539db321dd5dee58693645c6ef5f",
+        "native/sp_xmas_honeydukes_right.png": "5f2a6403e05f195e2d5e8d79fee963560343abb8d9f92884331146929ef20072",
+        "native/sp_xmas_honeydukes_f0.png": "434f791bd881e9e0a9c96d7ad35703648830539db321dd5dee58693645c6ef5f",
+        "native/sp_xmas_honeydukes_f1.png": "97458b5527fd9cbace7fdf41aad861a22b363b9c35749d5533653dc404106c42",
+        "native/sp_xmas_honeydukes_f2.png": "b318f1b62eae36a113db9d68b8c85a29386d56ba6c877c8731dc1ac0bb8f20a2",
+        "native/sp_xmas_honeydukes_f3.png": "434f791bd881e9e0a9c96d7ad35703648830539db321dd5dee58693645c6ef5f",
+        "native/sp_xmas_honeydukes_right_f0.png": "5f2a6403e05f195e2d5e8d79fee963560343abb8d9f92884331146929ef20072",
+        "native/sp_xmas_honeydukes_right_f1.png": "82c5b5f3eebd0b6f8d25f631268202bab34e3b91b54432d703267e3002ee7066",
+        "native/sp_xmas_honeydukes_right_f2.png": "df2739f8383b391c17458623e4708e570795302808d1a1b273035c12cf0d7bb1",
+        "native/sp_xmas_honeydukes_right_f3.png": "5f2a6403e05f195e2d5e8d79fee963560343abb8d9f92884331146929ef20072",
+        "spritesheets/sp_xmas_honeydukes.png": "38766e7415058a2f2c8968ab8c917061b243cfa9410c4871ea02223fef180729",
+        "thumbnails/2x/sp_xmas_honeydukes.png": "6a8c173a403a1a0a857903b3892f64b48de7101a5327f7e18de141a214392f5c",
+        "thumbnails/2x/sp_xmas_honeydukes_right.png": "cad58ed384ac046d9e0372a3fbb6bdc8c1d69de16213c6b7d25a557970c3bca2",
+        "thumbnails/3x/sp_xmas_honeydukes.png": "f06f8a517f72fe3c6ff54981732b8b6c4a4f71d68e332cb4b860e95f7f4624b2",
+        "thumbnails/3x/sp_xmas_honeydukes_right.png": "80f7d6bb7402cf66ace9712a9d354a9db479a3ae5fe423adda2c2085286ecfcc"
+      }
+    },
+    {
+      "id": "sp_xmas_invisibility_cloak",
+      "source": "masters/sp_xmas_invisibility_cloak.png",
+      "sourceSha256": "820709916d9ba4a2404451024971b91382736e39e6dad39541f76c7467aa9f03",
+      "sourceCanvas": {
+        "width": 1774,
+        "height": 887,
+        "splitX": 904,
+        "transparentGap": {
+          "start": 736,
+          "end": 1071
+        },
+        "defaultWidth": 904,
+        "alternateWidth": 870,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 117,
+          "y": 149,
+          "w": 619,
+          "h": 626,
+          "count": 303204
+        },
+        "alternate": {
+          "x": 168,
+          "y": 121,
+          "w": 550,
+          "h": 671,
+          "count": 239376
+        }
+      },
+      "palette": {
+        "ramps": [
+          "magic",
+          "stone",
+          "fire"
+        ],
+        "colors": [
+          "#3E3B70",
+          "#6961A6",
+          "#70A8B6",
+          "#B7DEE0",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 10,
+              "y": 25,
+              "w": 20,
+              "h": 11
+            },
+            "pixelCount": 117,
+            "mappableCount": 117,
+            "maxPixels": 304,
+            "rootBand": 72
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 34,
+              "y": 20,
+              "w": 15,
+              "h": 13
+            },
+            "pixelCount": 86,
+            "mappableCount": 86,
+            "maxPixels": 302,
+            "rootBand": 72
+          }
+        }
+      },
+      "outputs": {
+        "native/sp_xmas_invisibility_cloak.png": "01d313839f4a0c24c868404d590d3496f8bd9ff3cedb10d4cb2f8cfd3bed9f51",
+        "native/sp_xmas_invisibility_cloak_right.png": "0b39787d4bef2427f4f7959a13bffc5f4159893eaab8ceabaa235168ad0590fc",
+        "native/sp_xmas_invisibility_cloak_f0.png": "01d313839f4a0c24c868404d590d3496f8bd9ff3cedb10d4cb2f8cfd3bed9f51",
+        "native/sp_xmas_invisibility_cloak_f1.png": "342e5966c29da17b650f6b978546c91e6908433ce1037164343a212a9d9a1886",
+        "native/sp_xmas_invisibility_cloak_f2.png": "0cd09eea2dfb52c9f45351db42b775ab1e23f01e6f8af7edf363d1ff85c92a72",
+        "native/sp_xmas_invisibility_cloak_f3.png": "01d313839f4a0c24c868404d590d3496f8bd9ff3cedb10d4cb2f8cfd3bed9f51",
+        "native/sp_xmas_invisibility_cloak_right_f0.png": "0b39787d4bef2427f4f7959a13bffc5f4159893eaab8ceabaa235168ad0590fc",
+        "native/sp_xmas_invisibility_cloak_right_f1.png": "5c3a09ed6042ab6ccb9eb1815f55caeba1d1ac720bf43e25c2869085c2c501dd",
+        "native/sp_xmas_invisibility_cloak_right_f2.png": "052e24741f08bcb96447ec344eb28fe5d23b5ad1e3c10d9db882c2ccad958232",
+        "native/sp_xmas_invisibility_cloak_right_f3.png": "0b39787d4bef2427f4f7959a13bffc5f4159893eaab8ceabaa235168ad0590fc",
+        "spritesheets/sp_xmas_invisibility_cloak.png": "2c511422e90f2a9e4148863963212f77a320a890858eb8da78dbd9dcec66f9e2",
+        "thumbnails/2x/sp_xmas_invisibility_cloak.png": "fd3e004131b8ee3e5dfcb525484f38c8c5e8248594d7aa38f21465145d1f2faf",
+        "thumbnails/2x/sp_xmas_invisibility_cloak_right.png": "ae092b81ec4b0f9557b3fb91058def80cb98a48944239ea992718696841befad",
+        "thumbnails/3x/sp_xmas_invisibility_cloak.png": "ceff83c65a2a07edce95c9637b885d343e4d000835d915fcaaf933bb9cfff274",
+        "thumbnails/3x/sp_xmas_invisibility_cloak_right.png": "8d2798635dd2f116f5e56a3b061f0167d4f8f83d7927b4338420471551508582"
+      }
+    },
+    {
+      "id": "sp_xmas_weasley_tree",
+      "source": "masters/sp_xmas_weasley_tree.png",
+      "sourceSha256": "4341613f5e8d0e186f000ffa26ee7c8d5e1a1e0e23d0c81f427b7392f3ad6060",
+      "sourceCanvas": {
+        "width": 1536,
+        "height": 1024,
+        "splitX": 775,
+        "transparentGap": {
+          "start": 611,
+          "end": 938
+        },
+        "defaultWidth": 775,
+        "alternateWidth": 761,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 47,
+          "y": 60,
+          "w": 564,
+          "h": 930,
+          "count": 319916
+        },
+        "alternate": {
+          "x": 164,
+          "y": 60,
+          "w": 520,
+          "h": 930,
+          "count": 285015
+        }
+      },
+      "palette": {
+        "ramps": [
+          "green",
+          "fire",
+          "warm"
+        ],
+        "colors": [
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 40,
+              "y": 70,
+              "w": 31,
+              "h": 10
+            },
+            "pixelCount": 120,
+            "mappableCount": 120,
+            "maxPixels": 1550,
+            "rootBand": 156
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 44,
+              "y": 110,
+              "w": 42,
+              "h": 18
+            },
+            "pixelCount": 134,
+            "mappableCount": 134,
+            "maxPixels": 1381,
+            "rootBand": 156
+          }
+        }
+      },
+      "outputs": {
+        "native/sp_xmas_weasley_tree.png": "7c042120ecd7621636fec70c0d221f09d5817297c8817e3ff347a9c90b300ec9",
+        "native/sp_xmas_weasley_tree_right.png": "68afd94db2f0ea33f2bea9c22916caff37a72c0fa181eafc161b41df5ce23cb7",
+        "native/sp_xmas_weasley_tree_f0.png": "7c042120ecd7621636fec70c0d221f09d5817297c8817e3ff347a9c90b300ec9",
+        "native/sp_xmas_weasley_tree_f1.png": "5b84b54e809d17ab8da86242d175003472889b45b387b460401d4e6f8eb348a4",
+        "native/sp_xmas_weasley_tree_f2.png": "8da4435a220e0853a3c98426b0601b11e3e0c85016a01763c4dd589952848653",
+        "native/sp_xmas_weasley_tree_f3.png": "7c042120ecd7621636fec70c0d221f09d5817297c8817e3ff347a9c90b300ec9",
+        "native/sp_xmas_weasley_tree_right_f0.png": "68afd94db2f0ea33f2bea9c22916caff37a72c0fa181eafc161b41df5ce23cb7",
+        "native/sp_xmas_weasley_tree_right_f1.png": "610625acc196ef01104026129114dd6b136d3137f70f4d52282d50140994148d",
+        "native/sp_xmas_weasley_tree_right_f2.png": "7b0812feb1abe89e26cf08725511475d2a7e0b662c836a60e26e95ac8efe2f32",
+        "native/sp_xmas_weasley_tree_right_f3.png": "68afd94db2f0ea33f2bea9c22916caff37a72c0fa181eafc161b41df5ce23cb7",
+        "spritesheets/sp_xmas_weasley_tree.png": "ef7aebbeafa0d958fa2be610c255c6fa82b8c82b4c003e474ed057a843e055a4",
+        "thumbnails/2x/sp_xmas_weasley_tree.png": "1ad09d20af88cd56d24c914be83eec45534258b36664fa7702ed660ead2cfe74",
+        "thumbnails/2x/sp_xmas_weasley_tree_right.png": "0f6504cdcfcaa64b2fd2ef13f274929e4904dbf71ef2986eeadb18174e59fa43",
+        "thumbnails/3x/sp_xmas_weasley_tree.png": "e56f46ce38dbbd8b5c01d3323e15c74b241e8165226c41d4e664e9938100d72e",
+        "thumbnails/3x/sp_xmas_weasley_tree_right.png": "d0878ed83076bce229f4f82093bfd99c73427d18d4805bf588f68fd05f44df4e"
+      }
+    },
+    {
+      "id": "sp_xmas_yule_roses",
+      "source": "masters/sp_xmas_yule_roses.png",
+      "sourceSha256": "d883a50a875f46f7ec3f1df9081bd40b7923714b0ac539539063b2e622bdf769",
+      "sourceCanvas": {
+        "width": 2079,
+        "height": 756,
+        "splitX": 1020,
+        "transparentGap": {
+          "start": 960,
+          "end": 1079
+        },
+        "defaultWidth": 1020,
+        "alternateWidth": 1059,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 66,
+          "y": 112,
+          "w": 894,
+          "h": 577,
+          "count": 344991
+        },
+        "alternate": {
+          "x": 60,
+          "y": 129,
+          "w": 904,
+          "h": 576,
+          "count": 333932
+        }
+      },
+      "palette": {
+        "ramps": [
+          "green",
+          "fire",
+          "stone"
+        ],
+        "colors": [
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#874056",
+          "#C75B4B",
+          "#ED8A45",
+          "#FFC36B",
+          "#41465C",
+          "#687486",
+          "#A6B1AE",
+          "#D6D8BF"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 86,
+              "y": 79,
+              "w": 13,
+              "h": 13
+            },
+            "pixelCount": 80,
+            "mappableCount": 80,
+            "maxPixels": 1226,
+            "rootBand": 132
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 51,
+              "y": 83,
+              "w": 13,
+              "h": 13
+            },
+            "pixelCount": 75,
+            "mappableCount": 75,
+            "maxPixels": 1166,
+            "rootBand": 132
+          }
+        }
+      },
+      "outputs": {
+        "native/sp_xmas_yule_roses.png": "9bdce440e3be390b4ab37dcc7540002b36f7fc9f4c60cf9c3d21db6ba2ca9722",
+        "native/sp_xmas_yule_roses_right.png": "fef6990e50f0c570efb2e37ff08397de3cf2ae79482d284a250843f1fcb470ed",
+        "native/sp_xmas_yule_roses_f0.png": "9bdce440e3be390b4ab37dcc7540002b36f7fc9f4c60cf9c3d21db6ba2ca9722",
+        "native/sp_xmas_yule_roses_f1.png": "9a2edc2460f824b67c52b4c407c70636384f273b341d8d06b132423f379e1b07",
+        "native/sp_xmas_yule_roses_f2.png": "43621d1c8f7035443147f928df9b3cf3c6fe1776de6c87e2bd669225ac6d1908",
+        "native/sp_xmas_yule_roses_f3.png": "9bdce440e3be390b4ab37dcc7540002b36f7fc9f4c60cf9c3d21db6ba2ca9722",
+        "native/sp_xmas_yule_roses_right_f0.png": "fef6990e50f0c570efb2e37ff08397de3cf2ae79482d284a250843f1fcb470ed",
+        "native/sp_xmas_yule_roses_right_f1.png": "b4133ca5cd93d44067808ad9ca4d746093c56be589aa456d4532e957b8dc8fe5",
+        "native/sp_xmas_yule_roses_right_f2.png": "99c4db9c5ae7edd2f5de2de320d6616ecad901265efd08c17e55c1257c0b5db0",
+        "native/sp_xmas_yule_roses_right_f3.png": "fef6990e50f0c570efb2e37ff08397de3cf2ae79482d284a250843f1fcb470ed",
+        "spritesheets/sp_xmas_yule_roses.png": "3a1fe36f189d80d8100a7a10f595359fe8749e3fb488d4143f2efeee0d4e5468",
+        "thumbnails/2x/sp_xmas_yule_roses.png": "1a0d6b461ccf0875a2e91102362194a2e8be814794a2f228bc9078cbf0f02885",
+        "thumbnails/2x/sp_xmas_yule_roses_right.png": "f1f2d30fed106160d1c850c8bd6bc644a8467dbb3095e92ffcc63e9315d97afb",
+        "thumbnails/3x/sp_xmas_yule_roses.png": "96719bfab6137afc554a3cf05e56bc910f6f5d675e8991dc73cb2f6407316771",
+        "thumbnails/3x/sp_xmas_yule_roses_right.png": "502981560ec3cf56e15d8a4517c718385ae408175bae13de6edf891d4eb4af40"
       }
     }
   ]

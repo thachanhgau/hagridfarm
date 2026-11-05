@@ -70,6 +70,108 @@
     88,
     92
    ]
+  },
+  {
+   "id": "sp_xmas_firebolt",
+   "label": "Cây chổi Tia Chớp quà Giáng sinh",
+   "group": "Giáng sinh",
+   "subject": "A Christmas present just opened in a wizard garden: a sleek racing BROOMSTICK with a polished dark mahogany handle and a neat streamlined tail of pale golden birch twigs, standing upright in a small wooden display stand, a gold registration number glinting near the top of the handle. At its foot lies its long torn-open parcel: crumpled red wrapping paper, a loose gold ribbon bow and an unsigned gift tag. Elegant, fast-looking, precious. The stand and parcel are the ground contact on a 1x1 tile.",
+   "w": 64,
+   "h": 128,
+   "foot": [
+    1,
+    1
+   ],
+   "motion": "glow",
+   "inkMax": [
+    56,
+    104
+   ]
+  },
+  {
+   "id": "sp_xmas_butterbeer",
+   "label": "Quầy bia bơ quán Ba Cây Chổi",
+   "group": "Giáng sinh",
+   "subject": "A snowy outdoor BUTTERBEER COUNTER from a cosy old village inn: a short low wooden bar counter with a snow-dusted top, three big foaming tankards of hot golden butterbeer with creamy froth on it, a small copper barrel keg with a tap at one end, a holly garland along the front and a little warm lantern on a post. Warm, inviting, steaming. The counter runs along the length of a 2x1 tile strip (in the turned view along the other axis). Its base is the ground contact.",
+   "w": 96,
+   "h": 112,
+   "foot": [
+    2,
+    1
+   ],
+   "motion": "glow",
+   "inkMax": [
+    88,
+    92
+   ]
+  },
+  {
+   "id": "sp_xmas_honeydukes",
+   "label": "Tủ kẹo tiệm Công tước Mật",
+   "group": "Giáng sinh",
+   "subject": "A wizard SWEETSHOP CABINET set outdoors in winter: a wide old wooden shop shelf-cabinet with a small striped awning on top dusted with snow, its shelves crowded with big glass jars of bright sweets, rows of chocolate frog boxes, a bundle of sugar quills, round bonbons and colourful candy sticks; a little hanging sign with a candy shape (no letters). Cheerful, crowded with colour, a child's dream. The cabinet stands along the length of a 2x1 tile strip (in the turned view along the other axis). Its base is the ground contact.",
+   "w": 96,
+   "h": 144,
+   "foot": [
+    2,
+    1
+   ],
+   "motion": "glow",
+   "inkMax": [
+    88,
+    124
+   ]
+  },
+  {
+   "id": "sp_xmas_invisibility_cloak",
+   "label": "Áo khoác tàng hình trong gói quà",
+   "group": "Giáng sinh",
+   "subject": "A small square Christmas PARCEL in plain brown paper, lid lifted, with a silvery-grey shimmering fluid magic cloak spilling out and over its side like water; where the cloak folds over the edge part of it fades into nothing, so the ground and parcel behind it show through (a real invisibility effect drawn with hard pixels: the cloak ends abruptly in transparent gaps). A folded note lies on top. Mysterious, quiet, precious. The parcel is the ground contact on a 1x1 tile.",
+   "w": 64,
+   "h": 96,
+   "foot": [
+    1,
+    1
+   ],
+   "motion": "glow",
+   "inkMax": [
+    56,
+    72
+   ]
+  },
+  {
+   "id": "sp_xmas_weasley_tree",
+   "label": "Cây thông Giáng sinh nhà Weasley",
+   "group": "Giáng sinh",
+   "subject": "A big homely family CHRISTMAS TREE in a wizard garden: a full fir tree in a wooden tub, decorated with golden fairy lights, red and gold baubles and paper chains, a few wrapped presents around the tub. On the very top, instead of an angel, sits a grumpy little bald potato-headed GARDEN GNOME with knobbly feet, dressed in a tutu with small wings glued to its back, scowling. Cosy, a bit chaotic, funny. The tub and presents are the ground contact on a 2x2 tile.",
+   "w": 128,
+   "h": 208,
+   "foot": [
+    2,
+    2
+   ],
+   "motion": "glow",
+   "inkMax": [
+    120,
+    184
+   ]
+  },
+  {
+   "id": "sp_xmas_yule_roses",
+   "label": "Vườn hồng đêm Dạ vũ",
+   "group": "Giáng sinh",
+   "subject": "A magical Yule Ball ROSE GARDEN on a winter night: a low curving arch of dark rose bushes with deep red roses and tiny glowing fairies sitting among the flowers like living lights, a small carved pale-stone STATUE of Father Christmas beside a stone sleigh pulled by two stone reindeer, a light dusting of snow on the leaves and statues. Romantic, enchanted, glittering. Spread along the length of a 3x2 tile footprint (in the turned view along the other axis); bushes and statue bases are the ground contact.",
+   "w": 160,
+   "h": 176,
+   "foot": [
+    3,
+    2
+   ],
+   "motion": "glow",
+   "inkMax": [
+    152,
+    152
+   ]
   }
  ]
 }

@@ -36,7 +36,7 @@ test('special runtime art resolves to native images or verified flow atlases, ne
       assert.ok(fs.existsSync(new URL(`./${file}`, import.meta.url)), file);
     }
   }
-  const shipped = fs.readdirSync(new URL('./decor-assets/native/', import.meta.url)).filter(name => name.startsWith('sp_'));
+  const shipped = fs.readdirSync(new URL('./decor-assets/native/', import.meta.url)).filter(name => name.startsWith('sp_') && !name.startsWith('sp_xmas_')); // the S7 Noel set ships from event-assets
   assert.equal(shipped.length, 300);
 });
 

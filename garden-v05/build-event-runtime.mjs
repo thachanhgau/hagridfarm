@@ -1,6 +1,6 @@
 // Import the event-assets pack («Mừng HPVN 3 tháng» statues, 25.0 elf pieces) like build-halloween-runtime.mjs: collection 'event'.
-// Only Góc bếp is sold (garden-store-catalog.mjs); the rest are gifts.
-const SOLD=new Set(['ev_kitchen_corner']);
+// Góc bếp and the S7 Noel set (special-products.mjs, season 'xmas') are sold; the rest are gifts.
+const SOLD=new Set(['ev_kitchen_corner','sp_xmas_firebolt','sp_xmas_butterbeer','sp_xmas_honeydukes','sp_xmas_invisibility_cloak','sp_xmas_weasley_tree','sp_xmas_yule_roses']);
 import fs from 'node:fs/promises';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {packNativeAtlas} from './native-atlas.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url)),read=async f=>JSON.parse(await fs.readFile(path.join(root,f))),sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const pack=await read('event-assets/manifest.json'),runtime=await read('decor-assets-manifest.json'),qaManifest=await read('event-assets/qa/validation.json'),generated=[];
