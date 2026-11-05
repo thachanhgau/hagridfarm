@@ -12,3 +12,9 @@ test('the backdrop carries the event tint and the winter night tint, in canvas o
     ['transparent', WINTER_NIGHT_TINT, 'transparent', atmosphereConfig('night').tint]);
   assert.equal(backdropTints({atmosphere: 'night', weather: 'clear', eventTint: null, winter: false})[1], 'transparent');
 });
+
+test('breath survives the last millisecond of its three puffs', async () => {
+  const {drawBreath} = await import('./garden-winter.mjs');
+  const ctx = {fillRect() {}};
+  for (let clock = 1; clock <= 2600; clock++) drawBreath(ctx, 0, 0, {clock, seed: 'hagrid'});
+});

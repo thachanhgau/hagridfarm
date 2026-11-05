@@ -158,7 +158,7 @@ export function drawWinterFog(ctx, width, height, {clock = 0, mode = 'day'} = {}
 export function drawBreath(ctx, x, y, {clock = 0, seed = '', left = true} = {}) {
   if (!(clock > 0)) return;
   const period = 2600, t = (clock + (stableHash('breath:' + seed) % period)) % period;
-  if (t > 900) return;
+  if (t >= 900) return;
   const step = Math.floor(t / 300), dir = left ? -1 : 1;
   const puffs = [[3, 2, 0.9], [4, 3, 0.7], [6, 3, 0.45]][step];
   ctx.fillStyle = `rgba(183,222,224,${puffs[2]})`; // cool mist: still visible against snow
