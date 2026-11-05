@@ -238,4 +238,25 @@ Mỗi phần ghi vào báo cáo của mình: dòng Lighthouse (điểm, FCP, LCP
 
 **3026 + emulator 5006, điện thoại 375 px:** vườn cấp 500 mở được, console không lỗi; chỉ xem, không bấm. Vườn demo có tuyết ngày 05/11 là thời tiết đã lưu theo vườn (`decorations.scene.weather`), không phải lịch: thêm `?weather=clear` thì hết tuyết. Chưa làm: duyệt từng mốc ngày trên trình duyệt (chỉ có test server, S7 phần 2 mới xem 24/12), `--lan` + iPhone thật và số LCP thật (§10 mục 3, cần chủ dự án).
 
-**Còn trước khi phát hành:** gộp `asset-overlap`; nâng phiên bản (tiêu đề còn «V24.9», tem module còn `?v=24.9.96`); chủ dự án duyệt deploy.
+**Gộp `asset-overlap` (05/11/2026, chủ dự án duyệt):** e1b07d2 trên `s8-qa`, chép nguyên thay đổi chưa commit của worktree đó (worktree giữ nguyên). Giữ `FEAST_GROUND`, `ev_champion_tree`; không điểm đứng nào rơi vào đất bàn tiệc. Phiên `hagrid-asset-fix` không tìm thấy trong danh sách phiên; phần dọn asset thừa từng được nhắc tới không có trong thay đổi này.
+
+**Phiên bản:** 7e64a7e, tiêu đề «V25.0», tem `?v=25.0.0`. Import thiếu tem chỉ còn công cụ CLI và `player.js`. Test sau cả hai commit: Hagrid 379 đạt / 0 lỗi / 2 bỏ qua (381 test). HPVNN đã sync 7e64a7e.
+
+**Duyệt trình duyệt từng mốc (bản 7e64a7e, cổng 3027 + Functions 5006, `GARDEN_QA_XMAS_DAYS`, có bấm thật; console không lỗi ở cả 6 mốc):**
+
+| Mốc | Ngày cộng | Đã bấm | Kết quả |
+|---|---|---|---|
+| 01/12 | 26 | Mở vớ 1, Nhận thư 1 | Vớ 1 «Đã mở», hôm nay 1/2; thư 1/3; vớ 2–10 khoá theo ngày; lò sưởi và 10 vớ có vẽ |
+| 11/12 | 36 | Ném Harry | 1/3 hôm nay, 1/9 tới khung áo len, đúng câu thoại |
+| 18/12 | 43 | Chỉ xem (món 1–2 đã treo từ trước) | Cây thông nhà vẽ đúng món đã treo, bảng 4 nhà, món mở theo ngày |
+| 24/12 | 49 | Tạm bỏ `sp_deluminator` khỏi chỗ đặt để lộ bàn tiệc | Bàn tiệc lần đầu thấy trên trình duyệt, cạnh lò sưởi, không đồ nào che; Ginny đứng trước bàn; `xmas-carried-tree` có trong thứ tự vẽ nhưng lượt này chưa nhìn tận mắt |
+| 31/12 | 56 | Nhận khung 2027 | Nút «Đã nhận», thông báo đúng; **pháo hoa đêm chưa thấy bằng mắt** (chỉ có test) |
+| 01/01 | 57 | Chỉ mở vườn | Thông báo Gryffindor thắng, `ev_champion_tree` vào kho; lò sưởi vẫn vẽ vì vườn demo còn chuỗi thư dang dở 1/3 (đúng `chainGoing`) |
+
+Dữ liệu vườn demo đã trả về như trước khi bấm: 70 tài liệu, tài liệu vườn khớp từng trường với bản sao. Lần trả đầu `:import` của emulator bị từ chối sau khi đã xoá; phải dựng emulator tạm 8181 từ bản sao rồi chép lại bằng REST.
+
+**Không làm theo lệnh chủ dự án (05/11/2026, «bỏ qua lan cho iphone»):** `--lan` + iPhone thật; số LCP thật ở §10 mục 3 **chưa đo**. Đích LCP < 8 s vẫn chưa đạt trên fixture.
+
+**S1 (giá):** chủ dự án chọn không phát hành sớm, đi cùng đợt 01/12.
+
+**Còn trước khi phát hành:** chủ dự án thử trên trình duyệt; chủ dự án duyệt deploy (01/12 và 10/12, cả Functions lẫn client).
