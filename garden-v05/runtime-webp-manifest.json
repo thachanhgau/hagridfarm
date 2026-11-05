@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "a65b69a14605",
+  "revision": "aa7d32754242",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -6792,6 +6792,36 @@
       "sha256": "724d5f07ab29f342d27d3337fcdcade779d1d9e8fd0a83bb7e91a4324a45f924"
     },
     {
+      "source": "decor-assets/native/ev_champion_tree_atlas.png",
+      "file": "runtime-webp/decor-assets/native/ev_champion_tree_atlas.webp",
+      "width": 512,
+      "height": 416,
+      "sourceBytes": 13901,
+      "bytes": 6008,
+      "sourceSha256": "d3ff271a78ba806a7c7887ee2c0aba0f372d3ecf4055a7412830054cebf1dcc8",
+      "sha256": "d9b98d96a898527c20448505a5113e24ed2f1b7ce164c970c89cf3f811f5b209"
+    },
+    {
+      "source": "decor-assets/native/ev_champion_tree_right.png",
+      "file": "runtime-webp/decor-assets/native/ev_champion_tree_right.webp",
+      "width": 128,
+      "height": 208,
+      "sourceBytes": 4204,
+      "bytes": 2518,
+      "sourceSha256": "afab7535109256bd700bbfbcee263885dbb66de5aba39452507024849f6b6013",
+      "sha256": "8b47cb105d7fd0112831861ffddc9a3de3de7ee5cdc0734ee798d0c6401c729a"
+    },
+    {
+      "source": "decor-assets/native/ev_champion_tree.png",
+      "file": "runtime-webp/decor-assets/native/ev_champion_tree.webp",
+      "width": 128,
+      "height": 208,
+      "sourceBytes": 4444,
+      "bytes": 2674,
+      "sourceSha256": "24ce6a557507ee316a99c7948d91afdf08e7f7adff6d9bcbd7dd80b21460469e",
+      "sha256": "b0df16e3860425fb05d005d949183fdcde32a0ab523eb188f7dbad3492d4e84a"
+    },
+    {
       "source": "decor-assets/native/ev_dark_dobby_red_atlas.png",
       "file": "runtime-webp/decor-assets/native/ev_dark_dobby_red_atlas.webp",
       "width": 512,
@@ -12612,6 +12642,16 @@
       "sha256": "406896170bce56b4c1464443da5080ca850e046c4890a387b4bc95b73d4c6602"
     },
     {
+      "source": "environment/xmas/carried-tree.png",
+      "file": "runtime-webp/environment/xmas/carried-tree.webp",
+      "width": 64,
+      "height": 48,
+      "sourceBytes": 1108,
+      "bytes": 714,
+      "sourceSha256": "f14fee4fb802e559d44e316ae21b579953e0f91a7be1fa63ae797f9c2b7c7f78",
+      "sha256": "c0ec03c47a1d800a9122eb11ce47cb3aa2abd7c5864d9f626bc3b3bba9474051"
+    },
+    {
       "source": "environment/xmas/egg-0.png",
       "file": "runtime-webp/environment/xmas/egg-0.webp",
       "width": 22,
@@ -12652,6 +12692,16 @@
       "sha256": "88fa83c71ed4ab90faca4585a83bd893c5f00426980d27769d1b2e69fd45d0a7"
     },
     {
+      "source": "environment/xmas/feast.png",
+      "file": "runtime-webp/environment/xmas/feast.webp",
+      "width": 80,
+      "height": 56,
+      "sourceBytes": 1673,
+      "bytes": 1068,
+      "sourceSha256": "0c9c8a176e49494c260985cee28420d7558731ec5bdefaff37c527c78bf2e178",
+      "sha256": "4c7b80f096cdc3b7755e1f9c95eed237c28d7e28386b3f776829e71397a88bff"
+    },
+    {
       "source": "environment/xmas/hearth.png",
       "file": "runtime-webp/environment/xmas/hearth.webp",
       "width": 112,
@@ -12660,6 +12710,46 @@
       "bytes": 2062,
       "sourceSha256": "b2cd8d4ff150aacce59ae8ab99d73e7de708577f49034028daf17ec225c5ac19",
       "sha256": "5f0e16fdd1053a1660905f2f7e19baa44967af0b37d5fd12fd4595c391f0ff59"
+    },
+    {
+      "source": "environment/xmas/house-tree-0.png",
+      "file": "runtime-webp/environment/xmas/house-tree-0.webp",
+      "width": 96,
+      "height": 160,
+      "sourceBytes": 932,
+      "bytes": 496,
+      "sourceSha256": "8fcac0eb72e44d34d127e0c287f783e90a3953f997da0d2c1ea992805a4f7d84",
+      "sha256": "b9f64bafa7291c92454cbcf98eea302f284c7cb55d57de33d1dc4a2c6821522a"
+    },
+    {
+      "source": "environment/xmas/house-tree-1.png",
+      "file": "runtime-webp/environment/xmas/house-tree-1.webp",
+      "width": 96,
+      "height": 160,
+      "sourceBytes": 1645,
+      "bytes": 910,
+      "sourceSha256": "55b29991b8344f53bfe5f760f3ba89640678de42e09d132b5aba46db2d407096",
+      "sha256": "783e999e270b753b0a8c1d48ae96073ab4a8fa70f2d37f23dcd19c967b4e2d7e"
+    },
+    {
+      "source": "environment/xmas/house-tree-2.png",
+      "file": "runtime-webp/environment/xmas/house-tree-2.webp",
+      "width": 96,
+      "height": 160,
+      "sourceBytes": 2491,
+      "bytes": 1480,
+      "sourceSha256": "9e0f5f6ac444bf11749dbd80e63dc4ad8fad8c1b47b6c7fded6668d9783ca492",
+      "sha256": "cb94bc34d92908c120ae1b39b458d624233ed25cc2ac86fb403b7a92facc474a"
+    },
+    {
+      "source": "environment/xmas/house-tree-3.png",
+      "file": "runtime-webp/environment/xmas/house-tree-3.webp",
+      "width": 96,
+      "height": 160,
+      "sourceBytes": 3238,
+      "bytes": 1954,
+      "sourceSha256": "9f23538e4d28ae72b2e364ea8f0625a159909e94e78a60559a3a6b2df35eac04",
+      "sha256": "7b4986a1aa58897695837407361dbf77a5a951f56f377c1d48a572d1aa32476a"
     },
     {
       "source": "environment/xmas/sock-open.png",
@@ -12765,11 +12855,11 @@
     }
   ],
   "totals": {
-    "converted": 1270,
+    "converted": 1279,
     "existingWebp": 8,
-    "originalBytes": 4605616,
-    "webpBytes": 3063488,
-    "savedBytes": 1542128,
-    "savedPercent": 33.48
+    "originalBytes": 4639252,
+    "webpBytes": 3081310,
+    "savedBytes": 1557942,
+    "savedPercent": 33.58
   }
 }

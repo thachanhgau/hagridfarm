@@ -3,7 +3,7 @@ import {EVENT_PRODUCTS,FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-produ
 import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=24.9.96";
 import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=24.9.96";
 import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=24.9.96";
-export const CATALOG_VERSION="garden-2026-11-05-xmas-25";
+export const CATALOG_VERSION="garden-2026-11-06-xmas-25-p2";
 // Big update 25.0 §3 (owner 04/11/2026): prices below are the 24.x base; the store sells at base × min(8, 3 + level / 50),
 // festival goods × 4, rounded to 1 G under 100, 10 G under 1,000, else 100 G. Seeds and water up to level 24 keep their
 // price; event gifts are never sold. Same rule as HPVN functions/games/garden-wallet-catalog.js storePrice.

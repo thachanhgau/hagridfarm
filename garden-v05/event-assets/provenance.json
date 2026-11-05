@@ -1,14 +1,14 @@
 {
   "schema": "hagrid-farm.decor-assets.provenance.v1",
-  "generatedAt": "2026-11-05T03:55:46.995Z",
+  "generatedAt": "2026-11-05T05:23:36.898Z",
   "tool": "build-assets.mjs",
   "specs": {
     "file": "specs.json",
-    "sha256": "4f740d4d2204f40ee17e4d387d6f1c2f9248422ac1b29796582154623a25241b"
+    "sha256": "ffa3f42a6a0b66292cff03c9f2fe38ff96fb3411a19538becd3229338347d3c2"
   },
   "itemPalettes": {
     "file": "item-palettes.json",
-    "sha256": "4710462b27ab5bf9f0fb74b7d4d760178e30ecf6f9af6e2f2abba65de778379b"
+    "sha256": "3ce362edb85bce66f73160fc871dcfcf00b81bf2725aa71ebcaa8ee0600cb348"
   },
   "sourceContract": "Masters are preserved under masters/; each contains a real left default and right alternate view, separated at a verified transparent gap.",
   "processing": {
@@ -1044,6 +1044,113 @@
         "thumbnails/2x/sp_xmas_yule_roses_right.png": "f1f2d30fed106160d1c850c8bd6bc644a8467dbb3095e92ffcc63e9315d97afb",
         "thumbnails/3x/sp_xmas_yule_roses.png": "96719bfab6137afc554a3cf05e56bc910f6f5d675e8991dc73cb2f6407316771",
         "thumbnails/3x/sp_xmas_yule_roses_right.png": "502981560ec3cf56e15d8a4517c718385ae408175bae13de6edf891d4eb4af40"
+      }
+    },
+    {
+      "id": "ev_champion_tree",
+      "source": "masters/ev_champion_tree.png",
+      "sourceSha256": "b48d9be6f70b5096263c15479a9d1f49113084e19f6f124f8327e9d9d97d141b",
+      "sourceCanvas": {
+        "width": 1391,
+        "height": 1131,
+        "splitX": 685,
+        "transparentGap": {
+          "start": 583,
+          "end": 787
+        },
+        "defaultWidth": 685,
+        "alternateWidth": 706,
+        "discardedCenterColumns": 0
+      },
+      "sourceViews": {
+        "default": {
+          "x": 97,
+          "y": 22,
+          "w": 486,
+          "h": 1063,
+          "count": 257915
+        },
+        "alternate": {
+          "x": 103,
+          "y": 20,
+          "w": 505,
+          "h": 1070,
+          "count": 250988
+        }
+      },
+      "palette": {
+        "ramps": [
+          "green",
+          "champion_silver_flame",
+          "warm"
+        ],
+        "colors": [
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#ED8A45",
+          "#FFC36B",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "motionPlans": {
+        "default": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 53,
+              "y": 11,
+              "w": 26,
+              "h": 23
+            },
+            "pixelCount": 206,
+            "mappableCount": 206,
+            "maxPixels": 975,
+            "rootBand": 156
+          }
+        },
+        "alternate": {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null,
+          "effect": {
+            "bbox": {
+              "x": 52,
+              "y": 10,
+              "w": 23,
+              "h": 25
+            },
+            "pixelCount": 176,
+            "mappableCount": 176,
+            "maxPixels": 942,
+            "rootBand": 156
+          }
+        }
+      },
+      "outputs": {
+        "native/ev_champion_tree.png": "24ce6a557507ee316a99c7948d91afdf08e7f7adff6d9bcbd7dd80b21460469e",
+        "native/ev_champion_tree_right.png": "afab7535109256bd700bbfbcee263885dbb66de5aba39452507024849f6b6013",
+        "native/ev_champion_tree_f0.png": "24ce6a557507ee316a99c7948d91afdf08e7f7adff6d9bcbd7dd80b21460469e",
+        "native/ev_champion_tree_f1.png": "2bed3c124d344f3e93572379360f817e386c68852098bbe8d36f3771d98fb5c4",
+        "native/ev_champion_tree_f2.png": "bf3c183543424235389e551c2265a9b5be31b3f031e8cdd6e87c286c771e5e20",
+        "native/ev_champion_tree_f3.png": "24ce6a557507ee316a99c7948d91afdf08e7f7adff6d9bcbd7dd80b21460469e",
+        "native/ev_champion_tree_right_f0.png": "afab7535109256bd700bbfbcee263885dbb66de5aba39452507024849f6b6013",
+        "native/ev_champion_tree_right_f1.png": "b1487645d3ed67ab2d449528c8d23968fb2546e7d1338ee7a7ebf281af54ea9f",
+        "native/ev_champion_tree_right_f2.png": "a9e3ce7665bdfc0fdd7e5779e3cf36ac1b459ab9625c85ea39dd771d6977f926",
+        "native/ev_champion_tree_right_f3.png": "afab7535109256bd700bbfbcee263885dbb66de5aba39452507024849f6b6013",
+        "spritesheets/ev_champion_tree.png": "d3ff271a78ba806a7c7887ee2c0aba0f372d3ecf4055a7412830054cebf1dcc8",
+        "thumbnails/2x/ev_champion_tree.png": "0e4c535dca2a75625de53ac75ba2f918252800725a017b95563b0a643cf44c0b",
+        "thumbnails/2x/ev_champion_tree_right.png": "df04f4f36dd8fe10ea9abd1c82e2462ada301c7103a1aa500a18583acff41fb5",
+        "thumbnails/3x/ev_champion_tree.png": "e2b3bb5b476d0e95888dab9e52a66240e598b8c0205d6879d5986ae207fad63d",
+        "thumbnails/3x/ev_champion_tree_right.png": "89d19fb9e1dba36b531f9bb07c6d6f60b6fc112a866dd9cd69093396728a6bd9"
       }
     }
   ]

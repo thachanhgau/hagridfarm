@@ -8691,6 +8691,120 @@
    "roomierFootprint": null
   },
   {
+   "group": "store-decoration",
+   "id": "ev_champion_tree",
+   "label": "Cây thông nhà vô địch",
+   "facing": "default",
+   "file": "decor-assets/native/ev_champion_tree.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    208
+   ],
+   "pivot": [
+    64,
+    192
+   ],
+   "ink": {
+    "x": 22,
+    "y": 8,
+    "w": 84,
+    "h": 184,
+    "foot": 192
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 176,
+    "frontY": 208
+   },
+   "flat2x2": 0.333,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     208
+    ],
+    "pivot": [
+     64,
+     192
+    ],
+    "ink": [
+     84,
+     184
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "store-decoration",
+   "id": "ev_champion_tree",
+   "label": "Cây thông nhà vô địch",
+   "facing": "right",
+   "file": "decor-assets/native/ev_champion_tree_right.png",
+   "anchor": "foot",
+   "footprint": [
+    2,
+    2
+   ],
+   "ground": {
+    "width": 128,
+    "height": 64
+   },
+   "canvas": [
+    128,
+    208
+   ],
+   "pivot": [
+    64,
+    192
+   ],
+   "ink": {
+    "x": 21,
+    "y": 8,
+    "w": 87,
+    "h": 184,
+    "foot": 192
+   },
+   "allowed": {
+    "left": 0,
+    "right": 128,
+    "centreY": 176,
+    "frontY": 208
+   },
+   "flat2x2": 0.361,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     128,
+     208
+    ],
+    "pivot": [
+     64,
+     192
+    ],
+    "ink": [
+     87,
+     184
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
    "group": "earned-decoration",
    "id": "decoration-3",
    "label": "Viền luống đá cuội",
@@ -12116,6 +12230,63 @@
   },
   {
    "group": "scenery",
+   "id": "fang",
+   "label": "Fang",
+   "facing": "default",
+   "file": "native-complete-objects/fang/frame-01.png",
+   "anchor": "center",
+   "footprint": [
+    1,
+    1
+   ],
+   "ground": {
+    "width": 64,
+    "height": 32
+   },
+   "canvas": [
+    80,
+    72
+   ],
+   "pivot": [
+    40,
+    66
+   ],
+   "ink": {
+    "x": 15,
+    "y": 12,
+    "w": 51,
+    "h": 54,
+    "foot": 66
+   },
+   "allowed": {
+    "left": 8,
+    "right": 72,
+    "centreY": 66,
+    "frontY": 82
+   },
+   "flat2x2": 0.276,
+   "issues": [],
+   "severity": "ok",
+   "fix": "",
+   "target": {
+    "canvas": [
+     64,
+     80
+    ],
+    "pivot": [
+     32,
+     64
+    ],
+    "ink": [
+     51,
+     54
+    ],
+    "scale": 1
+   },
+   "roomierFootprint": null
+  },
+  {
+   "group": "scenery",
    "id": "gardener_friend",
    "label": "Bác Hagrid",
    "facing": "default",
@@ -12130,46 +12301,56 @@
     "height": 32
    },
    "canvas": [
-    80,
-    112
+    112,
+    140
    ],
    "pivot": [
-    40,
-    100
+    56,
+    130
    ],
    "ink": {
-    "x": 11,
-    "y": 10,
-    "w": 58,
-    "h": 90,
-    "foot": 100
+    "x": 14,
+    "y": 39,
+    "w": 75,
+    "h": 91,
+    "foot": 130
    },
    "allowed": {
-    "left": 8,
-    "right": 72,
-    "centreY": 100,
-    "frontY": 116
+    "left": 24,
+    "right": 88,
+    "centreY": 130,
+    "frontY": 146
    },
-   "flat2x2": 0.365,
-   "issues": [],
-   "severity": "ok",
-   "fix": "",
+   "flat2x2": 0.447,
+   "issues": [
+    {
+     "rule": "tràn-ngang",
+     "px": 10,
+     "left": 10,
+     "right": 1
+    }
+   ],
+   "severity": "vừa",
+   "fix": "vẽ nhỏ lại",
    "target": {
     "canvas": [
      64,
-     112
+     96
     ],
     "pivot": [
      32,
-     96
+     80
     ],
     "ink": [
-     58,
-     90
+     56,
+     68
     ],
-    "scale": 1
+    "scale": 0.75
    },
-   "roomierFootprint": null
+   "roomierFootprint": [
+    2,
+    1
+   ]
   },
   {
    "group": "scenery",
@@ -12244,42 +12425,42 @@
     "height": 32
    },
    "canvas": [
-    80,
-    104
+    64,
+    80
    ],
    "pivot": [
-    40,
-    92
+    32,
+    72
    ],
    "ink": {
-    "x": 17,
-    "y": 8,
-    "w": 47,
-    "h": 84,
-    "foot": 92
+    "x": 13,
+    "y": 12,
+    "w": 37,
+    "h": 60,
+    "foot": 72
    },
    "allowed": {
-    "left": 8,
-    "right": 72,
-    "centreY": 92,
-    "frontY": 108
+    "left": 0,
+    "right": 64,
+    "centreY": 72,
+    "frontY": 88
    },
-   "flat2x2": 0.256,
+   "flat2x2": 0.223,
    "issues": [],
    "severity": "ok",
    "fix": "",
    "target": {
     "canvas": [
      64,
-     112
+     80
     ],
     "pivot": [
      32,
-     96
+     64
     ],
     "ink": [
-     47,
-     84
+     37,
+     60
     ],
     "scale": 1
    },

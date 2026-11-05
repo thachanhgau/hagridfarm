@@ -117,7 +117,7 @@ test('every store decoration bounds cover each drawn frame in both views', async
   const { STORE_CATALOG } = await import('./garden-store-catalog.mjs');
   const runtime = JSON.parse(await fs.readFile(runtimePath, 'utf8'));
   const ids = STORE_CATALOG.filter(item => item.kind === 'decoration').map(item => item.id);
-  assert.equal(ids.length, 76); // 25.0 S2: Lều gia tinh, Góc bếp; S7: six Noel pieces
+  assert.equal(ids.length, 77); // 25.0 S2: Lều gia tinh, Góc bếp; S7: six Noel pieces, Cây thông nhà vô địch
   for (const id of ids) {
     const item = runtime.items.find(entry => entry.id === id);
     for (const [view, frames, rects, bounds] of [['default', item.frames, item.atlasRects, item.bounds], ['right', item.rightFrames, item.rightAtlasRects, item.rightBounds]]) {

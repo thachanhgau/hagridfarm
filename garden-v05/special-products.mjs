@@ -119,6 +119,8 @@ const EVENT_ROWS = [
   ['ev_dark_dobby_red', 'Tượng Dobby Hắc Ám', [2,2], 'Dobby tạc đá đỏ, giơ chiếc tất, quà Hội Gia Tinh mừng HPVN 3 tháng.'],
   // Big update 25.0: the gift of Giáng sinh chapter 1 «Gia tinh đón đông» (S7, ten stockings).
   ['ev_elf_tent', 'Lều gia tinh', [2,2], 'Cái lều gia tinh khâu từ áo gối cũ, treo dây vớ len, quà chương «Gia tinh đón đông».'],
+  // S7 chapter 3 «Dạ Vũ Noel»: the winning house's tree (server garden-xmas-chapters settleTree).
+  ['ev_champion_tree', 'Cây thông nhà vô địch', [2,2], 'Cây thông Noel của nhà thắng Dạ Vũ Noel, lấp lánh những ngôi sao vàng.'],
 ];
 export const EVENT_PRODUCTS = Object.freeze(EVENT_ROWS.map(([id, label, footprint, lore]) => Object.freeze({
   id, kind: 'decoration', collection: EVENT_COLLECTION, decorationId: id, icon: id, label, level: 1, price: 1, quantity: 1, dailyLimit: 1, // catalog shape only: `reward` refuses every purchase

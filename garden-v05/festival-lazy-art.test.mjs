@@ -55,7 +55,7 @@ test('25.0 budget: event pieces and Dobby\'s work poses load only when first dra
   const event = manifest.items.filter(a => a.collection === 'event');
   // S7: the six Noel pieces of bậc Tận Sức ship in the event pack too, so a shop that never placed one never loads them.
   const noel = ['sp_xmas_butterbeer', 'sp_xmas_firebolt', 'sp_xmas_honeydukes', 'sp_xmas_invisibility_cloak', 'sp_xmas_weasley_tree', 'sp_xmas_yule_roses'];
-  assert.deepEqual(event.map(a => a.id).sort(), ['ev_dark_dobby_red', 'ev_dobby_spring_rider', 'ev_elf_tent', 'ev_kitchen_corner', ...noel]);
+  assert.deepEqual(event.map(a => a.id).sort(), ['ev_champion_tree', 'ev_dark_dobby_red', 'ev_dobby_spring_rider', 'ev_elf_tent', 'ev_kitchen_corner', ...noel]);
   const urlsOf = a => [a.file, ...(a.frames ?? []), a.rightFile, ...(a.rightFrames ?? [])].filter(Boolean).map(runtimeImageUrl);
   const {canvas, requested} = recordingCanvas();
   const garden = await createGarden(canvas, {decorAssets: manifest.items});

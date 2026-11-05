@@ -26,5 +26,5 @@ test('reduced-motion action feedback is still removed by the real timeline',()=>
 test('all two-angle decorations (6 store, 30 special, 30 festival, 4 gia tinh event pieces, 6 Noel pieces) use the same animation phase and dimensions',()=>{
  const data=JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json',import.meta.url)));let count=0;
  for(const asset of data.items.filter(a=>a.rightFrames)){count++;assert.equal(asset.frames.length,asset.rightFrames.length);for(let t=1;t<5000;t+=71){const left=decorFrameAt(asset,t,{seed:asset.id}),right=decorFrameAt(asset,t,{seed:asset.id,facing:'right'});assert.equal(left.index,right.index);assert.equal(right.file,asset.rightFrames[left.index]);}}
- assert.equal(count,76); // 25.0 S2: Lều gia tinh, Góc bếp; S7: six Noel pieces
+ assert.equal(count,77); // 25.0 S2: Lều gia tinh, Góc bếp; S7: six Noel pieces, Cây thông nhà vô địch
 });

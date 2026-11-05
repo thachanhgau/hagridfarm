@@ -172,6 +172,23 @@
     152,
     152
    ]
+  },
+  {
+   "id": "ev_champion_tree",
+   "label": "Cây thông nhà vô địch",
+   "group": "Giáng sinh",
+   "subject": "The CHAMPION HOUSE CHRISTMAS TREE of a Hogwarts Yule Ball, standing in a wizard garden: a tall slender fir tree like the twelve great trees of the Great Hall, glittering with many small golden stars, a few lit floating candles hovering beside it, silver tinsel garlands, a big bright gold star on top, a small gold cup-shaped trophy and a wrapped present at its foot, set in a squat stone planter with a thin rim of snow. Majestic, festive, proud. The stone planter is the ground contact on a 2x2 tile.",
+   "w": 128,
+   "h": 208,
+   "foot": [
+    2,
+    2
+   ],
+   "motion": "glow",
+   "inkMax": [
+    120,
+    184
+   ]
   }
  ]
 }

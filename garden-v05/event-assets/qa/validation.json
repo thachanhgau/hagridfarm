@@ -2,8 +2,8 @@
   "schema": "hagrid-farm.decor-assets.qa.v1",
   "status": "complete",
   "assertions": {
-    "expectedItemCount": 10,
-    "packagedItemCount": 10,
+    "expectedItemCount": 11,
+    "packagedItemCount": 11,
     "allExpectedMastersPresent": true,
     "twoViewsPerMaster": true,
     "masterViewsSeparatedByTransparentGap": true,
@@ -2363,6 +2363,245 @@
           "3x": {
             "default": "thumbnails/3x/sp_xmas_yule_roses.png",
             "alternate": "thumbnails/3x/sp_xmas_yule_roses_right.png"
+          }
+        }
+      }
+    },
+    {
+      "id": "ev_champion_tree",
+      "dimensions": {
+        "width": 128,
+        "height": 208
+      },
+      "views": {
+        "default": {
+          "base": {
+            "bounds": {
+              "x": 22,
+              "y": 8,
+              "w": 84,
+              "h": 184,
+              "count": 8127
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 22,
+                "y": 8,
+                "w": 84,
+                "h": 184,
+                "count": 8127
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 22,
+                "y": 8,
+                "w": 84,
+                "h": 184,
+                "count": 8127
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 22,
+                "y": 8,
+                "w": 84,
+                "h": 184,
+                "count": 8127
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 22,
+                "y": 8,
+                "w": 84,
+                "h": 184,
+                "count": 8127
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 53,
+                "y": 11,
+                "w": 26,
+                "h": 23
+              },
+              "pixelCount": 206,
+              "mappableCount": 206,
+              "maxPixels": 975,
+              "rootBand": 156
+            }
+          },
+          "framesIdentical": false
+        },
+        "alternate": {
+          "base": {
+            "bounds": {
+              "x": 21,
+              "y": 8,
+              "w": 87,
+              "h": 184,
+              "count": 7854
+            },
+            "alphaBinary": true,
+            "paletteOnly": true,
+            "itemPaletteOnly": true,
+            "edgeClipped": false
+          },
+          "frames": [
+            {
+              "bounds": {
+                "x": 21,
+                "y": 8,
+                "w": 87,
+                "h": 184,
+                "count": 7854
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 21,
+                "y": 8,
+                "w": 87,
+                "h": 184,
+                "count": 7854
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 21,
+                "y": 8,
+                "w": 87,
+                "h": 184,
+                "count": 7854
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            },
+            {
+              "bounds": {
+                "x": 21,
+                "y": 8,
+                "w": 87,
+                "h": 184,
+                "count": 7854
+              },
+              "alphaBinary": true,
+              "paletteOnly": true,
+              "itemPaletteOnly": true,
+              "edgeClipped": false,
+              "rootedBottomQuarter": true
+            }
+          ],
+          "motion": {
+            "requested": "glow",
+            "rendered": "glow",
+            "fallback": null,
+            "effect": {
+              "bbox": {
+                "x": 52,
+                "y": 10,
+                "w": 23,
+                "h": 25
+              },
+              "pixelCount": 176,
+              "mappableCount": 176,
+              "maxPixels": 942,
+              "rootBand": 156
+            }
+          },
+          "framesIdentical": false
+        }
+      },
+      "palette": {
+        "ramps": [
+          "green",
+          "champion_silver_flame",
+          "warm"
+        ],
+        "colors": [
+          "#24483F",
+          "#3F6A45",
+          "#71934B",
+          "#B0BD67",
+          "#A6B1AE",
+          "#D6D8BF",
+          "#ED8A45",
+          "#FFC36B",
+          "#8B4A3F",
+          "#C97952",
+          "#E7AE73",
+          "#F5D69A"
+        ]
+      },
+      "twoViews": {
+        "present": true,
+        "rawHashesDiffer": true
+      },
+      "motion": {
+        "requested": "glow",
+        "rendered": [
+          "glow",
+          "glow"
+        ],
+        "frameCount": 4,
+        "framesIdentical": false,
+        "rootedBottomQuarter": true
+      },
+      "exports": {
+        "spriteSheet": "spritesheets/ev_champion_tree.png",
+        "thumbnails": {
+          "2x": {
+            "default": "thumbnails/2x/ev_champion_tree.png",
+            "alternate": "thumbnails/2x/ev_champion_tree_right.png"
+          },
+          "3x": {
+            "default": "thumbnails/3x/ev_champion_tree.png",
+            "alternate": "thumbnails/3x/ev_champion_tree_right.png"
           }
         }
       }

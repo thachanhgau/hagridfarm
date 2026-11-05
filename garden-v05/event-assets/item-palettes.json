@@ -35,6 +35,12 @@
    "#6961A6",
    "#70A8B6",
    "#B7DEE0"
+  ],
+  "champion_silver_flame": [
+   "#A6B1AE",
+   "#D6D8BF",
+   "#ED8A45",
+   "#FFC36B"
   ]
  },
  "items": [
@@ -256,6 +262,28 @@
     "#687486",
     "#A6B1AE",
     "#D6D8BF"
+   ]
+  },
+  {
+   "id": "ev_champion_tree",
+   "ramps": [
+    "green",
+    "champion_silver_flame",
+    "warm"
+   ],
+   "colors": [
+    "#24483F",
+    "#3F6A45",
+    "#71934B",
+    "#B0BD67",
+    "#A6B1AE",
+    "#D6D8BF",
+    "#ED8A45",
+    "#FFC36B",
+    "#8B4A3F",
+    "#C97952",
+    "#E7AE73",
+    "#F5D69A"
    ]
   }
  ]

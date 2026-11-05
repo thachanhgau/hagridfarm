@@ -2,7 +2,7 @@
 
 Tạo bởi `node garden-v05/audit-grid-fit.mjs` theo [guideline khớp ô](grid-fit-guideline.md). Số đo là pixel thế giới ở zoom 1, đo từ phần có màu (alpha > 0) của file đang chạy trong game. Không sửa tay file này.
 
-Đã đo 157 món (262 hình, tính cả hai hướng xoay). Lệch: **12 món** — nặng 0, vừa 0, nhẹ 12. Đạt: 145.
+Đã đo 159 món (265 hình, tính cả hai hướng xoay). Lệch: **13 món** — nặng 0, vừa 1, nhẹ 12. Đạt: 146.
 
 Cột «Tạo lại»: canvas rộng × cao, pivot (x, y) = điểm chân, khung mực tối đa rộng × cao. Vẽ lại hoặc xuất lại từ master ở kích thước đó; không thu nhỏ ảnh đã xuất. «Hoặc nền» là nền nhỏ nhất vừa hình hiện tại, chỉ dùng khi chủ dự án muốn giữ nguyên hình (đổi catalog + server, không áp cho save cũ).
 
@@ -16,10 +16,11 @@ Cột «Tạo lại»: canvas rộng × cao, pivot (x, y) = điểm chân, khung
 
 Tất cả đạt.
 
-## Công trình và cảnh cố định — 1 món
+## Công trình và cảnh cố định — 2 món
 
 | Mức | Món | Nền (ô · px) | Hình hiện tại (mực · canvas · pivot) | Lỗi | Cách sửa | Tạo lại: canvas · pivot · khung mực | Hoặc nền |
 |---|---|---|---|---|---|---|---|
+| vừa | Bác Hagrid `gardener_friend` | 1×1 · 64×32 | 75×91 · 112×140 · (56,130) | tràn trái 10, phải 1 px | vẽ nhỏ lại | 64×96 · (32,80) · ≤ 56×68 | 2×1 |
 | nhẹ | Lều Hagrid `hut` | 3×3 · 192×96 | 164×184 · 164×184 · (82,184) | mực chạm mép canvas | nới canvas | 192×240 · (96,192) · giữ 164×184 | — |
 
 ## Tượng kỷ vật — 8 món

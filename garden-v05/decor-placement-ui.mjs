@@ -28,6 +28,8 @@ const COTTAGE_GROUND=Object.freeze({c0:-3.5,c1:-1.5,r0:3.5,r1:5.5});
 // 25.0 S7 December hearth (garden-xmas HEARTH_SPOT [16, 1.3], 2 × 2 under its foot). Kept free all year: a piece
 // set there in November would stand inside the hearth in December. garden-xmas.test.mjs checks the spot.
 export const HEARTH_GROUND=Object.freeze(decorFootprintRect(16,1.3,[2,2]));
+// S7 part 2: the elves' Đêm Noel feast (garden-xmas FEAST_SPOT [12, 0.4], 24–25/12), kept free the same way.
+export const FEAST_GROUND=Object.freeze(decorFootprintRect(12,0.4,[2,2]));
 
 function segmentRectDistance([a,b],[c,d],r){
  let best=Infinity;
@@ -86,6 +88,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond')):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
  if(rectsOverlap(rect,COTTAGE_GROUND))return 'Chỗ này vướng lều Hagrid.';
  if(rectsOverlap(rect,HEARTH_GROUND))return 'Chỗ này là lò sưởi Giáng sinh.';
+ if(rectsOverlap(rect,FEAST_GROUND))return 'Chỗ này là bàn tiệc Đêm Noel.';
  for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post',fang:'fang'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
  if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){

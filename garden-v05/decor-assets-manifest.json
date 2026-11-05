@@ -6578,6 +6578,114 @@
       "motion": "glow",
       "framesIdentical": false,
       "nativeSha256": "9bdce440e3be390b4ab37dcc7540002b36f7fc9f4c60cf9c3d21db6ba2ca9722"
+    },
+    {
+      "id": "ev_champion_tree",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": false,
+      "rotatable": true,
+      "label": "Cây thông nhà vô địch",
+      "group": "Giáng sinh",
+      "file": "decor-assets/native/ev_champion_tree.png",
+      "rightFile": "decor-assets/native/ev_champion_tree_right.png",
+      "frames": [
+        "decor-assets/native/ev_champion_tree_atlas.png",
+        "decor-assets/native/ev_champion_tree_atlas.png",
+        "decor-assets/native/ev_champion_tree_atlas.png",
+        "decor-assets/native/ev_champion_tree_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/ev_champion_tree_atlas.png",
+        "decor-assets/native/ev_champion_tree_atlas.png",
+        "decor-assets/native/ev_champion_tree_atlas.png",
+        "decor-assets/native/ev_champion_tree_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 128,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 256,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 208,
+      "pivotX": 64,
+      "pivotY": 192,
+      "bounds": {
+        "x": 22,
+        "y": 8,
+        "w": 84,
+        "h": 184
+      },
+      "rightBounds": {
+        "x": 21,
+        "y": 8,
+        "w": 87,
+        "h": 184
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "24ce6a557507ee316a99c7948d91afdf08e7f7adff6d9bcbd7dd80b21460469e"
     }
   ]
 }

@@ -86,7 +86,7 @@ function quaffle(from, to, clock) {
   const k = (clock % PASS_MS) / PASS_MS, x = Math.round(from[0] + (to[0] - from[0]) * k), y = Math.round(from[1] + (to[1] - from[1]) * k - Math.sin(k * Math.PI) * 18);
   return {kind: 'fx', xy: [x, y + 200], draw: (ctx) => { ctx.fillStyle = QUAFFLE[0]; ctx.fillRect(x - 2, y - 1, 4, 3); ctx.fillStyle = QUAFFLE[1]; ctx.fillRect(x - 1, y - 2, 3, 3); }};
 }
-function fireworks(xy, clock, seed) {
+export function fireworks(xy, clock, seed) {
   const t = (clock + seed * 700) % 2100;
   if (t > 1000) return null;
   const r = Math.round(6 + t / 1000 * 24), cx = xy[0] + ((Math.floor((clock + seed * 700) / 2100) * 37 + seed * 23) % 60) - 30, cy = xy[1] - 130;
