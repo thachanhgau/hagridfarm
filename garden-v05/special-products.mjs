@@ -49,9 +49,16 @@ const ROWS = [
   ['sp_chamber_serpent_door', 'Cánh cửa Phòng Chứa Bí Mật', 78, 6800, [3, 1], 2, 16, 'Vách đá hai con rắn, mở bằng Xà Ngữ.'],
   ['sp_knight_bus', 'Xe Đò Hiệp Sĩ', 84, 7800, [3, 1], 3, 3, 'Chiếc xe buýt ba tầng đón Harry rời nhà Dursley.'],
   ['sp_whomping_anglia', 'Liễu Roi và chiếc Ford Anglia', 90, 9000, [3, 2], 2, 5, 'Harry và Ron đâm xe vào cây Liễu Roi.'],
+  // Big update 25.0 S7: the Noel set of the bậc Tận Sức (level-500 P3), sold all December (season 'xmas'). Server copy alike.
+  ['sp_xmas_firebolt', 'Cây chổi Tia Chớp quà Giáng sinh', 120, 3300, [1, 1], 3, 11, 'Món quà Giáng sinh không đề tên: một cây chổi Tia Chớp.', 'xmas'],
+  ['sp_xmas_butterbeer', 'Quầy bia bơ quán Ba Cây Chổi', 160, 4200, [2, 1], 3, 10, 'Những vại bia bơ nóng trong quán Ba Cây Chổi ngày tuyết rơi ở làng Hogsmeade.', 'xmas'],
+  ['sp_xmas_honeydukes', 'Tủ kẹo tiệm Công tước Mật', 200, 4500, [2, 1], 3, 10, 'Tiệm kẹo Công tước Mật ở làng Hogsmeade, chỗ Ron mơ được vô.', 'xmas'],
+  ['sp_xmas_invisibility_cloak', 'Áo khoác tàng hình trong gói quà', 260, 3900, [1, 1], 1, 12, 'Gói quà Giáng sinh kèm mảnh giấy: «Chúc con một Giáng sinh vui vẻ».', 'xmas'],
+  ['sp_xmas_weasley_tree', 'Cây thông Giáng sinh nhà Weasley', 350, 6300, [2, 2], 6, 16, 'Thiên thần trên ngọn cây thông thực ra là một con ma lùm.', 'xmas'],
+  ['sp_xmas_yule_roses', 'Vườn hồng đêm Dạ vũ', 450, 9000, [3, 2], 4, 23, 'Những nàng tiên ngồi trong bụi hoa hồng, quanh tượng ông già Noel và cỗ xe tuần lộc.', 'xmas'],
 ];
 
-export const SEASON_LABELS = Object.freeze({event_halloween: 'Lễ Hội Ma'});
+export const SEASON_LABELS = Object.freeze({event_halloween: 'Lễ Hội Ma', xmas: 'tháng Giáng sinh (01–31/12)'});
 
 export const SPECIAL_PRODUCTS = Object.freeze(ROWS.map(([id, label, level, price, footprint, book, chapter, lore, season]) => Object.freeze({
   id, kind: 'decoration', collection: SPECIAL_COLLECTION, decorationId: id, icon: id, label, level, price, quantity: 1, dailyLimit: 1,

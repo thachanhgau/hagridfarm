@@ -11,7 +11,7 @@ const flow = JSON.parse(fs.readFileSync(new URL('./decor-flow-manifest.json', im
 const flowItem = id => flow.items.find(item => item.id === id);
 
 test('the 30 special products keep their ids, views, pivots, footprints and frame timing from the asset set', () => {
-  assert.equal(SPECIAL_PRODUCTS.length, 30);
+  assert.equal(SPECIAL_PRODUCTS.length, 36); // 30 + the 25.0 S7 Noel set
   assert.deepEqual(special.map(item => item.id).sort(), source.items.map(item => item.id).sort());
   for (const item of source.items) {
     const entry = special.find(x => x.id === item.id), sale = SPECIAL_PRODUCTS.find(x => x.id === item.id);
@@ -47,8 +47,8 @@ test('special products are decorations only, one each, in their own store group,
     assert.equal(item.kind, 'decoration');
     assert.equal(item.collection, 'special');
     assert.deepEqual([item.quantity, item.dailyLimit], [1, 1]);
-    // Seasonal pieces sell at any level, the rest from level 25.
-    assert.ok(item.price >= 900 && (item.season ? item.level === 1 : item.level >= 25), item.id);
+    // Festival pieces sell at any level, the Noel set (25.0 S7) from bậc Tận Sức, the rest from level 25.
+    assert.ok(item.price >= 900 && (item.season === 'xmas' ? item.level > 100 : item.season ? item.level === 1 : item.level >= 25), item.id);
     assert.match(item.description, /chỉ để trang trí/);
     for (const key of ['xp', 'reward', 'yield', 'galleonsBonus']) assert.equal(item[key], undefined);
   }
@@ -103,4 +103,21 @@ test('Halloween festival pieces: 30 distinct two-view sprites, existing five pri
     assert.equal(unlockedCatalog(1, '2026-10-23', Date.parse('2026-10-23T12:00:00+07:00')).some(x => x.id === item.id), false);
     assert.equal(unlockedCatalog(1, '2026-10-31').some(x => x.id === item.id), true);
   }
+});
+
+test('25.0 S7 Noel set: bậc Tận Sức only, sold all December at the §3 price', async () => {
+  const {STORE_CATALOG, storeLock} = await import('./garden-store-catalog.mjs');
+  const noel = STORE_CATALOG.filter(item => item.season === 'xmas');
+  assert.deepEqual(noel.map(item => [item.id, item.level, item.price]), [
+    ['sp_xmas_firebolt', 120, 17800], ['sp_xmas_butterbeer', 160, 26000], ['sp_xmas_honeydukes', 200, 31500],
+    ['sp_xmas_invisibility_cloak', 260, 31200], ['sp_xmas_weasley_tree', 350, 50400], ['sp_xmas_yule_roses', 450, 72000]]);
+  const firebolt = noel[0];
+  assert.equal(storeLock(firebolt, 500, '2026-11-30'), 'Mở bán 01/12');
+  assert.equal(storeLock(firebolt, 500, '2026-12-01'), '');
+  assert.equal(storeLock(firebolt, 500, '2026-12-31'), '');
+  assert.equal(storeLock(firebolt, 119, '2026-12-05'), 'Cấp 100 ★20');
+  assert.equal(storeLock(firebolt, 500, '2027-01-01'), 'Mở bán 01/12');
+  assert.equal(unlockedCatalog(500, '2026-12-10').filter(item => item.season === 'xmas').length, 6);
+  assert.equal(unlockedCatalog(150, '2026-12-10').filter(item => item.season === 'xmas').length, 1);
+  assert.equal(unlockedCatalog(500, '2027-01-02').filter(item => item.season === 'xmas').length, 0);
 });

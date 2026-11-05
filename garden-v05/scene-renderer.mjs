@@ -785,6 +785,7 @@ export async function createGarden(canvas, options = {}) {
   let fireCache = null; // «Đốt vườn» flame spots for the current stage
   let duty = null; // 25.0 S5 options.duty: {wilt: Set, dead: Map, sick: Set, gnomes: [plot], kit: garden-duty-art} ('plot:slot' keys)
   let friends = null; // 25.0 S6 garden-friends.mjs
+  let xmasKit = null; // 25.0 S7 garden-xmas.mjs
   let said = {}; // {id, text, until}: the last tapped gia tinh or friend's line
 
   function layoutCacheKey() {
@@ -1431,7 +1432,7 @@ export async function createGarden(canvas, options = {}) {
     if (object.draw) return object.draw(context);
     if (object.kind === 'elf') {
       drawAsset({...object.asset, noSnowCap: true}, object.xy[0], object.xy[1], null, null, object.flip);
-      breathOf(object.asset, object.xy, object.flip, object.flip, object.id, clock);
+      if (!object.still) breathOf(object.asset, object.xy, object.flip, object.flip, object.id, clock);
       if (said.id === object.id) said.xy = object.xy; // its bubble is drawn last, over the plot labels
       return;
     }
@@ -1586,6 +1587,7 @@ export async function createGarden(canvas, options = {}) {
     const eventMode = options.eventMode || 'none';
     // Winter: snow lies even under a clear sky; its scenery is requested only while winter is on.
     if (options.friendsKit && !friends) for (const file of (friends = options.friendsKit).FRIEND_FILES) deferredFiles.add(file);
+    if (options.xmasKit && !xmasKit) for (const file of (xmasKit = options.xmasKit).XMAS_FILES) deferredFiles.add(file);
     if (options.winterKit && !kit) { kit = options.winterKit; for (const file of [...kit.WINTER_FILES, ...kit.STATUE_GLOW_FILES]) deferredFiles.add(file); }
     activeWinter = kit && options.winter?.active ? options.winter : null;
     const groundWeather = activeWinter && weatherMode === 'clear' ? 'snow' : weatherMode;
@@ -1690,6 +1692,7 @@ export async function createGarden(canvas, options = {}) {
     elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering, work: options.elfWork}) : [];
     if (propsVisible && options.norbert) elfList.push(norbertObject(iso, clock, {night: atmosphereMode === 'night', cheering: !!cheering.norbert}));
     const fx = propsVisible && friends ? friends.friendObjects(iso, clock, options.now, elfList, {night: atmosphereMode === 'night', winter: !!activeWinter, cheering, all: options.allFriends}) : [];
+    if (propsVisible && xmasKit) fx.push(...xmasKit.hearthObjects(iso, options.xmas, elfList)); // December hearth, vớ, egg
     const objects = [...boundaryFence, ...wizList, ...elfList, ...fx, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {

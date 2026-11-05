@@ -135,3 +135,16 @@ test('25.0 S6 budget: visiting friends load only while a visit is drawn, never b
   assert.ok([...requested].some((url) => url.includes(`/friends/${friendsKit.FRIENDS[visitor].art || visitor}/`)), visitor + ' requested once visiting');
   for (const file of FRIEND_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
 });
+
+test('25.0 S7 budget: the December hearth, vớ and dragon egg load only when the server sends `xmas`', async () => {
+  const xmasKit = await import('./garden-xmas.mjs'), urls = xmasKit.XMAS_FILES.map(runtimeImageUrl);
+  const {canvas, requested} = recordingCanvas();
+  const garden = await createGarden(canvas, {decorAssets: manifest.items});
+  for (const url of urls) assert.ok(!requested.has(url), url + ' loaded before the first frame');
+  const state = E.testProfile(100, 1_700_000_000_000), now = Date.parse('2026-12-03T10:00:00+07:00');
+  garden.render(state, {now, clock: 0, propsVisible: true, eventMode: 'none', xmasKit, xmas: null});
+  for (const url of urls) assert.ok(!requested.has(url), url + ' loaded without a December view');
+  const socks = [1, 2, 3].map((n) => ({n, opened: n === 1}));
+  garden.render(state, {now, clock: 0, propsVisible: true, eventMode: 'none', xmasKit, xmas: {chapter: {socks}, egg: {stage: 1, hatched: false}}});
+  for (const name of ['hearth', 'sock', 'sock-open', 'egg-1']) assert.ok([...requested].some((url) => url.includes(`/xmas/${name}.`)), name + ' requested once drawn');
+});
