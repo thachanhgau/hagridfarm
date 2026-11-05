@@ -322,7 +322,7 @@
   "animals": [
     {
       "id": "puffskein",
-      "label": "Puffskein",
+      "label": "Quái lùng nhùng",
       "level": 10,
       "rarity": "Thường",
       "hours": 6,
@@ -343,7 +343,7 @@
         486
       ],
       "minAdultDays": 1.5,
-      "produce": "Len Puffskein",
+      "produce": "Len quái lùng nhùng",
       "producePerCycle": 1,
       "art": "Có sprite"
     },
@@ -1338,7 +1338,7 @@
       "totalXP": 8050,
       "plots": 3,
       "beds": 2,
-      "unlock": "Chuồng 1 miễn phí; Puffskein; 3 phần ăn khởi đầu",
+      "unlock": "Chuồng 1 miễn phí; quái lùng nhùng; 3 phần ăn khởi đầu",
       "benchmarkCrop": "oats",
       "rawCropXPDay": 4131.0,
       "rawAnimalXPDay": 540.0,
@@ -1352,7 +1352,7 @@
       "totalXP": 10030,
       "plots": 3,
       "beds": 2,
-      "unlock": "Mẫu ổ len Puffskein",
+      "unlock": "Mẫu ổ len quái lùng nhùng",
       "benchmarkCrop": "oats",
       "rawCropXPDay": 4131.0,
       "rawAnimalXPDay": 540.0,

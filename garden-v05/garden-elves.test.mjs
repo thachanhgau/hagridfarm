@@ -49,7 +49,7 @@ test('after today\'s gia tinh jobs Dobby harvests at his watering stop and feeds
   assert.equal(dobby(at('water'), ['harvest']), 'environment/elves/dobby/harvest.png');
   assert.equal(dobby(at('sweep'), ['harvest', 'feed']), 'environment/elves/dobby/feed.png');
   assert.equal(elfObjects(iso, at('water'), {work: ['harvest'], night: true}).find((o) => o.id === 'dobby').asset.file, 'environment/elves/dobby/sleep.png');
-  assert.equal(elfShiftText([{kind: 'harvest', plotIndex: 0, crops: 3}, {kind: 'feed', species: 'puffskein'}]), '🧦 Gia tinh: Gặt thửa 1 · 3 cây; Cho Puffskein ăn');
+  assert.equal(elfShiftText([{kind: 'harvest', plotIndex: 0, crops: 3}, {kind: 'feed', species: 'puffskein'}]), '🧦 Gia tinh: Gặt thửa 1 · 3 cây; Cho Quái lùng nhùng ăn');
   assert.equal(elfShiftText(undefined), '');
 });
 

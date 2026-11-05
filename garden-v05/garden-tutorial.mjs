@@ -33,7 +33,7 @@ export const TUTORIAL_LINES = Object.freeze({
   plant: 'Bấm nút sáng, gieo bí ngô nào!',
   grow: 'Nước phép đây, lớn nhanh nào!',
   harvest: 'Chín rồi! Gặt về kho thôi.',
-  feed: 'Puffskein của bác đói, cho ăn nhé!',
+  feed: 'Quái lùng nhùng đói rồi, cho ăn nhé!',
   owl: 'Thư cú tới! Mỗi ngày một lá.',
 });
 

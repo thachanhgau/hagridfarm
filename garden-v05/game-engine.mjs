@@ -88,7 +88,7 @@ const cropRecords = {
 const creatureRecords = {
   puffskein: {
     id: 'puffskein',
-    label: 'Puffskein',
+    label: 'Quái lùng nhùng',
     rarity: 'common',
     rarityLabel: RARITY_LABEL.common,
     growMs: 5 * 60 * 1000,
