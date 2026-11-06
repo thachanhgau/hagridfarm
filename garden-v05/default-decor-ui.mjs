@@ -5,21 +5,23 @@ import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.0.0';
 
 export function defaultDecorToggle(ctx, id, label, refresh) {
   const hidden = isDefaultDecorHidden(ctx.getDecorations?.(), id);
-  const control = iconButton('scenery', (hidden ? 'Đặt lại ' : 'Cất ') + label, async () => {
+  const control = iconButton('scenery', (hidden ? 'Đặt ' : 'Cất ') + label, async () => {
     control.disabled = true;
+    // A stashed piece opens the placement bar (any free cell) when the game offers it (owner 06/11/2026).
+    if (hidden && ctx.placeDefault) { ctx.placeDefault(id, label); return; }
     try { await ctx.setDefaultDecorVisibility(id, hidden); }
     catch (error) { ctx.notify?.(error.message || 'Chưa thể đổi trang trí.'); }
     finally {
       refresh();
       document.querySelector(`[data-default-decor-toggle="${id}"]`)?.focus({preventScroll: true});
     }
-  }, {text: hidden ? 'Đặt lại' : 'Cất', 'aria-pressed': String(!hidden), 'data-default-decor-toggle': id, disabled: !ctx.getSession?.().connected});
+  }, {text: hidden ? 'Đặt' : 'Cất', 'aria-pressed': String(!hidden), 'data-default-decor-toggle': id, disabled: !ctx.getSession?.().connected});
   return control;
 }
 
 export function renderGardenDefaults(ctx, {s, wallet, tile, priceRow, canPay, run, refresh, turnText}) {
   const root = el('section', {class: 'garden-default-decor'});
-  root.append(el('h3', {class: 'gp-section-title', text: 'Trang trí của vườn'}), el('p', {class: 'meta', text: 'Cất để lấy chỗ đặt món đã mua. Đồ vẫn thuộc về bạn và có thể đặt lại.'}));
+  root.append(el('h3', {class: 'gp-section-title', text: 'Trang trí của vườn'}), el('p', {class: 'meta', text: 'Cất để lấy chỗ đặt món đã mua. Đồ vẫn thuộc về bạn và đặt được vào ô trống bất kỳ.'}));
   const grid = el('div', {class: 'cards gp-tiles'});
   const pond = el('article', {class: 'gp-tile'}, [
     el('div', {class: 'gp-tile-art'}, [el('img', {src: runtimeImageUrl('environment/layers/pond.png'), alt: '', width: 88, height: 56})]),

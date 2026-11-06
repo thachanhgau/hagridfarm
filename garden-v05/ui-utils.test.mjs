@@ -29,3 +29,10 @@ test('times shown are the real ones: scaled when the server owns the garden, hal
  assert.equal(hours(0), 'Tức thì');
  setServerGrowth(false);
 });
+
+test('sow count: the button says how many cells and asks for that many seeds and water',()=>{
+ assert.equal(plantingAction({...ready,count:1}).text,'Gieo ×1');
+ assert.equal(plantingAction({...ready,count:2,seedsLeft:1}).restock,'seed');
+ assert.equal(plantingAction({...ready,count:2,seedsLeft:2,waterLeft:2}).restock,'');
+ assert.equal(plantingAction({...ready,count:1,occupied:true}).text,'Hết ô trống');
+});

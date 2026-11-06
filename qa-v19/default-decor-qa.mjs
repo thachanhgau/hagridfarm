@@ -53,8 +53,14 @@ for (const [browserName, type] of [['Chrome', chromium], ['WebKit', webkit]]) {
       const toggle = async (id, hidden) => {
         const control = frame.locator(`[data-default-decor-toggle="${id}"]`);
         await press(control);
+        if (!hidden) { // a stashed piece opens the placement bar (owner 06/11/2026); place it at its old spot
+          await press(frame.locator('.decor-bar-apply'));
+          await frame.waitForFunction(id => !(window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations.hiddenDefaults ?? []).includes(id), id);
+          await frame.evaluate(() => window.__HAGRID_GARDEN_QA__.openPanel('collection'));
+          return;
+        }
         await frame.waitForFunction(({id,hidden}) => (window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations.hiddenDefaults ?? []).includes(id) === hidden, {id,hidden});
-        assert.equal(await control.innerText(), hidden ? 'Đặt lại' : 'Cất');
+        assert.equal(await control.innerText(), hidden ? 'Đặt' : 'Cất');
         assert.equal(await control.getAttribute('aria-pressed'), String(!hidden));
         assert.equal(await control.evaluate(e => document.activeElement === e), true, 'focus returns to the same toggle');
       };

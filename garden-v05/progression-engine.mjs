@@ -177,8 +177,9 @@ function normalizeCells(cells, { requireLine = false, allowNull = false } = {}) 
     seen.add(index);
     normalized.push(index);
   }
-  if (requireLine && (normalized.length !== 3 || !LEGAL_LINES.includes(lineKey(normalized)))) {
-    reject('INVALID_SELECTION', 'planting requires exactly one complete horizontal, vertical, or diagonal line');
+  // Owner 06/11/2026: one, two or three cells, all on one horizontal, vertical or diagonal line.
+  if (requireLine && !LEGAL_LINES.some((line) => normalized.every((index) => line.split(',').includes(String(index))))) {
+    reject('INVALID_SELECTION', 'planting requires one to three cells on one horizontal, vertical, or diagonal line');
   }
   return normalized.sort((a, b) => a - b);
 }

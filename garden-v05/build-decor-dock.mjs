@@ -11,7 +11,7 @@ export function ownedDecorChoices(decorations,assets) {
  }));
 }
 
-// Garden defaults (pond, earned path decor, keepsake statues) move like bought pieces; «Đặt lại» restores a stashed one.
+// Garden defaults (pond, earned path decor, keepsake statues) move like bought pieces; a stashed one is placed anew.
 export function defaultDecorRows(progression,decorations,rotations={}) {
  return defaultDecorChoices(progression).map(d=>({...d,isDefault:true,placed:!isDefaultDecorHidden(decorations,d.id),facing:rotations[d.id]==='right'?'right':'default'}));
 }
@@ -46,8 +46,8 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
  const place=button('',()=>{
   const row=current();
   if(!row||!getReady())return;
+  // A stashed garden default opens the placement bar too, so it can go anywhere, not only back home (owner 06/11/2026).
   if(!row.isDefault)openDecorate(row,place);
-  else if(!row.placed)act(()=>setDefaultVisible(row.id,true));
   else openDefault(row,place);
  },{id:'decorDockPlace',class:'primary'});
  const stash=button('',()=>{
@@ -95,9 +95,9 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
   if(!row)return;
   const ready=getReady();
   title.textContent=row.label;
-  status.textContent=row.isDefault?(row.placed?'Đồ của vườn · dời sang ô khác hoặc cất':'Đang cất · đặt lại về chỗ cũ'):(row.placed?'Đang bày trong vườn':'Đang cất · sẵn sàng đặt');
+  status.textContent=row.isDefault?(row.placed?'Đồ của vườn · dời sang ô khác hoặc cất':'Đang cất · chọn chỗ đặt'):(row.placed?'Đang bày trong vườn':'Đang cất · sẵn sàng đặt');
   stash.hidden=!row.placed;stash.disabled=!ready;
-  const label=row.placed?'Di chuyển':row.isDefault?'Đặt lại':'Đặt';
+  const label=row.placed?'Di chuyển':'Đặt';
   place.disabled=!ready;
   setAction(place,{icon:'scenery',label,text:label+' '+row.label});
  }

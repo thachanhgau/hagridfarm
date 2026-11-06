@@ -113,14 +113,24 @@ test('line helper returns exactly the eight legal three-cell lines', () => {
   codeOf(() => lineCells('row', 0), 'INVALID_LINE');
 });
 
-test('plant is immutable, awards per-cell plant XP, and rejects partial or occupied lines atomically', () => {
+test('owner 06/11/2026: one or two cells on one line can be sown, replant keeps the partial pattern', () => {
+  const one = plant(newGame(NOW), 0, [4], 'pumpkin', NOW);
+  assert.equal(one.plots[0].slots.filter(Boolean).length, 1);
+  assert.equal(one.xp, CROP.pumpkin.plantXP);
+  const two = plant(one, 0, [0, 2], 'pumpkin', NOW);
+  assert.deepEqual(two.plots[0].patterns.map((p) => p.cells), [[4], [0, 2]]);
+  codeOf(() => plant(two, 0, [3, 7], 'pumpkin', NOW), 'INVALID_SELECTION');
+  codeOf(() => plant(two, 0, [0, 1, 2, 3], 'pumpkin', NOW), 'INVALID_SELECTION');
+});
+
+test('plant is immutable, awards per-cell plant XP, and rejects off-line or occupied cells atomically', () => {
   const initial = newGame(NOW);
   const first = plant(initial, 0, lineCells('horizontal', 0), 'pumpkin', NOW);
   assert.equal(initial.plots[0].slots.filter(Boolean).length, 0);
   assert.equal(first.plots[0].slots.filter(Boolean).length, 3);
   assert.equal(first.xp, CROP.pumpkin.plantXP * 3);
   const before = JSON.stringify(first);
-  codeOf(() => plant(first, 0, [0, 1], 'pumpkin', NOW), 'INVALID_SELECTION');
+  codeOf(() => plant(first, 0, [1, 3], 'pumpkin', NOW), 'INVALID_SELECTION'); // not on one line
   assert.equal(JSON.stringify(first), before);
   codeOf(() => plant(first, 0, lineCells('vertical', 0), 'pumpkin', NOW), 'OCCUPIED_SLOT');
   assert.equal(JSON.stringify(first), before);

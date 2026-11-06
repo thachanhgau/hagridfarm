@@ -64,8 +64,9 @@ for(const [name,type] of [['Chrome',chromium],['WebKit',webkit]]) {
     assert.equal(await frame.locator('#decorDockPlace').isHidden(),true,'the pond has no move/turn action');
     await press(frame.locator('#decorDockStash'));
     await frame.waitForFunction(()=>window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations.hiddenDefaults?.includes('scene:pond'));
-    assert.equal(await frame.locator('#decorDockPlace').innerText(),'Đặt lại');
+    assert.equal(await frame.locator('#decorDockPlace').innerText(),'Đặt');
     await press(frame.locator('#decorDockPlace'));
+    await press(frame.locator('.decor-bar-apply')); // the placement bar opens at the old spot (owner 06/11/2026)
     await frame.waitForFunction(()=>!window.__HAGRID_GARDEN_QA__.getSnapshot().state.decorations.hiddenDefaults?.includes('scene:pond'));
     await press(frame.locator('#buildSectionButton'));
    }

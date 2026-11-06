@@ -470,10 +470,10 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
 }
 
 // The primary action explains blockers or opens supplies; it never buys automatically.
-export function plantingAction({loaded,connected,walletReady,unlocked,occupied,cooling,typeCap,seedsLeft,waterLeft}) {
- const reason=!loaded?"Đang nạp…":connected&&!walletReady?"Đang nối ví…":!unlocked?"Chưa mở hạt":occupied?"Hàng có cây":cooling?"Đất đang chờ":typeCap?"Đủ 3 loại":"";
- const restock=connected&&!reason?(seedsLeft<3?"seed":waterLeft<3?"water":""):"";
- return {disabled:Boolean(reason),restock,text:reason||(restock==="water"?"Mua nước":restock==="seed"?"Mua hạt":"Gieo ×3"),title:restock==="water"?"Cần 3 phần nước để gieo hàng này":restock==="seed"?"Cần 3 hạt để gieo hàng này":reason||"Gieo một hàng 3 ô"};
+export function plantingAction({loaded,connected,walletReady,unlocked,occupied,cooling,typeCap,seedsLeft,waterLeft,count=3}) {
+ const reason=!loaded?"Đang nạp…":connected&&!walletReady?"Đang nối ví…":!unlocked?"Chưa mở hạt":occupied?(count<3?"Hết ô trống":"Hàng có cây"):cooling?"Đất đang chờ":typeCap?"Đủ 3 loại":"";
+ const restock=connected&&!reason?(seedsLeft<count?"seed":waterLeft<count?"water":""):"";
+ return {disabled:Boolean(reason),restock,text:reason||(restock==="water"?"Mua nước":restock==="seed"?"Mua hạt":`Gieo ×${count}`),title:restock==="water"?`Cần ${count} phần nước để gieo`:restock==="seed"?`Cần ${count} hạt để gieo`:reason||(count<3?`Gieo ${count} ô trống trên hàng này`:"Gieo một hàng 3 ô")};
 }
 
 /**
