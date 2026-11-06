@@ -1,5 +1,5 @@
-import {nativePixelScale} from './garden-grid.mjs?v=25.0.0';
-import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=25.0.0';
+import {nativePixelScale} from './garden-grid.mjs?v=25.0.1';
+import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=25.0.1';
 export {FARM_SIGN_ART};
 // Scenic-only composition: deterministic groves and a walkable-looking exit.
 // Never changes authored slots, collision data, or game state.
