@@ -116,7 +116,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   cards.replaceChildren();
   tabs.replaceChildren();
   for(const[id,name]of categories){
-   const market=snap?.market,count=id==="market"?Object.keys(market?.prices??{}).filter(c=>(snap.garden.progression.inventory?.[c]??0)>0).length:id==="all"?allItems.length:allItems.filter(i=>tabOf(i)===id).length;
+   const market=snap?.market,count=id==="market"?Object.keys(market?.quality?.prices??market?.prices??{}).filter(c=>(snap.garden.progression.inventory?.[c]??0)>0).length:id==="all"?allItems.length:allItems.filter(i=>tabOf(i)===id).length;
    if(id==="market"?!market:id!=="all"&&count===0)continue;
    const tab=button("",()=>{filter=id;render();tabs.querySelector("[aria-pressed=\"true\"]")?.focus();},{"data-kind":id,"aria-pressed":String(id===filter),"aria-label":`${name} (${count})`,title:name,class:"store-tab-btn gp-tab"});
    tab.append(pixelIcon(KIND_ICONS[id],2),el("span",{text:name}),el("b",{class:"gp-tab-count",text:String(count)}));

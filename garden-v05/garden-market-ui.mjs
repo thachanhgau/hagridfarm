@@ -1,20 +1,29 @@
 import {el,button,num,visualItemIcon} from "./ui-utils.mjs?v=25.0.0";
 import {pixelIcon,iconButton} from "./pixel-icons.mjs?v=25.0.0";
-import {CROP} from "./balance-data.mjs?v=25.0.0";
+import {CROP,CREATURE} from "./balance-data.mjs?v=25.0.0";
 
 // Quầy chợ bác Hagrid (owner 26/10/2026; rules on the HPVN server, functions/games/garden-market-core.js):
 // from level 25 Gringotts buys harvested crops, at most `perCropDaily` of a crop and `dailyCap` Galleons a
 // VN day. The server sends prices and today's counts in `snapshot.market`; this only draws the cards.
 // Xả kho (owner 28/10/2026): while `market.clearance` holds, one button sells the whole crop barn once, past
 // both limits; it asks for a second tap because it cannot be undone.
+// Hàng giá cao (owner 06/11/2026): `market.quality` holds this member's price of each crop (×2/×4/×8 by mastery
+// tier) and creature produce (×2 while happy); those in `premiumIds` share their own cap `quality.cap`.
+const TIER=["","Tập sự","Thạo nghề","Bậc thầy"];
+const labelOf=id=>id.startsWith("produce_")?CREATURE[id.slice(8)]?.produce||id:CROP[id]?.label||id;
 export function marketCards({market,inventory,items,quantities,busy,onSell}){
  if(!market.open)return [el("p",{class:"empty",text:`Quầy chợ bác Hagrid mở từ cấp ${market.unlockLevel}. Lên cấp rồi mang nông sản tới bán lấy Galleons.`})];
- const capLeft=Math.max(0,market.dailyCap-market.earned);
- const day=el("p",{class:"meta market-day",role:"status",text:`Hôm nay quầy đã trả ${num(market.earned)}/${num(market.dailyCap)} Galleons · mỗi loại tối đa ${market.perCropDaily}.`});
+ const q=market.quality||{prices:market.prices,premiumIds:[],cap:0,earned:0,tiers:{},happy:[]};
+ const premium=new Set(q.premiumIds);
+ const normalLeft=Math.max(0,market.dailyCap-market.earned),premiumLeft=Math.max(0,q.cap-q.earned);
+ const day=el("p",{class:"meta market-day",role:"status",text:`Hôm nay quầy đã trả ${num(market.earned)}/${num(market.dailyCap)} G hàng thường · ${num(q.earned)}/${num(q.cap)} G hàng giá cao · mỗi loại tối đa ${market.perCropDaily}.`});
  const crops=Object.keys(market.prices).filter(id=>(inventory?.[id]??0)>0);
- if(!crops.length)return [day,el("p",{class:"empty",text:"Kho chưa có nông sản để bán. Gặt xong rồi quay lại nhé."})];
- return [day,...clearanceRow({market,inventory,crops,busy,onSell}),...crops.map(id=>{
-  const price=market.prices[id],label=CROP[id]?.label||id,have=inventory[id],left=Math.max(0,market.perCropDaily-(market.sold?.[id]||0));
+ const goods=Object.keys(q.prices).filter(id=>(inventory?.[id]??0)>0);
+ if(!goods.length)return [day,el("p",{class:"empty",text:"Kho chưa có nông sản hay sản vật để bán. Gặt, thu sản vật rồi quay lại nhé."})];
+ return [day,...clearanceRow({market,inventory,crops,busy,onSell}),...goods.map(id=>{
+  const price=q.prices[id],label=labelOf(id),have=inventory[id],left=Math.max(0,market.perCropDaily-(market.sold?.[id]||0));
+  const capLeft=premium.has(id)?premiumLeft:normalLeft;
+  const grade=id.startsWith("produce_")?(q.happy.includes(id.slice(8))?"Bé vui ×2":""):q.tiers[id]?`${TIER[q.tiers[id]]} ×${price/market.prices[id]}`:"";
   const max=Math.min(have,left,Math.floor(capLeft/price));
   let count=Math.max(Math.min(max,1),Math.min(max,quantities.get(id)||1));
   const qty=el("output",{class:"gp-qty-value","aria-live":"polite"});
@@ -33,9 +42,9 @@ export function marketCards({market,inventory,items,quantities,busy,onSell}){
   paint();
   const note=left===0?"Hết lượt hôm nay":capLeft<price?"Quầy hết tiền hôm nay":`Còn ${left}/${market.perCropDaily} hôm nay`;
   return el("article",{class:`card store-card gp-tile kind-harvest${max<1?" is-locked":""}`,"data-market-crop":id},[
-   el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,kind:"harvest",badge:`×${num(have)}`})]),
+   el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,kind:id.startsWith("produce_")?"produce":"harvest",badge:`×${num(have)}`})]),
    el("strong",{class:"gp-tile-name",text:label}),
-   el("small",{class:"gp-tile-sub store-stock-note",text:`Kho ${num(have)}`}),
+   el("small",{class:"gp-tile-sub store-stock-note",text:grade?`Kho ${num(have)} · ${grade}`:`Kho ${num(have)}`}),
    el("div",{class:"store-meta-row"},[el("span",{class:"gp-price"},[pixelIcon("coin",1),el("b",{text:num(price)}),el("small",{text:"/cái"})]),el("small",{class:"meta",text:note})]),
    el("div",{class:"store-action-row gp-tile-actions"},max<1?[el("span",{class:"gp-state",text:note})]:[el("div",{class:"gp-stepper",role:"group","aria-label":"Số "+label+" muốn bán"},[minus,qty,plus]),all,sell]),
   ]);
