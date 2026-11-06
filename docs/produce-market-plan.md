@@ -20,6 +20,25 @@
 Bảng giá: Bí ngô 3 · cây 2 giờ 4 · cây 3 giờ cấp 6–20 là 5, cấp 28 trở lên là 6 · cây 6 giờ 9 · cây 8 giờ 11 G.
 Ước tính (giờ lớn đã giảm một nửa): cấp 25 chơi 2 lượt/ngày bán khoảng 810 G; cấp 110 khoảng 6,5 giờ cày mới chạm trần.
 
+## Hàng giá cao (chủ dự án 06/11/2026)
+
+| Hạng mục | Giá trị |
+|---|---|
+| Nông sản chất lượng cao | Giá cây × bậc thành thạo, cấp số nhân: Tập sự ×2 · Thạo nghề ×4 · Bậc thầy ×8 |
+| Sản vật sinh vật | Bán được: `ceil(cấp loài / 3)` G (Len quái lùng nhùng 4 · Vảy Rồng rụng 32); ×2 khi bé đang vui (tâm trạng ≥ 80) |
+| Trần riêng | 5.000 G/ngày cho hàng giá cao; 10.000 G khi có ít nhất một cây Bậc thầy. Không trừ vào trần 2.500 G của hàng thường |
+| Giới hạn số lượng | Như cũ, 100 cái mỗi loại mỗi ngày (cả sản vật) |
+| Xả kho | Không đổi: giá gốc, chỉ nông sản |
+| Bán chính con thú | Không làm: nhận nuôi chỉ tốn 3 khẩu phần, bán thú sẽ thành vòng nuôi–bán lặp lại và mất gắn kết, trò đã dạy |
+| Mã | `garden-market-core.js` `TIER_MULT`, `PRODUCE_PRICES`, `PREMIUM_CAP(_MASTER)`, `marketQuality`; phản hồi `market.quality` |
+
+| # | Đường lách | Rào chắn | Test |
+|---|---|---|---|
+| 41 | Mua Bữa thượng hạng / Tiệc chuồng để thú ra sản vật nhanh rồi bán | Giá sản vật lúc bé vui × 2 cái < bữa mua rẻ nhất khi giảm 50% (Tiệc chuồng 3.200 G / 12 con × 0,5 ≈ 133 G) | `produce sells … no bought meal pays for itself` |
+| 42 | Đổi loại cây để lách trần giá cao | Trần tính theo tài khoản | `premium cap … switching crops shares it` |
+| 43 | Mưa suối thần gặt cả vườn rồi bán ×8 | Giá ≥ 12.600 G kể cả giảm 50%, cao hơn trần 10.000 G | — |
+| 44 | Bán lúc bé vui rồi để bé buồn | Hợp lệ: chăm bé là công sức; giá tính trên server lúc bán | — |
+
 ## Rào chắn (nối tiếp §10.5 của `level-500-roadmap.md`)
 
 | # | Đường lách | Rào chắn | Test |
