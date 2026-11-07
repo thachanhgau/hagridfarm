@@ -115,7 +115,7 @@ test('25.0 S7 Noel set: bậc Tận Sức only, sold all December at the §3 pri
   assert.equal(storeLock(firebolt, 500, '2026-11-30'), 'Mở bán 01/12');
   assert.equal(storeLock(firebolt, 500, '2026-12-01'), '');
   assert.equal(storeLock(firebolt, 500, '2026-12-31'), '');
-  assert.equal(storeLock(firebolt, 119, '2026-12-05'), 'Cấp 100 ★20');
+  assert.equal(storeLock(firebolt, 119, '2026-12-05'), 'Tận Sức 20');
   assert.equal(storeLock(firebolt, 500, '2027-01-01'), 'Mở bán 01/12');
   assert.equal(unlockedCatalog(500, '2026-12-10').filter(item => item.season === 'xmas').length, 6);
   assert.equal(unlockedCatalog(150, '2026-12-10').filter(item => item.season === 'xmas').length, 1);

@@ -27,7 +27,7 @@ import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KE
 import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=25.0.1';
 import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=25.0.1';
 import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=25.0.1';
-import {pixelIcon,lineIconUrl,setAction} from './pixel-icons.mjs?v=25.0.1';
+import {pixelIcon,lineIconUrl,setAction,tanSucMark} from './pixel-icons.mjs?v=25.0.1';
 import {nextGoal} from './next-goal.mjs?v=25.0.1';
 import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=25.0.1';
 import {createMissions} from './garden-missions-ui.mjs?v=25.0.1';
@@ -574,7 +574,7 @@ function refresh(){
  queueMicrotask(syncGuide);
  selectedPlot=Math.min(selectedPlot,state.plots.length-1);const now=logical(),slots=state.plots[selectedPlot].slots,c=CROP[seed],n=slots.filter(Boolean).length,types=new Set(slots.filter(Boolean).map(e=>e.species)),info=E.levelInfo(state);
  $('shopButton').disabled=connected&&!walletReady;
- const tanSuc=state.level>E.TAN_SUC_LEVEL,top=state.level===E.MAX_LEVEL;$('levelValue').textContent=tanSuc?'★'+(state.level-E.TAN_SUC_LEVEL):state.level;$('levelValue').classList.toggle('is-tan-suc',tanSuc);$('xpText').textContent=top?'Đã đạt cấp '+E.MAX_LEVEL:num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('levelButton').style.setProperty('--xp',(top?100:Math.min(100,info.xpInLevel/info.xpToNext*100)).toFixed(1));$('levelButton').setAttribute('aria-label','Hồ sơ · '+E.levelLabel(state.level)+' · '+$('xpText').textContent);
+ const tanSuc=state.level>E.TAN_SUC_LEVEL,top=state.level===E.MAX_LEVEL;$('levelValue').replaceChildren(...(tanSuc?tanSucMark(state.level-E.TAN_SUC_LEVEL):[String(state.level)]));$('levelValue').classList.toggle('is-tan-suc',tanSuc);$('xpText').textContent=top?'Đã đạt cấp '+E.MAX_LEVEL:num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('levelButton').style.setProperty('--xp',(top?100:Math.min(100,info.xpInLevel/info.xpToNext*100)).toFixed(1));$('levelButton').setAttribute('aria-label','Hồ sơ · '+E.levelLabel(state.level)+' · '+$('xpText').textContent);
  syncSupplies();syncGoal();
  $('levelButton').dataset.level=state.level;$('levelButton').dataset.xp=state.xp;$('levelButton').title=connected?(walletReady?WALLET_TEXT.title:WALLET_TEXT.connecting):(session==='lab'?'Phiên thử · ':'')+(saveAvailable?'Đã lưu trên thiết bị':'Chưa lưu được');
  $('plotLabel').textContent=(selectedPlot+1)+'/'+state.plots.length;$('plotCount').textContent=n+'/9';$('plotsButton').setAttribute('aria-label','Thửa '+(selectedPlot+1)+' / '+state.plots.length+' · '+n+'/9 ô');
@@ -780,7 +780,7 @@ function celebrate(from,to){
  // Server gift (garden-action-core): +1 nước phép per level reached up to 19.
  const gift=connected?Math.max(0,Math.min(to,19)-from):0;if(gift)list.append(el('li',{title:'Quà bác Hagrid'},[pixelIcon('boost',2),el('span',{text:'+'+gift+' Nước phép'})]));
  for(const row of DB.levels.slice(from,to))list.append(el('li',{title:'Cấp '+row.level+': '+row.unlock},[levelUnlockVisual(row,DB,items,48).visual,el('span',{text:row.unlock.split(/[;·]/)[0]})]));
- const card=$('levelCelebration');$('celebrationLevel').textContent=to>E.TAN_SUC_LEVEL?'★'+(to-E.TAN_SUC_LEVEL):to;$('celebrationTitle').textContent=to>E.TAN_SUC_LEVEL?'Bậc Tận Sức ★'+(to-E.TAN_SUC_LEVEL)+'!':'Lên cấp '+to+'!';celebrationFocus=document.activeElement;card.classList.remove('is-bursting');card.hidden=false;void card.offsetWidth;card.classList.add('is-bursting');$('closeCelebration').focus();
+ const card=$('levelCelebration');$('celebrationLevel').replaceChildren(...(to>E.TAN_SUC_LEVEL?tanSucMark(to-E.TAN_SUC_LEVEL):[String(to)]));$('celebrationTitle').textContent=to>E.TAN_SUC_LEVEL?'Bậc Tận Sức '+(to-E.TAN_SUC_LEVEL)+'!':'Lên cấp '+to+'!';celebrationFocus=document.activeElement;card.classList.remove('is-bursting');card.hidden=false;void card.offsetWidth;card.classList.add('is-bursting');$('closeCelebration').focus();
 }
 function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.focus();if(tanSucLetterDue){tanSucLetterDue=false;wizard.openLetter('tanSuc');}}
 $('closeCelebration').onclick=closeCelebration;

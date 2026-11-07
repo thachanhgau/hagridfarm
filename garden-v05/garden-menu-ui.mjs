@@ -1,5 +1,6 @@
 import {el,button} from './ui-utils.mjs?v=25.0.1';
 import {V24_ART,navIcon} from './v24-visuals.mjs?v=25.0.1';
+import {pixelIcon} from './pixel-icons.mjs?v=25.0.1';
 
 // Four destinations; the garden illustration stays decorative so every target is explicit.
 export function renderGardenMenu(ctx,actions){
@@ -7,12 +8,12 @@ export function renderGardenMenu(ctx,actions){
  const root=el('nav',{class:'garden-menu','aria-label':'Menu khu vườn'});
  const art=el('div',{class:'garden-menu-art','aria-hidden':'true'},[
   el('img',{src:V24_ART[weather]||V24_ART.clear,alt:'',decoding:'async'}),
-  el('span',{class:'garden-menu-seal',text:'✦'}),
+  el('span',{class:'garden-menu-seal'},[pixelIcon('seal',2)]),
  ]);
  root.append(art);
  for(const [id,label,glyph] of [
   ['guide','Sổ tay','guide'],['tour','Thăm vườn','tour'],['profile','Hồ sơ','profile'],
-  ['events','Lễ hội','events'],['work','Việc bác Hagrid','work'],['acp','ACP','settings'],['settings','Cài đặt','settings'],
+  ['events','Lễ hội','events'],['work','Việc bác Hagrid','work'],['acp','ACP','acp'],['settings','Cài đặt','settings'],
  ]){
   if(!actions[id])continue; // «Việc bác Hagrid» only with a wallet; «ACP» only for KTV Gia Tinh
   const medal=el('span',{class:'garden-menu-medal','aria-hidden':'true'});

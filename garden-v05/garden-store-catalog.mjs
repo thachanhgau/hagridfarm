@@ -719,7 +719,7 @@ export const storeLock=(item,level,dayKey=vnDayKey())=>{
  if(item.season&&!inSeason(item,dayKey)){const d=seasonOpens(item,dayKey);return d?`Mở bán ${d.slice(8)}/${d.slice(5,7)}`:'Ngoài mùa lễ hội';}
  if(item.season&&item.season!=='xmas')return '';
  if(item.level<=level)return '';
- return item.level>TAN_SUC_LEVEL?`Cấp ${TAN_SUC_LEVEL} ★${item.level-TAN_SUC_LEVEL}`:`Cấp ${item.level}`;
+ return item.level>TAN_SUC_LEVEL?`Tận Sức ${item.level-TAN_SUC_LEVEL}`:`Cấp ${item.level}`;
 };
 // Level-500 roadmap §12: below level 100 nothing from bậc Tận Sức shows, not even as a locked card.
 export const storeVisible=(item,level)=>!item.reward&&(item.level<=TAN_SUC_LEVEL||level>=TAN_SUC_LEVEL); // event gifts never show in the store

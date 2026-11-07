@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "ba2dbc7a2855",
+  "revision": "ee364fef5055",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -3702,6 +3702,196 @@
       "sha256": "9d15e9747fbb0795b0c7e0f75132a79d66ee4cecc6510451a03f0c24900887e0"
     },
     {
+      "source": "native-items/ach_creature_friend.png",
+      "file": "runtime-webp/native-items/ach_creature_friend.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 732,
+      "bytes": 434,
+      "sourceSha256": "0d9c17848f8501038275a7f5903832fb32fa91069f3273a6c2ea77f6ca44136e",
+      "sha256": "dfbe031eb68de21087abdf280059fb10eeff372ca3364ff2e97e854a14d10bef"
+    },
+    {
+      "source": "native-items/ach_dragon_tamer.png",
+      "file": "runtime-webp/native-items/ach_dragon_tamer.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 941,
+      "bytes": 598,
+      "sourceSha256": "6ad3efd155afc513229a464b6f4a9de04aceba84fb3b9db138c4befce1cc27e5",
+      "sha256": "8e03dde9931173422d4a8ee17183c05641119a231cde343ba5e13e215ffe6bc2"
+    },
+    {
+      "source": "native-items/ach_forest_architect.png",
+      "file": "runtime-webp/native-items/ach_forest_architect.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 820,
+      "bytes": 482,
+      "sourceSha256": "d14c1c3fc9532911a787bfa4877dac45ed1e643a925af9dd31f22004469fb934",
+      "sha256": "0cca5fcfd3e04abeebc53536652c902d6df2a3c297378ef46d7356f7e1f8f123"
+    },
+    {
+      "source": "native-items/ach_forest_envoy.png",
+      "file": "runtime-webp/native-items/ach_forest_envoy.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 969,
+      "bytes": 634,
+      "sourceSha256": "9688c885e4ecfee5ae9d40007cc552d3bb22f0a8afee6d0efe6cffb6f78bdaa4",
+      "sha256": "6efcdadac8cdc07c10a4c71eb2cb467bde6088a1e16505ec4b68f339bfb99469"
+    },
+    {
+      "source": "native-items/ach_grand_keeper.png",
+      "file": "runtime-webp/native-items/ach_grand_keeper.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 931,
+      "bytes": 560,
+      "sourceSha256": "4360879a20ecd858a1288b54f145adb2bed950ecbe1186756c98368cbb1a5ad7",
+      "sha256": "90d16b8ebc86f295afbb0e2314cb31d10879b32943469cdacaa419896583969c"
+    },
+    {
+      "source": "native-items/ach_herbology_artisan.png",
+      "file": "runtime-webp/native-items/ach_herbology_artisan.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 814,
+      "bytes": 500,
+      "sourceSha256": "bd77fec0bfb72f8afc640effbe1b3b6323549d84971d27ee4c848e6663518aac",
+      "sha256": "4ff23799194d2d859e9e4681935ad10bf54ebfbfa16928be9bcd29e0725dbbaa"
+    },
+    {
+      "source": "native-items/ach_hippogriff_rider.png",
+      "file": "runtime-webp/native-items/ach_hippogriff_rider.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 983,
+      "bytes": 614,
+      "sourceSha256": "f2a0b06240a34d8c582eb92fae1ebb79d6df0188c695f235095b9483531509c5",
+      "sha256": "804534edb4b95c98ae165afcf004da9e97e4d001f545b5fab25c2ab1e0ee8dc5"
+    },
+    {
+      "source": "native-items/ach_keepsake_curator.png",
+      "file": "runtime-webp/native-items/ach_keepsake_curator.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 936,
+      "bytes": 572,
+      "sourceSha256": "b911e4544fa3eb625f156d2c2ba5c12a801a61c50182f21f925de6827a525739",
+      "sha256": "726ae593982a5c1d6ae99508d5767361fed09e4b0a61ca6574de5dd3168cbf14"
+    },
+    {
+      "source": "native-items/ach_landscape_artist.png",
+      "file": "runtime-webp/native-items/ach_landscape_artist.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 826,
+      "bytes": 480,
+      "sourceSha256": "4aeeb9795d57ee0d944331cea635059500ab49c8ca5c4bf54796709c5d3c58f4",
+      "sha256": "cc2fb533f892f69d498218522f0375b39c0472e95c5e87f3ba6b7b2c99b839d7"
+    },
+    {
+      "source": "native-items/ach_master_brewer.png",
+      "file": "runtime-webp/native-items/ach_master_brewer.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 740,
+      "bytes": 464,
+      "sourceSha256": "5ce634bf1a391ae418ada79b356be21366c349e8a60be6de22658150d6d8cfcf",
+      "sha256": "2cac37159e1c856f925ed389a1085b2ab2b11bb9d2ad01deaaf503273e79e217"
+    },
+    {
+      "source": "native-items/ach_sprout_apprentice.png",
+      "file": "runtime-webp/native-items/ach_sprout_apprentice.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 736,
+      "bytes": 462,
+      "sourceSha256": "12ecb5b294ad4b7211f8f5aefc65607b50f916954b14a4295e5d88852f975693",
+      "sha256": "3d5db8ec03340fd1ad98bb4da6e0ab9622f894bfff43b0e4caae233356aefb64"
+    },
+    {
+      "source": "native-items/ach_unicorn_guardian.png",
+      "file": "runtime-webp/native-items/ach_unicorn_guardian.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 921,
+      "bytes": 562,
+      "sourceSha256": "9545c683783f66a557f9eab315d7c699ecbcd2dd0fc6d3bf0e73de20dd8a8283",
+      "sha256": "e8fec5e4d047996b0a02d25814dd72c77f7e091a6aa5b5ec02f3bce1778a2009"
+    },
+    {
+      "source": "native-items/chapter_1.png",
+      "file": "runtime-webp/native-items/chapter_1.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1199,
+      "bytes": 794,
+      "sourceSha256": "81aea6829d8028171693571d65a492fd5461e3e68ecb5ca7c09a32efc3afc49b",
+      "sha256": "2e072ba6948cf4b58ef5f6f465c58a3e66881e8184d333ef28646cb3ce0cf842"
+    },
+    {
+      "source": "native-items/chapter_2.png",
+      "file": "runtime-webp/native-items/chapter_2.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1079,
+      "bytes": 706,
+      "sourceSha256": "4677ef1dd9b7680c512cc4f038939e15cdcaf00991dcf424bfd20349b48e359d",
+      "sha256": "860e07933409c190d7524feb585178815a22de8a2b8e4260df70e589b9f17db2"
+    },
+    {
+      "source": "native-items/chapter_3.png",
+      "file": "runtime-webp/native-items/chapter_3.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1355,
+      "bytes": 872,
+      "sourceSha256": "c3616bc72a0a8ed6afa3cb57659b6a7cea41682fbfe23cfed396fa58e0834ca0",
+      "sha256": "65beeb1b54fbcd1764d1c81f6cbc23dc6bb515895d7e87584a60297f64c3e014"
+    },
+    {
+      "source": "native-items/chapter_4.png",
+      "file": "runtime-webp/native-items/chapter_4.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1108,
+      "bytes": 734,
+      "sourceSha256": "647f9074a6aa42403c689b0dcbf12022f3320dc7ac7d2c6b52e8db1f422c1465",
+      "sha256": "e8b2204ed6256489d5e50358397e8a9ee11fd7ae2705243d9b16f2833cba1214"
+    },
+    {
+      "source": "native-items/chapter_5.png",
+      "file": "runtime-webp/native-items/chapter_5.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1333,
+      "bytes": 844,
+      "sourceSha256": "234c5e30b8bf29aff92d8fac1c00728f37ecd6fe7059a02195a4813995d34fb9",
+      "sha256": "53cbd82d57016e238960e9950191424d6224f49fad2696e17f045678f787fdf2"
+    },
+    {
+      "source": "native-items/chapter_6.png",
+      "file": "runtime-webp/native-items/chapter_6.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1011,
+      "bytes": 690,
+      "sourceSha256": "1067e12103a10e7c4ca99ed66bf59a1eb648802096bb1512c2c6e93a1324bb96",
+      "sha256": "898c57a2ca08d6f1f41fb7823ac94cae77b8220970be1c036702d5318bc92b63"
+    },
+    {
+      "source": "native-items/chapter_7.png",
+      "file": "runtime-webp/native-items/chapter_7.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1269,
+      "bytes": 780,
+      "sourceSha256": "10327a4c5ce04a44ffa648b508ecf119e453c40db07b499d2e291abc097efba2",
+      "sha256": "4c83eb62552c1c5fa41c34e0428de1b975d4a354a5f6d0d62cfec83f2e1214e5"
+    },
+    {
       "source": "native-items/decoration-11_right.png",
       "file": "runtime-webp/native-items/decoration-11_right.webp",
       "width": 96,
@@ -5182,6 +5372,16 @@
       "sha256": "2cc0c8a61001c537869d5723d7e328af4447e9aa30de4229f5dbc5939ccb02eb"
     },
     {
+      "source": "native-items/seed_packet.png",
+      "file": "runtime-webp/native-items/seed_packet.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 642,
+      "bytes": 374,
+      "sourceSha256": "84f71e4540804363df8977edb5b28d920cd2f85a3799b09de9e62cee57786ad4",
+      "sha256": "4d5235aa99960baa446b3885f639e7313a267ad43ee976be86a9602fd5a3c2ea"
+    },
+    {
       "source": "native-items/supply_boost.png",
       "file": "runtime-webp/native-items/supply_boost.webp",
       "width": 64,
@@ -5210,6 +5410,16 @@
       "bytes": 450,
       "sourceSha256": "5989ffd78eb8fe7923f11b1a15197c73acb79dab0751296441a9b652fa931d6b",
       "sha256": "7c01c8ece61633aa8ebf3b168dc8252ccb87b86739e6c3be3bb68ea3e269e9e5"
+    },
+    {
+      "source": "native-items/tan_suc.png",
+      "file": "runtime-webp/native-items/tan_suc.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 770,
+      "bytes": 474,
+      "sourceSha256": "faafa961d70f5aabaac13fd1c20ecc52dc79a159a9256947968c698fd6ee0a7c",
+      "sha256": "aae864f2b681c4cfc98e34d3d2a550f2130cb69f2e1267a4bcc729e29f3b3199"
     },
     {
       "source": "native-complete-objects/fang/frame-01.png",
@@ -11432,6 +11642,36 @@
       "sha256": "aac7d4cc45a1c77bba86c18ba1a3da6838cc30e6ae473f147454038c2c2b6def"
     },
     {
+      "source": "environment/bubbles/heart-small.png",
+      "file": "runtime-webp/environment/bubbles/heart-small.webp",
+      "width": 9,
+      "height": 8,
+      "sourceBytes": 162,
+      "bytes": 112,
+      "sourceSha256": "f5768a97a6b9018dc044f570e1ad5a24bc8cf7993708ccd5ea66ed96df198ea7",
+      "sha256": "030cebd66eb197d690da39620ce9fc19898eac50fb9cae1e066e6d791a6c025a"
+    },
+    {
+      "source": "environment/bubbles/hungry.png",
+      "file": "runtime-webp/environment/bubbles/hungry.webp",
+      "width": 28,
+      "height": 36,
+      "sourceBytes": 224,
+      "bytes": 148,
+      "sourceSha256": "04b23d1bac5042631ef919f50cd28ba577acd1ceadd29a2968700065985f901c",
+      "sha256": "2fd94055ff534100db703b0748acd66b26345b5c19f22d145fb077a8b68bec71"
+    },
+    {
+      "source": "environment/bubbles/meal-ready.png",
+      "file": "runtime-webp/environment/bubbles/meal-ready.webp",
+      "width": 28,
+      "height": 36,
+      "sourceBytes": 404,
+      "bytes": 302,
+      "sourceSha256": "807784544cfc04e8886b78e80b9ff1faa1b956231326681c3f2922e60a0651ec",
+      "sha256": "ec5e4b9bc7f5f19bbaf7d24f3f4e38b331026e6dc4a3e15b77d26de4359f3c28"
+    },
+    {
       "source": "environment/elves/dobby/carry.png",
       "file": "runtime-webp/environment/elves/dobby/carry.webp",
       "width": 80,
@@ -12776,40 +13016,40 @@
       "file": "runtime-webp/world-v241/hero-halloween.webp",
       "width": 128,
       "height": 80,
-      "sourceBytes": 19035,
-      "bytes": 15168,
-      "sourceSha256": "d9263507d1204d142b278992fabdf2f5e62f09f970a7025fb5ef519466e30eb0",
-      "sha256": "fc28ef15133303c5b537dbaabc9095b1f01b99c7814dbc6ea1d10f0e53c90676"
+      "sourceBytes": 3149,
+      "bytes": 2004,
+      "sourceSha256": "fdfc41a49f6db96e33d867b3440880357eccb6398e25a106c8a686f2c9fae0b9",
+      "sha256": "6e9614948af428ecf45aec0b65b56e23986939a3cdd61a7ea8ce6c83e38f7b0e"
     },
     {
       "source": "world-v241/hero-herbology.png",
       "file": "runtime-webp/world-v241/hero-herbology.webp",
       "width": 136,
       "height": 158,
-      "sourceBytes": 46766,
-      "bytes": 33678,
-      "sourceSha256": "bddcf0f14a1d8483b98e6b4c9e78bcfcae07ca2d2503ec5fb6322cffcaeb253c",
-      "sha256": "14d27044d12a802d14bd8394987b66dfcaffb56c0a79846731c9166c2dc0227b"
+      "sourceBytes": 5898,
+      "bytes": 3854,
+      "sourceSha256": "1be9200dbfd0a754b12aaefdcb24d53135891e526bb6ea1607f641e6aba5117d",
+      "sha256": "cfc320e1219e6eede5bc0519b379459d982b78abf38da43b287b4d0c4e4eaf39"
     },
     {
       "source": "world-v241/hero-yule.png",
       "file": "runtime-webp/world-v241/hero-yule.webp",
       "width": 128,
       "height": 183,
-      "sourceBytes": 44236,
-      "bytes": 36814,
-      "sourceSha256": "d88ffe03f146ed2f02b8c759fa1f13fdea933f96ba15bbea713d1ea3dad59f22",
-      "sha256": "5345793d3f6334ef1374635199008904ea0c944d8bb9ed574638ba7dc0c5ac4d"
+      "sourceBytes": 6978,
+      "bytes": 4428,
+      "sourceSha256": "65b6354055b2d83b59c647bddb5f182c4a1e2841abf1766b13b6d9d1c5519d4b",
+      "sha256": "42447f25f032dbeba5d36e720d93a2d89b8c14af1a4078cd2c5e123ef7537476"
     },
     {
       "source": "world-v242/cottage-corner.png",
       "file": "runtime-webp/world-v242/cottage-corner.webp",
       "width": 150,
       "height": 75,
-      "sourceBytes": 13155,
-      "bytes": 10246,
-      "sourceSha256": "f3897c452320e49cf68412adddeda2b55af427e6a9ecf499a3ff4d51e1365795",
-      "sha256": "6895d56059ec4b9bc68cc0ca4eefb20292b1926319b094ea90eaa184cfd6fa9c"
+      "sourceBytes": 2233,
+      "bytes": 1336,
+      "sourceSha256": "9023613fb63084ea50f7f4cd3978a320e06cd4e3c32eecbdd8a4e7b6f862e8ee",
+      "sha256": "1644d18c6a887e28d503c0dc22e3250316121fc77d02bf56e7e688ed3b29bf58"
     }
   ],
   "existingWebp": [
@@ -12825,8 +13065,8 @@
     },
     {
       "file": "v24-art/event-quidditch.webp",
-      "bytes": 10310,
-      "sha256": "ed8aa7acc2ac142b0c30a37db3002b25b6c437b17e5d6af45a3fc2bba6c0c0ff"
+      "bytes": 124748,
+      "sha256": "4470e9afc2f756e4aca66a9621ba37a2c1da660f1cdbcc0cbe0cd2c4bffebd2d"
     },
     {
       "file": "v24-art/event-yule.webp",
@@ -12855,11 +13095,11 @@
     }
   ],
   "totals": {
-    "converted": 1279,
+    "converted": 1303,
     "existingWebp": 8,
-    "originalBytes": 4639252,
-    "webpBytes": 3081310,
-    "savedBytes": 1557942,
-    "savedPercent": 33.58
+    "originalBytes": 4669661,
+    "webpBytes": 3124656,
+    "savedBytes": 1545005,
+    "savedPercent": 33.09
   }
 }

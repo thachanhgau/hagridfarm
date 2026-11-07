@@ -502,6 +502,9 @@ function drawProgress(context, x, y, progress) {
   context.fillRect(x - width / 2 + 1, y - 2, Math.max(2, (width - 2) * clamp(progress, 0, 1)), 4);
 }
 
+// Status bubbles drawn for the UI audit (07/11/2026); the vector bubble only shows until the PNG has loaded.
+const BUBBLE_FILES = Object.freeze({meal: 'environment/bubbles/meal-ready.png', hungry: 'environment/bubbles/hungry.png', heart: 'environment/bubbles/heart-small.png'});
+
 function drawBubble(context, x, y, text, color = '#f5d69a') {
   context.beginPath();
   context.fillStyle = 'rgba(24,45,43,.92)';
@@ -706,7 +709,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set([...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
+  const deferredFiles = new Set([...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -831,6 +834,12 @@ export async function createGarden(canvas, options = {}) {
   const requestedFiles = new Set(), DEFERRED_RETRY_MS = 5000;
   let elfList = []; // last drawn gia tinh, for taps
   const elfCheers = {};
+  // 28×36 pixel bubble whose body centres where the old 14 px circle did (tail bottom-left, towards the creature).
+  function statusBubble(kind, x, y, text, color) {
+    const image = imageFor(BUBBLE_FILES[kind]);
+    if (image) context.drawImage(image, Math.round(x - 14), Math.round(y - 20));
+    else drawBubble(context, x, y, text, color);
+  }
   function imageFor(file) {
     if (images.has(file)) return images.get(file);
     if (deferredFiles.has(file)) {
@@ -1392,13 +1401,15 @@ export async function createGarden(canvas, options = {}) {
       const meal = entry?.meal;
       const readyAt = Number(meal?.readyAt);
       if (Number.isFinite(readyAt)) {
-        if (logicalNow >= readyAt) drawBubble(context, xy[0] + 20, xy[1] - 44, '🍽', '#f5d69a');
+        if (logicalNow >= readyAt) statusBubble('meal', xy[0] + 20, xy[1] - 44, '🍽', '#f5d69a');
         else label(context, roundedTime(readyAt - logicalNow), xy[0], xy[1] - Math.max(54, finite(asset?.height, 64) * 0.72), '#b7dee0', 'bold 10px monospace');
       } else if (entry?.hungry === true || entry?.needsMeal === true || (meal === null && !progress.mature)) {
-        drawBubble(context, xy[0] + 20, xy[1] - 44, '!', '#ed8a45');
+        statusBubble('hungry', xy[0] + 20, xy[1] - 44, '!', '#ed8a45');
       }
       if (Number(object.affinityLevel) >= 2) {
-        label(context, `♥${object.affinityLevel}`, xy[0] - 20, xy[1] - 44, '#ffc36b', 'bold 9px monospace');
+        const heart = imageFor(BUBBLE_FILES.heart);
+        if (heart) { context.drawImage(heart, Math.round(xy[0] - 31), Math.round(xy[1] - 48)); label(context, String(object.affinityLevel), xy[0] - 16, xy[1] - 44, '#ffc36b', 'bold 9px monospace'); }
+        else label(context, `♥${object.affinityLevel}`, xy[0] - 20, xy[1] - 44, '#ffc36b', 'bold 9px monospace');
       }
     }
   }
@@ -1462,7 +1473,7 @@ export async function createGarden(canvas, options = {}) {
         const activeAsset = {...asset,...(frameInfo.file?{file:frameInfo.file}:{}),...(frameInfo.atlasRect?{atlasRect:frameInfo.atlasRect}:{}),...(object.id==='greenhouse'?{seasonalKind:'greenhouse-roof'}:{}),...(object.id==='gardener'?{noSnowCap:true}:{})};
         drawAsset(activeAsset, object.xy[0], object.xy[1]);
         if (object.id === 'gardener') breathOf(activeAsset, object.xy, false, false, 'hagrid', clock);
-        if (greeting) label(context, '♥', object.xy[0], object.xy[1] - 128, '#f5d69a', 'bold 16px sans-serif');
+        if (greeting) { const heart = imageFor(BUBBLE_FILES.heart); if (heart) context.drawImage(heart, Math.round(object.xy[0] - 9), Math.round(object.xy[1] - 136), 18, 16); else label(context, '♥', object.xy[0], object.xy[1] - 128, '#f5d69a', 'bold 16px sans-serif'); }
         if (object.id === 'gardener' && object.speechText) {
           drawHagridSpeechBubble(context, object.xy[0], object.xy[1], object.speechText, {emphasized: greeting, scale: object.speechScale || 1, align: object.speechScale ? 'right' : 'center', lift: 128});
         }

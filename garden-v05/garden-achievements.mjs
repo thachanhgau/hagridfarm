@@ -1,5 +1,5 @@
 import {getGardenStorage} from './garden-storage.mjs?v=25.0.1';
-import {el, button} from './ui-utils.mjs?v=25.0.1';
+import {el, button, itemArtVisual} from './ui-utils.mjs?v=25.0.1';
 import {pixelIcon, rewardChips, lockBadge, iconButton} from './pixel-icons.mjs?v=25.0.1';
 
 export const ACHIEVEMENTS_STORAGE_KEY = 'hpvn-garden-v22-achievements';
@@ -341,7 +341,7 @@ export function renderAchievementsSection({
       title: ach.description,
     }, [
       el('div', {class: 'gp-tile-art'}, [
-        pixelIcon(CATEGORY_ICONS[ach.category] || 'trophy', 3),
+        itemArtVisual(ach.id, 48) || pixelIcon(CATEGORY_ICONS[ach.category] || 'trophy', 3),
         ach.unlocked ? (ach.claimed ? el('span', {class: 'gp-corner is-done'}, [pixelIcon('check', 1)]) : null) : lockBadge(),
       ]),
       el('strong', {class: 'gp-tile-name', text: ach.title}),

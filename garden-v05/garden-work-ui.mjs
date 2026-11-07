@@ -8,7 +8,7 @@ import {CROP,CREATURE} from './balance-data.mjs?v=25.0.1';
 const HOUSE_COLORS = Object.freeze({gryffindor:'#C75B4B',hufflepuff:'#FFC36B',ravenclaw:'#3E3B70',slytherin:'#3F6A45'}); // palette.mjs only
 const labelOf = id => CROP[id]?.label || (id.startsWith('produce_') ? CREATURE[id.slice(8)]?.produce : null) || id;
 const meter = (done,target) => el('div',{class:'gp-meter',role:'progressbar','aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(done)},[el('span',{style:`width:${Math.min(100,Math.round(done/Math.max(1,target)*100))}%`})]);
-const stars = tier => el('span',{class:'work-stars','aria-label':`Bậc ${tier}/3`,text:'★'.repeat(tier)+'☆'.repeat(3-tier)});
+const stars = tier => el('span',{class:'work-stars',role:'img','aria-label':`Bậc ${tier}/3`},[0,1,2].map(i=>pixelIcon(i<tier?'star':'star_empty',1)));
 
 export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
  let tab='orders',lastBoard=null,lastWeek=null;

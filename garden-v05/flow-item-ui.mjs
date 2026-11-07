@@ -1,6 +1,7 @@
 import { ITEM_ART } from "./item-art.mjs?v=25.0.1";
 import { FLOW_ITEM_ART } from "./flow-item-art.mjs?v=25.0.1";
 import { KEEPSAKE_ART } from "./complete-object-art.mjs?v=25.0.1";
+import { UI_AUDIT_ART } from "./ui-audit-art.mjs?v=25.0.1";
 
 // A recipe can have a different illustration while still producing one of
 // these canonical inventory items. ITEM_ART supplies the shared recipe icon;
@@ -36,5 +37,5 @@ export function itemArtSpec(key) {
   const statue = KEEPSAKE_ART?.[species];
   if (statue?.file) return statue;
  }
- return ITEM_ART[key] || null;
+ return ITEM_ART[key] || UI_AUDIT_ART[key] || null;
 }

@@ -122,7 +122,7 @@ test('harvest icons use generated flow art without changing seed/live crop sprit
  const live = visualItemIcon(items, 'pumpkin', { size: 26 });
  assert.ok(seed.className.includes('is-seed-packet'));
  assert.ok(live.className.includes('is-sprite'));
- assert.equal(findAttribute(seed, 'data-art-key'), undefined);
+ assert.equal(findAttribute(seed, 'data-art-key'), 'seed_packet', 'the seed card is the shared paper packet, not harvest art');
  assert.equal(findAttribute(live, 'data-art-key'), undefined);
  for (const crop of DB.crops) {
   assert.equal(cropVisualKind(crop.id), 'harvest');

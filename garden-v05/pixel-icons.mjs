@@ -1049,10 +1049,12 @@ export function rewardChips(items, reward = {}) {
 }
 
 /** Corner badge of a locked tile: a padlock, plus the level that opens it when there is one. */
-export function lockBadge(level = 0) {
- const text = level ? 'Mở ở cấp ' + level : 'Chưa mở';
- return el('span', {class: 'lock-badge', role: 'img', 'aria-label': text, title: text}, [pixelIcon('lock', 1), level ? el('b', {text: String(level)}) : null]);
+export function lockBadge(level = 0, tan = 0) {
+ const text = tan ? 'Mở ở Bậc Tận Sức ' + tan : level ? 'Mở ở cấp ' + level : 'Chưa mở';
+ return el('span', {class: 'lock-badge', role: 'img', 'aria-label': text, title: text}, [pixelIcon('lock', 1), ...(tan ? tanSucMark(tan) : [level ? el('b', {text: String(level)}) : null])]);
 }
+// Bậc Tận Sức N (levels above 100): the pixel badge + N, in place of a «★» glyph.
+export const tanSucMark = n => [pixelIcon('tansuc', 1), el('b', {text: String(n)})];
 
 /** Square 44 px icon button; `label` is the accessible name and tooltip, `text` an optional visible word. */
 export function iconButton(icon, label, fn, {text = '', ...attrs} = {}) {

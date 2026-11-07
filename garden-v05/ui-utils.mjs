@@ -162,7 +162,7 @@ export function itemArtKey(id, { kind = "" } = {}) {
  return null;
 }
 
-function itemArtVisual(key, size, { facing = "default", keepsake = false } = {}) {
+export function itemArtVisual(key, size, { facing = "default", keepsake = false } = {}) {
  const base = itemArtSpec(key);
  const spec = facing === "right" && base?.rightFile ? {...base, file: base.rightFile, bounds: base.rightBounds} : base;
  if (!spec?.file) return null;
@@ -255,8 +255,8 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  if (isSeed && items?.has?.(cropId)) {
   slot.classList.add("is-seed-packet");
   const packet = el("div", { class: "seed-packet-frame" }, [
-   el("span", { class: "seed-packet-band", text: "HẠT" }),
-   icon(items, cropId, 3, Math.round(size * 0.68)),
+   itemArtVisual("seed_packet", size),
+   icon(items, cropId, 3, Math.round(size * 0.6)),
   ]);
   slot.append(packet);
  } else if (supplyKey) {
@@ -345,23 +345,12 @@ export function recipeOutput(items, label, output, count, size = 38) {
  ]);
 }
 
-const STAGE_ART_MAP = Object.freeze({
- 1: { type: "img", src: "environment/layers/hut.png" },
- 2: { type: "item", id: "puffskein" },
- 3: { type: "img", src: "decor-assets/native/herbology_greenhouse.png" },
- 4: { type: "img", src: "environment/layers/oak.png" },
- 5: { type: "item", id: "hippogriff" },
- 6: { type: "img", src: "environment/layers/pond.png" },
-});
+// Chapter icons drawn for the UI audit (07/11/2026), one per GARDEN_STAGES id.
+const STAGE_ART_IDS = new Set([1, 2, 3, 4, 5, 6, 7]);
 
 export function stageVisualIcon(stageId, items, size = 48) {
- const spec = STAGE_ART_MAP[stageId] || STAGE_ART_MAP[1];
  const slot = el("div", { class: "visual-slot is-stage", style: `width:${size}px;height:${size}px` });
- if (spec.type === "item" && items?.has?.(spec.id)) {
-  slot.append(icon(items, spec.id, 3, Math.round(size * 0.84)));
- } else {
-  slot.append(el("img", { src: spec.src, alt: "", class: "visual-prop-img" }));
- }
+ slot.append(itemArtVisual(`chapter_${STAGE_ART_IDS.has(stageId) ? stageId : 1}`, size));
  return slot;
 }
 
@@ -385,7 +374,7 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
  const earnedDecor = DB.decorations?.find(d => d.level === lv);
  if (/^Bậc Tận Sức/.test(levelRow?.unlock || "")) {
   return {
-   visual: el("div", { class: "visual-slot is-tan-suc", style: `width:${size}px;height:${size}px` }, [el("b", { text: "★" })]),
+   visual: el("div", { class: "visual-slot is-tan-suc", style: `width:${size}px;height:${size}px` }, [itemArtVisual("tan_suc", size)]),
    category: "Bậc Tận Sức",
    categoryClass: "cat-tan-suc",
    meta: levelRow.xpToNext ? `${num(levelRow.xpToNext)} XP tới bậc sau` : "Bậc cao nhất",

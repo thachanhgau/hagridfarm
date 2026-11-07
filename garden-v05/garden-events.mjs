@@ -939,7 +939,7 @@ const FREE_TAP_ICONS = Object.freeze({care: ['care', 'Chăm cây'], pet: ['heart
 const shortDate = (key) => `${key.slice(8, 10)}/${key.slice(5, 7)}`;
 const THEME_LABELS = Object.freeze({event_halloween: 'Lễ Hội Ma', event_yule: 'Dạ vũ Noel', event_herbology_fair: 'Thảo dược', event_quidditch_cup: 'Quidditch', none: 'Ngày thường'});
 
-const GUEST_ICONS = Object.freeze({note_hagrid: 'home', note_sprout: 'sow', note_newt: 'heart', note_charlie: 'festival'});
+const GUEST_ICONS = Object.freeze({note_hagrid: 'guest_hagrid', note_sprout: 'guest_sprout', note_newt: 'guest_newt', note_charlie: 'guest_charlie'});
 const stripEmoji = (text = '') => String(text).replace(/^[^\p{L}\p{N}]+/u, '').trim();
 
 // The secret present: «???» until every stop is claimed, then Hagrid's gift.

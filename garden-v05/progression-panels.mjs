@@ -9,7 +9,7 @@ import {renderTourSection} from "./garden-tour.mjs?v=25.0.1";
 import {renderAchievementsSection} from "./garden-achievements.mjs?v=25.0.1";
 import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=25.0.1";
 import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=25.0.1";
-import {costChips,pixelIcon,iconButton,lockBadge} from "./pixel-icons.mjs?v=25.0.1";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=25.0.1";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -73,7 +73,7 @@ export function createPanels(ctx){
 
    const hero=el("section",{class:"journey-hero-card"},[
     el("div",{class:"journey-hero-main"},[
-     el("span",{class:"gp-level-badge is-big"+(s.level>E.TAN_SUC_LEVEL?" is-tan-suc":""),"aria-label":E.levelLabel(s.level)},[el("b",{text:s.level>E.TAN_SUC_LEVEL?"★"+(s.level-E.TAN_SUC_LEVEL):String(s.level)})]),
+     el("span",{class:"gp-level-badge is-big"+(s.level>E.TAN_SUC_LEVEL?" is-tan-suc":""),"aria-label":E.levelLabel(s.level)},[s.level>E.TAN_SUC_LEVEL?el("b",{},tanSucMark(s.level-E.TAN_SUC_LEVEL)):el("b",{text:String(s.level)})]),
      el("div",{class:"journey-hero-copy"},[
       el("small",{class:"journey-kicker",text:`CHƯƠNG ${current.id}/${GARDEN_STAGES.length}`}),
       el("h3",{text:s.level>=100?"Đại khu vườn":current.name}),
@@ -95,7 +95,9 @@ export function createPanels(ctx){
    for(const start of [1,21,41,61,81,...(s.level>=T?[tanSucStart]:[])]){
     const end=Math.min(start+19,visibleMax),tan=start>T;
     const hasCurrent=s.level>=start&&s.level<=end;
-    rangeBar.append(button(tan?`★${start-T}–${end-T}`:`${start}–${end}`,()=>{roadStart=start;refresh();},{"aria-pressed":String(roadStart===start||tan&&roadStart>T),"aria-label":tan?`Bậc Tận Sức ★${start-T}–${end-T}`:`Cấp ${start}–${end}`,class:"journey-tab-btn"+(hasCurrent?" has-current":"")}));
+    const rangeButton=(button(tan?`${start-T}–${end-T}`:`${start}–${end}`,()=>{roadStart=start;refresh();},{"aria-pressed":String(roadStart===start||tan&&roadStart>T),"aria-label":tan?`Bậc Tận Sức ${start-T}–${end-T}`:`Cấp ${start}–${end}`,class:"journey-tab-btn"+(hasCurrent?" has-current":"")}));
+    if(tan)rangeButton.prepend(pixelIcon("tansuc",1));
+    rangeBar.append(rangeButton);
    }
    const catBar=el("div",{class:"journey-cat-tabs",role:"group","aria-label":"Lọc loại mở khóa"});
    for(const [id,name,px] of [["all","Tất cả","more"],["cat-crop","Cây trồng","sow"],["cat-creature","Sinh vật","pen"],["cat-build","Công trình","build"],["cat-craft","Chế biến","craft"],["cat-decor","Cảnh quan","scenery"]]){
@@ -115,7 +117,7 @@ export function createPanels(ctx){
     const li=el("li",{class:`journey-card ${stateClass} ${infoVis.categoryClass}`},[
      el("div",{class:"journey-card-art"},[
       infoVis.visual,
-      isDone||isCurrent?el("span",{class:"badge journey-level-badge",text:l.level>T?"★"+(l.level-T):String(l.level)}):lockBadge(l.level>T?"★"+(l.level-T):l.level),
+      isDone||isCurrent?el("span",{class:"badge journey-level-badge"},l.level>T?tanSucMark(l.level-T):String(l.level)):lockBadge(l.level,l.level>T?l.level-T:0),
      ]),
      el("div",{class:"journey-card-body"},[
       el("div",{class:"journey-card-tags"},[
@@ -522,7 +524,7 @@ export function createPanels(ctx){
    const s=getState();
    body.append(el("section",{class:"v24-profile-view"},[
     el("div",{class:"v24-profile-id"},[
-     el("span",{class:"gp-level-badge"+(s.level>E.TAN_SUC_LEVEL?" is-tan-suc":""),"aria-label":E.levelLabel(s.level)},[el("b",{text:s.level>E.TAN_SUC_LEVEL?"★"+(s.level-E.TAN_SUC_LEVEL):String(s.level)})]),
+     el("span",{class:"gp-level-badge"+(s.level>E.TAN_SUC_LEVEL?" is-tan-suc":""),"aria-label":E.levelLabel(s.level)},[s.level>E.TAN_SUC_LEVEL?el("b",{},tanSucMark(s.level-E.TAN_SUC_LEVEL)):el("b",{text:String(s.level)})]),
      el("div",{},[el("strong",{text:$("playerName")?.textContent||"Người làm vườn"}),el("small",{text:`${num(s.xp)} XP`})]),
     ]),
     toolbar(

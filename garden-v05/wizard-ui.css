@@ -112,35 +112,10 @@
  overflow:hidden;
 }
 .visual-slot .sprite-icon{margin:0!important}
-.visual-slot.is-seed-packet{
- background:linear-gradient(160deg,#3d3320 0%,#1f2e22 100%);
- border-color:#e2c47899;
-}
-.seed-packet-frame{
- width:90%;
- height:90%;
- border:1px dashed #e2c47877;
- border-radius:7px;
- background:radial-gradient(circle at 50% 58%,#2b4432 0%,#17281e 100%);
- display:flex;
- flex-direction:column;
- align-items:center;
- justify-content:center;
- position:relative;
- padding-top:8px;
-}
-.seed-packet-band{
- position:absolute;
- top:1px;
- left:3px;
- right:3px;
- background:linear-gradient(90deg,#b89742,#e2c478,#b89742);
- color:#13231b;
- font:800 11px/11px ui-monospace,Menlo,monospace;
- text-align:center;
- border-radius:3px;
- letter-spacing:.6px;
-}
+/* Seed packet: Codex paper packet (native-items/seed_packet.png) with the crop sprite on its face. */
+.visual-slot.is-seed-packet{background:none}
+.seed-packet-frame{width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center}
+.seed-packet-frame>.sprite-icon,.seed-packet-frame>img:not(.item-art-img){position:absolute;left:50%;top:56%;transform:translate(-50%,-50%)}
 .visual-slot.is-feed{
  background:radial-gradient(circle at 50% 40%,#3b3222 0%,#192a21 100%);
  border-color:#d4af3788;
