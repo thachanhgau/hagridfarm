@@ -148,6 +148,16 @@
     .time-choices{display:flex;gap:8px;margin-top:10px}.time-choices button{flex:1;min-height:44px;font-size:12px}.home-choice{width:100%;min-height:44px;margin-top:10px}.embed-workspace{min-height:calc(100vh - 68px)}
     @media(max-width:600px){header.host-bar{padding:6px 10px;gap:6px;min-height:64px}.host-brand strong{display:none}.host-crest{width:32px;height:38px;font-size:23px}.host-brand{gap:5px}.host-controls{margin-left:auto;gap:3px}.host-tab{width:74px;min-height:50px}.embed-workspace{padding:6px;gap:8px;min-height:calc(100vh - 64px)}.iframe-frame{border-radius:8px}.scene-choice{height:94px}}
     @media(prefers-reduced-motion:reduce){.scene-choice img{transition:none}}
+    @media(max-width:900px){
+      html,body{height:100dvh;overflow:hidden}
+      body{display:flex;flex-direction:column}
+      header.host-bar{flex:none}
+      .embed-workspace{flex:1;min-height:0;padding:0;display:flex}
+      .iframe-frame{flex:1;min-height:0;height:100%;border-radius:0}
+      iframe{min-height:0;height:100%}
+      aside.floo-dock{display:none}
+      .host-tab{font-size:11px}
+    }
   </style>
 </head>
 <body>

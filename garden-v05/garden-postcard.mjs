@@ -1,4 +1,5 @@
 import {el, button, num, hours, realHours, cropVisualKind, visualItemIcon} from './ui-utils.mjs?v=25.0.1';
+import {GARDEN_STAGES} from './garden-growth.mjs?v=25.0.1';
 import {levelLabel} from './progression-engine.mjs?v=25.0.1';
 import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=25.0.1';
 
@@ -40,7 +41,7 @@ export function extractPostcardMeta({
     stageName: stage?.name || 'Sân nhỏ bên lều',
     atmosphereIcon: atmosphere?.icon || '☀',
     atmosphereLabel: atmosphere?.label || 'Nắng sớm bìa rừng',
-    weatherIcon: weather?.icon || '',
+    weatherIcon: '',
     weatherLabel: weather?.id && weather.id !== 'clear' ? weather.shortLabel || weather.label : '',
     eventIcon: event?.icon || '',
     eventLabel: event?.id && event.id !== 'none' ? event.shortLabel || event.label : '',
@@ -151,15 +152,16 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
   ctx.textBaseline = 'alphabetic';
   ctx.fillStyle = '#f5d69a';
   ctx.font = 'bold 17px Georgia, serif';
-  const titleSuffix = meta.keeperTitle ? ` · [${meta.keeperTitle}]` : '';
+  const plain=text=>String(text).replace(/[\p{Extended_Pictographic}\uFE0F\u200D]/gu,'').trim();
+  const titleSuffix = meta.keeperTitle ? ` · [${plain(meta.keeperTitle)}]` : '';
   ctx.fillText(`KHU VƯỜN HAGRID · ${meta.playerName.toUpperCase()}${titleSuffix}`, 108, plaqueY + 28, lineWidth);
 
   ctx.fillStyle = '#d6d8bf';
   ctx.font = 'bold 13px sans-serif';
-  const weatherSuffix = meta.weatherLabel ? ` · ${meta.weatherIcon} ${meta.weatherLabel}` : '';
-  const eventSuffix = meta.eventLabel ? ` · ${meta.eventLabel}` : '';
+  const weatherSuffix = meta.weatherLabel ? ` · ${meta.weatherLabel}` : '';
+  const eventSuffix = meta.eventLabel ? ` · ${plain(meta.eventLabel)}` : '';
   ctx.fillText(
-    `${levelLabel(meta.level)} · Chương ${meta.stageId}/6: ${meta.stageName} · ${meta.atmosphereIcon} ${meta.atmosphereLabel}${weatherSuffix}${eventSuffix}`,
+    `${levelLabel(meta.level)} · Chương ${meta.stageId}/${GARDEN_STAGES.length}: ${meta.stageName} · ${meta.atmosphereLabel}${weatherSuffix}${eventSuffix}`,
     108,
     plaqueY + 50,
     lineWidth,
@@ -167,9 +169,9 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
 
   ctx.fillStyle = '#b7dee0';
   ctx.font = '12px sans-serif';
-  const affSuffix = meta.totalAffinity > 0 ? `   ♥ Gắn kết ${meta.totalAffinity}` : '';
+  const affSuffix = meta.totalAffinity > 0 ? `   Gắn kết ${meta.totalAffinity}` : '';
   ctx.fillText(
-    `🌱 ${meta.plots}/12 Thửa đất   🐾 ${meta.creatures}/12 Sinh vật   🏆 ${meta.keepsakeTotal} Kỷ vật   ✨ ${meta.decorTotal} Trang trí${affSuffix}`,
+    `${meta.plots}/12 Thửa đất   ${meta.creatures}/12 Sinh vật   ${meta.keepsakeTotal} Kỷ vật   ${meta.decorTotal} Trang trí${affSuffix}`,
     108,
     plaqueY + 69,
     lineWidth,

@@ -23,7 +23,7 @@ export function refreshPremiumControls({snapshot,state,species,now,ready,items})
   control.disabled=!ready||count<1||!validTarget||(usage&&used>=usage.cap);
   // Pet controls keep their icon/label nodes; crop controls keep the original text format.
   if(!control.closest('#petCareTools'))control.textContent=control.dataset.label+' ×'+count;
-  control.title=control.dataset.label+(usage?' · hôm nay '+used+'/'+usage.cap:'')
+  control.title=control.dataset.label+(['prime_meal','pen_feast'].includes(id)&&!validTarget?' · chỉ dùng khi bé đang ăn':'')+(usage?' · hôm nay '+used+'/'+usage.cap:'')
    +(id==='felix_felicis'&&felixUntil>Date.now()?' · đang có hiệu lực đến '+new Date(felixUntil).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'}):'');
  }
  renderPetCareButtons(items,garden?.supplies);

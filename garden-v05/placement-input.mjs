@@ -1,4 +1,5 @@
 import {el,button} from './ui-utils.mjs?v=25.0.1';
+import {pixelIcon} from './pixel-icons.mjs?v=25.0.1';
 import {worldToGrid} from './garden-grid.mjs?v=25.0.1';
 export function previewHit(point,at,item,facing,project){
  if(!point||!at)return false;
@@ -11,8 +12,8 @@ export function createPlacementInput({map,item,project,toWorld,getAt,getFacing,g
  let grab=null,disposed=false;
  const tools=el('div',{class:'placement-motion',role:'group','aria-label':'Dịch vị trí trang trí'});
  function nudge(dc,dr){if(getPending()||disposed)return;const at=getAt();if(at)moveAt(snap([at[0]+dc,at[1]+dr]),'nudge');}
- const directions=[[-1,0,'↖','Dịch lên trái'],[0,-1,'↗','Dịch lên phải'],[0,1,'↙','Dịch xuống trái'],[1,0,'↘','Dịch xuống phải']];
- for(const [dc,dr,glyph,label]of directions)tools.append(button(glyph,()=>nudge(dc,dr),{class:'placement-nudge','aria-label':label}));
+ const directions=[[-1,0,null,'Dịch lên trái'],[0,-1,null,'Dịch lên phải'],[0,1,null,'Dịch xuống trái'],[1,0,null,'Dịch xuống phải']];
+ for(const [dc,dr,,label]of directions){const b=button('',()=>nudge(dc,dr),{class:'placement-nudge','aria-label':label});const arrow=pixelIcon('arrow',1);arrow.style.transform=`rotate(${dc<0?225:dr<0?315:dr>0?135:45}deg)`;b.append(arrow);tools.append(b);}
  function refresh(){for(const b of tools.children)b.disabled=getPending();}
  function onTap(x,y){if(disposed||getPending())return true;const p=toWorld(x,y);if(p)moveAt(snap(worldToGrid(p.x,p.y,map)),'tap');return true;}
  onTap.drag={

@@ -109,7 +109,7 @@ export function wornCoats(coats = {}, affinities = {}, winter = {}) {
 }
 // The coat button: next unlocked coat (or back to the normal one), with the toast text.
 export function cycleCoat(coats, species, affinityLevel, winter, coat) {
-  if (!unlockedCoats(affinityLevel, winter, coat).length) return {coats, text: 'Bộ lông hiếm: chải lông trong «Chăm bé» · Lông đông (gắn kết 2, 3 lần chải, mùa đông) · Lông Noel (3, 6 lần, tháng 12) · Lông bạc (5, 12 lần). Bé vui thì mỗi lần chải tính 2. Chỉ để ngắm.'};
+  if (!unlockedCoats(affinityLevel, winter, coat).length) return {coats, text: 'Bộ lông hiếm · chưa mở · Chăm bé → Chải lông'};
   const next = nextCoat(coats[species], affinityLevel, winter, coat), out = {...coats, [species]: next};
   if (!next) delete out[species];
   return {coats: out, text: coatLabel(next) + ' · chỉ để ngắm.'};

@@ -183,7 +183,7 @@ test('V22.0 Direction 3: Keeper Achievements, Equipable Titles & Postcard Stamp'
     weather: weatherConfig('snow'),
   });
   assert.equal(postcardMeta.keeperTitle, '👑 Đại Quản Gia Rừng Cấm');
-  assert.equal(postcardMeta.weatherLabel, '❄ Tuyết rơi');
+  assert.equal(postcardMeta.weatherLabel, 'Tuyết');
 });
 
 test('V22.0 Direction 4: Host-Iframe Bridge Adapter & iOS Safari 16 Compatibility', async () => {
@@ -201,7 +201,7 @@ test('V22.0 Direction 4: Host-Iframe Bridge Adapter & iOS Safari 16 Compatibilit
     keeperTitle: '👑 Đại Quản Gia Rừng Cấm',
   });
   assert.ok(flooText.includes('👑 Đại Quản Gia Rừng Cấm'));
-  assert.ok(flooText.includes('Tuyết rơi'));
+  assert.ok(flooText.includes('Tuyết'));
 
   // Simulate bidirectional postMessage between Host Shell and Garden Iframe
   const hostListeners = [];

@@ -43,7 +43,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
  );
  shade.onclick=close;
 
- // Nước suối thần shares the Nước phép tab; «Sản phẩm đặc biệt» are decorations with their own tab.
+ // Nước suối thần shares the Nước phép tab; «Đặc biệt» are decorations with their own tab.
  // Festival pieces (`season`) have their own shop tab, «Lễ hội».
  const tabOf=i=>i.season?"festival":i.collection===SPECIAL_COLLECTION?"special":i.kind==="spring"||i.kind==="nest"?"premium":i.kind;
  const categories=[
@@ -54,7 +54,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   ["boost","Nước phép"],
   ["premium","Cao cấp"],
   ["decoration","Trang trí"],
-  ["special","Sản phẩm đặc biệt"],
+  ["special","Đặc biệt"],
   ["festival","Lễ hội"],
   // Quầy chợ bác Hagrid: only with the HPVN server wallet, which sends `market`.
   ["market","Quầy chợ"],
@@ -148,7 +148,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
    const artVisual=visualItemIcon(items,artId,{size:56,kind:item.kind,decorAssets,badge:packBadge,facing:shownFacing});
 
    const head=el("div",{class:"gp-tile-art"},[artVisual]);
-   const angleBtn=isDecor?iconButton("replay",`Xem góc ${shownFacing==="right"?"trái ↖":"phải ↗"} của ${item.label}`,()=>{previewFacing.set(item.id,shownFacing==="right"?"default":"right");render();},{class:"gp-step store-angle-btn","data-store-angle":item.id}):null;
+   const angleBtn=isDecor?iconButton("replay",`Xem góc ${shownFacing==="right"?"trái":"phải"} của ${item.label}`,()=>{previewFacing.set(item.id,shownFacing==="right"?"default":"right");render();},{class:"gp-step store-angle-btn","data-store-angle":item.id}):null;
    // An item the HPVN server lists without selling (`forSale: false`: switched off in the ACP or waiting for its price).
    const pendingPrice=item.forSale===false;
    const remaining=item.dailyRemaining??item.dailyLimit;
@@ -177,8 +177,9 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
      }
     },{class:owned?"primary store-owned-action":"primary store-buy-btn"});
    const paintBuy=()=>{
-    buy.replaceChildren(...(owned?[pixelIcon("scenery",2),el("span",{text:"Đặt"})]:[pixelIcon("coin",1),el("span",{text:num(totalCost())})]));
-    buy.setAttribute("aria-label",buyLabel());buy.title=buyLabel();
+    const short=snap&&!owned?Math.max(0,totalCost()-spendable):0;
+    buy.replaceChildren(...(owned?[pixelIcon("scenery",2),el("span",{text:"Đặt"})]:[pixelIcon("coin",1),el("span",{text:short?`Thiếu ${num(short)} Galleons`:num(totalCost())})]));
+    buy.setAttribute("aria-label",buyLabel());buy.title=short?`Thiếu ${num(short)} Galleons`:buyLabel();
     buy.disabled=owned?false:!canBuy();
    };
 
@@ -192,7 +193,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
    const plus=iconButton("plus","Thêm 1 "+unit+" "+item.label,()=>step(1),{class:"gp-step"});
    paintQty();paintBuy();paintBundles();
 
-   const angleTag=facing==="right"?"Góc nhìn qua phải ↗":"Góc hiện tại ↖";
+   const angleTag=facing==="right"?"Góc nhìn qua phải":"Góc hiện tại";
    const quota=item.stockCap?`Dùng ${item.usesPerDay}/ngày`:item.kind==="nest"?"Vĩnh viễn":isDecor?(owned?(location?`${location} · ${angleTag}`:"Đang cất"):""):tiered?(snap&&remaining===0?`Quá ${num(item.dailyLimit)} ${unit} · giá ×${item.overflowMultiplier}`:`Còn ${num(snap?remaining:item.dailyLimit)}/${num(item.dailyLimit)} giá thường`):(snap?`Còn ${remaining}/${item.dailyLimit} hôm nay`:`${item.dailyLimit} ${unit}/ngày`);
    const descText=isDecor?(DECOR_COPY[item.id]||item.description):item.description;
    const special=item.collection===SPECIAL_COLLECTION;
@@ -227,7 +228,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
  overlay.append(shade,box);
  $("gameShell").append(overlay);
  render();
- // Phone tabs scroll sideways: bring a far tab («Lễ hội», «Sản phẩm đặc biệt») into view on open.
+ // Phone tabs scroll sideways: bring a far tab («Lễ hội», «Đặc biệt») into view on open.
  tabs.querySelector("[aria-pressed=\"true\"]")?.scrollIntoView({block:"nearest",inline:"center"});
  clock=setInterval(()=>{for(const badge of box.querySelectorAll("[data-ends]")){const ends=Number(badge.dataset.ends);if(ends<=Date.now()){badge.textContent="Đợt sale đã hết";badge.classList.add("is-over");}else badge.textContent=badge.textContent.replace(/ · .*$/,` · ${saleLeft({endsAt:ends})}`);}},30000);
  heading.querySelector("button").focus();

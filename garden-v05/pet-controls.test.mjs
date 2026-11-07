@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as E from './progression-engine.mjs';
 const T0 = 1_800_000_000_000;
-const {petControlState, openingPetSpecies} = await import('./pet-controls.mjs');
+const {petFoodText, petControlState, openingPetSpecies} = await import('./pet-controls.mjs');
 const view = (state, species = 'puffskein', now = T0, ready = true) => petControlState({E, state, species, now, ready});
 
 test('adoption explains level, capacity, starter grant and exact preparation cost', () => {
@@ -16,6 +16,8 @@ test('adoption explains level, capacity, starter grant and exact preparation cos
   state = E.testProfile(22, T0);
   const puff = view(state);
   assert.equal(puff.need, 0);
+  assert.equal(petFoodText(puff), `Thức ăn: có ${new Intl.NumberFormat('vi-VN').format(puff.have)} phần`);
+  assert.equal(petFoodText({have:1002,need:3,phase:'hungry'}), 'Thức ăn: có 1.002 phần · cần 3 phần');
   assert.equal(puff.canAct, true);
   const config = E.CREATURE.bowtruckle;
   state.inventory[config.feed] = config.mealPortions * 3 - 1;

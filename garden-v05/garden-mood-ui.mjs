@@ -70,7 +70,7 @@ export function createMoodCare({getSnapshot,tend,items,notify,labelOf,bondOf,onT
   const steps=COAT_STEPS.map(([label,points])=>el('span',{class:'mood-chip'+(entry.coat>=points?' is-on':''),text:`${label} ${Math.min(entry.coat,points)}/${points}`}));
   body.replaceChildren(
    el('div',{class:'gp-hero mood-hero'},[
-    species===NORBERT?el('span',{class:'mood-portrait'},[pixelIcon('heart',3)]):icon(items,species,3,40),
+    species===NORBERT?el('span',{class:'mood-portrait'},[el('img',{src:'environment/elves/norbert/idle.png',width:40,height:40,alt:'',style:'image-rendering:pixelated'})]):icon(items,species,3,40),
     el('div',{class:'gp-hero-copy'},[
      el('strong',{text:`Tâm trạng ${entry.mood}`}),
      el('div',{class:'gp-meter mood-meter'+(entry.mood>=view.happy?' is-happy':entry.mood<40?' is-low':''),role:'progressbar','aria-valuemin':'0','aria-valuemax':'100','aria-valuenow':String(entry.mood),'aria-label':'Tâm trạng'},[el('span',{style:`width:${entry.mood}%`})]),

@@ -86,6 +86,14 @@ test('item art covers every recipe, produce and earned decoration identity', () 
  const missing = ids.filter(id => !ITEM_ART[id]?.file);
  assert.deepEqual(missing, []);
  assert.equal(new Set(ids).size, ids.length);
+ const supply=ITEM_ART.supply_water;
+ const size=Math.ceil(Math.max(supply.bounds.w,supply.bounds.h)*0.85/0.88);
+ const nearFit=visualItemIcon(new Map(),'water',{size});
+ const nearWidth=Number(/width:([\d.]+)px/.exec(findClass(nearFit,'item-art-img').style.cssText)[1]);
+ assert.ok(nearWidth*supply.bounds.w/supply.width<=size, 'a near-native fit is never scaled past its slot');
+ const decor=DB.decorations[0].id;
+ assert.ok(findClass(earnedDecorIcon(decor,{size:44}),'item-art-img').style.cssText.includes(`width:${ITEM_ART[decor].width/2}px`), 'decoration stays at exactly 0.5×');
+
  assert.equal(new Set(ids.map(id => `${ITEM_ART[id].file}|${JSON.stringify(ITEM_ART[id].bounds)}`)).size, ids.length, 'distinct item-art regions');
  for (const id of ids) assert.ok(Number(ITEM_ART[id].width) > 0 && Number(ITEM_ART[id].height) > 0, id);
 });
@@ -127,6 +135,7 @@ test('harvest icons use generated flow art without changing seed/live crop sprit
  const futureCrop = visualItemIcon(new Map([['future_crop', {frames: [{}, {}, {}, {file: 'live.png', width: 48, height: 48, bounds: {x: 0, y: 0, w: 48, h: 48}}]}]]), 'future_crop', {size: 26, kind: 'harvest'});
  assert.ok(findClass(futureCrop, 'is-art-missing'), 'missing harvest art must not fall back to the live plant sprite');
  assert.equal(findClass(futureCrop, 'is-sprite'), null);
+ assert.equal(futureCrop.textContent.includes('◇'), false);
 });
 
 test('recipe output art uses a display name instead of exposing the output id', () => {
@@ -175,6 +184,12 @@ test('supply aliases, expansions, earned decorations and level fallbacks retain 
   }
  }
 
+ for (const animal of DB.animals) {
+  for (const id of [animal.feed, `produce_${animal.id}`]) {
+   assert.ok(itemArtKey(id), `Missing canonical art for ${id}`);
+   assert.equal(findClass(visualItemIcon(new Map(), id, {size:44}), 'is-art-missing'), null, id);
+  }
+ }
  for (const decoration of DB.decorations) {
   assert.equal(findAttribute(earnedDecorIcon(decoration.id, { size: 44 }), 'data-art-key'), decoration.id);
  }
@@ -185,6 +200,9 @@ test('supply aliases, expansions, earned decorations and level fallbacks retain 
   const visual = levelUnlockVisual(row, DB, items, 44).visual;
   assert.equal(Boolean(findAttribute(visual, 'src')?.includes('decor_pumpkin_lantern')), false);
  }
+ const unknown = levelUnlockVisual({level:501,unlock:'Món chưa có tranh'}, DB, items, 44).visual;
+ assert.equal(findAttribute(unknown,'src'), undefined, 'no other item may impersonate missing unlock art');
+ assert.ok(unknown.className.includes('is-art-missing'));
  const pumpkinFallbacks = DB.levels
   .map(row => ({ level: row.level, src: findAttribute(levelUnlockVisual(row, DB, items, 44).visual, 'src') }))
   .filter(entry => entry.src?.includes('decor_pumpkin_lantern'));

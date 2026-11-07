@@ -41,7 +41,7 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
  function frames(snap,kind){
   const view=snap.flooFrames;if(!view)return [];
   const list=view.frames.filter(f=>f.kind===kind);if(kind==='xmas'&&!list.length)return []; // Giáng sinh frames only once earned or begun
-  return [el('p',{class:'sheet-label',text:'Khung Floo'}),el('p',{class:'meta',text:'Đeo khung để hiện quanh tin nhắn trên Mạng Floo. Khung Hẻm Xéo đang hiện sẽ tạm dừng và giữ thời gian còn lại (bật lại trong Hẻm Xéo trong 7 ngày).'}),
+  return [el('p',{class:'sheet-label',text:'Khung Floo'}),
    el('div',{class:'work-frames'},list.map(f=>{
     const worn=view.worn===f.key;
     const action=!f.unlocked?el('span',{class:'gp-state',text:`${f.progress}/${f.need}`})
@@ -55,7 +55,7 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
  function mastery(snap){
   const view=snap.mastery;
   return [
-   el('p',{class:'meta',text:`Gặt đủ ${view.tiers.map(num).join(' / ')} ô một loại cây để lên bậc ${view.titles.join(' · ')} (thưởng ${view.rewards.join(' / ')} Nước phép). Đã thạo ${view.mastered}/${view.total} loại.`}),
+   el('p',{class:'meta',text:`${view.mastered}/${view.total} loại · ${view.tiers.map(num).join(' / ')} ô · ${view.rewards.join(' / ')} Nước phép`}),
    ...frames(snap,'mastery'),
    el('p',{class:'sheet-label',text:'Từng loại cây'}),
    el('div',{class:'work-mastery-grid'},view.crops.map(row=>{
@@ -76,15 +76,15 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
   const top=lastBoard?.[0]?.points||0,champion=lastWeek?.[0]?.points?lastWeek[0]:null;
   const ends=new Date(view.endsAt+7*3600000);
   return [
-   el('p',{class:'meta',text:`Tuần ${view.weekKey.slice(8)}/${view.weekKey.slice(5,7)} · kết thúc 0:00 ngày ${ends.getUTCDate()}/${ends.getUTCMonth()+1}. Gặt +${view.rules.harvest}, nhiệm vụ cú +${view.rules.quest}, đơn hàng +${view.rules.order}; tối đa ${view.dailyCap} điểm mỗi ngày. Thưởng là danh tiếng, không tăng XP.`}),
+   el('p',{class:'meta',text:`Tuần ${view.weekKey.slice(8)}/${view.weekKey.slice(5,7)} · 0:00 ${ends.getUTCDate()}/${ends.getUTCMonth()+1} · ${num(view.dailyCap)} điểm/ngày`}),
    level<view.unlockLevel?el('p',{class:'meta',text:`Góp điểm cho Nhà từ cấp ${view.unlockLevel}.`})
     :view.house?el('div',{class:'gp-hero work-cup-me',style:`--house:${HOUSE_COLORS[view.house]}`},[pixelIcon('trophy',3),el('div',{class:'gp-hero-copy'},[el('strong',{text:`${view.houseLabel}: con góp ${num(view.points)} điểm tuần này`}),el('div',{class:'owl-chest-meter'},[meter(view.today,view.dailyCap),el('b',{text:`Hôm nay ${view.today}/${view.dailyCap}`})])])])
     :el('p',{class:'meta',text:'Chọn Nhà trong hồ sơ Mạng Floo để góp điểm Cúp Nhà.'}),
    lastBoard?el('ol',{class:'work-cup-board'},lastBoard.map(row=>el('li',{style:`--house:${HOUSE_COLORS[row.house]}`},[el('strong',{text:row.label}),meter(row.points,top),el('b',{text:num(row.points)})])))
     :el('p',{class:'meta',text:'Mở lại vườn để xem bảng điểm các Nhà.'}),
-   champion?el('p',{class:'meta work-cup-champion',text:`🏆 Tuần trước: ${champion.label} dẫn đầu với ${num(champion.points)} điểm.`}):null,
+   champion?el('p',{class:'meta work-cup-champion',text:`Tuần trước: ${champion.label} dẫn đầu với ${num(champion.points)} điểm.`}):null,
    view.lastResult?el('p',{class:'meta',text:view.lastResult.won?`🎖 Tuần ${view.lastResult.weekKey.slice(8)}/${view.lastResult.weekKey.slice(5,7)} con góp ${num(view.lastResult.points)} điểm cho Nhà vô địch: đã mở khung Cúp Nhà.`:`Tuần ${view.lastResult.weekKey.slice(8)}/${view.lastResult.weekKey.slice(5,7)}: Nhà con hạng ${view.lastResult.rank}, con góp ${num(view.lastResult.points)} điểm.`}):null,
-   el('p',{class:'meta',text:`Thưởng: Nhà đứng đầu tuần mở khung Floo Cúp Nhà vĩnh viễn cho mọi thành viên góp từ ${view.rewardMin} điểm (trao khi mở vườn tuần sau).`}),
+   view.rewardMin==null?null:el('p',{class:'meta',text:`Khung Cúp Nhà · Nhà vô địch · từ ${num(view.rewardMin)} điểm`}),
    ...frames(snap,'cup'),
   ].filter(Boolean);
  }

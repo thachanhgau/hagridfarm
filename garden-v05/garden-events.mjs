@@ -1,5 +1,5 @@
 import {getGardenStorage} from './garden-storage.mjs?v=25.0.1';
-import {cropVisualKind, el, button, visualItemIcon} from './ui-utils.mjs?v=25.0.1';
+import {cropVisualKind, el, button, num, visualItemIcon} from './ui-utils.mjs?v=25.0.1';
 import {stableHash} from './scene-animation.mjs?v=25.0.1';
 import {dayKeyFor} from './garden-quests.mjs?v=25.0.1';
 import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=25.0.1';
@@ -11,19 +11,19 @@ export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';
 // (docs/festival-pacing.md, section 8.5). Bonus crops unlock at level 1–4.
 const milestones = (prefix, crop, cropLabel, [t1, t2, t3]) => Object.freeze([
   Object.freeze({id: `${prefix}_m1`, points: 100, title: t1, reward: Object.freeze({kind: 'water', amount: 20, itemId: crop, bonusQty: 4, label: `+20 Nước tưới & +4 ${cropLabel}`})}),
-  Object.freeze({id: `${prefix}_m2`, points: 450, title: t2, reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 25, label: '+1 Nước phép & +25 Nước'})}),
-  Object.freeze({id: `${prefix}_m3`, points: 1000, title: t3, reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 47, label: '+2 Nước phép & +47 Nước'})}),
+  Object.freeze({id: `${prefix}_m2`, points: 450, title: t2, reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 25, label: '+1 Nước phép & +25 Nước tưới'})}),
+  Object.freeze({id: `${prefix}_m3`, points: 1000, title: t3, reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 47, label: '+2 Nước phép & +47 Nước tưới'})}),
 ]);
 
 // Owner 25/10/2026: Lễ Hội Ma adds a 700-point stop and, once every stop is claimed, a secret
 // present with a letter from Hagrid (server: functions/games/garden-festival-core.js).
 const [halM1, halM2, halM3] = milestones('hal', 'pumpkin', 'Bí ngô', ['Giỏ Quà Đêm Hội Ma', 'Lồng Đèn Phù Thủy Rừng Cấm', 'Đại Tiệc Bí Ngô Hogwarts']);
 const HALLOWEEN_MILESTONES = Object.freeze([halM1, halM2,
-  Object.freeze({id: 'hal_m4', points: 700, title: 'Đêm Rước Đèn Bí Ngô', reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 35, itemId: 'pumpkin', bonusQty: 6, label: '+1 Nước phép, +35 Nước & +6 Bí ngô'})}),
+  Object.freeze({id: 'hal_m4', points: 700, title: 'Đêm Rước Đèn Bí Ngô', reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 35, itemId: 'pumpkin', bonusQty: 6, label: '+1 Nước phép, +35 Nước tưới & +6 Bí ngô'})}),
   halM3]);
 const HALLOWEEN_SECRET = Object.freeze({
   id: 'hal_secret', title: 'Quà Bí Mật Của Bác Hagrid',
-  reward: Object.freeze({kind: 'boost', amount: 50, waterBonus: 100, itemId: 'pumpkin', bonusQty: 10, label: '+50 Nước phép, +100 Nước & +10 Bí ngô',
+  reward: Object.freeze({kind: 'boost', amount: 50, waterBonus: 100, itemId: 'pumpkin', bonusQty: 10, label: '+50 Nước phép, +100 Nước tưới & +10 Bí ngô',
     letter: Object.freeze({greeting: 'Con thân mến,', paragraphs: Object.freeze([
       'Bác đã thấy con thắp sáng cả Lễ Hội Ma ở Rừng Cấm, từ giỏ quà đầu tiên tới đại tiệc bí ngô. Chẳng mấy ai đi hết chặng đường ấy đâu!',
       'Bác lén gói cho con ít nước phép, nước giếng và mấy quả bí ngô to nhất vườn bác.',
@@ -36,8 +36,8 @@ export const HOGWARTS_EVENTS = Object.freeze([
   Object.freeze({
     id: 'event_halloween',
     art: './v24-art/event-halloween.webp',
-    label: 'Lễ Hội Ma ở Rừng Cấm',
-    shortLabel: '🎃 Lễ Hội Ma',
+    label: 'Lễ Hội Ma',
+    shortLabel: 'Lễ Hội Ma',
     icon: '🎃',
     badge: 'MÙA THU · LỄ HỘI MA',
     season: Object.freeze({start: '10-23', end: '11-06', opensAt: '18:00'}),
@@ -56,8 +56,8 @@ export const HOGWARTS_EVENTS = Object.freeze([
   Object.freeze({
     id: 'event_yule',
     art: './v24-art/event-yule.webp',
-    label: 'Dạ Vũ Noel Hogwarts',
-    shortLabel: '🎄 Dạ vũ Noel',
+    label: 'Dạ vũ Noel',
+    shortLabel: 'Dạ vũ Noel',
     icon: '🎄',
     badge: 'MÙA ĐÔNG · DẠ VŨ NOEL',
     season: Object.freeze({start: '12-18', end: '12-31'}),
@@ -233,14 +233,14 @@ export function festivalStatus(dayKey, joinDay = '', nowMs = Date.now()) {
 const legacyReward = (amount, kind, itemId, bonusQty, label, waterBonus) => Object.freeze({kind, amount, ...(waterBonus ? {waterBonus} : {}), itemId, bonusQty, label});
 export const LEGACY_MILESTONES = Object.freeze({
   hal_m1: {eventId: 'event_halloween', points: 30, title: 'Giỏ Quà Đêm Hội Ma', reward: legacyReward(15, 'water', 'pumpkin', 4, '+15 Nước tưới & +4 Bí ngô')},
-  hal_m2: {eventId: 'event_halloween', points: 75, title: 'Lồng Đèn Phù Thủy Rừng Cấm', reward: legacyReward(8, 'water', 'mandrake', 3, '+8 Nước & +3 Nhân sâm')},
-  hal_m3: {eventId: 'event_halloween', points: 150, title: 'Đại Tiệc Bí Ngô Hogwarts', reward: legacyReward(2, 'boost', 'pumpkin', 0, '+2 Nước phép & +32 Nước', 32)},
+  hal_m2: {eventId: 'event_halloween', points: 75, title: 'Lồng Đèn Phù Thủy Rừng Cấm', reward: legacyReward(8, 'water', 'mandrake', 3, '+8 Nước tưới & +3 Nhân sâm')},
+  hal_m3: {eventId: 'event_halloween', points: 150, title: 'Đại Tiệc Bí Ngô Hogwarts', reward: legacyReward(2, 'boost', 'pumpkin', 0, '+2 Nước phép & +32 Nước tưới', 32)},
   yule_m1: {eventId: 'event_yule', points: 30, title: 'Tất Quà Bên Lò Sưởi', reward: legacyReward(15, 'water', 'blueberry', 4, '+15 Nước tưới & +4 Việt quất')},
-  yule_m2: {eventId: 'event_yule', points: 75, title: 'Hộp Nhạc Tuyết Bạc', reward: legacyReward(8, 'water', 'moonherb', 3, '+8 Nước & +3 Cỏ trăng')},
-  yule_m3: {eventId: 'event_yule', points: 150, title: 'Ngôi Sao Đại Sảnh Đường', reward: legacyReward(2, 'boost', 'starbean', 4, '+2 Nước phép, +20 Nước & +4 Đậu sao', 20)},
+  yule_m2: {eventId: 'event_yule', points: 75, title: 'Hộp Nhạc Tuyết Bạc', reward: legacyReward(8, 'water', 'moonherb', 3, '+8 Nước tưới & +3 Cỏ trăng')},
+  yule_m3: {eventId: 'event_yule', points: 150, title: 'Ngôi Sao Đại Sảnh Đường', reward: legacyReward(2, 'boost', 'starbean', 4, '+2 Nước phép, +20 Nước tưới & +4 Đậu sao', 20)},
   herb_m1: {eventId: 'event_herbology_fair', points: 30, title: 'Túi Hạt Giống Nhà Kính Số Ba', reward: legacyReward(15, 'water', 'clover', 4, '+15 Nước tưới & +4 Cỏ ba lá')},
-  herb_m2: {eventId: 'event_herbology_fair', points: 75, title: 'Cẩm Nang Chăm Thú Của Newt', reward: legacyReward(8, 'water', 'insects', 4, '+8 Nước & +4 Côn trùng')},
-  herb_m3: {eventId: 'event_herbology_fair', points: 150, title: 'Cúp Vàng Hội Chợ Thảo Dược', reward: legacyReward(2, 'boost', 'sunpetal', 3, '+2 Nước phép, +20 Nước & +3 Hoa nhật quang', 20)},
+  herb_m2: {eventId: 'event_herbology_fair', points: 75, title: 'Cẩm Nang Chăm Thú Của Newt', reward: legacyReward(8, 'water', 'insects', 4, '+8 Nước tưới & +4 Côn trùng')},
+  herb_m3: {eventId: 'event_herbology_fair', points: 150, title: 'Cúp Vàng Hội Chợ Thảo Dược', reward: legacyReward(2, 'boost', 'sunpetal', 3, '+2 Nước phép, +20 Nước tưới & +3 Hoa nhật quang', 20)},
 });
 
 const count = (v) => Math.max(0, Number(v) || 0);
@@ -533,7 +533,7 @@ export const CREATURE_AFFINITY_LEVELS = Object.freeze([
     title: 'Quấn quýt',
     badge: '🐾 Cấp 2',
     hearts: '♥',
-    reward: Object.freeze({kind: 'water', amount: 8, itemId: 'pumpkin', bonusQty: 2, label: '+8 Nước & +2 Bí ngô'}),
+    reward: Object.freeze({kind: 'water', amount: 8, itemId: 'pumpkin', bonusQty: 2, label: '+8 Nước tưới & +2 Bí ngô'}),
   }),
   Object.freeze({
     level: 3,
@@ -541,7 +541,7 @@ export const CREATURE_AFFINITY_LEVELS = Object.freeze([
     title: 'Thân thiết',
     badge: '♥ Cấp 3',
     hearts: '♥♥',
-    reward: Object.freeze({kind: 'water', amount: 16, label: '+16 Nước'}),
+    reward: Object.freeze({kind: 'water', amount: 16, label: '+16 Nước tưới'}),
   }),
   Object.freeze({
     level: 4,
@@ -549,7 +549,7 @@ export const CREATURE_AFFINITY_LEVELS = Object.freeze([
     title: 'Tri kỷ Rừng Cấm',
     badge: '💖 Cấp 4',
     hearts: '♥♥♥',
-    reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 8, label: '+1 Nước phép & +8 Nước'}),
+    reward: Object.freeze({kind: 'boost', amount: 1, waterBonus: 8, label: '+1 Nước phép & +8 Nước tưới'}),
   }),
   Object.freeze({
     level: 5,
@@ -557,7 +557,7 @@ export const CREATURE_AFFINITY_LEVELS = Object.freeze([
     title: 'Bạn Tâm Giao Huyền Thoại',
     badge: '👑 Cấp 5',
     hearts: '♥♥♥♥♥',
-    reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 27, label: '+2 Nước phép & +27 Nước'}),
+    reward: Object.freeze({kind: 'boost', amount: 2, waterBonus: 27, label: '+2 Nước phép & +27 Nước tưới'}),
   }),
 ]);
 
@@ -864,7 +864,7 @@ export function renderAffinitySection({
         }),
         el('div', {class: 'tour-card-top'}, [
           el('span', {class: 'journey-stage-badge', text: `Cấp ${entry.level}`}),
-          el('span', {class: 'affinity-hearts-pill', text: entry.hearts}),
+          el('span', {class: 'affinity-hearts-pill', 'aria-label':`Gắn kết ${entry.level}`},Array.from({length:entry.hearts.length},()=>pixelIcon('heart',1))),
         ]),
       ]),
       el('strong', {class: 'tour-card-title', text: spec.label}),
@@ -937,7 +937,7 @@ export function renderGuestbookSection({
 
 const FREE_TAP_ICONS = Object.freeze({care: ['care', 'Chăm cây'], pet: ['heart', 'Vuốt ve'], rotate: ['scenery', 'Xoay, đổi cảnh'], postcard: ['profile', 'Bưu thiếp'], shareFloo: ['owl', 'Khoe Floo'], startTour: ['home', 'Tham quan'], moveBuilding: ['plot', 'Chuyển thửa']});
 const shortDate = (key) => `${key.slice(8, 10)}/${key.slice(5, 7)}`;
-const THEME_LABELS = Object.freeze({event_halloween: 'Hội Ma', event_yule: 'Dạ vũ Noel', event_herbology_fair: 'Thảo dược', event_quidditch_cup: 'Quidditch', none: 'Ngày thường'});
+const THEME_LABELS = Object.freeze({event_halloween: 'Lễ Hội Ma', event_yule: 'Dạ vũ Noel', event_herbology_fair: 'Thảo dược', event_quidditch_cup: 'Quidditch', none: 'Ngày thường'});
 
 const GUEST_ICONS = Object.freeze({note_hagrid: 'home', note_sprout: 'sow', note_newt: 'heart', note_charlie: 'festival'});
 const stripEmoji = (text = '') => String(text).replace(/^[^\p{L}\p{N}]+/u, '').trim();
@@ -1059,7 +1059,7 @@ export function renderEventsAndTasksSection({
   const pct = Math.min(100, Math.round((points / maxPoints) * 100));
   const milestoneSec = el('section', {class: 'event-milestones-section v24-event-progress'}, [
     el('div', {class: 'journey-section-head'}, [
-      el('div', {}, [el('h3', {class: 'gp-points', text: `${points} / ${maxPoints}`})]),
+      el('div', {}, [el('h3', {class: 'gp-points', text: `${num(points)} / ${num(maxPoints)}`})]),
       status.active ? el('span', {class: 'journey-stage-pill', text: `${pct}%`}) : el('span', {class: 'gp-state', title: 'Lễ hội chưa mở nên chưa tính điểm'}, [pixelIcon('lock', 1), el('span', {text: 'Chưa mở'})]),
     ]),
   ]);

@@ -1584,7 +1584,7 @@ export async function createGarden(canvas, options = {}) {
     const hagridLine = options.hagridLine || null;
     const tutorialFocus = options.tutorialFocus || null;
     speechScale = Math.max(1, finite(options.speechScale, 1));
-    labelScale = Math.min(3.6, Math.max(.8, finite(options.labelScale, 1)));
+    labelScale = Math.max(.8, finite(options.labelScale, 1));
     if (canvas.dataset) canvas.dataset.speechScale = String(speechScale);
     guestActor = options.guestActor || null;
     const atmosphereMode = options.atmosphereMode || 'day';
@@ -1798,7 +1798,7 @@ export async function createGarden(canvas, options = {}) {
     for (let index = 0; index < map.plots.length; index += 1) {
       const plot = map.plots[index];
       if (!plotIsVisible(state, index, logicalNow)) continue;
-      const px = Math.round(10 * labelScale), [x, y] = plotCorners(plot)[3], selected = index === selectedPlot;
+      const px = Math.ceil(11 * labelScale), [x, y] = plotCorners(plot)[3], selected = index === selectedPlot;
       let parts, rule = selected ? '#FFC36B' : null;
       if (!plotIsBuilt(state, index, logicalNow)) {
         const queued = Boolean(plotConstruction(state, index));

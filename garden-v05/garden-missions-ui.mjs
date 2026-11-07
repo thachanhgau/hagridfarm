@@ -11,7 +11,8 @@ const meter=(done,target)=>el('div',{class:'gp-meter',role:'progressbar','aria-v
 // Tasks in order, the ones after the current one read «???»; the gift (two statues + a letter) arrives in the claim reply.
 const endText=ms=>{const d=new Date(ms+7*3600000);const p=n=>String(n).padStart(2,'0');return `Đến ${p(d.getUTCHours())}:${p(d.getUTCMinutes())} ${p(d.getUTCDate())}/${p(d.getUTCMonth()+1)}`;};
 const readLetter=letter=>showHagridLetter({greeting:letter.greeting,mode:'gift',letter});
-function eventSection(ev,claimEvent,notify,rerender){
+function eventSection(ev,claimEvent,notify,rerender,serverNow){
+ if(ev.endsAt<serverNow)return el('section',{class:'day-event'},[el('p',{class:'sheet-label',text:ev.title+' · Đã kết thúc'})]);
  const gift=ev.finale;
  const card=gift.claimed
   ? el('div',{class:'gp-hero day-event-gift is-open'},[
@@ -27,10 +28,10 @@ function eventSection(ev,claimEvent,notify,rerender){
      : iconButton('lock','Chưa mở',null,{disabled:true}),
    ]);
  return el('section',{class:'day-event'},[
-  el('p',{class:'sheet-label day-event-title',text:`${ev.icon} ${ev.title} · ${endText(ev.endsAt)}`}),
+  el('p',{class:'sheet-label day-event-title'},[pixelIcon(ev.id.includes('xmas')?'festival':'letter',1),el('span',{text:`${ev.title} · ${endText(ev.endsAt)}`})]),
   ...ev.tasks.map((t,i)=>el('div',{class:'day-event-task'+(t.claimed?' is-done':t.open?'':' is-locked')},[
    el('div',{class:'gp-hero-copy'},[
-    el('small',{text:`${i+1}. ${t.claimed?'✓ ':''}${t.label} · ${t.reward.label}`}),
+    el('small',{text:`${i+1}. ${t.claimed?'':''}${t.label} · ${t.reward.label}`}),
     t.open?el('div',{class:'owl-chest-meter'},[meter(t.current,t.target),el('b',{text:`${t.current}/${t.target}`})]):null,
    ]),
    t.claimable?iconButton('chest',`${t.deliver?'Nộp và nhận':'Nhận'} ${t.reward.label}`,async()=>{const res=await claimEvent(t.id);if(res?.ok){notify(`🧦 Hội Vận động cho Quyền lợi Gia tinh: ${res.reward.label}!`);rerender();}},{text:t.deliver?'Nộp':'Nhận',class:'primary','data-claim-day-event':t.id}):null,
@@ -52,7 +53,7 @@ export function createMissions({getSnapshot,claim,claimBacklog,claimEvent,notify
  function render(){
   const ev=getSnapshot()?.dayEvent;
   renderChain();
-  if(ev)body.prepend(eventSection(ev,claimEvent,notify,render));
+  if(ev)body.prepend(eventSection(ev,claimEvent,notify,render,getSnapshot()?.serverNow??Date.now()));
  }
  function renderChain(){
   const view=getSnapshot()?.missions;
@@ -67,7 +68,7 @@ export function createMissions({getSnapshot,claim,claimBacklog,claimEvent,notify
     el('div',{class:'gp-hero-copy'},[
      el('small',{text:`${m.chapter?'Chương':'Nhiệm vụ'} · Cấp ${m.level} · ${view.claimedCount}/${view.totalCount}`}),
      el('strong',{text:m.title}),
-     ...m.steps.flatMap(s=>[m.chapter?el('small',{class:'mission-step'+(s.done?' is-done':''),text:(s.done?'✓ ':'')+s.label}):null,el('div',{class:'owl-chest-meter'},[meter(s.current,s.target),el('b',{text:`${s.current}/${s.target}`})])]),
+     ...m.steps.flatMap(s=>[m.chapter?el('small',{class:'mission-step'+(s.done?' is-done':''),text:(s.done?'':'')+s.label}):null,el('div',{class:'owl-chest-meter'},[meter(s.current,s.target),el('b',{text:`${s.current}/${s.target}`})])]),
      el('small',{class:'mission-reward',text:'Quà: '+m.reward.label}),
     ]),
     action,
@@ -80,12 +81,12 @@ export function createMissions({getSnapshot,claim,claimBacklog,claimEvent,notify
  function sync(){
   const m=getSnapshot()?.missions?.current;
   const ev=getSnapshot()?.dayEvent;
-  const evReady=Boolean(ev&&(ev.tasks.some(t=>t.claimable)||ev.finale.ready));
+  const evReady=Boolean(ev&&ev.endsAt>=(getSnapshot()?.serverNow??Date.now())&&(ev.tasks.some(t=>t.claimable)||ev.finale.ready));
   button.hidden=!getSnapshot();
   button.classList.toggle('has-claimable',Boolean(m?.claimable)||evReady);
   // Once per session the event letter opens by itself for every player while the event is unfinished,
   // as soon as no other dialog is open and the first-day tutorial is over (checked every 3 s).
-  if(ev&&!ev.finale.claimed&&eventToldAt!==ev.id){eventToldAt=ev.id;showEventSoon();}
+  if(ev&&ev.endsAt>=(getSnapshot()?.serverNow??Date.now())&&!ev.finale.claimed&&eventToldAt!==ev.id){eventToldAt=ev.id;showEventSoon();}
   button.title=m?.claimable?'Nhiệm vụ · Có quà':'Nhiệm vụ';
   if(dialog.open)render();
  }
@@ -94,7 +95,7 @@ export function createMissions({getSnapshot,claim,claimBacklog,claimEvent,notify
   setTimeout(()=>{
    const tutorial=document.body.dataset.tutorial;
    if(document.querySelector('dialog[open]')||(tutorial&&tutorial!=='done'))return showEventSoon();
-   if(getSnapshot()?.dayEvent&&!dialog.open){render();dialog.showModal();}
+   if(getSnapshot()?.dayEvent?.endsAt>=(getSnapshot()?.serverNow??Date.now())&&!dialog.open){render();dialog.showModal();}
   },3000);
  }
  // Owner 19/10/2026: a garden that joined the chain above level 1 gets every passed mission's gift once, by owl.

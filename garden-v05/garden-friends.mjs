@@ -127,7 +127,7 @@ export function friendObjects(iso, clock, now = Date.now(), elves = [], {night =
 export const friendLine = (id, taps) => FRIENDS[id].lines[taps % FRIENDS[id].lines.length];
 
 // A greetFriend receipt as a toast: «Hermione tặng 💧 2 · Vớ len gia tinh 1 (2/3 hôm nay)».
-const GIFT_LABEL = {water: '💧', boost: '✨'}, ITEM_LABEL = {elf_sock: 'Vớ len gia tinh', mandrake: 'Nhân sâm'};
+const GIFT_LABEL = {water: 'Nước tưới', boost: 'Nước phép'}, ITEM_LABEL = {elf_sock: 'Vớ len gia tinh', mandrake: 'Nhân sâm'};
 export const friendGiftText = (friend) => `${FRIENDS[friend.friendId].name} tặng ${GIFT_LABEL[friend.gift.kind]} ${friend.gift.amount}`
   + (friend.gift.itemId ? ` · ${ITEM_LABEL[friend.gift.itemId] || friend.gift.itemId} ${friend.gift.bonusQty}` : '') + ` (${friend.gifts}/${friend.cap} hôm nay)`;
 

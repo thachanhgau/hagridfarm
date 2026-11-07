@@ -125,3 +125,8 @@
 #gameShell #missionLetter .gp-hero-copy small.mission-reward{color:#FFC36B}
 #gameShell #missionLetter .mission-body>p{margin:6px 0;color:#E8F0ED;font-size:13px}
 .is-spring svg{filter:hue-rotate(170deg) saturate(1.5) brightness(1.1)}
+
+/* Keep transient feedback away from tutorial controls. */
+body[data-tutorial]:not([data-tutorial="done"]) #gameShell #toast{top:auto;bottom:calc(45dvh + 56px);left:8px;right:60px;transform:none;max-width:none;pointer-events:none}
+
+@media(max-height:480px){.tutorial-compact #gameShell #dockToggle{position:absolute;top:auto;bottom:calc(45dvh + 8px);right:8px;min-height:44px;height:44px}}

@@ -9,8 +9,8 @@ export const DECOR_SLOTS = Object.freeze([
 ]);
 
 export const DECOR_ANGLES = Object.freeze([
-  {id: 'default', label: 'Góc hiện tại', shortLabel: '↖ Góc hiện tại'},
-  {id: 'right', label: 'Góc nhìn qua phải', shortLabel: '↗ Nhìn qua phải'},
+  {id: 'default', label: 'Góc hiện tại', shortLabel: 'Góc hiện tại'},
+  {id: 'right', label: 'Góc nhìn qua phải', shortLabel: 'Nhìn qua phải'},
 ]);
 
 export const DECOR_LABELS = Object.freeze({

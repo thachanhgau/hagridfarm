@@ -5,7 +5,7 @@
 .decor-bar .placement-step[aria-pressed=true]{background:#e6cd92;color:#192e24;border-color:#ffe2a7}
 .decor-bar .placement-nudge:active{transform:translateY(1px);box-shadow:inset 0 2px #10261e}
 .decor-bar button:focus-visible{outline:2px solid #fff0c2;outline-offset:2px}
-@media(max-width:600px){
+@media(max-width:600px),(max-height:480px){
  .decor-bar .decor-bar-row{grid-template-columns:64px minmax(0,1fr)}
  .decor-bar .decor-bar-turn{grid-column:1;grid-row:1}
  .decor-bar .decor-bar-apply{grid-column:2;grid-row:1}
@@ -16,3 +16,6 @@
 
 .decor-bar button,.decor-bar .decor-bar-stash{min-height:44px}
 .decor-bar button:disabled{opacity:1;color:#b9c3ae;background:#263d2e;border-color:#667b5a;box-shadow:none}
+
+.decor-bar-hint.is-keyboard{white-space:nowrap;font-size:11px}
+@media(pointer:coarse){.decor-bar-hint.is-keyboard{display:none}}

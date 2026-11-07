@@ -58,7 +58,7 @@ test('tap lines loop and stay short; the gift toast names the friend, gift and t
     assert.equal(friendLine(id, friend.lines.length), friend.lines[0]);
     for (const line of friend.lines) assert.ok(line.split(' ').length <= 12, line);
   }
-  assert.equal(friendGiftText({friendId: 'hermione', gift: {kind: 'water', amount: 2, itemId: 'elf_sock', bonusQty: 1}, gifts: 2, cap: 3}), 'Hermione tặng 💧 2 · Vớ len gia tinh 1 (2/3 hôm nay)');
+  assert.equal(friendGiftText({friendId: 'hermione', gift: {kind: 'water', amount: 2, itemId: 'elf_sock', bonusQty: 1}, gifts: 2, cap: 3}), 'Hermione tặng Nước tưới 2 · Vớ len gia tinh 1 (2/3 hôm nay)');
 });
 
 // As garden-elves.test.mjs: feet keep off plots and fixed pieces; standing, a visitor hides no plot frame.

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "aa7d32754242",
+  "revision": "ba2dbc7a2855",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -12668,8 +12668,8 @@
       "height": 26,
       "sourceBytes": 300,
       "bytes": 202,
-      "sourceSha256": "5b0928e3e13e3e177c2ada3dc38baaffff0a35f7511be58f09997820bbe65929",
-      "sha256": "af12150942b5c4e9a711bc9e400cad1773cad2d0212e85ef3d5c5f924dde40cc"
+      "sourceSha256": "af14311dc597e5271d3f4be8641152175e29b7de1fd660dd66ae928ee6cd756c",
+      "sha256": "b7e4420661616e586137cf7e7499d5b500f43763791350f0e42a33eb7f757f36"
     },
     {
       "source": "environment/xmas/egg-2.png",
@@ -12678,8 +12678,8 @@
       "height": 26,
       "sourceBytes": 305,
       "bytes": 200,
-      "sourceSha256": "c44131aa57b81f67f14ee6ee090cf7003008f70de4c5671d275f7cec55b56550",
-      "sha256": "ba00c657c39ea3a40d732bc039d0240abc0adfadb331bc473fb3091a928d7a30"
+      "sourceSha256": "3c32c1221254d33c83db3d24a1a6b23c3c63a305a6a6cac9fd1af8c2f49a9959",
+      "sha256": "14475974df9d67460224c529fbfe3c222b31f50d84ab231dcc43e9622221ee02"
     },
     {
       "source": "environment/xmas/egg-3.png",

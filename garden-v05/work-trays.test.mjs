@@ -305,6 +305,21 @@ test('work action waits for getReady and then dispatches the selected engine act
     state.level = 1;
     action.click();
     assert.equal(calls.length, 1);
+
+    const started = Date.now() - 24 * 3600000;
+    state = E.testProfile(12, started);
+    state.built = state.built.filter(id => id !== 'plot_4');
+    state.plots = state.plots.slice(0, 3);
+    state = E.build(state, 'plot_4', started);
+    trays.refresh('build');
+    const find = node => node.attributes?.['data-id'] === 'plot_4' ? node : node.children?.map(find).find(Boolean);
+    find(buildDock).click();
+    const build = fakeDocument.getElementById('buildAction');
+    assert.equal(build.disabled, false);
+    assert.match(build.textContent, /Xong · Nhận/);
+    build.click();
+    assert.equal(calls.at(-1).command.action, 'claimBuildings');
+    assert.ok(calls.at(-1).action(state).built.includes('plot_4'));
   } finally {
     globalThis.document = previousDocument;
   }

@@ -18,9 +18,14 @@ const fixture = (options = {}) => {
 const reasonOf = async promise => {try {await promise;} catch (e) {return e.reason;} return 'resolved';};
 
 test('connected claims: quest, chest and festival milestone come from server commands and responses', async () => {
-  const {client} = fixture({quests: 'done', points: 100});
+  const {client,server} = fixture({quests: 'done', points: 100});
   const first = await client.read();
   assert.equal(first.dayKey, HALLOWEEN);
+  assert.equal(first.houseCup.rewardMin, 20);
+  const sales=await server.handle('manageHagridGardenSales',{mode:'get'});
+  assert.ok(sales.store.length>0);
+  assert.ok(sales.market.crops.every(c=>Number.isFinite(sales.market.prices[c.id])));
+  assert.deepEqual(sales.config.market.prices, {});
   assert.equal(first.daily.quests.length, 3);
   assert.equal(first.daily.chest.ready, true);
   assert.equal(first.festival.active.seasonKey, 'event_halloween@2026');

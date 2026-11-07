@@ -354,7 +354,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   return d.orders;
  }
  // Server garden-floo-frame / garden-sale-admin (QA approximation: frames from mastery, cup wins Ravenclaw ×1).
- let wornFrame=null,salesConfig={revision:0,programs:{'golden-hour':true,'creature-weekend':true,flash:true,'festival-end':true},sales:[]};
+ let wornFrame=null,salesConfig={revision:0,programs:{'golden-hour':true,'creature-weekend':true,flash:true,'festival-end':true},sales:[],items:{},market:{prices:{}}};
  function frameViews(){
   const m=garden.mastery||{},have=t=>Object.values(m).filter(n=>n>=TIERS[t-1]).length;
   return [[1,'Tập sự',1,5],[2,'Thạo nghề',2,10],[3,'Bậc thầy',3,16],[4,'Đại sư',3,E.DB.crops.length]].map(([n,label,t,need])=>({key:`hagrid-mastery-${n}`,label:`Khung ${label} vườn Hagrid`,kind:'mastery',unlocked:have(t)>=need,progress:Math.min(have(t),need),need,rule:`${need} loại cây đạt bậc ${t} (${TIERS[t-1]} ô)`}))
@@ -362,15 +362,16 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  }
  function setFrame(c){const f=frameViews().find(x=>x.key===c.frameKey);if(c.frameKey!==null&&!f?.unlocked)fail('frame-locked','Con chưa đạt khung này.');wornFrame=c.frameKey;return clone({ok:true,worn:wornFrame,frames:frameViews()});}
  function sales(c){
-  const view=()=>clone({config:salesConfig,percentMax:40,scopes:['all','crop','creature','festival','items'],items:catalog.filter(i=>i.kind==='premium'||i.kind==='spring'||i.kind==='nest').map(i=>({id:i.id,label:i.label,price:i.price})),
+  const view=()=>clone({config:salesConfig,store:catalog,market:{defaults:{level:25,dailyCap:30000,perCropDaily:100},prices:Object.fromEntries(E.DB.crops.map(c=>[c.id,10])),crops:E.DB.crops},percentMax:40,scopes:['all','crop','creature','festival','items'],items:catalog.filter(i=>i.kind==='premium'||i.kind==='spring'||i.kind==='nest').map(i=>({id:i.id,label:i.label,price:i.price})),
    programs:[['golden-hour','Giờ vàng 20:00–22:00 · −20% vật phẩm cây'],['creature-weekend','Cuối tuần sinh vật · −25% vật phẩm sinh vật và Ổ ấm'],['flash','Flash 30 phút · 1–2 lần/tuần · −30% Mưa suối thần, Tiệc chuồng'],['festival-end','Ba ngày cuối lễ hội · −25% đồ lễ hội']].map(([id,label])=>({id,label,on:salesConfig.programs[id]})),
    flash:[{startsAt:Date.parse('2026-10-24T19:30:00+07:00'),endsAt:Date.parse('2026-10-24T20:00:00+07:00')}],serverNow:now()});
   if(c.mode==='get')return view();
   if(c.mode==='fire'&&visitRows.some(v=>v.username===c.username)){const row=visitRows.find(v=>v.username===c.username);row.fire=c.fire==='off'?null:c.fire;row.fireUntil=c.fire==='off'?null:now()+c.minutes*60000;if(c.fire==='real')row.growing=0;return {ok:true,fire:{fire:c.fire,minutes:c.minutes||0,burned:c.fire==='real'?6:0,to:row.uid,toUsername:row.username,until:row.fireUntil}};}
   if(c.mode==='fire'){fire=c.fire==='off'?null:{mode:c.fire,since:now(),until:now()+c.minutes*60000,burned:0};return {ok:true,fire:{fire:c.fire,minutes:c.minutes||0,burned:0,to:'garden-fixture-member',toUsername:c.username,until:fire?.until??null}};}
+  if(c.mode==='gift'){const item=catalog.find(i=>i.id===c.itemId);if(!item)fail('item-missing','Chưa chọn món.');return {ok:true,gift:{quantity:c.quantity,label:item.label,toUsername:c.username}};}
   if(c.expectedRevision!==salesConfig.revision)fail('sales-revision','Cấu hình sale vừa đổi ở nơi khác; hãy tải lại.');
   if(c.sales.some(x=>!(x.percent>=1&&x.percent<=40)))fail('invalid-sales','Mức giảm 1–40%.');
-  salesConfig={revision:salesConfig.revision+1,programs:{...c.programs},sales:clone(c.sales)};return {ok:true,...view()};
+  salesConfig={revision:salesConfig.revision+1,programs:{...c.programs},sales:clone(c.sales),items:clone(c.items||{}),market:clone(c.market||{prices:{}})};return {ok:true,...view()};
  }
  // ?missions=1 (audit S4, 01/11/2026): static copies of the server's missionsView and dayEventView
  // (HPVNN garden-mission-core / garden-day-event-core) so the «Nhiệm vụ» letter can be measured.
@@ -391,7 +392,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   return {
    mastery:{tiers:TIERS,titles:["Tập sự","Thạo nghề","Bậc thầy"],rewards:[1,2,3],crops:E.DB.crops.filter(c=>c.level<=p.level).map(c=>({cropId:c.id,cells:m[c.id]||0,tier:tier(m[c.id]||0)})),mastered:Object.values(m).filter(n=>n>=1350).length,total:E.DB.crops.length},
    orders:{unlockLevel:15,orders:clone(ordersFor(d))},
-   houseCup:{unlockLevel:20,weekKey:"2026-10-19",house,houseLabel:house?"Hufflepuff":null,points:garden.cup.points,today:d.cup||0,dailyCap:60,rules:{harvest:1,quest:3,order:10},endsAt:Date.parse("2026-10-26T00:00:00+07:00"),
+   houseCup:{unlockLevel:20,weekKey:"2026-10-19",house,houseLabel:house?"Hufflepuff":null,points:garden.cup.points,today:d.cup||0,dailyCap:60,rewardMin:20,rules:{harvest:1,quest:3,order:10},endsAt:Date.parse("2026-10-26T00:00:00+07:00"),
     board:[{house:"gryffindor",label:"Gryffindor",points:412},{house:"hufflepuff",label:"Hufflepuff",points:388+garden.cup.points},{house:"ravenclaw",label:"Ravenclaw",points:301},{house:"slytherin",label:"Slytherin",points:276}],
     lastWeek:[{house:"ravenclaw",label:"Ravenclaw",points:1204},{house:"gryffindor",label:"Gryffindor",points:1150},{house:"slytherin",label:"Slytherin",points:990},{house:"hufflepuff",label:"Hufflepuff",points:870}]},
   };

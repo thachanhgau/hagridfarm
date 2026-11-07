@@ -51,7 +51,7 @@
 #gameShell .camera-tools{position:absolute;left:auto;right:max(8px,var(--host-inset-right,env(safe-area-inset-right)));top:calc(max(8px,var(--host-inset-top,env(safe-area-inset-top))) + 54px);display:flex;flex-direction:column;align-items:flex-end;gap:4px;z-index:3}
 #gameShell .camera-tools button:not(.tutorial-skip){position:relative;display:grid;place-items:center;width:44px;min-width:44px;height:44px;min-height:44px;margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
 #gameShell .camera-tools .camera-settings{margin-top:0}
-#gameShell #plotsButton .hud-count{right:-4px;bottom:-2px}
+#gameShell #plotsButton .hud-count{right:0;bottom:0}
 
 /* Phones: Kho · Thư cú · Menu on top; Cửa hàng · Lễ hội · Cảnh · gập on the second row; goal chip left. */
 @media (max-width:599px){

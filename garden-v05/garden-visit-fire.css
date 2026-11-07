@@ -41,7 +41,7 @@
 @keyframes portal-flame{to{background-position:-256px 0}}
 .visit-level{position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);min-width:30px;padding:1px 6px;border-radius:9px;background:#231f2e;color:#f5d69a;
  font:700 11px/16px system-ui;text-align:center;box-shadow:0 0 0 1.5px #c9ab67}
-.visit-tile-name{max-width:100%;color:#f5d69a;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.visit-tile-name{max-width:100%;color:#f5d69a;font-size:13px;white-space:normal;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.3;min-height:2.6em;text-align:center}
 .visit-tile .visit-status{font-size:11px;text-align:center}
 .visit-tile.can-help .visit-status{color:#b0bd67}.visit-tile.is-helped .visit-status{color:#e7ae73}.visit-tile.is-fire .visit-status{color:#ff9b57}
 .visit-tile .visit-status{color:#a6b1ae}
@@ -73,7 +73,7 @@
 .visit-dot .visit-avatar{width:36px;height:36px;margin:4px;font-size:13px;opacity:.72;filter:saturate(.7)}
 .visit-dot.can-help .visit-avatar{opacity:1;filter:none;box-shadow:0 0 0 2px #b0bd67,0 0 10px rgba(176,189,103,.55)}
 .visit-dot.is-helped .visit-avatar{opacity:.5}
-.visit-dot.is-helped::after{content:"✓";position:absolute;right:1px;bottom:1px;width:16px;height:16px;border-radius:50%;background:#3f6a45;color:#f5d69a;font:700 10px/16px system-ui;text-align:center;box-shadow:0 0 0 1.5px #231f2e}
+.visit-dot.is-helped::after{content:"";position:absolute;right:1px;bottom:1px;width:16px;height:16px;border-radius:50%;background:#3f6a45;color:#f5d69a;font:700 10px/16px system-ui;text-align:center;box-shadow:0 0 0 1.5px #231f2e}
 .visit-dot.is-fire .visit-avatar{opacity:1;filter:none;box-shadow:0 0 0 2px #ed8a45,0 0 12px #c75b4b;animation:visit-dot-fire 1s ease-in-out infinite alternate}
 .visit-dot.is-current{transform:translateY(-2px) scale(1.08)}
 .visit-dot.is-current .visit-avatar{opacity:1;filter:none;box-shadow:0 0 0 2.5px #f5d69a,0 0 14px rgba(245,214,154,.7)}
@@ -179,3 +179,5 @@ body.garden-burning .camera-viewport::before{content:"";position:absolute;inset:
 }
 @keyframes visit-card-in{from{opacity:0;transform:translate(-50%,14px)}}
 @media(prefers-reduced-motion:reduce){.tour-banner.is-member{animation:none}.tour-banner .visit-icon .px-icon{transition:none}}
+
+.visit-tile button,.visit-home,.visit-action{border-radius:2px;min-height:44px}

@@ -6,6 +6,7 @@ export {decorFootprint} from './garden-object-metrics.mjs?v=25.0.1';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.0.1';
 import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.1';
 import {el,button} from './ui-utils.mjs?v=25.0.1';
+import {iconButton} from './pixel-icons.mjs?v=25.0.1';
 import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap,snapDecorSpot} from './decor-runtime.mjs?v=25.0.1';
 import {GARDEN_PATHS} from './garden-landscape.mjs?v=25.0.1';
 import {plotPhysicalBounds} from './scene-renderer.mjs?v=25.0.1';
@@ -132,7 +133,7 @@ const nearestFree=(grid,[col,row],reach)=>{
 /**
  * Đặt trang trí: a small bar over the dock, the garden stays in view. The ground shows where the item
  * fits (green) and where it cannot stand (grey). A tap moves it there — onto the nearest green spot when
- * the tap lands just off one (red with the reason otherwise) — ↻ turns it, sliding to the nearest spot
+ * the tap lands just off one (red with the reason otherwise) — turns it, sliding to the nearest spot
  * the turned piece fits — and «Đặt» confirms both the position and facing.
  */
 export function showDecorationPlacement({item,map,assetOf,getState,getStage,getDecorations,onPlace,preview,camera,iso,onClose,setTapHandler,toWorld,getSpot=null,startAt=null,facing=null}){
@@ -160,7 +161,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  const title=el('strong',{id:'decorPlaceTitle',text:itemLabel});
  const where=el('span',{class:'decor-bar-where'});
  const size=el('span',{class:'decor-bar-size'});
- const turn=button('↻ Xoay',rotate,{class:'decor-bar-turn','aria-label':'Xoay vật phẩm'});
+ const turn=iconButton('replay','Xoay vật phẩm',rotate,{class:'decor-bar-turn',text:'Xoay'});
  const apply=button('Đặt',commit,{class:'primary decor-bar-apply'});
  const stash=button('Cất vào kho',()=>save(null),{class:'decor-bar-stash'});
  const hint=el('p',{class:'decor-bar-hint',role:'status'});
@@ -183,7 +184,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   const saved=savedSpot(),savedFacing=decorFacingFor(getDecorations()??{},item.id);
   const right=selectedFacing==='right';
   const metrics=spriteGridMetrics(item,footprint,selectedFacing);
-  size.textContent=`Chiếm ${metrics.footprint.join('×')} ô · kéo món đồ hoặc dùng nút dịch`;
+  size.textContent=`${metrics.footprint.join('×')} ô`;
   bar.dataset.col=at?.[0]??'';bar.dataset.row=at?.[1]??'';bar.dataset.facing=selectedFacing;bar.dataset.blocked=String(!!problem);input?.refresh();
   thumb.src=runtimeImageUrl(right?(item.rightFile||item.file):item.file);
   thumb.classList.toggle('is-flipped',right&&!item.rightFile);
@@ -195,7 +196,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
   apply.disabled=pending||!at||!!problem||here&&sameFacing;
   apply.textContent=pending?'Đang lưu…':here&&!sameFacing?'Đặt góc này':here?'Đang ở đây':'Đặt';
   stash.hidden=!saved;stash.disabled=pending;
-  if(!hint.dataset.error)hint.textContent=noRoom?'Món vẫn ở trong kho · thử ↻ góc khác, cất bớt đồ hoặc chờ vườn mở rộng':'Kéo món đồ hoặc chạm đất · mũi tên để dịch · R xoay · Enter đặt · Esc hủy';
+  if(!hint.dataset.error){hint.classList.toggle('is-keyboard',!noRoom);hint.textContent=noRoom?'Món vẫn ở trong kho · thử góc khác, cất bớt đồ hoặc chờ vườn mở rộng':'Mũi tên: dịch · R: xoay · Enter: đặt · Esc: hủy';}
  }
 
  // Turning is always a preview action. Even when the item is standing at its
@@ -251,8 +252,8 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
  let selectedSlot=null;
  let pending=false,input;
 
- const dialog=el('dialog',{class:'decor-placement visual-layout-modal','aria-labelledby':'layoutModalTitle'});
- const heading=el('div',{class:'sheet-heading'});
+ const dialog=el('dialog',{class:'decor-placement visual-layout-modal owl-letter','aria-labelledby':'layoutModalTitle'});
+ const heading=el('div',{class:'popover-heading'});
  const kindBar=el('div',{class:'decor-angle-buttons layout-kind-tabs',role:'group','aria-label':'Loại công trình cần đổi chỗ'});
  const buildingRow=el('div',{class:'decor-angle-buttons layout-building-tabs',role:'group','aria-label':'Chọn công trình'});
  const grid=el('div',{class:'decor-slot-grid layout-slot-grid'});
@@ -269,7 +270,7 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
 
  heading.append(
   el('h2',{id:'layoutModalTitle',text:'Sắp xếp trực quan trên bản đồ'}),
-  button('×',close,{'aria-label':'Đóng bảng sắp xếp'})
+  iconButton('close','Đóng bảng sắp xếp',close,{class:'gp-close'})
  );
 
  function slotFitsStage(slot,stage){
@@ -305,12 +306,12 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
   if(selectedSlot===null)selectedSlot=currentSlot;
 
   kindBar.replaceChildren(
-   button(`▦ Thửa trồng (${s?.plots?.length||3}/${plotTotal})`,()=>{kind='plot';selectedBuilding=0;selectedSlot=null;render();syncPreview(true);},{
+   button(`Thửa trồng (${s?.plots?.length||3}/${plotTotal})`,()=>{kind='plot';selectedBuilding=0;selectedSlot=null;render();syncPreview(true);},{
     class:'decor-angle-btn'+(kind==='plot'?' is-active':''),
     'aria-pressed':String(kind==='plot'),
     disabled:pending,
    }),
-   button(`⌂ Chuồng nuôi (${Math.floor((E?.housingCapacity?.(s)||0)/2)}/6)`,()=>{kind='pen';selectedBuilding=0;selectedSlot=null;render();syncPreview(true);},{
+   button(`Chuồng nuôi (${Math.floor((E?.housingCapacity?.(s)||0)/2)}/6)`,()=>{kind='pen';selectedBuilding=0;selectedSlot=null;render();syncPreview(true);},{
     class:'decor-angle-btn'+(kind==='pen'?' is-active':''),
     'aria-pressed':String(kind==='pen'),
     disabled:pending||builtCount===0&&kind==='pen',
@@ -356,7 +357,7 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
    b.append(
     el('b',{text:'Nền '+(slotIdx+1)}),
     el('span',{text:available?occupantName:`Mở cấp ${requiredLv}`}),
-    el('small',{text:!available?`Khu đất chương sau`:slotIdx===currentSlot?'✦ Vị trí hiện tại':occupantBuilt?`Đổi chỗ với ${occupantName}`:'Chuyển tới nền này'})
+    el('small',{text:!available?`Khu đất chương sau`:slotIdx===currentSlot?'Vị trí hiện tại':occupantBuilt?'Đổi chỗ':'Chuyển tới nền này'})
    );
    grid.append(b);
   }
@@ -392,7 +393,6 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
 
  dialog.append(
   heading,
-  el('p',{text:'Chọn Thửa đất hoặc Chuồng nuôi rồi chạm vào nền đất trên lưới để xem trước trên bản đồ và đổi vị trí.'}),
   kindBar,
   buildingRow,
   grid,

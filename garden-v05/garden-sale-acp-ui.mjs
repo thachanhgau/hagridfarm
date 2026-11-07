@@ -50,12 +50,13 @@ export function createSaleAcp({call,notify}){
  }
  function storeTab(){
   const pick=GROUPS.find(([id])=>id===group)[2],q=fold(search);
-  const list=view.store.filter(item=>q?fold(item.label).includes(q):pick(item));
+  const list=(view.store||[]).filter(item=>q?fold(item.label).includes(q):pick(item));
   const box=el('input',{type:'search',placeholder:'Tìm món…',value:search,oninput:e=>{search=e.target.value;const at=e.target.selectionStart;render();const again=body.querySelector('input[type=search]');again?.focus();again?.setSelectionRange(at,at);}});
   return [field('Tìm trong mọi nhóm',box),...(q?[]:[chips('Nhóm',GROUPS,group,id=>{group=id;render();})]),
    el('p',{class:'sheet-label',text:`${list.length} món · đã chỉnh ${Object.keys(draft.items).length} món`}),...list.map(itemRow)];
  }
  function marketTab(){
+  if(!view.market?.defaults||!view.market?.prices||!Array.isArray(view.market?.crops))return [el('p',{class:'meta',text:'Chưa có dữ liệu Quầy chợ.'})];
   const m=view.market,set=(key,value)=>{if(value===undefined||value===m.defaults[key])delete draft.market[key];else draft.market[key]=value;};
   const price=(id,value)=>{if(value===undefined||value===m.prices[id])delete draft.market.prices[id];else draft.market.prices[id]=value;};
   return [el('fieldset',{class:'acp-sale acp-compact'},MARKET_FIELDS.map(([key,label])=>numField(label,m.defaults[key],draft.market[key],value=>set(key,value)))),
@@ -63,8 +64,8 @@ export function createSaleAcp({call,notify}){
    el('fieldset',{class:'acp-sale acp-compact'},m.crops.map(crop=>numField(crop.label,m.prices[crop.id],draft.market.prices[crop.id],value=>price(crop.id,value))))];
  }
  function giftTab(){
-  const q=fold(gift.query),item=view.store.find(entry=>entry.id===gift.itemId);
-  const matches=q?view.store.filter(entry=>fold(entry.label).includes(q)).slice(0,12):[];
+  const q=fold(gift.query),item=(view.store||[]).find(entry=>entry.id===gift.itemId);
+  const matches=q?(view.store||[]).filter(entry=>fold(entry.label).includes(q)).slice(0,12):[];
   const send=async()=>{
    if(!gift.username.trim()||!item||!(gift.quantity>=1)){status.textContent='Nhập tên thành viên, chọn món và số lượng.';return;}
    saving=true;render();
@@ -125,7 +126,7 @@ export function createSaleAcp({call,notify}){
   const now=view.serverNow;
   const tabs=chips('Mục ACP',TABS,tab,id=>{tab=id;status.textContent='';render();});
   const saveRow=el('div',{class:'acp-actions'},[iconButton('check','Lưu cấu hình',save,{text:saving?'Đang lưu…':'Lưu',class:'primary',disabled:saving})]);
-  const version=el('p',{class:'meta',text:`Phiên bản ${view.config.revision}. Giá và hạn mức tính trên máy chủ lúc mua; Lưu ghi cả bốn mục Sale, Bảng giá, Quầy chợ.`});
+  const version=el('p',{class:'meta',text:`Phiên bản ${num(view.config.revision)}`});
   if(tab==='store'){body.replaceChildren(tabs,...storeTab(),saveRow,version);return;}
   if(tab==='market'){body.replaceChildren(tabs,...marketTab(),saveRow,version);return;}
   if(tab==='gift'){body.replaceChildren(tabs,...giftTab());return;}
@@ -140,7 +141,7 @@ export function createSaleAcp({call,notify}){
     iconButton('plus','Thêm đợt sale',()=>{draft.sales.push(fresh());render();},{text:'Thêm đợt',disabled:draft.sales.length>=20}),
     iconButton('check','Lưu cấu hình sale',save,{text:saving?'Đang lưu…':'Lưu',class:'primary',disabled:saving}),
    ]),
-   el('p',{class:'meta',text:`Phiên bản ${view.config.revision}. Giá luôn tính trên máy chủ lúc mua; sale và gói cộng lại tối đa 50%. Đợt đang chạy: ${draft.sales.filter(s=>s.startsAt<=now&&now<s.endsAt).length}.`}),
+   el('p',{class:'meta',text:`Phiên bản ${num(view.config.revision)} · ${draft.sales.filter(s=>s.startsAt<=now&&now<s.endsAt).length} đợt đang chạy`}),
   );
  }
  const fromConfig=config=>structuredClone({programs:config.programs,sales:config.sales,items:config.items||{},market:{prices:{},...config.market}});

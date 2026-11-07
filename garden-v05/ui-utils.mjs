@@ -50,7 +50,7 @@ export function itemDisplayName(id, fallback = 'Thành phẩm') {
 export const $=id=>document.getElementById(id);
 export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else e.setAttribute(k,String(tag==='img'&&k==='src'?runtimeImageUrl(v):v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}
 export const num=n=>{const v=Number(n);return Number.isFinite(v)?v.toLocaleString("vi-VN"):"0";};
-export function duration(ms){const seconds=Math.max(0,Math.ceil(ms/1000));if(!seconds)return"Sẵn sàng";const h=Math.floor(seconds/3600),m=Math.floor(seconds%3600/60);return h>=24?`${Math.floor(h/24)}n ${h%24}g`:h?`${h}g ${String(m).padStart(2,"0")}p`:`${m}p ${String(seconds%60).padStart(2,"0")}s`;}
+export function duration(ms){const seconds=Math.max(0,Math.ceil(ms/1000));if(!seconds)return"Sẵn sàng";const h=Math.floor(seconds/3600),m=Math.floor(seconds%3600/60);return h>=24?`${Math.floor(h/24)}n ${h%24}g`:h?`${h}g ${String(m).padStart(2,"0")}p`:seconds>=600?`${m}p`:`${m}p ${String(seconds%60).padStart(2,"0")}s`;}
 // Server rule (functions/games/garden-action-core growthScale): faster below level 15, then half time for good
 // (owner 21/10/2026; it used to end at level 20).
 export function growthScale(level){return level<5?.1:level<10?.2:level<15?.3:.5;}
@@ -68,7 +68,7 @@ export function icon(items,id,stage=3,size=52){
  const frames=item?.frames;
  const f=frames?.[Math.min(stage,Math.max(0,(frames?.length||1)-1))];
  const wrap=el("span",{class:"sprite-icon",style:`width:${size}px;height:${size}px`});
- if(!f){wrap.textContent="◇";return wrap;}
+ if(!f){wrap.classList.add("is-art-missing");wrap.setAttribute("aria-label","Thiếu ảnh: "+id);return wrap;}
  const b=f.bounds,k=Math.min(size/b.w,size/b.h),img=el("img",{src:f.file,alt:""});
  img.style.cssText=`width:${f.width*k}px;height:${f.height*k}px;left:${(size-b.w*k)/2-b.x*k}px;top:${(size-b.h*k)/2-b.y*k}px`;
  wrap.append(img);
@@ -169,11 +169,11 @@ function itemArtVisual(key, size, { facing = "default", keepsake = false } = {})
  const box = artBounds(spec);
  const fitScale = Math.min(size / box.w, size / box.h);
  const isPixelNativeSurface = /^(?:supply|premium|harvest|keepsake)_/.test(key) || Boolean(flowArtSpec(key));
- const scale = isPixelNativeSurface && fitScale >= 1 ? Math.floor(fitScale) : fitScale;
+ const scale = isPixelNativeSurface && fitScale >= 1 ? Math.floor(fitScale) : key.startsWith("decoration-") && fitScale >= 0.5 ? 0.5 : fitScale;
  const centeredLeft = (size - box.w * scale) / 2 - box.x * scale;
  const centeredTop = (size - box.h * scale) / 2 - box.y * scale;
- const left = isPixelNativeSurface ? Math.round(centeredLeft) : centeredLeft;
- const top = isPixelNativeSurface ? Math.round(centeredTop) : centeredTop;
+ const left = Math.round(centeredLeft);
+ const top = Math.round(centeredTop);
  const isRight = facing === "right";
  const mirror = isRight && !base.rightFile;
  const visual = el("span", {
@@ -199,7 +199,7 @@ function artPlaceholder(size, label = "Ảnh đang cập nhật", className = ""
   "aria-label": label,
   style: `width:${size}px;height:${size}px;display:inline-flex;align-items:center;justify-content:center`,
  });
- placeholder.append(el("span", { class: "sr-only", text: label }), document.createTextNode("◇"));
+ placeholder.append(el("span", { class: "sr-only", text: label }));
  return placeholder;
 }
 
@@ -223,6 +223,8 @@ export function earnedDecorIcon(decorId, { size = 48, facing = "default" } = {})
  return visual;
 }
 
+// 0.5× keeps pixels whole; only a decoration whose ink is bigger than the slot at 0.5× shrinks further (ponytail: fractional then, store thumbnails would fix it).
+const decorScale=(asset,size)=>{const b=asset.bounds||{w:asset.width,h:asset.height};return Math.min(0.5,size/b.w,size/b.h);};
 export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = null, badge = "", facing = "default" } = {}) {
  const rawId = String(id || "");
  const isSeed = kind === "seed" || rawId.startsWith("seed_");
@@ -309,14 +311,15 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   const src = isRight
    ? (asset?.rightFile || asset?.file || `decor-assets/native/${rawId}_right.png`)
    : (asset?.file || `decor-assets/native/${rawId}.png`);
-  slot.append(el("img", { src, alt: "", class: `visual-decor-img${isRight && !asset?.rightFile ? " is-flipped" : ""}` }));
+  const halfSize=img=>{const k=Math.min(0.5,size/img.naturalWidth,size/img.naturalHeight);img.style.width=img.naturalWidth*k+"px";img.style.height=img.naturalHeight*k+"px";};
+  slot.append(el("img", { src, alt: "", class: `visual-decor-img${isRight && !asset?.rightFile ? " is-flipped" : ""}`,style:asset?`width:${asset.width*decorScale(asset,size)}px;height:${asset.height*decorScale(asset,size)}px;max-width:none;image-rendering:pixelated`:"max-width:none;image-rendering:pixelated",...(asset?{}:{onload:e=>halfSize(e.target)}) }));
  } else if (rawId.startsWith("decoration-")) {
   slot.classList.add("is-decor", "is-earned-decor-slot");
   slot.append(earnedDecorIcon(rawId, { size: Math.round(size * 0.92), facing }));
  } else if (hasFoodIdentity || isProduce) {
   // Food and produce must never silently fall back to the owning creature sprite.
   slot.classList.add(isProduce ? "is-produce" : "is-feed", "is-art-missing");
-  appendNativeArt(slot, CANONICAL_ART_KEYS.reward_medal, Math.round(size * 0.9), "Ảnh huy hiệu đang cập nhật");
+  appendNativeArt(slot, null, Math.round(size * 0.9), "Thiếu ảnh: "+rawId);
  } else if (items?.has?.(rawId) || items?.has?.(cropId)) {
   slot.classList.add("is-sprite");
   const sp = icon(items, items?.has?.(rawId) ? rawId : cropId, 3, Math.round(size * 0.84));
@@ -324,7 +327,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   slot.append(sp);
  } else {
   slot.classList.add("is-medal");
-  appendNativeArt(slot, CANONICAL_ART_KEYS.reward_medal, Math.round(size * 0.9), "Ảnh huy hiệu đang cập nhật");
+  appendNativeArt(slot, null, Math.round(size * 0.9), "Thiếu ảnh: "+rawId);
  }
 
  if (badge) {
@@ -334,7 +337,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
 }
 
 export function recipeOutput(items, label, output, count, size = 38) {
- const name = label(output);
+ const name = itemDisplayName(output,label(output));
  return el("div", { class: "recipe-output-chip", "aria-label": `Thành phẩm: ${num(count)} ${name}` }, [
   el("span", { class: "recipe-output-kicker", text: "Thành phẩm" }),
   visualItemIcon(items, output, { size, kind: "output" }),
@@ -438,7 +441,7 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
    visual: visualItemIcon(items, "pen_1", { size }),
    category: "Mở rộng thửa & Chuồng",
    categoryClass: "cat-build",
-   meta: "Xem trước Chuồng 1 và Thửa 4 bằng sơ đồ footprint",
+   meta: "Xem trước Chuồng 1 và Thửa 4 bằng sơ đồ ô đất",
   };
  }
  if (lv === 45 && text.includes("lanh")) {
@@ -449,18 +452,7 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
    meta: "Lanh dùng cho thửa và trang trí",
   };
  }
- let decorSrc = "decor-assets/native/decor_pumpkin_lantern.png";
- if (text.includes("cầu") || text.includes("ao") || text.includes("bồn")) decorSrc = "environment/layers/pond.png";
- else if (text.includes("cổng") || text.includes("vòm") || text.includes("dây leo") || text.includes("hoa")) decorSrc = "decor-assets/native/decor_vine_arch.png";
- else if (text.includes("rào") || text.includes("viền")) decorSrc = "environment/layers/fenceNE.png";
- else if (text.includes("đèn") || text.includes("trăng") || text.includes("nến") || text.includes("sương")) decorSrc = "decor-assets/native/decor_floating_candles.png";
- else if (text.includes("quầy") || text.includes("bàn") || text.includes("tủ") || text.includes("bệ")) decorSrc = "decor-assets/native/decor_cauldron.png";
- else if (text.includes("nhà") || text.includes("chòi") || text.includes("đài") || text.includes("lều")) decorSrc = "environment/layers/hut.png";
- else if (text.includes("ổ") || text.includes("gối") || text.includes("trụ") || text.includes("giàn")) decorSrc = "decor-assets/native/decor_mandrake_planter.png";
-
- const slot = el("div", { class: "visual-slot is-decor", style: `width:${size}px;height:${size}px` }, [
-  el("img", { src: decorSrc, alt: "", class: "visual-decor-img" }),
- ]);
+ const slot = artPlaceholder(size, "Thiếu ảnh mở khóa cấp "+lv, "is-art-missing");
  return {
   visual: slot,
   category: "Cảnh quan & Trang trí",

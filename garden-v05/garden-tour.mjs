@@ -217,7 +217,7 @@ export const HONOR_GARDENS = Object.freeze([
       amount: 8,
       itemId: 'firepepper',
       bonusQty: 2,
-      label: '+8 Nước & +2 Ớt lửa',
+      label: '+8 Nước tưới & +2 Ớt lửa',
     }),
   }),
 ]);

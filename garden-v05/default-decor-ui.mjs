@@ -21,7 +21,7 @@ export function defaultDecorToggle(ctx, id, label, refresh) {
 
 export function renderGardenDefaults(ctx, {s, wallet, tile, priceRow, canPay, run, refresh, turnText}) {
   const root = el('section', {class: 'garden-default-decor'});
-  root.append(el('h3', {class: 'gp-section-title', text: 'Trang trí của vườn'}), el('p', {class: 'meta', text: 'Cất để lấy chỗ đặt món đã mua. Đồ vẫn thuộc về bạn và đặt được vào ô trống bất kỳ.'}));
+  root.append(el('h3', {class: 'gp-section-title', text: 'Trang trí của vườn'}));
   const grid = el('div', {class: 'cards gp-tiles'});
   const pond = el('article', {class: 'gp-tile'}, [
     el('div', {class: 'gp-tile-art'}, [el('img', {src: runtimeImageUrl('environment/layers/pond.png'), alt: '', width: 88, height: 56})]),

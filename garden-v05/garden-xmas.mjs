@@ -6,7 +6,7 @@
 // draws `snapshot.xmas` and sends action `xmas`. mobile-game imports it once the server sends `xmas` (never before the
 // open day), and its frames load the first time they are drawn (festival-lazy-art.test.mjs).
 // Part 2 (chapters 2–5, server garden-xmas-chapters.js): «Trận ném tuyết» 11–17/12 (3 banh tuyết a day, House Cup
-// points, nine earn the «Áo len bà Weasley» Floo frame), «Dạ Vũ Noel» 18–31/12 (twelve ornaments for the house tree,
+// points, nine earn the «Áo len bà Weasley» Floo frame), «Dạ vũ Noel» 18–31/12 (twelve ornaments for the house tree,
 // whose size follows the house's share of the points), «Đêm Noel» 24–25/12 (feast at the hearth, bác Hagrid carries a
 // tree, a present with a letter), «Pháo hoa Giao thừa» 31/12 (fireworks at night, the 2027 Floo frame).
 import {el,num} from './ui-utils.mjs?v=25.0.1';
@@ -77,7 +77,7 @@ export function hearthObjects(iso, view, elves = [], {clock = 0, decorations = n
   return out;
 }
 
-// «Dạ Vũ Noel» ornaments, drawn by code on house-tree-N.png at pins inside its foliage triangle (Codex report
+// «Dạ vũ Noel» ornaments, drawn by code on house-tree-N.png at pins inside its foliage triangle (Codex report
 // docs/codex-briefs/xmas-s7-part2-report.md): [apexX, apexY, baseY, baseLeft, baseRight].
 export const FOLIAGE = [[48, 117, 135, 36, 59], [48, 77, 134, 24, 72], [48, 42, 134, 18, 78], [48, 27, 134, 13, 83]];
 // Twelve pins as (fraction down the foliage, fraction across its width there), spread so none touch.
@@ -182,8 +182,8 @@ export function createXmasCare({getSnapshot, act, notify}) {
       // Between reads, the member's own points since the last read are added to their house's row.
       if (!view.yule.board && lastBoard) Y.board = lastBoard.board.map((b) => (b.house === Y.house ? {...b, points: b.points + Y.points - lastBoard.pointsAt} : b)).sort((a, b) => b.points - a.points);
       rows.push(el('p', {class: 'meta', text: Y.house
-        ? `Dạ Vũ Noel (18–31/12) · cây thông nhà ${Y.houseLabel} · con góp ${num(Y.points)} điểm${Y.points >= Y.championMin ? '' : ` (từ ${Y.championMin} điểm mới nhận Cây thông nhà vô địch)`}`
-        : 'Dạ Vũ Noel (18–31/12) · cây thông nhà: cần cấp 20 và nhà trong Floo'}));
+        ? `Dạ vũ Noel (18–31/12) · cây thông nhà ${Y.houseLabel} · con góp ${num(Y.points)} điểm${Y.points >= Y.championMin ? '' : ` (từ ${Y.championMin} điểm mới nhận Cây thông nhà vô địch)`}`
+        : 'Dạ vũ Noel (18–31/12) · cây thông nhà: cần cấp 20 và nhà trong Floo'}));
       if (Y.house) rows.push(treeCanvas(Y.stage ?? 0, Y.ornaments));
       if (Y.board) rows.push(el('ol', {class: 'xmas-board'}, Y.board.map((b) => el('li', b.house === Y.house ? {'aria-current': 'true'} : {}, [el('span', {text: b.label}), el('b', {text: num(b.points)})]))));
       rows.push(el('p', {class: 'meta', text: `Món trang trí: hôm nay ${Y.today}/${Y.cap}`}));
@@ -250,7 +250,7 @@ export function xmasNudge(view) {
     const key = 'hagrid-xmas-champion';
     let seen = '';
     try { seen = localStorage.getItem(key) || ''; localStorage.setItem(key, view.champion.houseLabel); } catch {}
-    if (!seen) return `🏆 Nhà ${view.champion.houseLabel} thắng Dạ Vũ Noel! Cây thông nhà vô địch đã vào kho đồ trang trí.`;
+    if (!seen) return `🏆 Nhà ${view.champion.houseLabel} thắng Dạ vũ Noel! Cây thông nhà vô địch đã vào kho đồ trang trí.`;
   }
   if (view.newYear && !view.newYear.claimed && view.newYear.ready) return `🎆 Giao thừa: nhận khung Pháo hoa ${view.newYear.year} ở lò sưởi.`;
   if (view.eve && !view.eve.claimed) return '🎁 Quà Đêm Noel của bác Hagrid đang chờ ở lò sưởi.';

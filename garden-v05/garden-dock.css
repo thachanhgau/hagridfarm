@@ -6,7 +6,7 @@
 #playDock .dock:after,#playDock .crop-context:after{content:'';position:absolute;top:-3px;left:calc(50% - 3px);width:6px;height:6px;background:#e0c789;transform:rotate(45deg);box-shadow:0 0 0 2px #243a2c;pointer-events:none}
 #playDock #plantDock,#playDock #creatureDock{display:grid;grid-template-columns:72px minmax(0,1fr) 44px 94px;align-items:center;gap:9px 8px}
 #playDock .dock-portrait{grid-column:1;grid-row:1;display:grid;place-items:center;position:relative;width:72px;height:72px;isolation:isolate;pointer-events:none;background:radial-gradient(ellipse at 50% 65%,#b2ba6559,transparent 68%),linear-gradient(135deg,#213d2c,#0a211a);border:1px solid #ceb679;box-shadow:inset 0 0 0 3px #172e21,inset 0 0 0 4px #8e925b66,0 3px 0 #071b14;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px)}
-#playDock .dock-portrait:after{content:'✦';position:absolute;bottom:1px;right:4px;color:#f9db90;font-size:13px;text-shadow:0 1px #10271a}
+#playDock .dock-portrait:after{content:'';position:absolute;bottom:1px;right:4px;color:#f9db90;font-size:13px;text-shadow:0 1px #10271a}
 #playDock .dock-portrait>.sprite-icon{position:relative;z-index:1;animation:dock-breathe 4s steps(8,end) infinite;image-rendering:pixelated}
 #playDock .work-dock .dock-portrait[data-kind=sprite]>.sprite-icon{transform:scale(1.5);animation:none}
 #playDock .dock-portrait>.tray-glyph{font-size:40px;color:#f2d28f}
@@ -140,4 +140,9 @@
  .decor-bar-foot{align-items:flex-start}
  .decor-bar-hint{font-size:11px;line-height:1.25}
  .decor-bar .decor-bar-stash{min-height:34px;padding:0 8px;font-size:11px}
+}
+
+@media(pointer:coarse){
+ #gameShell :is(.play-dock,.play-dock *,.store-popover,.store-popover *,#panel,#panel *,.owl-letter,.owl-letter *){scrollbar-width:none}
+ #gameShell :is(.play-dock,.play-dock *,.store-popover,.store-popover *,#panel,#panel *,.owl-letter,.owl-letter *)::-webkit-scrollbar{display:none}
 }

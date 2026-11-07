@@ -112,7 +112,7 @@ export function renderMemberVisits({level, visitLevel = 10, load, onVisit, helpe
     const go = waiting.length && left > 0;
     hero.replaceChildren(
       el('div', {class: 'visit-hero-copy'}, [el('b', {text: String(left)}), el('span', {text: 'lượt chăm giúp'}), el('small', {text: `${waiting.length} vườn đang chờ`})]),
-      button(go ? 'Bay Floo ›' : left > 0 ? 'Chưa vườn nào cần' : 'Hết lượt hôm nay', () => onVisit(waiting[0].uid, rows), {class: 'primary visit-hero-go', disabled: !go, 'data-visit-run': 'true'}),
+      button(go ? 'Bay Floo' : left > 0 ? 'Chưa vườn nào cần' : 'Hết lượt hôm nay', () => onVisit(waiting[0].uid, rows), {class: 'primary visit-hero-go', disabled: !go, 'data-visit-run': 'true'}),
     );
     grid.removeAttribute('aria-busy');
     grid.replaceChildren(...(rows.length ? rows.map(v => portalTile(v, () => onVisit(v.uid, rows))) : [el('p', {class: 'meta', text: 'Chưa có vườn nào khác.'})]));

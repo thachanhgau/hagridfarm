@@ -1,5 +1,7 @@
-import {$,el,button,icon,duration,visualItemIcon} from './ui-utils.mjs?v=25.0.1';
+import {$,el,button,icon,duration,num,visualItemIcon} from './ui-utils.mjs?v=25.0.1';
 import {setAction,pixelIcon} from './pixel-icons.mjs?v=25.0.1';
+
+export const petFoodText=view=>`Thức ăn: có ${num(view.have)} phần${view.need>0&&!['eating','ready'].includes(view.phase)?` · cần ${num(view.need)} phần`:''}`;
 
 // Read the same costs and timestamps as the engine; deriving a control never edits a save.
 export function petControlState({E,state,species,now,ready=true}) {
@@ -113,7 +115,7 @@ export function setupPetControls({E,items,getMood=()=>null,getState,getSpecies,g
    if(!control.hidden)visible++;
    control.setAttribute('aria-pressed',id===species);
    control.dataset.phase=item.phase;
-   badge.textContent=item.phase==='eating'?duration(item.remaining):item.badge;
+   badge.textContent=id===species?'':item.phase==='eating'?duration(item.remaining):item.badge;
    control.setAttribute('aria-label',`${item.config.label} · ${item.badge}${item.phase==='eating'?' · còn '+duration(item.remaining):''}`);
   }
   $('petEmpty').hidden=visible>0;
@@ -135,7 +137,7 @@ export function setupPetControls({E,items,getMood=()=>null,getState,getSpecies,g
   $('petBadge').dataset.phase=view.phase;
   $('petTimer').hidden=view.phase!=='eating';
   $('petTimer').textContent=view.phase==='eating'?`Còn ${duration(view.remaining)}`:'';
-  $('petFood').textContent=view.phase==='eating'||view.phase==='ready'?`Thức ăn còn: ${view.have} phần`:`Thức ăn: có ${view.have} · cần ${view.need} phần`;
+  $('petFood').textContent=petFoodText(view);
   $('petFood').classList.toggle('is-short',!!view.shortage&&!animal?.meal);
   $('creatureStatus').textContent=view.hint;
   $('creatureStatus').hidden=!!animal&&['hungry','eating','ready'].includes(view.phase);
@@ -145,7 +147,7 @@ export function setupPetControls({E,items,getMood=()=>null,getState,getSpecies,g
   if($('coatButton'))$('coatButton').hidden=!animal;
   if($('moodButton'))$('moodButton').hidden=!animal||getMood(species)==null;
   const primary=animal?(animal.meal?'claimAnimalButton':'feedButton'):'adoptButton';
-  const label=primary==='adoptButton'?'Đón về':primary==='feedButton'?'Cho ăn':view.phase==='eating'?'Đang ăn':view.adult?'Nhận quà':'Hoàn tất';
+  const label=primary==='adoptButton'?'Đón về':primary==='feedButton'?'Cho ăn':view.phase==='eating'?'Đang ăn':'Nhận';
   for(const id of ['adoptButton','feedButton','claimAnimalButton']){
    $(id).hidden=id!==primary;$(id).disabled=!view.canAct;
   }

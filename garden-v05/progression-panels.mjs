@@ -75,7 +75,7 @@ export function createPanels(ctx){
     el("div",{class:"journey-hero-main"},[
      el("span",{class:"gp-level-badge is-big"+(s.level>E.TAN_SUC_LEVEL?" is-tan-suc":""),"aria-label":E.levelLabel(s.level)},[el("b",{text:s.level>E.TAN_SUC_LEVEL?"★"+(s.level-E.TAN_SUC_LEVEL):String(s.level)})]),
      el("div",{class:"journey-hero-copy"},[
-      el("small",{class:"journey-kicker",text:`CHƯƠNG ${current.id}/6`}),
+      el("small",{class:"journey-kicker",text:`CHƯƠNG ${current.id}/${GARDEN_STAGES.length}`}),
       el("h3",{text:s.level>=100?"Đại khu vườn":current.name}),
       el("p",{text:s.level>=E.MAX_LEVEL?`${num(s.xp)} XP · Hoàn tất`:`${num(info.xpInLevel)} / ${num(info.xpToNext)} XP`}),
       el("div",{class:"journey-xp-bar"},[el("span",{style:`width:${pct}%`})]),
@@ -119,7 +119,7 @@ export function createPanels(ctx){
      ]),
      el("div",{class:"journey-card-body"},[
       el("div",{class:"journey-card-tags"},[
-       el("span",{class:`journey-cat-pill ${infoVis.categoryClass}`,text:infoVis.category}),
+       infoVis.categoryClass==="cat-tan-suc"?null:el("span",{class:`journey-cat-pill ${infoVis.categoryClass}`,text:infoVis.category}),
        el("small",{class:"journey-xp-tag",text:`${num(l.totalXP)} XP`}),
       ]),
       el("strong",{class:"journey-unlock-title",text:l.unlock}),
@@ -154,39 +154,33 @@ export function createPanels(ctx){
      visualItemIcon(items,"plot_"+(i+1),{size:44}),
      el("div",{class:"plot-row-copy"},[el("strong",{text:"Thửa "+(i+1)}),el("small",{text:n+"/9 ô · "+new Set(p.slots.filter(Boolean).map(e=>e.species)).size+"/3 loại · "+ready+" cây chín"})]),
      button("Đến thửa",()=>{focusPlot(i);close();}),
-     button("Gieo lại",()=>run(x=>E.replant(x,i,Date.now()),"Đã gieo lại hàng còn trống.",{action:"replant",plotIndex:i}),{disabled:!p.patterns.length}),
+     button(p.patterns.length?"Gieo lại":"Chưa có mẫu gieo",()=>run(x=>E.replant(x,i,Date.now()),"Đã gieo lại hàng còn trống.",{action:"replant",plotIndex:i}),{disabled:!p.patterns.length,title:!p.patterns.length?"Chưa có hàng đã gieo để gieo lại":"Gieo lại"}),
     ]));
    });
    body.append(g);
    const selected=s.plots[sel.selectedPlot],filled=sel.cells.some(i=>selected.slots[i]);
    body.append(el("h3",{text:"Dọn hàng đang chọn · Thửa "+(sel.selectedPlot+1)}),paragraph("Nhổ bỏ không hoàn hạt hoặc nhận XP. Ô đất giữ thời điểm chín cũ làm thời gian chờ trước khi gieo lại."));
-   body.append(button(confirmUproot?"Xác nhận nhổ "+sel.cells.length+" ô đã chọn":"Nhổ hàng đang chọn",()=>{if(!confirmUproot){confirmUproot=true;refresh();return;}run(x=>E.uproot(x,sel.selectedPlot,sel.cells,Date.now()),"Đã nhổ hàng. Đất chờ tới thời điểm chín cũ.",{action:"uproot",plotIndex:sel.selectedPlot,cells:sel.cells});confirmUproot=false;},{disabled:!filled,class:"danger"}));
+   body.append(button(!filled?"Hàng đang chọn trống":confirmUproot?"Xác nhận nhổ "+sel.cells.length+" ô đã chọn":"Nhổ hàng đang chọn",()=>{if(!confirmUproot){confirmUproot=true;refresh();return;}run(x=>E.uproot(x,sel.selectedPlot,sel.cells,Date.now()),"Đã nhổ hàng. Đất chờ tới thời điểm chín cũ.",{action:"uproot",plotIndex:sel.selectedPlot,cells:sel.cells});confirmUproot=false;},{disabled:!filled,class:"danger",title:!filled?"Hàng đang chọn chưa có cây":"Nhổ hàng đang chọn"}));
   },
 
   creatures(){
    const s=getState(),g=grid(),facings=ctx.getCreatureFacings?.()??{},affMap=ctx.getAffinityMap?.()??new Map();
-   body.append(paragraph(s.creatures.length+"/"+E.housingCapacity(s)+" chỗ · 1 con/loài · 6 giờ/bữa"),toolbar(button("Nhận bữa",()=>run(x=>E.claimAnimals(x,null,Date.now()),"Đã nhận các bữa hoàn tất.",{action:"claimAnimals"})),button("Cho ăn",()=>run(x=>E.feed(x,null,Date.now()),"Đã cho các con đủ khẩu phần ăn.",{action:"feed"})),button("Chế biến",()=>{recipeFilter="feed";show("craft");}),button("Gắn kết",()=>show("affinity"))));
+   if(s.level<DB.animals[0].level){body.append(paragraph("Mở ở cấp 10 · xây Chuồng 1","empty"));return;}
+   body.append(paragraph(s.creatures.length+"/"+E.housingCapacity(s)+" chỗ · 1 con/loài"),toolbar(button("Nhận bữa",()=>run(x=>E.claimAnimals(x,null,Date.now()),"Đã nhận các bữa hoàn tất.",{action:"claimAnimals"})),button("Cho ăn",()=>run(x=>E.feed(x,null,Date.now()),"Đã cho các con đủ khẩu phần ăn.",{action:"feed"})),button("Chế biến",()=>{recipeFilter="feed";show("craft");}),button("Gắn kết",()=>show("affinity"))));
    for(const a of DB.animals.filter(a=>a.level<=s.level)){
-    const owned=s.creatures.find(e=>e.species===a.id),locked=s.level<a.level,facing=facings[a.id]==="right"?"right":"default",angleTag=facing==="right"?"↗ Nhìn phải":"↖ Góc chuẩn";
-    const aff=affMap.get(a.id);
-    const affTag=owned&&aff?` · ${aff.hearts}`:"";
-    const k=card(a.label,"Cấp "+a.level+" · "+a.rarity+" · "+a.mealPortions+" phần/bữa · "+angleTag+affTag,a.id,{facing});
-    k.classList.toggle("locked",locked);
-    k.append(paragraph("Kho: "+(s.inventory[a.feed]||0)+" khẩu phần · "+a.cycleXP+" XP/chu kỳ trưởng thành"));
-    if(owned){
-     const mature=owned.mealsCompleted>=a.mealsToAdult;
-     k.append(paragraph(mature?"Trưởng thành · Sản phẩm: "+a.produce:owned.mealsCompleted+"/"+a.mealsToAdult+" bữa để trưởng thành · Các mốc "+a.stageMeals.join(" / ")),el("div",{class:"progress"},[el("span",{style:"width:"+Math.min(100,owned.mealsCompleted/a.mealsToAdult*100)+"%"})]));
-     if(owned.meal)k.append(timer(owned.meal.readyAt),actions(readyButton("Nhận",owned.meal.readyAt,()=>run(x=>E.claimAnimals(x,a.id,Date.now()),"Đã nhận kết quả "+a.label+".",{action:"claimAnimals",species:a.id}))));
-     else k.append(paragraph("Đang chờ cho ăn."),actions(button("Cho ăn",()=>run(x=>E.feed(x,a.id,Date.now()),"Đã cho "+a.label+" ăn.",{action:"feed",species:a.id}),{disabled:s.inventory[a.feed]<a.mealPortions,class:"primary"})));
-     const rowBtns=[button("Đến chuồng",()=>{selectCreature(a.id);close();}),button("Thức ăn",()=>{recipeFilter=a.feed;show("craft");})];
-     if(ctx.onPetCreature)rowBtns.push(button("Vuốt ve",()=>{ctx.onPetCreature(a.id);refresh();},{"data-pet-creature":a.id}));
-     if(ctx.rotateCreatureFacing)rowBtns.push(button("Xoay",()=>{ctx.rotateCreatureFacing(a.id);refresh();},{"data-rotate-creature":a.id}));
-     rowBtns.push(button("Gắn kết",()=>{selectCreature(a.id);show("affinity");}));
-     k.append(actions(...rowBtns));
-    }else{
-     k.append(button("Chọn",()=>{selectCreature(a.id);close();}),paragraph(locked?"Mở ở cấp "+a.level:a.id==="puffskein"?"Đón miễn phí, nhận 3 khẩu phần đầu tiên.":"Cần chuẩn bị "+(a.mealPortions*3)+" khẩu phần; nhận nuôi chưa bắt đầu bữa ăn."),actions(button("Đón về",()=>run(x=>E.adopt(x,a.id,Date.now()),a.label+" đã về vườn.",{action:"adopt",species:a.id}),{disabled:locked||s.creatures.length>=E.housingCapacity(s)||(a.id!=="puffskein"&&s.inventory[a.feed]<a.mealPortions*3),class:"primary"}),button("Thức ăn",()=>{recipeFilter=a.feed;show("craft");},{disabled:locked})));
-    }
-    g.append(k);
+    const owned=s.creatures.find(e=>e.species===a.id),have=s.inventory[a.feed]||0;
+    const eating=owned?.meal&&owned.meal.readyAt>now();
+    const action=owned?.meal
+     ? readyButton("Nhận",owned.meal.readyAt,()=>run(x=>E.claimAnimals(x,a.id,Date.now()),"Đã nhận kết quả "+a.label+".",{action:"claimAnimals",species:a.id}))
+     : owned?button("Cho ăn",()=>run(x=>E.feed(x,a.id,Date.now()),"Đã cho "+a.label+" ăn.",{action:"feed",species:a.id}),{disabled:have<a.mealPortions,class:"primary",title:have<a.mealPortions?"Thiếu khẩu phần":"Cho ăn"})
+     :button("Đón về",()=>run(x=>E.adopt(x,a.id,Date.now()),a.label+" đã về vườn.",{action:"adopt",species:a.id}),{disabled:s.creatures.length>=E.housingCapacity(s)||(a.id!=="puffskein"&&have<a.mealPortions*3),class:"primary"});
+    const portrait=iconButton("pen","Đến chuồng · "+a.label,()=>{selectCreature(a.id);close();});
+    portrait.replaceChildren(visualItemIcon(items,a.id,{size:52,facing:facings[a.id]}));
+    g.append(el("article",{class:"card creature-row"},[portrait,el("div",{class:"creature-row-copy"},[
+     el("strong",{text:a.label}),
+     el("small",{text:`${owned?(eating?"Đang ăn":owned.meal?"Sẵn sàng":"Đói"):"Chưa đón"} · Kho ${num(have)} · ${a.mealPortions} phần/bữa`}),
+     eating?timer(owned.meal.readyAt):null,
+    ]),action]));
    }
    body.append(g);
   },
@@ -198,7 +192,7 @@ export function createPanels(ctx){
    const qty=el("select",{"aria-label":"Số mẻ tức thì",onchange:e=>{batches=Number(e.target.value);refresh();}});
    for(const n of[1,3,10])qty.append(el("option",{value:n,text:n+" mẻ tức thì"}));
    qty.value=batches;
-   body.append(detail("Chế biến và xây dựng không cho XP. Côn trùng / cá: 1 mẻ mỗi 3 giờ; nhận xong mới làm tiếp."),toolbar(select,qty,button("Nhận tất cả",()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"}))));
+   body.append(toolbar(select,qty,button("Nhận tất cả",()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"}))));
    if(s.jobs.length){
     const jobs=grid();
     for(const j of s.jobs){
@@ -208,11 +202,11 @@ export function createPanels(ctx){
     }
     body.append(jobs);
    }
-   const g=grid();
+   const g=grid();g.classList.add("craft-recipes");
    for(const r of DB.recipes.filter(r=>r.level<=s.level).filter(r=>recipeFilter==="all"||recipeFilter==="open"&&r.level<=s.level||recipeFilter==="feed"&&DB.animals.some(a=>a.feed===r.output)||r.output===recipeFilter)){
     const n=r.hours?1:batches,locked=r.level>s.level,missing=Object.entries(r.inputs).some(([id,q])=>s.inventory[id]<q*n),busy=r.hours&&s.jobs.some(j=>j.station===r.station),k=card(r.label,"Cấp "+r.level+" · "+hours(realHours(r,s.level))+" · "+r.station,`recipe_${r.id}`);
     k.classList.toggle("locked",locked);
-    for(const[id,q]of Object.entries(r.inputs))k.append(paragraph(label(id)+": "+num(s.inventory[id]||0)+" / "+num(q*n),s.inventory[id]<q*n?"missing":"meta"));
+    k.append(priceRow(s,{cropCost:Object.fromEntries(Object.entries(r.inputs).map(([id,q])=>[id,q*n])),galleons:0},Infinity));
     k.append(recipeOutput(items,label,r.output,r.count*n),button(locked?"Cấp "+r.level:busy?"Đang làm":"Làm",()=>run(x=>E.craft(x,r.id,n,Date.now()),r.hours?"Đã bắt đầu mẻ.":"Đã chế biến thành phẩm.",{action:"craft",recipeId:r.id,batches:n}),{disabled:locked||missing||busy,class:"primary"}));
     g.append(k);
    }
@@ -229,7 +223,7 @@ export function createPanels(ctx){
     k.classList.toggle("locked",locked);
     if(!done&&!job)k.append(priceRow(s,e,wallet));
     k.append(paragraph(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi"));
-    if(done)k.append(paragraph("✓ Đã xây","ready-text"));
+    if(done)k.append(paragraph("Đã xây","ready-text"));
     else if(job)k.append(timer(job.readyAt),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})),...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));
     else k.append(paragraph(locked?"Chờ cấp "+e.level:!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));
     g.append(k);
@@ -403,7 +397,7 @@ export function createPanels(ctx){
   collection(){
    const s=getState(),session=getSession(),wallet=ctx.getGalleons?.()??Infinity;
    const tile=(name,id,opts,...rest)=>el("article",{class:"card gp-tile","data-item-id":id},[el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,...opts})]),el("strong",{class:"gp-tile-name",text:name}),...rest]);
-   const turnText=facing=>facing==="right"?"Đang nhìn phải ↗":"Đang nhìn trái ↖";
+   const turnText=facing=>facing==="right"?"Đang nhìn phải":"Đang nhìn trái";
    body.append(renderGardenDefaults(ctx,{s,wallet,tile,priceRow,canPay,run,refresh,turnText}));
 
    const decorState=ctx.getDecorations?.()??session?.decorations??{};
@@ -433,7 +427,7 @@ export function createPanels(ctx){
      if(owned&&ctx.openDecorate){
       row.append(
        iconButton("scenery","Đặt "+name,()=>{close();ctx.openDecorate(item);},{text:"Đặt",class:"primary"}),
-       iconButton("arrow",(facing==="right"?"Xoay "+name+" về trái ↖":"Xoay "+name+" sang phải ↗")+" · "+turnText(facing),async()=>{
+       iconButton("arrow",(facing==="right"?"Xoay "+name+" về trái":"Xoay "+name+" sang phải")+" · "+turnText(facing),async()=>{
         const nextFacing=facing==="right"?"default":"right";
         await ctx.quickRotateDecor?.(item.id,nextFacing);
         refresh();
@@ -465,7 +459,7 @@ export function createPanels(ctx){
    const s=getState();
    const barBtns=[button("Xem toàn vườn",()=>{ctx.camera.overview();close();})];
    if(ctx.openVisualLayout)barBtns.unshift(button("Sắp xếp",()=>{close();ctx.openVisualLayout();},{class:"primary","data-open-visual-layout":"true"}));
-   body.append(detail("Đổi nền cùng loại miễn phí. Cây, bữa ăn và tiến độ đi cùng công trình; không nhận XP."),toolbar(...barBtns));
+   body.append(toolbar(...barBtns));
    const g=grid();
    for(const kind of ["plot","pen"]){
     const total=kind==="plot"?E.plotLimit(s):6,count=kind==="plot"?s.plots.length:E.housingCapacity(s)/2,positions=s.layout?.[kind==="plot"?"plots":"pens"]||Array.from({length:total},(_,i)=>i);
@@ -593,7 +587,7 @@ export function createPanels(ctx){
    for(const lesson of g.lessons){
     const done=g.done.has(lesson.id),locked=lesson.level>g.level,state=done?"done":locked?"locked":lesson.id===g.current?"current":"open";
     list.append(el("li",{class:"guide-item is-"+state},[
-     el("span",{class:"guide-mark","aria-hidden":"true",text:done?"✓":locked?"🔒":"•"}),
+     el("span",{class:"guide-mark","aria-hidden":"true"},[pixelIcon(done?"check":locked?"lock":"more",1)]),
      el("div",{},[el("strong",{text:"Cấp "+lesson.level+" · "+lesson.title}),el("small",{text:locked?"Mở ở cấp "+lesson.level:lesson.line})]),
     ]));
    }

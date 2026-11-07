@@ -17,7 +17,7 @@ test('a full row, cooldown or disconnected wallet stays blocked before restock',
 });
 
 test('times shown are the real ones: scaled when the server owns the garden, half time from level 15 on', async () => {
- const {hours, realHours, setServerGrowth} = await import('./ui-utils.mjs');
+ const {duration, hours, realHours, setServerGrowth} = await import('./ui-utils.mjs');
  const pumpkin = {hours: 2, level: 1}, mandrake = {hours: 14, level: 24};
  assert.equal(hours(realHours(pumpkin, 3)), '2 giờ'); // local prototype engine: unscaled
  setServerGrowth(true);
@@ -27,6 +27,10 @@ test('times shown are the real ones: scaled when the server owns the garden, hal
  assert.equal(hours(realHours(mandrake, 10)), '7 giờ'); // opens at 24: the half time of level 24 on
  assert.equal(hours(realHours({hours: 24}, 30)), '12 giờ');
  assert.equal(hours(0), 'Tức thì');
+ assert.equal(duration(599000), '9p 59s');
+ assert.equal(duration(600000), '10p');
+ assert.equal(duration(3599000), '59p');
+ assert.equal(duration(3600000), '1g 00p');
  setServerGrowth(false);
 });
 

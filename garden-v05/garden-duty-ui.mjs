@@ -1,7 +1,9 @@
 // «Bậc trách nhiệm» (25.0 S5, server garden-duty-core): from level 130 a neglected garden pays for it. The server
 // keeps every clock; this panel shows snapshot.duty: what happened, the time to each next consequence and the way
 // out of each (action duty: clear, gnome, treat, lure, leave). mobile-game imports it on the first chip tap.
-import {$,el} from './ui-utils.mjs?v=25.0.1';
+import {CREATURE} from './balance-data.mjs?v=25.0.1';
+import {witherCanvas} from './garden-duty-art.mjs?v=25.0.1';
+import {$,el,visualItemIcon} from './ui-utils.mjs?v=25.0.1';
 import {iconButton,pixelIcon} from './pixel-icons.mjs?v=25.0.1';
 
 const HOUR=3600000;
@@ -53,24 +55,33 @@ export function createDutyPanel({getSnapshot,act,notify,labelOf}){
  ($('gameShell')||document.body).append(dialog);
  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
  const run=async(command,text)=>{const res=await act({action:'duty',...command});if(res?.ok){notify(text(res.receipt?.duty||{},res));render();}};
- const tile=(art,label,state,onClick)=>{const b=el('button',{type:'button',class:'mood-tile duty-tile',disabled:!onClick,'aria-label':label+(state?' · '+state:'')},[pixelIcon(art,2),el('b',{text:label}),state?el('small',{text:state}):null]);if(onClick)b.onclick=onClick;return b;};
+ const tile=(art,label,state,onClick)=>{const b=el('button',{type:'button',class:'mood-tile duty-tile',disabled:!onClick,'aria-label':label+(state?' · '+state:'')},[typeof art==='string'?pixelIcon(art,2):art,el('b',{text:label}),state?el('small',{text:state}):null]);if(onClick)b.onclick=onClick;return b;};
 
+ function dryArt(plot){
+  const d=getSnapshot()?.garden?.progression;
+  const dead=getSnapshot()?.duty?.dead?.find(row=>row.plot===plot);
+  const crop=d?.plots?.[plot]?.slots?.[dead?.slot]?.species;
+  if(!crop)return pixelIcon('harvest',2);
+  const node=visualItemIcon(new Map(),crop,{size:40,kind:'harvest'}),img=node.querySelector('img');
+  if(img){const dry=()=>{const c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;c.getContext('2d').drawImage(img,0,0);witherCanvas(c,'dead');c.style.cssText=img.style.cssText;c.style.imageRendering='pixelated';img.replaceWith(c);};if(img.complete&&img.naturalWidth)dry();else img.addEventListener('load',dry,{once:true});}
+  return node;
+ }
  function render(){
   const duty=getSnapshot()?.duty,now=Date.now();
   if(!duty?.on){body.replaceChildren(el('p',{class:'meta',text:`Từ cấp ${duty?.level||130}.`}));return;}
   const tiles=[];
   const dead=[...new Set((duty.dead||[]).map(d=>d.plot))];
-  for(const plot of dead)tiles.push(tile('harvest',`Dọn thửa ${plot+1}`,`${duty.dead.filter(d=>d.plot===plot).length} cây khô`,()=>run({kind:'clear',plotIndex:plot},r=>`🧹 Đã dọn ${r.cleared} gốc khô ở thửa ${plot+1}.`)));
-  for(const g of duty.gnomes||[])tiles.push(tile('map',`Tóm ma lùm · thửa ${g.plot+1}`,g.ate?`đã ăn ${g.ate} cây`:'chưa kịp ăn',()=>run({kind:'gnome',plotIndex:g.plot},r=>`💨 Quăng ma lùm qua rào${r.ate?` · nó đã ăn ${r.ate} cây`:''}.`)));
+  for(const plot of dead)tiles.push(tile(dryArt(plot),`Dọn thửa ${plot+1}`,`${duty.dead.filter(d=>d.plot===plot).length} cây khô`,()=>run({kind:'clear',plotIndex:plot},r=>`🧹 Đã dọn ${r.cleared} gốc khô ở thửa ${plot+1}.`)));
+  for(const g of duty.gnomes||[])tiles.push(tile(el('img',{src:'environment/elves/ma-lum/idle.png',width:40,height:40,alt:'',style:'image-rendering:pixelated'}),`Tóm ma lùm · thửa ${g.plot+1}`,g.ate?`đã ăn ${g.ate} cây`:'chưa kịp ăn',()=>run({kind:'gnome',plotIndex:g.plot},r=>`💨 Quăng ma lùm qua rào${r.ate?` · nó đã ăn ${r.ate} cây`:''}.`)));
   for(const s of duty.sick||[]){
    const name=labelOf(s.species),bottles=getSnapshot()?.garden?.supplies?.skeleGro||0;
-   tiles.push(tile('heart',`${name} · Thuốc Mọc Xương`,bottles?`còn ${bottles} chai`:'hết thuốc',bottles?()=>run({kind:'treat',species:s.species,pay:'skeleGro'},r=>`💊 ${name} khỏe lại · tâm trạng ${r.mood}.`):null));
-   tiles.push(tile('chest',`${name} · ${duty.curePrice} G`,'khám bệnh',()=>run({kind:'treat',species:s.species,pay:'galleons'},r=>`💊 ${name} khỏe lại · tâm trạng ${r.mood}.`)));
+   tiles.push(tile(visualItemIcon(new Map(),'skele_gro',{size:40}),`${name} · Thuốc Mọc Xương`,bottles?`còn ${bottles} chai`:'hết thuốc',bottles?()=>run({kind:'treat',species:s.species,pay:'skeleGro'},r=>`💊 ${name} khỏe lại · tâm trạng ${r.mood}.`):null));
+   tiles.push(tile('coin',`${name} · ${duty.curePrice} G`,'khám bệnh',()=>run({kind:'treat',species:s.species,pay:'galleons'},r=>`💊 ${name} khỏe lại · tâm trạng ${r.mood}.`)));
   }
   for(const f of duty.fled||[]){
    const name=labelOf(f.species);
-   tiles.push(f.lureAt?tile('map',`${name} đang về`,`lúc ${clockText(f.backAt)}`,null)
-    :tile('map',`Dụ ${name} về`,`${duty.lureMeals} bữa ăn · 1 ngày`,()=>run({kind:'lure',species:f.species},r=>`🍖 Đã đặt mồi · ${name} về lúc ${clockText(r.backAt)}.`)));
+   tiles.push(f.lureAt?tile(visualItemIcon(new Map(),CREATURE[f.species].feed,{size:40}),`${name} đang về`,`lúc ${clockText(f.backAt)}`,null)
+    :tile(visualItemIcon(new Map(),CREATURE[f.species].feed,{size:40}),`Dụ ${name} về`,`${duty.lureMeals} bữa ăn · 1 ngày`,()=>run({kind:'lure',species:f.species},r=>`🍖 Đã đặt mồi · ${name} về lúc ${clockText(r.backAt)}.`)));
   }
   const leave=duty.leave
    ?[tile('book','Về vườn',`bác trông tới ${clockText(duty.leave.until)}`,()=>run({kind:'leave',days:0},r=>`🏡 Con về rồi · còn ${left(Date.now()+r.leftMs)} nhờ bác.`))]

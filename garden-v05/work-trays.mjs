@@ -1,6 +1,6 @@
 import {setupBuildDecorDock} from './build-decor-dock.mjs?v=25.0.1';
 import { setAction, pixelIcon } from './pixel-icons.mjs?v=25.0.1';
-import { $, button, el, duration, hours, num, realHours, visualItemIcon } from './ui-utils.mjs?v=25.0.1';
+import { $, button, el, duration, hours, num, realHours, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=25.0.1';
 import { DB } from './balance-data.mjs?v=25.0.1';
 import { makeRecipeIcon } from './recipe-art-ui.mjs?v=25.0.1';
 
@@ -143,7 +143,7 @@ function craftAction(recipe, state, batches) {
 /** Derive a command for the exact selected expansion; return null when stale. */
 function buildAction(expansion, state, now, expansions, galleons) {
   const choice = buildChoice(expansion, state, now, expansions, galleons);
-  return choice.canBuild ? { choice, command: buildCommand(expansion.id) } : null;
+  return choice.ready ? { choice, command: { action: 'claimBuildings' } } : choice.canBuild ? { choice, command: buildCommand(expansion.id) } : null;
 }
 
 function readLabel(labels, id) {
@@ -364,7 +364,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       const done = end <= now;
       const share = done ? 100 : end > start ? Math.max(2, Math.min(99, Math.round((now - start) / (end - start) * 100))) : 0;
       const bar = el('span', { class: 'work-job-bar', 'aria-hidden': 'true' }, el('i', { style: `width:${share}%` }));
-      const time = el('span', { class: 'work-job-time' + (done ? ' ready-text' : ''), 'data-until': end, 'data-prefix': 'còn ', text: done ? 'Xong' : `còn ${duration(end - now)}` });
+      const time = el('span', { class: 'work-job-time' + (done ? ' ready-text' : ''), 'data-until': end, 'data-prefix': 'Còn ', text: done ? 'Xong' : `Còn ${duration(end - now)}` });
       return el('div', { class: 'work-job' + (done ? ' is-ready' : '') }, [
         recipe ? makeRecipeIcon(recipe, items, 26, labels) : visualItemIcon(items, job.id, { size: 26 }),
         el('span', { class: 'work-job-name', text: name }),
@@ -402,7 +402,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     if (recipe.hours > 0) model.batches = 1;
     const choice = craftChoice(recipe, state, model.batches);
     const outputCount = Number(recipe.count) * choice.batches;
-    dom.captionTitle.textContent = recipe.label;
+    dom.captionTitle.textContent = recipe.label + ' → ' + itemDisplayName(recipe.output, readLabel(labels, recipe.output));
     dom.captionMeta.textContent = `${recipe.hours > 0 ? '⏱ ' + hours(realHours(recipe, state.level)) : 'Tức thì'} · ${recipe.station}`;
     dom.stepper.hidden = recipe.hours > 0;
     dom.batchValue.textContent = `×${model.batches}`;
@@ -468,11 +468,12 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     let label = 'Xây';
     if (!ready) label = 'Đợi chút';
     else if (!choice.unlocked) label = `Cấp ${expansion.level}`;
+    else if (choice.ready) label = 'Xong · Nhận';
     else if (choice.queued || choice.sameKindBusy) label = 'Đang xây';
     else if (choice.missing) label = 'Thiếu đồ';
     else if (!choice.previousBuilt) label = 'Chưa đủ';
     else if (!choice.canBuild) label = 'Chưa mở';
-    dom.action.disabled = !ready || !choice.canBuild;
+    dom.action.disabled = !ready || !(choice.canBuild || choice.ready);
     setAction(dom.action, { icon: 'build', label, text: `${label} · ${summary}` });
   }
 
@@ -511,6 +512,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       refresh('build');
       return;
     }
+    if (derived.choice.ready) { dispatchClaim('build'); return; }
     run(next => E.build(next, selectedId, Date.now()), expansion.hours > 0 ? `Đã khởi công ${expansionTitle(expansion)} · xong sau ${hours(realHours(expansion, state.level))}.` : `Đã xây ${expansionTitle(expansion)}.`, derived.command);
   }
 
@@ -521,7 +523,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     const jobs = mode === 'craft' ? state.jobs : state.construction;
     if (!readyJobs(jobs, now).length) return;
     if (mode === 'craft') run(next => E.claimCraft(next, Date.now()), 'Đã nhận thành phẩm.', { action: 'claimCraft' });
-    else run(next => E.claimBuildings(next, Date.now()), 'Công trình đã mở sử dụng.', { action: 'claimBuildings' });
+    else {const names=readyJobs(jobs,now).map(job=>expansionTitle(db.expansions.find(e=>e.id===job.id))).join(', ');run(next => E.claimBuildings(next, Date.now()), `Đã xây xong ${names}.`, { action: 'claimBuildings' });}
   }
 
   refresh();

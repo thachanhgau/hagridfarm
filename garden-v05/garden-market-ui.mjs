@@ -40,12 +40,12 @@ export function marketCards({market,inventory,items,quantities,busy,onSell}){
   }
   function set(n){count=Math.min(max,Math.max(Math.min(max,1),n));quantities.set(id,count);paint();}
   paint();
-  const note=left===0?"Hết lượt hôm nay":capLeft<price?"Quầy hết tiền hôm nay":`Còn ${left}/${market.perCropDaily} hôm nay`;
+  const note=left===0?"Hết lượt hôm nay":capLeft<price?(premium.has(id)?"Hết hạn mức hàng giá cao":"Quầy hết tiền hôm nay"):`Còn ${left}/${market.perCropDaily} hôm nay`;
   return el("article",{class:`card store-card gp-tile kind-harvest${max<1?" is-locked":""}`,"data-market-crop":id},[
    el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,kind:id.startsWith("produce_")?"produce":"harvest",badge:`×${num(have)}`})]),
    el("strong",{class:"gp-tile-name",text:label}),
-   el("small",{class:"gp-tile-sub store-stock-note",text:grade?`Kho ${num(have)} · ${grade}`:`Kho ${num(have)}`}),
-   el("div",{class:"store-meta-row"},[el("span",{class:"gp-price"},[pixelIcon("coin",1),el("b",{text:num(price)}),el("small",{text:"/cái"})]),el("small",{class:"meta",text:note})]),
+   el("small",{class:"gp-tile-sub store-stock-note",text:`Kho ${num(have)}${grade?" · "+grade:""}${premium.has(id)?" · hàng giá cao":""}`}),
+   el("div",{class:"store-meta-row"},[el("span",{class:"gp-price"},[pixelIcon("coin",1),el("b",{text:num(price)}),el("small",{text:"/cái"})]),max<1?null:el("small",{class:"meta",text:note})]),
    el("div",{class:"store-action-row gp-tile-actions"},max<1?[el("span",{class:"gp-state",text:note})]:[el("div",{class:"gp-stepper",role:"group","aria-label":"Số "+label+" muốn bán"},[minus,qty,plus]),all,sell]),
   ]);
  })];
@@ -54,9 +54,13 @@ export function marketCards({market,inventory,items,quantities,busy,onSell}){
 function clearanceRow({market,inventory,crops,busy,onSell}){
  if(!market.clearance)return [];
  const pieces=crops.reduce((n,id)=>n+inventory[id],0),total=crops.reduce((n,id)=>n+inventory[id]*market.prices[id],0);
- let armed=false;
- const go=button("",()=>{if(busy)return;if(!armed){armed=true;paint();return;}onSell(null,total,`cả kho (${num(pieces)} nông sản)`);},{class:"primary store-buy-btn","data-market-clear":""});
+ let armed=false,timer;
+ const tiers=crops.map(id=>(market.quality?.prices?.[id]||market.prices[id])/market.prices[id]).filter(n=>n>1);
+ const warning=tiers.length?` · giá thường · mất ×${Math.max(...tiers)} hàng giá cao`:"";
+ function disarm(){clearTimeout(timer);armed=false;paint();}
+ const go=button("",()=>{if(busy)return;if(!armed){armed=true;timer=setTimeout(disarm,4000);paint();return;}disarm();onSell(null,total,`cả kho (${num(pieces)} nông sản)`);},{class:"primary store-buy-btn","data-market-clear":""});
  function paint(){go.replaceChildren(pixelIcon("coin",1),el("span",{text:armed?`Bấm lần nữa · +${num(total)}`:`Bán hết · +${num(total)}`}));go.disabled=busy;go.setAttribute("aria-label",`Xả kho: bán hết ${num(pieces)} nông sản lấy ${num(total)} Galleons, một lần duy nhất`);}
+ go.addEventListener("blur",disarm);
  paint();
- return [el("div",{class:"market-clear"},[el("span",{class:"meta",text:`Xả kho 1 lần · ${num(pieces)} nông sản · không tính hạn mức`}),go])];
+ return [el("div",{class:"market-clear"},[el("span",{class:"meta",text:`Xả kho 1 lần · ${num(pieces)} nông sản · không tính hạn mức${warning}`}),go])];
 }
