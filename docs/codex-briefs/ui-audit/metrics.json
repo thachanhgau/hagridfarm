@@ -1,0 +1,719 @@
+[
+  {
+    "id": "tan_suc",
+    "master": "garden-v05/masters-items/ui-audit/tan_suc.png",
+    "native": "docs/codex-briefs/ui-audit/native/tan_suc.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 13,
+      "y": 8,
+      "w": 38,
+      "h": 48
+    },
+    "colors": 16,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "chapter_1",
+    "master": "garden-v05/masters-items/ui-audit/chapter_1.png",
+    "native": "docs/codex-briefs/ui-audit/native/chapter_1.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 7,
+      "y": 8,
+      "w": 50,
+      "h": 48
+    },
+    "colors": 19,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "chapter_2",
+    "master": "garden-v05/masters-items/ui-audit/chapter_2.png",
+    "native": "docs/codex-briefs/ui-audit/native/chapter_2.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 7,
+      "y": 8,
+      "w": 49,
+      "h": 48
+    },
+    "colors": 18,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "chapter_3",
+    "master": "garden-v05/masters-items/ui-audit/chapter_3.png",
+    "native": "docs/codex-briefs/ui-audit/native/chapter_3.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 8,
+      "y": 8,
+      "w": 48,
+      "h": 48
+    },
+    "colors": 16,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "chapter_4",
+    "master": "garden-v05/masters-items/ui-audit/chapter_4.png",
+    "native": "docs/codex-briefs/ui-audit/native/chapter_4.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 6,
+      "y": 17,
+      "w": 52,
+      "h": 39
+    },
+    "colors": 14,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "chapter_5",
+    "master": "garden-v05/masters-items/ui-audit/chapter_5.png",
+    "native": "docs/codex-briefs/ui-audit/native/chapter_5.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 6,
+      "y": 17,
+      "w": 52,
+      "h": 39
+    },
+    "colors": 15,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "chapter_6",
+    "master": "garden-v05/masters-items/ui-audit/chapter_6.png",
+    "native": "docs/codex-briefs/ui-audit/native/chapter_6.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 6,
+      "y": 8,
+      "w": 51,
+      "h": 48
+    },
+    "colors": 17,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "chapter_7",
+    "master": "garden-v05/masters-items/ui-audit/chapter_7.png",
+    "native": "docs/codex-briefs/ui-audit/native/chapter_7.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 6,
+      "y": 19,
+      "w": 52,
+      "h": 37
+    },
+    "colors": 16,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "bubble_heart_small",
+    "master": "garden-v05/masters-items/ui-audit/bubble_heart_small.png",
+    "native": "docs/codex-briefs/ui-audit/native/bubble_heart_small.png",
+    "canvas": [
+      9,
+      8
+    ],
+    "ink": {
+      "x": 0,
+      "y": 0,
+      "w": 9,
+      "h": 8
+    },
+    "colors": 6,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_sprout_apprentice",
+    "master": "garden-v05/masters-items/ui-audit/ach_sprout_apprentice.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_sprout_apprentice.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 15,
+      "y": 16,
+      "w": 33,
+      "h": 40
+    },
+    "colors": 17,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_creature_friend",
+    "master": "garden-v05/masters-items/ui-audit/ach_creature_friend.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_creature_friend.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 16,
+      "y": 16,
+      "w": 32,
+      "h": 40
+    },
+    "colors": 16,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_herbology_artisan",
+    "master": "garden-v05/masters-items/ui-audit/ach_herbology_artisan.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_herbology_artisan.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 15,
+      "y": 16,
+      "w": 33,
+      "h": 40
+    },
+    "colors": 21,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_master_brewer",
+    "master": "garden-v05/masters-items/ui-audit/ach_master_brewer.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_master_brewer.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 15,
+      "y": 16,
+      "w": 33,
+      "h": 40
+    },
+    "colors": 21,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_forest_architect",
+    "master": "garden-v05/masters-items/ui-audit/ach_forest_architect.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_forest_architect.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 15,
+      "y": 16,
+      "w": 33,
+      "h": 40
+    },
+    "colors": 17,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_landscape_artist",
+    "master": "garden-v05/masters-items/ui-audit/ach_landscape_artist.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_landscape_artist.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 15,
+      "y": 16,
+      "w": 33,
+      "h": 40
+    },
+    "colors": 16,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_keepsake_curator",
+    "master": "garden-v05/masters-items/ui-audit/ach_keepsake_curator.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_keepsake_curator.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 14,
+      "y": 16,
+      "w": 36,
+      "h": 40
+    },
+    "colors": 19,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_hippogriff_rider",
+    "master": "garden-v05/masters-items/ui-audit/ach_hippogriff_rider.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_hippogriff_rider.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 14,
+      "y": 16,
+      "w": 36,
+      "h": 40
+    },
+    "colors": 19,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_unicorn_guardian",
+    "master": "garden-v05/masters-items/ui-audit/ach_unicorn_guardian.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_unicorn_guardian.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 14,
+      "y": 16,
+      "w": 36,
+      "h": 40
+    },
+    "colors": 19,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_dragon_tamer",
+    "master": "garden-v05/masters-items/ui-audit/ach_dragon_tamer.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_dragon_tamer.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 14,
+      "y": 16,
+      "w": 36,
+      "h": 40
+    },
+    "colors": 20,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_forest_envoy",
+    "master": "garden-v05/masters-items/ui-audit/ach_forest_envoy.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_forest_envoy.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 14,
+      "y": 16,
+      "w": 35,
+      "h": 40
+    },
+    "colors": 15,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "ach_grand_keeper",
+    "master": "garden-v05/masters-items/ui-audit/ach_grand_keeper.png",
+    "native": "docs/codex-briefs/ui-audit/native/ach_grand_keeper.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 14,
+      "y": 16,
+      "w": 35,
+      "h": 40
+    },
+    "colors": 18,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "seed_packet",
+    "master": "garden-v05/masters-items/ui-audit/seed_packet.png",
+    "native": "docs/codex-briefs/ui-audit/native/seed_packet.png",
+    "canvas": [
+      64,
+      64
+    ],
+    "ink": {
+      "x": 12,
+      "y": 8,
+      "w": 40,
+      "h": 48
+    },
+    "colors": 9,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "bubble_meal_ready",
+    "master": "garden-v05/masters-items/ui-audit/bubble_meal_ready.png",
+    "native": "docs/codex-briefs/ui-audit/native/bubble_meal_ready.png",
+    "canvas": [
+      28,
+      36
+    ],
+    "ink": {
+      "x": 2,
+      "y": 2,
+      "w": 23,
+      "h": 32
+    },
+    "colors": 15,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "bubble_hungry",
+    "master": "garden-v05/masters-items/ui-audit/bubble_hungry.png",
+    "native": "docs/codex-briefs/ui-audit/native/bubble_hungry.png",
+    "canvas": [
+      28,
+      36
+    ],
+    "ink": {
+      "x": 2,
+      "y": 2,
+      "w": 23,
+      "h": 32
+    },
+    "colors": 5,
+    "originalBox": null,
+    "verdict": "good"
+  },
+  {
+    "id": "hero_yule",
+    "master": "garden-v05/masters-items/ui-audit/hero_yule.png",
+    "native": "docs/codex-briefs/ui-audit/native/hero_yule.png",
+    "canvas": [
+      128,
+      183
+    ],
+    "ink": {
+      "x": 4,
+      "y": 3,
+      "w": 120,
+      "h": 178
+    },
+    "colors": 19,
+    "originalBox": {
+      "x": 4,
+      "y": 3,
+      "w": 120,
+      "h": 178
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "hero_halloween",
+    "master": "garden-v05/masters-items/ui-audit/hero_halloween.png",
+    "native": "docs/codex-briefs/ui-audit/native/hero_halloween.png",
+    "canvas": [
+      128,
+      80
+    ],
+    "ink": {
+      "x": 5,
+      "y": 2,
+      "w": 119,
+      "h": 76
+    },
+    "colors": 21,
+    "originalBox": {
+      "x": 5,
+      "y": 2,
+      "w": 119,
+      "h": 76
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "hero_herbology",
+    "master": "garden-v05/masters-items/ui-audit/hero_herbology.png",
+    "native": "docs/codex-briefs/ui-audit/native/hero_herbology.png",
+    "canvas": [
+      136,
+      158
+    ],
+    "ink": {
+      "x": 2,
+      "y": 2,
+      "w": 132,
+      "h": 154
+    },
+    "colors": 22,
+    "originalBox": {
+      "x": 2,
+      "y": 2,
+      "w": 132,
+      "h": 154
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "cottage_corner",
+    "master": "garden-v05/masters-items/ui-audit/cottage_corner.png",
+    "native": "docs/codex-briefs/ui-audit/native/cottage_corner.png",
+    "canvas": [
+      150,
+      75
+    ],
+    "ink": {
+      "x": 28,
+      "y": 9,
+      "w": 96,
+      "h": 58
+    },
+    "colors": 21,
+    "originalBox": {
+      "x": 28,
+      "y": 9,
+      "w": 96,
+      "h": 58
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "event_quidditch",
+    "master": "garden-v05/masters-items/ui-audit/event_quidditch.png",
+    "native": "docs/codex-briefs/ui-audit/native/event_quidditch.png",
+    "canvas": [
+      640,
+      360
+    ],
+    "ink": {
+      "x": 0,
+      "y": 0,
+      "w": 640,
+      "h": 360
+    },
+    "verdict": "good",
+    "note": "Painterly exception; generated source 1672x941, nearest enlarged 4x-canvas master."
+  },
+  {
+    "id": "star",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#star",
+    "native": "docs/codex-briefs/ui-audit/native/star.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 2,
+      "w": 14,
+      "h": 12
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "star_empty",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#star_empty",
+    "native": "docs/codex-briefs/ui-audit/native/star_empty.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 2,
+      "w": 14,
+      "h": 12
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "heart_empty",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#heart_empty",
+    "native": "docs/codex-briefs/ui-audit/native/heart_empty.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 3,
+      "w": 14,
+      "h": 12
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "tansuc",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#tansuc",
+    "native": "docs/codex-briefs/ui-audit/native/tansuc.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 2,
+      "y": 2,
+      "w": 11,
+      "h": 13
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "work",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#work",
+    "native": "docs/codex-briefs/ui-audit/native/work.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 1,
+      "w": 14,
+      "h": 14
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "acp",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#acp",
+    "native": "docs/codex-briefs/ui-audit/native/acp.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 2,
+      "y": 1,
+      "w": 13,
+      "h": 14
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "seal",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#seal",
+    "native": "docs/codex-briefs/ui-audit/native/seal.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 1,
+      "w": 14,
+      "h": 14
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "guest_hagrid",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#guest_hagrid",
+    "native": "docs/codex-briefs/ui-audit/native/guest_hagrid.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 1,
+      "w": 14,
+      "h": 14
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "guest_sprout",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#guest_sprout",
+    "native": "docs/codex-briefs/ui-audit/native/guest_sprout.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 0,
+      "w": 14,
+      "h": 15
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "guest_newt",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#guest_newt",
+    "native": "docs/codex-briefs/ui-audit/native/guest_newt.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 1,
+      "w": 14,
+      "h": 14
+    },
+    "verdict": "good"
+  },
+  {
+    "id": "guest_charlie",
+    "master": "docs/codex-briefs/ui-audit/pixel-icons-new.mjs#guest_charlie",
+    "native": "docs/codex-briefs/ui-audit/native/guest_charlie.png",
+    "canvas": [
+      16,
+      16
+    ],
+    "ink": {
+      "x": 1,
+      "y": 1,
+      "w": 14,
+      "h": 14
+    },
+    "verdict": "good"
+  }
+]
