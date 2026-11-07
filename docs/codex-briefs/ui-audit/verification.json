@@ -1,0 +1,13 @@
+{
+  "deliverables": 40,
+  "rasterMasters": 29,
+  "iconGrids": 11,
+  "previewScale": 3,
+  "nativeSizeChecks": 40,
+  "spritePaletteAndBinaryAlphaChecks": 39,
+  "masterMinimum4xChecks": 29,
+  "redrawBoundsMatchOriginal": 4,
+  "sourceCodeEdits": 0,
+  "exporterRuns": 0,
+  "gitOperations": 0
+}

@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen built-in",
+  "sources": {
+    "sheet1": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-b6a05c83-65ed-49ef-9436-0c8ba88ff39b.png",
+    "sheet2": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-14d63a0a-c92e-4b9c-9c4e-1d91e47e998c.png",
+    "sheet3": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-7767ffd9-6ef5-4b3f-b18d-b78692a5a838.png",
+    "sheet4": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-6c160ae9-593c-4e3c-a049-3a41cd5d7782.png",
+    "yule": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-40fe3dd4-07f5-4648-ad06-d529e541a23b.png",
+    "halloween": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-8a6a10a3-51ab-41eb-8c42-468efeb41fc9.png",
+    "herbology": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-05d77e07-77a7-4528-becd-748df4a4bf4d.png",
+    "cottage": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-40b871da-f786-43a8-8e35-8d09662985a0.png",
+    "quidditch": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-86970436-c5cd-4e43-919f-189d883f8da1.png",
+    "bubbles": "/Users/thachanh/.codex/generated_images/01a1b6ee-5ec6-79c1-9955-0f68d62927ac/exec-6e49324d-0c91-4b84-9053-ab4179f2aa07.png"
+  },
+  "prompt_summary": "Four 3x2 sheets: rank+chapters1-5; chapters6-7+packet+bubbles; achievements1-6; achievements7-12. Four composition-preserving pixel-art redraws referencing original images and approved style. Painterly Quidditch sibling festival card referencing all three existing cards. Exact subjects, palette24, transparent margins, upper-left light, dark outline, no text."
+}
