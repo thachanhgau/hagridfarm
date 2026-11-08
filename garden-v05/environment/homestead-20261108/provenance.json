@@ -1,0 +1,24 @@
+{
+  "tool": "built-in image_gen",
+  "master": "environment/homestead-20261108/masters/master.png",
+  "sha256": "bff9af864d4996a3fbec97b227dc325801fa52a6fc9c89000d3aed0af46b8b40",
+  "prompt": "Expanded rustic Hagrid stone cottage, tall layered slate roof and left chimney, oak timber porch, lit amber windows, right stone wing; integrated firewood lean-to, pumpkins, kettle, pots, barrel, broom, bench, stepping stones. Matching normal and snowy variants, transparent, muted pixel-art palette, no text, characters, fences or background.",
+  "outputs": [
+    {
+      "file": "environment/layers/hut.png",
+      "width": 256,
+      "height": 224,
+      "pivotX": 128,
+      "pivotY": 216,
+      "sha256": "6d7aca331794eb46530f48abb69d2873635440117dbbb4a4fd2eadde12739ae9"
+    },
+    {
+      "file": "environment/winter/hut-snow.png",
+      "width": 256,
+      "height": 224,
+      "pivotX": 128,
+      "pivotY": 216,
+      "sha256": "76ecb29745d0417aab1f9c858d2a7753d6f166bf3c069f1a2f12c9976bd61484"
+    }
+  ]
+}

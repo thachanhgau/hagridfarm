@@ -662,10 +662,10 @@
     {
       "id": "hut",
       "file": "environment/layers/hut.png",
-      "width": 164,
-      "height": 184,
-      "pivotX": 82,
-      "pivotY": 184,
+      "width": 256,
+      "height": 224,
+      "pivotX": 128,
+      "pivotY": 216,
       "source": "environment/hut.png",
       "sourceRect": null
     }

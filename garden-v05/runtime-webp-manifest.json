@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "0fa71f9cad1f",
+  "revision": "b03bab67dd58",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -13364,12 +13364,12 @@
     {
       "source": "environment/layers/hut.png",
       "file": "runtime-webp/environment/layers/hut.webp",
-      "width": 164,
-      "height": 184,
-      "sourceBytes": 7391,
-      "bytes": 4498,
-      "sourceSha256": "5ee80e3f7db93680b774694b8c68c39f4ba46a35fc9952a6288f5712f65e3c2d",
-      "sha256": "42e23d338b086800039277fdcc99a63e7d9b1c3c7d70f505280c431027fd4223"
+      "width": 256,
+      "height": 224,
+      "sourceBytes": 15671,
+      "bytes": 10176,
+      "sourceSha256": "6d7aca331794eb46530f48abb69d2873635440117dbbb4a4fd2eadde12739ae9",
+      "sha256": "2f32130b0aa19f49f55784114f534a87f03f5e7a9bbb594ac1368ce7c325075a"
     },
     {
       "source": "environment/layers/oak.png",
@@ -13624,12 +13624,12 @@
     {
       "source": "environment/winter/hut-snow.png",
       "file": "runtime-webp/environment/winter/hut-snow.webp",
-      "width": 164,
-      "height": 184,
-      "sourceBytes": 8918,
-      "bytes": 5704,
-      "sourceSha256": "3a42e43c1daa4f2f7d5cc21da40dfe85f0a5f8ec8c8295618114e80ee9e96a88",
-      "sha256": "b54cee4b8a6c2f22af493b055db08139607789747acc5be4e09c9e4198069a99"
+      "width": 256,
+      "height": 224,
+      "sourceBytes": 16119,
+      "bytes": 10706,
+      "sourceSha256": "76ecb29745d0417aab1f9c858d2a7753d6f166bf3c069f1a2f12c9976bd61484",
+      "sha256": "c5db26604e308383e5781f8ff1819cec5e2601264c988450eb50002b402fa1f5"
     },
     {
       "source": "environment/winter/log.png",
@@ -14027,9 +14027,9 @@
   "totals": {
     "converted": 1396,
     "existingWebp": 8,
-    "originalBytes": 5348903,
-    "webpBytes": 3525420,
-    "savedBytes": 1823483,
-    "savedPercent": 34.09
+    "originalBytes": 5364384,
+    "webpBytes": 3536100,
+    "savedBytes": 1828284,
+    "savedPercent": 34.08
   }
 }

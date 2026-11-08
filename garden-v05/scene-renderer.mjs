@@ -702,9 +702,9 @@ function drawHutMotion(context, x, y, clock) {
   if (!(clock > 0)) return;
   const step = Math.floor(clock / 420) % 4;
   const puffs = [
-    [-58, -170 - step * 2, 6, 4, '#d6d8bf'],
-    [-54 + (step % 2) * 2, -178 - step * 3, 8, 5, '#a6b1ae'],
-    [-50 - (step % 2) * 2, -187 - step * 3, 6, 4, 'rgba(214,216,191,.72)'],
+    [-78, -194 - step * 2, 6, 4, '#d6d8bf'],
+    [-74 + (step % 2) * 2, -202 - step * 3, 8, 5, '#a6b1ae'],
+    [-70 - (step % 2) * 2, -211 - step * 3, 6, 4, 'rgba(214,216,191,.72)'],
   ];
   for (const [dx, dy, w, h, color] of puffs) {
     rectangle(context, x + dx, y + dy, w, h, color);
@@ -729,7 +729,6 @@ export async function createGarden(canvas, options = {}) {
     ...completeObjectFiles(),
     ...earnedDecorFiles(),
     FARM_SIGN_ART.file,
-    'world-v242/cottage-corner.png',
     ...[...decorAssets.values()].flatMap(decorFiles),
     ...elfFiles(),
     ...norbertFiles(),
@@ -1567,11 +1566,6 @@ export async function createGarden(canvas, options = {}) {
   const breathOf=(...a)=>activeWinter&&kit.drawActorBreath(context,...a);
 
   function drawObject(object, logicalNow, clock = 0) {
-    if(object.kind==='cottage-corner'){
-      const img=imageFor('world-v242/cottage-corner.png');
-      if(img){context.imageSmoothingEnabled=false;context.drawImage(img,Math.round(object.xy[0]-75),Math.round(object.xy[1]-67),150,75);}
-      return;
-    }
     if(object.kind==='festival'){
       const frame=decorFrameAt(object.asset,clock,{seed:object.id,reducedMotion:clock===0});
       drawAsset(frame.file?{...object.asset,file:frame.file,...(frame.atlasRect?{atlasRect:frame.atlasRect}:{})}:object.asset,object.xy[0],object.xy[1]);
@@ -1983,7 +1977,6 @@ export async function createGarden(canvas, options = {}) {
       }
     }
 
-    if(propsVisible)objects.push({kind:'cottage-corner',type:'scenery',id:'cottage-corner',xy:iso(-2,5.5)});
     // The built pond and its beds count as taken ground for festival props (a cauldron stood on the beds, phase 2).
     if(propsVisible)objects.push(...festivalObjects({eventMode,stage:currentStage,map,iso,decorAssets,occupied:[...storeDecorationObjects,...earnedDecorationObjects,...objects.filter((o)=>o.kind==='pond'||o.kind==='pond-bed'||o.kind==='pond-paddy')]}));
     // Each plot has a little wooden sign planted at its west corner (owner 05/11/2026), sorted with the sprites: whatever
