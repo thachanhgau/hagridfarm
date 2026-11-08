@@ -7817,6 +7817,3910 @@
           ]
         }
       }
+    },
+    {
+      "id": "kappa",
+      "label": "Ma da",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 54,
+        "h": 56
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/kappa-left-motion-v01.png",
+          "masterSha256": "6a140e77f9f6e6f3b857cd933733194dd8e36744055e5123700aacc93aeec1b7",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Kappa, Ma da: small stocky hunched MONKEY-LIKE water demon with long arms, bare dull GREEN-GREY SCALY skin, just a few large dark scale patches, webbed hands and feet, pointed bony monkey face, big PALE eyes and wide cheeky mouth. NO horns, NO shell, NO beak, NO hair. Essential in EVERY pose: a shallow dent on TOP of its head, rim around a clearly visible little pale-blue #70A8B6/#B7DEE0 water oval. Stockier and greyer than the horned thin Grindylow reference.\n1024x1024 sheet, exactly 16 separated sprites, 4 rows x 4 columns, invisible 256x256 cells. Each sprite centered, feet at local y=210, approximately 165x170 master pixels, at least 32 transparent pixels between all poses. Same adult size and design throughout, intended native 54x56. EVERY pose faces LEFT with nose and eyes toward IMAGE LEFT, clear 3/4 view. Everything connected to body, no detached effects; the small splash should touch head rim. Row 1 idle: rest, breathe chest up, blink, settle fingers flex and head-water ripples. Row 2 action: crouch prep, bow deeply in courtesy with head puddle tilting and one attached splash drop, straighten, shake head recovery. Row 3 eat: approach cucumber and little silver fish on ground directly touching feet; bend grasp BOTH food items; take and bite cucumber holding fish; lift and chew holding food. From pose 2 food touches hands/mouth. Row 4 care: lean toward small human hand touching shoulder (not covering head puddle), receive care eyes closed happy, blink, relaxed. Small cue hand attached at shoulder only in first 3 care poses. No extra props.\nCandidate B: emphasize a simple squat monkey silhouette, large flat pale grey-green face and body, especially prominent blue water dent visible even during bow and care. Very few broad scale patches. Make deep bow unmistakable; no turtle anatomy.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-da30d472-4e52-424e-b1c9-68518664d5c3.png",
+          "referenceFiles": [],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/kappa-right-motion-v01.png",
+          "masterSha256": "00c27861dc209efbe15473539f8d02e5bf56385d255b88faf16a0037db0c3fc4",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Kappa, Ma da: small stocky hunched MONKEY-LIKE water demon with long arms, bare dull GREEN-GREY SCALY skin, just a few large dark scale patches, webbed hands and feet, pointed bony monkey face, big PALE eyes and wide cheeky mouth. NO horns, NO shell, NO beak, NO hair. Essential in EVERY pose: a shallow dent on TOP of its head, rim around a clearly visible little pale-blue #70A8B6/#B7DEE0 water oval. Stockier and greyer than the horned thin Grindylow reference.\n1024x1024 sheet, exactly 16 separated sprites, 4 rows x 4 columns, invisible 256x256 cells. Each sprite centered, feet at local y=210, approximately 165x170 master pixels, at least 32 transparent pixels between all poses. Same adult size and design throughout, intended native 54x56. EVERY pose faces RIGHT with nose and eyes toward IMAGE RIGHT, clear 3/4 view. Everything connected to body, no detached effects; the small splash should touch head rim. Row 1 idle: rest, breathe chest up, blink, settle fingers flex and head-water ripples. Row 2 action: crouch prep, bow deeply in courtesy with head puddle tilting and one attached splash drop, straighten, shake head recovery. Row 3 eat: approach cucumber and little silver fish on ground directly touching feet; bend grasp BOTH food items; take and bite cucumber holding fish; lift and chew holding food. From pose 2 food touches hands/mouth. Row 4 care: lean toward small human hand touching shoulder (not covering head puddle), receive care eyes closed happy, blink, relaxed. Small cue hand attached at shoulder only in first 3 care poses. No extra props.\nUse attached selected LEFT design master as identity reference only. Draw a NEW sheet all facing RIGHT, nose to image RIGHT; keep lighting from TOP LEFT, do not mirror existing sheet. Keep B's broad grey-green masses and round pale eyes, head blue oval always visible. Preserve all row/column actions. Attached reference is not an edit target.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-19b46fd8-8eb4-4bd2-b7a9-6fa830ea7c74.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-da30d472-4e52-424e-b1c9-68518664d5c3.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/kappa-growth-v01.png",
+          "masterSha256": "5951ebe59f8d550e4dec6cb9f2b219f60c8121dafe94b513b1f979e1e58b2a75",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Kappa, Ma da: small stocky hunched MONKEY-LIKE water demon with long arms, bare dull GREEN-GREY SCALY skin, just a few large dark scale patches, webbed hands and feet, pointed bony monkey face, big PALE eyes and wide cheeky mouth. NO horns, NO shell, NO beak, NO hair. Essential in EVERY pose: a shallow dent on TOP of its head, rim around a clearly visible little pale-blue #70A8B6/#B7DEE0 water oval. Stockier and greyer than the horned thin Grindylow reference.\n1024x512 GROWTH sheet, exactly EIGHT separated sprites in 2 rows x 4 columns, invisible 256x256 cells. Row1 ALL face LEFT, row2 ALL face RIGHT. Columns newborn tiny round big head, juvenile, adolescent, adult identical to attached selected adult design. Adult 2.6x newborn height; target master heights 62,96,132,164 pixels. Same coarse pixel density throughout. Calm standing monkey hunch, feet all at local y=210. Center each cell, >=32px transparent gap. EVERY stage including newborn must have blue head puddle and pale eyes. No food, hands, props or effects. Reference is identity only, draw new growth sheet.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-3509db3d-93ef-4943-bdbf-62471c2d5f98.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-da30d472-4e52-424e-b1c9-68518664d5c3.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      },
+      "frames": {
+        "left": [
+          {
+            "file": "native/kappa/left-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 38,
+              "y": 61,
+              "w": 21,
+              "h": 19,
+              "count": 311,
+              "edge": false
+            },
+            "sha256": "1ce03288ff3b9cd5644dcc36694aa09366ee2e0bf6b5f5ab38a8cdcb86388006",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 93,
+              "y": 147,
+              "w": 69,
+              "h": 63
+            },
+            "scale": 0.29545454545454547
+          },
+          {
+            "file": "native/kappa/left-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 33,
+              "y": 51,
+              "w": 31,
+              "h": 29,
+              "count": 710,
+              "edge": false
+            },
+            "sha256": "888f6eeffc561156330c19e6455d3c87c06eddb1a180857c35b5abdd6d827282",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 332,
+              "y": 113,
+              "w": 104,
+              "h": 97
+            },
+            "scale": 0.29545454545454547
+          },
+          {
+            "file": "native/kappa/left-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 41,
+              "w": 42,
+              "h": 39,
+              "count": 1246,
+              "edge": false
+            },
+            "sha256": "906651e3c2734e1dc0560dc17664b354c6266ab73ed1dd625d6b237c50f043fa",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 568,
+              "y": 78,
+              "w": 143,
+              "h": 132
+            },
+            "scale": 0.29545454545454547
+          },
+          {
+            "file": "native/kappa/left-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 31,
+              "w": 52,
+              "h": 49,
+              "count": 1899,
+              "edge": false
+            },
+            "sha256": "d75384bb8614849d3f5ddf4ad4df5f9b9e6ce19db1128e8bd87c31651ece3e15",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 808,
+              "y": 46,
+              "w": 176,
+              "h": 164
+            },
+            "scale": 0.29545454545454547
+          },
+          {
+            "file": "native/kappa/left-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 30,
+              "w": 52,
+              "h": 50,
+              "count": 1877,
+              "edge": false
+            },
+            "sha256": "e8a995a1edbcc9fecb4ceb3bfced9c2f237760c1be149e1a4fab5644c29e81e7",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 44,
+              "y": 46,
+              "w": 169,
+              "h": 163
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 27,
+              "w": 52,
+              "h": 53,
+              "count": 1984,
+              "edge": false
+            },
+            "sha256": "117eec22c0999e5b5526049f8938d84d642f91bba244b4ab5b906b16142d098e",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 298,
+              "y": 37,
+              "w": 170,
+              "h": 173
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 30,
+              "w": 52,
+              "h": 50,
+              "count": 1872,
+              "edge": false
+            },
+            "sha256": "99d5b0205594778eed4baefbf20d3e64ae3b3560d4309b885df9cbbc373ffe8a",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 556,
+              "y": 46,
+              "w": 168,
+              "h": 164
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 30,
+              "w": 52,
+              "h": 50,
+              "count": 1873,
+              "edge": false
+            },
+            "sha256": "84681fe888675651bb7317e82aa0e213498a298a1c8a6eb1a31fd494455b2303",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 811,
+              "y": 45,
+              "w": 169,
+              "h": 164
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 32,
+              "w": 49,
+              "h": 48,
+              "count": 1803,
+              "edge": false
+            },
+            "sha256": "91f469474c577e8a4339b5a38c67ea9302925a26263c27bf77683eec0bbbdaf6",
+            "clip": "action",
+            "sourceRect": {
+              "x": 48,
+              "y": 311,
+              "w": 160,
+              "h": 155
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 39,
+              "w": 51,
+              "h": 41,
+              "count": 1702,
+              "edge": false
+            },
+            "sha256": "507f9bfe3b6f197e26b748492d4921d2a5f609290b527f7d6d1c6c9bcd7128d8",
+            "clip": "action",
+            "sourceRect": {
+              "x": 300,
+              "y": 333,
+              "w": 167,
+              "h": 132
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 32,
+              "w": 51,
+              "h": 48,
+              "count": 1800,
+              "edge": false
+            },
+            "sha256": "aaebad1076b974a83aa6350990f2d3b0142538c4eac3b1117308ace5f565bef4",
+            "clip": "action",
+            "sourceRect": {
+              "x": 556,
+              "y": 309,
+              "w": 167,
+              "h": 157
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 29,
+              "w": 51,
+              "h": 51,
+              "count": 1870,
+              "edge": false
+            },
+            "sha256": "dc663074eef3248f6c46bff98fa7aa2e86ce9f09b315261436a0afb2790f6a1a",
+            "clip": "action",
+            "sourceRect": {
+              "x": 812,
+              "y": 301,
+              "w": 167,
+              "h": 165
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 30,
+              "w": 56,
+              "h": 50,
+              "count": 2007,
+              "edge": false
+            },
+            "sha256": "9a7312425f7c9cc034ae0f1163f366538d3c4a769f45e4421b760976b130cb8e",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 37,
+              "y": 558,
+              "w": 181,
+              "h": 163
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 32,
+              "w": 54,
+              "h": 48,
+              "count": 1939,
+              "edge": false
+            },
+            "sha256": "d8d320bd73b74557152779c2e5a5950d992b94fc6130c51bb898b8ac104568c0",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 295,
+              "y": 566,
+              "w": 177,
+              "h": 156
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 31,
+              "w": 54,
+              "h": 49,
+              "count": 1937,
+              "edge": false
+            },
+            "sha256": "169c05dd76048e08561f0af9889944f09e0d61a06405c1c576cb14e58545b8b0",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 551,
+              "y": 563,
+              "w": 176,
+              "h": 159
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 30,
+              "w": 54,
+              "h": 50,
+              "count": 1962,
+              "edge": false
+            },
+            "sha256": "3bea648e7b7b6a80d74c2f7f3d97eadbbacb8d607e1a2143da5ae3bfe988ad7a",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 809,
+              "y": 558,
+              "w": 175,
+              "h": 163
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 30,
+              "w": 53,
+              "h": 50,
+              "count": 1934,
+              "edge": false
+            },
+            "sha256": "e336b05ef3031bdf681720b177b19070855afab80c360350a59830e37e147c64",
+            "clip": "care",
+            "sourceRect": {
+              "x": 41,
+              "y": 816,
+              "w": 174,
+              "h": 162
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 31,
+              "w": 54,
+              "h": 49,
+              "count": 1944,
+              "edge": false
+            },
+            "sha256": "ddce7e64191e7c3bd26a0a31088e0219e22faee266ef488dc3351146fb7a7be2",
+            "clip": "care",
+            "sourceRect": {
+              "x": 296,
+              "y": 817,
+              "w": 175,
+              "h": 161
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 31,
+              "w": 53,
+              "h": 49,
+              "count": 1922,
+              "edge": false
+            },
+            "sha256": "d1e54b32fa157294339a10845171b7e340f7f8c9e007fa59a805162f990c4e48",
+            "clip": "care",
+            "sourceRect": {
+              "x": 553,
+              "y": 817,
+              "w": 174,
+              "h": 160
+            },
+            "scale": 0.3058823529411765
+          },
+          {
+            "file": "native/kappa/left-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 30,
+              "w": 52,
+              "h": 50,
+              "count": 1854,
+              "edge": false
+            },
+            "sha256": "1e238eb11b36ca2cce169de7271e5a93d6b039a33d9bbd0d6d5f0e01063e7309",
+            "clip": "care",
+            "sourceRect": {
+              "x": 811,
+              "y": 816,
+              "w": 169,
+              "h": 162
+            },
+            "scale": 0.3058823529411765
+          }
+        ],
+        "right": [
+          {
+            "file": "native/kappa/right-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 38,
+              "y": 61,
+              "w": 21,
+              "h": 19,
+              "count": 309,
+              "edge": false
+            },
+            "sha256": "015d0e5b403be4d918e8d0ff7199b32f3dbfce008e217c522584dfc8d54b6bea",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 93,
+              "y": 403,
+              "w": 70,
+              "h": 63
+            },
+            "scale": 0.29545454545454547
+          },
+          {
+            "file": "native/kappa/right-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 32,
+              "y": 51,
+              "w": 32,
+              "h": 29,
+              "count": 722,
+              "edge": false
+            },
+            "sha256": "290d27b8fb37459b64f845ea379082dbef5e094c87c347f1fd3038671756e990",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 330,
+              "y": 369,
+              "w": 107,
+              "h": 97
+            },
+            "scale": 0.29545454545454547
+          },
+          {
+            "file": "native/kappa/right-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 41,
+              "w": 42,
+              "h": 39,
+              "count": 1260,
+              "edge": false
+            },
+            "sha256": "e3175a84759eadf50a767125b96563d6aaa11fe9e670971beb3bdce3ceea9ef0",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 568,
+              "y": 334,
+              "w": 143,
+              "h": 132
+            },
+            "scale": 0.29545454545454547
+          },
+          {
+            "file": "native/kappa/right-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 31,
+              "w": 52,
+              "h": 49,
+              "count": 1896,
+              "edge": false
+            },
+            "sha256": "83da50d80a1d60d5329873841b23acb977e4cabf7c7bdce9a6926212dc8e657a",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 808,
+              "y": 302,
+              "w": 176,
+              "h": 164
+            },
+            "scale": 0.29545454545454547
+          },
+          {
+            "file": "native/kappa/right-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 30,
+              "w": 51,
+              "h": 50,
+              "count": 1920,
+              "edge": false
+            },
+            "sha256": "7c5dcd6039b757b14c2d14be707330ccb53c86d015298ca1d116b00df2f0cdbe",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 43,
+              "y": 44,
+              "w": 168,
+              "h": 165
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 27,
+              "w": 51,
+              "h": 53,
+              "count": 2007,
+              "edge": false
+            },
+            "sha256": "3afde724dcfea2b3f17e0d913b0d1ce11dfb2cc7639cf4b5ac5f1bb226294241",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 299,
+              "y": 36,
+              "w": 168,
+              "h": 173
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 30,
+              "w": 51,
+              "h": 50,
+              "count": 1919,
+              "edge": false
+            },
+            "sha256": "d17ad69ffc5873296e3418a8376ddd2edfc6807a4aff855b407cf19cdae68fc1",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 555,
+              "y": 44,
+              "w": 168,
+              "h": 165
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 31,
+              "w": 52,
+              "h": 49,
+              "count": 1896,
+              "edge": false
+            },
+            "sha256": "a82b3d1cf511d856bc871c96b2a2fd7a875c538a18039de5026ea3d51e96ffc8",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 811,
+              "y": 49,
+              "w": 171,
+              "h": 160
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 33,
+              "w": 50,
+              "h": 47,
+              "count": 1839,
+              "edge": false
+            },
+            "sha256": "c6125a3daaf7076f5f90b2ff0dcc3b6c72a6997fffe9b019eacd6b8d361b4366",
+            "clip": "action",
+            "sourceRect": {
+              "x": 46,
+              "y": 310,
+              "w": 164,
+              "h": 155
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 38,
+              "w": 53,
+              "h": 42,
+              "count": 1748,
+              "edge": false
+            },
+            "sha256": "112e7a0d76a0e2d8ef30b2ce9cbc73d86395c8ec72bd699068055ccf296537aa",
+            "clip": "action",
+            "sourceRect": {
+              "x": 297,
+              "y": 329,
+              "w": 172,
+              "h": 137
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 31,
+              "w": 52,
+              "h": 49,
+              "count": 1882,
+              "edge": false
+            },
+            "sha256": "645e30a5de012fbf5dfbd4bddf88860dffda5371d95ffcaed02893a071e9af8a",
+            "clip": "action",
+            "sourceRect": {
+              "x": 555,
+              "y": 306,
+              "w": 169,
+              "h": 159
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 30,
+              "w": 52,
+              "h": 50,
+              "count": 1935,
+              "edge": false
+            },
+            "sha256": "bf678d2c19f0e1e93edb2ea2400e90123d45a618871175c19f4f60fca4659465",
+            "clip": "action",
+            "sourceRect": {
+              "x": 811,
+              "y": 301,
+              "w": 169,
+              "h": 164
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 30,
+              "w": 52,
+              "h": 50,
+              "count": 2024,
+              "edge": false
+            },
+            "sha256": "6f3303cb822e86cf065f951e04ea494a41d4069bbfe5e690f85577199131f01a",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 43,
+              "y": 558,
+              "w": 170,
+              "h": 163
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 31,
+              "w": 53,
+              "h": 49,
+              "count": 1963,
+              "edge": false
+            },
+            "sha256": "2809e0afbe0b3ee0cb853545c72e82b13fb35e0948c77ed610bedc7ea56d621f",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 298,
+              "y": 563,
+              "w": 172,
+              "h": 159
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 31,
+              "w": 52,
+              "h": 49,
+              "count": 1942,
+              "edge": false
+            },
+            "sha256": "807ad1864c10b93b40299a5e53812da7a2a210bb1ebc4d8242d6c696177fc356",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 554,
+              "y": 562,
+              "w": 171,
+              "h": 160
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 31,
+              "w": 52,
+              "h": 49,
+              "count": 1970,
+              "edge": false
+            },
+            "sha256": "63240ace4ec122abe7923d0a5c0fe3a1c3b807fea5037d1876f13f487b7649c1",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 810,
+              "y": 560,
+              "w": 171,
+              "h": 161
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 32,
+              "w": 52,
+              "h": 48,
+              "count": 1926,
+              "edge": false
+            },
+            "sha256": "95bdfc45e862dac37731d13b9ff3db318d4457d28b617ec08d65bbe27ca0f424",
+            "clip": "care",
+            "sourceRect": {
+              "x": 42,
+              "y": 820,
+              "w": 171,
+              "h": 157
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 32,
+              "w": 52,
+              "h": 48,
+              "count": 1922,
+              "edge": false
+            },
+            "sha256": "b3cbdecac492da3bf2de1b487bea5d60ce2a270dfbef6d7619496c29da6c3d9e",
+            "clip": "care",
+            "sourceRect": {
+              "x": 298,
+              "y": 820,
+              "w": 171,
+              "h": 157
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 32,
+              "w": 52,
+              "h": 48,
+              "count": 1933,
+              "edge": false
+            },
+            "sha256": "4c069388d3024479e05ac3860300297bcf061a3cc048ff55ac303513e6c9d593",
+            "clip": "care",
+            "sourceRect": {
+              "x": 554,
+              "y": 820,
+              "w": 171,
+              "h": 157
+            },
+            "scale": 0.30409356725146197
+          },
+          {
+            "file": "native/kappa/right-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 32,
+              "w": 52,
+              "h": 48,
+              "count": 1850,
+              "edge": false
+            },
+            "sha256": "8bf95d1de5b883226682adba2985612311705a4983d48c14942125b642f4d9d4",
+            "clip": "care",
+            "sourceRect": {
+              "x": 811,
+              "y": 820,
+              "w": 170,
+              "h": 157
+            },
+            "scale": 0.30409356725146197
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "durations": [
+            600,
+            240,
+            180,
+            240
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "durations": [
+            320,
+            180,
+            240,
+            220
+          ],
+          "loop": false
+        },
+        "eat": {
+          "frames": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            16,
+            17,
+            18,
+            19
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "runtimeAtlases": {
+        "left": {
+          "file": "creature-motion-assets/native/kappa/left-atlas.png",
+          "sha256": "9ae15ce56d678e06a269cc909e3ca3dbb9a3ab383f58dde771a3b2907d586543",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 38,
+                "y": 61,
+                "w": 21,
+                "h": 19,
+                "count": 311,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 33,
+                "y": 51,
+                "w": 31,
+                "h": 29,
+                "count": 710,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 41,
+                "w": 42,
+                "h": 39,
+                "count": 1246,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 31,
+                "w": 52,
+                "h": 49,
+                "count": 1899,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 30,
+                "w": 52,
+                "h": 50,
+                "count": 1877,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 27,
+                "w": 52,
+                "h": 53,
+                "count": 1984,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 30,
+                "w": 52,
+                "h": 50,
+                "count": 1872,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 30,
+                "w": 52,
+                "h": 50,
+                "count": 1873,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 32,
+                "w": 49,
+                "h": 48,
+                "count": 1803,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 39,
+                "w": 51,
+                "h": 41,
+                "count": 1702,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 32,
+                "w": 51,
+                "h": 48,
+                "count": 1800,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 29,
+                "w": 51,
+                "h": 51,
+                "count": 1870,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 30,
+                "w": 56,
+                "h": 50,
+                "count": 2007,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 32,
+                "w": 54,
+                "h": 48,
+                "count": 1939,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 31,
+                "w": 54,
+                "h": 49,
+                "count": 1937,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 30,
+                "w": 54,
+                "h": 50,
+                "count": 1962,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 30,
+                "w": 53,
+                "h": 50,
+                "count": 1934,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 31,
+                "w": 54,
+                "h": 49,
+                "count": 1944,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 31,
+                "w": 53,
+                "h": 49,
+                "count": 1922,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 30,
+                "w": 52,
+                "h": 50,
+                "count": 1854,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        },
+        "right": {
+          "file": "creature-motion-assets/native/kappa/right-atlas.png",
+          "sha256": "875fb7cc714a90246d5c549bb56c8ef9a063d44ffae56dea0a8a8d6d035d13d7",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 38,
+                "y": 61,
+                "w": 21,
+                "h": 19,
+                "count": 309,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 32,
+                "y": 51,
+                "w": 32,
+                "h": 29,
+                "count": 722,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 41,
+                "w": 42,
+                "h": 39,
+                "count": 1260,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 31,
+                "w": 52,
+                "h": 49,
+                "count": 1896,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 30,
+                "w": 51,
+                "h": 50,
+                "count": 1920,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 27,
+                "w": 51,
+                "h": 53,
+                "count": 2007,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 30,
+                "w": 51,
+                "h": 50,
+                "count": 1919,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 31,
+                "w": 52,
+                "h": 49,
+                "count": 1896,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 33,
+                "w": 50,
+                "h": 47,
+                "count": 1839,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 38,
+                "w": 53,
+                "h": 42,
+                "count": 1748,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 31,
+                "w": 52,
+                "h": 49,
+                "count": 1882,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 30,
+                "w": 52,
+                "h": 50,
+                "count": 1935,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 30,
+                "w": 52,
+                "h": 50,
+                "count": 2024,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 31,
+                "w": 53,
+                "h": 49,
+                "count": 1963,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 31,
+                "w": 52,
+                "h": 49,
+                "count": 1942,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 31,
+                "w": 52,
+                "h": 49,
+                "count": 1970,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 32,
+                "w": 52,
+                "h": 48,
+                "count": 1926,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 32,
+                "w": 52,
+                "h": 48,
+                "count": 1922,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 32,
+                "w": 52,
+                "h": 48,
+                "count": 1933,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/kappa/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 32,
+                "w": 52,
+                "h": 48,
+                "count": 1850,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "porlock",
+      "label": "Ngựa lùn",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 52,
+        "h": 56
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/porlock-left-motion-v01.png",
+          "masterSha256": "1377403b19dfd789438ef6caa9a037daa039b202ce16961087b7ac79b52e8fce",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Porlock, Ngua lun: shy little horse guardian UPRIGHT ON EXACTLY TWO CLOVEN HOOVES, two short arms with FOUR stubby fingers each. Covered in SHAGGY BROWN FUR, rough mop of shaggy head hair, exceptionally LARGE LONG BULBOUS NOSE, small worried gentle eyes and eyebrows. Cute worried cosy guardian. No clothing, no horns. NOT four-legged pony, NOT centaur, not monkey. Hooves visible below fur, arms distinct from legs. Simple large jagged fur clusters, never fine strands.\n1024x1024, exact 4x4 sheet of 16 separated sprites in invisible 256x256 cells, feet local y=210, each adult about 158x170 master pixels, intended native 52x56. All 16 face LEFT in clear 3/4 view, nose projects IMAGE LEFT. Same adult size and design. >=32px transparent gaps, each pose fully separate and complete. Row1 idle: rest, breathe chest up, blink nose twitch, settle shaggy hair sways. Row2 action: shy backward shuffle, hides behind OWN crossed shaggy forearms over face peeking one eye (large nose still readable), lowers arms, relieved sigh. Row3 eat: approach handful of oats and ONE RED APPLE on ground touching feet; bend and grasp food; bite apple holding oats; lift and chew. From 2nd pose food touches hands/mouth. Row4 care: lean into tiny human hand touching shoulder; receive care eyes closed happy; blink; relaxed. Hand connected to shoulder only first 3 care poses. No extra props, no detached marks.\nCandidate C, second complete motion-sheet candidate. Prioritize exceptionally large projecting nose, visibly shaggy dark brown mop, gentle worried brows, squat but upright two-hoof stance. Very broad brown fur blocks with just two fur shades. CRITICAL: all SIXTEEN poses, all facing left; hiding pose has BOTH FOREARMS CROSSED OVER FACE, one eye peeking, not merely hands against cheeks. Four stubby fingers on hands; hooves split down middle.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-71d275e5-c701-47f9-a049-3744d82c0d4f.png",
+          "referenceFiles": [],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/porlock-right-motion-v01.png",
+          "masterSha256": "39a4d31a08a542e3f8ce9610f526f6cf2506f4e74c624f926e0deb2cbf205f34",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Porlock, Ngua lun: shy little horse guardian UPRIGHT ON EXACTLY TWO CLOVEN HOOVES, two short arms with FOUR stubby fingers each. Covered in SHAGGY BROWN FUR, rough mop of shaggy head hair, exceptionally LARGE LONG BULBOUS NOSE, small worried gentle eyes and eyebrows. Cute worried cosy guardian. No clothing, no horns. NOT four-legged pony, NOT centaur, not monkey. Hooves visible below fur, arms distinct from legs. Simple large jagged fur clusters, never fine strands.\n1024x1024, exact 4x4 sheet of 16 separated sprites in invisible 256x256 cells, feet local y=210, each adult about 158x170 master pixels, intended native 52x56. All 16 face RIGHT in clear 3/4 view, nose projects IMAGE RIGHT. Same adult size and design. >=32px transparent gaps, each pose fully separate and complete. Row1 idle: rest, breathe chest up, blink nose twitch, settle shaggy hair sways. Row2 action: shy backward shuffle, hides behind OWN crossed shaggy forearms over face peeking one eye (large nose still readable), lowers arms, relieved sigh. Row3 eat: approach handful of oats and ONE RED APPLE on ground touching feet; bend and grasp food; bite apple holding oats; lift and chew. From 2nd pose food touches hands/mouth. Row4 care: lean into tiny human hand touching shoulder; receive care eyes closed happy; blink; relaxed. Hand connected to shoulder only first 3 care poses. No extra props, no detached marks.\nReference is selected LEFT identity sheet only. Draw NEW RIGHT-facing sheet, all sixteen noses toward image RIGHT, top-left light retained, do not mirror the source. Retain same adult design, big nose, clear split hooves and crossed-arms hiding pose. No clothing except small human cue hand sleeve.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-8a8e3fd6-cb88-42b0-8dde-325a5db7a327.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-71d275e5-c701-47f9-a049-3744d82c0d4f.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/porlock-growth-v01.png",
+          "masterSha256": "d9840566ceb8c0a92393db4bbfcd7295fd998f03adadc5f084e1d64859307c11",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Porlock, Ngua lun: shy little horse guardian UPRIGHT ON EXACTLY TWO CLOVEN HOOVES, two short arms with FOUR stubby fingers each. Covered in SHAGGY BROWN FUR, rough mop of shaggy head hair, exceptionally LARGE LONG BULBOUS NOSE, small worried gentle eyes and eyebrows. Cute worried cosy guardian. No clothing, no horns. NOT four-legged pony, NOT centaur, not monkey. Hooves visible below fur, arms distinct from legs. Simple large jagged fur clusters, never fine strands.\n1024x512 GROWTH sheet exactly EIGHT sprites in 2 rows x4 columns, invisible 256x256 cells. Row1 all face LEFT, row2 all face RIGHT. Columns newborn TINY ROUND BIG HEAD, juvenile, adolescent, adult IDENTICAL to attached selected design. Target master heights 62,96,132,164; adult about 2.6x newborn. All stages have huge projecting nose, shaggy head mop and two clear CLOVEN HOOVES. Calm upright shy standing pose, exactly TWO LEGS TWO ARMS throughout. Same coarse pixel density. Center in cells, feet local y=210, >=32px transparent gap. No food, care hands or props. Identity reference only, draw new growth sheet.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-67ed5f4b-8615-4200-a79b-9623ca1597cc.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-71d275e5-c701-47f9-a049-3744d82c0d4f.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      },
+      "frames": {
+        "left": [
+          {
+            "file": "native/porlock/left-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 38,
+              "y": 59,
+              "w": 21,
+              "h": 21,
+              "count": 334,
+              "edge": false
+            },
+            "sha256": "3a67d8d1d1c96ce80b35c1010da4bf2a239bfd2c3218fab231a8fcf7e2cf0a25",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 96,
+              "y": 147,
+              "w": 63,
+              "h": 63
+            },
+            "scale": 0.32926829268292684
+          },
+          {
+            "file": "native/porlock/left-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 34,
+              "y": 48,
+              "w": 28,
+              "h": 32,
+              "count": 675,
+              "edge": false
+            },
+            "sha256": "0a76645e7accac1136696e000c1f1bbbe94ee7939c59658c13270e1b1f98d1b8",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 341,
+              "y": 113,
+              "w": 85,
+              "h": 97
+            },
+            "scale": 0.32926829268292684
+          },
+          {
+            "file": "native/porlock/left-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 30,
+              "y": 36,
+              "w": 37,
+              "h": 44,
+              "count": 1242,
+              "edge": false
+            },
+            "sha256": "e352c4c75736bb36c251c5de4a3d9ee046ab753cacb2b03f4caf599dcd55ee5a",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 584,
+              "y": 78,
+              "w": 112,
+              "h": 132
+            },
+            "scale": 0.32926829268292684
+          },
+          {
+            "file": "native/porlock/left-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 26,
+              "w": 47,
+              "h": 54,
+              "count": 1939,
+              "edge": false
+            },
+            "sha256": "6df73f5f10f1bbc15a31e60d43f687cdcf5dc3da82b95d691ae0a48a8a2c843a",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 825,
+              "y": 46,
+              "w": 141,
+              "h": 164
+            },
+            "scale": 0.32926829268292684
+          },
+          {
+            "file": "native/porlock/left-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 49,
+              "h": 54,
+              "count": 1883,
+              "edge": false
+            },
+            "sha256": "8173308360ea456841c9a2d5246df79975f86ae6b01f3b038fcaf5d0885168e1",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 52,
+              "y": 40,
+              "w": 153,
+              "h": 170
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 25,
+              "w": 48,
+              "h": 55,
+              "count": 1909,
+              "edge": false
+            },
+            "sha256": "d7997587aee06eddc845466ca2d1bec70ef4f8b6b0dc69377e6b4e865e9928b1",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 308,
+              "y": 39,
+              "w": 151,
+              "h": 171
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 49,
+              "h": 54,
+              "count": 1898,
+              "edge": false
+            },
+            "sha256": "e47cde5b8ce04d151acb5c96a6b7056537fc9cf8692c4facd520e56d1020318d",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 564,
+              "y": 40,
+              "w": 153,
+              "h": 170
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 49,
+              "h": 54,
+              "count": 1907,
+              "edge": false
+            },
+            "sha256": "e28cf0afa6559db513eefd0d609e710a91df1c5d3d027764f2504eebca389f19",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 819,
+              "y": 40,
+              "w": 153,
+              "h": 170
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 25,
+              "w": 48,
+              "h": 55,
+              "count": 1906,
+              "edge": false
+            },
+            "sha256": "1ae3e83ea2b8a65457a476f21fc8b79abec16726b7541bd30bbdd0f229d2d766",
+            "clip": "action",
+            "sourceRect": {
+              "x": 53,
+              "y": 295,
+              "w": 149,
+              "h": 171
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 48,
+              "h": 54,
+              "count": 1920,
+              "edge": false
+            },
+            "sha256": "db520539b99c7cfae82131a7e2c4dd7171d64102b5df132383202710ccddf608",
+            "clip": "action",
+            "sourceRect": {
+              "x": 309,
+              "y": 296,
+              "w": 150,
+              "h": 170
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 49,
+              "h": 54,
+              "count": 1960,
+              "edge": false
+            },
+            "sha256": "911f072169900c9dea19bfa322ce39e1018a18a997730a7198647a62c9533839",
+            "clip": "action",
+            "sourceRect": {
+              "x": 563,
+              "y": 297,
+              "w": 153,
+              "h": 168
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 48,
+              "h": 54,
+              "count": 1916,
+              "edge": false
+            },
+            "sha256": "2a4f08d4141279206a5f33d4d2395ccd488317759f59bd3a7c8bcd08a34fdef9",
+            "clip": "action",
+            "sourceRect": {
+              "x": 820,
+              "y": 298,
+              "w": 152,
+              "h": 168
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 25,
+              "w": 50,
+              "h": 55,
+              "count": 2090,
+              "edge": false
+            },
+            "sha256": "abba5a00d670e78b08eb74ae74b1cc3041c7fa269669df211765dbafeef58ca8",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 49,
+              "y": 549,
+              "w": 157,
+              "h": 173
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 29,
+              "w": 50,
+              "h": 51,
+              "count": 1983,
+              "edge": false
+            },
+            "sha256": "53f941caa3236601a30281f40c9fe60a79fd1f2ad78c69bc3dfefaeff03109c0",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 306,
+              "y": 561,
+              "w": 156,
+              "h": 160
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 26,
+              "w": 50,
+              "h": 54,
+              "count": 1982,
+              "edge": false
+            },
+            "sha256": "65a2bc2bf5763fd3e2ba93e847044fcd39f09d4a981b19cc8b2e848c34ae01f5",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 561,
+              "y": 552,
+              "w": 156,
+              "h": 170
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 48,
+              "h": 54,
+              "count": 1952,
+              "edge": false
+            },
+            "sha256": "911acd8994a39bba29622aa9cadffb6892bca58eb862b756ccc0b4df67240628",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 820,
+              "y": 552,
+              "w": 152,
+              "h": 170
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 26,
+              "w": 52,
+              "h": 54,
+              "count": 1937,
+              "edge": false
+            },
+            "sha256": "806a41d53c2bcc6f3615dbe8e721f5b3820fd869efb1f3aa45e54ce70e40aff5",
+            "clip": "care",
+            "sourceRect": {
+              "x": 46,
+              "y": 810,
+              "w": 163,
+              "h": 168
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 26,
+              "w": 52,
+              "h": 54,
+              "count": 1951,
+              "edge": false
+            },
+            "sha256": "b6875b5d5124098c1489faacbe9cee95d3dcb44ae3d44c89e8e3d09733751d58",
+            "clip": "care",
+            "sourceRect": {
+              "x": 303,
+              "y": 810,
+              "w": 163,
+              "h": 168
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 26,
+              "w": 52,
+              "h": 54,
+              "count": 1943,
+              "edge": false
+            },
+            "sha256": "e3a4b4086ac6debe83859a5358a63dc292016983cdfb0716446f8a744b94f2f7",
+            "clip": "care",
+            "sourceRect": {
+              "x": 558,
+              "y": 810,
+              "w": 164,
+              "h": 168
+            },
+            "scale": 0.3176470588235294
+          },
+          {
+            "file": "native/porlock/left-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 49,
+              "h": 54,
+              "count": 1895,
+              "edge": false
+            },
+            "sha256": "5896536bdc224030ef7da5eade980f1f35e9f617664a27de642a78c1148eecc3",
+            "clip": "care",
+            "sourceRect": {
+              "x": 819,
+              "y": 810,
+              "w": 154,
+              "h": 168
+            },
+            "scale": 0.3176470588235294
+          }
+        ],
+        "right": [
+          {
+            "file": "native/porlock/right-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 38,
+              "y": 59,
+              "w": 21,
+              "h": 21,
+              "count": 332,
+              "edge": false
+            },
+            "sha256": "b4fd6892ceba89dd34bce0e3117093ddc6a8e1cb756184957016422315c604a5",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 96,
+              "y": 403,
+              "w": 63,
+              "h": 63
+            },
+            "scale": 0.32926829268292684
+          },
+          {
+            "file": "native/porlock/right-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 34,
+              "y": 48,
+              "w": 28,
+              "h": 32,
+              "count": 693,
+              "edge": false
+            },
+            "sha256": "51dc4a11266177300c10b419d1c73d0ce41cfd4ce18451cc1fc587ce9fe93d77",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 341,
+              "y": 369,
+              "w": 86,
+              "h": 97
+            },
+            "scale": 0.32926829268292684
+          },
+          {
+            "file": "native/porlock/right-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 30,
+              "y": 36,
+              "w": 37,
+              "h": 44,
+              "count": 1237,
+              "edge": false
+            },
+            "sha256": "94220923358b09f8cad2f98a65b89310fea4698e8bba42b2acab5664f6861df0",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 583,
+              "y": 334,
+              "w": 113,
+              "h": 132
+            },
+            "scale": 0.32926829268292684
+          },
+          {
+            "file": "native/porlock/right-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 26,
+              "w": 46,
+              "h": 54,
+              "count": 1917,
+              "edge": false
+            },
+            "sha256": "1c19b75af0ae8f54847ce4af665e9475ca2f76589f7fc8dda7dd8f8fbced40ac",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 826,
+              "y": 302,
+              "w": 140,
+              "h": 164
+            },
+            "scale": 0.32926829268292684
+          },
+          {
+            "file": "native/porlock/right-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 25,
+              "w": 47,
+              "h": 55,
+              "count": 1960,
+              "edge": false
+            },
+            "sha256": "bbdf3cf64cf63f3267abbedafb820bd5b28b49ba9601a64dd671471b4ea21a48",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 53,
+              "y": 37,
+              "w": 149,
+              "h": 173
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 25,
+              "w": 47,
+              "h": 55,
+              "count": 1942,
+              "edge": false
+            },
+            "sha256": "0a1da293cd4218df1d7d6a31692fb138b9136961c544dbe48e2d994851432557",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 309,
+              "y": 36,
+              "w": 149,
+              "h": 174
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 25,
+              "w": 47,
+              "h": 55,
+              "count": 1944,
+              "edge": false
+            },
+            "sha256": "b7d4a1c7d30d7192d8da9e99faa06481a403cf7b3a4d456c87e684fa00cfaf25",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 565,
+              "y": 37,
+              "w": 148,
+              "h": 173
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 25,
+              "w": 47,
+              "h": 55,
+              "count": 1941,
+              "edge": false
+            },
+            "sha256": "b239105d4a67853864761a5b480038413f705a014833106e9a8f8d68f7cc242f",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 821,
+              "y": 37,
+              "w": 149,
+              "h": 173
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 25,
+              "w": 49,
+              "h": 55,
+              "count": 1974,
+              "edge": false
+            },
+            "sha256": "d9603eff73589cd64ecf870e310c20b5b3ed8e106feb4f251d26f0f30056f9ed",
+            "clip": "action",
+            "sourceRect": {
+              "x": 50,
+              "y": 293,
+              "w": 156,
+              "h": 173
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 25,
+              "w": 48,
+              "h": 55,
+              "count": 1975,
+              "edge": false
+            },
+            "sha256": "72738a20973469ce50d73c3fb406694edc2d80f230d90e989ac6908e5c8bd838",
+            "clip": "action",
+            "sourceRect": {
+              "x": 307,
+              "y": 294,
+              "w": 152,
+              "h": 172
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 26,
+              "w": 48,
+              "h": 54,
+              "count": 1975,
+              "edge": false
+            },
+            "sha256": "8973285589b2dc6d7b5d16fb6ff8e4450042128f47d5f02ff27cc4ddbb811060",
+            "clip": "action",
+            "sourceRect": {
+              "x": 565,
+              "y": 295,
+              "w": 150,
+              "h": 171
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 26,
+              "w": 48,
+              "h": 54,
+              "count": 1950,
+              "edge": false
+            },
+            "sha256": "565ded19071e60ce2e17609ef32cd6397ccece7bcb93ab9e926f9324fb829b9c",
+            "clip": "action",
+            "sourceRect": {
+              "x": 821,
+              "y": 295,
+              "w": 150,
+              "h": 170
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 49,
+              "h": 54,
+              "count": 2094,
+              "edge": false
+            },
+            "sha256": "81cb5328cdea01e3c5ac3d695abdc3f7abe1dacdd012bd0ff6fc0cfce7b41266",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 49,
+              "y": 551,
+              "w": 156,
+              "h": 171
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 26,
+              "w": 47,
+              "h": 54,
+              "count": 1997,
+              "edge": false
+            },
+            "sha256": "adb3cb01584f13e9c52f0d170ebf78a04aed2fa12810a4c9a0f677b05ef66eb9",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 309,
+              "y": 552,
+              "w": 149,
+              "h": 170
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 25,
+              "w": 48,
+              "h": 55,
+              "count": 1968,
+              "edge": false
+            },
+            "sha256": "0e58c14e0eef500523314c15d730fc8b0c9f538a40bd1e9a65abc2aa89009ebf",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 564,
+              "y": 550,
+              "w": 151,
+              "h": 172
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 26,
+              "w": 48,
+              "h": 54,
+              "count": 1956,
+              "edge": false
+            },
+            "sha256": "54238f9d9290e0dddb9ab419d6890f5afbbc5763aee1e34da8f92cfc7db5cc6a",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 821,
+              "y": 552,
+              "w": 150,
+              "h": 170
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 26,
+              "w": 51,
+              "h": 54,
+              "count": 1973,
+              "edge": false
+            },
+            "sha256": "7ae7674a70ddbaebbd235072bf1af1b4e3a04c8a065b2a25cb465989112a6d77",
+            "clip": "care",
+            "sourceRect": {
+              "x": 47,
+              "y": 807,
+              "w": 162,
+              "h": 171
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 26,
+              "w": 52,
+              "h": 54,
+              "count": 1971,
+              "edge": false
+            },
+            "sha256": "28689038982215403edb2677153b4bdbb2eab08a568ad649ed2009a56b3118e2",
+            "clip": "care",
+            "sourceRect": {
+              "x": 302,
+              "y": 807,
+              "w": 163,
+              "h": 171
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 26,
+              "w": 51,
+              "h": 54,
+              "count": 1961,
+              "edge": false
+            },
+            "sha256": "9b564f4fba1d612aaf7d7e3ac8ec6388d8b7b6d870cd211f1f7ed75e7d6356d4",
+            "clip": "care",
+            "sourceRect": {
+              "x": 560,
+              "y": 808,
+              "w": 160,
+              "h": 170
+            },
+            "scale": 0.3157894736842105
+          },
+          {
+            "file": "native/porlock/right-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 26,
+              "w": 48,
+              "h": 54,
+              "count": 1945,
+              "edge": false
+            },
+            "sha256": "e9ec99e9040bab6ce5b5315e767b719101b83c57c5b728045091d967287af6e8",
+            "clip": "care",
+            "sourceRect": {
+              "x": 820,
+              "y": 807,
+              "w": 151,
+              "h": 171
+            },
+            "scale": 0.3157894736842105
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "durations": [
+            600,
+            240,
+            180,
+            240
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "durations": [
+            320,
+            180,
+            240,
+            220
+          ],
+          "loop": false
+        },
+        "eat": {
+          "frames": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            16,
+            17,
+            18,
+            19
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "runtimeAtlases": {
+        "left": {
+          "file": "creature-motion-assets/native/porlock/left-atlas.png",
+          "sha256": "c9932b37c39b0a5a3101cab7dd050ad68236f35e1d2639b904cb11bcbe5a1c4e",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 38,
+                "y": 59,
+                "w": 21,
+                "h": 21,
+                "count": 334,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 34,
+                "y": 48,
+                "w": 28,
+                "h": 32,
+                "count": 675,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 30,
+                "y": 36,
+                "w": 37,
+                "h": 44,
+                "count": 1242,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 26,
+                "w": 47,
+                "h": 54,
+                "count": 1939,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 49,
+                "h": 54,
+                "count": 1883,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 25,
+                "w": 48,
+                "h": 55,
+                "count": 1909,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 49,
+                "h": 54,
+                "count": 1898,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 49,
+                "h": 54,
+                "count": 1907,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 25,
+                "w": 48,
+                "h": 55,
+                "count": 1906,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 48,
+                "h": 54,
+                "count": 1920,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 49,
+                "h": 54,
+                "count": 1960,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 48,
+                "h": 54,
+                "count": 1916,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 25,
+                "w": 50,
+                "h": 55,
+                "count": 2090,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 29,
+                "w": 50,
+                "h": 51,
+                "count": 1983,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 26,
+                "w": 50,
+                "h": 54,
+                "count": 1982,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 48,
+                "h": 54,
+                "count": 1952,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 26,
+                "w": 52,
+                "h": 54,
+                "count": 1937,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 26,
+                "w": 52,
+                "h": 54,
+                "count": 1951,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 26,
+                "w": 52,
+                "h": 54,
+                "count": 1943,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 49,
+                "h": 54,
+                "count": 1895,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        },
+        "right": {
+          "file": "creature-motion-assets/native/porlock/right-atlas.png",
+          "sha256": "3bc49213005daec4f1ed1466b8c993b3333beac23542c3c9d6b6b15cc177c4f7",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 38,
+                "y": 59,
+                "w": 21,
+                "h": 21,
+                "count": 332,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 34,
+                "y": 48,
+                "w": 28,
+                "h": 32,
+                "count": 693,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 30,
+                "y": 36,
+                "w": 37,
+                "h": 44,
+                "count": 1237,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 26,
+                "w": 46,
+                "h": 54,
+                "count": 1917,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 25,
+                "w": 47,
+                "h": 55,
+                "count": 1960,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 25,
+                "w": 47,
+                "h": 55,
+                "count": 1942,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 25,
+                "w": 47,
+                "h": 55,
+                "count": 1944,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 25,
+                "w": 47,
+                "h": 55,
+                "count": 1941,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 25,
+                "w": 49,
+                "h": 55,
+                "count": 1974,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 25,
+                "w": 48,
+                "h": 55,
+                "count": 1975,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 26,
+                "w": 48,
+                "h": 54,
+                "count": 1975,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 26,
+                "w": 48,
+                "h": 54,
+                "count": 1950,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 49,
+                "h": 54,
+                "count": 2094,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 26,
+                "w": 47,
+                "h": 54,
+                "count": 1997,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 25,
+                "w": 48,
+                "h": 55,
+                "count": 1968,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 26,
+                "w": 48,
+                "h": 54,
+                "count": 1956,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 26,
+                "w": 51,
+                "h": 54,
+                "count": 1973,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 26,
+                "w": 52,
+                "h": 54,
+                "count": 1971,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 26,
+                "w": 51,
+                "h": 54,
+                "count": 1961,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/porlock/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 26,
+                "w": 48,
+                "h": 54,
+                "count": 1945,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        }
+      }
     }
   ]
 }

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "cd36905c28c0",
+  "revision": "14d6b6db7e77",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -3822,6 +3822,16 @@
       "sha256": "e8fec5e4d047996b0a02d25814dd72c77f7e091a6aa5b5ec02f3bce1778a2009"
     },
     {
+      "source": "native-items/apple.png",
+      "file": "runtime-webp/native-items/apple.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 620,
+      "bytes": 424,
+      "sourceSha256": "06449e639b8e2a35eec939279c2c3d137aa7ce8f6306593c03dcd603df1c8f6b",
+      "sha256": "069dc4f63204cd4337456e77b2b94e8aaf090a0a755f07f13228f9fa4605546d"
+    },
+    {
       "source": "native-items/chapter_1.png",
       "file": "runtime-webp/native-items/chapter_1.webp",
       "width": 64,
@@ -4842,6 +4852,16 @@
       "sha256": "3541ec40f1d62a6f795650bd9ce4dbca933f12b0954db06e6dbb7de4c0023458"
     },
     {
+      "source": "native-items/kappa_feed.png",
+      "file": "runtime-webp/native-items/kappa_feed.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 640,
+      "bytes": 442,
+      "sourceSha256": "c7655f58420dc4ef9d1919022d2e7496f333064aac38ad990bd61598e093552b",
+      "sha256": "986920ac7d9e93b56731f15d7f599585d3660372e64e5c32b40405d5a0a88f30"
+    },
+    {
       "source": "native-items/knarl_feed.png",
       "file": "runtime-webp/native-items/knarl_feed.webp",
       "width": 64,
@@ -4850,6 +4870,16 @@
       "bytes": 598,
       "sourceSha256": "4367fe373b160311cac2df1222f9b9703715323bb2bd20698deeb9e8afe369ac",
       "sha256": "5e33ea934b91485bf3e2f4cd6359d723b8cd19c3989806b9709c80f4d27c5a83"
+    },
+    {
+      "source": "native-items/pear.png",
+      "file": "runtime-webp/native-items/pear.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 513,
+      "bytes": 306,
+      "sourceSha256": "64df01269cd129cb443fd7e9ec60d87d326293f035e82f6d38f7250d0ac0b6fc",
+      "sha256": "497c9987bbf0ec578f15e1e308fbc1c2e3cac0648f0c59dd0fc6d865809d77ce"
     },
     {
       "source": "native-items/pen_1.png",
@@ -4910,6 +4940,26 @@
       "bytes": 1356,
       "sourceSha256": "04c2310bf10ed43e489dfd4a836c6f56ff71cd89cdc25045ff5f649138c34327",
       "sha256": "bc6c247da6ff9fb3b3b7ba0851e262ce9d4aad0cbb878127fd0186687fd06596"
+    },
+    {
+      "source": "native-items/plum.png",
+      "file": "runtime-webp/native-items/plum.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 560,
+      "bytes": 370,
+      "sourceSha256": "07c0fe2c9dcb1792386132f1c0ba4a2c3c39004cf21b15f5124c6a8e31dbda39",
+      "sha256": "3aaf571b737bce04cfbfb43796445116c2e2ad129f5048b5f538f64b02664c13"
+    },
+    {
+      "source": "native-items/porlock_feed.png",
+      "file": "runtime-webp/native-items/porlock_feed.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 728,
+      "bytes": 480,
+      "sourceSha256": "f77bd7afc4053b6dc6c182f159d1988ca177ecd813044ceed2d1eeafcfd49735",
+      "sha256": "c8bda36a78ab73346fb19325c6ce750c4e140d1a719000e60587250c2805d0a4"
     },
     {
       "source": "native-items/premium_felix_felicis.png",
@@ -5042,6 +5092,16 @@
       "sha256": "acf358f01fe9fa5f3572412dfe4ea2e117ccb28f29f1fa9625cf982c6853b26d"
     },
     {
+      "source": "native-items/produce_kappa.png",
+      "file": "runtime-webp/native-items/produce_kappa.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 656,
+      "bytes": 416,
+      "sourceSha256": "afc10b6d05b4b546dd76931242a500d6ec3897b6e62f010b68253647640c9829",
+      "sha256": "6160bba96bf2f414eef9784c03e8e4f75807e2885773115b2ee5d96d581d92b0"
+    },
+    {
       "source": "native-items/produce_knarl.png",
       "file": "runtime-webp/native-items/produce_knarl.webp",
       "width": 64,
@@ -5080,6 +5140,16 @@
       "bytes": 806,
       "sourceSha256": "acc3604b86a7001532661675809280a2fd94897d4464d462b243c2ab744435c8",
       "sha256": "88b862c32113b322bf5f0867d0ca5f172f5b657b14378ede9a75b079f5ed7c0d"
+    },
+    {
+      "source": "native-items/produce_porlock.png",
+      "file": "runtime-webp/native-items/produce_porlock.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 732,
+      "bytes": 448,
+      "sourceSha256": "927e2fc0d7145c4a9707514c95ad388b5983d2e0dc9f6c9ba01725bbca6e5af6",
+      "sha256": "a987ebcca06d866f19f81f9d25794d7c6c65179570a8a23a265879d1027912c7"
     },
     {
       "source": "native-items/produce_puffskein.png",
@@ -5472,6 +5542,36 @@
       "sha256": "8863e8f54288b2a7d7e290e40638c2abc3435b0792feb304baeb96fef2b362ed"
     },
     {
+      "source": "native-items/sapling_apple.png",
+      "file": "runtime-webp/native-items/sapling_apple.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 618,
+      "bytes": 370,
+      "sourceSha256": "1eba54b24e51f4eda6ccafbb3ad1fb809e33e197aded24e8300991213de0c6ec",
+      "sha256": "7ee21783c30a5ec4e2f058821e54bb38a22f38c1cc07036864c85d158cccef13"
+    },
+    {
+      "source": "native-items/sapling_pear.png",
+      "file": "runtime-webp/native-items/sapling_pear.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 602,
+      "bytes": 382,
+      "sourceSha256": "643be97e1bb637027f59a19273dd03779b2f5e353c129f6b40b43a56000482ba",
+      "sha256": "7a18372a21c7e79b3c9e6e9885dd4b950b5fbb13427bf528239074479b4affb5"
+    },
+    {
+      "source": "native-items/sapling_plum.png",
+      "file": "runtime-webp/native-items/sapling_plum.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 653,
+      "bytes": 378,
+      "sourceSha256": "da07cb07b95b99e7a51b22d1a42c58938de5ff3ed667407aac7fa9648daeb75c",
+      "sha256": "e3f2b32a7fa6dce4b1e7328f0d79b3cd32cb6d7365403b6a24e8e9d83335870a"
+    },
+    {
       "source": "native-items/seed_packet.png",
       "file": "runtime-webp/native-items/seed_packet.webp",
       "width": 64,
@@ -5672,6 +5772,16 @@
       "sha256": "4ef26339adde0883c359ef901565f153f4d276c0bd84b963e486fcd085dd9f14"
     },
     {
+      "source": "native-complete-objects/habitat_kappa/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_kappa/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 519,
+      "bytes": 384,
+      "sourceSha256": "6cda3a5f280a6444305e1dbe436dfca2e415a8b2e6714ff5f02be6cc623bf4b1",
+      "sha256": "3907f4576fcdff660a97a30936d7050541f0a6e5b8f0a3183da3910ce6187082"
+    },
+    {
       "source": "native-complete-objects/habitat_knarl/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_knarl/frame-01.webp",
       "width": 40,
@@ -5710,6 +5820,16 @@
       "bytes": 386,
       "sourceSha256": "f555302a8aa7914ea70e9679f4e97b29d1b9265a857494f44834273fb8e8cca1",
       "sha256": "750938dec1227bb5215278e57495ba2c977ba2e14d668208635df6fa7dee2fb0"
+    },
+    {
+      "source": "native-complete-objects/habitat_porlock/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_porlock/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 424,
+      "bytes": 304,
+      "sourceSha256": "6d38ab3f7a2ad3cb67b70f89361d452246090cd2db05e77e8c6e245594f47b6f",
+      "sha256": "ebe604bda768fcbf8bb733a0108513212aa97490a2716f9a18adf783717e62d5"
     },
     {
       "source": "native-complete-objects/habitat_puffskein/frame-01.png",
@@ -5872,6 +5992,16 @@
       "sha256": "0785aed94b2f9ade85626af3e84a8621c73c0b2ea485c61f8c4a694d947ab202"
     },
     {
+      "source": "native-complete-objects/keepsake_kappa/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_kappa/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 742,
+      "bytes": 524,
+      "sourceSha256": "addb90c824260ff32dc74d9860d9790f6e97cafc2ebf430bcfad7521f32c2300",
+      "sha256": "6cfdd3153391eec2aea7e2cc879b3cdc45a1a2437c4100b43c49623f962664be"
+    },
+    {
       "source": "native-complete-objects/keepsake_knarl/frame-01.png",
       "file": "runtime-webp/native-complete-objects/keepsake_knarl/frame-01.webp",
       "width": 56,
@@ -5910,6 +6040,16 @@
       "bytes": 540,
       "sourceSha256": "e8233a992eaeef58d8f97fc1d896c5546695ab185d46e338df469fe98e401179",
       "sha256": "e15f33e709064776b92b7e90b917c720ed2d48d2ce20b26ce68e9369dd085f74"
+    },
+    {
+      "source": "native-complete-objects/keepsake_porlock/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_porlock/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 733,
+      "bytes": 514,
+      "sourceSha256": "75b6219062e937ecac7013c7536438ac52d8d3956f7657d10a17ce8039e90e73",
+      "sha256": "ab383e4a37ecb7a3a6fd332d68fff8b948f92f4e1c8f479962f42abd3e2dc68b"
     },
     {
       "source": "native-complete-objects/keepsake_puffskein/frame-01.png",
@@ -6492,6 +6632,26 @@
       "sha256": "5bdfbc4ed6710ff294f2ffde6a2617299b399833c4b9b72a17dcd60b0cc6d2db"
     },
     {
+      "source": "creature-motion-assets/native/kappa/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/kappa/left-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 18320,
+      "bytes": 10758,
+      "sourceSha256": "9ae15ce56d678e06a269cc909e3ca3dbb9a3ab383f58dde771a3b2907d586543",
+      "sha256": "81254f5c1902d2eb15e1d7ee8ea5bcd709576da0c01b55de55613dd34853d6bb"
+    },
+    {
+      "source": "creature-motion-assets/native/kappa/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/kappa/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 17922,
+      "bytes": 10454,
+      "sourceSha256": "875fb7cc714a90246d5c549bb56c8ef9a063d44ffae56dea0a8a8d6d035d13d7",
+      "sha256": "2361ba5effe527af25f85f0580269ab11eed3f9c09ef833ebaf94b5c5e4ea950"
+    },
+    {
       "source": "creature-motion-assets/native/knarl/left-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/knarl/left-atlas.webp",
       "width": 384,
@@ -6570,6 +6730,26 @@
       "bytes": 2864,
       "sourceSha256": "61cd63ed7bc0be95b13630b77c71c605e6717df8ed79c23caa977770566eeb44",
       "sha256": "a78e95b4ffd07dc4d8974127d4e026cc2cfa39138ec90067711cb3dd0f87912e"
+    },
+    {
+      "source": "creature-motion-assets/native/porlock/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/porlock/left-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 17099,
+      "bytes": 9966,
+      "sourceSha256": "c9932b37c39b0a5a3101cab7dd050ad68236f35e1d2639b904cb11bcbe5a1c4e",
+      "sha256": "d8f9c4a0253c8e0b8d32019ea72ba4f9bce81937a0d088f80b1492ac0bd06d38"
+    },
+    {
+      "source": "creature-motion-assets/native/porlock/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/porlock/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 19453,
+      "bytes": 11620,
+      "sourceSha256": "3bc49213005daec4f1ed1466b8c993b3333beac23542c3c9d6b6b15cc177c4f7",
+      "sha256": "da9f58f646e8e92ae5711facfd064a2411cdde05b772bb334459f2d5f8b0f938"
     },
     {
       "source": "creature-motion-assets/native/puffskein/left-atlas.png",
@@ -11932,6 +12112,126 @@
       "sha256": "ec5e4b9bc7f5f19bbaf7d24f3f4e38b331026e6dc4a3e15b77d26de4359f3c28"
     },
     {
+      "source": "environment/edge/orchard.png",
+      "file": "runtime-webp/environment/edge/orchard.webp",
+      "width": 576,
+      "height": 314,
+      "sourceBytes": 13023,
+      "bytes": 7374,
+      "sourceSha256": "b8e4fd11ed7acd373f8cf4a1875e40a83e78b48f07db913d0a2a4d71cc13fbfd",
+      "sha256": "8fd553c67a42a2c8a831f33dd28b141674b396a6f7af104646a771575bcb4eb2"
+    },
+    {
+      "source": "environment/edge/pasture.png",
+      "file": "runtime-webp/environment/edge/pasture.webp",
+      "width": 576,
+      "height": 314,
+      "sourceBytes": 20885,
+      "bytes": 11844,
+      "sourceSha256": "1a40c388e5946c122b671f60ca5ea6d0a48ed7f43c0f207129cd5dd870d5a42c",
+      "sha256": "ba54a58f02f1392ef05eefc604d05f39aca5f7abd97ee3138c3b579fcf50ff75"
+    },
+    {
+      "source": "environment/edge/trail.png",
+      "file": "runtime-webp/environment/edge/trail.webp",
+      "width": 96,
+      "height": 60,
+      "sourceBytes": 1160,
+      "bytes": 790,
+      "sourceSha256": "ef6aedf1233e28f48e5fa1cac376f425225a346ab2a68cafab0c8031948a86ae",
+      "sha256": "c5dc8e4848a07f2a5543d3cba50cf40984757d006423d1f1bb45d303fa1cedf0"
+    },
+    {
+      "source": "environment/edge/tree-apple-0.png",
+      "file": "runtime-webp/environment/edge/tree-apple-0.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 611,
+      "bytes": 292,
+      "sourceSha256": "3569d605fba2b2f4e5b671d4c6b1284cccaf6af9e2e43e880edb1d0aeb186395",
+      "sha256": "ca456768ff3132ec564f488b7c4024bc744843b0008e141c71544faa22e85e8a"
+    },
+    {
+      "source": "environment/edge/tree-apple-1.png",
+      "file": "runtime-webp/environment/edge/tree-apple-1.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1768,
+      "bytes": 1088,
+      "sourceSha256": "47d9196fd748064110fa11a70c770e128d78606c0c14ff2a1059e1721bbaee7b",
+      "sha256": "43c4b36a1421c42199e0a9562bd8ebff8146e601c18155dd7674ba96d86e0da7"
+    },
+    {
+      "source": "environment/edge/tree-apple-2.png",
+      "file": "runtime-webp/environment/edge/tree-apple-2.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 2068,
+      "bytes": 1132,
+      "sourceSha256": "c6cea3f489c636d41520824a9d60401d6f031b8bf965289b26d3b7273e747ffe",
+      "sha256": "d36d2919ff5ff3f1a8f5592a060a126f7d592e85f337215970e04844de7bd366"
+    },
+    {
+      "source": "environment/edge/tree-pear-0.png",
+      "file": "runtime-webp/environment/edge/tree-pear-0.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 606,
+      "bytes": 320,
+      "sourceSha256": "5f125af6294f6b52488b5008dfae18e0b3893fa797b681f4b042265571b0227f",
+      "sha256": "5f037d771b3cd59f02b56d17bd5e77379b19b19644fd0c1b4a68b71f6868c74b"
+    },
+    {
+      "source": "environment/edge/tree-pear-1.png",
+      "file": "runtime-webp/environment/edge/tree-pear-1.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1590,
+      "bytes": 876,
+      "sourceSha256": "a94c249cf34e56ff6272c5fc3e6c198ea44bea23c9437f41134b37badb280c62",
+      "sha256": "e0f620fb04b1f666089ed6f88a12b9604dc677b105f7e058940044da93f0ed92"
+    },
+    {
+      "source": "environment/edge/tree-pear-2.png",
+      "file": "runtime-webp/environment/edge/tree-pear-2.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 2067,
+      "bytes": 1210,
+      "sourceSha256": "71ea75d6f726b901878e18435cc73c6526024e00870cf1d7309d0e91cc252ff7",
+      "sha256": "c4edbc6322e9b039b23e40f59f74e4aceb6bd340eb783824392fe93c6e61c561"
+    },
+    {
+      "source": "environment/edge/tree-plum-0.png",
+      "file": "runtime-webp/environment/edge/tree-plum-0.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 549,
+      "bytes": 266,
+      "sourceSha256": "4c9ef9a2525f712fda6f8cabecc8a28c5f4f4e6936b32cd6f5be60df98ba257e",
+      "sha256": "04570d92eb40ef2c4fb6603cd35885fc0ec3b50691a39ae6294d82308c565849"
+    },
+    {
+      "source": "environment/edge/tree-plum-1.png",
+      "file": "runtime-webp/environment/edge/tree-plum-1.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1392,
+      "bytes": 756,
+      "sourceSha256": "217a193f94ca4489f6505470f8a6de8434cd3866ff142056e14a08dc93f497d1",
+      "sha256": "5ff70640603e640d324953859957c9e0b2806d63633096441f51fe0eddf70c01"
+    },
+    {
+      "source": "environment/edge/tree-plum-2.png",
+      "file": "runtime-webp/environment/edge/tree-plum-2.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1720,
+      "bytes": 918,
+      "sourceSha256": "660ab9470604c3e6fa3a260eece784d18fc05d3afeeb80d80a8c0b20b2652d0a",
+      "sha256": "cc7461ca4a6b760ef0c6cc6633b00f4e0a5444c203160391c8ec770d7f670a90"
+    },
+    {
       "source": "environment/elves/dobby/carry.png",
       "file": "runtime-webp/environment/elves/dobby/carry.webp",
       "width": 80,
@@ -13395,11 +13695,11 @@
     }
   ],
   "totals": {
-    "converted": 1333,
+    "converted": 1363,
     "existingWebp": 8,
-    "originalBytes": 4837227,
-    "webpBytes": 3223734,
-    "savedBytes": 1613493,
-    "savedPercent": 33.36
+    "originalBytes": 4966200,
+    "webpBytes": 3299140,
+    "savedBytes": 1667060,
+    "savedPercent": 33.57
   }
 }

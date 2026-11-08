@@ -63,6 +63,9 @@ export function drawHabitatMotion(c,residents,{clock=0,reducedMotion=false,weath
    case 'crup':pixel(c,x+4+sway*2,y-10-(phase===2?1:0),2,1,p.a);break;
    case 'knarl':pixel(c,x+6+sway,y-23+(phase===2?1:0),2,2,p.a);break;
    case 'salamander':pixel(c,x-2+sway,y-16-phase*2,2,2,phase%2?p.f:p.e);break;
+   // Phase 3 (plan §11): a ripple on the Ma da's puddle, a wisp of hay by the Ngựa lùn's shelter.
+   case 'kappa':pixel(c,x-4+sway,y-9,4,1,p.b);break;
+   case 'porlock':pixel(c,x+5+sway,y-12-(phase===2?1:0),2,1,p.h);break;
    case 'fwooper':pixel(c,x+3+sway,y-22,2,5,p.p);pixel(c,x+4+sway,y-23,2,2,p.a);break;
    case 'hippogriff':pixel(c,x+11+sway,y-8,2,5,p.c);break;
    case 'thestral':pixel(c,x-4,y-14,4,4,phase===1||phase===2?p.l:p.b);break;

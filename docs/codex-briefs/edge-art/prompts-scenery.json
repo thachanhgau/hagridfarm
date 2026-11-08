@@ -1,0 +1,189 @@
+{
+  "items": [
+    {
+      "id": "pasture",
+      "master": "garden-v05/environment/edge/masters/pasture.png",
+      "prompt": "Precise geometry correction. Image1 is ABSOLUTE geometry reference canvas1152x628: ground quadrilateral corners (0,304),(512,48),(1152,368),(640,624). Notice this is NOT a symmetric diamond; upper vertex x512 and lower vertex x640 are DIFFERENT. Image2 artwork to preserve in style and subjects, but change layout/footprint to match guide1 EXACTLY. Ground must cover every corner, no empty slivers, no outside spill. Reposition whole two-rail fence to all four exact ground edges; rear rails may stand up above edge, front rails lower; gate gap on front-left. Keep trough and ONE hay bale by rear; sparse flowers; plain open meadow. Posts/rails all inside canvas width, rear top post may reachy0. No added reeds or pond plants. Do not retain ANY blue guide,grid lines,red dot,dashes. No text. True transparency outside ground and upright objects. Broad flat square grass clusters, no texture gradients. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-f3248c16-594d-4c7b-8849-e58ac208b199.png",
+      "referenceFiles": [
+        "docs/codex-briefs/edge-art/guide-pasture.png",
+        "docs/codex-briefs/edge-art/pasture-candidate-a.png"
+      ]
+    },
+    {
+      "id": "orchard",
+      "master": "garden-v05/environment/edge/masters/orchard.png",
+      "prompt": "Precise geometry correction. Image1 is ABSOLUTE geometry reference canvas1152x628: ground quadrilateral corners (0,304),(512,48),(1152,368),(640,624). Notice this is NOT a symmetric diamond; upper vertex x512 and lower vertex x640 are DIFFERENT. Image2 artwork to preserve in style and subjects, but change layout/footprint to match guide1 EXACTLY. Ground must cover every corner, no empty slivers, no outside spill. Keep EXACTLY SIX empty brown 2x2-tile dirt planting diamonds, each EXACT orange outline in guide1: centres(512,176),(320,272),(704,272),(512,368),(896,368),(704,464); each256width128height. The full soil rim must sit inside that orange area, not outside. No orange remains. No trees or fence. Border stones/clover sparse. Do not retain ANY blue guide,grid lines,red dot,dashes. No text. True transparency outside ground and upright objects. Broad flat square grass clusters, no texture gradients. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-3e974e37-bbad-4378-bc57-5cfd28384568.png",
+      "referenceFiles": [
+        "docs/codex-briefs/edge-art/guide-orchard.png",
+        "docs/codex-briefs/edge-art/orchard-candidate-a.png"
+      ]
+    },
+    {
+      "id": "trail",
+      "master": "garden-v05/environment/edge/masters/trail.png",
+      "prompt": "Draw dirt trail ground on exact guide canvas 768x480. Image 1 exact geometry; image2 grass style. Fill parallelogram vertices (0,208),(256,80),(768,336),(512,464). Packed brown earth #A57554 #C97952 #735044 running edge to edge along long upper-left to lower-right direction joining neighbouring ground. Grass tufts only along BOTH long sides, few big pebbles and broad hoof/wheel marks. No extruded side walls. Ground fills entire exact guide, nothing outside; no guide blue, seams, dot, dashed line. Extremely coarse 8x8 master square pixels, sparse simple flat clusters. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-e995b842-c19d-4b6c-9534-89164a52bac7.png",
+      "referenceFiles": [
+        "docs/codex-briefs/edge-art/guide-trail.png",
+        "garden-v05/environment/terrain-grass.png"
+      ]
+    },
+    {
+      "id": "tree-apple-1",
+      "master": "garden-v05/environment/edge/masters/tree-apple-1.png",
+      "prompt": "Draw ONE grown APPLE TREE, no fruit. First image guide for 1024x1152 transparent canvas, trunk bottom ground anchor (512,880); do not draw any guide, pit, grass ground, line, diamond or dot. Only tiny earth mound touching trunk foot. Second image family trunk/tree style but MUCH simpler coarser canopy. Full round mid-green canopy #3F6A45 #71934B #B0BD67, sturdy branching brown trunk #735044 #A57554 #4A3042. Broad square leaf clusters, very simple; one native pixel is 8x8 master pixels. Height about800, canopy width~760, never touching edges. No stake, no flowers, no fruit. Trunk centre fixed x512. Full leafy tree. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-a3661935-ccaa-4972-a8aa-94e146a66c53.png",
+      "referenceFiles": [
+        "docs/codex-briefs/edge-art/guide-tree.png",
+        "garden-v05/environment/layers/oak.png"
+      ]
+    },
+    {
+      "id": "tree-pear-1",
+      "master": "garden-v05/environment/edge/masters/tree-pear-1.png",
+      "prompt": "ONE grown PEAR TREE with NO fruit. Exact canvas 1024x1152. Guide image1 trunk ground anchor(512,880); REMOVE all guide graphics and diamond/ground/pit. Only tiny earth mound at trunk foot. Image2 brown branching trunk family, simplify dramatically into coarse 8x8 master pixels and large flat square foliage clusters. Taller narrower upright oval canopy width~640 height~832, yellow-green leaves #71934B #B0BD67 #3F6A45. Sturdy branching trunk #735044 #A57554 #4A3042; centre x512. All canopy inside margins, never touching edges. No fruit, no stake, no grass, no extra objects. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-8123447d-bda6-4142-9c9b-d9f3687d66a7.png",
+      "referenceFiles": [
+        "docs/codex-briefs/edge-art/guide-tree.png",
+        "garden-v05/environment/layers/oak.png"
+      ]
+    },
+    {
+      "id": "tree-plum-1",
+      "master": "garden-v05/environment/edge/masters/tree-plum-1.png",
+      "prompt": "ONE grown PLUM TREE with NO fruit. Exact canvas 1024x1152. Guide image1 trunk ground anchor(512,880); REMOVE all guide graphics and diamond/ground/pit. Only tiny earth mound at trunk foot. Image2 brown branching trunk family, simplify dramatically into coarse 8x8 master pixels and large flat square foliage clusters. Broad round slightly squat dark-green canopy #24483F #3F6A45, a little #71934B top-left. Canopy width~800 height~784 including trunk. Sturdy branching trunk #735044 #A57554 #4A3042; centre x512. Canopy clear of edges. No fruit, no stake, no grass, no extra objects. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-30ac6397-f2ed-477b-8c58-7bc6576e9c66.png",
+      "referenceFiles": [
+        "docs/codex-briefs/edge-art/guide-tree.png",
+        "garden-v05/environment/layers/oak.png"
+      ]
+    },
+    {
+      "id": "tree-apple-2",
+      "master": "garden-v05/environment/edge/masters/tree-apple-2.png",
+      "prompt": "PRECISE OBJECT EDIT: image1 is the exact grown apple tree to retain. Keep tree silhouette, every branch, trunk base, leaf clusters, colours and framing IDENTICAL. Change ONLY add EIGHT ripe red apples #C75B4B with small dark #874056 edge and tiny flat warm highlight distributed across entire canopy, each about3x3 native pixel blob (24-32px on1024-wide master). Do not enlarge or recompose tree. Image2 guide: final1024x1152 trunk base(512,880), no guide graphics. No ground except existing tiny mound. Real alpha outside. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-e468980d-5581-4c47-a302-f57d87a77e7c.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-a3661935-ccaa-4972-a8aa-94e146a66c53.png",
+        "docs/codex-briefs/edge-art/guide-tree.png"
+      ]
+    },
+    {
+      "id": "tree-apple-0",
+      "master": "garden-v05/environment/edge/masters/tree-apple-0.png",
+      "prompt": "Draw ONE very young APPLE SAPLING in same family as grown apple tree image1, same square leaf shapes and brown trunk colours. Thin short young trunk with two small branches, only a few mid-green leaves (about5), ONE brown wooden stake alongside tied once with string. No fruit. Height only280 masterpx (35% of grown800), SAME coarse pixel density8x8, not miniature fine detail. Output1024x1152 transparent canvas; trunk base at(512,880) as guide image2. No guide diamond, lines,dot, no grass,no planting pit, only tiny brown earth mound touching foot. Wide clear margin.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-53abbdb2-f6f1-431f-a70d-9ccc771a4ae1.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-a3661935-ccaa-4972-a8aa-94e146a66c53.png",
+        "docs/codex-briefs/edge-art/guide-tree.png"
+      ]
+    },
+    {
+      "id": "items-sheet-b",
+      "master": "garden-v05/masters-items/edge/items-sheet-b.png",
+      "prompt": "Draw ONE item sheet EXACT1024x1024 transparent, 2x2 grid of512px cells. Objects centred each cell local x256, base y440,48px minimum empty margins. No labels or dividers. Exact ROW-MAJOR order: TOP LEFT one big PURPLE PLUM with pale flat bloom highlight, stem and green leaf. TOP RIGHT a YOUNG APPLE SAPLING in small tan burlap root-ball sack tied string, two or three green leaves and ONE tiny RED APPLE. BOTTOM LEFT same sack and scale, PEAR SAPLING with yellow-green leaves and ONE tiny YELLOW-GREEN PEAR. BOTTOM RIGHT same sack and scale, PLUM SAPLING with darker green leaves and ONE tiny PURPLE PLUM. Saplings have thin short brown stems. Each one compact clear object, coarse blocks about8x8 masterpx and final about40x40 native; VERY few shapes, THICK outlines. Match reference native item weight. No ground, no external shadow, no halo. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-771674d8-1e00-42a6-b9af-941c09565281.png",
+      "referenceFiles": [
+        "garden-v05/native-items/produce_grindylow.png",
+        "garden-v05/native-items/produce_crup.png",
+        "garden-v05/native-items/supply_water.png"
+      ]
+    },
+    {
+      "id": "tree-pear-0",
+      "master": "garden-v05/environment/edge/masters/tree-pear-0.png",
+      "prompt": "ONE young pear SAPLING matching image1 tree family. Very thin young brown trunk, two small branches, only5 or6 leaves yellow-green, brown wooden stake beside trunk tied once with string. NO FRUIT. Height288master pixels,35% grown height; retain SAME coarse8x8master pixel density, few bold flat leaf shapes, no fine details. Trunk centre x512. Image2 guide: final1024x1152 transparent canvas trunk base(512,880). REMOVE all guide lines,dot,diamond. No planting pit, no grass, only tiny earth mound touching foot. Wide transparent margin. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-0bb61344-9c6f-4a9f-a7d4-db95d6b845af.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-8123447d-bda6-4142-9c9b-d9f3687d66a7.png",
+        "docs/codex-briefs/edge-art/guide-tree.png"
+      ]
+    },
+    {
+      "id": "tree-pear-2",
+      "master": "garden-v05/environment/edge/masters/tree-pear-2.png",
+      "prompt": "PRECISE OBJECT EDIT of image1, grown pear tree. Keep EXACT tree silhouette, every leaf cluster, trunk, roots and framing. ONLY add EIGHT ripe yellow-green pear-shaped pears #B0BD67 #F5D69A across all canopy regions, about3x3 nativepixel blobs (24-32px at1024master width), clearly readable. Same full height, same trunk foot. Do not redraw or move existing tree. Image2 guide: final1024x1152 transparent canvas trunk base(512,880). REMOVE all guide lines,dot,diamond. No planting pit, no grass, only tiny earth mound touching foot. Wide transparent margin. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-96f9f26a-c648-40ea-881b-e153eeb84ef7.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-8123447d-bda6-4142-9c9b-d9f3687d66a7.png",
+        "docs/codex-briefs/edge-art/guide-tree.png"
+      ]
+    },
+    {
+      "id": "tree-plum-0",
+      "master": "garden-v05/environment/edge/masters/tree-plum-0.png",
+      "prompt": "ONE young plum SAPLING matching image1 tree family. Very thin young brown trunk, two small branches, only5 or6 leaves dark-green, brown wooden stake beside trunk tied once with string. NO FRUIT. Height280master pixels,35% grown height; retain SAME coarse8x8master pixel density, few bold flat leaf shapes, no fine details. Trunk centre x512. Image2 guide: final1024x1152 transparent canvas trunk base(512,880). REMOVE all guide lines,dot,diamond. No planting pit, no grass, only tiny earth mound touching foot. Wide transparent margin. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-45680bca-c2d9-4c31-8f89-ca9428aa02f1.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-30ac6397-f2ed-477b-8c58-7bc6576e9c66.png",
+        "docs/codex-briefs/edge-art/guide-tree.png"
+      ]
+    },
+    {
+      "id": "tree-plum-2",
+      "master": "garden-v05/environment/edge/masters/tree-plum-2.png",
+      "prompt": "PRECISE OBJECT EDIT of image1, grown plum tree. Keep EXACT tree silhouette, every leaf cluster, trunk, roots and framing. ONLY add EIGHT ripe purple plums #6961A6 #3E3B70 across all canopy regions, about3x3 nativepixel blobs (24-32px at1024master width), clearly readable. Same full height, same trunk foot. Do not redraw or move existing tree. Image2 guide: final1024x1152 transparent canvas trunk base(512,880). REMOVE all guide lines,dot,diamond. No planting pit, no grass, only tiny earth mound touching foot. Wide transparent margin. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-85702fee-a3d1-4f7f-9e47-531dee95d964.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-30ac6397-f2ed-477b-8c58-7bc6576e9c66.png",
+        "docs/codex-briefs/edge-art/guide-tree.png"
+      ]
+    },
+    {
+      "id": "items-sheet-a",
+      "master": "garden-v05/masters-items/edge/items-sheet-a.png",
+      "prompt": "Background extraction / precise edit of this six-icon sheet. Retain EXACT six objects, positions, pixel shapes, colours, cell layout and1024px height1536px width. Remove EVERY soft coloured halo and ANY shadow around every object. Background must be completely transparent right up to crisp hard square-pixel outline edges. No glow or blur ANYWHERE. Keep three scales, hair bundle, cucumber/pumpkin plate, oat bowl, apple, pear in exact same cells. Flat square pixels and clean alpha. Do not add, redesign, crop or move objects.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-9686c2ce-827e-4d81-b28a-6e3833cbaf37.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-20646bb2-3a05-4353-bddc-037a3aba82b1.png"
+      ]
+    },
+    {
+      "id": "pasture-candidate-a",
+      "master": "docs/codex-briefs/edge-art/pasture-candidate-a.png",
+      "prompt": "Use case: stylized-concept. Draw one production game scenery master pasture.png. Reference image 1 is an EXACT placement guide, not art: canvas 1152x628; ground parallelogram vertices (0,304),(512,48),(1152,368),(640,624). Fill every corner and all edges completely with lush green meadow. Do not shrink footprint. Reference 2 grass style and reference 3 rocks/grass style. Remove ALL guide graphics, pale blue, red line, dot and grid seams. Rough dark-brown wooden log post-and-rail fence with TWO rails around whole four-edge border, rear two edges standing high, front two lower; ONE clear gate gap on front-left edge. Put a small wooden water trough and a hay bale inside near back corner. Broad plain open grass centre for animals, sparse tufts and tiny cream/yellow flowers near borders. Real transparent alpha outside object; nothing wider than guide; upright posts may rise above upper ground boundary. Chunky low resolution pixel art, each pixel flat square, native blocks 2x2 master pixels or coarser, clean #231F2E outline, 2-3 flat shades per material, light top-left, isometric 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle, text, frames, exterior drop shadow. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-f7f4b454-a7d9-4cbe-b25e-1cbecd15366a.png",
+      "referenceFiles": [
+        "docs/codex-briefs/edge-art/guide-pasture.png",
+        "garden-v05/environment/terrain-grass.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "orchard-candidate-a",
+      "master": "docs/codex-briefs/edge-art/orchard-candidate-a.png",
+      "prompt": "Draw orchard ground master on exact guide canvas 1152x628. Image 1 is exact footprint/placement reference; image 2 grass style. Ground vertices (0,304),(512,48),(1152,368),(640,624). Cover ENTIRE parallelogram to all corners with plain meadow grass, no fence, no trees. EXACTLY SIX empty dark brown dirt pits, diamond-shaped 2:1 squares filling precisely the orange guide areas, centres (512,176),(320,272),(704,272),(512,368),(896,368),(704,464), each 256 wide x128 high. Rounded rim loose soil, flat #735044 #4A3042 #A57554. Do not retain orange. Sparse border stones/clover. No blue guide, red line, dot or grid seams. No extruded base or side wall. Tiny 2x2 master pixels, broad open grass. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-5a5751b6-7053-4068-ba92-8a4e63439f42.png",
+      "referenceFiles": [
+        "docs/codex-briefs/edge-art/guide-orchard.png",
+        "garden-v05/environment/terrain-grass.png"
+      ]
+    },
+    {
+      "id": "items-sheet-a-candidate-a",
+      "master": "docs/codex-briefs/edge-art/items-sheet-a-candidate-a.png",
+      "prompt": "ONE item icon sheet EXACT 1536x1024 transparent, 3columns x2rows, six equal512x512 cells. One readable big simple object per cell centred x256 local, base y440, >=48px transparent margin each edge, no dividers or labels. Match four reference native icons: objects reduce to about40x40 native pixels, coarse square blocks about8px master, thick dark outline, very few details. ROW1 COL1: three dull green-grey rounded scales fanned out bound with thin bluegreen cord, one water drop. ROW1 COL2: tuft shaggy BROWN mane hair tied RED ribbon. ROW1 COL3: fresh cucumber plus sliced cucumber piece and small orange pumpkin wedge on tiny wooden plate. ROW2 COL1: small wooden bowl HEAPED with oats, a few clover leaves tucked in. ROW2 COL2: ONE big red apple short stem green leaf. ROW2 COL3: ONE big yellow-green pear stem and leaf. All separate, consistent icon weight, no halos, no ground, no shadows. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-20646bb2-3a05-4353-bddc-037a3aba82b1.png",
+      "referenceFiles": [
+        "garden-v05/native-items/produce_grindylow.png",
+        "garden-v05/native-items/produce_crup.png",
+        "garden-v05/native-items/crup_feed.png",
+        "garden-v05/native-items/supply_water.png"
+      ]
+    },
+    {
+      "id": "items-sheet-a-candidate-c",
+      "master": "docs/codex-briefs/edge-art/items-sheet-a-candidate-c.png",
+      "prompt": "ONE item icon sheet EXACT 1536x1024 transparent, 3columns x2rows, six equal512x512 cells. One readable big simple object per cell centred x256 local, base y440, >=48px transparent margin each edge, no dividers or labels. Match four reference native icons: objects reduce to about40x40 native pixels, coarse square blocks about8px master, thick dark outline, very few details. ROW1 COL1: three dull green-grey rounded scales fanned out bound with thin bluegreen cord, one water drop. ROW1 COL2: tuft shaggy BROWN mane hair tied RED ribbon. ROW1 COL3: fresh cucumber plus sliced cucumber piece and small orange pumpkin wedge on tiny wooden plate. ROW2 COL1: small wooden bowl HEAPED with oats, a few clover leaves tucked in. ROW2 COL2: ONE big red apple short stem green leaf. ROW2 COL3: ONE big yellow-green pear stem and leaf. All separate, consistent icon weight, no halos, no ground, no shadows. Chunky low-resolution pixel art, large flat square clusters, clean dark #231F2E outline, 2-3 flat shades per material, top-left light, 2:1 dimetric. No antialiasing, gradients, glow, dithering, speckle noise, text, frame, outside shadow. True transparent alpha background. Approximate only this palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. NEW clean cutout drawing. Flat background alpha ZERO, completely empty. Each outlined object isolated with empty transparent space immediately adjacent; no atmosphere or soft pixels. Make clean game inventory pixel icons like hard cut-paper squares. Use only hard edged flat colour fills. Background not a dark stage, not a card.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7213-9831-b5a061ad2272/exec-b720513b-2502-41c3-91a7-80921b0ea348.png",
+      "referenceFiles": [
+        "garden-v05/native-items/produce_grindylow.png",
+        "garden-v05/native-items/produce_crup.png",
+        "garden-v05/native-items/crup_feed.png",
+        "garden-v05/native-items/supply_water.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "habitat_porlock",
+  "kind": "habitat",
+  "species": "porlock",
+  "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nEdit referenced habitat_porlock only: keep exactly its simple squat lean-to geometry, two posts, heap of hay, wooden water trough, chunky grid and transparent cutout. Change ROOF THATCH from bright golden orange to weathered dull GREY-BROWN STRAW: main #A57554, shadow #735044, a few muted #A6B1AE upper-left highlight blocks. Roof must read grey-brown, not golden yellow. Keep hay pale muted straw, water blue. No creature, no new props. Single centered connected object on transparent square.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-37afc861-5beb-4866-9ffd-e6d87c944d39.png",
+  "master": "masters-complete-objects/habitat_porlock.png",
+  "masterSha256": "ebf7c5022df02e5b86fa72473227e1781bdaec0eb679b3b5b66ccf4e98c7455b"
+}

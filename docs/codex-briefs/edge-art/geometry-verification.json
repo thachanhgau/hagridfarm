@@ -1,0 +1,110 @@
+{
+  "ground": {
+    "orchard": {
+      "guideGroundPixels": 327680,
+      "missingGroundPixels": 1773,
+      "missingPercent": 0.54107666015625,
+      "inkOutsideGuide": 6131
+    },
+    "trail": {
+      "guideGroundPixels": 131072,
+      "missingGroundPixels": 179,
+      "missingPercent": 0.136566162109375,
+      "inkOutsideGuide": 5903
+    }
+  },
+  "treePairs": {
+    "apple": {
+      "alphaMaskIoU": 0.9210695175230581,
+      "differentMaskPixels": 28292
+    },
+    "pear": {
+      "alphaMaskIoU": 0.9244120417064651,
+      "differentMaskPixels": 22633
+    },
+    "plum": {
+      "alphaMaskIoU": 0.8978642243515391,
+      "differentMaskPixels": 38128
+    }
+  },
+  "orchardSoilComponents": [
+    {
+      "pixels": 19084,
+      "bounds": [
+        381,
+        116,
+        636,
+        247
+      ],
+      "centre": [
+        508,
+        181
+      ]
+    },
+    {
+      "pixels": 18621,
+      "bounds": [
+        187,
+        207,
+        432,
+        339
+      ],
+      "centre": [
+        309,
+        272.5
+      ]
+    },
+    {
+      "pixels": 18729,
+      "bounds": [
+        571,
+        207,
+        823,
+        339
+      ],
+      "centre": [
+        696.5,
+        272.5
+      ]
+    },
+    {
+      "pixels": 19156,
+      "bounds": [
+        381,
+        296,
+        636,
+        427
+      ],
+      "centre": [
+        508,
+        361
+      ]
+    },
+    {
+      "pixels": 18280,
+      "bounds": [
+        767,
+        296,
+        1013,
+        427
+      ],
+      "centre": [
+        889.5,
+        361
+      ]
+    },
+    {
+      "pixels": 18710,
+      "bounds": [
+        571,
+        390,
+        820,
+        520
+      ],
+      "centre": [
+        695,
+        454.5
+      ]
+    }
+  ]
+}

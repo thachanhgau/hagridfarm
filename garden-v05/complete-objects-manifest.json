@@ -628,6 +628,60 @@
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
     {
+      "id": "habitat_kappa",
+      "kind": "habitat",
+      "species": "kappa",
+      "file": "native-complete-objects/habitat_kappa/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 36,
+        "h": 27
+      },
+      "sha256": "6cda3a5f280a6444305e1dbe436dfca2e415a8b2e6714ff5f02be6cc623bf4b1",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/habitat_kappa/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_kappa/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 4,
+            "w": 36,
+            "h": 27
+          },
+          "sha256": "6cda3a5f280a6444305e1dbe436dfca2e415a8b2e6714ff5f02be6cc623bf4b1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_kappa.png",
+      "masterSha256": "60c1d0051064bf9e23397ecb552413794d8cceb42f79e63af4bca406aafbaee2",
+      "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nOne complete centered object on transparent 1024x1024 square: habitat_kappa. A squat mossy stone-rimmed puddle pool, ring of exactly FIVE broad grey stones around murky green-blue water, a small WOODEN BOWL floating in the pool, ONE cucumber resting on and touching the stone rim. No creature. Match habitat_grindylow reference scale and extra simple chunky broad pixel blocks. Target native only 36x28: use extraordinarily simple silhouette with about 36 logical pixel columns, no tiny details, no background. Whole pool is connected object, bowl visually inside water; no detached items.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-888bd51b-8905-4630-8b30-fd6e7cae9bb0.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
       "id": "habitat_knarl",
       "kind": "habitat",
       "species": "knarl",
@@ -840,6 +894,60 @@
       "masterSha256": "f19d294545d094025ff6c23c1bfe523eb14a9618add45f13230d7edf57ec917f",
       "prompt": "Create ONE game sprite of a squat open wooden treasure chest with exactly three large visible gold coins inside and one coin beside it, no creature. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9ce782d7-ff50-4dd3-a15f-14e945be2ef0.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_porlock",
+      "kind": "habitat",
+      "species": "porlock",
+      "file": "native-complete-objects/habitat_porlock/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 36,
+        "h": 27
+      },
+      "sha256": "6d38ab3f7a2ad3cb67b70f89361d452246090cd2db05e77e8c6e245594f47b6f",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/habitat_porlock/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_porlock/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 4,
+            "w": 36,
+            "h": 27
+          },
+          "sha256": "6d38ab3f7a2ad3cb67b70f89361d452246090cd2db05e77e8c6e245594f47b6f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_porlock.png",
+      "masterSha256": "ebf7c5022df02e5b86fa72473227e1781bdaec0eb679b3b5b66ccf4e98c7455b",
+      "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nEdit referenced habitat_porlock only: keep exactly its simple squat lean-to geometry, two posts, heap of hay, wooden water trough, chunky grid and transparent cutout. Change ROOF THATCH from bright golden orange to weathered dull GREY-BROWN STRAW: main #A57554, shadow #735044, a few muted #A6B1AE upper-left highlight blocks. Roof must read grey-brown, not golden yellow. Keep hay pale muted straw, water blue. No creature, no new props. Single centered connected object on transparent square.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-37afc861-5beb-4866-9ffd-e6d87c944d39.png",
       "tool": "builtin image_gen",
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
@@ -1616,6 +1724,60 @@
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
     {
+      "id": "keepsake_kappa",
+      "kind": "keepsake",
+      "species": "kappa",
+      "file": "native-complete-objects/keepsake_kappa/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 11,
+        "y": 6,
+        "w": 34,
+        "h": 44
+      },
+      "sha256": "addb90c824260ff32dc74d9860d9790f6e97cafc2ebf430bcfad7521f32c2300",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/keepsake_kappa/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_kappa/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 11,
+            "y": 6,
+            "w": 34,
+            "h": 44
+          },
+          "sha256": "addb90c824260ff32dc74d9860d9790f6e97cafc2ebf430bcfad7521f32c2300",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_kappa.png",
+      "masterSha256": "23d00912a854b85dc632c4d5602aecad0a4e85ef4e96537029e8f73585c4381a",
+      "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Kappa, Ma da: small stocky hunched MONKEY-LIKE water demon with long arms, bare dull GREEN-GREY SCALY skin, just a few large dark scale patches, webbed hands and feet, pointed bony monkey face, big PALE eyes and wide cheeky mouth. NO horns, NO shell, NO beak, NO hair. Essential in EVERY pose: a shallow dent on TOP of its head, rim around a clearly visible little pale-blue #70A8B6/#B7DEE0 water oval. Stockier and greyer than the horned thin Grindylow reference.\nOne centered complete object on transparent 1024x1024 square: keepsake_kappa. A colored Kappa STATUETTE in calm stocky monkey-hunched left three-quarter stance, broad webbed hands, big pale eyes, clearly visible small BLUE INSET in its head dent. Mounted on LOW TWO-STEP WARM GREY STONE PLINTH. Copy reference 2 PLINTH STYLE exactly: two broad squat grey rectangular dimetric steps, pale top-left edges, darker right faces, single simple gold outlined FRONT INSET with blank grey center. No lettering. All connected; no ground/shadows. Reference1 creature identity only; reference2 plinth and coarse square pixel density. Simple collectible silhouette, no miniature details.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-5982ab76-2a60-42cf-8bbf-79e946a371ac.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
       "id": "keepsake_knarl",
       "kind": "keepsake",
       "species": "knarl",
@@ -1828,6 +1990,60 @@
       "masterSha256": "c200933f2e1a38dd07aea339f2afe0808423d5bad61afb89000768c36a557ee6",
       "prompt": "Create ONE game sprite, a special garden keepsake statuette of a black Niffler with duck-like beak and small paws clutching one broad gold coin, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-d7d10bb4-3f27-4c28-b690-929981596cf9.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_porlock",
+      "kind": "keepsake",
+      "species": "porlock",
+      "file": "native-complete-objects/keepsake_porlock/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 14,
+        "y": 6,
+        "w": 28,
+        "h": 44
+      },
+      "sha256": "75b6219062e937ecac7013c7536438ac52d8d3956f7657d10a17ce8039e90e73",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/keepsake_porlock/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_porlock/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 14,
+            "y": 6,
+            "w": 28,
+            "h": 44
+          },
+          "sha256": "75b6219062e937ecac7013c7536438ac52d8d3956f7657d10a17ce8039e90e73",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_porlock.png",
+      "masterSha256": "ae70eece5341de078203579d32fe0dd83e4e0325b72bddd158343ff78ccbc3f0",
+      "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Porlock, Ngua lun: shy little horse guardian UPRIGHT ON EXACTLY TWO CLOVEN HOOVES, two short arms with FOUR stubby fingers each. Covered in SHAGGY BROWN FUR, rough mop of shaggy head hair, exceptionally LARGE LONG BULBOUS NOSE, small worried gentle eyes and eyebrows. Cute worried cosy guardian. No clothing, no horns. NOT four-legged pony, NOT centaur, not monkey. Hooves visible below fur, arms distinct from legs. Simple large jagged fur clusters, never fine strands.\nOne centered complete object on transparent 1024x1024 square: keepsake_porlock. Colored Porlock STATUETTE, upright TWO CLOVEN HOOVES, shy short arms in front, rough shaggy brown hair and exceptionally big nose, facing left 3/4. Mounted on same LOW TWO-STEP WARM GREY STONE PLINTH as reference 2. Match PLINTH STYLE exactly: two broad squat rectangular grey dimetric steps, pale top-left edges, dark right faces, single simple gold outlined front inset, blank grey center, no lettering. All connected object, no ground/shadow. Reference1 identity, reference2 plinth and chunky pixel density.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-2d663b25-d179-44ad-bb66-33323d8e8e22.png",
       "tool": "builtin image_gen",
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },

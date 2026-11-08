@@ -15,7 +15,7 @@ test('authored scenery, habitat props and species statuettes cover the whole bac
  // Art may lead the species data (pond grindylow, plan §6): every species needs both, extra art is allowed.
  for(const species of Object.keys(CREATURE))assert(HABITAT_ART[species]&&KEEPSAKE_ART[species],species);
  assert.deepEqual(Object.keys(KEEPSAKE_ART).sort(),Object.keys(HABITAT_ART).sort());
- assert.equal(completeObjectFiles().length,48);assert.equal(new Set(completeObjectFiles()).size,48);
+ assert.equal(completeObjectFiles().length,52);assert.equal(new Set(completeObjectFiles()).size,52);
  assert(COMPLETE_SCENERY.every(i=>i.frames.length===4));
 });
 test('new native sprites retain master provenance, exact palette, alpha and safe grounded geometry',async()=>{
