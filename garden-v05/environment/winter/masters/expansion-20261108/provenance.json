@@ -5,18 +5,18 @@
   "assets": [
     {
       "id": "pond-3",
-      "master": "environment/winter/masters/expansion-20261108/pond-3.png",
-      "masterSha256": "aafab9b2c043010ea94b57c87adc375d18d52470d60dc652630b0a97dcbd6999",
+      "master": "environment/winter/masters/expansion-20261108/pond-3-organic-v2.png",
+      "masterSha256": "31736aec43462dd93efca44008e929594fad4c0e43916f4ae0be8ff8a7da3114",
       "file": "environment/pond/pond-3.png",
       "width": 480,
       "height": 298,
-      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Redesign this large deep pond as a distinctive mysterious Hogwarts BLACK LAKE in a small magical farming game. Keep its exact isometric diamond footprint and overall flat low silhouette, same 2:1 ground perspective. Nearly black indigo water with broad muted teal shore bands, a large eerie still dark centre with just a few tiny ripple rings. Ancient crooked weathered timber boathouse with two dark openings, LOW and SMALL along back shore, one broken wooden jetty and four ancient worn stone posts, sparse dark reeds and a crooked bare stump. Little hint of a giant squid shape BELOW the water only, no creature on shore. Atmospheric and ancient, special magical lake beside a forbidden forest, NOT a swimming pool. No castle, no tall buildings, no huge tentacles, no glowing neon. Retain open middle water for game creatures. This is NORMAL non-snow version. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 240x149, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
-      "sha256": "83ba56227350247675095ad18f6d9c9bc441e47c83b9f8b9a1983317bf67b674",
+      "prompt": "Completely redesign the first reference's lake, preserving ONLY its game palette, overall isometric camera and 480x298 logical canvas proportions. Style reference 2 is the existing garden pixel art. Make a BEAUTIFUL NATURAL BLACK LAKE of a mysterious British wizarding-school forest. Organic irregular curved shoreline, a broad low oval of almost-black indigo water, naturally eroded rocky banks with a few small low moss tufts, layered dark slate cliffs at the BACK edge only. Water occupies at least 75% of the sprite, open calm dark centre with 4-5 widely spaced short subtle blue-grey reflections. The lake should feel deep, old, still and spacious. One VERY TINY timber boathouse tucked partly behind the far bank at upper-right (less than 8% sprite width), and one thin short abandoned wooden landing at left shore; these are small supporting details. Asymmetrical pleasing composition, lush but restrained muted forest green accents, varied large rock clusters instead of a uniform stone rim. NO rectangular or diamond base plate, NO straight polygon shoreline, NO bathtub, NO ornamental ring, NO stone posts, NO reed fence, NO scattered giant props, NO visible squid or sea-monster shape/logo, NO tropical colours. True handmade chunky pixel art, carefully shaped large flat clusters with only 2-3 tones per material, dark aubergine outlines, effective 240x149 pixel grid, no antialiasing, blur, microtexture, airbrush or gradients. Restrained garden palette: #231F2E #4A3042 #41465C #687486 #24483F #3F6A45 #71934B #735044 #A57554 #3E3B70 #70A8B6. Slightly raised far bank supplies depth, shoreline sides low so water reads clearly. Entire isolated lake within transparent margins, TRUE TRANSPARENT background. No terrain rectangle, no text, no shadow outside sprite. NORMAL non-snow season.",
+      "sha256": "e4630a58d4f2bbe8c3866473ca5bdb2e7d974c7d2269759746d3bd3ab4c04c50",
       "bounds": {
         "x": 2,
-        "y": 4,
-        "w": 476,
-        "h": 292
+        "y": 2,
+        "w": 474,
+        "h": 294
       }
     },
     {
@@ -85,17 +85,17 @@
     },
     {
       "id": "pond-3-snow",
-      "master": "environment/winter/masters/expansion-20261108/pond-3-snow.png",
-      "masterSha256": "963643b91df44599bd3238c3b173ce76ec505b6a66473a704d9cc7540bb6743a",
+      "master": "environment/winter/masters/expansion-20261108/pond-3-snow-organic-v2.png",
+      "masterSha256": "46b86fbc6ff2d5c031e9714376490011fb6fd51192666239d10d7055a35c50f1",
       "file": "environment/winter/pond-3-snow.png",
       "width": 480,
       "height": 298,
-      "prompt": "Make the WINTER VERSION of this exact Hogwarts Black Lake pixel game sprite. Keep SAME footprint, SAME isometric camera, SAME boathouse, broken jetty, stones, stump and dark centre. Snow lies in LARGE flat ivory stepped clusters on the boathouse roof, pier planks, stone posts and shore stones. Bare brown reeds. A narrow irregular pale blue ice shelf hugs the rim but the large BLACK INDIGO lake remains open and ominous; keep subtle squid silhouette under dark water. No added objects, no snowflakes, no background. Strict chunky pixel art: dark aubergine outline, flat clusters, two shades per material, absolutely NO gradients, antialiasing, microtextures, painted highlights or glow. Effective 240x149 pixel grid. Colors restrained to existing game palette plus #E8F0ED snow and #B7DEE0 ice. Transparent background. Whole sprite isolated with margins, identical proportions to input.",
-      "sha256": "888827595f14c42fa5a52b581dd67a47fac8c7cf601c5086ca8cc4f74c96cd7c",
+      "prompt": "Create the winter seasonal variant of this EXACT natural Black Lake pixel art sprite. Preserve every shoreline bend, rock cluster, bank height, tree silhouette, tiny boathouse, little jetty, perspective and object size precisely. Add restrained broad flat stepped snow caps to the tops of rocks, far bank, tree branches and roof. A thin irregular muted blue ice shelf at the shoreline ONLY; keep the large nearly black open-water centre and its few subtle reflections. Snow does NOT fill or whiten the water. Keep trees dark underneath snow, tiny boathouse discreet. Same chunky pixel scale, dark aubergine outlines, flat 2-3-shade clusters; NO gradients, blur, antialiasing, microtexture, glow, falling snow, monster shapes, additional objects, text or background. Palette of the input plus ivory #E8F0ED and pale blue #B7DEE0. TRUE transparent background, entire silhouette visible with margins, same 480x298 logical canvas, effective 240x149 coarse pixel grid.",
+      "sha256": "2fd50911087dca77ee9fa5a4e4f206b9cf4bf22ccd81a2394cf9d1d762a4748f",
       "bounds": {
         "x": 2,
         "y": 2,
-        "w": 476,
+        "w": 474,
         "h": 294
       }
     }
