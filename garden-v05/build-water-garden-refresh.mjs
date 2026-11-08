@@ -51,7 +51,7 @@ for(const item of provenance.assets){
   for(let y=0;y<H;y++)for(let x=0;x<W;x++){
    const col=((x+.5-128)/16+(y+.5-12)/8)/2,row=((y+.5-12)/8-(x+.5-128)/16)/2,i=(y*W+x)*4;
    if(col<0||col>=10||row<0||row>=8){out.fill(0,i,i+4);continue;}
-   if(!out[i+3]||Math.min(col,10-col,row,8-row)<.15)out.set([113,147,75,255],i);
+   if(!out[i+3]||Math.min(col,10-col,row,8-row)<.5)out.set([113,147,75,255],i);
   }
  }
  item.file=orchard?'environment/edge/orchard.png':`environment/${item.id.endsWith('snow')?'winter':'pond'}/${item.id}.png`;

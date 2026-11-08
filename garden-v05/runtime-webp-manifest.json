@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "eec3e83e5121",
+  "revision": "7e1733d217d0",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -12156,10 +12156,10 @@
       "file": "runtime-webp/environment/edge/orchard.webp",
       "width": 576,
       "height": 314,
-      "sourceBytes": 7273,
-      "bytes": 2584,
-      "sourceSha256": "1f232e6ebb761930847e13e59af6f05d78ef42692c625d51311150a8ca8b449e",
-      "sha256": "60b3fb5da4e39dcd90824691e7389b3a6080629a1377b77836aca6f0bffb4fc9"
+      "sourceBytes": 6906,
+      "bytes": 2288,
+      "sourceSha256": "5ec65cbe1a0744d0000b914e4b7cb21bb79d57c6f1bce789510881a1f612a7d9",
+      "sha256": "6aceed10787df483005a9cf368a4affc22bb79a285232c451550250d3ff08a40"
     },
     {
       "source": "environment/edge/pasture.png",
@@ -13887,9 +13887,9 @@
   "totals": {
     "converted": 1382,
     "existingWebp": 8,
-    "originalBytes": 5342757,
-    "webpBytes": 3521488,
-    "savedBytes": 1821269,
+    "originalBytes": 5342390,
+    "webpBytes": 3521192,
+    "savedBytes": 1821198,
     "savedPercent": 34.09
   }
 }
