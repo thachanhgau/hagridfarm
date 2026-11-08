@@ -249,4 +249,22 @@ Số đo thật (canvas, pivot, tâm nền, footLift) bên hình ghi vào `edge-
 - Thiếu hình thì code vẫn dùng được bản dự phòng; không có hình nào phải rơi xuống dự phòng ở bản này.
 
 ### 11.5 Số liệu đã chốt và mô phỏng
-(bên code điền)
+Client `challenges-160`, server HPVNN `codex/hagrid-challenges-160`. Không đổi gì dưới cấp 240, không đổi giá hay phần thưởng cũ. Số lấy từ `balance-data.mjs` và `garden-store-catalog.mjs` của bản này.
+
+| Thứ | Số |
+|---|---|
+| Ma da `kappa` | cấp 240, ao cá (chung 2 chỗ hồ với Thủy quái), 20 bữa (6/13/20), 2 phần; XP 120 / bữa, 1.080 / lần nhận trưởng thành; giai đoạn 7.776 / 11.664 / 19.440. `kappa_feed` 240 = 3 Dưa hổ phách + 3 Bí ngô; `kappa_fish` 242 = 3 Dưa hổ phách + 4 Cá nhỏ. Tiệm «Thức ăn Ma da» giá gốc 360 (2 phần, tối đa 2 lần/ngày) |
+| Ngựa lùn `porlock` | cấp 280, chuồng, 24 bữa (7/16/24), 2 phần; XP 92 / bữa, 828 / lần nhận; 5.962 / 8.942 / 14.904. `porlock_feed` 280 = 3 Yến mạch + 3 Cỏ ba lá; `porlock_apple` 282 = 3 Yến mạch + 2 Táo. Tiệm «Thức ăn Ngựa lùn» giá gốc 420 |
+| Việc bác Hagrid nhờ | cấp 260, 0 Galleons, xong bước trước mới làm bước sau: `edge_1` 12 giờ, 48 Đậu sao + 48 Nấm sương · `edge_2` 24 giờ, 60 Lanh + 60 Yến mạch · `edge_3` 24 giờ, 60 Hướng dương + 60 Cỏ ba lá |
+| Vườn cây | 6 hố từ `edge_3`; cây non «Cây táo / lê / mận non» ở tiệm, cấp 260, giá gốc 15 một cây (120 G theo §11.1), tối đa 6/ngày; quả đầu sau 72 giờ rồi cứ 72 giờ hái 4 quả, không XP. `CATALOG_VERSION garden-2026-11-08-edge-3` |
+
+Mô phỏng (`docs/level-500-sim/runEdge.mjs` + `sim-edge.patch`, chồng lên `runCreatures.mjs`, `runPond.mjs` và các patch trước như README; bot xây `edge_1..3` ngay khi đủ cấp và cây, giữ Ma da và Ngựa lùn khi còn chỗ, trồng đủ 6 cây táo khi xong `edge_3` và hái mỗi lượt), 2 lượt/ngày (08:00, 21:00):
+
+| Trường hợp | Cấp 200 | Cấp 300 | Cấp 500 |
+|---|---|---|---|
+| Không hồ, không đợt 2–3 | ngày 94 | 131 | 202 |
+| Đợt 1 + 2 | 93 | 128 | 196 (−3,0%) |
+| **Đợt 1 + 2 + 3 (đã chọn)** | 93 | 128 | **196 (−3,0%)** |
+| Chỉ đợt 3 | 94 | 132 | 203 |
+
+Đọc: đợt 3 giữ cấp 500 ở ngày 196, đúng rào ≥ 196 (không còn dư cho đợt sau). Bỏ Ma da hoặc bỏ Ngựa lùn thì ra ngày 197, bỏ chi phí cây của ba bước xây hay bỏ vườn cây vẫn ngày 196: mỗi con thú mới rút khoảng 1 ngày, còn lại do cây tốn ở cấp 260 bù lại; Thủy quái và Ma da vừa đủ 2 chỗ hồ nên không phải chọn giữa chúng. Quả táo không cho XP, chỉ thay một phần Cỏ ba lá của khẩu phần Ngựa lùn.

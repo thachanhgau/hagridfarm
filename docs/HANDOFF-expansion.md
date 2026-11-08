@@ -32,4 +32,4 @@ Owner: «làm cho xong đi». Làm rẻ: **mỗi lần 1 agent, Sonnet cho việ
   7. [x] (a3a7aa6) Dòng Ma da trong khay hồ (`mobile-game.mjs` ~770); `STAND_IN_TONES` cho 2 loài.
   8. [x] (ba19d87) Fixture `level=290` hiện khu.
   9. [x] (a3a7aa6) Sửa 10 test, thêm `garden-edge.test.mjs`.
-  10. Mô phỏng cấp 500 (`runCreatures.mjs` + patch) và điền §11.5; rào: ngày ≥ 196.
+  10. [x] Mô phỏng cấp 500 (`runCreatures.mjs` + patch) và điền §11.5; rào: ngày ≥ 196.

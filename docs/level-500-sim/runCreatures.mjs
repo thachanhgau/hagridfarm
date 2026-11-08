@@ -5,7 +5,9 @@
 const P = JSON.parse(process.argv[2] || '{}');
 if (P.creatures2 === false) {
   const PHASE2 = new Set(['crup', 'knarl', 'salamander']);
+  const prior0 = globalThis.__TWEAK; // chain, so runEdge.mjs's hook survives
   globalThis.__TWEAK = (raw) => {
+    prior0?.(raw);
     raw.animals = raw.animals.filter((a) => !PHASE2.has(a.id));
     raw.recipes = raw.recipes.filter((r) => !PHASE2.has(r.output.replace(/_feed$/, '')));
     raw.expansions = raw.expansions.filter((e) => !e.id.startsWith('pen_ext_'));

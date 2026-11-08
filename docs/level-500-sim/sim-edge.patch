@@ -1,0 +1,19 @@
+--- a/sim-progression.mjs
++++ b/sim-progression.mjs
+@@ -134,6 +134,7 @@
+   s = logged(log, 'claimAnimals', s, (x) => E.claimAnimals(x, null, now));
+   s = logged(log, 'harvest', s, (x) => E.harvest(x, null, null, now));
+   if (globalThis.__POND) s = globalThis.__POND(s, now, gapMs);
++  if (globalThis.__ORCHARD) s = globalThis.__ORCHARD(s, now);
+   for (let n = 0; n < 2; n += 1) {
+     const next = nextExpansion(s), before = s;
+     if (next) s = logged(log, 'build', s, (x) => E.build(x, next.id, now));
+@@ -239,6 +240,8 @@
+     }
+     for (let l = 1; l <= state.level; l += 1) if (reached[l] === undefined) reached[l] = day + 1;
+     for (const id of state.built) if (opened[id] === undefined) opened[id] = {day: day + 1, level: state.level};
++    for (const c of state.creatures) if (opened[`@${c.species}`] === undefined) opened[`@${c.species}`] = {day: day + 1, level: state.level};
++    globalThis.__BUILT = Object.fromEntries(Object.entries(opened).filter(([k]) => /^(edge|pond|@kappa|@porlock|@grindylow)/.test(k)).map(([k, v]) => [k, v.day]));
+     const galleons = spend.seeds + spend.water + spend.build;
+     daily.push({day: day + 1, level: state.level, xp: state.xp, creatures: state.creatures.length, plots: state.plots.length, ...spend, galleons, net: Math.max(0, galleons - questWater(state.level) * WATER_PRICE), festival: {...festivalDay(log, dayStart), sessions}});
+   }
