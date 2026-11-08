@@ -88,10 +88,10 @@ export const FARM_LAYOUT = Object.freeze({
 });
 
 // Garden expansion phase 2 (docs/garden-expansion-plan.md §2.2, §9): «Chuồng mở rộng» pen_ext_1..3, 5×3 like the six pens
-// and drawn with the same pen art, on the free ground south-east of thửa 12 beside chuồng 6. They never move (the
+// and drawn with the same pen art, on the free ground south-east of thửa 12 beside chuồng 6, one cell apart like the pen column (22 → 21.5 on 08/11). They never move (the
 // layout keeps six pen sockets); land creatures 13–18 take their spots, two each, in this order.
 export const EXTENSION_PENS = Object.freeze([
   {id: 'pen_ext_1', col: 27.5, row: 24.5, requiredLevel: 140, spots: [[28.4, 26.4], [31.85, 25.85]]},
-  {id: 'pen_ext_2', col: 22, row: 20.5, requiredLevel: 220, spots: [[22.9, 22.4], [26.35, 21.85]]},
-  {id: 'pen_ext_3', col: 22, row: 24.5, requiredLevel: 340, spots: [[22.9, 26.4], [26.35, 25.85]]},
+  {id: 'pen_ext_2', col: 21.5, row: 20.5, requiredLevel: 220, spots: [[22.4, 22.4], [25.85, 21.85]]},
+  {id: 'pen_ext_3', col: 21.5, row: 24.5, requiredLevel: 340, spots: [[22.4, 26.4], [25.85, 25.85]]},
 ].map(pen => Object.freeze({...pen, width: 5, height: 3})));
