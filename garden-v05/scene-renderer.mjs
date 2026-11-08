@@ -702,9 +702,9 @@ function drawHutMotion(context, x, y, clock) {
   if (!(clock > 0)) return;
   const step = Math.floor(clock / 420) % 4;
   const puffs = [
-    [-78, -194 - step * 2, 6, 4, '#d6d8bf'],
-    [-74 + (step % 2) * 2, -202 - step * 3, 8, 5, '#a6b1ae'],
-    [-70 - (step % 2) * 2, -211 - step * 3, 6, 4, 'rgba(214,216,191,.72)'],
+    [-74, -180 - step * 2, 6, 4, '#d6d8bf'],
+    [-70 + (step % 2) * 2, -188 - step * 3, 8, 5, '#a6b1ae'],
+    [-66 - (step % 2) * 2, -196 - step * 3, 6, 4, 'rgba(214,216,191,.72)'],
   ];
   for (const [dx, dy, w, h, color] of puffs) {
     rectangle(context, x + dx, y + dy, w, h, color);
