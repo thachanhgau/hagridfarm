@@ -230,7 +230,23 @@ Owner 08/11: «Bắt đầu đợt 3 … Hình nào thiếu thì Codex vẽ». K
 Số đo thật (canvas, pivot, tâm nền, footLift) bên hình ghi vào `edge-art.mjs` (`EDGE_SCENERY`) và bảng §11.4. File chỉ bên hình sửa / chỉ bên code sửa: như §9.
 
 ### 11.4 Số đo hình đã giao
-(bên hình điền)
+(bên hình điền, 08/11/2026, nhánh `edge-art`.) Số đo theo pixel native, đọc trong `edge-art.mjs` (`EDGE_SCENERY`, `EDGE_ART`, `ORCHARD_PITS`) thay vì chép tay. Cây theo đúng quy ước neo chân của đồ trang trí (§6): pivot = tâm nền + (0, 32 × footLift), gốc cây đứng đúng tâm nền (y 110). **Riêng ba nền khu đặt theo ô bản đồ, không phải đồ trang trí:** nền là chữ nhật `cols × rows` ô (bãi chăn và vườn cây **10 cột × 8 hàng**, lối mòn **2 cột × 1 hàng**), vẽ ở `iso(col, row) − (pivotX, pivotY)` với (col, row) là ô góc trên-trái của chữ nhật thì `groundCentre` rơi đúng tâm chữ nhật; đáy mực chạm góc trước của nền (pivotY − 32 × footLift = height − 2). Cột chạy xuống-phải, hàng chạy xuống-trái, nên cạnh dài 10 ô là dải cột 35–44 như §11.2. `footprint` ghi `[dài, ngắn]` như `POND_SCENERY` cho khỏi lệch dạng. Chỉ có hướng mặc định (không có góc phải cho nền khu).
+
+| Hình | File | Nền | Canvas | Pivot (chân) | Tâm nền | footLift | Khung mực |
+|---|---|---|---|---|---|---|---|
+| «Bãi chăn thả» | `environment/edge/pasture.png` | 10×8 | 576×314 | (288, 296) | (288, 168) | 4 | x2 y1 571×311 |
+| «Vườn cây» (6 hố) | `environment/edge/orchard.png` | 10×8 | 576×314 | (288, 296) | (288, 168) | 4 | x1 y25 574×287 |
+| «Lối mòn» | `environment/edge/trail.png` | 2×1 | 96×60 | (48, 50) | (48, 34) | 0,5 | x1 y11 94×47 |
+| Táo non / lớn / có quả | `environment/edge/tree-apple-{0,1,2}.png` | 2×2 | 128×144 | (64, 126) | (64, 110) | 0,5 | x52 y75 24×35 / x17 y10 93×100 / x20 y10 89×100 |
+| Lê non / lớn / có quả | `environment/edge/tree-pear-{0,1,2}.png` | 2×2 | 128×144 | (64, 126) | (64, 110) | 0,5 | x53 y74 23×36 / x30 y6 68×104 / x31 y6 67×104 |
+| Mận non / lớn / có quả | `environment/edge/tree-plum-{0,1,2}.png` | 2×2 | 128×144 | (64, 126) | (64, 110) | 0,5 | x52 y75 24×35 / x16 y12 96×98 / x16 y12 95×98 |
+| Icon item (10) | `native-items/{produce_kappa,produce_porlock,kappa_feed,porlock_feed,apple,pear,plum,sapling_apple,sapling_pear,sapling_plum}.png` | — | 64×64 | (32, 56) | — | — | ≤ 40×40, đáy hàng 56 |
+
+- **Hố cây:** `orchard.png` có đúng 6 hố đất 2×2 ô ở độ lệch `[cột, hàng]` (1,1) (4,1) (7,1) (1,4) (4,4) (7,4) từ ô góc trên-trái, khớp §11.2 (36,19) … (42,22) khi vườn ở (35, 18); ghi trong `ORCHARD_PITS`. Tâm hố do Codex vẽ lệch tối đa vài pixel so với ô lý thuyết (đã đo ở mức master); cây đặt bằng neo tâm ô 2×2 nên không thấy lệch. Mỗi cây non/lớn/có quả cùng một gốc, cây có quả là cây lớn thêm 8 quả (viền cây không khít tuyệt đối từng pixel với bản không quả, chỉ cùng dáng).
+- **Bãi chăn thả:** hàng rào gỗ thô quanh mép, cổng hở ở cạnh trước-trái, máng nước và bó cỏ khô ở góc sau; giữa để trống cho 4 loài ngựa đi lại. Ảnh vượt hình bình hành nền một chút ở cọc rào phía sau (đầu cọc cao hơn nền, y 1).
+- **Sinh vật:** `FARM_MOTION.items` có `kappa` (Ma da) và `porlock` (Ngựa lùn), canvas 96×96, pivot (48, 80), 20 khung mỗi hướng như §6; con trưởng thành Ma da 52×49, Ngựa lùn 47×54 (Ngựa lùn đi thẳng hai chân hai móng như sách). `HABITAT_ART.kappa/porlock` 40×36 (mực 36×27, pivot 20,31), `KEEPSAKE_ART.kappa/porlock` 56×56 (mực 34×44 / 28×44, pivot 28,50).
+- **Icon 16×16** `pasture`, `orchard`, `fruit` đã có trong `ICONS` của `pixel-icons.mjs`. Icon item 64×64 tìm thấy qua `flowArtSpec` (fallback `EDGE_ART` trong `flow-item-ui.mjs`).
+- Thiếu hình thì code vẫn dùng được bản dự phòng; không có hình nào phải rơi xuống dự phòng ở bản này.
 
 ### 11.5 Số liệu đã chốt và mô phỏng
 (bên code điền)

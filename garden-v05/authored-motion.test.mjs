@@ -3,10 +3,10 @@ const require=createRequire(import.meta.url),sharp=require(process.env.SHARP_MOD
 const read=file=>fs.readFile(new URL(file,import.meta.url)),hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const crop=JSON.parse(await read('crop-complete-manifest.json')),creature=JSON.parse(await read('creature-motion-assets/manifest.json'));
 const box={window:{}};vm.createContext(box);for(const file of ['motion-data.js','level-assets.js','motion-care-data.js','motion-idle-data.js','crop-complete-data.js','creature-motion-data.js'])vm.runInContext((await read(file)).toString(),box,{filename:file});
-test('all32 crops have distinct authored idle/action and all16 creatures (12 + pond grindylow + crup, knarl, salamander) have full clips in both views',async()=>{
+test('all32 crops have distinct authored idle/action and all18 creatures (12 + pond grindylow + crup, knarl, salamander + kappa, porlock) have full clips in both views',async()=>{
  assert.equal(crop.items.length,26);assert.equal(crop.items.reduce((n,i)=>n+i.frames.length,0),258);
  assert.equal(box.window.FARM_CREATURE_MOTION_STATUS.complete,true);
- const plants=box.window.FARM_MOTION.items.filter(i=>i.kind==='crop'),animals=box.window.FARM_MOTION.items.filter(i=>i.kind==='creature');assert.equal(plants.length,32);assert.equal(animals.length,16);
+ const plants=box.window.FARM_MOTION.items.filter(i=>i.kind==='crop'),animals=box.window.FARM_MOTION.items.filter(i=>i.kind==='creature');assert.equal(plants.length,32);assert.equal(animals.length,18);
  for(const item of plants){assert(new Set(item.clips.idle.frames).size>=2,item.id+' idle');assert(new Set(item.clips.action.frames).size>=4,item.id+' action');}
  for(const base of animals)for(const facing of ['default','right']){const item=creatureView(base,facing);if(facing==='right'){assert.notEqual(item,base);assert.equal(item.direction,'right-authored');assert.equal(item.clips.growth.frames.length,4);}for(const name of ['idle','action','eat','care']){const clip=item.clips[name];assert(clip&&new Set(clip.frames).size>=(name==='idle'?2:4),`${base.id}/${facing}/${name}`);assert(clip.frames.every(index=>item.frames[index]),'clip points at missing frame');}}
  const before=animals.map(i=>i.frames.length);box.window.FARM_CREATURE_MOTION_APPLY();assert.deepEqual(animals.map(i=>i.frames.length),before,'apply must be idempotent');

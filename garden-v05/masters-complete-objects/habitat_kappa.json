@@ -1,0 +1,9 @@
+{
+  "id": "habitat_kappa",
+  "kind": "habitat",
+  "species": "kappa",
+  "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nOne complete centered object on transparent 1024x1024 square: habitat_kappa. A squat mossy stone-rimmed puddle pool, ring of exactly FIVE broad grey stones around murky green-blue water, a small WOODEN BOWL floating in the pool, ONE cucumber resting on and touching the stone rim. No creature. Match habitat_grindylow reference scale and extra simple chunky broad pixel blocks. Target native only 36x28: use extraordinarily simple silhouette with about 36 logical pixel columns, no tiny details, no background. Whole pool is connected object, bowl visually inside water; no detached items.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-888bd51b-8905-4630-8b30-fd6e7cae9bb0.png",
+  "master": "masters-complete-objects/habitat_kappa.png",
+  "masterSha256": "60c1d0051064bf9e23397ecb552413794d8cceb42f79e63af4bca406aafbaee2"
+}

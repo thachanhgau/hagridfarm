@@ -1,0 +1,284 @@
+{
+  "masters": [
+    {
+      "id": "pasture",
+      "size": [
+        1152,
+        628
+      ],
+      "transparentPixels": 288858,
+      "partialAlphaPixels": 434409,
+      "bounds128": [
+        5,
+        6,
+        1147,
+        628
+      ]
+    },
+    {
+      "id": "orchard",
+      "size": [
+        1152,
+        628
+      ],
+      "transparentPixels": 369541,
+      "partialAlphaPixels": 353679,
+      "bounds128": [
+        0,
+        48,
+        1152,
+        624
+      ]
+    },
+    {
+      "id": "trail",
+      "size": [
+        768,
+        480
+      ],
+      "transparentPixels": 227487,
+      "partialAlphaPixels": 141038,
+      "bounds128": [
+        0,
+        80,
+        768,
+        464
+      ]
+    },
+    {
+      "id": "tree-apple-1",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 824347,
+      "partialAlphaPixels": 354223,
+      "bounds128": [
+        139,
+        81,
+        886,
+        881
+      ]
+    },
+    {
+      "id": "tree-pear-1",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 889889,
+      "partialAlphaPixels": 288498,
+      "bounds128": [
+        241,
+        49,
+        783,
+        881
+      ]
+    },
+    {
+      "id": "tree-plum-1",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 827409,
+      "partialAlphaPixels": 350468,
+      "bounds128": [
+        127,
+        97,
+        898,
+        881
+      ]
+    },
+    {
+      "id": "tree-apple-2",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 833970,
+      "partialAlphaPixels": 344726,
+      "bounds128": [
+        156,
+        81,
+        869,
+        881
+      ]
+    },
+    {
+      "id": "tree-apple-0",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 1150654,
+      "partialAlphaPixels": 28429,
+      "bounds128": [
+        418,
+        601,
+        606,
+        881
+      ]
+    },
+    {
+      "id": "items-sheet-b",
+      "size": [
+        1024,
+        1024
+      ],
+      "transparentPixels": 800851,
+      "partialAlphaPixels": 244961,
+      "bounds128": [
+        120,
+        64,
+        883,
+        952
+      ],
+      "cells": [
+        [
+          120,
+          64,
+          392,
+          440
+        ],
+        [
+          141,
+          64,
+          371,
+          440
+        ],
+        [
+          141,
+          64,
+          370,
+          440
+        ],
+        [
+          141,
+          64,
+          371,
+          440
+        ]
+      ]
+    },
+    {
+      "id": "tree-pear-0",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 1150912,
+      "partialAlphaPixels": 28205,
+      "bounds128": [
+        420,
+        593,
+        604,
+        881
+      ]
+    },
+    {
+      "id": "tree-pear-2",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 883511,
+      "partialAlphaPixels": 295027,
+      "bounds128": [
+        238,
+        49,
+        786,
+        881
+      ]
+    },
+    {
+      "id": "tree-plum-0",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 1154260,
+      "partialAlphaPixels": 25000,
+      "bounds128": [
+        416,
+        601,
+        609,
+        881
+      ]
+    },
+    {
+      "id": "tree-plum-2",
+      "size": [
+        1024,
+        1152
+      ],
+      "transparentPixels": 811751,
+      "partialAlphaPixels": 366453,
+      "bounds128": [
+        131,
+        97,
+        894,
+        881
+      ]
+    },
+    {
+      "id": "items-sheet-a",
+      "size": [
+        1536,
+        1024
+      ],
+      "transparentPixels": 1014091,
+      "partialAlphaPixels": 558773,
+      "bounds128": [
+        68,
+        64,
+        1480,
+        952
+      ],
+      "cells": [
+        [
+          79,
+          64,
+          432,
+          440
+        ],
+        [
+          77,
+          64,
+          434,
+          440
+        ],
+        [
+          56,
+          99,
+          456,
+          440
+        ],
+        [
+          68,
+          64,
+          444,
+          440
+        ],
+        [
+          92,
+          64,
+          419,
+          440
+        ],
+        [
+          105,
+          64,
+          407,
+          440
+        ]
+      ]
+    }
+  ],
+  "grids": [
+    "pasture",
+    "orchard",
+    "fruit"
+  ],
+  "prompts": 18
+}

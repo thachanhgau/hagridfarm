@@ -20,22 +20,22 @@ export const POND_SPECS=[spec('pond-1',3,2,30,6),spec('pond-2',4,3,38,5),spec('p
 export const POND_ITEMS=['fry_carp','fry_goldfish','goldfish','produce_grindylow'];
 // Phase 2 (plan §9): produce and feed of crup, knarl, salamander, on a 3×2 sheet (v2: produce_crup, salamander_feed redrawn, creatures-art-02b).
 export const CREATURE_2_ITEMS=['produce_crup','produce_knarl','produce_salamander','crup_feed','knarl_feed','salamander_feed'];
-const ITEM_SHEETS=[{file:'masters-items/pond/items-sheet.png',cols:2,rows:2,ids:POND_ITEMS},{file:'masters-items/creatures-2/items-sheet-v2.png',cols:3,rows:2,ids:CREATURE_2_ITEMS}],ICON={size:64,base:56,max:40};
+const ITEM_SHEETS=[{file:'masters-items/pond/items-sheet.png',cols:2,rows:2,ids:POND_ITEMS},{file:'masters-items/creatures-2/items-sheet-v2.png',cols:3,rows:2,ids:CREATURE_2_ITEMS}],ICON={size:64,base:56,max:40};export const ICON_BOX=ICON;
 
 const palette=SPRITE_PALETTE.map(h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16))),cache=new Map();
 function snap(r,g,b){const key=(r<<16)|(g<<8)|b;if(!cache.has(key)){let d=Infinity,c;for(const p of palette){const n=2*(r-p[0])**2+3*(g-p[1])**2+(b-p[2])**2;if(n<d){d=n;c=p;}}cache.set(key,c);}return cache.get(key);}
-function inkBox(data,w,h){let x0=w,y0=h,x1=-1,y1=-1;for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(data[(y*w+x)*4+3]>=192){x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);}if(x1<0)throw Error('empty master');return {x:x0,y:y0,w:x1-x0+1,h:y1-y0+1};}
-const quantize=buf=>{for(let i=0;i<buf.length;i+=4){if(buf[i+3]<192){buf.fill(0,i,i+4);continue;}buf.set(snap(buf[i],buf[i+1],buf[i+2]),i);buf[i+3]=255;}return buf;};
+export function inkBox(data,w,h){let x0=w,y0=h,x1=-1,y1=-1;for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(data[(y*w+x)*4+3]>=192){x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);}if(x1<0)throw Error('empty master');return {x:x0,y:y0,w:x1-x0+1,h:y1-y0+1};}
+export const quantize=buf=>{for(let i=0;i<buf.length;i+=4){if(buf[i+3]<192){buf.fill(0,i,i+4);continue;}buf.set(snap(buf[i],buf[i+1],buf[i+2]),i);buf[i+3]=255;}return buf;};
 // Nearest-resize the ink of `raw` to w×h and drop it on a transparent W×H canvas at (left, top).
-async function place(raw,box,w,h,W,H,left,top){
+export async function place(raw,box,w,h,W,H,left,top){
  const ink=quantize(await sharp(raw.data,{raw:raw.info}).extract({left:box.x,top:box.y,width:box.w,height:box.h}).resize(w,h,{kernel:'nearest',fit:'fill'}).raw().toBuffer());
  const out=Buffer.alloc(W*H*4);for(let y=0;y<h;y++)ink.copy(out,((top+y)*W+left)*4,y*w*4,(y+1)*w*4);return out;
 }
-async function write(file,data,W,H){
+export async function write(file,data,W,H){
  const b=inkBox(data,W,H);if(b.x<1||b.y<1||b.x+b.w>W-1||b.y+b.h>H-1)throw Error(file+': ink touches the canvas edge');
  await fs.mkdir(path.dirname(path.join(root,file)),{recursive:true});await sharp(data,{raw:{width:W,height:H,channels:4}}).png().toFile(path.join(root,file));return b;
 }
-const load=async file=>sharp(path.join(root,file)).ensureAlpha().raw().toBuffer({resolveWithObject:true});
+export const load=async file=>sharp(path.join(root,file)).ensureAlpha().raw().toBuffer({resolveWithObject:true});
 
 async function main(){
  const scenery={},items={};

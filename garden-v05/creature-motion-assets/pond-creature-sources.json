@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Pond creatures (plan §6) and phase-2 land creatures (plan §9). Masters drawn by Codex (docs/codex-briefs/pond-art-01.md, creatures-art-02.md); reduced by build-pond-creature.mjs.",
+  "note": "Pond creatures (plan §6) and phase-2 land creatures (plan §9). Masters drawn by Codex (docs/codex-briefs/pond-art-01.md, creatures-art-02.md); reduced by build-pond-creature.mjs. Phase 3 (plan §11): kappa, porlock (docs/codex-briefs/edge-art-01.md).",
   "items": [
     {
       "id": "grindylow",
@@ -209,6 +209,108 @@
           "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-ab948a61-1b2f-4bb9-90e4-cac2c1c5e207.png",
           "referenceFiles": [
             "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-3ec0d955-4f4b-487d-8dd5-0013ecc00482.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      }
+    },
+    {
+      "id": "kappa",
+      "label": "Ma da",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 54,
+        "h": 56
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/kappa-left-motion-v01.png",
+          "masterSha256": "6a140e77f9f6e6f3b857cd933733194dd8e36744055e5123700aacc93aeec1b7",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Kappa, Ma da: small stocky hunched MONKEY-LIKE water demon with long arms, bare dull GREEN-GREY SCALY skin, just a few large dark scale patches, webbed hands and feet, pointed bony monkey face, big PALE eyes and wide cheeky mouth. NO horns, NO shell, NO beak, NO hair. Essential in EVERY pose: a shallow dent on TOP of its head, rim around a clearly visible little pale-blue #70A8B6/#B7DEE0 water oval. Stockier and greyer than the horned thin Grindylow reference.\n1024x1024 sheet, exactly 16 separated sprites, 4 rows x 4 columns, invisible 256x256 cells. Each sprite centered, feet at local y=210, approximately 165x170 master pixels, at least 32 transparent pixels between all poses. Same adult size and design throughout, intended native 54x56. EVERY pose faces LEFT with nose and eyes toward IMAGE LEFT, clear 3/4 view. Everything connected to body, no detached effects; the small splash should touch head rim. Row 1 idle: rest, breathe chest up, blink, settle fingers flex and head-water ripples. Row 2 action: crouch prep, bow deeply in courtesy with head puddle tilting and one attached splash drop, straighten, shake head recovery. Row 3 eat: approach cucumber and little silver fish on ground directly touching feet; bend grasp BOTH food items; take and bite cucumber holding fish; lift and chew holding food. From pose 2 food touches hands/mouth. Row 4 care: lean toward small human hand touching shoulder (not covering head puddle), receive care eyes closed happy, blink, relaxed. Small cue hand attached at shoulder only in first 3 care poses. No extra props.\nCandidate B: emphasize a simple squat monkey silhouette, large flat pale grey-green face and body, especially prominent blue water dent visible even during bow and care. Very few broad scale patches. Make deep bow unmistakable; no turtle anatomy.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-da30d472-4e52-424e-b1c9-68518664d5c3.png",
+          "referenceFiles": [],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/kappa-right-motion-v01.png",
+          "masterSha256": "00c27861dc209efbe15473539f8d02e5bf56385d255b88faf16a0037db0c3fc4",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Kappa, Ma da: small stocky hunched MONKEY-LIKE water demon with long arms, bare dull GREEN-GREY SCALY skin, just a few large dark scale patches, webbed hands and feet, pointed bony monkey face, big PALE eyes and wide cheeky mouth. NO horns, NO shell, NO beak, NO hair. Essential in EVERY pose: a shallow dent on TOP of its head, rim around a clearly visible little pale-blue #70A8B6/#B7DEE0 water oval. Stockier and greyer than the horned thin Grindylow reference.\n1024x1024 sheet, exactly 16 separated sprites, 4 rows x 4 columns, invisible 256x256 cells. Each sprite centered, feet at local y=210, approximately 165x170 master pixels, at least 32 transparent pixels between all poses. Same adult size and design throughout, intended native 54x56. EVERY pose faces RIGHT with nose and eyes toward IMAGE RIGHT, clear 3/4 view. Everything connected to body, no detached effects; the small splash should touch head rim. Row 1 idle: rest, breathe chest up, blink, settle fingers flex and head-water ripples. Row 2 action: crouch prep, bow deeply in courtesy with head puddle tilting and one attached splash drop, straighten, shake head recovery. Row 3 eat: approach cucumber and little silver fish on ground directly touching feet; bend grasp BOTH food items; take and bite cucumber holding fish; lift and chew holding food. From pose 2 food touches hands/mouth. Row 4 care: lean toward small human hand touching shoulder (not covering head puddle), receive care eyes closed happy, blink, relaxed. Small cue hand attached at shoulder only in first 3 care poses. No extra props.\nUse attached selected LEFT design master as identity reference only. Draw a NEW sheet all facing RIGHT, nose to image RIGHT; keep lighting from TOP LEFT, do not mirror existing sheet. Keep B's broad grey-green masses and round pale eyes, head blue oval always visible. Preserve all row/column actions. Attached reference is not an edit target.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-19b46fd8-8eb4-4bd2-b7a9-6fa830ea7c74.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-da30d472-4e52-424e-b1c9-68518664d5c3.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/kappa-growth-v01.png",
+          "masterSha256": "5951ebe59f8d550e4dec6cb9f2b219f60c8121dafe94b513b1f979e1e58b2a75",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Kappa, Ma da: small stocky hunched MONKEY-LIKE water demon with long arms, bare dull GREEN-GREY SCALY skin, just a few large dark scale patches, webbed hands and feet, pointed bony monkey face, big PALE eyes and wide cheeky mouth. NO horns, NO shell, NO beak, NO hair. Essential in EVERY pose: a shallow dent on TOP of its head, rim around a clearly visible little pale-blue #70A8B6/#B7DEE0 water oval. Stockier and greyer than the horned thin Grindylow reference.\n1024x512 GROWTH sheet, exactly EIGHT separated sprites in 2 rows x 4 columns, invisible 256x256 cells. Row1 ALL face LEFT, row2 ALL face RIGHT. Columns newborn tiny round big head, juvenile, adolescent, adult identical to attached selected adult design. Adult 2.6x newborn height; target master heights 62,96,132,164 pixels. Same coarse pixel density throughout. Calm standing monkey hunch, feet all at local y=210. Center each cell, >=32px transparent gap. EVERY stage including newborn must have blue head puddle and pale eyes. No food, hands, props or effects. Reference is identity only, draw new growth sheet.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-3509db3d-93ef-4943-bdbf-62471c2d5f98.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-da30d472-4e52-424e-b1c9-68518664d5c3.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      }
+    },
+    {
+      "id": "porlock",
+      "label": "Ngựa lùn",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 52,
+        "h": 56
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/porlock-left-motion-v01.png",
+          "masterSha256": "1377403b19dfd789438ef6caa9a037daa039b202ce16961087b7ac79b52e8fce",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Porlock, Ngua lun: shy little horse guardian UPRIGHT ON EXACTLY TWO CLOVEN HOOVES, two short arms with FOUR stubby fingers each. Covered in SHAGGY BROWN FUR, rough mop of shaggy head hair, exceptionally LARGE LONG BULBOUS NOSE, small worried gentle eyes and eyebrows. Cute worried cosy guardian. No clothing, no horns. NOT four-legged pony, NOT centaur, not monkey. Hooves visible below fur, arms distinct from legs. Simple large jagged fur clusters, never fine strands.\n1024x1024, exact 4x4 sheet of 16 separated sprites in invisible 256x256 cells, feet local y=210, each adult about 158x170 master pixels, intended native 52x56. All 16 face LEFT in clear 3/4 view, nose projects IMAGE LEFT. Same adult size and design. >=32px transparent gaps, each pose fully separate and complete. Row1 idle: rest, breathe chest up, blink nose twitch, settle shaggy hair sways. Row2 action: shy backward shuffle, hides behind OWN crossed shaggy forearms over face peeking one eye (large nose still readable), lowers arms, relieved sigh. Row3 eat: approach handful of oats and ONE RED APPLE on ground touching feet; bend and grasp food; bite apple holding oats; lift and chew. From 2nd pose food touches hands/mouth. Row4 care: lean into tiny human hand touching shoulder; receive care eyes closed happy; blink; relaxed. Hand connected to shoulder only first 3 care poses. No extra props, no detached marks.\nCandidate C, second complete motion-sheet candidate. Prioritize exceptionally large projecting nose, visibly shaggy dark brown mop, gentle worried brows, squat but upright two-hoof stance. Very broad brown fur blocks with just two fur shades. CRITICAL: all SIXTEEN poses, all facing left; hiding pose has BOTH FOREARMS CROSSED OVER FACE, one eye peeking, not merely hands against cheeks. Four stubby fingers on hands; hooves split down middle.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-71d275e5-c701-47f9-a049-3744d82c0d4f.png",
+          "referenceFiles": [],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/porlock-right-motion-v01.png",
+          "masterSha256": "39a4d31a08a542e3f8ce9610f526f6cf2506f4e74c624f926e0deb2cbf205f34",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Porlock, Ngua lun: shy little horse guardian UPRIGHT ON EXACTLY TWO CLOVEN HOOVES, two short arms with FOUR stubby fingers each. Covered in SHAGGY BROWN FUR, rough mop of shaggy head hair, exceptionally LARGE LONG BULBOUS NOSE, small worried gentle eyes and eyebrows. Cute worried cosy guardian. No clothing, no horns. NOT four-legged pony, NOT centaur, not monkey. Hooves visible below fur, arms distinct from legs. Simple large jagged fur clusters, never fine strands.\n1024x1024, exact 4x4 sheet of 16 separated sprites in invisible 256x256 cells, feet local y=210, each adult about 158x170 master pixels, intended native 52x56. All 16 face RIGHT in clear 3/4 view, nose projects IMAGE RIGHT. Same adult size and design. >=32px transparent gaps, each pose fully separate and complete. Row1 idle: rest, breathe chest up, blink nose twitch, settle shaggy hair sways. Row2 action: shy backward shuffle, hides behind OWN crossed shaggy forearms over face peeking one eye (large nose still readable), lowers arms, relieved sigh. Row3 eat: approach handful of oats and ONE RED APPLE on ground touching feet; bend and grasp food; bite apple holding oats; lift and chew. From 2nd pose food touches hands/mouth. Row4 care: lean into tiny human hand touching shoulder; receive care eyes closed happy; blink; relaxed. Hand connected to shoulder only first 3 care poses. No extra props, no detached marks.\nReference is selected LEFT identity sheet only. Draw NEW RIGHT-facing sheet, all sixteen noses toward image RIGHT, top-left light retained, do not mirror the source. Retain same adult design, big nose, clear split hooves and crossed-arms hiding pose. No clothing except small human cue hand sleeve.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-8a8e3fd6-cb88-42b0-8dde-325a5db7a327.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-71d275e5-c701-47f9-a049-3744d82c0d4f.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/porlock-growth-v01.png",
+          "masterSha256": "d9840566ceb8c0a92393db4bbfcd7295fd998f03adadc5f084e1d64859307c11",
+          "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Porlock, Ngua lun: shy little horse guardian UPRIGHT ON EXACTLY TWO CLOVEN HOOVES, two short arms with FOUR stubby fingers each. Covered in SHAGGY BROWN FUR, rough mop of shaggy head hair, exceptionally LARGE LONG BULBOUS NOSE, small worried gentle eyes and eyebrows. Cute worried cosy guardian. No clothing, no horns. NOT four-legged pony, NOT centaur, not monkey. Hooves visible below fur, arms distinct from legs. Simple large jagged fur clusters, never fine strands.\n1024x512 GROWTH sheet exactly EIGHT sprites in 2 rows x4 columns, invisible 256x256 cells. Row1 all face LEFT, row2 all face RIGHT. Columns newborn TINY ROUND BIG HEAD, juvenile, adolescent, adult IDENTICAL to attached selected design. Target master heights 62,96,132,164; adult about 2.6x newborn. All stages have huge projecting nose, shaggy head mop and two clear CLOVEN HOOVES. Calm upright shy standing pose, exactly TWO LEGS TWO ARMS throughout. Same coarse pixel density. Center in cells, feet local y=210, >=32px transparent gap. No food, care hands or props. Identity reference only, draw new growth sheet.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-67ed5f4b-8615-4200-a79b-9623ca1597cc.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-71d275e5-c701-47f9-a049-3744d82c0d4f.png"
           ],
           "tool": "builtin image_gen (Codex)"
         }
