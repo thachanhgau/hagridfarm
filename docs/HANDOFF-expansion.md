@@ -23,13 +23,13 @@ Owner: «làm cho xong đi». Làm rẻ: **mỗi lần 1 agent, Sonnet cho việ
 - Server: HPVNN c3964d740 (garden-*.test.js 250/0; `garden-progression.test.mjs` 19/4 có sẵn từ trước, không do đợt 3).
 - Client: f79b28c (WIP: balance, catalog, engine, mood, kỷ vật). Test 395/10 (10 assert đếm/phiên bản cần cập nhật như đợt 2).
 - Client còn làm:
-  1. Cảnh: `EDGE_STAGE` (stage 8) trong `garden-growth.mjs` khi `built` có `edge_1`; `right` 33.5 + `edgeRight` 45.5; outline [-5.5,-.5],[33.5,-.5],[33.5,5.5],[45.5,5.5],[45.5,25.5],[33.5,25.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]; `stageContains` chặn col > 33.5 ngoài hàng 5.5–25.5; `map.columns` 46 khi có `edge_1` (canvas 2560×1440 đủ chỗ). Giữ `GARDEN_STAGES`, `backdropBoundary`.
-  2. Nền pasture/orchard/trail vẽ cạnh `drawV24Ground`, gốc = `iso(tâm chữ nhật) − groundCentre` (bãi chăn tâm 39.5,9.5; vườn cây 39.5,21.5). Cây là vật sắp theo chiều sâu tại tâm hố +.5,+.5; nạp muộn qua `deferredFiles`. Ngựa đi lại trong bãi (35–44 × 6–13) khi có `edge_2` (mẫu: Chó đuôi nĩa chạy).
-  3. Camera: `fitBounds()` trả khung cũ khi màn hẹp (điện thoại giữ zoom tối thiểu), khung mở rộng cho kéo và máy tính.
+  1. [x] (ba19d87) Cảnh: `EDGE_STAGE` (stage 8) trong `garden-growth.mjs` khi `built` có `edge_1`; `right` 33.5 + `edgeRight` 45.5; outline [-5.5,-.5],[33.5,-.5],[33.5,5.5],[45.5,5.5],[45.5,25.5],[33.5,25.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]; `stageContains` chặn col > 33.5 ngoài hàng 5.5–25.5; `map.columns` 46 khi có `edge_1` (canvas 2560×1440 đủ chỗ). Giữ `GARDEN_STAGES`, `backdropBoundary`.
+  2. [x] (ba19d87) Nền pasture/orchard/trail vẽ cạnh `drawV24Ground`, gốc = `iso(tâm chữ nhật) − groundCentre` (bãi chăn tâm 39.5,9.5; vườn cây 39.5,21.5). Cây là vật sắp theo chiều sâu tại tâm hố +.5,+.5; nạp muộn qua `deferredFiles`. Ngựa đi lại trong bãi (35–44 × 6–13) khi có `edge_2` (mẫu: Chó đuôi nĩa chạy).
+  3. [x] (ba19d87) Camera: `fitBounds()` trả khung cũ khi màn hẹp (điện thoại giữ zoom tối thiểu), khung mở rộng cho kéo và máy tính.
   4. Khay vườn cây theo mẫu `garden-pond-ui.mjs` (trồng + chọn cây non, hái hết, chặt).
   5. 3 bước edge trong UI xây: nhánh `edge` trong `progression-panels.mjs` (đang ghi «Tổng N chỗ nuôi»), icon `edge_N` dự phòng trong `ui-utils`.
   6. Tab tiệm «Cây non» (`garden-store-ui.mjs`, mẫu «Cá giống»); nhãn Táo/Lê/Mận.
   7. Dòng Ma da trong khay hồ (`mobile-game.mjs` ~770); `STAND_IN_TONES` cho 2 loài.
-  8. Fixture `level=290` hiện khu.
+  8. [x] (ba19d87) Fixture `level=290` hiện khu.
   9. Sửa 10 test, thêm `garden-edge.test.mjs`.
   10. Mô phỏng cấp 500 (`runCreatures.mjs` + patch) và điền §11.5; rào: ngày ≥ 196.
