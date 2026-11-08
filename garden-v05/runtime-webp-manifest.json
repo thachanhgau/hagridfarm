@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "f835a446f401",
+  "revision": "cd36905c28c0",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -4986,10 +4986,10 @@
       "file": "runtime-webp/native-items/produce_crup.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 542,
-      "bytes": 354,
-      "sourceSha256": "b4ba8a000cbc512c11f5e3042ccc8709da4a13457139df1a995a4c933fe3ce00",
-      "sha256": "e6e39e40c0044785eb3adcf319ce3ecc47d36a2cbe6093eb63ae04a6f0a2921d"
+      "sourceBytes": 524,
+      "bytes": 342,
+      "sourceSha256": "66acadbfa55750bcb65fd3c929b981d93151afe73d0ea5776153b3894aa9dbf3",
+      "sha256": "9c570d4020904a0c1edac862c54fbdd2b6712ae8526e6369d335dee616623921"
     },
     {
       "source": "native-items/produce_diricawl.png",
@@ -5466,10 +5466,10 @@
       "file": "runtime-webp/native-items/salamander_feed.webp",
       "width": 64,
       "height": 64,
-      "sourceBytes": 725,
-      "bytes": 446,
-      "sourceSha256": "e33a2cd7b389d27c12eb01d14978635a75c6f2a0768411086c9e5d3818034e98",
-      "sha256": "fdd29e1a8197b423d6e8cdfe9e96454f689edd6813e0787e0d9903eaff499df2"
+      "sourceBytes": 804,
+      "bytes": 526,
+      "sourceSha256": "36284f87e756fb87b4946258e7c26e07764949c7763958aba37a02ed2b218aec",
+      "sha256": "8863e8f54288b2a7d7e290e40638c2abc3435b0792feb304baeb96fef2b362ed"
     },
     {
       "source": "native-items/seed_packet.png",
@@ -13397,9 +13397,9 @@
   "totals": {
     "converted": 1333,
     "existingWebp": 8,
-    "originalBytes": 4837166,
-    "webpBytes": 3223666,
-    "savedBytes": 1613500,
+    "originalBytes": 4837227,
+    "webpBytes": 3223734,
+    "savedBytes": 1613493,
     "savedPercent": 33.36
   }
 }

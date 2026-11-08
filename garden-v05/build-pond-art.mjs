@@ -18,9 +18,9 @@ function spec(id,long,short,headroom,masterScale){
 export const POND_SPECS=[spec('pond-1',3,2,30,6),spec('pond-2',4,3,38,5),spec('pond-3',5,4,46,4),spec('pond-bed',3,1,22,8)];
 // Master sheets, row-major cells. Supply-size icons: ink ≤ 40×40 in 64×64, base on row 56 (art bible §8, V24.9.73).
 export const POND_ITEMS=['fry_carp','fry_goldfish','goldfish','produce_grindylow'];
-// Phase 2 (plan §9): produce and feed of crup, knarl, salamander, on a 3×2 sheet.
+// Phase 2 (plan §9): produce and feed of crup, knarl, salamander, on a 3×2 sheet (v2: produce_crup, salamander_feed redrawn, creatures-art-02b).
 export const CREATURE_2_ITEMS=['produce_crup','produce_knarl','produce_salamander','crup_feed','knarl_feed','salamander_feed'];
-const ITEM_SHEETS=[{file:'masters-items/pond/items-sheet.png',cols:2,rows:2,ids:POND_ITEMS},{file:'masters-items/creatures-2/items-sheet.png',cols:3,rows:2,ids:CREATURE_2_ITEMS}],ICON={size:64,base:56,max:40};
+const ITEM_SHEETS=[{file:'masters-items/pond/items-sheet.png',cols:2,rows:2,ids:POND_ITEMS},{file:'masters-items/creatures-2/items-sheet-v2.png',cols:3,rows:2,ids:CREATURE_2_ITEMS}],ICON={size:64,base:56,max:40};
 
 const palette=SPRITE_PALETTE.map(h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16))),cache=new Map();
 function snap(r,g,b){const key=(r<<16)|(g<<8)|b;if(!cache.has(key)){let d=Infinity,c;for(const p of palette){const n=2*(r-p[0])**2+3*(g-p[1])**2+(b-p[2])**2;if(n<d){d=n;c=p;}}cache.set(key,c);}return cache.get(key);}

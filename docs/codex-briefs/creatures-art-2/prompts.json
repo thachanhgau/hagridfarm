@@ -301,6 +301,75 @@
         "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-23019172-80e6-4213-a268-0d40145fdf92.png",
         "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-621d3525-a672-43c4-8b4a-ac1f7220b958.png"
       ]
+    },
+    {
+      "id": "produce_crup-v2-A",
+      "candidate": "A",
+      "prompt": "Use case: stylized-concept. Production item-icon design master. ONE isolated compact object on a real transparent RGBA 1024x1024 canvas. Coarse chunky LOW RESOLUTION pixel art, as if a 40x40 sprite enlarged with nearest-neighbour: big hard square blocks, thick continuous dark #231F2E outline around EVERY outside edge, flat colour clusters, only 2-3 shades per material, light from upper left INSIDE object only. Dimetric 2:1 inventory view. Wide transparent margins. No antialiasing, gradients, blur, soft exterior halo, glow, cast shadow, ambient occlusion, texture, dithering, speckles, wispy details, text, grid, frame or extra objects. Entire exterior pure alpha zero. Subject: ONE PLUMP TUFT OF TERRIER FUR, compact teardrop/flame silhouette with one broad pointed tip, white/cream #D6D8BF with TWO BIG TAN-BROWN PATCHES #A57554 and #735044. Must read as a single thick fur tuft, not cloud, dog head, feather or bouquet. Thick dark #231F2E outline unbroken especially along TOP and LEFT white fur. At its narrow BOTTOM, tie a THICK RED RIBBON BOW #C75B4B body #8B4A3F shadow, two big loops and two short tails all connected. Few large colour shapes readable at 40 pixels. Compact upright balanced silhouette; two tan patches separated by a broad white centre.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-41259f87-d502-44fd-94e5-d3ea40401e15.png",
+      "componentSource": "docs/codex-briefs/creatures-art-2/produce_crup-v2-candidate-A.png",
+      "master": "garden-v05/masters-items/creatures-2/items-sheet-v2.png",
+      "referenceFiles": [],
+      "selected": true,
+      "generatedFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-41259f87-d502-44fd-94e5-d3ea40401e15.png"
+      ]
+    },
+    {
+      "id": "produce_crup-v2-B",
+      "candidate": "B",
+      "prompt": "Use case: stylized-concept. Production item-icon design master. ONE isolated compact object on a real transparent RGBA 1024x1024 canvas. Coarse chunky LOW RESOLUTION pixel art, as if a 40x40 sprite enlarged with nearest-neighbour: big hard square blocks, thick continuous dark #231F2E outline around EVERY outside edge, flat colour clusters, only 2-3 shades per material, light from upper left INSIDE object only. Dimetric 2:1 inventory view. Wide transparent margins. No antialiasing, gradients, blur, soft exterior halo, glow, cast shadow, ambient occlusion, texture, dithering, speckles, wispy details, text, grid, frame or extra objects. Entire exterior pure alpha zero. Subject: ONE PLUMP TUFT OF TERRIER FUR, compact teardrop/flame silhouette with one broad pointed tip, white/cream #D6D8BF with TWO BIG TAN-BROWN PATCHES #A57554 and #735044. Must read as a single thick fur tuft, not cloud, dog head, feather or bouquet. Thick dark #231F2E outline unbroken especially along TOP and LEFT white fur. At its narrow BOTTOM, tie a THICK RED RIBBON BOW #C75B4B body #8B4A3F shadow, two big loops and two short tails all connected. Few large colour shapes readable at 40 pixels. Plump slightly leaning flame silhouette, large tan patch on left-middle and another on upper-right; very wide bold red bow at base.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-032773d8-aade-41d0-9730-f65907ffebc2.png",
+      "componentSource": "docs/codex-briefs/creatures-art-2/produce_crup-v2-candidate-B.png",
+      "master": "garden-v05/masters-items/creatures-2/items-sheet-v2.png",
+      "referenceFiles": [],
+      "selected": false,
+      "generatedFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-032773d8-aade-41d0-9730-f65907ffebc2.png"
+      ]
+    },
+    {
+      "id": "salamander_feed-v2-A",
+      "candidate": "A",
+      "prompt": "Use case: stylized-concept. Production item-icon design master. ONE isolated compact object on a real transparent RGBA 1024x1024 canvas. Coarse chunky LOW RESOLUTION pixel art, as if a 40x40 sprite enlarged with nearest-neighbour: big hard square blocks, thick continuous dark #231F2E outline around EVERY outside edge, flat colour clusters, only 2-3 shades per material, light from upper left INSIDE object only. Dimetric 2:1 inventory view. Wide transparent margins. No antialiasing, gradients, blur, soft exterior halo, glow, cast shadow, ambient occlusion, texture, dithering, speckles, wispy details, text, grid, frame or extra objects. Entire exterior pure alpha zero. Subject: ONE SHORT BUNDLE of exactly FIVE thick dry grey-brown TWIGS #687486 #735044 #A57554 tied with broad tan twine #E7AE73. Only a couple broad forks, no tiny branches. ONE BIG BRIGHT RED CHILLI lies horizontally diagonally ACROSS THE FRONT of the bundle, fully visible in front of twine, touching bundle. Chilli width is about HALF THE TOTAL ICON WIDTH; fat curved body #C75B4B with broad underside shade #8B4A3F and GREEN STALK #71934B. Chilli is clearly the brightest and strongest coloured part. Thick continuous dark outline around chilli and twig bundle. Bundle leans slightly to right; chilli crosses foreground from lower left towards upper right, big plump red belly.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-c0908cbb-50a2-4086-b8e7-a31919baf97a.png",
+      "componentSource": "docs/codex-briefs/creatures-art-2/salamander_feed-v2-candidate-A.png",
+      "master": "garden-v05/masters-items/creatures-2/items-sheet-v2.png",
+      "referenceFiles": [],
+      "selected": false,
+      "generatedFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-c0908cbb-50a2-4086-b8e7-a31919baf97a.png"
+      ]
+    },
+    {
+      "id": "salamander_feed-v2-B",
+      "candidate": "B",
+      "prompt": "Use case: stylized-concept. Production item-icon design master. ONE isolated compact object on a real transparent RGBA 1024x1024 canvas. Coarse chunky LOW RESOLUTION pixel art, as if a 40x40 sprite enlarged with nearest-neighbour: big hard square blocks, thick continuous dark #231F2E outline around EVERY outside edge, flat colour clusters, only 2-3 shades per material, light from upper left INSIDE object only. Dimetric 2:1 inventory view. Wide transparent margins. No antialiasing, gradients, blur, soft exterior halo, glow, cast shadow, ambient occlusion, texture, dithering, speckles, wispy details, text, grid, frame or extra objects. Entire exterior pure alpha zero. Subject: ONE SHORT BUNDLE of exactly FIVE thick dry grey-brown TWIGS #687486 #735044 #A57554 tied with broad tan twine #E7AE73. Only a couple broad forks, no tiny branches. ONE BIG BRIGHT RED CHILLI lies horizontally diagonally ACROSS THE FRONT of the bundle, fully visible in front of twine, touching bundle. Chilli width is about HALF THE TOTAL ICON WIDTH; fat curved body #C75B4B with broad underside shade #8B4A3F and GREEN STALK #71934B. Chilli is clearly the brightest and strongest coloured part. Thick continuous dark outline around chilli and twig bundle. Squat bundle with five blunt twig ends pointing up-right; oversized red chilli crosses centre foreground from left to right with a curved point down-left and green stalk on right.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-06430c9f-c6af-42e6-a43a-998384a07e45.png",
+      "componentSource": "docs/codex-briefs/creatures-art-2/salamander_feed-v2-candidate-B.png",
+      "master": "garden-v05/masters-items/creatures-2/items-sheet-v2.png",
+      "referenceFiles": [],
+      "selected": true,
+      "generatedFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-06430c9f-c6af-42e6-a43a-998384a07e45.png"
+      ]
+    },
+    {
+      "id": "items-sheet-v2",
+      "master": "garden-v05/masters-items/creatures-2/items-sheet-v2.png",
+      "prompt": "Use case: stylized-concept. Production item-icon design master. ONE isolated compact object on a real transparent RGBA 1024x1024 canvas. Coarse chunky LOW RESOLUTION pixel art, as if a 40x40 sprite enlarged with nearest-neighbour: big hard square blocks, thick continuous dark #231F2E outline around EVERY outside edge, flat colour clusters, only 2-3 shades per material, light from upper left INSIDE object only. Dimetric 2:1 inventory view. Wide transparent margins. No antialiasing, gradients, blur, soft exterior halo, glow, cast shadow, ambient occlusion, texture, dithering, speckles, wispy details, text, grid, frame or extra objects. Entire exterior pure alpha zero. Subject: ONE PLUMP TUFT OF TERRIER FUR, compact teardrop/flame silhouette with one broad pointed tip, white/cream #D6D8BF with TWO BIG TAN-BROWN PATCHES #A57554 and #735044. Must read as a single thick fur tuft, not cloud, dog head, feather or bouquet. Thick dark #231F2E outline unbroken especially along TOP and LEFT white fur. At its narrow BOTTOM, tie a THICK RED RIBBON BOW #C75B4B body #8B4A3F shadow, two big loops and two short tails all connected. Few large colour shapes readable at 40 pixels. Compact upright balanced silhouette; two tan patches separated by a broad white centre.\n\nUse case: stylized-concept. Production item-icon design master. ONE isolated compact object on a real transparent RGBA 1024x1024 canvas. Coarse chunky LOW RESOLUTION pixel art, as if a 40x40 sprite enlarged with nearest-neighbour: big hard square blocks, thick continuous dark #231F2E outline around EVERY outside edge, flat colour clusters, only 2-3 shades per material, light from upper left INSIDE object only. Dimetric 2:1 inventory view. Wide transparent margins. No antialiasing, gradients, blur, soft exterior halo, glow, cast shadow, ambient occlusion, texture, dithering, speckles, wispy details, text, grid, frame or extra objects. Entire exterior pure alpha zero. Subject: ONE SHORT BUNDLE of exactly FIVE thick dry grey-brown TWIGS #687486 #735044 #A57554 tied with broad tan twine #E7AE73. Only a couple broad forks, no tiny branches. ONE BIG BRIGHT RED CHILLI lies horizontally diagonally ACROSS THE FRONT of the bundle, fully visible in front of twine, touching bundle. Chilli width is about HALF THE TOTAL ICON WIDTH; fat curved body #C75B4B with broad underside shade #8B4A3F and GREEN STALK #71934B. Chilli is clearly the brightest and strongest coloured part. Thick continuous dark outline around chilli and twig bundle. Squat bundle with five blunt twig ends pointing up-right; oversized red chilli crosses centre foreground from left to right with a curved point down-left and green stalk on right.",
+      "generatedFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-41259f87-d502-44fd-94e5-d3ea40401e15.png",
+        "/Users/thachanh/.codex/generated_images/01a1b9f6-e40e-76f0-8a43-9ff4234aa5a6/exec-06430c9f-c6af-42e6-a43a-998384a07e45.png"
+      ],
+      "componentSources": [
+        "docs/codex-briefs/creatures-art-2/produce_crup-v2-candidate-A.png",
+        "docs/codex-briefs/creatures-art-2/salamander_feed-v2-candidate-B.png"
+      ],
+      "referenceFiles": [
+        "garden-v05/masters-items/creatures-2/items-sheet.png"
+      ],
+      "composition": "Original RGBA pixels retained in four cells; replace (row1,col1) with fur A and (row2,col3) with twigs B. Crop rectangle from alpha>=128 bounds without rewriting alpha, fit within 320x320 using nearest-neighbour, centre horizontally, bottom-exclusive y440. No painting or alpha modification."
     }
   ]
 }
