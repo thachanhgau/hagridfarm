@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "176347a5b402",
+  "revision": "99969277d688",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -13266,10 +13266,10 @@
       "file": "runtime-webp/environment/pond/pond-3.webp",
       "width": 480,
       "height": 298,
-      "sourceBytes": 16561,
-      "bytes": 9984,
-      "sourceSha256": "dfd889d9451e6c952a37efd31469488202bcd07a2580b2c4ced59c9ffb4a36b4",
-      "sha256": "f0e65fc58d69e4a525252d4a38729472ea594cd880421555f13859b6ef58d06b"
+      "sourceBytes": 8742,
+      "bytes": 3574,
+      "sourceSha256": "83ba56227350247675095ad18f6d9c9bc441e47c83b9f8b9a1983317bf67b674",
+      "sha256": "d8f357d0e3c48171c208cd064f649e5eea1ad4b2ebab89c448d1cdddb21af7e1"
     },
     {
       "source": "environment/pond/pond-bed.png",
@@ -13482,6 +13482,46 @@
       "sha256": "776aebe048b5a6cc4142b3d2e8854213d7c9c01c195720c5dbca4e09a5f4ac06"
     },
     {
+      "source": "environment/winter/pond-1-snow.png",
+      "file": "runtime-webp/environment/winter/pond-1-snow.webp",
+      "width": 480,
+      "height": 298,
+      "sourceBytes": 8635,
+      "bytes": 4552,
+      "sourceSha256": "c1d8254c05a5134d4474befa89f05fdd3f49a477cb967c1e09b62991982b2e0f",
+      "sha256": "ae9d04ee48ac79d53fc027fc7c7d1723293839886292d8ef1696a404f9ea55e8"
+    },
+    {
+      "source": "environment/winter/pond-2-snow.png",
+      "file": "runtime-webp/environment/winter/pond-2-snow.webp",
+      "width": 480,
+      "height": 298,
+      "sourceBytes": 8886,
+      "bytes": 3674,
+      "sourceSha256": "29fa4faf3815e3db7e88ae0a8ad5f2627c442b47c9112a528023fd73983ff77d",
+      "sha256": "74902e21f98246f6322818a98ca85e94c3645701f144dbfadff96f8da8e4f25c"
+    },
+    {
+      "source": "environment/winter/pond-3-snow.png",
+      "file": "runtime-webp/environment/winter/pond-3-snow.webp",
+      "width": 480,
+      "height": 298,
+      "sourceBytes": 9628,
+      "bytes": 4030,
+      "sourceSha256": "888827595f14c42fa5a52b581dd67a47fac8c7cf601c5086ca8cc4f74c96cd7c",
+      "sha256": "0533ae9b573cdc3b592a9534e6ab7a4017d8eb2b5f063c6986d717de0fe15bdc"
+    },
+    {
+      "source": "environment/winter/pond-bed-snow.png",
+      "file": "runtime-webp/environment/winter/pond-bed-snow.webp",
+      "width": 128,
+      "height": 88,
+      "sourceBytes": 1172,
+      "bytes": 548,
+      "sourceSha256": "af7c0e2809490420bfe478fa6c8bda51f1ca32f788b2fff9fe7464f7a5fbf87a",
+      "sha256": "ac0ac791d8ebef468bcdf6a9ef1a68f5e240d3f3ea70c7ed17bcba311013c805"
+    },
+    {
       "source": "environment/winter/pond-ice.png",
       "file": "runtime-webp/environment/winter/pond-ice.webp",
       "width": 160,
@@ -13490,6 +13530,16 @@
       "bytes": 3628,
       "sourceSha256": "0bd7f0450ed881ce60fd1d715e53837a8cda39b49df464051cc9f7260c87c37f",
       "sha256": "406896170bce56b4c1464443da5080ca850e046c4890a387b4bc95b73d4c6602"
+    },
+    {
+      "source": "environment/winter/pond-nook-snow.png",
+      "file": "runtime-webp/environment/winter/pond-nook-snow.webp",
+      "width": 192,
+      "height": 248,
+      "sourceBytes": 4921,
+      "bytes": 2866,
+      "sourceSha256": "9b2c7ee0a7c277f75fd03e0de683e812822a9c13f78d542ac38d811ddc814210",
+      "sha256": "2c2f7d7dce95dab57060ae1a14070373ab2334f7fbd267b7e6dcea66737108fb"
     },
     {
       "source": "environment/xmas/carried-tree.png",
@@ -13705,11 +13755,11 @@
     }
   ],
   "totals": {
-    "converted": 1364,
+    "converted": 1369,
     "existingWebp": 8,
-    "originalBytes": 5266385,
-    "webpBytes": 3482556,
-    "savedBytes": 1783829,
-    "savedPercent": 33.87
+    "originalBytes": 5291808,
+    "webpBytes": 3491816,
+    "savedBytes": 1799992,
+    "savedPercent": 34.01
   }
 }

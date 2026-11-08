@@ -32,6 +32,11 @@ export function winterFor(nowMs, override) {
 export const WINTER_ART = Object.freeze({
   'environment/layers/hut.png': 'environment/winter/hut-snow.png',
   'environment/layers/pond.png': 'environment/winter/pond-ice.png',
+  'environment/pond/pond-1.png': 'environment/winter/pond-1-snow.png',
+  'environment/pond/pond-2.png': 'environment/winter/pond-2-snow.png',
+  'environment/pond/pond-3.png': 'environment/winter/pond-3-snow.png',
+  'environment/pond/pond-bed.png': 'environment/winter/pond-bed-snow.png',
+  'environment/pond/pond-nook.png': 'environment/winter/pond-nook-snow.png',
   'environment/forest-v06/oak.png': 'environment/winter/oak.png',
   'environment/forest-v06/pine.png': 'environment/winter/pine.png',
   'environment/forest-v06/grove.png': 'environment/winter/grove.png',

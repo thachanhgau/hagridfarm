@@ -1,0 +1,103 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-08",
+  "pixelGrid": 2,
+  "assets": [
+    {
+      "id": "pond-3",
+      "master": "environment/winter/masters/expansion-20261108/pond-3.png",
+      "masterSha256": "aafab9b2c043010ea94b57c87adc375d18d52470d60dc652630b0a97dcbd6999",
+      "file": "environment/pond/pond-3.png",
+      "width": 480,
+      "height": 298,
+      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Redesign this large deep pond as a distinctive mysterious Hogwarts BLACK LAKE in a small magical farming game. Keep its exact isometric diamond footprint and overall flat low silhouette, same 2:1 ground perspective. Nearly black indigo water with broad muted teal shore bands, a large eerie still dark centre with just a few tiny ripple rings. Ancient crooked weathered timber boathouse with two dark openings, LOW and SMALL along back shore, one broken wooden jetty and four ancient worn stone posts, sparse dark reeds and a crooked bare stump. Little hint of a giant squid shape BELOW the water only, no creature on shore. Atmospheric and ancient, special magical lake beside a forbidden forest, NOT a swimming pool. No castle, no tall buildings, no huge tentacles, no glowing neon. Retain open middle water for game creatures. This is NORMAL non-snow version. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 240x149, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
+      "sha256": "83ba56227350247675095ad18f6d9c9bc441e47c83b9f8b9a1983317bf67b674",
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 476,
+        "h": 292
+      }
+    },
+    {
+      "id": "pond-1-snow",
+      "master": "environment/winter/masters/expansion-20261108/pond-1-snow.png",
+      "masterSha256": "f0f42c6097f6bc1c4a60bf4788654e4a4c408f7217efe4398ef8d3048586a93c",
+      "file": "environment/winter/pond-1-snow.png",
+      "width": 480,
+      "height": 298,
+      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Create the WINTER version of this exact pond. Preserve composition, footprint, shoreline, geometry and dimensions. Broad irregular ivory snow caps on every shore stone and reed base, reeds bare brown, water partially frozen in broad muted pale blue patches around the rim, dark water open in centre for creatures. Simple stepped ice cracks, no floating snowflakes, no cast shadows outside silhouette. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 240x149, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
+      "sha256": "c1d8254c05a5134d4474befa89f05fdd3f49a477cb967c1e09b62991982b2e0f",
+      "bounds": {
+        "x": 2,
+        "y": 10,
+        "w": 476,
+        "h": 286
+      }
+    },
+    {
+      "id": "pond-2-snow",
+      "master": "environment/winter/masters/expansion-20261108/pond-2-snow.png",
+      "masterSha256": "6a252c95ae8c9dd20b5d077f25c02f607705444eb0237d574f438594192e9288",
+      "file": "environment/winter/pond-2-snow.png",
+      "width": 480,
+      "height": 298,
+      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Create the WINTER version of this exact pond. Preserve composition, footprint, shoreline, geometry and dimensions. Snow banks on its shore stones and submerged log, bare frozen reeds, broad pale blue ice shelf framing a dark indigo open centre. Keep log and weed placement clearly recognizable. Simple ice fissures and a couple tiny frozen lily pads. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 240x149, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
+      "sha256": "29fa4faf3815e3db7e88ae0a8ad5f2627c442b47c9112a528023fd73983ff77d",
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 474,
+        "h": 294
+      }
+    },
+    {
+      "id": "pond-bed-snow",
+      "master": "environment/winter/masters/expansion-20261108/pond-bed-snow.png",
+      "masterSha256": "d6a0feb79792ae84c16c4d6c4616c57b46fa15ca14d9ceebb0e74c88ee39ffaa",
+      "file": "environment/winter/pond-bed-snow.png",
+      "width": 128,
+      "height": 88,
+      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Create the WINTER version of this EXACT narrow isometric aquatic plant bed. Keep exact 1 by 3 tile footprint, orientation, dimensions and low rim. Big flat ivory snow caps on grey rim stones, brown dormant reeds, water still dark open at centre for gameplay crops; simple pale blue ice along edges only. Remove summer lotus blossom. Only very few large pixel clusters, no extra objects. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 64x44, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
+      "sha256": "af7c0e2809490420bfe478fa6c8bda51f1ca32f788b2fff9fe7464f7a5fbf87a",
+      "bounds": {
+        "x": 4,
+        "y": 2,
+        "w": 118,
+        "h": 84
+      }
+    },
+    {
+      "id": "pond-nook-snow",
+      "master": "environment/winter/masters/expansion-20261108/pond-nook-snow.png",
+      "masterSha256": "64722cc228517d1a54e6e5576104c06e3dde12480353b002b62eac69af3e7dc1",
+      "file": "environment/winter/pond-nook-snow.png",
+      "width": 192,
+      "height": 248,
+      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Create the WINTER version of this EXACT willow tree and resting corner vignette. Preserve trunk, crown silhouette, lantern, bench, path and footprint. Snow lies in broad white stepped patches over upper drooping willow branches, bench seat, stone rim and ground. Keep recognizable tree anatomy, dark aubergine outlines, lantern's tiny warm amber light. No presents or Christmas ornaments. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 96x124, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
+      "sha256": "9b2c7ee0a7c277f75fd03e0de683e812822a9c13f78d542ac38d811ddc814210",
+      "bounds": {
+        "x": 2,
+        "y": 20,
+        "w": 188,
+        "h": 226
+      }
+    },
+    {
+      "id": "pond-3-snow",
+      "master": "environment/winter/masters/expansion-20261108/pond-3-snow.png",
+      "masterSha256": "963643b91df44599bd3238c3b173ce76ec505b6a66473a704d9cc7540bb6743a",
+      "file": "environment/winter/pond-3-snow.png",
+      "width": 480,
+      "height": 298,
+      "prompt": "Make the WINTER VERSION of this exact Hogwarts Black Lake pixel game sprite. Keep SAME footprint, SAME isometric camera, SAME boathouse, broken jetty, stones, stump and dark centre. Snow lies in LARGE flat ivory stepped clusters on the boathouse roof, pier planks, stone posts and shore stones. Bare brown reeds. A narrow irregular pale blue ice shelf hugs the rim but the large BLACK INDIGO lake remains open and ominous; keep subtle squid silhouette under dark water. No added objects, no snowflakes, no background. Strict chunky pixel art: dark aubergine outline, flat clusters, two shades per material, absolutely NO gradients, antialiasing, microtextures, painted highlights or glow. Effective 240x149 pixel grid. Colors restrained to existing game palette plus #E8F0ED snow and #B7DEE0 ice. Transparent background. Whole sprite isolated with margins, identical proportions to input.",
+      "sha256": "888827595f14c42fa5a52b581dd67a47fac8c7cf601c5086ca8cc4f74c96cd7c",
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 476,
+        "h": 294
+      }
+    }
+  ]
+}

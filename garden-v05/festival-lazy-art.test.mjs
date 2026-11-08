@@ -14,18 +14,31 @@ const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.jso
 
 function recordingCanvas() {
   const requested = new Set();
-  const context = new Proxy({}, {get: (o, k) => k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
+  const drawn = [];
+  const context = new Proxy({}, {get: (o, k) => k === 'drawImage' ? image => drawn.push(image.source) : k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
   class RecordingImage {
     naturalWidth = 64; naturalHeight = 64;
-    set src(value) { requested.add(value); queueMicrotask(() => this.onload?.()); }
+    set src(value) { this.source=value; requested.add(value); queueMicrotask(() => this.onload?.()); }
   }
   const canvas = {
     width: 0, height: 0, dataset: {}, getContext: () => context,
     getBoundingClientRect() { return {left: 0, top: 0, width: 1, height: 1}; },
     ownerDocument: {createElement: () => recordingCanvas().canvas, defaultView: {Image: RecordingImage}},
   };
-  return {canvas, requested};
+  return {canvas, requested, drawn};
 }
+
+test('built deep pond, aquatic beds and nook draw their authored snow variants', async () => {
+  const winterKit = await import('./garden-winter.mjs');
+  const {canvas,drawn}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+  const now=1_700_000_000_000,state=E.testProfile(500,now);
+  state.built=[...new Set([...state.built,'pond_1','pond_2','pond_3'])];
+  const options={now,clock:0,weatherMode:'snow',propsVisible:true,winterKit,pond:{beds:Array.from({length:10},()=>[null,null,null]),lots:[]}};
+  garden.render(state,options);
+  await new Promise(resolve=>setImmediate(resolve));
+  garden.render(state,options);
+  for(const id of ['pond-3','pond-bed','pond-nook'])assert.ok(drawn.includes(runtimeImageUrl('environment/winter/'+id+'-snow.png')),id+' still draws summer art');
+});
 
 test('land creatures without walk clips keep their ground anchors across animation clocks', async () => {
   const {canvas} = recordingCanvas();
@@ -90,9 +103,9 @@ test('25.0 budget: event pieces and Dobby\'s work poses load only when first dra
   for (const url of event.filter(a => noel.includes(a.id)).flatMap(urlsOf)) assert.ok(!requested.has(url), url + ' loaded with only the tent placed');
 });
 
-test('25.0 S3 budget: winter scenery (lều tuyết, hồ băng, rừng đông) loads only while winter is on', async () => {
+test('winter scenery stays deferred until winter or explicit snow is selected', async () => {
   const winterKit = await import('./garden-winter.mjs'), {WINTER_FILES, winterSeason} = winterKit;
-  assert.equal(WINTER_FILES.length, 6);
+  assert.equal(WINTER_FILES.length, 11);
   for (const file of WINTER_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
   const winterUrls = WINTER_FILES.map(runtimeImageUrl);
   const {canvas, requested} = recordingCanvas();
@@ -100,7 +113,7 @@ test('25.0 S3 budget: winter scenery (lều tuyết, hồ băng, rừng đông) 
   for (const url of winterUrls) assert.ok(!requested.has(url), url + ' loaded before the first frame');
   const state = E.testProfile(100, 1_700_000_000_000);
   garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', weatherMode: 'snow', winterKit, winter: winterSeason(Date.parse('2026-11-30T12:00:00+07:00'))});
-  for (const url of winterUrls) assert.ok(!requested.has(url), url + ' loaded outside winter (snow chosen in November)');
+  for (const url of winterUrls) assert.ok(requested.has(url), url + ' must load when snow is selected outside calendar winter');
   garden.render(state, {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', winterKit, winter: winterSeason(Date.parse('2026-12-01T12:00:00+07:00'))});
   for (const url of winterUrls) assert.ok(requested.has(url), url + ' requested once winter starts');
 });

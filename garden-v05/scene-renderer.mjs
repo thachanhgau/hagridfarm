@@ -1002,9 +1002,9 @@ export async function createGarden(canvas, options = {}) {
 
   function drawAssetTo(target, asset, x, y, breeze = null, actorMotion = null, flipX = false) {
     if (!asset) return;
-    const file = frameFile(asset);
+    const original = frameFile(asset), snowFile = winterFile(original), file = snowFile || original;
     // Snow caps every sprite but living things (noSnowCap).
-    const kind = asset.seasonalKind || (activeWeather === 'snow' && !asset.noSnowCap ? 'cap' : null);
+    const kind = snowFile ? null : asset.seasonalKind || (activeWeather === 'snow' && !asset.noSnowCap ? 'cap' : null);
     const image = asset.wither ? witherImage(file, asset.wither) : asset.coat ? coatImage(file, asset.coat) : kind ? seasonalImage(file,kind) : imageFor(file);
     if (image) {
       const left = Math.round(x - finite(asset.pivotX, 0));
@@ -1187,7 +1187,8 @@ export async function createGarden(canvas, options = {}) {
   // the tier's ground. Fish in stocked lots, a rêu tint while murky, pond creatures in the water, and the beds (1×3
   // water trays) in a row along the pond's west side, each its own depth-sorted object.
   function pondObjects(asset, winterProp, at, tier, view, creatures, clock) {
-    const spec = pondScenery(`pond-${tier}`), tierImage = spec ? imageFor(spec.file) : null;
+    const spec = pondScenery(`pond-${tier}`), snowyFile = spec && winterFile(spec.file);
+    const tierImage = spec ? snowyFile ? imageFor(snowyFile) : seasonalImage(spec.file, 'water') : null;
     const k = tierScale(tier), xy = iso(...at), [x, y] = xy;
     const hit = tierImage ? {width: spec.width, height: spec.height, pivotX: spec.pivotX, pivotY: spec.pivotY}
       : {width: asset.width * k, height: asset.height * k, pivotX: asset.pivotX * k, pivotY: asset.pivotY * k};
@@ -1215,7 +1216,7 @@ export async function createGarden(canvas, options = {}) {
     ctx.save();
     ctx.imageSmoothingEnabled = false;
     for (const [id, part] of parts) {
-      const spec = EDGE_SCENERY[id], image = imageFor(spec.file);
+      const spec = EDGE_SCENERY[id], image = seasonalImage(spec.file, 'ground');
       if (!image) continue;
       const [x, y] = iso(...part.centre);
       ctx.drawImage(image, Math.round(x - spec.groundCentre.x), Math.round(y - spec.groundCentre.y));
@@ -1228,7 +1229,7 @@ export async function createGarden(canvas, options = {}) {
     return asArray(orchard?.trees).slice(0, EDGE_LAYOUT.pits.length).flatMap((tree, i) => {
       const stage = treeStage(tree, now), spec = stage < 0 ? null : EDGE_SCENERY[`tree-${tree.kind}-${stage}`];
       if (!spec) return [];
-      const asset = {file: spec.file, width: spec.width, height: spec.height, pivotX: spec.pivotX, pivotY: spec.pivotY, noSnowCap: true};
+      const asset = {file: spec.file, width: spec.width, height: spec.height, pivotX: spec.pivotX, pivotY: spec.pivotY, seasonalKind: 'tree'};
       return [{kind: 'asset', type: 'prop', id: `orchard-${i}`, species: `tree-${tree.kind}`, asset, xy: iso(...EDGE_LAYOUT.pits[i])}];
     });
   }
@@ -1263,7 +1264,7 @@ export async function createGarden(canvas, options = {}) {
     const paddies = rects.map((r, i) => {
       const xy = iso((r.c0 + r.c1) / 2, (r.r0 + r.r1) / 2);
       return {kind: 'pond-paddy', type: 'pond-bed', id: 'pond-paddy:' + i, xy, draw: (ctx) => {
-        const image = imageFor('environment/pond/pond-bed.png');
+        const file = 'environment/pond/pond-bed.png', image = imageFor(winterFile(file) || file);
         if (!image) return;
         ctx.save(); ctx.imageSmoothingEnabled = false;
         ctx.drawImage(image, Math.round(xy[0] - 64), Math.round(xy[1] - 52), 128, 88);
@@ -1762,7 +1763,7 @@ export async function createGarden(canvas, options = {}) {
     if (options.winterKit && !kit) { kit = options.winterKit; for (const file of [...kit.WINTER_FILES, ...kit.STATUE_GLOW_FILES]) deferredFiles.add(file); }
     activeWinter = kit && options.winter?.active ? options.winter : null;
     const groundWeather = activeWinter && weatherMode === 'clear' ? 'snow' : weatherMode;
-    prepareWeather(groundWeather, activeWinter && groundWeather === 'snow' ? activeWinter.depth : 1, Boolean(activeWinter));syncBackdropLighting(atmosphereMode,weatherMode,eventMode,Boolean(activeWinter));activeEvent=eventMode;
+    prepareWeather(groundWeather, activeWinter && groundWeather === 'snow' ? activeWinter.depth : 1, Boolean(kit) && (Boolean(activeWinter) || groundWeather === 'snow'));syncBackdropLighting(atmosphereMode,weatherMode,eventMode,Boolean(activeWinter));activeEvent=eventMode;
     const creatureFacings = options.creatureFacings ?? state?.creatureFacings ?? {};
     const creatureAffinities = options.creatureAffinities ?? {};
     applyLayout(state?.layout);

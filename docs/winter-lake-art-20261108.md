@@ -1,0 +1,13 @@
+# Winter asset audit and Black Lake — 2026-11-08
+
+Owner requested a winter-asset audit, missing artwork, correct scene loading, and a distinctive deep lake matching the garden's pixel theme.
+
+Inventory: six existing winter sprites are retained (hut, small frozen pond, oak, pine, grove, log). Added five matching variants: pond-1-snow, pond-2-snow, pond-3-snow, pond-bed-snow, pond-nook-snow. The deep lake also has a new non-snow sprite: dark water, old boathouse, ruined pier, ancient posts and a submerged squid silhouette. Every new asset uses the same canvas/pivot as its summer counterpart, a two-native-pixel grid, binary alpha and sprite24 plus winter white. Large immutable masters and full prompts/hashes are versioned in garden-v05/environment/winter/masters/expansion-20261108/provenance.json (built-in image_gen). Older masters remain intact.
+
+Loading defects: the winter map covered only the six older sprites and was gated by calendar season; explicit snow outside December–February never requested it. Built ponds and aquatic beds drew imageFor directly; the expanded pasture/orchard grounds bypassed weather processing; orchard trees explicitly disabled snow caps. The renderer now resolves authored winter replacements for ponds/beds/nook, weatherizes expansion grounds and tree foliage, and loads winter sprites for explicit Snow as well as calendar winter. Warm scenes keep the deferred loading budget. The winter helper loads immediately if Snow is already selected, retaining its delayed warm-scene path.
+
+Rebuild after other original art builders: node garden-v05/build-art-refresh.mjs, node garden-v05/build-winter-expansion-art.mjs, node garden-v05/build-runtime-webp.mjs. The expansion builder preserves source masters and runtime canvas/pivot geometry, updates deep-lake bounds, and records source/output SHA-256. Sync through HPVNN's existing sync-hagrid-garden script; source masters do not ship to the public artifact.
+
+Verification: 398 passing, 2 skipped among all recursive garden-v05 *.test.mjs except the previously unavailable historical progression-engine fixture suite. New checks validate all six assets' provenance, palette, coarse grid, alpha, matching winter/summer canvases, explicit Snow loading outside winter and actual renderer selection of the three expanded water/nook variants. WebP: 1,369 decoded-RGBA-identical conversions + 8 existing files. No backend, economy, progression, creature-size or movement changes.
+
+Local only; no publication or production-data authority. The live local 3026 review remains on demo-hpvnn-garden emulators, with the existing level-500 demo garden.
