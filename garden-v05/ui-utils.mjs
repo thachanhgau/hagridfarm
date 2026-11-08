@@ -70,8 +70,10 @@ export function icon(items,id,stage=3,size=52){
  const f=frames?.[Math.min(stage,Math.max(0,(frames?.length||1)-1))];
  const wrap=el("span",{class:"sprite-icon",style:`width:${size}px;height:${size}px`});
  if(!f){wrap.classList.add("is-art-missing");wrap.setAttribute("aria-label","Thiếu ảnh: "+id);return wrap;}
- const b=f.bounds,k=Math.min(size/b.w,size/b.h),img=el("img",{src:f.file,alt:""});
- img.style.cssText=`width:${f.width*k}px;height:${f.height*k}px;left:${(size-b.w*k)/2-b.x*k}px;top:${(size-b.h*k)/2-b.y*k}px`;
+ const b=f.bounds,k=Math.min(size/b.w,size/b.h),img=el("img",{src:f.file,alt:""}),a=f.atlasRect||{x:0,y:0};
+ img.style.cssText=`width:${f.width*k}px;height:${f.height*k}px;left:${(size-b.w*k)/2-(a.x+b.x)*k}px;top:${(size-b.h*k)/2-(a.y+b.y)*k}px`;
+ // A motion-atlas frame (a creature with no native-levels stills): show the whole sheet at scale k, shifted to the frame.
+ if(f.atlasRect){img.style.width=img.style.height='';img.style.maxWidth='none';img.onload=()=>{img.style.width=img.naturalWidth*k+'px';img.style.height=img.naturalHeight*k+'px';};}
  wrap.append(img);
  return wrap;
 }
