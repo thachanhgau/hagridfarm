@@ -2,7 +2,11 @@
 
 Six creature atlases were redrawn using built-in image_gen with Kneazle and unicorn as style references. Full prompts, master paths and SHA-256 live in `garden-v05/creature-motion-assets/masters/refresh-20261108/provenance.json`. The three anatomy corrections are recorded in those prompts. Original masters remain intact.
 
-Runtime sprites retain 96×96 cells, pivot (48,80), five four-frame clips and their previous timing. Left views are offline mirrors of the authored right poses; no runtime flipping or new animation loop. The aquatic beds now use authored moss-stone pond art; planting coordinates, counts and game rules are unchanged.
+Runtime sprites retain five four-frame clips and their previous timing. Crup, Grindylow and Kappa keep 96×96 cells, pivot (48,80). Knarl, Salamander and Porlock now have approximately 30% larger native art in 128×128 cells, pivot (64,108), providing transparent margins around action poses. Left views are offline mirrors of the authored right poses; no runtime flipping or new animation loop. Planting coordinates, counts and game rules are unchanged.
+
+Owner revision: the first pond was too finely painted for the surrounding art. `pond-bed-v2.png` is a new built-in image_gen master using the original garden pond and tree as references. Packaging now uses the existing 24-color sprite rasterizer, binary alpha and a 64×44 logical pixel grid expanded to the unchanged 128×88 canvas. The test rejects soft alpha, extra colors or details finer than two native pixels. The prior pond master is retained for recovery. The corrected `build-art-refresh.mjs` preserves each provenance record's selected master path instead of forcing a filename, so a rebuild cannot silently fall back to the rejected art.
+
+Revision checks: 20 affected tests pass (refresh, authored motion, habitats, creature extensions, pond dock, object metrics). WebP pack rebuilt with decoded RGBA identity. Chrome disposable fixture on existing 3026: levels 150/230/330 render 4/7/10 pond beds; no missing files, page errors or 390px horizontal overflow. Source screenshot visually inspected. These checks cover the revision; the broader initial-run results below remain historical.
 
 Rebuild these refreshed assets with `node garden-v05/build-art-refresh.mjs`, then `node garden-v05/build-runtime-webp.mjs`. Run the refresh builder after older creature builders, which otherwise regenerate the previous art. It uses the existing silhouette recovery, palette rasterizer and atlas packer. The pond image is fitted to the existing 128×88 sprite canvas.
 

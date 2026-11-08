@@ -13,20 +13,25 @@ const records=[];
 const pondFile=path.join(game,'creature-motion-assets/pond-creatures.json');
 const pond=JSON.parse(await fs.readFile(pondFile,'utf8'));
 for(const input of inputs){
- const master=`creature-motion-assets/masters/refresh-20261108/${input.id}.png`;
+ const master=input.master;
  await fs.mkdir(path.dirname(path.join(game,master)),{recursive:true});
  if(path.resolve(input.file)!==path.join(game,master))await fs.copyFile(input.file,path.join(game,master));
  const raw=await sharp(input.file).ensureAlpha().raw().toBuffer({resolveWithObject:true});
  records.push({id:input.id,master,sha256:hash(await fs.readFile(input.file)),prompt:input.prompt,tool:'built-in image_gen',leftView:'offline horizontal mirror of authored right poses'});
  if(input.id==='pond-bed'){
-  // Packaging only: threshold the authored alpha, preserve the art and fit its existing sprite canvas.
-  for(let i=3;i<raw.data.length;i+=4)if(raw.data[i]<192)raw.data[i]=0;
-  await sharp(raw.data,{raw:raw.info}).trim().resize(128,88,{fit:'contain',kernel:'nearest',background:{r:0,g:0,b:0,alpha:0}}).png().toFile(path.join(game,'environment/pond/pond-bed.png'));
+  // Same palette and binary alpha as garden sprites; a 64×44 logical grid keeps the pond's pixel scale coarse.
+  const [pose]=authoredCells(raw,[1]);
+  const scale=Math.min(60/pose.mainBounds.w,38/pose.mainBounds.h);
+  const r=rasterize(pose,{width:64,height:44,pivotX:32,pivotY:40},{w:62,h:40},scale,new Map());
+  if(r.clippedPixels)throw Error('Pond artwork clipped');
+  await sharp(r.output,{raw:{width:64,height:44,channels:4}}).resize(128,88,{kernel:'nearest'}).png().toFile(path.join(game,'environment/pond/pond-bed.png'));
   continue;
  }
  const item=pond.items.find(x=>x.id===input.id),poses=authoredCells(raw,[4,4,4,4,4]);
  const adult=poses.slice(4),median=a=>a.sort((x,y)=>x-y)[Math.floor(a.length/2)];
- const target={w:66,h:input.id==='knarl'?52:64};
+ const bigger=['knarl','salamander','porlock'].includes(input.id);
+ item.canvas=bigger?{width:128,height:128,pivotX:64,pivotY:108}:item.canvas;
+ const target={w:bigger?86:66,h:input.id==='knarl'?68:bigger?83:64};
  const scale=Math.min((target.w-2)/median(adult.map(p=>p.mainBounds.w)),(target.h-2)/median(adult.map(p=>p.mainBounds.h)));
  const growthScale=Math.min((target.w-2)/poses[3].mainBounds.w,(target.h-2)/poses[3].mainBounds.h);
  const frames={right:[],left:[]};
@@ -34,12 +39,12 @@ for(const input of inputs){
   const rendered=rasterize(pose,item.canvas,target,index<4?growthScale:scale,new Map());
   if(rendered.clippedPixels)throw Error(`${input.id} frame ${index} clips`);
   const clip=['growth','idle','action','eat','care'][Math.floor(index/4)];
-  const right=await sharp(rendered.output,{raw:{width:96,height:96,channels:4}}).png().toBuffer();
+  const right=await sharp(rendered.output,{raw:{width:item.canvas.width,height:item.canvas.height,channels:4}}).png().toBuffer();
   for(const direction of ['right','left']){
    const bytes=direction==='right'?right:await sharp(right).flop().png().toBuffer();
    const file=`native/${input.id}/${direction}-${clip}-${String(index%4+1).padStart(2,'0')}.png`;
    await fs.writeFile(path.join(game,'creature-motion-assets',file),bytes);
-   const b=rendered.bounds,bounds=direction==='right'?b:{...b,x:96-b.x-b.w};
+   const b=rendered.bounds,bounds=direction==='right'?b:{...b,x:item.canvas.width-b.x-b.w};
    frames[direction].push({file,...item.canvas,bounds,sha256:hash(bytes),clip,sourceRect:pose.sourceRect,scale:rendered.scale});
   }
  }
