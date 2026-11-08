@@ -73,10 +73,17 @@ export function pondHome(scene, built = []) {
   return [27.5 + lift - cols / 2, -10.5 + lift + rows / 2];
 }
 
-/** The pond beds' ground: `count` 1×3 trays on «Ruộng nước» (garden-growth BED_LAND), two rows of five, a path cell
- *  between trays and between the rows. Scene drawing and decoration placement share it, so nothing is placed on a bed. */
+/** The pond beds' ground: `count` 1×3 trays on «Ruộng nước» (garden-growth BED_LAND) in two rows, the back row
+ *  floor(count/2) and the front the rest (4 → 2+2, 7 → 3+4, 10 → 5+5), each row centred near the land's middle col 9
+ *  (owner 08/11 «mấy ô nhỏ ko đẹp … cân đối»): the trays of a row touch, one walled paddy like a plot, a path row
+ *  between the rows. Scene drawing and decoration placement share
+ *  it, so nothing is placed on a bed. */
 export function pondBedRects(at, built = [], count = 0) {
-  return Array.from({length: count}, (_, b) => {const c0 = 4.5 + 2 * (b % 5), r0 = b < 5 ? -12.5 : -8.5; return {c0, c1: c0 + 1, r0, r1: r0 + 3};});
+  const back = Math.floor(count / 2);
+  return Array.from({length: count}, (_, b) => {
+    const front = b >= back, n = front ? count - back : back, c0 = Math.floor(9 - n / 2) + 0.5 + (front ? b - back : b), r0 = front ? -8.5 : -12.5;
+    return {c0, c1: c0 + 1, r0, r1: r0 + 3};
+  });
 }
 /** Pond beds by tier (server garden-pond-core): 4 at «Ao cá», 7 at «Hồ rong», 10 at «Hồ sâu». */
 export const pondBedCount = built => (built?.includes?.('pond_3') ? 10 : built?.includes?.('pond_2') ? 7 : built?.includes?.('pond_1') ? 4 : 0);
