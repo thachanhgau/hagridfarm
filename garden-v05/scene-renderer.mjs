@@ -23,7 +23,7 @@ import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.0.2';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.0.2';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.0.2';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.0.2';
-import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,GARDEN_STAGES,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
+import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,GARDEN_STAGES,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.0.2';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.0.2';
 import {CREATURE, DB, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
@@ -922,7 +922,7 @@ export async function createGarden(canvas, options = {}) {
   const westBackdrop=makeCanvas(canvas,map.width,map.height),westBack=westBackdrop.getContext('2d');
   back.imageSmoothingEnabled=false;back.drawImage(scenicBackdrop,0,0);
   westBack.imageSmoothingEnabled=false;westBack.drawImage(scenicBackdrop,0,0);
-  const backdropBoundary=stageBoundary(GARDEN_STAGES.at(-1));
+  const backdropBoundary=stageBoundary({...EDGE_STAGE,pond:true});
   const backgroundTrail=backdropExitTrail(map),seamY=map.height*.82;
   drawExitTrail(westBack,[[map.width+32,seamY],...backgroundTrail],{taperEnd:true});
   const wallpaper=canopyWallpaper(map,forestAssetSizes,backdropBoundary).map(tree=>({...tree,img:forestImages.get(tree.id)}));

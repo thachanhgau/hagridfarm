@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail,exitSignFrame,FARM_SIGN_ART} from './forest-composition.mjs';
 import {forestRectOutsideBoundary} from './forest-clearance.mjs';
 import {createBoundaryFence} from './garden-landscape.mjs';
-import {GARDEN_STAGES,stageBoundary,stageContains} from './garden-growth.mjs?v=24.9.65';
+import {GARDEN_STAGES,EDGE_STAGE,stageBoundary,stageContains} from './garden-growth.mjs?v=24.9.65';
 const map={width:2560,height:1440,origin:{x:1120,y:300},tileWidth:64,tileHeight:32};
 const sizes={oak:{width:190,height:176},pine:{width:104,height:196},grove:{width:190,height:136},log:{width:144,height:88}};
 test('groves are stable with varied sizes, silhouettes and scattered anchors',()=>{
@@ -55,12 +55,12 @@ test('the wide farm sign stays outside the fence at every land chapter',()=>{
 
 test('repeated backdrop stays wooded through the farm clearing and joins complete edge trees',async()=>{
  const {canopyWallpaper}=await import('./forest-composition.mjs');
- const boundary=stageBoundary(GARDEN_STAGES.at(-1)),trees=canopyWallpaper(map,sizes,boundary);
+ const boundary=stageBoundary({...EDGE_STAGE,pond:true}),trees=canopyWallpaper(map,sizes,boundary);
  assert.ok(trees.some(t=>!forestRectOutsideBoundary(t.rect,map,boundary)),'background must not repeat the farm clearing');
  const edge=trees.filter(t=>t.rect.left<0||t.rect.top<0||t.rect.right>map.width||t.rect.bottom>map.height);
  assert.ok(edge.length>0);
  for(const t of edge){
-  assert.ok(forestRectOutsideBoundary(t.rect,map,boundary),'edge tree must not lose its other half at the playable boundary');
+  for(const stage of [...GARDEN_STAGES,EDGE_STAGE,{...EDGE_STAGE,pond:true}])assert.ok(forestRectOutsideBoundary(t.rect,map,stageBoundary(stage)),'edge tree must not lose its other half in any expansion');
   const dx=t.rect.left<0?map.width:t.rect.right>map.width?-map.width:0,dy=t.rect.top<0?map.height:t.rect.bottom>map.height?-map.height:0;
   assert.ok(trees.some(b=>b.id===t.id&&b.rect.left===t.rect.left+dx&&b.rect.top===t.rect.top+dy),'opposite tile contains the matching canopy');
  }
