@@ -116,3 +116,27 @@ File chỉ bên hình sửa: `pixel-icons.mjs`, `pond-art.mjs`, `flow-item-ui.mj
 - **Giao diện:** nút «Hồ» trên thanh công cụ (chỉ khi có `pond`), khay `#pondDock` (`garden-pond-ui.mjs`): Kéo lưới · Vớt rêu (khi đục) · Câu cá; ô ao với chọn cá giống; luống với chọn cây nước; dòng Thủy quái mở khay Nuôi. Bậc 0: «Đào ao» = pond_1. Chạm hồ trong cảnh mở khay «Hồ». Cửa hàng có tab «Cá giống».
 - **Hình code đọc** (`POND_SCENERY` trong `garden-pond-ui.mjs`, cùng số với `pond-art.mjs`): `environment/pond/pond-{1,2,3}.png` (vẽ tại iso(col,row) − pivot), `environment/pond/pond-bed.png` (luống 1×3, phía tây hồ). Chỉ tải sau khi đã ghép nhánh hình (nhận biết qua `flowArtSpec('goldfish')`), để không có lỗi 404; test so với `runtime-webp-manifest.json`. Thiếu hình: `environment/layers/pond.png` phóng theo bậc (×1 / ×1,4 / ×1,8), luống vẽ bằng ô nước viền gỗ, Thủy quái vẽ bằng khối pixel nếu chưa có sprite. Icon `pond`, `net`, `rod`, `algae` (thiếu thì `water`, `harvest`, `quill`, `tired`); icon vật phẩm qua `itemArtKey`/`itemArtSpec` (thiếu thì icon pixel).
 - **QA:** `qa-v19/ui-fixture.html?wallet=emulator&level=140|210&simulate=1[&murky=1]`.
+
+## 8. Đợt 1: số liệu đã chốt và mô phỏng cấp 500 (server HPVNN `codex/hagrid-challenges-160`, 08/11/2026)
+| Thứ | Số |
+|---|---|
+| Bậc hồ (xây như thửa, một công trình hồ một lúc, chạy song song thửa/chuồng) | pond_1 «Ao cá» cấp 130, 12 giờ, Tảo bạc 24 + Rong nước xiết 36 + 800 G · pond_2 «Hồ rong» 200, 24 giờ, Tảo bạc 36 + Cỏ chút chít 54 + 1.200 G · pond_3 «Hồ sâu» 320, 24 giờ, Sung-quéo 48 + Cỏ mang cá 60 + 1.600 G (thửa cùng cấp: 1.000 / 1.400 / 1.800 G) |
+| Ô ao / luống | 2 / 4 / 6 ô ao; 2 luống ở bậc 1, 4 từ bậc 2, mỗi luống 3 ô |
+| Cá giống (tiệm, gói 2, cấp 130) | «Cá chép giống», «Cá vàng giống»: 34 G một gói (như gói hạt cấp 130) |
+| Cá lớn (×0,5 như cây) | cá chép 4 giờ → 3 Cá nhỏ; cá vàng 8 giờ → 1 Cá vàng; «Kéo lưới» không cho XP |
+| Luống ven hồ | Tảo bạc, Cỏ mang cá, Rong nước xiết; 1 nông sản một ô, đếm thông thạo, không luân canh/thời tiết; **XP bằng nửa thửa** (mô phỏng dưới) |
+| Rêu | 2 ngày không vào (từ cấp 130) → cá lớn nửa tốc độ tới «Vớt rêu»; nghỉ «Nhờ bác Hagrid» dừng đồng hồ |
+| Câu cá (rào #53) | token server, chu kỳ kim 1,6 s, vùng trúng ±0,12, giữa ±0,035; giữa → 1 Cá vàng, trúng → 3 Cá nhỏ, trượt → 1 Cá nhỏ; 4% Đèn bí ngô (một lần); không XP |
+| Thủy quái | cấp 150, 2 chỗ ở hồ riêng (cần Ao cá), 18 bữa, 2 phần; XP 128 / 1.152, giai đoạn 8.294 / 12.441 / 20.736; «Khẩu phần Thủy quái» = 6 Cá nhỏ + 3 Tảo bạc (hoặc + 3 Rong nước xiết từ 152) |
+| Chợ (rào #50) | Cá vàng 25 G; Rong thủy quái 32 G (loài trên cấp 94 lấy giá Rồng); bữa mua rẻ nhất ≈ 133 G; «Tiệc chuồng» chỉ cho thú trong chuồng |
+
+Mô phỏng (`docs/level-500-sim/runPond.mjs` + `sim-pond.patch`, trên bản sao `garden-v05` như README; bot xây hồ, giữ mọi ô ao thả cá chép, trồng luống mỗi lượt, câu cá mỗi ngày, nuôi Thủy quái), 2 lượt/ngày (08:00, 21:00):
+
+| Trường hợp | Cấp 200 | Cấp 300 | Cấp 500 |
+|---|---|---|---|
+| Không có hồ | ngày 94 | 131 | 202 |
+| Hồ, luống đủ XP thửa | 93 | 128 | 195 (−3,5%) |
+| **Hồ, luống nửa XP (đã chọn)** | 93 | 129 | **197 (−2,5%)** |
+| Chỉ cá + Thủy quái, luống 0 XP | 93 | 129 | 199 (−1,5%) |
+
+Cá thêm ~7.900 Cá nhỏ trong 300 ngày, nhỏ so với công thức «Nuôi cá nhỏ» (12 con một mẻ), nên kinh tế bữa ăn không đổi đáng kể; XP thêm chủ yếu từ luống và Thủy quái.

@@ -1,0 +1,23 @@
+--- a/sim-progression.mjs
++++ b/sim-progression.mjs
+@@ -81,8 +81,10 @@
+ 
+ function nextAdoption(state) {
+   const capacity = DB.expansions.filter((e) => e.kind === 'pen' && state.built.includes(e.id)).reduce((m, e) => Math.max(m, e.capacityAfter), 0);
+-  if (state.creatures.length >= capacity) return null;
+-  return DB.animals.find((a) => a.level <= state.level && !state.creatures.some((c) => c.species === a.id))?.id ?? null;
++  // Pond species (garden expansion §2.1) take the pond's own spots once pond_1 is built.
++  const land = state.creatures.filter((c) => CREATURE[c.species].habitat !== 'pond').length;
++  return DB.animals.find((a) => a.level <= state.level && !state.creatures.some((c) => c.species === a.id)
++    && (a.habitat === 'pond' ? state.built.includes('pond_1') : land < capacity))?.id ?? null;
+ }
+ 
+ function craftEverything(state, now, log = []) {
+@@ -131,6 +133,7 @@
+   s = logged(log, 'claimCraft', s, (x) => E.claimCraft(x, now));
+   s = logged(log, 'claimAnimals', s, (x) => E.claimAnimals(x, null, now));
+   s = logged(log, 'harvest', s, (x) => E.harvest(x, null, null, now));
++  if (globalThis.__POND) s = globalThis.__POND(s, now, gapMs);
+   for (let n = 0; n < 2; n += 1) {
+     const next = nextExpansion(s), before = s;
+     if (next) s = logged(log, 'build', s, (x) => E.build(x, next.id, now));
