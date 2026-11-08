@@ -383,8 +383,7 @@ function syncDuty(){const d=currentDuty(),now=Date.now();dutyChip.hidden=!d?.on;
  dutyChip.replaceChildren(pixelIcon(d.leave?'book':todo?'heart':'clock',1),el('span',{text:d.leave?'Bác Hagrid trông vườn':todo?`${todo} việc cần làm`:Number.isFinite(next)?duration(next-now):'Vườn yên ổn'}));
  const soon=todo>0||next-now<6*3600000;
  try{localStorage.setItem('hpvn.hagridDuty',String(d.leave?0:soon?now:Number.isFinite(next)?next-6*3600000:0));
-  if(!localStorage.getItem('hagrid-duty-letter')){localStorage.setItem('hagrid-duty-letter','1');dutyUi().then(m=>showHagridLetter({greeting:m.DUTY_LETTER.greeting,mode:'gift',letter:m.DUTY_LETTER}));}
-  else if(soon&&!d.leave&&localStorage.getItem('hagrid-duty-owl')!==today){localStorage.setItem('hagrid-duty-owl',today);audio.play('owl');message(todo?`🦉 Thư cú: vườn có ${todo} việc cần con ngay.`:`🦉 Thư cú: còn ${duration(next-now)} là vườn gặp chuyện.`,null,{label:'Xem',run:openDuty});}
+  if(soon&&!d.leave&&localStorage.getItem('hagrid-duty-owl')!==today){localStorage.setItem('hagrid-duty-owl',today);audio.play('owl');message(todo?`🦉 Thư cú: vườn có ${todo} việc cần con ngay.`:`🦉 Thư cú: còn ${duration(next-now)} là vườn gặp chuyện.`,null,{label:'Xem',run:openDuty});}
  }catch{}}
 setInterval(()=>{if(!document.hidden)syncDuty();},60000);
 // «Chữa cháy» (owner 01/11/2026): the owner or a visitor pays Galleons (10 G per hour left) to put the fire out.
@@ -770,9 +769,13 @@ function applyInitialView(){
 // HPVN's game frame forbids fetch (CSP connect-src in an opaque sandbox); its copy ships the manifest as a script.
 (window.FARM_DECOR_MANIFEST?Promise.resolve(window.FARM_DECOR_MANIFEST):fetch('./decor-assets-manifest.json?v=24.0').then(r=>{if(!r.ok)throw Error('Thiếu bộ tranh trang trí.');return r.json();})).then(manifest=>{const itemsV=manifest.items.map(a=>({...a,file:addV(a.file),frames:Array.isArray(a.frames)?a.frames.map(addV):undefined,rightFile:addV(a.rightFile),rightFrames:Array.isArray(a.rightFrames)?a.rightFrames.map(addV):undefined}));decorAssets.clear();for(const a of itemsV)decorAssets.set(a.id,a);return createGarden($('world'),{decorAssets:itemsV});}).then(r=>{renderer=r;loaded=true;setTimeout(loadFriendsKit,10000);setTimeout(loadWinterKit,query.get('winterDate')||new Date(Date.now()+252e5).getUTCMonth()%11<2?0:5000);refresh();camera.overview();panels?.refresh();hpvnBridge.notifyReady({level:state.level,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge});if((query.get('view')==='decor'||query.get('view')==='layout'||query.get('view')==='postcard'||query.get('view')==='events'||query.get('tour'))&&walletReady)applyInitialView();if(!setupTutorial()){const canCare=state.plots.some(p=>p.slots.some(e=>e&&!E.growth(e,E.nowFor(state,Date.now())).mature))&&(!connected||walletReady&&careLeft()>0);const text=saveProblem||(session==='lab'?'Phiên thử cấp '+state.level:canCare?'Chạm cây để chăm.':'');if(text)message(text);}if(walletReady)syncHelpers('');let last=0;function frame(t){if(t-last>=100&&!document.hidden){lastClock=t;draw(t);last=t;}requestAnimationFrame(frame);}requestAnimationFrame(frame);setInterval(()=>{if(!document.hidden)refresh();},1000);}).catch(e=>{message('Không mở được cảnh vườn: '+e.message);console.error(e);});
 
-let celebrationFocus=null,tanSucLetterDue=false;
+// Hagrid's letters go out on the level-up that crosses their level, never from storage: inside HPVN localStorage is
+// an in-memory stand-in (index.html), so a «seen» flag there is gone on the next visit and the letter came back.
+let celebrationFocus=null,tanSucLetterDue=false,dutyLetterDue=false;
+const DUTY_LEVEL=130;
 function celebrate(from,to){
  if(from<E.TAN_SUC_LEVEL&&to>=E.TAN_SUC_LEVEL)tanSucLetterDue=true;
+ if(from<DUTY_LEVEL&&to>=DUTY_LEVEL)dutyLetterDue=true;
  playtest.track('level_up',{level:to});
  audio.play('levelUp');
  const list=$('unlockList');list.replaceChildren();
@@ -782,7 +785,7 @@ function celebrate(from,to){
  for(const row of DB.levels.slice(from,to))list.append(el('li',{title:'Cấp '+row.level+': '+row.unlock},[levelUnlockVisual(row,DB,items,48).visual,el('span',{text:row.unlock.split(/[;·]/)[0]})]));
  const card=$('levelCelebration');$('celebrationLevel').replaceChildren(...(to>E.TAN_SUC_LEVEL?tanSucMark(to-E.TAN_SUC_LEVEL):[String(to)]));$('celebrationTitle').textContent=to>E.TAN_SUC_LEVEL?'Bậc Tận Sức '+(to-E.TAN_SUC_LEVEL)+'!':'Lên cấp '+to+'!';celebrationFocus=document.activeElement;card.classList.remove('is-bursting');card.hidden=false;void card.offsetWidth;card.classList.add('is-bursting');$('closeCelebration').focus();
 }
-function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.focus();if(tanSucLetterDue){tanSucLetterDue=false;wizard.openLetter('tanSuc');}}
+function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.focus();if(tanSucLetterDue){tanSucLetterDue=false;wizard.openLetter('tanSuc');}else if(dutyLetterDue){dutyLetterDue=false;dutyUi().then(m=>showHagridLetter({greeting:m.DUTY_LETTER.greeting,mode:'gift',letter:m.DUTY_LETTER}));}}
 $('closeCelebration').onclick=closeCelebration;
 $('levelCelebration').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closeCelebration();}if(e.key==='Tab'){e.preventDefault();$('closeCelebration').focus();}});
 const rotateCreatureBtn=button('Xoay',()=>{rotateCreatureFacing(species);},{id:'rotateCreatureButton','aria-label':'Đổi hướng nhìn của sinh vật'});
