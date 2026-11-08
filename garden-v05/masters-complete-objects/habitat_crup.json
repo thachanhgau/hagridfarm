@@ -1,0 +1,9 @@
+{
+  "id": "habitat_crup",
+  "kind": "habitat",
+  "species": "crup",
+  "prompt": "Use case: stylized-concept. Single complete object master, 1024x1024 real transparent background: a SMALL WOODEN DOG KENNEL, squat broad simple silhouette, plank walls, pitched roof of darker brown shingles, ROUND DARK DOORWAY, one small FOOD BOWL beside it touching kennel side. NO animal. Cozy Hagrid Farm building, clear 2:1 isometric dimetric three-quarter camera, door on left visible front, right wall shaded. Designed to become only36x28 native pixels: extraordinarily simple, few giant flat pixel blocks, just 3-4 broad plank divisions and 4 large roof shingles, no woodgrain. Match attached habitat reference's coarse pixel density. Thick dark #231F2E outline, lighting upper-left, at most2-3 shades per material, wood #735044 #A57554 #C97952, roof #4A3042 #735044, bowl #687486 #A6B1AE, highlights #E7AE73. Single centered object with generous transparent margins. No ground tile, landscape, cast shadow, extra props, text, frame, watermark, antialiasing, gradient, glow, dithering or noise. Every logical pixel a large hard flat square.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-23e33a19-ee3e-4e81-9016-872e65d5c91f.png",
+  "master": "masters-complete-objects/habitat_crup.png",
+  "masterSha256": "abd619d98b60c89b6c657ab96c2653c1ee70ee96cae03f814675a21cc270cf0c"
+}

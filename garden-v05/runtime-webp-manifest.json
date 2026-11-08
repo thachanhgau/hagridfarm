@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "9a2528c1c068",
+  "revision": "f835a446f401",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -3892,6 +3892,16 @@
       "sha256": "4c83eb62552c1c5fa41c34e0428de1b975d4a354a5f6d0d62cfec83f2e1214e5"
     },
     {
+      "source": "native-items/crup_feed.png",
+      "file": "runtime-webp/native-items/crup_feed.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 586,
+      "bytes": 376,
+      "sourceSha256": "1588cfaaeb7fc1a2cbdd0dc891e6d96a15904215999313b12209eebed0b173d9",
+      "sha256": "bf95f26263816729e477241453d6532cc2b15ec12fe08beea7431b519e169c09"
+    },
+    {
       "source": "native-items/decoration-11_right.png",
       "file": "runtime-webp/native-items/decoration-11_right.webp",
       "width": 96,
@@ -4832,6 +4842,16 @@
       "sha256": "3541ec40f1d62a6f795650bd9ce4dbca933f12b0954db06e6dbb7de4c0023458"
     },
     {
+      "source": "native-items/knarl_feed.png",
+      "file": "runtime-webp/native-items/knarl_feed.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 929,
+      "bytes": 598,
+      "sourceSha256": "4367fe373b160311cac2df1222f9b9703715323bb2bd20698deeb9e8afe369ac",
+      "sha256": "5e33ea934b91485bf3e2f4cd6359d723b8cd19c3989806b9709c80f4d27c5a83"
+    },
+    {
       "source": "native-items/pen_1.png",
       "file": "runtime-webp/native-items/pen_1.webp",
       "width": 128,
@@ -4962,6 +4982,16 @@
       "sha256": "567dc6a2e04acc1afaa0fe61b088f927574ed065e9a64f6b2eaed6904906d619"
     },
     {
+      "source": "native-items/produce_crup.png",
+      "file": "runtime-webp/native-items/produce_crup.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 542,
+      "bytes": 354,
+      "sourceSha256": "b4ba8a000cbc512c11f5e3042ccc8709da4a13457139df1a995a4c933fe3ce00",
+      "sha256": "e6e39e40c0044785eb3adcf319ce3ecc47d36a2cbe6093eb63ae04a6f0a2921d"
+    },
+    {
       "source": "native-items/produce_diricawl.png",
       "file": "runtime-webp/native-items/produce_diricawl.webp",
       "width": 64,
@@ -5012,6 +5042,16 @@
       "sha256": "acf358f01fe9fa5f3572412dfe4ea2e117ccb28f29f1fa9625cf982c6853b26d"
     },
     {
+      "source": "native-items/produce_knarl.png",
+      "file": "runtime-webp/native-items/produce_knarl.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 590,
+      "bytes": 376,
+      "sourceSha256": "501954a5ec1e4d4d0f796b9cebd578939d5aabd96cfb7fa8322564f6aa93f51d",
+      "sha256": "e68f449f274a96ffa427cbc41c963bbfd9d9e7201fe2609e287bd70c402dee4f"
+    },
+    {
       "source": "native-items/produce_kneazle.png",
       "file": "runtime-webp/native-items/produce_kneazle.webp",
       "width": 64,
@@ -5050,6 +5090,16 @@
       "bytes": 872,
       "sourceSha256": "b5a6189708f3c14ff3937ed946b560d5ca21b0ca959413638824ec3f1755cfbc",
       "sha256": "214fdfcafefdda9e0bb13c98152ec438ef5a5b9a3a1482b049ee7a9ae54f1d65"
+    },
+    {
+      "source": "native-items/produce_salamander.png",
+      "file": "runtime-webp/native-items/produce_salamander.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 847,
+      "bytes": 526,
+      "sourceSha256": "706ac632eec362dec3beaec177386b7c9e27526b461a9c575db95ab984a3b878",
+      "sha256": "d0046ac82e4695b115122c6111d432b17ee5f5bf0c669db5320f01f21adbdd24"
     },
     {
       "source": "native-items/produce_thestral/frame-01.png",
@@ -5412,6 +5462,16 @@
       "sha256": "2cc0c8a61001c537869d5723d7e328af4447e9aa30de4229f5dbc5939ccb02eb"
     },
     {
+      "source": "native-items/salamander_feed.png",
+      "file": "runtime-webp/native-items/salamander_feed.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 725,
+      "bytes": 446,
+      "sourceSha256": "e33a2cd7b389d27c12eb01d14978635a75c6f2a0768411086c9e5d3818034e98",
+      "sha256": "fdd29e1a8197b423d6e8cdfe9e96454f689edd6813e0787e0d9903eaff499df2"
+    },
+    {
       "source": "native-items/seed_packet.png",
       "file": "runtime-webp/native-items/seed_packet.webp",
       "width": 64,
@@ -5552,6 +5612,16 @@
       "sha256": "0a7e9cd078e12e0f5c123ea20f32e35d7d610e3a4337b457d067c336577fc8a1"
     },
     {
+      "source": "native-complete-objects/habitat_crup/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_crup/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 474,
+      "bytes": 336,
+      "sourceSha256": "9085c6a7996d908fffe8ba6285646731581bfd5918260319af8e177a5454e20e",
+      "sha256": "222d904f3d025e201f08f643b0e02b1d89c5bcd0927757ff2c67447d79720a21"
+    },
+    {
       "source": "native-complete-objects/habitat_diricawl/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_diricawl/frame-01.webp",
       "width": 40,
@@ -5602,6 +5672,16 @@
       "sha256": "4ef26339adde0883c359ef901565f153f4d276c0bd84b963e486fcd085dd9f14"
     },
     {
+      "source": "native-complete-objects/habitat_knarl/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_knarl/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 463,
+      "bytes": 322,
+      "sourceSha256": "0f937b568b75d91576af25977f64413f03120b3a71b82adcd67491ecfd1054b8",
+      "sha256": "8e63f35467d8e3f5ccf4ba01833c5900a6eda67c37ef54a13b40ec6aa900693a"
+    },
+    {
       "source": "native-complete-objects/habitat_kneazle/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_kneazle/frame-01.webp",
       "width": 40,
@@ -5640,6 +5720,16 @@
       "bytes": 388,
       "sourceSha256": "b771cf2a44b71e6d0f25bf7d85cdff26c435442dc1e9077386ea46a3cf83972a",
       "sha256": "c2c706b7abd464ef19587bd784cf42c2993c38df9ddceedd7d8225478ff95043"
+    },
+    {
+      "source": "native-complete-objects/habitat_salamander/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_salamander/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 465,
+      "bytes": 326,
+      "sourceSha256": "c15a2561b614845c723e6faa73d96eb98c67836d1b1e243e779fb15a25148ac1",
+      "sha256": "f14f7523ad8c27fa49fc5afc1cf5e8dc12bee988a3b6ead18841306ae5177fee"
     },
     {
       "source": "native-complete-objects/habitat_thestral/frame-01.png",
@@ -5722,6 +5812,16 @@
       "sha256": "2fe65ca3066993901c0b1e050493a690e9d9466abe9486fda7210d9c498cbea8"
     },
     {
+      "source": "native-complete-objects/keepsake_crup/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_crup/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 815,
+      "bytes": 566,
+      "sourceSha256": "eef9e20dc2d237bd9381218896e91f2ad0c4576fb08f9c02b449b0780ebcb266",
+      "sha256": "c6a6c6f46bb9dd3ca024cbaba014bc8c701a6b236385645bff14c2fbd3cfa269"
+    },
+    {
       "source": "native-complete-objects/keepsake_diricawl/frame-01.png",
       "file": "runtime-webp/native-complete-objects/keepsake_diricawl/frame-01.webp",
       "width": 56,
@@ -5772,6 +5872,16 @@
       "sha256": "0785aed94b2f9ade85626af3e84a8621c73c0b2ea485c61f8c4a694d947ab202"
     },
     {
+      "source": "native-complete-objects/keepsake_knarl/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_knarl/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 816,
+      "bytes": 602,
+      "sourceSha256": "2c70ce974b19a185e573e8abe9b4d85f07ff49e5e46d4a77a94be3a200061746",
+      "sha256": "fe2751fff1611bb1fc1a14ed276df289571d3be1eca0a0f16f27e18cd881fde7"
+    },
+    {
       "source": "native-complete-objects/keepsake_kneazle/frame-01.png",
       "file": "runtime-webp/native-complete-objects/keepsake_kneazle/frame-01.webp",
       "width": 56,
@@ -5810,6 +5920,16 @@
       "bytes": 594,
       "sourceSha256": "a6ee5a7b30aa893ee191f993dbc8cda73cab5e804c8fd84387da154ae6ea5912",
       "sha256": "27110e5432c2f3164de52b867b12047279b72a94225f996426987262ac9b1557"
+    },
+    {
+      "source": "native-complete-objects/keepsake_salamander/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_salamander/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 844,
+      "bytes": 574,
+      "sourceSha256": "0d537a6b001c9c2fc72c6352a892037f482d97405ddd77b5ab5d451409c9e2bf",
+      "sha256": "b2dca084d4a95738f4c45c58f5df3bb46298aa346c2416a02ebf406c3fb45913"
     },
     {
       "source": "native-complete-objects/keepsake_thestral/frame-01.png",
@@ -6252,6 +6372,26 @@
       "sha256": "6738e99f8c022421cdd91422254f1700412d40b39bf33ea82458e8815b4dfd80"
     },
     {
+      "source": "creature-motion-assets/native/crup/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/crup/left-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 17923,
+      "bytes": 10084,
+      "sourceSha256": "80576323dbb8e4b7c3370e739d065f501b1705e2d1215504b1d52414ed07f088",
+      "sha256": "c444d11bc5c08b36ae2ca7fa7dc4fecdc73116398443ee4af253dd551043d2b9"
+    },
+    {
+      "source": "creature-motion-assets/native/crup/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/crup/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 16651,
+      "bytes": 9512,
+      "sourceSha256": "459f630e1bf70ccbb23fef4ac02e9876fbe4b064d068f29163dc02a8e18a70ab",
+      "sha256": "71cf959e3097d641803ac363491d909f0a78ed1687b9b15d824bcd63e51edf48"
+    },
+    {
       "source": "creature-motion-assets/native/diricawl/left-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/diricawl/left-atlas.webp",
       "width": 384,
@@ -6352,6 +6492,26 @@
       "sha256": "5bdfbc4ed6710ff294f2ffde6a2617299b399833c4b9b72a17dcd60b0cc6d2db"
     },
     {
+      "source": "creature-motion-assets/native/knarl/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/knarl/left-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 17503,
+      "bytes": 9952,
+      "sourceSha256": "cca5ac97243f6159a1c1b0038199b817da0b8aab6155fc2cdbdcb6175caa128c",
+      "sha256": "45ebd34ac8e67dd1838ea9508343b45c9f573f3f6f1f21d1c0af5d261ac88df7"
+    },
+    {
+      "source": "creature-motion-assets/native/knarl/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/knarl/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 17153,
+      "bytes": 9948,
+      "sourceSha256": "0f991180a14f5a159decec96a4a29a47e8252187a1cee3f5f9c796965f68b967",
+      "sha256": "07c708358b81fd3d2c8974c52e21cd9cad5a46037e960cca9bf80235ff651735"
+    },
+    {
       "source": "creature-motion-assets/native/kneazle/left-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/kneazle/left-atlas.webp",
       "width": 384,
@@ -6430,6 +6590,26 @@
       "bytes": 2404,
       "sourceSha256": "03d61c135b226df1e0259a179c4b2f149290d1bd30d14e1545af78610705a3ec",
       "sha256": "57d8654e74353887e41c21cf77da106c068270ae750b67a31f554731356e5701"
+    },
+    {
+      "source": "creature-motion-assets/native/salamander/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/salamander/left-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 15505,
+      "bytes": 8928,
+      "sourceSha256": "8b13cb4d5c7f33ca83c729bbf54417ba0296773fa521461193204c686d2581d1",
+      "sha256": "d37b39e144ccf71d361871024730d9bbda6610c86491e0798d6b914a9be6ab10"
+    },
+    {
+      "source": "creature-motion-assets/native/salamander/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/salamander/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 14724,
+      "bytes": 8522,
+      "sourceSha256": "4ab0694934d048eb0db73f669e99eb854f623bbbc7f5e51668c4636908d882e1",
+      "sha256": "72609b4f5dbcc9a5148aa1b79b378772c952b7552836c3bfdec9da57616b899b"
     },
     {
       "source": "creature-motion-assets/native/thestral/left-atlas.png",
@@ -13215,11 +13395,11 @@
     }
   ],
   "totals": {
-    "converted": 1315,
+    "converted": 1333,
     "existingWebp": 8,
-    "originalBytes": 4729611,
-    "webpBytes": 3161318,
-    "savedBytes": 1568293,
-    "savedPercent": 33.16
+    "originalBytes": 4837166,
+    "webpBytes": 3223666,
+    "savedBytes": 1613500,
+    "savedPercent": 33.36
   }
 }

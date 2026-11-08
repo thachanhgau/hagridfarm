@@ -1,0 +1,988 @@
+{
+  "masters": [
+    {
+      "id": "crup-left-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/crup-left-motion-v01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 692032,
+      "alphaPartial": 355700,
+      "sha256": "818170617b80d31390a22f3a03e7c047c3ab68df5c6f565ca6a13135b8981b82",
+      "cellBoundsAlpha128": [
+        [
+          46,
+          59,
+          209,
+          210
+        ],
+        [
+          48,
+          51,
+          207,
+          210
+        ],
+        [
+          48,
+          59,
+          207,
+          210
+        ],
+        [
+          41,
+          66,
+          215,
+          210
+        ],
+        [
+          44,
+          82,
+          212,
+          210
+        ],
+        [
+          48,
+          32,
+          208,
+          210
+        ],
+        [
+          38,
+          79,
+          217,
+          210
+        ],
+        [
+          39,
+          65,
+          217,
+          210
+        ],
+        [
+          34,
+          66,
+          222,
+          210
+        ],
+        [
+          39,
+          71,
+          217,
+          210
+        ],
+        [
+          35,
+          64,
+          220,
+          210
+        ],
+        [
+          40,
+          55,
+          215,
+          210
+        ],
+        [
+          44,
+          30,
+          212,
+          210
+        ],
+        [
+          43,
+          33,
+          212,
+          210
+        ],
+        [
+          42,
+          35,
+          214,
+          210
+        ],
+        [
+          43,
+          55,
+          213,
+          210
+        ]
+      ]
+    },
+    {
+      "id": "crup-right-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/crup-right-motion-v01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 682788,
+      "alphaPartial": 365106,
+      "sha256": "516ce4edbfaa74462f57cbb2975b0e586d44ceb63b2d1ab6969b438d89ddcfdb",
+      "cellBoundsAlpha128": [
+        [
+          43,
+          56,
+          213,
+          210
+        ],
+        [
+          43,
+          52,
+          212,
+          210
+        ],
+        [
+          45,
+          56,
+          211,
+          210
+        ],
+        [
+          40,
+          61,
+          216,
+          210
+        ],
+        [
+          40,
+          82,
+          216,
+          210
+        ],
+        [
+          42,
+          34,
+          214,
+          210
+        ],
+        [
+          35,
+          80,
+          221,
+          210
+        ],
+        [
+          37,
+          68,
+          219,
+          210
+        ],
+        [
+          32,
+          64,
+          223,
+          210
+        ],
+        [
+          37,
+          84,
+          218,
+          210
+        ],
+        [
+          33,
+          66,
+          223,
+          210
+        ],
+        [
+          36,
+          57,
+          219,
+          210
+        ],
+        [
+          33,
+          31,
+          222,
+          210
+        ],
+        [
+          33,
+          30,
+          223,
+          210
+        ],
+        [
+          33,
+          32,
+          223,
+          210
+        ],
+        [
+          37,
+          50,
+          219,
+          210
+        ]
+      ]
+    },
+    {
+      "id": "crup-growth-v01",
+      "master": "garden-v05/creature-motion-assets/masters/crup-growth-v01.png",
+      "size": [
+        1024,
+        512
+      ],
+      "alphaZero": 442628,
+      "alphaPartial": 81396,
+      "sha256": "1a65d99e9d9aa247bdd9683dd9494fc4772450c3782a6509f2ebbb44f408b519",
+      "cellBoundsAlpha128": [
+        [
+          89,
+          153,
+          167,
+          210
+        ],
+        [
+          76,
+          122,
+          180,
+          210
+        ],
+        [
+          63,
+          92,
+          192,
+          210
+        ],
+        [
+          48,
+          60,
+          207,
+          210
+        ],
+        [
+          89,
+          153,
+          166,
+          210
+        ],
+        [
+          76,
+          122,
+          179,
+          210
+        ],
+        [
+          61,
+          92,
+          194,
+          210
+        ],
+        [
+          47,
+          60,
+          209,
+          210
+        ]
+      ],
+      "growthHeights": [
+        57,
+        88,
+        118,
+        150,
+        57,
+        88,
+        118,
+        150
+      ]
+    },
+    {
+      "id": "knarl-left-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/knarl-left-motion-v01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 727379,
+      "alphaPartial": 320982,
+      "sha256": "1ebf61c9bce455c8df7ee042d95d3991f132c04eccef1b27b2db409ef5c4ca7c",
+      "cellBoundsAlpha128": [
+        [
+          47,
+          85,
+          209,
+          210
+        ],
+        [
+          47,
+          81,
+          209,
+          210
+        ],
+        [
+          47,
+          81,
+          208,
+          210
+        ],
+        [
+          45,
+          70,
+          210,
+          210
+        ],
+        [
+          48,
+          86,
+          208,
+          210
+        ],
+        [
+          54,
+          66,
+          201,
+          210
+        ],
+        [
+          48,
+          70,
+          207,
+          210
+        ],
+        [
+          44,
+          79,
+          211,
+          210
+        ],
+        [
+          32,
+          62,
+          224,
+          210
+        ],
+        [
+          36,
+          64,
+          219,
+          210
+        ],
+        [
+          45,
+          74,
+          210,
+          210
+        ],
+        [
+          45,
+          76,
+          210,
+          210
+        ],
+        [
+          34,
+          81,
+          222,
+          210
+        ],
+        [
+          36,
+          100,
+          219,
+          210
+        ],
+        [
+          36,
+          99,
+          219,
+          210
+        ],
+        [
+          45,
+          97,
+          210,
+          210
+        ]
+      ]
+    },
+    {
+      "id": "habitat_crup",
+      "master": "garden-v05/masters-complete-objects/habitat_crup.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 657790,
+      "alphaPartial": 389179,
+      "sha256": "abd619d98b60c89b6c657ab96c2653c1ee70ee96cae03f814675a21cc270cf0c"
+    },
+    {
+      "id": "knarl-right-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/knarl-right-motion-v01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 736781,
+      "alphaPartial": 311443,
+      "sha256": "d6e0212fe41d9fb3d294f4348403ff8dcea26bf88b74568125df43a2fcb69cd6",
+      "cellBoundsAlpha128": [
+        [
+          42,
+          81,
+          213,
+          210
+        ],
+        [
+          45,
+          79,
+          211,
+          210
+        ],
+        [
+          44,
+          82,
+          212,
+          210
+        ],
+        [
+          41,
+          69,
+          214,
+          210
+        ],
+        [
+          44,
+          85,
+          212,
+          210
+        ],
+        [
+          52,
+          63,
+          204,
+          210
+        ],
+        [
+          42,
+          74,
+          214,
+          210
+        ],
+        [
+          42,
+          79,
+          214,
+          210
+        ],
+        [
+          32,
+          65,
+          224,
+          210
+        ],
+        [
+          35,
+          68,
+          221,
+          210
+        ],
+        [
+          41,
+          73,
+          215,
+          210
+        ],
+        [
+          41,
+          76,
+          214,
+          210
+        ],
+        [
+          32,
+          82,
+          223,
+          210
+        ],
+        [
+          35,
+          97,
+          221,
+          210
+        ],
+        [
+          35,
+          99,
+          221,
+          210
+        ],
+        [
+          40,
+          95,
+          215,
+          210
+        ]
+      ]
+    },
+    {
+      "id": "knarl-growth-v01",
+      "master": "garden-v05/creature-motion-assets/masters/knarl-growth-v01.png",
+      "size": [
+        1024,
+        512
+      ],
+      "alphaZero": 446529,
+      "alphaPartial": 77612,
+      "sha256": "3c9edbf34a6d9875c003d8d37906a3ebf6501ba715083d7e93f5bfa5e6843679",
+      "cellBoundsAlpha128": [
+        [
+          95,
+          159,
+          160,
+          210
+        ],
+        [
+          77,
+          130,
+          178,
+          210
+        ],
+        [
+          60,
+          103,
+          196,
+          210
+        ],
+        [
+          47,
+          75,
+          208,
+          210
+        ],
+        [
+          95,
+          159,
+          160,
+          210
+        ],
+        [
+          78,
+          130,
+          178,
+          210
+        ],
+        [
+          62,
+          103,
+          194,
+          210
+        ],
+        [
+          47,
+          75,
+          208,
+          210
+        ]
+      ],
+      "growthHeights": [
+        51,
+        80,
+        107,
+        135,
+        51,
+        80,
+        107,
+        135
+      ]
+    },
+    {
+      "id": "salamander-left-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/salamander-left-motion-v01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 807028,
+      "alphaPartial": 241132,
+      "sha256": "88bda3e5eacf9f8c6d3d98df6ad1e5524a8f40ebe7404b7fc6ec747ec290bbc7",
+      "cellBoundsAlpha128": [
+        [
+          49,
+          116,
+          207,
+          210
+        ],
+        [
+          49,
+          115,
+          207,
+          210
+        ],
+        [
+          49,
+          118,
+          207,
+          210
+        ],
+        [
+          47,
+          118,
+          208,
+          210
+        ],
+        [
+          48,
+          124,
+          207,
+          210
+        ],
+        [
+          32,
+          91,
+          224,
+          210
+        ],
+        [
+          46,
+          110,
+          209,
+          210
+        ],
+        [
+          49,
+          119,
+          207,
+          210
+        ],
+        [
+          37,
+          103,
+          219,
+          210
+        ],
+        [
+          38,
+          105,
+          218,
+          210
+        ],
+        [
+          37,
+          108,
+          218,
+          210
+        ],
+        [
+          47,
+          118,
+          208,
+          210
+        ],
+        [
+          49,
+          111,
+          207,
+          210
+        ],
+        [
+          49,
+          111,
+          207,
+          210
+        ],
+        [
+          49,
+          111,
+          207,
+          210
+        ],
+        [
+          49,
+          119,
+          207,
+          210
+        ]
+      ]
+    },
+    {
+      "id": "salamander-right-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/salamander-right-motion-v01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 815415,
+      "alphaPartial": 232971,
+      "sha256": "4f49b3e578a4fc2bfff4e29e13f89605871c003f9b6646bbd4147c21cfe303d4",
+      "cellBoundsAlpha128": [
+        [
+          46,
+          114,
+          210,
+          210
+        ],
+        [
+          47,
+          113,
+          209,
+          210
+        ],
+        [
+          46,
+          115,
+          210,
+          210
+        ],
+        [
+          45,
+          115,
+          210,
+          210
+        ],
+        [
+          44,
+          120,
+          211,
+          210
+        ],
+        [
+          32,
+          85,
+          224,
+          210
+        ],
+        [
+          45,
+          111,
+          211,
+          210
+        ],
+        [
+          45,
+          121,
+          211,
+          210
+        ],
+        [
+          35,
+          110,
+          220,
+          210
+        ],
+        [
+          36,
+          106,
+          219,
+          210
+        ],
+        [
+          37,
+          114,
+          218,
+          210
+        ],
+        [
+          45,
+          121,
+          210,
+          210
+        ],
+        [
+          46,
+          105,
+          210,
+          210
+        ],
+        [
+          45,
+          105,
+          210,
+          210
+        ],
+        [
+          45,
+          105,
+          210,
+          210
+        ],
+        [
+          46,
+          121,
+          210,
+          210
+        ]
+      ]
+    },
+    {
+      "id": "salamander-growth-v01",
+      "master": "garden-v05/creature-motion-assets/masters/salamander-growth-v01.png",
+      "size": [
+        1024,
+        512
+      ],
+      "alphaZero": 456325,
+      "alphaPartial": 67629,
+      "sha256": "9261a1b7f261fb9946ac022f1d5eeffea6c2cb627f21169f2991b4e31e2a17d2",
+      "cellBoundsAlpha128": [
+        [
+          94,
+          168,
+          161,
+          210
+        ],
+        [
+          72,
+          145,
+          184,
+          210
+        ],
+        [
+          49,
+          123,
+          206,
+          210
+        ],
+        [
+          32,
+          106,
+          224,
+          210
+        ],
+        [
+          94,
+          168,
+          161,
+          210
+        ],
+        [
+          72,
+          145,
+          184,
+          210
+        ],
+        [
+          49,
+          123,
+          206,
+          210
+        ],
+        [
+          32,
+          106,
+          224,
+          210
+        ]
+      ],
+      "growthHeights": [
+        42,
+        65,
+        87,
+        104,
+        42,
+        65,
+        87,
+        104
+      ]
+    },
+    {
+      "id": "habitat_knarl",
+      "master": "garden-v05/masters-complete-objects/habitat_knarl.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 773823,
+      "alphaPartial": 273923,
+      "sha256": "9f7ac73b74d8c279a336f664e87daae282a981d0140e26b0d91c4400f3c965bf"
+    },
+    {
+      "id": "habitat_salamander",
+      "master": "garden-v05/masters-complete-objects/habitat_salamander.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 782625,
+      "alphaPartial": 264606,
+      "sha256": "539d4df98e0cc1e0ad0238a4928ff940da47369bcfbc9e7eefd23552b7ea9147"
+    },
+    {
+      "id": "keepsake_crup",
+      "master": "garden-v05/masters-complete-objects/keepsake_crup.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 719057,
+      "alphaPartial": 328096,
+      "sha256": "7ede1a31ca3e0bafe8aa2eaba414b7c3442c64877595e1e6de4dc6766a6b1a96"
+    },
+    {
+      "id": "keepsake_knarl",
+      "master": "garden-v05/masters-complete-objects/keepsake_knarl.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 654505,
+      "alphaPartial": 392694,
+      "sha256": "2cfadb3e10c6901e56e46fcfa503fd1dd3c973832ed37e6982bccf462d296944"
+    },
+    {
+      "id": "keepsake_salamander",
+      "master": "garden-v05/masters-complete-objects/keepsake_salamander.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alphaZero": 609211,
+      "alphaPartial": 437686,
+      "sha256": "a9b9fcf50abc13464192961633a3725985f732b28dbe66f016ef65952ce445cd"
+    },
+    {
+      "id": "items-sheet",
+      "master": "garden-v05/masters-items/creatures-2/items-sheet.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "alphaZero": 1113786,
+      "alphaPartial": 457908,
+      "sha256": "c4260b04ba9dbb82c297c21b428e4970aca0fe3aeec0df5769862a76747298c4",
+      "cellBoundsAlpha128": [
+        [
+          78,
+          80,
+          434,
+          440
+        ],
+        [
+          94,
+          80,
+          417,
+          440
+        ],
+        [
+          88,
+          80,
+          423,
+          440
+        ],
+        [
+          56,
+          223,
+          456,
+          440
+        ],
+        [
+          75,
+          80,
+          437,
+          440
+        ],
+        [
+          113,
+          80,
+          398,
+          440
+        ]
+      ]
+    }
+  ],
+  "promptRecords": 30,
+  "refusals": []
+}

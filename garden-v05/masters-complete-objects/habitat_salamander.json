@@ -1,0 +1,9 @@
+{
+  "id": "habitat_salamander",
+  "kind": "habitat",
+  "species": "salamander",
+  "prompt": "Use case: stylized-concept. Single complete habitat object1024x1024 real TRANSPARENT RGBA: squat RING OF GREY CAMPFIRE STONES in2:1 isometric dimetric view, dark charcoal center, a few orange-yellow EMBER BLOCKS flat on charcoal, exactly TWO CROSSED BURNT STICKS in middle and ONE TINY hard-edged attached flame lick touching sticks/charcoal. NO animal. Designed for36x28 native so extraordinarily simple, six or seven BIG stones, few huge flat blocks and no fine detail. Match attached Grindylow habitat coarse square-pixel style. Stones #41465C #687486 #A6B1AE #D6D8BF with upper-left highlights, charcoal #231F2E #4A3042, sticks #735044, embers/flame only #C75B4B #ED8A45 #FFC36B in flat2-3colour shapes. Thick clean #231F2E outline. Centered broad low silhouette with generous empty alpha margins. Every source pixel a hard flat square, no antialiasing gradients GLOW halo emitted light smoke sparks detached particles dither speckles ground plane shadow text border watermark or scenery.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-0a928e7f-1459-4d16-b2f4-281acdd29ba9.png",
+  "master": "masters-complete-objects/habitat_salamander.png",
+  "masterSha256": "539d4df98e0cc1e0ad0238a4928ff940da47369bcfbc9e7eefd23552b7ea9147"
+}

@@ -304,6 +304,60 @@
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
     {
+      "id": "habitat_crup",
+      "kind": "habitat",
+      "species": "crup",
+      "file": "native-complete-objects/habitat_crup/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 3,
+        "y": 3,
+        "w": 34,
+        "h": 28
+      },
+      "sha256": "9085c6a7996d908fffe8ba6285646731581bfd5918260319af8e177a5454e20e",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/habitat_crup/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_crup/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 3,
+            "y": 3,
+            "w": 34,
+            "h": 28
+          },
+          "sha256": "9085c6a7996d908fffe8ba6285646731581bfd5918260319af8e177a5454e20e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_crup.png",
+      "masterSha256": "abd619d98b60c89b6c657ab96c2653c1ee70ee96cae03f814675a21cc270cf0c",
+      "prompt": "Use case: stylized-concept. Single complete object master, 1024x1024 real transparent background: a SMALL WOODEN DOG KENNEL, squat broad simple silhouette, plank walls, pitched roof of darker brown shingles, ROUND DARK DOORWAY, one small FOOD BOWL beside it touching kennel side. NO animal. Cozy Hagrid Farm building, clear 2:1 isometric dimetric three-quarter camera, door on left visible front, right wall shaded. Designed to become only36x28 native pixels: extraordinarily simple, few giant flat pixel blocks, just 3-4 broad plank divisions and 4 large roof shingles, no woodgrain. Match attached habitat reference's coarse pixel density. Thick dark #231F2E outline, lighting upper-left, at most2-3 shades per material, wood #735044 #A57554 #C97952, roof #4A3042 #735044, bowl #687486 #A6B1AE, highlights #E7AE73. Single centered object with generous transparent margins. No ground tile, landscape, cast shadow, extra props, text, frame, watermark, antialiasing, gradient, glow, dithering or noise. Every logical pixel a large hard flat square.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-23e33a19-ee3e-4e81-9016-872e65d5c91f.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
       "id": "habitat_diricawl",
       "kind": "habitat",
       "species": "diricawl",
@@ -574,6 +628,60 @@
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
     {
+      "id": "habitat_knarl",
+      "kind": "habitat",
+      "species": "knarl",
+      "file": "native-complete-objects/habitat_knarl/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 10,
+        "w": 36,
+        "h": 21
+      },
+      "sha256": "0f937b568b75d91576af25977f64413f03120b3a71b82adcd67491ecfd1054b8",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/habitat_knarl/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_knarl/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 10,
+            "w": 36,
+            "h": 21
+          },
+          "sha256": "0f937b568b75d91576af25977f64413f03120b3a71b82adcd67491ecfd1054b8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_knarl.png",
+      "masterSha256": "9f7ac73b74d8c279a336f664e87daae282a981d0140e26b0d91c4400f3c965bf",
+      "prompt": "Use case: stylized-concept. Single complete habitat object,1024x1024 real transparent RGBA. A PILE OF FALLEN LEAVES ON A SHORT MOSSY LOG, squat low wide silhouette, dark hollow visible in log's cut LEFT end for a tiny hedgehog to hide in. No animal. Six or seven broad overlapping autumn leaf shapes, muted russet/tan/olive, lying on top; short thick brown log extending right, few large moss blocks on upper-left. Designed for36x28 native so EXTRAORDINARILY SIMPLE broad flat blocks, no veins, woodgrain, fungi, flowers or tiny texture. 2:1 isometric dimetric camera, centered one object, touching leaf/log/moss shapes, ample transparent margin. Match attached coarse habitat reference. Thick #231F2E outline, top-left light; 2-3shades/material. #735044 #A57554 #4A3042 wood, #8B4A3F #C97952 #E7AE73 autumn leaves, #3F6A45 #71934B moss. Every pixel hard square. No antialiasing gradients glow dithering noise speckles ground tile detached shadow text border watermark.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-a0f95441-6126-46ce-a5a2-ccf167d8b72d.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
       "id": "habitat_kneazle",
       "kind": "habitat",
       "species": "kneazle",
@@ -786,6 +894,60 @@
       "masterSha256": "0d0ff36ea9520600a7b16e42525732e5ead0e9fcd036744f41350591a2e259c1",
       "prompt": "Create ONE game sprite of a round low woven straw basket with a single soft cream cushion and one brown tassel, open and empty, no creature. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-25b227e9-a7f1-4c38-bd21-298f72e849b2.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "habitat_salamander",
+      "kind": "habitat",
+      "species": "salamander",
+      "file": "native-complete-objects/habitat_salamander/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 11,
+        "w": 36,
+        "h": 20
+      },
+      "sha256": "c15a2561b614845c723e6faa73d96eb98c67836d1b1e243e779fb15a25148ac1",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/habitat_salamander/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_salamander/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 11,
+            "w": 36,
+            "h": 20
+          },
+          "sha256": "c15a2561b614845c723e6faa73d96eb98c67836d1b1e243e779fb15a25148ac1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_salamander.png",
+      "masterSha256": "539d4df98e0cc1e0ad0238a4928ff940da47369bcfbc9e7eefd23552b7ea9147",
+      "prompt": "Use case: stylized-concept. Single complete habitat object1024x1024 real TRANSPARENT RGBA: squat RING OF GREY CAMPFIRE STONES in2:1 isometric dimetric view, dark charcoal center, a few orange-yellow EMBER BLOCKS flat on charcoal, exactly TWO CROSSED BURNT STICKS in middle and ONE TINY hard-edged attached flame lick touching sticks/charcoal. NO animal. Designed for36x28 native so extraordinarily simple, six or seven BIG stones, few huge flat blocks and no fine detail. Match attached Grindylow habitat coarse square-pixel style. Stones #41465C #687486 #A6B1AE #D6D8BF with upper-left highlights, charcoal #231F2E #4A3042, sticks #735044, embers/flame only #C75B4B #ED8A45 #FFC36B in flat2-3colour shapes. Thick clean #231F2E outline. Centered broad low silhouette with generous empty alpha margins. Every source pixel a hard flat square, no antialiasing gradients GLOW halo emitted light smoke sparks detached particles dither speckles ground plane shadow text border watermark or scenery.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-0a928e7f-1459-4d16-b2f4-281acdd29ba9.png",
       "tool": "builtin image_gen",
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
@@ -1130,6 +1292,60 @@
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
     {
+      "id": "keepsake_crup",
+      "kind": "keepsake",
+      "species": "crup",
+      "file": "native-complete-objects/keepsake_crup/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 12,
+        "y": 6,
+        "w": 33,
+        "h": 44
+      },
+      "sha256": "eef9e20dc2d237bd9381218896e91f2ad0c4576fb08f9c02b449b0780ebcb266",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/keepsake_crup/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_crup/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 12,
+            "y": 6,
+            "w": 33,
+            "h": 44
+          },
+          "sha256": "eef9e20dc2d237bd9381218896e91f2ad0c4576fb08f9c02b449b0780ebcb266",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_crup.png",
+      "masterSha256": "7ede1a31ca3e0bafe8aa2eaba414b7c3442c64877595e1e6de4dc6766a6b1a96",
+      "prompt": "Use case: stylized-concept. Single centered COMPLETE OBJECT 1024square real transparent RGBA: keepsake statuette of a sitting CRUP, a small Jack Russell TERRIER, cream white body, tan brown patches on head/back, pointed ears folded at tips, dark eyes, cheerful grin, short legs. Its ONE attached short tail branches into TWO LARGE obvious FORK PRONGS, shown to the right of sitting body. Facing left in3/4 dimetric2:1. Use attached Crup sheet ONLY as animal identity. Use attached Grindylow keepsake for EXACT PLINTH FAMILY: low TWO-STEP warm grey stone rectangular isometric plinth, pale top-left edges, darker right side, simple GOLD FRONT INSET with blank dark grey interior, no lettering. Animal sits on plinth, ONE connected object. Cozy farm keepsake matching existing Kneazle/Grindylow set. Large chunky low-res pixel squares, thick #231F2E outline, flat broad clusters,2-3shades/material, light TOP LEFT. Palette near #D6D8BF #A6B1AE #687486 #41465C stone; #A57554 #735044 #C97952 #E7AE73 tan; #FFC36B gold. Generous transparent margins. NO antialiasing gradient glow dithering noise fur texture ground cast shadow text frame watermark or extra props.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-ee8c4acb-96f5-4436-912e-d2430992df6a.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
       "id": "keepsake_diricawl",
       "kind": "keepsake",
       "species": "diricawl",
@@ -1400,6 +1616,60 @@
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
     {
+      "id": "keepsake_knarl",
+      "kind": "keepsake",
+      "species": "knarl",
+      "file": "native-complete-objects/keepsake_knarl/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 11,
+        "y": 6,
+        "w": 35,
+        "h": 44
+      },
+      "sha256": "2c70ce974b19a185e573e8abe9b4d85f07ff49e5e46d4a77a94be3a200061746",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/keepsake_knarl/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_knarl/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 11,
+            "y": 6,
+            "w": 35,
+            "h": 44
+          },
+          "sha256": "2c70ce974b19a185e573e8abe9b4d85f07ff49e5e46d4a77a94be3a200061746",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_knarl.png",
+      "masterSha256": "2cfadb3e10c6901e56e46fcfa503fd1dd3c973832ed37e6982bccf462d296944",
+      "prompt": "Use case: stylized-concept. Single complete object centered1024x1024 real transparent RGBA: KNARL KEEPSAKE STATUETTE. A grumpy round HEDGEHOG BALL of chunky dark brown long sharp QUILLS WITH PALE TIPS, pointed cream snout black nose sticking out left, suspicious frowning eyes heavy brow, tiny feet. No food or hand. Animal identity from Knarl reference; sits on low TWO-STEP WARM GREY STONE PLINTH EXACTLY matching attached keepsake Grindylow: rectangular isometric plinth, pale top-left rims, darker right side, blank simple GOLD FRONT INSET dark grey center, no lettering. One connected silhouette, cozy not scary. Three-quarter2:1 dimetric camera. Broad flat colour clusters, giant hard square low-res pixels, thick #231F2E outline, 2-3flat shades/material, upper-left light. #735044 #4A3042 #A57554 brown quills; #E7AE73 #D6D8BF pale tips; #41465C #687486 #A6B1AE #D6D8BF grey plinth; #FFC36B gold. Generous clear margin. No gradients antialias glow noise dither fine texture outside shadows ground text frames watermark props or floating quills.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-5627ef35-1e97-46ae-8023-c3a63c1d7b19.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
       "id": "keepsake_kneazle",
       "kind": "keepsake",
       "species": "kneazle",
@@ -1612,6 +1882,60 @@
       "masterSha256": "c74919713631c43cdb997f8994f55f3a11230d0b472baf0ec0ee08966d16b8d8",
       "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled puffskein. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: orange-gold fluffy round ball, warm peach face, tiny ears and very small dark eyes, rather than a cream owl-like large-eyed face. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9ba77eef-920c-4b34-8705-107a90077831.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_salamander",
+      "kind": "keepsake",
+      "species": "salamander",
+      "file": "native-complete-objects/keepsake_salamander/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 6,
+        "y": 10,
+        "w": 44,
+        "h": 40
+      },
+      "sha256": "0d537a6b001c9c2fc72c6352a892037f482d97405ddd77b5ab5d451409c9e2bf",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/keepsake_salamander/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_salamander/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 6,
+            "y": 10,
+            "w": 44,
+            "h": 40
+          },
+          "sha256": "0d537a6b001c9c2fc72c6352a892037f482d97405ddd77b5ab5d451409c9e2bf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_salamander.png",
+      "masterSha256": "a9b9fcf50abc13464192961633a3725985f732b28dbe66f016ef65952ce445cd",
+      "prompt": "Use case: stylized-concept.1024x1024 real transparent RGBA, ONE centered complete KEEPSAKE STATUETTE. Orange red FIRE SALAMANDER, slim low LIZARD body with four splayed little feet, round head facing LEFT, bright yellow eyes, few large darker red-brown back spots, LONG TAIL CURLED to right and ONE SMALL FLAT FLAME LICK TOUCHING back. Same salamander identity as supplied motion sheet. The lizard stands on LOW TWO-STEP WARM GREY STONE rectangular isometric PLINTH exactly from attached Grindylow keepsake: pale upper-left rim, darker right side, simple blank GOLD FRONT INSET with dark grey interior, no lettering. The three new keepsakes must be same family as Grindylow and Kneazle.2:1 dimetric3/4 view, top-left light, chunky LOW-resolution large square pixel blocks, thick #231F2E outline, big flat clusters2-3shades/material. Palette orange #ED8A45 #C75B4B, red-brown spots #8B4A3F, tiny yellow flame #FFC36B; stone #41465C #687486 #A6B1AE #D6D8BF; gold #FFC36B. Cozy farm lizard, not dragon (no wings horns or spines). Entire object centered with generous transparency. No antialias gradients glow halo smoke floating sparks noise dither texture outside shadow ground extra props text frames or watermark.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-9aebd392-ce87-42d5-bb34-e45adfc148b2.png",
       "tool": "builtin image_gen",
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },

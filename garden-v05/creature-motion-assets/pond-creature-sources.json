@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Pond creatures, plan §6. Masters drawn by Codex (docs/codex-briefs/pond-art-01.md); reduced by build-pond-creature.mjs.",
+  "note": "Pond creatures (plan §6) and phase-2 land creatures (plan §9). Masters drawn by Codex (docs/codex-briefs/pond-art-01.md, creatures-art-02.md); reduced by build-pond-creature.mjs.",
   "items": [
     {
       "id": "grindylow",
@@ -50,6 +50,165 @@
           "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-deab6962-fe98-473c-89f7-7d93e835e369.png",
           "referenceFiles": [
             "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      }
+    },
+    {
+      "id": "crup",
+      "label": "Chó đuôi nĩa",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 60,
+        "h": 52
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/crup-left-motion-v01.png",
+          "masterSha256": "818170617b80d31390a22f3a03e7c047c3ab68df5c6f565ca6a13135b8981b82",
+          "prompt": "Use case: stylized-concept. Create a production pixel-art creature animation design master, 1024x1024 transparent RGBA, 4 columns x 4 rows, sixteen separated poses, no drawn grid. Crup, a cute small Jack Russell terrier, white/cream body with tan brown head and back patches, short legs, pointed ears folded at tips, keen dark eyes and cheeky grin. ESSENTIAL: one short tail splitting into TWO very obvious large fork prongs, visible in EVERY pose. All sixteen face LEFT in three-quarter 2:1 dimetric view, head and eyes left, tail right. Chunky LOW resolution pixel art matching the provided Grindylow sheet reference: large flat square blocks, thick #231F2E outline, 2-3 flat shades per material, upper-left light. Adult silhouette about 56x46 native pixels, enlarged blocks, simple readable shapes. SAME design and scale all cells. Each 256 cell centered, feet baseline local y210; >=32 transparent gap; nothing crosses cells. Row1 idle: rest; breathe chest up; blink; settle fork-tail wag. Row2 action: crouch; springs up chasing its own forked tail with head still left; lands; shakes itself. Row3 eat: approaches small bone-shaped meaty biscuit on ground; bends with biscuit TOUCHING mouth; bites biscuit touching mouth; lifts head and chews. Row4 care: leans into small hand touching head; receives pet eyes closed happy; blink with hand touching head; relaxed without hand. Only named food and care hand. Tail, food in poses2 onward, and limbs attached to body. Cozy cheerful farm dog, clearly terrier not cat or three-headed dog. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No antialiasing, gradients, glow, dithering, noise, texture speckles, shadow outside sprite, ground, text, frames, watermark. Real transparent background.\nCandidate B correction priorities: EVERY head and nose faces LEFT, including jumping peak (row2 column2): puppy jumps with nose left, torso twisting and fork tail curving up near shoulder on RIGHT. Do not look right. Remove ALL motion lines, swooshes, floating marks. Folded ears must have pointed bases with small tipped-over triangles, not long floppy hound ears. Only 2 fork prongs, compact branching Y tail attached to rump; keep fork readable in all cells. Chunkier, fewer pixels, strongly flat colour clusters.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-fc149953-ba56-494c-9fe5-92deda1f9688.png",
+          "referenceFiles": [
+            "garden-v05/creature-motion-assets/masters/grindylow-left-motion-v01.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/crup-right-motion-v01.png",
+          "masterSha256": "516ce4edbfaa74462f57cbb2975b0e586d44ceb63b2d1ab6969b438d89ddcfdb",
+          "prompt": "Use case: stylized-concept. Create a production pixel-art creature animation design master, 1024x1024 transparent RGBA, 4 columns x 4 rows, sixteen separated poses, no drawn grid. Crup, a cute small Jack Russell terrier, white/cream body with tan brown head and back patches, short legs, pointed ears folded at tips, keen dark eyes and cheeky grin. ESSENTIAL: one short tail splitting into TWO very obvious large fork prongs, visible in EVERY pose. All sixteen face LEFT in three-quarter 2:1 dimetric view, head and eyes left, tail right. Chunky LOW resolution pixel art matching the provided Grindylow sheet reference: large flat square blocks, thick #231F2E outline, 2-3 flat shades per material, upper-left light. Adult silhouette about 56x46 native pixels, enlarged blocks, simple readable shapes. SAME design and scale all cells. Each 256 cell centered, feet baseline local y210; >=32 transparent gap; nothing crosses cells. Row1 idle: rest; breathe chest up; blink; settle fork-tail wag. Row2 action: crouch; springs up chasing its own forked tail with head still left; lands; shakes itself. Row3 eat: approaches small bone-shaped meaty biscuit on ground; bends with biscuit TOUCHING mouth; bites biscuit touching mouth; lifts head and chews. Row4 care: leans into small hand touching head; receives pet eyes closed happy; blink with hand touching head; relaxed without hand. Only named food and care hand. Tail, food in poses2 onward, and limbs attached to body. Cozy cheerful farm dog, clearly terrier not cat or three-headed dog. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No antialiasing, gradients, glow, dithering, noise, texture speckles, shadow outside sprite, ground, text, frames, watermark. Real transparent background.\nCandidate B correction priorities: EVERY head and nose faces LEFT, including jumping peak (row2 column2): puppy jumps with nose left, torso twisting and fork tail curving up near shoulder on RIGHT. Do not look right. Remove ALL motion lines, swooshes, floating marks. Folded ears must have pointed bases with small tipped-over triangles, not long floppy hound ears. Only 2 fork prongs, compact branching Y tail attached to rump; keep fork readable in all cells. Chunkier, fewer pixels, strongly flat colour clusters.\nNEW OUTPUT: right-facing companion sheet, same sixteen ordered phases and identical terrier design as provided Crup reference. ALL sixteen heads/noses point RIGHT and fork tail sits LEFT of rump. Re-draw anatomy for right view, DO NOT mirror lighting: highlights remain UPPER LEFT, shadows lower right. Same tan head and back patches, folded tipped ears, fork tail two prongs. Peak spring pose head RIGHT, tail curving up left, no motion lines. Retain row3 biscuit and row4 hand phases. 1024x1024, 4x4 transparent sheet.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-61c25535-5021-437f-a213-3448d1d57165.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-fc149953-ba56-494c-9fe5-92deda1f9688.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/crup-growth-v01.png",
+          "masterSha256": "1a65d99e9d9aa247bdd9683dd9494fc4772450c3782a6509f2ebbb44f408b519",
+          "prompt": "Use case: stylized-concept. Make 1024x512 transparent RGBA pixel-art GROWTH sheet of this exact reference CRUP terrier design. 2 rows x4 equal 256 cells, eight isolated sprites. Row1 all LEFT, row2 all RIGHT. Columns newborn tiny round big head; juvenile; adolescent; adult same white/cream and tan-brown patched short-legged Jack Russell as reference. Every age including tiny pup has obvious attached Y FORKED TAIL of TWO prongs, folded-tip pointed ears, dark eyes, cheeky smile. All calm standing on four feet, no actions, props or hands. Adult 2.6x newborn height; growth in 4 clear stages. Centered in cells, feet local y210 in every cell, generous32px+ gaps. Same block pixel density regardless of age: newborn has fewer logical pixels, do not just shrink adult. Native adult about56x46px. Chunky large square flat pixels, clean thick #231F2E outline, big 2-3 shade clusters, top-left light on BOTH facing directions (not mirrored lighting), 2:1 dimetric three-quarter camera. Palette from reference cream #D6D8BF, tan #A57554 #C97952 #E7AE73, shadows #735044 #4A3042, outline #231F2E. No antialiasing gradient glow dither speckles outside shadow ground grid text borders watermark. Real alpha transparency.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-84b3c9bc-ad44-43d3-ae00-de177b281e20.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-fc149953-ba56-494c-9fe5-92deda1f9688.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      }
+    },
+    {
+      "id": "knarl",
+      "label": "Nhím quậy",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 56,
+        "h": 44
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/knarl-left-motion-v01.png",
+          "masterSha256": "1ebf61c9bce455c8df7ee042d95d3991f132c04eccef1b27b2db409ef5c4ca7c",
+          "prompt": "Use case: stylized-concept. Generate 1024x1024 real transparent RGBA pixel-art animation design master. Exactly 4x4 equal cells of 256, sixteen fully separated sprites, no grid or labels. A Knarl: cute but grumpy hedgehog-like farm creature, rounded low body, thick coat of LONG SHARP DARK BROWN QUILLS with PALE TIPS in large chunky spikes, pointed cream/tan snout, black nose, tiny suspicious eyes under heavy FROWNING brow, tiny clawed feet. NOT porcupine, no long legs, no ears like cat. Head and nose face LEFT in every pose in three-quarter 2:1 dimetric view. Adult about 52 wide x40 tall native, enlarged flat square blocks, chunky low-res style as reference Grindylow. Same anatomy, scale, colours every cell. Each cell centered, ground local y210, 32px minimum transparent gaps. Row1 idle: rest scowling; breathe; blink; bristle quills. Row2 action: tucks snout down; tightly curled SPIKY BALL with all long quills raised and snout tucked; unrolls; grumpy huff (no floating marks). Row3 eat: suspicious approach to a few seeds and little root on ground; bends to root TOUCHING mouth; bites root TOUCHING mouth; lifts and chews. Row4 care: leans toward a small HAND HOLDING SEEDS, hand touching snout; happily eats seeds from hand eyes closed, quills LOW and frown GONE; blink still calm hand touching snout; relaxed low quills no hand. Only named props. All quills attached, no scattered spikes/seeds except food ground pose. Cozy not scary. Flat 2-3 shades/material, thick #231F2E outline, top-left lighting, broad clusters, no anti-aliasing, gradient, glow, dithering, speckle, ground, outside shadow, text, border or motion lines. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Transparent background, no checkerboard.\nCandidate B: fewer larger quill clusters, 12-16 big pale-tipped spikes total rather than many tiny layers. Make a hedgehog round silhouette, not a porcupine fan. Every sprite INCLUDING THE ENTIRE CARE HAND must fit with generous 40px margins inside its cell: do not crop hand at left sheet or cell edges. Only little fingertips and palm cue, not whole forearm. In row3 column2 the little root touches mouth; no separate carrot beneath it. Row4 column2 quills visibly lowered to rounded back, expression happy closed eyes. The curled action peak should form a tight circular BALL, no visible snout. Do not lose pale tips.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-bb5a2c56-26bd-4936-88a8-26a8c24b2c87.png",
+          "referenceFiles": [
+            "garden-v05/creature-motion-assets/masters/grindylow-left-motion-v01.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/knarl-right-motion-v01.png",
+          "masterSha256": "d6e0212fe41d9fb3d294f4348403ff8dcea26bf88b74568125df43a2fcb69cd6",
+          "prompt": "Use case: stylized-concept. Generate 1024x1024 real transparent RGBA pixel-art animation design master. Exactly 4x4 equal cells of 256, sixteen fully separated sprites, no grid or labels. A Knarl: cute but grumpy hedgehog-like farm creature, rounded low body, thick coat of LONG SHARP DARK BROWN QUILLS with PALE TIPS in large chunky spikes, pointed cream/tan snout, black nose, tiny suspicious eyes under heavy FROWNING brow, tiny clawed feet. NOT porcupine, no long legs, no ears like cat. Head and nose face LEFT in every pose in three-quarter 2:1 dimetric view. Adult about 52 wide x40 tall native, enlarged flat square blocks, chunky low-res style as reference Grindylow. Same anatomy, scale, colours every cell. Each cell centered, ground local y210, 32px minimum transparent gaps. Row1 idle: rest scowling; breathe; blink; bristle quills. Row2 action: tucks snout down; tightly curled SPIKY BALL with all long quills raised and snout tucked; unrolls; grumpy huff (no floating marks). Row3 eat: suspicious approach to a few seeds and little root on ground; bends to root TOUCHING mouth; bites root TOUCHING mouth; lifts and chews. Row4 care: leans toward a small HAND HOLDING SEEDS, hand touching snout; happily eats seeds from hand eyes closed, quills LOW and frown GONE; blink still calm hand touching snout; relaxed low quills no hand. Only named props. All quills attached, no scattered spikes/seeds except food ground pose. Cozy not scary. Flat 2-3 shades/material, thick #231F2E outline, top-left lighting, broad clusters, no anti-aliasing, gradient, glow, dithering, speckle, ground, outside shadow, text, border or motion lines. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Transparent background, no checkerboard.\nCandidate B: fewer larger quill clusters, 12-16 big pale-tipped spikes total rather than many tiny layers. Make a hedgehog round silhouette, not a porcupine fan. Every sprite INCLUDING THE ENTIRE CARE HAND must fit with generous 40px margins inside its cell: do not crop hand at left sheet or cell edges. Only little fingertips and palm cue, not whole forearm. In row3 column2 the little root touches mouth; no separate carrot beneath it. Row4 column2 quills visibly lowered to rounded back, expression happy closed eyes. The curled action peak should form a tight circular BALL, no visible snout. Do not lose pale tips.\nNEW OUTPUT: RIGHT-facing companion, use provided Knarl B reference as strict identity reference. Same16 poses same4x4 layout, but ALL snouts point RIGHT and quills trail LEFT, including unroll and feeding/care. Curl remains a tight round spiky ball. Hand seed cue enters from RIGHT without clipping, palm and seeds touching mouth, small complete hand entirely inside cell. Independently redraw, do not mirror top-left light; highlights stay UPPER LEFT on quills and face, shaded lower-right. Keep dark brown quills and large pale tips, small angry eyes; happy care lowered quills. No motion marks. All sixteen centered separated in 1024square transparent.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-a18b45b4-6f5e-446b-a6dc-c9c8ec48b77d.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-bb5a2c56-26bd-4936-88a8-26a8c24b2c87.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/knarl-growth-v01.png",
+          "masterSha256": "3c9edbf34a6d9875c003d8d37906a3ebf6501ba715083d7e93f5bfa5e6843679",
+          "prompt": "Use case: stylized-concept. Make 1024x512 real transparent RGBA pixel-art growth sheet, 4 columns x2 rows of256 cells, eight isolated poses of EXACT Knarl hedgehog design in reference: round low body, long sharp dark brown quills with pale tips, small cream pointed snout black nose, tiny clawed feet, suspicious frowning eyes and heavy brow. Row1 faces LEFT, row2 faces RIGHT, calm standing poses. Columns newborn tiny ROUND hoglet with big head and SOFT SHORT QUILLS; juvenile; adolescent; adult matching reference. Adult2.6x newborn height, steady growth across4 stages. Same logical pixel density: fewer actual blocks for baby, no smooth scaling look. Adult52x40 native. Each pose centered, feet local y210, minimum32transparent gaps, entire silhouette inside cell. Thick #231F2E outline, huge flat colour clusters 2-3 shades, upper-left light in BOTH directions (redraw lighting, don't mirror). Brown #4A3042 #735044 #A57554, pale tips #E7AE73 #D6D8BF, snout #F5D69A. Dimetric2:1 three-quarter view. Cozy but grumpy, clearly hedgehog not porcupine. No food hand props ground shadow text grid border noise dither antialiasing gradients glow or watermark.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-13e644da-236a-42db-85bb-7bfe4e7fa3fe.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-bb5a2c56-26bd-4936-88a8-26a8c24b2c87.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      }
+    },
+    {
+      "id": "salamander",
+      "label": "Kỳ nhông lửa",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 64,
+        "h": 42
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/salamander-left-motion-v01.png",
+          "masterSha256": "88bda3e5eacf9f8c6d3d98df6ad1e5524a8f40ebe7404b7fc6ec747ec290bbc7",
+          "prompt": "Use case: stylized-concept. Asset: fire salamander pixel-art animation design master. 1024x1024 TRANSPARENT RGBA, exactly sixteen isolated sprites in 4x4 equal 256 cells. Style reference: chunky low resolution Grindylow sheet, every logical pixel a large flat square, thick #231F2E outline, broad flat clusters, no more than 2-3 shades per material, light upper LEFT. Cute small ORANGE RED LIZARD, slim low body, FOUR splayed short legs, long tapering curved tail, rounded head with bright YELLOW eyes, just 3 large dark red-brown spots along back. Clearly lizard, NOT dragon: no horns wings or dorsal spikes. Two small hard-edged flame licks TOUCHING back and tail in #FFC36B #ED8A45 #C75B4B; flame not detached, no glow or halo. Adult approx 62x36 native, silhouette simple and readable. All heads/noses face LEFT in clear 3/4 2:1 dimetric view, tail stretches RIGHT. Same size/design all cells, centered, all feet ground local y210 (raised peak may rear), minimum32px transparent gap, entire sprites within cells with margin. Row1 idle: rest; chest breathe; blink; small tail curl. Row2 action: crouch; REARS UP head still LEFT with bigger attached back flame and tiny puff of flame attached directly to mouth; drops onto feet; recovers with only small back flame. Row3 eating: approaches dry twig and one small RED CHILLI on ground; bends to twig/chilli TOUCHING mouth; bites touching mouth; lifts and chews. Row4 care: leans into small hand touching crown; happy eyes closed receives care; blink with hand touching head; relaxed no hand. All flames, tail, food from eat pose2, cue hands attached/touching. No floating sparks, motion lines, hearts or unrelated props. Actual transparent background. Colour palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No antialiasing, gradients, dithering, speckles, texture, smoke, glow, cast shadow, ground, grid, text, borders or watermarks.\nCandidate B priorities: Make body distinctly SLIM, LOW and elongated, a salamander lizard not a squat dinosaur or puppy; all four little feet splay OUT sideways, tail long tapering at least half body length. Adult overall62wide x36tall. Flatten torso with three large red-brown spots. In action peak flame puff MUST physically touch open mouth at its base (no alpha gap), larger flame touches back. No detached flame/sparks. Row3 ONLY twig and chilli, no extra bone shapes, and both touch snout in bend and bite; remove remaining ground food after lift. Tiny full hand cue entirely inside each care cell. Bolder even larger flat pixel blocks, no texture.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-3ec0d955-4f4b-487d-8dd5-0013ecc00482.png",
+          "referenceFiles": [
+            "garden-v05/creature-motion-assets/masters/grindylow-left-motion-v01.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/salamander-right-motion-v01.png",
+          "masterSha256": "4f49b3e578a4fc2bfff4e29e13f89605871c003f9b6646bbd4147c21cfe303d4",
+          "prompt": "Use case: stylized-concept. Asset: fire salamander pixel-art animation design master. 1024x1024 TRANSPARENT RGBA, exactly sixteen isolated sprites in 4x4 equal 256 cells. Style reference: chunky low resolution Grindylow sheet, every logical pixel a large flat square, thick #231F2E outline, broad flat clusters, no more than 2-3 shades per material, light upper LEFT. Cute small ORANGE RED LIZARD, slim low body, FOUR splayed short legs, long tapering curved tail, rounded head with bright YELLOW eyes, just 3 large dark red-brown spots along back. Clearly lizard, NOT dragon: no horns wings or dorsal spikes. Two small hard-edged flame licks TOUCHING back and tail in #FFC36B #ED8A45 #C75B4B; flame not detached, no glow or halo. Adult approx 62x36 native, silhouette simple and readable. All heads/noses face LEFT in clear 3/4 2:1 dimetric view, tail stretches RIGHT. Same size/design all cells, centered, all feet ground local y210 (raised peak may rear), minimum32px transparent gap, entire sprites within cells with margin. Row1 idle: rest; chest breathe; blink; small tail curl. Row2 action: crouch; REARS UP head still LEFT with bigger attached back flame and tiny puff of flame attached directly to mouth; drops onto feet; recovers with only small back flame. Row3 eating: approaches dry twig and one small RED CHILLI on ground; bends to twig/chilli TOUCHING mouth; bites touching mouth; lifts and chews. Row4 care: leans into small hand touching crown; happy eyes closed receives care; blink with hand touching head; relaxed no hand. All flames, tail, food from eat pose2, cue hands attached/touching. No floating sparks, motion lines, hearts or unrelated props. Actual transparent background. Colour palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No antialiasing, gradients, dithering, speckles, texture, smoke, glow, cast shadow, ground, grid, text, borders or watermarks.\nCandidate B priorities: Make body distinctly SLIM, LOW and elongated, a salamander lizard not a squat dinosaur or puppy; all four little feet splay OUT sideways, tail long tapering at least half body length. Adult overall62wide x36tall. Flatten torso with three large red-brown spots. In action peak flame puff MUST physically touch open mouth at its base (no alpha gap), larger flame touches back. No detached flame/sparks. Row3 ONLY twig and chilli, no extra bone shapes, and both touch snout in bend and bite; remove remaining ground food after lift. Tiny full hand cue entirely inside each care cell. Bolder even larger flat pixel blocks, no texture.\nNEW OUTPUT: Draw RIGHT-facing companion sheet using supplied Salamander B as exact identity. ALL heads and mouths RIGHT, long tail LEFT, four splayed little feet. Same4x4 phases order. Re-draw upper-left lighting independently, DO NOT mirror source. In peak row2col2, body rears with bigger attached back flame and small flame puff TOUCHING mouth on RIGHT, no alpha gap. In row3 bend and bite chilli/twig TOUCH mouth; no leftover floor food after lifting. Same slim orange-red lizard (no horns or dragon wings), yellow eyes, large darker spots, hard-edged attached flame licks. Real transparency 1024x1024. No soft colored halo or scattered translucent pixels: clean fully separated chunky sprites.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-6acd28b4-cc2a-42b5-b783-7f111ba150d1.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-3ec0d955-4f4b-487d-8dd5-0013ecc00482.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/salamander-growth-v01.png",
+          "masterSha256": "9261a1b7f261fb9946ac022f1d5eeffea6c2cb627f21169f2991b4e31e2a17d2",
+          "prompt": "Use case: stylized-concept. 1024x512 real transparent RGBA growth sheet of EXACT reference fire SALAMANDER. Two rows x4 columns of256 cells. Top row faces LEFT, bottom row RIGHT. Four columns newborn tiny rounded big head hatchling ONE tiny flame lick touching back; juvenile; adolescent; adult exact same orange-red SLIM LOW LIZARD as motion reference with four splayed short feet, long tapering curled tail, round head bright yellow eyes, 3 large darker red-brown spots, two small attached hard-edged back/tail flame licks. Adult2.6x newborn height with four clear growth stages, calm standing every cell, feet baseline local y210, same logical pixel block density (baby has fewer blocks), centered with at least32px gaps. Native adult62wide x36tall, keep long low silhouette not dragon or puppy, no horns wings spines. 2:1 dimetric3/4 camera, lighting TOP LEFT on BOTH directions, no mirrored light. Broad flat square chunky pixels, thick #231F2E outline,2-3shades each material, #C75B4B #ED8A45 #FFC36B orange/red/yellow flames, #8B4A3F #874056 back spots, yellow eye. NO anti-aliasing soft halos gradients glow smoke sparks noise dither speckles ground shadows text frames grid props hands food or watermark. True transparent background.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-ab948a61-1b2f-4bb9-90e4-cac2c1c5e207.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-3ec0d955-4f4b-487d-8dd5-0013ecc00482.png"
           ],
           "tool": "builtin image_gen (Codex)"
         }

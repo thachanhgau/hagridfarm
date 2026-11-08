@@ -1,0 +1,9 @@
+{
+  "id": "keepsake_knarl",
+  "kind": "keepsake",
+  "species": "knarl",
+  "prompt": "Use case: stylized-concept. Single complete object centered1024x1024 real transparent RGBA: KNARL KEEPSAKE STATUETTE. A grumpy round HEDGEHOG BALL of chunky dark brown long sharp QUILLS WITH PALE TIPS, pointed cream snout black nose sticking out left, suspicious frowning eyes heavy brow, tiny feet. No food or hand. Animal identity from Knarl reference; sits on low TWO-STEP WARM GREY STONE PLINTH EXACTLY matching attached keepsake Grindylow: rectangular isometric plinth, pale top-left rims, darker right side, blank simple GOLD FRONT INSET dark grey center, no lettering. One connected silhouette, cozy not scary. Three-quarter2:1 dimetric camera. Broad flat colour clusters, giant hard square low-res pixels, thick #231F2E outline, 2-3flat shades/material, upper-left light. #735044 #4A3042 #A57554 brown quills; #E7AE73 #D6D8BF pale tips; #41465C #687486 #A6B1AE #D6D8BF grey plinth; #FFC36B gold. Generous clear margin. No gradients antialias glow noise dither fine texture outside shadows ground text frames watermark props or floating quills.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-5627ef35-1e97-46ae-8023-c3a63c1d7b19.png",
+  "master": "masters-complete-objects/keepsake_knarl.png",
+  "masterSha256": "2cfadb3e10c6901e56e46fcfa503fd1dd3c973832ed37e6982bccf462d296944"
+}
