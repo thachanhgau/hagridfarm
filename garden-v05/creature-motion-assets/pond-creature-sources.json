@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "note": "Pond creatures, plan §6. Masters drawn by Codex (docs/codex-briefs/pond-art-01.md); reduced by build-pond-creature.mjs.",
+  "items": [
+    {
+      "id": "grindylow",
+      "label": "Thủy quái",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 56,
+        "h": 58
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/grindylow-left-motion-v01.png",
+          "masterSha256": "34006d2765621856a10f905111df8ecf52460031b61777c7781f605e5b87ed8e",
+          "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided Diricawl sheet's pixel style, not its bird anatomy. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face LEFT in clear three-quarter view, face/eyes toward image LEFT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Candidate B: prioritize thin humanoid limbs and compact smooth skin, no dorsal spines, fins, tail or reptile frill. Only the TWO short head horns; long fingers clearly distinct. Each sprite smaller with ample alpha margin; each pose's feet exactly at local y210. Pixel blocks broad and clean.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png",
+          "referenceFiles": [
+            "garden-v05/creature-motion-assets/masters/diricawl-right-motion-v01.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/grindylow-right-motion-v01.png",
+          "masterSha256": "554f9edd78a9633da5ddf77ec5c68900ac6bc0f9affe50cc51eeee7ba5ecff73",
+          "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided selected Grindylow design EXACTLY: smooth pale green compact humanoid, two horns, no back spines or fins. Redraw facing right, NOT a mirror: lighting remains TOP LEFT. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face RIGHT in clear three-quarter view, face/eyes toward image RIGHT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-458e7a0a-f0c3-42e5-8eb4-1b93519d7c14.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/grindylow-growth-v01.png",
+          "masterSha256": "6aef041d027ea684f51b19ccb8c39a31a83a8cc28f994c60ddb8fd00e678f10f",
+          "prompt": "Create 1024x512 transparent sprite GROWTH sheet. EXACT 2 rows x4 columns, 256px square cells, no grid lines. Reference selected pale smooth-skinned book Grindylow: two short horns, two skinny legs, thin arms with very long spindly fingers, large dark eyes, cheeky wide mouth tiny teeth, NO tail fins tentacles dorsal spines. Row1 all face LEFT; row2 all face RIGHT, top-left light BOTH rows. Columns newborn tiny round body horn nubs (height65px), juvenile(height100), adolescent(height135), adult(height170) SAME adult design as reference. Calm standing crouch, feet at local y210 each cell, centered, clear 32px+ gaps. No props ground or shadows. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-deab6962-fe98-473c-89f7-7d93e835e369.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      }
+    }
+  ]
+}

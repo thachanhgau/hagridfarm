@@ -1,0 +1,9 @@
+{
+  "id": "habitat_grindylow",
+  "kind": "habitat",
+  "species": "grindylow",
+  "prompt": "ONE centered object on transparent square 1024x1024. Grindylow habitat, EMPTY tiny rock pool nook intended native36x28. Reference1 habitat prop pixel density, reference2 native reference, reference3 family pond materials. Squat extraordinarily SIMPLE silhouette, broad flat blocks: ring of only4–5 grey stones holding little blue water with ONE strand of weed, SMALL STONE ARCH over one side to hide under. No creature, no reed clumps, no extra scenery, no plinth. Dimetric2:1. Object occupies central720x560 max. No glow halo cast shadow or texture noise. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-2a657dff-d5b7-419a-ad52-d7f3917b9c55.png",
+  "master": "masters-complete-objects/habitat_grindylow.png",
+  "masterSha256": "286eb773942e7ad106f4ddea0b023fef21b14f1b6d38d46f7d9c0cde1061dd28"
+}

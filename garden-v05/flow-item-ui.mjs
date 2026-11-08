@@ -2,6 +2,7 @@ import { ITEM_ART } from "./item-art.mjs?v=25.0.2";
 import { FLOW_ITEM_ART } from "./flow-item-art.mjs?v=25.0.2";
 import { KEEPSAKE_ART } from "./complete-object-art.mjs?v=25.0.2";
 import { UI_AUDIT_ART } from "./ui-audit-art.mjs?v=25.0.2";
+import { POND_ART } from "./pond-art.mjs?v=25.0.2";
 
 // A recipe can have a different illustration while still producing one of
 // these canonical inventory items. ITEM_ART supplies the shared recipe icon;
@@ -13,7 +14,7 @@ export const CANONICAL_OUTPUT_IDS = Object.freeze([
 ]);
 
 export function flowArtSpec(key) {
- const spec = FLOW_ITEM_ART?.[key];
+ const spec = FLOW_ITEM_ART?.[key] ?? POND_ART[key]; // pond items (fry, goldfish, produce_grindylow) resolve like flow art
  return spec?.file ? spec : null;
 }
 

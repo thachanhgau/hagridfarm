@@ -4,9 +4,7 @@ import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 import {createRequire} from 'node:module';
 import {COMPLETE_SCENERY,HABITAT_ART,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs';
-import {CREATURE,POND_SPECIES} from './progression-engine.mjs';
-// Pond species (garden expansion §2.1): their statue, habitat and item art come with the pond-art merge (plan §6).
-const LAND=Object.keys(CREATURE).filter(s=>!POND_SPECIES.has(s));
+import {CREATURE} from './progression-engine.mjs';
 import {SPRITE_PALETTE} from './palette.mjs';
 const require=createRequire(import.meta.url),sharp=require(process.env.SHARP_MODULE||'/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 const read=file=>fs.readFile(new URL(file,import.meta.url));
@@ -14,9 +12,10 @@ const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const manifest=JSON.parse(await read('complete-objects-manifest.json'));
 test('authored scenery, habitat props and species statuettes cover the whole backlog',()=>{
  assert.deepEqual(COMPLETE_SCENERY.map(i=>i.id).sort(),['fang','gardener_friend','herbology_greenhouse','owl_post']);
- assert.deepEqual(Object.keys(HABITAT_ART).sort(),LAND.sort());
- assert.deepEqual(Object.keys(KEEPSAKE_ART).sort(),LAND.sort());
- assert.equal(completeObjectFiles().length,40);assert.equal(new Set(completeObjectFiles()).size,40);
+ // Art may lead the species data (pond grindylow, plan §6): every species needs both, extra art is allowed.
+ for(const species of Object.keys(CREATURE))assert(HABITAT_ART[species]&&KEEPSAKE_ART[species],species);
+ assert.deepEqual(Object.keys(KEEPSAKE_ART).sort(),Object.keys(HABITAT_ART).sort());
+ assert.equal(completeObjectFiles().length,42);assert.equal(new Set(completeObjectFiles()).size,42);
  assert(COMPLETE_SCENERY.every(i=>i.frames.length===4));
 });
 test('new native sprites retain master provenance, exact palette, alpha and safe grounded geometry',async()=>{

@@ -58,6 +58,7 @@ export function drawHabitatMotion(c,residents,{clock=0,reducedMotion=false,weath
    case 'kneazle':pixel(c,x+11+sway,y-5,2,2,p.c);break;
    case 'diricawl': // Two quiet ripples, no travel across the pen.
     pixel(c,x-5+sway*2,y-12,4,1,p.l);pixel(c,x+3-sway,y-8,3,1,p.b);break;
+   case 'grindylow':pixel(c,x-3+sway,y-9,4,1,p.c);break; // pond phase 1: one ripple on the rock pool
    case 'fwooper':pixel(c,x+3+sway,y-22,2,5,p.p);pixel(c,x+4+sway,y-23,2,2,p.a);break;
    case 'hippogriff':pixel(c,x+11+sway,y-8,2,5,p.c);break;
    case 'thestral':pixel(c,x-4,y-14,4,4,phase===1||phase===2?p.l:p.b);break;

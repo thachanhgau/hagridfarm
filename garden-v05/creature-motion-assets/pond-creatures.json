@@ -1,0 +1,1960 @@
+{
+  "version": 1,
+  "generatedBy": "build-pond-creature.mjs",
+  "items": [
+    {
+      "id": "grindylow",
+      "label": "Thủy quái",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 56,
+        "h": 58
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/grindylow-left-motion-v01.png",
+          "masterSha256": "34006d2765621856a10f905111df8ecf52460031b61777c7781f605e5b87ed8e",
+          "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided Diricawl sheet's pixel style, not its bird anatomy. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face LEFT in clear three-quarter view, face/eyes toward image LEFT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Candidate B: prioritize thin humanoid limbs and compact smooth skin, no dorsal spines, fins, tail or reptile frill. Only the TWO short head horns; long fingers clearly distinct. Each sprite smaller with ample alpha margin; each pose's feet exactly at local y210. Pixel blocks broad and clean.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png",
+          "referenceFiles": [
+            "garden-v05/creature-motion-assets/masters/diricawl-right-motion-v01.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/grindylow-right-motion-v01.png",
+          "masterSha256": "554f9edd78a9633da5ddf77ec5c68900ac6bc0f9affe50cc51eeee7ba5ecff73",
+          "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided selected Grindylow design EXACTLY: smooth pale green compact humanoid, two horns, no back spines or fins. Redraw facing right, NOT a mirror: lighting remains TOP LEFT. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face RIGHT in clear three-quarter view, face/eyes toward image RIGHT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-458e7a0a-f0c3-42e5-8eb4-1b93519d7c14.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/grindylow-growth-v01.png",
+          "masterSha256": "6aef041d027ea684f51b19ccb8c39a31a83a8cc28f994c60ddb8fd00e678f10f",
+          "prompt": "Create 1024x512 transparent sprite GROWTH sheet. EXACT 2 rows x4 columns, 256px square cells, no grid lines. Reference selected pale smooth-skinned book Grindylow: two short horns, two skinny legs, thin arms with very long spindly fingers, large dark eyes, cheeky wide mouth tiny teeth, NO tail fins tentacles dorsal spines. Row1 all face LEFT; row2 all face RIGHT, top-left light BOTH rows. Columns newborn tiny round body horn nubs (height65px), juvenile(height100), adolescent(height135), adult(height170) SAME adult design as reference. Calm standing crouch, feet at local y210 each cell, centered, clear 32px+ gaps. No props ground or shadows. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-deab6962-fe98-473c-89f7-7d93e835e369.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      },
+      "frames": {
+        "left": [
+          {
+            "file": "native/grindylow/left-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 38,
+              "y": 58,
+              "w": 20,
+              "h": 22,
+              "count": 355,
+              "edge": false
+            },
+            "sha256": "e3a8e8cd48c81e9282748a65717372da4eee10f601bbaf1e04307fb3e53aaa54",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 97,
+              "y": 145,
+              "w": 61,
+              "h": 65
+            },
+            "scale": 0.32941176470588235
+          },
+          {
+            "file": "native/grindylow/left-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 36,
+              "y": 47,
+              "w": 26,
+              "h": 33,
+              "count": 668,
+              "edge": false
+            },
+            "sha256": "c14934809f1289fefce2eb6d22da88f1dbd4c20c59702f47a5a3d138056035f7",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 345,
+              "y": 110,
+              "w": 77,
+              "h": 100
+            },
+            "scale": 0.32941176470588235
+          },
+          {
+            "file": "native/grindylow/left-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 32,
+              "y": 35,
+              "w": 33,
+              "h": 45,
+              "count": 1121,
+              "edge": false
+            },
+            "sha256": "4cd52b841628bfeb8c5bb0d670872496db8323e8d65ec8c9d1990cdff5458a06",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 590,
+              "y": 75,
+              "w": 99,
+              "h": 135
+            },
+            "scale": 0.32941176470588235
+          },
+          {
+            "file": "native/grindylow/left-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 24,
+              "w": 42,
+              "h": 56,
+              "count": 1728,
+              "edge": false
+            },
+            "sha256": "37709b2487e489e828122cd4115f775f188cd12c4b8789a4b8d3003591243eb3",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 832,
+              "y": 40,
+              "w": 127,
+              "h": 170
+            },
+            "scale": 0.32941176470588235
+          },
+          {
+            "file": "native/grindylow/left-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 28,
+              "y": 24,
+              "w": 42,
+              "h": 56,
+              "count": 1684,
+              "edge": false
+            },
+            "sha256": "d8e33e35cbb94dbc428e9c3726988babc8d27f59529bb2dd8e4cb6a636e2a6e0",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 65,
+              "y": 40,
+              "w": 125,
+              "h": 169
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 28,
+              "y": 21,
+              "w": 40,
+              "h": 59,
+              "count": 1770,
+              "edge": false
+            },
+            "sha256": "47ae0139d200f00e6c5462df6b8940807fa5d857f191e3543990d04ee933f4e0",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 324,
+              "y": 32,
+              "w": 121,
+              "h": 177
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 28,
+              "y": 24,
+              "w": 41,
+              "h": 56,
+              "count": 1683,
+              "edge": false
+            },
+            "sha256": "f43c79e134c95485a661b92f92026dd79a681f9bb29259ddd77b817e2dca5dfb",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 579,
+              "y": 40,
+              "w": 122,
+              "h": 169
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 28,
+              "y": 24,
+              "w": 42,
+              "h": 56,
+              "count": 1742,
+              "edge": false
+            },
+            "sha256": "561ac86503846dab3733907e7285aed0df0fea2a2420e318bf118932e091fe16",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 834,
+              "y": 42,
+              "w": 125,
+              "h": 167
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 35,
+              "w": 48,
+              "h": 45,
+              "count": 1618,
+              "edge": false
+            },
+            "sha256": "3d852505cd1b89cc932bfa80f3fee2ed517d4998abc79ba0c36eabe45fff7bbd",
+            "clip": "action",
+            "sourceRect": {
+              "x": 56,
+              "y": 331,
+              "w": 144,
+              "h": 135
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 21,
+              "w": 63,
+              "h": 59,
+              "count": 1984,
+              "edge": false
+            },
+            "sha256": "c7992a9d0e874468d82811f34a441e2395274b8a89ed8263cc7fd753349d4481",
+            "clip": "action",
+            "sourceRect": {
+              "x": 289,
+              "y": 289,
+              "w": 191,
+              "h": 177
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 26,
+              "w": 48,
+              "h": 54,
+              "count": 1731,
+              "edge": false
+            },
+            "sha256": "abecacca36a490691d3ce87411d23cff2f5fa9d362bbbd5576f70eaf47cb4e20",
+            "clip": "action",
+            "sourceRect": {
+              "x": 569,
+              "y": 304,
+              "w": 143,
+              "h": 162
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 25,
+              "w": 42,
+              "h": 55,
+              "count": 1664,
+              "edge": false
+            },
+            "sha256": "ab9ea67ef2ea28c7ca86e753680bb92b848bfe638bdaddfb1ee66e7ddfc53fd9",
+            "clip": "action",
+            "sourceRect": {
+              "x": 833,
+              "y": 301,
+              "w": 126,
+              "h": 165
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 29,
+              "w": 54,
+              "h": 51,
+              "count": 1915,
+              "edge": false
+            },
+            "sha256": "8330aa86a50f20cad96ae1046837dac8c191d777a689beddfac2c29cc824a5b6",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 47,
+              "y": 569,
+              "w": 163,
+              "h": 152
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 30,
+              "w": 49,
+              "h": 50,
+              "count": 1768,
+              "edge": false
+            },
+            "sha256": "5396a7651f4059577f63ad40c567c4afaa8d2c8d5760daa7f7be3c33dd736472",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 309,
+              "y": 573,
+              "w": 148,
+              "h": 149
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 26,
+              "w": 47,
+              "h": 54,
+              "count": 1669,
+              "edge": false
+            },
+            "sha256": "87e0bfcbb59024ca393aaadcdc16cfe70cec6db2a95617928240d42b34a0bd1d",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 569,
+              "y": 560,
+              "w": 141,
+              "h": 162
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 28,
+              "y": 24,
+              "w": 41,
+              "h": 56,
+              "count": 1663,
+              "edge": false
+            },
+            "sha256": "e794b0314c9d0153da417872aa725a5ea9c7439d41311d4922e7db595471db86",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 835,
+              "y": 553,
+              "w": 123,
+              "h": 169
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 21,
+              "w": 48,
+              "h": 59,
+              "count": 1840,
+              "edge": false
+            },
+            "sha256": "1a6333e540e8277bf0f2ead7696116a3c5a7c5bbf56454baa61b8407316968cd",
+            "clip": "care",
+            "sourceRect": {
+              "x": 56,
+              "y": 800,
+              "w": 144,
+              "h": 177
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 21,
+              "w": 43,
+              "h": 59,
+              "count": 1878,
+              "edge": false
+            },
+            "sha256": "c079d4ec126efac848881b8f2347d46f6447e03b168e9f7ede0b42a792341f2b",
+            "clip": "care",
+            "sourceRect": {
+              "x": 319,
+              "y": 800,
+              "w": 129,
+              "h": 177
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 21,
+              "w": 42,
+              "h": 59,
+              "count": 1864,
+              "edge": false
+            },
+            "sha256": "ca676dd3da7e98ee6df6db20cc0982f8d0ce2ab6e9e86cca232c51f3cdc8061c",
+            "clip": "care",
+            "sourceRect": {
+              "x": 577,
+              "y": 800,
+              "w": 127,
+              "h": 177
+            },
+            "scale": 0.33136094674556216
+          },
+          {
+            "file": "native/grindylow/left-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 27,
+              "w": 42,
+              "h": 53,
+              "count": 1602,
+              "edge": false
+            },
+            "sha256": "291bc77a4e78cf916c91a31f4d3414bf8316e98b011eeec4cf9f03a1234d433d",
+            "clip": "care",
+            "sourceRect": {
+              "x": 833,
+              "y": 818,
+              "w": 126,
+              "h": 159
+            },
+            "scale": 0.33136094674556216
+          }
+        ],
+        "right": [
+          {
+            "file": "native/grindylow/right-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 38,
+              "y": 58,
+              "w": 20,
+              "h": 22,
+              "count": 354,
+              "edge": false
+            },
+            "sha256": "85fb10eea31c4d06c147bba1b1f8e96aad875ce373f887fa010f816d7bc60909",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 97,
+              "y": 401,
+              "w": 61,
+              "h": 65
+            },
+            "scale": 0.32941176470588235
+          },
+          {
+            "file": "native/grindylow/right-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 35,
+              "y": 47,
+              "w": 26,
+              "h": 33,
+              "count": 676,
+              "edge": false
+            },
+            "sha256": "2dec600dcf35fc66987214d2e18a2de8c486bb7e8299de727cf8e6c326a374c4",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 344,
+              "y": 366,
+              "w": 79,
+              "h": 100
+            },
+            "scale": 0.32941176470588235
+          },
+          {
+            "file": "native/grindylow/right-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 31,
+              "y": 35,
+              "w": 34,
+              "h": 45,
+              "count": 1142,
+              "edge": false
+            },
+            "sha256": "d60f416e5579617169c0924aebe8a99ef69f3d8f86cf4ed07d3dd069f3dc90b7",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 588,
+              "y": 331,
+              "w": 103,
+              "h": 135
+            },
+            "scale": 0.32941176470588235
+          },
+          {
+            "file": "native/grindylow/right-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 24,
+              "w": 43,
+              "h": 56,
+              "count": 1756,
+              "edge": false
+            },
+            "sha256": "11746c2bc4ccf6cf4447c7b8e323ddc10ba1397e75430d7bc0416a6e4ac91e9f",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 831,
+              "y": 296,
+              "w": 129,
+              "h": 170
+            },
+            "scale": 0.32941176470588235
+          },
+          {
+            "file": "native/grindylow/right-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 23,
+              "w": 43,
+              "h": 57,
+              "count": 1788,
+              "edge": false
+            },
+            "sha256": "14367e1e74454cb8eb8293a644009d6fd4a9bb0bfe8ce9827e703a2d133fcaca",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 65,
+              "y": 42,
+              "w": 126,
+              "h": 167
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 28,
+              "y": 20,
+              "w": 42,
+              "h": 60,
+              "count": 1858,
+              "edge": false
+            },
+            "sha256": "eb6e4eebd1630b46f6122842ebb1c5d9668fe499885325987d1973dec42efae7",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 323,
+              "y": 33,
+              "w": 122,
+              "h": 176
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 24,
+              "w": 43,
+              "h": 56,
+              "count": 1760,
+              "edge": false
+            },
+            "sha256": "57433a8b80c1b41486fa54eda93485a96ea2d56f11090fe00d4081acdb454ff5",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 576,
+              "y": 44,
+              "w": 127,
+              "h": 165
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 24,
+              "w": 43,
+              "h": 56,
+              "count": 1800,
+              "edge": false
+            },
+            "sha256": "87974a474ed221ce9ef12abfd1aebd4a8bb547ae322fe893a5b14b727dec3d7e",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 832,
+              "y": 45,
+              "w": 126,
+              "h": 165
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 34,
+              "w": 49,
+              "h": 46,
+              "count": 1749,
+              "edge": false
+            },
+            "sha256": "fd49c1c4db8cc39097a37ae090e91beeb2353aefc4b5fc1721df484959706b7d",
+            "clip": "action",
+            "sourceRect": {
+              "x": 56,
+              "y": 331,
+              "w": 144,
+              "h": 135
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 16,
+              "y": 22,
+              "w": 65,
+              "h": 58,
+              "count": 2113,
+              "edge": false
+            },
+            "sha256": "7c70493a3c9b9e5aacc362465278db17e3735d0433a368dcbfdb4e64a4ed1cdd",
+            "clip": "action",
+            "sourceRect": {
+              "x": 288,
+              "y": 295,
+              "w": 192,
+              "h": 170
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 26,
+              "y": 25,
+              "w": 46,
+              "h": 55,
+              "count": 1826,
+              "edge": false
+            },
+            "sha256": "1b75788eb1290c9b180ee18c7fbea6837139c01af98a0dfbc00e7cd05acb21b8",
+            "clip": "action",
+            "sourceRect": {
+              "x": 573,
+              "y": 304,
+              "w": 134,
+              "h": 162
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 24,
+              "w": 44,
+              "h": 56,
+              "count": 1775,
+              "edge": false
+            },
+            "sha256": "244f1e8d212cd369234a4ea754c8e3fcfb18efa3e63341de7fdf7c1cf5cbb619",
+            "clip": "action",
+            "sourceRect": {
+              "x": 832,
+              "y": 302,
+              "w": 128,
+              "h": 164
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 28,
+              "w": 54,
+              "h": 52,
+              "count": 1966,
+              "edge": false
+            },
+            "sha256": "757458b59c4f6dd3adf62c5c216b9878f381ef1e0201e47bd848ad8e5997847c",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 48,
+              "y": 569,
+              "w": 159,
+              "h": 153
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 29,
+              "w": 48,
+              "h": 51,
+              "count": 1748,
+              "edge": false
+            },
+            "sha256": "42969546e4021bbba4252b8173439bfceab29ed8c00efe69fbb56319d81e07cf",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 314,
+              "y": 573,
+              "w": 140,
+              "h": 149
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 26,
+              "y": 24,
+              "w": 44,
+              "h": 56,
+              "count": 1840,
+              "edge": false
+            },
+            "sha256": "13d0215207f2dc88dbe6ffd924e0a006e9f00ac3dad514f198b07977d926bda7",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 575,
+              "y": 557,
+              "w": 129,
+              "h": 165
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 23,
+              "w": 43,
+              "h": 57,
+              "count": 1808,
+              "edge": false
+            },
+            "sha256": "592bd1b858240bbcae40e77635485b6f9ff3f96cea3571bedf0b8a47303b929e",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 833,
+              "y": 554,
+              "w": 125,
+              "h": 168
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 20,
+              "w": 52,
+              "h": 60,
+              "count": 1938,
+              "edge": false
+            },
+            "sha256": "85c9e36eac06b5fcb2130bea4e28bd30029ab40167558fac064707d0703560b9",
+            "clip": "care",
+            "sourceRect": {
+              "x": 51,
+              "y": 801,
+              "w": 153,
+              "h": 177
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 20,
+              "w": 48,
+              "h": 60,
+              "count": 1947,
+              "edge": false
+            },
+            "sha256": "233086284b2eead3ea12f0f8a817ecaabc15d1932514bbd8c81e85610e512e00",
+            "clip": "care",
+            "sourceRect": {
+              "x": 313,
+              "y": 801,
+              "w": 141,
+              "h": 177
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 20,
+              "w": 47,
+              "h": 60,
+              "count": 1905,
+              "edge": false
+            },
+            "sha256": "35c398b51f7c75d128afef97a1fff4b6074b1119f21cf7a3e0fd7a862e15ec8a",
+            "clip": "care",
+            "sourceRect": {
+              "x": 571,
+              "y": 801,
+              "w": 137,
+              "h": 177
+            },
+            "scale": 0.3393939393939394
+          },
+          {
+            "file": "native/grindylow/right-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 27,
+              "w": 43,
+              "h": 53,
+              "count": 1668,
+              "edge": false
+            },
+            "sha256": "6742496eeafdd8a4cd8f174c64d9f36dbd18bb2b82d0ee341d553bdf4e0b5d1d",
+            "clip": "care",
+            "sourceRect": {
+              "x": 833,
+              "y": 822,
+              "w": 126,
+              "h": 156
+            },
+            "scale": 0.3393939393939394
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "durations": [
+            600,
+            240,
+            180,
+            240
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "durations": [
+            320,
+            180,
+            240,
+            220
+          ],
+          "loop": false
+        },
+        "eat": {
+          "frames": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            16,
+            17,
+            18,
+            19
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "runtimeAtlases": {
+        "left": {
+          "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+          "sha256": "c128837af6d5804873913d7c89b7753c7e74c8e17d717b2ab981da3fee3a8b1e",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 38,
+                "y": 58,
+                "w": 20,
+                "h": 22,
+                "count": 355,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 36,
+                "y": 47,
+                "w": 26,
+                "h": 33,
+                "count": 668,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 32,
+                "y": 35,
+                "w": 33,
+                "h": 45,
+                "count": 1121,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 24,
+                "w": 42,
+                "h": 56,
+                "count": 1728,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 28,
+                "y": 24,
+                "w": 42,
+                "h": 56,
+                "count": 1684,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 28,
+                "y": 21,
+                "w": 40,
+                "h": 59,
+                "count": 1770,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 28,
+                "y": 24,
+                "w": 41,
+                "h": 56,
+                "count": 1683,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 28,
+                "y": 24,
+                "w": 42,
+                "h": 56,
+                "count": 1742,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 35,
+                "w": 48,
+                "h": 45,
+                "count": 1618,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 21,
+                "w": 63,
+                "h": 59,
+                "count": 1984,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 26,
+                "w": 48,
+                "h": 54,
+                "count": 1731,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 25,
+                "w": 42,
+                "h": 55,
+                "count": 1664,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 29,
+                "w": 54,
+                "h": 51,
+                "count": 1915,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 30,
+                "w": 49,
+                "h": 50,
+                "count": 1768,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 26,
+                "w": 47,
+                "h": 54,
+                "count": 1669,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 28,
+                "y": 24,
+                "w": 41,
+                "h": 56,
+                "count": 1663,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 21,
+                "w": 48,
+                "h": 59,
+                "count": 1840,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 21,
+                "w": 43,
+                "h": 59,
+                "count": 1878,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 21,
+                "w": 42,
+                "h": 59,
+                "count": 1864,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 27,
+                "w": 42,
+                "h": 53,
+                "count": 1602,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        },
+        "right": {
+          "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+          "sha256": "93e221fa1ec23b9cba7bfa01f2ea9597609af94a0f45b8aa3017b6b40788a7a8",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 38,
+                "y": 58,
+                "w": 20,
+                "h": 22,
+                "count": 354,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 35,
+                "y": 47,
+                "w": 26,
+                "h": 33,
+                "count": 676,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 31,
+                "y": 35,
+                "w": 34,
+                "h": 45,
+                "count": 1142,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 24,
+                "w": 43,
+                "h": 56,
+                "count": 1756,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 23,
+                "w": 43,
+                "h": 57,
+                "count": 1788,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 28,
+                "y": 20,
+                "w": 42,
+                "h": 60,
+                "count": 1858,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 24,
+                "w": 43,
+                "h": 56,
+                "count": 1760,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 24,
+                "w": 43,
+                "h": 56,
+                "count": 1800,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 34,
+                "w": 49,
+                "h": 46,
+                "count": 1749,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 16,
+                "y": 22,
+                "w": 65,
+                "h": 58,
+                "count": 2113,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 26,
+                "y": 25,
+                "w": 46,
+                "h": 55,
+                "count": 1826,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 24,
+                "w": 44,
+                "h": 56,
+                "count": 1775,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 28,
+                "w": 54,
+                "h": 52,
+                "count": 1966,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 29,
+                "w": 48,
+                "h": 51,
+                "count": 1748,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 26,
+                "y": 24,
+                "w": 44,
+                "h": 56,
+                "count": 1840,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 23,
+                "w": 43,
+                "h": 57,
+                "count": 1808,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 20,
+                "w": 52,
+                "h": 60,
+                "count": 1938,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 20,
+                "w": 48,
+                "h": 60,
+                "count": 1947,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 20,
+                "w": 47,
+                "h": 60,
+                "count": 1905,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/grindylow/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 27,
+                "w": 43,
+                "h": 53,
+                "count": 1668,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

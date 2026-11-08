@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "ee364fef5055",
+  "revision": "9a2528c1c068",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -4482,6 +4482,36 @@
       "sha256": "8706184601bd7c0f4dd81b050a618c6eaea8dc73e38e369f3fb5b431f347c873"
     },
     {
+      "source": "native-items/fry_carp.png",
+      "file": "runtime-webp/native-items/fry_carp.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 670,
+      "bytes": 426,
+      "sourceSha256": "395391ce325f0761e19862274994aa4ddf2feee90dbba95c28c02d37e333e9e3",
+      "sha256": "76158357fe4f4e29b539342b963d7cf43bf7ef720510984201a4263e4f90d57b"
+    },
+    {
+      "source": "native-items/fry_goldfish.png",
+      "file": "runtime-webp/native-items/fry_goldfish.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 684,
+      "bytes": 416,
+      "sourceSha256": "ebc78d65948472bd7fc79c4b9cc206f9fbc5d8705f51b936cf2b7b12a34e988f",
+      "sha256": "e06970255254d7c3496aaacfbe1eb391748f03932e89b6d014437dcf765db9d4"
+    },
+    {
+      "source": "native-items/goldfish.png",
+      "file": "runtime-webp/native-items/goldfish.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 561,
+      "bytes": 376,
+      "sourceSha256": "adb209046199bf07480ff30f48095bfd615f8d39c619ee5fc8b015b9834c0250",
+      "sha256": "4184a29f4c9a5daf8d150942225c2b13f36f72bab4408f27d7ad9ef28f21a37f"
+    },
+    {
       "source": "native-items/harvest_ambermelon/frame-01.png",
       "file": "runtime-webp/native-items/harvest_ambermelon/frame-01.webp",
       "width": 64,
@@ -4960,6 +4990,16 @@
       "bytes": 760,
       "sourceSha256": "14dedf181db525a19119e72fd6761e486d836f4dbcf9eff3d4100c67d2f9280c",
       "sha256": "ac280d2dc5eb340c0dd3ecfd5e42526ba724ecce2f1f5668d7eb8fe7ef29c1ab"
+    },
+    {
+      "source": "native-items/produce_grindylow.png",
+      "file": "runtime-webp/native-items/produce_grindylow.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 703,
+      "bytes": 442,
+      "sourceSha256": "800c97fc8e92f0a781c5b8b2443342ea1965938c94d718ccf88c9e968d7ac619",
+      "sha256": "661b0d216243a6b5fb7305792a56f3b59a3d2a4e02822f15b2374550d5bdc924"
     },
     {
       "source": "native-items/produce_hippogriff.png",
@@ -5542,6 +5582,16 @@
       "sha256": "f76e07c5e712489ba7f798c224212c42b2ddcdc3a06522b36577977b5963f9aa"
     },
     {
+      "source": "native-complete-objects/habitat_grindylow/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/habitat_grindylow/frame-01.webp",
+      "width": 40,
+      "height": 36,
+      "sourceBytes": 465,
+      "bytes": 332,
+      "sourceSha256": "bca5ab545caea215d2623c99d90cbc1a2d23bf7bcb39ce66698c2bfb09ef963a",
+      "sha256": "f5940a8d9a1c1b924b8aa1d37c1b972622c89b9610e65ad9414c26c6bdbf8f89"
+    },
+    {
       "source": "native-complete-objects/habitat_hippogriff/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_hippogriff/frame-01.webp",
       "width": 40,
@@ -5700,6 +5750,16 @@
       "bytes": 564,
       "sourceSha256": "d2be5c08147668c840f657d02e509bc5dac6ee74cea6e32e7ba5cef4908cff43",
       "sha256": "1ed8f7f315836fb7aff9eb58436e1ab917da7d5f0636306cf5dd58f8cc504504"
+    },
+    {
+      "source": "native-complete-objects/keepsake_grindylow/frame-01.png",
+      "file": "runtime-webp/native-complete-objects/keepsake_grindylow/frame-01.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 802,
+      "bytes": 514,
+      "sourceSha256": "01105a0b011073d0c505dd966b4a69f926cc6a4f6b604bfb800be7244f9f908b",
+      "sha256": "7609729f490582508e1cc9ebfbe153be5b4cb3885fcb4f0fa5465869cdb17741"
     },
     {
       "source": "native-complete-objects/keepsake_hippogriff/frame-01.png",
@@ -6250,6 +6310,26 @@
       "bytes": 11986,
       "sourceSha256": "19fbeb33574274f690c4c7ad02deba1611af15a04bbd9b02765dcc71f241c85a",
       "sha256": "487a3df72bf0f2cc4c09272fab2a975a27ce0a73ff43026ad7952b8139e18ec1"
+    },
+    {
+      "source": "creature-motion-assets/native/grindylow/left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/grindylow/left-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 18740,
+      "bytes": 10950,
+      "sourceSha256": "c128837af6d5804873913d7c89b7753c7e74c8e17d717b2ab981da3fee3a8b1e",
+      "sha256": "f4ead5001a1c2e07f4a39afeea1f6f54d004b6cffaa06752b8b292c995de9279"
+    },
+    {
+      "source": "creature-motion-assets/native/grindylow/right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/grindylow/right-atlas.webp",
+      "width": 384,
+      "height": 480,
+      "sourceBytes": 17464,
+      "bytes": 10324,
+      "sourceSha256": "93e221fa1ec23b9cba7bfa01f2ea9597609af94a0f45b8aa3017b6b40788a7a8",
+      "sha256": "f841bfd377be07a04d7b77d33153c3a773f2f8d9de6f9d0fa2b01c5c449e1872"
     },
     {
       "source": "creature-motion-assets/native/hippogriff/left-atlas.png",
@@ -12682,6 +12762,46 @@
       "sha256": "bfec26aa1294fa91c462d5dddc5562b43cd24f7c2e474e44fd2036ede5b3476b"
     },
     {
+      "source": "environment/pond/pond-1.png",
+      "file": "runtime-webp/environment/pond/pond-1.webp",
+      "width": 160,
+      "height": 112,
+      "sourceBytes": 2905,
+      "bytes": 1872,
+      "sourceSha256": "508024525fc6e0041ea22dab16cdb94d1da1712213c8af736f31d0297fb230da",
+      "sha256": "6ef53ae73c4c8511c7afb5afb719367341026c06d29f3d2cf7d874de088a6f39"
+    },
+    {
+      "source": "environment/pond/pond-2.png",
+      "file": "runtime-webp/environment/pond/pond-2.webp",
+      "width": 224,
+      "height": 152,
+      "sourceBytes": 6060,
+      "bytes": 3986,
+      "sourceSha256": "51f6a8530d15e40742a2370b663a5fb948e1ae119eac2bea60005ad1e11139ca",
+      "sha256": "9505b08f313f2f96b218bf9c1b8e3e3e18b3378e2908d8627b28030d46689a8a"
+    },
+    {
+      "source": "environment/pond/pond-3.png",
+      "file": "runtime-webp/environment/pond/pond-3.webp",
+      "width": 288,
+      "height": 192,
+      "sourceBytes": 9297,
+      "bytes": 5980,
+      "sourceSha256": "00b7aa0ffdf0e90226328a0012e910ebd634195b39f4926ebbb1e4c250125ee3",
+      "sha256": "4bcb3d0231772f9cf38f4dd4fa28aa83a55c593820e6ca97b284c9bcfe871fe2"
+    },
+    {
+      "source": "environment/pond/pond-bed.png",
+      "file": "runtime-webp/environment/pond/pond-bed.webp",
+      "width": 128,
+      "height": 88,
+      "sourceBytes": 1599,
+      "bytes": 1044,
+      "sourceSha256": "15c4a9d4dd25632cd841dc746325b84ed6ed2f8340e6b04dc3b06b0d9bf67143",
+      "sha256": "67bfb6050a25ef8e7c43ae5e319fc767ae824e042f16afe64966eacce9ac757b"
+    },
+    {
       "source": "environment/statue-night/ev_dark_dobby_red_right-n0.png",
       "file": "runtime-webp/environment/statue-night/ev_dark_dobby_red_right-n0.webp",
       "width": 128,
@@ -13095,11 +13215,11 @@
     }
   ],
   "totals": {
-    "converted": 1303,
+    "converted": 1315,
     "existingWebp": 8,
-    "originalBytes": 4669661,
-    "webpBytes": 3124656,
-    "savedBytes": 1545005,
-    "savedPercent": 33.09
+    "originalBytes": 4729611,
+    "webpBytes": 3161318,
+    "savedBytes": 1568293,
+    "savedPercent": 33.16
   }
 }

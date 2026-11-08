@@ -466,6 +466,60 @@
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
     {
+      "id": "habitat_grindylow",
+      "kind": "habitat",
+      "species": "grindylow",
+      "file": "native-complete-objects/habitat_grindylow/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 36,
+        "h": 27
+      },
+      "sha256": "bca5ab545caea215d2623c99d90cbc1a2d23bf7bcb39ce66698c2bfb09ef963a",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/habitat_grindylow/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/habitat_grindylow/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 4,
+            "w": 36,
+            "h": 27
+          },
+          "sha256": "bca5ab545caea215d2623c99d90cbc1a2d23bf7bcb39ce66698c2bfb09ef963a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/habitat_grindylow.png",
+      "masterSha256": "286eb773942e7ad106f4ddea0b023fef21b14f1b6d38d46f7d9c0cde1061dd28",
+      "prompt": "ONE centered object on transparent square 1024x1024. Grindylow habitat, EMPTY tiny rock pool nook intended native36x28. Reference1 habitat prop pixel density, reference2 native reference, reference3 family pond materials. Squat extraordinarily SIMPLE silhouette, broad flat blocks: ring of only4–5 grey stones holding little blue water with ONE strand of weed, SMALL STONE ARCH over one side to hide under. No creature, no reed clumps, no extra scenery, no plinth. Dimetric2:1. Object occupies central720x560 max. No glow halo cast shadow or texture noise. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-2a657dff-d5b7-419a-ad52-d7f3917b9c55.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
       "id": "habitat_hippogriff",
       "kind": "habitat",
       "species": "hippogriff",
@@ -1234,6 +1288,60 @@
       "masterSha256": "cc61e9229564a0cc958df54350609f32c825f35a0f2aa7a3ce10310220189fda",
       "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled fwooper. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: bright ORANGE and warm gold plumage, long swept orange tail with dark-brown/copper shadows; do not turn large wing or body regions purple. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-4a0f8103-2eda-469e-aed4-b711db9ce9d8.png",
+      "tool": "builtin image_gen",
+      "method": "authored master cells, common native scale, palette24, binary alpha"
+    },
+    {
+      "id": "keepsake_grindylow",
+      "kind": "keepsake",
+      "species": "grindylow",
+      "file": "native-complete-objects/keepsake_grindylow/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 12,
+        "y": 6,
+        "w": 32,
+        "h": 44
+      },
+      "sha256": "01105a0b011073d0c505dd966b4a69f926cc6a4f6b604bfb800be7244f9f908b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 1024
+      },
+      "frames": [
+        "native-complete-objects/keepsake_grindylow/frame-01.png"
+      ],
+      "frameRecords": [
+        {
+          "file": "native-complete-objects/keepsake_grindylow/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 12,
+            "y": 6,
+            "w": 32,
+            "h": 44
+          },
+          "sha256": "01105a0b011073d0c505dd966b4a69f926cc6a4f6b604bfb800be7244f9f908b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "w": 1024,
+            "h": 1024
+          }
+        }
+      ],
+      "master": "masters-complete-objects/keepsake_grindylow.png",
+      "masterSha256": "fb5ae90b3d9ea58efecfd1b0138d89f92303b88da3b0cabea19e7b6b8674768c",
+      "prompt": "Edit ONLY remove the TWO floating blue water drops beside statuette body. Those two areas must be completely transparent. Keep ONE connected Grindylow STATUETTE fixed to its two-step grey plinth with gold front inset, pale green two-horned body and raised long fingers EXACTLY unchanged. No free-floating objects. Genuine transparent background. No added shadows halo glow gradients. 1024x1024. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-6e624928-32a3-4c10-bc5b-7c834a1cce51.png",
       "tool": "builtin image_gen",
       "method": "authored master cells, common native scale, palette24, binary alpha"
     },
