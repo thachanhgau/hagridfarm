@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "1c263efd51dd",
+  "revision": "f72323200a5b",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -6516,20 +6516,20 @@
       "file": "runtime-webp/creature-motion-assets/native/crup/left-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 17923,
-      "bytes": 10084,
-      "sourceSha256": "80576323dbb8e4b7c3370e739d065f501b1705e2d1215504b1d52414ed07f088",
-      "sha256": "c444d11bc5c08b36ae2ca7fa7dc4fecdc73116398443ee4af253dd551043d2b9"
+      "sourceBytes": 30113,
+      "bytes": 18830,
+      "sourceSha256": "9b886462f6cfbed194f027bf038eebf6fd4b3eb5c02acc9fa78e19d4c67280d8",
+      "sha256": "cd11ac4812aa2e6befcf2b5a3485f8a849c1765e70039c3488ea49d5e6b5d910"
     },
     {
       "source": "creature-motion-assets/native/crup/right-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/crup/right-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 16651,
-      "bytes": 9512,
-      "sourceSha256": "459f630e1bf70ccbb23fef4ac02e9876fbe4b064d068f29163dc02a8e18a70ab",
-      "sha256": "71cf959e3097d641803ac363491d909f0a78ed1687b9b15d824bcd63e51edf48"
+      "sourceBytes": 29884,
+      "bytes": 18778,
+      "sourceSha256": "9427eb3c84cf9368781e0a374a93095d0e45c60065f3440a17820c6e919f1987",
+      "sha256": "affc09489ba4351b094b15c65e1ea64e80f49734233c6a29f957da9cb4853138"
     },
     {
       "source": "creature-motion-assets/native/diricawl/left-atlas.png",
@@ -6596,20 +6596,20 @@
       "file": "runtime-webp/creature-motion-assets/native/grindylow/left-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 18740,
-      "bytes": 10950,
-      "sourceSha256": "c128837af6d5804873913d7c89b7753c7e74c8e17d717b2ab981da3fee3a8b1e",
-      "sha256": "f4ead5001a1c2e07f4a39afeea1f6f54d004b6cffaa06752b8b292c995de9279"
+      "sourceBytes": 29642,
+      "bytes": 17690,
+      "sourceSha256": "0b9790ef660c374ccdb08aca992aa9084f80346f5a27cd38a03f7eb5a8995851",
+      "sha256": "9a013f3cdf6ac20701e3f60862790d337fc8ae8e759480066d47d5636bd086ca"
     },
     {
       "source": "creature-motion-assets/native/grindylow/right-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/grindylow/right-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 17464,
-      "bytes": 10324,
-      "sourceSha256": "93e221fa1ec23b9cba7bfa01f2ea9597609af94a0f45b8aa3017b6b40788a7a8",
-      "sha256": "f841bfd377be07a04d7b77d33153c3a773f2f8d9de6f9d0fa2b01c5c449e1872"
+      "sourceBytes": 29340,
+      "bytes": 17750,
+      "sourceSha256": "5286358f6b30f12ee560c3987594bd47f46e1cfbc04ecfe8ad1b11e18a6b3e02",
+      "sha256": "69a3512d8f24bf3d737129c353df46a9612eec1df6cf15ae97524ee660d738d7"
     },
     {
       "source": "creature-motion-assets/native/hippogriff/left-atlas.png",
@@ -6636,40 +6636,40 @@
       "file": "runtime-webp/creature-motion-assets/native/kappa/left-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 18320,
-      "bytes": 10758,
-      "sourceSha256": "9ae15ce56d678e06a269cc909e3ca3dbb9a3ab383f58dde771a3b2907d586543",
-      "sha256": "81254f5c1902d2eb15e1d7ee8ea5bcd709576da0c01b55de55613dd34853d6bb"
+      "sourceBytes": 32414,
+      "bytes": 18860,
+      "sourceSha256": "0c82ae834faac8eddb12260e4fb749952a6f6c4eeeb3b00b03e099c19e105715",
+      "sha256": "d2e05259bd962ea2a4ded8bae80c223564712b6de152f0c8f6ac6a08ff2a8a50"
     },
     {
       "source": "creature-motion-assets/native/kappa/right-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/kappa/right-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 17922,
-      "bytes": 10454,
-      "sourceSha256": "875fb7cc714a90246d5c549bb56c8ef9a063d44ffae56dea0a8a8d6d035d13d7",
-      "sha256": "2361ba5effe527af25f85f0580269ab11eed3f9c09ef833ebaf94b5c5e4ea950"
+      "sourceBytes": 32344,
+      "bytes": 19080,
+      "sourceSha256": "38bf5c07441846e2c3a476be1365e51a4dc1231e5510374e534de9649ef8acc4",
+      "sha256": "840a995d2366d57fe627c727a90038952c2c3fe5f172570713d3a04a49721820"
     },
     {
       "source": "creature-motion-assets/native/knarl/left-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/knarl/left-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 17503,
-      "bytes": 9952,
-      "sourceSha256": "cca5ac97243f6159a1c1b0038199b817da0b8aab6155fc2cdbdcb6175caa128c",
-      "sha256": "45ebd34ac8e67dd1838ea9508343b45c9f573f3f6f1f21d1c0af5d261ac88df7"
+      "sourceBytes": 28942,
+      "bytes": 17410,
+      "sourceSha256": "905776ead464ffe2be00a080fe38e1e54ddd712d5e2d171adc2c5128d4508c2d",
+      "sha256": "03d0360ac33db0f053a20893d3809c24aad7778877df2692c5182ac8fbc9c0c9"
     },
     {
       "source": "creature-motion-assets/native/knarl/right-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/knarl/right-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 17153,
-      "bytes": 9948,
-      "sourceSha256": "0f991180a14f5a159decec96a4a29a47e8252187a1cee3f5f9c796965f68b967",
-      "sha256": "07c708358b81fd3d2c8974c52e21cd9cad5a46037e960cca9bf80235ff651735"
+      "sourceBytes": 28784,
+      "bytes": 17434,
+      "sourceSha256": "e1ab5b17f3dc51c684190310a1f4d7bdfc622af5330099d85dfb37fb889f8c02",
+      "sha256": "94b2fb7c2428e1a8b03b7382e943843b838c6ac2236ccb5eb9449cc163d80cfd"
     },
     {
       "source": "creature-motion-assets/native/kneazle/left-atlas.png",
@@ -6736,20 +6736,20 @@
       "file": "runtime-webp/creature-motion-assets/native/porlock/left-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 17099,
-      "bytes": 9966,
-      "sourceSha256": "c9932b37c39b0a5a3101cab7dd050ad68236f35e1d2639b904cb11bcbe5a1c4e",
-      "sha256": "d8f9c4a0253c8e0b8d32019ea72ba4f9bce81937a0d088f80b1492ac0bd06d38"
+      "sourceBytes": 29392,
+      "bytes": 16404,
+      "sourceSha256": "e45dd4fd718ee6e5988b01be3ec74185868a39e42b9e17dae0818ea5c722dbb0",
+      "sha256": "5a1492dcf55db83feff7c7c3847f63d586b64ec518349e657baca25c0d0c248e"
     },
     {
       "source": "creature-motion-assets/native/porlock/right-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/porlock/right-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 19453,
-      "bytes": 11620,
-      "sourceSha256": "3bc49213005daec4f1ed1466b8c993b3333beac23542c3c9d6b6b15cc177c4f7",
-      "sha256": "da9f58f646e8e92ae5711facfd064a2411cdde05b772bb334459f2d5f8b0f938"
+      "sourceBytes": 29187,
+      "bytes": 16436,
+      "sourceSha256": "0c3461185b196f7281b1efb90c1d336b3929595843ed8c61fa730755187d7389",
+      "sha256": "b6f26629b16887ae87c91ae1e8db7bc8acc57c6c7617340e5bd25edfefac0d7f"
     },
     {
       "source": "creature-motion-assets/native/puffskein/left-atlas.png",
@@ -6776,20 +6776,20 @@
       "file": "runtime-webp/creature-motion-assets/native/salamander/left-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 15505,
-      "bytes": 8928,
-      "sourceSha256": "8b13cb4d5c7f33ca83c729bbf54417ba0296773fa521461193204c686d2581d1",
-      "sha256": "d37b39e144ccf71d361871024730d9bbda6610c86491e0798d6b914a9be6ab10"
+      "sourceBytes": 32982,
+      "bytes": 20170,
+      "sourceSha256": "0ff5ddf3a15c94641a3e8e00d2c4fcd1a83778b4f307d3fcc8e44ef0495287e4",
+      "sha256": "acb2e93976f985b44366d6c3509f5e0066bf8d03b2cfbc37939d8958410161b4"
     },
     {
       "source": "creature-motion-assets/native/salamander/right-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/salamander/right-atlas.webp",
       "width": 384,
       "height": 480,
-      "sourceBytes": 14724,
-      "bytes": 8522,
-      "sourceSha256": "4ab0694934d048eb0db73f669e99eb854f623bbbc7f5e51668c4636908d882e1",
-      "sha256": "72609b4f5dbcc9a5148aa1b79b378772c952b7552836c3bfdec9da57616b899b"
+      "sourceBytes": 32667,
+      "bytes": 20150,
+      "sourceSha256": "7ad14f413768f26fe7619a4e45546ad5d9008b5a9e61fc9ead0da7994e6e10cd",
+      "sha256": "05d17a345d634e320c89516ecf197c93030abae55f201696e4191bc860feb347"
     },
     {
       "source": "creature-motion-assets/native/thestral/left-atlas.png",
@@ -13276,10 +13276,10 @@
       "file": "runtime-webp/environment/pond/pond-bed.webp",
       "width": 128,
       "height": 88,
-      "sourceBytes": 1599,
-      "bytes": 1044,
-      "sourceSha256": "15c4a9d4dd25632cd841dc746325b84ed6ed2f8340e6b04dc3b06b0d9bf67143",
-      "sha256": "67bfb6050a25ef8e7c43ae5e319fc767ae824e042f16afe64966eacce9ac757b"
+      "sourceBytes": 18403,
+      "bytes": 15120,
+      "sourceSha256": "f1f0a8c99cbb57f270041f79eb9e08ee64b8c2bd3f0e03f9ae7307f28b6e2cc2",
+      "sha256": "6ae0b8813128f8b3abc228f64dfbd1df68da8a6fdacb3129659c9324536f23d6"
     },
     {
       "source": "environment/pond/pond-nook.png",
@@ -13707,9 +13707,9 @@
   "totals": {
     "converted": 1364,
     "existingWebp": 8,
-    "originalBytes": 5002669,
-    "webpBytes": 3320296,
-    "savedBytes": 1682373,
-    "savedPercent": 33.63
+    "originalBytes": 5176707,
+    "webpBytes": 3432346,
+    "savedBytes": 1744361,
+    "savedPercent": 33.7
   }
 }
