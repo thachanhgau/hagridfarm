@@ -199,3 +199,38 @@ Cơ chế riêng (server giữ luật; cảnh chỉ để xem):
 - **Kỳ nhông lửa:** khi vườn cháy (`garden.fire`, «Đốt vườn» hay Rồng bỏ đói), giờ trong lửa làm tâm trạng nó tăng 1/giờ thay vì giảm; «Dập lửa» kết thúc lửa thì giảm lại như thường; đồng hồ ốm/bỏ đi của Bậc trách nhiệm tính lùi theo. Trong cảnh nó nằm cạnh món lửa đã đặt (Góc bếp, Trứng rồng Norbert bên lò sưởi, Chiếc Cốc Lửa); không có thì ở đá chỗ ở trong chuồng, không phạt.
 
 Sửa từ đợt 1: ô kỷ vật cho Thủy quái và 3 loài mới (`KEEPSAKE_DISPLAY_LAYOUT` cột 19,5 và 2,5; server `garden-default-decor-ids.json`). Luống ven hồ là nền thật khi đặt đồ (không đặt đè luống; dời hồ thì luống cũng phải có chỗ trống) và đồ lễ hội (vạc, bí ngô) tránh hồ và luống. «Hồ sâu» (5×4) ở chỗ mặc định đè thửa 10 một hàng, nên chỗ mặc định của nó lùi xuống 1 hàng (13,5; 23); ở đó nó che một đoạn lối đi phía nam. Theo luật đặt đồ của người chơi thì không có chỗ nào cho «Hồ sâu» cùng 4 luống: cần owner chọn.
+
+## 11. Đợt 3: luật và hợp đồng code/hình (Opus, 08/11/2026)
+Owner 08/11: «Bắt đầu đợt 3 … Hình nào thiếu thì Codex vẽ». Không đổi gì dưới cấp 240, không đổi giá hay phần thưởng cũ. Mô phỏng phải giữ cấp 500 ở **ngày ≥ 196** (hiện 196, rào 3%).
+
+### 11.1 Luật (server giữ)
+| Thứ | Luật |
+|---|---|
+| Ma da `kappa` | cấp 240, `habitat: 'pond'` (dùng chung 2 chỗ hồ với Thủy quái, cần Ao cá), 20 bữa (6/13/20), 2 phần; **XP 120 / bữa** (thấp hơn Thủy quái 128 để không thành lối tắt). Món: `kappa_feed` 240 = 3 Dưa hổ phách + 3 Bí ngô; `kappa_fish` 242 = 3 Dưa hổ phách + 4 Cá nhỏ. Sản vật «Vảy ma da» `produce_kappa` 32 G |
+| Ngựa lùn `porlock` | cấp 280, ở chuồng, 24 bữa (7/16/24), 2 phần; **XP 92 / bữa** (như Kỳ nhông lửa). `porlock_feed` 280 = 3 Yến mạch + 3 Cỏ ba lá; `porlock_apple` 282 = 3 Yến mạch + 2 Táo. «Lông bờm» `produce_porlock` 32 G. **Canh chuồng:** bữa đầu tiên của Ngựa lùn mỗi ngày VN cho Bằng-Mã, Vong mã, Kỳ lân +5 tâm trạng (`garden.mood.porlockDay`, cùng khuôn `crupDay`, theo trần cấp 160) |
+| Việc bác Hagrid nhờ (mở khu, không tốn Galleons) | 3 expansion kind `edge`, cấp 260, xây như hồ (build + claimBuildings, chạy song song thửa/chuồng/hồ), **galleons 0**, phải xong bước trước: `edge_1` «Phát lối mòn» 12 giờ, 48 Đậu sao + 48 Nấm sương → bản đồ mở dải Bìa Rừng · `edge_2` «Rào bãi chăn» 24 giờ, 60 Lanh + 60 Yến mạch → mở Bãi chăn thả · `edge_3` «Ươm vườn cây» 24 giờ, 60 Hướng dương + 60 Cỏ ba lá → mở Vườn cây lâu năm |
+| Bãi chăn thả | từ `edge_2`: Bằng-Mã, Vong mã, Kỳ lân, Ngựa lùn giảm tâm trạng **0,5 / giờ** thay vì 1 (chỉ là hệ số trong decay). Không đổi chỗ chuồng hay số chỗ; trong cảnh 4 loài này đi lại trong bãi |
+| Vườn cây lâu năm | từ `edge_3`: 6 hố cây cố định. Cây non mua ở tiệm (tab «Cây non», cấp 260): «Cây táo non» `sapling_apple`, «Cây lê non» `sapling_pear`, «Cây mận non» `sapling_plum`, 120 G một cây (vào `garden.supplies`). Trồng vào hố trống; quả đầu sau 72 giờ, rồi cứ 72 giờ (giờ thật, không nhân tốc độ lớn, không thời tiết/luân canh/thông thạo, rào #51); hái = 4 quả, **không XP**. Quả chín không rơi, không cộng dồn vụ (chưa hái thì đồng hồ dừng). «Chặt cây» bỏ cây để trồng loại khác, không hoàn tiền. Quả: `apple` «Táo», `pear` «Lê», `plum` «Mận» — đồ trong kho, chợ 12 G (rào #50: dưới bữa rẻ nhất). `garden.orchard = { trees: [{kind, at}|null ×6] }` (`at` = lúc trồng hoặc lúc hái gần nhất) |
+| Gửi | `{action:'orchard', kind}`: `plant {spot, sapling}`, `harvest` (mọi cây chín), `fell {spot}`. Snapshot: `orchard` (null khi chưa `edge_3`): `trees [{kind, readyAt, ripe}|null]`; `edge` {step 0–3} |
+
+### 11.2 Bản đồ
+- Dải Bìa Rừng là **cột 34–45** (bản đồ 34 → 46 cột khi đã có `edge_1`; chưa có thì vẫn 34, rừng phủ như cũ). Thêm cột theo chiều dương nên không tọa độ cũ nào đổi. Trên màn hình là phía phải-dưới; gọi là «Bìa Rừng Cấm» như plan.
+- Bãi chăn thả: chữ nhật 10×8 ở (35, 6). Vườn cây: chữ nhật 10×8 ở (35, 18), 6 hố 2×2 ở (36,19) (39,19) (42,19) (36,22) (39,22) (42,22). Lối mòn 2 ô nối từ mép vườn cũ sang. Code được dời các số này nếu đè thứ gì, ghi lại số thật vào §11.4.
+- Đồ trang trí của người chơi chưa đặt được trong dải mới ở đợt 3 (đợt 5 mới có bộ trang trí khu). Camera: kéo được tới dải mới; điện thoại giữ zoom tối thiểu hiện tại.
+
+### 11.3 Hợp đồng hình (Codex vẽ; thiếu hình thì code vẽ bản dự phòng, không lỗi)
+| Thứ | Id / đường dẫn |
+|---|---|
+| Sprite Ma da, Ngựa lùn (4 tuổi + idle/action/eat/care, 2 hướng; Ma da cỡ Thủy quái 96×96, Ngựa lùn cỡ Chó đuôi nĩa) | `FARM_MOTION.items` id `kappa`, `porlock`, pipeline như đợt 2 |
+| Chỗ ở + tượng kỷ vật | `HABITAT_ART.kappa/porlock`, `KEEPSAKE_ART.kappa/porlock` |
+| Icon 64×64 | `produce_kappa`, `produce_porlock`, `kappa_feed`, `porlock_feed`, `apple`, `pear`, `plum`, `sapling_apple`, `sapling_pear`, `sapling_plum` (đăng ký như `POND_ART`, một file `edge-art.mjs` cùng dạng, nối vào `flowArtSpec`) |
+| Cây lâu năm (nền 2×2, 3 giai đoạn: non, lớn, có quả) | `garden-v05/environment/edge/tree-{apple,pear,plum}-{0,1,2}.png` |
+| Nền khu | `environment/edge/pasture.png` (cỏ + hàng rào gỗ thô, nền 10×8), `environment/edge/orchard.png` (cỏ + 6 hố đất, nền 10×8), `environment/edge/trail.png` (lối mòn 2×1) |
+| Icon 16×16 | `pasture`, `orchard`, `fruit` trong `pixel-icons.mjs` |
+Số đo thật (canvas, pivot, tâm nền, footLift) bên hình ghi vào `edge-art.mjs` (`EDGE_SCENERY`) và bảng §11.4. File chỉ bên hình sửa / chỉ bên code sửa: như §9.
+
+### 11.4 Số đo hình đã giao
+(bên hình điền)
+
+### 11.5 Số liệu đã chốt và mô phỏng
+(bên code điền)
