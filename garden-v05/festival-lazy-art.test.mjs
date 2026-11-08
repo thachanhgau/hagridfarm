@@ -29,6 +29,25 @@ function recordingCanvas() {
   return {canvas, requested, drawn, drawCalls};
 }
 
+
+test('orchard roots meet the centre of every pit at every growth stage',async()=>{
+ const {EDGE_LAYOUT}=await import('./garden-growth.mjs'),{EDGE_SCENERY}=await import('./edge-art.mjs');
+ const {canvas,drawCalls}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+ const now=1_700_000_000_000,state=E.testProfile(500,now);
+ state.built=[...new Set([...state.built,'edge_1','edge_2','edge_3'])];
+ for(const stage of [0,1,2]){
+  const orchard={trees:EDGE_LAYOUT.pits.map((p,i)=>({kind:['apple','pear','plum'][i%3],readyAt:now+(stage===0?100:1)*3600000,ripe:stage===2}))};
+  const options={now,clock:0,propsVisible:true,orchard};
+  garden.render(state,options);await new Promise(resolve=>setImmediate(resolve));drawCalls.length=0;garden.render(state,options);
+  for(const [i,pit]of EDGE_LAYOUT.pits.entries()){
+   const spec=EDGE_SCENERY[`tree-${orchard.trees[i].kind}-${stage}`],call=drawCalls.filter(c=>c.file===runtimeImageUrl(spec.file))[i<3?0:1];
+   assert.ok(call,'tree was not drawn');
+   const [x,y]=[scene.origin.x+(pit[0]-pit[1])*32,scene.origin.y+(pit[0]+pit[1])*16];
+   assert.deepEqual(call.args.slice(0,2),[Math.round(x-spec.groundCentre.x),Math.round(y-spec.groundCentre.y)]);
+  }
+ }
+});
+
 test('pond creatures defer submerged art and render their real growth stage, never a dry adult sprite',async()=>{
   const {SUBMERGED_CREATURE_FILES,submergedCreatureFrame}=await import('./pond-creature-art.mjs');
   const {canvas,requested,drawCalls}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});

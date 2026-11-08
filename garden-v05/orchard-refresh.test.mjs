@@ -37,3 +37,20 @@ test('authored orchard preserves tree anchors, crisp pixels and all seasonal gro
   assert.equal(new Set(hashes).size,3,'growth and ripe fruit remain distinct');
  }
 });
+
+test('new mulch basins remain centred on the six existing logical planting slots',async()=>{
+ const {EDGE_LAYOUT}=await import('./garden-growth.mjs');
+ const p=JSON.parse(await read('environment/pond/masters/beds-orchard-20261108/provenance.json'));
+ for(const item of p.assets){
+  const bytes=await read(item.master);assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),item.masterSha256);
+  assert.equal(crypto.createHash('sha256').update(await read(item.file)).digest('hex'),item.sha256);
+ }
+ const {data}=await sharp(await read('environment/edge/orchard.png')).ensureAlpha().raw().toBuffer({resolveWithObject:true});
+ const art=EDGE_SCENERY.orchard,centres=EDGE_LAYOUT.pits.map(([c,r])=>[art.groundCentre.x+((c-EDGE_LAYOUT.orchard.centre[0])-(r-EDGE_LAYOUT.orchard.centre[1]))*32,art.groundCentre.y+((c-EDGE_LAYOUT.orchard.centre[0])+(r-EDGE_LAYOUT.orchard.centre[1]))*16]);
+ const recorded=p.assets.find(a=>a.id==='orchard').pitCentres;
+ assert.deepEqual([...recorded].sort(),[...centres].sort());
+ const soil=new Set([0x231f2e,0x4a3042,0x735044,0xa57554,0x8b4a3f,0xc97952]);
+ for(const [x,y]of centres)for(const dx of [-10,0,10]){
+  const i=(y*576+x+dx)*4;assert.equal(data[i+3],255);assert.ok(soil.has((data[i]<<16)|(data[i+1]<<8)|data[i+2]),'tree roots must stand on soil');
+ }
+});

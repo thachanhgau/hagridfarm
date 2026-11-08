@@ -1,0 +1,73 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "pond-bed",
+      "master": "environment/pond/masters/beds-orchard-20261108/pond-bed.png",
+      "prompt": "Create ONE production game sprite: a beautiful narrow aquatic herb growing bed for a British magical forest garden, viewed in exact 2:1 dimetric pixel-art projection. This is a single elongated 3-tile-by-1-tile shallow WATER CHANNEL, long axis goes from bottom-left toward upper-right. Low softly irregular mossy slate stone bank, dark teal water with 3 clean restrained ripple marks. The far bank only one stone high, low near bank. Delicate small water fern tuft at the back LEFT tip and 2 very small lily leaves close to one end; the long central water lane is EMPTY for planted crop sprites. Elegant natural water garden, restrained warm mossy greens, slate violet rocks, aubergine outlines, open blue-green water. NO POSTS, NO STAKES, NO WOOD, NO FENCE, NO tall reeds, NO dividing walls, NO raised bathtub, NO thick boulder necklace. Water must cover 70 percent of the footprint; stone border thin, at most 1-2 logical pixels. Footprint looks like a long shallow isometric parallelogram with subtle organic corners, suitable for placing four parallel rows close together. Same visual style as the attached existing garden assets, but improve design. Intended runtime canvas128x88, actual art area124x64, effective chunky native pixel grid64x44. Strong deliberate flat pixel clusters and a strict muted game palette: #231F2E #41465C #687486 #24483F #3F6A45 #71934B #3E3B70 #70A8B6 #B7DEE0. Use 2-3 tones per material and visible stepped edges. No antialiasing, gradients, soft glow, painterly microtexture, tiny dithering, shadows outside the footprint, text, environment, ground diamond or scene. Fully isolated single asset on TRUE TRANSPARENT background with margins. Normal season, NO snow. Reference is for the existing pixel-art camera and palette; do not retain the tall stakes or existing design.",
+      "masterSha256": "efc7658df08028c16fb8fac02cfe93264b7d93e580161365cf1121a914a8366b",
+      "file": "environment/pond/pond-bed.png",
+      "sha256": "072033a49bd59208710d38c07ddb4bf66d886a54f262a5d5ce35b00e8f2032c2",
+      "bounds": {
+        "x": 2,
+        "y": 22,
+        "w": 124,
+        "h": 64
+      }
+    },
+    {
+      "id": "pond-bed-snow",
+      "master": "environment/pond/masters/beds-orchard-20261108/pond-bed-snow.png",
+      "prompt": "Edit this exact aquatic garden bed to its WINTER variant. Keep the identical low silhouette, same thin rock bank, same open water footprint and same camera. No posts, no stakes, no wooden structures. Add a light dusting of clean ivory #E8F0ED snow only to the upper surfaces of the stone bank, at most one logical pixel thick: thin broken caps, NOT fat snowballs and NOT a continuous thick white necklace. Keep at least80% of the teal water OPEN, no ice cover. The tiny fern is sparse brown with one tiny snowcap; two small lily leaves remain. Clean flat pixel-art clusters, same muted game palette, binary transparent background, no glow or antialiasing, no extra scenery or falling snow. The entire asset isolated with transparent margins, exactly same footprint as input. Logical runtime128x88 on2px grid.",
+      "masterSha256": "6ed371ea69180195fada646bc45c87056904f0d29d46573fb54c2b9e12dbff6c",
+      "file": "environment/winter/pond-bed-snow.png",
+      "sha256": "19bf76154a9c7da42712f382c8da7b312139b9fa1d1539c1010441713dc74796",
+      "bounds": {
+        "x": 2,
+        "y": 22,
+        "w": 124,
+        "h": 64
+      }
+    },
+    {
+      "id": "orchard",
+      "master": "environment/pond/masters/beds-orchard-20261108/orchard.png",
+      "prompt": "Edit the attached pixel-game orchard ground sprite. Preserve EXACT isometric footprint, camera, grassy diamond outer edges, six planting locations and their centres: top centre, middle-left, middle-right, lower-centre, lower-right, far-right, exactly as the input. NO trees. Replace the six ugly thick brown raised square rims and perfectly flat purple interiors with natural low ROUND-ISH MULCH BASINS: each basin an isometric oval of rich dark brown soil, subtle uneven edge, 3 broad flat earth colour clusters, very thin soft moss/grass transition, no raised border or walls. Basin overall diameter about80percent of the current square pit width, visually flattened 2:1 oval aligned to ground. Each has a tiny darker centre depression where a tree will later be placed, but no object at the centre. Spacing must remain exactly input. Preserve surrounding green lawn, little flowers, a few small stones, outline, transparent surroundings. Same native chunky pixel art, muted garden palette #231F2E #4A3042 #735044 #A57554 #24483F #3F6A45 #71934B #B0BD67. No anti-aliasing, blur, texture noise, glow, ground shadows, fence, paths, text or extra plants. Entire isolated ground patch transparent outside. Keep original wide576x314 canvas proportions.",
+      "masterSha256": "f0f1a34ea55a67c19b5799435db3e6ff71796c5a837feeda35b4b36e94b9e01d",
+      "pitCentres": [
+        [
+          256,
+          88
+        ],
+        [
+          160,
+          136
+        ],
+        [
+          352,
+          136
+        ],
+        [
+          256,
+          184
+        ],
+        [
+          448,
+          184
+        ],
+        [
+          352,
+          232
+        ]
+      ],
+      "file": "environment/edge/orchard.png",
+      "sha256": "bf000d427319f0e33b92dd2ab877749e0a24aa3720f89203a9d3ea7ba819f5d0",
+      "bounds": {
+        "x": 2,
+        "y": 26,
+        "w": 572,
+        "h": 286
+      }
+    }
+  ]
+}

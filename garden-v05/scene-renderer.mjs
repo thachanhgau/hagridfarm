@@ -1225,12 +1225,12 @@ export async function createGarden(canvas, options = {}) {
     ctx.restore();
   }
 
-  // Six fixed pits; a tree is a depth-sorted object at the pit centre (art bottom = pivot, plan §11.4).
+  // Roots meet the pit centre; the generic decoration pivot includes a 16px footprint lift.
   function orchardObjects(orchard, now) {
     return asArray(orchard?.trees).slice(0, EDGE_LAYOUT.pits.length).flatMap((tree, i) => {
       const stage = treeStage(tree, now), spec = stage < 0 ? null : EDGE_SCENERY[`tree-${tree.kind}-${stage}`];
       if (!spec) return [];
-      const asset = {file: spec.file, width: spec.width, height: spec.height, pivotX: spec.pivotX, pivotY: spec.pivotY, seasonalKind: 'tree'};
+      const asset = {file: spec.file, width: spec.width, height: spec.height, pivotX: spec.groundCentre.x, pivotY: spec.groundCentre.y, seasonalKind: 'tree'};
       return [{kind: 'asset', type: 'prop', id: `orchard-${i}`, species: `tree-${tree.kind}`, asset, xy: iso(...EDGE_LAYOUT.pits[i])}];
     });
   }

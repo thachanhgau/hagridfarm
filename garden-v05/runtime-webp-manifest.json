@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "15626274809a",
+  "revision": "b3a95a09bbc5",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -12156,10 +12156,10 @@
       "file": "runtime-webp/environment/edge/orchard.webp",
       "width": 576,
       "height": 314,
-      "sourceBytes": 13023,
-      "bytes": 7374,
-      "sourceSha256": "b8e4fd11ed7acd373f8cf4a1875e40a83e78b48f07db913d0a2a4d71cc13fbfd",
-      "sha256": "8fd553c67a42a2c8a831f33dd28b141674b396a6f7af104646a771575bcb4eb2"
+      "sourceBytes": 8175,
+      "bytes": 3352,
+      "sourceSha256": "bf000d427319f0e33b92dd2ab877749e0a24aa3720f89203a9d3ea7ba819f5d0",
+      "sha256": "4a535c230e502657ad20e7b46df36f93bc13b69f3bb4865c156f35a690bc880e"
     },
     {
       "source": "environment/edge/pasture.png",
@@ -13316,10 +13316,10 @@
       "file": "runtime-webp/environment/pond/pond-bed.webp",
       "width": 128,
       "height": 88,
-      "sourceBytes": 1114,
-      "bytes": 536,
-      "sourceSha256": "70ebd46eab9c8b6f5958444c75c8ccb2f7e03e0657242fda0529b1069e3c4890",
-      "sha256": "f491dedefed1008949ba60c5e8ed50677abc0073118f2955eb5a1ce6ae23607f"
+      "sourceBytes": 859,
+      "bytes": 422,
+      "sourceSha256": "072033a49bd59208710d38c07ddb4bf66d886a54f262a5d5ce35b00e8f2032c2",
+      "sha256": "f764d1921a488467ec941f3dbff54a102c10913de3e8bb5dd255e750cd1db422"
     },
     {
       "source": "environment/pond/pond-nook.png",
@@ -13556,10 +13556,10 @@
       "file": "runtime-webp/environment/winter/pond-bed-snow.webp",
       "width": 128,
       "height": 88,
-      "sourceBytes": 1172,
-      "bytes": 548,
-      "sourceSha256": "af7c0e2809490420bfe478fa6c8bda51f1ca32f788b2fff9fe7464f7a5fbf87a",
-      "sha256": "ac0ac791d8ebef468bcdf6a9ef1a68f5e240d3f3ea70c7ed17bcba311013c805"
+      "sourceBytes": 851,
+      "bytes": 444,
+      "sourceSha256": "19bf76154a9c7da42712f382c8da7b312139b9fa1d1539c1010441713dc74796",
+      "sha256": "547ff428560d03e0d236d43b84cb3ba06df7b3f6d022d1396adf90b2b6b42a8a"
     },
     {
       "source": "environment/winter/pond-ice.png",
@@ -13887,9 +13887,9 @@
   "totals": {
     "converted": 1382,
     "existingWebp": 8,
-    "originalBytes": 5346023,
-    "webpBytes": 3524904,
-    "savedBytes": 1821119,
-    "savedPercent": 34.06
+    "originalBytes": 5340599,
+    "webpBytes": 3520664,
+    "savedBytes": 1819935,
+    "savedPercent": 34.08
   }
 }

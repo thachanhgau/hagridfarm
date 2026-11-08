@@ -17,7 +17,7 @@ export const EDGE_ART = Object.freeze({
 // so the ground fills decorFootprintRect / the map rectangle exactly when pivot is drawn at iso of the footprint's foot. Mirror for the right view.
 export const EDGE_SCENERY = Object.freeze({
  "pasture": {"file":"environment/edge/pasture.png","footprint":[10,8],"cols":10,"rows":8,"width":576,"height":314,"pivotX":288,"pivotY":296,"groundCentre":{"x":288,"y":168},"footLift":4,"bounds":{"x":2,"y":1,"w":571,"h":311},"exact":false},
- "orchard": {"file":"environment/edge/orchard.png","footprint":[10,8],"cols":10,"rows":8,"width":576,"height":314,"pivotX":288,"pivotY":296,"groundCentre":{"x":288,"y":168},"footLift":4,"bounds":{"x":1,"y":25,"w":574,"h":287},"exact":false},
+ "orchard": {"file":"environment/edge/orchard.png","footprint":[10,8],"cols":10,"rows":8,"width":576,"height":314,"pivotX":288,"pivotY":296,"groundCentre":{"x":288,"y":168},"footLift":4,"bounds":{"x":2,"y":26,"w":572,"h":286},"exact":false},
  "trail": {"file":"environment/edge/trail.png","footprint":[2,1],"cols":2,"rows":1,"width":96,"height":60,"pivotX":48,"pivotY":50,"groundCentre":{"x":48,"y":34},"footLift":0.5,"bounds":{"x":1,"y":11,"w":94,"h":47},"exact":false},
  "tree-apple-0": {"file":"environment/edge/tree-apple-0.png","footprint":[2,2],"cols":2,"rows":2,"width":128,"height":144,"pivotX":64,"pivotY":126,"groundCentre":{"x":64,"y":110},"footLift":0.5,"bounds":{"x":48,"y":76,"w":32,"h":34},"exact":true},
  "tree-apple-1": {"file":"environment/edge/tree-apple-1.png","footprint":[2,2],"cols":2,"rows":2,"width":128,"height":144,"pivotX":64,"pivotY":126,"groundCentre":{"x":64,"y":110},"footLift":0.5,"bounds":{"x":16,"y":18,"w":96,"h":92},"exact":true},

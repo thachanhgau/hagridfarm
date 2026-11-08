@@ -53,18 +53,18 @@
     },
     {
       "id": "pond-bed-snow",
-      "master": "environment/winter/masters/expansion-20261108/pond-bed-snow.png",
-      "masterSha256": "d6a0feb79792ae84c16c4d6c4616c57b46fa15ca14d9ceebb0e74c88ee39ffaa",
+      "master": "environment/pond/masters/beds-orchard-20261108/pond-bed-snow.png",
+      "masterSha256": "6ed371ea69180195fada646bc45c87056904f0d29d46573fb54c2b9e12dbff6c",
       "file": "environment/winter/pond-bed-snow.png",
       "width": 128,
       "height": 88,
-      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Create the WINTER version of this EXACT narrow isometric aquatic plant bed. Keep exact 1 by 3 tile footprint, orientation, dimensions and low rim. Big flat ivory snow caps on grey rim stones, brown dormant reeds, water still dark open at centre for gameplay crops; simple pale blue ice along edges only. Remove summer lotus blossom. Only very few large pixel clusters, no extra objects. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 64x44, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
-      "sha256": "af7c0e2809490420bfe478fa6c8bda51f1ca32f788b2fff9fe7464f7a5fbf87a",
+      "prompt": "Edit this exact aquatic garden bed to its WINTER variant. Keep the identical low silhouette, same thin rock bank, same open water footprint and same camera. No posts, no stakes, no wooden structures. Add a light dusting of clean ivory #E8F0ED snow only to the upper surfaces of the stone bank, at most one logical pixel thick: thin broken caps, NOT fat snowballs and NOT a continuous thick white necklace. Keep at least80% of the teal water OPEN, no ice cover. The tiny fern is sparse brown with one tiny snowcap; two small lily leaves remain. Clean flat pixel-art clusters, same muted game palette, binary transparent background, no glow or antialiasing, no extra scenery or falling snow. The entire asset isolated with transparent margins, exactly same footprint as input. Logical runtime128x88 on2px grid.",
+      "sha256": "19bf76154a9c7da42712f382c8da7b312139b9fa1d1539c1010441713dc74796",
       "bounds": {
-        "x": 4,
-        "y": 2,
-        "w": 118,
-        "h": 84
+        "x": 2,
+        "y": 22,
+        "w": 124,
+        "h": 64
       }
     },
     {
