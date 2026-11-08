@@ -38,7 +38,7 @@ const fail=(reason,message,details={})=>{const e=Error(message);e.definitive=tru
 const stable=v=>JSON.stringify(v,Object.keys(v).sort());
 
 /** `day` (YYYY-MM-DD) moves only the Vietnam calendar day, for festival QA; crop timers keep real time. */
-export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,fireMode=null,helpers=false,missions=false,now=()=>Date.now()}={}){
+export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,fireMode=null,helpers=false,missions=false,weather=null,duty=false,now=()=>Date.now()}={}){
  // «Thăm vườn» / «Đốt vườn» QA (01/11/2026): ?fire=visual|real burns this garden, ?helpers=1 has three helpers today.
  let fire=fireMode?{mode:fireMode,since:now(),until:now()+2*3600000+5*60000,burned:fireMode==='real'?27:0}:null;
  const helperRows=helpers?[['u1','tara'],['u2','Linh'],['u3','Mai Phương']].map(([uid,name],i)=>({uid,name,at:now()-(3-i)*60000})):[];
@@ -190,6 +190,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Server garden-retention-core views (QA approximation: fixed board, orders drawn per day from the unlocked crops).
    ...retentionViews(d),...(missions?missionViews():{}),flooFrames:{frames:frameViews(),worn:wornFrame},saleAdmin:true,
    serverNow:now(),profile:{username:"Xem thử · không lưu"},fire:fire&&fire.until>now()?fire:null,helpers:helperRows,
+   ...soilViews(),...(duty&&garden.progression.level>=130?{duty:dutyQaView()}:{}),
    ...(receipt?{receipt}:{}),
   });
  }
@@ -388,6 +389,23 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
     tasks:[task("g1","Gieo 12 ô",12,2,"claimed"),task("g2","Gặt 9 Bí ngô",9,2,"claimed"),task("g3","Ca đêm gia tinh: gặt 12 cây từ 19:00 tới 06:00",12,3,"open"),task("g4","",2,2,"hidden"),task("g5","",22,3,"hidden"),task("g6","",1,3,"hidden"),task("g7","",22,5,"hidden")],
     finale:{ready:false,claimed:false}},
   };
+ }
+ // Level-160 challenges E+F (HPVNN garden-soil-core soilView / weatherView). QA: from 160 plot 1 is tired (75%) after
+ // three vụ of thảo dược (server CROP_FAMILY 'thao'); ?weather=frost|rain|drought runs that week from 200
+ // (frost-soon etc.: announced, starting in 26 hours).
+ const THAO=["dittany","moonherb","valerian","mint","knotgrass"];
+ const weatherStart=weather?now()+(weather.endsWith("-soon")?26*3600000:-30*3600000):0;
+ function soilViews(){
+  const p=garden.progression;
+  return {
+   soil:p.level>=160?p.plots.map((_,i)=>i===0?{tired:0.75,seeds:Object.fromEntries(THAO.filter(id=>E.CROP[id].level<=p.level).map(id=>[id,0.75]))}:{tired:1,seeds:{}}):null,
+   weather:weather&&p.level>=200?{type:weather.replace("-soon",""),start:weatherStart,end:weatherStart+7*86400000,announced:weatherStart-2*86400000}:null,
+  };
+ }
+ // ?duty=1: a calm duty view (server dutyView) so the duty chip shows next to the weather chip; the owl note already seen.
+ function dutyQaView(){
+  return {level:130,on:true,since:now()-86400000,leave:null,leaveLeftMs:7*86400000,leaveDays:7,wilted:[],dead:[],gnomes:[],sick:[],fled:[],
+   clocks:{wilt:now()+5*3600000,dies:null,gnome:now()+20*3600000,sick:null,forest:null,fire:null},curePrice:garden.progression.level*10,lureMeals:2,owlDay:vnDayKey(now())};
  }
  function retentionViews(d){
   const p=garden.progression,m=garden.mastery||{},tier=n=>TIERS.filter(t=>n>=t).length,house=p.level>=20?"hufflepuff":null;
@@ -611,7 +629,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
 // The page side: the real garden client over the in-memory server above.
 export function createEmulatorClient(){
  const query=new URLSearchParams(globalThis.location?.search||"");
- const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null,previewHalloween:query.get("halloweenPreview")==="1",fireMode:["visual","real"].includes(query.get("fire"))?query.get("fire"):null,helpers:query.get("helpers")==="1",missions:query.get("missions")==="1"});
+ const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null,previewHalloween:query.get("halloweenPreview")==="1",fireMode:["visual","real"].includes(query.get("fire"))?query.get("fire"):null,helpers:query.get("helpers")==="1",missions:query.get("missions")==="1",
+  weather:/^(frost|rain|drought)(-soon)?$/.test(query.get("weather")||"")?query.get("weather"):null,duty:query.get("duty")==="1"});
  let actions=0;
  const client=createGardenClient(async(name,data)=>{
   const result=server.handle(name,data);

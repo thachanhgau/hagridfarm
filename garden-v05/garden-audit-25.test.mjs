@@ -73,6 +73,7 @@ test('level 12 names the Giỏ đan its recipes open with', () => {
 
 test('the duty chip stays left of the icon rows and drops below an open row on phones', () => {
   const css = fs.readFileSync(new URL('./game-panels.css', import.meta.url), 'utf8');
-  assert.match(css, /#gameShell \.duty-chip\{position:fixed;top:60px;left:/);
-  assert.match(css, /@media \(max-width:599px\)\{body:not\(\.hud-compact\) #gameShell \.duty-chip\{top:108px\}\}/);
+  // Level-160 F: the duty chip and the weather chip share the fixed .hud-chips row, under the next-goal card.
+  assert.match(css, /#gameShell \.hud-chips\{position:fixed;top:116px;left:/);
+  assert.match(css, /@media \(max-width:599px\)\{#gameShell \.hud-chips\{top:108px\}\}/);
 });

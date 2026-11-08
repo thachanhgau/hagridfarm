@@ -1,0 +1,27 @@
+--- a/sim-progression.mjs	2026-11-08 09:25:29
++++ b/sim-progression.mjs	2026-11-08 09:25:29
+@@ -130,7 +130,7 @@
+   s = logged(log, 'claimBuildings', s, (x) => E.claimBuildings(x, now));
+   s = logged(log, 'claimCraft', s, (x) => E.claimCraft(x, now));
+   s = logged(log, 'claimAnimals', s, (x) => E.claimAnimals(x, null, now));
+-  s = logged(log, 'harvest', s, (x) => E.harvest(x, null, null, now));
++  { const h0 = s; s = logged(log, 'harvest', s, (x) => E.harvest(x, null, null, now)); if (globalThis.__EF && s !== h0) globalThis.__EF.harvest(h0, s, now); }
+   for (let n = 0; n < 2; n += 1) {
+     const next = nextExpansion(s), before = s;
+     if (next) s = logged(log, 'build', s, (x) => E.build(x, next.id, now));
+@@ -147,11 +147,13 @@
+       if (cells.some((i) => s.plots[p].slots[i])) continue;
+       const kinds = new Set(s.plots[p].slots.filter(Boolean).map((e) => e.species));
+       let species = null;
+-      const job = queue.find(([id, n]) => n > 0 && (kinds.size < 3 || kinds.has(id)));
+-      if (job) { species = job[0]; job[1] -= 1; } else species = bestCrop(s.level, gapMs);
++      const ok = (id) => !globalThis.__EF?.smart || globalThis.__EF.fresh(s, p, id);
++      const job = queue.find(([id, n]) => n > 0 && (kinds.size < 3 || kinds.has(id)) && ok(id));
++      if (job) { species = job[0]; job[1] -= 1; } else species = globalThis.__EF?.smart ? globalThis.__EF.best(s, p, gapMs, now, kinds) : bestCrop(s.level, gapMs);
+       if (kinds.size >= 3 && !kinds.has(species)) species = [...kinds][0];
+       const before = s;
+       s = logged(log, 'plant', s, (x) => E.plant(x, p, cells, species, now));
++      if (globalThis.__EF && s !== before) globalThis.__EF.plant(s, p, cells, now);
+       if (s !== before) {
+         cost.cells += 3;
+         cost.seeds += 3 * Math.min(seedPriceCap, seedPrice[species] ?? 3);

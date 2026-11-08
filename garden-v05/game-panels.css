@@ -471,11 +471,17 @@
 #gameShell :is(#creatureMood,#dutyPanel) .mood-chip.is-on{background:#71934B;color:#F5D69A}
 /* «Bậc trách nhiệm» (25.0 S5): the chip with the nearest clock and the panel (garden-duty-ui.mjs). */
 /* Left, under the level ring: on the right it covered the second icon row (phone), the top row (1280) and Thửa đất (820). */
-#gameShell .duty-chip{position:fixed;top:60px;left:max(8px,var(--host-inset-left,env(safe-area-inset-left)));z-index:5;white-space:nowrap;display:flex;gap:6px;align-items:center;min-height:30px;padding:4px 10px;border:2px solid #231f2e;border-radius:6px;background:#4a3042;color:#f5d69a;font-size:12px;font-weight:700;box-shadow:0 2px 0 #231f2e}
-/* Phone with the icon row open: row 2 starts at 131px, a long label would touch Cửa hàng. Toast (z 6) passes over it. */
-@media (max-width:599px){body:not(.hud-compact) #gameShell .duty-chip{top:108px}}
+/* The duty chip and (level 200+) the weather chip share one row (level-160 challenges F), under the next-goal card
+   (#nextGoal, bottom 110px; on phones 104px), which the duty chip used to cover. */
+#gameShell .hud-chips{position:fixed;top:116px;left:max(8px,var(--host-inset-left,env(safe-area-inset-left)));z-index:5;display:flex;gap:8px;align-items:center;pointer-events:none}
+#gameShell .hud-chips>*{pointer-events:auto}
+#gameShell .duty-chip,#gameShell .weather-chip{white-space:nowrap;display:flex;gap:6px;align-items:center;min-height:30px;padding:4px 10px;border:2px solid #231f2e;border-radius:6px;background:#4a3042;color:#f5d69a;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;box-shadow:0 2px 0 #231f2e}
+/* Phones, icon row open or not: below the goal card and the open row (Cửa hàng ends at 104px). Toast (z 6) passes over it. */
+@media (max-width:599px){#gameShell .hud-chips{top:108px}}
 #gameShell .duty-chip.is-alert{background:#874056;color:#ffc36b}
-#gameShell .duty-chip[hidden],body.touring #gameShell .duty-chip{display:none!important}
+#gameShell .weather-chip{background:#41465C;pointer-events:none}
+#gameShell .weather-chip.is-soon{color:#A6B1AE}
+#gameShell .duty-chip[hidden],#gameShell .weather-chip[hidden],body.touring #gameShell .hud-chips{display:none!important}
 .duty-panel .duty-clocks{display:grid;gap:2px;margin:0 0 10px}
 .duty-panel .duty-clock{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:5px 4px;border-bottom:1px solid rgba(166,177,174,.25)}
 .duty-panel .duty-clock.is-soon b{color:#ed8a45}
@@ -533,3 +539,5 @@
 #gameShell .store-popover .store-tabs .gp-tab span{font-size:11px;line-height:1.1}
 
 #gameShell #panel .journey-unlock-meta,#gameShell :is(#panel,.store-popover,.owl-letter) .recipe-output-copy small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal;overflow:hidden;text-overflow:clip;line-height:1.3}
+/* Level-160 luân canh: a seed that would harvest tired on the selected plot («−25%»). */
+#playDock .item-tray .seed-tired{position:absolute;top:1px;right:1px;padding:0 2px;border-radius:2px;background:#874056;color:#FFC36B;font-size:11px;line-height:13px;font-weight:700;font-variant-numeric:tabular-nums;pointer-events:none}

@@ -876,6 +876,79 @@ export const ICONS = Object.freeze({
   '..kkkkkkkkkkk...',
   '................',
  ],
+ // Level-160 challenges F: the weather week (frost, rain, drought) on the HUD chip; E: a tired plot on its sign.
+ frost: [
+  '................',
+  '.......kk.......',
+  '...kk..kWk..kk..',
+  '...kWk.kWk.kWk..',
+  '....kWkkWkkWk...',
+  '.kk..kWkWkWk.kk.',
+  '.kWkkkkWWWkkkWk.',
+  '.kkWWWWWqWWWWkk.',
+  '.kWkkkkWWWkkkWk.',
+  '.kk..kWkWkWk.kk.',
+  '....kWkkWkkWk...',
+  '...kWk.kWk.kWk..',
+  '...kk..kWk..kk..',
+  '.......kk.......',
+  '................',
+  '................',
+ ],
+ rain: [
+  '................',
+  '......kkkk......',
+  '....kkWWWWkk....',
+  '...kWWWWWWWWkk..',
+  '..kWWWWWWWWWWWk.',
+  '.kWWWWWWWWWWWlWk',
+  '.klWWWWWWWWWllk.',
+  '..kllllllllllk..',
+  '...kkkkkkkkkk...',
+  '...ka...ka...ka.',
+  '..kak..kak..kak.',
+  '..kak..kak..kak.',
+  '...k....k....k..',
+  '.....ka....ka...',
+  '....kak...kak...',
+  '.....k.....k....',
+ ],
+ sun: [
+  '................',
+  '.......kk.......',
+  '..kk...kYk..kk..',
+  '..kOk..kYk.kOk..',
+  '...kk.kkkkkkk...',
+  '.....kYYYYYk....',
+  '.kk.kYuuYYYOk.kk',
+  '.kYYkYuYYYYOkYYk',
+  '.kkkkYYYYYYOkkkk',
+  '.....kYYYYOOk...',
+  '...kk.kOOOOk.kk.',
+  '..kOk..kkkk.kOk.',
+  '..kk...kYk...kk.',
+  '.......kYk......',
+  '.......kk.......',
+  '................',
+ ],
+ tired: [
+  '................',
+  '................',
+  '.......kkkk.....',
+  '......kottok....',
+  '.....kotkkotk...',
+  '.....kok..kotk..',
+  '......k...kok...',
+  '..........kok...',
+  '..........kk....',
+  '..kkkkkkkkkkkk..',
+  '.kwwbwwwkwwbwwk.',
+  'kbwwkbwwwkbwwbbk',
+  'kbbkwbbkbbbkbbbk',
+  '.kbbbkbbbkbbbbk.',
+  '..kkkkkkkkkkkk..',
+  '................',
+ ],
  seal: [
   '................',
   '.....kkkkkk.....',
@@ -987,6 +1060,13 @@ const urls = new Map();
 export function iconUrl(name) {
  if (!urls.has(name)) urls.set(name, 'data:image/svg+xml,' + encodeURIComponent(iconSvg(ICONS[name] || ICONS.xp)));
  return urls.get(name);
+}
+
+/** Draws an icon on a canvas at (x, y), `cell` px a grid cell (scene signs). */
+export function drawIcon(context, name, x, y, cell = 1) {
+ (ICONS[name] || []).forEach((row, r) => {
+  for (let c = 0; c < row.length; c += 1) if (INK[row[c]]) { context.fillStyle = INK[row[c]]; context.fillRect(x + c * cell, y + r * cell, cell, cell); }
+ });
 }
 
 /** A decorative pixel icon at an integer scale (1 → 16 px, 2 → 32 px). */

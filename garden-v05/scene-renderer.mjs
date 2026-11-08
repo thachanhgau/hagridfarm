@@ -27,6 +27,7 @@ import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,f
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.0.2';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.0.2';
 import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=25.0.2';
+import {drawIcon} from './pixel-icons.mjs?v=25.0.2';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -462,13 +463,15 @@ function label(context, text, x, y, color = '#d6d8bf', font = 'bold 13px sans-se
 // Plot tag (owner 04/11/2026: the old boxes were «thô và che rất nhiều thứ»): a small dark chip with a thin gold
 // rule on the plot's own front tip; status is coloured text, never a filled box. `parts` are [text, colour] runs.
 const TAG_FONT = px => `600 ${px}px system-ui, sans-serif`;
-function plotTag(context, parts, x, y, px, rule) {
+function plotTag(context, parts, x, y, px, rule, mark = null) {
   context.save();
   context.font = TAG_FONT(px);
   context.textAlign = 'left';
   context.textBaseline = 'middle';
   const widths = parts.map(([text]) => context.measureText(text).width), pad = Math.round(px * .45);
-  const w = Math.ceil(widths.reduce((sum, width) => sum + width, 0) + pad * 2), h = Math.round(px * 1.5);
+  // `mark`: a pixel icon after the text (level-160 «đất mệt»), one 16-cell grid at `cell` px a cell.
+  const cell = mark ? Math.max(1, Math.round(px * 1.2 / 16)) : 0, markW = mark ? cell * 16 + pad : 0;
+  const w = Math.ceil(widths.reduce((sum, width) => sum + width, 0) + pad * 2 + markW), h = Math.round(px * 1.5);
   const left = Math.round(x - w / 2), top = Math.round(y - h / 2), line = Math.max(1, Math.round(px / 10));
   // A small wooden plaque in the garden palette: dark wood, a lighter top edge, a #231F2E rim; `rule` lights the rim
   // for a ripe or selected plot.
@@ -481,17 +484,18 @@ function plotTag(context, parts, x, y, px, rule) {
   if (rule) { context.strokeStyle = rule; context.lineWidth = line; context.strokeRect(left - line / 2, top - line / 2, w + line, h + line); }
   let at = left + pad;
   parts.forEach(([text, colour], i) => { context.fillStyle = colour; context.fillText(text, at, top + h / 2); at += widths[i]; });
+  if (mark) drawIcon(context, mark, Math.round(at + pad), Math.round(top + (h - cell * 16) / 2), cell);
   context.restore();
 }
 
 // A plot's sign: a short wooden post planted at (x, y) with the plaque on top.
-function plotSign(context, parts, x, y, px, rule) {
+export function plotSign(context, parts, x, y, px, rule, mark = null) {
   const post = Math.round(px * .9), line = Math.max(1, Math.round(px / 10));
   context.fillStyle = '#231F2E';
   context.fillRect(x - line * 2, y - post, line * 4, post);
   context.fillStyle = '#735044';
   context.fillRect(x - line, y - post, line * 2, post - line);
-  plotTag(context, parts, x, y - post - Math.round(px * .7), px, rule);
+  plotTag(context, parts, x, y - post - Math.round(px * .7), px, rule, mark);
 }
 
 function drawProgress(context, x, y, progress) {
@@ -786,6 +790,7 @@ export async function createGarden(canvas, options = {}) {
   let boundaryFence = [];
   let currentStage = gardenStage({}, map);
   let fireCache = null; // «Đốt vườn» flame spots for the current stage
+  let tiredPlots = new Set();
   let duty = null; // 25.0 S5 options.duty: {wilt: Set, dead: Map, sick: Set, gnomes: [plot], kit: garden-duty-art} ('plot:slot' keys)
   let friends = null; // 25.0 S6 garden-friends.mjs
   let xmasKit = null; // 25.0 S7 garden-xmas.mjs
@@ -1651,6 +1656,7 @@ export async function createGarden(canvas, options = {}) {
     authoredEffectEventIds = new Set();
     const logicalNow = finite(nowFor(state, now), now);
     duty = options.duty || null; // its art module (kit) is imported by the game only once the duty tier is on
+    tiredPlots = options.tiredPlots instanceof Set ? options.tiredPlots : new Set(); // level-160 luân canh: plot indexes
     for (const file of duty?.kit.GNOME_FILES ?? []) deferredFiles.add(file);
     const builtPlotCount = Math.min(map.plots.length, asArray(state.plots).length);
     lastBuiltPlotCount = builtPlotCount;
@@ -1821,7 +1827,8 @@ export async function createGarden(canvas, options = {}) {
         parts = [[`Thửa ${index + 1}`, selected ? '#FFC36B' : '#F5D69A'], [ripe ? ` · chín ${ripe}` : slots.length ? ` · ${shortTime(left)}` : '', ripe ? '#FFC36B' : '#A6B1AE']];
         if (ripe) rule = '#FFC36B';
       }
-      objects.push({kind: 'sign', id: `sign:${index}`, xy: [x, y], draw: ctx => plotSign(ctx, parts, x, y, px, rule)});
+      const mark = tiredPlots.has(index) && plotIsBuilt(state, index, logicalNow) ? 'tired' : null; // level 160+: the next harvest is cut
+      objects.push({kind: 'sign', id: `sign:${index}`, xy: [x, y], draw: ctx => plotSign(ctx, parts, x, y, px, rule, mark)});
     }
     // 25.0 S5: ma lùm chewing in the weeds of their plot, in the depth-sorted pass so the night tint covers them.
     for (const plotIndex of duty?.gnomes ?? []) {
