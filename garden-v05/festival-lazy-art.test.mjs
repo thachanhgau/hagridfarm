@@ -163,7 +163,7 @@ test('25.0 budget: event pieces and Dobby\'s work poses load only when first dra
 
 test('winter scenery stays deferred until winter or explicit snow is selected', async () => {
   const winterKit = await import('./garden-winter.mjs'), {WINTER_FILES, winterSeason} = winterKit;
-  assert.equal(WINTER_FILES.length, 20);
+  assert.equal(WINTER_FILES.length, 21);
   for (const file of WINTER_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
   const winterUrls = WINTER_FILES.map(runtimeImageUrl);
   const {canvas, requested} = recordingCanvas();

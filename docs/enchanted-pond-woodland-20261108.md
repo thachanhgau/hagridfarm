@@ -1,0 +1,7 @@
+# Enchanted lake woodland
+
+Owner requested denser, more magical planting around the willow, lake and aquatic beds. Replace the isolated willow nook with a layered ancient grove: trailing evergreen foliage, smaller crooked trees, root tangles, ferns, ivy, mossy stones, old steps, amber lantern and cyan mushrooms. Add six native low alder/fern thickets around the outside banks. Preserve the lake, all ten aquatic planting beds and the south col20.5 access path. No gameplay, save, crop or water-creature changes.
+
+Four authored normal/snow sprites share seasonal canvases and pivots. Nook224×248, pivot112,230, existing logical location and3×3 footprint preserved; canopy overhang grows16px on each side. Thicket160×144, pivot80,136. Source atlas/prompt/checksums: environment/pond/masters/woodland-20261108/. Rebuild build-pond-woodland.mjs after base pond/winter builders, then build-runtime-webp.mjs. Native palette, binary alpha, nearest sampling; runtime draws at native size. New thickets defer until a built pond is drawn. Winter variants defer with the existing winter kit. Pond UI now reads canonical scenery metadata directly from pond-art to avoid stale duplicate dimensions.
+
+Verification:27 focused tests passed (woodland root clearance for lake/10beds/approach, native artwork hashes/palette/alpha/seasonal anchors, pond UI, winter lazy loading, forest and renderer). WebP1398+8 RGBA parity. Actual3026 evidence and import commit recorded in HPVNN. Local only, no push/deploy.

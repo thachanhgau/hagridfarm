@@ -1,3 +1,4 @@
+import {WOODLAND_FILES,pondWoodlandObjects} from './pond-woodland.mjs?v=25.0.2';
 import {drawPlacementGrid} from './placement-grid.mjs?v=25.0.2';
 import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=25.0.2';
 import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=25.0.2';
@@ -723,7 +724,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...SUBMERGED_CREATURE_FILES, ...Object.values(EDGE_SCENERY).map((spec) => spec.file), ...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]));
+  const deferredFiles = new Set(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...WOODLAND_FILES, ...SUBMERGED_CREATURE_FILES, ...Object.values(EDGE_SCENERY).map((spec) => spec.file), ...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]));
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -1876,6 +1877,7 @@ export async function createGarden(canvas, options = {}) {
       // pond above stays where it was.
       const pondTierNow = pondTier(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id)));
       const pondProp = props.get('pond');
+      if (pondTierNow) objects.push(...pondWoodlandObjects(iso));
       const nook = pondTierNow ? pondScenery('pond-nook') : null; // «Góc nghỉ» between the paddies and the pond
       if (nook) objects.push({kind: 'asset', type: 'prop', id: 'pond-nook', species: 'pond-nook', asset: {file: nook.file, width: nook.width, height: nook.height, pivotX: nook.pivotX, pivotY: nook.pivotY, noSnowCap: true}, xy: iso(...POND_NOOK.at)});
       if (pondTierNow && pondProp) objects.push(...pondObjects(pondProp, winterFile(pondProp.file), pondHome(map, POND_TIER_IDS.slice(0, pondTierNow)), pondTierNow, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock, logicalNow, creatureFacings));

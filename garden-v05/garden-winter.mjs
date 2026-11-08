@@ -45,6 +45,7 @@ export const WINTER_ART = Object.freeze({
   'environment/pond/pond-2.png': 'environment/winter/pond-2-snow.png',
   'environment/pond/pond-3.png': 'environment/winter/pond-3-snow.png',
   'environment/pond/pond-bed.png': 'environment/winter/pond-bed-snow.png',
+  'environment/pond/shore-thicket.png': 'environment/winter/shore-thicket-snow.png',
   'environment/pond/pond-nook.png': 'environment/winter/pond-nook-snow.png',
   'environment/forest-v06/oak.png': 'environment/winter/oak.png',
   'environment/forest-v06/pine.png': 'environment/winter/pine.png',

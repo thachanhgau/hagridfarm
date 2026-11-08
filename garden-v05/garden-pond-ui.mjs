@@ -1,3 +1,5 @@
+import {POND_SCENERY} from './pond-art.mjs?v=25.0.2';
+export {POND_SCENERY};
 // Garden expansion phase 1 «Hồ nuôi» (docs/garden-expansion-plan.md §2.1, §6): the pond dock, the fishing game and the
 // pond art paths. Everything comes from the server's snapshot.pond (HPVNN garden pond core); the server keeps every
 // number and rule, this module only shows them and sends {action:'pond', kind, …}.
@@ -14,17 +16,7 @@ export const FRY = Object.freeze({
 });
 const CROP = Object.fromEntries(DB.crops.map(c => [c.id, c]));
 
-// Art contract §6: the scene art of pond-art.mjs POND_SCENERY (same numbers; that file is not on this branch until
-// the merge). Drawn at iso(col, row) − pivot so decorFootprintRect sits under it. A missing file would 404 in the console,
-// so the files are asked for only once the pond-art merge has shipped (its item art then resolves through flowArtSpec);
-// garden-pond-ui.test.mjs checks them against runtime-webp-manifest.json at that point.
-export const POND_SCENERY = Object.freeze({
- 'pond-1': {file: 'environment/pond/pond-1.png', width: 480, height: 298, pivotX: 240, pivotY: 288, footprint: [9, 6]},
- 'pond-2': {file: 'environment/pond/pond-2.png', width: 480, height: 298, pivotX: 240, pivotY: 288, footprint: [9, 6]},
- 'pond-3': {file: 'environment/pond/pond-3.png', width: 480, height: 298, pivotX: 240, pivotY: 288, footprint: [9, 6]},
- 'pond-bed': {file: 'environment/pond/pond-bed.png', width: 128, height: 88, pivotX: 64, pivotY: 70, footprint: [3, 1]},
- 'pond-nook': {file: 'environment/pond/pond-nook.png', width: 192, height: 248, pivotX: 96, pivotY: 230, footprint: [3, 3]},
-});
+// Scene dimensions and anchors come directly from the authored art pack.
 export const POND_FALLBACK = 'environment/layers/pond.png';
 export const POND_ART_SHIPPED = Boolean(flowArtSpec('goldfish'));
 export const pondScenery = id => (POND_ART_SHIPPED ? POND_SCENERY[id] ?? null : null);

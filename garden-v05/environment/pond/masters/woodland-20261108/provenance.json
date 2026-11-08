@@ -1,0 +1,40 @@
+{
+  "tool": "built-in image_gen",
+  "master": "environment/pond/masters/woodland-20261108/atlas.png",
+  "sha256": "ca2a2115adfb657d30963da6cb5afd8f355d53fe4b9e41639cf22a79afcaf462",
+  "prompt": "Four isolated pixel sprites: dense enchanted willow grove and low alder thicket, normal and matching snow versions. Twisted roots, hanging evergreen leaves, layered ferns, ivy, moss rocks, old steps, amber lantern and turquoise luminous mushrooms. Muted native palette, transparent background; no water, animals, UI or text.",
+  "outputs": [
+    {
+      "file": "environment/pond/pond-nook.png",
+      "width": 224,
+      "height": 248,
+      "pivotX": 112,
+      "pivotY": 230,
+      "sha256": "cdabfc03d703144864052c13aee4e5e24e4a15933440f98a34ba27ed9436c6fe"
+    },
+    {
+      "file": "environment/pond/shore-thicket.png",
+      "width": 160,
+      "height": 144,
+      "pivotX": 80,
+      "pivotY": 136,
+      "sha256": "0afb107074e3596bc9792e291557c90a7a0fc1cf6bc9d5e27424f91dcc1de76e"
+    },
+    {
+      "file": "environment/winter/pond-nook-snow.png",
+      "width": 224,
+      "height": 248,
+      "pivotX": 112,
+      "pivotY": 230,
+      "sha256": "5a7152c7410a39f290fec2177b5cbe87e8392e3e015f6271546b30393443eee9"
+    },
+    {
+      "file": "environment/winter/shore-thicket-snow.png",
+      "width": 160,
+      "height": 144,
+      "pivotX": 80,
+      "pivotY": 136,
+      "sha256": "532ebc267a30073190d7dd9b7db4acaa1e04f7838dc03a9fdebde4862cf83dbe"
+    }
+  ]
+}

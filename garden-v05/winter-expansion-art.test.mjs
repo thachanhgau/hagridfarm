@@ -13,6 +13,8 @@ test('expansion winter artwork retains matching canvases, native pixel scale, pa
  assert.equal(p.assets.length,6);
  for(const asset of p.assets){
   assert.equal(hash(await read(asset.master)),asset.masterSha256);
+  // The denser willow pair is now authored and checked by pond-woodland.test.mjs.
+  if(asset.file==='environment/winter/pond-nook-snow.png')continue;
   const bytes=await read(asset.file);assert.equal(hash(bytes),asset.sha256);
   const {data,info}=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true});
   assert.deepEqual([info.width,info.height],[asset.width,asset.height]);

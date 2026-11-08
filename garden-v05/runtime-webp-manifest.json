@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "b03bab67dd58",
+  "revision": "5e6e87f2e607",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -13464,12 +13464,22 @@
     {
       "source": "environment/pond/pond-nook.png",
       "file": "runtime-webp/environment/pond/pond-nook.webp",
-      "width": 192,
+      "width": 224,
       "height": 248,
-      "sourceBytes": 7370,
-      "bytes": 4462,
-      "sourceSha256": "51d2a9049579a733bd1d568eb857669d5815e6b9f80b5ce7a2677f3997351bf9",
-      "sha256": "78b3a6fc374022af18e304e48caadfac0c1180f06dfe88858e1a58ab0252d910"
+      "sourceBytes": 13222,
+      "bytes": 8146,
+      "sourceSha256": "cdabfc03d703144864052c13aee4e5e24e4a15933440f98a34ba27ed9436c6fe",
+      "sha256": "2018fc50a290b71fe22f70a2e728a0b851e9a087b4d4dd7fb326f6d57bf29c25"
+    },
+    {
+      "source": "environment/pond/shore-thicket.png",
+      "file": "runtime-webp/environment/pond/shore-thicket.webp",
+      "width": 160,
+      "height": 144,
+      "sourceBytes": 6028,
+      "bytes": 3996,
+      "sourceSha256": "0afb107074e3596bc9792e291557c90a7a0fc1cf6bc9d5e27424f91dcc1de76e",
+      "sha256": "7688d6c6f4a9b2cf448db20dae57bc5dcd0373ef7d2705cd6fb32d5d026da75b"
     },
     {
       "source": "environment/statue-night/ev_dark_dobby_red_right-n0.png",
@@ -13714,12 +13724,22 @@
     {
       "source": "environment/winter/pond-nook-snow.png",
       "file": "runtime-webp/environment/winter/pond-nook-snow.webp",
-      "width": 192,
+      "width": 224,
       "height": 248,
-      "sourceBytes": 4921,
-      "bytes": 2866,
-      "sourceSha256": "9b2c7ee0a7c277f75fd03e0de683e812822a9c13f78d542ac38d811ddc814210",
-      "sha256": "2c2f7d7dce95dab57060ae1a14070373ab2334f7fbd267b7e6dcea66737108fb"
+      "sourceBytes": 15206,
+      "bytes": 9538,
+      "sourceSha256": "5a7152c7410a39f290fec2177b5cbe87e8392e3e015f6271546b30393443eee9",
+      "sha256": "18302af8d7247ef3291c06b4ae85d5c4698de4ab96c837bbe78e8094bc893321"
+    },
+    {
+      "source": "environment/winter/shore-thicket-snow.png",
+      "file": "runtime-webp/environment/winter/shore-thicket-snow.webp",
+      "width": 160,
+      "height": 144,
+      "sourceBytes": 6950,
+      "bytes": 4614,
+      "sourceSha256": "532ebc267a30073190d7dd9b7db4acaa1e04f7838dc03a9fdebde4862cf83dbe",
+      "sha256": "3f873b8aafb94755db283d143866187d4ee869d3cb0d3945f83ffed862106c29"
     },
     {
       "source": "environment/winter/tree-apple-0-snow.png",
@@ -14025,11 +14045,11 @@
     }
   ],
   "totals": {
-    "converted": 1396,
+    "converted": 1398,
     "existingWebp": 8,
-    "originalBytes": 5364384,
-    "webpBytes": 3536100,
-    "savedBytes": 1828284,
-    "savedPercent": 34.08
+    "originalBytes": 5393499,
+    "webpBytes": 3555066,
+    "savedBytes": 1838433,
+    "savedPercent": 34.09
   }
 }
