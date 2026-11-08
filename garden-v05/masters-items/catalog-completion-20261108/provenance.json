@@ -1,0 +1,194 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "pasture-floor",
+      "master": "masters-items/catalog-completion-20261108/pasture-floor.png",
+      "prompt": "Edit the attached isometric magical farm PASTURE ground sprite for a pixel-art game. REMOVE ALL WOODEN FENCES, ALL POSTS and ALL GATES completely from every side. Keep the same restrained garden style, lawn palette, 2:1 dimetric camera, general stone/flower tufts, small water trough and two hay bales at far corner. The result is a flat ten-by-eight-tile grassy paddock floor ONLY, entire perimeter open, thin irregular grass edge and NO dark drop-shadow border. No soil planting beds. Geometry MUST be a wide 2:1 isometric parallelogram with vertices proportionally at top(44.4%,0), right(100%,55.6%), bottom(55.6%,100%), left(0,44.4%). The clear central lawn must occupy90% of the sprite, no central objects; trough and hay remain tiny far-corner details, stones and daisies sparse on interior edge. Native runtime canvas576x314 with grass footprint576x288. True hand-drawn coarse pixel art, effective288x157 logical grid, large clean flat colour clusters, dark aubergine outline on small props only, muted forest greens #24483F #3F6A45 #71934B #B0BD67, slate grey stones, warm hay. No antialiasing, blur, smooth texture, glow, snow, text or backdrop. Transparent margins, entire standalone floor isolated. Fences will be rendered separately in code, so absolutely no rails or wooden stakes in this image.",
+      "sha256": "5f7147c1e74fcd2a138b46c09ed96eaaa007199fc7c05ece6eb3c46a0024e2a4",
+      "outputs": [
+        {
+          "id": "pasture",
+          "file": "environment/edge/pasture.png",
+          "sha256": "0b3f0028a70355113788ddf4d6cac3edc23f44f36ccd698e3316f0f1c151e820",
+          "bounds": {
+            "x": 2,
+            "y": 26,
+            "w": 572,
+            "h": 286
+          }
+        }
+      ]
+    },
+    {
+      "id": "food-sheet",
+      "master": "masters-items/catalog-completion-20261108/food-sheet.png",
+      "prompt": "Create a production PIXEL ART ICON SHEET, exactly4 columns by2 rows, eight fully separate icons with generous transparent gutters and TRUE transparent background. Each cell has ONE centered complete icon, native runtime64x64, detailed at48x48 visible pixels, dark aubergine outline, chunky flat game palette, no text or borders. Match reference's established magical garden item style. Row1 left to right: (1) shallow wooden platter holding three silver fish and broad blue-green kelp ribbons; (2) dark ceramic bowl of two silver fish and long winding green river herbs, visibly different from1; (3) warm wooden dog food bowl of chopped fish with knotted clover sprigs; (4) small open burlap sack of sunflower seeds with a single yellow sunflower head. Row2 left to right: (5) little charcoal brazier-shaped serving bowl of dry leaves and bright red fire peppers, not lit; (6) half amber-gold melon with fish pieces on a leaf tray; (7) wicker feed basket of golden oats and red apple halves; (8) closed blue-green feed pouch with a small silver fish emblem and kelp tied at top, finished aquatic creature feed inventory icon, no letters. All eight have distinct silhouettes, carefully readable ingredients. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No glow, gradients, blur, soft shadows, antialiasing, backdrop, text, scene or decorative panels.",
+      "sha256": "07593bafa4f7f5dc23150dfd8a02bea7259f92f8c9e19d5346083b45a34d37d4",
+      "outputs": [
+        {
+          "id": "recipe_grindylow_feed",
+          "file": "native-items/recipe_grindylow_feed.png",
+          "sha256": "aa7db2ccfb306d329f50fd8b7035323cbe0c9480ffd22f39d24bdde5cead76b0",
+          "bounds": {
+            "x": 6,
+            "y": 17,
+            "w": 52,
+            "h": 39
+          }
+        },
+        {
+          "id": "recipe_grindylow_flux",
+          "file": "native-items/recipe_grindylow_flux.png",
+          "sha256": "59c4c1396be9c5eb3dce3ee58088082cceee06e8a788e82bf6da32b29f0f3013",
+          "bounds": {
+            "x": 7,
+            "y": 8,
+            "w": 49,
+            "h": 48
+          }
+        },
+        {
+          "id": "recipe_crup_knotgrass",
+          "file": "native-items/recipe_crup_knotgrass.png",
+          "sha256": "62dde1358961e341564c591703f66f4a9139f8241fdcb0ac3e99df14acc3aa42",
+          "bounds": {
+            "x": 6,
+            "y": 13,
+            "w": 52,
+            "h": 43
+          }
+        },
+        {
+          "id": "recipe_knarl_sunflower",
+          "file": "native-items/recipe_knarl_sunflower.png",
+          "sha256": "af88e76ecf48238faa578b7a4f5ca822456bdb270f27992e7c7fcae7618669e9",
+          "bounds": {
+            "x": 6,
+            "y": 8,
+            "w": 52,
+            "h": 48
+          }
+        },
+        {
+          "id": "recipe_salamander_knotgrass",
+          "file": "native-items/recipe_salamander_knotgrass.png",
+          "sha256": "ae19ee65863b8caae10b816c89a5f7fa34dde67f00e577102d6b5a81401d7d66",
+          "bounds": {
+            "x": 6,
+            "y": 8,
+            "w": 52,
+            "h": 48
+          }
+        },
+        {
+          "id": "recipe_kappa_fish",
+          "file": "native-items/recipe_kappa_fish.png",
+          "sha256": "2d397f2c2772fef49ac4a863e67f2f0af8265d5025036e9bce7a7e0cef431a01",
+          "bounds": {
+            "x": 6,
+            "y": 15,
+            "w": 52,
+            "h": 41
+          }
+        },
+        {
+          "id": "recipe_porlock_apple",
+          "file": "native-items/recipe_porlock_apple.png",
+          "sha256": "547d3e4ea8df001b6927a12d5e866b3e54c47ae744abe68e7708d245e8ba2d52",
+          "bounds": {
+            "x": 6,
+            "y": 8,
+            "w": 51,
+            "h": 48
+          }
+        },
+        {
+          "id": "grindylow_feed",
+          "file": "native-items/grindylow_feed.png",
+          "sha256": "168bf6837ec712fb1d3050dfecea208ddf9597ddb7ee79cef3a4ad5331480e13",
+          "bounds": {
+            "x": 7,
+            "y": 8,
+            "w": 49,
+            "h": 48
+          }
+        }
+      ]
+    },
+    {
+      "id": "build-sheet",
+      "master": "masters-items/catalog-completion-20261108/build-sheet.png",
+      "prompt": "Production pixel-art ICON SHEET, exactly3 columns by2 rows, six fully separate complete miniature ISOMETRIC magical garden construction icons, generous transparent gutters, TRUE TRANSPARENT background. Native runtime64x64 each, visible ink max52x48. Style like reference: chunky handcrafted pixels, dark aubergine outline, muted forest green/slate/warm wood palette, sharp2:1 camera, no text/numbers/badges/borders. Row1 left to right: (1) a winding stone-and-earth woodland trail through two low fern tufts, PATH CLEARING upgrade; (2) small open grassy pasture with warm wood fence on two back sides and a tiny water trough, PASTURE upgrade; (3) miniature orchard with one apple tree, one pear tree and one plum tree on three small organic soil basins, ORCHARD upgrade. Row2 left to right: (4) square small wooden animal enclosure with fork-tailed dog silhouette and grey water bowl, warm oak rails; (5) square dark-green enchanted creature enclosure with a low warm ember rock and small orange salamander, mossy rails; (6) larger slate-reinforced creature enclosure with hay and a small bristly Knarl silhouette, dark blue-grey rails. Each is a standalone distinct coherent miniature with no outside shadow. Shapes clearly distinguish the three new pens and three expansions. Flat2-3tone clusters, game24-colour palette. No fine noise, gradients, antialiasing, text or background.",
+      "sha256": "8a5d2e9373df8ae9255ad8e053c6ccc7297ba49e5a2d1b7869609bb247604abe",
+      "outputs": [
+        {
+          "id": "edge_1",
+          "file": "native-items/edge_1.png",
+          "sha256": "46711f629fe2f3c6d9ace5643bec7cce439bae806fca3f6fde404c39a030f9f3",
+          "bounds": {
+            "x": 6,
+            "y": 11,
+            "w": 52,
+            "h": 45
+          }
+        },
+        {
+          "id": "edge_2",
+          "file": "native-items/edge_2.png",
+          "sha256": "bdff6f2e3bf11f366d73f1587f5b6234e1ffde0803ec60fe37ad27d2c37f9f58",
+          "bounds": {
+            "x": 6,
+            "y": 9,
+            "w": 52,
+            "h": 47
+          }
+        },
+        {
+          "id": "edge_3",
+          "file": "native-items/edge_3.png",
+          "sha256": "9899fbb82714edd187fccf2f11c631ceb01ed054cff75d4867812e19bf45c8a0",
+          "bounds": {
+            "x": 6,
+            "y": 9,
+            "w": 52,
+            "h": 47
+          }
+        },
+        {
+          "id": "pen_ext_1",
+          "file": "native-items/pen_ext_1.png",
+          "sha256": "935be29b680fe8623044b9f41901bc7aa9e0ae0b300db5fd066cfb5f53aba150",
+          "bounds": {
+            "x": 7,
+            "y": 8,
+            "w": 50,
+            "h": 48
+          }
+        },
+        {
+          "id": "pen_ext_2",
+          "file": "native-items/pen_ext_2.png",
+          "sha256": "7779f6308f4554bf173abdff788b9e6f644e5b7497b466659d3d61f0068a2d31",
+          "bounds": {
+            "x": 7,
+            "y": 8,
+            "w": 49,
+            "h": 48
+          }
+        },
+        {
+          "id": "pen_ext_3",
+          "file": "native-items/pen_ext_3.png",
+          "sha256": "08f40b016461a2c5868ce17565c9e8091f59daf580162d749edd018912e7b555",
+          "bounds": {
+            "x": 6,
+            "y": 9,
+            "w": 52,
+            "h": 47
+          }
+        }
+      ]
+    }
+  ]
+}

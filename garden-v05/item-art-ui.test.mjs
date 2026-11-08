@@ -243,3 +243,12 @@ test('garden expansion species without ITEM_ART have their feed and produce icon
   for (const key of [a.feed, `produce_${a.id}`]) assert.ok(flowArtSpec(key)?.file, key);
  }
 });
+
+test('every current recipe, feed, produce, expansion and orchard item has an actual UI image',()=>{
+ const ids=[...DB.recipes.map(r=>'recipe_'+r.id),...DB.animals.flatMap(a=>[a.feed,'produce_'+a.id]),...DB.expansions.map(e=>e.id),...DB.decorations.map(d=>d.id),'apple','pear','plum','sapling_apple','sapling_pear','sapling_plum','elf_hat','elf_sock'];
+ for(const id of ids){
+  const visual=visualItemIcon(new Map(),id,{size:48});
+  assert.equal(findClass(visual,'is-art-missing'),null,id+' uses a placeholder');
+  assert.ok(findClass(visual,'item-art-img'),id+' has no actual artwork');
+ }
+});

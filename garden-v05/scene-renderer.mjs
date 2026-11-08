@@ -26,7 +26,7 @@ import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} f
 import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,GARDEN_STAGES,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.0.2';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.0.2';
-import {CREATURE, DB, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
+import {CREATURE, CROP, DB, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
 import {EDGE_SCENERY} from './edge-art.mjs?v=25.0.2';
 import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=25.0.2';
 import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.0.2';
@@ -817,9 +817,9 @@ export async function createGarden(canvas, options = {}) {
 
   function rebuildBoundaryFence(stage) {
     boundaryFence = createBoundaryFence(map, stageBoundary(stage, {fence: true}), fenceOpenings(stage)).map((piece) => {
-      const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - (piece.gate?10:6));
+      const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - (piece.gate?24:6));
       const top = Math.floor(Math.min(piece.a[1], piece.b[1]) - (piece.gate?80:51));
-      const layer = makeCanvas(canvas, Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?36:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
+      const layer = makeCanvas(canvas, Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?48:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
       const brush = layer.getContext('2d');
       brush.imageSmoothingEnabled = false;
       drawBoundaryFence(brush, {
@@ -1259,19 +1259,12 @@ export async function createGarden(canvas, options = {}) {
         ctx.restore();
       }};
     });
-    return [...paddies, ...beds.map((cells, b) => {
-      const {c0, c1, r0} = rects[b], xy = iso(c1, r0 + 2);
-      return {kind: 'pond-bed', type: 'pond-bed', id: `pond-bed:${b}`, xy, draw: (ctx) => {
-        asArray(cells).forEach((cell, j) => {
-          if (!cell) return;
-          const [ex, ey] = iso(c0 + 0.5, r0 + j + 0.5), ripe = cell.ripe || Number(cell.readyAt) <= now;
-          ctx.fillStyle = '#231F2E'; ctx.fillRect(Math.round(ex - 5), Math.round(ey - (ripe ? 16 : 10)), 10, ripe ? 16 : 10);
-          ctx.fillStyle = ripe ? '#B0BD67' : '#71934B';
-          for (const dx of [-4, -1, 2]) ctx.fillRect(Math.round(ex + dx), Math.round(ey - (ripe ? 15 : 9) + (dx === -1 ? -2 : 0)), 2, ripe ? 15 : 9);
-          if (ripe) { ctx.fillStyle = '#FFC36B'; ctx.fillRect(Math.round(ex - 4), Math.round(ey - 18), 8, 3); }
-        });
-      }};
-    })];
+    return [...paddies,...beds.flatMap((cells,b)=>asArray(cells).flatMap((cell,j)=>{
+      if(!cell||!CROP[cell.species])return [];
+      const {c0,r0}=rects[b],growMs=Number(cell.growMs)||CROP[cell.species].growMs;
+      const plantedAt=cell.ripe?now-growMs:Number(cell.plantedAt)||Number(cell.readyAt)-growMs;
+      return [actorObject({...cell,type:'crop',plantedAt,growMs},c0+.5,r0+j+.5,now,clock,{})];
+    }))];
   }
 
   // Pixel stand-in for a land creature without its motion sprite: shadow, body, head, two eyes, in the species' tone.
@@ -1415,6 +1408,19 @@ export async function createGarden(canvas, options = {}) {
     polygon(context, plotCorners(plot), fill, color, 2);
   }
 
+  function fenceObjects(pieces){
+    if(!pieces.length)return [];
+    const cells=pieces.flatMap(p=>[p.cellA,p.cellB]),cs=cells.map(p=>p[0]),rs=cells.map(p=>p[1]);
+    return [false,true].flatMap(front=>{
+      const group=pieces.filter(p=>p.front===front);if(!group.length)return [];
+      const points=group.flatMap(p=>[p.a,p.b]),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
+      const left=Math.floor(Math.min(...xs))-24,top=Math.floor(Math.min(...ys))-32;
+      const layer=makeCanvas(canvas,Math.ceil(Math.max(...xs))-left+24,Math.ceil(Math.max(...ys))-top+16),brush=layer.getContext('2d');
+      brush.imageSmoothingEnabled=false;brush.translate(-left,-top);for(const piece of group)drawPenFence(brush,piece,activeWeather);
+      const at=[front?Math.max(...cs):Math.min(...cs),front?Math.max(...rs):Math.min(...rs)];
+      return [{kind:'pen-fence',id:pieces[0].penId+':fence:'+(front?'front':'back'),penId:pieces[0].penId,front,cellA:at,cellB:at,xy:iso(...at),layer,left,top}];
+    });
+  }
   function drawBuiltPen(pen,state,clock){
     const residents=habitatResidents(pen,landCreatures(state),map.creatureSpots,iso);
     const sharedEast=Math.abs(currentStage.right-(pen.col+pen.width))<0.001;
@@ -1428,12 +1434,13 @@ export async function createGarden(canvas, options = {}) {
       const bottom=Math.ceil(Math.max(...corners.map(p=>p[1])))+20;
       const layer=makeCanvas(canvas,right-left,bottom-top),brush=layer.getContext('2d');brush.translate(-left,-top);
       drawPenHabitat(brush,{corners,pen:enclosure,iso,weatherMode:activeWeather,personalized:residents.length>0});
-      for(const piece of penFencePieces(enclosure,iso,{sharedEast}))drawPenFence(brush,piece,activeWeather);
+      const fences=fenceObjects(penFencePieces(enclosure,iso,{sharedEast}));
       drawHabitatProps(brush,residents,{weatherMode:activeWeather,imageFor});
-      cached={key,layer,left,top};penHabitatLayers.set(pen.id,cached);
+      cached={key,layer,left,top,fences};penHabitatLayers.set(pen.id,cached);
     }
     context.drawImage(cached.layer,cached.left,cached.top);
     drawHabitatMotion(context,residents,{clock,reducedMotion:clock===0,weatherMode:activeWeather});
+    return cached.fences;
   }
 
   function drawBuiltPlotBorder(plot,index){
@@ -1625,6 +1632,7 @@ export async function createGarden(canvas, options = {}) {
       }
       return;
     }
+    if (object.kind === 'pen-fence') { context.drawImage(object.layer,object.left,object.top); return; }
     if (object.kind === 'boundary-fence') { context.drawImage(object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock); return; }
     if (object.kind === 'decoration') {
       const asset = earnedDecorArt(object.id, object.facing);
@@ -1879,6 +1887,12 @@ export async function createGarden(canvas, options = {}) {
       if (pondTierNow && pondProp) objects.push(...pondObjects(pondProp, winterFile(pondProp.file), pondHome(map, POND_TIER_IDS.slice(0, pondTierNow)), pondTierNow, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock, logicalNow, creatureFacings));
     }
 
+    if(hasEdge&&propsVisible&&builtIds.has('edge_2')){
+      let cached=penHabitatLayers.get('pasture');
+      if(cached?.key!==activeWeather){cached={key:activeWeather,fences:fenceObjects(penFencePieces({id:'pasture',col:34.5,row:5.5,width:10,height:8},iso,{sharedNorth:true,sharedEast:true}))};penHabitatLayers.set('pasture',cached);}
+      objects.push(...cached.fences);
+    }
+
     const builtPenIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id)));
     for (const pen of map.pens ?? []) {
       const construction = constructionOverlay(state, logicalNow, penAliases(pen), 'Chuồng');
@@ -1887,7 +1901,7 @@ export async function createGarden(canvas, options = {}) {
         drawPenGround(context, pen, true);
         objects.push({kind: 'pen-front', type: 'scaffold', id: `${pen.id}:scaffold`, pen, scaffold: true, xy: iso(pen.col + pen.width, pen.row + pen.height)});
       } else if (isBuilt) {
-        drawBuiltPen(pen,state,clock);
+        objects.push(...drawBuiltPen(pen,state,clock));
       }
     }
 
@@ -2059,6 +2073,7 @@ export async function createGarden(canvas, options = {}) {
     const point = ([col, row]) => ({c0: col, c1: col, r0: row, r1: row});
     if (object.kind === 'decoration') return decorFootprintRect(...object.at, object.footprint, object.facing);
     if (object.kind === 'store-decor') return decorFootprintRect(object.col, object.row, decorFootprint(object.id), object.facing);
+    if(object.cellA&&object.cellB)return {c0:Math.min(object.cellA[0],object.cellB[0]),c1:Math.max(object.cellA[0],object.cellB[0]),r0:Math.min(object.cellA[1],object.cellB[1]),r1:Math.max(object.cellA[1],object.cellB[1])};
     if (object.feet) return point(object.feet);
     if (object.item || (object.kind === 'wizard-scenery' && object.id !== 'greenhouse')) return point(worldToGrid(object.xy[0], object.xy[1], map));
     return null;

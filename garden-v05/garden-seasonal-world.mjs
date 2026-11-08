@@ -101,7 +101,7 @@ function pixelLine(c,a,b,color,width=2){
 export function drawSeasonalFence(c,piece,weather,event,clock){
  const {a,b}=piece;
  if(piece.gate){
-  if(weather==='snow')for(const [x,y] of [a,b]){c.fillStyle='#e8f0ed';c.fillRect(Math.round(x-7),Math.round(y-57),14,3);}
+  if(weather==='snow')for(const [x,y] of [a,b]){c.fillStyle='#e8f0ed';c.fillRect(Math.round(x-7),Math.round(y-74),14,3);}
   return; // A snow cap or garland must never close the open passage.
  }
  if(weather==='snow')for(const h of [35,26,14])pixelLine(c,[a[0]-3,a[1]-h],[b[0]-3,b[1]-h],'#e8f0ed',3);

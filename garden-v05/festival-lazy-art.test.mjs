@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import vm from 'node:vm';
 import scene from './scene-data.json' with {type: 'json'};
 import motion from './motion-data.json' with {type: 'json'};
 import * as E from './progression-engine.mjs';
@@ -9,6 +10,7 @@ import {runtimeImageUrl} from './runtime-image-url.mjs';
 
 globalThis.FARM_SCENE = structuredClone(scene);
 globalThis.FARM_MOTION = motion;
+vm.runInNewContext(fs.readFileSync(new URL('./level-assets.js',import.meta.url),'utf8'),{window:{FARM_MOTION:motion}});
 const {createGarden} = await import('./scene-renderer.mjs');
 const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json', import.meta.url), 'utf8'));
 
@@ -46,6 +48,24 @@ test('orchard roots meet the centre of every pit at every growth stage',async()=
    assert.deepEqual(call.args.slice(0,2),[Math.round(x-spec.groundCentre.x),Math.round(y-spec.groundCentre.y)]);
   }
  }
+});
+
+test('front pen rails occlude a large resident while back rails remain behind it',async()=>{
+ const {canvas}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+ const now=1_700_000_000_000,state=E.testProfile(500,now);
+ state.built=[...new Set([...state.built,...Array.from({length:6},(_,i)=>'pen_'+(i+1))])];
+ state.creatures=E.DB.animals.filter(a=>a.habitat!=='pond').map(a=>({id:'creature-'+a.id,type:'creature',species:a.id,adoptedAt:now,mealsCompleted:a.mealsToAdult,meal:null,cyclesClaimed:0}));
+ garden.render(state,{now,clock:0,propsVisible:true});
+ const order=garden.order(),dragon=order.findIndex(o=>o.id==='dragon');assert.ok(dragon>=0);
+ const back=order.findIndex(o=>o.id==='pen_6:fence:back'),front=order.findIndex(o=>o.id==='pen_6:fence:front');
+ assert.ok(back>=0&&back<dragon,'back rails behind the resident');assert.ok(front>dragon,'front rails in front of the resident');
+});
+
+test('water beds draw the actual aquatic crop sprite instead of rectangular stand-ins',async()=>{
+ const {canvas}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+ const now=1_700_000_000_000,state=E.testProfile(500,now);state.built=[...new Set([...state.built,'pond_1'])];
+ garden.render(state,{now,clock:0,propsVisible:true,pond:{lots:[],beds:[[{species:'silverkelp',plantedAt:now-100000,readyAt:now+100000},null,null]]}});
+ assert.ok(garden.order().some(o=>o.id==='silverkelp'),'aquatic bed must contain a real crop actor');
 });
 
 test('pond creatures defer submerged art and render their real growth stage, never a dry adult sprite',async()=>{

@@ -1,8 +1,9 @@
+import {CATALOG_ART} from './catalog-art.mjs?v=25.0.2';
 import { ITEM_ART } from "./item-art.mjs?v=25.0.2";
 import { FLOW_ITEM_ART } from "./flow-item-art.mjs?v=25.0.2";
 import { KEEPSAKE_ART } from "./complete-object-art.mjs?v=25.0.2";
 import { UI_AUDIT_ART } from "./ui-audit-art.mjs?v=25.0.2";
-import { POND_ART } from "./pond-art.mjs?v=25.0.2";
+import { POND_ART, POND_SCENERY } from "./pond-art.mjs?v=25.0.2";
 import { EDGE_ART } from "./edge-art.mjs?v=25.0.2";
 
 // A recipe can have a different illustration while still producing one of
@@ -15,7 +16,9 @@ export const CANONICAL_OUTPUT_IDS = Object.freeze([
 ]);
 
 export function flowArtSpec(key) {
- const spec = FLOW_ITEM_ART?.[key] ?? POND_ART[key] ?? EDGE_ART[key]; // pond items (fry, goldfish, produce_grindylow) and phase-2 produce/feed (crup, knarl, salamander) resolve like flow art
+ const baseRecipe=/^recipe_(crup_feed|knarl_feed|salamander_feed|kappa_feed|porlock_feed)$/.exec(key);
+ const pond=/^pond_([123])$/.exec(key);
+ const spec = CATALOG_ART[key] ?? (baseRecipe?(POND_ART[baseRecipe[1]]??EDGE_ART[baseRecipe[1]]):null) ?? (pond?POND_SCENERY['pond-'+pond[1]]:null) ?? FLOW_ITEM_ART?.[key] ?? POND_ART[key] ?? EDGE_ART[key]; // pond items (fry, goldfish, produce_grindylow) and phase-2 produce/feed (crup, knarl, salamander) resolve like flow art
  return spec?.file ? spec : null;
 }
 

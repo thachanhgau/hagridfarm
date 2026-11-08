@@ -1,7 +1,7 @@
 // Garden expansion phase 3 «Vườn cây lâu năm» (docs/garden-expansion-plan.md §11): the orchard dock and Hagrid's three
 // requests text. Everything comes from snapshot.orchard (server garden-orchard-core); this module only shows it and
 // sends {action:'orchard', kind: plant|harvest|fell, …}.
-import {el, button, num, duration, itemDisplayName} from './ui-utils.mjs?v=25.0.2';
+import {el, button, num, duration, itemDisplayName, itemArtVisual} from './ui-utils.mjs?v=25.0.2';
 import {pixelIcon, ICONS} from './pixel-icons.mjs?v=25.0.2';
 
 export const SAPLINGS = Object.freeze({apple: {label: 'Táo', item: 'sapling_apple'}, pear: {label: 'Lê', item: 'sapling_pear'}, plum: {label: 'Mận', item: 'sapling_plum'}});
@@ -46,7 +46,7 @@ export function createOrchardDock({dock, act}) {
   harvest.append(glyph('harvest', 'seed'), el('span', {text: ripe ? `Hái quả · ${ripe}` : 'Hái quả'}));
   const picker = el('div', {class: 'pond-pick', role: 'group', 'aria-label': 'Chọn cây non'}, pick.choices.map(c => {
    const b = button('', () => {sapling = c.id; confirm = null; render(ctx);}, {'aria-pressed': String(c.id === sapling), 'aria-label': `${c.label} · ${num(c.count)}`, title: c.label});
-   b.append(el('span', {text: c.label}), el('b', {text: num(c.count)}));
+   b.append(itemArtVisual('sapling_'+c.id,20),el('span', {text: c.label}), el('b', {text: num(c.count)}));
    return b;
   }));
   const cells = tiles.map(t => {
@@ -64,7 +64,7 @@ export function createOrchardDock({dock, act}) {
    }
    const b = button('', () => {confirm = t.index; render(ctx);},
     {class: 'pond-lot' + (t.state === 'ripe' ? ' is-ripe' : ''), 'aria-label': `Hố ${t.index + 1} · ${SAPLINGS[t.kind]?.label ?? t.kind} · ${t.state === 'ripe' ? 'chín' : 'còn ' + duration(t.readyAt - now)} · chạm để chặt`});
-   b.append(el('span', {text: SAPLINGS[t.kind]?.label ?? t.kind}),
+   b.append(itemArtVisual(t.state==='ripe'?t.kind:'sapling_'+t.kind,24),el('span', {text: SAPLINGS[t.kind]?.label ?? t.kind}),
     t.state === 'ripe' ? el('small', {text: 'Chín'}) : el('small', {'data-until': t.readyAt, 'data-prefix': '', text: duration(t.readyAt - now)}));
    return b;
   });

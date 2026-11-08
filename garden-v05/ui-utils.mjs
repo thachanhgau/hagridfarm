@@ -159,7 +159,7 @@ export function itemArtKey(id, { kind = "" } = {}) {
  if (rawId.startsWith("produce_") && (flowArtSpec(rawId) || ITEM_ART[rawId])) return rawId;
  if (rawId.startsWith("decoration-") && ITEM_ART[rawId]) return rawId;
  const recipeKey = `recipe_${rawId}`;
- if (ITEM_ART[recipeKey]) return recipeKey;
+ if (itemArtSpec(recipeKey)) return recipeKey;
  if (kind === "produce") {
   const produceKey = `produce_${rawId.replace(/^(produce_|keepsake_)/, "")}`;
   if (flowArtSpec(produceKey) || ITEM_ART[produceKey]) return produceKey;
@@ -292,10 +292,11 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   const penLabel = DB.expansions.find(e => e.id === rawId)?.label || `Chuồng ${rawId.slice("pen_".length)}`;
   slot.setAttribute("aria-label", penLabel);
   slot.append(el("span", { class: "sr-only", text: penLabel }));
-  const penArt = ITEM_ART[rawId]?.file ? rawId : rawId.startsWith("pen_ext_") && ITEM_ART.pen_6?.file ? "pen_6" : null; // extensions reuse the pen art
+  const penArt = itemArtSpec(rawId)?.file ? rawId : rawId.startsWith("pen_ext_") && ITEM_ART.pen_6?.file ? "pen_6" : null; // extensions reuse the pen art
   appendNativeArt(slot, penArt, Math.round(size * 0.9), "Ảnh chuồng đang cập nhật");
  } else if (edgeStep) {
   const label = DB.expansions.find(e => e.id === rawId)?.label || "Việc bác Hagrid nhờ";
+  appendNativeArt(slot,rawId,Math.round(size*.9),"Ảnh mở rộng đang cập nhật");
   slot.classList.add("is-expansion", "is-pond-art");
   slot.setAttribute("data-expansion-id", rawId);
   slot.setAttribute("aria-label", label);
@@ -373,7 +374,7 @@ const STAGE_ART_IDS = new Set([1, 2, 3, 4, 5, 6, 7]);
 
 export function stageVisualIcon(stageId, items, size = 48) {
  const slot = el("div", { class: "visual-slot is-stage", style: `width:${size}px;height:${size}px` });
- slot.append(itemArtVisual(`chapter_${STAGE_ART_IDS.has(stageId) ? stageId : 1}`, size));
+ slot.append(itemArtVisual(stageId===8?"edge_2":`chapter_${STAGE_ART_IDS.has(stageId) ? stageId : 1}`, size));
  return slot;
 }
 

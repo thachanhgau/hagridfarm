@@ -24,16 +24,16 @@ const fenceStyles=[
  {wood:'#41465c',light:'#a6b1ae',metal:'#687486'},
  {wood:'#8b4a3f',light:'#e7ae73',metal:'#c97952'},
 ];
-export function penFencePieces(pen,iso,{sharedEast=false}={}){
+export function penFencePieces(pen,iso,{sharedEast=false,sharedNorth=false}={}){
  const cells=[[pen.col,pen.row],[pen.col+pen.width,pen.row],[pen.col+pen.width,pen.row+pen.height],[pen.col,pen.row+pen.height]];
  const pieces=[];
  for(let edge=0;edge<4;edge++){
-  if(sharedEast&&edge===1)continue;
+  if(sharedEast&&edge===1||sharedNorth&&edge===0)continue;
   const a=cells[edge],b=cells[(edge+1)%4];
   const count=Math.ceil(edge%2?pen.height:pen.width);
   for(let i=0;i<count;i++){
    const pa=iso(...mix(a,b,i/count)),pb=iso(...mix(a,b,(i+1)/count));
-   pieces.push({kind:'pen-fence',id:pen.id+':fence:'+edge+':'+i,penId:pen.id,edge,a:pa,b:pb,front:edge===1||edge===2,gate:edge===3&&i===Math.floor(count/2),xy:[(pa[0]+pb[0])/2,Math.max(pa[1],pb[1])]});
+   pieces.push({kind:'pen-fence',id:pen.id+':fence:'+edge+':'+i,penId:pen.id,edge,a:pa,b:pb,cellA:mix(a,b,i/count),cellB:mix(a,b,(i+1)/count),front:edge===1||edge===2,gate:edge===3&&i===Math.floor(count/2),xy:[(pa[0]+pb[0])/2,Math.max(pa[1],pb[1])]});
   }
  }
  return pieces;

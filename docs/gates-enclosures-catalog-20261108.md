@@ -1,0 +1,11 @@
+# Gates, enclosure depth and missing UI artwork
+
+Owner requested fixing animals drawn over enclosure frames, redesigning the entrance, removing overlapping pasture/perimeter rails and completing missing UI for all existing garden items.
+
+- Pen floor/habitat remains cached below actors. Back/front rail layers are cached separately, anchored at their logical back/front corners and sorted with the actors. Front rails now correctly cover wide wings and tails. Pasture floor has no baked fence; its north/east rails share the world perimeter, while the internal south/west sides and gate use the same depth pass. Existing64×32 positions and saves remain unchanged.
+- Entrance has braced open wooden leaves, iron hinges and mounted lanterns attached to the posts. Cache bounds include the leaves, snow sits on the lantern caps, and the centred3-cell path remains open.
+- Missing UI audit covers144 current identities:41 recipe cards,36 feed/produce items,30 expansions,29 earned decorations,6 orchard items and2 elf items.12 recipe cards were missing:7 receive new distinct authored images;5 base recipes are wired to their existing canonical feed images. Add1 aquatic feed output pouch,3 edge-expansion icons and3 unique extension-pen thumbnails. Pond tiers now preview their own scenery; chapter8 uses edge art. Orchard choices/tree cells include sapling/fruit images. Pond-bed planting uses existing real crop actors instead of block stand-ins.
+
+Three generated masters/prompts/checksums and14 native icon records live under `garden-v05/masters-items/catalog-completion-20261108/`. Rebuild `node garden-v05/build-catalog-completion.mjs` after the original edge/winter builders, then runtime WebP. New catalog art is imported through flow-item-ui. No economy, command contract or backend changes.
+
+Verification:410 source tests pass,2 skipped,0 failures (same historical progression fixture exclusion). Coverage test renders every audited identity and rejects absent/placeholder artwork. Regression checks front/back rails around an adult dragon, true aquatic crop rendering, shared pasture edges and clear entrance passage. Native masters, unique hashes, palette/binary alpha checked. WebP1396+8 verified. Actual3026 evidence belongs to the HPVNN import. No push/deploy or physical-device claim.

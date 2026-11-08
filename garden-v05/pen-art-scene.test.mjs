@@ -31,6 +31,12 @@ test('shared east edge meets the outer fence without a duplicate rail',()=>{
 test('built pens use floor and perimeter fences without loading or drawing roofed shelters',()=>{
  const renderer=fs.readFileSync(new URL('./scene-renderer.mjs',import.meta.url),'utf8');
  assert.doesNotMatch(renderer,/penShelter|drawPenShelter|penFiles|penArt\(/);
- assert.match(renderer,/for\(const piece of penFencePieces\(enclosure,iso,\{sharedEast\}\)\)drawPenFence\(brush,piece,activeWeather\)/);
- assert.doesNotMatch(renderer,/objects\.push\(\.\.\.penFencePieces/,'no rail may cover a small resident');
+ assert.match(renderer,/fences=fenceObjects\(penFencePieces\(enclosure,iso,\{sharedEast\}\)\)/);
+ assert.match(renderer,/objects\.push\(\.\.\.drawBuiltPen/,'rails sort around actors instead of being flattened below them');
+});
+
+test('pasture shares the north and east world rails without drawing duplicate fences',()=>{
+ const pieces=penFencePieces({id:'pasture',col:34.5,row:5.5,width:10,height:8},iso,{sharedNorth:true,sharedEast:true});
+ assert.deepEqual([...new Set(pieces.map(p=>p.edge))],[2,3]);
+ assert.equal(pieces.filter(p=>p.gate).length,1);
 });

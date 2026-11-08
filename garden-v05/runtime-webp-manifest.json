@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "7e1733d217d0",
+  "revision": "0fa71f9cad1f",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -4492,6 +4492,36 @@
       "sha256": "fa8e055233faaf478a47290ab8401931bb649e41f32135c485c40b5f2140c5f6"
     },
     {
+      "source": "native-items/edge_1.png",
+      "file": "runtime-webp/native-items/edge_1.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1329,
+      "bytes": 896,
+      "sourceSha256": "46711f629fe2f3c6d9ace5643bec7cce439bae806fca3f6fde404c39a030f9f3",
+      "sha256": "8a80f77f581a87fb939226f755dd285aba99464ac09feedeba1d69ff9672d2fb"
+    },
+    {
+      "source": "native-items/edge_2.png",
+      "file": "runtime-webp/native-items/edge_2.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1195,
+      "bytes": 784,
+      "sourceSha256": "bdff6f2e3bf11f366d73f1587f5b6234e1ffde0803ec60fe37ad27d2c37f9f58",
+      "sha256": "b5567244f1693f50066ffa8095957b7b18210a66c162e2c860e75e30df650c09"
+    },
+    {
+      "source": "native-items/edge_3.png",
+      "file": "runtime-webp/native-items/edge_3.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1344,
+      "bytes": 870,
+      "sourceSha256": "9899fbb82714edd187fccf2f11c631ceb01ed054cff75d4867812e19bf45c8a0",
+      "sha256": "5d2911317a70cbc5e20331c2dcfa9e41489d631144a679bb535f6a8c003b9311"
+    },
+    {
       "source": "native-items/expansion_plot.png",
       "file": "runtime-webp/native-items/expansion_plot.webp",
       "width": 64,
@@ -4530,6 +4560,16 @@
       "bytes": 376,
       "sourceSha256": "adb209046199bf07480ff30f48095bfd615f8d39c619ee5fc8b015b9834c0250",
       "sha256": "4184a29f4c9a5daf8d150942225c2b13f36f72bab4408f27d7ad9ef28f21a37f"
+    },
+    {
+      "source": "native-items/grindylow_feed.png",
+      "file": "runtime-webp/native-items/grindylow_feed.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1252,
+      "bytes": 868,
+      "sourceSha256": "168bf6837ec712fb1d3050dfecea208ddf9597ddb7ee79cef3a4ad5331480e13",
+      "sha256": "43ac4005d150d6e2118a10e8cb30be437832f4aefc39dbd4e79eb379d3a612d3"
     },
     {
       "source": "native-items/harvest_ambermelon/frame-01.png",
@@ -4942,6 +4982,36 @@
       "sha256": "bc6c247da6ff9fb3b3b7ba0851e262ce9d4aad0cbb878127fd0186687fd06596"
     },
     {
+      "source": "native-items/pen_ext_1.png",
+      "file": "runtime-webp/native-items/pen_ext_1.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1323,
+      "bytes": 846,
+      "sourceSha256": "935be29b680fe8623044b9f41901bc7aa9e0ae0b300db5fd066cfb5f53aba150",
+      "sha256": "af47c6729f43179fb5ec140533e2f96e1e98f2e16c55c70a5cb5c8c45c671634"
+    },
+    {
+      "source": "native-items/pen_ext_2.png",
+      "file": "runtime-webp/native-items/pen_ext_2.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1324,
+      "bytes": 808,
+      "sourceSha256": "7779f6308f4554bf173abdff788b9e6f644e5b7497b466659d3d61f0068a2d31",
+      "sha256": "9cfb21a144a14f3cb523c39b915788f46868c64eb402d906826f5cc73e0dae7c"
+    },
+    {
+      "source": "native-items/pen_ext_3.png",
+      "file": "runtime-webp/native-items/pen_ext_3.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1326,
+      "bytes": 856,
+      "sourceSha256": "08f40b016461a2c5868ce17565c9e8091f59daf580162d749edd018912e7b555",
+      "sha256": "293204f076bdb712b478c27e7d2a51d75a097bbde8c90d5c5d45f9707cb90368"
+    },
+    {
       "source": "native-items/plum.png",
       "file": "runtime-webp/native-items/plum.webp",
       "width": 64,
@@ -5232,6 +5302,16 @@
       "sha256": "5a797af66c7bc0f17bd164b1db25e7a9d4d411a4e18fa62a9807164aeab615a8"
     },
     {
+      "source": "native-items/recipe_crup_knotgrass.png",
+      "file": "runtime-webp/native-items/recipe_crup_knotgrass.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1342,
+      "bytes": 828,
+      "sourceSha256": "62dde1358961e341564c591703f66f4a9139f8241fdcb0ac3e99df14acc3aa42",
+      "sha256": "82df5862bdd085a844ef240432da86d5f32aa943a5bfad1feb858f0165d1162d"
+    },
+    {
       "source": "native-items/recipe_diri_feed.png",
       "file": "runtime-webp/native-items/recipe_diri_feed.webp",
       "width": 64,
@@ -5352,6 +5432,26 @@
       "sha256": "4217793b92e4c0c23804c3a307f2603289954b2f7c4a2a82952256a4a16986d6"
     },
     {
+      "source": "native-items/recipe_grindylow_feed.png",
+      "file": "runtime-webp/native-items/recipe_grindylow_feed.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1308,
+      "bytes": 852,
+      "sourceSha256": "aa7db2ccfb306d329f50fd8b7035323cbe0c9480ffd22f39d24bdde5cead76b0",
+      "sha256": "cfa9bbab9b92f5519856d6d9ddb0fe0b9fad564074a4fc13ca111c9b222b2a3e"
+    },
+    {
+      "source": "native-items/recipe_grindylow_flux.png",
+      "file": "runtime-webp/native-items/recipe_grindylow_flux.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1333,
+      "bytes": 880,
+      "sourceSha256": "59c4c1396be9c5eb3dce3ee58088082cceee06e8a788e82bf6da32b29f0f3013",
+      "sha256": "ce6a5452c3dd1fd7153146cf7f215ccbb49f28cc32555d85dc8c10ac55a7ef1c"
+    },
+    {
       "source": "native-items/recipe_hippo_feed.png",
       "file": "runtime-webp/native-items/recipe_hippo_feed.webp",
       "width": 64,
@@ -5390,6 +5490,26 @@
       "bytes": 732,
       "sourceSha256": "0547e421b0b1d98fb0062c41806efce7b23ac18e1c656304d9e272b995d3e271",
       "sha256": "915c2f40ea4c1fdd23ecd33d21783cfdb4273b285f7ddcb3c7f192f1b43437ba"
+    },
+    {
+      "source": "native-items/recipe_kappa_fish.png",
+      "file": "runtime-webp/native-items/recipe_kappa_fish.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1305,
+      "bytes": 852,
+      "sourceSha256": "2d397f2c2772fef49ac4a863e67f2f0af8265d5025036e9bce7a7e0cef431a01",
+      "sha256": "766a8c0ddbc18986758fcfcdc5ec8f371b31640517e36cead1aad5a53970a87b"
+    },
+    {
+      "source": "native-items/recipe_knarl_sunflower.png",
+      "file": "runtime-webp/native-items/recipe_knarl_sunflower.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1460,
+      "bytes": 960,
+      "sourceSha256": "af88e76ecf48238faa578b7a4f5ca822456bdb270f27992e7c7fcae7618669e9",
+      "sha256": "f8f0fe1f8c1b52e91611b3051e4884686158a374ef3073915b539f58a7e0966d"
     },
     {
       "source": "native-items/recipe_kneazle_feed.png",
@@ -5442,6 +5562,16 @@
       "sha256": "cf22df77987e60c8d44aee8f6df2cb122ed7f8b9e66979c590111f482e08b517"
     },
     {
+      "source": "native-items/recipe_porlock_apple.png",
+      "file": "runtime-webp/native-items/recipe_porlock_apple.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1513,
+      "bytes": 956,
+      "sourceSha256": "547d3e4ea8df001b6927a12d5e866b3e54c47ae744abe68e7708d245e8ba2d52",
+      "sha256": "ec1566c064408301c292b919ff0946fc95676a80d0f5e32438c4ed822efe9a3b"
+    },
+    {
       "source": "native-items/recipe_puff_berry.png",
       "file": "runtime-webp/native-items/recipe_puff_berry.webp",
       "width": 64,
@@ -5490,6 +5620,16 @@
       "bytes": 862,
       "sourceSha256": "00b8393cd1f6e8e9f73ffa8b3e38db2c6770b9bde681971bf5954bb413ac4554",
       "sha256": "cc6bb59a204fe3952a6ab99eae066272961c03e983aa88096c331002f4d1411a"
+    },
+    {
+      "source": "native-items/recipe_salamander_knotgrass.png",
+      "file": "runtime-webp/native-items/recipe_salamander_knotgrass.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1323,
+      "bytes": 862,
+      "sourceSha256": "ae19ee65863b8caae10b816c89a5f7fa34dde67f00e577102d6b5a81401d7d66",
+      "sha256": "a64fa596241af30f9f88861fe1a592841482248eb453fb4811e1bc236dd1d4d1"
     },
     {
       "source": "native-items/recipe_thestral_feed.png",
@@ -12166,10 +12306,10 @@
       "file": "runtime-webp/environment/edge/pasture.webp",
       "width": 576,
       "height": 314,
-      "sourceBytes": 20885,
-      "bytes": 11844,
-      "sourceSha256": "1a40c388e5946c122b671f60ca5ea6d0a48ed7f43c0f207129cd5dd870d5a42c",
-      "sha256": "ba54a58f02f1392ef05eefc604d05f39aca5f7abd97ee3138c3b579fcf50ff75"
+      "sourceBytes": 8721,
+      "bytes": 3954,
+      "sourceSha256": "0b3f0028a70355113788ddf4d6cac3edc23f44f36ccd698e3316f0f1c151e820",
+      "sha256": "6b03ac99df06b978dbdbe6b77bc216676311b5694c9ecf4bb8b1eac8e20df00d"
     },
     {
       "source": "environment/edge/trail.png",
@@ -13885,11 +14025,11 @@
     }
   ],
   "totals": {
-    "converted": 1382,
+    "converted": 1396,
     "existingWebp": 8,
-    "originalBytes": 5342390,
-    "webpBytes": 3521192,
-    "savedBytes": 1821198,
+    "originalBytes": 5348903,
+    "webpBytes": 3525420,
+    "savedBytes": 1823483,
     "savedPercent": 34.09
   }
 }

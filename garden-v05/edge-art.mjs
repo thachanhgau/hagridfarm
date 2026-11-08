@@ -16,7 +16,7 @@ export const EDGE_ART = Object.freeze({
 // (grounds: cols = 10 along the map's columns). groundCentre = centre of that parallelogram in the image, pivot = groundCentre + (0, 32·footLift),
 // so the ground fills decorFootprintRect / the map rectangle exactly when pivot is drawn at iso of the footprint's foot. Mirror for the right view.
 export const EDGE_SCENERY = Object.freeze({
- "pasture": {"file":"environment/edge/pasture.png","footprint":[10,8],"cols":10,"rows":8,"width":576,"height":314,"pivotX":288,"pivotY":296,"groundCentre":{"x":288,"y":168},"footLift":4,"bounds":{"x":2,"y":1,"w":571,"h":311},"exact":false},
+ "pasture": {"file":"environment/edge/pasture.png","footprint":[10,8],"cols":10,"rows":8,"width":576,"height":314,"pivotX":288,"pivotY":296,"groundCentre":{"x":288,"y":168},"footLift":4,"bounds":{"x":2,"y":26,"w":572,"h":286},"exact":false},
  "orchard": {"file":"environment/edge/orchard.png","footprint":[10,8],"cols":10,"rows":8,"width":576,"height":314,"pivotX":288,"pivotY":296,"groundCentre":{"x":288,"y":168},"footLift":4,"bounds":{"x":2,"y":24,"w":572,"h":288},"exact":false},
  "trail": {"file":"environment/edge/trail.png","footprint":[2,1],"cols":2,"rows":1,"width":96,"height":60,"pivotX":48,"pivotY":50,"groundCentre":{"x":48,"y":34},"footLift":0.5,"bounds":{"x":1,"y":11,"w":94,"h":47},"exact":false},
  "tree-apple-0": {"file":"environment/edge/tree-apple-0.png","footprint":[2,2],"cols":2,"rows":2,"width":128,"height":144,"pivotX":64,"pivotY":126,"groundCentre":{"x":64,"y":110},"footLift":0.5,"bounds":{"x":26,"y":30,"w":76,"h":80},"exact":true},

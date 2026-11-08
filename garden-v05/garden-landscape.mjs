@@ -65,24 +65,30 @@ export function createBoundaryFence(map,boundary=FARM_BOUNDARY,openings=[]){
   });
   return pieces;
 }
+// Native pixel gate: two braced leaves open onto the forest path; lamps sit on their posts.
 function drawExitGate(ctx,{a,b}){
-  for(const [x,y] of [a,b]){
-    // Two leaves swing away from the middle of the path.
-    const end=[x+14,y+22];
-    for(const h of [10,27]){
+  const outward=[-32,16];
+  for(const hinge of [a,b]){
+    const [x,y]=hinge,end=[x+outward[0]*.9,y+outward[1]*.9];
+    for(const h of [10,28]){
       pixelLine(ctx,[x,y-h],[end[0],end[1]-h],'#231f2e',6);
-      pixelLine(ctx,[x,y-h-1],[end[0],end[1]-h-1],'#a57554',3);
-      pixelLine(ctx,[x,y-h-2],[end[0],end[1]-h-2],'#e7ae73',1);
+      pixelLine(ctx,[x,y-h],[end[0],end[1]-h],'#735044',4);
+      pixelLine(ctx,[x,y-h-1],[end[0],end[1]-h-1],'#a57554',2);
     }
-    pixelLine(ctx,[x,y-26],[end[0],end[1]-10],'#735044',3);
-    ctx.fillStyle='#231f2e';ctx.fillRect(Math.round(x-6),Math.round(y-53),12,56);
-    ctx.fillStyle='#735044';ctx.fillRect(Math.round(x-4),Math.round(y-51),8,53);
-    ctx.fillStyle='#a57554';ctx.fillRect(Math.round(x-4),Math.round(y-50),3,50);
-    ctx.fillStyle='#e7ae73';ctx.fillRect(Math.round(x-7),Math.round(y-56),14,4);
-    ctx.fillStyle='#41465c';ctx.fillRect(Math.round(x-5),Math.round(y-39),10,3);ctx.fillRect(Math.round(x-5),Math.round(y-12),10,3);
-    ctx.fillStyle='#231f2e';ctx.fillRect(Math.round(x-5),Math.round(y-74),10,16);
-    ctx.fillStyle='#f5d69a';ctx.fillRect(Math.round(x-2),Math.round(y-71),4,9);
-    ctx.fillStyle='#a57554';ctx.fillRect(Math.round(x-6),Math.round(y-76),12,2);
+    pixelLine(ctx,[x,y-29],[end[0],end[1]-9],'#231f2e',4);
+    pixelLine(ctx,[x,y-29],[end[0],end[1]-9],'#e7ae73',2);
+    pixelLine(ctx,[end[0],end[1]-31],[end[0],end[1]-6],'#735044',5);
+    ctx.fillStyle='#231f2e';ctx.fillRect(Math.round(x-6),Math.round(y-49),12,52);
+    ctx.fillStyle='#735044';ctx.fillRect(Math.round(x-4),Math.round(y-47),8,48);
+    ctx.fillStyle='#a57554';ctx.fillRect(Math.round(x-4),Math.round(y-46),3,46);
+    ctx.fillStyle='#e7ae73';ctx.fillRect(Math.round(x-7),Math.round(y-51),14,4);
+    for(const h of [14,37]){ctx.fillStyle='#41465c';ctx.fillRect(Math.round(x-5),Math.round(y-h),10,4);ctx.fillStyle='#a6b1ae';ctx.fillRect(Math.round(x-4),Math.round(y-h),2,2);}
+    ctx.fillStyle='#41465c';ctx.fillRect(Math.round(x-2),Math.round(y-57),4,7);
+    ctx.fillStyle='#231f2e';ctx.fillRect(Math.round(x-6),Math.round(y-71),12,16);
+    ctx.fillStyle='#e7ae73';ctx.fillRect(Math.round(x-4),Math.round(y-68),8,10);
+    ctx.fillStyle='#f5d69a';ctx.fillRect(Math.round(x-2),Math.round(y-67),3,8);
+    ctx.fillStyle='#41465c';ctx.fillRect(Math.round(x-7),Math.round(y-73),14,3);ctx.fillRect(Math.round(x-7),Math.round(y-57),14,3);
+    ctx.fillStyle='#24483f';ctx.fillRect(Math.round(x-7),Math.round(y+1),14,4);
   }
 }
 export function drawBoundaryFence(ctx,piece){
