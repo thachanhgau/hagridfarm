@@ -19,9 +19,9 @@ const CROP = Object.fromEntries(DB.crops.map(c => [c.id, c]));
 // so the files are asked for only once the pond-art merge has shipped (its item art then resolves through flowArtSpec);
 // garden-pond-ui.test.mjs checks them against runtime-webp-manifest.json at that point.
 export const POND_SCENERY = Object.freeze({
- 'pond-1': {file: 'environment/pond/pond-1.png', width: 160, height: 112, pivotX: 80, pivotY: 102, footprint: [3, 2]},
- 'pond-2': {file: 'environment/pond/pond-2.png', width: 224, height: 152, pivotX: 112, pivotY: 142, footprint: [4, 3]},
- 'pond-3': {file: 'environment/pond/pond-3.png', width: 288, height: 192, pivotX: 144, pivotY: 182, footprint: [5, 4]},
+ 'pond-1': {file: 'environment/pond/pond-1.png', width: 288, height: 186, pivotX: 144, pivotY: 176, footprint: [5, 4]},
+ 'pond-2': {file: 'environment/pond/pond-2.png', width: 384, height: 242, pivotX: 192, pivotY: 224, footprint: [7, 5]},
+ 'pond-3': {file: 'environment/pond/pond-3.png', width: 480, height: 298, pivotX: 240, pivotY: 288, footprint: [9, 6]},
  'pond-bed': {file: 'environment/pond/pond-bed.png', width: 128, height: 88, pivotX: 64, pivotY: 70, footprint: [3, 1]},
 });
 export const POND_FALLBACK = 'environment/layers/pond.png';

@@ -6,7 +6,8 @@ import scene from './scene-data.json' with {type: 'json'};
 import * as E from './progression-engine.mjs';
 import {EXTENSION_PENS, FARM_LAYOUT} from './garden-grid.mjs';
 import {KEEPSAKE_DISPLAY_LAYOUT, keepsakeGroundRect} from './decor-placement-geometry.mjs';
-import {decorationPlacements, pondHome, pondBedRects, pondBedCount, defaultDecorFootprint} from './default-decor.mjs';
+import {decorationPlacements, pondHome, pondBedRects, pondBedCount, pondFootprint, defaultDecorFootprint} from './default-decor.mjs';
+import {gardenStage, inPondLand, stageContains} from './garden-growth.mjs';
 import {decorFootprintRect, rectsOverlap} from './decor-runtime.mjs';
 import {moodTiles, tendText, TRICKS} from './garden-mood-ui.mjs';
 
@@ -55,17 +56,20 @@ test('the extension pens stand on free ground: no plot, pen, statue, default dec
   assert.ok(state.built.includes('pen_ext_3'));
 });
 
-test('the pond beds have ground; «Hồ sâu» stands one row south so it clears thửa 10', () => {
-  const plot10 = plotGround(scene.plots[9]);
+test('Bờ hồ: the built pond and its beds stand inside the pond land, clear of plots, pens and each other', () => {
   for (const built of [['pond_1'], ['pond_1', 'pond_2'], ['pond_1', 'pond_2', 'pond_3']]) {
-    const at = pondHome(scene, built), pond = decorFootprintRect(...at, defaultDecorFootprint('scene:pond', built));
+    const at = pondHome(scene, built), pond = decorFootprintRect(...at, pondFootprint(built));
     const beds = pondBedRects(at, built, pondBedCount(built));
     assert.equal(beds.length, built.length > 1 ? 4 : 2);
-    for (const rect of [pond, ...beds]) for (const plot of scene.plots.map(plotGround)) assert.equal(rectsOverlap(rect, plot), false, `${built.length}: ${JSON.stringify(rect)}`);
+    const stage = gardenStage({level: 400, built}, scene);
+    for (const rect of [pond, ...beds]) {
+      for (const plot of scene.plots.map(plotGround)) assert.equal(rectsOverlap(rect, plot), false, `${built.length}: ${JSON.stringify(rect)}`);
+      for (const [c, r] of [[rect.c0, rect.r0], [rect.c1, rect.r1]]) assert.ok(inPondLand(c + (c === rect.c0 ? .5 : -.5), r + (r === rect.r0 ? .5 : -.5)) && stageContains(stage, c, r), JSON.stringify(rect));
+    }
     for (const bed of beds) assert.equal(rectsOverlap(bed, pond), false);
-    assert.equal(rectsOverlap(pond, plot10), false);
   }
-  assert.deepEqual(pondHome(scene, ['pond_1']), [13.5, 22]); // tiers 1–2 keep the scene pond's spot
+  assert.deepEqual(pondFootprint(['pond_1', 'pond_2', 'pond_3']), [9, 6]);
+  assert.deepEqual(defaultDecorFootprint('scene:pond'), [3, 2]); // the decorative pond keeps its size and spot
 });
 
 test('Chó đuôi nĩa: «Chơi» says it cheers the pens until today\'s cheer is used', () => {

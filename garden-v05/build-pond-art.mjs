@@ -15,7 +15,8 @@ function spec(id,long,short,headroom,masterScale){
  const a=short,b=long,width=(a+b)*32,H=(a+b)*16,height=headroom+H+2,groundCentre={x:width/2,y:height-2-H/2},lift=footLift(a,b);
  return {id,file:`environment/pond/${id}.png`,master:`environment/pond/masters/${id}.png`,footprint:[long,short],width,height,pivotX:groundCentre.x,pivotY:groundCentre.y+32*lift,groundCentre,footLift:lift,masterScale};
 }
-export const POND_SPECS=[spec('pond-1',3,2,30,6),spec('pond-2',4,3,38,5),spec('pond-3',5,4,46,4),spec('pond-bed',3,1,22,8)];
+// 08/11 owner: ponds bigger than a 3×3 plot, on their own shore land (Bờ hồ, cols 33.5–45.5 × rows 25.5–36.5).
+export const POND_SPECS=[spec('pond-1',5,4,40,4),spec('pond-2',7,5,48,3),spec('pond-3',9,6,56,3),spec('pond-bed',3,1,22,8)];
 // Master sheets, row-major cells. Supply-size icons: ink ≤ 40×40 in 64×64, base on row 56 (art bible §8, V24.9.73).
 export const POND_ITEMS=['fry_carp','fry_goldfish','goldfish','produce_grindylow'];
 // Phase 2 (plan §9): produce and feed of crup, knarl, salamander, on a 3×2 sheet (v2: produce_crup, salamander_feed redrawn, creatures-art-02b).

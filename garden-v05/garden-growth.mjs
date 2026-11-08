@@ -13,7 +13,12 @@ export const GARDEN_STAGES=Object.freeze([
 export const EDGE_STAGE=Object.freeze({id:8,level:260,name:'Bìa Rừng Cấm',right:33.5,edgeRight:45.5,bottom:33.5,description:'Dải Bìa Rừng: bãi chăn thả và vườn cây lâu năm.'});
 export const EDGE_STRIP=Object.freeze({col:33.5,rowTop:5.5,rowBottom:25.5});
 export const inEdgeStrip=(col,row)=>col>EDGE_STRIP.col&&row>=EDGE_STRIP.rowTop&&row<=EDGE_STRIP.rowBottom;
+// «Bờ hồ» (owner 08/11/2026): the built pond (pond_1+) and its beds get their own land south of the strip, east of
+// col 33.5, rows 25.5–36.5. gardenStage marks the stage {pond: true}; player decorations stay out (same as the strip).
+export const POND_LAND=Object.freeze({col:33.5,right:45.5,rowTop:25.5,rowBottom:36.5});
+export const inPondLand=(col,row)=>col>POND_LAND.col&&col<=POND_LAND.right&&row>=POND_LAND.rowTop&&row<=POND_LAND.rowBottom;
 export function stageContains(stage,col,row){
+ if(stage.pond&&inPondLand(col,row))return true;
  const edge=stage.edgeRight&&inEdgeStrip(col,row);
  const inside=Number.isFinite(col)&&Number.isFinite(row)&&col>=-5.5&&col<=(edge?stage.edgeRight:stage.right)&&row>=-.5&&row<=stage.bottom&&(col>=-.5||row<=9.5);
  if(!inside)return false;
@@ -25,7 +30,17 @@ export function stageContains(stage,col,row){
 // meadow, forest floor and tree clearance all follow the same line as the rail.
 export const GREENHOUSE_BAY=Object.freeze([[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5]]);
 export function stageBoundary(stage){const [nw,...rest]=stageOutline(stage);return [nw,...GREENHOUSE_BAY,...rest];}
-function stageOutline(stage){
+// Pond land on the outline: the east side runs on down to row 36.5 before turning back west to the field's corner.
+function withPondLand(stage,outline){
+ const i=outline.findIndex(([c,r])=>c===33.5&&r===33.5);
+ if(!stage.pond||i<1)return outline;
+ const {right,rowTop,rowBottom}=POND_LAND,south=[[right,rowBottom],[33.5,rowBottom]];
+ // Strip outline (stage 8) already turns west at row 25.5 from col 45.5: drop that turn and keep going south.
+ if(outline[i-1][0]===33.5&&outline[i-1][1]===rowTop&&outline[i-2]?.[0]===right)return [...outline.slice(0,i-1),...south,...outline.slice(i)];
+ return [...outline.slice(0,i),[33.5,rowTop],[right,rowTop],...south,...outline.slice(i)];
+}
+function stageOutline(stage){return withPondLand(stage,baseOutline(stage));}
+function baseOutline(stage){
  // Every corner lies on a cell line (cells are centred on whole numbers).
  if(stage.id===8)return [[-5.5,-.5],[33.5,-.5],[33.5,5.5],[45.5,5.5],[45.5,25.5],[33.5,25.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]];
  if(stage.id===4)return [[-5.5,-.5],[33.5,-.5],[33.5,21.5],[25.5,21.5],[25.5,15.5],[-.5,15.5],[-.5,9.5],[-5.5,9.5]];
@@ -35,7 +50,11 @@ function stageOutline(stage){
 }
 export function gardenStage(state={},scene={},occupiedPoints=[]){
  const level=Number(state.level)||1;
- if((state.built??[]).some(b=>(typeof b==='object'?b?.id:b)==='edge_1'))return EDGE_STAGE;
+ const builtIds=(state.built??[]).map(b=>typeof b==='object'?b?.id:b);
+ const stage=builtIds.includes('edge_1')?EDGE_STAGE:baseStage(state,scene,occupiedPoints,level);
+ return builtIds.includes('pond_1')?Object.freeze({...stage,pond:true}):stage;
+}
+function baseStage(state,scene,occupiedPoints,level){
  let index=GARDEN_STAGES.findLastIndex(s=>s.level<=level);index=Math.max(0,index);
  // A saved layout can move an already-built plot to a later authored socket.
  // Retain visibility of those assets instead of changing or hiding the save.
@@ -52,7 +71,7 @@ export function stageWorldBounds(scene,stage){
 }
 // Camera frame for the overview fit: phones/narrow screens keep the pre-strip frame (minimum zoom unchanged); wide screens and
 // dragging use the full frame.
-export function fitBounds(scene,stage,narrow){return stageWorldBounds(scene,narrow&&stage.edgeRight?GARDEN_STAGES.at(-1):stage);}
+export function fitBounds(scene,stage,narrow){return stageWorldBounds(scene,narrow&&(stage.edgeRight||stage.pond)?GARDEN_STAGES.at(-1):stage);}
 export function futureGroves(scene,stage){
  const trees=[];
  for(let r=0;r<34;r+=2.5)for(let c=0;c<33;c+=2.5){

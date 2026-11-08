@@ -1865,10 +1865,13 @@ export async function createGarden(canvas, options = {}) {
         if (!asset) throw new Error(`Không có prop asset ${prop.id}.`);
         const xy = iso(...(defaultDecorSpot(options.decorations, 'scene:' + prop.id, options.previewDecoration) ?? [prop.col, prop.row]));
         const winterProp = winterFile(asset.file);
-        const tier = prop.id === 'pond' ? pondTier(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id))) : 0;
-        if (tier) { objects.push(...pondObjects(asset, winterProp, defaultDecorSpot(options.decorations, 'scene:pond', options.previewDecoration) ?? pondHome(map, POND_TIER_IDS.slice(0, tier)), tier, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock)); continue; }
         objects.push({kind: 'asset', type: 'prop', id: prop.id, species: prop.id, asset:winterProp?{...asset,file:winterProp,noSnowCap:true,winter:true}:{...asset,seasonalKind:prop.id==='hut'?'roof':['oak','pine'].includes(prop.id)?'tree':'water'}, xy});
       }
+      // «Bờ hồ» (owner 08/11/2026): the built pond stands fixed on its own land (default-decor pondHome); the decorative
+      // pond above stays where it was.
+      const pondTierNow = pondTier(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id)));
+      const pondProp = props.get('pond');
+      if (pondTierNow && pondProp) objects.push(...pondObjects(pondProp, winterFile(pondProp.file), pondHome(map, POND_TIER_IDS.slice(0, pondTierNow)), pondTierNow, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock));
     }
 
     const builtPenIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id)));
@@ -2011,7 +2014,7 @@ export async function createGarden(canvas, options = {}) {
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');
-    interactivePond=objects.filter(o=>o.type==='prop'&&o.id==='pond');
+    interactivePond=objects.filter(o=>o.kind==='pond');
     interactiveOrchard=objects.filter(o=>o.type==='prop'&&String(o.id).startsWith('orchard-'));
     interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
     lastOrder = objects.map((object) => ({id: object.id ?? object.species, y: object.xy?.[1] ?? 0, type: object.type}));

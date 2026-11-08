@@ -168,6 +168,69 @@
       "referenceFiles": [
         "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-a338445b-673f-4b2d-8dc8-8552a6aea972.png"
       ]
+    },
+    {
+      "id": "pond-1-bigger-03-initial",
+      "master": "garden-v05/environment/pond/masters/pond-1.png",
+      "prompt": "Use case: stylized-concept. Production game sprite master Ao cá pond-1, redraw larger and a little eerie at Forbidden Forest edge. Reference image 1 is GEOMETRY ONLY exact guide 1152x744. Ground corners (0,480),(640,160),(1152,416),(512,736). Fill that long 4x5-tile parallelogram completely with softly rounded corners; bank must follow all four edges, no large empty corners. Upright reeds/rocks may rise above it, nothing outside canvas width. Reference 2 old pond-1 and reference 3 pond-2 are STYLE ONLY: same chunky grey rock shapes and dark outlines, but MORE TILES of water, not enlarged reeds or pixels. Native tile 64x32 enlarged FOUR times; each sprite pixel a flat 4x4 square. Request output canvas1152x744 or identical aspect. Real transparent alpha background right up to hard outline.\nDraw continuous narrow mossy dark-green shore all four edges; murky dark blue-violet/teal water with only thin lighter shallow rim, THREE or FOUR readable dark fish shadows distributed across roomy water, THREE sparse grey-green lily pads with no flowers, a few short angular subdued ripple lines. Mossy dark grey rocks and dark dead cattail clumps around back rim, low sparse grass at front. Cozy readable but eerie, least dark of three tiers. No cheerful bright green or cyan expanses. Main water #41465C and #3E3B70, darkest fish #231F2E. Top-left light. EXACT flat square pixel art clusters, 2-3 shades per material, no smooth interior shading. Clean hard outline #231F2E. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No guide lines tile seams dot red line or white backdrop. NO anti-aliasing gradient glow haze dithering texture noise text shadow skull gore. This is a hard-edged transparent sprite cutout, never a lit illustration.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-b141e51f-47a9-4d0e-a53e-4feffbb40364.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-1.png",
+        "garden-v05/environment/pond/masters/pond-1.png",
+        "garden-v05/environment/pond/masters/pond-2.png"
+      ]
+    },
+    {
+      "id": "pond-2-bigger-03-initial",
+      "master": "garden-v05/environment/pond/masters/pond-2.png",
+      "prompt": "Use case: stylized-concept. Draw ONE production game master Hồ rong pond-2, bigger eerie forest pond. Input1 GEOMETRY ONLY guide1152x726 ground corners (0,480),(672,144),(1152,384),(480,720). Fill EXACT entire long parallelogram with softly rounded corners. Shore follows all four edges, no big empty corners or outside spill. Reeds/rocks can stand above back edge into upper transparent space. Input2 old pond-2 STYLE ONLY chunky square pixel rocks/cattails, not its bright flowers/colors; input3 old pond-1 same family. Canvas1152x726 matching guide. Native tile64x32 enlarged THREE times, individual flat square sprite pixel3x3; enlarge water AREA not pixel size or prop size. Larger 5x7-tile pond, roomy surface with distributed small details. Continuous narrow dark moss-green shore around all four edges, mossy dark grey rocks, dense clumps of BLACK DEAD CATTAILS and dark reeds along far rim, sparse low front tufts. Murky blue-black/dark teal water, thin subdued lighter shallow rim, dark long RIBBON WEED visibly rising from depths near back and sides. One HALF SUNK TWISTED ROTTING LOG partly in water at left rim. TWO small PALE EYES beside each other just BELOW surface toward back-right, subtle dark fish shadow and faint bubble trail in open water. THREE sparse grey-green lily pads NO FLOWERS. A few angular dark grey-blue short ripples spread over water. Mood cozy readable a little eerie Forbidden Forest; darker than fish pond, not horror. Flat dark-water color #41465C/#3E3B70 and #24483F, deep patches#231F2E. Hard flat color steps; only2-3 shades per material. Isometric2:1, top-left light, dark outline#231F2E. No glow haze shadow background blur gradients antialiasing dithering speckle noise text guide seams dot red line skulls gore or cheerful colors. Genuine transparent ALPHA immediately outside hard sprite outline, no ground shadow. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-cea32dc4-67ea-4645-946e-4b200978432e.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-2.png",
+        "garden-v05/environment/pond/masters/pond-2.png",
+        "garden-v05/environment/pond/masters/pond-1.png"
+      ]
+    },
+    {
+      "id": "pond-3-bigger-03-initial",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Use case: stylized-concept. Draw ONE production game sprite master Hồ sâu pond-3, a large lake-like dark eerie pond at Forbidden Forest. Input1 is exact GEOMETRY guide1440x894: ground vertices (0,600),(864,168),(1440,456),(576,888). Fill this entire elongated 6x9-tile parallelogram, shore follows all four edges with gently rounded corners, no big empty corners, no outside spill. Tall reeds rocks/posts may rise above the back edges. Input2 old pond-3 and input3 old pond-2 are STYLE ONLY chunky pixel shape family; REMOVE bright flowers colors and glow. Same pixel density as smaller ponds: native64x32 tile enlarged THREE times, one flat square3x3 per sprite pixel; increase tiles of water not props or pixel size. Genuine TRANSPARENT alpha canvas1440x894, zero backdrop or drop shadow. Broad roomy water area with distributed small ripples fish silhouettes fallen leaf faint bubbles, not blank. A narrow dark mossy shore all FOUR edges, dark grey mossy rocks and BLACK dead reeds/cattails on far rim, low sparse front grass. Water has a THIN light grey-teal shallow band, then hard STEPPED bands of #41465C and #3E3B70, large deep almost-black #231F2E centre. Darkest tier, but cozy-readable rather than horror. A SMALL ROCK ISLET off-centre left, two low mossy rocks with dark outline, no tree. TWO sparse grey-green lily pads, no flowers. One OLD ROTTING WOODEN JETTY projects from FRONT-RIGHT shore diagonally toward middle: deck FOUR planks WIDE, small wooden posts, one clear MISSING PLANK with water visible through the gap. Four parallel plank positions across width, only THREE weathered planks remain, dark gap in fourth. Jetty is dark muted brown #735044/#4A3042, damaged uneven end, no shiny orange wood, no railings or bridge. A twisted dead root at far edge, two faint pale eyes beneath water near far reeds. Every surface solid flat square pixel clusters2-3 shades/material. Light top-left, strict isometric2:1, dark outline#231F2E. NO antialiasing gradients glow haze noise dithering smooth shading texture text guide lines seams dots dashes white background skulls gore. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-56f8208c-d616-4de1-bc71-78613a99cdce.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-3.png",
+        "garden-v05/environment/pond/masters/pond-3.png",
+        "garden-v05/environment/pond/masters/pond-2.png"
+      ]
+    },
+    {
+      "id": "pond-1-bigger-03-cleanup",
+      "master": "garden-v05/environment/pond/masters/pond-1.png",
+      "prompt": "Precise sprite cleanup of reference image1, pond-1. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn.  Canvas 1152x744. Real transparent background, no text.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-bd1f1f4d-3be7-445f-8b3e-6ef3b9e78726.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-b141e51f-47a9-4d0e-a53e-4feffbb40364.png",
+        "docs/codex-briefs/pond-art/guide-pond-1.png"
+      ]
+    },
+    {
+      "id": "pond-2-bigger-03-cleanup",
+      "master": "garden-v05/environment/pond/masters/pond-2.png",
+      "prompt": "Precise sprite cleanup of reference image1, pond-2. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn.  Canvas 1152x726. Real transparent background, no text.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-6f263112-87c2-4c00-b9b6-59aceef8dc11.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-cea32dc4-67ea-4645-946e-4b200978432e.png",
+        "docs/codex-briefs/pond-art/guide-pond-2.png"
+      ]
+    },
+    {
+      "id": "pond-3-bigger-03-cleanup",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Precise sprite cleanup of reference image1, pond-3. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn. Repair jetty ONLY as well: old rotten four-plank deck from front-right bank toward middle, REMOVE one entire INTERIOR plank so an unmistakable broad dark WATER GAP remains between planks; keep posts, ragged ends. Centre is flat almost-black#231F2E, surrounding hard-step#3E3B70/#41465C, thin shallow light rim. Canvas 1440x894. Real transparent background, no text.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-6e5e3eef-edac-4a59-944e-5b949d63394a.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-56f8208c-d616-4de1-bc71-78613a99cdce.png",
+        "docs/codex-briefs/pond-art/guide-pond-3.png"
+      ]
     }
   ]
 }

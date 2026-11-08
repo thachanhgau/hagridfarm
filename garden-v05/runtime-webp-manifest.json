@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "14d6b6db7e77",
+  "revision": "27fd199b116f",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -13244,32 +13244,32 @@
     {
       "source": "environment/pond/pond-1.png",
       "file": "runtime-webp/environment/pond/pond-1.webp",
-      "width": 160,
-      "height": 112,
-      "sourceBytes": 2905,
-      "bytes": 1872,
-      "sourceSha256": "508024525fc6e0041ea22dab16cdb94d1da1712213c8af736f31d0297fb230da",
-      "sha256": "6ef53ae73c4c8511c7afb5afb719367341026c06d29f3d2cf7d874de088a6f39"
+      "width": 288,
+      "height": 186,
+      "sourceBytes": 8120,
+      "bytes": 5020,
+      "sourceSha256": "2f703b11c3e21080d94c836306e16f590af4daaec938f9bf6e69c2a370a8ad47",
+      "sha256": "032f4d12d928f6a83960030b59fa0713065d57a9fdcbb71be53e74693f8213d9"
     },
     {
       "source": "environment/pond/pond-2.png",
       "file": "runtime-webp/environment/pond/pond-2.webp",
-      "width": 224,
-      "height": 152,
-      "sourceBytes": 6060,
-      "bytes": 3986,
-      "sourceSha256": "51f6a8530d15e40742a2370b663a5fb948e1ae119eac2bea60005ad1e11139ca",
-      "sha256": "9505b08f313f2f96b218bf9c1b8e3e3e18b3378e2908d8627b28030d46689a8a"
+      "width": 384,
+      "height": 242,
+      "sourceBytes": 10550,
+      "bytes": 6304,
+      "sourceSha256": "2b403bf27f985b1d98233ffbb9016adcd983fe5dcf5ec9a8eb27cbd659c43661",
+      "sha256": "1e3904b7d51efed181e06f0d203785be1a5b8cc3c54d95e9984b131eb7dd3f56"
     },
     {
       "source": "environment/pond/pond-3.png",
       "file": "runtime-webp/environment/pond/pond-3.webp",
-      "width": 288,
-      "height": 192,
-      "sourceBytes": 9297,
-      "bytes": 5980,
-      "sourceSha256": "00b7aa0ffdf0e90226328a0012e910ebd634195b39f4926ebbb1e4c250125ee3",
-      "sha256": "4bcb3d0231772f9cf38f4dd4fa28aa83a55c593820e6ca97b284c9bcfe871fe2"
+      "width": 480,
+      "height": 298,
+      "sourceBytes": 16561,
+      "bytes": 9984,
+      "sourceSha256": "dfd889d9451e6c952a37efd31469488202bcd07a2580b2c4ced59c9ffb4a36b4",
+      "sha256": "f0e65fc58d69e4a525252d4a38729472ea594cd880421555f13859b6ef58d06b"
     },
     {
       "source": "environment/pond/pond-bed.png",
@@ -13697,9 +13697,9 @@
   "totals": {
     "converted": 1363,
     "existingWebp": 8,
-    "originalBytes": 4966200,
-    "webpBytes": 3299140,
-    "savedBytes": 1667060,
-    "savedPercent": 33.57
+    "originalBytes": 4983169,
+    "webpBytes": 3308610,
+    "savedBytes": 1674559,
+    "savedPercent": 33.6
   }
 }

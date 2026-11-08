@@ -1,10 +1,10 @@
 import {createPlacementInput} from './placement-input.mjs?v=25.0.2';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot,pondBedCount,pondBedRects,pondHome} from './default-decor.mjs?v=25.0.2';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot} from './default-decor.mjs?v=25.0.2';
 import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=25.0.2';
 import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=25.0.2';
 export {decorFootprint} from './garden-object-metrics.mjs?v=25.0.2';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.0.2';
-import {GARDEN_STAGES,inEdgeStrip,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
+import {GARDEN_STAGES,inEdgeStrip,inPondLand,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
 import {el,button} from './ui-utils.mjs?v=25.0.2';
 import {iconButton} from './pixel-icons.mjs?v=25.0.2';
 import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap,snapDecorSpot} from './decor-runtime.mjs?v=25.0.2';
@@ -61,13 +61,13 @@ export function decorOnGround(rect,decorations){
  * footprint (the server checks that last rule too). Pieces larger than one tile also keep off the garden
  * paths. Sprites may overlap on screen; only the ground decides.
  */
-export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',footprint=decorFootprint(itemId),bed=false}){
+export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',footprint=decorFootprint(itemId)}){
  // Art bible §2: 2×2 and up keep off the fence; owner 20/10/2026: they alone keep off the paths, 2×1 and 3×1 may stand on them.
  const big=footprint.every(n=>n>1);
  const rect=decorFootprintRect(col,row,footprint,facing);
  const inset=0.05,margin=big?FENCE_CLEARANCE:SMALL_FENCE_CLEARANCE;
  if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
-  if(!stageContains(stage,c,r)||inEdgeStrip(c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
+  if(!stageContains(stage,c,r)||inEdgeStrip(c,r)||inPondLand(c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
  }
  // Owner 20/10/2026: unbuilt bases are free ground; building there asks to move the piece first (decorOnGround).
  const queued=new Set((state?.construction??[]).map(j=>j.id)),built=new Set(state?.built??[]);
@@ -84,12 +84,10 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),null,keepsakeAnchorRow,decorations,itemId);
  if(keepsakes.ground.some(occupied=>rectIntersects(rect,occupied)))return 'Chân đài kỷ vật đang ở đây.';
  if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
- const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??(o.id==='pond'?pondHome(map,state?.built):[o.col,o.row])}));
- // The pond is a garden default: its ground follows the decoration rule, like when it is moved; its beds are ground too.
- const beds=at=>pondBedRects(at,state?.built,pondBedCount(state?.built));
- for(const o of scenery)if(o.id==='pond'?[decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond',state?.built)),...beds(o.at)].some(r=>rectsOverlap(rect,r)):rectsOverlap(rect,sceneryGroundRect(o.id,...o.at)))return o.id==='pond'?'Chỗ này là hồ hoặc luống ven hồ.':'Chỗ này vướng cảnh vật.';
- // Moving the pond: its beds need free ground as well (they stand west of it).
- if(itemId==='scene:pond'&&!bed){const problem=beds([col,row]).map(r=>decorSpotProblem(r.c1,r.r0+2,{map,stage,state,decorations,itemId,footprint:[3,1],bed:true})).find(Boolean);if(problem)return 'Luống ven hồ: '+problem.charAt(0).toLowerCase()+problem.slice(1);}
+ const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??[o.col,o.row]}));
+ // The decorative pond is a garden default: its ground follows the decoration rule, like when it is moved. The built
+ // pond and its beds stand on the Bờ hồ land, where nothing is placed.
+ for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond')):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
  if(rectsOverlap(rect,COTTAGE_GROUND))return 'Chỗ này vướng lều Hagrid.';
  if(rectsOverlap(rect,HEARTH_GROUND))return 'Chỗ này là lò sưởi Giáng sinh.';
  if(rectsOverlap(rect,FEAST_GROUND))return 'Chỗ này là bàn tiệc Đêm Noel.';
@@ -117,7 +115,7 @@ export function decorSpotGrid(stage,problemAt,snap=at=>at){
 
 /** Authored spot of a garden default before any move (a turned earned piece stepped onto whole cells). */
 export function defaultDecorHome(id,map,stage,rotations={},built=[]){
- if(id==='scene:pond')return pondHome(map,built);
+ if(id==='scene:pond'){const o=map?.objects?.find(o=>o.id==='pond');return o?[o.col,o.row]:null;}
  if(id.startsWith('keepsake:'))return keepsakeDisplayPlacements(stage??GARDEN_STAGES.at(-1),keepsakeAnchorRow).find(p=>p.species===id.slice(9))?.anchor??null;
  return decorationPlacements(map,null,rotations).find(d=>d.id===id)?.at??null;
 }
@@ -125,7 +123,7 @@ export function defaultDecorHome(id,map,stage,rotations={},built=[]){
 /** Art and ground size of a garden default (pond, earned decoration, keepsake statue) for the placement bar. */
 export function defaultDecorItem(id,label,map,built=[]){
  const art=id==='scene:pond'?map?.props?.find(p=>p.id==='pond'):id.startsWith('keepsake:')?KEEPSAKE_ART[id.slice(9)]:earnedDecorArt(id);
- return {...art,id,label,isDefault:true,footprint:defaultDecorFootprint(id,built)};
+ return {...art,id,label,isDefault:true,footprint:defaultDecorFootprint(id)};
 }
 const nearestFree=(grid,[col,row],reach)=>{
  let best=null,bd=reach;

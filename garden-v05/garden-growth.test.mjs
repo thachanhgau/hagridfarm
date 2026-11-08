@@ -59,7 +59,8 @@ test('stepped fences stay joined and keep one gate on the main path',()=>{
 
 test('Bìa Rừng stage: only with edge_1, strip rows 5.5–25.5, outline joins, GARDEN_STAGES untouched',()=>{
  assert.equal(GARDEN_STAGES.length,7);
- assert.equal(gardenStage({level:300,built:['pond_1']},scene),GARDEN_STAGES.at(-1));
+ assert.deepEqual(gardenStage({level:300,built:['pond_1']},scene),{...GARDEN_STAGES.at(-1),pond:true});
+ assert.equal(gardenStage({level:300},scene),GARDEN_STAGES.at(-1));
  for(const built of [['edge_1'],[{id:'edge_1'}],['edge_1','edge_2','edge_3']])assert.equal(gardenStage({level:300,built},scene),EDGE_STAGE);
  const last=GARDEN_STAGES.at(-1);
  assert.equal(stageContains(last,40,10),false);

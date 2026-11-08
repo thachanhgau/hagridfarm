@@ -1,0 +1,1770 @@
+Reading additional input from stdin...
+OpenAI Codex v0.167.0-alpha.3.2
+--------
+workdir: /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1ba86-72e4-7f60-9416-3161ee1b8cf1
+--------
+user
+Follow docs/codex-briefs/pond-art-03.md exactly.
+codex
+Tiểu nữ sẽ đọc brief và các chỉ dẫn áp dụng trong workspace, rồi thực hiện và kiểm chứng theo đúng phạm vi được giao, bệ hạ.
+exec
+/bin/zsh -lc "pwd; rg --files -g 'AGENTS.md' -g 'pond-art-03.md' -g 'package.json' -g 'README*' -g '*HANDOFF*' docs .agents 2>/dev/null" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ exited 2 in 0ms:
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+docs/codex-briefs/pond-art-03.md
+docs/level-500-sim/README.md
+docs/HANDOFF-expansion.md
+
+exec
+/bin/zsh -lc "rg -n 'pond|hagrid-challenges' /Users/thachanh/.codex/memories/MEMORY.md" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+927:- `TNTPanelController.mm`, `beginNavigationKeyMonitor`, `isResponderInsidePanel`, `ArrowLeft`, `ArrowRight`, text caret, `BridgeContract`, `xcode/build.sh`, `TNT_SDK_ROOT`
+958:- Native production seam is `xcode/Source/TNTPanelController.mm` in `beginNavigationKeyMonitor`; use responder ancestry (`isResponderInsidePanel:` against `rootView`/`hostView`) rather than `HasSelection()`. Keep JS editable-element/expanded-text guards in `src/ui/panel/js/panel.js`.
+967:- Symptom: selection-based routing steals Illustrator text/canvas arrows -> switch to actual responder focus/ancestry. Symptom: package appears valid but behaves like the wrong plugin -> package the SDK/Xcode `EmptyPanel.aip`, inspect `tnt_debug.log`, and clear Illustrator plugin caches before blaming the bundle. [Task 1][Task 2]
+
+exec
+/bin/zsh -lc "cat docs/codex-briefs/pond-art-03.md; rg --files -g 'AGENTS.md' -g 'package.json' -g 'SKILL.md'; git status --short" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+# Codex brief — Hagrid Farm: bigger ponds (08/11/2026)
+
+You are Codex in the Hagrid Farm repo. **You only draw masters.** Claude Code (Anthropic) reduces them to native
+sprites, registers them, tests and commits after you. Keep repo exploration short. Do not edit any `.mjs` file outside
+`docs/codex-briefs/pond-art/`.
+
+The owner said the ponds are too small (the first pond was smaller than a 3×3 crop plot). The three pond tiers now
+sit on their own shore land and are much bigger: «Ao cá» 4×5 tiles, «Hồ rong» 5×7, «Hồ sâu» 6×9. Redraw the three
+pond masters for the new guides. The shore bed (`pond-bed.png`) is NOT redrawn.
+
+Read first: `docs/art-bible.md` (sections 1–4), `garden-v05/palette.mjs` (`SPRITE_PALETTE`, the 24 sprite colours),
+and `docs/codex-briefs/pond-art-01.md` section A (the first pond brief: style rules, how to use a guide). All its
+style rules apply: chunky low-resolution pixel art, one flat square block per sprite pixel, dark outline `#231F2E`,
+2–3 shades per material, light from the top-left, isometric 2:1, no anti-aliasing, gradients, glow, dithering or
+noise, no text, no drop shadow, **transparent background** (real alpha).
+
+Style reference: the current masters `garden-v05/environment/pond/masters/pond-1.png`, `pond-2.png`, `pond-3.png`
+(same family: grey rocks, cattails, grass tufts, lily pads, blue-violet water) and `garden-v05/environment/pond/pond-bed.png`.
+Keep that look and the same **pixel block size per tile**: a bigger pond means more tiles of water, not bigger pixels.
+
+| master (overwrite, in `garden-v05/environment/pond/masters/`) | guide | subject |
+|---|---|---|
+| `pond-1.png` | `docs/codex-briefs/pond-art/guide-pond-1.png` (1152×744) | «Ao cá»: a real fish pond now, murky dark water, 3–4 fish shadows, mossy rocks and dark cattail clumps on the rim, 2–3 grey-green lily pads |
+| `pond-2.png` | `guide-pond-2.png` (1152×726) | «Hồ rong»: bigger, more reeds along the back rim, dark ribbon weed reaching up from the depths, a half-sunk log, two pale eyes under the surface |
+| `pond-3.png` | `guide-pond-3.png` (1440×894) | «Hồ sâu»: a large lake-like pond, shallow light rim water stepping to a **deep dark-blue centre** (`#3E3B70`/`#41465C`), an **old rotting wooden jetty** (4 planks wide, posts, one plank missing) from the front-right bank toward the middle, a small rock islet, reeds and rocks on the far rim |
+
+Each guide's pale-blue parallelogram is the exact ground (tile seams drawn). The bank follows that outline with
+softly rounded corners, filling it (no big empty corners, nothing spilling outside it); reeds/rocks/posts may rise
+above into the white space above the dashed red line, never wider than the guide. Same canvas size as the guide,
+transparent; the guide's colours, seams, dot and dashed line must not appear in the master. Pass the guide to your
+image tool as a reference, then place the result on a transparent canvas of the guide's size with a small script
+under `docs/codex-briefs/pond-art/` (nearest-neighbour only).
+
+**Mood (owner, 08/11): «hắc ám tí» — a little dark and eerie.** The pond sits at the edge of the Forbidden Forest
+and holds Grindylows and a Kappa. Keep it cozy-readable, but darker than the old ponds: deep murky blue-black and
+dark teal water (`#231F2E`, `#3E3B70`, `#41465C`, dark greens), only a thin lighter band at the shallow rim, black
+reeds and dead cattails, mossy dark rocks, a twisted dead root or half-sunk log, a few pale eyes or a faint bubble
+trail just under the surface, sparse grey-green lily pads (no bright flowers, no cheerful colours). No skulls, no
+gore. «Ao cá» is the least dark, «Hồ sâu» the darkest (its centre almost black).
+
+The three ponds must read as one family that grows. Make the bigger ones feel roomy, not empty: a few water details
+(ripples, a leaf, a fish shadow) spread over the open water.
+
+Finish with `docs/codex-briefs/pond-art-03-report.md`: for each master, the file, its size, what you drew, and a
+contact image `docs/codex-briefs/pond-art-03-preview.png` (the three masters side by side on a grass-green #5E7B3B
+background, nearest-neighbour, reduced to native: ×1/4, ×1/3, ×1/3).
+ M docs/codex-briefs/pond-art/guide-pond-1.png
+ M docs/codex-briefs/pond-art/guide-pond-2.png
+ M docs/codex-briefs/pond-art/guide-pond-3.png
+ M garden-v05/build-pond-art.mjs
+?? docs/codex-briefs/pond-art-03-last.log
+?? docs/codex-briefs/pond-art-03.md
+
+exec
+/bin/zsh -lc "cat /Users/thachanh/.codex/skills/.system/imagegen/SKILL.md; cat docs/art-bible.md; sed -n '1,180p' docs/codex-briefs/pond-art-01.md; cat garden-v05/palette.mjs" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural — candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup — product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup — app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram — diagrams/infographics with structured layout and text.
+- scientific-educational — classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing — campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual — slide, chart, workflow, and data-heavy business visuals.
+- logo-brand — logo/mark exploration, vector-friendly.
+- illustration-story — comics, children’s book art, narrative scenes.
+- stylized-concept — style-driven concept art, 3D/stylized renders.
+- historical-scene — period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization — translate/replace in-image text, preserve layout.
+- identity-preserve — try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit — remove/replace a specific element (including interior swaps).
+- lighting-weather — time-of-day/season/atmosphere changes only.
+- background-extraction — transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer — apply reference style while changing subject/scene.
+- compositing — multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render — drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+# Khu Vườn Hagrid — Art bible
+
+> **Trạng thái:** ĐÃ DUYỆT 17/10/2026 (chủ dự án: "đồng ý và làm tiếp"), các đề xuất [CẦN QUYẾT] được chấp nhận như ghi · 17/10/2026 · Claude Code (Anthropic)
+> Áp dụng cho mọi asset mới, dù do người vẽ, Codex, Claude hay công cụ tạo ảnh làm ra. Mục **[CẦN QUYẾT]** là đề xuất.
+> Số liệu "hiện trạng" đo từ `motion-data.js`, `level-assets.js`, `motion-care-data.js` và mã nguồn ngày 17/10/2026.
+
+## 1. Năm luật cứng
+
+1. **1 pixel nguồn = 1 pixel trong game ở zoom 1.** Không scale lẻ. Zoom camera chỉ dùng hệ số nguyên khi có thể, luôn `imageSmoothingEnabled = false` và `image-rendering: pixelated`.
+2. **Chỉ dùng 32 màu chuẩn** (mục 3): 24 màu sprite + 8 màu cảnh. Thời tiết, đêm và lễ hội đổi **ánh sáng** (lớp phủ, tint), không thêm màu mới vào sprite.
+3. **Nguồn sáng trên–trái.** Mặt hướng trái/trên sáng hơn, bóng đổ xuống phải–dưới. (Đã đối chiếu với lều Hagrid và Bằng Mã.)
+4. **Viền tối chọn lọc:** viền ngoài dùng `#231F2E` hoặc màu tối nhất trong ramp của vật; không viền đen thuần, không viền trắng.
+5. **Ảnh minh hoạ không vào cảnh chơi.** Tranh khổ lớn (bìa, màn chọn lễ hội/thời tiết) đặt trong UI. Mọi thứ đứng trong vườn phải là sprite theo luật 1–4.
+
+## 2. Lưới và phối cảnh
+
+- Isometric 2:1, ô **64 × 32 px** (`tileWidth`/`tileHeight` trong `scene-data`).
+- Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
+- Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
+- Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
+- **Nền mới (04/11/2026):** không bao giờ lặp một ô nền. Cỏ hiện vẽ bằng mảng ngẫu nhiên theo seed (`meadow-ground.mjs`); nền mới vẽ tay (tuyết, băng, cát) thì làm bộ 16 Wang góc cho 2 loại nền, mép khớp nhau theo màu góc, để ghép không thấy lặp.
+- **Hình mới phải khớp ô (27/10/2026):** [guideline khớp ô lưới](grid-fit-guideline.md) — phần có màu nằm trong cột rộng W = (cột + hàng) × 32 px của nền, bảng canvas/pivot/khung mực theo từng nền, kiểm bằng `audit-grid-fit.mjs`. [Danh sách hình đang lệch](grid-fit-misfits.md).
+- Chuẩn lưới 26/10/2026: [quy tắc và kích thước từng vật](garden-grid-20261026.md).
+  Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
+  hệ số phóng riêng cho ô trồng. Bảng `garden-grid-metrics.json` phải được tạo
+  từ bootstrap đầy đủ (cả các override), kiểm tra bằng `export-grid-metrics.mjs --check`.
+- Khi cất trang trí mặc định phải bỏ cả paint/pick và vùng chiếm chỗ; giữ
+  ownership và lưu theo tài khoản. Xem [hợp đồng cất/đặt lại](default-decor-20261026.md).
+
+## 3. Bảng màu chuẩn: 32 màu (24 sprite + 8 cảnh)
+
+Ảnh: [`palette.svg`](palette.svg). Nguồn duy nhất trong code: `garden-v05/palette.mjs`. 24 màu sprite là bảng **đang dùng sẵn** trong cả ba manifest asset.
+
+| Dải | Tối → sáng | Dùng cho |
+|---|---|---|
+| Gỗ · da · bóng tối | `#231F2E` `#4A3042` `#735044` `#A57554` | Viền, gỗ, đất tối, lông nâu |
+| Đá · kim loại · kem | `#41465C` `#687486` `#A6B1AE` `#D6D8BF` | Mái, đá, kim loại, lông sáng |
+| Cỏ · lá | `#24483F` `#3F6A45` `#71934B` `#B0BD67` | Cỏ, lá, rêu |
+| Đất · ánh ấm | `#8B4A3F` `#C97952` `#E7AE73` `#F5D69A` | Đất trồng, da, điểm sáng ấm, chữ vàng UI |
+| Lửa · bí ngô | `#874056` `#C75B4B` `#ED8A45` `#FFC36B` | Bí ngô, lửa, đèn, quả chín |
+| Phép · đêm · nước | `#3E3B70` `#6961A6` `#70A8B6` `#B7DEE0` | Phép thuật, đêm, nước, băng |
+
+**8 màu cảnh** (thêm ngày 17/10/2026, V24.9.2) cho những gì sprite chưa cần: `#142620` rừng đêm sâu · `#4A3C2C` nâu đất trung tính · `#5D6046` `#777044` ô liu · `#B49A66` đá lối đi, rơm · `#E8F0ED` tuyết, điểm sáng trắng · `#B378FF` phép tím sáng · `#E07A9E` hồng (tim, hoa). Chọn bằng cách phân cụm 309 màu lệch cũ; với bảng 24 màu, đá lối đi bị đẩy thành cam và đom đóm tím thành xám.
+
+Quy tắc dùng:
+- Sprite chỉ dùng 24 màu sprite; 8 màu cảnh dành cho địa hình, thời tiết, hiệu ứng.
+- Một vật dùng tối đa **2–3 dải**; đổ bóng bằng màu tối hơn **trong cùng dải**, không trộn xám.
+- Muốn thêm màu thứ 33 thì phải sửa tài liệu này và `palette.mjs` trước.
+
+**Đã sửa (V24.9.2):** khoảng 300 mã màu lệch trong 17 file vẽ bằng code đã được đưa về màu gần nhất trong bảng 32 (đo OKLab; trung vị lệch 0.039, tối đa 0.119). Riêng tuyết của chuồng và cỏ tuyết quanh chuồng được chỉnh tay để không thành màu nước. `palette.test.mjs` sẽ báo lỗi nếu module nào dùng mã màu ngoài bảng. CSS của giao diện **chưa** chuyển, làm ở bước UI.
+
+## 4. Kích thước theo tầng
+
+Đo phần có nội dung (không tính viền trong suốt) ở giai đoạn trưởng thành:
+
+| Tầng | Chiều cao hiện có | Loài | Chiếm chỗ |
+|---|---|---|---|
+| Cây trồng | 27–66 px, rộng ≤ 54 px | 24 loại | 1 ô |
+| Sinh vật nhỏ | 20–39 px | Puffskein, Đào mỏ, Que Xạo | 1 ô |
+| Sinh vật vừa | 58–88 px | Kneazle, Mooncalf, Fwooper, Diricawl | 1–2 ô |
+| Sinh vật lớn | 95–130 px | Bằng-Mã, kỳ lân, vong mã, chó ba đầu, rồng | 2–3 ô |
+| Công trình | ~150–210 px | Lều, nhà kính, cụm lễ hội | Theo bố cục |
+
+Quy tắc:
+- Sinh vật mới phải rơi vào đúng một tầng. Trong một tầng, chênh lệch không quá ±20%.
+- Các giai đoạn lớn lên (sơ sinh → trưởng thành) dùng **cùng mật độ pixel**, chỉ khác số pixel.
+- Tên sinh vật và địa danh theo bản dịch **Lý Lan** (xem `core-design.md` mục 7).
+
+## 5. Chuyển động
+
+| Loại | Số frame tối thiểu | Ghi chú |
+|---|---|---|
+| Lớn lên (cây, sinh vật) | 4 | Hạt → mầm → đang lớn → trưởng thành |
+| Đứng yên (idle) | 2–4, vòng lặp ≥ 1,2 giây | Thở, lá rung; chân/gốc **không** dịch chuyển |
+| Hành động (gặt, cho ăn, vuốt ve) | 4–6 | Có nhịp chuẩn bị → đỉnh → hồi |
+| Hiệu ứng (hạt, sao, tim) | 3–5 | Vẽ bằng pixel trong bảng màu |
+
+- Mọi chuyển động đứng yên đúng khi bật "Giảm chuyển động".
+- Chuyển động vẽ bằng code chỉ dịch **số nguyên pixel**.
+
+**Hiện trạng không đồng đều:**
+- 6 cây đầu (bí ngô, cúc trắng, dâu tây, bạch tiên, puffapod, mandrake) có 12 frame; **18 cây sau chỉ có 4 frame lớn lên, chưa có idle/hành động riêng**.
+- 6 sinh vật đầu có 12 frame; 6 loài sau có 8 frame cộng bộ ăn/chăm sóc riêng.
+- Ưu tiên cho Phase 1: bổ sung idle và hành động cho cây và sinh vật **xuất hiện trong 3 phút đầu và vòng 5 phút**, không làm cả 36 loài một lúc.
+- **Đã làm (V24.9.5):** ba phút đầu chỉ dùng bí ngô và Puffskein, vốn đã đủ 12 frame. Vòng 5 phút ở cấp 1–12 thêm yến mạch, cà rốt, xà lách: `build-idle-assets.mjs` dựng 7 frame mới cho mỗi loại từ chính frame trưởng thành, bằng cách dịch nguyên dải hàng pixel (ngọn lay tối đa 2 px, rướn 1 px). Phần gốc đứng yên: 25% chiều cao, cà rốt 42% để củ không lệch. Không resample, không thêm màu; `idle-assets.test.mjs` kiểm tra. Đây là cách tạm hợp lệ khi chưa có hoạ sĩ; frame vẽ tay vẫn đẹp hơn và có thể thay sau, cùng chỉ số frame.
+- Cây chín ở luống đang chọn phát clip hành động "giật" khoảng 3,4 giây một lần (1,5 giây trong bước gặt của hướng dẫn). Áp dụng cho cả 6 cây gốc, trước đây có clip nhưng chưa phát.
+
+## 6. Giao diện (UI)
+
+- Khung, nút và chữ dùng màu từ bảng chuẩn: nền dải "Cỏ · lá" tối, viền và chữ nhấn dải "Đất · ánh ấm".
+- Icon vật phẩm giữ cùng pixel style và palette của cảnh. Hạt dùng gói có hình cây; nông sản đã gặt dùng icon nguyên liệu riêng; sản vật, thành phẩm và tượng kỷ vật dùng đúng danh tính, không lấy chân dung loài thay nguyên liệu.
+- Giảm emoji hệ thống trong nút chính: emoji hiển thị khác nhau trên iOS và Android, lệch style pixel.
+- Chữ số trong game (`+3`, `2/5`) **[CẦN QUYẾT]**: đề xuất dùng font pixel có hỗ trợ tiếng Việt cho số và nhãn ngắn. Phải kiểm tra đủ dấu tiếng Việt trước khi chọn; nếu không có font đạt thì giữ font hệ thống.
+
+## 7. Ảnh tạo bằng AI
+
+- Được dùng làm **concept** và **ảnh minh hoạ UI** (khổ 640 × 360 như bộ `v24-art`).
+- Muốn đưa một vật từ ảnh AI vào cảnh chơi, phải: vẽ lại hoặc thu về **đúng lưới pixel thật** (không chỉ resize), lượng tử về 24 màu, kiểm tra viền theo luật 4.
+- Không vẽ chữ vào ảnh. Ghi prompt, nguồn và hash vào `provenance.json` như các bộ hiện có.
+
+**Bộ ảnh V24.9.66:** `item-art-manifest.json` và `three-headed-dog-art-generation.json` giữ prompt, nguồn và hash riêng của bộ mới. `build-item-art.mjs` tách atlas tại khe alpha trống, lấy mẫu trên lưới native, lượng tử 24 màu và xuất alpha 0/255; không sửa master. UI và cảnh chơi cùng tra một ID trong `item-art.mjs`, hai góc trang trí có file và bounds riêng. So khác biệt theo danh tính vật phẩm: nhiều góc/frame của cùng món là hợp lệ; hai món khác nhau dùng cùng hình phải được kiểm tra lại. Chạy `verify-image-assets.mjs` và `qa-v19/image-ui-qa.mjs` sau khi nhập bộ ảnh. Kiểm tra cảnh thật vẫn bắt buộc: lớp cache đã dịch tọa độ thì không dịch lần thứ hai khi vẽ sprite vào lớp đó.
+
+**Định dạng chạy game từ V24.9.70:** sau khi xuất PNG native, chạy `node garden-v05/build-runtime-webp.mjs` rồi `--check`. PNG/master vẫn là nguồn phục hồi; chỉ các WebP trong `runtime-webp-manifest.json` được đóng gói. Encoder dùng lossless + exact, đối chiếu toàn bộ RGBA sau giải mã (kể cả RGB ở pixel trong suốt), không resize. URL tải ảnh qua `runtimeImageUrl`, còn ID/file nguồn trong manifest và cache giữ nguyên; revision hash chống dùng nhầm WebP cũ. 8 ảnh WebP có sẵn được giữ nguyên byte, không mã hóa lại. Không đóng gói ảnh contact sheet, atlas nguồn hay master vào game. QA trình duyệt phải có 0 request PNG/JPEG/GIF cho ảnh nội bộ.
+
+**Khu nuôi từ V24.9.70:** không đặt mái trú trong sân. `garden-pen-details.mjs` vẽ rào sát bốn cạnh của sân 5×3; cổng bên tây nối đúng đường vào. Rào sau cao 24px, rào trước cao 18px; toàn bộ rào nằm trong lớp cache dưới thú để không che các loài nhỏ. Giữ nguyên 12 vị trí, hitbox và dữ liệu nuôi. `build-item-art.mjs` xuất 6 icon từ chính hàm vẽ rào, giữ palette/alpha/pivot như các ảnh native khác. Các master mái cũ chỉ là tài liệu phục hồi, không dùng trong cảnh hay ảnh cửa hàng.
+
+**Biên rừng:** dùng `forestRectOutsideBoundary` với `stageBoundary` của mốc mở sân hiện tại, kiểm tra cả hình chữ nhật sprite và phần cao của rào. Áp dụng cho wallpaper, rừng viền và rừng đất chưa mở; nền lặp dùng biên sân cuối. Không đặt cây cũ xuyên mép rào. Cổng mở và bảng tên hai dòng phải được kiểm tra bằng cảnh thật; bảng nằm ngoài rào và có khoảng trống chống cây che.
+
+## 8. Checklist nhận một asset mới
+
+**V24.9.75 — đồ lễ hội:** sprite lớn phải được kiểm đặt/cất/xoay với save có đủ key kỷ vật bằng0; key tồn tại không có nghĩa đã có tượng. Chỉ bảo vệ dải kỷ vật thực tế, không khóa cả cánh đồng mở về sau. Giữ các frame glow/tĩnh đúng metadata, không quảng cáo chớp mắt/đung đưa khi chưa có pose. Atlas decor phải mang rect đúng góc vào cả picker frame và renderer; xác nhận từng rect RGBA trùng native nguồn.
+
+**V24.9.74 — atlas chuyển động:** lưu prompt và hash trước/sau tạo master; không tin số file hoặc lưới atlas danh nghĩa. Xác nhận đủ silhouette/pose, dùng khe alpha hoặc component để tách đúng hình, không cắt theo ô đều khi nguồn lệch. Duyệt ảnh native 1×, giữ pivot chân và palette24. Atlas runtime phải đối chiếu RGBA từng rect với PNG native; kiểm clip được gọi thực tế khi chăm/thu hoạch, hitbox của góc được vẽ riêng và reduced motion. [Đợt hoàn thiện](artwork-completion-20261023.md) đóng toàn bộ backlog ngoài Halloween theo yêu cầu.
+
+**V24.9.73 — icon nhỏ:** vật tư/cao cấp có vùng mực tối đa 40×40 trong canvas 64×64, vừa ô kho 40px ở 1×. Vẽ mảng màu lớn và biểu tượng rõ, bỏ chi tiết nhỏ hơn pixel đích. UI ưu tiên tỷ lệ nguyên và tọa độ nguyên khi ảnh vừa ô; không nhân grayscale/giảm sáng lên ảnh hàng khóa cấp trong cửa hàng. Duyệt ảnh ở native 1× và đúng kích thước CSS trong shop/kho; xem [đợt chất lượng v2](artwork-quality-v2-20261023.md).
+
+**Kiểm kê 23/10/2026:** rà cả hình inline SVG/Canvas và số frame khác nhau trong từng clip, không chỉ số file/hash hoặc tên clip. Artwork vật tư/cao cấp, mở thửa và huy hiệu dùng chung `ITEM_ART` qua `ui-utils.mjs`; không thêm SVG tạm khi chưa có ảnh. Bộ 12 master mới nằm trong `supply-art-sources.json`, được pipeline `build-item-art.mjs` xuất cùng palette/pivot/alpha như các món cũ. [Bản kiểm kê](artwork-audit-20261023.md) phân biệt việc đã thay với phần chuyển động/prop chưa được vẽ riêng; `qa-v19/supply-art-qa.mjs` kiểm cả gallery và shop ở bốn kích thước bằng fixture không kết nối dữ liệu thật.
+
+- [ ] Kích thước đúng tầng (mục 4), pivot ở chân
+- [ ] Khớp nền theo [guideline khớp ô](grid-fit-guideline.md): `audit-grid-fit.mjs` không báo lỗi cho món mới
+- [ ] Chỉ dùng 24 màu; viền và hướng sáng đúng luật
+- [ ] Đặt cạnh 3 asset cũ cùng tầng trong cảnh thật: cùng độ chi tiết, cùng mật độ pixel
+- [ ] Đủ frame theo mục 5; bật "Giảm chuyển động" thì đứng yên
+- [ ] Xem ở zoom nhỏ nhất trên điện thoại 375 px: vẫn nhận ra vật
+- [ ] Xem đủ 4 thời tiết và 3 thời điểm ngày/đêm
+- [ ] Có ghi nguồn (`provenance`) và cập nhật manifest
+
+## 9. Việc kiểm toán cho Phase 1
+
+1. ~~Tạo `palette.mjs`, đưa màu vẽ bằng code về bảng~~ (xong V24.9.2). Còn lại: CSS giao diện.
+2. ~~Bổ sung idle và hành động cho cây và sinh vật của 3 phút đầu và vòng 5 phút~~ (xong V24.9.5). Còn 15 cây từ cấp 28 trở lên: thêm id vào `IDLE_TARGETS` rồi chạy lại script.
+3. So tầng kích thước trong cảnh thật, sửa loài nào lệch quá ±20%.
+4. Thay emoji ở 6 nút chính bằng icon pixel.
+
+Bảng tên chính dùng master ImageGen `masters/hagrid-farm-sign-v01.png`, xuất bằng `build-sign-art.mjs`; native288×288 và chữ trên mặt bảng cùng trục dốc1/2. Giữ chữ ở lớp runtime để không sai dấu. Khi khu nuôi sát rào ngoài, dùng chung cạnh đông và đặt nhãn ra ngoài rào, không vẽ hai hàng rào chồng nhau.
+
+## V24.9.80 — flow sản phẩm và sân trang trí (26/10/2026)
+
+Bộ mới có32 icon nông sản,hai sản vật sửa nhận diện,41 frame của Bubotuber/Mimbulus/Flitterbloom và48 pose hai hướng cho sáu đồ trang trí. Master/prompt ở flow-art-sources.json,harvest-extra-sources.json,decor-flow-sources.json; build-flow-art.mjs và build-decor-flow.mjs giữ provenance,alpha nhị phân,palette24 và pivot chân. Thumbnail phải là PNG native đứng riêng; atlas chỉ dùng cho clip cùng rect đúng, tránh đưa cả sheet vào thẻ shop. Dùng chung scale lấy mẫu và neo chân theo phần thân/gốc,không neo theo hiệu ứng bay.
+
+27 công thức giữ tranh biến thể nhưng luôn hiển thị một trong14 icon thành phẩm chuẩn. Kho dùng12 tượng đã có thay ảnh sản vật cộng cúp. Trước cấp110 giữ hàng kỷ vật cũ; từ110 dùng sân hai hàng. Bảo vệ chân và silhouette từng tượng cùng lối tiếp cận,không khóa cả chiều ngang vì một tượng. Giữ tọa độ đồ mua đã lưu. Mỗi góc của66 món phải còn điểm đặt; test riêng ba món3×2 cùng lúc và round-trip máy chủ qua hàng28. Xoay trong thanh đặt là preview,chỉ nút Đặt lưu.
+
+Kiểm: node garden-v05/build-flow-art.mjs;node garden-v05/build-decor-flow.mjs;node garden-v05/build-runtime-webp.mjs;node garden-v05/verify-image-assets.mjs;GARDEN_HPVNN_ROOT=<paired HPVNN worktree> node --test garden-v05/*.test.mjs. qa-v19/art-flow-qa.mjs kiểm source/import bằng Chrome/WebKit với toàn bộ request chặn về file cục bộ; không lấy fixture làm bằng chứng production.
+
+Với món mới chưa có tọa độ lưu, xoay phải tìm gợi ý hợp lệ gần nhất trên toàn vùng đã mở và đưa camera theo preview. Vật đã bày giữ tìm kiếm cục bộ trong hai ô; không ghi hoặc dời save khi chỉ thử góc. Fixture đầy đủ phải qua restoreChecked/server trước khi dùng làm bằng chứng: giữ ba thửa khởi đầu, tối đa ba loài mỗi thửa và đầy đủ schema sinh vật. Render fixture vẫn tách biệt với kiểm đăng nhập/iframe/save thật.
+# Codex brief — Hagrid Farm expansion phase 1: the pond (08/11/2026)
+
+You are Codex in the Hagrid Farm repo. **You only draw masters.** Claude Code (Anthropic) reduces them to native
+sprites, registers them, tests and commits after you. Keep repo exploration short.
+
+Read first: `docs/art-bible.md` (sections 1–4), `garden-v05/palette.mjs` (`SPRITE_PALETTE`, the 24 sprite colours).
+Style for everything: chunky low-resolution pixel art, every sprite pixel one flat square block, clean dark outline
+`#231F2E`, big flat colour clusters with at most 2–3 shades per material, light from the top-left, isometric 2:1
+(dimetric) view, no anti-aliasing, no gradients, no glow, no dithering or speckle noise, no text, no frames, no
+drop shadow outside the object, **transparent background** (real alpha). Colours as close as possible to the 24
+sprite colours. Open the style references named per section and match them.
+
+## A. Pond scenery (one image per piece)
+
+Style reference: `garden-v05/environment/layers/pond.png` (the current decorative pond: grey rocks, cattails, grass
+tufts, lily pads, blue-violet water). Open it and match its look and pixel density.
+
+Each piece has a **guide** in `docs/codex-briefs/pond-art/guide-<id>.png`: the pale-blue parallelogram is the exact
+ground the piece occupies (tile seams drawn), seen from the game camera. Draw the piece so its ground fills that
+parallelogram: the bank/rim follows the parallelogram outline with softly rounded corners (do not leave big empty
+corners, do not spill outside it). Things that stand up (reeds, rocks, jetty posts) may rise above the ground into
+the white space above the dashed red line, but never wider than the guide. Same canvas size and aspect as the guide,
+transparent background (the guide's colours, seams, dot and dashed line must **not** appear in the master). You can
+pass the guide to your image tool as a reference, then scale/place the result onto a transparent canvas of the guide's
+size with a small script under `docs/codex-briefs/pond-art/` (nearest-neighbour only).
+
+| master (in `garden-v05/environment/pond/masters/`) | guide | subject |
+|---|---|---|
+| `pond-1.png` | `guide-pond-1.png` (960×672) | «Ao cá»: a small fish pond, clear blue water with 2–3 dark fish shadows under the surface, a few rocks and cattail clumps on the rim, one lily pad |
+| `pond-2.png` | `guide-pond-2.png` (1120×760) | «Hồ rong»: a bigger pond, more reeds and cattails along the back rim, visible green water weed (long ribbon weed) in the shallows, lily pads, a couple of fish shadows |
+| `pond-3.png` | `guide-pond-3.png` (1152×768) | «Hồ sâu»: a large deep pond, shallow light-blue rim water fading in clear steps to a **deep dark-blue centre** (`#3E3B70`/`#41465C`), a **small wooden jetty** (3–4 planks wide, two posts) reaching from the front-right bank toward the middle, reeds and rocks on the far rim |
+| `pond-bed.png` | `guide-pond-bed.png` (1024×704) | «Luống ven hồ»: a long shallow **water planting tray** following the 1×3 strip: low wooden plank walls, a mud-and-water bed inside with a few small green shoots, no big plants (crops are drawn on it later) |
+
+All three ponds must look like one family that grows: same rock style, same water colours, same reeds.
+
+## B. Item icons (one sheet)
+
+Style reference: `garden-v05/native-items/supply_water.png`, `recipe_fish.png`, `seed_packet.png` (open them at
+8× nearest-neighbour). These end up 64×64 with the object about 40×40 px, so: one big readable object, few large
+shapes, thick outline, no tiny details.
+
+One sheet `garden-v05/masters-items/pond/items-sheet.png`, **1024×1024, a 2×2 grid of 512×512 cells**, one object per
+cell, centred, base at y ≈ 440 of its cell, ≥ 48 px empty margin to every cell edge:
+
+| cell | id | object |
+|---|---|---|
+| top-left | `fry_carp` | a clear **water bag** (thin glassy pouch, tied at the top with brown string) holding 3 tiny bronze-grey **carp fry** |
+| top-right | `fry_goldfish` | the same water bag shape tied with red string, holding 3 tiny bright orange **goldfish fry** |
+| bottom-left | `goldfish` | one plump orange **goldfish**, side view facing left, fan tail, a cream belly, one dark eye |
+| bottom-right | `produce_grindylow` | «Rong thủy quái»: a **bundle of slimy dark-green pond weed** tied with a reed, glossy wet highlights, two drips of water |
+
+## C. The creature «Thủy quái» (Grindylow, species id `grindylow`)
+
+**Book Grindylow (Harry Potter and the Prisoner of Azkaban), not the film:** a small water demon, **pale sickly green**
+skin, **two short sharp little horns** on its head, **long, thin, spindly fingers** with a strong grip, thin arms and
+legs, large dark eyes, a wide mouth with tiny pointed teeth, a little wet shine on the head. Two legs, **no tentacles,
+no octopus parts**. In this cozy farm it is mischievous and a bit cheeky, not gory. Small creature, compact body.
+
+Style reference: open `garden-v05/creature-motion-assets/masters/diricawl-right-motion-v01.png` (a 4×4 motion sheet)
+and `garden-v05/native-levels/diricawl/frame-04.png` (its 96×96 native adult): match that pixel style. The native
+adult will be about 56 × 58 px, so keep the silhouette big and clear and the fingers long enough to read at that size.
+
+Sheets (in `garden-v05/creature-motion-assets/masters/`), every pose **one fully separated sprite** (fingers, horns,
+held fish all touching the body; ≥ 32 px transparent gap between poses), centred in its cell, **feet on the same
+ground line** (about 82% down each cell), same size and same design in every cell, no ground, no shadow, no props
+except the ones named:
+
+1. `grindylow-left-motion-v01.png` — **1024×1024, 4×4 cells of 256**. All 16 poses face **LEFT** in a clear
+   three-quarter view (face and eyes toward image left; do not mirror a right-facing drawing). Rows:
+   - row 1 idle: rest (crouched, fingers resting on knees) · breathe (shoulders up) · blink · settle (fingers flex);
+   - row 2 action: prep (crouch low) · peak (springs up, both long-fingered hands raised, two water drops) · release
+     (landing) · recovery;
+   - row 3 eat: approach a tiny silver fish on the ground · bend and grab it with the long fingers · bite · lift and chew;
+   - row 4 care: lean toward a small hand/brush cue · receive care with eyes closed, happy · blink · relaxed.
+   Draw this sheet first; it is the design master. Make two candidates, keep the better one, say why.
+2. `grindylow-right-motion-v01.png` — the same 4×4 layout and poses, all facing **RIGHT** (face toward image right;
+   light still from the top-left, so do not just mirror the left sheet). Use sheet 1 as the reference for the design.
+3. `grindylow-growth-v01.png` — **1024×512, 2 rows × 4 cells of 256**: row 1 faces LEFT, row 2 faces RIGHT; columns
+   newborn (tiny, round, horn nubs) · juvenile · adolescent · adult (the same adult as sheets 1–2). Adult about 2–3×
+   the newborn's height, all in a calm standing pose, feet on one ground line.
+
+Two companion objects (in `garden-v05/masters-complete-objects/`), each **one object centred on a transparent square
+image** (1024×1024), style reference `habitat_kneazle.png`/`keepsake_kneazle.png` there and their natives in
+`garden-v05/native-complete-objects/habitat_kneazle/` and `keepsake_kneazle/`:
+
+4. `habitat_grindylow.png` — the Grindylow's habitat prop, an empty tiny garden prop (native 36×28): a **small rock
+   pool nook**: a ring of 4–5 grey stones holding a little blue water with one strand of weed, a small stone arch over
+   one side to hide under. No creature. Squat silhouette, extraordinarily simple, broad flat blocks.
+5. `keepsake_grindylow.png` — the keepsake statuette (native 44×44 including plinth): a **Grindylow statuette** (pale
+   green, two little horns, long fingers raised) fixed on a low two-step warm grey stone plinth with a simple gold
+   front inset. No lettering.
+
+## D. 16×16 pixel icons (grids, no images)
+
+Write them into a NEW file `docs/codex-briefs/pond-art/pixel-icons-new.mjs` exporting
+`export const NEW_ICONS = { id: [16 strings of 16 chars], … }`, in exactly the format of `garden-v05/pixel-icons.mjs`
+(one char per pixel, only the `INK` keys there, `.` = transparent). Match the weight, outline and light of the
+existing `water`, `feed`, `chest`, `heart` grids: `pond` (a small oval pond with a reed and a ripple), `net` (a
+fishing landing net: round hoop with mesh and a short handle), `rod` (a fishing rod with line and a red-and-white
+bobber), `algae` (a clump of green pond algae/scum on a little water line, the thing you skim off).
+
+## Delivery
+
+- Append every image prompt (one entry per master: `id`, `master`, `prompt`, `generatedFile` = the path your image
+  tool wrote, `referenceFiles`) to `garden-v05/environment/pond/prompts.json` (create it as `{"items": []}`).
+- Do not write native frames, previews or any `.mjs` outside `docs/codex-briefs/pond-art/`, and do not run any builder
+  or importer: Claude does the reduction.
+- Hard rules: no git commit/push/deploy; do not edit existing files except appending to the prompts file; do not touch
+  HPVNN or `functions/`. If image generation refuses a subject, stop that item, list it and the refusal text, and do
+  not rename or describe around it. If image generation or usage is unavailable, stop and say so: never fake art with
+  code.
+- Report in `docs/codex-briefs/pond-art-01-report.md`: a table of id, master path, size, candidate kept and why, your
+  verdict (good / redo), plus anything refused.
+// The only colours the garden may draw with (docs/art-bible.md, section 3).
+// SPRITE_PALETTE is the authored sprite set shared by every asset manifest;
+// SCENE_EXTENSION covers terrain, snow and magic effects the sprites never needed.
+// palette.test.mjs fails if any runtime module uses a hex colour outside PALETTE.
+export const SPRITE_PALETTE = Object.freeze([
+  '#231F2E', '#4A3042', '#735044', '#A57554', // gỗ · da · bóng tối
+  '#41465C', '#687486', '#A6B1AE', '#D6D8BF', // đá · kim loại · kem
+  '#24483F', '#3F6A45', '#71934B', '#B0BD67', // cỏ · lá
+  '#8B4A3F', '#C97952', '#E7AE73', '#F5D69A', // đất · ánh ấm
+  '#874056', '#C75B4B', '#ED8A45', '#FFC36B', // lửa · bí ngô
+  '#3E3B70', '#6961A6', '#70A8B6', '#B7DEE0', // phép · đêm · nước
+]);
+
+export const SCENE_EXTENSION = Object.freeze([
+  '#142620', // rừng đêm sâu
+  '#4A3C2C', // nâu đất trung tính
+  '#5D6046', '#777044', // ô liu tối · ô liu
+  '#B49A66', // đá lối đi · rơm
+  '#E8F0ED', // tuyết · điểm sáng trắng
+  '#B378FF', // phép tím sáng
+  '#E07A9E', // hồng: tim, hoa
+]);
+
+export const PALETTE = Object.freeze([...SPRITE_PALETTE, ...SCENE_EXTENSION]);
+
+codex
+Tiểu nữ sẽ dùng skill `imagegen` để vẽ lại đúng ba master, giữ nguyên luống ven hồ và các thay đổi có sẵn. Việc bàn giao gồm 3 ảnh đúng canvas guide, ảnh ghép ở kích thước native và báo cáo; phần nhập sprite, test game và commit thuộc Claude theo brief.
+exec
+/bin/zsh -lc "sed -n '1,105p' docs/art-bible.md; ls -l docs/codex-briefs/pond-art/; cat garden-v05/environment/pond/prompts.json" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+# Khu Vườn Hagrid — Art bible
+
+> **Trạng thái:** ĐÃ DUYỆT 17/10/2026 (chủ dự án: "đồng ý và làm tiếp"), các đề xuất [CẦN QUYẾT] được chấp nhận như ghi · 17/10/2026 · Claude Code (Anthropic)
+> Áp dụng cho mọi asset mới, dù do người vẽ, Codex, Claude hay công cụ tạo ảnh làm ra. Mục **[CẦN QUYẾT]** là đề xuất.
+> Số liệu "hiện trạng" đo từ `motion-data.js`, `level-assets.js`, `motion-care-data.js` và mã nguồn ngày 17/10/2026.
+
+## 1. Năm luật cứng
+
+1. **1 pixel nguồn = 1 pixel trong game ở zoom 1.** Không scale lẻ. Zoom camera chỉ dùng hệ số nguyên khi có thể, luôn `imageSmoothingEnabled = false` và `image-rendering: pixelated`.
+2. **Chỉ dùng 32 màu chuẩn** (mục 3): 24 màu sprite + 8 màu cảnh. Thời tiết, đêm và lễ hội đổi **ánh sáng** (lớp phủ, tint), không thêm màu mới vào sprite.
+3. **Nguồn sáng trên–trái.** Mặt hướng trái/trên sáng hơn, bóng đổ xuống phải–dưới. (Đã đối chiếu với lều Hagrid và Bằng Mã.)
+4. **Viền tối chọn lọc:** viền ngoài dùng `#231F2E` hoặc màu tối nhất trong ramp của vật; không viền đen thuần, không viền trắng.
+5. **Ảnh minh hoạ không vào cảnh chơi.** Tranh khổ lớn (bìa, màn chọn lễ hội/thời tiết) đặt trong UI. Mọi thứ đứng trong vườn phải là sprite theo luật 1–4.
+
+## 2. Lưới và phối cảnh
+
+- Isometric 2:1, ô **64 × 32 px** (`tileWidth`/`tileHeight` trong `scene-data`).
+- Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
+- Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
+- Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).
+- **Nền mới (04/11/2026):** không bao giờ lặp một ô nền. Cỏ hiện vẽ bằng mảng ngẫu nhiên theo seed (`meadow-ground.mjs`); nền mới vẽ tay (tuyết, băng, cát) thì làm bộ 16 Wang góc cho 2 loại nền, mép khớp nhau theo màu góc, để ghép không thấy lặp.
+- **Hình mới phải khớp ô (27/10/2026):** [guideline khớp ô lưới](grid-fit-guideline.md) — phần có màu nằm trong cột rộng W = (cột + hàng) × 32 px của nền, bảng canvas/pivot/khung mực theo từng nền, kiểm bằng `audit-grid-fit.mjs`. [Danh sách hình đang lệch](grid-fit-misfits.md).
+- Chuẩn lưới 26/10/2026: [quy tắc và kích thước từng vật](garden-grid-20261026.md).
+  Mọi thửa, chuồng, footprint và pixel dùng chung `garden-grid.mjs`; không thêm
+  hệ số phóng riêng cho ô trồng. Bảng `garden-grid-metrics.json` phải được tạo
+  từ bootstrap đầy đủ (cả các override), kiểm tra bằng `export-grid-metrics.mjs --check`.
+- Khi cất trang trí mặc định phải bỏ cả paint/pick và vùng chiếm chỗ; giữ
+  ownership và lưu theo tài khoản. Xem [hợp đồng cất/đặt lại](default-decor-20261026.md).
+
+## 3. Bảng màu chuẩn: 32 màu (24 sprite + 8 cảnh)
+
+Ảnh: [`palette.svg`](palette.svg). Nguồn duy nhất trong code: `garden-v05/palette.mjs`. 24 màu sprite là bảng **đang dùng sẵn** trong cả ba manifest asset.
+
+| Dải | Tối → sáng | Dùng cho |
+|---|---|---|
+| Gỗ · da · bóng tối | `#231F2E` `#4A3042` `#735044` `#A57554` | Viền, gỗ, đất tối, lông nâu |
+| Đá · kim loại · kem | `#41465C` `#687486` `#A6B1AE` `#D6D8BF` | Mái, đá, kim loại, lông sáng |
+| Cỏ · lá | `#24483F` `#3F6A45` `#71934B` `#B0BD67` | Cỏ, lá, rêu |
+| Đất · ánh ấm | `#8B4A3F` `#C97952` `#E7AE73` `#F5D69A` | Đất trồng, da, điểm sáng ấm, chữ vàng UI |
+| Lửa · bí ngô | `#874056` `#C75B4B` `#ED8A45` `#FFC36B` | Bí ngô, lửa, đèn, quả chín |
+| Phép · đêm · nước | `#3E3B70` `#6961A6` `#70A8B6` `#B7DEE0` | Phép thuật, đêm, nước, băng |
+
+**8 màu cảnh** (thêm ngày 17/10/2026, V24.9.2) cho những gì sprite chưa cần: `#142620` rừng đêm sâu · `#4A3C2C` nâu đất trung tính · `#5D6046` `#777044` ô liu · `#B49A66` đá lối đi, rơm · `#E8F0ED` tuyết, điểm sáng trắng · `#B378FF` phép tím sáng · `#E07A9E` hồng (tim, hoa). Chọn bằng cách phân cụm 309 màu lệch cũ; với bảng 24 màu, đá lối đi bị đẩy thành cam và đom đóm tím thành xám.
+
+Quy tắc dùng:
+- Sprite chỉ dùng 24 màu sprite; 8 màu cảnh dành cho địa hình, thời tiết, hiệu ứng.
+- Một vật dùng tối đa **2–3 dải**; đổ bóng bằng màu tối hơn **trong cùng dải**, không trộn xám.
+- Muốn thêm màu thứ 33 thì phải sửa tài liệu này và `palette.mjs` trước.
+
+**Đã sửa (V24.9.2):** khoảng 300 mã màu lệch trong 17 file vẽ bằng code đã được đưa về màu gần nhất trong bảng 32 (đo OKLab; trung vị lệch 0.039, tối đa 0.119). Riêng tuyết của chuồng và cỏ tuyết quanh chuồng được chỉnh tay để không thành màu nước. `palette.test.mjs` sẽ báo lỗi nếu module nào dùng mã màu ngoài bảng. CSS của giao diện **chưa** chuyển, làm ở bước UI.
+
+## 4. Kích thước theo tầng
+
+Đo phần có nội dung (không tính viền trong suốt) ở giai đoạn trưởng thành:
+
+| Tầng | Chiều cao hiện có | Loài | Chiếm chỗ |
+|---|---|---|---|
+| Cây trồng | 27–66 px, rộng ≤ 54 px | 24 loại | 1 ô |
+| Sinh vật nhỏ | 20–39 px | Puffskein, Đào mỏ, Que Xạo | 1 ô |
+| Sinh vật vừa | 58–88 px | Kneazle, Mooncalf, Fwooper, Diricawl | 1–2 ô |
+| Sinh vật lớn | 95–130 px | Bằng-Mã, kỳ lân, vong mã, chó ba đầu, rồng | 2–3 ô |
+| Công trình | ~150–210 px | Lều, nhà kính, cụm lễ hội | Theo bố cục |
+
+Quy tắc:
+- Sinh vật mới phải rơi vào đúng một tầng. Trong một tầng, chênh lệch không quá ±20%.
+- Các giai đoạn lớn lên (sơ sinh → trưởng thành) dùng **cùng mật độ pixel**, chỉ khác số pixel.
+- Tên sinh vật và địa danh theo bản dịch **Lý Lan** (xem `core-design.md` mục 7).
+
+## 5. Chuyển động
+
+| Loại | Số frame tối thiểu | Ghi chú |
+|---|---|---|
+| Lớn lên (cây, sinh vật) | 4 | Hạt → mầm → đang lớn → trưởng thành |
+| Đứng yên (idle) | 2–4, vòng lặp ≥ 1,2 giây | Thở, lá rung; chân/gốc **không** dịch chuyển |
+| Hành động (gặt, cho ăn, vuốt ve) | 4–6 | Có nhịp chuẩn bị → đỉnh → hồi |
+| Hiệu ứng (hạt, sao, tim) | 3–5 | Vẽ bằng pixel trong bảng màu |
+
+- Mọi chuyển động đứng yên đúng khi bật "Giảm chuyển động".
+- Chuyển động vẽ bằng code chỉ dịch **số nguyên pixel**.
+
+**Hiện trạng không đồng đều:**
+- 6 cây đầu (bí ngô, cúc trắng, dâu tây, bạch tiên, puffapod, mandrake) có 12 frame; **18 cây sau chỉ có 4 frame lớn lên, chưa có idle/hành động riêng**.
+- 6 sinh vật đầu có 12 frame; 6 loài sau có 8 frame cộng bộ ăn/chăm sóc riêng.
+- Ưu tiên cho Phase 1: bổ sung idle và hành động cho cây và sinh vật **xuất hiện trong 3 phút đầu và vòng 5 phút**, không làm cả 36 loài một lúc.
+- **Đã làm (V24.9.5):** ba phút đầu chỉ dùng bí ngô và Puffskein, vốn đã đủ 12 frame. Vòng 5 phút ở cấp 1–12 thêm yến mạch, cà rốt, xà lách: `build-idle-assets.mjs` dựng 7 frame mới cho mỗi loại từ chính frame trưởng thành, bằng cách dịch nguyên dải hàng pixel (ngọn lay tối đa 2 px, rướn 1 px). Phần gốc đứng yên: 25% chiều cao, cà rốt 42% để củ không lệch. Không resample, không thêm màu; `idle-assets.test.mjs` kiểm tra. Đây là cách tạm hợp lệ khi chưa có hoạ sĩ; frame vẽ tay vẫn đẹp hơn và có thể thay sau, cùng chỉ số frame.
+- Cây chín ở luống đang chọn phát clip hành động "giật" khoảng 3,4 giây một lần (1,5 giây trong bước gặt của hướng dẫn). Áp dụng cho cả 6 cây gốc, trước đây có clip nhưng chưa phát.
+
+## 6. Giao diện (UI)
+
+- Khung, nút và chữ dùng màu từ bảng chuẩn: nền dải "Cỏ · lá" tối, viền và chữ nhấn dải "Đất · ánh ấm".
+- Icon vật phẩm giữ cùng pixel style và palette của cảnh. Hạt dùng gói có hình cây; nông sản đã gặt dùng icon nguyên liệu riêng; sản vật, thành phẩm và tượng kỷ vật dùng đúng danh tính, không lấy chân dung loài thay nguyên liệu.
+- Giảm emoji hệ thống trong nút chính: emoji hiển thị khác nhau trên iOS và Android, lệch style pixel.
+- Chữ số trong game (`+3`, `2/5`) **[CẦN QUYẾT]**: đề xuất dùng font pixel có hỗ trợ tiếng Việt cho số và nhãn ngắn. Phải kiểm tra đủ dấu tiếng Việt trước khi chọn; nếu không có font đạt thì giữ font hệ thống.
+
+## 7. Ảnh tạo bằng AI
+
+- Được dùng làm **concept** và **ảnh minh hoạ UI** (khổ 640 × 360 như bộ `v24-art`).
+- Muốn đưa một vật từ ảnh AI vào cảnh chơi, phải: vẽ lại hoặc thu về **đúng lưới pixel thật** (không chỉ resize), lượng tử về 24 màu, kiểm tra viền theo luật 4.
+- Không vẽ chữ vào ảnh. Ghi prompt, nguồn và hash vào `provenance.json` như các bộ hiện có.
+
+**Bộ ảnh V24.9.66:** `item-art-manifest.json` và `three-headed-dog-art-generation.json` giữ prompt, nguồn và hash riêng của bộ mới. `build-item-art.mjs` tách atlas tại khe alpha trống, lấy mẫu trên lưới native, lượng tử 24 màu và xuất alpha 0/255; không sửa master. UI và cảnh chơi cùng tra một ID trong `item-art.mjs`, hai góc trang trí có file và bounds riêng. So khác biệt theo danh tính vật phẩm: nhiều góc/frame của cùng món là hợp lệ; hai món khác nhau dùng cùng hình phải được kiểm tra lại. Chạy `verify-image-assets.mjs` và `qa-v19/image-ui-qa.mjs` sau khi nhập bộ ảnh. Kiểm tra cảnh thật vẫn bắt buộc: lớp cache đã dịch tọa độ thì không dịch lần thứ hai khi vẽ sprite vào lớp đó.
+
+**Định dạng chạy game từ V24.9.70:** sau khi xuất PNG native, chạy `node garden-v05/build-runtime-webp.mjs` rồi `--check`. PNG/master vẫn là nguồn phục hồi; chỉ các WebP trong `runtime-webp-manifest.json` được đóng gói. Encoder dùng lossless + exact, đối chiếu toàn bộ RGBA sau giải mã (kể cả RGB ở pixel trong suốt), không resize. URL tải ảnh qua `runtimeImageUrl`, còn ID/file nguồn trong manifest và cache giữ nguyên; revision hash chống dùng nhầm WebP cũ. 8 ảnh WebP có sẵn được giữ nguyên byte, không mã hóa lại. Không đóng gói ảnh contact sheet, atlas nguồn hay master vào game. QA trình duyệt phải có 0 request PNG/JPEG/GIF cho ảnh nội bộ.
+
+**Khu nuôi từ V24.9.70:** không đặt mái trú trong sân. `garden-pen-details.mjs` vẽ rào sát bốn cạnh của sân 5×3; cổng bên tây nối đúng đường vào. Rào sau cao 24px, rào trước cao 18px; toàn bộ rào nằm trong lớp cache dưới thú để không che các loài nhỏ. Giữ nguyên 12 vị trí, hitbox và dữ liệu nuôi. `build-item-art.mjs` xuất 6 icon từ chính hàm vẽ rào, giữ palette/alpha/pivot như các ảnh native khác. Các master mái cũ chỉ là tài liệu phục hồi, không dùng trong cảnh hay ảnh cửa hàng.
+total 5656
+-rw-r--r--@ 1 thachanh  staff    4482 Nov  8 13:23 browser-check.mjs
+-rw-r--r--@ 1 thachanh  staff    2312 Nov  8 13:23 contact-sheet.mjs
+-rw-r--r--@ 1 thachanh  staff   25229 Nov  8 13:23 generation-records.json
+-rw-r--r--@ 1 thachanh  staff  682107 Nov  8 13:23 grindylow-left-candidate-a.png
+-rw-r--r--@ 1 thachanh  staff   19892 Nov  8 16:38 guide-pond-1.png
+-rw-r--r--@ 1 thachanh  staff   20205 Nov  8 16:38 guide-pond-2.png
+-rw-r--r--@ 1 thachanh  staff   29056 Nov  8 16:38 guide-pond-3.png
+-rw-r--r--@ 1 thachanh  staff   13243 Nov  8 16:38 guide-pond-bed.png
+-rw-r--r--@ 1 thachanh  staff  408877 Nov  8 13:23 keepsake-grindylow-candidate-a.png
+-rw-r--r--@ 1 thachanh  staff    1841 Nov  8 13:23 make-guides.mjs
+-rw-r--r--@ 1 thachanh  staff    1563 Nov  8 13:23 pixel-icons-new.mjs
+-rw-r--r--@ 1 thachanh  staff    2531 Nov  8 13:23 place-masters.py
+-rw-r--r--@ 1 thachanh  staff  841586 Nov  8 13:23 pond-3-candidate-1.png
+-rw-r--r--@ 1 thachanh  staff  813089 Nov  8 13:23 pond-3-candidate-2.png
+{
+  "items": [
+    {
+      "id": "grindylow-left-motion-v01-candidate-a",
+      "master": "docs/codex-briefs/pond-art/grindylow-left-candidate-a.png",
+      "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided Diricawl sheet's pixel style, not its bird anatomy. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face LEFT in clear three-quarter view, face/eyes toward image LEFT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-a2bd59f2-f004-45f5-a9d4-375829f50181.png",
+      "referenceFiles": [
+        "garden-v05/creature-motion-assets/masters/diricawl-right-motion-v01.png",
+        "garden-v05/native-levels/diricawl/frame-04.png"
+      ]
+    },
+    {
+      "id": "grindylow-left-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/grindylow-left-motion-v01.png",
+      "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided Diricawl sheet's pixel style, not its bird anatomy. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face LEFT in clear three-quarter view, face/eyes toward image LEFT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Candidate B: prioritize thin humanoid limbs and compact smooth skin, no dorsal spines, fins, tail or reptile frill. Only the TWO short head horns; long fingers clearly distinct. Each sprite smaller with ample alpha margin; each pose's feet exactly at local y210. Pixel blocks broad and clean.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png",
+      "referenceFiles": [
+        "garden-v05/creature-motion-assets/masters/diricawl-right-motion-v01.png"
+      ]
+    },
+    {
+      "id": "grindylow-right-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/grindylow-right-motion-v01.png",
+      "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided selected Grindylow design EXACTLY: smooth pale green compact humanoid, two horns, no back spines or fins. Redraw facing right, NOT a mirror: lighting remains TOP LEFT. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face RIGHT in clear three-quarter view, face/eyes toward image RIGHT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-458e7a0a-f0c3-42e5-8eb4-1b93519d7c14.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+      ]
+    },
+    {
+      "id": "grindylow-growth-v01",
+      "master": "garden-v05/creature-motion-assets/masters/grindylow-growth-v01.png",
+      "prompt": "Create 1024x512 transparent sprite GROWTH sheet. EXACT 2 rows x4 columns, 256px square cells, no grid lines. Reference selected pale smooth-skinned book Grindylow: two short horns, two skinny legs, thin arms with very long spindly fingers, large dark eyes, cheeky wide mouth tiny teeth, NO tail fins tentacles dorsal spines. Row1 all face LEFT; row2 all face RIGHT, top-left light BOTH rows. Columns newborn tiny round body horn nubs (height65px), juvenile(height100), adolescent(height135), adult(height170) SAME adult design as reference. Calm standing crouch, feet at local y210 each cell, centered, clear 32px+ gaps. No props ground or shadows. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-deab6962-fe98-473c-89f7-7d93e835e369.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+      ]
+    },
+    {
+      "id": "pond-1",
+      "master": "garden-v05/environment/pond/masters/pond-1.png",
+      "prompt": "Draw ONE pond scenery master 960x672px. Image1 is EXACT FOOTPRINT geometry guide only, image2 is style/pixel density reference. Small fish pond: clear blue-violet water, 2–3 dark fish shadows below surface, few grey rocks and cattail clumps on rim, ONE lily pad. Bank/rim follows the ENTIRE pale blue parallelogram outline with gently rounded corners, fills corners, NO oval pond floating in blank diamond. Ground footprint vertices in target canvas: (0,468),(576,180),(960,372),(384,660). Upright reeds and rocks may extend above rear rim but never outside width. Remove ALL guide colours tile seams dot dashed red line and white background: transparent alpha everywhere outside object. Match pond reference chunky grey stones, blue-violet water, cattails, grass clumps. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-bcfb1e82-f6ee-4d8c-937b-fff49b93675c.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-1.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "pond-2",
+      "master": "garden-v05/environment/pond/masters/pond-2.png",
+      "prompt": "Draw ONE pond scenery master 1120x760px. Image1 EXACT FOOTPRINT geometry guide, image2 pixel style reference, image3 same-family smaller pond. Bigger pond: more reeds and cattails on back rim, visible green LONG RIBBON water weed in shallows, lily pads, two dark fish shadows. Bank/rim must follow entire pale-blue parallelogram with gently rounded corners, fill all corners, no oval in blank diamond. Target vertices (0,510),(640,190),(1120,430),(480,750). Upright reeds/rocks may rise above rear rim but not outside width. Same grey chunky rocks, blue-violet water and cattails as smaller pond. Remove ALL guide colours seams dot red dashed line white backdrop; transparent outside object. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-866f6527-1bc2-4e82-8352-34d55bd5a079.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-2.png",
+        "garden-v05/environment/layers/pond.png",
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-bcfb1e82-f6ee-4d8c-937b-fff49b93675c.png"
+      ]
+    },
+    {
+      "id": "pond-3-candidate-1",
+      "master": "docs/codex-briefs/pond-art/pond-3-candidate-1.png",
+      "prompt": "Draw ONE pond scenery master 1152x768px. Image1 EXACT FOOTPRINT geometry guide, image2 pixel style reference, image3 same-family smaller pond. Large DEEP pond: shallow light-blue rim water transitions in 3 CLEAR FLAT STEPS to DEEP DARK BLUE centre #3E3B70/#41465C, SMALL wooden jetty 3–4 planks wide with TWO posts reaches from FRONT RIGHT bank toward middle, reeds/grey rocks on far rim. Bank/rim follows entire pale-blue parallelogram with softly rounded corners, fills corners, NO oval floating in blank diamond. Target vertices (0,504),(640,184),(1152,440),(512,760). Upright reeds/rocks may rise above rear rim never wider than guide. Clear top surface with broad FLAT solid water-colour bands; deep dark centre must dominate. Jetty short, not bridge, 3–4 broad planks and exactly TWO upright posts. Same grey chunky rocks blue-violet water cattails as smaller pond. Remove guide colours seams dot red dashes white background. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-38f78a4c-2e51-4ca0-8d98-f27b97211e47.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-3.png",
+        "garden-v05/environment/layers/pond.png",
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-bcfb1e82-f6ee-4d8c-937b-fff49b93675c.png"
+      ]
+    },
+    {
+      "id": "pond-bed",
+      "master": "garden-v05/environment/pond/masters/pond-bed.png",
+      "prompt": "Draw ONE 1024x704px scenery master. Image1 exact geometry guide, image2 pixel style only. Long shallow WATER PLANTING TRAY following a narrow 1x3 strip: low wooden plank walls, mud-and-water bed inside with few SMALL green shoots, NO big plants/crops. Ground is LONG narrow parallelogram, NOT regular diamond. Low plank rim follows entire narrow pale blue parallelogram, softly rounded corners, fill corners. Target ground vertices (0,560),(768,176),(1024,304),(256,688). Long axis slopes up-right at 1:2. Inside mostly wet brown mud and shallow blue water, only 4 tiny shoots. No bank grasses or reeds. Remove guide seams colours dot dashed red line and white background. NOTHING outside object, genuine alpha, zero glow/halo/shadow. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-b9422e16-7254-49ed-b01c-1b9d43080d3f.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-bed.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "items-sheet",
+      "master": "garden-v05/masters-items/pond/items-sheet.png",
+      "prompt": "Create one transparent 1024x1024 ITEM ICON sheet: EXACT 2x2 grid of 512px cells, NO drawn grid. One big readable object per cell centered, object base at local y440, at least48px empty margin on ALL cell edges. Match references viewed at8x, each icon ultimately64x64 with40x40px object: bold extremely simple shapes thick outline no tiny details. TOP LEFT clear water BAG thin glassy tied pouch tied top with BROWN STRING holding exactly3 tiny bronze-grey CARP FRY. TOP RIGHT same bag shape tied with RED STRING holding exactly3 bright orange GOLDFISH FRY. BOTTOM LEFT one plump orange GOLDFISH side view facing LEFT, fan tail cream belly single dark eye. BOTTOM RIGHT bundle of slimy DARK GREEN POND WEED tied with reed, broad wet highlights and TWO water drips. No labels, no shadows, no extra objects. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-63d4e571-00e0-4ef2-8b60-b6a22a2ffc42.png",
+      "referenceFiles": [
+        "garden-v05/native-items/supply_water.png",
+        "garden-v05/native-items/recipe_fish.png",
+        "garden-v05/native-items/seed_packet.png"
+      ]
+    },
+    {
+      "id": "habitat_grindylow",
+      "master": "garden-v05/masters-complete-objects/habitat_grindylow.png",
+      "prompt": "ONE centered object on transparent square 1024x1024. Grindylow habitat, EMPTY tiny rock pool nook intended native36x28. Reference1 habitat prop pixel density, reference2 native reference, reference3 family pond materials. Squat extraordinarily SIMPLE silhouette, broad flat blocks: ring of only4–5 grey stones holding little blue water with ONE strand of weed, SMALL STONE ARCH over one side to hide under. No creature, no reed clumps, no extra scenery, no plinth. Dimetric2:1. Object occupies central720x560 max. No glow halo cast shadow or texture noise. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-2a657dff-d5b7-419a-ad52-d7f3917b9c55.png",
+      "referenceFiles": [
+        "garden-v05/masters-complete-objects/habitat_kneazle.png",
+        "garden-v05/native-complete-objects/habitat_kneazle/frame-01.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "keepsake_grindylow-candidate-a",
+      "master": "docs/codex-briefs/pond-art/keepsake-grindylow-candidate-a.png",
+      "prompt": "ONE centered object on transparent 1024x1024 square. Keepsake statuette intended native44x44 including plinth. Match Kneazle keepsake reference style and low TWO STEP warm grey stone plinth, simple GOLD rectangular FRONT INSET NO LETTERING. Fixed atop plinth a pale sickly green GRINDYLOW statuette same design as third reference: TWO short sharp little horns, big dark eyes cheeky wide mouth tiny teeth, compact smooth body, TWO thin legs, thin arms raised with LONG SPINDLY FINGERS spread clearly. No dorsal spines tail fins tentacles. Simplify broad flat blocks readable at44px. Object centered within central800x800. Top-left light, no ground/drop shadow/glow. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-06d28255-649c-42c1-a760-f2dae04096c9.png",
+      "referenceFiles": [
+        "garden-v05/masters-complete-objects/keepsake_kneazle.png",
+        "garden-v05/native-complete-objects/keepsake_kneazle/frame-01.png",
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+      ]
+    },
+    {
+      "id": "pond-3-candidate-2",
+      "master": "docs/codex-briefs/pond-art/pond-3-candidate-2.png",
+      "prompt": "Edit this pond MASTER: REMOVE ALL soft glow/halo/background haze outside the pond and ALL smooth gradients inside water/stone/wood. Background must be genuine fully transparent alpha right up to hard pixel contour. Flat square pixel colour blocks only. Keep footprint, reeds, rocks, deep dark-blue centre with 3 flat stepped water bands and small front-right jetty with TWO posts. Canvas1152x768, ground corners (0,504),(640,184),(1152,440),(512,760). No shadow outside object. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-b613159f-1705-4d82-a898-17987a2d67e9.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-38f78a4c-2e51-4ca0-8d98-f27b97211e47.png"
+      ]
+    },
+    {
+      "id": "pond-3",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Create ONE flat PIXEL ART GAME TILE master 1152x768 on true transparent alpha. Reference1 gives EXACT parallelogram geometry ONLY; reference2 shows chunky grey rocks and reeds pixel shapes ONLY. Large deep pond ground corners EXACT (0,504),(640,184),(1152,440),(512,760); rim follows all four sides with softly rounded corners. Low rim grey rocks and reeds at far side. Interior drawn using ONLY solid flat swatches: light-blue shallow edge #70A8B6, then blue-violet band #6961A6, then large deep dark-blue centre #3E3B70. Clear HARD STEP boundaries. Small wooden jetty at front-right bank points into middle, four planks, two posts. ABSOLUTELY ZERO soft shadows, ZERO GLOW, ZERO haze, ZERO gradients, ZERO atmosphere, ZERO background pixels around object. Every region is a uniform opaque flat colour. Remove white backdrop and every guide line/dot. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-c055b027-dd32-4f96-8919-957dc09d652d.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-3.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "keepsake_grindylow",
+      "master": "garden-v05/masters-complete-objects/keepsake_grindylow.png",
+      "prompt": "Edit ONLY remove the TWO floating blue water drops beside statuette body. Those two areas must be completely transparent. Keep ONE connected Grindylow STATUETTE fixed to its two-step grey plinth with gold front inset, pale green two-horned body and raised long fingers EXACTLY unchanged. No free-floating objects. Genuine transparent background. No added shadows halo glow gradients. 1024x1024. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-6e624928-32a3-4c10-bc5b-7c834a1cce51.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-06d28255-649c-42c1-a760-f2dae04096c9.png"
+      ]
+    },
+    {
+      "id": "pond-3-redo-20261108-candidate-a",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Use case: stylized-concept. Draw ONE replacement game scenery MASTER: Hồ sâu pond-3. Canvas 1152x768, genuine TRANSPARENT alpha background. Image 1 pond-2 is the EXACT STYLE/FAMILY reference: copy its chunky square pixel block size relative to canvas, dark #231F2E hard outline, grassy green bank, low grass tufts, chunky grey rocks, cattails, lily pads, blue-violet water; same top-left lighting. Image 2 is GEOMETRY ONLY: ground fills its full parallelogram with softly rounded corners, vertices (0,504),(640,184),(1152,440),(512,760); back apex y184, front apex y760. Reeds/posts may rise above y184, nothing beyond canvas width. Do not draw guide lines, seams, dot, red dashes, white backdrop. CRITICAL: substantial continuous grassy green land bank ALL THE WAY AROUND all FOUR edges, INCLUDING BOTH FRONT EDGES, with low grass tufts; water NEVER meets outer outline. Denser cattails and grey rocks on back rim, low grass and just 2 or 3 rocks on front rim. Water light shallow cyan-blue rim then TWO OR THREE CLEAR HARD STEPPED blue-violet bands to deep dark-blue centre #3E3B70. Centre is moderate in size, surrounded by visibly broad stepped bands, NOT one giant empty dark field. A few lily pads and exactly TWO dark fish silhouettes in the shallows; long ribbon weed near back bank, a few short angular flat cyan ripple marks maintain visual interest. SMALL wooden jetty of exactly FOUR distinct broad planks and TWO posts starts standing firmly on FRONT-RIGHT GRASS BANK and projects a short distance toward middle, no bridge. Every region made of flat opaque square pixel blocks, no smooth shading or gradients, no anti-aliasing, no soft shadow/halo/glow outside outline, no ground shadow, no white background. Broad clean colour clusters, 2-3 shades per material. Same family as pond-2, not a different illustration style. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #3E3B70 #6961A6 #70A8B6 #B7DEE0. Candidate A: match pond-2's lively irregular grass-tuft shapes, broad violet bands; compact jetty.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-4d5efb24-ff6f-490f-98d3-ca5db42eb45e.png",
+      "referenceFiles": [
+        "garden-v05/environment/pond/masters/pond-2.png",
+        "docs/codex-briefs/pond-art/guide-pond-3.png"
+      ]
+    },
+    {
+      "id": "pond-3-redo-20261108-candidate-b-kept",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Use case: stylized-concept. Draw ONE replacement game scenery MASTER: Hồ sâu pond-3. Canvas 1152x768, genuine TRANSPARENT alpha background. Image 1 pond-2 is the EXACT STYLE/FAMILY reference: copy its chunky square pixel block size relative to canvas, dark #231F2E hard outline, grassy green bank, low grass tufts, chunky grey rocks, cattails, lily pads, blue-violet water; same top-left lighting. Image 2 is GEOMETRY ONLY: ground fills its full parallelogram with softly rounded corners, vertices (0,504),(640,184),(1152,440),(512,760); back apex y184, front apex y760. Reeds/posts may rise above y184, nothing beyond canvas width. Do not draw guide lines, seams, dot, red dashes, white backdrop. CRITICAL: substantial continuous grassy green land bank ALL THE WAY AROUND all FOUR edges, INCLUDING BOTH FRONT EDGES, with low grass tufts; water NEVER meets outer outline. Denser cattails and grey rocks on back rim, low grass and just 2 or 3 rocks on front rim. Water light shallow cyan-blue rim then TWO OR THREE CLEAR HARD STEPPED blue-violet bands to deep dark-blue centre #3E3B70. Centre is moderate in size, surrounded by visibly broad stepped bands, NOT one giant empty dark field. A few lily pads and exactly TWO dark fish silhouettes in the shallows; long ribbon weed near back bank, a few short angular flat cyan ripple marks maintain visual interest. SMALL wooden jetty of exactly FOUR distinct broad planks and TWO posts starts standing firmly on FRONT-RIGHT GRASS BANK and projects a short distance toward middle, no bridge. Every region made of flat opaque square pixel blocks, no smooth shading or gradients, no anti-aliasing, no soft shadow/halo/glow outside outline, no ground shadow, no white background. Broad clean colour clusters, 2-3 shades per material. Same family as pond-2, not a different illustration style. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #3E3B70 #6961A6 #70A8B6 #B7DEE0. Candidate B: use STRICT sprite cutout rendering: fully opaque flat pixel colours inside silhouette, alpha=0 IMMEDIATELY outside dark contour. Absolutely NO ambient rim haze, NO blurry coloured backdrop; even transparent dark haze is forbidden. Imagine a limited-palette sprite on an empty alpha canvas, not a lit illustration. Keep each water band UNIFORM single solid colour, centre EXACT solid #3E3B70, NO smooth interior lighting. Four planks ONLY, no fifth plank. Pond-2 faithful low-resolution chunks.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-a338445b-673f-4b2d-8dc8-8552a6aea972.png",
+      "referenceFiles": [
+        "garden-v05/environment/pond/masters/pond-2.png",
+        "docs/codex-briefs/pond-art/guide-pond-3.png"
+      ]
+    },
+    {
+      "id": "pond-3-redo-20261108-candidate-b-cleanup-rejected",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Precise cleanup of candidate B, NOT a redesign. Keep pond, geometry, grass bank, all rocks/reeds/fish/lilies, FOUR plank jetty with TWO posts, and same pixel size unchanged. REMOVE ALL AMBIENT SOFT GLOW/HAZE/SHADOW pixels outside the hard dark outline: every pixel outside outline must have ALPHA ZERO. There is currently a large brown/grey glow above and green glow below the pond. Delete it entirely. Background extraction, hard edged sprite cutout. Also replace smooth shading INSIDE all water bands with uniform flat opaque colours, deep centre #3E3B70. Do not add any background or shadow. Genuine transparent background, no white. No palette quantization or resizing or extra details.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-67694bcc-fdd3-438d-ac68-3fc39786b920.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-a338445b-673f-4b2d-8dc8-8552a6aea972.png"
+      ]
+    }
+  ]
+}
+
+exec
+/bin/zsh -lc "cat docs/codex-briefs/pond-art/place-masters.py; cat docs/codex-briefs/pond-art/make-guides.mjs; python3 - <<'PY'
+from PIL import Image
+from pathlib import Path
+for p in Path('garden-v05/environment/pond/masters').glob('pond-*.png'):
+ im=Image.open(p).convert('RGBA'); print(p, im.size,im.getbbox())
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ exited 1 in 0ms:
+"""Place generated artwork only; no painting, palette reduction or native export."""
+import json
+from pathlib import Path
+from PIL import Image
+
+ROOT = Path(__file__).resolve().parents[3]
+RECORDS = Path(__file__).with_name('generation-records.json')
+
+def bounds(im):
+    # Ignore faint generation residue for placement; preserve the source alpha.
+    return im.getchannel('A').point(lambda a: 255 if a >= 128 else 0).getbbox()
+
+def sheet(im, cols, rows, cell, kind):
+    out = Image.new('RGBA', (cols * cell, rows * cell))
+    pieces = []
+    for row in range(rows):
+        for col in range(cols):
+            piece = im.crop((round(col * im.width / cols), round(row * im.height / rows),
+                             round((col + 1) * im.width / cols), round((row + 1) * im.height / rows)))
+            box = bounds(piece)
+            if not box:
+                raise ValueError('Empty source cell')
+            pieces.append((row, col, piece.crop(box)))
+    if kind == 'motion':
+        scale = min(min(192 / p.width, 180 / p.height) for _, _, p in pieces)
+    for row, col, p in pieces:
+        if kind == 'items':
+            scale = min(416 / p.width, 380 / p.height)
+        elif kind == 'growth':
+            scale = min(192 / p.width, [65, 100, 135, 170][col] / p.height)
+        p = p.resize((round(p.width * scale), round(p.height * scale)), Image.Resampling.NEAREST)
+        base = 440 if kind == 'items' else 210
+        out.alpha_composite(p, (col * cell + (cell - p.width) // 2, row * cell + base - p.height))
+    return out
+
+jobs = json.loads(RECORDS.read_text())
+for job in jobs:
+    dest = ROOT / job['master']
+    if dest.exists():
+        raise FileExistsError(dest)
+    im = Image.open(job['generatedFile']).convert('RGBA')
+    ident = job['id']
+    if 'motion' in ident:
+        im = sheet(im, 4, 4, 256, 'motion')
+    elif ident == 'grindylow-growth-v01':
+        im = sheet(im, 4, 2, 256, 'growth')
+    elif ident == 'items-sheet':
+        im = sheet(im, 2, 2, 512, 'items')
+    else:
+        im = im.resize(tuple(job['size']), Image.Resampling.NEAREST)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    im.save(dest)
+    print(ident, im.size, dest.relative_to(ROOT))
+
+prompts = ROOT / 'garden-v05/environment/pond/prompts.json'
+data = json.loads(prompts.read_text()) if prompts.exists() else {'items': []}
+data['items'].extend({k: job[k] for k in ['id', 'master', 'prompt', 'generatedFile', 'referenceFiles']} for job in jobs)
+prompts.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+// Footprint guides for Codex: the exact ground parallelogram of each pond piece at master scale, tile seams drawn.
+// Usage (repo root): node docs/codex-briefs/pond-art/make-guides.mjs
+import {createRequire} from 'node:module';
+import {POND_SPECS} from '../../../garden-v05/build-pond-art.mjs';
+const sharp = createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+for (const s of POND_SPECS) {
+  const k = s.masterScale, [b, a] = s.footprint, {x: cx, y: cy} = s.groundCentre;
+  const pt = (c, r) => [(cx + (c - r) * 32) * k, (cy + (c + r) * 16) * k]; // c in [-a/2, a/2], r in [-b/2, b/2]
+  const poly = [pt(-a / 2, -b / 2), pt(a / 2, -b / 2), pt(a / 2, b / 2), pt(-a / 2, b / 2)].map(p => p.join(',')).join(' ');
+  let seams = '';
+  for (let c = -a / 2 + 1; c < a / 2; c++) seams += `<line x1="${pt(c, -b / 2)[0]}" y1="${pt(c, -b / 2)[1]}" x2="${pt(c, b / 2)[0]}" y2="${pt(c, b / 2)[1]}"/>`;
+  for (let r = -b / 2 + 1; r < b / 2; r++) seams += `<line x1="${pt(-a / 2, r)[0]}" y1="${pt(-a / 2, r)[1]}" x2="${pt(a / 2, r)[0]}" y2="${pt(a / 2, r)[1]}"/>`;
+  const W = s.width * k, H = s.height * k, top = (cy - (a + b) * 8) * k;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="#ffffff"/>
+<line x1="0" y1="${top}" x2="${W}" y2="${top}" stroke="#C75B4B" stroke-width="2" stroke-dasharray="12 8"/>
+<polygon points="${poly}" fill="#B7DEE0" stroke="#231F2E" stroke-width="${k}"/><g stroke="#70A8B6" stroke-width="2">${seams}</g>
+<circle cx="${s.pivotX * k}" cy="${s.pivotY * k}" r="${k * 1.5}" fill="#C75B4B"/></svg>`;
+  await sharp(Buffer.from(svg)).png().toFile(`docs/codex-briefs/pond-art/guide-${s.id}.png`);
+  console.log(s.id, W + '×' + H, 'native', s.width + '×' + s.height, '×' + k);
+}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'PIL'
+
+codex
+Các guide mới tăng diện tích mặt nước, nên tiểu nữ đang giữ nét đá và lau sậy ở mật độ pixel cũ. Ba tầng sẽ tối dần: ao có bóng cá, hồ rong có mắt dưới nước và gỗ chìm, hồ sâu có tâm gần đen cùng cầu gỗ mục.
+exec
+/bin/zsh -lc "node -e 'const sharp=require(\"/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp\"); sharp(\"/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-b141e51f-47a9-4d0e-a53e-4feffbb40364.png\").metadata().then(console.log)'" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+{
+  format: 'png',
+  mediaType: 'image/png',
+  width: 1561,
+  height: 1008,
+  space: 'srgb',
+  channels: 4,
+  depth: 'uchar',
+  density: 72,
+  isProgressive: false,
+  isPalette: false,
+  bitsPerSample: 8,
+  hasProfile: false,
+  hasAlpha: true,
+  autoOrient: { width: 1561, height: 1008 }
+}
+
+codex
+Đã có bản vẽ đầu tiên của 3/3 tầng, đủ các chi tiết chính và sắc nước tối dần. Tiểu nữ đang sửa lượt cuối để làm các mảng màu phẳng hơn và thể hiện rõ khoảng ván bị thiếu ở cầu gỗ hồ sâu, trước khi ghép ảnh native.
+exec
+/bin/zsh -lc 'cat /Users/thachanh/.codex/skills/ponytail/SKILL.md' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+---
+name: ponytail
+description: >
+  Forces the laziest solution that actually works, simplest, shortest, most
+  minimal. Channels a senior dev who has seen everything: question whether the
+  task needs to exist at all (YAGNI), reach for the standard library before
+  custom code, native platform features before dependencies, one line before
+  fifty. Supports intensity levels: lite, full (default), ultra. Use on ANY
+  coding task: writing, adding, refactoring, fixing, reviewing, or designing
+  code, and choosing libraries or dependencies. Also use whenever the user
+  says "ponytail", "be lazy", "lazy mode", "simplest solution", "minimal
+  solution", "yagni", "do less", or "shortest path", or complains about
+  over-engineering, bloat, boilerplate, or unnecessary dependencies. Do NOT
+  use for non-coding requests (general knowledge, prose, translation,
+  summaries, recipes).
+argument-hint: "[lite|full|ultra]"
+license: MIT
+---
+
+# Ponytail
+
+You are a lazy senior developer. Lazy means efficient, not careless. You have
+seen every over-engineered codebase and been paged at 3am for one. The best
+code is the code never written.
+
+## Persistence
+
+ACTIVE EVERY RESPONSE. No drift back to over-building. Still active if
+unsure. Off only: "stop ponytail" / "normal mode". Default: **full**.
+Switch: `/ponytail lite|full|ultra`.
+
+## The ladder
+
+Stop at the first rung that holds:
+
+1. **Does this need to exist at all?** Speculative need = skip it, say so in one line. (YAGNI)
+2. **Already in this codebase?** A helper, util, type, or pattern that already lives here → reuse it. Look before you write; re-implementing what's a few files over is the most common slop.
+3. **Stdlib does it?** Use it.
+4. **Native platform feature covers it?** `<input type="date">` over a picker lib, CSS over JS, DB constraint over app code.
+5. **Already-installed dependency solves it?** Use it. Never add a new one for what a few lines can do.
+6. **Can it be one line?** One line.
+7. **Only then:** the minimum code that works.
+
+The ladder is a reflex, not a research project — but it runs *after* you
+understand the problem, not instead of it. Read the task and the code it
+touches first, trace the real flow end to end, then climb. Two rungs work →
+take the higher one and move on. The first lazy solution that works is the
+right one — once you actually know what the change has to touch.
+
+**Bug fix = root cause, not symptom.** A report names a symptom. Before you
+edit, grep every caller of the function you're about to touch. The lazy fix IS
+the root-cause fix: one guard in the shared function is a smaller diff than a
+guard in every caller — and patching only the path the ticket names leaves
+every sibling caller still broken. Fix it once, where all callers route through.
+
+## Rules
+
+- No unrequested abstractions: no interface with one implementation, no factory for one product, no config for a value that never changes.
+- No boilerplate, no scaffolding "for later", later can scaffold for itself.
+- Deletion over addition. Boring over clever, clever is what someone decodes at 3am.
+- Fewest files possible. Shortest working diff wins — but only once you understand the problem. The smallest change in the wrong place isn't lazy, it's a second bug.
+- Complex request? Ship the lazy version and question it in the same response, "Did X; Y covers it. Need full X? Say so." Never stall on an answer you can default.
+- Two stdlib options, same size? Take the one that's correct on edge cases. Lazy means writing less code, not picking the flimsier algorithm.
+- Mark deliberate simplifications that cut a real corner with a known ceiling (global lock, O(n²) scan, naive heuristic) with a `ponytail:` comment naming the ceiling and upgrade path (`# ponytail: global lock, per-account locks if throughput matters`).
+
+## Output
+
+Code first. Then at most three short lines: what was skipped, when to add it.
+No essays, no feature tours, no design notes. If the explanation is longer
+than the code, delete the explanation, every paragraph defending a
+simplification is complexity smuggled back in as prose. Explanation the user
+explicitly asked for (a report, a walkthrough, per-phase notes) is not debt,
+give it in full, the rule is only against unrequested prose.
+
+Pattern: `[code] → skipped: [X], add when [Y].`
+
+## Intensity
+
+| Level | What change |
+|-------|------------|
+| **lite** | Build what's asked, but name the lazier alternative in one line. User picks. |
+| **full** | The ladder enforced. Stdlib and native first. Shortest diff, shortest explanation. Default. |
+| **ultra** | YAGNI extremist. Deletion before addition. Ship the one-liner and challenge the rest of the requirement in the same breath. |
+
+Example: "Add a cache for these API responses."
+- lite: "Done, cache added. FYI: `functools.lru_cache` covers this in one line if you'd rather not own a cache class."
+- full: "`@lru_cache(maxsize=1000)` on the fetch function. Skipped custom cache class, add when lru_cache measurably falls short."
+- ultra: "No cache until a profiler says so. When it does: `@lru_cache`. A hand-rolled TTL cache class is a bug farm with a hit rate."
+
+## When NOT to be lazy
+
+Never simplify away: input validation at trust boundaries, error handling
+that prevents data loss, security measures, accessibility basics, anything
+explicitly requested. User insists on the full version → build it, no
+re-arguing.
+
+Never lazy about understanding the problem. The ladder shortens the
+solution, never the reading. Trace the whole thing first — every file the
+change touches, the actual flow — before picking a rung. Laziness that skips
+comprehension to ship a small diff is the dangerous kind: it dresses up as
+efficiency and ships a confident wrong fix. Read fully, then be lazy.
+
+Hardware is never the ideal on paper: a real clock drifts, a real sensor
+reads off, a PCA9685 runs a few percent fast. Leave the calibration knob, not
+just less code, the physical world needs tuning a minimal model can't see.
+
+Lazy code without its check is unfinished. Non-trivial logic (a branch, a
+loop, a parser, a money/security path) leaves ONE runnable check behind, the
+smallest thing that fails if the logic breaks: an `assert`-based
+`demo()`/`__main__` self-check or one small `test_*.py`. No frameworks, no
+fixtures, no per-function suites unless asked. Trivial one-liners need no
+test, YAGNI applies to tests too.
+
+## Boundaries
+
+Ponytail governs what you build, not how you talk (pair with Caveman for
+terse prose). "stop ponytail" / "normal mode": revert. Level persists until
+changed or session end.
+
+The shortest path to done is the right path.
+
+exec
+/bin/zsh -lc 'cat docs/codex-briefs/pond-art/contact-sheet.mjs; shasum -a 256 garden-v05/environment/pond/pond-bed.png docs/codex-briefs/pond-art/guide-pond-{1,2,3}.png garden-v05/build-pond-art.mjs' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+// Contact sheet of the pond natives at 3× nearest-neighbour on #D6D8BF (rows: pond tiers + bed, items + habitat +
+// keepsake + 16×16 icons, grindylow left frames, grindylow right frames). Usage (repo root):
+// node docs/codex-briefs/pond-art/contact-sheet.mjs
+import fs from 'node:fs/promises';import {createRequire} from 'node:module';
+const sharp=createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+const g='garden-v05/',S=3,GAP=12;
+const {POND_SCENERY,POND_ART}=await import('../../../'+g+'pond-art.mjs');
+const {ICONS}=await import('../../../'+g+'pixel-icons.mjs'),INK=Object.fromEntries([...(await fs.readFile(g+'pixel-icons.mjs','utf8')).match(/const INK = Object\.freeze\(\{([\s\S]*?)\}\);/)[1].matchAll(/(\w): '(#\w{6})'/g)].map(m=>[m[1],m[2]]));
+const pond=JSON.parse(await fs.readFile(g+'creature-motion-assets/pond-creatures.json','utf8')).items[0];
+const icon16=async grid=>{const buf=Buffer.alloc(16*16*4);grid.forEach((row,y)=>[...row].forEach((ch,x)=>{if(ch==='.')return;const h=INK[ch];buf.set([1,3,5].map(i=>parseInt(h.slice(i,i+2),16)).concat(255),(y*16+x)*4);}));return sharp(buf,{raw:{width:16,height:16,channels:4}}).png().toBuffer();};
+const rows=[
+ Object.values(POND_SCENERY).map(s=>g+s.file),
+ [...Object.values(POND_ART).map(s=>g+s.file),g+'native-complete-objects/habitat_grindylow/frame-01.png',g+'native-complete-objects/keepsake_grindylow/frame-01.png'],
+ pond.frames.left.map(f=>g+'creature-motion-assets/'+f.file),
+ pond.frames.right.map(f=>g+'creature-motion-assets/'+f.file),
+];
+rows[1].push(...await Promise.all(['pond','net','rod','algae'].filter(id=>ICONS[id]).map(id=>icon16(ICONS[id]))));
+const layers=[];let y=GAP,width=0;
+for(const row of rows){let x=GAP,h=0;for(const input of row){const m=await sharp(input).metadata(),w=m.width*S;layers.push({input:await sharp(input).resize(w,m.height*S,{kernel:'nearest'}).png().toBuffer(),left:x,top:y});x+=w+GAP;h=Math.max(h,m.height*S);if(x>1800){width=Math.max(width,x);x=GAP;y+=h+GAP;h=0;}}width=Math.max(width,x);y+=h+GAP;}
+await sharp({create:{width,height:y,channels:4,background:'#D6D8BF'}}).composite(layers).png().toFile('docs/codex-briefs/pond-art-01-preview.png');
+console.log('docs/codex-briefs/pond-art-01-preview.png',width+'×'+y);
+15c4a9d4dd25632cd841dc746325b84ed6ed2f8340e6b04dc3b06b0d9bf67143  garden-v05/environment/pond/pond-bed.png
+6420d8f6a522525e74e2be339490b888b99f295d614ee82bbcce4c9064a2d946  docs/codex-briefs/pond-art/guide-pond-1.png
+17bfa8848c91acfbffe3bbdf79c68f3449ffd93023c1641685955b8ebc7c4e12  docs/codex-briefs/pond-art/guide-pond-2.png
+80d749e2971e67f7c903a907f7aa4daac0bf6548d4483fe4ad91af1fe5c67bdf  docs/codex-briefs/pond-art/guide-pond-3.png
+b7befefc1b429ff83061f96fba338c5438cd9d55d1aa1ebb2f0f22856c48a5be  garden-v05/build-pond-art.mjs
+
+codex
+Tiểu nữ dùng thêm skill `ponytail` cho script bàn giao ngắn: chỉ đặt ảnh bằng nearest-neighbour, kiểm tra kích thước/alpha và tạo contact sheet. Script không chạy builder hoặc xuất sprite game.
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges/docs/codex-briefs/pond-art/place-pond-03.mjs
+diff --git a/docs/codex-briefs/pond-art/place-pond-03.mjs b/docs/codex-briefs/pond-art/place-pond-03.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..8141674f3e2fab009b2cce6dc498a68a582fdb47
+--- /dev/null
++++ b/docs/codex-briefs/pond-art/place-pond-03.mjs
+@@ -0,0 +1,27 @@
++// Placement/contact sheet only; no painting, palette reduction or game export.
++// Run from repository root: node docs/codex-briefs/pond-art/place-pond-03.mjs
++import fs from 'node:fs/promises';
++import assert from 'node:assert/strict';
++import {createRequire} from 'node:module';
++const sharp = createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
++const jobs = JSON.parse(await fs.readFile(new URL('pond-03-records.json', import.meta.url), 'utf8'));
++const layers = [], checks = [];
++let left = 24;
++for (const job of jobs.filter(j => j.kept)) {
++  const [width, height] = job.size;
++  const placed = await sharp(job.generatedFile).resize(width, height, {fit:'fill', kernel:'nearest'}).png().toBuffer();
++  await fs.writeFile(job.master, placed);
++  const {data, info} = await sharp(placed).ensureAlpha().raw().toBuffer({resolveWithObject:true});
++  assert.equal(info.width, width); assert.equal(info.height, height);
++  let transparent = 0, opaque = 0, partial = 0;
++  for (let p = 3; p < data.length; p += 4) {
++    if (data[p] === 0) transparent++; else if (data[p] === 255) opaque++; else partial++;
++  }
++  assert(transparent > 0 && opaque > 0, 'Must have real alpha and visible artwork');
++  checks.push({id:job.id, master:job.master, width, height, transparent, opaque, partial});
++  layers.push({input:await sharp(placed).resize(width/job.scale, height/job.scale, {kernel:'nearest'}).png().toBuffer(), left, top:24 + 298 - height/job.scale});
++  left += width/job.scale + 24;
++}
++assert.equal(layers.length, 3);
++await sharp({create:{width:left, height:346, channels:4, background:'#5E7B3B'}}).composite(layers).png().toFile('docs/codex-briefs/pond-art-03-preview.png');
++console.log(JSON.stringify(checks, null, 2));
+
+codex
+Đang chốt 3/3 master và ảnh ghép đúng tỷ lệ ×1/4, ×1/3, ×1/3. Tiểu nữ sẽ ghi rõ trong báo cáo kết quả kiểm tra alpha và những giới hạn của ảnh sinh, để Claude có bằng chứng khi giảm về sprite native.
+exec
+/bin/zsh -lc "node --input-type=module - <<'JS'
+import {createRequire} from 'node:module';
+const sharp=createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+const path='/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-bd1f1f4d-3be7-445f-8b3e-6ef3b9e78726.png';
+const {data,info}=await sharp(path).ensureAlpha().raw().toBuffer({resolveWithObject:true});let a0=0,a255=0,partial=0;for(let i=3;i<data.length;i+=4){if("'!data[i])a0++;else if(data[i]===255)a255++;else partial++;} console.log({size:[info.width,info.height],a0,a255,partial});
+JS' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+{ size: [ 1560, 1008 ], a0: 836198, a255: 868, partial: 735414 }
+
+exec
+/bin/zsh -lc 'git diff --stat; git status --short' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+ docs/codex-briefs/pond-art/guide-pond-1.png | Bin 13818 -> 19892 bytes
+ docs/codex-briefs/pond-art/guide-pond-2.png | Bin 18423 -> 20205 bytes
+ docs/codex-briefs/pond-art/guide-pond-3.png | Bin 20084 -> 29056 bytes
+ garden-v05/balance-data.mjs                 |   2 +-
+ garden-v05/build-pond-art.mjs               |   3 ++-
+ garden-v05/decor-placement-geometry.mjs     |   4 ++--
+ garden-v05/decor-placement-ui.mjs           |  22 ++++++++++------------
+ garden-v05/default-decor.mjs                |  23 +++++++++++++----------
+ garden-v05/garden-creatures-2.test.mjs      |  18 +++++++++++-------
+ garden-v05/garden-growth.mjs                |  25 ++++++++++++++++++++++---
+ garden-v05/garden-growth.test.mjs           |   3 ++-
+ garden-v05/garden-pond-ui.test.mjs          |   2 +-
+ garden-v05/scene-renderer.mjs               |   9 ++++++---
+ 13 files changed, 70 insertions(+), 41 deletions(-)
+ M docs/codex-briefs/pond-art/guide-pond-1.png
+ M docs/codex-briefs/pond-art/guide-pond-2.png
+ M docs/codex-briefs/pond-art/guide-pond-3.png
+ M garden-v05/balance-data.mjs
+ M garden-v05/build-pond-art.mjs
+ M garden-v05/decor-placement-geometry.mjs
+ M garden-v05/decor-placement-ui.mjs
+ M garden-v05/default-decor.mjs
+ M garden-v05/garden-creatures-2.test.mjs
+ M garden-v05/garden-growth.mjs
+ M garden-v05/garden-growth.test.mjs
+ M garden-v05/garden-pond-ui.test.mjs
+ M garden-v05/scene-renderer.mjs
+?? docs/codex-briefs/pond-art-03-last.log
+?? docs/codex-briefs/pond-art-03.md
+?? docs/codex-briefs/pond-art/place-pond-03.mjs
+
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges/docs/codex-briefs/pond-art/pond-03-records.json
+diff --git a/docs/codex-briefs/pond-art/place-pond-03.mjs b/docs/codex-briefs/pond-art/place-pond-03.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..8141674f3e2fab009b2cce6dc498a68a582fdb47
+--- /dev/null
++++ b/docs/codex-briefs/pond-art/place-pond-03.mjs
+@@ -0,0 +1,27 @@
++// Placement/contact sheet only; no painting, palette reduction or game export.
++// Run from repository root: node docs/codex-briefs/pond-art/place-pond-03.mjs
++import fs from 'node:fs/promises';
++import assert from 'node:assert/strict';
++import {createRequire} from 'node:module';
++const sharp = createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
++const jobs = JSON.parse(await fs.readFile(new URL('pond-03-records.json', import.meta.url), 'utf8'));
++const layers = [], checks = [];
++let left = 24;
++for (const job of jobs.filter(j => j.kept)) {
++  const [width, height] = job.size;
++  const placed = await sharp(job.generatedFile).resize(width, height, {fit:'fill', kernel:'nearest'}).png().toBuffer();
++  await fs.writeFile(job.master, placed);
++  const {data, info} = await sharp(placed).ensureAlpha().raw().toBuffer({resolveWithObject:true});
++  assert.equal(info.width, width); assert.equal(info.height, height);
++  let transparent = 0, opaque = 0, partial = 0;
++  for (let p = 3; p < data.length; p += 4) {
++    if (data[p] === 0) transparent++; else if (data[p] === 255) opaque++; else partial++;
++  }
++  assert(transparent > 0 && opaque > 0, 'Must have real alpha and visible artwork');
++  checks.push({id:job.id, master:job.master, width, height, transparent, opaque, partial});
++  layers.push({input:await sharp(placed).resize(width/job.scale, height/job.scale, {kernel:'nearest'}).png().toBuffer(), left, top:24 + 298 - height/job.scale});
++  left += width/job.scale + 24;
++}
++assert.equal(layers.length, 3);
++await sharp({create:{width:left, height:346, channels:4, background:'#5E7B3B'}}).composite(layers).png().toFile('docs/codex-briefs/pond-art-03-preview.png');
++console.log(JSON.stringify(checks, null, 2));
+diff --git a/docs/codex-briefs/pond-art/pond-03-records.json b/docs/codex-briefs/pond-art/pond-03-records.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..455d9103012706fa964d6edea281f7e4ea384135
+--- /dev/null
++++ b/docs/codex-briefs/pond-art/pond-03-records.json
+@@ -0,0 +1,86 @@
++[
++  {
++    "id": "pond-1-bigger-03-initial",
++    "master": "garden-v05/environment/pond/masters/pond-1.png",
++    "prompt": "Use case: stylized-concept. Production game sprite master Ao cá pond-1, redraw larger and a little eerie at Forbidden Forest edge. Reference image 1 is GEOMETRY ONLY exact guide 1152x744. Ground corners (0,480),(640,160),(1152,416),(512,736). Fill that long 4x5-tile parallelogram completely with softly rounded corners; bank must follow all four edges, no large empty corners. Upright reeds/rocks may rise above it, nothing outside canvas width. Reference 2 old pond-1 and reference 3 pond-2 are STYLE ONLY: same chunky grey rock shapes and dark outlines, but MORE TILES of water, not enlarged reeds or pixels. Native tile 64x32 enlarged FOUR times; each sprite pixel a flat 4x4 square. Request output canvas1152x744 or identical aspect. Real transparent alpha background right up to hard outline.\nDraw continuous narrow mossy dark-green shore all four edges; murky dark blue-violet/teal water with only thin lighter shallow rim, THREE or FOUR readable dark fish shadows distributed across roomy water, THREE sparse grey-green lily pads with no flowers, a few short angular subdued ripple lines. Mossy dark grey rocks and dark dead cattail clumps around back rim, low sparse grass at front. Cozy readable but eerie, least dark of three tiers. No cheerful bright green or cyan expanses. Main water #41465C and #3E3B70, darkest fish #231F2E. Top-left light. EXACT flat square pixel art clusters, 2-3 shades per material, no smooth interior shading. Clean hard outline #231F2E. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No guide lines tile seams dot red line or white backdrop. NO anti-aliasing gradient glow haze dithering texture noise text shadow skull gore. This is a hard-edged transparent sprite cutout, never a lit illustration.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-b141e51f-47a9-4d0e-a53e-4feffbb40364.png",
++    "referenceFiles": [
++      "docs/codex-briefs/pond-art/guide-pond-1.png",
++      "garden-v05/environment/pond/masters/pond-1.png",
++      "garden-v05/environment/pond/masters/pond-2.png"
++    ],
++    "kept": false
++  },
++  {
++    "id": "pond-2-bigger-03-initial",
++    "master": "garden-v05/environment/pond/masters/pond-2.png",
++    "prompt": "Use case: stylized-concept. Draw ONE production game master Hồ rong pond-2, bigger eerie forest pond. Input1 GEOMETRY ONLY guide1152x726 ground corners (0,480),(672,144),(1152,384),(480,720). Fill EXACT entire long parallelogram with softly rounded corners. Shore follows all four edges, no big empty corners or outside spill. Reeds/rocks can stand above back edge into upper transparent space. Input2 old pond-2 STYLE ONLY chunky square pixel rocks/cattails, not its bright flowers/colors; input3 old pond-1 same family. Canvas1152x726 matching guide. Native tile64x32 enlarged THREE times, individual flat square sprite pixel3x3; enlarge water AREA not pixel size or prop size. Larger 5x7-tile pond, roomy surface with distributed small details. Continuous narrow dark moss-green shore around all four edges, mossy dark grey rocks, dense clumps of BLACK DEAD CATTAILS and dark reeds along far rim, sparse low front tufts. Murky blue-black/dark teal water, thin subdued lighter shallow rim, dark long RIBBON WEED visibly rising from depths near back and sides. One HALF SUNK TWISTED ROTTING LOG partly in water at left rim. TWO small PALE EYES beside each other just BELOW surface toward back-right, subtle dark fish shadow and faint bubble trail in open water. THREE sparse grey-green lily pads NO FLOWERS. A few angular dark grey-blue short ripples spread over water. Mood cozy readable a little eerie Forbidden Forest; darker than fish pond, not horror. Flat dark-water color #41465C/#3E3B70 and #24483F, deep patches#231F2E. Hard flat color steps; only2-3 shades per material. Isometric2:1, top-left light, dark outline#231F2E. No glow haze shadow background blur gradients antialiasing dithering speckle noise text guide seams dot red line skulls gore or cheerful colors. Genuine transparent ALPHA immediately outside hard sprite outline, no ground shadow. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-cea32dc4-67ea-4645-946e-4b200978432e.png",
++    "referenceFiles": [
++      "docs/codex-briefs/pond-art/guide-pond-2.png",
++      "garden-v05/environment/pond/masters/pond-2.png",
++      "garden-v05/environment/pond/masters/pond-1.png"
++    ],
++    "kept": false
++  },
++  {
++    "id": "pond-3-bigger-03-initial",
++    "master": "garden-v05/environment/pond/masters/pond-3.png",
++    "prompt": "Use case: stylized-concept. Draw ONE production game sprite master Hồ sâu pond-3, a large lake-like dark eerie pond at Forbidden Forest. Input1 is exact GEOMETRY guide1440x894: ground vertices (0,600),(864,168),(1440,456),(576,888). Fill this entire elongated 6x9-tile parallelogram, shore follows all four edges with gently rounded corners, no big empty corners, no outside spill. Tall reeds rocks/posts may rise above the back edges. Input2 old pond-3 and input3 old pond-2 are STYLE ONLY chunky pixel shape family; REMOVE bright flowers colors and glow. Same pixel density as smaller ponds: native64x32 tile enlarged THREE times, one flat square3x3 per sprite pixel; increase tiles of water not props or pixel size. Genuine TRANSPARENT alpha canvas1440x894, zero backdrop or drop shadow. Broad roomy water area with distributed small ripples fish silhouettes fallen leaf faint bubbles, not blank. A narrow dark mossy shore all FOUR edges, dark grey mossy rocks and BLACK dead reeds/cattails on far rim, low sparse front grass. Water has a THIN light grey-teal shallow band, then hard STEPPED bands of #41465C and #3E3B70, large deep almost-black #231F2E centre. Darkest tier, but cozy-readable rather than horror. A SMALL ROCK ISLET off-centre left, two low mossy rocks with dark outline, no tree. TWO sparse grey-green lily pads, no flowers. One OLD ROTTING WOODEN JETTY projects from FRONT-RIGHT shore diagonally toward middle: deck FOUR planks WIDE, small wooden posts, one clear MISSING PLANK with water visible through the gap. Four parallel plank positions across width, only THREE weathered planks remain, dark gap in fourth. Jetty is dark muted brown #735044/#4A3042, damaged uneven end, no shiny orange wood, no railings or bridge. A twisted dead root at far edge, two faint pale eyes beneath water near far reeds. Every surface solid flat square pixel clusters2-3 shades/material. Light top-left, strict isometric2:1, dark outline#231F2E. NO antialiasing gradients glow haze noise dithering smooth shading texture text guide lines seams dots dashes white background skulls gore. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-56f8208c-d616-4de1-bc71-78613a99cdce.png",
++    "referenceFiles": [
++      "docs/codex-briefs/pond-art/guide-pond-3.png",
++      "garden-v05/environment/pond/masters/pond-3.png",
++      "garden-v05/environment/pond/masters/pond-2.png"
++    ],
++    "kept": false
++  },
++  {
++    "id": "pond-1-bigger-03-cleanup",
++    "master": "garden-v05/environment/pond/masters/pond-1.png",
++    "prompt": "Precise sprite cleanup of reference image1, pond-1. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn.  Canvas 1152x744. Real transparent background, no text.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-bd1f1f4d-3be7-445f-8b3e-6ef3b9e78726.png",
++    "referenceFiles": [
++      "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-b141e51f-47a9-4d0e-a53e-4feffbb40364.png",
++      "docs/codex-briefs/pond-art/guide-pond-1.png"
++    ],
++    "size": [
++      1152,
++      744
++    ],
++    "scale": 4,
++    "kept": true
++  },
++  {
++    "id": "pond-2-bigger-03-cleanup",
++    "master": "garden-v05/environment/pond/masters/pond-2.png",
++    "prompt": "Precise sprite cleanup of reference image1, pond-2. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn.  Canvas 1152x726. Real transparent background, no text.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-6f263112-87c2-4c00-b9b6-59aceef8dc11.png",
++    "referenceFiles": [
++      "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-cea32dc4-67ea-4645-946e-4b200978432e.png",
++      "docs/codex-briefs/pond-art/guide-pond-2.png"
++    ],
++    "size": [
++      1152,
++      726
++    ],
++    "scale": 3,
++    "kept": true
++  },
++  {
++    "id": "pond-3-bigger-03-cleanup",
++    "master": "garden-v05/environment/pond/masters/pond-3.png",
++    "prompt": "Precise sprite cleanup of reference image1, pond-3. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn. Repair jetty ONLY as well: old rotten four-plank deck from front-right bank toward middle, REMOVE one entire INTERIOR plank so an unmistakable broad dark WATER GAP remains between planks; keep posts, ragged ends. Centre is flat almost-black#231F2E, surrounding hard-step#3E3B70/#41465C, thin shallow light rim. Canvas 1440x894. Real transparent background, no text.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-6e5e3eef-edac-4a59-944e-5b949d63394a.png",
++    "referenceFiles": [
++      "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-56f8208c-d616-4de1-bc71-78613a99cdce.png",
++      "docs/codex-briefs/pond-art/guide-pond-3.png"
++    ],
++    "size": [
++      1440,
++      894
++    ],
++    "scale": 3,
++    "kept": true
++  }
++]
+
+exec
+/bin/zsh -lc 'node docs/codex-briefs/pond-art/place-pond-03.mjs' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 112ms:
+[
+  {
+    "id": "pond-1-bigger-03-cleanup",
+    "master": "garden-v05/environment/pond/masters/pond-1.png",
+    "width": 1152,
+    "height": 744,
+    "transparent": 455575,
+    "opaque": 515,
+    "partial": 400998
+  },
+  {
+    "id": "pond-2-bigger-03-cleanup",
+    "master": "garden-v05/environment/pond/masters/pond-2.png",
+    "width": 1152,
+    "height": 726,
+    "transparent": 380268,
+    "opaque": 766,
+    "partial": 455318
+  },
+  {
+    "id": "pond-3-bigger-03-cleanup",
+    "master": "garden-v05/environment/pond/masters/pond-3.png",
+    "width": 1440,
+    "height": 894,
+    "transparent": 568559,
+    "opaque": 691,
+    "partial": 718110
+  }
+]
+
+exec
+/bin/zsh -lc "node --input-type=module - <<'JS'
+import fs from 'node:fs/promises';
+const file='garden-v05/environment/pond/prompts.json';
+const data=JSON.parse(await fs.readFile(file,'utf8'));
+const jobs=JSON.parse(await fs.readFile('docs/codex-briefs/pond-art/pond-03-records.json','utf8'));
+for(const job of jobs){if("'!data.items.some(x=>x.id===job.id)){const {id,master,prompt,generatedFile,referenceFiles}=job;data.items.push({id,master,prompt,generatedFile,referenceFiles});}}
+await fs.writeFile(file,JSON.stringify(data,null,2)+'"'\\n');
+JS" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+exec
+/bin/zsh -lc "node --input-type=module - <<'JS'
+import {createRequire} from 'node:module';
+const sharp=createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+for(let i=1;i<=3;i++){const {data}=await sharp("'`garden-v05/environment/pond/masters/pond-${i}.png`).ensureAlpha().raw().toBuffer({resolveWithObject:true});const hist=new Map(), colors=new Set();for(let p=0;p<data.length;p+=4){const a=data[p+3];hist.set(a,(hist.get(a)||0)+1);if(a)colors.add(`${data[p]},${data[p+1]},${data[p+2]}`);}console.log(i,{alphaCommon:[...hist].sort((a,b)=>b[1]-a[1]).slice(0,6),visibleRGB:colors.size});}
+JS
+shasum -a 256 garden-v05/environment/pond/pond-bed.png docs/codex-briefs/pond-art/guide-pond-{1,2,3}.png' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 118ms:
+1 {
+  alphaCommon: [
+    [ 0, 455575 ],
+    [ 253, 319255 ],
+    [ 254, 40039 ],
+    [ 252, 12751 ],
+    [ 1, 8396 ],
+    [ 251, 4251 ]
+  ],
+  visibleRGB: 33029
+}
+2 {
+  alphaCommon: [
+    [ 0, 380268 ],
+    [ 253, 377505 ],
+    [ 254, 32541 ],
+    [ 252, 13366 ],
+    [ 1, 6672 ],
+    [ 251, 5081 ]
+  ],
+  visibleRGB: 27284
+}
+3 {
+  alphaCommon: [
+    [ 0, 568559 ],
+    [ 253, 553467 ],
+    [ 252, 47363 ],
+    [ 1, 38106 ],
+    [ 251, 11911 ],
+    [ 254, 11363 ]
+  ],
+  visibleRGB: 44488
+}
+15c4a9d4dd25632cd841dc746325b84ed6ed2f8340e6b04dc3b06b0d9bf67143  garden-v05/environment/pond/pond-bed.png
+6420d8f6a522525e74e2be339490b888b99f295d614ee82bbcce4c9064a2d946  docs/codex-briefs/pond-art/guide-pond-1.png
+17bfa8848c91acfbffe3bbdf79c68f3449ffd93023c1641685955b8ebc7c4e12  docs/codex-briefs/pond-art/guide-pond-2.png
+80d749e2971e67f7c903a907f7aa4daac0bf6548d4483fe4ad91af1fe5c67bdf  docs/codex-briefs/pond-art/guide-pond-3.png
+
+codex
+Đã lưu 3/3 master đúng kích thước và xem ảnh ghép trên nền cỏ. Kiểm tra cho thấy ảnh có alpha thật, nhưng công cụ sinh vẫn để màu chuyển nhẹ và alpha bán trong suốt dù đã sửa một lượt; tiểu nữ sẽ ghi rõ giới hạn này, không xác nhận chúng đã đạt chuẩn pixel native. Guide và `pond-bed.png` giữ nguyên hash.
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges/docs/codex-briefs/pond-art-03-report.md
+diff --git a/docs/codex-briefs/pond-art-03-report.md b/docs/codex-briefs/pond-art-03-report.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..9f98d54692cdd7a260adeecf93fa9584c194403c
+--- /dev/null
++++ b/docs/codex-briefs/pond-art-03-report.md
+@@ -0,0 +1,35 @@
++# Pond art 03 — larger, darker masters
++
++2026-11-08. Built-in ImageGen, one initial generation and one targeted cleanup per pond. Three replacement masters saved; no native sprite export, builder/importer, commit, push or deployment performed.
++
++| Master | Canvas | Drawing |
++|---|---|---|
++| `garden-v05/environment/pond/masters/pond-1.png` | 1152×744 RGBA | Ao cá, 4×5 tiles: murky blue-violet water, four fish shadows, three sparse lily pads, mossy grey rocks and dark cattails; least dark tier. |
++| `garden-v05/environment/pond/masters/pond-2.png` | 1152×726 RGBA | Hồ rong, 5×7 tiles: darker water, denser back reeds, long submerged ribbon weed, half-sunk twisted log, paired pale eyes, fish and a bubble trail. |
++| `garden-v05/environment/pond/masters/pond-3.png` | 1440×894 RGBA | Hồ sâu, 6×9 tiles: thin shallow rim, stepped blue-violet water to an almost-black centre, small rock islet, dead root and pale eyes, dark back reeds and mossy rocks; rotten front-right jetty with posts and a conspicuous missing-plank gap. |
++
++The cleanup candidates were retained: clearer broad colour clusters and outlines, less mottled detail, and a readable missing plank in the third pond. The three share rock, cattail, lily-pad and water motifs; the larger ponds add water area. Each generation received its new guide as a reference along with the old master family. Ground silhouettes were visually compared with the guides; this is not a pixel-exact geometry certification. No guide seams, red dashes, pivot dots, lettering or flowers are visible.
++
++## Preview and reproduction
++
++`docs/codex-briefs/pond-art-03-preview.png` is 1248×346: three masters side by side, nearest-neighbour reductions ×1/4, ×1/3, ×1/3 (288×186, 384×242, 480×298), bottom-aligned on solid grass green `#5E7B3B`. Visually inspected at native size.
++
++`node docs/codex-briefs/pond-art/place-pond-03.mjs` reproduces the master placement and contact sheet with the existing Sharp dependency. It only resizes by nearest-neighbour and saves onto the target transparent canvases; it does not paint, quantize, threshold alpha or export game assets. Its assertions passed for all three canvas sizes, visible artwork, real transparent pixels and three preview entries.
++
++Full final and initial prompts, generated source paths, reference paths and selected candidates are recorded in `docs/codex-briefs/pond-art/pond-03-records.json`; the six prompt entries were also appended to `garden-v05/environment/pond/prompts.json`. Original generated sources remain at their recorded ImageGen paths.
++
++## Strict-style limits for handoff
++
++**These are generated masters, not fully compliant native pixel sprites.** The tool retained subtle shading/colour variation and partially transparent pixels despite explicit flat-colour/opaque-pixel cleanup prompts. Do not treat the no-gradient/no-antialiasing or exact per-tile pixel-grid requirements as fully verified. No refusal occurred. Source/native alignment, palette reduction, binary alpha and runtime registration/testing remain with Claude as specified by the brief; these should be inspected after reduction before acceptance.
++
++| Master | Alpha 0 pixels | Alpha 255 pixels | Partial-alpha pixels | Distinct visible RGB colours |
++|---|---:|---:|---:|---:|
++| pond-1 | 455575 | 515 | 400998 | 33029 |
++| pond-2 | 380268 | 766 | 455318 | 27284 |
++| pond-3 | 568559 | 691 | 718110 | 44488 |
++
++Most interior alpha is 253; there are also faint edge pixels. Genuine transparent background is present, but this is not binary alpha and the masters are not restricted to 24 colours. Preserve the authored design while performing the downstream native cleanup. The jetty is visually three surviving deck boards plus one missing-board gap; its precise four-plank-width construction still needs review at native resolution.
++
++## Preserved scope
++
++`pond-bed.png` was not redrawn or changed (SHA-256 `15c4a9d4dd25632cd841dc746325b84ed6ed2f8340e6b04dc3b06b0d9bf67143`). The three guides retain their read-time hashes. No `.mjs` outside `docs/codex-briefs/pond-art/` was edited by this task. Other worktree edits were present or appeared during generation and were left alone.
+diff --git a/docs/codex-briefs/pond-art/place-pond-03.mjs b/docs/codex-briefs/pond-art/place-pond-03.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..8141674f3e2fab009b2cce6dc498a68a582fdb47
+--- /dev/null
++++ b/docs/codex-briefs/pond-art/place-pond-03.mjs
+@@ -0,0 +1,27 @@
++// Placement/contact sheet only; no painting, palette reduction or game export.
++// Run from repository root: node docs/codex-briefs/pond-art/place-pond-03.mjs
++import fs from 'node:fs/promises';
++import assert from 'node:assert/strict';
++import {createRequire} from 'node:module';
++const sharp = createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
++const jobs = JSON.parse(await fs.readFile(new URL('pond-03-records.json', import.meta.url), 'utf8'));
++const layers = [], checks = [];
++let left = 24;
++for (const job of jobs.filter(j => j.kept)) {
++  const [width, height] = job.size;
++  const placed = await sharp(job.generatedFile).resize(width, height, {fit:'fill', kernel:'nearest'}).png().toBuffer();
++  await fs.writeFile(job.master, placed);
++  const {data, info} = await sharp(placed).ensureAlpha().raw().toBuffer({resolveWithObject:true});
++  assert.equal(info.width, width); assert.equal(info.height, height);
++  let transparent = 0, opaque = 0, partial = 0;
++  for (let p = 3; p < data.length; p += 4) {
++    if (data[p] === 0) transparent++; else if (data[p] === 255) opaque++; else partial++;
++  }
++  assert(transparent > 0 && opaque > 0, 'Must have real alpha and visible artwork');
++  checks.push({id:job.id, master:job.master, width, height, transparent, opaque, partial});
++  layers.push({input:await sharp(placed).resize(width/job.scale, height/job.scale, {kernel:'nearest'}).png().toBuffer(), left, top:24 + 298 - height/job.scale});
++  left += width/job.scale + 24;
++}
++assert.equal(layers.length, 3);
++await sharp({create:{width:left, height:346, channels:4, background:'#5E7B3B'}}).composite(layers).png().toFile('docs/codex-briefs/pond-art-03-preview.png');
++console.log(JSON.stringify(checks, null, 2));
+diff --git a/docs/codex-briefs/pond-art/pond-03-records.json b/docs/codex-briefs/pond-art/pond-03-records.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..455d9103012706fa964d6edea281f7e4ea384135
+--- /dev/null
++++ b/docs/codex-briefs/pond-art/pond-03-records.json
+@@ -0,0 +1,86 @@
++[
++  {
++    "id": "pond-1-bigger-03-initial",
++    "master": "garden-v05/environment/pond/masters/pond-1.png",
++    "prompt": "Use case: stylized-concept. Production game sprite master Ao cá pond-1, redraw larger and a little eerie at Forbidden Forest edge. Reference image 1 is GEOMETRY ONLY exact guide 1152x744. Ground corners (0,480),(640,160),(1152,416),(512,736). Fill that long 4x5-tile parallelogram completely with softly rounded corners; bank must follow all four edges, no large empty corners. Upright reeds/rocks may rise above it, nothing outside canvas width. Reference 2 old pond-1 and reference 3 pond-2 are STYLE ONLY: same chunky grey rock shapes and dark outlines, but MORE TILES of water, not enlarged reeds or pixels. Native tile 64x32 enlarged FOUR times; each sprite pixel a flat 4x4 square. Request output canvas1152x744 or identical aspect. Real transparent alpha background right up to hard outline.\nDraw continuous narrow mossy dark-green shore all four edges; murky dark blue-violet/teal water with only thin lighter shallow rim, THREE or FOUR readable dark fish shadows distributed across roomy water, THREE sparse grey-green lily pads with no flowers, a few short angular subdued ripple lines. Mossy dark grey rocks and dark dead cattail clumps around back rim, low sparse grass at front. Cozy readable but eerie, least dark of three tiers. No cheerful bright green or cyan expanses. Main water #41465C and #3E3B70, darkest fish #231F2E. Top-left light. EXACT flat square pixel art clusters, 2-3 shades per material, no smooth interior shading. Clean hard outline #231F2E. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No guide lines tile seams dot red line or white backdrop. NO anti-aliasing gradient glow haze dithering texture noise text shadow skull gore. This is a hard-edged transparent sprite cutout, never a lit illustration.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-b141e51f-47a9-4d0e-a53e-4feffbb40364.png",
++    "referenceFiles": [
++      "docs/codex-briefs/pond-art/guide-pond-1.png",
++      "garden-v05/environment/pond/masters/pond-1.png",
++      "garden-v05/environment/pond/masters/pond-2.png"
++    ],
++    "kept": false
++  },
++  {
++    "id": "pond-2-bigger-03-initial",
++    "master": "garden-v05/environment/pond/masters/pond-2.png",
++    "prompt": "Use case: stylized-concept. Draw ONE production game master Hồ rong pond-2, bigger eerie forest pond. Input1 GEOMETRY ONLY guide1152x726 ground corners (0,480),(672,144),(1152,384),(480,720). Fill EXACT entire long parallelogram with softly rounded corners. Shore follows all four edges, no big empty corners or outside spill. Reeds/rocks can stand above back edge into upper transparent space. Input2 old pond-2 STYLE ONLY chunky square pixel rocks/cattails, not its bright flowers/colors; input3 old pond-1 same family. Canvas1152x726 matching guide. Native tile64x32 enlarged THREE times, individual flat square sprite pixel3x3; enlarge water AREA not pixel size or prop size. Larger 5x7-tile pond, roomy surface with distributed small details. Continuous narrow dark moss-green shore around all four edges, mossy dark grey rocks, dense clumps of BLACK DEAD CATTAILS and dark reeds along far rim, sparse low front tufts. Murky blue-black/dark teal water, thin subdued lighter shallow rim, dark long RIBBON WEED visibly rising from depths near back and sides. One HALF SUNK TWISTED ROTTING LOG partly in water at left rim. TWO small PALE EYES beside each other just BELOW surface toward back-right, subtle dark fish shadow and faint bubble trail in open water. THREE sparse grey-green lily pads NO FLOWERS. A few angular dark grey-blue short ripples spread over water. Mood cozy readable a little eerie Forbidden Forest; darker than fish pond, not horror. Flat dark-water color #41465C/#3E3B70 and #24483F, deep patches#231F2E. Hard flat color steps; only2-3 shades per material. Isometric2:1, top-left light, dark outline#231F2E. No glow haze shadow background blur gradients antialiasing dithering speckle noise text guide seams dot red line skulls gore or cheerful colors. Genuine transparent ALPHA immediately outside hard sprite outline, no ground shadow. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-cea32dc4-67ea-4645-946e-4b200978432e.png",
++    "referenceFiles": [
++      "docs/codex-briefs/pond-art/guide-pond-2.png",
++      "garden-v05/environment/pond/masters/pond-2.png",
++      "garden-v05/environment/pond/masters/pond-1.png"
++    ],
++    "kept": false
++  },
++  {
++    "id": "pond-3-bigger-03-initial",
++    "master": "garden-v05/environment/pond/masters/pond-3.png",
++    "prompt": "Use case: stylized-concept. Draw ONE production game sprite master Hồ sâu pond-3, a large lake-like dark eerie pond at Forbidden Forest. Input1 is exact GEOMETRY guide1440x894: ground vertices (0,600),(864,168),(1440,456),(576,888). Fill this entire elongated 6x9-tile parallelogram, shore follows all four edges with gently rounded corners, no big empty corners, no outside spill. Tall reeds rocks/posts may rise above the back edges. Input2 old pond-3 and input3 old pond-2 are STYLE ONLY chunky pixel shape family; REMOVE bright flowers colors and glow. Same pixel density as smaller ponds: native64x32 tile enlarged THREE times, one flat square3x3 per sprite pixel; increase tiles of water not props or pixel size. Genuine TRANSPARENT alpha canvas1440x894, zero backdrop or drop shadow. Broad roomy water area with distributed small ripples fish silhouettes fallen leaf faint bubbles, not blank. A narrow dark mossy shore all FOUR edges, dark grey mossy rocks and BLACK dead reeds/cattails on far rim, low sparse front grass. Water has a THIN light grey-teal shallow band, then hard STEPPED bands of #41465C and #3E3B70, large deep almost-black #231F2E centre. Darkest tier, but cozy-readable rather than horror. A SMALL ROCK ISLET off-centre left, two low mossy rocks with dark outline, no tree. TWO sparse grey-green lily pads, no flowers. One OLD ROTTING WOODEN JETTY projects from FRONT-RIGHT shore diagonally toward middle: deck FOUR planks WIDE, small wooden posts, one clear MISSING PLANK with water visible through the gap. Four parallel plank positions across width, only THREE weathered planks remain, dark gap in fourth. Jetty is dark muted brown #735044/#4A3042, damaged uneven end, no shiny orange wood, no railings or bridge. A twisted dead root at far edge, two faint pale eyes beneath water near far reeds. Every surface solid flat square pixel clusters2-3 shades/material. Light top-left, strict isometric2:1, dark outline#231F2E. NO antialiasing gradients glow haze noise dithering smooth shading texture text guide lines seams dots dashes white background skulls gore. Palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-56f8208c-d616-4de1-bc71-78613a99cdce.png",
++    "referenceFiles": [
++      "docs/codex-briefs/pond-art/guide-pond-3.png",
++      "garden-v05/environment/pond/masters/pond-3.png",
++      "garden-v05/environment/pond/masters/pond-2.png"
++    ],
++    "kept": false
++  },
++  {
++    "id": "pond-1-bigger-03-cleanup",
++    "master": "garden-v05/environment/pond/masters/pond-1.png",
++    "prompt": "Precise sprite cleanup of reference image1, pond-1. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn.  Canvas 1152x744. Real transparent background, no text.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-bd1f1f4d-3be7-445f-8b3e-6ef3b9e78726.png",
++    "referenceFiles": [
++      "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-b141e51f-47a9-4d0e-a53e-4feffbb40364.png",
++      "docs/codex-briefs/pond-art/guide-pond-1.png"
++    ],
++    "size": [
++      1152,
++      744
++    ],
++    "scale": 4,
++    "kept": true
++  },
++  {
++    "id": "pond-2-bigger-03-cleanup",
++    "master": "garden-v05/environment/pond/masters/pond-2.png",
++    "prompt": "Precise sprite cleanup of reference image1, pond-2. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn.  Canvas 1152x726. Real transparent background, no text.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-6f263112-87c2-4c00-b9b6-59aceef8dc11.png",
++    "referenceFiles": [
++      "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-cea32dc4-67ea-4645-946e-4b200978432e.png",
++      "docs/codex-briefs/pond-art/guide-pond-2.png"
++    ],
++    "size": [
++      1152,
++      726
++    ],
++    "scale": 3,
++    "kept": true
++  },
++  {
++    "id": "pond-3-bigger-03-cleanup",
++    "master": "garden-v05/environment/pond/masters/pond-3.png",
++    "prompt": "Precise sprite cleanup of reference image1, pond-3. KEEP its whole composition, fish/lily/reed/rock/log/islet positions and geometry, dark eerie colors, relative prop sizes. Reference image2 is the exact guide footprint. Make all surfaces STRICTLY FLAT OPAQUE pixel color regions, only 2-3 shades per material: remove every smooth gradient, blurred shading, subtle mottled noise, and anti-aliased soft edge. Each square pixel uniform flat color, large clean contiguous color clusters. Water must be entirely flat solid swatches separated by hard angular boundaries, no illumination gradient anywhere. Dark outlines #231F2E. Reeds dark grey green, lily pads grey-green. No added details. NO glow/haze/ground/drop shadows. Transparent alpha zero IMMEDIATELY outside hard outer contour. Ground matches guide parallelogram, gently rounded corners, no wide empty corners. Guide not drawn. Repair jetty ONLY as well: old rotten four-plank deck from front-right bank toward middle, REMOVE one entire INTERIOR plank so an unmistakable broad dark WATER GAP remains between planks; keep posts, ragged ends. Centre is flat almost-black#231F2E, surrounding hard-step#3E3B70/#41465C, thin shallow light rim. Canvas 1440x894. Real transparent background, no text.",
++    "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-6e5e3eef-edac-4a59-944e-5b949d63394a.png",
++    "referenceFiles": [
++      "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-56f8208c-d616-4de1-bc71-78613a99cdce.png",
++      "docs/codex-briefs/pond-art/guide-pond-3.png"
++    ],
++    "size": [
++      1440,
++      894
++    ],
++    "scale": 3,
++    "kept": true
++  }
++]
+
+exec
+/bin/zsh -lc 'git status --short; git diff --numstat -- garden-v05/environment/pond/prompts.json garden-v05/environment/pond/masters/pond-1.png garden-v05/environment/pond/masters/pond-2.png garden-v05/environment/pond/masters/pond-3.png' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-challenges
+ succeeded in 0ms:
+ M docs/codex-briefs/pond-art/guide-pond-1.png
+ M docs/codex-briefs/pond-art/guide-pond-2.png
+ M docs/codex-briefs/pond-art/guide-pond-3.png
+ M garden-v05/balance-data.mjs
+ M garden-v05/build-pond-art.mjs
+ M garden-v05/decor-placement-geometry.mjs
+ M garden-v05/decor-placement-ui.mjs
+ M garden-v05/default-decor.mjs
+ M garden-v05/environment/pond/masters/pond-1.png
+ M garden-v05/environment/pond/masters/pond-2.png
+ M garden-v05/environment/pond/masters/pond-3.png
+ M garden-v05/environment/pond/prompts.json
+ M garden-v05/garden-creatures-2.test.mjs
+ M garden-v05/garden-growth.mjs
+ M garden-v05/garden-growth.test.mjs
+ M garden-v05/garden-pond-ui.test.mjs
+ M garden-v05/scene-renderer.mjs
+?? docs/codex-briefs/pond-art-03-last.log
+?? docs/codex-briefs/pond-art-03-preview.png
+?? docs/codex-briefs/pond-art-03-report.md
+?? docs/codex-briefs/pond-art-03.md
+?? docs/codex-briefs/pond-art/place-pond-03.mjs
+?? docs/codex-briefs/pond-art/pond-03-records.json
+-	-	garden-v05/environment/pond/masters/pond-1.png
+-	-	garden-v05/environment/pond/masters/pond-2.png
+-	-	garden-v05/environment/pond/masters/pond-3.png
+63	0	garden-v05/environment/pond/prompts.json
+
+codex
+Bệ hạ, tiểu nữ đã lưu 3/3 master đúng kích thước, [ảnh ghép native](docs/codex-briefs/pond-art-03-preview.png) và [báo cáo](docs/codex-briefs/pond-art-03-report.md).
+
+Ảnh sinh vẫn còn chuyển màu nhẹ và alpha bán trong suốt sau lượt sửa, nên chưa đạt hoàn toàn yêu cầu pixel phẳng. Báo cáo ghi rõ để Claude xử lý tiếp. `pond-bed.png` được giữ nguyên; chưa chạy builder hay commit.
+tokens used
+81,200
+Bệ hạ, tiểu nữ đã lưu 3/3 master đúng kích thước, [ảnh ghép native](docs/codex-briefs/pond-art-03-preview.png) và [báo cáo](docs/codex-briefs/pond-art-03-report.md).
+
+Ảnh sinh vẫn còn chuyển màu nhẹ và alpha bán trong suốt sau lượt sửa, nên chưa đạt hoàn toàn yêu cầu pixel phẳng. Báo cáo ghi rõ để Claude xử lý tiếp. `pond-bed.png` được giữ nguyên; chưa chạy builder hay commit.
