@@ -21,4 +21,5 @@ for(const [i,cell]of cells.entries()){
 const url=new URL('scene-data.json',root),scene=JSON.parse(await fs.readFile(url,'utf8'));
 Object.assign(scene.props.find(p=>p.id==='hut'),{width,height,pivotX,pivotY});
 await fs.writeFile(url,JSON.stringify(scene,null,2)+'\n');
+await fs.writeFile(new URL('scene-data.js',root),'window.FARM_SCENE = '+JSON.stringify(scene)+';\n');
 await fs.writeFile(new URL('environment/homestead-20261108/provenance.json',root),JSON.stringify({tool:'built-in image_gen',master,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),prompt:'Expanded rustic Hagrid stone cottage, tall layered slate roof and left chimney, oak timber porch, lit amber windows, right stone wing; integrated firewood lean-to, pumpkins, kettle, pots, barrel, broom, bench, stepping stones. Matching normal and snowy variants, transparent, muted pixel-art palette, no text, characters, fences or background.',outputs},null,2)+'\n');
