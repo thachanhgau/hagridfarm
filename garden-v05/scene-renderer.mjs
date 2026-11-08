@@ -28,6 +28,7 @@ import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-de
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.0.2';
 import {CREATURE, DB, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
 import {EDGE_SCENERY} from './edge-art.mjs?v=25.0.2';
+import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=25.0.2';
 import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.0.2';
 import {drawIcon} from './pixel-icons.mjs?v=25.0.2';
 import {
@@ -722,7 +723,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...Object.values(EDGE_SCENERY).map((spec) => spec.file), ...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]));
+  const deferredFiles = new Set(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...SUBMERGED_CREATURE_FILES, ...Object.values(EDGE_SCENERY).map((spec) => spec.file), ...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]));
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -1186,7 +1187,7 @@ export async function createGarden(canvas, options = {}) {
   // one at its (movable) spot. Tier art (pond-art POND_SCENERY) at iso(at) − pivot once shipped, else pond.png scaled to
   // the tier's ground. Fish in stocked lots, a rêu tint while murky, pond creatures in the water, and the beds (1×3
   // water trays) in a row along the pond's west side, each its own depth-sorted object.
-  function pondObjects(asset, winterProp, at, tier, view, creatures, clock) {
+  function pondObjects(asset, winterProp, at, tier, view, creatures, clock, logicalNow, facings) {
     const spec = pondScenery(`pond-${tier}`), snowyFile = spec && winterFile(spec.file);
     const tierImage = spec ? snowyFile ? imageFor(snowyFile) : seasonalImage(spec.file, 'water') : null;
     const k = tierScale(tier), xy = iso(...at), [x, y] = xy;
@@ -1204,7 +1205,7 @@ export async function createGarden(canvas, options = {}) {
       }
       ctx.restore();
       // Fish and pond creatures circle the ground centre (pivot − 32·footLift), drawPondLife puts them 47·k above y.
-      drawPondLife(ctx, x, y - 32 * footLift(orientedFootprint(tierFootprint(tier), 'right')) + 47 * k, k, view, creatures, clock);
+      drawPondLife(ctx, x, y - 32 * footLift(orientedFootprint(tierFootprint(tier), 'right')) + 47 * k, k, view, creatures, clock, logicalNow, facings);
       ctx.restore();
     }};
     return [pond, ...pondBeds(at, tier, view, clock)];
@@ -1234,8 +1235,8 @@ export async function createGarden(canvas, options = {}) {
     });
   }
 
-  function drawPondLife(ctx, x, y, k, view, creatures, clock) {
-    const c = Math.max(2, Math.round(k * 1.5)), cx = x, cy = y - 47 * k, rx = 50 * k, ry = 18 * k, t = clock / 1000; // c: one art pixel, readable at the overview zoom
+  function drawPondLife(ctx, x, y, k, view, creatures, clock, logicalNow, facings = {}) {
+    const c = Math.max(2, Math.round(k * 1.5)), cx = x, cy = y - 47 * k, rx = 50 * k, ry = 18 * k;
     const block = (colour, px, py, pw, ph) => { ctx.fillStyle = colour; ctx.fillRect(Math.round(px), Math.round(py), pw, ph); };
     if (view?.murky) {
       ctx.globalAlpha = 0.6;
@@ -1243,16 +1244,11 @@ export async function createGarden(canvas, options = {}) {
       ctx.globalAlpha = 1;
     }
     // Fish-lot status lives in the pond dock; coarse rectangle stand-ins obscured the pond artwork.
-    // Pond creatures: their sprite once the creature pipeline has it, else a small drawn head and arms in the water.
+    // Dedicated submerged poses sit on the waterline; the collection keeps the full-body art.
     creatures.slice(0, 2).forEach((entry, i) => {
-      const sx = cx + (i ? 0.35 : -0.35) * rx, sy = cy + (i ? -2 : 3) * c + Math.round(Math.sin(t * 1.3 + i) * c);
-      const item = items.get(entry.species), sprite = item ? frameAt(item, 3, true) : null;
-      if (sprite) { drawAsset({...sprite, noSnowCap: true}, sx, sy); return; }
-      block('#B7DEE0', sx - 7 * c, sy + c, 14 * c, c);
-      block('#24483F', sx - 6 * c, sy - c, 2 * c, 2 * c); block('#24483F', sx + 4 * c, sy - c, 2 * c, 2 * c);
-      block('#3F6A45', sx - 4 * c, sy - 5 * c, 8 * c, 5 * c);
-      block('#71934B', sx - 3 * c, sy - 6 * c, 6 * c, c);
-      block('#FFC36B', sx - 2 * c, sy - 4 * c, c, c); block('#FFC36B', sx + c, sy - 4 * c, c, c);
+      const sx = cx + (i ? 0.35 : -0.35) * rx, sy = cy + (i ? -2 : 3) * c;
+      const sprite = submergedCreatureFrame(entry.species, growthFor(entry, logicalNow).stage, clock, facings[entry.species]);
+      if (sprite) drawAsset({...sprite, noSnowCap: true}, sx, sy);
     });
   }
 
@@ -1888,7 +1884,7 @@ export async function createGarden(canvas, options = {}) {
       const pondProp = props.get('pond');
       const nook = pondTierNow ? pondScenery('pond-nook') : null; // «Góc nghỉ» between the paddies and the pond
       if (nook) objects.push({kind: 'asset', type: 'prop', id: 'pond-nook', species: 'pond-nook', asset: {file: nook.file, width: nook.width, height: nook.height, pivotX: nook.pivotX, pivotY: nook.pivotY, noSnowCap: true}, xy: iso(...POND_NOOK.at)});
-      if (pondTierNow && pondProp) objects.push(...pondObjects(pondProp, winterFile(pondProp.file), pondHome(map, POND_TIER_IDS.slice(0, pondTierNow)), pondTierNow, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock));
+      if (pondTierNow && pondProp) objects.push(...pondObjects(pondProp, winterFile(pondProp.file), pondHome(map, POND_TIER_IDS.slice(0, pondTierNow)), pondTierNow, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock, logicalNow, creatureFacings));
     }
 
     const builtPenIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id)));

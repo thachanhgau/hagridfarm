@@ -1,0 +1,562 @@
+{
+  "tool": "built-in image_gen",
+  "leftView": "offline mirror of right-authored submerged art",
+  "species": [
+    {
+      "id": "kappa",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "prompt": "Production fantasy pixel-game sprite sheet, SUBJECT: Kappa, the moss-green turtle-shell water sprite in the reference, with a small beak, water-filled head bowl and shaggy reed hair ring. Preserve its face, head bowl and shell design. Create dedicated HALF-SUBMERGED IN WATER poses, NOT standing on water. Body, legs and most arms are BELOW the surface and invisible. Only head, a little shoulder/shell and occasional fingertip emerge above a clearly readable waterline. A few thin muted blue-grey ripple arcs hug the body at waterline; ripple arcs TOUCH the wrist/body so sprites are connected. NO opaque oval pool of water, NO large splash, NO legs/feet above the water, no ground, no shore. TRUE TRANSPARENT background around all parts, no background scene. EXACT grid FOUR columns by TWO rows, 8 isolated sprites with generous transparent gutters. Row1: baby, juvenile, adolescent, adult, increasing visible head size; same waterline across all cells. Row2: FOUR same-size adult floating-at-rest poses: eyes open, breathing, blink, settle with slight ripple variation; SAME body position, no movement through water. ALL face RIGHT in clear three-quarter view. Each logical cell 128x96, waterline near local y64, adult visible head/shoulder silhouette about 52x40, ripple spread max 78x15, leave at least 16px transparent margins. Style MATCHES existing garden sprite reference: crisp large flat pixel clusters, fine dark aubergine outlines, restrained 24-color garden palette; 2-3 shades per material. No antialiasing, gradients, painted texture, blur, neon, text or labels. A clear convincing surface cuts across the body: partially submerged creature, not a dry full-body sprite with a ring under its feet.",
+      "frames": {
+        "left": [
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/left-0.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 38,
+              "y": 31,
+              "w": 53,
+              "h": 33,
+              "count": 818,
+              "edge": false
+            },
+            "sha256": "b2e370ff923dd45c07b845a01a973a36176d387e9b7f54723656629652a77c19"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/left-1.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 34,
+              "y": 22,
+              "w": 66,
+              "h": 42,
+              "count": 1402,
+              "edge": false
+            },
+            "sha256": "a2fa8e10d0446c80a99d38520d6f33feca54dd18e2e5dbf12c3f7540d5109e4a"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/left-2.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 32,
+              "y": 13,
+              "w": 71,
+              "h": 51,
+              "count": 1975,
+              "edge": false
+            },
+            "sha256": "e9f409a431396e6537a320aab99a0e0a394afde47963abfa9ed97a791bb98429"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/left-3.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 26,
+              "y": 4,
+              "w": 83,
+              "h": 60,
+              "count": 2748,
+              "edge": false
+            },
+            "sha256": "71b86c8f5710f8d08b5b612119091707e0468f24451fc58d0e98447c17457a96"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/left-4.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 24,
+              "y": 4,
+              "w": 84,
+              "h": 60,
+              "count": 2723,
+              "edge": false
+            },
+            "sha256": "8662979222d57933cfba962cb1049e3f59c2fd7482298f107357da7c910b1948"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/left-5.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 24,
+              "y": 5,
+              "w": 87,
+              "h": 59,
+              "count": 2694,
+              "edge": false
+            },
+            "sha256": "1f261a2c046c23564d69e176f055fd73c2bb42fcd46b540ac72f13253a1dfb13"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/left-6.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 29,
+              "y": 5,
+              "w": 79,
+              "h": 59,
+              "count": 2686,
+              "edge": false
+            },
+            "sha256": "6bf7964d995f0430d04d98c9b8da22aecf89b5086627568652ff29bbbebe1af2"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/left-7.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 29,
+              "y": 5,
+              "w": 79,
+              "h": 59,
+              "count": 2676,
+              "edge": false
+            },
+            "sha256": "0c175917718f37cd46c7ac0bae96f01c2863fd5c2880790c92e4c471cede5534"
+          }
+        ],
+        "right": [
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/right-0.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 37,
+              "y": 31,
+              "w": 53,
+              "h": 33,
+              "count": 818,
+              "edge": false
+            },
+            "sha256": "0c87ea442b0cadabacbeceade618b279b89bbcd2a8e629e414cc58461570e1c3"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/right-1.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 28,
+              "y": 22,
+              "w": 66,
+              "h": 42,
+              "count": 1402,
+              "edge": false
+            },
+            "sha256": "b77468cb459713d77e652b613aefb37e77ec166a49c087554a147bfab60cf35e"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/right-2.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 25,
+              "y": 13,
+              "w": 71,
+              "h": 51,
+              "count": 1975,
+              "edge": false
+            },
+            "sha256": "5274158ee06255992ceb43266a5764f188dbe826c05d3a224c19f32bbd942bb5"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/right-3.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 19,
+              "y": 4,
+              "w": 83,
+              "h": 60,
+              "count": 2748,
+              "edge": false
+            },
+            "sha256": "8e3c58cabed45410851b83c8b97e4679ab500b5d584058fd31efe30f6eac5cb4"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/right-4.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 20,
+              "y": 4,
+              "w": 84,
+              "h": 60,
+              "count": 2723,
+              "edge": false
+            },
+            "sha256": "510d36efc336828d408c089aff6a5e2cd87c123ef57fe892b4c929b571e9152d"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/right-5.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 17,
+              "y": 5,
+              "w": 87,
+              "h": 59,
+              "count": 2694,
+              "edge": false
+            },
+            "sha256": "95b86d693420f4b353cd12d003320031d385889be95508943000cc62a8952b57"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/right-6.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 20,
+              "y": 5,
+              "w": 79,
+              "h": 59,
+              "count": 2686,
+              "edge": false
+            },
+            "sha256": "3dfcbc7699fe56d2a5622baea8d67b318b614c5636714219944706dc4d889eb3"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/kappa/right-7.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 20,
+              "y": 5,
+              "w": 79,
+              "h": 59,
+              "count": 2676,
+              "edge": false
+            },
+            "sha256": "f124940946f76841e78a8c3a0c31ec0c4e529e20770fbf5c2ea2248567927cab"
+          }
+        ]
+      },
+      "atlases": {
+        "left": {
+          "file": "creature-motion-assets/native/kappa/submerged-left-atlas.png",
+          "sha256": "1f4aed5e86c806f493414fbc5a7f8e27da072d8be50b1247bb6f8671214c8f47"
+        },
+        "right": {
+          "file": "creature-motion-assets/native/kappa/submerged-right-atlas.png",
+          "sha256": "7e08c0266ed67293dd33694302cf3ca3ddc73a926105477e59d329d028d04d2f"
+        }
+      }
+    },
+    {
+      "id": "grindylow",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "prompt": "Production fantasy pixel-game sprite sheet, SUBJECT: Grindylow, the olive-jade horned freshwater demon in the reference, with TWO small horns and extremely long thin fingers. Preserve its face and character identity; NO tentacles, tail or new fins. Create dedicated HALF-SUBMERGED IN WATER poses, NOT standing on water. Body, legs and most arms are BELOW the surface and invisible. Only head, a little shoulder/shell and occasional fingertip emerge above a clearly readable waterline. A few thin muted blue-grey ripple arcs hug the body at waterline; ripple arcs TOUCH the wrist/body so sprites are connected. NO opaque oval pool of water, NO large splash, NO legs/feet above the water, no ground, no shore. TRUE TRANSPARENT background around all parts, no background scene. EXACT grid FOUR columns by TWO rows, 8 isolated sprites with generous transparent gutters. Row1: baby, juvenile, adolescent, adult, increasing visible head size; same waterline across all cells. Row2: FOUR same-size adult floating-at-rest poses: eyes open, breathing, blink, settle with slight ripple variation; SAME body position, no movement through water. ALL face RIGHT in clear three-quarter view. Each logical cell 128x96, waterline near local y64, adult visible head/shoulder silhouette about 52x40, ripple spread max 78x15, leave at least 16px transparent margins. Style MATCHES existing garden sprite reference: crisp large flat pixel clusters, fine dark aubergine outlines, restrained 24-color garden palette; 2-3 shades per material. No antialiasing, gradients, painted texture, blur, neon, text or labels. A clear convincing surface cuts across the body: partially submerged creature, not a dry full-body sprite with a ring under its feet.",
+      "frames": {
+        "left": [
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/left-0.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 37,
+              "y": 35,
+              "w": 52,
+              "h": 29,
+              "count": 616,
+              "edge": false
+            },
+            "sha256": "377d379bbc02a552f3db857f5807c38bb772f26933931e83b1236f8c5b572488"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/left-1.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 29,
+              "y": 25,
+              "w": 68,
+              "h": 39,
+              "count": 1085,
+              "edge": false
+            },
+            "sha256": "800cded2319a9b4e88b6a26e8c6a1650bc7682af31032a5f94b40bcec27de2b1"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/left-2.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 26,
+              "y": 14,
+              "w": 80,
+              "h": 50,
+              "count": 1707,
+              "edge": false
+            },
+            "sha256": "30f34ca8f1507895bec50104d8c540d5d075aa3c770f8aa6c953ed41b135ab85"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/left-3.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 19,
+              "y": 6,
+              "w": 94,
+              "h": 58,
+              "count": 2308,
+              "edge": false
+            },
+            "sha256": "2a370075e2c7a4d82ccb97cb54bc4b4331a228cf47e7985f7cd86b98b55dd562"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/left-4.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 19,
+              "y": 7,
+              "w": 93,
+              "h": 57,
+              "count": 2225,
+              "edge": false
+            },
+            "sha256": "f20eee345054f715a01ac59e4e21f62ce94e17d7bb752360bd892860048800c6"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/left-5.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 19,
+              "y": 7,
+              "w": 94,
+              "h": 57,
+              "count": 2214,
+              "edge": false
+            },
+            "sha256": "e4dc4ad50eeff0d7b56c101e19fd2e0912aad5b976863a113c293d21c983c5ea"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/left-6.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 22,
+              "y": 7,
+              "w": 88,
+              "h": 57,
+              "count": 2211,
+              "edge": false
+            },
+            "sha256": "d1901b854245a2bcfb668dc56eea3726d54d3ff57d1238cd0fb460d3f9523ac0"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/left-7.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 19,
+              "y": 7,
+              "w": 93,
+              "h": 57,
+              "count": 2216,
+              "edge": false
+            },
+            "sha256": "cfc75279b237a21a964142adb3adadd9428b4a6e153ebae920703f1959b6bb44"
+          }
+        ],
+        "right": [
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/right-0.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 39,
+              "y": 35,
+              "w": 52,
+              "h": 29,
+              "count": 616,
+              "edge": false
+            },
+            "sha256": "52bd0d500f0e5b4cca83d7bbdb8a4fb3118819af3d7987c675b639a90b10f3be"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/right-1.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 31,
+              "y": 25,
+              "w": 68,
+              "h": 39,
+              "count": 1085,
+              "edge": false
+            },
+            "sha256": "2a504fa3095646f3aa1f2d9e0e58b7e252387a46405cba99f911dd928656cbd6"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/right-2.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 22,
+              "y": 14,
+              "w": 80,
+              "h": 50,
+              "count": 1707,
+              "edge": false
+            },
+            "sha256": "4065ee096c3b363864074815ef9ad80613e00e1875eb57f5d78a08d80ce39709"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/right-3.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 15,
+              "y": 6,
+              "w": 94,
+              "h": 58,
+              "count": 2308,
+              "edge": false
+            },
+            "sha256": "e0ac627221512f56119ec3420bbce7d9181d464b771d161503c4307427a28781"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/right-4.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 16,
+              "y": 7,
+              "w": 93,
+              "h": 57,
+              "count": 2225,
+              "edge": false
+            },
+            "sha256": "d5e6790a676462b00b26e3af4471325745fb3ac27d2d076b81ecb18d793a322a"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/right-5.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 15,
+              "y": 7,
+              "w": 94,
+              "h": 57,
+              "count": 2214,
+              "edge": false
+            },
+            "sha256": "005c87a0c9352524d838c737883ab7d67cf7c40fc68568b34ca5170567749834"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/right-6.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 18,
+              "y": 7,
+              "w": 88,
+              "h": 57,
+              "count": 2211,
+              "edge": false
+            },
+            "sha256": "95dd448dde29a12f63cb7cb276b07b373b6f145075326cd35fc74173f048d12c"
+          },
+          {
+            "file": "creature-motion-assets/submerged-native/grindylow/right-7.png",
+            "width": 128,
+            "height": 96,
+            "pivotX": 64,
+            "pivotY": 64,
+            "bounds": {
+              "x": 16,
+              "y": 7,
+              "w": 93,
+              "h": 57,
+              "count": 2216,
+              "edge": false
+            },
+            "sha256": "a305e49c23aa80721c245d1ca7cb09244161dde56139289a72c11da9ef721424"
+          }
+        ]
+      },
+      "atlases": {
+        "left": {
+          "file": "creature-motion-assets/native/grindylow/submerged-left-atlas.png",
+          "sha256": "4a8ebf3e09794a57fc2e5d93cac144a09c4c441bfdeb1acecabad2687b1ee67a"
+        },
+        "right": {
+          "file": "creature-motion-assets/native/grindylow/submerged-right-atlas.png",
+          "sha256": "38d27ebc95ebc2bdf3c407697221a91c10502ee0ed3666fbdddbe2dd46a261f4"
+        }
+      }
+    }
+  ]
+}

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "9794e37ae999",
+  "revision": "7f98f219c1bb",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -6612,6 +6612,26 @@
       "sha256": "69a3512d8f24bf3d737129c353df46a9612eec1df6cf15ae97524ee660d738d7"
     },
     {
+      "source": "creature-motion-assets/native/grindylow/submerged-left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/grindylow/submerged-left-atlas.webp",
+      "width": 512,
+      "height": 192,
+      "sourceBytes": 9526,
+      "bytes": 5988,
+      "sourceSha256": "4a8ebf3e09794a57fc2e5d93cac144a09c4c441bfdeb1acecabad2687b1ee67a",
+      "sha256": "42c92fe38d683f7255705b04f2ff738c05d6e568d62b9662a6dbfdff2b4046ae"
+    },
+    {
+      "source": "creature-motion-assets/native/grindylow/submerged-right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/grindylow/submerged-right-atlas.webp",
+      "width": 512,
+      "height": 192,
+      "sourceBytes": 9550,
+      "bytes": 6022,
+      "sourceSha256": "38d27ebc95ebc2bdf3c407697221a91c10502ee0ed3666fbdddbe2dd46a261f4",
+      "sha256": "e99a5bd843248145cc46a0f87cbb2dea694bd890822aad67728a954d489375c1"
+    },
+    {
       "source": "creature-motion-assets/native/hippogriff/left-atlas.png",
       "file": "runtime-webp/creature-motion-assets/native/hippogriff/left-atlas.webp",
       "width": 768,
@@ -6650,6 +6670,26 @@
       "bytes": 19080,
       "sourceSha256": "38bf5c07441846e2c3a476be1365e51a4dc1231e5510374e534de9649ef8acc4",
       "sha256": "840a995d2366d57fe627c727a90038952c2c3fe5f172570713d3a04a49721820"
+    },
+    {
+      "source": "creature-motion-assets/native/kappa/submerged-left-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/kappa/submerged-left-atlas.webp",
+      "width": 512,
+      "height": 192,
+      "sourceBytes": 12314,
+      "bytes": 7514,
+      "sourceSha256": "1f4aed5e86c806f493414fbc5a7f8e27da072d8be50b1247bb6f8671214c8f47",
+      "sha256": "aaa4f4d59424bafc6f1e34a2a0e579792745d40191d1029335a3e4ac0dcb7c82"
+    },
+    {
+      "source": "creature-motion-assets/native/kappa/submerged-right-atlas.png",
+      "file": "runtime-webp/creature-motion-assets/native/kappa/submerged-right-atlas.webp",
+      "width": 512,
+      "height": 192,
+      "sourceBytes": 12281,
+      "bytes": 7562,
+      "sourceSha256": "7e08c0266ed67293dd33694302cf3ca3ddc73a926105477e59d329d028d04d2f",
+      "sha256": "d5a3c923011fac9004a60500358933355e5dd5893c6069566530cf9786ac8853"
     },
     {
       "source": "creature-motion-assets/native/knarl/left-atlas.png",
@@ -13755,11 +13795,11 @@
     }
   ],
   "totals": {
-    "converted": 1369,
+    "converted": 1373,
     "existingWebp": 8,
-    "originalBytes": 5294175,
-    "webpBytes": 3493982,
-    "savedBytes": 1800193,
-    "savedPercent": 34
+    "originalBytes": 5337846,
+    "webpBytes": 3521068,
+    "savedBytes": 1816778,
+    "savedPercent": 34.04
   }
 }

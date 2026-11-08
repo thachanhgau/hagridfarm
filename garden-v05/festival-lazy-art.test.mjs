@@ -15,7 +15,8 @@ const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.jso
 function recordingCanvas() {
   const requested = new Set();
   const drawn = [];
-  const context = new Proxy({}, {get: (o, k) => k === 'drawImage' ? image => drawn.push(image.source) : k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
+  const drawCalls = [];
+  const context = new Proxy({}, {get: (o, k) => k === 'drawImage' ? (image,...args) => {drawn.push(image.source);drawCalls.push({file:image.source,args});} : k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
   class RecordingImage {
     naturalWidth = 64; naturalHeight = 64;
     set src(value) { this.source=value; requested.add(value); queueMicrotask(() => this.onload?.()); }
@@ -25,8 +26,26 @@ function recordingCanvas() {
     getBoundingClientRect() { return {left: 0, top: 0, width: 1, height: 1}; },
     ownerDocument: {createElement: () => recordingCanvas().canvas, defaultView: {Image: RecordingImage}},
   };
-  return {canvas, requested, drawn};
+  return {canvas, requested, drawn, drawCalls};
 }
+
+test('pond creatures defer submerged art and render their real growth stage, never a dry adult sprite',async()=>{
+  const {SUBMERGED_CREATURE_FILES,submergedCreatureFrame}=await import('./pond-creature-art.mjs');
+  const {canvas,requested,drawCalls}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+  const now=1_700_000_000_000,state=E.testProfile(500,now);
+  state.built=[...new Set([...state.built,'pond_1','pond_2','pond_3'])];
+  const entry={id:'creature-grindylow',type:'creature',species:'grindylow',level:E.CREATURE.grindylow.level,adoptedAt:now,mealsCompleted:0,meal:null,cyclesClaimed:0,preview:false};
+  state.creatures=[entry];
+  for(const file of SUBMERGED_CREATURE_FILES)assert.ok(!requested.has(runtimeImageUrl(file)),'surface sprites loaded before a pond creature is drawn');
+  const options={now,clock:0,propsVisible:true,pond:{beds:[],lots:[]}};
+  garden.render(state,options);await new Promise(resolve=>setImmediate(resolve));
+  for(const meals of [0,E.CREATURE.grindylow.mealsToAdult]){
+    entry.mealsCompleted=meals;drawCalls.length=0;garden.render(state,options);
+    const stage=E.growth(entry,now).stage,frame=submergedCreatureFrame('grindylow',stage,0);
+    const call=drawCalls.find(c=>c.file===runtimeImageUrl(frame.file));assert.ok(call,'pond did not draw a submerged sprite');
+    assert.deepEqual(call.args.slice(0,4),[frame.atlasRect.x,frame.atlasRect.y,frame.width,frame.height]);
+  }
+});
 
 test('built deep pond, aquatic beds and nook draw their authored snow variants', async () => {
   const winterKit = await import('./garden-winter.mjs');
