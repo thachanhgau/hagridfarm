@@ -23,6 +23,7 @@ export const POND_SCENERY = Object.freeze({
  'pond-2': {file: 'environment/pond/pond-2.png', width: 480, height: 298, pivotX: 240, pivotY: 288, footprint: [9, 6]},
  'pond-3': {file: 'environment/pond/pond-3.png', width: 480, height: 298, pivotX: 240, pivotY: 288, footprint: [9, 6]},
  'pond-bed': {file: 'environment/pond/pond-bed.png', width: 128, height: 88, pivotX: 64, pivotY: 70, footprint: [3, 1]},
+ 'pond-nook': {file: 'environment/pond/pond-nook.png', width: 192, height: 248, pivotX: 96, pivotY: 230, footprint: [3, 3]},
 });
 export const POND_FALLBACK = 'environment/layers/pond.png';
 export const POND_ART_SHIPPED = Boolean(flowArtSpec('goldfish'));

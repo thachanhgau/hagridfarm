@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "9f0ee0448e77",
+  "revision": "1c263efd51dd",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -13282,6 +13282,16 @@
       "sha256": "67bfb6050a25ef8e7c43ae5e319fc767ae824e042f16afe64966eacce9ac757b"
     },
     {
+      "source": "environment/pond/pond-nook.png",
+      "file": "runtime-webp/environment/pond/pond-nook.webp",
+      "width": 192,
+      "height": 248,
+      "sourceBytes": 7370,
+      "bytes": 4462,
+      "sourceSha256": "51d2a9049579a733bd1d568eb857669d5815e6b9f80b5ce7a2677f3997351bf9",
+      "sha256": "78b3a6fc374022af18e304e48caadfac0c1180f06dfe88858e1a58ab0252d910"
+    },
+    {
       "source": "environment/statue-night/ev_dark_dobby_red_right-n0.png",
       "file": "runtime-webp/environment/statue-night/ev_dark_dobby_red_right-n0.webp",
       "width": 128,
@@ -13695,11 +13705,11 @@
     }
   ],
   "totals": {
-    "converted": 1363,
+    "converted": 1364,
     "existingWebp": 8,
-    "originalBytes": 4995299,
-    "webpBytes": 3315834,
-    "savedBytes": 1679465,
-    "savedPercent": 33.62
+    "originalBytes": 5002669,
+    "webpBytes": 3320296,
+    "savedBytes": 1682373,
+    "savedPercent": 33.63
   }
 }

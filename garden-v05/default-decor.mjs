@@ -62,29 +62,29 @@ export function defaultDecorFootprint(id) {
 /** The built pond's ground [long, short] by tier (balance pond_1..3: [5, 4], [7, 5], [9, 6]), null before «Ao cá». */
 export const pondFootprint = (built = []) => DB.expansions.filter(e => e.kind === 'pond' && built?.includes?.(e.id)).at(-1)?.footprint ?? null;
 
-/** «Bờ hồ» (owner 08/11/2026: ponds bigger than a plot, on their own land): the built pond is fixed and faces right
- *  (long side along the columns, mirrored art), its ground's north-east corner on (27.5, −10.5) inside the shore land
- *  (garden-growth POND_LAND); its beds are on their own land (pondBedRects). Null without a pond. */
+/** «Bờ hồ» (owner 08/11/2026): the built pond is fixed and faces right (long side along the columns, mirrored art)
+ *  on the open meadow behind the north fence (garden-growth POND_LAND), centred on the col-20.5 path (owner «lối … ra
+ *  thẳng trung tâm của hồ»): ground cols 16–25, back row −11.5, bank on row −5.5. Null without a pond. */
 export const POND_FACING = 'right';
 export function pondHome(scene, built = []) {
   const size = pondFootprint(built);
   if (!size) return null;
   const [cols, rows] = orientedFootprint(size, POND_FACING), lift = footLift([cols, rows]);
-  return [27.5 + lift - cols / 2, -10.5 + lift + rows / 2];
+  return [20.5 + lift, -11.5 + lift + rows / 2];
 }
 
-/** The pond beds' ground: `count` 1×3 trays on «Ruộng nước» (garden-growth BED_LAND) in two rows, the back row
- *  floor(count/2) and the front the rest (4 → 2+2, 7 → 3+4, 10 → 5+5), each row centred near the land's middle col 9
- *  (owner 08/11 «mấy ô nhỏ ko đẹp … cân đối»): the trays of a row touch, one walled paddy like a plot, a path row
- *  between the rows. Scene drawing and decoration placement share
- *  it, so nothing is placed on a bed. */
+/** «Ruộng nước»: `count` 1×3 trays touching into one paddy, centred on the col-7.5 path with its bank on row −5.5
+ *  like the pond's (owner 08/11 «tạo hình mới và cân đối»): one row up to 7 (4 → 4×3, 7 → 7×3), else two rows touching
+ *  (10 → 5×6). Scene drawing and decoration placement share it, so nothing is placed on a bed. */
 export function pondBedRects(at, built = [], count = 0) {
-  const back = Math.floor(count / 2);
+  const back = count > 7 ? Math.floor(count / 2) : 0;
   return Array.from({length: count}, (_, b) => {
-    const front = b >= back, n = front ? count - back : back, c0 = Math.floor(9 - n / 2) + 0.5 + (front ? b - back : b), r0 = front ? -8.5 : -12.5;
+    const front = b >= back, n = front ? count - back : back, c0 = 7.5 - n / 2 + (front ? b - back : b), r0 = front ? -8.5 : -11.5;
     return {c0, c1: c0 + 1, r0, r1: r0 + 3};
   });
 }
+/** «Góc nghỉ» (owner «khu vực giữa … tạo tiểu cảnh»): the 3×3 vignette's foot, between the paddies and the pond. */
+export const POND_NOOK = Object.freeze({at: [15, -3], footprint: [3, 3]}); // ground cols 12.5–15.5 × rows −5.5…−2.5
 /** Pond beds by tier (server garden-pond-core): 4 at «Ao cá», 7 at «Hồ rong», 10 at «Hồ sâu». */
 export const pondBedCount = built => (built?.includes?.('pond_3') ? 10 : built?.includes?.('pond_2') ? 7 : built?.includes?.('pond_1') ? 4 : 0);
 

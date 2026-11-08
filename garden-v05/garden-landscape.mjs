@@ -34,7 +34,8 @@ export function drawGardenPaths(ctx,map){
     }
   }
 }
-export function createBoundaryFence(map,boundary=FARM_BOUNDARY){
+// `openings`: [c0, c1] spans of the north rail (row −0.5) left open for a path (garden-growth fenceOpenings).
+export function createBoundaryFence(map,boundary=FARM_BOUNDARY,openings=[]){
   const source=Array.isArray(boundary)&&boundary.length>=3?boundary:FARM_BOUNDARY;
   // The boundary already steps back behind the greenhouse (GREENHOUSE_BAY).
   const perimeter=source;
@@ -46,10 +47,13 @@ export function createBoundaryFence(map,boundary=FARM_BOUNDARY){
   perimeter.forEach((a,index)=>{
     const b=perimeter[(index+1)%perimeter.length];
     // Reserve a centred three-cell opening where the path actually crosses this stage.
-    const cuts=index===southernEdge?[0,...[14.5,17.5].map(col=>(col-a[0])/(b[0]-a[0])).sort((x,y)=>x-y),1]:[0,1];
+    const north=a[1]===-.5&&b[1]===-.5&&a[0]!==b[0],at=col=>(col-a[0])/(b[0]-a[0]);
+    const open=north?openings.filter(([c0,c1])=>c0>Math.min(a[0],b[0])&&c1<Math.max(a[0],b[0])):[];
+    const cuts=index===southernEdge?[0,...[14.5,17.5].map(at).sort((x,y)=>x-y),1]:[0,...open.flat().map(at).sort((x,y)=>x-y),1];
     let panel=0;
     for(let part=0;part<cuts.length-1;part++){
       const from=cuts[part],to=cuts[part+1],gate=index===southernEdge&&part===1;
+      if(open.length&&part%2===1)continue; // a path opening: no rail
       const length=(Math.abs(b[0]-a[0])+Math.abs(b[1]-a[1]))*(to-from),count=gate?1:Math.ceil(length/1.8);
       for(let i=0;i<count;i++){
         const t0=from+(to-from)*i/count,t1=from+(to-from)*(i+1)/count;

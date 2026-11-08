@@ -13,18 +13,15 @@ export const GARDEN_STAGES=Object.freeze([
 export const EDGE_STAGE=Object.freeze({id:8,level:260,name:'Bìa Rừng Cấm',right:33.5,edgeRight:45.5,bottom:33.5,description:'Dải Bìa Rừng: bãi chăn thả và vườn cây lâu năm.'});
 export const EDGE_STRIP=Object.freeze({col:33.5,rowTop:5.5,rowBottom:25.5});
 export const inEdgeStrip=(col,row)=>col>EDGE_STRIP.col&&row>=EDGE_STRIP.rowTop&&row<=EDGE_STRIP.rowBottom;
-// «Bờ hồ» (owner 08/11/2026): the built pond (pond_1+) gets its own land behind the north fence, behind thửa 3–4:
-// cols 15.5–28.5 × rows −11.5…−3.5, joined to the field by a fenced lane (cols 19.5–21.5) with a path. Its beds have
-// their own land west of it, «Ruộng nước» (owner «tách nó ra riêng … to bằng cái hồ»): a 9×7 bed ground in cols
-// 3.5–14.5 × rows −13.5…−4.5, lane cols 6.5–8.5 between thửa 1 and 2. gardenStage marks the stage {pond: true};
-// player decorations stay out of both lands and lanes.
-export const POND_LAND=Object.freeze({col:15.5,right:28.5,rowTop:-11.5,rowBottom:-3.5,laneLeft:19.5,laneRight:21.5});
-export const BED_LAND=Object.freeze({col:3.5,right:14.5,rowTop:-13.5,rowBottom:-4.5,laneLeft:6.5,laneRight:8.5});
-const inLand=(L,col,row)=>col>=L.col&&col<=L.right&&row>=L.rowTop&&row<=L.rowBottom||col>=L.laneLeft&&col<=L.laneRight&&row>L.rowBottom&&row<-.5;
-export const inPondLand=(col,row)=>inLand(POND_LAND,col,row)||inLand(BED_LAND,col,row);
-// The north fence (row −0.5, running east) steps out round each lane and land.
-const landNotch=L=>[[L.laneLeft,-.5],[L.laneLeft,L.rowBottom],[L.col,L.rowBottom],[L.col,L.rowTop],[L.right,L.rowTop],[L.right,L.rowBottom],[L.laneRight,L.rowBottom],[L.laneRight,-.5]];
-const POND_NOTCH=Object.freeze([...landNotch(BED_LAND),...landNotch(POND_LAND)]);
+// «Bờ hồ» (owner 08/11/2026): once the pond is dug (pond_1+) the field grows one open meadow behind its north fence,
+// cols 3.5–28.5 × rows −13.5…−0.5, holding «Ruộng nước» (west, default-decor pondBedRects), the «Góc nghỉ» vignette
+// and the pond (east, pondHome). Owner «ko cần rào mà chỉ cần lối»: no fence round it, only the field's north fence
+// with two openings where the paths leave (cols 7.5 and 20.5, garden-path-details). gardenStage marks the stage
+// {pond: true}; player decorations stay off the meadow.
+export const POND_LAND=Object.freeze({col:3.5,right:28.5,rowTop:-13.5,rowBottom:-.5});
+export const POND_OPENINGS=Object.freeze([[6.5,8.5],[19.5,21.5]]);
+export const inPondLand=(col,row)=>{const L=POND_LAND;return col>=L.col&&col<=L.right&&row>=L.rowTop&&row<L.rowBottom&&(col>GREENHOUSE_BAY[2][0]||row<GREENHOUSE_BAY[2][1]);};
+const POND_MEADOW=Object.freeze([[-.5,-.5],[-.5,-3.5],[3.5,-3.5],[3.5,-13.5],[28.5,-13.5],[28.5,-.5]]);
 export function stageContains(stage,col,row){
  if(stage.pond&&inPondLand(col,row))return true;
  const edge=stage.edgeRight&&inEdgeStrip(col,row);
@@ -37,7 +34,9 @@ export function stageContains(stage,col,row){
 // The north fence steps back behind the greenhouse. It is part of the land, so
 // meadow, forest floor and tree clearance all follow the same line as the rail.
 export const GREENHOUSE_BAY=Object.freeze([[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5]]);
-export function stageBoundary(stage){const [nw,...rest]=stageOutline(stage);return [nw,...GREENHOUSE_BAY,...(stage.pond?POND_NOTCH:[]),...rest];}
+// The meadow (stage.pond) is ground, not fence: `fence` gives the line the rail runs on.
+export function stageBoundary(stage,{fence=false}={}){const [nw,...rest]=stageOutline(stage);return [nw,...(stage.pond&&!fence?POND_MEADOW:GREENHOUSE_BAY),...rest];}
+export const fenceOpenings=stage=>stage.pond?POND_OPENINGS:[];
 function stageOutline(stage){
  // Every corner lies on a cell line (cells are centred on whole numbers).
  if(stage.id===8)return [[-5.5,-.5],[33.5,-.5],[33.5,5.5],[45.5,5.5],[45.5,25.5],[33.5,25.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]];

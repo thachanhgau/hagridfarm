@@ -1,0 +1,15 @@
+{
+  "master": "garden-v05/environment/pond/masters/pond-nook.png",
+  "width": 768,
+  "height": 992,
+  "transparent": 350447,
+  "opaque": 810,
+  "partial": 410599,
+  "visibleRGB": 39519,
+  "sha256": "34798e94cd49c2f46300a47b8ff48a660e51fe66282142a38f785b4063ebab9f",
+  "pond3sha256": "b61e127c20d76ef51cbd6bf9503a8ba31c2869102310f4d28a28094906634654",
+  "preview": [
+    744,
+    346
+  ]
+}

@@ -17,7 +17,8 @@ function spec(id,long,short,headroom,masterScale){
 }
 // 08/11 owner: ponds bigger than a 3×3 plot, on their own shore land (Bờ hồ, cols 33.5–45.5 × rows 25.5–36.5).
 // Then «hồ cái nào cũng phải to»: every tier 9×6, the tiers differ in look only.
-export const POND_SPECS=[spec('pond-1',9,6,56,3),spec('pond-2',9,6,56,3),spec('pond-3',9,6,56,3),spec('pond-bed',3,1,22,8)];
+// «Góc nghỉ» (owner 08/11 «khu vực giữa trống … tạo tiểu cảnh»): a 3×3 scene between Ruộng nước and the pond.
+export const POND_SPECS=[spec('pond-1',9,6,56,3),spec('pond-2',9,6,56,3),spec('pond-3',9,6,56,3),spec('pond-bed',3,1,22,8),spec('pond-nook',3,3,150,4)];
 // Master sheets, row-major cells. Supply-size icons: ink ≤ 40×40 in 64×64, base on row 56 (art bible §8, V24.9.73).
 export const POND_ITEMS=['fry_carp','fry_goldfish','goldfish','produce_grindylow'];
 // Phase 2 (plan §9): produce and feed of crup, knarl, salamander, on a 3×2 sheet (v2: produce_crup, salamander_feed redrawn, creatures-art-02b).
@@ -45,9 +46,9 @@ async function main(){
   const raw=await load(s.master),box=inkBox(raw.data,raw.info.width,raw.info.height),k=s.masterScale;
   // A master drawn on its guide canvas keeps the guide's geometry: plain ÷k. Otherwise fit the ink to the ground width.
   const exact=raw.info.width===s.width*k&&raw.info.height===s.height*k;
-  const w=exact?Math.round(box.w/k):s.width-2,h=Math.round(box.h*w/box.w);
+  const w=exact?Math.min(Math.round(box.w/k),s.width-2):s.width-2,h=Math.round(box.h*w/box.w);
   // A master inked to the guide's very edge slides in by the rounding pixel so a 1 px margin stays.
-  const left=exact?Math.min(Math.round(box.x/k),s.width-1-w):1,top=exact?Math.min(Math.round(box.y/k),s.height-1-h):s.height-2-h;
+  const left=exact?Math.max(1,Math.min(Math.round(box.x/k),s.width-1-w)):1,top=exact?Math.max(1,Math.min(Math.round(box.y/k),s.height-1-h)):s.height-2-h;
   if(left+w>s.width-1||top<1||top+h>s.height-1)throw Error(`${s.id}: ${w}×${h} ink does not fit ${s.width}×${s.height}`);
   const bounds=await write(s.file,await place(raw,box,w,h,s.width,s.height,left,top),s.width,s.height);
   const {id,master,masterScale,...runtime}=s;scenery[id]={...runtime,bounds};

@@ -253,6 +253,38 @@
         "docs/codex-briefs/pond-art/guide-pond-2.png"
       ],
       "kept": true
+    },
+    {
+      "id": "pond-nook-05",
+      "master": "garden-v05/environment/pond/masters/pond-nook.png",
+      "prompt": "Use case: stylized-concept. Generate ONE final game environment master sprite, a small eerie cozy resting nook, transparent RGBA background. Input image 1 is a STRICT geometric guide, not artwork: its 768x992 canvas and 3x3-tile 2:1 diamond ground with corners (384,600),(767,792),(384,984),(0,792) must be followed. Input image 2 is the style reference pond-3: match chunky pixel block sizes per tile, dark outlines #231F2E, flat clusters and grey moss-capped rocks. Nook reference scale is x4 while pond is x3: equivalent pixel blocks should be 4/3 as wide here (one logical pixel = 4x4 blocks in the requested canvas).\nDraw a single old gnarled willow-like tree rising from the BACK half of the diamond, thick twisted dark trunk, spreading drooping dark-green fronds and some dangling moss. Canopy reaches into empty headroom nearly to the canvas top, never beyond left or right edges; keep it compact with legible large foliage clusters. Beneath the tree, a weathered mossy stone bench facing the viewer; beside it ONE short stone lantern with a tiny faint warm yellow flame made of a few flat yellow blocks, no glow. Around them exactly 3–4 mossy grey rocks, a few ferns and small pale toadstools. TWO flat stepping stones at front edge of diamond. Ground is dark muted mossy grass, follows the exact 2:1 diamond in lower canvas, all object ground-contact points within diamond. Tree rooted in BACK half, bench clearly visible in front of trunk. No side spill outside guide width, no ground shadow outside diamond.\nStyle: chunky low-res isometric 2:1 pixel art, large flat square blocks aligned to a 192x248 logical pixel grid shown at x4, selective dark outlines, top-left lighting, 2–3 flat shades per material. Palette ONLY #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Favor dark green foliage and dark grey stone, warm flame only tiny accent. A little dark and eerie but cozy and readable. No skulls, gore, characters, flowers, water, extra buildings, text, watermark, frame. NO antialiasing, gradients, glow halos, dithering or noisy texture. Do not reproduce guide blue, grid seams, dot, red dashed line or white background. Real alpha transparency outside the sprite. Match guide canvas aspect 768x992 exactly.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1bae8-682e-7f01-8b35-7f2eda304ed2/exec-6291108e-2ffc-4fd0-b54f-840f7ae321b7.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-nook.png",
+        "garden-v05/environment/pond/masters/pond-3.png"
+      ],
+      "kept": true,
+      "tool": "built-in image_gen",
+      "placement": {
+        "extract": {
+          "left": 0,
+          "top": 0,
+          "width": 1103,
+          "height": 1388
+        },
+        "resize": [
+          768,
+          851
+        ],
+        "offset": [
+          0,
+          141
+        ],
+        "canvas": [
+          768,
+          992
+        ]
+      }
     }
   ]
 }

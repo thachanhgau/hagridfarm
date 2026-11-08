@@ -48,11 +48,9 @@ function pathStamp(ctx, x, y, radius, color) {
 
 function routeList(map) {
   const routes = GARDEN_PATHS.slice();
-  // Bờ hồ: from the row-7 path between thửa 3 and 4, north through the fenced lane to the pond's bank.
-  if (map?.pondPath) routes.push([[20.5, 7], [20.5, -4]]);
-  // Ruộng nước: between thửa 1 and 2 up its lane, then a ring round the front bed row (garden-growth BED_LAND); the
-  // rows are centred (default-decor pondBedRects), so cols 4 and 14 stay clear at every tier.
-  if (map?.pondPath) routes.push([[7.5, 7], [7.5, -5]], [[4, -5], [14, -5]], [[4, -5], [4, -9]], [[14, -5], [14, -9]], [[4, -9], [14, -9]]);
+  // Bờ hồ meadow: from the row-7 path through the north fence's openings, straight to the middle of the pond's bank
+  // (col 20.5) and of the paddies' bank (col 7.5); both banks are on row −5.5 (default-decor pondHome, pondBedRects).
+  if (map?.pondPath) routes.push([[20.5, 7], [20.5, -5.5]], [[7.5, 7], [7.5, -5.5]]);
   const pens = Array.isArray(map?.pens) ? map.pens : [];
   const rightPens = pens.filter((pen) => (
     Number.isFinite(Number(pen?.col)) && Number(pen.col) >= 26

@@ -1,5 +1,5 @@
 import {drawPlacementGrid} from './placement-grid.mjs?v=25.0.2';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects} from './default-decor.mjs?v=25.0.2';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=25.0.2';
 import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=25.0.2';
 import {EXTENSION_PENS,FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.0.2';
 export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.0.2';
@@ -23,7 +23,7 @@ import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.0.2';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.0.2';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.0.2';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.0.2';
-import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,GARDEN_STAGES,fitBounds,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
+import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,GARDEN_STAGES,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.0.2';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.0.2';
 import {CREATURE, DB, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
@@ -818,7 +818,7 @@ export async function createGarden(canvas, options = {}) {
   }
 
   function rebuildBoundaryFence(stage) {
-    boundaryFence = createBoundaryFence(map, stageBoundary(stage)).map((piece) => {
+    boundaryFence = createBoundaryFence(map, stageBoundary(stage, {fence: true}), fenceOpenings(stage)).map((piece) => {
       const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - (piece.gate?10:6));
       const top = Math.floor(Math.min(piece.a[1], piece.b[1]) - (piece.gate?80:51));
       const layer = makeCanvas(canvas, Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?36:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
@@ -1071,6 +1071,22 @@ export async function createGarden(canvas, options = {}) {
     }
   }
 
+  // The unfenced Bờ hồ meadow (garden-growth POND_LAND) ends in trees, not a straight grass line: a loose row just
+  // outside its west, north and east edges, behind everything on the meadow (it is terrain).
+  function drawMeadowEdge(target) {
+    const {col, right, rowTop} = POND_LAND, spots = [];
+    for (let r = rowTop + 1; r < -4; r += 1.7) spots.push([col - .9, r]);
+    for (let c = col; c <= right; c += 1.7) spots.push([c, rowTop - .9]);
+    for (let r = rowTop + 1; r < -1.5; r += 1.7) spots.push([right + 1.1, r]);
+    const ids = ['grove', 'pine', 'oak', 'grove'];
+    spots.map(([c, r], i) => {
+      const h = ((i + 7) * 2654435761) >>> 0, u = (h & 1023) / 1023 - .5, v = ((h >>> 10) & 1023) / 1023 - .5;
+      const asset = forestAssets.get(ids[(h >>> 20) % 4]), [x, y] = iso(c + u * .5, r + v * .5), k = nativePixelScale(.62 + ((h >>> 24) & 255) / 255 * .25);
+      const w = Math.round(asset.width * k), ht = Math.round(asset.height * k);
+      return {img: forestImages.get(asset.id), rect: {left: Math.round(x - w / 2), top: Math.round(y - ht), right: Math.round(x + w / 2), bottom: Math.round(y)}, w, h: ht, flip: (h >>> 8) & 1};
+    }).sort((a, b) => a.rect.bottom - b.rect.bottom).forEach((tree) => tree.img && drawCanopy(target, tree));
+  }
+
   function drawFutureGrovesLayer(target, stage,trail) {
     const placements=futureGroves(map, stage).map((placement,index)=>{
       const h=((index+1)*2654435761)>>>0,u=(h&1023)/1023,v=((h>>>10)&1023)/1023;
@@ -1121,10 +1137,11 @@ export async function createGarden(canvas, options = {}) {
     if (withForest) {
       // Existing perimeter placements and the stage's unopened grove both
       // live on the forest floor, outside the clipped active meadow.
-      const fence=createBoundaryFence(map,stageBoundary(stage)),gate=fence.find(piece=>piece.gate);
+      const fence=createBoundaryFence(map,stageBoundary(stage,{fence:true}),fenceOpenings(stage)),gate=fence.find(piece=>piece.gate);
       const trail=forestExitTrail(map,gate?.cellA[1]??stage.bottom);
       drawExitTrail(cachedContext,[...trail,[-32,seamY]],{sign:true,signImage:imageFor(FARM_SIGN_ART.file)});
       drawForestLayer(cachedContext,trail,stage);
+      if(stage.pond)drawMeadowEdge(cachedContext);
       drawFutureGrovesLayer(cachedContext,stage,trail);
     }
     return cachedCanvas;
@@ -1252,27 +1269,44 @@ export async function createGarden(canvas, options = {}) {
     });
   }
 
-  // Bed b: one column by three rows (pond-bed [3, 1] facing default) on «Ruộng nước» (default-decor pondBedRects); cells[j]
-  // is row j. Art at iso(foot) − pivot, else three water cells framed in wood.
+  // «Ruộng nước» (owner 08/11 «tạo hình mới và cân đối»): the trays of a row (default-decor pondBedRects) are one
+  // flooded paddy with the thửa's raised timber-and-stone rim, dark pond water, low earth bunds between the trays.
+  // The paddy is a ground object drawn from its back corner; bed b (cells[j] = row j) draws only its shoots.
   function pondBeds(at, tier, view) {
     const beds = asArray(view?.beds);
     if (!beds.length) return [];
-    const spec = pondScenery('pond-bed'), image = spec ? imageFor(spec.file) : null, now = Date.now();
-    const rects = pondBedRects(at, POND_TIER_IDS.slice(0, tier), beds.length);
-    return beds.map((cells, b) => {
-      const {c0, c1, r0} = rects[b], foot = [c1, r0 + 2], xy = iso(...foot);
+    const rects = pondBedRects(at, POND_TIER_IDS.slice(0, tier), beds.length), now = Date.now();
+    const c0 = Math.min(...rects.map((r) => r.c0)), c1 = Math.max(...rects.map((r) => r.c1)), r0 = Math.min(...rects.map((r) => r.r0)), r1 = Math.max(...rects.map((r) => r.r1));
+    const quad = (a0, a1, b0, b1) => [iso(a0, b0), iso(a1, b0), iso(a1, b1), iso(a0, b1)], t = 0.13;
+    const paddies = [{kind: 'pond-paddy', type: 'pond-bed', id: 'pond-paddy', xy: iso(c0, r0), draw: (ctx) => {
+      ctx.save();
+      ctx.imageSmoothingEnabled = false;
+      polygon(ctx, quad(c0, c1, r0, r1), '#5D6046', null); // earth bunds show between the trays
+      rects.forEach((r, i) => {
+        polygon(ctx, quad(r.c0 + t, r.c1 - t, r.r0 + t, r.r1 - t), '#3E3B70', null);
+        polygon(ctx, quad(r.c0 + t, r.c1 - t, r.r0 + t, r.r0 + t + 0.16), '#231F2E', null); // the bund's shade on the water
+        for (const [u, v, w] of [[0.3, 0.7 + (i % 3) * 0.5, 6], [0.62, 2.1 - (i % 2) * 0.6, 4]]) {
+          const [x, y] = iso(r.c0 + u, r.r0 + v);
+          ctx.fillStyle = '#70A8B6'; ctx.fillRect(Math.round(x - w / 2), Math.round(y), w, 2);
+        }
+        if (i % 3 === 1) { const [x, y] = iso(r.c0 + 0.45, r.r0 + 1.5); ctx.fillStyle = '#71934B'; ctx.fillRect(Math.round(x - 4), Math.round(y - 1), 8, 3); } // a lily pad
+      });
+      drawRaisedPlotBorder(ctx, quad(c0, c1, r0, r1), {weatherMode: activeWeather, index: 1});
+      ctx.restore();
+    }}];
+    return [...paddies, ...beds.map((cells, b) => {
+      const {c0, c1, r0} = rects[b], xy = iso(c1, r0 + 2);
       return {kind: 'pond-bed', type: 'pond-bed', id: `pond-bed:${b}`, xy, draw: (ctx) => {
-        if (image) ctx.drawImage(image, Math.round(xy[0] - spec.pivotX), Math.round(xy[1] - spec.pivotY));
-        else for (let j = 0; j < 3; j += 1) polygon(ctx, [iso(c0, r0 + j), iso(c1, r0 + j), iso(c1, r0 + j + 1), iso(c0, r0 + j + 1)], '#70A8B6', '#735044', 2);
         asArray(cells).forEach((cell, j) => {
           if (!cell) return;
           const [ex, ey] = iso(c0 + 0.5, r0 + j + 0.5), ripe = cell.ripe || Number(cell.readyAt) <= now;
-          ctx.fillStyle = ripe ? '#B0BD67' : '#3F6A45';
-          ctx.fillRect(Math.round(ex - 3), Math.round(ey - (ripe ? 14 : 8)), 6, ripe ? 14 : 8);
-          if (ripe) { ctx.fillStyle = '#FFC36B'; ctx.fillRect(Math.round(ex - 3), Math.round(ey - 18), 6, 4); }
+          ctx.fillStyle = '#231F2E'; ctx.fillRect(Math.round(ex - 5), Math.round(ey - (ripe ? 16 : 10)), 10, ripe ? 16 : 10);
+          ctx.fillStyle = ripe ? '#B0BD67' : '#71934B';
+          for (const dx of [-4, -1, 2]) ctx.fillRect(Math.round(ex + dx), Math.round(ey - (ripe ? 15 : 9) + (dx === -1 ? -2 : 0)), 2, ripe ? 15 : 9);
+          if (ripe) { ctx.fillStyle = '#FFC36B'; ctx.fillRect(Math.round(ex - 4), Math.round(ey - 18), 8, 3); }
         });
       }};
-    });
+    })];
   }
 
   // Pixel stand-in for a land creature without its motion sprite: shadow, body, head, two eyes, in the species' tone.
@@ -1875,6 +1909,8 @@ export async function createGarden(canvas, options = {}) {
       // pond above stays where it was.
       const pondTierNow = pondTier(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id)));
       const pondProp = props.get('pond');
+      const nook = pondTierNow ? pondScenery('pond-nook') : null; // «Góc nghỉ» between the paddies and the pond
+      if (nook) objects.push({kind: 'asset', type: 'prop', id: 'pond-nook', species: 'pond-nook', asset: {file: nook.file, width: nook.width, height: nook.height, pivotX: nook.pivotX, pivotY: nook.pivotY, noSnowCap: true}, xy: iso(...POND_NOOK.at)});
       if (pondTierNow && pondProp) objects.push(...pondObjects(pondProp, winterFile(pondProp.file), pondHome(map, POND_TIER_IDS.slice(0, pondTierNow)), pondTierNow, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock));
     }
 
@@ -1977,7 +2013,7 @@ export async function createGarden(canvas, options = {}) {
 
     if(propsVisible)objects.push({kind:'cottage-corner',type:'scenery',id:'cottage-corner',xy:iso(-2,5.5)});
     // The built pond and its beds count as taken ground for festival props (a cauldron stood on the beds, phase 2).
-    if(propsVisible)objects.push(...festivalObjects({eventMode,stage:currentStage,map,iso,decorAssets,occupied:[...storeDecorationObjects,...earnedDecorationObjects,...objects.filter((o)=>o.kind==='pond'||o.kind==='pond-bed')]}));
+    if(propsVisible)objects.push(...festivalObjects({eventMode,stage:currentStage,map,iso,decorAssets,occupied:[...storeDecorationObjects,...earnedDecorationObjects,...objects.filter((o)=>o.kind==='pond'||o.kind==='pond-bed'||o.kind==='pond-paddy')]}));
     // Each plot has a little wooden sign planted at its west corner (owner 05/11/2026), sorted with the sprites: whatever
     // stands in front of it covers it. Built plots say how they are doing: ripe count, or the time to the first ripe crop.
     for (let index = 0; index < map.plots.length; index += 1) {
