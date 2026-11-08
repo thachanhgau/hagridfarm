@@ -15,7 +15,7 @@ import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRo
 import {drawV24Ground} from './garden-v24-scenery.mjs?v=25.0.2';
 import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=25.0.2';
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=25.0.2';
-import {decorObjects,decorFootprintRect,depthCompare} from './decor-runtime.mjs?v=25.0.2';
+import {decorObjects,decorFootprintRect,depthCompare,footLift,orientedFootprint} from './decor-runtime.mjs?v=25.0.2';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=25.0.2';
 import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=25.0.2';
 import {atmosphereConfig,weatherConfig,backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.0.2';
@@ -1179,12 +1179,16 @@ export async function createGarden(canvas, options = {}) {
     const pond = {kind: 'pond', type: 'prop', id: 'pond', species: 'pond', asset: hit, xy, draw: (ctx) => {
       ctx.save();
       ctx.imageSmoothingEnabled = false;
-      if (tierImage) ctx.drawImage(tierImage, Math.round(x - hit.pivotX), Math.round(y - hit.pivotY));
+      // Bờ hồ: the pond faces right, the exact mirror of its art about the pivot (pivotX is the canvas centre).
+      ctx.save(); ctx.translate(Math.round(x), 0); ctx.scale(-1, 1);
+      if (tierImage) ctx.drawImage(tierImage, -Math.round(hit.pivotX), Math.round(y - hit.pivotY));
       else {
         const source = winterProp ? imageFor(winterProp) : seasonalImage(asset.file, 'water');
-        if (source) ctx.drawImage(source, Math.round(x - hit.pivotX), Math.round(y - hit.pivotY), Math.round(hit.width), Math.round(hit.height));
+        if (source) ctx.drawImage(source, -Math.round(hit.pivotX), Math.round(y - hit.pivotY), Math.round(hit.width), Math.round(hit.height));
       }
-      drawPondLife(ctx, x, y, k, view, creatures, clock);
+      ctx.restore();
+      // Fish and pond creatures circle the ground centre (pivot − 32·footLift), drawPondLife puts them 47·k above y.
+      drawPondLife(ctx, x, y - 32 * footLift(orientedFootprint(tierFootprint(tier), 'right')) + 47 * k, k, view, creatures, clock);
       ctx.restore();
     }};
     return [pond, ...pondBeds(at, tier, view)];

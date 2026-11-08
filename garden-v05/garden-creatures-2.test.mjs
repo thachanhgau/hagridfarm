@@ -6,7 +6,7 @@ import scene from './scene-data.json' with {type: 'json'};
 import * as E from './progression-engine.mjs';
 import {EXTENSION_PENS, FARM_LAYOUT} from './garden-grid.mjs';
 import {KEEPSAKE_DISPLAY_LAYOUT, keepsakeGroundRect} from './decor-placement-geometry.mjs';
-import {decorationPlacements, pondHome, pondBedRects, pondBedCount, pondFootprint, defaultDecorFootprint} from './default-decor.mjs';
+import {decorationPlacements, pondHome, pondBedRects, pondBedCount, pondFootprint, POND_FACING, defaultDecorFootprint} from './default-decor.mjs';
 import {gardenStage, inPondLand, stageContains} from './garden-growth.mjs';
 import {decorFootprintRect, rectsOverlap} from './decor-runtime.mjs';
 import {moodTiles, tendText, TRICKS} from './garden-mood-ui.mjs';
@@ -58,7 +58,7 @@ test('the extension pens stand on free ground: no plot, pen, statue, default dec
 
 test('Bờ hồ: the built pond and its beds stand inside the pond land, clear of plots, pens and each other', () => {
   for (const built of [['pond_1'], ['pond_1', 'pond_2'], ['pond_1', 'pond_2', 'pond_3']]) {
-    const at = pondHome(scene, built), pond = decorFootprintRect(...at, pondFootprint(built));
+    const at = pondHome(scene, built), pond = decorFootprintRect(...at, pondFootprint(built), POND_FACING);
     const beds = pondBedRects(at, built, pondBedCount(built));
     assert.equal(beds.length, built.length > 1 ? 4 : 2);
     const stage = gardenStage({level: 400, built}, scene);

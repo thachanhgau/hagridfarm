@@ -268,3 +268,7 @@ Mô phỏng (`docs/level-500-sim/runEdge.mjs` + `sim-edge.patch`, chồng lên `
 | Chỉ đợt 3 | 94 | 132 | 203 |
 
 Đọc: đợt 3 giữ cấp 500 ở ngày 196, đúng rào ≥ 196 (không còn dư cho đợt sau). Bỏ Ma da hoặc bỏ Ngựa lùn thì ra ngày 197, bỏ chi phí cây của ba bước xây hay bỏ vườn cây vẫn ngày 196: mỗi con thú mới rút khoảng 1 ngày, còn lại do cây tốn ở cấp 260 bù lại; Thủy quái và Ma da vừa đủ 2 chỗ hồ nên không phải chọn giữa chúng. Quả táo không cho XP, chỉ thay một phần Cỏ ba lá của khẩu phần Ngựa lùn.
+
+## 12. Hồ to trên đất «Bờ hồ» (owner 08/11/2026)
+
+Owner: «mấy cái hồ nên to nó mới đã, ko nên cùng size với vườn», «làm nó hắc ám tí», chọn dời hồ sang đất mới. Hồ 3 bậc thành 5×4 / 7×5 / 9×6 (trước 3×2 / 4×3 / 5×4), quay ngang (ảnh lật), đặt cố định trên đất «Bờ hồ» phía nam rào, cột 11,5–27,5 × hàng 33,5–41,5 (`POND_LAND`, mở khi có pond_1); góc đông nam bản đồ nằm ngoài khung 2560×1440 nên không dùng được. Luống ven hồ phía tây hồ. Ao trang trí cũ giữ 3×2 ở chỗ cũ, server `scene:pond` về 3×2. Người chơi không đặt đồ trên đất hồ. Hình: Codex vẽ lại tối, u ám (`docs/codex-briefs/pond-art-03.md`). Chuồng mở rộng 8–9 dời từ cột 22 sang 21,5 cho cách cột chuồng chính đúng 1 ô.

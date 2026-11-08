@@ -13,10 +13,11 @@ export const GARDEN_STAGES=Object.freeze([
 export const EDGE_STAGE=Object.freeze({id:8,level:260,name:'Bìa Rừng Cấm',right:33.5,edgeRight:45.5,bottom:33.5,description:'Dải Bìa Rừng: bãi chăn thả và vườn cây lâu năm.'});
 export const EDGE_STRIP=Object.freeze({col:33.5,rowTop:5.5,rowBottom:25.5});
 export const inEdgeStrip=(col,row)=>col>EDGE_STRIP.col&&row>=EDGE_STRIP.rowTop&&row<=EDGE_STRIP.rowBottom;
-// «Bờ hồ» (owner 08/11/2026): the built pond (pond_1+) and its beds get their own land south of the strip, east of
-// col 33.5, rows 25.5–36.5. gardenStage marks the stage {pond: true}; player decorations stay out (same as the strip).
-export const POND_LAND=Object.freeze({col:33.5,right:45.5,rowTop:25.5,rowBottom:36.5});
-export const inPondLand=(col,row)=>col>POND_LAND.col&&col<=POND_LAND.right&&row>=POND_LAND.rowTop&&row<=POND_LAND.rowBottom;
+// «Bờ hồ» (owner 08/11/2026): the built pond (pond_1+) and its beds get their own land south of the field fence, cols
+// 11.5–27.5, rows 33.5–41.5 (the south-east corner would leave the 2560×1440 map). gardenStage marks the stage
+// {pond: true}; player decorations stay out (same as the strip).
+export const POND_LAND=Object.freeze({col:11.5,right:27.5,rowTop:33.5,rowBottom:41.5});
+export const inPondLand=(col,row)=>col>=POND_LAND.col&&col<=POND_LAND.right&&row>POND_LAND.rowTop&&row<=POND_LAND.rowBottom;
 export function stageContains(stage,col,row){
  if(stage.pond&&inPondLand(col,row))return true;
  const edge=stage.edgeRight&&inEdgeStrip(col,row);
@@ -31,13 +32,12 @@ export function stageContains(stage,col,row){
 export const GREENHOUSE_BAY=Object.freeze([[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5]]);
 export function stageBoundary(stage){const [nw,...rest]=stageOutline(stage);return [nw,...GREENHOUSE_BAY,...rest];}
 // Pond land on the outline: the east side runs on down to row 36.5 before turning back west to the field's corner.
+// Pond land on the outline: the south fence (row 33.5, running west) steps out round it.
 function withPondLand(stage,outline){
  const i=outline.findIndex(([c,r])=>c===33.5&&r===33.5);
- if(!stage.pond||i<1)return outline;
- const {right,rowTop,rowBottom}=POND_LAND,south=[[right,rowBottom],[33.5,rowBottom]];
- // Strip outline (stage 8) already turns west at row 25.5 from col 45.5: drop that turn and keep going south.
- if(outline[i-1][0]===33.5&&outline[i-1][1]===rowTop&&outline[i-2]?.[0]===right)return [...outline.slice(0,i-1),...south,...outline.slice(i)];
- return [...outline.slice(0,i),[33.5,rowTop],[right,rowTop],...south,...outline.slice(i)];
+ if(!stage.pond||i<0)return outline;
+ const {col,right,rowTop,rowBottom}=POND_LAND;
+ return [...outline.slice(0,i+1),[right,rowTop],[right,rowBottom],[col,rowBottom],[col,rowTop],...outline.slice(i+1)];
 }
 function stageOutline(stage){return withPondLand(stage,baseOutline(stage));}
 function baseOutline(stage){

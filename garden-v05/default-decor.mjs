@@ -62,19 +62,21 @@ export function defaultDecorFootprint(id) {
 /** The built pond's ground [long, short] by tier (balance pond_1..3: [5, 4], [7, 5], [9, 6]), null before «Ao cá». */
 export const pondFootprint = (built = []) => DB.expansions.filter(e => e.kind === 'pond' && built?.includes?.(e.id)).at(-1)?.footprint ?? null;
 
-/** «Bờ hồ» (owner 08/11/2026: ponds bigger than a plot, on their own land): the built pond is fixed, its ground's
- *  north-east corner on (44.5, 26.5) inside the shore land (garden-growth POND_LAND), beds west of it. Null without a pond. */
+/** «Bờ hồ» (owner 08/11/2026: ponds bigger than a plot, on their own land): the built pond is fixed and faces right
+ *  (long side along the columns, mirrored art), its ground's north-east corner on (26.5, 34.5) inside the shore land
+ *  (garden-growth POND_LAND), beds west of it. Null without a pond. */
+export const POND_FACING = 'right';
 export function pondHome(scene, built = []) {
   const size = pondFootprint(built);
   if (!size) return null;
-  const [cols, rows] = orientedFootprint(size, 'default'), lift = footLift([cols, rows]);
-  return [44.5 + lift - cols / 2, 26.5 + lift + rows / 2];
+  const [cols, rows] = orientedFootprint(size, POND_FACING), lift = footLift([cols, rows]);
+  return [26.5 + lift - cols / 2, 34.5 + lift + rows / 2];
 }
 
 /** The pond beds' ground (garden expansion §2.1): `count` 1×3 trays in a row west of the pond's ground at `at`, `gap` path
  *  cells between, top rows level. Scene drawing and decoration placement share it, so nothing is placed on a bed. */
 export function pondBedRects(at, built = [], count = 0, gap = 1) {
-  const ground = decorFootprintRect(at[0], at[1], pondFootprint(built) ?? [3, 2]);
+  const ground = decorFootprintRect(at[0], at[1], pondFootprint(built) ?? [3, 2], POND_FACING);
   return Array.from({length: count}, (_, b) => {const c1 = ground.c0 - gap - b; return {c0: c1 - 1, c1, r0: ground.r0, r1: ground.r0 + 3};});
 }
 /** Pond beds by tier (server garden-pond-core): 2 at «Ao cá», 4 from «Hồ rong». */
