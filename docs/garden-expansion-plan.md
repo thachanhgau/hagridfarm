@@ -155,3 +155,16 @@ Mô phỏng (`docs/level-500-sim/runPond.mjs` + `sim-pond.patch`, trên bản sa
 | Chỉ cá + Thủy quái, luống 0 XP | 93 | 129 | 199 (−1,5%) |
 
 Cá thêm ~7.900 Cá nhỏ trong 300 ngày, nhỏ so với công thức «Nuôi cá nhỏ» (12 con một mẻ), nên kinh tế bữa ăn không đổi đáng kể; XP thêm chủ yếu từ luống và Thủy quái.
+
+## 9. Đợt 2: hợp đồng giữa code và hình (08/11/2026)
+Loài mới (id / nhãn Lý Lan / cấp): `crup` «Chó đuôi nĩa» 140 · `knarl` «Nhím quậy» 180 · `salamander` «Kỳ nhông lửa» 220. Chuồng mở rộng `pen_ext_1..3` ở cấp 140, 220, 340, mỗi cái +2 chỗ (12 → 18).
+
+| Thứ | Id / đường dẫn | Bên làm |
+|---|---|---|
+| Sprite 3 loài (4 tuổi + idle/action/eat/care, 2 hướng) | `creature-motion-assets/native/<id>/…`, `FARM_MOTION.items` id `<id>` | hình (pipeline như `grindylow`) |
+| Chỗ ở + tượng kỷ vật | `HABITAT_ART.<id>`, `KEEPSAKE_ART.<id>` | hình |
+| Icon sản vật / thức ăn 64×64 | `produce_<id>`, `<id>_feed` trong `POND_ART` (hoặc một `creature-art-2.mjs` cùng dạng, nối vào `flowArtSpec`) | hình; nhãn, công thức: code |
+| Icon 16×16 | `paw`, `hand_feed`, `campfire` | hình |
+| Ô kỷ vật thêm (Thủy quái + 3 loài mới) và chỗ đặt luống ven hồ không đè đồ trang trí | `KEEPSAKE_DISPLAY_LAYOUT`, server + client | code |
+
+File chỉ bên hình sửa: `pixel-icons.mjs`, `pond-art.mjs`/`creature-art-2.mjs`, `flow-item-ui.mjs`, manifest/data sprite sinh vật, test số lượng art, `garden-creature-habitats.mjs` (chuyển động chỗ ở). File chỉ bên code sửa: `balance-data*`, engine, UI, `scene-renderer.mjs`, fixture, server.
