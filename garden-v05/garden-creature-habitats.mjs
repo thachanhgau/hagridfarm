@@ -1,7 +1,7 @@
 // Authored habitat sprites; placement and ambient effects remain presentation-only.
 import {HABITAT_ART} from './complete-object-art.mjs?v=25.0.2';
 // Each sprite stays inside a 38 x 30 ground pocket between the two actors.
-const palette={d:'#4a3c2c',w:'#735044',h:'#b49a66',s:'#687486',l:'#a6b1ae',g:'#3f6a45',v:'#71934b',a:'#e7ae73',b:'#70a8b6',p:'#a57554',r:'#a57554',c:'#d6d8bf'};
+const palette={d:'#4a3c2c',w:'#735044',h:'#b49a66',s:'#687486',l:'#a6b1ae',g:'#3f6a45',v:'#71934b',a:'#e7ae73',b:'#70a8b6',p:'#a57554',r:'#a57554',c:'#d6d8bf',e:'#ed8a45',f:'#ffc36b'};
 export const HABITAT_SPECIES=Object.freeze(Object.keys(HABITAT_ART));
 export function habitatAnchors(pen,iso){
  return [iso(pen.col+pen.width*.39,pen.row+pen.height*.18),iso(pen.col+pen.width*.60,pen.row+pen.height*.74)];
@@ -59,6 +59,10 @@ export function drawHabitatMotion(c,residents,{clock=0,reducedMotion=false,weath
    case 'diricawl': // Two quiet ripples, no travel across the pen.
     pixel(c,x-5+sway*2,y-12,4,1,p.l);pixel(c,x+3-sway,y-8,3,1,p.b);break;
    case 'grindylow':pixel(c,x-3+sway,y-9,4,1,p.c);break; // pond phase 1: one ripple on the rock pool
+   // Phase 2 (plan §9): a fly over the kennel bowl, a leaf lifting off the pile, a spark rising from the embers.
+   case 'crup':pixel(c,x+4+sway*2,y-10-(phase===2?1:0),2,1,p.a);break;
+   case 'knarl':pixel(c,x+6+sway,y-23+(phase===2?1:0),2,2,p.a);break;
+   case 'salamander':pixel(c,x-2+sway,y-16-phase*2,2,2,phase%2?p.f:p.e);break;
    case 'fwooper':pixel(c,x+3+sway,y-22,2,5,p.p);pixel(c,x+4+sway,y-23,2,2,p.a);break;
    case 'hippogriff':pixel(c,x+11+sway,y-8,2,5,p.c);break;
    case 'thestral':pixel(c,x-4,y-14,4,4,phase===1||phase===2?p.l:p.b);break;

@@ -1,0 +1,9 @@
+{
+  "id": "keepsake_salamander",
+  "kind": "keepsake",
+  "species": "salamander",
+  "prompt": "Use case: stylized-concept.1024x1024 real transparent RGBA, ONE centered complete KEEPSAKE STATUETTE. Orange red FIRE SALAMANDER, slim low LIZARD body with four splayed little feet, round head facing LEFT, bright yellow eyes, few large darker red-brown back spots, LONG TAIL CURLED to right and ONE SMALL FLAT FLAME LICK TOUCHING back. Same salamander identity as supplied motion sheet. The lizard stands on LOW TWO-STEP WARM GREY STONE rectangular isometric PLINTH exactly from attached Grindylow keepsake: pale upper-left rim, darker right side, simple blank GOLD FRONT INSET with dark grey interior, no lettering. The three new keepsakes must be same family as Grindylow and Kneazle.2:1 dimetric3/4 view, top-left light, chunky LOW-resolution large square pixel blocks, thick #231F2E outline, big flat clusters2-3shades/material. Palette orange #ED8A45 #C75B4B, red-brown spots #8B4A3F, tiny yellow flame #FFC36B; stone #41465C #687486 #A6B1AE #D6D8BF; gold #FFC36B. Cozy farm lizard, not dragon (no wings horns or spines). Entire object centered with generous transparency. No antialias gradients glow halo smoke floating sparks noise dither texture outside shadow ground extra props text frames or watermark.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-9aebd392-ce87-42d5-bb34-e45adfc148b2.png",
+  "master": "masters-complete-objects/keepsake_salamander.png",
+  "masterSha256": "a9b9fcf50abc13464192961633a3725985f732b28dbe66f016ef65952ce445cd"
+}

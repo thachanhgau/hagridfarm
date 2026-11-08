@@ -14,7 +14,7 @@ export const CANONICAL_OUTPUT_IDS = Object.freeze([
 ]);
 
 export function flowArtSpec(key) {
- const spec = FLOW_ITEM_ART?.[key] ?? POND_ART[key]; // pond items (fry, goldfish, produce_grindylow) resolve like flow art
+ const spec = FLOW_ITEM_ART?.[key] ?? POND_ART[key]; // pond items (fry, goldfish, produce_grindylow) and phase-2 produce/feed (crup, knarl, salamander) resolve like flow art
  return spec?.file ? spec : null;
 }
 

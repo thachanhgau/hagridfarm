@@ -1955,6 +1955,5868 @@
           ]
         }
       }
+    },
+    {
+      "id": "crup",
+      "label": "Chó đuôi nĩa",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 60,
+        "h": 52
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/crup-left-motion-v01.png",
+          "masterSha256": "818170617b80d31390a22f3a03e7c047c3ab68df5c6f565ca6a13135b8981b82",
+          "prompt": "Use case: stylized-concept. Create a production pixel-art creature animation design master, 1024x1024 transparent RGBA, 4 columns x 4 rows, sixteen separated poses, no drawn grid. Crup, a cute small Jack Russell terrier, white/cream body with tan brown head and back patches, short legs, pointed ears folded at tips, keen dark eyes and cheeky grin. ESSENTIAL: one short tail splitting into TWO very obvious large fork prongs, visible in EVERY pose. All sixteen face LEFT in three-quarter 2:1 dimetric view, head and eyes left, tail right. Chunky LOW resolution pixel art matching the provided Grindylow sheet reference: large flat square blocks, thick #231F2E outline, 2-3 flat shades per material, upper-left light. Adult silhouette about 56x46 native pixels, enlarged blocks, simple readable shapes. SAME design and scale all cells. Each 256 cell centered, feet baseline local y210; >=32 transparent gap; nothing crosses cells. Row1 idle: rest; breathe chest up; blink; settle fork-tail wag. Row2 action: crouch; springs up chasing its own forked tail with head still left; lands; shakes itself. Row3 eat: approaches small bone-shaped meaty biscuit on ground; bends with biscuit TOUCHING mouth; bites biscuit touching mouth; lifts head and chews. Row4 care: leans into small hand touching head; receives pet eyes closed happy; blink with hand touching head; relaxed without hand. Only named food and care hand. Tail, food in poses2 onward, and limbs attached to body. Cozy cheerful farm dog, clearly terrier not cat or three-headed dog. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No antialiasing, gradients, glow, dithering, noise, texture speckles, shadow outside sprite, ground, text, frames, watermark. Real transparent background.\nCandidate B correction priorities: EVERY head and nose faces LEFT, including jumping peak (row2 column2): puppy jumps with nose left, torso twisting and fork tail curving up near shoulder on RIGHT. Do not look right. Remove ALL motion lines, swooshes, floating marks. Folded ears must have pointed bases with small tipped-over triangles, not long floppy hound ears. Only 2 fork prongs, compact branching Y tail attached to rump; keep fork readable in all cells. Chunkier, fewer pixels, strongly flat colour clusters.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-fc149953-ba56-494c-9fe5-92deda1f9688.png",
+          "referenceFiles": [
+            "garden-v05/creature-motion-assets/masters/grindylow-left-motion-v01.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/crup-right-motion-v01.png",
+          "masterSha256": "516ce4edbfaa74462f57cbb2975b0e586d44ceb63b2d1ab6969b438d89ddcfdb",
+          "prompt": "Use case: stylized-concept. Create a production pixel-art creature animation design master, 1024x1024 transparent RGBA, 4 columns x 4 rows, sixteen separated poses, no drawn grid. Crup, a cute small Jack Russell terrier, white/cream body with tan brown head and back patches, short legs, pointed ears folded at tips, keen dark eyes and cheeky grin. ESSENTIAL: one short tail splitting into TWO very obvious large fork prongs, visible in EVERY pose. All sixteen face LEFT in three-quarter 2:1 dimetric view, head and eyes left, tail right. Chunky LOW resolution pixel art matching the provided Grindylow sheet reference: large flat square blocks, thick #231F2E outline, 2-3 flat shades per material, upper-left light. Adult silhouette about 56x46 native pixels, enlarged blocks, simple readable shapes. SAME design and scale all cells. Each 256 cell centered, feet baseline local y210; >=32 transparent gap; nothing crosses cells. Row1 idle: rest; breathe chest up; blink; settle fork-tail wag. Row2 action: crouch; springs up chasing its own forked tail with head still left; lands; shakes itself. Row3 eat: approaches small bone-shaped meaty biscuit on ground; bends with biscuit TOUCHING mouth; bites biscuit touching mouth; lifts head and chews. Row4 care: leans into small hand touching head; receives pet eyes closed happy; blink with hand touching head; relaxed without hand. Only named food and care hand. Tail, food in poses2 onward, and limbs attached to body. Cozy cheerful farm dog, clearly terrier not cat or three-headed dog. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No antialiasing, gradients, glow, dithering, noise, texture speckles, shadow outside sprite, ground, text, frames, watermark. Real transparent background.\nCandidate B correction priorities: EVERY head and nose faces LEFT, including jumping peak (row2 column2): puppy jumps with nose left, torso twisting and fork tail curving up near shoulder on RIGHT. Do not look right. Remove ALL motion lines, swooshes, floating marks. Folded ears must have pointed bases with small tipped-over triangles, not long floppy hound ears. Only 2 fork prongs, compact branching Y tail attached to rump; keep fork readable in all cells. Chunkier, fewer pixels, strongly flat colour clusters.\nNEW OUTPUT: right-facing companion sheet, same sixteen ordered phases and identical terrier design as provided Crup reference. ALL sixteen heads/noses point RIGHT and fork tail sits LEFT of rump. Re-draw anatomy for right view, DO NOT mirror lighting: highlights remain UPPER LEFT, shadows lower right. Same tan head and back patches, folded tipped ears, fork tail two prongs. Peak spring pose head RIGHT, tail curving up left, no motion lines. Retain row3 biscuit and row4 hand phases. 1024x1024, 4x4 transparent sheet.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-61c25535-5021-437f-a213-3448d1d57165.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-fc149953-ba56-494c-9fe5-92deda1f9688.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/crup-growth-v01.png",
+          "masterSha256": "1a65d99e9d9aa247bdd9683dd9494fc4772450c3782a6509f2ebbb44f408b519",
+          "prompt": "Use case: stylized-concept. Make 1024x512 transparent RGBA pixel-art GROWTH sheet of this exact reference CRUP terrier design. 2 rows x4 equal 256 cells, eight isolated sprites. Row1 all LEFT, row2 all RIGHT. Columns newborn tiny round big head; juvenile; adolescent; adult same white/cream and tan-brown patched short-legged Jack Russell as reference. Every age including tiny pup has obvious attached Y FORKED TAIL of TWO prongs, folded-tip pointed ears, dark eyes, cheeky smile. All calm standing on four feet, no actions, props or hands. Adult 2.6x newborn height; growth in 4 clear stages. Centered in cells, feet local y210 in every cell, generous32px+ gaps. Same block pixel density regardless of age: newborn has fewer logical pixels, do not just shrink adult. Native adult about56x46px. Chunky large square flat pixels, clean thick #231F2E outline, big 2-3 shade clusters, top-left light on BOTH facing directions (not mirrored lighting), 2:1 dimetric three-quarter camera. Palette from reference cream #D6D8BF, tan #A57554 #C97952 #E7AE73, shadows #735044 #4A3042, outline #231F2E. No antialiasing gradient glow dither speckles outside shadow ground grid text borders watermark. Real alpha transparency.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-84b3c9bc-ad44-43d3-ae00-de177b281e20.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-fc149953-ba56-494c-9fe5-92deda1f9688.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      },
+      "frames": {
+        "left": [
+          {
+            "file": "native/crup/left-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 35,
+              "y": 61,
+              "w": 26,
+              "h": 19,
+              "count": 385,
+              "edge": false
+            },
+            "sha256": "cb4f6a177c4f763b8bcdc2c7a79b0102e4703bee4d8037a1d580cd69435dd529",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 89,
+              "y": 153,
+              "w": 78,
+              "h": 57
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 31,
+              "y": 50,
+              "w": 35,
+              "h": 30,
+              "count": 750,
+              "edge": false
+            },
+            "sha256": "84eb91f37152adf4b04dac9429beb441032e26be03b8430e450e1d2f9500f03d",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 332,
+              "y": 122,
+              "w": 104,
+              "h": 88
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 40,
+              "w": 43,
+              "h": 40,
+              "count": 1220,
+              "edge": false
+            },
+            "sha256": "7d780453a75a9c4183e1fff6a2143f4707af135bfa156d24487ce62d0cc24a07",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 575,
+              "y": 92,
+              "w": 129,
+              "h": 118
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 30,
+              "w": 53,
+              "h": 50,
+              "count": 1915,
+              "edge": false
+            },
+            "sha256": "0ef078b1fcf6c135e9afe3d9fad7f561f1690fa790a86a81a51af83c695f2970",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 816,
+              "y": 60,
+              "w": 159,
+              "h": 150
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 30,
+              "w": 55,
+              "h": 50,
+              "count": 1877,
+              "edge": false
+            },
+            "sha256": "212d2eacf5eaee2341a57c2ce22b2e8dd604defd489f1a3701ad761742eebef6",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 46,
+              "y": 59,
+              "w": 163,
+              "h": 150
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 27,
+              "w": 53,
+              "h": 53,
+              "count": 1950,
+              "edge": false
+            },
+            "sha256": "2f3a54f8e28c55c98cc2de2a491e0deb0595fe9fbe02493ab6d885856dd5e59e",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 305,
+              "y": 51,
+              "w": 158,
+              "h": 158
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 30,
+              "w": 53,
+              "h": 50,
+              "count": 1863,
+              "edge": false
+            },
+            "sha256": "9f3c0f266b822c73df35d9d83d151ce9378083ae1b418e76ee0d77686a5a6157",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 560,
+              "y": 59,
+              "w": 158,
+              "h": 150
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 32,
+              "w": 58,
+              "h": 48,
+              "count": 1793,
+              "edge": false
+            },
+            "sha256": "2532d11093a0bf34cf187003dbc6edf2c3293aff799967997332bab579be9c54",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 810,
+              "y": 66,
+              "w": 172,
+              "h": 143
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 37,
+              "w": 56,
+              "h": 43,
+              "count": 1948,
+              "edge": false
+            },
+            "sha256": "c55079bdf01a72eeff7c60930b6b6e3c9989a300bdd62607e91d2810be9237ac",
+            "clip": "action",
+            "sourceRect": {
+              "x": 45,
+              "y": 338,
+              "w": 166,
+              "h": 128
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 21,
+              "w": 53,
+              "h": 59,
+              "count": 2039,
+              "edge": false
+            },
+            "sha256": "88db9ee2943bddb39920c56a7782ad58deffd45311dccf19f0948300deff1265",
+            "clip": "action",
+            "sourceRect": {
+              "x": 305,
+              "y": 288,
+              "w": 159,
+              "h": 177
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 36,
+              "w": 60,
+              "h": 44,
+              "count": 1953,
+              "edge": false
+            },
+            "sha256": "c56e9f48c66218dcbb13e56b448c40ff06f9e2fe1590c61ce7748b24171eec53",
+            "clip": "action",
+            "sourceRect": {
+              "x": 550,
+              "y": 335,
+              "w": 178,
+              "h": 131
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 31,
+              "w": 59,
+              "h": 49,
+              "count": 1996,
+              "edge": false
+            },
+            "sha256": "bc3bab8ba611750ed620ba2e1ba278d2f2c34b5c5b5f92b71a5dc6e584a6637e",
+            "clip": "action",
+            "sourceRect": {
+              "x": 808,
+              "y": 321,
+              "w": 176,
+              "h": 145
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 32,
+              "w": 63,
+              "h": 48,
+              "count": 2152,
+              "edge": false
+            },
+            "sha256": "61ad3238d6b6543d3c68652009de59fa287705974bcc966bd255ee5fa3297e6f",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 34,
+              "y": 579,
+              "w": 188,
+              "h": 142
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 34,
+              "w": 59,
+              "h": 46,
+              "count": 2009,
+              "edge": false
+            },
+            "sha256": "9f7b344e9941e07d48a50adfbe343c74086ef019dbd2a40e57bc69050b1dc349",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 296,
+              "y": 584,
+              "w": 177,
+              "h": 138
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 31,
+              "w": 62,
+              "h": 49,
+              "count": 2072,
+              "edge": false
+            },
+            "sha256": "4d5e57689325aae126b6937f4b8426c505d324446e2d58f417af4e0d190e92ef",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 547,
+              "y": 577,
+              "w": 184,
+              "h": 145
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 28,
+              "w": 58,
+              "h": 52,
+              "count": 2028,
+              "edge": false
+            },
+            "sha256": "17c9188440630ba54e76b4e7bdb9d1bb0a69b5977b3e9550779a5d0aab899bbc",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 808,
+              "y": 567,
+              "w": 174,
+              "h": 155
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 20,
+              "w": 56,
+              "h": 60,
+              "count": 2315,
+              "edge": false
+            },
+            "sha256": "05628f6a446851af57c90efaefdf19f7116ad9d42e9c2613ab409743a27ebb5e",
+            "clip": "care",
+            "sourceRect": {
+              "x": 45,
+              "y": 799,
+              "w": 167,
+              "h": 178
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 21,
+              "w": 57,
+              "h": 59,
+              "count": 2275,
+              "edge": false
+            },
+            "sha256": "ee14093165fe98384a0d05e792c8e3f5f53b4e9390e31bea4c1ca1eef1c2f1ce",
+            "clip": "care",
+            "sourceRect": {
+              "x": 299,
+              "y": 801,
+              "w": 169,
+              "h": 177
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 22,
+              "w": 58,
+              "h": 58,
+              "count": 2289,
+              "edge": false
+            },
+            "sha256": "ee229fc247eb63a4914ccfae2b3e7ab485afa083d6c499ae772f071a445db842",
+            "clip": "care",
+            "sourceRect": {
+              "x": 554,
+              "y": 803,
+              "w": 172,
+              "h": 174
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/left-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 28,
+              "w": 57,
+              "h": 52,
+              "count": 2013,
+              "edge": false
+            },
+            "sha256": "4acf780c1c8c4acc4d90c0e71688ab194d622ae074c3c5407010db7837eec6ee",
+            "clip": "care",
+            "sourceRect": {
+              "x": 811,
+              "y": 823,
+              "w": 170,
+              "h": 154
+            },
+            "scale": 0.3333333333333333
+          }
+        ],
+        "right": [
+          {
+            "file": "native/crup/right-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 35,
+              "y": 61,
+              "w": 26,
+              "h": 19,
+              "count": 373,
+              "edge": false
+            },
+            "sha256": "5c532cfb97c61ddd68d136244b194be018760c76b97e8bd608ce2d6394431fdf",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 89,
+              "y": 409,
+              "w": 77,
+              "h": 57
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/right-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 31,
+              "y": 50,
+              "w": 35,
+              "h": 30,
+              "count": 766,
+              "edge": false
+            },
+            "sha256": "f4195d1150b44c71db8a234054bd2ae29b44fdf8a184b43a2c1e563d47c19541",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 332,
+              "y": 378,
+              "w": 103,
+              "h": 88
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/right-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 26,
+              "y": 40,
+              "w": 45,
+              "h": 40,
+              "count": 1261,
+              "edge": false
+            },
+            "sha256": "1874c1e974b37df1775bd42a787c3e794b2831c89c7ac5f97d8d46a6ca0a445c",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 573,
+              "y": 348,
+              "w": 133,
+              "h": 118
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/right-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 30,
+              "w": 54,
+              "h": 50,
+              "count": 1930,
+              "edge": false
+            },
+            "sha256": "cf5cb8a1dc784252f4f14f4a1432cd66c6f6805f211ad9011c41912848ae2517",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 815,
+              "y": 316,
+              "w": 162,
+              "h": 150
+            },
+            "scale": 0.3333333333333333
+          },
+          {
+            "file": "native/crup/right-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 30,
+              "w": 54,
+              "h": 50,
+              "count": 1843,
+              "edge": false
+            },
+            "sha256": "b63044412e866fc86ba92408e8f757d2bdb0acf2988a73bbd5e2c04617c73e1c",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 43,
+              "y": 56,
+              "w": 169,
+              "h": 154
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 29,
+              "w": 54,
+              "h": 51,
+              "count": 1884,
+              "edge": false
+            },
+            "sha256": "21c09843a908490b73bedca3c05c4d85cf2219b55b24b0b731c0b643368ccd28",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 299,
+              "y": 52,
+              "w": 169,
+              "h": 158
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 31,
+              "w": 53,
+              "h": 49,
+              "count": 1795,
+              "edge": false
+            },
+            "sha256": "0ce71d39a60a24817d6573e34b0402bb249c9a0b62308e8ac7da2eab5ed70d01",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 558,
+              "y": 57,
+              "w": 165,
+              "h": 153
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 32,
+              "w": 56,
+              "h": 48,
+              "count": 1822,
+              "edge": false
+            },
+            "sha256": "0ce3481e9a1cb3e1ad6687de2a2155c2869cb98cf23808dd9f0a8734b88dd592",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 808,
+              "y": 61,
+              "w": 175,
+              "h": 149
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 39,
+              "w": 57,
+              "h": 41,
+              "count": 1881,
+              "edge": false
+            },
+            "sha256": "c6a4daa71cda5feec791e37a33b15cbd724eb8469d706f85be393f257592c943",
+            "clip": "action",
+            "sourceRect": {
+              "x": 40,
+              "y": 339,
+              "w": 176,
+              "h": 127
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 23,
+              "w": 55,
+              "h": 57,
+              "count": 1971,
+              "edge": false
+            },
+            "sha256": "2881d812d341de1dde02cb794c41c53611e209e97f93da46517b19d8bff48062",
+            "clip": "action",
+            "sourceRect": {
+              "x": 298,
+              "y": 290,
+              "w": 172,
+              "h": 176
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 38,
+              "w": 59,
+              "h": 42,
+              "count": 1867,
+              "edge": false
+            },
+            "sha256": "a4fbdce2a72485a76da50ddcf0e28b2f9a5b9c35f4e16698d1757c3ef154e461",
+            "clip": "action",
+            "sourceRect": {
+              "x": 548,
+              "y": 337,
+              "w": 185,
+              "h": 129
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 34,
+              "w": 58,
+              "h": 46,
+              "count": 1852,
+              "edge": false
+            },
+            "sha256": "db829772074ff42275c60229f2b89a38db73ffe212082665589db542a7aacb89",
+            "clip": "action",
+            "sourceRect": {
+              "x": 806,
+              "y": 324,
+              "w": 181,
+              "h": 142
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 20,
+              "y": 33,
+              "w": 61,
+              "h": 47,
+              "count": 1995,
+              "edge": false
+            },
+            "sha256": "b8b4db8e947fd368db3969b71c26073c6da02a10248e8ba5e4a65662c0810cf2",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 32,
+              "y": 576,
+              "w": 190,
+              "h": 145
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 40,
+              "w": 58,
+              "h": 40,
+              "count": 1906,
+              "edge": false
+            },
+            "sha256": "fde0834340a12c1ce0489e7f065e3e952c275dbb7e5f02610064fbf29ada6214",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 293,
+              "y": 597,
+              "w": 180,
+              "h": 125
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 34,
+              "w": 61,
+              "h": 46,
+              "count": 1990,
+              "edge": false
+            },
+            "sha256": "97df35bdc80b9497f978687c2d710646d53c2d5cdd30920e5081d9c1b48e5ac0",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 546,
+              "y": 578,
+              "w": 189,
+              "h": 144
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 31,
+              "w": 59,
+              "h": 49,
+              "count": 1953,
+              "edge": false
+            },
+            "sha256": "b01b49a9a87dede21d246b0c28aa920ccac083ae8639f40b575614c5d0472724",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 804,
+              "y": 569,
+              "w": 182,
+              "h": 152
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 23,
+              "w": 60,
+              "h": 57,
+              "count": 2289,
+              "edge": false
+            },
+            "sha256": "1055029984edc2d12b6a3266545fe156dbb7e6877cfa1ea2ce39b20e89399d6d",
+            "clip": "care",
+            "sourceRect": {
+              "x": 33,
+              "y": 800,
+              "w": 188,
+              "h": 178
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 22,
+              "w": 61,
+              "h": 58,
+              "count": 2308,
+              "edge": false
+            },
+            "sha256": "ff0eebaf5a12dfcc0c9c3e6817d6c2621dacdef3e586d3d80d9808baad845189",
+            "clip": "care",
+            "sourceRect": {
+              "x": 289,
+              "y": 799,
+              "w": 190,
+              "h": 179
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 23,
+              "w": 61,
+              "h": 57,
+              "count": 2297,
+              "edge": false
+            },
+            "sha256": "f226435026eed8fb449ea6c9108b7b7b2322e38559a3bb637104dba8a702a742",
+            "clip": "care",
+            "sourceRect": {
+              "x": 546,
+              "y": 800,
+              "w": 189,
+              "h": 178
+            },
+            "scale": 0.32044198895027626
+          },
+          {
+            "file": "native/crup/right-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 29,
+              "w": 59,
+              "h": 51,
+              "count": 2028,
+              "edge": false
+            },
+            "sha256": "37cb0984e5c353d0b742f4a2abc4456e50b09296e1eccf6806cb919af4a0616f",
+            "clip": "care",
+            "sourceRect": {
+              "x": 805,
+              "y": 818,
+              "w": 182,
+              "h": 160
+            },
+            "scale": 0.32044198895027626
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "durations": [
+            600,
+            240,
+            180,
+            240
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "durations": [
+            320,
+            180,
+            240,
+            220
+          ],
+          "loop": false
+        },
+        "eat": {
+          "frames": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            16,
+            17,
+            18,
+            19
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "runtimeAtlases": {
+        "left": {
+          "file": "creature-motion-assets/native/crup/left-atlas.png",
+          "sha256": "80576323dbb8e4b7c3370e739d065f501b1705e2d1215504b1d52414ed07f088",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 35,
+                "y": 61,
+                "w": 26,
+                "h": 19,
+                "count": 385,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 31,
+                "y": 50,
+                "w": 35,
+                "h": 30,
+                "count": 750,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 40,
+                "w": 43,
+                "h": 40,
+                "count": 1220,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 30,
+                "w": 53,
+                "h": 50,
+                "count": 1915,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 30,
+                "w": 55,
+                "h": 50,
+                "count": 1877,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 27,
+                "w": 53,
+                "h": 53,
+                "count": 1950,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 30,
+                "w": 53,
+                "h": 50,
+                "count": 1863,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 20,
+                "y": 32,
+                "w": 58,
+                "h": 48,
+                "count": 1793,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 37,
+                "w": 56,
+                "h": 43,
+                "count": 1948,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 21,
+                "w": 53,
+                "h": 59,
+                "count": 2039,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 36,
+                "w": 60,
+                "h": 44,
+                "count": 1953,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 31,
+                "w": 59,
+                "h": 49,
+                "count": 1996,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 32,
+                "w": 63,
+                "h": 48,
+                "count": 2152,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 34,
+                "w": 59,
+                "h": 46,
+                "count": 2009,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 31,
+                "w": 62,
+                "h": 49,
+                "count": 2072,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 28,
+                "w": 58,
+                "h": 52,
+                "count": 2028,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 20,
+                "y": 20,
+                "w": 56,
+                "h": 60,
+                "count": 2315,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 20,
+                "y": 21,
+                "w": 57,
+                "h": 59,
+                "count": 2275,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 20,
+                "y": 22,
+                "w": 58,
+                "h": 58,
+                "count": 2289,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 20,
+                "y": 28,
+                "w": 57,
+                "h": 52,
+                "count": 2013,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        },
+        "right": {
+          "file": "creature-motion-assets/native/crup/right-atlas.png",
+          "sha256": "459f630e1bf70ccbb23fef4ac02e9876fbe4b064d068f29163dc02a8e18a70ab",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 35,
+                "y": 61,
+                "w": 26,
+                "h": 19,
+                "count": 373,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 31,
+                "y": 50,
+                "w": 35,
+                "h": 30,
+                "count": 766,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 26,
+                "y": 40,
+                "w": 45,
+                "h": 40,
+                "count": 1261,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 30,
+                "w": 54,
+                "h": 50,
+                "count": 1930,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 30,
+                "w": 54,
+                "h": 50,
+                "count": 1843,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 29,
+                "w": 54,
+                "h": 51,
+                "count": 1884,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 31,
+                "w": 53,
+                "h": 49,
+                "count": 1795,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 20,
+                "y": 32,
+                "w": 56,
+                "h": 48,
+                "count": 1822,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 20,
+                "y": 39,
+                "w": 57,
+                "h": 41,
+                "count": 1881,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 23,
+                "w": 55,
+                "h": 57,
+                "count": 1971,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 38,
+                "w": 59,
+                "h": 42,
+                "count": 1867,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 34,
+                "w": 58,
+                "h": 46,
+                "count": 1852,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 20,
+                "y": 33,
+                "w": 61,
+                "h": 47,
+                "count": 1995,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 40,
+                "w": 58,
+                "h": 40,
+                "count": 1906,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 34,
+                "w": 61,
+                "h": 46,
+                "count": 1990,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 31,
+                "w": 59,
+                "h": 49,
+                "count": 1953,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 23,
+                "w": 60,
+                "h": 57,
+                "count": 2289,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 22,
+                "w": 61,
+                "h": 58,
+                "count": 2308,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 23,
+                "w": 61,
+                "h": 57,
+                "count": 2297,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/crup/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 29,
+                "w": 59,
+                "h": 51,
+                "count": 2028,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "knarl",
+      "label": "Nhím quậy",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 56,
+        "h": 44
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/knarl-left-motion-v01.png",
+          "masterSha256": "1ebf61c9bce455c8df7ee042d95d3991f132c04eccef1b27b2db409ef5c4ca7c",
+          "prompt": "Use case: stylized-concept. Generate 1024x1024 real transparent RGBA pixel-art animation design master. Exactly 4x4 equal cells of 256, sixteen fully separated sprites, no grid or labels. A Knarl: cute but grumpy hedgehog-like farm creature, rounded low body, thick coat of LONG SHARP DARK BROWN QUILLS with PALE TIPS in large chunky spikes, pointed cream/tan snout, black nose, tiny suspicious eyes under heavy FROWNING brow, tiny clawed feet. NOT porcupine, no long legs, no ears like cat. Head and nose face LEFT in every pose in three-quarter 2:1 dimetric view. Adult about 52 wide x40 tall native, enlarged flat square blocks, chunky low-res style as reference Grindylow. Same anatomy, scale, colours every cell. Each cell centered, ground local y210, 32px minimum transparent gaps. Row1 idle: rest scowling; breathe; blink; bristle quills. Row2 action: tucks snout down; tightly curled SPIKY BALL with all long quills raised and snout tucked; unrolls; grumpy huff (no floating marks). Row3 eat: suspicious approach to a few seeds and little root on ground; bends to root TOUCHING mouth; bites root TOUCHING mouth; lifts and chews. Row4 care: leans toward a small HAND HOLDING SEEDS, hand touching snout; happily eats seeds from hand eyes closed, quills LOW and frown GONE; blink still calm hand touching snout; relaxed low quills no hand. Only named props. All quills attached, no scattered spikes/seeds except food ground pose. Cozy not scary. Flat 2-3 shades/material, thick #231F2E outline, top-left lighting, broad clusters, no anti-aliasing, gradient, glow, dithering, speckle, ground, outside shadow, text, border or motion lines. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Transparent background, no checkerboard.\nCandidate B: fewer larger quill clusters, 12-16 big pale-tipped spikes total rather than many tiny layers. Make a hedgehog round silhouette, not a porcupine fan. Every sprite INCLUDING THE ENTIRE CARE HAND must fit with generous 40px margins inside its cell: do not crop hand at left sheet or cell edges. Only little fingertips and palm cue, not whole forearm. In row3 column2 the little root touches mouth; no separate carrot beneath it. Row4 column2 quills visibly lowered to rounded back, expression happy closed eyes. The curled action peak should form a tight circular BALL, no visible snout. Do not lose pale tips.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-bb5a2c56-26bd-4936-88a8-26a8c24b2c87.png",
+          "referenceFiles": [
+            "garden-v05/creature-motion-assets/masters/grindylow-left-motion-v01.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/knarl-right-motion-v01.png",
+          "masterSha256": "d6e0212fe41d9fb3d294f4348403ff8dcea26bf88b74568125df43a2fcb69cd6",
+          "prompt": "Use case: stylized-concept. Generate 1024x1024 real transparent RGBA pixel-art animation design master. Exactly 4x4 equal cells of 256, sixteen fully separated sprites, no grid or labels. A Knarl: cute but grumpy hedgehog-like farm creature, rounded low body, thick coat of LONG SHARP DARK BROWN QUILLS with PALE TIPS in large chunky spikes, pointed cream/tan snout, black nose, tiny suspicious eyes under heavy FROWNING brow, tiny clawed feet. NOT porcupine, no long legs, no ears like cat. Head and nose face LEFT in every pose in three-quarter 2:1 dimetric view. Adult about 52 wide x40 tall native, enlarged flat square blocks, chunky low-res style as reference Grindylow. Same anatomy, scale, colours every cell. Each cell centered, ground local y210, 32px minimum transparent gaps. Row1 idle: rest scowling; breathe; blink; bristle quills. Row2 action: tucks snout down; tightly curled SPIKY BALL with all long quills raised and snout tucked; unrolls; grumpy huff (no floating marks). Row3 eat: suspicious approach to a few seeds and little root on ground; bends to root TOUCHING mouth; bites root TOUCHING mouth; lifts and chews. Row4 care: leans toward a small HAND HOLDING SEEDS, hand touching snout; happily eats seeds from hand eyes closed, quills LOW and frown GONE; blink still calm hand touching snout; relaxed low quills no hand. Only named props. All quills attached, no scattered spikes/seeds except food ground pose. Cozy not scary. Flat 2-3 shades/material, thick #231F2E outline, top-left lighting, broad clusters, no anti-aliasing, gradient, glow, dithering, speckle, ground, outside shadow, text, border or motion lines. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Transparent background, no checkerboard.\nCandidate B: fewer larger quill clusters, 12-16 big pale-tipped spikes total rather than many tiny layers. Make a hedgehog round silhouette, not a porcupine fan. Every sprite INCLUDING THE ENTIRE CARE HAND must fit with generous 40px margins inside its cell: do not crop hand at left sheet or cell edges. Only little fingertips and palm cue, not whole forearm. In row3 column2 the little root touches mouth; no separate carrot beneath it. Row4 column2 quills visibly lowered to rounded back, expression happy closed eyes. The curled action peak should form a tight circular BALL, no visible snout. Do not lose pale tips.\nNEW OUTPUT: RIGHT-facing companion, use provided Knarl B reference as strict identity reference. Same16 poses same4x4 layout, but ALL snouts point RIGHT and quills trail LEFT, including unroll and feeding/care. Curl remains a tight round spiky ball. Hand seed cue enters from RIGHT without clipping, palm and seeds touching mouth, small complete hand entirely inside cell. Independently redraw, do not mirror top-left light; highlights stay UPPER LEFT on quills and face, shaded lower-right. Keep dark brown quills and large pale tips, small angry eyes; happy care lowered quills. No motion marks. All sixteen centered separated in 1024square transparent.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-a18b45b4-6f5e-446b-a6dc-c9c8ec48b77d.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-bb5a2c56-26bd-4936-88a8-26a8c24b2c87.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/knarl-growth-v01.png",
+          "masterSha256": "3c9edbf34a6d9875c003d8d37906a3ebf6501ba715083d7e93f5bfa5e6843679",
+          "prompt": "Use case: stylized-concept. Make 1024x512 real transparent RGBA pixel-art growth sheet, 4 columns x2 rows of256 cells, eight isolated poses of EXACT Knarl hedgehog design in reference: round low body, long sharp dark brown quills with pale tips, small cream pointed snout black nose, tiny clawed feet, suspicious frowning eyes and heavy brow. Row1 faces LEFT, row2 faces RIGHT, calm standing poses. Columns newborn tiny ROUND hoglet with big head and SOFT SHORT QUILLS; juvenile; adolescent; adult matching reference. Adult2.6x newborn height, steady growth across4 stages. Same logical pixel density: fewer actual blocks for baby, no smooth scaling look. Adult52x40 native. Each pose centered, feet local y210, minimum32transparent gaps, entire silhouette inside cell. Thick #231F2E outline, huge flat colour clusters 2-3 shades, upper-left light in BOTH directions (redraw lighting, don't mirror). Brown #4A3042 #735044 #A57554, pale tips #E7AE73 #D6D8BF, snout #F5D69A. Dimetric2:1 three-quarter view. Cozy but grumpy, clearly hedgehog not porcupine. No food hand props ground shadow text grid border noise dither antialiasing gradients glow or watermark.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-13e644da-236a-42db-85bb-7bfe4e7fa3fe.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-bb5a2c56-26bd-4936-88a8-26a8c24b2c87.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      },
+      "frames": {
+        "left": [
+          {
+            "file": "native/knarl/left-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 38,
+              "y": 64,
+              "w": 20,
+              "h": 16,
+              "count": 262,
+              "edge": false
+            },
+            "sha256": "0713530f1558cc70496faa964222019be10a817cf90685dccc079daa24437c82",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 95,
+              "y": 159,
+              "w": 65,
+              "h": 51
+            },
+            "scale": 0.3111111111111111
+          },
+          {
+            "file": "native/knarl/left-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 33,
+              "y": 55,
+              "w": 32,
+              "h": 25,
+              "count": 612,
+              "edge": false
+            },
+            "sha256": "21a3569d3bc57bfa951e792c4472b28f336e1c5c98446c21421358b2132cf8b3",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 333,
+              "y": 130,
+              "w": 101,
+              "h": 80
+            },
+            "scale": 0.3111111111111111
+          },
+          {
+            "file": "native/knarl/left-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 27,
+              "y": 47,
+              "w": 43,
+              "h": 33,
+              "count": 1105,
+              "edge": false
+            },
+            "sha256": "733bce1893b476aefbf067458585e6d6b8d7cf975ae111e0bcf7c9c80d17bb00",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 572,
+              "y": 103,
+              "w": 136,
+              "h": 107
+            },
+            "scale": 0.3111111111111111
+          },
+          {
+            "file": "native/knarl/left-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 38,
+              "w": 50,
+              "h": 42,
+              "count": 1620,
+              "edge": false
+            },
+            "sha256": "51f809cede9fe9c326f799c8f04e24973c515478f9d201e0742594485fe98559",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 815,
+              "y": 75,
+              "w": 161,
+              "h": 135
+            },
+            "scale": 0.3111111111111111
+          },
+          {
+            "file": "native/knarl/left-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 39,
+              "w": 53,
+              "h": 41,
+              "count": 1654,
+              "edge": false
+            },
+            "sha256": "468981d2b51095d171b8291dc6338b5f83750ca46712521e635d193137550c02",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 47,
+              "y": 86,
+              "w": 161,
+              "h": 124
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 38,
+              "w": 53,
+              "h": 42,
+              "count": 1679,
+              "edge": false
+            },
+            "sha256": "d482fbb3c179f23974e22f218d90c950757625e67a8d6303357d437e92bd3cee",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 303,
+              "y": 82,
+              "w": 162,
+              "h": 128
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 38,
+              "w": 53,
+              "h": 42,
+              "count": 1687,
+              "edge": false
+            },
+            "sha256": "9c1c5b8b8afbcf338232938d06180f7e9ecc55e75af41cf1eaa1d58bf0561136",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 560,
+              "y": 82,
+              "w": 160,
+              "h": 128
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 34,
+              "w": 54,
+              "h": 46,
+              "count": 1830,
+              "edge": false
+            },
+            "sha256": "195d4b4d2f7b61502b19c5133814770b46d05e640b9f8b09089a54e13dc36e57",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 814,
+              "y": 71,
+              "w": 163,
+              "h": 139
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 39,
+              "w": 53,
+              "h": 41,
+              "count": 1658,
+              "edge": false
+            },
+            "sha256": "0148dce97a9509e44059e1fba776afad6766e933be0c06233ecf1c9d09f41dc7",
+            "clip": "action",
+            "sourceRect": {
+              "x": 48,
+              "y": 342,
+              "w": 160,
+              "h": 124
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 24,
+              "y": 33,
+              "w": 48,
+              "h": 47,
+              "count": 1821,
+              "edge": false
+            },
+            "sha256": "ddf0894b25eeb2518b92bda3c9fc38ecd9de83def017548bcb0286fd50233096",
+            "clip": "action",
+            "sourceRect": {
+              "x": 311,
+              "y": 323,
+              "w": 146,
+              "h": 143
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 34,
+              "w": 52,
+              "h": 46,
+              "count": 1801,
+              "edge": false
+            },
+            "sha256": "6e14a31a4065f2eabe5b537f6371eb44e9e83da2989072636477b6cd2098ecd0",
+            "clip": "action",
+            "sourceRect": {
+              "x": 560,
+              "y": 327,
+              "w": 158,
+              "h": 139
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 37,
+              "w": 55,
+              "h": 43,
+              "count": 1761,
+              "edge": false
+            },
+            "sha256": "74a2f9da5abe151c3efc6b9e84835d831625c229016cc487adfb7df0f79f6fc9",
+            "clip": "action",
+            "sourceRect": {
+              "x": 813,
+              "y": 335,
+              "w": 166,
+              "h": 130
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 31,
+              "w": 63,
+              "h": 49,
+              "count": 1852,
+              "edge": false
+            },
+            "sha256": "cb8f3c41b5de202ac49e8fa86df4042ec1cf48d1ba489bb1104e36f8c3224b23",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 33,
+              "y": 574,
+              "w": 190,
+              "h": 148
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 15,
+              "y": 32,
+              "w": 60,
+              "h": 48,
+              "count": 1855,
+              "edge": false
+            },
+            "sha256": "e98fb7a4782c34d008177dad6a6354ad5eea1ef8f713ddb3a2e6d9b7f60d464d",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 292,
+              "y": 577,
+              "w": 183,
+              "h": 145
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 35,
+              "w": 54,
+              "h": 45,
+              "count": 1808,
+              "edge": false
+            },
+            "sha256": "4bad35546b5049cdfbd12dd25a54ec22fdc162131ea9bb8ea147107b1fb75624",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 558,
+              "y": 586,
+              "w": 163,
+              "h": 136
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 36,
+              "w": 54,
+              "h": 44,
+              "count": 1846,
+              "edge": false
+            },
+            "sha256": "c46267c2f12277c70babf1e261c26c0682b3016c4badb92f86d298416224cb08",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 814,
+              "y": 588,
+              "w": 163,
+              "h": 134
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 38,
+              "w": 62,
+              "h": 42,
+              "count": 1790,
+              "edge": false
+            },
+            "sha256": "389fa72f5d87b6c8b3a30b6e8c4091c5b044a64b2f27511b0733e83ead597b43",
+            "clip": "care",
+            "sourceRect": {
+              "x": 35,
+              "y": 850,
+              "w": 187,
+              "h": 127
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 44,
+              "w": 60,
+              "h": 36,
+              "count": 1648,
+              "edge": false
+            },
+            "sha256": "f1ebadc95226f4fc7e25a54d19335dba3491c14ab334813a5972d9ddc6b8cc8d",
+            "clip": "care",
+            "sourceRect": {
+              "x": 292,
+              "y": 868,
+              "w": 183,
+              "h": 110
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 44,
+              "w": 60,
+              "h": 36,
+              "count": 1620,
+              "edge": false
+            },
+            "sha256": "738adfa7c8390911852c4ba8d154db0a82d5398e066202554e130d624569ebbc",
+            "clip": "care",
+            "sourceRect": {
+              "x": 548,
+              "y": 868,
+              "w": 182,
+              "h": 109
+            },
+            "scale": 0.328125
+          },
+          {
+            "file": "native/knarl/left-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 43,
+              "w": 54,
+              "h": 37,
+              "count": 1551,
+              "edge": false
+            },
+            "sha256": "313e0f9780ed1f207a6909a4750a0e0e5d92b0b0cad53435a2b876afef127a88",
+            "clip": "care",
+            "sourceRect": {
+              "x": 813,
+              "y": 866,
+              "w": 164,
+              "h": 112
+            },
+            "scale": 0.328125
+          }
+        ],
+        "right": [
+          {
+            "file": "native/knarl/right-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 38,
+              "y": 64,
+              "w": 20,
+              "h": 16,
+              "count": 261,
+              "edge": false
+            },
+            "sha256": "c14d2fee3a0a37de342fdefd029094132037849687f8d9549543386c955e2ccd",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 95,
+              "y": 415,
+              "w": 65,
+              "h": 51
+            },
+            "scale": 0.3111111111111111
+          },
+          {
+            "file": "native/knarl/right-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 33,
+              "y": 55,
+              "w": 31,
+              "h": 25,
+              "count": 597,
+              "edge": false
+            },
+            "sha256": "3a9a2a32c15774b10a14b12d18363ffb76a2c5a7c40cb559eabf31a3496a4e47",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 334,
+              "y": 386,
+              "w": 100,
+              "h": 80
+            },
+            "scale": 0.3111111111111111
+          },
+          {
+            "file": "native/knarl/right-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 28,
+              "y": 47,
+              "w": 41,
+              "h": 33,
+              "count": 1084,
+              "edge": false
+            },
+            "sha256": "0b694c91e44e106df9f61032029cb5ab392489b7bc5a9df6b1b4801862feec36",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 574,
+              "y": 359,
+              "w": 132,
+              "h": 107
+            },
+            "scale": 0.3111111111111111
+          },
+          {
+            "file": "native/knarl/right-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 38,
+              "w": 50,
+              "h": 42,
+              "count": 1626,
+              "edge": false
+            },
+            "sha256": "68fe6d45ca2afd74b071422648ff91eec480f0709209db6e6f8d46c812018e2d",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 815,
+              "y": 331,
+              "w": 161,
+              "h": 135
+            },
+            "scale": 0.3111111111111111
+          },
+          {
+            "file": "native/knarl/right-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 39,
+              "w": 54,
+              "h": 41,
+              "count": 1638,
+              "edge": false
+            },
+            "sha256": "1ffe5a783d6e72c6137290213c92238967e5f5275a38ef423db066d8540acd5e",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 42,
+              "y": 81,
+              "w": 170,
+              "h": 129
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 39,
+              "w": 52,
+              "h": 41,
+              "count": 1604,
+              "edge": false
+            },
+            "sha256": "c18c65a40ba7083686cc91d2d68e92be04158728977e2e2feb9b209477214ccd",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 301,
+              "y": 79,
+              "w": 166,
+              "h": 130
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 40,
+              "w": 53,
+              "h": 40,
+              "count": 1611,
+              "edge": false
+            },
+            "sha256": "5705c66386aa22ce765ff70d5d0ade6c976e65873c475a9b401de0b46d8a6b88",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 556,
+              "y": 82,
+              "w": 168,
+              "h": 128
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 36,
+              "w": 54,
+              "h": 44,
+              "count": 1808,
+              "edge": false
+            },
+            "sha256": "babbd7091d553d48638706fc6b9ca6a29fedfa0cbeb9c67e62d1e7ec37058185",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 809,
+              "y": 70,
+              "w": 172,
+              "h": 139
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 22,
+              "y": 41,
+              "w": 53,
+              "h": 39,
+              "count": 1611,
+              "edge": false
+            },
+            "sha256": "d6740a74e16f47122c3f67c97a0669730c45b216d1768611714a798d8fdf1d03",
+            "clip": "action",
+            "sourceRect": {
+              "x": 44,
+              "y": 342,
+              "w": 168,
+              "h": 123
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 25,
+              "y": 34,
+              "w": 48,
+              "h": 46,
+              "count": 1766,
+              "edge": false
+            },
+            "sha256": "58bbf4b309eaba28efcdefba70e28e9cc0fceebd1bc62107f0b901a439dc8be1",
+            "clip": "action",
+            "sourceRect": {
+              "x": 309,
+              "y": 319,
+              "w": 151,
+              "h": 147
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 37,
+              "w": 54,
+              "h": 43,
+              "count": 1758,
+              "edge": false
+            },
+            "sha256": "fa902e6c92c97c2470f12603f4093dab923c489051da4d24deea9f883b5e94dd",
+            "clip": "action",
+            "sourceRect": {
+              "x": 554,
+              "y": 331,
+              "w": 171,
+              "h": 135
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 39,
+              "w": 54,
+              "h": 41,
+              "count": 1709,
+              "edge": false
+            },
+            "sha256": "38c19cf128cdfb2f52321e188b914a36e00ed1e0e5c6495ada272673fb231c53",
+            "clip": "action",
+            "sourceRect": {
+              "x": 810,
+              "y": 335,
+              "w": 172,
+              "h": 131
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 35,
+              "w": 60,
+              "h": 45,
+              "count": 1785,
+              "edge": false
+            },
+            "sha256": "b1d4361172000f7b68a92c2fe4c12fc3e6c8a6b42a56f648405677c927e5c660",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 33,
+              "y": 578,
+              "w": 190,
+              "h": 143
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 35,
+              "w": 58,
+              "h": 45,
+              "count": 1761,
+              "edge": false
+            },
+            "sha256": "bed34e4790cf87a1147c483859557bdb26888f1db4f8dbcdf19352c3d94600df",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 292,
+              "y": 580,
+              "w": 185,
+              "h": 142
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 37,
+              "w": 54,
+              "h": 43,
+              "count": 1706,
+              "edge": false
+            },
+            "sha256": "cf4c14bab9db054c949adc762cedd22ab65c4deabc4a3f434ab85343a7c968b4",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 554,
+              "y": 586,
+              "w": 172,
+              "h": 135
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 38,
+              "w": 54,
+              "h": 42,
+              "count": 1763,
+              "edge": false
+            },
+            "sha256": "3c3ad41e1264a9f836397bd3c9296386ea0d2792136294a5215fc8b17f98c1de",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 810,
+              "y": 588,
+              "w": 171,
+              "h": 134
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 40,
+              "w": 60,
+              "h": 40,
+              "count": 1742,
+              "edge": false
+            },
+            "sha256": "cd5040ccef6312e415db086040f5bb6074459e43fc644ebbb280f7aa9259d814",
+            "clip": "care",
+            "sourceRect": {
+              "x": 33,
+              "y": 850,
+              "w": 189,
+              "h": 128
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 45,
+              "w": 59,
+              "h": 35,
+              "count": 1574,
+              "edge": false
+            },
+            "sha256": "18d6105798c393d1fb207994078c100d264e0cbfdbb8a20142ed879790fe32ef",
+            "clip": "care",
+            "sourceRect": {
+              "x": 291,
+              "y": 866,
+              "w": 186,
+              "h": 111
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 19,
+              "y": 45,
+              "w": 58,
+              "h": 35,
+              "count": 1553,
+              "edge": false
+            },
+            "sha256": "998094418ee414bf97f1a9b0e40bdbbf358ab6574ff258a5638a88277a9e5742",
+            "clip": "care",
+            "sourceRect": {
+              "x": 548,
+              "y": 867,
+              "w": 185,
+              "h": 111
+            },
+            "scale": 0.313953488372093
+          },
+          {
+            "file": "native/knarl/right-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 21,
+              "y": 44,
+              "w": 55,
+              "h": 36,
+              "count": 1561,
+              "edge": false
+            },
+            "sha256": "76bc0549966291d85c9d981859ac1e891f56a91defc7a760ba5fcac7ff122071",
+            "clip": "care",
+            "sourceRect": {
+              "x": 808,
+              "y": 864,
+              "w": 174,
+              "h": 113
+            },
+            "scale": 0.313953488372093
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "durations": [
+            600,
+            240,
+            180,
+            240
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "durations": [
+            320,
+            180,
+            240,
+            220
+          ],
+          "loop": false
+        },
+        "eat": {
+          "frames": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            16,
+            17,
+            18,
+            19
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "runtimeAtlases": {
+        "left": {
+          "file": "creature-motion-assets/native/knarl/left-atlas.png",
+          "sha256": "cca5ac97243f6159a1c1b0038199b817da0b8aab6155fc2cdbdcb6175caa128c",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 38,
+                "y": 64,
+                "w": 20,
+                "h": 16,
+                "count": 262,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 33,
+                "y": 55,
+                "w": 32,
+                "h": 25,
+                "count": 612,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 27,
+                "y": 47,
+                "w": 43,
+                "h": 33,
+                "count": 1105,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 38,
+                "w": 50,
+                "h": 42,
+                "count": 1620,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 39,
+                "w": 53,
+                "h": 41,
+                "count": 1654,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 38,
+                "w": 53,
+                "h": 42,
+                "count": 1679,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 38,
+                "w": 53,
+                "h": 42,
+                "count": 1687,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 34,
+                "w": 54,
+                "h": 46,
+                "count": 1830,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 39,
+                "w": 53,
+                "h": 41,
+                "count": 1658,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 24,
+                "y": 33,
+                "w": 48,
+                "h": 47,
+                "count": 1821,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 34,
+                "w": 52,
+                "h": 46,
+                "count": 1801,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 37,
+                "w": 55,
+                "h": 43,
+                "count": 1761,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 12,
+                "y": 31,
+                "w": 63,
+                "h": 49,
+                "count": 1852,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 15,
+                "y": 32,
+                "w": 60,
+                "h": 48,
+                "count": 1855,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 35,
+                "w": 54,
+                "h": 45,
+                "count": 1808,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 36,
+                "w": 54,
+                "h": 44,
+                "count": 1846,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 38,
+                "w": 62,
+                "h": 42,
+                "count": 1790,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 44,
+                "w": 60,
+                "h": 36,
+                "count": 1648,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 44,
+                "w": 60,
+                "h": 36,
+                "count": 1620,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 43,
+                "w": 54,
+                "h": 37,
+                "count": 1551,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        },
+        "right": {
+          "file": "creature-motion-assets/native/knarl/right-atlas.png",
+          "sha256": "0f991180a14f5a159decec96a4a29a47e8252187a1cee3f5f9c796965f68b967",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 38,
+                "y": 64,
+                "w": 20,
+                "h": 16,
+                "count": 261,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 33,
+                "y": 55,
+                "w": 31,
+                "h": 25,
+                "count": 597,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 28,
+                "y": 47,
+                "w": 41,
+                "h": 33,
+                "count": 1084,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 38,
+                "w": 50,
+                "h": 42,
+                "count": 1626,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 39,
+                "w": 54,
+                "h": 41,
+                "count": 1638,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 39,
+                "w": 52,
+                "h": 41,
+                "count": 1604,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 40,
+                "w": 53,
+                "h": 40,
+                "count": 1611,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 36,
+                "w": 54,
+                "h": 44,
+                "count": 1808,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 22,
+                "y": 41,
+                "w": 53,
+                "h": 39,
+                "count": 1611,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 25,
+                "y": 34,
+                "w": 48,
+                "h": 46,
+                "count": 1766,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 37,
+                "w": 54,
+                "h": 43,
+                "count": 1758,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 39,
+                "w": 54,
+                "h": 41,
+                "count": 1709,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 35,
+                "w": 60,
+                "h": 45,
+                "count": 1785,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 35,
+                "w": 58,
+                "h": 45,
+                "count": 1761,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 37,
+                "w": 54,
+                "h": 43,
+                "count": 1706,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 38,
+                "w": 54,
+                "h": 42,
+                "count": 1763,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 40,
+                "w": 60,
+                "h": 40,
+                "count": 1742,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 45,
+                "w": 59,
+                "h": 35,
+                "count": 1574,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 19,
+                "y": 45,
+                "w": 58,
+                "h": 35,
+                "count": 1553,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/knarl/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 21,
+                "y": 44,
+                "w": 55,
+                "h": 36,
+                "count": 1561,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "salamander",
+      "label": "Kỳ nhông lửa",
+      "kind": "creature",
+      "growth": [
+        "Con mới nở",
+        "Con nhỏ",
+        "Thiếu niên",
+        "Trưởng thành"
+      ],
+      "canvas": {
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80
+      },
+      "targetBounds": {
+        "w": 64,
+        "h": 42
+      },
+      "masters": {
+        "left": {
+          "master": "creature-motion-assets/masters/salamander-left-motion-v01.png",
+          "masterSha256": "88bda3e5eacf9f8c6d3d98df6ad1e5524a8f40ebe7404b7fc6ec747ec290bbc7",
+          "prompt": "Use case: stylized-concept. Asset: fire salamander pixel-art animation design master. 1024x1024 TRANSPARENT RGBA, exactly sixteen isolated sprites in 4x4 equal 256 cells. Style reference: chunky low resolution Grindylow sheet, every logical pixel a large flat square, thick #231F2E outline, broad flat clusters, no more than 2-3 shades per material, light upper LEFT. Cute small ORANGE RED LIZARD, slim low body, FOUR splayed short legs, long tapering curved tail, rounded head with bright YELLOW eyes, just 3 large dark red-brown spots along back. Clearly lizard, NOT dragon: no horns wings or dorsal spikes. Two small hard-edged flame licks TOUCHING back and tail in #FFC36B #ED8A45 #C75B4B; flame not detached, no glow or halo. Adult approx 62x36 native, silhouette simple and readable. All heads/noses face LEFT in clear 3/4 2:1 dimetric view, tail stretches RIGHT. Same size/design all cells, centered, all feet ground local y210 (raised peak may rear), minimum32px transparent gap, entire sprites within cells with margin. Row1 idle: rest; chest breathe; blink; small tail curl. Row2 action: crouch; REARS UP head still LEFT with bigger attached back flame and tiny puff of flame attached directly to mouth; drops onto feet; recovers with only small back flame. Row3 eating: approaches dry twig and one small RED CHILLI on ground; bends to twig/chilli TOUCHING mouth; bites touching mouth; lifts and chews. Row4 care: leans into small hand touching crown; happy eyes closed receives care; blink with hand touching head; relaxed no hand. All flames, tail, food from eat pose2, cue hands attached/touching. No floating sparks, motion lines, hearts or unrelated props. Actual transparent background. Colour palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No antialiasing, gradients, dithering, speckles, texture, smoke, glow, cast shadow, ground, grid, text, borders or watermarks.\nCandidate B priorities: Make body distinctly SLIM, LOW and elongated, a salamander lizard not a squat dinosaur or puppy; all four little feet splay OUT sideways, tail long tapering at least half body length. Adult overall62wide x36tall. Flatten torso with three large red-brown spots. In action peak flame puff MUST physically touch open mouth at its base (no alpha gap), larger flame touches back. No detached flame/sparks. Row3 ONLY twig and chilli, no extra bone shapes, and both touch snout in bend and bite; remove remaining ground food after lift. Tiny full hand cue entirely inside each care cell. Bolder even larger flat pixel blocks, no texture.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-3ec0d955-4f4b-487d-8dd5-0013ecc00482.png",
+          "referenceFiles": [
+            "garden-v05/creature-motion-assets/masters/grindylow-left-motion-v01.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "right": {
+          "master": "creature-motion-assets/masters/salamander-right-motion-v01.png",
+          "masterSha256": "4f49b3e578a4fc2bfff4e29e13f89605871c003f9b6646bbd4147c21cfe303d4",
+          "prompt": "Use case: stylized-concept. Asset: fire salamander pixel-art animation design master. 1024x1024 TRANSPARENT RGBA, exactly sixteen isolated sprites in 4x4 equal 256 cells. Style reference: chunky low resolution Grindylow sheet, every logical pixel a large flat square, thick #231F2E outline, broad flat clusters, no more than 2-3 shades per material, light upper LEFT. Cute small ORANGE RED LIZARD, slim low body, FOUR splayed short legs, long tapering curved tail, rounded head with bright YELLOW eyes, just 3 large dark red-brown spots along back. Clearly lizard, NOT dragon: no horns wings or dorsal spikes. Two small hard-edged flame licks TOUCHING back and tail in #FFC36B #ED8A45 #C75B4B; flame not detached, no glow or halo. Adult approx 62x36 native, silhouette simple and readable. All heads/noses face LEFT in clear 3/4 2:1 dimetric view, tail stretches RIGHT. Same size/design all cells, centered, all feet ground local y210 (raised peak may rear), minimum32px transparent gap, entire sprites within cells with margin. Row1 idle: rest; chest breathe; blink; small tail curl. Row2 action: crouch; REARS UP head still LEFT with bigger attached back flame and tiny puff of flame attached directly to mouth; drops onto feet; recovers with only small back flame. Row3 eating: approaches dry twig and one small RED CHILLI on ground; bends to twig/chilli TOUCHING mouth; bites touching mouth; lifts and chews. Row4 care: leans into small hand touching crown; happy eyes closed receives care; blink with hand touching head; relaxed no hand. All flames, tail, food from eat pose2, cue hands attached/touching. No floating sparks, motion lines, hearts or unrelated props. Actual transparent background. Colour palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. No antialiasing, gradients, dithering, speckles, texture, smoke, glow, cast shadow, ground, grid, text, borders or watermarks.\nCandidate B priorities: Make body distinctly SLIM, LOW and elongated, a salamander lizard not a squat dinosaur or puppy; all four little feet splay OUT sideways, tail long tapering at least half body length. Adult overall62wide x36tall. Flatten torso with three large red-brown spots. In action peak flame puff MUST physically touch open mouth at its base (no alpha gap), larger flame touches back. No detached flame/sparks. Row3 ONLY twig and chilli, no extra bone shapes, and both touch snout in bend and bite; remove remaining ground food after lift. Tiny full hand cue entirely inside each care cell. Bolder even larger flat pixel blocks, no texture.\nNEW OUTPUT: Draw RIGHT-facing companion sheet using supplied Salamander B as exact identity. ALL heads and mouths RIGHT, long tail LEFT, four splayed little feet. Same4x4 phases order. Re-draw upper-left lighting independently, DO NOT mirror source. In peak row2col2, body rears with bigger attached back flame and small flame puff TOUCHING mouth on RIGHT, no alpha gap. In row3 bend and bite chilli/twig TOUCH mouth; no leftover floor food after lifting. Same slim orange-red lizard (no horns or dragon wings), yellow eyes, large darker spots, hard-edged attached flame licks. Real transparency 1024x1024. No soft colored halo or scattered translucent pixels: clean fully separated chunky sprites.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-6acd28b4-cc2a-42b5-b783-7f111ba150d1.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-3ec0d955-4f4b-487d-8dd5-0013ecc00482.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        },
+        "growth": {
+          "master": "creature-motion-assets/masters/salamander-growth-v01.png",
+          "masterSha256": "9261a1b7f261fb9946ac022f1d5eeffea6c2cb627f21169f2991b4e31e2a17d2",
+          "prompt": "Use case: stylized-concept. 1024x512 real transparent RGBA growth sheet of EXACT reference fire SALAMANDER. Two rows x4 columns of256 cells. Top row faces LEFT, bottom row RIGHT. Four columns newborn tiny rounded big head hatchling ONE tiny flame lick touching back; juvenile; adolescent; adult exact same orange-red SLIM LOW LIZARD as motion reference with four splayed short feet, long tapering curled tail, round head bright yellow eyes, 3 large darker red-brown spots, two small attached hard-edged back/tail flame licks. Adult2.6x newborn height with four clear growth stages, calm standing every cell, feet baseline local y210, same logical pixel block density (baby has fewer blocks), centered with at least32px gaps. Native adult62wide x36tall, keep long low silhouette not dragon or puppy, no horns wings spines. 2:1 dimetric3/4 camera, lighting TOP LEFT on BOTH directions, no mirrored light. Broad flat square chunky pixels, thick #231F2E outline,2-3shades each material, #C75B4B #ED8A45 #FFC36B orange/red/yellow flames, #8B4A3F #874056 back spots, yellow eye. NO anti-aliasing soft halos gradients glow smoke sparks noise dither speckles ground shadows text frames grid props hands food or watermark. True transparent background.",
+          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-ab948a61-1b2f-4bb9-90e4-cac2c1c5e207.png",
+          "referenceFiles": [
+            "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-3ec0d955-4f4b-487d-8dd5-0013ecc00482.png"
+          ],
+          "tool": "builtin image_gen (Codex)"
+        }
+      },
+      "frames": {
+        "left": [
+          {
+            "file": "native/salamander/left-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 37,
+              "y": 66,
+              "w": 22,
+              "h": 14,
+              "count": 227,
+              "edge": false
+            },
+            "sha256": "caa6668e30f1118f6ca9272af0df0c7c8925f100e44b9ec905c4257392a879ac",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 94,
+              "y": 168,
+              "w": 67,
+              "h": 42
+            },
+            "scale": 0.3229166666666667
+          },
+          {
+            "file": "native/salamander/left-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 30,
+              "y": 59,
+              "w": 36,
+              "h": 21,
+              "count": 549,
+              "edge": false
+            },
+            "sha256": "90e9299dcd34c855de98ef6c3acccf0e378227d775be14e7d766df2f3969529e",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 328,
+              "y": 145,
+              "w": 112,
+              "h": 65
+            },
+            "scale": 0.3229166666666667
+          },
+          {
+            "file": "native/salamander/left-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 52,
+              "w": 51,
+              "h": 28,
+              "count": 997,
+              "edge": false
+            },
+            "sha256": "41d63627267e25335b5d15282715f492e50cb99f4dfb98e5ffbf2554a9a2e151",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 561,
+              "y": 123,
+              "w": 157,
+              "h": 87
+            },
+            "scale": 0.3229166666666667
+          },
+          {
+            "file": "native/salamander/left-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 46,
+              "w": 62,
+              "h": 34,
+              "count": 1459,
+              "edge": false
+            },
+            "sha256": "c86d0fe4744699951b7f5cc18630ba319772c22aa0b4283ae8afb5bbc54dd139",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 800,
+              "y": 106,
+              "w": 192,
+              "h": 104
+            },
+            "scale": 0.3229166666666667
+          },
+          {
+            "file": "native/salamander/left-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 43,
+              "w": 62,
+              "h": 37,
+              "count": 1497,
+              "edge": false
+            },
+            "sha256": "df5deecec6d238ad22e995f0887738363a510e56480b430d52b839451f53e050",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 49,
+              "y": 117,
+              "w": 158,
+              "h": 93
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 43,
+              "w": 62,
+              "h": 37,
+              "count": 1538,
+              "edge": false
+            },
+            "sha256": "a0ed9c4ed20a2d8e5490048d89286ec596c2fbfb68b7ca14a061c0978170a8b5",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 306,
+              "y": 116,
+              "w": 157,
+              "h": 94
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 44,
+              "w": 62,
+              "h": 36,
+              "count": 1493,
+              "edge": false
+            },
+            "sha256": "8ab19629eb5ee2bf6b21e3804947b4b876d7b9bc8f7c47ac1258641bc8265f83",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 561,
+              "y": 119,
+              "w": 158,
+              "h": 91
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 44,
+              "w": 63,
+              "h": 36,
+              "count": 1518,
+              "edge": false
+            },
+            "sha256": "59896daa85c099c03c3f144edd263511d695eca36965b3dffe140f73925f1108",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 815,
+              "y": 119,
+              "w": 161,
+              "h": 91
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 47,
+              "w": 62,
+              "h": 33,
+              "count": 1445,
+              "edge": false
+            },
+            "sha256": "4357d70695fa77d12e6f91ebc90a22ebd1adceb5123206e4e390a8b37c441579",
+            "clip": "action",
+            "sourceRect": {
+              "x": 48,
+              "y": 381,
+              "w": 158,
+              "h": 85
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 11,
+              "y": 34,
+              "w": 75,
+              "h": 46,
+              "count": 2120,
+              "edge": false
+            },
+            "sha256": "ffe0bca77e35e4619c11f8318d54e2d6d662b399b72b92501c3b2dac4595a566",
+            "clip": "action",
+            "sourceRect": {
+              "x": 288,
+              "y": 348,
+              "w": 192,
+              "h": 117
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 16,
+              "y": 41,
+              "w": 64,
+              "h": 39,
+              "count": 1670,
+              "edge": false
+            },
+            "sha256": "15341467ac52daccf79391f8cfb42415e11e8299be82892b6dbe4fa5f818578e",
+            "clip": "action",
+            "sourceRect": {
+              "x": 559,
+              "y": 367,
+              "w": 162,
+              "h": 98
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 44,
+              "w": 62,
+              "h": 36,
+              "count": 1448,
+              "edge": false
+            },
+            "sha256": "d7a5c72ea02dc3e1cdc41092cd605b7c62ecc76f3579a3de44df838f243242db",
+            "clip": "action",
+            "sourceRect": {
+              "x": 817,
+              "y": 375,
+              "w": 158,
+              "h": 91
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 7,
+              "y": 38,
+              "w": 72,
+              "h": 42,
+              "count": 1652,
+              "edge": false
+            },
+            "sha256": "51397ca1cf626aad2a1d31350800d492b08105ed02d4b9f6d9ef8fa25958b64c",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 37,
+              "y": 615,
+              "w": 182,
+              "h": 107
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 13,
+              "y": 39,
+              "w": 71,
+              "h": 41,
+              "count": 1669,
+              "edge": false
+            },
+            "sha256": "e41d4a00ea9dec45f70a7bf13539fc08422c3fbdc6c4d2718c19b185b10d041a",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 294,
+              "y": 618,
+              "w": 180,
+              "h": 104
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 13,
+              "y": 41,
+              "w": 71,
+              "h": 39,
+              "count": 1583,
+              "edge": false
+            },
+            "sha256": "e5f2d1d60b8824f07dd1ef8c93c17f458fd36a26a0ba5ca6b51134ce09e23eb6",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 549,
+              "y": 621,
+              "w": 181,
+              "h": 100
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 44,
+              "w": 63,
+              "h": 36,
+              "count": 1523,
+              "edge": false
+            },
+            "sha256": "15027c088ea8f62cea8396a82f17f5489662df422a9e3535d03ac135eb85e726",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 815,
+              "y": 630,
+              "w": 161,
+              "h": 92
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 41,
+              "w": 62,
+              "h": 39,
+              "count": 1635,
+              "edge": false
+            },
+            "sha256": "74dbe6b156de26ee59b4bed97120ecc950d1fb39fd3d7def8acab2576e9f89a3",
+            "clip": "care",
+            "sourceRect": {
+              "x": 49,
+              "y": 879,
+              "w": 158,
+              "h": 99
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 41,
+              "w": 62,
+              "h": 39,
+              "count": 1629,
+              "edge": false
+            },
+            "sha256": "10d22a32a5492efa9626774b9427692062e3776c27c265b505dc530781e76269",
+            "clip": "care",
+            "sourceRect": {
+              "x": 306,
+              "y": 879,
+              "w": 157,
+              "h": 99
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 41,
+              "w": 62,
+              "h": 39,
+              "count": 1604,
+              "edge": false
+            },
+            "sha256": "26a025c056c1866d8de0b97980c9bc018ac9ee1be2aa7b3d3d523966220e22a8",
+            "clip": "care",
+            "sourceRect": {
+              "x": 562,
+              "y": 880,
+              "w": 157,
+              "h": 98
+            },
+            "scale": 0.3924050632911392
+          },
+          {
+            "file": "native/salamander/left-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 45,
+              "w": 62,
+              "h": 35,
+              "count": 1419,
+              "edge": false
+            },
+            "sha256": "9413c2dc053b4623cb3993217a6a509e1877fae67d4cdb35ce160f32a56d6e41",
+            "clip": "care",
+            "sourceRect": {
+              "x": 817,
+              "y": 888,
+              "w": 158,
+              "h": 90
+            },
+            "scale": 0.3924050632911392
+          }
+        ],
+        "right": [
+          {
+            "file": "native/salamander/right-growth-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 37,
+              "y": 66,
+              "w": 22,
+              "h": 14,
+              "count": 234,
+              "edge": false
+            },
+            "sha256": "ff2bd6869af1aafda1eb03ebcca43465e34d8b0a499209c135ee595c3ab260ca",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 94,
+              "y": 424,
+              "w": 67,
+              "h": 42
+            },
+            "scale": 0.3229166666666667
+          },
+          {
+            "file": "native/salamander/right-growth-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 30,
+              "y": 59,
+              "w": 36,
+              "h": 21,
+              "count": 544,
+              "edge": false
+            },
+            "sha256": "9ee08caf5d18aa44b271a7f9dbf3d1a0e8a6e63a2437ca8becebb5c1bbe6e807",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 328,
+              "y": 401,
+              "w": 112,
+              "h": 65
+            },
+            "scale": 0.3229166666666667
+          },
+          {
+            "file": "native/salamander/right-growth-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 23,
+              "y": 52,
+              "w": 51,
+              "h": 28,
+              "count": 983,
+              "edge": false
+            },
+            "sha256": "7a7d172d9d3017c5eb03a304fda9c3e342c54a713ef0f19fd6ede1785256f354",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 561,
+              "y": 379,
+              "w": 157,
+              "h": 87
+            },
+            "scale": 0.3229166666666667
+          },
+          {
+            "file": "native/salamander/right-growth-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 46,
+              "w": 62,
+              "h": 34,
+              "count": 1453,
+              "edge": false
+            },
+            "sha256": "25c5317467bca8c7bd33cb51a0b9b1821b50419c6e31b7565bc8475f1f9687a2",
+            "clip": "growth",
+            "sourceRect": {
+              "x": 800,
+              "y": 362,
+              "w": 192,
+              "h": 104
+            },
+            "scale": 0.3229166666666667
+          },
+          {
+            "file": "native/salamander/right-idle-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 45,
+              "w": 61,
+              "h": 35,
+              "count": 1467,
+              "edge": false
+            },
+            "sha256": "834b6392a1ab42345e54d49af305c6c966d6cb5f847921377fd13132ffeb941e",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 46,
+              "y": 115,
+              "w": 163,
+              "h": 94
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-idle-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 44,
+              "w": 61,
+              "h": 36,
+              "count": 1506,
+              "edge": false
+            },
+            "sha256": "f44f7de782c6f88d7aa96f51e884727887699d95d00b90691017977e04aa9657",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 303,
+              "y": 114,
+              "w": 162,
+              "h": 96
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-idle-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 45,
+              "w": 61,
+              "h": 35,
+              "count": 1492,
+              "edge": false
+            },
+            "sha256": "7a8aa16c093e24da19277cc8a85a9280ede829759aaff0f23df36239ffcae1ca",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 559,
+              "y": 116,
+              "w": 163,
+              "h": 94
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-idle-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 45,
+              "w": 62,
+              "h": 35,
+              "count": 1525,
+              "edge": false
+            },
+            "sha256": "678bd1d1433248933d00208990b6d085c76bed6e442f69bfe7f20b2c4535fad8",
+            "clip": "idle",
+            "sourceRect": {
+              "x": 813,
+              "y": 115,
+              "w": 165,
+              "h": 94
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-action-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 46,
+              "w": 62,
+              "h": 34,
+              "count": 1459,
+              "edge": false
+            },
+            "sha256": "d928c654381936ffc7bc67bdd729426265e492b5160888b6da820e55da2afd0b",
+            "clip": "action",
+            "sourceRect": {
+              "x": 45,
+              "y": 376,
+              "w": 166,
+              "h": 90
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-action-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 33,
+              "w": 72,
+              "h": 47,
+              "count": 2086,
+              "edge": false
+            },
+            "sha256": "7279538bd097bad6b6e10479e31389659ef03519984d4fcf828f42eafa45a586",
+            "clip": "action",
+            "sourceRect": {
+              "x": 288,
+              "y": 342,
+              "w": 192,
+              "h": 124
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-action-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 43,
+              "w": 62,
+              "h": 37,
+              "count": 1606,
+              "edge": false
+            },
+            "sha256": "b2983748a28f269581e07da813fa634dd838d7fb900edc589f78c96c3c09362d",
+            "clip": "action",
+            "sourceRect": {
+              "x": 558,
+              "y": 367,
+              "w": 164,
+              "h": 99
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-action-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 46,
+              "w": 62,
+              "h": 34,
+              "count": 1451,
+              "edge": false
+            },
+            "sha256": "e0393415419e890169f518970948ac933fbda2f1a06f4c001bc15ee1c2db44f0",
+            "clip": "action",
+            "sourceRect": {
+              "x": 814,
+              "y": 377,
+              "w": 165,
+              "h": 89
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-eat-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 14,
+              "y": 42,
+              "w": 69,
+              "h": 38,
+              "count": 1571,
+              "edge": false
+            },
+            "sha256": "e3cf3b509d064da5cf5ef5b90a58cd169e0d7b492ad9257e2958c7e78c971097",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 36,
+              "y": 622,
+              "w": 183,
+              "h": 100
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-eat-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 14,
+              "y": 41,
+              "w": 69,
+              "h": 39,
+              "count": 1517,
+              "edge": false
+            },
+            "sha256": "0fb1360414c6ab0edded614a48d7a4f1583dee7c82510f0220345b0737cf2bcb",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 292,
+              "y": 619,
+              "w": 183,
+              "h": 103
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-eat-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 14,
+              "y": 44,
+              "w": 68,
+              "h": 36,
+              "count": 1474,
+              "edge": false
+            },
+            "sha256": "51d49163d315f0359ff6e8dc6372a3f5329da9546fdec2caad12bf3c91a0c57d",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 550,
+              "y": 626,
+              "w": 180,
+              "h": 95
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-eat-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 46,
+              "w": 61,
+              "h": 34,
+              "count": 1411,
+              "edge": false
+            },
+            "sha256": "e3535892e61ec578db8541ec78af62a534fd697f8c98aeff690f570a005911b8",
+            "clip": "eat",
+            "sourceRect": {
+              "x": 814,
+              "y": 633,
+              "w": 163,
+              "h": 89
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-care-01.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 41,
+              "w": 61,
+              "h": 39,
+              "count": 1686,
+              "edge": false
+            },
+            "sha256": "6d7420e197588c832dd806412a6f3cc2357555e11a35c2a7caa6dfe922b70b32",
+            "clip": "care",
+            "sourceRect": {
+              "x": 46,
+              "y": 873,
+              "w": 163,
+              "h": 104
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-care-02.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 17,
+              "y": 40,
+              "w": 62,
+              "h": 40,
+              "count": 1698,
+              "edge": false
+            },
+            "sha256": "3411c6322b424d82823837a5590ce0d09988c73a28553c3168cc8c51a97b82fb",
+            "clip": "care",
+            "sourceRect": {
+              "x": 301,
+              "y": 873,
+              "w": 165,
+              "h": 105
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-care-03.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 41,
+              "w": 61,
+              "h": 39,
+              "count": 1684,
+              "edge": false
+            },
+            "sha256": "c1464d63e41c29369df175d0503d971929e8c997124f1160816437decd280a6c",
+            "clip": "care",
+            "sourceRect": {
+              "x": 558,
+              "y": 873,
+              "w": 163,
+              "h": 104
+            },
+            "scale": 0.37575757575757573
+          },
+          {
+            "file": "native/salamander/right-care-04.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 18,
+              "y": 47,
+              "w": 61,
+              "h": 33,
+              "count": 1404,
+              "edge": false
+            },
+            "sha256": "b6b071d4a53271d9031ee05657c600abea0ca28aec15c46134cbc4a685836f91",
+            "clip": "care",
+            "sourceRect": {
+              "x": 815,
+              "y": 889,
+              "w": 163,
+              "h": 88
+            },
+            "scale": 0.37575757575757573
+          }
+        ]
+      },
+      "clips": {
+        "growth": {
+          "frames": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations": [
+            900,
+            900,
+            900,
+            900
+          ],
+          "loop": false
+        },
+        "idle": {
+          "frames": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "durations": [
+            600,
+            240,
+            180,
+            240
+          ],
+          "loop": true
+        },
+        "action": {
+          "frames": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "durations": [
+            320,
+            180,
+            240,
+            220
+          ],
+          "loop": false
+        },
+        "eat": {
+          "frames": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "durations": [
+            300,
+            420,
+            340,
+            820
+          ],
+          "loop": false
+        },
+        "care": {
+          "frames": [
+            16,
+            17,
+            18,
+            19
+          ],
+          "durations": [
+            260,
+            620,
+            260,
+            820
+          ],
+          "loop": false
+        }
+      },
+      "runtimeAtlases": {
+        "left": {
+          "file": "creature-motion-assets/native/salamander/left-atlas.png",
+          "sha256": "8b13cb4d5c7f33ca83c729bbf54417ba0296773fa521461193204c686d2581d1",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 37,
+                "y": 66,
+                "w": 22,
+                "h": 14,
+                "count": 227,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 30,
+                "y": 59,
+                "w": 36,
+                "h": 21,
+                "count": 549,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 52,
+                "w": 51,
+                "h": 28,
+                "count": 997,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 46,
+                "w": 62,
+                "h": 34,
+                "count": 1459,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 43,
+                "w": 62,
+                "h": 37,
+                "count": 1497,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 43,
+                "w": 62,
+                "h": 37,
+                "count": 1538,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 44,
+                "w": 62,
+                "h": 36,
+                "count": 1493,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 44,
+                "w": 63,
+                "h": 36,
+                "count": 1518,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 47,
+                "w": 62,
+                "h": 33,
+                "count": 1445,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 11,
+                "y": 34,
+                "w": 75,
+                "h": 46,
+                "count": 2120,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 16,
+                "y": 41,
+                "w": 64,
+                "h": 39,
+                "count": 1670,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 44,
+                "w": 62,
+                "h": 36,
+                "count": 1448,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 7,
+                "y": 38,
+                "w": 72,
+                "h": 42,
+                "count": 1652,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 13,
+                "y": 39,
+                "w": 71,
+                "h": 41,
+                "count": 1669,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 13,
+                "y": 41,
+                "w": 71,
+                "h": 39,
+                "count": 1583,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 44,
+                "w": 63,
+                "h": 36,
+                "count": 1523,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 41,
+                "w": 62,
+                "h": 39,
+                "count": 1635,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 41,
+                "w": 62,
+                "h": 39,
+                "count": 1629,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 41,
+                "w": 62,
+                "h": 39,
+                "count": 1604,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/left-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 45,
+                "w": 62,
+                "h": 35,
+                "count": 1419,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        },
+        "right": {
+          "file": "creature-motion-assets/native/salamander/right-atlas.png",
+          "sha256": "4ab0694934d048eb0db73f669e99eb854f623bbbc7f5e51668c4636908d882e1",
+          "width": 384,
+          "height": 480,
+          "frames": [
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 37,
+                "y": 66,
+                "w": 22,
+                "h": 14,
+                "count": 234,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 30,
+                "y": 59,
+                "w": 36,
+                "h": 21,
+                "count": 544,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 23,
+                "y": 52,
+                "w": 51,
+                "h": 28,
+                "count": 983,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 46,
+                "w": 62,
+                "h": 34,
+                "count": 1453,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 0,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 45,
+                "w": 61,
+                "h": 35,
+                "count": 1467,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 44,
+                "w": 61,
+                "h": 36,
+                "count": 1506,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 45,
+                "w": 61,
+                "h": 35,
+                "count": 1492,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 45,
+                "w": 62,
+                "h": 35,
+                "count": 1525,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 96,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 46,
+                "w": 62,
+                "h": 34,
+                "count": 1459,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 12,
+                "y": 33,
+                "w": 72,
+                "h": 47,
+                "count": 2086,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 43,
+                "w": 62,
+                "h": 37,
+                "count": 1606,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 46,
+                "w": 62,
+                "h": 34,
+                "count": 1451,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 192,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 14,
+                "y": 42,
+                "w": 69,
+                "h": 38,
+                "count": 1571,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 14,
+                "y": 41,
+                "w": 69,
+                "h": 39,
+                "count": 1517,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 14,
+                "y": 44,
+                "w": 68,
+                "h": 36,
+                "count": 1474,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 46,
+                "w": 61,
+                "h": 34,
+                "count": 1411,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 288,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 41,
+                "w": 61,
+                "h": 39,
+                "count": 1686,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 0,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 17,
+                "y": 40,
+                "w": 62,
+                "h": 40,
+                "count": 1698,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 96,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 41,
+                "w": 61,
+                "h": 39,
+                "count": 1684,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 192,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            },
+            {
+              "file": "creature-motion-assets/native/salamander/right-atlas.png",
+              "width": 96,
+              "height": 96,
+              "pivotX": 48,
+              "pivotY": 80,
+              "bounds": {
+                "x": 18,
+                "y": 47,
+                "w": 61,
+                "h": 33,
+                "count": 1404,
+                "edge": false
+              },
+              "atlasRect": {
+                "x": 288,
+                "y": 384,
+                "w": 96,
+                "h": 96
+              }
+            }
+          ]
+        }
+      }
     }
   ]
 }

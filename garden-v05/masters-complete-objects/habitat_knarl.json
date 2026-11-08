@@ -1,0 +1,9 @@
+{
+  "id": "habitat_knarl",
+  "kind": "habitat",
+  "species": "knarl",
+  "prompt": "Use case: stylized-concept. Single complete habitat object,1024x1024 real transparent RGBA. A PILE OF FALLEN LEAVES ON A SHORT MOSSY LOG, squat low wide silhouette, dark hollow visible in log's cut LEFT end for a tiny hedgehog to hide in. No animal. Six or seven broad overlapping autumn leaf shapes, muted russet/tan/olive, lying on top; short thick brown log extending right, few large moss blocks on upper-left. Designed for36x28 native so EXTRAORDINARILY SIMPLE broad flat blocks, no veins, woodgrain, fungi, flowers or tiny texture. 2:1 isometric dimetric camera, centered one object, touching leaf/log/moss shapes, ample transparent margin. Match attached coarse habitat reference. Thick #231F2E outline, top-left light; 2-3shades/material. #735044 #A57554 #4A3042 wood, #8B4A3F #C97952 #E7AE73 autumn leaves, #3F6A45 #71934B moss. Every pixel hard square. No antialiasing gradients glow dithering noise speckles ground tile detached shadow text border watermark.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-a0f95441-6126-46ce-a5a2-ccf167d8b72d.png",
+  "master": "masters-complete-objects/habitat_knarl.png",
+  "masterSha256": "9f7ac73b74d8c279a336f664e87daae282a981d0140e26b0d91c4400f3c965bf"
+}

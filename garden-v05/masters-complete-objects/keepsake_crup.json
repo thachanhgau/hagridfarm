@@ -1,0 +1,9 @@
+{
+  "id": "keepsake_crup",
+  "kind": "keepsake",
+  "species": "crup",
+  "prompt": "Use case: stylized-concept. Single centered COMPLETE OBJECT 1024square real transparent RGBA: keepsake statuette of a sitting CRUP, a small Jack Russell TERRIER, cream white body, tan brown patches on head/back, pointed ears folded at tips, dark eyes, cheerful grin, short legs. Its ONE attached short tail branches into TWO LARGE obvious FORK PRONGS, shown to the right of sitting body. Facing left in3/4 dimetric2:1. Use attached Crup sheet ONLY as animal identity. Use attached Grindylow keepsake for EXACT PLINTH FAMILY: low TWO-STEP warm grey stone rectangular isometric plinth, pale top-left edges, darker right side, simple GOLD FRONT INSET with blank dark grey interior, no lettering. Animal sits on plinth, ONE connected object. Cozy farm keepsake matching existing Kneazle/Grindylow set. Large chunky low-res pixel squares, thick #231F2E outline, flat broad clusters,2-3shades/material, light TOP LEFT. Palette near #D6D8BF #A6B1AE #687486 #41465C stone; #A57554 #735044 #C97952 #E7AE73 tan; #FFC36B gold. Generous transparent margins. NO antialiasing gradient glow dithering noise fur texture ground cast shadow text frame watermark or extra props.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-ee8c4acb-96f5-4436-912e-d2430992df6a.png",
+  "master": "masters-complete-objects/keepsake_crup.png",
+  "masterSha256": "7ede1a31ca3e0bafe8aa2eaba414b7c3442c64877595e1e6de4dc6766a6b1a96"
+}

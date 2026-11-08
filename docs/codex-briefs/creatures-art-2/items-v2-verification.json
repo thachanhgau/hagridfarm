@@ -1,0 +1,93 @@
+{
+  "master": "garden-v05/masters-items/creatures-2/items-sheet-v2.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "originalSHA256": "c4260b04ba9dbb82c297c21b428e4970aca0fe3aeec0df5769862a76747298c4",
+  "masterSHA256": "36ac9a7c8cd9c0191c0d6697733d7b36594a765fe153de3bf7c2507b6eb91644",
+  "unchangedCellsPixelExact": 4,
+  "originalUnchanged": true,
+  "candidates": [
+    {
+      "id": "produce_crup",
+      "candidate": "A",
+      "selected": true,
+      "sourceBounds": [
+        248,
+        60,
+        982,
+        1239
+      ],
+      "placedSize": [
+        199,
+        320
+      ],
+      "partialAlphaSourcePixels": 630424,
+      "sha256": "003eba9179114241d1edbc42bb633600eaba6c7353a667aa113bb64362093e9a",
+      "cellBounds": [
+        156,
+        120,
+        355,
+        440
+      ]
+    },
+    {
+      "id": "produce_crup",
+      "candidate": "B",
+      "selected": false,
+      "sourceBounds": [
+        157,
+        74,
+        1063,
+        1240
+      ],
+      "placedSize": [
+        249,
+        320
+      ],
+      "partialAlphaSourcePixels": 769404,
+      "sha256": "56c330e191bf9e2d0bb4f3a580c3aae2c5030dbf0e7dc92ca27feffede9540e6"
+    },
+    {
+      "id": "salamander_feed",
+      "candidate": "A",
+      "selected": false,
+      "sourceBounds": [
+        70,
+        170,
+        1210,
+        1197
+      ],
+      "placedSize": [
+        320,
+        288
+      ],
+      "partialAlphaSourcePixels": 700830,
+      "sha256": "ee959fa82578610f149e8cf13b018a0d183beaffdf2d30cdffa8a7231de6d34d"
+    },
+    {
+      "id": "salamander_feed",
+      "candidate": "B",
+      "selected": true,
+      "sourceBounds": [
+        133,
+        204,
+        1169,
+        1197
+      ],
+      "placedSize": [
+        320,
+        307
+      ],
+      "partialAlphaSourcePixels": 645992,
+      "sha256": "f154bc8b5e10b41a9bcac23c6e3102525fbc378655c3a26bf24f7e592e2fb9ad",
+      "cellBounds": [
+        96,
+        133,
+        416,
+        440
+      ]
+    }
+  ]
+}

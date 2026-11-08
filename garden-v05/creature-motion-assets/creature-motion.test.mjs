@@ -143,7 +143,7 @@ test('runtime extension exposes an explicit parent load/apply hook', async () =>
   const motionItems = manifest.items.map((item) => ({id: item.id,frames:[],clips:{}}));
   globalThis.window = {FARM_MOTION: {items: motionItems}, FARM_LEVEL_ASSETS: {items: []}};
   new Function(runtime)();
-  assert.equal(window.FARM_CREATURE_MOTION.items.length, 13); // 12 + pond grindylow (pond-creatures.json)
+  assert.equal(window.FARM_CREATURE_MOTION.items.length, 16); // 12 + grindylow, crup, knarl, salamander (pond-creatures.json)
   assert.equal(typeof window.FARM_CREATURE_MOTION_APPLY, 'function');
   assert.equal(window.FARM_CREATURE_MOTION_STATUS.complete, true);
   assert.ok(motionItems.every((item) => item.rightCreatureMotion?.direction === 'right-authored'));
