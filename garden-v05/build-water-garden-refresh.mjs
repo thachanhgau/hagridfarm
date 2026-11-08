@@ -43,8 +43,16 @@ for(const item of provenance.assets){
      out.set([113,147,75,255],pos*4);
     }
    }return {c,pixels};});
+  // Remove the old basin perimeter as well as its fill before re-centring the authored soil.
+  for(const c of basins)for(let y=Math.max(0,c.y-3);y<Math.min(H,c.y+c.h+3);y++)for(let x=Math.max(0,c.x-3);x<Math.min(W,c.x+c.w+3);x++)out.set([113,147,75,255],(y*W+x)*4);
   soil.forEach(({c,pixels},i)=>{const x0=targets[i][0]-Math.floor(c.w/2),y0=targets[i][1]-Math.floor(c.h/2);for(let y=0;y<c.h;y++)for(let x=0;x<c.w;x++){const p=(y*c.w+x)*4;if(pixels[p+3])pixels.copy(out,((y0+y)*W+x0+x)*4,p,p+4);}});
   item.pitCentres=targets.map(([x,y])=>[x*2,y*2]);
+  // Exact 10×8 logical footprint: one continuous 2:1 stair-step edge, no stray outline pixels.
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+   const col=((x+.5-128)/16+(y+.5-12)/8)/2,row=((y+.5-12)/8-(x+.5-128)/16)/2,i=(y*W+x)*4;
+   if(col<0||col>=10||row<0||row>=8){out.fill(0,i,i+4);continue;}
+   if(!out[i+3]||Math.min(col,10-col,row,8-row)<.15)out.set([113,147,75,255],i);
+  }
  }
  item.file=orchard?'environment/edge/orchard.png':`environment/${item.id.endsWith('snow')?'winter':'pond'}/${item.id}.png`;
  const png=await sharp(out,{raw:{width:W,height:H,channels:4}}).resize(W*2,H*2,{kernel:'nearest'}).png().toBuffer();await fs.writeFile(new URL(item.file,root),png);item.sha256=hash(png);

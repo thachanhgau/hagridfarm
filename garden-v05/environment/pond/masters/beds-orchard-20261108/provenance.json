@@ -61,12 +61,12 @@
         ]
       ],
       "file": "environment/edge/orchard.png",
-      "sha256": "bf000d427319f0e33b92dd2ab877749e0a24aa3720f89203a9d3ea7ba819f5d0",
+      "sha256": "1f232e6ebb761930847e13e59af6f05d78ef42692c625d51311150a8ca8b449e",
       "bounds": {
         "x": 2,
-        "y": 26,
+        "y": 24,
         "w": 572,
-        "h": 286
+        "h": 288
       }
     }
   ]

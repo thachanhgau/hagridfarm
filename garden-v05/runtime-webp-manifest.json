@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "b3a95a09bbc5",
+  "revision": "eec3e83e5121",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -12156,10 +12156,10 @@
       "file": "runtime-webp/environment/edge/orchard.webp",
       "width": 576,
       "height": 314,
-      "sourceBytes": 8175,
-      "bytes": 3352,
-      "sourceSha256": "bf000d427319f0e33b92dd2ab877749e0a24aa3720f89203a9d3ea7ba819f5d0",
-      "sha256": "4a535c230e502657ad20e7b46df36f93bc13b69f3bb4865c156f35a690bc880e"
+      "sourceBytes": 7273,
+      "bytes": 2584,
+      "sourceSha256": "1f232e6ebb761930847e13e59af6f05d78ef42692c625d51311150a8ca8b449e",
+      "sha256": "60b3fb5da4e39dcd90824691e7389b3a6080629a1377b77836aca6f0bffb4fc9"
     },
     {
       "source": "environment/edge/pasture.png",
@@ -12186,10 +12186,10 @@
       "file": "runtime-webp/environment/edge/tree-apple-0.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 457,
-      "bytes": 194,
-      "sourceSha256": "e49e3277c72c2657cedae57a0ba289b768a4f9fe362ac13278cd11580924499e",
-      "sha256": "ad5bf6241b77ce19a4fad704e38fb43fdc60ce972033f9ace2942f9a185d5bb9"
+      "sourceBytes": 982,
+      "bytes": 420,
+      "sourceSha256": "f2ed9d5285549e8ec9c7df2d7769393e1a651667a2e5c71282fa73f6c1892b12",
+      "sha256": "51363702e23ceb926c61d2760715ed461e54030bbd2cadf0004361af4eb95173"
     },
     {
       "source": "environment/edge/tree-apple-1.png",
@@ -12216,10 +12216,10 @@
       "file": "runtime-webp/environment/edge/tree-pear-0.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 484,
-      "bytes": 214,
-      "sourceSha256": "9e07583560dd7e53863eb1f8f61058b07b25d00e0246f8ebd751be837c99ea38",
-      "sha256": "012192eecd72072b9e5cb5a48f1f1b84d71713b2b3bc0d717575db18c3a1b21f"
+      "sourceBytes": 974,
+      "bytes": 412,
+      "sourceSha256": "bf84eb96c5848408f2e4d1bfc6c874def3c7c016e121c425dff3f8031004405c",
+      "sha256": "7fc3516d3c3db04e79cfc33ebfe84665bce5c8633a9aa91df1d087bc5cbf4438"
     },
     {
       "source": "environment/edge/tree-pear-1.png",
@@ -12246,10 +12246,10 @@
       "file": "runtime-webp/environment/edge/tree-plum-0.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 452,
-      "bytes": 190,
-      "sourceSha256": "8382ac5c3923c8d6975ab693c61f40036dd12db0ddc5a4bff4a4cedc6e4dd21b",
-      "sha256": "0db0d7c393c6bbb8a6c1f5d6672d4feda0fb33bd2b178b5adbee12900d431854"
+      "sourceBytes": 912,
+      "bytes": 410,
+      "sourceSha256": "f7f61e05efd92e7fb3d09e155f3981b2e98ac87cad82d6c393d492a209d51a40",
+      "sha256": "aa839524446699c562cdaddcba6559b091ad2f95c13416798ef74b5bf1b57024"
     },
     {
       "source": "environment/edge/tree-plum-1.png",
@@ -13586,10 +13586,10 @@
       "file": "runtime-webp/environment/winter/tree-apple-0-snow.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 519,
-      "bytes": 236,
-      "sourceSha256": "fc59992a18c4c9cba0e2fa72ea998302a9bd377bd0ba883a6c5d63c3c22ce5ed",
-      "sha256": "3190d8d6516942c7c403a17d85b4328d6c50382aaca91486d56ff8f6e74361d1"
+      "sourceBytes": 1043,
+      "bytes": 592,
+      "sourceSha256": "f161d6a1c63c1d7846ada85297c7d479055f89607da9d1dfb11b7ace793ba64a",
+      "sha256": "cd7a3bfc155814546f3590bcbff5de5f301e15ee77ecf6cd404a3ad1cd30b540"
     },
     {
       "source": "environment/winter/tree-apple-1-snow.png",
@@ -13616,10 +13616,10 @@
       "file": "runtime-webp/environment/winter/tree-pear-0-snow.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 530,
-      "bytes": 240,
-      "sourceSha256": "08c8a7c42d50a97e464fadbadf18f1a1112278e4cbe9cb6ba81921570ab329ee",
-      "sha256": "c5b31dca417b798b613c173410dff56e2724cf91940b7b259d64062db459d5d0"
+      "sourceBytes": 1062,
+      "bytes": 568,
+      "sourceSha256": "30828c9ab963299854e04b677292428ad4ab1df54240ac3f205341181a134039",
+      "sha256": "6b8bf5fc5841a90a5b41abd243f783f8e75b171b42b893dfca4a935108062ec5"
     },
     {
       "source": "environment/winter/tree-pear-1-snow.png",
@@ -13646,10 +13646,10 @@
       "file": "runtime-webp/environment/winter/tree-plum-0-snow.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 524,
-      "bytes": 238,
-      "sourceSha256": "ad279408b8a5828a02a1a1901273870b92008b475f7621266658301b45d1db91",
-      "sha256": "e127f3e08e23fd90077903e562664c99d2931135de91d9e7808a6eb237e59fd0"
+      "sourceBytes": 1053,
+      "bytes": 502,
+      "sourceSha256": "d3bc8c4e276dd797c0f2dc240fd00c7c8d783ab82b7d991917cb70aa2fdadaec",
+      "sha256": "37a08d7fd51852fa4ad485eac04c67c926262f0ef796b4ed98ff00e690c4834e"
     },
     {
       "source": "environment/winter/tree-plum-1-snow.png",
@@ -13887,9 +13887,9 @@
   "totals": {
     "converted": 1382,
     "existingWebp": 8,
-    "originalBytes": 5340599,
-    "webpBytes": 3520664,
-    "savedBytes": 1819935,
-    "savedPercent": 34.08
+    "originalBytes": 5342757,
+    "webpBytes": 3521488,
+    "savedBytes": 1821269,
+    "savedPercent": 34.09
   }
 }

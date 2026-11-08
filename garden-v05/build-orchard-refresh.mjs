@@ -19,7 +19,7 @@ for(const item of provenance.assets){
  const palette=[...SPRITE_PALETTE,...(snow?['#E8F0ED']:[])].map(c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16)));
  item.outputs=[];
  for(let stage=0;stage<3;stage++){
-  const cell=cells[stage],scale=Math.min((stage?48:16)/cell.width,(stage?53:22)/cell.height),w=Math.round(cell.width*scale),h=Math.round(cell.height*scale);
+  const cell=cells[stage],scale=Math.min((stage?48:38)/cell.width,(stage?53:42)/cell.height),w=Math.round(cell.width*scale),h=Math.round(cell.height*scale);
   const ink=await sharp(cell.data,{raw:{width:cell.width,height:cell.height,channels:4}}).resize(w,h,{kernel:'nearest'}).raw().toBuffer();
   for(let i=0;i<ink.length;i+=4){
    if(ink[i+3]<192){ink.fill(0,i,i+4);continue;}

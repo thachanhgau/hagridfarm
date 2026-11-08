@@ -20,6 +20,7 @@ test('authored orchard preserves tree anchors, crisp pixels and all seasonal gro
    const bytes=await read(file);hashes.push(crypto.createHash('sha256').update(bytes).digest('hex'));
    const {data,info}=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true});
    assert.deepEqual([info.width,info.height],[128,144]);
+   if(file.includes('-0')){const b=EDGE_SCENERY['tree-'+item.id.replace('-snow','')+'-0'].bounds;assert.ok(b.w>=48&&b.h>=48,'young trees must remain recognisable above the mulch');}
    let bottom=0;
    for(let y=0;y<144;y++)for(let x=0;x<128;x++){
     const i=(y*128+x)*4,origin=((y-y%2)*128+x-x%2)*4;
