@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "7f98f219c1bb",
+  "revision": "15626274809a",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -12186,90 +12186,90 @@
       "file": "runtime-webp/environment/edge/tree-apple-0.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 611,
-      "bytes": 292,
-      "sourceSha256": "3569d605fba2b2f4e5b671d4c6b1284cccaf6af9e2e43e880edb1d0aeb186395",
-      "sha256": "ca456768ff3132ec564f488b7c4024bc744843b0008e141c71544faa22e85e8a"
+      "sourceBytes": 457,
+      "bytes": 194,
+      "sourceSha256": "e49e3277c72c2657cedae57a0ba289b768a4f9fe362ac13278cd11580924499e",
+      "sha256": "ad5bf6241b77ce19a4fad704e38fb43fdc60ce972033f9ace2942f9a185d5bb9"
     },
     {
       "source": "environment/edge/tree-apple-1.png",
       "file": "runtime-webp/environment/edge/tree-apple-1.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 1768,
-      "bytes": 1088,
-      "sourceSha256": "47d9196fd748064110fa11a70c770e128d78606c0c14ff2a1059e1721bbaee7b",
-      "sha256": "43c4b36a1421c42199e0a9562bd8ebff8146e601c18155dd7674ba96d86e0da7"
+      "sourceBytes": 1438,
+      "bytes": 650,
+      "sourceSha256": "e3e9bfac2afedc740ec219267b598bb38dca46b5aee418e18d4166c3cdda3769",
+      "sha256": "6acaf105df6961467ecc6e554b748ddc4d84b8477c11c996cbdc91f842c52548"
     },
     {
       "source": "environment/edge/tree-apple-2.png",
       "file": "runtime-webp/environment/edge/tree-apple-2.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 2068,
-      "bytes": 1132,
-      "sourceSha256": "c6cea3f489c636d41520824a9d60401d6f031b8bf965289b26d3b7273e747ffe",
-      "sha256": "d36d2919ff5ff3f1a8f5592a060a126f7d592e85f337215970e04844de7bd366"
+      "sourceBytes": 1550,
+      "bytes": 702,
+      "sourceSha256": "ba1034f3d863d92479dad0d1b63cf8d29ac23f2b0e52c3438865fdd6cce38533",
+      "sha256": "184fd5e153bf8fec778ce20a497ae9839c918e27bf063d24c895c4c1f29462ec"
     },
     {
       "source": "environment/edge/tree-pear-0.png",
       "file": "runtime-webp/environment/edge/tree-pear-0.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 606,
-      "bytes": 320,
-      "sourceSha256": "5f125af6294f6b52488b5008dfae18e0b3893fa797b681f4b042265571b0227f",
-      "sha256": "5f037d771b3cd59f02b56d17bd5e77379b19b19644fd0c1b4a68b71f6868c74b"
+      "sourceBytes": 484,
+      "bytes": 214,
+      "sourceSha256": "9e07583560dd7e53863eb1f8f61058b07b25d00e0246f8ebd751be837c99ea38",
+      "sha256": "012192eecd72072b9e5cb5a48f1f1b84d71713b2b3bc0d717575db18c3a1b21f"
     },
     {
       "source": "environment/edge/tree-pear-1.png",
       "file": "runtime-webp/environment/edge/tree-pear-1.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 1590,
-      "bytes": 876,
-      "sourceSha256": "a94c249cf34e56ff6272c5fc3e6c198ea44bea23c9437f41134b37badb280c62",
-      "sha256": "e0f620fb04b1f666089ed6f88a12b9604dc677b105f7e058940044da93f0ed92"
+      "sourceBytes": 1475,
+      "bytes": 636,
+      "sourceSha256": "f232fcad8ca6dfbb691070c332f2ee9f9bcbac27dd40647ed3e580cb6c0f523b",
+      "sha256": "f088dadf8dfd449cbf01384bb8ec843eb592452b9f7c5c41dacd1f2854ed7cc9"
     },
     {
       "source": "environment/edge/tree-pear-2.png",
       "file": "runtime-webp/environment/edge/tree-pear-2.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 2067,
-      "bytes": 1210,
-      "sourceSha256": "71ea75d6f726b901878e18435cc73c6526024e00870cf1d7309d0e91cc252ff7",
-      "sha256": "c4edbc6322e9b039b23e40f59f74e4aceb6bd340eb783824392fe93c6e61c561"
+      "sourceBytes": 1592,
+      "bytes": 716,
+      "sourceSha256": "27aee30ea3b3d6dedd1936b5235d625acc1c89f7676672f9e43864f921432465",
+      "sha256": "77e21ac3891bbe1236fc942e493263896c4905a413e7af977a0cb487a4b4775f"
     },
     {
       "source": "environment/edge/tree-plum-0.png",
       "file": "runtime-webp/environment/edge/tree-plum-0.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 549,
-      "bytes": 266,
-      "sourceSha256": "4c9ef9a2525f712fda6f8cabecc8a28c5f4f4e6936b32cd6f5be60df98ba257e",
-      "sha256": "04570d92eb40ef2c4fb6603cd35885fc0ec3b50691a39ae6294d82308c565849"
+      "sourceBytes": 452,
+      "bytes": 190,
+      "sourceSha256": "8382ac5c3923c8d6975ab693c61f40036dd12db0ddc5a4bff4a4cedc6e4dd21b",
+      "sha256": "0db0d7c393c6bbb8a6c1f5d6672d4feda0fb33bd2b178b5adbee12900d431854"
     },
     {
       "source": "environment/edge/tree-plum-1.png",
       "file": "runtime-webp/environment/edge/tree-plum-1.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 1392,
-      "bytes": 756,
-      "sourceSha256": "217a193f94ca4489f6505470f8a6de8434cd3866ff142056e14a08dc93f497d1",
-      "sha256": "5ff70640603e640d324953859957c9e0b2806d63633096441f51fe0eddf70c01"
+      "sourceBytes": 1105,
+      "bytes": 494,
+      "sourceSha256": "8fcd44e6823a28936929ba4dd1c5a32628cd3da1c9213067f9c08eda89220d3a",
+      "sha256": "9c11ed8dfba40e880324d7d61b6eaea1621388a5aae1991542fd089751a4182d"
     },
     {
       "source": "environment/edge/tree-plum-2.png",
       "file": "runtime-webp/environment/edge/tree-plum-2.webp",
       "width": 128,
       "height": 144,
-      "sourceBytes": 1720,
-      "bytes": 918,
-      "sourceSha256": "660ab9470604c3e6fa3a260eece784d18fc05d3afeeb80d80a8c0b20b2652d0a",
-      "sha256": "cc7461ca4a6b760ef0c6cc6633b00f4e0a5444c203160391c8ec770d7f670a90"
+      "sourceBytes": 1206,
+      "bytes": 570,
+      "sourceSha256": "c965d906ef6e8b1c40f11664ac2a236b847ffbaefab390e1a1a9d5f031f581e9",
+      "sha256": "6084ad339780e84f5f25bd7776d1b72664c426fc11adc6b231471e279c2ba71f"
     },
     {
       "source": "environment/elves/dobby/carry.png",
@@ -13582,6 +13582,96 @@
       "sha256": "2c2f7d7dce95dab57060ae1a14070373ab2334f7fbd267b7e6dcea66737108fb"
     },
     {
+      "source": "environment/winter/tree-apple-0-snow.png",
+      "file": "runtime-webp/environment/winter/tree-apple-0-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 519,
+      "bytes": 236,
+      "sourceSha256": "fc59992a18c4c9cba0e2fa72ea998302a9bd377bd0ba883a6c5d63c3c22ce5ed",
+      "sha256": "3190d8d6516942c7c403a17d85b4328d6c50382aaca91486d56ff8f6e74361d1"
+    },
+    {
+      "source": "environment/winter/tree-apple-1-snow.png",
+      "file": "runtime-webp/environment/winter/tree-apple-1-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1608,
+      "bytes": 996,
+      "sourceSha256": "5f7c61b3f18effa48bc6ace6027114b6e0ed954083cd29f222d99787cac071cc",
+      "sha256": "27095314f410e6f2f1ec4908c8fc4c5c61ed9d628a9e03076b52ac257857b73a"
+    },
+    {
+      "source": "environment/winter/tree-apple-2-snow.png",
+      "file": "runtime-webp/environment/winter/tree-apple-2-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1664,
+      "bytes": 1048,
+      "sourceSha256": "aea9dce625a7f52c0ee3b7ad3452f76fc09eabd34511719b833919093de7618c",
+      "sha256": "78f27496ec9f57d1c51b3e5f6bf55b79e9f190286214ca60bb14de7a86e591fa"
+    },
+    {
+      "source": "environment/winter/tree-pear-0-snow.png",
+      "file": "runtime-webp/environment/winter/tree-pear-0-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 530,
+      "bytes": 240,
+      "sourceSha256": "08c8a7c42d50a97e464fadbadf18f1a1112278e4cbe9cb6ba81921570ab329ee",
+      "sha256": "c5b31dca417b798b613c173410dff56e2724cf91940b7b259d64062db459d5d0"
+    },
+    {
+      "source": "environment/winter/tree-pear-1-snow.png",
+      "file": "runtime-webp/environment/winter/tree-pear-1-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1579,
+      "bytes": 918,
+      "sourceSha256": "7fdbaa507714b1341f5b974a2aeb47197d303e098395132032484d14101df085",
+      "sha256": "f154fe02d58236227899bc92981f549a68ee4eaf034ba06448aeb7038e9c9b4e"
+    },
+    {
+      "source": "environment/winter/tree-pear-2-snow.png",
+      "file": "runtime-webp/environment/winter/tree-pear-2-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1688,
+      "bytes": 1008,
+      "sourceSha256": "2745b82043038b958ebef5ca16a6843eddaa25f3aa0a1ee65eb974acc3f456ce",
+      "sha256": "16660978c19f2836139696a33479b833d1ae1012c6fd7852caf9300ccbd57557"
+    },
+    {
+      "source": "environment/winter/tree-plum-0-snow.png",
+      "file": "runtime-webp/environment/winter/tree-plum-0-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 524,
+      "bytes": 238,
+      "sourceSha256": "ad279408b8a5828a02a1a1901273870b92008b475f7621266658301b45d1db91",
+      "sha256": "e127f3e08e23fd90077903e562664c99d2931135de91d9e7808a6eb237e59fd0"
+    },
+    {
+      "source": "environment/winter/tree-plum-1-snow.png",
+      "file": "runtime-webp/environment/winter/tree-plum-1-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1316,
+      "bytes": 792,
+      "sourceSha256": "911528d3a3c8caff25d59ffcbf79af4d996c0e448a0d7941502517f0750b91c5",
+      "sha256": "734a5347fec4fc33046e5b4bb34a186f0e991e61fc2318a6b627840e0ce88709"
+    },
+    {
+      "source": "environment/winter/tree-plum-2-snow.png",
+      "file": "runtime-webp/environment/winter/tree-plum-2-snow.webp",
+      "width": 128,
+      "height": 144,
+      "sourceBytes": 1361,
+      "bytes": 852,
+      "sourceSha256": "77c3e65ecdac02e11f0c33f242bfca18aef7a7dece8e12d9f440b975f3efa8d9",
+      "sha256": "abc9702e69b9c3f55dd42ffec52e5bf6f4328753f7ba69f99dfd928cc1284508"
+    },
+    {
       "source": "environment/xmas/carried-tree.png",
       "file": "runtime-webp/environment/xmas/carried-tree.webp",
       "width": 64,
@@ -13795,11 +13885,11 @@
     }
   ],
   "totals": {
-    "converted": 1373,
+    "converted": 1382,
     "existingWebp": 8,
-    "originalBytes": 5337846,
-    "webpBytes": 3521068,
-    "savedBytes": 1816778,
-    "savedPercent": 34.04
+    "originalBytes": 5346023,
+    "webpBytes": 3524904,
+    "savedBytes": 1821119,
+    "savedPercent": 34.06
   }
 }

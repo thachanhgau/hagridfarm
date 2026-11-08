@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-11-08",
+  "assets": [
+    {
+      "id": "pear",
+      "master": "environment/edge/masters/orchard-refresh-20261108/pear.png",
+      "prompt": "Draw a production pixel-art orchard tree GROWTH SHEET for an isometric fantasy farming game. An elegant PEAR tree with an upright tapered crown, a graceful branched trunk, slightly narrower than apple but full and lush. Fruiting version has 6-8 clearly pear-shaped golden yellow pears with small stalks, legible silhouettes. EXACTLY THREE isolated poses in ONE ROW and THREE equal rectangular cells, no drawn grid. LEFT: small young sapling with visible trunk and 2-3 leaf sprigs, about 35% of adult height. MIDDLE: fully grown lush tree with NO FRUIT. RIGHT: exact same grown tree with fruit added, preserve its crown outline, trunk and branch geometry. Roots sit at the SAME BASELINE 77% down each cell. Each logical cell 128x144 pixels, adult crown around 94x104 pixels, generous transparent margins, no clipping. TOTAL sheet aspect ratio 8:3. Match style reference: hand-crafted chunky PIXEL ART, dark aubergine outlines, organic but readable large flat clusters, only 3 tones in leaves (#24483F #3F6A45 #71934B), warm brown trunk with 3 tones (#4A3042 #735044 #A57554), restrained highlights #B0BD67. Beautiful lively silhouettes, visible trunk forks, strong light from upper left, 2:1 isometric game feel. NOT a generic oval lollipop crown, NOT a noisy dithered texture, NOT a flat triangular blob. NO smooth shading, antialiasing, gradients, photo texture, bloom, loose leaves or disconnected props. No soil tile, ground rectangle, cast shadow, pot, bench, ornaments, lettering, labels or background. TRUE TRANSPARENT background. All parts of each pose connected; fruit touches foliage. Fine craft comes from thoughtful shapes, not tiny speckled detail. The reference tree is only a style/quality reference; do NOT copy its willow shape.",
+      "masterSha256": "9034635bb30edda224c010d25beb7e96eb2f4a1be9447e8f8acaebc6bf76549b",
+      "outputs": [
+        "environment/edge/tree-pear-0.png",
+        "environment/edge/tree-pear-1.png",
+        "environment/edge/tree-pear-2.png"
+      ]
+    },
+    {
+      "id": "apple",
+      "master": "environment/edge/masters/orchard-refresh-20261108/apple.png",
+      "prompt": "Draw a production pixel-art orchard tree GROWTH SHEET for an isometric fantasy farming game. A handsome APPLE tree with a spreading rounded but asymmetrical crown, a sturdy warm brown branching trunk, generous readable leaf clusters. Fruiting version has 8-10 distinct warm red apples, enough separation to read at small game scale. EXACTLY THREE isolated poses in ONE ROW and THREE equal rectangular cells, no drawn grid. LEFT: small young sapling with visible trunk and 2-3 leaf sprigs, about 35% of adult height. MIDDLE: fully grown lush tree with NO FRUIT. RIGHT: exact same grown tree with fruit added, preserve its crown outline, trunk and branch geometry. Roots sit at the SAME BASELINE 77% down each cell. Each logical cell 128x144 pixels, adult crown around 94x104 pixels, generous transparent margins, no clipping. TOTAL sheet aspect ratio 8:3. Match style reference: hand-crafted chunky PIXEL ART, dark aubergine outlines, organic but readable large flat clusters, only 3 tones in leaves (#24483F #3F6A45 #71934B), warm brown trunk with 3 tones (#4A3042 #735044 #A57554), restrained highlights #B0BD67. Beautiful lively silhouettes, visible trunk forks, strong light from upper left, 2:1 isometric game feel. NOT a generic oval lollipop crown, NOT a noisy dithered texture, NOT a flat triangular blob. NO smooth shading, antialiasing, gradients, photo texture, bloom, loose leaves or disconnected props. No soil tile, ground rectangle, cast shadow, pot, bench, ornaments, lettering, labels or background. TRUE TRANSPARENT background. All parts of each pose connected; fruit touches foliage. Fine craft comes from thoughtful shapes, not tiny speckled detail. The reference tree is only a style/quality reference; do NOT copy its willow shape.",
+      "masterSha256": "9cc778c15e4720496d97232af0012ce7d57e3c902e3acf8cb190b9dad1f27bee",
+      "outputs": [
+        "environment/edge/tree-apple-0.png",
+        "environment/edge/tree-apple-1.png",
+        "environment/edge/tree-apple-2.png"
+      ]
+    },
+    {
+      "id": "plum",
+      "master": "environment/edge/masters/orchard-refresh-20261108/plum.png",
+      "prompt": "Draw a production pixel-art orchard tree GROWTH SHEET for an isometric fantasy farming game. A beautiful PLUM tree with a low layered umbrella crown, gently bending branching trunk and rich dark green foliage. Fruiting version has 8-10 distinct violet-plum fruit highlights, clearly contrasting with the leaves. EXACTLY THREE isolated poses in ONE ROW and THREE equal rectangular cells, no drawn grid. LEFT: small young sapling with visible trunk and 2-3 leaf sprigs, about 35% of adult height. MIDDLE: fully grown lush tree with NO FRUIT. RIGHT: exact same grown tree with fruit added, preserve its crown outline, trunk and branch geometry. Roots sit at the SAME BASELINE 77% down each cell. Each logical cell 128x144 pixels, adult crown around 94x104 pixels, generous transparent margins, no clipping. TOTAL sheet aspect ratio 8:3. Match style reference: hand-crafted chunky PIXEL ART, dark aubergine outlines, organic but readable large flat clusters, only 3 tones in leaves (#24483F #3F6A45 #71934B), warm brown trunk with 3 tones (#4A3042 #735044 #A57554), restrained highlights #B0BD67. Beautiful lively silhouettes, visible trunk forks, strong light from upper left, 2:1 isometric game feel. NOT a generic oval lollipop crown, NOT a noisy dithered texture, NOT a flat triangular blob. NO smooth shading, antialiasing, gradients, photo texture, bloom, loose leaves or disconnected props. No soil tile, ground rectangle, cast shadow, pot, bench, ornaments, lettering, labels or background. TRUE TRANSPARENT background. All parts of each pose connected; fruit touches foliage. Fine craft comes from thoughtful shapes, not tiny speckled detail. The reference tree is only a style/quality reference; do NOT copy its willow shape.",
+      "masterSha256": "988a6e4fe529045ce8b961a380079c5358549287f3d1723c79b48cb9ffc00444",
+      "outputs": [
+        "environment/edge/tree-plum-0.png",
+        "environment/edge/tree-plum-1.png",
+        "environment/edge/tree-plum-2.png"
+      ]
+    },
+    {
+      "id": "plum-snow",
+      "master": "environment/edge/masters/orchard-refresh-20261108/plum-snow.png",
+      "prompt": "Create the WINTER VARIANT of this EXACT three-pose orchard tree growth sheet. Preserve the three equal cells, each tree's EXACT crown outline, trunk, branches, size, position and root baseline. Left sapling, middle grown WITHOUT fruit, right same grown tree WITH its existing fruit, never add fruit to middle. Add thoughtful large stepped ivory snow caps ONLY on upward-facing upper foliage tiers and a few branch tops. Snow covers at most ONE THIRD of each grown crown; most dark green foliage and warm brown branching trunk remain clearly visible so this is not a white blob. Keep ALL fruit on right pose visible with strong recognizable colors. No random pale dots, speckles or tiny stipple pattern. Crisp handmade pixel clusters, dark aubergine outlines, 2-3 flat shades per material, effective 64x72 native logical grid per cell. Snow #E8F0ED with #B7DEE0 shadow, existing garden palette retained. TRUE transparent background. No glow/halo, background, ground, shadows outside silhouette, falling snow, ornaments, labels or new objects. Same 8:3 canvas and margins as input.",
+      "masterSha256": "873dc8953fb55a933c523537a33fa5c3eb2c2067af9b4f4ac32eaada423f4549",
+      "outputs": [
+        "environment/winter/tree-plum-0-snow.png",
+        "environment/winter/tree-plum-1-snow.png",
+        "environment/winter/tree-plum-2-snow.png"
+      ]
+    },
+    {
+      "id": "pear-snow",
+      "master": "environment/edge/masters/orchard-refresh-20261108/pear-snow.png",
+      "prompt": "Create the WINTER VARIANT of this EXACT three-pose orchard tree growth sheet. Preserve the three equal cells, each tree's EXACT crown outline, trunk, branches, size, position and root baseline. Left sapling, middle grown WITHOUT fruit, right same grown tree WITH its existing fruit, never add fruit to middle. Add thoughtful large stepped ivory snow caps ONLY on upward-facing upper foliage tiers and a few branch tops. Snow covers at most ONE THIRD of each grown crown; most dark green foliage and warm brown branching trunk remain clearly visible so this is not a white blob. Keep ALL fruit on right pose visible with strong recognizable colors. No random pale dots, speckles or tiny stipple pattern. Crisp handmade pixel clusters, dark aubergine outlines, 2-3 flat shades per material, effective 64x72 native logical grid per cell. Snow #E8F0ED with #B7DEE0 shadow, existing garden palette retained. TRUE transparent background. No glow/halo, background, ground, shadows outside silhouette, falling snow, ornaments, labels or new objects. Same 8:3 canvas and margins as input.",
+      "masterSha256": "cdac69278117413b7d4a794c023d77319d0183d2e9bcf01eb0ba5c996a91e71a",
+      "outputs": [
+        "environment/winter/tree-pear-0-snow.png",
+        "environment/winter/tree-pear-1-snow.png",
+        "environment/winter/tree-pear-2-snow.png"
+      ]
+    },
+    {
+      "id": "apple-snow",
+      "master": "environment/edge/masters/orchard-refresh-20261108/apple-snow.png",
+      "prompt": "Create the WINTER VARIANT of this EXACT three-pose orchard tree growth sheet. Preserve the three equal cells, each tree's EXACT crown outline, trunk, branches, size, position and root baseline. Left sapling, middle grown WITHOUT fruit, right same grown tree WITH its existing fruit, never add fruit to middle. Add thoughtful large stepped ivory snow caps ONLY on upward-facing upper foliage tiers and a few branch tops. Snow covers at most ONE THIRD of each grown crown; most dark green foliage and warm brown branching trunk remain clearly visible so this is not a white blob. Keep ALL fruit on right pose visible with strong recognizable colors. No random pale dots, speckles or tiny stipple pattern. Crisp handmade pixel clusters, dark aubergine outlines, 2-3 flat shades per material, effective 64x72 native logical grid per cell. Snow #E8F0ED with #B7DEE0 shadow, existing garden palette retained. TRUE transparent background. No glow/halo, background, ground, shadows outside silhouette, falling snow, ornaments, labels or new objects. Same 8:3 canvas and margins as input.",
+      "masterSha256": "e466503f3eafdc78e8e70b7a03cfa808f7c5eb0e53be739ae3c523f52b63c270",
+      "outputs": [
+        "environment/winter/tree-apple-0-snow.png",
+        "environment/winter/tree-apple-1-snow.png",
+        "environment/winter/tree-apple-2-snow.png"
+      ]
+    }
+  ]
+}

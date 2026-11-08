@@ -5,16 +5,15 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
  let fitScale=.05;
  function overviewFrame(){
   const vr=viewport.getBoundingClientRect();
-  const r=getRenderer(),b=r?.fitBounds?.(vr.width<900)??r?.growthBounds?.()??{left:0,top:0,right:map.width,bottom:map.height};
+  const r=getRenderer(),b=r?.fitBounds?.(false)??r?.growthBounds?.()??{left:0,top:0,right:map.width,bottom:map.height};
   const visible=selector=>[...document.querySelectorAll(selector)].filter(e=>!e.hidden&&e.getClientRects().length).map(e=>e.getBoundingClientRect());
   const top=Math.max(48,...visible(".hud button").map(r=>r.bottom-vr.top));
   const docks=visible("#playDock, #selectionHint").filter(r=>r.top-vr.top>top);
   const bottom=Math.max(top+60,Math.min(vr.height-8,...docks.map(r=>r.top-vr.top)));
   const left=0,right=vr.width;
-  const fullDesktop=vr.width>=900&&visible("#owlMailButton").length>0;
-  const bounds=fullDesktop?{left:b.left+20,right:b.right-20,top:b.top+18,bottom:b.bottom-28}:{left:b.left,right:b.right,top:b.top,bottom:b.bottom};
+  const bounds={left:b.left,right:b.right,top:b.top,bottom:b.bottom};
   const rawFit=Math.min(1.5,(right-left)/(bounds.right-bounds.left),(bottom-top)/(bounds.bottom-bounds.top));
-  fitScale=fullDesktop?Math.min(1.5,Math.max(rawFit,vr.width/map.width)):rawFit;
+  fitScale=rawFit*.8;
   return {bounds,left,right,top,bottom};
  }
  function apply(){

@@ -53,7 +53,7 @@ test('dragging a decoration keeps the camera still and a second pointer changes 
  }finally{globalThis.document=oldDocument;globalThis.ResizeObserver=oldObserver;}
 });
 
-test('overview asks the renderer for the narrow fit frame on phones and the wide one on desktop',()=>{
+test('overview includes expanded scenery on phones and desktop',()=>{
  const oldDocument=globalThis.document,oldObserver=globalThis.ResizeObserver,asked=[];
  try{
   const buttons=new Map();
@@ -64,6 +64,6 @@ test('overview asks the renderer for the narrow fit frame on phones and the wide
    const b={left:0,top:0,right:2560,bottom:1440};
    setupCamera({viewport,canvas:{style:{}},map:{width:2560,height:1440,objects:[],props:[]},iso:()=>[0,0],getRenderer:()=>({growthBounds:()=>b,fitBounds:narrow=>{asked.push(narrow);return b;}})}).overview();
   }
-  assert.ok(asked.includes(true)&&asked.includes(false));
+  assert.ok(asked.length>0&&asked.every(narrow=>narrow===false));
  }finally{globalThis.document=oldDocument;globalThis.ResizeObserver=oldObserver;}
 });
