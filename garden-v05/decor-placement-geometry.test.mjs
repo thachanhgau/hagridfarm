@@ -89,9 +89,9 @@ const findCanonicalServerModule = () => {
 
 test('placement space matches the final 33.5-row scene edge', () => {
   assert.deepEqual(DECORATION_SPACE, {minCol: -5, maxCol: 33, minRow: -1, maxRow: 33.5});
-  const land = Object.keys(CREATURE).filter(species => CREATURE[species].habitat !== 'pond'); // pond statues: pond-art merge
-  assert.equal(KEEPSAKE_DISPLAY_LAYOUT.length, land.length);
-  assert.deepEqual(KEEPSAKE_DISPLAY_LAYOUT.map(entry => entry.species), land);
+  // Every species has a final-plaza statue spot (garden expansion phase 2 added Thủy quái and the three land species).
+  assert.equal(KEEPSAKE_DISPLAY_LAYOUT.length, Object.keys(CREATURE).length);
+  assert.deepEqual(KEEPSAKE_DISPLAY_LAYOUT.map(entry => entry.species), Object.keys(CREATURE));
   // Owner 27/10/2026: statue bases fill whole cells (cells are centred on whole numbers).
   assert.deepEqual(KEEPSAKE_LEGACY_LAYOUT.map(entry => entry.col + .5), [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]);
   assert.equal(decorationSpaceContains(DECORATION_SPACE.minCol, DECORATION_SPACE.minRow), true);
@@ -131,7 +131,7 @@ test('pre-final keepsakes retain the legacy one-row frontier without paired over
   // Chapter 6 (level 100) already holds the whole plaza and its access path.
   for (const stage of GARDEN_STAGES.filter(entry => entry.level >= 100)) {
     const final = keepsakeDisplayPlacements(stage, keepsakeAnchorRow);
-    assert.equal(final.length, 12, `level ${stage.level}: plaza`);
+    assert.equal(final.length, KEEPSAKE_DISPLAY_LAYOUT.length, `level ${stage.level}: plaza`); // every species (phase 2: 16)
     assert.deepEqual([...new Set(final.map(entry => entry.anchor[1]))], [25, 27]);
     const {ground, access} = keepsakeObstacles({keepsakes: allKeepsakes}, stage, (...at) => iso(...at), keepsakeAnchorRow);
     for (const rect of [...ground, ...access]) {
@@ -145,8 +145,8 @@ test('pre-final keepsakes retain the legacy one-row frontier without paired over
 test('keepsake plaza uses real bases, authored silhouettes, and a reachable side path', () => {
   const state = {keepsakes: Object.fromEntries(Object.keys(CREATURE).map(species => [species, 1]))};
   const obstacles = keepsakeObstacles(state, {bottom: 33.5}, (...at) => iso(...at, scene));
-  assert.equal(obstacles.ground.length, 12);
-  assert.equal(obstacles.screen.length, 12);
+  assert.equal(obstacles.ground.length, KEEPSAKE_DISPLAY_LAYOUT.length);
+  assert.equal(obstacles.screen.length, KEEPSAKE_DISPLAY_LAYOUT.length);
   for (const ground of obstacles.ground) {
     assert.ok(ground.c0 >= DECORATION_SPACE.minCol && ground.c1 <= DECORATION_SPACE.maxCol);
     assert.ok(ground.r0 >= DECORATION_SPACE.minRow && ground.r1 <= DECORATION_SPACE.maxRow);
@@ -168,7 +168,7 @@ test('keepsake plaza uses real bases, authored silhouettes, and a reachable side
 
 test('final plaza clears physical plots, fixed pond/hut, earned decor, and all twelve statues', () => {
   const obstacles = keepsakeObstacles({keepsakes: allKeepsakes}, GARDEN_STAGES.at(-1), (...at) => iso(...at), keepsakeAnchorRow);
-  assert.equal(obstacles.ground.length, 12);
+  assert.equal(obstacles.ground.length, KEEPSAKE_DISPLAY_LAYOUT.length);
   assert.equal(plotPhysicalBounds(scene.plots[0]).c1 - plotPhysicalBounds(scene.plots[0]).c0, 3);
   const plots = scene.plots.map(plotPhysicalBounds);
   for (const statue of obstacles.ground) {

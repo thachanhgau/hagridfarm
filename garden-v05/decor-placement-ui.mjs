@@ -1,5 +1,5 @@
 import {createPlacementInput} from './placement-input.mjs?v=25.0.2';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot} from './default-decor.mjs?v=25.0.2';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot,pondBedCount,pondBedRects,pondHome} from './default-decor.mjs?v=25.0.2';
 import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=25.0.2';
 import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=25.0.2';
 export {decorFootprint} from './garden-object-metrics.mjs?v=25.0.2';
@@ -61,7 +61,7 @@ export function decorOnGround(rect,decorations){
  * footprint (the server checks that last rule too). Pieces larger than one tile also keep off the garden
  * paths. Sprites may overlap on screen; only the ground decides.
  */
-export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',footprint=decorFootprint(itemId)}){
+export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,facing='default',footprint=decorFootprint(itemId),bed=false}){
  // Art bible §2: 2×2 and up keep off the fence; owner 20/10/2026: they alone keep off the paths, 2×1 and 3×1 may stand on them.
  const big=footprint.every(n=>n>1);
  const rect=decorFootprintRect(col,row,footprint,facing);
@@ -84,9 +84,12 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),null,keepsakeAnchorRow,decorations,itemId);
  if(keepsakes.ground.some(occupied=>rectIntersects(rect,occupied)))return 'Chân đài kỷ vật đang ở đây.';
  if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
- const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??[o.col,o.row]}));
- // The pond is a garden default: its ground follows the decoration rule, like when it is moved.
- for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond',state?.built)):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
+ const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??(o.id==='pond'?pondHome(map,state?.built):[o.col,o.row])}));
+ // The pond is a garden default: its ground follows the decoration rule, like when it is moved; its beds are ground too.
+ const beds=at=>pondBedRects(at,state?.built,pondBedCount(state?.built));
+ for(const o of scenery)if(o.id==='pond'?[decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond',state?.built)),...beds(o.at)].some(r=>rectsOverlap(rect,r)):rectsOverlap(rect,sceneryGroundRect(o.id,...o.at)))return o.id==='pond'?'Chỗ này là hồ hoặc luống ven hồ.':'Chỗ này vướng cảnh vật.';
+ // Moving the pond: its beds need free ground as well (they stand west of it).
+ if(itemId==='scene:pond'&&!bed){const problem=beds([col,row]).map(r=>decorSpotProblem(r.c1,r.r0+2,{map,stage,state,decorations,itemId,footprint:[3,1],bed:true})).find(Boolean);if(problem)return 'Luống ven hồ: '+problem.charAt(0).toLowerCase()+problem.slice(1);}
  if(rectsOverlap(rect,COTTAGE_GROUND))return 'Chỗ này vướng lều Hagrid.';
  if(rectsOverlap(rect,HEARTH_GROUND))return 'Chỗ này là lò sưởi Giáng sinh.';
  if(rectsOverlap(rect,FEAST_GROUND))return 'Chỗ này là bàn tiệc Đêm Noel.';
@@ -113,8 +116,8 @@ export function decorSpotGrid(stage,problemAt,snap=at=>at){
 }
 
 /** Authored spot of a garden default before any move (a turned earned piece stepped onto whole cells). */
-export function defaultDecorHome(id,map,stage,rotations={}){
- if(id==='scene:pond'){const o=map?.objects?.find(o=>o.id==='pond');return o?[o.col,o.row]:null;}
+export function defaultDecorHome(id,map,stage,rotations={},built=[]){
+ if(id==='scene:pond')return pondHome(map,built);
  if(id.startsWith('keepsake:'))return keepsakeDisplayPlacements(stage??GARDEN_STAGES.at(-1),keepsakeAnchorRow).find(p=>p.species===id.slice(9))?.anchor??null;
  return decorationPlacements(map,null,rotations).find(d=>d.id===id)?.at??null;
 }
@@ -299,7 +302,7 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
   const key=kind==='plot'?'plots':'pens';
   // Thửa 13–18 (bậc Tận Sức) show only from level 100, like every level above 100.
   const plotTotal=(s?.level||1)>=(E?.TAN_SUC_LEVEL??100)?18:12,total=kind==='plot'?plotTotal:6;
-  const builtCount=kind==='plot'?(s?.plots?.length||3):Math.floor((E?.housingCapacity?.(s)||0)/2);
+  const builtCount=kind==='plot'?(s?.plots?.length||3):Math.min(6,Math.floor((E?.housingCapacity?.(s)||0)/2)); // «Chuồng mở rộng» stay put (phase 2)
   if(selectedBuilding>=Math.max(1,builtCount))selectedBuilding=0;
   const positions=s?.layout?.[key]||Array.from({length:total},(_,i)=>i);
   const currentSlot=positions[selectedBuilding]??selectedBuilding;
@@ -311,7 +314,7 @@ export function showVisualLayoutModal({getState,getStage,E,layoutSlots,camera,is
     'aria-pressed':String(kind==='plot'),
     disabled:pending,
    }),
-   button(`Chuồng nuôi (${Math.floor((E?.housingCapacity?.(s)||0)/2)}/6)`,()=>{kind='pen';selectedBuilding=0;selectedSlot=null;render();syncPreview(true);},{
+   button(`Chuồng nuôi (${Math.min(6,Math.floor((E?.housingCapacity?.(s)||0)/2))}/6)`,()=>{kind='pen';selectedBuilding=0;selectedSlot=null;render();syncPreview(true);},{
     class:'decor-angle-btn'+(kind==='pen'?' is-active':''),
     'aria-pressed':String(kind==='pen'),
     disabled:pending||builtCount===0&&kind==='pen',

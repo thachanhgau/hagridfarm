@@ -12,6 +12,7 @@ import {
 import {dayKeyFor, loadOwlQuests, recordOwlQuestAction, syncQuestsWithGardenState, claimOwlQuest, hasClaimableOwlQuest, setOwlQuestContext, pickDailyQuests, OWL_QUEST_POOL} from './garden-quests.mjs';
 import {KEEPSAKE_ART} from './complete-object-art.mjs';
 import {ITEM_ART} from './item-art.mjs?v=25.0.2';
+import {flowArtSpec} from './flow-item-ui.mjs?v=25.0.2';
 import {earnedDecorArt} from './earned-decor-sprites.mjs?v=25.0.2';
 
 globalThis.FARM_SCENE = structuredClone(scene);
@@ -59,7 +60,8 @@ test('V21 Direction 1: drawKeepsake renders species statuettes and every earned 
   drawKeepsake(ctxFallback, {species: 'three-headed-dog', count: 1, xy: [520, 400]}, 0);
   assert.equal(ctxFallback.calls.length,0,'missing image has no procedural produce/pedestal substitute');
 
-  const produceIds = E.DB.animals.filter(a => a.habitat !== 'pond').map(({id}) => `produce_${id}`); // pond produce art: pond-art merge
+  // Garden expansion species (pond §6, phase 2 §9) take produce art from POND_ART (flowArtSpec), not ITEM_ART.
+  const produceIds = E.DB.animals.filter(a => a.habitat !== 'pond' && !(!ITEM_ART[`produce_${a.id}`]?.file && flowArtSpec(`produce_${a.id}`))).map(({id}) => `produce_${id}`);
   assert.equal(produceIds.length, 12);
   assert.equal(new Set(produceIds.map((id) => ITEM_ART[id]?.file)).size, 12);
   for (const id of produceIds) {
@@ -190,7 +192,7 @@ test('V21 Direction 2: renderPostcardCanvas composites 960x620 Hogwarts postcard
   );
 
   const almanac = buildAlmanacChains(E.DB, state);
-  assert.equal(almanac.creatureChains.length, 13); // + Thủy quái (garden expansion §2.1)
+  assert.equal(almanac.creatureChains.length, 16); // + Thủy quái (garden expansion §2.1); + 3 land species (phase 2)
   assert.equal(almanac.cropUsages.length, 32);
   for (const chain of almanac.creatureChains) {
     assert.ok(chain.ingredients.length >= 1, `Creature ${chain.creatureId} should list feed ingredients`);

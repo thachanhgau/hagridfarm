@@ -30,6 +30,11 @@ export const KEEPSAKE_DISPLAY_LAYOUT = Object.freeze([
   {species: 'unicorn', col: 10.5, row: 26, width: 1, height: 1},
   {species: 'three-headed-dog', col: 12.5, row: 26, width: 1, height: 1},
   {species: 'dragon', col: 17.5, row: 26, width: 1, height: 1},
+  // Garden expansion phase 2: the late species stand at the plaza's two ends (all open after level 100, final layout only).
+  {species: 'grindylow', col: 19.5, row: 24, width: 1, height: 1},
+  {species: 'crup', col: 19.5, row: 26, width: 1, height: 1},
+  {species: 'knarl', col: 2.5, row: 24, width: 1, height: 1},
+  {species: 'salamander', col: 2.5, row: 26, width: 1, height: 1},
 ].map(Object.freeze));
 
 // Before chapter 6 opened the south field, the twelve keepsakes used one stepped

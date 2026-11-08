@@ -58,6 +58,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  if(["craft-busy","craft-ready"].includes(scenario))state=E.craft(state,"insects",1,origin);
  if(["build-busy","build-ready"].includes(scenario))state=E.build(state,"plot_12",origin);
  if(scenario==="pet-no-space")state.built=state.built.filter(id=>!id.startsWith("pen_"));
+ if(scenario==="pen-ext")state.built=state.built.filter(id=>!id.startsWith("pen_ext_")); // phase 2: «Chuồng mở rộng» waiting in Xây
  if(scenario==="missing")for(const id of Object.keys(state.inventory))state.inventory[id]=0;
  if(scenario==="prerequisite"){const base=E.newGame(origin);state.built=base.built;state.plots=base.plots;}
  // A lively showcase for the default preview: crops, adult and baby creatures, decorations.
@@ -79,7 +80,9 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   state.decorationRotations={"decoration-7":"right","decoration-23":"right"};
   state.creatureFacings={puffskein:"default",bowtruckle:"right",niffler:"default",kneazle:"right",hippogriff:"default",unicorn:"right"};
   if(level>=150&&state.built.includes('pond_1')&&!state.creatures.some(c=>c.species==='grindylow'))state.creatures.push({id:'creature-grindylow',type:'creature',species:'grindylow',level:150,adoptedAt:origin-48*3600000,mealsCompleted:6,meal:null,cyclesClaimed:0,preview:false});
-  if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{})};
+  // Garden expansion phase 2: the new land species from their level, while the pens (and «Chuồng mở rộng») have room.
+  for(const species of ['crup','knarl','salamander'])if(level>=E.CREATURE[species].level&&state.creatures.filter(c=>!E.POND_SPECIES.has(c.species)).length<E.housingCapacity(state))state.creatures.push({id:`creature-${species}`,type:'creature',species,level:E.CREATURE[species].level,adoptedAt:origin-48*3600000,mealsCompleted:species==='crup'?E.CREATURE.crup.mealsToAdult:4,meal:null,cyclesClaimed:0,preview:false});
+  if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{}),...(level>=160?{grindylow:1,crup:1}:{})};
  }
  // Asset-overlap QA (05/11/2026): every earned decoration at home and a ripe crop on every cell of every plot.
  if(scenario==="all-decor"){
@@ -107,6 +110,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  // Garden expansion phase 1 «Hồ nuôi» (HPVNN garden pond core, simplified): from level 130 four carp and two goldfish
  // fry; a built pond starts with one ripe lot, one growing, and a bed with a ripe and a growing cell. ?murky=1: «đục rêu».
  if(!fresh&&level>=130)Object.assign(garden.supplies,{fryCarp:4,fryGoldfish:2});
+ // Garden expansion phase 2: from level 220 a Góc bếp (bếp gạch) in the last socket is the Kỳ nhông lửa's fire spot.
+ if(!fresh&&level>=220){garden.decorations.owned.push('ev_kitchen_corner');garden.decorations.placements[5]='ev_kitchen_corner';}
  garden.pond={lots:[],beds:[],murkySince:murky?now()-50*3600000:null,castDay:null,token:null};
  syncPondSize(garden);
  if(garden.pond.lots.length){garden.pond.lots[0]={fry:'carp',readyAt:now()-60000};garden.pond.lots[1]={fry:'goldfish',readyAt:now()+3*3600000};garden.pond.beds[0]=[{species:'silverkelp',readyAt:now()-60000},{species:'silverkelp',readyAt:now()+2*3600000},null];}
@@ -215,7 +220,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
     case "harvest":return E.harvest(p,c.plotIndex??null,c.cells??null,time);
     case "uproot":return E.uproot(p,c.plotIndex,c.cells,time);
     case "adopt":return E.adopt(p,c.species,time);
-    case "feed":return E.feed(p,c.species??null,time);
+    case "feed":return E.feed(p,c.species??null,time,c.hand===true);
     case "claimAnimals":return E.claimAnimals(p,c.species??null,time);
     case "craft":return E.craft(p,c.recipeId,c.batches,time);
     case "claimCraft":return E.claimCraft(p,time);
@@ -492,7 +497,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const favourite=sp=>{const crops=[...new Set(E.DB.recipes.filter(r=>r.output===E.CREATURE[sp].feed&&r.level<=p.level).flatMap(r=>Object.keys(r.inputs)).filter(id=>E.CROP[id]&&E.CROP[id].level<=p.level))];return crops.length?crops[hash(d.dayKey+sp)%crops.length]:null;};
   return {creatures:Object.fromEntries(p.creatures.map((c,i)=>[c.species,{mood:p.level>=160?(i?79:92):85,done:[],lessons:0,lessonToday:false,coat:0,roamUntil:null,
     ...(p.level>=160?{favourite:favourite(c.species),favMeal:i===0}:{})}])),
-   nextCycleAt:now()+3600000,roamsLeft:2,norbert:null,happy:80,winter:false,...(p.level>=160?{favouriteGain:10}:{})};
+   nextCycleAt:now()+3600000,roamsLeft:2,norbert:null,happy:80,winter:false,...(p.level>=160?{favouriteGain:10}:{}),crupCheered:false};
  }
  // Server garden-challenge-core (level 160+, QA approximation: a fixed hard order per day, ×stars; milestone from 200).
  const MILESTONES=[200,250,300,350,400,450],GOALS=['duty','mood','marks'],GOAL_TARGET={duty:7,mood:3,marks:10},goalOf=l=>GOALS[MILESTONES.indexOf(l)%3];

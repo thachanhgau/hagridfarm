@@ -7,7 +7,7 @@ import {COAT_STEPS} from './garden-winter.mjs?v=25.0.2';
 
 export const NORBERT='norbert';
 // Play toys (roadmap §4: Đào mỏ – đồ lấp lánh, Kneazle – cuộn len, Chó ba đầu – thổi sáo cho ngủ, HP1).
-const TOYS=Object.freeze({puffskein:'Bóng bông',bowtruckle:'Que gỗ',niffler:'Đồ lấp lánh',mooncalf:'Đèn trăng',kneazle:'Cuộn len',diricawl:'Hạt dẻ',fwooper:'Chuông nhỏ',hippogriff:'Vòng gỗ',thestral:'Dây thừng',unicorn:'Vòng hoa','three-headed-dog':'Thổi sáo',dragon:'Khúc củi',grindylow:'Vỏ ốc',[NORBERT]:'Cuộn len đỏ'}); // grindylow: garden expansion §2.1
+const TOYS=Object.freeze({puffskein:'Bóng bông',bowtruckle:'Que gỗ',niffler:'Đồ lấp lánh',mooncalf:'Đèn trăng',kneazle:'Cuộn len',diricawl:'Hạt dẻ',fwooper:'Chuông nhỏ',hippogriff:'Vòng gỗ',thestral:'Dây thừng',unicorn:'Vòng hoa','three-headed-dog':'Thổi sáo',dragon:'Khúc củi',grindylow:'Vỏ ốc',crup:'Ném gậy',knarl:'Quả thông',salamander:'Que củi',[NORBERT]:'Cuộn len đỏ'}); // grindylow: garden expansion §2.1
 // Three tricks a species, three lessons each, one lesson a day (server LESSONS_PER_TRICK).
 export const TRICKS=Object.freeze({
  puffskein:['Lăn tròn','Thè lưỡi','Kêu rừ rừ'],bowtruckle:['Chỉ đường','Đứng im như cành','Vẫy lá'],niffler:['Đánh hơi vàng','Lộn túi','Giấu cúc áo'],
@@ -15,11 +15,12 @@ export const TRICKS=Object.freeze({
  fwooper:['Hót','Đổi giọng','Hót đôi'],hippogriff:['Cúi chào','Xòe cánh','Bay vòng'],thestral:['Vẫy cánh','Gật đầu','Bay thấp'],
  unicorn:['Gật đầu','Gõ vó','Phi nước kiệu'],'three-headed-dog':['Ba đầu cùng ngồi','Bắt tay','Ngủ theo tiếng sáo'],dragon:['Phì khói','Xòe cánh','Cuộn đuôi'],
  grindylow:['Vẫy ngón dài','Lặn sâu','Thổi bong bóng'],
+ crup:['Vẫy đuôi nĩa','Nhặt gậy','Đi theo bác Hagrid'],knarl:['Cuộn tròn','Xù gai','Lục lá khô'],salamander:['Bò trên củi','Phun tia lửa','Nằm trong than'], // phase 2
  [NORBERT]:['Phì khói','Lăn tròn','Vồ cuộn len'],
 });
 const LESSONS=3;
 const RIDERS=['hippogriff','thestral'];
-const groomLabel=sp=>sp==='dragon'||sp===NORBERT?'Chải vảy':sp==='fwooper'||sp==='diricawl'?'Tắm':sp==='grindylow'?'Gỡ rêu':'Chải lông';
+const groomLabel=sp=>sp==='dragon'||sp===NORBERT?'Chải vảy':sp==='fwooper'||sp==='diricawl'?'Tắm':sp==='grindylow'?'Gỡ rêu':sp==='knarl'?'Gỡ gai':sp==='salamander'?'Thêm củi':'Chải lông';
 export const trickNames=(species,lessons)=>(TRICKS[species]||[]).slice(0,Math.floor((lessons||0)/LESSONS));
 // What a visited garden's creatures perform (snapshot visit.tricks = {species: whole tricks}).
 export function visitShow(tricks={},labelOf=sp=>sp){
@@ -33,6 +34,8 @@ export function moodTiles({species,entry,view,bondLevel=1,now=Date.now()}){
  const done=new Set(entry.done||[]),norbert=species===NORBERT,tiles=[];
  const tile=(kind,art,label,blocked)=>tiles.push({kind,art,label,state:blocked||'',enabled:!blocked});
  tile('play','festival',TOYS[species]||'Chơi',done.has('play')&&'Xong lượt');
+ // Phase 2: the day's first play with Chó đuôi nĩa also cheers the other pen creatures (server garden-mood-core crupCheer).
+ if(species==='crup'&&!done.has('play')&&view.crupCheered===false)tiles.at(-1).state='Cả chuồng +5';
  tile('groom','care',groomLabel(species),done.has('groom')&&'Xong lượt');
  tile('train','book','Dạy trò',entry.lessons>=LESSONS*3?'Thuộc cả 3':entry.lessonToday?'Mai học tiếp':done.has('train')&&'Xong lượt');
  if(!norbert){
@@ -47,6 +50,7 @@ export function moodTiles({species,entry,view,bondLevel=1,now=Date.now()}){
 export function tendText(tend,labelOf){
  const name=labelOf(tend.species);
  if(tend.kind==='roam')return tend.back?`${name} đi rông về${Object.values(tend.found||{})[0]?`, mang theo ${Object.values(tend.found)[0]} phần ăn`:''} · tâm trạng ${tend.mood}.`:`${name} đi rông tới ${clockText(tend.roamUntil)}.`;
+ if(tend.cheered?.length)return `${name} chơi vui · tâm trạng ${tend.mood} · ${tend.cheered.length} bạn trong chuồng vui thêm +${tend.cheer}.`;
  const verb={play:'chơi vui',groom:'sạch sẽ, mượt mà',train:'học thêm một bài',ride:'chở con bay một vòng vườn',reclaim:'trả lại món đồ trang trí'}[tend.kind]||'vui';
  return `${name} ${verb} · tâm trạng ${tend.mood}.`;
 }

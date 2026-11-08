@@ -5,10 +5,14 @@ import { DB } from './balance-data.mjs?v=24.9.65';
 import { ITEM_ART } from './item-art.mjs?v=25.0.2';
 import { FLOW_ITEM_ART } from './flow-item-art.mjs?v=25.0.2';
 import { KEEPSAKE_ART } from './complete-object-art.mjs?v=25.0.2';
-// Pond species (garden expansion §2.1): their feed, produce, recipe and statue art come with the pond-art merge (plan §6).
-const POND_FEEDS = new Set(DB.animals.filter(a => a.habitat === 'pond').map(a => a.feed));
-const ANIMALS = DB.animals.filter(a => a.habitat !== 'pond');
-const RECIPES = DB.recipes.filter(r => !POND_FEEDS.has(r.output));
+import { flowArtSpec } from './flow-item-ui.mjs?v=25.0.2';
+// Garden expansion species (pond §6, phase 2 §9) draw their feed and produce from POND_ART through the flowArtSpec fallback,
+// not ITEM_ART, and have no recipe_<id> card art: they are checked by that source, the rest by ITEM_ART as before.
+const viaFlow = id => !ITEM_ART[id]?.file && Boolean(flowArtSpec(id));
+const FLOW_SPECIES = new Set(DB.animals.filter(a => a.habitat === 'pond' || viaFlow(`produce_${a.id}`)).map(a => a.id));
+const FLOW_FEEDS = new Set(DB.animals.filter(a => FLOW_SPECIES.has(a.id)).map(a => a.feed));
+const ANIMALS = DB.animals.filter(a => !FLOW_SPECIES.has(a.id));
+const RECIPES = DB.recipes.filter(r => !FLOW_FEEDS.has(r.output));
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }
@@ -215,7 +219,7 @@ test('supply aliases, expansions, earned decorations and level fallbacks retain 
 });
 
 test('all six pen expansions use distinct native enclosure art while retaining expansion identity', () => {
- const pens = DB.expansions.filter(expansion => expansion.kind === 'pen');
+ const pens = DB.expansions.filter(expansion => /^pen_\d+$/.test(expansion.id)); // «Chuồng mở rộng» pen_ext_* reuse pen_6's art (phase 2)
  assert.equal(pens.length, 6);
  assert.equal(new Set(pens.map(({id}) => ITEM_ART[id]?.file)).size, 6);
  for (const {id} of pens) {
@@ -229,5 +233,13 @@ test('all six pen expansions use distinct native enclosure art while retaining e
   const visual = visualItemIcon(new Map(), id, {size: 44});
   assert.equal(findAttribute(visual, 'data-expansion-id'), id);
   assert.equal(findAttribute(visual, 'data-art-key'), id);
+ }
+});
+
+test('garden expansion species without ITEM_ART have their feed and produce icons in POND_ART', () => {
+ for (const id of FLOW_SPECIES) {
+  const a = DB.animals.find(x => x.id === id);
+  if (a.habitat === 'pond') continue; // Thủy quái's meal uses the fish-meal art
+  for (const key of [a.feed, `produce_${a.id}`]) assert.ok(flowArtSpec(key)?.file, key);
  }
 });

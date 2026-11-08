@@ -1,5 +1,8 @@
 import {$,el,button,icon,duration,num,visualItemIcon} from './ui-utils.mjs?v=25.0.2';
-import {setAction,pixelIcon} from './pixel-icons.mjs?v=25.0.2';
+import {setAction,pixelIcon,ICONS} from './pixel-icons.mjs?v=25.0.2';
+
+// A species whose sprite has not shipped yet (phase 2 before the creatures-art-2 merge) shows the paw icon.
+const petIcon=(items,id,size)=>{const w=icon(items,id,3,size);if(w.classList?.contains('is-art-missing'))w.append(pixelIcon(ICONS.paw?'paw':'pen',Math.max(1,Math.floor(size/16))));return w;};
 
 export const petFoodText=view=>`Thức ăn: có ${num(view.have)} phần${view.need>0&&!['eating','ready'].includes(view.phase)?` · cần ${num(view.need)} phần`:''}`;
 
@@ -94,7 +97,7 @@ export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null
   const name=el('span',{class:'pet-card-name',text:config.label});
   const badge=el('span',{class:'pet-card-state'});
   const control=button('',()=>onSelect(config.id),{'data-id':config.id,class:'pet-card','aria-pressed':'false'});
-  control.append(icon(items,config.id,3,30),el('span',{class:'pet-card-copy'},[name,badge]));
+  control.append(petIcon(items,config.id,30),el('span',{class:'pet-card-copy'},[name,badge]));
   tray.append(control);entries.set(config.id,{control,badge});
  }
  function chooseGroup(next) {
@@ -137,7 +140,7 @@ export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null
   $('petDetail').hidden=!visible;
   $('petCareTools').hidden=!visible||!animal;
   if(!visible)return;
-  if(lastPortrait!==species){$('petPortrait').replaceChildren(icon(items,species,3,40));lastPortrait=species;}
+  if(lastPortrait!==species){$('petPortrait').replaceChildren(petIcon(items,species,40));lastPortrait=species;}
   $('creatureName').textContent=config.label;
   const mood=animal?getMood(species):null,fav=animal?getFavourite(species):null,favKey=fav?.favourite?`${fav.favourite}:${fav.favMeal}`:'';
   if(favKey!==lastFavourite){lastFavourite=favKey;const badge=petFavourite(E,items,fav);favSlot.replaceChildren(...(badge?[badge]:[]));favSlot.hidden=!badge;}
@@ -161,11 +164,13 @@ export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null
   if($('coatButton'))$('coatButton').hidden=!animal;
   if($('moodButton'))$('moodButton').hidden=!animal||getMood(species)==null;
   const primary=animal?(animal.meal?'claimAnimalButton':'feedButton'):'adoptButton';
-  const label=primary==='adoptButton'?'Đón về':primary==='feedButton'?'Cho ăn':view.phase==='eating'?'Đang ăn':'Nhận';
+  const hand=primary==='feedButton'&&E.HAND_FEED_SPECIES?.has(species)===true; // Nhím quậy: «Cho ăn tận tay» (phase 2)
+  const label=primary==='adoptButton'?'Đón về':hand?'Cho ăn tận tay':primary==='feedButton'?'Cho ăn':view.phase==='eating'?'Đang ăn':'Nhận';
   for(const id of ['adoptButton','feedButton','claimAnimalButton']){
    $(id).hidden=id!==primary;$(id).disabled=!view.canAct;
   }
-  setAction($(primary),{icon:primary==='adoptButton'?'pen':primary==='feedButton'?'feed':'chest',label,count:primary==='feedButton'?'×'+config.mealPortions:'',text:`${label} · ${config.label}`});
+  setAction($(primary),{icon:primary==='adoptButton'?'pen':hand?(ICONS.hand_feed?'hand_feed':'feed'):primary==='feedButton'?'feed':'chest',label,count:primary==='feedButton'&&!hand?'×'+config.mealPortions:'',text:`${label} · ${config.label}${hand?' · '+config.mealPortions+' phần':''}`});
+  $('feedButton').classList.toggle('is-hand-feed',hand);
   $('petHelp').hidden=!view.help;
   $('petHelp').textContent={food:'Mua thức ăn',build:'Xây chuồng',roadmap:'Xem cấp mở'}[view.help]||'';
  }

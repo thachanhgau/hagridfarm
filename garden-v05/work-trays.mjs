@@ -156,7 +156,7 @@ function chipLabel(label) {
 
 function expansionTitle(expansion) {
   const number = String(expansion.id).split('_')[1] ?? '';
-  if (expansion.kind === 'pond') return expansion.label;
+  if (expansion.label) return expansion.label; // pond tiers, «Chuồng mở rộng» (garden expansion)
   return `${expansion.kind === 'plot' ? 'Thửa' : 'Chuồng'} ${number}`;
 }
 

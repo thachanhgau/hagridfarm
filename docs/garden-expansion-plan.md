@@ -168,3 +168,34 @@ Loài mới (id / nhãn Lý Lan / cấp): `crup` «Chó đuôi nĩa» 140 · `kn
 | Ô kỷ vật thêm (Thủy quái + 3 loài mới) và chỗ đặt luống ven hồ không đè đồ trang trí | `KEEPSAKE_DISPLAY_LAYOUT`, server + client | code |
 
 File chỉ bên hình sửa: `pixel-icons.mjs`, `pond-art.mjs`/`creature-art-2.mjs`, `flow-item-ui.mjs`, manifest/data sprite sinh vật, test số lượng art, `garden-creature-habitats.mjs` (chuyển động chỗ ở). File chỉ bên code sửa: `balance-data*`, engine, UI, `scene-renderer.mjs`, fixture, server.
+
+## 10. Đợt 2: số liệu đã chốt và mô phỏng cấp 500 (code, 08/11/2026)
+Server HPVNN `codex/hagrid-challenges-160`, client `challenges-160`. Không đổi gì dưới cấp 140, không đổi giá hay phần thưởng cũ.
+
+| Thứ | Số |
+|---|---|
+| Chó đuôi nĩa `crup` | cấp 140, 20 bữa (6/13/20), 2 phần; XP 84 / bữa, 756 / lần nhận trưởng thành; giai đoạn 5.443 / 8.165 / 13.608. Món: «Khẩu phần Chó đuôi nĩa» `crup_feed` 140 = 6 Cá nhỏ + 3 Củ u; `crup_knotgrass` 160 = 6 Cá nhỏ + 3 Cỏ chút chít. Sản vật «Vòng cổ lông» |
+| Nhím quậy `knarl` | cấp 180, 22 bữa (6/14/22), 2 phần; XP 88 / 792; 5.702 / 8.554 / 14.256. `knarl_feed` 180 = 3 Củ u + 3 Ngô vàng; `knarl_sunflower` 182 = 3 Cỏ chút chít + 3 Hướng dương. «Lông gai». `feeding: "hand"` |
+| Kỳ nhông lửa `salamander` | cấp 220, 24 bữa (7/16/24), 2 phần; XP 92 / 828; 5.962 / 8.942 / 14.904. `salamander_feed` 220 = 3 Ớt lửa + 3 Sung-quéo; `salamander_knotgrass` 222 = 3 Ớt lửa + 3 Cỏ chút chít. «Tro kỳ nhông» |
+| Tiệm | «Thức ăn …» 2 phần, giá gốc max(10, ⌈cấp × 1,5⌉) = 210 / 270 / 330 (bán 1.200 / 1.800 / 2.400 G như mọi món); `CATALOG_VERSION garden-2026-11-08-creatures-2` |
+| Chợ (rào #50) | sản vật trên cấp 94 lấy giá Rồng: 32 G. «Tiệc chuồng» kết thúc tối đa 12 bữa một lần (chuồng giờ chứa 18), nên rào #41 vẫn giữ |
+| Chuồng mở rộng `pen_ext_1..3` | kind `pen`, mỗi cái +2 chỗ: 140 (24 giờ, 36 Củ u + 54 Ớt lửa + 900 G) → 14 · 220 (48 Sung-quéo + 60 Cỏ chút chít + 1.300 G) → 16 · 340 (60 Mimbulus + 72 Cỏ mang cá + 1.700 G) → 18. Cần cái trước (chuồng 6 trước cái 1). Trong cảnh: 3 chuồng 5×3 cố định (không đổi chỗ) ở (27,5; 24,5), (22; 20,5), (22; 24,5), dùng hình chuồng cũ |
+
+XP của 3 loài: số bữa và phần ăn tăng dần từ Thủy quái (18 → 20/22/24 bữa), nhưng XP mỗi bữa giữ ở dải Vong mã–Kỳ lân (84/88/92). Với XP tăng tiếp từ Thủy quái (132/138/146) mô phỏng ra ngày 194 (−4,0%), vượt rào 3%.
+
+Mô phỏng (`docs/level-500-sim/runCreatures.mjs` + `sim-creatures.patch`, chồng lên `runPond.mjs`, `sim-pond.patch`, `sim-hooks.patch` như README; bot đón loài mới khi chuồng còn chỗ, cho Nhím quậy ăn tận tay mỗi lượt), 2 lượt/ngày (08:00, 21:00):
+
+| Trường hợp | Cấp 200 | Cấp 300 | Cấp 500 |
+|---|---|---|---|
+| Không hồ, không đợt 2 | ngày 94 | 131 | 202 |
+| Đợt 1 (hồ) | 93 | 129 | 197 (−2,5%) |
+| Chỉ đợt 2 | 94 | 130 | 200 (−1,0%) |
+| **Đợt 1 + đợt 2 (đã chọn)** | 93 | 128 | **196 (−3,0%)** |
+| Đợt 1 + 2, XP tăng từ Thủy quái (132/138/146) | 93 | 127 | 194 (−4,0%) |
+
+Cơ chế riêng (server giữ luật; cảnh chỉ để xem):
+- **Chó đuôi nĩa:** lần «Chơi» đầu tiên với nó mỗi ngày (giờ VN) cho mọi thú khác trong chuồng +5 tâm trạng (không tính thú hồ, không dùng mất lượt «Chơi» của con khác, vẫn theo trần cấp 160). `garden.mood.crupDay`. Trong cảnh nó chạy qua lại trước chân bác Hagrid và Fang khi cảnh đang chuyển động; cảnh đứng yên thì nó ở chuồng.
+- **Nhím quậy:** «Cho ăn tất cả» và gia tinh bỏ qua nó; chỉ ăn bằng `feed {species:'knarl', hand:true}` (nút «Cho ăn tận tay» trên thẻ Nuôi), cùng giá, một chạm một bữa. Lệnh thường bị từ chối «Nhím quậy chỉ ăn khi được cho tận tay.»
+- **Kỳ nhông lửa:** khi vườn cháy (`garden.fire`, «Đốt vườn» hay Rồng bỏ đói), giờ trong lửa làm tâm trạng nó tăng 1/giờ thay vì giảm; «Dập lửa» kết thúc lửa thì giảm lại như thường; đồng hồ ốm/bỏ đi của Bậc trách nhiệm tính lùi theo. Trong cảnh nó nằm cạnh món lửa đã đặt (Góc bếp, Trứng rồng Norbert bên lò sưởi, Chiếc Cốc Lửa); không có thì ở đá chỗ ở trong chuồng, không phạt.
+
+Sửa từ đợt 1: ô kỷ vật cho Thủy quái và 3 loài mới (`KEEPSAKE_DISPLAY_LAYOUT` cột 19,5 và 2,5; server `garden-default-decor-ids.json`). Luống ven hồ là nền thật khi đặt đồ (không đặt đè luống; dời hồ thì luống cũng phải có chỗ trống) và đồ lễ hội (vạc, bí ngô) tránh hồ và luống. «Hồ sâu» (5×4) ở chỗ mặc định đè thửa 10 một hàng, nên chỗ mặc định của nó lùi xuống 1 hàng (13,5; 23); ở đó nó che một đoạn lối đi phía nam. Theo luật đặt đồ của người chơi thì không có chỗ nào cho «Hồ sâu» cùng 4 luống: cần owner chọn.

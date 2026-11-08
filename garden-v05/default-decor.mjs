@@ -1,6 +1,6 @@
 import {DB} from './balance-data.mjs?v=25.0.2';
 import {iso} from './garden-grid.mjs?v=25.0.2';
-import {snapDecorSpot,footLift,orientedFootprint} from './decor-runtime.mjs?v=25.0.2';
+import {snapDecorSpot,footLift,orientedFootprint,decorFootprintRect} from './decor-runtime.mjs?v=25.0.2';
 export const DEFAULT_DECOR_IDS = Object.freeze(['scene:pond', ...DB.decorations.map(d => d.id), ...DB.animals.map(a => 'keepsake:' + a.id)]);
 export const isDefaultDecorHidden = (decorations, id) => Array.isArray(decorations?.hiddenDefaults) && decorations.hiddenDefaults.includes(id);
 export function defaultDecorChoices(state) {
@@ -59,6 +59,23 @@ export function defaultDecorFootprint(id, built = []) {
   const d = DECORATION_LAYOUT[id];
   return d ? [d.height, d.width] : [1, 1];
 }
+
+/** Where the built pond stands when the member never moved it: the scene pond's spot; «Hồ sâu» (5×4) one row further
+ *  south, where its ground clears thửa 10 (garden expansion phase 2). Null without a pond in the scene. */
+export function pondHome(scene, built = []) {
+  const o = scene?.objects?.find(entry => entry.id === 'pond');
+  if (!o) return null;
+  return defaultDecorFootprint('scene:pond', built)[0] === 5 ? [o.col, o.row + 1] : [o.col, o.row];
+}
+
+/** The pond beds' ground (garden expansion §2.1): `count` 1×3 trays in a row west of the pond's ground at `at`, `gap` path
+ *  cells between, top rows level. Scene drawing and decoration placement share it, so nothing is placed on a bed. */
+export function pondBedRects(at, built = [], count = 0, gap = 1) {
+  const ground = decorFootprintRect(at[0], at[1], defaultDecorFootprint('scene:pond', built));
+  return Array.from({length: count}, (_, b) => {const c1 = ground.c0 - gap - b; return {c0: c1 - 1, c1, r0: ground.r0, r1: ground.r0 + 3};});
+}
+/** Pond beds by tier (server garden-pond-core): 2 at «Ao cá», 4 from «Hồ rong». */
+export const pondBedCount = built => (built?.includes?.('pond_2') ? 4 : built?.includes?.('pond_1') ? 2 : 0);
 
 /** Where a moved default stands (the placement preview first), or null on its authored spot. */
 export function defaultDecorSpot(decorations, id, preview = null) {

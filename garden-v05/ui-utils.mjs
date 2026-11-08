@@ -245,7 +245,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  const isCanonicalOutput = CANONICAL_OUTPUT_IDS.includes(rawId) || outputArtKey(rawId) !== null;
  const craftedKey = isCrafted ? (artKey || (rawId.startsWith("fish") ? "recipe_fish" : "recipe_insects")) : null;
  const isPlot = rawId === "expansion_plot" || /^plot_\d+$/.test(rawId);
- const isPen = /^pen_\d+$/.test(rawId);
+ const isPen = /^pen_(ext_)?\d+$/.test(rawId); // «Chuồng mở rộng» pen_ext_1..3 (garden expansion phase 2)
  const pondTier = /^pond_(\d+)$/.exec(rawId); // garden expansion phase 1: «Ao cá» / «Hồ rong» / «Hồ sâu»
  const isReward = rawId === "reward_medal" || rawId === "reward_trophy";
  const isRight = facing === "right";
@@ -286,10 +286,11 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  } else if (isPen) {
   slot.classList.add("is-expansion", "is-pen-art");
   slot.setAttribute("data-expansion-id", rawId);
-  const penLabel = `Chuồng ${rawId.slice("pen_".length)}`;
+  const penLabel = DB.expansions.find(e => e.id === rawId)?.label || `Chuồng ${rawId.slice("pen_".length)}`;
   slot.setAttribute("aria-label", penLabel);
   slot.append(el("span", { class: "sr-only", text: penLabel }));
-  appendNativeArt(slot, ITEM_ART[rawId]?.file ? rawId : null, Math.round(size * 0.9), "Ảnh chuồng đang cập nhật");
+  const penArt = ITEM_ART[rawId]?.file ? rawId : rawId.startsWith("pen_ext_") && ITEM_ART.pen_6?.file ? "pen_6" : null; // extensions reuse the pen art
+  appendNativeArt(slot, penArt, Math.round(size * 0.9), "Ảnh chuồng đang cập nhật");
  } else if (pondTier) {
   // Until pond-art registers an icon (itemArtSpec), the scene's pond art stands in.
   const label = DB.expansions.find(e => e.id === rawId)?.label || "Ao";

@@ -7,7 +7,7 @@ import {itemArtKey} from './ui-utils.mjs?v=25.0.2';
 
 // Level-500 roadmap P4 (§10): what the store shows must equal what the server charges (garden-premium-core saleTotal).
 test('the premium catalog is in the store mirror with the 25.0 catalog version', () => {
- assert.equal(CATALOG_VERSION, 'garden-2026-11-08-pond-1');
+ assert.equal(CATALOG_VERSION, 'garden-2026-11-08-creatures-2');
  for (const item of PREMIUM_PRODUCTS) assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), storePrice(item), item.id);
  const spring = STORE_CATALOG.find(item => item.id === 'spring_water');
  assert.deepEqual([spring.stockCap, spring.usesPerDay, spring.bundles], [60, 10, true]);

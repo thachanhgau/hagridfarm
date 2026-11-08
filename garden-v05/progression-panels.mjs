@@ -218,10 +218,10 @@ export function createPanels(ctx){
   build(){
    const s=getState(),g=grid(),wallet=ctx.getGalleons?.()??Infinity;
    body.append(el("details",{class:"v24-detail"},[el("summary",{text:"Mở rộng vườn"}),spatialStagesVisual(s)]));
-   body.append(paragraph(s.plots.length+"/"+E.plotLimit(s)+" thửa · "+E.housingCapacity(s)+"/12 chỗ nuôi."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
+   body.append(paragraph(s.plots.length+"/"+E.plotLimit(s)+" thửa · "+E.housingCapacity(s)+"/18 chỗ nuôi."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
    // the next locked build of each kind shows as "Chờ cấp N" so an empty panel never reads as broken
    for(const e of DB.expansions.filter(e=>e.level<=s.level||e===DB.expansions.find(x=>x.kind===e.kind&&x.level>s.level))){
-    const number=Number(e.id.split("_")[1]),title=(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=number===1||s.built.includes(e.kind+"_"+(number-1)),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
+    const same=DB.expansions.filter(x=>x.kind===e.kind),at=same.indexOf(e),number=Number(e.id.split("_")[1]),title=e.label||(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=at<1||s.built.includes(same[at-1].id),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
     k.classList.toggle("locked",locked);
     if(!done&&!job)k.append(priceRow(s,e,wallet));
     k.append(paragraph(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi"));
@@ -464,7 +464,7 @@ export function createPanels(ctx){
    body.append(toolbar(...barBtns));
    const g=grid();
    for(const kind of ["plot","pen"]){
-    const total=kind==="plot"?E.plotLimit(s):6,count=kind==="plot"?s.plots.length:E.housingCapacity(s)/2,positions=s.layout?.[kind==="plot"?"plots":"pens"]||Array.from({length:total},(_,i)=>i);
+    const total=kind==="plot"?E.plotLimit(s):6,count=kind==="plot"?s.plots.length:Math.min(6,E.housingCapacity(s)/2),positions=s.layout?.[kind==="plot"?"plots":"pens"]||Array.from({length:total},(_,i)=>i);
     for(let i=0;i<count;i++){
      const name=(kind==="plot"?"Thửa ":"Chuồng ")+(i+1),k=card(name,"Đang ở nền "+(positions[i]+1),kind+"_"+(i+1)),sel=el("select",{"aria-label":"Vị trí "+name,class:"quantity",style:"width:auto"});
      for(let j=0;j<total;j++){

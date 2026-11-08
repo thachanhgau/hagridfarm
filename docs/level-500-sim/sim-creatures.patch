@@ -1,0 +1,12 @@
+--- a/sim-progression.mjs
++++ b/sim-progression.mjs
+@@ -140,6 +140,10 @@
+   s = craftEverything(s, now, log);
+   s = logged(log, 'feed', s, (x) => E.feed(x, null, now));
++  // Garden expansion phase 2: Nhím quậy skips feed-all; one «Cho ăn tận tay» tap a meal.
++  for (const c of s.creatures) if (CREATURE[c.species].feeding === 'hand' && !c.meal && s.inventory[CREATURE[c.species].feed] >= CREATURE[c.species].mealPortions) {
++    s = logged(log, 'feed', s, (x) => E.feed(x, c.species, now, true)); globalThis.__HAND_MEALS = (globalThis.__HAND_MEALS ?? 0) + 1;
++  }
+   const demand = cropDemand(s);
+   const queue = Object.entries(demand).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]).map(([id, n]) => [id, Math.ceil(n / 3)]);
+   for (let p = 0; p < s.plots.length; p += 1) {

@@ -3,7 +3,7 @@ import {EVENT_PRODUCTS,FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-produ
 import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=25.0.2";
 import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=25.0.2";
 import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=25.0.2";
-export const CATALOG_VERSION="garden-2026-11-08-pond-1";
+export const CATALOG_VERSION="garden-2026-11-08-creatures-2";
 // Big update 25.0 §3 (owner 04/11/2026): prices below are the 24.x base; the store sells at base × min(8, 3 + level / 50),
 // festival goods × 4, rounded to 1 G under 100, 10 G under 1,000, else 100 G. Seeds and water up to level 24 keep their
 // price; event gifts are never sold. Same rule as HPVN functions/games/garden-wallet-catalog.js storePrice.
@@ -629,6 +629,45 @@ export const STORE_CATALOG=Object.freeze([
     "label": "Thức ăn Thủy quái",
     "level": 150,
     "price": 225,
+    "quantity": 2,
+    "dailyLimit": 2,
+    "description": "Một khẩu phần đủ một bữa. Vẫn có thể chế biến bằng sản vật."
+  },
+  {
+    "id": "crup_feed",
+    "kind": "food",
+    "icon": "crup",
+    "species": "crup",
+    "inventoryId": "crup_feed",
+    "label": "Thức ăn Chó đuôi nĩa",
+    "level": 140,
+    "price": 210,
+    "quantity": 2,
+    "dailyLimit": 2,
+    "description": "Một khẩu phần đủ một bữa. Vẫn có thể chế biến bằng sản vật."
+  },
+  {
+    "id": "knarl_feed",
+    "kind": "food",
+    "icon": "knarl",
+    "species": "knarl",
+    "inventoryId": "knarl_feed",
+    "label": "Thức ăn Nhím quậy",
+    "level": 180,
+    "price": 270,
+    "quantity": 2,
+    "dailyLimit": 2,
+    "description": "Một khẩu phần đủ một bữa. Vẫn có thể chế biến bằng sản vật."
+  },
+  {
+    "id": "salamander_feed",
+    "kind": "food",
+    "icon": "salamander",
+    "species": "salamander",
+    "inventoryId": "salamander_feed",
+    "label": "Thức ăn Kỳ nhông lửa",
+    "level": 220,
+    "price": 330,
     "quantity": 2,
     "dailyLimit": 2,
     "description": "Một khẩu phần đủ một bữa. Vẫn có thể chế biến bằng sản vật."

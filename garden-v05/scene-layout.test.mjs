@@ -189,18 +189,21 @@ test('renderer remaps built and unbuilt slots, then restores identity without dr
 
   state.layout = {
     plots: authored.plots.map((_, index) => index),
-    pens: authored.pens.map((_, index) => index),
+    pens: authored.pens.slice(0, 6).map((_, index) => index),
   };
   garden.render(state, {now, clock: now, propsVisible: false});
   assert.deepEqual(
     garden.map.plots.map((plot) => [plot.col, plot.row, plot.id, plot.requiredLevel]),
     authored.plots.map((plot) => [plot.col, plot.row, plot.id, plot.requiredLevel]),
   );
+  // Garden expansion phase 2: the three fixed «Chuồng mở rộng» follow the six movable pens and never move.
+  assert.deepEqual(garden.map.pens.slice(6).map((pen) => pen.id), ['pen_ext_1', 'pen_ext_2', 'pen_ext_3']);
+  assert.equal(garden.map.creatureSpots.length, 18);
   assert.deepEqual(
-    garden.map.pens.map((pen) => [pen.col, pen.row, pen.id, pen.requiredLevel]),
-    authored.pens.map((pen) => [pen.col, pen.row, pen.id, pen.requiredLevel]),
+    garden.map.pens.slice(0, 6).map((pen) => [pen.col, pen.row, pen.id, pen.requiredLevel]),
+    authored.pens.slice(0, 6).map((pen) => [pen.col, pen.row, pen.id, pen.requiredLevel]),
   );
-  assert.deepEqual(garden.map.creatureSpots, authored.creatureSpots);
+  assert.deepEqual(garden.map.creatureSpots.slice(0, 12), authored.creatureSpots.slice(0, 12));
 });
 
 test('every purchased decoration has a unique aisle footprint outside plots and pens', () => {
@@ -224,7 +227,7 @@ test('every purchased decoration has a unique aisle footprint outside plots and 
 
 test('keepsake display tokens occupy safe south-aisle cells', () => {
   const placements = keepsakePlacements(scene);
-  assert.equal(placements.length, Object.keys(CREATURE).filter(species => CREATURE[species].habitat !== 'pond').length); // pond statues: pond-art merge
+  assert.equal(placements.length, Object.keys(CREATURE).length); // every species, phase 2 (Thủy quái and the three land species too)
   for (const placement of placements) {
     assert.equal(scene.plots.some((plot) => overlap(placement, plot)), false, `${placement.species} overlaps a plot`);
     assert.equal(penCells.some((pen) => overlap(placement, pen)), false, `${placement.species} overlaps a pen`);

@@ -43,6 +43,9 @@ const PEN_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind 
 export const POND_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'pond'));
 export const POND_SPECIES = new Set(DB.animals.filter((entry) => entry.habitat === 'pond').map((entry) => entry.id));
 export const POND_CREATURE_SPOTS = 2;
+// Garden expansion phase 2 (plan §2.2): Nhím quậy eats only from the hand («Cho ăn tận tay», feed with hand: true),
+// never from feed-all or a gia tinh. Same rule as HPVN garden-model/garden-state.mjs.
+export const HAND_FEED_SPECIES = new Set(DB.animals.filter((entry) => entry.feeding === 'hand').map((entry) => entry.id));
 const expansionCollection = (kind) => (kind === 'plot' ? PLOT_EXPANSIONS : kind === 'pond' ? POND_EXPANSIONS : PEN_EXPANSIONS);
 const LAYOUT_COUNTS = Object.freeze({ plots: 18, pens: 6 });
 // Level-500 roadmap P3: saves from before thửa 13–18 hold 12 plot sockets and none of the bậc Tận Sức crops.
@@ -52,7 +55,9 @@ const LATE_CROP_IDS = new Set(DB.crops.filter((crop) => crop.level > TAN_SUC_LEV
 for (const id of ['elf_hat', 'elf_sock']) LATE_CROP_IDS.add(id);
 // Garden expansion phase 1: the pond's goldfish and every pond species' feed and produce.
 LATE_CROP_IDS.add('goldfish');
-for (const animal of DB.animals) if (animal.habitat === 'pond') { LATE_CROP_IDS.add(animal.feed); LATE_CROP_IDS.add(`produce_${animal.id}`); }
+// Garden expansion phase 2: every species past bậc Tận Sức (land ones too) arrived after older saves were written.
+const LATE_SPECIES = new Set(DB.animals.filter((animal) => animal.level > TAN_SUC_LEVEL).map((animal) => animal.id));
+for (const species of LATE_SPECIES) { LATE_CROP_IDS.add(CREATURE[species].feed); LATE_CROP_IDS.add(`produce_${species}`); }
 const DECORATIONS = Object.freeze(Object.fromEntries(DB.decorations.map((entry) => [entry.id, entry])));
 const CROP_IDS = Object.freeze(Object.keys(CROP));
 const CREATURE_IDS = Object.freeze(Object.keys(CREATURE));
@@ -602,7 +607,7 @@ function normalizeState(raw) {
   for (const id of Object.keys(raw.keepsakes)) if (!CREATURE_ID_SET.has(id)) reject('UNKNOWN_CREATURE', `unknown keepsake species: ${id}`);
   const keepsakes = emptyKeepsakes();
   for (const species of CREATURE_IDS) {
-    if (!Object.prototype.hasOwnProperty.call(raw.keepsakes, species) && !POND_SPECIES.has(species)) reject('INVALID_STATE', `keepsakes.${species} is missing`);
+    if (!Object.prototype.hasOwnProperty.call(raw.keepsakes, species) && !LATE_SPECIES.has(species)) reject('INVALID_STATE', `keepsakes.${species} is missing`);
     keepsakes[species] = assertNonNegativeInteger(raw.keepsakes[species] ?? 0, `keepsakes.${species}`);
   }
   if (!Array.isArray(raw.decorations)) reject('INVALID_STATE', 'decorations must be an array');
@@ -901,10 +906,11 @@ export function adopt(state, species, wallNow) {
 }
 
 /** Start meals for one species or all eligible creatures; null skips busy/hungry entries. */
-export function feed(state, species = null, wallNow) {
+export function feed(state, species = null, wallNow, hand = false) {
   const { base, logicalNow } = stateAndTime(state, wallNow);
   if (species !== null) {
     assertKnown(CREATURE, species, 'creature species');
+    if (HAND_FEED_SPECIES.has(species) && hand !== true) reject('HAND_FEED_ONLY', `${species} eats only from the hand`);
     const entry = base.creatures.find((candidate) => candidate.species === species);
     if (!entry) reject('NOT_ADOPTED', `${species} is not housed`);
     if (entry.meal) reject('MEAL_IN_PROGRESS', `${species} already has a meal in progress`);
@@ -917,7 +923,7 @@ export function feed(state, species = null, wallNow) {
   const fed = [];
   for (const entry of next.creatures) {
     const config = CREATURE[entry.species];
-    if (entry.meal || next.inventory[config.feed] < config.mealPortions) continue;
+    if (entry.meal || HAND_FEED_SPECIES.has(entry.species) || next.inventory[config.feed] < config.mealPortions) continue;
     startMeal(next, entry, logicalNow);
     fed.push(entry.species);
   }

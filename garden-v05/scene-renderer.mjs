@@ -1,7 +1,7 @@
 import {drawPlacementGrid} from './placement-grid.mjs?v=25.0.2';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT} from './default-decor.mjs?v=25.0.2';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects} from './default-decor.mjs?v=25.0.2';
 import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=25.0.2';
-import {FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.0.2';
+import {EXTENSION_PENS,FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.0.2';
 export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.0.2';
 import {creatureView,creatureViewFrames} from './creature-view.mjs?v=25.0.2';
 import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=25.0.2';
@@ -302,6 +302,16 @@ export function plotAliases(plot, index) {
   if (typeof plot?.id === 'string' && plot.id !== canonical) aliases.push(plot.id);
   return aliases;
 }
+
+// Garden expansion phase 2 (visual only): the fire pieces a Kỳ nhông lửa basks beside (bếp gạch, lò sưởi, Cốc Lửa), and
+// the strip at Hagrid's feet (wizard-scenery: Hagrid −2,8, Fang −3.5,8.5) where Chó đuôi nĩa trots.
+const CAMPFIRE_DECOR = new Set(['ev_kitchen_corner', 'sp_norbert_egg', 'sp_goblet_fire']);
+const CRUP_TROT = Object.freeze({col: -1.1, row: 8.6, reach: 0.6});
+const CRUP_TROT_MS = 1700;
+// Stand-in tones until the species' sprite ships (scene creatureStandIn): Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa.
+const STAND_IN_TONES = Object.freeze({crup: ['#E7AE73', '#A57554'], knarl: ['#735044', '#4A3042'], salamander: ['#ED8A45', '#C75B4B']});
+
+const POND_TIER_IDS = Object.freeze(['pond_1', 'pond_2', 'pond_3']);
 
 function penAliases(pen) {
   return [String(pen.id)];
@@ -725,7 +735,9 @@ export async function createGarden(canvas, options = {}) {
     ...elfFiles(),
     ...norbertFiles(),
   ])].filter((file) => !deferredFiles.has(file));
-  const authoredSlots = authoredLayoutScene(map);
+  // The six movable pens only: applyLayout appends the fixed «Chuồng mở rộng» to the shared FARM_SCENE after each layout.
+  const extensionIds = new Set(EXTENSION_PENS.map((pen) => pen.id));
+  const authoredSlots = authoredLayoutScene({...map, pens: asArray(map.pens).filter((pen) => !extensionIds.has(pen.id))});
   canvas.width = map.width;
   canvas.height = map.height;
   if (canvas.dataset) canvas.dataset.creatureSpots = JSON.stringify(map.creatureSpots);
@@ -1215,11 +1227,12 @@ export async function createGarden(canvas, options = {}) {
   function pondBeds(at, tier, view) {
     const beds = asArray(view?.beds);
     if (!beds.length) return [];
-    const ground = decorFootprintRect(at[0], at[1], tierFootprint(tier)), spec = pondScenery('pond-bed'), image = spec ? imageFor(spec.file) : null, now = Date.now();
+    const spec = pondScenery('pond-bed'), image = spec ? imageFor(spec.file) : null, now = Date.now();
+    // A path cell between the pond's ground and the first bed; two while the scaled pond.png stands in (its reeds rise
+    // past the ground and would hide the first bed). Same ground as decoration placement (default-decor pondBedRects).
+    const rects = pondBedRects(at, POND_TIER_IDS.slice(0, tier), beds.length, pondScenery(`pond-${tier}`) ? 1 : 2);
     return beds.map((cells, b) => {
-      // A path cell between the pond's ground and the first bed; two while the scaled pond.png stands in (its reeds rise
-      // past the ground and would hide the first bed).
-      const c1 = ground.c0 - (pondScenery(`pond-${tier}`) ? 1 : 2) - b, c0 = c1 - 1, r0 = ground.r0, foot = [c1, r0 + 2], xy = iso(...foot);
+      const {c0, c1, r0} = rects[b], foot = [c1, r0 + 2], xy = iso(...foot);
       return {kind: 'pond-bed', type: 'pond-bed', id: `pond-bed:${b}`, xy, draw: (ctx) => {
         if (image) ctx.drawImage(image, Math.round(xy[0] - spec.pivotX), Math.round(xy[1] - spec.pivotY));
         else for (let j = 0; j < 3; j += 1) polygon(ctx, [iso(c0, r0 + j), iso(c1, r0 + j), iso(c1, r0 + j + 1), iso(c0, r0 + j + 1)], '#70A8B6', '#735044', 2);
@@ -1232,6 +1245,18 @@ export async function createGarden(canvas, options = {}) {
         });
       }};
     });
+  }
+
+  // Pixel stand-in for a land creature without its motion sprite: shadow, body, head, two eyes, in the species' tone.
+  function creatureStandIn(entry, spot, index) {
+    const xy = iso(spot[0], spot[1]), tone = STAND_IN_TONES[entry.species] ?? ['#A57554', '#735044'];
+    return {kind: 'creature-stand-in', type: 'creature', id: entry.species, species: entry.species, entry, creatureIndex: index, xy, draw: (ctx) => {
+      const [x, y] = [Math.round(xy[0]), Math.round(xy[1])], c = 2, block = (colour, px, py, pw, ph) => { ctx.fillStyle = colour; ctx.fillRect(x + px * c, y + py * c, pw * c, ph * c); };
+      block('rgba(36,31,46,.28)', -7, -1, 14, 2);
+      block(tone[0], -6, -7, 10, 6); block(tone[0], 2, -10, 6, 5);
+      block(tone[1], -6, -2, 2, 2); block(tone[1], 2, -2, 2, 2);
+      block('#231F2E', 4, -9, 1, 1); block('#231F2E', 6, -9, 1, 1);
+    }};
   }
 
   function actorObject(entry, col, row, logicalNow, clock, target = {}) {
@@ -1462,7 +1487,9 @@ export async function createGarden(canvas, options = {}) {
       const queued = Boolean(constructionJob);
       if (!isBuilt && !queued && (Number(state?.level) || 1) < Number(pen.requiredLevel || 1)) continue;
       // Put labels beyond the outer rail, never across the shared pen/perimeter edge.
-      const [x, groundY] = iso(currentStage.right + .8, pen.row + pen.height - .3);
+      // An inner «Chuồng mở rộng» (phase 2) labels just past its own east rail.
+      const onRail = Math.abs(currentStage.right - (pen.col + pen.width)) < 0.6;
+      const [x, groundY] = iso(onRail ? currentStage.right + .8 : pen.col + pen.width + .4, pen.row + pen.height - .3);
       const y = groundY + 14;
       if (construction && !construction.ready) {
         label(context, `C${index + 1} ${Math.round(construction.progress * 100)}%`, x, y, '#f5d69a', 'bold 10px sans-serif');
@@ -1667,8 +1694,9 @@ export async function createGarden(canvas, options = {}) {
   function applyLayout(layout) {
     const projected = mapLayoutToScene(authoredSlots, layout);
     map.plots = projected.plots;
-    map.pens = projected.pens;
-    map.creatureSpots = projected.creatureSpots;
+    // «Chuồng mở rộng» (phase 2) stand on their own fixed ground after the six movable pens.
+    map.pens = [...projected.pens, ...EXTENSION_PENS];
+    map.creatureSpots = [...projected.creatureSpots, ...EXTENSION_PENS.flatMap((pen) => pen.spots)];
     if (canvas.dataset) canvas.dataset.creatureSpots = JSON.stringify(map.creatureSpots);
   }
 
@@ -1810,7 +1838,7 @@ export async function createGarden(canvas, options = {}) {
         const xy = iso(...(defaultDecorSpot(options.decorations, 'scene:' + prop.id, options.previewDecoration) ?? [prop.col, prop.row]));
         const winterProp = winterFile(asset.file);
         const tier = prop.id === 'pond' ? pondTier(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id))) : 0;
-        if (tier) { objects.push(...pondObjects(asset, winterProp, defaultDecorSpot(options.decorations, 'scene:pond', options.previewDecoration) ?? [prop.col, prop.row], tier, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock)); continue; }
+        if (tier) { objects.push(...pondObjects(asset, winterProp, defaultDecorSpot(options.decorations, 'scene:pond', options.previewDecoration) ?? pondHome(map, POND_TIER_IDS.slice(0, tier)), tier, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock)); continue; }
         objects.push({kind: 'asset', type: 'prop', id: prop.id, species: prop.id, asset:winterProp?{...asset,file:winterProp,noSnowCap:true,winter:true}:{...asset,seasonalKind:prop.id==='hut'?'roof':['oak','pine'].includes(prop.id)?'tree':'water'}, xy});
       }
     }
@@ -1862,12 +1890,23 @@ export async function createGarden(canvas, options = {}) {
     }
 
     // Pond species (garden expansion §2.1) swim in the pond; land creatures keep the pen spots in their own order.
+    // Phase 2 (visual only): Kỳ nhông lửa basks beside a placed fire piece, else on its pen's habitat stones; Chó đuôi nĩa
+    // trots back and forth at Hagrid and Fang's feet while the scene animates (still: in its pen).
+    const campfire = storeDecorationObjects.find((object) => !object.preview && CAMPFIRE_DECOR.has(object.id));
     for (let index = 0, land = 0; index < asArray(state.creatures).length; index += 1) {
       const entry = state.creatures[index];
       if (POND_SPECIES.has(entry?.species)) continue;
-      const spot = map.creatureSpots[land++];
+      let spot = map.creatureSpots[land++];
       if (!Array.isArray(spot) || spot.length < 2 || !entry) continue;
-      const facing = creatureFacings[entry.species] === 'right' ? 'right' : 'default';
+      let facing = creatureFacings[entry.species] === 'right' ? 'right' : 'default';
+      if (entry.species === 'salamander' && campfire) spot = [campfire.col + 0.7, campfire.row + 0.2];
+      if (entry.species === 'crup' && propsVisible && clock > 0) {
+        const phase = clock / CRUP_TROT_MS;
+        spot = [CRUP_TROT.col + Math.sin(phase) * CRUP_TROT.reach, CRUP_TROT.row];
+        facing = Math.cos(phase) > 0 ? 'right' : 'default';
+      }
+      // A species whose sprite has not shipped yet (phase 2 before the creatures-art-2 merge): a small drawn stand-in.
+      if (!items.get(entry.species)) { objects.push(creatureStandIn(entry, spot, index)); continue; }
       const actor = actorObject(entry, spot[0], spot[1], logicalNow, clock, {creatureIndex: index, facing});
       actor.affinityLevel = Number(creatureAffinities[entry.species]) || 1;
       const coat = options.creatureCoats?.[entry.species];
@@ -1897,7 +1936,8 @@ export async function createGarden(canvas, options = {}) {
     }
 
     if(propsVisible)objects.push({kind:'cottage-corner',type:'scenery',id:'cottage-corner',xy:iso(-2,5.5)});
-    if(propsVisible)objects.push(...festivalObjects({eventMode,stage:currentStage,map,iso,decorAssets,occupied:[...storeDecorationObjects,...earnedDecorationObjects]}));
+    // The built pond and its beds count as taken ground for festival props (a cauldron stood on the beds, phase 2).
+    if(propsVisible)objects.push(...festivalObjects({eventMode,stage:currentStage,map,iso,decorAssets,occupied:[...storeDecorationObjects,...earnedDecorationObjects,...objects.filter((o)=>o.kind==='pond'||o.kind==='pond-bed')]}));
     // Each plot has a little wooden sign planted at its west corner (owner 05/11/2026), sorted with the sprites: whatever
     // stands in front of it covers it. Built plots say how they are doing: ripe count, or the time to the first ripe crop.
     for (let index = 0; index < map.plots.length; index += 1) {
