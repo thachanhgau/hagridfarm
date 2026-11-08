@@ -1,7 +1,7 @@
 # Khu Vườn Hagrid — Mở rộng vườn: hồ nuôi, thú mới, khu Bìa Rừng, đồ mới
 
 Owner 08/11/2026: «plan mở rộng và phát triển cái vườn lên 1 tầm cao mới, nhiều đồ hoặc thêm thú, hoặc có cái hồ nuôi gì đó».
-Trạng thái: **đề xuất, chờ owner duyệt.** Số liệu là điểm xuất phát, phải chạy mô phỏng (`docs/level-500-sim`) trước khi chốt.
+Trạng thái: **owner duyệt 08/11/2026** («130 mở nha và làm đi, hình nào ko có thì codex làm»): hồ mở cấp 130; câu cá có; Quái Tôm Đuôi Nổ được làm cháy ô cỏ; bản đồ lớn thì kéo để xem. Số liệu là điểm xuất phát, phải chạy mô phỏng (`docs/level-500-sim`) trước khi chốt.
 
 ## 0. Hiện trạng (08/11/2026)
 - Vườn: 18 thửa 3×3, 6 chuồng, 12 chỗ sinh vật (`FARM_LAYOUT`), 12 loài (cấp 10–94), 32 cây.
@@ -19,9 +19,9 @@ Trạng thái: **đề xuất, chờ owner duyệt.** Số liệu là điểm xu
 
 ## 2. Bốn trụ cột
 
-### 2.1 Hồ nuôi (mở cấp 120)
+### 2.1 Hồ nuôi (mở cấp 130)
 - **Đào hồ:** ao trang trí trở thành hồ thật, mở rộng theo 3 bậc như mở thửa.
-  - Bậc 1 «Ao cá», cấp 120.
+  - Bậc 1 «Ao cá», cấp 130.
   - Bậc 2 «Hồ rong», cấp 200.
   - Bậc 3 «Hồ sâu», cấp 320.
   - Mỗi bậc là một ô to hơn trên bản đồ, đặt được ở chỗ trống như đồ trang trí lớn.
@@ -94,3 +94,18 @@ Trạng thái: **đề xuất, chờ owner duyệt.** Số liệu là điểm xu
 3. Quái Tôm Đuôi Nổ có được «nổ» làm cháy ô cỏ khi bị bỏ đói không?
 4. Bản đồ lớn hơn (khu Bìa Rừng): chấp nhận phải kéo để xem trên điện thoại?
 5. Bắt đầu từ đợt 1 (hồ)?
+
+## 6. Đợt 1: hợp đồng giữa code và hình
+Code (nhánh `challenges-160` + HPVNN `codex/hagrid-challenges-160`) và hình (nhánh `pond-art`, Codex vẽ) chạy song song; ghép bằng các id và đường dẫn sau. Thiếu hình thì code phải hiện bản dự phòng (ảnh ao cũ, icon chung), không lỗi.
+
+| Thứ | Id / đường dẫn | Bên làm |
+|---|---|---|
+| Hồ 3 bậc (iso, chân như `environment/layers/pond.png` 160×100) | `garden-v05/environment/pond/pond-1.png` (3×2 ô), `pond-2.png` (4×3), `pond-3.png` (5×4) | hình |
+| Luống ven hồ (1×3 ô, khay nước) | `garden-v05/environment/pond/pond-bed.png` | hình |
+| Cá giống (vật tư mua bằng G) | item `fry_carp`, `fry_goldfish` | id: code; ảnh 64×64: hình |
+| Cá thu được | `fish` (đã có, «Cá nhỏ»; cá chép cho ra món này), `goldfish` «Cá vàng» (mới) | code; ảnh `goldfish`: hình |
+| Thủy quái | loài `grindylow`, nhãn «Thủy quái», sản vật `produce_grindylow` «Rong thủy quái» | dữ liệu: code; sprite và các cảnh theo pipeline sinh vật hiện có: hình |
+| Icon 16×16 | `pond`, `net`, `rod`, `algae` trong `pixel-icons.mjs` | hình |
+| Đăng ký ảnh item mới | `garden-v05/pond-art.mjs` (`POND_ART`, cùng dạng `UI_AUDIT_ART`) + một dòng fallback trong `flow-item-ui.mjs` | hình |
+
+File chỉ bên hình sửa: `pixel-icons.mjs`, `pond-art.mjs`, `flow-item-ui.mjs`, manifest và data của sprite sinh vật. File chỉ bên code sửa: `balance-data*`, engine, UI, `scene-renderer.mjs`, fixture, server.
