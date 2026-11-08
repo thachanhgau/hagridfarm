@@ -22,7 +22,7 @@ const KIND_LABELS = Object.freeze({
  boost: "Nước phép",
  decoration: "Trang trí · 2 góc xoay",
 });
-const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", premium: "chest", decoration: "scenery", special: "trophy", festival: "festival", market: "coin", fry: ICONS.pond ? "pond" : "water"});
+const KIND_ICONS = Object.freeze({all: "more", seed: "seed", water: "water", food: "feed", boost: "boost", premium: "chest", decoration: "scenery", special: "trophy", festival: "festival", market: "coin", fry: ICONS.pond ? "pond" : "water", sapling: "seed"});
 // Level-500 P4: a premium item's unit, and what is in stock against its cap.
 const unitOf = item => item.kind === "nest" ? "ổ" : item.supply === "primeMeal" ? "phần" : item.kind === "boost" || item.kind === "spring" || item.kind === "premium" ? "chai" : "gói";
 const stockOf = (item, snap) => item.supply ? Number(snap?.garden?.supplies?.[item.supply] ?? 0) : 0;
@@ -53,6 +53,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   ["food","Thức ăn"],
   ["boost","Nước phép"],
   ["fry","Cá giống"], // garden expansion phase 1: fry for the pond (supplies fryCarp / fryGoldfish)
+  ["sapling","Cây non"], // garden expansion phase 3: orchard saplings (supplies saplingApple / saplingPear / saplingPlum)
   ["premium","Cao cấp"],
   ["decoration","Trang trí"],
   ["special","Đặc biệt"],
@@ -79,7 +80,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   if(item.kind==="water")return `Kho ${num(sup?.water??0)}`;
   if(item.kind==="boost")return `Kho ${num(sup?.boost??0)}`;
   if(item.stockCap)return `Kho ${num(stockOf(item,snap))}/${num(item.stockCap)}`;
-  if(item.kind==="fry")return `Kho ${num(stockOf(item,snap))}`;
+  if(item.kind==="fry"||item.kind==="sapling")return `Kho ${num(stockOf(item,snap))}`;
   if(item.kind==="spring")return `Kho ${num(sup?.spring??0)}`;
   if(item.kind==="nest")return item.owned?"Đã lót ổ":`Chuồng ${item.pen} · mua 1 lần`;
   if(item.kind==="food"){

@@ -33,6 +33,8 @@ const DISPLAY_LABELS = Object.freeze(Object.fromEntries([
  ['insects', 'Côn trùng'],
  ['fish', 'Cá nhỏ'],
  ['goldfish', 'Cá vàng'],
+ ['apple', 'Táo'], ['pear', 'Lê'], ['plum', 'Mận'], // orchard fruit (phase 3)
+ ['sapling_apple', 'Cây táo non'], ['sapling_pear', 'Cây lê non'], ['sapling_plum', 'Cây mận non'],
  ['elf_hat', 'Nón len gia tinh'],
  ['elf_sock', 'Vớ len gia tinh'],
 ]));
@@ -245,6 +247,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  const isCanonicalOutput = CANONICAL_OUTPUT_IDS.includes(rawId) || outputArtKey(rawId) !== null;
  const craftedKey = isCrafted ? (artKey || (rawId.startsWith("fish") ? "recipe_fish" : "recipe_insects")) : null;
  const isPlot = rawId === "expansion_plot" || /^plot_\d+$/.test(rawId);
+ const edgeStep = /^edge_(\d+)$/.exec(rawId); // garden expansion phase 3: Hagrid's three requests
  const isPen = /^pen_(ext_)?\d+$/.test(rawId); // «Chuồng mở rộng» pen_ext_1..3 (garden expansion phase 2)
  const pondTier = /^pond_(\d+)$/.exec(rawId); // garden expansion phase 1: «Ao cá» / «Hồ rong» / «Hồ sâu»
  const isReward = rawId === "reward_medal" || rawId === "reward_trophy";
@@ -291,6 +294,12 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   slot.append(el("span", { class: "sr-only", text: penLabel }));
   const penArt = ITEM_ART[rawId]?.file ? rawId : rawId.startsWith("pen_ext_") && ITEM_ART.pen_6?.file ? "pen_6" : null; // extensions reuse the pen art
   appendNativeArt(slot, penArt, Math.round(size * 0.9), "Ảnh chuồng đang cập nhật");
+ } else if (edgeStep) {
+  const label = DB.expansions.find(e => e.id === rawId)?.label || "Việc bác Hagrid nhờ";
+  slot.classList.add("is-expansion", "is-pond-art");
+  slot.setAttribute("data-expansion-id", rawId);
+  slot.setAttribute("aria-label", label);
+  slot.append(el("span", { class: "sr-only", text: label }));
  } else if (pondTier) {
   // Until pond-art registers an icon (itemArtSpec), the scene's pond art stands in.
   const label = DB.expansions.find(e => e.id === rawId)?.label || "Ao";

@@ -190,13 +190,15 @@ export function createPondDock({dock, items, act, openCast, care}) {
  }
 
  function creatureRow(ctx) {
-  const c = ctx.creature;
-  if (!c || !ctx.pond.creatureSpots) return [];
-  const art = items?.has?.(c.species) ? icon(items, c.species, 3, 32) : px('pond', 'water', 2);
-  const b = button('Chăm', () => care(c.species), {class: 'pond-care', 'aria-label': `Chăm ${c.label}`, disabled: c.locked});
-  return [el('div', {class: 'pond-creature'}, [el('span', {class: 'pond-creature-art', 'aria-hidden': 'true'}, [art]),
-   el('div', {class: 'pond-title'}, [el('strong', {text: c.label}), el('span', {class: 'pond-meta', ...(c.readyAt ? {'data-until': c.readyAt, 'data-prefix': c.badge + ' · '} : {}), text: c.badge})]),
-   el('span', {class: 'pond-food', title: itemDisplayName(c.feed)}, [itemIcon(items, c.feed, 20, 'feed'), el('b', {text: num(c.have)})]), b])];
+  const list = ctx.creatures || (ctx.creature ? [ctx.creature] : []);
+  if (!list.length || !ctx.pond.creatureSpots) return [];
+  return list.map(c => {
+   const art = items?.has?.(c.species) ? icon(items, c.species, 3, 32) : px('pond', 'water', 2);
+   const b = button('Chăm', () => care(c.species), {class: 'pond-care', 'aria-label': `Chăm ${c.label}`, disabled: c.locked});
+   return el('div', {class: 'pond-creature'}, [el('span', {class: 'pond-creature-art', 'aria-hidden': 'true'}, [art]),
+    el('div', {class: 'pond-title'}, [el('strong', {text: c.label}), el('span', {class: 'pond-meta', ...(c.readyAt ? {'data-until': c.readyAt, 'data-prefix': c.badge + ' · '} : {}), text: c.badge})]),
+    el('span', {class: 'pond-food', title: itemDisplayName(c.feed)}, [itemIcon(items, c.feed, 20, 'feed'), el('b', {text: num(c.have)})]), b]);
+  });
  }
 
  let last = null;

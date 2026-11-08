@@ -310,7 +310,7 @@ const CAMPFIRE_DECOR = new Set(['ev_kitchen_corner', 'sp_norbert_egg', 'sp_goble
 const CRUP_TROT = Object.freeze({col: -1.1, row: 8.6, reach: 0.6});
 const CRUP_TROT_MS = 1700;
 // Stand-in tones until the species' sprite ships (scene creatureStandIn): Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa.
-const STAND_IN_TONES = Object.freeze({crup: ['#E7AE73', '#A57554'], knarl: ['#735044', '#4A3042'], salamander: ['#ED8A45', '#C75B4B']});
+const STAND_IN_TONES = Object.freeze({crup: ['#E7AE73', '#A57554'], knarl: ['#735044', '#4A3042'], salamander: ['#ED8A45', '#C75B4B'], kappa: ['#71934B', '#3F6A45'], porlock: ['#B49A66', '#735044']});
 
 const POND_TIER_IDS = Object.freeze(['pond_1', 'pond_2', 'pond_3']);
 
@@ -1712,7 +1712,7 @@ export async function createGarden(canvas, options = {}) {
   }
 
   let lastOrder = [];
-  let interactiveDecor = [], interactiveEarnedDecor = [], interactiveKeepsakes = [], interactivePond = [], interactiveActors = [], sceneryVisible=true, reactionUntil=0;
+  let interactiveDecor = [], interactiveEarnedDecor = [], interactiveKeepsakes = [], interactivePond = [], interactiveOrchard = [], interactiveActors = [], sceneryVisible=true, reactionUntil=0;
   let lastBuiltPlotCount = 0;
   let lastPlotReady = [];
 
@@ -2012,6 +2012,7 @@ export async function createGarden(canvas, options = {}) {
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');
     interactivePond=objects.filter(o=>o.type==='prop'&&o.id==='pond');
+    interactiveOrchard=objects.filter(o=>o.type==='prop'&&String(o.id).startsWith('orchard-'));
     interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
     lastOrder = objects.map((object) => ({id: object.id ?? object.species, y: object.xy?.[1] ?? 0, type: object.type}));
     drawPenLabels(state, logicalNow);
@@ -2123,6 +2124,10 @@ export async function createGarden(canvas, options = {}) {
     for (const {xy, asset: a} of interactivePond) {
       const b = a.bounds ?? {x: 0, y: 0, w: a.width, h: a.height}, left = xy[0] - a.pivotX + b.x, top = xy[1] - a.pivotY + b.y;
       if (world.x >= left && world.x <= left + b.w && world.y >= top && world.y <= top + b.h) return {kind: 'pond', itemId: 'scene:pond'};
+    }
+    for (const {xy, asset: a} of interactiveOrchard) {
+      const left = xy[0] - a.pivotX, top = xy[1] - a.pivotY;
+      if (world.x >= left && world.x <= left + a.width && world.y >= top && world.y <= top + a.height) return {kind: 'orchard'};
     }
     return null;
   }

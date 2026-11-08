@@ -85,8 +85,8 @@ function emptyCreatureProfile(level = 10) {
 
 test('approved balance exposes all crops, creatures, levels, recipes, and Vietnamese labels', () => {
   assert.equal(DB.crops.length, 32); // level-500 roadmap P3: eight bậc Tận Sức crops
-  assert.equal(DB.animals.length, 16); // garden expansion §2.1: Thủy quái; phase 2: Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa
-  assert.equal(DB.recipes.length, 37); // the two kit recipes were removed on 18/10/2026; 25.0 S2 added the two knits; + two Thủy quái meals; + two meals each phase 2
+  assert.equal(DB.animals.length, 18); // phase 3: Ma da, Ngựa lùn; // garden expansion §2.1: Thủy quái; phase 2: Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa
+  assert.equal(DB.recipes.length, 41); // the two kit recipes were removed on 18/10/2026; 25.0 S2 added the two knits; + two Thủy quái meals; + two meals each phase 2; + four phase 3 meals
   assert.equal(DB.levels.length, 500);
   assert.equal(CROP.daisy.label, 'Cúc trắng');
   assert.equal(CROP.dittany.label, 'Bạch tiễn');
@@ -514,7 +514,7 @@ test('every approved crop completes all lifecycle boundaries and harvests', () =
 });
 
 test('every approved creature reaches all juvenile milestones and claims repeated adult cycles', () => {
-  let state = testProfile(230, NOW); // Thủy quái opens at 150 in the pond built at 130; Kỳ nhông lửa at 220 needs Chuồng mở rộng 2
+  let state = testProfile(300, NOW); // Thủy quái opens at 150 in the pond built at 130; Kỳ nhông lửa at 220 needs Chuồng mở rộng 2
 
   for (const creature of Object.values(CREATURE)) {
     const beforeAdoptionXp = state.xp;
@@ -616,7 +616,7 @@ test('expansions and decorations cost unlocked crops plus Galleons; the first fo
   assert.deepEqual(DB.expansions.filter((e) => e.level <= 24).map((e) => e.galleons), [0, 0, 0, 0]);
   assert.ok(DB.expansions.filter((e) => e.level <= 100).every((e) => e.galleons < 772), 'no single expansion up to level 100 costs more than a p50 day of income');
   // Level-500 roadmap §7: thửa 13–18 at 800–1.800 G, paid in bậc Tận Sức crops.
-  assert.deepEqual(DB.expansions.filter((e) => e.level > 100).map((e) => [e.id, e.level, e.galleons]),
+  assert.deepEqual(DB.expansions.filter((e) => e.level > 100 && e.kind !== 'edge').map((e) => [e.id, e.level, e.galleons]),
     [['plot_13', 110, 800], ['plot_14', 130, 1000], ['plot_15', 160, 1200], ['plot_16', 200, 1400], ['plot_17', 260, 1600], ['plot_18', 330, 1800],
      ['pond_1', 130, 800], ['pond_2', 200, 1200], ['pond_3', 320, 1600], // garden expansion §2.1: the pond tiers
      ['pen_ext_1', 140, 900], ['pen_ext_2', 220, 1300], ['pen_ext_3', 340, 1700]]); // phase 2: «Chuồng mở rộng», between the pond tiers

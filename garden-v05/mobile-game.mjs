@@ -6,6 +6,7 @@ import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=25.0.
 import {setupGardenControls} from './garden-controls-ui.mjs?v=25.0.2';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=25.0.2';
 import {setupWorkTrays,buildChoice} from './work-trays.mjs?v=25.0.2';
+import {createOrchardDock,harvestText as orchardHarvestText,ripeCount as orchardRipeCount} from './garden-orchard-ui.mjs?v=25.0.2';
 import {createPondDock,createCastGame,POND_LEVEL,POND_TIERS,pondReceiptText,px as pondPx} from './garden-pond-ui.mjs?v=25.0.2';
 import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal,defaultDecorItem,defaultDecorHome} from './decor-placement-ui.mjs?v=25.0.2';
 import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields} from './decor-runtime.mjs?v=25.0.2';
@@ -496,8 +497,8 @@ function selectCreature(id){species=id;petControls?.select(id);setMode('creature
 function focusPlot(index){selectedPlot=index;setMode('plant');camera.focusPlot(index);}
 function setMode(next){
  mode=next;$('playDock').classList.toggle('pet-mode',next==='creature');guideEvent('mode:'+next,false);
- for(const [id,value] of Object.entries({plantDock:'plant',creatureDock:'creature',craftDock:'craft',buildDock:'build',pondDock:'pond'}))$(id).hidden=next!==value;
- for(const [id,value] of Object.entries({sowTool:'plant',creatureTool:'creature',craftTool:'craft',buildTool:'build',pondTool:'pond'}))$(id).setAttribute('aria-pressed',next===value);
+ for(const [id,value] of Object.entries({plantDock:'plant',creatureDock:'creature',craftDock:'craft',buildDock:'build',pondDock:'pond',orchardDock:'orchard'}))$(id).hidden=next!==value;
+ for(const [id,value] of Object.entries({sowTool:'plant',creatureTool:'creature',craftTool:'craft',buildTool:'build',pondTool:'pond',orchardTool:'orchard'}))$(id).setAttribute('aria-pressed',next===value);
  document.body.classList.remove('dock-collapsed');$('dockToggle').setAttribute('aria-expanded','true');$('dockToggle').setAttribute('aria-label','Thu gọn khay thao tác');refresh();
  const trayId={plant:'seedTray',creature:'creatureTray',craft:'craftTray',build:'buildTray'}[next];$(trayId)?.querySelector('[aria-pressed=true]')?.scrollIntoView({block:'nearest',inline:'nearest'});
 }
@@ -623,7 +624,7 @@ function refresh(){
  syncKeeperTitleBadge();
  syncHudV20Buttons();
  $('world').dataset.summary=JSON.stringify({level:state.level,xp:state.xp,plots:state.plots.length,creatures:state.creatures.length,readyCrops:allReady,beds:E.housingCapacity(state),session,revision:state.revision,atmosphere:atmosphereMode,weather:weatherMode,event:eventMode,keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,tourId:activeTourSnapshot?.tour?.id||null});
- syncPond();workTrays?.refresh(mode);wizard?.refresh();dockControls?.refresh();tickTimers();draw();
+ syncPond();syncOrchard();workTrays?.refresh(mode);wizard?.refresh();dockControls?.refresh();tickTimers();draw();
 }
 // Small icon + number facts (growth time, XP, portions); the sentence stays in title/aria.
 function stats(node,list){node.replaceChildren(...list.map(([name,value,label])=>el('span',{class:'stat',title:label,'aria-label':label},[pixelIcon(name,1),String(value)])));}
@@ -660,7 +661,7 @@ function draw(clock=performance.now()){const renderState=activeTourSnapshot?acti
 const elfTaps={};
 // Knits (and so the wage box) open with Giỏ đan của Hermione.
 const ELF_CARE_LEVEL=DB.recipes.find(r=>r.id==='elf_sock').level;
-camera=setupCamera({viewport:$('cameraViewport'),canvas:$('world'),map,iso,plotCorners,getRenderer:()=>renderer,getSelectedPlot:()=>selectedPlot,notify:message,onTap:(x,y)=>mapTap?.(x,y),getDragTarget:()=>mapTap?.drag,onPick:cell=>{playtest.track('tap',{kind:cell.kind||'plot'});if(activeTourSnapshot){if(cell.kind==='creature'){audio.play('care');renderer?.animate('care',{species:cell.species});message(`🐾 Đang ghé thăm ${CREATURE[cell.species]?.label||cell.species} tại vườn của ${activeTourSnapshot.tour.ownerName}.`);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) của ${activeTourSnapshot.tour.ownerName}.`);return;}message(`🧭 Đang tham quan ${activeTourSnapshot.tour.title} · Nhấn "Chăm giúp" trên thanh điều hướng để nhận quà!`);return;}if(cell.kind==='pond'&&currentPond()?.tier){setMode('pond');return;}if(['decoration','earned-decoration','pond','keepsake'].includes(cell.kind)){setMode('build');workTrays.selectDecor(cell.itemId||'keepsake:'+cell.species);return;}if(cell.kind==='wizard'){audio.play('owl');wizard?.visit(cell.id);return;}if(cell.kind==='elf'&&cell.id==='xmas-hearth'){audio.play('owl');openXmas();return;}if(cell.kind==='elf'&&cell.id==='norbert'){audio.play('care');renderer?.cheerElf?.('norbert');setTimeout(()=>openMoodCare('norbert'),500);return;}if(cell.friend){audio.play('care');friendsKit.tapFriend(cell.id,elfTaps[cell.id]=(elfTaps[cell.id]||0)+1,{snapshot:connected&&walletReady&&wallet.snapshot,claim:serverClaim,say:message,line:renderer.say,cheer:renderer.cheerElf});return;}if(cell.kind==='elf'){audio.play('care');renderer?.cheerElf?.(cell.id);elfTaps[cell.id]=(elfTaps[cell.id]||0)+1;renderer?.say?.(cell.id,elfLine(cell.id,elfTaps[cell.id]-1));if(connected&&walletReady&&state.level>=ELF_CARE_LEVEL)setTimeout(openElfCare,700);return;}if(cell.kind==='creature'&&cell.guest){feedTutorialGuest();return;}if(cell.kind==='creature'){selectCreature(cell.species);handlePetCreature(cell.species);return;}if(dutyTap(cell.plot))return;selectedPlot=cell.plot;setMode('plant');if(direction==='horizontal')line=Math.floor(cell.index/3);else if(direction==='vertical')line=cell.index%3;else if([0,8].includes(cell.index))line=0;else if([2,6].includes(cell.index))line=1;else if(cell.index!==4)message('Ô này không nằm trên đường chéo.');refresh();}});
+camera=setupCamera({viewport:$('cameraViewport'),canvas:$('world'),map,iso,plotCorners,getRenderer:()=>renderer,getSelectedPlot:()=>selectedPlot,notify:message,onTap:(x,y)=>mapTap?.(x,y),getDragTarget:()=>mapTap?.drag,onPick:cell=>{playtest.track('tap',{kind:cell.kind||'plot'});if(activeTourSnapshot){if(cell.kind==='creature'){audio.play('care');renderer?.animate('care',{species:cell.species});message(`🐾 Đang ghé thăm ${CREATURE[cell.species]?.label||cell.species} tại vườn của ${activeTourSnapshot.tour.ownerName}.`);return;}if(cell.kind==='keepsake'){audio.play('levelUp');message(`🏆 Đài kỷ vật ${CREATURE[cell.species]?.label||cell.species} (×${cell.count}) của ${activeTourSnapshot.tour.ownerName}.`);return;}message(`🧭 Đang tham quan ${activeTourSnapshot.tour.title} · Nhấn "Chăm giúp" trên thanh điều hướng để nhận quà!`);return;}if(cell.kind==='orchard'&&currentOrchard()){setMode('orchard');return;}if(cell.kind==='pond'&&currentPond()?.tier){setMode('pond');return;}if(['decoration','earned-decoration','pond','keepsake'].includes(cell.kind)){setMode('build');workTrays.selectDecor(cell.itemId||'keepsake:'+cell.species);return;}if(cell.kind==='wizard'){audio.play('owl');wizard?.visit(cell.id);return;}if(cell.kind==='elf'&&cell.id==='xmas-hearth'){audio.play('owl');openXmas();return;}if(cell.kind==='elf'&&cell.id==='norbert'){audio.play('care');renderer?.cheerElf?.('norbert');setTimeout(()=>openMoodCare('norbert'),500);return;}if(cell.friend){audio.play('care');friendsKit.tapFriend(cell.id,elfTaps[cell.id]=(elfTaps[cell.id]||0)+1,{snapshot:connected&&walletReady&&wallet.snapshot,claim:serverClaim,say:message,line:renderer.say,cheer:renderer.cheerElf});return;}if(cell.kind==='elf'){audio.play('care');renderer?.cheerElf?.(cell.id);elfTaps[cell.id]=(elfTaps[cell.id]||0)+1;renderer?.say?.(cell.id,elfLine(cell.id,elfTaps[cell.id]-1));if(connected&&walletReady&&state.level>=ELF_CARE_LEVEL)setTimeout(openElfCare,700);return;}if(cell.kind==='creature'&&cell.guest){feedTutorialGuest();return;}if(cell.kind==='creature'){selectCreature(cell.species);handlePetCreature(cell.species);return;}if(dutyTap(cell.plot))return;selectedPlot=cell.plot;setMode('plant');if(direction==='horizontal')line=Math.floor(cell.index/3);else if(direction==='vertical')line=cell.index%3;else if([0,8].includes(cell.index))line=0;else if([2,6].includes(cell.index))line=1;else if(cell.index!==4)message('Ô này không nằm trên đường chéo.');refresh();}});
 function openVisualLayout(){
  return openGardenLayout({
   panels,E,layoutSlots,camera,iso,run,draw,
@@ -767,10 +768,18 @@ $('pondTool').onclick=()=>setMode('pond');
 function syncPond(){if(!pondDock)return;const pond=currentPond();$('pondTool').hidden=!pond;if(!pond){if(mode==='pond')setMode('plant');return;}
  const now=Date.now()+serverOffset,ripe=(pond.lots||[]).filter(l=>l&&(l.ripe||l.readyAt<=now)).length;$('pondReady').hidden=!ripe;$('pondReady').textContent=ripe;
  if(mode!=='pond')return;
- const g=petControlState({E,state,species:'grindylow',now:logical()}),cfg=CREATURE.grindylow;
+ const owned=[...new Set(state.creatures.filter(e=>E.POND_SPECIES.has(e.species)).map(e=>e.species))],creatures=(owned.length?owned:['grindylow']).filter(sp=>CREATURE[sp]).map(sp=>{const g=petControlState({E,state,species:sp,now:logical()}),cfg=CREATURE[sp];return{species:sp,label:cfg.label,feed:cfg.feed,have:g.have,badge:g.badge,locked:g.phase==='locked',readyAt:g.phase==='eating'?g.animal.meal.readyAt:null};});
  pondDock.render({pond,state,level:state.level,now,seeds:wallet.snapshot.garden.supplies.seeds||{},
-  buildChoice:buildChoice(POND_TIERS[0],state,logical(),DB.expansions,getGalleons()),
-  creature:cfg&&{species:'grindylow',label:cfg.label,feed:cfg.feed,have:g.have,badge:g.badge,locked:g.phase==='locked',readyAt:g.phase==='eating'?g.animal.meal.readyAt:null}});}
+  buildChoice:buildChoice(POND_TIERS[0],state,logical(),DB.expansions,getGalleons()),creatures});}
+// Garden expansion phase 3: the orchard dock (snapshot.orchard, null before edge_3); a tap on a tree opens it too.
+function currentOrchard(){return !activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.orchard||null:null;}
+var orchardDock;
+orchardDock=createOrchardDock({dock:$('orchardDock'),act:(command,text)=>command.kind==='harvest'?serverClaim(command,null).then(r=>{if(r.ok){audio.play('harvest');message(orchardHarvestText(r.receipt?.orchard?.items)||text);}}):run(null,text,command)});
+$('orchardTool').querySelector('.tool-glyph').replaceChildren(pondPx('seed','sow',2));
+$('orchardTool').onclick=()=>setMode('orchard');
+function syncOrchard(){if(!orchardDock)return;const orchard=currentOrchard();$('orchardTool').hidden=!orchard;if(!orchard){if(mode==='orchard')setMode('plant');return;}
+ const now=Date.now()+serverOffset,ripe=orchardRipeCount(orchard,now);$('orchardReady').hidden=!ripe;$('orchardReady').textContent=ripe;
+ if(mode==='orchard')orchardDock.render({orchard,now});}
 // Native touch/trackpad scrolling; a mouse wheel moves only this overflowing tray.
 for(const tray of document.querySelectorAll('.item-tray'))tray.addEventListener('wheel',event=>{
  const tray=event.currentTarget;if(event.ctrlKey||event.shiftKey||Math.abs(event.deltaX)>=Math.abs(event.deltaY)||tray.scrollWidth<=tray.clientWidth)return;

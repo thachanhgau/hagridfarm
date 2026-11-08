@@ -79,7 +79,7 @@ test('capacity fixture covers the authored full garden and actual three-hero sav
   assert.equal(scene.plots.length, 18);
   assert.equal(scene.pens.length, 6);
   assert.equal(earnedIds.length, 29);
-  assert.equal(Object.keys(keepsakes).length, 15); // + Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa (garden expansion phase 2)
+  assert.equal(Object.keys(keepsakes).length, 16); // + one phase 3 keepsake; + Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa (garden expansion phase 2)
   assert.equal(storeItems.length, 77); // 25.0 S2: Lều gia tinh, Góc bếp; S7: the six Noel pieces, Cây thông nhà vô địch
   assert.equal(capacitySpots.length, 4950);
   assert.deepEqual(Object.keys(heroDecorations).sort(), ['owned', 'placements', 'positions', 'rotations']);

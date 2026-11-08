@@ -1,4 +1,5 @@
 import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=25.0.2';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=25.0.2';
 import {renderGardenMenu} from './garden-menu-ui.mjs?v=25.0.2';
 import {renderGardenSettings} from './garden-settings-ui.mjs?v=25.0.2';
 import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=25.0.2";
@@ -224,7 +225,7 @@ export function createPanels(ctx){
     const same=DB.expansions.filter(x=>x.kind===e.kind),at=same.indexOf(e),number=Number(e.id.split("_")[1]),title=e.label||(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=at<1||s.built.includes(same[at-1].id),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
     k.classList.toggle("locked",locked);
     if(!done&&!job)k.append(priceRow(s,e,wallet));
-    k.append(paragraph(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi"));
+    k.append(paragraph(e.kind==="edge"?edgeStepText(at+1,same.length,e.galleons):(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi")));
     if(done)k.append(paragraph("Đã xây","ready-text"));
     else if(job)k.append(timer(job.readyAt),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})),...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));
     else k.append(paragraph(locked?"Chờ cấp "+e.level:!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));

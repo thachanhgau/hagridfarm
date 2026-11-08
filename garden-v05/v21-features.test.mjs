@@ -192,7 +192,7 @@ test('V21 Direction 2: renderPostcardCanvas composites 960x620 Hogwarts postcard
   );
 
   const almanac = buildAlmanacChains(E.DB, state);
-  assert.equal(almanac.creatureChains.length, 16); // + Thủy quái (garden expansion §2.1); + 3 land species (phase 2)
+  assert.equal(almanac.creatureChains.length, 18); // phase 3: Ma da, Ngựa lùn; // + Thủy quái (garden expansion §2.1); + 3 land species (phase 2)
   assert.equal(almanac.cropUsages.length, 32);
   for (const chain of almanac.creatureChains) {
     assert.ok(chain.ingredients.length >= 1, `Creature ${chain.creatureId} should list feed ingredients`);
