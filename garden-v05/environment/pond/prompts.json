@@ -139,6 +139,35 @@
       "referenceFiles": [
         "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-06d28255-649c-42c1-a760-f2dae04096c9.png"
       ]
+    },
+    {
+      "id": "pond-3-redo-20261108-candidate-a",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Use case: stylized-concept. Draw ONE replacement game scenery MASTER: Hồ sâu pond-3. Canvas 1152x768, genuine TRANSPARENT alpha background. Image 1 pond-2 is the EXACT STYLE/FAMILY reference: copy its chunky square pixel block size relative to canvas, dark #231F2E hard outline, grassy green bank, low grass tufts, chunky grey rocks, cattails, lily pads, blue-violet water; same top-left lighting. Image 2 is GEOMETRY ONLY: ground fills its full parallelogram with softly rounded corners, vertices (0,504),(640,184),(1152,440),(512,760); back apex y184, front apex y760. Reeds/posts may rise above y184, nothing beyond canvas width. Do not draw guide lines, seams, dot, red dashes, white backdrop. CRITICAL: substantial continuous grassy green land bank ALL THE WAY AROUND all FOUR edges, INCLUDING BOTH FRONT EDGES, with low grass tufts; water NEVER meets outer outline. Denser cattails and grey rocks on back rim, low grass and just 2 or 3 rocks on front rim. Water light shallow cyan-blue rim then TWO OR THREE CLEAR HARD STEPPED blue-violet bands to deep dark-blue centre #3E3B70. Centre is moderate in size, surrounded by visibly broad stepped bands, NOT one giant empty dark field. A few lily pads and exactly TWO dark fish silhouettes in the shallows; long ribbon weed near back bank, a few short angular flat cyan ripple marks maintain visual interest. SMALL wooden jetty of exactly FOUR distinct broad planks and TWO posts starts standing firmly on FRONT-RIGHT GRASS BANK and projects a short distance toward middle, no bridge. Every region made of flat opaque square pixel blocks, no smooth shading or gradients, no anti-aliasing, no soft shadow/halo/glow outside outline, no ground shadow, no white background. Broad clean colour clusters, 2-3 shades per material. Same family as pond-2, not a different illustration style. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #3E3B70 #6961A6 #70A8B6 #B7DEE0. Candidate A: match pond-2's lively irregular grass-tuft shapes, broad violet bands; compact jetty.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-4d5efb24-ff6f-490f-98d3-ca5db42eb45e.png",
+      "referenceFiles": [
+        "garden-v05/environment/pond/masters/pond-2.png",
+        "docs/codex-briefs/pond-art/guide-pond-3.png"
+      ]
+    },
+    {
+      "id": "pond-3-redo-20261108-candidate-b-kept",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Use case: stylized-concept. Draw ONE replacement game scenery MASTER: Hồ sâu pond-3. Canvas 1152x768, genuine TRANSPARENT alpha background. Image 1 pond-2 is the EXACT STYLE/FAMILY reference: copy its chunky square pixel block size relative to canvas, dark #231F2E hard outline, grassy green bank, low grass tufts, chunky grey rocks, cattails, lily pads, blue-violet water; same top-left lighting. Image 2 is GEOMETRY ONLY: ground fills its full parallelogram with softly rounded corners, vertices (0,504),(640,184),(1152,440),(512,760); back apex y184, front apex y760. Reeds/posts may rise above y184, nothing beyond canvas width. Do not draw guide lines, seams, dot, red dashes, white backdrop. CRITICAL: substantial continuous grassy green land bank ALL THE WAY AROUND all FOUR edges, INCLUDING BOTH FRONT EDGES, with low grass tufts; water NEVER meets outer outline. Denser cattails and grey rocks on back rim, low grass and just 2 or 3 rocks on front rim. Water light shallow cyan-blue rim then TWO OR THREE CLEAR HARD STEPPED blue-violet bands to deep dark-blue centre #3E3B70. Centre is moderate in size, surrounded by visibly broad stepped bands, NOT one giant empty dark field. A few lily pads and exactly TWO dark fish silhouettes in the shallows; long ribbon weed near back bank, a few short angular flat cyan ripple marks maintain visual interest. SMALL wooden jetty of exactly FOUR distinct broad planks and TWO posts starts standing firmly on FRONT-RIGHT GRASS BANK and projects a short distance toward middle, no bridge. Every region made of flat opaque square pixel blocks, no smooth shading or gradients, no anti-aliasing, no soft shadow/halo/glow outside outline, no ground shadow, no white background. Broad clean colour clusters, 2-3 shades per material. Same family as pond-2, not a different illustration style. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #3E3B70 #6961A6 #70A8B6 #B7DEE0. Candidate B: use STRICT sprite cutout rendering: fully opaque flat pixel colours inside silhouette, alpha=0 IMMEDIATELY outside dark contour. Absolutely NO ambient rim haze, NO blurry coloured backdrop; even transparent dark haze is forbidden. Imagine a limited-palette sprite on an empty alpha canvas, not a lit illustration. Keep each water band UNIFORM single solid colour, centre EXACT solid #3E3B70, NO smooth interior lighting. Four planks ONLY, no fifth plank. Pond-2 faithful low-resolution chunks.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-a338445b-673f-4b2d-8dc8-8552a6aea972.png",
+      "referenceFiles": [
+        "garden-v05/environment/pond/masters/pond-2.png",
+        "docs/codex-briefs/pond-art/guide-pond-3.png"
+      ]
+    },
+    {
+      "id": "pond-3-redo-20261108-candidate-b-cleanup-rejected",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Precise cleanup of candidate B, NOT a redesign. Keep pond, geometry, grass bank, all rocks/reeds/fish/lilies, FOUR plank jetty with TWO posts, and same pixel size unchanged. REMOVE ALL AMBIENT SOFT GLOW/HAZE/SHADOW pixels outside the hard dark outline: every pixel outside outline must have ALPHA ZERO. There is currently a large brown/grey glow above and green glow below the pond. Delete it entirely. Background extraction, hard edged sprite cutout. Also replace smooth shading INSIDE all water bands with uniform flat opaque colours, deep centre #3E3B70. Do not add any background or shadow. Genuine transparent background, no white. No palette quantization or resizing or extra details.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-67694bcc-fdd3-438d-ac68-3fc39786b920.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b9c0-b73d-74f2-8d38-890bc9c7b2b8/exec-a338445b-673f-4b2d-8dc8-8552a6aea972.png"
+      ]
     }
   ]
 }

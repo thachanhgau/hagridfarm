@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "f63a62bbfee5",
+  "revision": "9a2528c1c068",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -12786,10 +12786,10 @@
       "file": "runtime-webp/environment/pond/pond-3.webp",
       "width": 288,
       "height": 192,
-      "sourceBytes": 5322,
-      "bytes": 2832,
-      "sourceSha256": "46f5fed9bf6ead25f8e7359122741458963120481e1477e6f73d67888bd36a41",
-      "sha256": "af2b17db198b715ffe2b353233bc42fd2376e74231022dd4ab56d4b4b3b83308"
+      "sourceBytes": 9297,
+      "bytes": 5980,
+      "sourceSha256": "00b7aa0ffdf0e90226328a0012e910ebd634195b39f4926ebbb1e4c250125ee3",
+      "sha256": "4bcb3d0231772f9cf38f4dd4fa28aa83a55c593820e6ca97b284c9bcfe871fe2"
     },
     {
       "source": "environment/pond/pond-bed.png",
@@ -13217,9 +13217,9 @@
   "totals": {
     "converted": 1315,
     "existingWebp": 8,
-    "originalBytes": 4725636,
-    "webpBytes": 3158170,
-    "savedBytes": 1567466,
-    "savedPercent": 33.17
+    "originalBytes": 4729611,
+    "webpBytes": 3161318,
+    "savedBytes": 1568293,
+    "savedPercent": 33.16
   }
 }

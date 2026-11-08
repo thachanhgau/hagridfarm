@@ -11,6 +11,6 @@ export const POND_ART = Object.freeze({
 export const POND_SCENERY = Object.freeze({
  "pond-1": {"file":"environment/pond/pond-1.png","footprint":[3,2],"width":160,"height":112,"pivotX":80,"pivotY":102,"groundCentre":{"x":80,"y":70},"footLift":1,"bounds":{"x":4,"y":21,"w":153,"h":86}},
  "pond-2": {"file":"environment/pond/pond-2.png","footprint":[4,3],"width":224,"height":152,"pivotX":112,"pivotY":142,"groundCentre":{"x":112,"y":94},"footLift":1.5,"bounds":{"x":5,"y":16,"w":214,"h":129}},
- "pond-3": {"file":"environment/pond/pond-3.png","footprint":[5,4],"width":288,"height":192,"pivotX":144,"pivotY":182,"groundCentre":{"x":144,"y":118},"footLift":2,"bounds":{"x":1,"y":20,"w":286,"h":165}},
+ "pond-3": {"file":"environment/pond/pond-3.png","footprint":[5,4],"width":288,"height":192,"pivotX":144,"pivotY":182,"groundCentre":{"x":144,"y":118},"footLift":2,"bounds":{"x":5,"y":13,"w":278,"h":175}},
  "pond-bed": {"file":"environment/pond/pond-bed.png","footprint":[3,1],"width":128,"height":88,"pivotX":64,"pivotY":70,"groundCentre":{"x":64,"y":54},"footLift":0.5,"bounds":{"x":1,"y":22,"w":126,"h":65}},
 });

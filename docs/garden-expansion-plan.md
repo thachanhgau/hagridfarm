@@ -108,4 +108,19 @@ Code (nhánh `challenges-160` + HPVNN `codex/hagrid-challenges-160`) và hình (
 | Icon 16×16 | `pond`, `net`, `rod`, `algae` trong `pixel-icons.mjs` | hình |
 | Đăng ký ảnh item mới | `garden-v05/pond-art.mjs` (`POND_ART`, cùng dạng `UI_AUDIT_ART`) + một dòng fallback trong `flow-item-ui.mjs` | hình |
 
+**Kích thước hình đã giao (bên hình điền, 08/11/2026, nhánh `pond-art`).** Số đo theo pixel native, đọc trong `pond-art.mjs` (`POND_SCENERY`) thay vì chép tay. Hồ và luống theo đúng quy ước neo chân của đồ trang trí: nền `[dài, ngắn]` chạy cạnh dài theo hàng ở góc mặc định; vẽ ảnh ở `iso(col,row) − (pivotX, pivotY)` thì `decorFootprintRect(col, row, footprint)` nằm khít dưới hình (tâm nền trong ảnh = `groundCentre` = pivot − (0, 32 × footLift)). Góc phải là ảnh lật ngang, cùng canvas và pivot.
+
+| Hình | File | Nền | Canvas | Pivot (chân) | Tâm nền | footLift | Khung mực |
+|---|---|---|---|---|---|---|---|
+| «Ao cá» | `environment/pond/pond-1.png` | 3×2 | 160×112 | (80, 102) | (80, 70) | 1 | x4 y21 153×86 |
+| «Hồ rong» | `environment/pond/pond-2.png` | 4×3 | 224×152 | (112, 142) | (112, 94) | 1,5 | x5 y16 214×129 |
+| «Hồ sâu» | `environment/pond/pond-3.png` | 5×4 | 288×192 | (144, 182) | (144, 118) | 2 | x5 y13 278×175 |
+| Luống ven hồ | `environment/pond/pond-bed.png` | 3×1 | 128×88 | (64, 70) | (64, 54) | 0,5 | x1 y22 126×65 |
+| Icon item | `native-items/{fry_carp,fry_goldfish,goldfish,produce_grindylow}.png` | — | 64×64 | (32, 56) | — | — | ≤ 40×40, đáy hàng 56 |
+
+- Hồ là hình phẳng: mực phủ cả hình bình hành nền nên đáy mực thấp hơn pivot tới 8 px (luống 16 px); đó là góc trước của nền, không phải chân lơ lửng. Ảnh ao cũ `environment/layers/pond.png` (160×100, pivot 80,99) giữ làm bản dự phòng.
+- Icon: `itemArtKey` / `visualItemIcon` (ui-utils) tìm thấy 4 id qua `flowArtSpec` (fallback `POND_ART` trong `flow-item-ui.mjs`). `fish` «Cá nhỏ» đã có hình (`recipe_fish`), không vẽ thêm.
+- Thủy quái: `window.FARM_MOTION.items` có `id: 'grindylow'` (do `creature-motion-data.js` thêm từ `creature-motion-assets/pond-creatures.json`), canvas 96×96, pivot (48, 80), con trưởng thành ~42×56 (tầng «sinh vật vừa», cỡ Diricawl). `frames[0..3]` là 4 tuổi lớn; clip `idle` 4–7, `action` 8–11, `eat` 12–15, `care` 16–19; `creatureView(item,'right')` trả hướng phải vẽ riêng cùng chỉ số. `HABITAT_ART.grindylow` (40×36, pivot 20,31) và `KEEPSAKE_ART.grindylow` (56×56, pivot 28,50) trong `complete-object-art.mjs`. Code chỉ cần thêm loài vào `balance-data`; không cần nạp file mới.
+- Icon 16×16 `pond`, `net`, `rod`, `algae` đã có trong `ICONS` của `pixel-icons.mjs`.
+
 File chỉ bên hình sửa: `pixel-icons.mjs`, `pond-art.mjs`, `flow-item-ui.mjs`, manifest và data của sprite sinh vật. File chỉ bên code sửa: `balance-data*`, engine, UI, `scene-renderer.mjs`, fixture, server.
