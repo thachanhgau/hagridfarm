@@ -27,6 +27,8 @@ export function createGardenClient(transport){
   free:(kind,extra={})=>queue(()=>call('performHagridGardenAction',{...extra,action:'freeAction',kind,expectedRevision:revision(),requestId:requestId()})),
   // «Sổ tay» lesson finished (server guideDone): no revision, so like a free tap it never waits on a lost write.
   guide:lessonId=>queue(()=>call('performHagridGardenAction',{action:'guideDone',lessonId,expectedRevision:revision(),requestId:requestId()})),
+  // Duty owl note shown (server duty owlSeen): kept in today's daily doc, no revision, so it never waits on a lost write.
+  owl:()=>queue(()=>call('performHagridGardenAction',{action:'duty',kind:'owlSeen',expectedRevision:revision(),requestId:requestId()})),
   // «Khung cảnh» {weather, atmosphere, event} (server setScene): kept with the garden, no revision, like guide.
   scene:scene=>queue(()=>call('performHagridGardenAction',{action:'setScene',scene,expectedRevision:revision(),requestId:requestId()})),
   // «Thăm vườn» (visitHagridGarden): its own answer, never the player's snapshot.

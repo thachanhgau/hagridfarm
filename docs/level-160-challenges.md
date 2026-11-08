@@ -41,10 +41,18 @@ gồm cả phần có thể làm mất sản lượng: E luân canh, F thời ti
 - Bữa có món thích: tâm trạng +10 thêm. Từ 160, tâm trạng chỉ lên ≥ 80 khi trong ngày đã có một bữa món thích
   (mức ×2 sản vật khi vui đã có, `garden-mood-core.js`).
 - UI: món thích hiện bằng icon cây trên thẻ sinh vật.
+- Cách tính (đợt 2): «bữa có món thích» = bữa bắt đầu trong ngày VN mà hôm đó con đã chế biến khẩu phần của loài bằng
+  công thức có món thích (thức ăn mua bằng Galleons không mang món thích, rào #48). Món thích chọn trong cây có trong
+  công thức thức ăn của loài mà con đã mở; Norbert không ăn bữa nên không bị trần 79.
 
 ### D. Hạng Tận Sức trong Cúp Nhà (từ 160)
 - Thành viên ≥ 160 tính điểm vào bảng riêng «Hạng Tận Sức» theo nhà; nhà thắng hạng này cho khung Floo riêng.
 - Giữ trần 60 điểm/ngày, cách tính điểm như cũ; người < 160 không đổi gì.
+- Điểm của người ≥ 160 vẫn vào bảng Nhà như cũ (bảng Nhà không đổi), đồng thời vào bảng `tanSuc` trên cùng document
+  `garden_house_cup/{tuần}` (không thêm lượt đọc). Nhà nhất Hạng Tận Sức: ai góp từ 20 điểm hạng này được khung
+  «Cúp Tận Sức» (`hagrid-cup-tan-suc`).
+- TODO (art): khung Floo «Cúp Tận Sức» (key `hagrid-cup-tan-suc`) đang mượn kiểu khung Cúp Nhà với viền vàng `#e2b866`;
+  cần art riêng.
 
 ### E. Luân canh (từ 160)
 - Mỗi thửa nhớ 3 loài thu hoạch gần nhất. Cùng một loài lần thứ 3 liên tiếp: −25% sản lượng mỗi vụ tiếp theo,
@@ -73,6 +81,11 @@ client và Functions phát hành cùng lúc, bump `?v=`.
   client `challenges-160` (`garden-work-ui.mjs`: ô đơn khó + hàng thử thách mốc trong tab Đơn hàng).
   Huy hiệu mốc nằm ở hàng thử thách (cúp nhỏ mỗi mốc thắng), chưa vào danh sách Thành tựu (danh sách đó có thưởng
   Nước/vật phẩm, trái luật §1).
+- 08/11/2026 Claude Code (Anthropic): đợt 2 (C + D) xong trên nhánh, chưa phát hành. Server `garden-mood-core.js`
+  (món thích, +10, trần 79), `garden-retention-core.js` (Hạng Tận Sức, khung Cúp Tận Sức); client: icon món thích
+  cạnh tên sinh vật ở dock Nuôi (`pet-controls.mjs`), bảng Hạng Tận Sức trong tab Cúp Nhà. Kèm sửa thư cú «vườn có N
+  việc»: ngày đã báo lưu trên server (daily doc `owlSeen`, view `duty.owlDay`, action `duty`/`owlSeen`), mỗi ngày một
+  lần trên mọi thiết bị.
 
 ## 4. Rào chắn (nối `produce-market-plan.md`, số tiếp theo sau #44)
 - #45 Đơn khó chỉ một mỗi ngày mỗi tài khoản; nick phụ không giao hộ (kho riêng).

@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHagridWork} from './garden-work-ui.mjs?v=25.0.2';
+import {petFavourite} from './pet-controls.mjs?v=25.0.2';
+import {CROP} from './balance-data.mjs?v=25.0.2';
 
 // Level-160 challenges (docs/level-160-challenges.md §2A–B): the Đơn khó tile and the milestone row
 // in «Việc của bác Hagrid», from snapshot.orders as the server sends it (garden-challenge-core challengeView).
@@ -26,7 +28,7 @@ function mount(snap){
  globalThis.document={getElementById:()=>host,createElement:tag=>new Node(tag),createTextNode:text=>({textContent:text}),body:host};
  const work=createHagridWork({getSnapshot:()=>snap,deliver:async()=>({ok:true}),challenge:async fields=>{calls.push(fields);return {ok:true};},setFrame:async()=>({ok:true}),items:null,notify:()=>{}});
  work.open();
- return {body:host.children[0].children[2],calls,restore:()=>{globalThis.document=previous;}};
+ return {dialog:host.children[0],body:host.children[0].children[2],calls,restore:()=>{globalThis.document=previous;}};
 }
 
 test('level 170: the hard order offer shows three star buttons; accepting sends the picked stars', async () => {
@@ -80,4 +82,45 @@ test('below level 160 the orders tab has no hard order or milestone', () => {
  try {
   assert.doesNotMatch(view.body.textContent,/Đơn khó|Thử thách mốc/);
  } finally {view.restore();}
+});
+
+// Level-160 challenges phase 2 (§2C, §2D): «Hạng Tận Sức» under the Cúp Nhà board; the món thích on the pet detail.
+const cupSnap=(level,tanSuc)=>({serverNow:0,garden:{progression:{level,inventory:{}}},orders:{unlockLevel:15,orders:[]},flooFrames:{frames:[],worn:null},
+ houseCup:{unlockLevel:20,weekKey:'2026-11-02',house:'hufflepuff',houseLabel:'Hufflepuff',points:40,today:12,dailyCap:60,rewardMin:20,endsAt:Date.parse('2026-11-09T00:00:00+07:00'),
+  board:[{house:'gryffindor',label:'Gryffindor',points:412},{house:'hufflepuff',label:'Hufflepuff',points:388},{house:'ravenclaw',label:'Ravenclaw',points:301},{house:'slytherin',label:'Slytherin',points:276}],
+  ...(tanSuc?{tanSuc}:{})}});
+
+test('level 170: the Cúp Nhà tab adds a «Hạng Tận Sức» board with the same rows; level 90 has only the house board', () => {
+ const tanSuc={unlockLevel:160,points:24,wins:0,board:[{house:'hufflepuff',label:'Hufflepuff',points:120},{house:'slytherin',label:'Slytherin',points:74},{house:'gryffindor',label:'Gryffindor',points:40},{house:'ravenclaw',label:'Ravenclaw',points:0}]};
+ for(const [level,expect] of [[170,2],[90,1]]){
+  const view=mount(cupSnap(level,level>=160?tanSuc:null)),dialog=view.dialog;
+  try {
+   all(dialog,n=>n.tag==='button'&&/Cúp Nhà/.test(n.textContent))[0].listeners.click();
+   const boards=all(dialog,n=>n.tag==='ol');
+   assert.equal(boards.length,expect);
+   assert.deepEqual(boards.map(b=>b.children.length),Array(expect).fill(4));
+   if(level>=160){
+    assert.equal(boards[1].attrs['data-cup-board'],'tan-suc');
+    assert.match(dialog.textContent,/Hạng Tận Sức · con 24 điểm/);
+    assert.match(boards[1].children[0].textContent,/Hufflepuff\s+120/);
+   } else assert.doesNotMatch(dialog.textContent,/Tận Sức/);
+  } finally {view.restore();}
+ }
+});
+
+test('the món thích badge: crop icon with «Món thích: <tên>», lit once eaten today; nothing below 160', () => {
+ const previous=globalThis.document;
+ globalThis.document={createElement:tag=>new Node(tag),createTextNode:text=>({textContent:text})};
+ try {
+  const E={CROP};
+  const badge=petFavourite(E,null,{mood:79,favourite:'pumpkin',favMeal:false});
+  assert.equal(badge.attrs['aria-label'],`Món thích: ${CROP.pumpkin.label}`);
+  assert.equal(badge.attrs.role,'img');
+  assert.equal(badge.className,'pet-favourite');
+  const fed=petFavourite(E,null,{mood:95,favourite:'pumpkin',favMeal:true});
+  assert.equal(fed.className,'pet-favourite is-fed');
+  assert.match(fed.attrs['aria-label'],/đã ăn hôm nay/);
+  assert.equal(petFavourite(E,null,{mood:85}),null);
+  assert.equal(petFavourite(E,null,null),null);
+ } finally {globalThis.document=previous;}
 });

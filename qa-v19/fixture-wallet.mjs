@@ -359,6 +359,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const m=garden.mastery||{},have=t=>Object.values(m).filter(n=>n>=TIERS[t-1]).length;
   return [[1,'Tập sự',1,5],[2,'Thạo nghề',2,10],[3,'Bậc thầy',3,16],[4,'Đại sư',3,E.DB.crops.length]].map(([n,label,t,need])=>({key:`hagrid-mastery-${n}`,label:`Khung ${label} vườn Hagrid`,kind:'mastery',unlocked:have(t)>=need,progress:Math.min(have(t),need),need,rule:`${need} loại cây đạt bậc ${t} (${TIERS[t-1]} ô)`}))
    .concat(['gryffindor','hufflepuff','ravenclaw','slytherin'].map(h=>({key:`hagrid-cup-${h}`,label:`Khung Cúp Nhà ${h[0].toUpperCase()+h.slice(1)}`,kind:'cup',house:h,unlocked:h==='ravenclaw',progress:h==='ravenclaw'?1:0,need:1,rule:'Nhà thắng Cúp Nhà một tuần, con góp từ 20 điểm'})))
+   .concat(garden.progression.level>=160?[{key:'hagrid-cup-tan-suc',label:'Khung Cúp Tận Sức',kind:'cup',unlocked:false,progress:0,need:1,rule:'Nhà con thắng Hạng Tận Sức một tuần, con góp từ 20 điểm'}]:[])
    .concat(garden.progression.level>=160?[{key:'hagrid-tan-suc',label:'Khung Thợ vườn Tận Sức',kind:'challenge',unlocked:challengeOf(garden).marks>=30,progress:Math.min(challengeOf(garden).marks,30),need:30,rule:'30 dấu thử thách từ đơn khó',stars:challengeOf(garden).won.length}]:[]);
  }
  function setFrame(c){const f=frameViews().find(x=>x.key===c.frameKey);if(c.frameKey!==null&&!f?.unlocked)fail('frame-locked','Con chưa đạt khung này.');wornFrame=c.frameKey;return clone({ok:true,worn:wornFrame,frames:frameViews()});}
@@ -395,8 +396,21 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    orders:{unlockLevel:15,orders:clone(ordersFor(d)),...challengeViews(d)},
    houseCup:{unlockLevel:20,weekKey:"2026-10-19",house,houseLabel:house?"Hufflepuff":null,points:garden.cup.points,today:d.cup||0,dailyCap:60,rewardMin:20,rules:{harvest:1,quest:3,order:10},endsAt:Date.parse("2026-10-26T00:00:00+07:00"),
     board:[{house:"gryffindor",label:"Gryffindor",points:412},{house:"hufflepuff",label:"Hufflepuff",points:388+garden.cup.points},{house:"ravenclaw",label:"Ravenclaw",points:301},{house:"slytherin",label:"Slytherin",points:276}],
-    lastWeek:[{house:"ravenclaw",label:"Ravenclaw",points:1204},{house:"gryffindor",label:"Gryffindor",points:1150},{house:"slytherin",label:"Slytherin",points:990},{house:"hufflepuff",label:"Hufflepuff",points:870}]},
+    lastWeek:[{house:"ravenclaw",label:"Ravenclaw",points:1204},{house:"gryffindor",label:"Gryffindor",points:1150},{house:"slytherin",label:"Slytherin",points:990},{house:"hufflepuff",label:"Hufflepuff",points:870}],
+    // Level 160+ «Hạng Tận Sức» (server cupView tanSuc): the same points of members from 160, its own board.
+    ...(p.level>=160?{tanSuc:{unlockLevel:160,points:garden.cup.tanSuc||0,wins:0,
+     board:[{house:"hufflepuff",label:"Hufflepuff",points:96+(garden.cup.tanSuc||0)},{house:"slytherin",label:"Slytherin",points:74},{house:"gryffindor",label:"Gryffindor",points:40},{house:"ravenclaw",label:"Ravenclaw",points:0}],
+     lastWeek:[{house:"slytherin",label:"Slytherin",points:210},{house:"hufflepuff",label:"Hufflepuff",points:185},{house:"gryffindor",label:"Gryffindor",points:60},{house:"ravenclaw",label:"Ravenclaw",points:12}]}}:{})},
+   // Server garden-mood-core moodView (QA approximation: fixed moods; from 160 a món thích per species and day).
+   mood:moodViews(d),
   };
+ }
+ function moodViews(d){
+  const p=garden.progression,hash=t=>[...t].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,7);
+  const favourite=sp=>{const crops=[...new Set(E.DB.recipes.filter(r=>r.output===E.CREATURE[sp].feed&&r.level<=p.level).flatMap(r=>Object.keys(r.inputs)).filter(id=>E.CROP[id]&&E.CROP[id].level<=p.level))];return crops.length?crops[hash(d.dayKey+sp)%crops.length]:null;};
+  return {creatures:Object.fromEntries(p.creatures.map((c,i)=>[c.species,{mood:p.level>=160?(i?79:92):85,done:[],lessons:0,lessonToday:false,coat:0,roamUntil:null,
+    ...(p.level>=160?{favourite:favourite(c.species),favMeal:i===0}:{})}])),
+   nextCycleAt:now()+3600000,roamsLeft:2,norbert:null,happy:80,winter:false,...(p.level>=160?{favouriteGain:10}:{})};
  }
  // Server garden-challenge-core (level 160+, QA approximation: a fixed hard order per day, ×stars; milestone from 200).
  const MILESTONES=[200,250,300,350,400,450],GOALS=['duty','mood','marks'],GOAL_TARGET={duty:7,mood:3,marks:10},goalOf=l=>GOALS[MILESTONES.indexOf(l)%3];
@@ -429,7 +443,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    const inv=p.inventory;if(Object.entries(h.items).some(([id,n])=>(inv[id]||0)<n))fail('missing-crops','Kho chưa đủ hàng cho đơn này.');
    for(const[id,n]of Object.entries(h.items))inv[id]-=n;
    p.xp+=h.xp;p.level=E.DB.levels.filter(r=>r.totalXP<=p.xp).at(-1).level;ch.marks+=h.stars;ch.hard=null;
-   const add=Math.min(h.cup,60-(d.cup||0));d.cup=(d.cup||0)+add;next.cup.points+=add;extra.challenge={kind:'deliver',xp:h.xp,cup:h.cup,marks:h.stars};extra.cupPoints=add;
+   const add=Math.min(h.cup,60-(d.cup||0));d.cup=(d.cup||0)+add;next.cup.points+=add;if(p.level>=160)next.cup.tanSuc=(next.cup.tanSuc||0)+add;extra.challenge={kind:'deliver',xp:h.xp,cup:h.cup,marks:h.stars};extra.cupPoints=add;
   }else if(c.kind==='start'){
    const level=MILESTONES.find(m=>m<=p.level&&!ch.won.includes(m));if(ch.run)fail('challenge-running','Thử thách mốc đang chạy.');if(!level)fail('challenge-locked','Chưa tới mốc.');
    ch.run={level,goal:goalOf(level),startedAt:t,marksAt:ch.marks,streakDay:null,streak:0};extra.challenge={kind:'start',level};
@@ -441,7 +455,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const inv=next.progression.inventory;if(Object.entries(order.items).some(([id,n])=>(inv[id]||0)<n))fail("missing-crops","Kho chưa đủ hàng cho đơn này.");
   for(const[id,n]of Object.entries(order.items))inv[id]-=n;
   const p=next.progression;p.xp+=order.xp;p.level=E.DB.levels.filter(r=>r.totalXP<=p.xp).at(-1).level;next.supplies.boost+=1;order.delivered=true;p.revision+=1;
-  if(p.level>=20){const add=Math.min(10,60-(d.cup||0));d.cup=(d.cup||0)+add;next.cup.points+=add;}
+  if(p.level>=20){const add=Math.min(10,60-(d.cup||0));d.cup=(d.cup||0)+add;next.cup.points+=add;if(p.level>=160)next.cup.tanSuc=(next.cup.tanSuc||0)+add;}
  }
  function usePremium(c,next,d){
   const entry=STORE_CATALOG.find(i=>i.id===c.itemId&&i.kind==="premium");if(!entry)fail("invalid-action-input","Vật phẩm này không dùng được.");

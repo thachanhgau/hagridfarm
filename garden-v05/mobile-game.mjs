@@ -365,7 +365,7 @@ setInterval(()=>{if(!document.hidden)syncFireNotice();},30000);
 // «Bậc trách nhiệm» (25.0 S5, garden-duty-core): consequences on the scene, a chip with the nearest clock (or what
 // needs doing), the panel on tap. Hagrid's letter once; an owl note at most once a day; the PSHC badge reads
 // localStorage hpvn.hagridDuty (no push, no Firestore read).
-let dutyPanel=null;
+let dutyPanel=null,owlShown='';
 const dutyChip=button('',()=>openDuty(),{id:'dutyChip',class:'duty-chip',hidden:true,'aria-label':'Bậc trách nhiệm'});
 $('gameShell')?.append(dutyChip);
 function currentDuty(){return !activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.duty:null;}
@@ -383,7 +383,9 @@ function syncDuty(){const d=currentDuty(),now=Date.now();dutyChip.hidden=!d?.on;
  dutyChip.replaceChildren(pixelIcon(d.leave?'book':todo?'heart':'clock',1),el('span',{text:d.leave?'Bác Hagrid trông vườn':todo?`${todo} việc cần làm`:Number.isFinite(next)?duration(next-now):'Vườn yên ổn'}));
  const soon=todo>0||next-now<6*3600000;
  try{localStorage.setItem('hpvn.hagridDuty',String(d.leave?0:soon?now:Number.isFinite(next)?next-6*3600000:0));
-  if(soon&&!d.leave&&localStorage.getItem('hagrid-duty-owl')!==today){localStorage.setItem('hagrid-duty-owl',today);audio.play('owl');message(todo?`🦉 Thư cú: vườn có ${todo} việc cần con ngay.`:`🦉 Thư cú: còn ${duration(next-now)} là vườn gặp chuyện.`,null,{label:'Xem',run:openDuty});}
+  // Once a VN day on every device: the server keeps the day (duty.owlDay); localStorage only for an older server.
+  const owlDay='owlDay' in d?d.owlDay:localStorage.getItem('hagrid-duty-owl');
+  if(soon&&!d.leave&&owlDay!==today&&owlShown!==today){owlShown=today;localStorage.setItem('hagrid-duty-owl',today);if('owlDay' in d)wallet.owl?.().catch(()=>{});audio.play('owl');message(todo?`🦉 Thư cú: vườn có ${todo} việc cần con ngay.`:`🦉 Thư cú: còn ${duration(next-now)} là vườn gặp chuyện.`,null,{label:'Xem',run:openDuty});}
  }catch{}}
 setInterval(()=>{if(!document.hidden)syncDuty();},60000);
 // «Chữa cháy» (owner 01/11/2026): the owner or a visitor pays Galleons (10 G per hour left) to put the fire out.
@@ -734,7 +736,7 @@ $('feedButton').onclick=()=>run(s=>E.feed(s,species,Date.now()),'Đã cho '+CREA
 $('claimAnimalButton').onclick=()=>run(s=>E.claimAnimals(s,species,Date.now()),'Đã nhận kết quả chăm sóc '+CREATURE[species].label+'.',{action:'claimAnimals',species});
 for(const [id,name]of Object.entries({levelButton:'profile',plotsButton:'plots',inventoryButton:'inventory',menuButton:'menu'}))$(id).onclick=()=>panels.show(name);
 window.addEventListener('storage',e=>{if(connected)return;if(e.key!==gardenStorage.storageKey||!e.newValue||busy)return;try{const raw=gardenStorage.getItem(key);if(!raw)return;state=E.restoreChecked(raw,Date.now());refresh();panels.refresh();message('Đã cập nhật tiến độ từ tab còn lại.');}catch{message('Bản lưu ở tab khác không hợp lệ; giữ phiên đang mở.');}});
-petControls=setupPetControls({E,items,getMood:sp=>moodOf(sp)?.mood,getState:()=>state,getSpecies:()=>species,getNow:logical,getReady:()=>loaded&&(!connected||walletReady)&&!busy,onSelect:selectCreature,onHelp:help=>help==='food'?openStore('food',$('petHelp')):help==='build'?setMode('build'):panels.show('roadmap')});
+petControls=setupPetControls({E,items,getMood:sp=>moodOf(sp)?.mood,getFavourite:moodOf,getState:()=>state,getSpecies:()=>species,getNow:logical,getReady:()=>loaded&&(!connected||walletReady)&&!busy,onSelect:selectCreature,onHelp:help=>help==='food'?openStore('food',$('petHelp')):help==='build'?setMode('build'):panels.show('roadmap')});
 workTrays=setupWorkTrays({E,items,labels,getState:()=>state,getReady:()=>loaded&&(!connected||walletReady)&&!busy,run,showPanel:name=>panels.show(name),getGalleons,decor:{getDecorations:currentDecorations,getAssets:()=>decorAssets,openDecorate:openDecoration,openStore,getState:()=>state,getRotations:()=>({...state?.decorationRotations,...earnedDecorRotations}),setDefaultVisible:setDefaultDecorVisibility,openDefault:openDefaultDecoration}});
 $('craftTool').onclick=()=>setMode('craft');$('buildTool').onclick=()=>setMode('build');
 // Native touch/trackpad scrolling; a mouse wheel moves only this overflowing tray.

@@ -17,7 +17,7 @@ const dm = at => {const d=new Date(at+7*3600000);return `${d.getUTCDate()}/${d.g
 const stars = tier => el('span',{class:'work-stars',role:'img','aria-label':`Bậc ${tier}/3`},[0,1,2].map(i=>pixelIcon(i<tier?'star':'star_empty',1)));
 
 export function createHagridWork({getSnapshot,deliver,challenge,setFrame,items,notify}){
- let tab='orders',lastBoard=null,lastWeek=null,pick=1;
+ let tab='orders',lastBoard=null,lastWeek=null,lastTanSuc=null,pick=1;
  const body=el('div',{class:'work-body'}),tabs=el('div',{class:'panel-toolbar work-tabs',role:'group','aria-label':'Việc của bác Hagrid'});
  const dialog=el('dialog',{id:'hagridWork',class:'owl-letter work-letter','aria-labelledby':'workTitle'},[
   el('div',{class:'popover-heading'},[el('h2',{id:'workTitle',text:'Việc của bác Hagrid'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
@@ -110,20 +110,23 @@ export function createHagridWork({getSnapshot,deliver,challenge,setFrame,items,n
   ];
  }
 
+ const board=(rows,id='house')=>{const top=rows[0]?.points||0;return el('ol',{class:'work-cup-board','data-cup-board':id},rows.map(row=>el('li',{style:`--house:${HOUSE_COLORS[row.house]}`},[el('strong',{text:row.label}),meter(row.points,top),el('b',{text:num(row.points)})])));};
  function cup(snap){
   const view=snap.houseCup,level=snap.garden?.progression?.level||1;
   if(view.board)lastBoard=view.board;
   if(view.lastWeek)lastWeek=view.lastWeek;
-  const top=lastBoard?.[0]?.points||0,champion=lastWeek?.[0]?.points?lastWeek[0]:null;
+  if(view.tanSuc?.board)lastTanSuc=view.tanSuc.board;
+  const champion=lastWeek?.[0]?.points?lastWeek[0]:null;
   const ends=new Date(view.endsAt+7*3600000);
   return [
    el('p',{class:'meta',text:`Tuần ${view.weekKey.slice(8)}/${view.weekKey.slice(5,7)} · 0:00 ${ends.getUTCDate()}/${ends.getUTCMonth()+1} · ${num(view.dailyCap)} điểm/ngày`}),
    level<view.unlockLevel?el('p',{class:'meta',text:`Góp điểm cho Nhà từ cấp ${view.unlockLevel}.`})
     :view.house?el('div',{class:'gp-hero work-cup-me',style:`--house:${HOUSE_COLORS[view.house]}`},[pixelIcon('trophy',3),el('div',{class:'gp-hero-copy'},[el('strong',{text:`${view.houseLabel}: con góp ${num(view.points)} điểm tuần này`}),el('div',{class:'owl-chest-meter'},[meter(view.today,view.dailyCap),el('b',{text:`Hôm nay ${view.today}/${view.dailyCap}`})])])])
     :el('p',{class:'meta',text:'Chọn Nhà trong hồ sơ Mạng Floo để góp điểm Cúp Nhà.'}),
-   lastBoard?el('ol',{class:'work-cup-board'},lastBoard.map(row=>el('li',{style:`--house:${HOUSE_COLORS[row.house]}`},[el('strong',{text:row.label}),meter(row.points,top),el('b',{text:num(row.points)})])))
-    :el('p',{class:'meta',text:'Mở lại vườn để xem bảng điểm các Nhà.'}),
+   lastBoard?board(lastBoard):el('p',{class:'meta',text:'Mở lại vườn để xem bảng điểm các Nhà.'}),
    champion?el('p',{class:'meta work-cup-champion',text:`Tuần trước: ${champion.label} dẫn đầu với ${num(champion.points)} điểm.`}):null,
+   // Level 160+ (docs/level-160-challenges.md §2D): «Hạng Tận Sức», the same points of members from level 160, same rows.
+   ...(view.tanSuc?[el('p',{class:'sheet-label',text:`Hạng Tận Sức · con ${num(view.tanSuc.points)} điểm`}),lastTanSuc?board(lastTanSuc,'tan-suc'):null]:[]),
    view.lastResult?el('p',{class:'meta',text:view.lastResult.won?`🎖 Tuần ${view.lastResult.weekKey.slice(8)}/${view.lastResult.weekKey.slice(5,7)} con góp ${num(view.lastResult.points)} điểm cho Nhà vô địch: đã mở khung Cúp Nhà.`:`Tuần ${view.lastResult.weekKey.slice(8)}/${view.lastResult.weekKey.slice(5,7)}: Nhà con hạng ${view.lastResult.rank}, con góp ${num(view.lastResult.points)} điểm.`}):null,
    view.rewardMin==null?null:el('p',{class:'meta',text:`Khung Cúp Nhà · Nhà vô địch · từ ${num(view.rewardMin)} điểm`}),
    ...frames(snap,'cup'),
@@ -140,7 +143,7 @@ export function createHagridWork({getSnapshot,deliver,challenge,setFrame,items,n
  }
  return {
   open(){render();dialog.showModal();},
-  sync(){const snap=getSnapshot();if(snap?.houseCup?.board)lastBoard=snap.houseCup.board;if(snap?.houseCup?.lastWeek)lastWeek=snap.houseCup.lastWeek;if(dialog.open)render();},
+  sync(){const snap=getSnapshot();if(snap?.houseCup?.board)lastBoard=snap.houseCup.board;if(snap?.houseCup?.tanSuc?.board)lastTanSuc=snap.houseCup.tanSuc.board;if(snap?.houseCup?.lastWeek)lastWeek=snap.houseCup.lastWeek;if(dialog.open)render();},
   hasWork(){const snap=getSnapshot(),inv=snap?.garden?.progression?.inventory||{};const can=o=>Object.entries(o.items).every(([id,n])=>(inv[id]||0)>=n);return Boolean(snap?.orders?.orders?.some(o=>!o.delivered&&can(o))||(snap?.orders?.hard?.open&&can(snap.orders.hard.open))||snap?.orders?.milestone?.state==='ready');},
  };
 }

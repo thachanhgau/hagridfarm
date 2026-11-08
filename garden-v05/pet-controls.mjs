@@ -39,6 +39,15 @@ export function openingPetSpecies({E,state,species,now}) {
   ||pets.find(a=>a.species===species)?.species||pets[0]?.species||species;
 }
 
+// Level 160+ «Khẩu vị sinh vật» (server garden-mood-core): today's món thích as a crop icon; the heart is lit once it ate one today.
+export function petFavourite(E,items,entry){
+ if(!entry?.favourite)return null;
+ const name=E.CROP?.[entry.favourite]?.label||entry.favourite,heart=pixelIcon('heart',1);
+ heart.classList.add('pet-favourite-heart');
+ return el('span',{class:'pet-favourite'+(entry.favMeal?' is-fed':''),role:'img','aria-label':`Món thích: ${name}${entry.favMeal?' · đã ăn hôm nay':''}`,title:`Món thích: ${name}`,'data-favourite':entry.favourite},
+  [visualItemIcon(items,entry.favourite,{size:24,kind:'harvest'}),heart]);
+}
+
 // Keep the button nodes and their icons stable when stock/timers refresh.
 export function renderPetCareButtons(items,supplies={}) {
  const actions=[
@@ -74,8 +83,10 @@ export function renderPetCareButtons(items,supplies={}) {
  }
 }
 
-export function setupPetControls({E,items,getMood=()=>null,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {
- let group='owned',lastPortrait='',previousOwned=false;
+export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {
+ let group='owned',lastPortrait='',previousOwned=false,lastFavourite='';
+ const favSlot=el('span',{class:'pet-favourite-slot',hidden:true});
+ $('petPortrait')?.parentElement?.append(favSlot);
  const entries=new Map(), tray=$('creatureTray');
  for(const config of E.DB.animals) {
   const name=el('span',{class:'pet-card-name',text:config.label});
@@ -126,7 +137,8 @@ export function setupPetControls({E,items,getMood=()=>null,getState,getSpecies,g
   if(!visible)return;
   if(lastPortrait!==species){$('petPortrait').replaceChildren(icon(items,species,3,40));lastPortrait=species;}
   $('creatureName').textContent=config.label;
-  const mood=animal?getMood(species):null;
+  const mood=animal?getMood(species):null,fav=animal?getFavourite(species):null,favKey=fav?.favourite?`${fav.favourite}:${fav.favMeal}`:'';
+  if(favKey!==lastFavourite){lastFavourite=favKey;const badge=petFavourite(E,items,fav);favSlot.replaceChildren(...(badge?[badge]:[]));favSlot.hidden=!badge;}
   $('creatureTime').textContent=animal?(view.adult?'Trưởng thành':`Đang lớn · ${view.mealsDone}/${config.mealsToAdult} bữa`)+(mood!=null?` · ♥ ${mood}`:''):`Nhận nuôi · Cấp ${config.level}`;
   $('petProgress').hidden=!animal||view.adult;
   $('petProgress').max=config.mealsToAdult;

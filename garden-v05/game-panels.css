@@ -380,6 +380,7 @@
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-hufflepuff"]{border-color:#FFC36B}
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-ravenclaw"]{border-color:#6961A6}
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-slytherin"]{border-color:#71934B}
+#gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-tan-suc"]{border-color:#E2B866;box-shadow:0 0 0 2px #231F2E}
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-tan-suc"]{border-color:#F5D69A;box-shadow:0 0 0 2px #4A3042}
 #gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-level-"]{border-color:#FFC36B;background:#231F2E}
 #gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-xmas-sweater-"]{border-color:#C75B4B;background:repeating-linear-gradient(45deg,#874056 0 3px,#4A3042 3px 5px)}
