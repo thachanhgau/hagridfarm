@@ -1,4 +1,4 @@
-import {ITEM_ART} from './item-art.mjs?v=25.0.1';
+import {ITEM_ART} from './item-art.mjs?v=25.0.2';
 
 const BASE_IDS = Object.freeze(Object.keys(ITEM_ART).filter((key) => /^decoration-\d+$/.test(key)));
 const PRODUCE_KEYS = Object.freeze(Object.keys(ITEM_ART).filter((key) => /^produce_.+/.test(key)));

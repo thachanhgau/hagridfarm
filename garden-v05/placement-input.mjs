@@ -1,6 +1,6 @@
-import {el,button} from './ui-utils.mjs?v=25.0.1';
-import {pixelIcon} from './pixel-icons.mjs?v=25.0.1';
-import {worldToGrid} from './garden-grid.mjs?v=25.0.1';
+import {el,button} from './ui-utils.mjs?v=25.0.2';
+import {pixelIcon} from './pixel-icons.mjs?v=25.0.2';
+import {worldToGrid} from './garden-grid.mjs?v=25.0.2';
 export function previewHit(point,at,item,facing,project){
  if(!point||!at)return false;
  const [x,y]=project(...at),b=(facing==='right'?item.rightBounds:null)||item.bounds||{x:0,y:0,w:item.width,h:item.height};

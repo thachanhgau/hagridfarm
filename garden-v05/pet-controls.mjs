@@ -1,5 +1,5 @@
-import {$,el,button,icon,duration,num,visualItemIcon} from './ui-utils.mjs?v=25.0.1';
-import {setAction,pixelIcon} from './pixel-icons.mjs?v=25.0.1';
+import {$,el,button,icon,duration,num,visualItemIcon} from './ui-utils.mjs?v=25.0.2';
+import {setAction,pixelIcon} from './pixel-icons.mjs?v=25.0.2';
 
 export const petFoodText=view=>`Thức ăn: có ${num(view.have)} phần${view.need>0&&!['eating','ready'].includes(view.phase)?` · cần ${num(view.need)} phần`:''}`;
 
