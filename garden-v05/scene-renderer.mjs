@@ -817,9 +817,9 @@ export async function createGarden(canvas, options = {}) {
 
   function rebuildBoundaryFence(stage) {
     boundaryFence = createBoundaryFence(map, stageBoundary(stage, {fence: true}), fenceOpenings(stage)).map((piece) => {
-      const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - (piece.gate?24:6));
+      const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - (piece.gate?40:6));
       const top = Math.floor(Math.min(piece.a[1], piece.b[1]) - (piece.gate?80:51));
-      const layer = makeCanvas(canvas, Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?48:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
+      const layer = makeCanvas(canvas, Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?80:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
       const brush = layer.getContext('2d');
       brush.imageSmoothingEnabled = false;
       drawBoundaryFence(brush, {

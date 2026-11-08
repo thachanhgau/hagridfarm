@@ -55,6 +55,7 @@ test('exit gate is centered on the trail and leaves its middle passage clear',()
  drawBoundaryFence({fillRect(x,y,w,h){calls.push({x,y,w,h});}},gate);
  const x=(gate.a[0]+gate.b[0])/2,y=(gate.a[1]+gate.b[1])/2;
  assert.equal(calls.some(r=>r.x<x+10&&r.x+r.w>x-10&&r.y<y+5&&r.y+r.h>y-24),false,'no closed rail or post across the passage');
+ for(const r of calls){assert.ok(r.x>=Math.min(gate.a[0],gate.b[0])-40&&r.x+r.w<=Math.max(gate.a[0],gate.b[0])+40,'open leaves fit the cached gate width');assert.ok(r.y>=Math.min(gate.a[1],gate.b[1])-80&&r.y+r.h<=Math.max(gate.a[1],gate.b[1])+28,'gate fits cached height');}
 });
 test('fence and land share one outline, the bay behind the greenhouse included',async()=>{
   // 27/10/2026: the fence stepped back behind the greenhouse but the land did not, so the
