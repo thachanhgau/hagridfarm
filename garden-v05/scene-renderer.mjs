@@ -1280,24 +1280,24 @@ export async function createGarden(canvas, options = {}) {
     const quad = (a0, a1, b0, b1) => [iso(a0, b0), iso(a1, b0), iso(a1, b1), iso(a0, b1)], t = 0.13;
     // Owner 08/11 «màu nhiệm, nổi bật»: each tray is a small enchanted fish pond — glowing teal deep, a light rim,
     // shimmer bands, koi that glow as they swim, lotus, twinkles and fireflies; mossy stone bunds between the trays.
-    const KOI = [['#FFB347', '#FFE3A3'], ['#FF6FA8', '#FFC2DC'], ['#8FF3FF', '#E6FDFF']];
+    const KOI = [['#ED8A45', '#FFC36B'], ['#E07A9E', '#F5D69A'], ['#B7DEE0', '#E8F0ED']];
     const paddies = [{kind: 'pond-paddy', type: 'pond-bed', id: 'pond-paddy', xy: iso(c0, r0), draw: (ctx) => {
       const s = clock / 1000, px = (colour, x, y, w, h) => { ctx.fillStyle = colour; ctx.fillRect(Math.round(x), Math.round(y), w, h); };
       ctx.save();
       ctx.imageSmoothingEnabled = false;
-      polygon(ctx, quad(c0, c1, r0, r1), '#3F5A3E', null); // mossy stone bunds
-      for (let c = c0; c < c1; c += 0.5) for (let r = r0; r < r1; r += 0.5) { const [x, y] = iso(c + 0.12, r + 0.3); px((c * 7 + r * 3) % 2 ? '#6E8F55' : '#2E4430', x - 2, y, 4, 2); }
+      polygon(ctx, quad(c0, c1, r0, r1), '#3F6A45', null); // mossy stone bunds
+      for (let c = c0; c < c1; c += 0.5) for (let r = r0; r < r1; r += 0.5) { const [x, y] = iso(c + 0.12, r + 0.3); px((c * 7 + r * 3) % 2 ? '#71934B' : '#24483F', x - 2, y, 4, 2); }
       rects.forEach((r, i) => {
         const q = quad(r.c0 + t, r.c1 - t, r.r0 + t, r.r1 - t), [ax, ay] = iso(r.c0, r.r0), [bx, by] = iso(r.c1, r.r1);
         const deep = ctx.createLinearGradient(ax, ay, bx, by);
-        deep.addColorStop(0, '#162457'); deep.addColorStop(0.55, '#1B5C78'); deep.addColorStop(1, '#2BA39A');
-        polygon(ctx, q, deep, 'rgba(140,255,225,.75)', 2);
+        deep.addColorStop(0, '#3E3B70'); deep.addColorStop(0.55, '#6961A6'); deep.addColorStop(1, '#70A8B6');
+        polygon(ctx, q, deep, '#B7DEE0', 2);
         ctx.save();
         ctx.beginPath(); ctx.moveTo(...q[0]); q.slice(1).forEach((p) => ctx.lineTo(...p)); ctx.closePath(); ctx.clip();
         polygon(ctx, quad(r.c0 + t, r.c1 - t, r.r0 + t, r.r0 + t + 0.2), 'rgba(10,12,40,.55)', null); // the bund's shade
         for (let k = 0; k < 2; k++) { // shimmer bands drifting down the tray
           const v = ((s * 0.25 + k * 0.5 + i * 0.37) % 1) * 3, [x, y] = iso(r.c0 + 0.5, r.r0 + v);
-          ctx.globalAlpha = 0.35; px('#9CFFE8', x - 9, y, 18, 2); px('#9CFFE8', x - 4, y + 3, 8, 1); ctx.globalAlpha = 1;
+          ctx.globalAlpha = 0.35; px('#B7DEE0', x - 9, y, 18, 2); px('#B7DEE0', x - 4, y + 3, 8, 1); ctx.globalAlpha = 1;
         }
         const [fc, fl] = KOI[i % 3], v = 1.5 + Math.sin(s * 0.7 + i * 1.9) * 1.1, u = 0.5 + Math.sin(s * 1.3 + i) * 0.18;
         const [fx, fy] = iso(r.c0 + u, r.r0 + v), dir = Math.cos(s * 0.7 + i * 1.9) >= 0 ? 1 : -1;
@@ -1306,22 +1306,22 @@ export async function createGarden(canvas, options = {}) {
         ctx.restore();
         if (i % 2 === 0) { // lily pad with a lotus
           const [lx, ly] = iso(r.c0 + 0.35, r.r0 + 0.8 + (i % 3) * 0.6);
-          px('#3E8F4A', lx - 6, ly - 1, 12, 4); px('#5FBF5E', lx - 5, ly - 1, 6, 2);
-          px('#FF8FC7', lx - 2, ly - 5, 5, 4); px('#FFD3EA', lx - 1, ly - 6, 3, 2); px('#FFE36B', lx, ly - 4, 1, 1);
+          px('#3F6A45', lx - 6, ly - 1, 12, 4); px('#71934B', lx - 5, ly - 1, 6, 2);
+          px('#E07A9E', lx - 2, ly - 5, 5, 4); px('#E8F0ED', lx - 1, ly - 6, 3, 2); px('#FFC36B', lx, ly - 4, 1, 1);
         }
         for (let k = 0; k < 3; k++) { // twinkles
           const tw = Math.sin(s * 2.6 + i * 2.1 + k * 2.3);
           if (tw < 0.55) continue;
           const [x, y] = iso(r.c0 + 0.25 + ((i * 3 + k * 5) % 7) / 10, r.r0 + 0.4 + k * 0.9);
-          ctx.globalAlpha = tw; px('#FFFFFF', x - 1, y - 3, 2, 6); px('#FFFFFF', x - 3, y - 1, 6, 2); ctx.globalAlpha = 1;
+          ctx.globalAlpha = tw; px('#E8F0ED', x - 1, y - 3, 2, 6); px('#E8F0ED', x - 3, y - 1, 6, 2); ctx.globalAlpha = 1;
         }
       });
       drawRaisedPlotBorder(ctx, quad(c0, c1, r0, r1), {weatherMode: activeWeather, index: 1});
       for (let k = 0; k < 6; k++) { // fireflies drifting over the water
         const c = c0 + ((k * 0.61 + 0.2) % 1) * (c1 - c0), r = r0 + ((k * 0.37 + 0.1) % 1) * (r1 - r0);
         const [x, y] = iso(c, r), lift = 10 + ((s * 6 + k * 9) % 22), a = 0.5 + 0.5 * Math.sin(s * 3 + k);
-        ctx.globalAlpha = a * 0.35; px('#FFE98A', x + Math.sin(s + k) * 6 - 3, y - lift - 3, 6, 6);
-        ctx.globalAlpha = a; px('#FFF6C8', x + Math.sin(s + k) * 6 - 1, y - lift - 1, 2, 2); ctx.globalAlpha = 1;
+        ctx.globalAlpha = a * 0.35; px('#FFC36B', x + Math.sin(s + k) * 6 - 3, y - lift - 3, 6, 6);
+        ctx.globalAlpha = a; px('#F5D69A', x + Math.sin(s + k) * 6 - 1, y - lift - 1, 2, 2); ctx.globalAlpha = 1;
       }
       ctx.restore();
     }}];
