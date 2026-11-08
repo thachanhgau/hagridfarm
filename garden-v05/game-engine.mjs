@@ -71,7 +71,7 @@ const cropRecords = {
   },
   puffapod: {
     id: 'puffapod',
-    label: 'Puffapod',
+    label: 'Đậu Phình',
     rarity: 'rare',
     rarityLabel: RARITY_LABEL.rare,
     growMs: RARITY_GROW_MS.rare,

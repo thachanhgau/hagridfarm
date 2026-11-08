@@ -18,5 +18,5 @@ export async function changeDefaultDecorationVisibility(ctx, itemId, visible) {
       }
     }
   }
-  return ctx.run(null, visible ? 'Đã đặt lại trang trí của vườn.' : 'Đã cất trang trí · bạn có thể đặt món đã mua vào chỗ trống.', {action: 'setDefaultDecorationVisibility', itemId, visible});
+  return ctx.run(null, visible ? 'Đã đặt lại trang trí của vườn.' : 'Đã cất trang trí · con có thể đặt món đã mua vào chỗ trống.', {action: 'setDefaultDecorationVisibility', itemId, visible});
 }

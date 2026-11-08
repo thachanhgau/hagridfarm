@@ -40,7 +40,9 @@ const day = (hours) => hours * HOUR;
 // names are compared after the same renames the game applied.
 const LY_LAN_NAMES = [
   ['"label": "Puffskein"', '"label": "Quái lùng nhùng"'], ['Puffskein', 'quái lùng nhùng'],
-['Bằng Mã', 'Bằng-Mã'], ['Thestral', 'Vong mã'], ['Mandrake', 'Nhân sâm'], ['Bạch tiên', 'Bạch tiễn'], ['Bowtruckle', 'Que Xạo'], ['Niffler', 'Đào mỏ'], ['Sợi lông ba màu', 'Sợi lông trắng Chó ba đầu'], ['Cần mới', 'Có sprite']];
+['Bằng Mã', 'Bằng-Mã'], ['Thestral', 'Vong mã'], ['Mandrake', 'Nhân sâm'], ['Bạch tiên', 'Bạch tiễn'], ['Bowtruckle', 'Que Xạo'], ['Niffler', 'Đào mỏ'], ['Sợi lông ba màu', 'Sợi lông trắng Chó ba đầu'], ['Cần mới', 'Có sprite'],
+  // Owner 08/11/2026: every creature and plant has a Vietnamese name (Lý Lan where the books have one).
+  ['Kneazle', 'Mèo đốm'], ['Puffapod', 'Đậu Phình'], ['Mimbulus mimbletonia', 'Xương rồng mụt nhớt'], ['Mooncalf', 'Bê trăng'], ['Diricawl', 'Chim ẩn hiện'], ['Fwooper', 'Chim lông rực']];
 const APPROVED = levelP1(JSON.parse(
   LY_LAN_NAMES.reduce((text, [from, to]) => text.replaceAll(from, to), readFileSync(new URL('../outputs/hagrid-levels-20261013/balance-data.json', import.meta.url), 'utf8')),
 ));

@@ -124,7 +124,7 @@ export function createPanels(ctx){
        infoVis.categoryClass==="cat-tan-suc"?null:el("span",{class:`journey-cat-pill ${infoVis.categoryClass}`,text:infoVis.category}),
        el("small",{class:"journey-xp-tag",text:`${num(l.totalXP)} XP`}),
       ]),
-      el("strong",{class:"journey-unlock-title",text:l.unlock}),
+      el("strong",{class:"journey-unlock-title"},l.unlock.split(/★(\d+)/).flatMap((p,i)=>i%2?tanSucMark(p):p?[p]:[])),
       el("small",{class:"journey-unlock-meta",text:infoVis.meta}),
      ]),
     ]);

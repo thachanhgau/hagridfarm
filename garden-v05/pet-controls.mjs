@@ -13,7 +13,7 @@ export function petControlState({E,state,species,now,ready=true}) {
  let phase, hint, help=null, command=null;
  if(animal?.meal) {
   phase=animal.meal.readyAt<=now?'ready':'eating';
-  hint=phase==='ready'?(adult?'Quà đã sẵn sàng. Nhận rồi cho ăn bữa tiếp theo.':'Bữa ăn đã xong. Hoàn tất để bé lớn thêm.'):'Bé đang ăn. Bạn có thể chăm pet khác trong lúc chờ.';
+  hint=phase==='ready'?(adult?'Quà đã sẵn sàng. Nhận rồi cho ăn bữa tiếp theo.':'Bữa ăn đã xong. Hoàn tất để bé lớn thêm.'):'Bé đang ăn. Con có thể chăm pet khác trong lúc chờ.';
   if(phase==='ready')command={action:'claimAnimals',species};
  } else if(!animal&&config.level>state.level) {
   phase='locked';hint=`Mở ở cấp ${config.level}.`;help='roadmap';
@@ -119,7 +119,7 @@ export function setupPetControls({E,items,getMood=()=>null,getState,getSpecies,g
    control.setAttribute('aria-label',`${item.config.label} · ${item.badge}${item.phase==='eating'?' · còn '+duration(item.remaining):''}`);
   }
   $('petEmpty').hidden=visible>0;
-  $('petEmpty').textContent=group==='owned'?'Chưa có pet. Chọn “Đón thêm” để đón bé đầu tiên.':'Bạn đã đón đủ các loài hiện có.';
+  $('petEmpty').textContent=group==='owned'?'Chưa có pet. Chọn “Đón thêm” để đón bé đầu tiên.':'Con đã đón đủ các loài hiện có.';
   // An empty tab has no selected animal; leave its tabs and explanation available.
   $('petDetail').hidden=!visible;
   $('petCareTools').hidden=!visible||!animal;
@@ -127,7 +127,7 @@ export function setupPetControls({E,items,getMood=()=>null,getState,getSpecies,g
   if(lastPortrait!==species){$('petPortrait').replaceChildren(icon(items,species,3,40));lastPortrait=species;}
   $('creatureName').textContent=config.label;
   const mood=animal?getMood(species):null;
-  $('creatureTime').textContent=animal?(view.adult?'Trưởng thành':`Đang lớn · ${view.mealsDone}/${config.mealsToAdult} bữa`)+` · ${view.badge}`+(mood!=null?` · ♥ ${mood}`:''):`Nhận nuôi · Cấp ${config.level}`;
+  $('creatureTime').textContent=animal?(view.adult?'Trưởng thành':`Đang lớn · ${view.mealsDone}/${config.mealsToAdult} bữa`)+(mood!=null?` · ♥ ${mood}`:''):`Nhận nuôi · Cấp ${config.level}`;
   $('petProgress').hidden=!animal||view.adult;
   $('petProgress').max=config.mealsToAdult;
   $('petProgress').value=view.mealsDone;

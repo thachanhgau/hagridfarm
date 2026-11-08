@@ -513,7 +513,8 @@
 #gameShell #panel :is(.gp-tile-actions,.card>.actions)>button{min-width:88px}
 #gameShell #panel .inv-card-action{min-width:88px;min-height:44px;border-radius:0}
 
-#gameShell .store-popover .store-tabs{display:grid;grid-template-columns:repeat(5,minmax(44px,1fr));gap:4px;overflow:visible;flex:none}
+/* :is(#panel,…) in the shared tab rule counts as an id, so this needs one too */
+#gameShell :is(#panel,.store-popover) .store-tabs:is(.store-popover *){display:grid;grid-template-columns:repeat(auto-fit,minmax(56px,1fr));gap:4px;overflow:visible;flex:none}
 #gameShell .store-popover .store-tabs .gp-tab{min-width:44px;min-height:44px;height:44px;padding:2px;gap:2px;font-size:11px}
 #gameShell .store-popover .store-tabs .gp-tab .px-icon{width:16px;height:16px}
 #gameShell .store-popover .store-tabs .gp-tab span{font-size:11px;line-height:1.1}

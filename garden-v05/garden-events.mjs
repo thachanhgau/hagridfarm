@@ -761,7 +761,7 @@ export function buildGuestbookEntries({gameState = {}, eventMode = 'event_hallow
       author: 'Giáo sư Sprout',
       role: 'Chủ nhiệm Nhà Hufflepuff · Thảo dược học',
       avatar: '🌿',
-      stamp: lv > 100 ? `Vườn Cấp 100 ★${lv - 100}` : `Vườn Cấp ${lv}`,
+      stamp: lv > 100 ? `Vườn Tận Sức ${lv - 100}` : `Vườn Cấp ${lv}`,
       message:
         lv >= 45
           ? `Các luống Nhân sâm và thảo dược quý của con lên đều tăm tắp! Nhà kính Số 3 luôn rộng cửa đón con ghé thăm.`

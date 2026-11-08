@@ -264,7 +264,7 @@ function stopTour(){
  syncTourBanner();
  camera?.overview();
  refresh();
- message('🏡 Đã trở về khu vườn của bạn.');
+ message('🏡 Đã trở về khu vườn của con.');
 }
 async function helpTour(tourId=activeTourSnapshot?.tour?.id||'tour_sprout'){
  const res=await receiveReward(()=>{const result=helpHonorGarden(tourId,{onReward:grantOwlReward});if(result.ok){recordFestivalAction('helpTour');recordOwlQuestAction('helpTour',1);}return result;});
@@ -275,7 +275,7 @@ async function helpTour(tourId=activeTourSnapshot?.tour?.id||'tour_sprout'){
   syncHudV20Buttons();
   message(`🤝 Đã phụ chăm sóc vườn của ${res.tour.ownerName}! Nhận ${res.reward.label}.`);
  }else if(res.alreadyHelped){
-  message(`Bạn đã phụ chăm sóc vườn của ${res.tour.ownerName} hôm nay rồi.`);
+  message(`Con đã phụ chăm sóc vườn của ${res.tour.ownerName} hôm nay rồi.`);
  }
  return res;
 }

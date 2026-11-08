@@ -35,7 +35,7 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
  buildTab.append(pixelIcon('build',1),el('span',{text:'Công trình'}));
  decorTab.append(pixelIcon('scenery',1),el('span',{text:'Trang trí'}));
  tabs.append(buildTab,decorTab);
- const tray=el('div',{id:'ownedDecorTray',class:'item-tray owned-decor-tray',role:'group','aria-label':'Trang trí của bạn · cuộn ngang'});
+ const tray=el('div',{id:'ownedDecorTray',class:'item-tray owned-decor-tray',role:'group','aria-label':'Trang trí của con · cuộn ngang'});
  const empty=el('p',{class:'decor-dock-empty',text:'Chưa có món trang trí. Ghé cửa hàng để chọn thêm.'});
  const title=el('strong',{id:'decorDockName'}),status=el('span',{id:'decorDockStatus'});
  const current=()=>currentRows().find(r=>r.id===selected);

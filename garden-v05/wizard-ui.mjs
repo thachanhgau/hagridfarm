@@ -164,7 +164,7 @@ export function setupWizardUI({E,items,getState,getSelection,getRenderer,getRead
    // Sent once, when the garden reaches level 100 (roadmap §12).
    $('letterBody').replaceChildren(...[
     'Con giỏi quá! Cấp 100 rồi, mảnh vườn nhỏ giờ thành Đại khu vườn thật rồi đó.',
-    'Bác ghi tên con vào bậc Tận Sức: còn bốn trăm bậc nữa, mỗi bậc thêm một ngôi sao ★. Tới cấp 500, bác có huy hiệu riêng cho con.',
+    'Bác ghi tên con vào bậc Tận Sức: còn bốn trăm bậc nữa, mỗi bậc thêm một ngôi sao. Tới cấp 500, bác có huy hiệu riêng cho con.',
     'Cứ gieo, gặt, nuôi như thường nghen. Không cần vội đâu. — Hagrid',
    ].map(text=>el('p',{text})));
    $('letterAction').textContent='Xem bậc Tận Sức';

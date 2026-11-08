@@ -84,7 +84,7 @@ export function decorationPlacements(scene = globalThis.FARM_SCENE, decorations 
 export function applyDefaultDecorationVisibility(garden, {itemId, visible}) {
   const fail = (reason, message) => {throw Object.assign(new Error(message), {reason});};
   if (!DEFAULT_DECOR_IDS.includes(itemId) || typeof visible !== 'boolean') fail('invalid-action-input', 'Trang trí hoặc trạng thái không hợp lệ.');
-  if (!defaultDecorChoices(garden.progression).some(entry => entry.id === itemId)) fail('decoration-not-owned', 'Bạn chưa có món trang trí này.');
+  if (!defaultDecorChoices(garden.progression).some(entry => entry.id === itemId)) fail('decoration-not-owned', 'Con chưa có món trang trí này.');
   const hidden = garden.decorations.hiddenDefaults ?? [];
   if (hidden.includes(itemId) === !visible) fail('action-noop', 'Trang trí đã ở trạng thái này.');
   if (!Number.isSafeInteger(garden.progression.revision) || garden.progression.revision >= Number.MAX_SAFE_INTEGER) fail('invalid-garden-state', 'revision không hợp lệ.');
