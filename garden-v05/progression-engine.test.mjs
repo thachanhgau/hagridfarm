@@ -85,8 +85,8 @@ function emptyCreatureProfile(level = 10) {
 
 test('approved balance exposes all crops, creatures, levels, recipes, and Vietnamese labels', () => {
   assert.equal(DB.crops.length, 32); // level-500 roadmap P3: eight bậc Tận Sức crops
-  assert.equal(DB.animals.length, 12);
-  assert.equal(DB.recipes.length, 29); // the two kit recipes were removed on 18/10/2026; 25.0 S2 added the two knits
+  assert.equal(DB.animals.length, 13); // garden expansion §2.1: Thủy quái
+  assert.equal(DB.recipes.length, 31); // the two kit recipes were removed on 18/10/2026; 25.0 S2 added the two knits; + two Thủy quái meals
   assert.equal(DB.levels.length, 500);
   assert.equal(CROP.daisy.label, 'Cúc trắng');
   assert.equal(CROP.dittany.label, 'Bạch tiễn');
@@ -514,7 +514,7 @@ test('every approved crop completes all lifecycle boundaries and harvests', () =
 });
 
 test('every approved creature reaches all juvenile milestones and claims repeated adult cycles', () => {
-  let state = testProfile(100, NOW);
+  let state = testProfile(150, NOW); // Thủy quái opens at 150 and lives in the pond built at 130
 
   for (const creature of Object.values(CREATURE)) {
     const beforeAdoptionXp = state.xp;
@@ -595,8 +595,8 @@ test('engine core remains in parity with the approved 1-100 balance source and t
   const expansionFields = ['id', 'level', 'hours', 'capacityAfter'];
   const classic = (rows) => rows.filter((row) => row.level <= 100); // level-500 roadmap P3 adds crops and plots above 100
   assert.deepEqual(selectFields(classic(DB.crops), cropFields), selectFields(patch(APPROVED.crops, 'id', KIT_TEXT.crops, 'use'), cropFields));
-  assert.deepEqual(selectFields(DB.animals, animalFields), selectFields(APPROVED.animals, animalFields));
-  assert.deepEqual(DB.recipes.filter((r) => r.station !== 'Giỏ đan của Hermione'), APPROVED.recipes.filter((r) => r.output !== 'kit')); // 25.0 S2 knits are new
+  assert.deepEqual(selectFields(classic(DB.animals), animalFields), selectFields(APPROVED.animals, animalFields)); // garden expansion adds species above 100
+  assert.deepEqual(classic(DB.recipes).filter((r) => r.station !== 'Giỏ đan của Hermione'), APPROVED.recipes.filter((r) => r.output !== 'kit')); // 25.0 S2 knits are new; garden expansion meals above 100
   assert.deepEqual(selectFields(classic(DB.expansions), expansionFields), selectFields(APPROVED.expansions, expansionFields));
   assert.deepEqual(
     selectFields(DB.levels.slice(0, 99), ['level', 'xpToNext', 'totalXP', 'plots', 'beds', 'unlock']),
@@ -617,7 +617,8 @@ test('expansions and decorations cost unlocked crops plus Galleons; the first fo
   assert.ok(DB.expansions.filter((e) => e.level <= 100).every((e) => e.galleons < 772), 'no single expansion up to level 100 costs more than a p50 day of income');
   // Level-500 roadmap §7: thửa 13–18 at 800–1.800 G, paid in bậc Tận Sức crops.
   assert.deepEqual(DB.expansions.filter((e) => e.level > 100).map((e) => [e.id, e.level, e.galleons]),
-    [['plot_13', 110, 800], ['plot_14', 130, 1000], ['plot_15', 160, 1200], ['plot_16', 200, 1400], ['plot_17', 260, 1600], ['plot_18', 330, 1800]]);
+    [['plot_13', 110, 800], ['plot_14', 130, 1000], ['plot_15', 160, 1200], ['plot_16', 200, 1400], ['plot_17', 260, 1600], ['plot_18', 330, 1800],
+     ['pond_1', 130, 800], ['pond_2', 200, 1200], ['pond_3', 320, 1600]]); // garden expansion §2.1: the pond tiers
   for (const d of DB.decorations) for (const id of Object.keys(d.cropCost)) assert.ok(CROP[id].level <= d.level, d.id);
   let state = testProfile(12, NOW);
   state.built = state.built.filter((id) => id !== 'plot_4');

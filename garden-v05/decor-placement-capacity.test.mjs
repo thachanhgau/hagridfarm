@@ -19,7 +19,8 @@ const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.jso
 const assetOf = id => manifest.items.find(item => item.id === id);
 const storeItems = STORE_CATALOG.filter(item => item.kind === 'decoration');
 const earnedIds = DB.decorations.map(item => item.id);
-const keepsakes = Object.fromEntries(Object.keys(CREATURE).map(species => [species, 1]));
+// Pond species have no statue base yet (pond-art merge, garden expansion §6).
+const keepsakes = Object.fromEntries(Object.keys(CREATURE).filter(species => CREATURE[species].habitat !== 'pond').map(species => [species, 1]));
 const heroIds = ['sp_whomping_anglia', 'hw_violet_mist_pond', 'hw_lantern_ancient_tree'];
 const heroDecorations = {
   owned: heroIds.slice(),

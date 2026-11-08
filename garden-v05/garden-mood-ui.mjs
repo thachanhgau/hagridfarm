@@ -7,18 +7,19 @@ import {COAT_STEPS} from './garden-winter.mjs?v=25.0.2';
 
 export const NORBERT='norbert';
 // Play toys (roadmap §4: Đào mỏ – đồ lấp lánh, Kneazle – cuộn len, Chó ba đầu – thổi sáo cho ngủ, HP1).
-const TOYS=Object.freeze({puffskein:'Bóng bông',bowtruckle:'Que gỗ',niffler:'Đồ lấp lánh',mooncalf:'Đèn trăng',kneazle:'Cuộn len',diricawl:'Hạt dẻ',fwooper:'Chuông nhỏ',hippogriff:'Vòng gỗ',thestral:'Dây thừng',unicorn:'Vòng hoa','three-headed-dog':'Thổi sáo',dragon:'Khúc củi',[NORBERT]:'Cuộn len đỏ'});
+const TOYS=Object.freeze({puffskein:'Bóng bông',bowtruckle:'Que gỗ',niffler:'Đồ lấp lánh',mooncalf:'Đèn trăng',kneazle:'Cuộn len',diricawl:'Hạt dẻ',fwooper:'Chuông nhỏ',hippogriff:'Vòng gỗ',thestral:'Dây thừng',unicorn:'Vòng hoa','three-headed-dog':'Thổi sáo',dragon:'Khúc củi',grindylow:'Vỏ ốc',[NORBERT]:'Cuộn len đỏ'}); // grindylow: garden expansion §2.1
 // Three tricks a species, three lessons each, one lesson a day (server LESSONS_PER_TRICK).
 export const TRICKS=Object.freeze({
  puffskein:['Lăn tròn','Thè lưỡi','Kêu rừ rừ'],bowtruckle:['Chỉ đường','Đứng im như cành','Vẫy lá'],niffler:['Đánh hơi vàng','Lộn túi','Giấu cúc áo'],
  mooncalf:['Múa dưới trăng','Nhảy lò cò','Ngước nhìn trăng'],kneazle:['Bắt tay','Rình chuột','Uốn đuôi chào'],diricawl:['Biến mất','Hiện ra','Vỗ cánh'],
  fwooper:['Hót','Đổi giọng','Hót đôi'],hippogriff:['Cúi chào','Xòe cánh','Bay vòng'],thestral:['Vẫy cánh','Gật đầu','Bay thấp'],
  unicorn:['Gật đầu','Gõ vó','Phi nước kiệu'],'three-headed-dog':['Ba đầu cùng ngồi','Bắt tay','Ngủ theo tiếng sáo'],dragon:['Phì khói','Xòe cánh','Cuộn đuôi'],
+ grindylow:['Vẫy ngón dài','Lặn sâu','Thổi bong bóng'],
  [NORBERT]:['Phì khói','Lăn tròn','Vồ cuộn len'],
 });
 const LESSONS=3;
 const RIDERS=['hippogriff','thestral'];
-const groomLabel=sp=>sp==='dragon'||sp===NORBERT?'Chải vảy':sp==='fwooper'||sp==='diricawl'?'Tắm':'Chải lông';
+const groomLabel=sp=>sp==='dragon'||sp===NORBERT?'Chải vảy':sp==='fwooper'||sp==='diricawl'?'Tắm':sp==='grindylow'?'Gỡ rêu':'Chải lông';
 export const trickNames=(species,lessons)=>(TRICKS[species]||[]).slice(0,Math.floor((lessons||0)/LESSONS));
 // What a visited garden's creatures perform (snapshot visit.tricks = {species: whole tricks}).
 export function visitShow(tricks={},labelOf=sp=>sp){

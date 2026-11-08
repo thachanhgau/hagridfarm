@@ -156,15 +156,16 @@ function chipLabel(label) {
 
 function expansionTitle(expansion) {
   const number = String(expansion.id).split('_')[1] ?? '';
+  if (expansion.kind === 'pond') return expansion.label;
   return `${expansion.kind === 'plot' ? 'Thửa' : 'Chuồng'} ${number}`;
 }
 
 function expansionEffect(expansion) {
-  return expansion.kind === 'plot' ? 'Thêm 9 ô trồng' : `Tổng ${expansion.capacityAfter} chỗ nuôi`;
+  return expansion.kind === 'plot' ? 'Thêm 9 ô trồng' : expansion.kind === 'pond' ? `${expansion.capacityAfter} ô ao` : `Tổng ${expansion.capacityAfter} chỗ nuôi`;
 }
 
 function expansionShortEffect(expansion) {
-  return expansion.kind === 'plot' ? '+9 ô trồng' : `${expansion.capacityAfter} chỗ nuôi`;
+  return expansion.kind === 'plot' ? '+9 ô trồng' : expansion.kind === 'pond' ? `${expansion.capacityAfter} ô ao` : `${expansion.capacityAfter} chỗ nuôi`;
 }
 
 function stateNow(E, state) {
@@ -456,7 +457,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     if (!choice.unlocked) reason = `Mở ở cấp ${expansion.level}`;
     else if (choice.queued && choice.ready) reason = 'Đã xong · bấm Nhận';
     else if (choice.queued) reason = 'Đang xây';
-    else if (choice.sameKindBusy) reason = `Đang xây ${expansion.kind === 'plot' ? 'thửa' : 'chuồng'} khác`;
+    else if (choice.sameKindBusy) reason = `Đang xây ${expansion.kind === 'plot' ? 'thửa' : expansion.kind === 'pond' ? 'ao' : 'chuồng'} khác`;
     else if (!choice.previousBuilt) reason = `Cần xây ${expansionTitle(choice.previous)} trước`;
     // Same order as the server: crops are checked before Galleons.
     else if (choice.missing) reason = choice.costs.some(c => c.have < c.need) ? 'Thiếu nông sản' : 'Thiếu Galleons';

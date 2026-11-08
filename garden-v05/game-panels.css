@@ -541,3 +541,47 @@
 #gameShell #panel .journey-unlock-meta,#gameShell :is(#panel,.store-popover,.owl-letter) .recipe-output-copy small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal;overflow:hidden;text-overflow:clip;line-height:1.3}
 /* Level-160 luân canh: a seed that would harvest tired on the selected plot («−25%»). */
 #playDock .item-tray .seed-tired{position:absolute;top:1px;right:1px;padding:0 2px;border-radius:2px;background:#874056;color:#FFC36B;font-size:11px;line-height:13px;font-weight:700;font-variant-numeric:tabular-nums;pointer-events:none}
+/* Garden expansion phase 1 «Hồ nuôi» (garden-pond-ui.mjs): one frame (the dock), bare rows on one grid, 44 px targets. */
+#playDock #pondDock{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;align-content:start}
+#playDock #pondDock[hidden]{display:none}
+#pondDock .pond-head,#pondDock .pond-row-head,#pondDock .pond-creature{display:flex;align-items:center;gap:8px;min-width:0}
+#pondDock .pond-head{flex-wrap:wrap}
+#pondDock .pond-title{display:flex;align-items:baseline;gap:8px;min-width:0;flex:1 1 auto}
+#pondDock .pond-title strong{font-size:16px;color:#F5D69A;white-space:nowrap}
+#pondDock .pond-meta,#pondDock .pond-label{font-size:12px;color:#d6c99c;white-space:nowrap;font-variant-numeric:tabular-nums}
+#pondDock .pond-label{font-weight:700;text-transform:uppercase;letter-spacing:.08em;flex:1 1 auto}
+#pondDock .pond-actions{display:flex;gap:8px;flex:1 1 100%}
+#pondDock .pond-action{flex:1 1 0;min-width:0;min-height:44px;display:flex;align-items:center;justify-content:center;gap:4px;padding:4px 8px;font-size:12px;font-weight:700;white-space:nowrap}
+#pondDock .pond-action span{overflow:hidden;text-overflow:ellipsis}
+#pondDock .pond-pick{display:flex;gap:4px}
+#pondDock .pond-pick button{min-width:56px;min-height:44px;display:flex;align-items:center;justify-content:center;gap:4px;padding:2px 8px;font-variant-numeric:tabular-nums}
+#pondDock .pond-pick button[aria-pressed=true]{box-shadow:inset 0 0 0 2px #F5D69A}
+#pondDock .pond-tiles{display:flex;flex-wrap:wrap;gap:8px}
+#pondDock :is(.pond-lot,.pond-bed){position:relative;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px;font-variant-numeric:tabular-nums}
+#pondDock .pond-lot{width:52px;min-width:52px}
+#pondDock .pond-bed{min-width:72px}
+#pondDock :is(.pond-lot,.pond-bed) small{font-size:11px;line-height:13px;color:#d6c99c;white-space:nowrap}
+#pondDock :is(.pond-lot,.pond-bed).is-ripe{box-shadow:inset 0 0 0 2px #FFC36B}
+#pondDock :is(.pond-lot,.pond-bed).is-ripe small{color:#FFC36B;font-weight:700}
+#pondDock .pond-lot.is-empty{opacity:.85}
+#pondDock .pond-cells{display:flex;gap:4px}
+#pondDock .pond-cell{width:20px;height:20px;display:grid;place-items:center;border-radius:4px;background:#24483F}
+#pondDock .pond-cell.is-ripe{background:#3F6A45}
+#pondDock .pond-creature-art{width:32px;height:32px;display:grid;place-items:center;flex:none}
+#pondDock .pond-food{display:flex;align-items:center;gap:4px;font-variant-numeric:tabular-nums;color:#F5D69A}
+#pondDock .pond-care{min-width:64px;min-height:44px}
+#pondDock .pond-costs{display:flex;flex-wrap:wrap;gap:8px}
+#pondDock.is-murky .pond-title strong{color:#B0BD67}
+@media(max-width:440px){#pondDock .pond-lot{width:48px;min-width:48px}#pondDock .pond-bed{min-width:72px}#pondDock .pond-pick button{min-width:52px;padding:2px 4px}}
+/* «Câu cá»: the pond, a bobber, the bar with zone and sweet bands, one tap. */
+.pond-cast .cast-stage{position:relative;width:max-content;margin:0 auto 12px}
+.pond-cast .cast-stage img{display:block;image-rendering:pixelated}
+.pond-cast .cast-bobber{position:absolute;left:calc(50% - 4px);top:42%;width:8px;height:10px;background:linear-gradient(#C75B4B 0 50%,#D6D8BF 50%);border:1px solid #231F2E;border-radius:4px 4px 2px 2px}
+.pond-cast .cast-bar{position:relative;height:24px;margin:0 0 12px;border:2px solid #231F2E;border-radius:4px;background:#24483F;overflow:hidden}
+.pond-cast .cast-zone,.pond-cast .cast-sweet{position:absolute;top:0;bottom:0}
+.pond-cast .cast-zone{background:#3F6A45}
+.pond-cast .cast-sweet{background:#E2B866}
+.pond-cast .cast-marker{position:absolute;top:-2px;bottom:-2px;width:4px;margin-left:-2px;background:#F5EADB;box-shadow:0 0 0 1px #231F2E}
+.pond-cast .cast-bar[data-band=sweet] .cast-marker{background:#FFF0C2}
+.pond-cast .cast-result{display:flex;align-items:center;justify-content:center;gap:8px;min-height:28px;margin:0 0 12px;font-variant-numeric:tabular-nums}
+.pond-cast .cast-tap{width:100%;min-height:48px}

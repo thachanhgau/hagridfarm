@@ -38,12 +38,21 @@ const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MAX_EVENTS = 64;
 const PLOT_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'plot'));
 const PEN_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'pen'));
+// Garden expansion phase 1 (docs/garden-expansion-plan.md §2.1): the pond tiers, and the species that live in it
+// (their own POND_CREATURE_SPOTS, apart from the pens' land spots). Same rule as HPVN garden-model/garden-state.mjs.
+export const POND_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'pond'));
+export const POND_SPECIES = new Set(DB.animals.filter((entry) => entry.habitat === 'pond').map((entry) => entry.id));
+export const POND_CREATURE_SPOTS = 2;
+const expansionCollection = (kind) => (kind === 'plot' ? PLOT_EXPANSIONS : kind === 'pond' ? POND_EXPANSIONS : PEN_EXPANSIONS);
 const LAYOUT_COUNTS = Object.freeze({ plots: 18, pens: 6 });
 // Level-500 roadmap P3: saves from before thửa 13–18 hold 12 plot sockets and none of the bậc Tận Sức crops.
 const LEGACY_PLOT_SOCKETS = 12;
 // Saves from before these ids existed lack them: bậc Tận Sức crops (level-500 P3) and the 25.0 S2 knits.
 const LATE_CROP_IDS = new Set(DB.crops.filter((crop) => crop.level > TAN_SUC_LEVEL).map((crop) => crop.id));
 for (const id of ['elf_hat', 'elf_sock']) LATE_CROP_IDS.add(id);
+// Garden expansion phase 1: the pond's goldfish and every pond species' feed and produce.
+LATE_CROP_IDS.add('goldfish');
+for (const animal of DB.animals) if (animal.habitat === 'pond') { LATE_CROP_IDS.add(animal.feed); LATE_CROP_IDS.add(`produce_${animal.id}`); }
 const DECORATIONS = Object.freeze(Object.fromEntries(DB.decorations.map((entry) => [entry.id, entry])));
 const CROP_IDS = Object.freeze(Object.keys(CROP));
 const CREATURE_IDS = Object.freeze(Object.keys(CREATURE));
@@ -59,6 +68,7 @@ for (const species of CREATURE_IDS) {
   inventoryIdSet.add(CREATURE[species].feed);
   inventoryIdSet.add(`produce_${species}`);
 }
+inventoryIdSet.add('goldfish'); // pond «Kéo lưới» (fish was already a recipe output)
 const INVENTORY_IDS = Object.freeze([...inventoryIdSet]);
 const INVENTORY_ID_SET = new Set(INVENTORY_IDS);
 const CREATURE_ID_SET = new Set(CREATURE_IDS);
@@ -217,6 +227,11 @@ function expansionCapacity(built) {
     if (built.includes(entry.id)) capacity = entry.capacityAfter;
   }
   return capacity;
+}
+
+/** Spots for pond species: POND_CREATURE_SPOTS once the first pond tier is built. */
+export function pondCapacity(built) {
+  return POND_EXPANSIONS.length && built.includes(POND_EXPANSIONS[0].id) ? POND_CREATURE_SPOTS : 0;
 }
 
 /** Return the number of housed creatures allowed by the claimed pen builds. */
@@ -452,7 +467,7 @@ function normalizeBuilt(raw, level) {
     seen.add(id);
   }
   for (const id of BASE_PLOT_IDS) if (!seen.has(id)) reject('INVALID_STATE', 'the three starting plots must remain built');
-  for (const collection of [PLOT_EXPANSIONS, PEN_EXPANSIONS]) {
+  for (const collection of [PLOT_EXPANSIONS, PEN_EXPANSIONS, POND_EXPANSIONS]) {
     for (let index = 1; index < collection.length; index += 1) {
       if (seen.has(collection[index].id) && !seen.has(collection[index - 1].id)) {
         reject('INVALID_STATE', `built ${collection[index].id} is missing its prerequisite`);
@@ -473,8 +488,8 @@ function normalizeConstruction(raw, built, level) {
     if (built.includes(id) || seen.has(id)) reject('INVALID_STATE', `expansion ${id} is already built or queued`);
     if (entry.level > level) reject('INVALID_STATE', `construction ${id} is above current level`);
     if (kinds.has(entry.kind)) reject('STATION_BUSY', `only one ${entry.kind} construction may run at once`);
-    const prior = (entry.kind === 'plot' ? PLOT_EXPANSIONS : PEN_EXPANSIONS).findIndex((candidate) => candidate.id === id);
-    if (prior > 0 && !built.includes((entry.kind === 'plot' ? PLOT_EXPANSIONS : PEN_EXPANSIONS)[prior - 1].id)) {
+    const prior = expansionCollection(entry.kind).findIndex((candidate) => candidate.id === id);
+    if (prior > 0 && !built.includes(expansionCollection(entry.kind)[prior - 1].id)) {
       reject('PREREQUISITE', `construction ${id} is missing its prerequisite`);
     }
     const startedAt = assertFiniteTime(job.startedAt, 'construction.startedAt');
@@ -581,13 +596,14 @@ function normalizeState(raw) {
   if (!Array.isArray(creaturesRaw)) reject('INVALID_STATE', 'creatures must be an array');
   const seenSpecies = new Set();
     const creatures = creaturesRaw.map((entry) => normalizeCreature(entry, seenIds, seenSpecies, level));
-  if (creatures.length > expansionCapacity(built)) reject('HOUSING_FULL', 'creatures exceed built housing capacity');
+  const inPond = creatures.filter((entry) => POND_SPECIES.has(entry.species)).length;
+  if (creatures.length - inPond > expansionCapacity(built) || inPond > pondCapacity(built)) reject('HOUSING_FULL', 'creatures exceed built housing capacity');
   if (!isPlainObject(raw.keepsakes)) reject('INVALID_STATE', 'keepsakes must be an object');
   for (const id of Object.keys(raw.keepsakes)) if (!CREATURE_ID_SET.has(id)) reject('UNKNOWN_CREATURE', `unknown keepsake species: ${id}`);
   const keepsakes = emptyKeepsakes();
   for (const species of CREATURE_IDS) {
-    if (!Object.prototype.hasOwnProperty.call(raw.keepsakes, species)) reject('INVALID_STATE', `keepsakes.${species} is missing`);
-    keepsakes[species] = assertNonNegativeInteger(raw.keepsakes[species], `keepsakes.${species}`);
+    if (!Object.prototype.hasOwnProperty.call(raw.keepsakes, species) && !POND_SPECIES.has(species)) reject('INVALID_STATE', `keepsakes.${species} is missing`);
+    keepsakes[species] = assertNonNegativeInteger(raw.keepsakes[species] ?? 0, `keepsakes.${species}`);
   }
   if (!Array.isArray(raw.decorations)) reject('INVALID_STATE', 'decorations must be an array');
   const decorations = [];
@@ -860,8 +876,12 @@ export function adopt(state, species, wallNow) {
   const { base, logicalNow } = stateAndTime(state, wallNow);
   requireCreatureUnlocked(base, species);
   if (base.creatures.some((entry) => entry.species === species)) reject('ALREADY_ADOPTED', `${species} is already housed`);
-  const capacity = expansionCapacity(base.built);
-  if (base.creatures.length >= capacity) reject('HOUSING_FULL', 'build a pen before adopting another creature');
+  // Pond species live in the pond's own spots (garden expansion §2.1), apart from the pens.
+  const inPond = POND_SPECIES.has(species);
+  const housed = base.creatures.filter((entry) => POND_SPECIES.has(entry.species) === inPond).length;
+  if (housed >= (inPond ? pondCapacity(base.built) : expansionCapacity(base.built))) {
+    reject('HOUSING_FULL', inPond ? 'build the pond before adopting a pond creature' : 'build a pen before adopting another creature');
+  }
   const config = CREATURE[species];
   const starterGrant = species === 'puffskein' ? DB.limits.starterFeed : 0;
   const adoptionPrep = species === 'puffskein' ? 0 : config.mealPortions * 3;
@@ -982,7 +1002,7 @@ export function claimCraft(state, wallNow) {
 }
 
 function previousExpansion(entry) {
-  const collection = entry.kind === 'plot' ? PLOT_EXPANSIONS : PEN_EXPANSIONS;
+  const collection = expansionCollection(entry.kind);
   const index = collection.findIndex((candidate) => candidate.id === entry.id);
   return index > 0 ? collection[index - 1] : null;
 }

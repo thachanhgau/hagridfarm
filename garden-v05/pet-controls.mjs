@@ -9,7 +9,9 @@ export function petControlState({E,state,species,now,ready=true}) {
  const have=state.inventory[config.feed]||0, mealsDone=animal?.mealsCompleted||0;
  const adult=mealsDone>=config.mealsToAdult;
  const need=animal?config.mealPortions:species==='puffskein'?0:config.mealPortions*3;
- const shortage=Math.max(0,need-have), capacity=E.housingCapacity(state);
+ // Pond species (garden expansion §2.1) live in the pond's own spots, apart from the pens.
+ const pond=Boolean(E.POND_SPECIES?.has(species)), housed=state.creatures.filter(a=>Boolean(E.POND_SPECIES?.has(a.species))===pond).length;
+ const shortage=Math.max(0,need-have), capacity=pond?E.pondCapacity(state.built):E.housingCapacity(state);
  let phase, hint, help=null, command=null;
  if(animal?.meal) {
   phase=animal.meal.readyAt<=now?'ready':'eating';
@@ -17,8 +19,8 @@ export function petControlState({E,state,species,now,ready=true}) {
   if(phase==='ready')command={action:'claimAnimals',species};
  } else if(!animal&&config.level>state.level) {
   phase='locked';hint=`Mở ở cấp ${config.level}.`;help='roadmap';
- } else if(!animal&&state.creatures.length>=capacity) {
-  phase='no-space';hint='Cần thêm chỗ nuôi. Xây chuồng trước khi đón bé.';help='build';
+ } else if(!animal&&housed>=capacity) {
+  phase='no-space';hint=pond?'Cần đào ao trước khi đón bé.':'Cần thêm chỗ nuôi. Xây chuồng trước khi đón bé.';help=pond?'pond':'build';
  } else if(shortage) {
   phase='no-food';hint=`Thiếu ${shortage} phần ăn${animal?' cho bữa này':' để đón bé'}.`;help='food';
  } else {
@@ -28,7 +30,7 @@ export function petControlState({E,state,species,now,ready=true}) {
  }
  const remaining=animal?.meal?Math.max(0,animal.meal.readyAt-now):0;
  const badge=phase==='ready'?(adult?'Có quà':'Xong bữa'):phase==='eating'?'Đang ăn':animal?'Đói':phase==='locked'?`Cấp ${config.level}`:'Chưa đón';
- return {phase,hint,help,command,canAct:ready&&!!command,animal,config,have,need,shortage,capacity,mealsDone,adult,remaining,badge};
+ return {phase,hint,help,command,canAct:ready&&!!command,animal,config,have,need,shortage,capacity,housed,mealsDone,adult,remaining,badge};
 }
 
 // Choose only when the player opens the dock. Timer refreshes must preserve their selection.
@@ -117,12 +119,12 @@ export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null
   $('petOwnedTab').textContent=`Đang nuôi (${state.creatures.length})`;
   $('petOwnedTab').setAttribute('aria-pressed',group==='owned');
   $('petAdoptTab').setAttribute('aria-pressed',group==='adopt');
-  $('petHousing').textContent=`${state.creatures.length}/${view.capacity} chỗ`;
+  $('petHousing').textContent=`${view.housed}/${view.capacity} chỗ`;
   const owned=new Set(state.creatures.map(a=>a.species));
   let visible=0;
   for(const [id,{control,badge}] of entries) {
    const item=petControlState({E,state,species:id,now:getNow(),ready:getReady()});
-   control.hidden=owned.has(id)!==(group==='owned');
+   control.hidden=owned.has(id)!==(group==='owned')||(E.POND_SPECIES?.has(id)&&state.level<130); // pond species from level 130
    if(!control.hidden)visible++;
    control.setAttribute('aria-pressed',id===species);
    control.dataset.phase=item.phase;

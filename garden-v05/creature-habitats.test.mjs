@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {HABITAT_ART} from './complete-object-art.mjs';
-import {CREATURE} from './progression-engine.mjs';
+import {CREATURE,POND_SPECIES} from './progression-engine.mjs';
+// Pond species live in the pond, not a pen: no pen habitat props (garden expansion §2.1).
 import {HABITAT_SPECIES,habitatAnchors,habitatResidents,habitatPhase,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs';
 const iso=(col,row)=>[1120+(col-row)*32,300+(col+row)*16];
 const pen={id:'pen_1',col:27,row:0,width:5,height:3};
@@ -9,7 +10,7 @@ const spots=[[27.35,1.35],[31.35,1.35]],creatures=[{species:'niffler'},{species:
 const imageFor=file=>({file});
 const record=(fn)=>{const calls=[];const ctx={fillRect(...args){assert(args.every(Number.isInteger));calls.push([this.fillStyle,...args]);},drawImage(image,x,y){assert(Number.isInteger(x)&&Number.isInteger(y));calls.push([image.file,x,y]);}};fn(ctx);return calls;};
 test('every adoptable species has distinct habitat artwork',()=>{
- assert.deepEqual([...HABITAT_SPECIES].sort(),Object.keys(CREATURE).sort());
+ assert.deepEqual([...HABITAT_SPECIES].sort(),Object.keys(CREATURE).filter(s=>!POND_SPECIES.has(s)).sort());
  const art=HABITAT_SPECIES.map(species=>JSON.stringify(record(c=>drawHabitatProps(c,[{species,xy:[100,100]}],{imageFor}))));
  assert.equal(new Set(art).size,HABITAT_SPECIES.length);
 });

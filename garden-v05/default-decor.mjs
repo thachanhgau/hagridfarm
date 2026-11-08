@@ -52,9 +52,10 @@ for (const id of DECORATION_IDS) {
   if (!DECORATION_LAYOUT[id]) throw new Error(`Thiếu layout trang trí ${id}.`);
 }
 
-/** Ground size [long, short] of a garden default, same as functions/games/garden-default-footprints.json. */
-export function defaultDecorFootprint(id) {
-  if (id === 'scene:pond') return [3, 2];
+/** Ground size [long, short] of a garden default, same as functions/games/garden-default-footprints.json. A built pond
+ *  (garden expansion §2.1) takes its tier's ground: [3, 2], [4, 3], [5, 4] (`built` = the save's built expansion ids). */
+export function defaultDecorFootprint(id, built = []) {
+  if (id === 'scene:pond') return DB.expansions.filter(e => e.kind === 'pond' && built?.includes?.(e.id)).at(-1)?.footprint ?? [3, 2];
   const d = DECORATION_LAYOUT[id];
   return d ? [d.height, d.width] : [1, 1];
 }

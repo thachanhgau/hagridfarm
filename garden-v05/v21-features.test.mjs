@@ -59,7 +59,7 @@ test('V21 Direction 1: drawKeepsake renders species statuettes and every earned 
   drawKeepsake(ctxFallback, {species: 'three-headed-dog', count: 1, xy: [520, 400]}, 0);
   assert.equal(ctxFallback.calls.length,0,'missing image has no procedural produce/pedestal substitute');
 
-  const produceIds = E.DB.animals.map(({id}) => `produce_${id}`);
+  const produceIds = E.DB.animals.filter(a => a.habitat !== 'pond').map(({id}) => `produce_${id}`); // pond produce art: pond-art merge
   assert.equal(produceIds.length, 12);
   assert.equal(new Set(produceIds.map((id) => ITEM_ART[id]?.file)).size, 12);
   for (const id of produceIds) {
@@ -190,7 +190,7 @@ test('V21 Direction 2: renderPostcardCanvas composites 960x620 Hogwarts postcard
   );
 
   const almanac = buildAlmanacChains(E.DB, state);
-  assert.equal(almanac.creatureChains.length, 12);
+  assert.equal(almanac.creatureChains.length, 13); // + Thủy quái (garden expansion §2.1)
   assert.equal(almanac.cropUsages.length, 32);
   for (const chain of almanac.creatureChains) {
     assert.ok(chain.ingredients.length >= 1, `Creature ${chain.creatureId} should list feed ingredients`);

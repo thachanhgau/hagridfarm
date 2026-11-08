@@ -86,7 +86,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
  const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??[o.col,o.row]}));
  // The pond is a garden default: its ground follows the decoration rule, like when it is moved.
- for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond')):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
+ for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond',state?.built)):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
  if(rectsOverlap(rect,COTTAGE_GROUND))return 'Chỗ này vướng lều Hagrid.';
  if(rectsOverlap(rect,HEARTH_GROUND))return 'Chỗ này là lò sưởi Giáng sinh.';
  if(rectsOverlap(rect,FEAST_GROUND))return 'Chỗ này là bàn tiệc Đêm Noel.';
@@ -120,9 +120,9 @@ export function defaultDecorHome(id,map,stage,rotations={}){
 }
 
 /** Art and ground size of a garden default (pond, earned decoration, keepsake statue) for the placement bar. */
-export function defaultDecorItem(id,label,map){
+export function defaultDecorItem(id,label,map,built=[]){
  const art=id==='scene:pond'?map?.props?.find(p=>p.id==='pond'):id.startsWith('keepsake:')?KEEPSAKE_ART[id.slice(9)]:earnedDecorArt(id);
- return {...art,id,label,isDefault:true,footprint:defaultDecorFootprint(id)};
+ return {...art,id,label,isDefault:true,footprint:defaultDecorFootprint(id,built)};
 }
 const nearestFree=(grid,[col,row],reach)=>{
  let best=null,bd=reach;

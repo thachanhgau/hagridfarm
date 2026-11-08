@@ -89,8 +89,9 @@ const findCanonicalServerModule = () => {
 
 test('placement space matches the final 33.5-row scene edge', () => {
   assert.deepEqual(DECORATION_SPACE, {minCol: -5, maxCol: 33, minRow: -1, maxRow: 33.5});
-  assert.equal(KEEPSAKE_DISPLAY_LAYOUT.length, Object.keys(CREATURE).length);
-  assert.deepEqual(KEEPSAKE_DISPLAY_LAYOUT.map(entry => entry.species), Object.keys(CREATURE));
+  const land = Object.keys(CREATURE).filter(species => CREATURE[species].habitat !== 'pond'); // pond statues: pond-art merge
+  assert.equal(KEEPSAKE_DISPLAY_LAYOUT.length, land.length);
+  assert.deepEqual(KEEPSAKE_DISPLAY_LAYOUT.map(entry => entry.species), land);
   // Owner 27/10/2026: statue bases fill whole cells (cells are centred on whole numbers).
   assert.deepEqual(KEEPSAKE_LEGACY_LAYOUT.map(entry => entry.col + .5), [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]);
   assert.equal(decorationSpaceContains(DECORATION_SPACE.minCol, DECORATION_SPACE.minRow), true);

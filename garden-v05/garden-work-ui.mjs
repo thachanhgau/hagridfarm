@@ -6,7 +6,7 @@ import {pixelIcon,iconButton} from './pixel-icons.mjs?v=25.0.2';
 import {CROP,CREATURE} from './balance-data.mjs?v=25.0.2';
 
 const HOUSE_COLORS = Object.freeze({gryffindor:'#C75B4B',hufflepuff:'#FFC36B',ravenclaw:'#3E3B70',slytherin:'#3F6A45'}); // palette.mjs only
-const CRAFTED = Object.freeze({insects:'Côn trùng',fish:'Cá nhỏ',elf_hat:'Nón len gia tinh',elf_sock:'Vớ len gia tinh'}); // = mobile-game labels
+const CRAFTED = Object.freeze({insects:'Côn trùng',fish:'Cá nhỏ',goldfish:'Cá vàng',elf_hat:'Nón len gia tinh',elf_sock:'Vớ len gia tinh'}); // = mobile-game labels
 const labelOf = id => CROP[id]?.label || (id.startsWith('produce_') ? CREATURE[id.slice(8)]?.produce : null) || CRAFTED[id]
  || (FEED_CREATURE_MAP[id] ? `Khẩu phần ${CREATURE[FEED_CREATURE_MAP[id]]?.label}` : null) || id;
 const meter = (done,target) => el('div',{class:'gp-meter',role:'progressbar','aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(done)},[el('span',{style:`width:${Math.min(100,Math.round(done/Math.max(1,target)*100))}%`})]);

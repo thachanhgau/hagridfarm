@@ -5,6 +5,10 @@ import { DB } from './balance-data.mjs?v=24.9.65';
 import { ITEM_ART } from './item-art.mjs?v=25.0.2';
 import { FLOW_ITEM_ART } from './flow-item-art.mjs?v=25.0.2';
 import { KEEPSAKE_ART } from './complete-object-art.mjs?v=25.0.2';
+// Pond species (garden expansion §2.1): their feed, produce, recipe and statue art come with the pond-art merge (plan §6).
+const POND_FEEDS = new Set(DB.animals.filter(a => a.habitat === 'pond').map(a => a.feed));
+const ANIMALS = DB.animals.filter(a => a.habitat !== 'pond');
+const RECIPES = DB.recipes.filter(r => !POND_FEEDS.has(r.output));
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }
@@ -79,8 +83,8 @@ function findClass(node, className) {
 
 test('item art covers every recipe, produce and earned decoration identity', () => {
  const ids = [
-  ...DB.recipes.map(recipe => `recipe_${recipe.id}`),
-  ...DB.animals.map(animal => `produce_${animal.id}`),
+  ...RECIPES.map(recipe => `recipe_${recipe.id}`),
+  ...ANIMALS.map(animal => `produce_${animal.id}`),
   ...DB.decorations.map(decoration => decoration.id),
  ];
  const missing = ids.filter(id => !ITEM_ART[id]?.file);
@@ -100,12 +104,12 @@ test('item art covers every recipe, produce and earned decoration identity', () 
 
 test('canonical outputs use shared flow art while recipe cards keep variant art', () => {
  const items = new Map();
- for (const recipe of DB.recipes) {
+ for (const recipe of RECIPES) {
   const key = `recipe_${recipe.id}`;
   assert.equal(itemArtKey(key), key);
   assert.equal(findAttribute(visualItemIcon(items, key, { size: 44 }), 'data-art-key'), key);
  }
- for (const output of new Set(DB.recipes.map(recipe => recipe.output))) {
+ for (const output of new Set(RECIPES.map(recipe => recipe.output))) {
   const key = itemArtKey(output);
   assert.equal(key, `recipe_${output}`);
   assert.ok(ITEM_ART[key]?.file, `Missing canonical output art for ${output}`);
@@ -154,7 +158,7 @@ test('shared inventory and reward surfaces route crop ids to harvest art', () =>
 
 test('produce keeps its product art while inventory keepsakes use world statues without a cup badge', () => {
  const items = new Map([['puffskein', { frames: [{}, {}, {}, { file: 'creature.png', width: 48, height: 48, bounds: { x: 0, y: 0, w: 48, h: 48 } }] }]]);
- for (const animal of DB.animals) {
+ for (const animal of ANIMALS) {
   const key = `keepsake_${animal.id}`;
   assert.ok(KEEPSAKE_ART[animal.id]?.file, key);
   assert.equal(itemArtKey(key, { kind: 'keepsake' }), key);
@@ -184,7 +188,7 @@ test('supply aliases, expansions, earned decorations and level fallbacks retain 
   }
  }
 
- for (const animal of DB.animals) {
+ for (const animal of ANIMALS) {
   for (const id of [animal.feed, `produce_${animal.id}`]) {
    assert.ok(itemArtKey(id), `Missing canonical art for ${id}`);
    assert.equal(findClass(visualItemIcon(new Map(), id, {size:44}), 'is-art-missing'), null, id);

@@ -1,6 +1,6 @@
 import {applyDefaultDecorationVisibility} from '../garden-v05/default-decor.mjs?v=24.9.81';
-import * as E from "../garden-v05/progression-engine.mjs?v=24.9.63";
-import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=24.9.40";
+import * as E from "../garden-v05/progression-engine.mjs?v=25.0.2";
+import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=25.0.2";
 import {decorFootprintRect,rectsOverlap} from "../garden-v05/decor-runtime.mjs?v=24.9.40";
 import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.40";
 import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.40";
@@ -38,7 +38,7 @@ const fail=(reason,message,details={})=>{const e=Error(message);e.definitive=tru
 const stable=v=>JSON.stringify(v,Object.keys(v).sort());
 
 /** `day` (YYYY-MM-DD) moves only the Vietnam calendar day, for festival QA; crop timers keep real time. */
-export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,fireMode=null,helpers=false,missions=false,weather=null,duty=false,now=()=>Date.now()}={}){
+export function createFixtureServer({level=100,scenario="empty",simulate=false,day=null,quests=null,points=0,galleons=null,previewHalloween=false,fireMode=null,helpers=false,missions=false,weather=null,duty=false,murky=false,now=()=>Date.now()}={}){
  // «Thăm vườn» / «Đốt vườn» QA (01/11/2026): ?fire=visual|real burns this garden, ?helpers=1 has three helpers today.
  let fire=fireMode?{mode:fireMode,since:now(),until:now()+2*3600000+5*60000,burned:fireMode==='real'?27:0}:null;
  const helperRows=helpers?[['u1','tara'],['u2','Linh'],['u3','Mai Phương']].map(([uid,name],i)=>({uid,name,at:now()-(3-i)*60000})):[];
@@ -78,6 +78,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   for(const dec of E.DB.decorations)if(dec.level<=Math.min(level,40)&&state.decorations.length<6&&!state.decorations.includes(dec.id))state.decorations.push(dec.id);
   state.decorationRotations={"decoration-7":"right","decoration-23":"right"};
   state.creatureFacings={puffskein:"default",bowtruckle:"right",niffler:"default",kneazle:"right",hippogriff:"default",unicorn:"right"};
+  if(level>=150&&state.built.includes('pond_1')&&!state.creatures.some(c=>c.species==='grindylow'))state.creatures.push({id:'creature-grindylow',type:'creature',species:'grindylow',level:150,adoptedAt:origin-48*3600000,mealsCompleted:6,meal:null,cyclesClaimed:0,preview:false});
   if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{})};
  }
  // Asset-overlap QA (05/11/2026): every earned decoration at home and a ripe crop on every cell of every plot.
@@ -103,6 +104,12 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   premium:{felix:null,nests:[]},
   mastery:fresh?{}:{pumpkin:120,daisy:460,strawberry:1350,oats:95,carrot:200,lettuce:91},cup:{weekKey:'',points:0},
  };
+ // Garden expansion phase 1 «Hồ nuôi» (HPVNN garden pond core, simplified): from level 130 four carp and two goldfish
+ // fry; a built pond starts with one ripe lot, one growing, and a bed with a ripe and a growing cell. ?murky=1: «đục rêu».
+ if(!fresh&&level>=130)Object.assign(garden.supplies,{fryCarp:4,fryGoldfish:2});
+ garden.pond={lots:[],beds:[],murkySince:murky?now()-50*3600000:null,castDay:null,token:null};
+ syncPondSize(garden);
+ if(garden.pond.lots.length){garden.pond.lots[0]={fry:'carp',readyAt:now()-60000};garden.pond.lots[1]={fry:'goldfish',readyAt:now()+3*3600000};garden.pond.beds[0]=[{species:'silverkelp',readyAt:now()-60000},{species:'silverkelp',readyAt:now()+2*3600000},null];}
  if(scenario==="removable-decor"){garden.progression.decorations=["decoration-7"];garden.progression.keepsakes.puffskein=1;garden.decorations.placements=[null,null,null,null,null,null];}
  const wallet={spendable,balance:spendable-bankBalance,bankBalance};
  const dailies=new Map(),ops=new Map(),ledger=[];
@@ -190,7 +197,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Server garden-retention-core views (QA approximation: fixed board, orders drawn per day from the unlocked crops).
    ...retentionViews(d),...(missions?missionViews():{}),flooFrames:{frames:frameViews(),worn:wornFrame},saleAdmin:true,
    serverNow:now(),profile:{username:"Xem thử · không lưu"},fire:fire&&fire.until>now()?fire:null,helpers:helperRows,
-   ...soilViews(),...(duty&&garden.progression.level>=130?{duty:dutyQaView()}:{}),
+   ...soilViews(),...(duty&&garden.progression.level>=130?{duty:dutyQaView()}:{}),pond:pondView(),
    ...(receipt?{receipt}:{}),
   });
  }
@@ -407,6 +414,63 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   return {level:130,on:true,since:now()-86400000,leave:null,leaveLeftMs:7*86400000,leaveDays:7,wilted:[],dead:[],gnomes:[],sick:[],fled:[],
    clocks:{wilt:now()+5*3600000,dies:null,gnome:now()+20*3600000,sick:null,forest:null,fire:null},curePrice:garden.progression.level*10,lureMeals:2,owlDay:vnDayKey(now())};
  }
+ // Pond tiers come from the built pond_1..3; lots = the tier's capacityAfter, beds 2 at tier 1 and 4 from tier 2.
+ function pondTierOf(p){return E.POND_EXPANSIONS.filter(e=>p.built.includes(e.id)).length;}
+ function syncPondSize(g){
+  const tier=pondTierOf(g.progression),lots=tier?E.POND_EXPANSIONS[tier-1].capacityAfter:0,beds=tier>=2?4:tier?2:0;
+  while(g.pond.lots.length<lots)g.pond.lots.push(null);
+  while(g.pond.beds.length<beds)g.pond.beds.push([null,null,null]);
+ }
+ function pondView(){
+  const p=garden.progression;if(p.level<130)return null;
+  syncPondSize(garden);
+  const tier=pondTierOf(p),pd=garden.pond,t=now(),ripe=x=>x?{...x,ripe:x.readyAt<=t}:null;
+  return {unlockLevel:130,tier,footprint:E.POND_EXPANSIONS[Math.max(0,tier-1)].footprint,lots:pd.lots.map(ripe),beds:pd.beds.map(b=>b.map(ripe)),
+   bedCrops:["silverkelp","gillyweed","fluxweed"],murky:Boolean(pd.murkySince),murkySince:pd.murkySince,
+   fry:{carp:garden.supplies.fryCarp||0,goldfish:garden.supplies.fryGoldfish||0},
+   cast:{today:pd.castDay===dayKey(),token:pd.token&&pd.token.expiresAt>t?pd.token:null},creatureSpots:tier?2:0};
+ }
+ // Server pond actions (stock, net, plant, harvest, clean, castStart, cast); receipt.pond. Fish grow at half speed while murky.
+ const BED_CROPS=["silverkelp","gillyweed","fluxweed"];
+ function pondAct(c,next,extra){
+  const p=next.progression,pd=next.pond,s=next.supplies,t=now(),scale=growthScale(p.level),out={kind:c.kind};
+  if(p.level<130||!pondTierOf(p))fail("pond-not-built","Chưa đào ao.");
+  syncPondSize(next);
+  const add=(items,id,n)=>{items[id]=(items[id]||0)+n;p.inventory[id]=(p.inventory[id]||0)+n;};
+  switch(c.kind){
+   case "stock":{
+    const key={carp:"fryCarp",goldfish:"fryGoldfish"}[c.fry];
+    if(!key||!Number.isInteger(c.lot)||c.lot<0||c.lot>=pd.lots.length)fail("invalid-action-input","Ô ao hoặc cá giống không hợp lệ.");
+    if(pd.lots[c.lot])fail("lot-busy","Ô ao này đang có cá.");
+    if(!(s[key]>0))fail("missing-supply","Hết cá giống.",{resource:key,required:1});
+    s[key]-=1;pd.lots[c.lot]={fry:c.fry,readyAt:t+Math.round((c.fry==="carp"?4:8)*3600000*scale*(pd.murkySince?2:1))};break;}
+   case "net":{const items={};pd.lots=pd.lots.map(l=>{if(!l||l.readyAt>t)return l;add(items,l.fry==="carp"?"fish":"goldfish",l.fry==="carp"?3:1);return null;});
+    if(!Object.keys(items).length)fail("action-noop","Chưa có ô ao nào chín.");out.items=items;break;}
+   case "plant":{
+    const bed=pd.beds[c.bed],crop=E.CROP[c.species],cells=[...new Set(c.cells||[])];
+    if(!bed||!BED_CROPS.includes(c.species)||crop.level>p.level)fail("invalid-action-input","Luống hoặc cây không hợp lệ.");
+    if(!cells.length||cells.some(i=>!Number.isInteger(i)||i<0||i>2||bed[i]))fail("invalid-action-input","Ô luống không trống.");
+    if((s.seeds[c.species]||0)<cells.length||s.water<cells.length)fail("missing-supply","Thiếu hạt hoặc nước.",{resource:`seeds.${c.species}`,required:cells.length});
+    s.seeds[c.species]-=cells.length;s.water-=cells.length;for(const i of cells)bed[i]={species:c.species,readyAt:t+Math.round(crop.growMs*scale)};break;}
+   case "harvest":{const items={};for(const bed of pd.beds)bed.forEach((x,i)=>{if(x&&x.readyAt<=t){add(items,x.species,E.CROP[x.species].yieldPerCell);bed[i]=null;}});
+    if(!Object.keys(items).length)fail("action-noop","Chưa có ô luống nào chín.");out.items=items;break;}
+   case "clean":if(!pd.murkySince)fail("action-noop","Nước hồ đang trong.");pd.murkySince=null;break;
+   case "castStart":
+    if(pd.castDay===dayKey())fail("cast-done","Hôm nay đã câu cá.");
+    if(pd.token&&pd.token.expiresAt>t)fail("cast-running","Cần câu đang thả.",{token:pd.token});
+    pd.token={at:t,periodMs:1600,zone:[0.3,0.7],sweet:[0.45,0.55],expiresAt:t+60000};out.token=pd.token;break;
+   case "cast":{
+    const tok=pd.token,tap=Number(c.tapMs);
+    if(!tok)fail("no-cast","Chưa thả cần.");
+    if(!Number.isFinite(tap)||tap<0)fail("invalid-action-input","tapMs không hợp lệ.");
+    const phase=(tap%tok.periodMs)/tok.periodMs,pos=phase<0.5?2*phase:2-2*phase,inside=([a,b])=>pos>=a&&pos<=b;
+    const result=tap>60000?"miss":inside(tok.sweet)?"goldfish":inside(tok.zone)?"fish":"miss",items={};
+    add(items,result==="goldfish"?"goldfish":"fish",result==="fish"?3:1);
+    pd.token=null;pd.castDay=dayKey();Object.assign(out,{result,items,pos});break;}
+   default:fail("invalid-action-input","Lệnh hồ không hợp lệ.",{kind:c.kind});
+  }
+  p.revision+=1;extra.pond=out;
+ }
  function retentionViews(d){
   const p=garden.progression,m=garden.mastery||{},tier=n=>TIERS.filter(t=>n>=t).length,house=p.level>=20?"hufflepuff":null;
   return {
@@ -534,6 +598,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   }
   else if(c.action==="care"){if(!LINES.some(r=>c.cells?.length===3&&r.every(i=>c.cells.includes(i))))fail("invalid-action-input","Chăm cây cho một hàng, cột hoặc đường chéo đủ ba ô.");if((d.free.care||0)>=FREE_CAPS.care)fail("care-limit",`Hôm nay đã chăm đủ ${FREE_CAPS.care} lượt; mai bác Hagrid lại nhờ nhé.`);care(c,next);}
   else if(c.action==="placeDecoration")place(c,next);
+  else if(c.action==="pond")pondAct(c,next,extra);
   else if(c.action==="setDefaultDecorationVisibility"){const visible=applyDefaultDecorationVisibility(next,c);next.decorations=visible.decorations;next.progression=visible.progression;}
   else{
    next.progression=model(c,before,Date.now());
@@ -563,7 +628,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Moving a plot/pen and placing a decoration are free taps (placing counts as rotate); the rest is farm work.
    const free={moveBuilding:"moveBuilding",placeDecoration:"rotate",care:"care"}[c.action];
    if(free){extra.freeAction=countFree(d,free);extra.festivalPoints=addPoints(d,next.festival,free,{counted:extra.freeAction.counted});}
-   else if(!["tutorialGrow","guideDone","setScene"].includes(c.action))extra.festivalPoints=addPoints(d,next.festival,c.action);
+   else if(!["tutorialGrow","guideDone","setScene","pond"].includes(c.action))extra.festivalPoints=addPoints(d,next.festival,c.action);
   }
   // Galleons last, so a short wallet leaves garden, daily record and wallet untouched.
   const cost=c.action==="build"?E.DB.expansions.find(e=>e.id===c.expansionId)?.galleons||0:c.action==="buyDecoration"?E.DB.decorations.find(e=>e.level===c.level)?.galleons||0:0;
@@ -630,7 +695,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
 export function createEmulatorClient(){
  const query=new URLSearchParams(globalThis.location?.search||"");
  const server=createFixtureServer({level:Number(query.get("level")||100),scenario:query.get("scenario")||"empty",simulate:query.get("simulate")==="1",day:query.get("day"),quests:query.get("quests"),points:Number(query.get("points"))||0,galleons:query.has("galleons")?Number(query.get("galleons")):null,previewHalloween:query.get("halloweenPreview")==="1",fireMode:["visual","real"].includes(query.get("fire"))?query.get("fire"):null,helpers:query.get("helpers")==="1",missions:query.get("missions")==="1",
-  weather:/^(frost|rain|drought)(-soon)?$/.test(query.get("weather")||"")?query.get("weather"):null,duty:query.get("duty")==="1"});
+  weather:/^(frost|rain|drought)(-soon)?$/.test(query.get("weather")||"")?query.get("weather"):null,duty:query.get("duty")==="1",murky:query.get("murky")==="1"});
  let actions=0;
  const client=createGardenClient(async(name,data)=>{
   const result=server.handle(name,data);

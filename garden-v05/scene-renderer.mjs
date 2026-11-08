@@ -26,7 +26,8 @@ import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} f
 import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.0.2';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.0.2';
-import {CREATURE, DB, growth, nowFor} from './progression-engine.mjs?v=25.0.2';
+import {CREATURE, DB, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
+import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.0.2';
 import {drawIcon} from './pixel-icons.mjs?v=25.0.2';
 import {
   animationFrameAt,
@@ -713,7 +714,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set([...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]);
+  const deferredFiles = new Set(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]));
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -1150,6 +1151,89 @@ export async function createGarden(canvas, options = {}) {
   let labelScale = 1; // plot tags keep ~10 screen px at any zoom (floor .8 when zoomed in)
   let authoredEffectEventIds = new Set();
 
+  const landCreatures = (state) => asArray(state?.creatures).filter((entry) => !POND_SPECIES.has(entry?.species));
+  const landIndex = (state, index) => (index < 0 || POND_SPECIES.has(asArray(state?.creatures)[index]?.species) ? -1 : landCreatures({creatures: asArray(state?.creatures).slice(0, index)}).length);
+
+  // Garden expansion phase 1 «Hồ nuôi» (docs/garden-expansion-plan.md §2.1, §6): the built pond replaces the decorative
+  // one at its (movable) spot. Tier art (pond-art POND_SCENERY) at iso(at) − pivot once shipped, else pond.png scaled to
+  // the tier's ground. Fish in stocked lots, a rêu tint while murky, pond creatures in the water, and the beds (1×3
+  // water trays) in a row along the pond's west side, each its own depth-sorted object.
+  function pondObjects(asset, winterProp, at, tier, view, creatures, clock) {
+    const spec = pondScenery(`pond-${tier}`), tierImage = spec ? imageFor(spec.file) : null;
+    const k = tierScale(tier), xy = iso(...at), [x, y] = xy;
+    const hit = tierImage ? {width: spec.width, height: spec.height, pivotX: spec.pivotX, pivotY: spec.pivotY}
+      : {width: asset.width * k, height: asset.height * k, pivotX: asset.pivotX * k, pivotY: asset.pivotY * k};
+    const pond = {kind: 'pond', type: 'prop', id: 'pond', species: 'pond', asset: hit, xy, draw: (ctx) => {
+      ctx.save();
+      ctx.imageSmoothingEnabled = false;
+      if (tierImage) ctx.drawImage(tierImage, Math.round(x - hit.pivotX), Math.round(y - hit.pivotY));
+      else {
+        const source = winterProp ? imageFor(winterProp) : seasonalImage(asset.file, 'water');
+        if (source) ctx.drawImage(source, Math.round(x - hit.pivotX), Math.round(y - hit.pivotY), Math.round(hit.width), Math.round(hit.height));
+      }
+      drawPondLife(ctx, x, y, k, view, creatures, clock);
+      ctx.restore();
+    }};
+    return [pond, ...pondBeds(at, tier, view)];
+  }
+
+  function drawPondLife(ctx, x, y, k, view, creatures, clock) {
+    const c = Math.max(2, Math.round(k * 1.5)), cx = x, cy = y - 47 * k, rx = 50 * k, ry = 18 * k, t = clock / 1000; // c: one art pixel, readable at the overview zoom
+    const block = (colour, px, py, pw, ph) => { ctx.fillStyle = colour; ctx.fillRect(Math.round(px), Math.round(py), pw, ph); };
+    if (view?.murky) {
+      ctx.globalAlpha = 0.6;
+      for (const [u, v] of [[-0.6, -0.2], [-0.2, 0.3], [0.3, -0.4], [0.55, 0.15], [0, -0.05], [-0.35, -0.5], [0.2, 0.45], [-0.75, 0.2]]) block('#B0BD67', cx + u * rx - 5 * c, cy + v * ry, 10 * c, 2 * c);
+      ctx.globalAlpha = 1;
+    }
+    const lots = asArray(view?.lots), now = Date.now();
+    lots.forEach((lot, i) => {
+      if (!lot) return;
+      const a = (i / lots.length) * Math.PI * 2 + 0.4, swim = Math.sin(t * 0.8 + i * 1.7), dir = Math.cos(t * 0.8 + i * 1.7) >= 0 ? 1 : -1;
+      const fx = cx + Math.cos(a) * rx * 0.55 + swim * 3 * c, fy = cy + Math.sin(a) * ry * 0.55;
+      const ink = lot.fry === 'goldfish' ? '#ED8A45' : '#231F2E';
+      ctx.globalAlpha = lot.fry === 'goldfish' ? 0.85 : 0.45;
+      block(ink, fx - 3 * c, fy - c, 6 * c, 2 * c);
+      block(ink, fx + (dir > 0 ? -4 : 3) * c, fy - 2 * c, c, 4 * c);
+      ctx.globalAlpha = 1;
+      if (lot.ripe || Number(lot.readyAt) <= now) block('#FFC36B', fx + (dir > 0 ? 2 : -3) * c, fy - 3 * c, c, c);
+    });
+    // Pond creatures: their sprite once the creature pipeline has it, else a small drawn head and arms in the water.
+    creatures.slice(0, 2).forEach((entry, i) => {
+      const sx = cx + (i ? 0.35 : -0.35) * rx, sy = cy + (i ? -2 : 3) * c + Math.round(Math.sin(t * 1.3 + i) * c);
+      const item = items.get(entry.species), sprite = item ? frameAt(item, 3, true) : null;
+      if (sprite) { drawAsset({...sprite, noSnowCap: true}, sx, sy); return; }
+      block('#B7DEE0', sx - 7 * c, sy + c, 14 * c, c);
+      block('#24483F', sx - 6 * c, sy - c, 2 * c, 2 * c); block('#24483F', sx + 4 * c, sy - c, 2 * c, 2 * c);
+      block('#3F6A45', sx - 4 * c, sy - 5 * c, 8 * c, 5 * c);
+      block('#71934B', sx - 3 * c, sy - 6 * c, 6 * c, c);
+      block('#FFC36B', sx - 2 * c, sy - 4 * c, c, c); block('#FFC36B', sx + c, sy - 4 * c, c, c);
+    });
+  }
+
+  // Bed b: one column by three rows (pond-bed [3, 1] facing default) west of the pond's ground, its top row on the
+  // pond's top row; cells[j] is row j. Art at iso(foot) − pivot, else three water cells framed in wood.
+  function pondBeds(at, tier, view) {
+    const beds = asArray(view?.beds);
+    if (!beds.length) return [];
+    const ground = decorFootprintRect(at[0], at[1], tierFootprint(tier)), spec = pondScenery('pond-bed'), image = spec ? imageFor(spec.file) : null, now = Date.now();
+    return beds.map((cells, b) => {
+      // A path cell between the pond's ground and the first bed; two while the scaled pond.png stands in (its reeds rise
+      // past the ground and would hide the first bed).
+      const c1 = ground.c0 - (pondScenery(`pond-${tier}`) ? 1 : 2) - b, c0 = c1 - 1, r0 = ground.r0, foot = [c1, r0 + 2], xy = iso(...foot);
+      return {kind: 'pond-bed', type: 'pond-bed', id: `pond-bed:${b}`, xy, draw: (ctx) => {
+        if (image) ctx.drawImage(image, Math.round(xy[0] - spec.pivotX), Math.round(xy[1] - spec.pivotY));
+        else for (let j = 0; j < 3; j += 1) polygon(ctx, [iso(c0, r0 + j), iso(c1, r0 + j), iso(c1, r0 + j + 1), iso(c0, r0 + j + 1)], '#70A8B6', '#735044', 2);
+        asArray(cells).forEach((cell, j) => {
+          if (!cell) return;
+          const [ex, ey] = iso(c0 + 0.5, r0 + j + 0.5), ripe = cell.ripe || Number(cell.readyAt) <= now;
+          ctx.fillStyle = ripe ? '#B0BD67' : '#3F6A45';
+          ctx.fillRect(Math.round(ex - 3), Math.round(ey - (ripe ? 14 : 8)), 6, ripe ? 14 : 8);
+          if (ripe) { ctx.fillStyle = '#FFC36B'; ctx.fillRect(Math.round(ex - 3), Math.round(ey - 18), 6, 4); }
+        });
+      }};
+    });
+  }
+
   function actorObject(entry, col, row, logicalNow, clock, target = {}) {
     const baseItem=itemFor(entry?.species),facing=target.facing==='right'?'right':'default';
     const item=creatureView(baseItem,facing);
@@ -1280,7 +1364,7 @@ export async function createGarden(canvas, options = {}) {
   }
 
   function drawBuiltPen(pen,state,clock){
-    const residents=habitatResidents(pen,asArray(state.creatures),map.creatureSpots,iso);
+    const residents=habitatResidents(pen,landCreatures(state),map.creatureSpots,iso);
     const sharedEast=Math.abs(currentStage.right-(pen.col+pen.width))<0.001;
     const enclosure=pen;
     const corners=penCorners(enclosure),key=activeWeather+':'+JSON.stringify([corners,residents]);
@@ -1534,12 +1618,12 @@ export async function createGarden(canvas, options = {}) {
     if (guestActor && event.species === guestActor.species && event.plot === undefined
       && !asArray(state?.creatures).some((entry) => entry?.species === event.species)) return [iso(guestActor.col, guestActor.row)];
     if (event.species && event.creatureIndex !== undefined) {
-      const spot = map.creatureSpots[event.creatureIndex];
+      const spot = map.creatureSpots[landIndex(state, event.creatureIndex)];
       return Array.isArray(spot) ? [iso(spot[0], spot[1])] : [];
     }
     if (event.species && event.plot === undefined) {
       const index = asArray(state?.creatures).findIndex((entry) => entry?.species === event.species);
-      const spot = map.creatureSpots[index];
+      const spot = map.creatureSpots[landIndex(state, index)];
       return Array.isArray(spot) ? [iso(spot[0], spot[1])] : [];
     }
     if (event.plot === undefined || !map.plots[event.plot]) return [];
@@ -1725,6 +1809,8 @@ export async function createGarden(canvas, options = {}) {
         if (!asset) throw new Error(`Không có prop asset ${prop.id}.`);
         const xy = iso(...(defaultDecorSpot(options.decorations, 'scene:' + prop.id, options.previewDecoration) ?? [prop.col, prop.row]));
         const winterProp = winterFile(asset.file);
+        const tier = prop.id === 'pond' ? pondTier(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id))) : 0;
+        if (tier) { objects.push(...pondObjects(asset, winterProp, defaultDecorSpot(options.decorations, 'scene:pond', options.previewDecoration) ?? [prop.col, prop.row], tier, options.pond, asArray(state.creatures).filter((e) => POND_SPECIES.has(e?.species)), clock)); continue; }
         objects.push({kind: 'asset', type: 'prop', id: prop.id, species: prop.id, asset:winterProp?{...asset,file:winterProp,noSnowCap:true,winter:true}:{...asset,seasonalKind:prop.id==='hut'?'roof':['oak','pine'].includes(prop.id)?'tree':'water'}, xy});
       }
     }
@@ -1775,9 +1861,11 @@ export async function createGarden(canvas, options = {}) {
       }
     }
 
-    for (let index = 0; index < asArray(state.creatures).length && index < map.creatureSpots.length; index += 1) {
+    // Pond species (garden expansion §2.1) swim in the pond; land creatures keep the pen spots in their own order.
+    for (let index = 0, land = 0; index < asArray(state.creatures).length; index += 1) {
       const entry = state.creatures[index];
-      const spot = map.creatureSpots[index];
+      if (POND_SPECIES.has(entry?.species)) continue;
+      const spot = map.creatureSpots[land++];
       if (!Array.isArray(spot) || spot.length < 2 || !entry) continue;
       const facing = creatureFacings[entry.species] === 'right' ? 'right' : 'default';
       const actor = actorObject(entry, spot[0], spot[1], logicalNow, clock, {creatureIndex: index, facing});

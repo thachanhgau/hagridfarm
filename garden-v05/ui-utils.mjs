@@ -32,6 +32,7 @@ const DISPLAY_LABELS = Object.freeze(Object.fromEntries([
  ...DB.animals.map(animal => [`produce_${animal.id}`, animal.produce]),
  ['insects', 'Côn trùng'],
  ['fish', 'Cá nhỏ'],
+ ['goldfish', 'Cá vàng'],
  ['elf_hat', 'Nón len gia tinh'],
  ['elf_sock', 'Vớ len gia tinh'],
 ]));
@@ -243,6 +244,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
  const craftedKey = isCrafted ? (artKey || (rawId.startsWith("fish") ? "recipe_fish" : "recipe_insects")) : null;
  const isPlot = rawId === "expansion_plot" || /^plot_\d+$/.test(rawId);
  const isPen = /^pen_\d+$/.test(rawId);
+ const pondTier = /^pond_(\d+)$/.exec(rawId); // garden expansion phase 1: «Ao cá» / «Hồ rong» / «Hồ sâu»
  const isReward = rawId === "reward_medal" || rawId === "reward_trophy";
  const isRight = facing === "right";
 
@@ -286,6 +288,15 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   slot.setAttribute("aria-label", penLabel);
   slot.append(el("span", { class: "sr-only", text: penLabel }));
   appendNativeArt(slot, ITEM_ART[rawId]?.file ? rawId : null, Math.round(size * 0.9), "Ảnh chuồng đang cập nhật");
+ } else if (pondTier) {
+  // Until pond-art registers an icon (itemArtSpec), the scene's pond art stands in.
+  const label = DB.expansions.find(e => e.id === rawId)?.label || "Ao";
+  slot.classList.add("is-expansion", "is-pond-art");
+  slot.setAttribute("data-expansion-id", rawId);
+  slot.setAttribute("aria-label", label);
+  slot.append(el("span", { class: "sr-only", text: label }));
+  if (itemArtSpec(rawId)) appendNativeArt(slot, rawId, Math.round(size * 0.9), "Ảnh ao đang cập nhật");
+  else slot.append(el("img", { src: "environment/layers/pond.png", alt: "", style: `width:${Math.round(size * 0.9)}px;height:auto;image-rendering:pixelated` }));
  } else if (isReward) {
   slot.classList.add("is-reward-art", rawId === "reward_medal" ? "is-medal" : "is-trophy");
   appendNativeArt(slot, rawId, Math.round(size * 0.9), "Ảnh huy hiệu đang cập nhật");
@@ -402,9 +413,9 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
  if (expansion) {
   return {
    visual: visualItemIcon(items, expansion.id, { size }),
-   category: expansion.kind === "plot" ? "Mở rộng thửa trồng" : "Mở rộng chuồng nuôi",
+   category: expansion.kind === "plot" ? "Mở rộng thửa trồng" : expansion.kind === "pond" ? `Hồ nuôi · ${expansion.label}` : "Mở rộng chuồng nuôi",
    categoryClass: "cat-build",
-   meta: expansion.kind === "plot" ? "Thêm 9 ô đất trồng" : `Nâng sức chứa lên ${expansion.capacityAfter} chỗ`,
+   meta: expansion.kind === "plot" ? "Thêm 9 ô đất trồng" : expansion.kind === "pond" ? `${expansion.capacityAfter} ô ao` : `Nâng sức chứa lên ${expansion.capacityAfter} chỗ`,
   };
  }
  if (recipe) {

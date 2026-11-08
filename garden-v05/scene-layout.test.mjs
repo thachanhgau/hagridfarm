@@ -224,7 +224,7 @@ test('every purchased decoration has a unique aisle footprint outside plots and 
 
 test('keepsake display tokens occupy safe south-aisle cells', () => {
   const placements = keepsakePlacements(scene);
-  assert.equal(placements.length, Object.keys(CREATURE).length);
+  assert.equal(placements.length, Object.keys(CREATURE).filter(species => CREATURE[species].habitat !== 'pond').length); // pond statues: pond-art merge
   for (const placement of placements) {
     assert.equal(scene.plots.some((plot) => overlap(placement, plot)), false, `${placement.species} overlaps a plot`);
     assert.equal(penCells.some((pen) => overlap(placement, pen)), false, `${placement.species} overlaps a pen`);
