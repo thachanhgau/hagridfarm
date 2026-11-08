@@ -55,11 +55,12 @@ test('the wide farm sign stays outside the fence at every land chapter',()=>{
 
 test('repeated backdrop stays wooded through the farm clearing and joins complete edge trees',async()=>{
  const {canopyWallpaper}=await import('./forest-composition.mjs');
- const boundary=stageBoundary({...EDGE_STAGE,pond:true}),trees=canopyWallpaper(map,sizes,boundary);
+ const boundary=stageBoundary({...EDGE_STAGE,pond:true}),trails=[forestExitTrail(map,EDGE_STAGE.bottom)],trees=canopyWallpaper(map,sizes,boundary,trails);
  assert.ok(trees.some(t=>!forestRectOutsideBoundary(t.rect,map,boundary)),'background must not repeat the farm clearing');
  const edge=trees.filter(t=>t.rect.left<0||t.rect.top<0||t.rect.right>map.width||t.rect.bottom>map.height);
  assert.ok(edge.length>0);
  for(const t of edge){
+  assert.ok(trails.every(trail=>!overlapsTrail(t.rect,trail)),'exit clearing must not remove only the world half of a tree');
   for(const stage of [...GARDEN_STAGES,EDGE_STAGE,{...EDGE_STAGE,pond:true}])assert.ok(forestRectOutsideBoundary(t.rect,map,stageBoundary(stage)),'edge tree must not lose its other half in any expansion');
   const dx=t.rect.left<0?map.width:t.rect.right>map.width?-map.width:0,dy=t.rect.top<0?map.height:t.rect.bottom>map.height?-map.height:0;
   assert.ok(trees.some(b=>b.id===t.id&&b.rect.left===t.rect.left+dx&&b.rect.top===t.rect.top+dy),'opposite tile contains the matching canopy');

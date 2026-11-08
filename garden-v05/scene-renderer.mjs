@@ -925,8 +925,9 @@ export async function createGarden(canvas, options = {}) {
   const backdropBoundary=stageBoundary({...EDGE_STAGE,pond:true});
   const backgroundTrail=backdropExitTrail(map),seamY=map.height*.82;
   drawExitTrail(westBack,[[map.width+32,seamY],...backgroundTrail],{taperEnd:true});
-  const wallpaper=canopyWallpaper(map,forestAssetSizes,backdropBoundary).map(tree=>({...tree,img:forestImages.get(tree.id)}));
   const westClearTrail=[[map.width+32,seamY],...backgroundTrail.slice(0,Math.ceil(backgroundTrail.length*.82))];
+  const seamTrails=[forestExitTrail(map,EDGE_STAGE.bottom),westClearTrail.map(([x,y])=>[x-map.width,y])];
+  const wallpaper=canopyWallpaper(map,forestAssetSizes,backdropBoundary,seamTrails).map(tree=>({...tree,img:forestImages.get(tree.id)}));
   for(const tree of wallpaper){
     drawCanopy(back,tree);
     if(!overlapsTrail(tree.rect,westClearTrail)&&!overlapsTrail({left:tree.rect.left-map.width,top:tree.rect.top,right:tree.rect.right-map.width,bottom:tree.rect.bottom},[[0,seamY],[80,seamY]]))drawCanopy(westBack,tree);

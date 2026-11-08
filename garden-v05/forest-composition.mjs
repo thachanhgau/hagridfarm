@@ -30,7 +30,7 @@ export function canopyClusters(map,sizes){
  return trees.sort((a,b)=>a.y-b.y||a.x-b.x);
 }
 // Dense periodic forest outside the world; only the world canvas owns the farm clearing.
-export function canopyWallpaper(map,sizes,boundary){
+export function canopyWallpaper(map,sizes,boundary,trails=[]){
  const result=[];
  for(const tree of canopyClusters(map,sizes)){
   const {w,h}=tree,px=tree.x-w/2,py=tree.y-h,copies=[];
@@ -39,7 +39,7 @@ export function canopyWallpaper(map,sizes,boundary){
    copies.push({...tree,rect:{left:Math.round(px+dx),top:Math.round(py+dy),right:Math.round(px+dx+w),bottom:Math.round(py+dy+h)}});
   }
   // Reject the entire wrapped family if its world-edge half would be hidden by the farm.
-  if(copies.length>1&&copies.some(t=>!forestRectOutsideBoundary(t.rect,map,boundary)))continue;
+  if(copies.length>1&&copies.some(t=>!forestRectOutsideBoundary(t.rect,map,boundary)||trails.some(trail=>overlapsTrail(t.rect,trail))))continue;
   result.push(...copies);
  }
  return result.sort((a,b)=>a.rect.bottom-b.rect.bottom||a.rect.left-b.rect.left);
