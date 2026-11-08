@@ -957,9 +957,9 @@ export async function createGarden(canvas, options = {}) {
     const revision=++backdropRevision;
     surface.style.backgroundColor=activeWeather==='snow'?'#a6b1ae':activeWeather==='autumn'?'#735044':'#142620';
     surface.style.backgroundRepeat='no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat';
-    const size='calc(2560px * var(--forest-scale,1)) calc(1440px * var(--forest-scale,1))';
+    const size=`calc(${map.width}px * var(--forest-scale,1)) calc(${map.height}px * var(--forest-scale,1))`;
     surface.style.backgroundSize='100% 100%,100% 100%,100% 100%,100% 100%,'+size+','+size;
-    surface.style.backgroundPosition='0 0,0 0,0 0,0 0,calc(var(--forest-x,0px) - 2560px * var(--forest-scale,1)) var(--forest-y,0px), var(--forest-x,0px) var(--forest-y,0px)';
+    surface.style.backgroundPosition=`0 0,0 0,0 0,0 0,calc(var(--forest-x,0px) - ${map.width}px * var(--forest-scale,1)) var(--forest-y,0px), var(--forest-x,0px) var(--forest-y,0px)`;
     if(typeof forestBackdrop.toBlob!=='function')return;
     const toUrl=source=>new Promise(resolve=>source.toBlob(blob=>resolve(blob?URL.createObjectURL(blob):null),'image/webp',.9));
     Promise.all([toUrl(westBackdrop),toUrl(forestBackdrop)]).then(urls=>{

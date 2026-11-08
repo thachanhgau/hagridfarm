@@ -14,7 +14,7 @@ export const EDGE_STAGE=Object.freeze({id:8,level:260,name:'Bìa Rừng Cấm',r
 export const EDGE_STRIP=Object.freeze({col:33.5,rowTop:5.5,rowBottom:25.5});
 export const inEdgeStrip=(col,row)=>col>EDGE_STRIP.col&&row>=EDGE_STRIP.rowTop&&row<=EDGE_STRIP.rowBottom;
 // «Bờ hồ» (owner 08/11/2026): the built pond (pond_1+) and its beds get their own land south of the field fence, cols
-// 11.5–27.5, rows 33.5–41.5 (the south-east corner would leave the 2560×1440 map). gardenStage marks the stage
+// 11.5–27.5, rows 33.5–41.5 (the south-east corner would leave the map; the map grew 1440 → 1760 px tall so the dock never hides the pond). gardenStage marks the stage
 // {pond: true}; player decorations stay out (same as the strip).
 export const POND_LAND=Object.freeze({col:11.5,right:27.5,rowTop:33.5,rowBottom:41.5});
 export const inPondLand=(col,row)=>col>=POND_LAND.col&&col<=POND_LAND.right&&row>POND_LAND.rowTop&&row<=POND_LAND.rowBottom;
