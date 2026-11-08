@@ -13,7 +13,7 @@ import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.m
 import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=25.0.2';
 import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=25.0.2';
 import {drawV24Ground} from './garden-v24-scenery.mjs?v=25.0.2';
-import {FARM_SIGN_ART,canopyClusters,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=25.0.2';
+import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=25.0.2';
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=25.0.2';
 import {decorObjects,decorFootprintRect,depthCompare,footLift,orientedFootprint} from './decor-runtime.mjs?v=25.0.2';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=25.0.2';
@@ -925,18 +925,9 @@ export async function createGarden(canvas, options = {}) {
   const backdropBoundary=stageBoundary(GARDEN_STAGES.at(-1));
   const backgroundTrail=backdropExitTrail(map),seamY=map.height*.82;
   drawExitTrail(westBack,[[map.width+32,seamY],...backgroundTrail],{taperEnd:true});
-  const wallpaper=[];
-  for(const tree of canopyClusters(map,forestAssetSizes)){
-    const {id,w,h,flip}=tree,img=forestImages.get(id),px=tree.x-w/2,py=tree.y-h;
-    for(const dx of [-map.width,0,map.width])for(const dy of [-map.height,0,map.height]){
-      if(px+dx+w<0||px+dx>map.width||py+dy+h<0||py+dy>map.height)continue;
-      const rect={left:Math.round(px+dx),top:Math.round(py+dy),right:Math.round(px+dx+w),bottom:Math.round(py+dy+h)};
-      wallpaper.push({id,img,rect,w,h,flip});
-    }
-  }
-  wallpaper.sort((a,b)=>a.rect.bottom-b.rect.bottom);
+  const wallpaper=canopyWallpaper(map,forestAssetSizes,backdropBoundary).map(tree=>({...tree,img:forestImages.get(tree.id)}));
   const westClearTrail=[[map.width+32,seamY],...backgroundTrail.slice(0,Math.ceil(backgroundTrail.length*.82))];
-  for(const tree of wallpaper)if(forestRectOutsideBoundary(tree.rect,map,backdropBoundary)){
+  for(const tree of wallpaper){
     drawCanopy(back,tree);
     if(!overlapsTrail(tree.rect,westClearTrail)&&!overlapsTrail({left:tree.rect.left-map.width,top:tree.rect.top,right:tree.rect.right-map.width,bottom:tree.rect.bottom},[[0,seamY],[80,seamY]]))drawCanopy(westBack,tree);
   }
@@ -986,7 +977,7 @@ export async function createGarden(canvas, options = {}) {
     weatherizeCanvas(forestBackdrop,'ground',weather,depth,kit);
     westBack.clearRect(0,0,map.width,map.height);westBack.drawImage(forestBackdrop,0,0);
     drawExitTrail(westBack,[[map.width+32,seamY],...backgroundTrail],{taperEnd:true});
-    for(const tree of wallpaper)if(forestRectOutsideBoundary(tree.rect,map,backdropBoundary)){
+    for(const tree of wallpaper){
       drawCanopy(back,tree);
       if(!overlapsTrail(tree.rect,westClearTrail)&&!overlapsTrail({left:tree.rect.left-map.width,top:tree.rect.top,right:tree.rect.right-map.width,bottom:tree.rect.bottom},[[0,seamY],[80,seamY]]))drawCanopy(westBack,tree);
     }
@@ -1058,7 +1049,7 @@ export async function createGarden(canvas, options = {}) {
       drawCanopy(target,tree);
     }
     for (const placement of forestDrawOrder) {
-      if(!outsideActiveStage(placement.rect,stage)||overlapsTrail(placement.rect,trail))continue;
+      if(!canopyInsideWorld(placement.rect,map)||!outsideActiveStage(placement.rect,stage)||overlapsTrail(placement.rect,trail))continue;
       const asset = forestAssets.get(placement.assetId);
       if (!asset) continue;
       target.save?.();
@@ -1082,7 +1073,7 @@ export async function createGarden(canvas, options = {}) {
       const asset = forestAssets.get(ids[(h >>> 20) % 4]), [x, y] = iso(c + u * .5, r + v * .5), k = nativePixelScale(.62 + ((h >>> 24) & 255) / 255 * .25);
       const w = Math.round(asset.width * k), ht = Math.round(asset.height * k);
       return {img: forestImages.get(asset.id), rect: {left: Math.round(x - w / 2), top: Math.round(y - ht), right: Math.round(x + w / 2), bottom: Math.round(y)}, w, h: ht, flip: (h >>> 8) & 1};
-    }).sort((a, b) => a.rect.bottom - b.rect.bottom).forEach((tree) => tree.img && drawCanopy(target, tree));
+    }).filter(tree=>canopyInsideWorld(tree.rect,map)).sort((a, b) => a.rect.bottom - b.rect.bottom).forEach((tree) => tree.img && drawCanopy(target, tree));
   }
 
   function drawFutureGrovesLayer(target, stage,trail) {
@@ -1099,7 +1090,7 @@ export async function createGarden(canvas, options = {}) {
       if (!asset) continue;
       const w=Math.round(asset.width*placement.scale),h=Math.round(asset.height*placement.scale);
       const rect={left:Math.round(placement.x-w/2),top:Math.round(placement.y-h),right:Math.round(placement.x+w/2),bottom:Math.round(placement.y)};
-      if(!outsideActiveStage(rect,stage)||overlapsTrail(rect,trail))continue;
+      if(!canopyInsideWorld(rect,map)||!outsideActiveStage(rect,stage)||overlapsTrail(rect,trail))continue;
       const img=forestImages.get(placement.assetId);
       if(img)drawCanopy(target,{img,rect,w,h,flip:placement.flip});
       else drawAssetTo(target, asset, placement.x, placement.y);

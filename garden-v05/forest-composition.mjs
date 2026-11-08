@@ -1,3 +1,4 @@
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=25.0.2';
 import {nativePixelScale} from './garden-grid.mjs?v=25.0.2';
 import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=25.0.2';
 export {FARM_SIGN_ART};
@@ -28,6 +29,22 @@ export function canopyClusters(map,sizes){
  for(let n=0;n<42;n++)add(random()*map.width,random()*map.height,.5+random()*.65);
  return trees.sort((a,b)=>a.y-b.y||a.x-b.x);
 }
+// Dense periodic forest outside the world; only the world canvas owns the farm clearing.
+export function canopyWallpaper(map,sizes,boundary){
+ const result=[];
+ for(const tree of canopyClusters(map,sizes)){
+  const {w,h}=tree,px=tree.x-w/2,py=tree.y-h,copies=[];
+  for(const dx of [-map.width,0,map.width])for(const dy of [-map.height,0,map.height]){
+   if(px+dx+w<=0||px+dx>=map.width||py+dy+h<=0||py+dy>=map.height)continue;
+   copies.push({...tree,rect:{left:Math.round(px+dx),top:Math.round(py+dy),right:Math.round(px+dx+w),bottom:Math.round(py+dy+h)}});
+  }
+  // Reject the entire wrapped family if its world-edge half would be hidden by the farm.
+  if(copies.length>1&&copies.some(t=>!forestRectOutsideBoundary(t.rect,map,boundary)))continue;
+  result.push(...copies);
+ }
+ return result.sort((a,b)=>a.rect.bottom-b.rect.bottom||a.rect.left-b.rect.left);
+}
+export const canopyInsideWorld=(rect,map)=>rect.left>=0&&rect.top>=0&&rect.right<=map.width&&rect.bottom<=map.height;
 export function forestExitTrail(map,bottom=28){
  const gate=iso(map,16,bottom),step=iso(map,16,bottom+2.4);
  const edgeY=map.height* .82;
