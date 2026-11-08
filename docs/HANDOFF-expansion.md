@@ -33,3 +33,7 @@ Owner: «làm cho xong đi». Làm rẻ: **mỗi lần 1 agent, Sonnet cho việ
   8. [x] (ba19d87) Fixture `level=290` hiện khu.
   9. [x] (a3a7aa6) Sửa 10 test, thêm `garden-edge.test.mjs`.
   10. [x] Mô phỏng cấp 500 (`runCreatures.mjs` + patch) và điền §11.5; rào: ngày ≥ 196.
+- **Đợt 3 xong local (08/11/2026):** client 372abf7 + sim 7cc37af (412/0), server HPVNN c3964d740 (garden-*.test.js 250/0). Sim cấp 500: ngày 196 (đúng mép rào; mỗi loài mới kéo sớm ~1 ngày, chi phí việc Hagrid trả lại). Giá cây non 120 G đã kiểm (15 × 400/50).
+- Chưa ai xem tận mắt: khay vườn cây, thanh công cụ có thêm nút «Vườn cây», ô cấp ở fixture level=290 (hiện 190?). Owner thử trên 3026.
+- Lỗi hình nhỏ: vệt hồng ở cổng bãi chăn; tay Ngựa lùn khó đọc ở cỡ thật.
+- Đợt 4 kế tiếp: mực khổng lồ, người cá, Cua lửa (340), Quái Tôm Đuôi Nổ (420). Sim đang ở 196: đợt 4 cần XP mỗi bữa thấp hơn hoặc chi phí bù, vì không còn chỗ.
