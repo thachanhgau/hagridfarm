@@ -50,6 +50,8 @@ function routeList(map) {
   const routes = GARDEN_PATHS.slice();
   // Bờ hồ: from the row-7 path between thửa 3 and 4, north through the fenced lane to the pond's bank.
   if (map?.pondPath) routes.push([[20.5, 7], [20.5, -4]]);
+  // Ruộng nước: between thửa 1 and 2 up its lane, then along the bed rows (garden-growth BED_LAND).
+  if (map?.pondPath) routes.push([[7.5, 7], [7.5, -5]], [[4, -5], [14, -5]], [[8, -5], [8, -9]], [[4, -9], [14, -9]]);
   const pens = Array.isArray(map?.pens) ? map.pens : [];
   const rightPens = pens.filter((pen) => (
     Number.isFinite(Number(pen?.col)) && Number(pen.col) >= 26

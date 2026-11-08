@@ -60,7 +60,7 @@ test('Bờ hồ: the built pond and its beds stand inside the pond land, clear o
   for (const built of [['pond_1'], ['pond_1', 'pond_2'], ['pond_1', 'pond_2', 'pond_3']]) {
     const at = pondHome(scene, built), pond = decorFootprintRect(...at, pondFootprint(built), POND_FACING);
     const beds = pondBedRects(at, built, pondBedCount(built));
-    assert.equal(beds.length, built.length > 1 ? 4 : 2);
+    assert.equal(beds.length, [4, 7, 10][built.length - 1]);
     const stage = gardenStage({level: 400, built}, scene);
     for (const rect of [pond, ...beds]) {
       for (const plot of scene.plots.map(plotGround)) assert.equal(rectsOverlap(rect, plot), false, `${built.length}: ${JSON.stringify(rect)}`);

@@ -1252,15 +1252,13 @@ export async function createGarden(canvas, options = {}) {
     });
   }
 
-  // Bed b: one column by three rows (pond-bed [3, 1] facing default) west of the pond's ground, its top row on the
-  // pond's top row; cells[j] is row j. Art at iso(foot) − pivot, else three water cells framed in wood.
+  // Bed b: one column by three rows (pond-bed [3, 1] facing default) on «Ruộng nước» (default-decor pondBedRects); cells[j]
+  // is row j. Art at iso(foot) − pivot, else three water cells framed in wood.
   function pondBeds(at, tier, view) {
     const beds = asArray(view?.beds);
     if (!beds.length) return [];
     const spec = pondScenery('pond-bed'), image = spec ? imageFor(spec.file) : null, now = Date.now();
-    // A path cell between the pond's ground and the first bed; two while the scaled pond.png stands in (its reeds rise
-    // past the ground and would hide the first bed). Same ground as decoration placement (default-decor pondBedRects).
-    const rects = pondBedRects(at, POND_TIER_IDS.slice(0, tier), beds.length, pondScenery(`pond-${tier}`) ? 1 : 2);
+    const rects = pondBedRects(at, POND_TIER_IDS.slice(0, tier), beds.length);
     return beds.map((cells, b) => {
       const {c0, c1, r0} = rects[b], foot = [c1, r0 + 2], xy = iso(...foot);
       return {kind: 'pond-bed', type: 'pond-bed', id: `pond-bed:${b}`, xy, draw: (ctx) => {

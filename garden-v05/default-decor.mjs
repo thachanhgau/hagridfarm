@@ -64,7 +64,7 @@ export const pondFootprint = (built = []) => DB.expansions.filter(e => e.kind ==
 
 /** «Bờ hồ» (owner 08/11/2026: ponds bigger than a plot, on their own land): the built pond is fixed and faces right
  *  (long side along the columns, mirrored art), its ground's north-east corner on (27.5, −10.5) inside the shore land
- *  (garden-growth POND_LAND), beds west of it. Null without a pond. */
+ *  (garden-growth POND_LAND); its beds are on their own land (pondBedRects). Null without a pond. */
 export const POND_FACING = 'right';
 export function pondHome(scene, built = []) {
   const size = pondFootprint(built);
@@ -73,14 +73,13 @@ export function pondHome(scene, built = []) {
   return [27.5 + lift - cols / 2, -10.5 + lift + rows / 2];
 }
 
-/** The pond beds' ground (garden expansion §2.1): `count` 1×3 trays in a row west of the pond's ground at `at`, `gap` path
- *  cells between, top rows level. Scene drawing and decoration placement share it, so nothing is placed on a bed. */
-export function pondBedRects(at, built = [], count = 0, gap = 1) {
-  const ground = decorFootprintRect(at[0], at[1], pondFootprint(built) ?? [3, 2], POND_FACING);
-  return Array.from({length: count}, (_, b) => {const c1 = ground.c0 - gap - b; return {c0: c1 - 1, c1, r0: ground.r0, r1: ground.r0 + 3};});
+/** The pond beds' ground: `count` 1×3 trays on «Ruộng nước» (garden-growth BED_LAND), two rows of five, a path cell
+ *  between trays and between the rows. Scene drawing and decoration placement share it, so nothing is placed on a bed. */
+export function pondBedRects(at, built = [], count = 0) {
+  return Array.from({length: count}, (_, b) => {const c0 = 4.5 + 2 * (b % 5), r0 = b < 5 ? -12.5 : -8.5; return {c0, c1: c0 + 1, r0, r1: r0 + 3};});
 }
-/** Pond beds by tier (server garden-pond-core): 2 at «Ao cá», 4 from «Hồ rong». */
-export const pondBedCount = built => (built?.includes?.('pond_2') ? 4 : built?.includes?.('pond_1') ? 2 : 0);
+/** Pond beds by tier (server garden-pond-core): 4 at «Ao cá», 7 at «Hồ rong», 10 at «Hồ sâu». */
+export const pondBedCount = built => (built?.includes?.('pond_3') ? 10 : built?.includes?.('pond_2') ? 7 : built?.includes?.('pond_1') ? 4 : 0);
 
 /** Where a moved default stands (the placement preview first), or null on its authored spot. */
 export function defaultDecorSpot(decorations, id, preview = null) {

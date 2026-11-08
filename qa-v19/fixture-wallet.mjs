@@ -423,7 +423,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  // Pond tiers come from the built pond_1..3; lots = the tier's capacityAfter, beds 2 at tier 1 and 4 from tier 2.
  function pondTierOf(p){return E.POND_EXPANSIONS.filter(e=>p.built.includes(e.id)).length;}
  function syncPondSize(g){
-  const tier=pondTierOf(g.progression),lots=tier?E.POND_EXPANSIONS[tier-1].capacityAfter:0,beds=tier>=2?4:tier?2:0;
+  const tier=pondTierOf(g.progression),lots=tier?E.POND_EXPANSIONS[tier-1].capacityAfter:0,beds=[0,4,7,10][Math.min(tier,3)];
   while(g.pond.lots.length<lots)g.pond.lots.push(null);
   while(g.pond.beds.length<beds)g.pond.beds.push([null,null,null]);
  }
