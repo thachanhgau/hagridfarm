@@ -243,14 +243,14 @@ export function createXmasCare({getSnapshot, act, notify}) {
   return {open() { render(); if (getSnapshot()?.xmas) dialog.showModal(); }, sync() { if (dialog.open) render(); }};
 }
 
+let championShown = false;
 /** A one-line nudge after a server reply: a letter is waiting, a vớ can open, the fire wants stoking ('' when none). */
-export function xmasNudge(view) {
+export function xmasNudge(view, now = Date.now()) {
   if (!view) return '';
-  if (view.champion?.won) {
-    const key = 'hagrid-xmas-champion';
-    let seen = '';
-    try { seen = localStorage.getItem(key) || ''; localStorage.setItem(key, view.champion.houseLabel); } catch {}
-    if (!seen) return `🏆 Nhà ${view.champion.houseLabel} thắng Dạ vũ Noel! Cây thông nhà vô địch đã vào kho đồ trang trí.`;
+  // Inside HPVN localStorage forgets on every visit (index.html), so the news runs on 1–3 January only, not all month.
+  if (view.champion?.won && !championShown && new Date(now + 7 * 3600000).getUTCDate() <= 3) {
+    championShown = true;
+    return `🏆 Nhà ${view.champion.houseLabel} thắng Dạ vũ Noel! Cây thông nhà vô địch đã vào kho đồ trang trí.`;
   }
   if (view.newYear && !view.newYear.claimed && view.newYear.ready) return `🎆 Giao thừa: nhận khung Pháo hoa ${view.newYear.year} ở lò sưởi.`;
   if (view.eve && !view.eve.claimed) return '🎁 Quà Đêm Noel của bác Hagrid đang chờ ở lò sưởi.';
