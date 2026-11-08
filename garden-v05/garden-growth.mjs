@@ -95,11 +95,11 @@ export const EDGE_LAYOUT=Object.freeze({
  pits:Object.freeze([[36,19],[39,19],[42,19],[36,22],[39,22],[42,22]].map(p=>Object.freeze([p[0]+.5,p[1]+.5]))),
 });
 export const PASTURE_ROAMERS=Object.freeze(['hippogriff','thestral','unicorn','porlock']);
-const PASTURE_BOX=Object.freeze({c0:35,c1:44,r0:6,r1:13});
-// Roaming spot in the pasture (still inside 35–44 × 6–13): a slow Lissajous loop per animal; face right while moving to higher columns.
-export function pastureSpot(seed,clock){
- const t=clock/2600+seed*2.1,cx=(PASTURE_BOX.c0+PASTURE_BOX.c1)/2,cy=(PASTURE_BOX.r0+PASTURE_BOX.r1)/2;
- return {col:cx+Math.sin(t)*3.8,row:cy+Math.sin(t*.73+seed)*2.8,facing:Math.cos(t)>0?'right':'default'};
+const PASTURE_SPOTS=Object.freeze([[37,8],[41,8],[37,11],[41,11]]);
+// No authored walk clips: each species rests at its own anchor instead of sliding across the pasture.
+export function pastureSpot(seed){
+ const [col,row]=PASTURE_SPOTS[seed%PASTURE_SPOTS.length];
+ return {col,row};
 }
 // Tree art stage from the snapshot: ripe → 2 (fruit); more than 48 h to the first fruit → 0 (sapling); otherwise 1 (grown, regrowing).
 export function treeStage(tree,now){

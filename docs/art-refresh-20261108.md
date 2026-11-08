@@ -1,5 +1,7 @@
 # Creature and aquatic-bed artwork refresh — 2026-11-08
 
+Movement/pond correction: land species have no authored walk clips, so pasture occupants now have four fixed anchors keyed by species; Crup stays in its pen. Placement and facing no longer oscillate with the animation clock or jump when reduced motion is enabled. Authored idle/eat/care clips remain. Removed the coarse fish-lot rectangle silhouettes (the orange bars) from the large pond; lot state and interactions remain in its dock. A renderer regression first failed on all five moving species, then passed with ground anchors identical at clocks 0/1200/8000/31000. All 31 related scene, motion, growth and pond-dock checks pass.
+
 Six creature atlases were redrawn using built-in image_gen with Kneazle and unicorn as style references. Full prompts, master paths and SHA-256 live in `garden-v05/creature-motion-assets/masters/refresh-20261108/provenance.json`. The three anatomy corrections are recorded in those prompts. Original masters remain intact.
 
 Runtime sprites retain five four-frame clips and their previous timing. Crup, Grindylow and Kappa keep 96×96 cells, pivot (48,80). Knarl, Salamander and Porlock now have approximately 30% larger native art in 128×128 cells, pivot (64,108), providing transparent margins around action poses. Left views are offline mirrors of the authored right poses; no runtime flipping or new animation loop. Planting coordinates, counts and game rules are unchanged.

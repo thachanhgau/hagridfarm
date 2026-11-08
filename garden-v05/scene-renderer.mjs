@@ -304,11 +304,8 @@ export function plotAliases(plot, index) {
   return aliases;
 }
 
-// Garden expansion phase 2 (visual only): the fire pieces a Kỳ nhông lửa basks beside (bếp gạch, lò sưởi, Cốc Lửa), and
-// the strip at Hagrid's feet (wizard-scenery: Hagrid −2,8, Fang −3.5,8.5) where Chó đuôi nĩa trots.
+// Garden expansion phase 2 (visual only): the fire pieces a Kỳ nhông lửa basks beside.
 const CAMPFIRE_DECOR = new Set(['ev_kitchen_corner', 'sp_norbert_egg', 'sp_goblet_fire']);
-const CRUP_TROT = Object.freeze({col: -1.1, row: 8.6, reach: 0.6});
-const CRUP_TROT_MS = 1700;
 // Stand-in tones until the species' sprite ships (scene creatureStandIn): Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa.
 const STAND_IN_TONES = Object.freeze({crup: ['#E7AE73', '#A57554'], knarl: ['#735044', '#4A3042'], salamander: ['#ED8A45', '#C75B4B'], kappa: ['#71934B', '#3F6A45'], porlock: ['#B49A66', '#735044']});
 
@@ -1244,18 +1241,7 @@ export async function createGarden(canvas, options = {}) {
       for (const [u, v] of [[-0.6, -0.2], [-0.2, 0.3], [0.3, -0.4], [0.55, 0.15], [0, -0.05], [-0.35, -0.5], [0.2, 0.45], [-0.75, 0.2]]) block('#B0BD67', cx + u * rx - 5 * c, cy + v * ry, 10 * c, 2 * c);
       ctx.globalAlpha = 1;
     }
-    const lots = asArray(view?.lots), now = Date.now();
-    lots.forEach((lot, i) => {
-      if (!lot) return;
-      const a = (i / lots.length) * Math.PI * 2 + 0.4, swim = Math.sin(t * 0.8 + i * 1.7), dir = Math.cos(t * 0.8 + i * 1.7) >= 0 ? 1 : -1;
-      const fx = cx + Math.cos(a) * rx * 0.55 + swim * 3 * c, fy = cy + Math.sin(a) * ry * 0.55;
-      const ink = lot.fry === 'goldfish' ? '#ED8A45' : '#231F2E';
-      ctx.globalAlpha = lot.fry === 'goldfish' ? 0.85 : 0.45;
-      block(ink, fx - 3 * c, fy - c, 6 * c, 2 * c);
-      block(ink, fx + (dir > 0 ? -4 : 3) * c, fy - 2 * c, c, 4 * c);
-      ctx.globalAlpha = 1;
-      if (lot.ripe || Number(lot.readyAt) <= now) block('#FFC36B', fx + (dir > 0 ? 2 : -3) * c, fy - 3 * c, c, c);
-    });
+    // Fish-lot status lives in the pond dock; coarse rectangle stand-ins obscured the pond artwork.
     // Pond creatures: their sprite once the creature pipeline has it, else a small drawn head and arms in the water.
     creatures.slice(0, 2).forEach((entry, i) => {
       const sx = cx + (i ? 0.35 : -0.35) * rx, sy = cy + (i ? -2 : 3) * c + Math.round(Math.sin(t * 1.3 + i) * c);
@@ -1951,8 +1937,7 @@ export async function createGarden(canvas, options = {}) {
     }
 
     // Pond species (garden expansion §2.1) swim in the pond; land creatures keep the pen spots in their own order.
-    // Phase 2 (visual only): Kỳ nhông lửa basks beside a placed fire piece, else on its pen's habitat stones; Chó đuôi nĩa
-    // trots back and forth at Hagrid and Fang's feet while the scene animates (still: in its pen).
+    // Kỳ nhông lửa basks beside a placed fire piece. Other land creatures keep fixed ground anchors until walk art exists.
     const campfire = storeDecorationObjects.find((object) => !object.preview && CAMPFIRE_DECOR.has(object.id));
     for (let index = 0, land = 0; index < asArray(state.creatures).length; index += 1) {
       const entry = state.creatures[index];
@@ -1961,15 +1946,9 @@ export async function createGarden(canvas, options = {}) {
       if (!Array.isArray(spot) || spot.length < 2 || !entry) continue;
       let facing = creatureFacings[entry.species] === 'right' ? 'right' : 'default';
       if (entry.species === 'salamander' && campfire) spot = [campfire.col + 0.7, campfire.row + 0.2];
-      if (builtIds.has('edge_2') && PASTURE_ROAMERS.includes(entry.species) && propsVisible && clock > 0) {
-        const roam = pastureSpot(index, clock);
+      if (builtIds.has('edge_2') && PASTURE_ROAMERS.includes(entry.species)) {
+        const roam = pastureSpot(PASTURE_ROAMERS.indexOf(entry.species));
         spot = [roam.col, roam.row];
-        facing = roam.facing;
-      }
-      if (entry.species === 'crup' && propsVisible && clock > 0) {
-        const phase = clock / CRUP_TROT_MS;
-        spot = [CRUP_TROT.col + Math.sin(phase) * CRUP_TROT.reach, CRUP_TROT.row];
-        facing = Math.cos(phase) > 0 ? 'right' : 'default';
       }
       // A species whose sprite has not shipped yet (phase 2 before the creatures-art-2 merge): a small drawn stand-in.
       if (!items.get(entry.species)) { objects.push(creatureStandIn(entry, spot, index)); continue; }
