@@ -35,6 +35,9 @@ export const KEEPSAKE_DISPLAY_LAYOUT = Object.freeze([
   {species: 'crup', col: 19.5, row: 26, width: 1, height: 1},
   {species: 'knarl', col: 2.5, row: 24, width: 1, height: 1},
   {species: 'salamander', col: 2.5, row: 26, width: 1, height: 1},
+  // Phase 3: Ma da and Ngựa lùn stand between the plaza and the south path's reserved aisle.
+  {species: 'kappa', col: 14.5, row: 24, width: 1, height: 1},
+  {species: 'porlock', col: 14.5, row: 26, width: 1, height: 1},
 ].map(Object.freeze));
 
 // Before chapter 6 opened the south field, the twelve keepsakes used one stepped

@@ -7,7 +7,7 @@ import {COAT_STEPS} from './garden-winter.mjs?v=25.0.2';
 
 export const NORBERT='norbert';
 // Play toys (roadmap §4: Đào mỏ – đồ lấp lánh, Kneazle – cuộn len, Chó ba đầu – thổi sáo cho ngủ, HP1).
-const TOYS=Object.freeze({puffskein:'Bóng bông',bowtruckle:'Que gỗ',niffler:'Đồ lấp lánh',mooncalf:'Đèn trăng',kneazle:'Cuộn len',diricawl:'Hạt dẻ',fwooper:'Chuông nhỏ',hippogriff:'Vòng gỗ',thestral:'Dây thừng',unicorn:'Vòng hoa','three-headed-dog':'Thổi sáo',dragon:'Khúc củi',grindylow:'Vỏ ốc',crup:'Ném gậy',knarl:'Quả thông',salamander:'Que củi',[NORBERT]:'Cuộn len đỏ'}); // grindylow: garden expansion §2.1
+const TOYS=Object.freeze({puffskein:'Bóng bông',bowtruckle:'Que gỗ',niffler:'Đồ lấp lánh',mooncalf:'Đèn trăng',kneazle:'Cuộn len',diricawl:'Hạt dẻ',fwooper:'Chuông nhỏ',hippogriff:'Vòng gỗ',thestral:'Dây thừng',unicorn:'Vòng hoa','three-headed-dog':'Thổi sáo',dragon:'Khúc củi',grindylow:'Vỏ ốc',crup:'Ném gậy',knarl:'Quả thông',salamander:'Que củi',kappa:'Quả dưa chuột',porlock:'Bó cỏ khô',[NORBERT]:'Cuộn len đỏ'}); // grindylow: garden expansion §2.1
 // Three tricks a species, three lessons each, one lesson a day (server LESSONS_PER_TRICK).
 export const TRICKS=Object.freeze({
  puffskein:['Lăn tròn','Thè lưỡi','Kêu rừ rừ'],bowtruckle:['Chỉ đường','Đứng im như cành','Vẫy lá'],niffler:['Đánh hơi vàng','Lộn túi','Giấu cúc áo'],
@@ -16,11 +16,12 @@ export const TRICKS=Object.freeze({
  unicorn:['Gật đầu','Gõ vó','Phi nước kiệu'],'three-headed-dog':['Ba đầu cùng ngồi','Bắt tay','Ngủ theo tiếng sáo'],dragon:['Phì khói','Xòe cánh','Cuộn đuôi'],
  grindylow:['Vẫy ngón dài','Lặn sâu','Thổi bong bóng'],
  crup:['Vẫy đuôi nĩa','Nhặt gậy','Đi theo bác Hagrid'],knarl:['Cuộn tròn','Xù gai','Lục lá khô'],salamander:['Bò trên củi','Phun tia lửa','Nằm trong than'], // phase 2
+ kappa:['Cúi chào đổ nước','Bơi ngửa','Bắt cá bằng tay'],porlock:['Đứng hai chân','Gõ móng','Canh cổng bãi chăn'], // phase 3
  [NORBERT]:['Phì khói','Lăn tròn','Vồ cuộn len'],
 });
 const LESSONS=3;
 const RIDERS=['hippogriff','thestral'];
-const groomLabel=sp=>sp==='dragon'||sp===NORBERT?'Chải vảy':sp==='fwooper'||sp==='diricawl'?'Tắm':sp==='grindylow'?'Gỡ rêu':sp==='knarl'?'Gỡ gai':sp==='salamander'?'Thêm củi':'Chải lông';
+const groomLabel=sp=>sp==='dragon'||sp===NORBERT?'Chải vảy':sp==='fwooper'||sp==='diricawl'?'Tắm':sp==='grindylow'?'Gỡ rêu':sp==='knarl'?'Gỡ gai':sp==='salamander'?'Thêm củi':sp==='kappa'?'Tưới đĩa nước':sp==='porlock'?'Chải bờm':'Chải lông';
 export const trickNames=(species,lessons)=>(TRICKS[species]||[]).slice(0,Math.floor((lessons||0)/LESSONS));
 // What a visited garden's creatures perform (snapshot visit.tricks = {species: whole tricks}).
 export function visitShow(tricks={},labelOf=sp=>sp){

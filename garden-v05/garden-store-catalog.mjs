@@ -3,7 +3,7 @@ import {EVENT_PRODUCTS,FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-produ
 import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=25.0.2";
 import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=25.0.2";
 import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=25.0.2";
-export const CATALOG_VERSION="garden-2026-11-08-creatures-2";
+export const CATALOG_VERSION="garden-2026-11-08-edge-3";
 // Big update 25.0 §3 (owner 04/11/2026): prices below are the 24.x base; the store sells at base × min(8, 3 + level / 50),
 // festival goods × 4, rounded to 1 G under 100, 10 G under 1,000, else 100 G. Seeds and water up to level 24 keep their
 // price; event gifts are never sold. Same rule as HPVN functions/games/garden-wallet-catalog.js storePrice.
@@ -465,6 +465,42 @@ export const STORE_CATALOG=Object.freeze([
     "description": "Gói 2 con · mỗi con thả một ô ao, kéo lưới được 1 Cá vàng."
   },
   {
+    "id": "sapling_apple",
+    "kind": "sapling",
+    "supply": "saplingApple",
+    "icon": "sapling_apple",
+    "label": "Cây táo non",
+    "level": 260,
+    "price": 15,
+    "quantity": 1,
+    "dailyLimit": 6,
+    "description": "Trồng vào một hố ở Vườn cây lâu năm · quả đầu sau 72 giờ, rồi cứ 72 giờ hái được 4 Táo."
+  },
+  {
+    "id": "sapling_pear",
+    "kind": "sapling",
+    "supply": "saplingPear",
+    "icon": "sapling_pear",
+    "label": "Cây lê non",
+    "level": 260,
+    "price": 15,
+    "quantity": 1,
+    "dailyLimit": 6,
+    "description": "Trồng vào một hố ở Vườn cây lâu năm · quả đầu sau 72 giờ, rồi cứ 72 giờ hái được 4 Lê."
+  },
+  {
+    "id": "sapling_plum",
+    "kind": "sapling",
+    "supply": "saplingPlum",
+    "icon": "sapling_plum",
+    "label": "Cây mận non",
+    "level": 260,
+    "price": 15,
+    "quantity": 1,
+    "dailyLimit": 6,
+    "description": "Trồng vào một hố ở Vườn cây lâu năm · quả đầu sau 72 giờ, rồi cứ 72 giờ hái được 4 Mận."
+  },
+  {
     "id": "puff_feed",
     "kind": "food",
     "icon": "puffskein",
@@ -668,6 +704,32 @@ export const STORE_CATALOG=Object.freeze([
     "label": "Thức ăn Kỳ nhông lửa",
     "level": 220,
     "price": 330,
+    "quantity": 2,
+    "dailyLimit": 2,
+    "description": "Một khẩu phần đủ một bữa. Vẫn có thể chế biến bằng sản vật."
+  },
+  {
+    "id": "kappa_feed",
+    "kind": "food",
+    "icon": "kappa",
+    "species": "kappa",
+    "inventoryId": "kappa_feed",
+    "label": "Thức ăn Ma da",
+    "level": 240,
+    "price": 360,
+    "quantity": 2,
+    "dailyLimit": 2,
+    "description": "Một khẩu phần đủ một bữa. Vẫn có thể chế biến bằng sản vật."
+  },
+  {
+    "id": "porlock_feed",
+    "kind": "food",
+    "icon": "porlock",
+    "species": "porlock",
+    "inventoryId": "porlock_feed",
+    "label": "Thức ăn Ngựa lùn",
+    "level": 280,
+    "price": 420,
     "quantity": 2,
     "dailyLimit": 2,
     "description": "Một khẩu phần đủ một bữa. Vẫn có thể chế biến bằng sản vật."

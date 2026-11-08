@@ -46,7 +46,11 @@ export const POND_CREATURE_SPOTS = 2;
 // Garden expansion phase 2 (plan §2.2): Nhím quậy eats only from the hand («Cho ăn tận tay», feed with hand: true),
 // never from feed-all or a gia tinh. Same rule as HPVN garden-model/garden-state.mjs.
 export const HAND_FEED_SPECIES = new Set(DB.animals.filter((entry) => entry.feeding === 'hand').map((entry) => entry.id));
-const expansionCollection = (kind) => (kind === 'plot' ? PLOT_EXPANSIONS : kind === 'pond' ? POND_EXPANSIONS : PEN_EXPANSIONS);
+// Garden expansion phase 3 (plan §11): Hagrid's three requests for the Bìa Rừng Cấm (kind 'edge', no Galleons, in order);
+// Táo, Lê, Mận are items from the orchard, not crops. Same rule as HPVN garden-model/garden-state.mjs.
+export const EDGE_EXPANSIONS = Object.freeze(DB.expansions.filter((entry) => entry.kind === 'edge'));
+export const ORCHARD_FRUITS = Object.freeze(['apple', 'pear', 'plum']);
+const expansionCollection = (kind) => (kind === 'plot' ? PLOT_EXPANSIONS : kind === 'pond' ? POND_EXPANSIONS : kind === 'edge' ? EDGE_EXPANSIONS : PEN_EXPANSIONS);
 const LAYOUT_COUNTS = Object.freeze({ plots: 18, pens: 6 });
 // Level-500 roadmap P3: saves from before thửa 13–18 hold 12 plot sockets and none of the bậc Tận Sức crops.
 const LEGACY_PLOT_SOCKETS = 12;
@@ -55,6 +59,7 @@ const LATE_CROP_IDS = new Set(DB.crops.filter((crop) => crop.level > TAN_SUC_LEV
 for (const id of ['elf_hat', 'elf_sock']) LATE_CROP_IDS.add(id);
 // Garden expansion phase 1: the pond's goldfish and every pond species' feed and produce.
 LATE_CROP_IDS.add('goldfish');
+for (const fruit of ORCHARD_FRUITS) LATE_CROP_IDS.add(fruit); // garden expansion phase 3
 // Garden expansion phase 2: every species past bậc Tận Sức (land ones too) arrived after older saves were written.
 const LATE_SPECIES = new Set(DB.animals.filter((animal) => animal.level > TAN_SUC_LEVEL).map((animal) => animal.id));
 for (const species of LATE_SPECIES) { LATE_CROP_IDS.add(CREATURE[species].feed); LATE_CROP_IDS.add(`produce_${species}`); }
@@ -74,6 +79,7 @@ for (const species of CREATURE_IDS) {
   inventoryIdSet.add(`produce_${species}`);
 }
 inventoryIdSet.add('goldfish'); // pond «Kéo lưới» (fish was already a recipe output)
+for (const fruit of ORCHARD_FRUITS) inventoryIdSet.add(fruit); // phase 3: the orchard's fruit
 const INVENTORY_IDS = Object.freeze([...inventoryIdSet]);
 const INVENTORY_ID_SET = new Set(INVENTORY_IDS);
 const CREATURE_ID_SET = new Set(CREATURE_IDS);
@@ -472,7 +478,7 @@ function normalizeBuilt(raw, level) {
     seen.add(id);
   }
   for (const id of BASE_PLOT_IDS) if (!seen.has(id)) reject('INVALID_STATE', 'the three starting plots must remain built');
-  for (const collection of [PLOT_EXPANSIONS, PEN_EXPANSIONS, POND_EXPANSIONS]) {
+  for (const collection of [PLOT_EXPANSIONS, PEN_EXPANSIONS, POND_EXPANSIONS, EDGE_EXPANSIONS]) {
     for (let index = 1; index < collection.length; index += 1) {
       if (seen.has(collection[index].id) && !seen.has(collection[index - 1].id)) {
         reject('INVALID_STATE', `built ${collection[index].id} is missing its prerequisite`);
