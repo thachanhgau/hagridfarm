@@ -28,6 +28,8 @@ gồm cả phần có thể làm mất sản lượng: E luân canh, F thời ti
 - Trễ hạn: đơn hết, không phạt.
 - Rào: chỉ giao từ kho của chính mình (đã vậy); một đơn khó mỗi ngày mỗi tài khoản; thưởng theo sao tăng nhanh hơn
   công sức để chọn 1 sao không lợi hơn.
+- TODO (art): khung Floo «Thợ vườn Tận Sức» (key `hagrid-tan-suc`) đang mượn kiểu khung Bậc thầy; cần art riêng và
+  vẽ sao mốc thắng (server đã lưu `stars` = số mốc B đã thắng).
 
 ### B. Thử thách mốc 50 cấp (200, 250, …, 450)
 - Mở ở mốc, tự bấm bắt đầu, chạy 7 ngày (dừng khi nghỉ). Mỗi mốc một đề, xoay vòng 3 loại:
@@ -64,6 +66,13 @@ gồm cả phần có thể làm mất sản lượng: E luân canh, F thời ti
 Mỗi đợt: server HPVNN (`functions/games/garden-*`, test `functions/test/garden-*`), client Hagrid (`garden-v05`,
 `node --test`), kiểm trình duyệt bằng fixture `qa-v19/ui-fixture.html`. Chỉ phát hành khi owner thử trên 3026;
 client và Functions phát hành cùng lúc, bump `?v=`.
+
+## 3b. Tiến độ
+- 08/11/2026 Claude Code (Anthropic): đợt 1 (A + B) xong trên nhánh, chưa phát hành. Server HPVNN
+  `codex/hagrid-challenges-160` (`functions/games/garden-challenge-core.js`, action `challenge`: accept/deliver/start);
+  client `challenges-160` (`garden-work-ui.mjs`: ô đơn khó + hàng thử thách mốc trong tab Đơn hàng).
+  Huy hiệu mốc nằm ở hàng thử thách (cúp nhỏ mỗi mốc thắng), chưa vào danh sách Thành tựu (danh sách đó có thưởng
+  Nước/vật phẩm, trái luật §1).
 
 ## 4. Rào chắn (nối `produce-market-plan.md`, số tiếp theo sau #44)
 - #45 Đơn khó chỉ một mỗi ngày mỗi tài khoản; nick phụ không giao hộ (kho riêng).

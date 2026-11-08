@@ -1,0 +1,83 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createHagridWork} from './garden-work-ui.mjs?v=25.0.2';
+
+// Level-160 challenges (docs/level-160-challenges.md §2A–B): the Đơn khó tile and the milestone row
+// in «Việc của bác Hagrid», from snapshot.orders as the server sends it (garden-challenge-core challengeView).
+class Node {
+ constructor(tag){this.tag=tag;this.children=[];this.listeners={};this.attrs={};this.style={setProperty(){}};this.classList={add(){},remove(){},toggle(){}};}
+ set textContent(value){this.text=String(value);this.children=[];}
+ get textContent(){return this.text||this.children.map(n=>n.textContent||'').join(' ');}
+ setAttribute(key,value){this.attrs[key]=value;}
+ getAttribute(key){return this.attrs[key]??null;}
+ addEventListener(key,fn){this.listeners[key]=fn;}
+ append(...nodes){this.children.push(...nodes);}
+ replaceChildren(...nodes){this.text='';this.children=nodes;}
+ showModal(){}
+ close(){}
+}
+const all=(node,pick,out=[])=>{if(node&&typeof node==='object'){if(pick(node))out.push(node);for(const c of node.children||[])all(c,pick,out);}return out;};
+const tiers=[1,2,3].map(stars=>({stars,items:{knotgrass:12*stars,puff_feed:6*stars},xp:2800*stars,cup:[20,30,40][stars-1],marks:stars}));
+const snapshot=(level,orders)=>({serverNow:0,garden:{progression:{level,inventory:{knotgrass:24,puff_feed:12}}},orders:{unlockLevel:15,orders:[],...orders},flooFrames:{frames:[],worn:null}});
+
+function mount(snap){
+ const host=new Node('div'),calls=[];
+ const previous=globalThis.document;
+ globalThis.document={getElementById:()=>host,createElement:tag=>new Node(tag),createTextNode:text=>({textContent:text}),body:host};
+ const work=createHagridWork({getSnapshot:()=>snap,deliver:async()=>({ok:true}),challenge:async fields=>{calls.push(fields);return {ok:true};},setFrame:async()=>({ok:true}),items:null,notify:()=>{}});
+ work.open();
+ return {body:host.children[0].children[2],calls,restore:()=>{globalThis.document=previous;}};
+}
+
+test('level 170: the hard order offer shows three star buttons; accepting sends the picked stars', async () => {
+ const view=mount(snapshot(170,{hard:{unlockLevel:160,marks:12,frameMarks:30,hours:48,open:null,offer:{id:'hard-2026-11-08',tiers}}}));
+ try {
+  const stars=all(view.body,n=>n.attrs?.['data-hard-stars']);
+  assert.equal(stars.length,3);
+  assert.match(view.body.textContent,/Đơn khó · 12\/30 dấu/);
+  assert.match(view.body.textContent,/\+2\.800 XP · \+20 điểm Cúp Nhà · \+1 dấu/);
+  stars[2].listeners.click();
+  assert.match(view.body.textContent,/\+8\.400 XP · \+40 điểm Cúp Nhà · \+3 dấu/);
+  assert.equal(all(view.body,n=>n.attrs?.['data-hard-stars']==='3')[0].attrs['aria-pressed'],'true');
+  await all(view.body,n=>'data-hard-accept' in (n.attrs||{}))[0].listeners.click();
+  assert.deepEqual(view.calls,[{kind:'accept',stars:3}]);
+  assert.equal(all(view.body,n=>n.attrs?.['data-milestone']).length,0); // no milestone row below 200
+ } finally {view.restore();}
+});
+
+test('an open hard order shows its clock and delivers when the barn has the goods', async () => {
+ const open={id:'hard-2026-11-08',stars:2,items:{knotgrass:24,puff_feed:12},xp:5600,cup:30,marks:2,acceptedAt:0,deadline:Date.now()+47*3600000+30000};
+ const view=mount(snapshot(170,{hard:{unlockLevel:160,marks:12,frameMarks:30,hours:48,open,offer:null}}));
+ try {
+  assert.match(view.body.textContent,/47:01/);
+  assert.match(view.body.textContent,/Khẩu phần Quái lùng nhùng/);
+  assert.equal(all(view.body,n=>n.attrs?.['data-hard-stars']).length,0);
+  await all(view.body,n=>'data-hard-deliver' in (n.attrs||{}))[0].listeners.click();
+  assert.deepEqual(view.calls,[{kind:'deliver'}]);
+ } finally {view.restore();}
+});
+
+test('level 210: the milestone row (goal, meter, days left or start) and won badges', async () => {
+ const hard={unlockLevel:160,marks:12,frameMarks:30,hours:48,open:null,offer:null};
+ const ready=mount(snapshot(210,{hard,milestone:{state:'ready',level:200,goal:'duty',target:7,days:7,retryAt:null,won:[]}}));
+ try {
+  assert.match(ready.body.textContent,/Mốc 200/);
+  assert.match(ready.body.textContent,/7 ngày không cây héo/);
+  await all(ready.body,n=>'data-milestone-start' in (n.attrs||{}))[0].listeners.click();
+  assert.deepEqual(ready.calls,[{kind:'start'}]);
+ } finally {ready.restore();}
+ const running=mount(snapshot(260,{hard,milestone:{state:'running',level:250,goal:'mood',progress:2,target:3,daysLeft:4,onLeave:false,won:[200]}}));
+ try {
+  assert.match(running.body.textContent,/2\/3/);
+  assert.match(running.body.textContent,/4 ngày/);
+  assert.equal(all(running.body,n=>n.attrs?.role==='progressbar').length,1);
+  assert.equal(all(running.body,n=>n.className==='work-badge').length,1);
+ } finally {running.restore();}
+});
+
+test('below level 160 the orders tab has no hard order or milestone', () => {
+ const view=mount(snapshot(150,{}));
+ try {
+  assert.doesNotMatch(view.body.textContent,/Đơn khó|Thử thách mốc/);
+ } finally {view.restore();}
+});

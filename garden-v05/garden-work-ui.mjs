@@ -1,17 +1,23 @@
 // Level-500 roadmap P5 (§11): «Việc của bác Hagrid» — Đơn hàng (snapshot.orders, action deliverOrder),
 // Thông thạo cây (snapshot.mastery) and Cúp Nhà (snapshot.houseCup). Only with a wallet: the server
 // draws the orders, counts the mastery and the cup; this panel shows them.
-import {$,el,num,cropVisualKind,visualItemIcon} from './ui-utils.mjs?v=25.0.2';
+import {$,el,num,cropVisualKind,visualItemIcon,FEED_CREATURE_MAP} from './ui-utils.mjs?v=25.0.2';
 import {pixelIcon,iconButton} from './pixel-icons.mjs?v=25.0.2';
 import {CROP,CREATURE} from './balance-data.mjs?v=25.0.2';
 
 const HOUSE_COLORS = Object.freeze({gryffindor:'#C75B4B',hufflepuff:'#FFC36B',ravenclaw:'#3E3B70',slytherin:'#3F6A45'}); // palette.mjs only
-const labelOf = id => CROP[id]?.label || (id.startsWith('produce_') ? CREATURE[id.slice(8)]?.produce : null) || id;
+const CRAFTED = Object.freeze({insects:'Côn trùng',fish:'Cá nhỏ',elf_hat:'Nón len gia tinh',elf_sock:'Vớ len gia tinh'}); // = mobile-game labels
+const labelOf = id => CROP[id]?.label || (id.startsWith('produce_') ? CREATURE[id.slice(8)]?.produce : null) || CRAFTED[id]
+ || (FEED_CREATURE_MAP[id] ? `Khẩu phần ${CREATURE[FEED_CREATURE_MAP[id]]?.label}` : null) || id;
 const meter = (done,target) => el('div',{class:'gp-meter',role:'progressbar','aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(done)},[el('span',{style:`width:${Math.min(100,Math.round(done/Math.max(1,target)*100))}%`})]);
+// Level 160+ (docs/level-160-challenges.md §2A–B): Đơn khó and the milestone challenge, from snapshot.orders.
+const GOALS = Object.freeze({duty:['harvest','7 ngày không cây héo'],mood:['heart','Sinh vật vui 3 ngày liền'],marks:['star','10 dấu đơn khó']});
+const hm = ms => {const m=Math.max(0,Math.ceil(ms/60000));return `${Math.floor(m/60)}:${String(m%60).padStart(2,'0')}`;};
+const dm = at => {const d=new Date(at+7*3600000);return `${d.getUTCDate()}/${d.getUTCMonth()+1}`;};
 const stars = tier => el('span',{class:'work-stars',role:'img','aria-label':`Bậc ${tier}/3`},[0,1,2].map(i=>pixelIcon(i<tier?'star':'star_empty',1)));
 
-export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
- let tab='orders',lastBoard=null,lastWeek=null;
+export function createHagridWork({getSnapshot,deliver,challenge,setFrame,items,notify}){
+ let tab='orders',lastBoard=null,lastWeek=null,pick=1;
  const body=el('div',{class:'work-body'}),tabs=el('div',{class:'panel-toolbar work-tabs',role:'group','aria-label':'Việc của bác Hagrid'});
  const dialog=el('dialog',{id:'hagridWork',class:'owl-letter work-letter','aria-labelledby':'workTitle'},[
   el('div',{class:'popover-heading'},[el('h2',{id:'workTitle',text:'Việc của bác Hagrid'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
@@ -37,10 +43,45 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
   });
  }
 
+ const goods=(itemsMap,inv)=>el('div',{class:'work-order-items'},Object.entries(itemsMap).map(([id,n])=>el('span',{class:'work-order-item',title:labelOf(id)},[
+  visualItemIcon(items,id,{size:36,kind:cropVisualKind(id)}),el('b',{text:`${num(Math.min(inv[id]||0,n))}/${n}`}),el('small',{text:labelOf(id)}),
+ ])));
+ const run=async(fields,done)=>{const res=await challenge?.(fields);if(res?.ok){notify(done);render();}};
+ // Đơn khó: today's offer with the 1–3 star picker, or the open order with its 48 h clock.
+ function hard(snap){
+  const view=snap.orders.hard;if(!view)return [];
+  const inv=snap.garden?.progression?.inventory||{},open=view.open,label=el('p',{class:'sheet-label',text:`Đơn khó · ${num(view.marks)}/${num(view.frameMarks)} dấu`});
+  if(!open&&!view.offer)return [label];
+  const terms=open||view.offer.tiers[pick-1],ready=Boolean(open)&&Object.entries(open.items).every(([id,n])=>(inv[id]||0)>=n);
+  const control=open?el('span',{class:'work-hard-clock',role:'timer','aria-label':'Hạn giao'},[pixelIcon('clock',1),el('b',{text:hm(open.deadline-Date.now())})])
+   :el('div',{class:'work-hard-stars',role:'group','aria-label':'Chọn số sao'},[1,2,3].map(n=>el('button',{type:'button',class:'work-hard-star','aria-pressed':String(pick===n),'aria-label':`${n} sao`,'data-hard-stars':String(n),onclick:()=>{pick=n;render();}},[0,1,2].map(i=>pixelIcon(i<n?'star':'star_empty',1)))));
+  const action=open?iconButton(ready?'check':'lock',ready?`Giao đơn khó: +${num(open.xp)} XP`:'Kho chưa đủ hàng',ready?()=>run({kind:'deliver'},`Đã giao đơn khó: +${num(open.xp)} XP, +${open.marks} dấu thử thách.`):null,{text:ready?'Giao':'Thiếu',class:ready?'primary':'',disabled:!ready,'data-hard-deliver':''})
+   :iconButton('tansuc',`Nhận đơn khó ${pick} sao`,()=>run({kind:'accept',stars:pick},`Đã nhận đơn khó ${pick} sao.`),{text:'Nhận',class:'primary','data-hard-accept':''});
+  return [label,el('div',{class:`work-order work-hard${ready?' is-ready':''}`,'data-hard-order':open?'open':'offer'},[
+   goods(terms.items,inv),
+   el('div',{class:'work-order-reward'},[control,el('small',{text:`+${num(terms.xp)} XP · +${terms.cup} điểm Cúp Nhà · +${terms.marks} dấu`})]),
+   action,
+  ])];
+ }
+ // Thử thách mốc 50 cấp: one row on the same grid (goal, meter, days left or the start button).
+ function milestone(snap){
+  const m=snap.orders.milestone;if(!m)return [];
+  const [icon,name]=GOALS[m.goal]||['lock',`Cấp ${m.level??500}`];
+  const label=el('p',{class:'sheet-label work-milestone-label'},[el('span',{text:'Thử thách mốc'}),...m.won.map(level=>el('span',{class:'work-badge',title:`Mốc ${level}`},[pixelIcon('trophy',1)]))]);
+  const target=m.target||1,progress=m.progress||0;
+  const action=m.state==='ready'?iconButton('tansuc',`Bắt đầu thử thách mốc ${m.level}`,()=>run({kind:'start'},`Bắt đầu thử thách mốc ${m.level}: 7 ngày.`),{text:'Bắt đầu',class:'primary','data-milestone-start':''})
+   :el('span',{class:'gp-state',text:m.state==='running'?(m.onLeave?'Tạm dừng':`${m.daysLeft} ngày`):m.state==='retry'?`Thử lại ${dm(m.retryAt)}`:`Cấp ${m.level??'—'}`});
+  return [label,el('div',{class:`work-order work-milestone is-${m.state}`,'data-milestone':m.state},[
+   el('div',{class:'work-goal'},[pixelIcon(icon,2),el('div',{class:'gp-hero-copy'},[el('strong',{text:m.level?`Mốc ${m.level}`:'Đủ mốc'}),el('small',{text:m.goal?name:'Hết thử thách'})])]),
+   el('div',{class:'work-order-reward'},m.goal?[meter(m.state==='running'?progress:0,target),el('small',{text:m.state==='running'?`${progress}/${target}`:`0/${target} · ${m.days||7} ngày`})]:[]),
+   action,
+  ])];
+ }
+
  // Khung Floo earned here (owner 23/10/2026): worn on Mạng Floo through the Hẻm Xéo frame slot.
  function frames(snap,kind){
   const view=snap.flooFrames;if(!view)return [];
-  const list=view.frames.filter(f=>f.kind===kind);if(kind==='xmas'&&!list.length)return []; // Giáng sinh frames only once earned or begun
+  const list=view.frames.filter(f=>[].concat(kind).includes(f.kind));if(kind==='xmas'&&!list.length)return []; // Giáng sinh frames only once earned or begun
   return [el('p',{class:'sheet-label',text:'Khung Floo'}),
    el('div',{class:'work-frames'},list.map(f=>{
     const worn=view.worn===f.key;
@@ -95,11 +136,11 @@ export function createHagridWork({getSnapshot,deliver,setFrame,items,notify}){
    const b=el('button',{type:'button',class:'gp-tab','aria-pressed':String(tab===id),onclick:()=>{tab=id;render();}});b.append(pixelIcon(glyph,2),el('span',{text:name}));return b;
   }));
   if(!snap?.orders){body.replaceChildren(el('p',{class:'meta',text:'Việc của bác Hagrid cần kết nối tài khoản.'}));return;}
-  body.replaceChildren(...(tab==='orders'?[...orders(snap),...frames(snap,'level')]:tab==='mastery'?mastery(snap):[...cup(snap),...frames(snap,'xmas')])); // 25.0 S5: level frames under the orders; S7: Giáng sinh frames under the cup
+  body.replaceChildren(...(tab==='orders'?[...orders(snap),...hard(snap),...milestone(snap),...frames(snap,['challenge','level'])]:tab==='mastery'?mastery(snap):[...cup(snap),...frames(snap,'xmas')])); // 25.0 S5: level frames under the orders; S7: Giáng sinh frames under the cup
  }
  return {
   open(){render();dialog.showModal();},
   sync(){const snap=getSnapshot();if(snap?.houseCup?.board)lastBoard=snap.houseCup.board;if(snap?.houseCup?.lastWeek)lastWeek=snap.houseCup.lastWeek;if(dialog.open)render();},
-  hasWork(){const snap=getSnapshot(),inv=snap?.garden?.progression?.inventory||{};return Boolean(snap?.orders?.orders?.some(o=>!o.delivered&&Object.entries(o.items).every(([id,n])=>(inv[id]||0)>=n)));},
+  hasWork(){const snap=getSnapshot(),inv=snap?.garden?.progression?.inventory||{};const can=o=>Object.entries(o.items).every(([id,n])=>(inv[id]||0)>=n);return Boolean(snap?.orders?.orders?.some(o=>!o.delivered&&can(o))||(snap?.orders?.hard?.open&&can(snap.orders.hard.open))||snap?.orders?.milestone?.state==='ready');},
  };
 }

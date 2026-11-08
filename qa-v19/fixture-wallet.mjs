@@ -22,7 +22,7 @@ const SPEED_SHARE=0.25,LINES=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0
 const shift=(t,cut)=>{t.startedAt-=cut;t.readyAt-=cut;};
 // «care» is its own action now (server garden-action-core applyCare), not a bare tap.
 const FREE_TAPS=new Set(["pet","rotate","postcard","shareFloo","startTour"]);
-const DAILY=new Set(["claimQuest","claimChest","claimFestival","freeAction","claimBondGift","claimAchievement","deliverOrder"]);
+const DAILY=new Set(["claimQuest","claimChest","claimFestival","freeAction","claimBondGift","claimAchievement","deliverOrder","challenge"]);
 const BOND_POINTS=Object.freeze({adopt:15,feed:20,claimAnimals:25,pet:12}),BOND_PETS_PER_DAY=3;
 const CHEST_REWARD=Object.freeze({kind:"boost",amount:1,waterBonus:12,itemId:"boost",eventPoints:20,label:"Rương Cú Vàng: +1 Nước phép, +12 Nước, +20 điểm lễ hội"});
 // Server BONUS_QUEST_POOL / BONUS_CHEST_REWARD (garden-daily-core.js): «Việc thêm» and Rương Bác Hagrid.
@@ -358,7 +358,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  function frameViews(){
   const m=garden.mastery||{},have=t=>Object.values(m).filter(n=>n>=TIERS[t-1]).length;
   return [[1,'Tập sự',1,5],[2,'Thạo nghề',2,10],[3,'Bậc thầy',3,16],[4,'Đại sư',3,E.DB.crops.length]].map(([n,label,t,need])=>({key:`hagrid-mastery-${n}`,label:`Khung ${label} vườn Hagrid`,kind:'mastery',unlocked:have(t)>=need,progress:Math.min(have(t),need),need,rule:`${need} loại cây đạt bậc ${t} (${TIERS[t-1]} ô)`}))
-   .concat(['gryffindor','hufflepuff','ravenclaw','slytherin'].map(h=>({key:`hagrid-cup-${h}`,label:`Khung Cúp Nhà ${h[0].toUpperCase()+h.slice(1)}`,kind:'cup',house:h,unlocked:h==='ravenclaw',progress:h==='ravenclaw'?1:0,need:1,rule:'Nhà thắng Cúp Nhà một tuần, con góp từ 20 điểm'})));
+   .concat(['gryffindor','hufflepuff','ravenclaw','slytherin'].map(h=>({key:`hagrid-cup-${h}`,label:`Khung Cúp Nhà ${h[0].toUpperCase()+h.slice(1)}`,kind:'cup',house:h,unlocked:h==='ravenclaw',progress:h==='ravenclaw'?1:0,need:1,rule:'Nhà thắng Cúp Nhà một tuần, con góp từ 20 điểm'})))
+   .concat(garden.progression.level>=160?[{key:'hagrid-tan-suc',label:'Khung Thợ vườn Tận Sức',kind:'challenge',unlocked:challengeOf(garden).marks>=30,progress:Math.min(challengeOf(garden).marks,30),need:30,rule:'30 dấu thử thách từ đơn khó',stars:challengeOf(garden).won.length}]:[]);
  }
  function setFrame(c){const f=frameViews().find(x=>x.key===c.frameKey);if(c.frameKey!==null&&!f?.unlocked)fail('frame-locked','Con chưa đạt khung này.');wornFrame=c.frameKey;return clone({ok:true,worn:wornFrame,frames:frameViews()});}
  function sales(c){
@@ -391,11 +392,49 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const p=garden.progression,m=garden.mastery||{},tier=n=>TIERS.filter(t=>n>=t).length,house=p.level>=20?"hufflepuff":null;
   return {
    mastery:{tiers:TIERS,titles:["Tập sự","Thạo nghề","Bậc thầy"],rewards:[1,2,3],crops:E.DB.crops.filter(c=>c.level<=p.level).map(c=>({cropId:c.id,cells:m[c.id]||0,tier:tier(m[c.id]||0)})),mastered:Object.values(m).filter(n=>n>=1350).length,total:E.DB.crops.length},
-   orders:{unlockLevel:15,orders:clone(ordersFor(d))},
+   orders:{unlockLevel:15,orders:clone(ordersFor(d)),...challengeViews(d)},
    houseCup:{unlockLevel:20,weekKey:"2026-10-19",house,houseLabel:house?"Hufflepuff":null,points:garden.cup.points,today:d.cup||0,dailyCap:60,rewardMin:20,rules:{harvest:1,quest:3,order:10},endsAt:Date.parse("2026-10-26T00:00:00+07:00"),
     board:[{house:"gryffindor",label:"Gryffindor",points:412},{house:"hufflepuff",label:"Hufflepuff",points:388+garden.cup.points},{house:"ravenclaw",label:"Ravenclaw",points:301},{house:"slytherin",label:"Slytherin",points:276}],
     lastWeek:[{house:"ravenclaw",label:"Ravenclaw",points:1204},{house:"gryffindor",label:"Gryffindor",points:1150},{house:"slytherin",label:"Slytherin",points:990},{house:"hufflepuff",label:"Hufflepuff",points:870}]},
   };
+ }
+ // Server garden-challenge-core (level 160+, QA approximation: a fixed hard order per day, ×stars; milestone from 200).
+ const MILESTONES=[200,250,300,350,400,450],GOALS=['duty','mood','marks'],GOAL_TARGET={duty:7,mood:3,marks:10},goalOf=l=>GOALS[MILESTONES.indexOf(l)%3];
+ const challengeOf=g=>(g.challenge??={marks:g.progression.level>=160?12:0,day:null,hard:null,run:null,won:[],lost:null});
+ function hardBase(){
+  const p=garden.progression,band=E.DB.crops.filter(c=>c.level<=p.level).slice(-8),recipe=E.DB.recipes.filter(r=>r.level<=p.level).at(-1),adult=p.creatures.find(x=>x.mealsCompleted>=E.CREATURE[x.species].mealsToAdult);
+  return {[band.at(-1).id]:12,[band.at(-3).id]:9,...(recipe?{[recipe.output]:6}:{}),...(adult?{[`produce_${adult.species}`]:2}:{})};
+ }
+ const hardTerms=(base,stars)=>{const items=Object.fromEntries(Object.entries(base).map(([id,n])=>[id,n*stars]));return {stars,items,xp:Math.floor(Object.entries(items).reduce((t,[id,n])=>t+n*(E.CROP[id]?E.CROP[id].harvestXP/(E.CROP[id].yieldPerCell||1):60),0)),cup:[20,30,40][stars-1],marks:stars};};
+ function challengeViews(d){
+  const p=garden.progression;if(p.level<160)return {};
+  const ch=challengeOf(garden),t=now();
+  if(ch.hard&&ch.hard.deadline<=t)ch.hard=null;
+  const hard={unlockLevel:160,marks:ch.marks,frameMarks:30,hours:48,open:ch.hard?{...clone(ch.hard),marks:ch.hard.stars}:null,offer:!ch.hard&&ch.day!==d.dayKey?{id:`hard-${d.dayKey}`,tiers:[1,2,3].map(s=>hardTerms(hardBase(),s))}:null};
+  if(p.level<200)return {hard};
+  const next=MILESTONES.find(m=>m<=p.level&&!ch.won.includes(m));
+  const milestone=ch.run?{state:'running',level:ch.run.level,goal:ch.run.goal,startedAt:ch.run.startedAt,progress:ch.run.goal==='marks'?Math.min(10,ch.marks-ch.run.marksAt):Math.min(GOAL_TARGET[ch.run.goal],Math.floor((t-ch.run.startedAt)/86400000)),target:GOAL_TARGET[ch.run.goal],endsAt:ch.run.startedAt+7*86400000,daysLeft:Math.ceil((ch.run.startedAt+7*86400000-t)/86400000),onLeave:false,won:[...ch.won]}
+   :next?{state:'ready',level:next,goal:goalOf(next),target:GOAL_TARGET[goalOf(next)],days:7,retryAt:null,won:[...ch.won]}:{state:'wait',level:MILESTONES.find(m=>m>p.level)??null,goal:null,won:[...ch.won]};
+  return {hard,milestone};
+ }
+ function challenge(c,next,d,extra){
+  const p=next.progression;if(p.level<160)fail('challenge-locked','Từ cấp 160 bác Hagrid mới giao thử thách.');
+  const ch=challengeOf(next),t=now();
+  if(c.kind==='accept'){
+   if(![1,2,3].includes(c.stars))fail('invalid-action-input','Chọn từ 1 đến 3 sao.');
+   if(ch.hard)fail('hard-open','Con đang nhận một đơn khó rồi.');if(ch.day===d.dayKey)fail('hard-taken','Hôm nay con đã nhận đơn khó rồi.');
+   const terms=hardTerms(hardBase(),c.stars);ch.hard={id:`hard-${d.dayKey}`,stars:c.stars,items:terms.items,xp:terms.xp,cup:terms.cup,acceptedAt:t,deadline:t+48*3600000};ch.day=d.dayKey;extra.challenge={kind:'accept',stars:c.stars};
+  }else if(c.kind==='deliver'){
+   const h=ch.hard;if(!h)fail('unknown-order','Không có đơn khó nào đang mở.');
+   const inv=p.inventory;if(Object.entries(h.items).some(([id,n])=>(inv[id]||0)<n))fail('missing-crops','Kho chưa đủ hàng cho đơn này.');
+   for(const[id,n]of Object.entries(h.items))inv[id]-=n;
+   p.xp+=h.xp;p.level=E.DB.levels.filter(r=>r.totalXP<=p.xp).at(-1).level;ch.marks+=h.stars;ch.hard=null;
+   const add=Math.min(h.cup,60-(d.cup||0));d.cup=(d.cup||0)+add;next.cup.points+=add;extra.challenge={kind:'deliver',xp:h.xp,cup:h.cup,marks:h.stars};extra.cupPoints=add;
+  }else if(c.kind==='start'){
+   const level=MILESTONES.find(m=>m<=p.level&&!ch.won.includes(m));if(ch.run)fail('challenge-running','Thử thách mốc đang chạy.');if(!level)fail('challenge-locked','Chưa tới mốc.');
+   ch.run={level,goal:goalOf(level),startedAt:t,marksAt:ch.marks,streakDay:null,streak:0};extra.challenge={kind:'start',level};
+  }else fail('invalid-action-input','Lệnh thử thách không hợp lệ.');
+  p.revision+=1;
  }
  function deliver(c,next,d){
   const order=ordersFor(d).find(o=>o.id===c.orderId);if(!order)fail("unknown-order","Không tìm thấy đơn hàng này hôm nay.");if(order.delivered)fail("already-claimed","Đơn hàng này đã giao rồi.");
@@ -446,6 +485,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   }else if(c.action==="boost")boost(c,next);
   else if(c.action==="usePremium")usePremium(c,next,d);
   else if(c.action==="deliverOrder")deliver(c,next,d);
+  else if(c.action==="challenge")challenge(c,next,d,extra);
   else if(c.action==="tutorialGrow")tutorialGrow(c,next);
   // Server applyGuideDone: a finished «Sổ tay» lesson, no revision, reward or points.
   else if(c.action==="guideDone"){
