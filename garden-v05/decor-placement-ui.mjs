@@ -4,7 +4,7 @@ import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=25.0.
 import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=25.0.2';
 export {decorFootprint} from './garden-object-metrics.mjs?v=25.0.2';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.0.2';
-import {GARDEN_STAGES,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
+import {GARDEN_STAGES,inEdgeStrip,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
 import {el,button} from './ui-utils.mjs?v=25.0.2';
 import {iconButton} from './pixel-icons.mjs?v=25.0.2';
 import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap,snapDecorSpot} from './decor-runtime.mjs?v=25.0.2';
@@ -67,7 +67,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const rect=decorFootprintRect(col,row,footprint,facing);
  const inset=0.05,margin=big?FENCE_CLEARANCE:SMALL_FENCE_CLEARANCE;
  if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
-  if(!stageContains(stage,c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
+  if(!stageContains(stage,c,r)||inEdgeStrip(c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
  }
  // Owner 20/10/2026: unbuilt bases are free ground; building there asks to move the piece first (decorOnGround).
  const queued=new Set((state?.construction??[]).map(j=>j.id)),built=new Set(state?.built??[]);

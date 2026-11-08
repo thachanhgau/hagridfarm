@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import scene from './scene-data.json' with {type:'json'};
 import {newGame,testProfile} from './progression-engine.mjs';
 import {createBoundaryFence} from './garden-landscape.mjs';
-import {GARDEN_STAGES,GREENHOUSE_BAY,gardenStage,stageContains,stageBoundary,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.65';
+import {EDGE_STAGE,inEdgeStrip,fitBounds,pastureSpot,treeStage,EDGE_LAYOUT,GARDEN_STAGES,GREENHOUSE_BAY,gardenStage,stageContains,stageBoundary,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=24.9.65';
 const area=stage=>{const p=stageBoundary(stage);return Math.abs(p.reduce((sum,a,i)=>{const b=p[(i+1)%p.length];return sum+a[0]*b[1]-b[0]*a[1]},0))/2;};
 test('seven monotone spatial chapters grow from a quarter-sized starter yard',()=>{
  assert.deepEqual(GARDEN_STAGES.map(s=>s.level),[1,10,24,48,72,100,110]);
@@ -55,4 +55,34 @@ test('final chapter opens the last plot, and keepsakes stay inside stepped front
 
 test('stepped fences stay joined and keep one gate on the main path',()=>{
  for(const stage of GARDEN_STAGES){const panels=createBoundaryFence(scene,stageBoundary(stage));assert.equal(panels.filter(p=>p.gate).length,1);for(let i=0;i<panels.length;i++)assert.deepEqual(panels[i].cellB,panels[(i+1)%panels.length].cellA);}
+});
+
+test('Bìa Rừng stage: only with edge_1, strip rows 5.5–25.5, outline joins, GARDEN_STAGES untouched',()=>{
+ assert.equal(GARDEN_STAGES.length,7);
+ assert.equal(gardenStage({level:300,built:['pond_1']},scene),GARDEN_STAGES.at(-1));
+ for(const built of [['edge_1'],[{id:'edge_1'}],['edge_1','edge_2','edge_3']])assert.equal(gardenStage({level:300,built},scene),EDGE_STAGE);
+ const last=GARDEN_STAGES.at(-1);
+ assert.equal(stageContains(last,40,10),false);
+ assert.equal(stageContains(EDGE_STAGE,40,10),true);
+ assert.equal(stageContains(EDGE_STAGE,45.5,5.5),true);
+ assert.equal(stageContains(EDGE_STAGE,46,10),false);
+ assert.equal(stageContains(EDGE_STAGE,40,4),false,'north of the strip');
+ assert.equal(stageContains(EDGE_STAGE,40,26),false,'south of the strip');
+ assert.equal(stageContains(EDGE_STAGE,33.5,30),true,'old land unchanged');
+ assert.equal(stageContains(EDGE_STAGE,34,30),false);
+ assert.ok(inEdgeStrip(40,10)&&!inEdgeStrip(33.5,10)&&!inEdgeStrip(40,30));
+ for(const stage of GARDEN_STAGES)assert.equal(stage.edgeRight,undefined);
+ const outline=stageBoundary(EDGE_STAGE);
+ assert.ok(outline.length>stageBoundary(last).length);
+ for(const [c,r] of EDGE_LAYOUT.pits)assert.ok(stageContains(EDGE_STAGE,c-.5,r-.5)&&stageContains(EDGE_STAGE,c+1.5,r+1.5));
+ const sp=pastureSpot(3,123456);assert.ok(sp.col>=35&&sp.col<=44&&sp.row>=6&&sp.row<=13);
+ assert.deepEqual([null,{ripe:true},{readyAt:1e12,ripe:false},{readyAt:10,ripe:false}].map((t,i)=>treeStage(t,i===2?1e12-100*3600000:5)),[-1,2,0,1]);
+});
+
+test('fitBounds keeps the old frame on narrow screens and opens the strip otherwise',()=>{
+ const old=stageWorldBounds(scene,GARDEN_STAGES.at(-1)),wide=stageWorldBounds(scene,EDGE_STAGE);
+ assert.deepEqual(fitBounds(scene,EDGE_STAGE,true),old);
+ assert.deepEqual(fitBounds(scene,EDGE_STAGE,false),wide);
+ assert.ok(wide.right>old.right);
+ for(const stage of GARDEN_STAGES)assert.deepEqual(fitBounds(scene,stage,true),stageWorldBounds(scene,stage));
 });

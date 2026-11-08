@@ -23,10 +23,11 @@ import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.0.2';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.0.2';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.0.2';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.0.2';
-import {GARDEN_STAGES,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
+import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,GARDEN_STAGES,fitBounds,gardenStage,stageBoundary,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.0.2';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.0.2';
 import {CREATURE, DB, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
+import {EDGE_SCENERY} from './edge-art.mjs?v=25.0.2';
 import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.0.2';
 import {drawIcon} from './pixel-icons.mjs?v=25.0.2';
 import {
@@ -724,7 +725,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]));
+  const deferredFiles = new Set(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...Object.values(EDGE_SCENERY).map((spec) => spec.file), ...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]));
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -1187,6 +1188,30 @@ export async function createGarden(canvas, options = {}) {
       ctx.restore();
     }};
     return [pond, ...pondBeds(at, tier, view)];
+  }
+
+  // Phase 3 «Bìa Rừng»: ground art at iso(rect centre) − groundCentre (null while the deferred file loads: next frame draws it).
+  function drawEdgeGround(ctx, builtIds) {
+    const parts = [['trail', EDGE_LAYOUT.trail], ...(builtIds.has('edge_2') ? [['pasture', EDGE_LAYOUT.pasture]] : []), ...(builtIds.has('edge_3') ? [['orchard', EDGE_LAYOUT.orchard]] : [])];
+    ctx.save();
+    ctx.imageSmoothingEnabled = false;
+    for (const [id, part] of parts) {
+      const spec = EDGE_SCENERY[id], image = imageFor(spec.file);
+      if (!image) continue;
+      const [x, y] = iso(...part.centre);
+      ctx.drawImage(image, Math.round(x - spec.groundCentre.x), Math.round(y - spec.groundCentre.y));
+    }
+    ctx.restore();
+  }
+
+  // Six fixed pits; a tree is a depth-sorted object at the pit centre (art bottom = pivot, plan §11.4).
+  function orchardObjects(orchard, now) {
+    return asArray(orchard?.trees).slice(0, EDGE_LAYOUT.pits.length).flatMap((tree, i) => {
+      const stage = treeStage(tree, now), spec = stage < 0 ? null : EDGE_SCENERY[`tree-${tree.kind}-${stage}`];
+      if (!spec) return [];
+      const asset = {file: spec.file, width: spec.width, height: spec.height, pivotX: spec.pivotX, pivotY: spec.pivotY, noSnowCap: true};
+      return [{kind: 'asset', type: 'prop', id: `orchard-${i}`, species: `tree-${tree.kind}`, asset, xy: iso(...EDGE_LAYOUT.pits[i])}];
+    });
   }
 
   function drawPondLife(ctx, x, y, k, view, creatures, clock) {
@@ -1782,6 +1807,9 @@ export async function createGarden(canvas, options = {}) {
     context.drawImage(terrain, 0, 0);
     drawPlotSoil(state, logicalNow, grid);
     drawV24Ground(context,{weatherMode,clock,iso,stage:currentStage,map});
+    const hasEdge = currentStage.id === 8, builtIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id?.id : id)));
+    map.columns = hasEdge ? 46 : 34;
+    if (hasEdge) drawEdgeGround(context, builtIds);
     drawSelection(state, selectedPlot, lineCells);
     drawPlotFrames(state, logicalNow, selectedPlot);
     if (options.previewLayout) drawLayoutSwapPreview(options.previewLayout);
@@ -1827,7 +1855,7 @@ export async function createGarden(canvas, options = {}) {
     if (propsVisible && options.norbert) elfList.push(norbertObject(iso, clock, {night: atmosphereMode === 'night', cheering: !!cheering.norbert}));
     const fx = propsVisible && friends ? friends.friendObjects(iso, clock, options.now, elfList, {night: atmosphereMode === 'night', winter: !!activeWinter, cheering, all: options.allFriends}) : [];
     if (propsVisible && xmasKit) fx.push(...xmasKit.hearthObjects(iso, options.xmas, elfList, {clock, decorations: options.decorations})); // December hearth, vớ, egg; S7 part 2 by date
-    const objects = [...boundaryFence, ...wizList, ...elfList, ...fx, ...storeDecorationObjects];
+    const objects = [...boundaryFence, ...(hasEdge && propsVisible && options.orchard ? orchardObjects(options.orchard, logicalNow) : []), ...wizList, ...elfList, ...fx, ...storeDecorationObjects];
     if (propsVisible) {
       for (const prop of map.objects ?? []) {
         // Legacy edge-tree anchors straddled the fence; the bounded forest layers own trees now.
@@ -1900,6 +1928,11 @@ export async function createGarden(canvas, options = {}) {
       if (!Array.isArray(spot) || spot.length < 2 || !entry) continue;
       let facing = creatureFacings[entry.species] === 'right' ? 'right' : 'default';
       if (entry.species === 'salamander' && campfire) spot = [campfire.col + 0.7, campfire.row + 0.2];
+      if (builtIds.has('edge_2') && PASTURE_ROAMERS.includes(entry.species) && propsVisible && clock > 0) {
+        const roam = pastureSpot(index, clock);
+        spot = [roam.col, roam.row];
+        facing = roam.facing;
+      }
       if (entry.species === 'crup' && propsVisible && clock > 0) {
         const phase = clock / CRUP_TROT_MS;
         spot = [CRUP_TROT.col + Math.sin(phase) * CRUP_TROT.reach, CRUP_TROT.row];
@@ -2106,6 +2139,7 @@ export async function createGarden(canvas, options = {}) {
     order: () => lastOrder,
     gridMetrics: () => gardenObjectMetrics(map,motion,[...decorAssets.values()],DECORATION_LAYOUT),
     growthBounds: () => stageWorldBounds(map, currentStage),
+    fitBounds: (narrow) => fitBounds(map, currentStage, narrow),
     growthStage: () => currentStage,
     images,
     loaded: assetFiles.length - missing.size,

@@ -1,6 +1,6 @@
 import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=25.0.2';
 import {KEEPSAKE_ART} from './complete-object-art.mjs?v=25.0.2';
-import {stageContains} from './garden-growth.mjs?v=25.0.2';
+import {inEdgeStrip,stageContains} from './garden-growth.mjs?v=25.0.2';
 
 // The scene opens one half-tile beyond the old server adapter. Keep this small
 // contract in one client module so placement, rendering and tests do not each
@@ -92,7 +92,7 @@ function legacyAnchorCol(placement, authoredCol) {
 function isStageAnchorVisible(stage, [col, row]) {
   // A few callers use `{bottom: 33.5}` as a final-stage rendering hint. It
   // has no polygon to test, so keep the authored final layout intact.
-  return !stage || !Number.isFinite(Number(stage.right)) || stageContains(stage, col, row);
+  return !stage || !Number.isFinite(Number(stage.right)) || (stageContains(stage, col, row) && !inEdgeStrip(col, row));
 }
 
 export function keepsakeAnchor(placement, stage = null, anchorRow = null) {

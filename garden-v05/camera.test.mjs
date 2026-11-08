@@ -52,3 +52,18 @@ test('dragging a decoration keeps the camera still and a second pointer changes 
   assert.equal(calls.pick,0,'finishing a pinch never activates the garden underneath');
  }finally{globalThis.document=oldDocument;globalThis.ResizeObserver=oldObserver;}
 });
+
+test('overview asks the renderer for the narrow fit frame on phones and the wide one on desktop',()=>{
+ const oldDocument=globalThis.document,oldObserver=globalThis.ResizeObserver,asked=[];
+ try{
+  const buttons=new Map();
+  globalThis.document={querySelectorAll:()=>[],getElementById:id=>{if(id==='playDock')return null;if(!buttons.has(id))buttons.set(id,{setAttribute(){}});return buttons.get(id);},addEventListener(){}};
+  globalThis.ResizeObserver=class{observe(){}};
+  for(const width of [600,1200]){
+   const viewport={clientWidth:width,clientHeight:600,dataset:{},style:{setProperty(){}},getBoundingClientRect:()=>({top:0,left:0,width,height:600}),setPointerCapture(){},addEventListener(){},classList:{add(){},remove(){}}};
+   const b={left:0,top:0,right:2560,bottom:1440};
+   setupCamera({viewport,canvas:{style:{}},map:{width:2560,height:1440,objects:[],props:[]},iso:()=>[0,0],getRenderer:()=>({growthBounds:()=>b,fitBounds:narrow=>{asked.push(narrow);return b;}})}).overview();
+  }
+  assert.ok(asked.includes(true)&&asked.includes(false));
+ }finally{globalThis.document=oldDocument;globalThis.ResizeObserver=oldObserver;}
+});

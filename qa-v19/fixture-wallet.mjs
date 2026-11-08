@@ -81,7 +81,8 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   state.creatureFacings={puffskein:"default",bowtruckle:"right",niffler:"default",kneazle:"right",hippogriff:"default",unicorn:"right"};
   if(level>=150&&state.built.includes('pond_1')&&!state.creatures.some(c=>c.species==='grindylow'))state.creatures.push({id:'creature-grindylow',type:'creature',species:'grindylow',level:150,adoptedAt:origin-48*3600000,mealsCompleted:6,meal:null,cyclesClaimed:0,preview:false});
   // Garden expansion phase 2: the new land species from their level, while the pens (and «Chuồng mở rộng») have room.
-  for(const species of ['crup','knarl','salamander'])if(level>=E.CREATURE[species].level&&state.creatures.filter(c=>!E.POND_SPECIES.has(c.species)).length<E.housingCapacity(state))state.creatures.push({id:`creature-${species}`,type:'creature',species,level:E.CREATURE[species].level,adoptedAt:origin-48*3600000,mealsCompleted:species==='crup'?E.CREATURE.crup.mealsToAdult:4,meal:null,cyclesClaimed:0,preview:false});
+  for(const species of ['crup','knarl','salamander','porlock'])if(level>=E.CREATURE[species].level&&state.creatures.filter(c=>!E.POND_SPECIES.has(c.species)).length<E.housingCapacity(state))state.creatures.push({id:`creature-${species}`,type:'creature',species,level:E.CREATURE[species].level,adoptedAt:origin-48*3600000,mealsCompleted:species==='crup'?E.CREATURE.crup.mealsToAdult:4,meal:null,cyclesClaimed:0,preview:false});
+  if(level>=E.CREATURE.kappa.level&&!state.creatures.some(c=>c.species==='kappa'))state.creatures.push({id:'creature-kappa',type:'creature',species:'kappa',level:E.CREATURE.kappa.level,adoptedAt:origin-48*3600000,mealsCompleted:6,meal:null,cyclesClaimed:0,preview:false});
   if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{}),...(level>=160?{grindylow:1,crup:1}:{})};
  }
  // Asset-overlap QA (05/11/2026): every earned decoration at home and a ripe crop on every cell of every plot.
@@ -202,7 +203,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Server garden-retention-core views (QA approximation: fixed board, orders drawn per day from the unlocked crops).
    ...retentionViews(d),...(missions?missionViews():{}),flooFrames:{frames:frameViews(),worn:wornFrame},saleAdmin:true,
    serverNow:now(),profile:{username:"Xem thử · không lưu"},fire:fire&&fire.until>now()?fire:null,helpers:helperRows,
-   ...soilViews(),...(duty&&garden.progression.level>=130?{duty:dutyQaView()}:{}),pond:pondView(),
+   ...soilViews(),...(duty&&garden.progression.level>=130?{duty:dutyQaView()}:{}),pond:pondView(),edge:edgeView(),orchard:orchardView(),
    ...(receipt?{receipt}:{}),
   });
  }
@@ -425,6 +426,13 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   const tier=pondTierOf(g.progression),lots=tier?E.POND_EXPANSIONS[tier-1].capacityAfter:0,beds=tier>=2?4:tier?2:0;
   while(g.pond.lots.length<lots)g.pond.lots.push(null);
   while(g.pond.beds.length<beds)g.pond.beds.push([null,null,null]);
+ }
+ // Phase 3 (simplified): edge {step, unlockLevel}; orchard null before edge_3, else six pits (empty / growing / ripe mix).
+ function edgeView(){const p=garden.progression;return p.level<260?null:{step:['edge_1','edge_2','edge_3'].filter(id=>p.built.includes(id)).length,unlockLevel:260};}
+ function orchardView(){
+  if(!garden.progression.built.includes('edge_3'))return null;
+  const t=now(),H=3600000,rows=[['apple',-60000],['pear',30*H],null,['plum',-60000],['apple',70*H],null];
+  return {trees:rows.map(r=>r&&{kind:r[0],readyAt:t+r[1],ripe:r[1]<=0})};
  }
  function pondView(){
   const p=garden.progression;if(p.level<130)return null;

@@ -4,8 +4,8 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
  let fitScale=.05;
  function overviewFrame(){
-  const b=getRenderer()?.growthBounds?.()??{left:0,top:0,right:map.width,bottom:map.height};
   const vr=viewport.getBoundingClientRect();
+  const r=getRenderer(),b=r?.fitBounds?.(vr.width<900)??r?.growthBounds?.()??{left:0,top:0,right:map.width,bottom:map.height};
   const visible=selector=>[...document.querySelectorAll(selector)].filter(e=>!e.hidden&&e.getClientRects().length).map(e=>e.getBoundingClientRect());
   const top=Math.max(48,...visible(".hud button").map(r=>r.bottom-vr.top));
   const docks=visible("#playDock, #selectionHint").filter(r=>r.top-vr.top>top);
