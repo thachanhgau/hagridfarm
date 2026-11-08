@@ -1,0 +1,144 @@
+{
+  "items": [
+    {
+      "id": "grindylow-left-motion-v01-candidate-a",
+      "master": "docs/codex-briefs/pond-art/grindylow-left-candidate-a.png",
+      "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided Diricawl sheet's pixel style, not its bird anatomy. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face LEFT in clear three-quarter view, face/eyes toward image LEFT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-a2bd59f2-f004-45f5-a9d4-375829f50181.png",
+      "referenceFiles": [
+        "garden-v05/creature-motion-assets/masters/diricawl-right-motion-v01.png",
+        "garden-v05/native-levels/diricawl/frame-04.png"
+      ]
+    },
+    {
+      "id": "grindylow-left-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/grindylow-left-motion-v01.png",
+      "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided Diricawl sheet's pixel style, not its bird anatomy. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face LEFT in clear three-quarter view, face/eyes toward image LEFT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Candidate B: prioritize thin humanoid limbs and compact smooth skin, no dorsal spines, fins, tail or reptile frill. Only the TWO short head horns; long fingers clearly distinct. Each sprite smaller with ample alpha margin; each pose's feet exactly at local y210. Pixel blocks broad and clean.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png",
+      "referenceFiles": [
+        "garden-v05/creature-motion-assets/masters/diricawl-right-motion-v01.png"
+      ]
+    },
+    {
+      "id": "grindylow-right-motion-v01",
+      "master": "garden-v05/creature-motion-assets/masters/grindylow-right-motion-v01.png",
+      "prompt": "Use case: stylized-concept. Create a 1024x1024 game sprite motion MASTER, exact 4x4 grid of 256x256 cells, NO drawn grid. Match the provided selected Grindylow design EXACTLY: smooth pale green compact humanoid, two horns, no back spines or fins. Redraw facing right, NOT a mirror: lighting remains TOP LEFT. Book Grindylow: small compact pale sickly green water demon, TWO short sharp horns, large dark eyes, wide cheeky mouth with tiny teeth, thin arms and TWO thin legs, very long thin spindly fingers. NO tentacles or octopus parts. Adult intended native 56x58px, simplify bold silhouette. ALL 16 face RIGHT in clear three-quarter view, face/eyes toward image RIGHT. Same design/size each cell, centered, feet at y210 within cell (except raised action peak), sprite fits x32..224, at least 32px alpha gaps. All fingers/horns/fish touch body except expressly named drops and care cue. Row1 idle: crouched fingers on knees; shoulders raised breathing; blink; settle fingers flex. Row2 action: low crouch; spring up both long-finger hands raised with two water drops; landing; recovery. Row3 eat: approach tiny silver fish on ground; bend grab fish; bite fish; lift chew fish. Row4 care: lean toward small hand/brush cue; eyes closed happy receiving care; blink; relaxed. No props except tiny fish and care cue. No ground. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-458e7a0a-f0c3-42e5-8eb4-1b93519d7c14.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+      ]
+    },
+    {
+      "id": "grindylow-growth-v01",
+      "master": "garden-v05/creature-motion-assets/masters/grindylow-growth-v01.png",
+      "prompt": "Create 1024x512 transparent sprite GROWTH sheet. EXACT 2 rows x4 columns, 256px square cells, no grid lines. Reference selected pale smooth-skinned book Grindylow: two short horns, two skinny legs, thin arms with very long spindly fingers, large dark eyes, cheeky wide mouth tiny teeth, NO tail fins tentacles dorsal spines. Row1 all face LEFT; row2 all face RIGHT, top-left light BOTH rows. Columns newborn tiny round body horn nubs (height65px), juvenile(height100), adolescent(height135), adult(height170) SAME adult design as reference. Calm standing crouch, feet at local y210 each cell, centered, clear 32px+ gaps. No props ground or shadows. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-deab6962-fe98-473c-89f7-7d93e835e369.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+      ]
+    },
+    {
+      "id": "pond-1",
+      "master": "garden-v05/environment/pond/masters/pond-1.png",
+      "prompt": "Draw ONE pond scenery master 960x672px. Image1 is EXACT FOOTPRINT geometry guide only, image2 is style/pixel density reference. Small fish pond: clear blue-violet water, 2–3 dark fish shadows below surface, few grey rocks and cattail clumps on rim, ONE lily pad. Bank/rim follows the ENTIRE pale blue parallelogram outline with gently rounded corners, fills corners, NO oval pond floating in blank diamond. Ground footprint vertices in target canvas: (0,468),(576,180),(960,372),(384,660). Upright reeds and rocks may extend above rear rim but never outside width. Remove ALL guide colours tile seams dot dashed red line and white background: transparent alpha everywhere outside object. Match pond reference chunky grey stones, blue-violet water, cattails, grass clumps. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-bcfb1e82-f6ee-4d8c-937b-fff49b93675c.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-1.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "pond-2",
+      "master": "garden-v05/environment/pond/masters/pond-2.png",
+      "prompt": "Draw ONE pond scenery master 1120x760px. Image1 EXACT FOOTPRINT geometry guide, image2 pixel style reference, image3 same-family smaller pond. Bigger pond: more reeds and cattails on back rim, visible green LONG RIBBON water weed in shallows, lily pads, two dark fish shadows. Bank/rim must follow entire pale-blue parallelogram with gently rounded corners, fill all corners, no oval in blank diamond. Target vertices (0,510),(640,190),(1120,430),(480,750). Upright reeds/rocks may rise above rear rim but not outside width. Same grey chunky rocks, blue-violet water and cattails as smaller pond. Remove ALL guide colours seams dot red dashed line white backdrop; transparent outside object. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-866f6527-1bc2-4e82-8352-34d55bd5a079.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-2.png",
+        "garden-v05/environment/layers/pond.png",
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-bcfb1e82-f6ee-4d8c-937b-fff49b93675c.png"
+      ]
+    },
+    {
+      "id": "pond-3-candidate-1",
+      "master": "docs/codex-briefs/pond-art/pond-3-candidate-1.png",
+      "prompt": "Draw ONE pond scenery master 1152x768px. Image1 EXACT FOOTPRINT geometry guide, image2 pixel style reference, image3 same-family smaller pond. Large DEEP pond: shallow light-blue rim water transitions in 3 CLEAR FLAT STEPS to DEEP DARK BLUE centre #3E3B70/#41465C, SMALL wooden jetty 3–4 planks wide with TWO posts reaches from FRONT RIGHT bank toward middle, reeds/grey rocks on far rim. Bank/rim follows entire pale-blue parallelogram with softly rounded corners, fills corners, NO oval floating in blank diamond. Target vertices (0,504),(640,184),(1152,440),(512,760). Upright reeds/rocks may rise above rear rim never wider than guide. Clear top surface with broad FLAT solid water-colour bands; deep dark centre must dominate. Jetty short, not bridge, 3–4 broad planks and exactly TWO upright posts. Same grey chunky rocks blue-violet water cattails as smaller pond. Remove guide colours seams dot red dashes white background. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-38f78a4c-2e51-4ca0-8d98-f27b97211e47.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-3.png",
+        "garden-v05/environment/layers/pond.png",
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-bcfb1e82-f6ee-4d8c-937b-fff49b93675c.png"
+      ]
+    },
+    {
+      "id": "pond-bed",
+      "master": "garden-v05/environment/pond/masters/pond-bed.png",
+      "prompt": "Draw ONE 1024x704px scenery master. Image1 exact geometry guide, image2 pixel style only. Long shallow WATER PLANTING TRAY following a narrow 1x3 strip: low wooden plank walls, mud-and-water bed inside with few SMALL green shoots, NO big plants/crops. Ground is LONG narrow parallelogram, NOT regular diamond. Low plank rim follows entire narrow pale blue parallelogram, softly rounded corners, fill corners. Target ground vertices (0,560),(768,176),(1024,304),(256,688). Long axis slopes up-right at 1:2. Inside mostly wet brown mud and shallow blue water, only 4 tiny shoots. No bank grasses or reeds. Remove guide seams colours dot dashed red line and white background. NOTHING outside object, genuine alpha, zero glow/halo/shadow. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-b9422e16-7254-49ed-b01c-1b9d43080d3f.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-bed.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "items-sheet",
+      "master": "garden-v05/masters-items/pond/items-sheet.png",
+      "prompt": "Create one transparent 1024x1024 ITEM ICON sheet: EXACT 2x2 grid of 512px cells, NO drawn grid. One big readable object per cell centered, object base at local y440, at least48px empty margin on ALL cell edges. Match references viewed at8x, each icon ultimately64x64 with40x40px object: bold extremely simple shapes thick outline no tiny details. TOP LEFT clear water BAG thin glassy tied pouch tied top with BROWN STRING holding exactly3 tiny bronze-grey CARP FRY. TOP RIGHT same bag shape tied with RED STRING holding exactly3 bright orange GOLDFISH FRY. BOTTOM LEFT one plump orange GOLDFISH side view facing LEFT, fan tail cream belly single dark eye. BOTTOM RIGHT bundle of slimy DARK GREEN POND WEED tied with reed, broad wet highlights and TWO water drips. No labels, no shadows, no extra objects. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-63d4e571-00e0-4ef2-8b60-b6a22a2ffc42.png",
+      "referenceFiles": [
+        "garden-v05/native-items/supply_water.png",
+        "garden-v05/native-items/recipe_fish.png",
+        "garden-v05/native-items/seed_packet.png"
+      ]
+    },
+    {
+      "id": "habitat_grindylow",
+      "master": "garden-v05/masters-complete-objects/habitat_grindylow.png",
+      "prompt": "ONE centered object on transparent square 1024x1024. Grindylow habitat, EMPTY tiny rock pool nook intended native36x28. Reference1 habitat prop pixel density, reference2 native reference, reference3 family pond materials. Squat extraordinarily SIMPLE silhouette, broad flat blocks: ring of only4–5 grey stones holding little blue water with ONE strand of weed, SMALL STONE ARCH over one side to hide under. No creature, no reed clumps, no extra scenery, no plinth. Dimetric2:1. Object occupies central720x560 max. No glow halo cast shadow or texture noise. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-2a657dff-d5b7-419a-ad52-d7f3917b9c55.png",
+      "referenceFiles": [
+        "garden-v05/masters-complete-objects/habitat_kneazle.png",
+        "garden-v05/native-complete-objects/habitat_kneazle/frame-01.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "keepsake_grindylow-candidate-a",
+      "master": "docs/codex-briefs/pond-art/keepsake-grindylow-candidate-a.png",
+      "prompt": "ONE centered object on transparent 1024x1024 square. Keepsake statuette intended native44x44 including plinth. Match Kneazle keepsake reference style and low TWO STEP warm grey stone plinth, simple GOLD rectangular FRONT INSET NO LETTERING. Fixed atop plinth a pale sickly green GRINDYLOW statuette same design as third reference: TWO short sharp little horns, big dark eyes cheeky wide mouth tiny teeth, compact smooth body, TWO thin legs, thin arms raised with LONG SPINDLY FINGERS spread clearly. No dorsal spines tail fins tentacles. Simplify broad flat blocks readable at44px. Object centered within central800x800. Top-left light, no ground/drop shadow/glow. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-06d28255-649c-42c1-a760-f2dae04096c9.png",
+      "referenceFiles": [
+        "garden-v05/masters-complete-objects/keepsake_kneazle.png",
+        "garden-v05/native-complete-objects/keepsake_kneazle/frame-01.png",
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-97344f59-d109-42d4-a527-1d9b0d0e489e.png"
+      ]
+    },
+    {
+      "id": "pond-3-candidate-2",
+      "master": "docs/codex-briefs/pond-art/pond-3-candidate-2.png",
+      "prompt": "Edit this pond MASTER: REMOVE ALL soft glow/halo/background haze outside the pond and ALL smooth gradients inside water/stone/wood. Background must be genuine fully transparent alpha right up to hard pixel contour. Flat square pixel colour blocks only. Keep footprint, reeds, rocks, deep dark-blue centre with 3 flat stepped water bands and small front-right jetty with TWO posts. Canvas1152x768, ground corners (0,504),(640,184),(1152,440),(512,760). No shadow outside object. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-b613159f-1705-4d82-a898-17987a2d67e9.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-38f78a4c-2e51-4ca0-8d98-f27b97211e47.png"
+      ]
+    },
+    {
+      "id": "pond-3",
+      "master": "garden-v05/environment/pond/masters/pond-3.png",
+      "prompt": "Create ONE flat PIXEL ART GAME TILE master 1152x768 on true transparent alpha. Reference1 gives EXACT parallelogram geometry ONLY; reference2 shows chunky grey rocks and reeds pixel shapes ONLY. Large deep pond ground corners EXACT (0,504),(640,184),(1152,440),(512,760); rim follows all four sides with softly rounded corners. Low rim grey rocks and reeds at far side. Interior drawn using ONLY solid flat swatches: light-blue shallow edge #70A8B6, then blue-violet band #6961A6, then large deep dark-blue centre #3E3B70. Clear HARD STEP boundaries. Small wooden jetty at front-right bank points into middle, four planks, two posts. ABSOLUTELY ZERO soft shadows, ZERO GLOW, ZERO haze, ZERO gradients, ZERO atmosphere, ZERO background pixels around object. Every region is a uniform opaque flat colour. Remove white backdrop and every guide line/dot. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-c055b027-dd32-4f96-8919-957dc09d652d.png",
+      "referenceFiles": [
+        "docs/codex-briefs/pond-art/guide-pond-3.png",
+        "garden-v05/environment/layers/pond.png"
+      ]
+    },
+    {
+      "id": "keepsake_grindylow",
+      "master": "garden-v05/masters-complete-objects/keepsake_grindylow.png",
+      "prompt": "Edit ONLY remove the TWO floating blue water drops beside statuette body. Those two areas must be completely transparent. Keep ONE connected Grindylow STATUETTE fixed to its two-step grey plinth with gold front inset, pale green two-horned body and raised long fingers EXACTLY unchanged. No free-floating objects. Genuine transparent background. No added shadows halo glow gradients. 1024x1024. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-6e624928-32a3-4c10-bc5b-7c834a1cce51.png",
+      "referenceFiles": [
+        "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-06d28255-649c-42c1-a760-f2dae04096c9.png"
+      ]
+    }
+  ]
+}

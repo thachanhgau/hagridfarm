@@ -12,9 +12,10 @@ const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const manifest=JSON.parse(await read('complete-objects-manifest.json'));
 test('authored scenery, habitat props and species statuettes cover the whole backlog',()=>{
  assert.deepEqual(COMPLETE_SCENERY.map(i=>i.id).sort(),['fang','gardener_friend','herbology_greenhouse','owl_post']);
- assert.deepEqual(Object.keys(HABITAT_ART).sort(),Object.keys(CREATURE).sort());
- assert.deepEqual(Object.keys(KEEPSAKE_ART).sort(),Object.keys(CREATURE).sort());
- assert.equal(completeObjectFiles().length,40);assert.equal(new Set(completeObjectFiles()).size,40);
+ // Art may lead the species data (pond grindylow, plan §6): every species needs both, extra art is allowed.
+ for(const species of Object.keys(CREATURE))assert(HABITAT_ART[species]&&KEEPSAKE_ART[species],species);
+ assert.deepEqual(Object.keys(KEEPSAKE_ART).sort(),Object.keys(HABITAT_ART).sort());
+ assert.equal(completeObjectFiles().length,42);assert.equal(new Set(completeObjectFiles()).size,42);
  assert(COMPLETE_SCENERY.every(i=>i.frames.length===4));
 });
 test('new native sprites retain master provenance, exact palette, alpha and safe grounded geometry',async()=>{

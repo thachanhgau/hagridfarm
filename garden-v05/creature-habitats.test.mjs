@@ -9,7 +9,7 @@ const spots=[[27.35,1.35],[31.35,1.35]],creatures=[{species:'niffler'},{species:
 const imageFor=file=>({file});
 const record=(fn)=>{const calls=[];const ctx={fillRect(...args){assert(args.every(Number.isInteger));calls.push([this.fillStyle,...args]);},drawImage(image,x,y){assert(Number.isInteger(x)&&Number.isInteger(y));calls.push([image.file,x,y]);}};fn(ctx);return calls;};
 test('every adoptable species has distinct habitat artwork',()=>{
- assert.deepEqual([...HABITAT_SPECIES].sort(),Object.keys(CREATURE).sort());
+ for(const species of Object.keys(CREATURE))assert(HABITAT_SPECIES.includes(species),species); // art may lead the species data (pond grindylow, plan §6)
  const art=HABITAT_SPECIES.map(species=>JSON.stringify(record(c=>drawHabitatProps(c,[{species,xy:[100,100]}],{imageFor}))));
  assert.equal(new Set(art).size,HABITAT_SPECIES.length);
 });
