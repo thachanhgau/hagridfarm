@@ -1,0 +1,32 @@
+[
+  {
+    "master": "garden-v05/environment/pond/masters/pond-1.png",
+    "width": 1440,
+    "height": 894,
+    "transparent": 605375,
+    "opaque": 569,
+    "partial": 681416,
+    "visibleRGB": 43270,
+    "sha256": "0ec34285dee19f889a04f0b6ce72892918db8758cf77053d98c2df72c9ee0419"
+  },
+  {
+    "master": "garden-v05/environment/pond/masters/pond-2.png",
+    "width": 1440,
+    "height": 894,
+    "transparent": 588773,
+    "opaque": 820,
+    "partial": 697767,
+    "visibleRGB": 44944,
+    "sha256": "c1afd1e8e8d2bdb0a89d5b0305c214b3b335d8f12eb25e98c3a65226e5418633"
+  },
+  {
+    "master": "garden-v05/environment/pond/masters/pond-3.png",
+    "width": 1440,
+    "height": 894,
+    "transparent": 568559,
+    "opaque": 691,
+    "partial": 718110,
+    "visibleRGB": 44488,
+    "sha256": "b61e127c20d76ef51cbd6bf9503a8ba31c2869102310f4d28a28094906634654"
+  }
+]

@@ -231,6 +231,28 @@
         "/Users/thachanh/.codex/generated_images/01a1ba86-72e4-7f60-9416-3161ee1b8cf1/exec-56f8208c-d616-4de1-bc71-78613a99cdce.png",
         "docs/codex-briefs/pond-art/guide-pond-3.png"
       ]
+    },
+    {
+      "id": "pond-1-04",
+      "master": "garden-v05/environment/pond/masters/pond-1.png",
+      "prompt": "Use case: precise-object-edit. Game environment sprite MASTER \"Ao cá\", the least developed tier of the SAME large pond. Image 1 is the FINAL pond-3 STYLE AND GEOMETRY reference: preserve its exact broad asymmetric rounded parallelogram shoreline footprint, camera, framing, rock shapes, chunky pixel block density, reed shapes and water colour family. Image 2 is the exact 1440x894 6x9 tile GROUND GUIDE. Output one complete pond on transparent background, same 1440x894 framing. The ground corners are approximately left (0,600), rear (864,168), right (1440,456), front (576,888); fill this footprint with softly rounded corners, rocks/reeds can rise above their ground contact. This is a redraw of pond-3 as the EARLIER tier: completely REMOVE its jetty, posts, islet, twisted root over water, paired eyes and almost-black central patch. Instead continuous murky dark blue-violet water across the big roomy pond, using #41465C and #3E3B70 with only a narrow subdued pale teal shallow rim; no deep black centre. Draw exactly 5 clearly separated dark fish silhouettes spread across open water, exactly 3 sparse grey-green lily pads, mossy grey rocks and a few dark dead cattail clumps along the rim, and one fallen rotting log lying along one bank. Least dark tier, eerie Forbidden Forest but cozy-readable. Copy the pixel scale from pond-3 rather than enlarging pixels for this large footprint. Flat square chunky pixels, 2–3 flat shades per material, #231F2E selective outline, top-left light, isometric 2:1. Prefer palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #3E3B70 #6961A6 #70A8B6 #B7DEE0. No gradient, no soft shading, no blur, no antialias, no dithering or noise. No jetty, no skulls/gore, no flowers, no text, no grid/seams, no red marks, no background ground plane, no shadow outside sprite. Real transparent alpha outside the pond; fully opaque flat colour pixels inside. Preserve the original reference footprint and pixel style as closely as possible.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1baa2-b884-7c23-a0c9-a9677d27cba4/exec-4b996ac0-5543-442a-89c6-ece9b4487e0b.png",
+      "referenceFiles": [
+        "garden-v05/environment/pond/masters/pond-3.png",
+        "docs/codex-briefs/pond-art/guide-pond-1.png"
+      ],
+      "kept": true
+    },
+    {
+      "id": "pond-2-04",
+      "master": "garden-v05/environment/pond/masters/pond-2.png",
+      "prompt": "Use case: precise-object-edit. Game environment sprite MASTER \"Hồ rong\", middle tier of this SAME large pond. Image 1 is the FINAL pond-3 STYLE AND GEOMETRY reference: match its exact broad asymmetric rounded parallelogram shoreline footprint, camera, framing, rock style, chunky square pixel block size, dark reeds, water colour family. Image 2 is the exact 1440x894 6x9 tile GROUND GUIDE. Output one entire pond with the same 1440x894 framing and real transparent background. Ground corners approximately left (0,600), rear (864,168), right (1440,456), front (576,888); fill it with softly rounded corners, do not leave large empty corners or spread outside the guide width; tall rocks/reeds can rise above contact. Redraw pond-3 as an earlier, slightly less dark tier: completely REMOVE the wooden jetty and every post and plank, remove the rock islet and large branching root. Water is dark murky blue-violet #41465C / #3E3B70, narrow desaturated teal shallows, stepped DARKER BLUE centre that is NOT BLACK and NOT an almost-black patch. Draw dark green long ribbon weed visibly reaching up from the depths in the shallows, one half-sunk rotting log, exactly two small pale eyes under the surface, dense black-green reeds and dead cattails along the back rim, mossy dark grey rocks, sparse grey-green lily pads, a few faint ripples and bubbles spread over open water. Eerie Forbidden Forest, cozy readable. This is darker and richer than the fish pond but lighter than final pond-3. Keep rock blocks and reed pixel density identical to pond-3: a big lake means more pixels of water, not enlarged pixels. Chunky low-resolution pixel art, flat square blocks and broad clean clusters, 2–3 shades per material, #231F2E selective outline, top-left light, isometric 2:1. Prefer #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #3E3B70 #6961A6 #70A8B6 #B7DEE0. No gradients, blur, soft shading, antialias, dithering, texture noise, flowers, skulls/gore, text, guide lines/grid/red marks, external drop shadow or ground plane. True transparent alpha outside sprite, fully opaque square pixels inside. No jetty. Preserve reference rim and footprint.",
+      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1baa2-b884-7c23-a0c9-a9677d27cba4/exec-6bf29fe1-9174-448b-920c-0e20af985e84.png",
+      "referenceFiles": [
+        "garden-v05/environment/pond/masters/pond-3.png",
+        "docs/codex-briefs/pond-art/guide-pond-2.png"
+      ],
+      "kept": true
     }
   ]
 }

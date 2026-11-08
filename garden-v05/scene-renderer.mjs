@@ -833,19 +833,20 @@ export async function createGarden(canvas, options = {}) {
     });
   }
 
+  const stageKey = (stage) => `${stage.id}${stage.pond ? ':pond' : ''}`; // the Bờ hồ land changes the ground and fence
   function prepareStage(stage) {
     const nextLayoutKey = layoutCacheKey();
-    if (terrainStageId !== stage.id || terrainLayoutKey !== nextLayoutKey) {
+    if (terrainStageId !== stageKey(stage) || terrainLayoutKey !== nextLayoutKey) {
       // Keep only the current stage's full-size canvases alive. A level-up can
       // happen repeatedly in one session, so retaining every prior layer
       // would grow memory with each transition.
       terrainCaches.clear();
-      terrainStageId = stage.id;
+      terrainStageId = stageKey(stage);
       terrainLayoutKey = nextLayoutKey;
     }
-    if (boundaryStageId !== stage.id) {
+    if (boundaryStageId !== stageKey(stage)) {
       rebuildBoundaryFence(stage);
-      boundaryStageId = stage.id;
+      boundaryStageId = stageKey(stage);
     }
   }
   const animation = createAnimationRuntime();
@@ -1104,7 +1105,7 @@ export async function createGarden(canvas, options = {}) {
     clipToStage(cachedContext, stage, map, () => {
       drawNaturalMeadow(cachedContext, map, {grid: withGrid, grassImage: imageFor(grassTile.file)});
       cachedContext.save();cachedContext.fillStyle='rgba(15,40,38,.14)';cachedContext.fillRect(0,0,map.width,map.height);cachedContext.restore();
-      drawGardenPathDetails(cachedContext, map);
+      drawGardenPathDetails(cachedContext, stage?.pond ? {...map, pondPath: true} : map);
       if (withForest) drawMeadowDetails(cachedContext, map, [...map.plots.map(p=>plotPhysicalBounds(p)), ...decorationPlacements(map), ...keepsakePlacements(map)], (x,y,index) => {
         const frame=items.get(index%2?'clover':'daisy')?.frames?.[3] ?? items.get('daisy')?.frames?.[3];
         const image=frame && imageFor(frame.file);
@@ -1130,7 +1131,7 @@ export async function createGarden(canvas, options = {}) {
   }
 
   function terrainCache(withGrid, withForest) {
-    const key = `${currentStage.id}:${activeWeather}:${withGrid ? 'grid' : 'plain'}:${withForest ? 'forest' : 'bare'}`;
+    const key = `${stageKey(currentStage)}:${activeWeather}:${withGrid ? 'grid' : 'plain'}:${withForest ? 'forest' : 'bare'}`;
     if (!terrainCaches.has(key)) terrainCaches.set(key, buildTerrainCache(withGrid, withForest, currentStage));
     return terrainCaches.get(key);
   }
@@ -1865,6 +1866,7 @@ export async function createGarden(canvas, options = {}) {
         // Legacy edge-tree anchors straddled the fence; the bounded forest layers own trees now.
         if (prop.id === 'oak' || prop.id === 'pine' || isDefaultDecorHidden(options.decorations, 'scene:' + prop.id) && options.previewDecoration?.itemId !== 'scene:' + prop.id) continue;
         if (prop.id !== 'hut' && !stageContains(currentStage, Number(prop.col), Number(prop.row))) continue;
+        if (prop.id === 'pond' && currentStage.pond) continue; // «cái to cái nhỏ kì»: the dug pond replaces the decorative one
         const asset = props.get(prop.id);
         if (!asset) throw new Error(`Không có prop asset ${prop.id}.`);
         const xy = iso(...(defaultDecorSpot(options.decorations, 'scene:' + prop.id, options.previewDecoration) ?? [prop.col, prop.row]));

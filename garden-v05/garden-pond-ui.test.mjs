@@ -47,7 +47,7 @@ test('view helpers: lots, beds, water crops by level, head actions', () => {
  assert.equal(P.pondActions(pond({cast: {today: true}}), NOW).castOpen, false);
  assert.deepEqual([P.pondTier(['plot_1']), P.pondTier(['pond_1']), P.pondTier(['pond_1', 'pond_2'])], [0, 1, 2]);
  assert.deepEqual([1, 2, 3].map(P.tierLabel), ['Ao cá', 'Hồ rong', 'Hồ sâu']);
- assert.deepEqual([1, 2, 3].map(P.tierScale), [1.8, 2.4, 3]);
+ assert.deepEqual([1, 2, 3].map(P.tierScale), [3, 3, 3]);
 });
 
 test('fishing bar: the server triangle wave, bands and result labels', () => {
@@ -109,7 +109,7 @@ test('tier 0 at level 130+: «Đào ao» is the pond_1 build with its cost', () 
 
 test('art contract: scenery sizes, guarded scene files and pixel icon fallbacks', () => {
  assert.deepEqual(Object.values(P.POND_SCENERY).map(s => [s.width, s.height, s.pivotX, s.pivotY, ...s.footprint]),
-  [[288, 186, 144, 176, 5, 4], [384, 242, 192, 224, 7, 5], [480, 298, 240, 288, 9, 6], [128, 88, 64, 70, 3, 1]]);
+  [[480, 298, 240, 288, 9, 6], [480, 298, 240, 288, 9, 6], [480, 298, 240, 288, 9, 6], [128, 88, 64, 70, 3, 1]]);
  for (const tier of [1, 2, 3]) assert.deepEqual(P.POND_SCENERY[`pond-${tier}`].footprint, P.tierFootprint(tier));
  const manifest = JSON.parse(fs.readFileSync(new URL('runtime-webp-manifest.json', import.meta.url)));
  const shipped = new Set(manifest.images.map(i => i.source));

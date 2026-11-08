@@ -63,14 +63,14 @@ export function defaultDecorFootprint(id) {
 export const pondFootprint = (built = []) => DB.expansions.filter(e => e.kind === 'pond' && built?.includes?.(e.id)).at(-1)?.footprint ?? null;
 
 /** «Bờ hồ» (owner 08/11/2026: ponds bigger than a plot, on their own land): the built pond is fixed and faces right
- *  (long side along the columns, mirrored art), its ground's north-east corner on (26.5, 34.5) inside the shore land
+ *  (long side along the columns, mirrored art), its ground's north-east corner on (27.5, −10.5) inside the shore land
  *  (garden-growth POND_LAND), beds west of it. Null without a pond. */
 export const POND_FACING = 'right';
 export function pondHome(scene, built = []) {
   const size = pondFootprint(built);
   if (!size) return null;
   const [cols, rows] = orientedFootprint(size, POND_FACING), lift = footLift([cols, rows]);
-  return [26.5 + lift - cols / 2, 34.5 + lift + rows / 2];
+  return [27.5 + lift - cols / 2, -10.5 + lift + rows / 2];
 }
 
 /** The pond beds' ground (garden expansion §2.1): `count` 1×3 trays in a row west of the pond's ground at `at`, `gap` path

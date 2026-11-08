@@ -48,6 +48,8 @@ function pathStamp(ctx, x, y, radius, color) {
 
 function routeList(map) {
   const routes = GARDEN_PATHS.slice();
+  // Bờ hồ: from the row-7 path between thửa 3 and 4, north through the fenced lane to the pond's bank.
+  if (map?.pondPath) routes.push([[20.5, 7], [20.5, -4]]);
   const pens = Array.isArray(map?.pens) ? map.pens : [];
   const rightPens = pens.filter((pen) => (
     Number.isFinite(Number(pen?.col)) && Number(pen.col) >= 26

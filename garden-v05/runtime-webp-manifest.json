@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "27fd199b116f",
+  "revision": "9f0ee0448e77",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -13244,22 +13244,22 @@
     {
       "source": "environment/pond/pond-1.png",
       "file": "runtime-webp/environment/pond/pond-1.webp",
-      "width": 288,
-      "height": 186,
-      "sourceBytes": 8120,
-      "bytes": 5020,
-      "sourceSha256": "2f703b11c3e21080d94c836306e16f590af4daaec938f9bf6e69c2a370a8ad47",
-      "sha256": "032f4d12d928f6a83960030b59fa0713065d57a9fdcbb71be53e74693f8213d9"
+      "width": 480,
+      "height": 298,
+      "sourceBytes": 14555,
+      "bytes": 8804,
+      "sourceSha256": "54aba62d69904fafdd0f524c02636864add132a60b212fe7c016d817e2e01547",
+      "sha256": "5330906f0ced17db0b29b93f048cf792dda4f84fabf301528a53ffe86a6e8646"
     },
     {
       "source": "environment/pond/pond-2.png",
       "file": "runtime-webp/environment/pond/pond-2.webp",
-      "width": 384,
-      "height": 242,
-      "sourceBytes": 10550,
-      "bytes": 6304,
-      "sourceSha256": "2b403bf27f985b1d98233ffbb9016adcd983fe5dcf5ec9a8eb27cbd659c43661",
-      "sha256": "1e3904b7d51efed181e06f0d203785be1a5b8cc3c54d95e9984b131eb7dd3f56"
+      "width": 480,
+      "height": 298,
+      "sourceBytes": 16245,
+      "bytes": 9744,
+      "sourceSha256": "e2df038429e4d2002717569117ecc020752f89c4c78781c1dd12f3bc36c7f90e",
+      "sha256": "3091c19c95997b1e23c37c833898d2b112880ac6b13388f71f2c527db26d91ec"
     },
     {
       "source": "environment/pond/pond-3.png",
@@ -13697,9 +13697,9 @@
   "totals": {
     "converted": 1363,
     "existingWebp": 8,
-    "originalBytes": 4983169,
-    "webpBytes": 3308610,
-    "savedBytes": 1674559,
-    "savedPercent": 33.6
+    "originalBytes": 4995299,
+    "webpBytes": 3315834,
+    "savedBytes": 1679465,
+    "savedPercent": 33.62
   }
 }

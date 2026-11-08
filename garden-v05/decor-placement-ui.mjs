@@ -84,7 +84,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const keepsakes=keepsakeObstacles(state,stage??GARDEN_STAGES.at(-1),null,keepsakeAnchorRow,decorations,itemId);
  if(keepsakes.ground.some(occupied=>rectIntersects(rect,occupied)))return 'Chân đài kỷ vật đang ở đây.';
  if(keepsakes.access.some(access=>rectIntersects(rect,access)))return 'Chừa lối tham quan kỷ vật.';
- const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??[o.col,o.row]}));
+ const scenery=(map?.objects??[]).filter(o=>'scene:'+o.id!==itemId&&!isDefaultDecorHidden(decorations,'scene:'+o.id)&&!(o.id==='pond'&&state?.built?.includes?.('pond_1'))).map(o=>({...o,at:defaultDecorSpot(decorations,'scene:'+o.id)??[o.col,o.row]}));
  // The decorative pond is a garden default: its ground follows the decoration rule, like when it is moved. The built
  // pond and its beds stand on the Bờ hồ land, where nothing is placed.
  for(const o of scenery)if(rectsOverlap(rect,o.id==='pond'?decorFootprintRect(...o.at,defaultDecorFootprint('scene:pond')):sceneryGroundRect(o.id,...o.at)))return 'Chỗ này vướng cảnh vật.';
