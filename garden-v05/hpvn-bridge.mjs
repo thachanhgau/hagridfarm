@@ -1,16 +1,16 @@
-import {getGardenStorage} from './garden-storage.mjs?v=25.1.2';
-import {levelLabel} from './progression-engine.mjs?v=25.1.2';
-import { normalizeDecorFacing } from './decor-runtime.mjs?v=25.1.2';
+import {getGardenStorage} from './garden-storage.mjs?v=25.1.3';
+import {levelLabel} from './progression-engine.mjs?v=25.1.3';
+import { normalizeDecorFacing } from './decor-runtime.mjs?v=25.1.3';
 import {
   normalizeAtmosphereMode,
   atmosphereConfig,
   normalizeWeatherMode,
   weatherConfig,
-} from './garden-atmosphere.mjs?v=25.1.2';
+} from './garden-atmosphere.mjs?v=25.1.3';
 import {
   normalizeEventMode,
   eventConfig,
-} from './garden-events.mjs?v=25.1.2';
+} from './garden-events.mjs?v=25.1.3';
 
 export const VISUAL_PREFS_STORAGE_KEY = 'hpvn-garden-v20-visual-prefs';
 export const LEGACY_DECOR_STORAGE_KEY = 'hpvn-garden-v18-decor-layout';
@@ -241,7 +241,7 @@ export function createHpvnBridge({
     });
     // In HPVN the shell puts the line into Floo's composer (the member still presses send).
     if (typeof context.sendToFloo === 'function' && await context.sendToFloo(text) === true) {
-      if (typeof notify === 'function') notify('✨ Lời khoe vườn đã nằm sẵn trong Mạng Floo · xem lại rồi bấm gửi nhé.');
+      if (typeof notify === 'function') notify(context.image ? '✨ Bưu thiếp khu vườn đã nằm sẵn trong Mạng Floo · xem lại rồi bấm gửi nhé.' : '✨ Lời khoe vườn đã nằm sẵn trong Mạng Floo · xem lại rồi bấm gửi nhé.');
       return { ok: true, text, copied: false, floo: true, envelope };
     }
     let copied = false;

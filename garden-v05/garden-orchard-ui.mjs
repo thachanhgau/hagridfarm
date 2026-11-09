@@ -1,8 +1,8 @@
 // Garden expansion phase 3 «Vườn cây lâu năm» (docs/garden-expansion-plan.md §11): the orchard dock and Hagrid's three
 // requests text. Everything comes from snapshot.orchard (server garden-orchard-core); this module only shows it and
 // sends {action:'orchard', kind: plant|harvest|fell, …}.
-import {el, button, num, duration, itemDisplayName, itemArtVisual} from './ui-utils.mjs?v=25.1.2';
-import {pixelIcon, ICONS} from './pixel-icons.mjs?v=25.1.2';
+import {el, button, num, duration, itemDisplayName, itemArtVisual} from './ui-utils.mjs?v=25.1.3';
+import {pixelIcon, ICONS} from './pixel-icons.mjs?v=25.1.3';
 
 export const SAPLINGS = Object.freeze({apple: {label: 'Táo', item: 'sapling_apple'}, pear: {label: 'Lê', item: 'sapling_pear'}, plum: {label: 'Mận', item: 'sapling_plum'}});
 

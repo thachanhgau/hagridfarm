@@ -1,7 +1,7 @@
-import {el, button, num, hours, realHours, cropVisualKind, visualItemIcon} from './ui-utils.mjs?v=25.1.2';
-import {GARDEN_STAGES} from './garden-growth.mjs?v=25.1.2';
-import {levelLabel} from './progression-engine.mjs?v=25.1.2';
-import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=25.1.2';
+import {el, button, num, hours, realHours, cropVisualKind, visualItemIcon} from './ui-utils.mjs?v=25.1.3';
+import {GARDEN_STAGES} from './garden-growth.mjs?v=25.1.3';
+import {levelLabel} from './progression-engine.mjs?v=25.1.3';
+import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=25.1.3';
 
 /**
  * V21.0 Direction 2:
@@ -234,7 +234,7 @@ export function renderPostcardSection({
         'data-download-postcard': 'true',
       }),
       ...(onShareFloo
-        ? [button('Khoe vườn', () => onShareFloo(), {'data-postcard-floo': 'true'})]
+        ? [button('Khoe vườn', () => onShareFloo(postcardCanvas), {'data-postcard-floo': 'true'})]
         : []),
     ]),
   ]);

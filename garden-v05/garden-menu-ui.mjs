@@ -1,6 +1,6 @@
-import {el,button} from './ui-utils.mjs?v=25.1.2';
-import {V24_ART,navIcon} from './v24-visuals.mjs?v=25.1.2';
-import {pixelIcon} from './pixel-icons.mjs?v=25.1.2';
+import {el,button} from './ui-utils.mjs?v=25.1.3';
+import {V24_ART,navIcon} from './v24-visuals.mjs?v=25.1.3';
+import {pixelIcon} from './pixel-icons.mjs?v=25.1.3';
 
 // Four destinations; the garden illustration stays decorative so every target is explicit.
 export function renderGardenMenu(ctx,actions){
@@ -15,7 +15,7 @@ export function renderGardenMenu(ctx,actions){
   ['guide','Sổ tay','guide'],['tour','Thăm vườn','tour'],['profile','Hồ sơ','profile'],
   ['events','Lễ hội','events'],['work','Việc bác Hagrid','work'],['acp','ACP','acp'],['settings','Cài đặt','settings'],
  ]){
-  if(!actions[id])continue; // «Việc bác Hagrid» only with a wallet; «ACP» only for KTV Gia Tinh
+  if(!actions[id])continue; // «Việc bác Hagrid» only with a wallet; «ACP» only for HPH
   const medal=el('span',{class:'garden-menu-medal','aria-hidden':'true'});
   medal.append(navIcon(glyph));
   const b=button('',actions[id],{class:'garden-menu-node','data-menu':id,

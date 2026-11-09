@@ -1,9 +1,9 @@
-// «Đốt vườn» (owner 01/11/2026): KTV Gia Tinh sets a member's garden on fire for a while (server garden.fire).
+// «Đốt vườn» (owner 01/11/2026): HPH sets a member's garden on fire for a while (server garden.fire).
 // The scene renderer calls drawGardenFire after everything else: a burnt glow over the stage, a charred tile
 // under every flame, flames from Codex's sheets (environment/fire) on the stage tiles, smoke and rising embers.
 // Pure drawing; the sheets load once, and until they do only the glow and embers show.
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.2';
-import {stageContains} from './garden-growth.mjs?v=25.1.2';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.3';
+import {stageContains} from './garden-growth.mjs?v=25.1.3';
 
 export const FIRE_SHEETS = Object.freeze({
   large: {file: 'environment/fire/flame-large.png', w: 64, h: 96, frames: 8},

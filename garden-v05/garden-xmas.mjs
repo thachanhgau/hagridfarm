@@ -9,12 +9,12 @@
 // points, nine earn the «Áo len bà Weasley» Floo frame), «Dạ vũ Noel» 18–31/12 (twelve ornaments for the house tree,
 // whose size follows the house's share of the points), «Đêm Noel» 24–25/12 (feast at the hearth, bác Hagrid carries a
 // tree, a present with a letter), «Pháo hoa Giao thừa» 31/12 (fireworks at night, the 2027 Floo frame).
-import {el,num} from './ui-utils.mjs?v=25.1.2';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.2';
-import {fireworks} from './garden-friends.mjs?v=25.1.2';
-import {FEAST_GROUND, decorOnGround} from './decor-placement-ui.mjs?v=25.1.2';
-import {iconButton} from './pixel-icons.mjs?v=25.1.2';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=25.1.2';
+import {el,num} from './ui-utils.mjs?v=25.1.3';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.3';
+import {fireworks} from './garden-friends.mjs?v=25.1.3';
+import {FEAST_GROUND, decorOnGround} from './decor-placement-ui.mjs?v=25.1.3';
+import {iconButton} from './pixel-icons.mjs?v=25.1.3';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=25.1.3';
 
 const file = (name) => `environment/xmas/${name}.png`;
 export const XMAS_FILES = ['hearth', 'sock', 'sock-open', 'egg-0', 'egg-1', 'egg-2', 'egg-3', 'feast', 'carried-tree'].map(file);

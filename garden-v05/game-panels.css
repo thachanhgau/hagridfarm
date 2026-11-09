@@ -385,7 +385,7 @@
 #gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-level-"]{border-color:#FFC36B;background:#231F2E}
 #gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-xmas-sweater-"]{border-color:#C75B4B;background:repeating-linear-gradient(45deg,#874056 0 3px,#4A3042 3px 5px)}
 #gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-newyear-"]{border-color:#FFC36B;background:radial-gradient(circle at 30% 40%,#E07A9E 0 2px,transparent 2.5px),radial-gradient(circle at 70% 55%,#B7DEE0 0 2px,transparent 2.5px),#231F2E}
-/* ---- ACP sale (KTV Gia Tinh) ---- */
+/* ---- ACP sale (HPH) ---- */
 #gameShell #saleAcp{width:min(620px,calc(100vw - 16px));max-height:min(88vh,760px)}
 #gameShell #saleAcp .acp-body{display:grid;gap:8px}
 #gameShell #saleAcp .acp-toggle{display:flex;gap:8px;align-items:center;color:#E8F0ED;font-size:13px}

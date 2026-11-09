@@ -1,4 +1,4 @@
-import {packTotal} from './ui-utils.mjs?v=25.1.2';
+import {packTotal} from './ui-utils.mjs?v=25.1.3';
 const PROJECT='demo-hpvnn-garden', UID='garden-demo-member';
 // ?functionsPort=5002: a second Functions emulator beside the shared Firestore/Auth one (one per worktree).
 const PORT=/^\d{4,5}$/.test(new URLSearchParams(globalThis.location?.search||'').get('functionsPort')||'')?new URLSearchParams(globalThis.location.search).get('functionsPort'):'5001';
@@ -15,7 +15,7 @@ export function createGardenClient(transport){
  let snapshot=null,pending=null,chain=Promise.resolve();
  const queue=fn=>{const run=chain.then(fn,fn);chain=run.catch(()=>{});return run;};
  // The server leaves out an unchanged catalog when the call carries the hash we hold (catalogHash).
- async function call(name,data){const known=snapshot?.catalogHash;const result=await transport(name,known?{...data,catalogHash:known}:data);if(!result?.garden)throw Error('Phản hồi khu vườn không hợp lệ.');if(result.catalog===undefined&&known&&result.catalogHash===known)result.catalog=snapshot.catalog;snapshot=result;return snapshot;}
+ async function call(name,data){const known=snapshot?.catalogHash;const result=await transport(name,known?{...data,catalogHash:known}:data);if(!result?.garden)throw Error('Phản hồi khu vườn không hợp lệ.');if(result.catalog===undefined&&known&&result.catalogHash===known)result.catalog=snapshot.catalog;if(snapshot?.saleAdmin)result.saleAdmin??=true;snapshot=result;return snapshot;} // saleAdmin (HPH) comes on a read only
  async function mutate(name,payload){const signature=JSON.stringify({name,payload});if(pending&&pending.signature!==signature)throw Error('Giao dịch trước chưa có kết quả. Hãy thử lại đúng thao tác đó trước.');if(!pending)pending={signature,data:{...payload,requestId:requestId()}};try{const result=await call(name,pending.data);pending=null;return result;}catch(e){if(e.definitive)pending=null;throw e;}}
  const revision=()=>snapshot.garden.progression.revision;
  return {
@@ -35,7 +35,7 @@ export function createGardenClient(transport){
   visit:data=>queue(()=>transport('visitHagridGarden',data)),
   // Garden Floo frame (setHagridFlooFrame): the reply carries the frames; the snapshot keeps them in step.
   frame:frameKey=>queue(async()=>{const r=await transport('setHagridFlooFrame',{frameKey});if(snapshot&&r?.frames)snapshot={...snapshot,flooFrames:{frames:r.frames,worn:r.worn}};return r;}),
-  // KTV Gia Tinh's in-game sale ACP (manageHagridGardenSales): its own answer.
+  // HPH's in-game ACP (manageHagridGardenSales): its own answer.
   sales:data=>queue(()=>transport('manageHagridGardenSales',data)),
   // «Chữa cháy» (extinguishHagridGarden): pay Galleons to put a fire out, own garden or the one being visited.
   fireOut:data=>queue(()=>transport('extinguishHagridGarden',{...data,requestId:requestId()})),

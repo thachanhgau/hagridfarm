@@ -1,8 +1,8 @@
-import {setupBuildDecorDock} from './build-decor-dock.mjs?v=25.1.2';
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=25.1.2';
-import { $, button, el, duration, hours, num, realHours, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=25.1.2';
-import { DB } from './balance-data.mjs?v=25.1.2';
-import { makeRecipeIcon } from './recipe-art-ui.mjs?v=25.1.2';
+import {setupBuildDecorDock} from './build-decor-dock.mjs?v=25.1.3';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=25.1.3';
+import { $, button, el, duration, hours, num, realHours, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=25.1.3';
+import { DB } from './balance-data.mjs?v=25.1.3';
+import { makeRecipeIcon } from './recipe-art-ui.mjs?v=25.1.3';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);
