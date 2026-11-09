@@ -1,12 +1,12 @@
 import {applyDefaultDecorationVisibility} from '../garden-v05/default-decor.mjs?v=24.9.81';
-import * as E from "../garden-v05/progression-engine.mjs?v=25.1.1";
-import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=25.1.1";
+import * as E from "../garden-v05/progression-engine.mjs?v=25.1.2";
+import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=25.1.2";
 import {decorFootprintRect,rectsOverlap} from "../garden-v05/decor-runtime.mjs?v=24.9.40";
 import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.40";
 import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.40";
 import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.40";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs?v=24.9.63";
-import {ATMOSPHERE_MODES,WEATHER_MODES} from "../garden-v05/garden-atmosphere.mjs?v=25.1.1";
+import {ATMOSPHERE_MODES,WEATHER_MODES} from "../garden-v05/garden-atmosphere.mjs?v=25.1.2";
 import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
 import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=24.9.40";
 const PREMIUM_CAPS=Object.freeze({rain:1,felix:1,primeMeal:30,feast:3,skeleGro:3});

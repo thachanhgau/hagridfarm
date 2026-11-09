@@ -1,37 +1,37 @@
-import {WOODLAND_FILES,pondWoodlandObjects} from './pond-woodland.mjs?v=25.1.1';
-import {drawPlacementGrid} from './placement-grid.mjs?v=25.1.1';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=25.1.1';
-import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=25.1.1';
-import {EXTENSION_PENS,FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.1.1';
-export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.1.1';
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=25.1.1';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=25.1.1';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=25.1.1';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.1';
-import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=25.1.1';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=25.1.1';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=25.1.1';
-import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=25.1.1';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=25.1.1';
-import {drawV24Ground} from './garden-v24-scenery.mjs?v=25.1.1';
-import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=25.1.1';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=25.1.1';
-import {decorObjects,decorFootprintRect,depthCompare,footLift,orientedFootprint} from './decor-runtime.mjs?v=25.1.1';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=25.1.1';
-import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=25.1.1';
-import {backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.1.1';
-import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.1.1';
-import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.1.1';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.1.1';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.1.1';
-import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.1.1';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.1.1';
-import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.1.1';
-import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.1.1';
-import {EDGE_SCENERY} from './edge-art.mjs?v=25.1.1';
-import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=25.1.1';
-import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.1.1';
-import {drawIcon} from './pixel-icons.mjs?v=25.1.1';
+import {WOODLAND_FILES,pondWoodlandObjects} from './pond-woodland.mjs?v=25.1.2';
+import {drawPlacementGrid} from './placement-grid.mjs?v=25.1.2';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=25.1.2';
+import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=25.1.2';
+import {EXTENSION_PENS,FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.1.2';
+export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.1.2';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=25.1.2';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=25.1.2';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=25.1.2';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.2';
+import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=25.1.2';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=25.1.2';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=25.1.2';
+import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=25.1.2';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=25.1.2';
+import {drawV24Ground} from './garden-v24-scenery.mjs?v=25.1.2';
+import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=25.1.2';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=25.1.2';
+import {decorObjects,decorFootprintRect,depthCompare,footLift,orientedFootprint} from './decor-runtime.mjs?v=25.1.2';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=25.1.2';
+import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=25.1.2';
+import {backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.1.2';
+import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.1.2';
+import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.1.2';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.1.2';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.1.2';
+import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.1.2';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.1.2';
+import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.1.2';
+import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.1.2';
+import {EDGE_SCENERY} from './edge-art.mjs?v=25.1.2';
+import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=25.1.2';
+import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.1.2';
+import {drawIcon} from './pixel-icons.mjs?v=25.1.2';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -44,12 +44,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=25.1.1';
+} from './scene-animation.mjs?v=25.1.2';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=25.1.1';
+} from './forest-surround.mjs?v=25.1.2';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -317,7 +317,7 @@ function penAliases(pen) {
   return [String(pen.id)];
 }
 
-export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=25.1.1';
+export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=25.1.2';
 
 /** Keepsakes are displayed as small labelled tokens in the final south plaza. */
 export function keepsakePlacements(scene = map) {
@@ -1251,7 +1251,7 @@ export async function createGarden(canvas, options = {}) {
     const rects = pondBedRects(at, POND_TIER_IDS.slice(0, tier), beds.length), now = Date.now();
     const paddies = rects.map((r, i) => {
       const xy = iso((r.c0 + r.c1) / 2, (r.r0 + r.r1) / 2);
-      return {kind: 'pond-paddy', type: 'pond-bed', id: 'pond-paddy:' + i, xy, draw: (ctx) => {
+      return {kind: 'pond-paddy', type: 'pond-bed', id: 'pond-paddy:' + i, xy, rect: r, draw: (ctx) => {
         const file = 'environment/pond/pond-bed.png', image = imageFor(winterFile(file) || file);
         if (!image) return;
         ctx.save(); ctx.imageSmoothingEnabled = false;
@@ -1411,8 +1411,6 @@ export async function createGarden(canvas, options = {}) {
   function fenceObjects(pieces){
     if(!pieces.length)return [];
     const cells=pieces.flatMap(p=>[p.cellA,p.cellB]),cs=cells.map(p=>p[0]),rs=cells.map(p=>p[1]);
-    // The pen's rect lets depthCompare draw a piece standing wholly outside the fence on the right side of it (one foot point per side drew the front fence over a pot by its east edge).
-    const ground={c0:Math.min(...cs),c1:Math.max(...cs),r0:Math.min(...rs),r1:Math.max(...rs)};
     return [false,true].flatMap(front=>{
       const group=pieces.filter(p=>p.front===front);if(!group.length)return [];
       const points=group.flatMap(p=>[p.a,p.b]),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
@@ -1420,7 +1418,7 @@ export async function createGarden(canvas, options = {}) {
       const layer=makeCanvas(canvas,Math.ceil(Math.max(...xs))-left+24,Math.ceil(Math.max(...ys))-top+16),brush=layer.getContext('2d');
       brush.imageSmoothingEnabled=false;brush.translate(-left,-top);for(const piece of group)drawPenFence(brush,piece,activeWeather);
       const at=[front?Math.max(...cs):Math.min(...cs),front?Math.max(...rs):Math.min(...rs)];
-      return [{kind:'pen-fence',id:pieces[0].penId+':fence:'+(front?'front':'back'),penId:pieces[0].penId,front,cellA:at,cellB:at,xy:iso(...at),ground,layer,left,top}];
+      return [{kind:'pen-fence',id:pieces[0].penId+':fence:'+(front?'front':'back'),penId:pieces[0].penId,front,cellA:at,cellB:at,xy:iso(...at),layer,left,top}];
     });
   }
   function drawBuiltPen(pen,state,clock){
@@ -2013,7 +2011,7 @@ export async function createGarden(canvas, options = {}) {
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');
-    interactivePond=objects.filter(o=>o.kind==='pond');
+    interactivePond=objects.filter(o=>o.kind==='pond'||o.kind==='pond-paddy');
     interactiveOrchard=objects.filter(o=>o.type==='prop'&&String(o.id).startsWith('orchard-'));
     interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
     lastOrder = objects.map((object) => ({id: object.id ?? object.species, y: object.xy?.[1] ?? 0, type: object.type}));
@@ -2124,7 +2122,11 @@ export async function createGarden(canvas, options = {}) {
         return {kind: 'earned-decoration', itemId: decor.id, label: decor.label, facing: decor.facing};
       }
     }
+    // «Ruộng nước» paddies belong to the pond: a tap on one opens the pond dock like a tap on the water.
+    const [tapCol, tapRow] = worldToGrid(world.x, world.y, map);
+    if (interactivePond.some(({rect: r}) => r && tapCol >= r.c0 && tapCol <= r.c1 && tapRow >= r.r0 && tapRow <= r.r1)) return {kind: 'pond', itemId: 'scene:pond', section: 'beds'};
     for (const {xy, asset: a} of interactivePond) {
+      if (!a) continue;
       const b = a.bounds ?? {x: 0, y: 0, w: a.width, h: a.height}, left = xy[0] - a.pivotX + b.x, top = xy[1] - a.pivotY + b.y;
       if (world.x >= left && world.x <= left + b.w && world.y >= top && world.y <= top + b.h) return {kind: 'pond', itemId: 'scene:pond'};
     }

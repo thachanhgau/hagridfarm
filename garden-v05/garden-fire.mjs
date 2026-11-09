@@ -2,8 +2,8 @@
 // The scene renderer calls drawGardenFire after everything else: a burnt glow over the stage, a charred tile
 // under every flame, flames from Codex's sheets (environment/fire) on the stage tiles, smoke and rising embers.
 // Pure drawing; the sheets load once, and until they do only the glow and embers show.
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.1';
-import {stageContains} from './garden-growth.mjs?v=25.1.1';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.2';
+import {stageContains} from './garden-growth.mjs?v=25.1.2';
 
 export const FIRE_SHEETS = Object.freeze({
   large: {file: 'environment/fire/flame-large.png', w: 64, h: 96, frames: 8},
