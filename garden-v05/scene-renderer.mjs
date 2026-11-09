@@ -1263,7 +1263,8 @@ export async function createGarden(canvas, options = {}) {
       if(!cell||!CROP[cell.species])return [];
       const {c0,r0}=rects[b],growMs=Number(cell.growMs)||CROP[cell.species].growMs;
       const plantedAt=cell.ripe?now-growMs:Number(cell.plantedAt)||Number(cell.readyAt)-growMs;
-      return [actorObject({...cell,type:'crop',plantedAt,growMs},c0+.5,r0+j+.5,now,clock,{})];
+      // The crop's tray stands on its foot; a step down-screen (+11 px) sets the tray in the channel, not on its back rim.
+      return [actorObject({...cell,type:'crop',plantedAt,growMs},c0+.85,r0+j+.85,now,clock,{})];
     }))];
   }
 
@@ -2021,7 +2022,8 @@ export async function createGarden(canvas, options = {}) {
     }
     // Decorations sort by their footprint and characters, crops and creatures by their feet (depthCompare).
     for (const object of objects) object.ground ??= groundOf(object);
-    objects.sort(depthCompare);
+    // «Ruộng nước» paddies are flat ground: drawn before anything stands, so a neighbouring tray never covers a crop's base.
+    objects.sort((a, b) => (b.kind === 'pond-paddy') - (a.kind === 'pond-paddy') || depthCompare(a, b));
     railNeighbours(objects);
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
