@@ -51,6 +51,7 @@ function routeList(map) {
   // Bờ hồ meadow: from the row-7 path through the north fence's openings, straight to the middle of the pond's bank
   // (col 20.5) and of the paddies' bank (col 7.5); both banks are on row −5.5 (default-decor pondHome, pondBedRects).
   if (map?.pondPath) routes.push([[20.5, 7], [20.5, -5.5]], [[7.5, 7], [7.5, -5.5]]);
+  if(map?.edgePath)routes.push([[26,16],[44.5,16]]);
   const pens = Array.isArray(map?.pens) ? map.pens : [];
   const rightPens = pens.filter((pen) => (
     Number.isFinite(Number(pen?.col)) && Number(pen.col) >= 26

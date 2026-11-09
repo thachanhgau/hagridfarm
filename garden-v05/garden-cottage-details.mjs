@@ -359,3 +359,8 @@ export function drawCottageGround(ctx, {iso, weatherMode = 'clear'} = {}) {
 }
 
 export default Object.freeze({drawRaisedPlotBorder, drawCottageGround});
+
+// Use the same integral staircase pixels as the raised border, never an antialiased canvas stroke.
+export function drawPlotOutline(ctx,corners,color){
+ for(let i=0;i<4;i++)line(ctx,corners[i],corners[(i+1)%4],color,1);
+}

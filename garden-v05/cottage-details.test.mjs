@@ -20,3 +20,9 @@ test('cottage ground rendering is deterministic and preserves its fixed scene an
   assert.ok(a.calls.every(call=>call.slice(0,4).every(Number.isInteger)));
  }
 });
+test('selected plot outline uses only crisp integral edge pixels',async()=>{
+ const {drawPlotOutline}=await import('./garden-cottage-details.mjs');
+ const c=recorder(),corners=[[100,100],[196,148],[100,196],[4,148]];
+ drawPlotOutline(c,corners,'#f5d69a');assert.ok(c.calls.length>0);
+ for(const [x,y,w,h]of c.calls){assert.ok([x,y,w,h].every(Number.isInteger));assert.equal(w,1);assert.equal(h,1);assert.ok(Math.abs(x-100)/96+Math.abs(y-148)/48>=.97);}
+});

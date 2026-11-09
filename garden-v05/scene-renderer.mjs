@@ -11,7 +11,7 @@ import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.0.2';
 import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=25.0.2';
 import {drawGardenPathDetails} from './garden-path-details.mjs?v=25.0.2';
 import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=25.0.2';
-import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=25.0.2';
+import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=25.0.2';
 import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=25.0.2';
 import {drawV24Ground} from './garden-v24-scenery.mjs?v=25.0.2';
 import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=25.0.2';
@@ -1111,7 +1111,7 @@ export async function createGarden(canvas, options = {}) {
     clipToStage(cachedContext, stage, map, () => {
       drawNaturalMeadow(cachedContext, map, {grid: withGrid, grassImage: imageFor(grassTile.file)});
       cachedContext.save();cachedContext.fillStyle='rgba(15,40,38,.14)';cachedContext.fillRect(0,0,map.width,map.height);cachedContext.restore();
-      drawGardenPathDetails(cachedContext, stage?.pond ? {...map, pondPath: true} : map);
+      drawGardenPathDetails(cachedContext,{...map,pondPath:Boolean(stage?.pond),edgePath:stage?.id===8});
       if (withForest) drawMeadowDetails(cachedContext, map, [...map.plots.map(p=>plotPhysicalBounds(p)), ...decorationPlacements(map), ...keepsakePlacements(map)], (x,y,index) => {
         const frame=items.get(index%2?'clover':'daisy')?.frames?.[3] ?? items.get('daisy')?.frames?.[3];
         const image=frame && imageFor(frame.file);
@@ -1205,7 +1205,7 @@ export async function createGarden(canvas, options = {}) {
 
   // Phase 3 «Bìa Rừng»: ground art at iso(rect centre) − groundCentre (null while the deferred file loads: next frame draws it).
   function drawEdgeGround(ctx, builtIds) {
-    const parts = [['trail', EDGE_LAYOUT.trail], ...(builtIds.has('edge_2') ? [['pasture', EDGE_LAYOUT.pasture]] : []), ...(builtIds.has('edge_3') ? [['orchard', EDGE_LAYOUT.orchard]] : [])];
+    const parts = [...(builtIds.has('edge_2') ? [['pasture', EDGE_LAYOUT.pasture]] : []), ...(builtIds.has('edge_3') ? [['orchard', EDGE_LAYOUT.orchard]] : [])];
     ctx.save();
     ctx.imageSmoothingEnabled = false;
     for (const [id, part] of parts) {
@@ -1468,7 +1468,7 @@ export async function createGarden(canvas, options = {}) {
         label(context, `${Math.round(construction.progress * 100)}%`, cx, cy - 46, '#f5d69a', 'bold 10px sans-serif');
       } else if (built || constructionJob) {
         drawBuiltPlotBorder(plot,index);
-        plotFrame(plot, index === selectedPlot ? '#f5d69a' : 'rgba(245,214,154,.28)', null);
+        if(index===selectedPlot)drawPlotOutline(context,plotCorners(plot),'#f5d69a');
       } else {
         plotFrame(plot, 'rgba(113,130,122,.62)', 'rgba(113,130,122,.035)');
       }
@@ -1518,18 +1518,10 @@ export async function createGarden(canvas, options = {}) {
       const construction = constructionProgress(constructionJob, logicalNow);
       const queued = Boolean(constructionJob);
       if (!isBuilt && !queued && (Number(state?.level) || 1) < Number(pen.requiredLevel || 1)) continue;
-      // Put labels beyond the outer rail, never across the shared pen/perimeter edge.
-      // An inner «Chuồng mở rộng» (phase 2) labels just past its own east rail.
-      const onRail = Math.abs(currentStage.right - (pen.col + pen.width)) < 0.6;
-      const [x, groundY] = iso(onRail ? currentStage.right + .8 : pen.col + pen.width + .4, pen.row + pen.height - .3);
-      const y = groundY + 14;
-      if (construction && !construction.ready) {
-        label(context, `C${index + 1} ${Math.round(construction.progress * 100)}%`, x, y, '#f5d69a', 'bold 10px sans-serif');
-      } else if (isBuilt || queued) {
-        label(context, `CHUỒNG ${index + 1}`, x, y, '#f5d69a', 'bold 10px sans-serif');
-      } else {
-        label(context, `Lv ${pen.requiredLevel}`, x, y, '#a6b1ae', 'bold 10px sans-serif');
-      }
+      // A compact wooden sign stands by the west gate, in the empty approach aisle.
+      const [x,y]=iso(pen.col-.75,pen.row+pen.height*.5),px=Math.ceil(10*labelScale);
+      const text=construction&&!construction.ready?`Chuồng ${index+1} · ${Math.round(construction.progress*100)}%`:(isBuilt||queued)?`Chuồng ${index+1}`:`Lv ${pen.requiredLevel}`;
+      plotSign(context,[[text,isBuilt||queued?'#f5d69a':'#a6b1ae']],Math.round(x),Math.round(y),px,null);
     }
   }
 
@@ -2023,8 +2015,8 @@ export async function createGarden(canvas, options = {}) {
     interactiveOrchard=objects.filter(o=>o.type==='prop'&&String(o.id).startsWith('orchard-'));
     interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
     lastOrder = objects.map((object) => ({id: object.id ?? object.species, y: object.xy?.[1] ?? 0, type: object.type}));
-    drawPenLabels(state, logicalNow);
     for (const object of objects) drawObject(object, logicalNow, clock);
+    drawPenLabels(state, logicalNow);
     drawAnimationEffects(state, activeAnimations);
     if (tutorialFocus && map.plots[tutorialFocus.plot]) drawTutorialFocus(context, plotCorners(map.plots[tutorialFocus.plot], map), clock);
     const sBounds = stageWorldBounds(map, currentStage);

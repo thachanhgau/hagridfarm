@@ -17,8 +17,8 @@ const manifest = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.jso
 function recordingCanvas() {
   const requested = new Set();
   const drawn = [];
-  const drawCalls = [];
-  const context = new Proxy({}, {get: (o, k) => k === 'drawImage' ? (image,...args) => {drawn.push(image.source);drawCalls.push({file:image.source,args});} : k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
+  const drawCalls = [],paintCalls=[];
+  const context = new Proxy({}, {get: (o, k) => k === 'drawImage' ? (image,...args) => {drawn.push(image.source);drawCalls.push({file:image.source,args});paintCalls.push({kind:'image',file:image.source});} : k === 'fillText' ? text=>paintCalls.push({kind:'text',text}) : k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
   class RecordingImage {
     naturalWidth = 64; naturalHeight = 64;
     set src(value) { this.source=value; requested.add(value); queueMicrotask(() => this.onload?.()); }
@@ -28,7 +28,7 @@ function recordingCanvas() {
     getBoundingClientRect() { return {left: 0, top: 0, width: 1, height: 1}; },
     ownerDocument: {createElement: () => recordingCanvas().canvas, defaultView: {Image: RecordingImage}},
   };
-  return {canvas, requested, drawn, drawCalls};
+  return {canvas, requested, drawn, drawCalls,paintCalls};
 }
 
 
@@ -241,4 +241,15 @@ test('25.0 S7 budget: the December hearth, vớ and dragon egg load only when th
   const socks = [1, 2, 3].map((n) => ({n, opened: n === 1}));
   garden.render(state, {now, clock: 0, propsVisible: true, eventMode: 'none', xmasKit, xmas: {chapter: {socks}, egg: {stage: 1, hatched: false}}});
   for (const name of ['hearth', 'sock', 'sock-open', 'egg-1']) assert.ok([...requested].some((url) => url.includes(`/xmas/${name}.`)), name + ' requested once drawn');
+});
+
+test('complete pen plaques are drawn after rail and habitat images',async()=>{
+ const {canvas,paintCalls}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+ const now=1_700_000_000_000,state=E.testProfile(500,now);state.built=[...new Set([...state.built,...Array.from({length:6},(_,i)=>'pen_'+(i+1))])];
+ state.creatures=E.DB.animals.filter(a=>a.habitat!=='pond').map(a=>({id:'creature-'+a.id,type:'creature',species:a.id,adoptedAt:now,mealsCompleted:a.mealsToAdult,meal:null,cyclesClaimed:0}));
+ garden.render(state,{now,clock:0,propsVisible:true});
+ const signs=paintCalls.map((c,i)=>c.kind==='text'&&/^Chuồng \d/.test(c.text)?i:-1).filter(i=>i>=0);
+ assert.ok(signs.length>=6,'full numbered plaques must be present');
+ const lastProp=paintCalls.findLastIndex(c=>c.kind==='image'&&c.file?.includes('habitat_'));
+ assert.ok(lastProp>=0);assert.ok(Math.min(...signs)>lastProp,'props and rails cannot paint over pen text');
 });
