@@ -1,4 +1,5 @@
 /* Pond and orchard: a compact game hotbar, one activity visible at a time. */
+#playDock :is(#pondDock,#orchardDock):before{display:none}
 #playDock :is(#pondDock,#orchardDock){display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:10px 12px;background:#142b24;background-image:none;min-width:0;box-sizing:border-box}
 #playDock :is(#pondDock,#orchardDock)[hidden]{display:none}
 #playDock :is(#pondDock,#orchardDock) .pond-head{display:flex;flex-wrap:nowrap;gap:12px;min-height:44px}
@@ -6,7 +7,7 @@
 #playDock :is(#pondDock,#orchardDock) .pond-title strong{font-size:15px;overflow:hidden;text-overflow:ellipsis}
 #playDock :is(#pondDock,#orchardDock) .pond-meta{font-size:11px;color:#c6cbb1}
 #playDock :is(#pondDock,#orchardDock) .pond-actions{flex:0 0 auto;gap:6px;min-width:0}
-#playDock :is(#pondDock,#orchardDock) .pond-action{flex:0 0 auto;min-width:64px;min-height:44px;padding:5px 10px;border:1px solid #7c8765;border-radius:5px;background:#294639;color:#f8e4b5;font-size:12px;gap:6px}
+#playDock :is(#pondDock,#orchardDock) .pond-action{flex:0 0 auto;width:auto;height:44px;box-sizing:border-box;min-width:64px;min-height:44px;padding:5px 10px;border:1px solid #7c8765;border-radius:5px;background:#294639;color:#f8e4b5;font-size:12px;gap:6px}
 #playDock :is(#pondDock,#orchardDock) .pond-action.primary{background:#e5ca89;color:#263329;border-color:#f7dfa6;box-shadow:inset 0 -3px #af9255}
 #playDock :is(#pondDock,#orchardDock) .pond-action:disabled{opacity:.55;filter:saturate(.4)}
 #playDock :is(#pondDock,#orchardDock) .pond-action .px-icon{flex:none}
