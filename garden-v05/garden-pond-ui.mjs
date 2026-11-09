@@ -256,7 +256,7 @@ export function createCastGame({host, items, start, cast, serverNow}) {
   done = false; result.replaceChildren(); tap.textContent = 'Giật cần'; tap.disabled = true; bar.dataset.band = '';
   if (!dialog.open) dialog.showModal();
   token = await start();
-  if (!token) {dialog.close(); return;}
+  if (!token || !dialog.open) {token = null; dialog.close(); return;} // closed while the token was on its way
   zone.style.left = pct(token.zone[0]); zone.style.width = pct(token.zone[1] - token.zone[0]);
   sweet.style.left = pct(token.sweet[0]); sweet.style.width = pct(token.sweet[1] - token.sweet[0]);
   tap.disabled = false; tap.onclick = strike;

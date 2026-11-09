@@ -19,15 +19,15 @@ import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=25.0.
 import {decorObjects,decorFootprintRect,depthCompare,footLift,orientedFootprint} from './decor-runtime.mjs?v=25.0.2';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=25.0.2';
 import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=25.0.2';
-import {atmosphereConfig,weatherConfig,backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.0.2';
+import {backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.0.2';
 import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.0.2';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.0.2';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.0.2';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.0.2';
-import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,GARDEN_STAGES,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
+import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.0.2';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.0.2';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.0.2';
-import {CREATURE, CROP, DB, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
+import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.0.2';
 import {EDGE_SCENERY} from './edge-art.mjs?v=25.0.2';
 import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=25.0.2';
 import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.0.2';
@@ -308,7 +308,7 @@ export function plotAliases(plot, index) {
 
 // Garden expansion phase 2 (visual only): the fire pieces a Kỳ nhông lửa basks beside.
 const CAMPFIRE_DECOR = new Set(['ev_kitchen_corner', 'sp_norbert_egg', 'sp_goblet_fire']);
-// Stand-in tones until the species' sprite ships (scene creatureStandIn): Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa.
+// Stand-in tones when a species has no motion sprite loaded (scene creatureStandIn).
 const STAND_IN_TONES = Object.freeze({crup: ['#E7AE73', '#A57554'], knarl: ['#735044', '#4A3042'], salamander: ['#ED8A45', '#C75B4B'], kappa: ['#71934B', '#3F6A45'], porlock: ['#B49A66', '#735044']});
 
 const POND_TIER_IDS = Object.freeze(['pond_1', 'pond_2', 'pond_3']);
@@ -1939,7 +1939,7 @@ export async function createGarden(canvas, options = {}) {
         const roam = pastureSpot(PASTURE_ROAMERS.indexOf(entry.species));
         spot = [roam.col, roam.row];
       }
-      // A species whose sprite has not shipped yet (phase 2 before the creatures-art-2 merge): a small drawn stand-in.
+      // A page without creature-motion-data.js (tests, older embeds) has no sprite for the newer species: a small drawn stand-in.
       if (!items.get(entry.species)) { objects.push(creatureStandIn(entry, spot, index)); continue; }
       const actor = actorObject(entry, spot[0], spot[1], logicalNow, clock, {creatureIndex: index, facing});
       actor.affinityLevel = Number(creatureAffinities[entry.species]) || 1;
