@@ -503,8 +503,8 @@
 #gameShell .acp-toggle{min-height:44px}
 #gameShell .acp-toggle input[type=checkbox]{width:44px;height:44px;flex:none}
 
-/* A surface owns its frame; data rows inside it stay bare. */
-#gameShell :is(#panel,.store-popover,.owl-letter) :is(.gp-tile,.gp-hero,.journey-hero-card,.gp-tile-art,.journey-card,.reward-chip,.gp-price,.gp-chain-item,.journey-stat-pill,.store-card,.store-vault-banner,.inv-card,.inv-stat-card,.inv-filter-bar){border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;clip-path:none}
+/* A surface owns its frame; data rows inside it stay bare. Grid tiles (.gp-tile, .store-card, .inv-card) and their art squares keep their pixel frames. */
+#gameShell :is(#panel,.store-popover,.owl-letter) :is(.gp-hero,.journey-hero-card,.journey-card,.reward-chip,.gp-price,.gp-chain-item,.journey-stat-pill,.store-vault-banner,.inv-stat-card,.inv-filter-bar){border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;clip-path:none}
 #gameShell :is(#panel,.store-popover,.owl-letter) :is(.gp-tile,.inv-card,.store-card){padding:8px;gap:8px}
 #gameShell :is(#panel,.store-popover,.owl-letter) .gp-tile:is(.is-current,.is-equipped) .gp-tile-name{color:#FFC36B}
 
