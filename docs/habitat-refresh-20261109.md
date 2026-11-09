@@ -1,0 +1,7 @@
+# Eight readable habitat props
+
+Owner requested replacing porlock shelter, salamander fire ring, crup kennel, knarl hollow log, fwooper perch, hippogriff hay feeder, kneazle scratching post and puffskein basket. Two authored atlases (normal/snow rows) retained with prompts/hashes in environment/masters/habitat-refresh-20261109/. Native56×56, pivot28,50, ink<=50×42 replaces40×36/ink<=36×28. Uniform nearest sampling preserves the2:1 elevated camera and material clusters.
+
+A separate rendering defect clipped tall props into the shallow pen-floor cache and rendered them behind all rails. Habitat props now draw as individual depth-sorted objects anchored at their existing logical pocket. Back rails sort behind, front rails remain in front; silhouettes no longer clip into the floor bitmap. The eight new stills omit detached procedural sparks/feathers/tassels from the previous tiny sprites. Winter kit maps all eight to their exact snow artwork. Original pocket centres, pen layouts, actor anchors, save data and game rules unchanged.
+
+Rebuild build-complete-objects.mjs first if needed, then build-habitat-refresh.mjs, then build-runtime-webp.mjs. Focused builder updates canonical complete-object-art/manifest frame geometry and provenance. Tests cover native palette/alpha/grounding/master hashes, matched snow poses, pocket clearance, motion/reduced-motion behavior and habitat order between back/front rails. Actual3026 evidence is recorded separately in HPVNN. No push/deploy.

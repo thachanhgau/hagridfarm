@@ -34,7 +34,17 @@ test('new native sprites retain master provenance, exact palette, alpha and safe
    const old=identities.get(frame.sha256);assert(!old||old===item.id,'different identities share pixels');identities.set(frame.sha256,item.id);
   }
   assert.equal(poses.size,item.frames.length,item.id+' poses repeat beyond translation');
-  if(item.kind==='habitat')assert(item.bounds.w<=36&&item.bounds.h<=28,item.id);
+  if(item.kind==='habitat')assert(item.bounds.w<=(item.refreshed?50:36)&&item.bounds.h<=(item.refreshed?42:28),item.id);
   if(item.kind==='keepsake')assert(item.bounds.w<=44&&item.bounds.h<=44,item.id);
+ }
+});
+test('eight refreshed habitats resolve their own snow pose with matching native anchors',async()=>{
+ const {WINTER_ART}=await import('./garden-winter.mjs');
+ const p=JSON.parse(await read('environment/masters/habitat-refresh-20261109/provenance.json'));
+ const snow=p.assets.flatMap(a=>a.outputs).filter(o=>o.snow);assert.equal(snow.length,8);
+ for(const frame of snow){
+  const a=HABITAT_ART[frame.species];assert.equal(WINTER_ART[a.file],frame.file);
+  assert.deepEqual([a.width,a.height,a.pivotX,a.pivotY],[frame.width,frame.height,frame.pivotX,frame.pivotY]);
+  const png=await read(frame.file);assert.equal(hash(png),frame.sha256);assert.notEqual(frame.sha256,hash(await read(a.file)));
  }
 });

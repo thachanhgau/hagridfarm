@@ -30,6 +30,15 @@ export function winterFor(nowMs, override) {
 
 // Codex winter scenery (deferred: only requested while winter is on). Same canvas and pivot as the original.
 export const WINTER_ART = Object.freeze({
+  'native-complete-objects/habitat_porlock/frame-01.png': 'environment/winter/habitat-porlock-snow.png',
+  'native-complete-objects/habitat_salamander/frame-01.png': 'environment/winter/habitat-salamander-snow.png',
+  'native-complete-objects/habitat_crup/frame-01.png': 'environment/winter/habitat-crup-snow.png',
+  'native-complete-objects/habitat_knarl/frame-01.png': 'environment/winter/habitat-knarl-snow.png',
+  'native-complete-objects/habitat_fwooper/frame-01.png': 'environment/winter/habitat-fwooper-snow.png',
+  'native-complete-objects/habitat_hippogriff/frame-01.png': 'environment/winter/habitat-hippogriff-snow.png',
+  'native-complete-objects/habitat_kneazle/frame-01.png': 'environment/winter/habitat-kneazle-snow.png',
+  'native-complete-objects/habitat_puffskein/frame-01.png': 'environment/winter/habitat-puffskein-snow.png',
+
   'world-v241/hero-halloween.png': 'environment/winter/hero-halloween-snow.png',
   'environment/edge/tree-apple-0.png': 'environment/winter/tree-apple-0-snow.png',
   'environment/edge/tree-apple-1.png': 'environment/winter/tree-apple-1-snow.png',

@@ -59,6 +59,8 @@ test('front pen rails occlude a large resident while back rails remain behind it
  const order=garden.order(),dragon=order.findIndex(o=>o.id==='dragon');assert.ok(dragon>=0);
  const back=order.findIndex(o=>o.id==='pen_6:fence:back'),front=order.findIndex(o=>o.id==='pen_6:fence:front');
  assert.ok(back>=0&&back<dragon,'back rails behind the resident');assert.ok(front>dragon,'front rails in front of the resident');
+ const props=order.filter(o=>o.type==='habitat');assert.ok(props.length>0,'habitat props must be independent depth-sorted objects');
+ for(const prop of props){const pen=prop.id.split(':')[0],i=order.indexOf(prop);assert.ok(order.findIndex(o=>o.id===pen+':fence:back')<i);assert.ok(order.findIndex(o=>o.id===pen+':fence:front')>i);}
 });
 
 test('water beds draw the actual aquatic crop sprite instead of rectangular stand-ins',async()=>{
@@ -163,7 +165,7 @@ test('25.0 budget: event pieces and Dobby\'s work poses load only when first dra
 
 test('winter scenery stays deferred until winter or explicit snow is selected', async () => {
   const winterKit = await import('./garden-winter.mjs'), {WINTER_FILES, winterSeason} = winterKit;
-  assert.equal(WINTER_FILES.length, 22);
+  assert.equal(WINTER_FILES.length, 30);
   for (const file of WINTER_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
   const winterUrls = WINTER_FILES.map(runtimeImageUrl);
   const {canvas, requested} = recordingCanvas();

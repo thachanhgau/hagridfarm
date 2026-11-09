@@ -8,7 +8,7 @@ import {creatureView,creatureViewFrames} from './creature-view.mjs?v=25.0.2';
 import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=25.0.2';
 import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=25.0.2';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.0.2';
-import {habitatResidents,drawHabitatProps,drawHabitatMotion} from './garden-creature-habitats.mjs?v=25.0.2';
+import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=25.0.2';
 import {drawGardenPathDetails} from './garden-path-details.mjs?v=25.0.2';
 import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=25.0.2';
 import {drawRaisedPlotBorder,drawCottageGround} from './garden-cottage-details.mjs?v=25.0.2';
@@ -1435,12 +1435,10 @@ export async function createGarden(canvas, options = {}) {
       const layer=makeCanvas(canvas,right-left,bottom-top),brush=layer.getContext('2d');brush.translate(-left,-top);
       drawPenHabitat(brush,{corners,pen:enclosure,iso,weatherMode:activeWeather,personalized:residents.length>0});
       const fences=fenceObjects(penFencePieces(enclosure,iso,{sharedEast}));
-      drawHabitatProps(brush,residents,{weatherMode:activeWeather,imageFor});
       cached={key,layer,left,top,fences};penHabitatLayers.set(pen.id,cached);
     }
     context.drawImage(cached.layer,cached.left,cached.top);
-    drawHabitatMotion(context,residents,{clock,reducedMotion:clock===0,weatherMode:activeWeather});
-    return cached.fences;
+    return [...cached.fences,...habitatObjects(residents,{penId:pen.id,weatherMode:activeWeather,imageFor,snowFile:winterFile,clock})];
   }
 
   function drawBuiltPlotBorder(plot,index){

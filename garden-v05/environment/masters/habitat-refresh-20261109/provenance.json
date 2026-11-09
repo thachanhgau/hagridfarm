@@ -1,0 +1,373 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "group": "shelters",
+      "master": "environment/masters/habitat-refresh-20261109/shelters.png",
+      "masterSha256": "cfed531f65a82660cb4b105d7ecdd4e27cf8cc9a7c79fae756530007712b1d3f",
+      "prompt": "Production pixel game habitat atlas with four columns: porlock, salamander, crup, knarl; normal row and matching snow row. Readable sturdy silhouettes, elevated 2:1 dimetric view, vertical supports, muted wood/straw/moss/slate palette, chunky clusters, transparent gutters, no animals, labels or background.",
+      "outputs": [
+        {
+          "species": "porlock",
+          "snow": false,
+          "file": "native-complete-objects/habitat_porlock/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 8,
+            "w": 50,
+            "h": 42
+          },
+          "sha256": "576f3433ebb09363f1f64043be0c79d302a3cc6c5e5fbda6fc7b532ac9d0eace",
+          "sourceRect": {
+            "x": 30,
+            "y": 68,
+            "w": 383,
+            "h": 324
+          }
+        },
+        {
+          "species": "salamander",
+          "snow": false,
+          "file": "native-complete-objects/habitat_salamander/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 15,
+            "w": 50,
+            "h": 35
+          },
+          "sha256": "3c0465bdad69ee2eb293dcf6aa1f13f1995489933894c01b1071dffc4c1b4905",
+          "sourceRect": {
+            "x": 502,
+            "y": 137,
+            "w": 321,
+            "h": 227
+          }
+        },
+        {
+          "species": "crup",
+          "snow": false,
+          "file": "native-complete-objects/habitat_crup/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 4,
+            "y": 8,
+            "w": 47,
+            "h": 42
+          },
+          "sha256": "b88bffde3ecae68ab12a25f497aee0002697a57b9ba78a4875ba16438f107cfa",
+          "sourceRect": {
+            "x": 935,
+            "y": 68,
+            "w": 346,
+            "h": 309
+          }
+        },
+        {
+          "species": "knarl",
+          "snow": false,
+          "file": "native-complete-objects/habitat_knarl/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 16,
+            "w": 50,
+            "h": 34
+          },
+          "sha256": "2de6d52eb24bf7293c72e3719cb6b40e25234797ee8e480457ca91bece20a8d9",
+          "sourceRect": {
+            "x": 1363,
+            "y": 108,
+            "w": 383,
+            "h": 260
+          }
+        },
+        {
+          "species": "porlock",
+          "snow": true,
+          "file": "environment/winter/habitat-porlock-snow.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 8,
+            "w": 49,
+            "h": 42
+          },
+          "sha256": "7b237cd8f92d724ea1595313013fbadd9d9224ccdbe56e8a5983b29550eb23da",
+          "sourceRect": {
+            "x": 30,
+            "y": 509,
+            "w": 383,
+            "h": 329
+          }
+        },
+        {
+          "species": "salamander",
+          "snow": true,
+          "file": "environment/winter/habitat-salamander-snow.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 14,
+            "w": 50,
+            "h": 36
+          },
+          "sha256": "ab3548d23e78ba8928cb2c3dfb2603ee450e9a9246181157dba218eeaf5c8f87",
+          "sourceRect": {
+            "x": 501,
+            "y": 576,
+            "w": 324,
+            "h": 231
+          }
+        },
+        {
+          "species": "crup",
+          "snow": true,
+          "file": "environment/winter/habitat-crup-snow.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 5,
+            "y": 8,
+            "w": 46,
+            "h": 42
+          },
+          "sha256": "c3a9e2489225363a7f3b7b2db48c78cef51eda629c6a5799c203e493bc057ef8",
+          "sourceRect": {
+            "x": 932,
+            "y": 510,
+            "w": 348,
+            "h": 315
+          }
+        },
+        {
+          "species": "knarl",
+          "snow": true,
+          "file": "environment/winter/habitat-knarl-snow.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 15,
+            "w": 50,
+            "h": 35
+          },
+          "sha256": "38606cf68b9fc4a2b0592653f144bb5019403983122fdd869befcc236840ba27",
+          "sourceRect": {
+            "x": 1363,
+            "y": 546,
+            "w": 383,
+            "h": 267
+          }
+        }
+      ]
+    },
+    {
+      "group": "furnishings",
+      "master": "environment/masters/habitat-refresh-20261109/furnishings.png",
+      "masterSha256": "dc9b3ee7489a9ca2cdfbc4e970e340ee8d78c54d190ac39701765fe01ac091b7",
+      "prompt": "Production pixel game habitat atlas with four columns: fwooper, hippogriff, kneazle, puffskein; normal row and matching snow row. Readable sturdy silhouettes, elevated 2:1 dimetric view, vertical supports, muted wood/straw/moss/slate palette, chunky clusters, transparent gutters, no animals, labels or background.",
+      "outputs": [
+        {
+          "species": "fwooper",
+          "snow": false,
+          "file": "native-complete-objects/habitat_fwooper/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 6,
+            "y": 8,
+            "w": 44,
+            "h": 42
+          },
+          "sha256": "1f53774c196933a7836afa1259a2703083fdd3d9510db7174245e12c65e57721",
+          "sourceRect": {
+            "x": 47,
+            "y": 57,
+            "w": 351,
+            "h": 337
+          }
+        },
+        {
+          "species": "hippogriff",
+          "snow": false,
+          "file": "native-complete-objects/habitat_hippogriff/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 13,
+            "w": 50,
+            "h": 37
+          },
+          "sha256": "442f6697c7eb8574d44de13d494e111a64ba081de412084e207e8139afa3d6a2",
+          "sourceRect": {
+            "x": 480,
+            "y": 93,
+            "w": 381,
+            "h": 285
+          }
+        },
+        {
+          "species": "kneazle",
+          "snow": false,
+          "file": "native-complete-objects/habitat_kneazle/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 9,
+            "y": 8,
+            "w": 38,
+            "h": 42
+          },
+          "sha256": "e9e8a752a178096347096d5e196ac13fe9db2b75e28c2c97fa91b919267bd1a2",
+          "sourceRect": {
+            "x": 947,
+            "y": 50,
+            "w": 323,
+            "h": 359
+          }
+        },
+        {
+          "species": "puffskein",
+          "snow": false,
+          "file": "native-complete-objects/habitat_puffskein/frame-01.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 16,
+            "w": 50,
+            "h": 34
+          },
+          "sha256": "53599d60fdb64eb33c92ef7717184bec38f4a32d187a3b1d89afeeb5157cd51a",
+          "sourceRect": {
+            "x": 1352,
+            "y": 110,
+            "w": 385,
+            "h": 261
+          }
+        },
+        {
+          "species": "fwooper",
+          "snow": true,
+          "file": "environment/winter/habitat-fwooper-snow.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 7,
+            "y": 8,
+            "w": 42,
+            "h": 42
+          },
+          "sha256": "e16b2bcec3e9003c018e4b3bde95f427e114a8fc1ca03bff3e4098dbc38487fe",
+          "sourceRect": {
+            "x": 46,
+            "y": 485,
+            "w": 352,
+            "h": 352
+          }
+        },
+        {
+          "species": "hippogriff",
+          "snow": true,
+          "file": "environment/winter/habitat-hippogriff-snow.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 12,
+            "w": 50,
+            "h": 38
+          },
+          "sha256": "6073c97fe901eea0ee7956598f8b9080900b86a1daeb5eaa5bdfa0d1e32b3f52",
+          "sourceRect": {
+            "x": 480,
+            "y": 529,
+            "w": 381,
+            "h": 292
+          }
+        },
+        {
+          "species": "kneazle",
+          "snow": true,
+          "file": "environment/winter/habitat-kneazle-snow.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 10,
+            "y": 8,
+            "w": 36,
+            "h": 42
+          },
+          "sha256": "6f91dff8d531196f9e5bcf4dfc649c1580b03d8739d3b2f2eda4776cedd808fe",
+          "sourceRect": {
+            "x": 947,
+            "y": 476,
+            "w": 323,
+            "h": 377
+          }
+        },
+        {
+          "species": "puffskein",
+          "snow": true,
+          "file": "environment/winter/habitat-puffskein-snow.png",
+          "width": 56,
+          "height": 56,
+          "pivotX": 28,
+          "pivotY": 50,
+          "bounds": {
+            "x": 3,
+            "y": 16,
+            "w": 50,
+            "h": 34
+          },
+          "sha256": "668623d7ca0fd1af41b2a1eb98db9eb42aaa7063e8aeb69f989444d0766539a8",
+          "sourceRect": {
+            "x": 1346,
+            "y": 544,
+            "w": 397,
+            "h": 272
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -29,7 +29,7 @@ test('all weather props and every motion phase stay inside the empty pockets, cl
  for(const species of HABITAT_SPECIES)for(const weatherMode of ['clear','rain','autumn','snow'])for(const clock of [0,600,1200,1800]){
   const residents=[{species,xy:[100,100]}];
   const calls=record(c=>{drawHabitatProps(c,residents,{weatherMode,imageFor});drawHabitatMotion(c,residents,{clock,weatherMode});});
-  for(const [color,x,y,w,h] of calls){if(color.endsWith?.('.png')){const b=HABITAT_ART[species].bounds;assert(x+b.x>=81&&x+b.x+b.w<=119,`${species} x`);assert(y+b.y>=72&&y+b.y+b.h<=106,`${species} y`);}else{assert(x>=81&&x+w<=119,`${species} x`);assert(y>=72&&y+h<=106,`${species} y`);}}
+  for(const [color,x,y,w,h] of calls){if(color.endsWith?.('.png')){const b=HABITAT_ART[species].bounds;assert(x+b.x>=(HABITAT_ART[species].refreshed?75:81)&&x+b.x+b.w<=(HABITAT_ART[species].refreshed?125:119),`${species} x`);assert(y+b.y>=(HABITAT_ART[species].refreshed?58:72)&&y+b.y+b.h<=106,`${species} y`);}else{assert(x>=81&&x+w<=119,`${species} x`);assert(y>=(HABITAT_ART[species].refreshed?58:72)&&y+h<=106,`${species} y`);}}
  }
 });
 test('ambient motion is clock-driven, slow, deterministic and frozen by reduced motion',()=>{
@@ -38,6 +38,6 @@ test('ambient motion is clock-driven, slow, deterministic and frozen by reduced 
   assert.deepEqual(render(0),render(99999,true));assert.deepEqual(render(1200),render(1200));
   assert.equal(habitatPhase(species,0),0);assert.equal(habitatPhase(species,NaN),0);
   assert.equal(habitatPhase(species,99999,true),0);
-  assert(new Set([0,600,1200,1800].map(t=>JSON.stringify(render(t)))).size>1,species);
+  assert.equal(new Set([0,600,1200,1800].map(t=>JSON.stringify(render(t)))).size>1,!HABITAT_ART[species].refreshed,species);
  }
 });

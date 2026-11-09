@@ -1,6 +1,6 @@
 // Authored habitat sprites; placement and ambient effects remain presentation-only.
 import {HABITAT_ART} from './complete-object-art.mjs?v=25.0.2';
-// Each sprite stays inside a 38 x 30 ground pocket between the two actors.
+// Grounded props occupy the clear pockets between actors; taller silhouettes sort with the rails.
 const palette={d:'#4a3c2c',w:'#735044',h:'#b49a66',s:'#687486',l:'#a6b1ae',g:'#3f6a45',v:'#71934b',a:'#e7ae73',b:'#70a8b6',p:'#a57554',r:'#a57554',c:'#d6d8bf',e:'#ed8a45',f:'#ffc36b'};
 export const HABITAT_SPECIES=Object.freeze(Object.keys(HABITAT_ART));
 export function habitatAnchors(pen,iso){
@@ -27,15 +27,15 @@ export function habitatResidents(pen,creatures,spots,iso){
   if(!entry||!HABITAT_ART[entry.species]||!Array.isArray(spot))continue;
   if(spot[0]<pen.col||spot[0]>=pen.col+pen.width||spot[1]<pen.row||spot[1]>=pen.row+pen.height)continue;
   const slot=spot[0]<pen.col+pen.width/2?0:1;
-  residents.push({species:entry.species,xy:anchors[slot],slot});
+  residents.push({species:entry.species,xy:anchors[slot],slot,col:pen.col+pen.width*(slot===0?.39:.60),row:pen.row+pen.height*(slot===0?.18:.74)});
  }
  return residents;
 }
-export function drawHabitatProps(c,residents,{weatherMode='clear',imageFor=()=>null}={}){
+export function drawHabitatProps(c,residents,{weatherMode='clear',imageFor=()=>null,snowFile=()=>null}={}){
  for(const {species,xy:[x,y]} of residents){
-  const asset=HABITAT_ART[species],image=asset&&imageFor(asset.file);if(!image)continue;
+  const asset=HABITAT_ART[species],winter=asset&&snowFile(asset.file),image=asset&&imageFor(winter||asset.file);if(!image)continue;
   c.drawImage(image,Math.round(x-asset.pivotX),Math.round(y-asset.pivotY));
-  if(weatherMode==='snow')pixel(c,x-5,y-asset.bounds.h,10,2,palette.c);
+  if(weatherMode==='snow'&&!winter)pixel(c,x-5,y-asset.bounds.h,10,2,palette.c);
  }
 }
 
@@ -47,6 +47,7 @@ function glint(c,x,y,color,phase){
 export function drawHabitatMotion(c,residents,{clock=0,reducedMotion=false,weatherMode='clear'}={}){
  const p=colors(weatherMode);
  for(const {species,xy:[x,y]} of residents){
+  if(HABITAT_ART[species]?.refreshed)continue; // Authored stills need no detached placeholder effects.
   const phase=habitatPhase(species,clock,reducedMotion),sway=[0,1,0,-1][phase];
   switch(species){
    case 'puffskein': // Small soft tassel on the basket, not a second creature.
@@ -75,4 +76,9 @@ export function drawHabitatMotion(c,residents,{clock=0,reducedMotion=false,weath
    case 'dragon':pixel(c,x-2,y-12,4,2,phase===1||phase===2?p.a:p.r);if(phase===2)pixel(c,x+4,y-17,1,2,p.a);break;
   }
  }
+}
+
+// Draw the whole silhouette in the scene pass, never clipped into a shallow ground cache.
+export function habitatObjects(residents,{penId,weatherMode,imageFor,snowFile,clock=0}={}){
+ return residents.map(r=>({kind:'habitat',type:'habitat',id:`${penId}:habitat:${r.species}`,xy:r.xy,cellA:[r.col,r.row],cellB:[r.col,r.row],draw(c){drawHabitatProps(c,[r],{weatherMode,imageFor,snowFile});drawHabitatMotion(c,[r],{weatherMode,clock,reducedMotion:clock===0});}}));
 }

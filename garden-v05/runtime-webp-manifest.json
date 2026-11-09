@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "2533f4a66ee2",
+  "revision": "b0cf300c9bf1",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -5854,12 +5854,12 @@
     {
       "source": "native-complete-objects/habitat_crup/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_crup/frame-01.webp",
-      "width": 40,
-      "height": 36,
-      "sourceBytes": 474,
-      "bytes": 336,
-      "sourceSha256": "9085c6a7996d908fffe8ba6285646731581bfd5918260319af8e177a5454e20e",
-      "sha256": "222d904f3d025e201f08f643b0e02b1d89c5bcd0927757ff2c67447d79720a21"
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1020,
+      "bytes": 664,
+      "sourceSha256": "b88bffde3ecae68ab12a25f497aee0002697a57b9ba78a4875ba16438f107cfa",
+      "sha256": "f0cf3aadea42df7febde3c57f06fde46f79c26d71f2d1549eb1ef7ef5daac3b2"
     },
     {
       "source": "native-complete-objects/habitat_diricawl/frame-01.png",
@@ -5884,12 +5884,12 @@
     {
       "source": "native-complete-objects/habitat_fwooper/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_fwooper/frame-01.webp",
-      "width": 40,
-      "height": 36,
-      "sourceBytes": 495,
-      "bytes": 310,
-      "sourceSha256": "5c4f2ef2407d6b84d13ea2ab7d318461deba29069a0f6e95fb7d8bbb830db245",
-      "sha256": "f76e07c5e712489ba7f798c224212c42b2ddcdc3a06522b36577977b5963f9aa"
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 946,
+      "bytes": 572,
+      "sourceSha256": "1f53774c196933a7836afa1259a2703083fdd3d9510db7174245e12c65e57721",
+      "sha256": "5801a4b84ee710f89fd2ba73e28e890a2f3f500bc0f92c217a8b976afbf68632"
     },
     {
       "source": "native-complete-objects/habitat_grindylow/frame-01.png",
@@ -5904,12 +5904,12 @@
     {
       "source": "native-complete-objects/habitat_hippogriff/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_hippogriff/frame-01.webp",
-      "width": 40,
-      "height": 36,
-      "sourceBytes": 543,
-      "bytes": 368,
-      "sourceSha256": "4bbfb6e3b2fde9e096fd343e4524f59f0afcffa97990d05ad008719c1ad1c9f7",
-      "sha256": "4ef26339adde0883c359ef901565f153f4d276c0bd84b963e486fcd085dd9f14"
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 913,
+      "bytes": 586,
+      "sourceSha256": "442f6697c7eb8574d44de13d494e111a64ba081de412084e207e8139afa3d6a2",
+      "sha256": "4fd01a2f3b156489963e052b6ceb9b425eeb1bbcd36b556c05e4f059bfd6d7aa"
     },
     {
       "source": "native-complete-objects/habitat_kappa/frame-01.png",
@@ -5924,22 +5924,22 @@
     {
       "source": "native-complete-objects/habitat_knarl/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_knarl/frame-01.webp",
-      "width": 40,
-      "height": 36,
-      "sourceBytes": 463,
-      "bytes": 322,
-      "sourceSha256": "0f937b568b75d91576af25977f64413f03120b3a71b82adcd67491ecfd1054b8",
-      "sha256": "8e63f35467d8e3f5ccf4ba01833c5900a6eda67c37ef54a13b40ec6aa900693a"
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 971,
+      "bytes": 638,
+      "sourceSha256": "2de6d52eb24bf7293c72e3719cb6b40e25234797ee8e480457ca91bece20a8d9",
+      "sha256": "0e6d3ed7d3563cc6dc8e909b47d7f418781e228a04fd365df0ead0f77b47d0d3"
     },
     {
       "source": "native-complete-objects/habitat_kneazle/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_kneazle/frame-01.webp",
-      "width": 40,
-      "height": 36,
-      "sourceBytes": 461,
-      "bytes": 306,
-      "sourceSha256": "a503687e1b60f56d36ff578a452a0ba706bda71a1aa08d4dde127841881ba474",
-      "sha256": "8cefcf276c9fd7c057f8e45524e97115c6a7515f824347166d6453b08e04a25a"
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 757,
+      "bytes": 462,
+      "sourceSha256": "e9e8a752a178096347096d5e196ac13fe9db2b75e28c2c97fa91b919267bd1a2",
+      "sha256": "c0325354b30dbe64297424b8c504a70073c23887571b80e9f2762015c3de1197"
     },
     {
       "source": "native-complete-objects/habitat_mooncalf/frame-01.png",
@@ -5964,32 +5964,32 @@
     {
       "source": "native-complete-objects/habitat_porlock/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_porlock/frame-01.webp",
-      "width": 40,
-      "height": 36,
-      "sourceBytes": 424,
-      "bytes": 304,
-      "sourceSha256": "6d38ab3f7a2ad3cb67b70f89361d452246090cd2db05e77e8c6e245594f47b6f",
-      "sha256": "ebe604bda768fcbf8bb733a0108513212aa97490a2716f9a18adf783717e62d5"
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1135,
+      "bytes": 752,
+      "sourceSha256": "576f3433ebb09363f1f64043be0c79d302a3cc6c5e5fbda6fc7b532ac9d0eace",
+      "sha256": "7fa3cf8df2e0f847e4a835aa1e78b96eed4155e0910c65aa0edf0ae42b1d8a90"
     },
     {
       "source": "native-complete-objects/habitat_puffskein/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_puffskein/frame-01.webp",
-      "width": 40,
-      "height": 36,
-      "sourceBytes": 593,
-      "bytes": 388,
-      "sourceSha256": "b771cf2a44b71e6d0f25bf7d85cdff26c435442dc1e9077386ea46a3cf83972a",
-      "sha256": "c2c706b7abd464ef19587bd784cf42c2993c38df9ddceedd7d8225478ff95043"
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1139,
+      "bytes": 746,
+      "sourceSha256": "53599d60fdb64eb33c92ef7717184bec38f4a32d187a3b1d89afeeb5157cd51a",
+      "sha256": "976d98e2cae2c929c9bd735ead6f6d2dbb89de3641ea4ceaae7254ac9c7af249"
     },
     {
       "source": "native-complete-objects/habitat_salamander/frame-01.png",
       "file": "runtime-webp/native-complete-objects/habitat_salamander/frame-01.webp",
-      "width": 40,
-      "height": 36,
-      "sourceBytes": 465,
-      "bytes": 326,
-      "sourceSha256": "c15a2561b614845c723e6faa73d96eb98c67836d1b1e243e779fb15a25148ac1",
-      "sha256": "f14f7523ad8c27fa49fc5afc1cf5e8dc12bee988a3b6ead18841306ae5177fee"
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 986,
+      "bytes": 636,
+      "sourceSha256": "3c0465bdad69ee2eb293dcf6aa1f13f1995489933894c01b1071dffc4c1b4905",
+      "sha256": "37d0f092afa2f602f5fae18cd3ec953ce9f27d3966f45fe00bcb459a18b2576d"
     },
     {
       "source": "native-complete-objects/habitat_thestral/frame-01.png",
@@ -13632,6 +13632,86 @@
       "sha256": "62da308d6004df24bcea276a79da97ff165f8c6f564b7095e7aa0f7f3dc30198"
     },
     {
+      "source": "environment/winter/habitat-crup-snow.png",
+      "file": "runtime-webp/environment/winter/habitat-crup-snow.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1081,
+      "bytes": 712,
+      "sourceSha256": "c3a9e2489225363a7f3b7b2db48c78cef51eda629c6a5799c203e493bc057ef8",
+      "sha256": "3df044eb19e60cd35070158f542bfd37f9f3f71103c3c927148d4a21c8d0d200"
+    },
+    {
+      "source": "environment/winter/habitat-fwooper-snow.png",
+      "file": "runtime-webp/environment/winter/habitat-fwooper-snow.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 979,
+      "bytes": 594,
+      "sourceSha256": "e16b2bcec3e9003c018e4b3bde95f427e114a8fc1ca03bff3e4098dbc38487fe",
+      "sha256": "23e6cbb826d2a2482b1df010b747227516a9b42a78b680716561d89362766958"
+    },
+    {
+      "source": "environment/winter/habitat-hippogriff-snow.png",
+      "file": "runtime-webp/environment/winter/habitat-hippogriff-snow.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 941,
+      "bytes": 626,
+      "sourceSha256": "6073c97fe901eea0ee7956598f8b9080900b86a1daeb5eaa5bdfa0d1e32b3f52",
+      "sha256": "e67a29f098998aa0b05307befbc33a87c60a5a0ae0082198a1399ef601b7c8f9"
+    },
+    {
+      "source": "environment/winter/habitat-knarl-snow.png",
+      "file": "runtime-webp/environment/winter/habitat-knarl-snow.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1036,
+      "bytes": 678,
+      "sourceSha256": "38606cf68b9fc4a2b0592653f144bb5019403983122fdd869befcc236840ba27",
+      "sha256": "8b8248bff468c1693c27db7c5e7943a74ccd455c88d0777a00839640a4c5b8a9"
+    },
+    {
+      "source": "environment/winter/habitat-kneazle-snow.png",
+      "file": "runtime-webp/environment/winter/habitat-kneazle-snow.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 793,
+      "bytes": 494,
+      "sourceSha256": "6f91dff8d531196f9e5bcf4dfc649c1580b03d8739d3b2f2eda4776cedd808fe",
+      "sha256": "060e3f9bf36b5dbeae47ea93751194b02329a39ee8349c70c233f819d6a49e5b"
+    },
+    {
+      "source": "environment/winter/habitat-porlock-snow.png",
+      "file": "runtime-webp/environment/winter/habitat-porlock-snow.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1176,
+      "bytes": 756,
+      "sourceSha256": "7b237cd8f92d724ea1595313013fbadd9d9224ccdbe56e8a5983b29550eb23da",
+      "sha256": "4252fb3a8ea73185bff7dcd5bb580c4814b7f088ad82ad0ca9c4f61e23887451"
+    },
+    {
+      "source": "environment/winter/habitat-puffskein-snow.png",
+      "file": "runtime-webp/environment/winter/habitat-puffskein-snow.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1143,
+      "bytes": 734,
+      "sourceSha256": "668623d7ca0fd1af41b2a1eb98db9eb42aaa7063e8aeb69f989444d0766539a8",
+      "sha256": "236227d3ab92b8d9785e482734aebe442c3d4818a25a19d29a4a9f43cba4593a"
+    },
+    {
+      "source": "environment/winter/habitat-salamander-snow.png",
+      "file": "runtime-webp/environment/winter/habitat-salamander-snow.webp",
+      "width": 56,
+      "height": 56,
+      "sourceBytes": 1039,
+      "bytes": 674,
+      "sourceSha256": "ab3548d23e78ba8928cb2c3dfb2603ee450e9a9246181157dba218eeaf5c8f87",
+      "sha256": "d0cc13f4a4db330154091dec6d16697736b7f57ad567f53cb91e4ded29eaf142"
+    },
+    {
       "source": "environment/winter/hero-halloween-snow.png",
       "file": "runtime-webp/environment/winter/hero-halloween-snow.webp",
       "width": 160,
@@ -14055,11 +14135,11 @@
     }
   ],
   "totals": {
-    "converted": 1399,
+    "converted": 1407,
     "existingWebp": 8,
-    "originalBytes": 5403846,
-    "webpBytes": 3561694,
-    "savedBytes": 1842152,
-    "savedPercent": 34.09
+    "originalBytes": 5415983,
+    "webpBytes": 3569358,
+    "savedBytes": 1846625,
+    "savedPercent": 34.1
   }
 }
