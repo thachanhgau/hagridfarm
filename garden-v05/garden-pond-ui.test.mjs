@@ -66,9 +66,14 @@ test('the pond dock renders data rows and sends the contract commands', () => {
  const ctx = {pond: pond(), state: {construction: [], built: ['pond_1']}, level: 140, now: NOW, seeds: {silverkelp: 2},
   creature: {species: 'grindylow', label: 'Thủy quái', feed: 'grindylow_feed', have: 4, badge: 'Cấp 150', locked: true}};
  ui.render(ctx);
- assert.equal(byClass(dock, 'pond-title')[0].textContent, 'Ao cá2 ô · 2 luống');
+ assert.equal(byClass(dock, 'pond-title')[0].textContent, 'Ao cá');
+ const panes=byClass(dock,'pond-pane');
+ assert.deepEqual(panes.map(p=>p.hidden),[false,true,true]);
+ byClass(dock,'pond-tabs')[0].children[1].click();
+ assert.deepEqual(byClass(dock,'pond-pane').map(p=>p.hidden),[true,false,true]);
+ assert.equal(byClass(dock,'pond-tabs')[0].children[1].getAttribute('aria-pressed'),'true');
  const net = byId(dock, 'pondNet'), cast = byId(dock, 'pondCast');
- assert.equal(net.textContent, 'Kéo lưới · 1');
+ assert.equal(net.textContent, 'Lưới1');
  assert.equal(byId(dock, 'pondClean'), undefined, '«Vớt rêu» only while murky');
  net.click(); cast.click();
  assert.deepEqual(sent.shift()[0], {action: 'pond', kind: 'net'});
@@ -86,7 +91,7 @@ test('the pond dock renders data rows and sends the contract commands', () => {
  ui.render({...ctx, pond: pond({murky: true, lots: [null, null], cast: {today: true}})});
  assert.equal(byId(dock, 'pondNet').disabled, true);
  assert.ok(byId(dock, 'pondClean'));
- assert.deepEqual([byId(dock, 'pondCast').disabled, byId(dock, 'pondCast').textContent], [true, 'Mai câu tiếp']);
+ assert.deepEqual([byId(dock, 'pondCast').disabled, byId(dock, 'pondCast').textContent], [true, 'Câu']);
  const empty = byClass(dock, 'pond-lot')[0];
  sent.length = 0; empty.click();
  assert.deepEqual(sent[0][0], {action: 'pond', kind: 'stock', lot: 0, fry: 'carp'});
@@ -128,4 +133,19 @@ test('art contract: scenery sizes, guarded scene files and pixel icon fallbacks'
    for (const k of ['width', 'height', 'pivotX', 'pivotY']) assert.equal(art?.[k], s[k], id + ' ' + k);
   }
  });
+});
+
+const O=await import('./garden-orchard-ui.mjs');
+test('orchard hotbar hides irrelevant seed picking and keeps explicit cancel and two-step cutting',()=>{
+ const dock=new FakeElement('section'),sent=[],ui=O.createOrchardDock({dock,act:cmd=>sent.push(cmd)});
+ const orchard={trees:Array.from({length:6},(_,i)=>({kind:['apple','pear','plum'][i%3],readyAt:NOW+H})),saplings:{apple:2}};
+ ui.render({orchard,now:NOW});assert.equal(byClass(dock,'pond-pick').length,0);
+ assert.equal(byId(dock,'orchardHarvest').disabled,true);
+ byClass(dock,'pond-lot')[0].click();assert.equal(sent.length,0);
+ const cancel=byClass(dock,'pond-action').find(b=>b.getAttribute('aria-label')==='Hủy chặt cây');assert.ok(cancel);cancel.click();
+ assert.equal(byClass(dock,'is-confirm').length,0);assert.equal(sent.length,0);
+ byClass(dock,'pond-lot')[0].click();byClass(dock,'is-confirm')[0].click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'fell',spot:0});
+ ui.render({orchard:{...orchard,trees:[null,...orchard.trees.slice(1)]},now:NOW});
+ assert.equal(byClass(dock,'pond-pick').length,1);byClass(dock,'pond-lot')[0].click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'plant',spot:0,sapling:'apple'});
+ ui.render({orchard:{...orchard,trees:orchard.trees.map(t=>({...t,ripe:true}))},now:NOW});byId(dock,'orchardHarvest').click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'harvest'});
 });

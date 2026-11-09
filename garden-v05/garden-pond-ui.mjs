@@ -100,14 +100,15 @@ export function pondReceiptText(receipt) {
  * `act(command, text)` runs a server command; `openCast()` opens the fishing game; `care()` opens the grindylow in Nuôi.
  */
 export function createPondDock({dock, items, act, openCast, care}) {
- let fry = 'carp', crop = null;
+ let fry = 'carp', crop = null, section = 'fish';
  const head = (title, meta, actions) => el('div', {class: 'pond-head'}, [
   el('div', {class: 'pond-title'}, [el('strong', {text: title}), el('span', {class: 'pond-meta', text: meta})]),
   el('div', {class: 'pond-actions'}, actions),
  ]);
  const actionButton = (name, fallback, label, fn, {disabled = false, id, cls = ''} = {}) => {
-  const b = button('', fn, {class: 'pond-action ' + cls, disabled, ...(id ? {id} : {}), 'aria-label': label});
-  b.append(px(name, fallback, 1), el('span', {text: label}));
+  const b = button('', fn, {class: 'pond-action ' + cls, disabled, ...(id ? {id} : {}), 'aria-label': label, title: label});
+  b.append(px(name, fallback, 2), el('span', {text: id === 'pondNet' ? 'Lưới' : id === 'pondCast' ? 'Câu' : id === 'pondClean' ? 'Rêu' : label}));
+  if(id==='pondNet'&&/ · (\d+)$/.test(label))b.append(el('b',{class:'action-count',text:label.match(/ · (\d+)$/)[1]}));
   return b;
  };
  const pick = (choices, selected, onPick, label) => el('div', {class: 'pond-pick', role: 'group', 'aria-label': label}, choices.map(c => {
@@ -140,14 +141,14 @@ export function createPondDock({dock, items, act, openCast, care}) {
    if (lot.state === 'empty') {
     const b = button('', () => act({action: 'pond', kind: 'stock', lot: lot.index, fry}, `Thả ${FRY[fry].label} giống · ô ${lot.index + 1}.`),
      {class: 'pond-lot is-empty', disabled: !counts[fry], 'aria-label': `Ô ${lot.index + 1} · thả ${FRY[fry].label}`});
-    b.append(fryIcon(items, fry), el('small', {text: 'Thả'}));
+    b.append(fryIcon(items, fry,32), el('small', {text: '+'}));
     return b;
    }
    const ripe = lot.state === 'ripe';
    const b = button('', ripe ? () => act({action: 'pond', kind: 'net'}, 'Kéo lưới.') : () => {},
     {class: 'pond-lot' + (ripe ? ' is-ripe' : ''), disabled: !ripe, 'aria-label': `Ô ${lot.index + 1} · ${name} · ${ripe ? 'chín' : 'còn ' + duration(lot.readyAt - now)}`});
-   b.append(fryIcon(items, lot.fry in FRY ? lot.fry : 'carp', 20, {grown: true}),
-    ripe ? el('small', {text: 'Chín'}) : el('small', {'data-until': lot.readyAt, 'data-prefix': '', text: duration(lot.readyAt - now)}));
+   b.append(fryIcon(items, lot.fry in FRY ? lot.fry : 'carp', 32, {grown: true}),
+    ripe ? el('small', {class:'slot-ready',text: '✓','aria-hidden':'true'}) : el('small', {'data-until': lot.readyAt, 'data-prefix': '', text: duration(lot.readyAt - now)}));
    return b;
   });
   return [
@@ -186,8 +187,9 @@ export function createPondDock({dock, items, act, openCast, care}) {
   const list = ctx.creatures || (ctx.creature ? [ctx.creature] : []);
   if (!list.length || !ctx.pond.creatureSpots) return [];
   return list.map(c => {
-   const art = items?.has?.(c.species) ? icon(items, c.species, 3, 32) : px('pond', 'water', 2);
-   const b = button('Chăm', () => care(c.species), {class: 'pond-care', 'aria-label': `Chăm ${c.label}`, disabled: c.locked});
+   const art = items?.has?.(c.species) ? icon(items, c.species, 3, 44) : px('pond', 'water', 2);
+   const b = button('', () => care(c.species), {class: 'pond-care', 'aria-label': `Chăm ${c.label}`, title:`Chăm ${c.label}`, disabled: c.locked});
+   b.append(px('feed','feed',2));
    return el('div', {class: 'pond-creature'}, [el('span', {class: 'pond-creature-art', 'aria-hidden': 'true'}, [art]),
     el('div', {class: 'pond-title'}, [el('strong', {text: c.label}), el('span', {class: 'pond-meta', ...(c.readyAt ? {'data-until': c.readyAt, 'data-prefix': c.badge + ' · '} : {}), text: c.badge})]),
     el('span', {class: 'pond-food', title: itemDisplayName(c.feed)}, [itemIcon(items, c.feed, 20, 'feed'), el('b', {text: num(c.have)})]), b]);
@@ -203,12 +205,17 @@ export function createPondDock({dock, items, act, openCast, care}) {
   const a = pondActions(pond, now), lots = pond.lots?.length || 0;
   const castLabel = a.castOpen ? 'Câu cá' : 'Mai câu tiếp';
   dock.replaceChildren(
-   head(tierLabel(pond.tier), `${lots} ô · ${pond.beds?.length || 0} luống`, [
+   head(tierLabel(pond.tier), '', [
     actionButton('net', 'harvest', a.ripeLots ? `Kéo lưới · ${a.ripeLots}` : 'Kéo lưới', () => act({action: 'pond', kind: 'net'}, 'Kéo lưới.'), {disabled: !a.ripeLots, id: 'pondNet', cls: 'primary'}),
     ...(a.murky ? [actionButton('algae', 'tired', 'Vớt rêu', () => act({action: 'pond', kind: 'clean'}, 'Đã vớt rêu.'), {id: 'pondClean'})] : []),
     actionButton('rod', 'quill', castLabel, () => openCast(), {disabled: !a.castOpen, id: 'pondCast'}),
    ]),
-   ...lotsRow(ctx), ...bedsRow(ctx), ...creatureRow(ctx),
+   el('div',{class:'pond-tabs',role:'group','aria-label':'Chọn nhóm hồ'},[
+    ['fish','fish','water','Cá',lots],['beds','seed','seed','Luống',pond.beds?.length||0],['creatures','feed','feed','Thú',(ctx.creatures||(ctx.creature?[ctx.creature]:[])).length],
+   ].map(([id,glyph,fallback,label,count])=>{const b=button('',()=>{section=id;render(ctx);},{'aria-pressed':String(section===id),'aria-label':`${label} · ${count}`,title:label});b.append(px(glyph,fallback,1),el('span',{text:label}),el('b',{text:String(count)}));return b;})),
+   el('div',{class:'pond-pane',hidden:section!=='fish','data-pane':'fish'},lotsRow(ctx)),
+   el('div',{class:'pond-pane',hidden:section!=='beds','data-pane':'beds'},bedsRow(ctx)),
+   el('div',{class:'pond-pane pond-pets',hidden:section!=='creatures','data-pane':'creatures'},creatureRow(ctx)),
   );
   dock.classList.toggle('is-murky', a.murky);
  }
