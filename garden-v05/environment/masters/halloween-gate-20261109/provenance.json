@@ -1,0 +1,24 @@
+{
+  "tool": "built-in image_gen",
+  "master": "environment/masters/halloween-gate-20261109/atlas.png",
+  "sha256": "07e510eec8abecb9d197513c4c4be82c4f8cc50fc7963b681e8d76064e3eb8c1",
+  "prompt": "Redesign frontal Halloween prop into a 2:1 dimetric open gateway. Left farther root-pillar foot higher, right nearer foot lower, baseline descends right. Twisted oak arch with ivy and hanging pumpkin lanterns; pumpkin cluster and cauldron outside right pillar, small pumpkin outside left, transparent central passage. Matching normal and snow versions. Chunky muted native pixel art, no ground tile, road, fence, text or characters.",
+  "outputs": [
+    {
+      "file": "world-v241/hero-halloween.png",
+      "width": 160,
+      "height": 160,
+      "pivotX": 80,
+      "pivotY": 154,
+      "sha256": "8837e9a475bf84502dd3c591d33abb39d59d6ec31084142bfcf442e0455c69da"
+    },
+    {
+      "file": "environment/winter/hero-halloween-snow.png",
+      "width": 160,
+      "height": 160,
+      "pivotX": 80,
+      "pivotY": 154,
+      "sha256": "ae49bf84724cf77a696012b6ad04f76c343925e34e70d8f0c9ac7dd0bfd7cd2f"
+    }
+  ]
+}

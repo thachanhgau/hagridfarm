@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "5e6e87f2e607",
+  "revision": "2533f4a66ee2",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -13632,6 +13632,16 @@
       "sha256": "62da308d6004df24bcea276a79da97ff165f8c6f564b7095e7aa0f7f3dc30198"
     },
     {
+      "source": "environment/winter/hero-halloween-snow.png",
+      "file": "runtime-webp/environment/winter/hero-halloween-snow.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 6883,
+      "bytes": 4394,
+      "sourceSha256": "ae49bf84724cf77a696012b6ad04f76c343925e34e70d8f0c9ac7dd0bfd7cd2f",
+      "sha256": "e9c26034551f5afcaacb080167b67a5606b5dce20747aaa7417e94fbda2e5038"
+    },
+    {
       "source": "environment/winter/hut-snow.png",
       "file": "runtime-webp/environment/winter/hut-snow.webp",
       "width": 256,
@@ -13964,12 +13974,12 @@
     {
       "source": "world-v241/hero-halloween.png",
       "file": "runtime-webp/world-v241/hero-halloween.webp",
-      "width": 128,
-      "height": 80,
-      "sourceBytes": 3149,
-      "bytes": 2004,
-      "sourceSha256": "fdfc41a49f6db96e33d867b3440880357eccb6398e25a106c8a686f2c9fae0b9",
-      "sha256": "6e9614948af428ecf45aec0b65b56e23986939a3cdd61a7ea8ce6c83e38f7b0e"
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 6613,
+      "bytes": 4238,
+      "sourceSha256": "8837e9a475bf84502dd3c591d33abb39d59d6ec31084142bfcf442e0455c69da",
+      "sha256": "d4c08e520ac6b0f93cd033b5e7539771247f513b817d87f74ceb4c5386a2e734"
     },
     {
       "source": "world-v241/hero-herbology.png",
@@ -14045,11 +14055,11 @@
     }
   ],
   "totals": {
-    "converted": 1398,
+    "converted": 1399,
     "existingWebp": 8,
-    "originalBytes": 5393499,
-    "webpBytes": 3555066,
-    "savedBytes": 1838433,
+    "originalBytes": 5403846,
+    "webpBytes": 3561694,
+    "savedBytes": 1842152,
     "savedPercent": 34.09
   }
 }
