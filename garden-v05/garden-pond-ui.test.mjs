@@ -59,43 +59,44 @@ test('fishing bar: the server triangle wave, bands and result labels', () => {
  for (const text of Object.values(P.CAST_RESULT)) assert.doesNotMatch(text, /\p{Extended_Pictographic}|!/u);
 });
 
-test('the pond dock renders data rows and sends the contract commands', () => {
+test('the pond dock is the sow dock: one tray, one primary button that works the whole pond', async () => {
  const dock = new FakeElement('section'), sent = [], cares = [];
  let casts = 0;
- const ui = P.createPondDock({dock, items: new Map(), act: (cmd, text) => sent.push([cmd, text]), openCast: () => casts++, care: sp => cares.push(sp)});
+ const ui = P.createPondDock({dock, items: new Map(), act: async (cmd, text) => sent.push([cmd, text]), openCast: () => casts++, care: sp => cares.push(sp)});
  const ctx = {pond: pond(), state: {construction: [], built: ['pond_1']}, level: 140, now: NOW, seeds: {silverkelp: 2},
   creature: {species: 'grindylow', label: 'Thủy quái', feed: 'grindylow_feed', have: 4, badge: 'Cấp 150', locked: true}};
  ui.render(ctx);
- assert.equal(byClass(dock, 'pond-title')[0].textContent, 'Ao cá');
- const panes=byClass(dock,'pond-pane');
- assert.deepEqual(panes.map(p=>p.hidden),[false,true,true]);
- byClass(dock,'pond-tabs')[0].children[1].click();
- assert.deepEqual(byClass(dock,'pond-pane').map(p=>p.hidden),[true,false,true]);
- assert.equal(byClass(dock,'pond-tabs')[0].children[1].getAttribute('aria-pressed'),'true');
- const net = byId(dock, 'pondNet'), cast = byId(dock, 'pondCast');
- assert.equal(net.textContent, 'Lưới1');
- assert.equal(byId(dock, 'pondClean'), undefined, '«Vớt rêu» only while murky');
- net.click(); cast.click();
+ const tray = () => byClass(dock, 'pond-tray')[0].children, go = () => byId(dock, 'pondGo');
+ assert.deepEqual(tray().map(b => b.attributes['data-section']), ['fish', 'fish', 'beds', 'beds', 'creatures'], 'fry, water crops at 140, the pond creature');
+ assert.equal(dock.classList.contains('pond-sow'), true);
+ assert.equal(byClass(dock, 'seed-caption')[0].textContent, 'Cá chép giốngÔ 2/2 · chín 1');
+ assert.equal(go().textContent, 'Lưới ×1');
+ go().click(); byId(dock, 'pondCast').click();
  assert.deepEqual(sent.shift()[0], {action: 'pond', kind: 'net'});
  assert.equal(casts, 1);
- const lots = byClass(dock, 'pond-lot');
- assert.equal(lots.length, 2);
- assert.equal(lots[1].disabled, true, 'a growing lot is not a button press');
- assert.equal(lots[1].children[1].attributes['data-until'], String(NOW + 2 * H), 'its timer ticks with tickTimers');
- const beds = byClass(dock, 'pond-bed');
- beds[0].click(); beds[1].click();
- assert.deepEqual(sent.map(([cmd]) => cmd), [{action: 'pond', kind: 'harvest'}, {action: 'pond', kind: 'plant', bed: 1, cells: [0, 1], species: 'silverkelp'}], 'two seeds plant two cells');
- assert.equal(byClass(dock, 'pond-care')[0].disabled, true, 'Thủy quái opens at 150');
- assert.equal(byClass(dock, 'pond-creature')[0].textContent.includes('Thủy quái'), true);
- // Murky, nothing ripe, today's cast used: the faces say why.
- ui.render({...ctx, pond: pond({murky: true, lots: [null, null], cast: {today: true}})});
- assert.equal(byId(dock, 'pondNet').disabled, true);
+ assert.equal(byId(dock, 'pondClean'), undefined, '«Vớt rêu» only while murky');
+ // Beds: ripe first, then «Gieo» fills empty cells across beds up to the seeds held.
+ tray()[2].click();
+ assert.equal(go().textContent, 'Gặt ×1');
+ ui.render({...ctx, pond: pond({beds: [[null, null, null], [null, {species: 'silverkelp', readyAt: NOW + H}, null]]}), seeds: {silverkelp: 4}});
+ assert.equal(go().textContent, 'Gieo ×4');
+ go().click(); await new Promise(r => setTimeout(r));
+ assert.deepEqual(sent.splice(0).map(([cmd]) => cmd), [{action: 'pond', kind: 'plant', bed: 0, cells: [0, 1, 2], species: 'silverkelp'}, {action: 'pond', kind: 'plant', bed: 1, cells: [0], species: 'silverkelp'}]);
+ // Fish: empty lots and fry held → «Thả», one command a lot; nothing to do → the next timer.
+ ui.show('fish');
+ ui.render({...ctx, pond: pond({murky: true, lots: [null, null, null], cast: {today: true}})});
+ assert.equal(go().textContent, 'Thả ×3');
+ go().click(); await new Promise(r => setTimeout(r));
+ assert.deepEqual(sent.splice(0).map(([cmd]) => cmd.lot), [0, 1, 2]);
  assert.ok(byId(dock, 'pondClean'));
- assert.deepEqual([byId(dock, 'pondCast').disabled, byId(dock, 'pondCast').textContent], [true, 'Câu']);
- const empty = byClass(dock, 'pond-lot')[0];
- sent.length = 0; empty.click();
- assert.deepEqual(sent[0][0], {action: 'pond', kind: 'stock', lot: 0, fry: 'carp'});
- // No sentence anywhere: labels and numbers only.
+ assert.deepEqual([byId(dock, 'pondCast').disabled, byId(dock, 'pondCast').textContent.trim()], [true, 'Câu']);
+ ui.render({...ctx, pond: pond({lots: [{fry: 'carp', readyAt: NOW + H}]})});
+ assert.equal(go().disabled, true);
+ assert.equal(go().children.at(-1).attributes['data-until'], String(NOW + H), 'its timer ticks with tickTimers');
+ // Creature chip: «Chăm», locked below its level.
+ tray().at(-1).click();
+ assert.equal(go().textContent, 'Chăm');
+ assert.equal(go().disabled, true, 'Thủy quái opens at 150');
  assert.doesNotMatch(dock.textContent, /\.\s|!|\p{Extended_Pictographic}/u);
 });
 
