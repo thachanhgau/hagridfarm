@@ -591,3 +591,21 @@
 #gameShell #panel .v24-art-choice[aria-pressed="true"] span{color:#f5d69a}
 #gameShell #panel .v24-time-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 #gameShell #panel .inv-qty-pill{color:#13231a;font:800 13px/1.2 var(--gp-body);padding:3px 9px;text-shadow:none}
+/* 09/11/2026 Kho redesign: one data row (Nước · Kho · panel links), one tab row split evenly, empty state = one button. */
+#gameShell #panel .inv-summary-strip{display:flex;align-items:center;gap:16px;margin:0 0 12px;padding:0 0 12px;border-bottom:1px solid #f5d69a26}
+#gameShell #panel .inv-stat-card{flex:0 1 auto;min-width:0;padding:0;gap:8px}
+#gameShell #panel .inv-stat-card>.visual-slot{width:32px!important;height:32px!important;flex:none}
+#gameShell #panel .inv-stat-copy small{font:700 11px/1.1 var(--gp-body);letter-spacing:.08em;color:#bb9c7c}
+#gameShell #panel .inv-stat-copy strong{font:700 18px/1.15 var(--gp-body);color:#fff0c2;font-variant-numeric:tabular-nums}
+#gameShell #panel .inv-stat-sub{font:400 12px/1.2 var(--gp-body);color:#bb9c7c}
+#gameShell #panel .inv-summary-strip .inv-quick-actions{margin-left:auto;padding:0;gap:4px}
+#gameShell #panel .inv-filter-bar{display:block;padding:0;margin:0 0 16px}
+#gameShell #panel .inv-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;padding:0;overflow:visible}
+#gameShell #panel .inv-tab-btn{justify-content:center;gap:6px;min-width:0;min-height:44px;padding:8px 4px;font:700 13px/1.2 var(--gp-body)}
+#gameShell #panel .inv-tab-btn b{font-variant-numeric:tabular-nums}
+#gameShell #panel .inv-tab-name{overflow:hidden;text-overflow:ellipsis}
+#gameShell #panel .inv-empty{display:grid;justify-items:center;gap:12px;padding:32px 16px;color:#bb9c7c}
+#gameShell #panel .inv-empty strong{font:700 16px/1.2 var(--gp-body);color:#ecdcc9}
+#gameShell #panel .inv-empty .px-icon{width:48px;height:48px;opacity:.7}
+@media(max-width:640px){#gameShell #panel .inv-summary-strip{gap:12px}#gameShell #panel .inv-stat-card>.visual-slot{display:none}#gameShell #panel .inv-stat-copy strong{white-space:nowrap;overflow:visible}#gameShell #panel .inv-stat-copy strong{font-size:16px}#gameShell #panel .inv-tab-name{display:none}}
+@media(max-width:359px){#gameShell #panel .inv-summary-strip .icon-btn{width:40px;min-width:40px}}

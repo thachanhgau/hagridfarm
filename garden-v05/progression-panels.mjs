@@ -251,22 +251,22 @@ export function createPanels(ctx){
    const connected=getSession().connected;
    const summary=el("section",{class:"inv-summary-strip"},[
     el("div",{class:"inv-stat-card"},[
-     visualItemIcon(items,"water",{size:44,kind:"water"}),
+     visualItemIcon(items,"water",{size:32,kind:"water"}),
      el("div",{class:"inv-stat-copy"},[
       el("small",{text:"NƯỚC"}),
-      el("strong",{text:connected?`${num(supplies?.water||0)} phần`:"Miễn phí"}),
-      el("span",{class:"inv-stat-sub",title:"Nước phép: giảm 1/4 thời gian của một hàng cây, một bữa ăn hoặc một mẻ chế biến"},connected?[pixelIcon("boost",1),`${num(supplies?.boost||0)} nước phép`]:["Gieo miễn phí"]),
+      el("strong",{text:connected?num(supplies?.water||0):"Miễn phí"}),
+      el("span",{class:"inv-stat-sub",title:"Nước phép: giảm 1/4 thời gian của một hàng cây, một bữa ăn hoặc một mẻ chế biến"},connected?[pixelIcon("boost",1),`${num(supplies?.boost||0)} phép`]:[]),
      ]),
     ]),
     el("div",{class:"inv-stat-card"},[
-     visualItemIcon(items,"pumpkin",{size:44,kind:"seed"}),
+     visualItemIcon(items,"pumpkin",{size:32,kind:"seed"}),
      el("div",{class:"inv-stat-copy"},[
       el("small",{text:"KHO"}),
-      el("strong",{text:`${num(totalSeeds+Object.values(s.inventory||{}).reduce((a,n)=>a+Number(n||0),0))} món`}),
+      el("strong",{text:num(totalSeeds+Object.values(s.inventory||{}).reduce((a,n)=>a+Number(n||0),0))}),
+      el("span",{class:"inv-stat-sub",text:"món"}),
      ]),
     ]),
    ]);
-   body.append(summary);
 
    const filterBar=el("div",{class:"inv-filter-bar"});
    const tabs=el("div",{class:"inv-tabs",role:"group","aria-label":"Nhóm vật phẩm trong kho"});
@@ -288,8 +288,9 @@ export function createPanels(ctx){
     iconButton("scenery","Trang trí & Kỷ vật",()=>show("collection")),
     ...(ctx.openStore?[iconButton("shop","Tiệm vật tư",()=>{close();ctx.openStore();})]:[]),
    ]);
-   filterBar.append(tabs,quickActions);
-   body.append(filterBar);
+   summary.append(quickActions);
+   filterBar.append(tabs);
+   body.append(summary,filterBar);
 
    function makeInvCard({id,visualId,kind="",title,subtitle,qty,actionText="",onAction=null}){
     const c=el("article",{class:"inv-card inventory-item","data-item-id":id},[
@@ -393,7 +394,7 @@ export function createPanels(ctx){
    if(invFilter==="all"||invFilter==="produce")appendSection("Sản vật sinh vật & Kỷ vật","BỘ SƯU TẬP QUÝ HIẾM",produceCards);
 
    if(!seedCards.length&&!cropCards.length&&!craftedCards.length&&!produceCards.length){
-    body.append(paragraph("Kho đang trống. Gieo hạt rồi gặt cây chín hoặc ghé Tiệm của người giữ vườn để bắt đầu.","empty"));
+    body.append(el("div",{class:"inv-empty"},[pixelIcon("chest",3),el("strong",{text:"Kho trống"}),...(ctx.openStore?[button("Ghé Tiệm",()=>{close();ctx.openStore();},{class:"primary"})]:[])]));
    }
   },
 
