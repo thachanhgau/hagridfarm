@@ -152,7 +152,7 @@ export function createPondDock({dock, items, act, openCast, care}) {
    return b;
   });
   return [
-   el('div', {class: 'pond-row-head'}, [el('span', {class: 'pond-label', text: `Ô ao · ${lots.length}`}), pick(choices, fry, id => {fry = id; render(ctx);}, 'Chọn cá giống')]),
+   lots.some(l=>l.state==='empty')?el('div', {class: 'pond-row-head'}, [pick(choices, fry, id => {fry = id; render(ctx);}, 'Chọn cá giống')]):null,
    el('div', {class: 'pond-tiles', role: 'group', 'aria-label': 'Ô ao'}, tiles),
   ];
  }

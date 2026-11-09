@@ -26,7 +26,7 @@
 #playDock :is(#pondDock,#orchardDock) .pond-pick button[aria-pressed=true]{border-color:#f3d593;box-shadow:inset 0 0 0 1px #f3d593;background:#3d5636}
 #playDock :is(#pondDock,#orchardDock) .pond-tiles{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;min-width:0;padding:2px 2px 5px;scroll-snap-type:x proximity}
 #playDock :is(#pondDock,#orchardDock) :is(.pond-lot,.pond-bed){flex:0 0 auto;position:relative;min-height:68px;height:68px;padding:5px 4px;border:1px solid #637856;border-radius:5px;background:linear-gradient(#304a35,#1b3428);box-shadow:inset 0 1px #7f936a55;scroll-snap-align:start;gap:3px;color:#f5e8c8}
-#playDock :is(#pondDock,#orchardDock) .pond-lot{width:58px;min-width:58px}
+#playDock :is(#pondDock,#orchardDock) .pond-lot{flex:1 0 58px;width:58px;min-width:58px}
 #playDock :is(#pondDock,#orchardDock) .pond-bed{min-width:86px}
 #playDock :is(#pondDock,#orchardDock) .pond-lot>span:not(.item-art):not(.sprite-icon):not(.px-icon){font-size:11px}
 #playDock :is(#pondDock,#orchardDock) :is(.pond-lot,.pond-bed) small{font-size:10px;line-height:12px;color:#ced4b6}
