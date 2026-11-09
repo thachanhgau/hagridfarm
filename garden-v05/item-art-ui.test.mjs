@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { DB } from './balance-data.mjs?v=24.9.65';
-import { ITEM_ART } from './item-art.mjs?v=25.0.2';
-import { FLOW_ITEM_ART } from './flow-item-art.mjs?v=25.0.2';
-import { KEEPSAKE_ART } from './complete-object-art.mjs?v=25.0.2';
-import { flowArtSpec } from './flow-item-ui.mjs?v=25.0.2';
+import { ITEM_ART } from './item-art.mjs?v=25.1.0';
+import { FLOW_ITEM_ART } from './flow-item-art.mjs?v=25.1.0';
+import { KEEPSAKE_ART } from './complete-object-art.mjs?v=25.1.0';
+import { flowArtSpec } from './flow-item-ui.mjs?v=25.1.0';
 // Garden expansion species (pond §6, phase 2 §9) draw their feed and produce from POND_ART through the flowArtSpec fallback,
 // not ITEM_ART, and have no recipe_<id> card art: they are checked by that source, the rest by ITEM_ART as before.
 const viaFlow = id => !ITEM_ART[id]?.file && Boolean(flowArtSpec(id));
@@ -63,9 +63,9 @@ const {
  itemArtKey,
  levelUnlockVisual,
  visualItemIcon,
-} = await import('./ui-utils.mjs?v=25.0.2');
-const {makeRecipeIcon} = await import('./recipe-art-ui.mjs?v=25.0.2');
-const {costChips, rewardChips} = await import('./pixel-icons.mjs?v=25.0.2');
+} = await import('./ui-utils.mjs?v=25.1.0');
+const {makeRecipeIcon} = await import('./recipe-art-ui.mjs?v=25.1.0');
+const {costChips, rewardChips} = await import('./pixel-icons.mjs?v=25.1.0');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];
