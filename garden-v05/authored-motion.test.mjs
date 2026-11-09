@@ -22,3 +22,18 @@ test('motion atlases retain the exact native RGBA of every crop and creature fra
 test('all newly authored creature growth/actions retain source provenance and grounded binary-alpha frames',async()=>{
  for(const item of creature.items)for(const extra of [item.rightGrowth,item.leftActions].filter(Boolean)){assert.equal(hash(await read(extra.master)),extra.masterSha256);assert(extra.prompt.length>100);for(const frame of extra.frames){const png=await read('creature-motion-assets/'+frame.file);assert.equal(hash(png),frame.sha256);assert.equal(frame.clippedPixels,0);assert.equal(frame.bounds.y+frame.bounds.h,frame.pivotY);const {data}=await sharp(png).ensureAlpha().raw().toBuffer({resolveWithObject:true});for(let i=3;i<data.length;i+=4)assert(data[i]===0||data[i]===255);}}
 });
+
+test('pasture snow preserves silhouettes for every growth/action frame in both authored views',async()=>{
+ const {snowCapImageData}=await import('./garden-winter.mjs');
+ for(const id of ['hippogriff','thestral','unicorn','porlock'])for(const facing of ['default','right']){
+  const item=creatureView(box.window.FARM_MOTION.items.find(i=>i.id===id),facing);let changed=0;
+  for(const frame of item.frames){
+   let input=sharp(await read(frame.file)).ensureAlpha();
+   if(frame.atlasRect){const r=frame.atlasRect;input=input.extract({left:r.x,top:r.y,width:r.w,height:r.h});}
+   const {data,info}=await input.raw().toBuffer({resolveWithObject:true}),before=Buffer.from(data);
+   snowCapImageData({data,width:info.width,height:info.height});
+   for(let i=0;i<data.length;i+=4){assert.equal(data[i+3],before[i+3],id+'/'+facing+' silhouette');if(data[i]!==before[i]||data[i+1]!==before[i+1]||data[i+2]!==before[i+2])changed++;}
+  }
+  assert.ok(changed>0,id+'/'+facing+' receives visible snow');
+ }
+});
