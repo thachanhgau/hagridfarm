@@ -30,6 +30,20 @@ export function winterFor(nowMs, override) {
 
 // Codex winter scenery (deferred: only requested while winter is on). Same canvas and pivot as the original.
 export const WINTER_ART = Object.freeze({
+  'environment/plot-props/hourglass.png': 'environment/winter/plot-hourglass-snow.png',
+  'environment/plot-props/seed_cart.png': 'environment/winter/plot-seed_cart-snow.png',
+  'environment/plot-props/watering_station.png': 'environment/winter/plot-watering_station-snow.png',
+  'environment/plot-props/book_stand.png': 'environment/winter/plot-book_stand-snow.png',
+  'environment/plot-props/mushroom_stump.png': 'environment/winter/plot-mushroom_stump-snow.png',
+  'environment/plot-props/crystal_planter.png': 'environment/winter/plot-crystal_planter-snow.png',
+  'environment/plot-props/broom_rack.png': 'environment/winter/plot-broom_rack-snow.png',
+  'environment/plot-props/rune_stones.png': 'environment/winter/plot-rune_stones-snow.png',
+  'environment/plot-props/owl_mailbox.png': 'environment/winter/plot-owl_mailbox-snow.png',
+  'environment/plot-props/moon_lantern.png': 'environment/winter/plot-moon_lantern-snow.png',
+  'environment/plot-props/mandrake_pot.png': 'environment/winter/plot-mandrake_pot-snow.png',
+  'environment/plot-props/explorer_chest.png': 'environment/winter/plot-explorer_chest-snow.png',
+  'environment/plot-props/herb_rack.png': 'environment/winter/plot-herb_rack-snow.png',
+  'environment/plot-props/potion_bench.png': 'environment/winter/plot-potion_bench-snow.png',
   'native-complete-objects/habitat_porlock/frame-01.png': 'environment/winter/habitat-porlock-snow.png',
   'native-complete-objects/habitat_salamander/frame-01.png': 'environment/winter/habitat-salamander-snow.png',
   'native-complete-objects/habitat_crup/frame-01.png': 'environment/winter/habitat-crup-snow.png',

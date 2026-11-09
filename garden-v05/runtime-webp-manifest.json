@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "b0cf300c9bf1",
+  "revision": "8979f3c5d70e",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -13422,6 +13422,146 @@
       "sha256": "bfec26aa1294fa91c462d5dddc5562b43cd24f7c2e474e44fd2036ede5b3476b"
     },
     {
+      "source": "environment/plot-props/book_stand.png",
+      "file": "runtime-webp/environment/plot-props/book_stand.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1425,
+      "bytes": 872,
+      "sourceSha256": "21f9d59a1705bba6ed333e6a41cb254d95d5bdd048955c1a837bba89aac7b512",
+      "sha256": "77430f6dc773e854e62eedbd70bedb0eb020e8d4eba5e122c0aa6c8a38d130ea"
+    },
+    {
+      "source": "environment/plot-props/broom_rack.png",
+      "file": "runtime-webp/environment/plot-props/broom_rack.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1307,
+      "bytes": 764,
+      "sourceSha256": "b5baeae78a3bfd6a9e832a4b6edf4cd45c684e77f193646064c09c2d612cdd57",
+      "sha256": "9a67e4004c4101319653a94165872bcfb8a6ae766429a1d4b4403d9f1a3e8c4a"
+    },
+    {
+      "source": "environment/plot-props/crystal_planter.png",
+      "file": "runtime-webp/environment/plot-props/crystal_planter.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1437,
+      "bytes": 908,
+      "sourceSha256": "8faa909e2948b2cbc6dd8528bed82433ed6bc91c24a5e32646cb7e98e67fd978",
+      "sha256": "cd868ce38f571c86dd9c65faaec0a262f26016dc1a69033aef783aa87b559c79"
+    },
+    {
+      "source": "environment/plot-props/explorer_chest.png",
+      "file": "runtime-webp/environment/plot-props/explorer_chest.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1362,
+      "bytes": 858,
+      "sourceSha256": "389bd60bcdbb9a27dc0186853c5976da279701612aed2ee86a5649158927e280",
+      "sha256": "c213cb025c3feaf3a48731165f9e7b297c7b08271227bf561d3fb539fb395868"
+    },
+    {
+      "source": "environment/plot-props/herb_rack.png",
+      "file": "runtime-webp/environment/plot-props/herb_rack.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1524,
+      "bytes": 912,
+      "sourceSha256": "31ce9d3450ddff6fa40ce0d093e6fac7d9c6eac62584a9b95765e4be69796746",
+      "sha256": "d4581fa71ab3dc53e08b81b8f49f93966a753eae9f94818690295c5871a58bf1"
+    },
+    {
+      "source": "environment/plot-props/hourglass.png",
+      "file": "runtime-webp/environment/plot-props/hourglass.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1714,
+      "bytes": 1052,
+      "sourceSha256": "f4d2a6573d892374e40541724165056bc00fb2b29cd2af0da20098b2cd6803f0",
+      "sha256": "b0e88e0226480da775e610a2f217459e7b2582fbcf8ed2e29e390ae1f5077c71"
+    },
+    {
+      "source": "environment/plot-props/mandrake_pot.png",
+      "file": "runtime-webp/environment/plot-props/mandrake_pot.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1348,
+      "bytes": 840,
+      "sourceSha256": "27da6b77b5832a943773ce368a7ac090f8725f324a5040a4cb1cff3f0763b93c",
+      "sha256": "ee634dcdcdf84c5f6fd80d22dac21fe70e560b6bb3166b3909d91b27bc73c100"
+    },
+    {
+      "source": "environment/plot-props/moon_lantern.png",
+      "file": "runtime-webp/environment/plot-props/moon_lantern.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1343,
+      "bytes": 824,
+      "sourceSha256": "c8ebfd314fe5298a9186a90d18a4fdf29a9d67200a378bc93675cfafa4f2d3ea",
+      "sha256": "6faeed95b590dadfcd7dcdcdbfd32f1b4dc3ebc20c93695407e590189dac6cb7"
+    },
+    {
+      "source": "environment/plot-props/mushroom_stump.png",
+      "file": "runtime-webp/environment/plot-props/mushroom_stump.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1532,
+      "bytes": 986,
+      "sourceSha256": "9278ebb8bb89251dfa82502b929e05bbab2ee4659317faab2a3dd93be74c0945",
+      "sha256": "4f7678b929e7d747d8835dd2001025650fcc25ce2628211d4f9885e3587d2c4b"
+    },
+    {
+      "source": "environment/plot-props/owl_mailbox.png",
+      "file": "runtime-webp/environment/plot-props/owl_mailbox.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1328,
+      "bytes": 818,
+      "sourceSha256": "234eedc2a7707975e1c32c906740fff43460df1193f6a298739aebd763f431d4",
+      "sha256": "9793799d11427178010eaf6fd8018a66a082526537e17c6f4106d3be2952f19f"
+    },
+    {
+      "source": "environment/plot-props/potion_bench.png",
+      "file": "runtime-webp/environment/plot-props/potion_bench.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1528,
+      "bytes": 944,
+      "sourceSha256": "09ceb033f4b7625b2ae912222dba131eb7c4b30002403621296001d2be90eecd",
+      "sha256": "fd6e98b4b96eb0c680b14a528f221fea8feca40d135ba367dd4a3c175da639d0"
+    },
+    {
+      "source": "environment/plot-props/rune_stones.png",
+      "file": "runtime-webp/environment/plot-props/rune_stones.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1293,
+      "bytes": 788,
+      "sourceSha256": "e4ef6ffbd9fce3b6939231289e28290528b9a95acad795d79cfaf926594bf247",
+      "sha256": "5c6374f07f2054c5a06e6bb3c1e08831ea08dfcc0b0adf5de8c013abb029d534"
+    },
+    {
+      "source": "environment/plot-props/seed_cart.png",
+      "file": "runtime-webp/environment/plot-props/seed_cart.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1354,
+      "bytes": 824,
+      "sourceSha256": "a9eee5368fd9919f7f6c8951ec52e14e8bdd3720cd8da8b9164b17b048cf94b8",
+      "sha256": "1fbcbd152606ba579b629b193433b36fcd0f02b6f2c575aad6e6d6022756075e"
+    },
+    {
+      "source": "environment/plot-props/watering_station.png",
+      "file": "runtime-webp/environment/plot-props/watering_station.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1624,
+      "bytes": 986,
+      "sourceSha256": "be6b4626f4336ba4b27c610a9d604ab8b04054b364d384fa0547b7b1b3e3ff51",
+      "sha256": "f1127f408372acf2ae1af02047d73f431d9ad09aa34ed2914866e9c6129e1367"
+    },
+    {
       "source": "environment/pond/pond-1.png",
       "file": "runtime-webp/environment/pond/pond-1.webp",
       "width": 480,
@@ -13760,6 +13900,146 @@
       "bytes": 3508,
       "sourceSha256": "a990c2da14c06066eaf6ab6c207d5e01a49f358f7a82fab1e898640f9f2d1648",
       "sha256": "776aebe048b5a6cc4142b3d2e8854213d7c9c01c195720c5dbca4e09a5f4ac06"
+    },
+    {
+      "source": "environment/winter/plot-book_stand-snow.png",
+      "file": "runtime-webp/environment/winter/plot-book_stand-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1453,
+      "bytes": 906,
+      "sourceSha256": "3f424794bd2c0d40bc0374f4c16a8e3bff9b2b0eaa2ef924a286c9a0f8c22d02",
+      "sha256": "79cd1d4bd96eab524d7f29725ad121e9a9e62302bd2be5b6c89c257515cf78dc"
+    },
+    {
+      "source": "environment/winter/plot-broom_rack-snow.png",
+      "file": "runtime-webp/environment/winter/plot-broom_rack-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1503,
+      "bytes": 892,
+      "sourceSha256": "597a0a78151a864312d3b99742bc52d4c03e8d8595e8fbe1a46d1ba505a28fb6",
+      "sha256": "3460cd5b4e8a05f86500c7a8da2b25c21abbbd4b7ea4df4510ad3d1fb22f574d"
+    },
+    {
+      "source": "environment/winter/plot-crystal_planter-snow.png",
+      "file": "runtime-webp/environment/winter/plot-crystal_planter-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1571,
+      "bytes": 986,
+      "sourceSha256": "ea8db52c403b10a41be0d252d295ad81f77f929d0085b2dcd1778ffa70b01471",
+      "sha256": "8ff51e145a34479fe339359d9180e1df16df8a369636fc450024b7aa8aa297e2"
+    },
+    {
+      "source": "environment/winter/plot-explorer_chest-snow.png",
+      "file": "runtime-webp/environment/winter/plot-explorer_chest-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1454,
+      "bytes": 914,
+      "sourceSha256": "3883516d322642be81443c61e24ef32a71185b3e3a215f5ea8946d9e2603c870",
+      "sha256": "fa151038fa382243e218f31892fef7f492fd6ae4eb4d60f497d3156052ebe379"
+    },
+    {
+      "source": "environment/winter/plot-herb_rack-snow.png",
+      "file": "runtime-webp/environment/winter/plot-herb_rack-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1630,
+      "bytes": 992,
+      "sourceSha256": "16544632fecedc58d6231f9745ecaf6d0b38f203234d3dc3c9645548775615b9",
+      "sha256": "2de3ad127f5bb9f03b6821b6fe664997915741fe6b44732aa9d44a7b6b977040"
+    },
+    {
+      "source": "environment/winter/plot-hourglass-snow.png",
+      "file": "runtime-webp/environment/winter/plot-hourglass-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1763,
+      "bytes": 1092,
+      "sourceSha256": "640931a2eded194c0ad0940cc6fef19d27a402ee56fbe11c93769ffed0f0ea44",
+      "sha256": "960de7c2780e7970367f27e20caa1519824a67adea74cd06fdb962e004ce3fff"
+    },
+    {
+      "source": "environment/winter/plot-mandrake_pot-snow.png",
+      "file": "runtime-webp/environment/winter/plot-mandrake_pot-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1594,
+      "bytes": 1030,
+      "sourceSha256": "b3f24bf97f75423ad29cceaa7c23b5e6a294742280df2dec08a7350587610cff",
+      "sha256": "c98f8aa8f64e91349b0215b894a4b33a146dea2dfb119494149d69aec3fc81c9"
+    },
+    {
+      "source": "environment/winter/plot-moon_lantern-snow.png",
+      "file": "runtime-webp/environment/winter/plot-moon_lantern-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1468,
+      "bytes": 892,
+      "sourceSha256": "9a066bb639cbfaf6e2403f849bf0854c25a17f8a1d3616886c2f5719724bc969",
+      "sha256": "9b2e1266b730200383ac396db7b28ccfe58a7c421400cb587f6fda93994fdaf0"
+    },
+    {
+      "source": "environment/winter/plot-mushroom_stump-snow.png",
+      "file": "runtime-webp/environment/winter/plot-mushroom_stump-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1553,
+      "bytes": 994,
+      "sourceSha256": "08adaf4b61e54f7fbc7806aded7c3196b278eda7dde1f3986324a29b3fd749e6",
+      "sha256": "5a0afdc8521000e29fa44a306cbe0a81f17ed0b981affb3a73e7aed37bcaf68b"
+    },
+    {
+      "source": "environment/winter/plot-owl_mailbox-snow.png",
+      "file": "runtime-webp/environment/winter/plot-owl_mailbox-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1431,
+      "bytes": 854,
+      "sourceSha256": "8956e8792c345d11c701ed4cdc9581446478fe617eb356f21400b06eebae3a79",
+      "sha256": "95e3738f849311bd1a069352cede7f7a53cfd87241dfa68d415944cc93556c7e"
+    },
+    {
+      "source": "environment/winter/plot-potion_bench-snow.png",
+      "file": "runtime-webp/environment/winter/plot-potion_bench-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1555,
+      "bytes": 980,
+      "sourceSha256": "12c0f7b51a304b4f9663972ba3d08718287fac328511f76faad0c6348285b0c7",
+      "sha256": "f3e380fd54920251f169bf62f6a780a96165561d106ca9b6e5656445acd6ef83"
+    },
+    {
+      "source": "environment/winter/plot-rune_stones-snow.png",
+      "file": "runtime-webp/environment/winter/plot-rune_stones-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1396,
+      "bytes": 838,
+      "sourceSha256": "7785017b762f84d93f8b0ba9e6a6d3a5e40923bfad4ddce8104088d0cbbc3543",
+      "sha256": "8c3de0242ceff95e8fd320c10190c50f897fe07be278682525ce4ab2b879978a"
+    },
+    {
+      "source": "environment/winter/plot-seed_cart-snow.png",
+      "file": "runtime-webp/environment/winter/plot-seed_cart-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1478,
+      "bytes": 906,
+      "sourceSha256": "df7a2e2a8b6314a7f69feb5682863e45a62cc1c7d52d41b92ec932389d43f252",
+      "sha256": "4bf89df601d95d31c0f55972de1c6ad1f5edfdf173176f8050c6b867bc2450f6"
+    },
+    {
+      "source": "environment/winter/plot-watering_station-snow.png",
+      "file": "runtime-webp/environment/winter/plot-watering_station-snow.webp",
+      "width": 64,
+      "height": 80,
+      "sourceBytes": 1673,
+      "bytes": 1040,
+      "sourceSha256": "326a6cec0e231a3d897f9711a826c43e875e4c323a60a01354c01ce86c16b38a",
+      "sha256": "6f729321bbf168c28420781a19d7deef82eb34dcf2d521d4ece714ac82a0d50d"
     },
     {
       "source": "environment/winter/pond-1-snow.png",
@@ -14135,11 +14415,11 @@
     }
   ],
   "totals": {
-    "converted": 1407,
+    "converted": 1435,
     "existingWebp": 8,
-    "originalBytes": 5415983,
-    "webpBytes": 3569358,
-    "savedBytes": 1846625,
-    "savedPercent": 34.1
+    "originalBytes": 5457624,
+    "webpBytes": 3595050,
+    "savedBytes": 1862574,
+    "savedPercent": 34.13
   }
 }

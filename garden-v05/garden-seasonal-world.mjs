@@ -1,3 +1,4 @@
+import {PLOT_SCENERY_ART} from './plot-scenery-art.mjs?v=25.0.2';
 import {stageContains} from './garden-growth.mjs?v=25.0.2';
 function insidePolygon(x,y,points){
  let inside=false;
@@ -73,7 +74,8 @@ export const FESTIVAL_HEROES=Object.freeze({
  event_halloween:{id:'hero-halloween',file:'world-v241/hero-halloween.png',width:160,height:160,pivotX:80,pivotY:154},
  event_herbology_fair:{id:'hero-herbology',file:'world-v241/hero-herbology.png',width:136,height:158,pivotX:68,pivotY:156},
 });
-export const FESTIVAL_FILES=Object.freeze(Object.values(FESTIVAL_HEROES).map(a=>a.file));
+export const FESTIVAL_FILES=Object.freeze([...Object.values(FESTIVAL_HEROES),...Object.values(PLOT_SCENERY_ART)].map(a=>a.file));
+const POCKET_ITEMS=['scene_potion_bench','scene_herb_rack','scene_explorer_chest','scene_mandrake_pot','decor_cauldron','scene_moon_lantern','scene_owl_mailbox','scene_rune_stones','scene_broom_rack','scene_crystal_planter','scene_mushroom_stump','scene_book_stand','scene_watering_station','scene_seed_cart','scene_hourglass'];
 export function clearOfBuildings(col,row,map){
  return ![...(map?.plots||[]),...(map?.pens||[])].some(p=>col>p.col-.9&&col<p.col+p.width+.4&&row>p.row-.9&&row<p.row+p.height+.4);
 }
@@ -83,14 +85,17 @@ export function festivalObjects({eventMode='none',stage,map,iso,decorAssets,occu
  const heroSite=[[9,2],[-3,5],[-3,2]].find(([c,r])=>stageContains(stage,c,r)&&clearOfBuildings(c,r,map)&&!occupied.some(o=>Math.abs(o.xy[0]-iso(c,r)[0])<110&&Math.abs(o.xy[1]-iso(c,r)[1])<70));
  const out=heroSite?[{kind:'festival',type:'festival',id:hero.id,asset:hero,xy:iso(...heroSite),col:heroSite[0],row:heroSite[1],hero:true}]:[];
  const ids=eventMode==='event_halloween'?['decor_pumpkin_lantern','decor_cauldron']:eventMode==='event_yule'?['decor_floating_candles']:['decor_mandrake_planter','decor_vine_arch'];
- for(const row of [1,8,13,20,27])for(const col of [6,13,19]){
+ let pocket=0;
+ for(const sourceRow of [1,8,13,20,27])for(const col of [6,13,19]){
+  const row=eventMode==='event_halloween'&&sourceRow===1&&col===6?4:sourceRow; // Clear the gateway, so the workbench remains visible.
+  const pocketId=POCKET_ITEMS[pocket++];
   if(!stageContains(stage,col,row)||!clearOfBuildings(col,row,map))continue;
   const xy=iso(col,row);
   if(out.some(o=>o.hero&&Math.abs(o.xy[0]-xy[0])<135&&Math.abs(o.xy[1]-xy[1])<70)||occupied.some(o=>Math.abs(o.xy[0]-xy[0])<70&&Math.abs(o.xy[1]-xy[1])<45))continue;
-  const index=out.length,id=eventMode==='event_herbology_fair'&&row>1?'decor_mandrake_planter':ids[index%ids.length],asset=decorAssets.get(id);if(!asset)continue;
+  const index=out.length,id=eventMode==='event_herbology_fair'&&row>1?'decor_mandrake_planter':ids[index%ids.length],asset=eventMode==='event_halloween'?(PLOT_SCENERY_ART[pocketId]||decorAssets.get(pocketId)):decorAssets.get(id);if(!asset)continue;
   // Tall arches only at the north end, never across plant/creature targets.
   if(asset.id==='decor_vine_arch'&&row>1)continue;
-  out.push({kind:'festival',type:'festival',id:'festival:'+index,asset,xy,col,row,hero:false});
+  out.push({kind:'festival',type:'festival',id:`festival:${row}:${col}`,asset,xy,col,row,hero:false});
  }
  return out;
 }

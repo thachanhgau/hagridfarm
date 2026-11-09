@@ -24,6 +24,15 @@ test('moved buildings and existing decorations displace satellite scenery',()=>{
  const moved={...map,plots:[...map.plots,{col:first.col-1,row:first.row-1,width:3,height:3}]};
  assert.ok(!festivalObjects({...input,map:moved}).some(p=>!p.hero&&p.col===first.col&&p.row===first.row));
 });
+test('Halloween pockets have distinct stable items and at most one automatic cauldron',()=>{
+ const input={eventMode:'event_halloween',stage:GARDEN_STAGES.at(-1),map,iso:(c,r)=>[c*32-r*32,c*16+r*16],decorAssets};
+ const items=festivalObjects(input).filter(p=>!p.hero);
+ assert.ok(items.length>6);
+ assert.equal(new Set(items.map(p=>p.asset.id)).size,items.length);
+ assert.ok(items.filter(p=>p.asset.id==='decor_cauldron').length<=1);
+ const partial=festivalObjects({...input,occupied:[{xy:items[0].xy}]}).filter(p=>!p.hero);
+ for(const p of partial)assert.equal(p.asset.id,items.find(o=>o.col===p.col&&o.row===p.row)?.asset.id,'removing one pocket must not rotate every other item');
+});
 test('weather transforms preserve transparent pixels and building wall colours',()=>{
  const data=new Uint8ClampedArray([99,99,99,0,70,120,45,255]);let put;
  const canvas={width:2,height:1,getContext:()=>({getImageData:()=>({data,width:2,height:1}),putImageData:im=>put=im})};

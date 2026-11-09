@@ -1,0 +1,355 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "master": "environment/masters/plot-variety-20261109/workshop.png",
+      "sha256": "3f1977d57e018a6f10c1af2a1f2b8b4d62228982702c85153101cee4cb847d0e",
+      "prompt": "Production pixel art 4 by4 atlas. First two rows: potion_bench, herb_rack, explorer_chest, mandrake_pot, moon_lantern, owl_mailbox, rune_stones, broom_rack. Last two rows: matching snow variants. Elevated2:1 dimetric top/front/right camera, dark outline, muted wood/moss/slate and amber accents, large readable shapes, transparent isolated sprites, no animals, ground tiles, text or gradients.",
+      "outputs": [
+        {
+          "id": "potion_bench",
+          "snow": false,
+          "file": "environment/plot-props/potion_bench.png",
+          "sha256": "09ceb033f4b7625b2ae912222dba131eb7c4b30002403621296001d2be90eecd",
+          "bounds": {
+            "x": 6,
+            "y": 22,
+            "w": 52,
+            "h": 52
+          }
+        },
+        {
+          "id": "herb_rack",
+          "snow": false,
+          "file": "environment/plot-props/herb_rack.png",
+          "sha256": "31ce9d3450ddff6fa40ce0d093e6fac7d9c6eac62584a9b95765e4be69796746",
+          "bounds": {
+            "x": 6,
+            "y": 19,
+            "w": 52,
+            "h": 55
+          }
+        },
+        {
+          "id": "explorer_chest",
+          "snow": false,
+          "file": "environment/plot-props/explorer_chest.png",
+          "sha256": "389bd60bcdbb9a27dc0186853c5976da279701612aed2ee86a5649158927e280",
+          "bounds": {
+            "x": 6,
+            "y": 25,
+            "w": 52,
+            "h": 49
+          }
+        },
+        {
+          "id": "mandrake_pot",
+          "snow": false,
+          "file": "environment/plot-props/mandrake_pot.png",
+          "sha256": "27da6b77b5832a943773ce368a7ac090f8725f324a5040a4cb1cff3f0763b93c",
+          "bounds": {
+            "x": 6,
+            "y": 12,
+            "w": 52,
+            "h": 62
+          }
+        },
+        {
+          "id": "moon_lantern",
+          "snow": false,
+          "file": "environment/plot-props/moon_lantern.png",
+          "sha256": "c8ebfd314fe5298a9186a90d18a4fdf29a9d67200a378bc93675cfafa4f2d3ea",
+          "bounds": {
+            "x": 11,
+            "y": 10,
+            "w": 41,
+            "h": 64
+          }
+        },
+        {
+          "id": "owl_mailbox",
+          "snow": false,
+          "file": "environment/plot-props/owl_mailbox.png",
+          "sha256": "234eedc2a7707975e1c32c906740fff43460df1193f6a298739aebd763f431d4",
+          "bounds": {
+            "x": 13,
+            "y": 10,
+            "w": 38,
+            "h": 64
+          }
+        },
+        {
+          "id": "rune_stones",
+          "snow": false,
+          "file": "environment/plot-props/rune_stones.png",
+          "sha256": "e4ef6ffbd9fce3b6939231289e28290528b9a95acad795d79cfaf926594bf247",
+          "bounds": {
+            "x": 6,
+            "y": 25,
+            "w": 52,
+            "h": 49
+          }
+        },
+        {
+          "id": "broom_rack",
+          "snow": false,
+          "file": "environment/plot-props/broom_rack.png",
+          "sha256": "b5baeae78a3bfd6a9e832a4b6edf4cd45c684e77f193646064c09c2d612cdd57",
+          "bounds": {
+            "x": 6,
+            "y": 23,
+            "w": 52,
+            "h": 51
+          }
+        },
+        {
+          "id": "potion_bench",
+          "snow": true,
+          "file": "environment/winter/plot-potion_bench-snow.png",
+          "sha256": "12c0f7b51a304b4f9663972ba3d08718287fac328511f76faad0c6348285b0c7",
+          "bounds": {
+            "x": 6,
+            "y": 21,
+            "w": 52,
+            "h": 53
+          }
+        },
+        {
+          "id": "herb_rack",
+          "snow": true,
+          "file": "environment/winter/plot-herb_rack-snow.png",
+          "sha256": "16544632fecedc58d6231f9745ecaf6d0b38f203234d3dc3c9645548775615b9",
+          "bounds": {
+            "x": 6,
+            "y": 19,
+            "w": 52,
+            "h": 55
+          }
+        },
+        {
+          "id": "explorer_chest",
+          "snow": true,
+          "file": "environment/winter/plot-explorer_chest-snow.png",
+          "sha256": "3883516d322642be81443c61e24ef32a71185b3e3a215f5ea8946d9e2603c870",
+          "bounds": {
+            "x": 6,
+            "y": 23,
+            "w": 52,
+            "h": 51
+          }
+        },
+        {
+          "id": "mandrake_pot",
+          "snow": true,
+          "file": "environment/winter/plot-mandrake_pot-snow.png",
+          "sha256": "b3f24bf97f75423ad29cceaa7c23b5e6a294742280df2dec08a7350587610cff",
+          "bounds": {
+            "x": 6,
+            "y": 11,
+            "w": 52,
+            "h": 63
+          }
+        },
+        {
+          "id": "moon_lantern",
+          "snow": true,
+          "file": "environment/winter/plot-moon_lantern-snow.png",
+          "sha256": "9a066bb639cbfaf6e2403f849bf0854c25a17f8a1d3616886c2f5719724bc969",
+          "bounds": {
+            "x": 11,
+            "y": 10,
+            "w": 42,
+            "h": 64
+          }
+        },
+        {
+          "id": "owl_mailbox",
+          "snow": true,
+          "file": "environment/winter/plot-owl_mailbox-snow.png",
+          "sha256": "8956e8792c345d11c701ed4cdc9581446478fe617eb356f21400b06eebae3a79",
+          "bounds": {
+            "x": 14,
+            "y": 10,
+            "w": 36,
+            "h": 64
+          }
+        },
+        {
+          "id": "rune_stones",
+          "snow": true,
+          "file": "environment/winter/plot-rune_stones-snow.png",
+          "sha256": "7785017b762f84d93f8b0ba9e6a6d3a5e40923bfad4ddce8104088d0cbbc3543",
+          "bounds": {
+            "x": 6,
+            "y": 24,
+            "w": 52,
+            "h": 50
+          }
+        },
+        {
+          "id": "broom_rack",
+          "snow": true,
+          "file": "environment/winter/plot-broom_rack-snow.png",
+          "sha256": "597a0a78151a864312d3b99742bc52d4c03e8d8595e8fbe1a46d1ba505a28fb6",
+          "bounds": {
+            "x": 6,
+            "y": 21,
+            "w": 52,
+            "h": 53
+          }
+        }
+      ]
+    },
+    {
+      "master": "environment/masters/plot-variety-20261109/garden.png",
+      "sha256": "6a3ed2093376dc889d19d2ea707c2352c47101297d700f25a50c8b6f8ec9e9e6",
+      "prompt": "Production pixel art 3 by4 atlas. First two rows: crystal_planter, mushroom_stump, book_stand, watering_station, seed_cart, hourglass. Last two rows: matching snow variants. Elevated2:1 dimetric top/front/right camera, dark outline, muted wood/moss/slate and amber accents, large readable shapes, transparent isolated sprites, no animals, ground tiles, text or gradients.",
+      "outputs": [
+        {
+          "id": "crystal_planter",
+          "snow": false,
+          "file": "environment/plot-props/crystal_planter.png",
+          "sha256": "8faa909e2948b2cbc6dd8528bed82433ed6bc91c24a5e32646cb7e98e67fd978",
+          "bounds": {
+            "x": 6,
+            "y": 26,
+            "w": 52,
+            "h": 48
+          }
+        },
+        {
+          "id": "mushroom_stump",
+          "snow": false,
+          "file": "environment/plot-props/mushroom_stump.png",
+          "sha256": "9278ebb8bb89251dfa82502b929e05bbab2ee4659317faab2a3dd93be74c0945",
+          "bounds": {
+            "x": 6,
+            "y": 23,
+            "w": 52,
+            "h": 51
+          }
+        },
+        {
+          "id": "book_stand",
+          "snow": false,
+          "file": "environment/plot-props/book_stand.png",
+          "sha256": "21f9d59a1705bba6ed333e6a41cb254d95d5bdd048955c1a837bba89aac7b512",
+          "bounds": {
+            "x": 6,
+            "y": 27,
+            "w": 52,
+            "h": 47
+          }
+        },
+        {
+          "id": "watering_station",
+          "snow": false,
+          "file": "environment/plot-props/watering_station.png",
+          "sha256": "be6b4626f4336ba4b27c610a9d604ab8b04054b364d384fa0547b7b1b3e3ff51",
+          "bounds": {
+            "x": 6,
+            "y": 20,
+            "w": 52,
+            "h": 54
+          }
+        },
+        {
+          "id": "seed_cart",
+          "snow": false,
+          "file": "environment/plot-props/seed_cart.png",
+          "sha256": "a9eee5368fd9919f7f6c8951ec52e14e8bdd3720cd8da8b9164b17b048cf94b8",
+          "bounds": {
+            "x": 6,
+            "y": 26,
+            "w": 52,
+            "h": 48
+          }
+        },
+        {
+          "id": "hourglass",
+          "snow": false,
+          "file": "environment/plot-props/hourglass.png",
+          "sha256": "f4d2a6573d892374e40541724165056bc00fb2b29cd2af0da20098b2cd6803f0",
+          "bounds": {
+            "x": 7,
+            "y": 10,
+            "w": 49,
+            "h": 64
+          }
+        },
+        {
+          "id": "crystal_planter",
+          "snow": true,
+          "file": "environment/winter/plot-crystal_planter-snow.png",
+          "sha256": "ea8db52c403b10a41be0d252d295ad81f77f929d0085b2dcd1778ffa70b01471",
+          "bounds": {
+            "x": 6,
+            "y": 24,
+            "w": 52,
+            "h": 50
+          }
+        },
+        {
+          "id": "mushroom_stump",
+          "snow": true,
+          "file": "environment/winter/plot-mushroom_stump-snow.png",
+          "sha256": "08adaf4b61e54f7fbc7806aded7c3196b278eda7dde1f3986324a29b3fd749e6",
+          "bounds": {
+            "x": 6,
+            "y": 22,
+            "w": 52,
+            "h": 52
+          }
+        },
+        {
+          "id": "book_stand",
+          "snow": true,
+          "file": "environment/winter/plot-book_stand-snow.png",
+          "sha256": "3f424794bd2c0d40bc0374f4c16a8e3bff9b2b0eaa2ef924a286c9a0f8c22d02",
+          "bounds": {
+            "x": 6,
+            "y": 26,
+            "w": 52,
+            "h": 48
+          }
+        },
+        {
+          "id": "watering_station",
+          "snow": true,
+          "file": "environment/winter/plot-watering_station-snow.png",
+          "sha256": "326a6cec0e231a3d897f9711a826c43e875e4c323a60a01354c01ce86c16b38a",
+          "bounds": {
+            "x": 6,
+            "y": 19,
+            "w": 52,
+            "h": 55
+          }
+        },
+        {
+          "id": "seed_cart",
+          "snow": true,
+          "file": "environment/winter/plot-seed_cart-snow.png",
+          "sha256": "df7a2e2a8b6314a7f69feb5682863e45a62cc1c7d52d41b92ec932389d43f252",
+          "bounds": {
+            "x": 6,
+            "y": 25,
+            "w": 52,
+            "h": 49
+          }
+        },
+        {
+          "id": "hourglass",
+          "snow": true,
+          "file": "environment/winter/plot-hourglass-snow.png",
+          "sha256": "640931a2eded194c0ad0940cc6fef19d27a402ee56fbe11c93769ffed0f0ea44",
+          "bounds": {
+            "x": 7,
+            "y": 10,
+            "w": 49,
+            "h": 64
+          }
+        }
+      ]
+    }
+  ]
+}

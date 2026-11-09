@@ -1,0 +1,7 @@
+# Unique scenery pockets
+
+Owner requested less repetition from automatic cauldrons and a different prop at each pocket. Keep the15 existing Halloween scenery pockets, with the first moved from(6,1) to(6,4) to clear the gateway. Each pocket has a stable unique identity, independent of other occupied/locked pockets. Only pocket(13,8) retains an automatic cauldron. Other14 authored pieces: potion workbench, herb drying rack, explorer chest, mandrake pot, moon lantern, owl mailbox, rune stones, broom rack, crystal planter, mushroom stump, book stand, watering station, seed cart and hourglass.
+
+Two retained authored atlases with normal rows and matching winter rows in environment/masters/plot-variety-20261109/. Build with build-plot-variety.mjs, then build-runtime-webp.mjs.28 new64×80 sprites/pivot32,74, ink<=52×64, native palette and binary alpha. Normal assets defer through FESTIVAL_FILES; exact winter art through existing winter kit. No catalog/prices/sales, ownership/save schema or player-owned placement changes; this replaces the existing automatic Halloween satellite scenery. Existing stage/building/hero/decoration/pond clearance remains active. Other festival themes keep their existing scenery.
+
+Tests prove unique/stable assignments, <=1 cauldron, preserved placement checks, deferred loading,14 distinct normal/snow art pairs, retained master hashes, native pixels and grounding. Existing source/server economy parity differences remain outside this visual task. Actual3026 evidence recorded in HPVNN. No push/deploy.
