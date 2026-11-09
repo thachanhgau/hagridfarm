@@ -1411,6 +1411,8 @@ export async function createGarden(canvas, options = {}) {
   function fenceObjects(pieces){
     if(!pieces.length)return [];
     const cells=pieces.flatMap(p=>[p.cellA,p.cellB]),cs=cells.map(p=>p[0]),rs=cells.map(p=>p[1]);
+    // The pen's rect lets depthCompare draw a piece standing wholly outside the fence on the right side of it (one foot point per side drew the front fence over a pot by its east edge).
+    const ground={c0:Math.min(...cs),c1:Math.max(...cs),r0:Math.min(...rs),r1:Math.max(...rs)};
     return [false,true].flatMap(front=>{
       const group=pieces.filter(p=>p.front===front);if(!group.length)return [];
       const points=group.flatMap(p=>[p.a,p.b]),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
@@ -1418,7 +1420,7 @@ export async function createGarden(canvas, options = {}) {
       const layer=makeCanvas(canvas,Math.ceil(Math.max(...xs))-left+24,Math.ceil(Math.max(...ys))-top+16),brush=layer.getContext('2d');
       brush.imageSmoothingEnabled=false;brush.translate(-left,-top);for(const piece of group)drawPenFence(brush,piece,activeWeather);
       const at=[front?Math.max(...cs):Math.min(...cs),front?Math.max(...rs):Math.min(...rs)];
-      return [{kind:'pen-fence',id:pieces[0].penId+':fence:'+(front?'front':'back'),penId:pieces[0].penId,front,cellA:at,cellB:at,xy:iso(...at),layer,left,top}];
+      return [{kind:'pen-fence',id:pieces[0].penId+':fence:'+(front?'front':'back'),penId:pieces[0].penId,front,cellA:at,cellB:at,xy:iso(...at),ground,layer,left,top}];
     });
   }
   function drawBuiltPen(pen,state,clock){

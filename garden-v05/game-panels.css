@@ -585,3 +585,9 @@
 .pond-cast .cast-bar[data-band=sweet] .cast-marker{background:#FFF0C2}
 .pond-cast .cast-result{display:flex;align-items:center;justify-content:center;gap:8px;min-height:28px;margin:0 0 12px;font-variant-numeric:tabular-nums}
 .pond-cast .cast-tap{width:100%;min-height:48px}
+/* 09/11/2026: scenery picker check is a small badge (it inherited the 100%-wide card image rule), Kho counts readable. */
+#gameShell #panel .v24-art-choice>i{position:absolute;top:8px;right:8px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#173d2ee6;border:2px solid #f5d69a;padding:0}
+#gameShell #panel .v24-art-choice>i img{width:16px;height:16px;aspect-ratio:auto}
+#gameShell #panel .v24-art-choice[aria-pressed="true"] span{color:#f5d69a}
+#gameShell #panel .v24-time-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#gameShell #panel .inv-qty-pill{color:#13231a;font:800 13px/1.2 var(--gp-body);padding:3px 9px;text-shadow:none}
