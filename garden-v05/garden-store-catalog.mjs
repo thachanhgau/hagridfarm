@@ -860,5 +860,6 @@ export const storeLock=(item,level,dayKey=vnDayKey())=>{
  return item.level>TAN_SUC_LEVEL?`Tận Sức ${item.level-TAN_SUC_LEVEL}`:`Cấp ${item.level}`;
 };
 // Level-500 roadmap §12: below level 100 nothing from bậc Tận Sức shows, not even as a locked card.
-export const storeVisible=(item,level)=>!item.reward&&(item.level<=TAN_SUC_LEVEL||level>=TAN_SUC_LEVEL); // event gifts never show in the store
+// Event gifts never show in the store; festival pieces show only while their festival runs (the «Lễ hội» tab hides when empty).
+export const storeVisible=(item,level,dayKey=vnDayKey())=>!item.reward&&inSeason(item,dayKey)&&(item.level<=TAN_SUC_LEVEL||level>=TAN_SUC_LEVEL);
 export const unlockedCatalog=(level,dayKey=vnDayKey(),nowMs=Date.now())=>STORE_CATALOG.filter(item=>item.level<=level&&inSeason(item,dayKey,nowMs));
