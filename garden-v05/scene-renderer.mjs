@@ -1408,9 +1408,23 @@ export async function createGarden(canvas, options = {}) {
     polygon(context, plotCorners(plot), fill, color, 2);
   }
 
+  // A pen's rails sort by one corner, so a piece standing just outside the east or south rail (or the north or west
+  // one) could be drawn on the wrong side of it (owner 09/11/2026: a pot beside the east rail sat under it). After
+  // the depth sort, each such piece moves to just after its front rails, or just before its back rails.
+  function railNeighbours(objects){
+    for(const fence of objects.filter(o=>o.kind==='pen-fence'&&o.penRect)){
+      const p=fence.penRect,beside=g=>fence.front
+        ?(g.c0>=p.c1&&g.c0<p.c1+1&&g.r1>p.r0&&g.r0<p.r1)||(g.r0>=p.r1&&g.r0<p.r1+1&&g.c1>p.c0&&g.c0<p.c1)
+        :(g.c1<=p.c0&&g.c1>p.c0-1&&g.r1>p.r0&&g.r0<p.r1)||(g.r1<=p.r0&&g.r1>p.r0-1&&g.c1>p.c0&&g.c0<p.c1);
+      const at=objects.indexOf(fence),moving=objects.filter((o,i)=>(fence.front?i<at:i>at)&&o.kind!=='pen-fence'&&o.ground&&beside(o.ground));
+      if(!moving.length)continue;
+      for(const o of moving)objects.splice(objects.indexOf(o),1);
+      objects.splice(objects.indexOf(fence)+(fence.front?1:0),0,...moving);
+    }
+  }
   function fenceObjects(pieces){
     if(!pieces.length)return [];
-    const cells=pieces.flatMap(p=>[p.cellA,p.cellB]),cs=cells.map(p=>p[0]),rs=cells.map(p=>p[1]);
+    const cells=pieces.flatMap(p=>[p.cellA,p.cellB]),cs=cells.map(p=>p[0]),rs=cells.map(p=>p[1]),penRect={c0:Math.min(...cs),c1:Math.max(...cs),r0:Math.min(...rs),r1:Math.max(...rs)};
     return [false,true].flatMap(front=>{
       const group=pieces.filter(p=>p.front===front);if(!group.length)return [];
       const points=group.flatMap(p=>[p.a,p.b]),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
@@ -1418,7 +1432,7 @@ export async function createGarden(canvas, options = {}) {
       const layer=makeCanvas(canvas,Math.ceil(Math.max(...xs))-left+24,Math.ceil(Math.max(...ys))-top+16),brush=layer.getContext('2d');
       brush.imageSmoothingEnabled=false;brush.translate(-left,-top);for(const piece of group)drawPenFence(brush,piece,activeWeather);
       const at=[front?Math.max(...cs):Math.min(...cs),front?Math.max(...rs):Math.min(...rs)];
-      return [{kind:'pen-fence',id:pieces[0].penId+':fence:'+(front?'front':'back'),penId:pieces[0].penId,front,cellA:at,cellB:at,xy:iso(...at),layer,left,top}];
+      return [{kind:'pen-fence',id:pieces[0].penId+':fence:'+(front?'front':'back'),penId:pieces[0].penId,front,cellA:at,cellB:at,penRect,xy:iso(...at),layer,left,top}];
     });
   }
   function drawBuiltPen(pen,state,clock){
@@ -2008,6 +2022,7 @@ export async function createGarden(canvas, options = {}) {
     // Decorations sort by their footprint and characters, crops and creatures by their feet (depthCompare).
     for (const object of objects) object.ground ??= groundOf(object);
     objects.sort(depthCompare);
+    railNeighbours(objects);
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
     interactiveKeepsakes=objects.filter(o=>o.kind==='keepsake');

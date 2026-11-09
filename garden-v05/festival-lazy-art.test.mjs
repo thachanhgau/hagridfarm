@@ -63,6 +63,17 @@ test('front pen rails occlude a large resident while back rails remain behind it
  for(const prop of props){const pen=prop.id.split(':')[0],i=order.indexOf(prop);assert.ok(order.findIndex(o=>o.id===pen+':fence:back')<i);assert.ok(order.findIndex(o=>o.id===pen+':fence:front')>i);}
 });
 
+test('a pot just outside the east rail of a pen draws in front of the rail, one inside draws behind it',async()=>{
+ const {canvas}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+ const now=1_700_000_000_000,state=E.testProfile(500,now),id='decor_mandrake_planter';
+ state.built=[...new Set([...state.built,'pen_1'])];state.creatures=[];
+ for(const [spot,outside] of [[[33.5,1.5],true],[[30,2],false]]){
+  garden.render(state,{now,clock:0,propsVisible:true,decorations:{owned:[id],placements:[id],positions:{[id]:spot},rotations:{}}});
+  const order=garden.order(),pot=order.findIndex(o=>o.id===id),rail=order.findIndex(o=>o.id==='pen_1:fence:front');
+  assert.ok(pot>=0&&rail>=0);assert.equal(pot>rail,outside,`pot at ${spot} ${outside?'outside':'inside'} the pen`);
+ }
+});
+
 test('water beds draw the actual aquatic crop sprite instead of rectangular stand-ins',async()=>{
  const {canvas}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
  const now=1_700_000_000_000,state=E.testProfile(500,now);state.built=[...new Set([...state.built,'pond_1'])];
