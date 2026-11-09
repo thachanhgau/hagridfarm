@@ -68,3 +68,14 @@ test('fence and land share one outline, the bay behind the greenhouse included',
     for(const piece of createBoundaryFence(scene,outline))for(const p of [piece.cellA,piece.cellB])assert.ok(onEdge(p,outline),`stage ${stage.id}: ${p}`);
   }
 });
+
+
+test('outer west rail leaves a full grass cell beyond the outermost plot and stays inside the native canvas',async()=>{
+ const {EDGE_STAGE,stageBoundary,stageContains}=await import('./garden-growth.mjs');
+ const outline=stageBoundary(EDGE_STAGE),west=outline.filter(([c,r])=>r>=29&&r<=32.5);
+ const plot=plotPhysicalBounds(scene.plots[16],scene);
+ assert.ok(west.some(([c])=>plot.col-c>=1),'west plot soil must not reach the rail');
+ assert.ok(stageContains(EDGE_STAGE,-1,29),'ground extends with the rail');
+ const panels=createBoundaryFence(scene,outline);
+ for(const p of panels)for(const [x] of [p.a,p.b])assert.ok(x>=6,'corner rail must not be cropped');
+});

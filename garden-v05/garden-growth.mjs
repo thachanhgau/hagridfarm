@@ -25,7 +25,7 @@ const POND_MEADOW=Object.freeze([[-.5,-.5],[-.5,-3.5],[3.5,-3.5],[3.5,-13.5],[28
 export function stageContains(stage,col,row){
  if(stage.pond&&inPondLand(col,row))return true;
  const edge=stage.edgeRight&&inEdgeStrip(col,row);
- const inside=Number.isFinite(col)&&Number.isFinite(row)&&col>=-5.5&&col<=(edge?stage.edgeRight:stage.right)&&row>=-.5&&row<=stage.bottom&&(col>=-.5||row<=9.5);
+ const inside=Number.isFinite(col)&&Number.isFinite(row)&&col>=-5.5&&col<=(edge?stage.edgeRight:stage.right)&&row>=-.5&&row<=stage.bottom&&(col>=-2.5||row<=9.5)&&(col-row>=-34);
  if(!inside)return false;
  if(stage.id===4&&row>15.5&&col<25.5)return false;
  if(stage.id===5&&(row>21.5&&col<25.5||row>15.5&&col>20.5&&col<25.5))return false;
@@ -39,11 +39,11 @@ export function stageBoundary(stage,{fence=false}={}){const [nw,...rest]=stageOu
 export const fenceOpenings=stage=>stage.pond?POND_OPENINGS:[];
 function stageOutline(stage){
  // Every corner lies on a cell line (cells are centred on whole numbers).
- if(stage.id===8)return [[-5.5,-.5],[33.5,-.5],[33.5,5.5],[45.5,5.5],[45.5,25.5],[33.5,25.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]];
- if(stage.id===4)return [[-5.5,-.5],[33.5,-.5],[33.5,21.5],[25.5,21.5],[25.5,15.5],[-.5,15.5],[-.5,9.5],[-5.5,9.5]];
- if(stage.id===5)return [[-5.5,-.5],[33.5,-.5],[33.5,25.5],[25.5,25.5],[25.5,15.5],[20.5,15.5],[20.5,21.5],[-.5,21.5],[-.5,9.5],[-5.5,9.5]];
+ if(stage.id===8)return [[-5.5,-.5],[33.5,-.5],[33.5,5.5],[45.5,5.5],[45.5,25.5],[33.5,25.5],[33.5,33.5],[-.5,33.5],[-2.5,31.5],[-2.5,9.5],[-5.5,9.5]];
+ if(stage.id===4)return [[-5.5,-.5],[33.5,-.5],[33.5,21.5],[25.5,21.5],[25.5,15.5],[-2.5,15.5],[-2.5,9.5],[-5.5,9.5]];
+ if(stage.id===5)return [[-5.5,-.5],[33.5,-.5],[33.5,25.5],[25.5,25.5],[25.5,15.5],[20.5,15.5],[20.5,21.5],[-2.5,21.5],[-2.5,9.5],[-5.5,9.5]];
  return stage.bottom===9.5?[[-5.5,-.5],[stage.right,-.5],[stage.right,9.5],[-5.5,9.5]]:
- [[-5.5,-.5],[stage.right,-.5],[stage.right,stage.bottom],[-.5,stage.bottom],[-.5,9.5],[-5.5,9.5]];
+ [[-5.5,-.5],[stage.right,-.5],[stage.right,stage.bottom],...(stage.bottom===33.5?[[-.5,33.5],[-2.5,31.5]]:[[-2.5,stage.bottom]]),[-2.5,9.5],[-5.5,9.5]];
 }
 export function gardenStage(state={},scene={},occupiedPoints=[]){
  const level=Number(state.level)||1;

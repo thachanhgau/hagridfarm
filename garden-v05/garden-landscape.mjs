@@ -1,8 +1,8 @@
 // Presentation boundary is separate from scenic grass and fixed gameplay slots.
 // Owner 27/10/2026: fences run on cell lines and paths along cell centres, one cell wide.
-export const FARM_BOUNDARY = Object.freeze([[-5.5,-.5],[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5],[33.5,-.5],[33.5,33.5],[-.5,33.5],[-.5,9.5],[-5.5,9.5]]);
+export const FARM_BOUNDARY = Object.freeze([[-5.5,-.5],[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5],[33.5,-.5],[33.5,33.5],[-.5,33.5],[-2.5,31.5],[-2.5,9.5],[-5.5,9.5]]);
 export function insideFarm(col,row) {
-  return Number.isFinite(col) && Number.isFinite(row) && col >= -5.5 && col <= 33.5 && row >= -.5 && row <= 33.5 && (col >= -.5 || row <= 9.5);
+  return Number.isFinite(col) && Number.isFinite(row) && col >= -5.5 && col <= 33.5 && row >= -.5 && row <= 33.5 && (col >= -2.5 || row <= 9.5) && col-row >= -34;
 }
 export const GARDEN_PATHS = Object.freeze([
   [[0,5],[0,7],[26,7],[26,23],[16,23],[16,33]],
