@@ -1,0 +1,7 @@
+# Outdoor creatures in snow
+
+Owner screenshot shows Hippogriff, Thestral, Unicorn and Porlock looking unchanged on snow, with Mooncalf/Bowtruckle behind them. The renderer unconditionally marked every resident noSnowCap. Outdoor creature frames now opt into the existing native silhouette-aware snow renderer; fire creatures Dragon/Salamander remain exempt and submerged pond life remains separate. This applies to actual growth, idle/action and authored right-facing frames without changing their alpha, canvas, pivot, ground anchor or pose. Tutorial/QA actors go through the same actorObject boundary.
+
+Reuse cached pixel weather variants, not separate replacement poses. Snow settles along sufficiently flat upward-facing contours, preserves the outside silhouette, and follows each frame. Existing selected rare coat is recoloured first, then gets the same cached snow pass; coat is included in the weather cache key. Clear weather restores the original frames. No rare coat unlock, save, economy or backend changes.
+
+422 source tests pass,2 existing skips,0 fail (historical progression fixture exclusion unchanged). Renderer regression checks real pasture Hippogriff/Thestral/Unicorn draw cached snow canvases at exactly their clear-weather anchors and restore original images on clear. Existing native snow pixel checks cover silhouette/steep-edge behavior. Browser verification belongs in the HPVNN import note. No new image downloads or WebP changes.

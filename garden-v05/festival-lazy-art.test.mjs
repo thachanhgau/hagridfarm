@@ -18,7 +18,7 @@ function recordingCanvas() {
   const requested = new Set();
   const drawn = [];
   const drawCalls = [],paintCalls=[];
-  const context = new Proxy({}, {get: (o, k) => k === 'drawImage' ? (image,...args) => {drawn.push(image.source);drawCalls.push({file:image.source,args});paintCalls.push({kind:'image',file:image.source});} : k === 'fillText' ? text=>paintCalls.push({kind:'text',text}) : k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
+  const context = new Proxy({}, {get: (o, k) => k === 'drawImage' ? (image,...args) => {drawn.push(image.source);drawCalls.push({file:image.source,args,image});paintCalls.push({kind:'image',file:image.source});} : k === 'fillText' ? text=>paintCalls.push({kind:'text',text}) : k === 'measureText' ? () => ({width: 64}) : k === 'getImageData' ? (x, y, width, height) => ({width, height, data: new Uint8ClampedArray(width * height * 4)}) : (o[k] ??= () => {})});
   class RecordingImage {
     naturalWidth = 64; naturalHeight = 64;
     set src(value) { this.source=value; requested.add(value); queueMicrotask(() => this.onload?.()); }
@@ -252,4 +252,20 @@ test('complete pen plaques are drawn after rail and habitat images',async()=>{
  assert.ok(signs.length>=6,'full numbered plaques must be present');
  const lastProp=paintCalls.findLastIndex(c=>c.kind==='image'&&c.file?.includes('habitat_'));
  assert.ok(lastProp>=0);assert.ok(Math.min(...signs)>lastProp,'props and rails cannot paint over pen text');
+});
+
+
+test('pasture creatures draw cached snow variants at the same feet and restore clear pixels',async()=>{
+ const winterKit=await import('./garden-winter.mjs'),{canvas,drawCalls}=recordingCanvas();
+ const garden=await createGarden(canvas,{decorAssets:manifest.items}),now=1_700_000_000_000,state=E.testProfile(500,now);
+ const species=['hippogriff','thestral','unicorn'];
+ state.built=[...new Set([...state.built,'edge_1','edge_2'])];
+ state.creatures=species.map(id=>({type:'creature',species:id,mealsCompleted:99,meal:null}));
+ const options={now,clock:0,propsVisible:true,winterKit};
+ garden.render(state,{...options,weatherMode:'clear'});
+ const clear=species.map(id=>{const files=motion.items.find(i=>i.id===id).frames.map(f=>runtimeImageUrl(f.file||f));const call=drawCalls.find(c=>files.includes(c.file));assert.ok(call,id+' clear sprite');return call;});
+ drawCalls.length=0;garden.render(state,{...options,weatherMode:'snow'});
+ for(const call of clear){const snow=drawCalls.find(c=>JSON.stringify(c.args)===JSON.stringify(call.args)&&c.image?.getContext);assert.ok(snow,'snow canvas at unchanged anchor');}
+ drawCalls.length=0;garden.render(state,{...options,weatherMode:'clear'});
+ for(const call of clear)assert.ok(drawCalls.some(c=>c.file===call.file&&JSON.stringify(c.args)===JSON.stringify(call.args)),'clear restores original');
 });

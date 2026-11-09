@@ -790,9 +790,9 @@ export async function createGarden(canvas, options = {}) {
     return coatImages.get(key)??null;
   }
   const winterFile=file=>winterArt&&images.has(kit.WINTER_ART[file])?kit.WINTER_ART[file]:null;
-  function seasonalImage(file,kind){
-    const source=imageFor(file);if(activeWeather==='clear'||!source)return source;
-    const key=kind+':'+file;if(seasonalImages.has(key))return seasonalImages.get(key);
+  function seasonalImage(file,kind,coat=null){
+    const source=coat?coatImage(file,coat):imageFor(file);if(activeWeather==='clear'||!source)return source;
+    const key=kind+':'+(coat||'')+':'+file;if(seasonalImages.has(key))return seasonalImages.get(key);
     const result=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height),brush=result.getContext('2d',{willReadFrequently:true});
     brush.imageSmoothingEnabled=false;brush.drawImage(source,0,0);weatherizeCanvas(result,kind,activeWeather,1,kit);seasonalImages.set(key,result);return result;
   }
@@ -996,9 +996,9 @@ export async function createGarden(canvas, options = {}) {
   function drawAssetTo(target, asset, x, y, breeze = null, actorMotion = null, flipX = false) {
     if (!asset) return;
     const original = frameFile(asset), snowFile = winterFile(original), file = snowFile || original;
-    // Snow caps every sprite but living things (noSnowCap).
+    // Outdoor creatures share native, frame-following snow; fire creatures keep noSnowCap.
     const kind = snowFile ? null : asset.seasonalKind || (activeWeather === 'snow' && !asset.noSnowCap ? 'cap' : null);
-    const image = asset.wither ? witherImage(file, asset.wither) : asset.coat ? coatImage(file, asset.coat) : kind ? seasonalImage(file,kind) : imageFor(file);
+    const image = asset.wither ? witherImage(file, asset.wither) : kind ? seasonalImage(file,kind,asset.coat) : asset.coat ? coatImage(file, asset.coat) : imageFor(file);
     if (image) {
       const left = Math.round(x - finite(asset.pivotX, 0));
       const top = Math.round(y - finite(asset.pivotY, 0));
@@ -1320,7 +1320,7 @@ export async function createGarden(canvas, options = {}) {
       item,
       progress,
       stage,
-      asset,
+      asset:item.kind==='creature'?{...asset,noSnowCap:['dragon','salamander'].includes(entry.species)}:asset,
       xy: iso(col, row),
       facing,
       authoredFacing:item!==baseItem,
@@ -1944,7 +1944,7 @@ export async function createGarden(canvas, options = {}) {
       const actor = actorObject(entry, spot[0], spot[1], logicalNow, clock, {creatureIndex: index, facing});
       actor.affinityLevel = Number(creatureAffinities[entry.species]) || 1;
       const coat = options.creatureCoats?.[entry.species];
-      if (actor.asset) actor.asset = {...actor.asset, noSnowCap: true, ...(coat ? {coat} : {})};
+      if (actor.asset) actor.asset = {...actor.asset, ...(coat ? {coat} : {})};
       objects.push(actor);
     }
 
