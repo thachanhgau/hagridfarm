@@ -1,8 +1,8 @@
 // Generated preview mirror of the local emulator catalog. Prices are provisional.
-import {EVENT_PRODUCTS,FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=25.1.0";
-import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=25.1.0";
-import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=25.1.0";
-import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=25.1.0";
+import {EVENT_PRODUCTS,FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-products.mjs?v=25.1.1";
+import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=25.1.1";
+import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=25.1.1";
+import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=25.1.1";
 export const CATALOG_VERSION="garden-2026-11-08-edge-3";
 // Big update 25.0 §3 (owner 04/11/2026): prices below are the 24.x base; the store sells at base × min(8, 3 + level / 50),
 // festival goods × 4, rounded to 1 G under 100, 10 G under 1,000, else 100 G. Seeds and water up to level 24 keep their

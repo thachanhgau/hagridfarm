@@ -1,4 +1,4 @@
-import {FARM_BOUNDARY} from './garden-landscape.mjs?v=25.1.0';
+import {FARM_BOUNDARY} from './garden-landscape.mjs?v=25.1.1';
 
 export const SCENIC_TERRAIN_PALETTE = Object.freeze({
   grass: '#71934b',
