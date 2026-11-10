@@ -1,12 +1,12 @@
 // ACP of Khu Vườn Hagrid, inside the game, for HPH (owner 23/10/2026, widened 28/10/2026, HPH instead of KTV Gia Tinh 09/11/2026; the server
 // checks the account on every call: manageHagridGardenSales). Tabs: Sale (the four scheduled programs on/off, hand
-// sales up to 40%), Bảng giá (price, on sale, limits of every store item), Quầy chợ (unlock level, caps, buying
+// sales up to 90% on any item, owner 10/11/2026), Bảng giá (price, on sale, limits of every store item), Quầy chợ (unlock level, caps, buying
 // prices), Tặng đồ (store goods into one member's garden) and Đốt vườn (owner 01/11/2026: set a member's garden on
 // fire, picture only or burning the crops, for minutes, hours or days; garden-fire-core on the server) and Quyền HPH (owner 09/11/2026: jump a garden up to a level; take every decoration free). An empty box means the code value, shown as its hint.
-import {$,el,num,button} from './ui-utils.mjs?v=25.1.3';
-import {iconButton} from './pixel-icons.mjs?v=25.1.3';
+import {$,el,num,button} from './ui-utils.mjs?v=25.1.4';
+import {iconButton} from './pixel-icons.mjs?v=25.1.4';
 
-const SCOPE_LABELS = Object.freeze({all:'Mọi món có sale',crop:'Vật phẩm cây',creature:'Vật phẩm sinh vật, Ổ ấm',festival:'Đồ lễ hội',items:'Chọn món'});
+const SCOPE_LABELS = Object.freeze({all:'Món có sale định kỳ',store:'Cả cửa hàng',crop:'Vật phẩm cây',creature:'Vật phẩm sinh vật, Ổ ấm',festival:'Đồ lễ hội',special:'Sản phẩm đặc biệt',items:'Chọn món'});
 const WEEKDAYS = ['CN','T2','T3','T4','T5','T6','T7'];
 const TABS = [['sale','Sale'],['store','Bảng giá'],['market','Quầy chợ'],['gift','Tặng đồ'],['fire','Đốt vườn'],['level','Quyền HPH']];
 const FIRE_MODES = [['visual','Chỉ hình'],['real','Cháy thật']];
@@ -14,7 +14,7 @@ const FIRE_UNITS = [['m','Phút',1],['h','Giờ',60],['d','Ngày',1440]];
 const GROUPS = [['seed','Hạt giống',i=>i.kind==='seed'],['supply','Vật tư',i=>['water','food','boost','spring'].includes(i.kind)],['premium','Cao cấp',i=>['premium','nest'].includes(i.kind)],
  ['decor','Trang trí',i=>i.kind==='decoration'&&!i.collection],['special','Đặc biệt',i=>i.collection==='special'],['festival','Lễ hội',i=>i.collection==='festival']];
 const ITEM_FIELDS = [['price','Giá (G)'],['dailyLimit','Mua/ngày'],['stockCap','Trữ tối đa'],['usesPerDay','Dùng/ngày']];
-const MARKET_FIELDS = [['level','Mở từ cấp'],['dailyCap','Trần G/ngày'],['perCropDaily','Mỗi loại/ngày']];
+const MARKET_FIELDS = [['level','Mở từ cấp'],['dailyCap','Trần G/ngày'],['perCropDaily','Mỗi loại/ngày'],['premiumCap','Trần hàng giá cao/ngày'],['premiumCapMaster','Trần khi có Bậc thầy']];
 const fold = text => String(text||'').toLowerCase().normalize('NFD').replace(/\p{M}/gu,'').replace(/đ/g,'d');
 // Vietnam time typed as DD/MM/YYYY HH:mm (24 h): datetime-local followed the device locale and showed AM/PM.
 export const toLocal = ms => {if(!Number.isFinite(ms))return "";const d=new Date(ms+7*3600000),p=n=>String(n).padStart(2,'0');return `${p(d.getUTCDate())}/${p(d.getUTCMonth()+1)}/${d.getUTCFullYear()} ${p(d.getUTCHours())}:${p(d.getUTCMinutes())}`;};
@@ -23,7 +23,7 @@ export const fromLocal = value => {const m=/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d
 const when = ms => {const d=new Date(ms+7*3600000);return `${WEEKDAYS[d.getUTCDay()]} ${d.getUTCDate()}/${d.getUTCMonth()+1} ${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;};
 
 export function createSaleAcp({call,notify}){
- let view=null,draft=null,saving=false,tab='sale',group='seed',search='',gift={username:'',itemId:'',quantity:1,query:''},fire={username:'',mode:'visual',amount:1,unit:'h'},jump={username:'',level:''};
+ let view=null,draft=null,saving=false,tab='sale',group='seed',search='',pickSearch='',gift={username:'',itemId:'',quantity:1,query:''},fire={username:'',mode:'visual',amount:1,unit:'h'},jump={username:'',level:''};
  const body=el('div',{class:'acp-body'}),status=el('p',{class:'meta',role:'status','aria-live':'polite'});
  const dialog=el('dialog',{id:'saleAcp',class:'owl-letter acp-letter','aria-labelledby':'saleAcpTitle'},[
   el('div',{class:'popover-heading'},[el('h2',{id:'saleAcpTitle',text:'ACP bác Hagrid'}),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
@@ -58,10 +58,12 @@ export function createSaleAcp({call,notify}){
  function marketTab(){
   if(!view.market?.defaults||!view.market?.prices||!Array.isArray(view.market?.crops))return [el('p',{class:'meta',text:'Chưa có dữ liệu Quầy chợ.'})];
   const m=view.market,set=(key,value)=>{if(value===undefined||value===m.defaults[key])delete draft.market[key];else draft.market[key]=value;};
-  const price=(id,value)=>{if(value===undefined||value===m.prices[id])delete draft.market.prices[id];else draft.market.prices[id]=value;};
+  const price=(key,id,value)=>{const base=m[key]?.[id],rows=draft.market[key]||(draft.market[key]={});if(value===undefined||value===base)delete rows[id];else rows[id]=value;};
   return [el('fieldset',{class:'acp-sale acp-compact'},MARKET_FIELDS.map(([key,label])=>numField(label,m.defaults[key],draft.market[key],value=>set(key,value)))),
    el('p',{class:'sheet-label',text:'Giá thu mua mỗi nông sản (G)'}),
-   el('fieldset',{class:'acp-sale acp-compact'},m.crops.map(crop=>numField(crop.label,m.prices[crop.id],draft.market.prices[crop.id],value=>price(crop.id,value))))];
+   el('fieldset',{class:'acp-sale acp-compact'},m.crops.map(crop=>numField(crop.label,m.prices[crop.id],draft.market.prices[crop.id],value=>price('prices',crop.id,value)))),
+   ...(Array.isArray(m.produce)&&m.producePrices?[el('p',{class:'sheet-label',text:'Sản vật sinh vật · hàng giá cao (G, ×2 khi vui)'}),
+    el('fieldset',{class:'acp-sale acp-compact'},m.produce.map(row=>numField(row.label,m.producePrices[row.id],draft.market.producePrices?.[row.id],value=>price('producePrices',row.id,value))))]:[])];
  }
  function giftTab(){
   const q=fold(gift.query),item=(view.store||[]).find(entry=>entry.id===gift.itemId);
@@ -144,9 +146,12 @@ export function createSaleAcp({call,notify}){
   const percent=el('input',{type:'number',min:'1',max:String(view.percentMax),step:'1',value:String(sale.percent),oninput:e=>set('percent',Math.round(Number(e.target.value)))});
   const time=key=>el('input',{type:'text',inputmode:'numeric',placeholder:'DD/MM/YYYY HH:mm',value:toLocal(sale[key]),onchange:e=>{const ms=fromLocal(e.target.value);e.target.setCustomValidity(Number.isFinite(ms)?'':'Nhập theo DD/MM/YYYY HH:mm');set(key,ms);}});
   const starts=time('startsAt'),ends=time('endsAt');
-  const picks=sale.scope==='items'?el('div',{class:'gp-chips acp-chips',role:'group','aria-label':'Món giảm giá'},view.items.map(item=>button(`${item.label} · ${num(item.price)} G`,e=>{const ids=draft.sales[index].itemIds,on=!ids.includes(item.id);set('itemIds',on?[...ids,item.id]:ids.filter(id=>id!==item.id));e.currentTarget.setAttribute('aria-pressed',String(on));},{class:'gp-chip','aria-pressed':String(sale.itemIds.includes(item.id))}))):null;
+  // Every store item can be picked (owner 10/11/2026): the chosen ones, then up to 24 matches of the search.
+  const q=fold(pickSearch),shown=view.items.filter(item=>sale.itemIds.includes(item.id)||(q&&fold(item.label).includes(q))).slice(0,24+sale.itemIds.length);
+  const pickBox=sale.scope==='items'?el('input',{type:'search',placeholder:'Gõ tên món để thêm…',value:pickSearch,onchange:e=>{pickSearch=e.target.value;render();}}):null;
+  const picks=sale.scope==='items'?el('div',{class:'gp-chips acp-chips',role:'group','aria-label':'Món giảm giá'},shown.map(item=>button(`${item.label} · ${num(item.price)} G`,e=>{const ids=draft.sales[index].itemIds,on=!ids.includes(item.id);set('itemIds',on?[...ids,item.id]:ids.filter(id=>id!==item.id));e.currentTarget.setAttribute('aria-pressed',String(on));},{class:'gp-chip','aria-pressed':String(sale.itemIds.includes(item.id))}))):null;
   return el('fieldset',{class:'acp-sale'},[
-   field('Tên đợt',title),chipField('Phạm vi',scope),...(picks?[chipField('Món (chạm để chọn, chạm lại để bỏ)',picks)]:[]),
+   field('Tên đợt',title),chipField('Phạm vi',scope),...(picks?[field('Tìm món',pickBox),chipField('Món (chạm để chọn, chạm lại để bỏ)',picks)]:[]),
    field(`Giảm % (1–${view.percentMax})`,percent),field('Bắt đầu (giờ VN)',starts),field('Kết thúc (giờ VN)',ends),
    iconButton('close',`Xóa đợt ${sale.title}`,()=>{draft.sales.splice(index,1);render();},{text:'Xóa'}),
   ]);
@@ -175,7 +180,7 @@ export function createSaleAcp({call,notify}){
    el('p',{class:'meta',text:`Phiên bản ${num(view.config.revision)} · ${draft.sales.filter(s=>s.startsAt<=now&&now<s.endsAt).length} đợt đang chạy`}),
   );
  }
- const fromConfig=config=>structuredClone({programs:config.programs,sales:config.sales,items:config.items||{},market:{prices:{},...config.market}});
+ const fromConfig=config=>structuredClone({programs:config.programs,sales:config.sales,items:config.items||{},market:{prices:{},producePrices:{},...config.market}});
  async function load(){
   status.textContent='';view=null;render();
   try{view=await call({mode:'get'});draft=fromConfig(view.config);render();}

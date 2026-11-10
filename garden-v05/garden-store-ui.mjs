@@ -1,10 +1,10 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=25.1.3";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=25.1.3";
-import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=25.1.3";
-import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=25.1.3";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=25.1.3";
-import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=25.1.3";
-import {marketCards} from "./garden-market-ui.mjs?v=25.1.3";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=25.1.4";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=25.1.4";
+import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=25.1.4";
+import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=25.1.4";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=25.1.4";
+import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=25.1.4";
+import {marketCards} from "./garden-market-ui.mjs?v=25.1.4";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -28,7 +28,7 @@ const unitOf = item => item.kind === "nest" ? "ổ" : item.supply === "primeMeal
 const stockOf = (item, snap) => item.supply ? Number(snap?.garden?.supplies?.[item.supply] ?? 0) : 0;
 const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("coin", 1), el("b", {text: num(n)}), extra ? el("small", {text: extra}) : null]);
 
-export function showStore({state,items,wallet,connected,onPurchase,onSell,onDecorate,decorAssets=new Map(),onClose,initialFilter="all",returnFocus=document.activeElement}){
+export function showStore({state,items,wallet,connected,onPurchase,onSell,onDecorate,onRefresh,decorAssets=new Map(),onClose,initialFilter="all",returnFocus=document.activeElement}){
  document.querySelector(".store-overlay")?.remove();
  let filter=initialFilter,purchasing=false,clock=null;const quantities=new Map(),sellQuantities=new Map(),previewFacing=new Map();
  const overlay=el("div",{class:"store-overlay"}),shade=el("div",{class:"popover-shade"});
@@ -175,6 +175,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
       notice.textContent=isDecor?"Đã có "+item.label+". Bấm Đặt để trang trí vườn.":"Đã mua "+n+" "+unit+" "+item.label+".";
      }catch(e){
       notice.textContent=e.message;
+      // The price moved (a sale ended or began, the ACP changed it): show the server's price now, never the old one.
+      if(e.reason==="price-changed"&&onRefresh){try{await onRefresh();const now=wallet?.snapshot?.catalog?.find(i=>i.id===item.id);notice.textContent=now?`Giá vừa đổi: ${n} ${unit} ${item.label} giờ là ${num(packTotal(now,n))} Galleons. Bấm mua lại nếu đồng ý.`:e.message;}catch{}}
      }finally{
       purchasing=false;render();
      }
@@ -233,7 +235,10 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
  render();
  // Phone tabs scroll sideways: bring a far tab («Lễ hội», «Đặc biệt») into view on open.
  tabs.querySelector("[aria-pressed=\"true\"]")?.scrollIntoView({block:"nearest",inline:"center"});
- clock=setInterval(()=>{for(const badge of box.querySelectorAll("[data-ends]")){const ends=Number(badge.dataset.ends);if(ends<=Date.now()){badge.textContent="Đợt sale đã hết";badge.classList.add("is-over");}else badge.textContent=badge.textContent.replace(/ · .*$/,` · ${saleLeft({endsAt:ends})}`);}},30000);
+ // A sale that ends while the store is open: reload the catalog so price and button show the price the server takes.
+ let refreshing=false;const refreshPrices=()=>{if(refreshing||purchasing||!onRefresh)return;refreshing=true;onRefresh().then(()=>{if(overlay.isConnected)render();},()=>{}).finally(()=>{refreshing=false;});};
+ const tick=()=>{for(const badge of box.querySelectorAll("[data-ends]")){const ends=Number(badge.dataset.ends);if(ends<=Date.now()){badge.textContent="Đợt sale đã hết";badge.classList.add("is-over");refreshPrices();}else badge.textContent=badge.textContent.replace(/ · .*$/,` · ${saleLeft({endsAt:ends})}`);}};
+ tick();clock=setInterval(tick,30000);
  heading.querySelector("button").focus();
  overlay.addEventListener("keydown",e=>{
   if(e.key==="Escape"){e.preventDefault();e.stopPropagation();close();}

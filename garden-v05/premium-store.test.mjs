@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=25.1.3';
-import {STORE_CATALOG,CATALOG_VERSION,storePrice} from './garden-store-catalog.mjs?v=25.1.3';
-import {ITEM_ART} from './item-art.mjs?v=25.1.3';
-import {itemArtKey} from './ui-utils.mjs?v=25.1.3';
+import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=25.1.4';
+import {STORE_CATALOG,CATALOG_VERSION,storePrice} from './garden-store-catalog.mjs?v=25.1.4';
+import {ITEM_ART} from './item-art.mjs?v=25.1.4';
+import {itemArtKey} from './ui-utils.mjs?v=25.1.4';
 
 // Level-500 roadmap P4 (§10): what the store shows must equal what the server charges (garden-premium-core saleTotal).
 test('the premium catalog is in the store mirror with the 25.0 catalog version', () => {
@@ -13,11 +13,12 @@ test('the premium catalog is in the store mirror with the 25.0 catalog version',
  assert.deepEqual([spring.stockCap, spring.usesPerDay, spring.bundles], [60, 10, true]);
 });
 
-test('bundles ×5/×10/×30 and a sale add up to at most 50% off', () => {
+test('bundles ×5/×10/×30 and a sale add up to at most 90% off (HPH ACP, owner 10/11/2026)', () => {
  const rain = PREMIUM_PRODUCTS.find(item => item.id === 'spring_rain');
  assert.deepEqual([1, 4, 5, 10, 29, 30].map(bundlePercent), [0, 0, 10, 20, 20, 30]);
  assert.equal(saleTotal(rain, 10), 50400);
- assert.equal(saleTotal({ ...rain, sale: { percent: 30 } }, 30), 94500);
+ assert.equal(saleTotal({ ...rain, sale: { percent: 30 } }, 30), 75600);
+ assert.equal(saleTotal({ ...rain, sale: { percent: 90 } }, 30), 18900);
  const nest = PREMIUM_PRODUCTS.find(item => item.id === 'warm_nest_1');
  assert.equal(saleTotal({ ...nest, sale: { percent: 25 } }, 1), 3750);
 });
@@ -38,4 +39,13 @@ test('every premium item resolves to its canonical native art identity', () => {
 
 test('unknown premium art is explicit and never the generic medal', () => {
  assert.equal(itemArtKey('premium_future_item', {kind: 'premium'}), null);
+});
+
+// Server pricedPurchase: a hand sale on a regular item takes its percent off the tiered total.
+test('a hand sale on seeds discounts the tiered total; no sale keeps it', async () => {
+ const {packTotal} = await import('./ui-utils.mjs?v=25.1.4');
+ const seed = {price: 6, dailyLimit: 1000, dailyRemaining: 2, overflowMultiplier: 5};
+ assert.equal(packTotal(seed, 3), 6 * 2 + 6 * 5);
+ assert.equal(packTotal({...seed, sale: {percent: 50}}, 3), 21);
+ assert.equal(packTotal({price: 3, dailyLimit: 1, sale: {percent: 90}}, 1), 1);
 });

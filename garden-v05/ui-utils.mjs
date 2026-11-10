@@ -1,8 +1,8 @@
-import { ITEM_ART } from "./item-art.mjs?v=25.1.3";
-import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=25.1.3";
-import { DB } from "./balance-data.mjs?v=25.1.3";
-import {saleTotal} from "./premium-products.mjs?v=25.1.3";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.3';
+import { ITEM_ART } from "./item-art.mjs?v=25.1.4";
+import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=25.1.4";
+import { DB } from "./balance-data.mjs?v=25.1.4";
+import {saleTotal} from "./premium-products.mjs?v=25.1.4";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.4';
 const SUPPLY_ART_KEYS = Object.freeze({
  water: "supply_water",
  boost: "supply_boost",
@@ -64,7 +64,8 @@ export function setServerGrowth(on){serverGrowth=Boolean(on);}
 export function realHours(entry,level){return (entry?.hours||0)*(serverGrowth?growthScale(Math.max(Number(level)||1,entry?.level||1)):1);}
 // Galleons for `count` packs: packs left at the base price today (dailyRemaining) cost `price`,
 // the rest price × overflowMultiplier (water and seeds past 1000 a day; server: garden-wallet-core purchaseTotal).
-export function packTotal(item,count){if(item.bundles||item.sale)return saleTotal(item,count);const base=Math.max(0,Math.min(count,item.dailyRemaining??item.dailyLimit??Infinity));return base*item.price+(count-base)*item.price*(item.overflowMultiplier||1);}
+// A hand sale on a regular item (seeds, water…) takes its percent off the tiered total: server pricedPurchase.
+export function packTotal(item,count){if(item.bundles)return saleTotal(item,count);const base=Math.max(0,Math.min(count,item.dailyRemaining??item.dailyLimit??Infinity));const total=base*item.price+(count-base)*item.price*(item.overflowMultiplier||1);return item.sale?Math.max(1,Math.round(total*(100-item.sale.percent)/100)):total;}
 export function hours(h){const m=Math.round(h*60),H=Math.floor(m/60),r=m%60;return !m?"Tức thì":m<60?`${m} phút`:!r&&H>=24&&H%24===0?`${H/24} ngày`:`${H} giờ${r?` ${r} phút`:""}`;}
 export function icon(items,id,stage=3,size=52){
  const item=items?.get?.(id);

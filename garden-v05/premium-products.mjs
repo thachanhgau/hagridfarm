@@ -14,11 +14,11 @@ export const PREMIUM_PRODUCTS = Object.freeze([
  ...NEST_LEVELS.map((level,i)=>Object.freeze({id:`warm_nest_${i+1}`,kind:"nest",pen:i+1,icon:"warm_nest",label:`Ổ ấm chuồng ${i+1}`,level,price:5000+2000*i,quantity:1,dailyLimit:1,
   description:`Lót ổ cho chuồng thứ ${i+1}: hai sinh vật ở đó ăn nhanh hơn 20% mãi mãi. Mua một lần.`})),
 ]);
-// Gói mua nhiều: ×5 −10%, ×10 −20%, ×30 −30%; any quantity takes the largest tier it reaches. Sale + bundle ≤ 50%.
+// Gói mua nhiều: ×5 −10%, ×10 −20%, ×30 −30%; any quantity takes the largest tier it reaches. Sale + bundle ≤ 90% (HPH ACP, owner 10/11/2026; server TOTAL_MAX_PERCENT).
 export const BUNDLE_SIZES = Object.freeze([1,5,10,30]);
 export const bundlePercent = n => n>=30?30:n>=10?20:n>=5?10:0;
 export const saleTotal = (item,n) => {
- const percent=Math.min(50,(item.sale?.percent||0)+(item.bundles?bundlePercent(n):0));
+ const percent=Math.min(90,(item.sale?.percent||0)+(item.bundles?bundlePercent(n):0));
  return Math.max(1,Math.round(item.price*n*(100-percent)/100));
 };
 // Text for a sale's real end time («còn 25 phút», «đến 22:00»). Never a fake «sắp hết» (roadmap §10.3).

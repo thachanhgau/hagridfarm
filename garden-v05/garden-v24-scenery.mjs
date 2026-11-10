@@ -1,5 +1,5 @@
-import {stageContains} from './garden-growth.mjs?v=25.1.3';
-import {clearOfBuildings,worldPhase} from './garden-seasonal-world.mjs?v=25.1.3';
+import {stageContains} from './garden-growth.mjs?v=25.1.4';
+import {clearOfBuildings,worldPhase} from './garden-seasonal-world.mjs?v=25.1.4';
 export function sceneryLighting(atmosphere='day',weather='clear'){
  return {sun:weather==='clear'&&atmosphere!=='night',warm:atmosphere==='dusk',wet:weather==='rain',snow:weather==='snow'};
 }
