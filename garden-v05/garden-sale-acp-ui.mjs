@@ -3,8 +3,8 @@
 // sales up to 90% on any item, owner 10/11/2026), Bảng giá (price, on sale, limits of every store item), Quầy chợ (unlock level, caps, buying
 // prices), Tặng đồ (store goods into one member's garden) and Đốt vườn (owner 01/11/2026: set a member's garden on
 // fire, picture only or burning the crops, for minutes, hours or days; garden-fire-core on the server) and Quyền HPH (owner 09/11/2026: jump a garden up to a level; take every decoration free). An empty box means the code value, shown as its hint.
-import {$,el,num,button} from './ui-utils.mjs?v=25.1.4';
-import {iconButton} from './pixel-icons.mjs?v=25.1.4';
+import {$,el,num,button} from './ui-utils.mjs?v=25.1.5';
+import {iconButton} from './pixel-icons.mjs?v=25.1.5';
 
 const SCOPE_LABELS = Object.freeze({all:'Món có sale định kỳ',store:'Cả cửa hàng',crop:'Vật phẩm cây',creature:'Vật phẩm sinh vật, Ổ ấm',festival:'Đồ lễ hội',special:'Sản phẩm đặc biệt',items:'Chọn món'});
 const WEEKDAYS = ['CN','T2','T3','T4','T5','T6','T7'];

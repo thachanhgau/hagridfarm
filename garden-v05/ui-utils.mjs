@@ -1,8 +1,8 @@
-import { ITEM_ART } from "./item-art.mjs?v=25.1.4";
-import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=25.1.4";
-import { DB } from "./balance-data.mjs?v=25.1.4";
-import {saleTotal} from "./premium-products.mjs?v=25.1.4";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.4';
+import { ITEM_ART } from "./item-art.mjs?v=25.1.5";
+import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=25.1.5";
+import { DB, TAN_SUC_LEVEL } from "./balance-data.mjs?v=25.1.5";
+import {saleTotal} from "./premium-products.mjs?v=25.1.5";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.5';
 const SUPPLY_ART_KEYS = Object.freeze({
  water: "supply_water",
  boost: "supply_boost",
@@ -61,6 +61,8 @@ export function growthScale(level){return level<5?.1:level<10?.2:level<15?.3:.5;
 // something not open yet starts at its own level at the earliest). The local prototype engine does not scale.
 let serverGrowth=false;
 export function setServerGrowth(on){serverGrowth=Boolean(on);}
+/** A level as the HUD counts it: «Cấp 72», then «Tận Sức 160» for level 260. */
+export const levelName=level=>level>TAN_SUC_LEVEL?`Tận Sức ${level-TAN_SUC_LEVEL}`:`Cấp ${level}`;
 export function realHours(entry,level){return (entry?.hours||0)*(serverGrowth?growthScale(Math.max(Number(level)||1,entry?.level||1)):1);}
 // Galleons for `count` packs: packs left at the base price today (dailyRemaining) cost `price`,
 // the rest price × overflowMultiplier (water and seeds past 1000 a day; server: garden-wallet-core purchaseTotal).

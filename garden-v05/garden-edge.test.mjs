@@ -4,8 +4,21 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {DB} from './balance-data.mjs';
-import {edgeStepText, treeTiles, ripeCount, saplingChoices, harvestText, SAPLINGS} from './garden-orchard-ui.mjs';
-import {itemDisplayName} from './ui-utils.mjs';
+import {edgeProgress, edgeStepText, treeTiles, ripeCount, saplingChoices, harvestText, SAPLINGS} from './garden-orchard-ui.mjs';
+import {itemDisplayName, levelName} from './ui-utils.mjs';
+
+test('the Vườn cây button leads to Hagrid\'s next request from the unlock level until the orchard stands', () => {
+ assert.equal(edgeProgress({step: 0, unlockLevel: 260}, 259), null);
+ assert.deepEqual(edgeProgress({step: 0, unlockLevel: 260}, 260), {next: 'edge_1', text: '0/3'});
+ assert.deepEqual(edgeProgress({step: 2, unlockLevel: 260}, 300), {next: 'edge_3', text: '2/3'});
+ assert.equal(edgeProgress({step: 3, unlockLevel: 260}, 300), null);
+ assert.equal(edgeProgress(undefined, 300), null);
+});
+
+test('levels read as the HUD counts them', () => {
+ assert.equal(levelName(100), 'Cấp 100');
+ assert.equal(levelName(260), 'Tận Sức 160');
+});
 
 const NOW = 1_000_000;
 const orchard = {trees: [null, {kind: 'apple', readyAt: NOW + 5000, ripe: false}, {kind: 'pear', readyAt: NOW - 1, ripe: false}, {kind: 'plum', readyAt: NOW + 9, ripe: true}, null, null],

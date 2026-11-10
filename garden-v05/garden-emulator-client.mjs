@@ -1,4 +1,4 @@
-import {packTotal} from './ui-utils.mjs?v=25.1.4';
+import {packTotal} from './ui-utils.mjs?v=25.1.5';
 const PROJECT='demo-hpvnn-garden', UID='garden-demo-member';
 // ?functionsPort=5002: a second Functions emulator beside the shared Firestore/Auth one (one per worktree).
 const PORT=/^\d{4,5}$/.test(new URLSearchParams(globalThis.location?.search||'').get('functionsPort')||'')?new URLSearchParams(globalThis.location.search).get('functionsPort'):'5001';

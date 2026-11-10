@@ -1,8 +1,8 @@
-import {setupBuildDecorDock} from './build-decor-dock.mjs?v=25.1.4';
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=25.1.4';
-import { $, button, el, duration, hours, num, realHours, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=25.1.4';
-import { DB } from './balance-data.mjs?v=25.1.4';
-import { makeRecipeIcon } from './recipe-art-ui.mjs?v=25.1.4';
+import {setupBuildDecorDock} from './build-decor-dock.mjs?v=25.1.5';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=25.1.5';
+import { $, button, el, duration, hours, levelName, num, realHours, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=25.1.5';
+import { DB } from './balance-data.mjs?v=25.1.5';
+import { makeRecipeIcon } from './recipe-art-ui.mjs?v=25.1.5';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);
@@ -161,11 +161,11 @@ function expansionTitle(expansion) {
 }
 
 function expansionEffect(expansion) {
-  return expansion.kind === 'plot' ? 'Thêm 9 ô trồng' : expansion.kind === 'pond' ? `${expansion.capacityAfter} ô ao` : `Tổng ${expansion.capacityAfter} chỗ nuôi`;
+  return expansion.kind === 'edge' ? `Mở Vườn cây · bước ${expansion.capacityAfter}/3` : expansion.kind === 'plot' ? 'Thêm 9 ô trồng' : expansion.kind === 'pond' ? `${expansion.capacityAfter} ô ao` : `Tổng ${expansion.capacityAfter} chỗ nuôi`;
 }
 
 function expansionShortEffect(expansion) {
-  return expansion.kind === 'plot' ? '+9 ô trồng' : expansion.kind === 'pond' ? `${expansion.capacityAfter} ô ao` : `${expansion.capacityAfter} chỗ nuôi`;
+  return expansion.kind === 'edge' ? `Vườn cây · bước ${expansion.capacityAfter}/3` : expansion.kind === 'plot' ? '+9 ô trồng' : expansion.kind === 'pond' ? `${expansion.capacityAfter} ô ao` : `${expansion.capacityAfter} chỗ nuôi`;
 }
 
 function stateNow(E, state) {
@@ -271,7 +271,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
 
   function tileBadge(mode, entry, state, now) {
     if (mode === 'craft') return entry.hours > 0 ? { text: hours(realHours(entry, state.level)).replace(' giờ', 'g').replace(' phút', 'p'), kind: 'time' } : null;
-    if (entry.level > state.level) return { text: `Cấp ${entry.level}`, kind: 'lock' };
+    if (entry.level > state.level) return { text: levelName(entry.level), kind: 'lock' };
     const job = (state.construction ?? []).find(item => item.id === entry.id);
     if (job) return Number(job.readyAt) <= Number(now) ? { text: 'Xong', kind: 'ready' } : { text: 'Đang xây', kind: 'busy' };
     return null;
@@ -454,10 +454,10 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     dom.captionMeta.textContent = `${expansion.hours > 0 ? '⏱ ' + hours(realHours(expansion, state.level)) : 'Tức thì'} · ${expansionShortEffect(expansion)}`;
 
     let reason = '';
-    if (!choice.unlocked) reason = `Mở ở cấp ${expansion.level}`;
+    if (!choice.unlocked) reason = `Mở ở ${levelName(expansion.level)}`;
     else if (choice.queued && choice.ready) reason = 'Đã xong · bấm Nhận';
     else if (choice.queued) reason = 'Đang xây';
-    else if (choice.sameKindBusy) reason = `Đang xây ${expansion.kind === 'plot' ? 'thửa' : expansion.kind === 'pond' ? 'ao' : 'chuồng'} khác`;
+    else if (choice.sameKindBusy) reason = expansion.kind === 'edge' ? 'Bác Hagrid đang nhờ việc khác' : `Đang xây ${expansion.kind === 'plot' ? 'thửa' : expansion.kind === 'pond' ? 'ao' : 'chuồng'} khác`;
     else if (!choice.previousBuilt) reason = `Cần xây ${expansionTitle(choice.previous)} trước`;
     // Same order as the server: crops are checked before Galleons.
     else if (choice.missing) reason = choice.costs.some(c => c.have < c.need) ? 'Thiếu nông sản' : 'Thiếu Galleons';
@@ -468,7 +468,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     const ready = getReady();
     let label = 'Xây';
     if (!ready) label = 'Đợi chút';
-    else if (!choice.unlocked) label = `Cấp ${expansion.level}`;
+    else if (!choice.unlocked) label = levelName(expansion.level);
     else if (choice.ready) label = 'Xong · Nhận';
     else if (choice.queued || choice.sameKindBusy) label = 'Đang xây';
     else if (choice.missing) label = 'Thiếu đồ';
@@ -528,7 +528,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
   }
 
   refresh();
-  return { refresh, selectDecor: id => buildDecor?.select(id) };
+  return { refresh, selectDecor: id => buildDecor?.select(id), selectBuild: id => { local.build.selectedId = id; buildDecor?.showBuild(); } };
 }
 
 export default setupWorkTrays;

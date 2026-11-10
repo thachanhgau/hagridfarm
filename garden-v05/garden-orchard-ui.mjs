@@ -1,15 +1,19 @@
 // Garden expansion phase 3 «Vườn cây lâu năm» (docs/garden-expansion-plan.md §11): the orchard dock and Hagrid's three
 // requests text. Everything comes from snapshot.orchard (server garden-orchard-core); this module only shows it and
 // sends {action:'orchard', kind: plant|harvest|fell, …}.
-import {el, button, num, duration, itemDisplayName, itemArtVisual} from './ui-utils.mjs?v=25.1.4';
-import {pixelIcon, ICONS} from './pixel-icons.mjs?v=25.1.4';
+import {el, button, num, duration, itemDisplayName, itemArtVisual} from './ui-utils.mjs?v=25.1.5';
+import {pixelIcon, ICONS} from './pixel-icons.mjs?v=25.1.5';
 
+const EDGE_STEPS = 3;
 export const SAPLINGS = Object.freeze({apple: {label: 'Táo', item: 'sapling_apple'}, pear: {label: 'Lê', item: 'sapling_pear'}, plum: {label: 'Mận', item: 'sapling_plum'}});
 
 /** «Việc bác Hagrid nhờ» card line: step N of M and the price (0 Galleons; the crops show as chips). */
 export const edgeStepText = (step, total, galleons = 0) => `Việc bác Hagrid nhờ · bước ${step}/${total} · ${num(galleons)} Galleons`;
 
 const ripeAt = (tree, now) => Boolean(tree && (tree.ripe || Number(tree.readyAt) <= now));
+
+/** From the unlock level until the orchard stands: Hagrid's next request and the steps done. */
+export const edgeProgress = (edge, level) => (!edge || level < edge.unlockLevel || edge.step >= EDGE_STEPS ? null : {next: `edge_${edge.step + 1}`, text: `${edge.step}/${EDGE_STEPS}`});
 
 /** Six pits: empty, growing (with readyAt) or ripe. */
 export const treeTiles = (orchard, now) => (orchard?.trees || []).map((tree, index) => (!tree ? {index, state: 'empty'}
@@ -31,7 +35,7 @@ export const harvestText = items => Object.entries(items || {}).filter(([, n]) =
  * The «Vườn cây» dock. `render(ctx)` redraws from ctx = {orchard, now}; `act(command, text)` runs a server command.
  * «Chặt» asks for a second tap inside the dock (no browser dialog).
  */
-export function createOrchardDock({dock, act}) {
+export function createOrchardDock({dock, act, onBuy}) {
  let sapling = 'apple', confirm = null, last = null;
  const glyph = (name, fallback) => pixelIcon(ICONS[name] ? name : fallback, 1);
  function render(ctx) {
@@ -51,9 +55,10 @@ export function createOrchardDock({dock, act}) {
   }));
   const cells = tiles.map(t => {
    if (t.state === 'empty') {
-    const b = button('', () => act({action: 'orchard', kind: 'plant', spot: t.index, sapling}, `Trồng cây ${SAPLINGS[sapling].label.toLowerCase()} · hố ${t.index + 1}.`),
-     {class: 'pond-lot is-empty', disabled: !have, 'aria-label': `Hố ${t.index + 1} · trồng ${SAPLINGS[sapling].label}`});
-    b.append(glyph('seed', 'seed'), el('small', {text: '+'}));
+    // No sapling of any kind: the pit goes to the store instead of sitting dead.
+    const b = button('', have ? () => act({action: 'orchard', kind: 'plant', spot: t.index, sapling}, `Trồng cây ${SAPLINGS[sapling].label.toLowerCase()} · hố ${t.index + 1}.`) : onBuy,
+     {class: 'pond-lot is-empty', 'aria-label': have ? `Hố ${t.index + 1} · trồng ${SAPLINGS[sapling].label}` : `Hố ${t.index + 1} · mua cây non`});
+    b.append(glyph('seed', 'seed'), el('small', {text: have ? '+' : 'Mua'}));
     return b;
    }
    if (confirm === t.index) {

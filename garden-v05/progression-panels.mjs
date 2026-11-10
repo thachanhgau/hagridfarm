@@ -1,16 +1,16 @@
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=25.1.4';
-import {edgeStepText} from './garden-orchard-ui.mjs?v=25.1.4';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=25.1.4';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=25.1.4';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=25.1.4";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=25.1.4";
-import {$,el,button,icon,num,duration,hours,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=25.1.4";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=25.1.4";
-import {renderTourSection} from "./garden-tour.mjs?v=25.1.4";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=25.1.4";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=25.1.4";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=25.1.4";
-import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=25.1.4";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=25.1.5';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=25.1.5';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=25.1.5';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=25.1.5';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=25.1.5";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=25.1.5";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=25.1.5";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=25.1.5";
+import {renderTourSection} from "./garden-tour.mjs?v=25.1.5";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=25.1.5";
+import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=25.1.5";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=25.1.5";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=25.1.5";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -222,13 +222,13 @@ export function createPanels(ctx){
    body.append(paragraph(s.plots.length+"/"+E.plotLimit(s)+" thửa · "+E.housingCapacity(s)+"/18 chỗ nuôi."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
    // the next locked build of each kind shows as "Chờ cấp N" so an empty panel never reads as broken
    for(const e of DB.expansions.filter(e=>e.level<=s.level||e===DB.expansions.find(x=>x.kind===e.kind&&x.level>s.level))){
-    const same=DB.expansions.filter(x=>x.kind===e.kind),at=same.indexOf(e),number=Number(e.id.split("_")[1]),title=e.label||(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=at<1||s.built.includes(same[at-1].id),locked=s.level<e.level,k=card(title,"Cấp "+e.level+" · "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
+    const same=DB.expansions.filter(x=>x.kind===e.kind),at=same.indexOf(e),number=Number(e.id.split("_")[1]),title=e.label||(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=at<1||s.built.includes(same[at-1].id),locked=s.level<e.level,k=card(title,levelName(e.level)+" · "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
     k.classList.toggle("locked",locked);
     if(!done&&!job)k.append(priceRow(s,e,wallet));
     k.append(paragraph(e.kind==="edge"?edgeStepText(at+1,same.length,e.galleons):(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi")));
     if(done)k.append(paragraph("Đã xây","ready-text"));
     else if(job)k.append(timer(job.readyAt),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})),...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));
-    else k.append(paragraph(locked?"Chờ cấp "+e.level:!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));
+    else k.append(paragraph(locked?"Chờ "+levelName(e.level):!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));
     g.append(k);
    }
    body.append(g);

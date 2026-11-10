@@ -1,5 +1,5 @@
 // Authored habitat sprites; placement and ambient effects remain presentation-only.
-import {HABITAT_ART} from './complete-object-art.mjs?v=25.1.4';
+import {HABITAT_ART} from './complete-object-art.mjs?v=25.1.5';
 // Grounded props occupy the clear pockets between actors; taller silhouettes sort with the rails.
 const palette={d:'#4a3c2c',w:'#735044',h:'#b49a66',s:'#687486',l:'#a6b1ae',g:'#3f6a45',v:'#71934b',a:'#e7ae73',b:'#70a8b6',p:'#a57554',r:'#a57554',c:'#d6d8bf',e:'#ed8a45',f:'#ffc36b'};
 export const HABITAT_SPECIES=Object.freeze(Object.keys(HABITAT_ART));

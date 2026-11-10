@@ -1,8 +1,8 @@
-import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=25.1.4';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=25.1.4';
-import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=25.1.4';
-import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=25.1.4';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.4';
+import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=25.1.5';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=25.1.5';
+import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=25.1.5';
+import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=25.1.5';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.5';
 
 export function ownedDecorChoices(decorations,assets) {
  return [...new Set(decorations?.owned||[])].filter(id=>assets.has(id)).map(id=>({
@@ -108,5 +108,5 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
   refresh();entries.get(selected)?.control.scrollIntoView({block:'nearest',inline:'nearest'});
  }
  refresh();
- return {buildPane,refresh,select};
+ return {buildPane,refresh,select,showBuild:()=>show('build')};
 }

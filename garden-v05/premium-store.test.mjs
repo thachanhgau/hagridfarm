@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=25.1.4';
-import {STORE_CATALOG,CATALOG_VERSION,storePrice} from './garden-store-catalog.mjs?v=25.1.4';
-import {ITEM_ART} from './item-art.mjs?v=25.1.4';
-import {itemArtKey} from './ui-utils.mjs?v=25.1.4';
+import {PREMIUM_PRODUCTS,bundlePercent,saleTotal,saleLeft} from './premium-products.mjs?v=25.1.5';
+import {STORE_CATALOG,CATALOG_VERSION,storePrice} from './garden-store-catalog.mjs?v=25.1.5';
+import {ITEM_ART} from './item-art.mjs?v=25.1.5';
+import {itemArtKey} from './ui-utils.mjs?v=25.1.5';
 
 // Level-500 roadmap P4 (§10): what the store shows must equal what the server charges (garden-premium-core saleTotal).
 test('the premium catalog is in the store mirror with the 25.0 catalog version', () => {
@@ -43,7 +43,7 @@ test('unknown premium art is explicit and never the generic medal', () => {
 
 // Server pricedPurchase: a hand sale on a regular item takes its percent off the tiered total.
 test('a hand sale on seeds discounts the tiered total; no sale keeps it', async () => {
- const {packTotal} = await import('./ui-utils.mjs?v=25.1.4');
+ const {packTotal} = await import('./ui-utils.mjs?v=25.1.5');
  const seed = {price: 6, dailyLimit: 1000, dailyRemaining: 2, overflowMultiplier: 5};
  assert.equal(packTotal(seed, 3), 6 * 2 + 6 * 5);
  assert.equal(packTotal({...seed, sale: {percent: 50}}, 3), 21);
