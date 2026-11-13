@@ -146,3 +146,5 @@
  #gameShell :is(.play-dock,.play-dock *,.store-popover,.store-popover *,#panel,#panel *,.owl-letter,.owl-letter *){scrollbar-width:none}
  #gameShell :is(.play-dock,.play-dock *,.store-popover,.store-popover *,#panel,#panel *,.owl-letter,.owl-letter *)::-webkit-scrollbar{display:none}
 }
+/* 8 tools need ~380px: on a phone the row slides sideways (no scrollbar) and stops before the dock toggle instead of running under it */
+#playDock .tools{padding-right:0;margin-right:50px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x;scroll-snap-type:x proximity}#playDock .tools::-webkit-scrollbar{display:none}#playDock .tool{scroll-snap-align:start}

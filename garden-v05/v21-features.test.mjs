@@ -11,9 +11,9 @@ import {
 } from './garden-postcard.mjs';
 import {dayKeyFor, loadOwlQuests, recordOwlQuestAction, syncQuestsWithGardenState, claimOwlQuest, hasClaimableOwlQuest, setOwlQuestContext, pickDailyQuests, OWL_QUEST_POOL} from './garden-quests.mjs';
 import {KEEPSAKE_ART} from './complete-object-art.mjs';
-import {ITEM_ART} from './item-art.mjs?v=25.1.5';
-import {flowArtSpec} from './flow-item-ui.mjs?v=25.1.5';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=25.1.5';
+import {ITEM_ART} from './item-art.mjs?v=25.1.6';
+import {flowArtSpec} from './flow-item-ui.mjs?v=25.1.6';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=25.1.6';
 
 globalThis.FARM_SCENE = structuredClone(scene);
 globalThis.FARM_MOTION = motion;

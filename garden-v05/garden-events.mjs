@@ -1,8 +1,8 @@
-import {getGardenStorage} from './garden-storage.mjs?v=25.1.5';
-import {cropVisualKind, el, button, num, visualItemIcon} from './ui-utils.mjs?v=25.1.5';
-import {stableHash} from './scene-animation.mjs?v=25.1.5';
-import {dayKeyFor} from './garden-quests.mjs?v=25.1.5';
-import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=25.1.5';
+import {getGardenStorage} from './garden-storage.mjs?v=25.1.6';
+import {cropVisualKind, el, button, num, visualItemIcon} from './ui-utils.mjs?v=25.1.6';
+import {stableHash} from './scene-animation.mjs?v=25.1.6';
+import {dayKeyFor} from './garden-quests.mjs?v=25.1.6';
+import {pixelIcon, rewardChips} from './pixel-icons.mjs?v=25.1.6';
 
 export const EVENT_STORAGE_KEY = 'hpvn-garden-v23-events';
 export const AFFINITY_STORAGE_KEY = 'hpvn-garden-v23-affinity';

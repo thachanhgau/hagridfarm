@@ -1,8 +1,8 @@
-import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=25.1.5';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=25.1.5';
-import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=25.1.5';
-import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=25.1.5';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.5';
+import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=25.1.6';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=25.1.6';
+import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=25.1.6';
+import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=25.1.6';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.6';
 
 export function ownedDecorChoices(decorations,assets) {
  return [...new Set(decorations?.owned||[])].filter(id=>assets.has(id)).map(id=>({

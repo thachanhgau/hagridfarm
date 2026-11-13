@@ -1,9 +1,9 @@
 // «Gia tinh trông vườn» (25.0 S2 part 2, server garden-elf-core): the wage box the member fills with knits from
 // Giỏ đan của Hermione (action fillElfWages) and today's jobs (snapshot.elves). Opened by tapping a gia tinh;
 // mobile-game imports it on that first tap (25.0 speed budget).
-import {$,el,num,visualItemIcon} from './ui-utils.mjs?v=25.1.5';
-import {iconButton} from './pixel-icons.mjs?v=25.1.5';
-import {elfJobText,elfShiftText} from './garden-elves.mjs?v=25.1.5';
+import {$,el,num,visualItemIcon} from './ui-utils.mjs?v=25.1.6';
+import {iconButton} from './pixel-icons.mjs?v=25.1.6';
+import {elfJobText,elfShiftText} from './garden-elves.mjs?v=25.1.6';
 
 const WAGES=Object.freeze([['elf_sock','Vớ len'],['elf_hat','Nón len']]);
 const wageName=id=>WAGES.find(([key])=>key===id)?.[1]||id;
