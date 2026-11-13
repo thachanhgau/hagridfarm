@@ -370,5 +370,741 @@
       ]
     },
     "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated master candidate only."
+  },
+  {
+    "date": "2026-11-13",
+    "sheet": "frame-badges-a",
+    "candidate": 1,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Create a transparent PNG pixel-art sprite MASTER SHEET, exactly 1536 x 1024 pixels, invisible 3 columns x 2 rows of 512 x 512 cells. No text, labels, numerals, lines or background. Genuine alpha 0 outside artwork, alpha 255 inside. CRITICAL: single uniform square grid of 16 x 16 physical pixels per logical pixel; flat solid colour per square. Entire sheet logically 96 x 64 pixels. Tiny simple game icons, NOT detailed pixel illustration. One logical block #231F2E outline. No antialiasing, gradients, blur, halo, glow, cast shadows, textures, sub-block detail or noise. Top-left light using flat highlight blocks. Bold bright silhouettes for dark chat bubbles, do not draw bubbles. At most SIX colours per item including outline, ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Never pure black or white. Centre each icon within its cell, at least 48 physical pixels completely empty margin on every side. Row-major item order. Each badge fits at most 20 x 20 logical blocks (320 x 320 physical pixels), centred at cell (256,256). SIX badges: 1 top-left tiny seedling, two round leaves #71934B/#B0BD67, short stem, little soil mound #8B4A3F/#C97952. 2 top-middle three-leaf silvery mint sprig #A6B1AE/#D6D8BF/#B7DEE0 tied with twine bow #A57554. 3 top-right golden sprig, three gold leaves #FFC36B/#E7AE73 and ONE red berry #C75B4B. 4 bottom-left golden laurel wreath OPEN AT TOP #FFC36B/#E7AE73, green tips #71934B, central five-point star #F5D69A. 5 bottom-middle ripe round pumpkin #ED8A45/#C97952, curly green vine and ONE leaf #71934B, small garden trowel #A6B1AE leaning on pumpkin. 6 bottom-right firework burst EIGHT rays of pink #C75B4B, gold #FFC36B and pale blue #B7DEE0 around bright gold core, a few sparks. Charming simple 20-pixel icons enlarged precisely 16x.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1d3fd-414c-7823-9590-339ffa40e310/exec-b43880f8-a661-44d3-86e1-d61404021eba.png",
+    "selected": false,
+    "destination": null,
+    "sha256": "1de1a9c412f440f09617ef77de1b332353de52bbdde592fa172817933591bfb1",
+    "inspection": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "transparent_pixels": 1055557,
+      "opaque_pixels": 0,
+      "semitransparent_pixels": 517307,
+      "visible_colors": 69485,
+      "off_palette_colors": 69483,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "cells": [
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            9,
+            512,
+            512
+          ],
+          "visible_colors": 8302,
+          "nontransparent_pixels": 51699
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            15,
+            512,
+            512
+          ],
+          "visible_colors": 11750,
+          "nontransparent_pixels": 76969
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            488,
+            512
+          ],
+          "visible_colors": 11660,
+          "nontransparent_pixels": 67542
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            3,
+            512,
+            512
+          ],
+          "visible_colors": 16887,
+          "nontransparent_pixels": 107362
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "visible_colors": 17778,
+          "nontransparent_pixels": 111729
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            502,
+            512
+          ],
+          "visible_colors": 26844,
+          "nontransparent_pixels": 102006
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated candidate only, not approved native art."
+  },
+  {
+    "date": "2026-11-13",
+    "sheet": "frame-badges-a",
+    "candidate": 2,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Create a transparent PNG pixel-art sprite MASTER SHEET, exactly 1536 x 1024 pixels, invisible 3 columns x 2 rows of 512 x 512 cells. No text, labels, numerals, lines or background. Genuine alpha 0 outside artwork, alpha 255 inside. CRITICAL: single uniform square grid of 16 x 16 physical pixels per logical pixel; flat solid colour per square. Entire sheet logically 96 x 64 pixels. Tiny simple game icons, NOT detailed pixel illustration. One logical block #231F2E outline. No antialiasing, gradients, blur, halo, glow, cast shadows, textures, sub-block detail or noise. Top-left light using flat highlight blocks. Bold bright silhouettes for dark chat bubbles, do not draw bubbles. At most SIX colours per item including outline, ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Never pure black or white. Centre each icon within its cell, at least 48 physical pixels completely empty margin on every side. Row-major item order. Each badge fits at most 20 x 20 logical blocks (320 x 320 physical pixels), centred at cell (256,256). SIX badges: 1 top-left tiny seedling, two round leaves #71934B/#B0BD67, short stem, little soil mound #8B4A3F/#C97952. 2 top-middle three-leaf silvery mint sprig #A6B1AE/#D6D8BF/#B7DEE0 tied with twine bow #A57554. 3 top-right golden sprig, three gold leaves #FFC36B/#E7AE73 and ONE red berry #C75B4B. 4 bottom-left golden laurel wreath OPEN AT TOP #FFC36B/#E7AE73, green tips #71934B, central five-point star #F5D69A. 5 bottom-middle ripe round pumpkin #ED8A45/#C97952, curly green vine and ONE leaf #71934B, small garden trowel #A6B1AE leaning on pumpkin. 6 bottom-right firework burst EIGHT rays of pink #C75B4B, gold #FFC36B and pale blue #B7DEE0 around bright gold core, a few sparks. Charming simple 20-pixel icons enlarged precisely 16x. Candidate 2: correct the soft halo and too-fine grid. NO BACKGROUND OR HALO whatsoever: all empty pixels must have zero alpha, no coloured cloud around icons. Make severe coarse pixel mosaics: precisely 20 x 20 pixel designs enlarged by 16; each colour region hard-edged, no gradients within blocks. Restrict seedling to exactly five colours including outline; each leaf single base colour, no cream highlights. The icon must be no larger than 320 x 320 physical px.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1d3fd-414c-7823-9590-339ffa40e310/exec-240c79c1-d996-411f-b123-db641b4829bf.png",
+    "selected": true,
+    "destination": "garden-v05/environment/floo-frames/masters/frame-badges-a.png",
+    "sha256": "e34185cbc4c99e89f8da36ef41b42b0329350a2a2905b1fe3f9dd1c98ce34b77",
+    "inspection": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "transparent_pixels": 1042489,
+      "opaque_pixels": 0,
+      "semitransparent_pixels": 530375,
+      "visible_colors": 51621,
+      "off_palette_colors": 51618,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "cells": [
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            512,
+            510
+          ],
+          "visible_colors": 7047,
+          "nontransparent_pixels": 66724
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            23,
+            512,
+            512
+          ],
+          "visible_colors": 10571,
+          "nontransparent_pixels": 88657
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            17,
+            484,
+            512
+          ],
+          "visible_colors": 10186,
+          "nontransparent_pixels": 81605
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            1,
+            512,
+            490
+          ],
+          "visible_colors": 16813,
+          "nontransparent_pixels": 105760
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            0,
+            512,
+            512
+          ],
+          "visible_colors": 12188,
+          "nontransparent_pixels": 112985
+        },
+        {
+          "bbox_alpha_gt_0": [
+            11,
+            6,
+            498,
+            488
+          ],
+          "visible_colors": 14872,
+          "nontransparent_pixels": 74644
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated candidate only, not approved native art."
+  },
+  {
+    "date": "2026-11-13",
+    "sheet": "frame-badges-b",
+    "candidate": 1,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Create a transparent PNG pixel-art sprite MASTER SHEET, exactly 1536 x 1024 pixels, invisible 3 columns x 2 rows of 512 x 512 cells. No text, labels, numerals, lines or background. Genuine alpha 0 outside artwork, alpha 255 inside. CRITICAL: single uniform square grid of 16 x 16 physical pixels per logical pixel; flat solid colour per square. Entire sheet logically 96 x 64 pixels. Tiny simple game icons, NOT detailed pixel illustration. One logical block #231F2E outline. No antialiasing, gradients, blur, halo, glow, cast shadows, textures, sub-block detail or noise. Top-left light using flat highlight blocks. Bold bright silhouettes for dark chat bubbles, do not draw bubbles. At most SIX colours per item including outline, ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Never pure black or white. Centre each icon within its cell, at least 48 physical pixels completely empty margin on every side. Row-major item order. Each badge fits at most 20 x 20 logical blocks (320 x 320 physical pixels). FIVE two-handled House Cup trophy badges, identical bowl/stem/handle silhouette for first four. Gold #FFC36B/#E7AE73/#A57554 bowl, house enamel band on bowl AND foot. Keep six colours max by choosing only two gold shades when needed. 1 top-left Gryffindor red enamel #C75B4B/#874056. 2 top-middle Hufflepuff black enamel #231F2E/#41465C and brighter gold #F5D69A. 3 top-right Ravenclaw enamel #6961A6/#3E3B70 and bronze handles #A57554. 4 bottom-left Slytherin enamel #3F6A45/#24483F and silver handles #A6B1AE/#D6D8BF (use ONE gold #FFC36B to stay within six colours). 5 bottom-middle grandest all-gold cup #FFC36B/#E7AE73/#A57554, star on bowl #F5D69A, two small leaves at foot #71934B. 6 bottom-right MUST BE COMPLETELY EMPTY transparent. No pedestal beyond cup foot, no other objects.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1d3fd-414c-7823-9590-339ffa40e310/exec-f4ebad46-0666-4c53-9a32-5209c73803cd.png",
+    "selected": true,
+    "destination": "garden-v05/environment/floo-frames/masters/frame-badges-b.png",
+    "sha256": "bfd5559943935f06187475f9af28b42a8e98dad10ac92070eb93c4f0e39fe375",
+    "inspection": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "transparent_pixels": 1122564,
+      "opaque_pixels": 0,
+      "semitransparent_pixels": 450300,
+      "visible_colors": 39941,
+      "off_palette_colors": 39938,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "cells": [
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            9,
+            512,
+            512
+          ],
+          "visible_colors": 11629,
+          "nontransparent_pixels": 87638
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            7,
+            512,
+            512
+          ],
+          "visible_colors": 9773,
+          "nontransparent_pixels": 88919
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            9,
+            502,
+            512
+          ],
+          "visible_colors": 10678,
+          "nontransparent_pixels": 87009
+        },
+        {
+          "bbox_alpha_gt_0": [
+            33,
+            0,
+            512,
+            488
+          ],
+          "visible_colors": 11441,
+          "nontransparent_pixels": 86156
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            512,
+            472
+          ],
+          "visible_colors": 12962,
+          "nontransparent_pixels": 99782
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            1,
+            484,
+            456
+          ],
+          "visible_colors": 93,
+          "nontransparent_pixels": 796
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated candidate only, not approved native art."
+  },
+  {
+    "date": "2026-11-13",
+    "sheet": "frame-badges-b",
+    "candidate": 2,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Create a transparent PNG pixel-art sprite MASTER SHEET, exactly 1536 x 1024 pixels, invisible 3 columns x 2 rows of 512 x 512 cells. No text, labels, numerals, lines or background. Genuine alpha 0 outside artwork, alpha 255 inside. CRITICAL: single uniform square grid of 16 x 16 physical pixels per logical pixel; flat solid colour per square. Entire sheet logically 96 x 64 pixels. Tiny simple game icons, NOT detailed pixel illustration. One logical block #231F2E outline. No antialiasing, gradients, blur, halo, glow, cast shadows, textures, sub-block detail or noise. Top-left light using flat highlight blocks. Bold bright silhouettes for dark chat bubbles, do not draw bubbles. At most SIX colours per item including outline, ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Never pure black or white. Centre each icon within its cell, at least 48 physical pixels completely empty margin on every side. Row-major item order. Each badge fits at most 20 x 20 logical blocks (320 x 320 physical pixels). FIVE two-handled House Cup trophy badges, identical bowl/stem/handle silhouette for first four. Gold #FFC36B/#E7AE73/#A57554 bowl, house enamel band on bowl AND foot. Keep six colours max by choosing only two gold shades when needed. 1 top-left Gryffindor red enamel #C75B4B/#874056. 2 top-middle Hufflepuff black enamel #231F2E/#41465C and brighter gold #F5D69A. 3 top-right Ravenclaw enamel #6961A6/#3E3B70 and bronze handles #A57554. 4 bottom-left Slytherin enamel #3F6A45/#24483F and silver handles #A6B1AE/#D6D8BF (use ONE gold #FFC36B to stay within six colours). 5 bottom-middle grandest all-gold cup #FFC36B/#E7AE73/#A57554, star on bowl #F5D69A, two small leaves at foot #71934B. 6 bottom-right MUST BE COMPLETELY EMPTY transparent. No pedestal beyond cup foot, no other objects. Candidate 2: remove all soft halo, gradient shading and sub-block details. Pure flat squares only. Each cup is exactly a 20 x 20 logical-pixel design enlarged 16x, width at most 320 physical pixels INCLUDING handles. All empty space including last cell is alpha ZERO. No dark backdrop. All five cups must be identical size, grand cup richer in motif only. Enamel band AND foot use assigned house colours. No glow, diffusion, or shadows.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1d3fd-414c-7823-9590-339ffa40e310/exec-ece498d1-9db0-4140-b239-690b14bb7fa7.png",
+    "selected": false,
+    "destination": null,
+    "sha256": "92d5af062e7e1cf62b5a900f913ab1e830487915d5262eeaf22a4cde830a2be0",
+    "inspection": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "transparent_pixels": 1092400,
+      "opaque_pixels": 0,
+      "semitransparent_pixels": 480464,
+      "visible_colors": 37349,
+      "off_palette_colors": 37348,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "cells": [
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            9,
+            512,
+            512
+          ],
+          "visible_colors": 10462,
+          "nontransparent_pixels": 93816
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            41,
+            512,
+            512
+          ],
+          "visible_colors": 9186,
+          "nontransparent_pixels": 93686
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            21,
+            488,
+            510
+          ],
+          "visible_colors": 10385,
+          "nontransparent_pixels": 93281
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            11,
+            512,
+            490
+          ],
+          "visible_colors": 11012,
+          "nontransparent_pixels": 93887
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            462,
+            487
+          ],
+          "visible_colors": 12498,
+          "nontransparent_pixels": 105154
+        },
+        {
+          "bbox_alpha_gt_0": [
+            9,
+            7,
+            408,
+            388
+          ],
+          "visible_colors": 93,
+          "nontransparent_pixels": 640
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated candidate only, not approved native art."
+  },
+  {
+    "date": "2026-11-13",
+    "sheet": "tan-suc-gems-a",
+    "candidate": 1,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Create a transparent PNG pixel-art sprite MASTER SHEET, exactly 1536 x 1024 pixels, invisible 3 columns x 2 rows of 512 x 512 cells. No text, labels, numerals, lines or background. Genuine alpha 0 outside artwork, alpha 255 inside. CRITICAL: single uniform square grid of 16 x 16 physical pixels per logical pixel; flat solid colour per square. Entire sheet logically 96 x 64 pixels. Tiny simple game icons, NOT detailed pixel illustration. One logical block #231F2E outline. No antialiasing, gradients, blur, halo, glow, cast shadows, textures, sub-block detail or noise. Top-left light using flat highlight blocks. Bold bright silhouettes for dark chat bubbles, do not draw bubbles. At most SIX colours per item including outline, ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Never pure black or white. Centre each icon within its cell, at least 48 physical pixels completely empty margin on every side. Row-major item order. SIX front-facing faceted cut GEM stones. SAME diamond/brilliant cut silhouette in each cell, each entire gem fits ONLY 9 x 9 logical blocks = 144 x 144 physical pixels. Tiny gem centred, huge empty space around it; do not enlarge beyond 9 blocks. Single bright facet top-left; one-block outline #231F2E. 1 top-left bronze #A57554/#E7AE73/#735044. 2 top-middle silver #A6B1AE/#D6D8BF/#687486. 3 top-right gold #FFC36B/#F5D69A/#E7AE73. 4 bottom-left emerald #71934B/#B0BD67/#3F6A45. 5 bottom-middle sapphire-ice #70A8B6/#B7DEE0/#41465C. 6 bottom-right amethyst #6961A6/#B7DEE0/#3E3B70. Four colours per gem including outline, minimal large flat facets, no sparkles outside gems.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1d3fd-414c-7823-9590-339ffa40e310/exec-25e63be7-bed1-4945-948b-2ab6a63949a9.png",
+    "selected": false,
+    "destination": null,
+    "sha256": "fbf0b6850ca458521c45ce4d847ecec6bfa5f699bac321ea5b82750695017a30",
+    "inspection": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1317139,
+      "opaque_pixels": 4,
+      "semitransparent_pixels": 255721,
+      "visible_colors": 25196,
+      "off_palette_colors": 25188,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "cells": [
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            19,
+            512,
+            512
+          ],
+          "visible_colors": 4293,
+          "nontransparent_pixels": 42032
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            29,
+            512,
+            512
+          ],
+          "visible_colors": 3967,
+          "nontransparent_pixels": 42974
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            0,
+            492,
+            512
+          ],
+          "visible_colors": 6486,
+          "nontransparent_pixels": 42310
+        },
+        {
+          "bbox_alpha_gt_0": [
+            69,
+            0,
+            512,
+            480
+          ],
+          "visible_colors": 5338,
+          "nontransparent_pixels": 42947
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            0,
+            512,
+            512
+          ],
+          "visible_colors": 4201,
+          "nontransparent_pixels": 42919
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            408,
+            512
+          ],
+          "visible_colors": 4133,
+          "nontransparent_pixels": 42543
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated candidate only, not approved native art."
+  },
+  {
+    "date": "2026-11-13",
+    "sheet": "tan-suc-gems-a",
+    "candidate": 2,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Create a transparent PNG pixel-art sprite MASTER SHEET, exactly 1536 x 1024 pixels, invisible 3 columns x 2 rows of 512 x 512 cells. No text, labels, numerals, lines or background. Genuine alpha 0 outside artwork, alpha 255 inside. CRITICAL: single uniform square grid of 16 x 16 physical pixels per logical pixel; flat solid colour per square. Entire sheet logically 96 x 64 pixels. Tiny simple game icons, NOT detailed pixel illustration. One logical block #231F2E outline. No antialiasing, gradients, blur, halo, glow, cast shadows, textures, sub-block detail or noise. Top-left light using flat highlight blocks. Bold bright silhouettes for dark chat bubbles, do not draw bubbles. At most SIX colours per item including outline, ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Never pure black or white. Centre each icon within its cell, at least 48 physical pixels completely empty margin on every side. Row-major item order. SIX front-facing faceted cut GEM stones. SAME diamond/brilliant cut silhouette in each cell, each entire gem fits ONLY 9 x 9 logical blocks = 144 x 144 physical pixels. Tiny gem centred, huge empty space around it; do not enlarge beyond 9 blocks. Single bright facet top-left; one-block outline #231F2E. 1 top-left bronze #A57554/#E7AE73/#735044. 2 top-middle silver #A6B1AE/#D6D8BF/#687486. 3 top-right gold #FFC36B/#F5D69A/#E7AE73. 4 bottom-left emerald #71934B/#B0BD67/#3F6A45. 5 bottom-middle sapphire-ice #70A8B6/#B7DEE0/#41465C. 6 bottom-right amethyst #6961A6/#B7DEE0/#3E3B70. Four colours per gem including outline, minimal large flat facets, no sparkles outside gems. Candidate 2: The gems MUST be much smaller: each is ONLY nine pixels wide and nine tall logically, rendered in squares of exactly 16 physical pixels. Thus width EXACTLY 144 pixels or less in a 512 pixel cell. Diamond silhouette: top row 3 blocks, next row 5, middle row 9, taper lower rows to 1. Uniform ONE-block outline. Only 3 flat facet colours plus outline. All empty space is alpha ZERO, absolutely NO HALO, glow, vignette or gradient, no shadows. Do not fill the cell.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1d3fd-414c-7823-9590-339ffa40e310/exec-26dfb77c-7599-47d2-a79a-8f6e91bacd4e.png",
+    "selected": true,
+    "destination": "garden-v05/environment/floo-frames/masters/tan-suc-gems-a.png",
+    "sha256": "84748b0b0e85781e4a77c9d285fa11c29faed6ad78489a730e74cb2dd22be0b6",
+    "inspection": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "transparent_pixels": 1446966,
+      "opaque_pixels": 0,
+      "semitransparent_pixels": 125898,
+      "visible_colors": 17390,
+      "off_palette_colors": 17386,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "cells": [
+        {
+          "bbox_alpha_gt_0": [
+            55,
+            23,
+            512,
+            494
+          ],
+          "visible_colors": 3337,
+          "nontransparent_pixels": 21138
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            53,
+            512,
+            496
+          ],
+          "visible_colors": 2802,
+          "nontransparent_pixels": 21034
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            121,
+            485,
+            512
+          ],
+          "visible_colors": 4361,
+          "nontransparent_pixels": 20774
+        },
+        {
+          "bbox_alpha_gt_0": [
+            39,
+            39,
+            486,
+            456
+          ],
+          "visible_colors": 3709,
+          "nontransparent_pixels": 21057
+        },
+        {
+          "bbox_alpha_gt_0": [
+            73,
+            23,
+            512,
+            442
+          ],
+          "visible_colors": 2749,
+          "nontransparent_pixels": 20937
+        },
+        {
+          "bbox_alpha_gt_0": [
+            1,
+            0,
+            498,
+            474
+          ],
+          "visible_colors": 3091,
+          "nontransparent_pixels": 20958
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated candidate only, not approved native art."
+  },
+  {
+    "date": "2026-11-13",
+    "sheet": "tan-suc-gems-b",
+    "candidate": 1,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Create a transparent PNG pixel-art sprite MASTER SHEET, exactly 1536 x 1024 pixels, invisible 3 columns x 2 rows of 512 x 512 cells. No text, labels, numerals, lines or background. Genuine alpha 0 outside artwork, alpha 255 inside. CRITICAL: single uniform square grid of 16 x 16 physical pixels per logical pixel; flat solid colour per square. Entire sheet logically 96 x 64 pixels. Tiny simple game icons, NOT detailed pixel illustration. One logical block #231F2E outline. No antialiasing, gradients, blur, halo, glow, cast shadows, textures, sub-block detail or noise. Top-left light using flat highlight blocks. Bold bright silhouettes for dark chat bubbles, do not draw bubbles. At most SIX colours per item including outline, ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Never pure black or white. Centre each icon within its cell, at least 48 physical pixels completely empty margin on every side. Row-major item order. FOUR front-facing GEM icons, each fits ONLY 9 x 9 logical blocks = 144 x 144 physical pixels including rays. Tiny gem centred with huge empty space, one-block #231F2E outline. 1 top-left ruby faceted brilliant cut #C75B4B/#ED8A45/#874056. 2 top-middle ROUND pearl #D6D8BF with #B7DEE0 sheen top-left and #A6B1AE shade lower-right, flat pixel clusters. 3 top-right aurora brilliant cut, facets #B7DEE0/#B0BD67/#6961A6. 4 bottom-left sun grandest stone gold #FFC36B/#F5D69A, orange heart #ED8A45, exactly FOUR tiny rays, all within 9 x 9 blocks. 5 bottom-middle and 6 bottom-right COMPLETELY EMPTY transparent. No additional gems or sparkles.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1d3fd-414c-7823-9590-339ffa40e310/exec-7c36ae7f-ea9b-4d58-805b-468f94d28e00.png",
+    "selected": false,
+    "destination": null,
+    "sha256": "5d9e2afc37f97226d30c09d4bb9736cb673cd0e0f207be69dae6b256cb88194b",
+    "inspection": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "transparent_pixels": 1478235,
+      "opaque_pixels": 0,
+      "semitransparent_pixels": 94629,
+      "visible_colors": 20855,
+      "off_palette_colors": 20854,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "cells": [
+        {
+          "bbox_alpha_gt_0": [
+            25,
+            63,
+            512,
+            512
+          ],
+          "visible_colors": 5496,
+          "nontransparent_pixels": 22388
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            67,
+            512,
+            496
+          ],
+          "visible_colors": 3871,
+          "nontransparent_pixels": 22118
+        },
+        {
+          "bbox_alpha_gt_0": [
+            9,
+            87,
+            468,
+            502
+          ],
+          "visible_colors": 6119,
+          "nontransparent_pixels": 21880
+        },
+        {
+          "bbox_alpha_gt_0": [
+            27,
+            0,
+            496,
+            480
+          ],
+          "visible_colors": 6803,
+          "nontransparent_pixels": 28072
+        },
+        {
+          "bbox_alpha_gt_0": [
+            33,
+            15,
+            500,
+            480
+          ],
+          "visible_colors": 6,
+          "nontransparent_pixels": 132
+        },
+        {
+          "bbox_alpha_gt_0": [
+            15,
+            16,
+            474,
+            472
+          ],
+          "visible_colors": 4,
+          "nontransparent_pixels": 39
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated candidate only, not approved native art."
+  },
+  {
+    "date": "2026-11-13",
+    "sheet": "tan-suc-gems-b",
+    "candidate": 2,
+    "tool": "image_gen.imagegen (built-in)",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Create a transparent PNG pixel-art sprite MASTER SHEET, exactly 1536 x 1024 pixels, invisible 3 columns x 2 rows of 512 x 512 cells. No text, labels, numerals, lines or background. Genuine alpha 0 outside artwork, alpha 255 inside. CRITICAL: single uniform square grid of 16 x 16 physical pixels per logical pixel; flat solid colour per square. Entire sheet logically 96 x 64 pixels. Tiny simple game icons, NOT detailed pixel illustration. One logical block #231F2E outline. No antialiasing, gradients, blur, halo, glow, cast shadows, textures, sub-block detail or noise. Top-left light using flat highlight blocks. Bold bright silhouettes for dark chat bubbles, do not draw bubbles. At most SIX colours per item including outline, ONLY from #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Never pure black or white. Centre each icon within its cell, at least 48 physical pixels completely empty margin on every side. Row-major item order. FOUR front-facing GEM icons, each fits ONLY 9 x 9 logical blocks = 144 x 144 physical pixels including rays. Tiny gem centred with huge empty space, one-block #231F2E outline. 1 top-left ruby faceted brilliant cut #C75B4B/#ED8A45/#874056. 2 top-middle ROUND pearl #D6D8BF with #B7DEE0 sheen top-left and #A6B1AE shade lower-right, flat pixel clusters. 3 top-right aurora brilliant cut, facets #B7DEE0/#B0BD67/#6961A6. 4 bottom-left sun grandest stone gold #FFC36B/#F5D69A, orange heart #ED8A45, exactly FOUR tiny rays, all within 9 x 9 blocks. 5 bottom-middle and 6 bottom-right COMPLETELY EMPTY transparent. No additional gems or sparkles. Candidate 2: Correct all icons to SAME maximum 9 x 9 logical-block footprint INCLUDING sun rays, exactly 144 x 144 physical pixels maximum, centered. All blocks must be exactly 16x16 pixels. Sun orange heart means central orange core facet, not a heart symbol; four single-block rays at cardinal directions. Ruby and aurora use same simple diamond cut, no thin subdivisions. Pearl is a simple 9-block round disc with three flat clusters. Absolutely NO soft halo or gradients, all empty space truly transparent alpha 0 including two lower-right cells; solid blocks alpha 255. No backdrop, no shadows.",
+    "source": "/Users/thachanh/.codex/generated_images/01a1d3fd-414c-7823-9590-339ffa40e310/exec-b4291141-12a9-4ecf-a17b-ddc39429d831.png",
+    "selected": true,
+    "destination": "garden-v05/environment/floo-frames/masters/tan-suc-gems-b.png",
+    "sha256": "d2b2977617ee8f79382266a51a2ac240dccb6b72b9df6e9aec282f27ec2e2f25",
+    "inspection": {
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "transparent_pixels": 1377336,
+      "opaque_pixels": 0,
+      "semitransparent_pixels": 195528,
+      "visible_colors": 22066,
+      "off_palette_colors": 22063,
+      "uniform_16px_blocks": 0,
+      "total_blocks": 6144,
+      "cells": [
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            21,
+            512,
+            512
+          ],
+          "visible_colors": 5190,
+          "nontransparent_pixels": 38145
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "visible_colors": 5214,
+          "nontransparent_pixels": 53660
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "visible_colors": 6707,
+          "nontransparent_pixels": 50046
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "visible_colors": 7715,
+          "nontransparent_pixels": 53085
+        },
+        {
+          "bbox_alpha_gt_0": [
+            0,
+            0,
+            504,
+            470
+          ],
+          "visible_colors": 74,
+          "nontransparent_pixels": 409
+        },
+        {
+          "bbox_alpha_gt_0": [
+            15,
+            0,
+            480,
+            456
+          ],
+          "visible_colors": 22,
+          "nontransparent_pixels": 183
+        }
+      ]
+    },
+    "acceptance": "Fails strict grid/palette/alpha requirements; unmodified generated candidate only, not approved native art."
   }
 ]

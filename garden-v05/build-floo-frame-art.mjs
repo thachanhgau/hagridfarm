@@ -13,9 +13,17 @@ const M = 'environment/floo-frames/masters/';
 // [master, [name, size, canvas width] per cell in order]; a band corner fits 22 × 22, the star 11 (on a 12 px tile, no
 // extra rim: at that size the rim would eat it), the badge 32.
 const corner = (n) => [`band-${n}`, 22, 22];
+const badge = (id) => [`badge-${id}`, 28, 28];
+const gem = (n) => [`gem-${n}`, 11, 12];
 const SHEETS = [
   [M + 'level-frames-a.png', [1, 2, 3, 4, 5, 6].map(corner)],
   [M + 'level-frames-b.png', [...[7, 8, 9, 10].map(corner), ['star', 11, 12], ['badge-500', 32, 32]]],
+  // 13/11/2026 frame rework: one 28 px badge pinned on the bubble's top edge, and the Tận Sức gems (11 px on a 12 px tile
+  // like the star). Cells left empty in a sheet are not listed.
+  [M + 'frame-badges-a.png', ['mastery-1', 'mastery-2', 'mastery-3', 'mastery-4', 'tan-suc', 'newyear'].map(badge)],
+  [M + 'frame-badges-b.png', ['cup-gryffindor', 'cup-hufflepuff', 'cup-ravenclaw', 'cup-slytherin', 'cup-tan-suc'].map(badge)],
+  [M + 'tan-suc-gems-a.png', [1, 2, 3, 4, 5, 6].map(gem)],
+  [M + 'tan-suc-gems-b.png', [7, 8, 9, 10].map(gem)],
 ];
 
 // Ink box of a cell: rows and columns with at least 4 solid pixels (Codex leaves a soft halo and stray dots).
@@ -44,7 +52,7 @@ for (const [master, items] of SHEETS) {
   const {data, info} = await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject: true});
   for (const [index, [name, size, width]] of items.entries()) {
     const left = (index % 3) * CELL, top = Math.floor(index / 3) * CELL, box = ink(data, info.width, left, top);
-    const scale = size / Math.max(box.w, box.h), {px: raw, n} = shrink(data, info.width, left, top, scale), px = name === 'star' ? raw : tidy(raw, n);
+    const scale = size / Math.max(box.w, box.h), {px: raw, n} = shrink(data, info.width, left, top, scale), px = name === 'star' || name.startsWith('gem-') ? raw : tidy(raw, n);
     const sx = Math.floor(box.x0 * scale), sy = Math.floor(box.y0 * scale), rgba = Buffer.alloc(width * size * 4);
     for (let y = 0; y < size; y++) for (let x = 0; x < Math.min(size, width); x++) {
       const c = px[(sy + y) * n + sx + x];

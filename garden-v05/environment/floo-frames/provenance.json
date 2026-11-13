@@ -8,6 +8,22 @@
     {
       "master": "environment/floo-frames/masters/level-frames-b.png",
       "sha256": "627e9ec61713da61f97f6ae5ce4d070b832afda36718989805edf1767dab69e0"
+    },
+    {
+      "master": "environment/floo-frames/masters/frame-badges-a.png",
+      "sha256": "e34185cbc4c99e89f8da36ef41b42b0329350a2a2905b1fe3f9dd1c98ce34b77"
+    },
+    {
+      "master": "environment/floo-frames/masters/frame-badges-b.png",
+      "sha256": "bfd5559943935f06187475f9af28b42a8e98dad10ac92070eb93c4f0e39fe375"
+    },
+    {
+      "master": "environment/floo-frames/masters/tan-suc-gems-a.png",
+      "sha256": "84748b0b0e85781e4a77c9d285fa11c29faed6ad78489a730e74cb2dd22be0b6"
+    },
+    {
+      "master": "environment/floo-frames/masters/tan-suc-gems-b.png",
+      "sha256": "d2b2977617ee8f79382266a51a2ac240dccb6b72b9df6e9aec282f27ec2e2f25"
     }
   ],
   "files": [
@@ -120,6 +136,111 @@
       "file": "badge-500.webp",
       "size": 456,
       "sha256": "4da5981cec62ad2317b157baff21674a93e1a4e5a7f256d620fc1d258211a27e"
+    },
+    {
+      "file": "badge-mastery-1.webp",
+      "size": 268,
+      "sha256": "3625c71f3eda5a13d43faec650c5acd16ea67591765d8a1148289a3ad52029ff"
+    },
+    {
+      "file": "badge-mastery-2.webp",
+      "size": 296,
+      "sha256": "89e6df18bfbf77cbf850d6ebb4cf62bbbf65e1084a74e8cf6d10363e142d1fdf"
+    },
+    {
+      "file": "badge-mastery-3.webp",
+      "size": 278,
+      "sha256": "bc153892c6a07896d9ff84932adf3292c9d268098b84f5411b078625e3907729"
+    },
+    {
+      "file": "badge-mastery-4.webp",
+      "size": 322,
+      "sha256": "353031fbaa1950aeca8ff7b2d4f520b1fbfd80cf30ce6bdbecda6b0ab71dad96"
+    },
+    {
+      "file": "badge-tan-suc.webp",
+      "size": 350,
+      "sha256": "19f2fed70a69ab484864d96f3dccd7b65111efe27b397f98ae9da8d78cc3b4de"
+    },
+    {
+      "file": "badge-newyear.webp",
+      "size": 290,
+      "sha256": "075c9ba309843feaca910028ebd191220ae072459b595a95412e9c931740b14b"
+    },
+    {
+      "file": "badge-cup-gryffindor.webp",
+      "size": 262,
+      "sha256": "44a442cb4998f99498584ec1374f91fd8dbcc0a580f45bb10f8664962ca63a9b"
+    },
+    {
+      "file": "badge-cup-hufflepuff.webp",
+      "size": 230,
+      "sha256": "fdcd6fafd573fef883f4868671e9acade0d33a01cc3401e7acca95a9b322a164"
+    },
+    {
+      "file": "badge-cup-ravenclaw.webp",
+      "size": 260,
+      "sha256": "cf7a1e776785f3e8fb0e8c7a0fa5417a79962a39c504a9f2600df51a4bcc4a53"
+    },
+    {
+      "file": "badge-cup-slytherin.webp",
+      "size": 262,
+      "sha256": "0f19ce4b386f34adc3b04639b0bc7a925e41392841baa4eb8d52731523a8d5aa"
+    },
+    {
+      "file": "badge-cup-tan-suc.webp",
+      "size": 286,
+      "sha256": "16cdb6062002e2c6667eadad9c520b64135bd7e12c5f75876d69442aab3c44e4"
+    },
+    {
+      "file": "gem-1.webp",
+      "size": 130,
+      "sha256": "73f757ae12fc5ad646d5dcaa987969627c3b614f44f9785af36dbe8a463c266c"
+    },
+    {
+      "file": "gem-2.webp",
+      "size": 128,
+      "sha256": "34fb4239b11adf06219a482051cdd0ad45966d9360dd0a8126d11642a4de3808"
+    },
+    {
+      "file": "gem-3.webp",
+      "size": 138,
+      "sha256": "f417f297891e92c907a5661ab4ba42bfb611be7164ac7abe31927065170735d0"
+    },
+    {
+      "file": "gem-4.webp",
+      "size": 114,
+      "sha256": "e96a7d3ed5c836ff44c4c2c0b09047703a60f028928e390b3a598a85dc10e296"
+    },
+    {
+      "file": "gem-5.webp",
+      "size": 138,
+      "sha256": "db3cd91aa6de65e81618ca558aebbdb09760ef13ecfcbf035e4ca09e937af7a1"
+    },
+    {
+      "file": "gem-6.webp",
+      "size": 142,
+      "sha256": "1a1b4e4a5ab5d8b71bd2677ef2f7b0bd5f53b9c665f6931ee4ac5d35e33b8563"
+    },
+    {
+      "file": "gem-7.webp",
+      "size": 142,
+      "sha256": "3cd467627e9bcbbe050836e4e89dbfe6bd6838cb717a32bf858babc3e2a40f4d"
+    },
+    {
+      "file": "gem-8.webp",
+      "size": 136,
+      "sha256": "da64c2617d13356ca959fa4dbfef9d17adcf0d040de12b15e9f10ad0ab3645d0"
+    },
+    {
+      "file": "gem-9.webp",
+      "size": 156,
+      "sha256": "e93e9e279b91ebf2da0975db7ecfe251db4910e5a84824a60a96e064885d6f4a"
+    },
+    {
+      "file": "gem-10.webp",
+      "size": 134,
+      "sha256": "abc62975c7ee56406640608006937e0005c850c37ffc5442d77b8ab6091f9038"
     }
   ]
 }
