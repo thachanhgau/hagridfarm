@@ -116,7 +116,7 @@ Mỗi rào có một test hỏng khi bỏ rào.
 
 | Việc | Nội dung |
 |---|---|
-| Đường XP 501–10.000 | **Phẳng**: mỗi cấp bằng bước 499 → 500 (40.000 + 110 × 400 = 84.000 XP). Tính bằng công thức trong `balance-data` và `garden-balance`, **không** thêm 9.500 hàng (giữ ngân sách tải trước khung đầu ≤ 4,4 MB) |
+| Đường XP 501–10.000 | **Phẳng** (đã duyệt 13/11): mỗi cấp bằng bước 499 → 500 (40.000 + 110 × 400 = 84.000 XP). Tính bằng công thức trong `balance-data` và `garden-balance`, **không** thêm 9.500 hàng (giữ ngân sách tải trước khung đầu ≤ 4,4 MB) |
 | Nhịp | Sau cấp 500 không còn mở cây hay thửa, XP/ngày giữ như cuối sim: 2 lượt ~240.000 → ~3 cấp/ngày, 10.000 sau ~9 năm; người cày ~330.000 → ~4 cấp/ngày, ~6,5 năm. Là trần «không có điểm dừng», không phải đích |
 | Tên | Giữ «Tận Sức N» chạy tiếp tới «Tận Sức 9900»; vòng cấp và huy hiệu phải vừa 4 chữ số |
 | Mốc thưởng 501+ | Mỗi 100 cấp: Nước phép (như thưởng gắn bó, có trần); mỗi 1.000 cấp: một khung Floo «Tận Sức» (10 khung); không thưởng XP hay sản lượng (#55) |
@@ -129,7 +129,7 @@ Mỗi rào có một test hỏng khi bỏ rào.
 - **#63** Cấp > 500 không mở thêm cây, thửa, chuồng; mọi bảng giá theo cấp (chữa thú `CURE_PER_LEVEL`, đồ theo cấp) **chốt ở mức cấp 500**, để cấp cao không thành giá trên trời hay chỗ trục lợi.
 - **#64** Mốc thưởng 501+ nhận một lần mỗi mốc, lưu theo mốc (nhảy cấp bằng ACP không trả bù thưởng các mốc đã bỏ qua).
 
-Chưa quyết: đường phẳng (đề xuất, 10.000 gần như không chạm) hay đường thấp hơn để người cày chạm 10.000 trong ~3 năm (~36.000 XP/cấp, rẻ hơn cấp 500 nên thấy lạ).
+**Đã quyết (chủ dự án 13/11/2026):** đường **phẳng 84.000 XP mỗi cấp** từ 501 tới 10.000 (không chọn đường thấp ~36.000 XP/cấp).
 
 ## 8. Chưa quyết (mặc định đang dùng)
 
