@@ -102,7 +102,7 @@ Mỗi rào có một test hỏng khi bỏ rào.
 | Phần | Việc | Xong khi |
 |---|---|---|
 | 0 | Spec này, sim, kinh tế | **Xong 13/11/2026**: chủ dự án duyệt mọi thú đều giúp, mức 4.2 (~9 %), đường XP phẳng |
-| 1 | HPVNN `functions/games/garden-skill-core.js` (thuần) + lệnh `skill` + 12 kỹ năng cấp 10–94; test mỗi rào | `npm test` functions pass |
+| 1 | HPVNN `functions/games/garden-skill-core.js` (thuần) + lệnh `skill` + 12 kỹ năng cấp 10–94; test mỗi rào | **Xong local 13/11/2026**: HPVNN `c7bbe5405` (nhánh `claude/compassionate-proskuriakova-5ed8f0`, chưa push), garden 297/297 pass. Công tắc HPH `skillsOff` trong `galleons_config/garden_sales`. Diricawl chạy trong ca duty nên chỉ từ cấp 130; thú trưởng thành có gắn bó gốc ≥ 3 giúp ngay khi phát hành |
 | 2 | 6 kỹ năng 130+ và các kỹ năng thụ động trong duty, pond, soil, fire | Như trên + một ngày giả lập trên emulator |
 | 2b | Trần cấp 10.000 (mục 7): công thức đường XP 501+, mọi chỗ đọc trần 500 ở client và server, mốc thưởng, bậc 3 | Test cấp 499 → 501 → 10.000, nhảy cấp ACP, vòng cấp 4 chữ số |
 | 3 | Client: thẻ kỹ năng trong «Chăm bé», biểu tượng trên bảng chuồng, hiệu ứng nhẹ, thư bác Hagrid mở Mùa 2; Codex vẽ 18 biểu tượng | Lighthouse không lùi (LCP ≤ 14.300 ms, tải trước khung đầu ≤ 4.400.000 B), xem trên 3026 |
