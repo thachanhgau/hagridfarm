@@ -23,7 +23,7 @@ function rowIcon(items,row,assets) {
 }
 
 // Construction keeps its existing grid and handlers inside buildPane; decor shares only the shell.
-export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,openDecorate,openDefault,openStore,run,showPanel,getState,getRotations=()=>({}),setDefaultVisible}) {
+export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,openDecorate,openDefault,openStore,run,showPanel,getState,getRotations=()=>({}),setDefaultVisible,focusDecor}) {
  const root=$('buildDock'),buildPane=el('div',{id:'buildWorkPane',class:'work-dock'});
  const pane=el('div',{id:'decorWorkPane',class:'decor-work-pane',hidden:true});
  const tabs=el('div',{class:'build-decor-tabs',role:'group','aria-label':'Xây dựng và trang trí'});
@@ -79,7 +79,8 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
   for(const row of rows){
    if(!entries.has(row.id)){
     const state=el('span',{class:'decor-choice-state'});
-    const control=button('',()=>{selected=row.id;refresh();},{'data-decor-id':row.id,class:'decor-dock-choice'});
+    // Owner 13/11/2026: a piece in the garden → the camera goes to it; a stored one → placing starts at once, mid-screen.
+    const control=button('',()=>{selected=row.id;refresh();const now=current();if(!now||!getReady())return;if(now.placed)focusDecor?.(now);else place.click();},{'data-decor-id':row.id,class:'decor-dock-choice'});
     control.append(rowIcon(items,row,getAssets()),el('span',{class:'decor-choice-name',text:row.label}),state);
     tray.append(control);entries.set(row.id,{control,state,facing:row.facing});
    }

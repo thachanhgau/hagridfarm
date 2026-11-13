@@ -147,7 +147,10 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  // Owner 27/10/2026: a piece always covers whole cells. Legacy sockets (row 7.15) and older half-tile saves
  // open on the nearest whole-cell spot; «Đặt» then saves it there.
  const snap=spot=>snapDecorSpot(spot,footprint,selectedFacing);
- let at=(savedSpot()||startAt)&&snap(savedSpot()||startAt);
+ // A piece not in the garden starts mid-screen, where the player is looking (owner 13/11/2026); the spot centerAt frames.
+ const viewSpot=()=>{const v=document.getElementById('cameraViewport')?.getBoundingClientRect();if(!v?.width||!toWorld)return null;const tall=v.height>v.width,p=toWorld(v.left+v.width*(tall?.5:.46),v.top+v.height*(tall?.4:.43));return p?snap(worldToGrid(p.x,p.y,map)):null;};
+ const fromView=savedSpot()?null:viewSpot();
+ let at=savedSpot()?snap(savedSpot()):fromView||(startAt&&snap(startAt));
  let pending=false,input;
  const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,footprint}):'';
  let grid=[];
@@ -242,7 +245,8 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  }});
  bar.querySelector('.decor-bar-row').insertBefore(input.tools,apply);
  setTapHandler?.(input.onTap);
- sync(!!at);
+ // a mid-screen start is already in view: the camera stays unless the nearest free spot moved it
+ sync(!!at&&!sameSpot(at,fromView));
  (apply.disabled?input.tools.firstElementChild:apply).focus?.({preventScroll:true});
 }
 
