@@ -78,7 +78,7 @@ Giá: hạt 2–48 G (`garden-store-catalog`), nước 5 G / 9 phần. Chi mỗi
 | **Cộng (cấp cao)** | **~73 G = 9 % (2 lượt), 3,6 % (người cày)** |
 | Cộng (cấp 26–33: lùng nhùng + Đào mỏ, hạt ≤ 5 G) | ~16 G = 7,6 % |
 
-Kỳ lân chữa miễn phí chỉ dùng được khi thú ốm (tâm trạng < 25, vườn bị bỏ bê), nên không tính vào bảng; giới hạn 1 con/ngày. **Cần chủ dự án duyệt mức ~9 %** (kế hoạch đầu đặt ≤ 5 %; muốn về 5 % thì bỏ hoàn hạt ở bậc 2).
+Kỳ lân chữa miễn phí chỉ dùng được khi thú ốm (tâm trạng < 25, vườn bị bỏ bê), nên không tính vào bảng; giới hạn 1 con/ngày. **Đã duyệt (chủ dự án 13/11/2026): giữ mức ~9 %**, bảng trên giữ nguyên (không bỏ hoàn hạt ở bậc 2).
 
 ### 4.3 Tên
 
@@ -101,7 +101,7 @@ Mỗi rào có một test hỏng khi bỏ rào.
 
 | Phần | Việc | Xong khi |
 |---|---|---|
-| 0 | Spec này, sim, kinh tế | Chủ dự án duyệt bảng 3 và mức 4.2 |
+| 0 | Spec này, sim, kinh tế | **Xong 13/11/2026**: chủ dự án duyệt mọi thú đều giúp, mức 4.2 (~9 %), đường XP phẳng |
 | 1 | HPVNN `functions/games/garden-skill-core.js` (thuần) + lệnh `skill` + 12 kỹ năng cấp 10–94; test mỗi rào | `npm test` functions pass |
 | 2 | 6 kỹ năng 130+ và các kỹ năng thụ động trong duty, pond, soil, fire | Như trên + một ngày giả lập trên emulator |
 | 2b | Trần cấp 10.000 (mục 7): công thức đường XP 501+, mọi chỗ đọc trần 500 ở client và server, mốc thưởng, bậc 3 | Test cấp 499 → 501 → 10.000, nhảy cấp ACP, vòng cấp 4 chữ số |
