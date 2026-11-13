@@ -1,7 +1,8 @@
 // node runSkills.mjs '<json params>' hours — Season 2 creature skills that move crop time (Que Xạo, Mooncalf).
 // Skill on from adoption + ceil(mealsToAdult/2) days (adult, bond 3); rank 2 nine days later (bond 5 + 3 tricks, one lesson a day).
 // Best realistic use: a skip goes to the growing cell it makes ripe right now (smallest remaining ≤ skip), then that cell is harvested.
-// P.skills=false runs the plain game. P.qx / P.mc override the skip minutes.
+// P.skills=false runs the plain game. P.qx / P.mc override the skip minutes. P.r3 (Phần 2b): the bậc 3 «Tinh thông»
+// charge (+1 a day) from rank 2 on, at any level (worst case: the game opens it at level 1,000, past this sim).
 const P = JSON.parse(process.argv[2] || '{}');
 const HOUR = 3_600_000, DAY = 24 * HOUR, MIN = 60_000;
 const seen = {}; const used = { qx: 0, mc: 0, ripe: 0 };
@@ -15,7 +16,7 @@ if (P.skills !== false) {
     for (const c of s.creatures) seen[c.species] ??= now;
     const dk = Math.floor((now + 7 * HOUR) / DAY), hr = new Date(now + 7 * HOUR).getUTCHours();
     const skips = [];
-    const take = (key, sp, min, night) => { if (night && !(hr >= 18 || hr < 6)) return; const r = rank(sp, now); const k = `${dk}:${key}`; while ((day[k] ?? 0) < r) { day[k] = (day[k] ?? 0) + 1; skips.push([key, min]); } };
+    const take = (key, sp, min, night) => { if (night && !(hr >= 18 || hr < 6)) return; const r = rank(sp, now) + (P.r3 && rank(sp, now) === 2 ? 1 : 0); const k = `${dk}:${key}`; while ((day[k] ?? 0) < r) { day[k] = (day[k] ?? 0) + 1; skips.push([key, min]); } };
     take('qx', 'bowtruckle', P.qx ?? 15, false); take('mc', 'mooncalf', P.mc ?? 30, true);
     if (!skips.length) return s;
     let next = structuredClone(s), hit = false;

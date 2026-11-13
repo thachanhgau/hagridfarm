@@ -159,7 +159,7 @@
 #gameShell #panel .journey-card.is-current{box-shadow:inset 0 0 0 2px #FFC36B}
 #gameShell #panel .journey-card.is-locked .journey-card-art>:not(.lock-badge){filter:grayscale(.8) brightness(.6)}
 #gameShell #panel .journey-card-art{position:relative;flex:none;display:grid;place-items:center;width:56px;height:56px;background:#24483F;border:2px solid #231F2E;border-radius:0}
-#gameShell #panel .journey-card-art .journey-level-badge{position:absolute;right:-7px;bottom:-7px;min-width:22px;height:22px;padding:0 4px;border:2px solid #231F2E;border-radius:0;background:#FFC36B;color:#231F2E;font:900 12px/18px var(--gp-display);text-align:center}
+#gameShell #panel .journey-card-art .journey-level-badge{position:absolute;right:-7px;bottom:-7px;min-width:22px;height:22px;padding:0 4px;border:2px solid #231F2E;border-radius:0;background:#FFC36B;color:#231F2E;font:900 12px/18px var(--gp-display);text-align:center;white-space:nowrap;display:inline-flex;align-items:center;gap:2px}
 #gameShell #panel .journey-card-body{display:grid;gap:3px;min-width:0}
 #gameShell #panel .journey-card-tags{display:flex;align-items:center;justify-content:space-between;gap:6px}
 #gameShell #panel .journey-cat-pill{padding:0;border:0;background:none;color:#A6B1AE;font:800 10.5px/1.1 var(--gp-body)}
@@ -381,7 +381,7 @@
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-ravenclaw"]{border-color:#6961A6}
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-slytherin"]{border-color:#71934B}
 #gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-cup-tan-suc"]{border-color:#E2B866;box-shadow:0 0 0 2px #231F2E}
-#gameShell #hagridWork .work-frame-swatch[data-frame="hagrid-tan-suc"]{border-color:#F5D69A;box-shadow:0 0 0 2px #4A3042}
+#gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-tan-suc"]{border-color:#F5D69A;box-shadow:0 0 0 2px #4A3042}
 #gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-level-"]{border-color:#FFC36B;background:#231F2E}
 #gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-xmas-sweater-"]{border-color:#C75B4B;background:repeating-linear-gradient(45deg,#874056 0 3px,#4A3042 3px 5px)}
 #gameShell #hagridWork .work-frame-swatch[data-frame^="hagrid-newyear-"]{border-color:#FFC36B;background:radial-gradient(circle at 30% 40%,#E07A9E 0 2px,transparent 2.5px),radial-gradient(circle at 70% 55%,#B7DEE0 0 2px,transparent 2.5px),#231F2E}

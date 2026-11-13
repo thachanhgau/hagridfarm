@@ -13,12 +13,12 @@ import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields,decorFootprintR
 import {setupWizardUI} from './wizard-ui.mjs?v=25.1.9';
 import {showStore} from './garden-store-ui.mjs?v=25.1.9';
 import {setupProfile} from './profile-ui.mjs?v=25.1.9';
-import * as E from './progression-engine.mjs?v=25.1.9';
+import * as E from './progression-engine.mjs?v=26.0';
 import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=25.1.9';
 import {elfLine,elfShiftText} from './garden-elves.mjs?v=25.1.9';
 import {setupCamera} from './camera.mjs?v=25.1.9';
-import {createPanels} from './progression-panels.mjs?v=25.1.9';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=25.1.9';
+import {createPanels} from './progression-panels.mjs?v=26.0';
+import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=26.0';
 import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=25.1.9';
 import {createGardenAudio,comboStep} from './garden-audio.mjs?v=25.1.9';
 import {createJuice,rewardDeltas} from './garden-juice.mjs?v=25.1.9';
@@ -29,9 +29,9 @@ import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KE
 import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=25.1.9';
 import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=25.1.9';
 import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=25.1.9';
-import {pixelIcon,lineIconUrl,setAction,tanSucMark} from './pixel-icons.mjs?v=25.1.9';
+import {pixelIcon,lineIconUrl,setAction,tanSucMark} from './pixel-icons.mjs?v=26.0';
 import {weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=25.1.9';
-import {nextGoal} from './next-goal.mjs?v=25.1.9';
+import {nextGoal} from './next-goal.mjs?v=26.0';
 import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=25.1.9';
 import {createMissions} from './garden-missions-ui.mjs?v=25.1.9';
 import {createHagridWork} from './garden-work-ui.mjs?v=25.1.9';
@@ -44,7 +44,7 @@ import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=25.1.9':'./garden-emulator-client.mjs?v=25.1.9');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=26.0':'./garden-emulator-client.mjs?v=25.1.9');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -689,7 +689,7 @@ function openVisualLayout(){
 panels=createPanels({setDefaultDecorVisibility,placeDefault:(id,label)=>{panels.close();openDefaultDecoration({id,label});},getGuide:guideState,E,items,labels,layoutSlots,decorAssets,getDecorations:currentDecorations,openDecorate:openDecoration,quickRotateDecor:async(itemId,facing)=>{const spot=decorSpot(currentDecorations(),itemId),blocked=spot&&decorSpotProblem(spot[0],spot[1],{map,stage:renderer?.growthStage?.(),state,decorations:currentDecorations(),itemId,facing,asset:decorAssets.get(itemId),iso,assetOf:id=>decorAssets.get(id)});if(blocked){message(`Không xoay tại chỗ được: ${blocked} Bấm «Đặt» để dời món sang chỗ khác.`);return;}const prior=structuredClone(currentDecorations()??{});localDecorRotations[itemId]=facing;persistPrefs();audio.play('rotate');recordFestivalAction('rotate');wizard?.recordQuestAction?.('rotate');const at=decorSpot(currentDecorations(),itemId);if(wallet&&at){try{const before=state;await wallet.act({action:'placeDecoration',...decorPlaceFields(prior,itemId,at,facing)});acceptWallet(before,'',false);}catch(e){showRefusal(e);return;}}syncHudV20Buttons();draw();const turned=`Đã xoay sang ${facing==='right'?'Góc nhìn qua phải ↗':'Góc hiện tại ↖'}.`;if(wallet&&at)offerDecorUndo(prior,itemId,turned);else message(turned);},getEarnedDecorRotations:()=>({...state?.decorationRotations,...earnedDecorRotations}),rotateEarnedDecoration,getCreatureFacings:currentCreatureFacings,rotateCreatureFacing,getAffinityMap:()=>currentAffinitySummary().bySpeciesMap,openVisualLayout,getPostcard:postcardOptions,getAtmosphere:()=>atmosphereConfig(atmosphereMode),cycleAtmosphere,onSetAtmosphere:setAtmosphere,getWeather:()=>weatherConfig(weatherMode),cycleWeather,onSetWeather:setWeather,getEvent:()=>eventConfig(eventMode),onApplyEventTheme:applyEventTheme,onClaimEventMilestone:handleClaimEventMilestone,onClaimDailyQuest:handleClaimDailyQuest,onClaimGrandChest:handleClaimGrandChest,onPetCreature:handlePetCreature,onClaimAffinityGift:handleClaimAffinityGift,getActiveTourId:()=>activeTourSnapshot?.tour?.id||null,startTour,stopTour,helpTour,memberVisits:connected?close=>renderMemberVisits({level:state.level,helpers:wallet?.snapshot?.helpers||[],load:()=>wallet.visit({}),onVisit:(uid,queue)=>{close();startVisit(uid,queue);}}):null,getAchievementExtra,openHagridWork:connected?()=>{panels.close();hagridWork.open();}:null,canSaleAcp:()=>Boolean(connected&&walletReady&&wallet.snapshot?.saleAdmin),openSaleAcp:()=>{panels.close();saleAcp.open();},onSelectTitle:handleSelectTitle,onClaimAchievement:handleClaimAchievement,getSoundEnabled:()=>audio.enabled,toggleAudio,shareToFloo,getState:()=>state,getGardenStage:()=>renderer?.growthStage?.(),run,notify:message,selectCrop,selectCreature,focusPlot,camera,getSelection:()=>({selectedPlot,cells:chosen(),seed,species}),getSession:()=>({session,qa,saveAvailable,saveProblem,connected,isPreview:!!wallet?.isPreview}),getSupplies:currentSupplies,getGalleons,openStore:f=>openStore(f),openProfile:connected?null:()=>{panels.close();profileUI.show();},openHagridLetter:()=>openHagridLetter('keepsake'),replayTutorial,switchSession,exportSave,getViewPreferences:()=>({motionEnabled,systemReducedMotion:motionMedia.matches,propsVisible,grid}),toggleMotion:()=>{if(motionMedia.matches)return false;motionEnabled=!motionEnabled;persistPrefs();syncMotionPreference();draw();return motionEnabled;},toggleProps:()=>{propsVisible=!propsVisible;persistPrefs();draw();return propsVisible;},toggleGrid:()=>{grid=!grid;persistPrefs();draw();return grid;},tickTimers,exportPlaytest:playtest.enabled?exportPlaytest:null});
 const hagridWork=createHagridWork({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),deliver:orderId=>serverClaim({action:'deliverOrder',orderId}),challenge:fields=>serverClaim({action:'challenge',...fields}),setFrame:async frameKey=>{try{return await wallet.frame(frameKey);}catch(e){showRefusal(e);return {ok:false};}},items,notify:message});
 // Admin-only: the ACP module loads when an admin first opens it (25.0 speed budget).
-const saleAcp={open(){import('./garden-sale-acp-ui.mjs?v=25.1.9').then(m=>{saleAcp.open=m.createSaleAcp({call:data=>wallet.sales(data),notify:message}).open;saleAcp.open();}).catch(e=>message('Không mở được ACP: '+e.message));}};
+const saleAcp={open(){import('./garden-sale-acp-ui.mjs?v=26.0').then(m=>{saleAcp.open=m.createSaleAcp({call:data=>wallet.sales(data),notify:message}).open;saleAcp.open();}).catch(e=>message('Không mở được ACP: '+e.message));}};
 // «Gia tinh trông vườn» panel, loaded on the first elf tap (25.0 speed budget).
 let elfCare=null;
 async function openElfCare(){
@@ -840,9 +840,11 @@ function celebrate(from,to){
  audio.play('levelUp');
  const list=$('unlockList');list.replaceChildren();
  // What opened, as icon tiles (game-panels.css); the burst replays on every level-up and stays still with reduced motion.
- // Server gift (garden-action-core): +1 nước phép per level reached up to 19.
- const gift=connected?Math.max(0,Math.min(to,19)-from):0;if(gift)list.append(el('li',{title:'Quà bác Hagrid'},[pixelIcon('boost',2),el('span',{text:'+'+gift+' Nước phép'})]));
- for(const row of DB.levels.slice(from,to))list.append(el('li',{title:'Cấp '+row.level+': '+row.unlock},[levelUnlockVisual(row,DB,items,48).visual,el('span',{text:row.unlock.split(/[;·]/)[0]})]));
+ // Server gift (garden-action-core): +1 nước phép per level reached up to 19; Season 2: MARK_BOOST at each mark from 600.
+ const marks=Math.max(0,Math.floor(to/E.MARK_STEP)-Math.floor(Math.max(from,E.LAST_ROW_LEVEL)/E.MARK_STEP));
+ const gift=connected?Math.max(0,Math.min(to,19)-from)+marks*E.MARK_BOOST:0;if(gift)list.append(el('li',{title:'Quà bác Hagrid'},[pixelIcon('boost',2),el('span',{text:'+'+gift+' Nước phép'})]));
+ // Past level 500 only the marks and the level reached are listed (an HPH jump to 10,000 is not 9,500 tiles).
+ for(let l=from+1;l<=to;l++){if(l>E.LAST_ROW_LEVEL&&l<to&&l%E.MARK_STEP)continue;const row=E.levelRow(l);list.append(el('li',{title:'Cấp '+row.level+': '+row.unlock},[levelUnlockVisual(row,DB,items,48).visual,el('span',{text:row.unlock.split(/[;·]/)[0]})]));}
  const card=$('levelCelebration');$('celebrationLevel').replaceChildren(...(to>E.TAN_SUC_LEVEL?tanSucMark(to-E.TAN_SUC_LEVEL):[String(to)]));$('celebrationTitle').textContent=to>E.TAN_SUC_LEVEL?'Bậc Tận Sức '+(to-E.TAN_SUC_LEVEL)+'!':'Lên cấp '+to+'!';celebrationFocus=document.activeElement;card.classList.remove('is-bursting');card.hidden=false;void card.offsetWidth;card.classList.add('is-bursting');$('closeCelebration').focus();
 }
 function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.focus();if(tanSucLetterDue){tanSucLetterDue=false;wizard.openLetter('tanSuc');}else if(dutyLetterDue){dutyLetterDue=false;dutyUi().then(m=>showHagridLetter({greeting:m.DUTY_LETTER.greeting,mode:'gift',letter:m.DUTY_LETTER}));}}

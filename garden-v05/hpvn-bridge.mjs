@@ -1,5 +1,5 @@
 import {getGardenStorage} from './garden-storage.mjs?v=25.1.9';
-import {levelLabel} from './progression-engine.mjs?v=25.1.9';
+import {levelLabel} from './progression-engine.mjs?v=26.0';
 import { normalizeDecorFacing } from './decor-runtime.mjs?v=25.1.9';
 import {
   normalizeAtmosphereMode,

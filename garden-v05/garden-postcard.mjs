@@ -1,7 +1,7 @@
-import {el, button, num, hours, realHours, cropVisualKind, visualItemIcon} from './ui-utils.mjs?v=25.1.9';
+import {el, button, num, hours, realHours, cropVisualKind, visualItemIcon} from './ui-utils.mjs?v=26.0';
 import {GARDEN_STAGES} from './garden-growth.mjs?v=25.1.9';
-import {levelLabel} from './progression-engine.mjs?v=25.1.9';
-import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=25.1.9';
+import {levelLabel} from './progression-engine.mjs?v=26.0';
+import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=26.0';
 
 /**
  * V21.0 Direction 2:

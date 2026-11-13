@@ -1,4 +1,4 @@
-import {DB} from './balance-data.mjs?v=25.1.9';
+import {DB} from './balance-data.mjs?v=26.0';
 import {iso} from './garden-grid.mjs?v=25.1.9';
 import {snapDecorSpot,footLift,orientedFootprint,decorFootprintRect} from './decor-runtime.mjs?v=25.1.9';
 export const DEFAULT_DECOR_IDS = Object.freeze(['scene:pond', ...DB.decorations.map(d => d.id), ...DB.animals.map(a => 'keepsake:' + a.id)]);

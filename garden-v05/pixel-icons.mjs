@@ -1,7 +1,7 @@
 // HUD and action icons: 16×16 pixel grids in the approved palette (docs/art-bible.md),
 // drawn as crisp SVG <img> at integer scales only (1× = 16 px, 2× = 32 px).
 // Crops and creatures keep their own game sprites (ui-utils icon()).
-import {cropVisualKind, el, num, visualItemIcon} from './ui-utils.mjs?v=25.1.9';
+import {cropVisualKind, el, num, visualItemIcon} from './ui-utils.mjs?v=26.0';
 
 const INK = Object.freeze({
  k: '#231F2E', p: '#4A3042', b: '#735044', w: '#A57554',
@@ -1317,7 +1317,8 @@ export function lockBadge(level = 0, tan = 0) {
  return el('span', {class: 'lock-badge', role: 'img', 'aria-label': text, title: text}, [pixelIcon('lock', 1), ...(tan ? tanSucMark(tan) : [level ? el('b', {text: String(level)}) : null])]);
 }
 // Bậc Tận Sức N (levels above 100): the pixel badge + N, in place of a «★» glyph.
-export const tanSucMark = n => [pixelIcon('tansuc', 1), el('b', {text: String(n)})];
+// Season 2: Tận Sức 1000–9900 carry `is-4` so the badges and the HUD ring shrink the 4 digits to fit.
+export const tanSucMark = n => [pixelIcon('tansuc', 1), el('b', {text: String(n), ...(String(n).length > 3 ? {class: 'is-4'} : {})})];
 
 /** Square 44 px icon button; `label` is the accessible name and tooltip, `text` an optional visible word. */
 export function iconButton(icon, label, fn, {text = '', ...attrs} = {}) {

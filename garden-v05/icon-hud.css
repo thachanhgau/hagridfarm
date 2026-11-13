@@ -31,6 +31,8 @@
 #gameShell .level-ring b.is-tan-suc{font-size:11px;letter-spacing:-.5px}
 /* the number inside the Tận Sức mark is a <b> too: keep it at the mark's size so 3 digits fit the ring */
 #gameShell .level-ring b.is-tan-suc b{font-size:inherit;letter-spacing:inherit}
+/* Season 2: Tận Sức 1000–9900 (4 digits, pixel-icons tanSucMark `is-4`) stay inside the ring's lower chord */
+#gameShell .level-ring b.is-tan-suc b.is-4{font-size:9px;letter-spacing:-.6px}
 
 /* Supplies: icon + number, one pill; tapping opens the store. */
 #gameShell .hud .hud-res{position:absolute;left:52px;top:0;height:44px;max-width:calc(100% - 52px - 304px);display:flex;align-items:center;gap:8px;padding:0 10px 0 6px;border:2px solid #B49A66;border-radius:22px;background:#142620E6;box-shadow:inset 0 2px #3F6A45,0 3px 8px #142620AA;overflow:hidden}

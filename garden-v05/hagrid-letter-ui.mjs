@@ -1,5 +1,5 @@
-import {el,button} from './ui-utils.mjs?v=25.1.9';
-import {pixelIcon,iconUrl} from './pixel-icons.mjs?v=25.1.9';
+import {el,button} from './ui-utils.mjs?v=26.0';
+import {pixelIcon,iconUrl} from './pixel-icons.mjs?v=26.0';
 import {HAGRID_LETTER} from './garden-tutorial.mjs?v=25.1.9';
 
 // Hagrid's welcome letter (docs/core-design.md section 6). 'welcome' arrives sealed: tap the

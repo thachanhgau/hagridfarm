@@ -35,7 +35,7 @@ export function nextGoal(E, state) {
  const {DB} = E;
  // Past 90% of a level the ring looks full (the last few % are hundreds of XP at higher levels):
  // the level goes first so the chip says how much XP is left (owner report 20/10/2026).
- const row = DB.levels[state.level - 1];
+ const row = E.levelRow(state.level);
  if (state.level < E.MAX_LEVEL && state.xp - row.totalXP >= row.xpToNext * 0.9) return levelGoal(E, state);
  const exp = nextExpansion(DB, state);
  if (exp) {
@@ -58,7 +58,7 @@ export function nextGoal(E, state) {
 function levelGoal(E, state) {
  const {DB} = E, info = E.levelInfo(state), next = state.level + 1;
  const unlock = DB.crops.find((c) => c.level === next) || DB.animals.find((a) => a.level === next);
- const text = String(DB.levels[state.level]?.unlock || '').split(';')[0].trim();
+ const text = String(E.levelRow(next).unlock || '').split(';')[0].trim();
  return {
   need: {id: 'xp', n: Math.max(0, info.xpToNext - info.xpInLevel), route: 'plant'},
   target: {kind: unlock ? (DB.crops.includes(unlock) ? 'crop' : 'creature') : 'level', id: unlock?.id || 'level', level: next},

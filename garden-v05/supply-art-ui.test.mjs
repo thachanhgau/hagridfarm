@@ -46,7 +46,7 @@ globalThis.document = {
  getElementById: () => null,
 };
 
-const { itemArtKey, visualItemIcon } = await import('./ui-utils.mjs?v=25.1.9');
+const { itemArtKey, visualItemIcon } = await import('./ui-utils.mjs?v=26.0');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];

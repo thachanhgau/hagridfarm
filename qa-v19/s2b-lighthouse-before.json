@@ -1,0 +1,35 @@
+{
+  "tool": "Lighthouse13.5.0",
+  "scope": "local intercepted level500 fixture,375px mobile simulated throttling; no server/Firebase/real wallet",
+  "game": "/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2/garden-v05",
+  "runs": [
+    {
+      "performance": 43,
+      "fcpMs": 11835,
+      "lcpMs": 20115,
+      "tbtMs": 504,
+      "bytes": 5111788
+    },
+    {
+      "performance": 49,
+      "fcpMs": 11855,
+      "lcpMs": 20520,
+      "tbtMs": 310,
+      "bytes": 5111788
+    },
+    {
+      "performance": 41,
+      "fcpMs": 10400,
+      "lcpMs": 15675,
+      "tbtMs": 573,
+      "bytes": 5111788
+    }
+  ],
+  "median": {
+    "performance": 43,
+    "fcpMs": 11835,
+    "lcpMs": 20115,
+    "tbtMs": 504,
+    "bytes": 5111788
+  }
+}

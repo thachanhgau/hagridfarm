@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { DB } from './balance-data.mjs?v=24.9.65';
+import { DB } from './balance-data.mjs?v=26.0';
 import { ITEM_ART } from './item-art.mjs?v=25.1.9';
 import { FLOW_ITEM_ART } from './flow-item-art.mjs?v=25.1.9';
 import { KEEPSAKE_ART } from './complete-object-art.mjs?v=25.1.9';
@@ -63,9 +63,9 @@ const {
  itemArtKey,
  levelUnlockVisual,
  visualItemIcon,
-} = await import('./ui-utils.mjs?v=25.1.9');
+} = await import('./ui-utils.mjs?v=26.0');
 const {makeRecipeIcon} = await import('./recipe-art-ui.mjs?v=25.1.9');
-const {costChips, rewardChips} = await import('./pixel-icons.mjs?v=25.1.9');
+const {costChips, rewardChips} = await import('./pixel-icons.mjs?v=26.0');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];

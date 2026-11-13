@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
-import {DB} from './progression-engine.mjs?v=24.9.65';
+import {DB} from './progression-engine.mjs?v=26.0';
 import {ITEM_ART} from './item-art.mjs?v=25.1.9';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.1.9';
 

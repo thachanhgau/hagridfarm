@@ -1,6 +1,6 @@
 import { ITEM_ART } from "./item-art.mjs?v=25.1.9";
 import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=25.1.9";
-import { DB, TAN_SUC_LEVEL } from "./balance-data.mjs?v=25.1.9";
+import { DB, TAN_SUC_LEVEL } from "./balance-data.mjs?v=26.0";
 import {saleTotal} from "./premium-products.mjs?v=25.1.9";
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.9';
 const SUPPLY_ART_KEYS = Object.freeze({
@@ -404,7 +404,7 @@ export function levelUnlockVisual(levelRow, DB, items, size = 48) {
    visual: el("div", { class: "visual-slot is-tan-suc", style: `width:${size}px;height:${size}px` }, [itemArtVisual("tan_suc", size)]),
    category: "Bậc Tận Sức",
    categoryClass: "cat-tan-suc",
-   meta: levelRow.xpToNext ? `${num(levelRow.xpToNext)} XP tới bậc sau` : "Bậc cao nhất",
+   meta: levelRow.reward || (levelRow.xpToNext ? `${num(levelRow.xpToNext)} XP tới bậc sau` : "Bậc cao nhất"), // Season 2: a level mark's reward
   };
  }
 

@@ -1,5 +1,5 @@
 import {applyDefaultDecorationVisibility} from '../garden-v05/default-decor.mjs?v=24.9.81';
-import * as E from "../garden-v05/progression-engine.mjs?v=25.1.9";
+import * as E from "../garden-v05/progression-engine.mjs?v=26.0";
 import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=25.1.9";
 import {decorFootprintRect,rectsOverlap} from "../garden-v05/decor-runtime.mjs?v=24.9.40";
 import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.40";
@@ -8,7 +8,7 @@ import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affin
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs?v=24.9.63";
 import {ATMOSPHERE_MODES,WEATHER_MODES} from "../garden-v05/garden-atmosphere.mjs?v=25.1.9";
 import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
-import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=24.9.40";
+import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=26.0";
 const PREMIUM_CAPS=Object.freeze({rain:1,felix:1,primeMeal:30,feast:3,skeleGro:3});
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,
@@ -374,7 +374,9 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   return [[1,'Tập sự',1,5],[2,'Thạo nghề',2,10],[3,'Bậc thầy',3,16],[4,'Đại sư',3,E.DB.crops.length]].map(([n,label,t,need])=>({key:`hagrid-mastery-${n}`,label:`Khung ${label} vườn Hagrid`,kind:'mastery',unlocked:have(t)>=need,progress:Math.min(have(t),need),need,rule:`${need} loại cây đạt bậc ${t} (${TIERS[t-1]} ô)`}))
    .concat(['gryffindor','hufflepuff','ravenclaw','slytherin'].map(h=>({key:`hagrid-cup-${h}`,label:`Khung Cúp Nhà ${h[0].toUpperCase()+h.slice(1)}`,kind:'cup',house:h,unlocked:h==='ravenclaw',progress:h==='ravenclaw'?1:0,need:1,rule:'Nhà thắng Cúp Nhà một tuần, con góp từ 20 điểm'})))
    .concat(garden.progression.level>=160?[{key:'hagrid-cup-tan-suc',label:'Khung Cúp Tận Sức',kind:'cup',unlocked:false,progress:0,need:1,rule:'Nhà con thắng Hạng Tận Sức một tuần, con góp từ 20 điểm'}]:[])
-   .concat(garden.progression.level>=160?[{key:'hagrid-tan-suc',label:'Khung Thợ vườn Tận Sức',kind:'challenge',unlocked:challengeOf(garden).marks>=30,progress:Math.min(challengeOf(garden).marks,30),need:30,rule:'30 dấu thử thách từ đơn khó',stars:challengeOf(garden).won.length}]:[]);
+   .concat(garden.progression.level>=160?[{key:'hagrid-tan-suc',label:'Khung Thợ vườn Tận Sức',kind:'challenge',unlocked:challengeOf(garden).marks>=30,progress:Math.min(challengeOf(garden).marks,30),need:30,rule:'30 dấu thử thách từ đơn khó',stars:challengeOf(garden).won.length}]:[])
+   // Season 2 §7: the «Tận Sức» level frames past 500 (server garden-floo-frame tanSucFrames; here every thousand reached counts as earned).
+   .concat(garden.progression.level>500?Array.from({length:10},(_,i)=>(i+1)*1000).filter(n=>n<=garden.progression.level||n===Math.floor(garden.progression.level/1000+1)*1000).map(n=>({key:'hagrid-tan-suc-'+n,label:'Khung Tận Sức '+(n-100),kind:'level',unlocked:n<=garden.progression.level,progress:Math.min(garden.progression.level,n),need:n,rule:'Lên cấp '+n+' bằng chăm vườn'})):[]);
  }
  function setFrame(c){const f=frameViews().find(x=>x.key===c.frameKey);if(c.frameKey!==null&&!f?.unlocked)fail('frame-locked','Con chưa đạt khung này.');wornFrame=c.frameKey;return clone({ok:true,worn:wornFrame,frames:frameViews()});}
  function sales(c){

@@ -3,8 +3,8 @@
 // sales up to 90% on any item, owner 10/11/2026), Bảng giá (price, on sale, limits of every store item), Quầy chợ (unlock level, caps, buying
 // prices), Tặng đồ (store goods into one member's garden) and Đốt vườn (owner 01/11/2026: set a member's garden on
 // fire, picture only or burning the crops, for minutes, hours or days; garden-fire-core on the server) and Quyền HPH (owner 09/11/2026: jump a garden up to a level; take every decoration free). An empty box means the code value, shown as its hint.
-import {$,el,num,button} from './ui-utils.mjs?v=25.1.9';
-import {iconButton} from './pixel-icons.mjs?v=25.1.9';
+import {$,el,num,button} from './ui-utils.mjs?v=26.0';
+import {iconButton} from './pixel-icons.mjs?v=26.0';
 
 const SCOPE_LABELS = Object.freeze({all:'Món có sale định kỳ',store:'Cả cửa hàng',crop:'Vật phẩm cây',creature:'Vật phẩm sinh vật, Ổ ấm',festival:'Đồ lễ hội',special:'Sản phẩm đặc biệt',items:'Chọn món'});
 const WEEKDAYS = ['CN','T2','T3','T4','T5','T6','T7'];
@@ -111,7 +111,7 @@ export function createSaleAcp({call,notify}){
  function levelTab(){
   const send=async()=>{
    const level=Math.round(Number(jump.level));
-   if(!(level>=1&&level<=500)){status.textContent='Chọn cấp từ 1 tới 500.';return;}
+   if(!(level>=1&&level<=10000)){status.textContent='Chọn cấp từ 1 tới 10.000.';return;} // Season 2 §7 (server garden-sale-admin MAX_LEVEL)
    saving=true;render();
    try{const r=(await call({mode:'level',level,...(jump.username.trim()?{username:jump.username.trim()}:{})})).jump;
     status.textContent=`Vườn ${r.toUsername}: cấp ${num(r.from)} → ${num(r.level)}.`;notify?.(status.textContent);
@@ -131,7 +131,7 @@ export function createSaleAcp({call,notify}){
   };
   return [el('fieldset',{class:'acp-sale'},[
     field('Tên thành viên (trống = vườn của mình)',el('input',{type:'text',maxlength:'40',autocomplete:'off',value:jump.username,oninput:e=>{jump.username=e.target.value;}})),
-    field('Nhảy tới cấp (1–500, chỉ lên)',el('input',{type:'number',min:'1',max:'500',step:'1',inputmode:'numeric',value:jump.level,oninput:e=>{jump.level=e.target.value;}})),
+    field('Nhảy tới cấp (1–10.000, chỉ lên)',el('input',{type:'number',min:'1',max:'10000',step:'1',inputmode:'numeric',value:jump.level,oninput:e=>{jump.level=e.target.value;}})),
    ]),
    el('div',{class:'acp-actions'},[
     iconButton('plus','Nhận mọi đồ trang trí vào vườn mình',takeDecor,{text:'Nhận mọi đồ trang trí',disabled:saving}),

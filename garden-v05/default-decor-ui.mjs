@@ -1,5 +1,5 @@
-import {el} from './ui-utils.mjs?v=25.1.9';
-import {iconButton} from './pixel-icons.mjs?v=25.1.9';
+import {el} from './ui-utils.mjs?v=26.0';
+import {iconButton} from './pixel-icons.mjs?v=26.0';
 import {isDefaultDecorHidden} from './default-decor.mjs?v=25.1.9';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.9';
 

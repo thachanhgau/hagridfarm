@@ -4,13 +4,13 @@ import {renderGardenMenu} from './garden-menu-ui.mjs?v=25.1.9';
 import {renderGardenSettings} from './garden-settings-ui.mjs?v=25.1.9';
 import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=25.1.9";
 import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=25.1.9";
-import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=25.1.9";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=26.0";
 import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=25.1.9";
 import {renderTourSection} from "./garden-tour.mjs?v=25.1.9";
 import {renderAchievementsSection} from "./garden-achievements.mjs?v=25.1.9";
 import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=25.1.9";
 import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=25.1.9";
-import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=25.1.9";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.0";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -93,10 +93,11 @@ export function createPanels(ctx){
    const rangeBar=el("div",{class:"journey-range-tabs",role:"group","aria-label":"Chặng cấp độ"});
    // Levels above 100 stay hidden until the garden reaches 100; then one tab holds the current twenty of bậc Tận Sức.
    const T=E.TAN_SUC_LEVEL,visibleMax=s.level>=T?E.MAX_LEVEL:T,tanSucStart=Math.floor((Math.max(s.level,T+1)-1)/20)*20+1;
+   const marks=E.roadmapMarks(s.level); // Season 2 §7: past 500, the 100-level marks instead of a 20-level tab
    for(const start of [1,21,41,61,81,...(s.level>=T?[tanSucStart]:[])]){
-    const end=Math.min(start+19,visibleMax),tan=start>T;
-    const hasCurrent=s.level>=start&&s.level<=end;
-    const rangeButton=(button(tan?`${start-T}–${end-T}`:`${start}–${end}`,()=>{roadStart=start;refresh();},{"aria-pressed":String(roadStart===start||tan&&roadStart>T),"aria-label":tan?`Bậc Tận Sức ${start-T}–${end-T}`:`Cấp ${start}–${end}`,class:"journey-tab-btn"+(hasCurrent?" has-current":"")}));
+    const tan=start>T,from=tan&&marks?marks[0]:start,end=tan&&marks?marks.at(-1):Math.min(start+19,visibleMax);
+    const hasCurrent=s.level>=from&&s.level<=end;
+    const rangeButton=(button(tan?`${from-T}–${end-T}`:`${start}–${end}`,()=>{roadStart=start;refresh();},{"aria-pressed":String(roadStart===start||tan&&roadStart>T),"aria-label":tan?`Bậc Tận Sức ${from-T}–${end-T}`:`Cấp ${start}–${end}`,class:"journey-tab-btn"+(hasCurrent?" has-current":"")}));
     if(tan)rangeButton.prepend(pixelIcon("tansuc",1));
     rangeBar.append(rangeButton);
    }
@@ -108,7 +109,7 @@ export function createPanels(ctx){
    body.append(filterWrap);
 
    if(roadStart>T)roadStart=tanSucStart;
-   const slice=roadFilter==="all"?DB.levels.slice(roadStart-1,Math.min(roadStart+19,visibleMax)):DB.levels.slice(0,visibleMax);
+   const slice=roadFilter!=="all"?DB.levels.slice(0,visibleMax):marks&&roadStart>T?marks.map(E.levelRow):DB.levels.slice(roadStart-1,Math.min(roadStart+19,visibleMax));
    const list=el("ol",{class:"roadmap journey-milestone-grid"});
    for(const l of slice){
     const infoVis=levelUnlockVisual(l,DB,items,48);

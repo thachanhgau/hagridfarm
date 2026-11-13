@@ -1,5 +1,5 @@
-import {$} from './ui-utils.mjs?v=25.1.9';
-import {CREATURE} from './progression-engine.mjs?v=25.1.9';
+import {$} from './ui-utils.mjs?v=26.0';
+import {CREATURE} from './progression-engine.mjs?v=26.0';
 import {renderPetCareButtons} from './pet-controls.mjs?v=25.1.9';
 
 // Presentation only: the existing engine/server still owns targets, stock and use limits.

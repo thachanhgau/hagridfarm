@@ -1,4 +1,4 @@
-import {el,button} from './ui-utils.mjs?v=25.1.9';
+import {el,button} from './ui-utils.mjs?v=26.0';
 import {V24_ART} from './v24-visuals.mjs?v=25.1.9';
 
 const SVG_ATTR='fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="miter"';

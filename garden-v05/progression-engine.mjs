@@ -13,9 +13,9 @@
  * award XP.
  */
 
-import { DB, CROP, CREATURE, RECIPE, EXPANSION, MAX_LEVEL, TAN_SUC_LEVEL } from './balance-data.mjs?v=25.1.9';
+import { DB, CROP, CREATURE, RECIPE, EXPANSION, MAX_LEVEL, TAN_SUC_LEVEL, LAST_ROW_LEVEL, MARK_STEP, MARK_BOOST, FRAME_STEP, levelRow, levelForXp } from './balance-data.mjs?v=26.0';
 
-export { DB, CROP, CREATURE, MAX_LEVEL, TAN_SUC_LEVEL };
+export { DB, CROP, CREATURE, MAX_LEVEL, TAN_SUC_LEVEL, LAST_ROW_LEVEL, MARK_STEP, MARK_BOOST, FRAME_STEP, levelRow };
 
 /** «Cấp 37/100» below the bậc Tận Sức, «Cấp 100 ★k» above it (roadmap §12). */
 export function levelLabel(level) {
@@ -254,17 +254,25 @@ export function housingCapacity(state) {
   return expansionCapacity(base.built);
 }
 
+/** Season 2 §7 roadmap past the last stored row (500): the 100-level marks of the current thousand and the level itself; null up to 500. */
+export function roadmapMarks(level) {
+  if (level <= LAST_ROW_LEVEL) return null;
+  const from = Math.floor((level - 1) / FRAME_STEP) * FRAME_STEP;
+  const marks = Array.from({ length: FRAME_STEP / MARK_STEP }, (_, i) => from + (i + 1) * MARK_STEP).filter((l) => l > LAST_ROW_LEVEL);
+  return [...new Set([...marks, level])].sort((a, b) => a - b);
+}
+
 /** Return level progress and the unlock row in a UI-friendly plain object. */
 export function levelInfo(state) {
   const base = normalizeState(state);
-  const row = DB.levels[base.level - 1];
+  const row = levelRow(base.level);
   return {
     level: base.level,
     xp: base.xp,
     xpInLevel: base.xp - row.totalXP,
     xpToNext: row.xpToNext,
     totalXP: row.totalXP,
-    nextTotalXP: base.level < DB.levels.length ? DB.levels[base.level].totalXP : null,
+    nextTotalXP: row.xpToNext ? row.totalXP + row.xpToNext : null,
     unlock: row.unlock,
     plots: base.plots.length,
     beds: expansionCapacity(base.built),
@@ -273,15 +281,6 @@ export function levelInfo(state) {
 
 function builtPlotCount(built) {
   return BASE_PLOT_COUNT + PLOT_EXPANSIONS.filter((entry) => built.includes(entry.id)).length;
-}
-
-function levelForXp(xp) {
-  let level = 1;
-  for (const row of DB.levels) {
-    if (xp >= row.totalXP) level = row.level;
-    else break;
-  }
-  return level;
 }
 
 function syncLevel(state) {
@@ -1138,7 +1137,7 @@ export function testProfile(level, now) {
   assertSafeInteger(level, 'level');
   if (level < 1 || level > MAX_LEVEL) reject('INVALID_LEVEL', `testProfile level must be between 1 and ${MAX_LEVEL}`);
   const state = makeInitialState(timestamp);
-  state.xp = DB.levels[level - 1].totalXP;
+  state.xp = levelRow(level).totalXP;
   state.level = level;
   // The newest unlocked plot stays unbuilt so the profile can try building it (plot_12 at level 100).
   const lastPlot = PLOT_EXPANSIONS.filter((entry) => unlockedAtLevel(entry, level) && entry.level >= 100).at(-1)?.id;

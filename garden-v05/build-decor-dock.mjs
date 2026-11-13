@@ -1,5 +1,5 @@
-import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=25.1.9';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=25.1.9';
+import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=26.0';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=26.0';
 import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=25.1.9';
 import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=25.1.9';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.9';

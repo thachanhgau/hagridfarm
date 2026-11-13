@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {WEATHER,weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=25.1.9';
-import {ICONS} from './pixel-icons.mjs?v=25.1.9';
+import {ICONS} from './pixel-icons.mjs?v=26.0';
 import {plotSign} from './scene-renderer.mjs?v=25.1.9';
 
 const H=3600000,D=24*H;

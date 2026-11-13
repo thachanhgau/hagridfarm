@@ -27,5 +27,35 @@ export const RECIPE = Object.freeze(Object.fromEntries(DB.recipes.map((entry) =>
 export const EXPANSION = Object.freeze(Object.fromEntries(DB.expansions.map((entry) => [entry.id, entry])));
 export const REWARDS = Object.freeze(Object.fromEntries(DB.levels.map((entry) => [entry.level, entry])));
 // Level-500 roadmap §12: levels above TAN_SUC_LEVEL (bậc Tận Sức) stay hidden until a garden reaches it.
-export const MAX_LEVEL = DB.levels.length;
 export const TAN_SUC_LEVEL = 100;
+// Season 2 §7 (Hagrid docs/season-2-roadmap.md, owner 13/11/2026): the cap is 10,000. Past the last stored row (500)
+// every level is a flat FLAT_LEVEL_XP, computed by levelRow, never stored (9,500 rows would cost the preload budget).
+// Nothing unlocks and no price rises past LAST_ROW_LEVEL (fence #63). Every MARK_STEP levels from 600 pays MARK_BOOST
+// Nước phép once, every FRAME_STEP levels a «Tận Sức» Floo frame (server garden-keeper-core, fence #64).
+export const LAST_ROW_LEVEL = DB.levels.length;
+export const MAX_LEVEL = 10000;
+export const FLAT_LEVEL_XP = 84000;
+export const MARK_STEP = 100;
+export const MARK_BOOST = 2;
+export const FRAME_STEP = 1000;
+const lastRow = DB.levels[LAST_ROW_LEVEL - 1];
+const markReward = (level) => (level % MARK_STEP ? null : `+${MARK_BOOST} Nước phép${level % FRAME_STEP ? '' : ' · khung Floo'}`);
+/** The row of `level` (1…MAX_LEVEL): stored up to LAST_ROW_LEVEL − 1, computed from it on (level 500 now leads on);
+ * a level mark also names its `reward`. */
+export function levelRow(level) {
+  if (level < LAST_ROW_LEVEL) return DB.levels[level - 1];
+  const past = level - LAST_ROW_LEVEL;
+  return Object.freeze({ level, xpToNext: level < MAX_LEVEL ? FLAT_LEVEL_XP : 0, totalXP: lastRow.totalXP + past * FLAT_LEVEL_XP,
+    plots: lastRow.plots, beds: lastRow.beds, unlock: past ? `Bậc Tận Sức ★${level - TAN_SUC_LEVEL}` : lastRow.unlock,
+    ...(past && markReward(level) ? { reward: markReward(level) } : {}) });
+}
+/** The level `xp` reaches: a search of the stored rows, then the flat part. */
+export function levelForXp(xp) {
+  if (xp >= lastRow.totalXP) return Math.min(MAX_LEVEL, LAST_ROW_LEVEL + Math.floor((xp - lastRow.totalXP) / FLAT_LEVEL_XP));
+  let level = 1;
+  for (const row of DB.levels) {
+    if (xp >= row.totalXP) level = row.level;
+    else break;
+  }
+  return level;
+}
