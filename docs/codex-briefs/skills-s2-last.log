@@ -1,0 +1,1468 @@
+Reading additional input from stdin...
+OpenAI Codex v0.167.0-alpha.4.1
+--------
+workdir: /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1d409-ec99-7cd2-b198-b391f365ce1b
+--------
+user
+# Codex brief — Hagrid Farm Season 2 «Tài năng sinh vật»: 18 creature skill icons (13/11/2026)
+
+You are Codex in the Hagrid Farm repo. **You only draw masters.** Claude Code (Anthropic) reduces them to native
+icons, builds the atlas, tests and commits after you. Keep repo exploration short.
+
+Every garden creature now has one skill that helps the garden. Each skill gets one square icon, shown at 40×40 px in
+the «Chăm bé» panel next to the creature's name. The icon must say **what the skill does** at a glance, and the
+creature in it must be recognisable as the game's own creature.
+
+## Style
+
+Match the game's detailed creature sprites, **not** chunky blocks: open these at 8× nearest-neighbour first and copy
+their pixel density, outline and shading:
+
+- `garden-v05/native-levels/kneazle/frame-04.png` and `garden-v05/native-levels/unicorn/frame-04.png` (the quality
+  target: fine 1-px pixel detail, fur and mane drawn in small clusters, soft 3–4 step shading, a crisp dark outline);
+- `garden-v05/native-items/produce_grindylow.png`, `garden-v05/native-items/supply_water.png` (64×64 item icons: one
+  readable object filling the square).
+
+Pixel art, every pixel one flat square, dark outline `#231F2E` (lighter inner lines allowed, like the Kneazle's
+fur), light from the top-left, no anti-aliasing blur, no gradients, no glow or halo outside the object, no text or
+letters, no frame or badge background, no drop shadow, **transparent background** (real alpha). Colours close to
+the game palette: `#231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67
+#8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0`.
+
+Each icon ends up **64×64 with the subject about 52×52**, then shown at 40 px. So: one compact scene, the creature
+(or its unmistakable part) big, at most one or two small props, strong silhouette. Nothing tiny that disappears at
+40 px. All 18 must look like one set (same outline weight, same light, same scale of subject).
+
+## The 18 icons
+
+Creature look: copy the game's sprite of that species (path given). Creature names are the game's Vietnamese ones;
+draw the creature itself, never a person.
+
+| sheet, cell | id | skill (what it does) | draw | creature reference |
+|---|---|---|---|---|
+| 1, r1 c1 | `puffskein` | «Ăn vụn nhả hạt»: harvests a plot and gives one seed back | the round fluffy cream Puffskein with its **long thin pink tongue** out, curling round **one big seed**; a tiny green sprout below | `creature-motion-assets/native/puffskein/left-care-01.png` |
+| 1, r1 c2 | `bowtruckle` | «Tỉa cành»: prunes a growing plot so it grows sooner | the little green **Bowtruckle** (stick-insect of twigs, leaf tufts on its head) holding a pair of **small garden shears** snipping a leafy twig | `creature-motion-assets/native/bowtruckle/left-care-01.png` |
+| 1, r1 c3 | `niffler` | «Đào kho báu»: digs an empty plot, finds water and seeds | the black fluffy **Niffler** (duck-bill snout) digging out of a **brown soil mound**, a **blue water drop** and **one seed** flying up | `creature-motion-assets/native/niffler/left-care-01.png` |
+| 1, r2 c1 | `mooncalf` | «Phân trăng»: at night makes a plot grow sooner | the pale blue-grey **Mooncalf** (huge round eyes, long thin legs) beside a **sprout**, a **pale yellow crescent moon** above | `native-levels/mooncalf/frame-04.png` |
+| 1, r2 c2 | `kneazle` | «Mắt tinh»: spots ripe plots and creatures in trouble | the **Kneazle's head** (speckled tan cat, lynx ear tufts) large, with **bright green eyes** wide open, a small **round magnifying lens** in front of one eye | `native-levels/kneazle/frame-04.png` |
+| 1, r2 c3 | `diricawl` | «Biến – hiện»: vanishes and reappears to harvest a ripe plot | the plump grey **Diricawl** bird **half fading into a puff of feathers** (one side drawn as scattered feather pixels), holding **one harvested carrot** in its beak | `native-levels/diricawl/frame-04.png` |
+| 2, r1 c1 | `fwooper` | «Hát ru»: sings so every creature cheers up | the brightly coloured **Fwooper** bird singing with beak open, **two music notes** and **one small heart** floating | `native-levels/fwooper/frame-04.png` |
+| 2, r1 c2 | `hippogriff` | «Chở nước»: carries water to the garden | a **Hippogriff** head and one big grey-brown **eagle wing** carrying a **wooden bucket of blue water** | `creature-motion-assets/native/hippogriff/left-care-01.png` |
+| 2, r1 c3 | `thestral` | «Dẫn đường»: leads lost creatures home from the Forbidden Forest | the black skeletal winged **Thestral** head (white eyes) beside a small **lantern**, a dotted **path** curving home | `native-levels/thestral/frame-04.png` |
+| 2, r2 c1 | `unicorn` | «Chữa lành»: heals a sick creature | the golden-cream **Unicorn's head** with its **spiral horn**, a **red heart** and a **small silver drop** by the horn tip | `native-levels/unicorn/frame-04.png` |
+| 2, r2 c2 | `three-headed-dog` | «Canh đêm»: keeps the garden gnomes away at night | the **three brown dog heads** of the game's three-headed dog side by side, ears up, alert, a **crescent moon** above | `creature-motion-assets/native/three-headed-dog/left-action-01.png` |
+| 2, r2 c3 | `dragon` | «Thiêu cỏ»: burns away a dried-out plot or weeds | the game's **dragon head** breathing a short **flat flame** (yellow, orange, red, hard edges) onto **one dry brown weed tuft** | `creature-motion-assets/native/dragon/left-care-01.png` |
+| 3, r1 c1 | `grindylow` | «Chúa tể đáy hồ» (Lord of the lake bed): keeps the pond clear and pulls in the fish | the green **Grindylow** with a **tiny gold crown**, its **very long thin fingers** gripping a **fishing net** with **one orange carp** in it, a few water bubbles | `creature-motion-assets/native/grindylow/left-idle-01.png` |
+| 3, r1 c2 | `crup` | «Ăn ma lùm»: chases off a garden gnome as it bites | the white-and-tan terrier **Crup** (its **forked tail** big and clear) bounding after a **small potato-headed ma lùm** (the garden gnome, see `environment/duty/masters/ma-lum.png`) running away; playful, not violent | `creature-motion-assets/native/crup/left-idle-01.png` |
+| 3, r1 c3 | `knarl` | «Xới đất»: turns over tired soil | the grumpy **Knarl** curled into a **spiky ball** rolling over **brown soil furrows**, a little clod of earth flying | `creature-motion-assets/native/knarl/left-idle-01.png` |
+| 3, r2 c1 | `salamander` | «Ở trong lửa»: lives in fire and keeps plots safe from fire and frost | the orange **fire salamander** curled round **one green sprout**, a few hard-edged flame licks behind it, a **small snowflake** on the other side | `creature-motion-assets/native/salamander/left-idle-01.png` |
+| 3, r2 c2 | `kappa` | «Dẫn nước»: guides water to the crops in a drought | the green **Kappa** bowing, **water pouring from the dish on its head** onto **a sprout** | `creature-motion-assets/native/kappa/left-idle-01.png` |
+| 3, r2 c3 | `porlock` | «Gác bãi chăn»: guards the horses so they stay happy | the small shaggy **Porlock** standing upright on its hoof, holding a **wooden shepherd's crook**, a **horseshoe** beside it | `creature-motion-assets/native/porlock/left-idle-01.png` |
+
+All paths above are under `garden-v05/`.
+
+## Sheets
+
+Three sheets in `garden-v05/masters-items/skills-s2/`: `skills-sheet-1.png`, `skills-sheet-2.png`,
+`skills-sheet-3.png`, each **1536×1024, 3 columns × 2 rows of 512×512 cells** (no drawn grid), one icon per cell,
+centred, the subject about 420×420 inside the cell with **≥ 40 px empty margin** to every cell edge, every icon one
+connected group of pixels or tightly grouped (props touching or within a few px of the creature).
+
+Make **two candidates per sheet**, keep the better (clearest action at 40 px, closest to the Kneazle sprite's
+detail). Rejected candidates stay under `docs/codex-briefs/skills-s2/`.
+
+## Delivery
+
+- Record every image prompt in `docs/codex-briefs/skills-s2/prompts.json` (create it as `{"items": []}`; one entry per
+  sheet: `id`, `master`, `prompt`, `generatedFile` = the path your image tool wrote, `referenceFiles`).
+- You may place generated art onto the exact canvas with a small script under `docs/codex-briefs/skills-s2/`
+  (crop/place, nearest-neighbour only; no painting, no quantizing).
+- Hard rules: no git commit/push/deploy; do not edit existing files; do not run any builder or importer; do not touch
+  HPVNN or `functions/`. If image generation refuses a subject, stop that item, list it with the refusal text, and do
+  not rename or describe around it. If image generation or usage is unavailable, stop and say so: never fake art with
+  code.
+- Report in `docs/codex-briefs/skills-s2-report.md`: a table of id, sheet, cell, candidate kept and why, your verdict
+  (good / redo), plus anything refused.
+2026-11-13T08:33:03.162484Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when UnexpectedServerResponse("HTTP 504: error code: 504\n")
+codex
+Bệ hạ, tiểu nữ sẽ đọc hướng dẫn tạo ảnh, kiểm tra sprite tham chiếu ở 8× nearest-neighbour, rồi vẽ hai ứng viên cho mỗi sheet và chọn bản rõ nhất. Tiểu nữ chỉ tạo master cùng prompt và báo cáo, không chạy importer hay commit.
+exec
+/bin/zsh -lc 'cat /Users/thachanh/.codex/skills/.system/imagegen/SKILL.md' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural — candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup — product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup — app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram — diagrams/infographics with structured layout and text.
+- scientific-educational — classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing — campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual — slide, chart, workflow, and data-heavy business visuals.
+- logo-brand — logo/mark exploration, vector-friendly.
+- illustration-story — comics, children’s book art, narrative scenes.
+- stylized-concept — style-driven concept art, 3D/stylized renders.
+- historical-scene — period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization — translate/replace in-image text, preserve layout.
+- identity-preserve — try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit — remove/replace a specific element (including interior swaps).
+- lighting-weather — time-of-day/season/atmosphere changes only.
+- background-extraction — transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer — apply reference style while changing subject/scene.
+- compositing — multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render — drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+
+exec
+/bin/zsh -lc "pwd; rg --files -g 'AGENTS.md' -g '*skills-sheet*' -g 'prompts.json' -g '*frame-04.png' -g '*left-care-01.png' -g '*left-idle-01.png' -g '*ma-lum.png' -g 'produce_grindylow.png' -g 'supply_water.png' garden-v05 docs 2>/dev/null" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+docs/codex-briefs/skills-s2/prompts.json
+docs/codex-briefs/creatures-art-2/prompts.json
+garden-v05/native-care/kneazle/frame-04.png
+garden-v05/masters-items/supply_water.png
+garden-v05/native/dragon/frame-04.png
+garden-v05/native-care/unicorn/frame-04.png
+garden-v05/native-care/thestral/frame-04.png
+garden-v05/native-levels/maize/frame-04.png
+garden-v05/native-crop-complete/maize/frame-04.png
+garden-v05/native-levels/sunflower/frame-04.png
+garden-v05/native-levels/carrot/frame-04.png
+garden-v05/native/niffler/frame-04.png
+garden-v05/native/mandrake/frame-04.png
+garden-v05/native-complete-objects/fang/frame-04.png
+garden-v05/native-care/mooncalf/frame-04.png
+garden-v05/native/bowtruckle/frame-04.png
+garden-v05/native/puffapod/frame-04.png
+garden-v05/native/daisy/frame-04.png
+garden-v05/native-care/fwooper/frame-04.png
+garden-v05/native/dittany/frame-04.png
+garden-v05/native-care/diricawl/frame-04.png
+garden-v05/native-levels/valerian/frame-04.png
+garden-v05/native-crop-complete/sunflower/frame-04.png
+garden-v05/native-levels/kneazle/frame-04.png
+garden-v05/native-levels/unicorn/frame-04.png
+garden-v05/native-levels/silverkelp/frame-04.png
+garden-v05/creature-motion-assets/native/bowtruckle/left-care-01.png
+garden-v05/native-levels/devilssnare/frame-04.png
+garden-v05/creature-motion-assets/native/fwooper/left-care-01.png
+garden-v05/native-levels/thestral/frame-04.png
+garden-v05/special-products-assets/prompts.json
+garden-v05/native-levels/starbean/frame-04.png
+garden-v05/native-crop-complete/carrot/frame-04.png
+garden-v05/creature-motion-assets/native/kneazle/left-care-01.png
+garden-v05/native-levels/mooncalf/frame-04.png
+garden-v05/native-levels/mistmushroom/frame-04.png
+garden-v05/native-crop-complete/valerian/frame-04.png
+garden-v05/native-levels/fluxweed/frame-04.png
+garden-v05/creature-motion-assets/native/unicorn/left-care-01.png
+garden-v05/native-complete-objects/owl_post/frame-04.png
+garden-v05/native-crop-complete/decor-flow-sp_hagrid_umbrella/frame-04.png
+garden-v05/native-levels/oats/frame-04.png
+garden-v05/native-crop-complete/silverkelp/frame-04.png
+garden-v05/native-levels/flax/frame-04.png
+garden-v05/creature-motion-assets/native/salamander/left-idle-01.png
+garden-v05/creature-motion-assets/native/salamander/left-care-01.png
+garden-v05/native-crop-complete/devilssnare/frame-04.png
+garden-v05/native-levels/moonherb/frame-04.png
+garden-v05/native-crop-complete/decor-flow-hw_monster_bookcase/frame-04.png
+garden-v05/native/three-headed-dog/frame-04.png
+garden-v05/native-crop-complete/flow-flitterbloom/frame-04.png
+garden-v05/creature-motion-assets/native/diricawl/left-care-01.png
+garden-v05/native-levels/shrivelfig/frame-04.png
+garden-v05/native-crop-complete/starbean/frame-04.png
+garden-v05/halloween-assets/prompts.json
+garden-v05/creature-motion-assets/native/knarl/left-idle-01.png
+garden-v05/native/pumpkin/frame-04.png
+garden-v05/environment/floo-frames/prompts.json
+garden-v05/native-crop-complete/mistmushroom/frame-04.png
+garden-v05/creature-motion-assets/native/puffskein/left-care-01.png
+garden-v05/creature-motion-assets/native/knarl/left-care-01.png
+garden-v05/creature-motion-assets/native/hippogriff/left-care-01.png
+garden-v05/native-levels/firepepper/frame-04.png
+garden-v05/native-crop-complete/decor-flow-hw_candy_cauldron/frame-04.png
+garden-v05/creature-motion-assets/native/kappa/left-idle-01.png
+garden-v05/creature-motion-assets/native/kappa/left-care-01.png
+garden-v05/native-crop-complete/fluxweed/frame-04.png
+garden-v05/native/strawberry/frame-04.png
+garden-v05/native-complete-objects/gardener_friend/frame-04.png
+garden-v05/native-crop-complete/oats/frame-04.png
+garden-v05/native-crop-complete/decor-flow-hw_eyeball_flowers/frame-04.png
+garden-v05/creature-motion-assets/native/thestral/left-care-01.png
+garden-v05/creature-motion-assets/native/porlock/left-idle-01.png
+garden-v05/creature-motion-assets/native/porlock/left-care-01.png
+garden-v05/decor-assets/prompts.json
+garden-v05/native/puffskein/frame-04.png
+garden-v05/native-crop-complete/flax/frame-04.png
+garden-v05/creature-motion-assets/native/dragon/left-care-01.png
+garden-v05/native-levels/sunpetal/frame-04.png
+garden-v05/creature-motion-assets/native/mooncalf/left-care-01.png
+garden-v05/creature-motion-assets/native/grindylow/left-idle-01.png
+garden-v05/creature-motion-assets/native/grindylow/left-care-01.png
+garden-v05/native-crop-complete/moonherb/frame-04.png
+garden-v05/native/hippogriff/frame-04.png
+garden-v05/native-levels/fwooper/frame-04.png
+garden-v05/native-crop-complete/decor-flow-hw_violet_mist_pond/frame-04.png
+garden-v05/native-levels/gillyweed/frame-04.png
+garden-v05/creature-motion-assets/native/niffler/left-care-01.png
+garden-v05/creature-motion-assets/native/crup/left-care-01.png
+garden-v05/creature-motion-assets/native/crup/left-idle-01.png
+garden-v05/native-crop-complete/shrivelfig/frame-04.png
+garden-v05/native-levels/flitterbloom/frame-04.png
+garden-v05/environment/visit/prompts.json
+garden-v05/native-crop-complete/firepepper/frame-04.png
+garden-v05/native-levels/bubotuber/frame-04.png
+garden-v05/native-levels/knotgrass/frame-04.png
+garden-v05/native-levels/ambermelon/frame-04.png
+garden-v05/native-crop-complete/flow-bubotuber/frame-04.png
+garden-v05/native-levels/beet/frame-04.png
+garden-v05/native-levels/clover/frame-04.png
+garden-v05/native-crop-complete/sunpetal/frame-04.png
+garden-v05/native-levels/mimbulus/frame-04.png
+garden-v05/native-crop-complete/gillyweed/frame-04.png
+garden-v05/environment/pond/prompts.json
+garden-v05/native-levels/diricawl/frame-04.png
+garden-v05/native-levels/lettuce/frame-04.png
+garden-v05/native-crop-complete/decor-flow-hw_blinking_chest/frame-04.png
+garden-v05/environment/duty/masters/ma-lum.png
+garden-v05/environment/duty/prompts.json
+garden-v05/native-levels/mint/frame-04.png
+garden-v05/native-levels/blueberry/frame-04.png
+garden-v05/native-crop-complete/flitterbloom/frame-04.png
+garden-v05/environment/elves/prompts.json
+garden-v05/native-crop-complete/bubotuber/frame-04.png
+garden-v05/environment/friends/prompts.json
+garden-v05/native-crop-complete/ambermelon/frame-04.png
+garden-v05/native-crop-complete/clover/frame-04.png
+garden-v05/native-crop-complete/lettuce/frame-04.png
+garden-v05/native-crop-complete/mint/frame-04.png
+garden-v05/native-crop-complete/knotgrass/frame-04.png
+garden-v05/native-complete-objects/herbology_greenhouse/frame-04.png
+garden-v05/native-crop-complete/flow-mimbulus/frame-04.png
+garden-v05/native-crop-complete/beet/frame-04.png
+garden-v05/native-crop-complete/blueberry/frame-04.png
+garden-v05/native-crop-complete/mimbulus/frame-04.png
+garden-v05/native-items/supply_water.png
+garden-v05/native-items/produce_grindylow.png
+
+exec
+/bin/zsh -lc 'git status --short; cat docs/codex-briefs/skills-s2/prompts.json; ls -la garden-v05/masters-items/skills-s2 docs/codex-briefs/skills-s2; find .. -name AGENTS.md -maxdepth 2' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+?? docs/codex-briefs/skills-s2-last.log
+?? docs/codex-briefs/skills-s2-last.md
+?? docs/codex-briefs/skills-s2-run1.log
+?? docs/codex-briefs/skills-s2/
+{"items": []}
+docs/codex-briefs/skills-s2:
+total 8
+drwxr-xr-x@   3 thachanh  staff    96 Nov 13 15:28 .
+drwxr-xr-x@ 169 thachanh  staff  5408 Nov 13 15:33 ..
+-rw-r--r--@   1 thachanh  staff    14 Nov 13 15:28 prompts.json
+
+garden-v05/masters-items/skills-s2:
+total 0
+drwxr-xr-x@  2 thachanh  staff    64 Nov 13 15:26 .
+drwxr-xr-x@ 69 thachanh  staff  2208 Nov 13 15:26 ..
+
+exec
+/bin/zsh -lc "python3 - <<'PY'
+from PIL import Image,ImageDraw
+from pathlib import Path
+paths=['native-levels/kneazle/frame-04.png','native-levels/unicorn/frame-04.png','native-items/produce_grindylow.png','native-items/supply_water.png']
+out=Image.new('RGBA',(2048,700),'#687486')
+for i,p in enumerate(paths):
+ im=Image.open('garden-v05/'+p).convert('RGBA'); im=im.resize((im.width*8,im.height*8),Image.Resampling.NEAREST);out.alpha_composite(im,(i*512,40));ImageDraw.Draw(out).text((i*512+5,5),p,fill='white')
+out.save('/tmp/skills-quality-8x.png')
+print('saved /tmp/skills-quality-8x.png')
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ exited 1 in 0ms:
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'PIL'
+
+exec
+/bin/zsh -lc 'which -a python3 uv magick sips; ls /Users/thachanh/.codex/skills/.system/imagegen; ls /private/tmp | head' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+/opt/homebrew/bin/python3
+/opt/homebrew/bin/python3
+/Users/thachanh/aicoworker/app/nodejs/bin/python3
+/usr/local/bin/python3
+/usr/bin/python3
+/opt/homebrew/bin/python3
+/Users/thachanh/aicoworker/app/nodejs/bin/python3
+/opt/homebrew/bin/uv
+/opt/homebrew/bin/uv
+/opt/homebrew/bin/uv
+/usr/bin/sips
+LICENSE.txt
+SKILL.md
+agents
+assets
+references
+scripts
+09D4D721-C973-4861-AB9F-8E5887024F52
+125E23C4-DDAC-46BA-8DD9-686EAF1BFCE2_IN
+125E23C4-DDAC-46BA-8DD9-686EAF1BFCE2_OUT
+1B04F4C8-0022-479C-93E4-F0AE79AD0C6C_IN
+1B04F4C8-0022-479C-93E4-F0AE79AD0C6C_OUT
+214EAA37-8762-4122-B0FA-5915BFC709CE_IN
+214EAA37-8762-4122-B0FA-5915BFC709CE_OUT
+2E7901E4-23C2-4B27-87BD-1826B59B364E_IN
+2E7901E4-23C2-4B27-87BD-1826B59B364E_OUT
+31E30225-75BD-49ED-886F-22A953809A05
+
+exec
+/bin/zsh -lc "/usr/local/bin/python3 -c 'from PIL import Image; print(Image.__version__)'" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 245ms:
+12.1.0
+
+exec
+/bin/zsh -lc "/usr/local/bin/python3 - <<'PY'
+from PIL import Image,ImageDraw
+paths=['native-levels/kneazle/frame-04.png','native-levels/unicorn/frame-04.png','native-items/produce_grindylow.png','native-items/supply_water.png']
+out=Image.new('RGBA',(2048,1000),'#687486')
+for i,p in enumerate(paths):
+ im=Image.open('garden-v05/'+p).convert('RGBA'); print(p,im.size); im=im.resize((im.width*8,im.height*8),Image.Resampling.NEAREST);out.alpha_composite(im,(i*512,40));ImageDraw.Draw(out).text((i*512+5,5),p,fill='white')
+out.save('/tmp/skills-quality-8x.png')
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 67ms:
+native-levels/kneazle/frame-04.png (96, 96)
+native-levels/unicorn/frame-04.png (160, 160)
+native-items/produce_grindylow.png (64, 64)
+native-items/supply_water.png (64, 64)
+
+codex
+Sprite tham chiếu dùng cụm lông và bờm nhỏ, viền tối mảnh, cùng các bậc màu phẳng. Tiểu nữ sẽ dùng trực tiếp các sprite này để giữ nhận dạng và độ chi tiết. Thư mục master hiện trống; file prompt đã có khung `{"items":[]}`.
+exec
+/bin/zsh -lc "/usr/local/bin/python3 - <<'PY'
+from PIL import Image,ImageDraw
+from pathlib import Path
+root=Path('garden-v05')
+groups=[['creature-motion-assets/native/puffskein/left-care-01.png','creature-motion-assets/native/bowtruckle/left-care-01.png','creature-motion-assets/native/niffler/left-care-01.png','native-levels/mooncalf/frame-04.png','native-levels/kneazle/frame-04.png','native-levels/diricawl/frame-04.png'],['native-levels/fwooper/frame-04.png','creature-motion-assets/native/hippogriff/left-care-01.png','native-levels/thestral/frame-04.png','native-levels/unicorn/frame-04.png','creature-motion-assets/native/three-headed-dog/left-action-01.png','creature-motion-assets/native/dragon/left-care-01.png'],['creature-motion-assets/native/grindylow/left-idle-01.png','creature-motion-assets/native/crup/left-idle-01.png','creature-motion-assets/native/knarl/left-idle-01.png','creature-motion-assets/native/salamander/left-idle-01.png','creature-motion-assets/native/kappa/left-idle-01.png','creature-motion-assets/native/porlock/left-idle-01.png']]
+for p in ['native-levels/kneazle/frame-04.png','native-levels/unicorn/frame-04.png']:
+ im=Image.open(root/p);im.resize((im.width*8,im.height*8),Image.Resampling.NEAREST).save('/tmp/'+p.split('/')[1]+'-8x.png')
+for n,paths in enumerate(groups,1):
+ out=Image.new('RGBA',(1536,1024),'#687486')
+ for i,p in enumerate(paths):
+  im=Image.open(root/p).convert('RGBA');im=im.crop(im.getbbox()); scale=max(1,min(440//im.width,440//im.height)); im=im.resize((im.width*scale,im.height*scale),Image.Resampling.NEAREST); x=(i%3)*512+(512-im.width)//2;y=(i//3)*512+(512-im.height)//2;out.alpha_composite(im,(x,y));ImageDraw.Draw(out).text(((i%3)*512+8,(i//3)*512+8),p.split('/')[-2],fill='white')
+ out.save('/tmp/skills-refs-'+str(n)+'.png')
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ exited 1 in 0ms:
+Traceback (most recent call last):
+  File "<stdin>", line 10, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/PIL/Image.py", line 3512, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'garden-v05/creature-motion-assets/native/three-headed-dog/left-action-01.png'
+
+exec
+/bin/zsh -lc 'rg --files garden-v05/creature-motion-assets/native/three-headed-dog; ls -l /tmp/skills-refs-*.png; test -e docs/codex-briefs/skills-s2-report.md && echo report-exists' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ exited 1 in 0ms:
+garden-v05/creature-motion-assets/native/three-headed-dog/right-idle-04.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-growth-04.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-action-02.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-action-03.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-action-01.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-growth-02.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-idle-02.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-action-04.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-idle-03.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-growth-03.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-idle-01.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-growth-01.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-eat-03.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-atlas.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-eat-02.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-eat-01.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-eat-04.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-care-04.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-care-01.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-care-03.png
+garden-v05/creature-motion-assets/native/three-headed-dog/right-care-02.png
+-rw-r--r--@ 1 thachanh  wheel   60204 Nov 13 15:27 /tmp/skills-refs-0.png
+-rw-r--r--@ 1 thachanh  wheel   31921 Nov 13 15:33 /tmp/skills-refs-1.png
+-rw-r--r--@ 1 thachanh  wheel   59806 Nov 13 15:27 /tmp/skills-refs-2.png
+-rw-r--r--@ 1 thachanh  wheel  102072 Nov 13 15:27 /tmp/skills-refs-3.png
+
+exec
+/bin/zsh -lc "/usr/local/bin/python3 - <<'PY'
+from PIL import Image,ImageDraw
+from pathlib import Path
+root=Path('garden-v05')
+groups=[['native-levels/fwooper/frame-04.png','creature-motion-assets/native/hippogriff/left-care-01.png','native-levels/thestral/frame-04.png','native-levels/unicorn/frame-04.png','creature-motion-assets/native/three-headed-dog/right-action-01.png','creature-motion-assets/native/dragon/left-care-01.png'],['creature-motion-assets/native/grindylow/left-idle-01.png','creature-motion-assets/native/crup/left-idle-01.png','creature-motion-assets/native/knarl/left-idle-01.png','creature-motion-assets/native/salamander/left-idle-01.png','creature-motion-assets/native/kappa/left-idle-01.png','creature-motion-assets/native/porlock/left-idle-01.png']]
+for n,paths in enumerate(groups,2):
+ out=Image.new('RGBA',(1536,1024),'#687486')
+ for i,p in enumerate(paths):
+  im=Image.open(root/p).convert('RGBA'); im=im.crop(im.getbbox());scale=max(1,min(440//im.width,440//im.height));im=im.resize((im.width*scale,im.height*scale),Image.Resampling.NEAREST);out.alpha_composite(im,((i%3)*512+(512-im.width)//2,(i//3)*512+(512-im.height)//2));ImageDraw.Draw(out).text(((i%3)*512+8,(i//3)*512+8),p.split('/')[-2],fill='white')
+ out.save('/tmp/skills-current-refs-'+str(n)+'.png')
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+exec
+/bin/zsh -lc "/usr/local/bin/python3 - <<'PY'
+from PIL import Image
+p='/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png'
+im=Image.open(p);print(im.size,im.mode);print(im.getextrema())
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+(1536, 1024) RGBA
+((0, 255), (0, 255), (0, 255), (0, 253))
+
+codex
+Đã có ứng viên đầu tiên cho sheet 1. Các động tác khá rõ, nhưng ảnh hiển thị có vẻ có quầng mờ và nét vẽ mịn hơn sprite mẫu; tiểu nữ đang kiểm tra alpha trước khi chọn. Đường dẫn chó ba đầu trong brief không tồn tại; repo có `right-action-01.png`, nên tiểu nữ sẽ dùng sprite đó và ghi rõ trong báo cáo.
+exec
+/bin/zsh -lc "/usr/local/bin/python3 - <<'PY'
+from PIL import Image
+im=Image.open('/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png')
+a=im.getchannel('A');print('alpha counts',sum(v for i,v in enumerate(a.histogram()) if i==0),sum(a.histogram()[1:255]),a.histogram()[255]);print('corner',im.getpixel((0,0)),im.getpixel((511,0)),im.getpixel((511,511)))
+out=Image.new('RGBA',im.size,'#FFFFFF');out.alpha_composite(im);out.convert('RGB').save('/tmp/skills-1a-white.png')
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 9ms:
+alpha counts 678458 894406 0
+corner (12, 10, 7, 0) (26, 28, 8, 0) (42, 37, 29, 0)
+
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui/docs/codex-briefs/skills-s2/prompts.json
+diff --git a/docs/codex-briefs/skills-s2/prompts.json b/docs/codex-briefs/skills-s2/prompts.json
+index 9c53a135fe77ba3ae6f19a86fe031e29785e6250..c255e5ae8cfee25a260e620cbfaa676c761be10b
+--- a/docs/codex-briefs/skills-s2/prompts.json
++++ b/docs/codex-briefs/skills-s2/prompts.json
+@@ -1 +1,30 @@
+-{"items": []}
++{
++  "items": [
++    {
++      "id": "skills-sheet-1",
++      "master": "garden-v05/masters-items/skills-s2/skills-sheet-1.png",
++      "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.",
++      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png",
++      "referenceFiles": [
++        "garden-v05/creature-motion-assets/native/puffskein/left-care-01.png",
++        "garden-v05/creature-motion-assets/native/bowtruckle/left-care-01.png",
++        "garden-v05/creature-motion-assets/native/niffler/left-care-01.png",
++        "garden-v05/native-levels/mooncalf/frame-04.png",
++        "garden-v05/native-levels/kneazle/frame-04.png",
++        "garden-v05/native-levels/diricawl/frame-04.png"
++      ],
++      "candidates": [
++        {
++          "id": "A",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png"
++        },
++        {
++          "id": "B",
++          "generatedFile": null,
++          "status": "generating"
++        }
++      ]
++    }
++  ]
++}
+
+exec
+/bin/zsh -lc 'cp /Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png docs/codex-briefs/skills-s2/skills-sheet-1-candidate-A.png' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+codex
+Tiểu nữ đã kiểm tra alpha: sheet 1 có nền trong suốt thật, nhưng nét viền còn bán trong suốt và hình Mooncalf chưa sát sprite mẫu. Ứng viên B đang được tạo với yêu cầu ô pixel và cạnh cứng hơn; sheet 2 cũng đang được tạo theo cùng tiêu chuẩn. Tiến độ: 1/6 ứng viên đã nhận, chưa chốt sheet nào.
+exec
+/bin/zsh -lc "/usr/local/bin/python3 - <<'PY'
+from PIL import Image
+from pathlib import Path
+for p in Path('/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b').glob('*.png'):
+ im=Image.open(p);print(p.name,im.size,im.getchannel('A').getextrema())
+ print([im.crop(((i%3)*512,(i//3)*512,(i%3+1)*512,(i//3+1)*512)).getchannel('A').getbbox() for i in range(6)])
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 60ms:
+exec-a5dfcad9-237e-4b2a-a27c-aba31501f532.png (1536, 1024) (0, 253)
+[(0, 0, 512, 512), (0, 3, 512, 512), (0, 0, 512, 512), (0, 0, 512, 512), (0, 0, 512, 512), (0, 0, 512, 512)]
+exec-18697008-c848-498d-9985-5a09d9c69424.png (1536, 1024) (0, 254)
+[(0, 2, 512, 512), (0, 0, 512, 512), (0, 0, 483, 512), (0, 0, 512, 484), (0, 0, 512, 512), (0, 0, 488, 503)]
+exec-03d56f55-f77c-4382-8014-29e33ff7f4f5.png (1536, 1024) (0, 253)
+[(0, 0, 512, 512), (0, 0, 512, 512), (0, 0, 509, 512), (0, 0, 512, 512), (0, 0, 512, 512), (0, 0, 512, 512)]
+exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png (1536, 1024) (0, 253)
+[(0, 17, 512, 512), (0, 0, 512, 512), (0, 0, 508, 512), (0, 0, 512, 512), (0, 0, 512, 512), (0, 0, 509, 512)]
+
+codex
+Đã nhận 3/6 ứng viên. Các hình diễn đạt được phần lớn hành động, nhưng kiểm tra pixel cho thấy alpha bán trong suốt còn lan ra khoảng trống. Tiểu nữ sẽ chỉ crop/place bằng nearest-neighbour như brief cho phép, giữ nguyên ảnh gốc và đánh dấu `redo` nếu bản được chọn vẫn vi phạm yêu cầu này.
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui/docs/codex-briefs/skills-s2/place-sheet.py
+diff --git a/docs/codex-briefs/skills-s2/place-sheet.py b/docs/codex-briefs/skills-s2/place-sheet.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..717ccac113a0d74e087e960d753f7321f014d56d
+--- /dev/null
++++ b/docs/codex-briefs/skills-s2/place-sheet.py
+@@ -0,0 +1,19 @@
++"""Place six generated cells on the requested canvas; never repaint or quantize."""
++import argparse
++from PIL import Image
++
++parser = argparse.ArgumentParser()
++parser.add_argument('source')
++parser.add_argument('destination')
++args = parser.parse_args()
++source = Image.open(args.source).convert('RGBA')
++if source.size != (1536, 1024):
++    raise SystemExit(f'Expected 1536x1024, got {source.size}')
++canvas = Image.new('RGBA', (1536, 1024), (0, 0, 0, 0))
++for row in range(2):
++    for col in range(3):
++        x, y = col * 512, row * 512
++        cell = source.crop((x, y, x + 512, y + 512))
++        cell = cell.resize((420, 420), Image.Resampling.NEAREST)
++        canvas.paste(cell, (x + 46, y + 46))
++canvas.save(args.destination)
+diff --git a/docs/codex-briefs/skills-s2/prompts.json b/docs/codex-briefs/skills-s2/prompts.json
+index 9c53a135fe77ba3ae6f19a86fe031e29785e6250..c255e5ae8cfee25a260e620cbfaa676c761be10b
+--- a/docs/codex-briefs/skills-s2/prompts.json
++++ b/docs/codex-briefs/skills-s2/prompts.json
+@@ -1 +1,30 @@
+-{"items": []}
++{
++  "items": [
++    {
++      "id": "skills-sheet-1",
++      "master": "garden-v05/masters-items/skills-s2/skills-sheet-1.png",
++      "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.",
++      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png",
++      "referenceFiles": [
++        "garden-v05/creature-motion-assets/native/puffskein/left-care-01.png",
++        "garden-v05/creature-motion-assets/native/bowtruckle/left-care-01.png",
++        "garden-v05/creature-motion-assets/native/niffler/left-care-01.png",
++        "garden-v05/native-levels/mooncalf/frame-04.png",
++        "garden-v05/native-levels/kneazle/frame-04.png",
++        "garden-v05/native-levels/diricawl/frame-04.png"
++      ],
++      "candidates": [
++        {
++          "id": "A",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png"
++        },
++        {
++          "id": "B",
++          "generatedFile": null,
++          "status": "generating"
++        }
++      ]
++    }
++  ]
++}
+
+exec
+/bin/zsh -lc "/usr/local/bin/python3 - <<'PY'
+from pathlib import Path
+from shutil import copyfile
+src=Path('/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b')
+dst=Path('docs/codex-briefs/skills-s2')
+for name,target in [('exec-18697008-c848-498d-9985-5a09d9c69424.png','skills-sheet-1-candidate-B.png'),('exec-a5dfcad9-237e-4b2a-a27c-aba31501f532.png','skills-sheet-2-candidate-A.png'),('exec-3f569e22-8df5-4b63-bc46-a3b1de197334.png','skills-sheet-2-candidate-B.png'),('exec-03d56f55-f77c-4382-8014-29e33ff7f4f5.png','skills-sheet-3-candidate-A.png')]:
+ if (dst/target).exists(): raise SystemExit('Refusing overwrite '+target)
+ copyfile(src/name,dst/target)
+for name in ['skills-current-refs-2.png','skills-current-refs-3.png','skills-refs-3.png','kneazle-8x.png']:
+ copyfile(Path('/tmp')/name,dst/name)
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+exec
+/bin/zsh -lc '/usr/local/bin/python3 docs/codex-briefs/skills-s2/place-sheet.py docs/codex-briefs/skills-s2/skills-sheet-1-candidate-B.png garden-v05/masters-items/skills-s2/skills-sheet-1.png' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 25ms:
+exec
+/bin/zsh -lc '/usr/local/bin/python3 docs/codex-briefs/skills-s2/place-sheet.py docs/codex-briefs/skills-s2/skills-sheet-2-candidate-B.png garden-v05/masters-items/skills-s2/skills-sheet-2.png' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 10ms:
+codex
+Đã đủ 6/6 ứng viên; tiểu nữ chọn B cho cả ba sheet vì hình gọn và hành động rõ hơn khi thu nhỏ. Các bản B vẫn còn lỗi alpha và một số nét chưa sát sinh vật trong game. Tiểu nữ đang lưu master đúng kích thước, kiểm tra ở 40 px và ghi lỗi từng ô trong báo cáo; bộ này chưa đạt để đưa vào atlas.
+exec
+/bin/zsh -lc 'cp /Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-ab5c5b0f-78ad-4f15-ab18-ad9a40bc8d47.png docs/codex-briefs/skills-s2/skills-sheet-3-candidate-B.png' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+exec
+/bin/zsh -lc '/usr/local/bin/python3 docs/codex-briefs/skills-s2/place-sheet.py docs/codex-briefs/skills-s2/skills-sheet-3-candidate-B.png garden-v05/masters-items/skills-s2/skills-sheet-3.png' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 15ms:
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui/docs/codex-briefs/skills-s2/prompts.json
+diff --git a/docs/codex-briefs/skills-s2/place-sheet.py b/docs/codex-briefs/skills-s2/place-sheet.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..717ccac113a0d74e087e960d753f7321f014d56d
+--- /dev/null
++++ b/docs/codex-briefs/skills-s2/place-sheet.py
+@@ -0,0 +1,19 @@
++"""Place six generated cells on the requested canvas; never repaint or quantize."""
++import argparse
++from PIL import Image
++
++parser = argparse.ArgumentParser()
++parser.add_argument('source')
++parser.add_argument('destination')
++args = parser.parse_args()
++source = Image.open(args.source).convert('RGBA')
++if source.size != (1536, 1024):
++    raise SystemExit(f'Expected 1536x1024, got {source.size}')
++canvas = Image.new('RGBA', (1536, 1024), (0, 0, 0, 0))
++for row in range(2):
++    for col in range(3):
++        x, y = col * 512, row * 512
++        cell = source.crop((x, y, x + 512, y + 512))
++        cell = cell.resize((420, 420), Image.Resampling.NEAREST)
++        canvas.paste(cell, (x + 46, y + 46))
++canvas.save(args.destination)
+diff --git a/docs/codex-briefs/skills-s2/prompts.json b/docs/codex-briefs/skills-s2/prompts.json
+index 9c53a135fe77ba3ae6f19a86fe031e29785e6250..625106410b1271361a179d2f0022ec0aa9045e43
+--- a/docs/codex-briefs/skills-s2/prompts.json
++++ b/docs/codex-briefs/skills-s2/prompts.json
+@@ -1 +1,116 @@
+-{"items": []}
++{
++  "items": [
++    {
++      "id": "skills-sheet-1",
++      "master": "garden-v05/masters-items/skills-s2/skills-sheet-1.png",
++      "prompt": "Use case: stylized-concept. Generate candidate B for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.\nCandidate B emphasis: draw as authentic native 64x64 pixel sprites magnified exactly 8 times with NEAREST NEIGHBOR to fill each 512px cell. Thus the smallest square cluster is 8px in master; fine fur means 1px at native scale. Do not make smooth high-resolution illustration. Use ONLY completely opaque subject pixels and completely transparent empty pixels. Hard binary alpha, no translucent shading or feathered edges. Keep ALL visible pixels within central 420x420 of each cell. Match game's Kneazle tall lynx ears rather than generic fluffy cat. Mooncalf must retain the reference long upright neck, broad sideways ears, cream underside and big eyes, not a baby deer. Diricawl feathers scatter on only one side within the cell.",
++      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-18697008-c848-498d-9985-5a09d9c69424.png",
++      "referenceFiles": [
++        "garden-v05/creature-motion-assets/native/puffskein/left-care-01.png",
++        "garden-v05/creature-motion-assets/native/bowtruckle/left-care-01.png",
++        "garden-v05/creature-motion-assets/native/niffler/left-care-01.png",
++        "garden-v05/native-levels/mooncalf/frame-04.png",
++        "garden-v05/native-levels/kneazle/frame-04.png",
++        "garden-v05/native-levels/diricawl/frame-04.png"
++      ],
++      "candidateKept": "B",
++      "verdict": "redo",
++      "candidates": [
++        {
++          "id": "A",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-1-candidate-A.png",
++          "kept": false,
++          "referenceFiles": []
++        },
++        {
++          "id": "B",
++          "prompt": "Use case: stylized-concept. Generate candidate B for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.\nCandidate B emphasis: draw as authentic native 64x64 pixel sprites magnified exactly 8 times with NEAREST NEIGHBOR to fill each 512px cell. Thus the smallest square cluster is 8px in master; fine fur means 1px at native scale. Do not make smooth high-resolution illustration. Use ONLY completely opaque subject pixels and completely transparent empty pixels. Hard binary alpha, no translucent shading or feathered edges. Keep ALL visible pixels within central 420x420 of each cell. Match game's Kneazle tall lynx ears rather than generic fluffy cat. Mooncalf must retain the reference long upright neck, broad sideways ears, cream underside and big eyes, not a baby deer. Diricawl feathers scatter on only one side within the cell.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-18697008-c848-498d-9985-5a09d9c69424.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-1-candidate-B.png",
++          "kept": true,
++          "referenceFiles": []
++        }
++      ]
++    },
++    {
++      "id": "skills-sheet-2",
++      "master": "garden-v05/masters-items/skills-s2/skills-sheet-2.png",
++      "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 2. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's sprites seen in the reference sheet. Six skills in this exact row-major order:\nr1c1 Fwooper brightly coloured orange/gold bird with swept crest and long curling tail feathers, singing open beak, TWO musical notes and ONE small red heart snug beside beak.\nr1c2 Hippogriff head with cream eagle face, hooked beak, one BIG grey-brown feathered eagle wing carrying ONE wooden bucket filled with blue water. Bucket touches creature.\nr1c3 black/dark plum skeletal winged Thestral HEAD with WHITE eyes beside a small lantern, a short dotted path curving toward a tiny home endpoint. Compact tight group.\nr2c1 golden-cream UNICORN HEAD, finely clustered golden mane, long spiral horn, ONE red heart and ONE small silver drop next to horn tip; both very close.\nr2c2 exactly THREE brown dog heads side by side, alert upright ears, crescent moon close above. Three-headed dog, no person.\nr2c3 game's dark brown horned DRAGON HEAD, orange plate scales, breathing SHORT hard-edged flat flame yellow-orange-red onto ONE dry brown weed tuft.\nAuthentic native 64x64 sprite aesthetic enlarged exactly 8x nearest neighbor, smallest flat square pixel 8px at master size, detailed 1-native-pixel clusters not chunky blocks. Binary alpha only, fully opaque subject and fully transparent surroundings. Center each complete group within a 420px square so every cell margin stays >=40px. No glow, blurry edges or shadows.\nCandidate B: redraw candidate A in a stricter native pixel-art style matching the supplied sprite reference montage and Kneazle enlargement. Retain all six actions and their exact positions, but use the game's friendlier faces and proportions, especially golden cream unicorn and small dark brown dragon. Reduce smooth high-resolution fur and decorative curves. Work on a 192x128 logical pixel grid, then enlarge nearest-neighbor 8x to 1536x1024. Each native icon cell is 64x64, actual subject 52x52. No blur, no anti-aliasing, no partial alpha. Only transparent empty background and flat opaque pixel squares. Props must touch or sit within 1 native pixel of creature: move notes/heart closer to beak, silver drop/heart closer to horn, lantern/path close to thestral. Absolutely no ambient coloured halos. All margins >=40 master px.",
++      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-3f569e22-8df5-4b63-bc46-a3b1de197334.png",
++      "referenceFiles": [
++        "garden-v05/native-levels/fwooper/frame-04.png",
++        "garden-v05/creature-motion-assets/native/hippogriff/left-care-01.png",
++        "garden-v05/native-levels/thestral/frame-04.png",
++        "garden-v05/native-levels/unicorn/frame-04.png",
++        "garden-v05/creature-motion-assets/native/three-headed-dog/right-action-01.png",
++        "garden-v05/creature-motion-assets/native/dragon/left-care-01.png"
++      ],
++      "candidateKept": "B",
++      "verdict": "redo",
++      "candidates": [
++        {
++          "id": "A",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 2. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's sprites seen in the reference sheet. Six skills in this exact row-major order:\nr1c1 Fwooper brightly coloured orange/gold bird with swept crest and long curling tail feathers, singing open beak, TWO musical notes and ONE small red heart snug beside beak.\nr1c2 Hippogriff head with cream eagle face, hooked beak, one BIG grey-brown feathered eagle wing carrying ONE wooden bucket filled with blue water. Bucket touches creature.\nr1c3 black/dark plum skeletal winged Thestral HEAD with WHITE eyes beside a small lantern, a short dotted path curving toward a tiny home endpoint. Compact tight group.\nr2c1 golden-cream UNICORN HEAD, finely clustered golden mane, long spiral horn, ONE red heart and ONE small silver drop next to horn tip; both very close.\nr2c2 exactly THREE brown dog heads side by side, alert upright ears, crescent moon close above. Three-headed dog, no person.\nr2c3 game's dark brown horned DRAGON HEAD, orange plate scales, breathing SHORT hard-edged flat flame yellow-orange-red onto ONE dry brown weed tuft.\nAuthentic native 64x64 sprite aesthetic enlarged exactly 8x nearest neighbor, smallest flat square pixel 8px at master size, detailed 1-native-pixel clusters not chunky blocks. Binary alpha only, fully opaque subject and fully transparent surroundings. Center each complete group within a 420px square so every cell margin stays >=40px. No glow, blurry edges or shadows.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-a5dfcad9-237e-4b2a-a27c-aba31501f532.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-2-candidate-A.png",
++          "kept": false,
++          "referenceFiles": []
++        },
++        {
++          "id": "B",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 2. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's sprites seen in the reference sheet. Six skills in this exact row-major order:\nr1c1 Fwooper brightly coloured orange/gold bird with swept crest and long curling tail feathers, singing open beak, TWO musical notes and ONE small red heart snug beside beak.\nr1c2 Hippogriff head with cream eagle face, hooked beak, one BIG grey-brown feathered eagle wing carrying ONE wooden bucket filled with blue water. Bucket touches creature.\nr1c3 black/dark plum skeletal winged Thestral HEAD with WHITE eyes beside a small lantern, a short dotted path curving toward a tiny home endpoint. Compact tight group.\nr2c1 golden-cream UNICORN HEAD, finely clustered golden mane, long spiral horn, ONE red heart and ONE small silver drop next to horn tip; both very close.\nr2c2 exactly THREE brown dog heads side by side, alert upright ears, crescent moon close above. Three-headed dog, no person.\nr2c3 game's dark brown horned DRAGON HEAD, orange plate scales, breathing SHORT hard-edged flat flame yellow-orange-red onto ONE dry brown weed tuft.\nAuthentic native 64x64 sprite aesthetic enlarged exactly 8x nearest neighbor, smallest flat square pixel 8px at master size, detailed 1-native-pixel clusters not chunky blocks. Binary alpha only, fully opaque subject and fully transparent surroundings. Center each complete group within a 420px square so every cell margin stays >=40px. No glow, blurry edges or shadows.\nCandidate B: redraw candidate A in a stricter native pixel-art style matching the supplied sprite reference montage and Kneazle enlargement. Retain all six actions and their exact positions, but use the game's friendlier faces and proportions, especially golden cream unicorn and small dark brown dragon. Reduce smooth high-resolution fur and decorative curves. Work on a 192x128 logical pixel grid, then enlarge nearest-neighbor 8x to 1536x1024. Each native icon cell is 64x64, actual subject 52x52. No blur, no anti-aliasing, no partial alpha. Only transparent empty background and flat opaque pixel squares. Props must touch or sit within 1 native pixel of creature: move notes/heart closer to beak, silver drop/heart closer to horn, lantern/path close to thestral. Absolutely no ambient coloured halos. All margins >=40 master px.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-3f569e22-8df5-4b63-bc46-a3b1de197334.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-2-candidate-B.png",
++          "kept": true,
++          "referenceFiles": [
++            "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-a5dfcad9-237e-4b2a-a27c-aba31501f532.png",
++            "/tmp/skills-current-refs-2.png",
++            "/tmp/kneazle-8x.png"
++          ]
++        }
++      ]
++    },
++    {
++      "id": "skills-sheet-3",
++      "master": "garden-v05/masters-items/skills-s2/skills-sheet-3.png",
++      "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 3. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's visible reference creatures and fine detailed native sprite style. EXACT row-major order:\nr1c1 green Grindylow with curved cream horns and tiny gold crown, VERY LONG THIN fingers gripping fishing net containing ONE orange carp, a few water bubbles very close. Net and fish large and obvious.\nr1c2 white-and-tan terrier Crup with BIG unmistakable FORKED Y-SHAPED tail bounding after a small potato-headed garden gnome ma lum running away. Playful nonviolent chase, no person. Copy the reference ma lum squat brown potato body and stubby limbs.\nr1c3 grumpy Knarl rolled into a SPIKY BALL, reddish-brown tapered spines and cream face peeking, rolling over two short BROWN SOIL FURROWS, one clod flying close.\nr2c1 orange fire salamander like game's slender orange creature with flame crest and curled tail, curled protectively around ONE green sprout, a few flat hard-edged flame licks behind, ONE small blue-white snowflake on other side.\nr2c2 green Kappa with leafy hair, turtle shell, cream belly and WATER DISH ON TOP OF HEAD, bowing so water visibly pours directly from HEAD DISH onto ONE green sprout.\nr2c3 small shaggy ginger-brown Porlock, pointed ears, upright on cloven hooves, holding wooden shepherd crook, ONE horseshoe immediately beside body. Creature not human.\nAuthentic 64x64 native pixel sprites enlarged exactly 8x nearest neighbor to 512px cells. Fine flat square clusters, hard binary alpha: 100% opaque subject and 0% alpha empty space, no semi-transparent pixels, no glow or backdrop. All six complete groups occupy central 420x420 per cell with >=40px transparent empty margin. At 40px display the action prop should remain legible.\nCandidate B correction: use supplied actual game sprite montage for identity. Candidate A wrongly made Grindylow thick and muscular: replace with the skinny long-armed GREEN game Grindylow, narrow face, very long thin fingers visible gripping net. Crup's forked tail should clearly emerge from its rump. The ma lum must match the brown potato-headed garden gnome shown in reference, NO pointed red hat. Keep the fleeing ma lum much smaller than Crup and almost touching its snout. Salamander must match game's fine orange flame-crested head and curled tail, no oversized generic dragon. Porlock has upright hoof stance, shaggy face and mane from reference, no fantasy goblin substitution. Keep the Knarl spiky ball and Kappa head-dish pouring action clear.\nMOST IMPORTANT: redraw in authentic crisp pixel art as native 64x64 icons enlarged 8x nearest-neighbor, flat square pixels only, no anti-aliasing. Native subject 52x52 centered in 64 cell. Completely opaque subject pixels and completely transparent background, absolutely no glow, halo, shadow, gradient or translucent edges. Compact connected groups, all props touch or within one native pixel of body, all group margins >=40px.",
++      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-ab5c5b0f-78ad-4f15-ab18-ad9a40bc8d47.png",
++      "referenceFiles": [
++        "garden-v05/creature-motion-assets/native/grindylow/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/crup/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/knarl/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/salamander/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/kappa/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/porlock/left-idle-01.png",
++        "garden-v05/environment/duty/masters/ma-lum.png"
++      ],
++      "candidateKept": "B",
++      "verdict": "redo",
++      "candidates": [
++        {
++          "id": "A",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 3. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's visible reference creatures and fine detailed native sprite style. EXACT row-major order:\nr1c1 green Grindylow with curved cream horns and tiny gold crown, VERY LONG THIN fingers gripping fishing net containing ONE orange carp, a few water bubbles very close. Net and fish large and obvious.\nr1c2 white-and-tan terrier Crup with BIG unmistakable FORKED Y-SHAPED tail bounding after a small potato-headed garden gnome ma lum running away. Playful nonviolent chase, no person. Copy the reference ma lum squat brown potato body and stubby limbs.\nr1c3 grumpy Knarl rolled into a SPIKY BALL, reddish-brown tapered spines and cream face peeking, rolling over two short BROWN SOIL FURROWS, one clod flying close.\nr2c1 orange fire salamander like game's slender orange creature with flame crest and curled tail, curled protectively around ONE green sprout, a few flat hard-edged flame licks behind, ONE small blue-white snowflake on other side.\nr2c2 green Kappa with leafy hair, turtle shell, cream belly and WATER DISH ON TOP OF HEAD, bowing so water visibly pours directly from HEAD DISH onto ONE green sprout.\nr2c3 small shaggy ginger-brown Porlock, pointed ears, upright on cloven hooves, holding wooden shepherd crook, ONE horseshoe immediately beside body. Creature not human.\nAuthentic 64x64 native pixel sprites enlarged exactly 8x nearest neighbor to 512px cells. Fine flat square clusters, hard binary alpha: 100% opaque subject and 0% alpha empty space, no semi-transparent pixels, no glow or backdrop. All six complete groups occupy central 420x420 per cell with >=40px transparent empty margin. At 40px display the action prop should remain legible.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-03d56f55-f77c-4382-8014-29e33ff7f4f5.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-3-candidate-A.png",
++          "kept": false,
++          "referenceFiles": []
++        },
++        {
++          "id": "B",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 3. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's visible reference creatures and fine detailed native sprite style. EXACT row-major order:\nr1c1 green Grindylow with curved cream horns and tiny gold crown, VERY LONG THIN fingers gripping fishing net containing ONE orange carp, a few water bubbles very close. Net and fish large and obvious.\nr1c2 white-and-tan terrier Crup with BIG unmistakable FORKED Y-SHAPED tail bounding after a small potato-headed garden gnome ma lum running away. Playful nonviolent chase, no person. Copy the reference ma lum squat brown potato body and stubby limbs.\nr1c3 grumpy Knarl rolled into a SPIKY BALL, reddish-brown tapered spines and cream face peeking, rolling over two short BROWN SOIL FURROWS, one clod flying close.\nr2c1 orange fire salamander like game's slender orange creature with flame crest and curled tail, curled protectively around ONE green sprout, a few flat hard-edged flame licks behind, ONE small blue-white snowflake on other side.\nr2c2 green Kappa with leafy hair, turtle shell, cream belly and WATER DISH ON TOP OF HEAD, bowing so water visibly pours directly from HEAD DISH onto ONE green sprout.\nr2c3 small shaggy ginger-brown Porlock, pointed ears, upright on cloven hooves, holding wooden shepherd crook, ONE horseshoe immediately beside body. Creature not human.\nAuthentic 64x64 native pixel sprites enlarged exactly 8x nearest neighbor to 512px cells. Fine flat square clusters, hard binary alpha: 100% opaque subject and 0% alpha empty space, no semi-transparent pixels, no glow or backdrop. All six complete groups occupy central 420x420 per cell with >=40px transparent empty margin. At 40px display the action prop should remain legible.\nCandidate B correction: use supplied actual game sprite montage for identity. Candidate A wrongly made Grindylow thick and muscular: replace with the skinny long-armed GREEN game Grindylow, narrow face, very long thin fingers visible gripping net. Crup's forked tail should clearly emerge from its rump. The ma lum must match the brown potato-headed garden gnome shown in reference, NO pointed red hat. Keep the fleeing ma lum much smaller than Crup and almost touching its snout. Salamander must match game's fine orange flame-crested head and curled tail, no oversized generic dragon. Porlock has upright hoof stance, shaggy face and mane from reference, no fantasy goblin substitution. Keep the Knarl spiky ball and Kappa head-dish pouring action clear.\nMOST IMPORTANT: redraw in authentic crisp pixel art as native 64x64 icons enlarged 8x nearest-neighbor, flat square pixels only, no anti-aliasing. Native subject 52x52 centered in 64 cell. Completely opaque subject pixels and completely transparent background, absolutely no glow, halo, shadow, gradient or translucent edges. Compact connected groups, all props touch or within one native pixel of body, all group margins >=40px.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-ab5c5b0f-78ad-4f15-ab18-ad9a40bc8d47.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-3-candidate-B.png",
++          "kept": true,
++          "referenceFiles": [
++            "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-03d56f55-f77c-4382-8014-29e33ff7f4f5.png",
++            "/tmp/skills-current-refs-3.png",
++            "/tmp/skills-refs-3.png",
++            "/tmp/kneazle-8x.png"
++          ]
++        }
++      ]
++    }
++  ]
++}
+
+exec
+/bin/zsh -lc "/usr/local/bin/python3 - <<'PY'
+from PIL import Image,ImageDraw
+import json
+from pathlib import Path
+out=Image.new('RGBA',(1200,720),'#687486'); d=ImageDraw.Draw(out);stats=[]
+for s in range(1,4):
+ im=Image.open(f'garden-v05/masters-items/skills-s2/skills-sheet-{s}.png'); a=im.getchannel('A');h=a.histogram(); cells=[]
+ for i in range(6):
+  cell=im.crop(((i%3)*512,(i//3)*512,(i%3+1)*512,(i//3+1)*512));bbox=cell.getchannel('A').getbbox();cells.append(bbox);assert bbox[0]>=40 and bbox[1]>=40 and bbox[2]<=472 and bbox[3]<=472
+  native=cell.resize((64,64),Image.Resampling.NEAREST).resize((40,40),Image.Resampling.NEAREST)
+  for bg in range(2):
+   x=i*200;y=(s-1)*240+bg*112
+   tile=Image.new('RGBA',(190,106),'#ffffff' if bg==0 else '#231F2E');tile.alpha_composite(native,(4,32));tile.alpha_composite(native.resize((80,80),Image.Resampling.NEAREST),(55,16));out.alpha_composite(tile,(x,y))
+ stats.append({'sheet':s,'size':im.size,'mode':im.mode,'alphaMin':min(a.getextrema()),'alphaMax':max(a.getextrema()),'transparentPixels':h[0],'partiallyTransparentPixels':sum(h[1:255]),'opaquePixels':h[255],'cellAlphaBounds':cells,'minimumCellMargin':min(min(b[0],b[1],512-b[2],512-b[3]) for b in cells)})
+out.save('/tmp/skills-40px-review.png')
+Path('docs/codex-briefs/skills-s2/verification.json').write_text(json.dumps(stats,indent=2)+'\\n')
+print(json.dumps(stats,indent=2))
+PY" in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 70ms:
+[
+  {
+    "sheet": 1,
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 254,
+    "transparentPixels": 1013367,
+    "partiallyTransparentPixels": 559497,
+    "opaquePixels": 0,
+    "cellAlphaBounds": [
+      [
+        46,
+        48,
+        466,
+        466
+      ],
+      [
+        46,
+        46,
+        466,
+        466
+      ],
+      [
+        46,
+        46,
+        442,
+        466
+      ],
+      [
+        46,
+        46,
+        466,
+        443
+      ],
+      [
+        46,
+        46,
+        466,
+        466
+      ],
+      [
+        46,
+        46,
+        446,
+        459
+      ]
+    ],
+    "minimumCellMargin": 46
+  },
+  {
+    "sheet": 2,
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 253,
+    "transparentPixels": 1009592,
+    "partiallyTransparentPixels": 563272,
+    "opaquePixels": 0,
+    "cellAlphaBounds": [
+      [
+        46,
+        46,
+        466,
+        466
+      ],
+      [
+        46,
+        53,
+        466,
+        466
+      ],
+      [
+        46,
+        60,
+        466,
+        466
+      ],
+      [
+        46,
+        46,
+        466,
+        466
+      ],
+      [
+        46,
+        46,
+        466,
+        466
+      ],
+      [
+        46,
+        46,
+        466,
+        466
+      ]
+    ],
+    "minimumCellMargin": 46
+  },
+  {
+    "sheet": 3,
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 254,
+    "transparentPixels": 1147661,
+    "partiallyTransparentPixels": 425203,
+    "opaquePixels": 0,
+    "cellAlphaBounds": [
+      [
+        63,
+        46,
+        466,
+        466
+      ],
+      [
+        47,
+        48,
+        466,
+        466
+      ],
+      [
+        47,
+        46,
+        451,
+        466
+      ],
+      [
+        46,
+        46,
+        466,
+        458
+      ],
+      [
+        46,
+        46,
+        463,
+        446
+      ],
+      [
+        47,
+        46,
+        455,
+        466
+      ]
+    ],
+    "minimumCellMargin": 46
+  }
+]
+
+apply patch
+patch: completed
+/Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui/docs/codex-briefs/skills-s2-report.md
+diff --git a/docs/codex-briefs/skills-s2-report.md b/docs/codex-briefs/skills-s2-report.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..5df5a3d7ea613786d33dbcf2fa09045ef633ff9e
+--- /dev/null
++++ b/docs/codex-briefs/skills-s2-report.md
+@@ -0,0 +1,54 @@
++# Hagrid Farm Season 2 skill masters — 2026-11-13
++
++Three 1536×1024 RGBA masters were created, with six cells per sheet in the requested order. Two candidates were generated per sheet with the built-in image tool; candidate B was retained for each. All six original candidates remain in `skills-s2/`. These are review masters, **not accepted production art**: all 18 cells receive **redo** under the brief's strict pixel-art requirements.
++
++## Shared quality finding
++
++The selected masters have real transparent pixels and at least **46 px of fully transparent margin** at every cell edge. However, the generated subjects have partially transparent pixels, softened edges and residual low-opacity colour around them. None of the three selected sheets contains alpha=255 pixels (maximum alpha is 253–254). This violates the requested flat, crisp, unblurred pixel treatment. The generator also did not consistently follow an exact native pixel grid or preserve the game's creature likeness. Nearest-neighbour placement cannot repair these issues.
++
++The placement script only crops each original 512×512 cell, resizes it to 420×420 using nearest-neighbour, and pastes it at offset (46,46) into its cell on a transparent canvas. It preserves source RGBA values; it performs no painting, alpha thresholding or colour quantization. Fine content may consequently occupy less than 420 px; low-opacity residual pixels count toward its bounds.
++
++Visual review used each cell reduced 512→64→40 with nearest-neighbour, on white and dark backgrounds, plus a 2× enlarged view. This was an inspection only: no native icons, atlas, builder, importer, runtime integration or game tests were produced.
++
++## Per-icon verdict
++
++Every row inherits the shared alpha/pixel-style failure above. The reasons below compare candidate B against A and identify additional remaining problems.
++
++| id | sheet | cell | candidate kept and why | verdict |
++|---|---:|---|---|---|
++| puffskein | 1 | r1 c1 | B: larger seed and clearer tongue loop. Tongue/seed details merge at 40 px; fluff differs from the reference. | redo |
++| bowtruckle | 1 | r1 c2 | B: clearer upright twig silhouette and shears. Thin limbs and cutting action become too sparse at 40 px. | redo |
++| niffler | 1 | r1 c3 | B: larger bill and clear soil mound; drop remains visible. Seed becomes very small and fur is too finely rendered for the requested native grid. | redo |
++| mooncalf | 1 | r2 c1 | B: longer neck and broad ears closer to the game reference than A's deer-like form. Sprout is too small and separated at 40 px. | redo |
++| kneazle | 1 | r2 c2 | B: more compact face and readable green lens-eye. Face is still generic fluffy tabby rather than the game's slender, strongly tufted Kneazle. | redo |
++| diricawl | 1 | r2 c3 | B: more compact feather scatter and carrot action. Carrot becomes tiny; silhouette and feather pattern differ from game sprite. | redo |
++| fwooper | 2 | r1 c1 | B: cleaner crest and less convoluted tail; singing pose remains readable. Notes are dark and weak on dark backgrounds; face differs from reference. | redo |
++| hippogriff | 2 | r1 c2 | B: bucket and wing make a tighter group and blue water is clear. Head is a generic eagle rather than the game's specific Hippogriff. | redo |
++| thestral | 2 | r1 c3 | B: lantern/path/home form a tighter group. Dotted path disappears at 40 px; face and lantern dominate over skeletal detail. | redo |
++| unicorn | 2 | r2 c1 | B: simpler mane and closer heart/drop grouping. Heart/drop are very small at 40 px; pale face differs from game's warm golden-cream head. | redo |
++| three-headed-dog | 2 | r2 c2 | B: compact three-head group and stronger moon silhouette. Brown heads follow the written brief but available motion reference has cream fur; likeness unresolved. | redo |
++| dragon | 2 | r2 c3 | B: flame connects more closely to weed and head is less elongated. Flame still has soft colour/alpha spill and head differs from game sprite. | redo |
++| grindylow | 3 | r1 c1 | B: narrower limbs and more visible long fingers; net/carp clear when enlarged. Head/body still too broad and fish is small at 40 px. | redo |
++| crup | 3 | r1 c2 | B: removed A's incorrect red pointed gnome hat; Y-tail and playful chase remain. Gnome still looks like a round generic figure rather than the reference potato-headed ma lum. | redo |
++| knarl | 3 | r1 c3 | B: tighter spiky ball and clearer rolling silhouette. Furrows remain detached, tiny and faint at 40 px. | redo |
++| salamander | 3 | r2 c1 | B: tighter protective curl and closer snowflake. Still reads as a generic orange dragon; flame treatment has soft spill and sprout is too small. | redo |
++| kappa | 3 | r2 c2 | B: compact head-dish stream and sprout; pouring action reads. Bowing posture and game head shape need stronger reference fidelity. | redo |
++| porlock | 3 | r2 c3 | B: compact upright stance with clear crook/horseshoe. Face reads as a furry goblin/cat and differs from game's shaggy Porlock profile. | redo |
++
++## Files and provenance
++
++- Masters: `garden-v05/masters-items/skills-s2/skills-sheet-{1,2,3}.png`.
++- Prompts: `docs/codex-briefs/skills-s2/prompts.json`, one top-level entry per sheet, containing the selected prompt and both candidate prompts, original tool output paths and reference lists.
++- Candidate originals: `docs/codex-briefs/skills-s2/skills-sheet-{1,2,3}-candidate-{A,B}.png`.
++- Placement only: `docs/codex-briefs/skills-s2/place-sheet.py`.
++- Measured canvas, alpha and cell margins: `docs/codex-briefs/skills-s2/verification.json`.
++- QA preview: `docs/codex-briefs/skills-s2/review-40px.png`. Rows correspond to sheets 1–3; within each sheet, six icons are in row-major order. Each tile shows 40 px and a 2× nearest-neighbour enlargement, on white and dark backgrounds.
++
++Reference exception: `garden-v05/creature-motion-assets/native/three-headed-dog/left-action-01.png` does not exist in this checkout. The available `right-action-01.png` was inspected instead. Its cream coat conflicts with the brief's requested brown heads; the art follows the written brown instruction.
++
++Kneazle and Unicorn were inspected at exactly 8× nearest-neighbour. Item references were inspected at 8×. Species references were inspected in nearest-neighbour montages. For candidates 2B and 3B, reference montages and a Kneazle enlargement were supplied directly to the image tool; exact tool paths are recorded in the prompts file and copies are retained here. The retained `skills-refs-3.png` supporting montage includes the ma lum reference.
++
++Refusals: **none**. All six requested image generations returned images. No subject was renamed to bypass a refusal.
++
++No commit, push, deployment, builder, importer, atlas or native-icon creation was performed. No HPVNN or `functions/` files were touched. Existing unrelated logs and notes were preserved. The pre-existing empty `prompts.json` was populated as explicitly requested; no other pre-existing repository file was edited.
++
+diff --git a/docs/codex-briefs/skills-s2/place-sheet.py b/docs/codex-briefs/skills-s2/place-sheet.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..717ccac113a0d74e087e960d753f7321f014d56d
+--- /dev/null
++++ b/docs/codex-briefs/skills-s2/place-sheet.py
+@@ -0,0 +1,19 @@
++"""Place six generated cells on the requested canvas; never repaint or quantize."""
++import argparse
++from PIL import Image
++
++parser = argparse.ArgumentParser()
++parser.add_argument('source')
++parser.add_argument('destination')
++args = parser.parse_args()
++source = Image.open(args.source).convert('RGBA')
++if source.size != (1536, 1024):
++    raise SystemExit(f'Expected 1536x1024, got {source.size}')
++canvas = Image.new('RGBA', (1536, 1024), (0, 0, 0, 0))
++for row in range(2):
++    for col in range(3):
++        x, y = col * 512, row * 512
++        cell = source.crop((x, y, x + 512, y + 512))
++        cell = cell.resize((420, 420), Image.Resampling.NEAREST)
++        canvas.paste(cell, (x + 46, y + 46))
++canvas.save(args.destination)
+diff --git a/docs/codex-briefs/skills-s2/prompts.json b/docs/codex-briefs/skills-s2/prompts.json
+index 9c53a135fe77ba3ae6f19a86fe031e29785e6250..625106410b1271361a179d2f0022ec0aa9045e43
+--- a/docs/codex-briefs/skills-s2/prompts.json
++++ b/docs/codex-briefs/skills-s2/prompts.json
+@@ -1 +1,116 @@
+-{"items": []}
++{
++  "items": [
++    {
++      "id": "skills-sheet-1",
++      "master": "garden-v05/masters-items/skills-s2/skills-sheet-1.png",
++      "prompt": "Use case: stylized-concept. Generate candidate B for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.\nCandidate B emphasis: draw as authentic native 64x64 pixel sprites magnified exactly 8 times with NEAREST NEIGHBOR to fill each 512px cell. Thus the smallest square cluster is 8px in master; fine fur means 1px at native scale. Do not make smooth high-resolution illustration. Use ONLY completely opaque subject pixels and completely transparent empty pixels. Hard binary alpha, no translucent shading or feathered edges. Keep ALL visible pixels within central 420x420 of each cell. Match game's Kneazle tall lynx ears rather than generic fluffy cat. Mooncalf must retain the reference long upright neck, broad sideways ears, cream underside and big eyes, not a baby deer. Diricawl feathers scatter on only one side within the cell.",
++      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-18697008-c848-498d-9985-5a09d9c69424.png",
++      "referenceFiles": [
++        "garden-v05/creature-motion-assets/native/puffskein/left-care-01.png",
++        "garden-v05/creature-motion-assets/native/bowtruckle/left-care-01.png",
++        "garden-v05/creature-motion-assets/native/niffler/left-care-01.png",
++        "garden-v05/native-levels/mooncalf/frame-04.png",
++        "garden-v05/native-levels/kneazle/frame-04.png",
++        "garden-v05/native-levels/diricawl/frame-04.png"
++      ],
++      "candidateKept": "B",
++      "verdict": "redo",
++      "candidates": [
++        {
++          "id": "A",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-1f8cfd09-6761-4f8e-9617-e1def5df37ee.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-1-candidate-A.png",
++          "kept": false,
++          "referenceFiles": []
++        },
++        {
++          "id": "B",
++          "prompt": "Use case: stylized-concept. Generate candidate B for Hagrid Farm creature skill icon master sheet 1. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the visible game's reference creatures; preserve recognizable heads and markings while doing these actions:\nr1c1 round fluffy cream Puffskein, long THIN PINK TONGUE curling around ONE BIG SEED; tiny green sprout immediately below.\nr1c2 little green-and-brown twig stick-insect Bowtruckle with leaf tufts on head, holding SMALL GARDEN SHEARS visibly snipping ONE leafy twig.\nr1c3 black fluffy Niffler with warm duck-bill snout emerging digging from brown soil mound, ONE BLUE WATER DROP and ONE SEED flying just above mound.\nr2c1 pale blue-grey Mooncalf, enormous round eyes and long thin legs, beside green sprout, pale yellow crescent moon immediately above.\nr2c2 LARGE speckled tan Kneazle HEAD with long black lynx ear tufts and bright green eyes wide open, one small ROUND MAGNIFYING LENS in front of one eye. Closely copy the reference Kneazle fine fur, cream muzzle and orange-brown spots.\nr2c3 plump grey/green-grey Diricawl bird with stout warm beak, one half solid and other half vanishing as tightly grouped scattered feather pixels, holding ONE harvested ORANGE CARROT in beak. No extra creatures.\nCandidate B emphasis: draw as authentic native 64x64 pixel sprites magnified exactly 8 times with NEAREST NEIGHBOR to fill each 512px cell. Thus the smallest square cluster is 8px in master; fine fur means 1px at native scale. Do not make smooth high-resolution illustration. Use ONLY completely opaque subject pixels and completely transparent empty pixels. Hard binary alpha, no translucent shading or feathered edges. Keep ALL visible pixels within central 420x420 of each cell. Match game's Kneazle tall lynx ears rather than generic fluffy cat. Mooncalf must retain the reference long upright neck, broad sideways ears, cream underside and big eyes, not a baby deer. Diricawl feathers scatter on only one side within the cell.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-18697008-c848-498d-9985-5a09d9c69424.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-1-candidate-B.png",
++          "kept": true,
++          "referenceFiles": []
++        }
++      ]
++    },
++    {
++      "id": "skills-sheet-2",
++      "master": "garden-v05/masters-items/skills-s2/skills-sheet-2.png",
++      "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 2. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's sprites seen in the reference sheet. Six skills in this exact row-major order:\nr1c1 Fwooper brightly coloured orange/gold bird with swept crest and long curling tail feathers, singing open beak, TWO musical notes and ONE small red heart snug beside beak.\nr1c2 Hippogriff head with cream eagle face, hooked beak, one BIG grey-brown feathered eagle wing carrying ONE wooden bucket filled with blue water. Bucket touches creature.\nr1c3 black/dark plum skeletal winged Thestral HEAD with WHITE eyes beside a small lantern, a short dotted path curving toward a tiny home endpoint. Compact tight group.\nr2c1 golden-cream UNICORN HEAD, finely clustered golden mane, long spiral horn, ONE red heart and ONE small silver drop next to horn tip; both very close.\nr2c2 exactly THREE brown dog heads side by side, alert upright ears, crescent moon close above. Three-headed dog, no person.\nr2c3 game's dark brown horned DRAGON HEAD, orange plate scales, breathing SHORT hard-edged flat flame yellow-orange-red onto ONE dry brown weed tuft.\nAuthentic native 64x64 sprite aesthetic enlarged exactly 8x nearest neighbor, smallest flat square pixel 8px at master size, detailed 1-native-pixel clusters not chunky blocks. Binary alpha only, fully opaque subject and fully transparent surroundings. Center each complete group within a 420px square so every cell margin stays >=40px. No glow, blurry edges or shadows.\nCandidate B: redraw candidate A in a stricter native pixel-art style matching the supplied sprite reference montage and Kneazle enlargement. Retain all six actions and their exact positions, but use the game's friendlier faces and proportions, especially golden cream unicorn and small dark brown dragon. Reduce smooth high-resolution fur and decorative curves. Work on a 192x128 logical pixel grid, then enlarge nearest-neighbor 8x to 1536x1024. Each native icon cell is 64x64, actual subject 52x52. No blur, no anti-aliasing, no partial alpha. Only transparent empty background and flat opaque pixel squares. Props must touch or sit within 1 native pixel of creature: move notes/heart closer to beak, silver drop/heart closer to horn, lantern/path close to thestral. Absolutely no ambient coloured halos. All margins >=40 master px.",
++      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-3f569e22-8df5-4b63-bc46-a3b1de197334.png",
++      "referenceFiles": [
++        "garden-v05/native-levels/fwooper/frame-04.png",
++        "garden-v05/creature-motion-assets/native/hippogriff/left-care-01.png",
++        "garden-v05/native-levels/thestral/frame-04.png",
++        "garden-v05/native-levels/unicorn/frame-04.png",
++        "garden-v05/creature-motion-assets/native/three-headed-dog/right-action-01.png",
++        "garden-v05/creature-motion-assets/native/dragon/left-care-01.png"
++      ],
++      "candidateKept": "B",
++      "verdict": "redo",
++      "candidates": [
++        {
++          "id": "A",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 2. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's sprites seen in the reference sheet. Six skills in this exact row-major order:\nr1c1 Fwooper brightly coloured orange/gold bird with swept crest and long curling tail feathers, singing open beak, TWO musical notes and ONE small red heart snug beside beak.\nr1c2 Hippogriff head with cream eagle face, hooked beak, one BIG grey-brown feathered eagle wing carrying ONE wooden bucket filled with blue water. Bucket touches creature.\nr1c3 black/dark plum skeletal winged Thestral HEAD with WHITE eyes beside a small lantern, a short dotted path curving toward a tiny home endpoint. Compact tight group.\nr2c1 golden-cream UNICORN HEAD, finely clustered golden mane, long spiral horn, ONE red heart and ONE small silver drop next to horn tip; both very close.\nr2c2 exactly THREE brown dog heads side by side, alert upright ears, crescent moon close above. Three-headed dog, no person.\nr2c3 game's dark brown horned DRAGON HEAD, orange plate scales, breathing SHORT hard-edged flat flame yellow-orange-red onto ONE dry brown weed tuft.\nAuthentic native 64x64 sprite aesthetic enlarged exactly 8x nearest neighbor, smallest flat square pixel 8px at master size, detailed 1-native-pixel clusters not chunky blocks. Binary alpha only, fully opaque subject and fully transparent surroundings. Center each complete group within a 420px square so every cell margin stays >=40px. No glow, blurry edges or shadows.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-a5dfcad9-237e-4b2a-a27c-aba31501f532.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-2-candidate-A.png",
++          "kept": false,
++          "referenceFiles": []
++        },
++        {
++          "id": "B",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 2. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's sprites seen in the reference sheet. Six skills in this exact row-major order:\nr1c1 Fwooper brightly coloured orange/gold bird with swept crest and long curling tail feathers, singing open beak, TWO musical notes and ONE small red heart snug beside beak.\nr1c2 Hippogriff head with cream eagle face, hooked beak, one BIG grey-brown feathered eagle wing carrying ONE wooden bucket filled with blue water. Bucket touches creature.\nr1c3 black/dark plum skeletal winged Thestral HEAD with WHITE eyes beside a small lantern, a short dotted path curving toward a tiny home endpoint. Compact tight group.\nr2c1 golden-cream UNICORN HEAD, finely clustered golden mane, long spiral horn, ONE red heart and ONE small silver drop next to horn tip; both very close.\nr2c2 exactly THREE brown dog heads side by side, alert upright ears, crescent moon close above. Three-headed dog, no person.\nr2c3 game's dark brown horned DRAGON HEAD, orange plate scales, breathing SHORT hard-edged flat flame yellow-orange-red onto ONE dry brown weed tuft.\nAuthentic native 64x64 sprite aesthetic enlarged exactly 8x nearest neighbor, smallest flat square pixel 8px at master size, detailed 1-native-pixel clusters not chunky blocks. Binary alpha only, fully opaque subject and fully transparent surroundings. Center each complete group within a 420px square so every cell margin stays >=40px. No glow, blurry edges or shadows.\nCandidate B: redraw candidate A in a stricter native pixel-art style matching the supplied sprite reference montage and Kneazle enlargement. Retain all six actions and their exact positions, but use the game's friendlier faces and proportions, especially golden cream unicorn and small dark brown dragon. Reduce smooth high-resolution fur and decorative curves. Work on a 192x128 logical pixel grid, then enlarge nearest-neighbor 8x to 1536x1024. Each native icon cell is 64x64, actual subject 52x52. No blur, no anti-aliasing, no partial alpha. Only transparent empty background and flat opaque pixel squares. Props must touch or sit within 1 native pixel of creature: move notes/heart closer to beak, silver drop/heart closer to horn, lantern/path close to thestral. Absolutely no ambient coloured halos. All margins >=40 master px.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-3f569e22-8df5-4b63-bc46-a3b1de197334.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-2-candidate-B.png",
++          "kept": true,
++          "referenceFiles": [
++            "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-a5dfcad9-237e-4b2a-a27c-aba31501f532.png",
++            "/tmp/skills-current-refs-2.png",
++            "/tmp/kneazle-8x.png"
++          ]
++        }
++      ]
++    },
++    {
++      "id": "skills-sheet-3",
++      "master": "garden-v05/masters-items/skills-s2/skills-sheet-3.png",
++      "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 3. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's visible reference creatures and fine detailed native sprite style. EXACT row-major order:\nr1c1 green Grindylow with curved cream horns and tiny gold crown, VERY LONG THIN fingers gripping fishing net containing ONE orange carp, a few water bubbles very close. Net and fish large and obvious.\nr1c2 white-and-tan terrier Crup with BIG unmistakable FORKED Y-SHAPED tail bounding after a small potato-headed garden gnome ma lum running away. Playful nonviolent chase, no person. Copy the reference ma lum squat brown potato body and stubby limbs.\nr1c3 grumpy Knarl rolled into a SPIKY BALL, reddish-brown tapered spines and cream face peeking, rolling over two short BROWN SOIL FURROWS, one clod flying close.\nr2c1 orange fire salamander like game's slender orange creature with flame crest and curled tail, curled protectively around ONE green sprout, a few flat hard-edged flame licks behind, ONE small blue-white snowflake on other side.\nr2c2 green Kappa with leafy hair, turtle shell, cream belly and WATER DISH ON TOP OF HEAD, bowing so water visibly pours directly from HEAD DISH onto ONE green sprout.\nr2c3 small shaggy ginger-brown Porlock, pointed ears, upright on cloven hooves, holding wooden shepherd crook, ONE horseshoe immediately beside body. Creature not human.\nAuthentic 64x64 native pixel sprites enlarged exactly 8x nearest neighbor to 512px cells. Fine flat square clusters, hard binary alpha: 100% opaque subject and 0% alpha empty space, no semi-transparent pixels, no glow or backdrop. All six complete groups occupy central 420x420 per cell with >=40px transparent empty margin. At 40px display the action prop should remain legible.\nCandidate B correction: use supplied actual game sprite montage for identity. Candidate A wrongly made Grindylow thick and muscular: replace with the skinny long-armed GREEN game Grindylow, narrow face, very long thin fingers visible gripping net. Crup's forked tail should clearly emerge from its rump. The ma lum must match the brown potato-headed garden gnome shown in reference, NO pointed red hat. Keep the fleeing ma lum much smaller than Crup and almost touching its snout. Salamander must match game's fine orange flame-crested head and curled tail, no oversized generic dragon. Porlock has upright hoof stance, shaggy face and mane from reference, no fantasy goblin substitution. Keep the Knarl spiky ball and Kappa head-dish pouring action clear.\nMOST IMPORTANT: redraw in authentic crisp pixel art as native 64x64 icons enlarged 8x nearest-neighbor, flat square pixels only, no anti-aliasing. Native subject 52x52 centered in 64 cell. Completely opaque subject pixels and completely transparent background, absolutely no glow, halo, shadow, gradient or translucent edges. Compact connected groups, all props touch or within one native pixel of body, all group margins >=40px.",
++      "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-ab5c5b0f-78ad-4f15-ab18-ad9a40bc8d47.png",
++      "referenceFiles": [
++        "garden-v05/creature-motion-assets/native/grindylow/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/crup/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/knarl/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/salamander/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/kappa/left-idle-01.png",
++        "garden-v05/creature-motion-assets/native/porlock/left-idle-01.png",
++        "garden-v05/environment/duty/masters/ma-lum.png"
++      ],
++      "candidateKept": "B",
++      "verdict": "redo",
++      "candidates": [
++        {
++          "id": "A",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 3. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's visible reference creatures and fine detailed native sprite style. EXACT row-major order:\nr1c1 green Grindylow with curved cream horns and tiny gold crown, VERY LONG THIN fingers gripping fishing net containing ONE orange carp, a few water bubbles very close. Net and fish large and obvious.\nr1c2 white-and-tan terrier Crup with BIG unmistakable FORKED Y-SHAPED tail bounding after a small potato-headed garden gnome ma lum running away. Playful nonviolent chase, no person. Copy the reference ma lum squat brown potato body and stubby limbs.\nr1c3 grumpy Knarl rolled into a SPIKY BALL, reddish-brown tapered spines and cream face peeking, rolling over two short BROWN SOIL FURROWS, one clod flying close.\nr2c1 orange fire salamander like game's slender orange creature with flame crest and curled tail, curled protectively around ONE green sprout, a few flat hard-edged flame licks behind, ONE small blue-white snowflake on other side.\nr2c2 green Kappa with leafy hair, turtle shell, cream belly and WATER DISH ON TOP OF HEAD, bowing so water visibly pours directly from HEAD DISH onto ONE green sprout.\nr2c3 small shaggy ginger-brown Porlock, pointed ears, upright on cloven hooves, holding wooden shepherd crook, ONE horseshoe immediately beside body. Creature not human.\nAuthentic 64x64 native pixel sprites enlarged exactly 8x nearest neighbor to 512px cells. Fine flat square clusters, hard binary alpha: 100% opaque subject and 0% alpha empty space, no semi-transparent pixels, no glow or backdrop. All six complete groups occupy central 420x420 per cell with >=40px transparent empty margin. At 40px display the action prop should remain legible.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-03d56f55-f77c-4382-8014-29e33ff7f4f5.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-3-candidate-A.png",
++          "kept": false,
++          "referenceFiles": []
++        },
++        {
++          "id": "B",
++          "prompt": "Use case: stylized-concept. Generate candidate A for Hagrid Farm creature skill icon master sheet 3. Transparent RGBA PNG, exact 1536x1024 canvas, 3 columns by 2 rows of 512px square cells, no drawn grid. Six separate compact icons centered at (256,256), (768,256), (1280,256), (256,768), (768,768), (1280,768). Each subject group about 420x420 with at least 40 empty transparent pixels on ALL cell sides. All props touching or within a few pixels of creature. No frame, badge, ground shadow, text, letters, labels, backdrop, gradients, blur, glow, halo. Pixel art with flat square pixels, crisp dark #231F2E outlines, small detailed fur clusters like the shown game Kneazle and Unicorn sprites at 8x nearest neighbor, 3-4 flat shade steps, light top-left. NOT chunky low-detail blocks. Palette near #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Intended final reduction to 64px and display at 40px: strong silhouettes, large action props, same detail density and outline across all six.\nFollow the game's visible reference creatures and fine detailed native sprite style. EXACT row-major order:\nr1c1 green Grindylow with curved cream horns and tiny gold crown, VERY LONG THIN fingers gripping fishing net containing ONE orange carp, a few water bubbles very close. Net and fish large and obvious.\nr1c2 white-and-tan terrier Crup with BIG unmistakable FORKED Y-SHAPED tail bounding after a small potato-headed garden gnome ma lum running away. Playful nonviolent chase, no person. Copy the reference ma lum squat brown potato body and stubby limbs.\nr1c3 grumpy Knarl rolled into a SPIKY BALL, reddish-brown tapered spines and cream face peeking, rolling over two short BROWN SOIL FURROWS, one clod flying close.\nr2c1 orange fire salamander like game's slender orange creature with flame crest and curled tail, curled protectively around ONE green sprout, a few flat hard-edged flame licks behind, ONE small blue-white snowflake on other side.\nr2c2 green Kappa with leafy hair, turtle shell, cream belly and WATER DISH ON TOP OF HEAD, bowing so water visibly pours directly from HEAD DISH onto ONE green sprout.\nr2c3 small shaggy ginger-brown Porlock, pointed ears, upright on cloven hooves, holding wooden shepherd crook, ONE horseshoe immediately beside body. Creature not human.\nAuthentic 64x64 native pixel sprites enlarged exactly 8x nearest neighbor to 512px cells. Fine flat square clusters, hard binary alpha: 100% opaque subject and 0% alpha empty space, no semi-transparent pixels, no glow or backdrop. All six complete groups occupy central 420x420 per cell with >=40px transparent empty margin. At 40px display the action prop should remain legible.\nCandidate B correction: use supplied actual game sprite montage for identity. Candidate A wrongly made Grindylow thick and muscular: replace with the skinny long-armed GREEN game Grindylow, narrow face, very long thin fingers visible gripping net. Crup's forked tail should clearly emerge from its rump. The ma lum must match the brown potato-headed garden gnome shown in reference, NO pointed red hat. Keep the fleeing ma lum much smaller than Crup and almost touching its snout. Salamander must match game's fine orange flame-crested head and curled tail, no oversized generic dragon. Porlock has upright hoof stance, shaggy face and mane from reference, no fantasy goblin substitution. Keep the Knarl spiky ball and Kappa head-dish pouring action clear.\nMOST IMPORTANT: redraw in authentic crisp pixel art as native 64x64 icons enlarged 8x nearest-neighbor, flat square pixels only, no anti-aliasing. Native subject 52x52 centered in 64 cell. Completely opaque subject pixels and completely transparent background, absolutely no glow, halo, shadow, gradient or translucent edges. Compact connected groups, all props touch or within one native pixel of body, all group margins >=40px.",
++          "generatedFile": "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-ab5c5b0f-78ad-4f15-ab18-ad9a40bc8d47.png",
++          "savedFile": "docs/codex-briefs/skills-s2/skills-sheet-3-candidate-B.png",
++          "kept": true,
++          "referenceFiles": [
++            "/Users/thachanh/.codex/generated_images/01a1d409-ec99-7cd2-b198-b391f365ce1b/exec-03d56f55-f77c-4382-8014-29e33ff7f4f5.png",
++            "/tmp/skills-current-refs-3.png",
++            "/tmp/skills-refs-3.png",
++            "/tmp/kneazle-8x.png"
++          ]
++        }
++      ]
++    }
++  ]
++}
+
+exec
+/bin/zsh -lc 'cp /tmp/skills-40px-review.png docs/codex-briefs/skills-s2/review-40px.png' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+exec
+/bin/zsh -lc 'git status --short; /usr/local/bin/python3 -m json.tool docs/codex-briefs/skills-s2/prompts.json > /tmp/skills-prompts-validated.json; ls -lh garden-v05/masters-items/skills-s2' in /Users/thachanh/.codex/visualizations/2026/10/13/hagrid-season-2-ui
+ succeeded in 0ms:
+ M garden-v05/game-panels.css
+ M garden-v05/garden-missions-ui.mjs
+ M garden-v05/garden-mood-ui.mjs
+ M garden-v05/garden-sale-acp-ui.mjs
+ M garden-v05/garden-tutorial.mjs
+ M garden-v05/garden-xmas.mjs
+ M garden-v05/hagrid-letter-ui.mjs
+ M garden-v05/mobile-game.mjs
+ M garden-v05/scene-renderer.mjs
+ M qa-v19/fixture-wallet.mjs
+?? docs/codex-briefs/skills-s2-last.log
+?? docs/codex-briefs/skills-s2-last.md
+?? docs/codex-briefs/skills-s2-report.md
+?? docs/codex-briefs/skills-s2-run1.log
+?? docs/codex-briefs/skills-s2/
+?? garden-v05/build-skills-art.mjs
+?? garden-v05/garden-skills-card.mjs
+?? garden-v05/garden-skills-ui.mjs
+?? garden-v05/garden-skills-ui.test.mjs
+?? garden-v05/masters-items/skills-s2/
+?? garden-v05/skills-s2.png
+?? qa-v19/s2-p3-lighthouse.json
+total 8144
+-rw-r--r--@ 1 thachanh  staff   1.3M Nov 13 15:46 skills-sheet-1.png
+-rw-r--r--@ 1 thachanh  staff   1.3M Nov 13 15:46 skills-sheet-2.png
+-rw-r--r--@ 1 thachanh  staff   1.3M Nov 13 15:47 skills-sheet-3.png
+
+codex
+Bệ hạ, đã tạo đủ **6/6 ứng viên**, chọn B cho cả [3 master sheet](garden-v05/masters-items/skills-s2), đúng 1536×1024 và lề tối thiểu 46 px.
+
+**18/18 icon vẫn được đánh dấu `redo`** vì còn alpha mềm và nhận dạng một số sinh vật chưa sát sprite game; chưa đạt để đưa vào atlas.
+
+[Chi tiết từng icon](docs/codex-briefs/skills-s2-report.md) · [Toàn bộ prompt](docs/codex-briefs/skills-s2/prompts.json)
+
+Đã giữ các ứng viên gốc. Không chạy builder/importer, commit, push hay deploy.
+tokens used
+71,875
+Bệ hạ, đã tạo đủ **6/6 ứng viên**, chọn B cho cả [3 master sheet](garden-v05/masters-items/skills-s2), đúng 1536×1024 và lề tối thiểu 46 px.
+
+**18/18 icon vẫn được đánh dấu `redo`** vì còn alpha mềm và nhận dạng một số sinh vật chưa sát sprite game; chưa đạt để đưa vào atlas.
+
+[Chi tiết từng icon](docs/codex-briefs/skills-s2-report.md) · [Toàn bộ prompt](docs/codex-briefs/skills-s2/prompts.json)
+
+Đã giữ các ứng viên gốc. Không chạy builder/importer, commit, push hay deploy.

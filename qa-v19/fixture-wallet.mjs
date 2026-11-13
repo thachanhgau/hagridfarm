@@ -500,7 +500,28 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
      lastWeek:[{house:"slytherin",label:"Slytherin",points:210},{house:"hufflepuff",label:"Hufflepuff",points:185},{house:"gryffindor",label:"Gryffindor",points:60},{house:"ravenclaw",label:"Ravenclaw",points:12}]}}:{})},
    // Server garden-mood-core moodView (QA approximation: fixed moods; from 160 a món thích per species and day).
    mood:moodViews(d),
+   skills:skillsView(d),
   };
+ }
+ // Server garden-skill-core skillsView / `skill` (QA approximation: every adult creature at rank 1 (rank 2 for the
+ // first one), always helping; effects only for water and lullaby, the rest echo the target).
+ const SKILL=[['puffskein','Ăn vụn nhả hạt',0,[1,2]],['bowtruckle','Tỉa cành',0,[1,2]],['niffler','Đào kho báu',0,[1,2]],['mooncalf','Phân trăng',0,[1,2]],['kneazle','Mắt tinh',1,[0,0]],['diricawl','Biến – hiện',1,[1,2]],['fwooper','Hát ru',0,[1,1]],['hippogriff','Chở nước',0,[1,2]],['thestral','Dẫn đường',1,[1,18]],['unicorn','Chữa lành',0,[1,1]],['three-headed-dog','Canh đêm',1,[0,1]],['dragon','Thiêu cỏ',0,[2,4]],['grindylow','Chúa tể đáy hồ',1,[0,1]],['crup','Ăn ma lùm',1,[1,3]],['knarl','Xới đất',0,[1,2]],['salamander','Ở trong lửa',1,[2,4]],['kappa','Dẫn nước',1,[0,0]],['porlock','Gác bãi chăn',1,[0,0]]];
+ function skillsView(d){
+  const p=garden.progression,used=d.skills||{};
+  return {off:false,dayKey:d.dayKey,lowMood:50,creatures:p.creatures.flatMap((c,i)=>{const k=SKILL.find(x=>x[0]===c.species);if(!k)return [];
+   const adult=c.mealsCompleted>=(E.CREATURE[c.species]?.stageMeals?.[2]??0),rank=adult?(i?1:2):0,cap=rank?k[3][rank-1]:0;
+   return [{species:k[0],name:k[1],passive:Boolean(k[2]),rank,cap,left:Math.max(0,cap-(used[k[0]]||0)),blocked:rank?null:'locked'}];})};
+ }
+ function skillAct(c,next,d,extra){
+  const v=skillsView(d).creatures.find(x=>x.species===c.species);
+  if(!v||v.passive)fail("invalid-action-input","Bé này không có kỹ năng bấm được.");
+  if(v.blocked)fail("skill-"+v.blocked,"Bé chưa giúp vườn được lúc này.");
+  if(v.left<1)fail("skill-limit","Hôm nay bé đã giúp đủ lượt.");
+  d.skills={...(d.skills||{}),[c.species]:((d.skills||{})[c.species]||0)+1};
+  const fx=c.species==='hippogriff'?(next.supplies.water+=10,{water:10}):c.species==='fwooper'?{cheered:next.progression.creatures.map(x=>x.species),gain:v.rank===2?12:8}
+   :c.species==='unicorn'?{target:c.target,cured:false,gain:15,mood:90}:c.species==='niffler'?(next.supplies.water+=5,{plotIndex:c.target,water:5,seed:null,boost:false})
+   :{plotIndex:c.target,crops:1,cutMs:c.species==='mooncalf'?1800000:900000,seed:null,cleared:1};
+  next.progression.revision+=1;extra.skill={species:c.species,rank:v.rank,left:v.left-1,...fx};
  }
  function moodViews(d){
   const p=garden.progression,hash=t=>[...t].reduce((h,c)=>(h*31+c.charCodeAt(0))>>>0,7);
@@ -614,6 +635,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   else if(c.action==="care"){if(!LINES.some(r=>c.cells?.length===3&&r.every(i=>c.cells.includes(i))))fail("invalid-action-input","Chăm cây cho một hàng, cột hoặc đường chéo đủ ba ô.");if((d.free.care||0)>=FREE_CAPS.care)fail("care-limit",`Hôm nay đã chăm đủ ${FREE_CAPS.care} lượt; mai bác Hagrid lại nhờ nhé.`);care(c,next);}
   else if(c.action==="placeDecoration")place(c,next);
   else if(c.action==="pond")pondAct(c,next,extra);
+  else if(c.action==="skill")skillAct(c,next,d,extra);
   else if(c.action==="setDefaultDecorationVisibility"){const visible=applyDefaultDecorationVisibility(next,c);next.decorations=visible.decorations;next.progression=visible.progression;}
   else{
    next.progression=model(c,before,Date.now());
@@ -643,7 +665,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
    // Moving a plot/pen and placing a decoration are free taps (placing counts as rotate); the rest is farm work.
    const free={moveBuilding:"moveBuilding",placeDecoration:"rotate",care:"care"}[c.action];
    if(free){extra.freeAction=countFree(d,free);extra.festivalPoints=addPoints(d,next.festival,free,{counted:extra.freeAction.counted});}
-   else if(!["tutorialGrow","guideDone","setScene","pond"].includes(c.action))extra.festivalPoints=addPoints(d,next.festival,c.action);
+   else if(!["tutorialGrow","guideDone","setScene","pond","skill"].includes(c.action))extra.festivalPoints=addPoints(d,next.festival,c.action);
   }
   // Galleons last, so a short wallet leaves garden, daily record and wallet untouched.
   const cost=c.action==="build"?E.DB.expansions.find(e=>e.id===c.expansionId)?.galleons||0:c.action==="buyDecoration"?E.DB.decorations.find(e=>e.level===c.level)?.galleons||0:0;

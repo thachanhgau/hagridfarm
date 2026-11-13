@@ -482,6 +482,13 @@
 #gameShell :is(#creatureMood,#dutyPanel) .mood-row>small{min-width:92px;color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
 #gameShell :is(#creatureMood,#dutyPanel) .mood-chip{padding:2px 6px;border:2px solid #231F2E;background:#142620;color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
 #gameShell :is(#creatureMood,#dutyPanel) .mood-chip.is-on{background:#71934B;color:#F5D69A}
+/* Season 2 skill row (garden-skills-ui.mjs): one flat row, the 18-icon atlas at 40 px. */
+#creatureMood .skill-card{display:flex;gap:8px;align-items:flex-start}
+#creatureMood .skill-copy{display:grid;gap:3px;min-width:0;color:#F5D69A;font:600 12px/1.25 var(--gp-body)}
+#creatureMood .skill-copy small{color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
+#creatureMood .skill-copy .skill-why{color:#E7AE73}
+#creatureMood .skill-icon{flex:none;width:40px;height:40px;background:url(skills-s2.png) 0 0/240px 120px;image-rendering:pixelated}
+#creatureMood .skill-card.is-ready .skill-icon{outline:2px solid #FFC36B}
 /* «Bậc trách nhiệm» (25.0 S5): the chip with the nearest clock and the panel (garden-duty-ui.mjs). */
 /* Left, under the level ring: on the right it covered the second icon row (phone), the top row (1280) and Thửa đất (820). */
 /* The duty chip and (level 200+) the weather chip share one row (level-160 challenges F), under the next-goal card

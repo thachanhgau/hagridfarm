@@ -4,6 +4,7 @@
 import {$,el,icon,duration} from './ui-utils.mjs?v=26.0';
 import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.0';
 import {COAT_STEPS} from './garden-winter.mjs?v=25.1.9';
+import {skillCard,skillText} from './garden-skills-card.mjs?v=26.0';
 
 export const NORBERT='norbert';
 // Play toys (roadmap §4: Đào mỏ – đồ lấp lánh, Kneazle – cuộn len, Chó ba đầu – thổi sáo cho ngủ, HP1).
@@ -56,7 +57,7 @@ export function tendText(tend,labelOf){
  return `${name} ${verb} · tâm trạng ${tend.mood}.`;
 }
 
-export function createMoodCare({getSnapshot,tend,items,notify,labelOf,bondOf,onTended}){
+export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,bondOf,onTended,onSkill}){
  const body=el('div',{class:'mood-care-body'});
  const title=el('h2',{id:'creatureMoodTitle',text:'Chăm bé'});
  const dialog=el('dialog',{id:'creatureMood',class:'owl-letter mood-care','aria-labelledby':'creatureMoodTitle'},[
@@ -83,6 +84,8 @@ export function createMoodCare({getSnapshot,tend,items,notify,labelOf,bondOf,onT
      el('small',{text:`Lượt mới ${clockText(view.nextCycleAt)}${entry.mood>=view.happy&&species!==NORBERT?' · vui: +1 sản phẩm':''}`}),
     ]),
    ]),
+   // Season 2: this creature's skill (garden-skills-card); its target chips send action `skill`.
+   species===NORBERT?null:skillCard({species,snap:getSnapshot(),now,use:async(sp,target)=>{const res=await useSkill(sp,target);const r=res?.ok&&res.receipt?.skill;if(r){notify(skillText(r));onSkill?.(r);render();}}}),
    el('div',{class:'mood-tiles'},moodTiles({species,entry,view,bondLevel:bondOf(species),now}).map(t=>{
     const b=el('button',{type:'button',class:'mood-tile','data-kind':t.kind,disabled:!t.enabled,'aria-label':t.label+(t.state?' · '+t.state:'')},[pixelIcon(t.art,2),el('b',{text:t.label}),t.state?el('small',{text:t.state}):null]);
     b.onclick=async()=>{const res=await tend(species,t.kind);if(res?.ok){const r=res.receipt?.tend;if(r)notify(tendText(r,labelOf));onTended?.(r);render();}};

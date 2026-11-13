@@ -170,6 +170,8 @@ export function createSaleAcp({call,notify}){
   body.replaceChildren(tabs,
    el('p',{class:'sheet-label',text:'Chương trình tự động (chạy theo code)'}),
    ...view.programs.map(p=>el('label',{class:'acp-toggle'},[el('input',{type:'checkbox',...(draft.programs[p.id]?{checked:''}:{}),onchange:e=>{draft.programs[p.id]=e.target.checked;}}),el('span',{text:p.label})])),
+   // Season 2 (#62): one switch turns every creature skill off at once (garden_sales skillsOff).
+   el('label',{class:'acp-toggle'},[el('input',{type:'checkbox',...(draft.skillsOff?{checked:''}:{}),onchange:e=>{draft.skillsOff=e.target.checked;}}),el('span',{text:'Tắt kỹ năng sinh vật (Mùa 2)'})]),
    el('p',{class:'meta',text:'Flash 30 phút sắp tới: '+(view.flash.length?view.flash.map(w=>`${when(w.startsAt)}–${when(w.endsAt).slice(-5)}`).join(' · '):'không còn trong 2 tuần này')}),
    el('p',{class:'sheet-label',text:`Đợt sale tay (${draft.sales.length}/20)`}),
    ...draft.sales.map(saleRow),
@@ -180,7 +182,7 @@ export function createSaleAcp({call,notify}){
    el('p',{class:'meta',text:`Phiên bản ${num(view.config.revision)} · ${draft.sales.filter(s=>s.startsAt<=now&&now<s.endsAt).length} đợt đang chạy`}),
   );
  }
- const fromConfig=config=>structuredClone({programs:config.programs,sales:config.sales,items:config.items||{},market:{prices:{},producePrices:{},...config.market}});
+ const fromConfig=config=>structuredClone({programs:config.programs,sales:config.sales,items:config.items||{},market:{prices:{},producePrices:{},...config.market},skillsOff:config.skillsOff===true});
  async function load(){
   status.textContent='';view=null;render();
   try{view=await call({mode:'get'});draft=fromConfig(view.config);render();}
@@ -190,7 +192,7 @@ export function createSaleAcp({call,notify}){
   if(saving)return;
   if(draft.sales.some(s=>!Number.isFinite(s.startsAt)||!Number.isFinite(s.endsAt))){status.textContent='Giờ bắt đầu/kết thúc phải theo DD/MM/YYYY HH:mm.';return;}
   saving=true;render();
-  try{view=await call({mode:'save',expectedRevision:view.config.revision,programs:draft.programs,sales:draft.sales,items:draft.items,market:draft.market});draft=fromConfig(view.config);status.textContent=`Đã lưu (phiên bản ${view.config.revision}).`;notify?.('Đã lưu cấu hình ACP khu vườn.');}
+  try{view=await call({mode:'save',expectedRevision:view.config.revision,programs:draft.programs,sales:draft.sales,items:draft.items,market:draft.market,skillsOff:draft.skillsOff});draft=fromConfig(view.config);status.textContent=`Đã lưu (phiên bản ${view.config.revision}).`;notify?.('Đã lưu cấu hình ACP khu vườn.');}
   catch(e){status.textContent=e.message;}
   finally{saving=false;render();}
  }

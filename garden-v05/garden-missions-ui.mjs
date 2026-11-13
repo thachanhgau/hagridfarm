@@ -3,7 +3,7 @@
 // a chapter of three steps. Only with a wallet: the server checks every step.
 import {$,el} from './ui-utils.mjs?v=26.0';
 import {pixelIcon,iconButton} from './pixel-icons.mjs?v=26.0';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=25.1.9';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=26.0';
 
 const meter=(done,target)=>el('div',{class:'gp-meter',role:'progressbar','aria-valuemin':'0','aria-valuemax':String(target),'aria-valuenow':String(done)},[el('span',{style:`width:${Math.min(100,Math.round(done/target*100))}%`})]);
 

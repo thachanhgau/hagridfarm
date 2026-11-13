@@ -20,6 +20,16 @@ export const HAGRID_LETTER = Object.freeze({
   postscript: 'Tái bút: Đừng sợ con Fang, nó hiền khô à.',
   signature: 'Hagrid',
 });
+// Season 2 (26.0): bác Hagrid's letter that opens «Tài năng sinh vật», once (mobile-game keeps the seen flag in the host prefs).
+export const SEASON_LETTER=Object.freeze({
+ paragraphs:Object.freeze([
+  'Có chuyện hay lắm con ơi! Mấy bé con nuôi bấy lâu nay giờ biết giúp vườn rồi đó.',
+  'Bé nào lớn rồi mà thân với con từ cấp 3 trở lên là có tài riêng: quái lùng nhùng gặt giùm, đào mỏ đào được nước, Bằng-Mã chở nước về… Thân tới cấp 5 và dạy đủ ba trò thì bé giúp giỏi gấp đôi.',
+  'Bé chỉ giúp khi vui, không ốm, không đi rông. Mở «Chăm bé» là thấy tài của từng đứa. Bé nào có ngôi sao trên bảng chuồng là đang chờ con nhờ đó.',
+ ]),
+ postscript:'Tái bút: Con thủy quái dưới hồ giờ làm chúa cả đáy hồ, đừng để nó nắm tay con nghen.',
+ signature:'Hagrid',
+});
 const PLACEHOLDER_NAMES = new Set(['', 'Người làm vườn', 'Thành viên thử nghiệm', 'Xem thử · không lưu']);
 export function letterGreeting(name) {
   const clean = String(name ?? '').trim();

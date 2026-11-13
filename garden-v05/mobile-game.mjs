@@ -23,8 +23,8 @@ import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from 
 import {createGardenAudio,comboStep} from './garden-audio.mjs?v=25.1.9';
 import {createJuice,rewardDeltas} from './garden-juice.mjs?v=25.1.9';
 import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=25.1.9';
-import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=25.1.9';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=25.1.9';
+import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,SEASON_LETTER,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=26.0';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=26.0';
 import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=25.1.9';
 import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=25.1.9';
 import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=25.1.9';
@@ -71,10 +71,11 @@ let gardenStorage;
 function selectStorage(){gardenStorage=configureGardenStorage({scope:key,persistent:!connected,legacyKeys:[key,...(!qa&&session==='play'?['hpvn-garden-v23-events','hpvn-garden-v23-affinity','hpvn-garden-v21-owl-quests','hpvn-garden-v22-tour','hpvn-garden-v22-achievements','hpvn-garden-v20-visual-prefs','hpvn-garden-v18-decor-layout']:[])]});}
 selectStorage();
 const HELPERS_SEEN_KEY='hagrid-helpers-seen'; // newest «Chăm giúp» the host was told about
+const SEASON_LETTER_KEY='hagrid-s2-letter'; // bác Hagrid's Season 2 letter was shown on this account
 // In HPVN the sandbox has no storage and the server keeps no device choices, so the worn title and
 // the scene/sound settings lived in memory and a reload lost them: the shell keeps them per member.
 if(hpvnNonce&&wallet?.host){
- const DEVICE_PREFS=[ACHIEVEMENTS_STORAGE_KEY,VISUAL_PREFS_STORAGE_KEY,HELPERS_SEEN_KEY],saved=await wallet.host('prefs')||{},set=gardenStorage.setItem;
+ const DEVICE_PREFS=[ACHIEVEMENTS_STORAGE_KEY,VISUAL_PREFS_STORAGE_KEY,HELPERS_SEEN_KEY,SEASON_LETTER_KEY],saved=await wallet.host('prefs')||{},set=gardenStorage.setItem;
  for(const k of DEVICE_PREFS)if(typeof saved[k]==='string')set(k,saved[k]);
  gardenStorage.setItem=(k,v)=>{set(k,v);if(DEVICE_PREFS.includes(k))wallet.host('prefs',{values:{[k]:String(v)}});};
 }
@@ -247,7 +248,7 @@ async function startVisit(hostUid,queue=null){
  const f=activeTourSnapshot.visit.fire;message(f?`🔥 Vườn của ${activeTourSnapshot.tour.ownerName} đang chìm trong biển lửa.`:`🧭 Đang thăm vườn của ${activeTourSnapshot.tour.ownerName}.`);
  // 25.0 S4: creatures that learned tricks perform for the visitor.
  const tricks=activeTourSnapshot.visit.tricks||{};
- if(!f&&Object.keys(tricks).length){const {visitShow}=await import('./garden-mood-ui.mjs?v=25.1.9');for(const sp of Object.keys(tricks))renderer?.animate('care',{species:sp});message(`🎪 Biểu diễn: ${visitShow(tricks,s=>E.CREATURE[s]?.label||s)}.`);}
+ if(!f&&Object.keys(tricks).length){const {visitShow}=await import('./garden-mood-ui.mjs?v=26.0');for(const sp of Object.keys(tricks))renderer?.animate('care',{species:sp});message(`🎪 Biểu diễn: ${visitShow(tricks,s=>E.CREATURE[s]?.label||s)}.`);}
 }
 function moveVisit(dir){const t=activeTourSnapshot?.tour;const next=t&&nextVisit(visitQueue,t.uid,dir);if(next)startVisit(next.uid);}
 async function helpVisit(){
@@ -387,6 +388,25 @@ function currentDuty(){return !activeTourSnapshot&&connected&&walletReady?wallet
 let dutyKit=null,dutyKitLoading=false;
 function dutyRender(){const d=currentDuty();if(!d?.on)return null;if(!dutyKit){if(!dutyKitLoading){dutyKitLoading=true;import('./garden-duty-art.mjs?v=25.1.9').then(m=>{dutyKit=m;draw();}).catch(()=>{dutyKitLoading=false;});}return null;}return {kit:dutyKit,wilt:new Set((d.wilted||[]).map(w=>w.plot+':'+w.slot)),dead:new Map((d.dead||[]).map(x=>[x.plot+':'+x.slot,x.species])),sick:new Set((d.sick||[]).map(s=>s.species)),gnomes:(d.gnomes||[]).map(g=>g.plot)};}
 const dutyUi=()=>import('./garden-duty-ui.mjs?v=25.1.9');
+// Season 2 «Tài năng sinh vật» (garden-skills-ui, loaded after the first wallet accept): pen and plot marks, the lines
+// for passive skills that ran since the last snapshot, bác Hagrid's season letter once.
+let skillsKit=null,skillsLoading=false,lastSkills=null,skillMarks=null,skillMarksAt=0;
+function syncSkills(){
+ const snap=wallet?.snapshot;if(!snap?.skills)return;
+ if(!skillsKit){if(!skillsLoading){skillsLoading=true;import('./garden-skills-ui.mjs?v=26.0').then(m=>{skillsKit=m;syncSkills();draw();}).catch(()=>{skillsLoading=false;});}return;}
+const runs=skillsKit.passiveRuns({skills:lastSkills},snap);lastSkills=snap.skills;skillMarksAt=0;
+ for(const [sp] of runs)renderer?.animate('care',{species:sp});
+ if(runs.length)setTimeout(()=>message('✨ '+runs.map(r=>r[1]).join(' ')),1400);
+ seasonLetter();
+}
+// Once a creature can have a skill, after the tutorial (setupTutorial waits for the art, so check again later).
+function seasonLetter(){
+ if(!skillsKit||!wallet?.snapshot?.skills?.creatures.length||gardenStorage.getItem(SEASON_LETTER_KEY))return;
+ if(!tutorialChecked||(tutorial&&tutorial!=='done')){clearTimeout(seasonLetter.timer);seasonLetter.timer=setTimeout(seasonLetter,4000);return;}
+ gardenStorage.setItem(SEASON_LETTER_KEY,'1');setTimeout(()=>showHagridLetter({greeting:letterGreeting(letterName()),mode:'gift',letter:SEASON_LETTER}),1200);
+}
+// ponytail: marks recomputed at most once a minute (Kneazle's 3-hour window), or after a snapshot or a skill.
+function currentSkillMarks(){if(activeTourSnapshot||!skillsKit||!connected||!walletReady)return null;const now=Date.now();if(now-skillMarksAt>60000){skillMarks=skillsKit.sceneMarks(wallet.snapshot,now);skillMarksAt=now;}return skillMarks;}
 async function openDuty(){if(!currentDuty())return;dutyPanel??=(await dutyUi()).createDutyPanel({getSnapshot:()=>wallet.snapshot,act:serverClaim,notify:message,labelOf:s=>E.CREATURE[s]?.label||s});dutyPanel.open();}
 function dutyTap(plot){const d=currentDuty(),kind=d?.gnomes?.some(g=>g.plot===plot)?'gnome':d?.dead?.some(x=>x.plot===plot)?'clear':null;if(!kind)return false;
  serverClaim({action:'duty',kind,plotIndex:plot}).then(r=>{if(!r.ok)return;const x=r.receipt?.duty||{};audio.play('care');message(kind==='gnome'?`💨 Quăng ma lùm qua rào${x.ate?` · nó đã ăn ${x.ate} cây`:''}.`:`🧹 Đã dọn ${x.cleared} gốc khô ở thửa ${plot+1}.`);});return true;}
@@ -673,7 +693,7 @@ function followGoal(){
  focusPlot(ready>=0?ready:free>=0?free:selectedPlot);
 }
 function tickTimers(){const now=logical();document.querySelectorAll('[data-until]').forEach(e=>{const remaining=Number(e.dataset.until)-now;e.textContent=remaining<=0?'Sẵn sàng nhận':(e.dataset.prefix||'')+duration(remaining);e.classList.toggle('ready-text',remaining<=0);});document.querySelectorAll('[data-ready-button]').forEach(e=>e.disabled=Number(e.dataset.readyButton)>now);}
-function draw(clock=performance.now()){const renderState=activeTourSnapshot?activeTourSnapshot.state:state;const renderAtmo=activeTourSnapshot?activeTourSnapshot.atmosphereMode:atmosphereMode;const renderWeather=activeTourSnapshot?activeTourSnapshot.weatherMode:weatherMode;const renderEarnedRot=activeTourSnapshot?activeTourSnapshot.decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations};renderer?.render(renderState,{friendsKit,xmasKit,xmas:!activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.xmas:null,allFriends:query.get('friends')==='all',labelScale:1/(camera?.scale?.()||1),norbert:!activeTourSnapshot&&connected&&walletReady&&!!wallet.snapshot?.mood?.norbert,elfWork:activeTourSnapshot?[]:(connected&&walletReady?wallet.snapshot?.elves?.jobs?.map(j=>j.kind):null)||[],selectedPlot,line:activeTourSnapshot?[]:mode==='plant'?chosen():[],now:Date.now(),clock:(!motionEnabled||motionMedia.matches)?0:clock,animationClock:clock,propsVisible,grid,decorations:currentDecorations(),decorationRotations:renderEarnedRot,creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities(),creatureCoats:currentCreatureCoats(),winter:currentWinter(),winterKit,previewDecoration,previewLayout,atmosphereMode:renderAtmo,weatherMode:renderWeather,eventMode:activeTourSnapshot?.eventMode||eventMode,fire:currentFire(),duty:dutyRender(),tiredPlots:tiredPlots(currentSoil()),pond:currentPond(),orchard:!activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.orchard||null:null,...(activeTourSnapshot?{}:tutorialRenderOptions())});placeTutorialBubble();const stage=renderer?.growthStage?.();if(stage&&(!connected||walletReady)&&stage.id!==lastGardenStage){const previous=lastGardenStage;lastGardenStage=stage.id;$('gardenStageName').textContent=stage.name;$('plotsButton').title='Giai đoạn '+stage.id+'/6 · '+stage.name;if(!activeTourSnapshot&&previous&&stage.id>previous){camera?.overview();message('Khu vườn đã mở rộng · '+stage.name+'.');}}}
+function draw(clock=performance.now()){const renderState=activeTourSnapshot?activeTourSnapshot.state:state;const renderAtmo=activeTourSnapshot?activeTourSnapshot.atmosphereMode:atmosphereMode;const renderWeather=activeTourSnapshot?activeTourSnapshot.weatherMode:weatherMode;const renderEarnedRot=activeTourSnapshot?activeTourSnapshot.decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations};renderer?.render(renderState,{friendsKit,xmasKit,xmas:!activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.xmas:null,allFriends:query.get('friends')==='all',labelScale:1/(camera?.scale?.()||1),norbert:!activeTourSnapshot&&connected&&walletReady&&!!wallet.snapshot?.mood?.norbert,elfWork:activeTourSnapshot?[]:(connected&&walletReady?wallet.snapshot?.elves?.jobs?.map(j=>j.kind):null)||[],selectedPlot,line:activeTourSnapshot?[]:mode==='plant'?chosen():[],now:Date.now(),clock:(!motionEnabled||motionMedia.matches)?0:clock,animationClock:clock,propsVisible,grid,decorations:currentDecorations(),decorationRotations:renderEarnedRot,creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities(),creatureCoats:currentCreatureCoats(),winter:currentWinter(),winterKit,previewDecoration,previewLayout,atmosphereMode:renderAtmo,weatherMode:renderWeather,eventMode:activeTourSnapshot?.eventMode||eventMode,fire:currentFire(),duty:dutyRender(),skillMarks:currentSkillMarks(),tiredPlots:tiredPlots(currentSoil()),pond:currentPond(),orchard:!activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.orchard||null:null,...(activeTourSnapshot?{}:tutorialRenderOptions())});placeTutorialBubble();const stage=renderer?.growthStage?.();if(stage&&(!connected||walletReady)&&stage.id!==lastGardenStage){const previous=lastGardenStage;lastGardenStage=stage.id;$('gardenStageName').textContent=stage.name;$('plotsButton').title='Giai đoạn '+stage.id+'/6 · '+stage.name;if(!activeTourSnapshot&&previous&&stage.id>previous){camera?.overview();message('Khu vườn đã mở rộng · '+stage.name+'.');}}}
 const elfTaps={};
 // Knits (and so the wage box) open with Giỏ đan của Hermione.
 const ELF_CARE_LEVEL=DB.recipes.find(r=>r.id==='elf_sock').level;
@@ -700,7 +720,8 @@ async function openElfCare(){
 let moodCare=null;
 async function openMoodCare(sp=species){
  if(!connected||!walletReady)return;
- moodCare??=(await import('./garden-mood-ui.mjs?v=25.1.9')).createMoodCare({getSnapshot:()=>wallet.snapshot,tend:(s,kind)=>serverClaim({action:'tendCreature',species:s,kind}),items,notify:message,
+ moodCare??=(await import('./garden-mood-ui.mjs?v=26.0')).createMoodCare({getSnapshot:()=>wallet.snapshot,tend:(s,kind)=>serverClaim({action:'tendCreature',species:s,kind}),useSkill:(s,target)=>serverClaim({action:'skill',species:s,...(target===undefined?{}:{target})}),items,notify:message,
+  onSkill:r=>{renderer?.animate('care',{species:r.species});skillMarksAt=0;petControls?.refresh();},
   labelOf:s=>E.CREATURE[s]?.label||'Norbert',bondOf:s=>wallet.snapshot?.bonding?.creatures?.find(c=>c.species===s)?.level||1,
   onTended:r=>{if(r.species!=='norbert')renderer?.animate(r.kind==='ride'?'ride':'care',{species:r.species});petControls?.refresh();}});
  moodCare.open(sp);
@@ -876,6 +897,7 @@ if(qa)window.__HAGRID_GARDEN_QA__={
  getSnapshot:()=>({clock:lastClock,loaded,walletReady,atmosphereMode,weatherMode,eventMode,keeperTitle:currentKeeperTitle().badge,totalAffinity:currentAffinitySummary().totalAffinityLevels,activeTourId:activeTourSnapshot?.tour?.id||null,soundEnabled:audio.enabled,supplies:currentSupplies(),storageKey:gardenStorage.storageKey,state:{...state,decorations:currentDecorations(),decorationRotations:{...(state?.decorationRotations||{}),...earnedDecorRotations},creatureFacings:currentCreatureFacings(),creatureAffinities:currentCreatureAffinities()}}),
  openDecorPlacement:id=>{const item=decorAssets.get(id);if(item)openDecoration(item);},
  openElfCare,
+ openMoodCare, // Season 2 skill card (QA)
  openXmas:()=>{if(xmasKit)openXmas();}, // 25.0 S7 hearth panel (QA)
  openVisualLayout,
  openPostcard,
@@ -915,7 +937,7 @@ function careCells(cells){const growing=cells.filter(i=>state.plots[selectedPlot
 $('cropCareButton').onclick=()=>{$('seedOptions').close();return careCells(chosen());};
 $('petButton').onclick=()=>{guideEvent('pet');handlePetCreature(species);};
 
-function acceptWallet(before,text,showLevelChange=true){state=wallet.snapshot.garden.progression;const first=!walletReady;walletReady=true;if(first)adoptServerScene();syncDaily();syncFireNotice();syncDuty();syncXmas();syncHelpers(text);const juiceEvents=renderer?.react?.(before,state)||[];refresh();if(showLevelChange)showRewards(before,state,juiceEvents);panels?.refresh();if(showLevelChange&&state.level>before.level)celebrate(before.level,state.level);$('walletValue').textContent=num(wallet.snapshot.wallet.spendable);$('galleonCounter').hidden=false;syncSupplies();const p=wallet.snapshot.profile;$('playerName').textContent=p.username||'Thành viên thử nghiệm';$('avatarButton').title=WALLET_TEXT.avatar;if(avatarSrc(p.avatarUrl)){$('avatarGlyph').replaceChildren(el('img',{src:avatarSrc(p.avatarUrl),onerror:e=>e.target.remove(),alt:'Avatar '+(p.username||'thành viên'),style:'width:28px;height:28px;border-radius:50%;object-fit:cover'}));}$('levelButton').title=WALLET_TEXT.title;missions.sync();hagridWork.sync();elfCare?.sync();const elfText=elfShiftText(wallet.snapshot.receipt?.elfJobs);if(text||elfText)message([text,elfText].filter(Boolean).join(' · '));if(!tutorialChecked)setupTutorial();}
+function acceptWallet(before,text,showLevelChange=true){state=wallet.snapshot.garden.progression;const first=!walletReady;walletReady=true;if(first)adoptServerScene();syncDaily();syncFireNotice();syncDuty();syncXmas();syncSkills();syncHelpers(text);const juiceEvents=renderer?.react?.(before,state)||[];refresh();if(showLevelChange)showRewards(before,state,juiceEvents);panels?.refresh();if(showLevelChange&&state.level>before.level)celebrate(before.level,state.level);$('walletValue').textContent=num(wallet.snapshot.wallet.spendable);$('galleonCounter').hidden=false;syncSupplies();const p=wallet.snapshot.profile;$('playerName').textContent=p.username||'Thành viên thử nghiệm';$('avatarButton').title=WALLET_TEXT.avatar;if(avatarSrc(p.avatarUrl)){$('avatarGlyph').replaceChildren(el('img',{src:avatarSrc(p.avatarUrl),onerror:e=>e.target.remove(),alt:'Avatar '+(p.username||'thành viên'),style:'width:28px;height:28px;border-radius:50%;object-fit:cover'}));}$('levelButton').title=WALLET_TEXT.title;missions.sync();hagridWork.sync();elfCare?.sync();const elfText=elfShiftText(wallet.snapshot.receipt?.elfJobs);if(text||elfText)message([text,elfText].filter(Boolean).join(' · '));if(!tutorialChecked)setupTutorial();}
 if(connected){
  const badge=el('div',{class:'emulator-badge',text:WALLET_TEXT.badge});$('gameShell').append(badge);
  const boost=button('Nước phép',()=>{$('seedOptions').close();return run(null,'Đã tưới nước phép cho hàng đang chọn.',{action:'boost',plotIndex:selectedPlot,cells:chosen()});},{id:'boostButton',disabled:true});$('cropCareButton').after(boost);$('dockBoost').onclick=()=>boost.click();

@@ -480,8 +480,9 @@ function plotTag(context, parts, x, y, px, rule, mark = null) {
   context.textAlign = 'left';
   context.textBaseline = 'middle';
   const widths = parts.map(([text]) => context.measureText(text).width), pad = Math.round(px * .45);
-  // `mark`: a pixel icon after the text (level-160 «đất mệt»), one 16-cell grid at `cell` px a cell.
-  const cell = mark ? Math.max(1, Math.round(px * 1.2 / 16)) : 0, markW = mark ? cell * 16 + pad : 0;
+  // `mark`: pixel icons after the text (level-160 «đất mệt», Season 2 skill marks), one 16-cell grid at `cell` px a cell.
+  const marks = [mark].flat().filter(Boolean);
+  const cell = marks.length ? Math.max(1, Math.round(px * 1.2 / 16)) : 0, markW = marks.length * (cell * 16 + pad);
   const w = Math.ceil(widths.reduce((sum, width) => sum + width, 0) + pad * 2 + markW), h = Math.round(px * 1.5);
   const left = Math.round(x - w / 2), top = Math.round(y - h / 2), line = Math.max(1, Math.round(px / 10));
   // A small wooden plaque in the garden palette: dark wood, a lighter top edge, a #231F2E rim; `rule` lights the rim
@@ -495,7 +496,7 @@ function plotTag(context, parts, x, y, px, rule, mark = null) {
   if (rule) { context.strokeStyle = rule; context.lineWidth = line; context.strokeRect(left - line / 2, top - line / 2, w + line, h + line); }
   let at = left + pad;
   parts.forEach(([text, colour], i) => { context.fillStyle = colour; context.fillText(text, at, top + h / 2); at += widths[i]; });
-  if (mark) drawIcon(context, mark, Math.round(at + pad), Math.round(top + (h - cell * 16) / 2), cell);
+  marks.forEach((name, i) => drawIcon(context, name, Math.round(at + pad + i * (cell * 16 + pad)), Math.round(top + (h - cell * 16) / 2), cell));
   context.restore();
   return [left - line, top - line, w + line * 2, h + line * 2];
 }
@@ -804,6 +805,7 @@ export async function createGarden(canvas, options = {}) {
   let currentStage = gardenStage({}, map);
   let fireCache = null; // «Đốt vườn» flame spots for the current stage
   let tiredPlots = new Set();
+  let skillMarks = null; // Season 2 garden-skills-ui sceneMarks: { pens: species → icons, plots: index → icon }
   let duty = null; // 25.0 S5 options.duty: {wilt: Set, dead: Map, sick: Set, gnomes: [plot], kit: garden-duty-art} ('plot:slot' keys)
   let friends = null; // 25.0 S6 garden-friends.mjs
   let xmasKit = null; // 25.0 S7 garden-xmas.mjs
@@ -1539,7 +1541,9 @@ export async function createGarden(canvas, options = {}) {
       // A compact wooden sign stands by the west gate, in the empty approach aisle.
       const [x,y]=iso(pen.col-.75,pen.row+pen.height*.5),px=Math.ceil(10*labelScale);
       const text=construction&&!construction.ready?`Chuồng ${index+1} · ${Math.round(construction.progress*100)}%`:(isBuilt||queued)?`Chuồng ${index+1}`:`Lv ${pen.requiredLevel}`;
-      const boxes=plotSign(context,[[text,isBuilt||queued?'#f5d69a':'#a6b1ae']],Math.round(x),Math.round(y),px,null);
+      // Season 2: a star for a ready skill, Kneazle's meal-done and sick-soon marks, from the pen's residents.
+      const marks=isBuilt&&skillMarks?.pens.size?[...new Set(habitatResidents(pen,landCreatures(state),map.creatureSpots,iso).flatMap(r=>skillMarks.pens.get(r.species)||[]))]:null;
+      const boxes=plotSign(context,[[text,isBuilt||queued?'#f5d69a':'#a6b1ae']],Math.round(x),Math.round(y),px,null,marks);
       // The plaque stays above the pen's rails, but a creature standing in front of it (feet lower on screen) covers it
       // again (owner 13/11/2026): redraw those creatures clipped to the plaque, so nothing else is painted twice.
       const front=objects.filter(o=>o.item?.kind==='creature'&&o.xy?.[1]>y);
@@ -1814,6 +1818,7 @@ export async function createGarden(canvas, options = {}) {
     const logicalNow = finite(nowFor(state, now), now);
     duty = options.duty || null; // its art module (kit) is imported by the game only once the duty tier is on
     tiredPlots = options.tiredPlots instanceof Set ? options.tiredPlots : new Set(); // level-160 luân canh: plot indexes
+    skillMarks = options.skillMarks ?? null;
     for (const file of duty?.kit.GNOME_FILES ?? []) deferredFiles.add(file);
     const builtPlotCount = Math.min(map.plots.length, asArray(state.plots).length);
     lastBuiltPlotCount = builtPlotCount;
@@ -2013,7 +2018,8 @@ export async function createGarden(canvas, options = {}) {
         parts = [[`Thửa ${index + 1}`, selected ? '#FFC36B' : '#F5D69A'], [ripe ? ` · chín ${ripe}` : slots.length ? ` · ${shortTime(left)}` : '', ripe ? '#FFC36B' : '#A6B1AE']];
         if (ripe) rule = '#FFC36B';
       }
-      const mark = tiredPlots.has(index) && plotIsBuilt(state, index, logicalNow) ? 'tired' : null; // level 160+: the next harvest is cut
+      const built = plotIsBuilt(state, index, logicalNow);
+      const mark = built ? [tiredPlots.has(index) && 'tired', skillMarks?.plots.get(index)] : null; // level 160+: the next harvest is cut; Kneazle: wilts soon
       objects.push({kind: 'sign', id: `sign:${index}`, xy: [x, y], draw: ctx => plotSign(ctx, parts, x, y, px, rule, mark)});
     }
     // 25.0 S5: ma lùm chewing in the weeds of their plot, in the depth-sorted pass so the night tint covers them.

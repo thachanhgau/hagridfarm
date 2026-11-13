@@ -14,7 +14,7 @@ import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.9';
 import {fireworks} from './garden-friends.mjs?v=25.1.9';
 import {FEAST_GROUND, decorOnGround} from './decor-placement-ui.mjs?v=25.1.9';
 import {iconButton} from './pixel-icons.mjs?v=26.0';
-import {showHagridLetter} from './hagrid-letter-ui.mjs?v=25.1.9';
+import {showHagridLetter} from './hagrid-letter-ui.mjs?v=26.0';
 
 const file = (name) => `environment/xmas/${name}.png`;
 export const XMAS_FILES = ['hearth', 'sock', 'sock-open', 'egg-0', 'egg-1', 'egg-2', 'egg-3', 'feast', 'carried-tree'].map(file);
