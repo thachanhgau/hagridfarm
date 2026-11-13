@@ -510,16 +510,16 @@ function makeTray(container,collection,select){for(const c of collection){const 
 const openSeedStore=id=>openStore('seed',document.activeElement,'seed_'+id);
 makeTray($('seedTray'),DB.crops,id=>{selectCrop(id);if(connected&&wallet?.snapshot&&!(wallet.snapshot.garden?.supplies?.seeds?.[id]>0))openSeedStore(id);});
 // Item names (owner 13/11/2026): tray items and cost chips are icon-only — a mouse hover or a touch shows the name above the icon.
-const nameTip=el('div',{class:'name-tip',role:'tooltip',hidden:true});$('gameShell').append(nameTip);let nameTipTimer=0;
+const nameTip=el('div',{class:'name-tip',role:'tooltip',style:'display:none'});const hideNameTip=()=>{nameTip.style.display='none';}; // style, not `hidden`/class: the body observers (☰ placement) must not fire on every hover$('gameShell').append(nameTip);let nameTipTimer=0;
 const tipTarget=e=>e.target.closest?.('#playDock :is(.dock-cost,.item-tray button)');
 const showNameTip=t=>{if(t.title){t.dataset.tip=t.title;t.removeAttribute('title');}const text=t.dataset.tip;if(!text)return; // the native title would show a second tooltip
- nameTip.textContent=text;nameTip.hidden=false;const r=t.getBoundingClientRect(),w=nameTip.offsetWidth;
+ nameTip.textContent=text;nameTip.style.display='';const r=t.getBoundingClientRect(),w=nameTip.offsetWidth;
  nameTip.style.left=Math.round(Math.min(Math.max(6,r.left+r.width/2-w/2),innerWidth-w-6))+'px';nameTip.style.top=Math.round(Math.max(6,r.top-nameTip.offsetHeight-6))+'px';
- clearTimeout(nameTipTimer);nameTipTimer=setTimeout(()=>{nameTip.hidden=true;},2000);};
+ clearTimeout(nameTipTimer);nameTipTimer=setTimeout(hideNameTip,2000);};
 $('playDock').addEventListener('pointerover',e=>{const t=e.pointerType==='mouse'&&tipTarget(e);if(t)showNameTip(t);});
-$('playDock').addEventListener('pointerout',e=>{const t=e.pointerType==='mouse'&&tipTarget(e);if(t&&!t.contains(e.relatedTarget))nameTip.hidden=true;});
+$('playDock').addEventListener('pointerout',e=>{const t=e.pointerType==='mouse'&&tipTarget(e);if(t&&!t.contains(e.relatedTarget))hideNameTip();});
 $('playDock').addEventListener('pointerdown',e=>{const t=e.pointerType!=='mouse'&&tipTarget(e);if(t)showNameTip(t);});
-$('playDock').addEventListener('scroll',()=>{nameTip.hidden=true;},true);
+$('playDock').addEventListener('scroll',hideNameTip,true);
 
 function makeLines(){$('lineButtons').replaceChildren();for(let i=0;i<(direction==='diagonal'?2:3);i++)$('lineButtons').append(button(direction==='diagonal'?(i?'↙':'↘'):String(i+1),()=>{line=i;refresh();},{'aria-label':(direction==='diagonal'?'Đường chéo ':'Hàng ')+(i+1)}));}
 for(const b of $('directionButtons').children)b.onclick=()=>{direction=b.dataset.direction;line=Math.min(line,direction==='diagonal'?1:2);makeLines();refresh();};makeLines();

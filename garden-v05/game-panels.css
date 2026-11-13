@@ -610,6 +610,6 @@
 @media(max-width:640px){#gameShell #panel .inv-summary-strip{gap:12px}#gameShell #panel .inv-stat-card>.visual-slot{display:none}#gameShell #panel .inv-stat-copy strong{white-space:nowrap;overflow:visible}#gameShell #panel .inv-stat-copy strong{font-size:16px}#gameShell #panel .inv-tab-name{display:none}}
 @media(max-width:359px){#gameShell #panel .inv-summary-strip .icon-btn{width:40px;min-width:40px}}
 /* item name over a tray item or cost chip (hover / touch), mobile-game.mjs showNameTip */
-#gameShell .name-tip{position:fixed;z-index:30;pointer-events:none;max-width:calc(100vw - 12px);padding:4px 8px;background:#142620;border:2px solid #231F2E;box-shadow:0 0 0 1px #B49A66,0 3px 8px #0008;color:#F5D69A;font:700 12px/1.2 system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#gameShell .name-tip[hidden]{display:none}
+#gameShell .name-tip{position:fixed;z-index:30;pointer-events:none;max-width:calc(100vw - 12px);padding:4px 8px;background:#142620;border:2px solid #231F2E;box-shadow:0 0 0 1px #B49A66,0 3px 8px #0008;color:#F5D69A;font:700 12px/1.2 system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* store with one item (a seed tapped at 0): a small popup, one card */
 #gameShell .store-overlay .store-popover.is-single{width:min(320px,calc(100% - 24px));height:auto;max-height:calc(100dvh - 24px)}#gameShell :is(#panel,.store-popover).is-single .store-cards-grid{grid-template-columns:1fr;flex:none;margin:0}
