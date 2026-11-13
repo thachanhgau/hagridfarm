@@ -28,11 +28,12 @@ const unitOf = item => item.kind === "nest" ? "ổ" : item.supply === "primeMeal
 const stockOf = (item, snap) => item.supply ? Number(snap?.garden?.supplies?.[item.supply] ?? 0) : 0;
 const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("coin", 1), el("b", {text: num(n)}), extra ? el("small", {text: extra}) : null]);
 
-export function showStore({state,items,wallet,connected,onPurchase,onSell,onDecorate,onRefresh,decorAssets=new Map(),onClose,initialFilter="all",returnFocus=document.activeElement}){
+export function showStore({state,items,wallet,connected,onPurchase,onSell,onDecorate,onRefresh,decorAssets=new Map(),onClose,initialFilter="all",only=null,returnFocus=document.activeElement}){
+ // `only`: one item id — a small buy popup for just that item (a seed tapped at 0), no tabs; it closes once bought.
  document.querySelector(".store-overlay")?.remove();
  let filter=initialFilter,purchasing=false,clock=null;const quantities=new Map(),sellQuantities=new Map(),previewFacing=new Map();
  const overlay=el("div",{class:"store-overlay"}),shade=el("div",{class:"popover-shade"});
- const box=el("section",{class:"popover store-popover",role:"dialog","aria-modal":"true","aria-labelledby":"storeTitle"});
+ const box=el("section",{class:"popover store-popover"+(only?" is-single":""),role:"dialog","aria-modal":"true","aria-labelledby":"storeTitle"});
  const heading=el("div",{class:"popover-heading"}),status=el("div",{class:"wallet-status store-vault-banner"}),tabs=el("div",{class:"panel-toolbar store-tabs",role:"group","aria-label":"Nhóm vật tư"}),notice=el("p",{class:"meta store-notice",role:"status","aria-live":"polite"}),cards=el("div",{class:"cards store-cards-grid"});
  const close=()=>{if(purchasing)return;clearInterval(clock);overlay.remove();(returnFocus?.isConnected?returnFocus:$("shopButton"))?.focus();onClose?.();};
  heading.append(
@@ -135,7 +136,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
    }}));
    return;
   }
-  for(const item of allItems.filter(i=>filter==="all"||tabOf(i)===filter)){
+  for(const item of allItems.filter(i=>only?i.id===only:filter==="all"||tabOf(i)===filter)){
    const isDecor=item.kind==="decoration";
    const decorState=snap?.garden?.decorations;
    const owned=isDecor&&Boolean(decorState?.owned?.includes(item.id));
@@ -173,6 +174,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
      try{
       await onPurchase(item.id,n);
       notice.textContent=isDecor?"Đã có "+item.label+". Bấm Đặt để trang trí vườn.":"Đã mua "+n+" "+unit+" "+item.label+".";
+      if(only&&!isDecor){purchasing=false;close();return;}
      }catch(e){
       notice.textContent=e.message;
       // The price moved (a sale ended or began, the ACP changed it): show the server's price now, never the old one.
@@ -229,7 +231,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   }
  }
  cards.setAttribute("aria-label","Danh mục cửa hàng");
- box.append(heading,status,tabs,notice,cards);
+ if(only)heading.querySelector("h2").textContent=catalog().find(i=>i.id===only)?.label??"Cửa hàng";
+ box.append(heading,status,...(only?[]:[tabs]),notice,cards);
  overlay.append(shade,box);
  $("gameShell").append(overlay);
  render();
