@@ -24,8 +24,8 @@ class FakeElement {
 }
 globalThis.document = {createElement: t => new FakeElement(t), createTextNode: t => new FakeText(t), getElementById: () => null};
 
-const P = await import('./garden-pond-ui.mjs?v=25.1.6');
-const {ICONS} = await import('./pixel-icons.mjs?v=25.1.6');
+const P = await import('./garden-pond-ui.mjs?v=25.1.7');
+const {ICONS} = await import('./pixel-icons.mjs?v=25.1.7');
 const all = (node, fn, out = []) => {if (fn(node)) out.push(node); for (const c of node.children || []) all(c, fn, out); return out;};
 const byClass = (node, cls) => all(node, n => n._classes?.has(cls));
 const byId = (node, id) => all(node, n => n.attributes?.id === id)[0];

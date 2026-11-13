@@ -1,4 +1,4 @@
-import { el, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=25.1.6';
+import { el, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=25.1.7';
 
 // Keep each recipe illustration while marking its canonical output at a glance.
 export function makeRecipeIcon(recipe, items, size = 40, labels = {}) {
