@@ -57,6 +57,85 @@ export function craftChoice(recipe, state = {}, batches = 1) {
   };
 }
 
+// The eight legal planting lines (progression-engine LEGAL_LINES): a plant takes 1–3 cells of one line.
+const PLANT_LINES = Object.freeze([[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]);
+
+/**
+ * «Trồng/Tạo» for a recipe short of inputs: the server actions that make the missing inputs now.
+ * Crafted inputs (côn trùng, cá) are crafted when their own inputs are on hand, else their crops are planted;
+ * missing crops are planted on free cells, line by line, within the seeds and water on hand
+ * (`supplies` null = local play, no stock limit). Crops already growing and jobs already running count.
+ * Returns { steps:[{action:'plant',plotIndex,cells,species}|{action:'craft',recipeId,batches}],
+ * later:{crop:n} (no free cell), seeds:{crop:n} (seeds to buy), water:n, growing:[crop], other:{id:n} }.
+ */
+export function restockPlan({ recipe, state, batches = 1, db = DB, supplies = null, now = 0 }) {
+  const plan = { steps: [], later: {}, seeds: {}, water: 0, growing: [], other: {} };
+  if (!recipe) return plan;
+  const crops = new Map(db.crops.map(crop => [crop.id, crop]));
+  const level = Number(state.level ?? 0), jobs = state.jobs ?? [];
+  const reserved = { ...inputNeeds(recipe, recipe.hours > 0 ? 1 : batches) };
+  const free = id => inventoryValue(state, id) - (reserved[id] ?? 0);
+  const demand = {};
+  const want = (id, n) => {
+    if (n <= 0) return;
+    if (crops.has(id) && crops.get(id).level <= level) demand[id] = (demand[id] ?? 0) + n;
+    else plan.other[id] = (plan.other[id] ?? 0) + n;
+  };
+  for (const { id, need, have } of inputShortages(recipe, state, recipe.hours > 0 ? 1 : batches)) {
+    const short = need - have;
+    const makers = db.recipes.filter(r => r.output === id && r.level <= level);
+    if (crops.has(id) || !makers.length) { want(id, short); continue; }
+    const pending = jobs.filter(job => job.output === id).reduce((n, job) => n + Number(job.count) * Number(job.batches ?? 1), 0);
+    if (pending >= short) { plan.growing.push(id); continue; }
+    const rest = short - pending;
+    const fit = r => Math.min(...Object.entries(r.inputs).map(([i, n]) => Math.floor(free(i) / n)));
+    const idle = r => !(r.hours > 0 && jobs.some(job => job.station === r.station));
+    const ready = makers.find(r => idle(r) && fit(r) >= 1);
+    if (ready) {
+      const n = ready.hours > 0 ? 1 : Math.min(MAX_CRAFT_BATCHES, fit(ready), Math.ceil(rest / ready.count));
+      plan.steps.push({ action: 'craft', recipeId: ready.id, batches: n });
+      for (const [i, q] of Object.entries(ready.inputs)) reserved[i] = (reserved[i] ?? 0) + q * n;
+      continue;
+    }
+    // Nothing to craft it with yet: plant what the maker made only of crops is missing (one batch; a later tap crafts it).
+    const maker = makers.find(r => Object.keys(r.inputs).every(i => crops.has(i))) ?? makers[0];
+    if (!idle(maker)) { plan.growing.push(id); continue; }
+    for (const [i, q] of Object.entries(maker.inputs)) { want(i, q - Math.max(0, free(i))); reserved[i] = (reserved[i] ?? 0) + q; }
+  }
+  // Crops already in the ground (ripe or growing) cover their share first.
+  const plots = (state.plots ?? []).map(plot => ({ slots: [...plot.slots], cooldowns: plot.cooldowns ?? [] }));
+  let water = supplies ? Number(supplies.water ?? 0) : Infinity;
+  for (const [id, units] of Object.entries(demand)) {
+    const crop = crops.get(id), perCell = Number(crop.yieldPerCell ?? 1);
+    const inGround = plots.reduce((n, plot) => n + plot.slots.filter(slot => slot?.species === id).length, 0) * perCell;
+    let cells = Math.ceil((units - inGround) / perCell);
+    if (cells <= 0) { plan.growing.push(id); continue; }
+    const seeds = supplies ? Number(supplies.seeds?.[id] ?? 0) : Infinity;
+    if (seeds < cells) plan.seeds[id] = cells - seeds;
+    let left = Math.min(cells, seeds);
+    if (water < left) { plan.water += left - water; left = water; }
+    cells = left;
+    while (left > 0) {
+      let best = null;
+      plots.forEach((plot, plotIndex) => {
+        const kinds = new Set(plot.slots.filter(Boolean).map(slot => slot.species));
+        if (!kinds.has(id) && kinds.size >= db.limits.maxCropSpeciesPerPlot) return;
+        for (const line of PLANT_LINES) {
+          const open = line.filter(i => !plot.slots[i] && !(plot.cooldowns[i] > now)).slice(0, left);
+          if (open.length > (best?.cells.length ?? 0)) best = { plotIndex, cells: open };
+        }
+      });
+      if (!best) break;
+      for (const i of best.cells) plots[best.plotIndex].slots[i] = { species: id };
+      plan.steps.push({ action: 'plant', plotIndex: best.plotIndex, cells: best.cells, species: id });
+      left -= best.cells.length;
+    }
+    water -= cells - left;
+    if (left > 0) plan.later[id] = left * perCell;
+  }
+  return plan;
+}
+
 /** Find the preceding expansion of the same kind in the engine catalog. */
 export function previousExpansion(expansions = [], expansion) {
   if (!expansion) return null;
@@ -185,7 +264,7 @@ const BATCH_STEPS = Object.freeze([1, 3, 5, 10, 25, 50, 100].filter(n => n <= MA
  * tray of named tiles. Tray buttons are reconciled in place, so the refresh timer never
  * replaces the focused button or scroll container.
  */
-export function setupWorkTrays({ E, items, labels, getState, getReady, run, showPanel, getGalleons = () => Infinity, decor = null }) {
+export function setupWorkTrays({ E, items, labels, getState, getReady, run, showPanel, getGalleons = () => Infinity, decor = null, getSupplies = () => null, notify = () => {}, openSeedStore = null, openStore = null }) {
   const local = {
     craft: { selectedId: null, batches: 1, dom: null, buttons: new Map(), badges: new Map() },
     build: { selectedId: null, dom: null, buttons: new Map(), badges: new Map() },
@@ -419,14 +498,19 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       { id: recipe.output, count: outputCount }, detailReason, summary);
 
     const ready = getReady();
+    // Short of inputs: «Trồng/Tạo» plants and crafts what is missing; with nothing to do now, buy seeds or water.
+    const plan = choice.missing && choice.unlocked && !choice.busy ? restockPlan({ recipe, state, batches: choice.batches, db, supplies: getSupplies(), now }) : null;
+    const fix = plan && restockLabel(plan);
     let label = 'Làm';
     if (!ready) label = 'Đợi chút';
     else if (choice.busy) label = 'Đang làm';
+    else if (fix) label = fix;
+    else if (plan?.growing.length) label = 'Đang trồng';
     else if (choice.missing) label = 'Thiếu đồ';
     else if (!choice.canCraft) label = 'Chưa mở';
     const go = label === 'Làm';
-    dom.action.disabled = !ready || !choice.canCraft;
-    setAction(dom.action, { icon: 'craft', label, count: go ? `×${choice.batches}` : '', text: `${label} · ${summary}` });
+    dom.action.disabled = !ready || !(choice.canCraft || fix);
+    setAction(dom.action, { icon: fix && fix !== 'Tạo' ? 'seed' : 'craft', label, count: go ? `×${choice.batches}` : '', text: `${label} · ${summary}` });
   }
 
   function renderBuild(state) {
@@ -488,12 +572,62 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     }
   }
 
+  function restockLabel(plan) {
+    const plants = plan.steps.some(step => step.action === 'plant'), crafts = plan.steps.some(step => step.action === 'craft');
+    if (plants || crafts) return plants && crafts ? 'Trồng/Tạo' : plants ? 'Trồng' : 'Tạo';
+    if (Object.keys(plan.seeds).length && openSeedStore) return 'Mua hạt';
+    if (plan.water && openStore) return 'Mua nước';
+    return null;
+  }
+
+  // One server action per step (run → wallet.act with the real expectedRevision); stop at the first refusal.
+  let restocking = false;
+  async function dispatchRestock(recipe, batches) {
+    if (restocking) return;
+    restocking = true;
+    try { await restockSteps(recipe, batches); } finally { restocking = false; refresh('craft'); }
+  }
+  async function restockSteps(recipe, batches) {
+    const plan = restockPlan({ recipe, state: currentState(), batches, db, supplies: getSupplies(), now: stateNow(E, currentState()) });
+    const seedIds = Object.keys(plan.seeds);
+    if (!plan.steps.length) {
+      if (seedIds.length && openSeedStore) openSeedStore(seedIds[0]);
+      else if (plan.water && openStore) openStore('water');
+      return;
+    }
+    const planted = {}, made = [];
+    let stopped = false;
+    for (const step of plan.steps) {
+      const revision = currentState().revision;
+      if (step.action === 'plant') await run(next => E.plant(next, step.plotIndex, step.cells, step.species, Date.now()), '', step);
+      else await run(next => E.craft(next, step.recipeId, step.batches, Date.now()), '', craftCommand(step.recipeId, step.batches));
+      if (currentState().revision === revision) { stopped = true; break; }
+      if (step.action === 'plant') planted[step.species] = (planted[step.species] ?? 0) + step.cells.length;
+      else made.push(db.recipes.find(item => item.id === step.recipeId)?.label ?? step.recipeId);
+    }
+    if (stopped && !made.length && !Object.keys(planted).length) return; // run already showed the refusal
+    const count = map => Object.entries(map).map(([id, n]) => `${num(n)} ${readLabel(labels, id)}`).join(', ');
+    const parts = [
+      Object.keys(planted).length ? `Đã gieo ${count(planted)}` : '',
+      made.length ? `Đã làm ${made.join(', ')}` : '',
+      !stopped && Object.keys(plan.later).length ? `trồng thêm sau ${count(plan.later)} (hết ô trống)` : '',
+      !stopped && seedIds.length ? `thiếu hạt ${seedIds.map(id => readLabel(labels, id)).join(', ')}` : '',
+      !stopped && plan.water ? `thiếu ${num(plan.water)} nước` : '',
+      !stopped && Object.keys(plan.other).length ? `còn thiếu ${count(plan.other)}` : '',
+    ].filter(Boolean);
+    const buy = !stopped && seedIds.length && openSeedStore ? { label: `Mua hạt ${readLabel(labels, seedIds[0])}`, run: () => openSeedStore(seedIds[0]) }
+      : !stopped && plan.water && openStore ? { label: 'Mua nước', run: () => openStore('water') } : null;
+    notify(parts.join(' · ') + '.', buy);
+  }
+
   function dispatchCraft() {
     if (!getReady()) return;
     const selectedId = local.craft.selectedId;
     const requestedBatches = local.craft.batches;
     const state = currentState();
     const recipe = db.recipes.find(item => item.id === selectedId);
+    const shortOf = craftChoice(recipe, state, requestedBatches);
+    if (shortOf.missing && shortOf.unlocked && !shortOf.busy) return dispatchRestock(recipe, shortOf.batches);
     const derived = craftAction(recipe, state, requestedBatches);
     if (!derived) {
       if (!(recipe?.hours > 0 && requestedBatches !== 1)) refresh('craft');

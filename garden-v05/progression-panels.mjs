@@ -8,7 +8,7 @@ import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItem
 import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=25.1.9";
 import {renderTourSection} from "./garden-tour.mjs?v=25.1.9";
 import {renderAchievementsSection} from "./garden-achievements.mjs?v=25.1.9";
-import {renderEventsAndTasksSection,renderAffinitySection,renderGuestbookSection} from "./garden-events.mjs?v=25.1.9";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection} from "./garden-events.mjs?v=25.1.9";
 import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=25.1.9";
 import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.0";
 export function createPanels(ctx){
@@ -552,15 +552,29 @@ export function createPanels(ctx){
   affinity(){
    const s=getState(),selected=getSelection()?.species;
    const speciesId=selected&&s.creatures.some((creature)=>creature.species===selected)?selected:null;
-   body.append(renderAffinitySection({
-    E,
-    items,
-    creatureFacings:ctx.getCreatureFacings?.()??{},
-    state:s,
-    speciesId,
-    onPetCreature:species=>{ctx.onPetCreature?.(species);refresh();},
-    onClaimAffinityGift:giftId=>{ctx.onClaimAffinityGift?.(giftId);refresh();},
-   }));
+   // Owner 13/11/2026: one bare row per creature on one grid (icon · name, hearts, XP, bar, gift · actions); the dialog
+   // title already says «Gắn kết», so a single creature gets no heading and the list only its total.
+   const summary=evaluateCreatureAffinity(s),facings=ctx.getCreatureFacings?.()??{};
+   const entries=speciesId?summary.entries.filter(e=>e.species===speciesId):summary.entries;
+   if(!speciesId&&entries.length)body.append(el("p",{class:"affinity-total",text:"Tổng cấp gắn kết · "+num(summary.totalAffinityLevels)}));
+   if(!entries.length){body.append(paragraph("Đón sinh vật về vườn để bắt đầu gắn kết."));return;}
+   body.append(el("div",{class:"affinity-list"},entries.map(entry=>{
+    const name=E.CREATURE[entry.species]?.label||entry.species,gift=entry.claimableGifts[0]||null;
+    const pct=entry.isMax?100:Math.min(100,Math.round(entry.xp/Math.max(1,entry.nextMinXp)*100));
+    return el("article",{class:"affinity-row"+(gift?" is-ready":""),"data-affinity-species":entry.species},[
+     visualItemIcon(items,entry.species,{size:48,facing:facings[entry.species]==="right"?"right":"default"}),
+     el("div",{class:"affinity-info"},[
+      el("div",{class:"affinity-name"},[el("strong",{text:name}),el("span",{class:"affinity-hearts",role:"img","aria-label":"Gắn kết cấp "+entry.level},Array.from({length:entry.hearts.length},()=>pixelIcon("heart",1)))]),
+      el("small",{class:"affinity-meta",text:`Cấp ${entry.level} · ${entry.isMax?num(entry.xp)+" XP · Tối đa":num(entry.xp)+"/"+num(entry.nextMinXp)+" XP"}`}),
+      el("div",{class:"progress"},[el("span",{style:`width:${pct}%`})]),
+      gift?.reward?.label?el("small",{class:"affinity-gift",text:gift.reward.label}):null,
+     ]),
+     el("div",{class:"affinity-actions"},[
+      button("Vuốt ve",()=>{ctx.onPetCreature?.(entry.species);refresh();},{class:gift?"":"primary","aria-label":"Vuốt ve "+name,"data-affinity-pet":entry.species}),
+      ...(gift?[button("Nhận",()=>{ctx.onClaimAffinityGift?.(gift.giftId);refresh();},{class:"primary","aria-label":`Nhận quà cấp ${gift.level} cho ${name}`,"data-claim-affinity-gift":gift.giftId})]:[]),
+     ]),
+    ]);
+   })));
   },
 
   scenery(){

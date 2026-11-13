@@ -28,7 +28,7 @@ const unitOf = item => item.kind === "nest" ? "ổ" : item.supply === "primeMeal
 const stockOf = (item, snap) => item.supply ? Number(snap?.garden?.supplies?.[item.supply] ?? 0) : 0;
 const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("coin", 1), el("b", {text: num(n)}), extra ? el("small", {text: extra}) : null]);
 
-export function showStore({state,items,wallet,connected,onPurchase,onSell,onDecorate,onRefresh,decorAssets=new Map(),onClose,initialFilter="all",only=null,returnFocus=document.activeElement}){
+export function showStore({state,items,wallet,connected,onPurchase,onSell,onDecorate,onRefresh,decorAssets=new Map(),onClose,initialFilter="all",only=null,need=0,returnFocus=document.activeElement}){
  // `only`: one item id — a small buy popup for just that item (a seed tapped at 0), no tabs; it closes once bought.
  document.querySelector(".store-overlay")?.remove();
  let filter=initialFilter,purchasing=false,clock=null;const quantities=new Map(),sellQuantities=new Map(),previewFacing=new Map();
@@ -255,6 +255,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
  }
  cards.setAttribute("aria-label","Danh mục cửa hàng");
  if(only)heading.querySelector("h2").textContent=catalog().find(i=>i.id===only)?.label??"Cửa hàng";
+ // `need` (units short, e.g. a meal's missing portions): the popup opens with enough packs to cover it.
+ if(only&&need>0)quantities.set(only,Math.ceil(need/(catalog().find(i=>i.id===only)?.quantity||1)));
  box.append(heading,status,...(only?[]:[tabs,subtabs]),notice,cards);
  overlay.append(shade,box);
  $("gameShell").append(overlay);

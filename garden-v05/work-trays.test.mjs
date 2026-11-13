@@ -8,6 +8,7 @@ import {
   craftChoice,
   craftCommand,
   inputNeeds,
+  restockPlan,
   setupWorkTrays,
 } from './work-trays.mjs';
 
@@ -323,4 +324,42 @@ test('work action waits for getReady and then dispatches the selected engine act
   } finally {
     globalThis.document = previousDocument;
   }
+});
+
+test('«Trồng/Tạo» plans crafts and line plants the engine accepts, within seeds, water and free cells', () => {
+  const recipe = E.DB.recipes.find(item => item.id === 'niffler_feed'); // carrot ×3 + insects ×3 (crafted)
+  const state = E.testProfile(40, NOW);
+  for (const id of Object.keys(state.inventory)) state.inventory[id] = 0;
+  state.inventory.oats = 3; state.inventory.lettuce = 3; // enough for one «Nuôi côn trùng» jar
+  state.plots.forEach(plot => { plot.slots.fill(null); plot.cooldowns.fill(0); plot.patterns = []; });
+  const before = snapshot(state);
+  const plan = restockPlan({ recipe, state, batches: 2, now: E.nowFor(state, NOW) });
+  assert.equal(snapshot(state), before);
+  assert.deepEqual(plan.steps[0], { action: 'craft', recipeId: 'insects', batches: 1 });
+  const plants = plan.steps.filter(step => step.action === 'plant');
+  assert.equal(plants.reduce((n, step) => n + step.cells.length, 0), 6); // carrot 0/6
+  assert.ok(plants.every(step => step.species === 'carrot' && step.cells.length <= 3));
+  // Every step runs through the engine in order, as the server would.
+  let next = state;
+  for (const step of plan.steps) next = step.action === 'craft' ? E.craft(next, step.recipeId, step.batches, NOW) : E.plant(next, step.plotIndex, step.cells, step.species, NOW);
+  assert.equal(next.plots.flatMap(plot => plot.slots).filter(slot => slot?.species === 'carrot').length, 6);
+
+  // Planted carrots count; a running jar counts; nothing is planned twice.
+  const again = restockPlan({ recipe, state: next, batches: 2, now: E.nowFor(next, NOW) });
+  assert.deepEqual(again.steps, []);
+  assert.deepEqual(again.growing.sort(), ['carrot', 'insects']);
+
+  // Seeds and water cap the cells; the rest is reported to buy.
+  const short = restockPlan({ recipe, state, batches: 2, supplies: { water: 10, seeds: { carrot: 4 } }, now: E.nowFor(state, NOW) });
+  assert.equal(short.steps.filter(step => step.action === 'plant').reduce((n, step) => n + step.cells.length, 0), 4);
+  assert.deepEqual(short.seeds, { carrot: 2 });
+  const dry = restockPlan({ recipe, state, batches: 2, supplies: { water: 1, seeds: { carrot: 9 } }, now: E.nowFor(state, NOW) });
+  assert.equal(dry.water, 5);
+
+  // No free cell left: plant what fits, the rest «trồng thêm sau».
+  const full = structuredClone(state);
+  full.plots.forEach((plot, p) => plot.slots.forEach((_, i) => { if (p || i > 1) plot.slots[i] = { species: 'pumpkin' }; }));
+  const tight = restockPlan({ recipe, state: full, batches: 2, now: E.nowFor(full, NOW) });
+  assert.deepEqual(tight.steps.filter(step => step.action === 'plant').map(step => step.cells), [[0, 1]]);
+  assert.deepEqual(tight.later, { carrot: 4 });
 });

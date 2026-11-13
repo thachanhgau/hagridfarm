@@ -111,7 +111,7 @@ export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null
  $('petAdoptTab').onclick=()=>chooseGroup('adopt');
  $('petHelp').onclick=()=>{
   const view=petControlState({E,state:getState(),species:getSpecies(),now:getNow(),ready:getReady()});
-  if(view.help)onHelp(view.help);
+  if(view.help)onHelp(view.help,view);
  };
  function refresh() {
   const state=getState(),species=getSpecies();
