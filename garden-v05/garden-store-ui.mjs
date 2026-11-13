@@ -136,7 +136,12 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
    }}));
    return;
   }
-  for(const item of allItems.filter(i=>only?i.id===only:filter==="all"||tabOf(i)===filter)){
+  // Owner 13/11/2026: decorations already owned go below the ones still to buy, under «Đã có».
+  const ownedDecor=new Set(snap?.garden?.decorations?.owned??[]),isOwned=i=>i.kind==="decoration"&&ownedDecor.has(i.id);
+  const shown=allItems.filter(i=>only?i.id===only:filter==="all"||tabOf(i)===filter).sort((a,b)=>isOwned(a)-isOwned(b));
+  const firstOwned=shown.find(isOwned),ownedCount=shown.filter(isOwned).length;
+  for(const item of shown){
+   if(item===firstOwned&&ownedCount<shown.length)cards.append(el("p",{class:"store-owned-divider",text:`Đã có · ${ownedCount}`}));
    const isDecor=item.kind==="decoration";
    const decorState=snap?.garden?.decorations;
    const owned=isDecor&&Boolean(decorState?.owned?.includes(item.id));

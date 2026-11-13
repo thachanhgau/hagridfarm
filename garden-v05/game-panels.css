@@ -613,3 +613,22 @@
 #gameShell .name-tip{position:fixed;z-index:30;pointer-events:none;max-width:calc(100vw - 12px);padding:4px 8px;background:#142620;border:2px solid #231F2E;box-shadow:0 0 0 1px #B49A66,0 3px 8px #0008;color:#F5D69A;font:700 12px/1.2 system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* store with one item (a seed tapped at 0): a small popup, one card */
 #gameShell .store-overlay .store-popover.is-single{width:min(320px,calc(100% - 24px));height:auto;max-height:calc(100dvh - 24px)}#gameShell :is(#panel,.store-popover).is-single .store-cards-grid{grid-template-columns:1fr;flex:none;margin:0}
+/* Store tabs (owner 13/11/2026): one sliding row of chips, not a three-row block */
+#gameShell :is(#panel,.store-popover) .store-tabs:is(.store-popover *){display:flex;flex-wrap:nowrap;gap:4px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;padding:2px 0 4px}
+#gameShell :is(#panel,.store-popover) .store-tabs:is(.store-popover *) .gp-tab{flex:0 0 auto;flex-direction:row;gap:5px;height:40px;min-height:40px;padding:0 9px 0 7px;white-space:nowrap}
+#gameShell :is(#panel,.store-popover) .store-tabs:is(.store-popover *) .gp-tab .gp-tab-count{position:static;min-width:0;height:auto;padding:1px 4px;font-size:10px;line-height:1.2}
+#gameShell .store-popover .store-owned-divider{grid-column:1/-1;margin:6px 0 0;padding-top:8px;border-top:2px solid #231F2E;color:#B9C3AE;font:800 12px/1.2 var(--gp-body)}
+/* Quầy chợ rows */
+#gameShell .store-popover .market-row{grid-column:1/-1;display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 10px;align-items:center;padding:8px;background:#142620;border:2px solid #231F2E;box-shadow:inset 0 2px #24483F}
+#gameShell .market-row .market-art{width:48px;height:48px;display:grid;place-items:center;background:#24483F;border:2px solid #231F2E}
+#gameShell .market-row .market-copy{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+#gameShell .market-row .market-copy strong{max-width:100%;color:#F5D69A;font:800 14px/1.15 var(--gp-body);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#gameShell .market-row .market-copy small{color:#B9C3AE;font-size:11px;line-height:1.25}
+#gameShell .market-row :is(.market-actions,.gp-state){grid-column:1/-1;display:flex;align-items:center;gap:6px;min-width:0}
+#gameShell .market-row .gp-stepper{display:flex;align-items:stretch;flex:none}
+#gameShell .market-row .market-qty-input{width:60px;min-width:0;min-height:44px;margin:0;padding:0 4px;border:2px solid #231F2E;border-radius:0;background:#0B1C15;color:#F5D69A;font:800 16px/1 var(--gp-body);text-align:center;-moz-appearance:textfield;appearance:textfield}
+#gameShell .market-row .market-qty-input::-webkit-inner-spin-button,#gameShell .market-row .market-qty-input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+#gameShell .market-row .market-qty-input:focus-visible{outline:2px solid #FFC36B;outline-offset:0}
+#gameShell .market-row .store-bundle-chip{flex:none;padding:0 8px}
+#gameShell .market-row .store-buy-btn{flex:1 1 auto;min-width:0;margin:0}
+#gameShell .market-row.is-locked{opacity:.65}

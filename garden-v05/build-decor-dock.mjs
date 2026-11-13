@@ -98,7 +98,7 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
   title.textContent=row.label;
   status.textContent=row.isDefault?(row.placed?'Đồ của vườn · dời sang ô khác hoặc cất':'Đang cất · chọn chỗ đặt'):(row.placed?'Đang bày trong vườn':'Đang cất · sẵn sàng đặt');
   stash.hidden=!row.placed;stash.disabled=!ready;
-  const label=row.placed?'Di chuyển':'Đặt';
+  const label=row.placed?'Dời chỗ':'Đặt';
   place.disabled=!ready;
   setAction(place,{icon:'scenery',label,text:label+' '+row.label});
  }

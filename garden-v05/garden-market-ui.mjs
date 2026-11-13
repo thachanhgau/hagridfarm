@@ -26,27 +26,34 @@ export function marketCards({market,inventory,items,quantities,busy,onSell}){
   const grade=id.startsWith("produce_")?(q.happy.includes(id.slice(8))?"Bé vui ×2":""):q.tiers[id]?`${TIER[q.tiers[id]]} ×${price/market.prices[id]}`:"";
   const max=Math.min(have,left,Math.floor(capLeft/price));
   let count=Math.max(Math.min(max,1),Math.min(max,quantities.get(id)||1));
-  const qty=el("output",{class:"gp-qty-value","aria-live":"polite"});
+  // Owner 13/11/2026: the amount can be typed; the field keeps what is typed until it loses focus, then shows the clamped count.
+  const input=el("input",{type:"number",inputmode:"numeric",pattern:"[0-9]*",min:"1",max:String(Math.max(1,max)),class:"market-qty-input","aria-label":"Số "+label+" muốn bán"});
+  input.addEventListener("input",()=>{const n=parseInt(input.value,10);if(Number.isFinite(n))set(n,false);});
+  input.addEventListener("change",()=>set(parseInt(input.value,10)||1));
+  input.addEventListener("focus",()=>input.select());
   const sell=button("",()=>{if(!busy&&count>0)onSell({[id]:count},count*price,`${count} ${label}`);},{class:"primary store-buy-btn","data-market-sell":id});
   const minus=iconButton("minus","Bớt 1 "+label,()=>set(count-1),{class:"gp-step"});
   const plus=iconButton("plus","Thêm 1 "+label,()=>set(count+1),{class:"gp-step"});
   const all=button("Tối đa",()=>set(max),{class:"store-bundle-chip gp-chip","aria-label":`Bán tối đa ${max} ${label}`});
-  function paint(){
+  function paint(write=true){
    const text=`Bán ${count} ${label} · ${num(count*price)} Galleons`;
-   qty.replaceChildren(el("b",{text:String(count)}));
+   if(write)input.value=String(count);input.disabled=busy||max<1;
    sell.replaceChildren(pixelIcon("coin",1),el("span",{text:"+"+num(count*price)}));
    sell.setAttribute("aria-label",text);sell.title=text;
    sell.disabled=busy||count<1;minus.disabled=busy||count<=1;plus.disabled=busy||count>=max;all.disabled=busy||count>=max;
   }
-  function set(n){count=Math.min(max,Math.max(Math.min(max,1),n));quantities.set(id,count);paint();}
+  function set(n,write=true){count=Math.min(max,Math.max(Math.min(max,1),n));quantities.set(id,count);paint(write);}
   paint();
   const note=left===0?"Hết lượt hôm nay":capLeft<price?(premium.has(id)?"Hết hạn mức hàng giá cao":"Quầy hết tiền hôm nay"):`Còn ${left}/${market.perCropDaily} hôm nay`;
-  return el("article",{class:`card store-card gp-tile kind-harvest${max<1?" is-locked":""}`,"data-market-crop":id},[
-   el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,kind:id.startsWith("produce_")?"produce":"harvest",badge:`×${num(have)}`})]),
-   el("strong",{class:"gp-tile-name",text:label}),
-   el("small",{class:"gp-tile-sub store-stock-note",text:`Kho ${num(have)}${grade?" · "+grade:""}${premium.has(id)?" · hàng giá cao":""}`}),
-   el("div",{class:"store-meta-row"},[el("span",{class:"gp-price"},[pixelIcon("coin",1),el("b",{text:num(price)}),el("small",{text:"/cái"})]),max<1?null:el("small",{class:"meta",text:note})]),
-   el("div",{class:"store-action-row gp-tile-actions"},max<1?[el("span",{class:"gp-state",text:note})]:[el("div",{class:"gp-stepper",role:"group","aria-label":"Số "+label+" muốn bán"},[minus,qty,plus]),all,sell]),
+  // One row per good (owner 13/11/2026): art · name, price, stock · then the amount and the sell button.
+  return el("article",{class:`market-row${max<1?" is-locked":""}`,"data-market-crop":id},[
+   el("div",{class:"market-art"},[visualItemIcon(items,id,{size:40,kind:id.startsWith("produce_")?"produce":"harvest",badge:`×${num(have)}`})]),
+   el("div",{class:"market-copy"},[
+    el("strong",{text:label}),
+    el("span",{class:"gp-price"},[pixelIcon("coin",1),el("b",{text:num(price)}),el("small",{text:"/cái"})]),
+    el("small",{text:`Kho ${num(have)}${grade?" · "+grade:""}${premium.has(id)?" · hàng giá cao":""}${max<1?"":" · "+note}`}),
+   ]),
+   max<1?el("span",{class:"gp-state",text:note}):el("div",{class:"market-actions"},[el("div",{class:"gp-stepper",role:"group","aria-label":"Số "+label+" muốn bán"},[minus,input,plus]),all,sell]),
   ]);
  })];
 }

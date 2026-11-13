@@ -35,3 +35,5 @@
  .decor-choice-name{-webkit-line-clamp:1;min-height:12px}
  .decor-dock-detail{padding-top:5px}
 }
+/* one line on a phone: «Dời chỗ» / «Đặt» beside a smaller icon */
+#playDock #decorDockPlace .action-label{white-space:nowrap}#playDock #decorDockPlace>.px-icon,#playDock #decorDockPlace>img{width:24px;height:24px;flex:none}
