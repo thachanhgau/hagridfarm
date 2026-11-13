@@ -103,7 +103,7 @@ Mỗi rào có một test hỏng khi bỏ rào.
 |---|---|---|
 | 0 | Spec này, sim, kinh tế | **Xong 13/11/2026**: chủ dự án duyệt mọi thú đều giúp, mức 4.2 (~9 %), đường XP phẳng |
 | 1 | HPVNN `functions/games/garden-skill-core.js` (thuần) + lệnh `skill` + 12 kỹ năng cấp 10–94; test mỗi rào | **Xong local 13/11/2026**: HPVNN `c7bbe5405` (nhánh `claude/compassionate-proskuriakova-5ed8f0`, chưa push), garden 297/297 pass. Công tắc HPH `skillsOff` trong `galleons_config/garden_sales`. Diricawl chạy trong ca duty nên chỉ từ cấp 130; thú trưởng thành có gắn bó gốc ≥ 3 giúp ngay khi phát hành |
-| 2 | 6 kỹ năng 130+ và các kỹ năng thụ động trong duty, pond, soil, fire | Như trên + một ngày giả lập trên emulator |
+| 2 | 6 kỹ năng 130+ và các kỹ năng thụ động trong duty, pond, soil, fire | **Xong local 13/11/2026**: HPVNN `328ac4b9e` (nhánh `claude/funny-almeida-7e2129`, trên Phần 1, chưa push), garden 304/304 pass, test rào #58/#59 hỏng khi bỏ rào, một ngày giả lập qua handler thật trên Firestore emulator (`functions/test/garden-skills-emulator.cjs`). Kỳ nhông lửa giữ thửa cả khi ACP «Đốt vườn» thật (một luật chung `burnCrops`) |
 | 2b | Trần cấp 10.000 (mục 7): công thức đường XP 501+, mọi chỗ đọc trần 500 ở client và server, mốc thưởng, bậc 3 | Test cấp 499 → 501 → 10.000, nhảy cấp ACP, vòng cấp 4 chữ số |
 | 3 | Client: thẻ kỹ năng trong «Chăm bé», biểu tượng trên bảng chuồng, hiệu ứng nhẹ, thư bác Hagrid mở Mùa 2; Codex vẽ 18 biểu tượng | Lighthouse không lùi (LCP ≤ 14.300 ms, tải trước khung đầu ≤ 4.400.000 B), xem trên 3026 |
 | 4 | Functions + client cùng lúc, tem `?v=` 26.0 | Chủ dự án duyệt trên 3026 rồi mới deploy |
