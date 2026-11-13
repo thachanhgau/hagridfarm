@@ -1,37 +1,37 @@
-import {WOODLAND_FILES,pondWoodlandObjects} from './pond-woodland.mjs?v=25.1.7';
-import {drawPlacementGrid} from './placement-grid.mjs?v=25.1.7';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=25.1.7';
-import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=25.1.7';
-import {EXTENSION_PENS,FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.1.7';
-export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.1.7';
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=25.1.7';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=25.1.7';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=25.1.7';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.7';
-import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=25.1.7';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=25.1.7';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=25.1.7';
-import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=25.1.7';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=25.1.7';
-import {drawV24Ground} from './garden-v24-scenery.mjs?v=25.1.7';
-import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=25.1.7';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=25.1.7';
-import {decorObjects,decorFootprintRect,depthCompare,footLift,orientedFootprint} from './decor-runtime.mjs?v=25.1.7';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=25.1.7';
-import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=25.1.7';
-import {backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.1.7';
-import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.1.7';
-import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.1.7';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.1.7';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.1.7';
-import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.1.7';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.1.7';
-import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.1.7';
-import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.1.7';
-import {EDGE_SCENERY} from './edge-art.mjs?v=25.1.7';
-import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=25.1.7';
-import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.1.7';
-import {drawIcon} from './pixel-icons.mjs?v=25.1.7';
+import {WOODLAND_FILES,pondWoodlandObjects} from './pond-woodland.mjs?v=25.1.8';
+import {drawPlacementGrid} from './placement-grid.mjs?v=25.1.8';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=25.1.8';
+import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=25.1.8';
+import {EXTENSION_PENS,FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.1.8';
+export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=25.1.8';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=25.1.8';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=25.1.8';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=25.1.8';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.8';
+import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=25.1.8';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=25.1.8';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=25.1.8';
+import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=25.1.8';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=25.1.8';
+import {drawV24Ground} from './garden-v24-scenery.mjs?v=25.1.8';
+import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=25.1.8';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=25.1.8';
+import {decorObjects,decorFootprintRect,depthCompare,footLift,orientedFootprint} from './decor-runtime.mjs?v=25.1.8';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=25.1.8';
+import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=25.1.8';
+import {backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=25.1.8';
+import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=25.1.8';
+import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=25.1.8';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=25.1.8';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=25.1.8';
+import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=25.1.8';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=25.1.8';
+import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=25.1.8';
+import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=25.1.8';
+import {EDGE_SCENERY} from './edge-art.mjs?v=25.1.8';
+import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=25.1.8';
+import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=25.1.8';
+import {drawIcon} from './pixel-icons.mjs?v=25.1.8';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -44,12 +44,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=25.1.7';
+} from './scene-animation.mjs?v=25.1.8';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=25.1.7';
+} from './forest-surround.mjs?v=25.1.8';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -317,7 +317,7 @@ function penAliases(pen) {
   return [String(pen.id)];
 }
 
-export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=25.1.7';
+export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=25.1.8';
 
 /** Keepsakes are displayed as small labelled tokens in the final south plaza. */
 export function keepsakePlacements(scene = map) {

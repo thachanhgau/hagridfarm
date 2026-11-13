@@ -1,4 +1,4 @@
-import {wizardTargets} from "./wizard-scenery.mjs?v=25.1.7";
+import {wizardTargets} from "./wizard-scenery.mjs?v=25.1.8";
 export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onPick,onTap,getSelectedPlot,notify,getDragTarget}) {
  const camera={x:0,y:0,scale:1},pointers=new Map();let gesture=null,previousSize=null,frameFirstPlot=false,frameOverview=false;
  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
@@ -20,6 +20,9 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
   const w=viewport.clientWidth,h=viewport.clientHeight;
   const {bounds:ob,left,right,top,bottom}=overviewFrame();
   camera.scale=clamp(camera.scale,fitScale,2.4);
+  // The side camera tools also cover the right edge, so the map may slide out from under them as well.
+  const side=[...document.querySelectorAll(".camera-tools")][0]?.getBoundingClientRect(),vr=viewport.getBoundingClientRect();
+  const edgeR=side?.width&&side.left-vr.left>w/2?Math.min(w,side.left-vr.left-8):w;
   const b=getRenderer()?.growthBounds?.()??{left:0,top:0,right:map.width,bottom:map.height};
   if(frameOverview||camera.scale<=fitScale+1e-4){
    camera.scale=fitScale;
@@ -28,13 +31,15 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
   }else{
    const cx=(left+right)/2-(b.left+b.right)/2*camera.scale;
    const cy=(top+bottom)/2-(b.top+b.bottom)/2*camera.scale;
-   const minX=Math.min(cx,w-b.right*camera.scale-24),maxX=Math.max(cx,24-b.left*camera.scale);
+   const minX=Math.min(cx,edgeR-b.right*camera.scale-24),maxX=Math.max(cx,24-b.left*camera.scale);
    const minY=Math.min(cy,bottom-b.bottom*camera.scale-12),maxY=Math.max(cy,top-b.top*camera.scale+12);
    camera.x=clamp(camera.x,minX,maxX);
    camera.y=clamp(camera.y,minY,maxY);
   }
-  if(map.width*camera.scale>=w-1)camera.x=clamp(camera.x,w-map.width*camera.scale,0);
-  if(map.height*camera.scale>=h-1)camera.y=clamp(camera.y,h-map.height*camera.scale,0);
+  if(map.width*camera.scale>=w-1)camera.x=clamp(camera.x,edgeR-map.width*camera.scale,0);
+  // Owner 13/11/2026: the map's edges may come out from under the HUD and the dock (pet dock, store tray), so a pen or
+  // plot at the edge can always be dragged into the open part of the screen; past the map the forest backdrop shows.
+  if(map.height*camera.scale>=(bottom-top)-1)camera.y=clamp(camera.y,bottom-map.height*camera.scale,top);
   canvas.style.transform=`translate(${camera.x}px,${camera.y}px) scale(${camera.scale})`;
   viewport.style.setProperty("--forest-scale",camera.scale);
   viewport.style.setProperty("--forest-x",camera.x+"px");

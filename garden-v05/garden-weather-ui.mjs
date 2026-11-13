@@ -1,7 +1,7 @@
 // Level-160 challenges (docs/level-160-challenges.md §2E, §2F), from the server's snapshot only (HPVNN
 // garden-soil-core): snapshot.soil = [{tired, seeds: {species: mult}}] by plot from level 160, snapshot.weather =
 // {type, start, end, announced} from level 200 while the week is announced or running.
-import {duration} from './ui-utils.mjs?v=25.1.7';
+import {duration} from './ui-utils.mjs?v=25.1.8';
 
 export const WEATHER = Object.freeze({
  frost: {label: 'Sương giá Rừng Cấm', icon: 'frost', effects: 'Cây 8 giờ chậm ×1,5 · Củ u, Cỏ chút chít, Rong nước xiết ×2'},

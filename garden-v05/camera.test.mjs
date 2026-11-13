@@ -67,3 +67,23 @@ test('overview includes expanded scenery on phones and desktop',()=>{
   assert.ok(asked.length>0&&asked.every(narrow=>narrow===false));
  }finally{globalThis.document=oldDocument;globalThis.ResizeObserver=oldObserver;}
 });
+
+test('a garden corner at the map edge can be dragged out from under the dock and the side tools',()=>{
+ const oldDocument=globalThis.document,oldObserver=globalThis.ResizeObserver;
+ try{
+  const width=390,height=844,b={left:0,top:0,right:2560,bottom:1440},button=()=>({onclick:null,setAttribute(){}}),buttons=new Map();
+  const el=r=>({hidden:false,getClientRects:()=>[1],getBoundingClientRect:()=>r});
+  const hud=el({top:8,bottom:96,left:0,right:width,width}),dock=el({top:height-330,bottom:height-10,left:0,right:width,width}),tools=el({top:200,bottom:400,left:width-60,right:width-10,width:50});
+  globalThis.document={querySelectorAll:s=>s.includes('hud')?[hud]:s.includes('playDock')?[dock]:s.includes('camera-tools')?[tools]:[],getElementById:id=>{if(id==='playDock')return dock;if(!buttons.has(id))buttons.set(id,button());return buttons.get(id);},addEventListener(){}};
+  globalThis.ResizeObserver=class{observe(){}};
+  const viewport={clientWidth:width,clientHeight:height,dataset:{},style:{setProperty(){}},getBoundingClientRect:()=>({top:0,left:0,width,height}),addEventListener(){},classList:{add(){},remove(){}}};
+  const camera=setupCamera({viewport,canvas:{style:{}},map:{width:2560,height:1440,plots:[{col:0,row:0}],creatureSpots:[[0,0]],objects:[],props:[]},iso:()=>[0,0],plotCorners:()=>[],getRenderer:()=>({growthBounds:()=>b}),getSelectedPlot:()=>0,notify(){},onPick(){}});
+  camera.centerAt(2560,1440,2.4);
+  const c=JSON.parse(viewport.dataset.camera);
+  assert.ok(1440*c.scale+c.y<=height-330,'bottom edge rises above the tall dock');
+  assert.ok(2560*c.scale+c.x<=width-60,'right edge clears the side tools');
+  camera.centerAt(0,0,2.4);
+  const d=JSON.parse(viewport.dataset.camera);
+  assert.ok(d.y>=96&&d.x>=0,'top edge comes down below the HUD');
+ }finally{globalThis.document=oldDocument;globalThis.ResizeObserver=oldObserver;}
+});

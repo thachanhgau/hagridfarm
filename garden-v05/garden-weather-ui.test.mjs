@@ -2,9 +2,9 @@
 // from the server's snapshot.weather / snapshot.soil (HPVNN garden-soil-core).
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {WEATHER,weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=25.1.7';
-import {ICONS} from './pixel-icons.mjs?v=25.1.7';
-import {plotSign} from './scene-renderer.mjs?v=25.1.7';
+import {WEATHER,weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=25.1.8';
+import {ICONS} from './pixel-icons.mjs?v=25.1.8';
+import {plotSign} from './scene-renderer.mjs?v=25.1.8';
 
 const H=3600000,D=24*H;
 const start=Date.parse('2026-11-22T00:00:00+07:00'),week={type:'rain',start,end:start+7*D,announced:start-2*D};
