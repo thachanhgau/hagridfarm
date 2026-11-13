@@ -5,7 +5,7 @@ import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=2
 import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=25.1.9';
 import {setupGardenControls} from './garden-controls-ui.mjs?v=25.1.9';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=25.1.9';
-import {setupWorkTrays,buildChoice} from './work-trays.mjs?v=26.0';
+import {setupWorkTrays,buildChoice,fillPlotPlan} from './work-trays.mjs?v=26.0';
 import {createOrchardDock,edgeProgress,harvestText as orchardHarvestText,ripeCount as orchardRipeCount} from './garden-orchard-ui.mjs?v=25.1.9';
 import {createPondDock,createCastGame,POND_LEVEL,POND_TIERS,pondReceiptText,px as pondPx} from './garden-pond-ui.mjs?v=25.1.9';
 import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal,defaultDecorItem,defaultDecorHome,decorFootprint} from './decor-placement-ui.mjs?v=25.1.9';
@@ -641,6 +641,11 @@ function refresh(){
  const plantAction=plantingAction({loaded,connected,walletReady,unlocked:c.level<=state.level,occupied,cooling,typeCap,seedsLeft,waterLeft,count:sowCount});
  $('plantButton').dataset.restock=plantAction.restock;$('plantButton').disabled=plantAction.disabled;
  setAction($('plantButton'),{icon:plantAction.restock||'sow',label:plantAction.disabled?plantAction.text:plantAction.restock?'Mua':'Gieo',count:plantAction.disabled||plantAction.restock?'':'×'+sowCount,text:plantAction.title});
+ // «Gieo cả thửa» (owner 13/11/2026, level 130+): every free cell of this plot with the chosen crop, line by line on the server.
+ const fill=state.level>=FILL_PLOT_LEVEL&&c.level<=state.level?fillPlotPlan({state,plotIndex:selectedPlot,species:seed,supplies:fillSupplies(),now}):null;
+ $('fillPlotButton').hidden=!fill?.free;
+ $('fillPlotButton').disabled=!loaded||(connected&&!walletReady)||busy||Boolean(workTrays?.isRunning())||!fill?.steps.length;
+ if(fill?.free)setAction($('fillPlotButton'),{icon:'sow',label:'Gieo cả thửa',text:`Gieo cả thửa ${selectedPlot+1} · ${fill.free} ô trống · ${c.label}`});
  $('cropCareButton').disabled=!loaded||!chosen().some(i=>slots[i]&&!E.growth(slots[i],now).mature)||(connected&&(!walletReady||busy||careLeft()<1));
  $('replantButton').disabled=!loaded||!state.plots[selectedPlot].patterns.length;
  const allReady=state.plots.reduce((sum,p)=>sum+p.slots.filter(e=>e&&E.growth(e,now).mature).length,0);$('readyCount').textContent=allReady;$('readyCount').hidden=!allReady;$('harvestTool').disabled=!loaded;$('harvestTool').classList.toggle('is-idle',!allReady);
@@ -767,6 +772,9 @@ if(wallet?.host){
 }
 $('sowTool').onclick=()=>setMode('plant');$('creatureTool').onclick=()=>{setMode('creature');petControls.open();};
 $('plantButton').onclick=()=>{const restock=$('plantButton').dataset.restock;if(restock)return restock==='seed'?openSeedStore(seed):openStore(restock);const cells=sowCells();return run(s=>E.plant(s,selectedPlot,cells,seed,Date.now()),'Đã gieo '+cells.length+' hạt '+CROP[seed].label+'.',{action:'plant',plotIndex:selectedPlot,cells,species:seed});};
+// var: refresh() may run before this line (then the button stays hidden until the next refresh).
+var FILL_PLOT_LEVEL=130,fillSupplies=()=>connected?wallet?.snapshot?.garden?.supplies:null;
+$('fillPlotButton').onclick=()=>workTrays.runPlan(()=>fillPlotPlan({state,plotIndex:selectedPlot,species:seed,supplies:fillSupplies(),now:logical()}));
 $('replantButton').onclick=()=>{$('seedOptions').close();return run(s=>E.replant(s,selectedPlot,Date.now()),'Đã gieo lại các hàng đủ điều kiện.',{action:'replant',plotIndex:selectedPlot});};
 // Gặt: harvests every ripe crop and says what came in; with nothing ripe it shows the row that ripens first.
 $('harvestTool').onclick=()=>{
@@ -785,8 +793,8 @@ $('feedButton').onclick=()=>{const hand=E.HAND_FEED_SPECIES?.has(species)===true
 $('claimAnimalButton').onclick=()=>run(s=>E.claimAnimals(s,species,Date.now()),'Đã nhận kết quả chăm sóc '+CREATURE[species].label+'.',{action:'claimAnimals',species});
 for(const [id,name]of Object.entries({levelButton:'profile',plotsButton:'plots',inventoryButton:'inventory',menuButton:'menu'}))$(id).onclick=()=>panels.show(name);
 window.addEventListener('storage',e=>{if(connected)return;if(e.key!==gardenStorage.storageKey||!e.newValue||busy)return;try{const raw=gardenStorage.getItem(key);if(!raw)return;state=E.restoreChecked(raw,Date.now());refresh();panels.refresh();message('Đã cập nhật tiến độ từ tab còn lại.');}catch{message('Bản lưu ở tab khác không hợp lệ; giữ phiên đang mở.');}});
-petControls=setupPetControls({E,items,getMood:sp=>moodOf(sp)?.mood,getFavourite:moodOf,getState:()=>state,getSpecies:()=>species,getNow:logical,getReady:()=>loaded&&(!connected||walletReady)&&!busy,onSelect:selectCreature,onHelp:(help,view)=>help==='food'?openStore('food',$('petHelp'),view.config.feed,view.shortage):help==='build'?setMode('build'):help==='pond'?setMode(currentPond()?'pond':'build'):panels.show('roadmap')});
-workTrays=setupWorkTrays({E,items,labels,getSupplies:()=>connected?wallet?.snapshot?.garden?.supplies:null,notify:(text,action)=>message(text,null,action),openSeedStore,openStore,getState:()=>state,getReady:()=>loaded&&(!connected||walletReady)&&!busy,run,showPanel:name=>panels.show(name),getGalleons,decor:{getDecorations:currentDecorations,getAssets:()=>decorAssets,openDecorate:openDecoration,openStore,getState:()=>state,getRotations:()=>({...state?.decorationRotations,...earnedDecorRotations}),setDefaultVisible:setDefaultDecorVisibility,openDefault:openDefaultDecoration,focusDecor}});
+petControls=setupPetControls({E,items,getMood:sp=>moodOf(sp)?.mood,getFavourite:moodOf,getState:()=>state,getSpecies:()=>species,getNow:logical,getReady:()=>loaded&&(!connected||walletReady)&&!busy,onSelect:selectCreature,getFoodAction:view=>workTrays?.feedAction(view.config.feed,view.shortage),onHelp:(help,view)=>help==='food'?(workTrays.feedAction(view.config.feed,view.shortage).store?openStore('food',$('petHelp'),view.config.feed,view.shortage):workTrays.quickFeed(view.config.feed,view.shortage)):help==='build'?setMode('build'):help==='pond'?setMode(currentPond()?'pond':'build'):panels.show('roadmap')});
+workTrays=setupWorkTrays({E,items,labels,onBusy:()=>refresh(),getSupplies:()=>connected?wallet?.snapshot?.garden?.supplies:null,notify:(text,action)=>message(text,null,action),openSeedStore,openStore,getState:()=>state,getReady:()=>loaded&&(!connected||walletReady)&&!busy,run,showPanel:name=>panels.show(name),getGalleons,decor:{getDecorations:currentDecorations,getAssets:()=>decorAssets,openDecorate:openDecoration,openStore,getState:()=>state,getRotations:()=>({...state?.decorationRotations,...earnedDecorRotations}),setDefaultVisible:setDefaultDecorVisibility,openDefault:openDefaultDecoration,focusDecor}});
 $('craftTool').onclick=()=>setMode('craft');$('buildTool').onclick=()=>setMode('build');
 // Garden expansion phase 1 «Hồ nuôi» (docs/garden-expansion-plan.md §2.1): the «Hồ» dock from level 130 with the wallet's
 // snapshot.pond (server pond core); fishing is one tap a day. A tap on the built pond opens the dock.

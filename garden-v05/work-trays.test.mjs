@@ -7,6 +7,8 @@ import {
   buildCommand,
   craftChoice,
   craftCommand,
+  feedPlan,
+  fillPlotPlan,
   inputNeeds,
   restockPlan,
   setupWorkTrays,
@@ -362,4 +364,43 @@ test('«Trồng/Tạo» plans crafts and line plants the engine accepts, within 
   const tight = restockPlan({ recipe, state: full, batches: 2, now: E.nowFor(full, NOW) });
   assert.deepEqual(tight.steps.filter(step => step.action === 'plant').map(step => step.cells), [[0, 1]]);
   assert.deepEqual(tight.later, { carrot: 4 });
+});
+
+test('creature «Trồng nhanh» crafts the ration when it can, else plans its recipe; no open recipe → null', () => {
+  const state = E.testProfile(40, NOW);
+  for (const id of Object.keys(state.inventory)) state.inventory[id] = 0;
+  state.plots.forEach(plot => { plot.slots.fill(null); plot.cooldowns.fill(0); plot.patterns = []; });
+  const now = E.nowFor(state, NOW);
+  const planted = feedPlan({ feed: 'niffler_feed', portions: 2, state, now });
+  assert.ok(planted.steps.some(step => step.action === 'plant' && step.species === 'carrot'));
+  state.inventory.carrot = 3; state.inventory.insects = 3;
+  assert.deepEqual(feedPlan({ feed: 'niffler_feed', portions: 2, state, now }).steps, [{ action: 'craft', recipeId: 'niffler_feed', batches: 1 }]);
+  assert.equal(feedPlan({ feed: 'dragon_feed', portions: 2, state, now }), null); // Rồng's recipes open at level 93
+  assert.equal(feedPlan({ feed: 'niffler_feed', portions: 0, state, now }), null);
+});
+
+test('«Gieo cả thửa» fills only the free cells of one plot, line by line, within seeds and water', () => {
+  const state = E.testProfile(140, NOW);
+  state.plots.forEach(plot => { plot.slots.fill(null); plot.cooldowns.fill(0); plot.patterns = []; });
+  const now = E.nowFor(state, NOW);
+  const empty = fillPlotPlan({ state, plotIndex: 1, species: 'pumpkin', now });
+  assert.equal(empty.free, 9);
+  assert.deepEqual(empty.steps.map(step => [step.plotIndex, step.cells]), [[1, [0, 1, 2]], [1, [3, 4, 5]], [1, [6, 7, 8]]]);
+  let next = state;
+  for (const step of empty.steps) next = E.plant(next, step.plotIndex, step.cells, step.species, NOW);
+  assert.equal(next.plots[1].slots.filter(Boolean).length, 9);
+
+  const part = E.plant(E.plant(state, 1, [0], 'daisy', NOW), 1, [4], 'daisy', NOW);
+  const rest = fillPlotPlan({ state: part, plotIndex: 1, species: 'pumpkin', now });
+  assert.equal(rest.free, 7);
+  const cells = rest.steps.flatMap(step => step.cells).sort();
+  assert.deepEqual(cells, [1, 2, 3, 5, 6, 7, 8]);
+  next = part;
+  for (const step of rest.steps) next = E.plant(next, step.plotIndex, step.cells, step.species, NOW);
+  assert.equal(next.plots[1].slots.filter(Boolean).length, 9);
+
+  const short = fillPlotPlan({ state, plotIndex: 1, species: 'pumpkin', supplies: { water: 50, seeds: { pumpkin: 4 } }, now });
+  assert.equal(short.steps.reduce((n, step) => n + step.cells.length, 0), 4);
+  assert.deepEqual(short.seeds, { pumpkin: 5 });
+  assert.equal(fillPlotPlan({ state, plotIndex: 1, species: 'pumpkin', supplies: { water: 2, seeds: { pumpkin: 9 } }, now }).water, 7);
 });

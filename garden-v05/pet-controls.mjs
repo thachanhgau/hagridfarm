@@ -88,7 +88,7 @@ export function renderPetCareButtons(items,supplies={}) {
  }
 }
 
-export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {
+export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null,getFoodAction=()=>null,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {
  let group='owned',lastPortrait='',previousOwned=false,lastFavourite='';
  const favSlot=el('span',{class:'pet-favourite-slot',hidden:true});
  $('petPortrait')?.parentElement?.append(favSlot);
@@ -172,7 +172,10 @@ export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null
   setAction($(primary),{icon:primary==='adoptButton'?'pen':hand?(ICONS.hand_feed?'hand_feed':'feed'):primary==='feedButton'?'feed':'chest',label,count:primary==='feedButton'&&!hand?'×'+config.mealPortions:'',text:`${label} · ${config.label}${hand?' · '+config.mealPortions+' phần':''}`});
   $('feedButton').classList.toggle('is-hand-feed',hand);
   $('petHelp').hidden=!view.help;
-  $('petHelp').textContent={food:'Mua thức ăn',build:'Xây chuồng',pond:'Đào ao',roadmap:'Xem cấp mở'}[view.help]||'';
+  // Short of food: «Trồng nhanh» (work-trays feedAction) plants or makes the ration; the store only when nothing can.
+  const food=view.help==='food'?getFoodAction(view):null;
+  $('petHelp').textContent=food?.label||{food:'Mua thức ăn',build:'Xây chuồng',pond:'Đào ao',roadmap:'Xem cấp mở'}[view.help]||'';
+  $('petHelp').disabled=Boolean(food?.disabled)||(food&&!food.store&&!getReady());
  }
  function select(id) {
   group=getState().creatures.some(a=>a.species===id)?'owned':'adopt';
