@@ -46,6 +46,8 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
 
  // Nước suối thần shares the Nước phép tab; «Đặc biệt» are decorations with their own tab.
  // Festival pieces (`season`) have their own shop tab, «Lễ hội».
+ const GROUPS=[["all","Tất cả",["all"]],["grow","Giống",["seed","sapling","fry"]],["water","Nước",["water","boost"]],["food","Thức ăn",["food"]],["decor","Trang trí",["decoration","special","festival"]],["premium","Cao cấp",["premium"]],["market","Quầy chợ",["market"]]];
+ const subtabs=el("div",{class:"store-subtabs",role:"group","aria-label":"Loại trong nhóm",hidden:true});
  const tabOf=i=>i.season?"festival":i.collection===SPECIAL_COLLECTION?"special":i.kind==="spring"||i.kind==="nest"?"premium":i.kind;
  const categories=[
   ["all","Tất cả"],
@@ -119,13 +121,29 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
 
   cards.replaceChildren();
   tabs.replaceChildren();
-  for(const[id,name]of categories){
+  // Owner 13/11/2026: the categories gathered into a few groups; a group with several kinds shows them as small chips below.
+  const counts=new Map();
+  for(const[id]of categories){
    const market=snap?.market,count=id==="market"?Object.keys(market?.quality?.prices??market?.prices??{}).filter(c=>(snap.garden.progression.inventory?.[c]??0)>0).length:id==="all"?allItems.length:allItems.filter(i=>tabOf(i)===id).length;
    if(id==="market"?!market:id!=="all"&&count===0)continue;
-   const tab=button("",()=>{filter=id;render();tabs.querySelector("[aria-pressed=\"true\"]")?.focus();},{"data-kind":id,"aria-pressed":String(id===filter),"aria-label":`${name} (${count})`,title:name,class:"store-tab-btn gp-tab"});
-   tab.append(pixelIcon(KIND_ICONS[id],2),el("span",{text:name}),el("b",{class:"gp-tab-count",text:String(count)}));
-   tabs.append(tab);
+   counts.set(id,count);
   }
+  const names=new Map(categories);
+  subtabs.replaceChildren();
+  for(const[gid,gname,kinds]of GROUPS){
+   const present=kinds.filter(k=>counts.has(k));
+   if(!present.length)continue;
+   const count=present.reduce((n,k)=>n+counts.get(k),0),open=kinds.includes(filter);
+   const tab=button("",()=>{if(!kinds.includes(filter))filter=present[0];render();tabs.querySelector("[aria-pressed=\"true\"]")?.focus();},{"data-kind":present.length===1?present[0]:gid,"aria-pressed":String(open),"aria-label":`${gname} (${count})`,title:gname,class:"store-tab-btn gp-tab"});
+   tab.append(pixelIcon(KIND_ICONS[present[0]],2),el("span",{text:gname}),el("b",{class:"gp-tab-count",text:String(count)}));
+   tabs.append(tab);
+   if(open&&present.length>1)for(const k of present){
+    const chip=button("",()=>{filter=k;render();subtabs.querySelector("[aria-pressed=\"true\"]")?.focus();},{"data-kind":k,"aria-pressed":String(k===filter),class:"store-subtab"});
+    chip.append(el("span",{text:names.get(k)}),el("b",{text:String(counts.get(k))}));
+    subtabs.append(chip);
+   }
+  }
+  subtabs.hidden=!subtabs.childElementCount;
 
   if(filter==="market"&&snap?.market){
    cards.append(...marketCards({market:snap.market,inventory:snap.garden.progression.inventory,items,quantities:sellQuantities,busy:purchasing,onSell:async(goods,total,what)=>{
@@ -237,7 +255,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
  }
  cards.setAttribute("aria-label","Danh mục cửa hàng");
  if(only)heading.querySelector("h2").textContent=catalog().find(i=>i.id===only)?.label??"Cửa hàng";
- box.append(heading,status,...(only?[]:[tabs]),notice,cards);
+ box.append(heading,status,...(only?[]:[tabs,subtabs]),notice,cards);
  overlay.append(shade,box);
  $("gameShell").append(overlay);
  render();

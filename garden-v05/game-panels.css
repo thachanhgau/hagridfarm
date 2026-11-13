@@ -632,3 +632,7 @@
 #gameShell .market-row .store-bundle-chip{flex:none;padding:0 8px}
 #gameShell .market-row .store-buy-btn{flex:1 1 auto;min-width:0;margin:0}
 #gameShell .market-row.is-locked{opacity:.65}
+#gameShell .store-popover .store-subtabs{flex:none;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:-4px 0 0}#gameShell .store-popover .store-subtabs[hidden]{display:none}
+#gameShell .store-popover .store-subtabs button{flex:0 0 auto;display:flex;align-items:center;gap:5px;min-height:36px;padding:0 10px;background:#142620;box-shadow:none;color:#B9C3AE;font:800 12px/1 var(--gp-body);white-space:nowrap}
+#gameShell .store-popover .store-subtabs button[aria-pressed=true]{background:#735044;color:#F5D69A;box-shadow:inset 0 2px #A57554}
+#gameShell .store-popover .store-subtabs b{font-size:10px;opacity:.8}
