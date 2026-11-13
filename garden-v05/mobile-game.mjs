@@ -1,50 +1,50 @@
 import {refreshPremiumControls} from './garden-premium-controls.mjs?v=26.0';
 import {setupPetControls,renderPetCareButtons,petControlState} from './pet-controls.mjs?v=26.0';
-import {openGardenLayout} from './garden-layout-ui.mjs?v=25.1.9';
-import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=25.1.9';
-import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=25.1.9';
-import {setupGardenControls} from './garden-controls-ui.mjs?v=25.1.9';
-import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=25.1.9';
+import {openGardenLayout} from './garden-layout-ui.mjs?v=26.0';
+import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=26.0';
+import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=26.0';
+import {setupGardenControls} from './garden-controls-ui.mjs?v=26.0';
+import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=26.0';
 import {setupWorkTrays,buildChoice,fillPlotPlan} from './work-trays.mjs?v=26.0';
-import {createOrchardDock,edgeProgress,harvestText as orchardHarvestText,ripeCount as orchardRipeCount} from './garden-orchard-ui.mjs?v=25.1.9';
-import {createPondDock,createCastGame,POND_LEVEL,POND_TIERS,pondReceiptText,px as pondPx} from './garden-pond-ui.mjs?v=25.1.9';
-import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal,defaultDecorItem,defaultDecorHome,decorFootprint} from './decor-placement-ui.mjs?v=25.1.9';
-import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields,decorFootprintRect} from './decor-runtime.mjs?v=25.1.9';
-import {setupWizardUI} from './wizard-ui.mjs?v=25.1.9';
+import {createOrchardDock,edgeProgress,harvestText as orchardHarvestText,ripeCount as orchardRipeCount} from './garden-orchard-ui.mjs?v=26.0';
+import {createPondDock,createCastGame,POND_LEVEL,POND_TIERS,pondReceiptText,px as pondPx} from './garden-pond-ui.mjs?v=26.0';
+import {decorOnGround,decorSpotProblem,groundRect,showDecorationPlacement,showVisualLayoutModal,defaultDecorItem,defaultDecorHome,decorFootprint} from './decor-placement-ui.mjs?v=26.0';
+import {decorLabelFor,decorPlaceFields,decorSpot,decorUndoFields,decorFootprintRect} from './decor-runtime.mjs?v=26.0';
+import {setupWizardUI} from './wizard-ui.mjs?v=26.0';
 import {showStore} from './garden-store-ui.mjs?v=26.0';
-import {setupProfile} from './profile-ui.mjs?v=25.1.9';
+import {setupProfile} from './profile-ui.mjs?v=26.0';
 import * as E from './progression-engine.mjs?v=26.0';
-import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=25.1.9';
-import {elfLine,elfShiftText} from './garden-elves.mjs?v=25.1.9';
-import {setupCamera} from './camera.mjs?v=25.1.9';
+import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './scene-renderer.mjs?v=26.0';
+import {elfLine,elfShiftText} from './garden-elves.mjs?v=26.0';
+import {setupCamera} from './camera.mjs?v=26.0';
 import {createPanels} from './progression-panels.mjs?v=26.0';
 import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=26.0';
-import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=25.1.9';
-import {createGardenAudio,comboStep} from './garden-audio.mjs?v=25.1.9';
-import {createJuice,rewardDeltas} from './garden-juice.mjs?v=25.1.9';
-import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=25.1.9';
+import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=26.0';
+import {createGardenAudio,comboStep} from './garden-audio.mjs?v=26.0';
+import {createJuice,rewardDeltas} from './garden-juice.mjs?v=26.0';
+import {createPlaytestLog,deviceContext} from './garden-playtest.mjs?v=26.0';
 import {TUTORIAL_LINES,TUTORIAL_GUEST,TUTORIAL_PLOT,REPLAY_STEPS,REPLAY_STEP_MS,tutorialEligible,tutorialStart,letterGreeting,SEASON_LETTER,loadTutorial,saveTutorial,advanceTutorial} from './garden-tutorial.mjs?v=26.0';
 import {showHagridLetter} from './hagrid-letter-ui.mjs?v=26.0';
-import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=25.1.9';
-import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=25.1.9';
-import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=25.1.9';
-import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=25.1.9';
+import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KEY} from './hpvn-bridge.mjs?v=26.0';
+import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=26.0';
+import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=26.0';
+import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=26.0';
 import {pixelIcon,lineIconUrl,setAction,tanSucMark} from './pixel-icons.mjs?v=26.0';
-import {weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=25.1.9';
+import {weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=26.0';
 import {nextGoal} from './next-goal.mjs?v=26.0';
-import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=25.1.9';
-import {createMissions} from './garden-missions-ui.mjs?v=25.1.9';
-import {createHagridWork} from './garden-work-ui.mjs?v=25.1.9';
-import {buildVisitSnapshot,renderMemberVisits,nextVisit,newHelpers,visitBannerParts,avatarSrc} from './garden-visits-ui.mjs?v=25.1.9';
-import {FIRE_BANNER,fireTimeLeft} from './garden-fire.mjs?v=25.1.9';
-import {createFireSheet,fireOutPrice} from './garden-fire-ui.mjs?v=25.1.9';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.9';
-import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=25.1.9';
+import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=26.0';
+import {createMissions} from './garden-missions-ui.mjs?v=26.0';
+import {createHagridWork} from './garden-work-ui.mjs?v=26.0';
+import {buildVisitSnapshot,renderMemberVisits,nextVisit,newHelpers,visitBannerParts,avatarSrc} from './garden-visits-ui.mjs?v=26.0';
+import {FIRE_BANNER,fireTimeLeft} from './garden-fire.mjs?v=26.0';
+import {createFireSheet,fireOutPrice} from './garden-fire-ui.mjs?v=26.0';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.0';
+import {loadOwlQuests,saveOwlQuests,setOwlQuestContext,syncQuestsWithGardenState,recordOwlQuestAction,claimOwlQuest,claimDailyGrandChest,hasClaimableQuest,useServerDaily,allDailyTasks,questAmounts as questAmountsFor} from './garden-quests.mjs?v=26.0';
 // One entry for every page: ui-fixture.html sets <html data-wallet="fixture"> to use the
 // in-memory sample wallet; any other page with ?wallet=emulator talks to the local emulator.
 document.querySelectorAll('[data-px]').forEach(n=>n.replaceWith(pixelIcon(n.dataset.px,Number(n.dataset.scale)||2)));
 const fixtureWallet=document.documentElement.dataset.wallet==='fixture';
-const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=26.0':'./garden-emulator-client.mjs?v=25.1.9');
+const {createEmulatorClient,createHpvnClient,hpvnTicket}=await import(fixtureWallet?'../qa-v19/fixture-wallet.mjs?v=26.0':'./garden-emulator-client.mjs?v=26.0');
 // In HPVN the shell's ticket connects the member's real garden and Gringotts wallet.
 const hpvnNonce=!fixtureWallet&&hpvnTicket?.()||null;
 // The shell already keeps the notch, side and home-bar insets clear, and iOS hands the frame the screen's
@@ -155,11 +155,11 @@ function currentCreatureFacings(){if(activeTourSnapshot)return activeTourSnapsho
 // 25.0 S3: winter by the VN calendar (QA: ?winterDate=2026-12-15); rare coats are worn only while unlocked.
 // 25.0 S3: garden-winter.mjs loads after the first frame (outside Dec–Feb 5 s later, after the dock's images); winter and rare coats show from then on (QA ?winterDate=2026-12-15).
 // 25.0 S6 friends: 10 s after the first frame, off the LCP path
-let friendsKit=null;const loadFriendsKit=()=>import('./garden-friends.mjs?v=25.1.9').then(m=>{friendsKit=m;}).catch(()=>{});
+let friendsKit=null;const loadFriendsKit=()=>import('./garden-friends.mjs?v=26.0').then(m=>{friendsKit=m;}).catch(()=>{});
 // 25.0 S7 «Gia tinh đón đông»: imported once the server sends `xmas` (December, or the egg chain still going).
-let xmasKit=null,xmasLoading=false,xmasCare=null;const syncXmas=()=>{const v=connected&&walletReady&&wallet.snapshot?.xmas;if(!v)return;if(!xmasKit){if(!xmasLoading){xmasLoading=true;import('./garden-xmas.mjs?v=25.1.9').then(m=>{xmasKit=m;syncXmas();}).catch(()=>{xmasLoading=false;});}return;}xmasCare?.sync();const nudge=xmasKit.xmasNudge(v),key='hagrid-xmas-nudge';if(nudge&&localStorage.getItem(key)!==wallet.snapshot.dayKey+nudge){localStorage.setItem(key,wallet.snapshot.dayKey+nudge);message(nudge);}};
+let xmasKit=null,xmasLoading=false,xmasCare=null;const syncXmas=()=>{const v=connected&&walletReady&&wallet.snapshot?.xmas;if(!v)return;if(!xmasKit){if(!xmasLoading){xmasLoading=true;import('./garden-xmas.mjs?v=26.0').then(m=>{xmasKit=m;syncXmas();}).catch(()=>{xmasLoading=false;});}return;}xmasCare?.sync();const nudge=xmasKit.xmasNudge(v),key='hagrid-xmas-nudge';if(nudge&&localStorage.getItem(key)!==wallet.snapshot.dayKey+nudge){localStorage.setItem(key,wallet.snapshot.dayKey+nudge);message(nudge);}};
 const openXmas=()=>{xmasCare??=xmasKit.createXmasCare({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),act:serverClaim,notify:message});xmasCare.open();};
-let winterKit=null;const loadWinterKit=()=>import('./garden-winter.mjs?v=25.1.9').then(m=>{winterKit=m;}).catch(()=>{});
+let winterKit=null;const loadWinterKit=()=>import('./garden-winter.mjs?v=26.0').then(m=>{winterKit=m;}).catch(()=>{});
 const currentWinter=()=>winterKit?.winterFor(Date.now(),query.get('winterDate'))||null;
 function currentCreatureCoats(){return activeTourSnapshot||!winterKit?{}:winterKit.wornCoats(creatureCoats,currentCreatureAffinities(),currentWinter());}
 function cycleCreatureCoat(sp=species){if(activeTourSnapshot||!winterKit)return;const a=currentCreatureAffinities()[sp];const r=winterKit.cycleCoat(creatureCoats,sp,a?.level,currentWinter(),a?.coat);creatureCoats=r.coats;persistPrefs();audio.play('rotate');draw();message(r.text);}
@@ -386,8 +386,8 @@ function syncWeather(){const w=!activeTourSnapshot&&connected&&walletReady?walle
 function currentDuty(){return !activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.duty:null;}
 // The scene art (garden-duty-art) is imported only once a garden has the duty tier (25.0 speed budget).
 let dutyKit=null,dutyKitLoading=false;
-function dutyRender(){const d=currentDuty();if(!d?.on)return null;if(!dutyKit){if(!dutyKitLoading){dutyKitLoading=true;import('./garden-duty-art.mjs?v=25.1.9').then(m=>{dutyKit=m;draw();}).catch(()=>{dutyKitLoading=false;});}return null;}return {kit:dutyKit,wilt:new Set((d.wilted||[]).map(w=>w.plot+':'+w.slot)),dead:new Map((d.dead||[]).map(x=>[x.plot+':'+x.slot,x.species])),sick:new Set((d.sick||[]).map(s=>s.species)),gnomes:(d.gnomes||[]).map(g=>g.plot)};}
-const dutyUi=()=>import('./garden-duty-ui.mjs?v=25.1.9');
+function dutyRender(){const d=currentDuty();if(!d?.on)return null;if(!dutyKit){if(!dutyKitLoading){dutyKitLoading=true;import('./garden-duty-art.mjs?v=26.0').then(m=>{dutyKit=m;draw();}).catch(()=>{dutyKitLoading=false;});}return null;}return {kit:dutyKit,wilt:new Set((d.wilted||[]).map(w=>w.plot+':'+w.slot)),dead:new Map((d.dead||[]).map(x=>[x.plot+':'+x.slot,x.species])),sick:new Set((d.sick||[]).map(s=>s.species)),gnomes:(d.gnomes||[]).map(g=>g.plot)};}
+const dutyUi=()=>import('./garden-duty-ui.mjs?v=26.0');
 // Season 2 «Tài năng sinh vật» (garden-skills-ui, loaded after the first wallet accept): pen and plot marks, the lines
 // for passive skills that ran since the last snapshot, bác Hagrid's season letter once.
 let skillsKit=null,skillsLoading=false,lastSkills=null,skillMarks=null,skillMarksAt=0;
@@ -720,7 +720,7 @@ const saleAcp={open(){import('./garden-sale-acp-ui.mjs?v=26.0').then(m=>{saleAcp
 // «Gia tinh trông vườn» panel, loaded on the first elf tap (25.0 speed budget).
 let elfCare=null;
 async function openElfCare(){
- elfCare??=(await import('./garden-elves-ui.mjs?v=25.1.9')).createElfCare({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),fill:(itemId,amount)=>serverClaim({action:'fillElfWages',itemId,amount}),items,notify:message});
+ elfCare??=(await import('./garden-elves-ui.mjs?v=26.0')).createElfCare({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),fill:(itemId,amount)=>serverClaim({action:'fillElfWages',itemId,amount}),items,notify:message});
  elfCare.open();
 }
 // «Chăm bé» (25.0 S4): mood and this cycle's interactions, imported on first open (speed budget).

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { ITEM_ART } from './item-art.mjs?v=25.1.9';
+import { ITEM_ART } from './item-art.mjs?v=26.0';
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }

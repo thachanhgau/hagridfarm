@@ -3,7 +3,7 @@
 // mobile-game imports it on that first tap (25.0 speed budget).
 import {$,el,num,visualItemIcon} from './ui-utils.mjs?v=26.0';
 import {iconButton} from './pixel-icons.mjs?v=26.0';
-import {elfJobText,elfShiftText} from './garden-elves.mjs?v=25.1.9';
+import {elfJobText,elfShiftText} from './garden-elves.mjs?v=26.0';
 
 const WAGES=Object.freeze([['elf_sock','Vớ len'],['elf_hat','Nón len']]);
 const wageName=id=>WAGES.find(([key])=>key===id)?.[1]||id;

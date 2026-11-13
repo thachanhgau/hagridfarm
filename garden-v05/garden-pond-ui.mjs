@@ -1,4 +1,4 @@
-import {POND_SCENERY} from './pond-art.mjs?v=25.1.9';
+import {POND_SCENERY} from './pond-art.mjs?v=26.0';
 export {POND_SCENERY};
 // Garden expansion phase 1 «Hồ nuôi» (docs/garden-expansion-plan.md §2.1, §6): the pond dock, the fishing game and the
 // pond art paths. Everything comes from the server's snapshot.pond (HPVNN garden pond core); the server keeps every
@@ -6,7 +6,7 @@ export {POND_SCENERY};
 import {DB} from './balance-data.mjs?v=26.0';
 import {el, button, num, duration, itemDisplayName, itemArtKey, itemArtVisual, visualItemIcon, icon} from './ui-utils.mjs?v=26.0';
 import {pixelIcon, ICONS, costChips} from './pixel-icons.mjs?v=26.0';
-import {flowArtSpec} from './flow-item-ui.mjs?v=25.1.9';
+import {flowArtSpec} from './flow-item-ui.mjs?v=26.0';
 
 export const POND_LEVEL = 130;
 export const POND_TIERS = Object.freeze(DB.expansions.filter(e => e.kind === 'pond'));

@@ -3,7 +3,7 @@
 // panel only shows snapshot.mood. mobile-game imports it on the first «Chăm bé» tap or a tap on Norbert.
 import {$,el,icon,duration} from './ui-utils.mjs?v=26.0';
 import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.0';
-import {COAT_STEPS} from './garden-winter.mjs?v=25.1.9';
+import {COAT_STEPS} from './garden-winter.mjs?v=26.0';
 import {skillCard,skillText} from './garden-skills-card.mjs?v=26.0';
 
 export const NORBERT='norbert';

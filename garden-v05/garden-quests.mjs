@@ -1,4 +1,4 @@
-import {getGardenStorage} from './garden-storage.mjs?v=25.1.9';
+import {getGardenStorage} from './garden-storage.mjs?v=26.0';
 import {CROP} from './balance-data.mjs?v=26.0';
 export const OWL_QUEST_STORAGE_KEY = 'hpvn-garden-v21-owl-quests';
 

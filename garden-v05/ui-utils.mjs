@@ -1,8 +1,8 @@
-import { ITEM_ART } from "./item-art.mjs?v=25.1.9";
-import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=25.1.9";
+import { ITEM_ART } from "./item-art.mjs?v=26.0";
+import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=26.0";
 import { DB, TAN_SUC_LEVEL } from "./balance-data.mjs?v=26.0";
-import {saleTotal} from "./premium-products.mjs?v=25.1.9";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.9';
+import {saleTotal} from "./premium-products.mjs?v=26.0";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.0';
 const SUPPLY_ART_KEYS = Object.freeze({
  water: "supply_water",
  boost: "supply_boost",

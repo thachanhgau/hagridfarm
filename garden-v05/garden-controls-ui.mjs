@@ -1,6 +1,6 @@
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=25.1.9';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.0';
 import {$,button,el,icon,visualItemIcon} from './ui-utils.mjs?v=26.0';
-import {V24_ART} from './v24-visuals.mjs?v=25.1.9';
+import {V24_ART} from './v24-visuals.mjs?v=26.0';
 import {pixelIcon} from './pixel-icons.mjs?v=26.0';
 
 export function setupGardenControls({items,onSettings,getWeather}){

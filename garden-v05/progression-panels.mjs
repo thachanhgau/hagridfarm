@@ -1,15 +1,15 @@
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=25.1.9';
-import {edgeStepText} from './garden-orchard-ui.mjs?v=25.1.9';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=25.1.9';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=25.1.9';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=25.1.9";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=25.1.9";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.0';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=26.0';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.0';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.0';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.0";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.0";
 import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=26.0";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=25.1.9";
-import {renderTourSection} from "./garden-tour.mjs?v=25.1.9";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=25.1.9";
-import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection} from "./garden-events.mjs?v=25.1.9";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=25.1.9";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.0";
+import {renderTourSection} from "./garden-tour.mjs?v=26.0";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.0";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection} from "./garden-events.mjs?v=26.0";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.0";
 import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.0";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;

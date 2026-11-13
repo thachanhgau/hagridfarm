@@ -2,7 +2,7 @@
 // keeps every clock; this panel shows snapshot.duty: what happened, the time to each next consequence and the way
 // out of each (action duty: clear, gnome, treat, lure, leave). mobile-game imports it on the first chip tap.
 import {CREATURE} from './balance-data.mjs?v=26.0';
-import {witherCanvas} from './garden-duty-art.mjs?v=25.1.9';
+import {witherCanvas} from './garden-duty-art.mjs?v=26.0';
 import {$,el,visualItemIcon} from './ui-utils.mjs?v=26.0';
 import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.0';
 
