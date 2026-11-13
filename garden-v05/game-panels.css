@@ -669,3 +669,14 @@
 #gameShell #panel .affinity-actions{display:flex;gap:8px}
 #gameShell #panel .affinity-actions button{min-width:96px;padding:0 16px;white-space:nowrap}
 @media (max-width:520px){#gameShell #panel .affinity-actions{grid-column:1/-1}#gameShell #panel .affinity-actions button{flex:1 1 0;min-width:0}}
+/* «Hạt cần mua» (a list of short seeds): one compact row per seed — art · name, stock, price · stepper and buy under it — so
+   three fit without scrolling from 320×568 up (owner 13/11/2026). The single-item popup stays as it was. */
+#gameShell .store-overlay .store-popover.is-list{width:min(420px,calc(100% - 24px))}
+#gameShell :is(#panel,.store-popover).is-list .store-cards-grid{gap:8px}
+#gameShell :is(#panel,.store-popover).is-list .store-card{display:grid;grid-template-columns:56px minmax(0,1fr);grid-template-areas:"art name" "art stock" "art meta" "act act";align-items:center;gap:0 12px;padding:4px 8px;text-align:left}
+#gameShell :is(#panel,.store-popover).is-list .store-card .gp-tile-art{grid-area:art}
+#gameShell :is(#panel,.store-popover).is-list .store-card .gp-tile-name{grid-area:name}
+#gameShell :is(#panel,.store-popover).is-list .store-card .gp-tile-sub{grid-area:stock}
+#gameShell :is(#panel,.store-popover).is-list .store-card .store-meta-row{grid-area:meta;flex-flow:row wrap;align-items:center;justify-content:flex-start;gap:0 8px;min-width:0}
+#gameShell :is(#panel,.store-popover).is-list .store-card .store-meta-row .meta{white-space:nowrap}
+#gameShell :is(#panel,.store-popover).is-list .store-card .store-action-row{grid-area:act;flex-wrap:nowrap;justify-content:space-between;margin-top:4px;padding-top:0}

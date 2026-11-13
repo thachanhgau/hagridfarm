@@ -35,7 +35,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
  document.querySelector(".store-overlay")?.remove();
  let filter=initialFilter,purchasing=false,clock=null;const quantities=new Map(),sellQuantities=new Map(),previewFacing=new Map();
  const overlay=el("div",{class:"store-overlay"}),shade=el("div",{class:"popover-shade"});
- const box=el("section",{class:"popover store-popover"+(only?" is-single":""),role:"dialog","aria-modal":"true","aria-labelledby":"storeTitle"});
+ const box=el("section",{class:"popover store-popover"+(only?" is-single":"")+(only&&[].concat(only).length>1?" is-list":""),role:"dialog","aria-modal":"true","aria-labelledby":"storeTitle"});
  const heading=el("div",{class:"popover-heading"}),status=el("div",{class:"wallet-status store-vault-banner"}),tabs=el("div",{class:"panel-toolbar store-tabs",role:"group","aria-label":"Nhóm vật tư"}),notice=el("p",{class:"meta store-notice",role:"status","aria-live":"polite"}),cards=el("div",{class:"cards store-cards-grid"});
  const close=()=>{if(purchasing)return;clearInterval(clock);overlay.remove();(returnFocus?.isConnected?returnFocus:$("shopButton"))?.focus();onClose?.();};
  heading.append(

@@ -60,9 +60,9 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  if(scenario==="pet-no-space")state.built=state.built.filter(id=>!id.startsWith("pen_"));
  if(scenario==="pen-ext")state.built=state.built.filter(id=>!id.startsWith("pen_ext_")); // phase 2: «Chuồng mở rộng» waiting in Xây
  if(["missing","few-seeds","plots-full"].includes(scenario))for(const id of Object.keys(state.inventory))state.inventory[id]=0;
- // «Trồng nhanh» QA (13/11/2026): few-seeds = 2 seeds a crop and Thửa 1 empty (thiếu hạt); plots-full = no free cell
+ // «Trồng nhanh» QA (13/11/2026): few-seeds = 2 seeds a crop and Thửa 1 empty (thiếu hạt); no-water = Thửa 1 empty, 0 water; plots-full = no free cell
  // anywhere (filled with Nhân sâm, which no ration in these checks uses), so a short ration falls back to the one-item store.
- if(scenario==="few-seeds"){const p=state.plots[0];p.slots.fill(null);p.cooldowns.fill(0);p.patterns=[];}
+ if(["few-seeds","no-water"].includes(scenario)){const p=state.plots[0];p.slots.fill(null);p.cooldowns.fill(0);p.patterns=[];}
  if(scenario==="plots-full")state.plots.forEach((p,pi)=>p.slots.forEach((s,i)=>{if(!s){p.slots[i]={id:`crop-p${pi}-s${i}-full`,type:"crop",species:"mandrake",plantedAt:origin,growMs:E.CROP.mandrake.growMs};p.cooldowns[i]=0;}}));
  if(scenario==="prerequisite"){const base=E.newGame(origin);state.built=base.built;state.plots=base.plots;}
  // A lively showcase for the default preview: crops, adult and baby creatures, decorations.
@@ -101,7 +101,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
  const garden={
   progression:state,
   supplies:fresh?{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,STARTER_SUPPLIES.seeds[c.id]||0])),water:STARTER_SUPPLIES.water,boost:STARTER_SUPPLIES.boost,spring:0,rain:0,felix:0,primeMeal:0,feast:0,skeleGro:0}
-   :{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?(scenario==="few-seeds"?2:36):0])),water:213,boost:2,spring:0,rain:2,felix:2,primeMeal:5,feast:2,skeleGro:3},
+   :{seeds:Object.fromEntries(E.DB.crops.map(c=>[c.id,c.level<=level?(scenario==="few-seeds"?2:36):0])),water:scenario==="no-water"?0:213,boost:2,spring:0,rain:2,felix:2,primeMeal:5,feast:2,skeleGro:3},
   decorations:fresh?{owned:[],placements:[null,null,null,null,null,null],rotations:{}}:{owned:full?storeDecors:["decor_pumpkin_lantern"],placements:full?[...storeDecors,null,null,null,null,null,null].slice(0,6):["decor_pumpkin_lantern",null,null,null,null,null],
    rotations:full?{decor_pumpkin_lantern:"default",decor_broom_rack:"right",decor_cauldron:"default",decor_mandrake_planter:"right",decor_floating_candles:"default",decor_vine_arch:"right"}:{decor_pumpkin_lantern:"default"}},
   boostedCropIds:[],
