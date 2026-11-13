@@ -1,6 +1,6 @@
-import {el,button} from './ui-utils.mjs?v=25.1.8';
-import {V24_ART,navIcon} from './v24-visuals.mjs?v=25.1.8';
-import {pixelIcon} from './pixel-icons.mjs?v=25.1.8';
+import {el,button} from './ui-utils.mjs?v=25.1.9';
+import {V24_ART,navIcon} from './v24-visuals.mjs?v=25.1.9';
+import {pixelIcon} from './pixel-icons.mjs?v=25.1.9';
 
 // Four destinations; the garden illustration stays decorative so every target is explicit.
 export function renderGardenMenu(ctx,actions){

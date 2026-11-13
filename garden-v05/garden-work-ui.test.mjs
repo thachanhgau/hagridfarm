@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createHagridWork} from './garden-work-ui.mjs?v=25.1.8';
-import {petFavourite} from './pet-controls.mjs?v=25.1.8';
-import {CROP} from './balance-data.mjs?v=25.1.8';
+import {createHagridWork} from './garden-work-ui.mjs?v=25.1.9';
+import {petFavourite} from './pet-controls.mjs?v=25.1.9';
+import {CROP} from './balance-data.mjs?v=25.1.9';
 
 // Level-160 challenges (docs/level-160-challenges.md §2A–B): the Đơn khó tile and the milestone row
 // in «Việc của bác Hagrid», from snapshot.orders as the server sends it (garden-challenge-core challengeView).

@@ -1,12 +1,12 @@
 import {applyDefaultDecorationVisibility} from '../garden-v05/default-decor.mjs?v=24.9.81';
-import * as E from "../garden-v05/progression-engine.mjs?v=25.1.8";
-import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=25.1.8";
+import * as E from "../garden-v05/progression-engine.mjs?v=25.1.9";
+import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=25.1.9";
 import {decorFootprintRect,rectsOverlap} from "../garden-v05/decor-runtime.mjs?v=24.9.40";
 import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.40";
 import {pickDailyQuests,questAmounts} from "../garden-v05/garden-quests.mjs?v=24.9.40";
 import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affinityLevelForXp,HOGWARTS_EVENTS,FESTIVAL_ACTION_POINTS,FESTIVAL_FARM_POINTS_PER_DAY,FESTIVAL_FREE_POINTS_PER_DAY} from "../garden-v05/garden-events.mjs?v=24.9.40";
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs?v=24.9.63";
-import {ATMOSPHERE_MODES,WEATHER_MODES} from "../garden-v05/garden-atmosphere.mjs?v=25.1.8";
+import {ATMOSPHERE_MODES,WEATHER_MODES} from "../garden-v05/garden-atmosphere.mjs?v=25.1.9";
 import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
 import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=24.9.40";
 const PREMIUM_CAPS=Object.freeze({rain:1,felix:1,primeMeal:30,feast:3,skeleGro:3});
@@ -81,7 +81,7 @@ export function createFixtureServer({level=100,scenario="empty",simulate=false,d
   state.creatureFacings={puffskein:"default",bowtruckle:"right",niffler:"default",kneazle:"right",hippogriff:"default",unicorn:"right"};
   if(level>=150&&state.built.includes('pond_1')&&!state.creatures.some(c=>c.species==='grindylow'))state.creatures.push({id:'creature-grindylow',type:'creature',species:'grindylow',level:150,adoptedAt:origin-48*3600000,mealsCompleted:6,meal:null,cyclesClaimed:0,preview:false});
   // Garden expansion phase 2: the new land species from their level, while the pens (and «Chuồng mở rộng») have room.
-  for(const species of ['crup','knarl','salamander','porlock'])if(level>=E.CREATURE[species].level&&state.creatures.filter(c=>!E.POND_SPECIES.has(c.species)).length<E.housingCapacity(state))state.creatures.push({id:`creature-${species}`,type:'creature',species,level:E.CREATURE[species].level,adoptedAt:origin-48*3600000,mealsCompleted:species==='crup'?E.CREATURE.crup.mealsToAdult:4,meal:null,cyclesClaimed:0,preview:false});
+  for(const species of ['crup','knarl','salamander','porlock'])if(level>=E.CREATURE[species].level&&!state.creatures.some(c=>c.species===species)&&state.creatures.filter(c=>!E.POND_SPECIES.has(c.species)).length<E.housingCapacity(state))state.creatures.push({id:`creature-${species}`,type:'creature',species,level:E.CREATURE[species].level,adoptedAt:origin-48*3600000,mealsCompleted:species==='crup'?E.CREATURE.crup.mealsToAdult:4,meal:null,cyclesClaimed:0,preview:false});
   if(level>=E.CREATURE.kappa.level&&!state.creatures.some(c=>c.species==='kappa'))state.creatures.push({id:'creature-kappa',type:'creature',species:'kappa',level:E.CREATURE.kappa.level,adoptedAt:origin-48*3600000,mealsCompleted:6,meal:null,cyclesClaimed:0,preview:false});
   if(level>=20)state.keepsakes={...state.keepsakes,puffskein:2,bowtruckle:1,niffler:3,...(level>=90?{kneazle:1,hippogriff:2,unicorn:1,dragon:1}:{}),...(level>=160?{grindylow:1,crup:1}:{})};
  }

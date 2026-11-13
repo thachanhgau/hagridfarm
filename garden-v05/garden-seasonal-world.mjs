@@ -1,5 +1,5 @@
-import {PLOT_SCENERY_ART} from './plot-scenery-art.mjs?v=25.1.8';
-import {stageContains} from './garden-growth.mjs?v=25.1.8';
+import {PLOT_SCENERY_ART} from './plot-scenery-art.mjs?v=25.1.9';
+import {stageContains} from './garden-growth.mjs?v=25.1.9';
 function insidePolygon(x,y,points){
  let inside=false;
  for(let i=0,j=points.length-1;i<points.length;j=i++){

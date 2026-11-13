@@ -263,6 +263,8 @@ test('complete pen plaques are drawn after rail and habitat images',async()=>{
  assert.ok(signs.length>=6,'full numbered plaques must be present');
  const lastProp=paintCalls.findLastIndex(c=>c.kind==='image'&&c.file?.includes('habitat_'));
  assert.ok(lastProp>=0);assert.ok(Math.min(...signs)>lastProp,'props and rails cannot paint over pen text');
+ const creatureFiles=new Set(motion.items.flatMap(i=>i.frames.map(f=>runtimeImageUrl(f.file||f))));
+ assert.ok(paintCalls.slice(Math.min(...signs)).some(c=>c.kind==='image'&&creatureFiles.has(c.file)),'a creature standing in front of a plaque covers it (owner 13/11/2026)');
 });
 
 

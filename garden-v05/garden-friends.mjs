@@ -3,7 +3,7 @@
 // visit, three a day (fence #36). Visitors walk the aisles like the gia tinh (garden-elves.mjs) and use its 80×80
 // frame; Harry and Ron hover behind the plots passing the Quaffle, Fred and George light fireworks.
 // Loaded 10 s after the first frame (mobile-game.mjs); its frames load the first time they are drawn.
-import {elfPose} from './garden-elves.mjs?v=25.1.8';
+import {elfPose} from './garden-elves.mjs?v=25.1.9';
 
 const FRAME = {width: 80, height: 80, pivotX: 40, pivotY: 76, bounds: {x: 11, y: 8, w: 58, h: 69}};
 const HOUR = 3600000, VN_OFFSET = 7 * HOUR, FIRST_HOUR = 6, VISIT_HOURS = 3, VISITS_PER_DAY = 5;
