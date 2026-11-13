@@ -1,5 +1,5 @@
 // Season 2 skill icons: the three Codex sheets (masters-items/skills-s2-v2, 3 × 2 cells each, briefs
-// docs/codex-briefs/skills-s2.md + skills-s2-v2.md) → skills-s2.png, 6 × 3 cells of 64 px in SKILL_ORDER, nearest-neighbour and the
+// docs/codex-briefs/skills-s2.md + skills-s2-v2.md) → native-items/skills-s2.png (WebP via build-runtime-webp.mjs), 6 × 3 cells of 64 px in SKILL_ORDER, nearest-neighbour and the
 // sprite palette like the other item builds. garden-skills-card shows a cell at 40 px. Masters stay untouched.
 import fs from 'node:fs/promises';
 import {createRequire} from 'node:module';
@@ -21,4 +21,4 @@ for (const [i, pose] of cells.entries()) {
   const x0 = (i % 6) * CELL + Math.floor((CELL - w) / 2), y0 = Math.floor(i / 6) * CELL + Math.floor((CELL - h) / 2);
   for (let row = 0; row < h; row++) ink.copy(out, ((y0 + row) * W + x0) * 4, row * w * 4, (row + 1) * w * 4);
 }
-await fs.writeFile(new URL('skills-s2.png', root), await sharp(out, {raw: {width: W, height: CELL * 3, channels: 4}}).png({palette: true}).toBuffer());
+await fs.writeFile(new URL('native-items/skills-s2.png', root), await sharp(out, {raw: {width: W, height: CELL * 3, channels: 4}}).png({palette: true}).toBuffer());

@@ -487,7 +487,7 @@
 #creatureMood .skill-copy{display:grid;gap:3px;min-width:0;color:#F5D69A;font:600 12px/1.25 var(--gp-body)}
 #creatureMood .skill-copy small{color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
 #creatureMood .skill-copy .skill-why{color:#E7AE73}
-#creatureMood .skill-icon{flex:none;width:40px;height:40px;background:url(skills-s2.png) 0 0/240px 120px;image-rendering:pixelated}
+#creatureMood .skill-icon{flex:none;width:40px;height:40px;background:url(runtime-webp/native-items/skills-s2.webp) 0 0/240px 120px;image-rendering:pixelated}
 #creatureMood .skill-card.is-ready .skill-icon{outline:2px solid #FFC36B}
 /* «Bậc trách nhiệm» (25.0 S5): the chip with the nearest clock and the panel (garden-duty-ui.mjs). */
 /* Left, under the level ring: on the right it covered the second icon row (phone), the top row (1280) and Thửa đất (820). */

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "8979f3c5d70e",
+  "revision": "cee027e91c36",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -5720,6 +5720,16 @@
       "bytes": 374,
       "sourceSha256": "84f71e4540804363df8977edb5b28d920cd2f85a3799b09de9e62cee57786ad4",
       "sha256": "4d5235aa99960baa446b3885f639e7313a267ad43ee976be86a9602fd5a3c2ea"
+    },
+    {
+      "source": "native-items/skills-s2.png",
+      "file": "runtime-webp/native-items/skills-s2.webp",
+      "width": 384,
+      "height": 192,
+      "sourceBytes": 17014,
+      "bytes": 14738,
+      "sourceSha256": "a4dd3fd849d0dc8f71fbc2851f3d7b9abd8e03644dc7ee94d706a75729fe0e9e",
+      "sha256": "258fb7f8142ee3e1d7d0c1c33d6c37f6e53ed4b460c712bd501401cf4df25669"
     },
     {
       "source": "native-items/supply_boost.png",
@@ -14415,11 +14425,11 @@
     }
   ],
   "totals": {
-    "converted": 1435,
+    "converted": 1436,
     "existingWebp": 8,
-    "originalBytes": 5457624,
-    "webpBytes": 3595050,
-    "savedBytes": 1862574,
-    "savedPercent": 34.13
+    "originalBytes": 5474638,
+    "webpBytes": 3609788,
+    "savedBytes": 1864850,
+    "savedPercent": 34.06
   }
 }
