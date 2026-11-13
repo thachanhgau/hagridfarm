@@ -10,9 +10,9 @@ import {RGB, sha256, sharp, shrink, tidy} from './build-elf-art.mjs';
 const root = path.dirname(fileURLToPath(import.meta.url));
 const CELL = 512;
 const M = 'environment/floo-frames/masters/';
-// [master, [name, size, canvas width] per cell in order]; a band corner fits 22 × 22, the star 11 (on a 12 px tile, no
+// [master, [name, size, canvas width] per cell in order]; a band corner fits 24 × 24 (13/11: shown at 2× = 48 px over the ring), the star 11 (on a 12 px tile, no
 // extra rim: at that size the rim would eat it), the badge 32.
-const corner = (n) => [`band-${n}`, 22, 22];
+const corner = (n) => [`band-${n}`, 24, 24];
 const badge = (id) => [`badge-${id}`, 28, 28];
 const gem = (n) => [`gem-${n}`, 11, 12];
 const SHEETS = [
