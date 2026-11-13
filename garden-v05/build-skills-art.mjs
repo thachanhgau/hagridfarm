@@ -1,5 +1,5 @@
-// Season 2 skill icons: the three Codex sheets (masters-items/skills-s2, 3 × 2 cells each, brief
-// docs/codex-briefs/skills-s2.md) → skills-s2.png, 6 × 3 cells of 64 px in SKILL_ORDER, nearest-neighbour and the
+// Season 2 skill icons: the three Codex sheets (masters-items/skills-s2-v2, 3 × 2 cells each, briefs
+// docs/codex-briefs/skills-s2.md + skills-s2-v2.md) → skills-s2.png, 6 × 3 cells of 64 px in SKILL_ORDER, nearest-neighbour and the
 // sprite palette like the other item builds. garden-skills-card shows a cell at 40 px. Masters stay untouched.
 import fs from 'node:fs/promises';
 import {createRequire} from 'node:module';
@@ -7,9 +7,10 @@ import {authoredCells} from './authored-atlas.mjs';
 import {quantize} from './build-pond-art.mjs';
 const sharp = createRequire(import.meta.url)(process.env.SHARP_MODULE || '/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 const root = new URL('./', import.meta.url), CELL = 64, FIT = 58;
+const dir = process.argv[2] || 'masters-items/skills-s2-v2'; // round 1: masters-items/skills-s2
 const cells = [];
 for (const n of [1, 2, 3]) {
-  const raw = await sharp(await fs.readFile(new URL(`masters-items/skills-s2/skills-sheet-${n}.png`, root))).ensureAlpha().raw().toBuffer({resolveWithObject: true});
+  const raw = await sharp(await fs.readFile(new URL(`${dir}/skills-sheet-${n}.png`, root))).ensureAlpha().raw().toBuffer({resolveWithObject: true});
   cells.push(...authoredCells(raw, [3, 3]));
 }
 if (cells.length !== 18) throw Error(`Expected 18 icons, found ${cells.length}`);
