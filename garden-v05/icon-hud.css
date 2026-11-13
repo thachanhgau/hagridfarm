@@ -184,3 +184,5 @@
 #playDock #fillPlotButton .px-icon{width:24px;height:24px}
 #playDock #plantDock:has(#fillPlotButton:not([hidden])) .seed-side{grid-column:1/3}
 @media(max-width:440px){#playDock #fillPlotButton{font-size:11px}#playDock #fillPlotButton .px-icon{display:none}}
+/* ≤359 px the Nước phép shortcut is a 36 px badge on the portrait corner; its tap area grows to 44 px (owner 13/11/2026). */
+@media(max-width:359px){#playDock #dockBoost{overflow:visible}#playDock #dockBoost::after{content:"";position:absolute;inset:-5px -4px -5px -5px}}

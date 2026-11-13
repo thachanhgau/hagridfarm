@@ -649,7 +649,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
   async function restockSteps(plan) {
     const seedIds = Object.keys(plan.seeds);
     if (!plan.steps.length) {
-      if (seedIds.length && openSeedStore) openSeedStore(seedIds[0]);
+      if (seedIds.length && openSeedStore) openSeedStore(seedIds);
       else if (plan.water && openStore) openStore('water');
       return;
     }
@@ -673,7 +673,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       !stopped && plan.water ? `thiếu ${num(plan.water)} nước` : '',
       !stopped && Object.keys(plan.other).length ? `còn thiếu ${count(plan.other)}` : '',
     ].filter(Boolean);
-    const buy = !stopped && seedIds.length && openSeedStore ? { label: `Mua hạt ${readLabel(labels, seedIds[0])}`, run: () => openSeedStore(seedIds[0]) }
+    const buy = !stopped && seedIds.length && openSeedStore ? { label: seedIds.length > 1 ? `Mua ${seedIds.length} loại hạt` : `Mua hạt ${readLabel(labels, seedIds[0])}`, run: () => openSeedStore(seedIds) }
       : !stopped && plan.water && openStore ? { label: 'Mua nước', run: () => openStore('water') } : null;
     notify(parts.join(' · ') + '.', buy);
   }

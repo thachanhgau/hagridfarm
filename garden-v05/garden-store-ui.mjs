@@ -30,6 +30,8 @@ const coinChip = (n, extra = "") => el("span", {class: "gp-price"}, [pixelIcon("
 
 export function showStore({state,items,wallet,connected,onPurchase,onSell,onDecorate,onRefresh,decorAssets=new Map(),onClose,initialFilter="all",only=null,need=0,returnFocus=document.activeElement}){
  // `only`: one item id — a small buy popup for just that item (a seed tapped at 0), no tabs; it closes once bought.
+ // A list of ids (the seeds a «Trồng nhanh» ran short of) shows just those and stays open between buys.
+ const onlyIds=only==null?null:[].concat(only);
  document.querySelector(".store-overlay")?.remove();
  let filter=initialFilter,purchasing=false,clock=null;const quantities=new Map(),sellQuantities=new Map(),previewFacing=new Map();
  const overlay=el("div",{class:"store-overlay"}),shade=el("div",{class:"popover-shade"});
@@ -156,7 +158,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   }
   // Owner 13/11/2026: decorations already owned go below the ones still to buy, under «Đã có».
   const ownedDecor=new Set(snap?.garden?.decorations?.owned??[]),isOwned=i=>i.kind==="decoration"&&ownedDecor.has(i.id);
-  const shown=allItems.filter(i=>only?i.id===only:filter==="all"||tabOf(i)===filter).sort((a,b)=>isOwned(a)-isOwned(b));
+  const shown=allItems.filter(i=>onlyIds?onlyIds.includes(i.id):filter==="all"||tabOf(i)===filter).sort((a,b)=>isOwned(a)-isOwned(b));
   const firstOwned=shown.find(isOwned),ownedCount=shown.filter(isOwned).length;
   for(const item of shown){
    if(item===firstOwned&&ownedCount<shown.length)cards.append(el("p",{class:"store-owned-divider",text:`Đã có · ${ownedCount}`}));
@@ -197,7 +199,7 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
      try{
       await onPurchase(item.id,n);
       notice.textContent=isDecor?"Đã có "+item.label+". Bấm Đặt để trang trí vườn.":"Đã mua "+n+" "+unit+" "+item.label+".";
-      if(only&&!isDecor){purchasing=false;close();return;}
+      if(onlyIds?.length===1&&!isDecor){purchasing=false;close();return;}
      }catch(e){
       notice.textContent=e.message;
       // The price moved (a sale ended or began, the ACP changed it): show the server's price now, never the old one.
@@ -254,9 +256,9 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   }
  }
  cards.setAttribute("aria-label","Danh mục cửa hàng");
- if(only)heading.querySelector("h2").textContent=catalog().find(i=>i.id===only)?.label??"Cửa hàng";
+ if(only)heading.querySelector("h2").textContent=onlyIds.length>1?"Hạt cần mua":catalog().find(i=>i.id===onlyIds[0])?.label??"Cửa hàng";
  // `need` (units short, e.g. a meal's missing portions): the popup opens with enough packs to cover it.
- if(only&&need>0)quantities.set(only,Math.ceil(need/(catalog().find(i=>i.id===only)?.quantity||1)));
+ if(onlyIds?.length===1&&need>0)quantities.set(onlyIds[0],Math.ceil(need/(catalog().find(i=>i.id===onlyIds[0])?.quantity||1)));
  box.append(heading,status,...(only?[]:[tabs,subtabs]),notice,cards);
  overlay.append(shade,box);
  $("gameShell").append(overlay);

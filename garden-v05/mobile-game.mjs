@@ -527,7 +527,7 @@ function setMode(next){
 }
 function makeTray(container,collection,select){for(const c of collection){const b=button('',()=>select(c.id),{'data-id':c.id,'aria-label':c.label});b.title=c.label;b.append(icon(items,c.id,3,40),el('span',{class:'lock',text:'Cấp '+c.level}),el('span',{class:'owned',text:'✓',hidden:true}));if(container.id==='seedTray')b.append(el('span',{class:'seed-tired',hidden:true,'aria-hidden':'true'}),el('span',{class:'seed-count',hidden:!connected,'aria-hidden':'true'}),el('span',{class:'chip-time','aria-hidden':'true'},[pixelIcon('clock',1),shortHours(c.hours)]));container.append(b);}}
 // a seed tapped at 0 opens a small buy popup for that seed, not the whole store (owner 13/11/2026)
-const openSeedStore=id=>openStore('seed',document.activeElement,'seed_'+id);
+const openSeedStore=ids=>openStore('seed',document.activeElement,[].concat(ids).map(id=>'seed_'+id)); // one seed, or the seeds a «Trồng nhanh» lacks
 makeTray($('seedTray'),DB.crops,id=>{selectCrop(id);if(connected&&wallet?.snapshot&&!(wallet.snapshot.garden?.supplies?.seeds?.[id]>0))openSeedStore(id);});
 // Item names (owner 13/11/2026): tray items and cost chips are icon-only — a mouse hover or a touch shows the name above the icon.
 const nameTip=el('div',{class:'name-tip',role:'tooltip',style:'display:none'});const hideNameTip=()=>{nameTip.style.display='none';};$('gameShell').append(nameTip);let nameTipTimer=0; // style, not `hidden`/class: the body observers (☰ placement) must not fire on every hover
@@ -645,7 +645,9 @@ function refresh(){
  const fill=state.level>=FILL_PLOT_LEVEL&&c.level<=state.level?fillPlotPlan({state,plotIndex:selectedPlot,species:seed,supplies:fillSupplies(),now}):null;
  $('fillPlotButton').hidden=!fill?.free;
  $('fillPlotButton').disabled=!loaded||(connected&&!walletReady)||busy||Boolean(workTrays?.isRunning())||!fill?.steps.length;
- if(fill?.free)setAction($('fillPlotButton'),{icon:'sow',label:'Gieo cả thửa',text:`Gieo cả thửa ${selectedPlot+1} · ${fill.free} ô trống · ${c.label}`});
+ // Nothing to sow: say why on its face, in the plant button's order (kinds before seeds before water).
+ const fillWhy=!fill?.free||fill.steps.length?'':typeCap?'Đủ 3 loại':fill.seeds[seed]?'Hết hạt':fill.water?'Hết nước':'';
+ if(fill?.free)setAction($('fillPlotButton'),{icon:'sow',label:fillWhy||'Gieo cả thửa',text:`Gieo cả thửa ${selectedPlot+1} · ${fill.free} ô trống · ${c.label}${fillWhy?' · '+fillWhy:''}`});
  $('cropCareButton').disabled=!loaded||!chosen().some(i=>slots[i]&&!E.growth(slots[i],now).mature)||(connected&&(!walletReady||busy||careLeft()<1));
  $('replantButton').disabled=!loaded||!state.plots[selectedPlot].patterns.length;
  const allReady=state.plots.reduce((sum,p)=>sum+p.slots.filter(e=>e&&E.growth(e,now).mature).length,0);$('readyCount').textContent=allReady;$('readyCount').hidden=!allReady;$('harvestTool').disabled=!loaded;$('harvestTool').classList.toggle('is-idle',!allReady);
