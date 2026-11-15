@@ -23,7 +23,9 @@
     "subject": "A tiny cozy PATCHWORK PILLOWCASE CANVAS TENT for house-elves, triangular sagging cloth roof stitched from beige pillowcases, low open doorway, red wool socks garland, holly wreath, warm lantern, tiny folded quilt inside, NO elf character, NO timber cabin",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Lều vải vá từ áo gối cũ, cửa thấp, dây vớ len và đèn lồng ấm cho gia tinh đón Noel."
+    "lore": "Lều vải vá từ áo gối cũ, cửa thấp, dây vớ len và đèn lồng ấm cho gia tinh đón Noel.",
+    "master": "noel-50-assets/masters-locked/nx_elf_yule_tent-solid.png",
+    "cameraAcceptance": "filled coordinate block-in redraw; actual native edge checks pending"
   },
   {
     "id": "nx_owl_parcel_roost",
@@ -285,7 +287,9 @@
     "season": "xmas",
     "group": "Giáng sinh",
     "lore": "Hàng rào chổi lá nhựa ruồi dành cho khu vườn Giáng sinh của phù thủy.",
-    "maxInkWidth": 100
+    "maxInkWidth": 100,
+    "master": "noel-50-assets/masters-locked/nx_holly_broom_fence-solid.png",
+    "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required"
   },
   {
     "id": "nx_snitch_lamp_post",
@@ -363,7 +367,9 @@
     "subject": "A low wooden wizard chess table, animated-looking carved stone chessmen wearing tiny festive scarves, two mugs and holly",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Bàn cờ đêm Giáng sinh dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Bàn cờ đêm Giáng sinh dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_wizard_chess_christmas-solid.png",
+    "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required"
   },
   {
     "id": "nx_weasley_knit_rack",
@@ -558,7 +564,9 @@
     "subject": "A miniature open garden gazebo for a wizard Yule ball, snowy conical roof, pine garlands, warm hanging lanterns, no people",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Chòi Dạ vũ mùa đông dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Chòi Dạ vũ mùa đông dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_yule_dance_gazebo-solid.png",
+    "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required"
   },
   {
     "id": "nx_enchanted_violin_stand",
@@ -649,6 +657,8 @@
     "subject": "An open oversized rustic gamekeeper wooden crate filled with hand-wrapped parcels, a wool scarf, huge mittens and fir branches, no labels",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Rương quà bác Hagrid dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Rương quà bác Hagrid dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_hagrid_gift_crate-solid.png",
+    "cameraAcceptance": "filled coordinate block-in redraw; actual native edge checks pending"
   }
 ]

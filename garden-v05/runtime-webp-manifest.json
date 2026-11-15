@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "b938c5e09935",
+  "revision": "0e70e9f0886d",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -9196,30 +9196,30 @@
       "file": "runtime-webp/decor-assets/native/nx_elf_yule_tent_atlas.webp",
       "width": 256,
       "height": 512,
-      "sourceBytes": 15675,
-      "bytes": 10272,
-      "sourceSha256": "861d7fad3547bf82cace1f9e5899e7f6c09db1426c759c0479cd93416efad45c",
-      "sha256": "7f146a18d8532ffce09141717ec26ae6aad613dc461ec187426bf77fbe13d186"
+      "sourceBytes": 18423,
+      "bytes": 11682,
+      "sourceSha256": "a09604197415ccba7526b833d325ed09df95f4e4789f0f00ed7e01d33e3a2e0c",
+      "sha256": "2af112b2be9dccc4ce97783b74218ea0b4bd281269b14c3b7faca8f9a93081b2"
     },
     {
       "source": "decor-assets/native/nx_elf_yule_tent_right.png",
       "file": "runtime-webp/decor-assets/native/nx_elf_yule_tent_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4376,
-      "bytes": 2678,
-      "sourceSha256": "212b60a0661435be42a9b2f7e37e44f4d2bc9facf8a114ae84196c3c57cb43ab",
-      "sha256": "328cf1134a676b4cb3e4b9e0e5c91b24794a00074fed25346c11034786a91f6a"
+      "sourceBytes": 5005,
+      "bytes": 3094,
+      "sourceSha256": "a2231ee50dbe3db1afc4accd34f4e9889f673b0ef4e8fbd5d7b321666220319c",
+      "sha256": "a02fdf2cb9173b9f1b4816c8e6c3aa588a57f47a39d9fced0fd80de2d438ac66"
     },
     {
       "source": "decor-assets/native/nx_elf_yule_tent.png",
       "file": "runtime-webp/decor-assets/native/nx_elf_yule_tent.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4372,
-      "bytes": 2694,
-      "sourceSha256": "66f6c6f30e3cfff2a603526a6b74b7d4348be950a651e463869fff1cac490aaa",
-      "sha256": "2d651ca1933558405afd472f94d6a50822ef1815c923932182dab3b60b5eadb9"
+      "sourceBytes": 5016,
+      "bytes": 3096,
+      "sourceSha256": "82926b3c3e60532e59b068004f5729d2102348263095bf69289a7cc182c6fe17",
+      "sha256": "0bc4e9a091844cd6482025ef4297f867b7f7842444b9439256f1dcf22d890d7b"
     },
     {
       "source": "decor-assets/native/nx_enchanted_cracker_table_atlas.png",
@@ -9586,30 +9586,30 @@
       "file": "runtime-webp/decor-assets/native/nx_hagrid_gift_crate_atlas.webp",
       "width": 192,
       "height": 448,
-      "sourceBytes": 12579,
-      "bytes": 7924,
-      "sourceSha256": "04c80ec194f4d778a12ff3fab32e158fdc749cff36412d129e13edf445d8d8fe",
-      "sha256": "8ec7633747191d8cda1bd7e2bd744e16385fe8312fe9d5b68977086215e89556"
+      "sourceBytes": 13634,
+      "bytes": 8484,
+      "sourceSha256": "19679538414e36ca95283b84702b7a01c5481af2bd4465702b398d11f93772b8",
+      "sha256": "125576cf2115f4b085f9336e65bb0840406f67157a0e475d0d1f1b5e3f7b276d"
     },
     {
       "source": "decor-assets/native/nx_hagrid_gift_crate_right.png",
       "file": "runtime-webp/decor-assets/native/nx_hagrid_gift_crate_right.webp",
       "width": 96,
       "height": 224,
-      "sourceBytes": 3358,
-      "bytes": 2068,
-      "sourceSha256": "15c79e04b70f97d13dc11930aa86bb23169db4f7befa08f2d1de24f4ab454625",
-      "sha256": "1e9c3bf08ff5bd6d1a1fcb86675882db069b8755684e5be6acb0a536d163a7d6"
+      "sourceBytes": 4096,
+      "bytes": 2628,
+      "sourceSha256": "1174233ac38439104c1aa085f8d1fb180a667a90a4bcb11a4ed80fbaf2f9cf42",
+      "sha256": "c63e8fa1ba365083b2b59da0b856df53503c43dcc286842747d5a78befd847f1"
     },
     {
       "source": "decor-assets/native/nx_hagrid_gift_crate.png",
       "file": "runtime-webp/decor-assets/native/nx_hagrid_gift_crate.webp",
       "width": 96,
       "height": 224,
-      "sourceBytes": 3413,
-      "bytes": 2120,
-      "sourceSha256": "f4b78401408defa96a90b2e4339abbd28a3765bc6d7b229a6edfe6c190e6abe5",
-      "sha256": "f470aee6160feb601c0b2e7613fa8f136a709c53f37667e04f6360b046407808"
+      "sourceBytes": 3933,
+      "bytes": 2510,
+      "sourceSha256": "e4a6155836e74138c03765b5bc9876549956fc811ec06ec6557f70585e45a75c",
+      "sha256": "3befc65e982bf365262e750ae54271e9b36ff10a74e6c2d552f470e38fd3ca41"
     },
     {
       "source": "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png",
@@ -9676,30 +9676,30 @@
       "file": "runtime-webp/decor-assets/native/nx_holly_broom_fence_atlas.webp",
       "width": 256,
       "height": 512,
-      "sourceBytes": 10279,
-      "bytes": 6382,
-      "sourceSha256": "66a78588e959cea6899bcb281ca92fbb6f2188dc0fb42029268d0d0770e3c6b8",
-      "sha256": "d0ea44fb201c85f04e9630692c72ec29ccdcb947054f66e9da5c80e8c3a1ab7c"
+      "sourceBytes": 15895,
+      "bytes": 9182,
+      "sourceSha256": "d3212c45e962fea3bd4002df1348c8470364aa98fd037abd65c69b7165babbb7",
+      "sha256": "0ecef6a77d1ec12ee829d6c6a02269ebef0fb48617e5aeb1c287c97dd585f94c"
     },
     {
       "source": "decor-assets/native/nx_holly_broom_fence_right.png",
       "file": "runtime-webp/decor-assets/native/nx_holly_broom_fence_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 2934,
-      "bytes": 1674,
-      "sourceSha256": "4dc7bd5b6109de9f8ad5da775c9c5335571dcdf21ac58f82c8bdc42c20b55b95",
-      "sha256": "74022d475a7414afd804c27d783722c61de1b2d38486c4ab98f4a4b39c8bfa61"
+      "sourceBytes": 4308,
+      "bytes": 2464,
+      "sourceSha256": "2624cb2084e33ad16cba3daf3a86a57512bc61d14e1b086a1a54a0ca1b46f8be",
+      "sha256": "448a188ca0b62a58dc0602deb6f656cd1f6cbe38b010a75782d267465393da78"
     },
     {
       "source": "decor-assets/native/nx_holly_broom_fence.png",
       "file": "runtime-webp/decor-assets/native/nx_holly_broom_fence.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 2948,
-      "bytes": 1704,
-      "sourceSha256": "6cb596e84204690f075dde63e7b7b6630948ca7f254aff67f2d66501695c36e0",
-      "sha256": "892ae46d75f1db2d86ac0e5acb577878ae7ed439d61b6918b3abc3d5602ac68a"
+      "sourceBytes": 4209,
+      "bytes": 2454,
+      "sourceSha256": "fbff020877d56d067fbf0795f3d8b07a1a3a8b64ca6b80f3c657b452025b0c5e",
+      "sha256": "fe0d92d60fae449a659d1dcc64a4ab2c2f0b339818e59105a01b408c27658285"
     },
     {
       "source": "decor-assets/native/nx_ice_wand_star_atlas.png",
@@ -10486,60 +10486,60 @@
       "file": "runtime-webp/decor-assets/native/nx_wizard_chess_christmas_atlas.webp",
       "width": 192,
       "height": 448,
-      "sourceBytes": 9695,
-      "bytes": 6246,
-      "sourceSha256": "f97d4dcb7ef9209fa056eedf0824712c9b8864ee99ddb7867126a0174d895d22",
-      "sha256": "9b91dcaf2c3a0ddef829e56a1a6c86a27f1452ada7bbfea1debcccb40cbd552a"
+      "sourceBytes": 11901,
+      "bytes": 6986,
+      "sourceSha256": "9c243efe31ea6214f5329fec7b94689d84246e03228d9573369b6db81a9bc54b",
+      "sha256": "9455f4a332a638ae8754c8ac7b0acdd811979307a9e40c5af1b6035c6b35ace9"
     },
     {
       "source": "decor-assets/native/nx_wizard_chess_christmas_right.png",
       "file": "runtime-webp/decor-assets/native/nx_wizard_chess_christmas_right.webp",
       "width": 96,
       "height": 224,
-      "sourceBytes": 2830,
-      "bytes": 1720,
-      "sourceSha256": "431c4ad65444ab29dd78dc2be20b21c26dc621ae23fd5ccd20bc983679c0d35d",
-      "sha256": "f647ed9e8cfa4b653e5dc55d31f6b052d6948a72d5b69808a2de137c6b8910e4"
+      "sourceBytes": 3193,
+      "bytes": 1854,
+      "sourceSha256": "a48140e925a599d7404d395b1ee9ccbe926d66a188ffa7babeb37251ccd0b853",
+      "sha256": "23d536ec3a69208f4a4ae2fa9237351090f443b7ae6de3f35549754076e41d76"
     },
     {
       "source": "decor-assets/native/nx_wizard_chess_christmas.png",
       "file": "runtime-webp/decor-assets/native/nx_wizard_chess_christmas.webp",
       "width": 96,
       "height": 224,
-      "sourceBytes": 2836,
-      "bytes": 1712,
-      "sourceSha256": "894dd47d81c34c17951b0c5972015b2071331cb06aefff3775553d80ca5836f0",
-      "sha256": "cdfcc21151f374605588af81c330e751ce48ebc53936b8fef8e8d273eb5433be"
+      "sourceBytes": 3232,
+      "bytes": 1906,
+      "sourceSha256": "cf204412c8c7d3a4c7f2f19c7deb6f33c232b1c1307f2c95fc5dd6904278765b",
+      "sha256": "637ebf775d2a5d66f5740be36d5c8bedf9de60aa6d114acb345934a08bd20392"
     },
     {
       "source": "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
       "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo_atlas.webp",
       "width": 320,
       "height": 512,
-      "sourceBytes": 31838,
-      "bytes": 21620,
-      "sourceSha256": "03c09ca0a62f4ed5dc624538e6fbc4ba312f82d2e187c16640cc2523ed867162",
-      "sha256": "b0c5a35ceeb876d6080a23147e4b18c78c40670b49871d8baf4d89256a1e6566"
+      "sourceBytes": 34426,
+      "bytes": 21960,
+      "sourceSha256": "fd916a2e379ad7c074c36167c3700d1853dc2904845cc70af75a432f18b4c290",
+      "sha256": "1ded0d68519ab313dc65149dda62f74e6c039a7e639983585147a3f210b92102"
     },
     {
       "source": "decor-assets/native/nx_yule_dance_gazebo_right.png",
       "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo_right.webp",
       "width": 160,
       "height": 256,
-      "sourceBytes": 8542,
-      "bytes": 5682,
-      "sourceSha256": "a4e91408d64be87f1736bc3a5687771dda329d729879a6711f18b1ad79dd8164",
-      "sha256": "55272f6854c6da45f872899e22fbd46c1e3be2a1c0359ca57d9cce009d7d051a"
+      "sourceBytes": 8931,
+      "bytes": 5622,
+      "sourceSha256": "d385aa2d6a9a817500f206ab29002d7fb225ae49e580ef5a5d94e8166d2b7fc6",
+      "sha256": "60ce87d2b6cdb881cd005647544323cd2f5bdc7a54713598196d0c7e0399177e"
     },
     {
       "source": "decor-assets/native/nx_yule_dance_gazebo.png",
       "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo.webp",
       "width": 160,
       "height": 256,
-      "sourceBytes": 8609,
-      "bytes": 5616,
-      "sourceSha256": "940fc179470d4261a1ae5ed574d3a2397c7342f33cc830a339eb5d672fb9ac8f",
-      "sha256": "391603a6cd3dccae94061b74136a25ac66b6f24ea1f1b96004e6fa677c7e0c8b"
+      "sourceBytes": 8957,
+      "bytes": 5646,
+      "sourceSha256": "19e27ae1da7eb66e70d344728ed4cc6f0cebdbf0c5f3dc3c74e61c87af3ad9a0",
+      "sha256": "eb636011dd172b6fa8264a55314633e729ec8705ca77a858ee51ce254b307dc5"
     },
     {
       "source": "decor-assets/native/owl_post_f0.png",
@@ -15927,9 +15927,9 @@
   "totals": {
     "converted": 1586,
     "existingWebp": 8,
-    "originalBytes": 6324103,
-    "webpBytes": 4150576,
-    "savedBytes": 2173527,
-    "savedPercent": 34.37
+    "originalBytes": 6344978,
+    "webpBytes": 4160032,
+    "savedBytes": 2184946,
+    "savedPercent": 34.44
   }
 }

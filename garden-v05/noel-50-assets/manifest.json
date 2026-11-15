@@ -302,9 +302,10 @@
       "season": "xmas",
       "group": "Giáng sinh",
       "lore": "Lều vải vá từ áo gối cũ, cửa thấp, dây vớ len và đèn lồng ấm cho gia tinh đón Noel.",
-      "master": "noel-50-assets/masters/nx_elf_yule_tent.png",
-      "masterSha256": "2b8594bca9141ee2cca0a3e724bce747176eef45a57fe16f8c95bb3925f3fcf8",
-      "scale": 0.20761245674740483,
+      "master": "noel-50-assets/masters-locked/nx_elf_yule_tent-solid.png",
+      "cameraAcceptance": "filled coordinate block-in redraw; actual native edge checks pending",
+      "masterSha256": "ac97e37b7a2e770c218f71e2ba5e508df177eb34af05f533a44b13df4bec8304",
+      "scale": 0.25862068965517243,
       "frames": [
         {
           "file": "noel-50-assets/native/nx_elf_yule_tent/frame-01.png",
@@ -313,17 +314,17 @@
           "pivotX": 64,
           "pivotY": 240,
           "bounds": {
-            "x": 4,
-            "y": 149,
-            "w": 120,
-            "h": 91
+            "x": 5,
+            "y": 122,
+            "w": 119,
+            "h": 118
           },
-          "sha256": "66f6c6f30e3cfff2a603526a6b74b7d4348be950a651e463869fff1cac490aaa",
+          "sha256": "82926b3c3e60532e59b068004f5729d2102348263095bf69289a7cc182c6fe17",
           "sourceRect": {
-            "x": 95,
-            "y": 31,
-            "w": 578,
-            "h": 440
+            "x": 38,
+            "y": 237,
+            "w": 459,
+            "h": 457
           }
         },
         {
@@ -333,17 +334,17 @@
           "pivotX": 64,
           "pivotY": 240,
           "bounds": {
-            "x": 4,
-            "y": 149,
-            "w": 120,
-            "h": 91
+            "x": 5,
+            "y": 122,
+            "w": 118,
+            "h": 118
           },
-          "sha256": "265e98219cea5d00c677a0c9e9e92469eb26b8f3873704b8d64ca2da75a4f324",
+          "sha256": "28748e3769160051d302927784e45459e1f440ef36c9c0dfc5b9b7f5e6674531",
           "sourceRect": {
-            "x": 864,
-            "y": 31,
-            "w": 577,
-            "h": 440
+            "x": 577,
+            "y": 237,
+            "w": 458,
+            "h": 457
           }
         },
         {
@@ -354,16 +355,16 @@
           "pivotY": 240,
           "bounds": {
             "x": 4,
-            "y": 148,
+            "y": 123,
             "w": 120,
-            "h": 92
+            "h": 117
           },
-          "sha256": "212b60a0661435be42a9b2f7e37e44f4d2bc9facf8a114ae84196c3c57cb43ab",
+          "sha256": "a2231ee50dbe3db1afc4accd34f4e9889f673b0ef4e8fbd5d7b321666220319c",
           "sourceRect": {
-            "x": 95,
-            "y": 544,
-            "w": 577,
-            "h": 444
+            "x": 31,
+            "y": 939,
+            "w": 463,
+            "h": 454
           }
         },
         {
@@ -374,22 +375,22 @@
           "pivotY": 240,
           "bounds": {
             "x": 4,
-            "y": 148,
+            "y": 123,
             "w": 120,
-            "h": 92
+            "h": 117
           },
-          "sha256": "e40ebe669c12b6e30c5d9c1b87f1ede8e34ba571a8782c7de29e820e78c7c70d",
+          "sha256": "1e6a85fea447dd07f7d846d2ab23fa8603467fee34eaba723279912459b0eeab",
           "sourceRect": {
-            "x": 864,
-            "y": 544,
-            "w": 577,
-            "h": 444
+            "x": 570,
+            "y": 939,
+            "w": 464,
+            "h": 454
           }
         }
       ],
       "atlas": {
         "file": "decor-assets/native/nx_elf_yule_tent_atlas.png",
-        "sha256": "861d7fad3547bf82cace1f9e5899e7f6c09db1426c759c0479cd93416efad45c",
+        "sha256": "a09604197415ccba7526b833d325ed09df95f4e4789f0f00ed7e01d33e3a2e0c",
         "width": 256,
         "height": 512,
         "frames": [
@@ -400,10 +401,10 @@
             "pivotX": 64,
             "pivotY": 240,
             "bounds": {
-              "x": 4,
-              "y": 149,
-              "w": 120,
-              "h": 91
+              "x": 5,
+              "y": 122,
+              "w": 119,
+              "h": 118
             },
             "atlasRect": {
               "x": 0,
@@ -419,10 +420,10 @@
             "pivotX": 64,
             "pivotY": 240,
             "bounds": {
-              "x": 4,
-              "y": 149,
-              "w": 120,
-              "h": 91
+              "x": 5,
+              "y": 122,
+              "w": 118,
+              "h": 118
             },
             "atlasRect": {
               "x": 128,
@@ -439,9 +440,9 @@
             "pivotY": 240,
             "bounds": {
               "x": 4,
-              "y": 148,
+              "y": 123,
               "w": 120,
-              "h": 92
+              "h": 117
             },
             "atlasRect": {
               "x": 0,
@@ -458,9 +459,9 @@
             "pivotY": 240,
             "bounds": {
               "x": 4,
-              "y": 148,
+              "y": 123,
               "w": 120,
-              "h": 92
+              "h": 117
             },
             "atlasRect": {
               "x": 128,
@@ -493,6 +494,7 @@
           "default",
           "right"
         ],
+        "artRevision": "coordinate-v3",
         "frames": [
           "decor-assets/native/nx_elf_yule_tent_atlas.png",
           "decor-assets/native/nx_elf_yule_tent_atlas.png",
@@ -564,16 +566,16 @@
           260
         ],
         "bounds": {
-          "x": 4,
-          "y": 149,
-          "w": 120,
-          "h": 91
+          "x": 5,
+          "y": 122,
+          "w": 119,
+          "h": 118
         },
         "rightBounds": {
           "x": 4,
-          "y": 148,
+          "y": 123,
           "w": 120,
-          "h": 92
+          "h": 117
         },
         "framesIdentical": false
       }
@@ -6064,9 +6066,10 @@
       "group": "Giáng sinh",
       "lore": "Hàng rào chổi lá nhựa ruồi dành cho khu vườn Giáng sinh của phù thủy.",
       "maxInkWidth": 100,
-      "master": "noel-50-assets/masters/nx_holly_broom_fence.png",
-      "masterSha256": "e07b00f7c006fc36da9ff8dafb9ef2f52092c83d007611b2428fb08ef8c877f7",
-      "scale": 0.19342359767891681,
+      "master": "noel-50-assets/masters-locked/nx_holly_broom_fence-solid.png",
+      "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required",
+      "masterSha256": "3fcc0c3a707de66fad6a81ae3e2b2f49c2912c34159075548bad813e38d78909",
+      "scale": 0.3194888178913738,
       "frames": [
         {
           "file": "noel-50-assets/native/nx_holly_broom_fence/frame-01.png",
@@ -6075,17 +6078,17 @@
           "pivotX": 64,
           "pivotY": 240,
           "bounds": {
-            "x": 15,
-            "y": 149,
-            "w": 98,
-            "h": 91
+            "x": 14,
+            "y": 122,
+            "w": 100,
+            "h": 118
           },
-          "sha256": "6cb596e84204690f075dde63e7b7b6630948ca7f254aff67f2d66501695c36e0",
+          "sha256": "fbff020877d56d067fbf0795f3d8b07a1a3a8b64ca6b80f3c657b452025b0c5e",
           "sourceRect": {
             "x": 131,
-            "y": 15,
-            "w": 506,
-            "h": 470
+            "y": 265,
+            "w": 313,
+            "h": 369
           }
         },
         {
@@ -6095,17 +6098,17 @@
           "pivotX": 64,
           "pivotY": 240,
           "bounds": {
-            "x": 15,
-            "y": 149,
-            "w": 98,
-            "h": 91
+            "x": 14,
+            "y": 122,
+            "w": 100,
+            "h": 118
           },
-          "sha256": "a1e6ca03f6968f56db949c8d58136c50b24c5f7599d1bdc13c30d86e334c64a9",
+          "sha256": "02ddcc5d5c7cf0dbcac79d8aff8bb086b8b2a22f1751921795b0627c446aaea9",
           "sourceRect": {
-            "x": 900,
-            "y": 15,
-            "w": 505,
-            "h": 470
+            "x": 692,
+            "y": 265,
+            "w": 313,
+            "h": 369
           }
         },
         {
@@ -6115,17 +6118,17 @@
           "pivotX": 64,
           "pivotY": 240,
           "bounds": {
-            "x": 15,
-            "y": 149,
-            "w": 98,
-            "h": 91
+            "x": 14,
+            "y": 121,
+            "w": 100,
+            "h": 119
           },
-          "sha256": "4dc7bd5b6109de9f8ad5da775c9c5335571dcdf21ac58f82c8bdc42c20b55b95",
+          "sha256": "2624cb2084e33ad16cba3daf3a86a57512bc61d14e1b086a1a54a0ca1b46f8be",
           "sourceRect": {
-            "x": 122,
-            "y": 523,
-            "w": 508,
-            "h": 473
+            "x": 130,
+            "y": 942,
+            "w": 312,
+            "h": 371
           }
         },
         {
@@ -6136,22 +6139,22 @@
           "pivotY": 240,
           "bounds": {
             "x": 14,
-            "y": 149,
+            "y": 121,
             "w": 100,
-            "h": 91
+            "h": 119
           },
-          "sha256": "c8b3dbcb05812bc269d6f242f5087376deb83d32f13f399f72e28be8ed94e927",
+          "sha256": "c00654b336aa15d46e4a10e1d2cf0b9d45f37c475786a3e1d105b7823029984e",
           "sourceRect": {
-            "x": 881,
-            "y": 523,
-            "w": 517,
-            "h": 473
+            "x": 692,
+            "y": 942,
+            "w": 312,
+            "h": 371
           }
         }
       ],
       "atlas": {
         "file": "decor-assets/native/nx_holly_broom_fence_atlas.png",
-        "sha256": "66a78588e959cea6899bcb281ca92fbb6f2188dc0fb42029268d0d0770e3c6b8",
+        "sha256": "d3212c45e962fea3bd4002df1348c8470364aa98fd037abd65c69b7165babbb7",
         "width": 256,
         "height": 512,
         "frames": [
@@ -6162,10 +6165,10 @@
             "pivotX": 64,
             "pivotY": 240,
             "bounds": {
-              "x": 15,
-              "y": 149,
-              "w": 98,
-              "h": 91
+              "x": 14,
+              "y": 122,
+              "w": 100,
+              "h": 118
             },
             "atlasRect": {
               "x": 0,
@@ -6181,10 +6184,10 @@
             "pivotX": 64,
             "pivotY": 240,
             "bounds": {
-              "x": 15,
-              "y": 149,
-              "w": 98,
-              "h": 91
+              "x": 14,
+              "y": 122,
+              "w": 100,
+              "h": 118
             },
             "atlasRect": {
               "x": 128,
@@ -6200,10 +6203,10 @@
             "pivotX": 64,
             "pivotY": 240,
             "bounds": {
-              "x": 15,
-              "y": 149,
-              "w": 98,
-              "h": 91
+              "x": 14,
+              "y": 121,
+              "w": 100,
+              "h": 119
             },
             "atlasRect": {
               "x": 0,
@@ -6220,9 +6223,9 @@
             "pivotY": 240,
             "bounds": {
               "x": 14,
-              "y": 149,
+              "y": 121,
               "w": 100,
-              "h": 91
+              "h": 119
             },
             "atlasRect": {
               "x": 128,
@@ -6255,6 +6258,7 @@
           "default",
           "right"
         ],
+        "artRevision": "coordinate-v3",
         "frames": [
           "decor-assets/native/nx_holly_broom_fence_atlas.png",
           "decor-assets/native/nx_holly_broom_fence_atlas.png",
@@ -6326,16 +6330,16 @@
           260
         ],
         "bounds": {
-          "x": 15,
-          "y": 149,
-          "w": 98,
-          "h": 91
+          "x": 14,
+          "y": 122,
+          "w": 100,
+          "h": 118
         },
         "rightBounds": {
           "x": 14,
-          "y": 149,
+          "y": 121,
           "w": 100,
-          "h": 91
+          "h": 119
         },
         "framesIdentical": false
       }
@@ -7792,9 +7796,10 @@
       "season": "xmas",
       "group": "Giáng sinh",
       "lore": "Bàn cờ đêm Giáng sinh dành cho khu vườn Giáng sinh của phù thủy.",
-      "master": "noel-50-assets/masters/nx_wizard_chess_christmas.png",
-      "masterSha256": "f9039b3b38df17d94557e9741d921f86e588bd6379c9fd18851acd045b252707",
-      "scale": 0.13601236476043277,
+      "master": "noel-50-assets/masters-locked/nx_wizard_chess_christmas-solid.png",
+      "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required",
+      "masterSha256": "7a7935cf14f494881ca9f951de5779f452d4a96628fc935a6767206c6c81c7d4",
+      "scale": 0.20137299771167047,
       "frames": [
         {
           "file": "noel-50-assets/native/nx_wizard_chess_christmas/frame-01.png",
@@ -7803,17 +7808,17 @@
           "pivotX": 48,
           "pivotY": 208,
           "bounds": {
-            "x": 4,
-            "y": 142,
-            "w": 88,
-            "h": 66
+            "x": 5,
+            "y": 118,
+            "w": 87,
+            "h": 90
           },
-          "sha256": "894dd47d81c34c17951b0c5972015b2071331cb06aefff3775553d80ca5836f0",
+          "sha256": "cf204412c8c7d3a4c7f2f19c7deb6f33c232b1c1307f2c95fc5dd6904278765b",
           "sourceRect": {
-            "x": 55,
-            "y": 8,
-            "w": 644,
-            "h": 485
+            "x": 64,
+            "y": 179,
+            "w": 433,
+            "h": 448
           }
         },
         {
@@ -7824,16 +7829,16 @@
           "pivotY": 208,
           "bounds": {
             "x": 4,
-            "y": 142,
+            "y": 118,
             "w": 88,
-            "h": 66
+            "h": 90
           },
-          "sha256": "3a0dc7cf524e67a330dff98a5c1a1edcdf5ac8e6caa51b641a166f5a0bfadeb9",
+          "sha256": "f3dcceb36ecd337d0aa641925c3845ca6e7c0d2c8ad32dacc5df48d7860cde7a",
           "sourceRect": {
-            "x": 823,
-            "y": 8,
-            "w": 646,
-            "h": 485
+            "x": 617,
+            "y": 180,
+            "w": 435,
+            "h": 448
           }
         },
         {
@@ -7843,17 +7848,17 @@
           "pivotX": 48,
           "pivotY": 208,
           "bounds": {
-            "x": 4,
-            "y": 142,
-            "w": 88,
-            "h": 66
+            "x": 5,
+            "y": 117,
+            "w": 87,
+            "h": 91
           },
-          "sha256": "431c4ad65444ab29dd78dc2be20b21c26dc621ae23fd5ccd20bc983679c0d35d",
+          "sha256": "a48140e925a599d7404d395b1ee9ccbe926d66a188ffa7babeb37251ccd0b853",
           "sourceRect": {
-            "x": 67,
-            "y": 518,
-            "w": 647,
-            "h": 488
+            "x": 65,
+            "y": 840,
+            "w": 432,
+            "h": 454
           }
         },
         {
@@ -7864,22 +7869,22 @@
           "pivotY": 208,
           "bounds": {
             "x": 4,
-            "y": 142,
+            "y": 117,
             "w": 88,
-            "h": 66
+            "h": 91
           },
-          "sha256": "59124026c74c91c05e88ce395fc88e7e28c13675ff34cae57675954367f83d71",
+          "sha256": "1b69286c00ee035c503747f5e264c67cbbac8f30df589622a1219e3b33bd3c05",
           "sourceRect": {
-            "x": 836,
-            "y": 518,
-            "w": 646,
-            "h": 488
+            "x": 615,
+            "y": 840,
+            "w": 437,
+            "h": 454
           }
         }
       ],
       "atlas": {
         "file": "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
-        "sha256": "f97d4dcb7ef9209fa056eedf0824712c9b8864ee99ddb7867126a0174d895d22",
+        "sha256": "9c243efe31ea6214f5329fec7b94689d84246e03228d9573369b6db81a9bc54b",
         "width": 192,
         "height": 448,
         "frames": [
@@ -7890,10 +7895,10 @@
             "pivotX": 48,
             "pivotY": 208,
             "bounds": {
-              "x": 4,
-              "y": 142,
-              "w": 88,
-              "h": 66
+              "x": 5,
+              "y": 118,
+              "w": 87,
+              "h": 90
             },
             "atlasRect": {
               "x": 0,
@@ -7910,9 +7915,9 @@
             "pivotY": 208,
             "bounds": {
               "x": 4,
-              "y": 142,
+              "y": 118,
               "w": 88,
-              "h": 66
+              "h": 90
             },
             "atlasRect": {
               "x": 96,
@@ -7928,10 +7933,10 @@
             "pivotX": 48,
             "pivotY": 208,
             "bounds": {
-              "x": 4,
-              "y": 142,
-              "w": 88,
-              "h": 66
+              "x": 5,
+              "y": 117,
+              "w": 87,
+              "h": 91
             },
             "atlasRect": {
               "x": 0,
@@ -7948,9 +7953,9 @@
             "pivotY": 208,
             "bounds": {
               "x": 4,
-              "y": 142,
+              "y": 117,
               "w": 88,
-              "h": 66
+              "h": 91
             },
             "atlasRect": {
               "x": 96,
@@ -7983,6 +7988,7 @@
           "default",
           "right"
         ],
+        "artRevision": "coordinate-v3",
         "frames": [
           "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
           "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
@@ -8055,15 +8061,15 @@
         ],
         "bounds": {
           "x": 4,
-          "y": 142,
+          "y": 118,
           "w": 88,
-          "h": 66
+          "h": 90
         },
         "rightBounds": {
           "x": 4,
-          "y": 142,
+          "y": 117,
           "w": 88,
-          "h": 66
+          "h": 91
         },
         "framesIdentical": false
       }
@@ -12112,9 +12118,10 @@
       "season": "xmas",
       "group": "Giáng sinh",
       "lore": "Chòi Dạ vũ mùa đông dành cho khu vườn Giáng sinh của phù thủy.",
-      "master": "noel-50-assets/masters/nx_yule_dance_gazebo.png",
-      "masterSha256": "4d470624fb5303c7f06b9e7d6f7a360d3965e3a67da1ac10ebc7c96af68f5b1c",
-      "scale": 0.37438423645320196,
+      "master": "noel-50-assets/masters-locked/nx_yule_dance_gazebo-solid.png",
+      "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required",
+      "masterSha256": "904841c7e3ac83b68c59f82c7958bdf6afcb7db4eda0e1df93aa91bbe14027eb",
+      "scale": 0.3318777292576419,
       "frames": [
         {
           "file": "noel-50-assets/native/nx_yule_dance_gazebo/frame-01.png",
@@ -12123,17 +12130,17 @@
           "pivotX": 80,
           "pivotY": 240,
           "bounds": {
-            "x": 4,
-            "y": 59,
-            "w": 152,
-            "h": 181
+            "x": 5,
+            "y": 35,
+            "w": 150,
+            "h": 205
           },
-          "sha256": "940fc179470d4261a1ae5ed574d3a2397c7342f33cc830a339eb5d672fb9ac8f",
+          "sha256": "19e27ae1da7eb66e70d344728ed4cc6f0cebdbf0c5f3dc3c74e61c87af3ad9a0",
           "sourceRect": {
-            "x": 191,
-            "y": 9,
-            "w": 406,
-            "h": 484
+            "x": 26,
+            "y": 107,
+            "w": 453,
+            "h": 617
           }
         },
         {
@@ -12144,16 +12151,16 @@
           "pivotY": 240,
           "bounds": {
             "x": 4,
-            "y": 59,
+            "y": 35,
             "w": 152,
-            "h": 181
+            "h": 205
           },
-          "sha256": "e9be5ba21f5c526e955ad6e3a7601e9418c35a2a9eb8d70872b30dda4cd1ba73",
+          "sha256": "fc34c3339980dd3d255e4f881777c385475add32370fb7746d31860548851806",
           "sourceRect": {
-            "x": 928,
-            "y": 9,
-            "w": 405,
-            "h": 484
+            "x": 535,
+            "y": 107,
+            "w": 458,
+            "h": 617
           }
         },
         {
@@ -12163,17 +12170,17 @@
           "pivotX": 80,
           "pivotY": 240,
           "bounds": {
-            "x": 4,
-            "y": 59,
-            "w": 152,
-            "h": 181
+            "x": 6,
+            "y": 37,
+            "w": 149,
+            "h": 203
           },
-          "sha256": "a4e91408d64be87f1736bc3a5687771dda329d729879a6711f18b1ad79dd8164",
+          "sha256": "d385aa2d6a9a817500f206ab29002d7fb225ae49e580ef5a5d94e8166d2b7fc6",
           "sourceRect": {
-            "x": 201,
-            "y": 521,
-            "w": 405,
-            "h": 483
+            "x": 29,
+            "y": 859,
+            "w": 449,
+            "h": 613
           }
         },
         {
@@ -12184,22 +12191,22 @@
           "pivotY": 240,
           "bounds": {
             "x": 4,
-            "y": 59,
+            "y": 38,
             "w": 152,
-            "h": 181
+            "h": 202
           },
-          "sha256": "ee09d4db1d450cd790aec8e9dfa3c5f9023583f50c5938321b0f26597e5b7f5f",
+          "sha256": "208849a8f4f5d19bfe0969c1ca94d860fdea1933fb99d419ec82e5952e398b35",
           "sourceRect": {
-            "x": 937,
-            "y": 521,
-            "w": 406,
-            "h": 483
+            "x": 535,
+            "y": 863,
+            "w": 458,
+            "h": 609
           }
         }
       ],
       "atlas": {
         "file": "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
-        "sha256": "03c09ca0a62f4ed5dc624538e6fbc4ba312f82d2e187c16640cc2523ed867162",
+        "sha256": "fd916a2e379ad7c074c36167c3700d1853dc2904845cc70af75a432f18b4c290",
         "width": 320,
         "height": 512,
         "frames": [
@@ -12210,10 +12217,10 @@
             "pivotX": 80,
             "pivotY": 240,
             "bounds": {
-              "x": 4,
-              "y": 59,
-              "w": 152,
-              "h": 181
+              "x": 5,
+              "y": 35,
+              "w": 150,
+              "h": 205
             },
             "atlasRect": {
               "x": 0,
@@ -12230,9 +12237,9 @@
             "pivotY": 240,
             "bounds": {
               "x": 4,
-              "y": 59,
+              "y": 35,
               "w": 152,
-              "h": 181
+              "h": 205
             },
             "atlasRect": {
               "x": 160,
@@ -12248,10 +12255,10 @@
             "pivotX": 80,
             "pivotY": 240,
             "bounds": {
-              "x": 4,
-              "y": 59,
-              "w": 152,
-              "h": 181
+              "x": 6,
+              "y": 37,
+              "w": 149,
+              "h": 203
             },
             "atlasRect": {
               "x": 0,
@@ -12268,9 +12275,9 @@
             "pivotY": 240,
             "bounds": {
               "x": 4,
-              "y": 59,
+              "y": 38,
               "w": 152,
-              "h": 181
+              "h": 202
             },
             "atlasRect": {
               "x": 160,
@@ -12303,6 +12310,7 @@
           "default",
           "right"
         ],
+        "artRevision": "coordinate-v3",
         "frames": [
           "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
           "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
@@ -12375,15 +12383,15 @@
         ],
         "bounds": {
           "x": 4,
-          "y": 59,
+          "y": 35,
           "w": 152,
-          "h": 181
+          "h": 205
         },
         "rightBounds": {
           "x": 4,
-          "y": 59,
+          "y": 37,
           "w": 152,
-          "h": 181
+          "h": 203
         },
         "framesIdentical": false
       }
@@ -14128,9 +14136,10 @@
       "season": "xmas",
       "group": "Giáng sinh",
       "lore": "Rương quà bác Hagrid dành cho khu vườn Giáng sinh của phù thủy.",
-      "master": "noel-50-assets/masters/nx_hagrid_gift_crate.png",
-      "masterSha256": "15619d1529d1708df4b56a213f4435dab540c327bfddd6c5131894e9b78e2384",
-      "scale": 0.16698292220113853,
+      "master": "noel-50-assets/masters-locked/nx_hagrid_gift_crate-solid.png",
+      "cameraAcceptance": "filled coordinate block-in redraw; actual native edge checks pending",
+      "masterSha256": "10f0c6d776867809cce1de98577f2824d6c85ee6ad0b23609698ad244ffd73e9",
+      "scale": 0.19469026548672566,
       "frames": [
         {
           "file": "noel-50-assets/native/nx_hagrid_gift_crate/frame-01.png",
@@ -14140,16 +14149,16 @@
           "pivotY": 208,
           "bounds": {
             "x": 4,
-            "y": 135,
+            "y": 111,
             "w": 88,
-            "h": 73
+            "h": 97
           },
-          "sha256": "f4b78401408defa96a90b2e4339abbd28a3765bc6d7b229a6edfe6c190e6abe5",
+          "sha256": "e4a6155836e74138c03765b5bc9876549956fc811ec06ec6557f70585e45a75c",
           "sourceRect": {
-            "x": 143,
-            "y": 44,
-            "w": 526,
-            "h": 440
+            "x": 88,
+            "y": 74,
+            "w": 452,
+            "h": 499
           }
         },
         {
@@ -14160,16 +14169,16 @@
           "pivotY": 208,
           "bounds": {
             "x": 4,
-            "y": 135,
+            "y": 111,
             "w": 88,
-            "h": 73
+            "h": 97
           },
-          "sha256": "39783aca7ac2b2ab4f906fa717532d38bb3aa662bf25dc6e5d8a644b7bff27a3",
+          "sha256": "48dc6b72ce24d1bc6255a2972a056ae2a01f0bcd0ab71676902dc6134b171de6",
           "sourceRect": {
-            "x": 871,
-            "y": 44,
-            "w": 526,
-            "h": 440
+            "x": 715,
+            "y": 74,
+            "w": 452,
+            "h": 499
           }
         },
         {
@@ -14180,16 +14189,16 @@
           "pivotY": 208,
           "bounds": {
             "x": 4,
-            "y": 133,
+            "y": 109,
             "w": 88,
-            "h": 75
+            "h": 99
           },
-          "sha256": "15c79e04b70f97d13dc11930aa86bb23169db4f7befa08f2d1de24f4ab454625",
+          "sha256": "1174233ac38439104c1aa085f8d1fb180a667a90a4bcb11a4ed80fbaf2f9cf42",
           "sourceRect": {
-            "x": 142,
-            "y": 543,
-            "w": 526,
-            "h": 447
+            "x": 88,
+            "y": 695,
+            "w": 451,
+            "h": 507
           }
         },
         {
@@ -14200,22 +14209,22 @@
           "pivotY": 208,
           "bounds": {
             "x": 4,
-            "y": 133,
+            "y": 109,
             "w": 88,
-            "h": 75
+            "h": 99
           },
-          "sha256": "2235bc194a41e8ce1d0435d3c180c3a72b62aaac9ee96a62d995637c50428651",
+          "sha256": "a742dc0b3760e22b6abac27717929e4db88c0d427bf4e2c81e69e907160ec842",
           "sourceRect": {
-            "x": 870,
-            "y": 543,
-            "w": 527,
-            "h": 448
+            "x": 715,
+            "y": 695,
+            "w": 451,
+            "h": 507
           }
         }
       ],
       "atlas": {
         "file": "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
-        "sha256": "04c80ec194f4d778a12ff3fab32e158fdc749cff36412d129e13edf445d8d8fe",
+        "sha256": "19679538414e36ca95283b84702b7a01c5481af2bd4465702b398d11f93772b8",
         "width": 192,
         "height": 448,
         "frames": [
@@ -14227,9 +14236,9 @@
             "pivotY": 208,
             "bounds": {
               "x": 4,
-              "y": 135,
+              "y": 111,
               "w": 88,
-              "h": 73
+              "h": 97
             },
             "atlasRect": {
               "x": 0,
@@ -14246,9 +14255,9 @@
             "pivotY": 208,
             "bounds": {
               "x": 4,
-              "y": 135,
+              "y": 111,
               "w": 88,
-              "h": 73
+              "h": 97
             },
             "atlasRect": {
               "x": 96,
@@ -14265,9 +14274,9 @@
             "pivotY": 208,
             "bounds": {
               "x": 4,
-              "y": 133,
+              "y": 109,
               "w": 88,
-              "h": 75
+              "h": 99
             },
             "atlasRect": {
               "x": 0,
@@ -14284,9 +14293,9 @@
             "pivotY": 208,
             "bounds": {
               "x": 4,
-              "y": 133,
+              "y": 109,
               "w": 88,
-              "h": 75
+              "h": 99
             },
             "atlasRect": {
               "x": 96,
@@ -14319,6 +14328,7 @@
           "default",
           "right"
         ],
+        "artRevision": "coordinate-v3",
         "frames": [
           "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
           "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
@@ -14391,15 +14401,15 @@
         ],
         "bounds": {
           "x": 4,
-          "y": 135,
+          "y": 111,
           "w": 88,
-          "h": 73
+          "h": 97
         },
         "rightBounds": {
           "x": 4,
-          "y": 133,
+          "y": 109,
           "w": 88,
-          "h": 75
+          "h": 99
         },
         "framesIdentical": false
       }

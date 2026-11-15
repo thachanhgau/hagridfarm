@@ -15,7 +15,7 @@ const specs=await read('noel-50-assets/specs.json');
 const runtime=await read('decor-assets-manifest.json');
 const records=[];
 for(const item of specs){
- const master=`noel-50-assets/masters/${item.id}.png`,bytes=await fs.readFile(path.join(root,master));
+ const master=item.master??`noel-50-assets/masters/${item.id}.png`,bytes=await fs.readFile(path.join(root,master));
  const raw=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true});
  const poses=authoredCells(raw,[2,2]);
  const width=(item.footprint[0]+item.footprint[1])*32,maxHeight=Math.min(width*2,224);
@@ -32,6 +32,7 @@ for(const item of specs){
  const union=list=>{const x=Math.min(...list.map(f=>f.bounds.x)),y=Math.min(...list.map(f=>f.bounds.y));return {x,y,w:Math.max(...list.map(f=>f.bounds.x+f.bounds.w))-x,h:Math.max(...list.map(f=>f.bounds.y+f.bounds.h))-y};};
  const sprite={id:item.id,kind:'decor',collection:'festival',group:'Giáng sinh',label:item.label,storeItem:true,rotatable:true,
   ...spec,file,rightFile,footprintTiles:item.footprint,angles:['default','right'],
+  ...(item.master?.includes('-solid.png')?{artRevision:'coordinate-v3'}:{}),
   frames:Array(4).fill(atlas.file),rightFrames:Array(4).fill(atlas.file),
   atlasRects:[0,1,0,1].map(i=>atlas.frames[i].atlasRect),rightAtlasRects:[2,3,2,3].map(i=>atlas.frames[i].atlasRect),
   durations:[1100,260,900,260],bounds:union(frames.slice(0,2)),rightBounds:union(frames.slice(2)),

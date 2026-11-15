@@ -6815,6 +6815,7 @@
         "default",
         "right"
       ],
+      "artRevision": "coordinate-v3",
       "frames": [
         "decor-assets/native/nx_elf_yule_tent_atlas.png",
         "decor-assets/native/nx_elf_yule_tent_atlas.png",
@@ -6886,16 +6887,16 @@
         260
       ],
       "bounds": {
-        "x": 4,
-        "y": 149,
-        "w": 120,
-        "h": 91
+        "x": 5,
+        "y": 122,
+        "w": 119,
+        "h": 118
       },
       "rightBounds": {
         "x": 4,
-        "y": 148,
+        "y": 123,
         "w": 120,
-        "h": 92
+        "h": 117
       },
       "framesIdentical": false
     },
@@ -8935,6 +8936,7 @@
         "default",
         "right"
       ],
+      "artRevision": "coordinate-v3",
       "frames": [
         "decor-assets/native/nx_holly_broom_fence_atlas.png",
         "decor-assets/native/nx_holly_broom_fence_atlas.png",
@@ -9006,16 +9008,16 @@
         260
       ],
       "bounds": {
-        "x": 15,
-        "y": 149,
-        "w": 98,
-        "h": 91
+        "x": 14,
+        "y": 122,
+        "w": 100,
+        "h": 118
       },
       "rightBounds": {
         "x": 14,
-        "y": 149,
+        "y": 121,
         "w": 100,
-        "h": 91
+        "h": 119
       },
       "framesIdentical": false
     },
@@ -9571,6 +9573,7 @@
         "default",
         "right"
       ],
+      "artRevision": "coordinate-v3",
       "frames": [
         "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
         "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
@@ -9643,15 +9646,15 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 142,
+        "y": 118,
         "w": 88,
-        "h": 66
+        "h": 90
       },
       "rightBounds": {
         "x": 4,
-        "y": 142,
+        "y": 117,
         "w": 88,
-        "h": 66
+        "h": 91
       },
       "framesIdentical": false
     },
@@ -11161,6 +11164,7 @@
         "default",
         "right"
       ],
+      "artRevision": "coordinate-v3",
       "frames": [
         "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
         "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
@@ -11233,15 +11237,15 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 59,
+        "y": 35,
         "w": 152,
-        "h": 181
+        "h": 205
       },
       "rightBounds": {
         "x": 4,
-        "y": 59,
+        "y": 37,
         "w": 152,
-        "h": 181
+        "h": 203
       },
       "framesIdentical": false
     },
@@ -11903,6 +11907,7 @@
         "default",
         "right"
       ],
+      "artRevision": "coordinate-v3",
       "frames": [
         "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
         "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
@@ -11975,15 +11980,15 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 135,
+        "y": 111,
         "w": 88,
-        "h": 73
+        "h": 97
       },
       "rightBounds": {
         "x": 4,
-        "y": 133,
+        "y": 109,
         "w": 88,
-        "h": 75
+        "h": 99
       },
       "framesIdentical": false
     }

@@ -24,7 +24,7 @@ for(const item of specs){
   // Inset plane stays entirely inside the locked footprint, its front vertex at the foot pivot row.
   const inset=.82,baseCenterY=pivot[1]-(cols+rows)*ISO_TILE.height/4*inset;
   const base=corners.map(([x,y])=>[pivot[0]+(x-pivot[0])*inset,baseCenterY+(y-center[1])*inset]);
-  const roofHeight=Math.round(Math.min(width*(item.id==='nx_elf_yule_tent'?.55:1.1),160)),top=base.map(([x,y])=>[x,y-roofHeight]);
+  const roofHeight=Math.round(Math.min(width*(item.id==='nx_elf_yule_tent'?.55: ['nx_hagrid_gift_crate','nx_wizard_chess_christmas'].includes(item.id)?.4:1.1),160)),top=base.map(([x,y])=>[x,y-roofHeight]);
   const frontPair=facing==='default'?[3,2]:[1,2],backPair=facing==='default'?[0,1]:[0,3];
   const ridge=pair=>[(base[pair[0]][0]+base[pair[1]][0])/2,(base[pair[0]][1]+base[pair[1]][1])/2-roofHeight];
   const roofRidge=[ridge(backPair),ridge(frontPair)];
