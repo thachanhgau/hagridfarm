@@ -10,7 +10,9 @@
     "subject": "A freestanding holly wreath on a short timber stand, red berries, a golden winged Snitch tied in its center",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Vòng lá thông Snitch dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Vòng lá thông Snitch dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_snitch_wreath-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_elf_yule_tent",
@@ -25,7 +27,7 @@
     "group": "Giáng sinh",
     "lore": "Lều vải vá từ áo gối cũ, cửa thấp, dây vớ len và đèn lồng ấm cho gia tinh đón Noel.",
     "master": "noel-50-assets/masters-locked/nx_elf_yule_tent-solid.png",
-    "cameraAcceptance": "filled coordinate block-in redraw; actual native edge checks pending"
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_owl_parcel_roost",
@@ -38,7 +40,9 @@
     "subject": "A snowy owl perched above a rustic sorting rack of wrapped Christmas parcels, holly on the perch",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Trạm cú phát quà dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Trạm cú phát quà dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_owl_parcel_roost-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_hagrid_boot_planter",
@@ -51,7 +55,9 @@
     "subject": "One enormous worn gamekeeper leather boot used as a planter for a little fir sprig, red scarf bow and snow",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Ủng Hagrid trồng thông dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Ủng Hagrid trồng thông dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_hagrid_boot_planter-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_fang_biscuit_kennel",
@@ -64,7 +70,9 @@
     "subject": "A broad rustic dog kennel for Hagrid's boarhound Fang, snowy sloping roof, holly and a bowl of bone shaped Christmas biscuits, no dog",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Nhà Noel của Fang dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Nhà Noel của Fang dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_fang_biscuit_kennel-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_niffler_coin_snowglobe",
@@ -77,7 +85,9 @@
     "subject": "A glass Christmas snow globe on a carved wooden base, tiny decorative black niffler clutching golden coins inside",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Quả cầu tuyết Đào mỏ dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Quả cầu tuyết Đào mỏ dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_niffler_coin_snowglobe-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_bowtruckle_fir_perch",
@@ -90,7 +100,9 @@
     "subject": "A branching little fir perch sculpture with a twig-like green bowtruckle ornament, red wool ribbon, tiny baubles",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Giàn thông Que Xạo dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Giàn thông Que Xạo dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_bowtruckle_fir_perch-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_mooncalf_moon_lantern",
@@ -103,7 +115,9 @@
     "subject": "A crescent-moon brass lantern on a squat pedestal, mooncalf silhouette cutout, pine sprigs and a red ribbon",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Đèn trăng Mooncalf dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Đèn trăng Mooncalf dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_mooncalf_moon_lantern-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_puffskein_sock_basket",
@@ -116,7 +130,9 @@
     "subject": "A wicker basket of huge striped knitted Christmas stockings and one round golden puffskein plush toy",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Giỏ vớ Quái lùng nhùng dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Giỏ vớ Quái lùng nhùng dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_puffskein_sock_basket-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_hippogriff_gift_sleigh",
@@ -129,7 +145,17 @@
     "subject": "A wooden Christmas gift sleigh with a carved silver hippogriff figurehead, evergreen runners and wrapped parcels, no animals pulling it",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Xe quà Bằng-Mã dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Xe quà Bằng-Mã dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_hippogriff_gift_sleigh-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells",
+    "maxInkWidth": 104,
+    "nativeOffsetX": [
+      8,
+      8,
+      -8,
+      -8
+    ],
+    "anchorReason": "Native export centers the physical runners inside the unchanged 3×1 strip; retain authored camera geometry."
   },
   {
     "id": "nx_unicorn_ice_fountain",
@@ -142,7 +168,9 @@
     "subject": "A low frozen fountain topped with a carved ice unicorn bust, pine wreath, small icicles and pale gold ornaments",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Đài băng kỳ lân dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Đài băng kỳ lân dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_unicorn_ice_fountain-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_thestral_silver_bell",
@@ -155,7 +183,9 @@
     "subject": "A freestanding gothic silver bell with a tiny skeletal winged thestral sculpted on top, tied red ribbon and holly",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Chuông bạc Vong mã dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Chuông bạc Vong mã dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_thestral_silver_bell-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_fwooper_music_box",
@@ -168,7 +198,9 @@
     "subject": "An open hand-carved Christmas music box with a small decorative magical songbird and holly, warm honey colored wood and red plumage",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Hộp nhạc Fwooper dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Hộp nhạc Fwooper dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_fwooper_music_box-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_phoenix_candle_bough",
@@ -181,7 +213,9 @@
     "subject": "A branching brass candle stand shaped like a phoenix spreading wings, red and gold feathers, evergreen at the base",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Cành nến phượng hoàng dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Cành nến phượng hoàng dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_phoenix_candle_bough-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_norbert_egg_lantern",
@@ -195,7 +229,9 @@
     "season": "xmas",
     "group": "Giáng sinh",
     "lore": "Đèn trứng rồng Noel dành cho khu vườn Giáng sinh của phù thủy.",
-    "maxInkWidth": 50
+    "maxInkWidth": 50,
+    "master": "noel-50-assets/masters-locked/nx_norbert_egg_lantern-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_snowwizard_hat",
@@ -208,7 +244,9 @@
     "subject": "A cheerful snowman with a crooked wizard hat, twig wand, striped knitted scarf and tiny holly sprig, on a compact snow mound",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Người tuyết đội nón phù thủy dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Người tuyết đội nón phù thủy dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_snowwizard_hat-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_snow_owl_sculpture",
@@ -221,7 +259,9 @@
     "subject": "A snowy white owl carved entirely from packed snow, wearing a small red ribbon, seated on a low snow plinth with pine twigs",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Tượng cú tuyết mùa đông dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Tượng cú tuyết mùa đông dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_snow_owl_sculpture-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_snow_dragon_sculpture",
@@ -234,7 +274,9 @@
     "subject": "A curled friendly dragon sculpted from snow with folded wings, guarding one wrapped red Christmas gift",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Rồng tuyết giữ quà dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Rồng tuyết giữ quà dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_snow_dragon_sculpture-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_snow_hogwarts_castle",
@@ -247,7 +289,9 @@
     "subject": "A miniature wizarding castle built from snow, several crooked towers with red festive pennants and tiny warm windows, no real logo",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Lâu đài tuyết phép thuật dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Lâu đài tuyết phép thuật dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_snow_hogwarts_castle-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_ice_wand_star",
@@ -260,7 +304,9 @@
     "subject": "An ice sculpture of crossed wizard wands forming a pointed Christmas star on a compact stone pedestal, red ribbon",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Ngôi sao băng đũa phép dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Ngôi sao băng đũa phép dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_ice_wand_star-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_mistletoe_gate",
@@ -273,7 +319,17 @@
     "subject": "A rustic wooden garden gate arch draped in mistletoe and fir branches, brass bell at center, small red bows and snow caps",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Cổng tầm gửi Giáng sinh dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Cổng tầm gửi Giáng sinh dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_mistletoe_gate-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells",
+    "maxInkWidth": 88,
+    "nativeOffsetX": [
+      16,
+      16,
+      -16,
+      -16
+    ],
+    "anchorReason": "Ground-axis placement of the two upright supports inside the unchanged 3×1 strip; fixed pivot and unmodified diagonal camera."
   },
   {
     "id": "nx_holly_broom_fence",
@@ -287,9 +343,16 @@
     "season": "xmas",
     "group": "Giáng sinh",
     "lore": "Hàng rào chổi lá nhựa ruồi dành cho khu vườn Giáng sinh của phù thủy.",
-    "maxInkWidth": 100,
-    "master": "noel-50-assets/masters-locked/nx_holly_broom_fence-solid.png",
-    "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required"
+    "maxInkWidth": 88,
+    "master": "noel-50-assets/masters-locked/nx_holly_broom_fence-solid-v4.png",
+    "nativeOffsetX": [
+      16,
+      16,
+      -16,
+      -16
+    ],
+    "anchorReason": "Rigid native placement aligns the thin post line inside the 3×1 ground strip; keep the ground pivot/canvas fixed and preserve camera axes.",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_snitch_lamp_post",
@@ -302,7 +365,9 @@
     "subject": "A short crooked wrought iron lantern post topped with a golden winged Snitch finial, warm amber lantern and pine wreath",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Cột đèn Snitch dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Cột đèn Snitch dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_snitch_lamp_post-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_floo_chimney_mailbox",
@@ -315,7 +380,9 @@
     "subject": "A small freestanding brick chimney shaped Christmas mailbox, green magical light in its opening, red wool stocking on side and snowy cap",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Hộp thư ống khói Noel dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Hộp thư ống khói Noel dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_floo_chimney_mailbox-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_hogwarts_express_parcels",
@@ -328,7 +395,9 @@
     "subject": "An old brass railway luggage trolley stacked with red wrapped gifts and a vintage school trunk, pine wreath on handle, no lettering",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Xe hành lý tốc hành Noel dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Xe hành lý tốc hành Noel dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_hogwarts_express_parcels-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_platform_clock",
@@ -341,7 +410,9 @@
     "subject": "A squat old railway station clock on a timber post, holly garland and snowy cap, simple hand marks no letters or numerals",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Đồng hồ sân ga mùa tuyết dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Đồng hồ sân ga mùa tuyết dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_platform_clock-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_enchanted_cracker_table",
@@ -354,7 +425,9 @@
     "subject": "A rustic low feast table with oversized red and gold wizard Christmas crackers, tiny folded paper crowns and holly",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Bàn pháo giấy phù thủy dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Bàn pháo giấy phù thủy dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_enchanted_cracker_table-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_wizard_chess_christmas",
@@ -369,7 +442,7 @@
     "group": "Giáng sinh",
     "lore": "Bàn cờ đêm Giáng sinh dành cho khu vườn Giáng sinh của phù thủy.",
     "master": "noel-50-assets/masters-locked/nx_wizard_chess_christmas-solid.png",
-    "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required"
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_weasley_knit_rack",
@@ -382,7 +455,9 @@
     "subject": "A rustic clothes drying rack with chunky hand-knitted Christmas sweaters and mismatched wool socks, no letters on sweaters",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Giá áo len nhà Weasley dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Giá áo len nhà Weasley dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_weasley_knit_rack-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_dobby_sock_tree",
@@ -395,7 +470,9 @@
     "subject": "A small whimsical Christmas tree built from a wooden pole with branching pegs hanging colorful mismatched knitted socks and a gold bell",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Cây vớ tặng gia tinh dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Cây vớ tặng gia tinh dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_dobby_sock_tree-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_mince_pie_cart",
@@ -408,7 +485,9 @@
     "subject": "A tiny wooden dessert pushcart laden with mince pies under a red cloth canopy, holly and powdered sugar",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Xe bánh Giáng sinh dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Xe bánh Giáng sinh dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_mince_pie_cart-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_plum_pudding_stand",
@@ -421,7 +500,9 @@
     "subject": "A Christmas plum pudding on a chunky brass pedestal tray with tiny stylized blue magical flame, holly on top, no table",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Bánh pudding lửa phép dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Bánh pudding lửa phép dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_plum_pudding_stand-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_chocolate_frog_tree",
@@ -434,7 +515,9 @@
     "subject": "A Christmas tree shaped stack of pentagonal chocolate frog boxes wrapped in red and gold ribbons, no printed letters or logos",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Tháp quà Kẹo Ếch dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Tháp quà Kẹo Ếch dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_chocolate_frog_tree-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_peppermint_cauldron",
@@ -447,7 +530,9 @@
     "subject": "A rounded copper cauldron of steaming hot chocolate, two peppermint candy canes and a red wool bow, pine at base",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Vạc cacao bạc hà dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Vạc cacao bạc hà dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_peppermint_cauldron-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_butterbeer_barrel_seat",
@@ -460,7 +545,9 @@
     "subject": "One squat wooden barrel repurposed as a garden stool, plaid red cushion, snowy rim and holly ribbon, no beer counter",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Ghế thùng bia bơ mùa đông dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Ghế thùng bia bơ mùa đông dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_butterbeer_barrel_seat-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_gingerbread_hagrids_hut",
@@ -473,7 +560,9 @@
     "subject": "A gingerbread model of Hagrid's round rustic hut, iced snow roof, tiny pink umbrella candy by door and gumdrop pumpkins",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Nhà bánh gừng của Hagrid dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Nhà bánh gừng của Hagrid dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_gingerbread_hagrids_hut-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_gingerbread_greenhouse",
@@ -486,7 +575,9 @@
     "subject": "A little gingerbread herbology greenhouse with sugar glass roof panels, tiny icing potted mandrakes and holly decoration",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Nhà kính bánh gừng dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Nhà kính bánh gừng dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_gingerbread_greenhouse-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_mandrake_earmuff_planter",
@@ -499,7 +590,9 @@
     "subject": "A terracotta planter containing a sleepy mandrake root sculpture wearing thick red earmuffs and wool scarf, fir sprigs around pot",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Chậu Nhân sâm đón Noel dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Chậu Nhân sâm đón Noel dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_mandrake_earmuff_planter-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_frosted_dittany_bed",
@@ -512,7 +605,9 @@
     "subject": "A raised timber herb planter of frost-tipped dittany plants, brass plant marker with no writing, red ribbon and small lantern",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Bồn Bạch tiên mùa tuyết dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Bồn Bạch tiên mùa tuyết dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_frosted_dittany_bed-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_glowing_mistletoe_pot",
@@ -525,7 +620,9 @@
     "subject": "A squat carved stone flowerpot with mistletoe, creamy white berries, small star ornaments and a red ribbon",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Chậu tầm gửi ánh sao dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Chậu tầm gửi ánh sao dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_glowing_mistletoe_pot-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_fairy_pine_log",
@@ -538,7 +635,9 @@
     "subject": "A hollow mossy log miniature fairy house, warm window, evergreen roof, tiny red mushroom chimney, Christmas baubles",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Khúc gỗ tiên Giáng sinh dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Khúc gỗ tiên Giáng sinh dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_fairy_pine_log-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_icicle_harp",
@@ -551,7 +650,9 @@
     "subject": "A small ornate ice harp on a stone foot, icicle strings, pine garland and tiny gold stars for a wizard winter ball",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Đàn hạc băng Dạ vũ dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Đàn hạc băng Dạ vũ dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_icicle_harp-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_yule_dance_gazebo",
@@ -565,8 +666,8 @@
     "season": "xmas",
     "group": "Giáng sinh",
     "lore": "Chòi Dạ vũ mùa đông dành cho khu vườn Giáng sinh của phù thủy.",
-    "master": "noel-50-assets/masters-locked/nx_yule_dance_gazebo-solid.png",
-    "cameraAcceptance": "filled coordinate block-in redraw; native/in-scene checks required"
+    "master": "noel-50-assets/masters-locked/nx_yule_dance_gazebo-solid-v4.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_enchanted_violin_stand",
@@ -579,7 +680,9 @@
     "subject": "An enchanted wooden violin and floating bow held close on a brass music stand, holly wreath and red ribbon, no sheet music text",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Đàn vĩ cầm tự chơi dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Đàn vĩ cầm tự chơi dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_enchanted_violin_stand-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_great_hall_candle_cluster",
@@ -592,7 +695,9 @@
     "subject": "A compact cluster of three floating ivory candles above a carved stone bowl of evergreen, gold stars and red baubles",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Cụm nến Đại Sảnh mùa lễ dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Cụm nến Đại Sảnh mùa lễ dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_great_hall_candle_cluster-solid-v5.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_raven_ice_bench",
@@ -605,7 +710,9 @@
     "subject": "A snowy stone garden bench with carved raven finials, blue-gray knitted blanket, evergreen garland and gold bell",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Ghế đá quạ mùa đông dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Ghế đá quạ mùa đông dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_raven_ice_bench-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_lion_firewood_rack",
@@ -618,7 +725,9 @@
     "subject": "A wooden firewood rack with carved lion finials, neatly stacked logs, red scarf and pine sprigs, no flames",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Giá củi sư tử Giáng sinh dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Giá củi sư tử Giáng sinh dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_lion_firewood_rack-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_badger_cookie_table",
@@ -631,7 +740,9 @@
     "subject": "A squat garden tea table with a carved badger base, honey cookies, yellow-gold wool runner and Christmas holly",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Bàn bánh lửng mật dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Bàn bánh lửng mật dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_badger_cookie_table-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_serpent_holly_urn",
@@ -644,7 +755,9 @@
     "subject": "An ornate silver garden urn with a curled serpent relief, dark pine boughs and silver baubles with a small red ribbon",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Bình lá thông rắn bạc dành cho khu vườn Giáng sinh của phù thủy."
+    "lore": "Bình lá thông rắn bạc dành cho khu vườn Giáng sinh của phù thủy.",
+    "master": "noel-50-assets/masters-locked/nx_serpent_holly_urn-solid.png",
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {
     "id": "nx_hagrid_gift_crate",
@@ -659,6 +772,6 @@
     "group": "Giáng sinh",
     "lore": "Rương quà bác Hagrid dành cho khu vườn Giáng sinh của phù thủy.",
     "master": "noel-50-assets/masters-locked/nx_hagrid_gift_crate-solid.png",
-    "cameraAcceptance": "filled coordinate block-in redraw; actual native edge checks pending"
+    "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   }
 ]

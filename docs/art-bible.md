@@ -109,6 +109,8 @@ Quy tắc:
 
 Bộ lễ hội dùng chung `collection: festival`: khi dựng lại một bộ, chọn theo ID/prefix của chính bộ đó; không xoá toàn bộ collection (Noel và Halloween cùng tồn tại). Kiểm hai góc trên nền 2:1 bằng `audit-grid-fit.mjs` và cảnh thật trước khi nhập.
 
+**Khóa camera và thay ảnh thật (15/11/2026):** block-in tô kín các mặt 3D giữ góc tốt hơn wireframe đơn thuần; vẽ chất liệu lên đúng mặt, đo pixel native trên cạnh thật. Thay master chưa thay ảnh trong game: phải dựng lại WebP, chạy `--check`, sync từ commit nguồn sạch và đối chiếu hash/URL WebP mà demo thực sự tải. Không kết luận đã thay từ tên file hay bản preview master.
+
 ## 8. Checklist nhận một asset mới
 
 **V24.9.75 — đồ lễ hội:** sprite lớn phải được kiểm đặt/cất/xoay với save có đủ key kỷ vật bằng0; key tồn tại không có nghĩa đã có tượng. Chỉ bảo vệ dải kỷ vật thực tế, không khóa cả cánh đồng mở về sau. Giữ các frame glow/tĩnh đúng metadata, không quảng cáo chớp mắt/đung đưa khi chưa có pose. Atlas decor phải mang rect đúng góc vào cả picker frame và renderer; xác nhận từng rect RGBA trùng native nguồn.
