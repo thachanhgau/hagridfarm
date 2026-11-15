@@ -38,6 +38,7 @@
           1440
         ],
         "budget": 50331648,
+        "reserved": 0,
         "bytes": 0,
         "peakBytes": 0,
         "requests": 0,
@@ -48,7 +49,7 @@
         "failed": 0
       },
       "medianFrame": 1.1000000014901161,
-      "p95Frame": 2.6999999955296516,
+      "p95Frame": 2.7000000029802322,
       "missing": [],
       "display": [
         5120,
@@ -69,6 +70,7 @@
           2880
         ],
         "budget": 50331648,
+        "reserved": 0,
         "bytes": 4128768,
         "peakBytes": 4128768,
         "requests": 3,
@@ -78,8 +80,8 @@
         "queued": 0,
         "failed": 0
       },
-      "medianFrame": 1.2000000029802322,
-      "p95Frame": 1.6999999955296516,
+      "medianFrame": 1.2999999970197678,
+      "p95Frame": 1.6000000014901161,
       "missing": [],
       "display": [
         5120,

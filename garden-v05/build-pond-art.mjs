@@ -40,17 +40,22 @@ export async function write(file,data,W,H){
 }
 export const load=async file=>sharp(path.join(root,file)).ensureAlpha().raw().toBuffer({resolveWithObject:true});
 
+// One tier's pixels at `density` (1 = the shipped PNG; 2 = the same placement on a 2× canvas, margins doubled, for HD).
+export async function sceneryPixels(s,density=1){
+ const raw=await load(s.master),box=inkBox(raw.data,raw.info.width,raw.info.height),k=s.masterScale/density,W=s.width*density,H=s.height*density,m=density;
+ // A master drawn on its guide canvas keeps the guide's geometry: plain ÷k. Otherwise fit the ink to the ground width.
+ const exact=raw.info.width===s.width*s.masterScale&&raw.info.height===s.height*s.masterScale;
+ const w=exact?Math.min(Math.round(box.w/k),W-2*m):W-2*m,h=Math.round(box.h*w/box.w);
+ // A master inked to the guide's very edge slides in by the rounding pixel so a 1 px margin stays.
+ const left=exact?Math.max(m,Math.min(Math.round(box.x/k),W-m-w)):m,top=exact?Math.max(m,Math.min(Math.round(box.y/k),H-m-h)):H-2*m-h;
+ if(left+w>W-m||top<m||top+h>H-m)throw Error(`${s.id}: ${w}×${h} ink does not fit ${W}×${H}`);
+ return place(raw,box,w,h,W,H,left,top);
+}
+
 async function main(){
  const scenery={},items={};
  for(const s of POND_SPECS){
-  const raw=await load(s.master),box=inkBox(raw.data,raw.info.width,raw.info.height),k=s.masterScale;
-  // A master drawn on its guide canvas keeps the guide's geometry: plain ÷k. Otherwise fit the ink to the ground width.
-  const exact=raw.info.width===s.width*k&&raw.info.height===s.height*k;
-  const w=exact?Math.min(Math.round(box.w/k),s.width-2):s.width-2,h=Math.round(box.h*w/box.w);
-  // A master inked to the guide's very edge slides in by the rounding pixel so a 1 px margin stays.
-  const left=exact?Math.max(1,Math.min(Math.round(box.x/k),s.width-1-w)):1,top=exact?Math.max(1,Math.min(Math.round(box.y/k),s.height-1-h)):s.height-2-h;
-  if(left+w>s.width-1||top<1||top+h>s.height-1)throw Error(`${s.id}: ${w}×${h} ink does not fit ${s.width}×${s.height}`);
-  const bounds=await write(s.file,await place(raw,box,w,h,s.width,s.height,left,top),s.width,s.height);
+  const bounds=await write(s.file,await sceneryPixels(s),s.width,s.height);
   const {id,master,masterScale,...runtime}=s;scenery[id]={...runtime,bounds};
  }
  for(const {file:sheetFile,cols,rows,ids}of ITEM_SHEETS){const sheet=await load(sheetFile),cw=sheet.info.width/cols,ch=sheet.info.height/rows;

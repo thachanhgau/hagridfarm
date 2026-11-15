@@ -72,3 +72,10 @@ test('weather and festival overlays leave the exit passage open',()=>{
   assert.ok(calls.every(([x,y,w,h])=>x+w<130||x>150),'center of gate remains clear');
  }
 });
+test('weather on a denser canvas reads logical pixels, so the snow layout does not shift',()=>{
+ const fake=(w,h,fill)=>{const data=new Uint8ClampedArray(w*h*4);for(let i=0;i<w*h;i++)data.set(fill(i%w,Math.floor(i/w)),i*4);let out;
+  return {width:w,height:h,getContext:()=>({getImageData:()=>({width:w,height:h,data}),putImageData:im=>{out=im;}}),out:()=>out.data};};
+ const colour=(x,y)=>[60+(x*7+y*3)%90,140,70,255],one=fake(40,24,colour),two=fake(80,48,(x,y)=>colour(x>>1,y>>1));
+ weatherizeCanvas(one,'ground','snow',.6,{snowCovered:(x,y)=>(x*5+y*11)%3===0},1);weatherizeCanvas(two,'ground','snow',.6,{snowCovered:(x,y)=>(x*5+y*11)%3===0},2);
+ for(let y=0;y<48;y++)for(let x=0;x<80;x++)assert.deepEqual([...two.out().slice((y*80+x)*4,(y*80+x)*4+4)],[...one.out().slice(((y>>1)*40+(x>>1))*4,((y>>1)*40+(x>>1))*4+4)]);
+});

@@ -1,6 +1,7 @@
 // Recover detail from current authored masters; never upscale native sprites and call that new detail.
 import fs from 'node:fs/promises';import path from 'node:path';import {createHash} from 'node:crypto';import {createRequire} from 'node:module';import {fileURLToPath} from 'node:url';
-import {quantize} from './build-pond-art.mjs';import {authoredCells} from './authored-atlas.mjs';
+import {quantize} from './build-pond-art.mjs';import {authoredCells} from './authored-atlas.mjs';import {renderElf,ELF_SOURCES,FRIEND_SOURCES} from './build-elf-art.mjs';import {renderSign,SIGN_SOURCE} from './build-sign-art.mjs';
+import {packAsset,provenance as waterGarden} from './build-water-garden-refresh.mjs';import {POND_SPECS,sceneryPixels as pondScenery} from './build-pond-art.mjs';import {EDGE_SPECS,sceneryPixels as edgeScenery} from './build-edge-art.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url)),sharp=createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 const read=async f=>JSON.parse(await fs.readFile(path.join(root,f),'utf8')),sha=b=>createHash('sha256').update(b).digest('hex'),density=2;
 const runtime=await read('runtime-webp-manifest.json'),inventory=new Map(runtime.images.map(i=>[i.source,i])),pixels=new Map(),recovered=new Map(),atlasSpecs=new Map(),provenance=[],skipped=[];
@@ -24,7 +25,7 @@ async function recover(master,frame){
  for(let y=0;y<original.info.height;y++)for(let x=0;x<original.info.width;x++){const i=(y*original.info.width+x)*4;if(original.data[i+3]<192){original.data[i+3]=0;continue;}original.data[i+3]=255;opaque++;x0=Math.min(x0,x);x1=Math.max(x1,x);y0=Math.min(y0,y);y1=Math.max(y1,y);}
  if(x1<0)throw Error('Empty source '+master);
  const nativePixels=await rgba(native),width=nativePixels.info.width*density,height=nativePixels.info.height*density;
- const w=b.w*density,h=b.h*density,ink=quantize(await sharp(original.data,{raw:original.info}).extract({left:x0,top:y0,width:x1-x0+1,height:y1-y0+1}).resize(w,h,{kernel:'nearest'}).flop(!!frame.flop).raw().toBuffer()),out=Buffer.alloc(width*height*4);
+ const w=b.w*density,h=b.h*density,ink=quantize(await sharp(original.data,{raw:original.info}).extract({left:x0,top:y0,width:x1-x0+1,height:y1-y0+1}).resize(w,h,{kernel:'nearest',fit:'fill'}).flop(!!frame.flop).raw().toBuffer()),out=Buffer.alloc(width*height*4);
  // Old opaque-sheet sources retain the already-reviewed native alpha mask; transparent masters keep their fine contour.
  const legacyMask=opaque===original.info.width*original.info.height;
  for(let y=0;y<h;y++)for(let x=0;x<w;x++){const dx=b.x*density+x,dy=b.y*density+y;if(dx<0||dy<0||dx>=width||dy>=height)throw Error('HD clipping '+native);const si=(y*w+x)*4,ni=(Math.floor(dy/density)*nativePixels.info.width+Math.floor(dx/density))*4;if(!legacyMask||nativePixels.data[ni+3])ink.copy(out,(dy*width+dx)*4,si,si+4);}
@@ -47,6 +48,24 @@ for(const item of pondCreatures.items){const master=item.refresh?.master;if(!mas
  for(const direction of ['right','left'])for(const frame of item.frames?.[direction]||[])await recover(master,{...frame,file:'creature-motion-assets/'+frame.file,flop:direction==='left'});}
 // Existing special/Halloween/event masters have two authored views and localized native motion effects.
 function inkBounds(raw){let x=raw.info.width,y=raw.info.height,r=-1,b=-1;for(let v=0;v<raw.info.height;v++)for(let u=0;u<raw.info.width;u++)if(raw.data[(v*raw.info.width+u)*4+3]){x=Math.min(x,u);y=Math.min(y,v);r=Math.max(r,u);b=Math.max(b,v);}return {x,y,w:r-x+1,h:b-y+1};}
+// Animated variants = the recovered base plus the native frame's own effect pixels, after any rigid vertical bob
+// (floating candles rise 1–2 px), so moving art keeps its HD body instead of becoming 2× blocks.
+async function effectFrames(baseFile,files,source){
+ const base=await rgba(baseFile),hit=recovered.get(sha(base.data));if(!hit)return;
+ const {width:W,height:H}=base.info,hd=await sharp(path.join(root,hit.file)).ensureAlpha().raw().toBuffer(),at=(x,y)=>y<0||y>=H?0:base.data.readUInt32LE((y*W+x)*4);
+ for(const file of files){
+  const variant=await rgba(file);if(variant.data.equals(base.data))continue;
+  const diff=dy=>{let n=0;for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(variant.data.readUInt32LE((y*W+x)*4)!==at(x,y-dy))n++;return n;};
+  let shift=0,changed=diff(0);for(const dy of [-1,-2,-3,1,2,3]){const n=diff(dy);if(n<changed){changed=n;shift=dy;}}
+  const out=Buffer.alloc(hd.length);
+  for(let y=0;y<H*density;y++){const from=y-shift*density;if(from>=0&&from<H*density)hd.copy(out,y*W*density*4,from*W*density*4,(from+1)*W*density*4);}
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+   const i=(y*W+x)*4;if(variant.data.readUInt32LE(i)===at(x,y-shift))continue;
+   for(let yy=0;yy<density;yy++)for(let xx=0;xx<density;xx++)variant.data.copy(out,((y*density+yy)*W*density+x*density+xx)*4,i,i+4);
+  }
+  await save(file,out,W*density,H*density,{...source,nativeEffectPixels:changed,rigidShift:shift,baseFile});
+ }
+}
 for(const pack of ['special-products-assets','halloween-assets','event-assets']){
  const data=await read(pack+'/manifest.json');
  for(const item of data.items){
@@ -54,17 +73,7 @@ for(const pack of ['special-products-assets','halloween-assets','event-assets'])
   const poses=authoredCells(await sharp(masterBytes).ensureAlpha().raw().toBuffer({resolveWithObject:true}),[2]);
   for(const [view,baseName]of [item.defaultFile,item.rightFile].entries()){
    const baseFile=pack+'/'+baseName,base=await rgba(baseFile);await recover(master,{file:baseFile,bounds:inkBounds(base),sourceRect:poses[view].sourceRect,sha256:item.pngSha256[baseName]});
-   const recoveredBase=recovered.get(sha(base.data));if(!recoveredBase)continue;
-   const hd=await sharp(path.join(root,recoveredBase.file)).ensureAlpha().raw().toBuffer();
-   for(const relative of (view?item.rightFrames:item.defaultFrames)){
-    const file=pack+'/'+relative,variant=await rgba(file);if(variant.data.equals(base.data))continue;
-    const out=Buffer.from(hd);let changed=0;
-    for(let y=0;y<base.info.height;y++)for(let x=0;x<base.info.width;x++){
-     const at=(y*base.info.width+x)*4;if(variant.data.readUInt32LE(at)===base.data.readUInt32LE(at))continue;changed++;
-     for(let yy=0;yy<density;yy++)for(let xx=0;xx<density;xx++)variant.data.copy(out,((y*density+yy)*base.info.width*density+x*density+xx)*4,at,at+4);
-    }
-    await save(file,out,base.info.width*density,base.info.height*density,{master,sourceRect:poses[view].sourceRect,nativeEffectPixels:changed,baseFile});
-   }
+   await effectFrames(baseFile,(view?item.rightFrames:item.defaultFrames).map(r=>pack+'/'+r),{master,sourceRect:poses[view].sourceRect});
   }
  }
 }
@@ -74,6 +83,43 @@ for(const [i,frame]of homestead.outputs.entries()){
  const native=await rgba(frame.file);let x0=native.info.width,y0=native.info.height,x1=-1,y1=-1;for(let y=0;y<native.info.height;y++)for(let x=0;x<native.info.width;x++)if(native.data[(y*native.info.width+x)*4+3]){x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);}
  await recover(homestead.master,{...frame,bounds:{x:x0,y:y0,w:x1-x0+1,h:y1-y0+1},sourceRect:poses[i].sourceRect});
 }
+// Whole-master recovery: the master's ink box fits the native ink rectangle the builder placed it in.
+const whole=async(master,frame)=>{const m=await sharp(path.join(root,master)).metadata();await recover(master,{...frame,sourceRect:{x:0,y:0,w:m.width,h:m.height}});};
+// Legacy sheets (build-native.mjs): motion-data.json records each frame's master cell and native ink bounds.
+const motion=await read('motion-data.json');
+for(const item of motion.items){if(sha(await fs.readFile(path.join(root,item.source)))!==item.sourceSha256)throw Error('Master changed '+item.source);for(const frame of item.frames)await recover(item.source,frame);}
+// Six base decorations (generate-decor-assets.mjs): one authored pose per master and view, plus four animated variants each.
+for(const id of ['pumpkin_lantern','broom_rack','cauldron','mandrake_planter','floating_candles','vine_arch'])for(const view of ['','_right']){
+ const name=`decor_${id}${view}`,baseFile=`decor-assets/native/${name}.png`,master=`decor-assets/masters/${name}.png`;
+ await whole(master,{file:baseFile,bounds:inkBounds(await rgba(baseFile))});
+ await effectFrames(baseFile,[0,1,2,3].map(i=>`decor-assets/native/${name}_f${i}.png`),{master});
+}
+// Water garden (build-water-garden-refresh.mjs): orchard ground with re-centred basins, shore beds; its own packing at 4× its half-logical grid.
+for(const item of waterGarden.assets){const bytes=await fs.readFile(path.join(root,item.master));if(sha(bytes)!==item.masterSha256)throw Error('Master changed '+item.master);
+ if(sha(await fs.readFile(path.join(root,item.file)))!==item.sha256){skipped.push({native:item.file,reason:'stale frame record'});continue;}
+ const {out,W,H}=await packAsset(item,bytes,2*density);await save(item.file,out,W,H,{master:item.master,masterSha256:item.masterSha256,method:'build-water-garden-refresh packAsset at 4× the half-logical grid'});}
+// Pond tiers and the trail (build-pond-art / build-edge-art): the builder's placement on a 2× canvas, only where it still reproduces the shipped PNG.
+for(const [specs,pixels]of [[POND_SPECS,s=>pondScenery(s)],[EDGE_SPECS,async s=>(await edgeScenery(s)).pixels]])for(const spec of specs){
+ const now=await rgba(spec.file);if(!now.data.equals(await pixels(spec))){skipped.push({native:spec.file,reason:'replaced by a later builder'});continue;}
+ const hd=specs===POND_SPECS?await pondScenery(spec,density):(await edgeScenery(spec,density)).pixels;await save(spec.file,hd,spec.width*density,spec.height*density,{master:spec.master,method:'scenery placement at density 2'});}
+// Woodland quartet (build-pond-woodland.mjs): pond nook and shore thicket, normal and snow, fitted to the builder's fixed rectangles.
+{const wood=await read('environment/pond/masters/woodland-20261108/provenance.json');if(sha(await fs.readFile(path.join(root,wood.master)))!==wood.sha256)throw Error('Master changed '+wood.master);
+ const cells=authoredCells(await sharp(path.join(root,wood.master)).ensureAlpha().raw().toBuffer({resolveWithObject:true}),[2,2]);
+ for(const [i,out]of wood.outputs.entries()){const nook=i%2===0,h=nook?236:132;await recover(wood.master,{file:out.file,sha256:out.sha256,sourceRect:cells[i].sourceRect,bounds:{x:2,y:out.height-2-h,w:out.width-4,h}});}}
+// Fence-free pasture (build-catalog-completion.mjs) and the winter expansion (build-winter-expansion-art.mjs, incl. the Black Lake): recorded native bounds.
+{const catalog=await read('masters-items/catalog-completion-20261108/provenance.json'),floor=catalog.assets.find(a=>a.id==='pasture-floor');if(sha(await fs.readFile(path.join(root,floor.master)))!==floor.sha256)throw Error('Master changed '+floor.master);
+ const [pose]=authoredCells(await sharp(path.join(root,floor.master)).ensureAlpha().raw().toBuffer({resolveWithObject:true}),[1]);for(const out of floor.outputs)await recover(floor.master,{...out,sourceRect:pose.sourceRect});}
+{const winter=await read('environment/winter/masters/expansion-20261108/provenance.json');for(const item of winter.assets){if(sha(await fs.readFile(path.join(root,item.master)))!==item.masterSha256)throw Error('Master changed '+item.master);await whole(item.master,item);}}
+// Orchard trees (build-orchard-refresh.mjs): three growth cells per sheet on a 64×72 half-logical canvas, doubled.
+{const orchard=await read('environment/edge/masters/orchard-refresh-20261108/provenance.json');
+ for(const item of orchard.assets){const bytes=await fs.readFile(path.join(root,item.master));if(sha(bytes)!==item.masterSha256)throw Error('Master changed '+item.master);
+  const cells=authoredCells(await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true}),[3]);
+  for(const [stage,file]of item.outputs.entries()){const cell=cells[stage],scale=Math.min((stage?48:38)/cell.width,(stage?53:42)/cell.height),w=Math.round(cell.width*scale),h=Math.round(cell.height*scale);
+   await recover(item.master,{file,sourceRect:cell.sourceRect,bounds:{x:Math.floor((64-w)/2)*2,y:(55-h)*2,w:w*2,h:h*2}});}}}
+// Elves and visiting friends: build-elf-art's own area-average reduction (reproduces every shipped frame exactly at 1×) run at twice the scale.
+for(const id of [...Object.keys(ELF_SOURCES),...Object.keys(FRIEND_SOURCES)])for(const sheet of await renderElf(id,density))for(const f of sheet.frames)await save(f.file,f.raw,f.width,f.height,{master:sheet.master,masterSha256:sheet.masterSha256,cell:f.cell,method:'build-elf-art renderElf at density 2'});
+// The «Hagrid Farm» sign: build-sign-art's sheared point sampling (exact at 1×) at twice the scale.
+{const sign=renderSign(density);await save('environment/layers/hagrid-farm-sign.png',sign.output,sign.width,sign.height,{...SIGN_SOURCE,method:'build-sign-art renderSign at density 2'});}
 walk(await read('decor-assets-manifest.json'));
 // Atlas metadata shares the original logical rectangles; each recovered cell is copied at doubled density.
 const registry={};

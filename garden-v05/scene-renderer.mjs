@@ -1093,8 +1093,11 @@ export async function createGarden(canvas, options = {}) {
   }
 
   function buildTerrainCache(withGrid, withForest, stage) {
-    const cachedCanvas = makeCanvas(canvas, map.width, map.height);
+    // P0.3: the ground follows the render density (logical coordinates unchanged) when it fits the HD memory budget.
+    const layerDensity = resolution.layer(map.width, map.height);
+    const cachedCanvas = makeCanvas(canvas, Math.round(map.width * layerDensity), Math.round(map.height * layerDensity));
     const cachedContext = cachedCanvas.getContext('2d');
+    cachedContext.setTransform?.(layerDensity, 0, 0, layerDensity, 0, 0);
     cachedContext.imageSmoothingEnabled = false;
     if (withForest) {
       drawScenicTerrain(cachedContext, {...map, farmBoundary: stageBoundary(stage)}, {grassImage: imageFor(grassTile.file),backdrop:scenicBackdrop});
@@ -1116,7 +1119,7 @@ export async function createGarden(canvas, options = {}) {
         }
       });
     });
-    weatherizeCanvas(cachedCanvas,'ground',activeWeather,activeSnowDepth,kit);
+    weatherizeCanvas(cachedCanvas,'ground',activeWeather,activeSnowDepth,kit,layerDensity);
     if(withForest)drawCottageGround(cachedContext,{iso,weatherMode:activeWeather});
     if (withForest) {
       // Existing perimeter placements and the stage's unopened grove both
@@ -1133,7 +1136,8 @@ export async function createGarden(canvas, options = {}) {
 
   function terrainCache(withGrid, withForest) {
     const key = `${stageKey(currentStage)}:${activeWeather}:${withGrid ? 'grid' : 'plain'}:${withForest ? 'forest' : 'bare'}`;
-    if (!terrainCaches.has(key)) terrainCaches.set(key, buildTerrainCache(withGrid, withForest, currentStage));
+    // One cached ground at a time: its memory is reserved against the HD budget.
+    if (!terrainCaches.has(key)) { terrainCaches.clear(); terrainCaches.set(key, buildTerrainCache(withGrid, withForest, currentStage)); }
     return terrainCaches.get(key);
   }
 
@@ -1821,7 +1825,7 @@ export async function createGarden(canvas, options = {}) {
     context.fillStyle = '#142620';
     context.fillRect(0, 0, map.width, map.height);
     const terrain = terrainCache(grid, propsVisible);
-    context.drawImage(terrain, 0, 0);
+    context.drawImage(terrain, 0, 0, map.width, map.height);
     drawPlotSoil(state, logicalNow, grid);
     drawV24Ground(context,{weatherMode,clock,iso,stage:currentStage,map});
     const hasEdge = currentStage.id === 8, builtIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id?.id : id)));
@@ -2165,7 +2169,7 @@ export async function createGarden(canvas, options = {}) {
   return {
     render,
     resolution:resolution.stats,
-    setQuality:resolution.setEnabled,
+    setQuality:(value)=>{resolution.setEnabled(value);terrainCaches.clear();},
     pick,
     greet:()=>{reactionUntil=performance.now()+2600;},
     cheerElf:(id)=>{elfCheers[id]=performance.now()+CHEER_MS;},

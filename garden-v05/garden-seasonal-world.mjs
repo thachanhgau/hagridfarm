@@ -60,10 +60,11 @@ export function weatherizeCanvas(canvas,kind,weather,depth=1,kit=null,pixelDensi
  if(weather==='clear')return canvas;
  const c=canvas.getContext('2d'),im=c.getImageData(0,0,canvas.width,canvas.height),d=im.data;
  if(kind==='cap'){if(weather==='snow'&&kit)c.putImageData(kit.snowCapImageData(im,pixelDensity),0,0);return canvas;}
- const covered=depth<1&&kit?(x,y)=>kit.snowCovered(x,y,depth):null;
+ const covered=depth<1&&kit?(x,y)=>kit.snowCovered(x,y,depth):null,k=pixelDensity,lw=Math.round(im.width/k),lh=Math.round(im.height/k);
+ // Patterns read logical pixels, so a denser canvas gets the same snow and frost layout.
  for(let y=0;y<im.height;y++)for(let x=0;x<im.width;x++){
   const i=(y*im.width+x)*4;if(!d[i+3])continue;
-  const rgb=seasonPixel(d[i],d[i+1],d[i+2],x,y,im.width,im.height,kind,weather,covered);
+  const rgb=seasonPixel(d[i],d[i+1],d[i+2],Math.floor(x/k),Math.floor(y/k),lw,lh,kind,weather,covered);
   d[i]=rgb[0];d[i+1]=rgb[1];d[i+2]=rgb[2];
  }
  c.putImageData(im,0,0);return canvas;

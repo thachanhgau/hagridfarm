@@ -20,15 +20,20 @@ export const EDGE_ITEMS_A=['produce_kappa','produce_porlock','kappa_feed','porlo
 export const EDGE_ITEMS_B=['plum','sapling_apple','sapling_pear','sapling_plum'];
 const ITEM_SHEETS=[{file:'masters-items/edge/items-sheet-a.png',cols:3,rows:2,ids:EDGE_ITEMS_A},{file:'masters-items/edge/items-sheet-b.png',cols:2,rows:2,ids:EDGE_ITEMS_B}];
 
+// One ground/tree at `density` (1 = the shipped PNG; 2 = the same placement on a 2× canvas, margins doubled, for HD).
+export async function sceneryPixels(s,density=1){
+ const raw=await load(s.master),box=inkBox(raw.data,raw.info.width,raw.info.height),k=s.masterScale/density,W=s.width*density,H=s.height*density,m=density;
+ // Exact master (drawn on the guide canvas): plain ÷k. Otherwise (or when the ink spills past the canvas by a pixel or two) fit the ink
+ // inside the canvas, centred, bottom on the ground's front corner (height−2).
+ let exact=raw.info.width===s.width*s.masterScale&&raw.info.height===s.height*s.masterScale,w=Math.round(box.w/k),h=Math.round(box.h/k),left=Math.round(box.x/k),top=Math.round(box.y/k);
+ if(!exact||left<m||top<m||left+w>W-m||top+h>H-m){exact=false;const f=Math.min((W-2*m)/box.w,(H-3*m)/box.h);w=Math.round(box.w*f);h=Math.round(box.h*f);left=Math.floor((W-w)/2);top=H-2*m-h;}
+ return {pixels:await place(raw,box,w,h,W,H,left,top),exact};
+}
+
 async function main(){
  const scenery={},items={};
  for(const s of EDGE_SPECS){
-  const raw=await load(s.master),box=inkBox(raw.data,raw.info.width,raw.info.height),k=s.masterScale;
-  // Exact master (drawn on the guide canvas): plain ÷k. Otherwise (or when the ink spills past the canvas by a pixel or two) fit the ink
-  // inside the canvas, centred, bottom on the ground's front corner (height−2).
-  let exact=raw.info.width===s.width*k&&raw.info.height===s.height*k,w=Math.round(box.w/k),h=Math.round(box.h/k),left=Math.round(box.x/k),top=Math.round(box.y/k);
-  if(!exact||left<1||top<1||left+w>s.width-1||top+h>s.height-1){exact=false;const f=Math.min((s.width-2)/box.w,(s.height-3)/box.h);w=Math.round(box.w*f);h=Math.round(box.h*f);left=Math.floor((s.width-w)/2);top=s.height-2-h;}
-  const bounds=await write(s.file,await place(raw,box,w,h,s.width,s.height,left,top),s.width,s.height);
+  const {pixels,exact}=await sceneryPixels(s),bounds=await write(s.file,pixels,s.width,s.height);
   const {id,master,masterScale,...runtime}=s;scenery[id]={...runtime,bounds,exact};
  }
  for(const {file:sheetFile,cols,rows,ids}of ITEM_SHEETS){const sheet=await load(sheetFile),cw=sheet.info.width/cols,ch=sheet.info.height/rows;

@@ -103,9 +103,10 @@ export function tidy(px, n) {
   return next;
 }
 
-export async function buildElf(id) {
-  await fs.mkdir(path.join(root, dirOf(id), id), {recursive: true});
-  const sheets = [];
+// Frames of one elf at `density` (1 = the shipped native; 2 = the same reduction at twice the scale on a 2× canvas,
+// pivot doubled, for HD). Returns raw RGBA buffers; buildElf writes the native PNGs.
+export async function renderElf(id, density = 1) {
+  const sheets = [], W = CANVAS.width * density, H = CANVAS.height * density, PX = CANVAS.pivotX * density, PY = CANVAS.pivotY * density;
   for (const [masterFile, poses, ref, height, cols = 3] of ELF_SOURCES[id] || FRIEND_SOURCES[id]) {
     const master = await fs.readFile(path.join(root, masterFile));
     const rows = Math.ceil(poses.length / cols), meta = await sharp(master).metadata();
@@ -116,24 +117,33 @@ export async function buildElf(id) {
     const [rt, rb] = inkRows(data, info.width, ...cellOf(poses.indexOf(ref)));
     const scale = height / (rb - rt + 1), frames = [];
     for (const [index, pose] of poses.entries()) {
-      const {px: raw, n} = shrink(data, info.width, ...cellOf(index), scale), px = tidy(raw, n);
+      const {px: raw, n} = shrink(data, info.width, ...cellOf(index), scale * density), px = tidy(raw, n);
       let bottom = n - 1;
       while (bottom > 0 && !px.slice(bottom * n, bottom * n + n).some((c) => c >= 0)) bottom--;
       // Feet stand on the cell's centre column (the brief puts the body on x = 256).
-      const x0 = CANVAS.pivotX - Math.round(n / 2), y0 = CANVAS.pivotY - bottom;
-      const out = Buffer.alloc(CANVAS.width * CANVAS.height * 4);
+      const x0 = PX - Math.round(n / 2), y0 = PY - bottom;
+      const out = Buffer.alloc(W * H * 4);
       for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
         const c = px[y * n + x], cx = x0 + x, cy = y0 + y;
         if (c < 0) continue;
-        if (cx < 1 || cy < 1 || cx >= CANVAS.width - 1 || cy > CANVAS.pivotY) throw Error(`${id}/${pose}: ink leaves the canvas margin`);
-        out.set([...RGB[c], 255], (cy * CANVAS.width + cx) * 4);
+        if (cx < density || cy < density || cx >= W - density || cy > PY) throw Error(`${id}/${pose}: ink leaves the canvas margin`);
+        out.set([...RGB[c], 255], (cy * W + cx) * 4);
       }
-      const file = `${dirOf(id)}/${id}/${pose}.png`, png = await sharp(out, {raw: {width: CANVAS.width, height: CANVAS.height, channels: 4}}).png().toBuffer();
-      await fs.writeFile(path.join(root, file), png);
-      frames.push({file, cell: cellOf(index), sha256: sha256(png)});
+      frames.push({file: `${dirOf(id)}/${id}/${pose}.png`, pose, cell: cellOf(index), raw: out, width: W, height: H});
     }
     sheets.push({master: masterFile, masterSha256: sha256(master), scale: Number(scale.toFixed(4)), frames});
   }
+  return sheets;
+}
+
+export async function buildElf(id) {
+  await fs.mkdir(path.join(root, dirOf(id), id), {recursive: true});
+  const sheets = await renderElf(id);
+  for (const sheet of sheets) sheet.frames = await Promise.all(sheet.frames.map(async ({file, cell, raw, width, height}) => {
+    const png = await sharp(raw, {raw: {width, height, channels: 4}}).png().toBuffer();
+    await fs.writeFile(path.join(root, file), png);
+    return {file, cell, sha256: sha256(png)};
+  }));
   return {id, canvas: CANVAS, sheets};
 }
 

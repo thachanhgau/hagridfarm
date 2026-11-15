@@ -24,11 +24,11 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
  canvas.width=Math.round(world.width*density);canvas.height=Math.round(world.height*density);
  if(canvas.style&&!canvas.style.width)canvas.style.width=world.width+'px';
  if(canvas.dataset){canvas.dataset.logicalWidth=world.width;canvas.dataset.logicalHeight=world.height;canvas.dataset.pixelDensity=density;}
- const original=context.drawImage.bind(context),cache=new Map(),pending=new Set(),failed=new Map(),budget=(mobile?24:48)*1024*1024;let bytes=0,peakBytes=0,requests=0,active=0,hits=0;
+ const original=context.drawImage.bind(context),cache=new Map(),pending=new Set(),failed=new Map(),budget=(mobile?24:48)*1024*1024;let reserved=0,bytes=0,peakBytes=0,requests=0,active=0,hits=0;
  const queue=[];
  function pump(){while(active<2&&queue.length){const job=queue.shift();active++;job().finally(()=>{active--;pump();});}}
  function request(key,source,record){
-  if(queue.length>=64||pending.has(key)||(failed.has(key)&&Date.now()-failed.get(key)<5000)||record.width*record.height*record.density**2*4>budget)return;
+  if(queue.length>=64||pending.has(key)||(failed.has(key)&&Date.now()-failed.get(key)<5000)||record.width*record.height*record.density**2*4>budget-reserved)return;
   pending.add(key);queue.push(async()=>{
    try{
     const image=new view.Image();image.crossOrigin='anonymous';await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=reject;image.src=imageUrl(record.file);});requests++;if(image.width!==record.width*record.density||image.height!==record.height*record.density)throw Error('HD dimensions mismatch');
@@ -40,8 +40,8 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
      if(source.season)effects.weather(output,source.season,record.density);
     }
     const weight=output.width*output.height*4;
-    while(cache.size&&bytes+weight>budget){const oldest=cache.keys().next().value;bytes-=cache.get(oldest).weight;cache.delete(oldest);}
-    if(weight<=budget){cache.set(key,{image:output,weight});bytes+=weight;peakBytes=Math.max(peakBytes,bytes);onReady();}
+    trim(weight);
+    if(weight<=budget-reserved){cache.set(key,{image:output,weight});bytes+=weight;peakBytes=Math.max(peakBytes,bytes);onReady();}
    }catch{failed.set(key,Date.now());}finally{pending.delete(key);}
   });pump();
  }
@@ -54,10 +54,15 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
   }
   return original(image,...args);
  };
+ function trim(weight){while(cache.size&&bytes+weight>budget-reserved){const oldest=cache.keys().next().value;bytes-=cache.get(oldest).weight;cache.delete(oldest);}}
+ // A whole-world offscreen layer (the pre-composited ground) follows the surface density only when its bytes beyond 1× fit
+ // half the HD budget; otherwise it stays 1× (never a fractional ratio, which would make native pixels uneven). Those bytes
+ // are taken out of the HD image budget. One layer at a time: each call replaces the previous reservation.
+ function layer(width,height){const extra=width*height*4*(density**2-1),d=density>1&&extra<=budget/2?density:1;reserved=d>1?extra:0;trim(0);return d;}
  function begin(){context.setTransform?.(density,0,0,density,0,0);context.imageSmoothingEnabled=false;}
  begin();
  function setEnabled(value){enabled=value;density=enabled&&context.setTransform?surfaceDensity(world.width,world.height,pixelRatio??view.devicePixelRatio??1,mobile):1;canvas.width=Math.round(world.width*density);canvas.height=Math.round(world.height*density);if(canvas.dataset)canvas.dataset.pixelDensity=density;begin();}
- return {context,begin,setEnabled,stats:()=>({density,logical:[world.width,world.height],backing:[canvas.width,canvas.height],budget,bytes,peakBytes,requests,hits,pending:pending.size,active,queued:queue.length,failed:failed.size})};
+ return {context,begin,setEnabled,layer,stats:()=>({density,logical:[world.width,world.height],backing:[canvas.width,canvas.height],budget,reserved,bytes,peakBytes,requests,hits,pending:pending.size,active,queued:queue.length,failed:failed.size})};
 }
 
 /** Pointer coordinates always resolve into the logical world, independently of backing density. */
