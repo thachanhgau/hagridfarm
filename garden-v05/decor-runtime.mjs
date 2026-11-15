@@ -78,12 +78,39 @@ export const rectsOverlap = (a, b) => a.c0 < b.c1 && b.c0 < a.c1 && a.r0 < b.r1 
  * other, that one is drawn first.
  */
 export function depthCompare(a, b) {
-  const A = a.ground, B = b.ground;
-  if (A && B) {
-    const ab = A.c1 <= B.c0 || A.r1 <= B.r0, ba = B.c1 <= A.c0 || B.r1 <= A.r0;
-    if (ab !== ba) return ab ? -1 : 1;
+  return groundOrder(a.ground, b.ground) || footOrder(a, b);
+}
+// −1 when ground A lies wholly west or north of B and not the reverse, 1 the other way, 0 when neither binds.
+function groundOrder(A, B) {
+  if (!A || !B) return 0;
+  const ab = A.c1 <= B.c0 || A.r1 <= B.r0, ba = B.c1 <= A.c0 || B.r1 <= A.r0;
+  return ab === ba ? 0 : ab ? -1 : 1;
+}
+const footOrder = (a, b) => (a.xy?.[1] ?? 0) - (b.xy?.[1] ?? 0) || (a.xy?.[0] ?? 0) - (b.xy?.[0] ?? 0);
+
+/**
+ * Scene draw order (docs/garden/no-overlap-rule.md §3): depthCompare's ground rule as a topological sort (Kahn), the
+ * ready object with the smallest foot y, then x, going next. Array.sort cannot take depthCompare: it is not transitive
+ * and drew 22 pairs backwards in 3,000 random scenes (15/11/2026). A cycle, which non-overlapping footprints do not
+ * make, is cut at the earliest foot.
+ * ponytail: O(n²) pairs per frame; sweep by screen x if a scene outgrows ~1,000 objects.
+ */
+export function depthSort(objects) {
+  const n = objects.length, after = Array.from({length: n}, () => []), blockers = new Int32Array(n), done = new Uint8Array(n);
+  for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) {
+    const order = groundOrder(objects[i].ground, objects[j].ground);
+    if (order) {after[order < 0 ? i : j].push(order < 0 ? j : i); blockers[order < 0 ? j : i]++;}
   }
-  return (a.xy?.[1] ?? 0) - (b.xy?.[1] ?? 0) || (a.xy?.[0] ?? 0) - (b.xy?.[0] ?? 0);
+  const byFoot = [...objects.keys()].sort((i, j) => footOrder(objects[i], objects[j]) || i - j), out = [];
+  for (let start = 0; out.length < n;) {
+    while (done[byFoot[start]]) start++;
+    let k = start;
+    while (k < n && (done[byFoot[k]] || blockers[byFoot[k]])) k++;
+    const next = byFoot[k < n ? k : start];
+    done[next] = 1; out.push(objects[next]);
+    for (const q of after[next]) blockers[q]--;
+  }
+  return out;
 }
 
 const placedId = raw => (typeof raw === 'object' && raw !== null ? (raw.itemId ?? raw.id) : raw);

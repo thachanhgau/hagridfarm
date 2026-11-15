@@ -13,7 +13,8 @@ export const CHEER_MS = 1600;
 // them and they cover no plot frame: row 8 in the gaps between the decorations (cols 7.5–12, 15–17.5), row 7 there,
 // row 1 (garden-elves.test.mjs, character-cover.test.mjs). Owner 05/11/2026: the old row-8.9 aisle ran half a tile
 // behind Thửa 5–8, so ripe crops covered the elves' legs, and in front of the decoration row.
-// ponytail: fixed aisles for the authored layout; a decoration the player moves into an aisle can still meet an elf.
+// A decoration the player puts in an aisle (owner 15/11/2026: pieces may still stand on the paths) turns the route
+// back at its footprint (clearStops, docs/garden/no-overlap-rule.md §4).
 // `sleep` is the night spot; `lines` are what a tap shows, in turn (Dobby talks of himself by name, HP2).
 export const ELVES = Object.freeze({
   dobby: Object.freeze({
@@ -75,15 +76,55 @@ export function elfPose(id, clock, stops = ELVES[id].stops) {
   return [stops[0][0], stops[0][1], stops[0][2], false];
 }
 
+const MARGIN = 0.25; // tiles kept between a walker's feet and a footprint
+const WAIT_MS = 1600; // the look at the blocking piece before turning back
+const inside = ([c, r], R) => c > R.c0 - MARGIN && c < R.c1 + MARGIN && r > R.r0 - MARGIN && r < R.r1 + MARGIN;
+// Where segment a→b first enters ground rect R grown by MARGIN (0..1), or null (Liang–Barsky; grazing an edge is free).
+function entry(a, b, R) {
+  let lo = 0, hi = 1;
+  for (const [k, min, max] of [[0, R.c0 - MARGIN, R.c1 + MARGIN], [1, R.r0 - MARGIN, R.r1 + MARGIN]]) {
+    const d = b[k] - a[k];
+    if (!d) {if (a[k] <= min || a[k] >= max) return null; continue;}
+    const t0 = (min - a[k]) / d, t1 = (max - a[k]) / d;
+    lo = Math.max(lo, Math.min(t0, t1)); hi = Math.min(hi, Math.max(t0, t1));
+  }
+  return lo < hi ? lo : null;
+}
+
+/**
+ * A walker's loop with the decorations' ground rects `blocked` taken out (no-overlap rule §4): it starts at its first
+ * stop clear of them, walks until a leg meets one, waits there and walks back the way it came. null when every stop is
+ * covered (the walker is not drawn). Unchanged stops when nothing is in the way.
+ */
+export function clearStops(stops, blocked = []) {
+  if (!blocked.length) return stops;
+  const home = stops.findIndex((stop) => !blocked.some((R) => inside(stop, R)));
+  if (home < 0) return null;
+  const loop = [...stops.slice(home), ...stops.slice(0, home)];
+  for (let i = 0; i < loop.length; i++) {
+    const a = loop[i], b = loop[(i + 1) % loop.length];
+    const t = Math.min(...blocked.map((R) => entry(a, b, R) ?? 1));
+    if (t >= 1) continue;
+    const stop = [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, 'idle', WAIT_MS];
+    const back = loop.slice(1, i + 1).reverse().map(([col, row, pose]) => [col, row, pose === 'carry' ? 'carry' : 'walk-1', 0]);
+    return [...loop.slice(0, i + 1), stop, ...back];
+  }
+  return loop;
+}
+
 // «Gia tinh trông vườn» (S2 part 2): once the elves harvested or fed today, Dobby's watering stop shows him harvesting
 // and his sweeping stop feeding (the pose is named like the job kind).
 const WORK_POSES = Object.freeze({water: 'harvest', sweep: 'feed'});
 
 // night: every elf sleeps at its spot. cheering: {id: true} for elves just tapped (cheer pose, else idle).
 // work: the kinds of today's gia tinh jobs ('harvest', 'feed').
-export function elfObjects(iso, clock, {night = false, cheering = {}, work = []} = {}) {
-  return Object.entries(ELVES).map(([id, elf]) => {
-    let [col, row, pose, flip] = night ? [...elf.sleep, 'sleep', false] : elfPose(id, clock);
+// blocked: ground rects of the placed decorations (clearStops).
+export function elfObjects(iso, clock, {night = false, cheering = {}, work = [], blocked = []} = {}) {
+  return Object.entries(ELVES).flatMap(([id, elf]) => {
+    const stops = clearStops(elf.stops, blocked);
+    if (!stops) return [];
+    const bed = blocked.some((R) => inside(elf.sleep, R)) ? stops[0] : elf.sleep;
+    let [col, row, pose, flip] = night ? [bed[0], bed[1], 'sleep', false] : elfPose(id, clock, stops);
     const workPose = WORK_POSES[pose];
     if (!night && work.includes(workPose) && elf.poses.includes(workPose)) pose = workPose;
     if (!night && cheering[id]) pose = elf.poses.includes('cheer') ? 'cheer' : 'idle';
@@ -102,8 +143,11 @@ export const NORBERT = Object.freeze({
   sleep: [1.5, 7],
 });
 export const norbertFiles = () => NORBERT.poses.map((pose) => elfFile('norbert', pose));
-export function norbertObject(iso, clock, {night = false, cheering = false} = {}) {
-  let [col, row, pose, flip] = night ? [...NORBERT.sleep, 'sleep', false] : elfPose('norbert', clock, NORBERT.stops);
+export function norbertObject(iso, clock, {night = false, cheering = false, blocked = []} = {}) {
+  const stops = clearStops(NORBERT.stops, blocked);
+  if (!stops) return null;
+  const bed = blocked.some((R) => inside(NORBERT.sleep, R)) ? stops[0] : NORBERT.sleep;
+  let [col, row, pose, flip] = night ? [bed[0], bed[1], 'sleep', false] : elfPose('norbert', clock, stops);
   if (!night && cheering) pose = 'puff';
   const [x, y] = iso(col, row);
   return {kind: 'elf', id: 'norbert', feet: [col, row], xy: [Math.round(x), Math.round(y)], flip, asset: {...FRAME, file: elfFile('norbert', pose)}};

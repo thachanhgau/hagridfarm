@@ -3,7 +3,7 @@
 // visit, three a day (fence #36). Visitors walk the aisles like the gia tinh (garden-elves.mjs) and use its 80×80
 // frame; Harry and Ron hover behind the plots passing the Quaffle, Fred and George light fireworks.
 // Loaded 10 s after the first frame (mobile-game.mjs); its frames load the first time they are drawn.
-import {elfPose} from './garden-elves.mjs?v=26.0';
+import {clearStops, elfPose} from './garden-elves.mjs?v=26.0';
 
 const FRAME = {width: 80, height: 80, pivotX: 40, pivotY: 76, bounds: {x: 11, y: 8, w: 58, h: 69}};
 const HOUR = 3600000, VN_OFFSET = 7 * HOUR, FIRST_HOUR = 6, VISIT_HOURS = 3, VISITS_PER_DAY = 5;
@@ -66,7 +66,7 @@ export const friendFile = (id, pose) => `environment/friends/${artOf(id)}/${pose
 export const FRIEND_FILES = [...new Set(Object.keys(FRIENDS).flatMap((id) => FRIENDS[id].poses.map((pose) => friendFile(id, pose))))];
 
 // [col, row, pose, faces right?, lift px] of one visitor. Ginny throws snowballs only in winter and flies otherwise.
-export function friendPose(id, clock, {winter = false} = {}) {
+export function friendPose(id, clock, {winter = false, blocked = []} = {}) {
   const friend = FRIENDS[id];
   if (friend.fly) {
     const [col, row, right] = friend.fly;
@@ -74,7 +74,9 @@ export function friendPose(id, clock, {winter = false} = {}) {
     const bob = clock > 0 ? Math.round(Math.sin(clock / 420 + (id === 'ron' ? 2 : 0)) * 3) : 0;
     return [col, row, mine ? 'fly-throw' : 'fly-catch', right, LIFT + bob];
   }
-  const [col, row, pose, right] = elfPose(id, clock, friend.stops);
+  const stops = clearStops(friend.stops, blocked);
+  if (!stops) return null;
+  const [col, row, pose, right] = elfPose(id, clock, stops);
   if (pose === 'snowball' && !winter && friend.poses.includes('fly-throw')) return [col, row, 'fly-throw', right, LIFT];
   return [col, row, pose, right, 0];
 }
@@ -102,12 +104,14 @@ export function fireworks(xy, clock, seed) {
 
 /** The visit at `now`: visitors (kind 'elf', drawn and picked like gia tinh) go into `elves`; returns the Quaffle and
  * fireworks (objects with their own `draw`). */
-export function friendObjects(iso, clock, now = Date.now(), elves = [], {night = false, winter = false, cheering = {}, all = false} = {}) {
+export function friendObjects(iso, clock, now = Date.now(), elves = [], {night = false, winter = false, cheering = {}, all = false, blocked = []} = {}) {
   // `all` (QA ?friends=all): every friend at once, for review.
   const visit = !night && (all ? {group: 'all', members: Object.keys(FRIENDS)} : friendVisit(now));
   if (!visit) return [];
-  const people = visit.members.map((id) => {
-    let [col, row, pose, flip, lift] = friendPose(id, clock, {winter});
+  const people = visit.members.flatMap((id) => {
+    const at = friendPose(id, clock, {winter, blocked});
+    if (!at) return [];
+    let [col, row, pose, flip, lift] = at;
     if (cheering[id] && !lift) pose = FRIENDS[id].poses.includes('cheer') ? 'cheer' : 'idle';
     const [x, y] = iso(col, row);
     return {kind: 'elf', id, friend: true, feet: [col, row], xy: [Math.round(x), Math.round(y) - lift], flip, asset: {...FRAME, file: friendFile(id, pose)}};

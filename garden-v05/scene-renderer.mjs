@@ -19,7 +19,7 @@ import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRo
 import {drawV24Ground} from './garden-v24-scenery.mjs?v=26.0';
 import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=26.0';
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=26.0';
-import {decorObjects,decorFootprintRect,depthCompare,footLift,orientedFootprint} from './decor-runtime.mjs?v=26.0';
+import {decorObjects,decorFootprintRect,depthSort,footLift,orientedFootprint} from './decor-runtime.mjs?v=26.0';
 import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=26.0';
 import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=26.0';
 import {backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=26.0';
@@ -1872,9 +1872,12 @@ export async function createGarden(canvas, options = {}) {
       ))
       : [];
     const cheering = Object.fromEntries(Object.entries(elfCheers).filter(([, until]) => until > performance.now()));
-    elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering, work: options.elfWork}) : [];
-    if (propsVisible && options.norbert) elfList.push(norbertObject(iso, clock, {night: atmosphereMode === 'night', cheering: !!cheering.norbert}));
-    const fx = propsVisible && friends ? friends.friendObjects(iso, clock, options.now, elfList, {night: atmosphereMode === 'night', winter: !!activeWinter, cheering, all: options.allFriends}) : [];
+    // Walkers turn back at a placed decoration's footprint (no-overlap rule §4).
+    const blocked = [...storeDecorationObjects, ...earnedDecorationObjects].map(groundOf).filter(Boolean);
+    elfList = propsVisible ? elfObjects(iso, clock, {night: atmosphereMode === 'night', cheering, work: options.elfWork, blocked}) : [];
+    const norbert = propsVisible && options.norbert && norbertObject(iso, clock, {night: atmosphereMode === 'night', cheering: !!cheering.norbert, blocked});
+    if (norbert) elfList.push(norbert);
+    const fx = propsVisible && friends ? friends.friendObjects(iso, clock, options.now, elfList, {night: atmosphereMode === 'night', winter: !!activeWinter, cheering, all: options.allFriends, blocked}) : [];
     if (propsVisible && xmasKit) fx.push(...xmasKit.hearthObjects(iso, options.xmas, elfList, {clock, decorations: options.decorations})); // December hearth, vớ, egg; S7 part 2 by date
     const objects = [...boundaryFence, ...(hasEdge && propsVisible && options.orchard ? orchardObjects(options.orchard, logicalNow) : []), ...wizList, ...elfList, ...fx, ...storeDecorationObjects];
     if (propsVisible) {
@@ -2032,10 +2035,11 @@ export async function createGarden(canvas, options = {}) {
         else drawGnome(ctx, x, y + 2, tick);
       }});
     }
-    // Decorations sort by their footprint and characters, crops and creatures by their feet (depthCompare).
+    // Decorations sort by their footprint and characters, crops and creatures by their feet (depthSort).
     for (const object of objects) object.ground ??= groundOf(object);
     // «Ruộng nước» paddies are flat ground: drawn before anything stands, so a neighbouring tray never covers a crop's base.
-    objects.sort((a, b) => (b.kind === 'pond-paddy') - (a.kind === 'pond-paddy') || depthCompare(a, b));
+    const paddy = (object) => object.kind === 'pond-paddy';
+    objects.splice(0, objects.length, ...depthSort(objects.filter(paddy)), ...depthSort(objects.filter((object) => !paddy(object))));
     railNeighbours(objects);
     interactiveDecor=objects.filter(o=>o.kind==='store-decor'&&!o.preview);
     interactiveEarnedDecor=objects.filter(o=>o.kind==='decoration');
