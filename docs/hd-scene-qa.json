@@ -38,7 +38,6 @@
           1440
         ],
         "budget": 50331648,
-        "reserved": 0,
         "bytes": 0,
         "peakBytes": 0,
         "requests": 0,
@@ -48,8 +47,8 @@
         "queued": 0,
         "failed": 0
       },
-      "medianFrame": 1.1000000014901161,
-      "p95Frame": 2.7000000029802322,
+      "medianFrame": 1.3999999985098839,
+      "p95Frame": 3.100000001490116,
       "missing": [],
       "display": [
         5120,
@@ -70,18 +69,17 @@
           2880
         ],
         "budget": 50331648,
-        "reserved": 0,
-        "bytes": 4128768,
-        "peakBytes": 4128768,
-        "requests": 3,
-        "hits": 41,
+        "bytes": 5619712,
+        "peakBytes": 5619712,
+        "requests": 7,
+        "hits": 77461,
         "pending": 0,
         "active": 0,
         "queued": 0,
         "failed": 0
       },
-      "medianFrame": 1.2999999970197678,
-      "p95Frame": 1.6000000014901161,
+      "medianFrame": 1.6000000014901161,
+      "p95Frame": 1.8999999985098839,
       "missing": [],
       "display": [
         5120,

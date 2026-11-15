@@ -1,6 +1,6 @@
 // Recover detail from current authored masters; never upscale native sprites and call that new detail.
 import fs from 'node:fs/promises';import path from 'node:path';import {createHash} from 'node:crypto';import {createRequire} from 'node:module';import {fileURLToPath} from 'node:url';
-import {quantize} from './build-pond-art.mjs';import {authoredCells} from './authored-atlas.mjs';import {renderElf,ELF_SOURCES,FRIEND_SOURCES} from './build-elf-art.mjs';import {renderSign,SIGN_SOURCE} from './build-sign-art.mjs';
+import {quantize,inkBox} from './build-pond-art.mjs';import {authoredCells} from './authored-atlas.mjs';import {renderElf,ELF_SOURCES,FRIEND_SOURCES} from './build-elf-art.mjs';import {renderSign,SIGN_SOURCE} from './build-sign-art.mjs';
 import {packAsset,provenance as waterGarden} from './build-water-garden-refresh.mjs';import {POND_SPECS,sceneryPixels as pondScenery} from './build-pond-art.mjs';import {EDGE_SPECS,sceneryPixels as edgeScenery} from './build-edge-art.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url)),sharp=createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 const read=async f=>JSON.parse(await fs.readFile(path.join(root,f),'utf8')),sha=b=>createHash('sha256').update(b).digest('hex'),density=2;
@@ -120,6 +120,18 @@ for(const [specs,pixels]of [[POND_SPECS,s=>pondScenery(s)],[EDGE_SPECS,async s=>
 for(const id of [...Object.keys(ELF_SOURCES),...Object.keys(FRIEND_SOURCES)])for(const sheet of await renderElf(id,density))for(const f of sheet.frames)await save(f.file,f.raw,f.width,f.height,{master:sheet.master,masterSha256:sheet.masterSha256,cell:f.cell,method:'build-elf-art renderElf at density 2'});
 // The «Hagrid Farm» sign: build-sign-art's sheared point sampling (exact at 1×) at twice the scale.
 {const sign=renderSign(density);await save('environment/layers/hagrid-farm-sign.png',sign.output,sign.width,sign.height,{...SIGN_SOURCE,method:'build-sign-art renderSign at density 2'});}
+// Forest ring (build-forest-assets.mjs): each prop's authored panel of the hash-checked atlas, fitted to the native ink box.
+{const forest=await read('forest-assets.json');if(sha(await fs.readFile(path.join(root,forest.source)))!==forest.sourceSha256)throw Error('Master changed '+forest.source);
+ for(const a of forest.assets){const [x,y,w,h]=a.rect;await recover(forest.source,{file:a.file,sha256:a.sha256,sourceRect:{x,y,w,h},bounds:inkBounds(await rgba(a.file))});}}
+// Decorative pond (build-scene.mjs exportProp: rect [880,0,1536,600] of props-v03, 4 px side pad).
+await recover('environment/props-v03.png',{file:'environment/layers/pond.png',sourceRect:{x:880,y:0,w:656,h:600},bounds:inkBounds(await rgba('environment/layers/pond.png'))});
+// Grass/soil tiles (build-scene.mjs): the terrain master's ink box resized onto the exact diamond; only used when it reproduces the shipped tile at 1×.
+async function tile(id,d){const master=`environment/terrain-${id}.png`,raw=await rgba(master),box=inkBox(raw.data,raw.info.width,raw.info.height),W=64*d,H=32*d,fallback=id==='grass'?[113,147,75]:[115,80,68];
+ const b=await sharp(raw.data,{raw:raw.info}).extract({left:box.x,top:box.y,width:box.w,height:box.h}).resize(W,H,{kernel:'nearest'}).raw().toBuffer(); // build-scene's default 'cover' crop
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){const i=(y*W+x)*4;if(Math.abs(x+.5-W/2)/(W/2)+Math.abs(y+.5-H/2)/(H/2)>1)b.fill(0,i,i+4);else{if(b[i+3]<192)b.set(fallback,i);b[i+3]=255;}}
+ return {master,pixels:quantize(b)};}
+for(const id of ['grass','soil']){const file=`environment/layers/tile-${id}.png`;if(!(await tile(id,1)).pixels.equals((await rgba(file)).data)){skipped.push({native:file,reason:'replaced by a later builder'});continue;}
+ const {master,pixels:hd}=await tile(id,density);await save(file,hd,64*density,32*density,{master,masterSha256:sha(await fs.readFile(path.join(root,master))),method:'build-scene tile export at density 2'});}
 walk(await read('decor-assets-manifest.json'));
 // Atlas metadata shares the original logical rectangles; each recovered cell is copied at doubled density.
 const registry={};

@@ -1,7 +1,7 @@
 {
   "density": 2,
-  "files": 1255,
-  "uniqueMasterFrames": 2130,
+  "files": 1262,
+  "uniqueMasterFrames": 2137,
   "runtime": {
     "native/bowtruckle/frame-01.png": {
       "file": "decor-assets/hd/4eaeb195bdb2ba0a51eb725b.webp",
@@ -8235,6 +8235,38 @@
       "bytes": 1516,
       "sha256": "7625ab0995b418a3d3d4047e301a655cd0279b491c5995e6f0d72737f2569956"
     },
+    "environment/forest-v06/grove.png": {
+      "file": "decor-assets/hd/b2aec60607544efa5c4e2fff.webp",
+      "density": 2,
+      "width": 190,
+      "height": 136,
+      "bytes": 10274,
+      "sha256": "b2aec60607544efa5c4e2fff8b9c6346ddd6a3720c4bc6e4b87d71c79c931c43"
+    },
+    "environment/forest-v06/log.png": {
+      "file": "decor-assets/hd/99f4450e3b347f5cee8b603f.webp",
+      "density": 2,
+      "width": 144,
+      "height": 88,
+      "bytes": 7416,
+      "sha256": "99f4450e3b347f5cee8b603fb0f5f364938068994c66a7f21bc3b740defb9350"
+    },
+    "environment/forest-v06/oak.png": {
+      "file": "decor-assets/hd/4c34abb290d36209b18292c8.webp",
+      "density": 2,
+      "width": 190,
+      "height": 176,
+      "bytes": 11692,
+      "sha256": "4c34abb290d36209b18292c89397c724e2cc2516f608e6405c5c42852348a681"
+    },
+    "environment/forest-v06/pine.png": {
+      "file": "decor-assets/hd/2ec5622bb17f2951fe1866b6.webp",
+      "density": 2,
+      "width": 104,
+      "height": 196,
+      "bytes": 5852,
+      "sha256": "2ec5622bb17f2951fe1866b6fe7780fcc64459124018d6332a35b0a7ca1f5748"
+    },
     "environment/friends/fred/cheer.png": {
       "file": "decor-assets/hd/1e11600ef647ce3873013ebc.webp",
       "density": 2,
@@ -8586,6 +8618,30 @@
       "height": 224,
       "bytes": 28634,
       "sha256": "9b86a305188d1e7fd0129aafa89708cb0b341b17e1b4363710530ed02111bd4b"
+    },
+    "environment/layers/pond.png": {
+      "file": "decor-assets/hd/5450f31c6097e5e49ba477b7.webp",
+      "density": 2,
+      "width": 160,
+      "height": 100,
+      "bytes": 10280,
+      "sha256": "5450f31c6097e5e49ba477b7f275e0164c494cc4e596ad0f8046a27e1b92ed32"
+    },
+    "environment/layers/tile-grass.png": {
+      "file": "decor-assets/hd/f822f888b6a2d48570d49a60.webp",
+      "density": 2,
+      "width": 64,
+      "height": 32,
+      "bytes": 822,
+      "sha256": "f822f888b6a2d48570d49a60db6da5d66ee6b6a6f69485c293eec191e24019dd"
+    },
+    "environment/layers/tile-soil.png": {
+      "file": "decor-assets/hd/a40009dfcc3bad8a35c0f018.webp",
+      "density": 2,
+      "width": 64,
+      "height": 32,
+      "bytes": 1014,
+      "sha256": "a40009dfcc3bad8a35c0f0188c98aff4492d8cef87aae0ebb8f2b0a8d870a26a"
     },
     "environment/pond/pond-1.png": {
       "file": "decor-assets/hd/4f2f9f7cf00d547076ccd2f7.webp",
@@ -10364,7 +10420,7 @@
       "totalFrames": 20
     }
   },
-  "runtimeBytes": 9407550,
+  "runtimeBytes": 9454900,
   "provenance": [
     {
       "native": "noel-50-assets/native/nx_snitch_wreath/frame-01.png",
@@ -52444,6 +52500,122 @@
       "masterSha256": "f91137f78aecd7e3c8fc8b6cc1c1278dd005d897d458efcf008833af889a427d",
       "method": "build-sign-art renderSign at density 2",
       "silhouetteIoU": 0.988
+    },
+    {
+      "native": "environment/forest-v06/oak.png",
+      "file": "decor-assets/hd/4c34abb290d36209b18292c8.webp",
+      "master": "masters-forest/forest-atlas-v06.png",
+      "masterSha256": "ba2cdb12c85132594739ee0b07e882cecbb36f9927e6d85d494038e9544122e8",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 850,
+        "height": 575
+      },
+      "logicalBounds": {
+        "x": 2,
+        "y": 33,
+        "w": 186,
+        "h": 141
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.977
+    },
+    {
+      "native": "environment/forest-v06/pine.png",
+      "file": "decor-assets/hd/2ec5622bb17f2951fe1866b6.webp",
+      "master": "masters-forest/forest-atlas-v06.png",
+      "masterSha256": "ba2cdb12c85132594739ee0b07e882cecbb36f9927e6d85d494038e9544122e8",
+      "sourceRect": {
+        "left": 850,
+        "top": 0,
+        "width": 686,
+        "height": 595
+      },
+      "logicalBounds": {
+        "x": 2,
+        "y": 9,
+        "w": 100,
+        "h": 185
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.98
+    },
+    {
+      "native": "environment/forest-v06/grove.png",
+      "file": "decor-assets/hd/b2aec60607544efa5c4e2fff.webp",
+      "master": "masters-forest/forest-atlas-v06.png",
+      "masterSha256": "ba2cdb12c85132594739ee0b07e882cecbb36f9927e6d85d494038e9544122e8",
+      "sourceRect": {
+        "left": 0,
+        "top": 575,
+        "width": 850,
+        "height": 449
+      },
+      "logicalBounds": {
+        "x": 2,
+        "y": 6,
+        "w": 186,
+        "h": 128
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.965
+    },
+    {
+      "native": "environment/forest-v06/log.png",
+      "file": "decor-assets/hd/99f4450e3b347f5cee8b603f.webp",
+      "master": "masters-forest/forest-atlas-v06.png",
+      "masterSha256": "ba2cdb12c85132594739ee0b07e882cecbb36f9927e6d85d494038e9544122e8",
+      "sourceRect": {
+        "left": 850,
+        "top": 595,
+        "width": 686,
+        "height": 429
+      },
+      "logicalBounds": {
+        "x": 2,
+        "y": 3,
+        "w": 140,
+        "h": 83
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.973
+    },
+    {
+      "native": "environment/layers/pond.png",
+      "file": "decor-assets/hd/5450f31c6097e5e49ba477b7.webp",
+      "master": "environment/props-v03.png",
+      "masterSha256": "1c4090cefe117e4b8f040a53f8dd7bbf8bb41bec4b88e34a98edd13b06f5d8af",
+      "sourceRect": {
+        "left": 880,
+        "top": 0,
+        "width": 656,
+        "height": 600
+      },
+      "logicalBounds": {
+        "x": 4,
+        "y": 3,
+        "w": 152,
+        "h": 96
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.982
+    },
+    {
+      "native": "environment/layers/tile-grass.png",
+      "file": "decor-assets/hd/f822f888b6a2d48570d49a60.webp",
+      "master": "environment/terrain-grass.png",
+      "masterSha256": "9638959ae92040e611990e3da3ad62e8b8ebcf09e325bace62f24b93b2d15bf8",
+      "method": "build-scene tile export at density 2",
+      "silhouetteIoU": 1
+    },
+    {
+      "native": "environment/layers/tile-soil.png",
+      "file": "decor-assets/hd/a40009dfcc3bad8a35c0f018.webp",
+      "master": "environment/terrain-soil.png",
+      "masterSha256": "ce7023e646af1b1453f851454c12de7988cce344b756af782db9e23499c06631",
+      "method": "build-scene tile export at density 2",
+      "silhouetteIoU": 1
     }
   ],
   "skipped": [

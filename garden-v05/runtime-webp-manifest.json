@@ -17984,6 +17984,11 @@
       "sha256": "2e680c57787f49a0da15e2178fafbfc5d2bae336061cc4bec231075e8bc3ba98"
     },
     {
+      "file": "decor-assets/hd/2ec5622bb17f2951fe1866b6.webp",
+      "bytes": 5852,
+      "sha256": "2ec5622bb17f2951fe1866b6fe7780fcc64459124018d6332a35b0a7ca1f5748"
+    },
+    {
       "file": "decor-assets/hd/2ee708ac705f0d8bde0e8564.webp",
       "bytes": 23726,
       "sha256": "2ee708ac705f0d8bde0e856407a16b225d32818d64b3618e807d0338ba9830bc"
@@ -18614,6 +18619,11 @@
       "sha256": "4c2fbbf0b05e05f04b701d084200dec7693c92558d1e36e436c3e593453e67bf"
     },
     {
+      "file": "decor-assets/hd/4c34abb290d36209b18292c8.webp",
+      "bytes": 11692,
+      "sha256": "4c34abb290d36209b18292c89397c724e2cc2516f608e6405c5c42852348a681"
+    },
+    {
       "file": "decor-assets/hd/4c8a760f09e1ddc7f28ab940.webp",
       "bytes": 3908,
       "sha256": "4c8a760f09e1ddc7f28ab940df5fe8e4d75c2e8a2178576afa0d51ca3e261e8f"
@@ -18832,6 +18842,11 @@
       "file": "decor-assets/hd/5445823337a588040dd7afd4.webp",
       "bytes": 4374,
       "sha256": "5445823337a588040dd7afd447be18bca55ec6712758c8ba7d1b914a2a04ea9b"
+    },
+    {
+      "file": "decor-assets/hd/5450f31c6097e5e49ba477b7.webp",
+      "bytes": 10280,
+      "sha256": "5450f31c6097e5e49ba477b7f275e0164c494cc4e596ad0f8046a27e1b92ed32"
     },
     {
       "file": "decor-assets/hd/546fed40865057a39991d423.webp",
@@ -20289,6 +20304,11 @@
       "sha256": "99a913ba7bd915040010de97f6e90591b1d29f5f3c19f4cec02db2af5c353cc8"
     },
     {
+      "file": "decor-assets/hd/99f4450e3b347f5cee8b603f.webp",
+      "bytes": 7416,
+      "sha256": "99f4450e3b347f5cee8b603fb0f5f364938068994c66a7f21bc3b740defb9350"
+    },
+    {
       "file": "decor-assets/hd/9a8b92a8c496d41583a7c232.webp",
       "bytes": 1652,
       "sha256": "9a8b92a8c496d41583a7c232c8091c09ba985594eaac140913f31767ce6793da"
@@ -20477,6 +20497,11 @@
       "file": "decor-assets/hd/a3cd5cafa3039ade07ebc47c.webp",
       "bytes": 5608,
       "sha256": "a3cd5cafa3039ade07ebc47c16983fab3d0029d7b8be82b5dab94a88a75588b0"
+    },
+    {
+      "file": "decor-assets/hd/a40009dfcc3bad8a35c0f018.webp",
+      "bytes": 1014,
+      "sha256": "a40009dfcc3bad8a35c0f0188c98aff4492d8cef87aae0ebb8f2b0a8d870a26a"
     },
     {
       "file": "decor-assets/hd/a41c13ddc47b2fe8496bdfd0.webp",
@@ -20727,6 +20752,11 @@
       "file": "decor-assets/hd/b273dfdc48a4ef3e1956a2ba.webp",
       "bytes": 4654,
       "sha256": "b273dfdc48a4ef3e1956a2ba499a1dc3df8d60c7e1abfc2d0b1a174a226820ca"
+    },
+    {
+      "file": "decor-assets/hd/b2aec60607544efa5c4e2fff.webp",
+      "bytes": 10274,
+      "sha256": "b2aec60607544efa5c4e2fff8b9c6346ddd6a3720c4bc6e4b87d71c79c931c43"
     },
     {
       "file": "decor-assets/hd/b2c670764725f189b9863c76.webp",
@@ -22309,6 +22339,11 @@
       "sha256": "f81e104ebd6931d98d52f8536f8a8cf4ed83255ca0054a573850c32f0607559d"
     },
     {
+      "file": "decor-assets/hd/f822f888b6a2d48570d49a60.webp",
+      "bytes": 822,
+      "sha256": "f822f888b6a2d48570d49a60db6da5d66ee6b6a6f69485c293eec191e24019dd"
+    },
+    {
       "file": "decor-assets/hd/f86afc56724fd63b808bbf66.webp",
       "bytes": 6868,
       "sha256": "f86afc56724fd63b808bbf66fb65078139a0e46c157f1c58ed776205343f1e98"
@@ -22501,10 +22536,10 @@
   ],
   "totals": {
     "converted": 1706,
-    "existingWebp": 1083,
-    "originalBytes": 15936818,
-    "webpBytes": 13366634,
+    "existingWebp": 1090,
+    "originalBytes": 15984168,
+    "webpBytes": 13413984,
     "savedBytes": 2570184,
-    "savedPercent": 16.13
+    "savedPercent": 16.08
   }
 }
