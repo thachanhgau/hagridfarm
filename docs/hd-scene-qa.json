@@ -47,7 +47,7 @@
         "queued": 0,
         "failed": 0
       },
-      "medianFrame": 1.0999999940395355,
+      "medianFrame": 1.1000000014901161,
       "p95Frame": 2.6999999955296516,
       "missing": [],
       "display": [
@@ -78,8 +78,8 @@
         "queued": 0,
         "failed": 0
       },
-      "medianFrame": 1.1000000014901161,
-      "p95Frame": 1.4000000059604645,
+      "medianFrame": 1.2000000029802322,
+      "p95Frame": 1.6999999955296516,
       "missing": [],
       "display": [
         5120,

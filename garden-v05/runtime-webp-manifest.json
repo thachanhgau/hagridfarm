@@ -17449,6 +17449,11 @@
       "sha256": "17a56d865b1c684f355bab36f7e7429cb029b5e17e2a96c7d20fae3c2c52ffc6"
     },
     {
+      "file": "decor-assets/hd/17c63be75ede7eb26070fcb1-atlas.webp",
+      "bytes": 61404,
+      "sha256": "17c63be75ede7eb26070fcb1bdafe869d8ba85761d00376178b0d921c2f4a2cb"
+    },
+    {
       "file": "decor-assets/hd/17e215b42eeecb17448d8be6.webp",
       "bytes": 4612,
       "sha256": "17e215b42eeecb17448d8be6f2d90229e04b0ffc8d25e565e8f835b53d0eafca"
@@ -18119,6 +18124,11 @@
       "sha256": "41363fcf2f41ed1a0d8bebc3fb8f7920d0c1c55381e18f356e76debda739cd84"
     },
     {
+      "file": "decor-assets/hd/413d3a8885eeac25e0e7f0e7-atlas.webp",
+      "bytes": 85464,
+      "sha256": "413d3a8885eeac25e0e7f0e7f2b2d75790d06ab0c576bca996c0ec15c1af47df"
+    },
+    {
       "file": "decor-assets/hd/4156764c229cf6f802fd2b91.webp",
       "bytes": 2330,
       "sha256": "4156764c229cf6f802fd2b91b64ac6bacced4a4b821170a6ece0320c0c2f0e9a"
@@ -18344,6 +18354,11 @@
       "sha256": "4e2d42d76842b82dcd054ed79c9f3fa1503cea31e89f5ae50a6671f6d2006979"
     },
     {
+      "file": "decor-assets/hd/4e73c31634fd084f1183f301-atlas.webp",
+      "bytes": 97258,
+      "sha256": "4e73c31634fd084f1183f301820f5fe739aa839f9d4d65d2a6b7a5fdd5cee1bf"
+    },
+    {
       "file": "decor-assets/hd/4e74408ab483b91267170ef8-atlas.webp",
       "bytes": 12818,
       "sha256": "4e74408ab483b91267170ef89c16fc81f62054c1c6880a63f5a2f77479e3655d"
@@ -18357,6 +18372,11 @@
       "file": "decor-assets/hd/4f76af36bdcbd46bf078f00f.webp",
       "bytes": 1950,
       "sha256": "4f76af36bdcbd46bf078f00f4e472b3ace1ce403da49dca6bc4d26c8bfa7fa78"
+    },
+    {
+      "file": "decor-assets/hd/5005464029660263170fe38d-atlas.webp",
+      "bytes": 96840,
+      "sha256": "5005464029660263170fe38da2927c7d3ad54f0a28df934480f9b13d66eeb6fc"
     },
     {
       "file": "decor-assets/hd/50335b71b0aead5e02a9ed02.webp",
@@ -18954,6 +18974,11 @@
       "sha256": "7dd4c4828392b1e6c521f501ac4b7770d2efac2fab5d372690b687dacea62404"
     },
     {
+      "file": "decor-assets/hd/7e6a68338c268f70505d4ad4-atlas.webp",
+      "bytes": 85736,
+      "sha256": "7e6a68338c268f70505d4ad4b777399536f3184380f418d8520669e5765759d0"
+    },
+    {
       "file": "decor-assets/hd/7eae9b387d353dac0556ff07.webp",
       "bytes": 3110,
       "sha256": "7eae9b387d353dac0556ff07b044d3a6b4bb56249ee9bfedf56c3ceea4dfa8c9"
@@ -19067,6 +19092,11 @@
       "file": "decor-assets/hd/86dc28149cea5e8f3b277aec.webp",
       "bytes": 1434,
       "sha256": "86dc28149cea5e8f3b277aec790c07a6368f952323fbb65bac1db2e172d01228"
+    },
+    {
+      "file": "decor-assets/hd/86dd3aba5b27cf01bf7ec47b-atlas.webp",
+      "bytes": 61718,
+      "sha256": "86dd3aba5b27cf01bf7ec47b1a971c7c8ffc83316040d870d3ccca7db5afd2f8"
     },
     {
       "file": "decor-assets/hd/86ef6d6458489adf49346734.webp",
@@ -19319,6 +19349,11 @@
       "sha256": "96e081118d70acf2ed0bf12ca840f631019969f7071733691035e8c56e229f6e"
     },
     {
+      "file": "decor-assets/hd/96ec9af2e7ba40b18f577a48-atlas.webp",
+      "bytes": 55970,
+      "sha256": "96ec9af2e7ba40b18f577a480610964f59029d0312324e481971651c8ff3d2b5"
+    },
+    {
       "file": "decor-assets/hd/9716d3194e20894c1ea796d4.webp",
       "bytes": 8914,
       "sha256": "9716d3194e20894c1ea796d4991881399d1ff8480be3f369b0e9ff957ba9995e"
@@ -19547,6 +19582,11 @@
       "file": "decor-assets/hd/a773cc6c568fe69e08576428.webp",
       "bytes": 6952,
       "sha256": "a773cc6c568fe69e08576428a63359c97944de8d29ff487cec9b6ebd0ccac914"
+    },
+    {
+      "file": "decor-assets/hd/a78d0fcd69ef47f4194794c6-atlas.webp",
+      "bytes": 87782,
+      "sha256": "a78d0fcd69ef47f4194794c69c68f688fcddc14069308bc73ff375f859541955"
     },
     {
       "file": "decor-assets/hd/a7ae1ee74e59db6017e91823.webp",
@@ -20019,6 +20059,11 @@
       "sha256": "ca297c6d77fd6fedec74339e21c629080c08d01c4ca2fbf0a5e1d59de46c1b20"
     },
     {
+      "file": "decor-assets/hd/cb3fe9eeae2fde2cc6b25e95-atlas.webp",
+      "bytes": 56018,
+      "sha256": "cb3fe9eeae2fde2cc6b25e959dea1c49a25f719b07fc5e24d81ff8d9e46b60bb"
+    },
+    {
       "file": "decor-assets/hd/cb548364b79024acee0bcbd3.webp",
       "bytes": 4636,
       "sha256": "cb548364b79024acee0bcbd331f5d55f5106b35c890c9c3de285c23269f0bd7c"
@@ -20194,6 +20239,11 @@
       "sha256": "d4731d35e0c9911bb4a12d765cbd05deb11bc4ed73da9697c3c11bf726f147e5"
     },
     {
+      "file": "decor-assets/hd/d4c043f04b32af1d9f3f4627-atlas.webp",
+      "bytes": 57400,
+      "sha256": "d4c043f04b32af1d9f3f4627971c7897e8503ce01b2ff7e1d7c2d795851ea0af"
+    },
+    {
       "file": "decor-assets/hd/d55c3901f83096659f57474a.webp",
       "bytes": 2594,
       "sha256": "d55c3901f83096659f57474a54a5de135f4a07ce13926b58da14d21d3afd82be"
@@ -20257,6 +20307,11 @@
       "file": "decor-assets/hd/da759a445e04446362a3c322.webp",
       "bytes": 6252,
       "sha256": "da759a445e04446362a3c322fa03e223b92a3c332a3e1bd4dae0bb145c3c6f4d"
+    },
+    {
+      "file": "decor-assets/hd/da97658843c91d70990b575c-atlas.webp",
+      "bytes": 87864,
+      "sha256": "da97658843c91d70990b575c76bd07af045947ba457ced6e65f1830e4c860c69"
     },
     {
       "file": "decor-assets/hd/da9e0a3daa7fc98f5e96969d-atlas.webp",
@@ -20819,6 +20874,11 @@
       "sha256": "fdda3de1decf83e868ec0486f20445bf798a89410c2646507f2e17713fa3be36"
     },
     {
+      "file": "decor-assets/hd/fe5dc94f79577df7641fd21c-atlas.webp",
+      "bytes": 57302,
+      "sha256": "fe5dc94f79577df7641fd21cc1063b7b67fa8149f9508ba791dbfb65f4910917"
+    },
+    {
       "file": "decor-assets/hd/ff512c1d6a95a1dae800774d.webp",
       "bytes": 5944,
       "sha256": "ff512c1d6a95a1dae800774dde32bce83ee82f651ac344d749f14b1508e13511"
@@ -20881,10 +20941,10 @@
   ],
   "totals": {
     "converted": 1706,
-    "existingWebp": 759,
-    "originalBytes": 14146130,
-    "webpBytes": 11575946,
+    "existingWebp": 771,
+    "originalBytes": 15036886,
+    "webpBytes": 12466702,
     "savedBytes": 2570184,
-    "savedPercent": 18.17
+    "savedPercent": 17.09
   }
 }
