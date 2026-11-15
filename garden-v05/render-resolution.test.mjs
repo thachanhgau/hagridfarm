@@ -33,12 +33,19 @@ test('only a visible draw requests HD; query-stamped native files keep the same 
  assert.equal(surface.stats().hits,1);assert.ok(surface.stats().peakBytes<=surface.stats().budget);
  surface.setEnabled(false);ctx.drawImage(native,10,20);assert.equal(calls.at(-1)[0],native);assert.deepEqual([canvas.width,canvas.height],[500,400]);
 });
-test('the ground layer follows the render density only when its extra bytes fit half the HD budget, and reserves them',async()=>{
- const make=(world,dpr)=>{const ctx={drawImage(){},setTransform(){},getTransform:()=>({a:1,b:0,c:0,d:1,e:0,f:0})};
-  return createResolution({width:0,height:0,style:{},dataset:{},getContext:()=>ctx,getBoundingClientRect:()=>({left:0,top:0,width:world.width,height:world.height}),ownerDocument:{defaultView:{innerWidth:1280,innerHeight:800,devicePixelRatio:dpr}}},world);};
- const small=make({width:1000,height:600},2);
- assert.equal(small.layer(1000,600),2);assert.equal(small.stats().reserved,1000*600*4*3);
- const full=make({width:2560,height:1440},2),stats=full.stats();
- assert.equal(full.layer(2560,1440),1,'a 2× full world (44 MB extra) does not fit 24 MB');assert.equal(full.stats().reserved,0);assert.equal(stats.density,2);
- small.setEnabled(false);assert.equal(small.layer(1000,600),1);assert.equal(small.stats().reserved,0);
+test('the ground layer follows the surface density and swaps its art for HD off screen too, rebuilding once',async()=>{
+ const loaded=[],calls=[];class FakeImage{width=200;height=200;set src(value){loaded.push(value);queueMicrotask(()=>this.onload());}}
+ const ctx={drawImage(){},setTransform(){},getTransform:()=>({a:1,b:0,c:0,d:1,e:0,f:0})};
+ const view={innerWidth:1280,innerHeight:800,devicePixelRatio:2,Image:FakeImage};
+ const surface=createResolution({width:0,height:0,style:{},dataset:{},getContext:()=>ctx,getBoundingClientRect:()=>({left:0,top:0,width:2560,height:1440}),ownerDocument:{defaultView:view}},{width:2560,height:1440},
+  {art:{'sign.png':{file:'hd/sign.webp',density:2,width:100,height:100},'tree.png':{file:'hd/tree.webp',density:2,width:100,height:100}},imageUrl:file=>file});
+ assert.equal(surface.layer(),2,'a 2× full world has its own allowance');
+ const layer={drawImage:(...args)=>calls.push(args)};let rebuilt=0;surface.adopt(layer,()=>rebuilt++);
+ const sign=tagArt({width:100,height:100},'sign.png'),tree=tagArt({width:100,height:100},'tree.png');
+ layer.drawImage(sign,99999,99999);layer.drawImage(tree,-5000,0);
+ assert.deepEqual(loaded,['hd/sign.webp','hd/tree.webp'],'no visibility test on the ground');
+ for(let i=0;i<5&&!rebuilt;i++)await new Promise(resolve=>setTimeout(resolve,0));
+ assert.equal(rebuilt,1,'one rebuild once both settled');
+ layer.drawImage(sign,0,0);assert.ok(calls.at(-1)[0] instanceof FakeImage);
+ surface.setEnabled(false);assert.equal(surface.layer(),1);
 });

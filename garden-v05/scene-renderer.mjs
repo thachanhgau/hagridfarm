@@ -1093,10 +1093,14 @@ export async function createGarden(canvas, options = {}) {
   }
 
   function buildTerrainCache(withGrid, withForest, stage) {
-    // P0.3: the ground follows the render density (logical coordinates unchanged) when it fits the HD memory budget.
-    const layerDensity = resolution.layer(map.width, map.height);
-    const cachedCanvas = makeCanvas(canvas, Math.round(map.width * layerDensity), Math.round(map.height * layerDensity));
-    const cachedContext = cachedCanvas.getContext('2d');
+    // The ground follows the render density (logical coordinates unchanged) and swaps its art for HD, rebuilding once
+    // the HD images it asked for arrive. A device that cannot allocate the dense layer gets the 1× one.
+    let layerDensity = resolution.layer(), cachedCanvas = makeCanvas(canvas, Math.round(map.width * layerDensity), Math.round(map.height * layerDensity));
+    let cachedContext = cachedCanvas.getContext('2d');
+    if (!cachedContext && layerDensity > 1) {
+      layerDensity = 1; cachedCanvas = makeCanvas(canvas, map.width, map.height); cachedContext = cachedCanvas.getContext('2d');
+    }
+    resolution.adopt(cachedContext, () => terrainCaches.clear());
     cachedContext.setTransform?.(layerDensity, 0, 0, layerDensity, 0, 0);
     cachedContext.imageSmoothingEnabled = false;
     if (withForest) {
