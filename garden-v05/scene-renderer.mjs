@@ -2039,7 +2039,7 @@ export async function createGarden(canvas, options = {}) {
     interactivePond=objects.filter(o=>o.kind==='pond'||o.kind==='pond-paddy');
     interactiveOrchard=objects.filter(o=>o.type==='prop'&&String(o.id).startsWith('orchard-'));
     interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
-    lastOrder = objects.map((object) => ({id: object.id ?? object.species, y: object.xy?.[1] ?? 0, type: object.type}));
+    lastOrder = objects.map((object) => ({id: object.id ?? object.species, x: object.xy?.[0] ?? 0, y: object.xy?.[1] ?? 0, type: object.type, species: object.species}));
     for (const object of objects) drawObject(object, logicalNow, clock);
     drawPenLabels(state, logicalNow, objects);
     drawAnimationEffects(state, activeAnimations);

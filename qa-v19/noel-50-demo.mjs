@@ -13,7 +13,7 @@ const canvas=document.querySelector('canvas'),viewport=document.getElementById('
 const garden=await createGarden(canvas,{decorAssets:manifest.items});let hd=true;
 const now=Date.parse('2026-12-24T12:00:00+07:00'),state=E.testProfile(500,now);
 state.built=[...new Set([...state.built,...E.DB.expansions.map(e=>e.id)])];
-for(const species of ['puffskein','bowtruckle','hippogriff']){const a=E.CREATURE[species];state.creatures.push({id:'demo-'+species,type:'creature',species,level:a.level,adoptedAt:now-48*3600000,mealsCompleted:a.mealsToAdult,meal:null,cyclesClaimed:0,preview:false});}
+for(const species of Object.keys(E.CREATURE)){const a=E.CREATURE[species];state.creatures.push({id:'demo-'+species,type:'creature',species,level:a.level,adoptedAt:now-48*3600000,mealsCompleted:a.mealsToAdult,meal:null,cyclesClaimed:0,preview:false});}
 let decorations={owned:[],placements:[],positions:{},rotations:{}},group=0,scale=1,night=false,facing='default',ready=false,gridOn=true,gridPreview=null;
 function centerAt([col,row]){const [x,y]=iso(col,row);viewport.scrollTo({left:x*scale-viewport.clientWidth/2,top:y*scale-viewport.clientHeight/2-32,behavior:'instant'});}
 function focusItem(id){const at=decorations.positions[id],asset=assetOf(id);gridPreview={rect:decorFootprintRect(...at,asset.footprintTiles,facing)};centerAt(at);}
@@ -47,6 +47,7 @@ document.querySelectorAll('[data-group]').forEach(button=>button.onclick=()=>sho
 document.getElementById('calibration').onclick=()=>showGroup(-1);
 document.getElementById('plus').onclick=()=>zoom(.15);document.getElementById('minus').onclick=()=>zoom(-.15);
 document.getElementById('quality').onclick=event=>{hd=!hd;garden.setQuality(hd);event.target.textContent=hd?'Nét cao':'Ảnh cũ';event.target.setAttribute('aria-pressed',String(hd));render(0);};
+let creatureIndex=-1;document.getElementById('creatures').onclick=()=>{const list=(garden.order()||[]).filter(o=>o.type==='creature');if(!list.length){status.textContent='Chưa thấy sinh vật';return;}creatureIndex=(creatureIndex+1)%list.length;const c=list[creatureIndex];viewport.scrollTo({left:c.x*scale-viewport.clientWidth/2,top:(c.y-40)*scale-viewport.clientHeight/2,behavior:'instant'});status.textContent=`Sinh vật ${creatureIndex+1}/${list.length}: ${c.species||c.id}`;};
 document.getElementById('night').onclick=event=>{night=!night;event.target.textContent=night?'Ban ngày':'Ban đêm';};
 document.getElementById('grid').onclick=event=>{gridOn=!gridOn;event.target.setAttribute('aria-pressed',String(gridOn));};
 document.getElementById('turn').onclick=async()=>{facing=facing==='default'?'right':'default';await showGroup(group);};
