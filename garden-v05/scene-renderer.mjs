@@ -823,17 +823,18 @@ export async function createGarden(canvas, options = {}) {
     target.drawImage(layer, left, top, width, height);
   }
 
+  const fenceKey = (stage) => stageKey(stage) + (resolution.layer() > 1 ? `@${resolution.layer()}:${activeWeather}:${activeEvent}` : '');
   function rebuildBoundaryFence(stage) {
+    const baked = resolution.layer() > 1;
     boundaryFence = createBoundaryFence(map, stageBoundary(stage, {fence: true}), fenceOpenings(stage)).map((piece) => {
       const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - (piece.gate?40:6));
       const top = Math.floor(Math.min(piece.a[1], piece.b[1]) - (piece.gate?80:51));
       const [layer, brush] = denseLayer(Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?80:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
-      drawBoundaryFence(brush, {
-        ...piece,
-        a: [piece.a[0] - left, piece.a[1] - top],
-        b: [piece.b[0] - left, piece.b[1] - top],
-      });
-      return {...piece, layer, left, top};
+      const local = {...piece, a: [piece.a[0] - left, piece.a[1] - top], b: [piece.b[0] - left, piece.b[1] - top]};
+      drawBoundaryFence(brush, local);
+      // HD: snow and garland rope step per device pixel, too many rects for every frame, so they live in the layer.
+      if (baked) drawSeasonalFence(brush, local, activeWeather, activeEvent, 0, 'static');
+      return {...piece, layer, left, top, baked};
     });
   }
 
@@ -848,9 +849,9 @@ export async function createGarden(canvas, options = {}) {
       terrainStageId = stageKey(stage);
       terrainLayoutKey = nextLayoutKey;
     }
-    if (boundaryStageId !== stageKey(stage) + '@' + resolution.layer()) {
+    if (boundaryStageId !== fenceKey(stage)) {
       rebuildBoundaryFence(stage);
-      boundaryStageId = stageKey(stage) + '@' + resolution.layer();
+      boundaryStageId = fenceKey(stage);
     }
   }
   const animation = createAnimationRuntime();
@@ -1660,7 +1661,7 @@ export async function createGarden(canvas, options = {}) {
       return;
     }
     if (object.kind === 'pen-fence') { drawLayer(context,object.layer,object.left,object.top); return; }
-    if (object.kind === 'boundary-fence') { drawLayer(context,object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock); return; }
+    if (object.kind === 'boundary-fence') { drawLayer(context,object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock,object.baked?'moving':'all'); return; }
     if (object.kind === 'decoration') {
       const asset = earnedDecorArt(object.id, object.facing);
       const image = asset?.file ? (activeWeather === 'snow' ? seasonalImage(asset.file, 'cap') : imageFor(asset.file)) : null;
