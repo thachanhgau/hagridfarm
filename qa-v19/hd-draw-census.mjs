@@ -22,7 +22,7 @@ try{
   const manifest=await fetch('/garden-v05/decor-assets-manifest.json').then(r=>r.json());
   const garden=await createGarden(document.querySelector('canvas'),{decorAssets:manifest.items,hd:false});
   const log=[];const wait=()=>new Promise(r=>setTimeout(r,120));
-  window.__ART=(await import('/garden-v05/render-resolution.mjs?v=26.0')).ART_SOURCE;
+  window.__ART=(await import('/garden-v05/render-resolution.mjs?v=26.1')).ART_SOURCE;
   const now0=Date.parse('2026-07-01T09:00:00+07:00');
   const species=Object.keys(E.CREATURE),crops=Object.keys(E.CROP);
   for(const [month,weather] of [['2026-07-01T09:00:00+07:00','clear'],['2026-07-01T21:30:00+07:00','clear'],['2026-12-24T12:00:00+07:00','snow'],['2026-10-31T20:00:00+07:00','clear']]){

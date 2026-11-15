@@ -1,8 +1,10 @@
-import { ITEM_ART } from "./item-art.mjs?v=26.0";
-import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=26.0";
-import { DB, TAN_SUC_LEVEL } from "./balance-data.mjs?v=26.0";
-import {saleTotal} from "./premium-products.mjs?v=26.0";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.0';
+import { ITEM_ART } from "./item-art.mjs?v=26.1";
+import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=26.1";
+import { DB, TAN_SUC_LEVEL } from "./balance-data.mjs?v=26.1";
+import {saleTotal} from "./premium-products.mjs?v=26.1";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.1';
+import {hdSrcset} from './render-resolution.mjs?v=26.1';
+import {HD_ART} from './hd-art.mjs?v=26.1';
 const SUPPLY_ART_KEYS = Object.freeze({
  water: "supply_water",
  boost: "supply_boost",
@@ -51,7 +53,7 @@ export function itemDisplayName(id, fallback = 'Thành phẩm') {
 }
 
 export const $=id=>document.getElementById(id);
-export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else e.setAttribute(k,String(tag==='img'&&k==='src'?runtimeImageUrl(v):v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}
+export function el(tag,attrs={},children=[]){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else if(k==="html")e.innerHTML=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(k==="disabled"||k==="hidden")e[k]=!!v;else if(tag==='img'&&k==='src'){e.setAttribute(k,runtimeImageUrl(v));const set=hdSrcset(v,HD_ART,runtimeImageUrl);if(set)e.setAttribute('srcset',set);}else e.setAttribute(k,String(v));}for(const c of Array.isArray(children)?children:[children])if(c!==null&&c!==undefined)e.append(typeof c==="string"?document.createTextNode(c):c);return e;}
 export const num=n=>{const v=Number(n);return Number.isFinite(v)?v.toLocaleString("vi-VN"):"0";};
 export function duration(ms){const seconds=Math.max(0,Math.ceil(ms/1000));if(!seconds)return"Sẵn sàng";const h=Math.floor(seconds/3600),m=Math.floor(seconds%3600/60);return h>=24?`${Math.floor(h/24)}n ${h%24}g`:h?`${h}g ${String(m).padStart(2,"0")}p`:seconds>=600?`${m}p`:`${m}p ${String(seconds%60).padStart(2,"0")}s`;}
 // Server rule (functions/games/garden-action-core growthScale): faster below level 15, then half time for good

@@ -1,5 +1,5 @@
 import {applyDefaultDecorationVisibility} from '../garden-v05/default-decor.mjs?v=24.9.81';
-import * as E from "../garden-v05/progression-engine.mjs?v=26.0";
+import * as E from "../garden-v05/progression-engine.mjs?v=26.1";
 import {unlockedCatalog,CATALOG_VERSION,STORE_CATALOG} from "../garden-v05/garden-store-catalog.mjs?v=25.1.9";
 import {decorFootprintRect,rectsOverlap} from "../garden-v05/decor-runtime.mjs?v=24.9.40";
 import {createGardenClient} from "../garden-v05/garden-emulator-client.mjs?v=24.9.40";
@@ -8,7 +8,7 @@ import {vnDayKey,festivalStatus,festivalMilestone,CREATURE_AFFINITY_LEVELS,affin
 import {applyGardenReward} from "../garden-v05/garden-storage.mjs?v=24.9.63";
 import {ATMOSPHERE_MODES,WEATHER_MODES} from "../garden-v05/garden-atmosphere.mjs?v=25.1.9";
 import {KEEPER_ACHIEVEMENTS} from "../garden-v05/garden-achievements.mjs?v=24.9.40";
-import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=26.0";
+import {growthScale,packTotal} from "../garden-v05/ui-utils.mjs?v=26.1";
 const PREMIUM_CAPS=Object.freeze({rain:1,felix:1,primeMeal:30,feast:3,skeleGro:3});
 
 // In-memory stand-in for performHagridGardenAction (HPVNN functions/games/garden-action-handlers.js,

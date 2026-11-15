@@ -16,7 +16,11 @@ export function visibleDraw(ctx,canvas,args,native,viewport){
  const points=[[x,y],[x+w,y],[x,y+h],[x+w,y+h]].map(([a,b])=>[r.left+(t.a*a+t.c*b+t.e)*r.width/canvas.width,r.top+(t.b*a+t.d*b+t.f)*r.height/canvas.height]);
  return Math.max(...points.map(p=>p[0]))>=0&&Math.min(...points.map(p=>p[0]))<=viewport.width&&Math.max(...points.map(p=>p[1]))>=0&&Math.min(...points.map(p=>p[1]))<=viewport.height;
 }
-export function tagArt(image,file,effects={}){if(image)image[ART_SOURCE]={file:String(file).replace(/[?#].*$/,'').replace(/^\.\//,''),...effects};return image;}
+// HD_ART key of a source: no query or './', and a runtime WebP path back to the PNG it was built from.
+export function artKey(file){return String(file).replace(/[?#].*$/,'').replace(/^\.\//,'').replace(/^runtime-webp\/(.+)\.webp$/,'$1.png');}
+export function tagArt(image,file,effects={}){if(image)image[ART_SOURCE]={file:artKey(file),...effects};return image;}
+/** `srcset` for an HTML <img> (shop, dock, bag): the HD file as its density candidate, '' when none. CSS size is unchanged. */
+export function hdSrcset(file,art,imageUrl){const record=art[artKey(file)];return record?`${imageUrl(file)} 1x, ${imageUrl(record.file)} ${record.density}x`:'';}
 export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,effects={},imageUrl,onReady=()=>{}}={}){
  const view=canvas.ownerDocument?.defaultView||globalThis,mobile=(view.innerWidth||1280)<=820;
  const context=canvas.getContext('2d');
