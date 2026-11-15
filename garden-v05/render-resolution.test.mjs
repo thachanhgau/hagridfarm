@@ -59,3 +59,8 @@ test('a tinted copy (forest trees) gets the same tint painted over its HD image'
  for(let i=0;i<5&&!fills.length;i++)await new Promise(resolve=>setTimeout(resolve,0));
  assert.deepEqual(fills,[['rgba(9,29,31,.24)','source-atop',0,0,200,200]]);
 });
+test('per-frame atlas records (atlasRects / rightAtlasRects, e.g. the Halloween and event runtime decor) get HD with their base sprite',async()=>{
+ const {HD_ART}=await import('./hd-art.mjs'),{items}=JSON.parse(await (await import('node:fs/promises')).readFile(new URL('decor-assets-manifest.json',import.meta.url),'utf8'));
+ const atlased=items.filter(i=>i.atlasRects&&HD_ART[i.file]);assert.ok(atlased.some(i=>i.id==='hw_ghost_well'));assert.ok(atlased.length>=100);
+ for(const i of atlased)for(const f of [...i.frames,...(i.rightFrames||[])])assert.ok(HD_ART[f],`${i.id}: ${f} has no HD`);
+});

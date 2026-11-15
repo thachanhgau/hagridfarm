@@ -29,20 +29,29 @@ function point(map, col, row) {
   ];
 }
 
-function fill(ctx, x, y, width, height, color) {
+// The ground layer renders at the surface density (ctx transform); edges, stair rows and paver corners snap to its
+// device pixels (1/density logical). At density 1 every rectangle is the same as the 1× painter's.
+function densityOf(ctx) {
+  const a = Math.abs(Number(ctx.getTransform?.()?.a));
+  return Number.isFinite(a) && a > 0 ? a : 1;
+}
+
+function fillAt(ctx, x, y, width, height, color, d = 1) {
+  const snap = (v) => Math.round(v * d) / d;
   ctx.fillStyle = color;
-  ctx.fillRect(Math.round(x), Math.round(y), Math.max(1, Math.round(width)), Math.max(1, Math.round(height)));
+  ctx.fillRect(snap(x), snap(y), Math.max(1 / d, snap(width)), Math.max(1 / d, snap(height)));
 }
 
 // A shallow, stair-stepped stamp keeps the route one cell wide while
-// reading as hand-laid pixel art rather than a smooth vector stroke.
-function pathStamp(ctx, x, y, radius, color) {
-  const px = Math.round(x);
-  const py = Math.round(y);
+// reading as hand-laid pixel art rather than a smooth vector stroke; each stair is 2 device pixels tall.
+function pathStamp(ctx, x, y, radius, color, d = 1) {
+  const px = Math.round(x * d) / d;
+  const py = Math.round(y * d) / d;
   const halfRows = Math.floor(radius / 2);
-  for (let dy = -halfRows; dy <= halfRows; dy += 2) {
-    const half = Math.max(2, Math.round(radius - Math.abs(dy) * 2));
-    fill(ctx, px - half, py + dy, half * 2, 2, color);
+  const step = 2 / d;
+  for (let k = 0, dy = -halfRows; dy <= halfRows + 2 - step; k += 1, dy = -halfRows + k * step) {
+    const half = Math.max(2, Math.round((radius - Math.abs(dy) * 2) * d) / d);
+    fillAt(ctx, px - half, py + dy, half * 2, step, color, d);
   }
 }
 
@@ -75,12 +84,13 @@ export function pathSegments(map) {
   return routeList(map).flatMap((route) => route.slice(1).map((end, index) => [route[index], end]));
 }
 
-function paintSample(ctx, x, y, normal, sampleIndex, detail) {
+function paintSample(ctx, x, y, normal, sampleIndex, detail, d) {
   if (!detail) {
-  pathStamp(ctx, x, y, MAX_RADIUS, COLORS.edge);
-  pathStamp(ctx, x, y, 28, COLORS.earth);
+    pathStamp(ctx, x, y, MAX_RADIUS, COLORS.edge, d);
+    pathStamp(ctx, x, y, 28, COLORS.earth, d);
     return;
   }
+  const fill = (...args) => fillAt(...args, d);
 
   // Flat paver marks stay in the middle third, leaving a readable walking line.
   if (sampleIndex % 3 === 0) {
@@ -108,7 +118,7 @@ function paintSample(ctx, x, y, normal, sampleIndex, detail) {
   }
 }
 
-function paintSegment(ctx, map, start, end, routeIndex, segmentIndex, detail) {
+function paintSegment(ctx, map, start, end, routeIndex, segmentIndex, detail, d) {
   const a = point(map, ...start);
   const b = point(map, ...end);
   const dx = b[0] - a[0];
@@ -120,7 +130,7 @@ function paintSegment(ctx, map, start, end, routeIndex, segmentIndex, detail) {
     const amount = index / steps;
     const x = a[0] + dx * amount;
     const y = a[1] + dy * amount;
-    paintSample(ctx, x, y, normal, routeIndex * 17 + segmentIndex * 7 + index, detail);
+    paintSample(ctx, x, y, normal, routeIndex * 17 + segmentIndex * 7 + index, detail, d);
   }
 }
 
@@ -128,7 +138,8 @@ export function drawGardenPathDetails(ctx, map) {
   if (!ctx || typeof ctx.fillRect !== 'function' || !map) return {segments: 0, radius: MAX_RADIUS};
   const segments = pathSegments(map);
   // Finish the continuous bed before placing sparse pavers; later stamps must not erase details.
-  for (const detail of [false, true]) segments.forEach(([start, end], index) => paintSegment(ctx, map, start, end, index, 0, detail));
+  const d = densityOf(ctx);
+  for (const detail of [false, true]) segments.forEach(([start, end], index) => paintSegment(ctx, map, start, end, index, 0, detail, d));
   return {segments: segments.length, radius: MAX_RADIUS};
 }
 
