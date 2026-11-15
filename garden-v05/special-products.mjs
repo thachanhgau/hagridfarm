@@ -58,7 +58,7 @@ const ROWS = [
   ['sp_xmas_yule_roses', 'Vườn hồng đêm Dạ vũ', 450, 9000, [3, 2], 4, 23, 'Những nàng tiên ngồi trong bụi hoa hồng, quanh tượng ông già Noel và cỗ xe tuần lộc.', 'xmas'],
 ];
 
-export const SEASON_LABELS = Object.freeze({event_halloween: 'Lễ Hội Ma', xmas: 'tháng Giáng sinh (01–31/12)'});
+export const SEASON_LABELS = Object.freeze({event_halloween: 'Lễ Hội Ma', xmas: 'mùa Giáng sinh (tới 31/12)'});
 
 export const SPECIAL_PRODUCTS = Object.freeze(ROWS.map(([id, label, level, price, footprint, book, chapter, lore, season]) => Object.freeze({
   id, kind: 'decoration', collection: SPECIAL_COLLECTION, decorationId: id, icon: id, label, level, price, quantity: 1, dailyLimit: 1,

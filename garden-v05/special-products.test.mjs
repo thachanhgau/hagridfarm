@@ -106,19 +106,39 @@ test('Halloween festival pieces: 30 distinct two-view sprites, existing five pri
   }
 });
 
-test('25.0 S7 Noel set: bậc Tận Sức only, sold all December at the §3 price', async () => {
+test('25.0 S7 Noel set: bậc Tận Sức only, sold with the Noel hearth (2026 from 06/11, later years 01/12) at the §3 price', async () => {
   const {STORE_CATALOG, storeLock} = await import('./garden-store-catalog.mjs');
   const noel = STORE_CATALOG.filter(item => item.season === 'xmas' && item.collection === 'special');
   assert.deepEqual(noel.map(item => [item.id, item.level, item.price]), [
     ['sp_xmas_firebolt', 120, 17800], ['sp_xmas_butterbeer', 160, 26000], ['sp_xmas_honeydukes', 200, 31500],
     ['sp_xmas_invisibility_cloak', 260, 31200], ['sp_xmas_weasley_tree', 350, 50400], ['sp_xmas_yule_roses', 450, 72000]]);
   const firebolt = noel[0];
-  assert.equal(storeLock(firebolt, 500, '2026-11-30'), 'Mở bán 01/12');
-  assert.equal(storeLock(firebolt, 500, '2026-12-01'), '');
+  assert.equal(storeLock(firebolt, 500, '2026-11-05'), 'Mở bán 06/11');
+  assert.equal(storeLock(firebolt, 500, '2026-11-06'), '');
+  assert.equal(storeLock(firebolt, 500, '2027-11-30'), 'Mở bán 01/12');
+  assert.equal(storeLock(firebolt, 500, '2027-12-01'), '');
   assert.equal(storeLock(firebolt, 500, '2026-12-31'), '');
   assert.equal(storeLock(firebolt, 119, '2026-12-05'), 'Tận Sức 20');
   assert.equal(storeLock(firebolt, 500, '2027-01-01'), 'Mở bán 01/12');
   assert.equal(unlockedCatalog(500, '2026-12-10').filter(item => item.season === 'xmas' && item.collection === 'special').length, 6);
   assert.equal(unlockedCatalog(150, '2026-12-10').filter(item => item.season === 'xmas' && item.collection === 'special').length, 1);
   assert.equal(unlockedCatalog(500, '2027-01-02').filter(item => item.season === 'xmas' && item.collection === 'special').length, 0);
+});
+
+test('Noel festival store: all 90 nx_/nh_ pieces at festival price (base × 4), level 1, with the Noel hearth until 31/12', async () => {
+  const {FESTIVAL_PRODUCTS} = await import('./special-products.mjs');
+  const {STORE_CATALOG, storeLock, storeVisible} = await import('./garden-store-catalog.mjs');
+  const noel = STORE_CATALOG.filter(item => /^(nx|nh)_/.test(item.id));
+  assert.equal(noel.length, 90);
+  for (const item of noel) {
+    const base = FESTIVAL_PRODUCTS.find(row => row.id === item.id).price;
+    assert.deepEqual([item.collection, item.season, item.level, item.price], ['festival', 'xmas', 1, base * 4], item.id);
+    assert.match(item.description, /Chỉ bán trong mùa Giáng sinh \(tới 31\/12\)\.$/);
+  }
+  const shown = day => noel.filter(item => storeVisible(item, 1, day) && storeLock(item, 1, day) === '').length;
+  for (const day of ['2026-11-06', '2026-11-15', '2026-12-31', '2027-12-01']) assert.equal(shown(day), 90, day);
+  for (const day of ['2026-11-05', '2027-01-01', '2027-11-30']) assert.equal(shown(day), 0, day);
+  assert.equal(storeLock(noel[0], 1, '2027-06-01'), 'Mở bán 01/12');
+  const prices = noel.map(item => item.price);
+  assert.deepEqual([Math.min(...prices), Math.max(...prices)], [7200, 30400]);
 });

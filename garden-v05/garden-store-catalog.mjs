@@ -3,7 +3,7 @@ import {EVENT_PRODUCTS,FESTIVAL_PRODUCTS,SPECIAL_PRODUCTS} from "./special-produ
 import {festivalStatus,vnDayKey} from "./garden-events.mjs?v=26.1";
 import {TAN_SUC_LEVEL} from "./balance-data.mjs?v=26.1";
 import {PREMIUM_PRODUCTS} from "./premium-products.mjs?v=26.1";
-export const CATALOG_VERSION="garden-2026-11-15-house-noel-40";
+export const CATALOG_VERSION="garden-2026-11-15-noel-festival-store";
 // Big update 25.0 §3 (owner 04/11/2026): prices below are the 24.x base; the store sells at base × min(8, 3 + level / 50),
 // festival goods × 4, rounded to 1 G under 100, 10 G under 1,000, else 100 G. Seeds and water up to level 24 keep their
 // price; event gifts are never sold. Same rule as HPVN functions/games/garden-wallet-catalog.js storePrice.
@@ -848,10 +848,12 @@ export const STORE_CATALOG=Object.freeze([
   }
 ].map(Object.freeze).concat(PREMIUM_PRODUCTS,SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS,EVENT_PRODUCTS).map(storePrice));
 // A seasonal item (`season`: festival id) is on sale only while that festival runs, at any level (server garden-wallet-catalog inSeason).
-// 25.0 S7 Noel set (season 'xmas'): all December, still from its level (server garden-xmas-core inXmasSeason).
-export const inSeason=(item,dayKey=vnDayKey(),nowMs=Date.now())=>item.season==='xmas'?dayKey.slice(5,7)==='12':!item.season||festivalStatus(dayKey,'',nowMs).active?.id===item.season;
+// Noel pieces (season 'xmas'), the 25.0 S7 set from its level: owner 15/11/2026 «đưa toàn bộ đồ noel lên store lễ hội» —
+// on sale with the Noel hearth until 31/12: 2026 from 06/11, later years from 01/12 (server garden-xmas-core inXmasSeason).
+const xmasOpens=dayKey=>dayKey.startsWith('2026-')?'2026-11-06':`${dayKey.slice(0,4)}-12-01`;
+export const inSeason=(item,dayKey=vnDayKey(),nowMs=Date.now())=>item.season==='xmas'?dayKey>=xmasOpens(dayKey):!item.season||festivalStatus(dayKey,'',nowMs).active?.id===item.season;
 // The first day (YYYY-MM-DD) a seasonal item goes on sale again.
-export const seasonOpens=(item,dayKey=vnDayKey())=>{if(item.season==='xmas')return `${dayKey.slice(0,4)}-12-01`;let d=dayKey;for(let i=0;i<6;i++){const n=festivalStatus(d).next;if(n.id===item.season)return n.start;d=n.start;}return null;};
+export const seasonOpens=(item,dayKey=vnDayKey())=>{if(item.season==='xmas')return xmasOpens(dayKey);let d=dayKey;for(let i=0;i<6;i++){const n=festivalStatus(d).next;if(n.id===item.season)return n.start;d=n.start;}return null;};
 // Why an item cannot be bought yet ('' when it can): out of season (seasonal items ignore the level), else below its level.
 export const storeLock=(item,level,dayKey=vnDayKey())=>{
  if(item.season&&!inSeason(item,dayKey)){const d=seasonOpens(item,dayKey);return d?`Mở bán ${d.slice(8)}/${d.slice(5,7)}`:'Ngoài mùa lễ hội';}
