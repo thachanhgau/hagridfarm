@@ -234,7 +234,11 @@ export function earnedDecorIcon(decorId, { size = 48, facing = "default" } = {})
 }
 
 // 0.5× keeps pixels whole; only a decoration whose ink is bigger than the slot at 0.5× shrinks further (ponytail: fractional then, store thumbnails would fix it).
-const decorScale=(asset,size)=>{const b=asset.bounds||{w:asset.width,h:asset.height};return Math.min(0.5,size/b.w,size/b.h);};
+const decorScale=(b,size)=>Math.min(0.5,size/b.w,size/b.h);
+// The slot centres the whole canvas; a tall canvas (Noel pieces: 128×256, ink at the bottom) would show its empty top,
+// so shift the image until its ink sits in the middle.
+const decorThumbStyle=(asset,right,size)=>{const b=(right?asset.rightBounds:asset.bounds)||asset.bounds||{x:0,y:0,w:asset.width,h:asset.height},k=decorScale(b,size);
+ return `width:${asset.width*k}px;height:${asset.height*k}px;transform:translate(${(asset.width/2-b.x-b.w/2)*k}px,${(asset.height/2-b.y-b.h/2)*k}px);max-width:none;image-rendering:pixelated`;};
 export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = null, badge = "", facing = "default" } = {}) {
  const rawId = String(id || "");
  const isSeed = kind === "seed" || rawId.startsWith("seed_");
@@ -341,7 +345,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
    ? (asset?.rightFile || asset?.file || `decor-assets/native/${rawId}_right.png`)
    : (asset?.file || `decor-assets/native/${rawId}.png`);
   const halfSize=img=>{const k=Math.min(0.5,size/img.naturalWidth,size/img.naturalHeight);img.style.width=img.naturalWidth*k+"px";img.style.height=img.naturalHeight*k+"px";};
-  slot.append(el("img", { src, alt: "", class: `visual-decor-img${isRight && !asset?.rightFile ? " is-flipped" : ""}`,style:asset?`width:${asset.width*decorScale(asset,size)}px;height:${asset.height*decorScale(asset,size)}px;max-width:none;image-rendering:pixelated`:"max-width:none;image-rendering:pixelated",...(asset?{}:{onload:e=>halfSize(e.target)}) }));
+  slot.append(el("img", { src, alt: "", class: `visual-decor-img${isRight && !asset?.rightFile ? " is-flipped" : ""}`,style:asset?decorThumbStyle(asset,isRight&&Boolean(asset.rightFile),size):"max-width:none;image-rendering:pixelated",...(asset?{}:{onload:e=>halfSize(e.target)}) }));
  } else if (rawId.startsWith("decoration-")) {
   slot.classList.add("is-decor", "is-earned-decor-slot");
   slot.append(earnedDecorIcon(rawId, { size: Math.round(size * 0.92), facing }));
