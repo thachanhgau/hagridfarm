@@ -809,13 +809,25 @@ export async function createGarden(canvas, options = {}) {
     ]);
   }
 
+  // Code-drawn layers (fences, pen ground, plot borders) render at the surface density so their drawers can step per
+  // device pixel; drawLayer puts one back at its logical size. At density 1 both are the plain 1× canvas.
+  function denseLayer(width, height) {
+    const d = resolution.layer(), layer = makeCanvas(canvas, Math.round(width * d), Math.round(height * d)), brush = layer.getContext('2d');
+    brush.setTransform?.(d, 0, 0, d, 0, 0);
+    brush.imageSmoothingEnabled = false;
+    layer.logicalSize = [width, height];
+    return [layer, brush];
+  }
+  function drawLayer(target, layer, left, top) {
+    const [width, height] = layer.logicalSize ?? [layer.width, layer.height];
+    target.drawImage(layer, left, top, width, height);
+  }
+
   function rebuildBoundaryFence(stage) {
     boundaryFence = createBoundaryFence(map, stageBoundary(stage, {fence: true}), fenceOpenings(stage)).map((piece) => {
       const left = Math.floor(Math.min(piece.a[0], piece.b[0]) - (piece.gate?40:6));
       const top = Math.floor(Math.min(piece.a[1], piece.b[1]) - (piece.gate?80:51));
-      const layer = makeCanvas(canvas, Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?80:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
-      const brush = layer.getContext('2d');
-      brush.imageSmoothingEnabled = false;
+      const [layer, brush] = denseLayer(Math.ceil(Math.abs(piece.a[0] - piece.b[0])) + (piece.gate?80:14), Math.ceil(Math.abs(piece.a[1] - piece.b[1])) + (piece.gate?108:58));
       drawBoundaryFence(brush, {
         ...piece,
         a: [piece.a[0] - left, piece.a[1] - top],
@@ -836,9 +848,9 @@ export async function createGarden(canvas, options = {}) {
       terrainStageId = stageKey(stage);
       terrainLayoutKey = nextLayoutKey;
     }
-    if (boundaryStageId !== stageKey(stage)) {
+    if (boundaryStageId !== stageKey(stage) + '@' + resolution.layer()) {
       rebuildBoundaryFence(stage);
-      boundaryStageId = stageKey(stage);
+      boundaryStageId = stageKey(stage) + '@' + resolution.layer();
     }
   }
   const animation = createAnimationRuntime();
@@ -1436,8 +1448,8 @@ export async function createGarden(canvas, options = {}) {
       const group=pieces.filter(p=>p.front===front);if(!group.length)return [];
       const points=group.flatMap(p=>[p.a,p.b]),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
       const left=Math.floor(Math.min(...xs))-24,top=Math.floor(Math.min(...ys))-32;
-      const layer=makeCanvas(canvas,Math.ceil(Math.max(...xs))-left+24,Math.ceil(Math.max(...ys))-top+16),brush=layer.getContext('2d');
-      brush.imageSmoothingEnabled=false;brush.translate(-left,-top);for(const piece of group)drawPenFence(brush,piece,activeWeather);
+      const [layer,brush]=denseLayer(Math.ceil(Math.max(...xs))-left+24,Math.ceil(Math.max(...ys))-top+16);
+      brush.translate(-left,-top);for(const piece of group)drawPenFence(brush,piece,activeWeather);
       const at=[front?Math.max(...cs):Math.min(...cs),front?Math.max(...rs):Math.min(...rs)];
       return [{kind:'pen-fence',id:pieces[0].penId+':fence:'+(front?'front':'back'),penId:pieces[0].penId,front,cellA:at,cellB:at,penRect,xy:iso(...at),layer,left,top}];
     });
@@ -1446,33 +1458,33 @@ export async function createGarden(canvas, options = {}) {
     const residents=habitatResidents(pen,landCreatures(state),map.creatureSpots,iso);
     const sharedEast=Math.abs(currentStage.right-(pen.col+pen.width))<0.001;
     const enclosure=pen;
-    const corners=penCorners(enclosure),key=activeWeather+':'+JSON.stringify([corners,residents]);
+    const corners=penCorners(enclosure),key=activeWeather+'@'+resolution.layer()+':'+JSON.stringify([corners,residents]);
     let cached=penHabitatLayers.get(pen.id);
     if(cached?.key!==key){
       const left=Math.floor(Math.min(...corners.map(p=>p[0])))-20;
       const top=Math.floor(Math.min(...corners.map(p=>p[1])))-32;
       const right=Math.ceil(Math.max(...corners.map(p=>p[0])))+20;
       const bottom=Math.ceil(Math.max(...corners.map(p=>p[1])))+20;
-      const layer=makeCanvas(canvas,right-left,bottom-top),brush=layer.getContext('2d');brush.translate(-left,-top);
+      const [layer,brush]=denseLayer(right-left,bottom-top);brush.translate(-left,-top);
       drawPenHabitat(brush,{corners,pen:enclosure,iso,weatherMode:activeWeather,personalized:residents.length>0});
       const fences=fenceObjects(penFencePieces(enclosure,iso,{sharedEast}));
       cached={key,layer,left,top,fences};penHabitatLayers.set(pen.id,cached);
     }
-    context.drawImage(cached.layer,cached.left,cached.top);
+    drawLayer(context,cached.layer,cached.left,cached.top);
     return [...cached.fences,...habitatObjects(residents,{penId:pen.id,weatherMode:activeWeather,imageFor,snowFile:winterFile,clock})];
   }
 
   function drawBuiltPlotBorder(plot,index){
-    const corners=plotCorners(plot),key=activeWeather+':'+JSON.stringify(corners);
+    const corners=plotCorners(plot),key=activeWeather+'@'+resolution.layer()+':'+JSON.stringify(corners);
     let cached=plotBorderLayers.get(index);
     if(cached?.key!==key){
       const left=Math.floor(Math.min(...corners.map(p=>p[0])))-20,top=Math.floor(Math.min(...corners.map(p=>p[1])))-20;
       const width=Math.ceil(Math.max(...corners.map(p=>p[0])))-left+20,height=Math.ceil(Math.max(...corners.map(p=>p[1])))-top+20;
-      const layer=makeCanvas(canvas,width,height),brush=layer.getContext('2d');brush.translate(-left,-top);
+      const [layer,brush]=denseLayer(width,height);brush.translate(-left,-top);
       drawRaisedPlotBorder(brush,corners,{weatherMode:activeWeather,index});
       cached={key,layer,left,top};plotBorderLayers.set(index,cached);
     }
-    context.drawImage(cached.layer,cached.left,cached.top);
+    drawLayer(context,cached.layer,cached.left,cached.top);
   }
 
   function drawPlotFrames(state, logicalNow, selectedPlot) {
@@ -1647,8 +1659,8 @@ export async function createGarden(canvas, options = {}) {
       }
       return;
     }
-    if (object.kind === 'pen-fence') { context.drawImage(object.layer,object.left,object.top); return; }
-    if (object.kind === 'boundary-fence') { context.drawImage(object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock); return; }
+    if (object.kind === 'pen-fence') { drawLayer(context,object.layer,object.left,object.top); return; }
+    if (object.kind === 'boundary-fence') { drawLayer(context,object.layer, object.left, object.top);drawSeasonalFence(context,object,activeWeather,activeEvent,clock); return; }
     if (object.kind === 'decoration') {
       const asset = earnedDecorArt(object.id, object.facing);
       const image = asset?.file ? (activeWeather === 'snow' ? seasonalImage(asset.file, 'cap') : imageFor(asset.file)) : null;

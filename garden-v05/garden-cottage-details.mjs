@@ -5,6 +5,7 @@
  * functions paint with integer fillRect stamps so they can sit below the
  * existing crop/actor layers without introducing a second interaction area.
  */
+import {densityOf, deviceLine, fillAt} from './device-pixels.mjs?v=26.1';
 
 export const COTTAGE_ANCHORS = Object.freeze({
   hut: Object.freeze([0, 4]),
@@ -112,11 +113,15 @@ function setFill(ctx, color) {
 }
 
 function fill(ctx, x, y, width, height, color) {
+  const d = densityOf(ctx);
+  if (d > 1) return fillAt(ctx, x, y, width, height, color, d);
   setFill(ctx, color);
   ctx.fillRect(rounded(x), rounded(y), Math.max(1, rounded(width)), Math.max(1, rounded(height)));
 }
 
 function line(ctx, a, b, color, width = 1) {
+  const d = densityOf(ctx);
+  if (d > 1) return deviceLine(ctx, a, b, color, Math.max(1, width), d, Math.floor(width / 2));
   const distance = Math.max(Math.abs(b[0] - a[0]), Math.abs(b[1] - a[1]));
   const steps = Math.max(1, Math.ceil(distance));
   const half = Math.floor(width / 2);

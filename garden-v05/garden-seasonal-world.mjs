@@ -1,5 +1,6 @@
 import {PLOT_SCENERY_ART} from './plot-scenery-art.mjs?v=26.1';
 import {stageContains} from './garden-growth.mjs?v=26.1';
+import {densityOf,deviceLine,snapRects} from './device-pixels.mjs?v=26.1';
 function insidePolygon(x,y,points){
  let inside=false;
  for(let i=0,j=points.length-1;i<points.length;j=i++){
@@ -101,10 +102,12 @@ export function festivalObjects({eventMode='none',stage,map,iso,decorAssets,occu
  return out;
 }
 function pixelLine(c,a,b,color,width=2){
+ const d=densityOf(c);if(d>1)return deviceLine(c,a,b,color,width,d,0);
  c.fillStyle=color;const n=Math.max(1,Math.ceil(Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]))/2));
  for(let i=0;i<=n;i++){const t=i/n;c.fillRect(Math.round(a[0]+(b[0]-a[0])*t),Math.round(a[1]+(b[1]-a[1])*t),width,width);}
 }
 export function drawSeasonalFence(c,piece,weather,event,clock){
+ const d=densityOf(c);if(d>1)c=snapRects(c,d);
  const {a,b}=piece;
  if(piece.gate){
   if(weather==='snow')for(const [x,y] of [a,b]){c.fillStyle='#e8f0ed';c.fillRect(Math.round(x-7),Math.round(y-74),14,3);}

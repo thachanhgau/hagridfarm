@@ -1,6 +1,7 @@
 import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=26.1';
 import {nativePixelScale} from './garden-grid.mjs?v=26.1';
 import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=26.1';
+import {densityOf,fillAt} from './device-pixels.mjs?v=26.1';
 export {FARM_SIGN_ART};
 // Scenic-only composition: deterministic groves and a walkable-looking exit.
 // Never changes authored slots, collision data, or game state.
@@ -78,6 +79,9 @@ export function overlapsTrail(rect,trail,margin=22){
  return trail.some(([x,y])=>x>=rect.left-margin&&x<=rect.right+margin&&y>=rect.top-margin&&y<=rect.bottom+margin);
 }
 function stamp(ctx,x,y,r,color){
+ const d=densityOf(ctx);
+ // Density > 1: the same ellipse in device-pixel rows.
+ if(d>1){for(let k=0,dy=-r*.45;dy<=r*.45+1.5;k++,dy=-r*.45+k/d){const half=Math.sqrt(Math.max(0,1-(dy/(r*.5))**2))*r;fillAt(ctx,x-half,y+dy,half*2,1/d,color,d);}return;}
  ctx.fillStyle=color;
  for(let dy=-r*.45;dy<=r*.45;dy+=2){const half=Math.sqrt(Math.max(0,1-(dy/(r*.5))**2))*r;ctx.fillRect(Math.round(x-half),Math.round(y+dy),Math.ceil(half*2),2);}
 }
@@ -88,7 +92,8 @@ export function drawExitTrail(ctx,trail,{sign=false,signImage=null,taperEnd=fals
  for(let i=0;i<trail.length;i++){const [x,y]=trail[i];stamp(ctx,x,y,24*weight(i),'#5d6046');}
  for(let i=0;i<trail.length;i++){
   const [x,y]=trail[i],w=weight(i);stamp(ctx,x,y,(16+Math.sin(i*.23)*2)*w,'#777044');
-  if(i%4===0){ctx.fillStyle=i%8?'#b49a66':'#5d6046';ctx.fillRect(Math.round(x+Math.sin(i*3)*12*w),Math.round(y+Math.cos(i)*5*w),4,2);}
+  if(i%4===0&&densityOf(ctx)>1){const d=densityOf(ctx),sx=x+Math.sin(i*3)*12*w,sy=y+Math.cos(i)*5*w,p=1/d,c=i%8?'#b49a66':'#5d6046';fillAt(ctx,sx+p,sy,4-2*p,2,c,d);fillAt(ctx,sx,sy+p,4,2-2*p,c,d);fillAt(ctx,sx+p,sy+2-p,4-2*p,p,'#4a3c2c',d);}
+  else if(i%4===0){ctx.fillStyle=i%8?'#b49a66':'#5d6046';ctx.fillRect(Math.round(x+Math.sin(i*3)*12*w),Math.round(y+Math.cos(i)*5*w),4,2);}
  }
  if(sign&&trail.length>42){
   if(!signImage)throw Error('Farm sign sprite is required');

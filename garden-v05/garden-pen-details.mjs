@@ -1,14 +1,16 @@
 // Low, native pixel-art habitat details. Paint the whole layer below actors.
+import {densityOf,deviceLine,fillAt} from './device-pixels.mjs?v=26.1';
 const styles={
  clear:{ground:'#777044',shade:'#4a3c2c',grass:'#71934b',wood:'#8b4a3f',cap:'#b49a66',dark:'#4a3c2c',stone:'#777044',water:'#687486',hay:'#b49a66',moss:'#3f6a45'},
  rain:{ground:'#5d6046',shade:'#24483f',grass:'#777044',wood:'#735044',cap:'#b49a66',dark:'#24483f',stone:'#687486',water:'#70a8b6',hay:'#b49a66',moss:'#3f6a45'},
  autumn:{ground:'#777044',shade:'#4a3c2c',grass:'#a57554',wood:'#a57554',cap:'#b49a66',dark:'#4a3c2c',stone:'#777044',water:'#687486',hay:'#e7ae73',moss:'#777044'},
  snow:{ground:'#e8f0ed',shade:'#a6b1ae',grass:'#d6d8bf',wood:'#777044',cap:'#e8f0ed',dark:'#5d6046',stone:'#687486',water:'#b7dee0',hay:'#b49a66',moss:'#a6b1ae'},
 };
-function rect(c,x,y,w,h,color){c.fillStyle=color;c.fillRect(Math.round(x),Math.round(y),Math.max(1,Math.round(w)),Math.max(1,Math.round(h)));}
+function rect(c,x,y,w,h,color){const d=densityOf(c);if(d>1)return fillAt(c,x,y,w,h,color,d);c.fillStyle=color;c.fillRect(Math.round(x),Math.round(y),Math.max(1,Math.round(w)),Math.max(1,Math.round(h)));}
 function mix(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];}
-function line(c,a,b,color,width=2){const n=Math.max(1,Math.ceil(Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]))));for(let i=0;i<=n;i++){const p=mix(a,b,i/n);rect(c,p[0]-width/2,p[1]-width/2,width,width,color);}}
+function line(c,a,b,color,width=2){const d=densityOf(c);if(d>1)return deviceLine(c,a,b,color,width,d);const n=Math.max(1,Math.ceil(Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]))));for(let i=0;i<=n;i++){const p=mix(a,b,i/n);rect(c,p[0]-width/2,p[1]-width/2,width,width,color);}}
 function diamond(c,points,color){
+ const d=densityOf(c);if(d>1)return deviceDiamond(c,points,color,d);
  const min=Math.ceil(Math.min(...points.map(p=>p[1]))),max=Math.floor(Math.max(...points.map(p=>p[1])));
  for(let y=min;y<=max;y++){
   const xs=[];for(let i=0;i<4;i++){const a=points[i],b=points[(i+1)%4];if((a[1]<=y&&b[1]>y)||(b[1]<=y&&a[1]>y))xs.push(a[0]+(y-a[1])*(b[0]-a[0])/(b[1]-a[1]));}
@@ -24,6 +26,15 @@ const fenceStyles=[
  {wood:'#41465c',light:'#a6b1ae',metal:'#687486'},
  {wood:'#8b4a3f',light:'#e7ae73',metal:'#c97952'},
 ];
+// Density > 1: the ground diamond in device-pixel rows, and each turf fleck as a 1 px blade pair in its 1× footprint.
+function deviceDiamond(c,points,color,d){
+ const ys=points.map(p=>p[1]),min=Math.ceil(Math.min(...ys)*d)/d,max=Math.floor(Math.max(...ys)*d)/d;
+ for(let k=0,y=min;y<=max+1/d/2;k++,y=min+k/d){
+  const xs=[];for(let i=0;i<4;i++){const a=points[i],b=points[(i+1)%4];if((a[1]<=y&&b[1]>y)||(b[1]<=y&&a[1]>y))xs.push(a[0]+(y-a[1])*(b[0]-a[0])/(b[1]-a[1]));}
+  if(xs.length>=2)fillAt(c,Math.min(...xs),y,Math.max(...xs)-Math.min(...xs),1/d,color,d);
+ }
+}
+function tuftAt(c,x,y,w,color,d){const p=1/d;fillAt(c,x,y+p,w,p,color,d);fillAt(c,x+p,y,Math.max(p,w-3*p),p,color,d);}
 export function penFencePieces(pen,iso,{sharedEast=false,sharedNorth=false}={}){
  const cells=[[pen.col,pen.row],[pen.col+pen.width,pen.row],[pen.col+pen.width,pen.row+pen.height],[pen.col,pen.row+pen.height]];
  const pieces=[];
@@ -71,11 +82,12 @@ export function penDetailAnchors(pen,iso){
 export function drawPenHabitat(c,{corners,pen,iso,weatherMode='clear',personalized=false}){
  const p=styles[weatherMode]||styles.clear;const [n,e,s,w]=corners;
  c.save();c.imageSmoothingEnabled=false;
+ const hd=densityOf(c)>1?densityOf(c):0;
  diamond(c,corners,p.ground);
  // Small turf flecks; no tall grass, objects or opaque overlay above a creature.
  for(let r=1;r<9;r++)for(let q=1;q<14;q++){
   const xy=iso(pen.col+pen.width*q/14,pen.row+pen.height*r/9),seed=q*17+r*13;
-  rect(c,xy[0],xy[1],2+seed%3,1,seed%3?p.grass:p.shade);
+  if(hd)tuftAt(c,xy[0],xy[1],2+seed%3,seed%3?p.grass:p.shade,hd);else rect(c,xy[0],xy[1],2+seed%3,1,seed%3?p.grass:p.shade);
  }
  const {water,straw,gate}=penDetailAnchors(pen,iso);
  // Low trough and bedding in the empty middle, between the two animal anchors.
