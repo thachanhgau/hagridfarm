@@ -12215,13 +12215,13 @@
         2
       ],
       "price": 7600,
-      "subject": "A miniature open garden gazebo for a wizard Yule ball, snowy conical roof, pine garlands, warm hanging lanterns, no people",
+      "subject": "A four-sided snowy Yule gazebo with a small Christmas feast table, cake, warm mugs, two stools and wrapped gifts inside, front entrance open, no people",
       "season": "xmas",
       "group": "Giáng sinh",
-      "lore": "Chòi Dạ vũ mùa đông dành cho khu vườn Giáng sinh của phù thủy.",
-      "master": "noel-50-assets/masters-locked/nx_yule_dance_gazebo-solid-v4.png",
+      "lore": "Chòi Dạ vũ phủ tuyết, bên trong có bàn tiệc nhỏ, bánh Noel, cốc nóng và quà gói.",
+      "master": "noel-50-assets/masters-locked/nx_yule_dance_gazebo-solid-v6-interior.png",
       "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells",
-      "masterSha256": "93b9fc946067c031f17bd506fea17cc1bddea728f1a9aa269701813a907ab481",
+      "masterSha256": "b06779587d56aec31d91fa326ea7c3747794e30480e06919b6509b8650e16a39",
       "scale": 0.3355408388520971,
       "frames": [
         {
@@ -12232,16 +12232,16 @@
           "pivotY": 240,
           "bounds": {
             "x": 4,
-            "y": 35,
+            "y": 36,
             "w": 152,
-            "h": 205
+            "h": 204
           },
-          "sha256": "7ff85737042b57c7c19a111f5c907b07f9ff2441e67492117bae164a11355b7f",
+          "sha256": "98630c5756560eaeea3c1c305f85cb8d4acd38178187b8dd2a1b2903dbad2970",
           "sourceRect": {
-            "x": 30,
-            "y": 115,
+            "x": 31,
+            "y": 117,
             "w": 453,
-            "h": 612
+            "h": 609
           }
         },
         {
@@ -12252,16 +12252,16 @@
           "pivotY": 240,
           "bounds": {
             "x": 4,
-            "y": 35,
+            "y": 36,
             "w": 152,
-            "h": 205
+            "h": 204
           },
-          "sha256": "44650f27c5a99925608f3d244df906a342887503750400c0e6fea997b698f494",
+          "sha256": "602ee162713c8cdb1acb9871de0e523975f6f551f416da26ac101ad53be4da54",
           "sourceRect": {
-            "x": 544,
-            "y": 115,
+            "x": 545,
+            "y": 117,
             "w": 453,
-            "h": 612
+            "h": 609
           }
         },
         {
@@ -12276,12 +12276,12 @@
             "w": 152,
             "h": 207
           },
-          "sha256": "38859e302a9322d86a7a063e06ba0a8d9a01c114a3ef8537acb3cadeaeeaba1b",
+          "sha256": "c2ec94bc587b46418a20c4902be92b1e264f8a6abf6f081f6d569cb20218fdba",
           "sourceRect": {
-            "x": 30,
-            "y": 880,
+            "x": 31,
+            "y": 881,
             "w": 453,
-            "h": 618
+            "h": 617
           }
         },
         {
@@ -12296,18 +12296,18 @@
             "w": 152,
             "h": 207
           },
-          "sha256": "1f43a34cb981617c0ec9626b2760e86fdd32442f33a64d29b7681c78c0fe0da0",
+          "sha256": "619c09ff2aee42bc8beccf71ada1fcb86599c300a91ca1d9e007b87282c9615c",
           "sourceRect": {
             "x": 545,
-            "y": 880,
-            "w": 452,
-            "h": 618
+            "y": 881,
+            "w": 453,
+            "h": 617
           }
         }
       ],
       "atlas": {
         "file": "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
-        "sha256": "981f9917131c043af8d4fc3afd4abc788efd01afe4a27653fa6a94b6f0f3fcf7",
+        "sha256": "af2aca76a9ec7538447458781ee2abf9a7bcc6a123d8083cefd7f6bf3d1a5f10",
         "width": 320,
         "height": 512,
         "frames": [
@@ -12319,9 +12319,9 @@
             "pivotY": 240,
             "bounds": {
               "x": 4,
-              "y": 35,
+              "y": 36,
               "w": 152,
-              "h": 205
+              "h": 204
             },
             "atlasRect": {
               "x": 0,
@@ -12338,9 +12338,9 @@
             "pivotY": 240,
             "bounds": {
               "x": 4,
-              "y": 35,
+              "y": 36,
               "w": 152,
-              "h": 205
+              "h": 204
             },
             "atlasRect": {
               "x": 160,
@@ -12484,9 +12484,9 @@
         ],
         "bounds": {
           "x": 4,
-          "y": 35,
+          "y": 36,
           "w": 152,
-          "h": 205
+          "h": 204
         },
         "rightBounds": {
           "x": 4,

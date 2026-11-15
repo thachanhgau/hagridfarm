@@ -662,11 +662,11 @@
       2
     ],
     "price": 7600,
-    "subject": "A miniature open garden gazebo for a wizard Yule ball, snowy conical roof, pine garlands, warm hanging lanterns, no people",
+    "subject": "A four-sided snowy Yule gazebo with a small Christmas feast table, cake, warm mugs, two stools and wrapped gifts inside, front entrance open, no people",
     "season": "xmas",
     "group": "Giáng sinh",
-    "lore": "Chòi Dạ vũ mùa đông dành cho khu vườn Giáng sinh của phù thủy.",
-    "master": "noel-50-assets/masters-locked/nx_yule_dance_gazebo-solid-v4.png",
+    "lore": "Chòi Dạ vũ phủ tuyết, bên trong có bàn tiệc nhỏ, bánh Noel, cốc nóng và quà gói.",
+    "master": "noel-50-assets/masters-locked/nx_yule_dance_gazebo-solid-v6-interior.png",
     "cameraBasis": "filled coordinate block-in; exact garden axes; four authored cells"
   },
   {

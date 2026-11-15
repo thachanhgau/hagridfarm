@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "f8b546ab4617",
+  "revision": "c03c72f4eede",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -10516,30 +10516,30 @@
       "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo_atlas.webp",
       "width": 320,
       "height": 512,
-      "sourceBytes": 27530,
-      "bytes": 17166,
-      "sourceSha256": "981f9917131c043af8d4fc3afd4abc788efd01afe4a27653fa6a94b6f0f3fcf7",
-      "sha256": "dc8edf2fe829b2d6f09c6af6f86c598eed7297b99474dfee1abb04b5a929fd4a"
+      "sourceBytes": 34703,
+      "bytes": 22592,
+      "sourceSha256": "af2aca76a9ec7538447458781ee2abf9a7bcc6a123d8083cefd7f6bf3d1a5f10",
+      "sha256": "ae761789ce357674f6434d226bec59d8a86545603b962fef09656875159cac5e"
     },
     {
       "source": "decor-assets/native/nx_yule_dance_gazebo_right.png",
       "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo_right.webp",
       "width": 160,
       "height": 256,
-      "sourceBytes": 7488,
-      "bytes": 4716,
-      "sourceSha256": "38859e302a9322d86a7a063e06ba0a8d9a01c114a3ef8537acb3cadeaeeaba1b",
-      "sha256": "05685b41e6ec29f72df50027d16cd20d47a809d561ccd0b28618e987e5c42bd3"
+      "sourceBytes": 9141,
+      "bytes": 5770,
+      "sourceSha256": "c2ec94bc587b46418a20c4902be92b1e264f8a6abf6f081f6d569cb20218fdba",
+      "sha256": "2151b79f4db1036d3dafbda86376e1a4c8a617905beb6cee867b322ce7e36a15"
     },
     {
       "source": "decor-assets/native/nx_yule_dance_gazebo.png",
       "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo.webp",
       "width": 160,
       "height": 256,
-      "sourceBytes": 7751,
-      "bytes": 4826,
-      "sourceSha256": "7ff85737042b57c7c19a111f5c907b07f9ff2441e67492117bae164a11355b7f",
-      "sha256": "6aaf6ffbae64b0d9351e33d133c3977bd43b9795cae15065ee199aaa64f47aa0"
+      "sourceBytes": 9339,
+      "bytes": 5944,
+      "sourceSha256": "98630c5756560eaeea3c1c305f85cb8d4acd38178187b8dd2a1b2903dbad2970",
+      "sha256": "14e88d5bdf3f35a66b61baccab2adff462f2a852525e590b87cf2690984fe0c2"
     },
     {
       "source": "decor-assets/native/owl_post_f0.png",
@@ -15927,9 +15927,9 @@
   "totals": {
     "converted": 1586,
     "existingWebp": 8,
-    "originalBytes": 6402423,
-    "webpBytes": 4196136,
-    "savedBytes": 2206287,
-    "savedPercent": 34.46
+    "originalBytes": 6412837,
+    "webpBytes": 4203734,
+    "savedBytes": 2209103,
+    "savedPercent": 34.45
   }
 }
