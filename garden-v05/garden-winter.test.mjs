@@ -73,3 +73,12 @@ test('rare coats are looks only: unlocked by bond and season, outline kept', () 
   assert.deepEqual(px(im, 2, 0).slice(0, 3), [35, 31, 46], 'outline unchanged');
   assert.deepEqual(px(im, 3, 0).slice(0, 3), [112, 168, 182], 'eyes unchanged');
 });
+
+test('1× caps are pinned to 26.1; HD caps are finer, with a 1-device-px lip', async () => {
+  const {createHash} = await import('node:crypto');
+  const sprite = (w, h) => { const data = new Uint8ClampedArray(w * h * 4); for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { const top = Math.round(h * .3 + Math.abs(x - w / 2) * .6 + Math.sin(x * .7) * 2); if (y >= top && x > 1 && x < w - 2) data.set([(x * 37 + y * 11) % 256, (x * 5 + y * 29) % 256, (x * 13) % 256, 255], (y * w + x) * 4); } return {width: w, height: h, data}; };
+  assert.deepEqual([[20, 30], [64, 64], [40, 80]].map(([w, h]) => createHash('sha256').update(snowCapImageData(sprite(w, h)).data).digest('hex').slice(0, 16)), ['fcc03ea3208c68ba', 'b33ef26e56c9dddc', 'a7d959d05b445698']);
+  // The flat box at 2×: 5 device rows (not 6) — four body rows, then the lip, then the sprite's own colour.
+  const hd = snowCapImageData(image(20, 24, (x, y) => y >= 8 && x >= 2 && x <= 17 ? [165, 117, 84] : null), 2);
+  assert.deepEqual([8, 11, 12, 13].map((y) => px(hd, 10, y).slice(0, 3)), [[214, 216, 191], [214, 216, 191], [183, 222, 224], [165, 117, 84]]);
+});

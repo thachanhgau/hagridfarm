@@ -105,7 +105,9 @@ export function snowCapImageData(image,pixelDensity=1) {
   const density=Math.max(1,Math.round(pixelDensity));
   const {width: w, height: h, data: d} = image;
   const alpha = (x, y) => x >= 0 && y >= 0 && x < w && y < h ? d[(y * w + x) * 4 + 3] : 0;
-  const rows = (h/density >= 48 ? SNOW_ROWS.big : SNOW_ROWS.small).flatMap(color=>Array(density).fill(color));
+  // HD caps are finer, not 2× blocks: a 1-device-px lit top and shaded lip around a body, (density+1)/2 as deep as 1×.
+  const ramp = h/density >= 48 ? SNOW_ROWS.big : SNOW_ROWS.small, n = ramp.length, total = Math.round(n*(density+1)/2);
+  const rows = Array.from({length: total}, (_, k) => k === 0 ? ramp[0] : k === total-1 ? ramp[n-1] : ramp[Math.min(n-2, 1+Math.floor((k-1)*(n-2)/(total-2)))]);
   // Surface row of column nx near row y (within 2 rows), or null.
   const surface = (nx, y) => { for (let k = -2*density; k <= 2*density; k++) if (alpha(nx, y + k) && !alpha(nx, y + k - 1)) return y + k; return null; };
   const caps = [];
