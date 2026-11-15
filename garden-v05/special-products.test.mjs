@@ -48,7 +48,7 @@ test('special products are decorations only, one each, in their own store group,
     assert.equal(item.collection, 'special');
     assert.deepEqual([item.quantity, item.dailyLimit], [1, 1]);
     // Festival pieces sell at any level, the Noel set (25.0 S7) from bậc Tận Sức, the rest from level 25.
-    assert.ok(item.price >= 900 && (item.season === 'xmas' ? item.level > 100 : item.season ? item.level === 1 : item.level >= 25), item.id);
+    assert.ok(item.price >= 900 && (item.season === 'xmas' && item.collection === 'special' ? item.level > 100 : item.season ? item.level === 1 : item.level >= 25), item.id);
     assert.match(item.description, /chỉ để trang trí/);
     for (const key of ['xp', 'reward', 'yield', 'galleonsBonus']) assert.equal(item[key], undefined);
   }
@@ -85,16 +85,17 @@ test('store lock: below level shows the level, off-season shows the opening day,
 test('Halloween festival pieces: 30 distinct two-view sprites, existing five prices preserved and 25 approved', async () => {
   const {FESTIVAL_PRODUCTS} = await import('./special-products.mjs');
   const pack = JSON.parse(fs.readFileSync(new URL('./halloween-assets/manifest.json', import.meta.url)));
-  const sprites = runtime.items.filter(item => item.collection === 'festival');
+  const sprites = runtime.items.filter(item => item.collection === 'festival' && item.id.startsWith('hw_'));
   // Owner directly approved the 90,400 G table and opening sales in this chat.
-  const active = FESTIVAL_PRODUCTS.map(i => i.id).sort();
+  const halloween = FESTIVAL_PRODUCTS.filter(item => item.season === 'event_halloween');
+  const active = halloween.map(i => i.id).sort();
   assert.equal(active.length, 30);
-  assert.equal(FESTIVAL_PRODUCTS.filter(i=>i.forSale===false).length,0);
-  assert.equal(FESTIVAL_PRODUCTS.slice(5).reduce((total,item)=>total+item.price,0),90400);
-  assert.deepEqual(FESTIVAL_PRODUCTS.slice(0,5).map(i=>[i.id,i.price]),[['hw_halloween_sign',1800],['hw_wooden_black_cat',2000],['hw_cloth_ghost_lantern',2200],['hw_pumpkin_stack',2400],['hw_monster_candy_barrel',2400]]);
+  assert.equal(halloween.filter(i=>i.forSale===false).length,0);
+  assert.equal(halloween.slice(5).reduce((total,item)=>total+item.price,0),90400);
+  assert.deepEqual(halloween.slice(0,5).map(i=>[i.id,i.price]),[['hw_halloween_sign',1800],['hw_wooden_black_cat',2000],['hw_cloth_ghost_lantern',2200],['hw_pumpkin_stack',2400],['hw_monster_candy_barrel',2400]]);
   assert.ok(active.every(id => pack.items.some(item => item.id === id)));
   assert.deepEqual(sprites.map(i => i.id).sort(), active);
-  for (const item of FESTIVAL_PRODUCTS) {
+  for (const item of halloween) {
     const sprite = sprites.find(x => x.id === item.id);
     assert.deepEqual(STORE_CATALOG.find(x => x.id === item.id), storePrice(item));
     assert.deepEqual([item.season, item.level, item.kind, item.quantity], ['event_halloween', 1, 'decoration', 1]);
@@ -107,7 +108,7 @@ test('Halloween festival pieces: 30 distinct two-view sprites, existing five pri
 
 test('25.0 S7 Noel set: bậc Tận Sức only, sold all December at the §3 price', async () => {
   const {STORE_CATALOG, storeLock} = await import('./garden-store-catalog.mjs');
-  const noel = STORE_CATALOG.filter(item => item.season === 'xmas');
+  const noel = STORE_CATALOG.filter(item => item.season === 'xmas' && item.collection === 'special');
   assert.deepEqual(noel.map(item => [item.id, item.level, item.price]), [
     ['sp_xmas_firebolt', 120, 17800], ['sp_xmas_butterbeer', 160, 26000], ['sp_xmas_honeydukes', 200, 31500],
     ['sp_xmas_invisibility_cloak', 260, 31200], ['sp_xmas_weasley_tree', 350, 50400], ['sp_xmas_yule_roses', 450, 72000]]);
@@ -117,7 +118,7 @@ test('25.0 S7 Noel set: bậc Tận Sức only, sold all December at the §3 pri
   assert.equal(storeLock(firebolt, 500, '2026-12-31'), '');
   assert.equal(storeLock(firebolt, 119, '2026-12-05'), 'Tận Sức 20');
   assert.equal(storeLock(firebolt, 500, '2027-01-01'), 'Mở bán 01/12');
-  assert.equal(unlockedCatalog(500, '2026-12-10').filter(item => item.season === 'xmas').length, 6);
-  assert.equal(unlockedCatalog(150, '2026-12-10').filter(item => item.season === 'xmas').length, 1);
-  assert.equal(unlockedCatalog(500, '2027-01-02').filter(item => item.season === 'xmas').length, 0);
+  assert.equal(unlockedCatalog(500, '2026-12-10').filter(item => item.season === 'xmas' && item.collection === 'special').length, 6);
+  assert.equal(unlockedCatalog(150, '2026-12-10').filter(item => item.season === 'xmas' && item.collection === 'special').length, 1);
+  assert.equal(unlockedCatalog(500, '2027-01-02').filter(item => item.season === 'xmas' && item.collection === 'special').length, 0);
 });

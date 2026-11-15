@@ -106,6 +106,8 @@ Quy tắc:
 
 **Biên rừng:** dùng `forestRectOutsideBoundary` với `stageBoundary` của mốc mở sân hiện tại, kiểm tra cả hình chữ nhật sprite và phần cao của rào. Áp dụng cho wallpaper, rừng viền và rừng đất chưa mở; nền lặp dùng biên sân cuối. Không đặt cây cũ xuyên mép rào. Cổng mở và bảng tên hai dòng phải được kiểm tra bằng cảnh thật; bảng nằm ngoài rào và có khoảng trống chống cây che.
 
+Bộ lễ hội dùng chung `collection: festival`: khi dựng lại một bộ, chọn theo ID/prefix của chính bộ đó; không xoá toàn bộ collection (Noel và Halloween cùng tồn tại). Kiểm hai góc trên nền 2:1 bằng `audit-grid-fit.mjs` và cảnh thật trước khi nhập.
+
 ## 8. Checklist nhận một asset mới
 
 **V24.9.75 — đồ lễ hội:** sprite lớn phải được kiểm đặt/cất/xoay với save có đủ key kỷ vật bằng0; key tồn tại không có nghĩa đã có tượng. Chỉ bảo vệ dải kỷ vật thực tế, không khóa cả cánh đồng mở về sau. Giữ các frame glow/tĩnh đúng metadata, không quảng cáo chớp mắt/đung đưa khi chưa có pose. Atlas decor phải mang rect đúng góc vào cả picker frame và renderer; xác nhận từng rect RGBA trùng native nguồn.

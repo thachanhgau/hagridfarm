@@ -6686,6 +6686,5306 @@
       "motion": "glow",
       "framesIdentical": false,
       "nativeSha256": "24ce6a557507ee316a99c7948d91afdf08e7f7adff6d9bcbd7dd80b21460469e"
+    },
+    {
+      "id": "nx_snitch_wreath",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Vòng lá thông Snitch",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_snitch_wreath.png",
+      "rightFile": "decor-assets/native/nx_snitch_wreath_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_snitch_wreath_atlas.png",
+        "decor-assets/native/nx_snitch_wreath_atlas.png",
+        "decor-assets/native/nx_snitch_wreath_atlas.png",
+        "decor-assets/native/nx_snitch_wreath_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_snitch_wreath_atlas.png",
+        "decor-assets/native/nx_snitch_wreath_atlas.png",
+        "decor-assets/native/nx_snitch_wreath_atlas.png",
+        "decor-assets/native/nx_snitch_wreath_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 73,
+        "w": 56,
+        "h": 71
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 72,
+        "w": 54,
+        "h": 72
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_elf_yule_tent",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Lều Noel của gia tinh",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nx_elf_yule_tent.png",
+      "rightFile": "decor-assets/native/nx_elf_yule_tent_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_elf_yule_tent_atlas.png",
+        "decor-assets/native/nx_elf_yule_tent_atlas.png",
+        "decor-assets/native/nx_elf_yule_tent_atlas.png",
+        "decor-assets/native/nx_elf_yule_tent_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_elf_yule_tent_atlas.png",
+        "decor-assets/native/nx_elf_yule_tent_atlas.png",
+        "decor-assets/native/nx_elf_yule_tent_atlas.png",
+        "decor-assets/native/nx_elf_yule_tent_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 149,
+        "w": 120,
+        "h": 91
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 148,
+        "w": 120,
+        "h": 92
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_owl_parcel_roost",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Trạm cú phát quà",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_owl_parcel_roost.png",
+      "rightFile": "decor-assets/native/nx_owl_parcel_roost_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_owl_parcel_roost_atlas.png",
+        "decor-assets/native/nx_owl_parcel_roost_atlas.png",
+        "decor-assets/native/nx_owl_parcel_roost_atlas.png",
+        "decor-assets/native/nx_owl_parcel_roost_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_owl_parcel_roost_atlas.png",
+        "decor-assets/native/nx_owl_parcel_roost_atlas.png",
+        "decor-assets/native/nx_owl_parcel_roost_atlas.png",
+        "decor-assets/native/nx_owl_parcel_roost_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 100,
+        "w": 86,
+        "h": 108
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 99,
+        "w": 88,
+        "h": 109
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_hagrid_boot_planter",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Ủng Hagrid trồng thông",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_hagrid_boot_planter.png",
+      "rightFile": "decor-assets/native/nx_hagrid_boot_planter_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_hagrid_boot_planter_atlas.png",
+        "decor-assets/native/nx_hagrid_boot_planter_atlas.png",
+        "decor-assets/native/nx_hagrid_boot_planter_atlas.png",
+        "decor-assets/native/nx_hagrid_boot_planter_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_hagrid_boot_planter_atlas.png",
+        "decor-assets/native/nx_hagrid_boot_planter_atlas.png",
+        "decor-assets/native/nx_hagrid_boot_planter_atlas.png",
+        "decor-assets/native/nx_hagrid_boot_planter_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 85,
+        "w": 54,
+        "h": 59
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 85,
+        "w": 56,
+        "h": 59
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_fang_biscuit_kennel",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Nhà Noel của Fang",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_fang_biscuit_kennel.png",
+      "rightFile": "decor-assets/native/nx_fang_biscuit_kennel_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_fang_biscuit_kennel_atlas.png",
+        "decor-assets/native/nx_fang_biscuit_kennel_atlas.png",
+        "decor-assets/native/nx_fang_biscuit_kennel_atlas.png",
+        "decor-assets/native/nx_fang_biscuit_kennel_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_fang_biscuit_kennel_atlas.png",
+        "decor-assets/native/nx_fang_biscuit_kennel_atlas.png",
+        "decor-assets/native/nx_fang_biscuit_kennel_atlas.png",
+        "decor-assets/native/nx_fang_biscuit_kennel_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 135,
+        "w": 88,
+        "h": 73
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 134,
+        "w": 88,
+        "h": 74
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_niffler_coin_snowglobe",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Quả cầu tuyết Đào mỏ",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_niffler_coin_snowglobe.png",
+      "rightFile": "decor-assets/native/nx_niffler_coin_snowglobe_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png",
+        "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png",
+        "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png",
+        "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png",
+        "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png",
+        "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png",
+        "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 72,
+        "w": 56,
+        "h": 72
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 73,
+        "w": 56,
+        "h": 71
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_bowtruckle_fir_perch",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Giàn thông Que Xạo",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_bowtruckle_fir_perch.png",
+      "rightFile": "decor-assets/native/nx_bowtruckle_fir_perch_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png",
+        "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png",
+        "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png",
+        "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png",
+        "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png",
+        "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png",
+        "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 82,
+        "w": 56,
+        "h": 62
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 82,
+        "w": 55,
+        "h": 62
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_mooncalf_moon_lantern",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Đèn trăng Mooncalf",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_mooncalf_moon_lantern.png",
+      "rightFile": "decor-assets/native/nx_mooncalf_moon_lantern_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png",
+        "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png",
+        "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png",
+        "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png",
+        "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png",
+        "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png",
+        "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 57,
+        "w": 52,
+        "h": 87
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 57,
+        "w": 56,
+        "h": 87
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_puffskein_sock_basket",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Giỏ vớ Quái lùng nhùng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_puffskein_sock_basket.png",
+      "rightFile": "decor-assets/native/nx_puffskein_sock_basket_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_puffskein_sock_basket_atlas.png",
+        "decor-assets/native/nx_puffskein_sock_basket_atlas.png",
+        "decor-assets/native/nx_puffskein_sock_basket_atlas.png",
+        "decor-assets/native/nx_puffskein_sock_basket_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_puffskein_sock_basket_atlas.png",
+        "decor-assets/native/nx_puffskein_sock_basket_atlas.png",
+        "decor-assets/native/nx_puffskein_sock_basket_atlas.png",
+        "decor-assets/native/nx_puffskein_sock_basket_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 93,
+        "w": 56,
+        "h": 51
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 93,
+        "w": 56,
+        "h": 51
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_hippogriff_gift_sleigh",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Xe quà Bằng-Mã",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nx_hippogriff_gift_sleigh.png",
+      "rightFile": "decor-assets/native/nx_hippogriff_gift_sleigh_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png",
+        "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png",
+        "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png",
+        "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png",
+        "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png",
+        "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png",
+        "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 149,
+        "w": 120,
+        "h": 91
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 150,
+        "w": 118,
+        "h": 90
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_unicorn_ice_fountain",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Đài băng kỳ lân",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nx_unicorn_ice_fountain.png",
+      "rightFile": "decor-assets/native/nx_unicorn_ice_fountain_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_unicorn_ice_fountain_atlas.png",
+        "decor-assets/native/nx_unicorn_ice_fountain_atlas.png",
+        "decor-assets/native/nx_unicorn_ice_fountain_atlas.png",
+        "decor-assets/native/nx_unicorn_ice_fountain_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_unicorn_ice_fountain_atlas.png",
+        "decor-assets/native/nx_unicorn_ice_fountain_atlas.png",
+        "decor-assets/native/nx_unicorn_ice_fountain_atlas.png",
+        "decor-assets/native/nx_unicorn_ice_fountain_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 108,
+        "w": 120,
+        "h": 132
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 107,
+        "w": 120,
+        "h": 133
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_thestral_silver_bell",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Chuông bạc Vong mã",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_thestral_silver_bell.png",
+      "rightFile": "decor-assets/native/nx_thestral_silver_bell_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_thestral_silver_bell_atlas.png",
+        "decor-assets/native/nx_thestral_silver_bell_atlas.png",
+        "decor-assets/native/nx_thestral_silver_bell_atlas.png",
+        "decor-assets/native/nx_thestral_silver_bell_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_thestral_silver_bell_atlas.png",
+        "decor-assets/native/nx_thestral_silver_bell_atlas.png",
+        "decor-assets/native/nx_thestral_silver_bell_atlas.png",
+        "decor-assets/native/nx_thestral_silver_bell_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 60,
+        "w": 56,
+        "h": 84
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 60,
+        "w": 55,
+        "h": 84
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_fwooper_music_box",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Hộp nhạc Fwooper",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_fwooper_music_box.png",
+      "rightFile": "decor-assets/native/nx_fwooper_music_box_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_fwooper_music_box_atlas.png",
+        "decor-assets/native/nx_fwooper_music_box_atlas.png",
+        "decor-assets/native/nx_fwooper_music_box_atlas.png",
+        "decor-assets/native/nx_fwooper_music_box_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_fwooper_music_box_atlas.png",
+        "decor-assets/native/nx_fwooper_music_box_atlas.png",
+        "decor-assets/native/nx_fwooper_music_box_atlas.png",
+        "decor-assets/native/nx_fwooper_music_box_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 75,
+        "w": 55,
+        "h": 69
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 76,
+        "w": 56,
+        "h": 68
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_phoenix_candle_bough",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Cành nến phượng hoàng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_phoenix_candle_bough.png",
+      "rightFile": "decor-assets/native/nx_phoenix_candle_bough_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_phoenix_candle_bough_atlas.png",
+        "decor-assets/native/nx_phoenix_candle_bough_atlas.png",
+        "decor-assets/native/nx_phoenix_candle_bough_atlas.png",
+        "decor-assets/native/nx_phoenix_candle_bough_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_phoenix_candle_bough_atlas.png",
+        "decor-assets/native/nx_phoenix_candle_bough_atlas.png",
+        "decor-assets/native/nx_phoenix_candle_bough_atlas.png",
+        "decor-assets/native/nx_phoenix_candle_bough_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 112,
+        "w": 88,
+        "h": 96
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 111,
+        "w": 88,
+        "h": 97
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_norbert_egg_lantern",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Đèn trứng rồng Noel",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_norbert_egg_lantern.png",
+      "rightFile": "decor-assets/native/nx_norbert_egg_lantern_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_norbert_egg_lantern_atlas.png",
+        "decor-assets/native/nx_norbert_egg_lantern_atlas.png",
+        "decor-assets/native/nx_norbert_egg_lantern_atlas.png",
+        "decor-assets/native/nx_norbert_egg_lantern_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_norbert_egg_lantern_atlas.png",
+        "decor-assets/native/nx_norbert_egg_lantern_atlas.png",
+        "decor-assets/native/nx_norbert_egg_lantern_atlas.png",
+        "decor-assets/native/nx_norbert_egg_lantern_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 7,
+        "y": 77,
+        "w": 50,
+        "h": 67
+      },
+      "rightBounds": {
+        "x": 7,
+        "y": 77,
+        "w": 50,
+        "h": 67
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_snowwizard_hat",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Người tuyết đội nón phù thủy",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_snowwizard_hat.png",
+      "rightFile": "decor-assets/native/nx_snowwizard_hat_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_snowwizard_hat_atlas.png",
+        "decor-assets/native/nx_snowwizard_hat_atlas.png",
+        "decor-assets/native/nx_snowwizard_hat_atlas.png",
+        "decor-assets/native/nx_snowwizard_hat_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_snowwizard_hat_atlas.png",
+        "decor-assets/native/nx_snowwizard_hat_atlas.png",
+        "decor-assets/native/nx_snowwizard_hat_atlas.png",
+        "decor-assets/native/nx_snowwizard_hat_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 79,
+        "w": 53,
+        "h": 65
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 78,
+        "w": 56,
+        "h": 66
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_snow_owl_sculpture",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Tượng cú tuyết mùa đông",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_snow_owl_sculpture.png",
+      "rightFile": "decor-assets/native/nx_snow_owl_sculpture_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_snow_owl_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_owl_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_owl_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_owl_sculpture_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_snow_owl_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_owl_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_owl_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_owl_sculpture_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 86,
+        "w": 55,
+        "h": 58
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 86,
+        "w": 56,
+        "h": 58
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_snow_dragon_sculpture",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Rồng tuyết giữ quà",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_snow_dragon_sculpture.png",
+      "rightFile": "decor-assets/native/nx_snow_dragon_sculpture_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_snow_dragon_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_dragon_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_dragon_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_dragon_sculpture_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_snow_dragon_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_dragon_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_dragon_sculpture_atlas.png",
+        "decor-assets/native/nx_snow_dragon_sculpture_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 128,
+        "w": 88,
+        "h": 80
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 128,
+        "w": 87,
+        "h": 80
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_snow_hogwarts_castle",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Lâu đài tuyết phép thuật",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 160,
+      "height": 256,
+      "pivotX": 80,
+      "pivotY": 240,
+      "file": "decor-assets/native/nx_snow_hogwarts_castle.png",
+      "rightFile": "decor-assets/native/nx_snow_hogwarts_castle_right.png",
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_snow_hogwarts_castle_atlas.png",
+        "decor-assets/native/nx_snow_hogwarts_castle_atlas.png",
+        "decor-assets/native/nx_snow_hogwarts_castle_atlas.png",
+        "decor-assets/native/nx_snow_hogwarts_castle_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_snow_hogwarts_castle_atlas.png",
+        "decor-assets/native/nx_snow_hogwarts_castle_atlas.png",
+        "decor-assets/native/nx_snow_hogwarts_castle_atlas.png",
+        "decor-assets/native/nx_snow_hogwarts_castle_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 160,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 160,
+          "y": 256,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 160,
+          "y": 256,
+          "w": 160,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 65,
+        "w": 150,
+        "h": 175
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 67,
+        "w": 152,
+        "h": 173
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_ice_wand_star",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Ngôi sao băng đũa phép",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_ice_wand_star.png",
+      "rightFile": "decor-assets/native/nx_ice_wand_star_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_ice_wand_star_atlas.png",
+        "decor-assets/native/nx_ice_wand_star_atlas.png",
+        "decor-assets/native/nx_ice_wand_star_atlas.png",
+        "decor-assets/native/nx_ice_wand_star_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_ice_wand_star_atlas.png",
+        "decor-assets/native/nx_ice_wand_star_atlas.png",
+        "decor-assets/native/nx_ice_wand_star_atlas.png",
+        "decor-assets/native/nx_ice_wand_star_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 57,
+        "w": 56,
+        "h": 87
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 58,
+        "w": 56,
+        "h": 86
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_mistletoe_gate",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Cổng tầm gửi Giáng sinh",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nx_mistletoe_gate.png",
+      "rightFile": "decor-assets/native/nx_mistletoe_gate_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_mistletoe_gate_atlas.png",
+        "decor-assets/native/nx_mistletoe_gate_atlas.png",
+        "decor-assets/native/nx_mistletoe_gate_atlas.png",
+        "decor-assets/native/nx_mistletoe_gate_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_mistletoe_gate_atlas.png",
+        "decor-assets/native/nx_mistletoe_gate_atlas.png",
+        "decor-assets/native/nx_mistletoe_gate_atlas.png",
+        "decor-assets/native/nx_mistletoe_gate_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 113,
+        "w": 118,
+        "h": 127
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 113,
+        "w": 120,
+        "h": 127
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_holly_broom_fence",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Hàng rào chổi lá nhựa ruồi",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nx_holly_broom_fence.png",
+      "rightFile": "decor-assets/native/nx_holly_broom_fence_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_holly_broom_fence_atlas.png",
+        "decor-assets/native/nx_holly_broom_fence_atlas.png",
+        "decor-assets/native/nx_holly_broom_fence_atlas.png",
+        "decor-assets/native/nx_holly_broom_fence_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_holly_broom_fence_atlas.png",
+        "decor-assets/native/nx_holly_broom_fence_atlas.png",
+        "decor-assets/native/nx_holly_broom_fence_atlas.png",
+        "decor-assets/native/nx_holly_broom_fence_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 149,
+        "w": 98,
+        "h": 91
+      },
+      "rightBounds": {
+        "x": 14,
+        "y": 149,
+        "w": 100,
+        "h": 91
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_snitch_lamp_post",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Cột đèn Snitch",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_snitch_lamp_post.png",
+      "rightFile": "decor-assets/native/nx_snitch_lamp_post_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_snitch_lamp_post_atlas.png",
+        "decor-assets/native/nx_snitch_lamp_post_atlas.png",
+        "decor-assets/native/nx_snitch_lamp_post_atlas.png",
+        "decor-assets/native/nx_snitch_lamp_post_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_snitch_lamp_post_atlas.png",
+        "decor-assets/native/nx_snitch_lamp_post_atlas.png",
+        "decor-assets/native/nx_snitch_lamp_post_atlas.png",
+        "decor-assets/native/nx_snitch_lamp_post_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 41,
+        "w": 56,
+        "h": 103
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 41,
+        "w": 56,
+        "h": 103
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_floo_chimney_mailbox",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Hộp thư ống khói Noel",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_floo_chimney_mailbox.png",
+      "rightFile": "decor-assets/native/nx_floo_chimney_mailbox_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_floo_chimney_mailbox_atlas.png",
+        "decor-assets/native/nx_floo_chimney_mailbox_atlas.png",
+        "decor-assets/native/nx_floo_chimney_mailbox_atlas.png",
+        "decor-assets/native/nx_floo_chimney_mailbox_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_floo_chimney_mailbox_atlas.png",
+        "decor-assets/native/nx_floo_chimney_mailbox_atlas.png",
+        "decor-assets/native/nx_floo_chimney_mailbox_atlas.png",
+        "decor-assets/native/nx_floo_chimney_mailbox_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 72,
+        "w": 54,
+        "h": 72
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 73,
+        "w": 56,
+        "h": 71
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_hogwarts_express_parcels",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Xe hành lý tốc hành Noel",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_hogwarts_express_parcels.png",
+      "rightFile": "decor-assets/native/nx_hogwarts_express_parcels_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_hogwarts_express_parcels_atlas.png",
+        "decor-assets/native/nx_hogwarts_express_parcels_atlas.png",
+        "decor-assets/native/nx_hogwarts_express_parcels_atlas.png",
+        "decor-assets/native/nx_hogwarts_express_parcels_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_hogwarts_express_parcels_atlas.png",
+        "decor-assets/native/nx_hogwarts_express_parcels_atlas.png",
+        "decor-assets/native/nx_hogwarts_express_parcels_atlas.png",
+        "decor-assets/native/nx_hogwarts_express_parcels_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 119,
+        "w": 85,
+        "h": 89
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 120,
+        "w": 88,
+        "h": 88
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_platform_clock",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Đồng hồ sân ga mùa tuyết",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_platform_clock.png",
+      "rightFile": "decor-assets/native/nx_platform_clock_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_platform_clock_atlas.png",
+        "decor-assets/native/nx_platform_clock_atlas.png",
+        "decor-assets/native/nx_platform_clock_atlas.png",
+        "decor-assets/native/nx_platform_clock_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_platform_clock_atlas.png",
+        "decor-assets/native/nx_platform_clock_atlas.png",
+        "decor-assets/native/nx_platform_clock_atlas.png",
+        "decor-assets/native/nx_platform_clock_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 63,
+        "w": 54,
+        "h": 81
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 63,
+        "w": 56,
+        "h": 81
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_enchanted_cracker_table",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Bàn pháo giấy phù thủy",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_enchanted_cracker_table.png",
+      "rightFile": "decor-assets/native/nx_enchanted_cracker_table_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_enchanted_cracker_table_atlas.png",
+        "decor-assets/native/nx_enchanted_cracker_table_atlas.png",
+        "decor-assets/native/nx_enchanted_cracker_table_atlas.png",
+        "decor-assets/native/nx_enchanted_cracker_table_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_enchanted_cracker_table_atlas.png",
+        "decor-assets/native/nx_enchanted_cracker_table_atlas.png",
+        "decor-assets/native/nx_enchanted_cracker_table_atlas.png",
+        "decor-assets/native/nx_enchanted_cracker_table_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 143,
+        "w": 88,
+        "h": 65
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 144,
+        "w": 88,
+        "h": 64
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_wizard_chess_christmas",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Bàn cờ đêm Giáng sinh",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_wizard_chess_christmas.png",
+      "rightFile": "decor-assets/native/nx_wizard_chess_christmas_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
+        "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
+        "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
+        "decor-assets/native/nx_wizard_chess_christmas_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
+        "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
+        "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
+        "decor-assets/native/nx_wizard_chess_christmas_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 142,
+        "w": 88,
+        "h": 66
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 142,
+        "w": 88,
+        "h": 66
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_weasley_knit_rack",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Giá áo len nhà Weasley",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_weasley_knit_rack.png",
+      "rightFile": "decor-assets/native/nx_weasley_knit_rack_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_weasley_knit_rack_atlas.png",
+        "decor-assets/native/nx_weasley_knit_rack_atlas.png",
+        "decor-assets/native/nx_weasley_knit_rack_atlas.png",
+        "decor-assets/native/nx_weasley_knit_rack_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_weasley_knit_rack_atlas.png",
+        "decor-assets/native/nx_weasley_knit_rack_atlas.png",
+        "decor-assets/native/nx_weasley_knit_rack_atlas.png",
+        "decor-assets/native/nx_weasley_knit_rack_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 136,
+        "w": 88,
+        "h": 72
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 137,
+        "w": 88,
+        "h": 71
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_dobby_sock_tree",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Cây vớ tặng gia tinh",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_dobby_sock_tree.png",
+      "rightFile": "decor-assets/native/nx_dobby_sock_tree_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_dobby_sock_tree_atlas.png",
+        "decor-assets/native/nx_dobby_sock_tree_atlas.png",
+        "decor-assets/native/nx_dobby_sock_tree_atlas.png",
+        "decor-assets/native/nx_dobby_sock_tree_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_dobby_sock_tree_atlas.png",
+        "decor-assets/native/nx_dobby_sock_tree_atlas.png",
+        "decor-assets/native/nx_dobby_sock_tree_atlas.png",
+        "decor-assets/native/nx_dobby_sock_tree_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 65,
+        "w": 86,
+        "h": 143
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 65,
+        "w": 88,
+        "h": 143
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_mince_pie_cart",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Xe bánh Giáng sinh",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_mince_pie_cart.png",
+      "rightFile": "decor-assets/native/nx_mince_pie_cart_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_mince_pie_cart_atlas.png",
+        "decor-assets/native/nx_mince_pie_cart_atlas.png",
+        "decor-assets/native/nx_mince_pie_cart_atlas.png",
+        "decor-assets/native/nx_mince_pie_cart_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_mince_pie_cart_atlas.png",
+        "decor-assets/native/nx_mince_pie_cart_atlas.png",
+        "decor-assets/native/nx_mince_pie_cart_atlas.png",
+        "decor-assets/native/nx_mince_pie_cart_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 112,
+        "w": 88,
+        "h": 96
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 113,
+        "w": 88,
+        "h": 95
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_plum_pudding_stand",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Bánh pudding lửa phép",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_plum_pudding_stand.png",
+      "rightFile": "decor-assets/native/nx_plum_pudding_stand_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_plum_pudding_stand_atlas.png",
+        "decor-assets/native/nx_plum_pudding_stand_atlas.png",
+        "decor-assets/native/nx_plum_pudding_stand_atlas.png",
+        "decor-assets/native/nx_plum_pudding_stand_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_plum_pudding_stand_atlas.png",
+        "decor-assets/native/nx_plum_pudding_stand_atlas.png",
+        "decor-assets/native/nx_plum_pudding_stand_atlas.png",
+        "decor-assets/native/nx_plum_pudding_stand_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 75,
+        "w": 55,
+        "h": 69
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 76,
+        "w": 56,
+        "h": 68
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_chocolate_frog_tree",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Tháp quà Kẹo Ếch",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_chocolate_frog_tree.png",
+      "rightFile": "decor-assets/native/nx_chocolate_frog_tree_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_chocolate_frog_tree_atlas.png",
+        "decor-assets/native/nx_chocolate_frog_tree_atlas.png",
+        "decor-assets/native/nx_chocolate_frog_tree_atlas.png",
+        "decor-assets/native/nx_chocolate_frog_tree_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_chocolate_frog_tree_atlas.png",
+        "decor-assets/native/nx_chocolate_frog_tree_atlas.png",
+        "decor-assets/native/nx_chocolate_frog_tree_atlas.png",
+        "decor-assets/native/nx_chocolate_frog_tree_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 69,
+        "w": 55,
+        "h": 75
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 69,
+        "w": 56,
+        "h": 75
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_peppermint_cauldron",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Vạc cacao bạc hà",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_peppermint_cauldron.png",
+      "rightFile": "decor-assets/native/nx_peppermint_cauldron_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_peppermint_cauldron_atlas.png",
+        "decor-assets/native/nx_peppermint_cauldron_atlas.png",
+        "decor-assets/native/nx_peppermint_cauldron_atlas.png",
+        "decor-assets/native/nx_peppermint_cauldron_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_peppermint_cauldron_atlas.png",
+        "decor-assets/native/nx_peppermint_cauldron_atlas.png",
+        "decor-assets/native/nx_peppermint_cauldron_atlas.png",
+        "decor-assets/native/nx_peppermint_cauldron_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 88,
+        "w": 56,
+        "h": 56
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 88,
+        "w": 55,
+        "h": 56
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_butterbeer_barrel_seat",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Ghế thùng bia bơ mùa đông",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_butterbeer_barrel_seat.png",
+      "rightFile": "decor-assets/native/nx_butterbeer_barrel_seat_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png",
+        "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png",
+        "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png",
+        "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png",
+        "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png",
+        "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png",
+        "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 87,
+        "w": 55,
+        "h": 57
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 88,
+        "w": 56,
+        "h": 56
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_gingerbread_hagrids_hut",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Nhà bánh gừng của Hagrid",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_gingerbread_hagrids_hut.png",
+      "rightFile": "decor-assets/native/nx_gingerbread_hagrids_hut_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png",
+        "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png",
+        "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png",
+        "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png",
+        "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png",
+        "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png",
+        "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 7,
+        "y": 119,
+        "w": 83,
+        "h": 89
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 121,
+        "w": 88,
+        "h": 87
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_gingerbread_greenhouse",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Nhà kính bánh gừng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_gingerbread_greenhouse.png",
+      "rightFile": "decor-assets/native/nx_gingerbread_greenhouse_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_gingerbread_greenhouse_atlas.png",
+        "decor-assets/native/nx_gingerbread_greenhouse_atlas.png",
+        "decor-assets/native/nx_gingerbread_greenhouse_atlas.png",
+        "decor-assets/native/nx_gingerbread_greenhouse_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_gingerbread_greenhouse_atlas.png",
+        "decor-assets/native/nx_gingerbread_greenhouse_atlas.png",
+        "decor-assets/native/nx_gingerbread_greenhouse_atlas.png",
+        "decor-assets/native/nx_gingerbread_greenhouse_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 132,
+        "w": 87,
+        "h": 76
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 130,
+        "w": 88,
+        "h": 78
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_mandrake_earmuff_planter",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Chậu Nhân sâm đón Noel",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_mandrake_earmuff_planter.png",
+      "rightFile": "decor-assets/native/nx_mandrake_earmuff_planter_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png",
+        "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png",
+        "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png",
+        "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png",
+        "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png",
+        "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png",
+        "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 74,
+        "w": 56,
+        "h": 70
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 74,
+        "w": 56,
+        "h": 70
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_frosted_dittany_bed",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Bồn Bạch tiên mùa tuyết",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_frosted_dittany_bed.png",
+      "rightFile": "decor-assets/native/nx_frosted_dittany_bed_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_frosted_dittany_bed_atlas.png",
+        "decor-assets/native/nx_frosted_dittany_bed_atlas.png",
+        "decor-assets/native/nx_frosted_dittany_bed_atlas.png",
+        "decor-assets/native/nx_frosted_dittany_bed_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_frosted_dittany_bed_atlas.png",
+        "decor-assets/native/nx_frosted_dittany_bed_atlas.png",
+        "decor-assets/native/nx_frosted_dittany_bed_atlas.png",
+        "decor-assets/native/nx_frosted_dittany_bed_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 137,
+        "w": 88,
+        "h": 71
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 137,
+        "w": 87,
+        "h": 71
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_glowing_mistletoe_pot",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Chậu tầm gửi ánh sao",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_glowing_mistletoe_pot.png",
+      "rightFile": "decor-assets/native/nx_glowing_mistletoe_pot_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png",
+        "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png",
+        "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png",
+        "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png",
+        "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png",
+        "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png",
+        "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 83,
+        "w": 56,
+        "h": 61
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 83,
+        "w": 56,
+        "h": 61
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_fairy_pine_log",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Khúc gỗ tiên Giáng sinh",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_fairy_pine_log.png",
+      "rightFile": "decor-assets/native/nx_fairy_pine_log_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_fairy_pine_log_atlas.png",
+        "decor-assets/native/nx_fairy_pine_log_atlas.png",
+        "decor-assets/native/nx_fairy_pine_log_atlas.png",
+        "decor-assets/native/nx_fairy_pine_log_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_fairy_pine_log_atlas.png",
+        "decor-assets/native/nx_fairy_pine_log_atlas.png",
+        "decor-assets/native/nx_fairy_pine_log_atlas.png",
+        "decor-assets/native/nx_fairy_pine_log_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 128,
+        "w": 88,
+        "h": 80
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 128,
+        "w": 86,
+        "h": 80
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_icicle_harp",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Đàn hạc băng Dạ vũ",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_icicle_harp.png",
+      "rightFile": "decor-assets/native/nx_icicle_harp_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_icicle_harp_atlas.png",
+        "decor-assets/native/nx_icicle_harp_atlas.png",
+        "decor-assets/native/nx_icicle_harp_atlas.png",
+        "decor-assets/native/nx_icicle_harp_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_icicle_harp_atlas.png",
+        "decor-assets/native/nx_icicle_harp_atlas.png",
+        "decor-assets/native/nx_icicle_harp_atlas.png",
+        "decor-assets/native/nx_icicle_harp_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 92,
+        "w": 85,
+        "h": 116
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 92,
+        "w": 88,
+        "h": 116
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_yule_dance_gazebo",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Chòi Dạ vũ mùa đông",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 160,
+      "height": 256,
+      "pivotX": 80,
+      "pivotY": 240,
+      "file": "decor-assets/native/nx_yule_dance_gazebo.png",
+      "rightFile": "decor-assets/native/nx_yule_dance_gazebo_right.png",
+      "footprintTiles": [
+        3,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
+        "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
+        "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
+        "decor-assets/native/nx_yule_dance_gazebo_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
+        "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
+        "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
+        "decor-assets/native/nx_yule_dance_gazebo_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 160,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 160,
+          "y": 256,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 160,
+          "h": 256
+        },
+        {
+          "x": 160,
+          "y": 256,
+          "w": 160,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 59,
+        "w": 152,
+        "h": 181
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 59,
+        "w": 152,
+        "h": 181
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_enchanted_violin_stand",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Đàn vĩ cầm tự chơi",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_enchanted_violin_stand.png",
+      "rightFile": "decor-assets/native/nx_enchanted_violin_stand_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_enchanted_violin_stand_atlas.png",
+        "decor-assets/native/nx_enchanted_violin_stand_atlas.png",
+        "decor-assets/native/nx_enchanted_violin_stand_atlas.png",
+        "decor-assets/native/nx_enchanted_violin_stand_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_enchanted_violin_stand_atlas.png",
+        "decor-assets/native/nx_enchanted_violin_stand_atlas.png",
+        "decor-assets/native/nx_enchanted_violin_stand_atlas.png",
+        "decor-assets/native/nx_enchanted_violin_stand_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 53,
+        "w": 56,
+        "h": 91
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 73,
+        "w": 55,
+        "h": 71
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_great_hall_candle_cluster",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Cụm nến Đại Sảnh mùa lễ",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_great_hall_candle_cluster.png",
+      "rightFile": "decor-assets/native/nx_great_hall_candle_cluster_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_great_hall_candle_cluster_atlas.png",
+        "decor-assets/native/nx_great_hall_candle_cluster_atlas.png",
+        "decor-assets/native/nx_great_hall_candle_cluster_atlas.png",
+        "decor-assets/native/nx_great_hall_candle_cluster_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_great_hall_candle_cluster_atlas.png",
+        "decor-assets/native/nx_great_hall_candle_cluster_atlas.png",
+        "decor-assets/native/nx_great_hall_candle_cluster_atlas.png",
+        "decor-assets/native/nx_great_hall_candle_cluster_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 107,
+        "w": 88,
+        "h": 101
+      },
+      "rightBounds": {
+        "x": 8,
+        "y": 106,
+        "w": 81,
+        "h": 102
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_raven_ice_bench",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Ghế đá quạ mùa đông",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_raven_ice_bench.png",
+      "rightFile": "decor-assets/native/nx_raven_ice_bench_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_raven_ice_bench_atlas.png",
+        "decor-assets/native/nx_raven_ice_bench_atlas.png",
+        "decor-assets/native/nx_raven_ice_bench_atlas.png",
+        "decor-assets/native/nx_raven_ice_bench_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_raven_ice_bench_atlas.png",
+        "decor-assets/native/nx_raven_ice_bench_atlas.png",
+        "decor-assets/native/nx_raven_ice_bench_atlas.png",
+        "decor-assets/native/nx_raven_ice_bench_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 133,
+        "w": 86,
+        "h": 75
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 132,
+        "w": 88,
+        "h": 76
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_lion_firewood_rack",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Giá củi sư tử Giáng sinh",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_lion_firewood_rack.png",
+      "rightFile": "decor-assets/native/nx_lion_firewood_rack_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_lion_firewood_rack_atlas.png",
+        "decor-assets/native/nx_lion_firewood_rack_atlas.png",
+        "decor-assets/native/nx_lion_firewood_rack_atlas.png",
+        "decor-assets/native/nx_lion_firewood_rack_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_lion_firewood_rack_atlas.png",
+        "decor-assets/native/nx_lion_firewood_rack_atlas.png",
+        "decor-assets/native/nx_lion_firewood_rack_atlas.png",
+        "decor-assets/native/nx_lion_firewood_rack_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 123,
+        "w": 88,
+        "h": 85
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 123,
+        "w": 88,
+        "h": 85
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_badger_cookie_table",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Bàn bánh lửng mật",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_badger_cookie_table.png",
+      "rightFile": "decor-assets/native/nx_badger_cookie_table_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_badger_cookie_table_atlas.png",
+        "decor-assets/native/nx_badger_cookie_table_atlas.png",
+        "decor-assets/native/nx_badger_cookie_table_atlas.png",
+        "decor-assets/native/nx_badger_cookie_table_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_badger_cookie_table_atlas.png",
+        "decor-assets/native/nx_badger_cookie_table_atlas.png",
+        "decor-assets/native/nx_badger_cookie_table_atlas.png",
+        "decor-assets/native/nx_badger_cookie_table_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 115,
+        "w": 88,
+        "h": 93
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 115,
+        "w": 88,
+        "h": 93
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_serpent_holly_urn",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Bình lá thông rắn bạc",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nx_serpent_holly_urn.png",
+      "rightFile": "decor-assets/native/nx_serpent_holly_urn_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_serpent_holly_urn_atlas.png",
+        "decor-assets/native/nx_serpent_holly_urn_atlas.png",
+        "decor-assets/native/nx_serpent_holly_urn_atlas.png",
+        "decor-assets/native/nx_serpent_holly_urn_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_serpent_holly_urn_atlas.png",
+        "decor-assets/native/nx_serpent_holly_urn_atlas.png",
+        "decor-assets/native/nx_serpent_holly_urn_atlas.png",
+        "decor-assets/native/nx_serpent_holly_urn_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 78,
+        "w": 55,
+        "h": 66
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 78,
+        "w": 56,
+        "h": 66
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nx_hagrid_gift_crate",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Giáng sinh",
+      "label": "Rương quà bác Hagrid",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nx_hagrid_gift_crate.png",
+      "rightFile": "decor-assets/native/nx_hagrid_gift_crate_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
+        "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
+        "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
+        "decor-assets/native/nx_hagrid_gift_crate_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
+        "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
+        "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
+        "decor-assets/native/nx_hagrid_gift_crate_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 135,
+        "w": 88,
+        "h": 73
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 133,
+        "w": 88,
+        "h": 75
+      },
+      "framesIdentical": false
     }
   ]
 }

@@ -1,0 +1,824 @@
+[
+  {
+    "browser": "Chrome",
+    "items": 50,
+    "checked": [
+      {
+        "id": "nx_snitch_wreath",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snitch_wreath",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_elf_yule_tent",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_elf_yule_tent",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_owl_parcel_roost",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_owl_parcel_roost",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_hagrid_boot_planter",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_hagrid_boot_planter",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_fang_biscuit_kennel",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_fang_biscuit_kennel",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_niffler_coin_snowglobe",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_niffler_coin_snowglobe",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_bowtruckle_fir_perch",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_bowtruckle_fir_perch",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_mooncalf_moon_lantern",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_mooncalf_moon_lantern",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_puffskein_sock_basket",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_puffskein_sock_basket",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_hippogriff_gift_sleigh",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_hippogriff_gift_sleigh",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_unicorn_ice_fountain",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_unicorn_ice_fountain",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_thestral_silver_bell",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_thestral_silver_bell",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_fwooper_music_box",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_fwooper_music_box",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_phoenix_candle_bough",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_phoenix_candle_bough",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_norbert_egg_lantern",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_norbert_egg_lantern",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snowwizard_hat",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snowwizard_hat",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snow_owl_sculpture",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snow_owl_sculpture",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snow_dragon_sculpture",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snow_dragon_sculpture",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snow_hogwarts_castle",
+        "facing": "default",
+        "position": [
+          2.5,
+          21
+        ]
+      },
+      {
+        "id": "nx_snow_hogwarts_castle",
+        "facing": "right",
+        "position": [
+          2.5,
+          21
+        ]
+      },
+      {
+        "id": "nx_ice_wand_star",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_ice_wand_star",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_mistletoe_gate",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_mistletoe_gate",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_holly_broom_fence",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_holly_broom_fence",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snitch_lamp_post",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_snitch_lamp_post",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_floo_chimney_mailbox",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_floo_chimney_mailbox",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_hogwarts_express_parcels",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_hogwarts_express_parcels",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_platform_clock",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_platform_clock",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_enchanted_cracker_table",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_enchanted_cracker_table",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_wizard_chess_christmas",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_wizard_chess_christmas",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_weasley_knit_rack",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_weasley_knit_rack",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_dobby_sock_tree",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_dobby_sock_tree",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_mince_pie_cart",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_mince_pie_cart",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_plum_pudding_stand",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_plum_pudding_stand",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_chocolate_frog_tree",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_chocolate_frog_tree",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_peppermint_cauldron",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_peppermint_cauldron",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_butterbeer_barrel_seat",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_butterbeer_barrel_seat",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_gingerbread_hagrids_hut",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_gingerbread_hagrids_hut",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_gingerbread_greenhouse",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_gingerbread_greenhouse",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_mandrake_earmuff_planter",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_mandrake_earmuff_planter",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_frosted_dittany_bed",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_frosted_dittany_bed",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_glowing_mistletoe_pot",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_glowing_mistletoe_pot",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_fairy_pine_log",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_fairy_pine_log",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_icicle_harp",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_icicle_harp",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_yule_dance_gazebo",
+        "facing": "default",
+        "position": [
+          2.5,
+          21
+        ]
+      },
+      {
+        "id": "nx_yule_dance_gazebo",
+        "facing": "right",
+        "position": [
+          2.5,
+          21
+        ]
+      },
+      {
+        "id": "nx_enchanted_violin_stand",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_enchanted_violin_stand",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_great_hall_candle_cluster",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_great_hall_candle_cluster",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_raven_ice_bench",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_raven_ice_bench",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_lion_firewood_rack",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_lion_firewood_rack",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_badger_cookie_table",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_badger_cookie_table",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_serpent_holly_urn",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_serpent_holly_urn",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_hagrid_gift_crate",
+        "facing": "default",
+        "position": [
+          2,
+          21
+        ]
+      },
+      {
+        "id": "nx_hagrid_gift_crate",
+        "facing": "right",
+        "position": [
+          2,
+          21
+        ]
+      }
+    ],
+    "combinations": 400,
+    "drawnAtlases": 50,
+    "missing": [],
+    "viewports": [
+      {
+        "width": 1280,
+        "overflow": false
+      },
+      {
+        "width": 375,
+        "overflow": false
+      }
+    ],
+    "errors": [],
+    "external": [],
+    "runtimeOnlyWebp": true
+  }
+]

@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "cee027e91c36",
+  "revision": "b938c5e09935",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -9042,6 +9042,1506 @@
       "sha256": "ebd3c6b91327e8552de80a5ab4862a41d3f136b84c4142dd0ab736fdba965b22"
     },
     {
+      "source": "decor-assets/native/nx_badger_cookie_table_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_badger_cookie_table_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 14317,
+      "bytes": 9264,
+      "sourceSha256": "6b7642f1e811e0c05f0db8f18fb68548041c8a116df84deb2bd6f6b9b2afbd11",
+      "sha256": "ea623438d6aa4c998b543d899a4b2561107313b2a54a81be8004b15a1aea7be2"
+    },
+    {
+      "source": "decor-assets/native/nx_badger_cookie_table_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_badger_cookie_table_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3940,
+      "bytes": 2510,
+      "sourceSha256": "3fd864e5a8807f81bc98da58cf5cc8e7170f3f9832668028fd11140dfee05c03",
+      "sha256": "003c1a8a417b40c62061b61a6d1555cf45d536680581cc1714673e6a6c5b9d09"
+    },
+    {
+      "source": "decor-assets/native/nx_badger_cookie_table.png",
+      "file": "runtime-webp/decor-assets/native/nx_badger_cookie_table.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3956,
+      "bytes": 2484,
+      "sourceSha256": "029571eb87d7f5e8806748f9b756ef610c1c7d2ef53338dbdde905b62f532272",
+      "sha256": "73a5d0539e168b7416579df14e048473b5003a8544dfb9732c3c065b4306f455"
+    },
+    {
+      "source": "decor-assets/native/nx_bowtruckle_fir_perch_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_bowtruckle_fir_perch_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 4934,
+      "bytes": 3222,
+      "sourceSha256": "1da82bf05c4f7ea2301a2549624da60d6b85b4192c733a32211c38cfa4620fb7",
+      "sha256": "d21a470157661ca51fcb15d0d74fc1b1c25a88b42173fe2aa946c68b806f8ad4"
+    },
+    {
+      "source": "decor-assets/native/nx_bowtruckle_fir_perch_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_bowtruckle_fir_perch_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1546,
+      "bytes": 914,
+      "sourceSha256": "ae395598dd4c758391c72d8eccd7eaae4fc5b62c2b8dc5e0b5890cc4fb8563ad",
+      "sha256": "10ab04116807b3e2595f26b022a7a8fdade7e641d070786201019e78d00753a0"
+    },
+    {
+      "source": "decor-assets/native/nx_bowtruckle_fir_perch.png",
+      "file": "runtime-webp/decor-assets/native/nx_bowtruckle_fir_perch.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1520,
+      "bytes": 922,
+      "sourceSha256": "5e331ee030cec6ec75970ff6b790c729be331ccef0fc8cf507a9a09a974382b9",
+      "sha256": "f732f0f35d9c4f9e555e17f8e23d784b5e78f25d720d87fc923234647cfc700b"
+    },
+    {
+      "source": "decor-assets/native/nx_butterbeer_barrel_seat_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_butterbeer_barrel_seat_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 5665,
+      "bytes": 3778,
+      "sourceSha256": "f1c52eb0ca1f263c07a4b79b18d7b9efcfea61acc9e0d302e3fd0c7e48036e21",
+      "sha256": "a46655c2ccd66746d2a216b411cf27ca94d8e41ea7d1b983faddcd4446163db1"
+    },
+    {
+      "source": "decor-assets/native/nx_butterbeer_barrel_seat_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_butterbeer_barrel_seat_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1701,
+      "bytes": 1058,
+      "sourceSha256": "33bf83046a5fde05d08be53920e13a34825a03ea608fbef625b5ec0d609d96ad",
+      "sha256": "f256e3f857b2eab228b7978a72092496ebf03b59956341b5a9402806758d88f4"
+    },
+    {
+      "source": "decor-assets/native/nx_butterbeer_barrel_seat.png",
+      "file": "runtime-webp/decor-assets/native/nx_butterbeer_barrel_seat.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1719,
+      "bytes": 1048,
+      "sourceSha256": "0ce50065b246caf0d525007c4337f55b16f96f09e0ec9d1c597cf773b03dfab2",
+      "sha256": "553bba372c9c5ade72a743017c0ca00ba629811ffc364a9624e8f189e348b395"
+    },
+    {
+      "source": "decor-assets/native/nx_chocolate_frog_tree_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_chocolate_frog_tree_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 6988,
+      "bytes": 4300,
+      "sourceSha256": "63f2d7b547d8c237be1322178f8280614c85844c91a61c6c3e4f35e1f086589a",
+      "sha256": "50741f5e28bc162bba128d64b8c5f8afec38e66d22466502d48dc18b39cff80c"
+    },
+    {
+      "source": "decor-assets/native/nx_chocolate_frog_tree_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_chocolate_frog_tree_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2020,
+      "bytes": 1228,
+      "sourceSha256": "173b57d2face93278da5f17c3a47513af62e9068befc19a1903f0d18d35b0270",
+      "sha256": "71ab8d67e1f66df766f589f80f5ea3ceecd1f6d1af485a4de99c574627834c3b"
+    },
+    {
+      "source": "decor-assets/native/nx_chocolate_frog_tree.png",
+      "file": "runtime-webp/decor-assets/native/nx_chocolate_frog_tree.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1997,
+      "bytes": 1204,
+      "sourceSha256": "42861849ba95a4812cff27a662b3acdd0511a1b9860d786de22641c06f16a3d4",
+      "sha256": "e8f086bc72c17c52b594341969df1edd1d553d9474f4a6eece7441875af4ef3a"
+    },
+    {
+      "source": "decor-assets/native/nx_dobby_sock_tree_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_dobby_sock_tree_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 18524,
+      "bytes": 12282,
+      "sourceSha256": "73332386f6ce73528ee48baf9c8efb057606108cdcfd83cbe5b84b8ba296e271",
+      "sha256": "a5577007f13af90d59a503ae7859ed5905e006537cc37b61e528a660f2ecf662"
+    },
+    {
+      "source": "decor-assets/native/nx_dobby_sock_tree_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_dobby_sock_tree_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 5144,
+      "bytes": 3258,
+      "sourceSha256": "eb653d8d078db57e430749a829e3e8860f488cbd070c8f98f0f9da858e3e6c96",
+      "sha256": "44f75f06d17f556c3f47a50645c5e7913bc2d807df73a2bf5d1d74ff139c7348"
+    },
+    {
+      "source": "decor-assets/native/nx_dobby_sock_tree.png",
+      "file": "runtime-webp/decor-assets/native/nx_dobby_sock_tree.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 5073,
+      "bytes": 3200,
+      "sourceSha256": "566ba45703c64619607fdc27b58b49f4be15c4d586aec6ccdf7590941b159758",
+      "sha256": "2464c8a80a5be60821f7c96ee39d5f690cce818d90a98bb7d9e5d9b73f4bfd31"
+    },
+    {
+      "source": "decor-assets/native/nx_elf_yule_tent_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_elf_yule_tent_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 15675,
+      "bytes": 10272,
+      "sourceSha256": "861d7fad3547bf82cace1f9e5899e7f6c09db1426c759c0479cd93416efad45c",
+      "sha256": "7f146a18d8532ffce09141717ec26ae6aad613dc461ec187426bf77fbe13d186"
+    },
+    {
+      "source": "decor-assets/native/nx_elf_yule_tent_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_elf_yule_tent_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4376,
+      "bytes": 2678,
+      "sourceSha256": "212b60a0661435be42a9b2f7e37e44f4d2bc9facf8a114ae84196c3c57cb43ab",
+      "sha256": "328cf1134a676b4cb3e4b9e0e5c91b24794a00074fed25346c11034786a91f6a"
+    },
+    {
+      "source": "decor-assets/native/nx_elf_yule_tent.png",
+      "file": "runtime-webp/decor-assets/native/nx_elf_yule_tent.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4372,
+      "bytes": 2694,
+      "sourceSha256": "66f6c6f30e3cfff2a603526a6b74b7d4348be950a651e463869fff1cac490aaa",
+      "sha256": "2d651ca1933558405afd472f94d6a50822ef1815c923932182dab3b60b5eadb9"
+    },
+    {
+      "source": "decor-assets/native/nx_enchanted_cracker_table_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_enchanted_cracker_table_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 8996,
+      "bytes": 5620,
+      "sourceSha256": "5949b6cb61f9982d3499ddc76f52b295afca1ba627f1e0f3432703886dcf627e",
+      "sha256": "664ff13bca64689b29256fe36dfd50ddc93f29661318f4d11d29f3fe48f86b21"
+    },
+    {
+      "source": "decor-assets/native/nx_enchanted_cracker_table_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_enchanted_cracker_table_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 2542,
+      "bytes": 1510,
+      "sourceSha256": "616468e5c97c2bd614d11ef0eff147515a8eead378196d6a13ca1072e9c95e46",
+      "sha256": "989247820f6b131d930d2b587c33672506e67c131830226493dc8990894c0c23"
+    },
+    {
+      "source": "decor-assets/native/nx_enchanted_cracker_table.png",
+      "file": "runtime-webp/decor-assets/native/nx_enchanted_cracker_table.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 2515,
+      "bytes": 1496,
+      "sourceSha256": "bc02431aa78d9bef5e5ffcf989dfa0b04307be272767c90a30a1686db86c70f1",
+      "sha256": "a5f0d81ac1039214bb2a814c58e4e3963c6ac4f8f094fe485f5ab232b3c11ce5"
+    },
+    {
+      "source": "decor-assets/native/nx_enchanted_violin_stand_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_enchanted_violin_stand_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 6421,
+      "bytes": 4018,
+      "sourceSha256": "255c9480526869af5c2cedbf3bd5f93ecd01346ba53c549767cb5435faabfe7c",
+      "sha256": "a90ca671a30381359a9df72f73a538012eb228cb4c032d10ad20a50ef5f7a8b1"
+    },
+    {
+      "source": "decor-assets/native/nx_enchanted_violin_stand_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_enchanted_violin_stand_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1860,
+      "bytes": 1116,
+      "sourceSha256": "28ac08917545235eb9477800ef932f97c3b404d09fbf7293f08c3fa223de9fba",
+      "sha256": "d5f0eb32be81114092e384f21ba7e52c8f6b0ef2c30c22041bba818019965600"
+    },
+    {
+      "source": "decor-assets/native/nx_enchanted_violin_stand.png",
+      "file": "runtime-webp/decor-assets/native/nx_enchanted_violin_stand.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1890,
+      "bytes": 1104,
+      "sourceSha256": "75854c1ef82d9c8049f20d732c6a90b37c78ccbddd1449a86a14489fc2078ce7",
+      "sha256": "fe9e095ae8e2813e8c23d8661f51695a948dbdf875de23d1393aa2b42f88f0dd"
+    },
+    {
+      "source": "decor-assets/native/nx_fairy_pine_log_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_fairy_pine_log_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 11267,
+      "bytes": 7672,
+      "sourceSha256": "5228abb7f38e88a504c2b69febfb73f580ad233a6e40514d96ac197e828f98d9",
+      "sha256": "9e7b3a0c3d477a87e667161f0abaf7b980d32176c3a7d05b9d66a108af9ceff7"
+    },
+    {
+      "source": "decor-assets/native/nx_fairy_pine_log_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_fairy_pine_log_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3184,
+      "bytes": 2012,
+      "sourceSha256": "b57cc50f2a4ceb9ef19fb2db854832aa3e3d7e6d36e42c69f4abf8178fce6da5",
+      "sha256": "eff337fcb1f4777ecd86483981ffff45ad6aa26780bd6d3058cad9db6b8595be"
+    },
+    {
+      "source": "decor-assets/native/nx_fairy_pine_log.png",
+      "file": "runtime-webp/decor-assets/native/nx_fairy_pine_log.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3310,
+      "bytes": 2080,
+      "sourceSha256": "26eaab23c75ca8e4831a1846037591e316149730bc2d4e3f8de03fdc763e452e",
+      "sha256": "12f57b322de2d72358c8b08b0cf1feb22bc656b2b00c825d34c0fb8e37542655"
+    },
+    {
+      "source": "decor-assets/native/nx_fang_biscuit_kennel_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_fang_biscuit_kennel_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 11437,
+      "bytes": 7170,
+      "sourceSha256": "608afb8d25dca752db4132a052b2325957c166e67dfe23ccdddba1df1fece7fd",
+      "sha256": "b11c589e75139b5ab99cb06dc22f170b8007cb020207e7835c90ce847170d722"
+    },
+    {
+      "source": "decor-assets/native/nx_fang_biscuit_kennel_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_fang_biscuit_kennel_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3186,
+      "bytes": 1956,
+      "sourceSha256": "9abc895af2724354068aa1cd1de314ce39b4690354c297751eba7fa0e1d9a9dc",
+      "sha256": "d151f2fb8156bac136162cc1952f1b0d6f452b156719b42ae59741ce7046a69d"
+    },
+    {
+      "source": "decor-assets/native/nx_fang_biscuit_kennel.png",
+      "file": "runtime-webp/decor-assets/native/nx_fang_biscuit_kennel.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3148,
+      "bytes": 1932,
+      "sourceSha256": "8ba71c2ed2fe3cc6a4ae1b202ceebf6a98b4e23fce1adda504c11f3533b55cf6",
+      "sha256": "96f7047b2ed1117e6afb0de7f98d0a6cd2e87585d887f1982a13f60cd04a2352"
+    },
+    {
+      "source": "decor-assets/native/nx_floo_chimney_mailbox_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_floo_chimney_mailbox_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 7592,
+      "bytes": 5016,
+      "sourceSha256": "ad795c1565a7756d557df06a2c6389dd48450bf3eb41027f82ca1de2c9a8ef7e",
+      "sha256": "0db6fc9e19e2f15a7d46be5bc02679f3265f249e37518d3efab9fffdeb16de63"
+    },
+    {
+      "source": "decor-assets/native/nx_floo_chimney_mailbox_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_floo_chimney_mailbox_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2194,
+      "bytes": 1362,
+      "sourceSha256": "15469a0229b4c0bab6eada3934397d1f7d8f17d6faa894dd3272aeeee78cb66f",
+      "sha256": "e5132f9ca3f3dbe707494ea8d88040f5d986c97cb55f0021aaf1a6bf16329ef5"
+    },
+    {
+      "source": "decor-assets/native/nx_floo_chimney_mailbox.png",
+      "file": "runtime-webp/decor-assets/native/nx_floo_chimney_mailbox.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2219,
+      "bytes": 1378,
+      "sourceSha256": "c95d9a3ed026fdc57d083cb1546922f193fef4a083256dd98a06dc804591cb21",
+      "sha256": "c54e3e328a2f74a9eae348ad42985d5eb81936dc97407808348e846d02c390e8"
+    },
+    {
+      "source": "decor-assets/native/nx_frosted_dittany_bed_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_frosted_dittany_bed_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 11348,
+      "bytes": 7124,
+      "sourceSha256": "0de13958f1fe965d6bffdf0122c2492204e75d5dc946fa114b3197bb6da5dd3d",
+      "sha256": "9e162399c45b3b530ea44722a8db7d71bccec0ac3638ba86e61efc91f8b9b8ac"
+    },
+    {
+      "source": "decor-assets/native/nx_frosted_dittany_bed_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_frosted_dittany_bed_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3124,
+      "bytes": 1920,
+      "sourceSha256": "bc81e01d3e65ccc445df5ca902baa0ae083be64161a049388e40ee4f76b9ccb9",
+      "sha256": "3b2bc865ab8453929b4690c9522ede35844ec1020399717030e0f4e9bcddf03a"
+    },
+    {
+      "source": "decor-assets/native/nx_frosted_dittany_bed.png",
+      "file": "runtime-webp/decor-assets/native/nx_frosted_dittany_bed.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3131,
+      "bytes": 1924,
+      "sourceSha256": "8fa0b7c603635df9aecef0b42fa7b84ddc86daced3b2bccae0d66ddf372ed6a9",
+      "sha256": "d81e473da078c5997542bf148fcf04327975b929589fcc02192ce59789d71626"
+    },
+    {
+      "source": "decor-assets/native/nx_fwooper_music_box_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_fwooper_music_box_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 7073,
+      "bytes": 4590,
+      "sourceSha256": "03322d0db7b2b9ef3d0c3a8b228f7cc3e36bb3193ee5ad5e45b9a230fd0bb850",
+      "sha256": "1b3c5989826b66f5aff9e7d4e7b1867fc34f1315dd8abd5fd5817822b1d7458c"
+    },
+    {
+      "source": "decor-assets/native/nx_fwooper_music_box_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_fwooper_music_box_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2077,
+      "bytes": 1272,
+      "sourceSha256": "d6b2773e6dec48b588245754d749bd86cae208b0ea6a19e2bc1ec9659b77cbc4",
+      "sha256": "f494bc2a2166ab538449894d5fc22cd6a721e61d7d575a612c068162639fc960"
+    },
+    {
+      "source": "decor-assets/native/nx_fwooper_music_box.png",
+      "file": "runtime-webp/decor-assets/native/nx_fwooper_music_box.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2086,
+      "bytes": 1256,
+      "sourceSha256": "6bf925368826e49bde0dfd5bb61c78e285c22dfb0145ccec5382a4068bd9ca58",
+      "sha256": "51d56b88cff208ae59840eaeec5e4ec7af2e2168d45b8b3afdd99b1a135ec691"
+    },
+    {
+      "source": "decor-assets/native/nx_gingerbread_greenhouse_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_gingerbread_greenhouse_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 13907,
+      "bytes": 9488,
+      "sourceSha256": "7d7e53c95f1bee3219079c40300cb7401a3c44feb546ff10dc5803c2a3721aae",
+      "sha256": "fbe92c1047c54dbd91e72514e919e73dc351819a8df77cf54b98e852f5229054"
+    },
+    {
+      "source": "decor-assets/native/nx_gingerbread_greenhouse_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_gingerbread_greenhouse_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3876,
+      "bytes": 2534,
+      "sourceSha256": "04e43fc6352c3abf137e2f50eae309010a5051f2575f39752e04adb3374ed856",
+      "sha256": "1a27135d7a93435fcd74c74848b7af024f480efb047ed3ad879e3b16a5807648"
+    },
+    {
+      "source": "decor-assets/native/nx_gingerbread_greenhouse.png",
+      "file": "runtime-webp/decor-assets/native/nx_gingerbread_greenhouse.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3806,
+      "bytes": 2498,
+      "sourceSha256": "70ca2ba50e6ab9b771a402a13e287fa89c49ef2793e9e777239527d994e29d42",
+      "sha256": "cc6b2dbc8ccbc84a898a6d200344ace2b996c74de38eaeee86705dde65959514"
+    },
+    {
+      "source": "decor-assets/native/nx_gingerbread_hagrids_hut_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_gingerbread_hagrids_hut_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 12732,
+      "bytes": 7968,
+      "sourceSha256": "83d89f3a9e01f0ee260fe3d1c277a04daecfa347345ebb817dde6f5ee4b2ac5d",
+      "sha256": "864c55d7ac9736b1bf07bbef1157f6e25ae632664dfc0c3b294fb152d6d99461"
+    },
+    {
+      "source": "decor-assets/native/nx_gingerbread_hagrids_hut_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_gingerbread_hagrids_hut_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3502,
+      "bytes": 2142,
+      "sourceSha256": "1c32e2d23969d34aa50681712ad1a324caf6366623138d8dbe81e8ce04bb3b8a",
+      "sha256": "d0dd7247c9a2b1dfe808ab0b43c6a8665e682fb9e43ef5d28df99cd39de3af62"
+    },
+    {
+      "source": "decor-assets/native/nx_gingerbread_hagrids_hut.png",
+      "file": "runtime-webp/decor-assets/native/nx_gingerbread_hagrids_hut.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3477,
+      "bytes": 2100,
+      "sourceSha256": "326c50798b955a1308caac73866e909a17c76de50e32b69a054127ee499359af",
+      "sha256": "761e612df4e43d1f3342c7feb097f78ad5bed6cbf9121c3ad62348749820fadf"
+    },
+    {
+      "source": "decor-assets/native/nx_glowing_mistletoe_pot_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_glowing_mistletoe_pot_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 6223,
+      "bytes": 4054,
+      "sourceSha256": "f7b1460162d3f31189219122904de40803a17ddee5fd7cae58d3859068ffc585",
+      "sha256": "aaa8ca25f758e6d1ad3e8b6c85c700d8b4e74f4c8f70e0e923b8b88d7e4a4b89"
+    },
+    {
+      "source": "decor-assets/native/nx_glowing_mistletoe_pot_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_glowing_mistletoe_pot_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1819,
+      "bytes": 1134,
+      "sourceSha256": "a19d51a35d43eb72d13ddcaed3f47aa7305dfe2d9697c1f0c761410fdcaf46d5",
+      "sha256": "e418649d8e94311370d7b47596509cd4c32b244e1999f342c8fd08c340a71f96"
+    },
+    {
+      "source": "decor-assets/native/nx_glowing_mistletoe_pot.png",
+      "file": "runtime-webp/decor-assets/native/nx_glowing_mistletoe_pot.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1823,
+      "bytes": 1126,
+      "sourceSha256": "4917edc48d32dbf45a9f924f871967d8dfe56f1c08d8539fe219165751ecc429",
+      "sha256": "6425960cfb171006af65188752a3afd2a1bd0b3d4358241df49ef391dd0f6237"
+    },
+    {
+      "source": "decor-assets/native/nx_great_hall_candle_cluster_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_great_hall_candle_cluster_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 10653,
+      "bytes": 7004,
+      "sourceSha256": "8293c87ed862f8cffe82304457c8cb5d5561edc33cd96507d12d73a0144e50fc",
+      "sha256": "8b358893493a8720f24c3579e6c1a060c9bd85a078a363d91b33f1615e9c73eb"
+    },
+    {
+      "source": "decor-assets/native/nx_great_hall_candle_cluster_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_great_hall_candle_cluster_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 2930,
+      "bytes": 1824,
+      "sourceSha256": "d2d84bbe8d9425809b405d7638b7867cfbf0f84056726e40b9eb203019620df2",
+      "sha256": "09a92b75305f967642bf0a72197de0e8267e56942e3515cb78d2e17402391fb6"
+    },
+    {
+      "source": "decor-assets/native/nx_great_hall_candle_cluster.png",
+      "file": "runtime-webp/decor-assets/native/nx_great_hall_candle_cluster.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3065,
+      "bytes": 1900,
+      "sourceSha256": "3a6be5a693c12570fffa84788c234fa6ba394a78a310adeaa5d005d2f3b29d6e",
+      "sha256": "f70b603c9f901c030a8fb3e7c9688ee556c1fff7fba40b1df4b8af03a1afb567"
+    },
+    {
+      "source": "decor-assets/native/nx_hagrid_boot_planter_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_hagrid_boot_planter_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 5585,
+      "bytes": 3488,
+      "sourceSha256": "ab9474e5655a1dba902e357c89f5c2006b110baef0a250cd84c2de0eaaddc804",
+      "sha256": "fc9904f9dceab8ce532d6fce6efd99a978df57f05116c5ff355c7cb23ef5baf1"
+    },
+    {
+      "source": "decor-assets/native/nx_hagrid_boot_planter_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_hagrid_boot_planter_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1634,
+      "bytes": 974,
+      "sourceSha256": "7beb399259dec2dc6ecbc44e6397742dd6eb1782cd1254db8612f730503feaef",
+      "sha256": "e251376a1a27e6c1315b7c3bacf880cfb7515ff902d05ed89dbef2b96db17bd9"
+    },
+    {
+      "source": "decor-assets/native/nx_hagrid_boot_planter.png",
+      "file": "runtime-webp/decor-assets/native/nx_hagrid_boot_planter.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1629,
+      "bytes": 974,
+      "sourceSha256": "e8536bb89984765545b81b2ed5fa784fdcc80927eeec7c21320aa248e991b3ae",
+      "sha256": "9c8d9e0cc9ff9ec1241467045f57f43bd06f926c75c9733f8c4110627e019f3b"
+    },
+    {
+      "source": "decor-assets/native/nx_hagrid_gift_crate_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_hagrid_gift_crate_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 12579,
+      "bytes": 7924,
+      "sourceSha256": "04c80ec194f4d778a12ff3fab32e158fdc749cff36412d129e13edf445d8d8fe",
+      "sha256": "8ec7633747191d8cda1bd7e2bd744e16385fe8312fe9d5b68977086215e89556"
+    },
+    {
+      "source": "decor-assets/native/nx_hagrid_gift_crate_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_hagrid_gift_crate_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3358,
+      "bytes": 2068,
+      "sourceSha256": "15c79e04b70f97d13dc11930aa86bb23169db4f7befa08f2d1de24f4ab454625",
+      "sha256": "1e9c3bf08ff5bd6d1a1fcb86675882db069b8755684e5be6acb0a536d163a7d6"
+    },
+    {
+      "source": "decor-assets/native/nx_hagrid_gift_crate.png",
+      "file": "runtime-webp/decor-assets/native/nx_hagrid_gift_crate.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3413,
+      "bytes": 2120,
+      "sourceSha256": "f4b78401408defa96a90b2e4339abbd28a3765bc6d7b229a6edfe6c190e6abe5",
+      "sha256": "f470aee6160feb601c0b2e7613fa8f136a709c53f37667e04f6360b046407808"
+    },
+    {
+      "source": "decor-assets/native/nx_hippogriff_gift_sleigh_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_hippogriff_gift_sleigh_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 15287,
+      "bytes": 10000,
+      "sourceSha256": "8b1c5fe26bae3065ecaec9b6752fdc2f92848b0c850b0fd41ad6903496ba3460",
+      "sha256": "a3d828496b66c84baa7b02a7a9ce4715264c2330d6e03a48731670190a8ed5ee"
+    },
+    {
+      "source": "decor-assets/native/nx_hippogriff_gift_sleigh_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_hippogriff_gift_sleigh_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4308,
+      "bytes": 2720,
+      "sourceSha256": "f8cee8cc60144ce974c646b32bce81a13843ef53e51db199473c68cad53643ac",
+      "sha256": "060b72dd1441fa3650442f7768870afda04571c00b237fad647d2a1a7b9ae54f"
+    },
+    {
+      "source": "decor-assets/native/nx_hippogriff_gift_sleigh.png",
+      "file": "runtime-webp/decor-assets/native/nx_hippogriff_gift_sleigh.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4371,
+      "bytes": 2734,
+      "sourceSha256": "74ce943c5f542e880f4bf6cbf2eb1695d29fb3b40bedc91374462321f07d76d3",
+      "sha256": "adbcb612b14a407c1d6758722caee1931ab4a5b48481e75361ff8f42b8844e52"
+    },
+    {
+      "source": "decor-assets/native/nx_hogwarts_express_parcels_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_hogwarts_express_parcels_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 12272,
+      "bytes": 7574,
+      "sourceSha256": "9cd0472fef96a9cbe98a3cca2817a995c7c4709112eced27d10d761b56f286de",
+      "sha256": "3a644851a962d9481fdd9075aad6bd871fdefac475146f6054a5fcd3bc25c3bb"
+    },
+    {
+      "source": "decor-assets/native/nx_hogwarts_express_parcels_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_hogwarts_express_parcels_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3443,
+      "bytes": 2030,
+      "sourceSha256": "ef7313012420e35d850670e84ded7e279e75476be80f53cc6e907ff429882dc8",
+      "sha256": "5a96a1c5dc517fa618b45dca2c40a447adde6eb7a108f8cab097ce17348b58b0"
+    },
+    {
+      "source": "decor-assets/native/nx_hogwarts_express_parcels.png",
+      "file": "runtime-webp/decor-assets/native/nx_hogwarts_express_parcels.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3357,
+      "bytes": 1968,
+      "sourceSha256": "af9d05f9c7ffe582e9f003e773796491e9303dd46dc5e7109e2293f1e9ee0d10",
+      "sha256": "65444b10425bbb814a5f97de96a7de0942034f20dfbaaf1ef31a7a742b97bd2f"
+    },
+    {
+      "source": "decor-assets/native/nx_holly_broom_fence_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_holly_broom_fence_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 10279,
+      "bytes": 6382,
+      "sourceSha256": "66a78588e959cea6899bcb281ca92fbb6f2188dc0fb42029268d0d0770e3c6b8",
+      "sha256": "d0ea44fb201c85f04e9630692c72ec29ccdcb947054f66e9da5c80e8c3a1ab7c"
+    },
+    {
+      "source": "decor-assets/native/nx_holly_broom_fence_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_holly_broom_fence_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 2934,
+      "bytes": 1674,
+      "sourceSha256": "4dc7bd5b6109de9f8ad5da775c9c5335571dcdf21ac58f82c8bdc42c20b55b95",
+      "sha256": "74022d475a7414afd804c27d783722c61de1b2d38486c4ab98f4a4b39c8bfa61"
+    },
+    {
+      "source": "decor-assets/native/nx_holly_broom_fence.png",
+      "file": "runtime-webp/decor-assets/native/nx_holly_broom_fence.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 2948,
+      "bytes": 1704,
+      "sourceSha256": "6cb596e84204690f075dde63e7b7b6630948ca7f254aff67f2d66501695c36e0",
+      "sha256": "892ae46d75f1db2d86ac0e5acb577878ae7ed439d61b6918b3abc3d5602ac68a"
+    },
+    {
+      "source": "decor-assets/native/nx_ice_wand_star_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_ice_wand_star_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 7871,
+      "bytes": 5030,
+      "sourceSha256": "61fbc6b2c507026535109ade4928eec5d130f8fd3769b2dccf76c87e237c6273",
+      "sha256": "123ce0ab9da5068976aead805d4127d61a2e7a090af070ad588d3c44a50db796"
+    },
+    {
+      "source": "decor-assets/native/nx_ice_wand_star_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_ice_wand_star_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2326,
+      "bytes": 1518,
+      "sourceSha256": "e2453ef54d0a73b8939c3749d5c475e4196c77b853fe0ae422c9086f4713be95",
+      "sha256": "95ac5df8051f0c05a9d9a3cb2723c4b50be95b73acc472d6bb0795a89142452d"
+    },
+    {
+      "source": "decor-assets/native/nx_ice_wand_star.png",
+      "file": "runtime-webp/decor-assets/native/nx_ice_wand_star.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2350,
+      "bytes": 1530,
+      "sourceSha256": "a822fe32e9544896eb62fc3d7f82748d14dbc76502a0bffffbf0442c8b2990b3",
+      "sha256": "7d075e6d76df7ed3b6c82035b92ccb183983ef04f7383d2a30ae1fc2ecf3a41c"
+    },
+    {
+      "source": "decor-assets/native/nx_icicle_harp_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_icicle_harp_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 16092,
+      "bytes": 10712,
+      "sourceSha256": "a09d381dae355aa4326c205b29a249b3a3d1fceae64a6f51bee331f599c20188",
+      "sha256": "d638aa29817dca18872946c0b7d7dfeeb0fff306a0ff2cc6a0a9793b284ae0ce"
+    },
+    {
+      "source": "decor-assets/native/nx_icicle_harp_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_icicle_harp_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4518,
+      "bytes": 2838,
+      "sourceSha256": "34ccdbef54da667f641519332366df10ef489246fd37c20c8ae4d67c04b757a9",
+      "sha256": "0a222d6f3ad07f3ec617fe607c8ed6d0de4e331e4fc64c65ed377c0fac9af81b"
+    },
+    {
+      "source": "decor-assets/native/nx_icicle_harp.png",
+      "file": "runtime-webp/decor-assets/native/nx_icicle_harp.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4536,
+      "bytes": 2832,
+      "sourceSha256": "130450791bb5f02848f6e264a0487d8d2bdbf6f53ce04880d911f1ba105d4349",
+      "sha256": "00eadbd86128ea574266c089c0be4ad0a52ce6d2e394b1c70859dafe95f87d7c"
+    },
+    {
+      "source": "decor-assets/native/nx_lion_firewood_rack_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_lion_firewood_rack_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 11059,
+      "bytes": 6664,
+      "sourceSha256": "80e07b4c341a3a257dc54a8c63baa66efe55c9c50d200bbd27896f55c934c6ec",
+      "sha256": "345d2661ae19037b344ec16008b2fd0d30bba86b0e6f38fc1ddac91f540533fe"
+    },
+    {
+      "source": "decor-assets/native/nx_lion_firewood_rack_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_lion_firewood_rack_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3185,
+      "bytes": 1970,
+      "sourceSha256": "ee1042604dd0676eeb7a099ee0ddbfe66a6618d832a2c5e6c1ab9c2900a33bcb",
+      "sha256": "324bf7a69aea8a2d7d955cabb91fe7bb96b16fe9649a70c78f8fe5ebf8b84c04"
+    },
+    {
+      "source": "decor-assets/native/nx_lion_firewood_rack.png",
+      "file": "runtime-webp/decor-assets/native/nx_lion_firewood_rack.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3124,
+      "bytes": 1958,
+      "sourceSha256": "5b1a421e51a3964602cefca3971ecf7265e3a03de0c194b578c58a1e20cfef18",
+      "sha256": "4bdb81416e0b3775423e8ae15b95eaf86d0c137b60783f21d35cccea16b13fbe"
+    },
+    {
+      "source": "decor-assets/native/nx_mandrake_earmuff_planter_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_mandrake_earmuff_planter_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 6800,
+      "bytes": 4414,
+      "sourceSha256": "e7e074412e8145f1ab17143420f28f07daa216a19cac23ec10a77c5093966c9d",
+      "sha256": "7d8761b0fb2a069dcacb7819981551d33f8c443f8e475125f3e3cba373bf0c8d"
+    },
+    {
+      "source": "decor-assets/native/nx_mandrake_earmuff_planter_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_mandrake_earmuff_planter_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1910,
+      "bytes": 1212,
+      "sourceSha256": "559fd4ad401e52c02a84726731847d8a36744ff5da97a8443bc5f6a4a3a1e3d7",
+      "sha256": "c01685ea6539d470eca0d48e63cffae1afcc94540a75a62ea2e1a167d4468799"
+    },
+    {
+      "source": "decor-assets/native/nx_mandrake_earmuff_planter.png",
+      "file": "runtime-webp/decor-assets/native/nx_mandrake_earmuff_planter.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1941,
+      "bytes": 1226,
+      "sourceSha256": "1f55224e2c690ad72d62720eb8a3c39c2c133dacc45b541be8660fcb168e8243",
+      "sha256": "e09f464eb43b4b8170b4a31fda1a90b17efa2aed06ed09c9156c4307ff4ff3d7"
+    },
+    {
+      "source": "decor-assets/native/nx_mince_pie_cart_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_mince_pie_cart_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 13793,
+      "bytes": 9362,
+      "sourceSha256": "c31280ce38e96a26d9644474855b391b2d39879a6583e24f63d33994564e5c72",
+      "sha256": "a10d104808b4592465479b2b3aa6db6e636a8dbe1a4601d0b4bf2fbc5341a432"
+    },
+    {
+      "source": "decor-assets/native/nx_mince_pie_cart_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_mince_pie_cart_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3908,
+      "bytes": 2462,
+      "sourceSha256": "1613b8ba5b13bd582472e62da518a329c067beb0816f035609ce023701dae7d0",
+      "sha256": "23c641d9eba27b55cc0a09b3f85bfb15cb1836e949efdfe32645c8d36cc271ec"
+    },
+    {
+      "source": "decor-assets/native/nx_mince_pie_cart.png",
+      "file": "runtime-webp/decor-assets/native/nx_mince_pie_cart.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3895,
+      "bytes": 2458,
+      "sourceSha256": "5a2489f4366f7d3424f43d5a7bc219617067fb28bbf4e890b5a4214b55de837c",
+      "sha256": "4182ebdc90eb1be9ddf76013619e3ac3f0394d53857fab062de5e902a6a2b786"
+    },
+    {
+      "source": "decor-assets/native/nx_mistletoe_gate_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_mistletoe_gate_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 22486,
+      "bytes": 14612,
+      "sourceSha256": "880f9aedefc042e86afd4d2e14503be0d6db5d9a408920752c1cf63ede7adcb6",
+      "sha256": "3350cc758e45ba9d8796d2f5d16537a1c6ff7c429d0158f492794c0b913d7c02"
+    },
+    {
+      "source": "decor-assets/native/nx_mistletoe_gate_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_mistletoe_gate_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 6109,
+      "bytes": 3830,
+      "sourceSha256": "986ddb50497f3379db578d41c69d5ee06f77244871adcceb124363e15eedeed3",
+      "sha256": "b4c1afeb00cd6a2f9366b93b7f5443d0e41ef93cb75df14aa51c508539d7cfcf"
+    },
+    {
+      "source": "decor-assets/native/nx_mistletoe_gate.png",
+      "file": "runtime-webp/decor-assets/native/nx_mistletoe_gate.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 6021,
+      "bytes": 3770,
+      "sourceSha256": "1082edbc18cd8f74695299c6f3b80371638e180b18000895b96eb4044d96e016",
+      "sha256": "c89fa22534c4b516ba43e01dd2175283ecb9586c4062554d599a4a37f5ff7041"
+    },
+    {
+      "source": "decor-assets/native/nx_mooncalf_moon_lantern_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_mooncalf_moon_lantern_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 8443,
+      "bytes": 5690,
+      "sourceSha256": "9a54e9567d7a9c205eace427651781c61358851d39602920d69bfc4376237034",
+      "sha256": "4dbf70de84cf822f54c5b66077e9729eb1f60af14de30e22db0ddc30efa87460"
+    },
+    {
+      "source": "decor-assets/native/nx_mooncalf_moon_lantern_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_mooncalf_moon_lantern_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2438,
+      "bytes": 1558,
+      "sourceSha256": "e5c86ac7eb4d66df26715ad908a15b8b0f502f7b6578ca131e0bdc44d892d208",
+      "sha256": "2da2c7602495686d9eb27d36f7ada413f4201f92091873554a10103ead31c35f"
+    },
+    {
+      "source": "decor-assets/native/nx_mooncalf_moon_lantern.png",
+      "file": "runtime-webp/decor-assets/native/nx_mooncalf_moon_lantern.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2402,
+      "bytes": 1546,
+      "sourceSha256": "926bab053499ac31b35fda0d84405b688cbcdcf77a1c695dab273049424751b5",
+      "sha256": "fa89114984c4f0d8c795592c6706df5acd86b239d1c13a7dd6b9f81b8abe2a8f"
+    },
+    {
+      "source": "decor-assets/native/nx_niffler_coin_snowglobe_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_niffler_coin_snowglobe_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 7528,
+      "bytes": 4744,
+      "sourceSha256": "583775487a97d18b5386fabcf65da8c616ba4417b03cd12ce2047e25593d5671",
+      "sha256": "32b84814c0758a7e17f568114181c2d0f391f03feb15994f143e0a08c62e023a"
+    },
+    {
+      "source": "decor-assets/native/nx_niffler_coin_snowglobe_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_niffler_coin_snowglobe_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2226,
+      "bytes": 1452,
+      "sourceSha256": "4cf2b9a6bf083bd13061daa1739760d9d5e961cc5b85de0332ca3b5fccef4c53",
+      "sha256": "a460279894098e47021a772343096917d7790313ba9870504381880bd5e3996c"
+    },
+    {
+      "source": "decor-assets/native/nx_niffler_coin_snowglobe.png",
+      "file": "runtime-webp/decor-assets/native/nx_niffler_coin_snowglobe.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2261,
+      "bytes": 1470,
+      "sourceSha256": "c98af0c4a9d9bbb86c306c9f9f3e7d7e56d0cbee729f8342d1f6813d3d81b25c",
+      "sha256": "57233cc4f5ac653edf5397e8a1a2f04c7361957e9901e795c6d89908ac532f3c"
+    },
+    {
+      "source": "decor-assets/native/nx_norbert_egg_lantern_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_norbert_egg_lantern_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 5787,
+      "bytes": 3728,
+      "sourceSha256": "80dc6e15afcf70f04db186d74dd2d252dbbeba6d97909b87bc54e0b981485fec",
+      "sha256": "9fa0fbb947c317b98602a64daec412ece32a62bd644757ee3df9737035cc8be3"
+    },
+    {
+      "source": "decor-assets/native/nx_norbert_egg_lantern_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_norbert_egg_lantern_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1749,
+      "bytes": 1066,
+      "sourceSha256": "0d4160554bdd857323abc157f233242afc6633d6b7517133b6eff986be6d6eca",
+      "sha256": "f388267c4b346ef29c3bb9e578ccaba3da599b0c13d8ae19f977c8d5613dc700"
+    },
+    {
+      "source": "decor-assets/native/nx_norbert_egg_lantern.png",
+      "file": "runtime-webp/decor-assets/native/nx_norbert_egg_lantern.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1766,
+      "bytes": 1062,
+      "sourceSha256": "6fb5b4a13d810adc803d243d0f108d347bd2b3d9fef179f12dfdfd3578670456",
+      "sha256": "757e1afeedb8309337b6b33f3bd1ca515aecf15d9d64c8d14782e63f6f85b3a7"
+    },
+    {
+      "source": "decor-assets/native/nx_owl_parcel_roost_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_owl_parcel_roost_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 14414,
+      "bytes": 9372,
+      "sourceSha256": "5865991bebe435dee4e11e737c3bd2de551350b9d4369be605462a9bee61d24d",
+      "sha256": "59f6d9f2d9ecb384a403b30dd099b7b76e20282e1fbfa5ae06c032a258eecfd6"
+    },
+    {
+      "source": "decor-assets/native/nx_owl_parcel_roost_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_owl_parcel_roost_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4028,
+      "bytes": 2470,
+      "sourceSha256": "05a03d07664e9dda83c637ceacbf233952b9c8c60c8f771a7cab3f109f68c0e7",
+      "sha256": "09512fa02e67dc39d7b3fc523f524c814a44da924fca7d3a0d57a836c8c888bf"
+    },
+    {
+      "source": "decor-assets/native/nx_owl_parcel_roost.png",
+      "file": "runtime-webp/decor-assets/native/nx_owl_parcel_roost.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4035,
+      "bytes": 2548,
+      "sourceSha256": "3706abc6090d9e55475aa88f292cea35fd92ee1670008e5b1efdb6b83f77398d",
+      "sha256": "0a904a4ab47cec974b85797215b37429c1c575989950a47e18c601d0b40e5ffb"
+    },
+    {
+      "source": "decor-assets/native/nx_peppermint_cauldron_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_peppermint_cauldron_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 5873,
+      "bytes": 3746,
+      "sourceSha256": "98e1f5c6421b995670949776281d23458f8df9b82cbd911ee7fde20046304001",
+      "sha256": "36868def50861b6a3cd94f73ace360e48ecad48c2ae5f1efd3180735c7953441"
+    },
+    {
+      "source": "decor-assets/native/nx_peppermint_cauldron_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_peppermint_cauldron_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1708,
+      "bytes": 1046,
+      "sourceSha256": "3181a3843202e8320c5f22bf0c87fcfb9c311e77cab63e6a650a2ef4208bff24",
+      "sha256": "aeb5b4a45851c48888dff366a7e4cb3a51cb6979ba955b444059ea1920b6c4a4"
+    },
+    {
+      "source": "decor-assets/native/nx_peppermint_cauldron.png",
+      "file": "runtime-webp/decor-assets/native/nx_peppermint_cauldron.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1712,
+      "bytes": 1066,
+      "sourceSha256": "97defeed11aecfa8a2f56865f33bb583e1f3eccef308bf3906af5d1483231b08",
+      "sha256": "56db6350185da6ec8c6769d0b6b58211469e9b980c87b192d72bd856ae2452af"
+    },
+    {
+      "source": "decor-assets/native/nx_phoenix_candle_bough_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_phoenix_candle_bough_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 12768,
+      "bytes": 8262,
+      "sourceSha256": "89c0c9cf8bf16cd50ed896e441fb935e419cfe041f92968a7823dacfbe3a3b75",
+      "sha256": "f761e334fda35fae1555c0a98fd31eb696cd53346e6716895a6d4b8808132760"
+    },
+    {
+      "source": "decor-assets/native/nx_phoenix_candle_bough_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_phoenix_candle_bough_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3514,
+      "bytes": 2188,
+      "sourceSha256": "7f5c8458ac14b552b12c5d2cb10a46e3735a86f2159f8958487f4213dea7dd76",
+      "sha256": "6af9442a01a2df116fb18c40a640bc2a8c8efa38c36fec415b447a8fc7b23735"
+    },
+    {
+      "source": "decor-assets/native/nx_phoenix_candle_bough.png",
+      "file": "runtime-webp/decor-assets/native/nx_phoenix_candle_bough.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3564,
+      "bytes": 2174,
+      "sourceSha256": "b8da88aac596f55beef2946167f6f5e022434c1692aab64fa67e9c7f681660c7",
+      "sha256": "bef2a1548732ae9d7328ebc2fb9e7f73d40c87d9f690081f1029a74c5ec74c41"
+    },
+    {
+      "source": "decor-assets/native/nx_platform_clock_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_platform_clock_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 6850,
+      "bytes": 4278,
+      "sourceSha256": "e3d1f64eb09d8f44b3cf1d81be0d36a83d3e8c6dc694584cd3211f13250048b7",
+      "sha256": "c16b51207644259b279e41dfcf187187fcdfc32adfa4d8b395d3c47c4ff147cf"
+    },
+    {
+      "source": "decor-assets/native/nx_platform_clock_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_platform_clock_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1990,
+      "bytes": 1176,
+      "sourceSha256": "247feab56a754cff9356a76dea7abfe58b62be1aa06333c990767a396213ae24",
+      "sha256": "f6c9ac55d44fc42206c2b401de48fe222fcc73b538787fa3f0c259ba1f007576"
+    },
+    {
+      "source": "decor-assets/native/nx_platform_clock.png",
+      "file": "runtime-webp/decor-assets/native/nx_platform_clock.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2026,
+      "bytes": 1206,
+      "sourceSha256": "acf17de26a70113449789f99c0d6441eec3020d9625414afabca18ab4cc685c0",
+      "sha256": "542ea73775e14c7f0281d3a87a2ee0410d72b2299934479c6a0cc0babbdfb04e"
+    },
+    {
+      "source": "decor-assets/native/nx_plum_pudding_stand_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_plum_pudding_stand_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 5559,
+      "bytes": 3588,
+      "sourceSha256": "b5d3a524d0bc6a5fc53e7ff7ef7536fa809fb6e54d41ae8f86dea2ffad1d2057",
+      "sha256": "9b467600872fee5721aa5c8bbabfbd9685adb880cb5cc5a4685d46f5b968906c"
+    },
+    {
+      "source": "decor-assets/native/nx_plum_pudding_stand_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_plum_pudding_stand_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1654,
+      "bytes": 1034,
+      "sourceSha256": "d4472c38f70e58f54897eaf5f6aa7044a4208eed9bfbd12b2bbfadf5aef7d371",
+      "sha256": "e50863ce6cc24302f262934cbba22b992bc3a3013dc2d409b901665d094d7571"
+    },
+    {
+      "source": "decor-assets/native/nx_plum_pudding_stand.png",
+      "file": "runtime-webp/decor-assets/native/nx_plum_pudding_stand.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1634,
+      "bytes": 1012,
+      "sourceSha256": "c1a58d275e9c1d88ca3743f41c9e6edef23914495d29224952a111f5e9d39b93",
+      "sha256": "0ff0aa8aabf85302d9c8b522999bfc020d4ecfb3cd84f2b41744b042c8499d8e"
+    },
+    {
+      "source": "decor-assets/native/nx_puffskein_sock_basket_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_puffskein_sock_basket_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 5794,
+      "bytes": 3934,
+      "sourceSha256": "f0dd59a2e5af1d12f4a6e96457f8c7f0418b6378f3b15810542a42b4694f5317",
+      "sha256": "920dacf0ae16934adeb0d2ffdb93bdc36acb29929481d94a3b98c15d421d8911"
+    },
+    {
+      "source": "decor-assets/native/nx_puffskein_sock_basket_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_puffskein_sock_basket_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1743,
+      "bytes": 1094,
+      "sourceSha256": "578b63aecc661437cc255e77a7829f753009e4bb01421a0114530e1e65978627",
+      "sha256": "0d871aea63fd3dbcd1ba5b5d5aba3371e439dcf6b9f8b39c479aaf818621c38a"
+    },
+    {
+      "source": "decor-assets/native/nx_puffskein_sock_basket.png",
+      "file": "runtime-webp/decor-assets/native/nx_puffskein_sock_basket.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1756,
+      "bytes": 1078,
+      "sourceSha256": "a105c7815b6c3553fa6321a4709dd9b3552970cc688a20b571fd9c325a867296",
+      "sha256": "9774eaee403ae894033eb322fe9fd48db22a8a58af451b92c9ab109283399a61"
+    },
+    {
+      "source": "decor-assets/native/nx_raven_ice_bench_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_raven_ice_bench_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 10209,
+      "bytes": 6498,
+      "sourceSha256": "a67732fad885bb328d973a36af0aec460dc8147508a35d82abee35d7e418ef91",
+      "sha256": "07a9d8aa793b9e7873b332054a31183369ecdc1be991d3c572dc9c419634a328"
+    },
+    {
+      "source": "decor-assets/native/nx_raven_ice_bench_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_raven_ice_bench_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 2976,
+      "bytes": 1822,
+      "sourceSha256": "a2bcb3d92d9926dad17c59ed93d48f13cea8acaed8b72da3cce34da3f6a631ac",
+      "sha256": "33eb79f07daddc592f9cee141d058b099f6f3f11497bb6cfdd62f307f9743535"
+    },
+    {
+      "source": "decor-assets/native/nx_raven_ice_bench.png",
+      "file": "runtime-webp/decor-assets/native/nx_raven_ice_bench.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3020,
+      "bytes": 1856,
+      "sourceSha256": "d3a406c7fa34c20fd31de4c8a28ef38fa27968b2eace5b700bf64607fa8c636a",
+      "sha256": "4b7797fe046b7440b204167bf805c64f7d4c2801ff1848dcfe22459c24c175b6"
+    },
+    {
+      "source": "decor-assets/native/nx_serpent_holly_urn_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_serpent_holly_urn_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 5907,
+      "bytes": 3670,
+      "sourceSha256": "c4fc4788902e3afa1ee28714e908080636744338292740e019a84b30b26e3068",
+      "sha256": "55b30a4ce626da138a1c42dc710e2e67fbbe8d0b1b8a92ee73f1c760a0e62f75"
+    },
+    {
+      "source": "decor-assets/native/nx_serpent_holly_urn_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_serpent_holly_urn_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1728,
+      "bytes": 1060,
+      "sourceSha256": "b7ba13b0cbee9542a61e3542b7a8b52a04397720cf54a8ccefdb755eba3ed96c",
+      "sha256": "7bc6590e4afa70d45a9d309ecbdc15a23bc097fbe5b88fd59a3ffc36e909f6fc"
+    },
+    {
+      "source": "decor-assets/native/nx_serpent_holly_urn.png",
+      "file": "runtime-webp/decor-assets/native/nx_serpent_holly_urn.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1730,
+      "bytes": 1074,
+      "sourceSha256": "9d22be70e3bc4573a3d41f8ea196f47747ab50e0249f02d8cd1cd0445161eb05",
+      "sha256": "ec1db615b4e15f57277ed4803d88a6c249950b201e327bbfe0fd87f1e1587b40"
+    },
+    {
+      "source": "decor-assets/native/nx_snitch_lamp_post_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_snitch_lamp_post_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 8134,
+      "bytes": 5556,
+      "sourceSha256": "46a3e6ef8870ada8e36ef385d96de6f9dc7170f171b7708b6dbb71f0e6514201",
+      "sha256": "778c32da20a154fc4eda65eb8dd61b067786f5a72c4072f3f88347238c0e11d5"
+    },
+    {
+      "source": "decor-assets/native/nx_snitch_lamp_post_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_snitch_lamp_post_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2421,
+      "bytes": 1530,
+      "sourceSha256": "7a3a874a34fefced9e940cc8b259a9d3a2c1b7544e32e12af9061e1379e27025",
+      "sha256": "86d2b9eef3c0d7f5027a405588092f6c6da8551be8288ad72abcc44297ea72be"
+    },
+    {
+      "source": "decor-assets/native/nx_snitch_lamp_post.png",
+      "file": "runtime-webp/decor-assets/native/nx_snitch_lamp_post.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2376,
+      "bytes": 1510,
+      "sourceSha256": "d3b548df6dc94ab714a162878bb2a17da354d680036e3ceface83f651cac621d",
+      "sha256": "cf8469e1e421a32e24b8af16ad65b3d23cc83a652db3533cc6150ff442b8e2bf"
+    },
+    {
+      "source": "decor-assets/native/nx_snitch_wreath_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_snitch_wreath_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 7782,
+      "bytes": 5036,
+      "sourceSha256": "a067541cc01c3952d4471fccc0105c7ad29abbd883f943a5b4307311a010b5d7",
+      "sha256": "6620f38be2dec4e3db08ad1c1184d9fc94a44fa2ac0a06983a27da21a893fcbd"
+    },
+    {
+      "source": "decor-assets/native/nx_snitch_wreath_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_snitch_wreath_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2249,
+      "bytes": 1362,
+      "sourceSha256": "369c67bf4a442527925d4bcf48859dbcea31c782a0ddfe65497af596d8357e73",
+      "sha256": "6d14cb13525694111434f2e536c2a35e7c6435c10865a36ecd15ec1d39f23278"
+    },
+    {
+      "source": "decor-assets/native/nx_snitch_wreath.png",
+      "file": "runtime-webp/decor-assets/native/nx_snitch_wreath.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2312,
+      "bytes": 1412,
+      "sourceSha256": "d8ab6e46554ce8c41eae3c292423ab8c5433f6088c388dd8eb4c5e62272b6921",
+      "sha256": "8aab20a6ce6a67750f9eafb59e40474472de41d45f4a3955c039892d6653e703"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_dragon_sculpture_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_dragon_sculpture_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 10895,
+      "bytes": 7294,
+      "sourceSha256": "9df79f57648e2afb5525b6f46d2495f299aff24233b98eaa8a9435c5463399bc",
+      "sha256": "0fd5abbd590062e94fc6b9cf869c33867c42aa8f45c9b0c093409581420eae45"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_dragon_sculpture_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_dragon_sculpture_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3150,
+      "bytes": 1978,
+      "sourceSha256": "68f12238306d0f478ae081f8021cb6490b01cdb3f2696bf0f35eb0e639a3a080",
+      "sha256": "60b9ef9ac11531e7e0fb212e9e3214ca39a2caa4b1acc7d0290f65ab14de681b"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_dragon_sculpture.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_dragon_sculpture.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3158,
+      "bytes": 1962,
+      "sourceSha256": "ac9397a739003443f06655fd765dc493ef2dd8a1fc91fa198f9ddcf3783a7f9a",
+      "sha256": "7bb5ee024e7064c593a6309d11398603fb1b1effc5ef04a2271d75bb22a07c8f"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_hogwarts_castle_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_hogwarts_castle_atlas.webp",
+      "width": 320,
+      "height": 512,
+      "sourceBytes": 27425,
+      "bytes": 16788,
+      "sourceSha256": "000be98c69b4adff2d4b01bbb3ec2f91c9baf5c271885f8bba4e2807c5be6a7f",
+      "sha256": "85cd2f33b795d0563dfacfd0db667b5af1195f49e9d6286b594f2fe263569adf"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_hogwarts_castle_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_hogwarts_castle_right.webp",
+      "width": 160,
+      "height": 256,
+      "sourceBytes": 7332,
+      "bytes": 4428,
+      "sourceSha256": "f2a8b5160c57734d16b4cc4be8c1a23510a036666279cc6c09c5e7c90057e8aa",
+      "sha256": "fcd465cedccd21c323f35bd3fedd2a3c8ad052cb49a98b05dc6df859db4a110a"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_hogwarts_castle.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_hogwarts_castle.webp",
+      "width": 160,
+      "height": 256,
+      "sourceBytes": 7300,
+      "bytes": 4366,
+      "sourceSha256": "a565993d40320394bcfd3cb0dd4470f188131da4f4e9dffcc2a99a1ab51031a1",
+      "sha256": "d04d6c862a8cb1827c7cc4a2df3f167ca0327ca9770ff6b0adbdef103ee0ccb0"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_owl_sculpture_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_owl_sculpture_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 4919,
+      "bytes": 3010,
+      "sourceSha256": "ed4c45311b47c8df0abd9e8c9c75080c87230b0abfbdcafc30e938d267154ea4",
+      "sha256": "a2fdbc2f1e4f34b98f8d398b6097fccf8c8ce1e09c4be36a48d999a996d54167"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_owl_sculpture_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_owl_sculpture_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1562,
+      "bytes": 966,
+      "sourceSha256": "ab205e830506e58686e38b185b70e3900502de89d521d939d31caa7fed43ee9f",
+      "sha256": "c3ec0506afa74a0cd87c64d6675c8b999f141607ad80023a1a5256f1c0a763e5"
+    },
+    {
+      "source": "decor-assets/native/nx_snow_owl_sculpture.png",
+      "file": "runtime-webp/decor-assets/native/nx_snow_owl_sculpture.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1606,
+      "bytes": 1004,
+      "sourceSha256": "bb0ddc0b4bd1fe232226824fee091f6a5e6b6d1557f18a69bd482a6e1095c22a",
+      "sha256": "e0e197481f9bd1007d288f7f7583c1580377ce4ebf3ca919075ebd8b197bb5b8"
+    },
+    {
+      "source": "decor-assets/native/nx_snowwizard_hat_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_snowwizard_hat_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 5668,
+      "bytes": 3540,
+      "sourceSha256": "b5e340f3ce69f46a55ac8d818a14b87675516eb109b9a35522b8a149ad3d8be1",
+      "sha256": "3c4d5612bddfca10c1e8312b2f5e0393af1a85b531320f2956c9d5461eadeb35"
+    },
+    {
+      "source": "decor-assets/native/nx_snowwizard_hat_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_snowwizard_hat_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1607,
+      "bytes": 994,
+      "sourceSha256": "cfc194eaec823a40328a9feadf6b9b777fcdedc44d7fb321253786e8525f27d5",
+      "sha256": "18b402cc26c3c22e7b2a3e89abe0e29205b3694a16f00439bcecd9ad0c6232ec"
+    },
+    {
+      "source": "decor-assets/native/nx_snowwizard_hat.png",
+      "file": "runtime-webp/decor-assets/native/nx_snowwizard_hat.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1648,
+      "bytes": 996,
+      "sourceSha256": "7d447c28ab17fd16aa0a6b603fcb68b763e291b6556e87b317cc8e085f48ff24",
+      "sha256": "1e7b12291932db5b113ef339d42b5aa0dc4255ccc443c580f72aa05da959d3a0"
+    },
+    {
+      "source": "decor-assets/native/nx_thestral_silver_bell_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_thestral_silver_bell_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 7115,
+      "bytes": 4552,
+      "sourceSha256": "ee4e3e97b37a35be3fc65951ec912223b744b8a9e0a70746ffe971d6577135be",
+      "sha256": "3fbb5d9d328c2b6e78c3aed9dad6de2fa67371183be0eb459ea6b8583fed2062"
+    },
+    {
+      "source": "decor-assets/native/nx_thestral_silver_bell_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_thestral_silver_bell_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2062,
+      "bytes": 1256,
+      "sourceSha256": "c2c53e51793c83de1588e30d6df4c11d5ebcdfc5de2dce90f987e3d186af188e",
+      "sha256": "d019eca2cb270d6d99afa928e7d8b66253402dd524debb91a9686d2ebe809e5b"
+    },
+    {
+      "source": "decor-assets/native/nx_thestral_silver_bell.png",
+      "file": "runtime-webp/decor-assets/native/nx_thestral_silver_bell.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2073,
+      "bytes": 1246,
+      "sourceSha256": "36114f6fa679e76c71fc5b113e0a9eba12f4ca912fdaee22a7c935970c51fc0f",
+      "sha256": "c8c46983ea3ae2b8f9904b5f5310a1478c1d3ef589ebc65165cd6f59a420c37d"
+    },
+    {
+      "source": "decor-assets/native/nx_unicorn_ice_fountain_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_unicorn_ice_fountain_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 22423,
+      "bytes": 14098,
+      "sourceSha256": "a49a79fe456fa35f09efc0320d9d13f83f3f09a1283650345b5a77aec69f6672",
+      "sha256": "768cf55324db795fe030fb3f24a4b9da9a1a8e1c495d6f51daaf92a876011099"
+    },
+    {
+      "source": "decor-assets/native/nx_unicorn_ice_fountain_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_unicorn_ice_fountain_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5998,
+      "bytes": 3738,
+      "sourceSha256": "886db2e7f51803a30ba1b44791491535aadfe89fb15df3bfcaa374a9eb0b74bf",
+      "sha256": "583f78eee01111fb6f03936174fa4739ffa6607116fc9666f7fb0c8f65e51b8f"
+    },
+    {
+      "source": "decor-assets/native/nx_unicorn_ice_fountain.png",
+      "file": "runtime-webp/decor-assets/native/nx_unicorn_ice_fountain.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 6085,
+      "bytes": 3792,
+      "sourceSha256": "9e23bb94591546fa3bc324ab46a58f5c2dcb9847beb642f5767b0d818fa8e89a",
+      "sha256": "6f3d2ebb917004b33b0e911fc2c3d966ac0ee8454e8243b13f200eee885cfce7"
+    },
+    {
+      "source": "decor-assets/native/nx_weasley_knit_rack_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_weasley_knit_rack_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 9980,
+      "bytes": 6390,
+      "sourceSha256": "829bbd4f44ce822d928cffdead20f0c89ddef01092a6e2963f907197c5d7f7cc",
+      "sha256": "8c22251a589737bd7e8664c688a1800c6d5e814c03d9d2edc654c5add9545b6a"
+    },
+    {
+      "source": "decor-assets/native/nx_weasley_knit_rack_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_weasley_knit_rack_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 2921,
+      "bytes": 1734,
+      "sourceSha256": "68750c915398a8e731bb4014bf3167f75e347abe5a479790154207535ffa401b",
+      "sha256": "9ee2e0c596eac8116de1f7a91c16c3ca29e9c70bbd95ee26bd98210b4d4b7e13"
+    },
+    {
+      "source": "decor-assets/native/nx_weasley_knit_rack.png",
+      "file": "runtime-webp/decor-assets/native/nx_weasley_knit_rack.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 2921,
+      "bytes": 1738,
+      "sourceSha256": "f966068ba1288389f118e48683ebea9fe29d1ad59ab941a9e3892177a02da142",
+      "sha256": "75c4e2bf58aa65eeb8d6e1b8936d00936f868410dd4a852f521c5a9ffe12868a"
+    },
+    {
+      "source": "decor-assets/native/nx_wizard_chess_christmas_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_wizard_chess_christmas_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 9695,
+      "bytes": 6246,
+      "sourceSha256": "f97d4dcb7ef9209fa056eedf0824712c9b8864ee99ddb7867126a0174d895d22",
+      "sha256": "9b91dcaf2c3a0ddef829e56a1a6c86a27f1452ada7bbfea1debcccb40cbd552a"
+    },
+    {
+      "source": "decor-assets/native/nx_wizard_chess_christmas_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_wizard_chess_christmas_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 2830,
+      "bytes": 1720,
+      "sourceSha256": "431c4ad65444ab29dd78dc2be20b21c26dc621ae23fd5ccd20bc983679c0d35d",
+      "sha256": "f647ed9e8cfa4b653e5dc55d31f6b052d6948a72d5b69808a2de137c6b8910e4"
+    },
+    {
+      "source": "decor-assets/native/nx_wizard_chess_christmas.png",
+      "file": "runtime-webp/decor-assets/native/nx_wizard_chess_christmas.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 2836,
+      "bytes": 1712,
+      "sourceSha256": "894dd47d81c34c17951b0c5972015b2071331cb06aefff3775553d80ca5836f0",
+      "sha256": "cdfcc21151f374605588af81c330e751ce48ebc53936b8fef8e8d273eb5433be"
+    },
+    {
+      "source": "decor-assets/native/nx_yule_dance_gazebo_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo_atlas.webp",
+      "width": 320,
+      "height": 512,
+      "sourceBytes": 31838,
+      "bytes": 21620,
+      "sourceSha256": "03c09ca0a62f4ed5dc624538e6fbc4ba312f82d2e187c16640cc2523ed867162",
+      "sha256": "b0c5a35ceeb876d6080a23147e4b18c78c40670b49871d8baf4d89256a1e6566"
+    },
+    {
+      "source": "decor-assets/native/nx_yule_dance_gazebo_right.png",
+      "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo_right.webp",
+      "width": 160,
+      "height": 256,
+      "sourceBytes": 8542,
+      "bytes": 5682,
+      "sourceSha256": "a4e91408d64be87f1736bc3a5687771dda329d729879a6711f18b1ad79dd8164",
+      "sha256": "55272f6854c6da45f872899e22fbd46c1e3be2a1c0359ca57d9cce009d7d051a"
+    },
+    {
+      "source": "decor-assets/native/nx_yule_dance_gazebo.png",
+      "file": "runtime-webp/decor-assets/native/nx_yule_dance_gazebo.webp",
+      "width": 160,
+      "height": 256,
+      "sourceBytes": 8609,
+      "bytes": 5616,
+      "sourceSha256": "940fc179470d4261a1ae5ed574d3a2397c7342f33cc830a339eb5d672fb9ac8f",
+      "sha256": "391603a6cd3dccae94061b74136a25ac66b6f24ea1f1b96004e6fa677c7e0c8b"
+    },
+    {
       "source": "decor-assets/native/owl_post_f0.png",
       "file": "runtime-webp/decor-assets/native/owl_post_f0.webp",
       "width": 72,
@@ -14425,11 +15925,11 @@
     }
   ],
   "totals": {
-    "converted": 1436,
+    "converted": 1586,
     "existingWebp": 8,
-    "originalBytes": 5474638,
-    "webpBytes": 3609788,
-    "savedBytes": 1864850,
-    "savedPercent": 34.06
+    "originalBytes": 6324103,
+    "webpBytes": 4150576,
+    "savedBytes": 2173527,
+    "savedPercent": 34.37
   }
 }
