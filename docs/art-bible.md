@@ -15,6 +15,7 @@
 ## 2. Lưới và phối cảnh
 
 - Isometric 2:1, ô **64 × 32 px** (`tileWidth`/`tileHeight` trong `scene-data`).
+- **Khóa tọa độ trước khi tạo hình (chủ dự án 15/11/2026):** khóa footprint, canvas, pivot, vector trục và điểm kiểm chứng; tạo từ guide tọa độ, rồi đối chiếu cạnh thật ở kích thước native. Đạt footprint không đồng nghĩa đạt góc vẽ. Xem [cổng khóa tọa độ](grid-fit-guideline.md#41-khóa-tọa-độ-và-góc-camera-bắt-buộc).
 - Thửa đất 3 × 3 ô (9 chỗ trồng); chuồng 5 × 3 ô (2 chỗ sinh vật).
 - Mọi sprite có **pivot ở chân**, tức điểm chạm đất. Thứ tự vẽ theo `y` của pivot.
 - Vật lớn (2 × 2 ô trở lên) đặt cách rào ít nhất 0,9 ô để thân không đè lên rào (đã sửa ở V24.9).

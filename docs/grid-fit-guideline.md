@@ -54,6 +54,17 @@ Chọn nền **trước khi vẽ**, rồi vẽ theo dòng tương ứng. Canvas 
 3. `node garden-v05/audit-grid-fit.mjs`: món mới phải **không có lỗi nào** trong `grid-fit-audit.json`.
 4. Kiểm cảnh thật như art bible mục 8: đặt sát 2 món khác, xoay hai hướng, xem ở điện thoại 375 px.
 
+### 4.1. Khóa tọa độ và góc camera (bắt buộc)
+
+Yêu cầu trực tiếp của chủ dự án 15/11/2026: phải khớp các cạnh của vườn.
+
+1. Trước lượt tạo ảnh, ghi footprint, canvas, pivot, hai hướng và tọa độ đế/sàn cùng các cạnh kiểm chứng. Dùng `ISO_TILE`, `iso` trong `garden-grid.mjs`, `orientedFootprint` và `footLift` trong `decor-runtime.mjs`; không đặt một camera khác.
+2. Với lưới hiện tại, cột chiếu thành `(32,16)`, hàng `(-32,16)`, chiều cao `(0,-1)`. Dựng guide từ các vector này và đưa guide cùng ảnh vườn làm đầu vào tạo/vẽ lại; câu “isometric/2:1” trong prompt không thay thế guide. Cạnh ngang của vật thuộc trục nào phải song song trục đó; không tự dùng mặt tiền ngang màn hình hoặc điểm tụ.
+3. Tất cả frame/góc dùng cùng canvas, pivot và tỷ lệ. Góc phải xoay vật trong cùng hệ trục, không đổi góc camera. Xuất từ master về native; không xoay/skew/scale riêng sprite đã xuất để chữa góc.
+4. Đo điểm/cạnh trên hình đã xuất và ghi đối chiếu với tọa độ khóa (sai số raster tối đa 1 px native). Điểm đo phải từ hình thật, không sao chép điểm kỳ vọng. Ghi rõ phép kiểm không áp dụng cho phần hữu cơ; kiểm các đế/cạnh cứng và tỷ lệ nhìn từ trên khi có.
+5. Kiểm footprint và kiểm góc là hai cổng độc lập. Vừa ô, bám chân và không tràn **không** chứng minh góc đã khớp. Sai hướng thì vẽ lại; không đổi footprint hoặc nới kiểm tra để nhận ảnh sai.
+6. Kiểm mẫu cạnh rõ (lều/nhà, bàn/xe và công trình) trong renderer với lưới trục trước khi nhân lô. Mỗi món cuối phải có cùng bằng chứng ở native, cả hai góc và đặt cạnh đồ cũ.
+
 ## 5. Khi hình cũ không vừa nền
 
 Ưu tiên **vẽ lại cho vừa nền hiện có**. Chỉ tăng nền khi chủ dự án muốn giữ hình và duyệt riêng, vì phải sửa catalog ở client lẫn server, test chồng nền, và món đã đặt trong save cũ có thể chồng lên món bên cạnh (không tự dời save). Cột «Hoặc nền» trong danh sách lệch ghi nền nhỏ nhất vừa hình hiện tại.
