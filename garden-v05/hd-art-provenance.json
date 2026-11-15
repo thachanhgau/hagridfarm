@@ -1,7 +1,7 @@
 {
   "density": 2,
-  "files": 1262,
-  "uniqueMasterFrames": 2137,
+  "files": 1415,
+  "uniqueMasterFrames": 2289,
   "runtime": {
     "native/bowtruckle/frame-01.png": {
       "file": "decor-assets/hd/4eaeb195bdb2ba0a51eb725b.webp",
@@ -1187,6 +1187,102 @@
       "bytes": 5502,
       "sha256": "95c4cdbb91095c215e17220ef9f9e9b29768409bc14a6c0c535d9d25f3653c8c"
     },
+    "native-levels/ambermelon/frame-01.png": {
+      "file": "decor-assets/hd/b194dd5807898425f44e653c.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 250,
+      "sha256": "b194dd5807898425f44e653ccde4b4a084ebb34e115a2fd731bbdc26e43ebfc9"
+    },
+    "native-levels/ambermelon/frame-02.png": {
+      "file": "decor-assets/hd/e7a076424bec7fcbee24384e.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 296,
+      "sha256": "e7a076424bec7fcbee24384e0b26cece9771715925871529873a856e7fd37402"
+    },
+    "native-levels/ambermelon/frame-03.png": {
+      "file": "decor-assets/hd/b679c6ddea1e4ad455b3c85b.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 918,
+      "sha256": "b679c6ddea1e4ad455b3c85bd45cee46d0f13c9bf772e280cc299b8c5d5ec7da"
+    },
+    "native-levels/ambermelon/frame-04.png": {
+      "file": "decor-assets/hd/3944a1f03256f03285474bd1.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1864,
+      "sha256": "3944a1f03256f03285474bd1b76533b371f609df69dea2c8e4781a05dc42dd64"
+    },
+    "native-levels/beet/frame-01.png": {
+      "file": "decor-assets/hd/3f543d9ee6129ae2f5761fc1.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 212,
+      "sha256": "3f543d9ee6129ae2f5761fc1acfef3b7771779f4b7086cf923f93985541b9f55"
+    },
+    "native-levels/beet/frame-02.png": {
+      "file": "decor-assets/hd/2d8aea199bcc0db2b24a76da.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 468,
+      "sha256": "2d8aea199bcc0db2b24a76da47fdf5d84d66d6cd3c47cb2dead74c5a2d781105"
+    },
+    "native-levels/beet/frame-03.png": {
+      "file": "decor-assets/hd/17de1208108adaff161daea3.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1108,
+      "sha256": "17de1208108adaff161daea3a0ac7e2a10975314315d60795ac2b8571d34f568"
+    },
+    "native-levels/beet/frame-04.png": {
+      "file": "decor-assets/hd/dcdc65365249c261ede0dc7c.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1838,
+      "sha256": "dcdc65365249c261ede0dc7cf3784620ec25d9d1184399cb8ea5e158a9641e4c"
+    },
+    "native-levels/blueberry/frame-01.png": {
+      "file": "decor-assets/hd/264984474895f7f4d5eba15a.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 246,
+      "sha256": "264984474895f7f4d5eba15a96b29e834b1d5db112dc279eebce520ef4913d0d"
+    },
+    "native-levels/blueberry/frame-02.png": {
+      "file": "decor-assets/hd/33743e97ac3648f0e95e0576.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 386,
+      "sha256": "33743e97ac3648f0e95e0576758f92c50ea13564a4ed036f2b8c1f0ec17297cb"
+    },
+    "native-levels/blueberry/frame-03.png": {
+      "file": "decor-assets/hd/585349dbb963fd7ab4cb3cab.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1344,
+      "sha256": "585349dbb963fd7ab4cb3cabd73350c643724e01ce2c6139ff47d8ee7b9fe961"
+    },
+    "native-levels/blueberry/frame-04.png": {
+      "file": "decor-assets/hd/5530553f613e17930f0ed8d7.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2202,
+      "sha256": "5530553f613e17930f0ed8d744a92a8e1dee0d34b839cb8f2ac2eb5cbb924edc"
+    },
     "native-levels/bubotuber/flow-v1-1.png": {
       "file": "decor-assets/hd/5721a445458635bc1331e136.webp",
       "density": 2,
@@ -1218,6 +1314,230 @@
       "height": 96,
       "bytes": 940,
       "sha256": "28bcd8dddb69e10aea3b2f6e877cb777434d55412b01647e2158e5acf7183b82"
+    },
+    "native-levels/bubotuber/frame-01.png": {
+      "file": "decor-assets/hd/79bc92837c6a99a9b315216b.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 318,
+      "sha256": "79bc92837c6a99a9b315216b66dc4422eae96609ca653be97950743bf5fbc007"
+    },
+    "native-levels/bubotuber/frame-02.png": {
+      "file": "decor-assets/hd/7c7cba70a69db0c554be4d0e.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 702,
+      "sha256": "7c7cba70a69db0c554be4d0eec21288915ae07a3a2293259d5ab46ad0817c0bc"
+    },
+    "native-levels/bubotuber/frame-03.png": {
+      "file": "decor-assets/hd/cf617d5daff3463a64ab985b.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1462,
+      "sha256": "cf617d5daff3463a64ab985b2ef2ac47cd58c2f713bf404e2c943ad83901f0e7"
+    },
+    "native-levels/bubotuber/frame-04.png": {
+      "file": "decor-assets/hd/040480291642e810ab077deb.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2254,
+      "sha256": "040480291642e810ab077deb3a8a84fc87ddabdef1796ec99dcb7a5dfe328fb2"
+    },
+    "native-levels/carrot/frame-01.png": {
+      "file": "decor-assets/hd/bd4148f7f9a0495f87c1bea8.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 234,
+      "sha256": "bd4148f7f9a0495f87c1bea87993ab256fc030141a159c4d0b528a20dbb64853"
+    },
+    "native-levels/carrot/frame-02.png": {
+      "file": "decor-assets/hd/75a7bc4b8d417cf6e28162b1.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 416,
+      "sha256": "75a7bc4b8d417cf6e28162b1f465ceef213087e4e330ed858264faef749ecaaa"
+    },
+    "native-levels/carrot/frame-03.png": {
+      "file": "decor-assets/hd/1eb2cd7b1e9c38ccdf1b9b6f.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1364,
+      "sha256": "1eb2cd7b1e9c38ccdf1b9b6f78807cda7d1fd098bb462426d351d70746d75b36"
+    },
+    "native-levels/carrot/frame-04.png": {
+      "file": "decor-assets/hd/d3d89f679ad1a9abdf82b3e2.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2026,
+      "sha256": "d3d89f679ad1a9abdf82b3e26ae317faf2fc99788f0c494ba95f17e36f7eeea6"
+    },
+    "native-levels/clover/frame-01.png": {
+      "file": "decor-assets/hd/eb762ec8eafa87c065b98009.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 226,
+      "sha256": "eb762ec8eafa87c065b98009a2131cb3f6214b568b8f62beee9bc4114766b3a2"
+    },
+    "native-levels/clover/frame-02.png": {
+      "file": "decor-assets/hd/b8e1e63ba7ed8cd033ce5d1c.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 288,
+      "sha256": "b8e1e63ba7ed8cd033ce5d1ca65436753f5409a9092fdeafed63b01866e7cbe0"
+    },
+    "native-levels/clover/frame-03.png": {
+      "file": "decor-assets/hd/893f6b4b03f12b0a42b4a4f4.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 902,
+      "sha256": "893f6b4b03f12b0a42b4a4f4d110b4bf205f3265db0af0a839f656a41f87b1a1"
+    },
+    "native-levels/clover/frame-04.png": {
+      "file": "decor-assets/hd/dc1356337b9f4224db183160.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2212,
+      "sha256": "dc1356337b9f4224db183160c1b8cb971676c7231fec30947eb1a197e93cbf31"
+    },
+    "native-levels/devilssnare/frame-01.png": {
+      "file": "decor-assets/hd/8624131396df4956ee8925d9.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 660,
+      "sha256": "8624131396df4956ee8925d9aa66371749719bb7d0848deecbb13bc5c79eb1b0"
+    },
+    "native-levels/devilssnare/frame-02.png": {
+      "file": "decor-assets/hd/1fe0b6c9f20d75c9b18f1678.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 974,
+      "sha256": "1fe0b6c9f20d75c9b18f167885ba0cd914fa8f8259f03fcc00897974ccf38efb"
+    },
+    "native-levels/devilssnare/frame-03.png": {
+      "file": "decor-assets/hd/257354e0627a003ffd944a09.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2006,
+      "sha256": "257354e0627a003ffd944a09b40cf06b2833e4b479d144d8c4fd7067e377f7f0"
+    },
+    "native-levels/devilssnare/frame-04.png": {
+      "file": "decor-assets/hd/e8b6c2c42e5c2cd29eb2a151.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2662,
+      "sha256": "e8b6c2c42e5c2cd29eb2a151e3eba8edad0e1c5c699504aabf8a16425fb7ec40"
+    },
+    "native-levels/diricawl/frame-01.png": {
+      "file": "decor-assets/hd/004659646e6f55eda03c3273.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 972,
+      "sha256": "004659646e6f55eda03c3273dd19e34d2ddb70f53a99e0ae676d66dc021b70e9"
+    },
+    "native-levels/diricawl/frame-02.png": {
+      "file": "decor-assets/hd/0d14c499eb5fe6c0f50d3d04.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 1492,
+      "sha256": "0d14c499eb5fe6c0f50d3d0459416d98e3603717ee23fa0395d34835344c6c1b"
+    },
+    "native-levels/diricawl/frame-03.png": {
+      "file": "decor-assets/hd/f245c7520b4103f68de714cb.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 1990,
+      "sha256": "f245c7520b4103f68de714cb8df9da6e5cb6316c089bf384c4adcca769e81dcf"
+    },
+    "native-levels/diricawl/frame-04.png": {
+      "file": "decor-assets/hd/8145d0fb774aa318734c0674.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2424,
+      "sha256": "8145d0fb774aa318734c06742a668866f7ddcef991a69c74bfa7c1461a0fb59a"
+    },
+    "native-levels/firepepper/frame-01.png": {
+      "file": "decor-assets/hd/0ce173ee978928bf2f9bb390.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 272,
+      "sha256": "0ce173ee978928bf2f9bb390d3b73d34bd35c198ed61c3e25066a8c540838fa1"
+    },
+    "native-levels/firepepper/frame-02.png": {
+      "file": "decor-assets/hd/594fd0faa846d8087f3a66d1.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 444,
+      "sha256": "594fd0faa846d8087f3a66d12dc6983a054c357e2bfdd2f75abd8c93eb6a94ff"
+    },
+    "native-levels/firepepper/frame-03.png": {
+      "file": "decor-assets/hd/a6531e9a4e6886b773b2b531.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1516,
+      "sha256": "a6531e9a4e6886b773b2b53120ba61ebe030d896110a095323bd456aac2a3ad6"
+    },
+    "native-levels/firepepper/frame-04.png": {
+      "file": "decor-assets/hd/8a9e0b4d3bde858d35d918d6.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1996,
+      "sha256": "8a9e0b4d3bde858d35d918d6c7f7f01579c6c0f0558ba0eaab950270f5a868f9"
+    },
+    "native-levels/flax/frame-01.png": {
+      "file": "decor-assets/hd/0cfc353ea10eb8830c618e84.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 278,
+      "sha256": "0cfc353ea10eb8830c618e84d41ef50e1d3aa3385eb5f01d89fe63e553c18ebd"
+    },
+    "native-levels/flax/frame-02.png": {
+      "file": "decor-assets/hd/0418a8373ed5c05ea91b1776.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 360,
+      "sha256": "0418a8373ed5c05ea91b1776aa67b31541027d0704b4445467eaa5ca5bd15362"
+    },
+    "native-levels/flax/frame-03.png": {
+      "file": "decor-assets/hd/045e472511a2660875c71ab3.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 958,
+      "sha256": "045e472511a2660875c71ab35b41035b63b78c777920199e622915f852ce7052"
+    },
+    "native-levels/flax/frame-04.png": {
+      "file": "decor-assets/hd/fb847b3a7e975fbd624e2243.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2006,
+      "sha256": "fb847b3a7e975fbd624e224386b9b3dec2edaecdedd3f80de866a7380810645f"
     },
     "native-levels/flitterbloom/flow-v1-1.png": {
       "file": "decor-assets/hd/1569e108fb1b3a9807735e5b.webp",
@@ -1251,6 +1571,270 @@
       "bytes": 1262,
       "sha256": "e10d164455068938acb373ccf624d8dee6398b1d0e0a172fb5591a2c9ff04886"
     },
+    "native-levels/flitterbloom/frame-01.png": {
+      "file": "decor-assets/hd/94412f056aa1d6a5949a50ae.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 578,
+      "sha256": "94412f056aa1d6a5949a50aec8a9d0ec44d4e421f3ca85b393dbf0e8a967d619"
+    },
+    "native-levels/flitterbloom/frame-02.png": {
+      "file": "decor-assets/hd/4223b7ee82b781ab11d0021e.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 712,
+      "sha256": "4223b7ee82b781ab11d0021e0b79a55da1176674125a2b122bf974fe4a63dbec"
+    },
+    "native-levels/flitterbloom/frame-03.png": {
+      "file": "decor-assets/hd/e872b24b7a76eba1355a0e75.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1632,
+      "sha256": "e872b24b7a76eba1355a0e753396c1a763ae686b00f8364b5435bac6224fbfeb"
+    },
+    "native-levels/flitterbloom/frame-04.png": {
+      "file": "decor-assets/hd/ce3e116883997eea90cee34e.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 3174,
+      "sha256": "ce3e116883997eea90cee34e1525141538c0687e645c983de85bc6f1b9e8d272"
+    },
+    "native-levels/fluxweed/frame-01.png": {
+      "file": "decor-assets/hd/e74e3647176cc163ac6b38ef.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 302,
+      "sha256": "e74e3647176cc163ac6b38efc6879099931c824abb2030d4d7cd555523c24351"
+    },
+    "native-levels/fluxweed/frame-02.png": {
+      "file": "decor-assets/hd/4625c5187096ae6ccacedbff.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 660,
+      "sha256": "4625c5187096ae6ccacedbff7c3ffe77c165216584612f727464be656e214e20"
+    },
+    "native-levels/fluxweed/frame-03.png": {
+      "file": "decor-assets/hd/f2accff5a938cf2d5a41b90a.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1374,
+      "sha256": "f2accff5a938cf2d5a41b90a99663f0dd5a348397b58aef5272ce4148cc64aab"
+    },
+    "native-levels/fluxweed/frame-04.png": {
+      "file": "decor-assets/hd/cc6f5d7baac2c6e44ae9d8d9.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2372,
+      "sha256": "cc6f5d7baac2c6e44ae9d8d9108ecfe840fa379094b98ae24a32384fcac956d1"
+    },
+    "native-levels/fwooper/frame-01.png": {
+      "file": "decor-assets/hd/c92ad8d4fa1397cc0a00065c.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 838,
+      "sha256": "c92ad8d4fa1397cc0a00065cdac9916109a973b221221a9c03dd0ced2fbfd231"
+    },
+    "native-levels/fwooper/frame-02.png": {
+      "file": "decor-assets/hd/ea4281400179d8943a889e26.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 1450,
+      "sha256": "ea4281400179d8943a889e26b452e573cae662809a6bf1bca2d666afe81594e0"
+    },
+    "native-levels/fwooper/frame-03.png": {
+      "file": "decor-assets/hd/6cf3c3d34b076f809c25ed02.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 1940,
+      "sha256": "6cf3c3d34b076f809c25ed023081d18f1fda7f03a2ca6dfbe271285cc113f30c"
+    },
+    "native-levels/fwooper/frame-04.png": {
+      "file": "decor-assets/hd/8f9d0203ca4fb7311b743c8d.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2730,
+      "sha256": "8f9d0203ca4fb7311b743c8da5cdcdeaa6117ca8ef2e64676613706189a8d6dd"
+    },
+    "native-levels/gillyweed/frame-01.png": {
+      "file": "decor-assets/hd/cbfe8c702946233421a5036f.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 310,
+      "sha256": "cbfe8c702946233421a5036f9b32319dd92f4e18dafaa97f2255c0a785578eb3"
+    },
+    "native-levels/gillyweed/frame-02.png": {
+      "file": "decor-assets/hd/f68690f18c6368c1c5d8e6f8.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 852,
+      "sha256": "f68690f18c6368c1c5d8e6f879b2711b87645f9d7329aeca12a71cea13140ddc"
+    },
+    "native-levels/gillyweed/frame-03.png": {
+      "file": "decor-assets/hd/e97ad12a19c6bad4d01cf8c9.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1848,
+      "sha256": "e97ad12a19c6bad4d01cf8c9cbfd14f896d2b8504757fb030d8364e5bee6f474"
+    },
+    "native-levels/gillyweed/frame-04.png": {
+      "file": "decor-assets/hd/4e283a6ce65c13761601623b.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2710,
+      "sha256": "4e283a6ce65c13761601623bdb7b6c0bf9ae3764d5b63f8bf0c993ff4c4084c3"
+    },
+    "native-levels/kneazle/frame-01.png": {
+      "file": "decor-assets/hd/34002b76c9c60bb0f5566f86.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 1184,
+      "sha256": "34002b76c9c60bb0f5566f867e036d3ab9b99c6a8363e423676f16840e261d82"
+    },
+    "native-levels/kneazle/frame-02.png": {
+      "file": "decor-assets/hd/b3b06bf7015da2014d5a65e8.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 1708,
+      "sha256": "b3b06bf7015da2014d5a65e82129221be3cc26f1df82e28d6d61a9ca48e0af67"
+    },
+    "native-levels/kneazle/frame-03.png": {
+      "file": "decor-assets/hd/3687f3f9a87050080acd8f89.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2442,
+      "sha256": "3687f3f9a87050080acd8f89659e7230944133e75be721a3ba56abc27816036a"
+    },
+    "native-levels/kneazle/frame-04.png": {
+      "file": "decor-assets/hd/73c4212dcd3672845ffed817.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2870,
+      "sha256": "73c4212dcd3672845ffed817e1d1c8cbe6c27ecb51e2b122a98fdc7f3a75b7f2"
+    },
+    "native-levels/knotgrass/frame-01.png": {
+      "file": "decor-assets/hd/cf9d974400f6a4c71b571f8c.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 208,
+      "sha256": "cf9d974400f6a4c71b571f8c54e7c3bb4f5ccb8daf9a6bde5ccaf442ca2080cd"
+    },
+    "native-levels/knotgrass/frame-02.png": {
+      "file": "decor-assets/hd/e5c3882924afd76480953096.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 504,
+      "sha256": "e5c3882924afd764809530969220bec247a99861563505a6f6c83d4bd16e485a"
+    },
+    "native-levels/knotgrass/frame-03.png": {
+      "file": "decor-assets/hd/885236e772a00fc423e5ee82.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1106,
+      "sha256": "885236e772a00fc423e5ee82c460f481a1033b74ac7c7c9e44d92ad16f67124d"
+    },
+    "native-levels/knotgrass/frame-04.png": {
+      "file": "decor-assets/hd/2704f4e350feb5ff116b9e4e.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2112,
+      "sha256": "2704f4e350feb5ff116b9e4ecb41b6017436e79bda07aaf74b536f1d837141d7"
+    },
+    "native-levels/lettuce/frame-01.png": {
+      "file": "decor-assets/hd/6ec9e6c1d5375cc68709a614.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 230,
+      "sha256": "6ec9e6c1d5375cc68709a6143ea8eb4222815c1a24a370ad11e47538c9a3165c"
+    },
+    "native-levels/lettuce/frame-02.png": {
+      "file": "decor-assets/hd/9157334ba0d9083752200deb.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 428,
+      "sha256": "9157334ba0d9083752200deb5c85f5bfe51273733c115c61334a766e2f1ec0d0"
+    },
+    "native-levels/lettuce/frame-03.png": {
+      "file": "decor-assets/hd/c59e382cd2ae6fdcd1802366.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1094,
+      "sha256": "c59e382cd2ae6fdcd18023661b6077915d87d9245c51eba84d80aa22d5ba7b32"
+    },
+    "native-levels/lettuce/frame-04.png": {
+      "file": "decor-assets/hd/3797cdedc4c529724c5c85cc.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1728,
+      "sha256": "3797cdedc4c529724c5c85cc3744714bfbd437d91b7ddb51e543de59748c5215"
+    },
+    "native-levels/lettuce/frame-07.png": {
+      "file": "decor-assets/hd/3797cdedc4c529724c5c85cc.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1728,
+      "sha256": "3797cdedc4c529724c5c85cc3744714bfbd437d91b7ddb51e543de59748c5215"
+    },
+    "native-levels/maize/frame-01.png": {
+      "file": "decor-assets/hd/504c825d3c8d118e19a45011.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 270,
+      "sha256": "504c825d3c8d118e19a45011867f3e2bb0f78685d6ff1a858eeefb888d73fa2b"
+    },
+    "native-levels/maize/frame-02.png": {
+      "file": "decor-assets/hd/7b558d060921c7fe413277db.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 466,
+      "sha256": "7b558d060921c7fe413277db92fc60c46566615d5b9366c6f4973474526b297b"
+    },
+    "native-levels/maize/frame-03.png": {
+      "file": "decor-assets/hd/1aa05ae8118dab6a8a67b705.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1430,
+      "sha256": "1aa05ae8118dab6a8a67b7058f406f3aeeb599174e7d69c4daec56052b7b3188"
+    },
+    "native-levels/maize/frame-04.png": {
+      "file": "decor-assets/hd/b60766fc2860939a40da4821.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2508,
+      "sha256": "b60766fc2860939a40da4821f3ad5d42cf861a7f1fa94e3632089c1fca7bfe77"
+    },
     "native-levels/mimbulus/flow-v1-1.png": {
       "file": "decor-assets/hd/d07c72cba97a8bb9ddad37e3.webp",
       "density": 2,
@@ -1282,6 +1866,646 @@
       "height": 96,
       "bytes": 1114,
       "sha256": "1db797660548f272845c9df46853213b94c91797ce95999ce55646af2987e8e0"
+    },
+    "native-levels/mimbulus/frame-01.png": {
+      "file": "decor-assets/hd/75fafa1c8543b1a59b8ceb39.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 406,
+      "sha256": "75fafa1c8543b1a59b8ceb39d26c2fd6a8dc3bfdde99044949b662fa4170a67e"
+    },
+    "native-levels/mimbulus/frame-02.png": {
+      "file": "decor-assets/hd/8bbc84192253c14f9b62337d.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 972,
+      "sha256": "8bbc84192253c14f9b62337d7d077f4d540431b902b3879831f9808560ac0a9a"
+    },
+    "native-levels/mimbulus/frame-03.png": {
+      "file": "decor-assets/hd/f6632b1d7428eb921a3d4279.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1862,
+      "sha256": "f6632b1d7428eb921a3d4279ecfd52e922b0fa5dfc248679c171dc2c71b4d8b1"
+    },
+    "native-levels/mimbulus/frame-04.png": {
+      "file": "decor-assets/hd/cae8e0200f064bfd1707f14b.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2856,
+      "sha256": "cae8e0200f064bfd1707f14ba8029355d0d74730b2f445ca5c2ced96f1f15034"
+    },
+    "native-levels/mint/frame-01.png": {
+      "file": "decor-assets/hd/7a175f09ba87e45e92e8295c.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 212,
+      "sha256": "7a175f09ba87e45e92e8295cf326ccd8b54baae148ed2dd4d86f75b7790deaa6"
+    },
+    "native-levels/mint/frame-02.png": {
+      "file": "decor-assets/hd/b4d67a5fbefeb72e1fc8a451.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 434,
+      "sha256": "b4d67a5fbefeb72e1fc8a4518cc7a51350bacf31decff1323d05eb55161f0df4"
+    },
+    "native-levels/mint/frame-03.png": {
+      "file": "decor-assets/hd/2662e9f69323d8238baa7c06.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1200,
+      "sha256": "2662e9f69323d8238baa7c062c3a4786fe00d5b4a040db2dbe6919f640e847f7"
+    },
+    "native-levels/mint/frame-04.png": {
+      "file": "decor-assets/hd/949785a7eb73af1994913c37.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1958,
+      "sha256": "949785a7eb73af1994913c37685513b4665dfa94651a9ca1b2ea2ff4a973a48b"
+    },
+    "native-levels/mistmushroom/frame-01.png": {
+      "file": "decor-assets/hd/9aeb6a0ee71d02ee7fa59830.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 262,
+      "sha256": "9aeb6a0ee71d02ee7fa5983030dd4be6e40ff45b8aed0241e8fc2b31c9980afc"
+    },
+    "native-levels/mistmushroom/frame-02.png": {
+      "file": "decor-assets/hd/14ae85b83d0ff0a1e03f1792.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 490,
+      "sha256": "14ae85b83d0ff0a1e03f17928b94630f664ced1f69e219ca398f279d7e91b0e6"
+    },
+    "native-levels/mistmushroom/frame-03.png": {
+      "file": "decor-assets/hd/56012a8a7be1926e44320fa0.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1226,
+      "sha256": "56012a8a7be1926e44320fa09c60f4177633d7c79250d99afcf4870b57dca21b"
+    },
+    "native-levels/mistmushroom/frame-04.png": {
+      "file": "decor-assets/hd/af2fb2847c96706dd2eeded2.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2228,
+      "sha256": "af2fb2847c96706dd2eeded2500999a26e13634e7ee97dbc120eecf579a8c62c"
+    },
+    "native-levels/mooncalf/frame-01.png": {
+      "file": "decor-assets/hd/bf2d4d192bd247c868367542.webp",
+      "density": 2,
+      "width": 96,
+      "height": 128,
+      "bytes": 1072,
+      "sha256": "bf2d4d192bd247c8683675424572894f431c8ebebae332a32b611c045627c8f8"
+    },
+    "native-levels/mooncalf/frame-02.png": {
+      "file": "decor-assets/hd/74583908c599aa17501288eb.webp",
+      "density": 2,
+      "width": 96,
+      "height": 128,
+      "bytes": 1512,
+      "sha256": "74583908c599aa17501288eb2b33906c1e837827d2af70981c6a9b7f5ab08757"
+    },
+    "native-levels/mooncalf/frame-03.png": {
+      "file": "decor-assets/hd/187fe7d1f765e8769bf9198d.webp",
+      "density": 2,
+      "width": 96,
+      "height": 128,
+      "bytes": 2140,
+      "sha256": "187fe7d1f765e8769bf9198d714b278837806835c3c2d9d30e3d61f61be9f7c2"
+    },
+    "native-levels/mooncalf/frame-04.png": {
+      "file": "decor-assets/hd/1c91a86d035d44327e5c5bd9.webp",
+      "density": 2,
+      "width": 96,
+      "height": 128,
+      "bytes": 2624,
+      "sha256": "1c91a86d035d44327e5c5bd9fdeac1201f2b512c3762557f7c11f971e6cbaccc"
+    },
+    "native-levels/moonherb/frame-01.png": {
+      "file": "decor-assets/hd/19f0ee3c7025f7494b39954d.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 296,
+      "sha256": "19f0ee3c7025f7494b39954d5a3e6b9781a4d715f12f46cdf023ddecf2d26472"
+    },
+    "native-levels/moonherb/frame-02.png": {
+      "file": "decor-assets/hd/f57b9944e71e7b8dd03e93cb.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 648,
+      "sha256": "f57b9944e71e7b8dd03e93cb63e2161e8f0abf48591eafa934c843401d0c20c1"
+    },
+    "native-levels/moonherb/frame-03.png": {
+      "file": "decor-assets/hd/d9b61a680cfaa44a56e79634.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1342,
+      "sha256": "d9b61a680cfaa44a56e796347a161bea7cb612fec32aa877938dd400e9e06915"
+    },
+    "native-levels/moonherb/frame-04.png": {
+      "file": "decor-assets/hd/945211873c932d5ad06c66c9.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2486,
+      "sha256": "945211873c932d5ad06c66c963b895dcf6ac29d2c8bf1b8b0ba5b9bdb6545257"
+    },
+    "native-levels/oats/frame-01.png": {
+      "file": "decor-assets/hd/6b26c11ac7bff08750e1cea7.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 294,
+      "sha256": "6b26c11ac7bff08750e1cea7556110aa41a0994184631e5ed27ba0b3ce68a86c"
+    },
+    "native-levels/oats/frame-02.png": {
+      "file": "decor-assets/hd/fd4beddfa18425534588a3be.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 378,
+      "sha256": "fd4beddfa18425534588a3be7978f918a882ccf8f09afc727466a7a850dc5281"
+    },
+    "native-levels/oats/frame-03.png": {
+      "file": "decor-assets/hd/ab76253dc7ce25cd2fd89004.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1016,
+      "sha256": "ab76253dc7ce25cd2fd89004de991a16559036c2d7c1e7e7ee836fa181f37153"
+    },
+    "native-levels/oats/frame-04.png": {
+      "file": "decor-assets/hd/a3521540a45260b7ea19d492.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2614,
+      "sha256": "a3521540a45260b7ea19d492f3b6194587371d87d8e741f909f2f9ad9b45c79f"
+    },
+    "native-levels/shrivelfig/frame-01.png": {
+      "file": "decor-assets/hd/f1969c003a745906ec459e2d.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 336,
+      "sha256": "f1969c003a745906ec459e2dff801620bc368c35e57b10a6a7b1004f3cff8c7b"
+    },
+    "native-levels/shrivelfig/frame-02.png": {
+      "file": "decor-assets/hd/c514d697a6a012e7aad5a561.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 852,
+      "sha256": "c514d697a6a012e7aad5a561054499f5fe94f484aa6859bb9612f9be7c9ce43e"
+    },
+    "native-levels/shrivelfig/frame-03.png": {
+      "file": "decor-assets/hd/18f83b4bff1721535b044019.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1632,
+      "sha256": "18f83b4bff1721535b044019bb38edbb3e5ba3ab49bbf6447efc119988477d02"
+    },
+    "native-levels/shrivelfig/frame-04.png": {
+      "file": "decor-assets/hd/8ee89b89a25408ea666e6d18.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2964,
+      "sha256": "8ee89b89a25408ea666e6d18b6d7afb385ebaa92001a769a8eb0dfe79fd6dbeb"
+    },
+    "native-levels/silverkelp/frame-01.png": {
+      "file": "decor-assets/hd/d4b609b3d9cd4889fa19e984.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 230,
+      "sha256": "d4b609b3d9cd4889fa19e984475fe03176622c49232bcb93fff27fcf10846ecf"
+    },
+    "native-levels/silverkelp/frame-02.png": {
+      "file": "decor-assets/hd/a705c433462696f7ff77517e.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1092,
+      "sha256": "a705c433462696f7ff77517e6137da7bbbbf8efa6d5d23ef64ba1c5d37c20646"
+    },
+    "native-levels/silverkelp/frame-03.png": {
+      "file": "decor-assets/hd/19572aaa9a1c3e8b51a34f24.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1630,
+      "sha256": "19572aaa9a1c3e8b51a34f24d253a0d6c908982153722ad05c3c3f29f30fe659"
+    },
+    "native-levels/silverkelp/frame-04.png": {
+      "file": "decor-assets/hd/489e7c556f9c37076a4001cb.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2816,
+      "sha256": "489e7c556f9c37076a4001cb7d6d36742998297f6e15c126019b7bde023b12de"
+    },
+    "native-levels/starbean/frame-01.png": {
+      "file": "decor-assets/hd/8b09f155f97beb7e0f5d56df.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 362,
+      "sha256": "8b09f155f97beb7e0f5d56df1cccee85dd7007613b4ffc2a8ffd84c8866e4cb8"
+    },
+    "native-levels/starbean/frame-02.png": {
+      "file": "decor-assets/hd/b16d3cbf72807dfea5db811d.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 432,
+      "sha256": "b16d3cbf72807dfea5db811dfe21c4a07718d319127fdfed568eba37a78bfa14"
+    },
+    "native-levels/starbean/frame-03.png": {
+      "file": "decor-assets/hd/35da0e9e1a082f9e2a6662e0.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1140,
+      "sha256": "35da0e9e1a082f9e2a6662e09d09cb7307dbef456b9eaefef44a3578fe5b1430"
+    },
+    "native-levels/starbean/frame-04.png": {
+      "file": "decor-assets/hd/ee1a0945aae431351c798026.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2550,
+      "sha256": "ee1a0945aae431351c79802606b2ea02851e9982bf4507602cdc0b541e96ec4f"
+    },
+    "native-levels/sunflower/frame-01.png": {
+      "file": "decor-assets/hd/4cf1389c1a70578855129fe8.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 416,
+      "sha256": "4cf1389c1a70578855129fe8012698d6c1e37582c03618fec439b07a156714a2"
+    },
+    "native-levels/sunflower/frame-02.png": {
+      "file": "decor-assets/hd/1cbeb002dba2c4bb660053c3.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 564,
+      "sha256": "1cbeb002dba2c4bb660053c37c97e3a9d19c0e8cb9e0a15a4a2b50b32250b253"
+    },
+    "native-levels/sunflower/frame-03.png": {
+      "file": "decor-assets/hd/770407120895c5894225b6e2.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1404,
+      "sha256": "770407120895c5894225b6e2a3ef29bfc6221bf86056d6730ee531c17d1ef307"
+    },
+    "native-levels/sunflower/frame-04.png": {
+      "file": "decor-assets/hd/d2961f39cd240a861b330529.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2444,
+      "sha256": "d2961f39cd240a861b3305298f9fed99bb4a423d8487eb9de498758ef7c5d729"
+    },
+    "native-levels/sunpetal/frame-01.png": {
+      "file": "decor-assets/hd/c98ab5abfa6c30b63d6b1aff.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 224,
+      "sha256": "c98ab5abfa6c30b63d6b1aff84232cb4f4cc4865ee56f52154a70ea113c605fe"
+    },
+    "native-levels/sunpetal/frame-02.png": {
+      "file": "decor-assets/hd/e58efea9610bc42bcf9ae6a2.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 332,
+      "sha256": "e58efea9610bc42bcf9ae6a29e7b03728eb200db3b25abb6a23217455d9dcecd"
+    },
+    "native-levels/sunpetal/frame-03.png": {
+      "file": "decor-assets/hd/10982e5790511c89a5569748.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 966,
+      "sha256": "10982e5790511c89a5569748bd80f70f9171924ce0c5cb11d62c492e98204da7"
+    },
+    "native-levels/sunpetal/frame-04.png": {
+      "file": "decor-assets/hd/838524608362a63fbd9b10ed.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1966,
+      "sha256": "838524608362a63fbd9b10ede356825e5bc0c2c9c9452334d59eca48dc9bd874"
+    },
+    "native-levels/thestral/frame-01.png": {
+      "file": "decor-assets/hd/8f10c5e7b5c85402fdc0e709.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 1422,
+      "sha256": "8f10c5e7b5c85402fdc0e7093bb4ad9d685ce6d8b5f55e97ba154bc739baa45f"
+    },
+    "native-levels/thestral/frame-02.png": {
+      "file": "decor-assets/hd/20cc1c40bb3a9e8bbd4b326a.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 2330,
+      "sha256": "20cc1c40bb3a9e8bbd4b326ab90b3bf00972d5b4d667a81f788fef99a687b5c0"
+    },
+    "native-levels/thestral/frame-03.png": {
+      "file": "decor-assets/hd/4b5c499d48fe7eb591731add.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 3140,
+      "sha256": "4b5c499d48fe7eb591731add7bb3e74c612cdf2f3b6a65587a7f36235c7c0ea5"
+    },
+    "native-levels/thestral/frame-04.png": {
+      "file": "decor-assets/hd/7ae01e99a9d77020c7272425.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 3694,
+      "sha256": "7ae01e99a9d77020c7272425f15bb20899df7d070d1cd5adfeff67c522b8d3e8"
+    },
+    "native-levels/unicorn/frame-01.png": {
+      "file": "decor-assets/hd/9a8719f4f7b736f438df3f6d.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 2100,
+      "sha256": "9a8719f4f7b736f438df3f6dff7ac00edb8a2182937ef6ecfd123655bc0d65cf"
+    },
+    "native-levels/unicorn/frame-02.png": {
+      "file": "decor-assets/hd/955ee7b4fc41e4195135ca9a.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 3246,
+      "sha256": "955ee7b4fc41e4195135ca9a6f6aaf7fd0fa17a7e818d3f84c8c76104eba8e24"
+    },
+    "native-levels/unicorn/frame-03.png": {
+      "file": "decor-assets/hd/e0d8760453d57a5f4c259669.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 4338,
+      "sha256": "e0d8760453d57a5f4c259669fd112bc5ea60c3011f4af8ffc376c676c877e675"
+    },
+    "native-levels/unicorn/frame-04.png": {
+      "file": "decor-assets/hd/e37c585ff8784483c519e77e.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 5434,
+      "sha256": "e37c585ff8784483c519e77ed5cdc27a9fe1f613b30f7803ac713554e6b3e33d"
+    },
+    "native-levels/valerian/frame-01.png": {
+      "file": "decor-assets/hd/0c3dc0e58348bc3fecf13c07.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 274,
+      "sha256": "0c3dc0e58348bc3fecf13c073610f817abf45a8c6dc03beb33c5db9cbf02790b"
+    },
+    "native-levels/valerian/frame-02.png": {
+      "file": "decor-assets/hd/b08ad9ba7b831021ed9f1485.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 442,
+      "sha256": "b08ad9ba7b831021ed9f14850fe4f41cc9f94543f7c342db0c0115560c588d7c"
+    },
+    "native-levels/valerian/frame-03.png": {
+      "file": "decor-assets/hd/c992387b19e9aa0b49d573cd.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 1648,
+      "sha256": "c992387b19e9aa0b49d573cd8e586569a91517ee5d8c0c19f63e220f22c86117"
+    },
+    "native-levels/valerian/frame-04.png": {
+      "file": "decor-assets/hd/1064dbd831cd282645efb154.webp",
+      "density": 2,
+      "width": 64,
+      "height": 96,
+      "bytes": 2700,
+      "sha256": "1064dbd831cd282645efb1540bb49f9672679c3aba28b5655aa50c3a170b4706"
+    },
+    "native-care/diricawl/frame-01.png": {
+      "file": "decor-assets/hd/17689659c34e94afb084e81c.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2340,
+      "sha256": "17689659c34e94afb084e81ce56f3936e3ae31fafdf9061a3cd9c6f38bccf0f4"
+    },
+    "native-care/diricawl/frame-02.png": {
+      "file": "decor-assets/hd/f6aa9a3532bad9d151982ec4.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2230,
+      "sha256": "f6aa9a3532bad9d151982ec43d60888fe674ea9fa6f47ed4135b95d73cd7ca42"
+    },
+    "native-care/diricawl/frame-03.png": {
+      "file": "decor-assets/hd/eaa4c4524fc2457ae2f6e423.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2012,
+      "sha256": "eaa4c4524fc2457ae2f6e423808491ee91b3f5681e1e11cd1f98d6eba50c7cf0"
+    },
+    "native-care/diricawl/frame-04.png": {
+      "file": "decor-assets/hd/75fbef60d52107176f8eb7d1.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2244,
+      "sha256": "75fbef60d52107176f8eb7d138f2d3e3b1ac93f057ad75e6137a1ee4eb14b7cb"
+    },
+    "native-care/fwooper/frame-01.png": {
+      "file": "decor-assets/hd/7adadc44fa845aac95251b1f.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2956,
+      "sha256": "7adadc44fa845aac95251b1fdd3cd92c977af70a88fddae6d4c4b58e556eae15"
+    },
+    "native-care/fwooper/frame-02.png": {
+      "file": "decor-assets/hd/140e18c426b7158d1db910c0.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2786,
+      "sha256": "140e18c426b7158d1db910c027faae059b12c7dfef55ff284255ddc82110cb25"
+    },
+    "native-care/fwooper/frame-03.png": {
+      "file": "decor-assets/hd/43a1fddc4f91d403451bbc95.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2408,
+      "sha256": "43a1fddc4f91d403451bbc95c298fc63afffb2437e1de69d757a23dcd964a4e1"
+    },
+    "native-care/fwooper/frame-04.png": {
+      "file": "decor-assets/hd/d97184313a30096ae420fe94.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2824,
+      "sha256": "d97184313a30096ae420fe94c07f88e2ab6b63ab21b7ad03bcf10b869433ed16"
+    },
+    "native-care/kneazle/frame-01.png": {
+      "file": "decor-assets/hd/c25fcae548b439ddc5705fc8.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 3046,
+      "sha256": "c25fcae548b439ddc5705fc819f4dd30eb572ec1d971acbaae7f5cdbc2044b62"
+    },
+    "native-care/kneazle/frame-02.png": {
+      "file": "decor-assets/hd/5608c8effaea9aa77bc8f55a.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 3042,
+      "sha256": "5608c8effaea9aa77bc8f55a3306334dd38a67f88793f3af049940da0b382825"
+    },
+    "native-care/kneazle/frame-03.png": {
+      "file": "decor-assets/hd/6ae028f19e6b1943d76ebd45.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 2488,
+      "sha256": "6ae028f19e6b1943d76ebd45db10c7284eba8a082f02610766f5146ecc6b2a0c"
+    },
+    "native-care/kneazle/frame-04.png": {
+      "file": "decor-assets/hd/f6698b7845210a26183d6c8d.webp",
+      "density": 2,
+      "width": 96,
+      "height": 96,
+      "bytes": 3090,
+      "sha256": "f6698b7845210a26183d6c8d5e0b31e1b3f004e78ba03cbe70d2e384422f9e27"
+    },
+    "native-care/mooncalf/frame-01.png": {
+      "file": "decor-assets/hd/acb98cc291de3ceb19cdc582.webp",
+      "density": 2,
+      "width": 96,
+      "height": 128,
+      "bytes": 2668,
+      "sha256": "acb98cc291de3ceb19cdc5824966a810e60c3d6d185f6a6a8b8a6133b504d2b5"
+    },
+    "native-care/mooncalf/frame-02.png": {
+      "file": "decor-assets/hd/df7560c73ba3ec2ff3e6caad.webp",
+      "density": 2,
+      "width": 96,
+      "height": 128,
+      "bytes": 2720,
+      "sha256": "df7560c73ba3ec2ff3e6caadac33d27a74759d302fc00476e72877d07f185b3e"
+    },
+    "native-care/mooncalf/frame-03.png": {
+      "file": "decor-assets/hd/79e6e2c81747ee2ea2fc6700.webp",
+      "density": 2,
+      "width": 96,
+      "height": 128,
+      "bytes": 2508,
+      "sha256": "79e6e2c81747ee2ea2fc6700e5972e563e1bc31b210d0e2fb57612b6bbea74e8"
+    },
+    "native-care/mooncalf/frame-04.png": {
+      "file": "decor-assets/hd/fcba59fdd57acea7a6fd87eb.webp",
+      "density": 2,
+      "width": 96,
+      "height": 128,
+      "bytes": 2718,
+      "sha256": "fcba59fdd57acea7a6fd87eb393c5b333d3873853ef9d5905a9e6d28ac66b265"
+    },
+    "native-care/thestral/frame-01.png": {
+      "file": "decor-assets/hd/27ce88c10fe85d010c0418ef.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 3058,
+      "sha256": "27ce88c10fe85d010c0418ef2f2510d53c2f6a7929df16e55329c607e30a2e82"
+    },
+    "native-care/thestral/frame-02.png": {
+      "file": "decor-assets/hd/a2bd2a6414e4e97598bea191.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 2892,
+      "sha256": "a2bd2a6414e4e97598bea19183eb3848f218c98d83e42cb8f31468627d5b7d29"
+    },
+    "native-care/thestral/frame-03.png": {
+      "file": "decor-assets/hd/d1c937a011bfef926bf38dfd.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 2974,
+      "sha256": "d1c937a011bfef926bf38dfdbe9f318de30b3b4203aed50b517eef978d6dd4de"
+    },
+    "native-care/thestral/frame-04.png": {
+      "file": "decor-assets/hd/79327913532cc4dc23daa2f1.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 2872,
+      "sha256": "79327913532cc4dc23daa2f1d346d64d3765286fa50db5acc7764f25beb7a299"
+    },
+    "native-care/unicorn/frame-01.png": {
+      "file": "decor-assets/hd/9ed6177350423d3eb8cd3c13.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 6134,
+      "sha256": "9ed6177350423d3eb8cd3c1318b834e00e27ec77650312b8fd5a4d448d955a1f"
+    },
+    "native-care/unicorn/frame-02.png": {
+      "file": "decor-assets/hd/76e0a633de94bd002d0f4803.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 5916,
+      "sha256": "76e0a633de94bd002d0f4803bbd9059ea27e37bb1a6b8a4f66cd66e8ee87d6f6"
+    },
+    "native-care/unicorn/frame-03.png": {
+      "file": "decor-assets/hd/a3e4fc1df2053595e856d823.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 5760,
+      "sha256": "a3e4fc1df2053595e856d8235bb6bd1424e8301a12b1b92c790d6d3c87e8d682"
+    },
+    "native-care/unicorn/frame-04.png": {
+      "file": "decor-assets/hd/959471a5cca6c1e7aa7b8a9e.webp",
+      "density": 2,
+      "width": 160,
+      "height": 160,
+      "bytes": 5794,
+      "sha256": "959471a5cca6c1e7aa7b8a9e9577bd7d9c55d1eb33b323618d8f37b9ea5aa665"
     },
     "native-items/decoration-11_right.png": {
       "file": "decor-assets/hd/ab96b32300f5445f9f3967d0.webp",
@@ -10420,7 +11644,7 @@
       "totalFrames": 20
     }
   },
-  "runtimeBytes": 9454900,
+  "runtimeBytes": 9708072,
   "provenance": [
     {
       "native": "noel-50-assets/native/nx_snitch_wreath/frame-01.png",
@@ -50359,6 +51583,3350 @@
       },
       "legacyAlphaMask": false,
       "silhouetteIoU": 0.97
+    },
+    {
+      "native": "native-levels/oats/frame-01.png",
+      "file": "decor-assets/hd/6b26c11ac7bff08750e1cea7.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 345,
+        "height": 394
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 69,
+        "w": 14,
+        "h": 11,
+        "count": 97,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.941
+    },
+    {
+      "native": "native-levels/oats/frame-02.png",
+      "file": "decor-assets/hd/fd4beddfa18425534588a3be.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 345,
+        "top": 0,
+        "width": 359,
+        "height": 394
+      },
+      "logicalBounds": {
+        "x": 20,
+        "y": 54,
+        "w": 23,
+        "h": 26,
+        "count": 165,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.881
+    },
+    {
+      "native": "native-levels/oats/frame-03.png",
+      "file": "decor-assets/hd/ab76253dc7ce25cd2fd89004.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 704,
+        "top": 0,
+        "width": 374,
+        "height": 394
+      },
+      "logicalBounds": {
+        "x": 11,
+        "y": 23,
+        "w": 43,
+        "h": 57,
+        "count": 656,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.894
+    },
+    {
+      "native": "native-levels/oats/frame-04.png",
+      "file": "decor-assets/hd/a3521540a45260b7ea19d492.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 1078,
+        "top": 0,
+        "width": 370,
+        "height": 394
+      },
+      "logicalBounds": {
+        "x": 8,
+        "y": 14,
+        "w": 48,
+        "h": 66,
+        "count": 1405,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.905
+    },
+    {
+      "native": "native-levels/carrot/frame-01.png",
+      "file": "decor-assets/hd/bd4148f7f9a0495f87c1bea8.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 0,
+        "top": 394,
+        "width": 345,
+        "height": 381
+      },
+      "logicalBounds": {
+        "x": 26,
+        "y": 71,
+        "w": 11,
+        "h": 9,
+        "count": 64,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.955
+    },
+    {
+      "native": "native-levels/carrot/frame-02.png",
+      "file": "decor-assets/hd/75a7bc4b8d417cf6e28162b1.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 345,
+        "top": 394,
+        "width": 359,
+        "height": 381
+      },
+      "logicalBounds": {
+        "x": 16,
+        "y": 57,
+        "w": 32,
+        "h": 23,
+        "count": 260,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.911
+    },
+    {
+      "native": "native-levels/carrot/frame-03.png",
+      "file": "decor-assets/hd/1eb2cd7b1e9c38ccdf1b9b6f.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 704,
+        "top": 394,
+        "width": 374,
+        "height": 381
+      },
+      "logicalBounds": {
+        "x": 8,
+        "y": 33,
+        "w": 49,
+        "h": 47,
+        "count": 824,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.916
+    },
+    {
+      "native": "native-levels/carrot/frame-04.png",
+      "file": "decor-assets/hd/d3d89f679ad1a9abdf82b3e2.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 1078,
+        "top": 394,
+        "width": 370,
+        "height": 381
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 16,
+        "w": 54,
+        "h": 64,
+        "count": 1387,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.935
+    },
+    {
+      "native": "native-levels/lettuce/frame-01.png",
+      "file": "decor-assets/hd/6ec9e6c1d5375cc68709a614.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 0,
+        "top": 775,
+        "width": 345,
+        "height": 311
+      },
+      "logicalBounds": {
+        "x": 27,
+        "y": 67,
+        "w": 10,
+        "h": 13,
+        "count": 70,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.895
+    },
+    {
+      "native": "native-levels/lettuce/frame-02.png",
+      "file": "decor-assets/hd/9157334ba0d9083752200deb.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 345,
+        "top": 775,
+        "width": 359,
+        "height": 311
+      },
+      "logicalBounds": {
+        "x": 17,
+        "y": 61,
+        "w": 30,
+        "h": 19,
+        "count": 266,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.926
+    },
+    {
+      "native": "native-levels/lettuce/frame-03.png",
+      "file": "decor-assets/hd/c59e382cd2ae6fdcd1802366.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 704,
+        "top": 775,
+        "width": 374,
+        "height": 311
+      },
+      "logicalBounds": {
+        "x": 8,
+        "y": 44,
+        "w": 49,
+        "h": 36,
+        "count": 905,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "native-levels/lettuce/frame-04.png",
+      "file": "decor-assets/hd/3797cdedc4c529724c5c85cc.webp",
+      "master": "masters-levels/crops-a.png",
+      "masterSha256": "9f3f6084dc497a10fe6f4eb4ef24a14b79896e37a4301aa44728fe4d722f9464",
+      "sourceRect": {
+        "left": 1078,
+        "top": 775,
+        "width": 370,
+        "height": 311
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 37,
+        "w": 54,
+        "h": 43,
+        "count": 1614,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.98
+    },
+    {
+      "native": "native-levels/clover/frame-01.png",
+      "file": "decor-assets/hd/eb762ec8eafa87c065b98009.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 322,
+        "height": 346
+      },
+      "logicalBounds": {
+        "x": 28,
+        "y": 71,
+        "w": 9,
+        "h": 9,
+        "count": 59,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.937
+    },
+    {
+      "native": "native-levels/clover/frame-02.png",
+      "file": "decor-assets/hd/b8e1e63ba7ed8cd033ce5d1c.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 322,
+        "top": 0,
+        "width": 384,
+        "height": 346
+      },
+      "logicalBounds": {
+        "x": 22,
+        "y": 62,
+        "w": 20,
+        "h": 18,
+        "count": 177,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.916
+    },
+    {
+      "native": "native-levels/clover/frame-03.png",
+      "file": "decor-assets/hd/893f6b4b03f12b0a42b4a4f4.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 706,
+        "top": 0,
+        "width": 365,
+        "height": 346
+      },
+      "logicalBounds": {
+        "x": 10,
+        "y": 43,
+        "w": 45,
+        "h": 37,
+        "count": 753,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.925
+    },
+    {
+      "native": "native-levels/clover/frame-04.png",
+      "file": "decor-assets/hd/dc1356337b9f4224db183160.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 1071,
+        "top": 0,
+        "width": 377,
+        "height": 346
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 28,
+        "w": 54,
+        "h": 52,
+        "count": 1657,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "native-levels/beet/frame-01.png",
+      "file": "decor-assets/hd/3f543d9ee6129ae2f5761fc1.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 0,
+        "top": 346,
+        "width": 322,
+        "height": 342
+      },
+      "logicalBounds": {
+        "x": 27,
+        "y": 71,
+        "w": 9,
+        "h": 9,
+        "count": 62,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.91
+    },
+    {
+      "native": "native-levels/beet/frame-02.png",
+      "file": "decor-assets/hd/2d8aea199bcc0db2b24a76da.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 322,
+        "top": 346,
+        "width": 384,
+        "height": 342
+      },
+      "logicalBounds": {
+        "x": 15,
+        "y": 58,
+        "w": 33,
+        "h": 22,
+        "count": 302,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.928
+    },
+    {
+      "native": "native-levels/beet/frame-03.png",
+      "file": "decor-assets/hd/17de1208108adaff161daea3.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 706,
+        "top": 346,
+        "width": 365,
+        "height": 342
+      },
+      "logicalBounds": {
+        "x": 10,
+        "y": 38,
+        "w": 43,
+        "h": 42,
+        "count": 835,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.944
+    },
+    {
+      "native": "native-levels/beet/frame-04.png",
+      "file": "decor-assets/hd/dcdc65365249c261ede0dc7c.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 1071,
+        "top": 346,
+        "width": 377,
+        "height": 342
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 25,
+        "w": 54,
+        "h": 55,
+        "count": 1657,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.964
+    },
+    {
+      "native": "native-levels/maize/frame-01.png",
+      "file": "decor-assets/hd/504c825d3c8d118e19a45011.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 0,
+        "top": 688,
+        "width": 322,
+        "height": 398
+      },
+      "logicalBounds": {
+        "x": 26,
+        "y": 69,
+        "w": 11,
+        "h": 11,
+        "count": 83,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.976
+    },
+    {
+      "native": "native-levels/maize/frame-02.png",
+      "file": "decor-assets/hd/7b558d060921c7fe413277db.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 322,
+        "top": 688,
+        "width": 384,
+        "height": 398
+      },
+      "logicalBounds": {
+        "x": 13,
+        "y": 50,
+        "w": 38,
+        "h": 30,
+        "count": 300,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.928
+    },
+    {
+      "native": "native-levels/maize/frame-03.png",
+      "file": "decor-assets/hd/1aa05ae8118dab6a8a67b705.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 706,
+        "top": 688,
+        "width": 365,
+        "height": 398
+      },
+      "logicalBounds": {
+        "x": 8,
+        "y": 21,
+        "w": 48,
+        "h": 59,
+        "count": 1100,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.957
+    },
+    {
+      "native": "native-levels/maize/frame-04.png",
+      "file": "decor-assets/hd/b60766fc2860939a40da4821.webp",
+      "master": "masters-levels/crops-b.png",
+      "masterSha256": "6652d58a6397c0862ca0bb24523223550662400c5fee8303bf5fcf1da5c91816",
+      "sourceRect": {
+        "left": 1071,
+        "top": 688,
+        "width": 377,
+        "height": 398
+      },
+      "logicalBounds": {
+        "x": 9,
+        "y": 14,
+        "w": 46,
+        "h": 66,
+        "count": 1682,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.936
+    },
+    {
+      "native": "native-levels/flax/frame-01.png",
+      "file": "decor-assets/hd/0cfc353ea10eb8830c618e84.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 336,
+        "height": 362
+      },
+      "logicalBounds": {
+        "x": 26,
+        "y": 69,
+        "w": 12,
+        "h": 11,
+        "count": 88,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.926
+    },
+    {
+      "native": "native-levels/flax/frame-02.png",
+      "file": "decor-assets/hd/0418a8373ed5c05ea91b1776.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 336,
+        "top": 0,
+        "width": 376,
+        "height": 362
+      },
+      "logicalBounds": {
+        "x": 21,
+        "y": 61,
+        "w": 21,
+        "h": 19,
+        "count": 160,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.908
+    },
+    {
+      "native": "native-levels/flax/frame-03.png",
+      "file": "decor-assets/hd/045e472511a2660875c71ab3.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 712,
+        "top": 0,
+        "width": 347,
+        "height": 362
+      },
+      "logicalBounds": {
+        "x": 18,
+        "y": 28,
+        "w": 28,
+        "h": 52,
+        "count": 540,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.888
+    },
+    {
+      "native": "native-levels/flax/frame-04.png",
+      "file": "decor-assets/hd/fb847b3a7e975fbd624e2243.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 1059,
+        "top": 0,
+        "width": 389,
+        "height": 362
+      },
+      "logicalBounds": {
+        "x": 8,
+        "y": 14,
+        "w": 48,
+        "h": 66,
+        "count": 1114,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.915
+    },
+    {
+      "native": "native-levels/sunflower/frame-01.png",
+      "file": "decor-assets/hd/4cf1389c1a70578855129fe8.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 0,
+        "top": 362,
+        "width": 336,
+        "height": 375
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 65,
+        "w": 15,
+        "h": 15,
+        "count": 157,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.957
+    },
+    {
+      "native": "native-levels/sunflower/frame-02.png",
+      "file": "decor-assets/hd/1cbeb002dba2c4bb660053c3.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 336,
+        "top": 362,
+        "width": 376,
+        "height": 375
+      },
+      "logicalBounds": {
+        "x": 13,
+        "y": 53,
+        "w": 38,
+        "h": 27,
+        "count": 409,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.923
+    },
+    {
+      "native": "native-levels/sunflower/frame-03.png",
+      "file": "decor-assets/hd/770407120895c5894225b6e2.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 712,
+        "top": 362,
+        "width": 347,
+        "height": 375
+      },
+      "logicalBounds": {
+        "x": 11,
+        "y": 22,
+        "w": 42,
+        "h": 58,
+        "count": 1069,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.94
+    },
+    {
+      "native": "native-levels/sunflower/frame-04.png",
+      "file": "decor-assets/hd/d2961f39cd240a861b330529.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 1059,
+        "top": 362,
+        "width": 389,
+        "height": 375
+      },
+      "logicalBounds": {
+        "x": 7,
+        "y": 14,
+        "w": 50,
+        "h": 66,
+        "count": 1818,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "native-levels/mint/frame-01.png",
+      "file": "decor-assets/hd/7a175f09ba87e45e92e8295c.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 0,
+        "top": 737,
+        "width": 336,
+        "height": 349
+      },
+      "logicalBounds": {
+        "x": 28,
+        "y": 71,
+        "w": 9,
+        "h": 9,
+        "count": 50,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.891
+    },
+    {
+      "native": "native-levels/mint/frame-02.png",
+      "file": "decor-assets/hd/b4d67a5fbefeb72e1fc8a451.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 336,
+        "top": 737,
+        "width": 376,
+        "height": 349
+      },
+      "logicalBounds": {
+        "x": 19,
+        "y": 57,
+        "w": 27,
+        "h": 23,
+        "count": 240,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.892
+    },
+    {
+      "native": "native-levels/mint/frame-03.png",
+      "file": "decor-assets/hd/2662e9f69323d8238baa7c06.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 712,
+        "top": 737,
+        "width": 347,
+        "height": 349
+      },
+      "logicalBounds": {
+        "x": 12,
+        "y": 33,
+        "w": 41,
+        "h": 47,
+        "count": 902,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.913
+    },
+    {
+      "native": "native-levels/mint/frame-04.png",
+      "file": "decor-assets/hd/949785a7eb73af1994913c37.webp",
+      "master": "masters-levels/crops-c.png",
+      "masterSha256": "c5050765b1279e39c9e18f4c080eecec65dc50aff5d1227c08b4f0c50ca66422",
+      "sourceRect": {
+        "left": 1059,
+        "top": 737,
+        "width": 389,
+        "height": 349
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 25,
+        "w": 54,
+        "h": 55,
+        "count": 1708,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.971
+    },
+    {
+      "native": "native-levels/blueberry/frame-01.png",
+      "file": "decor-assets/hd/264984474895f7f4d5eba15a.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 329,
+        "height": 374
+      },
+      "logicalBounds": {
+        "x": 27,
+        "y": 71,
+        "w": 9,
+        "h": 9,
+        "count": 60,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.968
+    },
+    {
+      "native": "native-levels/blueberry/frame-02.png",
+      "file": "decor-assets/hd/33743e97ac3648f0e95e0576.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 329,
+        "top": 0,
+        "width": 374,
+        "height": 374
+      },
+      "logicalBounds": {
+        "x": 21,
+        "y": 63,
+        "w": 21,
+        "h": 17,
+        "count": 182,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.932
+    },
+    {
+      "native": "native-levels/blueberry/frame-03.png",
+      "file": "decor-assets/hd/585349dbb963fd7ab4cb3cab.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 703,
+        "top": 0,
+        "width": 360,
+        "height": 374
+      },
+      "logicalBounds": {
+        "x": 10,
+        "y": 43,
+        "w": 44,
+        "h": 37,
+        "count": 960,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.947
+    },
+    {
+      "native": "native-levels/blueberry/frame-04.png",
+      "file": "decor-assets/hd/5530553f613e17930f0ed8d7.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 1063,
+        "top": 0,
+        "width": 385,
+        "height": 374
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 31,
+        "w": 54,
+        "h": 49,
+        "count": 1780,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.973
+    },
+    {
+      "native": "native-levels/firepepper/frame-01.png",
+      "file": "decor-assets/hd/0ce173ee978928bf2f9bb390.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 0,
+        "top": 374,
+        "width": 329,
+        "height": 320
+      },
+      "logicalBounds": {
+        "x": 26,
+        "y": 69,
+        "w": 12,
+        "h": 11,
+        "count": 90,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.947
+    },
+    {
+      "native": "native-levels/firepepper/frame-02.png",
+      "file": "decor-assets/hd/594fd0faa846d8087f3a66d1.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 329,
+        "top": 374,
+        "width": 374,
+        "height": 320
+      },
+      "logicalBounds": {
+        "x": 16,
+        "y": 57,
+        "w": 32,
+        "h": 23,
+        "count": 291,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.942
+    },
+    {
+      "native": "native-levels/firepepper/frame-03.png",
+      "file": "decor-assets/hd/a6531e9a4e6886b773b2b531.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 703,
+        "top": 374,
+        "width": 360,
+        "height": 320
+      },
+      "logicalBounds": {
+        "x": 8,
+        "y": 28,
+        "w": 48,
+        "h": 52,
+        "count": 1235,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.957
+    },
+    {
+      "native": "native-levels/firepepper/frame-04.png",
+      "file": "decor-assets/hd/8a9e0b4d3bde858d35d918d6.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 1063,
+        "top": 374,
+        "width": 385,
+        "height": 320
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 25,
+        "w": 54,
+        "h": 55,
+        "count": 1702,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.95
+    },
+    {
+      "native": "native-levels/silverkelp/frame-01.png",
+      "file": "decor-assets/hd/d4b609b3d9cd4889fa19e984.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 0,
+        "top": 694,
+        "width": 329,
+        "height": 392
+      },
+      "logicalBounds": {
+        "x": 27,
+        "y": 69,
+        "w": 11,
+        "h": 11,
+        "count": 91,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.91
+    },
+    {
+      "native": "native-levels/silverkelp/frame-02.png",
+      "file": "decor-assets/hd/a705c433462696f7ff77517e.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 329,
+        "top": 694,
+        "width": 374,
+        "height": 392
+      },
+      "logicalBounds": {
+        "x": 13,
+        "y": 45,
+        "w": 38,
+        "h": 35,
+        "count": 726,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "native-levels/silverkelp/frame-03.png",
+      "file": "decor-assets/hd/19572aaa9a1c3e8b51a34f24.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 703,
+        "top": 694,
+        "width": 360,
+        "height": 392
+      },
+      "logicalBounds": {
+        "x": 12,
+        "y": 25,
+        "w": 40,
+        "h": 55,
+        "count": 1127,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.952
+    },
+    {
+      "native": "native-levels/silverkelp/frame-04.png",
+      "file": "decor-assets/hd/489e7c556f9c37076a4001cb.webp",
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 1063,
+        "top": 694,
+        "width": 385,
+        "height": 392
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 14,
+        "w": 53,
+        "h": 66,
+        "count": 2016,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.972
+    },
+    {
+      "native": "native-levels/moonherb/frame-01.png",
+      "file": "decor-assets/hd/19f0ee3c7025f7494b39954d.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 340,
+        "height": 368
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 68,
+        "w": 14,
+        "h": 12,
+        "count": 120,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "native-levels/moonherb/frame-02.png",
+      "file": "decor-assets/hd/f57b9944e71e7b8dd03e93cb.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 340,
+        "top": 0,
+        "width": 343,
+        "height": 368
+      },
+      "logicalBounds": {
+        "x": 18,
+        "y": 53,
+        "w": 28,
+        "h": 27,
+        "count": 356,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.941
+    },
+    {
+      "native": "native-levels/moonherb/frame-03.png",
+      "file": "decor-assets/hd/d9b61a680cfaa44a56e79634.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 683,
+        "top": 0,
+        "width": 390,
+        "height": 368
+      },
+      "logicalBounds": {
+        "x": 10,
+        "y": 33,
+        "w": 43,
+        "h": 47,
+        "count": 925,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.92
+    },
+    {
+      "native": "native-levels/moonherb/frame-04.png",
+      "file": "decor-assets/hd/945211873c932d5ad06c66c9.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 1073,
+        "top": 0,
+        "width": 375,
+        "height": 368
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 19,
+        "w": 54,
+        "h": 61,
+        "count": 1705,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "native-levels/valerian/frame-01.png",
+      "file": "decor-assets/hd/0c3dc0e58348bc3fecf13c07.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 0,
+        "top": 368,
+        "width": 340,
+        "height": 335
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 68,
+        "w": 13,
+        "h": 12,
+        "count": 113,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.942
+    },
+    {
+      "native": "native-levels/valerian/frame-02.png",
+      "file": "decor-assets/hd/b08ad9ba7b831021ed9f1485.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 340,
+        "top": 368,
+        "width": 343,
+        "height": 335
+      },
+      "logicalBounds": {
+        "x": 17,
+        "y": 56,
+        "w": 31,
+        "h": 24,
+        "count": 345,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.907
+    },
+    {
+      "native": "native-levels/valerian/frame-03.png",
+      "file": "decor-assets/hd/c992387b19e9aa0b49d573cd.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 683,
+        "top": 368,
+        "width": 390,
+        "height": 335
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 27,
+        "w": 54,
+        "h": 53,
+        "count": 1246,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.943
+    },
+    {
+      "native": "native-levels/valerian/frame-04.png",
+      "file": "decor-assets/hd/1064dbd831cd282645efb154.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 1073,
+        "top": 368,
+        "width": 375,
+        "height": 335
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 23,
+        "w": 54,
+        "h": 57,
+        "count": 1772,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "native-levels/starbean/frame-01.png",
+      "file": "decor-assets/hd/8b09f155f97beb7e0f5d56df.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 0,
+        "top": 703,
+        "width": 340,
+        "height": 383
+      },
+      "logicalBounds": {
+        "x": 24,
+        "y": 67,
+        "w": 17,
+        "h": 13,
+        "count": 159,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.958
+    },
+    {
+      "native": "native-levels/starbean/frame-02.png",
+      "file": "decor-assets/hd/b16d3cbf72807dfea5db811d.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 340,
+        "top": 703,
+        "width": 343,
+        "height": 383
+      },
+      "logicalBounds": {
+        "x": 17,
+        "y": 58,
+        "w": 30,
+        "h": 22,
+        "count": 339,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.939
+    },
+    {
+      "native": "native-levels/starbean/frame-03.png",
+      "file": "decor-assets/hd/35da0e9e1a082f9e2a6662e0.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 683,
+        "top": 703,
+        "width": 390,
+        "height": 383
+      },
+      "logicalBounds": {
+        "x": 12,
+        "y": 28,
+        "w": 39,
+        "h": 52,
+        "count": 1142,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.951
+    },
+    {
+      "native": "native-levels/starbean/frame-04.png",
+      "file": "decor-assets/hd/ee1a0945aae431351c798026.webp",
+      "master": "masters-levels/crops-e.png",
+      "masterSha256": "7baa61fcb39c8ae51006e408b0cea3ab08d199caa54a2e50e73d25a9422fe90a",
+      "sourceRect": {
+        "left": 1073,
+        "top": 703,
+        "width": 375,
+        "height": 383
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 20,
+        "w": 54,
+        "h": 60,
+        "count": 1917,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.964
+    },
+    {
+      "native": "native-levels/ambermelon/frame-01.png",
+      "file": "decor-assets/hd/b194dd5807898425f44e653c.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 323,
+        "height": 372
+      },
+      "logicalBounds": {
+        "x": 26,
+        "y": 71,
+        "w": 12,
+        "h": 9,
+        "count": 78,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.951
+    },
+    {
+      "native": "native-levels/ambermelon/frame-02.png",
+      "file": "decor-assets/hd/e7a076424bec7fcbee24384e.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 323,
+        "top": 0,
+        "width": 340,
+        "height": 372
+      },
+      "logicalBounds": {
+        "x": 20,
+        "y": 63,
+        "w": 23,
+        "h": 17,
+        "count": 186,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.948
+    },
+    {
+      "native": "native-levels/ambermelon/frame-03.png",
+      "file": "decor-assets/hd/b679c6ddea1e4ad455b3c85b.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 663,
+        "top": 0,
+        "width": 370,
+        "height": 372
+      },
+      "logicalBounds": {
+        "x": 11,
+        "y": 50,
+        "w": 43,
+        "h": 30,
+        "count": 764,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.942
+    },
+    {
+      "native": "native-levels/ambermelon/frame-04.png",
+      "file": "decor-assets/hd/3944a1f03256f03285474bd1.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 1033,
+        "top": 0,
+        "width": 415,
+        "height": 372
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 39,
+        "w": 54,
+        "h": 41,
+        "count": 1404,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.964
+    },
+    {
+      "native": "native-levels/mistmushroom/frame-01.png",
+      "file": "decor-assets/hd/9aeb6a0ee71d02ee7fa59830.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 0,
+        "top": 372,
+        "width": 323,
+        "height": 337
+      },
+      "logicalBounds": {
+        "x": 26,
+        "y": 69,
+        "w": 12,
+        "h": 11,
+        "count": 94,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.949
+    },
+    {
+      "native": "native-levels/mistmushroom/frame-02.png",
+      "file": "decor-assets/hd/14ae85b83d0ff0a1e03f1792.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 323,
+        "top": 372,
+        "width": 340,
+        "height": 337
+      },
+      "logicalBounds": {
+        "x": 21,
+        "y": 60,
+        "w": 23,
+        "h": 20,
+        "count": 255,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "native-levels/mistmushroom/frame-03.png",
+      "file": "decor-assets/hd/56012a8a7be1926e44320fa0.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 663,
+        "top": 372,
+        "width": 370,
+        "height": 337
+      },
+      "logicalBounds": {
+        "x": 14,
+        "y": 44,
+        "w": 37,
+        "h": 36,
+        "count": 896,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.957
+    },
+    {
+      "native": "native-levels/mistmushroom/frame-04.png",
+      "file": "decor-assets/hd/af2fb2847c96706dd2eeded2.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 1033,
+        "top": 372,
+        "width": 415,
+        "height": 337
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 31,
+        "w": 54,
+        "h": 49,
+        "count": 1887,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.978
+    },
+    {
+      "native": "native-levels/sunpetal/frame-01.png",
+      "file": "decor-assets/hd/c98ab5abfa6c30b63d6b1aff.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 0,
+        "top": 709,
+        "width": 323,
+        "height": 377
+      },
+      "logicalBounds": {
+        "x": 26,
+        "y": 70,
+        "w": 12,
+        "h": 10,
+        "count": 82,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.964
+    },
+    {
+      "native": "native-levels/sunpetal/frame-02.png",
+      "file": "decor-assets/hd/e58efea9610bc42bcf9ae6a2.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 323,
+        "top": 709,
+        "width": 340,
+        "height": 377
+      },
+      "logicalBounds": {
+        "x": 18,
+        "y": 62,
+        "w": 29,
+        "h": 18,
+        "count": 229,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.927
+    },
+    {
+      "native": "native-levels/sunpetal/frame-03.png",
+      "file": "decor-assets/hd/10982e5790511c89a5569748.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 663,
+        "top": 709,
+        "width": 370,
+        "height": 377
+      },
+      "logicalBounds": {
+        "x": 11,
+        "y": 44,
+        "w": 42,
+        "h": 36,
+        "count": 732,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.949
+    },
+    {
+      "native": "native-levels/sunpetal/frame-04.png",
+      "file": "decor-assets/hd/838524608362a63fbd9b10ed.webp",
+      "master": "masters-levels/crops-f.png",
+      "masterSha256": "c556ccd7b51bb1d7f929959ac6821b2e6679e8689e0fc1efe7a10a6928c894d0",
+      "sourceRect": {
+        "left": 1033,
+        "top": 709,
+        "width": 415,
+        "height": 377
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 31,
+        "w": 54,
+        "h": 49,
+        "count": 1662,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.98
+    },
+    {
+      "native": "native-levels/fluxweed/frame-01.png",
+      "file": "decor-assets/hd/e74e3647176cc163ac6b38ef.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 325,
+        "height": 422
+      },
+      "logicalBounds": {
+        "x": 26,
+        "y": 70,
+        "w": 12,
+        "h": 10,
+        "count": 90,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.926
+    },
+    {
+      "native": "native-levels/fluxweed/frame-02.png",
+      "file": "decor-assets/hd/4625c5187096ae6ccacedbff.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 325,
+        "top": 0,
+        "width": 358,
+        "height": 422
+      },
+      "logicalBounds": {
+        "x": 18,
+        "y": 50,
+        "w": 28,
+        "h": 30,
+        "count": 398,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.95
+    },
+    {
+      "native": "native-levels/fluxweed/frame-03.png",
+      "file": "decor-assets/hd/f2accff5a938cf2d5a41b90a.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 683,
+        "top": 0,
+        "width": 360,
+        "height": 422
+      },
+      "logicalBounds": {
+        "x": 10,
+        "y": 32,
+        "w": 44,
+        "h": 48,
+        "count": 1006,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.936
+    },
+    {
+      "native": "native-levels/fluxweed/frame-04.png",
+      "file": "decor-assets/hd/cc6f5d7baac2c6e44ae9d8d9.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 1043,
+        "top": 0,
+        "width": 405,
+        "height": 422
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 23,
+        "w": 54,
+        "h": 57,
+        "count": 1770,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.976
+    },
+    {
+      "native": "native-levels/bubotuber/frame-01.png",
+      "file": "decor-assets/hd/79bc92837c6a99a9b315216b.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 0,
+        "top": 422,
+        "width": 325,
+        "height": 328
+      },
+      "logicalBounds": {
+        "x": 24,
+        "y": 69,
+        "w": 15,
+        "h": 11,
+        "count": 128,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.932
+    },
+    {
+      "native": "native-levels/bubotuber/frame-02.png",
+      "file": "decor-assets/hd/7c7cba70a69db0c554be4d0e.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 325,
+        "top": 422,
+        "width": 358,
+        "height": 328
+      },
+      "logicalBounds": {
+        "x": 21,
+        "y": 50,
+        "w": 23,
+        "h": 30,
+        "count": 419,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.979
+    },
+    {
+      "native": "native-levels/bubotuber/frame-03.png",
+      "file": "decor-assets/hd/cf617d5daff3463a64ab985b.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 683,
+        "top": 422,
+        "width": 360,
+        "height": 328
+      },
+      "logicalBounds": {
+        "x": 12,
+        "y": 34,
+        "w": 41,
+        "h": 46,
+        "count": 1081,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.961
+    },
+    {
+      "native": "native-levels/bubotuber/frame-04.png",
+      "file": "decor-assets/hd/040480291642e810ab077deb.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 1043,
+        "top": 422,
+        "width": 405,
+        "height": 328
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 26,
+        "w": 54,
+        "h": 54,
+        "count": 1763,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.974
+    },
+    {
+      "native": "native-levels/knotgrass/frame-01.png",
+      "file": "decor-assets/hd/cf9d974400f6a4c71b571f8c.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 0,
+        "top": 750,
+        "width": 325,
+        "height": 336
+      },
+      "logicalBounds": {
+        "x": 28,
+        "y": 72,
+        "w": 8,
+        "h": 8,
+        "count": 52,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "native-levels/knotgrass/frame-02.png",
+      "file": "decor-assets/hd/e5c3882924afd76480953096.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 325,
+        "top": 750,
+        "width": 358,
+        "height": 336
+      },
+      "logicalBounds": {
+        "x": 17,
+        "y": 59,
+        "w": 30,
+        "h": 21,
+        "count": 208,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.936
+    },
+    {
+      "native": "native-levels/knotgrass/frame-03.png",
+      "file": "decor-assets/hd/885236e772a00fc423e5ee82.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 683,
+        "top": 750,
+        "width": 360,
+        "height": 336
+      },
+      "logicalBounds": {
+        "x": 11,
+        "y": 51,
+        "w": 42,
+        "h": 29,
+        "count": 587,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.926
+    },
+    {
+      "native": "native-levels/knotgrass/frame-04.png",
+      "file": "decor-assets/hd/2704f4e350feb5ff116b9e4e.webp",
+      "master": "masters-levels/crops-g.png",
+      "masterSha256": "78b6614667be94db8aaa1ca25ba39489ba527a7b158ce2e9d3b66a73941303ca",
+      "sourceRect": {
+        "left": 1043,
+        "top": 750,
+        "width": 405,
+        "height": 336
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 43,
+        "w": 54,
+        "h": 37,
+        "count": 1121,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.944
+    },
+    {
+      "native": "native-levels/shrivelfig/frame-01.png",
+      "file": "decor-assets/hd/f1969c003a745906ec459e2d.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 322,
+        "height": 409
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 66,
+        "w": 14,
+        "h": 14,
+        "count": 140,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.959
+    },
+    {
+      "native": "native-levels/shrivelfig/frame-02.png",
+      "file": "decor-assets/hd/c514d697a6a012e7aad5a561.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 322,
+        "top": 0,
+        "width": 358,
+        "height": 409
+      },
+      "logicalBounds": {
+        "x": 14,
+        "y": 53,
+        "w": 35,
+        "h": 27,
+        "count": 474,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.944
+    },
+    {
+      "native": "native-levels/shrivelfig/frame-03.png",
+      "file": "decor-assets/hd/18f83b4bff1721535b044019.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 680,
+        "top": 0,
+        "width": 373,
+        "height": 409
+      },
+      "logicalBounds": {
+        "x": 7,
+        "y": 38,
+        "w": 49,
+        "h": 42,
+        "count": 1046,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.947
+    },
+    {
+      "native": "native-levels/shrivelfig/frame-04.png",
+      "file": "decor-assets/hd/8ee89b89a25408ea666e6d18.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 1053,
+        "top": 0,
+        "width": 395,
+        "height": 409
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 26,
+        "w": 54,
+        "h": 54,
+        "count": 1892,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.961
+    },
+    {
+      "native": "native-levels/gillyweed/frame-01.png",
+      "file": "decor-assets/hd/cbfe8c702946233421a5036f.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 0,
+        "top": 409,
+        "width": 322,
+        "height": 327
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 69,
+        "w": 13,
+        "h": 11,
+        "count": 115,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.923
+    },
+    {
+      "native": "native-levels/gillyweed/frame-02.png",
+      "file": "decor-assets/hd/f68690f18c6368c1c5d8e6f8.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 322,
+        "top": 409,
+        "width": 358,
+        "height": 327
+      },
+      "logicalBounds": {
+        "x": 16,
+        "y": 47,
+        "w": 32,
+        "h": 33,
+        "count": 457,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.942
+    },
+    {
+      "native": "native-levels/gillyweed/frame-03.png",
+      "file": "decor-assets/hd/e97ad12a19c6bad4d01cf8c9.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 680,
+        "top": 409,
+        "width": 373,
+        "height": 327
+      },
+      "logicalBounds": {
+        "x": 10,
+        "y": 38,
+        "w": 44,
+        "h": 42,
+        "count": 1078,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "native-levels/gillyweed/frame-04.png",
+      "file": "decor-assets/hd/4e283a6ce65c13761601623b.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 1053,
+        "top": 409,
+        "width": 395,
+        "height": 327
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 33,
+        "w": 54,
+        "h": 47,
+        "count": 1764,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "native-levels/mimbulus/frame-01.png",
+      "file": "decor-assets/hd/75fafa1c8543b1a59b8ceb39.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 0,
+        "top": 736,
+        "width": 322,
+        "height": 350
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 67,
+        "w": 14,
+        "h": 13,
+        "count": 143,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.979
+    },
+    {
+      "native": "native-levels/mimbulus/frame-02.png",
+      "file": "decor-assets/hd/8bbc84192253c14f9b62337d.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 322,
+        "top": 736,
+        "width": 358,
+        "height": 350
+      },
+      "logicalBounds": {
+        "x": 18,
+        "y": 53,
+        "w": 27,
+        "h": 27,
+        "count": 464,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.95
+    },
+    {
+      "native": "native-levels/mimbulus/frame-03.png",
+      "file": "decor-assets/hd/f6632b1d7428eb921a3d4279.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 680,
+        "top": 736,
+        "width": 373,
+        "height": 350
+      },
+      "logicalBounds": {
+        "x": 11,
+        "y": 44,
+        "w": 42,
+        "h": 36,
+        "count": 1071,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.975
+    },
+    {
+      "native": "native-levels/mimbulus/frame-04.png",
+      "file": "decor-assets/hd/cae8e0200f064bfd1707f14b.webp",
+      "master": "masters-levels/crops-h.png",
+      "masterSha256": "c0e0a3ff21494dc11180bf917b870daf50f5617589903355406f7259d9f95543",
+      "sourceRect": {
+        "left": 1053,
+        "top": 736,
+        "width": 395,
+        "height": 350
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 33,
+        "w": 54,
+        "h": 47,
+        "count": 1735,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.976
+    },
+    {
+      "native": "native-levels/flitterbloom/frame-01.png",
+      "file": "decor-assets/hd/94412f056aa1d6a5949a50ae.webp",
+      "master": "masters-levels/crops-i.png",
+      "masterSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 349,
+        "height": 432
+      },
+      "logicalBounds": {
+        "x": 21,
+        "y": 60,
+        "w": 23,
+        "h": 20,
+        "count": 260,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.941
+    },
+    {
+      "native": "native-levels/flitterbloom/frame-02.png",
+      "file": "decor-assets/hd/4223b7ee82b781ab11d0021e.webp",
+      "master": "masters-levels/crops-i.png",
+      "masterSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
+      "sourceRect": {
+        "left": 349,
+        "top": 0,
+        "width": 344,
+        "height": 432
+      },
+      "logicalBounds": {
+        "x": 18,
+        "y": 47,
+        "w": 28,
+        "h": 33,
+        "count": 383,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.932
+    },
+    {
+      "native": "native-levels/flitterbloom/frame-03.png",
+      "file": "decor-assets/hd/e872b24b7a76eba1355a0e75.webp",
+      "master": "masters-levels/crops-i.png",
+      "masterSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
+      "sourceRect": {
+        "left": 693,
+        "top": 0,
+        "width": 367,
+        "height": 432
+      },
+      "logicalBounds": {
+        "x": 12,
+        "y": 32,
+        "w": 39,
+        "h": 48,
+        "count": 903,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.95
+    },
+    {
+      "native": "native-levels/flitterbloom/frame-04.png",
+      "file": "decor-assets/hd/ce3e116883997eea90cee34e.webp",
+      "master": "masters-levels/crops-i.png",
+      "masterSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
+      "sourceRect": {
+        "left": 1060,
+        "top": 0,
+        "width": 388,
+        "height": 432
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 14,
+        "w": 54,
+        "h": 66,
+        "count": 1930,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.94
+    },
+    {
+      "native": "native-levels/devilssnare/frame-01.png",
+      "file": "decor-assets/hd/8624131396df4956ee8925d9.webp",
+      "master": "masters-levels/crops-i.png",
+      "masterSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
+      "sourceRect": {
+        "left": 0,
+        "top": 432,
+        "width": 349,
+        "height": 418
+      },
+      "logicalBounds": {
+        "x": 19,
+        "y": 57,
+        "w": 26,
+        "h": 23,
+        "count": 342,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.958
+    },
+    {
+      "native": "native-levels/devilssnare/frame-02.png",
+      "file": "decor-assets/hd/1fe0b6c9f20d75c9b18f1678.webp",
+      "master": "masters-levels/crops-i.png",
+      "masterSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
+      "sourceRect": {
+        "left": 349,
+        "top": 432,
+        "width": 344,
+        "height": 418
+      },
+      "logicalBounds": {
+        "x": 16,
+        "y": 43,
+        "w": 32,
+        "h": 37,
+        "count": 516,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.948
+    },
+    {
+      "native": "native-levels/devilssnare/frame-03.png",
+      "file": "decor-assets/hd/257354e0627a003ffd944a09.webp",
+      "master": "masters-levels/crops-i.png",
+      "masterSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
+      "sourceRect": {
+        "left": 693,
+        "top": 432,
+        "width": 367,
+        "height": 418
+      },
+      "logicalBounds": {
+        "x": 9,
+        "y": 26,
+        "w": 46,
+        "h": 54,
+        "count": 1348,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.966
+    },
+    {
+      "native": "native-levels/devilssnare/frame-04.png",
+      "file": "decor-assets/hd/e8b6c2c42e5c2cd29eb2a151.webp",
+      "master": "masters-levels/crops-i.png",
+      "masterSha256": "3848b70175b1095e8efee58525d2b2d9a7176d3cb5d7c23a84d2cbe89d3d646e",
+      "sourceRect": {
+        "left": 1060,
+        "top": 432,
+        "width": 388,
+        "height": 418
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 20,
+        "w": 54,
+        "h": 60,
+        "count": 2041,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.966
+    },
+    {
+      "native": "native-levels/mooncalf/frame-01.png",
+      "file": "decor-assets/hd/bf2d4d192bd247c868367542.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 358,
+        "height": 410
+      },
+      "logicalBounds": {
+        "x": 30,
+        "y": 77,
+        "w": 36,
+        "h": 35,
+        "count": 691,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.969
+    },
+    {
+      "native": "native-levels/mooncalf/frame-02.png",
+      "file": "decor-assets/hd/74583908c599aa17501288eb.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 358,
+        "top": 0,
+        "width": 354,
+        "height": 410
+      },
+      "logicalBounds": {
+        "x": 24,
+        "y": 60,
+        "w": 47,
+        "h": 52,
+        "count": 1150,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.974
+    },
+    {
+      "native": "native-levels/mooncalf/frame-03.png",
+      "file": "decor-assets/hd/187fe7d1f765e8769bf9198d.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 712,
+        "top": 0,
+        "width": 352,
+        "height": 410
+      },
+      "logicalBounds": {
+        "x": 19,
+        "y": 40,
+        "w": 58,
+        "h": 72,
+        "count": 1964,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "native-levels/mooncalf/frame-04.png",
+      "file": "decor-assets/hd/1c91a86d035d44327e5c5bd9.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 1064,
+        "top": 0,
+        "width": 384,
+        "height": 410
+      },
+      "logicalBounds": {
+        "x": 15,
+        "y": 24,
+        "w": 65,
+        "h": 88,
+        "count": 2739,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.979
+    },
+    {
+      "native": "native-levels/kneazle/frame-01.png",
+      "file": "decor-assets/hd/34002b76c9c60bb0f5566f86.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 0,
+        "top": 410,
+        "width": 358,
+        "height": 341
+      },
+      "logicalBounds": {
+        "x": 31,
+        "y": 48,
+        "w": 35,
+        "h": 33,
+        "count": 624,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.93
+    },
+    {
+      "native": "native-levels/kneazle/frame-02.png",
+      "file": "decor-assets/hd/b3b06bf7015da2014d5a65e8.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 358,
+        "top": 410,
+        "width": 354,
+        "height": 341
+      },
+      "logicalBounds": {
+        "x": 24,
+        "y": 37,
+        "w": 47,
+        "h": 43,
+        "count": 1063,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.957
+    },
+    {
+      "native": "native-levels/kneazle/frame-03.png",
+      "file": "decor-assets/hd/3687f3f9a87050080acd8f89.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 712,
+        "top": 410,
+        "width": 352,
+        "height": 341
+      },
+      "logicalBounds": {
+        "x": 22,
+        "y": 25,
+        "w": 54,
+        "h": 55,
+        "count": 1585,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.922
+    },
+    {
+      "native": "native-levels/kneazle/frame-04.png",
+      "file": "decor-assets/hd/73c4212dcd3672845ffed817.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 1064,
+        "top": 410,
+        "width": 384,
+        "height": 341
+      },
+      "logicalBounds": {
+        "x": 17,
+        "y": 15,
+        "w": 63,
+        "h": 65,
+        "count": 2034,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.973
+    },
+    {
+      "native": "native-levels/diricawl/frame-01.png",
+      "file": "decor-assets/hd/004659646e6f55eda03c3273.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 0,
+        "top": 751,
+        "width": 358,
+        "height": 335
+      },
+      "logicalBounds": {
+        "x": 33,
+        "y": 51,
+        "w": 30,
+        "h": 29,
+        "count": 492,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.957
+    },
+    {
+      "native": "native-levels/diricawl/frame-02.png",
+      "file": "decor-assets/hd/0d14c499eb5fe6c0f50d3d04.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 358,
+        "top": 751,
+        "width": 354,
+        "height": 335
+      },
+      "logicalBounds": {
+        "x": 29,
+        "y": 39,
+        "w": 38,
+        "h": 41,
+        "count": 829,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "native-levels/diricawl/frame-03.png",
+      "file": "decor-assets/hd/f245c7520b4103f68de714cb.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 712,
+        "top": 751,
+        "width": 352,
+        "height": 335
+      },
+      "logicalBounds": {
+        "x": 24,
+        "y": 30,
+        "w": 48,
+        "h": 50,
+        "count": 1233,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.973
+    },
+    {
+      "native": "native-levels/diricawl/frame-04.png",
+      "file": "decor-assets/hd/8145d0fb774aa318734c0674.webp",
+      "master": "masters-levels/creatures-a.png",
+      "masterSha256": "4d28f680dda4a8b55a3792ae0228fef7ce271070c43b673c09e01f246983c18d",
+      "sourceRect": {
+        "left": 1064,
+        "top": 751,
+        "width": 384,
+        "height": 335
+      },
+      "logicalBounds": {
+        "x": 23,
+        "y": 22,
+        "w": 51,
+        "h": 58,
+        "count": 1586,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.971
+    },
+    {
+      "native": "native-levels/fwooper/frame-01.png",
+      "file": "decor-assets/hd/c92ad8d4fa1397cc0a00065c.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 361,
+        "height": 357
+      },
+      "logicalBounds": {
+        "x": 34,
+        "y": 54,
+        "w": 28,
+        "h": 26,
+        "count": 426,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.968
+    },
+    {
+      "native": "native-levels/fwooper/frame-02.png",
+      "file": "decor-assets/hd/ea4281400179d8943a889e26.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 361,
+        "top": 0,
+        "width": 343,
+        "height": 357
+      },
+      "logicalBounds": {
+        "x": 28,
+        "y": 41,
+        "w": 40,
+        "h": 39,
+        "count": 811,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.961
+    },
+    {
+      "native": "native-levels/fwooper/frame-03.png",
+      "file": "decor-assets/hd/6cf3c3d34b076f809c25ed02.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 704,
+        "top": 0,
+        "width": 355,
+        "height": 357
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 29,
+        "w": 45,
+        "h": 51,
+        "count": 1151,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.956
+    },
+    {
+      "native": "native-levels/fwooper/frame-04.png",
+      "file": "decor-assets/hd/8f9d0203ca4fb7311b743c8d.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 1059,
+        "top": 0,
+        "width": 389,
+        "height": 357
+      },
+      "logicalBounds": {
+        "x": 19,
+        "y": 20,
+        "w": 58,
+        "h": 60,
+        "count": 1771,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "native-levels/thestral/frame-01.png",
+      "file": "decor-assets/hd/8f10c5e7b5c85402fdc0e709.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 0,
+        "top": 357,
+        "width": 361,
+        "height": 356
+      },
+      "logicalBounds": {
+        "x": 56,
+        "y": 89,
+        "w": 48,
+        "h": 55,
+        "count": 1365,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.948
+    },
+    {
+      "native": "native-levels/thestral/frame-02.png",
+      "file": "decor-assets/hd/20cc1c40bb3a9e8bbd4b326a.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 361,
+        "top": 357,
+        "width": 343,
+        "height": 356
+      },
+      "logicalBounds": {
+        "x": 48,
+        "y": 66,
+        "w": 65,
+        "h": 78,
+        "count": 2660,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "native-levels/thestral/frame-03.png",
+      "file": "decor-assets/hd/4b5c499d48fe7eb591731add.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 704,
+        "top": 357,
+        "width": 355,
+        "height": 356
+      },
+      "logicalBounds": {
+        "x": 38,
+        "y": 50,
+        "w": 85,
+        "h": 94,
+        "count": 4022,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "native-levels/thestral/frame-04.png",
+      "file": "decor-assets/hd/7ae01e99a9d77020c7272425.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 1059,
+        "top": 357,
+        "width": 389,
+        "height": 356
+      },
+      "logicalBounds": {
+        "x": 30,
+        "y": 39,
+        "w": 101,
+        "h": 105,
+        "count": 5273,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.974
+    },
+    {
+      "native": "native-levels/unicorn/frame-01.png",
+      "file": "decor-assets/hd/9a8719f4f7b736f438df3f6d.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 0,
+        "top": 713,
+        "width": 361,
+        "height": 373
+      },
+      "logicalBounds": {
+        "x": 51,
+        "y": 92,
+        "w": 58,
+        "h": 52,
+        "count": 1547,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.963
+    },
+    {
+      "native": "native-levels/unicorn/frame-02.png",
+      "file": "decor-assets/hd/955ee7b4fc41e4195135ca9a.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 361,
+        "top": 713,
+        "width": 343,
+        "height": 373
+      },
+      "logicalBounds": {
+        "x": 41,
+        "y": 70,
+        "w": 77,
+        "h": 74,
+        "count": 2655,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "native-levels/unicorn/frame-03.png",
+      "file": "decor-assets/hd/e0d8760453d57a5f4c259669.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 704,
+        "top": 713,
+        "width": 355,
+        "height": 373
+      },
+      "logicalBounds": {
+        "x": 33,
+        "y": 55,
+        "w": 94,
+        "h": 89,
+        "count": 3924,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.973
+    },
+    {
+      "native": "native-levels/unicorn/frame-04.png",
+      "file": "decor-assets/hd/e37c585ff8784483c519e77e.webp",
+      "master": "masters-levels/creatures-b.png",
+      "masterSha256": "7d1f2f077632e51c0f3c42cb54940fdbcca76954047631a66bf572dac02bdfe2",
+      "sourceRect": {
+        "left": 1059,
+        "top": 713,
+        "width": 389,
+        "height": 373
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 39,
+        "w": 109,
+        "h": 105,
+        "count": 5341,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.978
+    },
+    {
+      "native": "native-care/mooncalf/frame-01.png",
+      "file": "decor-assets/hd/acb98cc291de3ceb19cdc582.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 393
+      },
+      "logicalBounds": {
+        "x": 15,
+        "y": 24,
+        "w": 66,
+        "h": 88,
+        "count": 2922,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.977
+    },
+    {
+      "native": "native-care/mooncalf/frame-02.png",
+      "file": "decor-assets/hd/df7560c73ba3ec2ff3e6caad.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 393
+      },
+      "logicalBounds": {
+        "x": 14,
+        "y": 24,
+        "w": 69,
+        "h": 88,
+        "count": 2966,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.975
+    },
+    {
+      "native": "native-care/mooncalf/frame-03.png",
+      "file": "decor-assets/hd/79e6e2c81747ee2ea2fc6700.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 393
+      },
+      "logicalBounds": {
+        "x": 9,
+        "y": 64,
+        "w": 79,
+        "h": 48,
+        "count": 2599,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.985
+    },
+    {
+      "native": "native-care/mooncalf/frame-04.png",
+      "file": "decor-assets/hd/fcba59fdd57acea7a6fd87eb.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 1086,
+        "top": 0,
+        "width": 362,
+        "height": 393
+      },
+      "logicalBounds": {
+        "x": 17,
+        "y": 23,
+        "w": 63,
+        "h": 89,
+        "count": 2914,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.985
+    },
+    {
+      "native": "native-care/kneazle/frame-01.png",
+      "file": "decor-assets/hd/c25fcae548b439ddc5705fc8.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 0,
+        "top": 393,
+        "width": 362,
+        "height": 321
+      },
+      "logicalBounds": {
+        "x": 14,
+        "y": 16,
+        "w": 68,
+        "h": 64,
+        "count": 2341,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.952
+    },
+    {
+      "native": "native-care/kneazle/frame-02.png",
+      "file": "decor-assets/hd/5608c8effaea9aa77bc8f55a.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 362,
+        "top": 393,
+        "width": 362,
+        "height": 321
+      },
+      "logicalBounds": {
+        "x": 16,
+        "y": 15,
+        "w": 65,
+        "h": 65,
+        "count": 2317,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.97
+    },
+    {
+      "native": "native-care/kneazle/frame-03.png",
+      "file": "decor-assets/hd/6ae028f19e6b1943d76ebd45.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 724,
+        "top": 393,
+        "width": 362,
+        "height": 321
+      },
+      "logicalBounds": {
+        "x": 15,
+        "y": 25,
+        "w": 66,
+        "h": 55,
+        "count": 1817,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.976
+    },
+    {
+      "native": "native-care/kneazle/frame-04.png",
+      "file": "decor-assets/hd/f6698b7845210a26183d6c8d.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 1086,
+        "top": 393,
+        "width": 362,
+        "height": 321
+      },
+      "logicalBounds": {
+        "x": 16,
+        "y": 14,
+        "w": 65,
+        "h": 66,
+        "count": 2288,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.973
+    },
+    {
+      "native": "native-care/diricawl/frame-01.png",
+      "file": "decor-assets/hd/17689659c34e94afb084e81c.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 0,
+        "top": 714,
+        "width": 362,
+        "height": 372
+      },
+      "logicalBounds": {
+        "x": 22,
+        "y": 22,
+        "w": 52,
+        "h": 58,
+        "count": 1669,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.972
+    },
+    {
+      "native": "native-care/diricawl/frame-02.png",
+      "file": "decor-assets/hd/f6aa9a3532bad9d151982ec4.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 362,
+        "top": 714,
+        "width": 362,
+        "height": 372
+      },
+      "logicalBounds": {
+        "x": 23,
+        "y": 22,
+        "w": 51,
+        "h": 58,
+        "count": 1672,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.977
+    },
+    {
+      "native": "native-care/diricawl/frame-03.png",
+      "file": "decor-assets/hd/eaa4c4524fc2457ae2f6e423.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 724,
+        "top": 714,
+        "width": 362,
+        "height": 372
+      },
+      "logicalBounds": {
+        "x": 21,
+        "y": 38,
+        "w": 54,
+        "h": 42,
+        "count": 1491,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.97
+    },
+    {
+      "native": "native-care/diricawl/frame-04.png",
+      "file": "decor-assets/hd/75fbef60d52107176f8eb7d1.webp",
+      "master": "masters-care/creatures-a-care.png",
+      "masterSha256": "b3a536ca81596715525573ca572f97a9adddce0beeb6f706faaef4b8b78e9094",
+      "sourceRect": {
+        "left": 1086,
+        "top": 714,
+        "width": 362,
+        "height": 372
+      },
+      "logicalBounds": {
+        "x": 24,
+        "y": 22,
+        "w": 49,
+        "h": 58,
+        "count": 1671,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.969
+    },
+    {
+      "native": "native-care/fwooper/frame-01.png",
+      "file": "decor-assets/hd/7adadc44fa845aac95251b1f.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 362,
+        "height": 337
+      },
+      "logicalBounds": {
+        "x": 18,
+        "y": 20,
+        "w": 60,
+        "h": 60,
+        "count": 1951,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "native-care/fwooper/frame-02.png",
+      "file": "decor-assets/hd/140e18c426b7158d1db910c0.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 362,
+        "top": 0,
+        "width": 362,
+        "height": 337
+      },
+      "logicalBounds": {
+        "x": 19,
+        "y": 21,
+        "w": 58,
+        "h": 59,
+        "count": 1892,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.965
+    },
+    {
+      "native": "native-care/fwooper/frame-03.png",
+      "file": "decor-assets/hd/43a1fddc4f91d403451bbc95.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 724,
+        "top": 0,
+        "width": 362,
+        "height": 337
+      },
+      "logicalBounds": {
+        "x": 15,
+        "y": 42,
+        "w": 66,
+        "h": 38,
+        "count": 1591,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.941
+    },
+    {
+      "native": "native-care/fwooper/frame-04.png",
+      "file": "decor-assets/hd/d97184313a30096ae420fe94.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 1086,
+        "top": 0,
+        "width": 362,
+        "height": 337
+      },
+      "logicalBounds": {
+        "x": 20,
+        "y": 20,
+        "w": 56,
+        "h": 60,
+        "count": 1950,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "native-care/thestral/frame-01.png",
+      "file": "decor-assets/hd/27ce88c10fe85d010c0418ef.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 0,
+        "top": 337,
+        "width": 362,
+        "height": 360
+      },
+      "logicalBounds": {
+        "x": 31,
+        "y": 39,
+        "w": 99,
+        "h": 105,
+        "count": 5708,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.968
+    },
+    {
+      "native": "native-care/thestral/frame-02.png",
+      "file": "decor-assets/hd/a2bd2a6414e4e97598bea191.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 362,
+        "top": 337,
+        "width": 362,
+        "height": 360
+      },
+      "logicalBounds": {
+        "x": 32,
+        "y": 44,
+        "w": 97,
+        "h": 100,
+        "count": 5603,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.98
+    },
+    {
+      "native": "native-care/thestral/frame-03.png",
+      "file": "decor-assets/hd/d1c937a011bfef926bf38dfd.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 724,
+        "top": 337,
+        "width": 362,
+        "height": 360
+      },
+      "logicalBounds": {
+        "x": 29,
+        "y": 53,
+        "w": 103,
+        "h": 91,
+        "count": 5606,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.98
+    },
+    {
+      "native": "native-care/thestral/frame-04.png",
+      "file": "decor-assets/hd/79327913532cc4dc23daa2f1.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 1086,
+        "top": 337,
+        "width": 362,
+        "height": 360
+      },
+      "logicalBounds": {
+        "x": 31,
+        "y": 37,
+        "w": 99,
+        "h": 107,
+        "count": 5559,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.97
+    },
+    {
+      "native": "native-care/unicorn/frame-01.png",
+      "file": "decor-assets/hd/9ed6177350423d3eb8cd3c13.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 0,
+        "top": 697,
+        "width": 362,
+        "height": 389
+      },
+      "logicalBounds": {
+        "x": 25,
+        "y": 39,
+        "w": 110,
+        "h": 105,
+        "count": 5838,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.98
+    },
+    {
+      "native": "native-care/unicorn/frame-02.png",
+      "file": "decor-assets/hd/76e0a633de94bd002d0f4803.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 362,
+        "top": 697,
+        "width": 362,
+        "height": 389
+      },
+      "logicalBounds": {
+        "x": 24,
+        "y": 39,
+        "w": 112,
+        "h": 105,
+        "count": 5788,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.982
+    },
+    {
+      "native": "native-care/unicorn/frame-03.png",
+      "file": "decor-assets/hd/a3e4fc1df2053595e856d823.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 724,
+        "top": 697,
+        "width": 362,
+        "height": 389
+      },
+      "logicalBounds": {
+        "x": 21,
+        "y": 72,
+        "w": 118,
+        "h": 72,
+        "count": 5493,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.981
+    },
+    {
+      "native": "native-care/unicorn/frame-04.png",
+      "file": "decor-assets/hd/959471a5cca6c1e7aa7b8a9e.webp",
+      "master": "masters-care/creatures-b-care.png",
+      "masterSha256": "eae737d39e473342ea25b60c6226e1a94fe9e1c1bc2a108c527ea40d1b300c0d",
+      "sourceRect": {
+        "left": 1086,
+        "top": 697,
+        "width": 362,
+        "height": 389
+      },
+      "logicalBounds": {
+        "x": 29,
+        "y": 37,
+        "w": 102,
+        "h": 107,
+        "count": 5600,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.975
     },
     {
       "native": "decor-assets/native/decor_pumpkin_lantern.png",

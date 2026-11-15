@@ -88,6 +88,10 @@ const whole=async(master,frame)=>{const m=await sharp(path.join(root,master)).me
 // Legacy sheets (build-native.mjs): motion-data.json records each frame's master cell and native ink bounds.
 const motion=await read('motion-data.json');
 for(const item of motion.items){if(sha(await fs.readFile(path.join(root,item.source)))!==item.sourceSha256)throw Error('Master changed '+item.source);for(const frame of item.frames)await recover(item.source,frame);}
+// Growth frames (build-level-assets.mjs, masters-levels/*) and creature care frames (build-care-assets.mjs, masters-care/*):
+// each frame records its master cell and native ink bounds; both builders re-run reproduce all 152 shipped frames pixel-exactly (15/11).
+for(const [name,master]of [['level-assets.json',i=>[i.source,i.sourceSha256]],['care-assets-manifest.json',i=>[i.atlas.file,i.atlas.sourceSha256]]])for(const item of (await read(name)).items){
+ const [file,expected]=master(item);if(sha(await fs.readFile(path.join(root,file)))!==expected)throw Error('Master changed '+file);for(const frame of item.frames)await recover(file,frame);}
 // Six base decorations (generate-decor-assets.mjs): one authored pose per master and view, plus four animated variants each.
 for(const id of ['pumpkin_lantern','broom_rack','cauldron','mandrake_planter','floating_candles','vine_arch'])for(const view of ['','_right']){
  const name=`decor_${id}${view}`,baseFile=`decor-assets/native/${name}.png`,master=`decor-assets/masters/${name}.png`;
