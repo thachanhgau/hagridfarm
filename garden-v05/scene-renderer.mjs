@@ -902,13 +902,16 @@ export async function createGarden(canvas, options = {}) {
   }));
   const forestDrawOrder = forest.placements.slice().sort((left,right)=>left.y-right.y||left.x-right.x);
 
-  // Reuse the approved tree pixels with a cool forest tint; sprites stay immutable.
+  // Reuse the approved tree pixels with a cool forest tint; sprites stay immutable. The copy keeps its source's art tag
+  // (+ the tint) so the dense ground layer swaps it for the HD tree with the same tint.
+  function paintForest(copy,source,tint){
+    const brush=copy.getContext('2d');brush.clearRect(0,0,copy.width,copy.height);brush.imageSmoothingEnabled=false;if(!source)return copy;brush.drawImage(source,0,0);
+    if(tint){brush.globalCompositeOperation='source-atop';brush.fillStyle=tint;brush.fillRect(0,0,copy.width,copy.height);brush.globalCompositeOperation='source-over';}
+    const tag=source[ART_SOURCE];return tag?tagArt(copy,tag.file,{...tag,...(tint?{tint}:{})}):copy;
+  }
   const forestImages=new Map(FOREST_ASSETS.map(asset=>{
-    const source=imageFor(asset.file),size=forestAssetSizes[asset.id];
-    const copy=makeCanvas(canvas,size.width,size.height),ctx=copy.getContext('2d');
-    ctx.imageSmoothingEnabled=false;if(source)ctx.drawImage(source,0,0);
-    ctx.globalCompositeOperation='source-atop';ctx.fillStyle='rgba(9,29,31,.24)';ctx.fillRect(0,0,size.width,size.height);ctx.globalCompositeOperation='source-over';
-    return [asset.id,copy];
+    const size=forestAssetSizes[asset.id];
+    return [asset.id,paintForest(makeCanvas(canvas,size.width,size.height),imageFor(asset.file),'rgba(9,29,31,.24)')];
   }));
   // Portrait screens can see beyond the world canvas. Extend the forest there,
   // wrapping trees across the tile edges so the backdrop has no cut canopies.
@@ -963,9 +966,8 @@ export async function createGarden(canvas, options = {}) {
     activeWeather=weather;activeSnowDepth=depth;winterArt=art;seasonalImages.clear();terrainCaches.clear();
     // Bound memory to the current season. Never retain four world-size caches.
     for(const asset of FOREST_ASSETS){
-      const source=winterFile(asset.file)?imageFor(winterFile(asset.file)):seasonalImage(asset.file,'tree'),copy=forestImages.get(asset.id),brush=copy.getContext('2d');
-      brush.clearRect(0,0,copy.width,copy.height);brush.drawImage(source,0,0);
-      if(weather==='clear'){brush.globalCompositeOperation='source-atop';brush.fillStyle='rgba(9,29,31,.24)';brush.fillRect(0,0,copy.width,copy.height);brush.globalCompositeOperation='source-over';}
+      const source=winterFile(asset.file)?imageFor(winterFile(asset.file)):seasonalImage(asset.file,'tree');
+      paintForest(forestImages.get(asset.id),source,weather==='clear'?'rgba(9,29,31,.24)':null);
     }
     for(const tree of wallpaper)tree.img=forestImages.get(tree.id);
     back.clearRect(0,0,map.width,map.height);back.drawImage(scenicBackdrop,0,0);

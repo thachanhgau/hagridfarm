@@ -49,3 +49,13 @@ test('the ground layer follows the surface density and swaps its art for HD off 
  layer.drawImage(sign,0,0);assert.ok(calls.at(-1)[0] instanceof FakeImage);
  surface.setEnabled(false);assert.equal(surface.layer(),1);
 });
+test('a tinted copy (forest trees) gets the same tint painted over its HD image',async()=>{
+ class FakeImage{width=200;height=200;set src(value){queueMicrotask(()=>this.onload());}}
+ const fills=[],copy={width:0,height:0,getContext:()=>({drawImage(){},fillRect:(...r)=>fills.push([copy.fillStyle,copy.mode,...r]),set fillStyle(v){copy.fillStyle=v;},set globalCompositeOperation(v){copy.mode??=v;}})};
+ const ctx={drawImage(){},setTransform(){},getTransform:()=>({a:1,b:0,c:0,d:1,e:0,f:0})};
+ const surface=createResolution({width:0,height:0,style:{},dataset:{},getContext:()=>ctx,getBoundingClientRect:()=>({left:0,top:0,width:500,height:400}),ownerDocument:{defaultView:{innerWidth:1280,innerHeight:800,devicePixelRatio:2,Image:FakeImage},createElement:()=>copy}},{width:500,height:400},
+  {art:{'oak.png':{file:'hd/oak.webp',density:2,width:100,height:100}},imageUrl:file=>file});
+ const layer={drawImage(){}};surface.adopt(layer);layer.drawImage(tagArt({width:100,height:100},'oak.png',{tint:'rgba(9,29,31,.24)'}),0,0);
+ for(let i=0;i<5&&!fills.length;i++)await new Promise(resolve=>setTimeout(resolve,0));
+ assert.deepEqual(fills,[['rgba(9,29,31,.24)','source-atop',0,0,200,200]]);
+});

@@ -33,11 +33,12 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
    try{
     const image=new view.Image();image.crossOrigin='anonymous';await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=reject;image.src=imageUrl(record.file);});requests++;if(image.width!==record.width*record.density||image.height!==record.height*record.density)throw Error('HD dimensions mismatch');
     let output=image;
-    if(source.wither||source.coat||source.season){
+    if(source.wither||source.coat||source.season||source.tint){
      const copy=canvas.ownerDocument.createElement('canvas');copy.width=image.width;copy.height=image.height;copy.getContext('2d').drawImage(image,0,0);output=copy;
      if(source.wither)output=effects.wither(output,source.wither);
      if(source.coat)output=effects.coat(output,source.coat);
      if(source.season)effects.weather(output,source.season,record.density);
+     if(source.tint){const brush=output.getContext('2d');brush.globalCompositeOperation='source-atop';brush.fillStyle=source.tint;brush.fillRect(0,0,output.width,output.height);brush.globalCompositeOperation='source-over';}
     }
     const weight=output.width*output.height*4;
     trim(weight);
