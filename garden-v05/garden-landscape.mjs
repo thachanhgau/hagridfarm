@@ -1,3 +1,4 @@
+import {densityOf,deviceLine,snapRects} from './device-pixels.mjs?v=26.1';
 // Presentation boundary is separate from scenic grass and fixed gameplay slots.
 // Owner 27/10/2026: fences run on cell lines and paths along cell centres, one cell wide.
 export const FARM_BOUNDARY = Object.freeze([[-5.5,-.5],[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5],[33.5,-.5],[33.5,33.5],[-.5,33.5],[-2.5,31.5],[-2.5,9.5],[-5.5,9.5]]);
@@ -15,6 +16,7 @@ export const GARDEN_PATHS = Object.freeze([
 
 const point=(map,col,row)=>[map.origin.x+(col-row)*map.tileWidth/2,map.origin.y+(col+row)*map.tileHeight/2];
 function pixelLine(ctx,a,b,color,width=2){
+  const d=densityOf(ctx);if(d>1)return deviceLine(ctx,a,b,color,width,d);
   const steps=Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]));
   ctx.fillStyle=color;
   for(let i=0;i<=steps;i++) {const t=steps?i/steps:0;ctx.fillRect(Math.round(a[0]+(b[0]-a[0])*t-width/2),Math.round(a[1]+(b[1]-a[1])*t-width/2),width,width);}
@@ -92,6 +94,7 @@ function drawExitGate(ctx,{a,b}){
   }
 }
 export function drawBoundaryFence(ctx,piece){
+  const d=densityOf(ctx);if(d>1)ctx=snapRects(ctx,d);
   if(piece.gate){drawExitGate(ctx,piece);return;}
   const {a,b}=piece;
   pixelLine(ctx,[a[0],a[1]+2],[b[0],b[1]+2],'#24483f',7);

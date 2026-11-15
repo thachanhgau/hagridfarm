@@ -1,5 +1,6 @@
 import {PLOT_SCENERY_ART} from './plot-scenery-art.mjs?v=26.1';
 import {stageContains} from './garden-growth.mjs?v=26.1';
+import {densityOf,deviceLine,snapRects} from './device-pixels.mjs?v=26.1';
 function insidePolygon(x,y,points){
  let inside=false;
  for(let i=0,j=points.length-1;i<points.length;j=i++){
@@ -101,20 +102,23 @@ export function festivalObjects({eventMode='none',stage,map,iso,decorAssets,occu
  return out;
 }
 function pixelLine(c,a,b,color,width=2){
+ const d=densityOf(c);if(d>1)return deviceLine(c,a,b,color,width,d,0);
  c.fillStyle=color;const n=Math.max(1,Math.ceil(Math.max(Math.abs(b[0]-a[0]),Math.abs(b[1]-a[1]))/2));
  for(let i=0;i<=n;i++){const t=i/n;c.fillRect(Math.round(a[0]+(b[0]-a[0])*t),Math.round(a[1]+(b[1]-a[1])*t),width,width);}
 }
-export function drawSeasonalFence(c,piece,weather,event,clock){
- const {a,b}=piece;
+// part 'static' (snow, garland rope) can be baked into a cached fence layer; 'moving' is then drawn each frame.
+export function drawSeasonalFence(c,piece,weather,event,clock,part='all'){
+ const d=densityOf(c);if(d>1)c=snapRects(c,d);
+ const {a,b}=piece,still=part!=='moving',moving=part!=='static';
  if(piece.gate){
-  if(weather==='snow')for(const [x,y] of [a,b]){c.fillStyle='#e8f0ed';c.fillRect(Math.round(x-7),Math.round(y-74),14,3);}
+  if(still&&weather==='snow')for(const [x,y] of [a,b]){c.fillStyle='#e8f0ed';c.fillRect(Math.round(x-7),Math.round(y-74),14,3);}
   return; // A snow cap or garland must never close the open passage.
  }
- if(weather==='snow')for(const h of [35,26,14])pixelLine(c,[a[0]-3,a[1]-h],[b[0]-3,b[1]-h],'#e8f0ed',3);
+ if(still&&weather==='snow')for(const h of [35,26,14])pixelLine(c,[a[0]-3,a[1]-h],[b[0]-3,b[1]-h],'#e8f0ed',3);
  if(event==='none')return;
  const phase=worldPhase(clock),colors=event==='event_halloween'?['#ffc36b','#a6b1ae']:event==='event_yule'?['#f5d69a','#c97952','#b0bd67']:['#ffc36b','#b0bd67','#e07a9e'];
- pixelLine(c,[a[0],a[1]-31],[b[0],b[1]-31],'#5d6046',2);
- for(let j=1;j<=3;j++){
+ if(still)pixelLine(c,[a[0],a[1]-31],[b[0],b[1]-31],'#5d6046',2);
+ if(moving)for(let j=1;j<=3;j++){
   const t=j/4,x=Math.round(a[0]+(b[0]-a[0])*t),y=Math.round(a[1]+(b[1]-a[1])*t-28+Math.sin(t*Math.PI)*5);
   c.fillStyle=colors[j%colors.length];
   if(event==='event_herbology_fair'){for(let k=0;k<5;k++)c.fillRect(x-4+k+Math.round(k/4*[0,1,0,-1][phase]),y+k,9-k*2,2);}
