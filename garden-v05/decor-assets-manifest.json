@@ -12036,6 +12036,4326 @@
         "h": 99
       },
       "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_lion_snow_guard",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Sư tử tuyết giữ quà",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_gryffindor_lion_snow_guard.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_lion_snow_guard_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 104,
+        "w": 86,
+        "h": 104
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 104,
+        "w": 88,
+        "h": 104
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_sword_holly_gate",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Cổng kiếm lá nhựa ruồi",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_gryffindor_sword_holly_gate.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_sword_holly_gate_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png",
+        "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png",
+        "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png",
+        "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png",
+        "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png",
+        "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png",
+        "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 37,
+        "y": 123,
+        "w": 86,
+        "h": 117
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 121,
+        "w": 88,
+        "h": 119
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_commonroom_hearth",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Lò sưởi sư tử đêm Noel",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_gryffindor_commonroom_hearth.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_commonroom_hearth_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png",
+        "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png",
+        "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png",
+        "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png",
+        "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png",
+        "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png",
+        "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 82,
+        "w": 118,
+        "h": 158
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 83,
+        "w": 120,
+        "h": 157
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_quidditch_crate",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Rương Quidditch đỏ thắm",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_gryffindor_quidditch_crate.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_quidditch_crate_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png",
+        "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png",
+        "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png",
+        "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png",
+        "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png",
+        "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png",
+        "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 100,
+        "w": 88,
+        "h": 108
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 100,
+        "w": 87,
+        "h": 108
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_courage_watchtower",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Tháp canh Lòng Dũng Cảm",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_gryffindor_courage_watchtower.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_courage_watchtower_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png",
+        "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png",
+        "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png",
+        "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png",
+        "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png",
+        "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png",
+        "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 81,
+        "w": 119,
+        "h": 159
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 81,
+        "w": 120,
+        "h": 159
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_rocking_lion",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Sư tử gỗ ngựa bập bênh",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_gryffindor_rocking_lion.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_rocking_lion_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png",
+        "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png",
+        "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png",
+        "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png",
+        "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png",
+        "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png",
+        "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 111,
+        "w": 85,
+        "h": 97
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 112,
+        "w": 88,
+        "h": 96
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_scarlet_feast_table",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Bàn tiệc đỏ vàng Gryffindor",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_gryffindor_scarlet_feast_table.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_scarlet_feast_table_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png",
+        "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png",
+        "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png",
+        "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png",
+        "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png",
+        "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png",
+        "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 114,
+        "w": 88,
+        "h": 94
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 114,
+        "w": 88,
+        "h": 94
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_flame_bell_stand",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Giá chuông ngọn lửa vàng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_gryffindor_flame_bell_stand.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_flame_bell_stand_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png",
+        "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png",
+        "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png",
+        "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png",
+        "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png",
+        "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png",
+        "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 18,
+        "w": 55,
+        "h": 126
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 16,
+        "w": 56,
+        "h": 128
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_cracker_sled",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Xe trượt quà pháo giấy",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_gryffindor_cracker_sled.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_cracker_sled_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png",
+        "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png",
+        "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png",
+        "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png",
+        "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png",
+        "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png",
+        "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 122,
+        "w": 103,
+        "h": 118
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 125,
+        "w": 104,
+        "h": 115
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_gryffindor_lion_paw_brazier",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Gryffindor",
+      "house": "gryffindor",
+      "label": "Lò than chân sư tử",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_gryffindor_lion_paw_brazier.png",
+      "rightFile": "decor-assets/native/nh_gryffindor_lion_paw_brazier_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png",
+        "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 84,
+        "w": 56,
+        "h": 60
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 84,
+        "w": 56,
+        "h": 60
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_serpent_ice_arch",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Cổng băng rắn bạc",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_slytherin_serpent_ice_arch.png",
+      "rightFile": "decor-assets/native/nh_slytherin_serpent_ice_arch_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 36,
+        "y": 129,
+        "w": 88,
+        "h": 111
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 130,
+        "w": 88,
+        "h": 110
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_emerald_orangery",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Nhà kính lục bảo mùa đông",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_slytherin_emerald_orangery.png",
+      "rightFile": "decor-assets/native/nh_slytherin_emerald_orangery_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 71,
+        "w": 120,
+        "h": 169
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 72,
+        "w": 120,
+        "h": 168
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_winter_potion_bar",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Quầy thức uống lục bảo",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_slytherin_winter_potion_bar.png",
+      "rightFile": "decor-assets/native/nh_slytherin_winter_potion_bar_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png",
+        "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png",
+        "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png",
+        "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png",
+        "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png",
+        "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png",
+        "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 108,
+        "w": 84,
+        "h": 100
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 107,
+        "w": 88,
+        "h": 101
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_frozen_serpent_fountain",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Đài phun rắn đóng băng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_slytherin_frozen_serpent_fountain.png",
+      "rightFile": "decor-assets/native/nh_slytherin_frozen_serpent_fountain_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png",
+        "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png",
+        "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png",
+        "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png",
+        "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png",
+        "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png",
+        "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 110,
+        "w": 120,
+        "h": 130
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 109,
+        "w": 120,
+        "h": 131
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_lake_lantern_buoy",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Đèn phao Hồ Đen",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_slytherin_lake_lantern_buoy.png",
+      "rightFile": "decor-assets/native/nh_slytherin_lake_lantern_buoy_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png",
+        "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png",
+        "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png",
+        "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png",
+        "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png",
+        "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png",
+        "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 16,
+        "w": 52,
+        "h": 128
+      },
+      "rightBounds": {
+        "x": 6,
+        "y": 16,
+        "w": 52,
+        "h": 128
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_silver_chess_dais",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Bục cờ rắn bạc",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_slytherin_silver_chess_dais.png",
+      "rightFile": "decor-assets/native/nh_slytherin_silver_chess_dais_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png",
+        "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png",
+        "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png",
+        "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png",
+        "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png",
+        "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png",
+        "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 117,
+        "w": 84,
+        "h": 91
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 112,
+        "w": 88,
+        "h": 96
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_serpent_sleigh",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Xe trượt rắn lục bạc",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_slytherin_serpent_sleigh.png",
+      "rightFile": "decor-assets/native/nh_slytherin_serpent_sleigh_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png",
+        "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 22,
+        "y": 131,
+        "w": 100,
+        "h": 109
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 125,
+        "w": 104,
+        "h": 115
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_holly_obelisk",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Trụ nhựa ruồi lục bạc",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_slytherin_holly_obelisk.png",
+      "rightFile": "decor-assets/native/nh_slytherin_holly_obelisk_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png",
+        "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png",
+        "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png",
+        "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png",
+        "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png",
+        "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png",
+        "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 63,
+        "w": 56,
+        "h": 81
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 63,
+        "w": 56,
+        "h": 81
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_strategy_desk",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Bàn chiến lược mùa tuyết",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_slytherin_strategy_desk.png",
+      "rightFile": "decor-assets/native/nh_slytherin_strategy_desk_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_strategy_desk_atlas.png",
+        "decor-assets/native/nh_slytherin_strategy_desk_atlas.png",
+        "decor-assets/native/nh_slytherin_strategy_desk_atlas.png",
+        "decor-assets/native/nh_slytherin_strategy_desk_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_strategy_desk_atlas.png",
+        "decor-assets/native/nh_slytherin_strategy_desk_atlas.png",
+        "decor-assets/native/nh_slytherin_strategy_desk_atlas.png",
+        "decor-assets/native/nh_slytherin_strategy_desk_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 109,
+        "w": 86,
+        "h": 99
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 102,
+        "w": 88,
+        "h": 106
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_slytherin_emerald_mirror",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Slytherin",
+      "house": "slytherin",
+      "label": "Gương sương giá lục bảo",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_slytherin_emerald_mirror.png",
+      "rightFile": "decor-assets/native/nh_slytherin_emerald_mirror_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png",
+        "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 100,
+        "w": 88,
+        "h": 108
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 98,
+        "w": 88,
+        "h": 110
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_badger_cookie_bakery",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Tiệm bánh lửng đón Noel",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 96,
+        "w": 120,
+        "h": 144
+      },
+      "rightBounds": {
+        "x": 5,
+        "y": 88,
+        "w": 119,
+        "h": 152
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_honeycomb_gift_cart",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Xe quà tổ ong vàng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png",
+        "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png",
+        "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png",
+        "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png",
+        "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png",
+        "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png",
+        "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 106,
+        "w": 88,
+        "h": 102
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 105,
+        "w": 88,
+        "h": 103
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_badger_log_cottage",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Nhà gỗ lửng mùa đông",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_hufflepuff_badger_log_cottage.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_badger_log_cottage_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 96,
+        "w": 119,
+        "h": 144
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 94,
+        "w": 120,
+        "h": 146
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_beehive_cocoa_urn",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Ấm cacao tổ ong",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png",
+        "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png",
+        "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png",
+        "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png",
+        "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png",
+        "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png",
+        "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 63,
+        "w": 56,
+        "h": 81
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 63,
+        "w": 56,
+        "h": 81
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_knitting_bench",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Ghế len ấm Hufflepuff",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_hufflepuff_knitting_bench.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_knitting_bench_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png",
+        "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png",
+        "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png",
+        "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png",
+        "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png",
+        "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png",
+        "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 7,
+        "y": 102,
+        "w": 83,
+        "h": 106
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 101,
+        "w": 88,
+        "h": 107
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_herb_wheelbarrow",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Xe cút kít thảo dược Noel",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 115,
+        "w": 88,
+        "h": 93
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 116,
+        "w": 88,
+        "h": 92
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_badger_mail_hollow",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Hộp thư hốc cây lửng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_hufflepuff_badger_mail_hollow.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_badger_mail_hollow_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 76,
+        "w": 56,
+        "h": 68
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 76,
+        "w": 56,
+        "h": 68
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_sunflower_chimes",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Chuông gió hướng dương băng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_hufflepuff_sunflower_chimes.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_sunflower_chimes_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png",
+        "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png",
+        "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png",
+        "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png",
+        "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png",
+        "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png",
+        "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 30,
+        "w": 53,
+        "h": 114
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 27,
+        "w": 56,
+        "h": 117
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_chestnut_stall",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Quầy hạt dẻ mật ong",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_hufflepuff_chestnut_stall.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_chestnut_stall_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png",
+        "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png",
+        "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png",
+        "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png",
+        "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png",
+        "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png",
+        "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 85,
+        "w": 88,
+        "h": 123
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 80,
+        "w": 88,
+        "h": 128
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_hufflepuff_badger_picnic",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Hufflepuff",
+      "house": "hufflepuff",
+      "label": "Góc picnic lửng ngày tuyết",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_hufflepuff_badger_picnic.png",
+      "rightFile": "decor-assets/native/nh_hufflepuff_badger_picnic_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png",
+        "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 134,
+        "w": 120,
+        "h": 106
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 129,
+        "w": 120,
+        "h": 111
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_bronze_astrolabe",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Tinh bàn đồng Ravenclaw",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_ravenclaw_bronze_astrolabe.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_bronze_astrolabe_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 59,
+        "w": 56,
+        "h": 85
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 59,
+        "w": 56,
+        "h": 85
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_winter_observatory",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Đài quan sát lam đồng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_ravenclaw_winter_observatory.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_winter_observatory_right.png",
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png",
+        "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png",
+        "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png",
+        "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png",
+        "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png",
+        "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png",
+        "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 98,
+        "w": 119,
+        "h": 142
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 98,
+        "w": 120,
+        "h": 142
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_eagle_snow_perch",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Đại bàng đồng giữ sách",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_ravenclaw_eagle_snow_perch.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_eagle_snow_perch_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 99,
+        "w": 88,
+        "h": 109
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 99,
+        "w": 88,
+        "h": 109
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_star_book_lectern",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Giá sách bản đồ sao",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_ravenclaw_star_book_lectern.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_star_book_lectern_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png",
+        "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png",
+        "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png",
+        "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png",
+        "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png",
+        "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png",
+        "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 107,
+        "w": 87,
+        "h": 101
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 104,
+        "w": 88,
+        "h": 104
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_constellation_arch",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Vòm sao lam đồng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_ravenclaw_constellation_arch.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_constellation_arch_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png",
+        "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 37,
+        "y": 133,
+        "w": 85,
+        "h": 107
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 133,
+        "w": 88,
+        "h": 107
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_riddle_cabinet",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Tủ câu đố đêm đông",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_ravenclaw_riddle_cabinet.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_riddle_cabinet_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png",
+        "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png",
+        "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png",
+        "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png",
+        "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png",
+        "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png",
+        "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 100,
+        "w": 88,
+        "h": 108
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 100,
+        "w": 88,
+        "h": 108
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_eagle_courier_post",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Trạm thư đại bàng Noel",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_ravenclaw_eagle_courier_post.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_eagle_courier_post_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 21,
+        "w": 55,
+        "h": 123
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 17,
+        "w": 56,
+        "h": 127
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_telescope_sled",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Xe kính thiên văn mùa tuyết",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 128,
+      "height": 256,
+      "pivotX": 64,
+      "pivotY": 240,
+      "file": "decor-assets/native/nh_ravenclaw_telescope_sled.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_telescope_sled_right.png",
+      "footprintTiles": [
+        3,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png",
+        "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png",
+        "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png",
+        "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png",
+        "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png",
+        "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png",
+        "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 0,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        },
+        {
+          "x": 128,
+          "y": 256,
+          "w": 128,
+          "h": 256
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 22,
+        "y": 116,
+        "w": 100,
+        "h": 124
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 111,
+        "w": 104,
+        "h": 129
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_eagle_music_harp",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Đàn hạc cánh đại bàng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 96,
+      "height": 224,
+      "pivotX": 48,
+      "pivotY": 208,
+      "file": "decor-assets/native/nh_ravenclaw_eagle_music_harp.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_eagle_music_harp_right.png",
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png",
+        "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 0,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        },
+        {
+          "x": 96,
+          "y": 224,
+          "w": 96,
+          "h": 224
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 76,
+        "w": 88,
+        "h": 132
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 75,
+        "w": 88,
+        "h": 133
+      },
+      "framesIdentical": false
+    },
+    {
+      "id": "nh_ravenclaw_celestial_globe",
+      "kind": "decor",
+      "collection": "festival",
+      "group": "Noel · Ravenclaw",
+      "house": "ravenclaw",
+      "label": "Quả cầu thiên văn lam đồng",
+      "storeItem": true,
+      "rotatable": true,
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "file": "decor-assets/native/nh_ravenclaw_celestial_globe.png",
+      "rightFile": "decor-assets/native/nh_ravenclaw_celestial_globe_right.png",
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "artRevision": "coordinate-v3",
+      "frames": [
+        "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png",
+        "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1100,
+        260,
+        900,
+        260
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 62,
+        "w": 56,
+        "h": 82
+      },
+      "rightBounds": {
+        "x": 4,
+        "y": 62,
+        "w": 56,
+        "h": 82
+      },
+      "framesIdentical": false
     }
   ]
 }

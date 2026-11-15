@@ -40,13 +40,13 @@ for(const [name,type]of [['Chrome',chromium],['WebKit',webkit]].filter(([name])=
   const {GARDEN_STAGES}=await import('/garden-v05/garden-growth.mjs');
   const {runtimeImageUrl}=await import('/garden-v05/runtime-image-url.mjs');
   const manifest=await fetch('/garden-v05/decor-assets-manifest.json').then(r=>r.json());
-  const items=manifest.items.filter(item=>item.id.startsWith('nx_'));
-  if(items.length!==50)throw Error('Expected all 50 items');
+  const items=manifest.items.filter(item=>/^(nx|nh)_/.test(item.id));
+  if(items.length!==90)throw Error('Expected all 90 items');
   const canvas=document.getElementById('world'),garden=await createGarden(canvas,{decorAssets:manifest.items});
   const now=Date.parse('2026-12-20T12:00:00+07:00'),state=E.testProfile(500,now);
   state.built=[...new Set([...state.built,...E.DB.expansions.map(e=>e.id)])];
   const assetOf=id=>manifest.items.find(item=>item.id===id),checked=[],draws=new Set(),original=CanvasRenderingContext2D.prototype.drawImage;
-  CanvasRenderingContext2D.prototype.drawImage=function(image,...args){if(String(image.src).includes('/nx_'))draws.add(image.src);return original.call(this,image,...args);};
+  CanvasRenderingContext2D.prototype.drawImage=function(image,...args){if(/\/(?:nx|nh)_/.test(String(image.src)))draws.add(image.src);return original.call(this,image,...args);};
   let combinations=0;
   try{
    for(const item of items){
@@ -54,7 +54,7 @@ for(const [name,type]of [['Chrome',chromium],['WebKit',webkit]].filter(([name])=
      const decorations={owned:[item.id],placements:[item.id],rotations:{[item.id]:facing},positions:{}};
      let position;
      for(let row=21;row<=27&&!position;row+=.5)for(let col=2;col<=27&&!position;col+=.5){
-      const reason=decorSpotProblem(col,row,{map:window.FARM_SCENE,stage:GARDEN_STAGES.at(-1),state,decorations,itemId:item.id,asset:item,iso,assetOf});
+      const reason=decorSpotProblem(col,row,{map:window.FARM_SCENE,stage:GARDEN_STAGES.at(-1),state,decorations,itemId:item.id,facing,asset:item,iso,assetOf});
       if(!reason)position=[col,row];
      }
      if(!position)throw Error('No valid spot '+item.id+' '+facing);
@@ -76,7 +76,7 @@ for(const [name,type]of [['Chrome',chromium],['WebKit',webkit]].filter(([name])=
   window.noelSceneCanvas=canvas;
   return {items:items.length,checked,combinations,drawnAtlases:[...draws].filter(url=>url.includes('_atlas.webp')).length,missing:garden.missing};
  });
- assert.equal(result.checked.length,100);assert.equal(result.combinations,400);assert.equal(result.drawnAtlases,50);assert.deepEqual(result.missing,[]);
+ assert.equal(result.checked.length,180);assert.equal(result.combinations,720);assert.equal(result.drawnAtlases,90);assert.deepEqual(result.missing,[]);
  const viewports=[];
  for(const viewport of [{width:1280,height:800},{width:375,height:812}]){
   await page.setViewportSize(viewport);viewports.push(await page.evaluate(()=>({width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth})));

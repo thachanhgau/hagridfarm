@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "c03c72f4eede",
+  "revision": "01b1584138e7",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -9042,6 +9042,1206 @@
       "sha256": "ebd3c6b91327e8552de80a5ab4862a41d3f136b84c4142dd0ab736fdba965b22"
     },
     {
+      "source": "decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_commonroom_hearth_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 27510,
+      "bytes": 18516,
+      "sourceSha256": "8920b997c18974534edc86382a8f115ae41457fa85ec9c2307520373b93a920e",
+      "sha256": "8d6312860d15d07bbd3976ec67bd1adabb33716866d0682608a4183475952f8f"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_commonroom_hearth_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_commonroom_hearth_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 7473,
+      "bytes": 4866,
+      "sourceSha256": "60b4bc7eb99d8e7e854cfe48d46842a14bd621db05b55d0ee3a9db214168d51e",
+      "sha256": "f68b77edf6d2d2ae6e9f9986b332fd3f58c4455cd030cd5888ac2f21846cb037"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_commonroom_hearth.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_commonroom_hearth.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 7233,
+      "bytes": 4786,
+      "sourceSha256": "8445f4939979a3a884aac05ab37735c295d4b6170db67ad46aa5e0baa752707a",
+      "sha256": "d6095165302b32df3e76cb66e98ad9532a3557afaa1234123f4659d13e7fffe1"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_courage_watchtower_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_courage_watchtower_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 31738,
+      "bytes": 21734,
+      "sourceSha256": "cb757b9754be757d38f78602268402f2f11b4d8d311568b53323aca9890f5678",
+      "sha256": "a7686271fc21492e8f87edb18ca227a530ada710fe2cf1396c877e0f9177f2f9"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_courage_watchtower_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_courage_watchtower_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 8556,
+      "bytes": 5594,
+      "sourceSha256": "82a9acd4aacf584e46c3f596be01c90b3d350573d7ed5233823527da47063a7f",
+      "sha256": "991c8a85ad6d5026a0740bd0c3c6414ddf662150cac010628f6cd9997e148916"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_courage_watchtower.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_courage_watchtower.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 8500,
+      "bytes": 5608,
+      "sourceSha256": "c30499a2dc2884881bb81059739b6691a81026d3dfb06441d63a9a8f3e34d662",
+      "sha256": "dcd0c9cfd261cd88014d0043a00391851455ebf6ab9bf12d3d16f4f9cd510b3c"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_cracker_sled_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_cracker_sled_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 19116,
+      "bytes": 13106,
+      "sourceSha256": "7b0a2efaaf528d63ac81d0e309424079f55f0d2248e345162a3350acaf221f64",
+      "sha256": "f36b53194dcc4927202820e5a96969972913321562635d55499cc98c3a38672f"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_cracker_sled_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_cracker_sled_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5226,
+      "bytes": 3378,
+      "sourceSha256": "d0f036d2fe88ee058693ed6a0b693fa678193432af05292702ba857c9d2e89d1",
+      "sha256": "c7e571d27a5b69b01cc1b045f1f32f792a7e8dba9243269b8b0b5cfb67855354"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_cracker_sled.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_cracker_sled.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5093,
+      "bytes": 3326,
+      "sourceSha256": "24deaa0474e37ff6bf84e777de785e3b3424224e009b385ad1b326cad23a5f38",
+      "sha256": "3914f21a3bd05af8288ec8b5a19a572e95c7e17d4252ec1f41f398bef9f496cc"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_flame_bell_stand_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 11398,
+      "bytes": 7362,
+      "sourceSha256": "10c488444acd8d5879606e922d5f49241f64bb27cd985fd3c120917da39f3a85",
+      "sha256": "0941e71a69edce61bc27dfbd9a359b216a8906110c8ca0e451a761c230f4ec0f"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_flame_bell_stand_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_flame_bell_stand_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 3069,
+      "bytes": 1950,
+      "sourceSha256": "9083d23af2a854961226ee416eee2f8239442b66b9ac7bfd1655584c334ed21f",
+      "sha256": "103f1d9dd57ae8d91fc54d46773abd693d4c33acc151aa1a4cb726d1e65f5295"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_flame_bell_stand.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_flame_bell_stand.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 3180,
+      "bytes": 2002,
+      "sourceSha256": "27e71a3160d3ad58b09d7499ccf023cafefef6912d606d25416c256a640a9dda",
+      "sha256": "be8d1e363abfb0ba09a34b314fd49fd6bc396cc9ad41d83151c99e845840a32d"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_lion_paw_brazier_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 6727,
+      "bytes": 4364,
+      "sourceSha256": "b85cdcdcce1133e7a2de536b388c2360f400a67914c73905267bd81274c0843c",
+      "sha256": "40edb180325f1ce4bfdf9b488978c7d0e9db5066f6ecd4409c2465d5c88212ca"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_lion_paw_brazier_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_lion_paw_brazier_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1946,
+      "bytes": 1236,
+      "sourceSha256": "fb2692d96ce1396594c08f55f36acb0135b57e0630ac51131fe1f0ada2c88fe3",
+      "sha256": "d0b6cce2aa204dacd8d2e666367782432f574a44208a10aec2e25e3a63a6b3ef"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_lion_paw_brazier.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_lion_paw_brazier.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1921,
+      "bytes": 1214,
+      "sourceSha256": "88849fed2d568977f708570e05aedd0be447b46abe5eba5e198b96f0fdfb512e",
+      "sha256": "108f279a36aeb4999589bab19c1d9d4d5b90f96243f8dfedf62c3a5274eb0e5e"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_lion_snow_guard_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 14801,
+      "bytes": 9772,
+      "sourceSha256": "e510c696e1cbec0c95b25e52d46b2c8348bceff432f13bf30fc1c2ab3bcd7142",
+      "sha256": "c5181aa8f83fcb7d31edc97f7ce2bdce5620559fb891a24a773b8b2cf2b930a8"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_lion_snow_guard_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_lion_snow_guard_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4090,
+      "bytes": 2580,
+      "sourceSha256": "a9dc5f8fa1e29f9f18cc981db8fe961ede523ebdcf76aa528db3ba3ed07908e6",
+      "sha256": "9e26d1a8ae385ab7797cba4a16bf0a7fa5aa63dd446a8bbe530c0b655d5a4309"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_lion_snow_guard.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_lion_snow_guard.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4058,
+      "bytes": 2568,
+      "sourceSha256": "45239482da9039d832695a9151d89e95c23a53252e9a60537610432bb5cfa395",
+      "sha256": "8ce52c839a6ad436056603f04e097b5743770843895ebac4b561c4cb465c4fbf"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_quidditch_crate_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_quidditch_crate_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 14986,
+      "bytes": 9836,
+      "sourceSha256": "51eb81046bcd4dbeb3e69c4013abea79a15850973e86cc9947d938e3b8830071",
+      "sha256": "dd5791b32643210440cf7c04a00722996585eed913987bb0e14dabfc95af34ab"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_quidditch_crate_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_quidditch_crate_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4126,
+      "bytes": 2588,
+      "sourceSha256": "2530422accd32250fc7fae00f9faafad5d8b46977cefaf35052741e9d55faf62",
+      "sha256": "230e4d6e44eac88fdafd7972734c0dc42c3b0155173d7133656b52292eef54de"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_quidditch_crate.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_quidditch_crate.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4148,
+      "bytes": 2632,
+      "sourceSha256": "6a6964e8ea1ae5ad7ade231f6233af6b975377316440c6750acc806539352e31",
+      "sha256": "f5e3866ddad5df1546f3866f2ea140c765246f1bb9bbbad313186a20842b4dbd"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_rocking_lion_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_rocking_lion_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 13797,
+      "bytes": 8782,
+      "sourceSha256": "22f3e963a4d6575b6006af1d7a97d62129795efcf4ecab106458cb6c6bf9f41c",
+      "sha256": "7ad5da32a0b49b6c7edae881a6eefd553754d9d66bc34392ec32a36a108f49a7"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_rocking_lion_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_rocking_lion_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3610,
+      "bytes": 2246,
+      "sourceSha256": "964aa07d8762ee88db3cca76b5d49edf0cd784740f7cdfd2d2ebfef8439dd8ee",
+      "sha256": "eb9146f35b09c76962c0f5105ba6a3009d336c8195c8247c8369705647a1825f"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_rocking_lion.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_rocking_lion.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3709,
+      "bytes": 2316,
+      "sourceSha256": "3412bf9deeadb761133f59cb914f58698ee437125ed64a97796f0c95f023849c",
+      "sha256": "cc29e67ae5cc187281e4b412c4ed07a36193a494593ee326bc0fa822c67459d4"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_scarlet_feast_table_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 13261,
+      "bytes": 8232,
+      "sourceSha256": "75a7db8676343a3343c38e8683b2ba98aa2d9784fb0b44edbe11504e6046775c",
+      "sha256": "01099aa45e925bd63e721719a110f2e46a643e3ee8f0fb8b56a5eefdb71ca998"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_scarlet_feast_table_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_scarlet_feast_table_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3656,
+      "bytes": 2220,
+      "sourceSha256": "d8b1eea75ee384d9dd7457c159ae30381b8a4c02431afae4e9d6eda971e5a0ad",
+      "sha256": "509dae28a4d8633b77a1875146d2859a5416be04f34be975ef0f43ce10840d5d"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_scarlet_feast_table.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_scarlet_feast_table.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3596,
+      "bytes": 2182,
+      "sourceSha256": "c1b022c87dd06d078f36b599b1335f9c24078e2abdbc7452952487407c9b8cd9",
+      "sha256": "57683b1bc907c0b06620ec91906bd68df8861636d0d632ccd5aa2b4be3f664a4"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_sword_holly_gate_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 15133,
+      "bytes": 8940,
+      "sourceSha256": "69e5a083c9b17fa2cd0fd300824aa61c0f3ddfcc7d96f33e9e31ddcbc1182e9f",
+      "sha256": "386e0040c264845464a5b353d7910592914cb625f879c466b817626f89a6b2e7"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_sword_holly_gate_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_sword_holly_gate_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4069,
+      "bytes": 2364,
+      "sourceSha256": "22f0da11ec858bc8141f91d84a7ad92ed4b66fce8356573af7de93e0951430d7",
+      "sha256": "95a198f9a932fe954525d4c3ed0c61dfa49263a9cce41a42b2423dcebff2e460"
+    },
+    {
+      "source": "decor-assets/native/nh_gryffindor_sword_holly_gate.png",
+      "file": "runtime-webp/decor-assets/native/nh_gryffindor_sword_holly_gate.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4097,
+      "bytes": 2390,
+      "sourceSha256": "7e9e301daaaae6659fbe3f86bbe5f89deab1e71807f93e196b9e21cfe8d71991",
+      "sha256": "8495a05f02aaae8370fbbdde90536411ca67bff3452369b4644e58267314a671"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_cookie_bakery_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 22120,
+      "bytes": 14346,
+      "sourceSha256": "a5458b9d997519334b7aab59f2104c2ef823a3698ef795c0b78c25ca61399737",
+      "sha256": "48a2e965940237f3752c4d6344a05fb641e9eef8e7294b21c53c87d1f546fd12"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_cookie_bakery_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 6295,
+      "bytes": 3916,
+      "sourceSha256": "8a9fb8cde809e03266354e2c4a0719c5e67555976d78c8be54923fce5afbd12b",
+      "sha256": "a2b20c92b744c36edeccc93225593f23c511ff39daf9d1facc5bdb9b6d9883d0"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_cookie_bakery.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5861,
+      "bytes": 3662,
+      "sourceSha256": "55a3a5056779c593363c4bb32d2a86157115eb20c3c790b3a707ed8f7fee688f",
+      "sha256": "0e90eb7b6b29f1e380678b3130b986cd3531cb91be60b616546e23ca16d0c6de"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_log_cottage_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 27401,
+      "bytes": 18452,
+      "sourceSha256": "f6c346b9108ce42ff29438dd5ebf5ef72f27180549d5f1a340eb10f085bacbe9",
+      "sha256": "1bbc21c23fbe217dd2d2d9a34da493edd59b92f7c52d26babe5f0b66641836ee"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_log_cottage_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_log_cottage_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 7162,
+      "bytes": 4722,
+      "sourceSha256": "38a14b79589b8d673e3f805f7dd0903b9d923da034289bb4142686553335cbc3",
+      "sha256": "79e16e4cfb4870ae24b2e7f3cd1a660279a43c62636a43e5a2931ad3243441eb"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_log_cottage.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_log_cottage.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 7263,
+      "bytes": 4828,
+      "sourceSha256": "4ae705a40764c3c93a4cc7ed9e3e4651de6d4ba21fb5c1dedfd2af88bd576da2",
+      "sha256": "0973d888e74700ee346ad57eb565567c81513444266388ffa8e97f710613415b"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_mail_hollow_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 6843,
+      "bytes": 4384,
+      "sourceSha256": "c02ae37f0d1b5ad01e085105433709517a300d22f5949cb3c456676b2b32e9da",
+      "sha256": "c551550ab2dbddbe39a59032e0639f2d10986f62c2918387e0b1bc1eeca18991"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_mail_hollow_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_mail_hollow_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1891,
+      "bytes": 1200,
+      "sourceSha256": "6075a2469cbd054e59fbaf4ea8f4cf9fa919625811fca4f37e42efe19c3c3eb8",
+      "sha256": "47d35bb2c4f3da5cd113b729fa883fcaf4772ea6de27107df45933ea4a8caba0"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_mail_hollow.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_mail_hollow.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1857,
+      "bytes": 1198,
+      "sourceSha256": "781ea7c7e3d3df55aa84e3eff10ef99f255fd7d15c37f8d38fb4f5c281455262",
+      "sha256": "d5b02e51bb6cd811749c412e8b459d790b28c1338c0cba495b5e1213be0b2335"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_picnic_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_picnic_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 20304,
+      "bytes": 13318,
+      "sourceSha256": "6485e2a355821d9df5448ee207b2e9f4ddda40d20b7930421fa22bb841583d1e",
+      "sha256": "de950f3c0006a9733f3fde336029af0a199613a085ee59398bafa6c293b6d6d5"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_picnic_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_picnic_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5385,
+      "bytes": 3422,
+      "sourceSha256": "bb26a1868bff6c97d0f8af25674618b7049874584fbb25331e0bd89394597e37",
+      "sha256": "15e5387a33f7b5c7694d8a951b29567cc4aad5c80ff93da5cade4e5719ee39a5"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_badger_picnic.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_badger_picnic.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5535,
+      "bytes": 3558,
+      "sourceSha256": "2311f264d3eab0cc82a00d0d8e9f595235ddad394e39692a6209d0675f70b6f3",
+      "sha256": "cbc470d78fcfe0ad59aca4bcbf2060b3b7e377022450f519953bb8f172c109e2"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 8938,
+      "bytes": 5878,
+      "sourceSha256": "aa00daaa2ac2851becf9c7279d9e70ab3c6819d52715c06817f576cb31d7785a",
+      "sha256": "06a3ac8ea67ed3d517539641ccff1187aef501310fb90b6cc4ea61c261e07a06"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2565,
+      "bytes": 1574,
+      "sourceSha256": "c79bcc4b3881221e65157b2a033180a54d7b11afc3ee62d85c0b5452d9639c84",
+      "sha256": "549c48245ba790f3ab8f175c4999b2460f81332ee375726a30e1b228f3b9183e"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_beehive_cocoa_urn.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2595,
+      "bytes": 1596,
+      "sourceSha256": "7c76aab2ecfe66cfe3d33284c22f5e5398c8c4449a7d3925bb67b26867230fc7",
+      "sha256": "6c8d1239bdefe97d4e9c0978948e7b0a90b779642b58133ce36a60ac2a30ef8c"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_chestnut_stall_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 17881,
+      "bytes": 11800,
+      "sourceSha256": "6d4ffd399accadcbbf26ad3597e904efc3112cfebc9d258868c76cd4a358cb1e",
+      "sha256": "84fcbda7ec519b18ae613b2c0d0eb9b31531cff0d0c4f26689279c7d45292638"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_chestnut_stall_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_chestnut_stall_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4861,
+      "bytes": 3110,
+      "sourceSha256": "0b6ea7c93a5c09caa269a75c973dad53c053ec611325c56636b487016ad90ec9",
+      "sha256": "c56f3d53e12ec8fe44e91c5c647bf8f9af1855d04fc68cb1b8831d5d778b67a5"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_chestnut_stall.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_chestnut_stall.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4913,
+      "bytes": 3170,
+      "sourceSha256": "f721b146428149f9980fd0473a81f7afdd5467e0d34d423f229c469c85b5583a",
+      "sha256": "7498324d0c0296e0d445141eb79a414c1aca732eb0f368c3ce7197eaa4580efc"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_herb_wheelbarrow_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 14170,
+      "bytes": 9074,
+      "sourceSha256": "57e3e80cde9b31f4cd755c9f7599bfb8dff8d8ca1b45a0a0e45c15a540fa8625",
+      "sha256": "6603de6b130ab4f2690246d894add0dc7f13a81c02f5f17bdbefcee1121baaa6"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_herb_wheelbarrow_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3869,
+      "bytes": 2410,
+      "sourceSha256": "52b9a9816182353c80c42ae2f384ad7bb468bf450c8ca6867e1601d5ded6dc70",
+      "sha256": "1ef098d58058c4dc0c38b0ac8eb4b5b60c2e4f8b8f9ff7cad35094f097700c23"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_herb_wheelbarrow.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3834,
+      "bytes": 2384,
+      "sourceSha256": "623969c478243a06b582cb3483c1b1aa32601aa13c8d299d10a2a5b6c7126915",
+      "sha256": "b29a934e7da82dbff5379d4cc409d2c241aec453b4d4cd68834a0772479c041d"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 15933,
+      "bytes": 10174,
+      "sourceSha256": "a3ec786d5eb8af6e09da6ed6dd1f64c8d1ef9568fb4b7da13fd73aaea11b0e06",
+      "sha256": "921c17870cb86e4e45f2be67c6268f18febfdb98f46c78f0d1ff9bf40839dddf"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4391,
+      "bytes": 2794,
+      "sourceSha256": "e6fc6d2ef7c499cbbc6cfca7dbf84fe1b909002e463f126dda3d4333cab91b57",
+      "sha256": "779614b7a45d3daedb1b3a21651376ee1b414cc16efaaa2ac6a424d865213e4b"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_honeycomb_gift_cart.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4193,
+      "bytes": 2612,
+      "sourceSha256": "8c743845266efea5bf0e18a78bd7c6e3199a65ef67ccc91b9e514b09e9a649e2",
+      "sha256": "47132e46fdc146e64855bb49b7ca6994f2bcd72d807f1ca2f58e6f27ded03941"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_knitting_bench_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_knitting_bench_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 14648,
+      "bytes": 9018,
+      "sourceSha256": "4fcf81c22de1bd1ec7615dc2d18bb5d575edbde2fea0aa9461eb1666f574db8b",
+      "sha256": "54de54399536d38206b0ec0d25307b4b858f7d22551d4526fcae94df54dea0c8"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_knitting_bench_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_knitting_bench_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4099,
+      "bytes": 2514,
+      "sourceSha256": "70966302405fb86d173f06d49f2a7d7c13fe75ab13b81e68633cee9a655e3553",
+      "sha256": "165a1b9b075dc138b9e8a92001dcafa8c9b51f725b57b71ac684b76a9db426b3"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_knitting_bench.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_knitting_bench.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3782,
+      "bytes": 2288,
+      "sourceSha256": "b7d1b242222c78f89f6428180da7df1afb1c9845eaec2abbe2ceec724d35974b",
+      "sha256": "f17daafa8c1fb08497f320b9d192b3272e546e8b74d08aea56afdff6c4c3ab80"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_sunflower_chimes_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 10825,
+      "bytes": 6842,
+      "sourceSha256": "434130195098ceec89b675dc479481c1a185fa28c2dba08fbdb54433183d0d43",
+      "sha256": "82892b34d965b8f1722659ae2a36a8497367cca114d3b38c1c9981dae2cc322f"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_sunflower_chimes_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_sunflower_chimes_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2975,
+      "bytes": 1830,
+      "sourceSha256": "f50b1ee85c642dcf355dec64bed0df079b767adb75836c35e1e89a4945f73e17",
+      "sha256": "2e8eb4c585b165b61f881796b9e35022f5dcda52b2705131c74de9b180d7a872"
+    },
+    {
+      "source": "decor-assets/native/nh_hufflepuff_sunflower_chimes.png",
+      "file": "runtime-webp/decor-assets/native/nh_hufflepuff_sunflower_chimes.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2933,
+      "bytes": 1776,
+      "sourceSha256": "dc9c3f028c30254a5ed04dd99ed7c6739335ca03984f632b0cb5adef0229a080",
+      "sha256": "2a6beefff47842d0302a6ef28b9b7baf6cc87955b009a23856fa52a4513e742c"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_bronze_astrolabe_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 9237,
+      "bytes": 5942,
+      "sourceSha256": "e1bb4dfd0d5e22bdaa5e4121724ad54064b95d5cb58eb5a9d1f197c0335584b5",
+      "sha256": "ad0863206f52f06b3076c472556cb7a7d8ccd038b6453ad0ef3677739eaea3c2"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_bronze_astrolabe_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_bronze_astrolabe_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2483,
+      "bytes": 1556,
+      "sourceSha256": "315a3192842950688a96407c11dcfd4da4013d78fc15daca64e19919c91c0b86",
+      "sha256": "c020f2377f00dc75652865e46bc8b971c0d857473a98d125a03fc1ba54038a65"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_bronze_astrolabe.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_bronze_astrolabe.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2597,
+      "bytes": 1646,
+      "sourceSha256": "6bc0044bc68e719ff9a8ebf3b19614c3e0fe7c482cb181a3ac63339a984fa5b7",
+      "sha256": "270c4237a0bba32c8fa23c238e8e01a0deb2891132f9287d127859fbf9655a57"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_celestial_globe_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_celestial_globe_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 8870,
+      "bytes": 5802,
+      "sourceSha256": "ee7cf956c099fa82bd072340bbfaeb151adbad84df2c6c3bf982fda86ad15e67",
+      "sha256": "bd89ba3616dd7e40d40909ca08dac0584b8a38acb9b8de4946872a4a45713aa6"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_celestial_globe_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_celestial_globe_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2489,
+      "bytes": 1580,
+      "sourceSha256": "e90e4b042ee80e49938ad5996f92d4c930a14bc85202eb734d79ecc38177dd1a",
+      "sha256": "26843ef75b579871de8694d8ec63861c5e015fce1f1bf2a7f73478aba8aa98b3"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_celestial_globe.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_celestial_globe.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2549,
+      "bytes": 1610,
+      "sourceSha256": "357d3f3af83ef9a53d910f6045be28ca28b3bc20ee471d406e1cc49c4b7f826d",
+      "sha256": "6754f09a5b9c5108761ff24fa277e490a1f172deb2528f6f67c7d912010bca40"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_constellation_arch_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_constellation_arch_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 13997,
+      "bytes": 8174,
+      "sourceSha256": "9c10b2b14d9205c039dbe840050ce53f70f274238237ab999505a881d8e680f3",
+      "sha256": "f1bbd99dfbc3b5f5bf844e9519b1ffe27d60bfc68290fc649b98cf4f2219ff8a"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_constellation_arch_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_constellation_arch_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 3627,
+      "bytes": 2076,
+      "sourceSha256": "7c615af8765d1897a412a5d328e85401b1752e10f78eac0bcd1835ae38c13fcc",
+      "sha256": "62211a8af70c8e6fae6e40fc10f332d65252bad0668caf553777bba158786665"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_constellation_arch.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_constellation_arch.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 3650,
+      "bytes": 2070,
+      "sourceSha256": "e690364489c1b7907f1e73e73ff5cb6a5fce32b154dbc9c226395212ea3d04d8",
+      "sha256": "bd968a7e9468706de0920add3661285cf5792cbbfd974753cfe46d52a25cb040"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_courier_post_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 11210,
+      "bytes": 7392,
+      "sourceSha256": "0b484da523fb0ce10a8f3ea1257fc3cc69c1ebd205428d2632c3798912f3b552",
+      "sha256": "32d96ba6d7d0b8605f5f1ca1a1b5c27612988ef2e6e5c2ed286001c103212ca3"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_courier_post_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_courier_post_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 3181,
+      "bytes": 1984,
+      "sourceSha256": "11beb8344df3ce5cfdbd889641b8e1028236b184f499c24378ba70a8a793ebc3",
+      "sha256": "f9ae88f3af07923de350a8c96bc15af5725e2c1418893817b034e7f2fcb5abbd"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_courier_post.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_courier_post.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 3006,
+      "bytes": 1916,
+      "sourceSha256": "e06fef021593ee6ade4ca18589ad5aa5564ae379e330be0c161034e780579713",
+      "sha256": "97cd785425f4dc765e2e30ccb473198f563df056ca268e25e6b1ea1f65a1967b"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_music_harp_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 18779,
+      "bytes": 12376,
+      "sourceSha256": "0e538eb8be751d87fe0ce5c657199532ae8062de3ae3d6da3a1e33e47220a04c",
+      "sha256": "9c54bde13b70502559ea74ab7ef8275eef2ecce7dee7280f845b4cb0df16d6d4"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_music_harp_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_music_harp_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 5243,
+      "bytes": 3336,
+      "sourceSha256": "9d146d40435ee60c210fd2c17ad9235a3260da853d3bacef9159bcbfbf0566a9",
+      "sha256": "caa015398fbced05b62015f15b9c6e6894c97726dc603d647e47debb9999f9b7"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_music_harp.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_music_harp.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 5060,
+      "bytes": 3200,
+      "sourceSha256": "04312df81368104063f327d02351dd2c784c47ca6cc08a758bab946cfe75af14",
+      "sha256": "2e5f11a3c3cb052126eb936ea2a56db77040d074822e0550298343f635e38d0e"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_snow_perch_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 14390,
+      "bytes": 9126,
+      "sourceSha256": "a4d4db6714a76ad8f75763c5454f3775b7cc84fcf804b73fbe127d7099feec0e",
+      "sha256": "aeb605ed77aabf539dc3ed65660154fd4eea32a4bf3c54d47bc75ef53aea7145"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_snow_perch_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_snow_perch_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3866,
+      "bytes": 2432,
+      "sourceSha256": "5949d8092a4dccad65084671ad487492713e15a69429606c1ea6e21563939613",
+      "sha256": "acc973d780f36fa34c10b622d4970683889a746ce8f27e3f074c0ace6452cb8e"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_eagle_snow_perch.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_eagle_snow_perch.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3820,
+      "bytes": 2394,
+      "sourceSha256": "0c682cf8e2684e11939acb52a496162c440c76d37cbb50187d4ac294709b9b62",
+      "sha256": "1f6e77bb25a1d3ee4aa3f9cd24764eae587262855904606af28dbdd49131ce3c"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_riddle_cabinet_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 15437,
+      "bytes": 10128,
+      "sourceSha256": "85b211f08b06c4950a983cc7290a68dc4a7c3864cb02aaa548a859b723ea138a",
+      "sha256": "cbfc3da08fe6a8957a8711bf1b62e9c4c4d3fc92d9134391580480039815f52e"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_riddle_cabinet_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_riddle_cabinet_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4252,
+      "bytes": 2738,
+      "sourceSha256": "75946fe8b67b489148a71007d950d9c5d97da5caacdaa3cd580dd96a3860f47b",
+      "sha256": "b8083cde7fb71d88dcd67f46849378761530792bd29ac0d4c548a2499e7a26ed"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_riddle_cabinet.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_riddle_cabinet.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4287,
+      "bytes": 2754,
+      "sourceSha256": "f570ca378d39fff0d223c7adfafc5068b3f1a2dcd02211e26fdf72fcd97aac0a",
+      "sha256": "3f0e77d447027e3e8494c0dcda45d2c9f3166af74a464beaea214355257cc78a"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_star_book_lectern_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 15507,
+      "bytes": 9724,
+      "sourceSha256": "6288c370c79b4f88db0246177f249d2e679485b90fca220dacf6b54d3f43eb2d",
+      "sha256": "959ea4d0d0b461a25240e8a4c728eb626b063c09b039f03c44e2e2f2ab954474"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_star_book_lectern_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_star_book_lectern_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4104,
+      "bytes": 2484,
+      "sourceSha256": "28b2350948af7a99cd63ba58d7a9f5d2418ee1495385dcb4912b6f42ce696cf9",
+      "sha256": "36d7079ec420421cdd5b90287b1730efcfaf619afe0100b8b840061ec2f339ef"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_star_book_lectern.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_star_book_lectern.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 4148,
+      "bytes": 2552,
+      "sourceSha256": "bc9f7d93ba951f05a5485e0c6219e5e3931609bc005c0e1eb4b685cfa4f05b90",
+      "sha256": "156d88a77e1ac47ba56605379bb74d12b459ba54587ae4295fc97f2420b5abdc"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_telescope_sled_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_telescope_sled_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 21825,
+      "bytes": 14448,
+      "sourceSha256": "dc283a79be77f49f3f992a412fbe7662f7a9afb2a18dcf4ad28d8317dc4d73a4",
+      "sha256": "e3edc7fe5567f6c994565152027dd4f1811d8ac2eb2035ded107094f536cbc7c"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_telescope_sled_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_telescope_sled_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 6043,
+      "bytes": 3874,
+      "sourceSha256": "6c68a1bc273a0f19d1f683db210635bd15de523d0edb44233925aaad54e8bcf2",
+      "sha256": "e5c7328c092eeacfbb2ee362c2b15c65d25d4259a84bde6fcba80e44e3639689"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_telescope_sled.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_telescope_sled.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5848,
+      "bytes": 3664,
+      "sourceSha256": "dc8e7ba021d7edb70a0a17be38e2480c2d256194df6da534c845eb7bbb3bd1f5",
+      "sha256": "3866454951535f8c893ffa98dd23f42ece86a66d038243e7558c2af17c366248"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_winter_observatory_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_winter_observatory_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 28673,
+      "bytes": 18882,
+      "sourceSha256": "9eaf34fe6ce1ec9410761c65240fd63a5bcb048c3d21c2d2da4f34e5dc71c8c0",
+      "sha256": "ef05fac4bf8c08fd16279fa206c44e470e9156dad42be62c1b185fb02296f9c0"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_winter_observatory_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_winter_observatory_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 7579,
+      "bytes": 4922,
+      "sourceSha256": "1843d98811f4a0ddcc408896d359d56f8a71f15be05fb39337f5706dd4bbcf64",
+      "sha256": "115b24c77d3ee00a37851919020115089722a314488c37f79113baf9cda692ea"
+    },
+    {
+      "source": "decor-assets/native/nh_ravenclaw_winter_observatory.png",
+      "file": "runtime-webp/decor-assets/native/nh_ravenclaw_winter_observatory.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 7541,
+      "bytes": 4838,
+      "sourceSha256": "4cab03293695847370eadba1fd06c39f10bb69ecfd51d57e4997354c46c43431",
+      "sha256": "b8fab62aaadba36ef797a32bc660d528841c76babdd6ec1c8372bc63b120a446"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_emerald_mirror_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_emerald_mirror_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 13172,
+      "bytes": 7862,
+      "sourceSha256": "7cd50882e66ad8b1c5dd08260cf296a781e03ef43dca9af97fda1fc79bb0f391",
+      "sha256": "8b7c057b3e832442581ed9dab00cda96bf28080ac19755fce04e47cb6cd160cc"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_emerald_mirror_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_emerald_mirror_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3591,
+      "bytes": 2112,
+      "sourceSha256": "3cbdc5a4951945dfff72c56f8bbff5f96c8190617ded97987fc93372d033cbce",
+      "sha256": "0be1b4e3d303052a3247f3a055a01285a4abd10fb79a5a19bc4530ebc2317282"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_emerald_mirror.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_emerald_mirror.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3569,
+      "bytes": 2108,
+      "sourceSha256": "4557ac8d18b3f5d34e59254686672aec2f3488e393c28dd5092d50b8562bf943",
+      "sha256": "78ffe083cab2970d2a23f9160d063b129dde84078b386af3700cff6db74b5285"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_emerald_orangery_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_emerald_orangery_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 33477,
+      "bytes": 22564,
+      "sourceSha256": "6c82767656f84b5c255e83fcb56567dff97c5b260c0aa84b8646a10cadb3a9d5",
+      "sha256": "a12fddca7adcaed7296f0abbaf1888ad0601dd30f8c05e4071308014149859da"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_emerald_orangery_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_emerald_orangery_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 8968,
+      "bytes": 5982,
+      "sourceSha256": "161119e1812758c6863e5357b29ac541894738fc4d0d10cf273219a00ae07b11",
+      "sha256": "082d08a0e3a489b45e7046f0ae0e7fba93d8ae847b96e7f7b2aa0df74e450c48"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_emerald_orangery.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_emerald_orangery.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 8872,
+      "bytes": 5860,
+      "sourceSha256": "bfd73e6706fc3d3bbdee346efbbb8ab61335a0c82ceb0cafd90c98c0050fa988",
+      "sha256": "227c7100b7a7d75776372158becaa7a000fcec6022defb7daabc726fb06dcb43"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_frozen_serpent_fountain_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 21021,
+      "bytes": 13010,
+      "sourceSha256": "238998c9711589626cd872abefb1190e295bfb9efbcd92f6d81a22c06edd4b5d",
+      "sha256": "0dbb994b7ec2312c51fdc8436af1333de4bcdb40512ccccf10026efb91118f23"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_frozen_serpent_fountain_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_frozen_serpent_fountain_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5451,
+      "bytes": 3352,
+      "sourceSha256": "84c8989140391b4bb182fede96c17d389f1b323f01f22861391d9bc55b4e9733",
+      "sha256": "fc1b718c377e61ec83d8d4e7b15e173eb1534d12ed074c9b85dd3cb86ec9dfc4"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_frozen_serpent_fountain.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_frozen_serpent_fountain.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5282,
+      "bytes": 3246,
+      "sourceSha256": "a64063d3b6a923294e09e6cd55cf27284ea79e9e1a8a43f650c65cebbd8c4d1b",
+      "sha256": "1b85194917a3938a002a67870e66d84ba181cd556a3db024155a1bb8bb09743b"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_holly_obelisk_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_holly_obelisk_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 7033,
+      "bytes": 4386,
+      "sourceSha256": "63f0829d5dc98af6dd635f680421239ab15ab7b81d1d3706d78585994b57bb9f",
+      "sha256": "2c5e506666a3da95d437dcf84d106c4c08ccf5e8110343c85c46127e7d9c5077"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_holly_obelisk_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_holly_obelisk_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 1978,
+      "bytes": 1162,
+      "sourceSha256": "cb1c37e594e78c0e9e485dfb747984c2708899df4363ead411e6a2f686d12616",
+      "sha256": "839d23b3b5295299a1ee21056423e5c2305b6feb77a863e1cede213e5e2fd595"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_holly_obelisk.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_holly_obelisk.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2003,
+      "bytes": 1194,
+      "sourceSha256": "0ddee977ef45c3f0da521d1a02e1682b4aa8f127ced119707b8ec5ea7622cebf",
+      "sha256": "8bf03a4764d5162aa264f630fbcd0ad7fd8cca2db6ae7657dae3bec21a834fc5"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_lake_lantern_buoy_atlas.webp",
+      "width": 128,
+      "height": 320,
+      "sourceBytes": 10625,
+      "bytes": 6622,
+      "sourceSha256": "3b828fceefa858ff9fd202d0582f7d9c2b4ec45c9aac18ff0e02c152d7daa584",
+      "sha256": "3ab110329b21a3d06037eb090855ef4ed612a9c5304b8357875d7e55b39fead8"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_lake_lantern_buoy_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_lake_lantern_buoy_right.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 2985,
+      "bytes": 1804,
+      "sourceSha256": "93228eb962bdf810070a94f172c9a186a7196ac76268194cd1fb56907e0937c4",
+      "sha256": "ae0bc18dea6ebb2f31208f76c20e5c355dc4a245435b54df47ceafb75c5eb91d"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_lake_lantern_buoy.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_lake_lantern_buoy.webp",
+      "width": 64,
+      "height": 160,
+      "sourceBytes": 3017,
+      "bytes": 1812,
+      "sourceSha256": "e7248e7f51a7a5eaf7464abbf694fee9ac1d4ef34f993d9715770c9b96073eb3",
+      "sha256": "ed91486f3e5e44a6288570aacacb889269e56fabe33b829a7ad891b5f959eae8"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_serpent_ice_arch_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 18584,
+      "bytes": 11000,
+      "sourceSha256": "5d48b236527ae88da3d879a32c1a8c8741cf6f3296cc47226fb6b14b2f81e78e",
+      "sha256": "ae9d48f18fdbb1426920f6c21442957e478c5efc4184b4ce0ea8a2330652fd04"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_serpent_ice_arch_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_serpent_ice_arch_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4860,
+      "bytes": 2840,
+      "sourceSha256": "d3c85d0658e0aba3a469e2985921b057d8bd8094a0ad5d06cb3d8bf642fd3468",
+      "sha256": "158320804c679e1036a8438f004ed122537313c4bf6dbc1ed301b03365112914"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_serpent_ice_arch.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_serpent_ice_arch.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4862,
+      "bytes": 2782,
+      "sourceSha256": "7c3b8d5ba2ca9bcc97f1715c4f189dba3ff12f4f78e282e903c860ffca59ab0e",
+      "sha256": "e41985f0c85fa16ed3bb71c6dbc9938f7ec8e63099a301428850bdc1be37ccbe"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_serpent_sleigh_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_serpent_sleigh_atlas.webp",
+      "width": 256,
+      "height": 512,
+      "sourceBytes": 19063,
+      "bytes": 11888,
+      "sourceSha256": "e01e3d64e82b6bf806a3ad65e2a63c4aa7e2af86325e73446d958077a51f55f0",
+      "sha256": "7edbea2043f7a6eff4c8dfb73ecc8550d230684dcae7c476a4ee8bae96e0d432"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_serpent_sleigh_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_serpent_sleigh_right.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 5190,
+      "bytes": 3172,
+      "sourceSha256": "c5dd6f46f8da0ae7263dcf12ed56b803fec6b907198a35ef170b95556be724ac",
+      "sha256": "9e6ff29b1b6cb235574e3c2065716a3d8580d1b5f403eba2b769794cf2376345"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_serpent_sleigh.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_serpent_sleigh.webp",
+      "width": 128,
+      "height": 256,
+      "sourceBytes": 4892,
+      "bytes": 2978,
+      "sourceSha256": "d252bc35a1f8d994a5f339fa4f94ddc4d7ed7512163a5b00221d3534fb6f4dfd",
+      "sha256": "31f1f35279f23ea6d17da1ae361f6a3345615468881204d0c5563b3d5aa56010"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_silver_chess_dais_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_silver_chess_dais_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 12798,
+      "bytes": 7702,
+      "sourceSha256": "afeb769c0c8150c609b58f98e57fb2d0197cfaea6044e879bddb4fa8c70060f7",
+      "sha256": "6d2e9d7b3a045b9fd14f197cbd99fd5577c8f01d7d260aceef4e11d4f9d30774"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_silver_chess_dais_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_silver_chess_dais_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3545,
+      "bytes": 2080,
+      "sourceSha256": "969bd620467f68e8805b91f48684b657be9c548d261c2c05ad5a4ec548fd1cef",
+      "sha256": "c152f859fd0b9b38835b59aa6a3ce5d7a52af19fd373843be31d92d8e0820655"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_silver_chess_dais.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_silver_chess_dais.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3392,
+      "bytes": 1966,
+      "sourceSha256": "b7b863a4d1e4580c83e15492fda274448d3a29ffc44d3ec51e1676ac63db927e",
+      "sha256": "66ebff525bf6f38cec2c442f140c8859c2f70c3becc6dcc611e03d28c6e92880"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_strategy_desk_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_strategy_desk_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 14210,
+      "bytes": 8688,
+      "sourceSha256": "a121092e8a5c3aa294e3d3090e97e142808a622a54f11821c778daa90513afa6",
+      "sha256": "8c094e0173f8472bc59e43cf34cd4ad7ee5ea1e1af21cda42b6d454711f57a9c"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_strategy_desk_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_strategy_desk_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3869,
+      "bytes": 2316,
+      "sourceSha256": "d2aa454d2b5f07c16e08010d257c02ce190f06dd530a02201fbd4bd2113a1b2b",
+      "sha256": "dfcb523c05c794e22e3a7713891535ac383b99d11a9234fecc97384b11622e36"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_strategy_desk.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_strategy_desk.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3852,
+      "bytes": 2254,
+      "sourceSha256": "1e2c49b13d8b05fba8468d341133b06c9437e72d56a890818aca28a44487c790",
+      "sha256": "008f94ac24a1fc9103405edbfd4eabe01ba48f34877bcc10fda3004aefa3e00c"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_winter_potion_bar_atlas.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_winter_potion_bar_atlas.webp",
+      "width": 192,
+      "height": 448,
+      "sourceBytes": 11711,
+      "bytes": 6986,
+      "sourceSha256": "6b34fc35e8c9cc39ff9705f108717a97ba41f118eeedef0bd512861b867687d8",
+      "sha256": "3b933cc5aada5948304725fb605de237a16394d53881538cfebb9d77f1c9a51d"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_winter_potion_bar_right.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_winter_potion_bar_right.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3305,
+      "bytes": 1944,
+      "sourceSha256": "e4ec6486c7b09d62b5f9235ecb4946542cc701ffa4f6b1c8ac2ae81561e2d291",
+      "sha256": "1d596da1a41faed2cb453d67de941196f5d15f00193af41086ff472be38ba7d9"
+    },
+    {
+      "source": "decor-assets/native/nh_slytherin_winter_potion_bar.png",
+      "file": "runtime-webp/decor-assets/native/nh_slytherin_winter_potion_bar.webp",
+      "width": 96,
+      "height": 224,
+      "sourceBytes": 3169,
+      "bytes": 1876,
+      "sourceSha256": "788bff41e9def4b228aa2072ac0d821cf62b62a84333032deace7a3c7b8eeae8",
+      "sha256": "ce37e60fcaa38be284a3f4135a2cedadeb3898e23a4bb80d2c5057df6b4a4072"
+    },
+    {
       "source": "decor-assets/native/nx_badger_cookie_table_atlas.png",
       "file": "runtime-webp/decor-assets/native/nx_badger_cookie_table_atlas.webp",
       "width": 192,
@@ -15925,11 +17125,11 @@
     }
   ],
   "totals": {
-    "converted": 1586,
+    "converted": 1706,
     "existingWebp": 8,
-    "originalBytes": 6412837,
-    "webpBytes": 4203734,
-    "savedBytes": 2209103,
-    "savedPercent": 34.45
+    "originalBytes": 7409626,
+    "webpBytes": 4839442,
+    "savedBytes": 2570184,
+    "savedPercent": 34.69
   }
 }

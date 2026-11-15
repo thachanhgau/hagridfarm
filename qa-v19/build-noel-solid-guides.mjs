@@ -2,12 +2,13 @@
 import fs from 'node:fs/promises';import {createRequire} from 'node:module';
 import {ISO_TILE} from '../garden-v05/garden-grid.mjs';import {orientedFootprint} from '../garden-v05/decor-runtime.mjs';
 const require=createRequire(import.meta.url),sharp=require('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
-const specs=JSON.parse(await fs.readFile('garden-v05/noel-50-assets/specs.json','utf8'));
-const out='garden-v05/noel-50-assets/coordinate-locks/solid';await fs.mkdir(out,{recursive:true});
+const pack=process.argv[2]||'noel-50-assets';
+const specs=JSON.parse(await fs.readFile(`garden-v05/${pack}/specs.json`,'utf8'));
+const out=`garden-v05/${pack}/coordinate-locks/solid`;await fs.mkdir(out,{recursive:true});
 const kinds={tent:['elf_yule_tent'],roof:['fang_biscuit_kennel','gingerbread_hagrids_hut','gingerbread_greenhouse','fairy_pine_log'],gazebo:['yule_dance_gazebo'],table:['enchanted_cracker_table','wizard_chess_christmas','badger_cookie_table'],bench:['raven_ice_bench'],rack:['weasley_knit_rack','lion_firewood_rack','holly_broom_fence'],arch:['mistletoe_gate'],cart:['hippogriff_gift_sleigh','hogwarts_express_parcels','mince_pie_cart'],crate:['hagrid_gift_crate'],bed:['frosted_dittany_bed'],lamp:['snitch_lamp_post','platform_clock','enchanted_violin_stand','owl_parcel_roost'],pot:['hagrid_boot_planter','mandrake_earmuff_planter','glowing_mistletoe_pot','serpent_holly_urn'],castle:['snow_hogwarts_castle']};
 const records=[];
 for(const item of specs){
- const short=item.id.slice(3),kind=Object.keys(kinds).find(k=>kinds[k].includes(short))||'plinth';
+ const short=item.id.slice(3),kind=item.guideKind||Object.keys(kinds).find(k=>kinds[k].includes(short))||'plinth';
  const W=(item.footprint[0]+item.footprint[1])*ISO_TILE.width/2,B=Math.min(item.maxInkWidth??W-8,W-8),H=Math.round(kind==='tent'?W*.55:kind==='gazebo'?W*.7:kind==='roof'?W*.45:kind==='lamp'?W*1.1:W*.42);
  const cellW=Math.max(256,W*3+64),cellH=Math.max(320,(H+W*.8+30)*3),zoom=3,views=[];let svg='';
  for(let row=0;row<2;row++)for(let column=0;column<2;column++){
@@ -40,7 +41,7 @@ for(const item of specs){
    const h=kind==='bed'?H*.45:H;box(0,0,cols,rows,0,h);
    for(const z of[h/3,2*h/3])line([[a,e,z],[b,e,z],[b,d,z]],'#4A3042');
    if(kind!=='bed'){box(-cols*.15,-rows*.2,cols*.45,rows*.3,h,22,['#C75B4B','#874056','#ED8A45']);box(cols*.18,rows*.12,cols*.35,rows*.35,h,15,['#71934B','#24483F','#B0BD67']);}
-   if(kind==='cart'&&short==='mince_pie_cart'){for(const[c,r]of [[a,d],[b,d],[a,e],[b,e]])box(c*.85,r*.85,.08,.08,h,42);roof(h+42,h+62);}
+   if(kind==='cart'&&(short==='mince_pie_cart'||item.canopy)){for(const[c,r]of [[a,d],[b,d],[a,e],[b,e]])box(c*.85,r*.85,.08,.08,h,42);roof(h+42,h+62);}
   }else if(kind==='lamp'){
    box(0,0,cols,rows,0,7,stone);box(0,0,.14,.14,7,H,wood);box(0,0,.5,.5,H+7,20,['#E7AE73','#C97952','#F5D69A']);
   }else if(kind==='pot'){

@@ -6,8 +6,8 @@ export function pixelAxisError(points,expectedSlope){
  const residuals=points.map(([x,y])=>y-expectedSlope*x),lo=Math.min(...residuals),hi=Math.max(...residuals);
  return {axisIntercept:(lo+hi)/2,maxPixelError:(hi-lo)/2};
 }
-export async function auditNativeAxes(ids){
-const source=JSON.parse(await fs.readFile(new URL('noel-50-assets/manifest.json',import.meta.url)));
+export async function auditNativeAxes(ids,pack='noel-50-assets',output='noel-native-axis-audit.json'){
+const source=JSON.parse(await fs.readFile(new URL(`${pack}/manifest.json`,import.meta.url)));
 if(!ids.length)ids.push('nx_hagrid_gift_crate');
 const rows=[];
 for(const id of ids){const item=source.items.find(i=>i.id===id);if(!item)throw Error(id);
@@ -21,7 +21,7 @@ for(const id of ids){const item=source.items.find(i=>i.id===id);if(!item)throw E
  }
 }
 const report={method:'maximum actual pixel residual to the exact ±0.5 axis line, excluding 4px corner caps; fitted-slope end error retained as diagnostic only; hard rectangular base edges only',toleranceNativePixels:1,rows};
-await fs.writeFile(new URL('../docs/noel-native-axis-audit.json',import.meta.url),JSON.stringify(report,null,2)+'\n');
+await fs.writeFile(new URL(`../docs/${output}`,import.meta.url),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(rows.map(r=>({id:r.id,frame:r.frame,errors:r.edges.map(e=>+e.maxPixelError.toFixed(3)),passed:r.passed}))));
 return report;
 }

@@ -1,0 +1,10262 @@
+[
+  {
+    "group": "store-decoration",
+    "id": "nx_snitch_wreath",
+    "label": "Vòng lá thông Snitch",
+    "facing": "default",
+    "file": "decor-assets/native/nx_snitch_wreath.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 61,
+      "w": 55,
+      "h": 83,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.176,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        55,
+        83
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snitch_wreath",
+    "label": "Vòng lá thông Snitch",
+    "facing": "right",
+    "file": "decor-assets/native/nx_snitch_wreath_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 60,
+      "w": 55,
+      "h": 84,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.2,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        55,
+        84
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_elf_yule_tent",
+    "label": "Lều Noel của gia tinh",
+    "facing": "default",
+    "file": "decor-assets/native/nx_elf_yule_tent.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 122,
+      "w": 119,
+      "h": 118,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.319,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        119,
+        118
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_elf_yule_tent",
+    "label": "Lều Noel của gia tinh",
+    "facing": "right",
+    "file": "decor-assets/native/nx_elf_yule_tent_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 123,
+      "w": 120,
+      "h": 117,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.321,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        120,
+        117
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_owl_parcel_roost",
+    "label": "Trạm cú phát quà",
+    "facing": "default",
+    "file": "decor-assets/native/nx_owl_parcel_roost.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 21,
+      "w": 88,
+      "h": 187,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.229,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        208
+      ],
+      "pivot": [
+        48,
+        192
+      ],
+      "ink": [
+        88,
+        187
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_owl_parcel_roost",
+    "label": "Trạm cú phát quà",
+    "facing": "right",
+    "file": "decor-assets/native/nx_owl_parcel_roost_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 16,
+      "w": 86,
+      "h": 192,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.239,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        224
+      ],
+      "pivot": [
+        48,
+        208
+      ],
+      "ink": [
+        86,
+        192
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_hagrid_boot_planter",
+    "label": "Ủng Hagrid trồng thông",
+    "facing": "default",
+    "file": "decor-assets/native/nx_hagrid_boot_planter.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 9,
+      "y": 79,
+      "w": 47,
+      "h": 65,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.068,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        47,
+        65
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_hagrid_boot_planter",
+    "label": "Ủng Hagrid trồng thông",
+    "facing": "right",
+    "file": "decor-assets/native/nx_hagrid_boot_planter_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 80,
+      "w": 55,
+      "h": 64,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.081,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        64
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_fang_biscuit_kennel",
+    "label": "Nhà Noel của Fang",
+    "facing": "default",
+    "file": "decor-assets/native/nx_fang_biscuit_kennel.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 108,
+      "w": 85,
+      "h": 100,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.264,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        85,
+        100
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_fang_biscuit_kennel",
+    "label": "Nhà Noel của Fang",
+    "facing": "right",
+    "file": "decor-assets/native/nx_fang_biscuit_kennel_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 110,
+      "w": 88,
+      "h": 98,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.247,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        98
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_niffler_coin_snowglobe",
+    "label": "Quả cầu tuyết Đào mỏ",
+    "facing": "default",
+    "file": "decor-assets/native/nx_niffler_coin_snowglobe.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 71,
+      "w": 56,
+      "h": 73,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.127,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        73
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_niffler_coin_snowglobe",
+    "label": "Quả cầu tuyết Đào mỏ",
+    "facing": "right",
+    "file": "decor-assets/native/nx_niffler_coin_snowglobe_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 71,
+      "w": 56,
+      "h": 73,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.132,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        73
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_bowtruckle_fir_perch",
+    "label": "Giàn thông Que Xạo",
+    "facing": "default",
+    "file": "decor-assets/native/nx_bowtruckle_fir_perch.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 74,
+      "w": 56,
+      "h": 70,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.175,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        70
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_bowtruckle_fir_perch",
+    "label": "Giàn thông Que Xạo",
+    "facing": "right",
+    "file": "decor-assets/native/nx_bowtruckle_fir_perch_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 73,
+      "w": 55,
+      "h": 71,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.17,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        71
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_mooncalf_moon_lantern",
+    "label": "Đèn trăng Mooncalf",
+    "facing": "default",
+    "file": "decor-assets/native/nx_mooncalf_moon_lantern.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 65,
+      "w": 56,
+      "h": 79,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.114,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        79
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_mooncalf_moon_lantern",
+    "label": "Đèn trăng Mooncalf",
+    "facing": "right",
+    "file": "decor-assets/native/nx_mooncalf_moon_lantern_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 64,
+      "w": 56,
+      "h": 80,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.122,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        80
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_puffskein_sock_basket",
+    "label": "Giỏ vớ Quái lùng nhùng",
+    "facing": "default",
+    "file": "decor-assets/native/nx_puffskein_sock_basket.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 76,
+      "w": 56,
+      "h": 68,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.186,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        68
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_puffskein_sock_basket",
+    "label": "Giỏ vớ Quái lùng nhùng",
+    "facing": "right",
+    "file": "decor-assets/native/nx_puffskein_sock_basket_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 76,
+      "w": 56,
+      "h": 68,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.182,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        68
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_hippogriff_gift_sleigh",
+    "label": "Xe quà Bằng-Mã",
+    "facing": "default",
+    "file": "decor-assets/native/nx_hippogriff_gift_sleigh.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 20,
+      "y": 131,
+      "w": 104,
+      "h": 109,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.177,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        104,
+        109
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_hippogriff_gift_sleigh",
+    "label": "Xe quà Bằng-Mã",
+    "facing": "right",
+    "file": "decor-assets/native/nx_hippogriff_gift_sleigh_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 133,
+      "w": 103,
+      "h": 107,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.187,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        112
+      ],
+      "ink": [
+        103,
+        107
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_unicorn_ice_fountain",
+    "label": "Đài băng kỳ lân",
+    "facing": "default",
+    "file": "decor-assets/native/nx_unicorn_ice_fountain.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 123,
+      "w": 120,
+      "h": 117,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.237,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        120,
+        117
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_unicorn_ice_fountain",
+    "label": "Đài băng kỳ lân",
+    "facing": "right",
+    "file": "decor-assets/native/nx_unicorn_ice_fountain_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 121,
+      "w": 120,
+      "h": 119,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.248,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        120,
+        119
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_thestral_silver_bell",
+    "label": "Chuông bạc Vong mã",
+    "facing": "default",
+    "file": "decor-assets/native/nx_thestral_silver_bell.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 59,
+      "w": 56,
+      "h": 85,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.102,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        85
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_thestral_silver_bell",
+    "label": "Chuông bạc Vong mã",
+    "facing": "right",
+    "file": "decor-assets/native/nx_thestral_silver_bell_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 59,
+      "w": 56,
+      "h": 85,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.098,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        85
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_fwooper_music_box",
+    "label": "Hộp nhạc Fwooper",
+    "facing": "default",
+    "file": "decor-assets/native/nx_fwooper_music_box.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 81,
+      "w": 55,
+      "h": 63,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.094,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        63
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_fwooper_music_box",
+    "label": "Hộp nhạc Fwooper",
+    "facing": "right",
+    "file": "decor-assets/native/nx_fwooper_music_box_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 81,
+      "w": 55,
+      "h": 63,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.097,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        63
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_phoenix_candle_bough",
+    "label": "Cành nến phượng hoàng",
+    "facing": "default",
+    "file": "decor-assets/native/nx_phoenix_candle_bough.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 97,
+      "w": 88,
+      "h": 111,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.16,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        88,
+        111
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_phoenix_candle_bough",
+    "label": "Cành nến phượng hoàng",
+    "facing": "right",
+    "file": "decor-assets/native/nx_phoenix_candle_bough_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 95,
+      "w": 88,
+      "h": 113,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.156,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        88,
+        113
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_norbert_egg_lantern",
+    "label": "Đèn trứng rồng Noel",
+    "facing": "default",
+    "file": "decor-assets/native/nx_norbert_egg_lantern.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 8,
+      "y": 86,
+      "w": 48,
+      "h": 58,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.119,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        80
+      ],
+      "pivot": [
+        32,
+        64
+      ],
+      "ink": [
+        48,
+        58
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_norbert_egg_lantern",
+    "label": "Đèn trứng rồng Noel",
+    "facing": "right",
+    "file": "decor-assets/native/nx_norbert_egg_lantern_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 7,
+      "y": 85,
+      "w": 50,
+      "h": 59,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.143,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        80
+      ],
+      "pivot": [
+        32,
+        64
+      ],
+      "ink": [
+        50,
+        59
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snowwizard_hat",
+    "label": "Người tuyết đội nón phù thủy",
+    "facing": "default",
+    "file": "decor-assets/native/nx_snowwizard_hat.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 76,
+      "w": 55,
+      "h": 68,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.214,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        68
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snowwizard_hat",
+    "label": "Người tuyết đội nón phù thủy",
+    "facing": "right",
+    "file": "decor-assets/native/nx_snowwizard_hat_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 76,
+      "w": 55,
+      "h": 68,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.207,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        68
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snow_owl_sculpture",
+    "label": "Tượng cú tuyết mùa đông",
+    "facing": "default",
+    "file": "decor-assets/native/nx_snow_owl_sculpture.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 77,
+      "w": 56,
+      "h": 67,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.301,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        67
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snow_owl_sculpture",
+    "label": "Tượng cú tuyết mùa đông",
+    "facing": "right",
+    "file": "decor-assets/native/nx_snow_owl_sculpture_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 78,
+      "w": 56,
+      "h": 66,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.306,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        66
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snow_dragon_sculpture",
+    "label": "Rồng tuyết giữ quà",
+    "facing": "default",
+    "file": "decor-assets/native/nx_snow_dragon_sculpture.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 138,
+      "w": 88,
+      "h": 70,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.227,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        96
+      ],
+      "pivot": [
+        48,
+        80
+      ],
+      "ink": [
+        88,
+        70
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snow_dragon_sculpture",
+    "label": "Rồng tuyết giữ quà",
+    "facing": "right",
+    "file": "decor-assets/native/nx_snow_dragon_sculpture_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 138,
+      "w": 88,
+      "h": 70,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.247,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        96
+      ],
+      "pivot": [
+        48,
+        80
+      ],
+      "ink": [
+        88,
+        70
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snow_hogwarts_castle",
+    "label": "Lâu đài tuyết phép thuật",
+    "facing": "default",
+    "file": "decor-assets/native/nx_snow_hogwarts_castle.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      3
+    ],
+    "ground": {
+      "width": 160,
+      "height": 80
+    },
+    "canvas": [
+      160,
+      256
+    ],
+    "pivot": [
+      80,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 43,
+      "w": 152,
+      "h": 197,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 160,
+      "centreY": 208,
+      "frontY": 248
+    },
+    "flat2x2": 0.311,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        160,
+        224
+      ],
+      "pivot": [
+        80,
+        208
+      ],
+      "ink": [
+        152,
+        197
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snow_hogwarts_castle",
+    "label": "Lâu đài tuyết phép thuật",
+    "facing": "right",
+    "file": "decor-assets/native/nx_snow_hogwarts_castle_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      2
+    ],
+    "ground": {
+      "width": 160,
+      "height": 80
+    },
+    "canvas": [
+      160,
+      256
+    ],
+    "pivot": [
+      80,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 40,
+      "w": 151,
+      "h": 200,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 160,
+      "centreY": 208,
+      "frontY": 248
+    },
+    "flat2x2": 0.318,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        160,
+        224
+      ],
+      "pivot": [
+        80,
+        208
+      ],
+      "ink": [
+        151,
+        200
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_ice_wand_star",
+    "label": "Ngôi sao băng đũa phép",
+    "facing": "default",
+    "file": "decor-assets/native/nx_ice_wand_star.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 67,
+      "w": 56,
+      "h": 77,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.204,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        77
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_ice_wand_star",
+    "label": "Ngôi sao băng đũa phép",
+    "facing": "right",
+    "file": "decor-assets/native/nx_ice_wand_star_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 68,
+      "w": 56,
+      "h": 76,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.207,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        76
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_mistletoe_gate",
+    "label": "Cổng tầm gửi Giáng sinh",
+    "facing": "default",
+    "file": "decor-assets/native/nx_mistletoe_gate.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 37,
+      "y": 145,
+      "w": 85,
+      "h": 95,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.106,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        112
+      ],
+      "ink": [
+        85,
+        95
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_mistletoe_gate",
+    "label": "Cổng tầm gửi Giáng sinh",
+    "facing": "right",
+    "file": "decor-assets/native/nx_mistletoe_gate_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 144,
+      "w": 88,
+      "h": 96,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.131,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        112
+      ],
+      "ink": [
+        88,
+        96
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_holly_broom_fence",
+    "label": "Hàng rào chổi lá nhựa ruồi",
+    "facing": "default",
+    "file": "decor-assets/native/nx_holly_broom_fence.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 36,
+      "y": 143,
+      "w": 88,
+      "h": 97,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.122,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        112
+      ],
+      "ink": [
+        88,
+        97
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_holly_broom_fence",
+    "label": "Hàng rào chổi lá nhựa ruồi",
+    "facing": "right",
+    "file": "decor-assets/native/nx_holly_broom_fence_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 144,
+      "w": 88,
+      "h": 96,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.152,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        112
+      ],
+      "ink": [
+        88,
+        96
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snitch_lamp_post",
+    "label": "Cột đèn Snitch",
+    "facing": "default",
+    "file": "decor-assets/native/nx_snitch_lamp_post.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 8,
+      "y": 22,
+      "w": 49,
+      "h": 122,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.124,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        144
+      ],
+      "pivot": [
+        32,
+        128
+      ],
+      "ink": [
+        49,
+        122
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_snitch_lamp_post",
+    "label": "Cột đèn Snitch",
+    "facing": "right",
+    "file": "decor-assets/native/nx_snitch_lamp_post_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 8,
+      "y": 16,
+      "w": 49,
+      "h": 128,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.12,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        49,
+        128
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_floo_chimney_mailbox",
+    "label": "Hộp thư ống khói Noel",
+    "facing": "default",
+    "file": "decor-assets/native/nx_floo_chimney_mailbox.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 73,
+      "w": 55,
+      "h": 71,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.218,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        71
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_floo_chimney_mailbox",
+    "label": "Hộp thư ống khói Noel",
+    "facing": "right",
+    "file": "decor-assets/native/nx_floo_chimney_mailbox_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 73,
+      "w": 56,
+      "h": 71,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.202,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        71
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_hogwarts_express_parcels",
+    "label": "Xe hành lý tốc hành Noel",
+    "facing": "default",
+    "file": "decor-assets/native/nx_hogwarts_express_parcels.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 103,
+      "w": 87,
+      "h": 105,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.203,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        105
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_hogwarts_express_parcels",
+    "label": "Xe hành lý tốc hành Noel",
+    "facing": "right",
+    "file": "decor-assets/native/nx_hogwarts_express_parcels_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 100,
+      "w": 87,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.181,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_platform_clock",
+    "label": "Đồng hồ sân ga mùa tuyết",
+    "facing": "default",
+    "file": "decor-assets/native/nx_platform_clock.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 21,
+      "w": 55,
+      "h": 123,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.204,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        144
+      ],
+      "pivot": [
+        32,
+        128
+      ],
+      "ink": [
+        55,
+        123
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_platform_clock",
+    "label": "Đồng hồ sân ga mùa tuyết",
+    "facing": "right",
+    "file": "decor-assets/native/nx_platform_clock_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 16,
+      "w": 56,
+      "h": 128,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.174,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        56,
+        128
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_enchanted_cracker_table",
+    "label": "Bàn pháo giấy phù thủy",
+    "facing": "default",
+    "file": "decor-assets/native/nx_enchanted_cracker_table.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 112,
+      "w": 84,
+      "h": 96,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.226,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        84,
+        96
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_enchanted_cracker_table",
+    "label": "Bàn pháo giấy phù thủy",
+    "facing": "right",
+    "file": "decor-assets/native/nx_enchanted_cracker_table_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 112,
+      "w": 85,
+      "h": 96,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.228,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        85,
+        96
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_wizard_chess_christmas",
+    "label": "Bàn cờ đêm Giáng sinh",
+    "facing": "default",
+    "file": "decor-assets/native/nx_wizard_chess_christmas.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 118,
+      "w": 87,
+      "h": 90,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.108,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        112
+      ],
+      "pivot": [
+        48,
+        96
+      ],
+      "ink": [
+        87,
+        90
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_wizard_chess_christmas",
+    "label": "Bàn cờ đêm Giáng sinh",
+    "facing": "right",
+    "file": "decor-assets/native/nx_wizard_chess_christmas_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 117,
+      "w": 87,
+      "h": 91,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.098,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        112
+      ],
+      "pivot": [
+        48,
+        96
+      ],
+      "ink": [
+        87,
+        91
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_weasley_knit_rack",
+    "label": "Giá áo len nhà Weasley",
+    "facing": "default",
+    "file": "decor-assets/native/nx_weasley_knit_rack.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 105,
+      "w": 88,
+      "h": 103,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.158,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        103
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_weasley_knit_rack",
+    "label": "Giá áo len nhà Weasley",
+    "facing": "right",
+    "file": "decor-assets/native/nx_weasley_knit_rack_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 110,
+      "w": 86,
+      "h": 98,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.138,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        86,
+        98
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_dobby_sock_tree",
+    "label": "Cây vớ tặng gia tinh",
+    "facing": "default",
+    "file": "decor-assets/native/nx_dobby_sock_tree.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 7,
+      "y": 85,
+      "w": 82,
+      "h": 123,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.204,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        82,
+        123
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_dobby_sock_tree",
+    "label": "Cây vớ tặng gia tinh",
+    "facing": "right",
+    "file": "decor-assets/native/nx_dobby_sock_tree_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 84,
+      "w": 85,
+      "h": 124,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.204,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        85,
+        124
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_mince_pie_cart",
+    "label": "Xe bánh Giáng sinh",
+    "facing": "default",
+    "file": "decor-assets/native/nx_mince_pie_cart.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 79,
+      "w": 87,
+      "h": 129,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.217,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        160
+      ],
+      "pivot": [
+        48,
+        144
+      ],
+      "ink": [
+        87,
+        129
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_mince_pie_cart",
+    "label": "Xe bánh Giáng sinh",
+    "facing": "right",
+    "file": "decor-assets/native/nx_mince_pie_cart_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 75,
+      "w": 88,
+      "h": 133,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.252,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        160
+      ],
+      "pivot": [
+        48,
+        144
+      ],
+      "ink": [
+        88,
+        133
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_plum_pudding_stand",
+    "label": "Bánh pudding lửa phép",
+    "facing": "default",
+    "file": "decor-assets/native/nx_plum_pudding_stand.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 71,
+      "w": 56,
+      "h": 73,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.241,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        73
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_plum_pudding_stand",
+    "label": "Bánh pudding lửa phép",
+    "facing": "right",
+    "file": "decor-assets/native/nx_plum_pudding_stand_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 70,
+      "w": 56,
+      "h": 74,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.242,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        74
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_chocolate_frog_tree",
+    "label": "Tháp quà Kẹo Ếch",
+    "facing": "default",
+    "file": "decor-assets/native/nx_chocolate_frog_tree.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 71,
+      "w": 56,
+      "h": 73,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.088,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        73
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_chocolate_frog_tree",
+    "label": "Tháp quà Kẹo Ếch",
+    "facing": "right",
+    "file": "decor-assets/native/nx_chocolate_frog_tree_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 71,
+      "w": 56,
+      "h": 73,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.09,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        73
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_peppermint_cauldron",
+    "label": "Vạc cacao bạc hà",
+    "facing": "default",
+    "file": "decor-assets/native/nx_peppermint_cauldron.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 72,
+      "w": 54,
+      "h": 72,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.172,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        54,
+        72
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_peppermint_cauldron",
+    "label": "Vạc cacao bạc hà",
+    "facing": "right",
+    "file": "decor-assets/native/nx_peppermint_cauldron_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 70,
+      "w": 55,
+      "h": 74,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.156,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        74
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_butterbeer_barrel_seat",
+    "label": "Ghế thùng bia bơ mùa đông",
+    "facing": "default",
+    "file": "decor-assets/native/nx_butterbeer_barrel_seat.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 93,
+      "w": 56,
+      "h": 51,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.19,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        80
+      ],
+      "pivot": [
+        32,
+        64
+      ],
+      "ink": [
+        56,
+        51
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_butterbeer_barrel_seat",
+    "label": "Ghế thùng bia bơ mùa đông",
+    "facing": "right",
+    "file": "decor-assets/native/nx_butterbeer_barrel_seat_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 93,
+      "w": 56,
+      "h": 51,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.204,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        80
+      ],
+      "pivot": [
+        32,
+        64
+      ],
+      "ink": [
+        56,
+        51
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_gingerbread_hagrids_hut",
+    "label": "Nhà bánh gừng của Hagrid",
+    "facing": "default",
+    "file": "decor-assets/native/nx_gingerbread_hagrids_hut.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 98,
+      "w": 88,
+      "h": 110,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.194,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        88,
+        110
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_gingerbread_hagrids_hut",
+    "label": "Nhà bánh gừng của Hagrid",
+    "facing": "right",
+    "file": "decor-assets/native/nx_gingerbread_hagrids_hut_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 102,
+      "w": 87,
+      "h": 106,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.231,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        106
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_gingerbread_greenhouse",
+    "label": "Nhà kính bánh gừng",
+    "facing": "default",
+    "file": "decor-assets/native/nx_gingerbread_greenhouse.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 98,
+      "w": 85,
+      "h": 110,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.127,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        85,
+        110
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_gingerbread_greenhouse",
+    "label": "Nhà kính bánh gừng",
+    "facing": "right",
+    "file": "decor-assets/native/nx_gingerbread_greenhouse_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 98,
+      "w": 86,
+      "h": 110,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.151,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        86,
+        110
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_mandrake_earmuff_planter",
+    "label": "Chậu Nhân sâm đón Noel",
+    "facing": "default",
+    "file": "decor-assets/native/nx_mandrake_earmuff_planter.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 70,
+      "w": 56,
+      "h": 74,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.143,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        74
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_mandrake_earmuff_planter",
+    "label": "Chậu Nhân sâm đón Noel",
+    "facing": "right",
+    "file": "decor-assets/native/nx_mandrake_earmuff_planter_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 69,
+      "w": 56,
+      "h": 75,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.131,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        75
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_frosted_dittany_bed",
+    "label": "Bồn Bạch tiên mùa tuyết",
+    "facing": "default",
+    "file": "decor-assets/native/nx_frosted_dittany_bed.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 135,
+      "w": 88,
+      "h": 73,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.121,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        96
+      ],
+      "pivot": [
+        48,
+        80
+      ],
+      "ink": [
+        88,
+        73
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_frosted_dittany_bed",
+    "label": "Bồn Bạch tiên mùa tuyết",
+    "facing": "right",
+    "file": "decor-assets/native/nx_frosted_dittany_bed_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 138,
+      "w": 85,
+      "h": 70,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.099,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        96
+      ],
+      "pivot": [
+        48,
+        80
+      ],
+      "ink": [
+        85,
+        70
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_glowing_mistletoe_pot",
+    "label": "Chậu tầm gửi ánh sao",
+    "facing": "default",
+    "file": "decor-assets/native/nx_glowing_mistletoe_pot.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 78,
+      "w": 56,
+      "h": 66,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.168,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        66
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_glowing_mistletoe_pot",
+    "label": "Chậu tầm gửi ánh sao",
+    "facing": "right",
+    "file": "decor-assets/native/nx_glowing_mistletoe_pot_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 77,
+      "w": 55,
+      "h": 67,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.148,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        67
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_fairy_pine_log",
+    "label": "Khúc gỗ tiên Giáng sinh",
+    "facing": "default",
+    "file": "decor-assets/native/nx_fairy_pine_log.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 100,
+      "w": 86,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.171,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        86,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_fairy_pine_log",
+    "label": "Khúc gỗ tiên Giáng sinh",
+    "facing": "right",
+    "file": "decor-assets/native/nx_fairy_pine_log_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 107,
+      "w": 87,
+      "h": 101,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.161,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        101
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_icicle_harp",
+    "label": "Đàn hạc băng Dạ vũ",
+    "facing": "default",
+    "file": "decor-assets/native/nx_icicle_harp.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 103,
+      "w": 84,
+      "h": 105,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.136,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        84,
+        105
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_icicle_harp",
+    "label": "Đàn hạc băng Dạ vũ",
+    "facing": "right",
+    "file": "decor-assets/native/nx_icicle_harp_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 106,
+      "w": 88,
+      "h": 102,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.136,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        102
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_yule_dance_gazebo",
+    "label": "Chòi Dạ vũ mùa đông",
+    "facing": "default",
+    "file": "decor-assets/native/nx_yule_dance_gazebo.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      3
+    ],
+    "ground": {
+      "width": 160,
+      "height": 80
+    },
+    "canvas": [
+      160,
+      256
+    ],
+    "pivot": [
+      80,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 36,
+      "w": 152,
+      "h": 204,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 160,
+      "centreY": 208,
+      "frontY": 248
+    },
+    "flat2x2": 0.414,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        160,
+        224
+      ],
+      "pivot": [
+        80,
+        208
+      ],
+      "ink": [
+        152,
+        204
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_yule_dance_gazebo",
+    "label": "Chòi Dạ vũ mùa đông",
+    "facing": "right",
+    "file": "decor-assets/native/nx_yule_dance_gazebo_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      2
+    ],
+    "ground": {
+      "width": 160,
+      "height": 80
+    },
+    "canvas": [
+      160,
+      256
+    ],
+    "pivot": [
+      80,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 33,
+      "w": 152,
+      "h": 207,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 160,
+      "centreY": 208,
+      "frontY": 248
+    },
+    "flat2x2": 0.44,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        160,
+        240
+      ],
+      "pivot": [
+        80,
+        224
+      ],
+      "ink": [
+        152,
+        207
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_enchanted_violin_stand",
+    "label": "Đàn vĩ cầm tự chơi",
+    "facing": "default",
+    "file": "decor-assets/native/nx_enchanted_violin_stand.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 17,
+      "w": 55,
+      "h": 127,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.13,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        55,
+        127
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_enchanted_violin_stand",
+    "label": "Đàn vĩ cầm tự chơi",
+    "facing": "right",
+    "file": "decor-assets/native/nx_enchanted_violin_stand_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 16,
+      "w": 55,
+      "h": 128,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.148,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        55,
+        128
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_great_hall_candle_cluster",
+    "label": "Cụm nến Đại Sảnh mùa lễ",
+    "facing": "default",
+    "file": "decor-assets/native/nx_great_hall_candle_cluster.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 100,
+      "w": 88,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.26,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_great_hall_candle_cluster",
+    "label": "Cụm nến Đại Sảnh mùa lễ",
+    "facing": "right",
+    "file": "decor-assets/native/nx_great_hall_candle_cluster_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 101,
+      "w": 88,
+      "h": 107,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.241,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        107
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_raven_ice_bench",
+    "label": "Ghế đá quạ mùa đông",
+    "facing": "default",
+    "file": "decor-assets/native/nx_raven_ice_bench.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 93,
+      "w": 88,
+      "h": 115,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.18,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        88,
+        115
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_raven_ice_bench",
+    "label": "Ghế đá quạ mùa đông",
+    "facing": "right",
+    "file": "decor-assets/native/nx_raven_ice_bench_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 95,
+      "w": 84,
+      "h": 113,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.179,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        84,
+        113
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_lion_firewood_rack",
+    "label": "Giá củi sư tử Giáng sinh",
+    "facing": "default",
+    "file": "decor-assets/native/nx_lion_firewood_rack.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 8,
+      "y": 105,
+      "w": 80,
+      "h": 103,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.14,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        80,
+        103
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_lion_firewood_rack",
+    "label": "Giá củi sư tử Giáng sinh",
+    "facing": "right",
+    "file": "decor-assets/native/nx_lion_firewood_rack_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 104,
+      "w": 87,
+      "h": 104,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.14,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        104
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_badger_cookie_table",
+    "label": "Bàn bánh lửng mật",
+    "facing": "default",
+    "file": "decor-assets/native/nx_badger_cookie_table.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 118,
+      "w": 85,
+      "h": 90,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.171,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        112
+      ],
+      "pivot": [
+        48,
+        96
+      ],
+      "ink": [
+        85,
+        90
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_badger_cookie_table",
+    "label": "Bàn bánh lửng mật",
+    "facing": "right",
+    "file": "decor-assets/native/nx_badger_cookie_table_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 112,
+      "w": 88,
+      "h": 96,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.169,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        96
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_serpent_holly_urn",
+    "label": "Bình lá thông rắn bạc",
+    "facing": "default",
+    "file": "decor-assets/native/nx_serpent_holly_urn.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 82,
+      "w": 55,
+      "h": 62,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.08,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        62
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_serpent_holly_urn",
+    "label": "Bình lá thông rắn bạc",
+    "facing": "right",
+    "file": "decor-assets/native/nx_serpent_holly_urn_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 82,
+      "w": 56,
+      "h": 62,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.076,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        62
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_hagrid_gift_crate",
+    "label": "Rương quà bác Hagrid",
+    "facing": "default",
+    "file": "decor-assets/native/nx_hagrid_gift_crate.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 111,
+      "w": 88,
+      "h": 97,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.144,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        97
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nx_hagrid_gift_crate",
+    "label": "Rương quà bác Hagrid",
+    "facing": "right",
+    "file": "decor-assets/native/nx_hagrid_gift_crate_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 109,
+      "w": 88,
+      "h": 99,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.136,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        99
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_lion_snow_guard",
+    "label": "Sư tử tuyết giữ quà",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_lion_snow_guard.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 104,
+      "w": 86,
+      "h": 104,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.15,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        86,
+        104
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_lion_snow_guard",
+    "label": "Sư tử tuyết giữ quà",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_lion_snow_guard_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 104,
+      "w": 88,
+      "h": 104,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.163,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        104
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_sword_holly_gate",
+    "label": "Cổng kiếm lá nhựa ruồi",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_sword_holly_gate.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 38,
+      "y": 123,
+      "w": 85,
+      "h": 117,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.111,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        85,
+        117
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_sword_holly_gate",
+    "label": "Cổng kiếm lá nhựa ruồi",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_sword_holly_gate_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 6,
+      "y": 121,
+      "w": 83,
+      "h": 119,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.115,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        83,
+        119
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_commonroom_hearth",
+    "label": "Lò sưởi sư tử đêm Noel",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_commonroom_hearth.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 82,
+      "w": 118,
+      "h": 158,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.34,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        192
+      ],
+      "pivot": [
+        64,
+        176
+      ],
+      "ink": [
+        118,
+        158
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_commonroom_hearth",
+    "label": "Lò sưởi sư tử đêm Noel",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_commonroom_hearth_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 83,
+      "w": 120,
+      "h": 157,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.326,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        192
+      ],
+      "pivot": [
+        64,
+        176
+      ],
+      "ink": [
+        120,
+        157
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_quidditch_crate",
+    "label": "Rương Quidditch đỏ thắm",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_quidditch_crate.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 100,
+      "w": 88,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.224,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_quidditch_crate",
+    "label": "Rương Quidditch đỏ thắm",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_quidditch_crate_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 100,
+      "w": 87,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.27,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_courage_watchtower",
+    "label": "Tháp canh Lòng Dũng Cảm",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_courage_watchtower.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 81,
+      "w": 119,
+      "h": 159,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.21,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        192
+      ],
+      "pivot": [
+        64,
+        176
+      ],
+      "ink": [
+        119,
+        159
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_courage_watchtower",
+    "label": "Tháp canh Lòng Dũng Cảm",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_courage_watchtower_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 81,
+      "w": 120,
+      "h": 159,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.205,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        192
+      ],
+      "pivot": [
+        64,
+        176
+      ],
+      "ink": [
+        120,
+        159
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_rocking_lion",
+    "label": "Sư tử gỗ ngựa bập bênh",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_rocking_lion.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 7,
+      "y": 111,
+      "w": 82,
+      "h": 97,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.213,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        82,
+        97
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_rocking_lion",
+    "label": "Sư tử gỗ ngựa bập bênh",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_rocking_lion_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 7,
+      "y": 113,
+      "w": 82,
+      "h": 95,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.188,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        82,
+        95
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_scarlet_feast_table",
+    "label": "Bàn tiệc đỏ vàng Gryffindor",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_scarlet_feast_table.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 114,
+      "w": 88,
+      "h": 94,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.139,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        94
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_scarlet_feast_table",
+    "label": "Bàn tiệc đỏ vàng Gryffindor",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_scarlet_feast_table_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 118,
+      "w": 88,
+      "h": 90,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.148,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        112
+      ],
+      "pivot": [
+        48,
+        96
+      ],
+      "ink": [
+        88,
+        90
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_flame_bell_stand",
+    "label": "Giá chuông ngọn lửa vàng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_flame_bell_stand.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 18,
+      "w": 55,
+      "h": 126,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.149,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        55,
+        126
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_flame_bell_stand",
+    "label": "Giá chuông ngọn lửa vàng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_flame_bell_stand_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 16,
+      "w": 55,
+      "h": 128,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.159,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        55,
+        128
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_cracker_sled",
+    "label": "Xe trượt quà pháo giấy",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_cracker_sled.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 21,
+      "y": 122,
+      "w": 103,
+      "h": 118,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.224,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        103,
+        118
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_cracker_sled",
+    "label": "Xe trượt quà pháo giấy",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_cracker_sled_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 125,
+      "w": 104,
+      "h": 115,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.205,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        104,
+        115
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_lion_paw_brazier",
+    "label": "Lò than chân sư tử",
+    "facing": "default",
+    "file": "decor-assets/native/nh_gryffindor_lion_paw_brazier.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 84,
+      "w": 56,
+      "h": 60,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.117,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        80
+      ],
+      "pivot": [
+        32,
+        64
+      ],
+      "ink": [
+        56,
+        60
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_gryffindor_lion_paw_brazier",
+    "label": "Lò than chân sư tử",
+    "facing": "right",
+    "file": "decor-assets/native/nh_gryffindor_lion_paw_brazier_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 84,
+      "w": 56,
+      "h": 60,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.132,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        80
+      ],
+      "pivot": [
+        32,
+        64
+      ],
+      "ink": [
+        56,
+        60
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_serpent_ice_arch",
+    "label": "Cổng băng rắn bạc",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_serpent_ice_arch.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 36,
+      "y": 129,
+      "w": 87,
+      "h": 111,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.095,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        87,
+        111
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_serpent_ice_arch",
+    "label": "Cổng băng rắn bạc",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_serpent_ice_arch_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 130,
+      "w": 88,
+      "h": 110,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.103,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        88,
+        110
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_emerald_orangery",
+    "label": "Nhà kính lục bảo mùa đông",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_emerald_orangery.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 71,
+      "w": 120,
+      "h": 169,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.196,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        192
+      ],
+      "pivot": [
+        64,
+        176
+      ],
+      "ink": [
+        120,
+        169
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_emerald_orangery",
+    "label": "Nhà kính lục bảo mùa đông",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_emerald_orangery_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 72,
+      "w": 120,
+      "h": 168,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.184,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        192
+      ],
+      "pivot": [
+        64,
+        176
+      ],
+      "ink": [
+        120,
+        168
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_winter_potion_bar",
+    "label": "Quầy thức uống lục bảo",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_winter_potion_bar.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 108,
+      "w": 84,
+      "h": 100,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.154,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        84,
+        100
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_winter_potion_bar",
+    "label": "Quầy thức uống lục bảo",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_winter_potion_bar_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 107,
+      "w": 87,
+      "h": 101,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.16,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        101
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_frozen_serpent_fountain",
+    "label": "Đài phun rắn đóng băng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_frozen_serpent_fountain.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 110,
+      "w": 119,
+      "h": 130,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.243,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        160
+      ],
+      "pivot": [
+        64,
+        144
+      ],
+      "ink": [
+        119,
+        130
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_frozen_serpent_fountain",
+    "label": "Đài phun rắn đóng băng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_frozen_serpent_fountain_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 109,
+      "w": 120,
+      "h": 131,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.241,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        160
+      ],
+      "pivot": [
+        64,
+        144
+      ],
+      "ink": [
+        120,
+        131
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_lake_lantern_buoy",
+    "label": "Đèn phao Hồ Đen",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_lake_lantern_buoy.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 6,
+      "y": 16,
+      "w": 52,
+      "h": 128,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.103,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        52,
+        128
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_lake_lantern_buoy",
+    "label": "Đèn phao Hồ Đen",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_lake_lantern_buoy_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 6,
+      "y": 16,
+      "w": 52,
+      "h": 128,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.116,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        52,
+        128
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_silver_chess_dais",
+    "label": "Bục cờ rắn bạc",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_silver_chess_dais.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 6,
+      "y": 117,
+      "w": 84,
+      "h": 91,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.125,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        112
+      ],
+      "pivot": [
+        48,
+        96
+      ],
+      "ink": [
+        84,
+        91
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_silver_chess_dais",
+    "label": "Bục cờ rắn bạc",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_silver_chess_dais_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 112,
+      "w": 87,
+      "h": 96,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.106,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        96
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_serpent_sleigh",
+    "label": "Xe trượt rắn lục bạc",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_serpent_sleigh.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 22,
+      "y": 131,
+      "w": 100,
+      "h": 109,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.179,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        100,
+        109
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_serpent_sleigh",
+    "label": "Xe trượt rắn lục bạc",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_serpent_sleigh_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 127,
+      "w": 104,
+      "h": 113,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.194,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        104,
+        113
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_holly_obelisk",
+    "label": "Trụ nhựa ruồi lục bạc",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_holly_obelisk.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 63,
+      "w": 56,
+      "h": 81,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.111,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        81
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_holly_obelisk",
+    "label": "Trụ nhựa ruồi lục bạc",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_holly_obelisk_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 63,
+      "w": 56,
+      "h": 81,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.13,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        81
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_strategy_desk",
+    "label": "Bàn chiến lược mùa tuyết",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_strategy_desk.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 109,
+      "w": 86,
+      "h": 99,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.14,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        86,
+        99
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_strategy_desk",
+    "label": "Bàn chiến lược mùa tuyết",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_strategy_desk_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 102,
+      "w": 88,
+      "h": 106,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.153,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        106
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_emerald_mirror",
+    "label": "Gương sương giá lục bảo",
+    "facing": "default",
+    "file": "decor-assets/native/nh_slytherin_emerald_mirror.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 100,
+      "w": 88,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.247,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_slytherin_emerald_mirror",
+    "label": "Gương sương giá lục bảo",
+    "facing": "right",
+    "file": "decor-assets/native/nh_slytherin_emerald_mirror_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 98,
+      "w": 88,
+      "h": 110,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.208,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        88,
+        110
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_badger_cookie_bakery",
+    "label": "Tiệm bánh lửng đón Noel",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 96,
+      "w": 120,
+      "h": 144,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.391,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        176
+      ],
+      "pivot": [
+        64,
+        160
+      ],
+      "ink": [
+        120,
+        144
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_badger_cookie_bakery",
+    "label": "Tiệm bánh lửng đón Noel",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 88,
+      "w": 119,
+      "h": 152,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.382,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        176
+      ],
+      "pivot": [
+        64,
+        160
+      ],
+      "ink": [
+        119,
+        152
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_honeycomb_gift_cart",
+    "label": "Xe quà tổ ong vàng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 106,
+      "w": 87,
+      "h": 102,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.205,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        102
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_honeycomb_gift_cart",
+    "label": "Xe quà tổ ong vàng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 105,
+      "w": 87,
+      "h": 103,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.202,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        103
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_badger_log_cottage",
+    "label": "Nhà gỗ lửng mùa đông",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_badger_log_cottage.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 96,
+      "w": 119,
+      "h": 144,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.286,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        176
+      ],
+      "pivot": [
+        64,
+        160
+      ],
+      "ink": [
+        119,
+        144
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_badger_log_cottage",
+    "label": "Nhà gỗ lửng mùa đông",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_badger_log_cottage_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 94,
+      "w": 120,
+      "h": 146,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.291,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        176
+      ],
+      "pivot": [
+        64,
+        160
+      ],
+      "ink": [
+        120,
+        146
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_beehive_cocoa_urn",
+    "label": "Ấm cacao tổ ong",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 63,
+      "w": 56,
+      "h": 81,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.123,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        81
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_beehive_cocoa_urn",
+    "label": "Ấm cacao tổ ong",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 63,
+      "w": 56,
+      "h": 81,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.125,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        81
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_knitting_bench",
+    "label": "Ghế len ấm Hufflepuff",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_knitting_bench.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 7,
+      "y": 102,
+      "w": 82,
+      "h": 106,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.146,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        82,
+        106
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_knitting_bench",
+    "label": "Ghế len ấm Hufflepuff",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_knitting_bench_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 101,
+      "w": 86,
+      "h": 107,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.18,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        86,
+        107
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_herb_wheelbarrow",
+    "label": "Xe cút kít thảo dược Noel",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 115,
+      "w": 88,
+      "h": 93,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.198,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        93
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_herb_wheelbarrow",
+    "label": "Xe cút kít thảo dược Noel",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 116,
+      "w": 87,
+      "h": 92,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.185,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        112
+      ],
+      "pivot": [
+        48,
+        96
+      ],
+      "ink": [
+        87,
+        92
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_badger_mail_hollow",
+    "label": "Hộp thư hốc cây lửng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_badger_mail_hollow.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 80,
+      "w": 55,
+      "h": 64,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.229,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        55,
+        64
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_badger_mail_hollow",
+    "label": "Hộp thư hốc cây lửng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_badger_mail_hollow_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 80,
+      "w": 56,
+      "h": 64,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.214,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        80
+      ],
+      "ink": [
+        56,
+        64
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_sunflower_chimes",
+    "label": "Chuông gió hướng dương băng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_sunflower_chimes.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 6,
+      "y": 30,
+      "w": 53,
+      "h": 114,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.152,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        144
+      ],
+      "pivot": [
+        32,
+        128
+      ],
+      "ink": [
+        53,
+        114
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_sunflower_chimes",
+    "label": "Chuông gió hướng dương băng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_sunflower_chimes_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 27,
+      "w": 56,
+      "h": 117,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.149,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        144
+      ],
+      "pivot": [
+        32,
+        128
+      ],
+      "ink": [
+        56,
+        117
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_chestnut_stall",
+    "label": "Quầy hạt dẻ mật ong",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_chestnut_stall.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 85,
+      "w": 88,
+      "h": 123,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.277,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        88,
+        123
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_chestnut_stall",
+    "label": "Quầy hạt dẻ mật ong",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_chestnut_stall_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 80,
+      "w": 87,
+      "h": 128,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.285,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        160
+      ],
+      "pivot": [
+        48,
+        144
+      ],
+      "ink": [
+        87,
+        128
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_badger_picnic",
+    "label": "Góc picnic lửng ngày tuyết",
+    "facing": "default",
+    "file": "decor-assets/native/nh_hufflepuff_badger_picnic.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 134,
+      "w": 120,
+      "h": 106,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.175,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        112
+      ],
+      "ink": [
+        120,
+        106
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_hufflepuff_badger_picnic",
+    "label": "Góc picnic lửng ngày tuyết",
+    "facing": "right",
+    "file": "decor-assets/native/nh_hufflepuff_badger_picnic_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 129,
+      "w": 120,
+      "h": 111,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.201,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        120,
+        111
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_bronze_astrolabe",
+    "label": "Tinh bàn đồng Ravenclaw",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_bronze_astrolabe.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 59,
+      "w": 55,
+      "h": 85,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.066,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        55,
+        85
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_bronze_astrolabe",
+    "label": "Tinh bàn đồng Ravenclaw",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_bronze_astrolabe_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 59,
+      "w": 55,
+      "h": 85,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.071,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        55,
+        85
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_winter_observatory",
+    "label": "Đài quan sát lam đồng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_winter_observatory.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 5,
+      "y": 98,
+      "w": 119,
+      "h": 142,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.252,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        176
+      ],
+      "pivot": [
+        64,
+        160
+      ],
+      "ink": [
+        119,
+        142
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_winter_observatory",
+    "label": "Đài quan sát lam đồng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_winter_observatory_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      2
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 98,
+      "w": 120,
+      "h": 142,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.254,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        176
+      ],
+      "pivot": [
+        64,
+        160
+      ],
+      "ink": [
+        120,
+        142
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_eagle_snow_perch",
+    "label": "Đại bàng đồng giữ sách",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_eagle_snow_perch.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 100,
+      "w": 86,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.157,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        86,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_eagle_snow_perch",
+    "label": "Đại bàng đồng giữ sách",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_eagle_snow_perch_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 99,
+      "w": 86,
+      "h": 109,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.161,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        144
+      ],
+      "pivot": [
+        48,
+        128
+      ],
+      "ink": [
+        86,
+        109
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_star_book_lectern",
+    "label": "Giá sách bản đồ sao",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_star_book_lectern.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 107,
+      "w": 87,
+      "h": 101,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.16,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        101
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_star_book_lectern",
+    "label": "Giá sách bản đồ sao",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_star_book_lectern_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 5,
+      "y": 104,
+      "w": 87,
+      "h": 104,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.15,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        87,
+        104
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_constellation_arch",
+    "label": "Vòm sao lam đồng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_constellation_arch.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 38,
+      "y": 133,
+      "w": 84,
+      "h": 107,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.112,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        112
+      ],
+      "ink": [
+        84,
+        107
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_constellation_arch",
+    "label": "Vòm sao lam đồng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_constellation_arch_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 134,
+      "w": 88,
+      "h": 106,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.106,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        112
+      ],
+      "ink": [
+        88,
+        106
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_riddle_cabinet",
+    "label": "Tủ câu đố đêm đông",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_riddle_cabinet.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 100,
+      "w": 88,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.187,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_riddle_cabinet",
+    "label": "Tủ câu đố đêm đông",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_riddle_cabinet_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 100,
+      "w": 88,
+      "h": 108,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.205,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        128
+      ],
+      "pivot": [
+        48,
+        112
+      ],
+      "ink": [
+        88,
+        108
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_eagle_courier_post",
+    "label": "Trạm thư đại bàng Noel",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_eagle_courier_post.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 21,
+      "w": 55,
+      "h": 123,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.17,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        144
+      ],
+      "pivot": [
+        32,
+        128
+      ],
+      "ink": [
+        55,
+        123
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_eagle_courier_post",
+    "label": "Trạm thư đại bàng Noel",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_eagle_courier_post_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 17,
+      "w": 56,
+      "h": 127,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.157,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        160
+      ],
+      "pivot": [
+        32,
+        144
+      ],
+      "ink": [
+        56,
+        127
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_telescope_sled",
+    "label": "Xe kính thiên văn mùa tuyết",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_telescope_sled.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      3
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 22,
+      "y": 116,
+      "w": 100,
+      "h": 124,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.13,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        144
+      ],
+      "pivot": [
+        64,
+        128
+      ],
+      "ink": [
+        100,
+        124
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_telescope_sled",
+    "label": "Xe kính thiên văn mùa tuyết",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_telescope_sled_right.png",
+    "anchor": "foot",
+    "footprint": [
+      3,
+      1
+    ],
+    "ground": {
+      "width": 128,
+      "height": 64
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "pivot": [
+      64,
+      240
+    ],
+    "ink": {
+      "x": 4,
+      "y": 111,
+      "w": 104,
+      "h": 129,
+      "foot": 240
+    },
+    "allowed": {
+      "left": 0,
+      "right": 128,
+      "centreY": 224,
+      "frontY": 256
+    },
+    "flat2x2": 0.134,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        128,
+        160
+      ],
+      "pivot": [
+        64,
+        144
+      ],
+      "ink": [
+        104,
+        129
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_eagle_music_harp",
+    "label": "Đàn hạc cánh đại bàng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_eagle_music_harp.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      2
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 76,
+      "w": 88,
+      "h": 132,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.29,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        160
+      ],
+      "pivot": [
+        48,
+        144
+      ],
+      "ink": [
+        88,
+        132
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_eagle_music_harp",
+    "label": "Đàn hạc cánh đại bàng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_eagle_music_harp_right.png",
+    "anchor": "foot",
+    "footprint": [
+      2,
+      1
+    ],
+    "ground": {
+      "width": 96,
+      "height": 48
+    },
+    "canvas": [
+      96,
+      224
+    ],
+    "pivot": [
+      48,
+      208
+    ],
+    "ink": {
+      "x": 4,
+      "y": 75,
+      "w": 88,
+      "h": 133,
+      "foot": 208
+    },
+    "allowed": {
+      "left": 0,
+      "right": 96,
+      "centreY": 192,
+      "frontY": 216
+    },
+    "flat2x2": 0.297,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        96,
+        160
+      ],
+      "pivot": [
+        48,
+        144
+      ],
+      "ink": [
+        88,
+        133
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_celestial_globe",
+    "label": "Quả cầu thiên văn lam đồng",
+    "facing": "default",
+    "file": "decor-assets/native/nh_ravenclaw_celestial_globe.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 5,
+      "y": 62,
+      "w": 55,
+      "h": 82,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.088,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        55,
+        82
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  },
+  {
+    "group": "store-decoration",
+    "id": "nh_ravenclaw_celestial_globe",
+    "label": "Quả cầu thiên văn lam đồng",
+    "facing": "right",
+    "file": "decor-assets/native/nh_ravenclaw_celestial_globe_right.png",
+    "anchor": "foot",
+    "footprint": [
+      1,
+      1
+    ],
+    "ground": {
+      "width": 64,
+      "height": 32
+    },
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "ink": {
+      "x": 4,
+      "y": 62,
+      "w": 56,
+      "h": 82,
+      "foot": 144
+    },
+    "allowed": {
+      "left": 0,
+      "right": 64,
+      "centreY": 144,
+      "frontY": 160
+    },
+    "flat2x2": 0.095,
+    "issues": [],
+    "severity": "ok",
+    "fix": "",
+    "target": {
+      "canvas": [
+        64,
+        112
+      ],
+      "pivot": [
+        32,
+        96
+      ],
+      "ink": [
+        56,
+        82
+      ],
+      "scale": 1
+    },
+    "roomierFootprint": null
+  }
+]

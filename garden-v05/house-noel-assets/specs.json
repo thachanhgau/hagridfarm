@@ -1,0 +1,765 @@
+[
+  {
+    "id": "nh_gryffindor_lion_snow_guard",
+    "label": "Sư tử tuyết giữ quà",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 3600,
+    "guideKind": "plinth",
+    "subject": "A proud golden-maned lion carved from snow, scarlet knitted scarf, front paws guarding a gold-wrapped Christmas gift, low stone base",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Sư tử tuyết giữ quà trong bộ Noel nhà Gryffindor.",
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_lion_snow_guard-solid.png"
+  },
+  {
+    "id": "nh_gryffindor_sword_holly_gate",
+    "label": "Cổng kiếm lá nhựa ruồi",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      3,
+      1
+    ],
+    "price": 5200,
+    "guideKind": "arch",
+    "subject": "A sturdy oak garden gate arch crowned with crossed ornamental silver swords and a small carved lion crest, scarlet bows and holly, heavy snow on the rail",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Cổng kiếm lá nhựa ruồi trong bộ Noel nhà Gryffindor.",
+    "maxInkWidth": 88,
+    "nativeOffsetX": [
+      16,
+      16,
+      -16,
+      -16
+    ],
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_sword_holly_gate-solid.png"
+  },
+  {
+    "id": "nh_gryffindor_commonroom_hearth",
+    "label": "Lò sưởi sư tử đêm Noel",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      2,
+      2
+    ],
+    "price": 6200,
+    "guideKind": "roof",
+    "subject": "An open-front warm red-brick fireplace alcove, golden lion andirons, scarlet stockings, tiny bench and firewood inside, snowy little sloping canopy",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Lò sưởi sư tử đêm Noel trong bộ Noel nhà Gryffindor.",
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_commonroom_hearth-solid-v2.png"
+  },
+  {
+    "id": "nh_gryffindor_quidditch_crate",
+    "label": "Rương Quidditch đỏ thắm",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 3800,
+    "guideKind": "crate",
+    "subject": "An open crimson Quidditch equipment crate with one broom, a red quaffle, a small golden winged ornament and wrapped winter gifts, lion emblem, snow caps",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Rương Quidditch đỏ thắm trong bộ Noel nhà Gryffindor.",
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_quidditch_crate-solid.png"
+  },
+  {
+    "id": "nh_gryffindor_courage_watchtower",
+    "label": "Tháp canh Lòng Dũng Cảm",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      2,
+      2
+    ],
+    "price": 6800,
+    "guideKind": "castle",
+    "subject": "A compact square snowy stone watchtower with a warm open window, scarlet banners carrying a golden lion symbol, battlements and small gold Christmas bells",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Tháp canh Lòng Dũng Cảm trong bộ Noel nhà Gryffindor.",
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_courage_watchtower-solid-v2.png"
+  },
+  {
+    "id": "nh_gryffindor_rocking_lion",
+    "label": "Sư tử gỗ ngựa bập bênh",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4200,
+    "guideKind": "plinth",
+    "subject": "A whimsical carved wooden rocking LION toy on curved sleigh-like rockers, little saddle, scarlet wool blanket, gold harness bells and Christmas bow, no rider",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Sư tử gỗ ngựa bập bênh trong bộ Noel nhà Gryffindor.",
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_rocking_lion-solid.png"
+  },
+  {
+    "id": "nh_gryffindor_scarlet_feast_table",
+    "label": "Bàn tiệc đỏ vàng Gryffindor",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4400,
+    "guideKind": "table",
+    "subject": "A sturdy oak Christmas feast table with carved lion-paw legs, scarlet and gold runner, mince pies, a small plum pudding and warm mugs, holly corner accents",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Bàn tiệc đỏ vàng Gryffindor trong bộ Noel nhà Gryffindor.",
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_scarlet_feast_table-solid.png"
+  },
+  {
+    "id": "nh_gryffindor_flame_bell_stand",
+    "label": "Giá chuông ngọn lửa vàng",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 2800,
+    "guideKind": "lamp",
+    "subject": "A short brass bell stand supported by carved lion paws, two golden bells and a warm flame-shaped glass lantern, scarlet ribbon and snowy pine sprigs",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Giá chuông ngọn lửa vàng trong bộ Noel nhà Gryffindor.",
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_flame_bell_stand-solid.png"
+  },
+  {
+    "id": "nh_gryffindor_cracker_sled",
+    "label": "Xe trượt quà pháo giấy",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      3,
+      1
+    ],
+    "price": 5600,
+    "guideKind": "cart",
+    "subject": "A scarlet wooden Christmas sled with gold lion figurehead, curved runners and a stack of harmless decorative wizard Christmas crackers and wrapped parcels, snowy top",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Xe trượt quà pháo giấy trong bộ Noel nhà Gryffindor.",
+    "maxInkWidth": 104,
+    "nativeOffsetX": [
+      8,
+      8,
+      -8,
+      -8
+    ],
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_cracker_sled-solid.png"
+  },
+  {
+    "id": "nh_gryffindor_lion_paw_brazier",
+    "label": "Lò than chân sư tử",
+    "house": "gryffindor",
+    "houseLabel": "Gryffindor",
+    "housePalette": "scarlet and warm gold, lion identity; no other house emblem",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 3000,
+    "guideKind": "pot",
+    "subject": "A compact bronze warming brazier on three sculpted lion-paw feet, gentle amber embers, scarlet wool bow, snowy rim and holly, no large flame",
+    "season": "xmas",
+    "group": "Noel · Gryffindor",
+    "lore": "Lò than chân sư tử trong bộ Noel nhà Gryffindor.",
+    "master": "house-noel-assets/masters-locked/nh_gryffindor_lion_paw_brazier-solid-v2.png"
+  },
+  {
+    "id": "nh_slytherin_serpent_ice_arch",
+    "label": "Cổng băng rắn bạc",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      3,
+      1
+    ],
+    "price": 5400,
+    "guideKind": "arch",
+    "subject": "A narrow garden arch of two carved silver serpents curving above a gate, icy green glass details, dark green bows and snowy evergreen, elegant rather than sinister",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Cổng băng rắn bạc trong bộ Noel nhà Slytherin.",
+    "maxInkWidth": 88,
+    "nativeOffsetX": [
+      16,
+      16,
+      -16,
+      -16
+    ],
+    "master": "house-noel-assets/masters-locked/nh_slytherin_serpent_ice_arch-solid.png"
+  },
+  {
+    "id": "nh_slytherin_emerald_orangery",
+    "label": "Nhà kính lục bảo mùa đông",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      2,
+      2
+    ],
+    "price": 7000,
+    "guideKind": "roof",
+    "subject": "A small ornate green-framed glass winter orangery with silver serpent roof finial, frosted panes and snow roof, visible potted herbs and a tiny warm lamp inside",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Nhà kính lục bảo mùa đông trong bộ Noel nhà Slytherin.",
+    "master": "house-noel-assets/masters-locked/nh_slytherin_emerald_orangery-solid-v6.png"
+  },
+  {
+    "id": "nh_slytherin_winter_potion_bar",
+    "label": "Quầy thức uống lục bảo",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4600,
+    "guideKind": "table",
+    "subject": "An elegant emerald and silver winter cordial counter, harmless decorative potion bottles, silver serpent-shaped ladle, green velvet runner and frosted holly, no labels",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Quầy thức uống lục bảo trong bộ Noel nhà Slytherin.",
+    "master": "house-noel-assets/masters-locked/nh_slytherin_winter_potion_bar-solid.png"
+  },
+  {
+    "id": "nh_slytherin_frozen_serpent_fountain",
+    "label": "Đài phun rắn đóng băng",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      2,
+      2
+    ],
+    "price": 6800,
+    "guideKind": "plinth",
+    "subject": "A low carved stone fountain with a silver serpent coiled at the center, frozen water arcs and icicles, emerald baubles and dark green Christmas ribbon",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Đài phun rắn đóng băng trong bộ Noel nhà Slytherin.",
+    "master": "house-noel-assets/masters-locked/nh_slytherin_frozen_serpent_fountain-solid.png"
+  },
+  {
+    "id": "nh_slytherin_lake_lantern_buoy",
+    "label": "Đèn phao Hồ Đen",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 3000,
+    "guideKind": "lamp",
+    "subject": "A decorative green-glass lake buoy lantern on a short stone garden foot, silver chain, frosted reeds and a little serpent finial, cool emerald glow",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Đèn phao Hồ Đen trong bộ Noel nhà Slytherin.",
+    "master": "house-noel-assets/masters-locked/nh_slytherin_lake_lantern_buoy-solid.png"
+  },
+  {
+    "id": "nh_slytherin_silver_chess_dais",
+    "label": "Bục cờ rắn bạc",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4400,
+    "guideKind": "table",
+    "subject": "A low green-marble wizard chess dais with silver serpent supports, a few carved silver chess pieces, folded emerald scarf and snowy edge, no writing",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Bục cờ rắn bạc trong bộ Noel nhà Slytherin.",
+    "master": "house-noel-assets/masters-locked/nh_slytherin_silver_chess_dais-solid.png"
+  },
+  {
+    "id": "nh_slytherin_serpent_sleigh",
+    "label": "Xe trượt rắn lục bạc",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      3,
+      1
+    ],
+    "price": 5800,
+    "guideKind": "cart",
+    "subject": "A low emerald velvet Christmas sleigh with long curling silver serpent runners and green-wrapped presents, frosted holly and silver bells",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Xe trượt rắn lục bạc trong bộ Noel nhà Slytherin.",
+    "maxInkWidth": 104,
+    "nativeOffsetX": [
+      8,
+      8,
+      -8,
+      -8
+    ],
+    "master": "house-noel-assets/masters-locked/nh_slytherin_serpent_sleigh-solid.png"
+  },
+  {
+    "id": "nh_slytherin_holly_obelisk",
+    "label": "Trụ nhựa ruồi lục bạc",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 2800,
+    "guideKind": "plinth",
+    "subject": "A short dark stone garden obelisk with a silver serpent relief, wrapped in evergreen and holly, a small emerald ornament and frosted cap",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Trụ nhựa ruồi lục bạc trong bộ Noel nhà Slytherin.",
+    "master": "house-noel-assets/masters-locked/nh_slytherin_holly_obelisk-solid.png"
+  },
+  {
+    "id": "nh_slytherin_strategy_desk",
+    "label": "Bàn chiến lược mùa tuyết",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4200,
+    "guideKind": "table",
+    "subject": "A compact dark wooden writing desk with serpent-carved legs, rolled blank strategy parchments, silver quill, emerald ink bottle and a green Christmas bow, snowy corners",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Bàn chiến lược mùa tuyết trong bộ Noel nhà Slytherin.",
+    "master": "house-noel-assets/masters-locked/nh_slytherin_strategy_desk-solid.png"
+  },
+  {
+    "id": "nh_slytherin_emerald_mirror",
+    "label": "Gương sương giá lục bảo",
+    "house": "slytherin",
+    "houseLabel": "Slytherin",
+    "housePalette": "deep emerald green and silver, serpent identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4800,
+    "guideKind": "plinth",
+    "subject": "A freestanding gothic silver mirror with a silver serpent along each side, emerald velvet bow, frosted ivy and faint winter star reflections, no person",
+    "season": "xmas",
+    "group": "Noel · Slytherin",
+    "lore": "Gương sương giá lục bảo trong bộ Noel nhà Slytherin.",
+    "master": "house-noel-assets/masters-locked/nh_slytherin_emerald_mirror-solid-v4.png"
+  },
+  {
+    "id": "nh_hufflepuff_badger_cookie_bakery",
+    "label": "Tiệm bánh lửng đón Noel",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      2,
+      2
+    ],
+    "price": 6400,
+    "guideKind": "roof",
+    "subject": "A tiny cozy round-doored honey-brown cookie bakery, a badger-face roof ornament, yellow windows, a visible pie shelf and little oven inside, snowy rounded roof and yellow-black bows",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Tiệm bánh lửng đón Noel trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_badger_cookie_bakery-solid-v5.png"
+  },
+  {
+    "id": "nh_hufflepuff_honeycomb_gift_cart",
+    "label": "Xe quà tổ ong vàng",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4200,
+    "guideKind": "cart",
+    "subject": "A cheerful wooden honeycomb-pattern gift cart with honey jars, yellow-wrapped parcels, straw ribbons and a little carved badger figure, snowy top, warm yellow-black accents",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Xe quà tổ ong vàng trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_honeycomb_gift_cart-solid.png"
+  },
+  {
+    "id": "nh_hufflepuff_badger_log_cottage",
+    "label": "Nhà gỗ lửng mùa đông",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      2,
+      2
+    ],
+    "price": 6200,
+    "guideKind": "roof",
+    "subject": "A warm hollow-log winter cottage with a round badger-carved door, knitted yellow awning, small glowing window and a visible quilt inside, thick snow and evergreen",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Nhà gỗ lửng mùa đông trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_badger_log_cottage-solid-v2.png"
+  },
+  {
+    "id": "nh_hufflepuff_beehive_cocoa_urn",
+    "label": "Ấm cacao tổ ong",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 3000,
+    "guideKind": "pot",
+    "subject": "A tall beehive-shaped hammered copper hot-cocoa samovar with a small tap, two little mugs, honey dipper, yellow-black knitted scarf and snowy rim",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Ấm cacao tổ ong trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_beehive_cocoa_urn-solid.png"
+  },
+  {
+    "id": "nh_hufflepuff_knitting_bench",
+    "label": "Ghế len ấm Hufflepuff",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4000,
+    "guideKind": "bench",
+    "subject": "A rustic garden bench with carved badger ends, yellow knitted blankets, a basket of wool and two oversized mittens, snowy back rail and warm lantern",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Ghế len ấm Hufflepuff trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_knitting_bench-solid.png"
+  },
+  {
+    "id": "nh_hufflepuff_herb_wheelbarrow",
+    "label": "Xe cút kít thảo dược Noel",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 3800,
+    "guideKind": "cart",
+    "subject": "A wooden winter gardener wheelbarrow with frosted magical herbs, seed packets, a little pumpkin and yellow Christmas ribbons, small badger plaque, no lettering",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Xe cút kít thảo dược Noel trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_herb_wheelbarrow-solid.png"
+  },
+  {
+    "id": "nh_hufflepuff_badger_mail_hollow",
+    "label": "Hộp thư hốc cây lửng",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 2800,
+    "guideKind": "plinth",
+    "subject": "A short hollow-log garden mailbox with a badger-shaped lid, one cream envelope tied in a yellow ribbon, frosted holly and a small warm window",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Hộp thư hốc cây lửng trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_badger_mail_hollow-solid.png"
+  },
+  {
+    "id": "nh_hufflepuff_sunflower_chimes",
+    "label": "Chuông gió hướng dương băng",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 2800,
+    "guideKind": "lamp",
+    "subject": "A short garden windchime with a frosted sunflower disc, bronze honeycomb chimes, small carved bee ornaments and yellow-black bows, mounted on a rustic timber stand",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Chuông gió hướng dương băng trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_sunflower_chimes-solid.png"
+  },
+  {
+    "id": "nh_hufflepuff_chestnut_stall",
+    "label": "Quầy hạt dẻ mật ong",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4400,
+    "guideKind": "cart",
+    "subject": "A cozy roasted-chestnut and honey stall with a yellow scalloped cloth canopy, copper roasting pan, paper cones and acorn garland, little badger emblem, snowy roof",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Quầy hạt dẻ mật ong trong bộ Noel nhà Hufflepuff.",
+    "canopy": true,
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_chestnut_stall-solid.png"
+  },
+  {
+    "id": "nh_hufflepuff_badger_picnic",
+    "label": "Góc picnic lửng ngày tuyết",
+    "house": "hufflepuff",
+    "houseLabel": "Hufflepuff",
+    "housePalette": "warm yellow and near-black, badger identity; no other house emblem",
+    "footprint": [
+      2,
+      2
+    ],
+    "price": 5000,
+    "guideKind": "plinth",
+    "subject": "A compact wicker Christmas picnic setting on a yellow-black blanket, open hamper of honey bread and cookies, two badger-shaped cushions and a honeycomb lantern, snow around the edges",
+    "season": "xmas",
+    "group": "Noel · Hufflepuff",
+    "lore": "Góc picnic lửng ngày tuyết trong bộ Noel nhà Hufflepuff.",
+    "master": "house-noel-assets/masters-locked/nh_hufflepuff_badger_picnic-solid.png"
+  },
+  {
+    "id": "nh_ravenclaw_bronze_astrolabe",
+    "label": "Tinh bàn đồng Ravenclaw",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 3200,
+    "guideKind": "plinth",
+    "subject": "A bronze astrolabe on a low stone foot, blue knitted ribbon, small EAGLE finial, engraved star shapes without numbers or writing, snowy rim",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Tinh bàn đồng Ravenclaw trong bộ Noel nhà Ravenclaw.",
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_bronze_astrolabe-solid.png"
+  },
+  {
+    "id": "nh_ravenclaw_winter_observatory",
+    "label": "Đài quan sát lam đồng",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      2,
+      2
+    ],
+    "price": 7200,
+    "guideKind": "roof",
+    "subject": "A miniature blue-and-bronze winter observatory with an open domed roof, visible brass telescope and a little book desk inside, EAGLE crest, thick roof snow and blue Christmas bows",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Đài quan sát lam đồng trong bộ Noel nhà Ravenclaw.",
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_winter_observatory-solid-v2.png"
+  },
+  {
+    "id": "nh_ravenclaw_eagle_snow_perch",
+    "label": "Đại bàng đồng giữ sách",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4000,
+    "guideKind": "plinth",
+    "subject": "A decorative bronze EAGLE with folded wings perched on stacked deep-blue winter books, one blue scarf and small bronze stars, snowy low stone base, not a raven",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Đại bàng đồng giữ sách trong bộ Noel nhà Ravenclaw.",
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_eagle_snow_perch-solid.png"
+  },
+  {
+    "id": "nh_ravenclaw_star_book_lectern",
+    "label": "Giá sách bản đồ sao",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4400,
+    "guideKind": "table",
+    "subject": "An ornate bronze outdoor lectern with EAGLE-wing sides, an open blue-bound book of star diagrams without text, a tiny warm lantern and blue winter scarf, snow caps",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Giá sách bản đồ sao trong bộ Noel nhà Ravenclaw.",
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_star_book_lectern-solid.png"
+  },
+  {
+    "id": "nh_ravenclaw_constellation_arch",
+    "label": "Vòm sao lam đồng",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      3,
+      1
+    ],
+    "price": 5800,
+    "guideKind": "arch",
+    "subject": "A slender bronze garden arch formed from connected constellation nodes, blue ribbons, frozen ivy and a small EAGLE crest, stars glowing gently, no writing",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Vòm sao lam đồng trong bộ Noel nhà Ravenclaw.",
+    "maxInkWidth": 88,
+    "nativeOffsetX": [
+      16,
+      16,
+      -16,
+      -16
+    ],
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_constellation_arch-solid.png"
+  },
+  {
+    "id": "nh_ravenclaw_riddle_cabinet",
+    "label": "Tủ câu đố đêm đông",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4600,
+    "guideKind": "roof",
+    "subject": "A tall deep-blue wooden puzzle cabinet with bronze rotating gear discs, star-shaped keyholes and a carved EAGLE crown, snow cap and blue bows, no letters or numbers",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Tủ câu đố đêm đông trong bộ Noel nhà Ravenclaw.",
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_riddle_cabinet-solid-v5.png"
+  },
+  {
+    "id": "nh_ravenclaw_eagle_courier_post",
+    "label": "Trạm thư đại bàng Noel",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 3000,
+    "guideKind": "lamp",
+    "subject": "A short bronze EAGLE courier post holding a star-shaped letter box, rolled blue winter letters, bronze bell and blue scarf, snowy top, no text",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Trạm thư đại bàng Noel trong bộ Noel nhà Ravenclaw.",
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_eagle_courier_post-solid.png"
+  },
+  {
+    "id": "nh_ravenclaw_telescope_sled",
+    "label": "Xe kính thiên văn mùa tuyết",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      3,
+      1
+    ],
+    "price": 6200,
+    "guideKind": "cart",
+    "subject": "A long midnight-blue sleigh carrying a brass telescope, rolled star charts without writing and blue gift parcels, bronze runners and an EAGLE finial, snow caps",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Xe kính thiên văn mùa tuyết trong bộ Noel nhà Ravenclaw.",
+    "maxInkWidth": 104,
+    "nativeOffsetX": [
+      8,
+      8,
+      -8,
+      -8
+    ],
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_telescope_sled-solid.png"
+  },
+  {
+    "id": "nh_ravenclaw_eagle_music_harp",
+    "label": "Đàn hạc cánh đại bàng",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      2,
+      1
+    ],
+    "price": 4800,
+    "guideKind": "plinth",
+    "subject": "A graceful bronze harp whose frame is a folded EAGLE wing, deep-blue velvet ribbon, tiny star chimes and frosted strings, on a small stone foot",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Đàn hạc cánh đại bàng trong bộ Noel nhà Ravenclaw.",
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_eagle_music_harp-solid-v2.png"
+  },
+  {
+    "id": "nh_ravenclaw_celestial_globe",
+    "label": "Quả cầu thiên văn lam đồng",
+    "house": "ravenclaw",
+    "houseLabel": "Ravenclaw",
+    "housePalette": "deep blue and bronze, EAGLE identity from the books, NOT a raven and NOT silver as the main metal",
+    "footprint": [
+      1,
+      1
+    ],
+    "price": 3400,
+    "guideKind": "plinth",
+    "subject": "A deep-blue glass celestial globe held in interlocking bronze armillary rings, small EAGLE silhouette inside and bronze stars, blue bow and light snow, no numerals",
+    "season": "xmas",
+    "group": "Noel · Ravenclaw",
+    "lore": "Quả cầu thiên văn lam đồng trong bộ Noel nhà Ravenclaw.",
+    "master": "house-noel-assets/masters-locked/nh_ravenclaw_celestial_globe-solid.png"
+  }
+]

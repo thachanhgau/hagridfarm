@@ -1,0 +1,11 @@
+# House Christmas decorations — 15 November 2026
+
+Owner requested 40 additional distinct Christmas decorations, ten for each house. The pack lives in `garden-v05/house-noel-assets/`, with authored transparent 2×2 pose masters, exact grid block-ins, prompts/provenance and native two-view exports. Canonical identities: Gryffindor scarlet/gold lion; Slytherin emerald/silver serpent; Hufflepuff yellow/black badger; Ravenclaw blue/bronze eagle.
+
+Runtime is cosmetic only and uses the existing December festival sale and ×4 catalog price convention, identical client/server metadata. No house restriction or gameplay benefit is introduced. All 40 have independent subjects and masters rather than palette substitutions.
+
+Camera, footprint and runtime-byte checks are separate. Numeric audits sample actual raster pixels only on applicable straight bases; curved bodies, separated legs, carts and open arches require native two-view galleries and the actual garden renderer. The first pass found 10 subjects requiring a base redraw (including one footprint failure on the brazier). Those attempts remain in provenance; selected replacement masters use clean straight stone bases with snow above the boundary. Failed raster boundaries are redrawn from locked guides; the 1px tolerance and footprints remain fixed.
+
+The local fixture now has 90 authored additions: the corrected earlier 50 plus these 40, with four house group buttons. It does not use a wallet or reach real services. The earlier request for 100 more decorations is not claimed complete by this pack. No publication is authorized.
+
+Final native proof: 40 independent identities, exactly 10 per house; 80/80 house directional footprints pass (180/180 across both packs). All 100 measured frames across 25 applicable house straight-base subjects pass the unchanged 1px tolerance. All 40 subjects were visually inspected in both native-view galleries; the 15 open/curved/separated-foot subjects are not misreported as straight-boundary measurements. Export verifies 1,706 PNG→WebP conversions with exactly equal decoded RGBA plus eight existing WebP files. Focused source behavioral suite: 65 pass, one pre-existing skip; final selected-art/axis tests: six pass. Browser proof is recorded separately.
