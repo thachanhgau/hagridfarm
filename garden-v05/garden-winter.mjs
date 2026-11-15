@@ -101,19 +101,20 @@ export function snowCovered(x, y, depth) {
 // Snow lying on the flat top edges of a sprite: inside the silhouette, never past it, never on steep sides.
 // Rows from the top: bright snow, body, cool shadow (big sprites get one more body row).
 const SNOW_ROWS = {small: [[214, 216, 191], [214, 216, 191], [183, 222, 224]], big: [[232, 240, 237], [214, 216, 191], [214, 216, 191], [183, 222, 224]]};
-export function snowCapImageData(image) {
+export function snowCapImageData(image,pixelDensity=1) {
+  const density=Math.max(1,Math.round(pixelDensity));
   const {width: w, height: h, data: d} = image;
   const alpha = (x, y) => x >= 0 && y >= 0 && x < w && y < h ? d[(y * w + x) * 4 + 3] : 0;
-  const rows = h >= 48 ? SNOW_ROWS.big : SNOW_ROWS.small;
+  const rows = (h/density >= 48 ? SNOW_ROWS.big : SNOW_ROWS.small).flatMap(color=>Array(density).fill(color));
   // Surface row of column nx near row y (within 2 rows), or null.
-  const surface = (nx, y) => { for (let k = -2; k <= 2; k++) if (alpha(nx, y + k) && !alpha(nx, y + k - 1)) return y + k; return null; };
+  const surface = (nx, y) => { for (let k = -2*density; k <= 2*density; k++) if (alpha(nx, y + k) && !alpha(nx, y + k - 1)) return y + k; return null; };
   const caps = [];
   for (let x = 0; x < w; x++) for (let y = 0; y < h; y++) {
     if (!alpha(x, y) || alpha(x, y - 1)) continue;
-    const l = surface(x - 1, y), r = surface(x + 1, y);
-    if (l == null || r == null || Math.abs(l - r) > 2) continue; // steep side: snow slides off
+    const l = surface(x - density, y), r = surface(x + density, y);
+    if (l == null || r == null || Math.abs(l - r) > 2*density) continue; // steep side: snow slides off
     const i = (y * w + x) * 4;
-    caps.push([x, d[i] + d[i + 1] + d[i + 2] < 150 ? y + 1 : y]); // keep a dark top outline above the snow
+    caps.push([x, d[i] + d[i + 1] + d[i + 2] < 150 ? y + density : y]); // keep a dark top outline above the snow
   }
   for (const [x, y0] of caps) for (let k = 0; k < rows.length; k++) {
     if (!alpha(x, y0 + k)) break;

@@ -56,10 +56,10 @@ export function seasonPixel(r,g,b,x,y,width,height,kind,weather,covered=null){
  if(weather==='rain')return [Math.round(r*.71),Math.round(g*.78),Math.round(b*.85+5)];
  return [r,g,b];
 }
-export function weatherizeCanvas(canvas,kind,weather,depth=1,kit=null){
+export function weatherizeCanvas(canvas,kind,weather,depth=1,kit=null,pixelDensity=1){
  if(weather==='clear')return canvas;
  const c=canvas.getContext('2d'),im=c.getImageData(0,0,canvas.width,canvas.height),d=im.data;
- if(kind==='cap'){if(weather==='snow'&&kit)c.putImageData(kit.snowCapImageData(im),0,0);return canvas;}
+ if(kind==='cap'){if(weather==='snow'&&kit)c.putImageData(kit.snowCapImageData(im,pixelDensity),0,0);return canvas;}
  const covered=depth<1&&kit?(x,y)=>kit.snowCovered(x,y,depth):null;
  for(let y=0;y<im.height;y++)for(let x=0;x<im.width;x++){
   const i=(y*im.width+x)*4;if(!d[i+3])continue;

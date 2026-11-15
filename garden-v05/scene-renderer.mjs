@@ -1,3 +1,6 @@
+import {HD_ART} from './hd-art.mjs?v=26.0';
+import {createResolution,tagArt,ART_SOURCE,clientToWorld} from './render-resolution.mjs?v=26.0';
+export {clientToWorld} from './render-resolution.mjs?v=26.0';
 import {WOODLAND_FILES,pondWoodlandObjects} from './pond-woodland.mjs?v=26.0';
 import {drawPlacementGrid} from './placement-grid.mjs?v=26.0';
 import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=26.0';
@@ -58,15 +61,6 @@ const layoutSnapshots = new WeakMap();
 
 
 
-/** Map a pointer coordinate through the canvas' transformed client rectangle. */
-export function clientToWorld(clientX, clientY, rect, canvasWidth, canvasHeight) {
-  const width = Number(rect?.width) || Number(canvasWidth) || 1;
-  const height = Number(rect?.height) || Number(canvasHeight) || 1;
-  return {
-    x: (clientX - (Number(rect?.left) || 0)) * (Number(canvasWidth) || width) / width,
-    y: (clientY - (Number(rect?.top) || 0)) * (Number(canvasHeight) || height) / height,
-  };
-}
 
 function clipToStage(context, stage, scene, draw) {
   context.save?.();
@@ -739,13 +733,10 @@ export async function createGarden(canvas, options = {}) {
   // The six movable pens only: applyLayout appends the fixed «Chuồng mở rộng» to the shared FARM_SCENE after each layout.
   const extensionIds = new Set(EXTENSION_PENS.map((pen) => pen.id));
   const authoredSlots = authoredLayoutScene({...map, pens: asArray(map.pens).filter((pen) => !extensionIds.has(pen.id))});
-  canvas.width = map.width;
-  canvas.height = map.height;
-  if (canvas.dataset) canvas.dataset.creatureSpots = JSON.stringify(map.creatureSpots);
-  const context = canvas.getContext('2d');
-  if (!context) throw new Error('Canvas2D không khả dụng cho Khu vườn Hagrid.');
-  context.imageSmoothingEnabled = false;
-  context.imageSmoothingQuality = 'low';
+  if(canvas.dataset)canvas.dataset.creatureSpots=JSON.stringify(map.creatureSpots);
+  const resolution=createResolution(canvas,map,{art:HD_ART,enabled:options.hd!==false,pixelRatio:options.pixelRatio,imageUrl:runtimeImageUrl,
+    effects:{wither:(copy,mode)=>duty.kit.witherCanvas(copy,mode),coat:(copy,coat)=>kit.recolorCanvas(copy,coat),weather:(copy,season,density)=>weatherizeCanvas(copy,season.kind,season.weather,1,kit,density)}});
+  const context=resolution.context;
   const images = new Map();
   const missing = new Set();
   const ImageCtor = canvas.ownerDocument?.defaultView?.Image ?? root.Image;
@@ -756,7 +747,7 @@ export async function createGarden(canvas, options = {}) {
     // In HPVN's opaque sandbox every asset is cross-origin; CORS keeps the canvas readable (toBlob).
     image.crossOrigin = 'anonymous';
     image.onload = () => {
-      images.set(file, image);
+      images.set(file, tagArt(image,file));
       resolve();
     };
     image.onerror = () => {
@@ -783,12 +774,12 @@ export async function createGarden(canvas, options = {}) {
   const witherImages=new Map();
   function witherImage(file,mode){
     const key=mode+':'+file,source=imageFor(file);
-    if(!witherImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);witherImages.set(key,duty.kit.witherCanvas(copy,mode));}
+    if(!witherImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);witherImages.set(key,tagArt(duty.kit.witherCanvas(copy,mode),file,{wither:mode}));}
     return witherImages.get(key)??null;
   }
   function coatImage(file,coat){
     const key=coat+':'+file,source=imageFor(file);
-    if(!coatImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);coatImages.set(key,kit.recolorCanvas(copy,coat));}
+    if(!coatImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);coatImages.set(key,tagArt(kit.recolorCanvas(copy,coat),file,{coat}));}
     return coatImages.get(key)??null;
   }
   const winterFile=file=>winterArt&&images.has(kit.WINTER_ART[file])?kit.WINTER_ART[file]:null;
@@ -796,7 +787,7 @@ export async function createGarden(canvas, options = {}) {
     const source=coat?coatImage(file,coat):imageFor(file);if(activeWeather==='clear'||!source)return source;
     const key=kind+':'+(coat||'')+':'+file;if(seasonalImages.has(key))return seasonalImages.get(key);
     const result=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height),brush=result.getContext('2d',{willReadFrequently:true});
-    brush.imageSmoothingEnabled=false;brush.drawImage(source,0,0);weatherizeCanvas(result,kind,activeWeather,1,kit);seasonalImages.set(key,result);return result;
+    brush.imageSmoothingEnabled=false;brush.drawImage(source,0,0);weatherizeCanvas(result,kind,activeWeather,1,kit);seasonalImages.set(key,tagArt(result,file,{...source[ART_SOURCE],season:{kind,weather:activeWeather}}));return result;
   }
   let terrainStageId = null;
   let terrainLayoutKey = '';
@@ -1825,6 +1816,7 @@ export async function createGarden(canvas, options = {}) {
     lastPlotReady = map.plots.map((_, index) => plotIsBuilt(state, index, logicalNow));
 
     context.imageSmoothingEnabled = false;
+    resolution.begin();
     context.clearRect(0, 0, map.width, map.height);
     context.fillStyle = '#142620';
     context.fillRect(0, 0, map.width, map.height);
@@ -2099,7 +2091,7 @@ export async function createGarden(canvas, options = {}) {
 
   function pick(clientX, clientY) {
     const rect = typeof canvas.getBoundingClientRect === 'function' ? canvas.getBoundingClientRect() : null;
-    const world = clientToWorld(clientX, clientY, rect, canvas.width, canvas.height);
+    const world = clientToWorld(clientX, clientY, rect, map.width, map.height);
     const hit = pickFromWorld(world.x, world.y, lastBuiltPlotCount, map);
     const plotHit = hit && lastPlotReady[map.plots.findIndex((plot) => (plot.id ?? map.plots.indexOf(plot)) === hit.plot)] ? hit : null;
     // Placement lets a piece share a sliver of a plot on screen; a tap on a crop cell under its padded box
@@ -2116,7 +2108,7 @@ export async function createGarden(canvas, options = {}) {
       }
     }
     // The tutorial guest is tiny on phones: accept taps within ~44 CSS px of it.
-    const cssScale=rect&&canvas.width?rect.width/canvas.width:1;
+    const cssScale=rect&&map.width?rect.width/map.width:1;
     for(const actor of interactiveActors){
       if(!actor.guest)continue;
       const r=Math.max(30,26/cssScale);
@@ -2172,6 +2164,8 @@ export async function createGarden(canvas, options = {}) {
 
   return {
     render,
+    resolution:resolution.stats,
+    setQuality:resolution.setEnabled,
     pick,
     greet:()=>{reactionUntil=performance.now()+2600;},
     cheerElf:(id)=>{elfCheers[id]=performance.now()+CHEER_MS;},

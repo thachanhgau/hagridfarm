@@ -10,23 +10,28 @@ const manifest=await fetch('/game/khu-vuon-hagrid/decor-assets-manifest.json').t
 const items=manifest.items.filter(item=>item.id.startsWith('nx_')),houseItems=manifest.items.filter(item=>item.id.startsWith('nh_')),houses=['gryffindor','slytherin','hufflepuff','ravenclaw'],assetOf=id=>manifest.items.find(item=>item.id===id);
 document.getElementById('subtitle').textContent=`90 món · 40 mẫu bốn nhà · Đã thay ${items.filter(item=>item.artRevision).length} mẫu căn trục · Bấm tên món để tới gần`;
 const canvas=document.querySelector('canvas'),viewport=document.getElementById('viewport'),status=document.getElementById('status');
-const garden=await createGarden(canvas,{decorAssets:manifest.items});
+const garden=await createGarden(canvas,{decorAssets:manifest.items});let hd=true;
 const now=Date.parse('2026-12-24T12:00:00+07:00'),state=E.testProfile(500,now);
 state.built=[...new Set([...state.built,...E.DB.expansions.map(e=>e.id)])];
 for(const species of ['puffskein','bowtruckle','hippogriff']){const a=E.CREATURE[species];state.creatures.push({id:'demo-'+species,type:'creature',species,level:a.level,adoptedAt:now-48*3600000,mealsCompleted:a.mealsToAdult,meal:null,cyclesClaimed:0,preview:false});}
 let decorations={owned:[],placements:[],positions:{},rotations:{}},group=0,scale=1,night=false,facing='default',ready=false,gridOn=true,gridPreview=null;
 function centerAt([col,row]){const [x,y]=iso(col,row);viewport.scrollTo({left:x*scale-viewport.clientWidth/2,top:y*scale-viewport.clientHeight/2-32,behavior:'instant'});}
 function focusItem(id){const at=decorations.positions[id],asset=assetOf(id);gridPreview={rect:decorFootprintRect(...at,asset.footprintTiles,facing)};centerAt(at);}
-function zoom(delta){const steps=[.5,1,2,3],index=steps.indexOf(scale);scale=steps[Math.max(0,Math.min(steps.length-1,index+Math.sign(delta)))];canvas.style.width=Math.round(canvas.width*scale)+'px';centerAt([14,23]);}
+function zoom(delta){const steps=[.5,1,2,3],index=steps.indexOf(scale);scale=steps[Math.max(0,Math.min(steps.length-1,index+Math.sign(delta)))];canvas.style.width=Math.round(garden.map.width*scale)+'px';centerAt([14,23]);}
 async function showGroup(index){
  ready=false;group=index;status.textContent='Đang đặt đồ vào vườn…';
  const selected=index===-1?['nx_elf_yule_tent','nx_hagrid_gift_crate','nx_wizard_chess_christmas','nx_holly_broom_fence','nx_yule_dance_gazebo'].map(assetOf):index>=5?houseItems.filter(item=>item.house===houses[index-5]):items.slice(index*10,index*10+10);
  decorations={owned:selected.map(item=>item.id),placements:[],positions:{},rotations:{}};
  for(const item of selected){
   let spot;
-  for(let row=21;row<=27&&!spot;row+=.5)for(let col=2;col<=29&&!spot;col+=.5){
+  for(let row=20;row<=32&&!spot;row+=.5)for(let col=1;col<=31&&!spot;col+=.5){
    const reason=decorSpotProblem(col,row,{map:window.FARM_SCENE,stage:GARDEN_STAGES.at(-1),state,decorations,itemId:item.id,facing,asset:item,iso,assetOf});
-   if(!reason)spot=[col,row];
+   if(!reason){
+    const [x,y]=iso(col,row),b=facing==='right'?item.rightBounds:item.bounds;
+    const rect={left:x-item.pivotX+b.x,top:y-item.pivotY+b.y,right:x-item.pivotX+b.x+b.w,bottom:y-item.pivotY+b.y+b.h};
+    const overlaps=decorations.placements.some(id=>{const a=assetOf(id),[ax,ay]=iso(...decorations.positions[id]),ab=facing==='right'?a.rightBounds:a.bounds;return rect.left<ax-a.pivotX+ab.x+ab.w+12&&rect.right>ax-a.pivotX+ab.x-12&&rect.top<ay-a.pivotY+ab.y+ab.h+12&&rect.bottom>ay-a.pivotY+ab.y-12;});
+    if(!overlaps)spot=[col,row];
+   }
   }
   if(!spot)throw Error('Không tìm được ô trống cho '+item.label);
   decorations.placements.push(item.id);decorations.positions[item.id]=spot;decorations.rotations[item.id]=facing;
@@ -41,6 +46,7 @@ function render(clock){garden.render(state,{now,clock,animationClock:clock,decor
 document.querySelectorAll('[data-group]').forEach(button=>button.onclick=()=>showGroup(Number(button.dataset.group)));
 document.getElementById('calibration').onclick=()=>showGroup(-1);
 document.getElementById('plus').onclick=()=>zoom(.15);document.getElementById('minus').onclick=()=>zoom(-.15);
+document.getElementById('quality').onclick=event=>{hd=!hd;garden.setQuality(hd);event.target.textContent=hd?'Nét cao':'Ảnh cũ';event.target.setAttribute('aria-pressed',String(hd));render(0);};
 document.getElementById('night').onclick=event=>{night=!night;event.target.textContent=night?'Ban ngày':'Ban đêm';};
 document.getElementById('grid').onclick=event=>{gridOn=!gridOn;event.target.setAttribute('aria-pressed',String(gridOn));};
 document.getElementById('turn').onclick=async()=>{facing=facing==='default'?'right':'default';await showGroup(group);};
