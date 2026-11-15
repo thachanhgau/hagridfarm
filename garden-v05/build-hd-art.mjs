@@ -1,7 +1,7 @@
 // Recover detail from current authored masters; never upscale native sprites and call that new detail.
 import fs from 'node:fs/promises';import path from 'node:path';import {createHash} from 'node:crypto';import {createRequire} from 'node:module';import {fileURLToPath} from 'node:url';
 import {quantize,inkBox} from './build-pond-art.mjs';import {authoredCells} from './authored-atlas.mjs';import {renderElf,ELF_SOURCES,FRIEND_SOURCES} from './build-elf-art.mjs';import {renderSign,SIGN_SOURCE} from './build-sign-art.mjs';
-import {packAsset,provenance as waterGarden} from './build-water-garden-refresh.mjs';import {POND_SPECS,sceneryPixels as pondScenery} from './build-pond-art.mjs';import {EDGE_SPECS,sceneryPixels as edgeScenery} from './build-edge-art.mjs';
+import {TRAY_ART,cutTray} from './water-crop-art.mjs';import {packAsset,provenance as waterGarden} from './build-water-garden-refresh.mjs';import {POND_SPECS,sceneryPixels as pondScenery} from './build-pond-art.mjs';import {EDGE_SPECS,sceneryPixels as edgeScenery} from './build-edge-art.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url)),sharp=createRequire(import.meta.url)('/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 const read=async f=>JSON.parse(await fs.readFile(path.join(root,f),'utf8')),sha=b=>createHash('sha256').update(b).digest('hex'),density=2;
 const runtime=await read('runtime-webp-manifest.json'),inventory=new Map(runtime.images.map(i=>[i.source,i])),pixels=new Map(),recovered=new Map(),atlasSpecs=new Map(),provenance=[],skipped=[];
@@ -35,7 +35,9 @@ async function recover(master,frame){
  // Old opaque-sheet sources retain the already-reviewed native alpha mask; transparent masters keep their fine contour.
  const legacyMask=opaque===original.info.width*original.info.height;
  for(let y=0;y<h;y++)for(let x=0;x<w;x++){const dx=b.x*density+x,dy=b.y*density+y;if(dx<0||dy<0||dx>=width||dy>=height)throw Error('HD clipping '+native);const si=(y*w+x)*4,ni=(Math.floor(dy/density)*nativePixels.info.width+Math.floor(dx/density))*4;if(!legacyMask||nativePixels.data[ni+3])ink.copy(out,(dy*width+dx)*4,si,si+4);}
- await save(native,out,width,height,{master,masterSha256:sha(await fs.readFile(path.join(root,master))),sourceRect:crop,logicalBounds:b,legacyAlphaMask:legacyMask,...frame.palette&&{palette:frame.palette}});
+ // Water crops (water-crop-art.mjs): the same tray cut at density 2, found from the HD rim itself.
+ const trayCut=TRAY_ART.test(native)&&cutTray(out,width,height,density)>0;
+ await save(native,out,width,height,{...trayCut&&{trayCut},master,masterSha256:sha(await fs.readFile(path.join(root,master))),sourceRect:crop,logicalBounds:b,legacyAlphaMask:legacyMask,...frame.palette&&{palette:frame.palette}});
 }
 const manifests=['noel-50-assets/manifest.json','house-noel-assets/manifest.json','complete-objects-manifest.json','crop-complete-manifest.json','flow-art-manifest.json','decor-flow-manifest.json','item-art-manifest.json'];
 for(const name of manifests){const data=await read(name);walk(data);const items=Array.isArray(data.items)?data.items:Object.values(data.items||{});

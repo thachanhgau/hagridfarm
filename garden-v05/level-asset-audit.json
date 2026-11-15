@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T06:58:31.314Z",
+  "generatedAt": "2026-11-15T15:50:05.706Z",
   "status": "complete: 11/11 source atlas groups",
   "complete": true,
   "expected": {
@@ -953,11 +953,11 @@
       "edgeContact": false,
       "pivot": true,
       "bounds": {
-        "x": 13,
+        "x": 20,
         "y": 45,
-        "w": 38,
-        "h": 35,
-        "count": 726,
+        "w": 21,
+        "h": 21,
+        "count": 213,
         "edge": false
       },
       "pass": true
@@ -973,11 +973,11 @@
       "edgeContact": false,
       "pivot": true,
       "bounds": {
-        "x": 12,
+        "x": 16,
         "y": 25,
-        "w": 40,
-        "h": 55,
-        "count": 1127,
+        "w": 29,
+        "h": 41,
+        "count": 601,
         "edge": false
       },
       "pass": true
@@ -996,8 +996,8 @@
         "x": 5,
         "y": 14,
         "w": 53,
-        "h": 66,
-        "count": 2016,
+        "h": 53,
+        "count": 1492,
         "edge": false
       },
       "pass": true

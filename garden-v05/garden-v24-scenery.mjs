@@ -1,6 +1,12 @@
 import {stageContains} from './garden-growth.mjs?v=26.1';
 import {clearOfBuildings,worldPhase} from './garden-seasonal-world.mjs?v=26.1';
 import {densityOf,fillAt} from './device-pixels.mjs?v=26.1';
+import {pathSegments} from './garden-path-details.mjs?v=26.1';
+// A bank (|dx| + 2|dy| ≤ 26 px) covers ±26/64 cell around its centre; a path is one cell wide along its centre line
+// (GARDEN_PATHS plus the map's pond, edge and pen routes). Owner 15/11/2026: no snow bank lying across a path.
+const BANK_HALF=26/64;
+export const bankOnPath=(col,row,map)=>pathSegments(map).some(([a,b])=>
+ col+BANK_HALF>Math.min(a[0],b[0])-.5&&col-BANK_HALF<Math.max(a[0],b[0])+.5&&row+BANK_HALF>Math.min(a[1],b[1])-.5&&row-BANK_HALF<Math.max(a[1],b[1])+.5);
 export function sceneryLighting(atmosphere='day',weather='clear'){
  return {sun:weather==='clear'&&atmosphere!=='night',warm:atmosphere==='dusk',wet:weather==='rain',snow:weather==='snow'};
 }
@@ -44,6 +50,7 @@ export function drawV24Ground(c,{weatherMode='clear',clock=0,iso,stage,map}){
    for(let j=0;j<24;j++){const dx=(j*17+seed)%67-33,dy=(j*11+seed)%23-11;c.fillStyle=['#a57554','#ed8a45','#8b4a3f','#e7ae73'][j%4];c.fillRect(Math.round(x+dx),Math.round(y+dy),5+j%3,2);c.fillRect(Math.round(x+dx+2),Math.round(y+dy-1),3,4);}
   }else if(weatherMode==='snow'){
    // Irregular banks on path margins leave the centre readable.
+   if(bankOnPath(col,row,map))continue;
    if(d>1){hdBank(c,x,y,seed,d);continue;}
    for(let dy=-8;dy<7;dy+=2){const w=26-Math.abs(dy)*2;c.fillStyle=dy>3?'#b7dee0':'#e8f0ed';c.fillRect(Math.round(x-w),Math.round(y+dy),w*2,2);}
   }

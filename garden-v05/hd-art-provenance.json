@@ -2100,28 +2100,28 @@
       "sha256": "d4b609b3d9cd4889fa19e984475fe03176622c49232bcb93fff27fcf10846ecf"
     },
     "native-levels/silverkelp/frame-02.png": {
-      "file": "decor-assets/hd/a705c433462696f7ff77517e.webp",
+      "file": "decor-assets/hd/09e36c4a36de42387ec55504.webp",
       "density": 2,
       "width": 64,
       "height": 96,
-      "bytes": 1092,
-      "sha256": "a705c433462696f7ff77517e6137da7bbbbf8efa6d5d23ef64ba1c5d37c20646"
+      "bytes": 416,
+      "sha256": "09e36c4a36de42387ec55504bec8456e862d3130129f6381a8b84db24f1d7b01"
     },
     "native-levels/silverkelp/frame-03.png": {
-      "file": "decor-assets/hd/19572aaa9a1c3e8b51a34f24.webp",
+      "file": "decor-assets/hd/ec480174a066f00a33072147.webp",
       "density": 2,
       "width": 64,
       "height": 96,
-      "bytes": 1630,
-      "sha256": "19572aaa9a1c3e8b51a34f24d253a0d6c908982153722ad05c3c3f29f30fe659"
+      "bytes": 952,
+      "sha256": "ec480174a066f00a3307214731080fee7e30ae975122a893eb5eaa147ea3896a"
     },
     "native-levels/silverkelp/frame-04.png": {
-      "file": "decor-assets/hd/489e7c556f9c37076a4001cb.webp",
+      "file": "decor-assets/hd/3a9f1faa3c0b4880ebde3537.webp",
       "density": 2,
       "width": 64,
       "height": 96,
-      "bytes": 2816,
-      "sha256": "489e7c556f9c37076a4001cb7d6d36742998297f6e15c126019b7bde023b12de"
+      "bytes": 2214,
+      "sha256": "3a9f1faa3c0b4880ebde3537bee039b260e7510cbc15dd6edf88950f41f18813"
     },
     "native-levels/starbean/frame-01.png": {
       "file": "decor-assets/hd/8b09f155f97beb7e0f5d56df.webp",
@@ -11442,12 +11442,12 @@
       "totalFrames": 10
     },
     "native-crop-complete/silverkelp/atlas.png": {
-      "file": "decor-assets/hd/966539c8d12b28378dda5ae7-atlas.webp",
+      "file": "decor-assets/hd/e411fff8a453f1f52d27c492-atlas.webp",
       "density": 2,
       "width": 256,
       "height": 288,
-      "bytes": 14672,
-      "sha256": "966539c8d12b28378dda5ae7554b88f33f8f7c43f46a729ff85ecf41d01f520c",
+      "bytes": 11222,
+      "sha256": "e411fff8a453f1f52d27c492b606879dab6b3352d0782dfc15405026a55a9200",
       "recoveredFrames": 10,
       "totalFrames": 10
     },
@@ -12312,7 +12312,7 @@
       "totalFrames": 8
     }
   },
-  "runtimeBytes": 10077522,
+  "runtimeBytes": 10072116,
   "provenance": [
     {
       "native": "noel-50-assets/native/nx_snitch_wreath/frame-01.png",
@@ -24716,7 +24716,8 @@
     },
     {
       "native": "native-crop-complete/silverkelp/frame-01.png",
-      "file": "decor-assets/hd/44465da4e28dceb5b589b977.webp",
+      "file": "decor-assets/hd/0adc8476c960fcf771e85301.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24732,11 +24733,12 @@
         "h": 46
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.966
+      "silhouetteIoU": 0.962
     },
     {
       "native": "native-crop-complete/silverkelp/frame-02.png",
-      "file": "decor-assets/hd/3ec294d05421274e27a2ed5d.webp",
+      "file": "decor-assets/hd/9d9f3ddb91135264910f792f.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24752,11 +24754,12 @@
         "h": 46
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.971
+      "silhouetteIoU": 0.96
     },
     {
       "native": "native-crop-complete/silverkelp/frame-03.png",
-      "file": "decor-assets/hd/a0e1fc29056297a6d579a0c1.webp",
+      "file": "decor-assets/hd/2355ba1a637565b5ea7eeb88.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24772,11 +24775,12 @@
         "h": 46
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.976
+      "silhouetteIoU": 0.924
     },
     {
       "native": "native-crop-complete/silverkelp/frame-04.png",
-      "file": "decor-assets/hd/1ff629d45e6ae8679330a7b7.webp",
+      "file": "decor-assets/hd/32197844d991dd111f4f243b.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24792,11 +24796,12 @@
         "h": 46
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.971
+      "silhouetteIoU": 0.961
     },
     {
       "native": "native-crop-complete/silverkelp/frame-05.png",
-      "file": "decor-assets/hd/d573591000f3df49f6b66958.webp",
+      "file": "decor-assets/hd/5d0e9cdc0bbb2470e9d3f1b5.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24812,11 +24817,12 @@
         "h": 39
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.982
+      "silhouetteIoU": 0.966
     },
     {
       "native": "native-crop-complete/silverkelp/frame-06.png",
-      "file": "decor-assets/hd/3528b38cbf3cb2eee5ff4fe1.webp",
+      "file": "decor-assets/hd/14db53335bfedaeebd4efebc.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24832,11 +24838,12 @@
         "h": 39
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.967
+      "silhouetteIoU": 0.958
     },
     {
       "native": "native-crop-complete/silverkelp/frame-07.png",
-      "file": "decor-assets/hd/d638a6f83854a411b373c9f5.webp",
+      "file": "decor-assets/hd/dd0b5da30c2ec0694df8ddff.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24852,11 +24859,12 @@
         "h": 37
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.979
+      "silhouetteIoU": 0.968
     },
     {
       "native": "native-crop-complete/silverkelp/frame-08.png",
-      "file": "decor-assets/hd/6542b0d57bfbea4b8106bf60.webp",
+      "file": "decor-assets/hd/b96406c269b9541e058e2156.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24872,11 +24880,12 @@
         "h": 47
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.97
+      "silhouetteIoU": 0.757
     },
     {
       "native": "native-crop-complete/silverkelp/frame-09.png",
-      "file": "decor-assets/hd/40bccbaa4e5ed824dd67416a.webp",
+      "file": "decor-assets/hd/8af50dbd890093eb1c64f7d3.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24892,11 +24901,12 @@
         "h": 42
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.96
+      "silhouetteIoU": 0.962
     },
     {
       "native": "native-crop-complete/silverkelp/frame-10.png",
-      "file": "decor-assets/hd/4031d7df3bf55e504b270196.webp",
+      "file": "decor-assets/hd/4af7c87e88eaa27fefafdb33.webp",
+      "trayCut": true,
       "master": "masters-crop-complete/silverkelp-motion-v01.png",
       "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
       "sourceRect": {
@@ -24912,7 +24922,7 @@
         "h": 47
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.97
+      "silhouetteIoU": 0.941
     },
     {
       "native": "native-crop-complete/starbean/frame-01.png",
@@ -55232,7 +55242,8 @@
     },
     {
       "native": "native-levels/silverkelp/frame-02.png",
-      "file": "decor-assets/hd/a705c433462696f7ff77517e.webp",
+      "file": "decor-assets/hd/09e36c4a36de42387ec55504.webp",
+      "trayCut": true,
       "master": "masters-levels/crops-d.png",
       "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
       "sourceRect": {
@@ -55250,11 +55261,12 @@
         "edge": false
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.967
+      "silhouetteIoU": 0.798
     },
     {
       "native": "native-levels/silverkelp/frame-03.png",
-      "file": "decor-assets/hd/19572aaa9a1c3e8b51a34f24.webp",
+      "file": "decor-assets/hd/ec480174a066f00a33072147.webp",
+      "trayCut": true,
       "master": "masters-levels/crops-d.png",
       "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
       "sourceRect": {
@@ -55272,11 +55284,12 @@
         "edge": false
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.952
+      "silhouetteIoU": 0.897
     },
     {
       "native": "native-levels/silverkelp/frame-04.png",
-      "file": "decor-assets/hd/489e7c556f9c37076a4001cb.webp",
+      "file": "decor-assets/hd/3a9f1faa3c0b4880ebde3537.webp",
+      "trayCut": true,
       "master": "masters-levels/crops-d.png",
       "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
       "sourceRect": {
@@ -55294,7 +55307,7 @@
         "edge": false
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.972
+      "silhouetteIoU": 0.922
     },
     {
       "native": "native-levels/moonherb/frame-01.png",

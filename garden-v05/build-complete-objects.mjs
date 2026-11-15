@@ -6,6 +6,7 @@ import crypto from 'node:crypto';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {SPRITE_PALETTE} from './palette.mjs';
+import {TRAY_ART,cutTray} from './water-crop-art.mjs';
 
 const require=createRequire(import.meta.url);
 const sharp=require(process.env.SHARP_MODULE||'/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
@@ -70,10 +71,12 @@ export async function exportSprite(source,pose,index,spec,scale){
   for(const i of off)out[i+3]=0;}}
  const file=`${source.outputFolder||'native-complete-objects'}/${source.id}/frame-${String(index+1).padStart(2,'0')}.png`;
  await fs.mkdir(path.dirname(path.join(root,file)),{recursive:true});
- const png=await sharp(out,{raw:{width,height,channels:4}}).png().toBuffer();await fs.writeFile(path.join(root,file),png);
  const b=bounds(out,width,height);
  if(b.x<=0||b.y<=0||b.x+b.w>=width||b.y+b.h>=height)throw Error(file+': clipped native output');
- return {file,width,height,pivotX,pivotY,bounds:{x:b.x,y:b.y,w:b.w,h:b.h},sha256:hash(png),sourceRect:pose.sourceRect};
+ // Water crops grow out of the plot's water (15/11/2026): the tray is cut; `bounds` stays the master placement box.
+ const trayCut=TRAY_ART.test(file)&&cutTray(out,width,height)>0;
+ const png=await sharp(out,{raw:{width,height,channels:4}}).png().toBuffer();await fs.writeFile(path.join(root,file),png);
+ return {file,width,height,pivotX,pivotY,bounds:{x:b.x,y:b.y,w:b.w,h:b.h},sha256:hash(png),sourceRect:pose.sourceRect,...trayCut&&{trayCut}};
 }
 async function main(){
  const files=(await fs.readdir(path.join(root,input))).filter(file=>file.endsWith('.json')).sort();

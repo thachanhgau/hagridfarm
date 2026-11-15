@@ -7012,7 +7012,7 @@
           }
         ]
       },
-      "label": "Mimbulus mimbletonia",
+      "label": "Xương rồng mụt nhớt",
       "baseFrame": "native-levels/mimbulus/frame-04.png",
       "baseFrameSha256": "dabd74e19b288989f8b85ef330fb4cc4f56bf711ef26de6d554141ab4bd1adfc",
       "detectedSourcePoses": 10,
@@ -9570,7 +9570,7 @@
       "callId": "call_827bc2bd46f142758fcc024a8571751f",
       "atlas": {
         "file": "native-crop-complete/silverkelp/atlas.png",
-        "sha256": "1a4be6db7c4a02b8fb6ebfb122c7d1c81c885f5bc423bda69cef51dd85001b60",
+        "sha256": "e8bf55cef20e836d692037f1bfe5ee2f8168c3438a21b4284d6c66bb33283ea2",
         "width": 256,
         "height": 288,
         "frames": [
@@ -9768,7 +9768,7 @@
       },
       "label": "Tảo bạc",
       "baseFrame": "native-levels/silverkelp/frame-04.png",
-      "baseFrameSha256": "f25c4039b9c7a96efbe7a22faf7ca90354c010e077071e80c1471f902beba789",
+      "baseFrameSha256": "d23a927d891aa8d4d400fd583b69f26c1aff291583b2bed4da39b5bf8d0317af",
       "detectedSourcePoses": 10,
       "idleCount": 4,
       "frames": [
@@ -9784,13 +9784,14 @@
             "w": 37,
             "h": 46
           },
-          "sha256": "1b90e2bf70b690d8b912d7f6303dd7dd3b14d4d0780eecfa9b72b34bf20913b3",
+          "sha256": "595ef09575a661c15e4c6b0bf47767fa973eb34cfdc4d859e8b49269252ca220",
           "sourceRect": {
             "x": 59,
             "y": 80,
             "w": 213,
             "h": 263
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-02.png",
@@ -9804,13 +9805,14 @@
             "w": 39,
             "h": 46
           },
-          "sha256": "67a235724c8b9ce20f63c51dbaeb427c736fc3a7cb332280c31dab02463abb03",
+          "sha256": "92acbddd0a563b537b983a160e127e72aa803ff4faadc25bb2890cbdb5c39705",
           "sourceRect": {
             "x": 354,
             "y": 81,
             "w": 221,
             "h": 262
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-03.png",
@@ -9824,13 +9826,14 @@
             "w": 39,
             "h": 46
           },
-          "sha256": "0f0ee61bcdb55ce5bf51c175fe602f9e785ec2e27b4d3c5879b4767baff69933",
+          "sha256": "1206c3b60c126601f6590c9929c150bebf35aa53b94973f784ec07fd9a6fc4d7",
           "sourceRect": {
             "x": 658,
             "y": 80,
             "w": 223,
             "h": 263
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-04.png",
@@ -9844,13 +9847,14 @@
             "w": 40,
             "h": 46
           },
-          "sha256": "0c21f83973467ad2ca8088023e67cd0fe6341c3c4c80e8f7a124fa0a0ac6bbcf",
+          "sha256": "820dda65b6b65b5e66337e98df1382b76c788f08b33bd456df263785fe454409",
           "sourceRect": {
             "x": 953,
             "y": 80,
             "w": 230,
             "h": 261
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-05.png",
@@ -9864,13 +9868,14 @@
             "w": 34,
             "h": 39
           },
-          "sha256": "90d33be1ee410d1022988c190e5b5ccf3a76540b2ece23b1129a4df30c7a0378",
+          "sha256": "f5ffbadc22c6f8a49a39308b37d2236715c559fffddf207f071747ac1d801ea9",
           "sourceRect": {
             "x": 32,
             "y": 446,
             "w": 196,
             "h": 223
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-06.png",
@@ -9884,13 +9889,14 @@
             "w": 36,
             "h": 39
           },
-          "sha256": "5197bad211ec180bea63eafc663e8ea7aeb305f97347bb8769845c3f95e00f41",
+          "sha256": "3c2f2ff6c7c241d90475965422afc7422b223ca0a9fbba077435c289b1f5e4f5",
           "sourceRect": {
             "x": 274,
             "y": 445,
             "w": 205,
             "h": 225
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-07.png",
@@ -9904,13 +9910,14 @@
             "w": 31,
             "h": 37
           },
-          "sha256": "946a8a1f925e7d34ade50d92b053cdec9fc0ee62178636fe10d1a86c519e2925",
+          "sha256": "5f840838e9625f4325eaea70fed88188651221f91aad889201bce3efa9fa9d75",
           "sourceRect": {
             "x": 523,
             "y": 460,
             "w": 176,
             "h": 210
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-08.png",
@@ -9924,13 +9931,14 @@
             "w": 54,
             "h": 47
           },
-          "sha256": "0672a2b9d4f74182fd19eab19e86753c589c9a7fcc6c462966d6cb7b9f2fb457",
+          "sha256": "dc53acf76bea4ab273227864240216f867b37256d5fae24007a49163994a5452",
           "sourceRect": {
             "x": 719,
             "y": 401,
             "w": 308,
             "h": 270
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-09.png",
@@ -9944,13 +9952,14 @@
             "w": 39,
             "h": 42
           },
-          "sha256": "0cfcfb53270fd06f0c674ba6dc575628f85228a201705da61922e109ed976939",
+          "sha256": "9ee317d197eb8ddcfcaf69cdc515ea3edb381e1b6b2b8edbaddfe199df0c05e4",
           "sourceRect": {
             "x": 1043,
             "y": 432,
             "w": 220,
             "h": 239
-          }
+          },
+          "trayCut": true
         },
         {
           "file": "native-crop-complete/silverkelp/frame-10.png",
@@ -9964,13 +9973,14 @@
             "w": 39,
             "h": 47
           },
-          "sha256": "5d6239816af18357306cb3069b5b440ba91f8abb5c9139a3d741284973ae5613",
+          "sha256": "d1ac447b5dddf0a493bf643b35e2f3504d36a1533c0fd0586c22501c947b3a37",
           "sourceRect": {
             "x": 1286,
             "y": 404,
             "w": 223,
             "h": 267
-          }
+          },
+          "trayCut": true
         }
       ],
       "clips": {

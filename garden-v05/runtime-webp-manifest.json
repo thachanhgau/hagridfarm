@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "025ab5c4ebdb",
+  "revision": "7292d0097bde",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -3196,30 +3196,30 @@
       "file": "runtime-webp/native-levels/silverkelp/frame-02.webp",
       "width": 64,
       "height": 96,
-      "sourceBytes": 818,
-      "bytes": 494,
-      "sourceSha256": "7b494a6f2aca22cb934bcbec16a1631537fd6fad1d0ba1c54233f05d24f5cb77",
-      "sha256": "32f61e3b144909c9d0db8af340d576e72903e3a0944e4646b66f37781aeecfc4"
+      "sourceBytes": 413,
+      "bytes": 234,
+      "sourceSha256": "b3b0e385885e4416ae2282bf0bc9d6d5262c3f15539730b797ef166d95bc3268",
+      "sha256": "d4e63a0f76f467230ee694bef5d6c95b58c66b8297aa4a5e33af4a94482073ae"
     },
     {
       "source": "native-levels/silverkelp/frame-03.png",
       "file": "runtime-webp/native-levels/silverkelp/frame-03.webp",
       "width": 64,
       "height": 96,
-      "sourceBytes": 1133,
-      "bytes": 674,
-      "sourceSha256": "7ff23c216472b7e7159b956242b58d94922f3681ab475688d75cba75ee224cd1",
-      "sha256": "b2d785142a3367dcff48945bc524d91fa8d4277339611cb3aab6c4bc8c09237e"
+      "sourceBytes": 746,
+      "bytes": 424,
+      "sourceSha256": "c2b7143dcef03393e93c923d360ea095fab33d161a38bbf49bc26c51a67b9552",
+      "sha256": "6b791f05cb150f6f2f9306b6ec9c10cca00e98427bf76eda6599ab1df663bdad"
     },
     {
       "source": "native-levels/silverkelp/frame-04.png",
       "file": "runtime-webp/native-levels/silverkelp/frame-04.webp",
       "width": 64,
       "height": 96,
-      "sourceBytes": 1752,
-      "bytes": 1112,
-      "sourceSha256": "f25c4039b9c7a96efbe7a22faf7ca90354c010e077071e80c1471f902beba789",
-      "sha256": "83947dc87a14502ec9dad79826a7a92a14cf23ca243e43ede72a06ccb7404e0f"
+      "sourceBytes": 1372,
+      "bytes": 866,
+      "sourceSha256": "d23a927d891aa8d4d400fd583b69f26c1aff291583b2bed4da39b5bf8d0317af",
+      "sha256": "76f61985c30f3a682bb2b8a1941a536b69e895a4bd867f99228a2c32ddb44cf2"
     },
     {
       "source": "native-levels/starbean/frame-01.png",
@@ -6596,10 +6596,10 @@
       "file": "runtime-webp/native-crop-complete/silverkelp/atlas.webp",
       "width": 256,
       "height": 288,
-      "sourceBytes": 8511,
-      "bytes": 4918,
-      "sourceSha256": "1a4be6db7c4a02b8fb6ebfb122c7d1c81c885f5bc423bda69cef51dd85001b60",
-      "sha256": "6569973b8b60925c895422f958c54a4e8f18d00ab78f8645f16458f8b24fa28f"
+      "sourceBytes": 6951,
+      "bytes": 3788,
+      "sourceSha256": "e8bf55cef20e836d692037f1bfe5ee2f8168c3438a21b4284d6c66bb33283ea2",
+      "sha256": "3f4095a11a914987e90055b8c4b6f952411d3abdb8c69c23fc11bf7acbdf47a5"
     },
     {
       "source": "native-crop-complete/starbean/atlas.png",
@@ -17269,6 +17269,11 @@
       "sha256": "09a028ad53c96b664e2e0fabbad4cc9be315d3d4488bff0ef9e283d4b836ecb2"
     },
     {
+      "file": "decor-assets/hd/09e36c4a36de42387ec55504.webp",
+      "bytes": 416,
+      "sha256": "09e36c4a36de42387ec55504bec8456e862d3130129f6381a8b84db24f1d7b01"
+    },
+    {
       "file": "decor-assets/hd/09fe722ab2e01ddac935e2cd.webp",
       "bytes": 3642,
       "sha256": "09fe722ab2e01ddac935e2cd54e3968da4e224dd18461ee19ceeda6451062af8"
@@ -17637,11 +17642,6 @@
       "file": "decor-assets/hd/18f83b4bff1721535b044019.webp",
       "bytes": 1632,
       "sha256": "18f83b4bff1721535b044019bb38edbb3e5ba3ab49bbf6447efc119988477d02"
-    },
-    {
-      "file": "decor-assets/hd/19572aaa9a1c3e8b51a34f24.webp",
-      "bytes": 1630,
-      "sha256": "19572aaa9a1c3e8b51a34f24d253a0d6c908982153722ad05c3c3f29f30fe659"
     },
     {
       "file": "decor-assets/hd/19808f0f8ae58749462eb763.webp",
@@ -18559,6 +18559,11 @@
       "sha256": "3a468172e5a293a43a4cb5387744a2ca8b362c78d03ffff006ba49cd4d40d549"
     },
     {
+      "file": "decor-assets/hd/3a9f1faa3c0b4880ebde3537.webp",
+      "bytes": 2214,
+      "sha256": "3a9f1faa3c0b4880ebde3537bee039b260e7510cbc15dd6edf88950f41f18813"
+    },
+    {
       "file": "decor-assets/hd/3b9b2489290c26e0662dfa65.webp",
       "bytes": 1606,
       "sha256": "3b9b2489290c26e0662dfa65f318eed79ed245d4e214a9e505539cb037a35223"
@@ -18857,11 +18862,6 @@
       "file": "decor-assets/hd/488b597ec01988cac5d5fb44-atlas.webp",
       "bytes": 18040,
       "sha256": "488b597ec01988cac5d5fb44ad6fe7e230ba6d3adfc43875b45ccd89980dd2f6"
-    },
-    {
-      "file": "decor-assets/hd/489e7c556f9c37076a4001cb.webp",
-      "bytes": 2816,
-      "sha256": "489e7c556f9c37076a4001cb7d6d36742998297f6e15c126019b7bde023b12de"
     },
     {
       "file": "decor-assets/hd/48fd4a32a12201a752d1f9cd.webp",
@@ -20839,11 +20839,6 @@
       "sha256": "9642f5e130d885177ae0d27db7539eadf09c791f406f7cfe2fa23ab3a0e29054"
     },
     {
-      "file": "decor-assets/hd/966539c8d12b28378dda5ae7-atlas.webp",
-      "bytes": 14672,
-      "sha256": "966539c8d12b28378dda5ae7554b88f33f8f7c43f46a729ff85ecf41d01f520c"
-    },
-    {
       "file": "decor-assets/hd/9679b7766d2ce8e00f50acb0.webp",
       "bytes": 1302,
       "sha256": "9679b7766d2ce8e00f50acb02397a0e61fea244423b49736bbee57815172a85d"
@@ -21222,11 +21217,6 @@
       "file": "decor-assets/hd/a671bb6bdee3f7a46d892530.webp",
       "bytes": 6586,
       "sha256": "a671bb6bdee3f7a46d892530b95c5044653b4c5db8bb0a351e095b5bfc704ba9"
-    },
-    {
-      "file": "decor-assets/hd/a705c433462696f7ff77517e.webp",
-      "bytes": 1092,
-      "sha256": "a705c433462696f7ff77517e6137da7bbbbf8efa6d5d23ef64ba1c5d37c20646"
     },
     {
       "file": "decor-assets/hd/a77300e4c24fba61516417ae.webp",
@@ -22854,6 +22844,11 @@
       "sha256": "e37c585ff8784483c519e77ed5cdc27a9fe1f613b30f7803ac713554e6b3e33d"
     },
     {
+      "file": "decor-assets/hd/e411fff8a453f1f52d27c492-atlas.webp",
+      "bytes": 11222,
+      "sha256": "e411fff8a453f1f52d27c492b606879dab6b3352d0782dfc15405026a55a9200"
+    },
+    {
       "file": "decor-assets/hd/e44ad64bf1e0c3843eb2ee30.webp",
       "bytes": 796,
       "sha256": "e44ad64bf1e0c3843eb2ee30f974bb2512b47fec73c008dd74a11df40af4347d"
@@ -23097,6 +23092,11 @@
       "file": "decor-assets/hd/ec3a433a993b3e4a2191d0aa.webp",
       "bytes": 1428,
       "sha256": "ec3a433a993b3e4a2191d0aa99bc28b0018b8f409b89cb1f59478352d3c1abdd"
+    },
+    {
+      "file": "decor-assets/hd/ec480174a066f00a33072147.webp",
+      "bytes": 952,
+      "sha256": "ec480174a066f00a3307214731080fee7e30ae975122a893eb5eaa147ea3896a"
     },
     {
       "file": "decor-assets/hd/ec63d21e9c120e1102e16d12.webp",
@@ -23607,9 +23607,9 @@
   "totals": {
     "converted": 1706,
     "existingWebp": 1304,
-    "originalBytes": 16625473,
-    "webpBytes": 14055610,
-    "savedBytes": 2569863,
+    "originalBytes": 16617335,
+    "webpBytes": 14048318,
+    "savedBytes": 2569017,
     "savedPercent": 15.46
   }
 }

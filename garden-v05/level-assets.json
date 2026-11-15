@@ -2695,7 +2695,8 @@
               },
               "scale": 0.20245398773006135,
               "adultScale": 0.20245398773006135,
-              "clippedPixels": 0
+              "clippedPixels": 0,
+              "trayCut": true
             },
             {
               "file": "native-levels/silverkelp/frame-03.png",
@@ -2728,7 +2729,8 @@
               },
               "scale": 0.20245398773006135,
               "adultScale": 0.20245398773006135,
-              "clippedPixels": 0
+              "clippedPixels": 0,
+              "trayCut": true
             },
             {
               "file": "native-levels/silverkelp/frame-04.png",
@@ -2761,7 +2763,8 @@
               },
               "scale": 0.20245398773006135,
               "adultScale": 0.20245398773006135,
-              "clippedPixels": 0
+              "clippedPixels": 0,
+              "trayCut": true
             }
           ],
           "clips": {
@@ -9925,7 +9928,8 @@
           },
           "scale": 0.20245398773006135,
           "adultScale": 0.20245398773006135,
-          "clippedPixels": 0
+          "clippedPixels": 0,
+          "trayCut": true
         },
         {
           "file": "native-levels/silverkelp/frame-03.png",
@@ -9958,7 +9962,8 @@
           },
           "scale": 0.20245398773006135,
           "adultScale": 0.20245398773006135,
-          "clippedPixels": 0
+          "clippedPixels": 0,
+          "trayCut": true
         },
         {
           "file": "native-levels/silverkelp/frame-04.png",
@@ -9991,7 +9996,8 @@
           },
           "scale": 0.20245398773006135,
           "adultScale": 0.20245398773006135,
-          "clippedPixels": 0
+          "clippedPixels": 0,
+          "trayCut": true
         }
       ],
       "clips": {
@@ -14358,5 +14364,5 @@
   "itemCount": 32,
   "frameCount": 128,
   "warnings": [],
-  "generatedAt": "2026-10-23T06:58:31.245Z"
+  "generatedAt": "2026-11-15T15:50:05.648Z"
 }

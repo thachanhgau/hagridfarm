@@ -17,6 +17,7 @@ import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.m
 import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=26.1';
 import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=26.1';
 import {drawV24Ground} from './garden-v24-scenery.mjs?v=26.1';
+import {WATER_CROPS,WATERLINE_LIFT,isWaterPlot,drawWaterBed} from './water-crop-art.mjs?v=26.1';
 import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=26.1';
 import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=26.1';
 import {decorObjects,decorFootprintRect,depthSort,footLift,orientedFootprint} from './decor-runtime.mjs?v=26.1';
@@ -1408,11 +1409,21 @@ export async function createGarden(canvas, options = {}) {
   function drawPlotSoil(state, logicalNow, showGrid = false) {
     for (let index = 0; index < map.plots.length; index += 1) {
       if (!plotIsBuilt(state, index, logicalNow)) continue;
-      const plot = plotBounds(map.plots[index]);
+      const plot = plotBounds(map.plots[index]), slots = asArray(state.plots[index]?.slots);
+      if (isWaterPlot(slots)) {
+        // Owner 15/11/2026: water crops grow in water, not trays; the whole plot is the bed (water-crop-art.mjs).
+        const stems = slots.flatMap((slot, i) => {
+          if (!WATER_CROPS.includes(slot?.species) || i >= plot.width * plot.height || growthFor(slot, logicalNow).stage < 1) return [];
+          const [x, y] = iso(...plotCellPosition(map.plots[index], i));
+          return [[x, y - WATERLINE_LIFT[slot.species]]];
+        });
+        drawWaterBed(context, plotCorners(map.plots[index]), {weatherMode: activeWeather, index, stems});
+        if (!showGrid) continue;
+      }
       for (let row = 0; row < plot.height; row += 1) {
         for (let col = 0; col < plot.width; col += 1) {
           const [logicalCol,logicalRow] = plotCellPosition(map.plots[index],row*plot.width+col);
-          drawTile(context,soilTile,logicalCol,logicalRow,plotCellScale());
+          if (!isWaterPlot(slots)) drawTile(context,soilTile,logicalCol,logicalRow,plotCellScale());
           if (showGrid) {
             const [x, y] = iso(logicalCol, logicalRow);
             drawDiamond(context,x,y,null,'rgba(36,72,63,.54)',map,plotCellScale());

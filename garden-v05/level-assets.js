@@ -2697,7 +2697,8 @@
               },
               "scale": 0.20245398773006135,
               "adultScale": 0.20245398773006135,
-              "clippedPixels": 0
+              "clippedPixels": 0,
+              "trayCut": true
             },
             {
               "file": "native-levels/silverkelp/frame-03.png",
@@ -2730,7 +2731,8 @@
               },
               "scale": 0.20245398773006135,
               "adultScale": 0.20245398773006135,
-              "clippedPixels": 0
+              "clippedPixels": 0,
+              "trayCut": true
             },
             {
               "file": "native-levels/silverkelp/frame-04.png",
@@ -2763,7 +2765,8 @@
               },
               "scale": 0.20245398773006135,
               "adultScale": 0.20245398773006135,
-              "clippedPixels": 0
+              "clippedPixels": 0,
+              "trayCut": true
             }
           ],
           "clips": {
@@ -5364,7 +5367,7 @@
         },
         {
           "id": "mimbulus",
-          "label": "Mimbulus mimbletonia",
+          "label": "Xương rồng mụt nhớt",
           "kind": "crop",
           "balance": {
             "level": 310,
@@ -6101,7 +6104,7 @@
       "items": [
         {
           "id": "mooncalf",
-          "label": "Mooncalf",
+          "label": "Bê trăng",
           "kind": "creature",
           "balance": {
             "level": 34,
@@ -6317,7 +6320,7 @@
         },
         {
           "id": "kneazle",
-          "label": "Kneazle",
+          "label": "Mèo đốm",
           "kind": "creature",
           "balance": {
             "level": 42,
@@ -6533,7 +6536,7 @@
         },
         {
           "id": "diricawl",
-          "label": "Diricawl",
+          "label": "Chim ẩn hiện",
           "kind": "creature",
           "balance": {
             "level": 50,
@@ -6794,7 +6797,7 @@
       "items": [
         {
           "id": "fwooper",
-          "label": "Fwooper",
+          "label": "Chim lông rực",
           "kind": "creature",
           "balance": {
             "level": 58,
@@ -9927,7 +9930,8 @@
           },
           "scale": 0.20245398773006135,
           "adultScale": 0.20245398773006135,
-          "clippedPixels": 0
+          "clippedPixels": 0,
+          "trayCut": true
         },
         {
           "file": "native-levels/silverkelp/frame-03.png",
@@ -9960,7 +9964,8 @@
           },
           "scale": 0.20245398773006135,
           "adultScale": 0.20245398773006135,
-          "clippedPixels": 0
+          "clippedPixels": 0,
+          "trayCut": true
         },
         {
           "file": "native-levels/silverkelp/frame-04.png",
@@ -9993,7 +9998,8 @@
           },
           "scale": 0.20245398773006135,
           "adultScale": 0.20245398773006135,
-          "clippedPixels": 0
+          "clippedPixels": 0,
+          "trayCut": true
         }
       ],
       "clips": {
@@ -12414,7 +12420,7 @@
     },
     {
       "id": "mimbulus",
-      "label": "Mimbulus mimbletonia",
+      "label": "Xương rồng mụt nhớt",
       "kind": "crop",
       "balance": {
         "level": 310,
@@ -13062,7 +13068,7 @@
     },
     {
       "id": "mooncalf",
-      "label": "Mooncalf",
+      "label": "Bê trăng",
       "kind": "creature",
       "balance": {
         "level": 34,
@@ -13278,7 +13284,7 @@
     },
     {
       "id": "kneazle",
-      "label": "Kneazle",
+      "label": "Mèo đốm",
       "kind": "creature",
       "balance": {
         "level": 42,
@@ -13494,7 +13500,7 @@
     },
     {
       "id": "diricawl",
-      "label": "Diricawl",
+      "label": "Chim ẩn hiện",
       "kind": "creature",
       "balance": {
         "level": 50,
@@ -13710,7 +13716,7 @@
     },
     {
       "id": "fwooper",
-      "label": "Fwooper",
+      "label": "Chim lông rực",
       "kind": "creature",
       "balance": {
         "level": 58,
@@ -14360,7 +14366,7 @@
   "itemCount": 32,
   "frameCount": 128,
   "warnings": [],
-  "generatedAt": "2026-10-23T06:58:31.245Z"
+  "generatedAt": "2026-11-15T15:50:05.648Z"
 };
   const items = manifest.items || [];
   window.FARM_LEVEL_ASSETS = manifest;

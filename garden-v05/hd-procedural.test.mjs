@@ -33,7 +33,8 @@ const PINNED={
  penHabitat:'80b5614e960374b880618a63c98d0dc3c5e7cd7a7fe802d17da64f6fe0e46e4c',
  plotBorder:'d2b8b0d904c4a6f86233dd7eab9a76821bcc3c73f11c19e30c4c66190fdf4d7a',
  exitTrail:'2088805969fd835593c6e249d8edda546970690bcc000137f958d41a3a6b650c',
- weatherGround:'10a41482d511d78184c73d4d75452dc6c302f423f6bd7959d7d33ec7e8ab315f',
+ // Re-pinned 15/11/2026 on purpose: snow banks whose footprint meets a path are skipped (owner: a bank lay across a path).
+ weatherGround:'2c05057b23d5b37915f561c63f9f19dff6c185f8c64a1f0a83c49aad08ac42b2',
 };
 function record(draw,d){
  const calls=[],state={};

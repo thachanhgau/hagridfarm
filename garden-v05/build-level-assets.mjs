@@ -5,6 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
+import {TRAY_ART,cutTray} from './water-crop-art.mjs';
 
 const require = createRequire(import.meta.url);
 const sharp = require(process.env.SHARP_MODULE || '/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
@@ -338,6 +339,8 @@ async function processGroup(group, balance, globalWarnings) {
     for (let stage = 0; stage < COLUMNS; stage += 1) {
       const rendered = rasterizeFrame(cells[stage], target, adultScale, paletteCache, warnings, id, stage);
       const frameRelative = path.join('native-levels', id, `frame-${String(stage + 1).padStart(2, '0')}.png`);
+      // Water crops grow out of the plot's water (15/11/2026): the tray is cut; `bounds` stays the master placement box.
+      const trayCut = TRAY_ART.test(frameRelative) && cutTray(rendered.output, rendered.width, rendered.height) > 0;
       await sharp(rendered.output, {raw: {width: rendered.width, height: rendered.height, channels: 4}}).png().toFile(path.join(root, frameRelative));
       frameRecords.push({
         file: frameRelative,
@@ -356,7 +359,8 @@ async function processGroup(group, balance, globalWarnings) {
         bounds: rendered.outputBounds,
         scale: rendered.scale,
         adultScale,
-        clippedPixels: rendered.clippedPixels
+        clippedPixels: rendered.clippedPixels,
+        ...trayCut && {trayCut}
       });
     }
     const item = {

@@ -47,8 +47,8 @@
         "queued": 0,
         "failed": 0
       },
-      "medianFrame": 1.3999999985098839,
-      "p95Frame": 3.100000001490116,
+      "medianFrame": 1.6999999955296516,
+      "p95Frame": 3.5,
       "missing": [],
       "display": [
         5120,
@@ -69,17 +69,17 @@
           2880
         ],
         "budget": 50331648,
-        "bytes": 5619712,
-        "peakBytes": 5619712,
-        "requests": 7,
-        "hits": 77461,
+        "bytes": 7195392,
+        "peakBytes": 7195392,
+        "requests": 12,
+        "hits": 77638,
         "pending": 0,
         "active": 0,
         "queued": 0,
         "failed": 0
       },
-      "medianFrame": 1.6000000014901161,
-      "p95Frame": 1.8999999985098839,
+      "medianFrame": 1.5,
+      "p95Frame": 2.5,
       "missing": [],
       "display": [
         5120,
