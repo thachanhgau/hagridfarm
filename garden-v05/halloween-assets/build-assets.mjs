@@ -157,7 +157,8 @@ function renderNearest(view, item, palette) {
   if (!sourceBounds) throw new Error(`${item.id}: ${view.angle} view has no opaque pixels`);
 
   const gridFit = item.inkMax;
-  const maxWidth = gridFit?.[0] ?? item.w - EDGE_MARGIN * 2 - 2;
+  // fitWidth narrows the ink to the footprint prism (no-overlap rule §2) and keeps the pivot.
+  const maxWidth = gridFit?.[0] ?? item.fitWidth ?? item.w - EDGE_MARGIN * 2 - 2;
   const maxHeight = gridFit?.[1] ?? item.h - EDGE_MARGIN * 2 - 2;
   const scale = Math.min(maxWidth / sourceBounds.w, maxHeight / sourceBounds.h);
   const drawWidth = Math.max(1, Math.round(sourceBounds.w * scale));

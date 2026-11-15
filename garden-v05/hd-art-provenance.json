@@ -1,7 +1,7 @@
 {
   "density": 2,
-  "files": 1415,
-  "uniqueMasterFrames": 2289,
+  "files": 1455,
+  "uniqueMasterFrames": 2345,
   "runtime": {
     "native/bowtruckle/frame-01.png": {
       "file": "decor-assets/hd/4eaeb195bdb2ba0a51eb725b.webp",
@@ -4908,12 +4908,12 @@
       "sha256": "4cf6333ead64d1a2d9c73430a894015832f9dfb55079afe19ad0fbefa1b108c1"
     },
     "decor-assets/native/hw_ghost_well.png": {
-      "file": "decor-assets/hd/15b54e3ea480679248911241.webp",
+      "file": "decor-assets/hd/4d59ae556f3e0afa51e22d61.webp",
       "density": 2,
       "width": 176,
       "height": 192,
-      "bytes": 12506,
-      "sha256": "15b54e3ea480679248911241247898c066c84217141194c87664697f724f0816"
+      "bytes": 12254,
+      "sha256": "4d59ae556f3e0afa51e22d61973e6845dd22ef073df9ed3326d5b65e13406a18"
     },
     "decor-assets/native/hw_grinning_stump_right.png": {
       "file": "decor-assets/hd/4f8c7a637264aa80934cc993.webp",
@@ -5026,6 +5026,86 @@
       "height": 144,
       "bytes": 7628,
       "sha256": "7e1eefd2fb218fa1a1df4406aa9a5cd4b1cb2163586ad7299dc7532dcbb12479"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_f0.png": {
+      "file": "decor-assets/hd/7f4f102cefb907da7f59d48f.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4554,
+      "sha256": "7f4f102cefb907da7f59d48f8aa8b12a5799eb61363262bb124da6762dfb3ef2"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_f1.png": {
+      "file": "decor-assets/hd/c66821b67cae57021eb835f6.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4542,
+      "sha256": "c66821b67cae57021eb835f6691df8fb156697d60739b19ee85566df5b2ecf25"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_f2.png": {
+      "file": "decor-assets/hd/e33a5fb6fce821ff18dd1ef6.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4546,
+      "sha256": "e33a5fb6fce821ff18dd1ef6401876b7836fca0875724d841cd2e45f97701bd2"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_f3.png": {
+      "file": "decor-assets/hd/7f4f102cefb907da7f59d48f.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4554,
+      "sha256": "7f4f102cefb907da7f59d48f8aa8b12a5799eb61363262bb124da6762dfb3ef2"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_right_f0.png": {
+      "file": "decor-assets/hd/a1b1d040c7bc116d75700a85.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4546,
+      "sha256": "a1b1d040c7bc116d75700a85fa71a11f8fb88f9e05f799a29887e77f0e81663c"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_right_f1.png": {
+      "file": "decor-assets/hd/c8e08f0195e4358b654e0d55.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4538,
+      "sha256": "c8e08f0195e4358b654e0d55d3b8d21ba00b26e4ff425d5ab171ce520406a299"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_right_f2.png": {
+      "file": "decor-assets/hd/44146699c17c4be0f35c2f9c.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4542,
+      "sha256": "44146699c17c4be0f35c2f9cb36f0ab125da3d86fc1a877169072afaf579021e"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_right_f3.png": {
+      "file": "decor-assets/hd/a1b1d040c7bc116d75700a85.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4546,
+      "sha256": "a1b1d040c7bc116d75700a85fa71a11f8fb88f9e05f799a29887e77f0e81663c"
+    },
+    "decor-assets/native/hw_monster_candy_barrel_right.png": {
+      "file": "decor-assets/hd/a1b1d040c7bc116d75700a85.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4546,
+      "sha256": "a1b1d040c7bc116d75700a85fa71a11f8fb88f9e05f799a29887e77f0e81663c"
+    },
+    "decor-assets/native/hw_monster_candy_barrel.png": {
+      "file": "decor-assets/hd/7f4f102cefb907da7f59d48f.webp",
+      "density": 2,
+      "width": 96,
+      "height": 104,
+      "bytes": 4554,
+      "sha256": "7f4f102cefb907da7f59d48f8aa8b12a5799eb61363262bb124da6762dfb3ef2"
     },
     "decor-assets/native/hw_owl_tree_hollow_right.png": {
       "file": "decor-assets/hd/744d5d49085462152ca7f3eb.webp",
@@ -5186,6 +5266,86 @@
       "height": 112,
       "bytes": 2834,
       "sha256": "37cf7cfc8e2dd64210a5752208a3374a164db81d03580308dcd2a012b4b06664"
+    },
+    "decor-assets/native/hw_wooden_black_cat_f0.png": {
+      "file": "decor-assets/hd/ab5faaaf6b7e42f589e3c9e6.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3672,
+      "sha256": "ab5faaaf6b7e42f589e3c9e62e73a2557bbc698632d0567a1bab538ba272979c"
+    },
+    "decor-assets/native/hw_wooden_black_cat_f1.png": {
+      "file": "decor-assets/hd/ab5faaaf6b7e42f589e3c9e6.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3672,
+      "sha256": "ab5faaaf6b7e42f589e3c9e62e73a2557bbc698632d0567a1bab538ba272979c"
+    },
+    "decor-assets/native/hw_wooden_black_cat_f2.png": {
+      "file": "decor-assets/hd/ab5faaaf6b7e42f589e3c9e6.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3672,
+      "sha256": "ab5faaaf6b7e42f589e3c9e62e73a2557bbc698632d0567a1bab538ba272979c"
+    },
+    "decor-assets/native/hw_wooden_black_cat_f3.png": {
+      "file": "decor-assets/hd/ab5faaaf6b7e42f589e3c9e6.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3672,
+      "sha256": "ab5faaaf6b7e42f589e3c9e62e73a2557bbc698632d0567a1bab538ba272979c"
+    },
+    "decor-assets/native/hw_wooden_black_cat_right_f0.png": {
+      "file": "decor-assets/hd/b2b11d549f740240965d8a68.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3522,
+      "sha256": "b2b11d549f740240965d8a68444c35d9850c4c0b761f0272f41ea4b6e33a70d0"
+    },
+    "decor-assets/native/hw_wooden_black_cat_right_f1.png": {
+      "file": "decor-assets/hd/b2b11d549f740240965d8a68.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3522,
+      "sha256": "b2b11d549f740240965d8a68444c35d9850c4c0b761f0272f41ea4b6e33a70d0"
+    },
+    "decor-assets/native/hw_wooden_black_cat_right_f2.png": {
+      "file": "decor-assets/hd/b2b11d549f740240965d8a68.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3522,
+      "sha256": "b2b11d549f740240965d8a68444c35d9850c4c0b761f0272f41ea4b6e33a70d0"
+    },
+    "decor-assets/native/hw_wooden_black_cat_right_f3.png": {
+      "file": "decor-assets/hd/b2b11d549f740240965d8a68.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3522,
+      "sha256": "b2b11d549f740240965d8a68444c35d9850c4c0b761f0272f41ea4b6e33a70d0"
+    },
+    "decor-assets/native/hw_wooden_black_cat_right.png": {
+      "file": "decor-assets/hd/b2b11d549f740240965d8a68.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3522,
+      "sha256": "b2b11d549f740240965d8a68444c35d9850c4c0b761f0272f41ea4b6e33a70d0"
+    },
+    "decor-assets/native/hw_wooden_black_cat.png": {
+      "file": "decor-assets/hd/ab5faaaf6b7e42f589e3c9e6.webp",
+      "density": 2,
+      "width": 72,
+      "height": 104,
+      "bytes": 3672,
+      "sha256": "ab5faaaf6b7e42f589e3c9e62e73a2557bbc698632d0567a1bab538ba272979c"
     },
     "decor-assets/native/nh_gryffindor_commonroom_hearth_right.png": {
       "file": "decor-assets/hd/b5a969901f5f1d1bebfe0e8e.webp",
@@ -9043,6 +9203,30 @@
       "bytes": 9050,
       "sha256": "d808281d7d3b0fd5abc3c23791320cbac46d35be15b0fe2988f5342649818667"
     },
+    "environment/bubbles/heart-small.png": {
+      "file": "decor-assets/hd/7b9a5a4c1dffcd0622fcc5ad.webp",
+      "density": 2,
+      "width": 9,
+      "height": 8,
+      "bytes": 164,
+      "sha256": "7b9a5a4c1dffcd0622fcc5ada4ea395f057281cdeddfd2fde6c568fadd43df6a"
+    },
+    "environment/bubbles/hungry.png": {
+      "file": "decor-assets/hd/f8355de2f6b96f0f99f8ef1b.webp",
+      "density": 2,
+      "width": 28,
+      "height": 36,
+      "bytes": 246,
+      "sha256": "f8355de2f6b96f0f99f8ef1bc51a49404c3470cd83c189bea26b849971bb0160"
+    },
+    "environment/bubbles/meal-ready.png": {
+      "file": "decor-assets/hd/a0aa48cd37c49bc7ece5e7aa.webp",
+      "density": 2,
+      "width": 28,
+      "height": 36,
+      "bytes": 492,
+      "sha256": "a0aa48cd37c49bc7ece5e7aa1098d32d3a5a446704a70707a324665ac7ab4a27"
+    },
     "environment/edge/orchard.png": {
       "file": "decor-assets/hd/35e4ff8612344a40515e8dcb.webp",
       "density": 2,
@@ -9915,6 +10099,78 @@
       "bytes": 10258,
       "sha256": "087f1f65a9322e8fa87444c4881aa8df8c1fe192513d1849cf86899f8de22375"
     },
+    "environment/winter/grove.png": {
+      "file": "decor-assets/hd/7a756eed44fdd5649935938f.webp",
+      "density": 2,
+      "width": 190,
+      "height": 136,
+      "bytes": 8124,
+      "sha256": "7a756eed44fdd5649935938f0d9de78af034fd1014afffe5d8bf2dd743b5359e"
+    },
+    "environment/winter/habitat-crup-snow.png": {
+      "file": "decor-assets/hd/f9b0a3d66e0aefcf1e278d67.webp",
+      "density": 2,
+      "width": 56,
+      "height": 56,
+      "bytes": 1770,
+      "sha256": "f9b0a3d66e0aefcf1e278d679fa4f133afc810966effae30e2259d456b3d0252"
+    },
+    "environment/winter/habitat-fwooper-snow.png": {
+      "file": "decor-assets/hd/447f0b46f3d1e5ccc1167051.webp",
+      "density": 2,
+      "width": 56,
+      "height": 56,
+      "bytes": 1462,
+      "sha256": "447f0b46f3d1e5ccc1167051b98a65464d8c3c26092213c3e861934ab3b80805"
+    },
+    "environment/winter/habitat-hippogriff-snow.png": {
+      "file": "decor-assets/hd/c5a1576394aa49920e8eccda.webp",
+      "density": 2,
+      "width": 56,
+      "height": 56,
+      "bytes": 1560,
+      "sha256": "c5a1576394aa49920e8eccda0befb023b20e1f61157ecf359d036b0f794cb073"
+    },
+    "environment/winter/habitat-knarl-snow.png": {
+      "file": "decor-assets/hd/9160ecf2cbaa8f63c2e261a8.webp",
+      "density": 2,
+      "width": 56,
+      "height": 56,
+      "bytes": 1604,
+      "sha256": "9160ecf2cbaa8f63c2e261a885ecea0e22614a3b69d52bdb0ea11769adaaf6d5"
+    },
+    "environment/winter/habitat-kneazle-snow.png": {
+      "file": "decor-assets/hd/7a1143727cef57297078c339.webp",
+      "density": 2,
+      "width": 56,
+      "height": 56,
+      "bytes": 1214,
+      "sha256": "7a1143727cef57297078c339eccbdae015cc1a0a5692b149e355a87810b19364"
+    },
+    "environment/winter/habitat-porlock-snow.png": {
+      "file": "decor-assets/hd/dbf45522c86c5e26046e75fd.webp",
+      "density": 2,
+      "width": 56,
+      "height": 56,
+      "bytes": 1990,
+      "sha256": "dbf45522c86c5e26046e75fd5092c2b49ba119d2888b3a85e51ad735cd10304c"
+    },
+    "environment/winter/habitat-puffskein-snow.png": {
+      "file": "decor-assets/hd/747da330f44d387f27da4104.webp",
+      "density": 2,
+      "width": 56,
+      "height": 56,
+      "bytes": 1986,
+      "sha256": "747da330f44d387f27da41046b6b58b09628781791315a9fa76efaa72fbb1ce7"
+    },
+    "environment/winter/habitat-salamander-snow.png": {
+      "file": "decor-assets/hd/9b2572457dca9c05a9ec2957.webp",
+      "density": 2,
+      "width": 56,
+      "height": 56,
+      "bytes": 1514,
+      "sha256": "9b2572457dca9c05a9ec29570b90325fe2d36ca8a9607e506b111e285a0876a9"
+    },
     "environment/winter/hut-snow.png": {
       "file": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp",
       "density": 2,
@@ -9922,6 +10178,30 @@
       "height": 224,
       "bytes": 29752,
       "sha256": "f17882a6b8edfe356ef129d48e20b56b29b9ac5a4fa1d4b6fc244cf8804095d6"
+    },
+    "environment/winter/log.png": {
+      "file": "decor-assets/hd/675f8c3343b0c4b100d4c51e.webp",
+      "density": 2,
+      "width": 144,
+      "height": 88,
+      "bytes": 4938,
+      "sha256": "675f8c3343b0c4b100d4c51e65af7fb7f3a5b7b06d87239fc5e873f785d9baf4"
+    },
+    "environment/winter/oak.png": {
+      "file": "decor-assets/hd/7bdc7d61b690bdf7a1dfdec2.webp",
+      "density": 2,
+      "width": 190,
+      "height": 176,
+      "bytes": 9882,
+      "sha256": "7bdc7d61b690bdf7a1dfdec2578e2854bf6b33d69c71eabea955a71ebf1456fb"
+    },
+    "environment/winter/pine.png": {
+      "file": "decor-assets/hd/902c2c0f00715d35939c1827.webp",
+      "density": 2,
+      "width": 104,
+      "height": 196,
+      "bytes": 8696,
+      "sha256": "902c2c0f00715d35939c18275aa9474ddabdfdd397f85cd5288ddec98f761724"
     },
     "environment/winter/pond-1-snow.png": {
       "file": "decor-assets/hd/aa9788a247b7b8c45ec6024a.webp",
@@ -9954,6 +10234,14 @@
       "height": 88,
       "bytes": 1462,
       "sha256": "8a9df866b5d9a1f1ed85d1227c302358f2005edbc95c7aeab4061c7d96c340cb"
+    },
+    "environment/winter/pond-ice.png": {
+      "file": "decor-assets/hd/19808f0f8ae58749462eb763.webp",
+      "density": 2,
+      "width": 160,
+      "height": 100,
+      "bytes": 9386,
+      "sha256": "19808f0f8ae58749462eb7630ef65be330cacb8f4b450df34206a63943b7e825"
     },
     "environment/winter/pond-nook-snow.png": {
       "file": "decor-assets/hd/322da2b1af44008616186a1e.webp",
@@ -11642,9 +11930,49 @@
       "sha256": "d39a2688dbfa0b7071cd7bafdf4a78952330ec924f22f753de5df3b80cec8bee",
       "recoveredFrames": 20,
       "totalFrames": 20
+    },
+    "creature-motion-assets/native/kappa/submerged-left-atlas.png": {
+      "file": "decor-assets/hd/cb2ff5233b808194f1c7e1ee-atlas.webp",
+      "density": 2,
+      "width": 512,
+      "height": 192,
+      "bytes": 17974,
+      "sha256": "cb2ff5233b808194f1c7e1ee41be63b2de377a038dec4030776bded8c38974fc",
+      "recoveredFrames": 8,
+      "totalFrames": 8
+    },
+    "creature-motion-assets/native/kappa/submerged-right-atlas.png": {
+      "file": "decor-assets/hd/02014acd44ff0017b4c6567c-atlas.webp",
+      "density": 2,
+      "width": 512,
+      "height": 192,
+      "bytes": 18166,
+      "sha256": "02014acd44ff0017b4c6567cf3faf7630983ad7f73946c04be2691475960b5ab",
+      "recoveredFrames": 8,
+      "totalFrames": 8
+    },
+    "creature-motion-assets/native/grindylow/submerged-left-atlas.png": {
+      "file": "decor-assets/hd/60d3afd3a0cd0c991323f6eb-atlas.webp",
+      "density": 2,
+      "width": 512,
+      "height": 192,
+      "bytes": 15852,
+      "sha256": "60d3afd3a0cd0c991323f6eb7d2e4623142ca70ecd2521bc3f8a57dcd96e24e2",
+      "recoveredFrames": 8,
+      "totalFrames": 8
+    },
+    "creature-motion-assets/native/grindylow/submerged-right-atlas.png": {
+      "file": "decor-assets/hd/a77bd354edb7cccc7b371c32-atlas.webp",
+      "density": 2,
+      "width": 512,
+      "height": 192,
+      "bytes": 15678,
+      "sha256": "a77bd354edb7cccc7b371c3260c462ce1c2ed6afcadb0d307a93811a1aa31fcc",
+      "recoveredFrames": 8,
+      "totalFrames": 8
     }
   },
-  "runtimeBytes": 9708072,
+  "runtimeBytes": 9911956,
   "provenance": [
     {
       "native": "noel-50-assets/native/nx_snitch_wreath/frame-01.png",
@@ -45160,7 +45488,7 @@
     },
     {
       "native": "halloween-assets/native/hw_monster_candy_barrel.png",
-      "file": "decor-assets/hd/57a3a9980f012cb4c0c1f349.webp",
+      "file": "decor-assets/hd/7f4f102cefb907da7f59d48f.webp",
       "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
       "masterSha256": "9b836fff2e2f79b13eadf01df185ee086139518743eeb05f64201a27430f8112",
       "sourceRect": {
@@ -45170,17 +45498,17 @@
         "height": 825
       },
       "logicalBounds": {
-        "x": 13,
-        "y": 2,
-        "w": 70,
-        "h": 98
+        "x": 14,
+        "y": 5,
+        "w": 68,
+        "h": 95
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.99
+      "silhouetteIoU": 0.991
     },
     {
       "native": "halloween-assets/native/hw_monster_candy_barrel_f1.png",
-      "file": "decor-assets/hd/0baab0f934459819dd4d7651.webp",
+      "file": "decor-assets/hd/6715efe7d7b15ecca7e9fa2e.webp",
       "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
       "sourceRect": {
         "x": 113,
@@ -45188,14 +45516,14 @@
         "w": 590,
         "h": 825
       },
-      "nativeEffectPixels": 41,
+      "nativeEffectPixels": 40,
       "rigidShift": 0,
       "baseFile": "halloween-assets/native/hw_monster_candy_barrel.png",
-      "silhouetteIoU": 0.99
+      "silhouetteIoU": 0.991
     },
     {
       "native": "halloween-assets/native/hw_monster_candy_barrel_f2.png",
-      "file": "decor-assets/hd/8c97423d0c331a1893c918bf.webp",
+      "file": "decor-assets/hd/f3e2e8a83140b9a7a293e4fd.webp",
       "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
       "sourceRect": {
         "x": 113,
@@ -45203,10 +45531,10 @@
         "w": 590,
         "h": 825
       },
-      "nativeEffectPixels": 98,
+      "nativeEffectPixels": 88,
       "rigidShift": 0,
       "baseFile": "halloween-assets/native/hw_monster_candy_barrel.png",
-      "silhouetteIoU": 0.99
+      "silhouetteIoU": 0.991
     },
     {
       "native": "halloween-assets/native/hw_monster_candy_barrel_right.png",
@@ -47130,7 +47458,7 @@
     },
     {
       "native": "halloween-assets/native/hw_ghost_well.png",
-      "file": "decor-assets/hd/15b54e3ea480679248911241.webp",
+      "file": "decor-assets/hd/4d59ae556f3e0afa51e22d61.webp",
       "master": "halloween-assets/masters/hw_ghost_well.png",
       "masterSha256": "d5721292a272b96a8ddea870241d14b321a1f6e429eeb9192ac73af3b6e895f9",
       "sourceRect": {
@@ -47140,13 +47468,13 @@
         "height": 900
       },
       "logicalBounds": {
-        "x": 21,
-        "y": 2,
-        "w": 134,
-        "h": 186
+        "x": 22,
+        "y": 5,
+        "w": 132,
+        "h": 183
       },
       "legacyAlphaMask": false,
-      "silhouetteIoU": 0.983
+      "silhouetteIoU": 0.982
     },
     {
       "native": "halloween-assets/native/hw_ghost_well_right.png",
@@ -57184,6 +57512,661 @@
       "masterSha256": "ce7023e646af1b1453f851454c12de7988cce344b756af782db9e23499c06631",
       "method": "build-scene tile export at density 2",
       "silhouetteIoU": 1
+    },
+    {
+      "native": "decor-assets/native/hw_monster_candy_barrel.png",
+      "file": "decor-assets/hd/7f4f102cefb907da7f59d48f.webp",
+      "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
+      "masterSha256": "9b836fff2e2f79b13eadf01df185ee086139518743eeb05f64201a27430f8112",
+      "sourceRect": {
+        "left": 113,
+        "top": 98,
+        "width": 590,
+        "height": 825
+      },
+      "logicalBounds": {
+        "x": 14,
+        "y": 5,
+        "w": 68,
+        "h": 95
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.991
+    },
+    {
+      "native": "decor-assets/native/hw_monster_candy_barrel_f1.png",
+      "file": "decor-assets/hd/c66821b67cae57021eb835f6.webp",
+      "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
+      "sourceRect": {
+        "x": 113,
+        "y": 98,
+        "w": 590,
+        "h": 825
+      },
+      "nativeEffectPixels": 48,
+      "rigidShift": 0,
+      "baseFile": "decor-assets/native/hw_monster_candy_barrel.png",
+      "silhouetteIoU": 0.991
+    },
+    {
+      "native": "decor-assets/native/hw_monster_candy_barrel_f2.png",
+      "file": "decor-assets/hd/e33a5fb6fce821ff18dd1ef6.webp",
+      "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
+      "sourceRect": {
+        "x": 113,
+        "y": 98,
+        "w": 590,
+        "h": 825
+      },
+      "nativeEffectPixels": 7,
+      "rigidShift": 0,
+      "baseFile": "decor-assets/native/hw_monster_candy_barrel.png",
+      "silhouetteIoU": 0.991
+    },
+    {
+      "native": "decor-assets/native/hw_monster_candy_barrel_right.png",
+      "file": "decor-assets/hd/a1b1d040c7bc116d75700a85.webp",
+      "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
+      "masterSha256": "9b836fff2e2f79b13eadf01df185ee086139518743eeb05f64201a27430f8112",
+      "sourceRect": {
+        "left": 872,
+        "top": 98,
+        "width": 550,
+        "height": 825
+      },
+      "logicalBounds": {
+        "x": 16,
+        "y": 2,
+        "w": 65,
+        "h": 98
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.99
+    },
+    {
+      "native": "decor-assets/native/hw_monster_candy_barrel_right_f1.png",
+      "file": "decor-assets/hd/c8e08f0195e4358b654e0d55.webp",
+      "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
+      "sourceRect": {
+        "x": 872,
+        "y": 98,
+        "w": 550,
+        "h": 825
+      },
+      "nativeEffectPixels": 45,
+      "rigidShift": 0,
+      "baseFile": "decor-assets/native/hw_monster_candy_barrel_right.png",
+      "silhouetteIoU": 0.99
+    },
+    {
+      "native": "decor-assets/native/hw_monster_candy_barrel_right_f2.png",
+      "file": "decor-assets/hd/44146699c17c4be0f35c2f9c.webp",
+      "master": "halloween-assets/masters/hw_monster_candy_barrel.png",
+      "sourceRect": {
+        "x": 872,
+        "y": 98,
+        "w": 550,
+        "h": 825
+      },
+      "nativeEffectPixels": 10,
+      "rigidShift": 0,
+      "baseFile": "decor-assets/native/hw_monster_candy_barrel_right.png",
+      "silhouetteIoU": 0.99
+    },
+    {
+      "native": "decor-assets/native/hw_wooden_black_cat.png",
+      "file": "decor-assets/hd/ab5faaaf6b7e42f589e3c9e6.webp",
+      "master": "halloween-assets/masters/hw_wooden_black_cat.png",
+      "masterSha256": "42ce40a27d4f783efe746d2eae8835a119f4e22d8576fb17c2f55830aea69df7",
+      "sourceRect": {
+        "left": 116,
+        "top": 78,
+        "width": 597,
+        "height": 893
+      },
+      "logicalBounds": {
+        "x": 3,
+        "y": 2,
+        "w": 66,
+        "h": 98
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.978
+    },
+    {
+      "native": "decor-assets/native/hw_wooden_black_cat_right.png",
+      "file": "decor-assets/hd/b2b11d549f740240965d8a68.webp",
+      "master": "halloween-assets/masters/hw_wooden_black_cat.png",
+      "masterSha256": "42ce40a27d4f783efe746d2eae8835a119f4e22d8576fb17c2f55830aea69df7",
+      "sourceRect": {
+        "left": 817,
+        "top": 94,
+        "width": 555,
+        "height": 882
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 2,
+        "w": 62,
+        "h": 98
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.98
+    },
+    {
+      "native": "environment/winter/habitat-porlock-snow.png",
+      "file": "decor-assets/hd/dbf45522c86c5e26046e75fd.webp",
+      "master": "environment/masters/habitat-refresh-20261109/shelters.png",
+      "masterSha256": "cfed531f65a82660cb4b105d7ecdd4e27cf8cc9a7c79fae756530007712b1d3f",
+      "sourceRect": {
+        "x": 30,
+        "y": 509,
+        "w": 383,
+        "h": 329
+      },
+      "method": "build-habitat-refresh resize at density 2",
+      "silhouetteIoU": 0.974
+    },
+    {
+      "native": "environment/winter/habitat-salamander-snow.png",
+      "file": "decor-assets/hd/9b2572457dca9c05a9ec2957.webp",
+      "master": "environment/masters/habitat-refresh-20261109/shelters.png",
+      "masterSha256": "cfed531f65a82660cb4b105d7ecdd4e27cf8cc9a7c79fae756530007712b1d3f",
+      "sourceRect": {
+        "x": 501,
+        "y": 576,
+        "w": 324,
+        "h": 231
+      },
+      "method": "build-habitat-refresh resize at density 2",
+      "silhouetteIoU": 0.987
+    },
+    {
+      "native": "environment/winter/habitat-crup-snow.png",
+      "file": "decor-assets/hd/f9b0a3d66e0aefcf1e278d67.webp",
+      "master": "environment/masters/habitat-refresh-20261109/shelters.png",
+      "masterSha256": "cfed531f65a82660cb4b105d7ecdd4e27cf8cc9a7c79fae756530007712b1d3f",
+      "sourceRect": {
+        "x": 932,
+        "y": 510,
+        "w": 348,
+        "h": 315
+      },
+      "method": "build-habitat-refresh resize at density 2",
+      "silhouetteIoU": 0.97
+    },
+    {
+      "native": "environment/winter/habitat-knarl-snow.png",
+      "file": "decor-assets/hd/9160ecf2cbaa8f63c2e261a8.webp",
+      "master": "environment/masters/habitat-refresh-20261109/shelters.png",
+      "masterSha256": "cfed531f65a82660cb4b105d7ecdd4e27cf8cc9a7c79fae756530007712b1d3f",
+      "sourceRect": {
+        "x": 1363,
+        "y": 546,
+        "w": 383,
+        "h": 267
+      },
+      "method": "build-habitat-refresh resize at density 2",
+      "silhouetteIoU": 0.973
+    },
+    {
+      "native": "environment/winter/habitat-fwooper-snow.png",
+      "file": "decor-assets/hd/447f0b46f3d1e5ccc1167051.webp",
+      "master": "environment/masters/habitat-refresh-20261109/furnishings.png",
+      "masterSha256": "dc9b3ee7489a9ca2cdfbc4e970e340ee8d78c54d190ac39701765fe01ac091b7",
+      "sourceRect": {
+        "x": 46,
+        "y": 485,
+        "w": 352,
+        "h": 352
+      },
+      "method": "build-habitat-refresh resize at density 2",
+      "silhouetteIoU": 0.969
+    },
+    {
+      "native": "environment/winter/habitat-hippogriff-snow.png",
+      "file": "decor-assets/hd/c5a1576394aa49920e8eccda.webp",
+      "master": "environment/masters/habitat-refresh-20261109/furnishings.png",
+      "masterSha256": "dc9b3ee7489a9ca2cdfbc4e970e340ee8d78c54d190ac39701765fe01ac091b7",
+      "sourceRect": {
+        "x": 480,
+        "y": 529,
+        "w": 381,
+        "h": 292
+      },
+      "method": "build-habitat-refresh resize at density 2",
+      "silhouetteIoU": 0.941
+    },
+    {
+      "native": "environment/winter/habitat-kneazle-snow.png",
+      "file": "decor-assets/hd/7a1143727cef57297078c339.webp",
+      "master": "environment/masters/habitat-refresh-20261109/furnishings.png",
+      "masterSha256": "dc9b3ee7489a9ca2cdfbc4e970e340ee8d78c54d190ac39701765fe01ac091b7",
+      "sourceRect": {
+        "x": 947,
+        "y": 476,
+        "w": 323,
+        "h": 377
+      },
+      "method": "build-habitat-refresh resize at density 2",
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "environment/winter/habitat-puffskein-snow.png",
+      "file": "decor-assets/hd/747da330f44d387f27da4104.webp",
+      "master": "environment/masters/habitat-refresh-20261109/furnishings.png",
+      "masterSha256": "dc9b3ee7489a9ca2cdfbc4e970e340ee8d78c54d190ac39701765fe01ac091b7",
+      "sourceRect": {
+        "x": 1346,
+        "y": 544,
+        "w": 397,
+        "h": 272
+      },
+      "method": "build-habitat-refresh resize at density 2",
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "environment/winter/pond-ice.png",
+      "file": "decor-assets/hd/19808f0f8ae58749462eb763.webp",
+      "master": "environment/winter/masters/winter-sheet.png",
+      "masterSha256": "812008daf59b2500029d7676a4cf1fc550b738b64c7f2e56b8d2acc3c9c63a53",
+      "sourceInkBox": [
+        36,
+        94,
+        473,
+        382
+      ],
+      "nativeMismatchPixels": 0,
+      "method": "S3 centre-sampled export at density 2",
+      "silhouetteIoU": 0.986
+    },
+    {
+      "native": "environment/winter/oak.png",
+      "file": "decor-assets/hd/7bdc7d61b690bdf7a1dfdec2.webp",
+      "master": "environment/winter/masters/winter-sheet.png",
+      "masterSha256": "812008daf59b2500029d7676a4cf1fc550b738b64c7f2e56b8d2acc3c9c63a53",
+      "sourceInkBox": [
+        15,
+        73,
+        486,
+        461
+      ],
+      "nativeMismatchPixels": 58,
+      "method": "S3 centre-sampled export at density 2",
+      "silhouetteIoU": 0.947
+    },
+    {
+      "native": "environment/winter/pine.png",
+      "file": "decor-assets/hd/902c2c0f00715d35939c1827.webp",
+      "master": "environment/winter/masters/winter-sheet.png",
+      "masterSha256": "812008daf59b2500029d7676a4cf1fc550b738b64c7f2e56b8d2acc3c9c63a53",
+      "sourceInkBox": [
+        99,
+        14,
+        386,
+        503
+      ],
+      "nativeMismatchPixels": 0,
+      "method": "S3 centre-sampled export at density 2",
+      "silhouetteIoU": 0.986
+    },
+    {
+      "native": "environment/winter/grove.png",
+      "file": "decor-assets/hd/7a756eed44fdd5649935938f.webp",
+      "master": "environment/winter/masters/winter-sheet.png",
+      "masterSha256": "812008daf59b2500029d7676a4cf1fc550b738b64c7f2e56b8d2acc3c9c63a53",
+      "sourceInkBox": [
+        4,
+        43,
+        485,
+        410
+      ],
+      "nativeMismatchPixels": 0,
+      "method": "S3 centre-sampled export at density 2",
+      "silhouetteIoU": 0.925
+    },
+    {
+      "native": "environment/winter/log.png",
+      "file": "decor-assets/hd/675f8c3343b0c4b100d4c51e.webp",
+      "master": "environment/winter/masters/winter-sheet.png",
+      "masterSha256": "812008daf59b2500029d7676a4cf1fc550b738b64c7f2e56b8d2acc3c9c63a53",
+      "sourceInkBox": [
+        48,
+        83,
+        470,
+        353
+      ],
+      "nativeMismatchPixels": 0,
+      "method": "S3 centre-sampled export at density 2",
+      "silhouetteIoU": 0.982
+    },
+    {
+      "native": "environment/bubbles/hungry.png",
+      "file": "decor-assets/hd/f8355de2f6b96f0f99f8ef1b.webp",
+      "master": "masters-items/ui-audit/bubble_hungry.png",
+      "masterSha256": "7f6e2c84e708e3ef9e22065b1dae775312b06b8cd7f9f655487f0427aedcf90e",
+      "method": "build-previews nearest reduction at density 2",
+      "silhouetteIoU": 0.987
+    },
+    {
+      "native": "environment/bubbles/meal-ready.png",
+      "file": "decor-assets/hd/a0aa48cd37c49bc7ece5e7aa.webp",
+      "master": "masters-items/ui-audit/bubble_meal_ready.png",
+      "masterSha256": "d74a12d78d3c9960e443c14f996b867349e72362b0828a57276dff39fb6efbe1",
+      "method": "build-previews nearest reduction at density 2",
+      "silhouetteIoU": 0.985
+    },
+    {
+      "native": "environment/bubbles/heart-small.png",
+      "file": "decor-assets/hd/7b9a5a4c1dffcd0622fcc5ad.webp",
+      "master": "masters-items/ui-audit/bubble_heart_small.png",
+      "masterSha256": "a1b2ed3b33730c6f68b71f729bd93acf7531057e1061267b3e7f7dc30f9777b1",
+      "method": "build-previews nearest reduction at density 2",
+      "silhouetteIoU": 0.907
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/right-0.png",
+      "file": "decor-assets/hd/83aa273863d0e8c371aa0741.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 0,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.814
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/left-0.png",
+      "file": "decor-assets/hd/457093d50a24de0e655fc05d.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 0,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.814
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/right-1.png",
+      "file": "decor-assets/hd/253152ea090d165a70e5efd6.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 1,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.953
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/left-1.png",
+      "file": "decor-assets/hd/a6e3e2a39c2ea8dee3583559.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 1,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.953
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/right-2.png",
+      "file": "decor-assets/hd/174a6685ac382f69caff66e0.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 2,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.928
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/left-2.png",
+      "file": "decor-assets/hd/4309de6c57367f649b466dcc.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 2,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.928
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/right-3.png",
+      "file": "decor-assets/hd/37d2cfa55e9e061420c22230.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 3,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.905
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/left-3.png",
+      "file": "decor-assets/hd/85a5c98d61f29db43589da32.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 3,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.905
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/right-4.png",
+      "file": "decor-assets/hd/146af95b84898d0b19ed24f2.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 4,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.915
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/left-4.png",
+      "file": "decor-assets/hd/0bcdeefcb858bfd217be3b2a.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 4,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.915
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/right-5.png",
+      "file": "decor-assets/hd/0ffa2db17e091cb46d6233c1.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 5,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/left-5.png",
+      "file": "decor-assets/hd/541de3d425ec05d955c61a7f.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 5,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/right-6.png",
+      "file": "decor-assets/hd/593db20b46dea5c423c7e382.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 6,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.969
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/left-6.png",
+      "file": "decor-assets/hd/248f64a04e9b25bad9d2e8d2.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 6,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.969
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/right-7.png",
+      "file": "decor-assets/hd/aa1daea1f0e27af46e2e642a.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 7,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.927
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/kappa/left-7.png",
+      "file": "decor-assets/hd/fa4a54aaced5fe21f0d56068.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/kappa.png",
+      "masterSha256": "3ad82113089d870fde1816adbf7dcfaf58534393ccf6ec11a04453f7263b7dd9",
+      "pose": 7,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.927
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/right-0.png",
+      "file": "decor-assets/hd/c29ea31515cce4cc8029c847.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 0,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.923
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/left-0.png",
+      "file": "decor-assets/hd/d48cd4e68f538fda989e86fd.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 0,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.923
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/right-1.png",
+      "file": "decor-assets/hd/ea8369a1261bcc9da99b1a99.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 1,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.834
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/left-1.png",
+      "file": "decor-assets/hd/2f96a3b8f5541fd21c7e0924.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 1,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.834
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/right-2.png",
+      "file": "decor-assets/hd/7bcdf57d5ed71fc3ea595283.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 2,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.873
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/left-2.png",
+      "file": "decor-assets/hd/a5f302da53ab171dc2383218.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 2,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.873
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/right-3.png",
+      "file": "decor-assets/hd/e3a295c978288daaec57579f.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 3,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/left-3.png",
+      "file": "decor-assets/hd/5a67bb9faaeb36210d6422ec.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 3,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/right-4.png",
+      "file": "decor-assets/hd/223fef677e3b1f638aed9256.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 4,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.902
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/left-4.png",
+      "file": "decor-assets/hd/d66fba4d82939c2152e5dc73.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 4,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.902
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/right-5.png",
+      "file": "decor-assets/hd/88ccf844c9484ae9a78c814e.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 5,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.948
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/left-5.png",
+      "file": "decor-assets/hd/86f75432b52bdc7f574e65f3.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 5,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.948
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/right-6.png",
+      "file": "decor-assets/hd/f8c1c78cdfe84fc680a6d1d2.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 6,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.945
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/left-6.png",
+      "file": "decor-assets/hd/0790729e0390217222db4e14.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 6,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.945
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/right-7.png",
+      "file": "decor-assets/hd/bbf4926e166992847b5ba174.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 7,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "silhouetteIoU": 0.951
+    },
+    {
+      "native": "creature-motion-assets/submerged-native/grindylow/left-7.png",
+      "file": "decor-assets/hd/da1968a909edd527026a2cb6.webp",
+      "master": "creature-motion-assets/masters/submerged-20261108/grindylow.png",
+      "masterSha256": "c069df5aa3e9d6c3043f64a4530d2ca0ba40bf1771a3fc5551522cef262f6e42",
+      "pose": 7,
+      "method": "build-submerged-creatures rasterize at density 2",
+      "flop": true,
+      "silhouetteIoU": 0.951
     }
   ],
   "skipped": [

@@ -136,6 +136,44 @@ async function tile(id,d){const master=`environment/terrain-${id}.png`,raw=await
  return {master,pixels:quantize(b)};}
 for(const id of ['grass','soil']){const file=`environment/layers/tile-${id}.png`;if(!(await tile(id,1)).pixels.equals((await rgba(file)).data)){skipped.push({native:file,reason:'replaced by a later builder'});continue;}
  const {master,pixels:hd}=await tile(id,density);await save(file,hd,64*density,32*density,{master,masterSha256:sha(await fs.readFile(path.join(root,master))),method:'build-scene tile export at density 2'});}
+// The live candy barrel and black cat keep their global-palette export of the pack master (build-overhang-refit.mjs), not the pack's item-palette one.
+for(const id of ['hw_monster_candy_barrel','hw_wooden_black_cat']){const master=`halloween-assets/masters/${id}.png`,poses=authoredCells(await sharp(path.join(root,master)).ensureAlpha().raw().toBuffer({resolveWithObject:true}),[2]);
+ for(const [view,suffix]of ['','_right'].entries()){const baseFile=`decor-assets/native/${id}${suffix}.png`;await recover(master,{file:baseFile,bounds:inkBounds(await rgba(baseFile)),sourceRect:poses[view].sourceRect});
+  await effectFrames(baseFile,[0,1,2,3].map(i=>`decor-assets/native/${id}${suffix}_f${i}.png`),{master,sourceRect:poses[view].sourceRect});}}
+// Each builder below is re-run at density d; d=1 must reproduce the shipped PNG (counted mismatches are recorded), then d=2 is kept.
+const mismatch=async(file,raw)=>{const now=(await rgba(file)).data;let n=0;for(let i=0;i<raw.length;i+=4)if(raw.readUInt32LE(i)!==now.readUInt32LE(i))n++;return n;};
+// Habitat snow (build-habitat-refresh.mjs): uniform nearest resize of the authored cell, palette snap, centred and grounded at 50.
+{const hab=await read('environment/masters/habitat-refresh-20261109/provenance.json');
+ for(const g of hab.assets){const bytes=await fs.readFile(path.join(root,g.master));if(sha(bytes)!==g.masterSha256)throw Error('Master changed '+g.master);const cells=authoredCells(await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true}),[4,4]);
+  for(const o of g.outputs.filter(o=>o.snow)){const c=cells.find(c=>c.rect.x===o.sourceRect.x&&c.rect.y===o.sourceRect.y),render=async d=>{const k=Math.min(50/c.width,42/c.height)*d,w=Math.max(1,Math.round(c.width*k)),h=Math.max(1,Math.round(c.height*k)),S=56*d;
+    const ink=quantize(await sharp(c.data,{raw:{width:c.width,height:c.height,channels:4}}).resize(w,h,{kernel:'nearest'}).raw().toBuffer()),b=inkBox(ink,w,h),x=Math.floor((S-b.w)/2),y=50*d-b.h,out=Buffer.alloc(S*S*4);
+    for(let v=0;v<b.h;v++)ink.copy(out,((y+v)*S+x)*4,((b.y+v)*w+b.x)*4,((b.y+v)*w+b.x+b.w)*4);return out;};
+   const off=await mismatch(o.file,await render(1));if(off){skipped.push({native:o.file,reason:'builder no longer reproduces',pixels:off});continue;}
+   await save(o.file,await render(density),56*density,56*density,{master:g.master,masterSha256:g.masterSha256,sourceRect:o.sourceRect,method:'build-habitat-refresh resize at density 2'});}}}
+// Winter forest and frozen pond (environment/winter/provenance.json, Codex S3): the cell's ink box centre-sampled onto the original ink box,
+// snapped to sprite24 + snow white. Exact at 1× except 58 of the oak's 33,440 pixels.
+{const winter=await read('environment/winter/provenance.json'),bytes=await fs.readFile(path.join(root,'environment/winter',winter.master));if(sha(bytes)!==winter.masterSha256)throw Error('Master changed '+winter.master);
+ const M=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true}),pal=winter.colors.map(h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16))),snow=new Map(),snap=(r,g,b)=>{const k=(r<<16)|(g<<8)|b;if(!snow.has(k))snow.set(k,pal.reduce((a,p)=>{const d=(p[0]-r)**2+(p[1]-g)**2+(p[2]-b)**2;return d<a[1]?[p,d]:a;},[null,Infinity])[0]);return snow.get(k);};
+ for(const a of winter.assets){const file='environment/winter/'+a.file;if(sha(await fs.readFile(path.join(root,file)))!==a.sha256)continue; // hut-snow: replaced by the homestead master above
+  const [cx,cy]=a.sourceCell,[sx0,sy0,sx1,sy1]=a.sourceInkBox,[ox0,oy0,ox1,oy1]=a.originalInkBox;
+  const render=d=>{const W=a.width*d,dw=(ox1-ox0)*d,dh=(oy1-oy0)*d,out=Buffer.alloc(W*a.height*d*4);for(let y=0;y<dh;y++)for(let x=0;x<dw;x++){const i=((cy+sy0+Math.floor((y+.5)*(sy1-sy0)/dh))*M.info.width+cx+sx0+Math.floor((x+.5)*(sx1-sx0)/dw))*4;if(M.data[i+3]<192)continue;const o=((oy0*d+y)*W+ox0*d+x)*4;out.set(snap(M.data[i],M.data[i+1],M.data[i+2]),o);out[o+3]=255;}return out;};
+  const off=await mismatch(file,render(1));if(off>a.width*a.height*0.002){skipped.push({native:file,reason:'builder no longer reproduces',pixels:off});continue;}
+  await save(file,render(density),a.width*density,a.height*density,{master:'environment/winter/'+winter.master,masterSha256:winter.masterSha256,sourceInkBox:a.sourceInkBox,nativeMismatchPixels:off,method:'S3 centre-sampled export at density 2'});}}
+// Status bubbles (docs/codex-briefs/ui-audit/build-previews.mjs): the 8× master reduced by nearest, plain RGB snap to sprite24.
+{const pal=(await import('./palette.mjs')).SPRITE_PALETTE.map(h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16))),snap=(r,g,b)=>pal.reduce((a,p)=>{const d=(p[0]-r)**2+(p[1]-g)**2+(p[2]-b)**2;return d<a[1]?[p,d]:a;},[null,Infinity])[0];
+ for(const [id,file]of [['bubble_hungry','hungry'],['bubble_meal_ready','meal-ready'],['bubble_heart_small','heart-small']]){const master=`masters-items/ui-audit/${id}.png`,native=`environment/bubbles/${file}.png`,{width,height}=(await rgba(native)).info;
+  const render=async d=>{const b=await sharp(path.join(root,master)).resize(width*d,height*d,{kernel:'nearest'}).ensureAlpha().raw().toBuffer();for(let i=0;i<b.length;i+=4){if(b[i+3]<192)b.fill(0,i,i+4);else{b.set(snap(b[i],b[i+1],b[i+2]),i);b[i+3]=255;}}return b;};
+  const off=await mismatch(native,await render(1));if(off){skipped.push({native,reason:'builder no longer reproduces',pixels:off});continue;}
+  await save(native,await render(density),width*density,height*density,{master,masterSha256:sha(await fs.readFile(path.join(root,master))),method:'build-previews nearest reduction at density 2'});}}
+// Submerged pond creatures (build-submerged-creatures.mjs): its rasterize at twice the canvas and scale; left = mirror of right.
+{const sub=await read('creature-motion-assets/masters/submerged-20261108/provenance.json'),{rasterize}=await import('./build-creature-motion.mjs'),{SUBMERGED_CREATURE_ART}=await import('./pond-creature-art.mjs');walk(SUBMERGED_CREATURE_ART);
+ for(const spec of sub.species){const bytes=await fs.readFile(path.join(root,spec.master));if(sha(bytes)!==spec.masterSha256)throw Error('Master changed '+spec.master);
+  const poses=authoredCells(await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true}),[4,4]),median=a=>a.sort((a,b)=>a-b)[Math.floor(a.length/2)],adult=poses.slice(4);
+  const scale=Math.min(76/median(adult.map(p=>p.mainBounds.w)),52/median(adult.map(p=>p.mainBounds.h))),growthScale=Math.min(76/poses[3].mainBounds.w,52/poses[3].mainBounds.h);
+  for(const [index,pose]of poses.entries()){const render=d=>rasterize(pose,{width:128*d,height:96*d,pivotX:64*d,pivotY:64*d},{w:80*d,h:56*d},(index<4?growthScale:scale)*d,new Map()).output;
+   const right=`creature-motion-assets/submerged-native/${spec.id}/right-${index}.png`,off=await mismatch(right,render(1));if(off){skipped.push({native:right,reason:'builder no longer reproduces',pixels:off});continue;}
+   const hd=render(density),source={master:spec.master,masterSha256:spec.masterSha256,pose:index,method:'build-submerged-creatures rasterize at density 2'};
+   await save(right,hd,128*density,96*density,source);await save(`creature-motion-assets/submerged-native/${spec.id}/left-${index}.png`,await sharp(hd,{raw:{width:128*density,height:96*density,channels:4}}).flop().raw().toBuffer(),128*density,96*density,{...source,flop:true});}}}
 walk(await read('decor-assets-manifest.json'));
 // Atlas metadata shares the original logical rectangles; each recovered cell is copied at doubled density.
 const registry={};

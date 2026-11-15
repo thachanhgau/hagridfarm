@@ -9,6 +9,8 @@ import {depthSort, decorFootprintRect} from './decor-runtime.mjs';
 import {decorationPlacements} from './default-decor.mjs';
 import {ELVES, NORBERT, clearStops, elfPose} from './garden-elves.mjs';
 import {FRIENDS} from './garden-friends.mjs';
+import {COMPLETE_SCENERY} from './complete-object-art.mjs';
+import {sceneryGroundRect} from './garden-object-metrics.mjs';
 
 const iso = (c, r) => [(c - r) * 32, (c + r) * 16];
 const westOrNorth = (A, B) => A.c1 <= B.c0 || A.r1 <= B.r0;
@@ -38,22 +40,24 @@ test('§3 objects without ground keep foot order', () => {
   assert.deepEqual(depthSort(objects).map((o) => o.id), ['a', 'c', 'b']);
 });
 
-// Measured 15/11/2026; these redraw in P4 (docs/superpowers/plans/2026-11-15-hagrid-hd-full-garden.md). The list may
-// only shrink: a new asset that overhangs does not enter the catalog.
-const OVERHANG_REDRAW = new Set(['herbology_greenhouse', 'hw_monster_candy_barrel', 'hw_ghost_well']);
+// Measured 15/11/2026: three overhung; P4 refit the two Halloween pieces (build-overhang-refit.mjs). The greenhouse
+// record here is not what the scene draws: its authored COMPLETE_SCENERY frames replace it (scene-renderer decorAssets)
+// on its 3×2 scenery ground, so the scene's own art and ground are measured. A new asset that overhangs does not enter the catalog.
+// Characters (Hagrid) stand on a 0×0 foot point and are covered by character-cover.test.mjs instead.
+const drawn = new Map(COMPLETE_SCENERY.map((asset) => [asset.id, asset]));
 
 test('§2 every decoration sprite stays inside its footprint prism (≤ 2 px), both views', () => {
   const {items} = JSON.parse(fs.readFileSync(new URL('./decor-assets-manifest.json', import.meta.url)));
   const over = new Set();
-  for (const item of items) for (const facing of ['default', 'right']) {
-    const b = facing === 'right' ? item.rightBounds : item.bounds;
-    if (!b || !item.footprintTiles) continue;
-    const R = decorFootprintRect(0, 0, item.footprintTiles, facing);
+  for (const record of items) for (const facing of ['default', 'right']) {
+    const art = record.kind === 'scenery' ? drawn.get(record.id) : null, item = art ?? record, b = facing === 'right' ? item.rightBounds : item.bounds;
+    if (!b || !record.footprintTiles) continue;
+    const R = art ? sceneryGroundRect(record.id, 0, 0) : decorFootprintRect(0, 0, record.footprintTiles, facing);
     const left = (R.c0 - R.r1) * 32 - (b.x - item.pivotX), right = b.x + b.w - item.pivotX - (R.c1 - R.r0) * 32;
     const below = b.y + b.h - item.pivotY - (R.c1 + R.r1) * 16;
-    if (Math.max(left, right, below) > 2) over.add(String(item.id).split('/').pop());
+    if (Math.max(left, right, below) > 2) over.add(`${record.id} ${facing} ${left}/${right}/${below}`);
   }
-  assert.deepEqual([...over].filter((id) => !OVERHANG_REDRAW.has(id)), []);
+  assert.deepEqual([...over], []);
 });
 
 const walkers = [

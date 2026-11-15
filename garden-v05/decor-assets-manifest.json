@@ -2514,10 +2514,10 @@
       "pivotX": 48,
       "pivotY": 100,
       "bounds": {
-        "x": 13,
-        "y": 2,
-        "w": 70,
-        "h": 98
+        "x": 14,
+        "y": 5,
+        "w": 68,
+        "h": 95
       },
       "footprintTiles": [
         1,
@@ -2525,7 +2525,7 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "36f931467e973a88b605cef38daaabc59cddc7aeb52bf00b5c8dc1bf76f1b27f"
+      "nativeSha256": "922a41829da856ce2f9f65dc76c8d1be67c21c3953a99e0be30e8017e14be626"
     },
     {
       "id": "hw_wooden_black_cat",
@@ -5264,10 +5264,10 @@
       "pivotX": 88,
       "pivotY": 188,
       "bounds": {
-        "x": 21,
-        "y": 2,
-        "w": 134,
-        "h": 186
+        "x": 22,
+        "y": 5,
+        "w": 132,
+        "h": 183
       },
       "rightBounds": {
         "x": 24,
@@ -5281,7 +5281,7 @@
       ],
       "motion": "sway",
       "framesIdentical": true,
-      "nativeSha256": "b56698fa4747221b6f2b2945c8c691d3c5c17ee785fa6827e5d5993fcaef5c6e"
+      "nativeSha256": "b60da5bebf0d0f61a53284aeec1a37e40e2c5bdaa56e947fdd1de79aff9900f0"
     },
     {
       "id": "hw_violet_mist_pond",

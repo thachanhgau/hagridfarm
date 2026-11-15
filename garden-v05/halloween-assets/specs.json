@@ -31,7 +31,8 @@
         1,
         1
       ],
-      "motion": "glow"
+      "motion": "glow",
+      "fitWidth": 68
     },
     {
       "id": "hw_wooden_black_cat",
@@ -445,7 +446,8 @@
         2,
         2
       ],
-      "motion": "sway"
+      "motion": "sway",
+      "fitWidth": 132
     },
     {
       "id": "hw_violet_mist_pond",
