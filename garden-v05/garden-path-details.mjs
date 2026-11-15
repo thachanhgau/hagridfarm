@@ -43,14 +43,16 @@ function fillAt(ctx, x, y, width, height, color, d = 1) {
 }
 
 // A shallow, stair-stepped stamp keeps the route one cell wide while
-// reading as hand-laid pixel art rather than a smooth vector stroke; each stair is 2 device pixels tall.
-function pathStamp(ctx, x, y, radius, color, d = 1) {
-  const px = Math.round(x * d) / d;
-  const py = Math.round(y * d) / d;
+// reading as hand-laid pixel art rather than a smooth vector stroke. A fine stamp steps every device pixel (the HD
+// outline, a clean 2:1 edge); the bed keeps the 1× 2 px rows (its plank stripes) and, above density 1, each row
+// takes the narrowest outline row it spans so the bed never pokes past the fine outline.
+function pathStamp(ctx, x, y, radius, color, d = 1, fine = false) {
+  const px = Math.round(x);
+  const py = Math.round(y);
   const halfRows = Math.floor(radius / 2);
-  const step = 2 / d;
+  const step = fine ? 1 / d : 2, inner = d > 1 ? 2 - 1 / d : 0;
   for (let k = 0, dy = -halfRows; dy <= halfRows + 2 - step; k += 1, dy = -halfRows + k * step) {
-    const half = Math.max(2, Math.round((radius - Math.abs(dy) * 2) * d) / d);
+    const half = Math.max(2, Math.round((radius - Math.max(Math.abs(dy), fine ? 0 : Math.abs(dy + inner)) * 2) * d) / d);
     fillAt(ctx, px - half, py + dy, half * 2, step, color, d);
   }
 }
@@ -85,6 +87,7 @@ export function pathSegments(map) {
 }
 
 function paintSample(ctx, x, y, normal, sampleIndex, detail, d) {
+  if (detail === 'outline') return pathStamp(ctx, x, y, MAX_RADIUS, COLORS.edge, d, true);
   if (!detail) {
     pathStamp(ctx, x, y, MAX_RADIUS, COLORS.edge, d);
     pathStamp(ctx, x, y, 28, COLORS.earth, d);
@@ -139,7 +142,8 @@ export function drawGardenPathDetails(ctx, map) {
   const segments = pathSegments(map);
   // Finish the continuous bed before placing sparse pavers; later stamps must not erase details.
   const d = densityOf(ctx);
-  for (const detail of [false, true]) segments.forEach(([start, end], index) => paintSegment(ctx, map, start, end, index, 0, detail, d));
+  // At density > 1 the outline is laid first at device resolution; the 1×-row bed and pavers then fill inside it.
+  for (const detail of d > 1 ? ['outline', false, true] : [false, true]) segments.forEach(([start, end], index) => paintSegment(ctx, map, start, end, index, 0, detail, d));
   return {segments: segments.length, radius: MAX_RADIUS};
 }
 
