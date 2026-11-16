@@ -1,0 +1,137 @@
+{
+  "generator": "built-in image_gen",
+  "reference": "garden-v05/environment/creature-sleep/masters/reference.png",
+  "referenceSha256": "2be5456214fd4ba5519bb4447c8aabf0d4b3fdf700444dea33f4196cac93ec9c",
+  "rejected": {
+    "kneazle": "exec-dcc2a89e-0943-4264-a3f1-c3961e8ec4d1.png; wrong dragon anatomy, never exported"
+  },
+  "normalizedPrompt": "One high resolution sleeping animal, identifying anatomy/colors from labelled reference only. Clearly lying curled with folded limbs and closed eyes. Camera azimuth45 elevation30, 2:1 dimetric, axes(32,16),(-32,16), vertical up. Fine controlled pixel-art clusters, original warm muted palette, upper-left lighting. Full body, generous genuinely transparent margin. No floor, scene, labels, Zzz or duplicate animals. One species per built-in request.",
+  "outputs": [
+    {
+      "id": "puffskein",
+      "master": "puffskein.png",
+      "sha256": "913369166f84bc2532cfdda0a22d432238e4602dec75ca840e7bd6427d4afd12",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-5d46c42c-24a0-4768-807f-53bb233152e2.png",
+      "correction": null
+    },
+    {
+      "id": "bowtruckle",
+      "master": "bowtruckle.png",
+      "sha256": "7de0f258e5f7e271236104941dc39d72de41a2e0d41434c5a6eca2c9ce739db1",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-8f915b99-9ff2-44a0-b9d1-c69303dd5a24.png",
+      "correction": null
+    },
+    {
+      "id": "niffler",
+      "master": "niffler.png",
+      "sha256": "5eee3f792f3fdca5b2d76728aed90ad87dbdf01cfaf1a422b6a3b3c83ca0bf32",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-ff8cd164-1e0a-4f88-932f-620e25248dad.png",
+      "correction": null
+    },
+    {
+      "id": "hippogriff",
+      "master": "hippogriff.png",
+      "sha256": "c49d5a051327d8799f5285f817deb3256ac0a7a484d0356bb598efb19ff4a6e8",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-4282aa0c-dea0-4b0e-b4b5-de6431803a13.png",
+      "correction": null
+    },
+    {
+      "id": "dragon",
+      "master": "dragon.png",
+      "sha256": "24d2039919c8d8df1a0dd6664ebb39e9caf5ac0498dd338f2319b82776ec6d99",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-54f05713-9312-4e2d-8ba4-071ce08df5d4.png",
+      "correction": null
+    },
+    {
+      "id": "three-headed-dog",
+      "master": "three-headed-dog.png",
+      "sha256": "163c50174ac352eee514133ffb7cda71490adfd0e81309cf85de2874fd4e742f",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-72fe00f2-a244-482f-a6ee-1a1a11fc8511.png",
+      "correction": null
+    },
+    {
+      "id": "mooncalf",
+      "master": "mooncalf.png",
+      "sha256": "e3781b9abd372d884586f2bf8ade84da3e4f73b08a84d9f3db513c8bd1653a5f",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-a707918e-460c-4b36-981b-6e89a14395ac.png",
+      "correction": null
+    },
+    {
+      "id": "kneazle",
+      "master": "kneazle.png",
+      "sha256": "f08cd5dfe784e2ac13812a8adf0f5c41bf04a55c314253c611d9a888ed1858fc",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-01ae8dd7-04ae-4d40-a3d3-b12ab1c47bfb.png",
+      "correction": "Orange brown fluffy magical cat, large tufted ears, dark tufted tail; lying curled, closed eyes. Corrected dragon misgeneration was rejected."
+    },
+    {
+      "id": "diricawl",
+      "master": "diricawl.png",
+      "sha256": "b176c8ccca4aa07b244848eefc63f8da40a345b0f945546682a8871db28e501e",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-3dfb9d50-25bd-4a75-bd8d-c1e01f2a071b.png",
+      "correction": null
+    },
+    {
+      "id": "fwooper",
+      "master": "fwooper.png",
+      "sha256": "13343f321925993e3c83ec5cedb9879421e7655c8247ab7d3829eae193a36349",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-20e06fe6-8f85-44a2-9b0e-c777cade98dc.png",
+      "correction": null
+    },
+    {
+      "id": "thestral",
+      "master": "thestral.png",
+      "sha256": "2ef579f30632cfeb61c347fde034949b89b80a2c23414e46a7cd1b7510d38ad1",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-69650f81-4086-47c9-9651-9d010f8bfd13.png",
+      "correction": null
+    },
+    {
+      "id": "unicorn",
+      "master": "unicorn.png",
+      "sha256": "ceb77adf8021b47d528ed171c6d3ad5f38b3bfd563bf02f7548654915ba4c12f",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-18529d1b-055f-46c2-a49e-bfb926216ee1.png",
+      "correction": null
+    },
+    {
+      "id": "grindylow",
+      "master": "grindylow.png",
+      "sha256": "076a2590e62e770a600d528603e871d21a44937af3e997b4fcd1c422b3fb1e2a",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-c377e87f-998f-42e0-94b9-a1d6d0af2c50.png",
+      "correction": null
+    },
+    {
+      "id": "crup",
+      "master": "crup.png",
+      "sha256": "9a773b1e554c9035dc8724c5c68344e44b3c637fa80ff4314cc01a92404be454",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-2be17fd4-40ac-46c7-a70b-abaa6f40d52d.png",
+      "correction": null
+    },
+    {
+      "id": "knarl",
+      "master": "knarl.png",
+      "sha256": "c96448df70280cfc1b1a9922b886695280e7b1b49f93031ea7e9902ad9d5a33f",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-e43ea38e-4011-46fc-ab71-83c9c5898d73.png",
+      "correction": null
+    },
+    {
+      "id": "salamander",
+      "master": "salamander.png",
+      "sha256": "52b0421f3bd439f648769babdd469249801a956d93aef6fcc4ed98e191e924e0",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-de3eadf0-5b47-44b6-8c92-89205e1482bd.png",
+      "correction": null
+    },
+    {
+      "id": "kappa",
+      "master": "kappa.png",
+      "sha256": "bb0bfa8795db7e2215da6daabca9734b79d009ea47b2326a36b90bfe9fb9a7ea",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-14f677b3-29e9-468c-9330-058fa16ed536.png",
+      "correction": null
+    },
+    {
+      "id": "porlock",
+      "master": "porlock.png",
+      "sha256": "2bd6782ec8d07b44f8bc35e524b3481e67b1c92bee2554048be00f2c94d0bc25",
+      "source": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-a6ce79b9-89c3-4fc1-8340-dd931cf29112.png",
+      "correction": null
+    }
+  ]
+}

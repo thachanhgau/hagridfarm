@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "d8c8f9117f37",
+  "revision": "145f62d98fff",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -15302,6 +15302,726 @@
       "sha256": "ec5e4b9bc7f5f19bbaf7d24f3f4e38b331026e6dc4a3e15b77d26de4359f3c28"
     },
     {
+      "source": "environment/creature-sleep/bowtruckle-0.png",
+      "file": "runtime-webp/environment/creature-sleep/bowtruckle-0.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 378,
+      "bytes": 216,
+      "sourceSha256": "1163b46e4da604e28eed3e9612f26922835d0bb8bb8c666a826ca16b0b5d6322",
+      "sha256": "f9974cd78f648a0d3f4375a81820128808eacf58408ccb2f4b5ee6979d2971b7"
+    },
+    {
+      "source": "environment/creature-sleep/bowtruckle-1.png",
+      "file": "runtime-webp/environment/creature-sleep/bowtruckle-1.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 432,
+      "bytes": 254,
+      "sourceSha256": "ddaa620c110cd67b30e31d26d1424de03d9e2b780e52dac65cf0b064a08b4044",
+      "sha256": "79c996d859778eebc4518045d422f60698d0b26e5aa43b1c7c3d2a24294d0ede"
+    },
+    {
+      "source": "environment/creature-sleep/bowtruckle-2.png",
+      "file": "runtime-webp/environment/creature-sleep/bowtruckle-2.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 487,
+      "bytes": 290,
+      "sourceSha256": "62639053f94d50e3ce59c7d17f31aa86026125a71da470a5789a1435ff471500",
+      "sha256": "6604f85e97de7643cbfcc175d34015066a256ed1e0b6dbbffd703e0c1c8bd0f9"
+    },
+    {
+      "source": "environment/creature-sleep/bowtruckle-3.png",
+      "file": "runtime-webp/environment/creature-sleep/bowtruckle-3.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 547,
+      "bytes": 318,
+      "sourceSha256": "a4606bce073e2c47efe399f4dadba924f1aaa2fdcb6e4e47a07995829b418d50",
+      "sha256": "c1485b66dbe5d5749bbcc1595de5a9d01d31032c3cfe13830cdb82a2f611f8b6"
+    },
+    {
+      "source": "environment/creature-sleep/crup-0.png",
+      "file": "runtime-webp/environment/creature-sleep/crup-0.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 686,
+      "bytes": 370,
+      "sourceSha256": "329d294f91e93f270917d22b6c45b37165e6890dcb1857590e834a040004b862",
+      "sha256": "516408f8beea19cfd1645b87b587fbe9e84cd52142b7c39afd27d303af7af49f"
+    },
+    {
+      "source": "environment/creature-sleep/crup-1.png",
+      "file": "runtime-webp/environment/creature-sleep/crup-1.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 872,
+      "bytes": 494,
+      "sourceSha256": "63b133cf0550e5a387857881b5a760885c9f2ff031a7beaea3ca56ac3bbe8446",
+      "sha256": "ed3194a64ab6ef3e507509ee0b8edd7af47708fcc00b373d153fe559a11365bb"
+    },
+    {
+      "source": "environment/creature-sleep/crup-2.png",
+      "file": "runtime-webp/environment/creature-sleep/crup-2.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1077,
+      "bytes": 626,
+      "sourceSha256": "289f81f989e000daa54443e72b7cc5e7697920d4dc8efd4e86dafc3eeeed2241",
+      "sha256": "a46e6b5a52d75c623960a54fbb93b0be525fb3f8ecdff9f56a2672d42bdd87e4"
+    },
+    {
+      "source": "environment/creature-sleep/crup-3.png",
+      "file": "runtime-webp/environment/creature-sleep/crup-3.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1279,
+      "bytes": 770,
+      "sourceSha256": "3ad4393808eb7b778c69bf914180e17bbc9da8716b4b05f8bb1f0bc2dc8704d3",
+      "sha256": "e97191f2e0adee981a7f9fbba4791965a2241fac6b188214026ebbb51b2fb338"
+    },
+    {
+      "source": "environment/creature-sleep/diricawl-0.png",
+      "file": "runtime-webp/environment/creature-sleep/diricawl-0.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 728,
+      "bytes": 412,
+      "sourceSha256": "4a611f573e31d1b9f424a3e1ae3ef61984f7257a29bbb2201df244265e84b4d7",
+      "sha256": "72662f12022dde54b4e4fa77c388c862b1b558322e03d55b149074411c674b53"
+    },
+    {
+      "source": "environment/creature-sleep/diricawl-1.png",
+      "file": "runtime-webp/environment/creature-sleep/diricawl-1.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 921,
+      "bytes": 522,
+      "sourceSha256": "a922b9075b5a69602f1b91c0fe4d5a608d6f08a2026d8d1270d5bc5db45980e2",
+      "sha256": "90d11f833377cc5855de0f35c4741b8af4370d325c1c84ea4854c44c3f99d44b"
+    },
+    {
+      "source": "environment/creature-sleep/diricawl-2.png",
+      "file": "runtime-webp/environment/creature-sleep/diricawl-2.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1239,
+      "bytes": 734,
+      "sourceSha256": "f120d33fa88ab2de8af98548f868467f70268042c21d81179b6df9a153b4cd8a",
+      "sha256": "bb97a65ebb54870807eceeeb78cd245ad35df18cc78bb2d835f32adc2aa26c5b"
+    },
+    {
+      "source": "environment/creature-sleep/diricawl-3.png",
+      "file": "runtime-webp/environment/creature-sleep/diricawl-3.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1312,
+      "bytes": 786,
+      "sourceSha256": "5e8027a07ba4a34cb736b4189d41d56d1037047ce49cb531f6243825a386bf43",
+      "sha256": "5ed6874ff3e66652360918cdf362b2d44a9e8731312050fbcfec379a23939634"
+    },
+    {
+      "source": "environment/creature-sleep/dragon-0.png",
+      "file": "runtime-webp/environment/creature-sleep/dragon-0.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 762,
+      "bytes": 440,
+      "sourceSha256": "1adea4d2feba60ec04ed0a304c745b34c170e88dcc6da261d0ad518b4b453095",
+      "sha256": "840743a9780f1732aef1bc9ec8936ec279b5e9d67338e635e4418cba1d343742"
+    },
+    {
+      "source": "environment/creature-sleep/dragon-1.png",
+      "file": "runtime-webp/environment/creature-sleep/dragon-1.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 946,
+      "bytes": 550,
+      "sourceSha256": "f48998b83938e6b0737aa09b331c3e5db4102511eebc9548ccf81473195cf15c",
+      "sha256": "5da01db0994b0ecbb3078ff2c3c8258d8b8ea5ad905631d5d5f9c5fb6fc3d79c"
+    },
+    {
+      "source": "environment/creature-sleep/dragon-2.png",
+      "file": "runtime-webp/environment/creature-sleep/dragon-2.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 3024,
+      "bytes": 1864,
+      "sourceSha256": "124f28a094395d17a2f01f1fdea9e70067fc9d5832862f5f0c8110a28ed03fa5",
+      "sha256": "351c1c318bcfdcb6e075fe5107a1201973b0ba0ef478871f3180feffdf567d54"
+    },
+    {
+      "source": "environment/creature-sleep/dragon-3.png",
+      "file": "runtime-webp/environment/creature-sleep/dragon-3.webp",
+      "width": 256,
+      "height": 256,
+      "sourceBytes": 4884,
+      "bytes": 2816,
+      "sourceSha256": "497237ec0f3a11ea87f1e477dfbb6f4fd12a850ffb3c291fef6612f6e2766364",
+      "sha256": "f40d2a3822e198fad944dff2f3788f6872b43cf64a6665c13f2c0d0550fb4a4b"
+    },
+    {
+      "source": "environment/creature-sleep/fwooper-0.png",
+      "file": "runtime-webp/environment/creature-sleep/fwooper-0.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 572,
+      "bytes": 278,
+      "sourceSha256": "ef07de75c4575eb7062c8c2102c897a695ea4ad778ccbbe52d87addc154ee0d3",
+      "sha256": "5c68e687147cd8f47814a25db8c252289c94adff9d0c8923f5240352602b6de1"
+    },
+    {
+      "source": "environment/creature-sleep/fwooper-1.png",
+      "file": "runtime-webp/environment/creature-sleep/fwooper-1.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 805,
+      "bytes": 418,
+      "sourceSha256": "d3aebcb656274577bbe37d41dea087d36a781d93febf3c1909e8022efcce26c6",
+      "sha256": "fcf31d91d3893a7f5f2826da8a0e0b854d8ccd8ddcb06d1b4b9c2e1e9f9293aa"
+    },
+    {
+      "source": "environment/creature-sleep/fwooper-2.png",
+      "file": "runtime-webp/environment/creature-sleep/fwooper-2.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 949,
+      "bytes": 506,
+      "sourceSha256": "ea44946a34770bbecde0815d0eb65cd722794e405f98b58d4c48037622f1d6e3",
+      "sha256": "2984e08bac0b34d9bdc49ba2b43646c9322c2244d02ef4f36f12c1eccfb377b6"
+    },
+    {
+      "source": "environment/creature-sleep/fwooper-3.png",
+      "file": "runtime-webp/environment/creature-sleep/fwooper-3.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1268,
+      "bytes": 714,
+      "sourceSha256": "c633d7e8518ac0c8febbdd19f831eb7e565943a50ec4add3dc14a61fb6706757",
+      "sha256": "5908d8bbf6d88e1b50fe68d12b601b289993d4bd26e51cacdaf5d4f8282c8335"
+    },
+    {
+      "source": "environment/creature-sleep/grindylow-0.png",
+      "file": "runtime-webp/environment/creature-sleep/grindylow-0.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 677,
+      "bytes": 370,
+      "sourceSha256": "5830d7e5ea01f336783391f1a41cde55354da38a772da2f4d163935596e8ad39",
+      "sha256": "70657a99fd8e56a65c8d80345d8e206ed11e318376b3386dcb15bddb9a18ffa7"
+    },
+    {
+      "source": "environment/creature-sleep/grindylow-1.png",
+      "file": "runtime-webp/environment/creature-sleep/grindylow-1.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 964,
+      "bytes": 504,
+      "sourceSha256": "cf7b0e8b8bd5696b69c094fb20cc69563ca34e276df69b465fd52567879db904",
+      "sha256": "77081b09edc8ac47ac6727d25c63d8cd3c835d40148eb62f1c82a4c4bb8101a2"
+    },
+    {
+      "source": "environment/creature-sleep/grindylow-2.png",
+      "file": "runtime-webp/environment/creature-sleep/grindylow-2.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1225,
+      "bytes": 678,
+      "sourceSha256": "19d0267310828d901ea48fa2c297b64acf4a757a79ca1b90cb0680c6b6617b9f",
+      "sha256": "5e7152e0dc2a0b935d01f8fb3b8a6c79f61500eebdf8b9ca2eb69d098158dd47"
+    },
+    {
+      "source": "environment/creature-sleep/grindylow-3.png",
+      "file": "runtime-webp/environment/creature-sleep/grindylow-3.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1657,
+      "bytes": 946,
+      "sourceSha256": "4b3d63b81b56688f957e96eb0f7eaa95b23a7ac6d28349a3d19393a011902a52",
+      "sha256": "6dafa96f6e11e332708e8888e116d8911b9ac51d226e83bf9174cfaf63d3ed3d"
+    },
+    {
+      "source": "environment/creature-sleep/hippogriff-0.png",
+      "file": "runtime-webp/environment/creature-sleep/hippogriff-0.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 765,
+      "bytes": 460,
+      "sourceSha256": "2be7245c2d35a257d02ef667f0c0aaea8be3eba04267e895ebee468fac9c975e",
+      "sha256": "380bb85dbd3e80892b14c90bb06a52497743db5ebd5a536330a26876ff4617e5"
+    },
+    {
+      "source": "environment/creature-sleep/hippogriff-1.png",
+      "file": "runtime-webp/environment/creature-sleep/hippogriff-1.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 2280,
+      "bytes": 1412,
+      "sourceSha256": "7b5c83d79a5430832aa38ea77d05e91f1ca9fc02c2169d389ba054faede5c0bb",
+      "sha256": "a6426ccf1b8e6a4114900bde3ca33085fb176a7c5ae4e5203b014dc2f6845ca3"
+    },
+    {
+      "source": "environment/creature-sleep/hippogriff-2.png",
+      "file": "runtime-webp/environment/creature-sleep/hippogriff-2.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 2743,
+      "bytes": 1756,
+      "sourceSha256": "36a3425747729d1560fa5b9dd703b1898cddf5d9b6533fd605bd3c29a991a5ec",
+      "sha256": "3a3d5d24664ea756a242148c4e7c9acbaaf29ff2ac0e127062fb9e388b8ff9a0"
+    },
+    {
+      "source": "environment/creature-sleep/hippogriff-3.png",
+      "file": "runtime-webp/environment/creature-sleep/hippogriff-3.webp",
+      "width": 192,
+      "height": 192,
+      "sourceBytes": 3303,
+      "bytes": 2004,
+      "sourceSha256": "a6504f1b976deb9fef8144f206c36e756e31a902a5226986d56a2282a1c6ef01",
+      "sha256": "265ffdbb08620031f0d7e87d6cbb5fe5e3b81217e2303f52af991c923e2d3bb3"
+    },
+    {
+      "source": "environment/creature-sleep/kappa-0.png",
+      "file": "runtime-webp/environment/creature-sleep/kappa-0.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 632,
+      "bytes": 346,
+      "sourceSha256": "e030b77113a5042919f1ba7b6815ccd43dcb3fd09c5fb9c0daa0734c2863781e",
+      "sha256": "8ae5a784a626157eaad14453f3999b76a852482507cc2e9475c8a160b2f625aa"
+    },
+    {
+      "source": "environment/creature-sleep/kappa-1.png",
+      "file": "runtime-webp/environment/creature-sleep/kappa-1.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 872,
+      "bytes": 462,
+      "sourceSha256": "e73f4016be301a5f339d9f6a1a147bdfb0d7a17046f01262570899ca7b55e72b",
+      "sha256": "4c40e686048ecd2f747d9c099164cdb8d507d9d7442970cef27e66f760cae5cb"
+    },
+    {
+      "source": "environment/creature-sleep/kappa-2.png",
+      "file": "runtime-webp/environment/creature-sleep/kappa-2.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1113,
+      "bytes": 630,
+      "sourceSha256": "601fcc57b3369ee6c0fafa0e247f6737362bd462a745b754d98d05cafeec6595",
+      "sha256": "a81d9ae8797c9f140236467e99a207733f416386a909bedd34202bdcca393bb5"
+    },
+    {
+      "source": "environment/creature-sleep/kappa-3.png",
+      "file": "runtime-webp/environment/creature-sleep/kappa-3.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1336,
+      "bytes": 770,
+      "sourceSha256": "5fc15633afe479c8bf4708e4b105e1bb71b80d0297dcbb18fb9bfef958928bc8",
+      "sha256": "3720e85d59e895df12d6c7205623008b3a02d0b4d26ca109e09c208261dad73f"
+    },
+    {
+      "source": "environment/creature-sleep/knarl-0.png",
+      "file": "runtime-webp/environment/creature-sleep/knarl-0.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 990,
+      "bytes": 498,
+      "sourceSha256": "04a9481ba0cadae34105589ab8476b5583e3060eb88b189e27ba03c60fb6218b",
+      "sha256": "0d19210aa0078a805f044ee4071013e8f35e0ab3b337a78f128bde36d2a54e28"
+    },
+    {
+      "source": "environment/creature-sleep/knarl-1.png",
+      "file": "runtime-webp/environment/creature-sleep/knarl-1.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 1463,
+      "bytes": 786,
+      "sourceSha256": "6490b78e3006e42099770be4ccbff1e301cdf1f26c24afced734cd3e706a778d",
+      "sha256": "8a55c28be534c6a0998251a685c6aa934b912661449d2fbd0060c544e1d42e92"
+    },
+    {
+      "source": "environment/creature-sleep/knarl-2.png",
+      "file": "runtime-webp/environment/creature-sleep/knarl-2.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 2131,
+      "bytes": 1236,
+      "sourceSha256": "8fe8c030ca5448f6b1501b5e87239330e41d10fc15eb60f3cc2f90b5e1f135df",
+      "sha256": "7baf4858d296b1c262aae0f1e2a3f40ddf059b91a91d7a1e754ddd50b633cc92"
+    },
+    {
+      "source": "environment/creature-sleep/knarl-3.png",
+      "file": "runtime-webp/environment/creature-sleep/knarl-3.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 2524,
+      "bytes": 1534,
+      "sourceSha256": "c19176cca3386787bb063561197a96fa1912be6b64de5b57f1db15ea399f1884",
+      "sha256": "22f47a5583695eca841e07500ffcb1a85f1b446ef9c1ead7c7cba7bd2c32518d"
+    },
+    {
+      "source": "environment/creature-sleep/kneazle-0.png",
+      "file": "runtime-webp/environment/creature-sleep/kneazle-0.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 828,
+      "bytes": 462,
+      "sourceSha256": "cd8c3d100916fd9195d70e2f58b3804cf7f694268987e88f6d71ce487c455e2d",
+      "sha256": "0ceb1a7ae289baa324c4da64ce9f9ce99d247211113d45d59c4a46837ee6c54f"
+    },
+    {
+      "source": "environment/creature-sleep/kneazle-1.png",
+      "file": "runtime-webp/environment/creature-sleep/kneazle-1.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1152,
+      "bytes": 666,
+      "sourceSha256": "9af43a43fd927df5f94ab14c48fb456387077d87f2b3f4f8e1b86bbc4eaa3c1d",
+      "sha256": "d88690bf22300a07daec09bc587a1be6128ad02055a90276a40504aa1a6f32a3"
+    },
+    {
+      "source": "environment/creature-sleep/kneazle-2.png",
+      "file": "runtime-webp/environment/creature-sleep/kneazle-2.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1446,
+      "bytes": 848,
+      "sourceSha256": "31c4e8729893c15cf883319c7837488fe2abc1e3e898af9e44be4ce38ff78463",
+      "sha256": "9c651bfb550ae4ecd34ebbf658dfad3409ac96813092bf3c1fd421986a74ea72"
+    },
+    {
+      "source": "environment/creature-sleep/kneazle-3.png",
+      "file": "runtime-webp/environment/creature-sleep/kneazle-3.webp",
+      "width": 96,
+      "height": 96,
+      "sourceBytes": 1725,
+      "bytes": 1076,
+      "sourceSha256": "7c19bf785796bcab04a8b645af7846e9e9ae82f749aff877f514b74361f21c78",
+      "sha256": "75dfce13919330ed45b7d007b1d659d1e62918eb79b950c4088a57a0d7744656"
+    },
+    {
+      "source": "environment/creature-sleep/mooncalf-0.png",
+      "file": "runtime-webp/environment/creature-sleep/mooncalf-0.webp",
+      "width": 96,
+      "height": 128,
+      "sourceBytes": 630,
+      "bytes": 362,
+      "sourceSha256": "63c186024dfd78673a732132f998251a1496a0e136b56b663306d7b11782ca2b",
+      "sha256": "6baffc771b9685e666476188a82041dee5ae1a467d467c5e0cc855364abe9a45"
+    },
+    {
+      "source": "environment/creature-sleep/mooncalf-1.png",
+      "file": "runtime-webp/environment/creature-sleep/mooncalf-1.webp",
+      "width": 96,
+      "height": 128,
+      "sourceBytes": 847,
+      "bytes": 496,
+      "sourceSha256": "eb4c256524ba702cb6c054cc74b99d144d30f4dc7aa75caf7bb2c70f0afaaf3f",
+      "sha256": "181e51665b4fc86accb720fd9d088f8c16025f91f6a1d1a6b327cbc675df224f"
+    },
+    {
+      "source": "environment/creature-sleep/mooncalf-2.png",
+      "file": "runtime-webp/environment/creature-sleep/mooncalf-2.webp",
+      "width": 96,
+      "height": 128,
+      "sourceBytes": 1070,
+      "bytes": 626,
+      "sourceSha256": "70d2f2ab2833ae3e140c258e5d9e0062d4e53d3c3f12d4afa495d46dcc3f4516",
+      "sha256": "62f77e6357af236c9d3f673e21042709fff5ae023f1725e15627c5bd5f0c1f26"
+    },
+    {
+      "source": "environment/creature-sleep/mooncalf-3.png",
+      "file": "runtime-webp/environment/creature-sleep/mooncalf-3.webp",
+      "width": 96,
+      "height": 128,
+      "sourceBytes": 1234,
+      "bytes": 712,
+      "sourceSha256": "8192013c407760cc88d0491e18bbeb72f3d6de08612d993aacb9b713b0f732fb",
+      "sha256": "8c7cfad27ba4bb52ce9891a0da0f54abb587e5bd0cbfa48570b33e6abc3ab3bf"
+    },
+    {
+      "source": "environment/creature-sleep/niffler-0.png",
+      "file": "runtime-webp/environment/creature-sleep/niffler-0.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 352,
+      "bytes": 200,
+      "sourceSha256": "db033412d13c02a774814d3e298263f19457c839744dd5dad7a8fa4242914061",
+      "sha256": "4f067b0fe549ebbb918ed67ce267b6f93d357a738326e9115ea1de32bee2663b"
+    },
+    {
+      "source": "environment/creature-sleep/niffler-1.png",
+      "file": "runtime-webp/environment/creature-sleep/niffler-1.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 412,
+      "bytes": 246,
+      "sourceSha256": "dd99b5ff7b944dada99d5733d51d40d61da159466dd26d8ec50ff77dd0ca1b1b",
+      "sha256": "ed32a7d7bf38bdd8bf48e220fff890912183909c98f31450725a0011c764a2dd"
+    },
+    {
+      "source": "environment/creature-sleep/niffler-2.png",
+      "file": "runtime-webp/environment/creature-sleep/niffler-2.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 437,
+      "bytes": 262,
+      "sourceSha256": "302e150c4184dd51a86a526d2d6064e32f666da3c16086301ee92e58988d2278",
+      "sha256": "b3cf70eb15c7327bd73a096354b187a34e8eb60faee54d26103e95a8c388c35a"
+    },
+    {
+      "source": "environment/creature-sleep/niffler-3.png",
+      "file": "runtime-webp/environment/creature-sleep/niffler-3.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 435,
+      "bytes": 252,
+      "sourceSha256": "8611f9776bab1add08690f5fd3c292650eac9cf8878aa88208d27cd05b7aad88",
+      "sha256": "7765ba312542948c4416020430a593b41eecd6093042279c6c3a6eabf3696202"
+    },
+    {
+      "source": "environment/creature-sleep/porlock-0.png",
+      "file": "runtime-webp/environment/creature-sleep/porlock-0.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 711,
+      "bytes": 350,
+      "sourceSha256": "68d01eaa4ccda706bb074404642968f2e666052a71b8b5e950aa96233de7eda4",
+      "sha256": "fd4e57ef2f9e565553e3f717ece3f13e6113ea5b40e1d737651b5f5d38d38c43"
+    },
+    {
+      "source": "environment/creature-sleep/porlock-1.png",
+      "file": "runtime-webp/environment/creature-sleep/porlock-1.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 894,
+      "bytes": 442,
+      "sourceSha256": "348781f484af8a01ddd6d9ee20ffd9f218a97a85cb6acb1b570522295cdb87bb",
+      "sha256": "75760329c4038827a555f767db702a63676b5b99efbc402c737e91de44577391"
+    },
+    {
+      "source": "environment/creature-sleep/porlock-2.png",
+      "file": "runtime-webp/environment/creature-sleep/porlock-2.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 1108,
+      "bytes": 586,
+      "sourceSha256": "c1efb1419ccf77cfb817d639ec16ce1d5a1bc62230d6febe5971959e3f0ac60a",
+      "sha256": "8089c35037a0b89646b757b206a6bf0f8093eb6da0b33ef1b35cf318dac142ad"
+    },
+    {
+      "source": "environment/creature-sleep/porlock-3.png",
+      "file": "runtime-webp/environment/creature-sleep/porlock-3.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 1442,
+      "bytes": 766,
+      "sourceSha256": "af9fdcd71615c965e949b7497786643234b4bef185f21eea8acfde24bb4b5ac9",
+      "sha256": "f70cf792552299eefef99576d7fcf71989db37712d0fbb4952aec893c0c0af10"
+    },
+    {
+      "source": "environment/creature-sleep/puffskein-0.png",
+      "file": "runtime-webp/environment/creature-sleep/puffskein-0.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 326,
+      "bytes": 190,
+      "sourceSha256": "0714d067d5111e821a0c5f85b41dc8508254d76592e4768cc4712be989b43f2c",
+      "sha256": "d27dd70c0084c23e1619c3fb485e2d99ac34fe32058c2d01d35b3a0f653a1e23"
+    },
+    {
+      "source": "environment/creature-sleep/puffskein-1.png",
+      "file": "runtime-webp/environment/creature-sleep/puffskein-1.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 390,
+      "bytes": 224,
+      "sourceSha256": "9e406dcc60ff5dfa07599e08052207e92672391f2d29e1beaa70512f196bb672",
+      "sha256": "6c5df2e13425e30a2e4b6f69d5a5f6b8339da1bea6f745857797ba81b15d8ab2"
+    },
+    {
+      "source": "environment/creature-sleep/puffskein-2.png",
+      "file": "runtime-webp/environment/creature-sleep/puffskein-2.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 509,
+      "bytes": 280,
+      "sourceSha256": "8f675e638396804b5221b7d76411afe6ae9f351f14099cbebd33ce90e8200ffe",
+      "sha256": "15a3836917f830a23de4db18ecc10bfed6ccf194c8af826ecdf87daa7499cb21"
+    },
+    {
+      "source": "environment/creature-sleep/puffskein-3.png",
+      "file": "runtime-webp/environment/creature-sleep/puffskein-3.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 509,
+      "bytes": 280,
+      "sourceSha256": "8f675e638396804b5221b7d76411afe6ae9f351f14099cbebd33ce90e8200ffe",
+      "sha256": "15a3836917f830a23de4db18ecc10bfed6ccf194c8af826ecdf87daa7499cb21"
+    },
+    {
+      "source": "environment/creature-sleep/salamander-0.png",
+      "file": "runtime-webp/environment/creature-sleep/salamander-0.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 836,
+      "bytes": 416,
+      "sourceSha256": "6e5bce2bb80b2f8b95b464b9d76b5fd44310447140165cea7d2c3bba285d1ea2",
+      "sha256": "b533d72765d574138449cb9890d6fbd4b8807c562e33421d70611f5457886835"
+    },
+    {
+      "source": "environment/creature-sleep/salamander-1.png",
+      "file": "runtime-webp/environment/creature-sleep/salamander-1.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 1339,
+      "bytes": 734,
+      "sourceSha256": "45c4204c4d1f47e9804cfaf1b9f1b3b73be58a8fb6c4547c02bdfbd23c5f38fe",
+      "sha256": "6943f3b331ce05cf955e3d888b2ada34069b66ab555d17dbbee10a1a2b2d5935"
+    },
+    {
+      "source": "environment/creature-sleep/salamander-2.png",
+      "file": "runtime-webp/environment/creature-sleep/salamander-2.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 1808,
+      "bytes": 1044,
+      "sourceSha256": "e369f5cd60e069be27370be8544c4c977544d8acfb9dd9abe697c335f6590807",
+      "sha256": "c982a6ca8ae9d7214d4385c517eb2ef4c325fc17ad8ea0ff5f030948d47f5316"
+    },
+    {
+      "source": "environment/creature-sleep/salamander-3.png",
+      "file": "runtime-webp/environment/creature-sleep/salamander-3.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 2144,
+      "bytes": 1290,
+      "sourceSha256": "ef45dfcf11b91fd9d1cd42dc64a4c53e6935fef46f2e3bb654769e7e6b12436c",
+      "sha256": "683c4ff192d2933deaf2eaba865b06b6b1a5efc3bf87fbc20b9a0a152cf6c313"
+    },
+    {
+      "source": "environment/creature-sleep/thestral-0.png",
+      "file": "runtime-webp/environment/creature-sleep/thestral-0.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 881,
+      "bytes": 408,
+      "sourceSha256": "c090049aa16aa12970c7997ac17664654a5a01d747202c8ee75b3580d774dc67",
+      "sha256": "eebe8e0476f59e037afe04d1b40f58f993fcae070b57157b3df07e364edfb9c1"
+    },
+    {
+      "source": "environment/creature-sleep/thestral-1.png",
+      "file": "runtime-webp/environment/creature-sleep/thestral-1.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 1290,
+      "bytes": 624,
+      "sourceSha256": "b98da263b56cfe8cdd0a23354317c49434a917309cf4b40984b010fa677bff63",
+      "sha256": "52f0fd22aa8f23777b373c23e9ed6a3c7fe14d3af9cd44e361528feaeeb1d7b8"
+    },
+    {
+      "source": "environment/creature-sleep/thestral-2.png",
+      "file": "runtime-webp/environment/creature-sleep/thestral-2.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 1794,
+      "bytes": 920,
+      "sourceSha256": "bbf4ed7d2d076987fadd34a1e4808784f91f709612748f52d8a6a3f2e9d0c7cc",
+      "sha256": "6729ae0e5199a92e048a648994dd11d7c0bb27f66c87d6f1cf43c004b7c2b2ed"
+    },
+    {
+      "source": "environment/creature-sleep/thestral-3.png",
+      "file": "runtime-webp/environment/creature-sleep/thestral-3.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 2195,
+      "bytes": 1190,
+      "sourceSha256": "b75016833c8ee0b6979ccf1df7b8c8a6eebbda35ef1c3d4ccbff12634d5ec3b3",
+      "sha256": "b5987e925122f735980892280882935e97ca6d2b0a11cd9d9c3684c3de4d619e"
+    },
+    {
+      "source": "environment/creature-sleep/three-headed-dog-0.png",
+      "file": "runtime-webp/environment/creature-sleep/three-headed-dog-0.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 997,
+      "bytes": 616,
+      "sourceSha256": "b556b42e4ddfb9f7c0924e97c041c62e77e1a886d5886af91cf50eda5a850d3a",
+      "sha256": "0391b4b092eba761824075b1b66ed1b380753540f458b1ba08c776650ac620f2"
+    },
+    {
+      "source": "environment/creature-sleep/three-headed-dog-1.png",
+      "file": "runtime-webp/environment/creature-sleep/three-headed-dog-1.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 2333,
+      "bytes": 1360,
+      "sourceSha256": "a3bcc85175736fc0af72c6b4363fed64d827e277575c3b2941d0b249471f0bd2",
+      "sha256": "81b1a2d670f277266268ba7b590ae3dd153d037149ac115daff42c57adfdcdb8"
+    },
+    {
+      "source": "environment/creature-sleep/three-headed-dog-2.png",
+      "file": "runtime-webp/environment/creature-sleep/three-headed-dog-2.webp",
+      "width": 128,
+      "height": 128,
+      "sourceBytes": 2752,
+      "bytes": 1720,
+      "sourceSha256": "f8e5585487fdd6f91c7ab695d1e80899cba9b3aaa3da7974c0289a227b3af9a7",
+      "sha256": "afdbe44d08e8eddfed8f94b0bd2e2c588ccceea5f0a8007ca49ac2928e9c719c"
+    },
+    {
+      "source": "environment/creature-sleep/three-headed-dog-3.png",
+      "file": "runtime-webp/environment/creature-sleep/three-headed-dog-3.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 3376,
+      "bytes": 2098,
+      "sourceSha256": "5b74303c126610e5ef1da03544bb87f477cfb102adc642bf0c83e7378e402628",
+      "sha256": "ff6ef3bd8d4e3818bc1315ff22e94a4c657f70e52ae28a914346000d36f63a41"
+    },
+    {
+      "source": "environment/creature-sleep/unicorn-0.png",
+      "file": "runtime-webp/environment/creature-sleep/unicorn-0.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 1393,
+      "bytes": 718,
+      "sourceSha256": "37c18944f9997ee3a4a0a88d0ca45c9cc33dc27020445f7b95d06093fa562735",
+      "sha256": "324a73b3ba6db95cf0322f6327368d2259f7fa7b02601f632fe764cefe7184d3"
+    },
+    {
+      "source": "environment/creature-sleep/unicorn-1.png",
+      "file": "runtime-webp/environment/creature-sleep/unicorn-1.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 2011,
+      "bytes": 1104,
+      "sourceSha256": "b29c13225278c12a75206da98ce9c88b362ecb202b7577426978f8920bef635a",
+      "sha256": "18260c16a5b50bb82a2c2fe01cf1744ca72c83c1936c34726bba6506ef4f795c"
+    },
+    {
+      "source": "environment/creature-sleep/unicorn-2.png",
+      "file": "runtime-webp/environment/creature-sleep/unicorn-2.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 2602,
+      "bytes": 1500,
+      "sourceSha256": "dfc668dcb808b656f25b87296392f7d71b23aaffa55caf7c8211765afabbf2eb",
+      "sha256": "623a91a29998f20c15b839d361c5feea4c93d5de72ad22f02a8a1d919977da3c"
+    },
+    {
+      "source": "environment/creature-sleep/unicorn-3.png",
+      "file": "runtime-webp/environment/creature-sleep/unicorn-3.webp",
+      "width": 160,
+      "height": 160,
+      "sourceBytes": 3157,
+      "bytes": 1894,
+      "sourceSha256": "12f620c1e4fd4a151ea7991c4ccb2027c7d3d8e21b1efcc978837daae7b8c536",
+      "sha256": "2a91b7f1c6166a14a6b23b22cf9abfc2b5821932a79b08bdf15172692272ab94"
+    },
+    {
       "source": "environment/edge/orchard.png",
       "file": "runtime-webp/environment/edge/orchard.webp",
       "width": 576,
@@ -17489,6 +18209,11 @@
       "sha256": "02014acd44ff0017b4c6567cf3faf7630983ad7f73946c04be2691475960b5ab"
     },
     {
+      "file": "decor-assets/hd/022517b86092fdcc8955753e.webp",
+      "bytes": 3774,
+      "sha256": "022517b86092fdcc8955753e95fd00753307e1ba8b5108fbd5f2c2b3a1e9c082"
+    },
+    {
       "file": "decor-assets/hd/02cc6a9f0cf0d540f1ce7b44.webp",
       "bytes": 19938,
       "sha256": "02cc6a9f0cf0d540f1ce7b44fe1cf1168168100c5a946cb74c68749fb0a4b39b"
@@ -17669,6 +18394,11 @@
       "sha256": "0a243c6a6ddf678d83e845b7f1e98f6e936cb69fdeb7e6c0604ada28ab871a39"
     },
     {
+      "file": "decor-assets/hd/0ab3aa664eee1b72abcd0864.webp",
+      "bytes": 1882,
+      "sha256": "0ab3aa664eee1b72abcd0864554cbc9fb869fdbcb788bace44bfe3609d880b02"
+    },
+    {
       "file": "decor-assets/hd/0af7c8156d0d2b597986e39f.webp",
       "bytes": 1226,
       "sha256": "0af7c8156d0d2b597986e39f03f082eb800a030eea80f48684daadf7c4287fc8"
@@ -17784,6 +18514,11 @@
       "sha256": "0dd39824e110f78f7a5d49e9bb0932f639761261a91e5e7ee4b1988c2bdcc35d"
     },
     {
+      "file": "decor-assets/hd/0ddcff7b9bfa75d67805284a.webp",
+      "bytes": 2194,
+      "sha256": "0ddcff7b9bfa75d67805284a935ff4777a912ba6b16ba39305e3931c02a67f5f"
+    },
+    {
       "file": "decor-assets/hd/0de7a2fd4e9386de150b8ad7.webp",
       "bytes": 8806,
       "sha256": "0de7a2fd4e9386de150b8ad7f7d74ee775c6841adc6fcb17e2ad986f2da6bb26"
@@ -17824,6 +18559,11 @@
       "sha256": "0f0c5fd88742ec43ac747d94c30b969fc45fab8ddd2301acc9a86f63d35c93aa"
     },
     {
+      "file": "decor-assets/hd/0f3a50d01cbe490b646bb6c8.webp",
+      "bytes": 1764,
+      "sha256": "0f3a50d01cbe490b646bb6c87ade835e59ccde8966ee6d2b18ec3181544d4093"
+    },
+    {
       "file": "decor-assets/hd/0f408aed3be2eec6593b12a8-atlas.webp",
       "bytes": 36328,
       "sha256": "0f408aed3be2eec6593b12a821763e659359a843d80a142fe3aca33a4cf1259e"
@@ -17859,6 +18599,11 @@
       "sha256": "0ff822d5ccfe4b5bd3c9ef2220711c6b809d76d681c822909f8e1548317cd630"
     },
     {
+      "file": "decor-assets/hd/105948f7aa0c027117079079.webp",
+      "bytes": 5652,
+      "sha256": "105948f7aa0c027117079079e9ae339a88c5f53840297fe040c7fe972e3c95c3"
+    },
+    {
       "file": "decor-assets/hd/1064dbd831cd282645efb154.webp",
       "bytes": 2700,
       "sha256": "1064dbd831cd282645efb1540bb49f9672679c3aba28b5655aa50c3a170b4706"
@@ -17882,6 +18627,11 @@
       "file": "decor-assets/hd/117e3d8d325cf47a5276e7f0.webp",
       "bytes": 9876,
       "sha256": "117e3d8d325cf47a5276e7f097958cee8569ed8ab5d19e60075acfeaa3f0c0ab"
+    },
+    {
+      "file": "decor-assets/hd/11b8e9107034ccf8ee2cf86f.webp",
+      "bytes": 2188,
+      "sha256": "11b8e9107034ccf8ee2cf86fc9cefd21d4e05178bac40fd0ded4de63bcfeb911"
     },
     {
       "file": "decor-assets/hd/11dfd5f34d71e46002d3faf6-atlas.webp",
@@ -18022,6 +18772,11 @@
       "file": "decor-assets/hd/17de1208108adaff161daea3.webp",
       "bytes": 1108,
       "sha256": "17de1208108adaff161daea3a0ac7e2a10975314315d60795ac2b8571d34f568"
+    },
+    {
+      "file": "decor-assets/hd/18350b6ff8fa3c4159364c0f.webp",
+      "bytes": 1956,
+      "sha256": "18350b6ff8fa3c4159364c0fa7901038bdf59a1c7c382e89d3d5e27d063c43ff"
     },
     {
       "file": "decor-assets/hd/185a0e47b9dcc075ee9f3cf4-atlas.webp",
@@ -18469,6 +19224,11 @@
       "sha256": "2857743d65c466a187d9f0bb2d358f4088472bdec14c4c4ba1c27433d3e94d26"
     },
     {
+      "file": "decor-assets/hd/2858b8463febf7981138ae36.webp",
+      "bytes": 2376,
+      "sha256": "2858b8463febf7981138ae362da304714a22c74771cd8edbb483e99eed838092"
+    },
+    {
       "file": "decor-assets/hd/28bcd8dddb69e10aea3b2f6e.webp",
       "bytes": 940,
       "sha256": "28bcd8dddb69e10aea3b2f6e877cb777434d55412b01647e2158e5acf7183b82"
@@ -18649,6 +19409,11 @@
       "sha256": "3088126df28cb65ae975e989bbe023db69ee01523267e60e8894d2be64c480bc"
     },
     {
+      "file": "decor-assets/hd/30deafced0ad43cbfca64bbd.webp",
+      "bytes": 958,
+      "sha256": "30deafced0ad43cbfca64bbd654252ec1cc7a21b1aeaf0e6c0072b110fa43421"
+    },
+    {
       "file": "decor-assets/hd/30f22d86e2b15736884ce50b.webp",
       "bytes": 5518,
       "sha256": "30f22d86e2b15736884ce50bddd2f7e66559ab748d29bd177d6ad49687a52eff"
@@ -18709,6 +19474,11 @@
       "sha256": "322e9a5f8df8effea5006414354db84a418e8fefe013013b08f666fb694b4145"
     },
     {
+      "file": "decor-assets/hd/3248009ec6d5e58eb37a4130.webp",
+      "bytes": 4576,
+      "sha256": "3248009ec6d5e58eb37a41307fe06c73e240c95e51bee573e0f9848a5f1e5ed9"
+    },
+    {
       "file": "decor-assets/hd/32535b2cbaf5e3d08f68e06c.webp",
       "bytes": 5152,
       "sha256": "32535b2cbaf5e3d08f68e06c57e2d622ccb2c890f904aa18421d65b1db35c38a"
@@ -18722,6 +19492,11 @@
       "file": "decor-assets/hd/32993fe42c405eea5f2595ee.webp",
       "bytes": 1100,
       "sha256": "32993fe42c405eea5f2595ee153e4a5be66e339ca3dfd549eea6b09024b39b3a"
+    },
+    {
+      "file": "decor-assets/hd/329a75f380c092be9907f82f.webp",
+      "bytes": 1816,
+      "sha256": "329a75f380c092be9907f82f1353d9eb5c413e18ff183bef373abc36f65ec473"
     },
     {
       "file": "decor-assets/hd/32b1a0669100c8d620833d5b.webp",
@@ -18802,6 +19577,11 @@
       "file": "decor-assets/hd/34ac67f61c8690511eabb965.webp",
       "bytes": 7944,
       "sha256": "34ac67f61c8690511eabb965cfd86e1702cca60caaa03ce666de95f4e8ba65e8"
+    },
+    {
+      "file": "decor-assets/hd/34b3932a7cad453a864c5f3e.webp",
+      "bytes": 3858,
+      "sha256": "34b3932a7cad453a864c5f3e577ced30bb0f5d42a7e63aecbd8664cffcc7d0c7"
     },
     {
       "file": "decor-assets/hd/34e5093f967e0971351e5009.webp",
@@ -19019,6 +19799,11 @@
       "sha256": "3aa89b80f676e238b80d172d4277d106baf9224cb29401a6a2a7ecf94e14d05a"
     },
     {
+      "file": "decor-assets/hd/3ab2a00ae57a3945b96f60c8.webp",
+      "bytes": 510,
+      "sha256": "3ab2a00ae57a3945b96f60c898676b71ea0f9ac5c59c5771db7e77f8fd5ea3f8"
+    },
+    {
       "file": "decor-assets/hd/3af1d779409fc0532dae5f71.webp",
       "bytes": 2716,
       "sha256": "3af1d779409fc0532dae5f7186eb47a97b2b7797f108bd6722be088c210482b2"
@@ -19042,6 +19827,11 @@
       "file": "decor-assets/hd/3c2340ce7449688d7855c8f7.webp",
       "bytes": 4602,
       "sha256": "3c2340ce7449688d7855c8f7f222c2574e484983b9bc42a8a116badc89613ac0"
+    },
+    {
+      "file": "decor-assets/hd/3c3e6427ff446eb5b0edd402.webp",
+      "bytes": 3002,
+      "sha256": "3c3e6427ff446eb5b0edd402909ea078ef2adea1f7435383da1739f6c01c3f4d"
     },
     {
       "file": "decor-assets/hd/3cb2e40d150da4c0ad5c64a7.webp",
@@ -19112,6 +19902,11 @@
       "file": "decor-assets/hd/3ef962651002493c2fb6709b-atlas.webp",
       "bytes": 43012,
       "sha256": "3ef962651002493c2fb6709b837fb893443171f72aa71e3250d8ac1bf36c12d8"
+    },
+    {
+      "file": "decor-assets/hd/3f058715f6c8f1901815f96d.webp",
+      "bytes": 5768,
+      "sha256": "3f058715f6c8f1901815f96d5e42633fc0999aa57265040a9abf83d48ae1373b"
     },
     {
       "file": "decor-assets/hd/3f30f732630467bb839390cf-atlas.webp",
@@ -19204,6 +19999,11 @@
       "sha256": "4223b7ee82b781ab11d0021e0b79a55da1176674125a2b122bf974fe4a63dbec"
     },
     {
+      "file": "decor-assets/hd/423127f45ed76e945763990e.webp",
+      "bytes": 350,
+      "sha256": "423127f45ed76e945763990e282919f64e513e2460d6126e64a89951f739498d"
+    },
+    {
       "file": "decor-assets/hd/424cffd22d84168485b9cded.webp",
       "bytes": 1978,
       "sha256": "424cffd22d84168485b9cded15727d6dd1cc1cd54428fad0007fd8742ba887b3"
@@ -19267,6 +20067,11 @@
       "file": "decor-assets/hd/44146699c17c4be0f35c2f9c.webp",
       "bytes": 4542,
       "sha256": "44146699c17c4be0f35c2f9cb36f0ab125da3d86fc1a877169072afaf579021e"
+    },
+    {
+      "file": "decor-assets/hd/44526ac226c353e440e14871.webp",
+      "bytes": 1762,
+      "sha256": "44526ac226c353e440e14871ba7669a7b88628dc831aa65675b325ad1262876d"
     },
     {
       "file": "decor-assets/hd/4492ec9dd1276c41507d73b2.webp",
@@ -19377,6 +20182,11 @@
       "file": "decor-assets/hd/49fa3d31dca11043fc7e77a5.webp",
       "bytes": 4488,
       "sha256": "49fa3d31dca11043fc7e77a57fa1bd86a5fe0abb1cf21ebe197f758bb2e3ff5e"
+    },
+    {
+      "file": "decor-assets/hd/4a1479faa9d7d0a97181b8c6.webp",
+      "bytes": 4708,
+      "sha256": "4a1479faa9d7d0a97181b8c6f7617805140be8ea9c64329b32b485961dac384b"
     },
     {
       "file": "decor-assets/hd/4a22b178f5fab9f33ddc1d15.webp",
@@ -19499,6 +20309,11 @@
       "sha256": "4d83bdece1406dc95f367c8dbd09dffbcd23c1ed553144fb075781e2d55e527a"
     },
     {
+      "file": "decor-assets/hd/4d8addaa638aa429e9587e83.webp",
+      "bytes": 428,
+      "sha256": "4d8addaa638aa429e9587e8306e323c2cd042f09af6e838c26c823de13e8f528"
+    },
+    {
       "file": "decor-assets/hd/4d91772576b2f18c1f24bb0e.webp",
       "bytes": 3504,
       "sha256": "4d91772576b2f18c1f24bb0e8cbf829392802ada7dc668f3f7fe3eed3177a945"
@@ -19617,6 +20432,11 @@
       "file": "decor-assets/hd/5184d68164a18eca6f60dee1.webp",
       "bytes": 924,
       "sha256": "5184d68164a18eca6f60dee1b6825ad6d3e92c7ab65ceca176d89b31193f9656"
+    },
+    {
+      "file": "decor-assets/hd/519d1aacc28ab2d8cda897d3.webp",
+      "bytes": 1384,
+      "sha256": "519d1aacc28ab2d8cda897d3bb62f3fe758d7cf601902c94b804f52d3f8f90ab"
     },
     {
       "file": "decor-assets/hd/51a2be0f19791c26412abd82.webp",
@@ -19764,6 +20584,11 @@
       "sha256": "5608c8effaea9aa77bc8f55a3306334dd38a67f88793f3af049940da0b382825"
     },
     {
+      "file": "decor-assets/hd/5619057cb58ea6c119cb77c4.webp",
+      "bytes": 402,
+      "sha256": "5619057cb58ea6c119cb77c412fe0e9f9a0e216275536741f0f367125fb7b97c"
+    },
+    {
       "file": "decor-assets/hd/5629fb43ba79c15a9cbf5ab3.webp",
       "bytes": 9028,
       "sha256": "5629fb43ba79c15a9cbf5ab3b2acf66a06c585368ad0f02995f9f7e8a820063e"
@@ -19804,6 +20629,16 @@
       "sha256": "5771e7a5c2b9074ce65363db6c3670b3bf94b0d5c60bcde6f6f66c133e94dbac"
     },
     {
+      "file": "decor-assets/hd/5799e1901f47ca2c83ff97aa.webp",
+      "bytes": 1008,
+      "sha256": "5799e1901f47ca2c83ff97aa83e64777491258fe22424c2bcb5bb8d44fe76baf"
+    },
+    {
+      "file": "decor-assets/hd/5832ddc0c81105d423ee8bca.webp",
+      "bytes": 1130,
+      "sha256": "5832ddc0c81105d423ee8bca796fa17371b81ab4b5eacb7d2e8efe0a5426f286"
+    },
+    {
       "file": "decor-assets/hd/585349dbb963fd7ab4cb3cab.webp",
       "bytes": 1344,
       "sha256": "585349dbb963fd7ab4cb3cabd73350c643724e01ce2c6139ff47d8ee7b9fe961"
@@ -19817,6 +20652,11 @@
       "file": "decor-assets/hd/5875bafaec42107ae078141b.webp",
       "bytes": 8714,
       "sha256": "5875bafaec42107ae078141bd89da8178c37f5844ca0d069a635fa2823ae5d2c"
+    },
+    {
+      "file": "decor-assets/hd/588469d719b668107cf00146.webp",
+      "bytes": 3172,
+      "sha256": "588469d719b668107cf00146eaa2d50b998c9ad86d09265b5749642730120aa4"
     },
     {
       "file": "decor-assets/hd/588795232acadb8eb0e7fc31.webp",
@@ -19909,6 +20749,11 @@
       "sha256": "5c2947b676efd4dae600fc032a2b0f764fddd9dd45e9c9165ce86640ca1de0a7"
     },
     {
+      "file": "decor-assets/hd/5c37ae208f7b52a2df3bd0cc.webp",
+      "bytes": 2062,
+      "sha256": "5c37ae208f7b52a2df3bd0cc9e50a6e7bc69b0c7bc5982667d8fa8f0416ecc6e"
+    },
+    {
       "file": "decor-assets/hd/5c4f7b3a4a227ac0a4061a68.webp",
       "bytes": 2986,
       "sha256": "5c4f7b3a4a227ac0a4061a68e0b7404aa7f67038139aef5aecd4bc42bd963647"
@@ -19947,6 +20792,11 @@
       "file": "decor-assets/hd/5d342db88986787425960ef7.webp",
       "bytes": 2462,
       "sha256": "5d342db88986787425960ef7bde87b152203cef444eae2a8660b254a9632d84f"
+    },
+    {
+      "file": "decor-assets/hd/5d63eaeff65f248381cd29c9.webp",
+      "bytes": 1760,
+      "sha256": "5d63eaeff65f248381cd29c94c0a9c531f16f9236216ec7a5d0a0b30eb46acaf"
     },
     {
       "file": "decor-assets/hd/5dc632ec73eac0622db5b08b.webp",
@@ -20017,6 +20867,11 @@
       "file": "decor-assets/hd/6173217e6d7c71f1b27622bf-atlas.webp",
       "bytes": 29318,
       "sha256": "6173217e6d7c71f1b27622bf54b07200f31b14a1c37910ebde362b587a48f7f7"
+    },
+    {
+      "file": "decor-assets/hd/61b96a504b8ef2697058ab07.webp",
+      "bytes": 1428,
+      "sha256": "61b96a504b8ef2697058ab07ca2ae03b101d1ab35079f7823a225e8e4f8122d9"
     },
     {
       "file": "decor-assets/hd/61c8eb7fa2ea2746da6a0c27-atlas.webp",
@@ -20264,6 +21119,11 @@
       "sha256": "6bf8b6675e135e218ebd1f4fb241073a631701c8682ceec5f48f753a2e92e9fd"
     },
     {
+      "file": "decor-assets/hd/6c3814b75c31c22d7ea2fa75.webp",
+      "bytes": 1982,
+      "sha256": "6c3814b75c31c22d7ea2fa7538bf97ac426563fcb12127b2be98eb9d62776f06"
+    },
+    {
       "file": "decor-assets/hd/6c4123c7da1ead3689c552ec.webp",
       "bytes": 2658,
       "sha256": "6c4123c7da1ead3689c552ec3602d1f011d8b0569ee41d02ba28f1e3d634126e"
@@ -20272,6 +21132,11 @@
       "file": "decor-assets/hd/6c81f58a806729316ec8fa31-atlas.webp",
       "bytes": 8030,
       "sha256": "6c81f58a806729316ec8fa31d976f81f17508fbbb296b09261b301d1f9c1501d"
+    },
+    {
+      "file": "decor-assets/hd/6ccf053b70cb59843b0c1880.webp",
+      "bytes": 3234,
+      "sha256": "6ccf053b70cb59843b0c18808279654f51c0ff9101eca398f41ef2c2a857d70b"
     },
     {
       "file": "decor-assets/hd/6cf3c3d34b076f809c25ed02.webp",
@@ -20287,6 +21152,11 @@
       "file": "decor-assets/hd/6ddb5f224675fde80af926e1.webp",
       "bytes": 2774,
       "sha256": "6ddb5f224675fde80af926e1d96713599b25988c60b4270c48048b17e500bf7f"
+    },
+    {
+      "file": "decor-assets/hd/6e7a98824f355c67417fa9b0.webp",
+      "bytes": 2150,
+      "sha256": "6e7a98824f355c67417fa9b05512c28705f36c5e0cf1ad5ee99bf7c96b6d123f"
     },
     {
       "file": "decor-assets/hd/6e8d694e8c0e357ce9fc0d54.webp",
@@ -20397,6 +21267,11 @@
       "file": "decor-assets/hd/7212dd6b084f0f42bc07a9c6-atlas.webp",
       "bytes": 28744,
       "sha256": "7212dd6b084f0f42bc07a9c6e5dbd13221a852ebaeccf27446507ce74c7b1152"
+    },
+    {
+      "file": "decor-assets/hd/721df8f5109fe726a11c908d.webp",
+      "bytes": 5770,
+      "sha256": "721df8f5109fe726a11c908d8e40fe548725ed25fd0529af6a5d244beecc1004"
     },
     {
       "file": "decor-assets/hd/7243b098fca095c4d42ce967.webp",
@@ -20539,6 +21414,11 @@
       "sha256": "770407120895c5894225b6e2a3ef29bfc6221bf86056d6730ee531c17d1ef307"
     },
     {
+      "file": "decor-assets/hd/772ba719231ccf86c1cd8d83.webp",
+      "bytes": 2100,
+      "sha256": "772ba719231ccf86c1cd8d83f4c67067bd7d5e6e6720246507ec22633a707bfb"
+    },
+    {
       "file": "decor-assets/hd/775675ab46986a8415cdaa90.webp",
       "bytes": 1542,
       "sha256": "775675ab46986a8415cdaa908698fcafd027a26dc3fa256808104809f2f0f734"
@@ -20589,6 +21469,11 @@
       "sha256": "785ed6f99bd40c86c4f3e8259a35cfe1bbd43b42a924df184761de4f11248dec"
     },
     {
+      "file": "decor-assets/hd/78d6c67672e493a97bc56d7b.webp",
+      "bytes": 2620,
+      "sha256": "78d6c67672e493a97bc56d7bab831915f572acd7ab095bf8f1c9d1b56777ff66"
+    },
+    {
       "file": "decor-assets/hd/78ff7f1acc37f2aaa32253b0-atlas.webp",
       "bytes": 19016,
       "sha256": "78ff7f1acc37f2aaa32253b00fa83b97ebdfd957a8ac760b1f5a2221d9e14c32"
@@ -20617,6 +21502,11 @@
       "file": "decor-assets/hd/79bc92837c6a99a9b315216b.webp",
       "bytes": 318,
       "sha256": "79bc92837c6a99a9b315216b66dc4422eae96609ca653be97950743bf5fbc007"
+    },
+    {
+      "file": "decor-assets/hd/79beffd50211447af520b34f.webp",
+      "bytes": 510,
+      "sha256": "79beffd50211447af520b34f229357c7a048e81c93acf3ec17e3b88a417683b1"
     },
     {
       "file": "decor-assets/hd/79e6e2c81747ee2ea2fc6700.webp",
@@ -20669,6 +21559,11 @@
       "sha256": "7b558d060921c7fe413277db92fc60c46566615d5b9366c6f4973474526b297b"
     },
     {
+      "file": "decor-assets/hd/7b87fa601924ed1813136d91.webp",
+      "bytes": 6206,
+      "sha256": "7b87fa601924ed1813136d91fb84f49eaae9caab1ce01ce546177990bec5acc2"
+    },
+    {
       "file": "decor-assets/hd/7b9a5a4c1dffcd0622fcc5ad.webp",
       "bytes": 164,
       "sha256": "7b9a5a4c1dffcd0622fcc5ada4ea395f057281cdeddfd2fde6c568fadd43df6a"
@@ -20719,6 +21614,11 @@
       "sha256": "7c52d0663b3ca2372020bffed8d0a8f489ac56f609517bd06ead53b5b686fcbb"
     },
     {
+      "file": "decor-assets/hd/7c59a9dbbbde7687fb2a2bf7.webp",
+      "bytes": 668,
+      "sha256": "7c59a9dbbbde7687fb2a2bf74ea4341ebef4673738a5a8b5bb79d846a0ecbf43"
+    },
+    {
       "file": "decor-assets/hd/7c7cba70a69db0c554be4d0e.webp",
       "bytes": 702,
       "sha256": "7c7cba70a69db0c554be4d0eec21288915ae07a3a2293259d5ab46ad0817c0bc"
@@ -20749,6 +21649,11 @@
       "sha256": "7dba0cf3cd31312ab8a067cf635c52d0d609aa3e88fe3126cb0f5aaacf350326"
     },
     {
+      "file": "decor-assets/hd/7e0e61c8b6f1ad3f9fce40c2.webp",
+      "bytes": 600,
+      "sha256": "7e0e61c8b6f1ad3f9fce40c2f403e9776cba02cf7f0856f30de726f80cbcbb5a"
+    },
+    {
       "file": "decor-assets/hd/7e4e232654a8478991ccfd7b.webp",
       "bytes": 2260,
       "sha256": "7e4e232654a8478991ccfd7b09af2418244953418b16055fda1f7ce6f3db3b4f"
@@ -20777,6 +21682,11 @@
       "file": "decor-assets/hd/7ee7897ffb03870445a7b220.webp",
       "bytes": 7308,
       "sha256": "7ee7897ffb03870445a7b220abf808f2ad092f38e907adad64b8e90443251e3e"
+    },
+    {
+      "file": "decor-assets/hd/7f0ee1b4a4963e7539cd51c1.webp",
+      "bytes": 1554,
+      "sha256": "7f0ee1b4a4963e7539cd51c12157cdf8822d3341920443812dad7fc121c419eb"
     },
     {
       "file": "decor-assets/hd/7f4204e1b3fbdb5e2b9b785c.webp",
@@ -20867,6 +21777,11 @@
       "file": "decor-assets/hd/82c7b8e0ceb283961bb2a012.webp",
       "bytes": 1742,
       "sha256": "82c7b8e0ceb283961bb2a0120d216f291a064e78b8461e01a6edef6e8904216a"
+    },
+    {
+      "file": "decor-assets/hd/82e18cdaa355354edc6aeab0.webp",
+      "bytes": 534,
+      "sha256": "82e18cdaa355354edc6aeab00b39ddcf875ec65f504c524c73c719d2b08dd2b1"
     },
     {
       "file": "decor-assets/hd/830deaf15006415a254a3188.webp",
@@ -21119,6 +22034,11 @@
       "sha256": "89f317964fdde9c6ed30b9d3161f4b1a464c174b4c52ebdd6882786a53a17d23"
     },
     {
+      "file": "decor-assets/hd/89f5150fabd1764dab703af6.webp",
+      "bytes": 1290,
+      "sha256": "89f5150fabd1764dab703af6b284910fef8ee20cc0f78b6fcbcb754907dcebed"
+    },
+    {
       "file": "decor-assets/hd/8a9df866b5d9a1f1ed85d122.webp",
       "bytes": 1462,
       "sha256": "8a9df866b5d9a1f1ed85d1227c302358f2005edbc95c7aeab4061c7d96c340cb"
@@ -21227,6 +22147,11 @@
       "file": "decor-assets/hd/8e6d5ea694b60d39b229d9f5.webp",
       "bytes": 912,
       "sha256": "8e6d5ea694b60d39b229d9f5c1ebcf52910c0d1ef13ce8cebc666e14cc1d740c"
+    },
+    {
+      "file": "decor-assets/hd/8e980672a301f66a38a3a654.webp",
+      "bytes": 704,
+      "sha256": "8e980672a301f66a38a3a6542bb8229c2089f2c3c8d2a6be5dd30a53082c5dd4"
     },
     {
       "file": "decor-assets/hd/8ea440f33b1fdaa7216dad8c.webp",
@@ -21357,6 +22282,11 @@
       "file": "decor-assets/hd/92d5d55e8b6189f3c207c80b-atlas.webp",
       "bytes": 33452,
       "sha256": "92d5d55e8b6189f3c207c80b0a07effe658e2663ac40a347eadaac45958f6c5a"
+    },
+    {
+      "file": "decor-assets/hd/92d922a479aa883a8fc5fb6d.webp",
+      "bytes": 1646,
+      "sha256": "92d922a479aa883a8fc5fb6d2954e3c3d61b7d399a9c37d2a0e1ec99afea589c"
     },
     {
       "file": "decor-assets/hd/92f0c040e56e5d13734b9ff6-atlas.webp",
@@ -21739,6 +22669,11 @@
       "sha256": "a1f43d8778128ff11e38be3a51f925a85878faa9fcbf339622e51611e268c1ef"
     },
     {
+      "file": "decor-assets/hd/a1ffa4b7729cb355b2a676fb.webp",
+      "bytes": 1636,
+      "sha256": "a1ffa4b7729cb355b2a676fb8ece793dc4e0ed37799278eee163b3646fda79ee"
+    },
+    {
       "file": "decor-assets/hd/a221162ba79b6659291c244d-atlas.webp",
       "bytes": 13054,
       "sha256": "a221162ba79b6659291c244deda10f1812b0663ead0741ef1e8f7a711cad1054"
@@ -21894,6 +22829,11 @@
       "sha256": "a671bb6bdee3f7a46d892530b95c5044653b4c5db8bb0a351e095b5bfc704ba9"
     },
     {
+      "file": "decor-assets/hd/a75c11a8ff73d4ed20b96bf6.webp",
+      "bytes": 1196,
+      "sha256": "a75c11a8ff73d4ed20b96bf6267302491c468c0905c047e517e748501add5df9"
+    },
+    {
       "file": "decor-assets/hd/a77300e4c24fba61516417ae.webp",
       "bytes": 1694,
       "sha256": "a77300e4c24fba61516417ae3dcc6f9425c79f8f9adb14910d8f4f3833e4f5fd"
@@ -21964,6 +22904,11 @@
       "sha256": "a97fd39de3284b2c26e9c247a631891eccb3953132d295b7396ff906f454a953"
     },
     {
+      "file": "decor-assets/hd/a9b2214f5527435a27d22107.webp",
+      "bytes": 1308,
+      "sha256": "a9b2214f5527435a27d2210789501050947d0c01e8020c485676a12983299295"
+    },
+    {
       "file": "decor-assets/hd/a9b7c6c5285eb2b249905cc3.webp",
       "bytes": 1324,
       "sha256": "a9b7c6c5285eb2b249905cc3de529b136a33b3f5ea73326bda57df749033a802"
@@ -22029,6 +22974,11 @@
       "sha256": "abb26317738519fdbb1de14008901ea57bf3a844b16bef92dc2431110d14c989"
     },
     {
+      "file": "decor-assets/hd/abb862309a4e8f76483478db.webp",
+      "bytes": 1276,
+      "sha256": "abb862309a4e8f76483478dbb75ca1e28d36cb66bcef60f36e0b6656eb055359"
+    },
+    {
       "file": "decor-assets/hd/abdafd712f01d4f5d750d351.webp",
       "bytes": 2816,
       "sha256": "abdafd712f01d4f5d750d35117fe4438c4be454e164cb80902370ff651f7cdac"
@@ -22037,6 +22987,11 @@
       "file": "decor-assets/hd/abdda57805de17b6172908e0.webp",
       "bytes": 786,
       "sha256": "abdda57805de17b6172908e07394277f59544f0dcab4d5539e708bc886c045c3"
+    },
+    {
+      "file": "decor-assets/hd/ac33280f62d1a45c04d9f840.webp",
+      "bytes": 5262,
+      "sha256": "ac33280f62d1a45c04d9f840d7e26b2d04361953a78d2fdecfdf0f1493cbaa02"
     },
     {
       "file": "decor-assets/hd/ac36acee9ff2a32ec236b413-atlas.webp",
@@ -22082,6 +23037,11 @@
       "file": "decor-assets/hd/ad7cd5dbde0aea023299c934.webp",
       "bytes": 1468,
       "sha256": "ad7cd5dbde0aea023299c934106c768e71c604277a07577f4c196ac7df0c7f2d"
+    },
+    {
+      "file": "decor-assets/hd/adaa8d6465270bb0baae598b.webp",
+      "bytes": 2132,
+      "sha256": "adaa8d6465270bb0baae598bf446a5a26015ca9ce196872352579cf394b21a06"
     },
     {
       "file": "decor-assets/hd/adaf6ebcc4da1639fa6b844d.webp",
@@ -22132,6 +23092,11 @@
       "file": "decor-assets/hd/afbe2c4fa490562c5a900285.webp",
       "bytes": 2662,
       "sha256": "afbe2c4fa490562c5a900285cef2aa958e66ddba13d8c288e197669b9d7f4b76"
+    },
+    {
+      "file": "decor-assets/hd/b02b3294344006b94e1c636c.webp",
+      "bytes": 814,
+      "sha256": "b02b3294344006b94e1c636cad2e7085d38535167b96860b4f6decff8d0be918"
     },
     {
       "file": "decor-assets/hd/b040c6979c97614a6ac002bf.webp",
@@ -22239,6 +23204,11 @@
       "sha256": "b365a2de84b73b9a8dee7dc1fae6795029606a1aa5fc70e1314c6611d990c970"
     },
     {
+      "file": "decor-assets/hd/b3a2bf319492ad16d56eba8a.webp",
+      "bytes": 856,
+      "sha256": "b3a2bf319492ad16d56eba8a8873ea0361f464b0433e8645f2a1ff60f63d2d60"
+    },
+    {
       "file": "decor-assets/hd/b3b06bf7015da2014d5a65e8.webp",
       "bytes": 1708,
       "sha256": "b3b06bf7015da2014d5a65e82129221be3cc26f1df82e28d6d61a9ca48e0af67"
@@ -22319,6 +23289,11 @@
       "sha256": "b64ac002a4b6f3dab6ee7f67640810f6cef6d6023d27f04707a98082ba268737"
     },
     {
+      "file": "decor-assets/hd/b6584c805789968595fae939.webp",
+      "bytes": 602,
+      "sha256": "b6584c805789968595fae939e46ee4820d0b2da589a11cd57d4665916e8ddbd6"
+    },
+    {
       "file": "decor-assets/hd/b6614516a54321f99bf34f61.webp",
       "bytes": 1850,
       "sha256": "b6614516a54321f99bf34f617209d23485a76496be8eb73d1f8cae3d015b6c3c"
@@ -22372,6 +23347,11 @@
       "file": "decor-assets/hd/b7b12695cce26cc7fb8f47f5.webp",
       "bytes": 9664,
       "sha256": "b7b12695cce26cc7fb8f47f55af0610f55941a37d5d96e48238344fb562138da"
+    },
+    {
+      "file": "decor-assets/hd/b7b3979aa235b9d665eda151.webp",
+      "bytes": 3372,
+      "sha256": "b7b3979aa235b9d665eda15170dad1a022c5bc716a2c0f09881a7e7dcc5d4bae"
     },
     {
       "file": "decor-assets/hd/b7c881f5eeaeeab4af290487.webp",
@@ -22504,6 +23484,11 @@
       "sha256": "baf2051ae72cfd6b30bb05eacc80fa66ae57cf0acc151f226591831a9b98b057"
     },
     {
+      "file": "decor-assets/hd/baf32007e4f90acebdf664b6.webp",
+      "bytes": 906,
+      "sha256": "baf32007e4f90acebdf664b66daea6a30f0fe3432a0edc330d24392e7be96c0d"
+    },
+    {
       "file": "decor-assets/hd/baf7172aa3c9ff572661c091-atlas.webp",
       "bytes": 5634,
       "sha256": "baf7172aa3c9ff572661c091d31fc9cafe29196d18c8321fe8c13565f2e96aeb"
@@ -22619,9 +23604,19 @@
       "sha256": "bfd778f3be3d6348d9ac1817b68ea5941bd87c1436fca51db44ee60b1882612e"
     },
     {
+      "file": "decor-assets/hd/bfddd7b91ccaaf8f3bd98022.webp",
+      "bytes": 1104,
+      "sha256": "bfddd7b91ccaaf8f3bd98022fb8b8c7c0981a3cc62c251c325711840508accc0"
+    },
+    {
       "file": "decor-assets/hd/c018b192952be6a921de591e.webp",
       "bytes": 2070,
       "sha256": "c018b192952be6a921de591e1e77a7d9e1875fcd920bba9b7ca97d6bbf49dbaa"
+    },
+    {
+      "file": "decor-assets/hd/c0629df31718a817a84f037c.webp",
+      "bytes": 1370,
+      "sha256": "c0629df31718a817a84f037ca243200c02f812cbf922da94e786b5327e16bd31"
     },
     {
       "file": "decor-assets/hd/c0a9c276187f1c0ae612deb3.webp",
@@ -22734,6 +23729,11 @@
       "sha256": "c4be2ac4e0fe1f03f6d80ebed243b10ca9c77b5ff5de49994ea23bf850592c6f"
     },
     {
+      "file": "decor-assets/hd/c5055744ec1a7bc565230ddc.webp",
+      "bytes": 760,
+      "sha256": "c5055744ec1a7bc565230ddc8978c80c3e4414d35a08154384a1fbb421296a8a"
+    },
+    {
       "file": "decor-assets/hd/c514d697a6a012e7aad5a561.webp",
       "bytes": 852,
       "sha256": "c514d697a6a012e7aad5a561054499f5fe94f484aa6859bb9612f9be7c9ce43e"
@@ -22782,6 +23782,11 @@
       "file": "decor-assets/hd/c66821b67cae57021eb835f6.webp",
       "bytes": 4542,
       "sha256": "c66821b67cae57021eb835f6691df8fb156697d60739b19ee85566df5b2ecf25"
+    },
+    {
+      "file": "decor-assets/hd/c73e514c3f5d46653031aef6.webp",
+      "bytes": 3900,
+      "sha256": "c73e514c3f5d46653031aef6d63111188f65c613d3f1e2b9ff7fa4677d483cef"
     },
     {
       "file": "decor-assets/hd/c7693ece298e4a4c2b241024.webp",
@@ -23119,6 +24124,11 @@
       "sha256": "cf9d974400f6a4c71b571f8c54e7c3bb4f5ccb8daf9a6bde5ccaf442ca2080cd"
     },
     {
+      "file": "decor-assets/hd/cfe68fcab30efa81f008af28.webp",
+      "bytes": 4884,
+      "sha256": "cfe68fcab30efa81f008af289600238791ec9393c37f6a8e952531ddef53d41d"
+    },
+    {
       "file": "decor-assets/hd/d02b3024e7ed8077aa692ef8.webp",
       "bytes": 3776,
       "sha256": "d02b3024e7ed8077aa692ef803e0e7a6fc8a15a20a8cf901b60c35441d6a5db9"
@@ -23212,6 +24222,11 @@
       "file": "decor-assets/hd/d3a8fe576707867ccac4f822.webp",
       "bytes": 3106,
       "sha256": "d3a8fe576707867ccac4f822a1882848f26c6487f28a038e21164f9c1d1fc578"
+    },
+    {
+      "file": "decor-assets/hd/d3b3b9110a6679a5a929283b.webp",
+      "bytes": 654,
+      "sha256": "d3b3b9110a6679a5a929283b33c9b216d2c917b68abf9fdc92698f8aa96c094a"
     },
     {
       "file": "decor-assets/hd/d3b775f4321a11344493683d.webp",
@@ -23349,6 +24364,11 @@
       "sha256": "d78e37ef349140f3bb0c9e0d99907c2a5205c09ac87a70153c153c1d0f94f323"
     },
     {
+      "file": "decor-assets/hd/d79a58bdb5419f10a9b87352.webp",
+      "bytes": 1248,
+      "sha256": "d79a58bdb5419f10a9b87352208a14b028cece7fdc175c18b3954376dc8bbfe5"
+    },
+    {
       "file": "decor-assets/hd/d79c13068756c0df6ec73394.webp",
       "bytes": 9950,
       "sha256": "d79c13068756c0df6ec7339427abbb71912711da3aee5d28d165f3aa18706538"
@@ -23357,6 +24377,11 @@
       "file": "decor-assets/hd/d7a085b80334926f1a48f1db.webp",
       "bytes": 2068,
       "sha256": "d7a085b80334926f1a48f1dbc2523b8d994dd66444146d19b1af156d4f832a2e"
+    },
+    {
+      "file": "decor-assets/hd/d7bf75933ff341868e4cda33.webp",
+      "bytes": 2138,
+      "sha256": "d7bf75933ff341868e4cda334c42ffb2c673b7728a1895061b60c23dbd002537"
     },
     {
       "file": "decor-assets/hd/d7ca8eee39f31d8c29d51493.webp",
@@ -23442,6 +24467,11 @@
       "file": "decor-assets/hd/da2e5d19fa0d35446218aff0.webp",
       "bytes": 7382,
       "sha256": "da2e5d19fa0d35446218aff0b631080bb82142beccee55eff31eb0929d60a3d1"
+    },
+    {
+      "file": "decor-assets/hd/da392262f7c9c0a8007d4c9e.webp",
+      "bytes": 3120,
+      "sha256": "da392262f7c9c0a8007d4c9ed0e9e57697b9d155c0aeb0aa664977dd6df23719"
     },
     {
       "file": "decor-assets/hd/dad19955bb885dda51d57eb6.webp",
@@ -23639,6 +24669,11 @@
       "sha256": "e0b69f3aa3b2b8aa718e6648fbd998d3810ab765a62e930c5d63f09265adc1fc"
     },
     {
+      "file": "decor-assets/hd/e0ba2e2110b4f13ec237f64e.webp",
+      "bytes": 1442,
+      "sha256": "e0ba2e2110b4f13ec237f64e6c91c93a19f3479e7254c37326d51344521129f0"
+    },
+    {
       "file": "decor-assets/hd/e0d8760453d57a5f4c259669.webp",
       "bytes": 4338,
       "sha256": "e0d8760453d57a5f4c259669fd112bc5ea60c3011f4af8ffc376c676c877e675"
@@ -23677,6 +24712,11 @@
       "file": "decor-assets/hd/e211850296141e84532639e5.webp",
       "bytes": 1246,
       "sha256": "e211850296141e84532639e57d783cc28d940d6c2427365ba2734efa12f6fc0e"
+    },
+    {
+      "file": "decor-assets/hd/e2199d992ca8c89ee3fd4aee.webp",
+      "bytes": 8510,
+      "sha256": "e2199d992ca8c89ee3fd4aee1983b2f23e01834c921e77760736f1f55a1280bd"
     },
     {
       "file": "decor-assets/hd/e21ae6d9c2341eb6f5a04117.webp",
@@ -23912,6 +24952,11 @@
       "file": "decor-assets/hd/e9c86dfa86cf6dd8ec133b9d.webp",
       "bytes": 5546,
       "sha256": "e9c86dfa86cf6dd8ec133b9d63ba10b14536d3c95b5e055bac6d00502ffc3d76"
+    },
+    {
+      "file": "decor-assets/hd/e9ec411523c4edd92cb4e557.webp",
+      "bytes": 2516,
+      "sha256": "e9ec411523c4edd92cb4e557ddca4a1d6f8320ca9f603d5231cafa72d94bd5c6"
     },
     {
       "file": "decor-assets/hd/ea2a065432a753a64812a4b0-atlas.webp",
@@ -24154,6 +25199,11 @@
       "sha256": "f1dd8fbfa7cc141452dbf7ad5e158e69370dc6a69aaa5f8766ba3cfc5d4ae16b"
     },
     {
+      "file": "decor-assets/hd/f1de4d7b340cea2eea4edca8.webp",
+      "bytes": 896,
+      "sha256": "f1de4d7b340cea2eea4edca8fa49ced1b4a2424bc49d1464efa58fd764cf77cc"
+    },
+    {
       "file": "decor-assets/hd/f1f8c46a9c1eb181aa75d025.webp",
       "bytes": 2738,
       "sha256": "f1f8c46a9c1eb181aa75d0258f0d57e062739cbab6b7b12472c068c01f56ed54"
@@ -24324,6 +25374,11 @@
       "sha256": "f8355de2f6b96f0f99f8ef1bc51a49404c3470cd83c189bea26b849971bb0160"
     },
     {
+      "file": "decor-assets/hd/f869f0859a01bacdd25adc2b.webp",
+      "bytes": 4262,
+      "sha256": "f869f0859a01bacdd25adc2b979cdce6988dc45d4476f95613a10f28e0ff124d"
+    },
+    {
       "file": "decor-assets/hd/f86afc56724fd63b808bbf66.webp",
       "bytes": 6868,
       "sha256": "f86afc56724fd63b808bbf66fb65078139a0e46c157f1c58ed776205343f1e98"
@@ -24404,6 +25459,16 @@
       "sha256": "fbff0576878da12a024c586efb15d6b2f358b82a32caba35908beb913f88e8b2"
     },
     {
+      "file": "decor-assets/hd/fc8fc952f8a9d8350eb91522.webp",
+      "bytes": 1158,
+      "sha256": "fc8fc952f8a9d8350eb91522813e16adf6df16500687ab05dd08c44fdc1ad53b"
+    },
+    {
+      "file": "decor-assets/hd/fca157a7b4857f4ac01ab234.webp",
+      "bytes": 2368,
+      "sha256": "fca157a7b4857f4ac01ab234aa85a1cec04c6512c6bacf18b6607abd38a5a5a9"
+    },
+    {
       "file": "decor-assets/hd/fcba59fdd57acea7a6fd87eb.webp",
       "bytes": 2718,
       "sha256": "fcba59fdd57acea7a6fd87eb393c5b333d3873853ef9d5905a9e6d28ac66b265"
@@ -24437,6 +25502,16 @@
       "file": "decor-assets/hd/fd6ef2badd420945354bee4d.webp",
       "bytes": 1668,
       "sha256": "fd6ef2badd420945354bee4dc7a66bfa9a861dac39d8ae1f8b105e8bdd8d5529"
+    },
+    {
+      "file": "decor-assets/hd/fe39da9171c4cc10fdca225a.webp",
+      "bytes": 1462,
+      "sha256": "fe39da9171c4cc10fdca225a87442cafeb5081099e2151e8b3a7259763399b43"
+    },
+    {
+      "file": "decor-assets/hd/fe5821f668af7612c0da05b1.webp",
+      "bytes": 1268,
+      "sha256": "fe5821f668af7612c0da05b151f0905853fd6f42a2ef4fb6fd9924bde2db2b47"
     },
     {
       "file": "decor-assets/hd/fed4ca7975949cae6ed55832.webp",
@@ -24477,6 +25552,366 @@
       "file": "decor-assets/hd/ffd6f4539741986938ac6b98.webp",
       "bytes": 2246,
       "sha256": "ffd6f4539741986938ac6b98818df3cfdb43526a0e7b2e41e954ee08453eefe5"
+    },
+    {
+      "file": "environment/creature-sleep/bowtruckle-0-hd.webp",
+      "bytes": 402,
+      "sha256": "5619057cb58ea6c119cb77c412fe0e9f9a0e216275536741f0f367125fb7b97c"
+    },
+    {
+      "file": "environment/creature-sleep/bowtruckle-1-hd.webp",
+      "bytes": 534,
+      "sha256": "82e18cdaa355354edc6aeab00b39ddcf875ec65f504c524c73c719d2b08dd2b1"
+    },
+    {
+      "file": "environment/creature-sleep/bowtruckle-2-hd.webp",
+      "bytes": 668,
+      "sha256": "7c59a9dbbbde7687fb2a2bf74ea4341ebef4673738a5a8b5bb79d846a0ecbf43"
+    },
+    {
+      "file": "environment/creature-sleep/bowtruckle-3-hd.webp",
+      "bytes": 760,
+      "sha256": "c5055744ec1a7bc565230ddc8978c80c3e4414d35a08154384a1fbb421296a8a"
+    },
+    {
+      "file": "environment/creature-sleep/crup-0-hd.webp",
+      "bytes": 958,
+      "sha256": "30deafced0ad43cbfca64bbd654252ec1cc7a21b1aeaf0e6c0072b110fa43421"
+    },
+    {
+      "file": "environment/creature-sleep/crup-1-hd.webp",
+      "bytes": 1370,
+      "sha256": "c0629df31718a817a84f037ca243200c02f812cbf922da94e786b5327e16bd31"
+    },
+    {
+      "file": "environment/creature-sleep/crup-2-hd.webp",
+      "bytes": 1764,
+      "sha256": "0f3a50d01cbe490b646bb6c87ade835e59ccde8966ee6d2b18ec3181544d4093"
+    },
+    {
+      "file": "environment/creature-sleep/crup-3-hd.webp",
+      "bytes": 2194,
+      "sha256": "0ddcff7b9bfa75d67805284a935ff4777a912ba6b16ba39305e3931c02a67f5f"
+    },
+    {
+      "file": "environment/creature-sleep/diricawl-0-hd.webp",
+      "bytes": 1008,
+      "sha256": "5799e1901f47ca2c83ff97aa83e64777491258fe22424c2bcb5bb8d44fe76baf"
+    },
+    {
+      "file": "environment/creature-sleep/diricawl-1-hd.webp",
+      "bytes": 1384,
+      "sha256": "519d1aacc28ab2d8cda897d3bb62f3fe758d7cf601902c94b804f52d3f8f90ab"
+    },
+    {
+      "file": "environment/creature-sleep/diricawl-2-hd.webp",
+      "bytes": 1956,
+      "sha256": "18350b6ff8fa3c4159364c0fa7901038bdf59a1c7c382e89d3d5e27d063c43ff"
+    },
+    {
+      "file": "environment/creature-sleep/diricawl-3-hd.webp",
+      "bytes": 2138,
+      "sha256": "d7bf75933ff341868e4cda334c42ffb2c673b7728a1895061b60c23dbd002537"
+    },
+    {
+      "file": "environment/creature-sleep/dragon-0-hd.webp",
+      "bytes": 1196,
+      "sha256": "a75c11a8ff73d4ed20b96bf6267302491c468c0905c047e517e748501add5df9"
+    },
+    {
+      "file": "environment/creature-sleep/dragon-1-hd.webp",
+      "bytes": 1554,
+      "sha256": "7f0ee1b4a4963e7539cd51c12157cdf8822d3341920443812dad7fc121c419eb"
+    },
+    {
+      "file": "environment/creature-sleep/dragon-2-hd.webp",
+      "bytes": 5770,
+      "sha256": "721df8f5109fe726a11c908d8e40fe548725ed25fd0529af6a5d244beecc1004"
+    },
+    {
+      "file": "environment/creature-sleep/dragon-3-hd.webp",
+      "bytes": 8510,
+      "sha256": "e2199d992ca8c89ee3fd4aee1983b2f23e01834c921e77760736f1f55a1280bd"
+    },
+    {
+      "file": "environment/creature-sleep/fwooper-0-hd.webp",
+      "bytes": 704,
+      "sha256": "8e980672a301f66a38a3a6542bb8229c2089f2c3c8d2a6be5dd30a53082c5dd4"
+    },
+    {
+      "file": "environment/creature-sleep/fwooper-1-hd.webp",
+      "bytes": 1158,
+      "sha256": "fc8fc952f8a9d8350eb91522813e16adf6df16500687ab05dd08c44fdc1ad53b"
+    },
+    {
+      "file": "environment/creature-sleep/fwooper-2-hd.webp",
+      "bytes": 1442,
+      "sha256": "e0ba2e2110b4f13ec237f64e6c91c93a19f3479e7254c37326d51344521129f0"
+    },
+    {
+      "file": "environment/creature-sleep/fwooper-3-hd.webp",
+      "bytes": 2132,
+      "sha256": "adaa8d6465270bb0baae598bf446a5a26015ca9ce196872352579cf394b21a06"
+    },
+    {
+      "file": "environment/creature-sleep/grindylow-0-hd.webp",
+      "bytes": 906,
+      "sha256": "baf32007e4f90acebdf664b66daea6a30f0fe3432a0edc330d24392e7be96c0d"
+    },
+    {
+      "file": "environment/creature-sleep/grindylow-1-hd.webp",
+      "bytes": 1462,
+      "sha256": "fe39da9171c4cc10fdca225a87442cafeb5081099e2151e8b3a7259763399b43"
+    },
+    {
+      "file": "environment/creature-sleep/grindylow-2-hd.webp",
+      "bytes": 2062,
+      "sha256": "5c37ae208f7b52a2df3bd0cc9e50a6e7bc69b0c7bc5982667d8fa8f0416ecc6e"
+    },
+    {
+      "file": "environment/creature-sleep/grindylow-3-hd.webp",
+      "bytes": 3002,
+      "sha256": "3c3e6427ff446eb5b0edd402909ea078ef2adea1f7435383da1739f6c01c3f4d"
+    },
+    {
+      "file": "environment/creature-sleep/hippogriff-0-hd.webp",
+      "bytes": 1248,
+      "sha256": "d79a58bdb5419f10a9b87352208a14b028cece7fdc175c18b3954376dc8bbfe5"
+    },
+    {
+      "file": "environment/creature-sleep/hippogriff-1-hd.webp",
+      "bytes": 4262,
+      "sha256": "f869f0859a01bacdd25adc2b979cdce6988dc45d4476f95613a10f28e0ff124d"
+    },
+    {
+      "file": "environment/creature-sleep/hippogriff-2-hd.webp",
+      "bytes": 5262,
+      "sha256": "ac33280f62d1a45c04d9f840d7e26b2d04361953a78d2fdecfdf0f1493cbaa02"
+    },
+    {
+      "file": "environment/creature-sleep/hippogriff-3-hd.webp",
+      "bytes": 6206,
+      "sha256": "7b87fa601924ed1813136d91fb84f49eaae9caab1ce01ce546177990bec5acc2"
+    },
+    {
+      "file": "environment/creature-sleep/kappa-0-hd.webp",
+      "bytes": 814,
+      "sha256": "b02b3294344006b94e1c636cad2e7085d38535167b96860b4f6decff8d0be918"
+    },
+    {
+      "file": "environment/creature-sleep/kappa-1-hd.webp",
+      "bytes": 1290,
+      "sha256": "89f5150fabd1764dab703af6b284910fef8ee20cc0f78b6fcbcb754907dcebed"
+    },
+    {
+      "file": "environment/creature-sleep/kappa-2-hd.webp",
+      "bytes": 1816,
+      "sha256": "329a75f380c092be9907f82f1353d9eb5c413e18ff183bef373abc36f65ec473"
+    },
+    {
+      "file": "environment/creature-sleep/kappa-3-hd.webp",
+      "bytes": 2188,
+      "sha256": "11b8e9107034ccf8ee2cf86fc9cefd21d4e05178bac40fd0ded4de63bcfeb911"
+    },
+    {
+      "file": "environment/creature-sleep/knarl-0-hd.webp",
+      "bytes": 1428,
+      "sha256": "61b96a504b8ef2697058ab07ca2ae03b101d1ab35079f7823a225e8e4f8122d9"
+    },
+    {
+      "file": "environment/creature-sleep/knarl-1-hd.webp",
+      "bytes": 2376,
+      "sha256": "2858b8463febf7981138ae362da304714a22c74771cd8edbb483e99eed838092"
+    },
+    {
+      "file": "environment/creature-sleep/knarl-2-hd.webp",
+      "bytes": 3774,
+      "sha256": "022517b86092fdcc8955753e95fd00753307e1ba8b5108fbd5f2c2b3a1e9c082"
+    },
+    {
+      "file": "environment/creature-sleep/knarl-3-hd.webp",
+      "bytes": 4708,
+      "sha256": "4a1479faa9d7d0a97181b8c6f7617805140be8ea9c64329b32b485961dac384b"
+    },
+    {
+      "file": "environment/creature-sleep/kneazle-0-hd.webp",
+      "bytes": 1276,
+      "sha256": "abb862309a4e8f76483478dbb75ca1e28d36cb66bcef60f36e0b6656eb055359"
+    },
+    {
+      "file": "environment/creature-sleep/kneazle-1-hd.webp",
+      "bytes": 1882,
+      "sha256": "0ab3aa664eee1b72abcd0864554cbc9fb869fdbcb788bace44bfe3609d880b02"
+    },
+    {
+      "file": "environment/creature-sleep/kneazle-2-hd.webp",
+      "bytes": 2516,
+      "sha256": "e9ec411523c4edd92cb4e557ddca4a1d6f8320ca9f603d5231cafa72d94bd5c6"
+    },
+    {
+      "file": "environment/creature-sleep/kneazle-3-hd.webp",
+      "bytes": 3172,
+      "sha256": "588469d719b668107cf00146eaa2d50b998c9ad86d09265b5749642730120aa4"
+    },
+    {
+      "file": "environment/creature-sleep/mooncalf-0-hd.webp",
+      "bytes": 856,
+      "sha256": "b3a2bf319492ad16d56eba8a8873ea0361f464b0433e8645f2a1ff60f63d2d60"
+    },
+    {
+      "file": "environment/creature-sleep/mooncalf-1-hd.webp",
+      "bytes": 1308,
+      "sha256": "a9b2214f5527435a27d2210789501050947d0c01e8020c485676a12983299295"
+    },
+    {
+      "file": "environment/creature-sleep/mooncalf-2-hd.webp",
+      "bytes": 1646,
+      "sha256": "92d922a479aa883a8fc5fb6d2954e3c3d61b7d399a9c37d2a0e1ec99afea589c"
+    },
+    {
+      "file": "environment/creature-sleep/mooncalf-3-hd.webp",
+      "bytes": 1982,
+      "sha256": "6c3814b75c31c22d7ea2fa7538bf97ac426563fcb12127b2be98eb9d62776f06"
+    },
+    {
+      "file": "environment/creature-sleep/niffler-0-hd.webp",
+      "bytes": 428,
+      "sha256": "4d8addaa638aa429e9587e8306e323c2cd042f09af6e838c26c823de13e8f528"
+    },
+    {
+      "file": "environment/creature-sleep/niffler-1-hd.webp",
+      "bytes": 510,
+      "sha256": "3ab2a00ae57a3945b96f60c898676b71ea0f9ac5c59c5771db7e77f8fd5ea3f8"
+    },
+    {
+      "file": "environment/creature-sleep/niffler-2-hd.webp",
+      "bytes": 602,
+      "sha256": "b6584c805789968595fae939e46ee4820d0b2da589a11cd57d4665916e8ddbd6"
+    },
+    {
+      "file": "environment/creature-sleep/niffler-3-hd.webp",
+      "bytes": 600,
+      "sha256": "7e0e61c8b6f1ad3f9fce40c2f403e9776cba02cf7f0856f30de726f80cbcbb5a"
+    },
+    {
+      "file": "environment/creature-sleep/porlock-0-hd.webp",
+      "bytes": 896,
+      "sha256": "f1de4d7b340cea2eea4edca8fa49ced1b4a2424bc49d1464efa58fd764cf77cc"
+    },
+    {
+      "file": "environment/creature-sleep/porlock-1-hd.webp",
+      "bytes": 1268,
+      "sha256": "fe5821f668af7612c0da05b151f0905853fd6f42a2ef4fb6fd9924bde2db2b47"
+    },
+    {
+      "file": "environment/creature-sleep/porlock-2-hd.webp",
+      "bytes": 1762,
+      "sha256": "44526ac226c353e440e14871ba7669a7b88628dc831aa65675b325ad1262876d"
+    },
+    {
+      "file": "environment/creature-sleep/porlock-3-hd.webp",
+      "bytes": 2368,
+      "sha256": "fca157a7b4857f4ac01ab234aa85a1cec04c6512c6bacf18b6607abd38a5a5a9"
+    },
+    {
+      "file": "environment/creature-sleep/puffskein-0-hd.webp",
+      "bytes": 350,
+      "sha256": "423127f45ed76e945763990e282919f64e513e2460d6126e64a89951f739498d"
+    },
+    {
+      "file": "environment/creature-sleep/puffskein-1-hd.webp",
+      "bytes": 510,
+      "sha256": "79beffd50211447af520b34f229357c7a048e81c93acf3ec17e3b88a417683b1"
+    },
+    {
+      "file": "environment/creature-sleep/puffskein-2-hd.webp",
+      "bytes": 654,
+      "sha256": "d3b3b9110a6679a5a929283b33c9b216d2c917b68abf9fdc92698f8aa96c094a"
+    },
+    {
+      "file": "environment/creature-sleep/puffskein-3-hd.webp",
+      "bytes": 654,
+      "sha256": "d3b3b9110a6679a5a929283b33c9b216d2c917b68abf9fdc92698f8aa96c094a"
+    },
+    {
+      "file": "environment/creature-sleep/salamander-0-hd.webp",
+      "bytes": 1104,
+      "sha256": "bfddd7b91ccaaf8f3bd98022fb8b8c7c0981a3cc62c251c325711840508accc0"
+    },
+    {
+      "file": "environment/creature-sleep/salamander-1-hd.webp",
+      "bytes": 2150,
+      "sha256": "6e7a98824f355c67417fa9b05512c28705f36c5e0cf1ad5ee99bf7c96b6d123f"
+    },
+    {
+      "file": "environment/creature-sleep/salamander-2-hd.webp",
+      "bytes": 3120,
+      "sha256": "da392262f7c9c0a8007d4c9ed0e9e57697b9d155c0aeb0aa664977dd6df23719"
+    },
+    {
+      "file": "environment/creature-sleep/salamander-3-hd.webp",
+      "bytes": 3858,
+      "sha256": "34b3932a7cad453a864c5f3e577ced30bb0f5d42a7e63aecbd8664cffcc7d0c7"
+    },
+    {
+      "file": "environment/creature-sleep/thestral-0-hd.webp",
+      "bytes": 1130,
+      "sha256": "5832ddc0c81105d423ee8bca796fa17371b81ab4b5eacb7d2e8efe0a5426f286"
+    },
+    {
+      "file": "environment/creature-sleep/thestral-1-hd.webp",
+      "bytes": 1760,
+      "sha256": "5d63eaeff65f248381cd29c94c0a9c531f16f9236216ec7a5d0a0b30eb46acaf"
+    },
+    {
+      "file": "environment/creature-sleep/thestral-2-hd.webp",
+      "bytes": 2620,
+      "sha256": "78d6c67672e493a97bc56d7bab831915f572acd7ab095bf8f1c9d1b56777ff66"
+    },
+    {
+      "file": "environment/creature-sleep/thestral-3-hd.webp",
+      "bytes": 3372,
+      "sha256": "b7b3979aa235b9d665eda15170dad1a022c5bc716a2c0f09881a7e7dcc5d4bae"
+    },
+    {
+      "file": "environment/creature-sleep/three-headed-dog-0-hd.webp",
+      "bytes": 1636,
+      "sha256": "a1ffa4b7729cb355b2a676fb8ece793dc4e0ed37799278eee163b3646fda79ee"
+    },
+    {
+      "file": "environment/creature-sleep/three-headed-dog-1-hd.webp",
+      "bytes": 3900,
+      "sha256": "c73e514c3f5d46653031aef6d63111188f65c613d3f1e2b9ff7fa4677d483cef"
+    },
+    {
+      "file": "environment/creature-sleep/three-headed-dog-2-hd.webp",
+      "bytes": 4884,
+      "sha256": "cfe68fcab30efa81f008af289600238791ec9393c37f6a8e952531ddef53d41d"
+    },
+    {
+      "file": "environment/creature-sleep/three-headed-dog-3-hd.webp",
+      "bytes": 5768,
+      "sha256": "3f058715f6c8f1901815f96d5e42633fc0999aa57265040a9abf83d48ae1373b"
+    },
+    {
+      "file": "environment/creature-sleep/unicorn-0-hd.webp",
+      "bytes": 2100,
+      "sha256": "772ba719231ccf86c1cd8d83f4c67067bd7d5e6e6720246507ec22633a707bfb"
+    },
+    {
+      "file": "environment/creature-sleep/unicorn-1-hd.webp",
+      "bytes": 3234,
+      "sha256": "6ccf053b70cb59843b0c18808279654f51c0ff9101eca398f41ef2c2a857d70b"
+    },
+    {
+      "file": "environment/creature-sleep/unicorn-2-hd.webp",
+      "bytes": 4576,
+      "sha256": "3248009ec6d5e58eb37a41307fe06c73e240c95e51bee573e0f9848a5f1e5ed9"
+    },
+    {
+      "file": "environment/creature-sleep/unicorn-3-hd.webp",
+      "bytes": 5652,
+      "sha256": "105948f7aa0c027117079079e9ae339a88c5f53840297fe040c7fe972e3c95c3"
     },
     {
       "file": "v24-art/event-halloween.webp",
@@ -24520,11 +25955,11 @@
     }
   ],
   "totals": {
-    "converted": 1741,
-    "existingWebp": 1417,
-    "originalBytes": 18051596,
-    "webpBytes": 15266680,
-    "savedBytes": 2784916,
-    "savedPercent": 15.43
+    "converted": 1813,
+    "existingWebp": 1560,
+    "originalBytes": 18459170,
+    "webpBytes": 15633778,
+    "savedBytes": 2825392,
+    "savedPercent": 15.31
   }
 }

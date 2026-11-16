@@ -1,0 +1,1163 @@
+{
+  "species": 18,
+  "ageVariants": 72,
+  "lightingFamilies": 28,
+  "lightingCells": 188,
+  "previousHDSelectionsPreserved": 1558,
+  "records": [
+    {
+      "species": "puffskein",
+      "age": 0,
+      "native": "environment/creature-sleep/puffskein-0.png",
+      "hd": "decor-assets/hd/423127f45ed76e945763990e.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 24,
+        "y": 38,
+        "w": 16,
+        "h": 10
+      }
+    },
+    {
+      "species": "puffskein",
+      "age": 1,
+      "native": "environment/creature-sleep/puffskein-1.png",
+      "hd": "decor-assets/hd/79beffd50211447af520b34f.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 22,
+        "y": 35,
+        "w": 21,
+        "h": 13
+      }
+    },
+    {
+      "species": "puffskein",
+      "age": 2,
+      "native": "environment/creature-sleep/puffskein-2.png",
+      "hd": "decor-assets/hd/d3b3b9110a6679a5a929283b.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 31,
+        "w": 26,
+        "h": 17
+      }
+    },
+    {
+      "species": "puffskein",
+      "age": 3,
+      "native": "environment/creature-sleep/puffskein-3.png",
+      "hd": "decor-assets/hd/d3b3b9110a6679a5a929283b.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 31,
+        "w": 26,
+        "h": 17
+      }
+    },
+    {
+      "species": "bowtruckle",
+      "age": 0,
+      "native": "environment/creature-sleep/bowtruckle-0.png",
+      "hd": "decor-assets/hd/5619057cb58ea6c119cb77c4.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 22,
+        "y": 39,
+        "w": 20,
+        "h": 9
+      }
+    },
+    {
+      "species": "bowtruckle",
+      "age": 1,
+      "native": "environment/creature-sleep/bowtruckle-1.png",
+      "hd": "decor-assets/hd/82e18cdaa355354edc6aeab0.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 20,
+        "y": 37,
+        "w": 25,
+        "h": 11
+      }
+    },
+    {
+      "species": "bowtruckle",
+      "age": 2,
+      "native": "environment/creature-sleep/bowtruckle-2.png",
+      "hd": "decor-assets/hd/7c59a9dbbbde7687fb2a2bf7.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 35,
+        "w": 30,
+        "h": 13
+      }
+    },
+    {
+      "species": "bowtruckle",
+      "age": 3,
+      "native": "environment/creature-sleep/bowtruckle-3.png",
+      "hd": "decor-assets/hd/c5055744ec1a7bc565230ddc.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 33,
+        "w": 32,
+        "h": 15
+      }
+    },
+    {
+      "species": "niffler",
+      "age": 0,
+      "native": "environment/creature-sleep/niffler-0.png",
+      "hd": "decor-assets/hd/4d8addaa638aa429e9587e83.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 36,
+        "w": 24,
+        "h": 12
+      }
+    },
+    {
+      "species": "niffler",
+      "age": 1,
+      "native": "environment/creature-sleep/niffler-1.png",
+      "hd": "decor-assets/hd/3ab2a00ae57a3945b96f60c8.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 34,
+        "w": 28,
+        "h": 14
+      }
+    },
+    {
+      "species": "niffler",
+      "age": 2,
+      "native": "environment/creature-sleep/niffler-2.png",
+      "hd": "decor-assets/hd/b6584c805789968595fae939.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 32,
+        "w": 33,
+        "h": 16
+      }
+    },
+    {
+      "species": "niffler",
+      "age": 3,
+      "native": "environment/creature-sleep/niffler-3.png",
+      "hd": "decor-assets/hd/7e0e61c8b6f1ad3f9fce40c2.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 32,
+        "w": 32,
+        "h": 16
+      }
+    },
+    {
+      "species": "hippogriff",
+      "age": 0,
+      "native": "environment/creature-sleep/hippogriff-0.png",
+      "hd": "decor-assets/hd/d79a58bdb5419f10a9b87352.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 30,
+        "w": 43,
+        "h": 18
+      }
+    },
+    {
+      "species": "hippogriff",
+      "age": 1,
+      "native": "environment/creature-sleep/hippogriff-1.png",
+      "hd": "decor-assets/hd/f869f0859a01bacdd25adc2b.webp",
+      "pivot": [
+        64,
+        100
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 59,
+        "w": 93,
+        "h": 41
+      }
+    },
+    {
+      "species": "hippogriff",
+      "age": 2,
+      "native": "environment/creature-sleep/hippogriff-2.png",
+      "hd": "decor-assets/hd/ac33280f62d1a45c04d9f840.webp",
+      "pivot": [
+        64,
+        100
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 53,
+        "w": 107,
+        "h": 47
+      }
+    },
+    {
+      "species": "hippogriff",
+      "age": 3,
+      "native": "environment/creature-sleep/hippogriff-3.png",
+      "hd": "decor-assets/hd/7b87fa601924ed1813136d91.webp",
+      "pivot": [
+        96,
+        160
+      ],
+      "bounds": {
+        "x": 38,
+        "y": 109,
+        "w": 117,
+        "h": 51
+      }
+    },
+    {
+      "species": "dragon",
+      "age": 0,
+      "native": "environment/creature-sleep/dragon-0.png",
+      "hd": "decor-assets/hd/a75c11a8ff73d4ed20b96bf6.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 26,
+        "w": 41,
+        "h": 22
+      }
+    },
+    {
+      "species": "dragon",
+      "age": 1,
+      "native": "environment/creature-sleep/dragon-1.png",
+      "hd": "decor-assets/hd/7f0ee1b4a4963e7539cd51c1.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 21,
+        "w": 49,
+        "h": 27
+      }
+    },
+    {
+      "species": "dragon",
+      "age": 2,
+      "native": "environment/creature-sleep/dragon-2.png",
+      "hd": "decor-assets/hd/721df8f5109fe726a11c908d.webp",
+      "pivot": [
+        64,
+        100
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 39,
+        "w": 110,
+        "h": 61
+      }
+    },
+    {
+      "species": "dragon",
+      "age": 3,
+      "native": "environment/creature-sleep/dragon-3.png",
+      "hd": "decor-assets/hd/e2199d992ca8c89ee3fd4aee.webp",
+      "pivot": [
+        128,
+        192
+      ],
+      "bounds": {
+        "x": 58,
+        "y": 114,
+        "w": 141,
+        "h": 78
+      }
+    },
+    {
+      "species": "three-headed-dog",
+      "age": 0,
+      "native": "environment/creature-sleep/three-headed-dog-0.png",
+      "hd": "decor-assets/hd/a1ffa4b7729cb355b2a676fb.webp",
+      "pivot": [
+        32,
+        48
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 23,
+        "w": 58,
+        "h": 25
+      }
+    },
+    {
+      "species": "three-headed-dog",
+      "age": 1,
+      "native": "environment/creature-sleep/three-headed-dog-1.png",
+      "hd": "decor-assets/hd/c73e514c3f5d46653031aef6.webp",
+      "pivot": [
+        64,
+        100
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 56,
+        "w": 101,
+        "h": 44
+      }
+    },
+    {
+      "species": "three-headed-dog",
+      "age": 2,
+      "native": "environment/creature-sleep/three-headed-dog-2.png",
+      "hd": "decor-assets/hd/cfe68fcab30efa81f008af28.webp",
+      "pivot": [
+        64,
+        100
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 49,
+        "w": 118,
+        "h": 51
+      }
+    },
+    {
+      "species": "three-headed-dog",
+      "age": 3,
+      "native": "environment/creature-sleep/three-headed-dog-3.png",
+      "hd": "decor-assets/hd/3f058715f6c8f1901815f96d.webp",
+      "pivot": [
+        80,
+        128
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 71,
+        "w": 132,
+        "h": 57
+      }
+    },
+    {
+      "species": "mooncalf",
+      "age": 0,
+      "native": "environment/creature-sleep/mooncalf-0.png",
+      "hd": "decor-assets/hd/b3a2bf319492ad16d56eba8a.webp",
+      "pivot": [
+        48,
+        112
+      ],
+      "bounds": {
+        "x": 29,
+        "y": 98,
+        "w": 40,
+        "h": 14
+      }
+    },
+    {
+      "species": "mooncalf",
+      "age": 1,
+      "native": "environment/creature-sleep/mooncalf-1.png",
+      "hd": "decor-assets/hd/a9b2214f5527435a27d22107.webp",
+      "pivot": [
+        48,
+        112
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 93,
+        "w": 54,
+        "h": 19
+      }
+    },
+    {
+      "species": "mooncalf",
+      "age": 2,
+      "native": "environment/creature-sleep/mooncalf-2.png",
+      "hd": "decor-assets/hd/92d922a479aa883a8fc5fb6d.webp",
+      "pivot": [
+        48,
+        112
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 89,
+        "w": 67,
+        "h": 23
+      }
+    },
+    {
+      "species": "mooncalf",
+      "age": 3,
+      "native": "environment/creature-sleep/mooncalf-3.png",
+      "hd": "decor-assets/hd/6c3814b75c31c22d7ea2fa75.webp",
+      "pivot": [
+        48,
+        112
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 86,
+        "w": 75,
+        "h": 26
+      }
+    },
+    {
+      "species": "kneazle",
+      "age": 0,
+      "native": "environment/creature-sleep/kneazle-0.png",
+      "hd": "decor-assets/hd/abb862309a4e8f76483478db.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 28,
+        "y": 52,
+        "w": 40,
+        "h": 28
+      }
+    },
+    {
+      "species": "kneazle",
+      "age": 1,
+      "native": "environment/creature-sleep/kneazle-1.png",
+      "hd": "decor-assets/hd/0ab3aa664eee1b72abcd0864.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 23,
+        "y": 43,
+        "w": 51,
+        "h": 37
+      }
+    },
+    {
+      "species": "kneazle",
+      "age": 2,
+      "native": "environment/creature-sleep/kneazle-2.png",
+      "hd": "decor-assets/hd/e9ec411523c4edd92cb4e557.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 36,
+        "w": 61,
+        "h": 44
+      }
+    },
+    {
+      "species": "kneazle",
+      "age": 3,
+      "native": "environment/creature-sleep/kneazle-3.png",
+      "hd": "decor-assets/hd/588469d719b668107cf00146.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 28,
+        "w": 72,
+        "h": 52
+      }
+    },
+    {
+      "species": "diricawl",
+      "age": 0,
+      "native": "environment/creature-sleep/diricawl-0.png",
+      "hd": "decor-assets/hd/5799e1901f47ca2c83ff97aa.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 32,
+        "y": 61,
+        "w": 34,
+        "h": 19
+      }
+    },
+    {
+      "species": "diricawl",
+      "age": 1,
+      "native": "environment/creature-sleep/diricawl-1.png",
+      "hd": "decor-assets/hd/519d1aacc28ab2d8cda897d3.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 27,
+        "y": 56,
+        "w": 43,
+        "h": 24
+      }
+    },
+    {
+      "species": "diricawl",
+      "age": 2,
+      "native": "environment/creature-sleep/diricawl-2.png",
+      "hd": "decor-assets/hd/18350b6ff8fa3c4159364c0f.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 49,
+        "w": 55,
+        "h": 31
+      }
+    },
+    {
+      "species": "diricawl",
+      "age": 3,
+      "native": "environment/creature-sleep/diricawl-3.png",
+      "hd": "decor-assets/hd/d7bf75933ff341868e4cda33.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 48,
+        "w": 59,
+        "h": 32
+      }
+    },
+    {
+      "species": "fwooper",
+      "age": 0,
+      "native": "environment/creature-sleep/fwooper-0.png",
+      "hd": "decor-assets/hd/8e980672a301f66a38a3a654.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 32,
+        "y": 65,
+        "w": 32,
+        "h": 15
+      }
+    },
+    {
+      "species": "fwooper",
+      "age": 1,
+      "native": "environment/creature-sleep/fwooper-1.png",
+      "hd": "decor-assets/hd/fc8fc952f8a9d8350eb91522.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 25,
+        "y": 58,
+        "w": 46,
+        "h": 22
+      }
+    },
+    {
+      "species": "fwooper",
+      "age": 2,
+      "native": "environment/creature-sleep/fwooper-2.png",
+      "hd": "decor-assets/hd/e0ba2e2110b4f13ec237f64e.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 22,
+        "y": 55,
+        "w": 52,
+        "h": 25
+      }
+    },
+    {
+      "species": "fwooper",
+      "age": 3,
+      "native": "environment/creature-sleep/fwooper-3.png",
+      "hd": "decor-assets/hd/adaa8d6465270bb0baae598b.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 48,
+        "w": 67,
+        "h": 32
+      }
+    },
+    {
+      "species": "thestral",
+      "age": 0,
+      "native": "environment/creature-sleep/thestral-0.png",
+      "hd": "decor-assets/hd/5832ddc0c81105d423ee8bca.webp",
+      "pivot": [
+        80,
+        144
+      ],
+      "bounds": {
+        "x": 54,
+        "y": 119,
+        "w": 54,
+        "h": 25
+      }
+    },
+    {
+      "species": "thestral",
+      "age": 1,
+      "native": "environment/creature-sleep/thestral-1.png",
+      "hd": "decor-assets/hd/5d63eaeff65f248381cd29c9.webp",
+      "pivot": [
+        80,
+        144
+      ],
+      "bounds": {
+        "x": 44,
+        "y": 110,
+        "w": 74,
+        "h": 34
+      }
+    },
+    {
+      "species": "thestral",
+      "age": 2,
+      "native": "environment/creature-sleep/thestral-2.png",
+      "hd": "decor-assets/hd/78d6c67672e493a97bc56d7b.webp",
+      "pivot": [
+        80,
+        144
+      ],
+      "bounds": {
+        "x": 31,
+        "y": 99,
+        "w": 98,
+        "h": 45
+      }
+    },
+    {
+      "species": "thestral",
+      "age": 3,
+      "native": "environment/creature-sleep/thestral-3.png",
+      "hd": "decor-assets/hd/b7b3979aa235b9d665eda151.webp",
+      "pivot": [
+        80,
+        144
+      ],
+      "bounds": {
+        "x": 22,
+        "y": 91,
+        "w": 116,
+        "h": 53
+      }
+    },
+    {
+      "species": "unicorn",
+      "age": 0,
+      "native": "environment/creature-sleep/unicorn-0.png",
+      "hd": "decor-assets/hd/772ba719231ccf86c1cd8d83.webp",
+      "pivot": [
+        80,
+        144
+      ],
+      "bounds": {
+        "x": 48,
+        "y": 112,
+        "w": 66,
+        "h": 32
+      }
+    },
+    {
+      "species": "unicorn",
+      "age": 1,
+      "native": "environment/creature-sleep/unicorn-1.png",
+      "hd": "decor-assets/hd/6ccf053b70cb59843b0c1880.webp",
+      "pivot": [
+        80,
+        144
+      ],
+      "bounds": {
+        "x": 36,
+        "y": 102,
+        "w": 89,
+        "h": 42
+      }
+    },
+    {
+      "species": "unicorn",
+      "age": 2,
+      "native": "environment/creature-sleep/unicorn-2.png",
+      "hd": "decor-assets/hd/3248009ec6d5e58eb37a4130.webp",
+      "pivot": [
+        80,
+        144
+      ],
+      "bounds": {
+        "x": 26,
+        "y": 92,
+        "w": 108,
+        "h": 52
+      }
+    },
+    {
+      "species": "unicorn",
+      "age": 3,
+      "native": "environment/creature-sleep/unicorn-3.png",
+      "hd": "decor-assets/hd/105948f7aa0c027117079079.webp",
+      "pivot": [
+        80,
+        144
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 84,
+        "w": 125,
+        "h": 60
+      }
+    },
+    {
+      "species": "grindylow",
+      "age": 0,
+      "native": "environment/creature-sleep/grindylow-0.png",
+      "hd": "decor-assets/hd/baf32007e4f90acebdf664b6.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 32,
+        "y": 61,
+        "w": 32,
+        "h": 19
+      }
+    },
+    {
+      "species": "grindylow",
+      "age": 1,
+      "native": "environment/creature-sleep/grindylow-1.png",
+      "hd": "decor-assets/hd/fe39da9171c4cc10fdca225a.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 26,
+        "y": 55,
+        "w": 44,
+        "h": 25
+      }
+    },
+    {
+      "species": "grindylow",
+      "age": 2,
+      "native": "environment/creature-sleep/grindylow-2.png",
+      "hd": "decor-assets/hd/5c37ae208f7b52a2df3bd0cc.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 22,
+        "y": 49,
+        "w": 53,
+        "h": 31
+      }
+    },
+    {
+      "species": "grindylow",
+      "age": 3,
+      "native": "environment/creature-sleep/grindylow-3.png",
+      "hd": "decor-assets/hd/3c3e6427ff446eb5b0edd402.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 41,
+        "w": 67,
+        "h": 39
+      }
+    },
+    {
+      "species": "crup",
+      "age": 0,
+      "native": "environment/creature-sleep/crup-0.png",
+      "hd": "decor-assets/hd/30deafced0ad43cbfca64bbd.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 27,
+        "y": 62,
+        "w": 43,
+        "h": 18
+      }
+    },
+    {
+      "species": "crup",
+      "age": 1,
+      "native": "environment/creature-sleep/crup-1.png",
+      "hd": "decor-assets/hd/c0629df31718a817a84f037c.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 57,
+        "w": 55,
+        "h": 23
+      }
+    },
+    {
+      "species": "crup",
+      "age": 2,
+      "native": "environment/creature-sleep/crup-2.png",
+      "hd": "decor-assets/hd/0f3a50d01cbe490b646bb6c8.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 53,
+        "w": 64,
+        "h": 27
+      }
+    },
+    {
+      "species": "crup",
+      "age": 3,
+      "native": "environment/creature-sleep/crup-3.png",
+      "hd": "decor-assets/hd/0ddcff7b9bfa75d67805284a.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 49,
+        "w": 74,
+        "h": 31
+      }
+    },
+    {
+      "species": "knarl",
+      "age": 0,
+      "native": "environment/creature-sleep/knarl-0.png",
+      "hd": "decor-assets/hd/61b96a504b8ef2697058ab07.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 47,
+        "y": 81,
+        "w": 36,
+        "h": 27
+      }
+    },
+    {
+      "species": "knarl",
+      "age": 1,
+      "native": "environment/creature-sleep/knarl-1.png",
+      "hd": "decor-assets/hd/2858b8463febf7981138ae36.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 40,
+        "y": 71,
+        "w": 50,
+        "h": 37
+      }
+    },
+    {
+      "species": "knarl",
+      "age": 2,
+      "native": "environment/creature-sleep/knarl-2.png",
+      "hd": "decor-assets/hd/022517b86092fdcc8955753e.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 30,
+        "y": 58,
+        "w": 68,
+        "h": 50
+      }
+    },
+    {
+      "species": "knarl",
+      "age": 3,
+      "native": "environment/creature-sleep/knarl-3.png",
+      "hd": "decor-assets/hd/4a1479faa9d7d0a97181b8c6.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 25,
+        "y": 51,
+        "w": 78,
+        "h": 57
+      }
+    },
+    {
+      "species": "salamander",
+      "age": 0,
+      "native": "environment/creature-sleep/salamander-0.png",
+      "hd": "decor-assets/hd/bfddd7b91ccaaf8f3bd98022.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 42,
+        "y": 87,
+        "w": 44,
+        "h": 21
+      }
+    },
+    {
+      "species": "salamander",
+      "age": 1,
+      "native": "environment/creature-sleep/salamander-1.png",
+      "hd": "decor-assets/hd/6e7a98824f355c67417fa9b0.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 31,
+        "y": 76,
+        "w": 67,
+        "h": 32
+      }
+    },
+    {
+      "species": "salamander",
+      "age": 2,
+      "native": "environment/creature-sleep/salamander-2.png",
+      "hd": "decor-assets/hd/da392262f7c9c0a8007d4c9e.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 22,
+        "y": 68,
+        "w": 84,
+        "h": 40
+      }
+    },
+    {
+      "species": "salamander",
+      "age": 3,
+      "native": "environment/creature-sleep/salamander-3.png",
+      "hd": "decor-assets/hd/34b3932a7cad453a864c5f3e.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 62,
+        "w": 97,
+        "h": 46
+      }
+    },
+    {
+      "species": "kappa",
+      "age": 0,
+      "native": "environment/creature-sleep/kappa-0.png",
+      "hd": "decor-assets/hd/b02b3294344006b94e1c636c.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 32,
+        "y": 65,
+        "w": 32,
+        "h": 15
+      }
+    },
+    {
+      "species": "kappa",
+      "age": 1,
+      "native": "environment/creature-sleep/kappa-1.png",
+      "hd": "decor-assets/hd/89f5150fabd1764dab703af6.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 27,
+        "y": 59,
+        "w": 43,
+        "h": 21
+      }
+    },
+    {
+      "species": "kappa",
+      "age": 2,
+      "native": "environment/creature-sleep/kappa-2.png",
+      "hd": "decor-assets/hd/329a75f380c092be9907f82f.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 53,
+        "w": 54,
+        "h": 27
+      }
+    },
+    {
+      "species": "kappa",
+      "age": 3,
+      "native": "environment/creature-sleep/kappa-3.png",
+      "hd": "decor-assets/hd/11b8e9107034ccf8ee2cf86f.webp",
+      "pivot": [
+        48,
+        80
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 50,
+        "w": 61,
+        "h": 30
+      }
+    },
+    {
+      "species": "porlock",
+      "age": 0,
+      "native": "environment/creature-sleep/porlock-0.png",
+      "hd": "decor-assets/hd/f1de4d7b340cea2eea4edca8.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 47,
+        "y": 92,
+        "w": 35,
+        "h": 16
+      }
+    },
+    {
+      "species": "porlock",
+      "age": 1,
+      "native": "environment/creature-sleep/porlock-1.png",
+      "hd": "decor-assets/hd/fe5821f668af7612c0da05b1.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 44,
+        "y": 88,
+        "w": 42,
+        "h": 20
+      }
+    },
+    {
+      "species": "porlock",
+      "age": 2,
+      "native": "environment/creature-sleep/porlock-2.png",
+      "hd": "decor-assets/hd/44526ac226c353e440e14871.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 38,
+        "y": 84,
+        "w": 53,
+        "h": 24
+      }
+    },
+    {
+      "species": "porlock",
+      "age": 3,
+      "native": "environment/creature-sleep/porlock-3.png",
+      "hd": "decor-assets/hd/fca157a7b4857f4ac01ab234.webp",
+      "pivot": [
+        64,
+        108
+      ],
+      "bounds": {
+        "x": 33,
+        "y": 79,
+        "w": 62,
+        "h": 29
+      }
+    }
+  ],
+  "camera": "Frozen64x32 logical grid, unchanged growth-age canvases and pivots, uniform source crop, no affine skew. Organic sleeping anatomy visually reviewed; no fabricated straight-edge certification.",
+  "errors": []
+}

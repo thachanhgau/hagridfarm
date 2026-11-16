@@ -1,0 +1,1429 @@
+{
+  "version": 1,
+  "camera": "64x32 dimetric, azimuth45 elevation30; fixed existing pivots, uniform master fit; organic contours visually reviewed",
+  "generator": "built-in image_gen; build-creature-sleep.mjs",
+  "items": [
+    {
+      "id": "puffskein",
+      "master": "environment/creature-sleep/masters/puffskein.png",
+      "masterSha256": "913369166f84bc2532cfdda0a22d432238e4602dec75ca840e7bd6427d4afd12",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/puffskein-0.png",
+          "sha256": "0714d067d5111e821a0c5f85b41dc8508254d76592e4768cc4712be989b43f2c",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 470,
+            "y": 196,
+            "w": 829,
+            "h": 544
+          },
+          "hdFile": "environment/creature-sleep/puffskein-0-hd.webp",
+          "hdSha256": "423127f45ed76e945763990e282919f64e513e2460d6126e64a89951f739498d",
+          "age": 0,
+          "uniformScale": 0.018970588235294118
+        },
+        {
+          "file": "environment/creature-sleep/puffskein-1.png",
+          "sha256": "9e406dcc60ff5dfa07599e08052207e92672391f2d29e1beaa70512f196bb672",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 470,
+            "y": 196,
+            "w": 829,
+            "h": 544
+          },
+          "hdFile": "environment/creature-sleep/puffskein-1-hd.webp",
+          "hdSha256": "79beffd50211447af520b34f229357c7a048e81c93acf3ec17e3b88a417683b1",
+          "age": 1,
+          "uniformScale": 0.025294117647058825
+        },
+        {
+          "file": "environment/creature-sleep/puffskein-2.png",
+          "sha256": "8f675e638396804b5221b7d76411afe6ae9f351f14099cbebd33ce90e8200ffe",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 470,
+            "y": 196,
+            "w": 829,
+            "h": 544
+          },
+          "hdFile": "environment/creature-sleep/puffskein-2-hd.webp",
+          "hdSha256": "d3b3b9110a6679a5a929283b33c9b216d2c917b68abf9fdc92698f8aa96c094a",
+          "age": 2,
+          "uniformScale": 0.03161764705882353
+        },
+        {
+          "file": "environment/creature-sleep/puffskein-3.png",
+          "sha256": "8f675e638396804b5221b7d76411afe6ae9f351f14099cbebd33ce90e8200ffe",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 470,
+            "y": 196,
+            "w": 829,
+            "h": 544
+          },
+          "hdFile": "environment/creature-sleep/puffskein-3-hd.webp",
+          "hdSha256": "d3b3b9110a6679a5a929283b33c9b216d2c917b68abf9fdc92698f8aa96c094a",
+          "age": 3,
+          "uniformScale": 0.03161764705882353
+        }
+      ]
+    },
+    {
+      "id": "bowtruckle",
+      "master": "environment/creature-sleep/masters/bowtruckle.png",
+      "masterSha256": "7de0f258e5f7e271236104941dc39d72de41a2e0d41434c5a6eca2c9ce739db1",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/bowtruckle-0.png",
+          "sha256": "1163b46e4da604e28eed3e9612f26922835d0bb8bb8c666a826ca16b0b5d6322",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 314,
+            "y": 200,
+            "w": 1000,
+            "h": 451
+          },
+          "hdFile": "environment/creature-sleep/bowtruckle-0-hd.webp",
+          "hdSha256": "5619057cb58ea6c119cb77c412fe0e9f9a0e216275536741f0f367125fb7b97c",
+          "age": 0,
+          "uniformScale": 0.019549999999999998
+        },
+        {
+          "file": "environment/creature-sleep/bowtruckle-1.png",
+          "sha256": "ddaa620c110cd67b30e31d26d1424de03d9e2b780e52dac65cf0b064a08b4044",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 314,
+            "y": 200,
+            "w": 1000,
+            "h": 451
+          },
+          "hdFile": "environment/creature-sleep/bowtruckle-1-hd.webp",
+          "hdSha256": "82e18cdaa355354edc6aeab00b39ddcf875ec65f504c524c73c719d2b08dd2b1",
+          "age": 1,
+          "uniformScale": 0.025299999999999996
+        },
+        {
+          "file": "environment/creature-sleep/bowtruckle-2.png",
+          "sha256": "62639053f94d50e3ce59c7d17f31aa86026125a71da470a5789a1435ff471500",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 314,
+            "y": 200,
+            "w": 1000,
+            "h": 451
+          },
+          "hdFile": "environment/creature-sleep/bowtruckle-2-hd.webp",
+          "hdSha256": "7c59a9dbbbde7687fb2a2bf74ea4341ebef4673738a5a8b5bb79d846a0ecbf43",
+          "age": 2,
+          "uniformScale": 0.0299
+        },
+        {
+          "file": "environment/creature-sleep/bowtruckle-3.png",
+          "sha256": "a4606bce073e2c47efe399f4dadba924f1aaa2fdcb6e4e47a07995829b418d50",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 314,
+            "y": 200,
+            "w": 1000,
+            "h": 451
+          },
+          "hdFile": "environment/creature-sleep/bowtruckle-3-hd.webp",
+          "hdSha256": "c5055744ec1a7bc565230ddc8978c80c3e4414d35a08154384a1fbb421296a8a",
+          "age": 3,
+          "uniformScale": 0.03219999999999999
+        }
+      ]
+    },
+    {
+      "id": "niffler",
+      "master": "environment/creature-sleep/masters/niffler.png",
+      "masterSha256": "5eee3f792f3fdca5b2d76728aed90ad87dbdf01cfaf1a422b6a3b3c83ca0bf32",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/niffler-0.png",
+          "sha256": "db033412d13c02a774814d3e298263f19457c839744dd5dad7a8fa4242914061",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 313,
+            "y": 182,
+            "w": 1192,
+            "h": 577
+          },
+          "hdFile": "environment/creature-sleep/niffler-0-hd.webp",
+          "hdSha256": "4d8addaa638aa429e9587e8306e323c2cd042f09af6e838c26c823de13e8f528",
+          "age": 0,
+          "uniformScale": 0.021224832214765097
+        },
+        {
+          "file": "environment/creature-sleep/niffler-1.png",
+          "sha256": "dd99b5ff7b944dada99d5733d51d40d61da159466dd26d8ec50ff77dd0ca1b1b",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 313,
+            "y": 182,
+            "w": 1192,
+            "h": 577
+          },
+          "hdFile": "environment/creature-sleep/niffler-1-hd.webp",
+          "hdSha256": "3ab2a00ae57a3945b96f60c898676b71ea0f9ac5c59c5771db7e77f8fd5ea3f8",
+          "age": 1,
+          "uniformScale": 0.02411912751677852
+        },
+        {
+          "file": "environment/creature-sleep/niffler-2.png",
+          "sha256": "302e150c4184dd51a86a526d2d6064e32f666da3c16086301ee92e58988d2278",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 313,
+            "y": 182,
+            "w": 1192,
+            "h": 577
+          },
+          "hdFile": "environment/creature-sleep/niffler-2-hd.webp",
+          "hdSha256": "b6584c805789968595fae939e46ee4820d0b2da589a11cd57d4665916e8ddbd6",
+          "age": 2,
+          "uniformScale": 0.027978187919463084
+        },
+        {
+          "file": "environment/creature-sleep/niffler-3.png",
+          "sha256": "8611f9776bab1add08690f5fd3c292650eac9cf8878aa88208d27cd05b7aad88",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 313,
+            "y": 182,
+            "w": 1192,
+            "h": 577
+          },
+          "hdFile": "environment/creature-sleep/niffler-3-hd.webp",
+          "hdSha256": "7e0e61c8b6f1ad3f9fce40c2f403e9776cba02cf7f0856f30de726f80cbcbb5a",
+          "age": 3,
+          "uniformScale": 0.027013422818791943
+        }
+      ]
+    },
+    {
+      "id": "hippogriff",
+      "master": "environment/creature-sleep/masters/hippogriff.png",
+      "masterSha256": "c49d5a051327d8799f5285f817deb3256ac0a7a484d0356bb598efb19ff4a6e8",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/hippogriff-0.png",
+          "sha256": "2be7245c2d35a257d02ef667f0c0aaea8be3eba04267e895ebee468fac9c975e",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 317,
+            "y": 196,
+            "w": 1148,
+            "h": 500
+          },
+          "hdFile": "environment/creature-sleep/hippogriff-0-hd.webp",
+          "hdSha256": "d79a58bdb5419f10a9b87352208a14b028cece7fdc175c18b3954376dc8bbfe5",
+          "age": 0,
+          "uniformScale": 0.03806620209059233
+        },
+        {
+          "file": "environment/creature-sleep/hippogriff-1.png",
+          "sha256": "7b5c83d79a5430832aa38ea77d05e91f1ca9fc02c2169d389ba054faede5c0bb",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 100,
+          "sourceRect": {
+            "x": 317,
+            "y": 196,
+            "w": 1148,
+            "h": 500
+          },
+          "hdFile": "environment/creature-sleep/hippogriff-1-hd.webp",
+          "hdSha256": "f869f0859a01bacdd25adc2b979cdce6988dc45d4476f95613a10f28e0ff124d",
+          "age": 1,
+          "uniformScale": 0.0811411149825784
+        },
+        {
+          "file": "environment/creature-sleep/hippogriff-2.png",
+          "sha256": "36a3425747729d1560fa5b9dd703b1898cddf5d9b6533fd605bd3c29a991a5ec",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 100,
+          "sourceRect": {
+            "x": 317,
+            "y": 196,
+            "w": 1148,
+            "h": 500
+          },
+          "hdFile": "environment/creature-sleep/hippogriff-2-hd.webp",
+          "hdSha256": "ac33280f62d1a45c04d9f840d7e26b2d04361953a78d2fdecfdf0f1493cbaa02",
+          "age": 2,
+          "uniformScale": 0.09416376306620208
+        },
+        {
+          "file": "environment/creature-sleep/hippogriff-3.png",
+          "sha256": "a6504f1b976deb9fef8144f206c36e756e31a902a5226986d56a2282a1c6ef01",
+          "width": 192,
+          "height": 192,
+          "pivotX": 96,
+          "pivotY": 160,
+          "sourceRect": {
+            "x": 317,
+            "y": 196,
+            "w": 1148,
+            "h": 500
+          },
+          "hdFile": "environment/creature-sleep/hippogriff-3-hd.webp",
+          "hdSha256": "7b87fa601924ed1813136d91fb84f49eaae9caab1ce01ce546177990bec5acc2",
+          "age": 3,
+          "uniformScale": 0.10217770034843206
+        }
+      ]
+    },
+    {
+      "id": "dragon",
+      "master": "environment/creature-sleep/masters/dragon.png",
+      "masterSha256": "24d2039919c8d8df1a0dd6664ebb39e9caf5ac0498dd338f2319b82776ec6d99",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/dragon-0.png",
+          "sha256": "1adea4d2feba60ec04ed0a304c745b34c170e88dcc6da261d0ad518b4b453095",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 372,
+            "y": 166,
+            "w": 1014,
+            "h": 561
+          },
+          "hdFile": "environment/creature-sleep/dragon-0-hd.webp",
+          "hdSha256": "a75c11a8ff73d4ed20b96bf6267302491c468c0905c047e517e748501add5df9",
+          "age": 0,
+          "uniformScale": 0.04082840236686391
+        },
+        {
+          "file": "environment/creature-sleep/dragon-1.png",
+          "sha256": "f48998b83938e6b0737aa09b331c3e5db4102511eebc9548ccf81473195cf15c",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 372,
+            "y": 166,
+            "w": 1014,
+            "h": 561
+          },
+          "hdFile": "environment/creature-sleep/dragon-1-hd.webp",
+          "hdSha256": "7f0ee1b4a4963e7539cd51c12157cdf8822d3341920443812dad7fc121c419eb",
+          "age": 1,
+          "uniformScale": 0.048767258382642995
+        },
+        {
+          "file": "environment/creature-sleep/dragon-2.png",
+          "sha256": "124f28a094395d17a2f01f1fdea9e70067fc9d5832862f5f0c8110a28ed03fa5",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 100,
+          "sourceRect": {
+            "x": 372,
+            "y": 166,
+            "w": 1014,
+            "h": 561
+          },
+          "hdFile": "environment/creature-sleep/dragon-2-hd.webp",
+          "hdSha256": "721df8f5109fe726a11c908d8e40fe548725ed25fd0529af6a5d244beecc1004",
+          "age": 2,
+          "uniformScale": 0.10887573964497041
+        },
+        {
+          "file": "environment/creature-sleep/dragon-3.png",
+          "sha256": "497237ec0f3a11ea87f1e477dfbb6f4fd12a850ffb3c291fef6612f6e2766364",
+          "width": 256,
+          "height": 256,
+          "pivotX": 128,
+          "pivotY": 192,
+          "sourceRect": {
+            "x": 372,
+            "y": 166,
+            "w": 1014,
+            "h": 561
+          },
+          "hdFile": "environment/creature-sleep/dragon-3-hd.webp",
+          "hdSha256": "e2199d992ca8c89ee3fd4aee1983b2f23e01834c921e77760736f1f55a1280bd",
+          "age": 3,
+          "uniformScale": 0.13949704142011835
+        }
+      ]
+    },
+    {
+      "id": "three-headed-dog",
+      "master": "environment/creature-sleep/masters/three-headed-dog.png",
+      "masterSha256": "163c50174ac352eee514133ffb7cda71490adfd0e81309cf85de2874fd4e742f",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/three-headed-dog-0.png",
+          "sha256": "b556b42e4ddfb9f7c0924e97c041c62e77e1a886d5886af91cf50eda5a850d3a",
+          "width": 64,
+          "height": 64,
+          "pivotX": 32,
+          "pivotY": 48,
+          "sourceRect": {
+            "x": 208,
+            "y": 188,
+            "w": 1357,
+            "h": 589
+          },
+          "hdFile": "environment/creature-sleep/three-headed-dog-0-hd.webp",
+          "hdSha256": "a1ffa4b7729cb355b2a676fb8ece793dc4e0ed37799278eee163b3646fda79ee",
+          "age": 0,
+          "uniformScale": 0.0423728813559322
+        },
+        {
+          "file": "environment/creature-sleep/three-headed-dog-1.png",
+          "sha256": "a3bcc85175736fc0af72c6b4363fed64d827e277575c3b2941d0b249471f0bd2",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 100,
+          "sourceRect": {
+            "x": 208,
+            "y": 188,
+            "w": 1357,
+            "h": 589
+          },
+          "hdFile": "environment/creature-sleep/three-headed-dog-1-hd.webp",
+          "hdSha256": "c73e514c3f5d46653031aef6d63111188f65c613d3f1e2b9ff7fa4677d483cef",
+          "age": 1,
+          "uniformScale": 0.07457627118644067
+        },
+        {
+          "file": "environment/creature-sleep/three-headed-dog-2.png",
+          "sha256": "f8e5585487fdd6f91c7ab695d1e80899cba9b3aaa3da7974c0289a227b3af9a7",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 100,
+          "sourceRect": {
+            "x": 208,
+            "y": 188,
+            "w": 1357,
+            "h": 589
+          },
+          "hdFile": "environment/creature-sleep/three-headed-dog-2-hd.webp",
+          "hdSha256": "cfe68fcab30efa81f008af289600238791ec9393c37f6a8e952531ddef53d41d",
+          "age": 2,
+          "uniformScale": 0.08728813559322034
+        },
+        {
+          "file": "environment/creature-sleep/three-headed-dog-3.png",
+          "sha256": "5b74303c126610e5ef1da03544bb87f477cfb102adc642bf0c83e7378e402628",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 128,
+          "sourceRect": {
+            "x": 208,
+            "y": 188,
+            "w": 1357,
+            "h": 589
+          },
+          "hdFile": "environment/creature-sleep/three-headed-dog-3-hd.webp",
+          "hdSha256": "3f058715f6c8f1901815f96d5e42633fc0999aa57265040a9abf83d48ae1373b",
+          "age": 3,
+          "uniformScale": 0.09745762711864407
+        }
+      ]
+    },
+    {
+      "id": "mooncalf",
+      "master": "environment/creature-sleep/masters/mooncalf.png",
+      "masterSha256": "e3781b9abd372d884586f2bf8ade84da3e4f73b08a84d9f3db513c8bd1653a5f",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/mooncalf-0.png",
+          "sha256": "63c186024dfd78673a732132f998251a1496a0e136b56b663306d7b11782ca2b",
+          "width": 96,
+          "height": 128,
+          "pivotX": 48,
+          "pivotY": 112,
+          "sourceRect": {
+            "x": 253,
+            "y": 216,
+            "w": 1212,
+            "h": 419
+          },
+          "hdFile": "environment/creature-sleep/mooncalf-0-hd.webp",
+          "hdSha256": "b3a2bf319492ad16d56eba8a8873ea0361f464b0433e8645f2a1ff60f63d2d60",
+          "age": 0,
+          "uniformScale": 0.034158415841584154
+        },
+        {
+          "file": "environment/creature-sleep/mooncalf-1.png",
+          "sha256": "eb4c256524ba702cb6c054cc74b99d144d30f4dc7aa75caf7bb2c70f0afaaf3f",
+          "width": 96,
+          "height": 128,
+          "pivotX": 48,
+          "pivotY": 112,
+          "sourceRect": {
+            "x": 253,
+            "y": 216,
+            "w": 1212,
+            "h": 419
+          },
+          "hdFile": "environment/creature-sleep/mooncalf-1-hd.webp",
+          "hdSha256": "a9b2214f5527435a27d2210789501050947d0c01e8020c485676a12983299295",
+          "age": 1,
+          "uniformScale": 0.04459570957095709
+        },
+        {
+          "file": "environment/creature-sleep/mooncalf-2.png",
+          "sha256": "70d2f2ab2833ae3e140c258e5d9e0062d4e53d3c3f12d4afa495d46dcc3f4516",
+          "width": 96,
+          "height": 128,
+          "pivotX": 48,
+          "pivotY": 112,
+          "sourceRect": {
+            "x": 253,
+            "y": 216,
+            "w": 1212,
+            "h": 419
+          },
+          "hdFile": "environment/creature-sleep/mooncalf-2-hd.webp",
+          "hdSha256": "92d922a479aa883a8fc5fb6d2954e3c3d61b7d399a9c37d2a0e1ec99afea589c",
+          "age": 2,
+          "uniformScale": 0.05503300330033002
+        },
+        {
+          "file": "environment/creature-sleep/mooncalf-3.png",
+          "sha256": "8192013c407760cc88d0491e18bbeb72f3d6de08612d993aacb9b713b0f732fb",
+          "width": 96,
+          "height": 128,
+          "pivotX": 48,
+          "pivotY": 112,
+          "sourceRect": {
+            "x": 253,
+            "y": 216,
+            "w": 1212,
+            "h": 419
+          },
+          "hdFile": "environment/creature-sleep/mooncalf-3-hd.webp",
+          "hdSha256": "6c3814b75c31c22d7ea2fa7538bf97ac426563fcb12127b2be98eb9d62776f06",
+          "age": 3,
+          "uniformScale": 0.06167491749174917
+        }
+      ]
+    },
+    {
+      "id": "kneazle",
+      "master": "environment/creature-sleep/masters/kneazle.png",
+      "masterSha256": "f08cd5dfe784e2ac13812a8adf0f5c41bf04a55c314253c611d9a888ed1858fc",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/kneazle-0.png",
+          "sha256": "cd8c3d100916fd9195d70e2f58b3804cf7f694268987e88f6d71ce487c455e2d",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 494,
+            "y": 194,
+            "w": 766,
+            "h": 548
+          },
+          "hdFile": "environment/creature-sleep/kneazle-0-hd.webp",
+          "hdSha256": "abb862309a4e8f76483478dbb75ca1e28d36cb66bcef60f36e0b6656eb055359",
+          "age": 0,
+          "uniformScale": 0.05178832116788321
+        },
+        {
+          "file": "environment/creature-sleep/kneazle-1.png",
+          "sha256": "9af43a43fd927df5f94ab14c48fb456387077d87f2b3f4f8e1b86bbc4eaa3c1d",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 494,
+            "y": 194,
+            "w": 766,
+            "h": 548
+          },
+          "hdFile": "environment/creature-sleep/kneazle-1-hd.webp",
+          "hdSha256": "0ab3aa664eee1b72abcd0864554cbc9fb869fdbcb788bace44bfe3609d880b02",
+          "age": 1,
+          "uniformScale": 0.06748175182481751
+        },
+        {
+          "file": "environment/creature-sleep/kneazle-2.png",
+          "sha256": "31c4e8729893c15cf883319c7837488fe2abc1e3e898af9e44be4ce38ff78463",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 494,
+            "y": 194,
+            "w": 766,
+            "h": 548
+          },
+          "hdFile": "environment/creature-sleep/kneazle-2-hd.webp",
+          "hdSha256": "e9ec411523c4edd92cb4e557ddca4a1d6f8320ca9f603d5231cafa72d94bd5c6",
+          "age": 2,
+          "uniformScale": 0.08107049608355091
+        },
+        {
+          "file": "environment/creature-sleep/kneazle-3.png",
+          "sha256": "7c19bf785796bcab04a8b645af7846e9e9ae82f749aff877f514b74361f21c78",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 494,
+            "y": 194,
+            "w": 766,
+            "h": 548
+          },
+          "hdFile": "environment/creature-sleep/kneazle-3-hd.webp",
+          "hdSha256": "588469d719b668107cf00146eaa2d50b998c9ad86d09265b5749642730120aa4",
+          "age": 3,
+          "uniformScale": 0.09458224543080938
+        }
+      ]
+    },
+    {
+      "id": "diricawl",
+      "master": "environment/creature-sleep/masters/diricawl.png",
+      "masterSha256": "b176c8ccca4aa07b244848eefc63f8da40a345b0f945546682a8871db28e501e",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/diricawl-0.png",
+          "sha256": "4a611f573e31d1b9f424a3e1ae3ef61984f7257a29bbb2201df244265e84b4d7",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 354,
+            "y": 126,
+            "w": 1064,
+            "h": 589
+          },
+          "hdFile": "environment/creature-sleep/diricawl-0-hd.webp",
+          "hdSha256": "5799e1901f47ca2c83ff97aa83e64777491258fe22424c2bcb5bb8d44fe76baf",
+          "age": 0,
+          "uniformScale": 0.03242481203007519
+        },
+        {
+          "file": "environment/creature-sleep/diricawl-1.png",
+          "sha256": "a922b9075b5a69602f1b91c0fe4d5a608d6f08a2026d8d1270d5bc5db45980e2",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 354,
+            "y": 126,
+            "w": 1064,
+            "h": 589
+          },
+          "hdFile": "environment/creature-sleep/diricawl-1-hd.webp",
+          "hdSha256": "519d1aacc28ab2d8cda897d3bb62f3fe758d7cf601902c94b804f52d3f8f90ab",
+          "age": 1,
+          "uniformScale": 0.041071428571428564
+        },
+        {
+          "file": "environment/creature-sleep/diricawl-2.png",
+          "sha256": "f120d33fa88ab2de8af98548f868467f70268042c21d81179b6df9a153b4cd8a",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 354,
+            "y": 126,
+            "w": 1064,
+            "h": 589
+          },
+          "hdFile": "environment/creature-sleep/diricawl-2-hd.webp",
+          "hdSha256": "18350b6ff8fa3c4159364c0fa7901038bdf59a1c7c382e89d3d5e27d063c43ff",
+          "age": 2,
+          "uniformScale": 0.051879699248120296
+        },
+        {
+          "file": "environment/creature-sleep/diricawl-3.png",
+          "sha256": "5e8027a07ba4a34cb736b4189d41d56d1037047ce49cb531f6243825a386bf43",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 354,
+            "y": 126,
+            "w": 1064,
+            "h": 589
+          },
+          "hdFile": "environment/creature-sleep/diricawl-3-hd.webp",
+          "hdSha256": "d7bf75933ff341868e4cda334c42ffb2c673b7728a1895061b60c23dbd002537",
+          "age": 3,
+          "uniformScale": 0.055122180451127815
+        }
+      ]
+    },
+    {
+      "id": "fwooper",
+      "master": "environment/creature-sleep/masters/fwooper.png",
+      "masterSha256": "13343f321925993e3c83ec5cedb9879421e7655c8247ab7d3829eae193a36349",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/fwooper-0.png",
+          "sha256": "ef07de75c4575eb7062c8c2102c897a695ea4ad778ccbbe52d87addc154ee0d3",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 260,
+            "y": 136,
+            "w": 1269,
+            "h": 617
+          },
+          "hdFile": "environment/creature-sleep/fwooper-0-hd.webp",
+          "hdSha256": "8e980672a301f66a38a3a6542bb8229c2089f2c3c8d2a6be5dd30a53082c5dd4",
+          "age": 0,
+          "uniformScale": 0.025374310480693454
+        },
+        {
+          "file": "environment/creature-sleep/fwooper-1.png",
+          "sha256": "d3aebcb656274577bbe37d41dea087d36a781d93febf3c1909e8022efcce26c6",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 260,
+            "y": 136,
+            "w": 1269,
+            "h": 617
+          },
+          "hdFile": "environment/creature-sleep/fwooper-1-hd.webp",
+          "hdSha256": "fc8fc952f8a9d8350eb91522813e16adf6df16500687ab05dd08c44fdc1ad53b",
+          "age": 1,
+          "uniformScale": 0.036249014972419225
+        },
+        {
+          "file": "environment/creature-sleep/fwooper-2.png",
+          "sha256": "ea44946a34770bbecde0815d0eb65cd722794e405f98b58d4c48037622f1d6e3",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 260,
+            "y": 136,
+            "w": 1269,
+            "h": 617
+          },
+          "hdFile": "environment/creature-sleep/fwooper-2-hd.webp",
+          "hdSha256": "e0ba2e2110b4f13ec237f64e6c91c93a19f3479e7254c37326d51344521129f0",
+          "age": 2,
+          "uniformScale": 0.04078014184397163
+        },
+        {
+          "file": "environment/creature-sleep/fwooper-3.png",
+          "sha256": "c633d7e8518ac0c8febbdd19f831eb7e565943a50ec4add3dc14a61fb6706757",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 260,
+            "y": 136,
+            "w": 1269,
+            "h": 617
+          },
+          "hdFile": "environment/creature-sleep/fwooper-3-hd.webp",
+          "hdSha256": "adaa8d6465270bb0baae598bf446a5a26015ca9ce196872352579cf394b21a06",
+          "age": 3,
+          "uniformScale": 0.05256107171000787
+        }
+      ]
+    },
+    {
+      "id": "thestral",
+      "master": "environment/creature-sleep/masters/thestral.png",
+      "masterSha256": "2ef579f30632cfeb61c347fde034949b89b80a2c23414e46a7cd1b7510d38ad1",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/thestral-0.png",
+          "sha256": "c090049aa16aa12970c7997ac17664654a5a01d747202c8ee75b3580d774dc67",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "sourceRect": {
+            "x": 310,
+            "y": 166,
+            "w": 1186,
+            "h": 541
+          },
+          "hdFile": "environment/creature-sleep/thestral-0-hd.webp",
+          "hdSha256": "5832ddc0c81105d423ee8bca796fa17371b81ab4b5eacb7d2e8efe0a5426f286",
+          "age": 0,
+          "uniformScale": 0.04654300168634064
+        },
+        {
+          "file": "environment/creature-sleep/thestral-1.png",
+          "sha256": "b98da263b56cfe8cdd0a23354317c49434a917309cf4b40984b010fa677bff63",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "sourceRect": {
+            "x": 310,
+            "y": 166,
+            "w": 1186,
+            "h": 541
+          },
+          "hdFile": "environment/creature-sleep/thestral-1-hd.webp",
+          "hdSha256": "5d63eaeff65f248381cd29c94c0a9c531f16f9236216ec7a5d0a0b30eb46acaf",
+          "age": 1,
+          "uniformScale": 0.06302698145025296
+        },
+        {
+          "file": "environment/creature-sleep/thestral-2.png",
+          "sha256": "bbf4ed7d2d076987fadd34a1e4808784f91f709612748f52d8a6a3f2e9d0c7cc",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "sourceRect": {
+            "x": 310,
+            "y": 166,
+            "w": 1186,
+            "h": 541
+          },
+          "hdFile": "environment/creature-sleep/thestral-2-hd.webp",
+          "hdSha256": "78d6c67672e493a97bc56d7bab831915f572acd7ab095bf8f1c9d1b56777ff66",
+          "age": 2,
+          "uniformScale": 0.08241989881956154
+        },
+        {
+          "file": "environment/creature-sleep/thestral-3.png",
+          "sha256": "b75016833c8ee0b6979ccf1df7b8c8a6eebbda35ef1c3d4ccbff12634d5ec3b3",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "sourceRect": {
+            "x": 310,
+            "y": 166,
+            "w": 1186,
+            "h": 541
+          },
+          "hdFile": "environment/creature-sleep/thestral-3-hd.webp",
+          "hdSha256": "b7b3979aa235b9d665eda15170dad1a022c5bc716a2c0f09881a7e7dcc5d4bae",
+          "age": 3,
+          "uniformScale": 0.09793423271500842
+        }
+      ]
+    },
+    {
+      "id": "unicorn",
+      "master": "environment/creature-sleep/masters/unicorn.png",
+      "masterSha256": "ceb77adf8021b47d528ed171c6d3ad5f38b3bfd563bf02f7548654915ba4c12f",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/unicorn-0.png",
+          "sha256": "37c18944f9997ee3a4a0a88d0ca45c9cc33dc27020445f7b95d06093fa562735",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "sourceRect": {
+            "x": 220,
+            "y": 119,
+            "w": 1281,
+            "h": 612
+          },
+          "hdFile": "environment/creature-sleep/unicorn-0-hd.webp",
+          "hdSha256": "772ba719231ccf86c1cd8d83f4c67067bd7d5e6e6720246507ec22633a707bfb",
+          "age": 0,
+          "uniformScale": 0.052068696330991406
+        },
+        {
+          "file": "environment/creature-sleep/unicorn-1.png",
+          "sha256": "b29c13225278c12a75206da98ce9c88b362ecb202b7577426978f8920bef635a",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "sourceRect": {
+            "x": 220,
+            "y": 119,
+            "w": 1281,
+            "h": 612
+          },
+          "hdFile": "environment/creature-sleep/unicorn-1-hd.webp",
+          "hdSha256": "6ccf053b70cb59843b0c18808279654f51c0ff9101eca398f41ef2c2a857d70b",
+          "age": 1,
+          "uniformScale": 0.06912568306010929
+        },
+        {
+          "file": "environment/creature-sleep/unicorn-2.png",
+          "sha256": "dfc668dcb808b656f25b87296392f7d71b23aaffa55caf7c8211765afabbf2eb",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "sourceRect": {
+            "x": 220,
+            "y": 119,
+            "w": 1281,
+            "h": 612
+          },
+          "hdFile": "environment/creature-sleep/unicorn-2-hd.webp",
+          "hdSha256": "3248009ec6d5e58eb37a41307fe06c73e240c95e51bee573e0f9848a5f1e5ed9",
+          "age": 2,
+          "uniformScale": 0.0843871975019516
+        },
+        {
+          "file": "environment/creature-sleep/unicorn-3.png",
+          "sha256": "12f620c1e4fd4a151ea7991c4ccb2027c7d3d8e21b1efcc978837daae7b8c536",
+          "width": 160,
+          "height": 160,
+          "pivotX": 80,
+          "pivotY": 144,
+          "sourceRect": {
+            "x": 220,
+            "y": 119,
+            "w": 1281,
+            "h": 612
+          },
+          "hdFile": "environment/creature-sleep/unicorn-3-hd.webp",
+          "hdSha256": "105948f7aa0c027117079079e9ae339a88c5f53840297fe040c7fe972e3c95c3",
+          "age": 3,
+          "uniformScale": 0.09785323965651833
+        }
+      ]
+    },
+    {
+      "id": "grindylow",
+      "master": "environment/creature-sleep/masters/grindylow.png",
+      "masterSha256": "076a2590e62e770a600d528603e871d21a44937af3e997b4fcd1c422b3fb1e2a",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/grindylow-0.png",
+          "sha256": "5830d7e5ea01f336783391f1a41cde55354da38a772da2f4d163935596e8ad39",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 400,
+            "y": 161,
+            "w": 874,
+            "h": 506
+          },
+          "hdFile": "environment/creature-sleep/grindylow-0-hd.webp",
+          "hdSha256": "baf32007e4f90acebdf664b66daea6a30f0fe3432a0edc330d24392e7be96c0d",
+          "age": 0,
+          "uniformScale": 0.03684210526315789
+        },
+        {
+          "file": "environment/creature-sleep/grindylow-1.png",
+          "sha256": "cf7b0e8b8bd5696b69c094fb20cc69563ca34e276df69b465fd52567879db904",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 400,
+            "y": 161,
+            "w": 874,
+            "h": 506
+          },
+          "hdFile": "environment/creature-sleep/grindylow-1-hd.webp",
+          "hdSha256": "fe39da9171c4cc10fdca225a87442cafeb5081099e2151e8b3a7259763399b43",
+          "age": 1,
+          "uniformScale": 0.049999999999999996
+        },
+        {
+          "file": "environment/creature-sleep/grindylow-2.png",
+          "sha256": "19d0267310828d901ea48fa2c297b64acf4a757a79ca1b90cb0680c6b6617b9f",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 400,
+            "y": 161,
+            "w": 874,
+            "h": 506
+          },
+          "hdFile": "environment/creature-sleep/grindylow-2-hd.webp",
+          "hdSha256": "5c37ae208f7b52a2df3bd0cc9e50a6e7bc69b0c7bc5982667d8fa8f0416ecc6e",
+          "age": 2,
+          "uniformScale": 0.06184210526315789
+        },
+        {
+          "file": "environment/creature-sleep/grindylow-3.png",
+          "sha256": "4b3d63b81b56688f957e96eb0f7eaa95b23a7ac6d28349a3d19393a011902a52",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 400,
+            "y": 161,
+            "w": 874,
+            "h": 506
+          },
+          "hdFile": "environment/creature-sleep/grindylow-3-hd.webp",
+          "hdSha256": "3c3e6427ff446eb5b0edd402909ea078ef2adea1f7435383da1739f6c01c3f4d",
+          "age": 3,
+          "uniformScale": 0.07763157894736841
+        }
+      ]
+    },
+    {
+      "id": "crup",
+      "master": "environment/creature-sleep/masters/crup.png",
+      "masterSha256": "9a773b1e554c9035dc8724c5c68344e44b3c637fa80ff4314cc01a92404be454",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/crup-0.png",
+          "sha256": "329d294f91e93f270917d22b6c45b37165e6890dcb1857590e834a040004b862",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 376,
+            "y": 230,
+            "w": 1109,
+            "h": 461
+          },
+          "hdFile": "environment/creature-sleep/crup-0-hd.webp",
+          "hdSha256": "30deafced0ad43cbfca64bbd654252ec1cc7a21b1aeaf0e6c0072b110fa43421",
+          "age": 0,
+          "uniformScale": 0.038367899008115415
+        },
+        {
+          "file": "environment/creature-sleep/crup-1.png",
+          "sha256": "63b133cf0550e5a387857881b5a760885c9f2ff031a7beaea3ca56ac3bbe8446",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 376,
+            "y": 230,
+            "w": 1109,
+            "h": 461
+          },
+          "hdFile": "environment/creature-sleep/crup-1-hd.webp",
+          "hdSha256": "c0629df31718a817a84f037ca243200c02f812cbf922da94e786b5327e16bd31",
+          "age": 1,
+          "uniformScale": 0.049774571686203785
+        },
+        {
+          "file": "environment/creature-sleep/crup-2.png",
+          "sha256": "289f81f989e000daa54443e72b7cc5e7697920d4dc8efd4e86dafc3eeeed2241",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 376,
+            "y": 230,
+            "w": 1109,
+            "h": 461
+          },
+          "hdFile": "environment/creature-sleep/crup-2-hd.webp",
+          "hdSha256": "0f3a50d01cbe490b646bb6c87ade835e59ccde8966ee6d2b18ec3181544d4093",
+          "age": 2,
+          "uniformScale": 0.05807033363390441
+        },
+        {
+          "file": "environment/creature-sleep/crup-3.png",
+          "sha256": "3ad4393808eb7b778c69bf914180e17bbc9da8716b4b05f8bb1f0bc2dc8704d3",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 376,
+            "y": 230,
+            "w": 1109,
+            "h": 461
+          },
+          "hdFile": "environment/creature-sleep/crup-3-hd.webp",
+          "hdSha256": "0ddcff7b9bfa75d67805284a935ff4777a912ba6b16ba39305e3931c02a67f5f",
+          "age": 3,
+          "uniformScale": 0.06636609558160504
+        }
+      ]
+    },
+    {
+      "id": "knarl",
+      "master": "environment/creature-sleep/masters/knarl.png",
+      "masterSha256": "c96448df70280cfc1b1a9922b886695280e7b1b49f93031ea7e9902ad9d5a33f",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/knarl-0.png",
+          "sha256": "04a9481ba0cadae34105589ab8476b5583e3060eb88b189e27ba03c60fb6218b",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 481,
+            "y": 144,
+            "w": 788,
+            "h": 574
+          },
+          "hdFile": "environment/creature-sleep/knarl-0-hd.webp",
+          "hdSha256": "61b96a504b8ef2697058ab07ca2ae03b101d1ab35079f7823a225e8e4f8122d9",
+          "age": 0,
+          "uniformScale": 0.046445993031358886
+        },
+        {
+          "file": "environment/creature-sleep/knarl-1.png",
+          "sha256": "6490b78e3006e42099770be4ccbff1e301cdf1f26c24afced734cd3e706a778d",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 481,
+            "y": 144,
+            "w": 788,
+            "h": 574
+          },
+          "hdFile": "environment/creature-sleep/knarl-1-hd.webp",
+          "hdSha256": "2858b8463febf7981138ae362da304714a22c74771cd8edbb483e99eed838092",
+          "age": 1,
+          "uniformScale": 0.06442508710801394
+        },
+        {
+          "file": "environment/creature-sleep/knarl-2.png",
+          "sha256": "8fe8c030ca5448f6b1501b5e87239330e41d10fc15eb60f3cc2f90b5e1f135df",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 481,
+            "y": 144,
+            "w": 788,
+            "h": 574
+          },
+          "hdFile": "environment/creature-sleep/knarl-2-hd.webp",
+          "hdSha256": "022517b86092fdcc8955753e95fd00753307e1ba8b5108fbd5f2c2b3a1e9c082",
+          "age": 2,
+          "uniformScale": 0.08689895470383276
+        },
+        {
+          "file": "environment/creature-sleep/knarl-3.png",
+          "sha256": "c19176cca3386787bb063561197a96fa1912be6b64de5b57f1db15ea399f1884",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 481,
+            "y": 144,
+            "w": 788,
+            "h": 574
+          },
+          "hdFile": "environment/creature-sleep/knarl-3-hd.webp",
+          "hdSha256": "4a1479faa9d7d0a97181b8c6f7617805140be8ea9c64329b32b485961dac384b",
+          "age": 3,
+          "uniformScale": 0.09888501742160279
+        }
+      ]
+    },
+    {
+      "id": "salamander",
+      "master": "environment/creature-sleep/masters/salamander.png",
+      "masterSha256": "52b0421f3bd439f648769babdd469249801a956d93aef6fcc4ed98e191e924e0",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/salamander-0.png",
+          "sha256": "6e5bce2bb80b2f8b95b464b9d76b5fd44310447140165cea7d2c3bba285d1ea2",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 374,
+            "y": 201,
+            "w": 993,
+            "h": 472
+          },
+          "hdFile": "environment/creature-sleep/salamander-0-hd.webp",
+          "hdSha256": "bfddd7b91ccaaf8f3bd98022fb8b8c7c0981a3cc62c251c325711840508accc0",
+          "age": 0,
+          "uniformScale": 0.04400805639476334
+        },
+        {
+          "file": "environment/creature-sleep/salamander-1.png",
+          "sha256": "45c4204c4d1f47e9804cfaf1b9f1b3b73be58a8fb6c4547c02bdfbd23c5f38fe",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 374,
+            "y": 201,
+            "w": 993,
+            "h": 472
+          },
+          "hdFile": "environment/creature-sleep/salamander-1-hd.webp",
+          "hdSha256": "6e7a98824f355c67417fa9b05512c28705f36c5e0cf1ad5ee99bf7c96b6d123f",
+          "age": 1,
+          "uniformScale": 0.06717019133937562
+        },
+        {
+          "file": "environment/creature-sleep/salamander-2.png",
+          "sha256": "e369f5cd60e069be27370be8544c4c977544d8acfb9dd9abe697c335f6590807",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 374,
+            "y": 201,
+            "w": 993,
+            "h": 472
+          },
+          "hdFile": "environment/creature-sleep/salamander-2-hd.webp",
+          "hdSha256": "da392262f7c9c0a8007d4c9ed0e9e57697b9d155c0aeb0aa664977dd6df23719",
+          "age": 2,
+          "uniformScale": 0.08454179254783484
+        },
+        {
+          "file": "environment/creature-sleep/salamander-3.png",
+          "sha256": "ef45dfcf11b91fd9d1cd42dc64a4c53e6935fef46f2e3bb654769e7e6b12436c",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 374,
+            "y": 201,
+            "w": 993,
+            "h": 472
+          },
+          "hdFile": "environment/creature-sleep/salamander-3-hd.webp",
+          "hdSha256": "34b3932a7cad453a864c5f3e577ced30bb0f5d42a7e63aecbd8664cffcc7d0c7",
+          "age": 3,
+          "uniformScale": 0.0972809667673716
+        }
+      ]
+    },
+    {
+      "id": "kappa",
+      "master": "environment/creature-sleep/masters/kappa.png",
+      "masterSha256": "bb0bfa8795db7e2215da6daabca9734b79d009ea47b2326a36b90bfe9fb9a7ea",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/kappa-0.png",
+          "sha256": "e030b77113a5042919f1ba7b6815ccd43dcb3fd09c5fb9c0daa0734c2863781e",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 327,
+            "y": 151,
+            "w": 1051,
+            "h": 525
+          },
+          "hdFile": "environment/creature-sleep/kappa-0-hd.webp",
+          "hdSha256": "b02b3294344006b94e1c636cad2e7085d38535167b96860b4f6decff8d0be918",
+          "age": 0,
+          "uniformScale": 0.03063748810656517
+        },
+        {
+          "file": "environment/creature-sleep/kappa-1.png",
+          "sha256": "e73f4016be301a5f339d9f6a1a147bdfb0d7a17046f01262570899ca7b55e72b",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 327,
+            "y": 151,
+            "w": 1051,
+            "h": 525
+          },
+          "hdFile": "environment/creature-sleep/kappa-1-hd.webp",
+          "hdSha256": "89f5150fabd1764dab703af6b284910fef8ee20cc0f78b6fcbcb754907dcebed",
+          "age": 1,
+          "uniformScale": 0.040485252140818266
+        },
+        {
+          "file": "environment/creature-sleep/kappa-2.png",
+          "sha256": "601fcc57b3369ee6c0fafa0e247f6737362bd462a745b754d98d05cafeec6595",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 327,
+            "y": 151,
+            "w": 1051,
+            "h": 525
+          },
+          "hdFile": "environment/creature-sleep/kappa-2-hd.webp",
+          "hdSha256": "329a75f380c092be9907f82f1353d9eb5c413e18ff183bef373abc36f65ec473",
+          "age": 2,
+          "uniformScale": 0.05142721217887726
+        },
+        {
+          "file": "environment/creature-sleep/kappa-3.png",
+          "sha256": "5fc15633afe479c8bf4708e4b105e1bb71b80d0297dcbb18fb9bfef958928bc8",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "sourceRect": {
+            "x": 327,
+            "y": 151,
+            "w": 1051,
+            "h": 525
+          },
+          "hdFile": "environment/creature-sleep/kappa-3-hd.webp",
+          "hdSha256": "11b8e9107034ccf8ee2cf86fc9cefd21d4e05178bac40fd0ded4de63bcfeb911",
+          "age": 3,
+          "uniformScale": 0.05799238820171265
+        }
+      ]
+    },
+    {
+      "id": "porlock",
+      "master": "environment/creature-sleep/masters/porlock.png",
+      "masterSha256": "2bd6782ec8d07b44f8bc35e524b3481e67b1c92bee2554048be00f2c94d0bc25",
+      "frameRecords": [
+        {
+          "file": "environment/creature-sleep/porlock-0.png",
+          "sha256": "68d01eaa4ccda706bb074404642968f2e666052a71b8b5e950aa96233de7eda4",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 219,
+            "y": 118,
+            "w": 1330,
+            "h": 635
+          },
+          "hdFile": "environment/creature-sleep/porlock-0-hd.webp",
+          "hdSha256": "f1de4d7b340cea2eea4edca8fa49ced1b4a2424bc49d1464efa58fd764cf77cc",
+          "age": 0,
+          "uniformScale": 0.02593984962406015
+        },
+        {
+          "file": "environment/creature-sleep/porlock-1.png",
+          "sha256": "348781f484af8a01ddd6d9ee20ffd9f218a97a85cb6acb1b570522295cdb87bb",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 219,
+            "y": 118,
+            "w": 1330,
+            "h": 635
+          },
+          "hdFile": "environment/creature-sleep/porlock-1-hd.webp",
+          "hdSha256": "fe5821f668af7612c0da05b151f0905853fd6f42a2ef4fb6fd9924bde2db2b47",
+          "age": 1,
+          "uniformScale": 0.03199248120300752
+        },
+        {
+          "file": "environment/creature-sleep/porlock-2.png",
+          "sha256": "c1efb1419ccf77cfb817d639ec16ce1d5a1bc62230d6febe5971959e3f0ac60a",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 219,
+            "y": 118,
+            "w": 1330,
+            "h": 635
+          },
+          "hdFile": "environment/creature-sleep/porlock-2-hd.webp",
+          "hdSha256": "44526ac226c353e440e14871ba7669a7b88628dc831aa65675b325ad1262876d",
+          "age": 2,
+          "uniformScale": 0.03977443609022556
+        },
+        {
+          "file": "environment/creature-sleep/porlock-3.png",
+          "sha256": "af9fdcd71615c965e949b7497786643234b4bef185f21eea8acfde24bb4b5ac9",
+          "width": 128,
+          "height": 128,
+          "pivotX": 64,
+          "pivotY": 108,
+          "sourceRect": {
+            "x": 219,
+            "y": 118,
+            "w": 1330,
+            "h": 635
+          },
+          "hdFile": "environment/creature-sleep/porlock-3-hd.webp",
+          "hdSha256": "fca157a7b4857f4ac01ab234aa85a1cec04c6512c6bacf18b6607abd38a5a5a9",
+          "age": 3,
+          "uniformScale": 0.04669172932330826
+        }
+      ]
+    }
+  ]
+}

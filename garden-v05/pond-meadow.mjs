@@ -1,3 +1,4 @@
+import {iso} from './garden-grid.mjs?v=26.1';
 import {POND_LAND,stageBoundary} from './garden-growth.mjs?v=26.1';
 
 // Scenic ground only: logical land, fences, placement and collision keep their authored grid.
@@ -36,4 +37,19 @@ export function pondMeadowTrees() {
  for(let c=col-.2;c<=right+.2;c+=.95+random()*.8)add(c,rowTop,1,c);
  for(let r=rowTop+.9;r< -1.5;r+=1.15+random()*.8)add(right,r,2,r);
  return trees;
+}
+
+export function clipToScenicStage(context, stage, scene, draw) {
+  context.save?.();
+  const points = pondMeadowOutline(stage).map(([col, row]) => iso(col, row, scene));
+  context.beginPath();
+  context.moveTo(points[0][0], points[0][1]);
+  for (const [x, y] of points.slice(1)) context.lineTo(x, y);
+  context.closePath();
+  context.clip?.();
+  try {
+    draw();
+  } finally {
+    context.restore?.();
+  }
 }
