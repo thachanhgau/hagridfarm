@@ -1138,6 +1138,36 @@ export async function createGarden(canvas, options = {}) {
     return cachedCanvas;
   }
 
+  // Night statues are re-lit above the tint. Replaying the sprite over the finished scene covered whatever stands in
+  // front (owner 16/11/2026: «Quầy bia bơ» under «Tượng Dobby Hắc Ám»), so the lit copy is the scene itself before the
+  // tint (the statue as drawn, HD and covered by its front), kept to the statue's silhouette, minus the sprites in front.
+  const statueCopies = new Map();
+  function litStatues(objects, clock) {
+    const out = [], d = Math.max(1, canvas.width / map.width);
+    objects.forEach((object, index) => {
+      const glow = kit.statueGlow(object, clock), b = glow && ((object.facing === 'right' && glow.rightBounds) || glow.bounds);
+      if (!b) return;
+      const box = {l: Math.floor(object.xy[0] - glow.pivotX + b.x), t: Math.floor(object.xy[1] - glow.pivotY + b.y), w: Math.ceil(b.w) + 1, h: Math.ceil(b.h) + 1};
+      let lit = statueCopies.get(object.id + ':' + object.slot);
+      if (!lit) statueCopies.set(object.id + ':' + object.slot, lit = makeCanvas(canvas, 1, 1));
+      lit.width = Math.round(box.w * d); lit.height = Math.round(box.h * d);
+      const c = lit.getContext('2d'); if (!c) return;
+      c.imageSmoothingEnabled = false;
+      c.drawImage(canvas, Math.round(box.l * d), Math.round(box.t * d), lit.width, lit.height, 0, 0, lit.width, lit.height);
+      c.setTransform(d, 0, 0, d, -box.l * d, -box.t * d);
+      c.globalCompositeOperation = 'destination-in'; drawAssetTo(c, glow, object.xy[0], object.xy[1]);
+      c.globalCompositeOperation = 'destination-out';
+      for (const front of objects.slice(index + 1)) {
+        const a = front.asset, fb = a && ((front.facing === 'right' && a.rightBounds) || a.bounds);
+        if (!fb || !Array.isArray(front.xy)) continue;
+        const l = front.xy[0] - a.pivotX + fb.x, t = front.xy[1] - a.pivotY + fb.y;
+        if (l >= box.l + box.w || l + fb.w <= box.l || t >= box.t + box.h || t + fb.h <= box.t) continue;
+        drawAssetTo(c, a, front.xy[0] + (front.drift || 0), front.xy[1] + (front.hop || 0), null, front.motion, front.facing === 'right' && !front.authoredFacing);
+      }
+      out.push({object, glow, lit, box});
+    });
+    return out;
+  }
   // A ground built once is stored on the device (ground-store.mjs) and later visits decode it off the main thread. While
   // that lookup runs the previous ground stays on screen (on entry: the plain backdrop fill for a few frames).
   // No IndexedDB (tests, old browsers) or no runtime SOURCE.json (the source demos): build as before, never wait.
@@ -2099,6 +2129,7 @@ export async function createGarden(canvas, options = {}) {
     // Owner 27/10/2026: the four slanted sun shafts read as stray stripes over the garden; removed.
     // Winter fence lanterns glow through the atmosphere overlay.
     const lanterns = activeWinter && propsVisible ? kit.winterFenceLights(boundaryFence) : [];
+    const statueLights = kit && atmosphereMode !== 'day' ? litStatues(objects, clock) : [];
     if (atmosphereMode !== 'day' || (weatherMode && weatherMode !== 'clear')) {
       drawAtmosphereOverlay(context, map.width, map.height, {
         mode: atmosphereMode,
@@ -2109,7 +2140,7 @@ export async function createGarden(canvas, options = {}) {
       });
     }
     if (activeWinter) kit.drawWinterLayer(context, {width: map.width, height: map.height, lanterns, mode: atmosphereMode, clock});
-    if (kit && atmosphereMode !== 'day') for (const object of objects) { const glow = kit.statueGlow(object, clock); if (glow) { kit.drawStatueAura?.(context,object,clock); context.save(); context.globalAlpha=glow.opacity; drawAsset(glow, object.xy[0], object.xy[1]); context.restore(); } }
+    for (const {object, glow, lit, box} of statueLights) { kit.drawStatueAura?.(context,object,clock); context.save(); context.globalAlpha=glow.opacity; context.drawImage(lit, box.l, box.t, box.w, box.h); context.restore(); }
     if(atmosphereMode!=='day')for(const object of objects){
       const lit=object.kind==='decoration'?{...object,asset:earnedDecorArt(object.id,object.facing)}:object,options={clock,mode:atmosphereMode,hd:resolution.stats().density>1,drawAsset};
       drawDecorIllumination(context,lit,options);drawCreatureEmber(context,object,options);
