@@ -69,10 +69,55 @@ export function snowMask(kit,w,h,depth){
   if(masks.size>=4)masks.clear(); // ponytail: a few masks per session (one per canvas size), not an LRU
   masks.set(key,m);snowMasks.set(kit,masks);
  }
- return (x,y)=>x>=0&&x<W&&y>=-2&&y<h+4?m[(y+2)*W+x]===1:kit.snowCovered(x,y,depth);
+ const covered=(x,y)=>x>=0&&x<W&&y>=-2&&y<h+4?m[(y+2)*W+x]===1:kit.snowCovered(x,y,depth);
+ covered.mask={data:m,width:W,height:h+6};return covered;
 }
-export function weatherizeCanvas(canvas,kind,weather,depth=1,kit=null,pixelDensity=1){
+// The ground snow pass on the GPU (owner 16/11/2026 «tuyết đẹp mà nhẹ»): the same pixels as the loop below, which read
+// back and walked ~15M device pixels (~1 s on entry). False (no WebGL, too big) means the loop runs instead.
+const SNOW_SHADER=`precision highp float;
+uniform sampler2D img,mask,tint,green;uniform vec2 size,maskSize;uniform float k;uniform bool useMask;
+float cov(float x,float y){return texture2D(mask,vec2((x+.5)/maskSize.x,(y+2.5)/maskSize.y)).r>0.?1.:0.;}
+void main(){
+ vec4 t=texture2D(img,gl_FragCoord.xy/size);vec3 c=floor(t.rgb*255.+.5);gl_FragColor=t;
+ if(t.a==0.||texture2D(green,(c.rg+.5)/256.).r==0.||texture2D(green,(c.bg+.5)/256.).a==0.)return;
+ float x=floor(floor(gl_FragCoord.x)/k+1e-4),y=floor((size.y-1.-floor(gl_FragCoord.y))/k+1e-4);vec3 o;
+ if(useMask&&cov(x,y)<.5)o=floor(vec3(texture2D(tint,vec2((c.r+.5)/256.,.5)).r,texture2D(tint,vec2((c.g+.5)/256.,.5)).g,texture2D(tint,vec2((c.b+.5)/256.,.5)).b)*255.+.5);
+ else if(useMask&&cov(x,y+2.)<.5)o=vec3(166,177,174);else if(useMask&&cov(x,y-2.)<.5)o=vec3(232,240,237);
+ else{float s=min(3.,floor((c.r+c.g+c.b)/135.+1e-4));o=s<.5?vec3(135,168,180):s<1.5?vec3(177,202,211):s<2.5?vec3(216,231,234):vec3(242,246,235);}
+ gl_FragColor=vec4(o/255.,t.a);}`;
+function snowGroundGPU(canvas,k,covered){
+ const W=canvas.width,H=canvas.height,gc=typeof OffscreenCanvas==='function'?new OffscreenCanvas(W,H):typeof document!=='undefined'?Object.assign(document.createElement('canvas'),{width:W,height:H}):null;
+ const gl=gc?.getContext('webgl',{premultipliedAlpha:false,antialias:false,depth:false,preserveDrawingBuffer:true});
+ if(!gl)return false;
+ try{
+  if(Math.max(W,H)>gl.getParameter(gl.MAX_TEXTURE_SIZE)||W>gl.getParameter(gl.MAX_VIEWPORT_DIMS)[0]||H>gl.getParameter(gl.MAX_VIEWPORT_DIMS)[1])return false;
+  const sh=(type,src)=>{const o=gl.createShader(type);gl.shaderSource(o,src);gl.compileShader(o);return o;},prog=gl.createProgram();
+  gl.attachShader(prog,sh(gl.VERTEX_SHADER,'attribute vec2 p;void main(){gl_Position=vec4(p,0,1);}'));gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,SNOW_SHADER));gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return false;
+  gl.useProgram(prog);gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0);
+  const texture=(unit,setup)=>{gl.activeTexture(gl.TEXTURE0+unit);gl.bindTexture(gl.TEXTURE_2D,gl.createTexture());for(const n of [gl.TEXTURE_MIN_FILTER,gl.TEXTURE_MAG_FILTER])gl.texParameteri(gl.TEXTURE_2D,n,gl.NEAREST);for(const n of [gl.TEXTURE_WRAP_S,gl.TEXTURE_WRAP_T])gl.texParameteri(gl.TEXTURE_2D,n,gl.CLAMP_TO_EDGE);setup();};
+  gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL,gl.NONE);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,false);
+  texture(0,()=>{gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,canvas);});
+  const m=covered?.mask;
+  texture(1,()=>{gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.pixelStorei(gl.UNPACK_ALIGNMENT,1);gl.texImage2D(gl.TEXTURE_2D,0,gl.LUMINANCE,m?m.width:1,m?m.height:1,0,gl.LUMINANCE,gl.UNSIGNED_BYTE,m?m.data:new Uint8Array(1));});
+  // JS-rounded tables, so the GPU's float32 lands on exactly the loop's pixels.
+  const tint=new Uint8Array(256*3),green=new Uint8Array(256*256*2);
+  for(let i=0;i<256;i++){tint[i*3]=Math.round(i*.7);tint[i*3+1]=Math.round(i*.78);tint[i*3+2]=Math.round(i*.95+12);}
+  for(let g=0;g<256;g++)for(let x=0;x<256;x++){green[(g*256+x)*2]=g>x*.97?255:0;green[(g*256+x)*2+1]=g>x*1.08?255:0;}
+  texture(2,()=>gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,256,1,0,gl.RGB,gl.UNSIGNED_BYTE,tint));
+  texture(3,()=>gl.texImage2D(gl.TEXTURE_2D,0,gl.LUMINANCE_ALPHA,256,256,0,gl.LUMINANCE_ALPHA,gl.UNSIGNED_BYTE,green));
+  const u=n=>gl.getUniformLocation(prog,n);gl.uniform1i(u('tint'),2);gl.uniform1i(u('green'),3);
+  gl.uniform1i(u('img'),0);gl.uniform1i(u('mask'),1);gl.uniform2f(u('size'),W,H);gl.uniform2f(u('maskSize'),m?m.width:1,m?m.height:1);gl.uniform1f(u('k'),k);gl.uniform1i(u('useMask'),m?1:0);
+  gl.viewport(0,0,W,H);gl.drawArrays(gl.TRIANGLES,0,3);
+  if(gl.getError()!==gl.NO_ERROR)return false;
+  const c=canvas.getContext('2d');c.save();c.setTransform(1,0,0,1,0,0);c.globalCompositeOperation='copy';c.drawImage(gc,0,0);c.restore();
+  return true;
+ }catch{return false;}finally{gl.getExtension('WEBGL_lose_context')?.loseContext();}
+}
+export function weatherizeCanvas(canvas,kind,weather,depth=1,kit=null,pixelDensity=1,gpu=false){
  if(weather==='clear')return canvas;
+ if(kind==='ground'&&weather==='snow'&&gpu&&snowGroundGPU(canvas,pixelDensity,depth<1&&kit?snowMask(kit,Math.round(canvas.width/pixelDensity),Math.round(canvas.height/pixelDensity),depth):null))return canvas;
  const c=canvas.getContext('2d'),im=c.getImageData(0,0,canvas.width,canvas.height),d=im.data;
  if(kind==='cap'){if(weather==='snow'&&kit)c.putImageData(kit.snowCapImageData(im,pixelDensity),0,0);return canvas;}
  const k=pixelDensity,lw=Math.round(im.width/k),lh=Math.round(im.height/k),covered=depth<1&&kit?snowMask(kit,lw,lh,depth):null;

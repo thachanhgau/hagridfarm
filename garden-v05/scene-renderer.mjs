@@ -1128,7 +1128,9 @@ export async function createGarden(canvas, options = {}) {
         }
       });
     });
-    weatherizeCanvas(cachedCanvas,'ground',activeWeather,activeSnowDepth,kit,layerDensity);
+    // Ground snow on the GPU, same pixels: Chrome ~1 s → ~50 ms. Safari (GestureEvent: every iOS browser) keeps the CPU
+    // loop, measured faster there (iPhone 17 Simulator, 16/11/2026). ponytail: re-measure on a real iPhone if Safari lags.
+    weatherizeCanvas(cachedCanvas,'ground',activeWeather,activeSnowDepth,kit,layerDensity,typeof GestureEvent==='undefined');
     if(withForest)drawCottageGround(cachedContext,{iso,weatherMode:activeWeather});
     if (withForest) {
       // Existing perimeter placements and the stage's unopened grove both

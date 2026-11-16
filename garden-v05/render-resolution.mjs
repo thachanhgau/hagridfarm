@@ -38,11 +38,15 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
     const image=new view.Image();image.crossOrigin='anonymous';await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=reject;image.src=imageUrl(record.file);});requests++;if(image.width!==record.width*record.density||image.height!==record.height*record.density)throw Error('HD dimensions mismatch');
     let output=image;
     if(source.wither||source.coat||source.season||source.tint){
-     const copy=canvas.ownerDocument.createElement('canvas');copy.width=image.width;copy.height=image.height;copy.getContext('2d').drawImage(image,0,0);output=copy;
+     // Effects read pixels back: a CPU canvas for them (a GPU one read back every HD image, ~0.4 s of snow on entry,
+     // 16/11/2026), then one copy onto a GPU canvas, since a CPU canvas drawn every frame re-uploads every frame.
+     const make=()=>{const c=canvas.ownerDocument.createElement('canvas');c.width=image.width;c.height=image.height;return c;};
+     const copy=make();copy.getContext('2d',{willReadFrequently:true}).drawImage(image,0,0);output=copy;
      if(source.wither)output=effects.wither(output,source.wither);
      if(source.coat)output=effects.coat(output,source.coat);
      if(source.season)effects.weather(output,source.season,record.density);
      if(source.tint){const brush=output.getContext('2d');brush.globalCompositeOperation='source-atop';brush.fillStyle=source.tint;brush.fillRect(0,0,output.width,output.height);brush.globalCompositeOperation='source-over';}
+     const shown=make();shown.width=output.width;shown.height=output.height;shown.getContext('2d').drawImage(output,0,0);output.width=output.height=0;output=shown;
     }
     const weight=output.width*output.height*4;
     trim(weight);
