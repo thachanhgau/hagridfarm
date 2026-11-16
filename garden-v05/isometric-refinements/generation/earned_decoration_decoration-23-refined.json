@@ -1,0 +1,14 @@
+{
+  "id": "earned_decoration_decoration-23",
+  "prompt": "Texture and complete the FIRST geometry stencil IN PLACE. The camera is ALREADY FINISHED. Keep all its horizontal-world planes and their corner locations. Every axis-aligned diagonal is a precise TWO-across ONE-down staircase, slope +0.500 or -0.500, angle26.565 degrees to horizontal, verticals stay vertical. NO30-degree diagonals, no vanishing points, no frontal substitution. Do not reinterpret this camera. All/tabletops, bases, beams, roof eaves and shelves inherit these axes. Horizontal circles are ellipses exactly TWICE as wide as high. Output TWO objects in one horizontal row: LEFT the default orientation and RIGHT a true90-degree world turn, as the two stencil cells already show, never a mirror. Same scale, generous alpha gutters, full unclipped objects. Generic scaffold shapes must become ONLY the parts named below, never extra posts or platforms. Use detailed readable handmade HD pixel art with small hard flat clusters and crisp selective dark plum outline, fixed upper-left lighting, no smoothing, halos, detached shadows, ground, labels or writing. Match existing muted garden material colors. Dark oak/moss/slate/amber and cream24-color garden palette. Keep the SAME object design, shape, materials, motifs and counts. Garden-ground reference is context only, not a scene to copy. SUBJECT: A tiny arched footbridge of five warm oak planks, curved low handrails on both sides, visible beams and pegs; show complete bridge deck and both bankward feet, no water base. Both directions retain the 2:1 elevated garden camera, never a frontal stair view.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-e5a42e85-f93c-4aab-8246-e19cf65e96ab.png",
+  "guide": "isometric-refinements/generation-inputs/earned_decoration_decoration-23-d267e0b59c97.png",
+  "guideSha256": "d267e0b59c97d06cdab7194c3070cd6e891f2ef6d735c7c9a9decea2cd17a9af",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/generation-inputs/earned_decoration_decoration-23-d267e0b59c97.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

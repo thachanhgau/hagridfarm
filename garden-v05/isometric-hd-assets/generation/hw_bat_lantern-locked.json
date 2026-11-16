@@ -1,0 +1,10 @@
+{
+  "id": "hw_bat_lantern",
+  "prompt": "Paint the named EXISTING garden object onto the FIRST filled geometry stencil. Preserve the stencil's exact base/contact corners and horizontal-world plane directions: orthographic azimuth45°, elevation30°, 2:1 DIMETRIC, slopes exactly +0.500 and -0.500, verticals vertical. NEVER standard true-isometric0.577, frontal horizontal edges, or perspective convergence. All planks, beams, tabletops, cabinet courses, roof eaves/ridge follow the locked axes; circular horizontal rims are 2:1 ellipses. This is a camera correction of the SAME item, not a redesign. Replace generic blocks with the named organic details when needed while retaining the camera, scale and feet. Use detailed sharp HD pixel art, clean small flat clusters, selective dark outline and fixed top-left light. Match ONLY the original subject's materials, motifs and colors. No extra flowers, plants, snow, Christmas/Halloween details or props unless the subject specifies them. No background, floor tile, extra display platform, cast shadow, text, logos, frames or labels. Every pose is fully visible with generous alpha margins. Second reference is actual garden-ground context ONLY. EXACTLY TWO large isolated views side-by-side: LEFT default, RIGHT same object rotated90°right, not mirrored; same ground baseline and size. Original item: Đèn lồng dơi. Exact subject: A hanging bat-shaped iron lantern on a short freestanding crooked timber post. Wide bat wings form the lantern frame around a warm amber glass belly, curled feet of post on ground. Charming handcrafted rustic Halloween object.. Palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #874056 #C75B4B #ED8A45 #FFC36B. Keep original identity; no extra motifs or props.",
+  "path": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-3f92bff1-ac76-44e5-aed0-ba630b872577.png",
+  "guide": "isometric-hd-assets/generation-inputs/hw_bat_lantern-e857056a9720.png",
+  "guideSha256": "e857056a972041dbcd41d8f8e6cad6a124739528703085df69be02e7c8cc6b8d",
+  "poseLayout": [
+    2
+  ]
+}

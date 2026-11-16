@@ -1,0 +1,227 @@
+[
+  {
+    "id": "sp_monster_book",
+    "kind": "table",
+    "guide": "garden-v05/isometric-camera-repairs/coordinate-locks/solid/sp_monster_book.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hw_soul_bottle",
+    "kind": "bottle",
+    "guide": "garden-v05/isometric-camera-repairs/coordinate-locks/solid/hw_soul_bottle.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-95",
+    "kind": "box",
+    "guide": "garden-v05/isometric-camera-repairs/coordinate-locks/solid/earned_decoration_decoration-95.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  }
+]

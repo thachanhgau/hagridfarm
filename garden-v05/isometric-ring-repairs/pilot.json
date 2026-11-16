@@ -1,0 +1,27 @@
+{
+  "id": "sp_pensieve",
+  "guide": "isometric-ring-repairs/generation-inputs/pensieve-98e9e829736c.png",
+  "guideSha256": "98e9e829736c109617d3ebf46707730bdafeceff729311ef798e2559e434b2c0",
+  "master": "isometric-hd-assets/masters/sp_pensieve-locked.png",
+  "camera": {
+    "column": [
+      32,
+      16
+    ],
+    "row": [
+      -32,
+      16
+    ]
+  },
+  "rim": {
+    "center": [
+      96,
+      110
+    ],
+    "radii": [
+      70,
+      35
+    ]
+  },
+  "note": "Geometry annotations only; untouched source image shown under the desired projected circular rim."
+}

@@ -313,17 +313,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 4,
-        "y": 8,
-        "w": 47,
-        "h": 42
+        "x": 9,
+        "y": 9,
+        "w": 39,
+        "h": 41
       },
-      "sha256": "b88bffde3ecae68ab12a25f497aee0002697a57b9ba78a4875ba16438f107cfa",
+      "sha256": "23479626f57c7b0fabadfb5c5a6bd8871026945f12cc710e5334413db0584ac1",
       "sourceRect": {
-        "x": 935,
-        "y": 68,
-        "w": 346,
-        "h": 309
+        "x": 246,
+        "y": 132,
+        "w": 533,
+        "h": 557
       },
       "frames": [
         "native-complete-objects/habitat_crup/frame-01.png"
@@ -336,26 +336,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 4,
-            "y": 8,
-            "w": 47,
-            "h": 42
+            "x": 9,
+            "y": 9,
+            "w": 39,
+            "h": 41
           },
-          "sha256": "b88bffde3ecae68ab12a25f497aee0002697a57b9ba78a4875ba16438f107cfa",
+          "sha256": "23479626f57c7b0fabadfb5c5a6bd8871026945f12cc710e5334413db0584ac1",
           "sourceRect": {
-            "x": 935,
-            "y": 68,
-            "w": 346,
-            "h": 309
-          }
+            "x": 246,
+            "y": 132,
+            "w": 533,
+            "h": 557
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/habitat_crup/frame-01.png",
+          "hdSha256": "3ed147b0816864337d676a4348c6f125fcb33b6878b406f0bd2749d2bb85af72"
         }
       ],
-      "master": "environment/masters/habitat-refresh-20261109/shelters.png",
-      "masterSha256": "cfed531f65a82660cb4b105d7ecdd4e27cf8cc9a7c79fae756530007712b1d3f",
-      "prompt": "Production pixel game habitat atlas with four columns: porlock, salamander, crup, knarl; normal row and matching snow row. Readable sturdy silhouettes, elevated 2:1 dimetric view, vertical supports, muted wood/straw/moss/slate palette, chunky clusters, transparent gutters, no animals, labels or background.",
+      "master": "isometric-extra-assets/masters/habitat_crup-locked.png",
+      "masterSha256": "a07b91f41d184c14d290bafebb10ad5c5a6bcc6aa205a1c0b3f46d38d890ecc9",
+      "prompt": "Small squat oak dog kennel with layered brown shingle pitched roof, round dark doorway and ONE gray food bowl beside it touching the wall. Preserve this exact original habitat, no unrelated parts. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "tool": "builtin image_gen",
       "method": "authored atlas pose, uniform nearest resize, palette snap, binary alpha, grounded at50",
-      "refreshed": true
+      "refreshed": true,
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/habitat_crup/frame-01.png",
+      "hdSha256": "3ed147b0816864337d676a4348c6f125fcb33b6878b406f0bd2749d2bb85af72"
     },
     {
       "id": "habitat_diricawl",
@@ -475,17 +480,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 6,
+        "x": 12,
         "y": 8,
-        "w": 44,
+        "w": 33,
         "h": 42
       },
-      "sha256": "1f53774c196933a7836afa1259a2703083fdd3d9510db7174245e12c65e57721",
+      "sha256": "dca7ed4fa0b6131aa6fe689cda4ad875585cd395063f55a5ba7633420195f938",
       "sourceRect": {
-        "x": 47,
-        "y": 57,
-        "w": 351,
-        "h": 337
+        "x": 259,
+        "y": 148,
+        "w": 443,
+        "h": 561
       },
       "frames": [
         "native-complete-objects/habitat_fwooper/frame-01.png"
@@ -498,26 +503,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 6,
+            "x": 12,
             "y": 8,
-            "w": 44,
+            "w": 33,
             "h": 42
           },
-          "sha256": "1f53774c196933a7836afa1259a2703083fdd3d9510db7174245e12c65e57721",
+          "sha256": "dca7ed4fa0b6131aa6fe689cda4ad875585cd395063f55a5ba7633420195f938",
           "sourceRect": {
-            "x": 47,
-            "y": 57,
-            "w": 351,
-            "h": 337
-          }
+            "x": 259,
+            "y": 148,
+            "w": 443,
+            "h": 561
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/habitat_fwooper/frame-01.png",
+          "hdSha256": "b24a82a2ceabab9086caed0046e5a929a7a526cc560824f829a0c7482c033c9b"
         }
       ],
-      "master": "environment/masters/habitat-refresh-20261109/furnishings.png",
-      "masterSha256": "dc9b3ee7489a9ca2cdfbc4e970e340ee8d78c54d190ac39701765fe01ac091b7",
-      "prompt": "Production pixel game habitat atlas with four columns: fwooper, hippogriff, kneazle, puffskein; normal row and matching snow row. Readable sturdy silhouettes, elevated 2:1 dimetric view, vertical supports, muted wood/straw/moss/slate palette, chunky clusters, transparent gutters, no animals, labels or background.",
+      "master": "isometric-extra-assets/masters/habitat_fwooper-locked.png",
+      "masterSha256": "b3189eb3b88ff8ce39b259739bc2b868ff3e985b7c173a3c6b5c27c6295095d9",
+      "prompt": "Two stout carved wooden upright posts, ONE crossbeam and ONE suspended orange feather ornament. No bird. Preserve this exact original habitat, no unrelated parts. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "tool": "builtin image_gen",
       "method": "authored atlas pose, uniform nearest resize, palette snap, binary alpha, grounded at50",
-      "refreshed": true
+      "refreshed": true,
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/habitat_fwooper/frame-01.png",
+      "hdSha256": "b24a82a2ceabab9086caed0046e5a929a7a526cc560824f829a0c7482c033c9b"
     },
     {
       "id": "habitat_grindylow",
@@ -583,17 +593,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 3,
-        "y": 13,
-        "w": 50,
-        "h": 37
+        "x": 4,
+        "y": 11,
+        "w": 48,
+        "h": 39
       },
-      "sha256": "442f6697c7eb8574d44de13d494e111a64ba081de412084e207e8139afa3d6a2",
+      "sha256": "4012d6e20b61423ec551f065e1f5df81624da7f75414600f504e27b77dd04022",
       "sourceRect": {
-        "x": 480,
-        "y": 93,
-        "w": 381,
-        "h": 285
+        "x": 163,
+        "y": 141,
+        "w": 652,
+        "h": 529
       },
       "frames": [
         "native-complete-objects/habitat_hippogriff/frame-01.png"
@@ -606,26 +616,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 3,
-            "y": 13,
-            "w": 50,
-            "h": 37
+            "x": 4,
+            "y": 11,
+            "w": 48,
+            "h": 39
           },
-          "sha256": "442f6697c7eb8574d44de13d494e111a64ba081de412084e207e8139afa3d6a2",
+          "sha256": "4012d6e20b61423ec551f065e1f5df81624da7f75414600f504e27b77dd04022",
           "sourceRect": {
-            "x": 480,
-            "y": 93,
-            "w": 381,
-            "h": 285
-          }
+            "x": 163,
+            "y": 141,
+            "w": 652,
+            "h": 529
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/habitat_hippogriff/frame-01.png",
+          "hdSha256": "bd69e6ff527b4a8f75dbfae4a3a6ee64291336b00a4448804779c1e491b99f18"
         }
       ],
-      "master": "environment/masters/habitat-refresh-20261109/furnishings.png",
-      "masterSha256": "dc9b3ee7489a9ca2cdfbc4e970e340ee8d78c54d190ac39701765fe01ac091b7",
-      "prompt": "Production pixel game habitat atlas with four columns: fwooper, hippogriff, kneazle, puffskein; normal row and matching snow row. Readable sturdy silhouettes, elevated 2:1 dimetric view, vertical supports, muted wood/straw/moss/slate palette, chunky clusters, transparent gutters, no animals, labels or background.",
+      "master": "isometric-extra-assets/masters/habitat_hippogriff-locked.png",
+      "masterSha256": "485d8561e40bd259a55cd63739ea542c6a2395f53abc7be1e6426c92fdb2bee5",
+      "prompt": "One low rectangular oak hay manger on four stout feet filled with golden straw, a few strands over its edge. Preserve this exact original habitat, no unrelated parts. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "tool": "builtin image_gen",
       "method": "authored atlas pose, uniform nearest resize, palette snap, binary alpha, grounded at50",
-      "refreshed": true
+      "refreshed": true,
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/habitat_hippogriff/frame-01.png",
+      "hdSha256": "bd69e6ff527b4a8f75dbfae4a3a6ee64291336b00a4448804779c1e491b99f18"
     },
     {
       "id": "habitat_kappa",
@@ -745,17 +760,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 9,
-        "y": 8,
-        "w": 38,
-        "h": 42
+        "x": 15,
+        "y": 9,
+        "w": 26,
+        "h": 41
       },
-      "sha256": "e9e8a752a178096347096d5e196ac13fe9db2b75e28c2c97fa91b919267bd1a2",
+      "sha256": "0239cf79fb97837ecc61e3feeef91509ec8822804e7f829cc1350fcb0f4cb59a",
       "sourceRect": {
-        "x": 947,
-        "y": 50,
-        "w": 323,
-        "h": 359
+        "x": 236,
+        "y": 458,
+        "w": 296,
+        "h": 480
       },
       "frames": [
         "native-complete-objects/habitat_kneazle/frame-01.png"
@@ -768,26 +783,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 9,
-            "y": 8,
-            "w": 38,
-            "h": 42
+            "x": 15,
+            "y": 9,
+            "w": 26,
+            "h": 41
           },
-          "sha256": "e9e8a752a178096347096d5e196ac13fe9db2b75e28c2c97fa91b919267bd1a2",
+          "sha256": "0239cf79fb97837ecc61e3feeef91509ec8822804e7f829cc1350fcb0f4cb59a",
           "sourceRect": {
-            "x": 947,
-            "y": 50,
-            "w": 323,
-            "h": 359
-          }
+            "x": 236,
+            "y": 458,
+            "w": 296,
+            "h": 480
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/habitat_kneazle/frame-01.png",
+          "hdSha256": "3a3bf6ec0e504f29e00a88e14b859b79a58c9cc8ae57d2db631af25adfec1d5e"
         }
       ],
-      "master": "environment/masters/habitat-refresh-20261109/furnishings.png",
-      "masterSha256": "dc9b3ee7489a9ca2cdfbc4e970e340ee8d78c54d190ac39701765fe01ac091b7",
-      "prompt": "Production pixel game habitat atlas with four columns: fwooper, hippogriff, kneazle, puffskein; normal row and matching snow row. Readable sturdy silhouettes, elevated 2:1 dimetric view, vertical supports, muted wood/straw/moss/slate palette, chunky clusters, transparent gutters, no animals, labels or background.",
+      "master": "isometric-refinements/masters/habitat_kneazle-refined.png",
+      "masterSha256": "6888dec4eba2ff78f1bf9b69bbe09ec17d3968da4a7e05f437b0120e324e320a",
+      "prompt": "One squat sisal rope scratching post on a low rectangular oak base, a small brown cap at its top and ONE little yarn ball resting on its base. No animal. Preserve this exact original habitat, no unrelated parts. Its single base is OAK WOOD only, no gray stone or extra second platform. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "tool": "builtin image_gen",
       "method": "authored atlas pose, uniform nearest resize, palette snap, binary alpha, grounded at50",
-      "refreshed": true
+      "refreshed": true,
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/habitat_kneazle/frame-01.png",
+      "hdSha256": "3a3bf6ec0e504f29e00a88e14b859b79a58c9cc8ae57d2db631af25adfec1d5e"
     },
     {
       "id": "habitat_mooncalf",
@@ -853,17 +873,17 @@
       "pivotX": 20,
       "pivotY": 31,
       "bounds": {
-        "x": 2,
-        "y": 3,
-        "w": 36,
-        "h": 28
+        "x": 9,
+        "y": 4,
+        "w": 22,
+        "h": 27
       },
-      "sha256": "f555302a8aa7914ea70e9679f4e97b29d1b9265a857494f44834273fb8e8cca1",
+      "sha256": "2e484f96ba56bb222cde055ae0896d031064ee354a796a608db328ac6b855176",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1422,
-        "h": 1106
+        "x": 184,
+        "y": 130,
+        "w": 513,
+        "h": 623
       },
       "frames": [
         "native-complete-objects/habitat_niffler/frame-01.png"
@@ -876,26 +896,31 @@
           "pivotX": 20,
           "pivotY": 31,
           "bounds": {
-            "x": 2,
-            "y": 3,
-            "w": 36,
-            "h": 28
+            "x": 9,
+            "y": 4,
+            "w": 22,
+            "h": 27
           },
-          "sha256": "f555302a8aa7914ea70e9679f4e97b29d1b9265a857494f44834273fb8e8cca1",
+          "sha256": "2e484f96ba56bb222cde055ae0896d031064ee354a796a608db328ac6b855176",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1422,
-            "h": 1106
-          }
+            "x": 184,
+            "y": 130,
+            "w": 513,
+            "h": 623
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/habitat_niffler/frame-01.png",
+          "hdSha256": "1d77749ae1d9f0c0e1a6281649008b7eca66101f6b85628a4d53593418f8f4eb"
         }
       ],
-      "master": "masters-complete-objects/habitat_niffler.png",
-      "masterSha256": "f19d294545d094025ff6c23c1bfe523eb14a9618add45f13230d7edf57ec917f",
-      "prompt": "Create ONE game sprite of a squat open wooden treasure chest with exactly three large visible gold coins inside and one coin beside it, no creature. This is an empty habitat prop, no characters. Tiny garden prop logical36x28 pixels, dimetric2:1 isometric, squat readable silhouette that fits between two creatures. Make it extraordinarily simple and chunky with broad flat color blocks and at most2 shades per material; large elements, clean crisp stairstep outline. NOT an illustration shrunk down: each visible pixel block large, NO texture, wicker stripe detail, dithering, noisy speckles, gradient, glow, fine trim, text or shadow. Top-left light, dark purple outline. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Exactly one isolated object centered with generous transparent margins, feet on one baseline, genuine transparent alpha background, no ground tile or panel.",
+      "master": "isometric-extra-assets/masters/habitat_niffler-locked.png",
+      "masterSha256": "66a499899d588b105b3ddcdadd312e9906112471ad2e72c7602f541096911065",
+      "prompt": "One small open dark-brown wooden treasure chest with hinged lid, brass latch and THREE chunky gold coins inside, ONE coin touching the outside front. Preserve this exact original habitat, no unrelated parts. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9ce782d7-ff50-4dd3-a15f-14e945be2ef0.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/habitat_niffler/frame-01.png",
+      "hdSha256": "1d77749ae1d9f0c0e1a6281649008b7eca66101f6b85628a4d53593418f8f4eb"
     },
     {
       "id": "habitat_porlock",
@@ -907,17 +932,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 3,
+        "x": 9,
         "y": 8,
-        "w": 50,
+        "w": 38,
         "h": 42
       },
-      "sha256": "576f3433ebb09363f1f64043be0c79d302a3cc6c5e5fbda6fc7b532ac9d0eace",
+      "sha256": "6b0d6cfdb8c371fc8caa4bdda11d4467acdec83ac93fae54f7b204300f9f5ba4",
       "sourceRect": {
-        "x": 30,
-        "y": 68,
-        "w": 383,
-        "h": 324
+        "x": 143,
+        "y": 143,
+        "w": 563,
+        "h": 610
       },
       "frames": [
         "native-complete-objects/habitat_porlock/frame-01.png"
@@ -930,26 +955,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 3,
+            "x": 9,
             "y": 8,
-            "w": 50,
+            "w": 38,
             "h": 42
           },
-          "sha256": "576f3433ebb09363f1f64043be0c79d302a3cc6c5e5fbda6fc7b532ac9d0eace",
+          "sha256": "6b0d6cfdb8c371fc8caa4bdda11d4467acdec83ac93fae54f7b204300f9f5ba4",
           "sourceRect": {
-            "x": 30,
-            "y": 68,
-            "w": 383,
-            "h": 324
-          }
+            "x": 143,
+            "y": 143,
+            "w": 563,
+            "h": 610
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/habitat_porlock/frame-01.png",
+          "hdSha256": "8edd012a6f271c21f74de3277e24cbf37669f35806d71175a436e5c5a7f0fba9"
         }
       ],
-      "master": "environment/masters/habitat-refresh-20261109/shelters.png",
-      "masterSha256": "cfed531f65a82660cb4b105d7ecdd4e27cf8cc9a7c79fae756530007712b1d3f",
-      "prompt": "Production pixel game habitat atlas with four columns: porlock, salamander, crup, knarl; normal row and matching snow row. Readable sturdy silhouettes, elevated 2:1 dimetric view, vertical supports, muted wood/straw/moss/slate palette, chunky clusters, transparent gutters, no animals, labels or background.",
+      "master": "isometric-extra-assets/masters/habitat_porlock-locked.png",
+      "masterSha256": "3dbccab5e61ca599bd7bd446b6f437f2d21d5b0356430bc2e16147d876e6b5bb",
+      "prompt": "One small low open-front shelter, four rough timber posts, thick golden thatched pitched roof, golden straw bedding and one small stone water trough beside it. Preserve this exact original habitat, no unrelated parts. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "tool": "builtin image_gen",
       "method": "authored atlas pose, uniform nearest resize, palette snap, binary alpha, grounded at50",
-      "refreshed": true
+      "refreshed": true,
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/habitat_porlock/frame-01.png",
+      "hdSha256": "8edd012a6f271c21f74de3277e24cbf37669f35806d71175a436e5c5a7f0fba9"
     },
     {
       "id": "habitat_puffskein",
@@ -1230,17 +1260,17 @@
       "pivotX": 78,
       "pivotY": 118,
       "bounds": {
-        "x": 13,
-        "y": 11,
-        "w": 130,
-        "h": 131
+        "x": 17,
+        "y": 7,
+        "w": 122,
+        "h": 135
       },
-      "sha256": "42599270411bf9c277795f5fd4f482dbb819dfb1e27dcf616c7517ea8cae2ebf",
+      "sha256": "65cd21a216116318839ec7a46b06fdbb493aca7a79bf228673a511872c00247c",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 632,
-        "h": 622
+        "x": 64,
+        "y": 16,
+        "w": 370,
+        "h": 409
       },
       "frames": [
         "native-complete-objects/herbology_greenhouse/frame-01.png",
@@ -1256,18 +1286,20 @@
           "pivotX": 78,
           "pivotY": 118,
           "bounds": {
-            "x": 13,
-            "y": 11,
-            "w": 130,
-            "h": 131
+            "x": 17,
+            "y": 7,
+            "w": 122,
+            "h": 135
           },
-          "sha256": "42599270411bf9c277795f5fd4f482dbb819dfb1e27dcf616c7517ea8cae2ebf",
+          "sha256": "65cd21a216116318839ec7a46b06fdbb493aca7a79bf228673a511872c00247c",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 632,
-            "h": 622
-          }
+            "x": 64,
+            "y": 16,
+            "w": 370,
+            "h": 409
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/scenery_herbology_greenhouse/frame-01.png",
+          "hdSha256": "baa63d9f42d538de4b7011342e9818376a149acca3db10bb0e57bcdfa581226c"
         },
         {
           "file": "native-complete-objects/herbology_greenhouse/frame-02.png",
@@ -1276,18 +1308,20 @@
           "pivotX": 78,
           "pivotY": 118,
           "bounds": {
-            "x": 13,
-            "y": 11,
-            "w": 130,
-            "h": 131
+            "x": 17,
+            "y": 7,
+            "w": 122,
+            "h": 135
           },
-          "sha256": "fe65eb16aed4b26b13b5b78a2d58c713d19d39e6f3067befdf24b395fbe4a400",
+          "sha256": "5516aa2d3c205ae7204cafdf921b4f2f4f6909ccb0b44d9a5081e77be3c740f3",
           "sourceRect": {
-            "x": 632,
-            "y": 0,
-            "w": 632,
-            "h": 622
-          }
+            "x": 493,
+            "y": 16,
+            "w": 368,
+            "h": 409
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/scenery_herbology_greenhouse/frame-02.png",
+          "hdSha256": "754f80e2495f9bcbf214c3e18c6aae9d6ddc9498c72270a84635a3e6539194f6"
         },
         {
           "file": "native-complete-objects/herbology_greenhouse/frame-03.png",
@@ -1296,18 +1330,20 @@
           "pivotX": 78,
           "pivotY": 118,
           "bounds": {
-            "x": 13,
-            "y": 4,
-            "w": 130,
-            "h": 138
+            "x": 17,
+            "y": 7,
+            "w": 122,
+            "h": 135
           },
-          "sha256": "faa81342aea53742d65ababfc118bfbd0ebc12c94257ff9c29f38b0c85586412",
+          "sha256": "ebdacec15bdd38456cc3d26bc9a211b27d5e974b24476010bd669dc20e3d30ef",
           "sourceRect": {
-            "x": 0,
-            "y": 622,
-            "w": 632,
-            "h": 622
-          }
+            "x": 922,
+            "y": 16,
+            "w": 368,
+            "h": 409
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/scenery_herbology_greenhouse/frame-03.png",
+          "hdSha256": "236901bcd1e4875ed810f1ef1466b2d83456d663f84246778b670e515558b211"
         },
         {
           "file": "native-complete-objects/herbology_greenhouse/frame-04.png",
@@ -1316,18 +1352,20 @@
           "pivotX": 78,
           "pivotY": 118,
           "bounds": {
-            "x": 13,
-            "y": 11,
-            "w": 130,
-            "h": 131
+            "x": 17,
+            "y": 7,
+            "w": 122,
+            "h": 135
           },
-          "sha256": "bfc9ea3e4864f45a56f3f32a30619603b961646981a15e2cd4a384410ece0e1e",
+          "sha256": "4d6515787a95cc4b7c4326199e855dfc8c0bb05bb20a4feb97f3da7c44e17f0b",
           "sourceRect": {
-            "x": 632,
-            "y": 622,
-            "w": 632,
-            "h": 622
-          }
+            "x": 1356,
+            "y": 16,
+            "w": 369,
+            "h": 409
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/scenery_herbology_greenhouse/frame-04.png",
+          "hdSha256": "3c2de0953ff199ad99f3aa8f9ae08794bdb3ed0f965ae413f011a9b041080d00"
         }
       ],
       "durations": [
@@ -1338,12 +1376,15 @@
       ],
       "rotatable": false,
       "storeItem": false,
-      "master": "masters-complete-objects/herbology_greenhouse.png",
-      "masterSha256": "2f87ad04f75a4d944062020865d8dde36ab9e05e9993fdf5f89047a41d9450bc",
-      "prompt": "Create ONE transparent production sprite atlas of the garden's cozy wizarding herbology greenhouse. Supplied image is STYLE/IDENTITY reference: use right greenhouse, ignore character and owl. Four authored frames exact 2 columns by 2 rows square grid. Row-major: neutral wooden greenhouse closed door and roof vent closed; roof vent opens slightly and large herb leaves lean left; roof vent open fully with leaves lifted; vent half closed and leaves settle right. Building footprint, outline and scale stay fixed, plants/vent articulate only. 2:1 dimetric view with front door on left-facing facade, turquoise glass panels, warm brown timber frame, grey stone base, 3-4 broad potted herb silhouettes inside. Final logical sprite approx136x138 pixels, strong readable beam spacing and large flat translucent-looking teal panels WITHOUT actual partial alpha. Clean chunky true pixel art, top-left light, selective dark-purple outlines, no busy panes/reflection scratches/dither/no fine plant speckles/glow/blur/text. All24palette: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Four full objects equally sized square cells, planted stone base consistent baseline, clear transparent gutters along BOTH center axes, no crop/touching boundary/no ground panel/no shadows. Genuine transparent alpha background.",
+      "master": "isometric-extra-assets/masters/scenery_herbology_greenhouse-locked.png",
+      "masterSha256": "fceb9123f1f0ec5aa4a21c013516c70d684b387c55d94aa04f76a87ad5674b72",
+      "prompt": "The same small rectangular herbology greenhouse, warm reddish oak mullion framework, blue transparent glass gable roof and glass walls, gray stone brick low foundation, open front doorway, TWO clay pots inside with leafy green plants. No vines covering glass, no new room, no text. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-e2068e89-cb5a-459a-9668-57d66f0d2a6d.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/scenery_herbology_greenhouse/frame-01.png",
+      "hdSha256": "baa63d9f42d538de4b7011342e9818376a149acca3db10bb0e57bcdfa581226c"
     },
     {
       "id": "keepsake_bowtruckle",
@@ -1355,17 +1396,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 16,
+        "x": 15,
         "y": 6,
-        "w": 25,
+        "w": 27,
         "h": 44
       },
-      "sha256": "ac57d844980a2e19097e4bc3078f321055c90af53cf1b8a6e0a524d6b5d85bfd",
+      "sha256": "c4b7fef669a6f02a0e17e8761f1219978e8512c18e2aeb358879b608f80cc2f0",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 381,
+        "y": 146,
+        "w": 527,
+        "h": 875
       },
       "frames": [
         "native-complete-objects/keepsake_bowtruckle/frame-01.png"
@@ -1378,26 +1419,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 16,
+            "x": 15,
             "y": 6,
-            "w": 25,
+            "w": 27,
             "h": 44
           },
-          "sha256": "ac57d844980a2e19097e4bc3078f321055c90af53cf1b8a6e0a524d6b5d85bfd",
+          "sha256": "c4b7fef669a6f02a0e17e8761f1219978e8512c18e2aeb358879b608f80cc2f0",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 381,
+            "y": 146,
+            "w": 527,
+            "h": 875
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_bowtruckle/frame-01.png",
+          "hdSha256": "cfedfe49b43c984c5ad9dae88d905aecf5ffed038381605702e7b7e538eb9c30"
         }
       ],
-      "master": "masters-complete-objects/keepsake_bowtruckle-v2.png",
-      "masterSha256": "7d8d702720ff4e41f259e508a51e76cc652f8421f21845aacecef044fb3908a6",
-      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled bowtruckle. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: thin BROWN BARK twig body and long brown branch arms, tiny root feet, with GREEN leaves only at the head and fingertips. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "master": "isometric-extra-assets/masters/keepsake_bowtruckle-locked.png",
+      "masterSha256": "6aec9bd374099fb27671feeaddc972c3aa9c89f474c48cb0aa75d1f43bb9b783",
+      "prompt": "The SAME existing keepsake statuette: a tiny thin brown bark twig creature with branch arms, root feet and green leaves only at its head and fingertips. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-081465ef-82b7-4073-859f-b3066667980b.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_bowtruckle/frame-01.png",
+      "hdSha256": "cfedfe49b43c984c5ad9dae88d905aecf5ffed038381605702e7b7e538eb9c30"
     },
     {
       "id": "keepsake_crup",
@@ -1414,12 +1460,12 @@
         "w": 33,
         "h": 44
       },
-      "sha256": "eef9e20dc2d237bd9381218896e91f2ad0c4576fb08f9c02b449b0780ebcb266",
+      "sha256": "b4804cb313cc29f9c483ec51fdbacedeb3f5297c7a98ec5fa3a6ced14de74838",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1024,
-        "h": 1024
+        "x": 316,
+        "y": 145,
+        "w": 650,
+        "h": 856
       },
       "frames": [
         "native-complete-objects/keepsake_crup/frame-01.png"
@@ -1437,21 +1483,26 @@
             "w": 33,
             "h": 44
           },
-          "sha256": "eef9e20dc2d237bd9381218896e91f2ad0c4576fb08f9c02b449b0780ebcb266",
+          "sha256": "b4804cb313cc29f9c483ec51fdbacedeb3f5297c7a98ec5fa3a6ced14de74838",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1024,
-            "h": 1024
-          }
+            "x": 316,
+            "y": 145,
+            "w": 650,
+            "h": 856
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_crup/frame-01.png",
+          "hdSha256": "89885762bfd3793d0fe5e8ee2cae2a81d22d2f8e02388d80ff4ea471ebeeff6d"
         }
       ],
-      "master": "masters-complete-objects/keepsake_crup.png",
-      "masterSha256": "7ede1a31ca3e0bafe8aa2eaba414b7c3442c64877595e1e6de4dc6766a6b1a96",
-      "prompt": "Use case: stylized-concept. Single centered COMPLETE OBJECT 1024square real transparent RGBA: keepsake statuette of a sitting CRUP, a small Jack Russell TERRIER, cream white body, tan brown patches on head/back, pointed ears folded at tips, dark eyes, cheerful grin, short legs. Its ONE attached short tail branches into TWO LARGE obvious FORK PRONGS, shown to the right of sitting body. Facing left in3/4 dimetric2:1. Use attached Crup sheet ONLY as animal identity. Use attached Grindylow keepsake for EXACT PLINTH FAMILY: low TWO-STEP warm grey stone rectangular isometric plinth, pale top-left edges, darker right side, simple GOLD FRONT INSET with blank dark grey interior, no lettering. Animal sits on plinth, ONE connected object. Cozy farm keepsake matching existing Kneazle/Grindylow set. Large chunky low-res pixel squares, thick #231F2E outline, flat broad clusters,2-3shades/material, light TOP LEFT. Palette near #D6D8BF #A6B1AE #687486 #41465C stone; #A57554 #735044 #C97952 #E7AE73 tan; #FFC36B gold. Generous transparent margins. NO antialiasing gradient glow dithering noise fur texture ground cast shadow text frame watermark or extra props.",
+      "master": "isometric-extra-assets/masters/keepsake_crup-locked.png",
+      "masterSha256": "d9a2f2bd418e1d57d24a3ef152d3315b37687e2ca7b69201be8727f257de9437",
+      "prompt": "The SAME existing keepsake statuette: a seated cream and brown terrier with two forked tails. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-ee8c4acb-96f5-4436-912e-d2430992df6a.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_crup/frame-01.png",
+      "hdSha256": "89885762bfd3793d0fe5e8ee2cae2a81d22d2f8e02388d80ff4ea471ebeeff6d"
     },
     {
       "id": "keepsake_diricawl",
@@ -1463,17 +1514,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 15,
+        "x": 13,
         "y": 6,
-        "w": 26,
+        "w": 30,
         "h": 44
       },
-      "sha256": "266b1f3c3b78ffcf3ef486f5e71ff90387df7731dd299cbbd1f47d150380ca2b",
+      "sha256": "2dac74d622945482429bfda0f723d7c136555e3aabcc7f47914d2da44f81d75d",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 350,
+        "y": 180,
+        "w": 558,
+        "h": 822
       },
       "frames": [
         "native-complete-objects/keepsake_diricawl/frame-01.png"
@@ -1486,26 +1537,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 15,
+            "x": 13,
             "y": 6,
-            "w": 26,
+            "w": 30,
             "h": 44
           },
-          "sha256": "266b1f3c3b78ffcf3ef486f5e71ff90387df7731dd299cbbd1f47d150380ca2b",
+          "sha256": "2dac74d622945482429bfda0f723d7c136555e3aabcc7f47914d2da44f81d75d",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 350,
+            "y": 180,
+            "w": 558,
+            "h": 822
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_diricawl/frame-01.png",
+          "hdSha256": "077c76200b4f9c0b585e8a80bf75705451ffe3f7e55648e4f3385b28f407fc74"
         }
       ],
-      "master": "masters-complete-objects/keepsake_diricawl-v2.png",
-      "masterSha256": "eab49e22448dd5541734ac1c03c5b614fa4c31f17c1bc9a33c869ba14c42c6a6",
-      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled diricawl. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: round OLIVE GREEN body/wing patches, cream/tan breast, slate grey head, orange beak and stubby brown feet; not blue all over. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "master": "isometric-extra-assets/masters/keepsake_diricawl-locked.png",
+      "masterSha256": "ea2d68e96a491b41a5ff1795a19cc16f700c519e9883ae8c5d6b08b60ff0502a",
+      "prompt": "The SAME existing keepsake statuette: a squat green and pale-yellow dodo with dark blue-gray head and orange beak. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-b04720cb-2ed8-48c0-82cb-f5bae2443177.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_diricawl/frame-01.png",
+      "hdSha256": "077c76200b4f9c0b585e8a80bf75705451ffe3f7e55648e4f3385b28f407fc74"
     },
     {
       "id": "keepsake_dragon",
@@ -1517,17 +1573,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 12,
+        "x": 13,
         "y": 6,
-        "w": 32,
+        "w": 30,
         "h": 44
       },
-      "sha256": "e855b34a1831d0745aac446abed806cf728bc7476a53522ea37c160384c30ad7",
+      "sha256": "35ce34a4961b0dab2be15e4c2071e34090820f7225677032f52edc41006e991a",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 351,
+        "y": 171,
+        "w": 583,
+        "h": 863
       },
       "frames": [
         "native-complete-objects/keepsake_dragon/frame-01.png"
@@ -1540,26 +1596,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 12,
+            "x": 13,
             "y": 6,
-            "w": 32,
+            "w": 30,
             "h": 44
           },
-          "sha256": "e855b34a1831d0745aac446abed806cf728bc7476a53522ea37c160384c30ad7",
+          "sha256": "35ce34a4961b0dab2be15e4c2071e34090820f7225677032f52edc41006e991a",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 351,
+            "y": 171,
+            "w": 583,
+            "h": 863
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_dragon/frame-01.png",
+          "hdSha256": "852f9d70da07e9bf3898087c0b2bed728d490f66287a2bb4f02df286058c4135"
         }
       ],
-      "master": "masters-complete-objects/keepsake_dragon-v2.png",
-      "masterSha256": "cb4f857b6d1af986e860b370168026fa0030a9f4d2276092e114e2998f9beade",
-      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled dragon. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: dark BURGUNDY BROWN dragon scales, ORANGE segmented belly and COPPER orange wings; no purple body or green belly. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "master": "isometric-extra-assets/masters/keepsake_dragon-locked.png",
+      "masterSha256": "c5267f77873761261fc091f2a970fba38a188c967b915b02e6c31206c35e3e91",
+      "prompt": "The SAME existing keepsake statuette: a seated small red-brown dragon with orange belly, two curled horns and folded purple wings. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9b25ff09-99f5-4f12-b67c-5a59f85eb6da.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_dragon/frame-01.png",
+      "hdSha256": "852f9d70da07e9bf3898087c0b2bed728d490f66287a2bb4f02df286058c4135"
     },
     {
       "id": "keepsake_fwooper",
@@ -1571,17 +1632,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 10,
+        "x": 12,
         "y": 6,
-        "w": 36,
+        "w": 33,
         "h": 44
       },
-      "sha256": "d2be5c08147668c840f657d02e509bc5dac6ee74cea6e32e7ba5cef4908cff43",
+      "sha256": "1b427f0c58bf1eac977b96c005fb18cd2cbdcc66e706b76eb9c2ee5972f9ae92",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 296,
+        "y": 149,
+        "w": 645,
+        "h": 860
       },
       "frames": [
         "native-complete-objects/keepsake_fwooper/frame-01.png"
@@ -1594,26 +1655,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 10,
+            "x": 12,
             "y": 6,
-            "w": 36,
+            "w": 33,
             "h": 44
           },
-          "sha256": "d2be5c08147668c840f657d02e509bc5dac6ee74cea6e32e7ba5cef4908cff43",
+          "sha256": "1b427f0c58bf1eac977b96c005fb18cd2cbdcc66e706b76eb9c2ee5972f9ae92",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 296,
+            "y": 149,
+            "w": 645,
+            "h": 860
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_fwooper/frame-01.png",
+          "hdSha256": "32f3b4c4c8487ec59c699a46773da4753f42a7616104a0e06be68bd62b7f9f5b"
         }
       ],
-      "master": "masters-complete-objects/keepsake_fwooper-v2.png",
-      "masterSha256": "cc61e9229564a0cc958df54350609f32c825f35a0f2aa7a3ce10310220189fda",
-      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled fwooper. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: bright ORANGE and warm gold plumage, long swept orange tail with dark-brown/copper shadows; do not turn large wing or body regions purple. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "master": "isometric-extra-assets/masters/keepsake_fwooper-locked.png",
+      "masterSha256": "d249df1db8163850321f0a9b4fa3bdf76700e2973a712ba086af263a10b37a09",
+      "prompt": "The SAME existing keepsake statuette: a bright orange bird with yellow crest and long tapering tail. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-4a0f8103-2eda-469e-aed4-b711db9ce9d8.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_fwooper/frame-01.png",
+      "hdSha256": "32f3b4c4c8487ec59c699a46773da4753f42a7616104a0e06be68bd62b7f9f5b"
     },
     {
       "id": "keepsake_grindylow",
@@ -1630,12 +1696,12 @@
         "w": 32,
         "h": 44
       },
-      "sha256": "01105a0b011073d0c505dd966b4a69f926cc6a4f6b604bfb800be7244f9f908b",
+      "sha256": "4539ec5f1bc23b61d720b61e1ed01676062fd6cc83cc5fb7c94d0a42f5a41a65",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1024,
-        "h": 1024
+        "x": 338,
+        "y": 166,
+        "w": 636,
+        "h": 867
       },
       "frames": [
         "native-complete-objects/keepsake_grindylow/frame-01.png"
@@ -1653,21 +1719,26 @@
             "w": 32,
             "h": 44
           },
-          "sha256": "01105a0b011073d0c505dd966b4a69f926cc6a4f6b604bfb800be7244f9f908b",
+          "sha256": "4539ec5f1bc23b61d720b61e1ed01676062fd6cc83cc5fb7c94d0a42f5a41a65",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1024,
-            "h": 1024
-          }
+            "x": 338,
+            "y": 166,
+            "w": 636,
+            "h": 867
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_grindylow/frame-01.png",
+          "hdSha256": "d7bcba2ef7401cfcc73a9aa1f4cc53bb53df7f977b3aa5bf459ac85a9e119fe0"
         }
       ],
-      "master": "masters-complete-objects/keepsake_grindylow.png",
-      "masterSha256": "fb5ae90b3d9ea58efecfd1b0138d89f92303b88da3b0cabea19e7b6b8674768c",
-      "prompt": "Edit ONLY remove the TWO floating blue water drops beside statuette body. Those two areas must be completely transparent. Keep ONE connected Grindylow STATUETTE fixed to its two-step grey plinth with gold front inset, pale green two-horned body and raised long fingers EXACTLY unchanged. No free-floating objects. Genuine transparent background. No added shadows halo glow gradients. 1024x1024. Chunky low-resolution pixel art, every pixel a flat square block; clean thick dark outline #231F2E; big flat clusters, at most 2–3 shades per material; light from top-left; isometric 2:1 dimetric feel. NO anti-aliasing, gradients, glow, dithering, speckle noise, text, frames, ground shadow. Real transparent alpha background. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.",
+      "master": "isometric-extra-assets/masters/keepsake_grindylow-locked.png",
+      "masterSha256": "d2583d311bcfaa173744a1fa2eea1faed5abcdb85428f7885eec1a8424a13327",
+      "prompt": "The SAME existing keepsake statuette: a tiny green water imp with two thin raised arms, forked fingers and little horns. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b939-b9f1-7e73-a877-31e4bb1fcd55/exec-6e624928-32a3-4c10-bc5b-7c834a1cce51.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_grindylow/frame-01.png",
+      "hdSha256": "d7bcba2ef7401cfcc73a9aa1f4cc53bb53df7f977b3aa5bf459ac85a9e119fe0"
     },
     {
       "id": "keepsake_hippogriff",
@@ -1679,17 +1750,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 11,
+        "x": 15,
         "y": 6,
-        "w": 34,
+        "w": 27,
         "h": 44
       },
-      "sha256": "d200021d4f3dc484ae2be816a728412a54986020852d4b537475948ec0060a9f",
+      "sha256": "e80c5b67d7d56d05f7ddbeb87ed920fe0b0cf4931d7eca73ea0ba19706d8130f",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 323,
+        "y": 133,
+        "w": 605,
+        "h": 995
       },
       "frames": [
         "native-complete-objects/keepsake_hippogriff/frame-01.png"
@@ -1702,26 +1773,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 11,
+            "x": 15,
             "y": 6,
-            "w": 34,
+            "w": 27,
             "h": 44
           },
-          "sha256": "d200021d4f3dc484ae2be816a728412a54986020852d4b537475948ec0060a9f",
+          "sha256": "e80c5b67d7d56d05f7ddbeb87ed920fe0b0cf4931d7eca73ea0ba19706d8130f",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 323,
+            "y": 133,
+            "w": 605,
+            "h": 995
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_hippogriff/frame-01.png",
+          "hdSha256": "107b1267d3eb6c8db86f1539accd83a4a432d89ef2e0beac4cbe78af33fd8e20"
         }
       ],
-      "master": "masters-complete-objects/keepsake_hippogriff-v2.png",
-      "masterSha256": "50a85fe8c321e344b05560334e978c0b86fb1949698ee3adbd13693705cb848b",
-      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled hippogriff. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: creamy pale eagle head and breast, slate blue-grey wings, CHESTNUT BROWN horse hindquarters and brown tail. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "master": "isometric-refinements/masters/keepsake_hippogriff-refined.png",
+      "masterSha256": "2c4a576d1fd793839e9c8386aac0206881dfa94179444c320d5e5a8a56e6bd1a",
+      "prompt": "The SAME existing keepsake statuette: a proud cream eagle-headed hippogriff with gray feathered chest and reddish-brown horse hindquarters. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Both feathered wings remain FOLDED at its sides, exactly like the original seated statuette, NOT spread or raised. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-db011dac-1419-4b32-ac88-2597fd054f72.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_hippogriff/frame-01.png",
+      "hdSha256": "107b1267d3eb6c8db86f1539accd83a4a432d89ef2e0beac4cbe78af33fd8e20"
     },
     {
       "id": "keepsake_kappa",
@@ -1738,12 +1814,12 @@
         "w": 34,
         "h": 44
       },
-      "sha256": "addb90c824260ff32dc74d9860d9790f6e97cafc2ebf430bcfad7521f32c2300",
+      "sha256": "431e342c0115b8d2813589761ec65ef853e928ed581c0e0d300f5e1ed4fa4df0",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1024,
-        "h": 1024
+        "x": 350,
+        "y": 213,
+        "w": 612,
+        "h": 792
       },
       "frames": [
         "native-complete-objects/keepsake_kappa/frame-01.png"
@@ -1761,21 +1837,26 @@
             "w": 34,
             "h": 44
           },
-          "sha256": "addb90c824260ff32dc74d9860d9790f6e97cafc2ebf430bcfad7521f32c2300",
+          "sha256": "431e342c0115b8d2813589761ec65ef853e928ed581c0e0d300f5e1ed4fa4df0",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1024,
-            "h": 1024
-          }
+            "x": 350,
+            "y": 213,
+            "w": 612,
+            "h": 792
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_kappa/frame-01.png",
+          "hdSha256": "4797b31b4e31eae82377ac6e89aaa9f4cf7c444fe48d9ceeb39058370935d9ad"
         }
       ],
-      "master": "masters-complete-objects/keepsake_kappa.png",
-      "masterSha256": "23d00912a854b85dc632c4d5602aecad0a4e85ef4e96537029e8f73585c4381a",
-      "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Kappa, Ma da: small stocky hunched MONKEY-LIKE water demon with long arms, bare dull GREEN-GREY SCALY skin, just a few large dark scale patches, webbed hands and feet, pointed bony monkey face, big PALE eyes and wide cheeky mouth. NO horns, NO shell, NO beak, NO hair. Essential in EVERY pose: a shallow dent on TOP of its head, rim around a clearly visible little pale-blue #70A8B6/#B7DEE0 water oval. Stockier and greyer than the horned thin Grindylow reference.\nOne centered complete object on transparent 1024x1024 square: keepsake_kappa. A colored Kappa STATUETTE in calm stocky monkey-hunched left three-quarter stance, broad webbed hands, big pale eyes, clearly visible small BLUE INSET in its head dent. Mounted on LOW TWO-STEP WARM GREY STONE PLINTH. Copy reference 2 PLINTH STYLE exactly: two broad squat grey rectangular dimetric steps, pale top-left edges, darker right faces, single simple gold outlined FRONT INSET with blank grey center. No lettering. All connected; no ground/shadows. Reference1 creature identity only; reference2 plinth and coarse square pixel density. Simple collectible silhouette, no miniature details.",
+      "master": "isometric-extra-assets/masters/keepsake_kappa-locked.png",
+      "masterSha256": "7b261a8165703857671a26043387055f532fe9ff90cb299a7515620e14b3e9d2",
+      "prompt": "The SAME existing keepsake statuette: a squat gray-green turtle imp with its water dish on top of its head. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-5982ab76-2a60-42cf-8bbf-79e946a371ac.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_kappa/frame-01.png",
+      "hdSha256": "4797b31b4e31eae82377ac6e89aaa9f4cf7c444fe48d9ceeb39058370935d9ad"
     },
     {
       "id": "keepsake_knarl",
@@ -1787,17 +1868,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 11,
+        "x": 8,
         "y": 6,
-        "w": 35,
+        "w": 40,
         "h": 44
       },
-      "sha256": "2c70ce974b19a185e573e8abe9b4d85f07ff49e5e46d4a77a94be3a200061746",
+      "sha256": "492db316ba84796da76c604e913d56e8e2c4fe71a52492f89393ef1562dc80d1",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1024,
-        "h": 1024
+        "x": 360,
+        "y": 274,
+        "w": 592,
+        "h": 653
       },
       "frames": [
         "native-complete-objects/keepsake_knarl/frame-01.png"
@@ -1810,26 +1891,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 11,
+            "x": 8,
             "y": 6,
-            "w": 35,
+            "w": 40,
             "h": 44
           },
-          "sha256": "2c70ce974b19a185e573e8abe9b4d85f07ff49e5e46d4a77a94be3a200061746",
+          "sha256": "492db316ba84796da76c604e913d56e8e2c4fe71a52492f89393ef1562dc80d1",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1024,
-            "h": 1024
-          }
+            "x": 360,
+            "y": 274,
+            "w": 592,
+            "h": 653
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_knarl/frame-01.png",
+          "hdSha256": "d0b742be1e8b7bd9b07164b6d17cf858d5d9c7ff931b276da2e89ec73030d1e1"
         }
       ],
-      "master": "masters-complete-objects/keepsake_knarl.png",
-      "masterSha256": "2cfadb3e10c6901e56e46fcfa503fd1dd3c973832ed37e6982bccf462d296944",
-      "prompt": "Use case: stylized-concept. Single complete object centered1024x1024 real transparent RGBA: KNARL KEEPSAKE STATUETTE. A grumpy round HEDGEHOG BALL of chunky dark brown long sharp QUILLS WITH PALE TIPS, pointed cream snout black nose sticking out left, suspicious frowning eyes heavy brow, tiny feet. No food or hand. Animal identity from Knarl reference; sits on low TWO-STEP WARM GREY STONE PLINTH EXACTLY matching attached keepsake Grindylow: rectangular isometric plinth, pale top-left rims, darker right side, blank simple GOLD FRONT INSET dark grey center, no lettering. One connected silhouette, cozy not scary. Three-quarter2:1 dimetric camera. Broad flat colour clusters, giant hard square low-res pixels, thick #231F2E outline, 2-3flat shades/material, upper-left light. #735044 #4A3042 #A57554 brown quills; #E7AE73 #D6D8BF pale tips; #41465C #687486 #A6B1AE #D6D8BF grey plinth; #FFC36B gold. Generous clear margin. No gradients antialias glow noise dither fine texture outside shadows ground text frames watermark props or floating quills.",
+      "master": "isometric-extra-assets/masters/keepsake_knarl-locked.png",
+      "masterSha256": "0dd00f1917c2d698f7c7465d5c35a9c202b68e1e3beadaf742b76ed7e6bbec1b",
+      "prompt": "The SAME existing keepsake statuette: a compact brown and cream spiny hedgehog. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-5627ef35-1e97-46ae-8023-c3a63c1d7b19.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_knarl/frame-01.png",
+      "hdSha256": "d0b742be1e8b7bd9b07164b6d17cf858d5d9c7ff931b276da2e89ec73030d1e1"
     },
     {
       "id": "keepsake_kneazle",
@@ -1843,15 +1929,15 @@
       "bounds": {
         "x": 14,
         "y": 6,
-        "w": 29,
+        "w": 28,
         "h": 44
       },
-      "sha256": "ea3d5c4a4eef7692f5c34383d6bcb436fd4da5e8b6cebffee7b49b54309e0ed5",
+      "sha256": "046de4c914694c711887241a943893da117ccd4e8aeada5edabef78bbac49414",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 350,
+        "y": 140,
+        "w": 596,
+        "h": 928
       },
       "frames": [
         "native-complete-objects/keepsake_kneazle/frame-01.png"
@@ -1866,24 +1952,29 @@
           "bounds": {
             "x": 14,
             "y": 6,
-            "w": 29,
+            "w": 28,
             "h": 44
           },
-          "sha256": "ea3d5c4a4eef7692f5c34383d6bcb436fd4da5e8b6cebffee7b49b54309e0ed5",
+          "sha256": "046de4c914694c711887241a943893da117ccd4e8aeada5edabef78bbac49414",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 350,
+            "y": 140,
+            "w": 596,
+            "h": 928
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_kneazle/frame-01.png",
+          "hdSha256": "78102c57ea363e335152fcf2bfae8daa64c240d32865688f10005bdef48e5ab2"
         }
       ],
-      "master": "masters-complete-objects/keepsake_kneazle.png",
-      "masterSha256": "47139473cdc8b24c3e76a46307858e992cde3cb46d6eee540fb0062932c4deaa",
-      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a tawny Kneazle cat with large pointed ears, whiskers and a curled lion-like tail, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "master": "isometric-extra-assets/masters/keepsake_kneazle-locked.png",
+      "masterSha256": "57609e32ee4a31d5f33eafd6c607519040e7ac561dd6f823617196a35c45f46c",
+      "prompt": "The SAME existing keepsake statuette: a seated orange spotted large-eared cat with a curled bushy tail. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-264b4c0c-d08e-464f-941a-e3ab9093e3ae.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_kneazle/frame-01.png",
+      "hdSha256": "78102c57ea363e335152fcf2bfae8daa64c240d32865688f10005bdef48e5ab2"
     },
     {
       "id": "keepsake_mooncalf",
@@ -1897,15 +1988,15 @@
       "bounds": {
         "x": 16,
         "y": 6,
-        "w": 24,
+        "w": 25,
         "h": 44
       },
-      "sha256": "0fe8016fa8513e1f3d2b6475d129f5e5e907ba03dd8335206e453f944db93900",
+      "sha256": "1483644eb788d9bfd04f7c715fae7f25295ef8d3723f677f52fbf49a4fb595e1",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 274,
+        "y": 228,
+        "w": 503,
+        "h": 886
       },
       "frames": [
         "native-complete-objects/keepsake_mooncalf/frame-01.png"
@@ -1920,24 +2011,29 @@
           "bounds": {
             "x": 16,
             "y": 6,
-            "w": 24,
+            "w": 25,
             "h": 44
           },
-          "sha256": "0fe8016fa8513e1f3d2b6475d129f5e5e907ba03dd8335206e453f944db93900",
+          "sha256": "1483644eb788d9bfd04f7c715fae7f25295ef8d3723f677f52fbf49a4fb595e1",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 274,
+            "y": 228,
+            "w": 503,
+            "h": 886
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_mooncalf/frame-01.png",
+          "hdSha256": "94b165e3f8b7b65cfd4a6e3444d258d700065530c490a7fb2cca556191813173"
         }
       ],
-      "master": "masters-complete-objects/keepsake_mooncalf-v2.png",
-      "masterSha256": "148ca3c6203e0c5e7b6d3b3aa5992c34b69ec8f2b4102fe4e3939ff5657898e7",
-      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled mooncalf. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: warm TAN long neck and lower legs, pale cream face/chest, grey back with small pale spots, very large eyes and slim long legs. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "master": "isometric-extra-assets/masters/keepsake_mooncalf-locked.png",
+      "masterSha256": "ac6148eed88a11d6bb2d4cd53dc6087b7a64fe233afb0dc14cfadeb5e11128a9",
+      "prompt": "The SAME existing keepsake statuette: a slender cream long-legged calf with huge round blue eyes, little horns and pale spots. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-fadc6ebc-39d0-406c-b038-014b61be993d.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_mooncalf/frame-01.png",
+      "hdSha256": "94b165e3f8b7b65cfd4a6e3444d258d700065530c490a7fb2cca556191813173"
     },
     {
       "id": "keepsake_niffler",
@@ -1951,15 +2047,15 @@
       "bounds": {
         "x": 10,
         "y": 6,
-        "w": 36,
+        "w": 37,
         "h": 44
       },
-      "sha256": "e8233a992eaeef58d8f97fc1d896c5546695ab185d46e338df469fe98e401179",
+      "sha256": "f6c5ef7bac105846413c76a7d9a4c6dd5a053633e2da424c6476791022d9e93b",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 287,
+        "y": 170,
+        "w": 736,
+        "h": 867
       },
       "frames": [
         "native-complete-objects/keepsake_niffler/frame-01.png"
@@ -1974,24 +2070,29 @@
           "bounds": {
             "x": 10,
             "y": 6,
-            "w": 36,
+            "w": 37,
             "h": 44
           },
-          "sha256": "e8233a992eaeef58d8f97fc1d896c5546695ab185d46e338df469fe98e401179",
+          "sha256": "f6c5ef7bac105846413c76a7d9a4c6dd5a053633e2da424c6476791022d9e93b",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 287,
+            "y": 170,
+            "w": 736,
+            "h": 867
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_niffler/frame-01.png",
+          "hdSha256": "48a2a53e58775892821858b92f81223867ae58e501f6523ab2317657ad6c99b0"
         }
       ],
-      "master": "masters-complete-objects/keepsake_niffler.png",
-      "masterSha256": "c200933f2e1a38dd07aea339f2afe0808423d5bad61afb89000768c36a557ee6",
-      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a black Niffler with duck-like beak and small paws clutching one broad gold coin, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "master": "isometric-extra-assets/masters/keepsake_niffler-locked.png",
+      "masterSha256": "888dadf17acc568c8c654cdc36589fb98f128babbf9e8d90c6631b9b6e16de38",
+      "prompt": "The SAME existing keepsake statuette: a seated black fluffy platypus-faced creature holding one large gold coin against its belly. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-d7d10bb4-3f27-4c28-b690-929981596cf9.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_niffler/frame-01.png",
+      "hdSha256": "48a2a53e58775892821858b92f81223867ae58e501f6523ab2317657ad6c99b0"
     },
     {
       "id": "keepsake_porlock",
@@ -2003,17 +2104,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 14,
+        "x": 13,
         "y": 6,
-        "w": 28,
+        "w": 30,
         "h": 44
       },
-      "sha256": "75b6219062e937ecac7013c7536438ac52d8d3956f7657d10a17ce8039e90e73",
+      "sha256": "ee37a308dc0ac7ce0cad91ed1fa74f8d41410d6e0214477ed11787607f724382",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1024,
-        "h": 1024
+        "x": 340,
+        "y": 171,
+        "w": 578,
+        "h": 849
       },
       "frames": [
         "native-complete-objects/keepsake_porlock/frame-01.png"
@@ -2026,26 +2127,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 14,
+            "x": 13,
             "y": 6,
-            "w": 28,
+            "w": 30,
             "h": 44
           },
-          "sha256": "75b6219062e937ecac7013c7536438ac52d8d3956f7657d10a17ce8039e90e73",
+          "sha256": "ee37a308dc0ac7ce0cad91ed1fa74f8d41410d6e0214477ed11787607f724382",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1024,
-            "h": 1024
-          }
+            "x": 340,
+            "y": 171,
+            "w": 578,
+            "h": 849
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_porlock/frame-01.png",
+          "hdSha256": "d19124cb33e7c40364bcc0d87f76e4a60e1167a65548b523ede86bdec3deffdf"
         }
       ],
-      "master": "masters-complete-objects/keepsake_porlock.png",
-      "masterSha256": "ae70eece5341de078203579d32fe0dd83e4e0325b72bddd158343ff78ccbc3f0",
-      "prompt": "Use case: stylized-concept. Production pixel-art game master, matching the provided Crup and Grindylow references: chunky low-resolution square pixel blocks, simple big flat clusters, dark #231F2E outline, only 2–3 shades per material, 2:1 dimetric three-quarter view, light from TOP LEFT. No antialiasing, gradients, glow, dithering, noise, text, grid, frames, ground or external shadow. REAL transparent alpha. Palette as close as possible to #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0.\nBook Porlock, Ngua lun: shy little horse guardian UPRIGHT ON EXACTLY TWO CLOVEN HOOVES, two short arms with FOUR stubby fingers each. Covered in SHAGGY BROWN FUR, rough mop of shaggy head hair, exceptionally LARGE LONG BULBOUS NOSE, small worried gentle eyes and eyebrows. Cute worried cosy guardian. No clothing, no horns. NOT four-legged pony, NOT centaur, not monkey. Hooves visible below fur, arms distinct from legs. Simple large jagged fur clusters, never fine strands.\nOne centered complete object on transparent 1024x1024 square: keepsake_porlock. Colored Porlock STATUETTE, upright TWO CLOVEN HOOVES, shy short arms in front, rough shaggy brown hair and exceptionally big nose, facing left 3/4. Mounted on same LOW TWO-STEP WARM GREY STONE PLINTH as reference 2. Match PLINTH STYLE exactly: two broad squat rectangular grey dimetric steps, pale top-left edges, dark right faces, single simple gold outlined front inset, blank grey center, no lettering. All connected object, no ground/shadow. Reference1 identity, reference2 plinth and chunky pixel density.",
+      "master": "isometric-extra-assets/masters/keepsake_porlock-locked.png",
+      "masterSha256": "cdab81f34e2e56743652c4f976650eababe4e6d55f51d0f40d36079d1b3d81d6",
+      "prompt": "The SAME existing keepsake statuette: a small shaggy chestnut mane-faced horse guardian standing on little hooves. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a1ba3e-676d-7a31-9d4e-76a499967002/exec-2d663b25-d179-44ad-bb66-33323d8e8e22.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_porlock/frame-01.png",
+      "hdSha256": "d19124cb33e7c40364bcc0d87f76e4a60e1167a65548b523ede86bdec3deffdf"
     },
     {
       "id": "keepsake_puffskein",
@@ -2062,12 +2168,12 @@
         "w": 38,
         "h": 44
       },
-      "sha256": "a6ee5a7b30aa893ee191f993dbc8cda73cab5e804c8fd84387da154ae6ea5912",
+      "sha256": "d7adfa52413827dd580856a7164f2998454deb3309d20fc1534cc334317cc4fe",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 337,
+        "y": 233,
+        "w": 611,
+        "h": 706
       },
       "frames": [
         "native-complete-objects/keepsake_puffskein/frame-01.png"
@@ -2085,21 +2191,26 @@
             "w": 38,
             "h": 44
           },
-          "sha256": "a6ee5a7b30aa893ee191f993dbc8cda73cab5e804c8fd84387da154ae6ea5912",
+          "sha256": "d7adfa52413827dd580856a7164f2998454deb3309d20fc1534cc334317cc4fe",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 337,
+            "y": 233,
+            "w": 611,
+            "h": 706
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_puffskein/frame-01.png",
+          "hdSha256": "5c348976c0887ba6e0e35a7dc09e48e7ccd9889d7cac59cb7ff3280da8ac9a25"
         }
       ],
-      "master": "masters-complete-objects/keepsake_puffskein-v2.png",
-      "masterSha256": "c74919713631c43cdb997f8994f55f3a11230d0b472baf0ec0ee08966d16b8d8",
-      "prompt": "EDIT TARGET: Image1 is the existing garden keepsake statuette. Image2 is supporting species identity/color reference: use ONLY the LARGE original game creature directly above its small statuette in the tile labelled puffskein. Preserve Image1's grey stepped plinth, blank gold inset, viewpoint, overall40x44logical pixel size and clean chunky pixel style. Correct the creature to match the LARGE ORIGINAL game's identity: orange-gold fluffy round ball, warm peach face, tiny ears and very small dark eyes, rather than a cream owl-like large-eyed face. Keep a readable species silhouette, broad flat pixel clusters, 2-3 shades maximum per material. Remove fine fur/feather/scales pattern and stray noise. One miniature on one plinth, no text, no extra props, no surrounding scene, no drop shadow, genuine transparent RGBA. Use game's24sprite palette #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Do not alter other tiles in Image2; output ONLY the one corrected isolated statuette.",
+      "master": "isometric-extra-assets/masters/keepsake_puffskein-locked.png",
+      "masterSha256": "e0e385bb492eaa055a9926bf871292cc00eebcdf768f4c5f17c898055af29a40",
+      "prompt": "The SAME existing keepsake statuette: a perfectly round golden-orange fluffy creature with two tiny black eyes. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9ba77eef-920c-4b34-8705-107a90077831.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_puffskein/frame-01.png",
+      "hdSha256": "5c348976c0887ba6e0e35a7dc09e48e7ccd9889d7cac59cb7ff3280da8ac9a25"
     },
     {
       "id": "keepsake_salamander",
@@ -2112,16 +2223,16 @@
       "pivotY": 50,
       "bounds": {
         "x": 6,
-        "y": 10,
+        "y": 16,
         "w": 44,
-        "h": 40
+        "h": 34
       },
-      "sha256": "0d537a6b001c9c2fc72c6352a892037f482d97405ddd77b5ab5d451409c9e2bf",
+      "sha256": "6411cbb76b902a5cbaeb911805183bc2f350b992dcb4862c6cc97e2543f31836",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1024,
-        "h": 1024
+        "x": 182,
+        "y": 263,
+        "w": 948,
+        "h": 729
       },
       "frames": [
         "native-complete-objects/keepsake_salamander/frame-01.png"
@@ -2135,25 +2246,30 @@
           "pivotY": 50,
           "bounds": {
             "x": 6,
-            "y": 10,
+            "y": 16,
             "w": 44,
-            "h": 40
+            "h": 34
           },
-          "sha256": "0d537a6b001c9c2fc72c6352a892037f482d97405ddd77b5ab5d451409c9e2bf",
+          "sha256": "6411cbb76b902a5cbaeb911805183bc2f350b992dcb4862c6cc97e2543f31836",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1024,
-            "h": 1024
-          }
+            "x": 182,
+            "y": 263,
+            "w": 948,
+            "h": 729
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_salamander/frame-01.png",
+          "hdSha256": "3d053d9283101903eda77de2edfafaafc33bea6d481e8788abdb7a074b28518e"
         }
       ],
-      "master": "masters-complete-objects/keepsake_salamander.png",
-      "masterSha256": "a9b9fcf50abc13464192961633a3725985f732b28dbe66f016ef65952ce445cd",
-      "prompt": "Use case: stylized-concept.1024x1024 real transparent RGBA, ONE centered complete KEEPSAKE STATUETTE. Orange red FIRE SALAMANDER, slim low LIZARD body with four splayed little feet, round head facing LEFT, bright yellow eyes, few large darker red-brown back spots, LONG TAIL CURLED to right and ONE SMALL FLAT FLAME LICK TOUCHING back. Same salamander identity as supplied motion sheet. The lizard stands on LOW TWO-STEP WARM GREY STONE rectangular isometric PLINTH exactly from attached Grindylow keepsake: pale upper-left rim, darker right side, simple blank GOLD FRONT INSET with dark grey interior, no lettering. The three new keepsakes must be same family as Grindylow and Kneazle.2:1 dimetric3/4 view, top-left light, chunky LOW-resolution large square pixel blocks, thick #231F2E outline, big flat clusters2-3shades/material. Palette orange #ED8A45 #C75B4B, red-brown spots #8B4A3F, tiny yellow flame #FFC36B; stone #41465C #687486 #A6B1AE #D6D8BF; gold #FFC36B. Cozy farm lizard, not dragon (no wings horns or spines). Entire object centered with generous transparency. No antialias gradients glow halo smoke floating sparks noise dither texture outside shadow ground extra props text frames or watermark.",
+      "master": "isometric-extra-assets/masters/keepsake_salamander-locked.png",
+      "masterSha256": "1fd230fc3603f5abc4f43d9a751f3ab8e3855baf7c8bf6eea416f4b6ec186a54",
+      "prompt": "The SAME existing keepsake statuette: a low orange salamander with a long curled tail and dark brown patches. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a1b9d9-b945-7252-b1da-a29bfea7b119/exec-9aebd392-ce87-42d5-bb34-e45adfc148b2.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_salamander/frame-01.png",
+      "hdSha256": "3d053d9283101903eda77de2edfafaafc33bea6d481e8788abdb7a074b28518e"
     },
     {
       "id": "keepsake_thestral",
@@ -2165,17 +2281,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 13,
+        "x": 16,
         "y": 6,
-        "w": 30,
+        "w": 24,
         "h": 44
       },
-      "sha256": "c05e5b212179848c713da2940006dbf2f7bdac725943f51cb9f0d31f36e49109",
+      "sha256": "947db9b2d456132d7eda001f6494c1ee32d51323a8aca7685e3fb644db065854",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 288,
+        "y": 331,
+        "w": 519,
+        "h": 947
       },
       "frames": [
         "native-complete-objects/keepsake_thestral/frame-01.png"
@@ -2188,26 +2304,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 13,
+            "x": 16,
             "y": 6,
-            "w": 30,
+            "w": 24,
             "h": 44
           },
-          "sha256": "c05e5b212179848c713da2940006dbf2f7bdac725943f51cb9f0d31f36e49109",
+          "sha256": "947db9b2d456132d7eda001f6494c1ee32d51323a8aca7685e3fb644db065854",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 288,
+            "y": 331,
+            "w": 519,
+            "h": 947
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_thestral/frame-01.png",
+          "hdSha256": "d8c983c42ef8e2a0fb207327fb4058f1b7d934a0ae76bc0cc18f6cdaa92e1bf6"
         }
       ],
-      "master": "masters-complete-objects/keepsake_thestral.png",
-      "masterSha256": "c527ed93c6b0d94e4bb18de1d506cb608a1498351448877e0783ac673c9a4db6",
-      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a slender charcoal Thestral horse with visible rib contours, bat wings folded and a long thin tail, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "master": "isometric-refinements/masters/keepsake_thestral-refined.png",
+      "masterSha256": "6bee76383853d2fc5c61861f765691a8da566b82b816806c77455bff499e430d",
+      "prompt": "The SAME existing keepsake statuette: a black skeletal winged horse with thin bat wings folded at its sides. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. The plinth is SQUARE with straight edges along the axes, never oval, round or circular. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-801813d6-de85-4e58-b1a9-c8d1a32520ab.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_thestral/frame-01.png",
+      "hdSha256": "d8c983c42ef8e2a0fb207327fb4058f1b7d934a0ae76bc0cc18f6cdaa92e1bf6"
     },
     {
       "id": "keepsake_three-headed-dog",
@@ -2219,17 +2340,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 8,
+        "x": 13,
         "y": 6,
-        "w": 40,
+        "w": 30,
         "h": 44
       },
-      "sha256": "c46c1ce5d71d1997873924d25ad3456825e7b7d2702f5ef26d649ac19f48efeb",
+      "sha256": "9722ed57dfd96959c8e45386284fa6a2c0d9ca07c8ac77a8d7dc373a2d5deaa9",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 314,
+        "y": 151,
+        "w": 608,
+        "h": 899
       },
       "frames": [
         "native-complete-objects/keepsake_three-headed-dog/frame-01.png"
@@ -2242,26 +2363,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 8,
+            "x": 13,
             "y": 6,
-            "w": 40,
+            "w": 30,
             "h": 44
           },
-          "sha256": "c46c1ce5d71d1997873924d25ad3456825e7b7d2702f5ef26d649ac19f48efeb",
+          "sha256": "9722ed57dfd96959c8e45386284fa6a2c0d9ca07c8ac77a8d7dc373a2d5deaa9",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 314,
+            "y": 151,
+            "w": 608,
+            "h": 899
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_three-headed-dog/frame-01.png",
+          "hdSha256": "78700cd128bbd81789a7e120eec942b6509b7b7275274ab9ea4c6876a4ad2244"
         }
       ],
-      "master": "masters-complete-objects/keepsake_three-headed-dog.png",
-      "masterSha256": "b38ba38b56da1890b64bba46844df3f01b473fc5935f8cdcad347e490b3f13dd",
-      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a seated friendly white three-headed dog: exactly three large dog heads sharing one small body, floppy ears and broad noses, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "master": "isometric-extra-assets/masters/keepsake_three-headed-dog-locked.png",
+      "masterSha256": "7ac285a5dc016238c0c0b40c13ab18a2aa8147fa58bb985f5b095a0e2d62f831",
+      "prompt": "The SAME existing keepsake statuette: one seated cream three-headed dog, all three heads clearly visible. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-9d537268-858a-485d-996d-6f890c0aaf68.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_three-headed-dog/frame-01.png",
+      "hdSha256": "78700cd128bbd81789a7e120eec942b6509b7b7275274ab9ea4c6876a4ad2244"
     },
     {
       "id": "keepsake_unicorn",
@@ -2273,17 +2399,17 @@
       "pivotX": 28,
       "pivotY": 50,
       "bounds": {
-        "x": 13,
+        "x": 14,
         "y": 6,
-        "w": 31,
+        "w": 28,
         "h": 44
       },
-      "sha256": "678a438d6a9905a3eb17980ddff39700492274aab0eaebb2e6e66cfe3cf6d473",
+      "sha256": "e9cc2770d11665884f45c76cd63022191353c804cb51b371f6896b2f66a48514",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 1254,
-        "h": 1254
+        "x": 332,
+        "y": 91,
+        "w": 613,
+        "h": 975
       },
       "frames": [
         "native-complete-objects/keepsake_unicorn/frame-01.png"
@@ -2296,26 +2422,31 @@
           "pivotX": 28,
           "pivotY": 50,
           "bounds": {
-            "x": 13,
+            "x": 14,
             "y": 6,
-            "w": 31,
+            "w": 28,
             "h": 44
           },
-          "sha256": "678a438d6a9905a3eb17980ddff39700492274aab0eaebb2e6e66cfe3cf6d473",
+          "sha256": "e9cc2770d11665884f45c76cd63022191353c804cb51b371f6896b2f66a48514",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 1254,
-            "h": 1254
-          }
+            "x": 332,
+            "y": 91,
+            "w": 613,
+            "h": 975
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/keepsake_unicorn/frame-01.png",
+          "hdSha256": "fe24e1a10a267f1d8c6f823cada560895b85092e1d7c208fcd82b715a56ad237"
         }
       ],
-      "master": "masters-complete-objects/keepsake_unicorn.png",
-      "masterSha256": "7f263ed488ac67bc02b483542e57ca2023c89a80233a9763e354fd90c02553d5",
-      "prompt": "Create ONE game sprite, a special garden keepsake statuette of a pale cream Unicorn horse with a single long gold horn and flowing light mane, fixed to a low two-step warm grey stone plinth with a simple gold front inset. This is a collectible miniature STATUETTE, no lettering, no produce item or generic cup. Preserve species identity in a clean big silhouette. Logical44x44 pixels including plinth, 2:1 dimetric viewpoint, top-left light, dark purple selective outline. Broad flat pixel clusters, at most2-3 shades per material, NO noise or fur texture, dithering, glitter, gradient, tiny ornament, text, cast shadow or ground tile. Use only these24 colors: #231F2E #4A3042 #735044 #A57554 #41465C #687486 #A6B1AE #D6D8BF #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. One isolated complete object with generous margins, true transparent RGBA background.",
+      "master": "isometric-extra-assets/masters/keepsake_unicorn-locked.png",
+      "masterSha256": "a7821df19ab6931ac60ec59d309a39d4156e8f939f2d80dbfc2652febaf0acb1",
+      "prompt": "The SAME existing keepsake statuette: a slender ivory unicorn with a long gold horn, gold hooves and long pale mane and tail. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "/Users/thachanh/.codex/generated_images/01a16741-8d8d-7643-8285-9ae6ab1f2c14/exec-d9d8a6c0-83a3-46e2-a0f3-34e67b60f00b.png",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/keepsake_unicorn/frame-01.png",
+      "hdSha256": "fe24e1a10a267f1d8c6f823cada560895b85092e1d7c208fcd82b715a56ad237"
     },
     {
       "id": "owl_post",
@@ -2326,17 +2457,17 @@
       "pivotX": 32,
       "pivotY": 72,
       "bounds": {
-        "x": 13,
-        "y": 12,
-        "w": 37,
-        "h": 60
+        "x": 11,
+        "y": 5,
+        "w": 43,
+        "h": 67
       },
-      "sha256": "8cfeadd9ab3f48e2e7ca1667eee0ea8ac06e75b91003ea8119e3ca55796784c1",
+      "sha256": "cc9bd3cf43ecee0391a0bce84111cd480a1a191e723be74139cad8de46510c1f",
       "sourceRect": {
-        "x": 0,
-        "y": 0,
-        "w": 512,
-        "h": 512
+        "x": 119,
+        "y": 105,
+        "w": 198,
+        "h": 306
       },
       "frames": [
         "native-complete-objects/owl_post/frame-01.png",
@@ -2352,18 +2483,20 @@
           "pivotX": 32,
           "pivotY": 72,
           "bounds": {
-            "x": 13,
-            "y": 12,
-            "w": 37,
-            "h": 60
+            "x": 11,
+            "y": 5,
+            "w": 43,
+            "h": 67
           },
-          "sha256": "8cfeadd9ab3f48e2e7ca1667eee0ea8ac06e75b91003ea8119e3ca55796784c1",
+          "sha256": "cc9bd3cf43ecee0391a0bce84111cd480a1a191e723be74139cad8de46510c1f",
           "sourceRect": {
-            "x": 0,
-            "y": 0,
-            "w": 512,
-            "h": 512
-          }
+            "x": 119,
+            "y": 105,
+            "w": 198,
+            "h": 306
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/scenery_owl_post/frame-01.png",
+          "hdSha256": "877fd3c124c332b26fd1a3a61962e9b747c93b352ee2323627410386178e8d1e"
         },
         {
           "file": "native-complete-objects/owl_post/frame-02.png",
@@ -2372,18 +2505,20 @@
           "pivotX": 32,
           "pivotY": 72,
           "bounds": {
-            "x": 13,
-            "y": 12,
-            "w": 37,
-            "h": 60
+            "x": 11,
+            "y": 5,
+            "w": 43,
+            "h": 67
           },
-          "sha256": "491426c806ae067ae8717d549ceccced1d196ff331ae55a95768d21b6750ede5",
+          "sha256": "b181ac2c40f892f88ffb9e548bff7b5e94c01ed5bd4640bee32b892095091894",
           "sourceRect": {
-            "x": 512,
-            "y": 0,
-            "w": 512,
-            "h": 512
-          }
+            "x": 487,
+            "y": 104,
+            "w": 197,
+            "h": 307
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/scenery_owl_post/frame-02.png",
+          "hdSha256": "640ac0693b96025b98a8a2998968bbcba288e39b2957e340f51d905cc6a54188"
         },
         {
           "file": "native-complete-objects/owl_post/frame-03.png",
@@ -2392,18 +2527,20 @@
           "pivotX": 32,
           "pivotY": 72,
           "bounds": {
-            "x": 9,
-            "y": 12,
-            "w": 41,
-            "h": 60
+            "x": 11,
+            "y": 6,
+            "w": 43,
+            "h": 66
           },
-          "sha256": "878d37a5470fe45d328d649dbf6790b2421d9a1e435e3305e0518a0c048d9c66",
+          "sha256": "86a63c02abd1ea461b4d06eb5215ad8ed5fe3f4e9802e0bf8fbf783c9325adda",
           "sourceRect": {
-            "x": 0,
-            "y": 512,
-            "w": 512,
-            "h": 512
-          }
+            "x": 855,
+            "y": 109,
+            "w": 197,
+            "h": 302
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/scenery_owl_post/frame-03.png",
+          "hdSha256": "efa1e2521c1669c500be518069aacc918fa40a7194e492aca77c0f0337ec78df"
         },
         {
           "file": "native-complete-objects/owl_post/frame-04.png",
@@ -2412,18 +2549,20 @@
           "pivotX": 32,
           "pivotY": 72,
           "bounds": {
-            "x": 13,
-            "y": 12,
-            "w": 37,
-            "h": 60
+            "x": 11,
+            "y": 4,
+            "w": 43,
+            "h": 68
           },
-          "sha256": "d143b243e5ff8cdfa3751ac728b45fd5624b34e70c7faaeaac797f4c8165c231",
+          "sha256": "a63021deb6c1e3f690a9789ddd33d272367c993149ee35a533eaf1bd5b3fd2bf",
           "sourceRect": {
-            "x": 512,
-            "y": 512,
-            "w": 512,
-            "h": 512
-          }
+            "x": 1223,
+            "y": 100,
+            "w": 197,
+            "h": 311
+          },
+          "hdFile": "isometric-extra-assets/hd-preview/scenery_owl_post/frame-04.png",
+          "hdSha256": "67077f0ee23cf5d0da31f0db2def526318455c07c7418fb0ef1c9161ed46b9ff"
         }
       ],
       "durations": [
@@ -2434,12 +2573,15 @@
       ],
       "rotatable": false,
       "storeItem": false,
-      "master": "masters-complete-objects/owl_post.png",
-      "masterSha256": "8b19727293c642351fba9c89b59b4409c400201850976f94b44172cdcad82d5d",
-      "prompt": "Pixel art sprite sheet of Hedwig, Harry Potter's snowy owl, arranged in a 3x2 grid (3 columns by 2 rows) on a solid white background, matching the chunky pixel art style, dark #231F2E pixel outline, top-left lighting, and proportions of the reference images.\n\nBook-accurate Hedwig: cute chibi proportions with a large round head, large amber-gold eyes, small dark beak, and pure snow-white plumage with only a few subtle dark flecks on the wings (pure white body, not grey or blue).\n\nPerch consistency (CRITICAL):\nShe perches on an upright rustic carved wooden T-shaped perch post. The post, its height, its width, and the cream parchment letter with red wax seal hanging by a string from the right perch arm are 100% IDENTICAL and at the exact same position in all 6 poses. The bottom of the vertical wooden post aligns to a single strict horizontal baseline across row 1, and a single strict horizontal baseline across row 2 (in pose 5 'spread', the vertical post must NOT be cut short, it must have the full vertical post down to the row baseline). The hanging letter is identical in shape, size, and orientation across all poses.\n\nSheet layout:\n3x2 grid, three-quarter view toward lower-left, same size in every pose, wide empty gaps between cells, plain solid white background, no text, no shadows, no grid lines.\n\nPoses (only Hedwig moves):\nRow 1:\n1. idle: Hedwig perched upright on the wooden T-perch, looking forward with bright amber-gold eyes, wings folded.\n2. look: Head turned gently to the screen-left, wings folded.\n3. stretch: Eyes happily closed, one wing stretched out a little.\nRow 2:\n4. tilt: Head tilted to the screen-right, curious amber eyes, wings folded.\n5. spread: Both wings spread wide open ready to take flight, perched on the full-length wooden post.\n6. letter: Holding the letter in her beak.",
+      "master": "isometric-extra-assets/masters/scenery_owl_post-locked.png",
+      "masterSha256": "b17248db2076ace28ab85aa886a3ac3784066889441cdc848f8af978ab3cad63",
+      "prompt": "The same Hedwig owl-post: ONE small white snowy owl perched on ONE rough oak crossbeam supported by ONE upright timber post, ONE sealed parchment letter attached below the beam. Small readable owl face and black eyes. NO mailbox, plinth, rope swing, ground slab or new accessories. Camera locked to the garden 64x32 axes; the frozen guide and generation record identify the authored input.",
       "generatedFile": "masters-complete-objects/hedwig-chibi-candidate-a.jpg",
       "tool": "builtin image_gen",
-      "method": "authored master cells, common native scale, palette24, binary alpha"
+      "method": "authored master cells, common native scale, palette24, binary alpha",
+      "artRevision": "isometric-hd-20261115",
+      "hdFile": "isometric-extra-assets/hd-preview/scenery_owl_post/frame-01.png",
+      "hdSha256": "877fd3c124c332b26fd1a3a61962e9b747c93b352ee2323627410386178e8d1e"
     }
   ]
 }

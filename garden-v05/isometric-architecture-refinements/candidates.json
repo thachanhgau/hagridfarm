@@ -1,0 +1,1904 @@
+{
+  "version": 1,
+  "accepted": false,
+  "items": [
+    {
+      "id": "habitat_diricawl",
+      "originalId": "diricawl",
+      "targetKind": "habitat",
+      "subject": "One low gray shallow stone water bowl on a squat pedestal with blue water and two green leaves by the foot. No birds. Preserve this exact original habitat, no unrelated parts. The water is clean visible LIGHT SKY BLUE (#70A8B6/#B7DEE0), NOT green, dark moss, lily leaves or algae. Preserve the small gray stone drinking-bowl shape and only the exact original attached leaves/flowers.",
+      "guideKind": "roundbase",
+      "footprint": [
+        1,
+        1
+      ],
+      "maxInkWidth": 32,
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "motion": "static",
+      "fixedCamera": true,
+      "poseLayout": [
+        2
+      ],
+      "master": "isometric-architecture-refinements/masters/habitat_diricawl-refined.png",
+      "selectedMaster": "isometric-architecture-refinements/masters/habitat_diricawl-refined.png",
+      "previousRuntime": {
+        "id": "habitat_diricawl",
+        "file": "native-complete-objects/habitat_diricawl/frame-01.png",
+        "width": 40,
+        "height": 36,
+        "pivotX": 20,
+        "pivotY": 31,
+        "bounds": {
+          "x": 3,
+          "y": 3,
+          "w": 35,
+          "h": 28
+        },
+        "frames": [
+          "native-complete-objects/habitat_diricawl/frame-01.png"
+        ],
+        "authored": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/40e7cbe50c468038c3caf69d.webp"
+      },
+      "previousViews": [
+        {
+          "id": "habitat_diricawl",
+          "file": "native-complete-objects/habitat_diricawl/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 3,
+            "y": 3,
+            "w": 35,
+            "h": 28
+          },
+          "frames": [
+            "native-complete-objects/habitat_diricawl/frame-01.png"
+          ],
+          "authored": true,
+          "hd": true,
+          "auditSource": "decor-assets/hd/40e7cbe50c468038c3caf69d.webp"
+        }
+      ],
+      "noFeet": false,
+      "noPost": true,
+      "winter": true,
+      "guideHeight": 20,
+      "guide": "isometric-architecture-refinements/generation-inputs/habitat_diricawl-23a9df096897.png",
+      "guideSha256": "23a9df0968971675f59d0e49a56dbf3363341eca82a4bd9ba94ee5e93c2079a2",
+      "guideLayout": "poses",
+      "water": true,
+      "masterSha256": "f9e8e0e728b4390407d1954a82bc1e61c5db96d3d2de9eabcccbdd74a250caa3",
+      "scale": 0.06694560669456066,
+      "frames": [
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 5,
+            "w": 32,
+            "h": 26
+          },
+          "sha256": "89c666665797e6412f55466485700a44f01cbc8a52ffa21289494d1502d52890",
+          "sourceRect": {
+            "x": 274,
+            "y": 227,
+            "w": 477,
+            "h": 383
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-02.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 5,
+            "w": 32,
+            "h": 26
+          },
+          "sha256": "89c666665797e6412f55466485700a44f01cbc8a52ffa21289494d1502d52890",
+          "sourceRect": {
+            "x": 274,
+            "y": 227,
+            "w": 477,
+            "h": 383
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-03.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 5,
+            "w": 32,
+            "h": 26
+          },
+          "sha256": "89c666665797e6412f55466485700a44f01cbc8a52ffa21289494d1502d52890",
+          "sourceRect": {
+            "x": 274,
+            "y": 227,
+            "w": 477,
+            "h": 383
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-04.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 5,
+            "w": 32,
+            "h": 26
+          },
+          "sha256": "89c666665797e6412f55466485700a44f01cbc8a52ffa21289494d1502d52890",
+          "sourceRect": {
+            "x": 274,
+            "y": 227,
+            "w": 477,
+            "h": 383
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-05.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 5,
+            "w": 32,
+            "h": 26
+          },
+          "sha256": "d58a1a6fd5ffc34e662fdc4c6dbbd8a39aeee662c7b3ac5c434344c49624b3aa",
+          "sourceRect": {
+            "x": 1217,
+            "y": 218,
+            "w": 478,
+            "h": 392
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-06.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 5,
+            "w": 32,
+            "h": 26
+          },
+          "sha256": "d58a1a6fd5ffc34e662fdc4c6dbbd8a39aeee662c7b3ac5c434344c49624b3aa",
+          "sourceRect": {
+            "x": 1217,
+            "y": 218,
+            "w": 478,
+            "h": 392
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-05.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-07.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 5,
+            "w": 32,
+            "h": 26
+          },
+          "sha256": "d58a1a6fd5ffc34e662fdc4c6dbbd8a39aeee662c7b3ac5c434344c49624b3aa",
+          "sourceRect": {
+            "x": 1217,
+            "y": 218,
+            "w": 478,
+            "h": 392
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-05.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-08.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 5,
+            "w": 32,
+            "h": 26
+          },
+          "sha256": "d58a1a6fd5ffc34e662fdc4c6dbbd8a39aeee662c7b3ac5c434344c49624b3aa",
+          "sourceRect": {
+            "x": 1217,
+            "y": 218,
+            "w": 478,
+            "h": 392
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_diricawl/frame-05.png"
+        }
+      ],
+      "atlas": {
+        "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+        "sha256": "6331aef85be6571f413b14b569c785b7f4498d15f6b70c198513aea7177d34a8",
+        "width": 160,
+        "height": 72,
+        "frames": [
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 5,
+              "w": 32,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 5,
+              "w": 32,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 40,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 5,
+              "w": 32,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 80,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 5,
+              "w": 32,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 120,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 5,
+              "w": 32,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 5,
+              "w": 32,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 40,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 5,
+              "w": 32,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 80,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_diricawl/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 5,
+              "w": 32,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 120,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          }
+        ]
+      },
+      "previewHD": [
+        {
+          "file": "isometric-architecture-refinements/hd-preview/habitat_diricawl/frame-01.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 62,
+          "bounds": {
+            "x": 8,
+            "y": 11,
+            "w": 64,
+            "h": 51
+          },
+          "sha256": "f17afc90297934692be13e23f2b78ea2fd3e8a31d7eccee4515cedb3adb8746a",
+          "sourceRect": {
+            "x": 274,
+            "y": 227,
+            "w": 477,
+            "h": 383
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/hd-preview/habitat_diricawl/frame-05.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 62,
+          "bounds": {
+            "x": 8,
+            "y": 10,
+            "w": 64,
+            "h": 52
+          },
+          "sha256": "701a69c491f3024c8cd142088bbeaa4ca96c791d34f386c0b22d50938c04c58b",
+          "sourceRect": {
+            "x": 1217,
+            "y": 218,
+            "w": 478,
+            "h": 392
+          }
+        }
+      ],
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#41465C",
+        "#687486",
+        "#A6B1AE",
+        "#D6D8BF",
+        "#24483F",
+        "#3F6A45",
+        "#71934B",
+        "#B0BD67",
+        "#8B4A3F",
+        "#C97952",
+        "#E7AE73",
+        "#F5D69A",
+        "#874056",
+        "#C75B4B",
+        "#ED8A45",
+        "#FFC36B",
+        "#3E3B70",
+        "#6961A6",
+        "#70A8B6",
+        "#B7DEE0"
+      ],
+      "motionPlans": [
+        {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        },
+        {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        }
+      ]
+    },
+    {
+      "id": "habitat_unicorn",
+      "originalId": "unicorn",
+      "targetKind": "habitat",
+      "subject": "One shallow pale gray oval stone basin with blue water and TWO ivory flowers touching its left rim. No animal. Preserve this exact original habitat, no unrelated parts. The water is clean visible LIGHT SKY BLUE (#70A8B6/#B7DEE0), NOT green, dark moss, lily leaves or algae. Preserve the small gray stone drinking-bowl shape and only the exact original attached leaves/flowers.",
+      "guideKind": "roundbase",
+      "footprint": [
+        1,
+        1
+      ],
+      "maxInkWidth": 32,
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "motion": "static",
+      "fixedCamera": true,
+      "poseLayout": [
+        2
+      ],
+      "master": "isometric-architecture-refinements/masters/habitat_unicorn-refined.png",
+      "selectedMaster": "isometric-architecture-refinements/masters/habitat_unicorn-refined.png",
+      "previousRuntime": {
+        "id": "habitat_unicorn",
+        "file": "native-complete-objects/habitat_unicorn/frame-01.png",
+        "width": 40,
+        "height": 36,
+        "pivotX": 20,
+        "pivotY": 31,
+        "bounds": {
+          "x": 2,
+          "y": 10,
+          "w": 36,
+          "h": 21
+        },
+        "frames": [
+          "native-complete-objects/habitat_unicorn/frame-01.png"
+        ],
+        "authored": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/675e12a07924de8a60893a7a.webp"
+      },
+      "previousViews": [
+        {
+          "id": "habitat_unicorn",
+          "file": "native-complete-objects/habitat_unicorn/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 10,
+            "w": 36,
+            "h": 21
+          },
+          "frames": [
+            "native-complete-objects/habitat_unicorn/frame-01.png"
+          ],
+          "authored": true,
+          "hd": true,
+          "auditSource": "decor-assets/hd/675e12a07924de8a60893a7a.webp"
+        }
+      ],
+      "noFeet": false,
+      "noPost": true,
+      "winter": true,
+      "guideHeight": 20,
+      "guide": "isometric-architecture-refinements/generation-inputs/habitat_unicorn-23a9df096897.png",
+      "guideSha256": "23a9df0968971675f59d0e49a56dbf3363341eca82a4bd9ba94ee5e93c2079a2",
+      "guideLayout": "poses",
+      "water": true,
+      "masterSha256": "70d56997a0323eb60b766c331885df938ee81d9b5ebc2a3a66488da52532e29e",
+      "scale": 0.05714285714285714,
+      "frames": [
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 15,
+            "w": 32,
+            "h": 16
+          },
+          "sha256": "205dd2dcb0d16461dd1c7a7fe6e130cc54b51821a280fc248efbfa635b6336f3",
+          "sourceRect": {
+            "x": 159,
+            "y": 313,
+            "w": 559,
+            "h": 273
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-02.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 15,
+            "w": 32,
+            "h": 16
+          },
+          "sha256": "205dd2dcb0d16461dd1c7a7fe6e130cc54b51821a280fc248efbfa635b6336f3",
+          "sourceRect": {
+            "x": 159,
+            "y": 313,
+            "w": 559,
+            "h": 273
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-03.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 15,
+            "w": 32,
+            "h": 16
+          },
+          "sha256": "205dd2dcb0d16461dd1c7a7fe6e130cc54b51821a280fc248efbfa635b6336f3",
+          "sourceRect": {
+            "x": 159,
+            "y": 313,
+            "w": 559,
+            "h": 273
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-04.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 15,
+            "w": 32,
+            "h": 16
+          },
+          "sha256": "205dd2dcb0d16461dd1c7a7fe6e130cc54b51821a280fc248efbfa635b6336f3",
+          "sourceRect": {
+            "x": 159,
+            "y": 313,
+            "w": 559,
+            "h": 273
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-05.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 15,
+            "w": 32,
+            "h": 16
+          },
+          "sha256": "92e315081b18cb32321611b1e037f09f73ef1c90096c603f9dc9b80ecffdd724",
+          "sourceRect": {
+            "x": 1046,
+            "y": 303,
+            "w": 560,
+            "h": 283
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-06.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 15,
+            "w": 32,
+            "h": 16
+          },
+          "sha256": "92e315081b18cb32321611b1e037f09f73ef1c90096c603f9dc9b80ecffdd724",
+          "sourceRect": {
+            "x": 1046,
+            "y": 303,
+            "w": 560,
+            "h": 283
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-05.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-07.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 15,
+            "w": 32,
+            "h": 16
+          },
+          "sha256": "92e315081b18cb32321611b1e037f09f73ef1c90096c603f9dc9b80ecffdd724",
+          "sourceRect": {
+            "x": 1046,
+            "y": 303,
+            "w": 560,
+            "h": 283
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-05.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-08.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 4,
+            "y": 15,
+            "w": 32,
+            "h": 16
+          },
+          "sha256": "92e315081b18cb32321611b1e037f09f73ef1c90096c603f9dc9b80ecffdd724",
+          "sourceRect": {
+            "x": 1046,
+            "y": 303,
+            "w": 560,
+            "h": 283
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/habitat_unicorn/frame-05.png"
+        }
+      ],
+      "atlas": {
+        "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+        "sha256": "71e9a9065d0a448dc3cdb53953b80d106b7f944d33c82ab3cc600b5007d2881e",
+        "width": 160,
+        "height": 72,
+        "frames": [
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 15,
+              "w": 32,
+              "h": 16
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 15,
+              "w": 32,
+              "h": 16
+            },
+            "atlasRect": {
+              "x": 40,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 15,
+              "w": 32,
+              "h": 16
+            },
+            "atlasRect": {
+              "x": 80,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 15,
+              "w": 32,
+              "h": 16
+            },
+            "atlasRect": {
+              "x": 120,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 15,
+              "w": 32,
+              "h": 16
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 15,
+              "w": 32,
+              "h": 16
+            },
+            "atlasRect": {
+              "x": 40,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 15,
+              "w": 32,
+              "h": 16
+            },
+            "atlasRect": {
+              "x": 80,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/habitat_unicorn/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 4,
+              "y": 15,
+              "w": 32,
+              "h": 16
+            },
+            "atlasRect": {
+              "x": 120,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          }
+        ]
+      },
+      "previewHD": [
+        {
+          "file": "isometric-architecture-refinements/hd-preview/habitat_unicorn/frame-01.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 62,
+          "bounds": {
+            "x": 8,
+            "y": 31,
+            "w": 64,
+            "h": 31
+          },
+          "sha256": "efb2bd5cca46cd6a486beaea56809b26df8930484573811216a0932a598d2ea2",
+          "sourceRect": {
+            "x": 159,
+            "y": 313,
+            "w": 559,
+            "h": 273
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/hd-preview/habitat_unicorn/frame-05.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 62,
+          "bounds": {
+            "x": 8,
+            "y": 30,
+            "w": 64,
+            "h": 32
+          },
+          "sha256": "a7c278142526c0b4f27fb44c51c58c1883c6307dbfa2fa90678b1b60f11a2fbd",
+          "sourceRect": {
+            "x": 1046,
+            "y": 303,
+            "w": 560,
+            "h": 283
+          }
+        }
+      ],
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#41465C",
+        "#687486",
+        "#A6B1AE",
+        "#D6D8BF",
+        "#24483F",
+        "#3F6A45",
+        "#71934B",
+        "#B0BD67",
+        "#8B4A3F",
+        "#C97952",
+        "#E7AE73",
+        "#F5D69A",
+        "#874056",
+        "#C75B4B",
+        "#ED8A45",
+        "#FFC36B",
+        "#3E3B70",
+        "#6961A6",
+        "#70A8B6",
+        "#B7DEE0"
+      ],
+      "motionPlans": [
+        {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        },
+        {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        }
+      ]
+    },
+    {
+      "id": "scenery_hut",
+      "originalId": "hut",
+      "targetKind": "scenery",
+      "subject": "The same Hagrid cottage: a squat round rough gray stone hut with wide layered dark slate conical roof and small rear peak, a tall gray stone chimney at rear LEFT, a tiny oak front door with timber peaked porch, TWO warm amber cross-pane windows, a low right stone wing with its own slate roof, a tidy stack of chopped logs at left and tiny pumpkins and pot by the entrance. Door and porch must face along a garden axis; circular main wall may curve. Preserve the original cozy design, NO new building. The front door and peaked oak porch are on the LEFT visible side, their lower horizontal door and porch edges following a garden axis (+0.5 slope). The round body remains round. Do NOT put the porch front square to the screen. Keep the exact original cottage design and materials.",
+      "guideKind": "roundhut",
+      "footprint": [
+        3,
+        3
+      ],
+      "maxInkWidth": 184,
+      "width": 256,
+      "height": 224,
+      "pivotX": 128,
+      "pivotY": 216,
+      "motion": "static",
+      "fixedCamera": true,
+      "poseLayout": [
+        2
+      ],
+      "master": "isometric-architecture-refinements/masters/scenery_hut-refined.png",
+      "selectedMaster": "isometric-architecture-refinements/masters/scenery_hut-refined.png",
+      "previousRuntime": {
+        "id": "hut",
+        "file": "environment/layers/hut.png",
+        "width": 256,
+        "height": 224,
+        "pivotX": 128,
+        "pivotY": 216,
+        "source": "environment/hut.png",
+        "sourceRect": null,
+        "hd": true,
+        "auditSource": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp"
+      },
+      "previousViews": [
+        {
+          "id": "hut",
+          "file": "environment/layers/hut.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "source": "environment/hut.png",
+          "sourceRect": null,
+          "hd": true,
+          "auditSource": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp"
+        },
+        {
+          "id": "hut",
+          "file": "environment/winter/hut-snow.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "source": "environment/hut.png",
+          "sourceRect": null,
+          "hd": true,
+          "auditSource": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp"
+        }
+      ],
+      "winter": true,
+      "noPlinth": true,
+      "guide": "isometric-architecture-refinements/generation-inputs/scenery_hut-0d8bc2ee3fb0.png",
+      "guideSha256": "0d8bc2ee3fb0d3e7b0c539771bd3e4a6f7e54da1d219ecd79a50db159789bf8c",
+      "guideHeight": 45,
+      "guideLayout": "poses",
+      "porch": true,
+      "masterSha256": "0ff67d88e2e1e40a56932d94643f7cccc2a872ec93c538d154aac230a4272a09",
+      "scale": 0.2800608828006088,
+      "frames": [
+        {
+          "file": "isometric-architecture-refinements/candidates/scenery_hut/frame-01.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "bounds": {
+            "x": 36,
+            "y": 26,
+            "w": 184,
+            "h": 190
+          },
+          "sha256": "0b1bd47ef3ea8343348feb915956946c0fcafcbb43197043ba20dd8b219de4a2",
+          "sourceRect": {
+            "x": 133,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/scenery_hut/frame-02.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "bounds": {
+            "x": 36,
+            "y": 26,
+            "w": 184,
+            "h": 190
+          },
+          "sha256": "0b1bd47ef3ea8343348feb915956946c0fcafcbb43197043ba20dd8b219de4a2",
+          "sourceRect": {
+            "x": 133,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/scenery_hut/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/scenery_hut/frame-03.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "bounds": {
+            "x": 36,
+            "y": 26,
+            "w": 184,
+            "h": 190
+          },
+          "sha256": "0b1bd47ef3ea8343348feb915956946c0fcafcbb43197043ba20dd8b219de4a2",
+          "sourceRect": {
+            "x": 133,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/scenery_hut/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/scenery_hut/frame-04.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "bounds": {
+            "x": 36,
+            "y": 26,
+            "w": 184,
+            "h": 190
+          },
+          "sha256": "0b1bd47ef3ea8343348feb915956946c0fcafcbb43197043ba20dd8b219de4a2",
+          "sourceRect": {
+            "x": 133,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/scenery_hut/frame-01.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/scenery_hut/frame-05.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "bounds": {
+            "x": 36,
+            "y": 26,
+            "w": 184,
+            "h": 190
+          },
+          "sha256": "4f3d62022da1d150dcb7eb2c29bca41e3aa0b735547143791600c36161688306",
+          "sourceRect": {
+            "x": 984,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/scenery_hut/frame-06.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "bounds": {
+            "x": 36,
+            "y": 26,
+            "w": 184,
+            "h": 190
+          },
+          "sha256": "4f3d62022da1d150dcb7eb2c29bca41e3aa0b735547143791600c36161688306",
+          "sourceRect": {
+            "x": 984,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/scenery_hut/frame-05.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/scenery_hut/frame-07.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "bounds": {
+            "x": 36,
+            "y": 26,
+            "w": 184,
+            "h": 190
+          },
+          "sha256": "4f3d62022da1d150dcb7eb2c29bca41e3aa0b735547143791600c36161688306",
+          "sourceRect": {
+            "x": 984,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/scenery_hut/frame-05.png"
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/scenery_hut/frame-08.png",
+          "width": 256,
+          "height": 224,
+          "pivotX": 128,
+          "pivotY": 216,
+          "bounds": {
+            "x": 36,
+            "y": 26,
+            "w": 184,
+            "h": 190
+          },
+          "sha256": "4f3d62022da1d150dcb7eb2c29bca41e3aa0b735547143791600c36161688306",
+          "sourceRect": {
+            "x": 984,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          },
+          "effectBaseFile": "isometric-architecture-refinements/candidates/scenery_hut/frame-05.png"
+        }
+      ],
+      "atlas": {
+        "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+        "sha256": "0072d8b991f35bfd4918da173539ccda38a3953c3e6030f9d25ad85eb24b4a27",
+        "width": 1024,
+        "height": 448,
+        "frames": [
+          {
+            "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+            "width": 256,
+            "height": 224,
+            "pivotX": 128,
+            "pivotY": 216,
+            "bounds": {
+              "x": 36,
+              "y": 26,
+              "w": 184,
+              "h": 190
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 256,
+              "h": 224
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+            "width": 256,
+            "height": 224,
+            "pivotX": 128,
+            "pivotY": 216,
+            "bounds": {
+              "x": 36,
+              "y": 26,
+              "w": 184,
+              "h": 190
+            },
+            "atlasRect": {
+              "x": 256,
+              "y": 0,
+              "w": 256,
+              "h": 224
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+            "width": 256,
+            "height": 224,
+            "pivotX": 128,
+            "pivotY": 216,
+            "bounds": {
+              "x": 36,
+              "y": 26,
+              "w": 184,
+              "h": 190
+            },
+            "atlasRect": {
+              "x": 512,
+              "y": 0,
+              "w": 256,
+              "h": 224
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+            "width": 256,
+            "height": 224,
+            "pivotX": 128,
+            "pivotY": 216,
+            "bounds": {
+              "x": 36,
+              "y": 26,
+              "w": 184,
+              "h": 190
+            },
+            "atlasRect": {
+              "x": 768,
+              "y": 0,
+              "w": 256,
+              "h": 224
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+            "width": 256,
+            "height": 224,
+            "pivotX": 128,
+            "pivotY": 216,
+            "bounds": {
+              "x": 36,
+              "y": 26,
+              "w": 184,
+              "h": 190
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 224,
+              "w": 256,
+              "h": 224
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+            "width": 256,
+            "height": 224,
+            "pivotX": 128,
+            "pivotY": 216,
+            "bounds": {
+              "x": 36,
+              "y": 26,
+              "w": 184,
+              "h": 190
+            },
+            "atlasRect": {
+              "x": 256,
+              "y": 224,
+              "w": 256,
+              "h": 224
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+            "width": 256,
+            "height": 224,
+            "pivotX": 128,
+            "pivotY": 216,
+            "bounds": {
+              "x": 36,
+              "y": 26,
+              "w": 184,
+              "h": 190
+            },
+            "atlasRect": {
+              "x": 512,
+              "y": 224,
+              "w": 256,
+              "h": 224
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/scenery_hut/atlas.png",
+            "width": 256,
+            "height": 224,
+            "pivotX": 128,
+            "pivotY": 216,
+            "bounds": {
+              "x": 36,
+              "y": 26,
+              "w": 184,
+              "h": 190
+            },
+            "atlasRect": {
+              "x": 768,
+              "y": 224,
+              "w": 256,
+              "h": 224
+            }
+          }
+        ]
+      },
+      "previewHD": [
+        {
+          "file": "isometric-architecture-refinements/hd-preview/scenery_hut/frame-01.png",
+          "width": 512,
+          "height": 448,
+          "pivotX": 256,
+          "pivotY": 432,
+          "bounds": {
+            "x": 72,
+            "y": 51,
+            "w": 368,
+            "h": 381
+          },
+          "sha256": "533b221fff5f692ffc90b61194513012eb9ff3e312bedc9661b0abd70bbdcc63",
+          "sourceRect": {
+            "x": 133,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/hd-preview/scenery_hut/frame-05.png",
+          "width": 512,
+          "height": 448,
+          "pivotX": 256,
+          "pivotY": 432,
+          "bounds": {
+            "x": 72,
+            "y": 51,
+            "w": 368,
+            "h": 381
+          },
+          "sha256": "74129bb8c95a07adc4f89578b08d356914a5e8f9bd02e7976ab6d0e9c94f9e5d",
+          "sourceRect": {
+            "x": 984,
+            "y": 103,
+            "w": 657,
+            "h": 680
+          }
+        }
+      ],
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#41465C",
+        "#687486",
+        "#A6B1AE",
+        "#D6D8BF",
+        "#24483F",
+        "#3F6A45",
+        "#71934B",
+        "#B0BD67",
+        "#8B4A3F",
+        "#C97952",
+        "#E7AE73",
+        "#F5D69A",
+        "#874056",
+        "#C75B4B",
+        "#ED8A45",
+        "#FFC36B",
+        "#3E3B70",
+        "#6961A6",
+        "#70A8B6",
+        "#B7DEE0"
+      ],
+      "motionPlans": [
+        {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        },
+        {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        }
+      ]
+    },
+    {
+      "id": "festival_hero_event_herbology_fair",
+      "originalId": "event_herbology_fair",
+      "targetKind": "festival-hero",
+      "subject": "The same compact rustic HERBOLOGY MARKET STALL: warm wooden counter, FOUR upright timber corner posts, cream-and-muted-green striped gabled fabric canopy, short string of tiny green triangular bunting under the canopy, THREE terracotta flower pots and leafy herbs grouped on the counter, ONE small lower shelf holding two additional pots. Open airy front and visible side. No lettering or new accessories. The space below the counter is OPEN, visible through its four posts. There is just ONE narrow lower shelf. NO closed cabinet or full wooden side wall. Preserve short triangular bunting below the striped canopy.",
+      "guideKind": "marketstall",
+      "footprint": [
+        2,
+        2
+      ],
+      "maxInkWidth": 120,
+      "width": 136,
+      "height": 158,
+      "pivotX": 68,
+      "pivotY": 156,
+      "motion": "static",
+      "fixedCamera": true,
+      "poseLayout": [
+        1
+      ],
+      "master": "isometric-architecture-refinements/masters/festival_hero_event_herbology_fair-refined.png",
+      "selectedMaster": "isometric-architecture-refinements/masters/festival_hero_event_herbology_fair-refined.png",
+      "previousRuntime": {
+        "id": "hero-herbology",
+        "file": "world-v241/hero-herbology.png",
+        "width": 136,
+        "height": 158,
+        "pivotX": 68,
+        "pivotY": 156,
+        "hd": false,
+        "auditSource": "runtime-webp/world-v241/hero-herbology.webp"
+      },
+      "previousViews": [
+        {
+          "id": "hero-herbology",
+          "file": "world-v241/hero-herbology.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "hd": false,
+          "auditSource": "runtime-webp/world-v241/hero-herbology.webp"
+        }
+      ],
+      "canopy": true,
+      "winter": false,
+      "selectedPoseIndices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "guide": "isometric-architecture-refinements/generation-inputs/festival_hero_event_herbology_fair-8e0ee824abed.png",
+      "guideSha256": "8e0ee824abed576091e6abbe419d198b53885071a23ac8719805044cf61d3e8e",
+      "guideLayout": "poses",
+      "masterSha256": "27def91d82bcb1ba34cda07c7c62b8b7d66af2a3b94e4d1268b6e0bcc9660c4d",
+      "scale": 0.13263525305410123,
+      "frames": [
+        {
+          "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/frame-01.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "bounds": {
+            "x": 9,
+            "y": 4,
+            "w": 118,
+            "h": 152
+          },
+          "sha256": "f2f1d8ff94f74133ed58e6b1463ebbf2d4ed3451c4aa019504f912d8f4fb16a6",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/frame-02.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "bounds": {
+            "x": 9,
+            "y": 4,
+            "w": 118,
+            "h": 152
+          },
+          "sha256": "f2f1d8ff94f74133ed58e6b1463ebbf2d4ed3451c4aa019504f912d8f4fb16a6",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/frame-03.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "bounds": {
+            "x": 9,
+            "y": 4,
+            "w": 118,
+            "h": 152
+          },
+          "sha256": "f2f1d8ff94f74133ed58e6b1463ebbf2d4ed3451c4aa019504f912d8f4fb16a6",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/frame-04.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "bounds": {
+            "x": 9,
+            "y": 4,
+            "w": 118,
+            "h": 152
+          },
+          "sha256": "f2f1d8ff94f74133ed58e6b1463ebbf2d4ed3451c4aa019504f912d8f4fb16a6",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/frame-05.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "bounds": {
+            "x": 9,
+            "y": 4,
+            "w": 118,
+            "h": 152
+          },
+          "sha256": "f2f1d8ff94f74133ed58e6b1463ebbf2d4ed3451c4aa019504f912d8f4fb16a6",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/frame-06.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "bounds": {
+            "x": 9,
+            "y": 4,
+            "w": 118,
+            "h": 152
+          },
+          "sha256": "f2f1d8ff94f74133ed58e6b1463ebbf2d4ed3451c4aa019504f912d8f4fb16a6",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/frame-07.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "bounds": {
+            "x": 9,
+            "y": 4,
+            "w": 118,
+            "h": 152
+          },
+          "sha256": "f2f1d8ff94f74133ed58e6b1463ebbf2d4ed3451c4aa019504f912d8f4fb16a6",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/frame-08.png",
+          "width": 136,
+          "height": 158,
+          "pivotX": 68,
+          "pivotY": 156,
+          "bounds": {
+            "x": 9,
+            "y": 4,
+            "w": 118,
+            "h": 152
+          },
+          "sha256": "f2f1d8ff94f74133ed58e6b1463ebbf2d4ed3451c4aa019504f912d8f4fb16a6",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        }
+      ],
+      "atlas": {
+        "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+        "sha256": "628df15aa6c8c3dcbe469f6bf2530723d85489d85c3c79a019df5b486026a374",
+        "width": 544,
+        "height": 316,
+        "frames": [
+          {
+            "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+            "width": 136,
+            "height": 158,
+            "pivotX": 68,
+            "pivotY": 156,
+            "bounds": {
+              "x": 9,
+              "y": 4,
+              "w": 118,
+              "h": 152
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 136,
+              "h": 158
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+            "width": 136,
+            "height": 158,
+            "pivotX": 68,
+            "pivotY": 156,
+            "bounds": {
+              "x": 9,
+              "y": 4,
+              "w": 118,
+              "h": 152
+            },
+            "atlasRect": {
+              "x": 136,
+              "y": 0,
+              "w": 136,
+              "h": 158
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+            "width": 136,
+            "height": 158,
+            "pivotX": 68,
+            "pivotY": 156,
+            "bounds": {
+              "x": 9,
+              "y": 4,
+              "w": 118,
+              "h": 152
+            },
+            "atlasRect": {
+              "x": 272,
+              "y": 0,
+              "w": 136,
+              "h": 158
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+            "width": 136,
+            "height": 158,
+            "pivotX": 68,
+            "pivotY": 156,
+            "bounds": {
+              "x": 9,
+              "y": 4,
+              "w": 118,
+              "h": 152
+            },
+            "atlasRect": {
+              "x": 408,
+              "y": 0,
+              "w": 136,
+              "h": 158
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+            "width": 136,
+            "height": 158,
+            "pivotX": 68,
+            "pivotY": 156,
+            "bounds": {
+              "x": 9,
+              "y": 4,
+              "w": 118,
+              "h": 152
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 158,
+              "w": 136,
+              "h": 158
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+            "width": 136,
+            "height": 158,
+            "pivotX": 68,
+            "pivotY": 156,
+            "bounds": {
+              "x": 9,
+              "y": 4,
+              "w": 118,
+              "h": 152
+            },
+            "atlasRect": {
+              "x": 136,
+              "y": 158,
+              "w": 136,
+              "h": 158
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+            "width": 136,
+            "height": 158,
+            "pivotX": 68,
+            "pivotY": 156,
+            "bounds": {
+              "x": 9,
+              "y": 4,
+              "w": 118,
+              "h": 152
+            },
+            "atlasRect": {
+              "x": 272,
+              "y": 158,
+              "w": 136,
+              "h": 158
+            }
+          },
+          {
+            "file": "isometric-architecture-refinements/candidates/festival_hero_event_herbology_fair/atlas.png",
+            "width": 136,
+            "height": 158,
+            "pivotX": 68,
+            "pivotY": 156,
+            "bounds": {
+              "x": 9,
+              "y": 4,
+              "w": 118,
+              "h": 152
+            },
+            "atlasRect": {
+              "x": 408,
+              "y": 158,
+              "w": 136,
+              "h": 158
+            }
+          }
+        ]
+      },
+      "previewHD": [
+        {
+          "file": "isometric-architecture-refinements/hd-preview/festival_hero_event_herbology_fair/frame-01.png",
+          "width": 272,
+          "height": 316,
+          "pivotX": 136,
+          "pivotY": 312,
+          "bounds": {
+            "x": 18,
+            "y": 8,
+            "w": 236,
+            "h": 304
+          },
+          "sha256": "432ac78d6f45342c93f99d440d0018d72c475c57cef6f8e09f7f441d61503277",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        },
+        {
+          "file": "isometric-architecture-refinements/hd-preview/festival_hero_event_herbology_fair/frame-05.png",
+          "width": 272,
+          "height": 316,
+          "pivotX": 136,
+          "pivotY": 312,
+          "bounds": {
+            "x": 18,
+            "y": 8,
+            "w": 236,
+            "h": 304
+          },
+          "sha256": "432ac78d6f45342c93f99d440d0018d72c475c57cef6f8e09f7f441d61503277",
+          "sourceRect": {
+            "x": 102,
+            "y": 260,
+            "w": 891,
+            "h": 1146
+          }
+        }
+      ],
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#41465C",
+        "#687486",
+        "#A6B1AE",
+        "#D6D8BF",
+        "#24483F",
+        "#3F6A45",
+        "#71934B",
+        "#B0BD67",
+        "#8B4A3F",
+        "#C97952",
+        "#E7AE73",
+        "#F5D69A",
+        "#874056",
+        "#C75B4B",
+        "#ED8A45",
+        "#FFC36B",
+        "#3E3B70",
+        "#6961A6",
+        "#70A8B6",
+        "#B7DEE0"
+      ],
+      "motionPlans": []
+    }
+  ],
+  "failures": []
+}

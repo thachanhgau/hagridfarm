@@ -1,0 +1,23 @@
+{
+  "tests": 497,
+  "passed": 494,
+  "failed": 1,
+  "skipped": 2,
+  "unrelatedBaselineFailure": {
+    "file": "garden-v05/progression-engine.test.mjs:476",
+    "actual": 10000,
+    "expected": 500,
+    "workingGameplayFilesUnchangedAgainst": "bf55d963c846c3ae991f552c14ef0806b5cf0c67",
+    "engineSha256": "47171ce484d6ad4aa180be172c58969d6dc2d6062bfc1089b866fec67b6f66f2",
+    "testSha256": "4a6d4d37f433d2d34667d3ab08792e1121b21a4c11f56a685fe05754822a1b0d"
+  },
+  "artRepairChecks": {
+    "tests": 33,
+    "passed": 33
+  },
+  "webp": {
+    "losslessConversions": 1741,
+    "existingWebp": 1421,
+    "verified": true
+  }
+}

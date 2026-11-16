@@ -1,0 +1,102 @@
+[
+  {
+    "id": "sp_marauders_map",
+    "label": "B\u1ea3n \u0111\u1ed3 c\u1ee7a \u0110\u1ea1o t\u1eb7c",
+    "subject": "The Marauder's Map spread open and partly folded on a small dark wooden map display table: aged parchment with tiny dark line floorplans of Hogwarts, staircase-like paths and a few tiny ink FOOTPRINT pairs; no words, no names, no readable labels. Copper corner clips and a quill. Map remains clearly the centerpiece.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      2,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 96,
+    "pivotX": 48,
+    "pivotY": 80,
+    "motion": "glow",
+    "master": "isometric-hd-assets/masters/sp_marauders_map.png",
+    "previousRuntime": {
+      "id": "sp_marauders_map",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "B\u1ea3n \u0111\u1ed3 c\u1ee7a \u0110\u1ea1o t\u1eb7c",
+      "group": "H\u00e0nh tr\u00ecnh ph\u00e9p thu\u1eadt",
+      "file": "decor-assets/native/sp_marauders_map.png",
+      "frames": [
+        "decor-assets/native/sp_marauders_map_f0.png",
+        "decor-assets/native/sp_marauders_map_f1.png",
+        "decor-assets/native/sp_marauders_map_f2.png",
+        "decor-assets/native/sp_marauders_map_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_marauders_map_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_marauders_map_right_f0.png",
+        "decor-assets/native/sp_marauders_map_right_f1.png",
+        "decor-assets/native/sp_marauders_map_right_f2.png",
+        "decor-assets/native/sp_marauders_map_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 9,
+        "y": 11,
+        "w": 79,
+        "h": 69
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 96,
+      "pivotX": 48,
+      "pivotY": 80,
+      "bounds": {
+        "x": 4,
+        "y": 21,
+        "w": 88,
+        "h": 59
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 3,
+        "chapter": 10
+      },
+      "lore": "Fred v\u00e0 George trao cho Harry b\u1ea3n \u0111\u1ed3 c\u00e1c l\u1ed1i \u0111i b\u00ed m\u1eadt Hogwarts.",
+      "nativeSha256": "f4780570f2cbbe4493127580688cb524ddecf531ec78ce0946e15f441a5aacd4"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#8B4A3F",
+      "#C97952",
+      "#E7AE73",
+      "#F5D69A",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-pilot-assets/map-pilot2.png",
+    "guide": "isometric-hd-assets/generation-inputs/sp_marauders_map-53c6cb28f61f.png",
+    "guideSha256": "53c6cb28f61fe84e0813828ca943ea1a527c0704b5884c55896ab8dfacca192d",
+    "guideLayout": "poses"
+  }
+]

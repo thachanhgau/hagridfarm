@@ -1,4 +1,4 @@
-// Usage: node qa-v19/hd-draw-census.mjs garden-v05 out.json — every image drawn on any canvas (ART_SOURCE tags included), all 18 creatures and all crops at 4 growth points, 4 season/time contexts.
+// Usage: node qa-v19/hd-draw-census.mjs garden-v05 out.json — every image drawn on any canvas (ART_SOURCE tags included), all 18 creatures and all crops at 4 growth points, 8 season/time/event contexts.
 // Record every image actually drawn on any canvas while rendering the real garden in many states.
 import fs from 'node:fs/promises';import path from 'node:path';import {createRequire} from 'node:module';
 const game=path.resolve(process.argv[2]),out=process.argv[3];
@@ -25,15 +25,17 @@ try{
   window.__ART=(await import('/garden-v05/render-resolution.mjs?v=26.1')).ART_SOURCE;
   const now0=Date.parse('2026-07-01T09:00:00+07:00');
   const species=Object.keys(E.CREATURE),crops=Object.keys(E.CROP);
-  for(const [month,weather] of [['2026-07-01T09:00:00+07:00','clear'],['2026-07-01T21:30:00+07:00','clear'],['2026-12-24T12:00:00+07:00','snow'],['2026-10-31T20:00:00+07:00','clear']]){
+  for(const [month,weather,eventMode] of [['2026-07-01T09:00:00+07:00','clear','none'],['2026-07-01T21:30:00+07:00','clear','none'],['2026-12-24T12:00:00+07:00','snow','event_yule'],['2026-12-24T21:00:00+07:00','snow','event_yule'],['2026-10-31T12:00:00+07:00','clear','event_halloween'],['2026-10-31T20:00:00+07:00','snow','event_halloween'],['2026-03-21T09:00:00+07:00','clear','event_herbology_fair'],['2026-03-21T21:00:00+07:00','snow','event_herbology_fair']]){
    const now=Date.parse(month);
    for(const growth of [0,.34,.67,1]){
-    const state=E.testProfile(500,now);state.built=[...new Set([...state.built,...E.DB.expansions.map(e=>e.id)])];
+    const state=E.testProfile(500,now);state.built=[...new Set([...state.built,...E.DB.expansions.map(e=>e.id)])];state.decorations=E.DB.decorations.map(d=>d.id);state.keepsakes=Object.fromEntries(E.DB.animals.map(a=>[a.id,1]));
     state.creatures=species.map((sp,i)=>{const a=E.CREATURE[sp];return {id:'c-'+sp,type:'creature',species:sp,level:a.level,adoptedAt:now-48*3600000,mealsCompleted:Math.round(a.mealsToAdult*growth),meal:null,cyclesClaimed:0,preview:false};});
     let n=0;for(const plot of state.plots)for(let k=0;k<plot.slots.length;k++){const sp=crops[n++%crops.length],c=E.CROP[sp];plot.slots[k]={type:'crop',species:sp,plantedAt:now-Math.floor(c.growMs*Math.min(growth+((n%4)*.25),1)),growMs:c.growMs};}
-    const opts={now,decorations:null,weatherMode:weather,winterKit,winter:{...winterKit.winterSeason(now),active:weather==='snow',depth:.9},propsVisible:true};
+    const opts={now,eventMode,decorations:null,weatherMode:weather,winterKit,winter:{...winterKit.winterSeason(now),active:weather==='snow',depth:.9},propsVisible:true};
     for(let c=0;c<40000;c+=333){try{garden.render(state,{...opts,clock:c,animationClock:c});}catch(e){log.push(String(e).slice(0,160));}}
     await wait();
+    // Every store item, both directions, all four frames; separate from the placement/visual acceptance fixtures.
+    if(growth===1){const items=manifest.items.filter(i=>i.storeItem);for(let p=0;p<items.length;p+=10){const batch=items.slice(p,p+10),ids=batch.map(i=>i.id),clocks=[...new Set(batch.flatMap(i=>{let elapsed=0;return(i.durations||[600,300,600,300]).map(d=>{const mid=elapsed+d/2;elapsed+=d;return mid;});}))],positions=Object.fromEntries(ids.map((id,i)=>[id,[3+i%5*5,25+Math.floor(i/5)*4]]));for(const facing of['default','right']){const decorations={owned:ids,placements:ids,positions,rotations:Object.fromEntries(ids.map(id=>[id,facing]))};for(let pass=0;pass<2;pass++){for(const clock of clocks)garden.render(state,{...opts,decorations,clock,animationClock:clock});await wait();}}}}
    }
   }
   return log.slice(0,5);

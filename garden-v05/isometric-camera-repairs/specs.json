@@ -1,0 +1,342 @@
+[
+  {
+    "id": "sp_monster_book",
+    "label": "S\u00e1ch Qu\u00e1i V\u1eadt v\u1ec1 Qu\u00e1i V\u1eadt",
+    "subject": "The Monster Book of Monsters: one thick shaggy brown furry schoolbook on a low rough wooden reading stand, four small amber eyes on top, ivory fangs along the page edges, short tongue barely visible, a leather belt loosely buckled around the book. No title lettering, no extra books, cute but untamed. The WHOLE book and table are aligned to the two box stencils. Its long mouth edge is diagonal along the long tabletop edge, NEGATIVE0.5 in left view and POSITIVE0.5 in right. NEVER a frontal mouth or horizontal table apron in either view.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 56,
+    "width": 64,
+    "height": 80,
+    "pivotX": 32,
+    "pivotY": 64,
+    "motion": "blink",
+    "master": "isometric-camera-repairs/masters/sp_monster_book.png",
+    "previousRuntime": {
+      "id": "sp_monster_book",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "S\u00e1ch Qu\u00e1i V\u1eadt v\u1ec1 Qu\u00e1i V\u1eadt",
+      "group": "H\u1eafc thu\u1eadt v\u00e0 b\u00ed m\u1eadt",
+      "file": "decor-assets/native/sp_monster_book.png",
+      "frames": [
+        "decor-assets/native/sp_monster_book_f0.png",
+        "decor-assets/native/sp_monster_book_f1.png",
+        "decor-assets/native/sp_monster_book_f2.png",
+        "decor-assets/native/sp_monster_book_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_monster_book_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_monster_book_right_f0.png",
+        "decor-assets/native/sp_monster_book_right_f1.png",
+        "decor-assets/native/sp_monster_book_right_f2.png",
+        "decor-assets/native/sp_monster_book_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 7,
+        "y": 12,
+        "w": 51,
+        "h": 52
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 80,
+      "pivotX": 32,
+      "pivotY": 64,
+      "bounds": {
+        "x": 6,
+        "y": 12,
+        "w": 53,
+        "h": 52
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 3,
+        "chapter": 1
+      },
+      "lore": "Cu\u1ed1n s\u00e1ch Hagrid g\u1eedi t\u1eb7ng Harry v\u00e0 d\u00f9ng cho m\u00f4n Ch\u0103m S\u00f3c Sinh V\u1eadt Huy\u1ec1n B\u00ed.",
+      "nativeSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF",
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B"
+    ],
+    "guideHeight": 12,
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-camera-repairs/masters/sp_monster_book.png",
+    "guide": "isometric-camera-repairs/generation-inputs/sp_monster_book-26405654852b.png",
+    "guideSha256": "26405654852b7568f244a95e316719d37aca961c4e0b8a8278e2da7676261ac5",
+    "guideLayout": "poses",
+    "selectedFrom": "refinement",
+    "bookOnTable": true
+  },
+  {
+    "id": "hw_soul_bottle",
+    "label": "B\u00ecnh linh h\u1ed3n ph\u00e1t s\u00e1ng",
+    "subject": "A tall stoppered blue-green glass apothecary bottle with copper wire cage and a small carrying loop, resting in a low rustic wooden cradle. Inside float two tiny ivory spirit faces and hard-edged violet wisps. No label or writing. The low wooden cradle has a rectangular foot following the two garden axes, in BOTH views. Never show a flat horizontal front base. Preserve the translucent bottle and wire cage, not a wooden cabinet.",
+    "sourcePack": "halloween-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "bottle",
+    "maxInkWidth": 56,
+    "width": 80,
+    "height": 112,
+    "pivotX": 40,
+    "pivotY": 108,
+    "motion": "glow",
+    "master": "isometric-camera-repairs/masters/hw_soul_bottle.png",
+    "previousRuntime": {
+      "id": "hw_soul_bottle",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "B\u00ecnh linh h\u1ed3n ph\u00e1t s\u00e1ng",
+      "group": "\u00c1nh s\u00e1ng",
+      "file": "decor-assets/native/hw_soul_bottle.png",
+      "rightFile": "decor-assets/native/hw_soul_bottle_right.png",
+      "frames": [
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png",
+        "decor-assets/native/hw_soul_bottle_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "w": 80,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 80,
+          "y": 112,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 160,
+          "y": 112,
+          "w": 80,
+          "h": 112
+        },
+        {
+          "x": 240,
+          "y": 112,
+          "w": 80,
+          "h": 112
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 80,
+      "height": 112,
+      "pivotX": 40,
+      "pivotY": 108,
+      "bounds": {
+        "x": 10,
+        "y": 2,
+        "w": 61,
+        "h": 106
+      },
+      "rightBounds": {
+        "x": 12,
+        "y": 2,
+        "w": 57,
+        "h": 106
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "b994b7897ccc8dedb9f4013e2070c8aae0f7b3704d86e609ccef14bbc9df3615"
+    },
+    "paletteColors": [
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF",
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-camera-repairs/masters/hw_soul_bottle.png",
+    "guide": "isometric-camera-repairs/generation-inputs/hw_soul_bottle-8d5114297675.png",
+    "guideSha256": "8d51142976759c95e8970fb2686416b24140dc61a07ee015d4204f65c086d1c3",
+    "guideLayout": "poses",
+    "guideHeight": 55
+  },
+  {
+    "id": "earned_decoration_decoration-95",
+    "originalId": "decoration-95",
+    "targetKind": "earned-decoration",
+    "subject": "A carved dark stone pedestal with a small glass display cradle supporting THREE overlapping emerald and bronze dragon scales, visible angular scale texture, gold rim trim; no dragon. The broad carved pedestal is rectangular with its base and top edges EXACTLY parallel to the stencil axes in both poses. THREE countable overlapping scales sit above the glass cradle.",
+    "guideKind": "box",
+    "footprint": [
+      1,
+      2
+    ],
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 112,
+    "pivotX": 48,
+    "pivotY": 96,
+    "motion": "static",
+    "fixedCamera": false,
+    "poseLayout": [
+      2
+    ],
+    "master": "isometric-camera-repairs/masters/earned_decoration_decoration-95.png",
+    "selectedMaster": "isometric-camera-repairs/masters/earned_decoration_decoration-95.png",
+    "previousRuntime": {
+      "file": "native-items/decoration-95.png",
+      "rightFile": "native-items/decoration-95_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 13,
+        "y": 16,
+        "w": 69,
+        "h": 80
+      },
+      "rightBounds": {
+        "x": 13,
+        "y": 16,
+        "w": 69,
+        "h": 80
+      },
+      "hd": true,
+      "auditSource": "decor-assets/hd/6a79a03e52c71fda7fb53da7.webp"
+    },
+    "previousViews": [
+      {
+        "file": "native-items/decoration-95.png",
+        "rightFile": "native-items/decoration-95_right.png",
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 96,
+        "bounds": {
+          "x": 13,
+          "y": 16,
+          "w": 69,
+          "h": 80
+        },
+        "rightBounds": {
+          "x": 13,
+          "y": 16,
+          "w": 69,
+          "h": 80
+        },
+        "hd": true,
+        "auditSource": "decor-assets/hd/6a79a03e52c71fda7fb53da7.webp"
+      },
+      {
+        "file": "native-items/decoration-95_right.png",
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 96,
+        "bounds": {
+          "x": 13,
+          "y": 16,
+          "w": 69,
+          "h": 80
+        },
+        "hd": true,
+        "auditSource": "decor-assets/hd/598a9a6b6eef52a772f1d4ab.webp"
+      }
+    ],
+    "label": "Dragon scale display pedestal",
+    "guide": "isometric-camera-repairs/generation-inputs/earned_decoration_decoration-95-4d71d13c4e17.png",
+    "guideSha256": "4d71d13c4e17f19203003189f139806a562f4040a5eff05413c2edfe39fc3623",
+    "guideLayout": "poses",
+    "guideHeight": 26
+  }
+]

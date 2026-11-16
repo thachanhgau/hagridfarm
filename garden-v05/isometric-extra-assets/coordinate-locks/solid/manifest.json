@@ -1,0 +1,9731 @@
+[
+  {
+    "id": "earned_decoration_decoration-15",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-15.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-19",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-19.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-23",
+    "kind": "bench",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-23.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-27",
+    "kind": "cabinet",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-27.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            158.42962962962963,
+            366.2888888888889
+          ],
+          [
+            292.7111111111111,
+            433.42962962962963
+          ],
+          [
+            225.57037037037037,
+            467
+          ],
+          [
+            91.28888888888889,
+            399.85925925925926
+          ]
+        ],
+        "axisColumn": [
+          67.14074074074074,
+          33.57037037037037
+        ],
+        "axisRow": [
+          -67.14074074074074,
+          33.57037037037037
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            158.42962962962963,
+            366.2888888888889
+          ],
+          [
+            292.7111111111111,
+            433.42962962962963
+          ],
+          [
+            225.57037037037037,
+            467
+          ],
+          [
+            91.28888888888889,
+            399.85925925925926
+          ]
+        ],
+        "axisColumn": [
+          67.14074074074074,
+          33.57037037037037
+        ],
+        "axisRow": [
+          -67.14074074074074,
+          33.57037037037037
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            225.57037037037037,
+            366.2888888888889
+          ],
+          [
+            292.7111111111111,
+            399.85925925925926
+          ],
+          [
+            158.42962962962963,
+            467
+          ],
+          [
+            91.28888888888889,
+            433.42962962962963
+          ]
+        ],
+        "axisColumn": [
+          67.14074074074074,
+          33.57037037037037
+        ],
+        "axisRow": [
+          -67.14074074074074,
+          33.57037037037037
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            225.57037037037037,
+            366.2888888888889
+          ],
+          [
+            292.7111111111111,
+            399.85925925925926
+          ],
+          [
+            158.42962962962963,
+            467
+          ],
+          [
+            91.28888888888889,
+            433.42962962962963
+          ]
+        ],
+        "axisColumn": [
+          67.14074074074074,
+          33.57037037037037
+        ],
+        "axisRow": [
+          -67.14074074074074,
+          33.57037037037037
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-39",
+    "kind": "roof",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-39.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-43",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-43.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-46",
+    "kind": "box",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-46.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-47",
+    "kind": "arch",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-47.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-51",
+    "kind": "roundbase",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-51.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-55",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-55.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-59",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-59.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-67",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-67.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-75",
+    "kind": "bench",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-75.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-81",
+    "kind": "arch",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-81.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-83",
+    "kind": "gazebo",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-83.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            152.88382530640428,
+            349.6514759192129
+          ],
+          [
+            309.3485240807871,
+            427.8838253064043
+          ],
+          [
+            231.11617469359572,
+            467
+          ],
+          [
+            74.65147591921286,
+            388.7676506128086
+          ]
+        ],
+        "axisColumn": [
+          78.23234938719142,
+          39.11617469359571
+        ],
+        "axisRow": [
+          -78.23234938719142,
+          39.11617469359571
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            152.88382530640428,
+            349.6514759192129
+          ],
+          [
+            309.3485240807871,
+            427.8838253064043
+          ],
+          [
+            231.11617469359572,
+            467
+          ],
+          [
+            74.65147591921286,
+            388.7676506128086
+          ]
+        ],
+        "axisColumn": [
+          78.23234938719142,
+          39.11617469359571
+        ],
+        "axisRow": [
+          -78.23234938719142,
+          39.11617469359571
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            231.11617469359572,
+            349.6514759192129
+          ],
+          [
+            309.3485240807871,
+            388.7676506128086
+          ],
+          [
+            152.88382530640428,
+            467
+          ],
+          [
+            74.65147591921286,
+            427.8838253064043
+          ]
+        ],
+        "axisColumn": [
+          78.23234938719142,
+          39.11617469359571
+        ],
+        "axisRow": [
+          -78.23234938719142,
+          39.11617469359571
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            231.11617469359572,
+            349.6514759192129
+          ],
+          [
+            309.3485240807871,
+            388.7676506128086
+          ],
+          [
+            152.88382530640428,
+            467
+          ],
+          [
+            74.65147591921286,
+            427.8838253064043
+          ]
+        ],
+        "axisColumn": [
+          78.23234938719142,
+          39.11617469359571
+        ],
+        "axisRow": [
+          -78.23234938719142,
+          39.11617469359571
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-87",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-87.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-91",
+    "kind": "arch",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-91.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-95",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-95.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-98",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-98.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-99",
+    "kind": "table",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/earned_decoration_decoration-99.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          0,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_bowtruckle",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_bowtruckle.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_crup",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_crup.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_diricawl",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_diricawl.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_dragon",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_dragon.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_fwooper",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_fwooper.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_grindylow",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_grindylow.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_hippogriff",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_hippogriff.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_kappa",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_kappa.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_knarl",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_knarl.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_kneazle",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_kneazle.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_mooncalf",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_mooncalf.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_niffler",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_niffler.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_porlock",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_porlock.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_puffskein",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_puffskein.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_salamander",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_salamander.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_thestral",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_thestral.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_three-headed-dog",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_three-headed-dog.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_unicorn",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/keepsake_unicorn.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_crup",
+    "kind": "roof",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_crup.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_diricawl",
+    "kind": "roundbase",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_diricawl.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_dragon",
+    "kind": "round",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_dragon.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_fwooper",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_fwooper.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_hippogriff",
+    "kind": "bed",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_hippogriff.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_kneazle",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_kneazle.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_mooncalf",
+    "kind": "roundbase",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_mooncalf.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_niffler",
+    "kind": "box",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_niffler.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_porlock",
+    "kind": "roof",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_porlock.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_puffskein",
+    "kind": "round",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_puffskein.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_thestral",
+    "kind": "round",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_thestral.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_three-headed-dog",
+    "kind": "round",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_three-headed-dog.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_unicorn",
+    "kind": "roundbase",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/habitat_unicorn.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_potion_bench",
+    "kind": "table",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_potion_bench.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_herb_rack",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_herb_rack.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_explorer_chest",
+    "kind": "box",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_explorer_chest.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_mandrake_pot",
+    "kind": "round",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_mandrake_pot.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_moon_lantern",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_moon_lantern.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_owl_mailbox",
+    "kind": "box",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_owl_mailbox.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_rune_stones",
+    "kind": "organic",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_rune_stones.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_broom_rack",
+    "kind": "rack",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_broom_rack.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_crystal_planter",
+    "kind": "box",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_crystal_planter.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_mushroom_stump",
+    "kind": "organic",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_mushroom_stump.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_book_stand",
+    "kind": "table",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_book_stand.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_watering_station",
+    "kind": "roof",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_watering_station.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_seed_cart",
+    "kind": "cart",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_seed_cart.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plot_prop_scene_hourglass",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/plot_prop_scene_hourglass.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "scenery_hut",
+    "kind": "roundhut",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/scenery_hut.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          50.66666666666667,
+          25.333333333333336
+        ],
+        "axisRow": [
+          -50.66666666666667,
+          25.333333333333336
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          50.66666666666667,
+          25.333333333333336
+        ],
+        "axisRow": [
+          -50.66666666666667,
+          25.333333333333336
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          50.66666666666667,
+          25.333333333333336
+        ],
+        "axisRow": [
+          -50.66666666666667,
+          25.333333333333336
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          50.66666666666667,
+          25.333333333333336
+        ],
+        "axisRow": [
+          -50.66666666666667,
+          25.333333333333336
+        ]
+      }
+    ]
+  },
+  {
+    "id": "scenery_herbology_greenhouse",
+    "kind": "roof",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/scenery_herbology_greenhouse.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            222.18613861386137,
+            316.0693069306931
+          ],
+          [
+            342.9306930693069,
+            376.4415841584158
+          ],
+          [
+            161.81386138613863,
+            467
+          ],
+          [
+            41.069306930693074,
+            406.62772277227725
+          ]
+        ],
+        "axisColumn": [
+          60.372277227722776,
+          30.186138613861388
+        ],
+        "axisRow": [
+          -60.372277227722776,
+          30.186138613861388
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            222.18613861386137,
+            316.0693069306931
+          ],
+          [
+            342.9306930693069,
+            376.4415841584158
+          ],
+          [
+            161.81386138613863,
+            467
+          ],
+          [
+            41.069306930693074,
+            406.62772277227725
+          ]
+        ],
+        "axisColumn": [
+          60.372277227722776,
+          30.186138613861388
+        ],
+        "axisRow": [
+          -60.372277227722776,
+          30.186138613861388
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            222.18613861386137,
+            316.0693069306931
+          ],
+          [
+            342.9306930693069,
+            376.4415841584158
+          ],
+          [
+            161.81386138613863,
+            467
+          ],
+          [
+            41.069306930693074,
+            406.62772277227725
+          ]
+        ],
+        "axisColumn": [
+          60.372277227722776,
+          30.186138613861388
+        ],
+        "axisRow": [
+          -60.372277227722776,
+          30.186138613861388
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            222.18613861386137,
+            316.0693069306931
+          ],
+          [
+            342.9306930693069,
+            376.4415841584158
+          ],
+          [
+            161.81386138613863,
+            467
+          ],
+          [
+            41.069306930693074,
+            406.62772277227725
+          ]
+        ],
+        "axisColumn": [
+          60.372277227722776,
+          30.186138613861388
+        ],
+        "axisRow": [
+          -60.372277227722776,
+          30.186138613861388
+        ]
+      }
+    ]
+  },
+  {
+    "id": "scenery_owl_post",
+    "kind": "owlpost",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/scenery_owl_post.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "festival_hero_event_herbology_fair",
+    "kind": "cart",
+    "guide": "garden-v05/isometric-extra-assets/coordinate-locks/solid/festival_hero_event_herbology_fair.png",
+    "width": 768,
+    "height": 1024,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            326.5454545454545
+          ],
+          [
+            332.45454545454544,
+            396.77272727272725
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            51.54545454545456,
+            396.77272727272725
+          ]
+        ],
+        "axisColumn": [
+          70.22727272727272,
+          35.11363636363636
+        ],
+        "axisRow": [
+          -70.22727272727272,
+          35.11363636363636
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            326.5454545454545
+          ],
+          [
+            332.45454545454544,
+            396.77272727272725
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            51.54545454545456,
+            396.77272727272725
+          ]
+        ],
+        "axisColumn": [
+          70.22727272727272,
+          35.11363636363636
+        ],
+        "axisRow": [
+          -70.22727272727272,
+          35.11363636363636
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            326.5454545454545
+          ],
+          [
+            332.45454545454544,
+            396.77272727272725
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            51.54545454545456,
+            396.77272727272725
+          ]
+        ],
+        "axisColumn": [
+          70.22727272727272,
+          35.11363636363636
+        ],
+        "axisRow": [
+          -70.22727272727272,
+          35.11363636363636
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            326.5454545454545
+          ],
+          [
+            332.45454545454544,
+            396.77272727272725
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            51.54545454545456,
+            396.77272727272725
+          ]
+        ],
+        "axisColumn": [
+          70.22727272727272,
+          35.11363636363636
+        ],
+        "axisRow": [
+          -70.22727272727272,
+          35.11363636363636
+        ]
+      }
+    ]
+  }
+]

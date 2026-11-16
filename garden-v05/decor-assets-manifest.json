@@ -53,10 +53,10 @@
       "rotatable": true,
       "file": "decor-assets/native/decor_pumpkin_lantern.png",
       "frames": [
-        "decor-assets/native/decor_pumpkin_lantern_f0.png",
-        "decor-assets/native/decor_pumpkin_lantern_f1.png",
-        "decor-assets/native/decor_pumpkin_lantern_f2.png",
-        "decor-assets/native/decor_pumpkin_lantern_f3.png"
+        "decor-assets/native/decor_pumpkin_lantern_atlas.png",
+        "decor-assets/native/decor_pumpkin_lantern_atlas.png",
+        "decor-assets/native/decor_pumpkin_lantern_atlas.png",
+        "decor-assets/native/decor_pumpkin_lantern_atlas.png"
       ],
       "durations": [
         460,
@@ -66,39 +66,93 @@
       ],
       "rightFile": "decor-assets/native/decor_pumpkin_lantern_right.png",
       "rightFrames": [
-        "decor-assets/native/decor_pumpkin_lantern_right_f0.png",
-        "decor-assets/native/decor_pumpkin_lantern_right_f1.png",
-        "decor-assets/native/decor_pumpkin_lantern_right_f2.png",
-        "decor-assets/native/decor_pumpkin_lantern_right_f3.png"
+        "decor-assets/native/decor_pumpkin_lantern_atlas.png",
+        "decor-assets/native/decor_pumpkin_lantern_atlas.png",
+        "decor-assets/native/decor_pumpkin_lantern_atlas.png",
+        "decor-assets/native/decor_pumpkin_lantern_atlas.png"
       ],
       "rightBounds": {
-        "x": 13,
+        "x": 12,
         "y": 4,
-        "w": 39,
+        "w": 40,
         "h": 76
       },
       "angles": [
         "default",
         "right"
       ],
-      "master": "decor-assets/masters/decor_pumpkin_lantern.png",
+      "master": "isometric-final-repairs/masters/decor_pumpkin_lantern.png",
       "width": 64,
       "height": 96,
       "pivotX": 32,
       "pivotY": 80,
       "bounds": {
-        "x": 13,
+        "x": 12,
         "y": 4,
-        "w": 39,
+        "w": 41,
         "h": 76
       },
       "footprintTiles": [
         1,
         1
       ],
-      "sourceSha256": "d098e59b19e9e2061974c248a76017964ec53b5f91ee10ba3ae8fc8c1170357b",
-      "nativeSha256": "b0328f8f7e34c5aae1f564f93f06fd57ca022a99885ad66a868e69fa6fe0f9f3",
-      "generationPromptId": "decor_pumpkin_lantern"
+      "sourceSha256": "d9ee17fcb97ab97f175cc3e67336d28ef90b981a2b71ae2deca2e44d9736c007",
+      "nativeSha256": "a25a606086e30af2ca830f175d4b3f957a3ad0e8ec1e0feee14b8a38ad9b0093",
+      "generationPromptId": "decor_pumpkin_lantern",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "artRevision": "isometric-hd-20261115",
+      "framesIdentical": false
     },
     {
       "id": "decor_broom_rack",
@@ -107,10 +161,10 @@
       "rotatable": true,
       "file": "decor-assets/native/decor_broom_rack.png",
       "frames": [
-        "decor-assets/native/decor_broom_rack_f0.png",
-        "decor-assets/native/decor_broom_rack_f1.png",
-        "decor-assets/native/decor_broom_rack_f2.png",
-        "decor-assets/native/decor_broom_rack_f3.png"
+        "decor-assets/native/decor_broom_rack_atlas.png",
+        "decor-assets/native/decor_broom_rack_atlas.png",
+        "decor-assets/native/decor_broom_rack_atlas.png",
+        "decor-assets/native/decor_broom_rack_atlas.png"
       ],
       "durations": [
         520,
@@ -120,39 +174,93 @@
       ],
       "rightFile": "decor-assets/native/decor_broom_rack_right.png",
       "rightFrames": [
-        "decor-assets/native/decor_broom_rack_right_f0.png",
-        "decor-assets/native/decor_broom_rack_right_f1.png",
-        "decor-assets/native/decor_broom_rack_right_f2.png",
-        "decor-assets/native/decor_broom_rack_right_f3.png"
+        "decor-assets/native/decor_broom_rack_atlas.png",
+        "decor-assets/native/decor_broom_rack_atlas.png",
+        "decor-assets/native/decor_broom_rack_atlas.png",
+        "decor-assets/native/decor_broom_rack_atlas.png"
       ],
       "rightBounds": {
-        "x": 14,
+        "x": 19,
         "y": 4,
-        "w": 70,
+        "w": 59,
         "h": 76
       },
       "angles": [
         "default",
         "right"
       ],
-      "master": "decor-assets/masters/decor_broom_rack.png",
+      "master": "isometric-hd-assets/masters/decor_broom_rack-locked.png",
       "width": 96,
       "height": 96,
       "pivotX": 48,
       "pivotY": 80,
       "bounds": {
-        "x": 5,
-        "y": 13,
-        "w": 87,
-        "h": 67
+        "x": 19,
+        "y": 4,
+        "w": 59,
+        "h": 76
       },
       "footprintTiles": [
         2,
         1
       ],
-      "sourceSha256": "78d97ac2e11a92df54e599028d856167921e3f2ca047fd8c6d58384f0c922d3c",
-      "nativeSha256": "73d4b6f9c8f1887561228fee8f5e4597c0df7bd3e3c9352fd12634503910eac0",
-      "generationPromptId": "decor_broom_rack"
+      "sourceSha256": "28460c1dc57d35b2d748c1de7903f4250578002ddf0e1cf312b40819688ae286",
+      "nativeSha256": "37de59a2b6899ebde6c83fd3e23160bfdc7e23836984889e7c4864a73af0b45a",
+      "generationPromptId": "decor_broom_rack",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 288,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        }
+      ],
+      "artRevision": "isometric-hd-20261115",
+      "framesIdentical": false
     },
     {
       "id": "decor_cauldron",
@@ -215,10 +323,10 @@
       "rotatable": true,
       "file": "decor-assets/native/decor_mandrake_planter.png",
       "frames": [
-        "decor-assets/native/decor_mandrake_planter_f0.png",
-        "decor-assets/native/decor_mandrake_planter_f1.png",
-        "decor-assets/native/decor_mandrake_planter_f2.png",
-        "decor-assets/native/decor_mandrake_planter_f3.png"
+        "decor-assets/native/decor_mandrake_planter_atlas.png",
+        "decor-assets/native/decor_mandrake_planter_atlas.png",
+        "decor-assets/native/decor_mandrake_planter_atlas.png",
+        "decor-assets/native/decor_mandrake_planter_atlas.png"
       ],
       "durations": [
         480,
@@ -228,22 +336,22 @@
       ],
       "rightFile": "decor-assets/native/decor_mandrake_planter_right.png",
       "rightFrames": [
-        "decor-assets/native/decor_mandrake_planter_right_f0.png",
-        "decor-assets/native/decor_mandrake_planter_right_f1.png",
-        "decor-assets/native/decor_mandrake_planter_right_f2.png",
-        "decor-assets/native/decor_mandrake_planter_right_f3.png"
+        "decor-assets/native/decor_mandrake_planter_atlas.png",
+        "decor-assets/native/decor_mandrake_planter_atlas.png",
+        "decor-assets/native/decor_mandrake_planter_atlas.png",
+        "decor-assets/native/decor_mandrake_planter_atlas.png"
       ],
       "rightBounds": {
-        "x": 9,
+        "x": 12,
         "y": 4,
-        "w": 48,
+        "w": 41,
         "h": 76
       },
       "angles": [
         "default",
         "right"
       ],
-      "master": "decor-assets/masters/decor_mandrake_planter.png",
+      "master": "isometric-refinements/masters/decor_mandrake_planter-refined.png",
       "width": 64,
       "height": 96,
       "pivotX": 32,
@@ -258,9 +366,63 @@
         1,
         1
       ],
-      "sourceSha256": "c48fc95f5b8cd2b8373c7455bfe27d7cf6d58fb71361a1bec8176005df72eb0b",
-      "nativeSha256": "752587ed26c007c359640d8ccb8e532d8ddbb20d98a9c1a80879eefb1f101f23",
-      "generationPromptId": "decor_mandrake_planter"
+      "sourceSha256": "fce17e31d904194f3fc4c08dc291182f4f1baa62fce7ce0f92a1c3de1c5ec11b",
+      "nativeSha256": "35a5a0c4011a672766aa30a9a609f156d3a6d8d59834ceb6334e0a4cfbdb2177",
+      "generationPromptId": "decor_mandrake_planter",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "artRevision": "isometric-hd-20261115",
+      "framesIdentical": false
     },
     {
       "id": "decor_floating_candles",
@@ -269,10 +431,10 @@
       "rotatable": true,
       "file": "decor-assets/native/decor_floating_candles.png",
       "frames": [
-        "decor-assets/native/decor_floating_candles_f0.png",
-        "decor-assets/native/decor_floating_candles_f1.png",
-        "decor-assets/native/decor_floating_candles_f2.png",
-        "decor-assets/native/decor_floating_candles_f3.png"
+        "decor-assets/native/decor_floating_candles_atlas.png",
+        "decor-assets/native/decor_floating_candles_atlas.png",
+        "decor-assets/native/decor_floating_candles_atlas.png",
+        "decor-assets/native/decor_floating_candles_atlas.png"
       ],
       "durations": [
         400,
@@ -282,39 +444,93 @@
       ],
       "rightFile": "decor-assets/native/decor_floating_candles_right.png",
       "rightFrames": [
-        "decor-assets/native/decor_floating_candles_right_f0.png",
-        "decor-assets/native/decor_floating_candles_right_f1.png",
-        "decor-assets/native/decor_floating_candles_right_f2.png",
-        "decor-assets/native/decor_floating_candles_right_f3.png"
+        "decor-assets/native/decor_floating_candles_atlas.png",
+        "decor-assets/native/decor_floating_candles_atlas.png",
+        "decor-assets/native/decor_floating_candles_atlas.png",
+        "decor-assets/native/decor_floating_candles_atlas.png"
       ],
       "rightBounds": {
-        "x": 25,
-        "y": 3,
-        "w": 30,
-        "h": 85
+        "x": 28,
+        "y": 2,
+        "w": 25,
+        "h": 86
       },
       "angles": [
         "default",
         "right"
       ],
-      "master": "decor-assets/masters/decor_floating_candles.png",
+      "master": "isometric-hd-assets/masters/decor_floating_candles-locked.png",
       "width": 80,
       "height": 104,
       "pivotX": 40,
       "pivotY": 88,
       "bounds": {
-        "x": 25,
-        "y": 3,
-        "w": 31,
-        "h": 85
+        "x": 28,
+        "y": 2,
+        "w": 25,
+        "h": 86
       },
       "footprintTiles": [
         1,
         1
       ],
-      "sourceSha256": "47de359906d49080f36d87ea48a70fc2b290b51c8468f9733259316385dc7c97",
-      "nativeSha256": "d299f5e8e74a96f07b7e67153d25d13e0c1080c35083129f5f36614415a5e97a",
-      "generationPromptId": "decor_floating_candles"
+      "sourceSha256": "5abb4f82956c975c1221df518a888e30b92eb15f395f375ed0ddb2c46704ae3f",
+      "nativeSha256": "0eb43dddbc7301b78c0e713f24eb58ebfe2f8a6c7ac6e991ea745856e7891292",
+      "generationPromptId": "decor_floating_candles",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "w": 80,
+          "h": 104
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 80,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 160,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        },
+        {
+          "x": 240,
+          "y": 104,
+          "w": 80,
+          "h": 104
+        }
+      ],
+      "artRevision": "isometric-hd-20261115",
+      "framesIdentical": false
     },
     {
       "id": "decor_vine_arch",
@@ -323,10 +539,10 @@
       "rotatable": true,
       "file": "decor-assets/native/decor_vine_arch.png",
       "frames": [
-        "decor-assets/native/decor_vine_arch_f0.png",
-        "decor-assets/native/decor_vine_arch_f1.png",
-        "decor-assets/native/decor_vine_arch_f2.png",
-        "decor-assets/native/decor_vine_arch_f3.png"
+        "decor-assets/native/decor_vine_arch_atlas.png",
+        "decor-assets/native/decor_vine_arch_atlas.png",
+        "decor-assets/native/decor_vine_arch_atlas.png",
+        "decor-assets/native/decor_vine_arch_atlas.png"
       ],
       "durations": [
         560,
@@ -336,39 +552,93 @@
       ],
       "rightFile": "decor-assets/native/decor_vine_arch_right.png",
       "rightFrames": [
-        "decor-assets/native/decor_vine_arch_right_f0.png",
-        "decor-assets/native/decor_vine_arch_right_f1.png",
-        "decor-assets/native/decor_vine_arch_right_f2.png",
-        "decor-assets/native/decor_vine_arch_right_f3.png"
+        "decor-assets/native/decor_vine_arch_atlas.png",
+        "decor-assets/native/decor_vine_arch_atlas.png",
+        "decor-assets/native/decor_vine_arch_atlas.png",
+        "decor-assets/native/decor_vine_arch_atlas.png"
       ],
       "rightBounds": {
-        "x": 34,
-        "y": 5,
-        "w": 61,
-        "h": 99
+        "x": 25,
+        "y": 4,
+        "w": 79,
+        "h": 100
       },
       "angles": [
         "default",
         "right"
       ],
-      "master": "decor-assets/masters/decor_vine_arch.png",
+      "master": "isometric-hd-assets/masters/decor_vine_arch-locked.png",
       "width": 128,
       "height": 128,
       "pivotX": 64,
       "pivotY": 104,
       "bounds": {
-        "x": 28,
-        "y": 5,
-        "w": 72,
-        "h": 99
+        "x": 23,
+        "y": 4,
+        "w": 82,
+        "h": 100
       },
       "footprintTiles": [
         2,
         1
       ],
-      "sourceSha256": "74a5d217c97f1c0eeacc4c6d64d69d7df22089e8e4fb5f003b10426d415dc9db",
-      "nativeSha256": "8e412bfb2a9e03d29e86e0b66a3b0ab6689373b660a81554a1315c34d71dd7c3",
-      "generationPromptId": "decor_vine_arch"
+      "sourceSha256": "c455c0a233b8ff8cfe2ad642f24e776605669f741b178d553dab316b796185af",
+      "nativeSha256": "a390125ae113fe0209b448c941f4d28bbd1d62e292879341346330bec34dc9ae",
+      "generationPromptId": "decor_vine_arch",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 128,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 128,
+          "y": 128,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 256,
+          "y": 128,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 384,
+          "y": 128,
+          "w": 128,
+          "h": 128
+        }
+      ],
+      "artRevision": "isometric-hd-20261115",
+      "framesIdentical": false
     },
     {
       "id": "gardener_friend",
@@ -491,10 +761,10 @@
       "group": "Hagrid và Rừng Cấm",
       "file": "decor-assets/native/flow-sp_hagrid_umbrella.png",
       "frames": [
-        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
-        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
-        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
-        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png"
+        "decor-assets/native/sp_hagrid_umbrella_atlas.png",
+        "decor-assets/native/sp_hagrid_umbrella_atlas.png",
+        "decor-assets/native/sp_hagrid_umbrella_atlas.png",
+        "decor-assets/native/sp_hagrid_umbrella_atlas.png"
       ],
       "durations": [
         1200,
@@ -504,16 +774,16 @@
       ],
       "rightFile": "decor-assets/native/flow-sp_hagrid_umbrella_right.png",
       "rightFrames": [
-        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
-        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
-        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
-        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png"
+        "decor-assets/native/sp_hagrid_umbrella_atlas.png",
+        "decor-assets/native/sp_hagrid_umbrella_atlas.png",
+        "decor-assets/native/sp_hagrid_umbrella_atlas.png",
+        "decor-assets/native/sp_hagrid_umbrella_atlas.png"
       ],
       "rightBounds": {
-        "x": 4,
-        "y": 6,
-        "w": 88,
-        "h": 90
+        "x": 13,
+        "y": 4,
+        "w": 71,
+        "h": 92
       },
       "angles": [
         "default",
@@ -524,10 +794,10 @@
       "pivotX": 48,
       "pivotY": 96,
       "bounds": {
-        "x": 5,
-        "y": 5,
-        "w": 87,
-        "h": 91
+        "x": 13,
+        "y": 8,
+        "w": 71,
+        "h": 88
       },
       "footprintTiles": [
         2,
@@ -540,7 +810,7 @@
         "chapter": 4
       },
       "lore": "Cây dù hồng của Hagrid; bố cục trưng bày là chuyển thể cho game.",
-      "nativeSha256": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
+      "nativeSha256": "d895ed37c27b5a03888ddd843b2cf97086355cb9b5dd5c39da71532f7faf7456",
       "atlasRects": [
         {
           "x": 0,
@@ -592,7 +862,10 @@
           "w": 96,
           "h": 112
         }
-      ]
+      ],
+      "master": "isometric-refinements/masters/sp_hagrid_umbrella-refined.png",
+      "sourceSha256": "a497a154c07db41a818f43cb6e774331a1a8d350244a5ff15c7e813e8669fcb5",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_norbert_egg",
@@ -604,10 +877,10 @@
       "group": "Hagrid và Rừng Cấm",
       "file": "decor-assets/native/sp_norbert_egg.png",
       "frames": [
-        "decor-assets/native/sp_norbert_egg_f0.png",
-        "decor-assets/native/sp_norbert_egg_f1.png",
-        "decor-assets/native/sp_norbert_egg_f2.png",
-        "decor-assets/native/sp_norbert_egg_f3.png"
+        "decor-assets/native/sp_norbert_egg_atlas.png",
+        "decor-assets/native/sp_norbert_egg_atlas.png",
+        "decor-assets/native/sp_norbert_egg_atlas.png",
+        "decor-assets/native/sp_norbert_egg_atlas.png"
       ],
       "durations": [
         520,
@@ -617,16 +890,16 @@
       ],
       "rightFile": "decor-assets/native/sp_norbert_egg_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_norbert_egg_right_f0.png",
-        "decor-assets/native/sp_norbert_egg_right_f1.png",
-        "decor-assets/native/sp_norbert_egg_right_f2.png",
-        "decor-assets/native/sp_norbert_egg_right_f3.png"
+        "decor-assets/native/sp_norbert_egg_atlas.png",
+        "decor-assets/native/sp_norbert_egg_atlas.png",
+        "decor-assets/native/sp_norbert_egg_atlas.png",
+        "decor-assets/native/sp_norbert_egg_atlas.png"
       ],
       "rightBounds": {
-        "x": 15,
-        "y": 11,
-        "w": 67,
-        "h": 85
+        "x": 7,
+        "y": 4,
+        "w": 82,
+        "h": 92
       },
       "angles": [
         "default",
@@ -637,10 +910,10 @@
       "pivotX": 48,
       "pivotY": 96,
       "bounds": {
-        "x": 9,
-        "y": 11,
-        "w": 78,
-        "h": 85
+        "x": 7,
+        "y": 4,
+        "w": 82,
+        "h": 92
       },
       "footprintTiles": [
         2,
@@ -653,7 +926,62 @@
         "chapter": 14
       },
       "lore": "Trứng rồng được ấp trong lò sưởi nhà Hagrid.",
-      "nativeSha256": "887923d134852b09db30a231e44e281eaba7dda5fd33a5f6fe19f2f9a1dc264c"
+      "nativeSha256": "980c4e4c424efdb22874752b6cb29760357ec523e32aea3b2cdb744ba2dd8526",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_norbert_egg-locked.png",
+      "sourceSha256": "b663d1559393027a78dd41fc2e33cf564c7861890899ba9720fa13d44bd7600e",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_sirius_motorbike",
@@ -909,10 +1237,10 @@
       "group": "Bảo vật Hogwarts",
       "file": "decor-assets/native/sp_mirror_erised.png",
       "frames": [
-        "decor-assets/native/sp_mirror_erised_f0.png",
-        "decor-assets/native/sp_mirror_erised_f1.png",
-        "decor-assets/native/sp_mirror_erised_f2.png",
-        "decor-assets/native/sp_mirror_erised_f3.png"
+        "decor-assets/native/sp_mirror_erised_atlas.png",
+        "decor-assets/native/sp_mirror_erised_atlas.png",
+        "decor-assets/native/sp_mirror_erised_atlas.png",
+        "decor-assets/native/sp_mirror_erised_atlas.png"
       ],
       "durations": [
         520,
@@ -922,16 +1250,16 @@
       ],
       "rightFile": "decor-assets/native/sp_mirror_erised_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_mirror_erised_right_f0.png",
-        "decor-assets/native/sp_mirror_erised_right_f1.png",
-        "decor-assets/native/sp_mirror_erised_right_f2.png",
-        "decor-assets/native/sp_mirror_erised_right_f3.png"
+        "decor-assets/native/sp_mirror_erised_atlas.png",
+        "decor-assets/native/sp_mirror_erised_atlas.png",
+        "decor-assets/native/sp_mirror_erised_atlas.png",
+        "decor-assets/native/sp_mirror_erised_atlas.png"
       ],
       "rightBounds": {
-        "x": 13,
-        "y": 7,
-        "w": 70,
-        "h": 169
+        "x": 5,
+        "y": 4,
+        "w": 87,
+        "h": 172
       },
       "angles": [
         "default",
@@ -942,10 +1270,10 @@
       "pivotX": 48,
       "pivotY": 176,
       "bounds": {
-        "x": 4,
-        "y": 7,
-        "w": 88,
-        "h": 169
+        "x": 5,
+        "y": 4,
+        "w": 87,
+        "h": 172
       },
       "footprintTiles": [
         2,
@@ -958,7 +1286,62 @@
         "chapter": 12
       },
       "lore": "Tấm gương cho người xem thấy điều họ khao khát nhất.",
-      "nativeSha256": "ff1262a622a3e0d2b1668262d91fcc85271e592855872099256a80c909e4ca38"
+      "nativeSha256": "565344f9de172f0a0cc10290123bdc8d865e8a43416107c7cd6976b7c0543fcd",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 192
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 192,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 192,
+          "y": 192,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 288,
+          "y": 192,
+          "w": 96,
+          "h": 192
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_mirror_erised-locked.png",
+      "sourceSha256": "6692b4b468cd7deeeae2ebc3a27a6716d6a506d865faec15880509933e0f87cb",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_sorting_hat",
@@ -970,10 +1353,10 @@
       "group": "Bảo vật Hogwarts",
       "file": "decor-assets/native/sp_sorting_hat.png",
       "frames": [
-        "decor-assets/native/sp_sorting_hat_f0.png",
-        "decor-assets/native/sp_sorting_hat_f1.png",
-        "decor-assets/native/sp_sorting_hat_f2.png",
-        "decor-assets/native/sp_sorting_hat_f3.png"
+        "decor-assets/native/sp_sorting_hat_atlas.png",
+        "decor-assets/native/sp_sorting_hat_atlas.png",
+        "decor-assets/native/sp_sorting_hat_atlas.png",
+        "decor-assets/native/sp_sorting_hat_atlas.png"
       ],
       "durations": [
         600,
@@ -983,16 +1366,16 @@
       ],
       "rightFile": "decor-assets/native/sp_sorting_hat_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_sorting_hat_right_f0.png",
-        "decor-assets/native/sp_sorting_hat_right_f1.png",
-        "decor-assets/native/sp_sorting_hat_right_f2.png",
-        "decor-assets/native/sp_sorting_hat_right_f3.png"
+        "decor-assets/native/sp_sorting_hat_atlas.png",
+        "decor-assets/native/sp_sorting_hat_atlas.png",
+        "decor-assets/native/sp_sorting_hat_atlas.png",
+        "decor-assets/native/sp_sorting_hat_atlas.png"
       ],
       "rightBounds": {
-        "x": 4,
-        "y": 13,
-        "w": 56,
-        "h": 67
+        "x": 7,
+        "y": 8,
+        "w": 50,
+        "h": 72
       },
       "angles": [
         "default",
@@ -1003,10 +1386,10 @@
       "pivotX": 32,
       "pivotY": 80,
       "bounds": {
-        "x": 7,
-        "y": 12,
-        "w": 51,
-        "h": 68
+        "x": 6,
+        "y": 4,
+        "w": 52,
+        "h": 76
       },
       "footprintTiles": [
         1,
@@ -1019,7 +1402,62 @@
         "chapter": 7
       },
       "lore": "Nón Phân Loại được đặt trên ghế trong lễ phân loại.",
-      "nativeSha256": "1d83f5809923a51440ec06fd9cef794f720e51d2c3e125635d33d4f8c5c0fd5c"
+      "nativeSha256": "96df1673b1c13785b3e2c18e71c86e1d2cb9e3a5199f21bdbf5095233764ec81",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "master": "isometric-refinements/masters/sp_sorting_hat-refined.png",
+      "sourceSha256": "6a1cea15a714b0115e697a64f54b29a6adec1f35cd51af30501b6a57905b7b3c",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_goblet_fire",
@@ -1031,10 +1469,10 @@
       "group": "Bảo vật Hogwarts",
       "file": "decor-assets/native/sp_goblet_fire.png",
       "frames": [
-        "decor-assets/native/sp_goblet_fire_f0.png",
-        "decor-assets/native/sp_goblet_fire_f1.png",
-        "decor-assets/native/sp_goblet_fire_f2.png",
-        "decor-assets/native/sp_goblet_fire_f3.png"
+        "decor-assets/native/sp_goblet_fire_atlas.png",
+        "decor-assets/native/sp_goblet_fire_atlas.png",
+        "decor-assets/native/sp_goblet_fire_atlas.png",
+        "decor-assets/native/sp_goblet_fire_atlas.png"
       ],
       "durations": [
         520,
@@ -1044,16 +1482,16 @@
       ],
       "rightFile": "decor-assets/native/sp_goblet_fire_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_goblet_fire_right_f0.png",
-        "decor-assets/native/sp_goblet_fire_right_f1.png",
-        "decor-assets/native/sp_goblet_fire_right_f2.png",
-        "decor-assets/native/sp_goblet_fire_right_f3.png"
+        "decor-assets/native/sp_goblet_fire_atlas.png",
+        "decor-assets/native/sp_goblet_fire_atlas.png",
+        "decor-assets/native/sp_goblet_fire_atlas.png",
+        "decor-assets/native/sp_goblet_fire_atlas.png"
       ],
       "rightBounds": {
-        "x": 7,
-        "y": 16,
-        "w": 50,
-        "h": 128
+        "x": 16,
+        "y": 5,
+        "w": 32,
+        "h": 139
       },
       "angles": [
         "default",
@@ -1065,9 +1503,9 @@
       "pivotY": 144,
       "bounds": {
         "x": 7,
-        "y": 34,
+        "y": 5,
         "w": 51,
-        "h": 110
+        "h": 139
       },
       "footprintTiles": [
         1,
@@ -1080,7 +1518,62 @@
         "chapter": 16
       },
       "lore": "Chiếc cốc bằng gỗ chọn các quán quân Tam Pháp Thuật.",
-      "nativeSha256": "dd644304c67fd3b551de93aa8658d1f0db0d810ba6e7eef057f2bebe177d569d"
+      "nativeSha256": "8425d141326ecb0ae866c8cb44a65a63d2e545e94cbd35161e0f7b726c9c84f1",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 192,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "master": "isometric-refinements/masters/sp_goblet_fire-refined.png",
+      "sourceSha256": "d5f79df20c8a93d4a4016364e7e9a584e6cf744208a4bed2a380a4055ea4f1e6",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_pensieve",
@@ -1092,10 +1585,10 @@
       "group": "Bảo vật Hogwarts",
       "file": "decor-assets/native/sp_pensieve.png",
       "frames": [
-        "decor-assets/native/sp_pensieve_f0.png",
-        "decor-assets/native/sp_pensieve_f1.png",
-        "decor-assets/native/sp_pensieve_f2.png",
-        "decor-assets/native/sp_pensieve_f3.png"
+        "decor-assets/native/sp_pensieve_atlas.png",
+        "decor-assets/native/sp_pensieve_atlas.png",
+        "decor-assets/native/sp_pensieve_atlas.png",
+        "decor-assets/native/sp_pensieve_atlas.png"
       ],
       "durations": [
         520,
@@ -1105,16 +1598,16 @@
       ],
       "rightFile": "decor-assets/native/sp_pensieve_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_pensieve_right_f0.png",
-        "decor-assets/native/sp_pensieve_right_f1.png",
-        "decor-assets/native/sp_pensieve_right_f2.png",
-        "decor-assets/native/sp_pensieve_right_f3.png"
+        "decor-assets/native/sp_pensieve_atlas.png",
+        "decor-assets/native/sp_pensieve_atlas.png",
+        "decor-assets/native/sp_pensieve_atlas.png",
+        "decor-assets/native/sp_pensieve_atlas.png"
       ],
       "rightBounds": {
-        "x": 10,
-        "y": 13,
-        "w": 77,
-        "h": 99
+        "x": 11,
+        "y": 5,
+        "w": 74,
+        "h": 107
       },
       "angles": [
         "default",
@@ -1125,10 +1618,10 @@
       "pivotX": 48,
       "pivotY": 112,
       "bounds": {
-        "x": 4,
-        "y": 13,
-        "w": 88,
-        "h": 99
+        "x": 11,
+        "y": 4,
+        "w": 74,
+        "h": 108
       },
       "footprintTiles": [
         2,
@@ -1141,7 +1634,62 @@
         "chapter": 30
       },
       "lore": "Chậu đá chứa và xem ký ức trong văn phòng Dumbledore.",
-      "nativeSha256": "225f63ac40dab0335ba07db6114b1ad5f49611aaf7851fa9bde6164fcb6cb176"
+      "nativeSha256": "0e24329d14eefce880de18769073545ad039ad61f094b4ee0ab2aafda2bc1804",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 128
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 128,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 192,
+          "y": 128,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 288,
+          "y": 128,
+          "w": 96,
+          "h": 128
+        }
+      ],
+      "master": "isometric-ring-repairs/masters/sp_pensieve.png",
+      "sourceSha256": "a82b65f70738e7a85e2df092c2ad3243251a0b0de60d49401e0ce2554d3efde0",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_fawkes_perch",
@@ -1214,10 +1762,10 @@
       "group": "Bảo vật Hogwarts",
       "file": "decor-assets/native/sp_wizard_chess_knight.png",
       "frames": [
-        "decor-assets/native/sp_wizard_chess_knight_f0.png",
-        "decor-assets/native/sp_wizard_chess_knight_f1.png",
-        "decor-assets/native/sp_wizard_chess_knight_f2.png",
-        "decor-assets/native/sp_wizard_chess_knight_f3.png"
+        "decor-assets/native/sp_wizard_chess_knight_atlas.png",
+        "decor-assets/native/sp_wizard_chess_knight_atlas.png",
+        "decor-assets/native/sp_wizard_chess_knight_atlas.png",
+        "decor-assets/native/sp_wizard_chess_knight_atlas.png"
       ],
       "durations": [
         520,
@@ -1227,16 +1775,16 @@
       ],
       "rightFile": "decor-assets/native/sp_wizard_chess_knight_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_wizard_chess_knight_right_f0.png",
-        "decor-assets/native/sp_wizard_chess_knight_right_f1.png",
-        "decor-assets/native/sp_wizard_chess_knight_right_f2.png",
-        "decor-assets/native/sp_wizard_chess_knight_right_f3.png"
+        "decor-assets/native/sp_wizard_chess_knight_atlas.png",
+        "decor-assets/native/sp_wizard_chess_knight_atlas.png",
+        "decor-assets/native/sp_wizard_chess_knight_atlas.png",
+        "decor-assets/native/sp_wizard_chess_knight_atlas.png"
       ],
       "rightBounds": {
         "x": 4,
-        "y": 23,
+        "y": 29,
         "w": 88,
-        "h": 137
+        "h": 131
       },
       "angles": [
         "default",
@@ -1248,22 +1796,77 @@
       "pivotY": 160,
       "bounds": {
         "x": 4,
-        "y": 19,
+        "y": 30,
         "w": 88,
-        "h": 141
+        "h": 130
       },
       "footprintTiles": [
         2,
         1
       ],
       "motion": "glow",
-      "framesIdentical": false,
+      "framesIdentical": true,
       "bookReference": {
         "book": 1,
         "chapter": 16
       },
       "lore": "Bàn cờ phù thủy khổng lồ trong thử thách bảo vệ Hòn Đá Phù Thủy.",
-      "nativeSha256": "d04afd875dfac814e813beb184784fd94de7fb0050524cd977d9a1d0efec792a"
+      "nativeSha256": "8a36a25a2f633cd4918081f7453d899173243d4db0b551dfe202b2c8c21b2c72",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 176
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 176
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 176
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 176
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 176,
+          "w": 96,
+          "h": 176
+        },
+        {
+          "x": 96,
+          "y": 176,
+          "w": 96,
+          "h": 176
+        },
+        {
+          "x": 192,
+          "y": 176,
+          "w": 96,
+          "h": 176
+        },
+        {
+          "x": 288,
+          "y": 176,
+          "w": 96,
+          "h": 176
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_wizard_chess_knight.png",
+      "sourceSha256": "05606863e41be8efdc27199615a7a615c2191ce1cfd234c23eec4e619a97c4cd",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_riddle_diary",
@@ -1275,10 +1878,10 @@
       "group": "Dấu tích Trường Sinh Linh Giá",
       "file": "decor-assets/native/sp_riddle_diary.png",
       "frames": [
-        "decor-assets/native/sp_riddle_diary_f0.png",
-        "decor-assets/native/sp_riddle_diary_f1.png",
-        "decor-assets/native/sp_riddle_diary_f2.png",
-        "decor-assets/native/sp_riddle_diary_f3.png"
+        "decor-assets/native/sp_riddle_diary_atlas.png",
+        "decor-assets/native/sp_riddle_diary_atlas.png",
+        "decor-assets/native/sp_riddle_diary_atlas.png",
+        "decor-assets/native/sp_riddle_diary_atlas.png"
       ],
       "durations": [
         520,
@@ -1288,16 +1891,16 @@
       ],
       "rightFile": "decor-assets/native/sp_riddle_diary_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_riddle_diary_right_f0.png",
-        "decor-assets/native/sp_riddle_diary_right_f1.png",
-        "decor-assets/native/sp_riddle_diary_right_f2.png",
-        "decor-assets/native/sp_riddle_diary_right_f3.png"
+        "decor-assets/native/sp_riddle_diary_atlas.png",
+        "decor-assets/native/sp_riddle_diary_atlas.png",
+        "decor-assets/native/sp_riddle_diary_atlas.png",
+        "decor-assets/native/sp_riddle_diary_atlas.png"
       ],
       "rightBounds": {
-        "x": 8,
-        "y": 11,
-        "w": 48,
-        "h": 53
+        "x": 13,
+        "y": 4,
+        "w": 39,
+        "h": 60
       },
       "angles": [
         "default",
@@ -1308,10 +1911,10 @@
       "pivotX": 32,
       "pivotY": 64,
       "bounds": {
-        "x": 8,
-        "y": 17,
-        "w": 48,
-        "h": 47
+        "x": 13,
+        "y": 4,
+        "w": 39,
+        "h": 60
       },
       "footprintTiles": [
         1,
@@ -1324,7 +1927,62 @@
         "chapter": 17
       },
       "lore": "Harry dùng nanh Tử Xà phá hủy quyển nhật ký.",
-      "nativeSha256": "f94bfeb8dcefd2fc7df69508d88c71e7a8630c4b28970047a21660565002bd74"
+      "nativeSha256": "85f4515c9b148b7a123d631c00a92f8559ee1cb437c8e933e27454b0360ac8ec",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 80
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 80,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 64,
+          "y": 80,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 128,
+          "y": 80,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 192,
+          "y": 80,
+          "w": 64,
+          "h": 80
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_riddle_diary-v3.png",
+      "sourceSha256": "ba0765cdbe1f808d060c970c38253c49bb3ccf42321b21e670626a275ebf659a",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_slytherin_locket",
@@ -1336,10 +1994,10 @@
       "group": "Dấu tích Trường Sinh Linh Giá",
       "file": "decor-assets/native/sp_slytherin_locket.png",
       "frames": [
-        "decor-assets/native/sp_slytherin_locket_f0.png",
-        "decor-assets/native/sp_slytherin_locket_f1.png",
-        "decor-assets/native/sp_slytherin_locket_f2.png",
-        "decor-assets/native/sp_slytherin_locket_f3.png"
+        "decor-assets/native/sp_slytherin_locket_atlas.png",
+        "decor-assets/native/sp_slytherin_locket_atlas.png",
+        "decor-assets/native/sp_slytherin_locket_atlas.png",
+        "decor-assets/native/sp_slytherin_locket_atlas.png"
       ],
       "durations": [
         520,
@@ -1349,16 +2007,16 @@
       ],
       "rightFile": "decor-assets/native/sp_slytherin_locket_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_slytherin_locket_right_f0.png",
-        "decor-assets/native/sp_slytherin_locket_right_f1.png",
-        "decor-assets/native/sp_slytherin_locket_right_f2.png",
-        "decor-assets/native/sp_slytherin_locket_right_f3.png"
+        "decor-assets/native/sp_slytherin_locket_atlas.png",
+        "decor-assets/native/sp_slytherin_locket_atlas.png",
+        "decor-assets/native/sp_slytherin_locket_atlas.png",
+        "decor-assets/native/sp_slytherin_locket_atlas.png"
       ],
       "rightBounds": {
         "x": 8,
-        "y": 14,
-        "w": 48,
-        "h": 66
+        "y": 4,
+        "w": 49,
+        "h": 76
       },
       "angles": [
         "default",
@@ -1369,10 +2027,10 @@
       "pivotX": 32,
       "pivotY": 80,
       "bounds": {
-        "x": 4,
-        "y": 14,
-        "w": 56,
-        "h": 66
+        "x": 6,
+        "y": 4,
+        "w": 52,
+        "h": 76
       },
       "footprintTiles": [
         1,
@@ -1385,7 +2043,62 @@
         "chapter": 19
       },
       "lore": "Chiếc mề đay Trường Sinh Linh Giá được phá hủy bằng thanh gươm.",
-      "nativeSha256": "7f3953f75c0f0d45a4fc130451e70a5ee722201ce0051db8cf6c8c079fa2d11d"
+      "nativeSha256": "563b26e83ae8b1ff272e082dca55420380685a2da7b9f9045a9cede491e704cf",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "master": "isometric-refinements/masters/sp_slytherin_locket-refined.png",
+      "sourceSha256": "ab2712363137d401d8a0573f453359c20c13a17a950ea9a9f3f5939b7ab46343",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_gaunt_ring",
@@ -1397,10 +2110,10 @@
       "group": "Dấu tích Trường Sinh Linh Giá",
       "file": "decor-assets/native/sp_gaunt_ring.png",
       "frames": [
-        "decor-assets/native/sp_gaunt_ring_f0.png",
-        "decor-assets/native/sp_gaunt_ring_f1.png",
-        "decor-assets/native/sp_gaunt_ring_f2.png",
-        "decor-assets/native/sp_gaunt_ring_f3.png"
+        "decor-assets/native/sp_gaunt_ring_atlas.png",
+        "decor-assets/native/sp_gaunt_ring_atlas.png",
+        "decor-assets/native/sp_gaunt_ring_atlas.png",
+        "decor-assets/native/sp_gaunt_ring_atlas.png"
       ],
       "durations": [
         520,
@@ -1410,16 +2123,16 @@
       ],
       "rightFile": "decor-assets/native/sp_gaunt_ring_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_gaunt_ring_right_f0.png",
-        "decor-assets/native/sp_gaunt_ring_right_f1.png",
-        "decor-assets/native/sp_gaunt_ring_right_f2.png",
-        "decor-assets/native/sp_gaunt_ring_right_f3.png"
+        "decor-assets/native/sp_gaunt_ring_atlas.png",
+        "decor-assets/native/sp_gaunt_ring_atlas.png",
+        "decor-assets/native/sp_gaunt_ring_atlas.png",
+        "decor-assets/native/sp_gaunt_ring_atlas.png"
       ],
       "rightBounds": {
-        "x": 5,
-        "y": 19,
-        "w": 55,
-        "h": 61
+        "x": 9,
+        "y": 6,
+        "w": 47,
+        "h": 74
       },
       "angles": [
         "default",
@@ -1430,10 +2143,10 @@
       "pivotX": 32,
       "pivotY": 80,
       "bounds": {
-        "x": 4,
-        "y": 19,
-        "w": 56,
-        "h": 61
+        "x": 6,
+        "y": 4,
+        "w": 52,
+        "h": 76
       },
       "footprintTiles": [
         1,
@@ -1446,7 +2159,62 @@
         "chapter": 10
       },
       "lore": "Chiếc nhẫn gia tộc Gaunt, về sau được nhận diện là Trường Sinh Linh Giá.",
-      "nativeSha256": "787074e42147dc5247372844f1c486e2bd7fac644c39cd707960d88c4b90bc95"
+      "nativeSha256": "4e6745c180cc9a64989a96c1210eb2d5c3650d31aefb849b1bd53f7f4e676753",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_gaunt_ring-locked.png",
+      "sourceSha256": "f2da44edb1b1e11d25ee18de51cbde7fbf80130bf0e87fa2fb2f2c0790d71d80",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_hufflepuff_cup",
@@ -1458,10 +2226,10 @@
       "group": "Dấu tích Trường Sinh Linh Giá",
       "file": "decor-assets/native/sp_hufflepuff_cup.png",
       "frames": [
-        "decor-assets/native/sp_hufflepuff_cup_f0.png",
-        "decor-assets/native/sp_hufflepuff_cup_f1.png",
-        "decor-assets/native/sp_hufflepuff_cup_f2.png",
-        "decor-assets/native/sp_hufflepuff_cup_f3.png"
+        "decor-assets/native/sp_hufflepuff_cup_atlas.png",
+        "decor-assets/native/sp_hufflepuff_cup_atlas.png",
+        "decor-assets/native/sp_hufflepuff_cup_atlas.png",
+        "decor-assets/native/sp_hufflepuff_cup_atlas.png"
       ],
       "durations": [
         520,
@@ -1471,16 +2239,16 @@
       ],
       "rightFile": "decor-assets/native/sp_hufflepuff_cup_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_hufflepuff_cup_right_f0.png",
-        "decor-assets/native/sp_hufflepuff_cup_right_f1.png",
-        "decor-assets/native/sp_hufflepuff_cup_right_f2.png",
-        "decor-assets/native/sp_hufflepuff_cup_right_f3.png"
+        "decor-assets/native/sp_hufflepuff_cup_atlas.png",
+        "decor-assets/native/sp_hufflepuff_cup_atlas.png",
+        "decor-assets/native/sp_hufflepuff_cup_atlas.png",
+        "decor-assets/native/sp_hufflepuff_cup_atlas.png"
       ],
       "rightBounds": {
-        "x": 9,
-        "y": 18,
-        "w": 47,
-        "h": 62
+        "x": 14,
+        "y": 24,
+        "w": 37,
+        "h": 56
       },
       "angles": [
         "default",
@@ -1491,10 +2259,10 @@
       "pivotX": 32,
       "pivotY": 80,
       "bounds": {
-        "x": 5,
-        "y": 18,
-        "w": 55,
-        "h": 62
+        "x": 4,
+        "y": 26,
+        "w": 56,
+        "h": 54
       },
       "footprintTiles": [
         1,
@@ -1507,7 +2275,62 @@
         "chapter": 26
       },
       "lore": "Chiếc cúp được lấy khỏi hầm Lestrange ở Gringotts.",
-      "nativeSha256": "14d6fde245451a4000a87694b2101406e92845c25d459fa93dd4bd7bb4ff40bd"
+      "nativeSha256": "13b8a263f24cf6f53244a9d554dfc840a2538992cdc475b66602737eb1659f96",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 64,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 128,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 64,
+          "h": 96
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_hufflepuff_cup-locked.png",
+      "sourceSha256": "92e7ec73f35eb4db5ab6e390bc6cf99bba3b2443990abee2f75bfa9a94956962",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_ravenclaw_diadem",
@@ -1519,10 +2342,10 @@
       "group": "Dấu tích Trường Sinh Linh Giá",
       "file": "decor-assets/native/sp_ravenclaw_diadem.png",
       "frames": [
-        "decor-assets/native/sp_ravenclaw_diadem_f0.png",
-        "decor-assets/native/sp_ravenclaw_diadem_f1.png",
-        "decor-assets/native/sp_ravenclaw_diadem_f2.png",
-        "decor-assets/native/sp_ravenclaw_diadem_f3.png"
+        "decor-assets/native/sp_ravenclaw_diadem_atlas.png",
+        "decor-assets/native/sp_ravenclaw_diadem_atlas.png",
+        "decor-assets/native/sp_ravenclaw_diadem_atlas.png",
+        "decor-assets/native/sp_ravenclaw_diadem_atlas.png"
       ],
       "durations": [
         520,
@@ -1532,16 +2355,16 @@
       ],
       "rightFile": "decor-assets/native/sp_ravenclaw_diadem_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_ravenclaw_diadem_right_f0.png",
-        "decor-assets/native/sp_ravenclaw_diadem_right_f1.png",
-        "decor-assets/native/sp_ravenclaw_diadem_right_f2.png",
-        "decor-assets/native/sp_ravenclaw_diadem_right_f3.png"
+        "decor-assets/native/sp_ravenclaw_diadem_atlas.png",
+        "decor-assets/native/sp_ravenclaw_diadem_atlas.png",
+        "decor-assets/native/sp_ravenclaw_diadem_atlas.png",
+        "decor-assets/native/sp_ravenclaw_diadem_atlas.png"
       ],
       "rightBounds": {
-        "x": 7,
-        "y": 6,
-        "w": 51,
-        "h": 42
+        "x": 8,
+        "y": 4,
+        "w": 49,
+        "h": 44
       },
       "angles": [
         "default",
@@ -1552,10 +2375,10 @@
       "pivotX": 32,
       "pivotY": 48,
       "bounds": {
-        "x": 4,
-        "y": 7,
-        "w": 56,
-        "h": 41
+        "x": 8,
+        "y": 4,
+        "w": 49,
+        "h": 44
       },
       "footprintTiles": [
         1,
@@ -1568,7 +2391,62 @@
         "chapter": 31
       },
       "lore": "Vương miện thất lạc của Ravenclaw trong Phòng Theo Yêu Cầu.",
-      "nativeSha256": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b"
+      "nativeSha256": "9aaf8f0bd5677a9c11344af8c96c1e9c05fc6168c9f0f1bd5c7baf80e3537bfa",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 64,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "x": 64,
+          "y": 64,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "x": 128,
+          "y": 64,
+          "w": 64,
+          "h": 64
+        },
+        {
+          "x": 192,
+          "y": 64,
+          "w": 64,
+          "h": 64
+        }
+      ],
+      "master": "isometric-refinements/masters/sp_ravenclaw_diadem-refined.png",
+      "sourceSha256": "0950893c79fcbf20138d1a394d0d1013b72f195b27b4eb003943a15b2cdbfe00",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_vanishing_cabinet",
@@ -1580,10 +2458,10 @@
       "group": "Hắc thuật và bí mật",
       "file": "decor-assets/native/sp_vanishing_cabinet.png",
       "frames": [
-        "decor-assets/native/sp_vanishing_cabinet_f0.png",
-        "decor-assets/native/sp_vanishing_cabinet_f1.png",
-        "decor-assets/native/sp_vanishing_cabinet_f2.png",
-        "decor-assets/native/sp_vanishing_cabinet_f3.png"
+        "decor-assets/native/sp_vanishing_cabinet_atlas.png",
+        "decor-assets/native/sp_vanishing_cabinet_atlas.png",
+        "decor-assets/native/sp_vanishing_cabinet_atlas.png",
+        "decor-assets/native/sp_vanishing_cabinet_atlas.png"
       ],
       "durations": [
         600,
@@ -1593,16 +2471,16 @@
       ],
       "rightFile": "decor-assets/native/sp_vanishing_cabinet_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_vanishing_cabinet_right_f0.png",
-        "decor-assets/native/sp_vanishing_cabinet_right_f1.png",
-        "decor-assets/native/sp_vanishing_cabinet_right_f2.png",
-        "decor-assets/native/sp_vanishing_cabinet_right_f3.png"
+        "decor-assets/native/sp_vanishing_cabinet_atlas.png",
+        "decor-assets/native/sp_vanishing_cabinet_atlas.png",
+        "decor-assets/native/sp_vanishing_cabinet_atlas.png",
+        "decor-assets/native/sp_vanishing_cabinet_atlas.png"
       ],
       "rightBounds": {
-        "x": 11,
-        "y": 11,
-        "w": 74,
-        "h": 165
+        "x": 4,
+        "y": 15,
+        "w": 88,
+        "h": 161
       },
       "angles": [
         "default",
@@ -1614,22 +2492,77 @@
       "pivotY": 176,
       "bounds": {
         "x": 4,
-        "y": 11,
+        "y": 17,
         "w": 88,
-        "h": 165
+        "h": 159
       },
       "footprintTiles": [
         2,
         1
       ],
       "motion": "glow",
-      "framesIdentical": true,
+      "framesIdentical": false,
       "bookReference": {
         "book": 6,
         "chapter": 27
       },
       "lore": "Chiếc tủ Draco sửa để nối Hogwarts với Borgin và Burkes.",
-      "nativeSha256": "9f6d5c4e7b476f61c7b1d038dd073826cdec8d4d6c0315c132240a792edf25a4"
+      "nativeSha256": "e14b5ea17988981d6589f2fcdd8a59870bcc97a205426fc0a89ed98937cd5272",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 192
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 192,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 96,
+          "y": 192,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 192,
+          "y": 192,
+          "w": 96,
+          "h": 192
+        },
+        {
+          "x": 288,
+          "y": 192,
+          "w": 96,
+          "h": 192
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_vanishing_cabinet-v3.png",
+      "sourceSha256": "86d7ce0803477df5b4bc2e1705ee8a3a981be00f5e3a4cb2c84887f721e6ebc3",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_hand_glory",
@@ -1641,10 +2574,10 @@
       "group": "Hắc thuật và bí mật",
       "file": "decor-assets/native/sp_hand_glory.png",
       "frames": [
-        "decor-assets/native/sp_hand_glory_f0.png",
-        "decor-assets/native/sp_hand_glory_f1.png",
-        "decor-assets/native/sp_hand_glory_f2.png",
-        "decor-assets/native/sp_hand_glory_f3.png"
+        "decor-assets/native/sp_hand_glory_atlas.png",
+        "decor-assets/native/sp_hand_glory_atlas.png",
+        "decor-assets/native/sp_hand_glory_atlas.png",
+        "decor-assets/native/sp_hand_glory_atlas.png"
       ],
       "durations": [
         520,
@@ -1654,16 +2587,16 @@
       ],
       "rightFile": "decor-assets/native/sp_hand_glory_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_hand_glory_right_f0.png",
-        "decor-assets/native/sp_hand_glory_right_f1.png",
-        "decor-assets/native/sp_hand_glory_right_f2.png",
-        "decor-assets/native/sp_hand_glory_right_f3.png"
+        "decor-assets/native/sp_hand_glory_atlas.png",
+        "decor-assets/native/sp_hand_glory_atlas.png",
+        "decor-assets/native/sp_hand_glory_atlas.png",
+        "decor-assets/native/sp_hand_glory_atlas.png"
       ],
       "rightBounds": {
-        "x": 7,
-        "y": 18,
-        "w": 50,
-        "h": 126
+        "x": 11,
+        "y": 6,
+        "w": 42,
+        "h": 138
       },
       "angles": [
         "default",
@@ -1674,10 +2607,10 @@
       "pivotX": 32,
       "pivotY": 144,
       "bounds": {
-        "x": 7,
-        "y": 16,
-        "w": 50,
-        "h": 128
+        "x": 10,
+        "y": 4,
+        "w": 44,
+        "h": 140
       },
       "footprintTiles": [
         1,
@@ -1690,7 +2623,62 @@
         "chapter": 4
       },
       "lore": "Cổ vật trong cửa tiệm Borgin và Burkes.",
-      "nativeSha256": "1df28484a5233d2613f41c24055aab19d0617b5f2ea08cc140d36e974ce8cece"
+      "nativeSha256": "45f53ec88ad8c40ab20105471ba19a0348b26708391399ef0db69cb944829f12",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 64,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        },
+        {
+          "x": 192,
+          "y": 160,
+          "w": 64,
+          "h": 160
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_hand_glory-locked.png",
+      "sourceSha256": "d2974c12739322d7015a5bc1baa5ca2f49081fe27bf57c14de2e2edf03eedb60",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_cursed_opal_necklace",
@@ -1702,10 +2690,10 @@
       "group": "Hắc thuật và bí mật",
       "file": "decor-assets/native/sp_cursed_opal_necklace.png",
       "frames": [
-        "decor-assets/native/sp_cursed_opal_necklace_f0.png",
-        "decor-assets/native/sp_cursed_opal_necklace_f1.png",
-        "decor-assets/native/sp_cursed_opal_necklace_f2.png",
-        "decor-assets/native/sp_cursed_opal_necklace_f3.png"
+        "decor-assets/native/sp_cursed_opal_necklace_atlas.png",
+        "decor-assets/native/sp_cursed_opal_necklace_atlas.png",
+        "decor-assets/native/sp_cursed_opal_necklace_atlas.png",
+        "decor-assets/native/sp_cursed_opal_necklace_atlas.png"
       ],
       "durations": [
         520,
@@ -1715,16 +2703,16 @@
       ],
       "rightFile": "decor-assets/native/sp_cursed_opal_necklace_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_cursed_opal_necklace_right_f0.png",
-        "decor-assets/native/sp_cursed_opal_necklace_right_f1.png",
-        "decor-assets/native/sp_cursed_opal_necklace_right_f2.png",
-        "decor-assets/native/sp_cursed_opal_necklace_right_f3.png"
+        "decor-assets/native/sp_cursed_opal_necklace_atlas.png",
+        "decor-assets/native/sp_cursed_opal_necklace_atlas.png",
+        "decor-assets/native/sp_cursed_opal_necklace_atlas.png",
+        "decor-assets/native/sp_cursed_opal_necklace_atlas.png"
       ],
       "rightBounds": {
-        "x": 5,
-        "y": 17,
-        "w": 54,
-        "h": 79
+        "x": 7,
+        "y": 4,
+        "w": 51,
+        "h": 92
       },
       "angles": [
         "default",
@@ -1735,10 +2723,10 @@
       "pivotX": 32,
       "pivotY": 96,
       "bounds": {
-        "x": 5,
-        "y": 17,
-        "w": 55,
-        "h": 79
+        "x": 7,
+        "y": 4,
+        "w": 51,
+        "h": 92
       },
       "footprintTiles": [
         1,
@@ -1751,7 +2739,62 @@
         "chapter": 12
       },
       "lore": "Chuỗi ngọc khiến Katie Bell bị nguyền.",
-      "nativeSha256": "1c9793dd34edcacb93876e8312c42b7780a2f963fe0d95243fef5304476abc4f"
+      "nativeSha256": "4ae2b7e50e5c13a9173ef5a07076acb7a96e31d42dd1473c7cc6beb758817bb1",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_cursed_opal_necklace-locked.png",
+      "sourceSha256": "bcbff4e3b98a0028988aa6fe610bef8aa574d762dddc6a1db108aad736c0021b",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_chamber_serpent_door",
@@ -1763,10 +2806,10 @@
       "group": "Hắc thuật và bí mật",
       "file": "decor-assets/native/sp_chamber_serpent_door.png",
       "frames": [
-        "decor-assets/native/sp_chamber_serpent_door_f0.png",
-        "decor-assets/native/sp_chamber_serpent_door_f1.png",
-        "decor-assets/native/sp_chamber_serpent_door_f2.png",
-        "decor-assets/native/sp_chamber_serpent_door_f3.png"
+        "decor-assets/native/sp_chamber_serpent_door_atlas.png",
+        "decor-assets/native/sp_chamber_serpent_door_atlas.png",
+        "decor-assets/native/sp_chamber_serpent_door_atlas.png",
+        "decor-assets/native/sp_chamber_serpent_door_atlas.png"
       ],
       "durations": [
         600,
@@ -1776,15 +2819,15 @@
       ],
       "rightFile": "decor-assets/native/sp_chamber_serpent_door_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_chamber_serpent_door_right_f0.png",
-        "decor-assets/native/sp_chamber_serpent_door_right_f1.png",
-        "decor-assets/native/sp_chamber_serpent_door_right_f2.png",
-        "decor-assets/native/sp_chamber_serpent_door_right_f3.png"
+        "decor-assets/native/sp_chamber_serpent_door_atlas.png",
+        "decor-assets/native/sp_chamber_serpent_door_atlas.png",
+        "decor-assets/native/sp_chamber_serpent_door_atlas.png",
+        "decor-assets/native/sp_chamber_serpent_door_atlas.png"
       ],
       "rightBounds": {
-        "x": 18,
+        "x": 7,
         "y": 5,
-        "w": 92,
+        "w": 114,
         "h": 107
       },
       "angles": [
@@ -1796,23 +2839,78 @@
       "pivotX": 64,
       "pivotY": 112,
       "bounds": {
-        "x": 9,
-        "y": 5,
-        "w": 110,
-        "h": 107
+        "x": 7,
+        "y": 4,
+        "w": 114,
+        "h": 108
       },
       "footprintTiles": [
         3,
         1
       ],
       "motion": "glow",
-      "framesIdentical": true,
+      "framesIdentical": false,
       "bookReference": {
         "book": 2,
         "chapter": 16
       },
       "lore": "Vách đá có hai con rắn quấn nhau, mắt bằng ngọc lục bảo, mở bằng Xà Ngữ.",
-      "nativeSha256": "888a34536cf0bdf56f82a33437204fd85d6b8684016a283b9aeef946aa4ec360"
+      "nativeSha256": "aebf861ca449f293ee8f629943a8ffdbe4597d6d35fe7a8b47bccd8be54eb2f3",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 128
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 128,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 128,
+          "y": 128,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 256,
+          "y": 128,
+          "w": 128,
+          "h": 128
+        },
+        {
+          "x": 384,
+          "y": 128,
+          "w": 128,
+          "h": 128
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_chamber_serpent_door-v3.png",
+      "sourceSha256": "db0c838809d4f239202a7e062982f6891552fdd4c49d99d7b1518303b95ba550",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_department_veil",
@@ -1824,10 +2922,10 @@
       "group": "Hắc thuật và bí mật",
       "file": "decor-assets/native/sp_department_veil.png",
       "frames": [
-        "decor-assets/native/sp_department_veil_f0.png",
-        "decor-assets/native/sp_department_veil_f1.png",
-        "decor-assets/native/sp_department_veil_f2.png",
-        "decor-assets/native/sp_department_veil_f3.png"
+        "decor-assets/native/sp_department_veil_atlas.png",
+        "decor-assets/native/sp_department_veil_atlas.png",
+        "decor-assets/native/sp_department_veil_atlas.png",
+        "decor-assets/native/sp_department_veil_atlas.png"
       ],
       "durations": [
         600,
@@ -1837,16 +2935,16 @@
       ],
       "rightFile": "decor-assets/native/sp_department_veil_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_department_veil_right_f0.png",
-        "decor-assets/native/sp_department_veil_right_f1.png",
-        "decor-assets/native/sp_department_veil_right_f2.png",
-        "decor-assets/native/sp_department_veil_right_f3.png"
+        "decor-assets/native/sp_department_veil_atlas.png",
+        "decor-assets/native/sp_department_veil_atlas.png",
+        "decor-assets/native/sp_department_veil_atlas.png",
+        "decor-assets/native/sp_department_veil_atlas.png"
       ],
       "rightBounds": {
-        "x": 19,
-        "y": 12,
-        "w": 91,
-        "h": 164
+        "x": 4,
+        "y": 9,
+        "w": 120,
+        "h": 167
       },
       "angles": [
         "default",
@@ -1858,9 +2956,9 @@
       "pivotY": 176,
       "bounds": {
         "x": 4,
-        "y": 12,
+        "y": 9,
         "w": 120,
-        "h": 164
+        "h": 167
       },
       "footprintTiles": [
         2,
@@ -1873,7 +2971,62 @@
         "chapter": 34
       },
       "lore": "Vòm đá có màn che trong Sở Bảo Mật.",
-      "nativeSha256": "31f03d89b588800855357462129f62ebc9b3c7c4983ecd449b823b9931126bd7"
+      "nativeSha256": "67dacd93a0ae668bef8139d802b62a83b7230678ff23433d98c41379681e68e6",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 192
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 192
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 192
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 192
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 192,
+          "w": 128,
+          "h": 192
+        },
+        {
+          "x": 128,
+          "y": 192,
+          "w": 128,
+          "h": 192
+        },
+        {
+          "x": 256,
+          "y": 192,
+          "w": 128,
+          "h": 192
+        },
+        {
+          "x": 384,
+          "y": 192,
+          "w": 128,
+          "h": 192
+        }
+      ],
+      "master": "isometric-refinements/masters/sp_department_veil-refined.png",
+      "sourceSha256": "598f5722663ef920d13c9106e0e00efa360d8e417d024eb92c759a495ed7d9fa",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_monster_book",
@@ -1885,10 +3038,10 @@
       "group": "Hắc thuật và bí mật",
       "file": "decor-assets/native/sp_monster_book.png",
       "frames": [
-        "decor-assets/native/sp_monster_book_f0.png",
-        "decor-assets/native/sp_monster_book_f1.png",
-        "decor-assets/native/sp_monster_book_f2.png",
-        "decor-assets/native/sp_monster_book_f3.png"
+        "decor-assets/native/sp_monster_book_atlas.png",
+        "decor-assets/native/sp_monster_book_atlas.png",
+        "decor-assets/native/sp_monster_book_atlas.png",
+        "decor-assets/native/sp_monster_book_atlas.png"
       ],
       "durations": [
         600,
@@ -1898,16 +3051,16 @@
       ],
       "rightFile": "decor-assets/native/sp_monster_book_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_monster_book_right_f0.png",
-        "decor-assets/native/sp_monster_book_right_f1.png",
-        "decor-assets/native/sp_monster_book_right_f2.png",
-        "decor-assets/native/sp_monster_book_right_f3.png"
+        "decor-assets/native/sp_monster_book_atlas.png",
+        "decor-assets/native/sp_monster_book_atlas.png",
+        "decor-assets/native/sp_monster_book_atlas.png",
+        "decor-assets/native/sp_monster_book_atlas.png"
       ],
       "rightBounds": {
-        "x": 7,
-        "y": 12,
-        "w": 51,
-        "h": 52
+        "x": 4,
+        "y": 5,
+        "w": 56,
+        "h": 59
       },
       "angles": [
         "default",
@@ -1918,10 +3071,10 @@
       "pivotX": 32,
       "pivotY": 64,
       "bounds": {
-        "x": 6,
-        "y": 12,
-        "w": 53,
-        "h": 52
+        "x": 4,
+        "y": 5,
+        "w": 56,
+        "h": 59
       },
       "footprintTiles": [
         1,
@@ -1934,7 +3087,62 @@
         "chapter": 1
       },
       "lore": "Cuốn sách Hagrid gửi tặng Harry và dùng cho môn Chăm Sóc Sinh Vật Huyền Bí.",
-      "nativeSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26"
+      "nativeSha256": "c0801cc2c9937bc3fd87c2dcd84a06f7ea02b6e7f8151b478f748872b141b2b3",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 80
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 80,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 64,
+          "y": 80,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 128,
+          "y": 80,
+          "w": 64,
+          "h": 80
+        },
+        {
+          "x": 192,
+          "y": 80,
+          "w": 64,
+          "h": 80
+        }
+      ],
+      "master": "isometric-camera-repairs/masters/sp_monster_book.png",
+      "sourceSha256": "8c780ba536e0320d3e1f39e56d56d3b9cdfa998ef92482412bbf97c75aeb5f4e",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_deathday_cake",
@@ -1946,10 +3154,10 @@
       "group": "Halloween Hogwarts",
       "file": "decor-assets/native/sp_deathday_cake.png",
       "frames": [
-        "decor-assets/native/sp_deathday_cake_f0.png",
-        "decor-assets/native/sp_deathday_cake_f1.png",
-        "decor-assets/native/sp_deathday_cake_f2.png",
-        "decor-assets/native/sp_deathday_cake_f3.png"
+        "decor-assets/native/sp_deathday_cake_atlas.png",
+        "decor-assets/native/sp_deathday_cake_atlas.png",
+        "decor-assets/native/sp_deathday_cake_atlas.png",
+        "decor-assets/native/sp_deathday_cake_atlas.png"
       ],
       "durations": [
         520,
@@ -1959,16 +3167,16 @@
       ],
       "rightFile": "decor-assets/native/sp_deathday_cake_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_deathday_cake_right_f0.png",
-        "decor-assets/native/sp_deathday_cake_right_f1.png",
-        "decor-assets/native/sp_deathday_cake_right_f2.png",
-        "decor-assets/native/sp_deathday_cake_right_f3.png"
+        "decor-assets/native/sp_deathday_cake_atlas.png",
+        "decor-assets/native/sp_deathday_cake_atlas.png",
+        "decor-assets/native/sp_deathday_cake_atlas.png",
+        "decor-assets/native/sp_deathday_cake_atlas.png"
       ],
       "rightBounds": {
-        "x": 11,
-        "y": 7,
-        "w": 74,
-        "h": 105
+        "x": 4,
+        "y": 16,
+        "w": 88,
+        "h": 96
       },
       "angles": [
         "default",
@@ -1979,10 +3187,10 @@
       "pivotX": 48,
       "pivotY": 112,
       "bounds": {
-        "x": 6,
-        "y": 7,
-        "w": 85,
-        "h": 105
+        "x": 4,
+        "y": 16,
+        "w": 88,
+        "h": 96
       },
       "footprintTiles": [
         2,
@@ -1995,7 +3203,62 @@
         "chapter": 8
       },
       "lore": "Bánh hình bia mộ trong bữa tiệc ngày giỗ lần thứ 500 của Nick.",
-      "nativeSha256": "5b6de14ed17e19e31eca9ad816b88df92ecfc609a73b28d8ae88028372e755b0"
+      "nativeSha256": "688c8bb0105efadb5ceb1b58faef8ae7f473f343d0d81c7f5191d0913d9af3e2",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 128
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 128,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 96,
+          "y": 128,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 192,
+          "y": 128,
+          "w": 96,
+          "h": 128
+        },
+        {
+          "x": 288,
+          "y": 128,
+          "w": 96,
+          "h": 128
+        }
+      ],
+      "master": "isometric-refinements/masters/sp_deathday_cake-refined.png",
+      "sourceSha256": "f54ced6f9dcf3f3b15cccea33b2e6df72bb2f2f0e0df722ae5dfd890e5dba62f",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_marauders_map",
@@ -2007,10 +3270,10 @@
       "group": "Hành trình phép thuật",
       "file": "decor-assets/native/sp_marauders_map.png",
       "frames": [
-        "decor-assets/native/sp_marauders_map_f0.png",
-        "decor-assets/native/sp_marauders_map_f1.png",
-        "decor-assets/native/sp_marauders_map_f2.png",
-        "decor-assets/native/sp_marauders_map_f3.png"
+        "decor-assets/native/sp_marauders_map_atlas.png",
+        "decor-assets/native/sp_marauders_map_atlas.png",
+        "decor-assets/native/sp_marauders_map_atlas.png",
+        "decor-assets/native/sp_marauders_map_atlas.png"
       ],
       "durations": [
         520,
@@ -2020,16 +3283,16 @@
       ],
       "rightFile": "decor-assets/native/sp_marauders_map_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_marauders_map_right_f0.png",
-        "decor-assets/native/sp_marauders_map_right_f1.png",
-        "decor-assets/native/sp_marauders_map_right_f2.png",
-        "decor-assets/native/sp_marauders_map_right_f3.png"
+        "decor-assets/native/sp_marauders_map_atlas.png",
+        "decor-assets/native/sp_marauders_map_atlas.png",
+        "decor-assets/native/sp_marauders_map_atlas.png",
+        "decor-assets/native/sp_marauders_map_atlas.png"
       ],
       "rightBounds": {
-        "x": 9,
-        "y": 11,
-        "w": 79,
-        "h": 69
+        "x": 4,
+        "y": 8,
+        "w": 88,
+        "h": 72
       },
       "angles": [
         "default",
@@ -2041,9 +3304,9 @@
       "pivotY": 80,
       "bounds": {
         "x": 4,
-        "y": 21,
+        "y": 8,
         "w": 88,
-        "h": 59
+        "h": 72
       },
       "footprintTiles": [
         2,
@@ -2056,7 +3319,62 @@
         "chapter": 10
       },
       "lore": "Fred và George trao cho Harry bản đồ các lối đi bí mật Hogwarts.",
-      "nativeSha256": "f4780570f2cbbe4493127580688cb524ddecf531ec78ce0946e15f441a5aacd4"
+      "nativeSha256": "9b7df828aeae9937906e323ad864c5f9e07d219250daa61e19f3055e9d5abbcd",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 288,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        }
+      ],
+      "master": "isometric-refinements/masters/sp_marauders_map-refined.png",
+      "sourceSha256": "a06aaa962168d1a93b77bd72572b05e925f6f3fc3696e2761ab04fe16ef6725e",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_time_turner",
@@ -2068,10 +3386,10 @@
       "group": "Hành trình phép thuật",
       "file": "decor-assets/native/sp_time_turner.png",
       "frames": [
-        "decor-assets/native/sp_time_turner_f0.png",
-        "decor-assets/native/sp_time_turner_f1.png",
-        "decor-assets/native/sp_time_turner_f2.png",
-        "decor-assets/native/sp_time_turner_f3.png"
+        "decor-assets/native/sp_time_turner_atlas.png",
+        "decor-assets/native/sp_time_turner_atlas.png",
+        "decor-assets/native/sp_time_turner_atlas.png",
+        "decor-assets/native/sp_time_turner_atlas.png"
       ],
       "durations": [
         520,
@@ -2081,16 +3399,16 @@
       ],
       "rightFile": "decor-assets/native/sp_time_turner_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_time_turner_right_f0.png",
-        "decor-assets/native/sp_time_turner_right_f1.png",
-        "decor-assets/native/sp_time_turner_right_f2.png",
-        "decor-assets/native/sp_time_turner_right_f3.png"
+        "decor-assets/native/sp_time_turner_atlas.png",
+        "decor-assets/native/sp_time_turner_atlas.png",
+        "decor-assets/native/sp_time_turner_atlas.png",
+        "decor-assets/native/sp_time_turner_atlas.png"
       ],
       "rightBounds": {
-        "x": 10,
-        "y": 18,
-        "w": 44,
-        "h": 78
+        "x": 7,
+        "y": 4,
+        "w": 51,
+        "h": 92
       },
       "angles": [
         "default",
@@ -2101,10 +3419,10 @@
       "pivotX": 32,
       "pivotY": 96,
       "bounds": {
-        "x": 4,
-        "y": 21,
-        "w": 56,
-        "h": 75
+        "x": 6,
+        "y": 4,
+        "w": 52,
+        "h": 92
       },
       "footprintTiles": [
         1,
@@ -2117,7 +3435,62 @@
         "chapter": 21
       },
       "lore": "Dụng cụ Hermione dùng cùng Harry để quay lại thời gian.",
-      "nativeSha256": "bb0142842782116ab080f03a9a94d13a3d346d4c491e8b1be4fa50a9e521a58a"
+      "nativeSha256": "5acf702095c2d28b8c7ac83553d767bf2938da368b0d8f175782c29258d43319",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_time_turner-locked.png",
+      "sourceSha256": "a65cfb199b26e33d7ad9b820ec9bc26af18527d3ac7df5f156fc498ea048c0d9",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_deluminator",
@@ -2129,10 +3502,10 @@
       "group": "Hành trình phép thuật",
       "file": "decor-assets/native/sp_deluminator.png",
       "frames": [
-        "decor-assets/native/sp_deluminator_f0.png",
-        "decor-assets/native/sp_deluminator_f1.png",
-        "decor-assets/native/sp_deluminator_f2.png",
-        "decor-assets/native/sp_deluminator_f3.png"
+        "decor-assets/native/sp_deluminator_atlas.png",
+        "decor-assets/native/sp_deluminator_atlas.png",
+        "decor-assets/native/sp_deluminator_atlas.png",
+        "decor-assets/native/sp_deluminator_atlas.png"
       ],
       "durations": [
         520,
@@ -2142,16 +3515,16 @@
       ],
       "rightFile": "decor-assets/native/sp_deluminator_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_deluminator_right_f0.png",
-        "decor-assets/native/sp_deluminator_right_f1.png",
-        "decor-assets/native/sp_deluminator_right_f2.png",
-        "decor-assets/native/sp_deluminator_right_f3.png"
+        "decor-assets/native/sp_deluminator_atlas.png",
+        "decor-assets/native/sp_deluminator_atlas.png",
+        "decor-assets/native/sp_deluminator_atlas.png",
+        "decor-assets/native/sp_deluminator_atlas.png"
       ],
       "rightBounds": {
-        "x": 8,
-        "y": 12,
-        "w": 48,
-        "h": 84
+        "x": 4,
+        "y": 10,
+        "w": 56,
+        "h": 86
       },
       "angles": [
         "default",
@@ -2163,9 +3536,9 @@
       "pivotY": 96,
       "bounds": {
         "x": 4,
-        "y": 12,
+        "y": 10,
         "w": 56,
-        "h": 84
+        "h": 86
       },
       "footprintTiles": [
         1,
@@ -2178,7 +3551,62 @@
         "chapter": 7
       },
       "lore": "Dumbledore để lại dụng cụ thu ánh sáng cho Ron.",
-      "nativeSha256": "05ead0d0d4626940f970c639bae4402905cd65a7852b7f40a8cbcf6920ca5ea4"
+      "nativeSha256": "4a8c838ff1db25f09bef7a8de6b47a02dcec200f35f1448677452cfd570f671d",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_deluminator-locked.png",
+      "sourceSha256": "4d5a66d3d409911c98399c4c20ed687d66cd9c56b6733ab5e98597c6d03279d6",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_snitch_resurrection_stone",
@@ -2190,10 +3618,10 @@
       "group": "Hành trình phép thuật",
       "file": "decor-assets/native/sp_snitch_resurrection_stone.png",
       "frames": [
-        "decor-assets/native/sp_snitch_resurrection_stone_f0.png",
-        "decor-assets/native/sp_snitch_resurrection_stone_f1.png",
-        "decor-assets/native/sp_snitch_resurrection_stone_f2.png",
-        "decor-assets/native/sp_snitch_resurrection_stone_f3.png"
+        "decor-assets/native/sp_snitch_resurrection_stone_atlas.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_atlas.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_atlas.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_atlas.png"
       ],
       "durations": [
         520,
@@ -2203,16 +3631,16 @@
       ],
       "rightFile": "decor-assets/native/sp_snitch_resurrection_stone_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_snitch_resurrection_stone_right_f0.png",
-        "decor-assets/native/sp_snitch_resurrection_stone_right_f1.png",
-        "decor-assets/native/sp_snitch_resurrection_stone_right_f2.png",
-        "decor-assets/native/sp_snitch_resurrection_stone_right_f3.png"
+        "decor-assets/native/sp_snitch_resurrection_stone_atlas.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_atlas.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_atlas.png",
+        "decor-assets/native/sp_snitch_resurrection_stone_atlas.png"
       ],
       "rightBounds": {
-        "x": 14,
-        "y": 6,
-        "w": 69,
-        "h": 58
+        "x": 15,
+        "y": 4,
+        "w": 67,
+        "h": 60
       },
       "angles": [
         "default",
@@ -2223,10 +3651,10 @@
       "pivotX": 48,
       "pivotY": 64,
       "bounds": {
-        "x": 8,
-        "y": 6,
-        "w": 81,
-        "h": 58
+        "x": 12,
+        "y": 5,
+        "w": 72,
+        "h": 59
       },
       "footprintTiles": [
         2,
@@ -2239,7 +3667,62 @@
         "chapter": 34
       },
       "lore": "Harry mở trái Snitch trước khi đi vào Rừng Cấm.",
-      "nativeSha256": "63c34907272dc2fe915c334b0babae73977ee8566817d5f659dab91a7b7adb85"
+      "nativeSha256": "61e189359b448605dc3f8e9035530f52f4dc04c071b294d6a57b152163c3c8dd",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 80
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 80
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 80
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 80
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 80,
+          "w": 96,
+          "h": 80
+        },
+        {
+          "x": 96,
+          "y": 80,
+          "w": 96,
+          "h": 80
+        },
+        {
+          "x": 192,
+          "y": 80,
+          "w": 96,
+          "h": 80
+        },
+        {
+          "x": 288,
+          "y": 80,
+          "w": 96,
+          "h": 80
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_snitch_resurrection_stone-locked.png",
+      "sourceSha256": "78e7b21c43c38ab0657505c9092fabe0f00cbb2e5ff1aaad467f8bb3b7c21f90",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_sword_gryffindor",
@@ -2251,10 +3734,10 @@
       "group": "Hành trình phép thuật",
       "file": "decor-assets/native/sp_sword_gryffindor.png",
       "frames": [
-        "decor-assets/native/sp_sword_gryffindor_f0.png",
-        "decor-assets/native/sp_sword_gryffindor_f1.png",
-        "decor-assets/native/sp_sword_gryffindor_f2.png",
-        "decor-assets/native/sp_sword_gryffindor_f3.png"
+        "decor-assets/native/sp_sword_gryffindor_atlas.png",
+        "decor-assets/native/sp_sword_gryffindor_atlas.png",
+        "decor-assets/native/sp_sword_gryffindor_atlas.png",
+        "decor-assets/native/sp_sword_gryffindor_atlas.png"
       ],
       "durations": [
         520,
@@ -2264,16 +3747,16 @@
       ],
       "rightFile": "decor-assets/native/sp_sword_gryffindor_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_sword_gryffindor_right_f0.png",
-        "decor-assets/native/sp_sword_gryffindor_right_f1.png",
-        "decor-assets/native/sp_sword_gryffindor_right_f2.png",
-        "decor-assets/native/sp_sword_gryffindor_right_f3.png"
+        "decor-assets/native/sp_sword_gryffindor_atlas.png",
+        "decor-assets/native/sp_sword_gryffindor_atlas.png",
+        "decor-assets/native/sp_sword_gryffindor_atlas.png",
+        "decor-assets/native/sp_sword_gryffindor_atlas.png"
       ],
       "rightBounds": {
-        "x": 4,
-        "y": 38,
-        "w": 56,
-        "h": 90
+        "x": 6,
+        "y": 4,
+        "w": 53,
+        "h": 124
       },
       "angles": [
         "default",
@@ -2284,10 +3767,10 @@
       "pivotX": 32,
       "pivotY": 128,
       "bounds": {
-        "x": 4,
-        "y": 39,
-        "w": 56,
-        "h": 89
+        "x": 6,
+        "y": 4,
+        "w": 53,
+        "h": 124
       },
       "footprintTiles": [
         1,
@@ -2300,7 +3783,62 @@
         "chapter": 17
       },
       "lore": "Thanh gươm xuất hiện từ Nón Phân Loại trong trận đối đầu Tử Xà.",
-      "nativeSha256": "a40d41ad1ef4cc4ad62e67148a1930dbac9f231529afb703ff5491ba8be178c5"
+      "nativeSha256": "047d1a424410441d8a6b5091c3d0506376de8409daad37778cd9078375ed6413",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 144
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 144
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 144
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 64,
+          "h": 144
+        },
+        {
+          "x": 64,
+          "y": 144,
+          "w": 64,
+          "h": 144
+        },
+        {
+          "x": 128,
+          "y": 144,
+          "w": 64,
+          "h": 144
+        },
+        {
+          "x": 192,
+          "y": 144,
+          "w": 64,
+          "h": 144
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_sword_gryffindor-locked.png",
+      "sourceSha256": "4b6b958f30c33c3ee341394efd5bd76672d0f47278779aa60849222639d74d7e",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_knight_bus",
@@ -2312,10 +3850,10 @@
       "group": "Hành trình phép thuật",
       "file": "decor-assets/native/sp_knight_bus.png",
       "frames": [
-        "decor-assets/native/sp_knight_bus_f0.png",
-        "decor-assets/native/sp_knight_bus_f1.png",
-        "decor-assets/native/sp_knight_bus_f2.png",
-        "decor-assets/native/sp_knight_bus_f3.png"
+        "decor-assets/native/sp_knight_bus_atlas.png",
+        "decor-assets/native/sp_knight_bus_atlas.png",
+        "decor-assets/native/sp_knight_bus_atlas.png",
+        "decor-assets/native/sp_knight_bus_atlas.png"
       ],
       "durations": [
         520,
@@ -2325,16 +3863,16 @@
       ],
       "rightFile": "decor-assets/native/sp_knight_bus_right.png",
       "rightFrames": [
-        "decor-assets/native/sp_knight_bus_right_f0.png",
-        "decor-assets/native/sp_knight_bus_right_f1.png",
-        "decor-assets/native/sp_knight_bus_right_f2.png",
-        "decor-assets/native/sp_knight_bus_right_f3.png"
+        "decor-assets/native/sp_knight_bus_atlas.png",
+        "decor-assets/native/sp_knight_bus_atlas.png",
+        "decor-assets/native/sp_knight_bus_atlas.png",
+        "decor-assets/native/sp_knight_bus_atlas.png"
       ],
       "rightBounds": {
-        "x": 6,
-        "y": 12,
-        "w": 116,
-        "h": 132
+        "x": 19,
+        "y": 6,
+        "w": 90,
+        "h": 138
       },
       "angles": [
         "default",
@@ -2345,10 +3883,10 @@
       "pivotX": 64,
       "pivotY": 144,
       "bounds": {
-        "x": 6,
-        "y": 9,
-        "w": 116,
-        "h": 135
+        "x": 19,
+        "y": 4,
+        "w": 90,
+        "h": 140
       },
       "footprintTiles": [
         3,
@@ -2361,7 +3899,62 @@
         "chapter": 3
       },
       "lore": "Chiếc xe buýt ba tầng đón Harry sau khi rời nhà Dursley.",
-      "nativeSha256": "7e22322140bda142a38cc1bb8d9371af66902feee049bd7b0fbed0fc8adc6d5d"
+      "nativeSha256": "ecdf1474b0d34a299f4b2e5602e868fe007c30dfd2c4fb442b8f8272886c63ef",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 160,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 160,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 256,
+          "y": 160,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 384,
+          "y": 160,
+          "w": 128,
+          "h": 160
+        }
+      ],
+      "master": "isometric-hd-assets/masters/sp_knight_bus-locked.png",
+      "sourceSha256": "9fbeab9d2b8784d87050eccafd365dff951192264a3fa7abc226b3761437e5ec",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_pumpkin_stack",
@@ -2673,14 +4266,14 @@
       "pivotY": 96,
       "bounds": {
         "x": 4,
-        "y": 12,
+        "y": 11,
         "w": 56,
-        "h": 84
+        "h": 85
       },
       "rightBounds": {
-        "x": 13,
+        "x": 15,
         "y": 12,
-        "w": 39,
+        "w": 35,
         "h": 84
       },
       "footprintTiles": [
@@ -2689,7 +4282,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "14089be32869a0c02d17ab443dbedb59cebc73a5aec567719a48f9def6c09d46"
+      "nativeSha256": "1247a516c5265533131ae63968626372f95df22fd66585417470e9abeb069355",
+      "master": "isometric-final-repairs/masters/hw_halloween_sign.png",
+      "sourceSha256": "e13aa290b67d96257671e40379395848c5bc6bfb8af2ca60f7e542a47cbfa508",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_cloth_ghost_lantern",
@@ -2780,16 +4376,16 @@
       "pivotX": 32,
       "pivotY": 96,
       "bounds": {
-        "x": 4,
-        "y": 6,
-        "w": 56,
-        "h": 90
+        "x": 9,
+        "y": 4,
+        "w": 46,
+        "h": 92
       },
       "rightBounds": {
-        "x": 5,
-        "y": 6,
-        "w": 55,
-        "h": 90
+        "x": 9,
+        "y": 4,
+        "w": 46,
+        "h": 92
       },
       "footprintTiles": [
         1,
@@ -2797,7 +4393,10 @@
       ],
       "motion": "sway",
       "framesIdentical": true,
-      "nativeSha256": "8ad1304db54937bc2d3e1cd9ce40197a6a82691a08980e3ab0e9e97f255b55ee"
+      "nativeSha256": "f467a976dcaa11870b3979dcd3a2238c287d7816ae179d6816b1414bae09c8a6",
+      "master": "isometric-hd-assets/masters/hw_cloth_ghost_lantern-locked.png",
+      "sourceSha256": "4f578efb63c1a3f662e191463937b39156f61c3f1bb96a38ed986615480fab7a",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_dead_bat_tree",
@@ -2997,15 +4596,15 @@
       "pivotY": 96,
       "bounds": {
         "x": 6,
-        "y": 23,
+        "y": 11,
         "w": 52,
-        "h": 73
+        "h": 85
       },
       "rightBounds": {
-        "x": 7,
-        "y": 17,
-        "w": 51,
-        "h": 79
+        "x": 15,
+        "y": 10,
+        "w": 34,
+        "h": 86
       },
       "footprintTiles": [
         1,
@@ -3013,7 +4612,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "bbfed0253fad4527912466c7365eae02869012a5c1c6a330c1836405f043c977"
+      "nativeSha256": "02152011e984c6a69f6de4a5c879c848b077a520093e0aa2667f7dece002d50e",
+      "master": "isometric-hd-assets/masters/hw_bat_lantern-locked.png",
+      "sourceSha256": "d1b34c9c5ea1cc811fe91198a1450a306abdf42a7c9633f15c2d65c40358eee9",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_skull_lantern",
@@ -3213,15 +4815,15 @@
       "pivotY": 96,
       "bounds": {
         "x": 4,
-        "y": 19,
+        "y": 23,
         "w": 56,
-        "h": 77
+        "h": 73
       },
       "rightBounds": {
-        "x": 6,
-        "y": 19,
-        "w": 53,
-        "h": 77
+        "x": 4,
+        "y": 23,
+        "w": 56,
+        "h": 73
       },
       "footprintTiles": [
         1,
@@ -3229,7 +4831,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "84a82bc20a334ac5e8d584e4c4f52ead737756043abb86f6bbb97c6db000f349"
+      "nativeSha256": "4dad2f99075576ec9f9e4d3b4cec8f5bc5caae7bf002c5dfcdf7f9fe6e0dadeb",
+      "master": "isometric-hd-assets/masters/hw_haunted_house_lantern-locked.png",
+      "sourceSha256": "b7a185dc4a4d673ffdd6d8db5c518d2ac6f85de3e89c7205a776d904593abced",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_ghost_orb",
@@ -3428,16 +5033,16 @@
       "pivotX": 48,
       "pivotY": 64,
       "bounds": {
-        "x": 9,
-        "y": 6,
-        "w": 78,
-        "h": 58
+        "x": 23,
+        "y": 4,
+        "w": 50,
+        "h": 60
       },
       "rightBounds": {
-        "x": 12,
-        "y": 6,
-        "w": 72,
-        "h": 58
+        "x": 23,
+        "y": 4,
+        "w": 50,
+        "h": 60
       },
       "footprintTiles": [
         2,
@@ -3445,7 +5050,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "367663aed986d1d0b8f94241cb6c3375839be7e1a2e5eaceb62ea665819b17e6"
+      "nativeSha256": "acc736ce40eaa464216c897b11cddc208ec5d7c139fe359eef69a5d6c28a78a6",
+      "master": "isometric-hd-assets/masters/hw_spider_light_garland-locked.png",
+      "sourceSha256": "00cfbf61218ff82f88da50091f0e646bc40c9daaa1574f8d73ba2c0ce4bd9336",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_soul_bottle",
@@ -3536,16 +5144,16 @@
       "pivotX": 40,
       "pivotY": 108,
       "bounds": {
-        "x": 10,
-        "y": 2,
-        "w": 61,
-        "h": 106
+        "x": 12,
+        "y": 11,
+        "w": 56,
+        "h": 97
       },
       "rightBounds": {
-        "x": 12,
-        "y": 2,
-        "w": 57,
-        "h": 106
+        "x": 13,
+        "y": 11,
+        "w": 55,
+        "h": 97
       },
       "footprintTiles": [
         1,
@@ -3553,7 +5161,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "b994b7897ccc8dedb9f4013e2070c8aae0f7b3704d86e609ccef14bbc9df3615"
+      "nativeSha256": "6986d9ed7263d0541577ca27f2bad77f40d19488d9cd6ad4c083458ffe615c12",
+      "master": "isometric-camera-repairs/masters/hw_soul_bottle.png",
+      "sourceSha256": "ae1627f681f401137df251a9ec4420a705f27d396f6fdeb955f9400aaf43c611",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_candy_cauldron",
@@ -3752,16 +5363,16 @@
       "pivotX": 48,
       "pivotY": 80,
       "bounds": {
-        "x": 12,
-        "y": 5,
-        "w": 72,
-        "h": 75
+        "x": 4,
+        "y": 12,
+        "w": 88,
+        "h": 68
       },
       "rightBounds": {
-        "x": 9,
-        "y": 5,
-        "w": 79,
-        "h": 75
+        "x": 4,
+        "y": 13,
+        "w": 88,
+        "h": 67
       },
       "footprintTiles": [
         2,
@@ -3769,7 +5380,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "f9eb8fd6f25ec76abaa69d47e650822520863f57c0ee2d9ad7ac6890ca933d27"
+      "nativeSha256": "b29fdff8cc1107e21f3448b3a6b210bec1d25e1524b20fc50838b9410099eb0c",
+      "master": "isometric-refinements/masters/hw_halloween_potion_table-refined.png",
+      "sourceSha256": "b3a72a63836e6db99cf8b900510b1d1a96589ddc33895784b37be26ede0f8684",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_monster_bookcase",
@@ -3782,16 +5396,16 @@
       "file": "decor-assets/native/flow-hw_monster_bookcase.png",
       "rightFile": "decor-assets/native/flow-hw_monster_bookcase_right.png",
       "frames": [
-        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png"
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png"
       ],
       "rightFrames": [
-        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png",
-        "native-crop-complete/decor-flow-hw_monster_bookcase/atlas.png"
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png",
+        "decor-assets/native/hw_monster_bookcase_atlas.png"
       ],
       "atlasRects": [
         {
@@ -3860,15 +5474,15 @@
       "pivotX": 48,
       "pivotY": 128,
       "bounds": {
-        "x": 4,
-        "y": 3,
-        "w": 88,
-        "h": 125
+        "x": 9,
+        "y": 5,
+        "w": 78,
+        "h": 123
       },
       "rightBounds": {
-        "x": 5,
+        "x": 8,
         "y": 4,
-        "w": 86,
+        "w": 81,
         "h": 124
       },
       "footprintTiles": [
@@ -3877,7 +5491,10 @@
       ],
       "motion": "blink",
       "framesIdentical": false,
-      "nativeSha256": "01491c2e333ddb89134407e4ddecf647ffb4f8b9ae47a571c83fe7f26e191f77"
+      "nativeSha256": "e1425b060968e6954260b0058df7bf58fdab311498e1132c6071ec1444243ff6",
+      "master": "isometric-hd-assets/masters/hw_monster_bookcase-locked.png",
+      "sourceSha256": "2235ba786b77ae1d56ac58b4da11fc1b776c8ce362a719847c42ca5e44b54dc1",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_blinking_chest",
@@ -3890,16 +5507,16 @@
       "file": "decor-assets/native/flow-hw_blinking_chest.png",
       "rightFile": "decor-assets/native/flow-hw_blinking_chest_right.png",
       "frames": [
-        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png"
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png"
       ],
       "rightFrames": [
-        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png",
-        "native-crop-complete/decor-flow-hw_blinking_chest/atlas.png"
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png",
+        "decor-assets/native/hw_blinking_chest_atlas.png"
       ],
       "atlasRects": [
         {
@@ -3968,16 +5585,16 @@
       "pivotX": 48,
       "pivotY": 96,
       "bounds": {
-        "x": 6,
-        "y": 15,
-        "w": 85,
-        "h": 81
+        "x": 4,
+        "y": 8,
+        "w": 88,
+        "h": 88
       },
       "rightBounds": {
-        "x": 4,
-        "y": 14,
-        "w": 88,
-        "h": 82
+        "x": 5,
+        "y": 8,
+        "w": 86,
+        "h": 88
       },
       "footprintTiles": [
         2,
@@ -3985,7 +5602,10 @@
       ],
       "motion": "blink",
       "framesIdentical": false,
-      "nativeSha256": "74f41c0b23dd63b7ee6e0a5e843343ac14aee9a5ddc5bbc9a97418d68b0474ad"
+      "nativeSha256": "b8370cc2c30e519cd9fc71c4e526b1c1e0d3f4f92c46aeee3883bac9f10fab88",
+      "master": "isometric-hd-assets/masters/hw_blinking_chest-locked.png",
+      "sourceSha256": "b41c3c8e3ef10afed89e1e60dcad82c8917db132f911592a28e24062394237fd",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_witch_hat_rack",
@@ -4184,15 +5804,15 @@
       "pivotX": 48,
       "pivotY": 96,
       "bounds": {
-        "x": 9,
+        "x": 13,
         "y": 4,
-        "w": 78,
+        "w": 70,
         "h": 92
       },
       "rightBounds": {
-        "x": 9,
+        "x": 14,
         "y": 4,
-        "w": 78,
+        "w": 69,
         "h": 92
       },
       "footprintTiles": [
@@ -4201,7 +5821,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "f281ce9bc42da396e4cf77499e8eddd242e91d0d9e8cea52e79a274b3a8576e6"
+      "nativeSha256": "214e0ca8300149ca05aeb509880d5b35a7ce5488a7d64f0563a3cfbffa12ef6c",
+      "master": "isometric-hd-assets/masters/hw_caramel_apple_cart-locked.png",
+      "sourceSha256": "9e9bea935632afa81d3f5a91c2f06a22add9ee7c0d064146f755dbb21b647989",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_grinning_stump",
@@ -4725,15 +6348,15 @@
       "pivotY": 112,
       "bounds": {
         "x": 8,
-        "y": 20,
+        "y": 23,
         "w": 80,
-        "h": 92
+        "h": 89
       },
       "rightBounds": {
-        "x": 11,
-        "y": 12,
-        "w": 75,
-        "h": 100
+        "x": 10,
+        "y": 19,
+        "w": 76,
+        "h": 93
       },
       "footprintTiles": [
         2,
@@ -4741,7 +6364,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "0027a4c123f73c47928db34020f0d7b4c1ae2c6b70a63721754bbda99ebcd487"
+      "nativeSha256": "2c3e21573a3fae7bb676431a7659af3608e901c05f69e571182e5d5d7ff532cc",
+      "master": "isometric-hd-assets/masters/hw_dewy_cobweb_frame-locked.png",
+      "sourceSha256": "2bfedea536b21ebda36ebdfcc26bc9dbf3b6ae1909f5c87b5a8593c4c0a08cf7",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_pumpkin_spider_nest",
@@ -4941,15 +6567,15 @@
       "pivotY": 128,
       "bounds": {
         "x": 22,
-        "y": 33,
+        "y": 50,
         "w": 84,
-        "h": 95
+        "h": 78
       },
       "rightBounds": {
-        "x": 22,
-        "y": 29,
-        "w": 84,
-        "h": 99
+        "x": 35,
+        "y": 45,
+        "w": 59,
+        "h": 83
       },
       "footprintTiles": [
         3,
@@ -4957,7 +6583,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "a5ee112a4b62e5bd1e3cfa1b0fc1134004a351e2d8277b1912bab2d1e949e9bc"
+      "nativeSha256": "543c2dd721889be3bec58223c721aa67eb46899b08c20f2f70aa4368497e2231",
+      "master": "isometric-hd-assets/masters/hw_root_halloween_gate-locked.png",
+      "sourceSha256": "90cfcabcaf71913fbe9b3d822db01157395337a190540dc2b228710944c22a66",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_crooked_witch_hut",
@@ -5048,16 +6677,16 @@
       "pivotX": 64,
       "pivotY": 160,
       "bounds": {
-        "x": 8,
-        "y": 15,
-        "w": 113,
-        "h": 145
+        "x": 4,
+        "y": 6,
+        "w": 120,
+        "h": 154
       },
       "rightBounds": {
-        "x": 11,
-        "y": 15,
-        "w": 107,
-        "h": 145
+        "x": 4,
+        "y": 5,
+        "w": 120,
+        "h": 155
       },
       "footprintTiles": [
         2,
@@ -5065,7 +6694,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "9f7f4b5e205654ed5eda39033cbce8413f43555622472ae9254d4ab2f4b003b9"
+      "nativeSha256": "345db46b1db654834760ef97fb925d1101b33e2dbe92177f2f4917a67e6c59ed",
+      "master": "isometric-hd-assets/masters/hw_crooked_witch_hut-locked.png",
+      "sourceSha256": "7c959b98f971bf2b5266ebc3fa8f492522bafc285cb84ddad2aa89b87b7babae",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "hw_mini_pumpkin_house",
@@ -5588,16 +7220,16 @@
       "pivotX": 64,
       "pivotY": 160,
       "bounds": {
-        "x": 17,
-        "y": 10,
-        "w": 95,
-        "h": 150
+        "x": 8,
+        "y": 7,
+        "w": 112,
+        "h": 153
       },
       "rightBounds": {
-        "x": 18,
-        "y": 10,
-        "w": 93,
-        "h": 150
+        "x": 8,
+        "y": 7,
+        "w": 112,
+        "h": 153
       },
       "footprintTiles": [
         2,
@@ -5605,7 +7237,10 @@
       ],
       "motion": "static",
       "framesIdentical": true,
-      "nativeSha256": "fb50e6c4bbd58cedda526d4a4fc0136fdc7e28d47caa300082ba76c50298772f"
+      "nativeSha256": "a701fd7f2e2e116002f3423dd4b852cd48f5b78f45f862ca7e54373e690d2f36",
+      "master": "isometric-hd-assets/masters/ev_dobby_spring_rider-locked.png",
+      "sourceSha256": "b65042c3a0c2b00e0149636d99838e6342384d7ffe54e16a5067ce42210206bb",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "ev_dark_dobby_red",
@@ -5696,16 +7331,16 @@
       "pivotX": 64,
       "pivotY": 160,
       "bounds": {
-        "x": 14,
-        "y": 10,
-        "w": 101,
-        "h": 150
+        "x": 11,
+        "y": 4,
+        "w": 107,
+        "h": 156
       },
       "rightBounds": {
-        "x": 19,
-        "y": 10,
-        "w": 90,
-        "h": 150
+        "x": 11,
+        "y": 5,
+        "w": 107,
+        "h": 155
       },
       "footprintTiles": [
         2,
@@ -5713,7 +7348,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "d886e284e6f533278fc3c52fd8d486a5cc57a21a2d6ab525dacb6f5c79983f41"
+      "nativeSha256": "c9273368b9e10cf8e5f09da5f0462fc96751f4c12c76e0d91e6ebefd98d2beff",
+      "master": "isometric-hd-assets/masters/ev_dark_dobby_red-locked.png",
+      "sourceSha256": "e6cf86b17dbc4a2784866baeba415dd48e9dd21b6e7435a93b91234402b4e4c4",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "ev_elf_tent",
@@ -5804,16 +7442,16 @@
       "pivotX": 64,
       "pivotY": 160,
       "bounds": {
-        "x": 8,
-        "y": 40,
-        "w": 112,
-        "h": 120
+        "x": 11,
+        "y": 46,
+        "w": 107,
+        "h": 114
       },
       "rightBounds": {
         "x": 8,
-        "y": 46,
+        "y": 43,
         "w": 112,
-        "h": 114
+        "h": 117
       },
       "footprintTiles": [
         2,
@@ -5821,7 +7459,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "47c9e5bd4dbe095c45a3c2e4d71d986fc7fa8eb1b847dfd35de1b8994fe7b86a"
+      "nativeSha256": "6191fad85be2eda08b38325c30115739caa1fde4d43d22b3874bbcfb482dbab4",
+      "master": "isometric-hd-assets/masters/ev_elf_tent-locked.png",
+      "sourceSha256": "fe7fc8277b6c6a49301ed5b70eb717d65bd54752bfd5ea656887df7c4a4a4a8f",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "ev_kitchen_corner",
@@ -5912,16 +7553,16 @@
       "pivotX": 48,
       "pivotY": 96,
       "bounds": {
-        "x": 8,
-        "y": 4,
-        "w": 81,
-        "h": 92
+        "x": 4,
+        "y": 29,
+        "w": 88,
+        "h": 67
       },
       "rightBounds": {
-        "x": 9,
-        "y": 4,
-        "w": 78,
-        "h": 92
+        "x": 4,
+        "y": 29,
+        "w": 88,
+        "h": 67
       },
       "footprintTiles": [
         2,
@@ -5929,7 +7570,10 @@
       ],
       "motion": "bubbles",
       "framesIdentical": true,
-      "nativeSha256": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258"
+      "nativeSha256": "c9a6a6b554d8bc4faba24afebf55966f06319192627c68ce1eed7aa5e46f5e74",
+      "master": "isometric-refinements/masters/ev_kitchen_corner-refined.png",
+      "sourceSha256": "26367ae9779276f6ad99e1044c6299653b77dd7862d3df7aea2efc8f934898d7",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_xmas_firebolt",
@@ -6129,15 +7773,15 @@
       "pivotY": 96,
       "bounds": {
         "x": 4,
-        "y": 26,
+        "y": 23,
         "w": 88,
-        "h": 70
+        "h": 73
       },
       "rightBounds": {
-        "x": 14,
-        "y": 4,
-        "w": 69,
-        "h": 92
+        "x": 4,
+        "y": 7,
+        "w": 88,
+        "h": 89
       },
       "footprintTiles": [
         2,
@@ -6145,7 +7789,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "1e97ccf7dc4d8347b183e2ffc580d1b90b8e85d25835612172269721bd2446dc"
+      "nativeSha256": "97e79dff4fe6b0df9313f748b32689d293188c49646b6174abf46bea6e561a32",
+      "master": "isometric-refinements/masters/sp_xmas_butterbeer-refined.png",
+      "sourceSha256": "b30df0a5c57362024c25e7e0eda932d3892bd7925421fa48d6ab9a5dc40a4459",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_xmas_honeydukes",
@@ -6236,15 +7883,15 @@
       "pivotX": 48,
       "pivotY": 128,
       "bounds": {
-        "x": 9,
-        "y": 4,
-        "w": 78,
-        "h": 124
+        "x": 8,
+        "y": 5,
+        "w": 80,
+        "h": 123
       },
       "rightBounds": {
-        "x": 16,
+        "x": 14,
         "y": 4,
-        "w": 64,
+        "w": 68,
         "h": 124
       },
       "footprintTiles": [
@@ -6253,7 +7900,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "434f791bd881e9e0a9c96d7ad35703648830539db321dd5dee58693645c6ef5f"
+      "nativeSha256": "b9ec2247b0bef66bdd4b4ed391f3f9a46ddab64576c45f891d9e91df5aff797f",
+      "master": "isometric-refinements/masters/sp_xmas_honeydukes-refined.png",
+      "sourceSha256": "b6d8ca73ef4ba88dd6ba384fd3567332afc73a2b03e7305414316e5daa05e402",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_xmas_invisibility_cloak",
@@ -6344,16 +7994,16 @@
       "pivotX": 32,
       "pivotY": 80,
       "bounds": {
-        "x": 4,
-        "y": 23,
-        "w": 56,
-        "h": 57
+        "x": 7,
+        "y": 17,
+        "w": 50,
+        "h": 63
       },
       "rightBounds": {
         "x": 4,
-        "y": 12,
+        "y": 18,
         "w": 56,
-        "h": 68
+        "h": 62
       },
       "footprintTiles": [
         1,
@@ -6361,7 +8011,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "01d313839f4a0c24c868404d590d3496f8bd9ff3cedb10d4cb2f8cfd3bed9f51"
+      "nativeSha256": "58e7992ab8786b4d241cfbcc61152914acc0f2629cbc05e0a2c47719722b3275",
+      "master": "isometric-hd-assets/masters/sp_xmas_invisibility_cloak-locked.png",
+      "sourceSha256": "75ecf7e6b9b459985cd158357a7e95aa7a3d7a1a60687618856740d2986fd841",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "sp_xmas_weasley_tree",
@@ -6560,16 +8213,16 @@
       "pivotX": 80,
       "pivotY": 160,
       "bounds": {
-        "x": 4,
-        "y": 62,
-        "w": 152,
-        "h": 98
+        "x": 5,
+        "y": 32,
+        "w": 151,
+        "h": 128
       },
       "rightBounds": {
         "x": 4,
-        "y": 63,
+        "y": 31,
         "w": 152,
-        "h": 97
+        "h": 129
       },
       "footprintTiles": [
         3,
@@ -6577,7 +8230,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "9bdce440e3be390b4ab37dcc7540002b36f7fc9f4c60cf9c3d21db6ba2ca9722"
+      "nativeSha256": "24e50787ae65972dbe9e970491fb8fe6935d274c2f7053b5eb08eb6e59384b04",
+      "master": "isometric-hd-assets/masters/sp_xmas_yule_roses-locked.png",
+      "sourceSha256": "bb1fda9b64e79b369de40867268a40d3869c51d732a9125391e71208a79a680e",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "ev_champion_tree",
@@ -6668,16 +8324,16 @@
       "pivotX": 64,
       "pivotY": 192,
       "bounds": {
-        "x": 22,
-        "y": 8,
-        "w": 84,
-        "h": 184
+        "x": 4,
+        "y": 5,
+        "w": 120,
+        "h": 187
       },
       "rightBounds": {
-        "x": 21,
-        "y": 8,
-        "w": 87,
-        "h": 184
+        "x": 4,
+        "y": 5,
+        "w": 120,
+        "h": 187
       },
       "footprintTiles": [
         2,
@@ -6685,7 +8341,10 @@
       ],
       "motion": "glow",
       "framesIdentical": false,
-      "nativeSha256": "24ce6a557507ee316a99c7948d91afdf08e7f7adff6d9bcbd7dd80b21460469e"
+      "nativeSha256": "7199c4242327bdb1cfd907702c956c297f020f8f56ed9cbfea50b1191535df83",
+      "master": "isometric-hd-assets/masters/ev_champion_tree-locked.png",
+      "sourceSha256": "8cc078433defef18295564e628fc0176d1948ec1827338fb084e96066bed79e9",
+      "artRevision": "isometric-hd-20261115"
     },
     {
       "id": "nx_snitch_wreath",

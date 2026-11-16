@@ -1,0 +1,14 @@
+{
+  "id": "scenery_hut",
+  "prompt": "Complete and texture the FIRST stencil in place. Its camera is already finished: world vectors(32,16),(-32,16),(0,-1). Exact TWO-across ONE-down diagonals, slope\u00b10.500, angle26.565degrees, verticals vertical. Preserve its horizontal-world corners, shelf/door/porch directions. No30-degree replacement, no front-facing reconstruction or perspective convergence. The porch front is rotated with the garden grid, not flat to screen. Preserve the SAME named object's proportions, parts and colors. Output TWO complete objects in one row: LEFT normal and RIGHT winter. Both have exactly the same orientation and camera; never mirror or turn between seasons. Detailed crisp handmade HD pixel art with clean readable clusters, muted garden palette and fixed upper-left light. Generous transparent outer margins, no text, ground, halo or cast shadow. Garden reference is context only. SUBJECT: The same Hagrid cottage: a squat round rough gray stone hut with wide layered dark slate conical roof and small rear peak, a tall gray stone chimney at rear LEFT, a tiny oak front door with timber peaked porch, TWO warm amber cross-pane windows, a low right stone wing with its own slate roof, a tidy stack of chopped logs at left and tiny pumpkins and pot by the entrance. Door and porch must face along a garden axis; circular main wall may curve. Preserve the original cozy design, NO new building. The front door and peaked oak porch are on the LEFT visible side, their lower horizontal door and porch edges following a garden axis (+0.5 slope). The round body remains round. Do NOT put the porch front square to the screen. Keep the exact original cottage design and materials.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-f0c90774-63c5-4086-8fa0-d308c4b7344d.png",
+  "guide": "isometric-architecture-refinements/generation-inputs/scenery_hut-0d8bc2ee3fb0.png",
+  "guideSha256": "0d8bc2ee3fb0d3e7b0c539771bd3e4a6f7e54da1d219ecd79a50db159789bf8c",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-architecture-refinements/generation-inputs/scenery_hut-0d8bc2ee3fb0.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

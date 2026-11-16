@@ -1,0 +1,19 @@
+{
+  "assets": [
+    {
+      "master": "world-v241/masters/isometric-hd-audit-20261115/hero-yule.png",
+      "sha256": "cbf479c714d50d3babd736a67946e5ed0834bae114be2dc680a4e2f90398b4c1",
+      "native": "world-v241/hero-yule.png",
+      "originalMaster": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v241/art/hero-yule-master.png",
+      "preserveColors": true
+    },
+    {
+      "master": "world-v241/masters/isometric-hd-audit-20261115/hero-herbology.png",
+      "sha256": "ab994647a5a6a6f58fdaf9fdeabb6b48c6f4a8b31ff91cab6ee75f15ef8469fa",
+      "native": "world-v241/hero-herbology.png",
+      "originalMaster": "/Users/thachanh/.codex/visualizations/2026/10/17/01a1480f-4d73-7520-ad5b-221575ca7c7b/v241/art/hero-herbology-master.png",
+      "preserveColors": true
+    }
+  ],
+  "method": "Retained original image_gen masters, source-detail HD recovery; no native upscaling. Reviewed replacements, if published, take priority."
+}

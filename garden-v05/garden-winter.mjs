@@ -30,6 +30,11 @@ export function winterFor(nowMs, override) {
 
 // Codex winter scenery (deferred: only requested while winter is on). Same canvas and pivot as the original.
 export const WINTER_ART = Object.freeze({
+  'native-complete-objects/herbology_greenhouse/frame-04.png': 'environment/winter/iso-herbology_greenhouse-3.png',
+  'native-complete-objects/herbology_greenhouse/frame-03.png': 'environment/winter/iso-herbology_greenhouse-2.png',
+  'native-complete-objects/herbology_greenhouse/frame-02.png': 'environment/winter/iso-herbology_greenhouse-1.png',
+  'native-complete-objects/herbology_greenhouse/frame-01.png': 'environment/winter/iso-herbology_greenhouse-0.png',
+  'native-complete-objects/habitat_niffler/frame-01.png': 'environment/winter/iso-habitat_niffler-0.png',
   'environment/plot-props/hourglass.png': 'environment/winter/plot-hourglass-snow.png',
   'environment/plot-props/seed_cart.png': 'environment/winter/plot-seed_cart-snow.png',
   'environment/plot-props/watering_station.png': 'environment/winter/plot-watering_station-snow.png',

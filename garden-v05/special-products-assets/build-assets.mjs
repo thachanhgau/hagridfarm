@@ -302,7 +302,7 @@ function findGlowTarget(base, width, height, glowMaps) {
     : null;
 }
 
-function motionPlan(base, item, palette) {
+export function motionPlan(base, item, palette) {
   const requested = item.motion || 'static';
   if (requested !== 'glow') {
     return {
@@ -340,7 +340,7 @@ function applyGlow(base, width, frame, effect, glowMaps) {
   return output;
 }
 
-function frameFor(base, item, plan, frame) {
+export function frameFor(base, item, plan, frame) {
   if (plan.rendered === 'glow') return applyGlow(base, item.w, frame, plan.effect, plan.glowMaps);
   return Buffer.from(base);
 }
@@ -877,7 +877,7 @@ async function main() {
   if (missing.length) console.log(`Missing masters: ${missing.join(', ')}`);
 }
 
-main().catch((error) => {
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))main().catch((error) => {
   console.error(error instanceof Error ? error.message : error);
   process.exitCode = 1;
 });

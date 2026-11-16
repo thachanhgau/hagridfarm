@@ -265,7 +265,7 @@ function unionBounds(list) {
   return {x, y, w: Math.max(...list.map((b) => b.x + b.w)) - x, h: Math.max(...list.map((b) => b.y + b.h)) - y};
 }
 
-function buildAnimatedFrames(baseBuffer, spec, mirrored = false) {
+export function buildAnimatedFrames(baseBuffer, spec, mirrored = false) {
   const {width, height, id} = spec;
   const b = outputBounds(baseBuffer, width, height).bounds;
   const dir = mirrored ? -1 : 1;
@@ -511,6 +511,7 @@ function makeContactSheet(nativeItems, cellWidth = 640, cellHeight = 640, scale 
   return {sheet, width: sheetWidth, height: sheetHeight, columns, rows, cellWidth, cellHeight, scale};
 }
 
+async function main(){
 await mkdir(nativeRoot);
 await mkdir(qaRoot);
 const manifestItems = [];
@@ -642,3 +643,5 @@ await fs.writeFile(path.join(root, 'decor-assets-manifest.json'), `${JSON.string
 await fs.writeFile(path.join(qaRoot, 'validation.json'), `${JSON.stringify({version: 2, palette: paletteHex, alphaThreshold, checks: validation}, null, 2)}\n`);
 await fs.writeFile(path.join(assetRoot, 'prompts.json'), `${JSON.stringify({version: 2, tool: 'builtin image_gen', transparentBackground: true, styleReference: manifest.reference, sharedConstraints: ['cute chunky hard-edged pixel art', 'no blur, gradient, anti-aliasing, text, logos, people unless the gardener character is requested', 'exact 24-color palette', 'transparent RGBA'], items: specs.map((spec) => ({id: spec.id, prompt: prompts[spec.id]}))}, null, 2)}\n`);
 console.log(JSON.stringify({items: manifestItems.length, totalFramesGenerated: manifestItems.reduce((n, item) => n + (item.frames?.length || 0) + (item.rightFrames?.length || 0), 0), contactSheet: contactRelative, qa: 'decor-assets/qa/validation.json'}));
+}
+if(process.argv[1]&&path.resolve(process.argv[1])===new URL(import.meta.url).pathname)await main();

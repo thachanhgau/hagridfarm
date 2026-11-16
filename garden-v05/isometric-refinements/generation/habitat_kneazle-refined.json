@@ -1,0 +1,14 @@
+{
+  "id": "habitat_kneazle",
+  "prompt": "Texture and complete the FIRST geometry stencil IN PLACE. The camera is ALREADY FINISHED. Keep all its horizontal-world planes and their corner locations. Every axis-aligned diagonal is a precise TWO-across ONE-down staircase, slope +0.500 or -0.500, angle26.565 degrees to horizontal, verticals stay vertical. NO30-degree diagonals, no vanishing points, no frontal substitution. Do not reinterpret this camera. All/tabletops, bases, beams, roof eaves and shelves inherit these axes. Horizontal circles are ellipses exactly TWICE as wide as high. Output TWO objects in one horizontal row, LEFT normal and RIGHT matching winter with restrained snow. Both MUST have identical fixed camera and world orientation. Never rotate between seasons. Same scale, generous alpha gutters, full unclipped objects. Generic scaffold shapes must become ONLY the parts named below, never extra posts or platforms. Use detailed readable handmade HD pixel art with small hard flat clusters and crisp selective dark plum outline, fixed upper-left lighting, no smoothing, halos, detached shadows, ground, labels or writing. Match existing muted garden material colors. Dark oak/moss/slate/amber and cream24-color garden palette. Keep the SAME object design, shape, materials, motifs and counts. Garden-ground reference is context only, not a scene to copy. SUBJECT: One squat sisal rope scratching post on a low rectangular oak base, a small brown cap at its top and ONE little yarn ball resting on its base. No animal. Preserve this exact original habitat, no unrelated parts. Its single base is OAK WOOD only, no gray stone or extra second platform.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-9f15e4d5-e8d5-4b37-86eb-5b915d53e976.png",
+  "guide": "isometric-refinements/generation-inputs/habitat_kneazle-ab73fd7646b5.png",
+  "guideSha256": "ab73fd7646b5c51bc08a51df38b731e5f6b70cc0620ee301df1f7d75d6d145a0",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/generation-inputs/habitat_kneazle-ab73fd7646b5.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

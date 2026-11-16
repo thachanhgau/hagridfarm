@@ -51,6 +51,8 @@ export function footX({data,width,bounds:b}){
 }
 export async function exportSprite(source,pose,index,spec,scale){
  const {width,height,pivotX,pivotY}=spec;
+ const ownPalette=source.paletteColors?.map(hex=>[1,3,5].map(o=>parseInt(hex.slice(o,o+2),16))),ownCache=new Map();
+ const colorFor=(r,g,b)=>{if(!ownPalette)return palette[closest(r,g,b)];const key=(r<<16)|(g<<8)|b;if(ownCache.has(key))return ownCache.get(key);let best=ownPalette[0],score=Infinity;for(const c of ownPalette){const d=2*(r-c[0])**2+3*(g-c[1])**2+(b-c[2])**2;if(d<score){score=d;best=c;}}ownCache.set(key,best);return best;};
  const w=Math.max(1,Math.round(pose.bounds.w*scale)),h=Math.max(1,Math.round(pose.bounds.h*scale));
  const x0=Math.round(pivotX-(pose.anchorX==null?w/2:(pose.anchorX-pose.bounds.x)*scale)),y0=(spec.drawBottomY??pivotY)-h;
  if(x0<1||y0<1||x0+w>=width||y0+h>=height)throw Error(source.id+': no transparent canvas margin');
@@ -59,7 +61,7 @@ export async function exportSprite(source,pose,index,spec,scale){
   const sx=pose.bounds.x+Math.min(pose.bounds.w-1,Math.floor((x+.5)*pose.bounds.w/w));
   const sy=pose.bounds.y+Math.min(pose.bounds.h-1,Math.floor((y+.5)*pose.bounds.h/h));
   const si=(sy*pose.width+sx)*4;if(pose.data[si+3]<192)continue;
-  const color=palette[closest(pose.data[si],pose.data[si+1],pose.data[si+2])],di=((y0+y)*width+x0+x)*4;
+  const color=colorFor(pose.data[si],pose.data[si+1],pose.data[si+2]),di=((y0+y)*width+x0+x)*4;
   out[di]=color[0];out[di+1]=color[1];out[di+2]=color[2];out[di+3]=255;
  }
  // defringe: [hex…] palette colours a white-background JPEG leaves on the outer edge; two passes peel them off

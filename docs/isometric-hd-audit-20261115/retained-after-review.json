@@ -1,0 +1,31 @@
+{
+  "core": {
+    "hw_skull_lantern": "Rounded skull and radial tripod have no contradictory axis-aligned plane; retain the existing coherent elevated view and HD.",
+    "hw_grinning_stump": "Irregular carved roots and hollow rim already read in the elevated garden camera; retain original HD and design.",
+    "hw_mini_pumpkin_house": "Rounded gourd architecture and tiny irregular steps already read coherently in the garden; retain its original round shape and HD.",
+    "hw_violet_mist_pond": "Organic oval shore has no rectangular world plane; retain the existing elevated view and authored mist animation with genuine HD.",
+    "sp_xmas_weasley_tree": "Conical foliage and existing small parcel planes already read coherently in the garden; retain the original tree shape and both views.",
+    "sp_whomping_anglia": "The car is intentionally wedged and tilted within an organic tree; its local edges are not world axes. Existing elevated diorama and HD retained.",
+    "decor_cauldron": "Original spherical cauldron and radial feet have no axis-aligned rectangular world plane. Its elevated open rim already matches the garden; preserve original dark iron material, handles and animation, and existing HD.",
+    "hw_monster_candy_barrel": "Original circular barrel and hinged round lid have no rectangular world plane; retain its coherent elevated view, original floating candy and legless barrel design with existing HD.",
+    "hw_wooden_black_cat": "Original carved cat and rough circular log slice are organic forms without an axis-aligned rectangular plane. Retain original coherent elevated views and existing HD.",
+    "hw_candy_cauldron": "Original spherical cauldron, circular rim and radial feet already read in the elevated garden. Retain original iron body and candy animation with existing HD.",
+    "sp_fawkes_perch": "Original round brass perch and bird have no contradictory axis-aligned world plane; preserve original elevated view and HD, without an added stone slab.",
+    "sp_sirius_motorbike": "Original parked motorbike is a curved, leaning vehicle with steered handlebars; it has no rectangular floor/stand/table plane to align. Preserve original design and existing HD. Wheel and handlebar tangents are not evidence of an axis-aligned world edge; reject the attempted replacements rather than certifying them from coincidental tangents."
+  },
+  "extra": {
+    "habitat_mooncalf": "Sculpted crescent basin is organic; existing elevated view and HD retained.",
+    "habitat_puffskein": "Soft oval wicker nest has no rigid axis-aligned rectangle; preserve existing HD.",
+    "habitat_three-headed-dog": "Small round feeding bowls already read coherently within native raster tolerance; retain existing HD.",
+    "habitat_unicorn": "Original oval stone basin and two flowers are coherent in the elevated camera; preserve its shape, color and existing HD.",
+    "plot_prop_scene_mandrake_pot": "Rounded pot and organic root have no contradictory rigid world plane; recover genuine HD from the same original master.",
+    "plot_prop_scene_rune_stones": "Irregular upright rocks have no orthogonal world plane; recover HD from the same original master.",
+    "plot_prop_scene_crystal_planter": "Oval stone planter and organic arrangement retained; recover original-master HD.",
+    "plot_prop_scene_mushroom_stump": "Organic stump and mushrooms retained; recover original-master HD.",
+    "earned_decoration_decoration-46": "Soft cushions may have curved and independently oriented seams; existing elevated artwork and HD retained.",
+    "earned_decoration_decoration-51": "Original scalloped stone birdbath and round carved foot have no rectangular world plane. Existing elevated water view is coherent; retain original shape and existing HD.",
+    "habitat_diricawl": "Original oval stone water basin already reads in the elevated garden camera and has HD. Preserve same basin without added lily pads.",
+    "habitat_dragon": "Original shallow round iron brazier and radial feet already read coherently in the garden and have HD. Preserve shallow brazier design, not a tall cauldron.",
+    "habitat_thestral": "Original round dark iron wing-decorated cauldron has no axis-aligned rectangular world plane, has existing HD and a coherent elevated view. Preserve original iron material and wing motif."
+  }
+}

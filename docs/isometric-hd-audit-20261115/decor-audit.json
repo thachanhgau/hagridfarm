@@ -1,0 +1,5288 @@
+{
+  "sourceCommit": "cb0ca4dbf7f04c294199def3d3f0ccf4fc5e32d6",
+  "basis": {
+    "column": [
+      32,
+      16
+    ],
+    "row": [
+      -32,
+      16
+    ],
+    "vertical": [
+      0,
+      -1
+    ]
+  },
+  "records": [
+    {
+      "index": 1,
+      "id": "decor_pumpkin_lantern",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/decor_pumpkin_lantern.png",
+          "hd": true,
+          "source": "decor-assets/hd/671737a980821caac4aa445e.webp",
+          "sha256": "671737a980821caac4aa445e3bcd6caa7101d2b99340ddc164bb0c8d3e6e6ddf"
+        },
+        {
+          "file": "decor-assets/native/decor_pumpkin_lantern_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/ba8cb9e6745c9ab8bc19a902.webp",
+          "sha256": "ba8cb9e6745c9ab8bc19a9028161e3e2a81fd9592fa0be3361351edadaed4c47"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "decor_pumpkin_lantern",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 2,
+      "id": "decor_broom_rack",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/decor_broom_rack.png",
+          "hd": true,
+          "source": "decor-assets/hd/b85e7930dcd73ab816834c94.webp",
+          "sha256": "b85e7930dcd73ab816834c949f9ef3c5637f02b61225bb77e41bc36456191c2e"
+        },
+        {
+          "file": "decor-assets/native/decor_broom_rack_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b30c4c3d482bc3986cf60d24.webp",
+          "sha256": "b30c4c3d482bc3986cf60d24d27c2387b9bc3e2fd14bc240ea95bc3c78be723c"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "decor_broom_rack",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 3,
+      "id": "decor_cauldron",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/decor_cauldron.png",
+          "hd": true,
+          "source": "decor-assets/hd/060e4bac81e943341f9ede3a.webp",
+          "sha256": "060e4bac81e943341f9ede3ad888542d84bfd50354c9170156a35129696ffa63"
+        },
+        {
+          "file": "decor-assets/native/decor_cauldron_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/36de8c5283a81bd537865bd0.webp",
+          "sha256": "36de8c5283a81bd537865bd09b578225395bfadb2b1748f502a69e4b35549077"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Original spherical cauldron and radial feet have no axis-aligned rectangular world plane. Its elevated open rim already matches the garden; preserve original dark iron material, handles and animation, and existing HD."
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 4,
+      "id": "decor_mandrake_planter",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/decor_mandrake_planter.png",
+          "hd": true,
+          "source": "decor-assets/hd/91b85ce8e8ad9d2e0a2246ee.webp",
+          "sha256": "91b85ce8e8ad9d2e0a2246eec9aa32deda89aefcc3c7bc2f733b5d313053497e"
+        },
+        {
+          "file": "decor-assets/native/decor_mandrake_planter_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/65b82d482d06bfc275ccb2c0.webp",
+          "sha256": "65b82d482d06bfc275ccb2c02f98976b93428cc389392c1825b480bbd91189dd"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "decor_mandrake_planter",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 5,
+      "id": "decor_floating_candles",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/decor_floating_candles.png",
+          "hd": true,
+          "source": "decor-assets/hd/829e4adfb651ff8a2ec54170.webp",
+          "sha256": "829e4adfb651ff8a2ec54170b2d36afa4c2b54178817fe3cee7bd2c4deba6a19"
+        },
+        {
+          "file": "decor-assets/native/decor_floating_candles_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/8f17d6b2c8d21581280f3eb7.webp",
+          "sha256": "8f17d6b2c8d21581280f3eb75870c9805a9c07cb03fc21e1979116d8d66cdf91"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "decor_floating_candles",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 6,
+      "id": "decor_vine_arch",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/decor_vine_arch.png",
+          "hd": true,
+          "source": "decor-assets/hd/ec75b9647a6adac11416d8a9.webp",
+          "sha256": "ec75b9647a6adac11416d8a91fd1ebc66d05d181723a96c57bc535500b41b92d"
+        },
+        {
+          "file": "decor-assets/native/decor_vine_arch_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/978fc14c58a889d929d0b252.webp",
+          "sha256": "978fc14c58a889d929d0b2521841107f5e8807ddaf325711379f8a2a321b75bf"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "decor_vine_arch",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 7,
+      "id": "gardener_friend",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/gardener_friend.png",
+          "hd": false,
+          "source": "runtime-webp/decor-assets/native/gardener_friend.webp",
+          "sha256": "798dcd14d40502d0e6f775a28d3b2f709d698550283576a4f713c1ea8ccdff6b"
+        },
+        {
+          "file": "decor-assets/native/gardener_friend.png",
+          "hd": false,
+          "source": "runtime-webp/decor-assets/native/gardener_friend.webp",
+          "sha256": "798dcd14d40502d0e6f775a28d3b2f709d698550283576a4f713c1ea8ccdff6b"
+        }
+      ],
+      "camera": "unused-legacy-placeholder",
+      "final": {
+        "status": "unused-legacy-placeholder",
+        "hd": "not-selected-by-renderer",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "runtime-override-resolve-before-review"
+    },
+    {
+      "index": 8,
+      "id": "owl_post",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/owl_post.png",
+          "hd": false,
+          "source": "runtime-webp/decor-assets/native/owl_post.webp",
+          "sha256": "9c0b12befbe75103b3ccabf2c417675049cacd14ab9da6331f802cd73ebe837a"
+        },
+        {
+          "file": "decor-assets/native/owl_post.png",
+          "hd": false,
+          "source": "runtime-webp/decor-assets/native/owl_post.webp",
+          "sha256": "9c0b12befbe75103b3ccabf2c417675049cacd14ab9da6331f802cd73ebe837a"
+        }
+      ],
+      "camera": "unused-legacy-placeholder",
+      "final": {
+        "status": "unused-legacy-placeholder",
+        "hd": "not-selected-by-renderer",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "runtime-override-resolve-before-review"
+    },
+    {
+      "index": 9,
+      "id": "herbology_greenhouse",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/herbology_greenhouse.png",
+          "hd": false,
+          "source": "runtime-webp/decor-assets/native/herbology_greenhouse.webp",
+          "sha256": "cb084b4fac2caf6fc6cd383fed0a079ada29f5053f98dfd1ac388608dd7ba0ae"
+        },
+        {
+          "file": "decor-assets/native/herbology_greenhouse.png",
+          "hd": false,
+          "source": "runtime-webp/decor-assets/native/herbology_greenhouse.webp",
+          "sha256": "cb084b4fac2caf6fc6cd383fed0a079ada29f5053f98dfd1ac388608dd7ba0ae"
+        }
+      ],
+      "camera": "unused-legacy-placeholder",
+      "final": {
+        "status": "unused-legacy-placeholder",
+        "hd": "not-selected-by-renderer",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "runtime-override-resolve-before-review"
+    },
+    {
+      "index": 10,
+      "id": "sp_hagrid_umbrella",
+      "label": "Góc dù hồng của Hagrid",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/flow-sp_hagrid_umbrella.png",
+          "hd": true,
+          "source": "decor-assets/hd/66e3635ecb47ed9d6c881f2e.webp",
+          "sha256": "66e3635ecb47ed9d6c881f2ec24faedcbfefb01d8715e68bfc64212c9021f4ee"
+        },
+        {
+          "file": "decor-assets/native/flow-sp_hagrid_umbrella_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b7d545811583eb407fe3687a.webp",
+          "sha256": "b7d545811583eb407fe3687ad38489ec1fe607d288a637a250f8c7df0597156c"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_hagrid_umbrella",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 11,
+      "id": "sp_norbert_egg",
+      "label": "Trứng rồng Norbert bên lò sưởi",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_norbert_egg.png",
+          "hd": true,
+          "source": "decor-assets/hd/5095e4383675fd7d08f680ae.webp",
+          "sha256": "5095e4383675fd7d08f680ae2dc34484426f2dda2509ac9d72b05f34b0f5055e"
+        },
+        {
+          "file": "decor-assets/native/sp_norbert_egg_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/1ab8bc6b9de368d9c8599ed6.webp",
+          "sha256": "1ab8bc6b9de368d9c8599ed63a61a2884bb0b93c998467679c86b83ea67c42d7"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_norbert_egg",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 12,
+      "id": "sp_sirius_motorbike",
+      "label": "Xe máy bay của Sirius",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_sirius_motorbike.png",
+          "hd": true,
+          "source": "decor-assets/hd/5858691098437ee39d99e805.webp",
+          "sha256": "5858691098437ee39d99e8053787b3ab22c8a4525a2f46e75978c12a1d23630f"
+        },
+        {
+          "file": "decor-assets/native/sp_sirius_motorbike_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/363601527754c4674af28549.webp",
+          "sha256": "363601527754c4674af2854966af35c694254a4a82cb133b227cd169a9c294b2"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Original parked motorbike is a curved, leaning vehicle with steered handlebars; it has no rectangular floor/stand/table plane to align. Preserve original design and existing HD. Wheel and handlebar tangents are not evidence of an axis-aligned world edge; reject the attempted replacements rather than certifying them from coincidental tangents."
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 13,
+      "id": "sp_whomping_anglia",
+      "label": "Liễu Roi và chiếc Ford Anglia",
+      "footprint": [
+        3,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_whomping_anglia.png",
+          "hd": true,
+          "source": "decor-assets/hd/9c1f0baf6f69419e4b47bd70.webp",
+          "sha256": "9c1f0baf6f69419e4b47bd705978fd430b0c204bf02bb1c84ae97614d850ca05"
+        },
+        {
+          "file": "decor-assets/native/sp_whomping_anglia_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/1b47647ba9843b354178d884.webp",
+          "sha256": "1b47647ba9843b354178d884ca7a27205ae2cf095b7f92559e493612462c1196"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "reason": "The car is intentionally wedged and tilted within an organic tree; its local edges are not world axes. Existing elevated diorama and HD retained.",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "The car is intentionally wedged and tilted within an organic tree; its local edges are not world axes. Existing elevated diorama and HD retained."
+      },
+      "initialCamera": "visual-reviewed-retain-original"
+    },
+    {
+      "index": 14,
+      "id": "sp_buckbeak_pumpkins",
+      "label": "Bằng-Mã bên vườn bí ngô",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_buckbeak_pumpkins.png",
+          "hd": true,
+          "source": "decor-assets/hd/b128e837837a6556483480a9.webp",
+          "sha256": "b128e837837a6556483480a93feebc93061528a538f2d3c6256884651589ab9c"
+        },
+        {
+          "file": "decor-assets/native/sp_buckbeak_pumpkins_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/f0654613380a22db206174de.webp",
+          "sha256": "f0654613380a22db206174de2cae83eae67dfaa6123fdd5f8657843ff7b48537"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 15,
+      "id": "sp_aragog_hollow",
+      "label": "Hang tơ Aragog",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_aragog_hollow.png",
+          "hd": true,
+          "source": "decor-assets/hd/d146fdde055a161989cc43bd.webp",
+          "sha256": "d146fdde055a161989cc43bdc7a71d15b40fb4711b05ebba035a4c572af1482d"
+        },
+        {
+          "file": "decor-assets/native/sp_aragog_hollow_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/234efe007c3ae61c3384d2c2.webp",
+          "sha256": "234efe007c3ae61c3384d2c2fd361ea169935a6484777a571e1bcbceb2461a78"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 16,
+      "id": "sp_mirror_erised",
+      "label": "Tấm gương Ảo Ảnh",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_mirror_erised.png",
+          "hd": true,
+          "source": "decor-assets/hd/4a22b178f5fab9f33ddc1d15.webp",
+          "sha256": "4a22b178f5fab9f33ddc1d1591d4a2c2cd4db91a41646625f26bfa613ddd45c8"
+        },
+        {
+          "file": "decor-assets/native/sp_mirror_erised_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/979dde3fc8b7caaf29477cc3.webp",
+          "sha256": "979dde3fc8b7caaf29477cc330929e4a86e49e27dd24cb3f61d376ee073e2661"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_mirror_erised",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 17,
+      "id": "sp_sorting_hat",
+      "label": "Nón Phân Loại trên ghế",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_sorting_hat.png",
+          "hd": true,
+          "source": "decor-assets/hd/543c215ae6bcb91ca2d1d35b.webp",
+          "sha256": "543c215ae6bcb91ca2d1d35bef6ff478fe91e385d6b6ac95311528a89bf825ef"
+        },
+        {
+          "file": "decor-assets/native/sp_sorting_hat_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/570c55129e313961325b7c33.webp",
+          "sha256": "570c55129e313961325b7c339825d1c506288cd8933c053bc397fddd23f4146c"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_sorting_hat",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 18,
+      "id": "sp_goblet_fire",
+      "label": "Chiếc Cốc Lửa",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_goblet_fire.png",
+          "hd": true,
+          "source": "decor-assets/hd/0c19f5766af7bb4aa21e01c3.webp",
+          "sha256": "0c19f5766af7bb4aa21e01c38305e73173b7c2e9744de0a4fc77a03c3b0aa49b"
+        },
+        {
+          "file": "decor-assets/native/sp_goblet_fire_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/74f17d1c17513bb56a7b0d68.webp",
+          "sha256": "74f17d1c17513bb56a7b0d68b344566f953f1fe9baf6e06ce63e5b9ef963a775"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_goblet_fire",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 19,
+      "id": "sp_pensieve",
+      "label": "Cái Tưởng Ký",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_pensieve.png",
+          "hd": true,
+          "source": "decor-assets/hd/7c3d4b93686456eb09f1cd80.webp",
+          "sha256": "7c3d4b93686456eb09f1cd80037500243b9e427150863d18f170227c6d6155f6"
+        },
+        {
+          "file": "decor-assets/native/sp_pensieve_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/5b2e512fd6397dcdc7e13aa1.webp",
+          "sha256": "5b2e512fd6397dcdc7e13aa1b7b0cfd9553f303a04d3a76cde7c8da3543da129"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_pensieve",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 20,
+      "id": "sp_fawkes_perch",
+      "label": "Cầu đậu phượng hoàng Fawkes",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_fawkes_perch.png",
+          "hd": true,
+          "source": "decor-assets/hd/46cda5a911ce25e23896f2d3.webp",
+          "sha256": "46cda5a911ce25e23896f2d3bf8fb8be5df261bcb57b64709637b8875fc29f5c"
+        },
+        {
+          "file": "decor-assets/native/sp_fawkes_perch_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/47050f4b132123fe1fd6c49c.webp",
+          "sha256": "47050f4b132123fe1fd6c49cb6cca1b05826baece5e7a97ada9fc7f9bd5f2daf"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Original round brass perch and bird have no contradictory axis-aligned world plane; preserve original elevated view and HD, without an added stone slab."
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 21,
+      "id": "sp_wizard_chess_knight",
+      "label": "Quân cờ hiệp sĩ",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_wizard_chess_knight.png",
+          "hd": true,
+          "source": "decor-assets/hd/da2e5d19fa0d35446218aff0.webp",
+          "sha256": "da2e5d19fa0d35446218aff0b631080bb82142beccee55eff31eb0929d60a3d1"
+        },
+        {
+          "file": "decor-assets/native/sp_wizard_chess_knight_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/c103e74acfbdaa39c8014d7c.webp",
+          "sha256": "c103e74acfbdaa39c8014d7cca9959476d91330861b57e6cba9cecd0f631d61d"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_wizard_chess_knight",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 22,
+      "id": "sp_riddle_diary",
+      "label": "Nhật ký Riddle và nanh Tử Xà",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_riddle_diary.png",
+          "hd": true,
+          "source": "decor-assets/hd/b6614516a54321f99bf34f61.webp",
+          "sha256": "b6614516a54321f99bf34f617209d23485a76496be8eb73d1f8cae3d015b6c3c"
+        },
+        {
+          "file": "decor-assets/native/sp_riddle_diary_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/f906df63aaa95caa87476023.webp",
+          "sha256": "f906df63aaa95caa874760233d3624b94efee4cab49597b73d620fe8b503b11b"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_riddle_diary",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 23,
+      "id": "sp_slytherin_locket",
+      "label": "Mề đay Slytherin",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_slytherin_locket.png",
+          "hd": true,
+          "source": "decor-assets/hd/1352bd55bbc6fb5bd050bd1b.webp",
+          "sha256": "1352bd55bbc6fb5bd050bd1b180b3e0477d4dd8b1678d055716e23c3edcd11cb"
+        },
+        {
+          "file": "decor-assets/native/sp_slytherin_locket_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/5151de1822c0d2b81a4295fb.webp",
+          "sha256": "5151de1822c0d2b81a4295fb8b6e2418225667009c4817dd58575c2470815f1f"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_slytherin_locket",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 24,
+      "id": "sp_gaunt_ring",
+      "label": "Nhẫn gia tộc Gaunt",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_gaunt_ring.png",
+          "hd": true,
+          "source": "decor-assets/hd/e02414236bad50539bc45259.webp",
+          "sha256": "e02414236bad50539bc4525910196670c5e5c4f65ab3a2aaec2acfb90d922a13"
+        },
+        {
+          "file": "decor-assets/native/sp_gaunt_ring_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/35d52142763dd2c7a83244da.webp",
+          "sha256": "35d52142763dd2c7a83244daa0dc9c5bb5e9f90525ec7b912c33bff51d693824"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_gaunt_ring",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 25,
+      "id": "sp_hufflepuff_cup",
+      "label": "Chiếc cúp Hufflepuff",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_hufflepuff_cup.png",
+          "hd": true,
+          "source": "decor-assets/hd/036f7f5b2054349e7550d44a.webp",
+          "sha256": "036f7f5b2054349e7550d44a6ff04007ff560bf6eb3a12ce034acbe7cb6b2f84"
+        },
+        {
+          "file": "decor-assets/native/sp_hufflepuff_cup_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b1216768b9385516374c151b.webp",
+          "sha256": "b1216768b9385516374c151b881e33d98a2e6dc94b397c06e962c7fd4190579c"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_hufflepuff_cup",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 26,
+      "id": "sp_ravenclaw_diadem",
+      "label": "Vương miện Ravenclaw",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_ravenclaw_diadem.png",
+          "hd": true,
+          "source": "decor-assets/hd/c7793d994125475952003126.webp",
+          "sha256": "c7793d994125475952003126255474c55d8e5127297d56f54177682b8146374a"
+        },
+        {
+          "file": "decor-assets/native/sp_ravenclaw_diadem_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/8f917e913487bed44dbb2c35.webp",
+          "sha256": "8f917e913487bed44dbb2c35cef7444a0841ae4ca55be4a3ef0c52eb708209de"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_ravenclaw_diadem",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 27,
+      "id": "sp_vanishing_cabinet",
+      "label": "Tủ Biến Mất",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_vanishing_cabinet.png",
+          "hd": true,
+          "source": "decor-assets/hd/898b6b5784b368b7fd05e31d.webp",
+          "sha256": "898b6b5784b368b7fd05e31d2492112d420ce4590e26919a1ec5761268003a37"
+        },
+        {
+          "file": "decor-assets/native/sp_vanishing_cabinet_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/75ac25e83669793f3ba62f44.webp",
+          "sha256": "75ac25e83669793f3ba62f4445cf88f53729703fbb67b2e77dd75545e85954a3"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_vanishing_cabinet",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 28,
+      "id": "sp_hand_glory",
+      "label": "Bàn Tay Vẻ Vang",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_hand_glory.png",
+          "hd": true,
+          "source": "decor-assets/hd/250345acac98e037d27ad7af.webp",
+          "sha256": "250345acac98e037d27ad7af29048fa8a46f97875b878ec52b49f593a49a2ae9"
+        },
+        {
+          "file": "decor-assets/native/sp_hand_glory_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/797c45d64764d00237911db0.webp",
+          "sha256": "797c45d64764d00237911db00f15c4232d2f461fe8cda1b83bcd1cb7a79ed15f"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_hand_glory",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 29,
+      "id": "sp_cursed_opal_necklace",
+      "label": "Chuỗi ngọc bị nguyền",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_cursed_opal_necklace.png",
+          "hd": true,
+          "source": "decor-assets/hd/0fb95f96af0fa08a0047b518.webp",
+          "sha256": "0fb95f96af0fa08a0047b51857818903cb143f3dbb56d80d6d7b64e9044eb49f"
+        },
+        {
+          "file": "decor-assets/native/sp_cursed_opal_necklace_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/f49a01490ed09ca4953ca014.webp",
+          "sha256": "f49a01490ed09ca4953ca0143df24a15cfbfb5398b7530648e8b460e1d917b70"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_cursed_opal_necklace",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 30,
+      "id": "sp_chamber_serpent_door",
+      "label": "Cánh cửa Phòng Chứa Bí Mật",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_chamber_serpent_door.png",
+          "hd": true,
+          "source": "decor-assets/hd/0310d0f2071217059ba4a77e.webp",
+          "sha256": "0310d0f2071217059ba4a77e794f5c70a56fac908c84a32a8ca9c0eedcd176bf"
+        },
+        {
+          "file": "decor-assets/native/sp_chamber_serpent_door_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/c329b16934cc67df1db34fce.webp",
+          "sha256": "c329b16934cc67df1db34fce1d83b801941db1350787fc638cec3ce0d4f9f5cf"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_chamber_serpent_door",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 31,
+      "id": "sp_department_veil",
+      "label": "Vòm màn che ở Bộ Pháp Thuật",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_department_veil.png",
+          "hd": true,
+          "source": "decor-assets/hd/4838dd24dc70e0ecddaac052.webp",
+          "sha256": "4838dd24dc70e0ecddaac05237aa1d484566be951349e35e8cfc007b8bee47ee"
+        },
+        {
+          "file": "decor-assets/native/sp_department_veil_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/e12239ed55fa18910dcb183b.webp",
+          "sha256": "e12239ed55fa18910dcb183b10e13fc1f0dd415f99313bcd7115644ae96ec812"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_department_veil",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 32,
+      "id": "sp_monster_book",
+      "label": "Sách Quái Vật về Quái Vật",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_monster_book.png",
+          "hd": true,
+          "source": "decor-assets/hd/ef41c6dc6e8d15d0aabbbb2d.webp",
+          "sha256": "ef41c6dc6e8d15d0aabbbb2d9028c0f06d539d6a2793512217e497c0416280ea"
+        },
+        {
+          "file": "decor-assets/native/sp_monster_book_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/8164422a0909762805dcd921.webp",
+          "sha256": "8164422a0909762805dcd92109f55aa80439a73465b4c3870308c7db79840069"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_monster_book",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 33,
+      "id": "sp_deathday_cake",
+      "label": "Bánh ngày giỗ Nick Suýt Mất Đầu",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_deathday_cake.png",
+          "hd": true,
+          "source": "decor-assets/hd/7f64ca74aa0639ff00daf155.webp",
+          "sha256": "7f64ca74aa0639ff00daf15599e1dbc551fe872c1fd4a464f6456b5d0a4024fd"
+        },
+        {
+          "file": "decor-assets/native/sp_deathday_cake_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/fbaa34beaa6dd22ae57b3be3.webp",
+          "sha256": "fbaa34beaa6dd22ae57b3be3a4a38215a3531d16b53d319c1d0b8ab766b0e71b"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_deathday_cake",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 34,
+      "id": "sp_marauders_map",
+      "label": "Bản đồ của Đạo tặc",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_marauders_map.png",
+          "hd": true,
+          "source": "decor-assets/hd/84f18720b5dbb1ac1a78f9a4.webp",
+          "sha256": "84f18720b5dbb1ac1a78f9a457b4b2d12bbf5cf1d25cb70e8eac5e7c82f3482d"
+        },
+        {
+          "file": "decor-assets/native/sp_marauders_map_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/45c0a82fd24b1c834d3ffbc5.webp",
+          "sha256": "45c0a82fd24b1c834d3ffbc56d0e97a2eb39f659721a1f70bd605a448cb1e212"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_marauders_map",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 35,
+      "id": "sp_time_turner",
+      "label": "Cái Xoay Thời Gian",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_time_turner.png",
+          "hd": true,
+          "source": "decor-assets/hd/9461568c5afd5266c65a7cbf.webp",
+          "sha256": "9461568c5afd5266c65a7cbf943783c9a306a387a8479cb92ec210be3aefe696"
+        },
+        {
+          "file": "decor-assets/native/sp_time_turner_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/e5fe305e04e15dcad710aa48.webp",
+          "sha256": "e5fe305e04e15dcad710aa48cbecb8e5b3db68c7d82434682e9f911f58c05d0a"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_time_turner",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 36,
+      "id": "sp_deluminator",
+      "label": "Cái Tắt-Sáng",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_deluminator.png",
+          "hd": true,
+          "source": "decor-assets/hd/7dba0cf3cd31312ab8a067cf.webp",
+          "sha256": "7dba0cf3cd31312ab8a067cf635c52d0d609aa3e88fe3126cb0f5aaacf350326"
+        },
+        {
+          "file": "decor-assets/native/sp_deluminator_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/cac2d4585f846c0acaccfd61.webp",
+          "sha256": "cac2d4585f846c0acaccfd611c919cdb37f8bc412f565db0c87332bdf875ec9d"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_deluminator",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 37,
+      "id": "sp_snitch_resurrection_stone",
+      "label": "Snitch giữ viên đá Phục sinh",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_snitch_resurrection_stone.png",
+          "hd": true,
+          "source": "decor-assets/hd/2788d93f5423ba59f200f65d.webp",
+          "sha256": "2788d93f5423ba59f200f65d36568e0a7f7d478c68dd25a26bcdd9050bd23928"
+        },
+        {
+          "file": "decor-assets/native/sp_snitch_resurrection_stone_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/4e56da6bef16e9644c5cdf8d.webp",
+          "sha256": "4e56da6bef16e9644c5cdf8d31fa5b5c13e49eef6d54c6b90623e7229665894e"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_snitch_resurrection_stone",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 38,
+      "id": "sp_sword_gryffindor",
+      "label": "Thanh gươm Gryffindor",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_sword_gryffindor.png",
+          "hd": true,
+          "source": "decor-assets/hd/4808caf2a3c7bbf6fb619782.webp",
+          "sha256": "4808caf2a3c7bbf6fb619782b9d46bdddebeb456ecd44791bbd64d99948be753"
+        },
+        {
+          "file": "decor-assets/native/sp_sword_gryffindor_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/452a7a09e853ca51dab224f4.webp",
+          "sha256": "452a7a09e853ca51dab224f4c8d338f019f86fc8f388e2345ba4ef77c4951e89"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_sword_gryffindor",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 39,
+      "id": "sp_knight_bus",
+      "label": "Xe Đò Hiệp Sĩ",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_knight_bus.png",
+          "hd": true,
+          "source": "decor-assets/hd/30f22d86e2b15736884ce50b.webp",
+          "sha256": "30f22d86e2b15736884ce50bddd2f7e66559ab748d29bd177d6ad49687a52eff"
+        },
+        {
+          "file": "decor-assets/native/sp_knight_bus_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/52f13c0722cfb32e494234b7.webp",
+          "sha256": "52f13c0722cfb32e494234b78452dbc81a6fae25ba2db461becb859e7b7d0751"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_knight_bus",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 40,
+      "id": "hw_pumpkin_stack",
+      "label": "Chồng bí ngô khắc mặt",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_pumpkin_stack.png",
+          "hd": true,
+          "source": "decor-assets/hd/a0ed84b899cae6877d9ef23f.webp",
+          "sha256": "a0ed84b899cae6877d9ef23f02494b946c54c3739f492eecea4ddce3a846c3cb"
+        },
+        {
+          "file": "decor-assets/native/hw_pumpkin_stack_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/77b7101536c005548bf71277.webp",
+          "sha256": "77b7101536c005548bf712771e525f5895e7810751781dbadf8a918b7df866d4"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 41,
+      "id": "hw_monster_candy_barrel",
+      "label": "Thùng kẹo quái vật",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_monster_candy_barrel.png",
+          "hd": true,
+          "source": "decor-assets/hd/7f4f102cefb907da7f59d48f.webp",
+          "sha256": "7f4f102cefb907da7f59d48f8aa8b12a5799eb61363262bb124da6762dfb3ef2"
+        },
+        {
+          "file": "decor-assets/native/hw_monster_candy_barrel_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/a1b1d040c7bc116d75700a85.webp",
+          "sha256": "a1b1d040c7bc116d75700a85fa71a11f8fb88f9e05f799a29887e77f0e81663c"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Original circular barrel and hinged round lid have no rectangular world plane; retain its coherent elevated view, original floating candy and legless barrel design with existing HD."
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 42,
+      "id": "hw_wooden_black_cat",
+      "label": "Tượng mèo đen bằng gỗ",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_wooden_black_cat.png",
+          "hd": true,
+          "source": "decor-assets/hd/ab5faaaf6b7e42f589e3c9e6.webp",
+          "sha256": "ab5faaaf6b7e42f589e3c9e62e73a2557bbc698632d0567a1bab538ba272979c"
+        },
+        {
+          "file": "decor-assets/native/hw_wooden_black_cat_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b2b11d549f740240965d8a68.webp",
+          "sha256": "b2b11d549f740240965d8a68444c35d9850c4c0b761f0272f41ea4b6e33a70d0"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Original carved cat and rough circular log slice are organic forms without an axis-aligned rectangular plane. Retain original coherent elevated views and existing HD."
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 43,
+      "id": "hw_halloween_sign",
+      "label": "Biển gỗ Halloween",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_halloween_sign.png",
+          "hd": true,
+          "source": "decor-assets/hd/7c19826dd644afade4ae98bd.webp",
+          "sha256": "7c19826dd644afade4ae98bdbc0e3fed99d780370bb87108dffaf252ac6d4662"
+        },
+        {
+          "file": "decor-assets/native/hw_halloween_sign_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/94d5202431ccace0f91091ec.webp",
+          "sha256": "94d5202431ccace0f91091ec466773347fda60a49d8ebdf639473d5cd9fb4ede"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_halloween_sign",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 44,
+      "id": "hw_cloth_ghost_lantern",
+      "label": "Đèn ma vải",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_cloth_ghost_lantern.png",
+          "hd": true,
+          "source": "decor-assets/hd/b7ca5b5f7d4ffff3669b6e3d.webp",
+          "sha256": "b7ca5b5f7d4ffff3669b6e3d2030b3dee0973f37131edcfea10f8c25e64bc449"
+        },
+        {
+          "file": "decor-assets/native/hw_cloth_ghost_lantern_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/6974a344c7458575a2caffae.webp",
+          "sha256": "6974a344c7458575a2caffae37b630857a078ff9c1650d8a62922692d01dec83"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_cloth_ghost_lantern",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 45,
+      "id": "hw_dead_bat_tree",
+      "label": "Cây khô treo dơi",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_dead_bat_tree.png",
+          "hd": true,
+          "source": "decor-assets/hd/0bf401889559e9a5179cf1bc.webp",
+          "sha256": "0bf401889559e9a5179cf1bc2638df7ef37fb6898f321e4d9a11521b1de87a44"
+        },
+        {
+          "file": "decor-assets/native/hw_dead_bat_tree_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/a978699a64968d9bb504cf3c.webp",
+          "sha256": "a978699a64968d9bb504cf3c6a6465530a6531834fc70bfe3335645fecae4b1f"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 46,
+      "id": "hw_bat_lantern",
+      "label": "Đèn lồng dơi",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_bat_lantern.png",
+          "hd": true,
+          "source": "decor-assets/hd/0cc5c3c07c700c88af80c5d9.webp",
+          "sha256": "0cc5c3c07c700c88af80c5d905d2daf71d2482a85b2b88a10789874c1ce37469"
+        },
+        {
+          "file": "decor-assets/native/hw_bat_lantern_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/722202c5d56ddc59b724a8f4.webp",
+          "sha256": "722202c5d56ddc59b724a8f4e42f0bdfd4ba916912c01291b5205b2ed7b19af5"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_bat_lantern",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 47,
+      "id": "hw_skull_lantern",
+      "label": "Đèn đầu lâu",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_skull_lantern.png",
+          "hd": true,
+          "source": "decor-assets/hd/0be50d187c87d1e0ca24111d.webp",
+          "sha256": "0be50d187c87d1e0ca24111de10c9b27b8fc7ae4cc71a257c3d295e3f69a8b65"
+        },
+        {
+          "file": "decor-assets/native/hw_skull_lantern_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/d47d564fc59c76492ea8be25.webp",
+          "sha256": "d47d564fc59c76492ea8be25319551b2d73dcce2886006a320e9deb9fdac591d"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "reason": "Rounded skull and radial tripod have no contradictory axis-aligned plane; retain the existing coherent elevated view and HD.",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Rounded skull and radial tripod have no contradictory axis-aligned plane; retain the existing coherent elevated view and HD."
+      },
+      "initialCamera": "visual-reviewed-retain-original"
+    },
+    {
+      "index": 48,
+      "id": "hw_haunted_house_lantern",
+      "label": "Đèn lồng hình nhà ma",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_haunted_house_lantern.png",
+          "hd": true,
+          "source": "decor-assets/hd/872e3c37d13931b96f085f2e.webp",
+          "sha256": "872e3c37d13931b96f085f2e8746ea48f3b071ce1d71fad0873edbf2ce18c2c6"
+        },
+        {
+          "file": "decor-assets/native/hw_haunted_house_lantern_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/7c434e7a381605f879280f96.webp",
+          "sha256": "7c434e7a381605f879280f962ff2adca9a42143161b03284e572150bdc0d625f"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_haunted_house_lantern",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 49,
+      "id": "hw_ghost_orb",
+      "label": "Quả cầu ma nhỏ",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_ghost_orb.png",
+          "hd": true,
+          "source": "decor-assets/hd/f552204146f229a1b171ffdf.webp",
+          "sha256": "f552204146f229a1b171ffdff13ef182fc95a17c91e9edeb19e5a8c3590b06cb"
+        },
+        {
+          "file": "decor-assets/native/hw_ghost_orb_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/401f26ca21881988e724e30b.webp",
+          "sha256": "401f26ca21881988e724e30b26325327e4b581b941dc2da2487855e271e11151"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 50,
+      "id": "hw_spider_light_garland",
+      "label": "Giàn đèn nhện",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_spider_light_garland.png",
+          "hd": true,
+          "source": "decor-assets/hd/b1d6621ce227ce1987d59297.webp",
+          "sha256": "b1d6621ce227ce1987d592979b85376e150084f414624539fb3c34bfd7a124b8"
+        },
+        {
+          "file": "decor-assets/native/hw_spider_light_garland_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/bf5bf1f0b81a4ae067ad0fff.webp",
+          "sha256": "bf5bf1f0b81a4ae067ad0fffc05cf76bb94c178f99a0f5a4948ac0fa4fb4c14d"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_spider_light_garland",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 51,
+      "id": "hw_soul_bottle",
+      "label": "Bình linh hồn phát sáng",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_soul_bottle.png",
+          "hd": true,
+          "source": "decor-assets/hd/af69682d119230b4f276ed9b.webp",
+          "sha256": "af69682d119230b4f276ed9b42c439473bea160985309ee25639fd765286bc12"
+        },
+        {
+          "file": "decor-assets/native/hw_soul_bottle_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/43a74f54bdef955af6e62315.webp",
+          "sha256": "43a74f54bdef955af6e62315fcd701ad39f0c24ef58eb2d776c74a46e988db7c"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_soul_bottle",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 52,
+      "id": "hw_candy_cauldron",
+      "label": "Vạc kẹo sôi",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/flow-hw_candy_cauldron.png",
+          "hd": true,
+          "source": "decor-assets/hd/8ce12414bb50d03c30c66e0e.webp",
+          "sha256": "8ce12414bb50d03c30c66e0ec04143bb1056d7f2f4438ab153ce66f38883d186"
+        },
+        {
+          "file": "decor-assets/native/flow-hw_candy_cauldron_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/fa1f5d77788de79f20a46a2d.webp",
+          "sha256": "fa1f5d77788de79f20a46a2dc3bae0e00f0dd1f350114b0ab7cf647e8d7ede73"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Original spherical cauldron, circular rim and radial feet already read in the elevated garden. Retain original iron body and candy animation with existing HD."
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 53,
+      "id": "hw_halloween_potion_table",
+      "label": "Bàn pha độc dược Halloween",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_halloween_potion_table.png",
+          "hd": true,
+          "source": "decor-assets/hd/0b763d623ceb454a4280b210.webp",
+          "sha256": "0b763d623ceb454a4280b21010619d129ecd9fbd6085bbad2567582ad5c072e0"
+        },
+        {
+          "file": "decor-assets/native/hw_halloween_potion_table_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/0322dfd966df1bc5d372283b.webp",
+          "sha256": "0322dfd966df1bc5d372283b6c34abfcefcca130e146bcecda808512a51e0bcc"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_halloween_potion_table",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 54,
+      "id": "hw_monster_bookcase",
+      "label": "Tủ sách há miệng",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/flow-hw_monster_bookcase.png",
+          "hd": true,
+          "source": "decor-assets/hd/954e59bb257cb81c0c363bad.webp",
+          "sha256": "954e59bb257cb81c0c363bad4ebbf9eaf0a2f78c0c957251b03b236c13cdf36d"
+        },
+        {
+          "file": "decor-assets/native/flow-hw_monster_bookcase_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/34ea92c3e5ca70da9f778d8c.webp",
+          "sha256": "34ea92c3e5ca70da9f778d8c8185f2550942dc6e2cc85050fba45bc5790b1039"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_monster_bookcase",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 55,
+      "id": "hw_blinking_chest",
+      "label": "Rương nháy mắt",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/flow-hw_blinking_chest.png",
+          "hd": true,
+          "source": "decor-assets/hd/ce1121c535ae9167d8e8dd2c.webp",
+          "sha256": "ce1121c535ae9167d8e8dd2cd20ec35803d3b67e443e4965511860d70f942984"
+        },
+        {
+          "file": "decor-assets/native/flow-hw_blinking_chest_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/bf461a01977f028b5f60cad1.webp",
+          "sha256": "bf461a01977f028b5f60cad113ddbb4bb553d900116f4caf920ff420d73dc425"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_blinking_chest",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 56,
+      "id": "hw_witch_hat_rack",
+      "label": "Giá treo nón phù thủy",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_witch_hat_rack.png",
+          "hd": true,
+          "source": "decor-assets/hd/1b17ce167fa82c1b8fe5837e.webp",
+          "sha256": "1b17ce167fa82c1b8fe5837ef12ba866f62ca4fe4f5b8b1987884b5c5b5116d2"
+        },
+        {
+          "file": "decor-assets/native/hw_witch_hat_rack_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/24ca6b50ed0c40ac5d01b99e.webp",
+          "sha256": "24ca6b50ed0c40ac5d01b99e283f37d59347c8897b208d15fc782e0703e481b3"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 57,
+      "id": "hw_caramel_apple_cart",
+      "label": "Xe đẩy táo bọc kẹo",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_caramel_apple_cart.png",
+          "hd": true,
+          "source": "decor-assets/hd/4454281a1b66aad17aed2dcd.webp",
+          "sha256": "4454281a1b66aad17aed2dcd37ed40ef9f67c876366506c994f48151a151dce1"
+        },
+        {
+          "file": "decor-assets/native/hw_caramel_apple_cart_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/57a4d819ac966c7d3e5e2d7d.webp",
+          "sha256": "57a4d819ac966c7d3e5e2d7dfbdffd99ff82c4f9aae48796593d1ea591b6aaf8"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_caramel_apple_cart",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 58,
+      "id": "hw_grinning_stump",
+      "label": "Gốc cây mặt quỷ",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_grinning_stump.png",
+          "hd": true,
+          "source": "decor-assets/hd/679f967130afada53083459c.webp",
+          "sha256": "679f967130afada53083459cd1abc1f08d8eaca34d80189b88647639bd8177d8"
+        },
+        {
+          "file": "decor-assets/native/hw_grinning_stump_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2cb7d2a112f40f62aacff452.webp",
+          "sha256": "2cb7d2a112f40f62aacff452910616aeacb112fb504e0e863535d1f0039529da"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "reason": "Irregular carved roots and hollow rim already read in the elevated garden camera; retain original HD and design.",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Irregular carved roots and hollow rim already read in the elevated garden camera; retain original HD and design."
+      },
+      "initialCamera": "visual-reviewed-retain-original"
+    },
+    {
+      "index": 59,
+      "id": "hw_skull_mushrooms",
+      "label": "Cụm nấm hình đầu lâu",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_skull_mushrooms.png",
+          "hd": true,
+          "source": "decor-assets/hd/ffd6f4539741986938ac6b98.webp",
+          "sha256": "ffd6f4539741986938ac6b98818df3cfdb43526a0e7b2e41e954ee08453eefe5"
+        },
+        {
+          "file": "decor-assets/native/hw_skull_mushrooms_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/705750aad1135134b8b9b0a4.webp",
+          "sha256": "705750aad1135134b8b9b0a441e66199949aaabfcedf34a63a7ed921be46a11b"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 60,
+      "id": "hw_eyeball_flowers",
+      "label": "Bụi hoa mắt tròn",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/flow-hw_eyeball_flowers.png",
+          "hd": true,
+          "source": "decor-assets/hd/29cb4ed1e872f22a3b6c84db.webp",
+          "sha256": "29cb4ed1e872f22a3b6c84dbc465d648867f4c1a563e7bf0d2f62925035a059d"
+        },
+        {
+          "file": "decor-assets/native/flow-hw_eyeball_flowers_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/1e1f2d30d5aae8cc622ac867.webp",
+          "sha256": "1e1f2d30d5aae8cc622ac867307e8b7f624be244ca6b508ea8f1763ff3de9fb2"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 61,
+      "id": "hw_owl_tree_hollow",
+      "label": "Hốc cây có cú đêm",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_owl_tree_hollow.png",
+          "hd": true,
+          "source": "decor-assets/hd/e0b69f3aa3b2b8aa718e6648.webp",
+          "sha256": "e0b69f3aa3b2b8aa718e6648fbd998d3810ab765a62e930c5d63f09265adc1fc"
+        },
+        {
+          "file": "decor-assets/native/hw_owl_tree_hollow_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/726a111966647e0b2ed0b260.webp",
+          "sha256": "726a111966647e0b2ed0b260f06acac2977c06b2e9994f81157de149ee00a459"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 62,
+      "id": "hw_dewy_cobweb_frame",
+      "label": "Giàn mạng nhện đọng sương",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_dewy_cobweb_frame.png",
+          "hd": true,
+          "source": "decor-assets/hd/1cc44e8c52006f5167a472b0.webp",
+          "sha256": "1cc44e8c52006f5167a472b02ac0ade8518ce50a904c994a3670ad1075b28aed"
+        },
+        {
+          "file": "decor-assets/native/hw_dewy_cobweb_frame_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b951a7bb7423c8fe4a667e02.webp",
+          "sha256": "b951a7bb7423c8fe4a667e024209b29d411bdcdcac17560e83915aad33fab7bc"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_dewy_cobweb_frame",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 63,
+      "id": "hw_pumpkin_spider_nest",
+      "label": "Tổ nhện trong bí ngô",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_pumpkin_spider_nest.png",
+          "hd": true,
+          "source": "decor-assets/hd/7c2f7d8549a58f1427e219b2.webp",
+          "sha256": "7c2f7d8549a58f1427e219b2f9964c6446e8e0d2ef01ec83ae147e4097f8a418"
+        },
+        {
+          "file": "decor-assets/native/hw_pumpkin_spider_nest_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/9be13495481307e68fa24f5a.webp",
+          "sha256": "9be13495481307e68fa24f5ad5830f5abe368206f579067c98e05ff26784f9bf"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 64,
+      "id": "hw_root_halloween_gate",
+      "label": "Cổng Halloween bằng rễ cây",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_root_halloween_gate.png",
+          "hd": true,
+          "source": "decor-assets/hd/8c292ef1d8d5c12afe8c7cdd.webp",
+          "sha256": "8c292ef1d8d5c12afe8c7cdd78f15bb8d90128521882e474bf1e6a054271b4c3"
+        },
+        {
+          "file": "decor-assets/native/hw_root_halloween_gate_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/ab5dba419672fe5222b44174.webp",
+          "sha256": "ab5dba419672fe5222b44174dfc375f51a00cebd7616d01130059d39e07c9b19"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_root_halloween_gate",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 65,
+      "id": "hw_crooked_witch_hut",
+      "label": "Lều phù thủy mái vẹo",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_crooked_witch_hut.png",
+          "hd": true,
+          "source": "decor-assets/hd/7d9166ce3a3396904b00dd6a.webp",
+          "sha256": "7d9166ce3a3396904b00dd6af7e63151dd16343c3f3248b3c923158c9b7d1753"
+        },
+        {
+          "file": "decor-assets/native/hw_crooked_witch_hut_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/ee83573990004747e4ea8c1b.webp",
+          "sha256": "ee83573990004747e4ea8c1b04b50d6f6beec70b56f143f903de44e1f49267ba"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "hw_crooked_witch_hut",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 66,
+      "id": "hw_mini_pumpkin_house",
+      "label": "Nhà bí ngô thu nhỏ",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_mini_pumpkin_house.png",
+          "hd": true,
+          "source": "decor-assets/hd/e28f591afc275724f29edec5.webp",
+          "sha256": "e28f591afc275724f29edec5087238764dc7bb683cabee144d812fbd203f678a"
+        },
+        {
+          "file": "decor-assets/native/hw_mini_pumpkin_house_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/e317f33279eb9b9ef34dfc68.webp",
+          "sha256": "e317f33279eb9b9ef34dfc68752338f4f375509081d19e4ba53efef6356daa3a"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "reason": "Rounded gourd architecture and tiny irregular steps already read coherently in the garden; retain its original round shape and HD.",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Rounded gourd architecture and tiny irregular steps already read coherently in the garden; retain its original round shape and HD."
+      },
+      "initialCamera": "visual-reviewed-retain-original"
+    },
+    {
+      "index": 67,
+      "id": "hw_ghost_well",
+      "label": "Giếng có ma ló đầu",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_ghost_well.png",
+          "hd": true,
+          "source": "decor-assets/hd/d79c13068756c0df6ec73394.webp",
+          "sha256": "d79c13068756c0df6ec7339427abbb71912711da3aee5d28d165f3aa18706538"
+        },
+        {
+          "file": "decor-assets/native/hw_ghost_well_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/425dff8a4f467b76036b47dd.webp",
+          "sha256": "425dff8a4f467b76036b47dd752d34de55740382f0d6474361e28d7b467a2e36"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "status": "owner-approved-original-preserve",
+      "reason": "Owner explicitly requested preserving the roofed ghost well, both directions and winter, 2026-11-15.",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Owner explicitly preserved original in both directions/all frames/winter"
+      },
+      "initialCamera": "owner-approved-original-preserve"
+    },
+    {
+      "index": 68,
+      "id": "hw_violet_mist_pond",
+      "label": "Ao sương tím",
+      "footprint": [
+        3,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/flow-hw_violet_mist_pond.png",
+          "hd": true,
+          "source": "decor-assets/hd/a7b6cae66a54f6520a0588f3.webp",
+          "sha256": "a7b6cae66a54f6520a0588f3ed4e398e221e842fa9e6617920fc0b1858590098"
+        },
+        {
+          "file": "decor-assets/native/flow-hw_violet_mist_pond_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b8d1a63651c68fb03fb80d7f.webp",
+          "sha256": "b8d1a63651c68fb03fb80d7f92c4dac0ab3e749dfe27b7c733539c3e271fd167"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "reason": "Organic oval shore has no rectangular world plane; retain the existing elevated view and authored mist animation with genuine HD.",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Organic oval shore has no rectangular world plane; retain the existing elevated view and authored mist animation with genuine HD."
+      },
+      "initialCamera": "visual-reviewed-retain-original"
+    },
+    {
+      "index": 69,
+      "id": "hw_lantern_ancient_tree",
+      "label": "Cây cổ thụ treo đèn",
+      "footprint": [
+        3,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/hw_lantern_ancient_tree.png",
+          "hd": true,
+          "source": "decor-assets/hd/0567caa0b55bf21d005f4aab.webp",
+          "sha256": "0567caa0b55bf21d005f4aab2d21016a4444a9fc29f893709ec0966fe46c51fc"
+        },
+        {
+          "file": "decor-assets/native/hw_lantern_ancient_tree_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/dad19955bb885dda51d57eb6.webp",
+          "sha256": "dad19955bb885dda51d57eb648b94e6aacf615f66158cf9071665590e05bc6fd"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 70,
+      "id": "ev_dobby_spring_rider",
+      "label": "Tượng Dobby cưỡi thú nhún",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/ev_dobby_spring_rider.png",
+          "hd": true,
+          "source": "decor-assets/hd/2fc0333f1c68b9b3690001de.webp",
+          "sha256": "2fc0333f1c68b9b3690001de281f9ea2e717fd1b181655daa60abb060e2f62a7"
+        },
+        {
+          "file": "decor-assets/native/ev_dobby_spring_rider_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/f90f2586e8cceea04e3190b4.webp",
+          "sha256": "f90f2586e8cceea04e3190b41f6163a306eaf516350a94218dead436abbf638f"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "ev_dobby_spring_rider",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 71,
+      "id": "ev_dark_dobby_red",
+      "label": "Tượng Dobby Hắc Ám",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/ev_dark_dobby_red.png",
+          "hd": true,
+          "source": "decor-assets/hd/03a08bc93794c9506d2245f5.webp",
+          "sha256": "03a08bc93794c9506d2245f5a5e0256d98434ba331d6bf87315ede560c3d2f07"
+        },
+        {
+          "file": "decor-assets/native/ev_dark_dobby_red_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/85ee0f62820cb5e28f2d293f.webp",
+          "sha256": "85ee0f62820cb5e28f2d293fcead8b8c9f19bd9f21609babcacd21d091a3ba7c"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "ev_dark_dobby_red",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 72,
+      "id": "ev_elf_tent",
+      "label": "Lều gia tinh",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/ev_elf_tent.png",
+          "hd": true,
+          "source": "decor-assets/hd/82f5ab5fda7a227e754f3d55.webp",
+          "sha256": "82f5ab5fda7a227e754f3d55e3cc3b3a12450951c5e4fa0e2f44d7765f00dd69"
+        },
+        {
+          "file": "decor-assets/native/ev_elf_tent_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/42bec301c16f7c879e8de8c1.webp",
+          "sha256": "42bec301c16f7c879e8de8c1f2070a56d548b0aefacca68da8eeb151f49d7d18"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "ev_elf_tent",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 73,
+      "id": "ev_kitchen_corner",
+      "label": "Góc bếp",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/ev_kitchen_corner.png",
+          "hd": true,
+          "source": "decor-assets/hd/6b629fae9f2fcb2cc9ad0eaa.webp",
+          "sha256": "6b629fae9f2fcb2cc9ad0eaa4e1879bc8110d0531d612e88440ecfa15d434943"
+        },
+        {
+          "file": "decor-assets/native/ev_kitchen_corner_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/d4a16292dc4fd58e75d08f60.webp",
+          "sha256": "d4a16292dc4fd58e75d08f6064bc7677ace131855b0e9a4a3dcd1825d8e797a6"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "ev_kitchen_corner",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 74,
+      "id": "sp_xmas_firebolt",
+      "label": "Cây chổi Tia Chớp quà Giáng sinh",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_xmas_firebolt.png",
+          "hd": true,
+          "source": "decor-assets/hd/27909521395d56f3710a8898.webp",
+          "sha256": "27909521395d56f3710a88981e7b02e5a5383bf67e1aafb2c3b9d712cc66b3bb"
+        },
+        {
+          "file": "decor-assets/native/sp_xmas_firebolt_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/c018b192952be6a921de591e.webp",
+          "sha256": "c018b192952be6a921de591e1e77a7d9e1875fcd920bba9b7ca97d6bbf49dbaa"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-organic-no-contradictory-rectilinear-plane"
+    },
+    {
+      "index": 75,
+      "id": "sp_xmas_butterbeer",
+      "label": "Quầy bia bơ quán Ba Cây Chổi",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_xmas_butterbeer.png",
+          "hd": true,
+          "source": "decor-assets/hd/f8530acfdaba47c4677fc6a7.webp",
+          "sha256": "f8530acfdaba47c4677fc6a7c9446c89567a43e71748bd676707ef6b96c4c9f5"
+        },
+        {
+          "file": "decor-assets/native/sp_xmas_butterbeer_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/762c76683b0c5fd1cd4ff442.webp",
+          "sha256": "762c76683b0c5fd1cd4ff442380b9a9cb09e6618777c1641cbd5265db8307c2d"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_xmas_butterbeer",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 76,
+      "id": "sp_xmas_honeydukes",
+      "label": "Tủ kẹo tiệm Công tước Mật",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_xmas_honeydukes.png",
+          "hd": true,
+          "source": "decor-assets/hd/fc8a5454e30d32f1a2c718c8.webp",
+          "sha256": "fc8a5454e30d32f1a2c718c87745a779f70d30e2c51064c0312049a647b21489"
+        },
+        {
+          "file": "decor-assets/native/sp_xmas_honeydukes_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b8163b9d4a78573e087704ba.webp",
+          "sha256": "b8163b9d4a78573e087704bab6d0395e5d4e92eded297b18abece49908f10090"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_xmas_honeydukes",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 77,
+      "id": "sp_xmas_invisibility_cloak",
+      "label": "Áo khoác tàng hình trong gói quà",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_xmas_invisibility_cloak.png",
+          "hd": true,
+          "source": "decor-assets/hd/480c8fb19ca8ce83cc5df99a.webp",
+          "sha256": "480c8fb19ca8ce83cc5df99aab409d26f14336330e9513908245731804767556"
+        },
+        {
+          "file": "decor-assets/native/sp_xmas_invisibility_cloak_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/23c9bb9b17c79fa50030a624.webp",
+          "sha256": "23c9bb9b17c79fa50030a624b00e06c37f60f694c8aacf866fb9216fc003eb08"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_xmas_invisibility_cloak",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 78,
+      "id": "sp_xmas_weasley_tree",
+      "label": "Cây thông Giáng sinh nhà Weasley",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_xmas_weasley_tree.png",
+          "hd": true,
+          "source": "decor-assets/hd/4eec2ec722d7c8cda1d7092f.webp",
+          "sha256": "4eec2ec722d7c8cda1d7092f9b894ad02b58c2e6c6cda188a1a9ab6270078820"
+        },
+        {
+          "file": "decor-assets/native/sp_xmas_weasley_tree_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/410f1e99840597abb7b26713.webp",
+          "sha256": "410f1e99840597abb7b267132747a564a6299c029bf567cf4507e0c489036e03"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "reason": "Conical foliage and existing small parcel planes already read coherently in the garden; retain the original tree shape and both views.",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Conical foliage and existing small parcel planes already read coherently in the garden; retain the original tree shape and both views."
+      },
+      "initialCamera": "visual-reviewed-retain-original"
+    },
+    {
+      "index": 79,
+      "id": "sp_xmas_yule_roses",
+      "label": "Vườn hồng đêm Dạ vũ",
+      "footprint": [
+        3,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/sp_xmas_yule_roses.png",
+          "hd": true,
+          "source": "decor-assets/hd/1bc86dff1391c8707f586feb.webp",
+          "sha256": "1bc86dff1391c8707f586feb227305ab5a348963a97feb2ba028872c7c5ef39f"
+        },
+        {
+          "file": "decor-assets/native/sp_xmas_yule_roses_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/5c6d6cda7491c1b9bc6d2498.webp",
+          "sha256": "5c6d6cda7491c1b9bc6d24985a1d9db6a36f18d49de64f9c12686b10cdd719a2"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "sp_xmas_yule_roses",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 80,
+      "id": "ev_champion_tree",
+      "label": "Cây thông nhà vô địch",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/ev_champion_tree.png",
+          "hd": true,
+          "source": "decor-assets/hd/6973a95cc73e18b111e71b3a.webp",
+          "sha256": "6973a95cc73e18b111e71b3ae709cb7b96f48344c843255df162a36d7c47c1f5"
+        },
+        {
+          "file": "decor-assets/native/ev_champion_tree_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b3676b068b12aee45114dfea.webp",
+          "sha256": "b3676b068b12aee45114dfea0fc99dc23a6e77e5f1ddd16455e9d4ee690e6357"
+        }
+      ],
+      "camera": "replaced-same-object",
+      "final": {
+        "status": "replaced-same-object",
+        "hd": "genuine-master-HD",
+        "replacement": "ev_champion_tree",
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "redraw-candidate-horizontal-world-planes-do-not-match-locked-axes"
+    },
+    {
+      "index": 81,
+      "id": "nx_snitch_wreath",
+      "label": "Vòng lá thông Snitch",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_snitch_wreath.png",
+          "hd": true,
+          "source": "decor-assets/hd/87d8708cc52f88157e17e451.webp",
+          "sha256": "87d8708cc52f88157e17e451fae9f3ba8c488a607ebe088b7976247a586da661"
+        },
+        {
+          "file": "decor-assets/native/nx_snitch_wreath_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/695304ca1364f700c476369e.webp",
+          "sha256": "695304ca1364f700c476369e9364d1997828f53242ccc58557d8060df4bf8469"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 82,
+      "id": "nx_elf_yule_tent",
+      "label": "Lều Noel của gia tinh",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_elf_yule_tent.png",
+          "hd": true,
+          "source": "decor-assets/hd/6eb8fb9b97c7570328c8f22f.webp",
+          "sha256": "6eb8fb9b97c7570328c8f22f862e7faf725c682c89167464a82a6f5b424316df"
+        },
+        {
+          "file": "decor-assets/native/nx_elf_yule_tent_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/5875bafaec42107ae078141b.webp",
+          "sha256": "5875bafaec42107ae078141bd89da8178c37f5844ca0d069a635fa2823ae5d2c"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 83,
+      "id": "nx_owl_parcel_roost",
+      "label": "Trạm cú phát quà",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_owl_parcel_roost.png",
+          "hd": true,
+          "source": "decor-assets/hd/c106fc17afb874cdd63ffbe3.webp",
+          "sha256": "c106fc17afb874cdd63ffbe3a5c4f01d7576949475120e1e4421a2cb85fc40e3"
+        },
+        {
+          "file": "decor-assets/native/nx_owl_parcel_roost_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/89ce757ffc70e1c572fa895e.webp",
+          "sha256": "89ce757ffc70e1c572fa895e0d1238120413c07e3c62a34f28f89c22a32a1dcb"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 84,
+      "id": "nx_hagrid_boot_planter",
+      "label": "Ủng Hagrid trồng thông",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_hagrid_boot_planter.png",
+          "hd": true,
+          "source": "decor-assets/hd/ba99c0ba74fe38df12c682af.webp",
+          "sha256": "ba99c0ba74fe38df12c682af2b8a2ea5b94616cdb7d1d097b6a2e46826509614"
+        },
+        {
+          "file": "decor-assets/native/nx_hagrid_boot_planter_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/75349fdb37bed0fefe469e9f.webp",
+          "sha256": "75349fdb37bed0fefe469e9fe9eb35d6800be968c4fe4a412273269a4457e939"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 85,
+      "id": "nx_fang_biscuit_kennel",
+      "label": "Nhà Noel của Fang",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_fang_biscuit_kennel.png",
+          "hd": true,
+          "source": "decor-assets/hd/244b44c089b78a31e29aaaa0.webp",
+          "sha256": "244b44c089b78a31e29aaaa0ff5a14a312a3e08c0677f9f371195e8d80585a76"
+        },
+        {
+          "file": "decor-assets/native/nx_fang_biscuit_kennel_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/8cd5028bf856c4d088c2e9de.webp",
+          "sha256": "8cd5028bf856c4d088c2e9ded4f9b5f4687dc50c9e021fa770d3bdefb4aad872"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 86,
+      "id": "nx_niffler_coin_snowglobe",
+      "label": "Quả cầu tuyết Đào mỏ",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_niffler_coin_snowglobe.png",
+          "hd": true,
+          "source": "decor-assets/hd/f2f2362e8dd1379ceb7e9015.webp",
+          "sha256": "f2f2362e8dd1379ceb7e9015515d27ab67a4ae107c258cbcdae0cd8644e53216"
+        },
+        {
+          "file": "decor-assets/native/nx_niffler_coin_snowglobe_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/3d1fe94a0284ef5973053aee.webp",
+          "sha256": "3d1fe94a0284ef5973053aee4f21554f84b30ee9e1b7f8a1d160d6d24808b78d"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 87,
+      "id": "nx_bowtruckle_fir_perch",
+      "label": "Giàn thông Que Xạo",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_bowtruckle_fir_perch.png",
+          "hd": true,
+          "source": "decor-assets/hd/5d213163cdf05c004d85edec.webp",
+          "sha256": "5d213163cdf05c004d85edec2437caf50c82ddc66b307025f5c69cfc1e503914"
+        },
+        {
+          "file": "decor-assets/native/nx_bowtruckle_fir_perch_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/94071369817ee4a14aefd585.webp",
+          "sha256": "94071369817ee4a14aefd5853cd3d2125036ef1d46fabf043ef1020ba944d7fd"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 88,
+      "id": "nx_mooncalf_moon_lantern",
+      "label": "Đèn trăng Mooncalf",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_mooncalf_moon_lantern.png",
+          "hd": true,
+          "source": "decor-assets/hd/bc97892aeaabbed0d27e9ca5.webp",
+          "sha256": "bc97892aeaabbed0d27e9ca5278c9a82d1a8b7cc7f56797c099cf5a09bcba4f6"
+        },
+        {
+          "file": "decor-assets/native/nx_mooncalf_moon_lantern_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/f21957a2b51330b096e919a7.webp",
+          "sha256": "f21957a2b51330b096e919a785fd7fdbb281ad9ab7e3ac805d4effbbb3b6ae08"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 89,
+      "id": "nx_puffskein_sock_basket",
+      "label": "Giỏ vớ Quái lùng nhùng",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_puffskein_sock_basket.png",
+          "hd": true,
+          "source": "decor-assets/hd/0f9c41e98181daae59273f82.webp",
+          "sha256": "0f9c41e98181daae59273f82873d07880a41d00d1c94b3955e7aff6870d3c0ef"
+        },
+        {
+          "file": "decor-assets/native/nx_puffskein_sock_basket_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/18709d215713465d4745f764.webp",
+          "sha256": "18709d215713465d4745f764fcc51223b0e3d639efe998bb15cf231cb58d6767"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 90,
+      "id": "nx_hippogriff_gift_sleigh",
+      "label": "Xe quà Bằng-Mã",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_hippogriff_gift_sleigh.png",
+          "hd": true,
+          "source": "decor-assets/hd/21030382d0c7305f59d9b150.webp",
+          "sha256": "21030382d0c7305f59d9b150ead4c66c07a3b26931264d297a3fd7d248a8383c"
+        },
+        {
+          "file": "decor-assets/native/nx_hippogriff_gift_sleigh_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/7f4204e1b3fbdb5e2b9b785c.webp",
+          "sha256": "7f4204e1b3fbdb5e2b9b785c15c3eb100af4bf2ec9edb8a3433d3b6e381ad8b5"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 91,
+      "id": "nx_unicorn_ice_fountain",
+      "label": "Đài băng kỳ lân",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_unicorn_ice_fountain.png",
+          "hd": true,
+          "source": "decor-assets/hd/dfc3ca3e88a02b86c94f0168.webp",
+          "sha256": "dfc3ca3e88a02b86c94f0168309cb5fab258b56b14d6b473de04c13178dc2890"
+        },
+        {
+          "file": "decor-assets/native/nx_unicorn_ice_fountain_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/5cca22e6635ea7e5799560c2.webp",
+          "sha256": "5cca22e6635ea7e5799560c2584cf06ff7461f4967b4d868ce7cae568096409d"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 92,
+      "id": "nx_thestral_silver_bell",
+      "label": "Chuông bạc Vong mã",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_thestral_silver_bell.png",
+          "hd": true,
+          "source": "decor-assets/hd/8afc5c2f7cfa169b9538b3ea.webp",
+          "sha256": "8afc5c2f7cfa169b9538b3ea086f853a0e59b8f72b2137847e55c365bd7b2ae5"
+        },
+        {
+          "file": "decor-assets/native/nx_thestral_silver_bell_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/546fed40865057a39991d423.webp",
+          "sha256": "546fed40865057a39991d4230081f28f638f7f5009aee23ec0f72c0980f5b18a"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 93,
+      "id": "nx_fwooper_music_box",
+      "label": "Hộp nhạc Fwooper",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_fwooper_music_box.png",
+          "hd": true,
+          "source": "decor-assets/hd/a03288b2f426bdc35a9cf511.webp",
+          "sha256": "a03288b2f426bdc35a9cf511ad194951a07847607ae12d2880fd87751f8af060"
+        },
+        {
+          "file": "decor-assets/native/nx_fwooper_music_box_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/3e2722daaebc6432e2dec0db.webp",
+          "sha256": "3e2722daaebc6432e2dec0db3faa9125564f03d0ab3d852cc1bf29e8470f291d"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 94,
+      "id": "nx_phoenix_candle_bough",
+      "label": "Cành nến phượng hoàng",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_phoenix_candle_bough.png",
+          "hd": true,
+          "source": "decor-assets/hd/3163d29b146ee08d315b8e29.webp",
+          "sha256": "3163d29b146ee08d315b8e296887ccadf58e4f45ebd45a90a690264fa28080da"
+        },
+        {
+          "file": "decor-assets/native/nx_phoenix_candle_bough_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/a854d9f06e6af8cabd1b2dc6.webp",
+          "sha256": "a854d9f06e6af8cabd1b2dc640ba0c33ccfb8e24bc03b27c147094169c1f521b"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 95,
+      "id": "nx_norbert_egg_lantern",
+      "label": "Đèn trứng rồng Noel",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_norbert_egg_lantern.png",
+          "hd": true,
+          "source": "decor-assets/hd/a02f9eee061e559ce859e341.webp",
+          "sha256": "a02f9eee061e559ce859e3419bf1575ed55bf3144db0a8ec4a105f2fad0f3b4a"
+        },
+        {
+          "file": "decor-assets/native/nx_norbert_egg_lantern_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/9cdc9cefb46084e58b0d928a.webp",
+          "sha256": "9cdc9cefb46084e58b0d928a3a45b6490cd3cd6b1aa138ae24a6ec05b1fda76b"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 96,
+      "id": "nx_snowwizard_hat",
+      "label": "Người tuyết đội nón phù thủy",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_snowwizard_hat.png",
+          "hd": true,
+          "source": "decor-assets/hd/a068ae3d29a6f8cea1e63155.webp",
+          "sha256": "a068ae3d29a6f8cea1e63155b2128dba37a4585ffd0f3648a96b00c306cfa95b"
+        },
+        {
+          "file": "decor-assets/native/nx_snowwizard_hat_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/d3b775f4321a11344493683d.webp",
+          "sha256": "d3b775f4321a11344493683d9c2966e517bd953f2d34da6e0e00a591a6f929d5"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 97,
+      "id": "nx_snow_owl_sculpture",
+      "label": "Tượng cú tuyết mùa đông",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_snow_owl_sculpture.png",
+          "hd": true,
+          "source": "decor-assets/hd/adaf6ebcc4da1639fa6b844d.webp",
+          "sha256": "adaf6ebcc4da1639fa6b844d93396ed8f52eb39a8623f72eef0ecaace9649346"
+        },
+        {
+          "file": "decor-assets/native/nx_snow_owl_sculpture_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/cbc08f092b14e42f6fe4d832.webp",
+          "sha256": "cbc08f092b14e42f6fe4d832f0e42894db9c93bd783be514f7c6d5714d311a06"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 98,
+      "id": "nx_snow_dragon_sculpture",
+      "label": "Rồng tuyết giữ quà",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_snow_dragon_sculpture.png",
+          "hd": true,
+          "source": "decor-assets/hd/c8dce608d118b2df8993b0d7.webp",
+          "sha256": "c8dce608d118b2df8993b0d7b8ee46660f73b18d6f03bbc1f3c4b4c475bb876d"
+        },
+        {
+          "file": "decor-assets/native/nx_snow_dragon_sculpture_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2814097ac6d8d992678f0b7b.webp",
+          "sha256": "2814097ac6d8d992678f0b7b013347b43351075b15d59832c32454f55aa395b0"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 99,
+      "id": "nx_snow_hogwarts_castle",
+      "label": "Lâu đài tuyết phép thuật",
+      "footprint": [
+        3,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_snow_hogwarts_castle.png",
+          "hd": true,
+          "source": "decor-assets/hd/e64ad28f56bc01e925ced67a.webp",
+          "sha256": "e64ad28f56bc01e925ced67a6c3caeda82738d8c3b251db3bb23e52fc1e635bb"
+        },
+        {
+          "file": "decor-assets/native/nx_snow_hogwarts_castle_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/c280ec1a44be41f75c6b0abc.webp",
+          "sha256": "c280ec1a44be41f75c6b0abcc2074f1123ab95c0190c637c566bf9a3424aa808"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 100,
+      "id": "nx_ice_wand_star",
+      "label": "Ngôi sao băng đũa phép",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_ice_wand_star.png",
+          "hd": true,
+          "source": "decor-assets/hd/ca8b277f804da5542311e5f5.webp",
+          "sha256": "ca8b277f804da5542311e5f54e8ce23476054ee52517bf4c4252132eafc69c6f"
+        },
+        {
+          "file": "decor-assets/native/nx_ice_wand_star_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/7a810fd5287866030c34bc5a.webp",
+          "sha256": "7a810fd5287866030c34bc5ac0c11d6afc9cf8e54f723117a9113cebbf246dbd"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 101,
+      "id": "nx_mistletoe_gate",
+      "label": "Cổng tầm gửi Giáng sinh",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_mistletoe_gate.png",
+          "hd": true,
+          "source": "decor-assets/hd/ba87cc8acaffbd7aa499eb3a.webp",
+          "sha256": "ba87cc8acaffbd7aa499eb3a9353e7e46830cdcfcf58476ff9f1eaaf7898c4f1"
+        },
+        {
+          "file": "decor-assets/native/nx_mistletoe_gate_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/8902c15e2fd225b4045b5973.webp",
+          "sha256": "8902c15e2fd225b4045b59730c48650c996f57f5d204e4c5ca1d7374d3b1a24a"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 102,
+      "id": "nx_holly_broom_fence",
+      "label": "Hàng rào chổi lá nhựa ruồi",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_holly_broom_fence.png",
+          "hd": true,
+          "source": "decor-assets/hd/293414cf84ea7f878e8c49eb.webp",
+          "sha256": "293414cf84ea7f878e8c49ebfb16b0c82e35a5e25ff6b9b5c774d4fc460bc5f5"
+        },
+        {
+          "file": "decor-assets/native/nx_holly_broom_fence_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/d3a8fe576707867ccac4f822.webp",
+          "sha256": "d3a8fe576707867ccac4f822a1882848f26c6487f28a038e21164f9c1d1fc578"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 103,
+      "id": "nx_snitch_lamp_post",
+      "label": "Cột đèn Snitch",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_snitch_lamp_post.png",
+          "hd": true,
+          "source": "decor-assets/hd/f1b7745c9fe5bee6f3d9d7ad.webp",
+          "sha256": "f1b7745c9fe5bee6f3d9d7ad4758e20513cbf01049579acfadfd181c1fcc9f24"
+        },
+        {
+          "file": "decor-assets/native/nx_snitch_lamp_post_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2e0e515d158c17c12929553c.webp",
+          "sha256": "2e0e515d158c17c12929553ca20c7eb3f2c0b48d8bebb1de7b92bb12262f65d7"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 104,
+      "id": "nx_floo_chimney_mailbox",
+      "label": "Hộp thư ống khói Noel",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_floo_chimney_mailbox.png",
+          "hd": true,
+          "source": "decor-assets/hd/a28e929a08d38a2d71b07459.webp",
+          "sha256": "a28e929a08d38a2d71b0745930a4f2ccfa3affb9529f981796254c2612cc2654"
+        },
+        {
+          "file": "decor-assets/native/nx_floo_chimney_mailbox_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/69a63260fb85ed21e476f43d.webp",
+          "sha256": "69a63260fb85ed21e476f43d1b433f52b005532eeb9b08ea6e37e2f0e5c1e1c2"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 105,
+      "id": "nx_hogwarts_express_parcels",
+      "label": "Xe hành lý tốc hành Noel",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_hogwarts_express_parcels.png",
+          "hd": true,
+          "source": "decor-assets/hd/4cc650cdd465de5531747295.webp",
+          "sha256": "4cc650cdd465de5531747295c2a90fc418157e1a8695b652da1ee69b79e0a2fa"
+        },
+        {
+          "file": "decor-assets/native/nx_hogwarts_express_parcels_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/f45f70cde89a9a62556b6f70.webp",
+          "sha256": "f45f70cde89a9a62556b6f70c15485aa72458e39f64a612e286fcea7421cc995"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 106,
+      "id": "nx_platform_clock",
+      "label": "Đồng hồ sân ga mùa tuyết",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_platform_clock.png",
+          "hd": true,
+          "source": "decor-assets/hd/c23e6462715fdee23fbdd79d.webp",
+          "sha256": "c23e6462715fdee23fbdd79d4ffd5350da250072c9c78041518b544db5d7b1aa"
+        },
+        {
+          "file": "decor-assets/native/nx_platform_clock_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/e492f04ff5a35c995cf0ec8a.webp",
+          "sha256": "e492f04ff5a35c995cf0ec8ade94899c6a5a1283d09592770667a28e0da81f2c"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 107,
+      "id": "nx_enchanted_cracker_table",
+      "label": "Bàn pháo giấy phù thủy",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_enchanted_cracker_table.png",
+          "hd": true,
+          "source": "decor-assets/hd/9de46beca2bc0a22d9ecd90e.webp",
+          "sha256": "9de46beca2bc0a22d9ecd90e1deacbfa03a15e3c01773e9609303ff27b653f25"
+        },
+        {
+          "file": "decor-assets/native/nx_enchanted_cracker_table_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/57647e95ff0ba8962197cd1f.webp",
+          "sha256": "57647e95ff0ba8962197cd1f2f2cde39c10088a7c193a7c55bd4937c54b9f1ec"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 108,
+      "id": "nx_wizard_chess_christmas",
+      "label": "Bàn cờ đêm Giáng sinh",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_wizard_chess_christmas.png",
+          "hd": true,
+          "source": "decor-assets/hd/8361abd007623509b1561105.webp",
+          "sha256": "8361abd007623509b15611054a4f33f23997142d311eaf2b8dd301b9d377d77c"
+        },
+        {
+          "file": "decor-assets/native/nx_wizard_chess_christmas_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/dced6ce94678b277a271a8f0.webp",
+          "sha256": "dced6ce94678b277a271a8f017ac3b2db1328f309ceab3efa782153b67a6d787"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 109,
+      "id": "nx_weasley_knit_rack",
+      "label": "Giá áo len nhà Weasley",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_weasley_knit_rack.png",
+          "hd": true,
+          "source": "decor-assets/hd/adc0a93f2874ca279406acff.webp",
+          "sha256": "adc0a93f2874ca279406acff98cd408a13683c94991d84a32f39eab5b1f43d15"
+        },
+        {
+          "file": "decor-assets/native/nx_weasley_knit_rack_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/66367797264f74ab867e4f98.webp",
+          "sha256": "66367797264f74ab867e4f9820419d294c2706601a101df99c0b4bf66256179a"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 110,
+      "id": "nx_dobby_sock_tree",
+      "label": "Cây vớ tặng gia tinh",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_dobby_sock_tree.png",
+          "hd": true,
+          "source": "decor-assets/hd/589a1dc7a3a75a9e094365ef.webp",
+          "sha256": "589a1dc7a3a75a9e094365ef45410b257bb6511af199c9c17b864f46101d31bf"
+        },
+        {
+          "file": "decor-assets/native/nx_dobby_sock_tree_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/ff787c3184fbfb3d874f1fe8.webp",
+          "sha256": "ff787c3184fbfb3d874f1fe8c50c5768123db00e118ab3e94b1714971abe707a"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 111,
+      "id": "nx_mince_pie_cart",
+      "label": "Xe bánh Giáng sinh",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_mince_pie_cart.png",
+          "hd": true,
+          "source": "decor-assets/hd/4f2eb170e56c4f2f0af689e9.webp",
+          "sha256": "4f2eb170e56c4f2f0af689e9ef8d583402a0258a859063fa7d42b34426085017"
+        },
+        {
+          "file": "decor-assets/native/nx_mince_pie_cart_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/70feb969bb827f3a2b0a068f.webp",
+          "sha256": "70feb969bb827f3a2b0a068f352cdbf427ab6305037b3ca8b91b09064729d619"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 112,
+      "id": "nx_plum_pudding_stand",
+      "label": "Bánh pudding lửa phép",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_plum_pudding_stand.png",
+          "hd": true,
+          "source": "decor-assets/hd/b8d076e29cba995369311c9c.webp",
+          "sha256": "b8d076e29cba995369311c9cc7cfc28ad2f04be7d400d83c9b0e320067c7dd8f"
+        },
+        {
+          "file": "decor-assets/native/nx_plum_pudding_stand_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/f94b80e0693704e3604c9e56.webp",
+          "sha256": "f94b80e0693704e3604c9e56aacfd5ac012612c665c8f809a76a8a734c69b9c2"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 113,
+      "id": "nx_chocolate_frog_tree",
+      "label": "Tháp quà Kẹo Ếch",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_chocolate_frog_tree.png",
+          "hd": true,
+          "source": "decor-assets/hd/fbff0576878da12a024c586e.webp",
+          "sha256": "fbff0576878da12a024c586efb15d6b2f358b82a32caba35908beb913f88e8b2"
+        },
+        {
+          "file": "decor-assets/native/nx_chocolate_frog_tree_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/cb13509dd5129b761c1eea41.webp",
+          "sha256": "cb13509dd5129b761c1eea41e9a32f9da4fced7d8fe5e514195f6c10d66fcc6e"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 114,
+      "id": "nx_peppermint_cauldron",
+      "label": "Vạc cacao bạc hà",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_peppermint_cauldron.png",
+          "hd": true,
+          "source": "decor-assets/hd/dc8fa0f3b4da903900d39596.webp",
+          "sha256": "dc8fa0f3b4da903900d3959681be9c66fec72ecf0693fb8c4cba97560087d3e4"
+        },
+        {
+          "file": "decor-assets/native/nx_peppermint_cauldron_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/bb86d50f23a9ae9213897e0f.webp",
+          "sha256": "bb86d50f23a9ae9213897e0f2c1a8a48787ecc41890ac6e898b3966914d59c80"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 115,
+      "id": "nx_butterbeer_barrel_seat",
+      "label": "Ghế thùng bia bơ mùa đông",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_butterbeer_barrel_seat.png",
+          "hd": true,
+          "source": "decor-assets/hd/f2d7ccae92cd8d4cf78bdef9.webp",
+          "sha256": "f2d7ccae92cd8d4cf78bdef9f154b22e4025d4c7579befb39350fd24bb46f5fe"
+        },
+        {
+          "file": "decor-assets/native/nx_butterbeer_barrel_seat_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/9c1764fdfb8d001472294f8b.webp",
+          "sha256": "9c1764fdfb8d001472294f8b20008fd180ebd707aecc20d8749ea789ef7adb7c"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 116,
+      "id": "nx_gingerbread_hagrids_hut",
+      "label": "Nhà bánh gừng của Hagrid",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_gingerbread_hagrids_hut.png",
+          "hd": true,
+          "source": "decor-assets/hd/c237a7f57e7488d6327d26d7.webp",
+          "sha256": "c237a7f57e7488d6327d26d7e301a73ded4b294e537f53830696c9995bda97f5"
+        },
+        {
+          "file": "decor-assets/native/nx_gingerbread_hagrids_hut_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/875ac47b19a131e810974621.webp",
+          "sha256": "875ac47b19a131e810974621b1a88f1088ea53e6ea1cd73e62408304f3d5861d"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 117,
+      "id": "nx_gingerbread_greenhouse",
+      "label": "Nhà kính bánh gừng",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_gingerbread_greenhouse.png",
+          "hd": true,
+          "source": "decor-assets/hd/833eb689cd8dae220298dc2d.webp",
+          "sha256": "833eb689cd8dae220298dc2daf87a8ed655930f743ebd5b7eda0de82dfa820bb"
+        },
+        {
+          "file": "decor-assets/native/nx_gingerbread_greenhouse_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/4c2fbbf0b05e05f04b701d08.webp",
+          "sha256": "4c2fbbf0b05e05f04b701d084200dec7693c92558d1e36e436c3e593453e67bf"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 118,
+      "id": "nx_mandrake_earmuff_planter",
+      "label": "Chậu Nhân sâm đón Noel",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_mandrake_earmuff_planter.png",
+          "hd": true,
+          "source": "decor-assets/hd/49fa3d31dca11043fc7e77a5.webp",
+          "sha256": "49fa3d31dca11043fc7e77a57fa1bd86a5fe0abb1cf21ebe197f758bb2e3ff5e"
+        },
+        {
+          "file": "decor-assets/native/nx_mandrake_earmuff_planter_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/6a96a01d7b9e791fb2bbfb51.webp",
+          "sha256": "6a96a01d7b9e791fb2bbfb515ff38ff4ada438e7ab1ed18b9dc5be82997dfc2f"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 119,
+      "id": "nx_frosted_dittany_bed",
+      "label": "Bồn Bạch tiên mùa tuyết",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_frosted_dittany_bed.png",
+          "hd": true,
+          "source": "decor-assets/hd/c7c640de03ce98efb433773e.webp",
+          "sha256": "c7c640de03ce98efb433773e8b9e2fae3bd87d872c293b02dbd1e9ebdaa4edba"
+        },
+        {
+          "file": "decor-assets/native/nx_frosted_dittany_bed_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/ae1e2f51fcd6fa13cce46d47.webp",
+          "sha256": "ae1e2f51fcd6fa13cce46d477bcb8ab62f9f77e75414caa2c48e64f8c9596074"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 120,
+      "id": "nx_glowing_mistletoe_pot",
+      "label": "Chậu tầm gửi ánh sao",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_glowing_mistletoe_pot.png",
+          "hd": true,
+          "source": "decor-assets/hd/ba98b3fe8820dc23d42d93cf.webp",
+          "sha256": "ba98b3fe8820dc23d42d93cf13a6e8b1ae9b0c07f6c530d98bcfeb2451999b66"
+        },
+        {
+          "file": "decor-assets/native/nx_glowing_mistletoe_pot_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/5771e7a5c2b9074ce65363db.webp",
+          "sha256": "5771e7a5c2b9074ce65363db6c3670b3bf94b0d5c60bcde6f6f66c133e94dbac"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 121,
+      "id": "nx_fairy_pine_log",
+      "label": "Khúc gỗ tiên Giáng sinh",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_fairy_pine_log.png",
+          "hd": true,
+          "source": "decor-assets/hd/0dd39824e110f78f7a5d49e9.webp",
+          "sha256": "0dd39824e110f78f7a5d49e9bb0932f639761261a91e5e7ee4b1988c2bdcc35d"
+        },
+        {
+          "file": "decor-assets/native/nx_fairy_pine_log_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/d39973eb7df3e180b8997fe9.webp",
+          "sha256": "d39973eb7df3e180b8997fe97abf76b77fbb2c014c3badc7867b9814bcf27bd1"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 122,
+      "id": "nx_icicle_harp",
+      "label": "Đàn hạc băng Dạ vũ",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_icicle_harp.png",
+          "hd": true,
+          "source": "decor-assets/hd/7ee7897ffb03870445a7b220.webp",
+          "sha256": "7ee7897ffb03870445a7b220abf808f2ad092f38e907adad64b8e90443251e3e"
+        },
+        {
+          "file": "decor-assets/native/nx_icicle_harp_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/e8370fe56ab3554bbe6e0cb6.webp",
+          "sha256": "e8370fe56ab3554bbe6e0cb6f631a14481668e9c1b62b9c13c5ff3508fd95f45"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 123,
+      "id": "nx_yule_dance_gazebo",
+      "label": "Chòi Dạ vũ mùa đông",
+      "footprint": [
+        3,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_yule_dance_gazebo.png",
+          "hd": true,
+          "source": "decor-assets/hd/0b41d8c69494deca38e98e42.webp",
+          "sha256": "0b41d8c69494deca38e98e42ae42102e79e499fdbe3c1266cb0ed869b85d8200"
+        },
+        {
+          "file": "decor-assets/native/nx_yule_dance_gazebo_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2509499096eec8531e3d8bc4.webp",
+          "sha256": "2509499096eec8531e3d8bc4e3cb2b40675dde98bc98661b776c2e8e31bd2195"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 124,
+      "id": "nx_enchanted_violin_stand",
+      "label": "Đàn vĩ cầm tự chơi",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_enchanted_violin_stand.png",
+          "hd": true,
+          "source": "decor-assets/hd/3350f8722b5bae9b2fdde7ea.webp",
+          "sha256": "3350f8722b5bae9b2fdde7ea7d38bdfda9684eb08224b1f02633a51fe21abb95"
+        },
+        {
+          "file": "decor-assets/native/nx_enchanted_violin_stand_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/1eace9f7e372d8aa50de1361.webp",
+          "sha256": "1eace9f7e372d8aa50de136179a08c92dd0ee3f040159b342449ab55eb90f869"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 125,
+      "id": "nx_great_hall_candle_cluster",
+      "label": "Cụm nến Đại Sảnh mùa lễ",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_great_hall_candle_cluster.png",
+          "hd": true,
+          "source": "decor-assets/hd/d1470ee665648d4290f111e0.webp",
+          "sha256": "d1470ee665648d4290f111e05380158a9d729daf31351256c7976e1427436710"
+        },
+        {
+          "file": "decor-assets/native/nx_great_hall_candle_cluster_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/0362c874f82d26a27260a9f7.webp",
+          "sha256": "0362c874f82d26a27260a9f722c04aa2cec20eb7620a4465ea8ddb0308823b36"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 126,
+      "id": "nx_raven_ice_bench",
+      "label": "Ghế đá quạ mùa đông",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_raven_ice_bench.png",
+          "hd": true,
+          "source": "decor-assets/hd/97378949b57d3c450551aec3.webp",
+          "sha256": "97378949b57d3c450551aec37a99cf0b00133d92fa5ff981fb4c5fb2eb9e054f"
+        },
+        {
+          "file": "decor-assets/native/nx_raven_ice_bench_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/7d07098250503bd4ea8964ff.webp",
+          "sha256": "7d07098250503bd4ea8964ff40dd00faf701b3a95f3820c43df93a45998cbc7c"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 127,
+      "id": "nx_lion_firewood_rack",
+      "label": "Giá củi sư tử Giáng sinh",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_lion_firewood_rack.png",
+          "hd": true,
+          "source": "decor-assets/hd/6f4ce943c471450f181c19e6.webp",
+          "sha256": "6f4ce943c471450f181c19e64111b55de9974762e81e0381f1fbbd7664e77028"
+        },
+        {
+          "file": "decor-assets/native/nx_lion_firewood_rack_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/04ed1660aef61210f979fb03.webp",
+          "sha256": "04ed1660aef61210f979fb030f0dd57add801a3c1403b68a8bf89dfefef5f6f2"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 128,
+      "id": "nx_badger_cookie_table",
+      "label": "Bàn bánh lửng mật",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_badger_cookie_table.png",
+          "hd": true,
+          "source": "decor-assets/hd/152e64031df682a2aaad9394.webp",
+          "sha256": "152e64031df682a2aaad93942973b8e754e91fa67ec437eb0040251851d1cbe9"
+        },
+        {
+          "file": "decor-assets/native/nx_badger_cookie_table_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/d800a01d3b77a9ab66e04250.webp",
+          "sha256": "d800a01d3b77a9ab66e04250a860a8a98f60169ca98f3c07a25ea85452ca4bba"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 129,
+      "id": "nx_serpent_holly_urn",
+      "label": "Bình lá thông rắn bạc",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_serpent_holly_urn.png",
+          "hd": true,
+          "source": "decor-assets/hd/9154144e3441158c6f0be2db.webp",
+          "sha256": "9154144e3441158c6f0be2db504a7a162c3abd5a19b5d0a6233aaa9307ce1133"
+        },
+        {
+          "file": "decor-assets/native/nx_serpent_holly_urn_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/1ebf1958431f7a29d8872c7a.webp",
+          "sha256": "1ebf1958431f7a29d8872c7a6b4d32c11a2df0c8c6d046aeb0250a3cf5ec09f6"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 130,
+      "id": "nx_hagrid_gift_crate",
+      "label": "Rương quà bác Hagrid",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nx_hagrid_gift_crate.png",
+          "hd": true,
+          "source": "decor-assets/hd/73fa716172d41043967a4e0d.webp",
+          "sha256": "73fa716172d41043967a4e0d3e3ebea23e6f8416365e3412d4e8d5fc5c2f79f1"
+        },
+        {
+          "file": "decor-assets/native/nx_hagrid_gift_crate_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/d7770af0d74fa85fcfca2dfd.webp",
+          "sha256": "d7770af0d74fa85fcfca2dfd4a371d2495a02c5c992223867006692edeff522c"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 131,
+      "id": "nh_gryffindor_lion_snow_guard",
+      "label": "Sư tử tuyết giữ quà",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_lion_snow_guard.png",
+          "hd": true,
+          "source": "decor-assets/hd/fb31b359a18c42be14a45c0d.webp",
+          "sha256": "fb31b359a18c42be14a45c0dddd56c18ee99a858418454bad5485a2ca6689b45"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_lion_snow_guard_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/0197e3a204d68efc221c7274.webp",
+          "sha256": "0197e3a204d68efc221c72742c26d70672c67033219ddaaead3af3f87f0de676"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 132,
+      "id": "nh_gryffindor_sword_holly_gate",
+      "label": "Cổng kiếm lá nhựa ruồi",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_sword_holly_gate.png",
+          "hd": true,
+          "source": "decor-assets/hd/8cdc8dc3931f195b68923801.webp",
+          "sha256": "8cdc8dc3931f195b689238014d5af0e269785be701508affdc065b3166b46556"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_sword_holly_gate_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/23c4bfd6906b7d813dd6f5f4.webp",
+          "sha256": "23c4bfd6906b7d813dd6f5f40fd9a64c1085cae0a3344bf9970f96358e13d0f6"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 133,
+      "id": "nh_gryffindor_commonroom_hearth",
+      "label": "Lò sưởi sư tử đêm Noel",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_commonroom_hearth.png",
+          "hd": true,
+          "source": "decor-assets/hd/1501853c97b6506a7186bfa3.webp",
+          "sha256": "1501853c97b6506a7186bfa3a9837972e40e6b80debf6727225e2e5806c6faf6"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_commonroom_hearth_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b5a969901f5f1d1bebfe0e8e.webp",
+          "sha256": "b5a969901f5f1d1bebfe0e8e66420de22627942e28ee511528b0d9dc09b89989"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 134,
+      "id": "nh_gryffindor_quidditch_crate",
+      "label": "Rương Quidditch đỏ thắm",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_quidditch_crate.png",
+          "hd": true,
+          "source": "decor-assets/hd/c5378bb7816642b23ad024ba.webp",
+          "sha256": "c5378bb7816642b23ad024bab434aeaba7a3799dcdb1619777642391bf87ec7d"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_quidditch_crate_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/588795232acadb8eb0e7fc31.webp",
+          "sha256": "588795232acadb8eb0e7fc31fb849e5d68b8eaa34c3135f5d12bf9898898e7fa"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 135,
+      "id": "nh_gryffindor_courage_watchtower",
+      "label": "Tháp canh Lòng Dũng Cảm",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_courage_watchtower.png",
+          "hd": true,
+          "source": "decor-assets/hd/3ef3acff1284fc3e139646ed.webp",
+          "sha256": "3ef3acff1284fc3e139646ed81805aad5a7a981cbe9465b32ef896154f1bfdb0"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_courage_watchtower_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b2117ee26b3b5b2ce5dc97fe.webp",
+          "sha256": "b2117ee26b3b5b2ce5dc97fecea8d470c71a5661ee9f2c44b4d8973945bfe734"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 136,
+      "id": "nh_gryffindor_rocking_lion",
+      "label": "Sư tử gỗ ngựa bập bênh",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_rocking_lion.png",
+          "hd": true,
+          "source": "decor-assets/hd/1e7f0a496f0843cadce04eef.webp",
+          "sha256": "1e7f0a496f0843cadce04eef3c7ccf9d4fa1c246fed8e83b20fba378711be75b"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_rocking_lion_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/e7ab048378167af052cdcc42.webp",
+          "sha256": "e7ab048378167af052cdcc42c6eee75512dc5383bb108b8e0ff7b1ca85b286d4"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 137,
+      "id": "nh_gryffindor_scarlet_feast_table",
+      "label": "Bàn tiệc đỏ vàng Gryffindor",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_scarlet_feast_table.png",
+          "hd": true,
+          "source": "decor-assets/hd/40318d56f9a5835f19a9b377.webp",
+          "sha256": "40318d56f9a5835f19a9b3773a74127e94b9784032c49591690ccd577700a110"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_scarlet_feast_table_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2bc32917331099501c4fdf52.webp",
+          "sha256": "2bc32917331099501c4fdf524498ca58a72385d2ebb80cc719d9c5ab073ee275"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 138,
+      "id": "nh_gryffindor_flame_bell_stand",
+      "label": "Giá chuông ngọn lửa vàng",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_flame_bell_stand.png",
+          "hd": true,
+          "source": "decor-assets/hd/802ce9e9bac13ce72f80c029.webp",
+          "sha256": "802ce9e9bac13ce72f80c02943fbe4be09fe4ca4edf3b69c6b11a20f1c06e8df"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_flame_bell_stand_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/9c30a7fa5fde49f6aa58cccf.webp",
+          "sha256": "9c30a7fa5fde49f6aa58cccfc2e39d79d64b976d161fd7f13c5d2e4c19465039"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 139,
+      "id": "nh_gryffindor_cracker_sled",
+      "label": "Xe trượt quà pháo giấy",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_cracker_sled.png",
+          "hd": true,
+          "source": "decor-assets/hd/c8bc4aa7a4030822e9e073c9.webp",
+          "sha256": "c8bc4aa7a4030822e9e073c90582fcaca2c8aed67ecb22bb04d244e22af8d638"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_cracker_sled_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/139c9c3e1ab98a4b114df26b.webp",
+          "sha256": "139c9c3e1ab98a4b114df26b467c060e6321c2f82f04b05f72f13c105f0184f0"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 140,
+      "id": "nh_gryffindor_lion_paw_brazier",
+      "label": "Lò than chân sư tử",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_gryffindor_lion_paw_brazier.png",
+          "hd": true,
+          "source": "decor-assets/hd/16c94a2797866bd131e48dc6.webp",
+          "sha256": "16c94a2797866bd131e48dc67688754e106953a51c66098d0b16a192668cba03"
+        },
+        {
+          "file": "decor-assets/native/nh_gryffindor_lion_paw_brazier_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2aaa8352774fa15745dadf86.webp",
+          "sha256": "2aaa8352774fa15745dadf867e2b38f5572096947829efe2df9c8f80595f0b71"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 141,
+      "id": "nh_slytherin_serpent_ice_arch",
+      "label": "Cổng băng rắn bạc",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_serpent_ice_arch.png",
+          "hd": true,
+          "source": "decor-assets/hd/74ea7b126bfbf25a5d865cbe.webp",
+          "sha256": "74ea7b126bfbf25a5d865cbe894812bd995c700089148dcb4720695b9d8bc4d0"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_serpent_ice_arch_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/0de7a2fd4e9386de150b8ad7.webp",
+          "sha256": "0de7a2fd4e9386de150b8ad7f7d74ee775c6841adc6fcb17e2ad986f2da6bb26"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 142,
+      "id": "nh_slytherin_emerald_orangery",
+      "label": "Nhà kính lục bảo mùa đông",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_emerald_orangery.png",
+          "hd": true,
+          "source": "decor-assets/hd/b7c881f5eeaeeab4af290487.webp",
+          "sha256": "b7c881f5eeaeeab4af2904871ad5986587f70f8213a864c0bdbccca376103e26"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_emerald_orangery_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2501f80dac233d0ad5b50ec3.webp",
+          "sha256": "2501f80dac233d0ad5b50ec31ab4b4a6119e1b48b1a88ba3efb640f1c2855308"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 143,
+      "id": "nh_slytherin_winter_potion_bar",
+      "label": "Quầy thức uống lục bảo",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_winter_potion_bar.png",
+          "hd": true,
+          "source": "decor-assets/hd/4272e180684d1e1e5c141683.webp",
+          "sha256": "4272e180684d1e1e5c141683b2be70d149ac677d5cc15b926441fff4c1832316"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_winter_potion_bar_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/a92812376a25dc80fe8470cd.webp",
+          "sha256": "a92812376a25dc80fe8470cd399c66b57998c8f1d7f80b4195ba46d51ca5cd2f"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 144,
+      "id": "nh_slytherin_frozen_serpent_fountain",
+      "label": "Đài phun rắn đóng băng",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_frozen_serpent_fountain.png",
+          "hd": true,
+          "source": "decor-assets/hd/18c1fc960da8743ad90b7146.webp",
+          "sha256": "18c1fc960da8743ad90b71463f17d58593bcf58900a5b7ddbf4bacff3e9ca55b"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_frozen_serpent_fountain_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/bee92ebebf86b3172f14f7ef.webp",
+          "sha256": "bee92ebebf86b3172f14f7ef611b81c6c429308dbd9d7bc19c229ec68b7a43d0"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 145,
+      "id": "nh_slytherin_lake_lantern_buoy",
+      "label": "Đèn phao Hồ Đen",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_lake_lantern_buoy.png",
+          "hd": true,
+          "source": "decor-assets/hd/e9c86dfa86cf6dd8ec133b9d.webp",
+          "sha256": "e9c86dfa86cf6dd8ec133b9d63ba10b14536d3c95b5e055bac6d00502ffc3d76"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_lake_lantern_buoy_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/8d87fb7d9b4eb8e6d5b14f5b.webp",
+          "sha256": "8d87fb7d9b4eb8e6d5b14f5b2201c64da940feb7125e4c9abdf19c433462b8c6"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 146,
+      "id": "nh_slytherin_silver_chess_dais",
+      "label": "Bục cờ rắn bạc",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_silver_chess_dais.png",
+          "hd": true,
+          "source": "decor-assets/hd/34a1c8388b0b4ed4f5e6330e.webp",
+          "sha256": "34a1c8388b0b4ed4f5e6330eba35ef7273858f2cd28f9d651e2f5c93814ce58b"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_silver_chess_dais_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b71e83f49f43e61bc796e402.webp",
+          "sha256": "b71e83f49f43e61bc796e402643f102f8e9a42a19ed15840c3f2f1a243a3a283"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 147,
+      "id": "nh_slytherin_serpent_sleigh",
+      "label": "Xe trượt rắn lục bạc",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_serpent_sleigh.png",
+          "hd": true,
+          "source": "decor-assets/hd/5629fb43ba79c15a9cbf5ab3.webp",
+          "sha256": "5629fb43ba79c15a9cbf5ab3b2acf66a06c585368ad0f02995f9f7e8a820063e"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_serpent_sleigh_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/7f8aef3367eefde048a97012.webp",
+          "sha256": "7f8aef3367eefde048a970129b75df634d2a4bbe8c22a0858337e4666aa07295"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 148,
+      "id": "nh_slytherin_holly_obelisk",
+      "label": "Trụ nhựa ruồi lục bạc",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_holly_obelisk.png",
+          "hd": true,
+          "source": "decor-assets/hd/cc254eb50734dfc7cf938518.webp",
+          "sha256": "cc254eb50734dfc7cf9385182877840d9ee8571f592d83debaebfec52083873b"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_holly_obelisk_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/0813fb2aa1fa5cab92566330.webp",
+          "sha256": "0813fb2aa1fa5cab92566330ef8b03d415538562bc0d943fedc1f3e96d580325"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 149,
+      "id": "nh_slytherin_strategy_desk",
+      "label": "Bàn chiến lược mùa tuyết",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_strategy_desk.png",
+          "hd": true,
+          "source": "decor-assets/hd/17a639340508ded2be21d54c.webp",
+          "sha256": "17a639340508ded2be21d54cb16216d2cfb0a727f73d44ab1bb8ccb6c48a569e"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_strategy_desk_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/ea49be943b93cde39df5dd84.webp",
+          "sha256": "ea49be943b93cde39df5dd84f4616d38594ed58cb479b03fa45227271db95b08"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 150,
+      "id": "nh_slytherin_emerald_mirror",
+      "label": "Gương sương giá lục bảo",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_slytherin_emerald_mirror.png",
+          "hd": true,
+          "source": "decor-assets/hd/501b1753455784d6bea237a8.webp",
+          "sha256": "501b1753455784d6bea237a88a294ec2d158873ac7fcc5ed30fd2a8400c8d52d"
+        },
+        {
+          "file": "decor-assets/native/nh_slytherin_emerald_mirror_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/16752e27d1a6c18384f66338.webp",
+          "sha256": "16752e27d1a6c18384f6633884e63eb1cb8401d358341c829d3a2d922af1cbea"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 151,
+      "id": "nh_hufflepuff_badger_cookie_bakery",
+      "label": "Tiệm bánh lửng đón Noel",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery.png",
+          "hd": true,
+          "source": "decor-assets/hd/44b3336a62a006d3273cfa39.webp",
+          "sha256": "44b3336a62a006d3273cfa39ade990f0aa629cf2eeb66cff9008a49ef3ca647a"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_badger_cookie_bakery_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/876ee76b9ecb07f1993a2620.webp",
+          "sha256": "876ee76b9ecb07f1993a2620bd3b5cababced8dee13d4b6f6ed2386f8f3cd333"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 152,
+      "id": "nh_hufflepuff_honeycomb_gift_cart",
+      "label": "Xe quà tổ ong vàng",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart.png",
+          "hd": true,
+          "source": "decor-assets/hd/f9f2fcee630f545591c1ea3c.webp",
+          "sha256": "f9f2fcee630f545591c1ea3cd90cf90681122648fcf94087bef0d9994b0262a3"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_honeycomb_gift_cart_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/0598bea235dfac4fac269cb6.webp",
+          "sha256": "0598bea235dfac4fac269cb6462d934362d1fba30eb54ecdb20887f4b69cf142"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 153,
+      "id": "nh_hufflepuff_badger_log_cottage",
+      "label": "Nhà gỗ lửng mùa đông",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_badger_log_cottage.png",
+          "hd": true,
+          "source": "decor-assets/hd/5b35c174c08a5a9a03e43ae7.webp",
+          "sha256": "5b35c174c08a5a9a03e43ae7962e9f720a49f20e391356dbc39b41a3495a32a9"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_badger_log_cottage_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/851b7e4e39c15dc47950681d.webp",
+          "sha256": "851b7e4e39c15dc47950681d24fad039556a74ac7b26466f98e2baf3c22f7dc8"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 154,
+      "id": "nh_hufflepuff_beehive_cocoa_urn",
+      "label": "Ấm cacao tổ ong",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn.png",
+          "hd": true,
+          "source": "decor-assets/hd/e586ae3c2c0a45e31884ce86.webp",
+          "sha256": "e586ae3c2c0a45e31884ce869b2bec2a7883f24c1a35c8c211664631169ab8d0"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_beehive_cocoa_urn_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/cace8ce56368a7c4d2b70f62.webp",
+          "sha256": "cace8ce56368a7c4d2b70f622fda58684ecdd0c5e9d1756a3bc9efd211f3bae8"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 155,
+      "id": "nh_hufflepuff_knitting_bench",
+      "label": "Ghế len ấm Hufflepuff",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_knitting_bench.png",
+          "hd": true,
+          "source": "decor-assets/hd/f86afc56724fd63b808bbf66.webp",
+          "sha256": "f86afc56724fd63b808bbf66fb65078139a0e46c157f1c58ed776205343f1e98"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_knitting_bench_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/0022c31ee3e3ce182f3399e2.webp",
+          "sha256": "0022c31ee3e3ce182f3399e2d0715ef95ec6f8c85721ee344c83bdcca1a95e76"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 156,
+      "id": "nh_hufflepuff_herb_wheelbarrow",
+      "label": "Xe cút kít thảo dược Noel",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow.png",
+          "hd": true,
+          "source": "decor-assets/hd/b040c6979c97614a6ac002bf.webp",
+          "sha256": "b040c6979c97614a6ac002bf8ad1b413d0537028f0f44201b23878c1df67ae68"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_herb_wheelbarrow_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/c8fda17aa3d280816c05c430.webp",
+          "sha256": "c8fda17aa3d280816c05c43027f22f76a7e6d2afcd5a98d491ca683421831c44"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 157,
+      "id": "nh_hufflepuff_badger_mail_hollow",
+      "label": "Hộp thư hốc cây lửng",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_badger_mail_hollow.png",
+          "hd": true,
+          "source": "decor-assets/hd/d670f97499a778413767def3.webp",
+          "sha256": "d670f97499a778413767def330e5385149706289710fbe42d5ee2971038e72ee"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_badger_mail_hollow_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/e1a68c0400281f2e5652a262.webp",
+          "sha256": "e1a68c0400281f2e5652a262a74bbd04686d6b0fcd7aab278c868757a254d243"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 158,
+      "id": "nh_hufflepuff_sunflower_chimes",
+      "label": "Chuông gió hướng dương băng",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_sunflower_chimes.png",
+          "hd": true,
+          "source": "decor-assets/hd/e2a6b66dacc1aada440bb86c.webp",
+          "sha256": "e2a6b66dacc1aada440bb86ce23e657f03d9ed4115a0d3993881c2be9ce2fc4b"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_sunflower_chimes_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/23429591c824fb8d5d8d74d8.webp",
+          "sha256": "23429591c824fb8d5d8d74d8fac9a54ca4d42dc5fc3f181061b103376bd65cf8"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 159,
+      "id": "nh_hufflepuff_chestnut_stall",
+      "label": "Quầy hạt dẻ mật ong",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_chestnut_stall.png",
+          "hd": true,
+          "source": "decor-assets/hd/63f3fc6c3ecc70b9eed9f548.webp",
+          "sha256": "63f3fc6c3ecc70b9eed9f5489bd45b8a3ab6aece2df1058e1c2a036984b08ae0"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_chestnut_stall_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/647c7b25b465883dad0255c2.webp",
+          "sha256": "647c7b25b465883dad0255c246d1041ceec44f56640b125ae927f19863e5fc8d"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 160,
+      "id": "nh_hufflepuff_badger_picnic",
+      "label": "Góc picnic lửng ngày tuyết",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_hufflepuff_badger_picnic.png",
+          "hd": true,
+          "source": "decor-assets/hd/088eb449f8c681a541cbcdb0.webp",
+          "sha256": "088eb449f8c681a541cbcdb0a9d5f8d022781c63639573e51ed2ab1d8dd73faf"
+        },
+        {
+          "file": "decor-assets/native/nh_hufflepuff_badger_picnic_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/b3c184ed7819c5de7df753cf.webp",
+          "sha256": "b3c184ed7819c5de7df753cf728c8122b63ee5f6e5be839fbcc2861d02f3e700"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 161,
+      "id": "nh_ravenclaw_bronze_astrolabe",
+      "label": "Tinh bàn đồng Ravenclaw",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_bronze_astrolabe.png",
+          "hd": true,
+          "source": "decor-assets/hd/1423291590be75d4f3935835.webp",
+          "sha256": "1423291590be75d4f3935835507bfd48d6de0bf6499ed81f41781e71e7b303ea"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_bronze_astrolabe_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/6763d49d982884e77059aa76.webp",
+          "sha256": "6763d49d982884e77059aa765ff7b78f564c7f2adbac0769418f357405402e99"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 162,
+      "id": "nh_ravenclaw_winter_observatory",
+      "label": "Đài quan sát lam đồng",
+      "footprint": [
+        2,
+        2
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_winter_observatory.png",
+          "hd": true,
+          "source": "decor-assets/hd/779986e8926a6157f359f209.webp",
+          "sha256": "779986e8926a6157f359f209b879a6b478ed4255ac1e8203d66f385efeae9342"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_winter_observatory_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/65a530cc6ad086343ae8324e.webp",
+          "sha256": "65a530cc6ad086343ae8324eb1aa8b57744d29c4af864fd82bbe758147f409ba"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 163,
+      "id": "nh_ravenclaw_eagle_snow_perch",
+      "label": "Đại bàng đồng giữ sách",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_eagle_snow_perch.png",
+          "hd": true,
+          "source": "decor-assets/hd/6bc2cdf51a3fe1d0816cca9d.webp",
+          "sha256": "6bc2cdf51a3fe1d0816cca9d417b33c89700152db4ddf1e6d628e7931292cea1"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_eagle_snow_perch_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2c679e4664515039902dc17f.webp",
+          "sha256": "2c679e4664515039902dc17f479c1f209d6664fd0285c2976e794419d1f13a0a"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 164,
+      "id": "nh_ravenclaw_star_book_lectern",
+      "label": "Giá sách bản đồ sao",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_star_book_lectern.png",
+          "hd": true,
+          "source": "decor-assets/hd/5bba0f07595ff1f509fae426.webp",
+          "sha256": "5bba0f07595ff1f509fae4268d1c3c5ca3ed7af09ed0ba62a23aa667d856b001"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_star_book_lectern_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/dee5c86470ab3ead18516fad.webp",
+          "sha256": "dee5c86470ab3ead18516fad167537fe79470d23809c5558ec115a87836e259d"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 165,
+      "id": "nh_ravenclaw_constellation_arch",
+      "label": "Vòm sao lam đồng",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_constellation_arch.png",
+          "hd": true,
+          "source": "decor-assets/hd/d45c8d2f763c9e9fb1755182.webp",
+          "sha256": "d45c8d2f763c9e9fb1755182c83697016d9343bed1a9d7c91ecd17934b66b8fb"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_constellation_arch_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/2e0ad421818a12339c4270cf.webp",
+          "sha256": "2e0ad421818a12339c4270cf5a428550aa0bba8c9872d8ba0b3346b5d778aca1"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 166,
+      "id": "nh_ravenclaw_riddle_cabinet",
+      "label": "Tủ câu đố đêm đông",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_riddle_cabinet.png",
+          "hd": true,
+          "source": "decor-assets/hd/8109f7155338f325a147af9c.webp",
+          "sha256": "8109f7155338f325a147af9c433590dc3a157e6493c3696b262f020192444990"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_riddle_cabinet_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/4a6e67022fc240beb39541f1.webp",
+          "sha256": "4a6e67022fc240beb39541f12db9ad7556bf9f07742a92f7ca4f27f08419ea13"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 167,
+      "id": "nh_ravenclaw_eagle_courier_post",
+      "label": "Trạm thư đại bàng Noel",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_eagle_courier_post.png",
+          "hd": true,
+          "source": "decor-assets/hd/c8db0a9f69452f911bc6a633.webp",
+          "sha256": "c8db0a9f69452f911bc6a6334aa2173ec86dc13fa693f263f8d7b08fce52eb01"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_eagle_courier_post_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/84382dadc3d404412e0dcdb2.webp",
+          "sha256": "84382dadc3d404412e0dcdb2a7138060fedea081c39bd042599a741b993b78d8"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 168,
+      "id": "nh_ravenclaw_telescope_sled",
+      "label": "Xe kính thiên văn mùa tuyết",
+      "footprint": [
+        3,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_telescope_sled.png",
+          "hd": true,
+          "source": "decor-assets/hd/cda5e78301c9a983fe8caf2d.webp",
+          "sha256": "cda5e78301c9a983fe8caf2ddd3feac500806344e8306cb876efd5db5ac32129"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_telescope_sled_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/dda6452430d3d25a3899c63c.webp",
+          "sha256": "dda6452430d3d25a3899c63cd430617ebde98ba988d688b2b172e4e53dca8ddb"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 169,
+      "id": "nh_ravenclaw_eagle_music_harp",
+      "label": "Đàn hạc cánh đại bàng",
+      "footprint": [
+        2,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_eagle_music_harp.png",
+          "hd": true,
+          "source": "decor-assets/hd/976096e015f78d1735a49ab6.webp",
+          "sha256": "976096e015f78d1735a49ab659c18514c353eac4f536cdc3372a4868847a2dfe"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_eagle_music_harp_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/80fd3b6e248251f3f6ffc718.webp",
+          "sha256": "80fd3b6e248251f3f6ffc7187bbde38457b818c9accd22e9353dc29cd3acddab"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    },
+    {
+      "index": 170,
+      "id": "nh_ravenclaw_celestial_globe",
+      "label": "Quả cầu thiên văn lam đồng",
+      "footprint": [
+        1,
+        1
+      ],
+      "views": [
+        {
+          "file": "decor-assets/native/nh_ravenclaw_celestial_globe.png",
+          "hd": true,
+          "source": "decor-assets/hd/89ec90094048f410f984282f.webp",
+          "sha256": "89ec90094048f410f984282f14a2f724ebc04b0dbe554faa80cfc3a28d345405"
+        },
+        {
+          "file": "decor-assets/native/nh_ravenclaw_celestial_globe_right.png",
+          "hd": true,
+          "source": "decor-assets/hd/5dc632ec73eac0622db5b08b.webp",
+          "sha256": "5dc632ec73eac0622db5b08bbd27ee701d552ac230e431648c53c22d1354703d"
+        }
+      ],
+      "camera": "retained-reviewed",
+      "final": {
+        "status": "retained-reviewed",
+        "hd": "genuine-master-HD",
+        "replacement": null,
+        "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+      },
+      "initialCamera": "visual-reviewed-HD; prior-native-axis-records-to-revalidate-at-HD"
+    }
+  ]
+}

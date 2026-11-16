@@ -1,0 +1,1811 @@
+[
+  {
+    "id": "decor_pumpkin_lantern",
+    "kind": "lamp",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/decor_pumpkin_lantern.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "decor_mandrake_planter",
+    "kind": "round",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/decor_mandrake_planter.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_hagrid_umbrella",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_hagrid_umbrella.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            234,
+            341
+          ],
+          [
+            318,
+            383
+          ],
+          [
+            150,
+            467
+          ],
+          [
+            66,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            150,
+            341
+          ],
+          [
+            318,
+            425
+          ],
+          [
+            234,
+            467
+          ],
+          [
+            66,
+            383
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_sorting_hat",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_sorting_hat.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_goblet_fire",
+    "kind": "goblet",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_goblet_fire.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            390.5
+          ],
+          [
+            268.5,
+            428.75
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            115.5,
+            428.75
+          ]
+        ],
+        "axisColumn": [
+          76.5,
+          38.25
+        ],
+        "axisRow": [
+          -76.5,
+          38.25
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            390.5
+          ],
+          [
+            268.5,
+            428.75
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            115.5,
+            428.75
+          ]
+        ],
+        "axisColumn": [
+          76.5,
+          38.25
+        ],
+        "axisRow": [
+          -76.5,
+          38.25
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_slytherin_locket",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_slytherin_locket.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_ravenclaw_diadem",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_ravenclaw_diadem.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_department_veil",
+    "kind": "arch",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_department_veil.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          76,
+          38
+        ],
+        "axisRow": [
+          -76,
+          38
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          76,
+          38
+        ],
+        "axisRow": [
+          -76,
+          38
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_monster_book",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_monster_book.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_deathday_cake",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_deathday_cake.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_marauders_map",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_marauders_map.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hw_wooden_black_cat",
+    "kind": "organic",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/hw_wooden_black_cat.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hw_halloween_sign",
+    "kind": "lamp",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/hw_halloween_sign.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hw_skull_lantern",
+    "kind": "tripod",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/hw_skull_lantern.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hw_halloween_potion_table",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/hw_halloween_potion_table.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ev_kitchen_corner",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/ev_kitchen_corner.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_xmas_butterbeer",
+    "kind": "table",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_xmas_butterbeer.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_xmas_honeydukes",
+    "kind": "cabinet",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_xmas_honeydukes.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            225.57037037037037,
+            366.2888888888889
+          ],
+          [
+            292.7111111111111,
+            399.85925925925926
+          ],
+          [
+            158.42962962962963,
+            467
+          ],
+          [
+            91.28888888888889,
+            433.42962962962963
+          ]
+        ],
+        "axisColumn": [
+          67.14074074074074,
+          33.57037037037037
+        ],
+        "axisRow": [
+          -67.14074074074074,
+          33.57037037037037
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            158.42962962962963,
+            366.2888888888889
+          ],
+          [
+            292.7111111111111,
+            433.42962962962963
+          ],
+          [
+            225.57037037037037,
+            467
+          ],
+          [
+            91.28888888888889,
+            399.85925925925926
+          ]
+        ],
+        "axisColumn": [
+          67.14074074074074,
+          33.57037037037037
+        ],
+        "axisRow": [
+          -67.14074074074074,
+          33.57037037037037
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_xmas_weasley_tree",
+    "kind": "organic",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/sp_xmas_weasley_tree.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          76,
+          38
+        ],
+        "axisRow": [
+          -76,
+          38
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          76,
+          38
+        ],
+        "axisRow": [
+          -76,
+          38
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-23",
+    "kind": "bridge",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/earned_decoration_decoration-23.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earned_decoration_decoration-83",
+    "kind": "hexgazebo",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/earned_decoration_decoration-83.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_hippogriff",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/keepsake_hippogriff.png",
+    "width": 384,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "keepsake_thestral",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/keepsake_thestral.png",
+    "width": 384,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            401
+          ],
+          [
+            258,
+            434
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            126,
+            434
+          ]
+        ],
+        "axisColumn": [
+          66,
+          33
+        ],
+        "axisRow": [
+          -66,
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_dragon",
+    "kind": "round",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/habitat_dragon.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_kneazle",
+    "kind": "plinth",
+    "guide": "garden-v05/isometric-refinements/coordinate-locks/solid/habitat_kneazle.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            395
+          ],
+          [
+            264,
+            431
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            120,
+            431
+          ]
+        ],
+        "axisColumn": [
+          72,
+          36
+        ],
+        "axisRow": [
+          -72,
+          36
+        ]
+      }
+    ]
+  }
+]
