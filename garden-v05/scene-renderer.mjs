@@ -1190,7 +1190,8 @@ export async function createGarden(canvas, options = {}) {
   function terrainCache(withGrid, withForest) {
     const key = `${stageKey(currentStage)}:${activeWeather}:${withGrid ? 'grid' : 'plain'}:${withForest ? 'forest' : 'bare'}`;
     if (terrainCaches.has(key)) return (shownTerrain = terrainCaches.get(key));
-    const stored = `${key}|${activeSnowDepth}|${winterArt}|${resolution.layer()}|${terrainLayoutKey}`;
+    // The stored ground is the finished one (winter art in when winter wants it), so it is found before that art arrives.
+    const stored = `${key}|${activeSnowDepth}|${winterWanted}|${resolution.layer()}|${terrainLayoutKey}`;
     if (!groundStoreOff && !groundLookups.has(stored)) {
       groundLookups.set(stored, 'pending');
       groundStoreReady.then((store) => (store ? store.load(stored) : null)).then((bitmap) => groundLookups.set(stored, bitmap || 'miss'), () => groundLookups.set(stored, 'miss'));
