@@ -55,7 +55,7 @@ export function homeChoices(land,spots,{built=new Set(),pastureOpen=built.has('e
 /** «Dời chuồng» dialog: one cream cell per spot; picking one calls move(target). DOM only, opened from mobile-game. */
 export function openCreatureHomes({el,iconButton,label,labelOf,groups,current,move}){
  const close=()=>dialog.close();
- const dialog=el('dialog',{class:'owl-letter creature-homes','aria-labelledby':'creatureHomesTitle'},[
+ const dialog=el('dialog',{id:'creatureHomes',class:'owl-letter creature-homes','aria-labelledby':'creatureHomesTitle'},[
   el('div',{class:'popover-heading'},[el('h2',{id:'creatureHomesTitle',text:`Dời chuồng · ${label}`}),iconButton('close','Đóng',close,{class:'gp-close'})]),
   ...groups.map(g=>el('section',{class:'home-group'+(g.name==='Bãi chăn'?' is-pasture':'')},[el('h3',{text:g.name}),el('div',{class:'home-cells'},g.cells.map(c=>{
    const here=c.spot===current;
