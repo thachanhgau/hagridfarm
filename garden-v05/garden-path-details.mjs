@@ -41,18 +41,27 @@ function point(map, col, row) {
 // lands on whole logical pixels, so at a whole density under a plain scale it is the same pixels every time: draw it
 // once and copy it. Other contexts (tests, a fractional density, the world-anchored bed pattern) fill directly.
 const stampSprites = new Map();
-function stampSprite(ctx, radius, color, d, fine) {
+// A whole or half density (1, 1.5, 2): the stamp's device pixels depend only on where px·d falls inside a device pixel
+// (fx, fy: 0 or .5), so one sprite per offset is the same pixels as stampRows (owner 16/11/2026: at 1.5 the ground
+// fell back to ~1M fillRects, 22 s in Chrome). Returns the sprite and its device position, or null.
+function stampSprite(ctx, px, py, radius, color, d, fine) {
   const t = ctx.getTransform?.(), doc = ctx.canvas?.ownerDocument;
-  if (typeof color !== 'string' || !doc || !Number.isInteger(d) || !t || t.a !== d || t.d !== d || t.b || t.c || !Number.isInteger(t.e) || !Number.isInteger(t.f)) return null;
-  const key = `${radius}|${color}|${d}|${fine}`;
+  if (typeof color !== 'string' || !doc || !Number.isInteger(d * 2) || !t || t.a !== d || t.d !== d || t.b || t.c || !Number.isInteger(t.e) || !Number.isInteger(t.f)) return null;
+  const halfRows = Math.floor(radius / 2), X = px * d, Y = py * d, fx = X - Math.floor(X), fy = Y - Math.floor(Y);
+  // The sprite's own stamp centre is a whole logical pixel with the same offset, so its arithmetic is the world's.
+  let sx = radius, sy = halfRows;
+  while (sx * d - Math.floor(sx * d) !== fx) sx += 1;
+  while (sy * d - Math.floor(sy * d) !== fy) sy += 1;
+  const left = Math.floor(sx * d), top = Math.floor(sy * d);
+  const key = `${radius}|${color}|${d}|${fine}|${fx}|${fy}`;
   if (!stampSprites.has(key)) {
-    const halfRows = Math.floor(radius / 2), sprite = doc.createElement('canvas');
-    sprite.width = 2 * radius * d; sprite.height = (2 * halfRows + 2) * d;
+    const sprite = doc.createElement('canvas');
+    sprite.width = Math.ceil((sx + radius) * d) + 2; sprite.height = Math.ceil((sy + halfRows + 2) * d) + 2;
     const brush = sprite.getContext('2d'); brush.setTransform(d, 0, 0, d, 0, 0);
-    stampRows(brush, radius, halfRows, radius, color, d, fine);
+    stampRows(brush, sx, sy, radius, color, d, fine);
     stampSprites.set(key, sprite);
   }
-  return stampSprites.get(key);
+  return {sprite: stampSprites.get(key), x: Math.floor(X) - left + t.e, y: Math.floor(Y) - top + t.f};
 }
 const stampShapes = new Map();
 function stampShape(radius, d, fine) {
@@ -74,16 +83,15 @@ function stampRows(ctx, px, py, radius, color, d, fine) {
   }
 }
 function pathStamp(ctx, x, y, radius, color, d = 1, fine = false) {
-  const px = Math.round(x), py = Math.round(y), sprite = stampSprite(ctx, radius, color, d, fine);
-  if (!sprite) {
+  const px = Math.round(x), py = Math.round(y), stamp = stampSprite(ctx, px, py, radius, color, d, fine);
+  if (!stamp) {
     // The bed pattern is anchored to the world, so it cannot be copied: one fill of the stamp's outline instead.
     const shape = typeof color !== 'string' && stampShape(radius, d, fine);
     if (!shape || typeof ctx.fill !== 'function') return stampRows(ctx, px, py, radius, color, d, fine);
     const placed = new Path2D(); placed.addPath(shape, new DOMMatrix([1, 0, 0, 1, px, py]));
     ctx.fillStyle = color; return ctx.fill(placed);
   }
-  const halfRows = Math.floor(radius / 2);
-  ctx.drawImage(sprite, px - radius, py - halfRows, 2 * radius, 2 * halfRows + 2);
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(stamp.sprite, stamp.x, stamp.y); ctx.restore();
 }
 
 // HD bed (density > 1): the 1× look (olive dashes in rows on the dark bed) at device pixels: 2 px dashes on a 4 px
