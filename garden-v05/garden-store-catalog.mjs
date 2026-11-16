@@ -848,7 +848,7 @@ export const STORE_CATALOG=Object.freeze([
   }
 ].map(Object.freeze).concat(PREMIUM_PRODUCTS,SPECIAL_PRODUCTS,FESTIVAL_PRODUCTS,EVENT_PRODUCTS).map(storePrice));
 // A seasonal item (`season`: festival id) is on sale only while that festival runs, at any level (server garden-wallet-catalog inSeason).
-// Noel pieces (season 'xmas'), the 25.0 S7 set from its level: owner 15/11/2026 «đưa toàn bộ đồ noel lên store lễ hội» —
+// Noel pieces (season 'xmas'), any level too (owner 16/11/2026 «mở giới hạn cho ai cũng mua được»): owner 15/11/2026 «đưa toàn bộ đồ noel lên store lễ hội» —
 // on sale with the Noel hearth until 31/12: 2026 from 06/11, later years from 01/12 (server garden-xmas-core inXmasSeason).
 const xmasOpens=dayKey=>dayKey.startsWith('2026-')?'2026-11-06':`${dayKey.slice(0,4)}-12-01`;
 export const inSeason=(item,dayKey=vnDayKey(),nowMs=Date.now())=>item.season==='xmas'?dayKey>=xmasOpens(dayKey):!item.season||festivalStatus(dayKey,'',nowMs).active?.id===item.season;
@@ -857,11 +857,11 @@ export const seasonOpens=(item,dayKey=vnDayKey())=>{if(item.season==='xmas')retu
 // Why an item cannot be bought yet ('' when it can): out of season (seasonal items ignore the level), else below its level.
 export const storeLock=(item,level,dayKey=vnDayKey())=>{
  if(item.season&&!inSeason(item,dayKey)){const d=seasonOpens(item,dayKey);return d?`Mở bán ${d.slice(8)}/${d.slice(5,7)}`:'Ngoài mùa lễ hội';}
- if(item.season&&item.season!=='xmas')return '';
+ if(item.season)return '';
  if(item.level<=level)return '';
  return item.level>TAN_SUC_LEVEL?`Tận Sức ${item.level-TAN_SUC_LEVEL}`:`Cấp ${item.level}`;
 };
 // Level-500 roadmap §12: below level 100 nothing from bậc Tận Sức shows, not even as a locked card.
 // Event gifts never show in the store; festival pieces show only while their festival runs (the «Lễ hội» tab hides when empty).
-export const storeVisible=(item,level,dayKey=vnDayKey())=>!item.reward&&inSeason(item,dayKey)&&(item.level<=TAN_SUC_LEVEL||level>=TAN_SUC_LEVEL);
-export const unlockedCatalog=(level,dayKey=vnDayKey(),nowMs=Date.now())=>STORE_CATALOG.filter(item=>item.level<=level&&inSeason(item,dayKey,nowMs));
+export const storeVisible=(item,level,dayKey=vnDayKey())=>!item.reward&&inSeason(item,dayKey)&&(item.season||item.level<=TAN_SUC_LEVEL||level>=TAN_SUC_LEVEL);
+export const unlockedCatalog=(level,dayKey=vnDayKey(),nowMs=Date.now())=>STORE_CATALOG.filter(item=>(item.season||item.level<=level)&&inSeason(item,dayKey,nowMs));

@@ -140,6 +140,8 @@
  background:radial-gradient(circle at 50% 40%,#2a4637 0%,#11221a 100%);
  border-color:#d4af3780;
 }
+/* One fixed cell: a tall canvas (Noel nx_ art is 96×224) must not stretch the auto row and push its art below the slot. */
+.visual-slot.is-decor{grid-template:100%/100%}
 .visual-decor-img,.visual-prop-img{
  width:84%;
  height:84%;

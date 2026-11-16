@@ -108,7 +108,7 @@ test('Halloween festival pieces: 30 distinct two-view sprites, existing five pri
   }
 });
 
-test('25.0 S7 Noel set: bậc Tận Sức only, sold with the Noel hearth (2026 from 06/11, later years 01/12) at the §3 price', async () => {
+test('25.0 S7 Noel set: any level (owner 16/11/2026), sold with the Noel hearth (2026 from 06/11, later years 01/12) at the §3 price', async () => {
   const {STORE_CATALOG, storeLock} = await import('./garden-store-catalog.mjs');
   const noel = STORE_CATALOG.filter(item => item.season === 'xmas' && item.collection === 'special');
   assert.deepEqual(noel.map(item => [item.id, item.level, item.price]), [
@@ -120,10 +120,10 @@ test('25.0 S7 Noel set: bậc Tận Sức only, sold with the Noel hearth (2026 
   assert.equal(storeLock(firebolt, 500, '2027-11-30'), 'Mở bán 01/12');
   assert.equal(storeLock(firebolt, 500, '2027-12-01'), '');
   assert.equal(storeLock(firebolt, 500, '2026-12-31'), '');
-  assert.equal(storeLock(firebolt, 119, '2026-12-05'), 'Tận Sức 20');
+  assert.equal(storeLock(firebolt, 1, '2026-12-05'), '');
   assert.equal(storeLock(firebolt, 500, '2027-01-01'), 'Mở bán 01/12');
   assert.equal(unlockedCatalog(500, '2026-12-10').filter(item => item.season === 'xmas' && item.collection === 'special').length, 6);
-  assert.equal(unlockedCatalog(150, '2026-12-10').filter(item => item.season === 'xmas' && item.collection === 'special').length, 1);
+  assert.equal(unlockedCatalog(1, '2026-12-10').filter(item => item.season === 'xmas' && item.collection === 'special').length, 6);
   assert.equal(unlockedCatalog(500, '2027-01-02').filter(item => item.season === 'xmas' && item.collection === 'special').length, 0);
 });
 
