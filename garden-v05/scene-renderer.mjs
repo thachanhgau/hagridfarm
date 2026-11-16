@@ -18,6 +18,7 @@ import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=
 import {drawGardenPathDetails} from './garden-path-details.mjs?v=26.1';
 import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=26.1';
 import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=26.1';
+import {groundStore} from './ground-store.mjs?v=26.1';
 import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=26.1';
 import {drawV24Ground} from './garden-v24-scenery.mjs?v=26.1';
 import {WATER_CROPS,WATERLINE_LIFT,isWaterPlot,drawWaterBed} from './water-crop-art.mjs?v=26.1';
@@ -964,7 +965,7 @@ export async function createGarden(canvas, options = {}) {
   publishBackdrop();
   function prepareWeather(weather,depth=1,winter=false){
     if(winter)for(const file of kit.WINTER_FILES)imageFor(file);
-    const art=winter&&kit.WINTER_FILES.every(file=>images.has(file));
+    const art=winter&&kit.WINTER_FILES.every(file=>images.has(file));winterWanted=winter;
     if(weather===activeWeather&&depth===activeSnowDepth&&art===winterArt)return;
     activeWeather=weather;activeSnowDepth=depth;winterArt=art;seasonalImages.clear();terrainCaches.clear();
     // Bound memory to the current season. Never retain four world-size caches.
@@ -1137,11 +1138,34 @@ export async function createGarden(canvas, options = {}) {
     return cachedCanvas;
   }
 
+  // A ground built once is stored on the device (ground-store.mjs) and later visits decode it off the main thread. While
+  // that lookup runs the previous ground stays on screen (on entry: the plain backdrop fill for a few frames).
+  // No IndexedDB (tests, old browsers) or no runtime SOURCE.json (the source demos): build as before, never wait.
+  let groundStoreOff = typeof indexedDB === 'undefined' || typeof createImageBitmap !== 'function';
+  const groundStoreReady = groundStoreOff ? Promise.resolve(null) : fetch(new URL('./SOURCE.json', import.meta.url), {cache: 'no-cache'})
+    .then((r) => (r.ok ? r.json() : null)).then((source) => groundStore(source?.commit)).catch(() => null)
+    .then((store) => { if (!store) groundStoreOff = true; return store; });
+  const groundLookups = new Map();
+  let shownTerrain = null, winterWanted = false;
   function terrainCache(withGrid, withForest) {
     const key = `${stageKey(currentStage)}:${activeWeather}:${withGrid ? 'grid' : 'plain'}:${withForest ? 'forest' : 'bare'}`;
+    if (terrainCaches.has(key)) return (shownTerrain = terrainCaches.get(key));
+    const stored = `${key}|${activeSnowDepth}|${winterArt}|${resolution.layer()}|${terrainLayoutKey}`;
+    if (!groundStoreOff && !groundLookups.has(stored)) {
+      groundLookups.set(stored, 'pending');
+      groundStoreReady.then((store) => (store ? store.load(stored) : null)).then((bitmap) => groundLookups.set(stored, bitmap || 'miss'), () => groundLookups.set(stored, 'miss'));
+    }
+    const found = groundStoreOff ? 'miss' : groundLookups.get(stored);
+    if (found === 'pending') return shownTerrain;
     // One cached ground at a time: its memory is reserved against the HD budget.
-    if (!terrainCaches.has(key)) { terrainCaches.clear(); terrainCaches.set(key, buildTerrainCache(withGrid, withForest, currentStage)); }
-    return terrainCaches.get(key);
+    terrainCaches.clear();
+    if (found !== 'miss') { groundLookups.delete(stored); terrainCaches.set(key, found); return (shownTerrain = found); }
+    groundLookups.delete(stored);
+    const built = buildTerrainCache(withGrid, withForest, currentStage);
+    terrainCaches.set(key, built);
+    // Store only a finished ground: every HD image it asked for is in, and the winter art when winter wants it.
+    if (!groundStoreOff && !resolution.layerPending() && (!winterWanted || winterArt)) groundStoreReady.then((store) => store?.save(stored, built));
+    return (shownTerrain = built);
   }
 
   function drawAsset(asset, x, y, breeze = null, actorMotion = null, flipX = false) {
@@ -1841,7 +1865,7 @@ export async function createGarden(canvas, options = {}) {
     context.fillStyle = '#142620';
     context.fillRect(0, 0, map.width, map.height);
     const terrain = terrainCache(grid, propsVisible);
-    context.drawImage(terrain, 0, 0, map.width, map.height);
+    if (terrain) context.drawImage(terrain, 0, 0, map.width, map.height);
     drawPlotSoil(state, logicalNow, grid);
     drawV24Ground(context,{weatherMode,clock,iso,stage:currentStage,map});
     const hasEdge = currentStage.id === 8, builtIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id?.id : id)));
