@@ -68,7 +68,7 @@ test('Bờ hồ: the built pond and its beds stand inside the pond land, clear o
     }
     for (const bed of beds) assert.equal(rectsOverlap(bed, pond), false);
   }
-  assert.deepEqual(pondFootprint(['pond_1', 'pond_2', 'pond_3']), [9, 6]);
+  assert.deepEqual(pondFootprint(['pond_1', 'pond_2', 'pond_3']), [11, 8]);
   assert.deepEqual(defaultDecorFootprint('scene:pond'), [3, 2]); // the decorative pond keeps its size and spot
 });
 

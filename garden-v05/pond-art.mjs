@@ -15,9 +15,9 @@ export const POND_ART = Object.freeze({
 // POND_SCENERY: pond tiers and the shore bed. footprint [long, short] runs its long side along the rows (default view),
 // pivot = decoration foot (decorFootprintRect), groundCentre = the footprint's centre in the image. Mirror for the right view.
 export const POND_SCENERY = Object.freeze({
- "pond-1": {"file":"environment/pond/pond-1.png","footprint":[9,6],"width":480,"height":298,"pivotX":240,"pivotY":288,"groundCentre":{"x":240,"y":176},"footLift":3.5,"bounds":{"x":1,"y":16,"w":478,"h":281}},
- "pond-2": {"file":"environment/pond/pond-2.png","footprint":[9,6],"width":480,"height":298,"pivotX":240,"pivotY":288,"groundCentre":{"x":240,"y":176},"footLift":3.5,"bounds":{"x":1,"y":6,"w":478,"h":291}},
- "pond-3": {"file":"environment/pond/pond-3.png","footprint":[9,6],"width":480,"height":298,"pivotX":240,"pivotY":288,"groundCentre":{"x":240,"y":176},"footLift":3.5,"bounds":{"x":2,"y":2,"w":474,"h":294}},
+ "pond-1": {"file":"environment/pond/pond-1.png","footprint":[11,8],"width":608,"height":486,"pivotX":304,"pivotY":476,"groundCentre":{"x":304,"y":332},"footLift":4.5,"bounds":{"x":7,"y":126,"w":594,"h":357}},
+ "pond-2": {"file":"environment/pond/pond-2.png","footprint":[11,8],"width":608,"height":486,"pivotX":304,"pivotY":476,"groundCentre":{"x":304,"y":332},"footLift":4.5,"bounds":{"x":7,"y":126,"w":594,"h":357}},
+ "pond-3": {"file":"environment/pond/pond-3.png","footprint":[11,8],"width":608,"height":486,"pivotX":304,"pivotY":476,"groundCentre":{"x":304,"y":332},"footLift":4.5,"bounds":{"x":7,"y":126,"w":594,"h":357}},
  "pond-bed": {"file":"environment/pond/pond-bed.png","footprint":[3,1],"width":128,"height":88,"pivotX":64,"pivotY":70,"groundCentre":{"x":64,"y":54},"footLift":0.5,"bounds":{"x":2,"y":22,"w":124,"h":64}},
  "pond-nook": {"file":"environment/pond/pond-nook.png","footprint":[3,3],"width":224,"height":248,"pivotX":112,"pivotY":230,"groundCentre":{"x":112,"y":198},"footLift":1,"bounds":{"x":2,"y":10,"w":220,"h":236}},
 });

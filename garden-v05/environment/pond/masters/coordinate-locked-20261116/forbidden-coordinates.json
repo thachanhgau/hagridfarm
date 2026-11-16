@@ -1,0 +1,58 @@
+{
+  "footprint": [
+    11,
+    8
+  ],
+  "width": 608,
+  "height": 486,
+  "pivot": [
+    304,
+    476
+  ],
+  "groundCentre": [
+    304,
+    332
+  ],
+  "corners": [
+    [
+      352,
+      180
+    ],
+    [
+      608,
+      308
+    ],
+    [
+      256,
+      484
+    ],
+    [
+      0,
+      356
+    ]
+  ],
+  "column": [
+    32,
+    16
+  ],
+  "row": [
+    -32,
+    16
+  ],
+  "vertical": [
+    0,
+    -1
+  ],
+  "generationCanvas": [
+    1536,
+    1024
+  ],
+  "nativeToGeneration": {
+    "scale": 2,
+    "offset": [
+      160,
+      26
+    ]
+  },
+  "water": "Open dark centre for future creatures; tall dense trees only on back/side banks; front bank low."
+}

@@ -18,10 +18,11 @@ test('expansion winter artwork retains matching canvases, native pixel scale, pa
   const bytes=await read(asset.file);assert.equal(hash(bytes),asset.sha256);
   const {data,info}=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true});
   assert.deepEqual([info.width,info.height],[asset.width,asset.height]);
+  if(asset.pixelGrid===1){const {coordinatePondPixels}=await import('./build-coordinate-pond.mjs');assert.ok(data.equals(await coordinatePondPixels(asset.file.includes('/winter/'))),'new pond uses verified 1x master export');}
   for(let y=0;y<info.height;y++)for(let x=0;x<info.width;x++){
    const i=(y*info.width+x)*4,a=data[i+3];assert.ok(a===0||a===255,'soft alpha');
    if(a)assert.ok(palette.has((data[i]<<16)|(data[i+1]<<8)|data[i+2]),'off-palette');
-   const j=((y-y%2)*info.width+x-x%2)*4;assert.ok(data.subarray(i,i+4).equals(data.subarray(j,j+4)),'inconsistent pixel scale');
+   const j=((y-y%2)*info.width+x-x%2)*4;if(asset.pixelGrid!==1)assert.ok(data.subarray(i,i+4).equals(data.subarray(j,j+4)),'inconsistent pixel scale');
   }
  }
  for(const [base,winter]of Object.entries(WINTER_ART)){

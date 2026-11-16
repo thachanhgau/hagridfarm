@@ -1,0 +1,15 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-16",
+  "normal": {
+    "file": "forbidden-normal-v2.png",
+    "prompt": "Forbidden Black Lake, ancient and dark, dense old oak and pine woodland and brambles on the back/side banks; at least 70 percent open almost-black indigo water for future creatures. 11x8 ground guide, vectors (32,16),(-32,16),(0,-1), native608x486 pivot304,476. Correct the first draft's symmetric diamond into the guide's asymmetric parallelogram; keep forest, roots, low front bank, small abandoned landing and fallen log. Crisp HD pixel clusters, original game palette, upper-left light, true transparency; no painted fish, monsters, text or snow.",
+    "inputs": ["forbidden-guide.png", "first Forbidden Lake draft retained in primary resource recovery", "prior source pond-3.png at cd14f200", "owner's winter garden screenshot e64c8b77"]
+  },
+  "winter": {
+    "file": "forbidden-winter.png",
+    "prompt": "Winter edit of the exact selected normal Forbidden Lake: same canvas, camera, shoreline, trees, roots, rocks, landing and log. Snow caps on existing canopies, roots and stones, some evergreen branches visible, pale-blue icy rim only. At least75 percent of current centre stays open dark indigo water. Crisp HD pixel art, original palette plus snow white; no creatures, fish, fog, extra objects or painted snowflakes, transparent background.",
+    "inputs": ["forbidden-normal-v2.png"]
+  },
+  "export": "See export.json for actual hashes, shared crop and uniform placement. Prompt coordinates are intent, not numerical proof; observed local plank measurements and rendered garden review are reported separately."
+}

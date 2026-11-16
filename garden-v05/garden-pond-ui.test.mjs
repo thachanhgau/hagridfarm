@@ -47,7 +47,7 @@ test('view helpers: lots, beds, water crops by level, head actions', () => {
  assert.equal(P.pondActions(pond({cast: {today: true}}), NOW).castOpen, false);
  assert.deepEqual([P.pondTier(['plot_1']), P.pondTier(['pond_1']), P.pondTier(['pond_1', 'pond_2'])], [0, 1, 2]);
  assert.deepEqual([1, 2, 3].map(P.tierLabel), ['Ao cá', 'Hồ rong', 'Hồ sâu']);
- assert.deepEqual([1, 2, 3].map(P.tierScale), [3, 3, 3]);
+ assert.deepEqual([1, 2, 3].map(P.tierScale), [3.8, 3.8, 3.8]);
 });
 
 test('fishing bar: the server triangle wave, bands and result labels', () => {
@@ -115,7 +115,7 @@ test('tier 0 at level 130+: «Đào ao» is the pond_1 build with its cost', () 
 
 test('art contract: scenery sizes, guarded scene files and pixel icon fallbacks', () => {
  assert.deepEqual(Object.values(P.POND_SCENERY).map(s => [s.width, s.height, s.pivotX, s.pivotY, ...s.footprint]),
-  [[480, 298, 240, 288, 9, 6], [480, 298, 240, 288, 9, 6], [480, 298, 240, 288, 9, 6], [128, 88, 64, 70, 3, 1], [224, 248, 112, 230, 3, 3]]);
+  [[608, 486, 304, 476, 11, 8], [608, 486, 304, 476, 11, 8], [608, 486, 304, 476, 11, 8], [128, 88, 64, 70, 3, 1], [224, 248, 112, 230, 3, 3]]);
  for (const tier of [1, 2, 3]) assert.deepEqual(P.POND_SCENERY[`pond-${tier}`].footprint, P.tierFootprint(tier));
  const manifest = JSON.parse(fs.readFileSync(new URL('runtime-webp-manifest.json', import.meta.url)));
  const shipped = new Set(manifest.images.map(i => i.source));
@@ -149,4 +149,19 @@ test('orchard hotbar hides irrelevant seed picking and keeps explicit cancel and
  ui.render({orchard:{...orchard,trees:[null,...orchard.trees.slice(1)]},now:NOW});
  assert.equal(byClass(dock,'pond-pick').length,1);byClass(dock,'pond-lot')[0].click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'plant',spot:0,sapling:'apple'});
  ui.render({orchard:{...orchard,trees:orchard.trees.map(t=>({...t,ripe:true}))},now:NOW});byId(dock,'orchardHarvest').click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'harvest'});
+});
+
+test('Forbidden Lake is larger, stays on shore land, and clears beds, nook and its approach', async()=>{
+ const {pondHome,pondFootprint,pondBedRects,POND_NOOK}=await import('./default-decor.mjs'),{decorFootprintRect}=await import('./decor-runtime.mjs'),{POND_LAND:L}=await import('./garden-growth.mjs');
+ const disjoint=(a,b)=>a.c1<=b.c0||b.c1<=a.c0||a.r1<=b.r0||b.r1<=a.r0;
+ let first;
+ for(const built of [['pond_1'],['pond_1','pond_2'],['pond_1','pond_2','pond_3']]){
+  const size=pondFootprint(built),at=pondHome(null,built),rect=decorFootprintRect(...at,size,'right');
+  assert.deepEqual(size,[11,8]);assert.ok(size[0]*size[1]>=54*1.6,'at least 60% more ground');
+  assert.ok(rect.c0>=L.col&&rect.c1<=L.right&&rect.r0>=L.rowTop&&rect.r1<=L.rowBottom);
+  assert.equal((rect.c0+rect.c1)/2,20.5,'approach remains centred');assert.ok(L.rowBottom-rect.r1>=3,'front path stays clear');
+  assert.ok(disjoint(rect,decorFootprintRect(...POND_NOOK.at,POND_NOOK.footprint)),'nook must clear enlarged shore');
+  for(const b of pondBedRects(at,built,10))assert.ok(disjoint(rect,b),'paddies must stay outside lake');
+  if(first)assert.deepEqual(rect,first,'upgrading does not move the lake');first=rect;
+ }
 });

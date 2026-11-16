@@ -3,6 +3,7 @@
 // Usage: node build-pond-art.mjs
 import fs from 'node:fs/promises';import path from 'node:path';import {fileURLToPath} from 'node:url';import {createRequire} from 'node:module';
 import {SPRITE_PALETTE} from './palette.mjs';
+import {coordinatePondPixels} from './build-coordinate-pond.mjs';
 const require=createRequire(import.meta.url),sharp=require(process.env.SHARP_MODULE||'/Users/thachanh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
 const root=path.dirname(fileURLToPath(import.meta.url));
 
@@ -16,9 +17,9 @@ function spec(id,long,short,headroom,masterScale){
  return {id,file:`environment/pond/${id}.png`,master:`environment/pond/masters/${id}.png`,footprint:[long,short],width,height,pivotX:groundCentre.x,pivotY:groundCentre.y+32*lift,groundCentre,footLift:lift,masterScale};
 }
 // 08/11 owner: ponds bigger than a 3×3 plot, on their own shore land (Bờ hồ, cols 33.5–45.5 × rows 25.5–36.5).
-// Then «hồ cái nào cũng phải to»: every tier 9×6, the tiers differ in look only.
+// Owner 16/11: Forbidden Lake expands every tier to 11×8; dense rear woodland, open dark water for future creatures.
 // «Góc nghỉ» (owner 08/11 «khu vực giữa trống … tạo tiểu cảnh»): a 3×3 scene between Ruộng nước and the pond.
-export const POND_SPECS=[spec('pond-1',9,6,56,3),spec('pond-2',9,6,56,3),spec('pond-3',9,6,56,3),spec('pond-bed',3,1,22,8),spec('pond-nook',3,3,150,4)];
+export const POND_SPECS=[spec('pond-1',11,8,180,2),spec('pond-2',11,8,180,2),spec('pond-3',11,8,180,2),spec('pond-bed',3,1,22,8),spec('pond-nook',3,3,150,4)];
 // Master sheets, row-major cells. Supply-size icons: ink ≤ 40×40 in 64×64, base on row 56 (art bible §8, V24.9.73).
 export const POND_ITEMS=['fry_carp','fry_goldfish','goldfish','produce_grindylow'];
 // Phase 2 (plan §9): produce and feed of crup, knarl, salamander, on a 3×2 sheet (v2: produce_crup, salamander_feed redrawn, creatures-art-02b).
@@ -42,6 +43,7 @@ export const load=async file=>sharp(path.join(root,file)).ensureAlpha().raw().to
 
 // One tier's pixels at `density` (1 = the shipped PNG; 2 = the same placement on a 2× canvas, margins doubled, for HD).
 export async function sceneryPixels(s,density=1){
+ if(/^pond-[123]$/.test(s.id))return coordinatePondPixels(false,density);
  const raw=await load(s.master),box=inkBox(raw.data,raw.info.width,raw.info.height),k=s.masterScale/density,W=s.width*density,H=s.height*density,m=density;
  // A master drawn on its guide canvas keeps the guide's geometry: plain ÷k. Otherwise fit the ink to the ground width.
  const exact=raw.info.width===s.width*s.masterScale&&raw.info.height===s.height*s.masterScale;

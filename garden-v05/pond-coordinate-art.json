@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "forbidden-lake-20261116",
+      "targetKind": "pond",
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+      "frameRecords": [
+        {
+          "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+          "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+          "file": "environment/pond/pond-1.png",
+          "sourceInkBounds": [
+            106,
+            190,
+            1474,
+            1014
+          ],
+          "width": 608,
+          "height": 486,
+          "pivotX": 304,
+          "pivotY": 476,
+          "bounds": {
+            "x": 7,
+            "y": 126,
+            "w": 594,
+            "h": 357
+          },
+          "sha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+          "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-0.png",
+          "hdSha256": "b38f4783ec70aa466bbc4921c7d590a87234a7a25134d09d6a6c9978054e6b28"
+        },
+        {
+          "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+          "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
+          "file": "environment/winter/pond-1-snow.png",
+          "sourceInkBounds": [
+            102,
+            180,
+            1477,
+            1016
+          ],
+          "width": 608,
+          "height": 486,
+          "pivotX": 304,
+          "pivotY": 476,
+          "bounds": {
+            "x": 6,
+            "y": 121,
+            "w": 596,
+            "h": 363
+          },
+          "sha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+          "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-1.png",
+          "hdSha256": "810af1f93d4e3022dc6238635d58ee5f4915e6aa201a9917af55053c5786f187"
+        },
+        {
+          "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+          "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+          "file": "environment/pond/pond-2.png",
+          "sourceInkBounds": [
+            106,
+            190,
+            1474,
+            1014
+          ],
+          "width": 608,
+          "height": 486,
+          "pivotX": 304,
+          "pivotY": 476,
+          "bounds": {
+            "x": 7,
+            "y": 126,
+            "w": 594,
+            "h": 357
+          },
+          "sha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+          "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-2.png",
+          "hdSha256": "b38f4783ec70aa466bbc4921c7d590a87234a7a25134d09d6a6c9978054e6b28"
+        },
+        {
+          "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+          "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
+          "file": "environment/winter/pond-2-snow.png",
+          "sourceInkBounds": [
+            102,
+            180,
+            1477,
+            1016
+          ],
+          "width": 608,
+          "height": 486,
+          "pivotX": 304,
+          "pivotY": 476,
+          "bounds": {
+            "x": 6,
+            "y": 121,
+            "w": 596,
+            "h": 363
+          },
+          "sha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+          "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-3.png",
+          "hdSha256": "810af1f93d4e3022dc6238635d58ee5f4915e6aa201a9917af55053c5786f187"
+        },
+        {
+          "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+          "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+          "file": "environment/pond/pond-3.png",
+          "sourceInkBounds": [
+            106,
+            190,
+            1474,
+            1014
+          ],
+          "width": 608,
+          "height": 486,
+          "pivotX": 304,
+          "pivotY": 476,
+          "bounds": {
+            "x": 7,
+            "y": 126,
+            "w": 594,
+            "h": 357
+          },
+          "sha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+          "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-4.png",
+          "hdSha256": "b38f4783ec70aa466bbc4921c7d590a87234a7a25134d09d6a6c9978054e6b28"
+        },
+        {
+          "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+          "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
+          "file": "environment/winter/pond-3-snow.png",
+          "sourceInkBounds": [
+            102,
+            180,
+            1477,
+            1016
+          ],
+          "width": 608,
+          "height": 486,
+          "pivotX": 304,
+          "pivotY": 476,
+          "bounds": {
+            "x": 6,
+            "y": 121,
+            "w": 596,
+            "h": 363
+          },
+          "sha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+          "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-5.png",
+          "hdSha256": "810af1f93d4e3022dc6238635d58ee5f4915e6aa201a9917af55053c5786f187"
+        }
+      ]
+    }
+  ]
+}
