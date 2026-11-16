@@ -1,5 +1,5 @@
-import {iso} from './garden-grid.mjs?v=26.1';
-import {POND_LAND,stageBoundary} from './garden-growth.mjs?v=26.1';
+import {iso} from './garden-grid.mjs?v=26.2';
+import {POND_LAND,stageBoundary} from './garden-growth.mjs?v=26.2';
 
 // Scenic ground only: logical land, fences, placement and collision keep their authored grid.
 export function pondMeadowOutline(stage) {

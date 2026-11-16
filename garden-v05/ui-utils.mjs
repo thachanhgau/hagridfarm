@@ -1,10 +1,10 @@
-import { ITEM_ART } from "./item-art.mjs?v=26.1";
-import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=26.1";
-import { DB, TAN_SUC_LEVEL } from "./balance-data.mjs?v=26.1";
-import {saleTotal} from "./premium-products.mjs?v=26.1";
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.1';
-import {hdSrcset} from './render-resolution.mjs?v=26.1';
-import {HD_ART} from './hd-art.mjs?v=26.1';
+import { ITEM_ART } from "./item-art.mjs?v=26.2";
+import { CANONICAL_OUTPUT_IDS, flowArtSpec, itemArtSpec, keepsakeArtKey, outputArtKey } from "./flow-item-ui.mjs?v=26.2";
+import { DB, TAN_SUC_LEVEL } from "./balance-data.mjs?v=26.2";
+import {saleTotal} from "./premium-products.mjs?v=26.2";
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.2';
+import {hdSrcset} from './render-resolution.mjs?v=26.2';
+import {HD_ART} from './hd-art.mjs?v=26.2';
 const SUPPLY_ART_KEYS = Object.freeze({
  water: "supply_water",
  boost: "supply_boost",
