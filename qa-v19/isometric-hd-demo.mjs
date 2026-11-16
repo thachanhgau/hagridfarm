@@ -1,4 +1,5 @@
 // Local-only fixture demo; imports the exact shipped renderer, with no wallet/transport.
+import {STORE_CATALOG} from '/game/khu-vuon-hagrid/garden-store-catalog.mjs';
 import * as E from '/game/khu-vuon-hagrid/progression-engine.mjs';
 import {createGarden,iso} from '/game/khu-vuon-hagrid/scene-renderer.mjs';
 import {decorSpotProblem} from '/game/khu-vuon-hagrid/decor-placement-ui.mjs';
@@ -7,7 +8,8 @@ import {GARDEN_STAGES} from '/game/khu-vuon-hagrid/garden-growth.mjs';
 import * as winterKit from '/game/khu-vuon-hagrid/garden-winter.mjs';
 import {runtimeImageUrl} from '/game/khu-vuon-hagrid/runtime-image-url.mjs';
 const manifest=await fetch('/game/khu-vuon-hagrid/decor-assets-manifest.json').then(r=>r.json());
-const items=manifest.items.filter(i=>i.storeItem).sort((a,b)=>Number(b.artRevision==='isometric-hd-20261115')-Number(a.artRevision==='isometric-hd-20261115')),assetOf=id=>manifest.items.find(item=>item.id===id);
+const storeIds=new Set(STORE_CATALOG.filter(i=>i.kind==='decoration').map(i=>i.id));
+const items=manifest.items.filter(i=>storeIds.has(i.id)).map(i=>({...i,label:i.label||STORE_CATALOG.find(c=>c.id===i.id).label})).sort((a,b)=>Number(b.artRevision==='isometric-hd-20261115')-Number(a.artRevision==='isometric-hd-20261115')),assetOf=id=>manifest.items.find(item=>item.id===id);
 document.getElementById('subtitle').textContent='Chọn lô đồ · Bấm tên món để tới gần · Kéo để xem vườn';
 const selector=document.getElementById('collection');for(let j=0;j<Math.ceil(items.length/8);j++){const option=document.createElement('option');option.value=j;option.textContent=`Lô ${j+1} · ${items.slice(j*8,j*8+8).map(i=>i.label).join(', ')}`;selector.append(option);}
 selector.onchange=()=>showGroup(Number(selector.value));

@@ -26,7 +26,21 @@
     "missingHD": [],
     "errors": [],
     "renderErrors": [],
-    "note": "Inventory census before final uniform fit reduction; selected paths unchanged. Final pixel/HTTP proof is separate."
+    "note": "Inventory census before final uniform fit reduction; selected paths unchanged. Final pixel/HTTP proof is separate.",
+    "catalogSupplement": {
+      "ids": [
+        "ev_dobby_spring_rider",
+        "ev_dark_dobby_red",
+        "ev_elf_tent",
+        "ev_champion_tree"
+      ],
+      "contexts": 2,
+      "drawnKeys": 222,
+      "combinedSelectedSources": 592,
+      "missingHD": [],
+      "errors": [],
+      "reason": "Canonical catalog has 167 decoration IDs; legacy storeItem flag marks only 163. Both demo and future census use the canonical catalog."
+    }
   },
   "projection": {
     "axisMeasuredModels": 107,
