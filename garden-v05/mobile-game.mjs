@@ -1,5 +1,5 @@
 import {refreshPremiumControls} from './garden-premium-controls.mjs?v=26.1';
-import {setupPetControls,renderPetCareButtons,petControlState} from './pet-controls.mjs?v=26.1';
+import {setupPetControls,renderPetCareButtons,petControlState,petIcon} from './pet-controls.mjs?v=26.1';
 import {openGardenLayout} from './garden-layout-ui.mjs?v=26.1';
 import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=26.1';
 import {CREATURE_HOMES_LEVEL,resolveCreatureHomes,spotPoint,swapHome,homeChoices,openCreatureHomes} from './creature-homes.mjs?v=26.1';
@@ -524,7 +524,7 @@ const canMoveHome=sp=>connected&&walletReady&&!activeTourSnapshot&&state.level>=
 function openCreatureHome(sp=species){
  if(!canMoveHome(sp))return;
  const v=creatureHomesView(),i=v.land.findIndex(e=>e.species===sp),labelOf=s=>CREATURE[s]?.label||s;
- openCreatureHomes({el,iconButton,label:labelOf(sp),labelOf,groups:homeChoices(v.land,v.spots,{built:v.built}),current:v.spots[i],move:async(target,name)=>{
+ openCreatureHomes({el,iconButton,portrait:s=>petIcon(items,s,40),label:labelOf(sp),labelOf,groups:homeChoices(v.land,v.spots,{built:v.built}),current:v.spots[i],move:async(target,name)=>{
   await run(null,`Đã dời ${labelOf(sp)} sang ${name}.`,{action:'setCreatureHomes',homes:swapHome(v.land,v.spots,sp,target)});
   if(currentDecorations()?.creatureHomes?.[sp]!==target)return false;
   camera.focusCreature(spotPoint(map,target));return true;}});

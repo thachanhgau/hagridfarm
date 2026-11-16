@@ -168,9 +168,15 @@ export function createPanels(ctx){
   },
 
   creatures(){
-   const s=getState(),g=grid(),facings=ctx.getCreatureFacings?.()??{},affMap=ctx.getAffinityMap?.()??new Map();
+   const s=getState(),facings=ctx.getCreatureFacings?.()??{};
    if(s.level<DB.animals[0].level){body.append(paragraph("Mở ở cấp 10 · xây Chuồng 1","empty"));return;}
-   body.append(paragraph(s.creatures.length+"/"+E.housingCapacity(s)+" chỗ · 1 con/loài"),toolbar(button("Nhận bữa",()=>run(x=>E.claimAnimals(x,null,Date.now()),"Đã nhận các bữa hoàn tất.",{action:"claimAnimals"})),button("Cho ăn",()=>run(x=>E.feed(x,null,Date.now()),"Đã cho các con đủ khẩu phần ăn.",{action:"feed"})),button("Chế biến",()=>{recipeFilter="feed";show("craft");}),button("Gắn kết",()=>show("affinity"))));
+   // Owner 16/11/2026 «dễ xài và gọn»: count + one segmented row, then a grid of cells (portrait, name, one status line, action).
+   const g=el("div",{class:"creature-grid"});
+   body.append(el("div",{class:"creature-bar"},[el("span",{class:"creature-count",text:s.creatures.length+"/"+E.housingCapacity(s)+" chỗ"}),el("div",{class:"creature-seg",role:"group","aria-label":"Cả đàn"},[
+    button("Nhận bữa",()=>run(x=>E.claimAnimals(x,null,Date.now()),"Đã nhận các bữa hoàn tất.",{action:"claimAnimals"})),
+    button("Cho ăn",()=>run(x=>E.feed(x,null,Date.now()),"Đã cho các con đủ khẩu phần ăn.",{action:"feed"})),
+    button("Chế biến",()=>{recipeFilter="feed";show("craft");}),
+    button("Gắn kết",()=>show("affinity"))])]));
    for(const a of DB.animals.filter(a=>a.level<=s.level)){
     const owned=s.creatures.find(e=>e.species===a.id),have=s.inventory[a.feed]||0;
     const eating=owned?.meal&&owned.meal.readyAt>now();
@@ -179,12 +185,9 @@ export function createPanels(ctx){
      : owned?button("Cho ăn",()=>run(x=>E.feed(x,a.id,Date.now()),"Đã cho "+a.label+" ăn.",{action:"feed",species:a.id}),{disabled:have<a.mealPortions,class:"primary",title:have<a.mealPortions?"Thiếu khẩu phần":"Cho ăn"})
      :button("Đón về",()=>run(x=>E.adopt(x,a.id,Date.now()),a.label+" đã về vườn.",{action:"adopt",species:a.id}),{disabled:s.creatures.length>=E.housingCapacity(s)||(a.id!=="puffskein"&&have<a.mealPortions*3),class:"primary"});
     const portrait=iconButton("pen","Đến chuồng · "+a.label,()=>{selectCreature(a.id);close();});
-    portrait.replaceChildren(visualItemIcon(items,a.id,{size:52,facing:facings[a.id]}));
-    g.append(el("article",{class:"card creature-row"},[portrait,el("div",{class:"creature-row-copy"},[
-     el("strong",{text:a.label}),
-     el("small",{text:`${owned?(eating?"Đang ăn":owned.meal?"Sẵn sàng":"Đói"):"Chưa đón"} · Kho ${num(have)} · ${a.mealPortions} phần/bữa`}),
-     eating?timer(owned.meal.readyAt):null,
-    ]),action]));
+    portrait.replaceChildren(visualItemIcon(items,a.id,{size:40,facing:facings[a.id]}));
+    const status=eating?timer(owned.meal.readyAt,"Đang ăn · còn "):el("small",{text:owned?(owned.meal?"Sẵn sàng nhận":"Đói · kho "+num(have)):"Chưa đón · kho "+num(have)});
+    g.append(el("article",{class:"creature-cell"},[portrait,el("div",{class:"creature-cell-copy"},[el("strong",{text:a.label}),status]),action]));
    }
    body.append(g);
   },
